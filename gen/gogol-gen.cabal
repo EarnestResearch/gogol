@@ -51,12 +51,13 @@ executable gogol-gen
         , bytestring
         , case-insensitive
         , directory-tree
+        , prettyprinter    >= 1.7.0
         , ede
         , errors           >= 2.1.2
         , formatting
         , hashable
-        , haskell-src-exts == 1.20.3
-        , hindent          == 5.2.7
+        , haskell-src-exts
+        , hindent
         , lens
         , mtl
         , optparse-applicative
@@ -71,3 +72,4 @@ executable gogol-gen
         , text-regex-replace
         , unexceptionalio
         , unordered-containers
+        , doclayout
