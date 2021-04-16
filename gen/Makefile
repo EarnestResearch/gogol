@@ -29,17 +29,6 @@ gen: $(BIN)/gogol-gen $(MODEL_DIR)
  --static=static \
  $(addprefix --model=,$(MODELS))
 
-<<<<<<< HEAD
-format:
-	@echo -e '\nFormatting...'
-	@find $(wildcard $(OUT_DIR)/gogol-*/gen) \
- -type f \
- -name '*.hs' \
- -printf ' -> %p\n' \
- -exec stylish-haskell -i {} \;
-
-=======
->>>>>>> 6391dbe00... don't format, stylish-haskell kills my machine trying
 $(BIN)/gogol-gen: $(BIN)
 	stack build gogol-gen --nix --copy-bins --local-bin-path $(BIN)
 
