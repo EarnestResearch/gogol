@@ -45,8 +45,8 @@ module Network.Google.Resource.RemoteBuildExecution.Blobs.FindMissing
     , bfmCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.blobs.findMissing@ method which the
 -- 'BlobsFindMissing' request conforms to.
@@ -74,13 +74,13 @@ type BlobsFindMissingResource =
 -- /See:/ 'blobsFindMissing' smart constructor.
 data BlobsFindMissing =
   BlobsFindMissing'
-    { _bfmXgafv          :: !(Maybe Xgafv)
+    { _bfmXgafv :: !(Maybe Xgafv)
     , _bfmUploadProtocol :: !(Maybe Text)
-    , _bfmAccessToken    :: !(Maybe Text)
-    , _bfmUploadType     :: !(Maybe Text)
-    , _bfmPayload        :: !BuildBazelRemoteExecutionV2FindMissingBlobsRequest
-    , _bfmInstanceName   :: !Text
-    , _bfmCallback       :: !(Maybe Text)
+    , _bfmAccessToken :: !(Maybe Text)
+    , _bfmUploadType :: !(Maybe Text)
+    , _bfmPayload :: !BuildBazelRemoteExecutionV2FindMissingBlobsRequest
+    , _bfmInstanceName :: !Text
+    , _bfmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

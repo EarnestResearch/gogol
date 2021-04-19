@@ -16,7 +16,7 @@
 --
 module Network.Google.PageSpeed.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The analysis strategy (desktop or mobile) to use, and desktop is the
 -- default

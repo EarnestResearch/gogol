@@ -17,18 +17,18 @@
 --
 module Network.Google.FactCheckTools.Types.Product where
 
-import           Network.Google.FactCheckTools.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.FactCheckTools.Types.Sum
+import Network.Google.Prelude
 
 -- | Information about the claim.
 --
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1Claim' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1Claim =
   GoogleFactcheckingFactchecktoolsV1alpha1Claim'
-    { _gffvcText        :: !(Maybe Text)
+    { _gffvcText :: !(Maybe Text)
     , _gffvcClaimReview :: !(Maybe [GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview])
-    , _gffvcClaimDate   :: !(Maybe DateTime')
-    , _gffvcClaimant    :: !(Maybe Text)
+    , _gffvcClaimDate :: !(Maybe DateTime')
+    , _gffvcClaimant :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -110,10 +110,10 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ClaimRating' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating'
-    { _gffvcrWorstRating   :: !(Maybe (Textual Int32))
-    , _gffvcrRatingValue   :: !(Maybe (Textual Int32))
-    , _gffvcrImageURL      :: !(Maybe Text)
-    , _gffvcrBestRating    :: !(Maybe (Textual Int32))
+    { _gffvcrWorstRating :: !(Maybe (Textual Int32))
+    , _gffvcrRatingValue :: !(Maybe (Textual Int32))
+    , _gffvcrImageURL :: !(Maybe Text)
+    , _gffvcrBestRating :: !(Maybe (Textual Int32))
     , _gffvcrTextualRating :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -217,7 +217,7 @@ instance ToJSON
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor'
     { _gffvcraImageURL :: !(Maybe Text)
-    , _gffvcraName     :: !(Maybe Text)
+    , _gffvcraName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -274,7 +274,7 @@ instance ToJSON
 data GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse =
   GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse'
     { _gffvfccsrNextPageToken :: !(Maybe Text)
-    , _gffvfccsrClaims        :: !(Maybe [GoogleFactcheckingFactchecktoolsV1alpha1Claim])
+    , _gffvfccsrClaims :: !(Maybe [GoogleFactcheckingFactchecktoolsV1alpha1Claim])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -420,9 +420,9 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ClaimAuthor' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor'
-    { _gffvcaSameAs   :: !(Maybe Text)
+    { _gffvcaSameAs :: !(Maybe Text)
     , _gffvcaImageURL :: !(Maybe Text)
-    , _gffvcaName     :: !(Maybe Text)
+    , _gffvcaName :: !(Maybe Text)
     , _gffvcaJobTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -503,12 +503,12 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ClaimReview' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview'
-    { _gLanguageCode  :: !(Maybe Text)
-    , _gURL           :: !(Maybe Text)
+    { _gLanguageCode :: !(Maybe Text)
+    , _gURL :: !(Maybe Text)
     , _gTextualRating :: !(Maybe Text)
-    , _gTitle         :: !(Maybe Text)
-    , _gPublisher     :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1Publisher)
-    , _gReviewDate    :: !(Maybe DateTime')
+    , _gTitle :: !(Maybe Text)
+    , _gPublisher :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1Publisher)
+    , _gReviewDate :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -609,14 +609,14 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup'
-    { _gffvcrmRating               :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating)
-    , _gffvcrmClaimAuthor          :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor)
-    , _gffvcrmURL                  :: !(Maybe Text)
-    , _gffvcrmClaimAppearances     :: !(Maybe [Text])
-    , _gffvcrmClaimLocation        :: !(Maybe Text)
+    { _gffvcrmRating :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating)
+    , _gffvcrmClaimAuthor :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor)
+    , _gffvcrmURL :: !(Maybe Text)
+    , _gffvcrmClaimAppearances :: !(Maybe [Text])
+    , _gffvcrmClaimLocation :: !(Maybe Text)
     , _gffvcrmClaimFirstAppearance :: !(Maybe Text)
-    , _gffvcrmClaimDate            :: !(Maybe Text)
-    , _gffvcrmClaimReviewed        :: !(Maybe Text)
+    , _gffvcrmClaimDate :: !(Maybe Text)
+    , _gffvcrmClaimReviewed :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -755,11 +755,11 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage =
   GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage'
-    { _gffvcrmpVersionId          :: !(Maybe Text)
-    , _gffvcrmpPublishDate        :: !(Maybe Text)
-    , _gffvcrmpName               :: !(Maybe Text)
-    , _gffvcrmpClaimReviewAuthor  :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor)
-    , _gffvcrmpPageURL            :: !(Maybe Text)
+    { _gffvcrmpVersionId :: !(Maybe Text)
+    , _gffvcrmpPublishDate :: !(Maybe Text)
+    , _gffvcrmpName :: !(Maybe Text)
+    , _gffvcrmpClaimReviewAuthor :: !(Maybe GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor)
+    , _gffvcrmpPageURL :: !(Maybe Text)
     , _gffvcrmpClaimReviewMarkups :: !(Maybe [GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -879,7 +879,7 @@ instance ToJSON
 -- /See:/ 'googleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse' smart constructor.
 data GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse =
   GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse'
-    { _gffvlcrmprNextPageToken          :: !(Maybe Text)
+    { _gffvlcrmprNextPageToken :: !(Maybe Text)
     , _gffvlcrmprClaimReviewMarkupPages :: !(Maybe [GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

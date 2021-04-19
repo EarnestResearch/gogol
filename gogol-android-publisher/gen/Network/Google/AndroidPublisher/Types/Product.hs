@@ -17,8 +17,8 @@
 --
 module Network.Google.AndroidPublisher.Types.Product where
 
-import           Network.Google.AndroidPublisher.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types.Sum
+import Network.Google.Prelude
 
 -- | List of localized title and description data.
 --
@@ -63,7 +63,7 @@ instance ToJSON InAppProductListings where
 -- /See:/ 'monthDay' smart constructor.
 data MonthDay =
   MonthDay'
-    { _mdDay   :: !(Maybe (Textual Word32))
+    { _mdDay :: !(Maybe (Textual Word32))
     , _mdMonth :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -110,7 +110,7 @@ instance ToJSON MonthDay where
 -- /See:/ 'track' smart constructor.
 data Track =
   Track'
-    { _tTrack    :: !(Maybe Text)
+    { _tTrack :: !(Maybe Text)
     , _tReleases :: !(Maybe [TrackRelease])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -158,9 +158,9 @@ instance ToJSON Track where
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iURL  :: !(Maybe Text)
+    { _iURL :: !(Maybe Text)
     , _iSha1 :: !(Maybe Text)
-    , _iId   :: !(Maybe Text)
+    , _iId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -209,7 +209,7 @@ instance ToJSON Image where
 -- /See:/ 'inAppProductListing' smart constructor.
 data InAppProductListing =
   InAppProductListing'
-    { _iaplTitle       :: !(Maybe Text)
+    { _iaplTitle :: !(Maybe Text)
     , _iaplDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -292,7 +292,7 @@ instance ToJSON ImagesDeleteAllResponse where
 -- /See:/ 'tokenPagination' smart constructor.
 data TokenPagination =
   TokenPagination'
-    { _tpNextPageToken     :: !(Maybe Text)
+    { _tpNextPageToken :: !(Maybe Text)
     , _tpPreviousPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -340,7 +340,7 @@ instance ToJSON TokenPagination where
 -- /See:/ 'expansionFile' smart constructor.
 data ExpansionFile =
   ExpansionFile'
-    { _efFileSize          :: !(Maybe (Textual Int64))
+    { _efFileSize :: !(Maybe (Textual Int64))
     , _efReferencesVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -394,17 +394,17 @@ instance ToJSON ExpansionFile where
 data UserComment =
   UserComment'
     { _ucAndroidOSVersion :: !(Maybe (Textual Int32))
-    , _ucText             :: !(Maybe Text)
-    , _ucDevice           :: !(Maybe Text)
-    , _ucThumbsUpCount    :: !(Maybe (Textual Int32))
-    , _ucAppVersionCode   :: !(Maybe (Textual Int32))
-    , _ucThumbsDownCount  :: !(Maybe (Textual Int32))
-    , _ucOriginalText     :: !(Maybe Text)
-    , _ucAppVersionName   :: !(Maybe Text)
+    , _ucText :: !(Maybe Text)
+    , _ucDevice :: !(Maybe Text)
+    , _ucThumbsUpCount :: !(Maybe (Textual Int32))
+    , _ucAppVersionCode :: !(Maybe (Textual Int32))
+    , _ucThumbsDownCount :: !(Maybe (Textual Int32))
+    , _ucOriginalText :: !(Maybe Text)
+    , _ucAppVersionName :: !(Maybe Text)
     , _ucReviewerLanguage :: !(Maybe Text)
-    , _ucDeviceMetadata   :: !(Maybe DeviceMetadata)
-    , _ucStarRating       :: !(Maybe (Textual Int32))
-    , _ucLastModified     :: !(Maybe Timestamp)
+    , _ucDeviceMetadata :: !(Maybe DeviceMetadata)
+    , _ucStarRating :: !(Maybe (Textual Int32))
+    , _ucLastModified :: !(Maybe Timestamp)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -573,7 +573,7 @@ instance ToJSON UserComment where
 data Testers =
   Testers'
     { _tGooglePlusCommUnities :: !(Maybe [Text])
-    , _tGoogleGroups          :: !(Maybe [Text])
+    , _tGoogleGroups :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -626,7 +626,7 @@ instance ToJSON Testers where
 -- /See:/ 'subscriptionCancelSurveyResult' smart constructor.
 data SubscriptionCancelSurveyResult =
   SubscriptionCancelSurveyResult'
-    { _scsrCancelSurveyReason    :: !(Maybe (Textual Int32))
+    { _scsrCancelSurveyReason :: !(Maybe (Textual Int32))
     , _scsrUserInputCancelReason :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -684,11 +684,11 @@ instance ToJSON SubscriptionCancelSurveyResult where
 -- /See:/ 'listing' smart constructor.
 data Listing =
   Listing'
-    { _lFullDescription  :: !(Maybe Text)
-    , _lVideo            :: !(Maybe Text)
+    { _lFullDescription :: !(Maybe Text)
+    , _lVideo :: !(Maybe Text)
     , _lShortDescription :: !(Maybe Text)
-    , _lLanguage         :: !(Maybe Text)
-    , _lTitle            :: !(Maybe Text)
+    , _lLanguage :: !(Maybe Text)
+    , _lTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -770,7 +770,7 @@ instance ToJSON Listing where
 data APK =
   APK'
     { _aVersionCode :: !(Maybe (Textual Int32))
-    , _aBinary      :: !(Maybe APKBinary)
+    , _aBinary :: !(Maybe APKBinary)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -856,7 +856,7 @@ instance ToJSON SubscriptionPurchasesDeferRequest
 data TracksListResponse =
   TracksListResponse'
     { _tlrTracks :: !(Maybe [Track])
-    , _tlrKind   :: !Text
+    , _tlrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -906,8 +906,8 @@ instance ToJSON TracksListResponse where
 -- /See:/ 'season' smart constructor.
 data Season =
   Season'
-    { _sStart      :: !(Maybe MonthDay)
-    , _sEnd        :: !(Maybe MonthDay)
+    { _sStart :: !(Maybe MonthDay)
+    , _sEnd :: !(Maybe MonthDay)
     , _sProrations :: !(Maybe [Prorate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -965,8 +965,8 @@ instance ToJSON Season where
 data PageInfo =
   PageInfo'
     { _piResultPerPage :: !(Maybe (Textual Int32))
-    , _piTotalResults  :: !(Maybe (Textual Int32))
-    , _piStartIndex    :: !(Maybe (Textual Int32))
+    , _piTotalResults :: !(Maybe (Textual Int32))
+    , _piStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1064,7 +1064,7 @@ instance ToJSON ImagesListResponse where
 -- /See:/ 'appEdit' smart constructor.
 data AppEdit =
   AppEdit'
-    { _aeId                :: !(Maybe Text)
+    { _aeId :: !(Maybe Text)
     , _aeExpiryTimeSeconds :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1113,13 +1113,13 @@ instance ToJSON AppEdit where
 -- /See:/ 'productPurchase' smart constructor.
 data ProductPurchase =
   ProductPurchase'
-    { _ppPurchaseState      :: !(Maybe (Textual Int32))
-    , _ppConsumptionState   :: !(Maybe (Textual Int32))
-    , _ppKind               :: !Text
+    { _ppPurchaseState :: !(Maybe (Textual Int32))
+    , _ppConsumptionState :: !(Maybe (Textual Int32))
+    , _ppKind :: !Text
     , _ppPurchaseTimeMillis :: !(Maybe (Textual Int64))
-    , _ppPurchaseType       :: !(Maybe (Textual Int32))
-    , _ppDeveloperPayload   :: !(Maybe Text)
-    , _ppOrderId            :: !(Maybe Text)
+    , _ppPurchaseType :: !(Maybe (Textual Int32))
+    , _ppDeveloperPayload :: !(Maybe Text)
+    , _ppOrderId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1238,8 +1238,8 @@ instance ToJSON ProductPurchase where
 data ReviewsListResponse =
   ReviewsListResponse'
     { _rlrTokenPagination :: !(Maybe TokenPagination)
-    , _rlrPageInfo        :: !(Maybe PageInfo)
-    , _rlrReviews         :: !(Maybe [Review])
+    , _rlrPageInfo :: !(Maybe PageInfo)
+    , _rlrReviews :: !(Maybe [Review])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1344,28 +1344,28 @@ instance ToJSON SubscriptionPurchasesDeferResponse
 -- /See:/ 'subscriptionPurchase' smart constructor.
 data SubscriptionPurchase =
   SubscriptionPurchase'
-    { _spGivenName                  :: !(Maybe Text)
-    , _spAutoResumeTimeMillis       :: !(Maybe (Textual Int64))
+    { _spGivenName :: !(Maybe Text)
+    , _spAutoResumeTimeMillis :: !(Maybe (Textual Int64))
     , _spUserCancellationTimeMillis :: !(Maybe (Textual Int64))
-    , _spPaymentState               :: !(Maybe (Textual Int32))
-    , _spKind                       :: !Text
-    , _spPurchaseType               :: !(Maybe (Textual Int32))
-    , _spPriceChange                :: !(Maybe SubscriptionPriceChange)
-    , _spProFileId                  :: !(Maybe Text)
-    , _spLinkedPurchaseToken        :: !(Maybe Text)
-    , _spFamilyName                 :: !(Maybe Text)
-    , _spProFileName                :: !(Maybe Text)
-    , _spExpiryTimeMillis           :: !(Maybe (Textual Int64))
-    , _spAutoRenewing               :: !(Maybe Bool)
-    , _spPriceCurrencyCode          :: !(Maybe Text)
-    , _spEmailAddress               :: !(Maybe Text)
-    , _spCancelReason               :: !(Maybe (Textual Int32))
-    , _spCountryCode                :: !(Maybe Text)
-    , _spDeveloperPayload           :: !(Maybe Text)
-    , _spPriceAmountMicros          :: !(Maybe (Textual Int64))
-    , _spStartTimeMillis            :: !(Maybe (Textual Int64))
-    , _spOrderId                    :: !(Maybe Text)
-    , _spCancelSurveyResult         :: !(Maybe SubscriptionCancelSurveyResult)
+    , _spPaymentState :: !(Maybe (Textual Int32))
+    , _spKind :: !Text
+    , _spPurchaseType :: !(Maybe (Textual Int32))
+    , _spPriceChange :: !(Maybe SubscriptionPriceChange)
+    , _spProFileId :: !(Maybe Text)
+    , _spLinkedPurchaseToken :: !(Maybe Text)
+    , _spFamilyName :: !(Maybe Text)
+    , _spProFileName :: !(Maybe Text)
+    , _spExpiryTimeMillis :: !(Maybe (Textual Int64))
+    , _spAutoRenewing :: !(Maybe Bool)
+    , _spPriceCurrencyCode :: !(Maybe Text)
+    , _spEmailAddress :: !(Maybe Text)
+    , _spCancelReason :: !(Maybe (Textual Int32))
+    , _spCountryCode :: !(Maybe Text)
+    , _spDeveloperPayload :: !(Maybe Text)
+    , _spPriceAmountMicros :: !(Maybe (Textual Int64))
+    , _spStartTimeMillis :: !(Maybe (Textual Int64))
+    , _spOrderId :: !(Maybe Text)
+    , _spCancelSurveyResult :: !(Maybe SubscriptionCancelSurveyResult)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1690,7 +1690,7 @@ instance ToJSON SubscriptionPurchase where
 -- /See:/ 'subscriptionPriceChange' smart constructor.
 data SubscriptionPriceChange =
   SubscriptionPriceChange'
-    { _spcState    :: !(Maybe (Textual Int32))
+    { _spcState :: !(Maybe (Textual Int32))
     , _spcNewPrice :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1745,9 +1745,9 @@ instance ToJSON SubscriptionPriceChange where
 -- /See:/ 'appDetails' smart constructor.
 data AppDetails =
   AppDetails'
-    { _adContactPhone    :: !(Maybe Text)
-    , _adContactEmail    :: !(Maybe Text)
-    , _adContactWebsite  :: !(Maybe Text)
+    { _adContactPhone :: !(Maybe Text)
+    , _adContactEmail :: !(Maybe Text)
+    , _adContactWebsite :: !(Maybe Text)
     , _adDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1863,21 +1863,21 @@ instance ToJSON InAppProductPrices where
 -- /See:/ 'externallyHostedAPK' smart constructor.
 data ExternallyHostedAPK =
   ExternallyHostedAPK'
-    { _ehapkApplicationLabel    :: !(Maybe Text)
-    , _ehapkMaximumSdk          :: !(Maybe (Textual Int32))
-    , _ehapkNATiveCodes         :: !(Maybe [Text])
-    , _ehapkVersionCode         :: !(Maybe (Textual Int32))
-    , _ehapkFileSha256Base64    :: !(Maybe Text)
+    { _ehapkApplicationLabel :: !(Maybe Text)
+    , _ehapkMaximumSdk :: !(Maybe (Textual Int32))
+    , _ehapkNATiveCodes :: !(Maybe [Text])
+    , _ehapkVersionCode :: !(Maybe (Textual Int32))
+    , _ehapkFileSha256Base64 :: !(Maybe Text)
     , _ehapkExternallyHostedURL :: !(Maybe Text)
-    , _ehapkVersionName         :: !(Maybe Text)
-    , _ehapkPackageName         :: !(Maybe Text)
-    , _ehapkFileSize            :: !(Maybe (Textual Int64))
-    , _ehapkIconBase64          :: !(Maybe Text)
-    , _ehapkUsesFeatures        :: !(Maybe [Text])
-    , _ehapkMinimumSdk          :: !(Maybe (Textual Int32))
-    , _ehapkFileSha1Base64      :: !(Maybe Text)
-    , _ehapkUsesPermissions     :: !(Maybe [ExternallyHostedAPKUsesPermission])
-    , _ehapkCertificateBase64s  :: !(Maybe [Text])
+    , _ehapkVersionName :: !(Maybe Text)
+    , _ehapkPackageName :: !(Maybe Text)
+    , _ehapkFileSize :: !(Maybe (Textual Int64))
+    , _ehapkIconBase64 :: !(Maybe Text)
+    , _ehapkUsesFeatures :: !(Maybe [Text])
+    , _ehapkMinimumSdk :: !(Maybe (Textual Int32))
+    , _ehapkFileSha1Base64 :: !(Maybe Text)
+    , _ehapkUsesPermissions :: !(Maybe [ExternallyHostedAPKUsesPermission])
+    , _ehapkCertificateBase64s :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2088,12 +2088,12 @@ instance ToJSON ExternallyHostedAPK where
 -- /See:/ 'trackRelease' smart constructor.
 data TrackRelease =
   TrackRelease'
-    { _trVersionCodes     :: !(Maybe [Textual Int64])
-    , _trStatus           :: !(Maybe Text)
-    , _trReleaseNotes     :: !(Maybe [LocalizedText])
-    , _trUserFraction     :: !(Maybe (Textual Double))
+    { _trVersionCodes :: !(Maybe [Textual Int64])
+    , _trStatus :: !(Maybe Text)
+    , _trReleaseNotes :: !(Maybe [LocalizedText])
+    , _trUserFraction :: !(Maybe (Textual Double))
     , _trCountryTargeting :: !(Maybe CountryTargeting)
-    , _trName             :: !(Maybe Text)
+    , _trName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2196,7 +2196,7 @@ instance ToJSON TrackRelease where
 data CountryTargeting =
   CountryTargeting'
     { _ctIncludeRestOfWorld :: !(Maybe Bool)
-    , _ctCountries          :: !(Maybe [Text])
+    , _ctCountries :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2245,8 +2245,8 @@ instance ToJSON CountryTargeting where
 data Bundle =
   Bundle'
     { _bVersionCode :: !(Maybe (Textual Int32))
-    , _bSha1        :: !(Maybe Text)
-    , _bSha256      :: !(Maybe Text)
+    , _bSha1 :: !(Maybe Text)
+    , _bSha256 :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2337,7 +2337,7 @@ instance ToJSON DeobfuscationFile where
 data VoidedPurchasesListResponse =
   VoidedPurchasesListResponse'
     { _vplrTokenPagination :: !(Maybe TokenPagination)
-    , _vplrPageInfo        :: !(Maybe PageInfo)
+    , _vplrPageInfo :: !(Maybe PageInfo)
     , _vplrVoidedPurchases :: !(Maybe [VoidedPurchase])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2467,7 +2467,7 @@ instance ToJSON ImagesUploadResponse where
 -- /See:/ 'prorate' smart constructor.
 data Prorate =
   Prorate'
-    { _pStart        :: !(Maybe MonthDay)
+    { _pStart :: !(Maybe MonthDay)
     , _pDefaultPrice :: !(Maybe Price)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2558,9 +2558,9 @@ instance ToJSON DeobfuscationFilesUploadResponse
 data InAppProductsListResponse =
   InAppProductsListResponse'
     { _iaplrTokenPagination :: !(Maybe TokenPagination)
-    , _iaplrPageInfo        :: !(Maybe PageInfo)
-    , _iaplrKind            :: !Text
-    , _iaplrInAppProduct    :: !(Maybe [InAppProduct])
+    , _iaplrPageInfo :: !(Maybe PageInfo)
+    , _iaplrKind :: !Text
+    , _iaplrInAppProduct :: !(Maybe [InAppProduct])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2633,7 +2633,7 @@ instance ToJSON InAppProductsListResponse where
 -- /See:/ 'localizedText' smart constructor.
 data LocalizedText =
   LocalizedText'
-    { _ltText     :: !(Maybe Text)
+    { _ltText :: !(Maybe Text)
     , _ltLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2678,9 +2678,9 @@ instance ToJSON LocalizedText where
 -- /See:/ 'review' smart constructor.
 data Review =
   Review'
-    { _rReviewId   :: !(Maybe Text)
+    { _rReviewId :: !(Maybe Text)
     , _rAuthorName :: !(Maybe Text)
-    , _rComments   :: !(Maybe [Comment])
+    , _rComments :: !(Maybe [Comment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2780,7 +2780,7 @@ instance ToJSON APKsAddExternallyHostedResponse where
 -- /See:/ 'subscriptionDeferralInfo' smart constructor.
 data SubscriptionDeferralInfo =
   SubscriptionDeferralInfo'
-    { _sdiDesiredExpiryTimeMillis  :: !(Maybe (Textual Int64))
+    { _sdiDesiredExpiryTimeMillis :: !(Maybe (Textual Int64))
     , _sdiExpectedExpiryTimeMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2876,16 +2876,16 @@ instance ToJSON ReviewsReplyRequest where
 -- /See:/ 'deviceMetadata' smart constructor.
 data DeviceMetadata =
   DeviceMetadata'
-    { _dmProductName      :: !(Maybe Text)
-    , _dmGlEsVersion      :: !(Maybe (Textual Int32))
-    , _dmManufacturer     :: !(Maybe Text)
-    , _dmScreenWidthPx    :: !(Maybe (Textual Int32))
-    , _dmRamMb            :: !(Maybe (Textual Int32))
-    , _dmCPUMake          :: !(Maybe Text)
-    , _dmScreenHeightPx   :: !(Maybe (Textual Int32))
-    , _dmNATivePlatform   :: !(Maybe Text)
-    , _dmDeviceClass      :: !(Maybe Text)
-    , _dmCPUModel         :: !(Maybe Text)
+    { _dmProductName :: !(Maybe Text)
+    , _dmGlEsVersion :: !(Maybe (Textual Int32))
+    , _dmManufacturer :: !(Maybe Text)
+    , _dmScreenWidthPx :: !(Maybe (Textual Int32))
+    , _dmRamMb :: !(Maybe (Textual Int32))
+    , _dmCPUMake :: !(Maybe Text)
+    , _dmScreenHeightPx :: !(Maybe (Textual Int32))
+    , _dmNATivePlatform :: !(Maybe Text)
+    , _dmDeviceClass :: !(Maybe Text)
+    , _dmCPUModel :: !(Maybe Text)
     , _dmScreenDensityDpi :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3038,7 +3038,7 @@ instance ToJSON DeviceMetadata where
 -- /See:/ 'developerComment' smart constructor.
 data DeveloperComment =
   DeveloperComment'
-    { _dcText         :: !(Maybe Text)
+    { _dcText :: !(Maybe Text)
     , _dcLastModified :: !(Maybe Timestamp)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3085,18 +3085,18 @@ instance ToJSON DeveloperComment where
 -- /See:/ 'inAppProduct' smart constructor.
 data InAppProduct =
   InAppProduct'
-    { _iapStatus             :: !(Maybe Text)
-    , _iapGracePeriod        :: !(Maybe Text)
-    , _iapTrialPeriod        :: !(Maybe Text)
-    , _iapPackageName        :: !(Maybe Text)
-    , _iapSeason             :: !(Maybe Season)
-    , _iapPurchaseType       :: !(Maybe Text)
+    { _iapStatus :: !(Maybe Text)
+    , _iapGracePeriod :: !(Maybe Text)
+    , _iapTrialPeriod :: !(Maybe Text)
+    , _iapPackageName :: !(Maybe Text)
+    , _iapSeason :: !(Maybe Season)
+    , _iapPurchaseType :: !(Maybe Text)
     , _iapSubscriptionPeriod :: !(Maybe Text)
-    , _iapPrices             :: !(Maybe InAppProductPrices)
-    , _iapSKU                :: !(Maybe Text)
-    , _iapDefaultPrice       :: !(Maybe Price)
-    , _iapListings           :: !(Maybe InAppProductListings)
-    , _iapDefaultLanguage    :: !(Maybe Text)
+    , _iapPrices :: !(Maybe InAppProductPrices)
+    , _iapSKU :: !(Maybe Text)
+    , _iapDefaultPrice :: !(Maybe Price)
+    , _iapListings :: !(Maybe InAppProductListings)
+    , _iapDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3261,7 +3261,7 @@ instance ToJSON InAppProduct where
 data Price =
   Price'
     { _pPriceMicros :: !(Maybe Text)
-    , _pCurrency    :: !(Maybe Text)
+    , _pCurrency :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3308,7 +3308,7 @@ instance ToJSON Price where
 -- /See:/ 'aPKBinary' smart constructor.
 data APKBinary =
   APKBinary'
-    { _apkbSha1   :: !(Maybe Text)
+    { _apkbSha1 :: !(Maybe Text)
     , _apkbSha256 :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3439,7 +3439,7 @@ instance ToJSON ReviewsReplyResponse where
 -- /See:/ 'externallyHostedAPKUsesPermission' smart constructor.
 data ExternallyHostedAPKUsesPermission =
   ExternallyHostedAPKUsesPermission'
-    { _ehapkupName          :: !(Maybe Text)
+    { _ehapkupName :: !(Maybe Text)
     , _ehapkupMaxSdkVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3492,7 +3492,7 @@ instance ToJSON ExternallyHostedAPKUsesPermission
 -- /See:/ 'listingsListResponse' smart constructor.
 data ListingsListResponse =
   ListingsListResponse'
-    { _llrKind     :: !Text
+    { _llrKind :: !Text
     , _llrListings :: !(Maybe [Listing])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3584,7 +3584,7 @@ instance ToJSON APKsAddExternallyHostedRequest where
 -- /See:/ 'comment' smart constructor.
 data Comment =
   Comment'
-    { _cUserComment      :: !(Maybe UserComment)
+    { _cUserComment :: !(Maybe UserComment)
     , _cDeveloperComment :: !(Maybe DeveloperComment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3631,7 +3631,7 @@ instance ToJSON Comment where
 -- /See:/ 'timestamp' smart constructor.
 data Timestamp =
   Timestamp'
-    { _tNanos   :: !(Maybe (Textual Int32))
+    { _tNanos :: !(Maybe (Textual Int32))
     , _tSeconds :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3678,10 +3678,10 @@ instance ToJSON Timestamp where
 -- /See:/ 'voidedPurchase' smart constructor.
 data VoidedPurchase =
   VoidedPurchase'
-    { _vpKind               :: !Text
+    { _vpKind :: !Text
     , _vpPurchaseTimeMillis :: !(Maybe (Textual Int64))
-    , _vpPurchaseToken      :: !(Maybe Text)
-    , _vpVoidedTimeMillis   :: !(Maybe (Textual Int64))
+    , _vpPurchaseToken :: !(Maybe Text)
+    , _vpVoidedTimeMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3760,7 +3760,7 @@ instance ToJSON VoidedPurchase where
 data BundlesListResponse =
   BundlesListResponse'
     { _blrBundles :: !(Maybe [Bundle])
-    , _blrKind    :: !Text
+    , _blrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3810,7 +3810,7 @@ instance ToJSON BundlesListResponse where
 -- /See:/ 'reviewReplyResult' smart constructor.
 data ReviewReplyResult =
   ReviewReplyResult'
-    { _rReplyText  :: !(Maybe Text)
+    { _rReplyText :: !(Maybe Text)
     , _rLastEdited :: !(Maybe Timestamp)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

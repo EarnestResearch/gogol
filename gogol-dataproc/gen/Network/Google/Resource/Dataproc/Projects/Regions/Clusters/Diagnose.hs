@@ -45,8 +45,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.Diagnose
     , pCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.clusters.diagnose@ method which the
 -- 'ProjectsRegionsClustersDiagnose' request conforms to.
@@ -73,15 +73,15 @@ type ProjectsRegionsClustersDiagnoseResource =
 -- /See:/ 'projectsRegionsClustersDiagnose' smart constructor.
 data ProjectsRegionsClustersDiagnose =
   ProjectsRegionsClustersDiagnose'
-    { _pXgafv          :: !(Maybe Xgafv)
+    { _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !DiagnoseClusterRequest
-    , _pClusterName    :: !Text
-    , _pRegion         :: !Text
-    , _pProjectId      :: !Text
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !DiagnoseClusterRequest
+    , _pClusterName :: !Text
+    , _pRegion :: !Text
+    , _pProjectId :: !Text
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.List
     , pjlCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.list@ method which the
 -- 'ProjectsJobsList' request conforms to.
@@ -71,16 +71,16 @@ type ProjectsJobsListResource =
 -- /See:/ 'projectsJobsList' smart constructor.
 data ProjectsJobsList =
   ProjectsJobsList'
-    { _pjlParent         :: !Text
-    , _pjlXgafv          :: !(Maybe Xgafv)
-    , _pjlJobView        :: !(Maybe Text)
+    { _pjlParent :: !Text
+    , _pjlXgafv :: !(Maybe Xgafv)
+    , _pjlJobView :: !(Maybe Text)
     , _pjlUploadProtocol :: !(Maybe Text)
-    , _pjlAccessToken    :: !(Maybe Text)
-    , _pjlUploadType     :: !(Maybe Text)
-    , _pjlFilter         :: !(Maybe Text)
-    , _pjlPageToken      :: !(Maybe Text)
-    , _pjlPageSize       :: !(Maybe (Textual Int32))
-    , _pjlCallback       :: !(Maybe Text)
+    , _pjlAccessToken :: !(Maybe Text)
+    , _pjlUploadType :: !(Maybe Text)
+    , _pjlFilter :: !(Maybe Text)
+    , _pjlPageToken :: !(Maybe Text)
+    , _pjlPageSize :: !(Maybe (Textual Int32))
+    , _pjlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

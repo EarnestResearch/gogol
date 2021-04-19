@@ -47,8 +47,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Policy.TestIAMPermis
     , pptipCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.policy.testIamPermissions@ method which the
 -- 'ProjectsPolicyTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsPolicyTestIAMPermissionsResource =
 -- /See:/ 'projectsPolicyTestIAMPermissions' smart constructor.
 data ProjectsPolicyTestIAMPermissions =
   ProjectsPolicyTestIAMPermissions'
-    { _pptipXgafv          :: !(Maybe Xgafv)
+    { _pptipXgafv :: !(Maybe Xgafv)
     , _pptipUploadProtocol :: !(Maybe Text)
-    , _pptipAccessToken    :: !(Maybe Text)
-    , _pptipUploadType     :: !(Maybe Text)
-    , _pptipPayload        :: !TestIAMPermissionsRequest
-    , _pptipResource       :: !Text
-    , _pptipCallback       :: !(Maybe Text)
+    , _pptipAccessToken :: !(Maybe Text)
+    , _pptipUploadType :: !(Maybe Text)
+    , _pptipPayload :: !TestIAMPermissionsRequest
+    , _pptipResource :: !Text
+    , _pptipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.InstanceGroupManagers.AggregatedList
     , igmalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroupManagers.aggregatedList@ method which the
 -- 'InstanceGroupManagersAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type InstanceGroupManagersAggregatedListResource =
 -- /See:/ 'instanceGroupManagersAggregatedList' smart constructor.
 data InstanceGroupManagersAggregatedList =
   InstanceGroupManagersAggregatedList'
-    { _igmalOrderBy    :: !(Maybe Text)
-    , _igmalProject    :: !Text
-    , _igmalFilter     :: !(Maybe Text)
-    , _igmalPageToken  :: !(Maybe Text)
+    { _igmalOrderBy :: !(Maybe Text)
+    , _igmalProject :: !Text
+    , _igmalFilter :: !(Maybe Text)
+    , _igmalPageToken :: !(Maybe Text)
     , _igmalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

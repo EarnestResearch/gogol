@@ -17,8 +17,8 @@
 --
 module Network.Google.Dataflow.Types.Product where
 
-import           Network.Google.Dataflow.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types.Sum
+import Network.Google.Prelude
 
 -- | A mapping from each stage to the information about that stage.
 --
@@ -62,11 +62,11 @@ instance ToJSON JobExecutionInfoStages where
 -- /See:/ 'computationTopology' smart constructor.
 data ComputationTopology =
   ComputationTopology'
-    { _ctStateFamilies   :: !(Maybe [StateFamilyConfig])
-    , _ctInputs          :: !(Maybe [StreamLocation])
-    , _ctKeyRanges       :: !(Maybe [KeyRangeLocation])
-    , _ctOutputs         :: !(Maybe [StreamLocation])
-    , _ctComputationId   :: !(Maybe Text)
+    { _ctStateFamilies :: !(Maybe [StateFamilyConfig])
+    , _ctInputs :: !(Maybe [StreamLocation])
+    , _ctKeyRanges :: !(Maybe [KeyRangeLocation])
+    , _ctOutputs :: !(Maybe [StreamLocation])
+    , _ctComputationId :: !(Maybe Text)
     , _ctSystemStageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -170,7 +170,7 @@ instance ToJSON ComputationTopology where
 data SourceSplitResponse =
   SourceSplitResponse'
     { _ssrBundles :: !(Maybe [DerivedSource])
-    , _ssrShards  :: !(Maybe [SourceSplitShard])
+    , _ssrShards :: !(Maybe [SourceSplitShard])
     , _ssrOutcome :: !(Maybe SourceSplitResponseOutcome)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -239,11 +239,11 @@ instance ToJSON SourceSplitResponse where
 -- /See:/ 'parameterMetadata' smart constructor.
 data ParameterMetadata =
   ParameterMetadata'
-    { _pmHelpText   :: !(Maybe Text)
+    { _pmHelpText :: !(Maybe Text)
     , _pmIsOptional :: !(Maybe Bool)
-    , _pmName       :: !(Maybe Text)
-    , _pmRegexes    :: !(Maybe [Text])
-    , _pmLabel      :: !(Maybe Text)
+    , _pmName :: !(Maybe Text)
+    , _pmRegexes :: !(Maybe [Text])
+    , _pmLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -368,11 +368,11 @@ instance ToJSON
 -- /See:/ 'createJobFromTemplateRequest' smart constructor.
 data CreateJobFromTemplateRequest =
   CreateJobFromTemplateRequest'
-    { _cjftrLocation    :: !(Maybe Text)
+    { _cjftrLocation :: !(Maybe Text)
     , _cjftrEnvironment :: !(Maybe RuntimeEnvironment)
-    , _cjftrJobName     :: !(Maybe Text)
-    , _cjftrGcsPath     :: !(Maybe Text)
-    , _cjftrParameters  :: !(Maybe CreateJobFromTemplateRequestParameters)
+    , _cjftrJobName :: !(Maybe Text)
+    , _cjftrGcsPath :: !(Maybe Text)
+    , _cjftrParameters :: !(Maybe CreateJobFromTemplateRequestParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -493,7 +493,7 @@ instance ToJSON CreateJobFromTemplateRequest where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -636,21 +636,21 @@ instance ToJSON IntegerList where
 -- /See:/ 'workItem' smart constructor.
 data WorkItem =
   WorkItem'
-    { _wiJobId                    :: !(Maybe Text)
-    , _wiReportStatusInterval     :: !(Maybe GDuration)
-    , _wiShellTask                :: !(Maybe ShellTask)
-    , _wiStreamingSetupTask       :: !(Maybe StreamingSetupTask)
-    , _wiInitialReportIndex       :: !(Maybe (Textual Int64))
-    , _wiMapTask                  :: !(Maybe MapTask)
-    , _wiPackages                 :: !(Maybe [Package])
+    { _wiJobId :: !(Maybe Text)
+    , _wiReportStatusInterval :: !(Maybe GDuration)
+    , _wiShellTask :: !(Maybe ShellTask)
+    , _wiStreamingSetupTask :: !(Maybe StreamingSetupTask)
+    , _wiInitialReportIndex :: !(Maybe (Textual Int64))
+    , _wiMapTask :: !(Maybe MapTask)
+    , _wiPackages :: !(Maybe [Package])
     , _wiStreamingComputationTask :: !(Maybe StreamingComputationTask)
-    , _wiSourceOperationTask      :: !(Maybe SourceOperationRequest)
-    , _wiId                       :: !(Maybe (Textual Int64))
-    , _wiProjectId                :: !(Maybe Text)
-    , _wiLeaseExpireTime          :: !(Maybe DateTime')
-    , _wiConfiguration            :: !(Maybe Text)
-    , _wiStreamingConfigTask      :: !(Maybe StreamingConfigTask)
-    , _wiSeqMapTask               :: !(Maybe SeqMapTask)
+    , _wiSourceOperationTask :: !(Maybe SourceOperationRequest)
+    , _wiId :: !(Maybe (Textual Int64))
+    , _wiProjectId :: !(Maybe Text)
+    , _wiLeaseExpireTime :: !(Maybe DateTime')
+    , _wiConfiguration :: !(Maybe Text)
+    , _wiStreamingConfigTask :: !(Maybe StreamingConfigTask)
+    , _wiSeqMapTask :: !(Maybe SeqMapTask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -850,10 +850,10 @@ instance ToJSON WorkItem where
 -- /See:/ 'workerHealthReport' smart constructor.
 data WorkerHealthReport =
   WorkerHealthReport'
-    { _whrVMIsHealthy    :: !(Maybe Bool)
+    { _whrVMIsHealthy :: !(Maybe Bool)
     , _whrReportInterval :: !(Maybe GDuration)
-    , _whrPods           :: !(Maybe [WorkerHealthReportPodsItem])
-    , _whrVMStartupTime  :: !(Maybe DateTime')
+    , _whrPods :: !(Maybe [WorkerHealthReportPodsItem])
+    , _whrVMStartupTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -935,10 +935,10 @@ instance ToJSON WorkerHealthReport where
 data Snapshot =
   Snapshot'
     { _sCreationTime :: !(Maybe DateTime')
-    , _sTtl          :: !(Maybe GDuration)
-    , _sSourceJobId  :: !(Maybe Text)
-    , _sId           :: !(Maybe Text)
-    , _sProjectId    :: !(Maybe Text)
+    , _sTtl :: !(Maybe GDuration)
+    , _sSourceJobId :: !(Maybe Text)
+    , _sId :: !(Maybe Text)
+    , _sProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1021,7 +1021,7 @@ instance ToJSON Snapshot where
 -- /See:/ 'sourceSplitOptions' smart constructor.
 data SourceSplitOptions =
   SourceSplitOptions'
-    { _ssoDesiredShardSizeBytes  :: !(Maybe (Textual Int64))
+    { _ssoDesiredShardSizeBytes :: !(Maybe (Textual Int64))
     , _ssoDesiredBundleSizeBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1114,7 +1114,7 @@ instance ToJSON WorkerPoolMetadata where
 data AutoscalingSettings =
   AutoscalingSettings'
     { _asMaxNumWorkers :: !(Maybe (Textual Int32))
-    , _asAlgorithm     :: !(Maybe AutoscalingSettingsAlgorithm)
+    , _asAlgorithm :: !(Maybe AutoscalingSettingsAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1206,11 +1206,11 @@ instance ToJSON JobExecutionStageInfo where
 data InstructionOutput =
   InstructionOutput'
     { _ioOnlyCountValueBytes :: !(Maybe Bool)
-    , _ioCodec               :: !(Maybe InstructionOutputCodec)
-    , _ioName                :: !(Maybe Text)
-    , _ioSystemName          :: !(Maybe Text)
-    , _ioOriginalName        :: !(Maybe Text)
-    , _ioOnlyCountKeyBytes   :: !(Maybe Bool)
+    , _ioCodec :: !(Maybe InstructionOutputCodec)
+    , _ioName :: !(Maybe Text)
+    , _ioSystemName :: !(Maybe Text)
+    , _ioOriginalName :: !(Maybe Text)
+    , _ioOnlyCountKeyBytes :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1305,7 +1305,7 @@ instance ToJSON InstructionOutput where
 -- /See:/ 'integerGauge' smart constructor.
 data IntegerGauge =
   IntegerGauge'
-    { _igValue     :: !(Maybe SplitInt64)
+    { _igValue :: !(Maybe SplitInt64)
     , _igTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1353,8 +1353,8 @@ instance ToJSON IntegerGauge where
 data LaunchTemplateParameters =
   LaunchTemplateParameters'
     { _ltpEnvironment :: !(Maybe RuntimeEnvironment)
-    , _ltpJobName     :: !(Maybe Text)
-    , _ltpParameters  :: !(Maybe LaunchTemplateParametersParameters)
+    , _ltpJobName :: !(Maybe Text)
+    , _ltpParameters :: !(Maybe LaunchTemplateParametersParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1413,11 +1413,11 @@ instance ToJSON LaunchTemplateParameters where
 -- /See:/ 'reportWorkItemStatusRequest' smart constructor.
 data ReportWorkItemStatusRequest =
   ReportWorkItemStatusRequest'
-    { _rwisrCurrentWorkerTime    :: !(Maybe DateTime')
-    , _rwisrLocation             :: !(Maybe Text)
+    { _rwisrCurrentWorkerTime :: !(Maybe DateTime')
+    , _rwisrLocation :: !(Maybe Text)
     , _rwisrUnifiedWorkerRequest :: !(Maybe ReportWorkItemStatusRequestUnifiedWorkerRequest)
-    , _rwisrWorkItemStatuses     :: !(Maybe [WorkItemStatus])
-    , _rwisrWorkerId             :: !(Maybe Text)
+    , _rwisrWorkItemStatuses :: !(Maybe [WorkItemStatus])
+    , _rwisrWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1552,7 +1552,7 @@ instance ToJSON EnvironmentVersion where
 data StreamingApplianceSnapshotConfig =
   StreamingApplianceSnapshotConfig'
     { _sascImportStateEndpoint :: !(Maybe Text)
-    , _sascSnapshotId          :: !(Maybe Text)
+    , _sascSnapshotId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1607,7 +1607,7 @@ instance ToJSON StreamingApplianceSnapshotConfig
 data Sink =
   Sink'
     { _sCodec :: !(Maybe SinkCodec)
-    , _sSpec  :: !(Maybe SinkSpec)
+    , _sSpec :: !(Maybe SinkSpec)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1730,18 +1730,18 @@ instance ToJSON WorkerHealthReportResponse where
 -- /See:/ 'displayData' smart constructor.
 data DisplayData =
   DisplayData'
-    { _ddDurationValue  :: !(Maybe GDuration)
-    , _ddBoolValue      :: !(Maybe Bool)
+    { _ddDurationValue :: !(Maybe GDuration)
+    , _ddBoolValue :: !(Maybe Bool)
     , _ddTimestampValue :: !(Maybe DateTime')
-    , _ddURL            :: !(Maybe Text)
-    , _ddNamespace      :: !(Maybe Text)
+    , _ddURL :: !(Maybe Text)
+    , _ddNamespace :: !(Maybe Text)
     , _ddJavaClassValue :: !(Maybe Text)
-    , _ddShortStrValue  :: !(Maybe Text)
-    , _ddKey            :: !(Maybe Text)
-    , _ddInt64Value     :: !(Maybe (Textual Int64))
-    , _ddFloatValue     :: !(Maybe (Textual Double))
-    , _ddStrValue       :: !(Maybe Text)
-    , _ddLabel          :: !(Maybe Text)
+    , _ddShortStrValue :: !(Maybe Text)
+    , _ddKey :: !(Maybe Text)
+    , _ddInt64Value :: !(Maybe (Textual Int64))
+    , _ddFloatValue :: !(Maybe (Textual Double))
+    , _ddStrValue :: !(Maybe Text)
+    , _ddLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1930,8 +1930,8 @@ instance ToJSON SendDebugCaptureResponse where
 data StructuredMessage =
   StructuredMessage'
     { _smMessageText :: !(Maybe Text)
-    , _smMessageKey  :: !(Maybe Text)
-    , _smParameters  :: !(Maybe [Parameter])
+    , _smMessageKey :: !(Maybe Text)
+    , _smParameters :: !(Maybe [Parameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2032,9 +2032,9 @@ instance ToJSON JobLabels where
 -- /See:/ 'metricStructuredName' smart constructor.
 data MetricStructuredName =
   MetricStructuredName'
-    { _msnOrigin  :: !(Maybe Text)
+    { _msnOrigin :: !(Maybe Text)
     , _msnContext :: !(Maybe MetricStructuredNameContext)
-    , _msnName    :: !(Maybe Text)
+    , _msnName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2095,10 +2095,10 @@ instance ToJSON MetricStructuredName where
 -- /See:/ 'bigQueryIODetails' smart constructor.
 data BigQueryIODetails =
   BigQueryIODetails'
-    { _bqiodDataSet   :: !(Maybe Text)
-    , _bqiodQuery     :: !(Maybe Text)
+    { _bqiodDataSet :: !(Maybe Text)
+    , _bqiodQuery :: !(Maybe Text)
     , _bqiodProjectId :: !(Maybe Text)
-    , _bqiodTable     :: !(Maybe Text)
+    , _bqiodTable :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2207,16 +2207,16 @@ instance ToJSON FileIODetails where
 -- /See:/ 'counterStructuredName' smart constructor.
 data CounterStructuredName =
   CounterStructuredName'
-    { _csnOrigin                     :: !(Maybe CounterStructuredNameOrigin)
-    , _csnOriginNamespace            :: !(Maybe Text)
-    , _csnComponentStepName          :: !(Maybe Text)
-    , _csnPortion                    :: !(Maybe CounterStructuredNamePortion)
-    , _csnOriginalStepName           :: !(Maybe Text)
-    , _csnName                       :: !(Maybe Text)
-    , _csnExecutionStepName          :: !(Maybe Text)
+    { _csnOrigin :: !(Maybe CounterStructuredNameOrigin)
+    , _csnOriginNamespace :: !(Maybe Text)
+    , _csnComponentStepName :: !(Maybe Text)
+    , _csnPortion :: !(Maybe CounterStructuredNamePortion)
+    , _csnOriginalStepName :: !(Maybe Text)
+    , _csnName :: !(Maybe Text)
+    , _csnExecutionStepName :: !(Maybe Text)
     , _csnOriginalRequestingStepName :: !(Maybe Text)
-    , _csnInputIndex                 :: !(Maybe (Textual Int32))
-    , _csnWorkerId                   :: !(Maybe Text)
+    , _csnInputIndex :: !(Maybe (Textual Int32))
+    , _csnWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2361,12 +2361,12 @@ instance ToJSON CounterStructuredName where
 -- /See:/ 'jobMetadata' smart constructor.
 data JobMetadata =
   JobMetadata'
-    { _jmSpannerDetails   :: !(Maybe [SpannerIODetails])
-    , _jmBigTableDetails  :: !(Maybe [BigTableIODetails])
-    , _jmSdkVersion       :: !(Maybe SdkVersion)
-    , _jmPubsubDetails    :: !(Maybe [PubSubIODetails])
-    , _jmFileDetails      :: !(Maybe [FileIODetails])
-    , _jmBigQueryDetails  :: !(Maybe [BigQueryIODetails])
+    { _jmSpannerDetails :: !(Maybe [SpannerIODetails])
+    , _jmBigTableDetails :: !(Maybe [BigTableIODetails])
+    , _jmSdkVersion :: !(Maybe SdkVersion)
+    , _jmPubsubDetails :: !(Maybe [PubSubIODetails])
+    , _jmFileDetails :: !(Maybe [FileIODetails])
+    , _jmBigQueryDetails :: !(Maybe [BigQueryIODetails])
     , _jmDatastoreDetails :: !(Maybe [DatastoreIODetails])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2522,7 +2522,7 @@ instance ToJSON ValidateResponse where
 -- /See:/ 'getTemplateResponse' smart constructor.
 data GetTemplateResponse =
   GetTemplateResponse'
-    { _gtrStatus   :: !(Maybe Status)
+    { _gtrStatus :: !(Maybe Status)
     , _gtrMetadata :: !(Maybe TemplateMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2573,7 +2573,7 @@ instance ToJSON GetTemplateResponse where
 -- /See:/ 'writeInstruction' smart constructor.
 data WriteInstruction =
   WriteInstruction'
-    { _wiSink  :: !(Maybe Sink)
+    { _wiSink :: !(Maybe Sink)
     , _wiInput :: !(Maybe InstructionInput)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2654,8 +2654,8 @@ instance ToJSON EnvironmentUserAgent where
 -- /See:/ 'disk' smart constructor.
 data Disk =
   Disk'
-    { _dSizeGb     :: !(Maybe (Textual Int32))
-    , _dDiskType   :: !(Maybe Text)
+    { _dSizeGb :: !(Maybe (Textual Int32))
+    , _dDiskType :: !(Maybe Text)
     , _dMountPoint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2725,17 +2725,17 @@ instance ToJSON Disk where
 -- /See:/ 'metricUpdate' smart constructor.
 data MetricUpdate =
   MetricUpdate'
-    { _muMeanSum      :: !(Maybe JSONValue)
-    , _muInternal     :: !(Maybe JSONValue)
-    , _muSet          :: !(Maybe JSONValue)
+    { _muMeanSum :: !(Maybe JSONValue)
+    , _muInternal :: !(Maybe JSONValue)
+    , _muSet :: !(Maybe JSONValue)
     , _muDistribution :: !(Maybe JSONValue)
-    , _muCumulative   :: !(Maybe Bool)
-    , _muKind         :: !(Maybe Text)
-    , _muGauge        :: !(Maybe JSONValue)
-    , _muUpdateTime   :: !(Maybe DateTime')
-    , _muMeanCount    :: !(Maybe JSONValue)
-    , _muName         :: !(Maybe MetricStructuredName)
-    , _muScalar       :: !(Maybe JSONValue)
+    , _muCumulative :: !(Maybe Bool)
+    , _muKind :: !(Maybe Text)
+    , _muGauge :: !(Maybe JSONValue)
+    , _muUpdateTime :: !(Maybe DateTime')
+    , _muMeanCount :: !(Maybe JSONValue)
+    , _muName :: !(Maybe MetricStructuredName)
+    , _muScalar :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2931,8 +2931,8 @@ instance ToJSON SourceGetMetadataResponse where
 -- /See:/ 'templateMetadata' smart constructor.
 data TemplateMetadata =
   TemplateMetadata'
-    { _tmName        :: !(Maybe Text)
-    , _tmParameters  :: !(Maybe [ParameterMetadata])
+    { _tmName :: !(Maybe Text)
+    , _tmParameters :: !(Maybe [ParameterMetadata])
     , _tmDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2992,18 +2992,18 @@ instance ToJSON TemplateMetadata where
 -- /See:/ 'environment' smart constructor.
 data Environment =
   Environment'
-    { _eDataSet                    :: !(Maybe Text)
-    , _eExperiments                :: !(Maybe [Text])
+    { _eDataSet :: !(Maybe Text)
+    , _eExperiments :: !(Maybe [Text])
     , _eFlexResourceSchedulingGoal :: !(Maybe EnvironmentFlexResourceSchedulingGoal)
-    , _eWorkerPools                :: !(Maybe [WorkerPool])
-    , _eClusterManagerAPIService   :: !(Maybe Text)
-    , _eVersion                    :: !(Maybe EnvironmentVersion)
-    , _eInternalExperiments        :: !(Maybe EnvironmentInternalExperiments)
-    , _eTempStoragePrefix          :: !(Maybe Text)
-    , _eServiceAccountEmail        :: !(Maybe Text)
-    , _eUserAgent                  :: !(Maybe EnvironmentUserAgent)
-    , _eServiceKmsKeyName          :: !(Maybe Text)
-    , _eSdkPipelineOptions         :: !(Maybe EnvironmentSdkPipelineOptions)
+    , _eWorkerPools :: !(Maybe [WorkerPool])
+    , _eClusterManagerAPIService :: !(Maybe Text)
+    , _eVersion :: !(Maybe EnvironmentVersion)
+    , _eInternalExperiments :: !(Maybe EnvironmentInternalExperiments)
+    , _eTempStoragePrefix :: !(Maybe Text)
+    , _eServiceAccountEmail :: !(Maybe Text)
+    , _eUserAgent :: !(Maybe EnvironmentUserAgent)
+    , _eServiceKmsKeyName :: !(Maybe Text)
+    , _eSdkPipelineOptions :: !(Maybe EnvironmentSdkPipelineOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3186,7 +3186,7 @@ instance ToJSON Environment where
 -- /See:/ 'concatPosition' smart constructor.
 data ConcatPosition =
   ConcatPosition'
-    { _cpIndex    :: !(Maybe (Textual Int32))
+    { _cpIndex :: !(Maybe (Textual Int32))
     , _cpPosition :: !(Maybe Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3275,21 +3275,21 @@ instance ToJSON MetricStructuredNameContext where
 -- /See:/ 'counterUpdate' smart constructor.
 data CounterUpdate =
   CounterUpdate'
-    { _cuNameAndKind               :: !(Maybe NameAndKind)
-    , _cuIntegerList               :: !(Maybe IntegerList)
-    , _cuFloatingPoint             :: !(Maybe (Textual Double))
-    , _cuInternal                  :: !(Maybe JSONValue)
-    , _cuStringList                :: !(Maybe StringList)
-    , _cuShortId                   :: !(Maybe (Textual Int64))
-    , _cuIntegerGauge              :: !(Maybe IntegerGauge)
-    , _cuDistribution              :: !(Maybe DistributionUpdate)
-    , _cuCumulative                :: !(Maybe Bool)
+    { _cuNameAndKind :: !(Maybe NameAndKind)
+    , _cuIntegerList :: !(Maybe IntegerList)
+    , _cuFloatingPoint :: !(Maybe (Textual Double))
+    , _cuInternal :: !(Maybe JSONValue)
+    , _cuStringList :: !(Maybe StringList)
+    , _cuShortId :: !(Maybe (Textual Int64))
+    , _cuIntegerGauge :: !(Maybe IntegerGauge)
+    , _cuDistribution :: !(Maybe DistributionUpdate)
+    , _cuCumulative :: !(Maybe Bool)
     , _cuStructuredNameAndMetadata :: !(Maybe CounterStructuredNameAndMetadata)
-    , _cuFloatingPointMean         :: !(Maybe FloatingPointMean)
-    , _cuIntegerMean               :: !(Maybe IntegerMean)
-    , _cuBoolean                   :: !(Maybe Bool)
-    , _cuFloatingPointList         :: !(Maybe FloatingPointList)
-    , _cuInteger                   :: !(Maybe SplitInt64)
+    , _cuFloatingPointMean :: !(Maybe FloatingPointMean)
+    , _cuIntegerMean :: !(Maybe IntegerMean)
+    , _cuBoolean :: !(Maybe Bool)
+    , _cuFloatingPointList :: !(Maybe FloatingPointList)
+    , _cuInteger :: !(Maybe SplitInt64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3571,7 +3571,7 @@ instance ToJSON
 data DerivedSource =
   DerivedSource'
     { _dsDerivationMode :: !(Maybe DerivedSourceDerivationMode)
-    , _dsSource         :: !(Maybe Source)
+    , _dsSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3622,7 +3622,7 @@ instance ToJSON DerivedSource where
 -- /See:/ 'jobMetrics' smart constructor.
 data JobMetrics =
   JobMetrics'
-    { _jmMetrics    :: !(Maybe [MetricUpdate])
+    { _jmMetrics :: !(Maybe [MetricUpdate])
     , _jmMetricTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3673,10 +3673,10 @@ instance ToJSON JobMetrics where
 -- /See:/ 'sendDebugCaptureRequest' smart constructor.
 data SendDebugCaptureRequest =
   SendDebugCaptureRequest'
-    { _sdcrLocation    :: !(Maybe Text)
-    , _sdcrData        :: !(Maybe Text)
+    { _sdcrLocation :: !(Maybe Text)
+    , _sdcrData :: !(Maybe Text)
     , _sdcrComponentId :: !(Maybe Text)
-    , _sdcrWorkerId    :: !(Maybe Text)
+    , _sdcrWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3748,20 +3748,20 @@ instance ToJSON SendDebugCaptureRequest where
 -- /See:/ 'workItemStatus' smart constructor.
 data WorkItemStatus =
   WorkItemStatus'
-    { _wisReportedProgress              :: !(Maybe ApproximateReportedProgress)
-    , _wisProgress                      :: !(Maybe ApproximateProgress)
+    { _wisReportedProgress :: !(Maybe ApproximateReportedProgress)
+    , _wisProgress :: !(Maybe ApproximateProgress)
     , _wisTotalThrottlerWaitTimeSeconds :: !(Maybe (Textual Double))
-    , _wisSourceOperationResponse       :: !(Maybe SourceOperationResponse)
-    , _wisStopPosition                  :: !(Maybe Position)
-    , _wisDynamicSourceSplit            :: !(Maybe DynamicSourceSplit)
-    , _wisCompleted                     :: !(Maybe Bool)
-    , _wisSourceFork                    :: !(Maybe SourceFork)
-    , _wisReportIndex                   :: !(Maybe (Textual Int64))
-    , _wisRequestedLeaseDuration        :: !(Maybe GDuration)
-    , _wisErrors                        :: !(Maybe [Status])
-    , _wisCounterUpdates                :: !(Maybe [CounterUpdate])
-    , _wisMetricUpdates                 :: !(Maybe [MetricUpdate])
-    , _wisWorkItemId                    :: !(Maybe Text)
+    , _wisSourceOperationResponse :: !(Maybe SourceOperationResponse)
+    , _wisStopPosition :: !(Maybe Position)
+    , _wisDynamicSourceSplit :: !(Maybe DynamicSourceSplit)
+    , _wisCompleted :: !(Maybe Bool)
+    , _wisSourceFork :: !(Maybe SourceFork)
+    , _wisReportIndex :: !(Maybe (Textual Int64))
+    , _wisRequestedLeaseDuration :: !(Maybe GDuration)
+    , _wisErrors :: !(Maybe [Status])
+    , _wisCounterUpdates :: !(Maybe [CounterUpdate])
+    , _wisMetricUpdates :: !(Maybe [MetricUpdate])
+    , _wisWorkItemId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4074,7 +4074,7 @@ instance ToJSON FlattenInstruction where
 data WorkerMessageCode =
   WorkerMessageCode'
     { _wmcParameters :: !(Maybe WorkerMessageCodeParameters)
-    , _wmcCode       :: !(Maybe Text)
+    , _wmcCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4139,12 +4139,12 @@ instance ToJSON WorkerMessageCode where
 -- /See:/ 'transformSummary' smart constructor.
 data TransformSummary =
   TransformSummary'
-    { _tsDisplayData          :: !(Maybe [DisplayData])
-    , _tsKind                 :: !(Maybe TransformSummaryKind)
+    { _tsDisplayData :: !(Maybe [DisplayData])
+    , _tsKind :: !(Maybe TransformSummaryKind)
     , _tsOutputCollectionName :: !(Maybe [Text])
-    , _tsInputCollectionName  :: !(Maybe [Text])
-    , _tsName                 :: !(Maybe Text)
-    , _tsId                   :: !(Maybe Text)
+    , _tsInputCollectionName :: !(Maybe [Text])
+    , _tsName :: !(Maybe Text)
+    , _tsId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4317,7 +4317,7 @@ data SourceMetadata =
   SourceMetadata'
     { _smEstimatedSizeBytes :: !(Maybe (Textual Int64))
     , _smProducesSortedKeys :: !(Maybe Bool)
-    , _smInfinite           :: !(Maybe Bool)
+    , _smInfinite :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4424,25 +4424,25 @@ instance ToJSON EnvironmentInternalExperiments where
 -- /See:/ 'taskRunnerSettings' smart constructor.
 data TaskRunnerSettings =
   TaskRunnerSettings'
-    { _trsContinueOnException      :: !(Maybe Bool)
-    , _trsHarnessCommand           :: !(Maybe Text)
-    , _trsWorkflowFileName         :: !(Maybe Text)
-    , _trsTaskGroup                :: !(Maybe Text)
-    , _trsAlsologtostderr          :: !(Maybe Bool)
-    , _trsDataflowAPIVersion       :: !(Maybe Text)
-    , _trsLogDir                   :: !(Maybe Text)
-    , _trsCommandlinesFileName     :: !(Maybe Text)
-    , _trsVMId                     :: !(Maybe Text)
-    , _trsBaseURL                  :: !(Maybe Text)
-    , _trsOAuthScopes              :: !(Maybe [Text])
-    , _trsTaskUser                 :: !(Maybe Text)
+    { _trsContinueOnException :: !(Maybe Bool)
+    , _trsHarnessCommand :: !(Maybe Text)
+    , _trsWorkflowFileName :: !(Maybe Text)
+    , _trsTaskGroup :: !(Maybe Text)
+    , _trsAlsologtostderr :: !(Maybe Bool)
+    , _trsDataflowAPIVersion :: !(Maybe Text)
+    , _trsLogDir :: !(Maybe Text)
+    , _trsCommandlinesFileName :: !(Maybe Text)
+    , _trsVMId :: !(Maybe Text)
+    , _trsBaseURL :: !(Maybe Text)
+    , _trsOAuthScopes :: !(Maybe [Text])
+    , _trsTaskUser :: !(Maybe Text)
     , _trsStreamingWorkerMainClass :: !(Maybe Text)
-    , _trsBaseTaskDir              :: !(Maybe Text)
-    , _trsLogUploadLocation        :: !(Maybe Text)
-    , _trsTempStoragePrefix        :: !(Maybe Text)
-    , _trsLogToSerialconsole       :: !(Maybe Bool)
-    , _trsParallelWorkerSettings   :: !(Maybe WorkerSettings)
-    , _trsLanguageHint             :: !(Maybe Text)
+    , _trsBaseTaskDir :: !(Maybe Text)
+    , _trsLogUploadLocation :: !(Maybe Text)
+    , _trsTempStoragePrefix :: !(Maybe Text)
+    , _trsLogToSerialconsole :: !(Maybe Bool)
+    , _trsParallelWorkerSettings :: !(Maybe WorkerSettings)
+    , _trsLanguageHint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4697,11 +4697,11 @@ instance ToJSON TaskRunnerSettings where
 -- /See:/ 'streamingComputationConfig' smart constructor.
 data StreamingComputationConfig =
   StreamingComputationConfig'
-    { _sccInstructions                   :: !(Maybe [ParallelInstruction])
-    , _sccSystemName                     :: !(Maybe Text)
-    , _sccComputationId                  :: !(Maybe Text)
+    { _sccInstructions :: !(Maybe [ParallelInstruction])
+    , _sccSystemName :: !(Maybe Text)
+    , _sccComputationId :: !(Maybe Text)
     , _sccTransformUserNameToStateFamily :: !(Maybe StreamingComputationConfigTransformUserNameToStateFamily)
-    , _sccStageName                      :: !(Maybe Text)
+    , _sccStageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4833,7 +4833,7 @@ instance ToJSON EnvironmentSdkPipelineOptions where
 data FloatingPointMean =
   FloatingPointMean'
     { _fpmCount :: !(Maybe SplitInt64)
-    , _fpmSum   :: !(Maybe (Textual Double))
+    , _fpmSum :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4878,8 +4878,8 @@ instance ToJSON FloatingPointMean where
 -- /See:/ 'cpuTime' smart constructor.
 data CPUTime =
   CPUTime'
-    { _ctTotalMs   :: !(Maybe (Textual Word64))
-    , _ctRate      :: !(Maybe (Textual Double))
+    { _ctTotalMs :: !(Maybe (Textual Word64))
+    , _ctRate :: !(Maybe (Textual Double))
     , _ctTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4941,13 +4941,13 @@ instance ToJSON CPUTime where
 -- /See:/ 'leaseWorkItemRequest' smart constructor.
 data LeaseWorkItemRequest =
   LeaseWorkItemRequest'
-    { _lwirWorkItemTypes          :: !(Maybe [Text])
-    , _lwirCurrentWorkerTime      :: !(Maybe DateTime')
-    , _lwirLocation               :: !(Maybe Text)
-    , _lwirWorkerCapabilities     :: !(Maybe [Text])
-    , _lwirUnifiedWorkerRequest   :: !(Maybe LeaseWorkItemRequestUnifiedWorkerRequest)
+    { _lwirWorkItemTypes :: !(Maybe [Text])
+    , _lwirCurrentWorkerTime :: !(Maybe DateTime')
+    , _lwirLocation :: !(Maybe Text)
+    , _lwirWorkerCapabilities :: !(Maybe [Text])
+    , _lwirUnifiedWorkerRequest :: !(Maybe LeaseWorkItemRequestUnifiedWorkerRequest)
     , _lwirRequestedLeaseDuration :: !(Maybe GDuration)
-    , _lwirWorkerId               :: !(Maybe Text)
+    , _lwirWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5068,7 +5068,7 @@ instance ToJSON LeaseWorkItemRequest where
 -- /See:/ 'sourceOperationResponse' smart constructor.
 data SourceOperationResponse =
   SourceOperationResponse'
-    { _sorSplit       :: !(Maybe SourceSplitResponse)
+    { _sorSplit :: !(Maybe SourceSplitResponse)
     , _sorGetMetadata :: !(Maybe SourceGetMetadataResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5160,7 +5160,7 @@ instance ToJSON
 -- /See:/ 'shellTask' smart constructor.
 data ShellTask =
   ShellTask'
-    { _stCommand  :: !(Maybe Text)
+    { _stCommand :: !(Maybe Text)
     , _stExitCode :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5294,7 +5294,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'reportedParallelism' smart constructor.
 data ReportedParallelism =
   ReportedParallelism'
-    { _rpValue      :: !(Maybe (Textual Double))
+    { _rpValue :: !(Maybe (Textual Double))
     , _rpIsInfinite :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5386,11 +5386,11 @@ instance ToJSON StepProperties where
 -- /See:/ 'topologyConfig' smart constructor.
 data TopologyConfig =
   TopologyConfig'
-    { _tcDataDiskAssignments           :: !(Maybe [DataDiskAssignment])
-    , _tcPersistentStateVersion        :: !(Maybe (Textual Int32))
-    , _tcForwardingKeyBits             :: !(Maybe (Textual Int32))
+    { _tcDataDiskAssignments :: !(Maybe [DataDiskAssignment])
+    , _tcPersistentStateVersion :: !(Maybe (Textual Int32))
+    , _tcForwardingKeyBits :: !(Maybe (Textual Int32))
     , _tcUserStageToComputationNameMap :: !(Maybe TopologyConfigUserStageToComputationNameMap)
-    , _tcComputations                  :: !(Maybe [ComputationTopology])
+    , _tcComputations :: !(Maybe [ComputationTopology])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5486,9 +5486,9 @@ instance ToJSON TopologyConfig where
 -- /See:/ 'approximateSplitRequest' smart constructor.
 data ApproximateSplitRequest =
   ApproximateSplitRequest'
-    { _asrFractionConsumed    :: !(Maybe (Textual Double))
+    { _asrFractionConsumed :: !(Maybe (Textual Double))
     , _asrFractionOfRemainder :: !(Maybe (Textual Double))
-    , _asrPosition            :: !(Maybe Position)
+    , _asrPosition :: !(Maybe Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5558,7 +5558,7 @@ instance ToJSON ApproximateSplitRequest where
 data SplitInt64 =
   SplitInt64'
     { _siHighBits :: !(Maybe (Textual Int32))
-    , _siLowBits  :: !(Maybe (Textual Word32))
+    , _siLowBits :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5606,12 +5606,12 @@ instance ToJSON SplitInt64 where
 -- /See:/ 'workerSettings' smart constructor.
 data WorkerSettings =
   WorkerSettings'
-    { _wsServicePath        :: !(Maybe Text)
-    , _wsBaseURL            :: !(Maybe Text)
+    { _wsServicePath :: !(Maybe Text)
+    , _wsBaseURL :: !(Maybe Text)
     , _wsShuffleServicePath :: !(Maybe Text)
-    , _wsTempStoragePrefix  :: !(Maybe Text)
-    , _wsReportingEnabled   :: !(Maybe Bool)
-    , _wsWorkerId           :: !(Maybe Text)
+    , _wsTempStoragePrefix :: !(Maybe Text)
+    , _wsReportingEnabled :: !(Maybe Bool)
+    , _wsWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5749,9 +5749,9 @@ instance ToJSON GetDebugConfigResponse where
 -- /See:/ 'sdkVersion' smart constructor.
 data SdkVersion =
   SdkVersion'
-    { _svSdkSupportStatus   :: !(Maybe SdkVersionSdkSupportStatus)
+    { _svSdkSupportStatus :: !(Maybe SdkVersionSdkSupportStatus)
     , _svVersionDisplayName :: !(Maybe Text)
-    , _svVersion            :: !(Maybe Text)
+    , _svVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5880,7 +5880,7 @@ instance ToJSON DeleteSnapshotResponse where
 data DataDiskAssignment =
   DataDiskAssignment'
     { _ddaVMInstance :: !(Maybe Text)
-    , _ddaDataDisks  :: !(Maybe [Text])
+    , _ddaDataDisks :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6052,8 +6052,8 @@ instance ToJSON ListSnapshotsResponse where
 -- /See:/ 'workerMessageResponse' smart constructor.
 data WorkerMessageResponse =
   WorkerMessageResponse'
-    { _wmrWorkerHealthReportResponse   :: !(Maybe WorkerHealthReportResponse)
-    , _wmrWorkerMetricsResponse        :: !(Maybe ResourceUtilizationReportResponse)
+    { _wmrWorkerHealthReportResponse :: !(Maybe WorkerHealthReportResponse)
+    , _wmrWorkerMetricsResponse :: !(Maybe ResourceUtilizationReportResponse)
     , _wmrWorkerShutdownNoticeResponse :: !(Maybe WorkerShutdownNoticeResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6165,8 +6165,8 @@ instance ToJSON
 data BigTableIODetails =
   BigTableIODetails'
     { _btiodInstanceId :: !(Maybe Text)
-    , _btiodProjectId  :: !(Maybe Text)
-    , _btiodTableId    :: !(Maybe Text)
+    , _btiodProjectId :: !(Maybe Text)
+    , _btiodTableId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6229,14 +6229,14 @@ instance ToJSON BigTableIODetails where
 -- /See:/ 'workItemServiceState' smart constructor.
 data WorkItemServiceState =
   WorkItemServiceState'
-    { _wissNextReportIndex       :: !(Maybe (Textual Int64))
-    , _wissReportStatusInterval  :: !(Maybe GDuration)
-    , _wissHarnessData           :: !(Maybe WorkItemServiceStateHarnessData)
-    , _wissSuggestedStopPoint    :: !(Maybe ApproximateProgress)
+    { _wissNextReportIndex :: !(Maybe (Textual Int64))
+    , _wissReportStatusInterval :: !(Maybe GDuration)
+    , _wissHarnessData :: !(Maybe WorkItemServiceStateHarnessData)
+    , _wissSuggestedStopPoint :: !(Maybe ApproximateProgress)
     , _wissSuggestedStopPosition :: !(Maybe Position)
-    , _wissLeaseExpireTime       :: !(Maybe DateTime')
-    , _wissSplitRequest          :: !(Maybe ApproximateSplitRequest)
-    , _wissMetricShortId         :: !(Maybe [MetricShortId])
+    , _wissLeaseExpireTime :: !(Maybe DateTime')
+    , _wissSplitRequest :: !(Maybe ApproximateSplitRequest)
+    , _wissMetricShortId :: !(Maybe [MetricShortId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6406,10 +6406,10 @@ instance ToJSON LaunchTemplateResponse where
 data StreamingSetupTask =
   StreamingSetupTask'
     { _sstStreamingComputationTopology :: !(Maybe TopologyConfig)
-    , _sstReceiveWorkPort              :: !(Maybe (Textual Int32))
-    , _sstWorkerHarnessPort            :: !(Maybe (Textual Int32))
-    , _sstDrain                        :: !(Maybe Bool)
-    , _sstSnapshotConfig               :: !(Maybe StreamingApplianceSnapshotConfig)
+    , _sstReceiveWorkPort :: !(Maybe (Textual Int32))
+    , _sstWorkerHarnessPort :: !(Maybe (Textual Int32))
+    , _sstDrain :: !(Maybe Bool)
+    , _sstSnapshotConfig :: !(Maybe StreamingApplianceSnapshotConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6546,10 +6546,10 @@ instance ToJSON
 -- /See:/ 'mapTask' smart constructor.
 data MapTask =
   MapTask'
-    { _mtInstructions  :: !(Maybe [ParallelInstruction])
+    { _mtInstructions :: !(Maybe [ParallelInstruction])
     , _mtCounterPrefix :: !(Maybe Text)
-    , _mtSystemName    :: !(Maybe Text)
-    , _mtStageName     :: !(Maybe Text)
+    , _mtSystemName :: !(Maybe Text)
+    , _mtStageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6699,7 +6699,7 @@ instance ToJSON SinkCodec where
 data IntegerMean =
   IntegerMean'
     { _imCount :: !(Maybe SplitInt64)
-    , _imSum   :: !(Maybe SplitInt64)
+    , _imSum :: !(Maybe SplitInt64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6855,9 +6855,9 @@ instance ToJSON InstructionOutputCodec where
 data StreamLocation =
   StreamLocation'
     { _slStreamingStageLocation :: !(Maybe StreamingStageLocation)
-    , _slSideInputLocation      :: !(Maybe StreamingSideInputLocation)
-    , _slCustomSourceLocation   :: !(Maybe CustomSourceLocation)
-    , _slPubsubLocation         :: !(Maybe PubsubLocation)
+    , _slSideInputLocation :: !(Maybe StreamingSideInputLocation)
+    , _slCustomSourceLocation :: !(Maybe CustomSourceLocation)
+    , _slPubsubLocation :: !(Maybe PubsubLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7011,17 +7011,17 @@ instance ToJSON WorkerPoolPoolArgs where
 -- /See:/ 'runtimeEnvironment' smart constructor.
 data RuntimeEnvironment =
   RuntimeEnvironment'
-    { _reNumWorkers              :: !(Maybe (Textual Int32))
-    , _reNetwork                 :: !(Maybe Text)
-    , _reZone                    :: !(Maybe Text)
+    { _reNumWorkers :: !(Maybe (Textual Int32))
+    , _reNetwork :: !(Maybe Text)
+    , _reZone :: !(Maybe Text)
     , _reBypassTempDirValidation :: !(Maybe Bool)
-    , _reSubnetwork              :: !(Maybe Text)
-    , _reMachineType             :: !(Maybe Text)
-    , _reAdditionalUserLabels    :: !(Maybe RuntimeEnvironmentAdditionalUserLabels)
-    , _reServiceAccountEmail     :: !(Maybe Text)
-    , _reAdditionalExperiments   :: !(Maybe [Text])
-    , _reMaxWorkers              :: !(Maybe (Textual Int32))
-    , _reTempLocation            :: !(Maybe Text)
+    , _reSubnetwork :: !(Maybe Text)
+    , _reMachineType :: !(Maybe Text)
+    , _reAdditionalUserLabels :: !(Maybe RuntimeEnvironmentAdditionalUserLabels)
+    , _reServiceAccountEmail :: !(Maybe Text)
+    , _reAdditionalExperiments :: !(Maybe [Text])
+    , _reMaxWorkers :: !(Maybe (Textual Int32))
+    , _reTempLocation :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7186,10 +7186,10 @@ instance ToJSON RuntimeEnvironment where
 -- /See:/ 'counterMetadata' smart constructor.
 data CounterMetadata =
   CounterMetadata'
-    { _cmKind          :: !(Maybe CounterMetadataKind)
-    , _cmDescription   :: !(Maybe Text)
+    { _cmKind :: !(Maybe CounterMetadataKind)
+    , _cmDescription :: !(Maybe Text)
     , _cmStandardUnits :: !(Maybe CounterMetadataStandardUnits)
-    , _cmOtherUnits    :: !(Maybe Text)
+    , _cmOtherUnits :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7303,7 +7303,7 @@ instance ToJSON SendWorkerMessagesResponse where
 -- /See:/ 'streamingSideInputLocation' smart constructor.
 data StreamingSideInputLocation =
   StreamingSideInputLocation'
-    { _ssilTag         :: !(Maybe Text)
+    { _ssilTag :: !(Maybe Text)
     , _ssilStateFamily :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7351,9 +7351,9 @@ instance ToJSON StreamingSideInputLocation where
 -- /See:/ 'getDebugConfigRequest' smart constructor.
 data GetDebugConfigRequest =
   GetDebugConfigRequest'
-    { _gdcrLocation    :: !(Maybe Text)
+    { _gdcrLocation :: !(Maybe Text)
     , _gdcrComponentId :: !(Maybe Text)
-    , _gdcrWorkerId    :: !(Maybe Text)
+    , _gdcrWorkerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7417,7 +7417,7 @@ instance ToJSON GetDebugConfigRequest where
 -- /See:/ 'counterStructuredNameAndMetadata' smart constructor.
 data CounterStructuredNameAndMetadata =
   CounterStructuredNameAndMetadata'
-    { _csnamName     :: !(Maybe CounterStructuredName)
+    { _csnamName :: !(Maybe CounterStructuredName)
     , _csnamMetadata :: !(Maybe CounterMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7508,8 +7508,8 @@ instance ToJSON WorkerShutdownNotice where
 -- /See:/ 'streamingComputationTask' smart constructor.
 data StreamingComputationTask =
   StreamingComputationTask'
-    { _sctTaskType          :: !(Maybe StreamingComputationTaskTaskType)
-    , _sctDataDisks         :: !(Maybe [MountedDataDisk])
+    { _sctTaskType :: !(Maybe StreamingComputationTaskTaskType)
+    , _sctDataDisks :: !(Maybe [MountedDataDisk])
     , _sctComputationRanges :: !(Maybe [StreamingComputationRanges])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7577,8 +7577,8 @@ instance ToJSON StreamingComputationTask where
 -- /See:/ 'pipelineDescription' smart constructor.
 data PipelineDescription =
   PipelineDescription'
-    { _pdExecutionPipelineStage    :: !(Maybe [ExecutionStageSummary])
-    , _pdDisplayData               :: !(Maybe [DisplayData])
+    { _pdExecutionPipelineStage :: !(Maybe [ExecutionStageSummary])
+    , _pdDisplayData :: !(Maybe [DisplayData])
     , _pdOriginalPipelineTransform :: !(Maybe [TransformSummary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7652,10 +7652,10 @@ instance ToJSON PipelineDescription where
 -- /See:/ 'jobMessage' smart constructor.
 data JobMessage =
   JobMessage'
-    { _jmTime              :: !(Maybe DateTime')
-    , _jmMessageText       :: !(Maybe Text)
+    { _jmTime :: !(Maybe DateTime')
+    , _jmMessageText :: !(Maybe Text)
     , _jmMessageImportance :: !(Maybe JobMessageMessageImportance)
-    , _jmId                :: !(Maybe Text)
+    , _jmId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7732,9 +7732,9 @@ instance ToJSON JobMessage where
 -- /See:/ 'workerLifecycleEvent' smart constructor.
 data WorkerLifecycleEvent =
   WorkerLifecycleEvent'
-    { _wleEvent              :: !(Maybe WorkerLifecycleEventEvent)
+    { _wleEvent :: !(Maybe WorkerLifecycleEventEvent)
     , _wleContainerStartTime :: !(Maybe DateTime')
-    , _wleMetadata           :: !(Maybe WorkerLifecycleEventMetadata)
+    , _wleMetadata :: !(Maybe WorkerLifecycleEventMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7888,7 +7888,7 @@ instance ToJSON
 data SeqMapTaskOutputInfo =
   SeqMapTaskOutputInfo'
     { _smtoiSink :: !(Maybe Sink)
-    , _smtoiTag  :: !(Maybe Text)
+    , _smtoiTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7934,7 +7934,7 @@ instance ToJSON SeqMapTaskOutputInfo where
 -- /See:/ 'pubSubIODetails' smart constructor.
 data PubSubIODetails =
   PubSubIODetails'
-    { _psiodTopic        :: !(Maybe Text)
+    { _psiodTopic :: !(Maybe Text)
     , _psiodSubscription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8123,30 +8123,30 @@ instance ToJSON
 -- /See:/ 'job' smart constructor.
 data Job =
   Job'
-    { _jStepsLocation         :: !(Maybe Text)
+    { _jStepsLocation :: !(Maybe Text)
     , _jCreatedFromSnapshotId :: !(Maybe Text)
-    , _jRequestedState        :: !(Maybe JobRequestedState)
-    , _jJobMetadata           :: !(Maybe JobMetadata)
-    , _jLocation              :: !(Maybe Text)
-    , _jStartTime             :: !(Maybe DateTime')
-    , _jEnvironment           :: !(Maybe Environment)
-    , _jClientRequestId       :: !(Maybe Text)
-    , _jStageStates           :: !(Maybe [ExecutionStageState])
-    , _jCurrentState          :: !(Maybe JobCurrentState)
-    , _jReplacedByJobId       :: !(Maybe Text)
-    , _jTempFiles             :: !(Maybe [Text])
-    , _jSteps                 :: !(Maybe [Step])
-    , _jPipelineDescription   :: !(Maybe PipelineDescription)
-    , _jExecutionInfo         :: !(Maybe JobExecutionInfo)
-    , _jName                  :: !(Maybe Text)
-    , _jTransformNameMApping  :: !(Maybe JobTransformNameMApping)
-    , _jId                    :: !(Maybe Text)
-    , _jLabels                :: !(Maybe JobLabels)
-    , _jProjectId             :: !(Maybe Text)
-    , _jType                  :: !(Maybe JobType)
-    , _jCurrentStateTime      :: !(Maybe DateTime')
-    , _jReplaceJobId          :: !(Maybe Text)
-    , _jCreateTime            :: !(Maybe DateTime')
+    , _jRequestedState :: !(Maybe JobRequestedState)
+    , _jJobMetadata :: !(Maybe JobMetadata)
+    , _jLocation :: !(Maybe Text)
+    , _jStartTime :: !(Maybe DateTime')
+    , _jEnvironment :: !(Maybe Environment)
+    , _jClientRequestId :: !(Maybe Text)
+    , _jStageStates :: !(Maybe [ExecutionStageState])
+    , _jCurrentState :: !(Maybe JobCurrentState)
+    , _jReplacedByJobId :: !(Maybe Text)
+    , _jTempFiles :: !(Maybe [Text])
+    , _jSteps :: !(Maybe [Step])
+    , _jPipelineDescription :: !(Maybe PipelineDescription)
+    , _jExecutionInfo :: !(Maybe JobExecutionInfo)
+    , _jName :: !(Maybe Text)
+    , _jTransformNameMApping :: !(Maybe JobTransformNameMApping)
+    , _jId :: !(Maybe Text)
+    , _jLabels :: !(Maybe JobLabels)
+    , _jProjectId :: !(Maybe Text)
+    , _jType :: !(Maybe JobType)
+    , _jCurrentStateTime :: !(Maybe DateTime')
+    , _jReplaceJobId :: !(Maybe Text)
+    , _jCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8519,10 +8519,10 @@ instance ToJSON ReadInstruction where
 -- /See:/ 'approximateReportedProgress' smart constructor.
 data ApproximateReportedProgress =
   ApproximateReportedProgress'
-    { _arpFractionConsumed     :: !(Maybe (Textual Double))
-    , _arpConsumedParallelism  :: !(Maybe ReportedParallelism)
+    { _arpFractionConsumed :: !(Maybe (Textual Double))
+    , _arpConsumedParallelism :: !(Maybe ReportedParallelism)
     , _arpRemainingParallelism :: !(Maybe ReportedParallelism)
-    , _arpPosition             :: !(Maybe Position)
+    , _arpPosition :: !(Maybe Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8662,27 +8662,27 @@ instance ToJSON SinkSpec where
 -- /See:/ 'workerPool' smart constructor.
 data WorkerPool =
   WorkerPool'
-    { _wpAutoscalingSettings         :: !(Maybe AutoscalingSettings)
-    , _wpNumThreadsPerWorker         :: !(Maybe (Textual Int32))
-    , _wpDiskSizeGb                  :: !(Maybe (Textual Int32))
-    , _wpKind                        :: !(Maybe Text)
-    , _wpTaskrunnerSettings          :: !(Maybe TaskRunnerSettings)
-    , _wpNumWorkers                  :: !(Maybe (Textual Int32))
-    , _wpNetwork                     :: !(Maybe Text)
-    , _wpZone                        :: !(Maybe Text)
-    , _wpIPConfiguration             :: !(Maybe WorkerPoolIPConfiguration)
-    , _wpPackages                    :: !(Maybe [Package])
-    , _wpOnHostMaintenance           :: !(Maybe Text)
-    , _wpDiskSourceImage             :: !(Maybe Text)
-    , _wpSubnetwork                  :: !(Maybe Text)
-    , _wpMachineType                 :: !(Maybe Text)
-    , _wpMetadata                    :: !(Maybe WorkerPoolMetadata)
-    , _wpDiskType                    :: !(Maybe Text)
-    , _wpTeardownPolicy              :: !(Maybe WorkerPoolTeardownPolicy)
-    , _wpDefaultPackageSet           :: !(Maybe WorkerPoolDefaultPackageSet)
-    , _wpPoolArgs                    :: !(Maybe WorkerPoolPoolArgs)
+    { _wpAutoscalingSettings :: !(Maybe AutoscalingSettings)
+    , _wpNumThreadsPerWorker :: !(Maybe (Textual Int32))
+    , _wpDiskSizeGb :: !(Maybe (Textual Int32))
+    , _wpKind :: !(Maybe Text)
+    , _wpTaskrunnerSettings :: !(Maybe TaskRunnerSettings)
+    , _wpNumWorkers :: !(Maybe (Textual Int32))
+    , _wpNetwork :: !(Maybe Text)
+    , _wpZone :: !(Maybe Text)
+    , _wpIPConfiguration :: !(Maybe WorkerPoolIPConfiguration)
+    , _wpPackages :: !(Maybe [Package])
+    , _wpOnHostMaintenance :: !(Maybe Text)
+    , _wpDiskSourceImage :: !(Maybe Text)
+    , _wpSubnetwork :: !(Maybe Text)
+    , _wpMachineType :: !(Maybe Text)
+    , _wpMetadata :: !(Maybe WorkerPoolMetadata)
+    , _wpDiskType :: !(Maybe Text)
+    , _wpTeardownPolicy :: !(Maybe WorkerPoolTeardownPolicy)
+    , _wpDefaultPackageSet :: !(Maybe WorkerPoolDefaultPackageSet)
+    , _wpPoolArgs :: !(Maybe WorkerPoolPoolArgs)
     , _wpWorkerHarnessContainerImage :: !(Maybe Text)
-    , _wpDataDisks                   :: !(Maybe [Disk])
+    , _wpDataDisks :: !(Maybe [Disk])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8980,8 +8980,8 @@ instance ToJSON WorkerPool where
 -- /See:/ 'step' smart constructor.
 data Step =
   Step'
-    { _sKind       :: !(Maybe Text)
-    , _sName       :: !(Maybe Text)
+    { _sKind :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
     , _sProperties :: !(Maybe StepProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9038,8 +9038,8 @@ instance ToJSON Step where
 -- /See:/ 'componentSource' smart constructor.
 data ComponentSource =
   ComponentSource'
-    { _csUserName                      :: !(Maybe Text)
-    , _csName                          :: !(Maybe Text)
+    { _csUserName :: !(Maybe Text)
+    , _csName :: !(Maybe Text)
     , _csOriginalTransformOrCollection :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9109,7 +9109,7 @@ instance ToJSON ComponentSource where
 data Package =
   Package'
     { _pLocation :: !(Maybe Text)
-    , _pName     :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9157,12 +9157,12 @@ instance ToJSON Package where
 -- /See:/ 'executionStageSummary' smart constructor.
 data ExecutionStageSummary =
   ExecutionStageSummary'
-    { _essOutputSource       :: !(Maybe [StageSource])
-    , _essKind               :: !(Maybe ExecutionStageSummaryKind)
-    , _essInputSource        :: !(Maybe [StageSource])
-    , _essName               :: !(Maybe Text)
-    , _essComponentSource    :: !(Maybe [ComponentSource])
-    , _essId                 :: !(Maybe Text)
+    { _essOutputSource :: !(Maybe [StageSource])
+    , _essKind :: !(Maybe ExecutionStageSummaryKind)
+    , _essInputSource :: !(Maybe [StageSource])
+    , _essName :: !(Maybe Text)
+    , _essComponentSource :: !(Maybe [ComponentSource])
+    , _essId :: !(Maybe Text)
     , _essComponentTransform :: !(Maybe [ComponentTransform])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9326,7 +9326,7 @@ instance ToJSON WorkerMessageCodeParameters where
 data DynamicSourceSplit =
   DynamicSourceSplit'
     { _dssResidual :: !(Maybe DerivedSource)
-    , _dssPrimary  :: !(Maybe DerivedSource)
+    , _dssPrimary :: !(Maybe DerivedSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9375,7 +9375,7 @@ instance ToJSON DynamicSourceSplit where
 -- /See:/ 'snapshotJobRequest' smart constructor.
 data SnapshotJobRequest =
   SnapshotJobRequest'
-    { _sjrTtl      :: !(Maybe GDuration)
+    { _sjrTtl :: !(Maybe GDuration)
     , _sjrLocation :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9485,9 +9485,9 @@ instance ToJSON ReportWorkItemStatusResponse where
 -- /See:/ 'sourceFork' smart constructor.
 data SourceFork =
   SourceFork'
-    { _sfResidual       :: !(Maybe SourceSplitShard)
-    , _sfPrimarySource  :: !(Maybe DerivedSource)
-    , _sfPrimary        :: !(Maybe SourceSplitShard)
+    { _sfResidual :: !(Maybe SourceSplitShard)
+    , _sfPrimarySource :: !(Maybe DerivedSource)
+    , _sfPrimary :: !(Maybe SourceSplitShard)
     , _sfResidualSource :: !(Maybe DerivedSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9587,7 +9587,7 @@ instance ToJSON ResourceUtilizationReportResponse
 data StreamingComputationRanges =
   StreamingComputationRanges'
     { _scrRangeAssignments :: !(Maybe [KeyRangeDataDiskAssignment])
-    , _scrComputationId    :: !(Maybe Text)
+    , _scrComputationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9641,9 +9641,9 @@ instance ToJSON StreamingComputationRanges where
 -- /See:/ 'listJobsResponse' smart constructor.
 data ListJobsResponse =
   ListJobsResponse'
-    { _ljrNextPageToken  :: !(Maybe Text)
+    { _ljrNextPageToken :: !(Maybe Text)
     , _ljrFailedLocation :: !(Maybe [FailedLocation])
-    , _ljrJobs           :: !(Maybe [Job])
+    , _ljrJobs :: !(Maybe [Job])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9753,10 +9753,10 @@ instance ToJSON LaunchTemplateParametersParameters
 data Source =
   Source'
     { _souDoesNotNeedSplitting :: !(Maybe Bool)
-    , _souBaseSpecs            :: !(Maybe [SourceBaseSpecsItem])
-    , _souCodec                :: !(Maybe SourceCodec)
-    , _souSpec                 :: !(Maybe SourceSpec)
-    , _souMetadata             :: !(Maybe SourceMetadata)
+    , _souBaseSpecs :: !(Maybe [SourceBaseSpecsItem])
+    , _souCodec :: !(Maybe SourceCodec)
+    , _souSpec :: !(Maybe SourceSpec)
+    , _souMetadata :: !(Maybe SourceMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9861,9 +9861,9 @@ instance ToJSON Source where
 -- /See:/ 'approximateProgress' smart constructor.
 data ApproximateProgress =
   ApproximateProgress'
-    { _apRemainingTime   :: !(Maybe GDuration)
+    { _apRemainingTime :: !(Maybe GDuration)
     , _apPercentComplete :: !(Maybe (Textual Double))
-    , _apPosition        :: !(Maybe Position)
+    , _apPosition :: !(Maybe Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9927,13 +9927,13 @@ instance ToJSON ApproximateProgress where
 -- /See:/ 'workerMessage' smart constructor.
 data WorkerMessage =
   WorkerMessage'
-    { _wmWorkerHealthReport   :: !(Maybe WorkerHealthReport)
-    , _wmTime                 :: !(Maybe DateTime')
-    , _wmWorkerMessageCode    :: !(Maybe WorkerMessageCode)
-    , _wmWorkerMetrics        :: !(Maybe ResourceUtilizationReport)
+    { _wmWorkerHealthReport :: !(Maybe WorkerHealthReport)
+    , _wmTime :: !(Maybe DateTime')
+    , _wmWorkerMessageCode :: !(Maybe WorkerMessageCode)
+    , _wmWorkerMetrics :: !(Maybe ResourceUtilizationReport)
     , _wmWorkerLifecycleEvent :: !(Maybe WorkerLifecycleEvent)
     , _wmWorkerShutdownNotice :: !(Maybe WorkerShutdownNotice)
-    , _wmLabels               :: !(Maybe WorkerMessageLabels)
+    , _wmLabels :: !(Maybe WorkerMessageLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10048,11 +10048,11 @@ instance ToJSON WorkerMessage where
 -- /See:/ 'keyRangeLocation' smart constructor.
 data KeyRangeLocation =
   KeyRangeLocation'
-    { _krlDataDisk                      :: !(Maybe Text)
+    { _krlDataDisk :: !(Maybe Text)
     , _krlDeprecatedPersistentDirectory :: !(Maybe Text)
-    , _krlStart                         :: !(Maybe Text)
-    , _krlDeliveryEndpoint              :: !(Maybe Text)
-    , _krlEnd                           :: !(Maybe Text)
+    , _krlStart :: !(Maybe Text)
+    , _krlDeliveryEndpoint :: !(Maybe Text)
+    , _krlEnd :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10144,7 +10144,7 @@ instance ToJSON KeyRangeLocation where
 -- /See:/ 'histogram' smart constructor.
 data Histogram =
   Histogram'
-    { _hBucketCounts      :: !(Maybe [Textual Int64])
+    { _hBucketCounts :: !(Maybe [Textual Int64])
     , _hFirstBucketOffSet :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10237,11 +10237,11 @@ instance ToJSON MultiOutputInfo where
 -- /See:/ 'partialGroupByKeyInstruction' smart constructor.
 data PartialGroupByKeyInstruction =
   PartialGroupByKeyInstruction'
-    { _pgbkiValueCombiningFn                    :: !(Maybe PartialGroupByKeyInstructionValueCombiningFn)
-    , _pgbkiSideInputs                          :: !(Maybe [SideInputInfo])
-    , _pgbkiInput                               :: !(Maybe InstructionInput)
-    , _pgbkiOriginalCombineValuesStepName       :: !(Maybe Text)
-    , _pgbkiInputElementCodec                   :: !(Maybe PartialGroupByKeyInstructionInputElementCodec)
+    { _pgbkiValueCombiningFn :: !(Maybe PartialGroupByKeyInstructionValueCombiningFn)
+    , _pgbkiSideInputs :: !(Maybe [SideInputInfo])
+    , _pgbkiInput :: !(Maybe InstructionInput)
+    , _pgbkiOriginalCombineValuesStepName :: !(Maybe Text)
+    , _pgbkiInputElementCodec :: !(Maybe PartialGroupByKeyInstructionInputElementCodec)
     , _pgbkiOriginalCombineValuesInputStoreName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10391,11 +10391,11 @@ instance ToJSON
 -- /See:/ 'parDoInstruction' smart constructor.
 data ParDoInstruction =
   ParDoInstruction'
-    { _pdiNumOutputs       :: !(Maybe (Textual Int32))
+    { _pdiNumOutputs :: !(Maybe (Textual Int32))
     , _pdiMultiOutputInfos :: !(Maybe [MultiOutputInfo])
-    , _pdiSideInputs       :: !(Maybe [SideInputInfo])
-    , _pdiInput            :: !(Maybe InstructionInput)
-    , _pdiUserFn           :: !(Maybe ParDoInstructionUserFn)
+    , _pdiSideInputs :: !(Maybe [SideInputInfo])
+    , _pdiInput :: !(Maybe InstructionInput)
+    , _pdiUserFn :: !(Maybe ParDoInstructionUserFn)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10518,12 +10518,12 @@ instance ToJSON CustomSourceLocation where
 -- /See:/ 'distributionUpdate' smart constructor.
 data DistributionUpdate =
   DistributionUpdate'
-    { _duMax          :: !(Maybe SplitInt64)
-    , _duCount        :: !(Maybe SplitInt64)
-    , _duMin          :: !(Maybe SplitInt64)
-    , _duHistogram    :: !(Maybe Histogram)
+    { _duMax :: !(Maybe SplitInt64)
+    , _duCount :: !(Maybe SplitInt64)
+    , _duMin :: !(Maybe SplitInt64)
+    , _duHistogram :: !(Maybe Histogram)
     , _duSumOfSquares :: !(Maybe (Textual Double))
-    , _duSum          :: !(Maybe SplitInt64)
+    , _duSum :: !(Maybe SplitInt64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10646,15 +10646,15 @@ instance ToJSON SourceBaseSpecsItem where
 -- /See:/ 'parallelInstruction' smart constructor.
 data ParallelInstruction =
   ParallelInstruction'
-    { _piRead              :: !(Maybe ReadInstruction)
-    , _piWrite             :: !(Maybe WriteInstruction)
-    , _piParDo             :: !(Maybe ParDoInstruction)
+    { _piRead :: !(Maybe ReadInstruction)
+    , _piWrite :: !(Maybe WriteInstruction)
+    , _piParDo :: !(Maybe ParDoInstruction)
     , _piPartialGroupByKey :: !(Maybe PartialGroupByKeyInstruction)
-    , _piOutputs           :: !(Maybe [InstructionOutput])
-    , _piName              :: !(Maybe Text)
-    , _piSystemName        :: !(Maybe Text)
-    , _piFlatten           :: !(Maybe FlattenInstruction)
-    , _piOriginalName      :: !(Maybe Text)
+    , _piOutputs :: !(Maybe [InstructionOutput])
+    , _piName :: !(Maybe Text)
+    , _piSystemName :: !(Maybe Text)
+    , _piFlatten :: !(Maybe FlattenInstruction)
+    , _piOriginalName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10812,10 +10812,10 @@ instance ToJSON SideInputInfoKind where
 data StreamingConfigTask =
   StreamingConfigTask'
     { _sctUserStepToStateFamilyNameMap :: !(Maybe StreamingConfigTaskUserStepToStateFamilyNameMap)
-    , _sctStreamingComputationConfigs  :: !(Maybe [StreamingComputationConfig])
-    , _sctWindmillServiceEndpoint      :: !(Maybe Text)
-    , _sctWindmillServicePort          :: !(Maybe (Textual Int64))
-    , _sctMaxWorkItemCommitBytes       :: !(Maybe (Textual Int64))
+    , _sctStreamingComputationConfigs :: !(Maybe [StreamingComputationConfig])
+    , _sctWindmillServiceEndpoint :: !(Maybe Text)
+    , _sctWindmillServicePort :: !(Maybe (Textual Int64))
+    , _sctMaxWorkItemCommitBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10915,7 +10915,7 @@ instance ToJSON StreamingConfigTask where
 -- /See:/ 'metricShortId' smart constructor.
 data MetricShortId =
   MetricShortId'
-    { _msiShortId     :: !(Maybe (Textual Int64))
+    { _msiShortId :: !(Maybe (Textual Int64))
     , _msiMetricIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10967,7 +10967,7 @@ instance ToJSON MetricShortId where
 -- /See:/ 'sendWorkerMessagesRequest' smart constructor.
 data SendWorkerMessagesRequest =
   SendWorkerMessagesRequest'
-    { _swmrLocation       :: !(Maybe Text)
+    { _swmrLocation :: !(Maybe Text)
     , _swmrWorkerMessages :: !(Maybe [WorkerMessage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11023,7 +11023,7 @@ instance ToJSON SendWorkerMessagesRequest where
 data SourceSplitShard =
   SourceSplitShard'
     { _sssDerivationMode :: !(Maybe SourceSplitShardDerivationMode)
-    , _sssSource         :: !(Maybe Source)
+    , _sssSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11071,8 +11071,8 @@ instance ToJSON SourceSplitShard where
 -- /See:/ 'sideInputInfo' smart constructor.
 data SideInputInfo =
   SideInputInfo'
-    { _siiTag     :: !(Maybe Text)
-    , _siiKind    :: !(Maybe SideInputInfoKind)
+    { _siiTag :: !(Maybe Text)
+    , _siiKind :: !(Maybe SideInputInfoKind)
     , _siiSources :: !(Maybe [Source])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11133,8 +11133,8 @@ instance ToJSON SideInputInfo where
 data ComponentTransform =
   ComponentTransform'
     { _ctOriginalTransform :: !(Maybe Text)
-    , _ctUserName          :: !(Maybe Text)
-    , _ctName              :: !(Maybe Text)
+    , _ctUserName :: !(Maybe Text)
+    , _ctName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11308,7 +11308,7 @@ instance ToJSON SourceCodec where
 -- /See:/ 'stateFamilyConfig' smart constructor.
 data StateFamilyConfig =
   StateFamilyConfig'
-    { _sfcIsRead      :: !(Maybe Bool)
+    { _sfcIsRead :: !(Maybe Bool)
     , _sfcStateFamily :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11360,8 +11360,8 @@ instance ToJSON StateFamilyConfig where
 data KeyRangeDataDiskAssignment =
   KeyRangeDataDiskAssignment'
     { _krddaDataDisk :: !(Maybe Text)
-    , _krddaStart    :: !(Maybe Text)
-    , _krddaEnd      :: !(Maybe Text)
+    , _krddaStart :: !(Maybe Text)
+    , _krddaEnd :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11423,11 +11423,11 @@ instance ToJSON KeyRangeDataDiskAssignment where
 data AutoscalingEvent =
   AutoscalingEvent'
     { _aeCurrentNumWorkers :: !(Maybe (Textual Int64))
-    , _aeTime              :: !(Maybe DateTime')
-    , _aeEventType         :: !(Maybe AutoscalingEventEventType)
-    , _aeTargetNumWorkers  :: !(Maybe (Textual Int64))
-    , _aeWorkerPool        :: !(Maybe Text)
-    , _aeDescription       :: !(Maybe StructuredMessage)
+    , _aeTime :: !(Maybe DateTime')
+    , _aeEventType :: !(Maybe AutoscalingEventEventType)
+    , _aeTargetNumWorkers :: !(Maybe (Textual Int64))
+    , _aeWorkerPool :: !(Maybe Text)
+    , _aeDescription :: !(Maybe StructuredMessage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11537,7 +11537,7 @@ instance ToJSON AutoscalingEvent where
 -- /See:/ 'sourceSplitRequest' smart constructor.
 data SourceSplitRequest =
   SourceSplitRequest'
-    { _ssrSource  :: !(Maybe Source)
+    { _ssrSource :: !(Maybe Source)
     , _ssrOptions :: !(Maybe SourceSplitOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11585,8 +11585,8 @@ instance ToJSON SourceSplitRequest where
 -- /See:/ 'listJobMessagesResponse' smart constructor.
 data ListJobMessagesResponse =
   ListJobMessagesResponse'
-    { _ljmrJobMessages       :: !(Maybe [JobMessage])
-    , _ljmrNextPageToken     :: !(Maybe Text)
+    { _ljmrJobMessages :: !(Maybe [JobMessage])
+    , _ljmrNextPageToken :: !(Maybe Text)
     , _ljmrAutoscalingEvents :: !(Maybe [AutoscalingEvent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11657,12 +11657,12 @@ instance ToJSON ListJobMessagesResponse where
 data PubsubLocation =
   PubsubLocation'
     { _plTrackingSubscription :: !(Maybe Text)
-    , _plDropLateData         :: !(Maybe Bool)
-    , _plTimestampLabel       :: !(Maybe Text)
-    , _plIdLabel              :: !(Maybe Text)
-    , _plTopic                :: !(Maybe Text)
-    , _plWithAttributes       :: !(Maybe Bool)
-    , _plSubscription         :: !(Maybe Text)
+    , _plDropLateData :: !(Maybe Bool)
+    , _plTimestampLabel :: !(Maybe Text)
+    , _plIdLabel :: !(Maybe Text)
+    , _plTopic :: !(Maybe Text)
+    , _plWithAttributes :: !(Maybe Bool)
+    , _plSubscription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11812,7 +11812,7 @@ instance ToJSON FloatingPointList where
 data InstructionInput =
   InstructionInput'
     { _iiProducerInstructionIndex :: !(Maybe (Textual Int32))
-    , _iiOutputNum                :: !(Maybe (Textual Int32))
+    , _iiOutputNum :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11867,12 +11867,12 @@ instance ToJSON InstructionInput where
 -- /See:/ 'seqMapTask' smart constructor.
 data SeqMapTask =
   SeqMapTask'
-    { _smtInputs      :: !(Maybe [SideInputInfo])
-    , _smtName        :: !(Maybe Text)
+    { _smtInputs :: !(Maybe [SideInputInfo])
+    , _smtName :: !(Maybe Text)
     , _smtOutputInfos :: !(Maybe [SeqMapTaskOutputInfo])
-    , _smtSystemName  :: !(Maybe Text)
-    , _smtStageName   :: !(Maybe Text)
-    , _smtUserFn      :: !(Maybe SeqMapTaskUserFn)
+    , _smtSystemName :: !(Maybe Text)
+    , _smtStageName :: !(Maybe Text)
+    , _smtUserFn :: !(Maybe SeqMapTaskUserFn)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12012,8 +12012,8 @@ instance ToJSON
 -- /See:/ 'executionStageState' smart constructor.
 data ExecutionStageState =
   ExecutionStageState'
-    { _essExecutionStageName  :: !(Maybe Text)
-    , _essCurrentStateTime    :: !(Maybe DateTime')
+    { _essExecutionStageName :: !(Maybe Text)
+    , _essCurrentStateTime :: !(Maybe DateTime')
     , _essExecutionStageState :: !(Maybe ExecutionStageStateExecutionStageState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12081,9 +12081,9 @@ instance ToJSON ExecutionStageState where
 -- /See:/ 'stageSource' smart constructor.
 data StageSource =
   StageSource'
-    { _ssSizeBytes                     :: !(Maybe (Textual Int64))
-    , _ssUserName                      :: !(Maybe Text)
-    , _ssName                          :: !(Maybe Text)
+    { _ssSizeBytes :: !(Maybe (Textual Int64))
+    , _ssUserName :: !(Maybe Text)
+    , _ssName :: !(Maybe Text)
     , _ssOriginalTransformOrCollection :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12158,11 +12158,11 @@ instance ToJSON StageSource where
 -- /See:/ 'sourceOperationRequest' smart constructor.
 data SourceOperationRequest =
   SourceOperationRequest'
-    { _souSplit        :: !(Maybe SourceSplitRequest)
-    , _souGetMetadata  :: !(Maybe SourceGetMetadataRequest)
-    , _souName         :: !(Maybe Text)
-    , _souSystemName   :: !(Maybe Text)
-    , _souStageName    :: !(Maybe Text)
+    { _souSplit :: !(Maybe SourceSplitRequest)
+    , _souGetMetadata :: !(Maybe SourceGetMetadataRequest)
+    , _souName :: !(Maybe Text)
+    , _souSystemName :: !(Maybe Text)
+    , _souStageName :: !(Maybe Text)
     , _souOriginalName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12259,7 +12259,7 @@ data SpannerIODetails =
   SpannerIODetails'
     { _siodInstanceId :: !(Maybe Text)
     , _siodDatabaseId :: !(Maybe Text)
-    , _siodProjectId  :: !(Maybe Text)
+    , _siodProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12322,7 +12322,7 @@ instance ToJSON SpannerIODetails where
 -- /See:/ 'leaseWorkItemResponse' smart constructor.
 data LeaseWorkItemResponse =
   LeaseWorkItemResponse'
-    { _lwirWorkItems             :: !(Maybe [WorkItem])
+    { _lwirWorkItems :: !(Maybe [WorkItem])
     , _lwirUnifiedWorkerResponse :: !(Maybe LeaseWorkItemResponseUnifiedWorkerResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12379,12 +12379,12 @@ instance ToJSON LeaseWorkItemResponse where
 -- /See:/ 'position' smart constructor.
 data Position =
   Position'
-    { _pByteOffSet      :: !(Maybe (Textual Int64))
-    , _pConcatPosition  :: !(Maybe ConcatPosition)
-    , _pRecordIndex     :: !(Maybe (Textual Int64))
+    { _pByteOffSet :: !(Maybe (Textual Int64))
+    , _pConcatPosition :: !(Maybe ConcatPosition)
+    , _pRecordIndex :: !(Maybe (Textual Int64))
     , _pShufflePosition :: !(Maybe Text)
-    , _pKey             :: !(Maybe Text)
-    , _pEnd             :: !(Maybe Bool)
+    , _pKey :: !(Maybe Text)
+    , _pEnd :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12478,7 +12478,7 @@ instance ToJSON Position where
 data Parameter =
   Parameter'
     { _parValue :: !(Maybe JSONValue)
-    , _parKey   :: !(Maybe Text)
+    , _parKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

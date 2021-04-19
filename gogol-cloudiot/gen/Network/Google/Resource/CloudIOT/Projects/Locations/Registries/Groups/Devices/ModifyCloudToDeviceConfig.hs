@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Dev
     , plrgdmctdcCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.devices.modifyCloudToDeviceConfig@ method which the
 -- 'ProjectsLocationsRegistriesGroupsDevicesModifyCloudToDeviceConfig' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsLocationsRegistriesGroupsDevicesModifyCloudToDeviceConfigResource
 -- /See:/ 'projectsLocationsRegistriesGroupsDevicesModifyCloudToDeviceConfig' smart constructor.
 data ProjectsLocationsRegistriesGroupsDevicesModifyCloudToDeviceConfig =
   ProjectsLocationsRegistriesGroupsDevicesModifyCloudToDeviceConfig'
-    { _plrgdmctdcXgafv          :: !(Maybe Xgafv)
+    { _plrgdmctdcXgafv :: !(Maybe Xgafv)
     , _plrgdmctdcUploadProtocol :: !(Maybe Text)
-    , _plrgdmctdcAccessToken    :: !(Maybe Text)
-    , _plrgdmctdcUploadType     :: !(Maybe Text)
-    , _plrgdmctdcPayload        :: !ModifyCloudToDeviceConfigRequest
-    , _plrgdmctdcName           :: !Text
-    , _plrgdmctdcCallback       :: !(Maybe Text)
+    , _plrgdmctdcAccessToken :: !(Maybe Text)
+    , _plrgdmctdcUploadType :: !(Maybe Text)
+    , _plrgdmctdcPayload :: !ModifyCloudToDeviceConfigRequest
+    , _plrgdmctdcName :: !Text
+    , _plrgdmctdcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

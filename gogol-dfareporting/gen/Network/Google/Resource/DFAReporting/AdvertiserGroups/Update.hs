@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Update
     , aguPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.update@ method which the
 -- 'AdvertiserGroupsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type AdvertiserGroupsUpdateResource =
 data AdvertiserGroupsUpdate =
   AdvertiserGroupsUpdate'
     { _aguProFileId :: !(Textual Int64)
-    , _aguPayload   :: !AdvertiserGroup
+    , _aguPayload :: !AdvertiserGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

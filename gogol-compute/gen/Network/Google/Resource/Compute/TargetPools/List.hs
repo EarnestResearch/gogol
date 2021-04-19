@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.TargetPools.List
     , tplMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetPools.list@ method which the
 -- 'TargetPoolsList' request conforms to.
@@ -68,11 +68,11 @@ type TargetPoolsListResource =
 -- /See:/ 'targetPoolsList' smart constructor.
 data TargetPoolsList =
   TargetPoolsList'
-    { _tplOrderBy    :: !(Maybe Text)
-    , _tplProject    :: !Text
-    , _tplFilter     :: !(Maybe Text)
-    , _tplRegion     :: !Text
-    , _tplPageToken  :: !(Maybe Text)
+    { _tplOrderBy :: !(Maybe Text)
+    , _tplProject :: !Text
+    , _tplFilter :: !(Maybe Text)
+    , _tplRegion :: !Text
+    , _tplPageToken :: !(Maybe Text)
     , _tplMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

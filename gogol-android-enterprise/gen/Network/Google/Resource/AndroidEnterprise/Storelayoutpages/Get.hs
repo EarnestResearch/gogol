@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutpages.Get
     , sgPageId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutpages.get@ method which the
 -- 'StorelayoutpagesGet' request conforms to.
@@ -58,7 +58,7 @@ type StorelayoutpagesGetResource =
 data StorelayoutpagesGet =
   StorelayoutpagesGet'
     { _sgEnterpriseId :: !Text
-    , _sgPageId       :: !Text
+    , _sgPageId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

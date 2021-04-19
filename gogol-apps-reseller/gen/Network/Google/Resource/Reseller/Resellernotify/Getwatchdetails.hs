@@ -34,8 +34,8 @@ module Network.Google.Resource.Reseller.Resellernotify.Getwatchdetails
 
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.resellernotify.getwatchdetails@ method which the
 -- 'ResellernotifyGetwatchdetails' request conforms to.

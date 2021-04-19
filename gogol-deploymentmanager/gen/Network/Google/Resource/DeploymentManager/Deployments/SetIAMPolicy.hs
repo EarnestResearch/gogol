@@ -39,8 +39,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.SetIAMPolicy
     , dsipResource
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.setIamPolicy@ method which the
 -- 'DeploymentsSetIAMPolicy' request conforms to.
@@ -63,8 +63,8 @@ type DeploymentsSetIAMPolicyResource =
 -- /See:/ 'deploymentsSetIAMPolicy' smart constructor.
 data DeploymentsSetIAMPolicy =
   DeploymentsSetIAMPolicy'
-    { _dsipProject  :: !Text
-    , _dsipPayload  :: !GlobalSetPolicyRequest
+    { _dsipProject :: !Text
+    , _dsipPayload :: !GlobalSetPolicyRequest
     , _dsipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

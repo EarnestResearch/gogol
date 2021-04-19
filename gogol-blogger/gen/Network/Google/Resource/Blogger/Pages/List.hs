@@ -41,8 +41,8 @@ module Network.Google.Resource.Blogger.Pages.List
     , plMaxResults
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pages.list@ method which the
 -- 'PagesList' request conforms to.
@@ -64,12 +64,12 @@ type PagesListResource =
 -- /See:/ 'pagesList' smart constructor.
 data PagesList =
   PagesList'
-    { _plStatus      :: !(Maybe [PagesListStatus])
-    , _plBlogId      :: !Text
+    { _plStatus :: !(Maybe [PagesListStatus])
+    , _plBlogId :: !Text
     , _plFetchBodies :: !(Maybe Bool)
-    , _plView        :: !(Maybe PagesListView)
-    , _plPageToken   :: !(Maybe Text)
-    , _plMaxResults  :: !(Maybe (Textual Word32))
+    , _plView :: !(Maybe PagesListView)
+    , _plPageToken :: !(Maybe Text)
+    , _plMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

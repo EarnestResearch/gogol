@@ -42,8 +42,8 @@ module Network.Google.Resource.YouTube.LiveStreams.List
     , lslMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveStreams.list@ method which the
 -- 'LiveStreamsList' request conforms to.
@@ -66,13 +66,13 @@ type LiveStreamsListResource =
 -- /See:/ 'liveStreamsList' smart constructor.
 data LiveStreamsList =
   LiveStreamsList'
-    { _lslPart                          :: !Text
-    , _lslMine                          :: !(Maybe Bool)
-    , _lslOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _lslPart :: !Text
+    , _lslMine :: !(Maybe Bool)
+    , _lslOnBehalfOfContentOwner :: !(Maybe Text)
     , _lslOnBehalfOfContentOwnerChannel :: !(Maybe Text)
-    , _lslId                            :: !(Maybe Text)
-    , _lslPageToken                     :: !(Maybe Text)
-    , _lslMaxResults                    :: !(Textual Word32)
+    , _lslId :: !(Maybe Text)
+    , _lslPageToken :: !(Maybe Text)
+    , _lslMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.NodePools.L
     , plcnplCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.nodePools.list@ method which the
 -- 'ProjectsLocationsClustersNodePoolsList' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsLocationsClustersNodePoolsListResource =
 -- /See:/ 'projectsLocationsClustersNodePoolsList' smart constructor.
 data ProjectsLocationsClustersNodePoolsList =
   ProjectsLocationsClustersNodePoolsList'
-    { _plcnplParent         :: !Text
-    , _plcnplXgafv          :: !(Maybe Xgafv)
+    { _plcnplParent :: !Text
+    , _plcnplXgafv :: !(Maybe Xgafv)
     , _plcnplUploadProtocol :: !(Maybe Text)
-    , _plcnplAccessToken    :: !(Maybe Text)
-    , _plcnplUploadType     :: !(Maybe Text)
-    , _plcnplZone           :: !(Maybe Text)
-    , _plcnplClusterId      :: !(Maybe Text)
-    , _plcnplProjectId      :: !(Maybe Text)
-    , _plcnplCallback       :: !(Maybe Text)
+    , _plcnplAccessToken :: !(Maybe Text)
+    , _plcnplUploadType :: !(Maybe Text)
+    , _plcnplZone :: !(Maybe Text)
+    , _plcnplClusterId :: !(Maybe Text)
+    , _plcnplProjectId :: !(Maybe Text)
+    , _plcnplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

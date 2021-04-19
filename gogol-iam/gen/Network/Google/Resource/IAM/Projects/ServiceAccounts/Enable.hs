@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Enable
     , psaeCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.enable@ method which the
 -- 'ProjectsServiceAccountsEnable' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsServiceAccountsEnableResource =
 -- /See:/ 'projectsServiceAccountsEnable' smart constructor.
 data ProjectsServiceAccountsEnable =
   ProjectsServiceAccountsEnable'
-    { _psaeXgafv          :: !(Maybe Xgafv)
+    { _psaeXgafv :: !(Maybe Xgafv)
     , _psaeUploadProtocol :: !(Maybe Text)
-    , _psaeAccessToken    :: !(Maybe Text)
-    , _psaeUploadType     :: !(Maybe Text)
-    , _psaePayload        :: !EnableServiceAccountRequest
-    , _psaeName           :: !Text
-    , _psaeCallback       :: !(Maybe Text)
+    , _psaeAccessToken :: !(Maybe Text)
+    , _psaeUploadType :: !(Maybe Text)
+    , _psaePayload :: !EnableServiceAccountRequest
+    , _psaeName :: !Text
+    , _psaeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.AcceleratorTypes.List
     , atlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.acceleratorTypes.list@ method which the
 -- 'AcceleratorTypesList' request conforms to.
@@ -68,11 +68,11 @@ type AcceleratorTypesListResource =
 -- /See:/ 'acceleratorTypesList' smart constructor.
 data AcceleratorTypesList =
   AcceleratorTypesList'
-    { _atlOrderBy    :: !(Maybe Text)
-    , _atlProject    :: !Text
-    , _atlZone       :: !Text
-    , _atlFilter     :: !(Maybe Text)
-    , _atlPageToken  :: !(Maybe Text)
+    { _atlOrderBy :: !(Maybe Text)
+    , _atlProject :: !Text
+    , _atlZone :: !Text
+    , _atlFilter :: !(Maybe Text)
+    , _atlPageToken :: !(Maybe Text)
     , _atlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

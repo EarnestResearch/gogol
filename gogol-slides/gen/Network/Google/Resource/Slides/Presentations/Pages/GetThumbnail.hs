@@ -47,8 +47,8 @@ module Network.Google.Resource.Slides.Presentations.Pages.GetThumbnail
     , ppgtCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Slides.Types
+import Network.Google.Prelude
+import Network.Google.Slides.Types
 
 -- | A resource alias for @slides.presentations.pages.getThumbnail@ method which the
 -- 'PresentationsPagesGetThumbnail' request conforms to.
@@ -77,15 +77,15 @@ type PresentationsPagesGetThumbnailResource =
 -- /See:/ 'presentationsPagesGetThumbnail' smart constructor.
 data PresentationsPagesGetThumbnail =
   PresentationsPagesGetThumbnail'
-    { _ppgtXgafv                            :: !(Maybe Xgafv)
-    , _ppgtThumbnailPropertiesMimeType      :: !(Maybe Text)
+    { _ppgtXgafv :: !(Maybe Xgafv)
+    , _ppgtThumbnailPropertiesMimeType :: !(Maybe Text)
     , _ppgtThumbnailPropertiesThumbnailSize :: !(Maybe Text)
-    , _ppgtUploadProtocol                   :: !(Maybe Text)
-    , _ppgtAccessToken                      :: !(Maybe Text)
-    , _ppgtPageObjectId                     :: !Text
-    , _ppgtUploadType                       :: !(Maybe Text)
-    , _ppgtPresentationId                   :: !Text
-    , _ppgtCallback                         :: !(Maybe Text)
+    , _ppgtUploadProtocol :: !(Maybe Text)
+    , _ppgtAccessToken :: !(Maybe Text)
+    , _ppgtPageObjectId :: !Text
+    , _ppgtUploadType :: !(Maybe Text)
+    , _ppgtPresentationId :: !Text
+    , _ppgtCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

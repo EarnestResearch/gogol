@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.Update
     , cduProjection
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.update@ method which the
 -- 'ChromeosDevicesUpdate' request conforms to.
@@ -65,9 +65,9 @@ type ChromeosDevicesUpdateResource =
 -- /See:/ 'chromeosDevicesUpdate' smart constructor.
 data ChromeosDevicesUpdate =
   ChromeosDevicesUpdate'
-    { _cduPayload    :: !ChromeOSDevice
+    { _cduPayload :: !ChromeOSDevice
     , _cduCustomerId :: !Text
-    , _cduDeviceId   :: !Text
+    , _cduDeviceId :: !Text
     , _cduProjection :: !(Maybe ChromeosDevicesUpdateProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

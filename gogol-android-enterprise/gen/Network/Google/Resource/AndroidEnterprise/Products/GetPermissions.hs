@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.GetPermissions
     , pgpProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.getPermissions@ method which the
 -- 'ProductsGetPermissions' request conforms to.
@@ -59,7 +59,7 @@ type ProductsGetPermissionsResource =
 data ProductsGetPermissions =
   ProductsGetPermissions'
     { _pgpEnterpriseId :: !Text
-    , _pgpProductId    :: !Text
+    , _pgpProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

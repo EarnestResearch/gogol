@@ -39,8 +39,8 @@ module Network.Google.Resource.YouTube.PlayLists.Insert
     , pliOnBehalfOfContentOwnerChannel
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.playlists.insert@ method which the
 -- 'PlayListsInsert' request conforms to.
@@ -59,9 +59,9 @@ type PlayListsInsertResource =
 -- /See:/ 'playListsInsert' smart constructor.
 data PlayListsInsert =
   PlayListsInsert'
-    { _pliPart                          :: !Text
-    , _pliPayload                       :: !PlayList
-    , _pliOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _pliPart :: !Text
+    , _pliPayload :: !PlayList
+    , _pliOnBehalfOfContentOwner :: !(Maybe Text)
     , _pliOnBehalfOfContentOwnerChannel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

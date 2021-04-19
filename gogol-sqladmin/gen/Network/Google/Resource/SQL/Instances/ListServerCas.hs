@@ -41,8 +41,8 @@ module Network.Google.Resource.SQL.Instances.ListServerCas
     , ilscInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.listServerCas@ method which the
 -- 'InstancesListServerCas' request conforms to.
@@ -66,7 +66,7 @@ type InstancesListServerCasResource =
 -- /See:/ 'instancesListServerCas' smart constructor.
 data InstancesListServerCas =
   InstancesListServerCas'
-    { _ilscProject  :: !Text
+    { _ilscProject :: !Text
     , _ilscInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

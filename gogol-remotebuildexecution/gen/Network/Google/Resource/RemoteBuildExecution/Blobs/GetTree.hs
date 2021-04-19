@@ -57,8 +57,8 @@ module Network.Google.Resource.RemoteBuildExecution.Blobs.GetTree
     , bgtCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.blobs.getTree@ method which the
 -- 'BlobsGetTree' request conforms to.
@@ -96,16 +96,16 @@ type BlobsGetTreeResource =
 -- /See:/ 'blobsGetTree' smart constructor.
 data BlobsGetTree =
   BlobsGetTree'
-    { _bgtSizeBytes      :: !(Textual Int64)
-    , _bgtXgafv          :: !(Maybe Xgafv)
-    , _bgtHash           :: !Text
+    { _bgtSizeBytes :: !(Textual Int64)
+    , _bgtXgafv :: !(Maybe Xgafv)
+    , _bgtHash :: !Text
     , _bgtUploadProtocol :: !(Maybe Text)
-    , _bgtAccessToken    :: !(Maybe Text)
-    , _bgtUploadType     :: !(Maybe Text)
-    , _bgtPageToken      :: !(Maybe Text)
-    , _bgtPageSize       :: !(Maybe (Textual Int32))
-    , _bgtInstanceName   :: !Text
-    , _bgtCallback       :: !(Maybe Text)
+    , _bgtAccessToken :: !(Maybe Text)
+    , _bgtUploadType :: !(Maybe Text)
+    , _bgtPageToken :: !(Maybe Text)
+    , _bgtPageSize :: !(Maybe (Textual Int32))
+    , _bgtInstanceName :: !Text
+    , _bgtCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

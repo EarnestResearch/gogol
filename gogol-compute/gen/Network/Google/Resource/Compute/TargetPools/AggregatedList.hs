@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.TargetPools.AggregatedList
     , tpalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetPools.aggregatedList@ method which the
 -- 'TargetPoolsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type TargetPoolsAggregatedListResource =
 -- /See:/ 'targetPoolsAggregatedList' smart constructor.
 data TargetPoolsAggregatedList =
   TargetPoolsAggregatedList'
-    { _tpalOrderBy    :: !(Maybe Text)
-    , _tpalProject    :: !Text
-    , _tpalFilter     :: !(Maybe Text)
-    , _tpalPageToken  :: !(Maybe Text)
+    { _tpalOrderBy :: !(Maybe Text)
+    , _tpalProject :: !Text
+    , _tpalFilter :: !(Maybe Text)
+    , _tpalPageToken :: !(Maybe Text)
     , _tpalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

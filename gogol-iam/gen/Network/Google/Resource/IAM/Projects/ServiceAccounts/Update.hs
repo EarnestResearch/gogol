@@ -45,8 +45,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Update
     , proCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.update@ method which the
 -- 'ProjectsServiceAccountsUpdate' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsServiceAccountsUpdateResource =
 -- /See:/ 'projectsServiceAccountsUpdate' smart constructor.
 data ProjectsServiceAccountsUpdate =
   ProjectsServiceAccountsUpdate'
-    { _proXgafv          :: !(Maybe Xgafv)
+    { _proXgafv :: !(Maybe Xgafv)
     , _proUploadProtocol :: !(Maybe Text)
-    , _proAccessToken    :: !(Maybe Text)
-    , _proUploadType     :: !(Maybe Text)
-    , _proPayload        :: !ServiceAccount
-    , _proName           :: !Text
-    , _proCallback       :: !(Maybe Text)
+    , _proAccessToken :: !(Maybe Text)
+    , _proUploadType :: !(Maybe Text)
+    , _proPayload :: !ServiceAccount
+    , _proName :: !Text
+    , _proCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

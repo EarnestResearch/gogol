@@ -17,8 +17,8 @@
 --
 module Network.Google.VideoIntelligence.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.VideoIntelligence.Types.Sum
+import Network.Google.Prelude
+import Network.Google.VideoIntelligence.Types.Sum
 
 --
 -- /See:/ 'googleRpc_StatusDetailsItem' smart constructor.
@@ -113,7 +113,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative =
   GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative'
     { _gcvvsraConfidence :: !(Maybe (Textual Double))
-    , _gcvvsraWords      :: !(Maybe [GoogleCloudVideointelligenceV1_WordInfo])
+    , _gcvvsraWords :: !(Maybe [GoogleCloudVideointelligenceV1_WordInfo])
     , _gcvvsraTranscript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -246,10 +246,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1_WordInfo' smart constructor.
 data GoogleCloudVideointelligenceV1_WordInfo =
   GoogleCloudVideointelligenceV1_WordInfo'
-    { _gcvvwiStartTime  :: !(Maybe GDuration)
+    { _gcvvwiStartTime :: !(Maybe GDuration)
     , _gcvvwiConfidence :: !(Maybe (Textual Double))
-    , _gcvvwiEndTime    :: !(Maybe GDuration)
-    , _gcvvwiWord       :: !(Maybe Text)
+    , _gcvvwiEndTime :: !(Maybe GDuration)
+    , _gcvvwiWord :: !(Maybe Text)
     , _gcvvwiSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -357,7 +357,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p1beta1_ExplicitContentFrame' smart constructor.
 data GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame =
   GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame'
-    { _gcvvecfTimeOffSet            :: !(Maybe GDuration)
+    { _gcvvecfTimeOffSet :: !(Maybe GDuration)
     , _gcvvecfPornographyLikelihood :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFramePornographyLikelihood)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -420,8 +420,8 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1beta2_Entity =
   GoogleCloudVideointelligenceV1beta2_Entity'
     { _gcvveLanguageCode :: !(Maybe Text)
-    , _gcvveEntityId     :: !(Maybe Text)
-    , _gcvveDescription  :: !(Maybe Text)
+    , _gcvveEntityId :: !(Maybe Text)
+    , _gcvveDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -493,7 +493,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_TextAnnotation' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_TextAnnotation =
   GoogleCloudVideointelligenceV1p2beta1_TextAnnotation'
-    { _gcvvtaText     :: !(Maybe Text)
+    { _gcvvtaText :: !(Maybe Text)
     , _gcvvtaSegments :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_TextSegment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -552,7 +552,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_VideoSegment =
   GoogleCloudVideointelligenceV1p2beta1_VideoSegment'
     { _gcvvvsStartTimeOffSet :: !(Maybe GDuration)
-    , _gcvvvsEndTimeOffSet   :: !(Maybe GDuration)
+    , _gcvvvsEndTimeOffSet :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -614,10 +614,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1_VideoAnnotationProgress' smart constructor.
 data GoogleCloudVideointelligenceV1_VideoAnnotationProgress =
   GoogleCloudVideointelligenceV1_VideoAnnotationProgress'
-    { _gcvvvapStartTime       :: !(Maybe DateTime')
-    , _gcvvvapInputURI        :: !(Maybe Text)
+    { _gcvvvapStartTime :: !(Maybe DateTime')
+    , _gcvvvapInputURI :: !(Maybe Text)
     , _gcvvvapProgressPercent :: !(Maybe (Textual Int32))
-    , _gcvvvapUpdateTime      :: !(Maybe DateTime')
+    , _gcvvvapUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -930,7 +930,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame =
   GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame'
-    { _gcvvotfTimeOffSet            :: !(Maybe GDuration)
+    { _gcvvotfTimeOffSet :: !(Maybe GDuration)
     , _gcvvotfNormalizedBoundingBox :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -992,9 +992,9 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1_LabelAnnotation =
   GoogleCloudVideointelligenceV1_LabelAnnotation'
     { _gcvvlaCategoryEntities :: !(Maybe [GoogleCloudVideointelligenceV1_Entity])
-    , _gcvvlaFrames           :: !(Maybe [GoogleCloudVideointelligenceV1_LabelFrame])
-    , _gcvvlaSegments         :: !(Maybe [GoogleCloudVideointelligenceV1_LabelSegment])
-    , _gcvvlaEntity           :: !(Maybe GoogleCloudVideointelligenceV1_Entity)
+    , _gcvvlaFrames :: !(Maybe [GoogleCloudVideointelligenceV1_LabelFrame])
+    , _gcvvlaSegments :: !(Maybe [GoogleCloudVideointelligenceV1_LabelSegment])
+    , _gcvvlaEntity :: !(Maybe GoogleCloudVideointelligenceV1_Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1083,7 +1083,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative =
   GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative'
     { _gConfidence :: !(Maybe (Textual Double))
-    , _gWords      :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_WordInfo])
+    , _gWords :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_WordInfo])
     , _gTranscript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1158,10 +1158,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_WordInfo' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_WordInfo =
   GoogleCloudVideointelligenceV1p2beta1_WordInfo'
-    { _gooStartTime  :: !(Maybe GDuration)
+    { _gooStartTime :: !(Maybe GDuration)
     , _gooConfidence :: !(Maybe (Textual Double))
-    , _gooEndTime    :: !(Maybe GDuration)
-    , _gooWord       :: !(Maybe Text)
+    , _gooEndTime :: !(Maybe GDuration)
+    , _gooWord :: !(Maybe Text)
     , _gooSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1428,8 +1428,8 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p1beta1_Entity =
   GoogleCloudVideointelligenceV1p1beta1_Entity'
     { _gLanguageCode :: !(Maybe Text)
-    , _gEntityId     :: !(Maybe Text)
-    , _gDescription  :: !(Maybe Text)
+    , _gEntityId :: !(Maybe Text)
+    , _gDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1596,14 +1596,14 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1_VideoAnnotationResults' smart constructor.
 data GoogleCloudVideointelligenceV1_VideoAnnotationResults =
   GoogleCloudVideointelligenceV1_VideoAnnotationResults'
-    { _gcvvvarShotAnnotations         :: !(Maybe [GoogleCloudVideointelligenceV1_VideoSegment])
-    , _gcvvvarShotLabelAnnotations    :: !(Maybe [GoogleCloudVideointelligenceV1_LabelAnnotation])
-    , _gcvvvarInputURI                :: !(Maybe Text)
-    , _gcvvvarError                   :: !(Maybe GoogleRpc_Status)
-    , _gcvvvarFrameLabelAnnotations   :: !(Maybe [GoogleCloudVideointelligenceV1_LabelAnnotation])
-    , _gcvvvarSpeechTranscriptions    :: !(Maybe [GoogleCloudVideointelligenceV1_SpeechTranscription])
+    { _gcvvvarShotAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1_VideoSegment])
+    , _gcvvvarShotLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1_LabelAnnotation])
+    , _gcvvvarInputURI :: !(Maybe Text)
+    , _gcvvvarError :: !(Maybe GoogleRpc_Status)
+    , _gcvvvarFrameLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1_LabelAnnotation])
+    , _gcvvvarSpeechTranscriptions :: !(Maybe [GoogleCloudVideointelligenceV1_SpeechTranscription])
     , _gcvvvarSegmentLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1_LabelAnnotation])
-    , _gcvvvarExplicitAnnotation      :: !(Maybe GoogleCloudVideointelligenceV1_ExplicitContentAnnotation)
+    , _gcvvvarExplicitAnnotation :: !(Maybe GoogleCloudVideointelligenceV1_ExplicitContentAnnotation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1748,11 +1748,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation =
   GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation'
-    { _gcvvotaFrames     :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame])
+    { _gcvvotaFrames :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame])
     , _gcvvotaConfidence :: !(Maybe (Textual Double))
-    , _gcvvotaTrackId    :: !(Maybe (Textual Int64))
-    , _gcvvotaSegment    :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
-    , _gcvvotaEntity     :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_Entity)
+    , _gcvvotaTrackId :: !(Maybe (Textual Int64))
+    , _gcvvotaSegment :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
+    , _gcvvotaEntity :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1954,7 +1954,7 @@ instance ToJSON GoogleLongrunning_OperationMetadata
 data GoogleCloudVideointelligenceV1p1beta1_LabelSegment =
   GoogleCloudVideointelligenceV1p1beta1_LabelSegment'
     { _gcvvlsConfidence :: !(Maybe (Textual Double))
-    , _gcvvlsSegment    :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_VideoSegment)
+    , _gcvvlsSegment :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_VideoSegment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2069,10 +2069,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress =
   GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress'
-    { _gStartTime       :: !(Maybe DateTime')
-    , _gInputURI        :: !(Maybe Text)
+    { _gStartTime :: !(Maybe DateTime')
+    , _gInputURI :: !(Maybe Text)
     , _gProgressPercent :: !(Maybe (Textual Int32))
-    , _gUpdateTime      :: !(Maybe DateTime')
+    , _gUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2156,8 +2156,8 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_Entity =
   GoogleCloudVideointelligenceV1p2beta1_Entity'
     { _gooLanguageCode :: !(Maybe Text)
-    , _gooEntityId     :: !(Maybe Text)
-    , _gooDescription  :: !(Maybe Text)
+    , _gooEntityId :: !(Maybe Text)
+    , _gooDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2228,10 +2228,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p1beta1_WordInfo' smart constructor.
 data GoogleCloudVideointelligenceV1p1beta1_WordInfo =
   GoogleCloudVideointelligenceV1p1beta1_WordInfo'
-    { _gcvvwicStartTime  :: !(Maybe GDuration)
+    { _gcvvwicStartTime :: !(Maybe GDuration)
     , _gcvvwicConfidence :: !(Maybe (Textual Double))
-    , _gcvvwicEndTime    :: !(Maybe GDuration)
-    , _gcvvwicWord       :: !(Maybe Text)
+    , _gcvvwicEndTime :: !(Maybe GDuration)
+    , _gcvvwicWord :: !(Maybe Text)
     , _gcvvwicSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2342,10 +2342,10 @@ instance ToJSON
 -- /See:/ 'googleLongrunning_Operation' smart constructor.
 data GoogleLongrunning_Operation =
   GoogleLongrunning_Operation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe GoogleRpc_Status)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe GoogleRpc_Status)
     , _gloResponse :: !(Maybe GoogleLongrunning_OperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunning_OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2438,7 +2438,7 @@ instance ToJSON GoogleLongrunning_Operation where
 data GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative =
   GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative'
     { _gcvvsracConfidence :: !(Maybe (Textual Double))
-    , _gcvvsracWords      :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_WordInfo])
+    , _gcvvsracWords :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_WordInfo])
     , _gcvvsracTranscript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2518,7 +2518,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1_ExplicitContentFrame' smart constructor.
 data GoogleCloudVideointelligenceV1_ExplicitContentFrame =
   GoogleCloudVideointelligenceV1_ExplicitContentFrame'
-    { _gTimeOffSet            :: !(Maybe GDuration)
+    { _gTimeOffSet :: !(Maybe GDuration)
     , _gPornographyLikelihood :: !(Maybe GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2580,7 +2580,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1beta2_VideoSegment =
   GoogleCloudVideointelligenceV1beta2_VideoSegment'
     { _gStartTimeOffSet :: !(Maybe GDuration)
-    , _gEndTimeOffSet   :: !(Maybe GDuration)
+    , _gEndTimeOffSet :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2641,16 +2641,16 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_VideoAnnotationResults' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults =
   GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults'
-    { _gcvvvarsShotAnnotations         :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_VideoSegment])
-    , _gcvvvarsShotLabelAnnotations    :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation])
-    , _gcvvvarsInputURI                :: !(Maybe Text)
-    , _gcvvvarsError                   :: !(Maybe GoogleRpc_Status)
-    , _gcvvvarsObjectAnnotations       :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation])
-    , _gcvvvarsFrameLabelAnnotations   :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation])
-    , _gcvvvarsSpeechTranscriptions    :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription])
-    , _gcvvvarsTextAnnotations         :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_TextAnnotation])
+    { _gcvvvarsShotAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_VideoSegment])
+    , _gcvvvarsShotLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation])
+    , _gcvvvarsInputURI :: !(Maybe Text)
+    , _gcvvvarsError :: !(Maybe GoogleRpc_Status)
+    , _gcvvvarsObjectAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation])
+    , _gcvvvarsFrameLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation])
+    , _gcvvvarsSpeechTranscriptions :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription])
+    , _gcvvvarsTextAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_TextAnnotation])
     , _gcvvvarsSegmentLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation])
-    , _gcvvvarsExplicitAnnotation      :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation)
+    , _gcvvvarsExplicitAnnotation :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2825,7 +2825,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1beta2_LabelSegment =
   GoogleCloudVideointelligenceV1beta2_LabelSegment'
     { _gcvvlscConfidence :: !(Maybe (Textual Double))
-    , _gcvvlscSegment    :: !(Maybe GoogleCloudVideointelligenceV1beta2_VideoSegment)
+    , _gcvvlscSegment :: !(Maybe GoogleCloudVideointelligenceV1beta2_VideoSegment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2939,10 +2939,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1beta2_WordInfo' smart constructor.
 data GoogleCloudVideointelligenceV1beta2_WordInfo =
   GoogleCloudVideointelligenceV1beta2_WordInfo'
-    { _goooStartTime  :: !(Maybe GDuration)
+    { _goooStartTime :: !(Maybe GDuration)
     , _goooConfidence :: !(Maybe (Textual Double))
-    , _goooEndTime    :: !(Maybe GDuration)
-    , _goooWord       :: !(Maybe Text)
+    , _goooEndTime :: !(Maybe GDuration)
+    , _goooWord :: !(Maybe Text)
     , _goooSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3207,9 +3207,9 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation =
   GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation'
     { _gcvvlacCategoryEntities :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_Entity])
-    , _gcvvlacFrames           :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelFrame])
-    , _gcvvlacSegments         :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelSegment])
-    , _gcvvlacEntity           :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_Entity)
+    , _gcvvlacFrames :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelFrame])
+    , _gcvvlacSegments :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_LabelSegment])
+    , _gcvvlacEntity :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3302,7 +3302,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative =
   GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative'
     { _gcvvsra1Confidence :: !(Maybe (Textual Double))
-    , _gcvvsra1Words      :: !(Maybe [GoogleCloudVideointelligenceV1beta2_WordInfo])
+    , _gcvvsra1Words :: !(Maybe [GoogleCloudVideointelligenceV1beta2_WordInfo])
     , _gcvvsra1Transcript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3383,7 +3383,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p1beta1_VideoSegment =
   GoogleCloudVideointelligenceV1p1beta1_VideoSegment'
     { _gooStartTimeOffSet :: !(Maybe GDuration)
-    , _gooEndTimeOffSet   :: !(Maybe GDuration)
+    , _gooEndTimeOffSet :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3446,9 +3446,9 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation =
   GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation'
     { _ggCategoryEntities :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_Entity])
-    , _ggFrames           :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelFrame])
-    , _ggSegments         :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelSegment])
-    , _ggEntity           :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_Entity)
+    , _ggFrames :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelFrame])
+    , _ggSegments :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelSegment])
+    , _ggEntity :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3594,12 +3594,12 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest =
   GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest'
-    { _gcvvavrInputURI     :: !(Maybe Text)
+    { _gcvvavrInputURI :: !(Maybe Text)
     , _gcvvavrVideoContext :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoContext)
     , _gcvvavrInputContent :: !(Maybe Bytes)
-    , _gcvvavrFeatures     :: !(Maybe [Text])
-    , _gcvvavrLocationId   :: !(Maybe Text)
-    , _gcvvavrOutputURI    :: !(Maybe Text)
+    , _gcvvavrFeatures :: !(Maybe [Text])
+    , _gcvvavrLocationId :: !(Maybe Text)
+    , _gcvvavrOutputURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3724,7 +3724,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_ExplicitContentFrame' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame =
   GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame'
-    { _gooTimeOffSet            :: !(Maybe GDuration)
+    { _gooTimeOffSet :: !(Maybe GDuration)
     , _gooPornographyLikelihood :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFramePornographyLikelihood)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3787,8 +3787,8 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1_Entity =
   GoogleCloudVideointelligenceV1_Entity'
     { _gcvvecLanguageCode :: !(Maybe Text)
-    , _gcvvecEntityId     :: !(Maybe Text)
-    , _gcvvecDescription  :: !(Maybe Text)
+    , _gcvvecEntityId :: !(Maybe Text)
+    , _gcvvecDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3855,10 +3855,10 @@ instance ToJSON GoogleCloudVideointelligenceV1_Entity
 -- /See:/ 'googleCloudVideointelligenceV1beta2_VideoAnnotationProgress' smart constructor.
 data GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress =
   GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress'
-    { _gcvvvapsStartTime       :: !(Maybe DateTime')
-    , _gcvvvapsInputURI        :: !(Maybe Text)
+    { _gcvvvapsStartTime :: !(Maybe DateTime')
+    , _gcvvvapsInputURI :: !(Maybe Text)
     , _gcvvvapsProgressPercent :: !(Maybe (Textual Int32))
-    , _gcvvvapsUpdateTime      :: !(Maybe DateTime')
+    , _gcvvvapsUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4066,14 +4066,14 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p1beta1_VideoAnnotationResults' smart constructor.
 data GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationResults =
   GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationResults'
-    { _gooShotAnnotations         :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_VideoSegment])
-    , _gooShotLabelAnnotations    :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation])
-    , _gooInputURI                :: !(Maybe Text)
-    , _gooError                   :: !(Maybe GoogleRpc_Status)
-    , _gooFrameLabelAnnotations   :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation])
-    , _gooSpeechTranscriptions    :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription])
+    { _gooShotAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_VideoSegment])
+    , _gooShotLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation])
+    , _gooInputURI :: !(Maybe Text)
+    , _gooError :: !(Maybe GoogleRpc_Status)
+    , _gooFrameLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation])
+    , _gooSpeechTranscriptions :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription])
     , _gooSegmentLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation])
-    , _gooExplicitAnnotation      :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation)
+    , _gooExplicitAnnotation :: !(Maybe GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4317,10 +4317,10 @@ instance ToJSON GoogleLongrunning_OperationResponse
 -- /See:/ 'googleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress' smart constructor.
 data GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress =
   GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress'
-    { _gcvvvapcStartTime       :: !(Maybe DateTime')
-    , _gcvvvapcInputURI        :: !(Maybe Text)
+    { _gcvvvapcStartTime :: !(Maybe DateTime')
+    , _gcvvvapcInputURI :: !(Maybe Text)
     , _gcvvvapcProgressPercent :: !(Maybe (Textual Int32))
-    , _gcvvvapcUpdateTime      :: !(Maybe DateTime')
+    , _gcvvvapcUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4409,7 +4409,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_TextFrame =
   GoogleCloudVideointelligenceV1p2beta1_TextFrame'
     { _gcvvtfRotatedBoundingBox :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly)
-    , _gcvvtfTimeOffSet         :: !(Maybe GDuration)
+    , _gcvvtfTimeOffSet :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4469,9 +4469,9 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1beta2_LabelAnnotation =
   GoogleCloudVideointelligenceV1beta2_LabelAnnotation'
     { _goooCategoryEntities :: !(Maybe [GoogleCloudVideointelligenceV1beta2_Entity])
-    , _goooFrames           :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelFrame])
-    , _goooSegments         :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelSegment])
-    , _goooEntity           :: !(Maybe GoogleCloudVideointelligenceV1beta2_Entity)
+    , _goooFrames :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelFrame])
+    , _goooSegments :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelSegment])
+    , _goooEntity :: !(Maybe GoogleCloudVideointelligenceV1beta2_Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4626,14 +4626,14 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1beta2_VideoAnnotationResults' smart constructor.
 data GoogleCloudVideointelligenceV1beta2_VideoAnnotationResults =
   GoogleCloudVideointelligenceV1beta2_VideoAnnotationResults'
-    { _gcvvvarcShotAnnotations         :: !(Maybe [GoogleCloudVideointelligenceV1beta2_VideoSegment])
-    , _gcvvvarcShotLabelAnnotations    :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelAnnotation])
-    , _gcvvvarcInputURI                :: !(Maybe Text)
-    , _gcvvvarcError                   :: !(Maybe GoogleRpc_Status)
-    , _gcvvvarcFrameLabelAnnotations   :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelAnnotation])
-    , _gcvvvarcSpeechTranscriptions    :: !(Maybe [GoogleCloudVideointelligenceV1beta2_SpeechTranscription])
+    { _gcvvvarcShotAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1beta2_VideoSegment])
+    , _gcvvvarcShotLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelAnnotation])
+    , _gcvvvarcInputURI :: !(Maybe Text)
+    , _gcvvvarcError :: !(Maybe GoogleRpc_Status)
+    , _gcvvvarcFrameLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelAnnotation])
+    , _gcvvvarcSpeechTranscriptions :: !(Maybe [GoogleCloudVideointelligenceV1beta2_SpeechTranscription])
     , _gcvvvarcSegmentLabelAnnotations :: !(Maybe [GoogleCloudVideointelligenceV1beta2_LabelAnnotation])
-    , _gcvvvarcExplicitAnnotation      :: !(Maybe GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation)
+    , _gcvvvarcExplicitAnnotation :: !(Maybe GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4780,7 +4780,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_LabelSegment =
   GoogleCloudVideointelligenceV1p2beta1_LabelSegment'
     { _gcvvls1Confidence :: !(Maybe (Textual Double))
-    , _gcvvls1Segment    :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
+    , _gcvvls1Segment :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4837,12 +4837,12 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_VideoContext' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_VideoContext =
   GoogleCloudVideointelligenceV1p2beta1_VideoContext'
-    { _gcvvvcSpeechTranscriptionConfig      :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_SpeechTranscriptionConfig)
+    { _gcvvvcSpeechTranscriptionConfig :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_SpeechTranscriptionConfig)
     , _gcvvvcExplicitContentDetectionConfig :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ExplicitContentDetectionConfig)
-    , _gcvvvcLabelDetectionConfig           :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_LabelDetectionConfig)
-    , _gcvvvcSegments                       :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_VideoSegment])
-    , _gcvvvcTextDetectionConfig            :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_TextDetectionConfig)
-    , _gcvvvcShotChangeDetectionConfig      :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ShotChangeDetectionConfig)
+    , _gcvvvcLabelDetectionConfig :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_LabelDetectionConfig)
+    , _gcvvvcSegments :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_VideoSegment])
+    , _gcvvvcTextDetectionConfig :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_TextDetectionConfig)
+    , _gcvvvcShotChangeDetectionConfig :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_ShotChangeDetectionConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4958,9 +4958,9 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox =
   GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox'
     { _gcvvnbbBottom :: !(Maybe (Textual Double))
-    , _gcvvnbbLeft   :: !(Maybe (Textual Double))
-    , _gcvvnbbRight  :: !(Maybe (Textual Double))
-    , _gcvvnbbTop    :: !(Maybe (Textual Double))
+    , _gcvvnbbLeft :: !(Maybe (Textual Double))
+    , _gcvvnbbRight :: !(Maybe (Textual Double))
+    , _gcvvnbbTop :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5042,9 +5042,9 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_TextSegment' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_TextSegment =
   GoogleCloudVideointelligenceV1p2beta1_TextSegment'
-    { _gcvvtsFrames     :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_TextFrame])
+    { _gcvvtsFrames :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_TextFrame])
     , _gcvvtsConfidence :: !(Maybe (Textual Double))
-    , _gcvvtsSegment    :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
+    , _gcvvtsSegment :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_VideoSegment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5219,7 +5219,7 @@ instance ToJSON
 data GoogleRpc_Status =
   GoogleRpc_Status'
     { _grsDetails :: !(Maybe [GoogleRpc_StatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5284,8 +5284,8 @@ instance ToJSON GoogleRpc_Status where
 data GoogleCloudVideointelligenceV1p2beta1_LabelDetectionConfig =
   GoogleCloudVideointelligenceV1p2beta1_LabelDetectionConfig'
     { _gcvvldcLabelDetectionMode :: !(Maybe GoogleCloudVideointelligenceV1p2beta1_LabelDetectionConfigLabelDetectionMode)
-    , _gcvvldcStationaryCamera   :: !(Maybe Bool)
-    , _gcvvldcModel              :: !(Maybe Text)
+    , _gcvvldcStationaryCamera :: !(Maybe Bool)
+    , _gcvvldcModel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5362,7 +5362,7 @@ instance ToJSON
 data GoogleCloudVideointelligenceV1_VideoSegment =
   GoogleCloudVideointelligenceV1_VideoSegment'
     { _gcvvvscStartTimeOffSet :: !(Maybe GDuration)
-    , _gcvvvscEndTimeOffSet   :: !(Maybe GDuration)
+    , _gcvvvscEndTimeOffSet :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5572,7 +5572,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1beta2_ExplicitContentFrame' smart constructor.
 data GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame =
   GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame'
-    { _gcvvecfcTimeOffSet            :: !(Maybe GDuration)
+    { _gcvvecfcTimeOffSet :: !(Maybe GDuration)
     , _gcvvecfcPornographyLikelihood :: !(Maybe GoogleCloudVideointelligenceV1beta2_ExplicitContentFramePornographyLikelihood)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5634,15 +5634,15 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1p2beta1_SpeechTranscriptionConfig' smart constructor.
 data GoogleCloudVideointelligenceV1p2beta1_SpeechTranscriptionConfig =
   GoogleCloudVideointelligenceV1p2beta1_SpeechTranscriptionConfig'
-    { _gcvvstccSpeechContexts             :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_SpeechContext])
-    , _gcvvstccLanguageCode               :: !(Maybe Text)
-    , _gcvvstccAudioTracks                :: !(Maybe [Textual Int32])
+    { _gcvvstccSpeechContexts :: !(Maybe [GoogleCloudVideointelligenceV1p2beta1_SpeechContext])
+    , _gcvvstccLanguageCode :: !(Maybe Text)
+    , _gcvvstccAudioTracks :: !(Maybe [Textual Int32])
     , _gcvvstccEnableAutomaticPunctuation :: !(Maybe Bool)
-    , _gcvvstccMaxAlternatives            :: !(Maybe (Textual Int32))
-    , _gcvvstccEnableSpeakerDiarization   :: !(Maybe Bool)
-    , _gcvvstccFilterProfanity            :: !(Maybe Bool)
-    , _gcvvstccDiarizationSpeakerCount    :: !(Maybe (Textual Int32))
-    , _gcvvstccEnableWordConfidence       :: !(Maybe Bool)
+    , _gcvvstccMaxAlternatives :: !(Maybe (Textual Int32))
+    , _gcvvstccEnableSpeakerDiarization :: !(Maybe Bool)
+    , _gcvvstccFilterProfanity :: !(Maybe Bool)
+    , _gcvvstccDiarizationSpeakerCount :: !(Maybe (Textual Int32))
+    , _gcvvstccEnableWordConfidence :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5818,8 +5818,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVideointelligenceV1_LabelSegment' smart constructor.
 data GoogleCloudVideointelligenceV1_LabelSegment =
   GoogleCloudVideointelligenceV1_LabelSegment'
-    { _g2Confidence :: !(Maybe (Textual Double))
-    , _g2Segment    :: !(Maybe GoogleCloudVideointelligenceV1_VideoSegment)
+    { _g1Confidence :: !(Maybe (Textual Double))
+    , _g1Segment :: !(Maybe GoogleCloudVideointelligenceV1_VideoSegment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5828,26 +5828,26 @@ data GoogleCloudVideointelligenceV1_LabelSegment =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'g2Confidence'
+-- * 'g1Confidence'
 --
--- * 'g2Segment'
+-- * 'g1Segment'
 googleCloudVideointelligenceV1_LabelSegment
     :: GoogleCloudVideointelligenceV1_LabelSegment
 googleCloudVideointelligenceV1_LabelSegment =
   GoogleCloudVideointelligenceV1_LabelSegment'
-    {_g2Confidence = Nothing, _g2Segment = Nothing}
+    {_g1Confidence = Nothing, _g1Segment = Nothing}
 
 
 -- | Confidence that the label is accurate. Range: [0, 1].
-g2Confidence :: Lens' GoogleCloudVideointelligenceV1_LabelSegment (Maybe Double)
-g2Confidence
-  = lens _g2Confidence (\ s a -> s{_g2Confidence = a})
+g1Confidence :: Lens' GoogleCloudVideointelligenceV1_LabelSegment (Maybe Double)
+g1Confidence
+  = lens _g1Confidence (\ s a -> s{_g1Confidence = a})
       . mapping _Coerce
 
 -- | Video segment where a label was detected.
-g2Segment :: Lens' GoogleCloudVideointelligenceV1_LabelSegment (Maybe GoogleCloudVideointelligenceV1_VideoSegment)
-g2Segment
-  = lens _g2Segment (\ s a -> s{_g2Segment = a})
+g1Segment :: Lens' GoogleCloudVideointelligenceV1_LabelSegment (Maybe GoogleCloudVideointelligenceV1_VideoSegment)
+g1Segment
+  = lens _g1Segment (\ s a -> s{_g1Segment = a})
 
 instance FromJSON
            GoogleCloudVideointelligenceV1_LabelSegment
@@ -5866,5 +5866,5 @@ instance ToJSON
           GoogleCloudVideointelligenceV1_LabelSegment'{..}
           = object
               (catMaybes
-                 [("confidence" .=) <$> _g2Confidence,
-                  ("segment" .=) <$> _g2Segment])
+                 [("confidence" .=) <$> _g1Confidence,
+                  ("segment" .=) <$> _g1Segment])

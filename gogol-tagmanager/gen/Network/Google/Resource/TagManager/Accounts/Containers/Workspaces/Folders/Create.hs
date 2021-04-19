@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Folders
     , acwfcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.folders.create@ method which the
 -- 'AccountsContainersWorkspacesFoldersCreate' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesFoldersCreateResource
 -- /See:/ 'accountsContainersWorkspacesFoldersCreate' smart constructor.
 data AccountsContainersWorkspacesFoldersCreate =
   AccountsContainersWorkspacesFoldersCreate'
-    { _acwfcParent  :: !Text
+    { _acwfcParent :: !Text
     , _acwfcPayload :: !Folder
     }
   deriving (Eq, Show, Data, Typeable, Generic)

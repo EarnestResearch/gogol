@@ -48,8 +48,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.SearchForAlert
     , pjsfaCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.searchForAlert@ method which the
 -- 'ProjectsJobsSearchForAlert' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsJobsSearchForAlertResource =
 -- /See:/ 'projectsJobsSearchForAlert' smart constructor.
 data ProjectsJobsSearchForAlert =
   ProjectsJobsSearchForAlert'
-    { _pjsfaParent         :: !Text
-    , _pjsfaXgafv          :: !(Maybe Xgafv)
+    { _pjsfaParent :: !Text
+    , _pjsfaXgafv :: !(Maybe Xgafv)
     , _pjsfaUploadProtocol :: !(Maybe Text)
-    , _pjsfaAccessToken    :: !(Maybe Text)
-    , _pjsfaUploadType     :: !(Maybe Text)
-    , _pjsfaPayload        :: !SearchJobsRequest
-    , _pjsfaCallback       :: !(Maybe Text)
+    , _pjsfaAccessToken :: !(Maybe Text)
+    , _pjsfaUploadType :: !(Maybe Text)
+    , _pjsfaPayload :: !SearchJobsRequest
+    , _pjsfaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

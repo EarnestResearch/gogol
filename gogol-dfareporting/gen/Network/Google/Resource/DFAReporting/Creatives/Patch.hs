@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Patch
     , cppId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.patch@ method which the
 -- 'CreativesPatch' request conforms to.
@@ -59,8 +59,8 @@ type CreativesPatchResource =
 data CreativesPatch =
   CreativesPatch'
     { _cppProFileId :: !(Textual Int64)
-    , _cppPayload   :: !Creative
-    , _cppId        :: !(Textual Int64)
+    , _cppPayload :: !Creative
+    , _cppId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

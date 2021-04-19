@@ -44,8 +44,8 @@ module Network.Google.Resource.Storage.Buckets.Update
     , buProjection
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.update@ method which the
 -- 'BucketsUpdate' request conforms to.
@@ -73,14 +73,14 @@ type BucketsUpdateResource =
 -- /See:/ 'bucketsUpdate' smart constructor.
 data BucketsUpdate =
   BucketsUpdate'
-    { _buIfMetagenerationMatch      :: !(Maybe (Textual Int64))
-    , _buPredefinedACL              :: !(Maybe BucketsUpdatePredefinedACL)
-    , _buBucket                     :: !Text
-    , _buPayload                    :: !Bucket
+    { _buIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _buPredefinedACL :: !(Maybe BucketsUpdatePredefinedACL)
+    , _buBucket :: !Text
+    , _buPayload :: !Bucket
     , _buPredefinedDefaultObjectACL :: !(Maybe BucketsUpdatePredefinedDefaultObjectACL)
-    , _buUserProject                :: !(Maybe Text)
-    , _buIfMetagenerationNotMatch   :: !(Maybe (Textual Int64))
-    , _buProjection                 :: !(Maybe BucketsUpdateProjection)
+    , _buUserProject :: !(Maybe Text)
+    , _buIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
+    , _buProjection :: !(Maybe BucketsUpdateProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

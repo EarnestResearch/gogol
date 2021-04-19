@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Exports.Get
     , megCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.exports.get@ method which the
 -- 'MattersExportsGet' request conforms to.
@@ -65,13 +65,13 @@ type MattersExportsGetResource =
 -- /See:/ 'mattersExportsGet' smart constructor.
 data MattersExportsGet =
   MattersExportsGet'
-    { _megXgafv          :: !(Maybe Xgafv)
+    { _megXgafv :: !(Maybe Xgafv)
     , _megUploadProtocol :: !(Maybe Text)
-    , _megAccessToken    :: !(Maybe Text)
-    , _megUploadType     :: !(Maybe Text)
-    , _megMatterId       :: !Text
-    , _megExportId       :: !Text
-    , _megCallback       :: !(Maybe Text)
+    , _megAccessToken :: !(Maybe Text)
+    , _megUploadType :: !(Maybe Text)
+    , _megMatterId :: !Text
+    , _megExportId :: !Text
+    , _megCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

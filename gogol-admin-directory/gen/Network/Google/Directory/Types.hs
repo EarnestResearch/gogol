@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1009,9 +1009,9 @@ module Network.Google.Directory.Types
     , ddDomains
     ) where
 
-import           Network.Google.Directory.Types.Product
-import           Network.Google.Directory.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Directory.Types.Product
+import Network.Google.Directory.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'directory_v1' of the Admin Directory API. This contains the host and root path used as a starting point for constructing service requests.
 directoryService :: ServiceConfig

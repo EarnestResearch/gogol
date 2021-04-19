@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.BuiltIn
     , acwbivcType
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.built_in_variables.create@ method which the
 -- 'AccountsContainersWorkspacesBuiltInVariablesCreate' request conforms to.
@@ -60,7 +60,7 @@ type AccountsContainersWorkspacesBuiltInVariablesCreateResource
 data AccountsContainersWorkspacesBuiltInVariablesCreate =
   AccountsContainersWorkspacesBuiltInVariablesCreate'
     { _acwbivcParent :: !Text
-    , _acwbivcType   :: !(Maybe [AccountsContainersWorkspacesBuilt_in_variablesCreateType])
+    , _acwbivcType :: !(Maybe [AccountsContainersWorkspacesBuilt_in_variablesCreateType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.VersionHeaders.Lat
     , acvhlParent
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.version_headers.latest@ method which the
 -- 'AccountsContainersVersionHeadersLatest' request conforms to.

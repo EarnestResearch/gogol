@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.List
     , ttlMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.list@ method which the
 -- 'TargetingTemplatesList' request conforms to.
@@ -77,12 +77,12 @@ data TargetingTemplatesList =
   TargetingTemplatesList'
     { _ttlAdvertiserId :: !(Maybe (Textual Int64))
     , _ttlSearchString :: !(Maybe Text)
-    , _ttlIds          :: !(Maybe [Textual Int64])
-    , _ttlProFileId    :: !(Textual Int64)
-    , _ttlSortOrder    :: !TargetingTemplatesListSortOrder
-    , _ttlPageToken    :: !(Maybe Text)
-    , _ttlSortField    :: !TargetingTemplatesListSortField
-    , _ttlMaxResults   :: !(Textual Int32)
+    , _ttlIds :: !(Maybe [Textual Int64])
+    , _ttlProFileId :: !(Textual Int64)
+    , _ttlSortOrder :: !TargetingTemplatesListSortOrder
+    , _ttlPageToken :: !(Maybe Text)
+    , _ttlSortField :: !TargetingTemplatesListSortField
+    , _ttlMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

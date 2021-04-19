@@ -36,14 +36,14 @@ module Network.Google.Resource.Content.ShippingSettings.Getsupportedcarriers
     , sMerchantId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.getsupportedcarriers@ method which the
 -- 'ShippingSettingsGetsupportedcarriers' request conforms to.
 type ShippingSettingsGetsupportedcarriersResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "supportedCarriers" :>
              QueryParam "alt" AltJSON :>

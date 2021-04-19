@@ -16,7 +16,7 @@
 --
 module Network.Google.AnalyticsReporting.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Is the metric \`EQUAL\`, \`LESS_THAN\` or \`GREATER_THAN\` the
 -- comparisonValue, the default is \`EQUAL\`. If the operator is

@@ -201,25 +201,25 @@ module Network.Google.AppsReseller
     , stiMinimumTransferableSeats
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Reseller.Customers.Get
-import           Network.Google.Resource.Reseller.Customers.Insert
-import           Network.Google.Resource.Reseller.Customers.Patch
-import           Network.Google.Resource.Reseller.Customers.Update
-import           Network.Google.Resource.Reseller.Resellernotify.Getwatchdetails
-import           Network.Google.Resource.Reseller.Resellernotify.Register
-import           Network.Google.Resource.Reseller.Resellernotify.Unregister
-import           Network.Google.Resource.Reseller.Subscriptions.Activate
-import           Network.Google.Resource.Reseller.Subscriptions.ChangePlan
-import           Network.Google.Resource.Reseller.Subscriptions.ChangeRenewalSettings
-import           Network.Google.Resource.Reseller.Subscriptions.ChangeSeats
-import           Network.Google.Resource.Reseller.Subscriptions.Delete
-import           Network.Google.Resource.Reseller.Subscriptions.Get
-import           Network.Google.Resource.Reseller.Subscriptions.Insert
-import           Network.Google.Resource.Reseller.Subscriptions.List
-import           Network.Google.Resource.Reseller.Subscriptions.StartPaidService
-import           Network.Google.Resource.Reseller.Subscriptions.Suspend
+import Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Resource.Reseller.Customers.Get
+import Network.Google.Resource.Reseller.Customers.Insert
+import Network.Google.Resource.Reseller.Customers.Patch
+import Network.Google.Resource.Reseller.Customers.Update
+import Network.Google.Resource.Reseller.Resellernotify.Getwatchdetails
+import Network.Google.Resource.Reseller.Resellernotify.Register
+import Network.Google.Resource.Reseller.Resellernotify.Unregister
+import Network.Google.Resource.Reseller.Subscriptions.Activate
+import Network.Google.Resource.Reseller.Subscriptions.ChangePlan
+import Network.Google.Resource.Reseller.Subscriptions.ChangeRenewalSettings
+import Network.Google.Resource.Reseller.Subscriptions.ChangeSeats
+import Network.Google.Resource.Reseller.Subscriptions.Delete
+import Network.Google.Resource.Reseller.Subscriptions.Get
+import Network.Google.Resource.Reseller.Subscriptions.Insert
+import Network.Google.Resource.Reseller.Subscriptions.List
+import Network.Google.Resource.Reseller.Subscriptions.StartPaidService
+import Network.Google.Resource.Reseller.Subscriptions.Suspend
 
 {- $resources
 TODO

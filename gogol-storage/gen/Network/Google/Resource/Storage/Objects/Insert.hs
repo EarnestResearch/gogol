@@ -47,8 +47,8 @@ module Network.Google.Resource.Storage.Objects.Insert
     , oiProjection
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.insert@ method which the
 -- 'ObjectsInsert' request conforms to.
@@ -106,18 +106,18 @@ type ObjectsInsertResource =
 -- /See:/ 'objectsInsert' smart constructor.
 data ObjectsInsert =
   ObjectsInsert'
-    { _oiIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _oiIfGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _oiIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _oiPredefinedACL            :: !(Maybe ObjectsInsertPredefinedACL)
-    , _oiBucket                   :: !Text
-    , _oiPayload                  :: !Object
-    , _oiUserProject              :: !(Maybe Text)
-    , _oiName                     :: !(Maybe Text)
+    { _oiIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _oiIfGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _oiIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _oiPredefinedACL :: !(Maybe ObjectsInsertPredefinedACL)
+    , _oiBucket :: !Text
+    , _oiPayload :: !Object
+    , _oiUserProject :: !(Maybe Text)
+    , _oiName :: !(Maybe Text)
     , _oiIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _oiContentEncoding          :: !(Maybe Text)
-    , _oiKmsKeyName               :: !(Maybe Text)
-    , _oiProjection               :: !(Maybe ObjectsInsertProjection)
+    , _oiContentEncoding :: !(Maybe Text)
+    , _oiKmsKeyName :: !(Maybe Text)
+    , _oiProjection :: !(Maybe ObjectsInsertProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

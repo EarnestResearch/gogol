@@ -42,8 +42,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.GetIAMPolicy
     , psgiampCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.getIamPolicy@ method which the
 -- 'ProjectsSubscriptionsGetIAMPolicy' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsSubscriptionsGetIAMPolicyResource =
 -- /See:/ 'projectsSubscriptionsGetIAMPolicy' smart constructor.
 data ProjectsSubscriptionsGetIAMPolicy =
   ProjectsSubscriptionsGetIAMPolicy'
-    { _psgiampXgafv          :: !(Maybe Xgafv)
+    { _psgiampXgafv :: !(Maybe Xgafv)
     , _psgiampUploadProtocol :: !(Maybe Text)
-    , _psgiampAccessToken    :: !(Maybe Text)
-    , _psgiampUploadType     :: !(Maybe Text)
-    , _psgiampResource       :: !Text
-    , _psgiampCallback       :: !(Maybe Text)
+    , _psgiampAccessToken :: !(Maybe Text)
+    , _psgiampUploadType :: !(Maybe Text)
+    , _psgiampResource :: !Text
+    , _psgiampCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

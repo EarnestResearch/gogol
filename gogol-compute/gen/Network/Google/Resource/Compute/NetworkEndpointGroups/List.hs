@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.NetworkEndpointGroups.List
     , neglMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.networkEndpointGroups.list@ method which the
 -- 'NetworkEndpointGroupsList' request conforms to.
@@ -68,11 +68,11 @@ type NetworkEndpointGroupsListResource =
 -- /See:/ 'networkEndpointGroupsList' smart constructor.
 data NetworkEndpointGroupsList =
   NetworkEndpointGroupsList'
-    { _neglOrderBy    :: !(Maybe Text)
-    , _neglProject    :: !Text
-    , _neglZone       :: !Text
-    , _neglFilter     :: !(Maybe Text)
-    , _neglPageToken  :: !(Maybe Text)
+    { _neglOrderBy :: !(Maybe Text)
+    , _neglProject :: !Text
+    , _neglZone :: !Text
+    , _neglFilter :: !(Maybe Text)
+    , _neglPageToken :: !(Maybe Text)
     , _neglMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

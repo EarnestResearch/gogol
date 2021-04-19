@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.DirectorySites.Insert
     , dsiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.directorySites.insert@ method which the
 -- 'DirectorySitesInsert' request conforms to.
@@ -58,7 +58,7 @@ type DirectorySitesInsertResource =
 data DirectorySitesInsert =
   DirectorySitesInsert'
     { _dsiProFileId :: !(Textual Int64)
-    , _dsiPayload   :: !DirectorySite
+    , _dsiPayload :: !DirectorySite
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

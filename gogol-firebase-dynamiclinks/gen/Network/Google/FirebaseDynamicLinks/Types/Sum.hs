@@ -16,7 +16,7 @@
 --
 module Network.Google.FirebaseDynamicLinks.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Requested platform.
 data DynamicLinkEventStatPlatform

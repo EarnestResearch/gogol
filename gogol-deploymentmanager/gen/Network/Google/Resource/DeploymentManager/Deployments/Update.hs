@@ -42,8 +42,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.Update
     , duDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.update@ method which the
 -- 'DeploymentsUpdate' request conforms to.
@@ -72,11 +72,11 @@ type DeploymentsUpdateResource =
 data DeploymentsUpdate =
   DeploymentsUpdate'
     { _duCreatePolicy :: !DeploymentsUpdateCreatePolicy
-    , _duProject      :: !Text
-    , _duPayload      :: !Deployment
+    , _duProject :: !Text
+    , _duPayload :: !Deployment
     , _duDeletePolicy :: !DeploymentsUpdateDeletePolicy
-    , _duPreview      :: !Bool
-    , _duDeployment   :: !Text
+    , _duPreview :: !Bool
+    , _duDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

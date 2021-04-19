@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -527,9 +527,9 @@ module Network.Google.SQLAdmin.Types
     , sulAddtional
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types.Product
-import           Network.Google.SQLAdmin.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types.Product
+import Network.Google.SQLAdmin.Types.Sum
 
 -- | Default request referring to version 'v1beta4' of the Cloud SQL Admin API. This contains the host and root path used as a starting point for constructing service requests.
 sQLAdminService :: ServiceConfig

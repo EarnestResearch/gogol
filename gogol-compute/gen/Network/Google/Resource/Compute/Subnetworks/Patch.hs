@@ -43,8 +43,8 @@ module Network.Google.Resource.Compute.Subnetworks.Patch
     , spRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.subnetworks.patch@ method which the
 -- 'SubnetworksPatch' request conforms to.
@@ -69,11 +69,11 @@ type SubnetworksPatchResource =
 -- /See:/ 'subnetworksPatch' smart constructor.
 data SubnetworksPatch =
   SubnetworksPatch'
-    { _spRequestId  :: !(Maybe Text)
-    , _spProject    :: !Text
-    , _spPayload    :: !Subnetwork
+    { _spRequestId :: !(Maybe Text)
+    , _spProject :: !Text
+    , _spPayload :: !Subnetwork
     , _spSubnetwork :: !Text
-    , _spRegion     :: !Text
+    , _spRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

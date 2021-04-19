@@ -38,8 +38,8 @@ module Network.Google.Resource.Blogger.Comments.MarkAsSpam
     , cmasCommentId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.comments.markAsSpam@ method which the
 -- 'CommentsMarkAsSpam' request conforms to.
@@ -60,8 +60,8 @@ type CommentsMarkAsSpamResource =
 -- /See:/ 'commentsMarkAsSpam' smart constructor.
 data CommentsMarkAsSpam =
   CommentsMarkAsSpam'
-    { _cmasBlogId    :: !Text
-    , _cmasPostId    :: !Text
+    { _cmasBlogId :: !Text
+    , _cmasPostId :: !Text
     , _cmasCommentId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

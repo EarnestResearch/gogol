@@ -44,8 +44,8 @@ module Network.Google.Resource.Drive.Files.Update
     , fuSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.update@ method which the
 -- 'FilesUpdate' request conforms to.
@@ -86,15 +86,15 @@ type FilesUpdateResource =
 -- /See:/ 'filesUpdate' smart constructor.
 data FilesUpdate =
   FilesUpdate'
-    { _fuPayload                   :: !File
-    , _fuRemoveParents             :: !(Maybe Text)
+    { _fuPayload :: !File
+    , _fuRemoveParents :: !(Maybe Text)
     , _fuUseContentAsIndexableText :: !Bool
-    , _fuOCRLanguage               :: !(Maybe Text)
-    , _fuKeepRevisionForever       :: !Bool
-    , _fuSupportsAllDrives         :: !Bool
-    , _fuFileId                    :: !Text
-    , _fuAddParents                :: !(Maybe Text)
-    , _fuSupportsTeamDrives        :: !Bool
+    , _fuOCRLanguage :: !(Maybe Text)
+    , _fuKeepRevisionForever :: !Bool
+    , _fuSupportsAllDrives :: !Bool
+    , _fuFileId :: !Text
+    , _fuAddParents :: !(Maybe Text)
+    , _fuSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

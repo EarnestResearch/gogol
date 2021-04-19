@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.MobileDevices.Action
     , mdaCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.mobiledevices.action@ method which the
 -- 'MobileDevicesAction' request conforms to.
@@ -62,7 +62,7 @@ type MobileDevicesActionResource =
 data MobileDevicesAction =
   MobileDevicesAction'
     { _mdaResourceId :: !Text
-    , _mdaPayload    :: !MobileDeviceAction
+    , _mdaPayload :: !MobileDeviceAction
     , _mdaCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

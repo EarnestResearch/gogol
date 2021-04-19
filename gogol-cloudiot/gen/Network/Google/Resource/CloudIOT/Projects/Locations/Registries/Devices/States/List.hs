@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Devices.St
     , plrdslCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.devices.states.list@ method which the
 -- 'ProjectsLocationsRegistriesDevicesStatesList' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsLocationsRegistriesDevicesStatesListResource
 -- /See:/ 'projectsLocationsRegistriesDevicesStatesList' smart constructor.
 data ProjectsLocationsRegistriesDevicesStatesList =
   ProjectsLocationsRegistriesDevicesStatesList'
-    { _plrdslXgafv          :: !(Maybe Xgafv)
+    { _plrdslXgafv :: !(Maybe Xgafv)
     , _plrdslUploadProtocol :: !(Maybe Text)
-    , _plrdslAccessToken    :: !(Maybe Text)
-    , _plrdslUploadType     :: !(Maybe Text)
-    , _plrdslName           :: !Text
-    , _plrdslNumStates      :: !(Maybe (Textual Int32))
-    , _plrdslCallback       :: !(Maybe Text)
+    , _plrdslAccessToken :: !(Maybe Text)
+    , _plrdslUploadType :: !(Maybe Text)
+    , _plrdslName :: !Text
+    , _plrdslNumStates :: !(Maybe (Textual Int32))
+    , _plrdslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,32 +36,35 @@ module Network.Google.Resource.Content.Pos.Sale
     , psMerchantId
     , psTargetMerchantId
     , psPayload
+    , psDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.sale@ method which the
 -- 'PosSale'' request conforms to.
 type PosSaleResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "pos" :>
              Capture "targetMerchantId" (Textual Word64) :>
                "sale" :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] PosSaleRequest :>
-                     Post '[JSON] PosSaleResponse
+                 QueryParam "dryRun" Bool :>
+                   QueryParam "alt" AltJSON :>
+                     ReqBody '[JSON] PosSaleRequest :>
+                       Post '[JSON] PosSaleResponse
 
 -- | Submit a sale event for the given merchant.
 --
 -- /See:/ 'posSale'' smart constructor.
 data PosSale' =
   PosSale''
-    { _psMerchantId       :: !(Textual Word64)
+    { _psMerchantId :: !(Textual Word64)
     , _psTargetMerchantId :: !(Textual Word64)
-    , _psPayload          :: !PosSaleRequest
+    , _psPayload :: !PosSaleRequest
+    , _psDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -75,6 +78,8 @@ data PosSale' =
 -- * 'psTargetMerchantId'
 --
 -- * 'psPayload'
+--
+-- * 'psDryRun'
 posSale'
     :: Word64 -- ^ 'psMerchantId'
     -> Word64 -- ^ 'psTargetMerchantId'
@@ -85,6 +90,7 @@ posSale' pPsMerchantId_ pPsTargetMerchantId_ pPsPayload_ =
     { _psMerchantId = _Coerce # pPsMerchantId_
     , _psTargetMerchantId = _Coerce # pPsTargetMerchantId_
     , _psPayload = pPsPayload_
+    , _psDryRun = Nothing
     }
 
 
@@ -106,12 +112,19 @@ psPayload :: Lens' PosSale' PosSaleRequest
 psPayload
   = lens _psPayload (\ s a -> s{_psPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+psDryRun :: Lens' PosSale' (Maybe Bool)
+psDryRun = lens _psDryRun (\ s a -> s{_psDryRun = a})
+
 instance GoogleRequest PosSale' where
         type Rs PosSale' = PosSaleResponse
         type Scopes PosSale' =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosSale''{..}
-          = go _psMerchantId _psTargetMerchantId (Just AltJSON)
+          = go _psMerchantId _psTargetMerchantId _psDryRun
+              (Just AltJSON)
               _psPayload
               shoppingContentService
           where go

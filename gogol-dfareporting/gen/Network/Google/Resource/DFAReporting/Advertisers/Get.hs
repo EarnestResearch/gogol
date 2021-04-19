@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.Get
     , advId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.get@ method which the
 -- 'AdvertisersGet' request conforms to.
@@ -57,7 +57,7 @@ type AdvertisersGetResource =
 data AdvertisersGet =
   AdvertisersGet'
     { _advProFileId :: !(Textual Int64)
-    , _advId        :: !(Textual Int64)
+    , _advId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

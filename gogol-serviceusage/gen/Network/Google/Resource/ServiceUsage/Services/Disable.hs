@@ -47,8 +47,8 @@ module Network.Google.Resource.ServiceUsage.Services.Disable
     , sdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.ServiceUsage.Types
 
 -- | A resource alias for @serviceusage.services.disable@ method which the
 -- 'ServicesDisable' request conforms to.
@@ -74,13 +74,13 @@ type ServicesDisableResource =
 -- /See:/ 'servicesDisable' smart constructor.
 data ServicesDisable =
   ServicesDisable'
-    { _sdXgafv          :: !(Maybe Xgafv)
+    { _sdXgafv :: !(Maybe Xgafv)
     , _sdUploadProtocol :: !(Maybe Text)
-    , _sdAccessToken    :: !(Maybe Text)
-    , _sdUploadType     :: !(Maybe Text)
-    , _sdPayload        :: !DisableServiceRequest
-    , _sdName           :: !Text
-    , _sdCallback       :: !(Maybe Text)
+    , _sdAccessToken :: !(Maybe Text)
+    , _sdUploadType :: !(Maybe Text)
+    , _sdPayload :: !DisableServiceRequest
+    , _sdName :: !Text
+    , _sdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

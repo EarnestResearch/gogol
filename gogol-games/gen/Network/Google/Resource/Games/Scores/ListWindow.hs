@@ -44,8 +44,8 @@ module Network.Google.Resource.Games.Scores.ListWindow
     , slwMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.scores.listWindow@ method which the
 -- 'ScoresListWindow' request conforms to.
@@ -71,14 +71,14 @@ type ScoresListWindowResource =
 -- /See:/ 'scoresListWindow' smart constructor.
 data ScoresListWindow =
   ScoresListWindow'
-    { _slwCollection        :: !ScoresListWindowCollection
-    , _slwTimeSpan          :: !ScoresListWindowTimeSpan
+    { _slwCollection :: !ScoresListWindowCollection
+    , _slwTimeSpan :: !ScoresListWindowTimeSpan
     , _slwReturnTopIfAbsent :: !(Maybe Bool)
-    , _slwLeaderboardId     :: !Text
-    , _slwLanguage          :: !(Maybe Text)
-    , _slwResultsAbove      :: !(Maybe (Textual Int32))
-    , _slwPageToken         :: !(Maybe Text)
-    , _slwMaxResults        :: !(Maybe (Textual Int32))
+    , _slwLeaderboardId :: !Text
+    , _slwLanguage :: !(Maybe Text)
+    , _slwResultsAbove :: !(Maybe (Textual Int32))
+    , _slwPageToken :: !(Maybe Text)
+    , _slwMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

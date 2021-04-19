@@ -48,8 +48,8 @@ module Network.Google.Resource.IAM.Projects.Roles.Delete
     , prdCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.delete@ method which the
 -- 'ProjectsRolesDelete' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsRolesDeleteResource =
 -- /See:/ 'projectsRolesDelete' smart constructor.
 data ProjectsRolesDelete =
   ProjectsRolesDelete'
-    { _prdXgafv          :: !(Maybe Xgafv)
-    , _prdEtag           :: !(Maybe Bytes)
+    { _prdXgafv :: !(Maybe Xgafv)
+    , _prdEtag :: !(Maybe Bytes)
     , _prdUploadProtocol :: !(Maybe Text)
-    , _prdAccessToken    :: !(Maybe Text)
-    , _prdUploadType     :: !(Maybe Text)
-    , _prdName           :: !Text
-    , _prdCallback       :: !(Maybe Text)
+    , _prdAccessToken :: !(Maybe Text)
+    , _prdUploadType :: !(Maybe Text)
+    , _prdName :: !Text
+    , _prdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

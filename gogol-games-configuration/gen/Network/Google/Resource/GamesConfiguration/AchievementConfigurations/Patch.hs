@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesConfiguration.AchievementConfigurations.Patc
     , acpPayload
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.achievementConfigurations.patch@ method which the
 -- 'AchievementConfigurationsPatch' request conforms to.
@@ -59,7 +59,7 @@ type AchievementConfigurationsPatchResource =
 data AchievementConfigurationsPatch =
   AchievementConfigurationsPatch'
     { _acpAchievementId :: !Text
-    , _acpPayload       :: !AchievementConfiguration
+    , _acpPayload :: !AchievementConfiguration
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

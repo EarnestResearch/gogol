@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.Buckets.List
     , blMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.list@ method which the
 -- 'BucketsList' request conforms to.
@@ -63,12 +63,12 @@ type BucketsListResource =
 -- /See:/ 'bucketsList' smart constructor.
 data BucketsList =
   BucketsList'
-    { _blProject     :: !Text
-    , _blPrefix      :: !(Maybe Text)
+    { _blProject :: !Text
+    , _blPrefix :: !(Maybe Text)
     , _blUserProject :: !(Maybe Text)
-    , _blProjection  :: !(Maybe BucketsListProjection)
-    , _blPageToken   :: !(Maybe Text)
-    , _blMaxResults  :: !(Textual Word32)
+    , _blProjection :: !(Maybe BucketsListProjection)
+    , _blPageToken :: !(Maybe Text)
+    , _blMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

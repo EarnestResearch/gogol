@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Projects.Roles.Patch
     , prpCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.patch@ method which the
 -- 'ProjectsRolesPatch' request conforms to.
@@ -65,14 +65,14 @@ type ProjectsRolesPatchResource =
 -- /See:/ 'projectsRolesPatch' smart constructor.
 data ProjectsRolesPatch =
   ProjectsRolesPatch'
-    { _prpXgafv          :: !(Maybe Xgafv)
+    { _prpXgafv :: !(Maybe Xgafv)
     , _prpUploadProtocol :: !(Maybe Text)
-    , _prpUpdateMask     :: !(Maybe GFieldMask)
-    , _prpAccessToken    :: !(Maybe Text)
-    , _prpUploadType     :: !(Maybe Text)
-    , _prpPayload        :: !Role
-    , _prpName           :: !Text
-    , _prpCallback       :: !(Maybe Text)
+    , _prpUpdateMask :: !(Maybe GFieldMask)
+    , _prpAccessToken :: !(Maybe Text)
+    , _prpUploadType :: !(Maybe Text)
+    , _prpPayload :: !Role
+    , _prpName :: !Text
+    , _prpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

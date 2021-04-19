@@ -50,8 +50,8 @@ module Network.Google.Resource.PubSub.Projects.Snapshots.Delete
     , proCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.snapshots.delete@ method which the
 -- 'ProjectsSnapshotsDelete' request conforms to.
@@ -79,12 +79,12 @@ type ProjectsSnapshotsDeleteResource =
 -- /See:/ 'projectsSnapshotsDelete' smart constructor.
 data ProjectsSnapshotsDelete =
   ProjectsSnapshotsDelete'
-    { _proXgafv          :: !(Maybe Xgafv)
-    , _proSnapshot       :: !Text
+    { _proXgafv :: !(Maybe Xgafv)
+    , _proSnapshot :: !Text
     , _proUploadProtocol :: !(Maybe Text)
-    , _proAccessToken    :: !(Maybe Text)
-    , _proUploadType     :: !(Maybe Text)
-    , _proCallback       :: !(Maybe Text)
+    , _proAccessToken :: !(Maybe Text)
+    , _proUploadType :: !(Maybe Text)
+    , _proCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

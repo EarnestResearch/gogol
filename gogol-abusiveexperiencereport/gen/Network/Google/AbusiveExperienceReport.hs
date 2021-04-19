@@ -64,10 +64,10 @@ module Network.Google.AbusiveExperienceReport
     , SiteSummaryResponseFilterStatus (..)
     ) where
 
-import           Network.Google.AbusiveExperienceReport.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.AbusiveExperienceReport.Sites.Get
-import           Network.Google.Resource.AbusiveExperienceReport.ViolatingSites.List
+import Network.Google.Prelude
+import Network.Google.AbusiveExperienceReport.Types
+import Network.Google.Resource.AbusiveExperienceReport.Sites.Get
+import Network.Google.Resource.AbusiveExperienceReport.ViolatingSites.List
 
 {- $resources
 TODO

@@ -39,8 +39,8 @@ module Network.Google.Resource.Gmail.Users.Threads.Modify
     , utmId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.threads.modify@ method which the
 -- 'UsersThreadsModify' request conforms to.
@@ -63,8 +63,8 @@ type UsersThreadsModifyResource =
 data UsersThreadsModify =
   UsersThreadsModify'
     { _utmPayload :: !ModifyThreadRequest
-    , _utmUserId  :: !Text
-    , _utmId      :: !Text
+    , _utmUserId :: !Text
+    , _utmId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

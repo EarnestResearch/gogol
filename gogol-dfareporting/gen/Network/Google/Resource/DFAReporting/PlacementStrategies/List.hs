@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.List
     , pslMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.list@ method which the
 -- 'PlacementStrategiesList' request conforms to.
@@ -74,12 +74,12 @@ type PlacementStrategiesListResource =
 data PlacementStrategiesList =
   PlacementStrategiesList'
     { _pslSearchString :: !(Maybe Text)
-    , _pslIds          :: !(Maybe [Textual Int64])
-    , _pslProFileId    :: !(Textual Int64)
-    , _pslSortOrder    :: !PlacementStrategiesListSortOrder
-    , _pslPageToken    :: !(Maybe Text)
-    , _pslSortField    :: !PlacementStrategiesListSortField
-    , _pslMaxResults   :: !(Textual Int32)
+    , _pslIds :: !(Maybe [Textual Int64])
+    , _pslProFileId :: !(Textual Int64)
+    , _pslSortOrder :: !PlacementStrategiesListSortOrder
+    , _pslPageToken :: !(Maybe Text)
+    , _pslSortField :: !PlacementStrategiesListSortField
+    , _pslMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

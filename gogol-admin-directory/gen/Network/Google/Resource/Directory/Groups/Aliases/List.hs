@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Groups.Aliases.List
     , galGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.aliases.list@ method which the
 -- 'GroupsAliasesList' request conforms to.

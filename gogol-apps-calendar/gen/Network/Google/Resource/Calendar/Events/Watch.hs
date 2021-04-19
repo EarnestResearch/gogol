@@ -54,8 +54,8 @@ module Network.Google.Resource.Calendar.Events.Watch
     , ewTimeMax
     ) where
 
-import           Network.Google.AppsCalendar.Types
-import           Network.Google.Prelude
+import Network.Google.AppsCalendar.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @calendar.events.watch@ method which the
 -- 'EventsWatch' request conforms to.
@@ -99,25 +99,25 @@ type EventsWatchResource =
 -- /See:/ 'eventsWatch' smart constructor.
 data EventsWatch =
   EventsWatch'
-    { _ewSyncToken               :: !(Maybe Text)
-    , _ewCalendarId              :: !Text
-    , _ewTimeMin                 :: !(Maybe DateTime')
-    , _ewOrderBy                 :: !(Maybe EventsWatchOrderBy)
-    , _ewSingleEvents            :: !(Maybe Bool)
+    { _ewSyncToken :: !(Maybe Text)
+    , _ewCalendarId :: !Text
+    , _ewTimeMin :: !(Maybe DateTime')
+    , _ewOrderBy :: !(Maybe EventsWatchOrderBy)
+    , _ewSingleEvents :: !(Maybe Bool)
     , _ewPrivateExtendedProperty :: !(Maybe [Text])
-    , _ewShowDeleted             :: !(Maybe Bool)
-    , _ewPayload                 :: !Channel
-    , _ewQ                       :: !(Maybe Text)
-    , _ewSharedExtendedProperty  :: !(Maybe [Text])
-    , _ewMaxAttendees            :: !(Maybe (Textual Int32))
-    , _ewICalUId                 :: !(Maybe Text)
-    , _ewUpdatedMin              :: !(Maybe DateTime')
-    , _ewPageToken               :: !(Maybe Text)
-    , _ewTimeZone                :: !(Maybe Text)
-    , _ewShowHiddenInvitations   :: !(Maybe Bool)
-    , _ewMaxResults              :: !(Textual Int32)
-    , _ewAlwaysIncludeEmail      :: !(Maybe Bool)
-    , _ewTimeMax                 :: !(Maybe DateTime')
+    , _ewShowDeleted :: !(Maybe Bool)
+    , _ewPayload :: !Channel
+    , _ewQ :: !(Maybe Text)
+    , _ewSharedExtendedProperty :: !(Maybe [Text])
+    , _ewMaxAttendees :: !(Maybe (Textual Int32))
+    , _ewICalUId :: !(Maybe Text)
+    , _ewUpdatedMin :: !(Maybe DateTime')
+    , _ewPageToken :: !(Maybe Text)
+    , _ewTimeZone :: !(Maybe Text)
+    , _ewShowHiddenInvitations :: !(Maybe Bool)
+    , _ewMaxResults :: !(Textual Int32)
+    , _ewAlwaysIncludeEmail :: !(Maybe Bool)
+    , _ewTimeMax :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

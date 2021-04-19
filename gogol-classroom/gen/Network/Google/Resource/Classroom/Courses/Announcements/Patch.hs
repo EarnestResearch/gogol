@@ -50,8 +50,8 @@ module Network.Google.Resource.Classroom.Courses.Announcements.Patch
     , capCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.courses.announcements.patch@ method which the
 -- 'CoursesAnnouncementsPatch' request conforms to.
@@ -82,15 +82,15 @@ type CoursesAnnouncementsPatchResource =
 -- /See:/ 'coursesAnnouncementsPatch' smart constructor.
 data CoursesAnnouncementsPatch =
   CoursesAnnouncementsPatch'
-    { _capXgafv          :: !(Maybe Xgafv)
+    { _capXgafv :: !(Maybe Xgafv)
     , _capUploadProtocol :: !(Maybe Text)
-    , _capUpdateMask     :: !(Maybe GFieldMask)
-    , _capCourseId       :: !Text
-    , _capAccessToken    :: !(Maybe Text)
-    , _capUploadType     :: !(Maybe Text)
-    , _capPayload        :: !Announcement
-    , _capId             :: !Text
-    , _capCallback       :: !(Maybe Text)
+    , _capUpdateMask :: !(Maybe GFieldMask)
+    , _capCourseId :: !Text
+    , _capAccessToken :: !(Maybe Text)
+    , _capUploadType :: !(Maybe Text)
+    , _capPayload :: !Announcement
+    , _capId :: !Text
+    , _capCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

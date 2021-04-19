@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Labels.Patch
     , ulpId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.labels.patch@ method which the
 -- 'UsersLabelsPatch' request conforms to.
@@ -59,8 +59,8 @@ type UsersLabelsPatchResource =
 data UsersLabelsPatch =
   UsersLabelsPatch'
     { _ulpPayload :: !Label
-    , _ulpUserId  :: !Text
-    , _ulpId      :: !Text
+    , _ulpUserId :: !Text
+    , _ulpId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

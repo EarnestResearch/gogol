@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.Accounts.Claimwebsite
     , acOverwrite
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.claimwebsite@ method which the
 -- 'AccountsClaimwebsite' request conforms to.
 type AccountsClaimwebsiteResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accounts" :>
              Capture "accountId" (Textual Word64) :>
@@ -60,8 +60,8 @@ type AccountsClaimwebsiteResource =
 data AccountsClaimwebsite =
   AccountsClaimwebsite'
     { _acMerchantId :: !(Textual Word64)
-    , _acAccountId  :: !(Textual Word64)
-    , _acOverwrite  :: !(Maybe Bool)
+    , _acAccountId :: !(Textual Word64)
+    , _acOverwrite :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

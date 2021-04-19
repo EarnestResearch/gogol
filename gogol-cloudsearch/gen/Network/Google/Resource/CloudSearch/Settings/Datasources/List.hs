@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Settings.Datasources.List
     , sdlCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.datasources.list@ method which the
 -- 'SettingsDatasourcesList' request conforms to.
@@ -68,14 +68,14 @@ type SettingsDatasourcesListResource =
 -- /See:/ 'settingsDatasourcesList' smart constructor.
 data SettingsDatasourcesList =
   SettingsDatasourcesList'
-    { _sdlXgafv                       :: !(Maybe Xgafv)
-    , _sdlUploadProtocol              :: !(Maybe Text)
-    , _sdlAccessToken                 :: !(Maybe Text)
-    , _sdlUploadType                  :: !(Maybe Text)
+    { _sdlXgafv :: !(Maybe Xgafv)
+    , _sdlUploadProtocol :: !(Maybe Text)
+    , _sdlAccessToken :: !(Maybe Text)
+    , _sdlUploadType :: !(Maybe Text)
     , _sdlDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _sdlPageToken                   :: !(Maybe Text)
-    , _sdlPageSize                    :: !(Maybe (Textual Int32))
-    , _sdlCallback                    :: !(Maybe Text)
+    , _sdlPageToken :: !(Maybe Text)
+    , _sdlPageSize :: !(Maybe (Textual Int32))
+    , _sdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

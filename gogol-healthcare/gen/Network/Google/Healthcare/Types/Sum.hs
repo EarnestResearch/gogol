@@ -16,7 +16,7 @@
 --
 module Network.Google.Healthcare.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Determines how to redact text from image.
 data ImageConfigTextRedactionMode

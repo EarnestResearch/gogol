@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.ServiceAccountkeys.Insert
     , saiPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.serviceaccountkeys.insert@ method which the
 -- 'ServiceAccountkeysInsert' request conforms to.
@@ -66,7 +66,7 @@ type ServiceAccountkeysInsertResource =
 data ServiceAccountkeysInsert =
   ServiceAccountkeysInsert'
     { _saiEnterpriseId :: !Text
-    , _saiPayload      :: !ServiceAccountKey
+    , _saiPayload :: !ServiceAccountKey
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

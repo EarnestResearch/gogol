@@ -47,8 +47,8 @@ module Network.Google.Resource.Reports.Activities.Watch
     , awOrgUnitId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
+import Network.Google.Prelude
+import Network.Google.Reports.Types
 
 -- | A resource alias for @reports.activities.watch@ method which the
 -- 'ActivitiesWatch' request conforms to.
@@ -80,18 +80,18 @@ type ActivitiesWatchResource =
 -- /See:/ 'activitiesWatch' smart constructor.
 data ActivitiesWatch =
   ActivitiesWatch'
-    { _awStartTime       :: !(Maybe Text)
-    , _awFilters         :: !(Maybe Text)
-    , _awPayload         :: !Channel
-    , _awCustomerId      :: !(Maybe Text)
-    , _awActorIPAddress  :: !(Maybe Text)
-    , _awEndTime         :: !(Maybe Text)
+    { _awStartTime :: !(Maybe Text)
+    , _awFilters :: !(Maybe Text)
+    , _awPayload :: !Channel
+    , _awCustomerId :: !(Maybe Text)
+    , _awActorIPAddress :: !(Maybe Text)
+    , _awEndTime :: !(Maybe Text)
     , _awApplicationName :: !Text
-    , _awPageToken       :: !(Maybe Text)
-    , _awEventName       :: !(Maybe Text)
-    , _awUserKey         :: !Text
-    , _awMaxResults      :: !(Maybe (Textual Int32))
-    , _awOrgUnitId       :: !Text
+    , _awPageToken :: !(Maybe Text)
+    , _awEventName :: !(Maybe Text)
+    , _awUserKey :: !Text
+    , _awMaxResults :: !(Maybe (Textual Int32))
+    , _awOrgUnitId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

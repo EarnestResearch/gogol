@@ -40,8 +40,8 @@ module Network.Google.Resource.YouTube.LiveStreams.Insert
     , lsiOnBehalfOfContentOwnerChannel
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveStreams.insert@ method which the
 -- 'LiveStreamsInsert' request conforms to.
@@ -61,9 +61,9 @@ type LiveStreamsInsertResource =
 -- /See:/ 'liveStreamsInsert' smart constructor.
 data LiveStreamsInsert =
   LiveStreamsInsert'
-    { _lsiPart                          :: !Text
-    , _lsiPayload                       :: !LiveStream
-    , _lsiOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _lsiPart :: !Text
+    , _lsiPayload :: !LiveStream
+    , _lsiOnBehalfOfContentOwner :: !(Maybe Text)
     , _lsiOnBehalfOfContentOwnerChannel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

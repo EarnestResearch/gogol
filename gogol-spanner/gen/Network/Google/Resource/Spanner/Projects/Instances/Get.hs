@@ -41,8 +41,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Get
     , pigCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.get@ method which the
 -- 'ProjectsInstancesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsInstancesGetResource =
 -- /See:/ 'projectsInstancesGet' smart constructor.
 data ProjectsInstancesGet =
   ProjectsInstancesGet'
-    { _pigXgafv          :: !(Maybe Xgafv)
+    { _pigXgafv :: !(Maybe Xgafv)
     , _pigUploadProtocol :: !(Maybe Text)
-    , _pigAccessToken    :: !(Maybe Text)
-    , _pigUploadType     :: !(Maybe Text)
-    , _pigName           :: !Text
-    , _pigCallback       :: !(Maybe Text)
+    , _pigAccessToken :: !(Maybe Text)
+    , _pigUploadType :: !(Maybe Text)
+    , _pigName :: !Text
+    , _pigCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

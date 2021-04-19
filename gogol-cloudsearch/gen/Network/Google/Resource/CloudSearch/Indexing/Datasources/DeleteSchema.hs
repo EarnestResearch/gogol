@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.DeleteSchema
     , iddsCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.deleteSchema@ method which the
 -- 'IndexingDatasourcesDeleteSchema' request conforms to.
@@ -65,13 +65,13 @@ type IndexingDatasourcesDeleteSchemaResource =
 -- /See:/ 'indexingDatasourcesDeleteSchema' smart constructor.
 data IndexingDatasourcesDeleteSchema =
   IndexingDatasourcesDeleteSchema'
-    { _iddsXgafv                       :: !(Maybe Xgafv)
-    , _iddsUploadProtocol              :: !(Maybe Text)
-    , _iddsAccessToken                 :: !(Maybe Text)
-    , _iddsUploadType                  :: !(Maybe Text)
-    , _iddsName                        :: !Text
+    { _iddsXgafv :: !(Maybe Xgafv)
+    , _iddsUploadProtocol :: !(Maybe Text)
+    , _iddsAccessToken :: !(Maybe Text)
+    , _iddsUploadType :: !(Maybe Text)
+    , _iddsName :: !Text
     , _iddsDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _iddsCallback                    :: !(Maybe Text)
+    , _iddsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

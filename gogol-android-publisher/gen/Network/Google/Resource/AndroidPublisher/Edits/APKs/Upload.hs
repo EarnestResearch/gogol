@@ -35,8 +35,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.APKs.Upload
     , eapkuEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.apks.upload@ method which the
 -- 'EditsAPKsUpload' request conforms to.
@@ -67,7 +67,7 @@ type EditsAPKsUploadResource =
 data EditsAPKsUpload =
   EditsAPKsUpload'
     { _eapkuPackageName :: !Text
-    , _eapkuEditId      :: !Text
+    , _eapkuEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

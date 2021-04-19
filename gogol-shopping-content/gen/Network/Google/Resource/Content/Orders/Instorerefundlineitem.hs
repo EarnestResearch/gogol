@@ -45,14 +45,14 @@ module Network.Google.Resource.Content.Orders.Instorerefundlineitem
     , oiOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.instorerefundlineitem@ method which the
 -- 'OrdersInstorerefundlineitem' request conforms to.
 type OrdersInstorerefundlineitemResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -74,8 +74,8 @@ type OrdersInstorerefundlineitemResource =
 data OrdersInstorerefundlineitem =
   OrdersInstorerefundlineitem'
     { _oiMerchantId :: !(Textual Word64)
-    , _oiPayload    :: !OrdersInStoreRefundLineItemRequest
-    , _oiOrderId    :: !Text
+    , _oiPayload :: !OrdersInStoreRefundLineItemRequest
+    , _oiOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

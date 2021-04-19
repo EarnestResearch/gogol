@@ -36,8 +36,8 @@ module Network.Google.Resource.DataTransfer.Transfers.Insert
     , tiPayload
     ) where
 
-import           Network.Google.DataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.DataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datatransfer.transfers.insert@ method which the
 -- 'TransfersInsert' request conforms to.

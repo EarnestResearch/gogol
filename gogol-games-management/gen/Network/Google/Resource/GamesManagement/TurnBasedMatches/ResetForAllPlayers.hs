@@ -36,8 +36,8 @@ module Network.Google.Resource.GamesManagement.TurnBasedMatches.ResetForAllPlaye
 
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.turnBasedMatches.resetForAllPlayers@ method which the
 -- 'TurnBasedMatchesResetForAllPlayers' request conforms to.

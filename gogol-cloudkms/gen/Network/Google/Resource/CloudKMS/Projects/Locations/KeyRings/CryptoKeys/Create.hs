@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.C
     , plkrckcCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.cryptoKeys.create@ method which the
 -- 'ProjectsLocationsKeyRingsCryptoKeysCreate' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsLocationsKeyRingsCryptoKeysCreateResource
 -- /See:/ 'projectsLocationsKeyRingsCryptoKeysCreate' smart constructor.
 data ProjectsLocationsKeyRingsCryptoKeysCreate =
   ProjectsLocationsKeyRingsCryptoKeysCreate'
-    { _plkrckcParent         :: !Text
-    , _plkrckcXgafv          :: !(Maybe Xgafv)
+    { _plkrckcParent :: !Text
+    , _plkrckcXgafv :: !(Maybe Xgafv)
     , _plkrckcUploadProtocol :: !(Maybe Text)
-    , _plkrckcAccessToken    :: !(Maybe Text)
-    , _plkrckcUploadType     :: !(Maybe Text)
-    , _plkrckcPayload        :: !CryptoKey
-    , _plkrckcCryptoKeyId    :: !(Maybe Text)
-    , _plkrckcCallback       :: !(Maybe Text)
+    , _plkrckcAccessToken :: !(Maybe Text)
+    , _plkrckcUploadType :: !(Maybe Text)
+    , _plkrckcPayload :: !CryptoKey
+    , _plkrckcCryptoKeyId :: !(Maybe Text)
+    , _plkrckcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

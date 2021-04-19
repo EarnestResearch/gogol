@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -200,9 +200,9 @@ module Network.Google.PageSpeed.Types
     , lrvaAddtional
     ) where
 
-import           Network.Google.PageSpeed.Types.Product
-import           Network.Google.PageSpeed.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.PageSpeed.Types.Product
+import Network.Google.PageSpeed.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v5' of the PageSpeed Insights API. This contains the host and root path used as a starting point for constructing service requests.
 pageSpeedService :: ServiceConfig

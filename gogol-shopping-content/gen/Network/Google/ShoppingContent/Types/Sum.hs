@@ -16,7 +16,7 @@
 --
 module Network.Google.ShoppingContent.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The name of the template to retrieve.
 data OrdersGettestOrdertemplateTemplateName

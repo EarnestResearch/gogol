@@ -42,8 +42,8 @@ module Network.Google.Resource.ServiceUsage.Services.Enable
     , seCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.ServiceUsage.Types
 
 -- | A resource alias for @serviceusage.services.enable@ method which the
 -- 'ServicesEnable' request conforms to.
@@ -64,13 +64,13 @@ type ServicesEnableResource =
 -- /See:/ 'servicesEnable' smart constructor.
 data ServicesEnable =
   ServicesEnable'
-    { _seXgafv          :: !(Maybe Xgafv)
+    { _seXgafv :: !(Maybe Xgafv)
     , _seUploadProtocol :: !(Maybe Text)
-    , _seAccessToken    :: !(Maybe Text)
-    , _seUploadType     :: !(Maybe Text)
-    , _sePayload        :: !EnableServiceRequest
-    , _seName           :: !Text
-    , _seCallback       :: !(Maybe Text)
+    , _seAccessToken :: !(Maybe Text)
+    , _seUploadType :: !(Maybe Text)
+    , _sePayload :: !EnableServiceRequest
+    , _seName :: !Text
+    , _seCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

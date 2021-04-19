@@ -617,17 +617,17 @@ module Network.Google.ServiceNetworking
     , crAllowedResponseExtensions
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.ServiceNetworking.Operations.Cancel
-import           Network.Google.Resource.ServiceNetworking.Operations.Delete
-import           Network.Google.Resource.ServiceNetworking.Operations.Get
-import           Network.Google.Resource.ServiceNetworking.Operations.List
-import           Network.Google.Resource.ServiceNetworking.Services.AddSubnetwork
-import           Network.Google.Resource.ServiceNetworking.Services.Connections.Create
-import           Network.Google.Resource.ServiceNetworking.Services.Connections.List
-import           Network.Google.Resource.ServiceNetworking.Services.Connections.Patch
-import           Network.Google.Resource.ServiceNetworking.Services.SearchRange
-import           Network.Google.ServiceNetworking.Types
+import Network.Google.Prelude
+import Network.Google.Resource.ServiceNetworking.Operations.Cancel
+import Network.Google.Resource.ServiceNetworking.Operations.Delete
+import Network.Google.Resource.ServiceNetworking.Operations.Get
+import Network.Google.Resource.ServiceNetworking.Operations.List
+import Network.Google.Resource.ServiceNetworking.Services.AddSubnetwork
+import Network.Google.Resource.ServiceNetworking.Services.Connections.Create
+import Network.Google.Resource.ServiceNetworking.Services.Connections.List
+import Network.Google.Resource.ServiceNetworking.Services.Connections.Patch
+import Network.Google.Resource.ServiceNetworking.Services.SearchRange
+import Network.Google.ServiceNetworking.Types
 
 {- $resources
 TODO

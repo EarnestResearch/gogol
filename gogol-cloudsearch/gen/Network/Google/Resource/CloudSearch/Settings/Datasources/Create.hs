@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudSearch.Settings.Datasources.Create
     , sdcCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.datasources.create@ method which the
 -- 'SettingsDatasourcesCreate' request conforms to.
@@ -63,12 +63,12 @@ type SettingsDatasourcesCreateResource =
 -- /See:/ 'settingsDatasourcesCreate' smart constructor.
 data SettingsDatasourcesCreate =
   SettingsDatasourcesCreate'
-    { _sdcXgafv          :: !(Maybe Xgafv)
+    { _sdcXgafv :: !(Maybe Xgafv)
     , _sdcUploadProtocol :: !(Maybe Text)
-    , _sdcAccessToken    :: !(Maybe Text)
-    , _sdcUploadType     :: !(Maybe Text)
-    , _sdcPayload        :: !DataSource
-    , _sdcCallback       :: !(Maybe Text)
+    , _sdcAccessToken :: !(Maybe Text)
+    , _sdcUploadType :: !(Maybe Text)
+    , _sdcPayload :: !DataSource
+    , _sdcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

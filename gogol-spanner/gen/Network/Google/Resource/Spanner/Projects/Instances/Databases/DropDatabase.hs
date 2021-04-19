@@ -41,8 +41,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.DropDatabase
     , pidddCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.dropDatabase@ method which the
 -- 'ProjectsInstancesDatabasesDropDatabase' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsInstancesDatabasesDropDatabaseResource =
 -- /See:/ 'projectsInstancesDatabasesDropDatabase' smart constructor.
 data ProjectsInstancesDatabasesDropDatabase =
   ProjectsInstancesDatabasesDropDatabase'
-    { _pidddXgafv          :: !(Maybe Xgafv)
+    { _pidddXgafv :: !(Maybe Xgafv)
     , _pidddUploadProtocol :: !(Maybe Text)
-    , _pidddDatabase       :: !Text
-    , _pidddAccessToken    :: !(Maybe Text)
-    , _pidddUploadType     :: !(Maybe Text)
-    , _pidddCallback       :: !(Maybe Text)
+    , _pidddDatabase :: !Text
+    , _pidddAccessToken :: !(Maybe Text)
+    , _pidddUploadType :: !(Maybe Text)
+    , _pidddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Exclusions.Patch
     , epCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.exclusions.patch@ method which the
 -- 'ExclusionsPatch' request conforms to.
@@ -66,14 +66,14 @@ type ExclusionsPatchResource =
 -- /See:/ 'exclusionsPatch' smart constructor.
 data ExclusionsPatch =
   ExclusionsPatch'
-    { _epXgafv          :: !(Maybe Xgafv)
+    { _epXgafv :: !(Maybe Xgafv)
     , _epUploadProtocol :: !(Maybe Text)
-    , _epUpdateMask     :: !(Maybe GFieldMask)
-    , _epAccessToken    :: !(Maybe Text)
-    , _epUploadType     :: !(Maybe Text)
-    , _epPayload        :: !LogExclusion
-    , _epName           :: !Text
-    , _epCallback       :: !(Maybe Text)
+    , _epUpdateMask :: !(Maybe GFieldMask)
+    , _epAccessToken :: !(Maybe Text)
+    , _epUploadType :: !(Maybe Text)
+    , _epPayload :: !LogExclusion
+    , _epName :: !Text
+    , _epCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.Redis.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Redis.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Redis.Types.Sum
 
 -- | Request for Failover.
 --
@@ -138,7 +138,7 @@ instance ToJSON InstanceLabels where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -200,7 +200,7 @@ instance ToJSON Status where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -252,7 +252,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -305,11 +305,11 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -419,10 +419,10 @@ instance ToJSON GoogleCloudRedisV1ZoneMetadata where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -626,13 +626,13 @@ instance ToJSON GoogleCloudRedisV1LocationMetadata
 -- /See:/ 'googleCloudRedisV1OperationMetadata' smart constructor.
 data GoogleCloudRedisV1OperationMetadata =
   GoogleCloudRedisV1OperationMetadata'
-    { _gcrvomAPIVersion      :: !(Maybe Text)
-    , _gcrvomEndTime         :: !(Maybe DateTime')
-    , _gcrvomStatusDetail    :: !(Maybe Text)
-    , _gcrvomVerb            :: !(Maybe Text)
+    { _gcrvomAPIVersion :: !(Maybe Text)
+    , _gcrvomEndTime :: !(Maybe DateTime')
+    , _gcrvomStatusDetail :: !(Maybe Text)
+    , _gcrvomVerb :: !(Maybe Text)
     , _gcrvomCancelRequested :: !(Maybe Bool)
-    , _gcrvomTarget          :: !(Maybe Text)
-    , _gcrvomCreateTime      :: !(Maybe DateTime')
+    , _gcrvomTarget :: !(Maybe Text)
+    , _gcrvomCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -946,8 +946,8 @@ instance ToJSON OperationMetadata where
 data ListInstancesResponse =
   ListInstancesResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirUnreachable   :: !(Maybe [Text])
-    , _lirInstances     :: !(Maybe [Instance])
+    , _lirUnreachable :: !(Maybe [Text])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1066,23 +1066,23 @@ instance ToJSON OperationResponse where
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iState                 :: !(Maybe InstanceState)
-    , _iAuthorizedNetwork     :: !(Maybe Text)
-    , _iMemorySizeGb          :: !(Maybe (Textual Int32))
-    , _iName                  :: !(Maybe Text)
-    , _iStatusMessage         :: !(Maybe Text)
+    { _iState :: !(Maybe InstanceState)
+    , _iAuthorizedNetwork :: !(Maybe Text)
+    , _iMemorySizeGb :: !(Maybe (Textual Int32))
+    , _iName :: !(Maybe Text)
+    , _iStatusMessage :: !(Maybe Text)
     , _iAlternativeLocationId :: !(Maybe Text)
-    , _iReservedIPRange       :: !(Maybe Text)
-    , _iTier                  :: !(Maybe InstanceTier)
-    , _iDisplayName           :: !(Maybe Text)
-    , _iLabels                :: !(Maybe InstanceLabels)
-    , _iLocationId            :: !(Maybe Text)
-    , _iHost                  :: !(Maybe Text)
-    , _iRedisConfigs          :: !(Maybe InstanceRedisConfigs)
-    , _iRedisVersion          :: !(Maybe Text)
-    , _iCreateTime            :: !(Maybe DateTime')
-    , _iPort                  :: !(Maybe (Textual Int32))
-    , _iCurrentLocationId     :: !(Maybe Text)
+    , _iReservedIPRange :: !(Maybe Text)
+    , _iTier :: !(Maybe InstanceTier)
+    , _iDisplayName :: !(Maybe Text)
+    , _iLabels :: !(Maybe InstanceLabels)
+    , _iLocationId :: !(Maybe Text)
+    , _iHost :: !(Maybe Text)
+    , _iRedisConfigs :: !(Maybe InstanceRedisConfigs)
+    , _iRedisVersion :: !(Maybe Text)
+    , _iCreateTime :: !(Maybe DateTime')
+    , _iPort :: !(Maybe (Textual Int32))
+    , _iCurrentLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

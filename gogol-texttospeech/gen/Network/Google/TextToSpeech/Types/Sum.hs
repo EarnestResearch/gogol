@@ -16,7 +16,7 @@
 --
 module Network.Google.TextToSpeech.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The preferred gender of the voice. Optional; if not set, the service
 -- will choose a voice based on the other parameters such as language_code

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Instances.GetSerialPortOutput
     , igspoInstance
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.getSerialPortOutput@ method which the
 -- 'InstancesGetSerialPortOutput' request conforms to.
@@ -65,10 +65,10 @@ type InstancesGetSerialPortOutputResource =
 -- /See:/ 'instancesGetSerialPortOutput' smart constructor.
 data InstancesGetSerialPortOutput =
   InstancesGetSerialPortOutput'
-    { _igspoProject  :: !Text
-    , _igspoStart    :: !(Maybe (Textual Int64))
-    , _igspoZone     :: !Text
-    , _igspoPort     :: !(Textual Int32)
+    { _igspoProject :: !Text
+    , _igspoStart :: !(Maybe (Textual Int64))
+    , _igspoZone :: !Text
+    , _igspoPort :: !(Textual Int32)
     , _igspoInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

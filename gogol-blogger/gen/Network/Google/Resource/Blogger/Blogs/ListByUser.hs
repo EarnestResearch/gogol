@@ -40,8 +40,8 @@ module Network.Google.Resource.Blogger.Blogs.ListByUser
     , blbuView
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.blogs.listByUser@ method which the
 -- 'BlogsListByUser' request conforms to.
@@ -62,11 +62,11 @@ type BlogsListByUserResource =
 -- /See:/ 'blogsListByUser' smart constructor.
 data BlogsListByUser =
   BlogsListByUser'
-    { _blbuStatus        :: ![BlogsListByUserStatus]
+    { _blbuStatus :: ![BlogsListByUserStatus]
     , _blbuFetchUserInfo :: !(Maybe Bool)
-    , _blbuUserId        :: !Text
-    , _blbuRole          :: !(Maybe [BlogsListByUserRole])
-    , _blbuView          :: !(Maybe BlogsListByUserView)
+    , _blbuUserId :: !Text
+    , _blbuRole :: !(Maybe [BlogsListByUserRole])
+    , _blbuView :: !(Maybe BlogsListByUserView)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Language.Detections.Detect
     , ddCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @language.detections.detect@ method which the
 -- 'DetectionsDetect' request conforms to.
@@ -69,14 +69,14 @@ type DetectionsDetectResource =
 -- /See:/ 'detectionsDetect' smart constructor.
 data DetectionsDetect =
   DetectionsDetect'
-    { _ddXgafv          :: !(Maybe Xgafv)
+    { _ddXgafv :: !(Maybe Xgafv)
     , _ddUploadProtocol :: !(Maybe Text)
-    , _ddPp             :: !Bool
-    , _ddAccessToken    :: !(Maybe Text)
-    , _ddUploadType     :: !(Maybe Text)
-    , _ddPayload        :: !DetectLanguageRequest
-    , _ddBearerToken    :: !(Maybe Text)
-    , _ddCallback       :: !(Maybe Text)
+    , _ddPp :: !Bool
+    , _ddAccessToken :: !(Maybe Text)
+    , _ddUploadType :: !(Maybe Text)
+    , _ddPayload :: !DetectLanguageRequest
+    , _ddBearerToken :: !(Maybe Text)
+    , _ddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

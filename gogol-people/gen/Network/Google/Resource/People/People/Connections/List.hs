@@ -50,8 +50,8 @@ module Network.Google.Resource.People.People.Connections.List
     , pclCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.people.connections.list@ method which the
 -- 'PeopleConnectionsList' request conforms to.
@@ -81,19 +81,19 @@ type PeopleConnectionsListResource =
 -- /See:/ 'peopleConnectionsList' smart constructor.
 data PeopleConnectionsList =
   PeopleConnectionsList'
-    { _pclSyncToken               :: !(Maybe Text)
-    , _pclXgafv                   :: !(Maybe Xgafv)
-    , _pclUploadProtocol          :: !(Maybe Text)
-    , _pclResourceName            :: !Text
+    { _pclSyncToken :: !(Maybe Text)
+    , _pclXgafv :: !(Maybe Xgafv)
+    , _pclUploadProtocol :: !(Maybe Text)
+    , _pclResourceName :: !Text
     , _pclRequestMaskIncludeField :: !(Maybe GFieldMask)
-    , _pclRequestSyncToken        :: !(Maybe Bool)
-    , _pclAccessToken             :: !(Maybe Text)
-    , _pclUploadType              :: !(Maybe Text)
-    , _pclSortOrder               :: !(Maybe Text)
-    , _pclPersonFields            :: !(Maybe GFieldMask)
-    , _pclPageToken               :: !(Maybe Text)
-    , _pclPageSize                :: !(Maybe (Textual Int32))
-    , _pclCallback                :: !(Maybe Text)
+    , _pclRequestSyncToken :: !(Maybe Bool)
+    , _pclAccessToken :: !(Maybe Text)
+    , _pclUploadType :: !(Maybe Text)
+    , _pclSortOrder :: !(Maybe Text)
+    , _pclPersonFields :: !(Maybe GFieldMask)
+    , _pclPageToken :: !(Maybe Text)
+    , _pclPageSize :: !(Maybe (Textual Int32))
+    , _pclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

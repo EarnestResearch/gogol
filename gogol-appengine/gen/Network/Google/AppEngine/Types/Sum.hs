@@ -16,7 +16,7 @@
 --
 module Network.Google.AppEngine.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Serving status of this application.
 data ApplicationServingStatus

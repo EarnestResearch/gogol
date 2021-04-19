@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Groups.Aliases.Insert
     , gaiPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.aliases.insert@ method which the
 -- 'GroupsAliasesInsert' request conforms to.
@@ -58,7 +58,7 @@ type GroupsAliasesInsertResource =
 data GroupsAliasesInsert =
   GroupsAliasesInsert'
     { _gaiGroupKey :: !Text
-    , _gaiPayload  :: !Alias
+    , _gaiPayload :: !Alias
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.AppsCalendar.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Guests who should receive notifications about the event update (for
 -- example, title changes, etc.).

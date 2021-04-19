@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Ge
     , acwtgPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.tags.get@ method which the
 -- 'AccountsContainersWorkspacesTagsGet' request conforms to.

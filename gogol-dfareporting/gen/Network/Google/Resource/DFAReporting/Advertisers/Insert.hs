@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.Insert
     , aiiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.insert@ method which the
 -- 'AdvertisersInsert' request conforms to.
@@ -57,7 +57,7 @@ type AdvertisersInsertResource =
 data AdvertisersInsert =
   AdvertisersInsert'
     { _aiiProFileId :: !(Textual Int64)
-    , _aiiPayload   :: !Advertiser
+    , _aiiPayload :: !Advertiser
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -48,8 +48,8 @@ module Network.Google.Resource.CloudDebugger.Controller.Debuggees.Register
     , cdrCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.controller.debuggees.register@ method which the
 -- 'ControllerDebuggeesRegister' request conforms to.
@@ -79,12 +79,12 @@ type ControllerDebuggeesRegisterResource =
 -- /See:/ 'controllerDebuggeesRegister' smart constructor.
 data ControllerDebuggeesRegister =
   ControllerDebuggeesRegister'
-    { _cdrXgafv          :: !(Maybe Xgafv)
+    { _cdrXgafv :: !(Maybe Xgafv)
     , _cdrUploadProtocol :: !(Maybe Text)
-    , _cdrAccessToken    :: !(Maybe Text)
-    , _cdrUploadType     :: !(Maybe Text)
-    , _cdrPayload        :: !RegisterDebuggeeRequest
-    , _cdrCallback       :: !(Maybe Text)
+    , _cdrAccessToken :: !(Maybe Text)
+    , _cdrUploadType :: !(Maybe Text)
+    , _cdrPayload :: !RegisterDebuggeeRequest
+    , _cdrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

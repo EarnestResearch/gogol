@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.FloodlightConfigurations.Patch
     , fcpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightConfigurations.patch@ method which the
 -- 'FloodlightConfigurationsPatch' request conforms to.
@@ -62,8 +62,8 @@ type FloodlightConfigurationsPatchResource =
 data FloodlightConfigurationsPatch =
   FloodlightConfigurationsPatch'
     { _fcpProFileId :: !(Textual Int64)
-    , _fcpPayload   :: !FloodlightConfiguration
-    , _fcpId        :: !(Textual Int64)
+    , _fcpPayload :: !FloodlightConfiguration
+    , _fcpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

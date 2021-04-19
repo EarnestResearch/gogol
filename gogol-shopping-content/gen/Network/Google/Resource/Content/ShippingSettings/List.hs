@@ -39,14 +39,14 @@ module Network.Google.Resource.Content.ShippingSettings.List
     , sslMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.list@ method which the
 -- 'ShippingSettingsList' request conforms to.
 type ShippingSettingsListResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "shippingsettings" :>
              QueryParam "pageToken" Text :>
@@ -61,7 +61,7 @@ type ShippingSettingsListResource =
 data ShippingSettingsList =
   ShippingSettingsList'
     { _sslMerchantId :: !(Textual Word64)
-    , _sslPageToken  :: !(Maybe Text)
+    , _sslPageToken :: !(Maybe Text)
     , _sslMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

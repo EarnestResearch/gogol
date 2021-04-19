@@ -34,8 +34,8 @@ module Network.Google.Resource.Books.MyConfig.GetUserSettings
 
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.myconfig.getUserSettings@ method which the
 -- 'MyConfigGetUserSettings' request conforms to.

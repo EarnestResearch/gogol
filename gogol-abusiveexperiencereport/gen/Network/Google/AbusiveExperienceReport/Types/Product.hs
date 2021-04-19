@@ -17,21 +17,21 @@
 --
 module Network.Google.AbusiveExperienceReport.Types.Product where
 
-import           Network.Google.AbusiveExperienceReport.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AbusiveExperienceReport.Types.Sum
+import Network.Google.Prelude
 
 -- | Response message for GetSiteSummary.
 --
 -- /See:/ 'siteSummaryResponse' smart constructor.
 data SiteSummaryResponse =
   SiteSummaryResponse'
-    { _ssrAbusiveStatus   :: !(Maybe SiteSummaryResponseAbusiveStatus)
+    { _ssrAbusiveStatus :: !(Maybe SiteSummaryResponseAbusiveStatus)
     , _ssrEnforcementTime :: !(Maybe DateTime')
-    , _ssrLastChangeTime  :: !(Maybe DateTime')
-    , _ssrFilterStatus    :: !(Maybe SiteSummaryResponseFilterStatus)
-    , _ssrUnderReview     :: !(Maybe Bool)
-    , _ssrReportURL       :: !(Maybe Text)
-    , _ssrReviewedSite    :: !(Maybe Text)
+    , _ssrLastChangeTime :: !(Maybe DateTime')
+    , _ssrFilterStatus :: !(Maybe SiteSummaryResponseFilterStatus)
+    , _ssrUnderReview :: !(Maybe Bool)
+    , _ssrReportURL :: !(Maybe Text)
+    , _ssrReviewedSite :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.TagManager.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types.Sum
+import Network.Google.Prelude
+import Network.Google.TagManager.Types.Sum
 
 -- | List Variables Response.
 --
@@ -26,7 +26,7 @@ import           Network.Google.TagManager.Types.Sum
 data ListVariablesResponse =
   ListVariablesResponse'
     { _lvrNextPageToken :: !(Maybe Text)
-    , _lvrVariable      :: !(Maybe [Variable])
+    , _lvrVariable :: !(Maybe [Variable])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -78,7 +78,7 @@ instance ToJSON ListVariablesResponse where
 data ListFoldersResponse =
   ListFoldersResponse'
     { _lfrNextPageToken :: !(Maybe Text)
-    , _lfrFolder        :: !(Maybe [Folder])
+    , _lfrFolder :: !(Maybe [Folder])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -129,7 +129,7 @@ instance ToJSON ListFoldersResponse where
 data ListZonesResponse =
   ListZonesResponse'
     { _lzrNextPageToken :: !(Maybe Text)
-    , _lzrZone          :: !(Maybe [Zone])
+    , _lzrZone :: !(Maybe [Zone])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -215,7 +215,7 @@ instance ToJSON RevertZoneResponse where
 data ListEnvironmentsResponse =
   ListEnvironmentsResponse'
     { _lerNextPageToken :: !(Maybe Text)
-    , _lerEnvironment   :: !(Maybe [Environment])
+    , _lerEnvironment :: !(Maybe [Environment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -342,7 +342,7 @@ instance ToJSON RevertVariableResponse where
 -- /See:/ 'publishContainerVersionResponse' smart constructor.
 data PublishContainerVersionResponse =
   PublishContainerVersionResponse'
-    { _pcvrCompilerError    :: !(Maybe Bool)
+    { _pcvrCompilerError :: !(Maybe Bool)
     , _pcvrContainerVersion :: !(Maybe ContainerVersion)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -396,7 +396,7 @@ instance ToJSON PublishContainerVersionResponse where
 data ListWorkspacesResponse =
   ListWorkspacesResponse'
     { _lwrNextPageToken :: !(Maybe Text)
-    , _lwrWorkspace     :: !(Maybe [Workspace])
+    , _lwrWorkspace :: !(Maybe [Workspace])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -447,18 +447,18 @@ instance ToJSON ListWorkspacesResponse where
 -- /See:/ 'containerVersionHeader' smart constructor.
 data ContainerVersionHeader =
   ContainerVersionHeader'
-    { _cvhNumTags            :: !(Maybe Text)
-    , _cvhNumMacros          :: !(Maybe Text)
-    , _cvhContainerId        :: !(Maybe Text)
-    , _cvhPath               :: !(Maybe Text)
+    { _cvhNumTags :: !(Maybe Text)
+    , _cvhNumMacros :: !(Maybe Text)
+    , _cvhContainerId :: !(Maybe Text)
+    , _cvhPath :: !(Maybe Text)
     , _cvhContainerVersionId :: !(Maybe Text)
-    , _cvhAccountId          :: !(Maybe Text)
-    , _cvhName               :: !(Maybe Text)
-    , _cvhNumTriggers        :: !(Maybe Text)
-    , _cvhDeleted            :: !(Maybe Bool)
-    , _cvhNumZones           :: !(Maybe Text)
-    , _cvhNumRules           :: !(Maybe Text)
-    , _cvhNumVariables       :: !(Maybe Text)
+    , _cvhAccountId :: !(Maybe Text)
+    , _cvhName :: !(Maybe Text)
+    , _cvhNumTriggers :: !(Maybe Text)
+    , _cvhDeleted :: !(Maybe Bool)
+    , _cvhNumZones :: !(Maybe Text)
+    , _cvhNumRules :: !(Maybe Text)
+    , _cvhNumVariables :: !(Maybe Text)
     , _cvhNumCustomTemplates :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -625,7 +625,7 @@ instance ToJSON ContainerVersionHeader where
 data TeardownTag =
   TeardownTag'
     { _ttStopTeardownOnFailure :: !(Maybe Bool)
-    , _ttTagName               :: !(Maybe Text)
+    , _ttTagName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -678,7 +678,7 @@ instance ToJSON TeardownTag where
 data ListTriggersResponse =
   ListTriggersResponse'
     { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTrigger       :: !(Maybe [Trigger])
+    , _ltrTrigger :: !(Maybe [Trigger])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -730,29 +730,29 @@ instance ToJSON ListTriggersResponse where
 data Tag =
   Tag'
     { _tBlockingTriggerId :: !(Maybe [Text])
-    , _tScheduleEndMs     :: !(Maybe (Textual Int64))
-    , _tParentFolderId    :: !(Maybe Text)
-    , _tLiveOnly          :: !(Maybe Bool)
-    , _tContainerId       :: !(Maybe Text)
-    , _tPriority          :: !(Maybe Parameter)
-    , _tTeardownTag       :: !(Maybe [TeardownTag])
-    , _tPath              :: !(Maybe Text)
-    , _tFingerprint       :: !(Maybe Text)
-    , _tTagFiringOption   :: !(Maybe TagTagFiringOption)
-    , _tAccountId         :: !(Maybe Text)
-    , _tTagId             :: !(Maybe Text)
-    , _tName              :: !(Maybe Text)
-    , _tTagManagerURL     :: !(Maybe Text)
-    , _tBlockingRuleId    :: !(Maybe [Text])
-    , _tSetupTag          :: !(Maybe [SetupTag])
-    , _tFiringTriggerId   :: !(Maybe [Text])
-    , _tWorkspaceId       :: !(Maybe Text)
-    , _tType              :: !(Maybe Text)
-    , _tScheduleStartMs   :: !(Maybe (Textual Int64))
-    , _tNotes             :: !(Maybe Text)
-    , _tPaused            :: !(Maybe Bool)
-    , _tFiringRuleId      :: !(Maybe [Text])
-    , _tParameter         :: !(Maybe [Parameter])
+    , _tScheduleEndMs :: !(Maybe (Textual Int64))
+    , _tParentFolderId :: !(Maybe Text)
+    , _tLiveOnly :: !(Maybe Bool)
+    , _tContainerId :: !(Maybe Text)
+    , _tPriority :: !(Maybe Parameter)
+    , _tTeardownTag :: !(Maybe [TeardownTag])
+    , _tPath :: !(Maybe Text)
+    , _tFingerprint :: !(Maybe Text)
+    , _tTagFiringOption :: !(Maybe TagTagFiringOption)
+    , _tAccountId :: !(Maybe Text)
+    , _tTagId :: !(Maybe Text)
+    , _tName :: !(Maybe Text)
+    , _tTagManagerURL :: !(Maybe Text)
+    , _tBlockingRuleId :: !(Maybe [Text])
+    , _tSetupTag :: !(Maybe [SetupTag])
+    , _tFiringTriggerId :: !(Maybe [Text])
+    , _tWorkspaceId :: !(Maybe Text)
+    , _tType :: !(Maybe Text)
+    , _tScheduleStartMs :: !(Maybe (Textual Int64))
+    , _tNotes :: !(Maybe Text)
+    , _tPaused :: !(Maybe Bool)
+    , _tFiringRuleId :: !(Maybe [Text])
+    , _tParameter :: !(Maybe [Parameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1049,7 +1049,7 @@ instance ToJSON Tag where
 -- /See:/ 'zoneTypeRestriction' smart constructor.
 data ZoneTypeRestriction =
   ZoneTypeRestriction'
-    { _ztrEnable            :: !(Maybe Bool)
+    { _ztrEnable :: !(Maybe Bool)
     , _ztrWhiteListedTypeId :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1101,10 +1101,10 @@ instance ToJSON ZoneTypeRestriction where
 -- /See:/ 'createContainerVersionResponse' smart constructor.
 data CreateContainerVersionResponse =
   CreateContainerVersionResponse'
-    { _ccvrCompilerError    :: !(Maybe Bool)
+    { _ccvrCompilerError :: !(Maybe Bool)
     , _ccvrNewWorkspacePath :: !(Maybe Text)
     , _ccvrContainerVersion :: !(Maybe ContainerVersion)
-    , _ccvrSyncStatus       :: !(Maybe SyncStatus)
+    , _ccvrSyncStatus :: !(Maybe SyncStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1183,7 +1183,7 @@ instance ToJSON CreateContainerVersionResponse where
 -- /See:/ 'createContainerVersionRequestVersionOptions' smart constructor.
 data CreateContainerVersionRequestVersionOptions =
   CreateContainerVersionRequestVersionOptions'
-    { _ccvrvoName  :: !(Maybe Text)
+    { _ccvrvoName :: !(Maybe Text)
     , _ccvrvoNotes :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1238,14 +1238,14 @@ instance ToJSON
 -- /See:/ 'workspace' smart constructor.
 data Workspace =
   Workspace'
-    { _wContainerId   :: !(Maybe Text)
-    , _wPath          :: !(Maybe Text)
-    , _wFingerprint   :: !(Maybe Text)
-    , _wAccountId     :: !(Maybe Text)
-    , _wName          :: !(Maybe Text)
+    { _wContainerId :: !(Maybe Text)
+    , _wPath :: !(Maybe Text)
+    , _wFingerprint :: !(Maybe Text)
+    , _wAccountId :: !(Maybe Text)
+    , _wName :: !(Maybe Text)
     , _wTagManagerURL :: !(Maybe Text)
-    , _wWorkspaceId   :: !(Maybe Text)
-    , _wDescription   :: !(Maybe Text)
+    , _wWorkspaceId :: !(Maybe Text)
+    , _wDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1357,21 +1357,21 @@ instance ToJSON Workspace where
 -- /See:/ 'environment' smart constructor.
 data Environment =
   Environment'
-    { _eContainerId            :: !(Maybe Text)
-    , _ePath                   :: !(Maybe Text)
-    , _eFingerprint            :: !(Maybe Text)
-    , _eContainerVersionId     :: !(Maybe Text)
-    , _eURL                    :: !(Maybe Text)
-    , _eAuthorizationCode      :: !(Maybe Text)
-    , _eAccountId              :: !(Maybe Text)
-    , _eName                   :: !(Maybe Text)
-    , _eTagManagerURL          :: !(Maybe Text)
+    { _eContainerId :: !(Maybe Text)
+    , _ePath :: !(Maybe Text)
+    , _eFingerprint :: !(Maybe Text)
+    , _eContainerVersionId :: !(Maybe Text)
+    , _eURL :: !(Maybe Text)
+    , _eAuthorizationCode :: !(Maybe Text)
+    , _eAccountId :: !(Maybe Text)
+    , _eName :: !(Maybe Text)
+    , _eTagManagerURL :: !(Maybe Text)
     , _eAuthorizationTimestamp :: !(Maybe Timestamp)
-    , _eEnableDebug            :: !(Maybe Bool)
-    , _eEnvironmentId          :: !(Maybe Text)
-    , _eWorkspaceId            :: !(Maybe Text)
-    , _eType                   :: !(Maybe EnvironmentType)
-    , _eDescription            :: !(Maybe Text)
+    , _eEnableDebug :: !(Maybe Bool)
+    , _eEnvironmentId :: !(Maybe Text)
+    , _eWorkspaceId :: !(Maybe Text)
+    , _eType :: !(Maybe EnvironmentType)
+    , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1592,7 +1592,7 @@ instance ToJSON AccountAccess where
 -- /See:/ 'listUserPermissionsResponse' smart constructor.
 data ListUserPermissionsResponse =
   ListUserPermissionsResponse'
-    { _luprNextPageToken  :: !(Maybe Text)
+    { _luprNextPageToken :: !(Maybe Text)
     , _luprUserPermission :: !(Maybe [UserPermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1736,7 +1736,7 @@ instance ToJSON ZoneChildContainer where
 data ListAccountsResponse =
   ListAccountsResponse'
     { _larNextPageToken :: !(Maybe Text)
-    , _larAccount       :: !(Maybe [Account])
+    , _larAccount :: !(Maybe [Account])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1788,7 +1788,7 @@ instance ToJSON ListAccountsResponse where
 data MergeConflict =
   MergeConflict'
     { _mcEntityInBaseVersion :: !(Maybe Entity)
-    , _mcEntityInWorkspace   :: !(Maybe Entity)
+    , _mcEntityInWorkspace :: !(Maybe Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1844,15 +1844,15 @@ instance ToJSON MergeConflict where
 -- /See:/ 'folder' smart constructor.
 data Folder =
   Folder'
-    { _fContainerId   :: !(Maybe Text)
-    , _fPath          :: !(Maybe Text)
-    , _fFingerprint   :: !(Maybe Text)
-    , _fFolderId      :: !(Maybe Text)
-    , _fAccountId     :: !(Maybe Text)
-    , _fName          :: !(Maybe Text)
+    { _fContainerId :: !(Maybe Text)
+    , _fPath :: !(Maybe Text)
+    , _fFingerprint :: !(Maybe Text)
+    , _fFolderId :: !(Maybe Text)
+    , _fAccountId :: !(Maybe Text)
+    , _fName :: !(Maybe Text)
     , _fTagManagerURL :: !(Maybe Text)
-    , _fWorkspaceId   :: !(Maybe Text)
-    , _fNotes         :: !(Maybe Text)
+    , _fWorkspaceId :: !(Maybe Text)
+    , _fNotes :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1972,7 +1972,7 @@ instance ToJSON Folder where
 data ZoneBoundary =
   ZoneBoundary'
     { _zbCustomEvaluationTriggerId :: !(Maybe [Text])
-    , _zbCondition                 :: !(Maybe [Condition])
+    , _zbCondition :: !(Maybe [Condition])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2027,23 +2027,23 @@ instance ToJSON ZoneBoundary where
 -- /See:/ 'variable' smart constructor.
 data Variable =
   Variable'
-    { _vScheduleEndMs      :: !(Maybe (Textual Int64))
-    , _vParentFolderId     :: !(Maybe Text)
-    , _vContainerId        :: !(Maybe Text)
-    , _vPath               :: !(Maybe Text)
-    , _vFingerprint        :: !(Maybe Text)
-    , _vVariableId         :: !(Maybe Text)
-    , _vAccountId          :: !(Maybe Text)
+    { _vScheduleEndMs :: !(Maybe (Textual Int64))
+    , _vParentFolderId :: !(Maybe Text)
+    , _vContainerId :: !(Maybe Text)
+    , _vPath :: !(Maybe Text)
+    , _vFingerprint :: !(Maybe Text)
+    , _vVariableId :: !(Maybe Text)
+    , _vAccountId :: !(Maybe Text)
     , _vDisablingTriggerId :: !(Maybe [Text])
-    , _vName               :: !(Maybe Text)
-    , _vTagManagerURL      :: !(Maybe Text)
-    , _vFormatValue        :: !(Maybe VariableFormatValue)
-    , _vWorkspaceId        :: !(Maybe Text)
-    , _vType               :: !(Maybe Text)
-    , _vScheduleStartMs    :: !(Maybe (Textual Int64))
-    , _vNotes              :: !(Maybe Text)
-    , _vEnablingTriggerId  :: !(Maybe [Text])
-    , _vParameter          :: !(Maybe [Parameter])
+    , _vName :: !(Maybe Text)
+    , _vTagManagerURL :: !(Maybe Text)
+    , _vFormatValue :: !(Maybe VariableFormatValue)
+    , _vWorkspaceId :: !(Maybe Text)
+    , _vType :: !(Maybe Text)
+    , _vScheduleStartMs :: !(Maybe (Textual Int64))
+    , _vNotes :: !(Maybe Text)
+    , _vEnablingTriggerId :: !(Maybe [Text])
+    , _vParameter :: !(Maybe [Parameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2260,18 +2260,18 @@ instance ToJSON Variable where
 -- /See:/ 'zone' smart constructor.
 data Zone =
   Zone'
-    { _zContainerId     :: !(Maybe Text)
-    , _zPath            :: !(Maybe Text)
-    , _zBoundary        :: !(Maybe ZoneBoundary)
-    , _zFingerprint     :: !(Maybe Text)
-    , _zZoneId          :: !(Maybe Text)
+    { _zContainerId :: !(Maybe Text)
+    , _zPath :: !(Maybe Text)
+    , _zBoundary :: !(Maybe ZoneBoundary)
+    , _zFingerprint :: !(Maybe Text)
+    , _zZoneId :: !(Maybe Text)
     , _zTypeRestriction :: !(Maybe ZoneTypeRestriction)
-    , _zAccountId       :: !(Maybe Text)
-    , _zName            :: !(Maybe Text)
-    , _zTagManagerURL   :: !(Maybe Text)
-    , _zChildContainer  :: !(Maybe [ZoneChildContainer])
-    , _zWorkspaceId     :: !(Maybe Text)
-    , _zNotes           :: !(Maybe Text)
+    , _zAccountId :: !(Maybe Text)
+    , _zName :: !(Maybe Text)
+    , _zTagManagerURL :: !(Maybe Text)
+    , _zChildContainer :: !(Maybe [ZoneChildContainer])
+    , _zWorkspaceId :: !(Maybe Text)
+    , _zNotes :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2425,7 +2425,7 @@ instance ToJSON Zone where
 data SyncWorkspaceResponse =
   SyncWorkspaceResponse'
     { _swrMergeConflict :: !(Maybe [MergeConflict])
-    , _swrSyncStatus    :: !(Maybe SyncStatus)
+    , _swrSyncStatus :: !(Maybe SyncStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2515,11 +2515,11 @@ instance ToJSON RevertTriggerResponse where
 -- /See:/ 'account' smart constructor.
 data Account =
   Account'
-    { _aPath          :: !(Maybe Text)
-    , _aShareData     :: !(Maybe Bool)
-    , _aFingerprint   :: !(Maybe Text)
-    , _aAccountId     :: !(Maybe Text)
-    , _aName          :: !(Maybe Text)
+    { _aPath :: !(Maybe Text)
+    , _aShareData :: !(Maybe Bool)
+    , _aFingerprint :: !(Maybe Text)
+    , _aAccountId :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
     , _aTagManagerURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2615,7 +2615,7 @@ instance ToJSON Account where
 -- /See:/ 'getWorkspaceStatusResponse' smart constructor.
 data GetWorkspaceStatusResponse =
   GetWorkspaceStatusResponse'
-    { _gwsrMergeConflict   :: !(Maybe [MergeConflict])
+    { _gwsrMergeConflict :: !(Maybe [MergeConflict])
     , _gwsrWorkspaceChange :: !(Maybe [Entity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2671,9 +2671,9 @@ instance ToJSON GetWorkspaceStatusResponse where
 -- /See:/ 'quickPreviewResponse' smart constructor.
 data QuickPreviewResponse =
   QuickPreviewResponse'
-    { _qprCompilerError    :: !(Maybe Bool)
+    { _qprCompilerError :: !(Maybe Bool)
     , _qprContainerVersion :: !(Maybe ContainerVersion)
-    , _qprSyncStatus       :: !(Maybe SyncStatus)
+    , _qprSyncStatus :: !(Maybe SyncStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2738,7 +2738,7 @@ instance ToJSON QuickPreviewResponse where
 -- /See:/ 'listContainerVersionsResponse' smart constructor.
 data ListContainerVersionsResponse =
   ListContainerVersionsResponse'
-    { _lcvrNextPageToken          :: !(Maybe Text)
+    { _lcvrNextPageToken :: !(Maybe Text)
     , _lcvrContainerVersionHeader :: !(Maybe [ContainerVersionHeader])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2794,16 +2794,16 @@ instance ToJSON ListContainerVersionsResponse where
 -- /See:/ 'container' smart constructor.
 data Container =
   Container'
-    { _cPublicId      :: !(Maybe Text)
-    , _cUsageContext  :: !(Maybe [ContainerUsageContextItem])
-    , _cContainerId   :: !(Maybe Text)
-    , _cPath          :: !(Maybe Text)
-    , _cFingerprint   :: !(Maybe Text)
-    , _cAccountId     :: !(Maybe Text)
-    , _cDomainName    :: !(Maybe [Text])
-    , _cName          :: !(Maybe Text)
+    { _cPublicId :: !(Maybe Text)
+    , _cUsageContext :: !(Maybe [ContainerUsageContextItem])
+    , _cContainerId :: !(Maybe Text)
+    , _cPath :: !(Maybe Text)
+    , _cFingerprint :: !(Maybe Text)
+    , _cAccountId :: !(Maybe Text)
+    , _cDomainName :: !(Maybe [Text])
+    , _cName :: !(Maybe Text)
     , _cTagManagerURL :: !(Maybe Text)
-    , _cNotes         :: !(Maybe Text)
+    , _cNotes :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2943,11 +2943,11 @@ instance ToJSON Container where
 data BuiltInVariable =
   BuiltInVariable'
     { _bivContainerId :: !(Maybe Text)
-    , _bivPath        :: !(Maybe Text)
-    , _bivAccountId   :: !(Maybe Text)
-    , _bivName        :: !(Maybe Text)
+    , _bivPath :: !(Maybe Text)
+    , _bivAccountId :: !(Maybe Text)
+    , _bivName :: !(Maybe Text)
     , _bivWorkspaceId :: !(Maybe Text)
-    , _bivType        :: !(Maybe BuiltInVariableType)
+    , _bivType :: !(Maybe BuiltInVariableType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3037,10 +3037,10 @@ instance ToJSON BuiltInVariable where
 -- /See:/ 'userPermission' smart constructor.
 data UserPermission =
   UserPermission'
-    { _upPath            :: !(Maybe Text)
-    , _upAccountAccess   :: !(Maybe AccountAccess)
-    , _upAccountId       :: !(Maybe Text)
-    , _upEmailAddress    :: !(Maybe Text)
+    { _upPath :: !(Maybe Text)
+    , _upAccountAccess :: !(Maybe AccountAccess)
+    , _upAccountId :: !(Maybe Text)
+    , _upEmailAddress :: !(Maybe Text)
     , _upContainerAccess :: !(Maybe [ContainerAccess])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3125,23 +3125,23 @@ instance ToJSON UserPermission where
 -- /See:/ 'containerVersion' smart constructor.
 data ContainerVersion =
   ContainerVersion'
-    { _cvTag                :: !(Maybe [Tag])
-    , _cvContainerId        :: !(Maybe Text)
-    , _cvPath               :: !(Maybe Text)
-    , _cvFingerprint        :: !(Maybe Text)
+    { _cvTag :: !(Maybe [Tag])
+    , _cvContainerId :: !(Maybe Text)
+    , _cvPath :: !(Maybe Text)
+    , _cvFingerprint :: !(Maybe Text)
     , _cvContainerVersionId :: !(Maybe Text)
-    , _cvFolder             :: !(Maybe [Folder])
-    , _cvVariable           :: !(Maybe [Variable])
-    , _cvZone               :: !(Maybe [Zone])
-    , _cvAccountId          :: !(Maybe Text)
-    , _cvName               :: !(Maybe Text)
-    , _cvContainer          :: !(Maybe Container)
-    , _cvBuiltInVariable    :: !(Maybe [BuiltInVariable])
-    , _cvTagManagerURL      :: !(Maybe Text)
-    , _cvDeleted            :: !(Maybe Bool)
-    , _cvTrigger            :: !(Maybe [Trigger])
-    , _cvCustomTemplate     :: !(Maybe [CustomTemplate])
-    , _cvDescription        :: !(Maybe Text)
+    , _cvFolder :: !(Maybe [Folder])
+    , _cvVariable :: !(Maybe [Variable])
+    , _cvZone :: !(Maybe [Zone])
+    , _cvAccountId :: !(Maybe Text)
+    , _cvName :: !(Maybe Text)
+    , _cvContainer :: !(Maybe Container)
+    , _cvBuiltInVariable :: !(Maybe [BuiltInVariable])
+    , _cvTagManagerURL :: !(Maybe Text)
+    , _cvDeleted :: !(Maybe Bool)
+    , _cvTrigger :: !(Maybe [Trigger])
+    , _cvCustomTemplate :: !(Maybe [CustomTemplate])
+    , _cvDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3362,7 +3362,7 @@ instance ToJSON ContainerVersion where
 -- /See:/ 'setupTag' smart constructor.
 data SetupTag =
   SetupTag'
-    { _stTagName            :: !(Maybe Text)
+    { _stTagName :: !(Maybe Text)
     , _stStopOnSetupFailure :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3413,7 +3413,7 @@ instance ToJSON SetupTag where
 data ListContainersResponse =
   ListContainersResponse'
     { _lcrNextPageToken :: !(Maybe Text)
-    , _lcrContainer     :: !(Maybe [Container])
+    , _lcrContainer :: !(Maybe [Container])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3464,38 +3464,38 @@ instance ToJSON ListContainersResponse where
 -- /See:/ 'trigger' smart constructor.
 data Trigger =
   Trigger'
-    { _triContinuousTimeMinMilliseconds  :: !(Maybe Parameter)
-    , _triMaxTimerLengthSeconds          :: !(Maybe Parameter)
-    , _triCustomEventFilter              :: !(Maybe [Condition])
-    , _triParentFolderId                 :: !(Maybe Text)
-    , _triVisiblePercentageMax           :: !(Maybe Parameter)
-    , _triContainerId                    :: !(Maybe Text)
-    , _triPath                           :: !(Maybe Text)
-    , _triSelector                       :: !(Maybe Parameter)
-    , _triTriggerId                      :: !(Maybe Text)
-    , _triCheckValidation                :: !(Maybe Parameter)
-    , _triFingerprint                    :: !(Maybe Text)
-    , _triTotalTimeMinMilliseconds       :: !(Maybe Parameter)
-    , _triAutoEventFilter                :: !(Maybe [Condition])
-    , _triUniqueTriggerId                :: !(Maybe Parameter)
+    { _triContinuousTimeMinMilliseconds :: !(Maybe Parameter)
+    , _triMaxTimerLengthSeconds :: !(Maybe Parameter)
+    , _triCustomEventFilter :: !(Maybe [Condition])
+    , _triParentFolderId :: !(Maybe Text)
+    , _triVisiblePercentageMax :: !(Maybe Parameter)
+    , _triContainerId :: !(Maybe Text)
+    , _triPath :: !(Maybe Text)
+    , _triSelector :: !(Maybe Parameter)
+    , _triTriggerId :: !(Maybe Text)
+    , _triCheckValidation :: !(Maybe Parameter)
+    , _triFingerprint :: !(Maybe Text)
+    , _triTotalTimeMinMilliseconds :: !(Maybe Parameter)
+    , _triAutoEventFilter :: !(Maybe [Condition])
+    , _triUniqueTriggerId :: !(Maybe Parameter)
     , _triHorizontalScrollPercentageList :: !(Maybe Parameter)
-    , _triIntervalSeconds                :: !(Maybe Parameter)
-    , _triVisiblePercentageMin           :: !(Maybe Parameter)
-    , _triAccountId                      :: !(Maybe Text)
-    , _triName                           :: !(Maybe Text)
-    , _triInterval                       :: !(Maybe Parameter)
-    , _triTagManagerURL                  :: !(Maybe Text)
-    , _triWaitForTagsTimeout             :: !(Maybe Parameter)
-    , _triLimit                          :: !(Maybe Parameter)
-    , _triVerticalScrollPercentageList   :: !(Maybe Parameter)
-    , _triFilter                         :: !(Maybe [Condition])
-    , _triWorkspaceId                    :: !(Maybe Text)
-    , _triType                           :: !(Maybe TriggerType)
-    , _triNotes                          :: !(Maybe Text)
-    , _triVisibilitySelector             :: !(Maybe Parameter)
-    , _triEventName                      :: !(Maybe Parameter)
-    , _triWaitForTags                    :: !(Maybe Parameter)
-    , _triParameter                      :: !(Maybe [Parameter])
+    , _triIntervalSeconds :: !(Maybe Parameter)
+    , _triVisiblePercentageMin :: !(Maybe Parameter)
+    , _triAccountId :: !(Maybe Text)
+    , _triName :: !(Maybe Text)
+    , _triInterval :: !(Maybe Parameter)
+    , _triTagManagerURL :: !(Maybe Text)
+    , _triWaitForTagsTimeout :: !(Maybe Parameter)
+    , _triLimit :: !(Maybe Parameter)
+    , _triVerticalScrollPercentageList :: !(Maybe Parameter)
+    , _triFilter :: !(Maybe [Condition])
+    , _triWorkspaceId :: !(Maybe Text)
+    , _triType :: !(Maybe TriggerType)
+    , _triNotes :: !(Maybe Text)
+    , _triVisibilitySelector :: !(Maybe Parameter)
+    , _triEventName :: !(Maybe Parameter)
+    , _triWaitForTags :: !(Maybe Parameter)
+    , _triParameter :: !(Maybe [Parameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3905,7 +3905,7 @@ instance ToJSON Trigger where
 data ListTagsResponse =
   ListTagsResponse'
     { _lNextPageToken :: !(Maybe Text)
-    , _lTag           :: !(Maybe [Tag])
+    , _lTag :: !(Maybe [Tag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3954,7 +3954,7 @@ instance ToJSON ListTagsResponse where
 -- /See:/ 'listEnabledBuiltInVariablesResponse' smart constructor.
 data ListEnabledBuiltInVariablesResponse =
   ListEnabledBuiltInVariablesResponse'
-    { _lebivrNextPageToken   :: !(Maybe Text)
+    { _lebivrNextPageToken :: !(Maybe Text)
     , _lebivrBuiltInVariable :: !(Maybe [BuiltInVariable])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4010,15 +4010,15 @@ instance ToJSON ListEnabledBuiltInVariablesResponse
 -- /See:/ 'customTemplate' smart constructor.
 data CustomTemplate =
   CustomTemplate'
-    { _ctContainerId   :: !(Maybe Text)
-    , _ctPath          :: !(Maybe Text)
-    , _ctTemplateId    :: !(Maybe Text)
-    , _ctFingerprint   :: !(Maybe Text)
-    , _ctAccountId     :: !(Maybe Text)
-    , _ctName          :: !(Maybe Text)
+    { _ctContainerId :: !(Maybe Text)
+    , _ctPath :: !(Maybe Text)
+    , _ctTemplateId :: !(Maybe Text)
+    , _ctFingerprint :: !(Maybe Text)
+    , _ctAccountId :: !(Maybe Text)
+    , _ctName :: !(Maybe Text)
     , _ctTagManagerURL :: !(Maybe Text)
-    , _ctTemplateData  :: !(Maybe Text)
-    , _ctWorkspaceId   :: !(Maybe Text)
+    , _ctTemplateData :: !(Maybe Text)
+    , _ctWorkspaceId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4143,9 +4143,9 @@ instance ToJSON CustomTemplate where
 data FolderEntities =
   FolderEntities'
     { _feNextPageToken :: !(Maybe Text)
-    , _feTag           :: !(Maybe [Tag])
-    , _feVariable      :: !(Maybe [Variable])
-    , _feTrigger       :: !(Maybe [Trigger])
+    , _feTag :: !(Maybe [Tag])
+    , _feVariable :: !(Maybe [Variable])
+    , _feTrigger :: !(Maybe [Trigger])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4221,7 +4221,7 @@ instance ToJSON FolderEntities where
 -- /See:/ 'syncStatus' smart constructor.
 data SyncStatus =
   SyncStatus'
-    { _ssSyncError     :: !(Maybe Bool)
+    { _ssSyncError :: !(Maybe Bool)
     , _ssMergeConflict :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4304,7 +4304,7 @@ instance ToJSON RevertTagResponse where
 -- /See:/ 'condition' smart constructor.
 data Condition =
   Condition'
-    { _cType      :: !(Maybe ConditionType)
+    { _cType :: !(Maybe ConditionType)
     , _cParameter :: !(Maybe [Parameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4361,11 +4361,11 @@ instance ToJSON Condition where
 -- /See:/ 'entity' smart constructor.
 data Entity =
   Entity'
-    { _eTag          :: !(Maybe Tag)
-    , _eFolder       :: !(Maybe Folder)
-    , _eVariable     :: !(Maybe Variable)
+    { _eTag :: !(Maybe Tag)
+    , _eFolder :: !(Maybe Folder)
+    , _eVariable :: !(Maybe Variable)
     , _eChangeStatus :: !(Maybe EntityChangeStatus)
-    , _eTrigger      :: !(Maybe Trigger)
+    , _eTrigger :: !(Maybe Trigger)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4443,7 +4443,7 @@ instance ToJSON Entity where
 data ContainerAccess =
   ContainerAccess'
     { _caContainerId :: !(Maybe Text)
-    , _caPermission  :: !(Maybe ContainerAccessPermission)
+    , _caPermission :: !(Maybe ContainerAccessPermission)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4543,7 +4543,7 @@ instance ToJSON ContainerAccess where
 -- /See:/ 'timestamp' smart constructor.
 data Timestamp =
   Timestamp'
-    { _tNanos   :: !(Maybe (Textual Int32))
+    { _tNanos :: !(Maybe (Textual Int32))
     , _tSeconds :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4593,10 +4593,10 @@ instance ToJSON Timestamp where
 -- /See:/ 'variableFormatValue' smart constructor.
 data VariableFormatValue =
   VariableFormatValue'
-    { _vfvConvertNullToValue      :: !(Maybe Parameter)
-    , _vfvConvertTrueToValue      :: !(Maybe Parameter)
-    , _vfvCaseConversionType      :: !(Maybe VariableFormatValueCaseConversionType)
-    , _vfvConvertFalseToValue     :: !(Maybe Parameter)
+    { _vfvConvertNullToValue :: !(Maybe Parameter)
+    , _vfvConvertTrueToValue :: !(Maybe Parameter)
+    , _vfvCaseConversionType :: !(Maybe VariableFormatValueCaseConversionType)
+    , _vfvConvertFalseToValue :: !(Maybe Parameter)
     , _vfvConvertUndefinedToValue :: !(Maybe Parameter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4724,11 +4724,11 @@ instance ToJSON RevertBuiltInVariableResponse where
 -- /See:/ 'parameter' smart constructor.
 data Parameter =
   Parameter'
-    { _pList  :: !(Maybe [Parameter])
+    { _pList :: !(Maybe [Parameter])
     , _pValue :: !(Maybe Text)
-    , _pMap   :: !(Maybe [Parameter])
-    , _pKey   :: !(Maybe Text)
-    , _pType  :: !(Maybe ParameterType)
+    , _pMap :: !(Maybe [Parameter])
+    , _pKey :: !(Maybe Text)
+    , _pType :: !(Maybe ParameterType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

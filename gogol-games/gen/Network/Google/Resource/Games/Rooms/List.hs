@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Rooms.List
     , rMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.list@ method which the
 -- 'RoomsList' request conforms to.
@@ -57,8 +57,8 @@ type RoomsListResource =
 -- /See:/ 'roomsList' smart constructor.
 data RoomsList =
   RoomsList'
-    { _rLanguage   :: !(Maybe Text)
-    , _rPageToken  :: !(Maybe Text)
+    { _rLanguage :: !(Maybe Text)
+    , _rPageToken :: !(Maybe Text)
     , _rMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

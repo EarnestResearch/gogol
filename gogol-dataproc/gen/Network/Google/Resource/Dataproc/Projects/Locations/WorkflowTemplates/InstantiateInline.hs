@@ -51,8 +51,8 @@ module Network.Google.Resource.Dataproc.Projects.Locations.WorkflowTemplates.Ins
     , plwtiiCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.locations.workflowTemplates.instantiateInline@ method which the
 -- 'ProjectsLocationsWorkflowTemplatesInstantiateInline' request conforms to.
@@ -84,14 +84,14 @@ type ProjectsLocationsWorkflowTemplatesInstantiateInlineResource
 -- /See:/ 'projectsLocationsWorkflowTemplatesInstantiateInline' smart constructor.
 data ProjectsLocationsWorkflowTemplatesInstantiateInline =
   ProjectsLocationsWorkflowTemplatesInstantiateInline'
-    { _plwtiiParent         :: !Text
-    , _plwtiiXgafv          :: !(Maybe Xgafv)
-    , _plwtiiRequestId      :: !(Maybe Text)
+    { _plwtiiParent :: !Text
+    , _plwtiiXgafv :: !(Maybe Xgafv)
+    , _plwtiiRequestId :: !(Maybe Text)
     , _plwtiiUploadProtocol :: !(Maybe Text)
-    , _plwtiiAccessToken    :: !(Maybe Text)
-    , _plwtiiUploadType     :: !(Maybe Text)
-    , _plwtiiPayload        :: !WorkflowTemplate
-    , _plwtiiCallback       :: !(Maybe Text)
+    , _plwtiiAccessToken :: !(Maybe Text)
+    , _plwtiiUploadType :: !(Maybe Text)
+    , _plwtiiPayload :: !WorkflowTemplate
+    , _plwtiiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

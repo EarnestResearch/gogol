@@ -47,8 +47,8 @@ module Network.Google.Resource.Logging.Projects.Sinks.Update
     , psuCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.sinks.update@ method which the
 -- 'ProjectsSinksUpdate' request conforms to.
@@ -73,15 +73,15 @@ type ProjectsSinksUpdateResource =
 -- /See:/ 'projectsSinksUpdate' smart constructor.
 data ProjectsSinksUpdate =
   ProjectsSinksUpdate'
-    { _psuXgafv                :: !(Maybe Xgafv)
+    { _psuXgafv :: !(Maybe Xgafv)
     , _psuUniqueWriterIdentity :: !(Maybe Bool)
-    , _psuUploadProtocol       :: !(Maybe Text)
-    , _psuUpdateMask           :: !(Maybe GFieldMask)
-    , _psuAccessToken          :: !(Maybe Text)
-    , _psuUploadType           :: !(Maybe Text)
-    , _psuPayload              :: !LogSink
-    , _psuSinkName             :: !Text
-    , _psuCallback             :: !(Maybe Text)
+    , _psuUploadProtocol :: !(Maybe Text)
+    , _psuUpdateMask :: !(Maybe GFieldMask)
+    , _psuAccessToken :: !(Maybe Text)
+    , _psuUploadType :: !(Maybe Text)
+    , _psuPayload :: !LogSink
+    , _psuSinkName :: !Text
+    , _psuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

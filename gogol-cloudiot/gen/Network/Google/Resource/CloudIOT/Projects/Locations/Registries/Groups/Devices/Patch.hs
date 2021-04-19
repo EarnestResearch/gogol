@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Dev
     , plrgdpCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.devices.patch@ method which the
 -- 'ProjectsLocationsRegistriesGroupsDevicesPatch' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsLocationsRegistriesGroupsDevicesPatchResource
 -- /See:/ 'projectsLocationsRegistriesGroupsDevicesPatch' smart constructor.
 data ProjectsLocationsRegistriesGroupsDevicesPatch =
   ProjectsLocationsRegistriesGroupsDevicesPatch'
-    { _plrgdpXgafv          :: !(Maybe Xgafv)
+    { _plrgdpXgafv :: !(Maybe Xgafv)
     , _plrgdpUploadProtocol :: !(Maybe Text)
-    , _plrgdpUpdateMask     :: !(Maybe GFieldMask)
-    , _plrgdpAccessToken    :: !(Maybe Text)
-    , _plrgdpUploadType     :: !(Maybe Text)
-    , _plrgdpPayload        :: !Device
-    , _plrgdpName           :: !Text
-    , _plrgdpCallback       :: !(Maybe Text)
+    , _plrgdpUpdateMask :: !(Maybe GFieldMask)
+    , _plrgdpAccessToken :: !(Maybe Text)
+    , _plrgdpUploadType :: !(Maybe Text)
+    , _plrgdpPayload :: !Device
+    , _plrgdpName :: !Text
+    , _plrgdpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

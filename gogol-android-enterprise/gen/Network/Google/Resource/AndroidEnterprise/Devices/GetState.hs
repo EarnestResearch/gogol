@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.GetState
     , dgsDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.getState@ method which the
 -- 'DevicesGetState' request conforms to.
@@ -69,8 +69,8 @@ type DevicesGetStateResource =
 data DevicesGetState =
   DevicesGetState'
     { _dgsEnterpriseId :: !Text
-    , _dgsUserId       :: !Text
-    , _dgsDeviceId     :: !Text
+    , _dgsUserId :: !Text
+    , _dgsDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

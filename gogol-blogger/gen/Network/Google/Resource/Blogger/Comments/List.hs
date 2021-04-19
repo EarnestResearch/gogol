@@ -44,8 +44,8 @@ module Network.Google.Resource.Blogger.Comments.List
     , clMaxResults
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.comments.list@ method which the
 -- 'CommentsList' request conforms to.
@@ -72,15 +72,15 @@ type CommentsListResource =
 -- /See:/ 'commentsList' smart constructor.
 data CommentsList =
   CommentsList'
-    { _clStatus      :: !(Maybe [CommentsListStatus])
-    , _clEndDate     :: !(Maybe DateTime')
-    , _clBlogId      :: !Text
-    , _clStartDate   :: !(Maybe DateTime')
+    { _clStatus :: !(Maybe [CommentsListStatus])
+    , _clEndDate :: !(Maybe DateTime')
+    , _clBlogId :: !Text
+    , _clStartDate :: !(Maybe DateTime')
     , _clFetchBodies :: !(Maybe Bool)
-    , _clView        :: !(Maybe CommentsListView)
-    , _clPostId      :: !Text
-    , _clPageToken   :: !(Maybe Text)
-    , _clMaxResults  :: !(Maybe (Textual Word32))
+    , _clView :: !(Maybe CommentsListView)
+    , _clPostId :: !Text
+    , _clPageToken :: !(Maybe Text)
+    , _clMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

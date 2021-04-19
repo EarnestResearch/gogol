@@ -225,19 +225,19 @@ module Network.Google.SourceRepo
     , bCondition
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.SourceRepo.Projects.GetConfig
-import           Network.Google.Resource.SourceRepo.Projects.Repos.Create
-import           Network.Google.Resource.SourceRepo.Projects.Repos.Delete
-import           Network.Google.Resource.SourceRepo.Projects.Repos.Get
-import           Network.Google.Resource.SourceRepo.Projects.Repos.GetIAMPolicy
-import           Network.Google.Resource.SourceRepo.Projects.Repos.List
-import           Network.Google.Resource.SourceRepo.Projects.Repos.Patch
-import           Network.Google.Resource.SourceRepo.Projects.Repos.SetIAMPolicy
-import           Network.Google.Resource.SourceRepo.Projects.Repos.Sync
-import           Network.Google.Resource.SourceRepo.Projects.Repos.TestIAMPermissions
-import           Network.Google.Resource.SourceRepo.Projects.UpdateConfig
-import           Network.Google.SourceRepo.Types
+import Network.Google.Prelude
+import Network.Google.Resource.SourceRepo.Projects.GetConfig
+import Network.Google.Resource.SourceRepo.Projects.Repos.Create
+import Network.Google.Resource.SourceRepo.Projects.Repos.Delete
+import Network.Google.Resource.SourceRepo.Projects.Repos.Get
+import Network.Google.Resource.SourceRepo.Projects.Repos.GetIAMPolicy
+import Network.Google.Resource.SourceRepo.Projects.Repos.List
+import Network.Google.Resource.SourceRepo.Projects.Repos.Patch
+import Network.Google.Resource.SourceRepo.Projects.Repos.SetIAMPolicy
+import Network.Google.Resource.SourceRepo.Projects.Repos.Sync
+import Network.Google.Resource.SourceRepo.Projects.Repos.TestIAMPermissions
+import Network.Google.Resource.SourceRepo.Projects.UpdateConfig
+import Network.Google.SourceRepo.Types
 
 {- $resources
 TODO

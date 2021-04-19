@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.MachineTypes.List
     , mtlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.machineTypes.list@ method which the
 -- 'MachineTypesList' request conforms to.
@@ -66,11 +66,11 @@ type MachineTypesListResource =
 -- /See:/ 'machineTypesList' smart constructor.
 data MachineTypesList =
   MachineTypesList'
-    { _mtlOrderBy    :: !(Maybe Text)
-    , _mtlProject    :: !Text
-    , _mtlZone       :: !Text
-    , _mtlFilter     :: !(Maybe Text)
-    , _mtlPageToken  :: !(Maybe Text)
+    { _mtlOrderBy :: !(Maybe Text)
+    , _mtlProject :: !Text
+    , _mtlZone :: !Text
+    , _mtlFilter :: !(Maybe Text)
+    , _mtlPageToken :: !(Maybe Text)
     , _mtlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

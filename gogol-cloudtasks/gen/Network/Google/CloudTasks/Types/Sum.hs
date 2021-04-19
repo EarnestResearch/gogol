@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudTasks.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. The view specifies which subset of the Task has been
 -- returned.

@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.InAppProducts.List
     , iaplMaxResults
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.inappproducts.list@ method which the
 -- 'InAppProductsList' request conforms to.
@@ -64,9 +64,9 @@ type InAppProductsListResource =
 data InAppProductsList =
   InAppProductsList'
     { _iaplPackageName :: !Text
-    , _iaplToken       :: !(Maybe Text)
-    , _iaplStartIndex  :: !(Maybe (Textual Word32))
-    , _iaplMaxResults  :: !(Maybe (Textual Word32))
+    , _iaplToken :: !(Maybe Text)
+    , _iaplStartIndex :: !(Maybe (Textual Word32))
+    , _iaplMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

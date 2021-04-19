@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudProFiler.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Type of profile. For offline mode, this must be specified when creating
 -- the profile. For online mode it is assigned and returned by the server.

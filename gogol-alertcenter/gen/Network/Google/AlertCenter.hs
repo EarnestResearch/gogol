@@ -276,16 +276,16 @@ module Network.Google.AlertCenter
     , meFromHeader
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.AlertCenter.Alerts.Delete
-import           Network.Google.Resource.AlertCenter.Alerts.Feedback.Create
-import           Network.Google.Resource.AlertCenter.Alerts.Feedback.List
-import           Network.Google.Resource.AlertCenter.Alerts.Get
-import           Network.Google.Resource.AlertCenter.Alerts.List
-import           Network.Google.Resource.AlertCenter.Alerts.Undelete
-import           Network.Google.Resource.AlertCenter.GetSettings
-import           Network.Google.Resource.AlertCenter.UpdateSettings
+import Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Resource.AlertCenter.Alerts.Delete
+import Network.Google.Resource.AlertCenter.Alerts.Feedback.Create
+import Network.Google.Resource.AlertCenter.Alerts.Feedback.List
+import Network.Google.Resource.AlertCenter.Alerts.Get
+import Network.Google.Resource.AlertCenter.Alerts.List
+import Network.Google.Resource.AlertCenter.Alerts.Undelete
+import Network.Google.Resource.AlertCenter.GetSettings
+import Network.Google.Resource.AlertCenter.UpdateSettings
 
 {- $resources
 TODO

@@ -47,8 +47,8 @@ module Network.Google.Resource.Drive.Changes.List
     , clDriveId
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.changes.list@ method which the
 -- 'ChangesList' request conforms to.
@@ -76,18 +76,18 @@ type ChangesListResource =
 -- /See:/ 'changesList' smart constructor.
 data ChangesList =
   ChangesList'
-    { _clIncludeTeamDriveItems     :: !Bool
-    , _clIncludeCorpusRemovals     :: !Bool
-    , _clTeamDriveId               :: !(Maybe Text)
-    , _clRestrictToMyDrive         :: !Bool
-    , _clSpaces                    :: !Text
+    { _clIncludeTeamDriveItems :: !Bool
+    , _clIncludeCorpusRemovals :: !Bool
+    , _clTeamDriveId :: !(Maybe Text)
+    , _clRestrictToMyDrive :: !Bool
+    , _clSpaces :: !Text
     , _clIncludeItemsFromAllDrives :: !Bool
-    , _clSupportsAllDrives         :: !Bool
-    , _clPageToken                 :: !Text
-    , _clPageSize                  :: !(Textual Int32)
-    , _clIncludeRemoved            :: !Bool
-    , _clSupportsTeamDrives        :: !Bool
-    , _clDriveId                   :: !(Maybe Text)
+    , _clSupportsAllDrives :: !Bool
+    , _clPageToken :: !Text
+    , _clPageSize :: !(Textual Int32)
+    , _clIncludeRemoved :: !Bool
+    , _clSupportsTeamDrives :: !Bool
+    , _clDriveId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

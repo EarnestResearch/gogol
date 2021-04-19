@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.Reports.CompatibleFields.Query
     , rcfqPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.compatibleFields.query@ method which the
 -- 'ReportsCompatibleFieldsQuery' request conforms to.
@@ -64,7 +64,7 @@ type ReportsCompatibleFieldsQueryResource =
 data ReportsCompatibleFieldsQuery =
   ReportsCompatibleFieldsQuery'
     { _rcfqProFileId :: !(Textual Int64)
-    , _rcfqPayload   :: !Report
+    , _rcfqPayload :: !Report
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

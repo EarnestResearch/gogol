@@ -47,8 +47,8 @@ module Network.Google.Resource.DFAReporting.InventoryItems.List
     , iilMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.inventoryItems.list@ method which the
 -- 'InventoryItemsList' request conforms to.
@@ -78,16 +78,16 @@ type InventoryItemsListResource =
 -- /See:/ 'inventoryItemsList' smart constructor.
 data InventoryItemsList =
   InventoryItemsList'
-    { _iilIds        :: !(Maybe [Textual Int64])
-    , _iilProFileId  :: !(Textual Int64)
-    , _iilSortOrder  :: !InventoryItemsListSortOrder
-    , _iilInPlan     :: !(Maybe Bool)
-    , _iilPageToken  :: !(Maybe Text)
-    , _iilProjectId  :: !(Textual Int64)
-    , _iilSortField  :: !InventoryItemsListSortField
-    , _iilType       :: !(Maybe InventoryItemsListType)
-    , _iilOrderId    :: !(Maybe [Textual Int64])
-    , _iilSiteId     :: !(Maybe [Textual Int64])
+    { _iilIds :: !(Maybe [Textual Int64])
+    , _iilProFileId :: !(Textual Int64)
+    , _iilSortOrder :: !InventoryItemsListSortOrder
+    , _iilInPlan :: !(Maybe Bool)
+    , _iilPageToken :: !(Maybe Text)
+    , _iilProjectId :: !(Textual Int64)
+    , _iilSortField :: !InventoryItemsListSortField
+    , _iilType :: !(Maybe InventoryItemsListType)
+    , _iilOrderId :: !(Maybe [Textual Int64])
+    , _iilSiteId :: !(Maybe [Textual Int64])
     , _iilMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

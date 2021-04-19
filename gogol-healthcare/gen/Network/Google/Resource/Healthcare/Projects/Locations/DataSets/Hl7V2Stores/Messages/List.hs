@@ -46,8 +46,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsmlCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.messages.list@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesList' request conforms to.
@@ -74,16 +74,16 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesListResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesList' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesList =
   ProjectsLocationsDataSetsHl7V2StoresMessagesList'
-    { _pldshvsmlParent         :: !Text
-    , _pldshvsmlXgafv          :: !(Maybe Xgafv)
+    { _pldshvsmlParent :: !Text
+    , _pldshvsmlXgafv :: !(Maybe Xgafv)
     , _pldshvsmlUploadProtocol :: !(Maybe Text)
-    , _pldshvsmlOrderBy        :: !(Maybe Text)
-    , _pldshvsmlAccessToken    :: !(Maybe Text)
-    , _pldshvsmlUploadType     :: !(Maybe Text)
-    , _pldshvsmlFilter         :: !(Maybe Text)
-    , _pldshvsmlPageToken      :: !(Maybe Text)
-    , _pldshvsmlPageSize       :: !(Maybe (Textual Int32))
-    , _pldshvsmlCallback       :: !(Maybe Text)
+    , _pldshvsmlOrderBy :: !(Maybe Text)
+    , _pldshvsmlAccessToken :: !(Maybe Text)
+    , _pldshvsmlUploadType :: !(Maybe Text)
+    , _pldshvsmlFilter :: !(Maybe Text)
+    , _pldshvsmlPageToken :: !(Maybe Text)
+    , _pldshvsmlPageSize :: !(Maybe (Textual Int32))
+    , _pldshvsmlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

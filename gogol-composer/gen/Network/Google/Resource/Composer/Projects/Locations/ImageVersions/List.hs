@@ -43,8 +43,8 @@ module Network.Google.Resource.Composer.Projects.Locations.ImageVersions.List
     , plivlCallback
     ) where
 
-import           Network.Google.Composer.Types
-import           Network.Google.Prelude
+import Network.Google.Composer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @composer.projects.locations.imageVersions.list@ method which the
 -- 'ProjectsLocationsImageVersionsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsImageVersionsListResource =
 -- /See:/ 'projectsLocationsImageVersionsList' smart constructor.
 data ProjectsLocationsImageVersionsList =
   ProjectsLocationsImageVersionsList'
-    { _plivlParent         :: !Text
-    , _plivlXgafv          :: !(Maybe Xgafv)
+    { _plivlParent :: !Text
+    , _plivlXgafv :: !(Maybe Xgafv)
     , _plivlUploadProtocol :: !(Maybe Text)
-    , _plivlAccessToken    :: !(Maybe Text)
-    , _plivlUploadType     :: !(Maybe Text)
-    , _plivlPageToken      :: !(Maybe Text)
-    , _plivlPageSize       :: !(Maybe (Textual Int32))
-    , _plivlCallback       :: !(Maybe Text)
+    , _plivlAccessToken :: !(Maybe Text)
+    , _plivlUploadType :: !(Maybe Text)
+    , _plivlPageToken :: !(Maybe Text)
+    , _plivlPageSize :: !(Maybe (Textual Int32))
+    , _plivlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

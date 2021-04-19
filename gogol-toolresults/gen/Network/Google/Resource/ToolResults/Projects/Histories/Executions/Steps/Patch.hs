@@ -47,8 +47,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.patch@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPatch' request conforms to.
@@ -78,12 +78,12 @@ type ProjectsHistoriesExecutionsStepsPatchResource =
 -- /See:/ 'projectsHistoriesExecutionsStepsPatch' smart constructor.
 data ProjectsHistoriesExecutionsStepsPatch =
   ProjectsHistoriesExecutionsStepsPatch'
-    { _phespRequestId   :: !(Maybe Text)
+    { _phespRequestId :: !(Maybe Text)
     , _phespExecutionId :: !Text
-    , _phespStepId      :: !Text
-    , _phespPayload     :: !Step
-    , _phespHistoryId   :: !Text
-    , _phespProjectId   :: !Text
+    , _phespStepId :: !Text
+    , _phespPayload :: !Step
+    , _phespHistoryId :: !Text
+    , _phespProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

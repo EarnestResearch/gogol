@@ -36,8 +36,8 @@ module Network.Google.Resource.GamesConfiguration.LeaderboardConfigurations.Dele
     , lcdLeaderboardId
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.leaderboardConfigurations.delete@ method which the
 -- 'LeaderboardConfigurationsDelete' request conforms to.

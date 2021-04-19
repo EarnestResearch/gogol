@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Patch
     , cpCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.patch@ method which the
 -- 'CatalogsPatch' request conforms to.
@@ -69,14 +69,14 @@ type CatalogsPatchResource =
 -- /See:/ 'catalogsPatch' smart constructor.
 data CatalogsPatch =
   CatalogsPatch'
-    { _cpXgafv          :: !(Maybe Xgafv)
+    { _cpXgafv :: !(Maybe Xgafv)
     , _cpUploadProtocol :: !(Maybe Text)
-    , _cpUpdateMask     :: !(Maybe GFieldMask)
-    , _cpAccessToken    :: !(Maybe Text)
-    , _cpUploadType     :: !(Maybe Text)
-    , _cpPayload        :: !GoogleCloudPrivatecatalogproducerV1beta1Catalog
-    , _cpName           :: !Text
-    , _cpCallback       :: !(Maybe Text)
+    , _cpUpdateMask :: !(Maybe GFieldMask)
+    , _cpAccessToken :: !(Maybe Text)
+    , _cpUploadType :: !(Maybe Text)
+    , _cpPayload :: !GoogleCloudPrivatecatalogproducerV1beta1Catalog
+    , _cpName :: !Text
+    , _cpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

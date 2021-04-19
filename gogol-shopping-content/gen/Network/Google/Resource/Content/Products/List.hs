@@ -34,24 +34,26 @@ module Network.Google.Resource.Content.Products.List
 
     -- * Request Lenses
     , pllMerchantId
+    , pllIncludeInvalidInsertedItems
     , pllPageToken
     , pllMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.list@ method which the
 -- 'ProductsList' request conforms to.
 type ProductsListResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "products" :>
-             QueryParam "pageToken" Text :>
-               QueryParam "maxResults" (Textual Word32) :>
-                 QueryParam "alt" AltJSON :>
-                   Get '[JSON] ProductsListResponse
+             QueryParam "includeInvalidInsertedItems" Bool :>
+               QueryParam "pageToken" Text :>
+                 QueryParam "maxResults" (Textual Word32) :>
+                   QueryParam "alt" AltJSON :>
+                     Get '[JSON] ProductsListResponse
 
 -- | Lists the products in your Merchant Center account.
 --
@@ -59,7 +61,8 @@ type ProductsListResource =
 data ProductsList =
   ProductsList'
     { _pllMerchantId :: !(Textual Word64)
-    , _pllPageToken  :: !(Maybe Text)
+    , _pllIncludeInvalidInsertedItems :: !(Maybe Bool)
+    , _pllPageToken :: !(Maybe Text)
     , _pllMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -71,6 +74,8 @@ data ProductsList =
 --
 -- * 'pllMerchantId'
 --
+-- * 'pllIncludeInvalidInsertedItems'
+--
 -- * 'pllPageToken'
 --
 -- * 'pllMaxResults'
@@ -80,6 +85,7 @@ productsList
 productsList pPllMerchantId_ =
   ProductsList'
     { _pllMerchantId = _Coerce # pPllMerchantId_
+    , _pllIncludeInvalidInsertedItems = Nothing
     , _pllPageToken = Nothing
     , _pllMaxResults = Nothing
     }
@@ -92,6 +98,14 @@ pllMerchantId
   = lens _pllMerchantId
       (\ s a -> s{_pllMerchantId = a})
       . _Coerce
+
+-- | Flag to include the invalid inserted items in the result of the list
+-- request. By default the invalid items are not shown (the default value
+-- is false).
+pllIncludeInvalidInsertedItems :: Lens' ProductsList (Maybe Bool)
+pllIncludeInvalidInsertedItems
+  = lens _pllIncludeInvalidInsertedItems
+      (\ s a -> s{_pllIncludeInvalidInsertedItems = a})
 
 -- | The token returned by the previous request.
 pllPageToken :: Lens' ProductsList (Maybe Text)
@@ -111,7 +125,9 @@ instance GoogleRequest ProductsList where
         type Scopes ProductsList =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsList'{..}
-          = go _pllMerchantId _pllPageToken _pllMaxResults
+          = go _pllMerchantId _pllIncludeInvalidInsertedItems
+              _pllPageToken
+              _pllMaxResults
               (Just AltJSON)
               shoppingContentService
           where go

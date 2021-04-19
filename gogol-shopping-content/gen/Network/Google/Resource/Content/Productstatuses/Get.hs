@@ -35,31 +35,34 @@ module Network.Google.Resource.Content.Productstatuses.Get
     -- * Request Lenses
     , pgMerchantId
     , pgDestinations
+    , pgIncludeAttributes
     , pgProductId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.productstatuses.get@ method which the
 -- 'ProductstatusesGet' request conforms to.
 type ProductstatusesGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "productstatuses" :>
              Capture "productId" Text :>
                QueryParams "destinations" Text :>
-                 QueryParam "alt" AltJSON :> Get '[JSON] ProductStatus
+                 QueryParam "includeAttributes" Bool :>
+                   QueryParam "alt" AltJSON :> Get '[JSON] ProductStatus
 
 -- | Gets the status of a product from your Merchant Center account.
 --
 -- /See:/ 'productstatusesGet' smart constructor.
 data ProductstatusesGet =
   ProductstatusesGet'
-    { _pgMerchantId   :: !(Textual Word64)
+    { _pgMerchantId :: !(Textual Word64)
     , _pgDestinations :: !(Maybe [Text])
-    , _pgProductId    :: !Text
+    , _pgIncludeAttributes :: !(Maybe Bool)
+    , _pgProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,6 +75,8 @@ data ProductstatusesGet =
 --
 -- * 'pgDestinations'
 --
+-- * 'pgIncludeAttributes'
+--
 -- * 'pgProductId'
 productstatusesGet
     :: Word64 -- ^ 'pgMerchantId'
@@ -81,6 +86,7 @@ productstatusesGet pPgMerchantId_ pPgProductId_ =
   ProductstatusesGet'
     { _pgMerchantId = _Coerce # pPgMerchantId_
     , _pgDestinations = Nothing
+    , _pgIncludeAttributes = Nothing
     , _pgProductId = pPgProductId_
     }
 
@@ -101,6 +107,13 @@ pgDestinations
       . _Default
       . _Coerce
 
+-- | Flag to include full product data in the result of this get request. The
+-- default value is false.
+pgIncludeAttributes :: Lens' ProductstatusesGet (Maybe Bool)
+pgIncludeAttributes
+  = lens _pgIncludeAttributes
+      (\ s a -> s{_pgIncludeAttributes = a})
+
 -- | The REST ID of the product.
 pgProductId :: Lens' ProductstatusesGet Text
 pgProductId
@@ -113,6 +126,7 @@ instance GoogleRequest ProductstatusesGet where
         requestClient ProductstatusesGet'{..}
           = go _pgMerchantId _pgProductId
               (_pgDestinations ^. _Default)
+              _pgIncludeAttributes
               (Just AltJSON)
               shoppingContentService
           where go

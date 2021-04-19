@@ -38,8 +38,8 @@ module Network.Google.Resource.SQL.Databases.Delete
     , ddInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.databases.delete@ method which the
 -- 'DatabasesDelete' request conforms to.
@@ -59,7 +59,7 @@ type DatabasesDeleteResource =
 -- /See:/ 'databasesDelete' smart constructor.
 data DatabasesDelete =
   DatabasesDelete'
-    { _ddProject  :: !Text
+    { _ddProject :: !Text
     , _ddDatabase :: !Text
     , _ddInstance :: !Text
     }

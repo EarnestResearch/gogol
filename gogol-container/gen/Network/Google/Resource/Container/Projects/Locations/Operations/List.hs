@@ -43,8 +43,8 @@ module Network.Google.Resource.Container.Projects.Locations.Operations.List
     , plolCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.operations.list@ method which the
 -- 'ProjectsLocationsOperationsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsOperationsListResource =
 -- /See:/ 'projectsLocationsOperationsList' smart constructor.
 data ProjectsLocationsOperationsList =
   ProjectsLocationsOperationsList'
-    { _plolParent         :: !Text
-    , _plolXgafv          :: !(Maybe Xgafv)
+    { _plolParent :: !Text
+    , _plolXgafv :: !(Maybe Xgafv)
     , _plolUploadProtocol :: !(Maybe Text)
-    , _plolAccessToken    :: !(Maybe Text)
-    , _plolUploadType     :: !(Maybe Text)
-    , _plolZone           :: !(Maybe Text)
-    , _plolProjectId      :: !(Maybe Text)
-    , _plolCallback       :: !(Maybe Text)
+    , _plolAccessToken :: !(Maybe Text)
+    , _plolUploadType :: !(Maybe Text)
+    , _plolZone :: !(Maybe Text)
+    , _plolProjectId :: !(Maybe Text)
+    , _plolCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

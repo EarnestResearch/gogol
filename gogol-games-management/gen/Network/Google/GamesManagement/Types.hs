@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -137,9 +137,9 @@ module Network.Google.GamesManagement.Types
     , arrDefinitionId
     ) where
 
-import           Network.Google.GamesManagement.Types.Product
-import           Network.Google.GamesManagement.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types.Product
+import Network.Google.GamesManagement.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1management' of the Google Play Game Services Management API. This contains the host and root path used as a starting point for constructing service requests.
 gamesManagementService :: ServiceConfig

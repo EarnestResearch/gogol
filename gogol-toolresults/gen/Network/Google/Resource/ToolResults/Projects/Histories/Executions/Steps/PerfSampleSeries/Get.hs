@@ -41,8 +41,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespssgSampleSeriesId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.perfSampleSeries.get@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPerfSampleSeriesGet' request conforms to.
@@ -69,10 +69,10 @@ type ProjectsHistoriesExecutionsStepsPerfSampleSeriesGetResource
 -- /See:/ 'projectsHistoriesExecutionsStepsPerfSampleSeriesGet' smart constructor.
 data ProjectsHistoriesExecutionsStepsPerfSampleSeriesGet =
   ProjectsHistoriesExecutionsStepsPerfSampleSeriesGet'
-    { _phespssgExecutionId    :: !Text
-    , _phespssgStepId         :: !Text
-    , _phespssgHistoryId      :: !Text
-    , _phespssgProjectId      :: !Text
+    { _phespssgExecutionId :: !Text
+    , _phespssgStepId :: !Text
+    , _phespssgHistoryId :: !Text
+    , _phespssgProjectId :: !Text
     , _phespssgSampleSeriesId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

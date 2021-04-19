@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Delete
     , etdId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.delete@ method which the
 -- 'EventTagsDelete' request conforms to.
@@ -57,7 +57,7 @@ type EventTagsDeleteResource =
 data EventTagsDelete =
   EventTagsDelete'
     { _etdProFileId :: !(Textual Int64)
-    , _etdId        :: !(Textual Int64)
+    , _etdId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

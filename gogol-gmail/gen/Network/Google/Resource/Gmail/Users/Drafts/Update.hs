@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Drafts.Update
     , uduId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.drafts.update@ method which the
 -- 'UsersDraftsUpdate' request conforms to.
@@ -70,8 +70,8 @@ type UsersDraftsUpdateResource =
 data UsersDraftsUpdate =
   UsersDraftsUpdate'
     { _uduPayload :: !Draft
-    , _uduUserId  :: !Text
-    , _uduId      :: !Text
+    , _uduUserId :: !Text
+    , _uduId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

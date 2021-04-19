@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Messages.BatchDelete
     , umbdUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.batchDelete@ method which the
 -- 'UsersMessagesBatchDelete' request conforms to.
@@ -61,7 +61,7 @@ type UsersMessagesBatchDeleteResource =
 data UsersMessagesBatchDelete =
   UsersMessagesBatchDelete'
     { _umbdPayload :: !BatchDeleteMessagesRequest
-    , _umbdUserId  :: !Text
+    , _umbdUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

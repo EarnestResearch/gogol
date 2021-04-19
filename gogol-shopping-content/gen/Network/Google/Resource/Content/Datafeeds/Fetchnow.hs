@@ -35,22 +35,24 @@ module Network.Google.Resource.Content.Datafeeds.Fetchnow
     -- * Request Lenses
     , dfMerchantId
     , dfDatafeedId
+    , dfDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.fetchnow@ method which the
 -- 'DatafeedsFetchnow' request conforms to.
 type DatafeedsFetchnowResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>
                "fetchNow" :>
-                 QueryParam "alt" AltJSON :>
-                   Post '[JSON] DatafeedsFetchNowResponse
+                 QueryParam "dryRun" Bool :>
+                   QueryParam "alt" AltJSON :>
+                     Post '[JSON] DatafeedsFetchNowResponse
 
 -- | Invokes a fetch for the datafeed in your Merchant Center account.
 --
@@ -59,6 +61,7 @@ data DatafeedsFetchnow =
   DatafeedsFetchnow'
     { _dfMerchantId :: !(Textual Word64)
     , _dfDatafeedId :: !(Textual Word64)
+    , _dfDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -70,6 +73,8 @@ data DatafeedsFetchnow =
 -- * 'dfMerchantId'
 --
 -- * 'dfDatafeedId'
+--
+-- * 'dfDryRun'
 datafeedsFetchnow
     :: Word64 -- ^ 'dfMerchantId'
     -> Word64 -- ^ 'dfDatafeedId'
@@ -78,6 +83,7 @@ datafeedsFetchnow pDfMerchantId_ pDfDatafeedId_ =
   DatafeedsFetchnow'
     { _dfMerchantId = _Coerce # pDfMerchantId_
     , _dfDatafeedId = _Coerce # pDfDatafeedId_
+    , _dfDryRun = Nothing
     }
 
 
@@ -94,12 +100,19 @@ dfDatafeedId
   = lens _dfDatafeedId (\ s a -> s{_dfDatafeedId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+dfDryRun :: Lens' DatafeedsFetchnow (Maybe Bool)
+dfDryRun = lens _dfDryRun (\ s a -> s{_dfDryRun = a})
+
 instance GoogleRequest DatafeedsFetchnow where
         type Rs DatafeedsFetchnow = DatafeedsFetchNowResponse
         type Scopes DatafeedsFetchnow =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsFetchnow'{..}
-          = go _dfMerchantId _dfDatafeedId (Just AltJSON)
+          = go _dfMerchantId _dfDatafeedId _dfDryRun
+              (Just AltJSON)
               shoppingContentService
           where go
                   = buildClient

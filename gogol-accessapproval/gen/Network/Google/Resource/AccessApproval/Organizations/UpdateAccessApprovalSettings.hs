@@ -43,8 +43,8 @@ module Network.Google.Resource.AccessApproval.Organizations.UpdateAccessApproval
     , ouaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.organizations.updateAccessApprovalSettings@ method which the
 -- 'OrganizationsUpdateAccessApprovalSettings' request conforms to.
@@ -67,13 +67,13 @@ type OrganizationsUpdateAccessApprovalSettingsResource
 -- /See:/ 'organizationsUpdateAccessApprovalSettings' smart constructor.
 data OrganizationsUpdateAccessApprovalSettings =
   OrganizationsUpdateAccessApprovalSettings'
-    { _ouaasXgafv          :: !(Maybe Xgafv)
+    { _ouaasXgafv :: !(Maybe Xgafv)
     , _ouaasUploadProtocol :: !(Maybe Text)
-    , _ouaasAccessToken    :: !(Maybe Text)
-    , _ouaasUploadType     :: !(Maybe Text)
-    , _ouaasPayload        :: !AccessApprovalSettings
-    , _ouaasName           :: !Text
-    , _ouaasCallback       :: !(Maybe Text)
+    , _ouaasAccessToken :: !(Maybe Text)
+    , _ouaasUploadType :: !(Maybe Text)
+    , _ouaasPayload :: !AccessApprovalSettings
+    , _ouaasName :: !Text
+    , _ouaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

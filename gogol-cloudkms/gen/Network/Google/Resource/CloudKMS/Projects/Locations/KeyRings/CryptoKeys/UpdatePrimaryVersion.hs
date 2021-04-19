@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.U
     , plkrckupvCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.cryptoKeys.updatePrimaryVersion@ method which the
 -- 'ProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersionResource
 -- /See:/ 'projectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion' smart constructor.
 data ProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion =
   ProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion'
-    { _plkrckupvXgafv          :: !(Maybe Xgafv)
+    { _plkrckupvXgafv :: !(Maybe Xgafv)
     , _plkrckupvUploadProtocol :: !(Maybe Text)
-    , _plkrckupvAccessToken    :: !(Maybe Text)
-    , _plkrckupvUploadType     :: !(Maybe Text)
-    , _plkrckupvPayload        :: !UpdateCryptoKeyPrimaryVersionRequest
-    , _plkrckupvName           :: !Text
-    , _plkrckupvCallback       :: !(Maybe Text)
+    , _plkrckupvAccessToken :: !(Maybe Text)
+    , _plkrckupvUploadType :: !(Maybe Text)
+    , _plkrckupvPayload :: !UpdateCryptoKeyPrimaryVersionRequest
+    , _plkrckupvName :: !Text
+    , _plkrckupvCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

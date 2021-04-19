@@ -17,8 +17,8 @@
 --
 module Network.Google.AndroidEnterprise.Types.Product where
 
-import           Network.Google.AndroidEnterprise.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types.Sum
+import Network.Google.Prelude
 
 -- | Group license objects allow you to keep track of licenses (called
 -- entitlements) for both free and paid apps. For a free app, a group
@@ -38,12 +38,12 @@ import           Network.Google.Prelude
 -- /See:/ 'groupLicense' smart constructor.
 data GroupLicense =
   GroupLicense'
-    { _glKind            :: !Text
-    , _glNumProvisioned  :: !(Maybe (Textual Int32))
-    , _glNumPurchased    :: !(Maybe (Textual Int32))
-    , _glApproval        :: !(Maybe Text)
-    , _glPermissions     :: !(Maybe Text)
-    , _glProductId       :: !(Maybe Text)
+    { _glKind :: !Text
+    , _glNumProvisioned :: !(Maybe (Textual Int32))
+    , _glNumPurchased :: !(Maybe (Textual Int32))
+    , _glApproval :: !(Maybe Text)
+    , _glPermissions :: !(Maybe Text)
+    , _glProductId :: !(Maybe Text)
     , _glAcquisitionKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -230,7 +230,7 @@ instance ToJSON StoreLayoutPagesListResponse where
 -- /See:/ 'enterpriseAccount' smart constructor.
 data EnterpriseAccount =
   EnterpriseAccount'
-    { _eaKind         :: !Text
+    { _eaKind :: !Text
     , _eaAccountEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -283,10 +283,10 @@ instance ToJSON EnterpriseAccount where
 data AppRestrictionsSchemaRestrictionRestrictionValue =
   AppRestrictionsSchemaRestrictionRestrictionValue'
     { _arsrrvValueMultiselect :: !(Maybe [Text])
-    , _arsrrvValueBool        :: !(Maybe Bool)
-    , _arsrrvValueInteger     :: !(Maybe (Textual Int32))
-    , _arsrrvType             :: !(Maybe Text)
-    , _arsrrvValueString      :: !(Maybe Text)
+    , _arsrrvValueBool :: !(Maybe Bool)
+    , _arsrrvValueInteger :: !(Maybe (Textual Int32))
+    , _arsrrvType :: !(Maybe Text)
+    , _arsrrvValueString :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -381,7 +381,7 @@ instance ToJSON
 -- /See:/ 'administratorWebTokenSpecPlaySearch' smart constructor.
 data AdministratorWebTokenSpecPlaySearch =
   AdministratorWebTokenSpecPlaySearch'
-    { _awtspsEnabled     :: !(Maybe Bool)
+    { _awtspsEnabled :: !(Maybe Bool)
     , _awtspsApproveApps :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -435,7 +435,7 @@ instance ToJSON AdministratorWebTokenSpecPlaySearch
 -- /See:/ 'deviceState' smart constructor.
 data DeviceState =
   DeviceState'
-    { _dsKind         :: !Text
+    { _dsKind :: !Text
     , _dsAccountState :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -544,7 +544,7 @@ instance ToJSON GroupLicenseUsersListResponse where
 -- /See:/ 'tokenPagination' smart constructor.
 data TokenPagination =
   TokenPagination'
-    { _tpNextPageToken     :: !(Maybe Text)
+    { _tpNextPageToken :: !(Maybe Text)
     , _tpPreviousPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -634,7 +634,7 @@ instance ToJSON AdministratorWebTokenSpecWebApps
 data ApprovalURLInfo =
   ApprovalURLInfo'
     { _auiApprovalURL :: !(Maybe Text)
-    , _auiKind        :: !Text
+    , _auiKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -686,7 +686,7 @@ instance ToJSON ApprovalURLInfo where
 -- /See:/ 'managedConfigurationsSettingsListResponse' smart constructor.
 data ManagedConfigurationsSettingsListResponse =
   ManagedConfigurationsSettingsListResponse'
-    { _mcslrKind                          :: !Text
+    { _mcslrKind :: !Text
     , _mcslrManagedConfigurationsSettings :: !(Maybe [ManagedConfigurationsSettings])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -755,12 +755,12 @@ instance ToJSON
 data ManagedProperty =
   ManagedProperty'
     { _mpValueStringArray :: !(Maybe [Text])
-    , _mpValueBool        :: !(Maybe Bool)
-    , _mpKey              :: !(Maybe Text)
-    , _mpValueBundle      :: !(Maybe ManagedPropertyBundle)
-    , _mpValueInteger     :: !(Maybe (Textual Int32))
+    , _mpValueBool :: !(Maybe Bool)
+    , _mpKey :: !(Maybe Text)
+    , _mpValueBundle :: !(Maybe ManagedPropertyBundle)
+    , _mpValueInteger :: !(Maybe (Textual Int32))
     , _mpValueBundleArray :: !(Maybe [ManagedPropertyBundle])
-    , _mpValueString      :: !(Maybe Text)
+    , _mpValueString :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -877,7 +877,7 @@ instance ToJSON ManagedProperty where
 data StoreLayoutClustersListResponse =
   StoreLayoutClustersListResponse'
     { _slclrCluster :: !(Maybe [StoreCluster])
-    , _slclrKind    :: !Text
+    , _slclrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -935,10 +935,10 @@ instance ToJSON StoreLayoutClustersListResponse where
 -- /See:/ 'managedConfiguration' smart constructor.
 data ManagedConfiguration =
   ManagedConfiguration'
-    { _mcManagedProperty        :: !(Maybe [ManagedProperty])
-    , _mcKind                   :: !Text
+    { _mcManagedProperty :: !(Maybe [ManagedProperty])
+    , _mcKind :: !Text
     , _mcConfigurationVariables :: !(Maybe ConfigurationVariables)
-    , _mcProductId              :: !(Maybe Text)
+    , _mcProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1018,11 +1018,11 @@ instance ToJSON ManagedConfiguration where
 -- /See:/ 'storeCluster' smart constructor.
 data StoreCluster =
   StoreCluster'
-    { _scKind        :: !Text
-    , _scName        :: !(Maybe [LocalizedText])
+    { _scKind :: !Text
+    , _scName :: !(Maybe [LocalizedText])
     , _scOrderInPage :: !(Maybe Text)
-    , _scId          :: !(Maybe Text)
-    , _scProductId   :: !(Maybe [Text])
+    , _scId :: !(Maybe Text)
+    , _scProductId :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1116,13 +1116,13 @@ instance ToJSON StoreCluster where
 -- /See:/ 'administratorWebTokenSpec' smart constructor.
 data AdministratorWebTokenSpec =
   AdministratorWebTokenSpec'
-    { _awtsParent                :: !(Maybe Text)
-    , _awtsPrivateApps           :: !(Maybe AdministratorWebTokenSpecPrivateApps)
-    , _awtsPlaySearch            :: !(Maybe AdministratorWebTokenSpecPlaySearch)
-    , _awtsKind                  :: !Text
-    , _awtsWebApps               :: !(Maybe AdministratorWebTokenSpecWebApps)
-    , _awtsPermission            :: !(Maybe [Text])
-    , _awtsStoreBuilder          :: !(Maybe AdministratorWebTokenSpecStoreBuilder)
+    { _awtsParent :: !(Maybe Text)
+    , _awtsPrivateApps :: !(Maybe AdministratorWebTokenSpecPrivateApps)
+    , _awtsPlaySearch :: !(Maybe AdministratorWebTokenSpecPlaySearch)
+    , _awtsKind :: !Text
+    , _awtsWebApps :: !(Maybe AdministratorWebTokenSpecWebApps)
+    , _awtsPermission :: !(Maybe [Text])
+    , _awtsStoreBuilder :: !(Maybe AdministratorWebTokenSpecStoreBuilder)
     , _awtsManagedConfigurations :: !(Maybe AdministratorWebTokenSpecManagedConfigurations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1244,8 +1244,8 @@ instance ToJSON AdministratorWebTokenSpec where
 -- /See:/ 'productVisibility' smart constructor.
 data ProductVisibility =
   ProductVisibility'
-    { _pvTracks    :: !(Maybe [Text])
-    , _pvTrackIds  :: !(Maybe [Text])
+    { _pvTracks :: !(Maybe [Text])
+    , _pvTrackIds :: !(Maybe [Text])
     , _pvProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1310,16 +1310,16 @@ instance ToJSON ProductVisibility where
 -- /See:/ 'notification' smart constructor.
 data Notification =
   Notification'
-    { _nEnterpriseId                     :: !(Maybe Text)
-    , _nNewPermissionsEvent              :: !(Maybe NewPermissionsEvent)
-    , _nProductApprovalEvent             :: !(Maybe ProductApprovalEvent)
-    , _nProductAvailabilityChangeEvent   :: !(Maybe ProductAvailabilityChangeEvent)
-    , _nAppUpdateEvent                   :: !(Maybe AppUpdateEvent)
-    , _nInstallFailureEvent              :: !(Maybe InstallFailureEvent)
-    , _nNotificationType                 :: !(Maybe Text)
+    { _nEnterpriseId :: !(Maybe Text)
+    , _nNewPermissionsEvent :: !(Maybe NewPermissionsEvent)
+    , _nProductApprovalEvent :: !(Maybe ProductApprovalEvent)
+    , _nProductAvailabilityChangeEvent :: !(Maybe ProductAvailabilityChangeEvent)
+    , _nAppUpdateEvent :: !(Maybe AppUpdateEvent)
+    , _nInstallFailureEvent :: !(Maybe InstallFailureEvent)
+    , _nNotificationType :: !(Maybe Text)
     , _nAppRestrictionsSchemaChangeEvent :: !(Maybe AppRestrictionsSchemaChangeEvent)
-    , _nNewDeviceEvent                   :: !(Maybe NewDeviceEvent)
-    , _nTimestampMillis                  :: !(Maybe (Textual Int64))
+    , _nNewDeviceEvent :: !(Maybe NewDeviceEvent)
+    , _nTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1466,8 +1466,8 @@ instance ToJSON Notification where
 data PageInfo =
   PageInfo'
     { _piResultPerPage :: !(Maybe (Textual Int32))
-    , _piTotalResults  :: !(Maybe (Textual Int32))
-    , _piStartIndex    :: !(Maybe (Textual Int32))
+    , _piTotalResults :: !(Maybe (Textual Int32))
+    , _piStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1533,7 +1533,7 @@ instance ToJSON PageInfo where
 -- /See:/ 'productPermission' smart constructor.
 data ProductPermission =
   ProductPermission'
-    { _ppState        :: !(Maybe Text)
+    { _ppState :: !(Maybe Text)
     , _ppPermissionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1582,8 +1582,8 @@ instance ToJSON ProductPermission where
 data NewPermissionsEvent =
   NewPermissionsEvent'
     { _npeRequestedPermissions :: !(Maybe [Text])
-    , _npeApprovedPermissions  :: !(Maybe [Text])
-    , _npeProductId            :: !(Maybe Text)
+    , _npeApprovedPermissions :: !(Maybe [Text])
+    , _npeProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1658,7 +1658,7 @@ instance ToJSON NewPermissionsEvent where
 data ProductAvailabilityChangeEvent =
   ProductAvailabilityChangeEvent'
     { _paceAvailabilityStatus :: !(Maybe Text)
-    , _paceProductId          :: !(Maybe Text)
+    , _paceProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1711,7 +1711,7 @@ instance ToJSON ProductAvailabilityChangeEvent where
 -- /See:/ 'productApprovalEvent' smart constructor.
 data ProductApprovalEvent =
   ProductApprovalEvent'
-    { _paeApproved  :: !(Maybe Text)
+    { _paeApproved :: !(Maybe Text)
     , _paeProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1762,10 +1762,10 @@ instance ToJSON ProductApprovalEvent where
 -- /See:/ 'device' smart constructor.
 data Device =
   Device'
-    { _dKind           :: !Text
-    , _dPolicy         :: !(Maybe Policy)
+    { _dKind :: !Text
+    , _dPolicy :: !(Maybe Policy)
     , _dManagementType :: !(Maybe Text)
-    , _dAndroidId      :: !(Maybe Text)
+    , _dAndroidId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1846,9 +1846,9 @@ instance ToJSON Device where
 -- /See:/ 'autoInstallConstraint' smart constructor.
 data AutoInstallConstraint =
   AutoInstallConstraint'
-    { _aicChargingStateConstraint   :: !(Maybe Text)
+    { _aicChargingStateConstraint :: !(Maybe Text)
     , _aicDeviceIdleStateConstraint :: !(Maybe Text)
-    , _aicNetworkTypeConstraint     :: !(Maybe Text)
+    , _aicNetworkTypeConstraint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1915,10 +1915,10 @@ instance ToJSON AutoInstallConstraint where
 -- /See:/ 'serviceAccountKey' smart constructor.
 data ServiceAccountKey =
   ServiceAccountKey'
-    { _sakKind       :: !Text
-    , _sakData       :: !(Maybe Text)
-    , _sakId         :: !(Maybe Text)
-    , _sakType       :: !(Maybe Text)
+    { _sakKind :: !Text
+    , _sakData :: !(Maybe Text)
+    , _sakId :: !(Maybe Text)
+    , _sakType :: !(Maybe Text)
     , _sakPublicData :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2003,7 +2003,7 @@ instance ToJSON ServiceAccountKey where
 -- /See:/ 'installsListResponse' smart constructor.
 data InstallsListResponse =
   InstallsListResponse'
-    { _ilrKind    :: !Text
+    { _ilrKind :: !Text
     , _ilrInstall :: !(Maybe [Install])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2058,13 +2058,13 @@ instance ToJSON InstallsListResponse where
 -- /See:/ 'appRestrictionsSchemaRestriction' smart constructor.
 data AppRestrictionsSchemaRestriction =
   AppRestrictionsSchemaRestriction'
-    { _arsrRestrictionType   :: !(Maybe Text)
-    , _arsrEntry             :: !(Maybe [Text])
-    , _arsrKey               :: !(Maybe Text)
-    , _arsrEntryValue        :: !(Maybe [Text])
-    , _arsrDefaultValue      :: !(Maybe AppRestrictionsSchemaRestrictionRestrictionValue)
-    , _arsrTitle             :: !(Maybe Text)
-    , _arsrDescription       :: !(Maybe Text)
+    { _arsrRestrictionType :: !(Maybe Text)
+    , _arsrEntry :: !(Maybe [Text])
+    , _arsrKey :: !(Maybe Text)
+    , _arsrEntryValue :: !(Maybe [Text])
+    , _arsrDefaultValue :: !(Maybe AppRestrictionsSchemaRestrictionRestrictionValue)
+    , _arsrTitle :: !(Maybe Text)
+    , _arsrDescription :: !(Maybe Text)
     , _arsrNestedRestriction :: !(Maybe [AppRestrictionsSchemaRestriction])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2196,11 +2196,11 @@ instance ToJSON AppRestrictionsSchemaRestriction
 -- /See:/ 'productPolicy' smart constructor.
 data ProductPolicy =
   ProductPolicy'
-    { _ppTracks               :: !(Maybe [Text])
+    { _ppTracks :: !(Maybe [Text])
     , _ppManagedConfiguration :: !(Maybe ManagedConfiguration)
-    , _ppTrackIds             :: !(Maybe [Text])
-    , _ppAutoInstallPolicy    :: !(Maybe AutoInstallPolicy)
-    , _ppProductId            :: !(Maybe Text)
+    , _ppTrackIds :: !(Maybe [Text])
+    , _ppAutoInstallPolicy :: !(Maybe AutoInstallPolicy)
+    , _ppProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2418,7 +2418,7 @@ instance ToJSON AdministratorWebTokenSpecStoreBuilder
 -- /See:/ 'authenticationToken' smart constructor.
 data AuthenticationToken =
   AuthenticationToken'
-    { _atKind  :: !Text
+    { _atKind :: !Text
     , _atToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2474,10 +2474,10 @@ instance ToJSON AuthenticationToken where
 data ManagedConfigurationsSettings =
   ManagedConfigurationsSettings'
     { _mcsLastUpdatedTimestampMillis :: !(Maybe (Textual Int64))
-    , _mcsManagedProperty            :: !(Maybe [ManagedProperty])
-    , _mcsKind                       :: !Text
-    , _mcsMcmId                      :: !(Maybe Text)
-    , _mcsName                       :: !(Maybe Text)
+    , _mcsManagedProperty :: !(Maybe [ManagedProperty])
+    , _mcsKind :: !Text
+    , _mcsMcmId :: !(Maybe Text)
+    , _mcsName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2565,11 +2565,11 @@ instance ToJSON ManagedConfigurationsSettings where
 -- /See:/ 'appVersion' smart constructor.
 data AppVersion =
   AppVersion'
-    { _avTrack         :: !(Maybe Text)
-    , _avVersionCode   :: !(Maybe (Textual Int32))
+    { _avTrack :: !(Maybe Text)
+    , _avVersionCode :: !(Maybe (Textual Int32))
     , _avVersionString :: !(Maybe Text)
-    , _avTrackId       :: !(Maybe [Text])
-    , _avIsProduction  :: !(Maybe Bool)
+    , _avTrackId :: !(Maybe [Text])
+    , _avIsProduction :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2700,7 +2700,7 @@ instance ToJSON ManagedPropertyBundle where
 data GroupLicensesListResponse =
   GroupLicensesListResponse'
     { _gllrGroupLicense :: !(Maybe [GroupLicense])
-    , _gllrKind         :: !Text
+    , _gllrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2755,10 +2755,10 @@ instance ToJSON GroupLicensesListResponse where
 -- /See:/ 'productSet' smart constructor.
 data ProductSet =
   ProductSet'
-    { _psProductVisibility  :: !(Maybe [ProductVisibility])
-    , _psKind               :: !Text
+    { _psProductVisibility :: !(Maybe [ProductVisibility])
+    , _psKind :: !Text
     , _psProductSetBehavior :: !(Maybe Text)
-    , _psProductId          :: !(Maybe [Text])
+    , _psProductId :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2869,10 +2869,10 @@ instance ToJSON ProductSet where
 -- /See:/ 'install' smart constructor.
 data Install =
   Install'
-    { _iVersionCode  :: !(Maybe (Textual Int32))
-    , _iKind         :: !Text
+    { _iVersionCode :: !(Maybe (Textual Int32))
+    , _iKind :: !Text
     , _iInstallState :: !(Maybe Text)
-    , _iProductId    :: !(Maybe Text)
+    , _iProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2951,7 +2951,7 @@ instance ToJSON Install where
 -- /See:/ 'maintenanceWindow' smart constructor.
 data MaintenanceWindow =
   MaintenanceWindow'
-    { _mwDurationMs               :: !(Maybe (Textual Int64))
+    { _mwDurationMs :: !(Maybe (Textual Int64))
     , _mwStartTimeAfterMidnightMs :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3051,7 +3051,7 @@ instance ToJSON ServiceAccountKeysListResponse where
 data TrackInfo =
   TrackInfo'
     { _tiTrackAlias :: !(Maybe Text)
-    , _tiTrackId    :: !(Maybe Text)
+    , _tiTrackId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3110,12 +3110,12 @@ instance ToJSON TrackInfo where
 data User =
   User'
     { _uAccountIdentifier :: !(Maybe Text)
-    , _uKind              :: !Text
-    , _uDisplayName       :: !(Maybe Text)
-    , _uId                :: !(Maybe Text)
-    , _uPrimaryEmail      :: !(Maybe Text)
-    , _uManagementType    :: !(Maybe Text)
-    , _uAccountType       :: !(Maybe Text)
+    , _uKind :: !Text
+    , _uDisplayName :: !(Maybe Text)
+    , _uId :: !(Maybe Text)
+    , _uPrimaryEmail :: !(Maybe Text)
+    , _uManagementType :: !(Maybe Text)
+    , _uAccountType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3232,7 +3232,7 @@ instance ToJSON User where
 -- /See:/ 'managedConfigurationsForDeviceListResponse' smart constructor.
 data ManagedConfigurationsForDeviceListResponse =
   ManagedConfigurationsForDeviceListResponse'
-    { _mcfdlrKind                          :: !Text
+    { _mcfdlrKind :: !Text
     , _mcfdlrManagedConfigurationForDevice :: !(Maybe [ManagedConfiguration])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3348,7 +3348,7 @@ data StorePage =
     { _spKind :: !Text
     , _spLink :: !(Maybe [Text])
     , _spName :: !(Maybe [LocalizedText])
-    , _spId   :: !(Maybe Text)
+    , _spId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3482,7 +3482,7 @@ instance ToJSON
 data ServiceAccount =
   ServiceAccount'
     { _saKind :: !Text
-    , _saKey  :: !(Maybe ServiceAccountKey)
+    , _saKey :: !(Maybe ServiceAccountKey)
     , _saName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3546,8 +3546,8 @@ instance ToJSON ServiceAccount where
 -- /See:/ 'variableSet' smart constructor.
 data VariableSet =
   VariableSet'
-    { _vsKind        :: !Text
-    , _vsUserValue   :: !(Maybe Text)
+    { _vsKind :: !Text
+    , _vsUserValue :: !(Maybe Text)
     , _vsPlaceholder :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3649,7 +3649,7 @@ instance ToJSON AppUpdateEvent where
 -- /See:/ 'enterprisesListResponse' smart constructor.
 data EnterprisesListResponse =
   EnterprisesListResponse'
-    { _elrKind       :: !Text
+    { _elrKind :: !Text
     , _elrEnterprise :: !(Maybe [Enterprise])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3708,8 +3708,8 @@ instance ToJSON EnterprisesListResponse where
 data NotificationSet =
   NotificationSet'
     { _nsNotificationSetId :: !(Maybe Text)
-    , _nsNotification      :: !(Maybe [Notification])
-    , _nsKind              :: !Text
+    , _nsNotification :: !(Maybe [Notification])
+    , _nsKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3779,7 +3779,7 @@ instance ToJSON NotificationSet where
 -- /See:/ 'appRestrictionsSchema' smart constructor.
 data AppRestrictionsSchema =
   AppRestrictionsSchema'
-    { _arsKind         :: !Text
+    { _arsKind :: !Text
     , _arsRestrictions :: !(Maybe [AppRestrictionsSchemaRestriction])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3873,7 +3873,7 @@ instance ToJSON WebAppIcon where
 -- /See:/ 'localizedText' smart constructor.
 data LocalizedText =
   LocalizedText'
-    { _ltText   :: !(Maybe Text)
+    { _ltText :: !(Maybe Text)
     , _ltLocale :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3921,8 +3921,8 @@ instance ToJSON LocalizedText where
 -- /See:/ 'userToken' smart constructor.
 data UserToken =
   UserToken'
-    { _utKind   :: !Text
-    , _utToken  :: !(Maybe Text)
+    { _utKind :: !Text
+    , _utToken :: !(Maybe Text)
     , _utUserId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4023,7 +4023,7 @@ instance ToJSON AdministratorWebTokenSpecPrivateApps
 -- /See:/ 'devicesListResponse' smart constructor.
 data DevicesListResponse =
   DevicesListResponse'
-    { _dlrKind   :: !Text
+    { _dlrKind :: !Text
     , _dlrDevice :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4076,7 +4076,7 @@ instance ToJSON DevicesListResponse where
 data ProductSigningCertificate =
   ProductSigningCertificate'
     { _pscCertificateHashSha256 :: !(Maybe Text)
-    , _pscCertificateHashSha1   :: !(Maybe Text)
+    , _pscCertificateHashSha1 :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4143,11 +4143,11 @@ instance ToJSON ProductSigningCertificate where
 -- /See:/ 'enterprise' smart constructor.
 data Enterprise =
   Enterprise'
-    { _eKind          :: !Text
+    { _eKind :: !Text
     , _eAdministrator :: !(Maybe [Administrator])
     , _ePrimaryDomain :: !(Maybe Text)
-    , _eName          :: !(Maybe Text)
-    , _eId            :: !(Maybe Text)
+    , _eName :: !(Maybe Text)
+    , _eId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4230,11 +4230,11 @@ instance ToJSON Enterprise where
 -- /See:/ 'installFailureEvent' smart constructor.
 data InstallFailureEvent =
   InstallFailureEvent'
-    { _ifeFailureReason  :: !(Maybe Text)
+    { _ifeFailureReason :: !(Maybe Text)
     , _ifeFailureDetails :: !(Maybe Text)
-    , _ifeUserId         :: !(Maybe Text)
-    , _ifeDeviceId       :: !(Maybe Text)
-    , _ifeProductId      :: !(Maybe Text)
+    , _ifeUserId :: !(Maybe Text)
+    , _ifeDeviceId :: !(Maybe Text)
+    , _ifeProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4319,7 +4319,7 @@ instance ToJSON InstallFailureEvent where
 data ManagedConfigurationsForUserListResponse =
   ManagedConfigurationsForUserListResponse'
     { _mcfulrManagedConfigurationForUser :: !(Maybe [ManagedConfiguration])
-    , _mcfulrKind                        :: !Text
+    , _mcfulrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4384,8 +4384,8 @@ instance ToJSON
 -- /See:/ 'configurationVariables' smart constructor.
 data ConfigurationVariables =
   ConfigurationVariables'
-    { _cvKind        :: !Text
-    , _cvMcmId       :: !(Maybe Text)
+    { _cvKind :: !Text
+    , _cvMcmId :: !(Maybe Text)
     , _cvVariableSet :: !(Maybe [VariableSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4451,8 +4451,8 @@ instance ToJSON ConfigurationVariables where
 data StoreLayout =
   StoreLayout'
     { _slStoreLayoutType :: !(Maybe Text)
-    , _slKind            :: !Text
-    , _slHomepageId      :: !(Maybe Text)
+    , _slKind :: !Text
+    , _slHomepageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4563,9 +4563,9 @@ instance ToJSON AppRestrictionsSchemaChangeEvent
 -- /See:/ 'newDeviceEvent' smart constructor.
 data NewDeviceEvent =
   NewDeviceEvent'
-    { _ndeUserId         :: !(Maybe Text)
+    { _ndeUserId :: !(Maybe Text)
     , _ndeDpcPackageName :: !(Maybe Text)
-    , _ndeDeviceId       :: !(Maybe Text)
+    , _ndeDeviceId :: !(Maybe Text)
     , _ndeManagementType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4642,9 +4642,9 @@ instance ToJSON NewDeviceEvent where
 data Policy =
   Policy'
     { _pProductAvailabilityPolicy :: !(Maybe Text)
-    , _pProductPolicy             :: !(Maybe [ProductPolicy])
-    , _pMaintenanceWindow         :: !(Maybe MaintenanceWindow)
-    , _pAutoUpdatePolicy          :: !(Maybe Text)
+    , _pProductPolicy :: !(Maybe [ProductPolicy])
+    , _pMaintenanceWindow :: !(Maybe MaintenanceWindow)
+    , _pAutoUpdatePolicy :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4734,7 +4734,7 @@ instance ToJSON Policy where
 -- /See:/ 'administratorWebToken' smart constructor.
 data AdministratorWebToken =
   AdministratorWebToken'
-    { _awtKind  :: !Text
+    { _awtKind :: !Text
     , _awtToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4787,8 +4787,8 @@ instance ToJSON AdministratorWebToken where
 data SignupInfo =
   SignupInfo'
     { _siCompletionToken :: !(Maybe Text)
-    , _siKind            :: !Text
-    , _siURL             :: !(Maybe Text)
+    , _siKind :: !Text
+    , _siURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4856,30 +4856,30 @@ instance ToJSON SignupInfo where
 -- /See:/ 'product' smart constructor.
 data Product =
   Product'
-    { _pScreenshotURLs             :: !(Maybe [Text])
+    { _pScreenshotURLs :: !(Maybe [Text])
     , _pLastUpdatedTimestampMillis :: !(Maybe (Textual Int64))
-    , _pSmallIconURL               :: !(Maybe Text)
-    , _pAuthorName                 :: !(Maybe Text)
-    , _pAppTracks                  :: !(Maybe [TrackInfo])
-    , _pKind                       :: !Text
-    , _pWorkDetailsURL             :: !(Maybe Text)
-    , _pRequiresContainerApp       :: !(Maybe Bool)
-    , _pCategory                   :: !(Maybe Text)
-    , _pAppVersion                 :: !(Maybe [AppVersion])
-    , _pProductPricing             :: !(Maybe Text)
-    , _pDistributionChannel        :: !(Maybe Text)
-    , _pMinAndroidSdkVersion       :: !(Maybe (Textual Int32))
-    , _pAvailableCountries         :: !(Maybe [Text])
-    , _pAvailableTracks            :: !(Maybe [Text])
-    , _pIconURL                    :: !(Maybe Text)
-    , _pPermissions                :: !(Maybe [ProductPermission])
-    , _pTitle                      :: !(Maybe Text)
-    , _pSigningCertificate         :: !(Maybe ProductSigningCertificate)
-    , _pContentRating              :: !(Maybe Text)
-    , _pProductId                  :: !(Maybe Text)
-    , _pRecentChanges              :: !(Maybe Text)
-    , _pDescription                :: !(Maybe Text)
-    , _pDetailsURL                 :: !(Maybe Text)
+    , _pSmallIconURL :: !(Maybe Text)
+    , _pAuthorName :: !(Maybe Text)
+    , _pAppTracks :: !(Maybe [TrackInfo])
+    , _pKind :: !Text
+    , _pWorkDetailsURL :: !(Maybe Text)
+    , _pRequiresContainerApp :: !(Maybe Bool)
+    , _pCategory :: !(Maybe Text)
+    , _pAppVersion :: !(Maybe [AppVersion])
+    , _pProductPricing :: !(Maybe Text)
+    , _pDistributionChannel :: !(Maybe Text)
+    , _pMinAndroidSdkVersion :: !(Maybe (Textual Int32))
+    , _pAvailableCountries :: !(Maybe [Text])
+    , _pAvailableTracks :: !(Maybe [Text])
+    , _pIconURL :: !(Maybe Text)
+    , _pPermissions :: !(Maybe [ProductPermission])
+    , _pTitle :: !(Maybe Text)
+    , _pSigningCertificate :: !(Maybe ProductSigningCertificate)
+    , _pContentRating :: !(Maybe Text)
+    , _pProductId :: !(Maybe Text)
+    , _pRecentChanges :: !(Maybe Text)
+    , _pDescription :: !(Maybe Text)
+    , _pDetailsURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5192,7 +5192,7 @@ instance ToJSON Product where
 -- /See:/ 'entitlementsListResponse' smart constructor.
 data EntitlementsListResponse =
   EntitlementsListResponse'
-    { _entKind        :: !Text
+    { _entKind :: !Text
     , _entEntitlement :: !(Maybe [Entitlement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5251,9 +5251,9 @@ instance ToJSON EntitlementsListResponse where
 -- /See:/ 'productPermissions' smart constructor.
 data ProductPermissions =
   ProductPermissions'
-    { _ppsKind       :: !Text
+    { _ppsKind :: !Text
     , _ppsPermission :: !(Maybe [ProductPermission])
-    , _ppsProductId  :: !(Maybe Text)
+    , _ppsProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5369,9 +5369,9 @@ instance ToJSON
 -- /See:/ 'permission' smart constructor.
 data Permission =
   Permission'
-    { _perKind         :: !Text
-    , _perName         :: !(Maybe Text)
-    , _perDescription  :: !(Maybe Text)
+    { _perKind :: !Text
+    , _perName :: !(Maybe Text)
+    , _perDescription :: !(Maybe Text)
     , _perPermissionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5444,7 +5444,7 @@ instance ToJSON Permission where
 -- /See:/ 'webAppsListResponse' smart constructor.
 data WebAppsListResponse =
   WebAppsListResponse'
-    { _walrKind   :: !Text
+    { _walrKind :: !Text
     , _walrWebApp :: !(Maybe [WebApp])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5496,7 +5496,7 @@ instance ToJSON WebAppsListResponse where
 -- /See:/ 'productsApproveRequest' smart constructor.
 data ProductsApproveRequest =
   ProductsApproveRequest'
-    { _parApprovalURLInfo     :: !(Maybe ApprovalURLInfo)
+    { _parApprovalURLInfo :: !(Maybe ApprovalURLInfo)
     , _parApprovedPermissions :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5559,9 +5559,9 @@ instance ToJSON ProductsApproveRequest where
 data AutoInstallPolicy =
   AutoInstallPolicy'
     { _aipAutoInstallConstraint :: !(Maybe [AutoInstallConstraint])
-    , _aipAutoInstallPriority   :: !(Maybe (Textual Int32))
-    , _aipAutoInstallMode       :: !(Maybe Text)
-    , _aipMinimumVersionCode    :: !(Maybe (Textual Int32))
+    , _aipAutoInstallPriority :: !(Maybe (Textual Int32))
+    , _aipAutoInstallMode :: !(Maybe Text)
+    , _aipMinimumVersionCode :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5667,8 +5667,8 @@ instance ToJSON AutoInstallPolicy where
 -- /See:/ 'entitlement' smart constructor.
 data Entitlement =
   Entitlement'
-    { _eeKind      :: !Text
-    , _eeReason    :: !(Maybe Text)
+    { _eeKind :: !Text
+    , _eeReason :: !(Maybe Text)
     , _eeProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5733,9 +5733,9 @@ instance ToJSON Entitlement where
 data ProductsListResponse =
   ProductsListResponse'
     { _plrTokenPagination :: !(Maybe TokenPagination)
-    , _plrPageInfo        :: !(Maybe PageInfo)
-    , _plrKind            :: !Text
-    , _plrProduct         :: !(Maybe [Product])
+    , _plrPageInfo :: !(Maybe PageInfo)
+    , _plrKind :: !Text
+    , _plrProduct :: !(Maybe [Product])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5813,13 +5813,13 @@ instance ToJSON ProductsListResponse where
 -- /See:/ 'webApp' smart constructor.
 data WebApp =
   WebApp'
-    { _waWebAppId    :: !(Maybe Text)
+    { _waWebAppId :: !(Maybe Text)
     , _waVersionCode :: !(Maybe (Textual Int64))
-    , _waIcons       :: !(Maybe [WebAppIcon])
-    , _waStartURL    :: !(Maybe Text)
+    , _waIcons :: !(Maybe [WebAppIcon])
+    , _waStartURL :: !(Maybe Text)
     , _waDisplayMode :: !(Maybe Text)
     , _waIsPublished :: !(Maybe Bool)
-    , _waTitle       :: !(Maybe Text)
+    , _waTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

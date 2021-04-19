@@ -41,8 +41,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.Update
     , ussauSendAsEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.update@ method which the
 -- 'UsersSettingsSendAsUpdate' request conforms to.
@@ -65,8 +65,8 @@ type UsersSettingsSendAsUpdateResource =
 -- /See:/ 'usersSettingsSendAsUpdate' smart constructor.
 data UsersSettingsSendAsUpdate =
   UsersSettingsSendAsUpdate'
-    { _ussauPayload     :: !SendAs
-    , _ussauUserId      :: !Text
+    { _ussauPayload :: !SendAs
+    , _ussauUserId :: !Text
     , _ussauSendAsEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

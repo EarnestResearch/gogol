@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforDevice.
     , mcddManagedConfigurationForDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsfordevice.delete@ method which the
 -- 'ManagedConfigurationsforDeviceDelete' request conforms to.
@@ -64,9 +64,9 @@ type ManagedConfigurationsforDeviceDeleteResource =
 -- /See:/ 'managedConfigurationsforDeviceDelete' smart constructor.
 data ManagedConfigurationsforDeviceDelete =
   ManagedConfigurationsforDeviceDelete'
-    { _mcddEnterpriseId                    :: !Text
-    , _mcddUserId                          :: !Text
-    , _mcddDeviceId                        :: !Text
+    { _mcddEnterpriseId :: !Text
+    , _mcddUserId :: !Text
+    , _mcddDeviceId :: !Text
     , _mcddManagedConfigurationForDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

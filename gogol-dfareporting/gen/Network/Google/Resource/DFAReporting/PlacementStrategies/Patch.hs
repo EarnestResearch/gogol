@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Patch
     , pspId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.patch@ method which the
 -- 'PlacementStrategiesPatch' request conforms to.
@@ -62,8 +62,8 @@ type PlacementStrategiesPatchResource =
 data PlacementStrategiesPatch =
   PlacementStrategiesPatch'
     { _pspProFileId :: !(Textual Int64)
-    , _pspPayload   :: !PlacementStrategy
-    , _pspId        :: !(Textual Int64)
+    , _pspPayload :: !PlacementStrategy
+    , _pspId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

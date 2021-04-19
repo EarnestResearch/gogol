@@ -43,8 +43,8 @@ module Network.Google.Resource.PubSub.Projects.Snapshots.SetIAMPolicy
     , pssiampCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.snapshots.setIamPolicy@ method which the
 -- 'ProjectsSnapshotsSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsSnapshotsSetIAMPolicyResource =
 -- /See:/ 'projectsSnapshotsSetIAMPolicy' smart constructor.
 data ProjectsSnapshotsSetIAMPolicy =
   ProjectsSnapshotsSetIAMPolicy'
-    { _pssiampXgafv          :: !(Maybe Xgafv)
+    { _pssiampXgafv :: !(Maybe Xgafv)
     , _pssiampUploadProtocol :: !(Maybe Text)
-    , _pssiampAccessToken    :: !(Maybe Text)
-    , _pssiampUploadType     :: !(Maybe Text)
-    , _pssiampPayload        :: !SetIAMPolicyRequest
-    , _pssiampResource       :: !Text
-    , _pssiampCallback       :: !(Maybe Text)
+    , _pssiampAccessToken :: !(Maybe Text)
+    , _pssiampUploadType :: !(Maybe Text)
+    , _pssiampPayload :: !SetIAMPolicyRequest
+    , _pssiampResource :: !Text
+    , _pssiampCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

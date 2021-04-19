@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.SSLCerts.Get
     , scgInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.sslCerts.get@ method which the
 -- 'SSLCertsGet' request conforms to.
@@ -63,9 +63,9 @@ type SSLCertsGetResource =
 -- /See:/ 'sslCertsGet' smart constructor.
 data SSLCertsGet =
   SSLCertsGet'
-    { _scgProject         :: !Text
+    { _scgProject :: !Text
     , _scgSha1Fingerprint :: !Text
-    , _scgInstance        :: !Text
+    , _scgInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

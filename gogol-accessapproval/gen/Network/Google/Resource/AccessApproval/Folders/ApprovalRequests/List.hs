@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.List
     , farlCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.folders.approvalRequests.list@ method which the
 -- 'FoldersApprovalRequestsList' request conforms to.
@@ -73,15 +73,15 @@ type FoldersApprovalRequestsListResource =
 -- /See:/ 'foldersApprovalRequestsList' smart constructor.
 data FoldersApprovalRequestsList =
   FoldersApprovalRequestsList'
-    { _farlParent         :: !Text
-    , _farlXgafv          :: !(Maybe Xgafv)
+    { _farlParent :: !Text
+    , _farlXgafv :: !(Maybe Xgafv)
     , _farlUploadProtocol :: !(Maybe Text)
-    , _farlAccessToken    :: !(Maybe Text)
-    , _farlUploadType     :: !(Maybe Text)
-    , _farlFilter         :: !(Maybe Text)
-    , _farlPageToken      :: !(Maybe Text)
-    , _farlPageSize       :: !(Maybe (Textual Int32))
-    , _farlCallback       :: !(Maybe Text)
+    , _farlAccessToken :: !(Maybe Text)
+    , _farlUploadType :: !(Maybe Text)
+    , _farlFilter :: !(Maybe Text)
+    , _farlPageToken :: !(Maybe Text)
+    , _farlPageSize :: !(Maybe (Textual Int32))
+    , _farlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

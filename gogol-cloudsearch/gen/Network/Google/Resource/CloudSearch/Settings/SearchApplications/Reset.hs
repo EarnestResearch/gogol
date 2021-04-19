@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Settings.SearchApplications.Reset
     , ssarCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.searchapplications.reset@ method which the
 -- 'SettingsSearchApplicationsReset' request conforms to.
@@ -67,13 +67,13 @@ type SettingsSearchApplicationsResetResource =
 -- /See:/ 'settingsSearchApplicationsReset' smart constructor.
 data SettingsSearchApplicationsReset =
   SettingsSearchApplicationsReset'
-    { _ssarXgafv          :: !(Maybe Xgafv)
+    { _ssarXgafv :: !(Maybe Xgafv)
     , _ssarUploadProtocol :: !(Maybe Text)
-    , _ssarAccessToken    :: !(Maybe Text)
-    , _ssarUploadType     :: !(Maybe Text)
-    , _ssarPayload        :: !ResetSearchApplicationRequest
-    , _ssarName           :: !Text
-    , _ssarCallback       :: !(Maybe Text)
+    , _ssarAccessToken :: !(Maybe Text)
+    , _ssarUploadType :: !(Maybe Text)
+    , _ssarPayload :: !ResetSearchApplicationRequest
+    , _ssarName :: !Text
+    , _ssarCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

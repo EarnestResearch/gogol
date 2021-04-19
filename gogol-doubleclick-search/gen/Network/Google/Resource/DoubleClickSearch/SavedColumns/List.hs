@@ -37,8 +37,8 @@ module Network.Google.Resource.DoubleClickSearch.SavedColumns.List
     , sclAdvertiserId
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.savedColumns.list@ method which the
 -- 'SavedColumnsList' request conforms to.
@@ -58,7 +58,7 @@ type SavedColumnsListResource =
 -- /See:/ 'savedColumnsList' smart constructor.
 data SavedColumnsList =
   SavedColumnsList'
-    { _sclAgencyId     :: !(Textual Int64)
+    { _sclAgencyId :: !(Textual Int64)
     , _sclAdvertiserId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

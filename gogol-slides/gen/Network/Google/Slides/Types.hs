@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1166,9 +1166,9 @@ module Network.Google.Slides.Types
     , smcText
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Slides.Types.Product
-import           Network.Google.Slides.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Slides.Types.Product
+import Network.Google.Slides.Types.Sum
 
 -- | Default request referring to version 'v1' of the Google Slides API. This contains the host and root path used as a starting point for constructing service requests.
 slidesService :: ServiceConfig

@@ -39,8 +39,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.CancelPreview
     , dcpDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.cancelPreview@ method which the
 -- 'DeploymentsCancelPreview' request conforms to.
@@ -63,8 +63,8 @@ type DeploymentsCancelPreviewResource =
 -- /See:/ 'deploymentsCancelPreview' smart constructor.
 data DeploymentsCancelPreview =
   DeploymentsCancelPreview'
-    { _dcpProject    :: !Text
-    , _dcpPayload    :: !DeploymentsCancelPreviewRequest
+    { _dcpProject :: !Text
+    , _dcpPayload :: !DeploymentsCancelPreviewRequest
     , _dcpDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

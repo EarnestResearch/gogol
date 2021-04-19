@@ -16,7 +16,7 @@
 --
 module Network.Google.AndroidDeviceProvisioning.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The result status of the device after processing.
 data PerDeviceStatusInBatchStatus

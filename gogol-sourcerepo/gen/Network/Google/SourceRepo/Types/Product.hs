@@ -17,8 +17,8 @@
 --
 module Network.Google.SourceRepo.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SourceRepo.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SourceRepo.Types.Sum
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.SourceRepo.Types.Sum
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -137,7 +137,7 @@ instance ToJSON Status where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -190,9 +190,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'projectConfig' smart constructor.
 data ProjectConfig =
   ProjectConfig'
-    { _pcPubsubConfigs         :: !(Maybe ProjectConfigPubsubConfigs)
+    { _pcPubsubConfigs :: !(Maybe ProjectConfigPubsubConfigs)
     , _pcEnablePrivateKeyCheck :: !(Maybe Bool)
-    , _pcName                  :: !(Maybe Text)
+    , _pcName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -258,9 +258,9 @@ instance ToJSON ProjectConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -338,7 +338,7 @@ instance ToJSON Expr where
 data ListReposResponse =
   ListReposResponse'
     { _lrrNextPageToken :: !(Maybe Text)
-    , _lrrRepos         :: !(Maybe [Repo])
+    , _lrrRepos :: !(Maybe [Repo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -392,10 +392,10 @@ instance ToJSON ListReposResponse where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -512,7 +512,7 @@ instance ToJSON Empty where
 data UpdateRepoRequest =
   UpdateRepoRequest'
     { _urrUpdateMask :: !(Maybe GFieldMask)
-    , _urrRepo       :: !(Maybe Repo)
+    , _urrRepo :: !(Maybe Repo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -597,7 +597,7 @@ instance ToJSON StatusDetailsItem where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -651,9 +651,9 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'pubsubConfig' smart constructor.
 data PubsubConfig =
   PubsubConfig'
-    { _pcTopic               :: !(Maybe Text)
+    { _pcTopic :: !(Maybe Text)
     , _pcServiceAccountEmail :: !(Maybe Text)
-    , _pcMessageFormat       :: !(Maybe PubsubConfigMessageFormat)
+    , _pcMessageFormat :: !(Maybe PubsubConfigMessageFormat)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -722,7 +722,7 @@ instance ToJSON PubsubConfig where
 data UpdateProjectConfigRequest =
   UpdateProjectConfigRequest'
     { _upcrProjectConfig :: !(Maybe ProjectConfig)
-    , _upcrUpdateMask    :: !(Maybe GFieldMask)
+    , _upcrUpdateMask :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -894,10 +894,10 @@ instance ToJSON ProjectConfigPubsubConfigs where
 data Repo =
   Repo'
     { _rPubsubConfigs :: !(Maybe RepoPubsubConfigs)
-    , _rSize          :: !(Maybe (Textual Int64))
-    , _rURL           :: !(Maybe Text)
-    , _rName          :: !(Maybe Text)
-    , _rMirrorConfig  :: !(Maybe MirrorConfig)
+    , _rSize :: !(Maybe (Textual Int64))
+    , _rURL :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
+    , _rMirrorConfig :: !(Maybe MirrorConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1043,9 +1043,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1173,7 +1173,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1227,9 +1227,9 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'mirrorConfig' smart constructor.
 data MirrorConfig =
   MirrorConfig'
-    { _mcURL         :: !(Maybe Text)
+    { _mcURL :: !(Maybe Text)
     , _mcDeployKeyId :: !(Maybe Text)
-    , _mcWebhookId   :: !(Maybe Text)
+    , _mcWebhookId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1357,8 +1357,8 @@ instance ToJSON OperationResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

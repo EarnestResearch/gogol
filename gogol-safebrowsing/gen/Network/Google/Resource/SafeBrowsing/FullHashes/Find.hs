@@ -41,8 +41,8 @@ module Network.Google.Resource.SafeBrowsing.FullHashes.Find
     , fhfCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types
 
 -- | A resource alias for @safebrowsing.fullHashes.find@ method which the
 -- 'FullHashesFind' request conforms to.
@@ -63,12 +63,12 @@ type FullHashesFindResource =
 -- /See:/ 'fullHashesFind' smart constructor.
 data FullHashesFind =
   FullHashesFind'
-    { _fhfXgafv          :: !(Maybe Xgafv)
+    { _fhfXgafv :: !(Maybe Xgafv)
     , _fhfUploadProtocol :: !(Maybe Text)
-    , _fhfAccessToken    :: !(Maybe Text)
-    , _fhfUploadType     :: !(Maybe Text)
-    , _fhfPayload        :: !FindFullHashesRequest
-    , _fhfCallback       :: !(Maybe Text)
+    , _fhfAccessToken :: !(Maybe Text)
+    , _fhfUploadType :: !(Maybe Text)
+    , _fhfPayload :: !FindFullHashesRequest
+    , _fhfCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

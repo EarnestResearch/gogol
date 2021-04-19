@@ -38,8 +38,8 @@ module Network.Google.Resource.Reseller.Customers.Patch
     , cpCustomerId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.customers.patch@ method which the
 -- 'CustomersPatch' request conforms to.
@@ -58,7 +58,7 @@ type CustomersPatchResource =
 -- /See:/ 'customersPatch' smart constructor.
 data CustomersPatch =
   CustomersPatch'
-    { _cpPayload    :: !Customer
+    { _cpPayload :: !Customer
     , _cpCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

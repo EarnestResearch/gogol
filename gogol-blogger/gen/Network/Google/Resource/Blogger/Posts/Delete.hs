@@ -37,8 +37,8 @@ module Network.Google.Resource.Blogger.Posts.Delete
     , pdPostId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.delete@ method which the
 -- 'PostsDelete' request conforms to.

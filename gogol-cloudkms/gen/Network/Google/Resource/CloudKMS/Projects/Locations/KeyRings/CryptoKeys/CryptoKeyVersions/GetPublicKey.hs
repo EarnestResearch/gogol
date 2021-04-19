@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.C
     , plkrckckvgpkCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions.getPublicKey@ method which the
 -- 'ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey' request conforms to.
@@ -65,12 +65,12 @@ type ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKeyResource
 -- /See:/ 'projectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey' smart constructor.
 data ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey =
   ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey'
-    { _plkrckckvgpkXgafv          :: !(Maybe Xgafv)
+    { _plkrckckvgpkXgafv :: !(Maybe Xgafv)
     , _plkrckckvgpkUploadProtocol :: !(Maybe Text)
-    , _plkrckckvgpkAccessToken    :: !(Maybe Text)
-    , _plkrckckvgpkUploadType     :: !(Maybe Text)
-    , _plkrckckvgpkName           :: !Text
-    , _plkrckckvgpkCallback       :: !(Maybe Text)
+    , _plkrckckvgpkAccessToken :: !(Maybe Text)
+    , _plkrckckvgpkUploadType :: !(Maybe Text)
+    , _plkrckckvgpkName :: !Text
+    , _plkrckckvgpkCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

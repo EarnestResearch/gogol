@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Insert
     , agiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.insert@ method which the
 -- 'AdvertiserGroupsInsert' request conforms to.
@@ -58,7 +58,7 @@ type AdvertiserGroupsInsertResource =
 data AdvertiserGroupsInsert =
   AdvertiserGroupsInsert'
     { _agiProFileId :: !(Textual Int64)
-    , _agiPayload   :: !AdvertiserGroup
+    , _agiPayload :: !AdvertiserGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

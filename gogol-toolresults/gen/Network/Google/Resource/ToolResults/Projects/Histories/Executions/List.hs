@@ -44,8 +44,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.List
     , phelPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.list@ method which the
 -- 'ProjectsHistoriesExecutionsList' request conforms to.
@@ -75,7 +75,7 @@ data ProjectsHistoriesExecutionsList =
     { _phelHistoryId :: !Text
     , _phelPageToken :: !(Maybe Text)
     , _phelProjectId :: !Text
-    , _phelPageSize  :: !(Maybe (Textual Int32))
+    , _phelPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

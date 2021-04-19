@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Players.List
     , plMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.players.list@ method which the
 -- 'PlayersList' request conforms to.
@@ -63,8 +63,8 @@ type PlayersListResource =
 data PlayersList =
   PlayersList'
     { _plCollection :: !PlayersListCollection
-    , _plLanguage   :: !(Maybe Text)
-    , _plPageToken  :: !(Maybe Text)
+    , _plLanguage :: !(Maybe Text)
+    , _plPageToken :: !(Maybe Text)
     , _plMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

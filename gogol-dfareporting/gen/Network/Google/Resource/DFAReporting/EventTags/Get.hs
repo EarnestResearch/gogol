@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Get
     , etgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.get@ method which the
 -- 'EventTagsGet' request conforms to.
@@ -57,7 +57,7 @@ type EventTagsGetResource =
 data EventTagsGet =
   EventTagsGet'
     { _etgProFileId :: !(Textual Int64)
-    , _etgId        :: !(Textual Int64)
+    , _etgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

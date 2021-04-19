@@ -40,8 +40,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.Update
     , rcuCalendarResourceId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.update@ method which the
 -- 'ResourcesCalendarsUpdate' request conforms to.
@@ -65,8 +65,8 @@ type ResourcesCalendarsUpdateResource =
 -- /See:/ 'resourcesCalendarsUpdate' smart constructor.
 data ResourcesCalendarsUpdate =
   ResourcesCalendarsUpdate'
-    { _rcuPayload            :: !CalendarResource
-    , _rcuCustomer           :: !Text
+    { _rcuPayload :: !CalendarResource
+    , _rcuCustomer :: !Text
     , _rcuCalendarResourceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

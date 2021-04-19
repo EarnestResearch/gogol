@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Update
     , cuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.update@ method which the
 -- 'CampaignsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type CampaignsUpdateResource =
 data CampaignsUpdate =
   CampaignsUpdate'
     { _cuProFileId :: !(Textual Int64)
-    , _cuPayload   :: !Campaign
+    , _cuPayload :: !Campaign
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

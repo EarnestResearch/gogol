@@ -47,8 +47,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Sinks.Patch
     , baspCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.sinks.patch@ method which the
 -- 'BillingAccountsSinksPatch' request conforms to.
@@ -73,15 +73,15 @@ type BillingAccountsSinksPatchResource =
 -- /See:/ 'billingAccountsSinksPatch' smart constructor.
 data BillingAccountsSinksPatch =
   BillingAccountsSinksPatch'
-    { _baspXgafv                :: !(Maybe Xgafv)
+    { _baspXgafv :: !(Maybe Xgafv)
     , _baspUniqueWriterIdentity :: !(Maybe Bool)
-    , _baspUploadProtocol       :: !(Maybe Text)
-    , _baspUpdateMask           :: !(Maybe GFieldMask)
-    , _baspAccessToken          :: !(Maybe Text)
-    , _baspUploadType           :: !(Maybe Text)
-    , _baspPayload              :: !LogSink
-    , _baspSinkName             :: !Text
-    , _baspCallback             :: !(Maybe Text)
+    , _baspUploadProtocol :: !(Maybe Text)
+    , _baspUpdateMask :: !(Maybe GFieldMask)
+    , _baspAccessToken :: !(Maybe Text)
+    , _baspUploadType :: !(Maybe Text)
+    , _baspPayload :: !LogSink
+    , _baspSinkName :: !Text
+    , _baspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

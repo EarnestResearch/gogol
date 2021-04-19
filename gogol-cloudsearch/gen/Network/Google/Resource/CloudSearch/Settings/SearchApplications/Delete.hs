@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Settings.SearchApplications.Delete
     , ssadCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.searchapplications.delete@ method which the
 -- 'SettingsSearchApplicationsDelete' request conforms to.
@@ -64,13 +64,13 @@ type SettingsSearchApplicationsDeleteResource =
 -- /See:/ 'settingsSearchApplicationsDelete' smart constructor.
 data SettingsSearchApplicationsDelete =
   SettingsSearchApplicationsDelete'
-    { _ssadXgafv                       :: !(Maybe Xgafv)
-    , _ssadUploadProtocol              :: !(Maybe Text)
-    , _ssadAccessToken                 :: !(Maybe Text)
-    , _ssadUploadType                  :: !(Maybe Text)
-    , _ssadName                        :: !Text
+    { _ssadXgafv :: !(Maybe Xgafv)
+    , _ssadUploadProtocol :: !(Maybe Text)
+    , _ssadAccessToken :: !(Maybe Text)
+    , _ssadUploadType :: !(Maybe Text)
+    , _ssadName :: !Text
     , _ssadDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _ssadCallback                    :: !(Maybe Text)
+    , _ssadCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

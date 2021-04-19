@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.BackendServices.List
     , bslMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendServices.list@ method which the
 -- 'BackendServicesList' request conforms to.
@@ -66,10 +66,10 @@ type BackendServicesListResource =
 -- /See:/ 'backendServicesList' smart constructor.
 data BackendServicesList =
   BackendServicesList'
-    { _bslOrderBy    :: !(Maybe Text)
-    , _bslProject    :: !Text
-    , _bslFilter     :: !(Maybe Text)
-    , _bslPageToken  :: !(Maybe Text)
+    { _bslOrderBy :: !(Maybe Text)
+    , _bslProject :: !Text
+    , _bslFilter :: !(Maybe Text)
+    , _bslPageToken :: !(Maybe Text)
     , _bslMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

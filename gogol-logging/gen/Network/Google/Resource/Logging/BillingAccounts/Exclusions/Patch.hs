@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Exclusions.Patch
     , baepCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.exclusions.patch@ method which the
 -- 'BillingAccountsExclusionsPatch' request conforms to.
@@ -66,14 +66,14 @@ type BillingAccountsExclusionsPatchResource =
 -- /See:/ 'billingAccountsExclusionsPatch' smart constructor.
 data BillingAccountsExclusionsPatch =
   BillingAccountsExclusionsPatch'
-    { _baepXgafv          :: !(Maybe Xgafv)
+    { _baepXgafv :: !(Maybe Xgafv)
     , _baepUploadProtocol :: !(Maybe Text)
-    , _baepUpdateMask     :: !(Maybe GFieldMask)
-    , _baepAccessToken    :: !(Maybe Text)
-    , _baepUploadType     :: !(Maybe Text)
-    , _baepPayload        :: !LogExclusion
-    , _baepName           :: !Text
-    , _baepCallback       :: !(Maybe Text)
+    , _baepUpdateMask :: !(Maybe GFieldMask)
+    , _baepAccessToken :: !(Maybe Text)
+    , _baepUploadType :: !(Maybe Text)
+    , _baepPayload :: !LogExclusion
+    , _baepName :: !Text
+    , _baepCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

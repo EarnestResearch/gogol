@@ -38,8 +38,8 @@ module Network.Google.Resource.DNS.ManagedZones.Delete
     , mzdClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.managedZones.delete@ method which the
 -- 'ManagedZonesDelete' request conforms to.
@@ -58,8 +58,8 @@ type ManagedZonesDeleteResource =
 -- /See:/ 'managedZonesDelete' smart constructor.
 data ManagedZonesDelete =
   ManagedZonesDelete'
-    { _mzdProject           :: !Text
-    , _mzdManagedZone       :: !Text
+    { _mzdProject :: !Text
+    , _mzdManagedZone :: !Text
     , _mzdClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

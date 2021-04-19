@@ -36,8 +36,8 @@ module Network.Google.Resource.GroupsSettings.Groups.Get
     , ggGroupUniqueId
     ) where
 
-import           Network.Google.GroupsSettings.Types
-import           Network.Google.Prelude
+import Network.Google.GroupsSettings.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @groupsSettings.groups.get@ method which the
 -- 'GroupsGet' request conforms to.

@@ -36,32 +36,35 @@ module Network.Google.Resource.Content.Pos.Inventory
     , piMerchantId
     , piTargetMerchantId
     , piPayload
+    , piDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.inventory@ method which the
 -- 'PosInventory'' request conforms to.
 type PosInventoryResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "pos" :>
              Capture "targetMerchantId" (Textual Word64) :>
                "inventory" :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] PosInventoryRequest :>
-                     Post '[JSON] PosInventoryResponse
+                 QueryParam "dryRun" Bool :>
+                   QueryParam "alt" AltJSON :>
+                     ReqBody '[JSON] PosInventoryRequest :>
+                       Post '[JSON] PosInventoryResponse
 
 -- | Submit inventory for the given merchant.
 --
 -- /See:/ 'posInventory'' smart constructor.
 data PosInventory' =
   PosInventory''
-    { _piMerchantId       :: !(Textual Word64)
+    { _piMerchantId :: !(Textual Word64)
     , _piTargetMerchantId :: !(Textual Word64)
-    , _piPayload          :: !PosInventoryRequest
+    , _piPayload :: !PosInventoryRequest
+    , _piDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -75,6 +78,8 @@ data PosInventory' =
 -- * 'piTargetMerchantId'
 --
 -- * 'piPayload'
+--
+-- * 'piDryRun'
 posInventory'
     :: Word64 -- ^ 'piMerchantId'
     -> Word64 -- ^ 'piTargetMerchantId'
@@ -85,6 +90,7 @@ posInventory' pPiMerchantId_ pPiTargetMerchantId_ pPiPayload_ =
     { _piMerchantId = _Coerce # pPiMerchantId_
     , _piTargetMerchantId = _Coerce # pPiTargetMerchantId_
     , _piPayload = pPiPayload_
+    , _piDryRun = Nothing
     }
 
 
@@ -106,12 +112,19 @@ piPayload :: Lens' PosInventory' PosInventoryRequest
 piPayload
   = lens _piPayload (\ s a -> s{_piPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+piDryRun :: Lens' PosInventory' (Maybe Bool)
+piDryRun = lens _piDryRun (\ s a -> s{_piDryRun = a})
+
 instance GoogleRequest PosInventory' where
         type Rs PosInventory' = PosInventoryResponse
         type Scopes PosInventory' =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosInventory''{..}
-          = go _piMerchantId _piTargetMerchantId (Just AltJSON)
+          = go _piMerchantId _piTargetMerchantId _piDryRun
+              (Just AltJSON)
               _piPayload
               shoppingContentService
           where go

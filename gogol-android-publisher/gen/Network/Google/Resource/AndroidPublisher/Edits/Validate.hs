@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Validate
     , evEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.validate@ method which the
 -- 'EditsValidate' request conforms to.
@@ -59,7 +59,7 @@ type EditsValidateResource =
 data EditsValidate =
   EditsValidate'
     { _evPackageName :: !Text
-    , _evEditId      :: !Text
+    , _evEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

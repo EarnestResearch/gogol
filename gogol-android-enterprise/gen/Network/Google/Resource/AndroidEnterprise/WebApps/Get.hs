@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.Get
     , wagEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.get@ method which the
 -- 'WebAppsGet' request conforms to.
@@ -56,7 +56,7 @@ type WebAppsGetResource =
 -- /See:/ 'webAppsGet' smart constructor.
 data WebAppsGet =
   WebAppsGet'
-    { _wagWebAppId     :: !Text
+    { _wagWebAppId :: !Text
     , _wagEnterpriseId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

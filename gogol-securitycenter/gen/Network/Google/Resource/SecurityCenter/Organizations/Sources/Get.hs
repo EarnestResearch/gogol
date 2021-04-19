@@ -41,8 +41,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Get
     , osgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.get@ method which the
 -- 'OrganizationsSourcesGet' request conforms to.
@@ -61,12 +61,12 @@ type OrganizationsSourcesGetResource =
 -- /See:/ 'organizationsSourcesGet' smart constructor.
 data OrganizationsSourcesGet =
   OrganizationsSourcesGet'
-    { _osgXgafv          :: !(Maybe Xgafv)
+    { _osgXgafv :: !(Maybe Xgafv)
     , _osgUploadProtocol :: !(Maybe Text)
-    , _osgAccessToken    :: !(Maybe Text)
-    , _osgUploadType     :: !(Maybe Text)
-    , _osgName           :: !Text
-    , _osgCallback       :: !(Maybe Text)
+    , _osgAccessToken :: !(Maybe Text)
+    , _osgUploadType :: !(Maybe Text)
+    , _osgName :: !Text
+    , _osgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

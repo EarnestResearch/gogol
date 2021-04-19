@@ -46,8 +46,8 @@ module Network.Google.Resource.Blogger.Posts.List
     , pllMaxResults
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.list@ method which the
 -- 'PostsList' request conforms to.
@@ -75,17 +75,17 @@ type PostsListResource =
 -- /See:/ 'postsList' smart constructor.
 data PostsList =
   PostsList'
-    { _pllStatus      :: !(Maybe [PostsListStatus])
-    , _pllOrderBy     :: !PostsListOrderBy
+    { _pllStatus :: !(Maybe [PostsListStatus])
+    , _pllOrderBy :: !PostsListOrderBy
     , _pllFetchImages :: !(Maybe Bool)
-    , _pllEndDate     :: !(Maybe DateTime')
-    , _pllBlogId      :: !Text
-    , _pllStartDate   :: !(Maybe DateTime')
+    , _pllEndDate :: !(Maybe DateTime')
+    , _pllBlogId :: !Text
+    , _pllStartDate :: !(Maybe DateTime')
     , _pllFetchBodies :: !Bool
-    , _pllView        :: !(Maybe PostsListView)
-    , _pllLabels      :: !(Maybe Text)
-    , _pllPageToken   :: !(Maybe Text)
-    , _pllMaxResults  :: !(Maybe (Textual Word32))
+    , _pllView :: !(Maybe PostsListView)
+    , _pllLabels :: !(Maybe Text)
+    , _pllPageToken :: !(Maybe Text)
+    , _pllMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

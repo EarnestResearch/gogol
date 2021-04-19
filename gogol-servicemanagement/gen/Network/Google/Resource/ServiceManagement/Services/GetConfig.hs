@@ -43,8 +43,8 @@ module Network.Google.Resource.ServiceManagement.Services.GetConfig
     , sgcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.getConfig@ method which the
 -- 'ServicesGetConfig' request conforms to.
@@ -67,14 +67,14 @@ type ServicesGetConfigResource =
 -- /See:/ 'servicesGetConfig' smart constructor.
 data ServicesGetConfig =
   ServicesGetConfig'
-    { _sgcXgafv          :: !(Maybe Xgafv)
+    { _sgcXgafv :: !(Maybe Xgafv)
     , _sgcUploadProtocol :: !(Maybe Text)
-    , _sgcAccessToken    :: !(Maybe Text)
-    , _sgcUploadType     :: !(Maybe Text)
-    , _sgcConfigId       :: !(Maybe Text)
-    , _sgcServiceName    :: !Text
-    , _sgcView           :: !(Maybe Text)
-    , _sgcCallback       :: !(Maybe Text)
+    , _sgcAccessToken :: !(Maybe Text)
+    , _sgcUploadType :: !(Maybe Text)
+    , _sgcConfigId :: !(Maybe Text)
+    , _sgcServiceName :: !Text
+    , _sgcView :: !(Maybe Text)
+    , _sgcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

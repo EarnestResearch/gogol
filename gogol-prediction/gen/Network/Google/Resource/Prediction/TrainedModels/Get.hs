@@ -37,8 +37,8 @@ module Network.Google.Resource.Prediction.TrainedModels.Get
     , tmgId
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.trainedmodels.get@ method which the
 -- 'TrainedModelsGet' request conforms to.
@@ -57,7 +57,7 @@ type TrainedModelsGetResource =
 data TrainedModelsGet =
   TrainedModelsGet'
     { _tmgProject :: !Text
-    , _tmgId      :: !Text
+    , _tmgId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

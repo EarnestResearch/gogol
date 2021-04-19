@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Labels.Update
     , uluId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.labels.update@ method which the
 -- 'UsersLabelsUpdate' request conforms to.
@@ -59,8 +59,8 @@ type UsersLabelsUpdateResource =
 data UsersLabelsUpdate =
   UsersLabelsUpdate'
     { _uluPayload :: !Label
-    , _uluUserId  :: !Text
-    , _uluId      :: !Text
+    , _uluUserId :: !Text
+    , _uluId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

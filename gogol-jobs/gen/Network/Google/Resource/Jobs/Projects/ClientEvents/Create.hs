@@ -48,8 +48,8 @@ module Network.Google.Resource.Jobs.Projects.ClientEvents.Create
     , pcecCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.clientEvents.create@ method which the
 -- 'ProjectsClientEventsCreate' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsClientEventsCreateResource =
 -- /See:/ 'projectsClientEventsCreate' smart constructor.
 data ProjectsClientEventsCreate =
   ProjectsClientEventsCreate'
-    { _pcecParent         :: !Text
-    , _pcecXgafv          :: !(Maybe Xgafv)
+    { _pcecParent :: !Text
+    , _pcecXgafv :: !(Maybe Xgafv)
     , _pcecUploadProtocol :: !(Maybe Text)
-    , _pcecAccessToken    :: !(Maybe Text)
-    , _pcecUploadType     :: !(Maybe Text)
-    , _pcecPayload        :: !CreateClientEventRequest
-    , _pcecCallback       :: !(Maybe Text)
+    , _pcecAccessToken :: !(Maybe Text)
+    , _pcecUploadType :: !(Maybe Text)
+    , _pcecPayload :: !CreateClientEventRequest
+    , _pcecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

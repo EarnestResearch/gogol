@@ -37,8 +37,8 @@ module Network.Google.Resource.Tasks.TaskLists.List
     , tllMaxResults
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasklists.list@ method which the
 -- 'TaskListsList' request conforms to.
@@ -57,7 +57,7 @@ type TaskListsListResource =
 -- /See:/ 'taskListsList' smart constructor.
 data TaskListsList =
   TaskListsList'
-    { _tllPageToken  :: !(Maybe Text)
+    { _tllPageToken :: !(Maybe Text)
     , _tllMaxResults :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -39,8 +39,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.Verify
     , ussavSendAsEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.verify@ method which the
 -- 'UsersSettingsSendAsVerify' request conforms to.
@@ -62,7 +62,7 @@ type UsersSettingsSendAsVerifyResource =
 -- /See:/ 'usersSettingsSendAsVerify' smart constructor.
 data UsersSettingsSendAsVerify =
   UsersSettingsSendAsVerify'
-    { _ussavUserId      :: !Text
+    { _ussavUserId :: !Text
     , _ussavSendAsEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

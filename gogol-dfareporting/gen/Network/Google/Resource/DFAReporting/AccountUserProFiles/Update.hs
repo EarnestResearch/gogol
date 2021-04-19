@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Update
     , aupfuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.update@ method which the
 -- 'AccountUserProFilesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type AccountUserProFilesUpdateResource =
 data AccountUserProFilesUpdate =
   AccountUserProFilesUpdate'
     { _aupfuProFileId :: !(Textual Int64)
-    , _aupfuPayload   :: !AccountUserProFile
+    , _aupfuPayload :: !AccountUserProFile
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

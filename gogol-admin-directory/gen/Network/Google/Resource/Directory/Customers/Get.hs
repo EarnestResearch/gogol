@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Customers.Get
     , cgCustomerKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.customers.get@ method which the
 -- 'CustomersGet' request conforms to.

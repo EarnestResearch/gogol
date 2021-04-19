@@ -51,8 +51,8 @@ module Network.Google.Resource.Classroom.Courses.CourseWork.List
     , ccwlCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.courses.courseWork.list@ method which the
 -- 'CoursesCourseWorkList' request conforms to.
@@ -84,16 +84,16 @@ type CoursesCourseWorkListResource =
 -- /See:/ 'coursesCourseWorkList' smart constructor.
 data CoursesCourseWorkList =
   CoursesCourseWorkList'
-    { _ccwlXgafv            :: !(Maybe Xgafv)
-    , _ccwlUploadProtocol   :: !(Maybe Text)
-    , _ccwlOrderBy          :: !(Maybe Text)
-    , _ccwlCourseId         :: !Text
-    , _ccwlAccessToken      :: !(Maybe Text)
+    { _ccwlXgafv :: !(Maybe Xgafv)
+    , _ccwlUploadProtocol :: !(Maybe Text)
+    , _ccwlOrderBy :: !(Maybe Text)
+    , _ccwlCourseId :: !Text
+    , _ccwlAccessToken :: !(Maybe Text)
     , _ccwlCourseWorkStates :: !(Maybe [Text])
-    , _ccwlUploadType       :: !(Maybe Text)
-    , _ccwlPageToken        :: !(Maybe Text)
-    , _ccwlPageSize         :: !(Maybe (Textual Int32))
-    , _ccwlCallback         :: !(Maybe Text)
+    , _ccwlUploadType :: !(Maybe Text)
+    , _ccwlPageToken :: !(Maybe Text)
+    , _ccwlPageSize :: !(Maybe (Textual Int32))
+    , _ccwlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

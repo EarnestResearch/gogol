@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.Orders.Acknowledge
     , oaOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.acknowledge@ method which the
 -- 'OrdersAcknowledge' request conforms to.
 type OrdersAcknowledgeResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -60,8 +60,8 @@ type OrdersAcknowledgeResource =
 data OrdersAcknowledge =
   OrdersAcknowledge'
     { _oaMerchantId :: !(Textual Word64)
-    , _oaPayload    :: !OrdersAcknowledgeRequest
-    , _oaOrderId    :: !Text
+    , _oaPayload :: !OrdersAcknowledgeRequest
+    , _oaOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

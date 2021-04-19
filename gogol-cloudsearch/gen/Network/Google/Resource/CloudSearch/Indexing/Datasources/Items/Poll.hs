@@ -53,8 +53,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Poll
     , idipdCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.poll@ method which the
 -- 'IndexingDatasourcesItemsPoll' request conforms to.
@@ -88,13 +88,13 @@ type IndexingDatasourcesItemsPollResource =
 -- /See:/ 'indexingDatasourcesItemsPoll' smart constructor.
 data IndexingDatasourcesItemsPoll =
   IndexingDatasourcesItemsPoll'
-    { _idipdXgafv          :: !(Maybe Xgafv)
+    { _idipdXgafv :: !(Maybe Xgafv)
     , _idipdUploadProtocol :: !(Maybe Text)
-    , _idipdAccessToken    :: !(Maybe Text)
-    , _idipdUploadType     :: !(Maybe Text)
-    , _idipdPayload        :: !PollItemsRequest
-    , _idipdName           :: !Text
-    , _idipdCallback       :: !(Maybe Text)
+    , _idipdAccessToken :: !(Maybe Text)
+    , _idipdUploadType :: !(Maybe Text)
+    , _idipdPayload :: !PollItemsRequest
+    , _idipdName :: !Text
+    , _idipdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

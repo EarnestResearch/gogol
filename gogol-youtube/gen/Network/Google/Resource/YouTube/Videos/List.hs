@@ -48,8 +48,8 @@ module Network.Google.Resource.YouTube.Videos.List
     , vlMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videos.list@ method which the
 -- 'VideosList' request conforms to.
@@ -78,19 +78,19 @@ type VideosListResource =
 -- /See:/ 'videosList' smart constructor.
 data VideosList =
   VideosList'
-    { _vlChart                  :: !(Maybe VideosListChart)
-    , _vlPart                   :: !Text
-    , _vlRegionCode             :: !(Maybe Text)
-    , _vlLocale                 :: !(Maybe Text)
-    , _vlMyRating               :: !(Maybe VideosListMyRating)
-    , _vlMaxHeight              :: !(Maybe (Textual Word32))
-    , _vlHl                     :: !(Maybe Text)
+    { _vlChart :: !(Maybe VideosListChart)
+    , _vlPart :: !Text
+    , _vlRegionCode :: !(Maybe Text)
+    , _vlLocale :: !(Maybe Text)
+    , _vlMyRating :: !(Maybe VideosListMyRating)
+    , _vlMaxHeight :: !(Maybe (Textual Word32))
+    , _vlHl :: !(Maybe Text)
     , _vlOnBehalfOfContentOwner :: !(Maybe Text)
-    , _vlVideoCategoryId        :: !Text
-    , _vlMaxWidth               :: !(Maybe (Textual Word32))
-    , _vlId                     :: !(Maybe Text)
-    , _vlPageToken              :: !(Maybe Text)
-    , _vlMaxResults             :: !(Textual Word32)
+    , _vlVideoCategoryId :: !Text
+    , _vlMaxWidth :: !(Maybe (Textual Word32))
+    , _vlId :: !(Maybe Text)
+    , _vlPageToken :: !(Maybe Text)
+    , _vlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

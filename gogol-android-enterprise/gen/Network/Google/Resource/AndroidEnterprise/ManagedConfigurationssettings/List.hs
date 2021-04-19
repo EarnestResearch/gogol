@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationssettings.L
     , mclProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationssettings.list@ method which the
 -- 'ManagedConfigurationssettingsList' request conforms to.
@@ -61,7 +61,7 @@ type ManagedConfigurationssettingsListResource =
 data ManagedConfigurationssettingsList =
   ManagedConfigurationssettingsList'
     { _mclEnterpriseId :: !Text
-    , _mclProductId    :: !Text
+    , _mclProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Versions.Files.List
     , svflCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.versions.files.list@ method which the
 -- 'SitesVersionsFilesList' request conforms to.
@@ -69,15 +69,15 @@ type SitesVersionsFilesListResource =
 -- /See:/ 'sitesVersionsFilesList' smart constructor.
 data SitesVersionsFilesList =
   SitesVersionsFilesList'
-    { _svflParent         :: !Text
-    , _svflStatus         :: !(Maybe Text)
-    , _svflXgafv          :: !(Maybe Xgafv)
+    { _svflParent :: !Text
+    , _svflStatus :: !(Maybe Text)
+    , _svflXgafv :: !(Maybe Xgafv)
     , _svflUploadProtocol :: !(Maybe Text)
-    , _svflAccessToken    :: !(Maybe Text)
-    , _svflUploadType     :: !(Maybe Text)
-    , _svflPageToken      :: !(Maybe Text)
-    , _svflPageSize       :: !(Maybe (Textual Int32))
-    , _svflCallback       :: !(Maybe Text)
+    , _svflAccessToken :: !(Maybe Text)
+    , _svflUploadType :: !(Maybe Text)
+    , _svflPageToken :: !(Maybe Text)
+    , _svflPageSize :: !(Maybe (Textual Int32))
+    , _svflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

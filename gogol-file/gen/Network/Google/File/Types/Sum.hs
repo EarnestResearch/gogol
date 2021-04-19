@@ -16,7 +16,7 @@
 --
 module Network.Google.File.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. Current lifecycle state of the resource (e.g. if it\'s
 -- being created or ready to use).

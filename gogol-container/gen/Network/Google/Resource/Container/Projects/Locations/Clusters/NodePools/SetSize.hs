@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.NodePools.S
     , plcnpssCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.nodePools.setSize@ method which the
 -- 'ProjectsLocationsClustersNodePoolsSetSize' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersNodePoolsSetSizeResource
 -- /See:/ 'projectsLocationsClustersNodePoolsSetSize' smart constructor.
 data ProjectsLocationsClustersNodePoolsSetSize =
   ProjectsLocationsClustersNodePoolsSetSize'
-    { _plcnpssXgafv          :: !(Maybe Xgafv)
+    { _plcnpssXgafv :: !(Maybe Xgafv)
     , _plcnpssUploadProtocol :: !(Maybe Text)
-    , _plcnpssAccessToken    :: !(Maybe Text)
-    , _plcnpssUploadType     :: !(Maybe Text)
-    , _plcnpssPayload        :: !SetNodePoolSizeRequest
-    , _plcnpssName           :: !Text
-    , _plcnpssCallback       :: !(Maybe Text)
+    , _plcnpssAccessToken :: !(Maybe Text)
+    , _plcnpssUploadType :: !(Maybe Text)
+    , _plcnpssPayload :: !SetNodePoolSizeRequest
+    , _plcnpssName :: !Text
+    , _plcnpssCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Start
     , pscsCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.start@ method which the
 -- 'ProjectsScanConfigsStart' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsScanConfigsStartResource =
 -- /See:/ 'projectsScanConfigsStart' smart constructor.
 data ProjectsScanConfigsStart =
   ProjectsScanConfigsStart'
-    { _pscsXgafv          :: !(Maybe Xgafv)
+    { _pscsXgafv :: !(Maybe Xgafv)
     , _pscsUploadProtocol :: !(Maybe Text)
-    , _pscsAccessToken    :: !(Maybe Text)
-    , _pscsUploadType     :: !(Maybe Text)
-    , _pscsPayload        :: !StartScanRunRequest
-    , _pscsName           :: !Text
-    , _pscsCallback       :: !(Maybe Text)
+    , _pscsAccessToken :: !(Maybe Text)
+    , _pscsUploadType :: !(Maybe Text)
+    , _pscsPayload :: !StartScanRunRequest
+    , _pscsName :: !Text
+    , _pscsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

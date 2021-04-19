@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Exports.Create
     , mecCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.exports.create@ method which the
 -- 'MattersExportsCreate' request conforms to.
@@ -65,13 +65,13 @@ type MattersExportsCreateResource =
 -- /See:/ 'mattersExportsCreate' smart constructor.
 data MattersExportsCreate =
   MattersExportsCreate'
-    { _mecXgafv          :: !(Maybe Xgafv)
+    { _mecXgafv :: !(Maybe Xgafv)
     , _mecUploadProtocol :: !(Maybe Text)
-    , _mecAccessToken    :: !(Maybe Text)
-    , _mecUploadType     :: !(Maybe Text)
-    , _mecPayload        :: !Export
-    , _mecMatterId       :: !Text
-    , _mecCallback       :: !(Maybe Text)
+    , _mecAccessToken :: !(Maybe Text)
+    , _mecUploadType :: !(Maybe Text)
+    , _mecPayload :: !Export
+    , _mecMatterId :: !Text
+    , _mecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.List
     , parlCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.projects.approvalRequests.list@ method which the
 -- 'ProjectsApprovalRequestsList' request conforms to.
@@ -73,15 +73,15 @@ type ProjectsApprovalRequestsListResource =
 -- /See:/ 'projectsApprovalRequestsList' smart constructor.
 data ProjectsApprovalRequestsList =
   ProjectsApprovalRequestsList'
-    { _parlParent         :: !Text
-    , _parlXgafv          :: !(Maybe Xgafv)
+    { _parlParent :: !Text
+    , _parlXgafv :: !(Maybe Xgafv)
     , _parlUploadProtocol :: !(Maybe Text)
-    , _parlAccessToken    :: !(Maybe Text)
-    , _parlUploadType     :: !(Maybe Text)
-    , _parlFilter         :: !(Maybe Text)
-    , _parlPageToken      :: !(Maybe Text)
-    , _parlPageSize       :: !(Maybe (Textual Int32))
-    , _parlCallback       :: !(Maybe Text)
+    , _parlAccessToken :: !(Maybe Text)
+    , _parlUploadType :: !(Maybe Text)
+    , _parlFilter :: !(Maybe Text)
+    , _parlPageToken :: !(Maybe Text)
+    , _parlPageSize :: !(Maybe (Textual Int32))
+    , _parlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

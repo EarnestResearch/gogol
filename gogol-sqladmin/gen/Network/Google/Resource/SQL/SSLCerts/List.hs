@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.SSLCerts.List
     , sclInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.sslCerts.list@ method which the
 -- 'SSLCertsList' request conforms to.
@@ -58,7 +58,7 @@ type SSLCertsListResource =
 -- /See:/ 'sslCertsList' smart constructor.
 data SSLCertsList =
   SSLCertsList'
-    { _sclProject  :: !Text
+    { _sclProject :: !Text
     , _sclInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

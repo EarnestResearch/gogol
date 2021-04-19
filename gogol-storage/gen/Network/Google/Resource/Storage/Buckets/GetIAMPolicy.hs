@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.Buckets.GetIAMPolicy
     , bgipUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.getIamPolicy@ method which the
 -- 'BucketsGetIAMPolicy' request conforms to.
@@ -56,7 +56,7 @@ type BucketsGetIAMPolicyResource =
 -- /See:/ 'bucketsGetIAMPolicy' smart constructor.
 data BucketsGetIAMPolicy =
   BucketsGetIAMPolicy'
-    { _bgipBucket      :: !Text
+    { _bgipBucket :: !Text
     , _bgipUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

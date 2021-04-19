@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.RegionCommitments.List
     , rclMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionCommitments.list@ method which the
 -- 'RegionCommitmentsList' request conforms to.
@@ -66,11 +66,11 @@ type RegionCommitmentsListResource =
 -- /See:/ 'regionCommitmentsList' smart constructor.
 data RegionCommitmentsList =
   RegionCommitmentsList'
-    { _rclOrderBy    :: !(Maybe Text)
-    , _rclProject    :: !Text
-    , _rclFilter     :: !(Maybe Text)
-    , _rclRegion     :: !Text
-    , _rclPageToken  :: !(Maybe Text)
+    { _rclOrderBy :: !(Maybe Text)
+    , _rclProject :: !Text
+    , _rclFilter :: !(Maybe Text)
+    , _rclRegion :: !Text
+    , _rclPageToken :: !(Maybe Text)
     , _rclMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

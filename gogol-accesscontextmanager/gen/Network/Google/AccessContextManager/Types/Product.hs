@@ -17,8 +17,8 @@
 --
 module Network.Google.AccessContextManager.Types.Product where
 
-import           Network.Google.AccessContextManager.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -122,7 +122,7 @@ instance ToJSON Status where
 -- /See:/ 'basicLevel' smart constructor.
 data BasicLevel =
   BasicLevel'
-    { _blConditions        :: !(Maybe [Condition])
+    { _blConditions :: !(Maybe [Condition])
     , _blCombiningFunction :: !(Maybe BasicLevelCombiningFunction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -180,7 +180,7 @@ instance ToJSON BasicLevel where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -258,12 +258,12 @@ instance ToJSON CancelOperationRequest where
 -- /See:/ 'accessLevel' smart constructor.
 data AccessLevel =
   AccessLevel'
-    { _alBasic       :: !(Maybe BasicLevel)
-    , _alUpdateTime  :: !(Maybe DateTime')
-    , _alName        :: !(Maybe Text)
-    , _alTitle       :: !(Maybe Text)
+    { _alBasic :: !(Maybe BasicLevel)
+    , _alUpdateTime :: !(Maybe DateTime')
+    , _alName :: !(Maybe Text)
+    , _alTitle :: !(Maybe Text)
     , _alDescription :: !(Maybe Text)
-    , _alCreateTime  :: !(Maybe DateTime')
+    , _alCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -357,9 +357,9 @@ instance ToJSON AccessLevel where
 -- /See:/ 'servicePerimeterConfig' smart constructor.
 data ServicePerimeterConfig =
   ServicePerimeterConfig'
-    { _spcResources          :: !(Maybe [Text])
+    { _spcResources :: !(Maybe [Text])
     , _spcRestrictedServices :: !(Maybe [Text])
-    , _spcAccessLevels       :: !(Maybe [Text])
+    , _spcAccessLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -442,10 +442,10 @@ instance ToJSON ServicePerimeterConfig where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -570,13 +570,13 @@ instance ToJSON Empty where
 -- /See:/ 'servicePerimeter' smart constructor.
 data ServicePerimeter =
   ServicePerimeter'
-    { _spStatus        :: !(Maybe ServicePerimeterConfig)
+    { _spStatus :: !(Maybe ServicePerimeterConfig)
     , _spPerimeterType :: !(Maybe ServicePerimeterPerimeterType)
-    , _spUpdateTime    :: !(Maybe DateTime')
-    , _spName          :: !(Maybe Text)
-    , _spTitle         :: !(Maybe Text)
-    , _spDescription   :: !(Maybe Text)
-    , _spCreateTime    :: !(Maybe DateTime')
+    , _spUpdateTime :: !(Maybe DateTime')
+    , _spName :: !(Maybe Text)
+    , _spTitle :: !(Maybe Text)
+    , _spDescription :: !(Maybe Text)
+    , _spCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -686,7 +686,7 @@ instance ToJSON ServicePerimeter where
 -- /See:/ 'listAccessPoliciesResponse' smart constructor.
 data ListAccessPoliciesResponse =
   ListAccessPoliciesResponse'
-    { _laprNextPageToken  :: !(Maybe Text)
+    { _laprNextPageToken :: !(Maybe Text)
     , _laprAccessPolicies :: !(Maybe [AccessPolicy])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -776,8 +776,8 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'osConstraint' smart constructor.
 data OSConstraint =
   OSConstraint'
-    { _ocOSType                  :: !(Maybe OSConstraintOSType)
-    , _ocMinimumVersion          :: !(Maybe Text)
+    { _ocOSType :: !(Maybe OSConstraintOSType)
+    , _ocMinimumVersion :: !(Maybe Text)
     , _ocRequireVerifiedChromeOS :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -850,10 +850,10 @@ instance ToJSON OSConstraint where
 -- /See:/ 'accessPolicy' smart constructor.
 data AccessPolicy =
   AccessPolicy'
-    { _apParent     :: !(Maybe Text)
+    { _apParent :: !(Maybe Text)
     , _apUpdateTime :: !(Maybe DateTime')
-    , _apName       :: !(Maybe Text)
-    , _apTitle      :: !(Maybe Text)
+    , _apName :: !(Maybe Text)
+    , _apTitle :: !(Maybe Text)
     , _apCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -935,7 +935,7 @@ instance ToJSON AccessPolicy where
 -- /See:/ 'listServicePerimetersResponse' smart constructor.
 data ListServicePerimetersResponse =
   ListServicePerimetersResponse'
-    { _lsprNextPageToken     :: !(Maybe Text)
+    { _lsprNextPageToken :: !(Maybe Text)
     , _lsprServicePerimeters :: !(Maybe [ServicePerimeter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -991,7 +991,7 @@ instance ToJSON ListServicePerimetersResponse where
 data ListAccessLevelsResponse =
   ListAccessLevelsResponse'
     { _lalrNextPageToken :: !(Maybe Text)
-    , _lalrAccessLevels  :: !(Maybe [AccessLevel])
+    , _lalrAccessLevels :: !(Maybe [AccessLevel])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1092,11 +1092,11 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'devicePolicy' smart constructor.
 data DevicePolicy =
   DevicePolicy'
-    { _dpOSConstraints                 :: !(Maybe [OSConstraint])
-    , _dpRequireAdminApproval          :: !(Maybe Bool)
-    , _dpRequireCorpOwned              :: !(Maybe Bool)
-    , _dpRequireScreenlock             :: !(Maybe Bool)
-    , _dpAllowedEncryptionStatuses     :: !(Maybe [Text])
+    { _dpOSConstraints :: !(Maybe [OSConstraint])
+    , _dpRequireAdminApproval :: !(Maybe Bool)
+    , _dpRequireCorpOwned :: !(Maybe Bool)
+    , _dpRequireScreenlock :: !(Maybe Bool)
+    , _dpAllowedEncryptionStatuses :: !(Maybe [Text])
     , _dpAllowedDeviceManagementLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1211,11 +1211,11 @@ instance ToJSON DevicePolicy where
 -- /See:/ 'condition' smart constructor.
 data Condition =
   Condition'
-    { _cMembers              :: !(Maybe [Text])
-    , _cRegions              :: !(Maybe [Text])
-    , _cNegate               :: !(Maybe Bool)
-    , _cIPSubnetworks        :: !(Maybe [Text])
-    , _cDevicePolicy         :: !(Maybe DevicePolicy)
+    { _cMembers :: !(Maybe [Text])
+    , _cRegions :: !(Maybe [Text])
+    , _cNegate :: !(Maybe Bool)
+    , _cIPSubnetworks :: !(Maybe [Text])
+    , _cDevicePolicy :: !(Maybe DevicePolicy)
     , _cRequiredAccessLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

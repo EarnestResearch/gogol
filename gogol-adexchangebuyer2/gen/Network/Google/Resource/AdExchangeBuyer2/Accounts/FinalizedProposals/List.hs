@@ -47,8 +47,8 @@ module Network.Google.Resource.AdExchangeBuyer2.Accounts.FinalizedProposals.List
     , afplCallback
     ) where
 
-import           Network.Google.AdExchangeBuyer2.Types
-import           Network.Google.Prelude
+import Network.Google.AdExchangeBuyer2.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexchangebuyer2.accounts.finalizedProposals.list@ method which the
 -- 'AccountsFinalizedProposalsList' request conforms to.
@@ -76,16 +76,16 @@ type AccountsFinalizedProposalsListResource =
 -- /See:/ 'accountsFinalizedProposalsList' smart constructor.
 data AccountsFinalizedProposalsList =
   AccountsFinalizedProposalsList'
-    { _afplXgafv          :: !(Maybe Xgafv)
+    { _afplXgafv :: !(Maybe Xgafv)
     , _afplUploadProtocol :: !(Maybe Text)
-    , _afplAccessToken    :: !(Maybe Text)
-    , _afplUploadType     :: !(Maybe Text)
-    , _afplFilterSyntax   :: !(Maybe Text)
-    , _afplAccountId      :: !Text
-    , _afplFilter         :: !(Maybe Text)
-    , _afplPageToken      :: !(Maybe Text)
-    , _afplPageSize       :: !(Maybe (Textual Int32))
-    , _afplCallback       :: !(Maybe Text)
+    , _afplAccessToken :: !(Maybe Text)
+    , _afplUploadType :: !(Maybe Text)
+    , _afplFilterSyntax :: !(Maybe Text)
+    , _afplAccountId :: !Text
+    , _afplFilter :: !(Maybe Text)
+    , _afplPageToken :: !(Maybe Text)
+    , _afplPageSize :: !(Maybe (Textual Int32))
+    , _afplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -53,8 +53,8 @@ module Network.Google.Resource.ServiceControl.Services.Check
     , scCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceControl.Types
+import Network.Google.Prelude
+import Network.Google.ServiceControl.Types
 
 -- | A resource alias for @servicecontrol.services.check@ method which the
 -- 'ServicesCheck' request conforms to.
@@ -87,13 +87,13 @@ type ServicesCheckResource =
 -- /See:/ 'servicesCheck' smart constructor.
 data ServicesCheck =
   ServicesCheck'
-    { _scXgafv          :: !(Maybe Xgafv)
+    { _scXgafv :: !(Maybe Xgafv)
     , _scUploadProtocol :: !(Maybe Text)
-    , _scAccessToken    :: !(Maybe Text)
-    , _scUploadType     :: !(Maybe Text)
-    , _scPayload        :: !CheckRequest
-    , _scServiceName    :: !Text
-    , _scCallback       :: !(Maybe Text)
+    , _scAccessToken :: !(Maybe Text)
+    , _scUploadType :: !(Maybe Text)
+    , _scPayload :: !CheckRequest
+    , _scServiceName :: !Text
+    , _scCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

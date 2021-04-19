@@ -41,8 +41,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.ScanConfigs.Get
     , pscgCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.scanConfigs.get@ method which the
 -- 'ProjectsScanConfigsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsScanConfigsGetResource =
 -- /See:/ 'projectsScanConfigsGet' smart constructor.
 data ProjectsScanConfigsGet =
   ProjectsScanConfigsGet'
-    { _pscgXgafv          :: !(Maybe Xgafv)
+    { _pscgXgafv :: !(Maybe Xgafv)
     , _pscgUploadProtocol :: !(Maybe Text)
-    , _pscgAccessToken    :: !(Maybe Text)
-    , _pscgUploadType     :: !(Maybe Text)
-    , _pscgName           :: !Text
-    , _pscgCallback       :: !(Maybe Text)
+    , _pscgAccessToken :: !(Maybe Text)
+    , _pscgUploadType :: !(Maybe Text)
+    , _pscgName :: !Text
+    , _pscgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

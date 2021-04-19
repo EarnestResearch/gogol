@@ -41,8 +41,8 @@ module Network.Google.Resource.Tasks.Tasks.Move
     , tmPrevious
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasks.move@ method which the
 -- 'TasksMove' request conforms to.
@@ -65,9 +65,9 @@ type TasksMoveResource =
 -- /See:/ 'tasksMove' smart constructor.
 data TasksMove =
   TasksMove'
-    { _tmParent   :: !(Maybe Text)
+    { _tmParent :: !(Maybe Text)
     , _tmTaskList :: !Text
-    , _tmTask     :: !Text
+    , _tmTask :: !Text
     , _tmPrevious :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

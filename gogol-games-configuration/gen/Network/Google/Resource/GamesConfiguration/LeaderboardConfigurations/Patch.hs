@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesConfiguration.LeaderboardConfigurations.Patc
     , lcpLeaderboardId
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.leaderboardConfigurations.patch@ method which the
 -- 'LeaderboardConfigurationsPatch' request conforms to.
@@ -58,7 +58,7 @@ type LeaderboardConfigurationsPatchResource =
 -- /See:/ 'leaderboardConfigurationsPatch' smart constructor.
 data LeaderboardConfigurationsPatch =
   LeaderboardConfigurationsPatch'
-    { _lcpPayload       :: !LeaderboardConfiguration
+    { _lcpPayload :: !LeaderboardConfiguration
     , _lcpLeaderboardId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

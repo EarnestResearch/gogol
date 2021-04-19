@@ -131,12 +131,12 @@ module Network.Google.CloudShell
     , orAddtional
     ) where
 
-import           Network.Google.CloudShell.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudShell.Operations.Cancel
-import           Network.Google.Resource.CloudShell.Operations.Delete
-import           Network.Google.Resource.CloudShell.Operations.Get
-import           Network.Google.Resource.CloudShell.Operations.List
+import Network.Google.Prelude
+import Network.Google.CloudShell.Types
+import Network.Google.Resource.CloudShell.Operations.Cancel
+import Network.Google.Resource.CloudShell.Operations.Delete
+import Network.Google.Resource.CloudShell.Operations.Get
+import Network.Google.Resource.CloudShell.Operations.List
 
 {- $resources
 TODO

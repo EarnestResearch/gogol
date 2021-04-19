@@ -37,8 +37,8 @@ module Network.Google.Resource.Tasks.TaskLists.Update
     , tluTaskList
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasklists.update@ method which the
 -- 'TaskListsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type TaskListsUpdateResource =
 -- /See:/ 'taskListsUpdate' smart constructor.
 data TaskListsUpdate =
   TaskListsUpdate'
-    { _tluPayload  :: !TaskList
+    { _tluPayload :: !TaskList
     , _tluTaskList :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

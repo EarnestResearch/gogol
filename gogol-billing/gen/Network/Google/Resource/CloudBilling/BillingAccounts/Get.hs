@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudBilling.BillingAccounts.Get
     , bagCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.billingAccounts.get@ method which the
 -- 'BillingAccountsGet' request conforms to.
@@ -66,12 +66,12 @@ type BillingAccountsGetResource =
 -- /See:/ 'billingAccountsGet' smart constructor.
 data BillingAccountsGet =
   BillingAccountsGet'
-    { _bagXgafv          :: !(Maybe Xgafv)
+    { _bagXgafv :: !(Maybe Xgafv)
     , _bagUploadProtocol :: !(Maybe Text)
-    , _bagAccessToken    :: !(Maybe Text)
-    , _bagUploadType     :: !(Maybe Text)
-    , _bagName           :: !Text
-    , _bagCallback       :: !(Maybe Text)
+    , _bagAccessToken :: !(Maybe Text)
+    , _bagUploadType :: !(Maybe Text)
+    , _bagName :: !Text
+    , _bagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

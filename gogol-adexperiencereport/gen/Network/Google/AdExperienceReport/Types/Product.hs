@@ -17,16 +17,16 @@
 --
 module Network.Google.AdExperienceReport.Types.Product where
 
-import           Network.Google.AdExperienceReport.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AdExperienceReport.Types.Sum
+import Network.Google.Prelude
 
 -- | Response message for GetSiteSummary.
 --
 -- /See:/ 'siteSummaryResponse' smart constructor.
 data SiteSummaryResponse =
   SiteSummaryResponse'
-    { _ssrMobileSummary  :: !(Maybe PlatformSummary)
-    , _ssrReviewedSite   :: !(Maybe Text)
+    { _ssrMobileSummary :: !(Maybe PlatformSummary)
+    , _ssrReviewedSite :: !(Maybe Text)
     , _ssrDesktopSummary :: !(Maybe PlatformSummary)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -132,12 +132,12 @@ instance ToJSON ViolatingSitesResponse where
 data PlatformSummary =
   PlatformSummary'
     { _psEnforcementTime :: !(Maybe DateTime')
-    , _psLastChangeTime  :: !(Maybe DateTime')
-    , _psFilterStatus    :: !(Maybe PlatformSummaryFilterStatus)
-    , _psUnderReview     :: !(Maybe Bool)
+    , _psLastChangeTime :: !(Maybe DateTime')
+    , _psFilterStatus :: !(Maybe PlatformSummaryFilterStatus)
+    , _psUnderReview :: !(Maybe Bool)
     , _psBetterAdsStatus :: !(Maybe PlatformSummaryBetterAdsStatus)
-    , _psReportURL       :: !(Maybe Text)
-    , _psRegion          :: !(Maybe [Text])
+    , _psReportURL :: !(Maybe Text)
+    , _psRegion :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

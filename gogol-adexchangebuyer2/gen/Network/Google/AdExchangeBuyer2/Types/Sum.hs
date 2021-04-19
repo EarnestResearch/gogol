@@ -16,7 +16,7 @@
 --
 module Network.Google.AdExchangeBuyer2.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Specifies the creative source for programmatic deals. PUBLISHER means
 -- creative is provided by seller and ADVERTISER means creative is provided

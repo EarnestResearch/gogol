@@ -16,7 +16,7 @@
 --
 module Network.Google.Chat.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | An enum value that will be replaced by the Chat API with the
 -- corresponding icon image.

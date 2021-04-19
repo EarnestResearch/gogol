@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.TargetVPNGateways.AggregatedList
     , tvgalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetVpnGateways.aggregatedList@ method which the
 -- 'TargetVPNGatewaysAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type TargetVPNGatewaysAggregatedListResource =
 -- /See:/ 'targetVPNGatewaysAggregatedList' smart constructor.
 data TargetVPNGatewaysAggregatedList =
   TargetVPNGatewaysAggregatedList'
-    { _tvgalOrderBy    :: !(Maybe Text)
-    , _tvgalProject    :: !Text
-    , _tvgalFilter     :: !(Maybe Text)
-    , _tvgalPageToken  :: !(Maybe Text)
+    { _tvgalOrderBy :: !(Maybe Text)
+    , _tvgalProject :: !Text
+    , _tvgalFilter :: !(Maybe Text)
+    , _tvgalPageToken :: !(Maybe Text)
     , _tvgalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

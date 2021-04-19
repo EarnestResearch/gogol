@@ -37,8 +37,8 @@ module Network.Google.Resource.Blogger.Pages.Delete
     , pddPageId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pages.delete@ method which the
 -- 'PagesDelete' request conforms to.

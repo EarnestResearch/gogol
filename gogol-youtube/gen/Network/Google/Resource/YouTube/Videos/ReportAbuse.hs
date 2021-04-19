@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.Videos.ReportAbuse
     , vraOnBehalfOfContentOwner
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videos.reportAbuse@ method which the
 -- 'VideosReportAbuse' request conforms to.
@@ -56,7 +56,7 @@ type VideosReportAbuseResource =
 -- /See:/ 'videosReportAbuse' smart constructor.
 data VideosReportAbuse =
   VideosReportAbuse'
-    { _vraPayload                :: !VideoAbuseReport
+    { _vraPayload :: !VideoAbuseReport
     , _vraOnBehalfOfContentOwner :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

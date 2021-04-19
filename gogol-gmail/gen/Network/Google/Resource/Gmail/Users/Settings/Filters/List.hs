@@ -36,8 +36,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Filters.List
     , usflUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.filters.list@ method which the
 -- 'UsersSettingsFiltersList' request conforms to.

@@ -42,8 +42,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.RunQuery
     , pddrqCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.runQuery@ method which the
 -- 'ProjectsDatabasesDocumentsRunQuery' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsDatabasesDocumentsRunQueryResource =
 -- /See:/ 'projectsDatabasesDocumentsRunQuery' smart constructor.
 data ProjectsDatabasesDocumentsRunQuery =
   ProjectsDatabasesDocumentsRunQuery'
-    { _pddrqParent         :: !Text
-    , _pddrqXgafv          :: !(Maybe Xgafv)
+    { _pddrqParent :: !Text
+    , _pddrqXgafv :: !(Maybe Xgafv)
     , _pddrqUploadProtocol :: !(Maybe Text)
-    , _pddrqAccessToken    :: !(Maybe Text)
-    , _pddrqUploadType     :: !(Maybe Text)
-    , _pddrqPayload        :: !RunQueryRequest
-    , _pddrqCallback       :: !(Maybe Text)
+    , _pddrqAccessToken :: !(Maybe Text)
+    , _pddrqUploadType :: !(Maybe Text)
+    , _pddrqPayload :: !RunQueryRequest
+    , _pddrqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

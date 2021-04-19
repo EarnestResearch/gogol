@@ -17,15 +17,15 @@
 --
 module Network.Google.SearchConsole.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SearchConsole.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SearchConsole.Types.Sum
 
 -- | Describe image data.
 --
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iData     :: !(Maybe Bytes)
+    { _iData :: !(Maybe Bytes)
     , _iMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -143,7 +143,7 @@ instance ToJSON ResourceIssue where
 -- /See:/ 'runMobileFriendlyTestRequest' smart constructor.
 data RunMobileFriendlyTestRequest =
   RunMobileFriendlyTestRequest'
-    { _rmftrURL               :: !(Maybe Text)
+    { _rmftrURL :: !(Maybe Text)
     , _rmftrRequestScreenshot :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -193,7 +193,7 @@ instance ToJSON RunMobileFriendlyTestRequest where
 -- /See:/ 'testStatus' smart constructor.
 data TestStatus =
   TestStatus'
-    { _tsStatus  :: !(Maybe TestStatusStatus)
+    { _tsStatus :: !(Maybe TestStatusStatus)
     , _tsDetails :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -240,10 +240,10 @@ instance ToJSON TestStatus where
 -- /See:/ 'runMobileFriendlyTestResponse' smart constructor.
 data RunMobileFriendlyTestResponse =
   RunMobileFriendlyTestResponse'
-    { _rmftrScreenshot           :: !(Maybe Image)
-    , _rmftrResourceIssues       :: !(Maybe [ResourceIssue])
-    , _rmftrMobileFriendliness   :: !(Maybe RunMobileFriendlyTestResponseMobileFriendliness)
-    , _rmftrTestStatus           :: !(Maybe TestStatus)
+    { _rmftrScreenshot :: !(Maybe Image)
+    , _rmftrResourceIssues :: !(Maybe [ResourceIssue])
+    , _rmftrMobileFriendliness :: !(Maybe RunMobileFriendlyTestResponseMobileFriendliness)
+    , _rmftrTestStatus :: !(Maybe TestStatus)
     , _rmftrMobileFriendlyIssues :: !(Maybe [MobileFriendlyIssue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

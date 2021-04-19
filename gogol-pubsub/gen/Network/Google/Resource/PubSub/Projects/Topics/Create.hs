@@ -43,8 +43,8 @@ module Network.Google.Resource.PubSub.Projects.Topics.Create
     , ptcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.topics.create@ method which the
 -- 'ProjectsTopicsCreate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsTopicsCreateResource =
 -- /See:/ 'projectsTopicsCreate' smart constructor.
 data ProjectsTopicsCreate =
   ProjectsTopicsCreate'
-    { _ptcXgafv          :: !(Maybe Xgafv)
+    { _ptcXgafv :: !(Maybe Xgafv)
     , _ptcUploadProtocol :: !(Maybe Text)
-    , _ptcAccessToken    :: !(Maybe Text)
-    , _ptcUploadType     :: !(Maybe Text)
-    , _ptcPayload        :: !Topic
-    , _ptcName           :: !Text
-    , _ptcCallback       :: !(Maybe Text)
+    , _ptcAccessToken :: !(Maybe Text)
+    , _ptcUploadType :: !(Maybe Text)
+    , _ptcPayload :: !Topic
+    , _ptcName :: !Text
+    , _ptcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

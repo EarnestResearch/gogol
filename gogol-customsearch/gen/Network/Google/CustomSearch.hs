@@ -251,10 +251,10 @@ module Network.Google.CustomSearch
     , CSEListImgSize (..)
     ) where
 
-import           Network.Google.CustomSearch.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Search.CSE.List
-import           Network.Google.Resource.Search.CSE.Siterestrict.List
+import Network.Google.Prelude
+import Network.Google.CustomSearch.Types
+import Network.Google.Resource.Search.CSE.List
+import Network.Google.Resource.Search.CSE.Siterestrict.List
 
 {- $resources
 TODO

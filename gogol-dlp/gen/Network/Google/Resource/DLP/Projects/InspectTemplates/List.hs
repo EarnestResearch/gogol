@@ -45,8 +45,8 @@ module Network.Google.Resource.DLP.Projects.InspectTemplates.List
     , pitlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.inspectTemplates.list@ method which the
 -- 'ProjectsInspectTemplatesList' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsInspectTemplatesListResource =
 -- /See:/ 'projectsInspectTemplatesList' smart constructor.
 data ProjectsInspectTemplatesList =
   ProjectsInspectTemplatesList'
-    { _pitlParent         :: !Text
-    , _pitlXgafv          :: !(Maybe Xgafv)
+    { _pitlParent :: !Text
+    , _pitlXgafv :: !(Maybe Xgafv)
     , _pitlUploadProtocol :: !(Maybe Text)
-    , _pitlOrderBy        :: !(Maybe Text)
-    , _pitlAccessToken    :: !(Maybe Text)
-    , _pitlUploadType     :: !(Maybe Text)
-    , _pitlPageToken      :: !(Maybe Text)
-    , _pitlPageSize       :: !(Maybe (Textual Int32))
-    , _pitlCallback       :: !(Maybe Text)
+    , _pitlOrderBy :: !(Maybe Text)
+    , _pitlAccessToken :: !(Maybe Text)
+    , _pitlUploadType :: !(Maybe Text)
+    , _pitlPageToken :: !(Maybe Text)
+    , _pitlPageSize :: !(Maybe (Textual Int32))
+    , _pitlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

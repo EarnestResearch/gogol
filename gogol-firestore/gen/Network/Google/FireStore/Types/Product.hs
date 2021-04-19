@@ -17,8 +17,8 @@
 --
 module Network.Google.FireStore.Types.Product where
 
-import           Network.Google.FireStore.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types.Sum
+import Network.Google.Prelude
 
 -- | The request for Firestore.Write. The first request creates a stream, or
 -- resumes an existing one from a token. When creating a new stream, the
@@ -31,9 +31,9 @@ import           Network.Google.Prelude
 data WriteRequest =
   WriteRequest'
     { _wrStreamToken :: !(Maybe Bytes)
-    , _wrLabels      :: !(Maybe WriteRequestLabels)
-    , _wrWrites      :: !(Maybe [Write])
-    , _wrStreamId    :: !(Maybe Text)
+    , _wrLabels :: !(Maybe WriteRequestLabels)
+    , _wrWrites :: !(Maybe [Write])
+    , _wrStreamId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -120,7 +120,7 @@ instance ToJSON WriteRequest where
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
   LatLng'
-    { _llLatitude  :: !(Maybe (Textual Double))
+    { _llLatitude :: !(Maybe (Textual Double))
     , _llLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -169,7 +169,7 @@ instance ToJSON LatLng where
 -- /See:/ 'writeResult' smart constructor.
 data WriteResult =
   WriteResult'
-    { _wrUpdateTime       :: !(Maybe DateTime')
+    { _wrUpdateTime :: !(Maybe DateTime')
     , _wrTransformResults :: !(Maybe [Value])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -228,7 +228,7 @@ instance ToJSON WriteResult where
 data GoogleFirestoreAdminV1Field =
   GoogleFirestoreAdminV1Field'
     { _gfavfIndexConfig :: !(Maybe GoogleFirestoreAdminV1IndexConfig)
-    , _gfavfName        :: !(Maybe Text)
+    , _gfavfName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -299,7 +299,7 @@ instance ToJSON GoogleFirestoreAdminV1Field where
 data TransactionOptions =
   TransactionOptions'
     { _toReadWrite :: !(Maybe ReadWrite)
-    , _toReadOnly  :: !(Maybe ReadOnly)
+    , _toReadOnly :: !(Maybe ReadOnly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -381,7 +381,7 @@ instance ToJSON TransactionOptions where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -487,7 +487,7 @@ instance ToJSON GoogleLongrunningOperationMetadata
 -- /See:/ 'precondition' smart constructor.
 data Precondition =
   Precondition'
-    { _pExists     :: !(Maybe Bool)
+    { _pExists :: !(Maybe Bool)
     , _pUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -611,7 +611,7 @@ instance ToJSON RollbackRequest where
 -- /See:/ 'googleFirestoreAdminV1ExportDocumentsRequest' smart constructor.
 data GoogleFirestoreAdminV1ExportDocumentsRequest =
   GoogleFirestoreAdminV1ExportDocumentsRequest'
-    { _gfavedrCollectionIds   :: !(Maybe [Text])
+    { _gfavedrCollectionIds :: !(Maybe [Text])
     , _gfavedrOutputURIPrefix :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -678,11 +678,11 @@ instance ToJSON
 -- /See:/ 'targetChange' smart constructor.
 data TargetChange =
   TargetChange'
-    { _tcReadTime         :: !(Maybe DateTime')
-    , _tcResumeToken      :: !(Maybe Bytes)
-    , _tcCause            :: !(Maybe Status)
+    { _tcReadTime :: !(Maybe DateTime')
+    , _tcResumeToken :: !(Maybe Bytes)
+    , _tcCause :: !(Maybe Status)
     , _tcTargetChangeType :: !(Maybe TargetChangeTargetChangeType)
-    , _tcTargetIds        :: !(Maybe [Textual Int32])
+    , _tcTargetIds :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -781,7 +781,7 @@ instance ToJSON TargetChange where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -883,13 +883,13 @@ instance ToJSON Cursor where
 -- /See:/ 'googleFirestoreAdminV1ImportDocumentsMetadata' smart constructor.
 data GoogleFirestoreAdminV1ImportDocumentsMetadata =
   GoogleFirestoreAdminV1ImportDocumentsMetadata'
-    { _gfavidmProgressBytes     :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfavidmStartTime         :: !(Maybe DateTime')
-    , _gfavidmInputURIPrefix    :: !(Maybe Text)
-    , _gfavidmCollectionIds     :: !(Maybe [Text])
+    { _gfavidmProgressBytes :: !(Maybe GoogleFirestoreAdminV1Progress)
+    , _gfavidmStartTime :: !(Maybe DateTime')
+    , _gfavidmInputURIPrefix :: !(Maybe Text)
+    , _gfavidmCollectionIds :: !(Maybe [Text])
     , _gfavidmProgressDocuments :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfavidmEndTime           :: !(Maybe DateTime')
-    , _gfavidmOperationState    :: !(Maybe GoogleFirestoreAdminV1ImportDocumentsMetadataOperationState)
+    , _gfavidmEndTime :: !(Maybe DateTime')
+    , _gfavidmOperationState :: !(Maybe GoogleFirestoreAdminV1ImportDocumentsMetadataOperationState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1043,10 +1043,10 @@ instance ToJSON BeginTransactionRequest where
 -- /See:/ 'runQueryRequest' smart constructor.
 data RunQueryRequest =
   RunQueryRequest'
-    { _rqrReadTime        :: !(Maybe DateTime')
-    , _rqrNewTransaction  :: !(Maybe TransactionOptions)
+    { _rqrReadTime :: !(Maybe DateTime')
+    , _rqrNewTransaction :: !(Maybe TransactionOptions)
     , _rqrStructuredQuery :: !(Maybe StructuredQuery)
-    , _rqrTransaction     :: !(Maybe Bytes)
+    , _rqrTransaction :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1124,7 +1124,7 @@ instance ToJSON RunQueryRequest where
 -- /See:/ 'googleFirestoreAdminV1IndexConfigDelta' smart constructor.
 data GoogleFirestoreAdminV1IndexConfigDelta =
   GoogleFirestoreAdminV1IndexConfigDelta'
-    { _gfavicdIndex      :: !(Maybe GoogleFirestoreAdminV1Index)
+    { _gfavicdIndex :: !(Maybe GoogleFirestoreAdminV1Index)
     , _gfavicdChangeType :: !(Maybe GoogleFirestoreAdminV1IndexConfigDeltaChangeType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1178,9 +1178,9 @@ instance ToJSON
 -- /See:/ 'googleFirestoreAdminV1IndexConfig' smart constructor.
 data GoogleFirestoreAdminV1IndexConfig =
   GoogleFirestoreAdminV1IndexConfig'
-    { _gfavicAncestorField      :: !(Maybe Text)
-    , _gfavicReverting          :: !(Maybe Bool)
-    , _gfavicIndexes            :: !(Maybe [GoogleFirestoreAdminV1Index])
+    { _gfavicAncestorField :: !(Maybe Text)
+    , _gfavicReverting :: !(Maybe Bool)
+    , _gfavicIndexes :: !(Maybe [GoogleFirestoreAdminV1Index])
     , _gfavicUsesAncestorConfig :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1270,9 +1270,9 @@ instance ToJSON GoogleFirestoreAdminV1IndexConfig
 -- /See:/ 'googleFirestoreAdminV1IndexField' smart constructor.
 data GoogleFirestoreAdminV1IndexField =
   GoogleFirestoreAdminV1IndexField'
-    { _gfavifFieldPath   :: !(Maybe Text)
+    { _gfavifFieldPath :: !(Maybe Text)
     , _gfavifArrayConfig :: !(Maybe GoogleFirestoreAdminV1IndexFieldArrayConfig)
-    , _gfavifOrder       :: !(Maybe GoogleFirestoreAdminV1IndexFieldOrder)
+    , _gfavifOrder :: !(Maybe GoogleFirestoreAdminV1IndexFieldOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1338,11 +1338,11 @@ instance ToJSON GoogleFirestoreAdminV1IndexField
 -- /See:/ 'write' smart constructor.
 data Write =
   Write'
-    { _wTransform       :: !(Maybe DocumentTransform)
-    , _wUpdateMask      :: !(Maybe DocumentMask)
+    { _wTransform :: !(Maybe DocumentTransform)
+    , _wUpdateMask :: !(Maybe DocumentMask)
     , _wCurrentDocument :: !(Maybe Precondition)
-    , _wDelete          :: !(Maybe Text)
-    , _wUpdate          :: !(Maybe Document)
+    , _wDelete :: !(Maybe Text)
+    , _wUpdate :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1432,11 +1432,11 @@ instance ToJSON Write where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1543,10 +1543,10 @@ instance ToJSON Empty where
 -- /See:/ 'batchGetDocumentsResponse' smart constructor.
 data BatchGetDocumentsResponse =
   BatchGetDocumentsResponse'
-    { _bgdrReadTime    :: !(Maybe DateTime')
-    , _bgdrFound       :: !(Maybe Document)
+    { _bgdrReadTime :: !(Maybe DateTime')
+    , _bgdrFound :: !(Maybe Document)
     , _bgdrTransaction :: !(Maybe Bytes)
-    , _bgdrMissing     :: !(Maybe Text)
+    , _bgdrMissing :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1624,7 +1624,7 @@ instance ToJSON BatchGetDocumentsResponse where
 -- /See:/ 'compositeFilter' smart constructor.
 data CompositeFilter =
   CompositeFilter'
-    { _cfOp      :: !(Maybe CompositeFilterOp)
+    { _cfOp :: !(Maybe CompositeFilterOp)
     , _cfFilters :: !(Maybe [Filter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1748,10 +1748,10 @@ instance ToJSON ListenRequestLabels where
 -- /See:/ 'googleFirestoreAdminV1Index' smart constructor.
 data GoogleFirestoreAdminV1Index =
   GoogleFirestoreAdminV1Index'
-    { _gfaviState      :: !(Maybe GoogleFirestoreAdminV1IndexState)
+    { _gfaviState :: !(Maybe GoogleFirestoreAdminV1IndexState)
     , _gfaviQueryScope :: !(Maybe GoogleFirestoreAdminV1IndexQueryScope)
-    , _gfaviName       :: !(Maybe Text)
-    , _gfaviFields     :: !(Maybe [GoogleFirestoreAdminV1IndexField])
+    , _gfaviName :: !(Maybe Text)
+    , _gfaviFields :: !(Maybe [GoogleFirestoreAdminV1IndexField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1878,10 +1878,10 @@ instance ToJSON BeginTransactionResponse where
 -- /See:/ 'runQueryResponse' smart constructor.
 data RunQueryResponse =
   RunQueryResponse'
-    { _rReadTime       :: !(Maybe DateTime')
+    { _rReadTime :: !(Maybe DateTime')
     , _rSkippedResults :: !(Maybe (Textual Int32))
-    , _rTransaction    :: !(Maybe Bytes)
-    , _rDocument       :: !(Maybe Document)
+    , _rTransaction :: !(Maybe Bytes)
+    , _rDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1965,13 +1965,13 @@ instance ToJSON RunQueryResponse where
 -- /See:/ 'googleFirestoreAdminV1ExportDocumentsMetadata' smart constructor.
 data GoogleFirestoreAdminV1ExportDocumentsMetadata =
   GoogleFirestoreAdminV1ExportDocumentsMetadata'
-    { _gfavedmProgressBytes     :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfavedmStartTime         :: !(Maybe DateTime')
-    , _gfavedmCollectionIds     :: !(Maybe [Text])
+    { _gfavedmProgressBytes :: !(Maybe GoogleFirestoreAdminV1Progress)
+    , _gfavedmStartTime :: !(Maybe DateTime')
+    , _gfavedmCollectionIds :: !(Maybe [Text])
     , _gfavedmProgressDocuments :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfavedmEndTime           :: !(Maybe DateTime')
-    , _gfavedmOperationState    :: !(Maybe GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState)
-    , _gfavedmOutputURIPrefix   :: !(Maybe Text)
+    , _gfavedmEndTime :: !(Maybe DateTime')
+    , _gfavedmOperationState :: !(Maybe GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState)
+    , _gfavedmOutputURIPrefix :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2187,7 +2187,7 @@ instance ToJSON DocumentMask where
 -- /See:/ 'queryTarget' smart constructor.
 data QueryTarget =
   QueryTarget'
-    { _qtParent          :: !(Maybe Text)
+    { _qtParent :: !(Maybe Text)
     , _qtStructuredQuery :: !(Maybe StructuredQuery)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2239,17 +2239,17 @@ instance ToJSON QueryTarget where
 -- /See:/ 'value' smart constructor.
 data Value =
   Value'
-    { _vGeoPointValue  :: !(Maybe LatLng)
-    , _vBytesValue     :: !(Maybe Bytes)
-    , _vIntegerValue   :: !(Maybe (Textual Int64))
+    { _vGeoPointValue :: !(Maybe LatLng)
+    , _vBytesValue :: !(Maybe Bytes)
+    , _vIntegerValue :: !(Maybe (Textual Int64))
     , _vTimestampValue :: !(Maybe DateTime')
-    , _vDoubleValue    :: !(Maybe (Textual Double))
-    , _vStringValue    :: !(Maybe Text)
-    , _vBooleanValue   :: !(Maybe Bool)
-    , _vMapValue       :: !(Maybe MapValue)
-    , _vArrayValue     :: !(Maybe ArrayValue)
+    , _vDoubleValue :: !(Maybe (Textual Double))
+    , _vStringValue :: !(Maybe Text)
+    , _vBooleanValue :: !(Maybe Bool)
+    , _vMapValue :: !(Maybe MapValue)
+    , _vArrayValue :: !(Maybe ArrayValue)
     , _vReferenceValue :: !(Maybe Text)
-    , _vNullValue      :: !(Maybe ValueNullValue)
+    , _vNullValue :: !(Maybe ValueNullValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2439,7 +2439,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'documentTransform' smart constructor.
 data DocumentTransform =
   DocumentTransform'
-    { _dtDocument        :: !(Maybe Text)
+    { _dtDocument :: !(Maybe Text)
     , _dtFieldTransforms :: !(Maybe [FieldTransform])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2492,14 +2492,14 @@ instance ToJSON DocumentTransform where
 -- /See:/ 'structuredQuery' smart constructor.
 data StructuredQuery =
   StructuredQuery'
-    { _sqWhere   :: !(Maybe Filter)
+    { _sqWhere :: !(Maybe Filter)
     , _sqOrderBy :: !(Maybe [Order])
     , _sqStartAt :: !(Maybe Cursor)
-    , _sqOffSet  :: !(Maybe (Textual Int32))
-    , _sqFrom    :: !(Maybe [CollectionSelector])
-    , _sqEndAt   :: !(Maybe Cursor)
-    , _sqLimit   :: !(Maybe (Textual Int32))
-    , _sqSelect  :: !(Maybe Projection)
+    , _sqOffSet :: !(Maybe (Textual Int32))
+    , _sqFrom :: !(Maybe [CollectionSelector])
+    , _sqEndAt :: !(Maybe Cursor)
+    , _sqLimit :: !(Maybe (Textual Int32))
+    , _sqSelect :: !(Maybe Projection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2622,7 +2622,7 @@ instance ToJSON StructuredQuery where
 data ExistenceFilter =
   ExistenceFilter'
     { _efTargetId :: !(Maybe (Textual Int32))
-    , _efCount    :: !(Maybe (Textual Int32))
+    , _efCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2673,7 +2673,7 @@ instance ToJSON ExistenceFilter where
 data GoogleFirestoreAdminV1ListFieldsResponse =
   GoogleFirestoreAdminV1ListFieldsResponse'
     { _gfavlfrNextPageToken :: !(Maybe Text)
-    , _gfavlfrFields        :: !(Maybe [GoogleFirestoreAdminV1Field])
+    , _gfavlfrFields :: !(Maybe [GoogleFirestoreAdminV1Field])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2733,7 +2733,7 @@ instance ToJSON
 data GoogleFirestoreAdminV1ImportDocumentsRequest =
   GoogleFirestoreAdminV1ImportDocumentsRequest'
     { _gfavidrInputURIPrefix :: !(Maybe Text)
-    , _gfavidrCollectionIds  :: !(Maybe [Text])
+    , _gfavidrCollectionIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2946,8 +2946,8 @@ instance ToJSON FieldReference where
 -- /See:/ 'documentRemove' smart constructor.
 data DocumentRemove =
   DocumentRemove'
-    { _drReadTime         :: !(Maybe DateTime')
-    , _drDocument         :: !(Maybe Text)
+    { _drReadTime :: !(Maybe DateTime')
+    , _drDocument :: !(Maybe Text)
     , _drRemovedTargetIds :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3016,8 +3016,8 @@ instance ToJSON DocumentRemove where
 -- /See:/ 'documentChange' smart constructor.
 data DocumentChange =
   DocumentChange'
-    { _dcDocument         :: !(Maybe Document)
-    , _dcTargetIds        :: !(Maybe [Textual Int32])
+    { _dcDocument :: !(Maybe Document)
+    , _dcTargetIds :: !(Maybe [Textual Int32])
     , _dcRemovedTargetIds :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3085,13 +3085,13 @@ instance ToJSON DocumentChange where
 -- /See:/ 'googleFirestoreAdminV1FieldOperationMetadata' smart constructor.
 data GoogleFirestoreAdminV1FieldOperationMetadata =
   GoogleFirestoreAdminV1FieldOperationMetadata'
-    { _gfavfomProgressBytes     :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfavfomState             :: !(Maybe GoogleFirestoreAdminV1FieldOperationMetadataState)
-    , _gfavfomField             :: !(Maybe Text)
-    , _gfavfomStartTime         :: !(Maybe DateTime')
+    { _gfavfomProgressBytes :: !(Maybe GoogleFirestoreAdminV1Progress)
+    , _gfavfomState :: !(Maybe GoogleFirestoreAdminV1FieldOperationMetadataState)
+    , _gfavfomField :: !(Maybe Text)
+    , _gfavfomStartTime :: !(Maybe DateTime')
     , _gfavfomProgressDocuments :: !(Maybe GoogleFirestoreAdminV1Progress)
     , _gfavfomIndexConfigDeltas :: !(Maybe [GoogleFirestoreAdminV1IndexConfigDelta])
-    , _gfavfomEndTime           :: !(Maybe DateTime')
+    , _gfavfomEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3211,7 +3211,7 @@ instance ToJSON
 data GoogleFirestoreAdminV1ListIndexesResponse =
   GoogleFirestoreAdminV1ListIndexesResponse'
     { _gfavlirNextPageToken :: !(Maybe Text)
-    , _gfavlirIndexes       :: !(Maybe [GoogleFirestoreAdminV1Index])
+    , _gfavlirIndexes :: !(Maybe [GoogleFirestoreAdminV1Index])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3306,11 +3306,11 @@ instance ToJSON MapValue where
 -- /See:/ 'batchGetDocumentsRequest' smart constructor.
 data BatchGetDocumentsRequest =
   BatchGetDocumentsRequest'
-    { _bReadTime       :: !(Maybe DateTime')
+    { _bReadTime :: !(Maybe DateTime')
     , _bNewTransaction :: !(Maybe TransactionOptions)
-    , _bTransaction    :: !(Maybe Bytes)
-    , _bDocuments      :: !(Maybe [Text])
-    , _bMask           :: !(Maybe DocumentMask)
+    , _bTransaction :: !(Maybe Bytes)
+    , _bDocuments :: !(Maybe [Text])
+    , _bMask :: !(Maybe DocumentMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3403,9 +3403,9 @@ instance ToJSON BatchGetDocumentsRequest where
 data Document =
   Document'
     { _dUpdateTime :: !(Maybe DateTime')
-    , _dName       :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
     , _dCreateTime :: !(Maybe DateTime')
-    , _dFields     :: !(Maybe DocumentFields)
+    , _dFields :: !(Maybe DocumentFields)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3534,7 +3534,7 @@ instance ToJSON ArrayValue where
 -- /See:/ 'commitResponse' smart constructor.
 data CommitResponse =
   CommitResponse'
-    { _crCommitTime   :: !(Maybe DateTime')
+    { _crCommitTime :: !(Maybe DateTime')
     , _crWriteResults :: !(Maybe [WriteResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3588,10 +3588,10 @@ instance ToJSON CommitResponse where
 -- /See:/ 'listenResponse' smart constructor.
 data ListenResponse =
   ListenResponse'
-    { _lrTargetChange   :: !(Maybe TargetChange)
+    { _lrTargetChange :: !(Maybe TargetChange)
     , _lrDocumentRemove :: !(Maybe DocumentRemove)
     , _lrDocumentChange :: !(Maybe DocumentChange)
-    , _lrFilter         :: !(Maybe ExistenceFilter)
+    , _lrFilter :: !(Maybe ExistenceFilter)
     , _lrDocumentDelete :: !(Maybe DocumentDelete)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3678,7 +3678,7 @@ instance ToJSON ListenResponse where
 -- /See:/ 'fieldFilter' smart constructor.
 data FieldFilter =
   FieldFilter'
-    { _ffOp    :: !(Maybe FieldFilterOp)
+    { _ffOp :: !(Maybe FieldFilterOp)
     , _ffField :: !(Maybe FieldReference)
     , _ffValue :: !(Maybe Value)
     }
@@ -3781,7 +3781,7 @@ instance ToJSON GoogleLongrunningOperationResponse
 data ListDocumentsResponse =
   ListDocumentsResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDocuments     :: !(Maybe [Document])
+    , _ldrDocuments :: !(Maybe [Document])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3917,8 +3917,8 @@ instance ToJSON Projection where
 data Filter =
   Filter'
     { _fCompositeFilter :: !(Maybe CompositeFilter)
-    , _fFieldFilter     :: !(Maybe FieldFilter)
-    , _fUnaryFilter     :: !(Maybe UnaryFilter)
+    , _fFieldFilter :: !(Maybe FieldFilter)
+    , _fUnaryFilter :: !(Maybe UnaryFilter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3980,12 +3980,12 @@ instance ToJSON Filter where
 -- /See:/ 'googleFirestoreAdminV1IndexOperationMetadata' smart constructor.
 data GoogleFirestoreAdminV1IndexOperationMetadata =
   GoogleFirestoreAdminV1IndexOperationMetadata'
-    { _gfaviomProgressBytes     :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfaviomState             :: !(Maybe GoogleFirestoreAdminV1IndexOperationMetadataState)
-    , _gfaviomStartTime         :: !(Maybe DateTime')
+    { _gfaviomProgressBytes :: !(Maybe GoogleFirestoreAdminV1Progress)
+    , _gfaviomState :: !(Maybe GoogleFirestoreAdminV1IndexOperationMetadataState)
+    , _gfaviomStartTime :: !(Maybe DateTime')
     , _gfaviomProgressDocuments :: !(Maybe GoogleFirestoreAdminV1Progress)
-    , _gfaviomEndTime           :: !(Maybe DateTime')
-    , _gfaviomIndex             :: !(Maybe Text)
+    , _gfaviomEndTime :: !(Maybe DateTime')
+    , _gfaviomIndex :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4127,8 +4127,8 @@ instance ToJSON LocationLabels where
 data ListenRequest =
   ListenRequest'
     { _lrRemoveTarget :: !(Maybe (Textual Int32))
-    , _lrLabels       :: !(Maybe ListenRequestLabels)
-    , _lrAddTarget    :: !(Maybe Target)
+    , _lrLabels :: !(Maybe ListenRequestLabels)
+    , _lrAddTarget :: !(Maybe Target)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4187,7 +4187,7 @@ instance ToJSON ListenRequest where
 data CommitRequest =
   CommitRequest'
     { _crTransaction :: !(Maybe Bytes)
-    , _crWrites      :: !(Maybe [Write])
+    , _crWrites :: !(Maybe [Write])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4276,7 +4276,7 @@ instance ToJSON LocationMetadata where
 data GoogleLongrunningListOperationsResponse =
   GoogleLongrunningListOperationsResponse'
     { _gllorNextPageToken :: !(Maybe Text)
-    , _gllorOperations    :: !(Maybe [GoogleLongrunningOperation])
+    , _gllorOperations :: !(Maybe [GoogleLongrunningOperation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4335,7 +4335,7 @@ instance ToJSON
 data CollectionSelector =
   CollectionSelector'
     { _csAllDescendants :: !(Maybe Bool)
-    , _csCollectionId   :: !(Maybe Text)
+    , _csCollectionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4387,7 +4387,7 @@ instance ToJSON CollectionSelector where
 data ListCollectionIdsRequest =
   ListCollectionIdsRequest'
     { _lcirPageToken :: !(Maybe Text)
-    , _lcirPageSize  :: !(Maybe (Textual Int32))
+    , _lcirPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4436,10 +4436,10 @@ instance ToJSON ListCollectionIdsRequest where
 -- /See:/ 'writeResponse' smart constructor.
 data WriteResponse =
   WriteResponse'
-    { _wStreamToken  :: !(Maybe Bytes)
-    , _wCommitTime   :: !(Maybe DateTime')
+    { _wStreamToken :: !(Maybe Bytes)
+    , _wCommitTime :: !(Maybe DateTime')
     , _wWriteResults :: !(Maybe [WriteResult])
-    , _wStreamId     :: !(Maybe Text)
+    , _wStreamId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4518,7 +4518,7 @@ instance ToJSON WriteResponse where
 -- /See:/ 'order' smart constructor.
 data Order =
   Order'
-    { _oField     :: !(Maybe FieldReference)
+    { _oField :: !(Maybe FieldReference)
     , _oDirection :: !(Maybe OrderDirection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4566,8 +4566,8 @@ instance ToJSON Order where
 -- /See:/ 'documentDelete' smart constructor.
 data DocumentDelete =
   DocumentDelete'
-    { _ddReadTime         :: !(Maybe DateTime')
-    , _ddDocument         :: !(Maybe Text)
+    { _ddReadTime :: !(Maybe DateTime')
+    , _ddDocument :: !(Maybe Text)
     , _ddRemovedTargetIds :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4633,13 +4633,13 @@ instance ToJSON DocumentDelete where
 -- /See:/ 'fieldTransform' smart constructor.
 data FieldTransform =
   FieldTransform'
-    { _ftFieldPath             :: !(Maybe Text)
+    { _ftFieldPath :: !(Maybe Text)
     , _ftAppendMissingElements :: !(Maybe ArrayValue)
-    , _ftMaximum               :: !(Maybe Value)
-    , _ftMinimum               :: !(Maybe Value)
-    , _ftSetToServerValue      :: !(Maybe FieldTransformSetToServerValue)
-    , _ftRemoveAllFromArray    :: !(Maybe ArrayValue)
-    , _ftIncrement             :: !(Maybe Value)
+    , _ftMaximum :: !(Maybe Value)
+    , _ftMinimum :: !(Maybe Value)
+    , _ftSetToServerValue :: !(Maybe FieldTransformSetToServerValue)
+    , _ftRemoveAllFromArray :: !(Maybe ArrayValue)
+    , _ftIncrement :: !(Maybe Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4909,12 +4909,12 @@ instance ToJSON ReadOnly where
 -- /See:/ 'target' smart constructor.
 data Target =
   Target'
-    { _tTargetId    :: !(Maybe (Textual Int32))
-    , _tOnce        :: !(Maybe Bool)
-    , _tReadTime    :: !(Maybe DateTime')
+    { _tTargetId :: !(Maybe (Textual Int32))
+    , _tOnce :: !(Maybe Bool)
+    , _tReadTime :: !(Maybe DateTime')
     , _tResumeToken :: !(Maybe Bytes)
-    , _tDocuments   :: !(Maybe DocumentsTarget)
-    , _tQuery       :: !(Maybe QueryTarget)
+    , _tDocuments :: !(Maybe DocumentsTarget)
+    , _tQuery :: !(Maybe QueryTarget)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5047,10 +5047,10 @@ instance ToJSON WriteRequestLabels where
 -- /See:/ 'googleLongrunningOperation' smart constructor.
 data GoogleLongrunningOperation =
   GoogleLongrunningOperation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe Status)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe Status)
     , _gloResponse :: !(Maybe GoogleLongrunningOperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunningOperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5142,7 +5142,7 @@ instance ToJSON GoogleLongrunningOperation where
 -- /See:/ 'unaryFilter' smart constructor.
 data UnaryFilter =
   UnaryFilter'
-    { _ufOp    :: !(Maybe UnaryFilterOp)
+    { _ufOp :: !(Maybe UnaryFilterOp)
     , _ufField :: !(Maybe FieldReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

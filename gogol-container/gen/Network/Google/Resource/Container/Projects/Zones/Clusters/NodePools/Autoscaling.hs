@@ -45,8 +45,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.NodePools.Autos
     , pzcnpaCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.nodePools.autoscaling@ method which the
 -- 'ProjectsZonesClustersNodePoolsAutoscaling' request conforms to.
@@ -77,16 +77,16 @@ type ProjectsZonesClustersNodePoolsAutoscalingResource
 -- /See:/ 'projectsZonesClustersNodePoolsAutoscaling' smart constructor.
 data ProjectsZonesClustersNodePoolsAutoscaling =
   ProjectsZonesClustersNodePoolsAutoscaling'
-    { _pzcnpaXgafv          :: !(Maybe Xgafv)
+    { _pzcnpaXgafv :: !(Maybe Xgafv)
     , _pzcnpaUploadProtocol :: !(Maybe Text)
-    , _pzcnpaAccessToken    :: !(Maybe Text)
-    , _pzcnpaUploadType     :: !(Maybe Text)
-    , _pzcnpaZone           :: !Text
-    , _pzcnpaPayload        :: !SetNodePoolAutoscalingRequest
-    , _pzcnpaNodePoolId     :: !Text
-    , _pzcnpaClusterId      :: !Text
-    , _pzcnpaProjectId      :: !Text
-    , _pzcnpaCallback       :: !(Maybe Text)
+    , _pzcnpaAccessToken :: !(Maybe Text)
+    , _pzcnpaUploadType :: !(Maybe Text)
+    , _pzcnpaZone :: !Text
+    , _pzcnpaPayload :: !SetNodePoolAutoscalingRequest
+    , _pzcnpaNodePoolId :: !Text
+    , _pzcnpaClusterId :: !Text
+    , _pzcnpaProjectId :: !Text
+    , _pzcnpaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

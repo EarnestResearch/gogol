@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.Databases.Update
     , duInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.databases.update@ method which the
 -- 'DatabasesUpdate' request conforms to.
@@ -63,9 +63,9 @@ type DatabasesUpdateResource =
 -- /See:/ 'databasesUpdate' smart constructor.
 data DatabasesUpdate =
   DatabasesUpdate'
-    { _duProject  :: !Text
+    { _duProject :: !Text
     , _duDatabase :: !Text
-    , _duPayload  :: !Database
+    , _duPayload :: !Database
     , _duInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

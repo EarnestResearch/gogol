@@ -43,14 +43,14 @@ module Network.Google.Resource.Content.Orders.List
     , ollMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.list@ method which the
 -- 'OrdersList' request conforms to.
 type OrdersListResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              QueryParam "placedDateEnd" Text :>
@@ -68,14 +68,14 @@ type OrdersListResource =
 -- /See:/ 'ordersList' smart constructor.
 data OrdersList =
   OrdersList'
-    { _ollPlacedDateEnd   :: !(Maybe Text)
-    , _ollMerchantId      :: !(Textual Word64)
-    , _ollOrderBy         :: !(Maybe OrdersListOrderBy)
-    , _ollAcknowledged    :: !(Maybe Bool)
-    , _ollStatuses        :: !(Maybe [OrdersListStatuses])
-    , _ollPageToken       :: !(Maybe Text)
+    { _ollPlacedDateEnd :: !(Maybe Text)
+    , _ollMerchantId :: !(Textual Word64)
+    , _ollOrderBy :: !(Maybe OrdersListOrderBy)
+    , _ollAcknowledged :: !(Maybe Bool)
+    , _ollStatuses :: !(Maybe [OrdersListStatuses])
+    , _ollPageToken :: !(Maybe Text)
     , _ollPlacedDateStart :: !(Maybe Text)
-    , _ollMaxResults      :: !(Maybe (Textual Word32))
+    , _ollMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

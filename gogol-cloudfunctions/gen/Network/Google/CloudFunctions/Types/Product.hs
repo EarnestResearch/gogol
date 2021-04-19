@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudFunctions.Types.Product where
 
-import           Network.Google.CloudFunctions.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudFunctions.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -137,7 +137,7 @@ instance ToJSON Status where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -190,11 +190,11 @@ instance ToJSON AuditConfig where
 -- /See:/ 'operationMetadataV1Beta2' smart constructor.
 data OperationMetadataV1Beta2 =
   OperationMetadataV1Beta2'
-    { _omvbVersionId  :: !(Maybe (Textual Int64))
+    { _omvbVersionId :: !(Maybe (Textual Int64))
     , _omvbUpdateTime :: !(Maybe DateTime')
-    , _omvbType       :: !(Maybe OperationMetadataV1Beta2Type)
-    , _omvbTarget     :: !(Maybe Text)
-    , _omvbRequest    :: !(Maybe OperationMetadataV1Beta2Request)
+    , _omvbType :: !(Maybe OperationMetadataV1Beta2Type)
+    , _omvbTarget :: !(Maybe Text)
+    , _omvbRequest :: !(Maybe OperationMetadataV1Beta2Request)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -281,9 +281,9 @@ instance ToJSON OperationMetadataV1Beta2 where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -360,7 +360,7 @@ instance ToJSON Expr where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -412,7 +412,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -488,11 +488,11 @@ instance ToJSON GenerateUploadURLRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -575,10 +575,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -808,8 +808,8 @@ instance ToJSON FailurePolicy where
 data CallFunctionResponse =
   CallFunctionResponse'
     { _cfrExecutionId :: !(Maybe Text)
-    , _cfrError       :: !(Maybe Text)
-    , _cfrResult      :: !(Maybe Text)
+    , _cfrError :: !(Maybe Text)
+    , _cfrResult :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1016,7 +1016,7 @@ instance ToJSON OperationMetadataV1Request where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1071,10 +1071,10 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'eventTrigger' smart constructor.
 data EventTrigger =
   EventTrigger'
-    { _etService       :: !(Maybe Text)
+    { _etService :: !(Maybe Text)
     , _etFailurePolicy :: !(Maybe FailurePolicy)
-    , _etEventType     :: !(Maybe Text)
-    , _etResource      :: !(Maybe Text)
+    , _etEventType :: !(Maybe Text)
+    , _etResource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1169,7 +1169,7 @@ instance ToJSON EventTrigger where
 -- /See:/ 'sourceRepository' smart constructor.
 data SourceRepository =
   SourceRepository'
-    { _srURL         :: !(Maybe Text)
+    { _srURL :: !(Maybe Text)
     , _srDeployedURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1228,11 +1228,11 @@ instance ToJSON SourceRepository where
 -- /See:/ 'operationMetadataV1' smart constructor.
 data OperationMetadataV1 =
   OperationMetadataV1'
-    { _omvVersionId  :: !(Maybe (Textual Int64))
+    { _omvVersionId :: !(Maybe (Textual Int64))
     , _omvUpdateTime :: !(Maybe DateTime')
-    , _omvType       :: !(Maybe OperationMetadataV1Type)
-    , _omvTarget     :: !(Maybe Text)
-    , _omvRequest    :: !(Maybe OperationMetadataV1Request)
+    , _omvType :: !(Maybe OperationMetadataV1Type)
+    , _omvTarget :: !(Maybe Text)
+    , _omvRequest :: !(Maybe OperationMetadataV1Request)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1460,9 +1460,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1584,7 +1584,7 @@ instance ToJSON LocationLabels where
 data ListFunctionsResponse =
   ListFunctionsResponse'
     { _lfrNextPageToken :: !(Maybe Text)
-    , _lfrFunctions     :: !(Maybe [CloudFunction])
+    , _lfrFunctions :: !(Maybe [CloudFunction])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1717,7 +1717,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1772,26 +1772,26 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'cloudFunction' smart constructor.
 data CloudFunction =
   CloudFunction'
-    { _cfRuntime              :: !(Maybe Text)
-    , _cfStatus               :: !(Maybe CloudFunctionStatus)
-    , _cfSourceArchiveURL     :: !(Maybe Text)
-    , _cfVersionId            :: !(Maybe (Textual Int64))
-    , _cfSourceUploadURL      :: !(Maybe Text)
-    , _cfEntryPoint           :: !(Maybe Text)
-    , _cfHTTPSTrigger         :: !(Maybe HTTPSTrigger)
-    , _cfNetwork              :: !(Maybe Text)
-    , _cfMaxInstances         :: !(Maybe (Textual Int32))
-    , _cfEventTrigger         :: !(Maybe EventTrigger)
-    , _cfUpdateTime           :: !(Maybe DateTime')
-    , _cfName                 :: !(Maybe Text)
-    , _cfSourceRepository     :: !(Maybe SourceRepository)
-    , _cfAvailableMemoryMb    :: !(Maybe (Textual Int32))
-    , _cfLabels               :: !(Maybe CloudFunctionLabels)
-    , _cfServiceAccountEmail  :: !(Maybe Text)
+    { _cfRuntime :: !(Maybe Text)
+    , _cfStatus :: !(Maybe CloudFunctionStatus)
+    , _cfSourceArchiveURL :: !(Maybe Text)
+    , _cfVersionId :: !(Maybe (Textual Int64))
+    , _cfSourceUploadURL :: !(Maybe Text)
+    , _cfEntryPoint :: !(Maybe Text)
+    , _cfHTTPSTrigger :: !(Maybe HTTPSTrigger)
+    , _cfNetwork :: !(Maybe Text)
+    , _cfMaxInstances :: !(Maybe (Textual Int32))
+    , _cfEventTrigger :: !(Maybe EventTrigger)
+    , _cfUpdateTime :: !(Maybe DateTime')
+    , _cfName :: !(Maybe Text)
+    , _cfSourceRepository :: !(Maybe SourceRepository)
+    , _cfAvailableMemoryMb :: !(Maybe (Textual Int32))
+    , _cfLabels :: !(Maybe CloudFunctionLabels)
+    , _cfServiceAccountEmail :: !(Maybe Text)
     , _cfEnvironmentVariables :: !(Maybe CloudFunctionEnvironmentVariables)
-    , _cfTimeout              :: !(Maybe GDuration)
-    , _cfVPCConnector         :: !(Maybe Text)
-    , _cfDescription          :: !(Maybe Text)
+    , _cfTimeout :: !(Maybe GDuration)
+    , _cfVPCConnector :: !(Maybe Text)
+    , _cfDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2222,8 +2222,8 @@ instance ToJSON CallFunctionRequest where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

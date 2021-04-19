@@ -163,14 +163,14 @@ module Network.Google.CloudErrorReporting
     , reportErrorEventResponse
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudErrorReporting.Projects.DeleteEvents
-import           Network.Google.Resource.CloudErrorReporting.Projects.Events.List
-import           Network.Google.Resource.CloudErrorReporting.Projects.Events.Report
-import           Network.Google.Resource.CloudErrorReporting.Projects.Groups.Get
-import           Network.Google.Resource.CloudErrorReporting.Projects.Groups.Update
-import           Network.Google.Resource.CloudErrorReporting.Projects.GroupStats.List
+import Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Resource.CloudErrorReporting.Projects.DeleteEvents
+import Network.Google.Resource.CloudErrorReporting.Projects.Events.List
+import Network.Google.Resource.CloudErrorReporting.Projects.Events.Report
+import Network.Google.Resource.CloudErrorReporting.Projects.GroupStats.List
+import Network.Google.Resource.CloudErrorReporting.Projects.Groups.Get
+import Network.Google.Resource.CloudErrorReporting.Projects.Groups.Update
 
 {- $resources
 TODO

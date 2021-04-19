@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Instances.AggregatedList
     , ialaMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.aggregatedList@ method which the
 -- 'InstancesAggregatedList' request conforms to.
@@ -66,10 +66,10 @@ type InstancesAggregatedListResource =
 -- /See:/ 'instancesAggregatedList' smart constructor.
 data InstancesAggregatedList =
   InstancesAggregatedList'
-    { _ialaOrderBy    :: !(Maybe Text)
-    , _ialaProject    :: !Text
-    , _ialaFilter     :: !(Maybe Text)
-    , _ialaPageToken  :: !(Maybe Text)
+    { _ialaOrderBy :: !(Maybe Text)
+    , _ialaProject :: !Text
+    , _ialaFilter :: !(Maybe Text)
+    , _ialaPageToken :: !(Maybe Text)
     , _ialaMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

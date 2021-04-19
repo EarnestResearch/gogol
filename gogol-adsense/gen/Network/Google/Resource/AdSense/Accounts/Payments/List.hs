@@ -36,8 +36,8 @@ module Network.Google.Resource.AdSense.Accounts.Payments.List
     , aplAccountId
     ) where
 
-import           Network.Google.AdSense.Types
-import           Network.Google.Prelude
+import Network.Google.AdSense.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adsense.accounts.payments.list@ method which the
 -- 'AccountsPaymentsList' request conforms to.

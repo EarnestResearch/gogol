@@ -71,10 +71,10 @@ module Network.Google.AdExperienceReport
     , PlatformSummaryBetterAdsStatus (..)
     ) where
 
-import           Network.Google.AdExperienceReport.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.AdExperienceReport.Sites.Get
-import           Network.Google.Resource.AdExperienceReport.ViolatingSites.List
+import Network.Google.Prelude
+import Network.Google.AdExperienceReport.Types
+import Network.Google.Resource.AdExperienceReport.Sites.Get
+import Network.Google.Resource.AdExperienceReport.ViolatingSites.List
 
 {- $resources
 TODO

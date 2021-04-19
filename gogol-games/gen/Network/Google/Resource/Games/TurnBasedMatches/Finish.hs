@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Finish
     , tbmfMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.finish@ method which the
 -- 'TurnBasedMatchesFinish' request conforms to.
@@ -63,9 +63,9 @@ type TurnBasedMatchesFinishResource =
 -- /See:/ 'turnBasedMatchesFinish' smart constructor.
 data TurnBasedMatchesFinish =
   TurnBasedMatchesFinish'
-    { _tbmfPayload  :: !TurnBasedMatchResults
+    { _tbmfPayload :: !TurnBasedMatchResults
     , _tbmfLanguage :: !(Maybe Text)
-    , _tbmfMatchId  :: !Text
+    , _tbmfMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

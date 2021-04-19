@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.TargetInstances.AggregatedList
     , tialMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetInstances.aggregatedList@ method which the
 -- 'TargetInstancesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type TargetInstancesAggregatedListResource =
 -- /See:/ 'targetInstancesAggregatedList' smart constructor.
 data TargetInstancesAggregatedList =
   TargetInstancesAggregatedList'
-    { _tialOrderBy    :: !(Maybe Text)
-    , _tialProject    :: !Text
-    , _tialFilter     :: !(Maybe Text)
-    , _tialPageToken  :: !(Maybe Text)
+    { _tialOrderBy :: !(Maybe Text)
+    , _tialProject :: !Text
+    , _tialFilter :: !(Maybe Text)
+    , _tialPageToken :: !(Maybe Text)
     , _tialMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.Orders.CanceltestOrderbycustomer
     , ocoOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.canceltestorderbycustomer@ method which the
 -- 'OrdersCanceltestOrderbycustomer' request conforms to.
 type OrdersCanceltestOrderbycustomerResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "testorders" :>
              Capture "orderId" Text :>
@@ -62,8 +62,8 @@ type OrdersCanceltestOrderbycustomerResource =
 data OrdersCanceltestOrderbycustomer =
   OrdersCanceltestOrderbycustomer'
     { _ocoMerchantId :: !(Textual Word64)
-    , _ocoPayload    :: !OrdersCancelTestOrderByCustomerRequest
-    , _ocoOrderId    :: !Text
+    , _ocoPayload :: !OrdersCancelTestOrderByCustomerRequest
+    , _ocoOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

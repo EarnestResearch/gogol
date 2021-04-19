@@ -16,7 +16,7 @@
 --
 module Network.Google.Drive.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The source of files to list. Deprecated: use \'corpora\' instead.
 data FilesListCorpus

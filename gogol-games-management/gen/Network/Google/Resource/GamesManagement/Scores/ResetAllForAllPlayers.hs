@@ -35,8 +35,8 @@ module Network.Google.Resource.GamesManagement.Scores.ResetAllForAllPlayers
 
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.scores.resetAllForAllPlayers@ method which the
 -- 'ScoresResetAllForAllPlayers' request conforms to.

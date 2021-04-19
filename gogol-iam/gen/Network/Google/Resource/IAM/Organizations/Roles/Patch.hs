@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.Patch
     , orpCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.patch@ method which the
 -- 'OrganizationsRolesPatch' request conforms to.
@@ -65,14 +65,14 @@ type OrganizationsRolesPatchResource =
 -- /See:/ 'organizationsRolesPatch' smart constructor.
 data OrganizationsRolesPatch =
   OrganizationsRolesPatch'
-    { _orpXgafv          :: !(Maybe Xgafv)
+    { _orpXgafv :: !(Maybe Xgafv)
     , _orpUploadProtocol :: !(Maybe Text)
-    , _orpUpdateMask     :: !(Maybe GFieldMask)
-    , _orpAccessToken    :: !(Maybe Text)
-    , _orpUploadType     :: !(Maybe Text)
-    , _orpPayload        :: !Role
-    , _orpName           :: !Text
-    , _orpCallback       :: !(Maybe Text)
+    , _orpUpdateMask :: !(Maybe GFieldMask)
+    , _orpAccessToken :: !(Maybe Text)
+    , _orpUploadType :: !(Maybe Text)
+    , _orpPayload :: !Role
+    , _orpName :: !Text
+    , _orpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

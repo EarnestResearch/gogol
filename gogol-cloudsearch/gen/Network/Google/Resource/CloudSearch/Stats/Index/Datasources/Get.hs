@@ -47,8 +47,8 @@ module Network.Google.Resource.CloudSearch.Stats.Index.Datasources.Get
     , sidgCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.stats.index.datasources.get@ method which the
 -- 'StatsIndexDatasourcesGet' request conforms to.
@@ -76,18 +76,18 @@ type StatsIndexDatasourcesGetResource =
 -- /See:/ 'statsIndexDatasourcesGet' smart constructor.
 data StatsIndexDatasourcesGet =
   StatsIndexDatasourcesGet'
-    { _sidgFromDateMonth  :: !(Maybe (Textual Int32))
-    , _sidgXgafv          :: !(Maybe Xgafv)
+    { _sidgFromDateMonth :: !(Maybe (Textual Int32))
+    , _sidgXgafv :: !(Maybe Xgafv)
     , _sidgUploadProtocol :: !(Maybe Text)
-    , _sidgFromDateDay    :: !(Maybe (Textual Int32))
-    , _sidgAccessToken    :: !(Maybe Text)
-    , _sidgUploadType     :: !(Maybe Text)
-    , _sidgFromDateYear   :: !(Maybe (Textual Int32))
-    , _sidgName           :: !Text
-    , _sidgToDateDay      :: !(Maybe (Textual Int32))
-    , _sidgToDateYear     :: !(Maybe (Textual Int32))
-    , _sidgToDateMonth    :: !(Maybe (Textual Int32))
-    , _sidgCallback       :: !(Maybe Text)
+    , _sidgFromDateDay :: !(Maybe (Textual Int32))
+    , _sidgAccessToken :: !(Maybe Text)
+    , _sidgUploadType :: !(Maybe Text)
+    , _sidgFromDateYear :: !(Maybe (Textual Int32))
+    , _sidgName :: !Text
+    , _sidgToDateDay :: !(Maybe (Textual Int32))
+    , _sidgToDateYear :: !(Maybe (Textual Int32))
+    , _sidgToDateMonth :: !(Maybe (Textual Int32))
+    , _sidgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

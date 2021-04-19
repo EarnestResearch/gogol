@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.OrgUnits.Get
     , ougCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.get@ method which the
 -- 'OrgUnitsGet' request conforms to.
@@ -58,7 +58,7 @@ type OrgUnitsGetResource =
 data OrgUnitsGet =
   OrgUnitsGet'
     { _ougOrgUnitPath :: ![Text]
-    , _ougCustomerId  :: !Text
+    , _ougCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

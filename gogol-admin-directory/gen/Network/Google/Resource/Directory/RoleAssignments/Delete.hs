@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.RoleAssignments.Delete
     , radRoleAssignmentId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roleAssignments.delete@ method which the
 -- 'RoleAssignmentsDelete' request conforms to.
@@ -57,7 +57,7 @@ type RoleAssignmentsDeleteResource =
 -- /See:/ 'roleAssignmentsDelete' smart constructor.
 data RoleAssignmentsDelete =
   RoleAssignmentsDelete'
-    { _radCustomer         :: !Text
+    { _radCustomer :: !Text
     , _radRoleAssignmentId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -44,8 +44,8 @@ module Network.Google.Resource.Compute.Disks.Insert
     , diPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.disks.insert@ method which the
 -- 'DisksInsert' request conforms to.
@@ -71,11 +71,11 @@ type DisksInsertResource =
 -- /See:/ 'disksInsert' smart constructor.
 data DisksInsert =
   DisksInsert'
-    { _diRequestId   :: !(Maybe Text)
+    { _diRequestId :: !(Maybe Text)
     , _diSourceImage :: !(Maybe Text)
-    , _diProject     :: !Text
-    , _diZone        :: !Text
-    , _diPayload     :: !Disk
+    , _diProject :: !Text
+    , _diZone :: !Text
+    , _diPayload :: !Disk
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

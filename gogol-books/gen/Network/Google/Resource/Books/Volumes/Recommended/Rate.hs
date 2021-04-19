@@ -39,8 +39,8 @@ module Network.Google.Resource.Books.Volumes.Recommended.Rate
     , vrrSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.volumes.recommended.rate@ method which the
 -- 'VolumesRecommendedRate' request conforms to.
@@ -62,10 +62,10 @@ type VolumesRecommendedRateResource =
 -- /See:/ 'volumesRecommendedRate' smart constructor.
 data VolumesRecommendedRate =
   VolumesRecommendedRate'
-    { _vrrRating   :: !VolumesRecommendedRateRating
-    , _vrrLocale   :: !(Maybe Text)
+    { _vrrRating :: !VolumesRecommendedRateRating
+    , _vrrLocale :: !(Maybe Text)
     , _vrrVolumeId :: !Text
-    , _vrrSource   :: !(Maybe Text)
+    , _vrrSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

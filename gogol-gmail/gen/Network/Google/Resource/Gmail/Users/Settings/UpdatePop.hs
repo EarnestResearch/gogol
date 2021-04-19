@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.UpdatePop
     , usupUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.updatePop@ method which the
 -- 'UsersSettingsUpdatePop' request conforms to.
@@ -59,7 +59,7 @@ type UsersSettingsUpdatePopResource =
 data UsersSettingsUpdatePop =
   UsersSettingsUpdatePop'
     { _usupPayload :: !PopSettings
-    , _usupUserId  :: !Text
+    , _usupUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

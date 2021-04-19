@@ -43,8 +43,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Sync
     , tbmsMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.sync@ method which the
 -- 'TurnBasedMatchesSync' request conforms to.
@@ -70,10 +70,10 @@ type TurnBasedMatchesSyncResource =
 data TurnBasedMatchesSync =
   TurnBasedMatchesSync'
     { _tbmsMaxCompletedMatches :: !(Maybe (Textual Int32))
-    , _tbmsIncludeMatchData    :: !(Maybe Bool)
-    , _tbmsLanguage            :: !(Maybe Text)
-    , _tbmsPageToken           :: !(Maybe Text)
-    , _tbmsMaxResults          :: !(Maybe (Textual Int32))
+    , _tbmsIncludeMatchData :: !(Maybe Bool)
+    , _tbmsLanguage :: !(Maybe Text)
+    , _tbmsPageToken :: !(Maybe Text)
+    , _tbmsMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

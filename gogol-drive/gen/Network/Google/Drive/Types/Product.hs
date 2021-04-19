@@ -17,18 +17,18 @@
 --
 module Network.Google.Drive.Types.Product where
 
-import           Network.Google.Drive.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Drive.Types.Sum
+import Network.Google.Prelude
 
 -- | A list of files.
 --
 -- /See:/ 'fileList' smart constructor.
 data FileList =
   FileList'
-    { _flNextPageToken    :: !(Maybe Text)
+    { _flNextPageToken :: !(Maybe Text)
     , _flIncompleteSearch :: !(Maybe Bool)
-    , _flKind             :: !Text
-    , _flFiles            :: !(Maybe [File])
+    , _flKind :: !Text
+    , _flFiles :: !(Maybe [File])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -110,17 +110,17 @@ instance ToJSON FileList where
 -- /See:/ 'drive' smart constructor.
 data Drive =
   Drive'
-    { _dThemeId             :: !(Maybe Text)
+    { _dThemeId :: !(Maybe Text)
     , _dBackgRoundImageFile :: !(Maybe DriveBackgRoundImageFile)
-    , _dColorRgb            :: !(Maybe Text)
-    , _dCreatedTime         :: !(Maybe DateTime')
-    , _dKind                :: !Text
+    , _dColorRgb :: !(Maybe Text)
+    , _dCreatedTime :: !(Maybe DateTime')
+    , _dKind :: !Text
     , _dBackgRoundImageLink :: !(Maybe Text)
-    , _dName                :: !(Maybe Text)
-    , _dRestrictions        :: !(Maybe DriveRestrictions)
-    , _dHidden              :: !(Maybe Bool)
-    , _dId                  :: !(Maybe Text)
-    , _dCapabilities        :: !(Maybe DriveCapabilities)
+    , _dName :: !(Maybe Text)
+    , _dRestrictions :: !(Maybe DriveRestrictions)
+    , _dHidden :: !(Maybe Bool)
+    , _dId :: !(Maybe Text)
+    , _dCapabilities :: !(Maybe DriveCapabilities)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -271,25 +271,25 @@ instance ToJSON Drive where
 -- /See:/ 'teamDriveCapabilities' smart constructor.
 data TeamDriveCapabilities =
   TeamDriveCapabilities'
-    { _tdcCanRename                                        :: !(Maybe Bool)
-    , _tdcCanChangeTeamMembersOnlyRestriction              :: !(Maybe Bool)
-    , _tdcCanComment                                       :: !(Maybe Bool)
-    , _tdcCanRenameTeamDrive                               :: !(Maybe Bool)
-    , _tdcCanChangeTeamDriveBackgRound                     :: !(Maybe Bool)
-    , _tdcCanDownload                                      :: !(Maybe Bool)
-    , _tdcCanChangeDomainUsersOnlyRestriction              :: !(Maybe Bool)
-    , _tdcCanTrashChildren                                 :: !(Maybe Bool)
-    , _tdcCanAddChildren                                   :: !(Maybe Bool)
-    , _tdcCanRemoveChildren                                :: !(Maybe Bool)
+    { _tdcCanRename :: !(Maybe Bool)
+    , _tdcCanChangeTeamMembersOnlyRestriction :: !(Maybe Bool)
+    , _tdcCanComment :: !(Maybe Bool)
+    , _tdcCanRenameTeamDrive :: !(Maybe Bool)
+    , _tdcCanChangeTeamDriveBackgRound :: !(Maybe Bool)
+    , _tdcCanDownload :: !(Maybe Bool)
+    , _tdcCanChangeDomainUsersOnlyRestriction :: !(Maybe Bool)
+    , _tdcCanTrashChildren :: !(Maybe Bool)
+    , _tdcCanAddChildren :: !(Maybe Bool)
+    , _tdcCanRemoveChildren :: !(Maybe Bool)
     , _tdcCanChangeCopyRequiresWriterPermissionRestriction :: !(Maybe Bool)
-    , _tdcCanDeleteTeamDrive                               :: !(Maybe Bool)
-    , _tdcCanListChildren                                  :: !(Maybe Bool)
-    , _tdcCanEdit                                          :: !(Maybe Bool)
-    , _tdcCanManageMembers                                 :: !(Maybe Bool)
-    , _tdcCanReadRevisions                                 :: !(Maybe Bool)
-    , _tdcCanDeleteChildren                                :: !(Maybe Bool)
-    , _tdcCanCopy                                          :: !(Maybe Bool)
-    , _tdcCanShare                                         :: !(Maybe Bool)
+    , _tdcCanDeleteTeamDrive :: !(Maybe Bool)
+    , _tdcCanListChildren :: !(Maybe Bool)
+    , _tdcCanEdit :: !(Maybe Bool)
+    , _tdcCanManageMembers :: !(Maybe Bool)
+    , _tdcCanReadRevisions :: !(Maybe Bool)
+    , _tdcCanDeleteChildren :: !(Maybe Bool)
+    , _tdcCanCopy :: !(Maybe Bool)
+    , _tdcCanShare :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -547,10 +547,10 @@ instance ToJSON TeamDriveCapabilities where
 -- /See:/ 'permissionPermissionDetailsItem' smart constructor.
 data PermissionPermissionDetailsItem =
   PermissionPermissionDetailsItem'
-    { _ppdiInherited      :: !(Maybe Bool)
+    { _ppdiInherited :: !(Maybe Bool)
     , _ppdiPermissionType :: !(Maybe Text)
-    , _ppdiRole           :: !(Maybe Text)
-    , _ppdiInheritedFrom  :: !(Maybe Text)
+    , _ppdiRole :: !(Maybe Text)
+    , _ppdiInheritedFrom :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -630,7 +630,7 @@ instance ToJSON PermissionPermissionDetailsItem where
 -- /See:/ 'commentQuotedFileContent' smart constructor.
 data CommentQuotedFileContent =
   CommentQuotedFileContent'
-    { _cqfcValue    :: !(Maybe Text)
+    { _cqfcValue :: !(Maybe Text)
     , _cqfcMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -679,24 +679,24 @@ instance ToJSON CommentQuotedFileContent where
 -- /See:/ 'driveCapabilities' smart constructor.
 data DriveCapabilities =
   DriveCapabilities'
-    { _dcCanRename                                        :: !(Maybe Bool)
-    , _dcCanComment                                       :: !(Maybe Bool)
-    , _dcCanChangeDriveBackgRound                         :: !(Maybe Bool)
-    , _dcCanRenameDrive                                   :: !(Maybe Bool)
-    , _dcCanDownload                                      :: !(Maybe Bool)
-    , _dcCanChangeDomainUsersOnlyRestriction              :: !(Maybe Bool)
-    , _dcCanTrashChildren                                 :: !(Maybe Bool)
-    , _dcCanAddChildren                                   :: !(Maybe Bool)
+    { _dcCanRename :: !(Maybe Bool)
+    , _dcCanComment :: !(Maybe Bool)
+    , _dcCanChangeDriveBackgRound :: !(Maybe Bool)
+    , _dcCanRenameDrive :: !(Maybe Bool)
+    , _dcCanDownload :: !(Maybe Bool)
+    , _dcCanChangeDomainUsersOnlyRestriction :: !(Maybe Bool)
+    , _dcCanTrashChildren :: !(Maybe Bool)
+    , _dcCanAddChildren :: !(Maybe Bool)
     , _dcCanChangeCopyRequiresWriterPermissionRestriction :: !(Maybe Bool)
-    , _dcCanChangeDriveMembersOnlyRestriction             :: !(Maybe Bool)
-    , _dcCanListChildren                                  :: !(Maybe Bool)
-    , _dcCanEdit                                          :: !(Maybe Bool)
-    , _dcCanManageMembers                                 :: !(Maybe Bool)
-    , _dcCanReadRevisions                                 :: !(Maybe Bool)
-    , _dcCanDeleteChildren                                :: !(Maybe Bool)
-    , _dcCanCopy                                          :: !(Maybe Bool)
-    , _dcCanDeleteDrive                                   :: !(Maybe Bool)
-    , _dcCanShare                                         :: !(Maybe Bool)
+    , _dcCanChangeDriveMembersOnlyRestriction :: !(Maybe Bool)
+    , _dcCanListChildren :: !(Maybe Bool)
+    , _dcCanEdit :: !(Maybe Bool)
+    , _dcCanManageMembers :: !(Maybe Bool)
+    , _dcCanReadRevisions :: !(Maybe Bool)
+    , _dcCanDeleteChildren :: !(Maybe Bool)
+    , _dcCanCopy :: !(Maybe Bool)
+    , _dcCanDeleteDrive :: !(Maybe Bool)
+    , _dcCanShare :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -947,9 +947,9 @@ instance ToJSON DriveCapabilities where
 data AboutStorageQuota =
   AboutStorageQuota'
     { _asqUsageInDriveTrash :: !(Maybe (Textual Int64))
-    , _asqLimit             :: !(Maybe (Textual Int64))
-    , _asqUsage             :: !(Maybe (Textual Int64))
-    , _asqUsageInDrive      :: !(Maybe (Textual Int64))
+    , _asqLimit :: !(Maybe (Textual Int64))
+    , _asqUsage :: !(Maybe (Textual Int64))
+    , _asqUsageInDrive :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1026,15 +1026,15 @@ instance ToJSON AboutStorageQuota where
 -- /See:/ 'reply' smart constructor.
 data Reply =
   Reply'
-    { _rHTMLContent  :: !(Maybe Text)
+    { _rHTMLContent :: !(Maybe Text)
     , _rModifiedTime :: !(Maybe DateTime')
-    , _rCreatedTime  :: !(Maybe DateTime')
-    , _rKind         :: !Text
-    , _rAction       :: !(Maybe Text)
-    , _rContent      :: !(Maybe Text)
-    , _rAuthor       :: !(Maybe User)
-    , _rId           :: !(Maybe Text)
-    , _rDeleted      :: !(Maybe Bool)
+    , _rCreatedTime :: !(Maybe DateTime')
+    , _rKind :: !Text
+    , _rAction :: !(Maybe Text)
+    , _rContent :: !(Maybe Text)
+    , _rAuthor :: !(Maybe User)
+    , _rId :: !(Maybe Text)
+    , _rDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1189,35 +1189,35 @@ instance ToJSON AboutImportFormats where
 -- /See:/ 'fileCapabilities' smart constructor.
 data FileCapabilities =
   FileCapabilities'
-    { _fcCanRename                             :: !(Maybe Bool)
-    , _fcCanComment                            :: !(Maybe Bool)
-    , _fcCanMoveChildrenWithinDrive            :: !(Maybe Bool)
-    , _fcCanMoveChildrenWithinTeamDrive        :: !(Maybe Bool)
-    , _fcCanDelete                             :: !(Maybe Bool)
-    , _fcCanMoveItemIntoTeamDrive              :: !(Maybe Bool)
-    , _fcCanDownload                           :: !(Maybe Bool)
-    , _fcCanTrash                              :: !(Maybe Bool)
-    , _fcCanUntrash                            :: !(Maybe Bool)
-    , _fcCanTrashChildren                      :: !(Maybe Bool)
-    , _fcCanMoveItemOutOfDrive                 :: !(Maybe Bool)
-    , _fcCanAddChildren                        :: !(Maybe Bool)
-    , _fcCanRemoveChildren                     :: !(Maybe Bool)
-    , _fcCanMoveTeamDriveItem                  :: !(Maybe Bool)
-    , _fcCanMoveItemWithinTeamDrive            :: !(Maybe Bool)
-    , _fcCanReadTeamDrive                      :: !(Maybe Bool)
-    , _fcCanReadDrive                          :: !(Maybe Bool)
+    { _fcCanRename :: !(Maybe Bool)
+    , _fcCanComment :: !(Maybe Bool)
+    , _fcCanMoveChildrenWithinDrive :: !(Maybe Bool)
+    , _fcCanMoveChildrenWithinTeamDrive :: !(Maybe Bool)
+    , _fcCanDelete :: !(Maybe Bool)
+    , _fcCanMoveItemIntoTeamDrive :: !(Maybe Bool)
+    , _fcCanDownload :: !(Maybe Bool)
+    , _fcCanTrash :: !(Maybe Bool)
+    , _fcCanUntrash :: !(Maybe Bool)
+    , _fcCanTrashChildren :: !(Maybe Bool)
+    , _fcCanMoveItemOutOfDrive :: !(Maybe Bool)
+    , _fcCanAddChildren :: !(Maybe Bool)
+    , _fcCanRemoveChildren :: !(Maybe Bool)
+    , _fcCanMoveTeamDriveItem :: !(Maybe Bool)
+    , _fcCanMoveItemWithinTeamDrive :: !(Maybe Bool)
+    , _fcCanReadTeamDrive :: !(Maybe Bool)
+    , _fcCanReadDrive :: !(Maybe Bool)
     , _fcCanChangeCopyRequiresWriterPermission :: !(Maybe Bool)
-    , _fcCanMoveChildrenOutOfDrive             :: !(Maybe Bool)
-    , _fcCanListChildren                       :: !(Maybe Bool)
-    , _fcCanMoveChildrenOutOfTeamDrive         :: !(Maybe Bool)
-    , _fcCanEdit                               :: !(Maybe Bool)
-    , _fcCanChangeViewersCanCopyContent        :: !(Maybe Bool)
-    , _fcCanReadRevisions                      :: !(Maybe Bool)
-    , _fcCanDeleteChildren                     :: !(Maybe Bool)
-    , _fcCanMoveItemOutOfTeamDrive             :: !(Maybe Bool)
-    , _fcCanCopy                               :: !(Maybe Bool)
-    , _fcCanMoveItemWithinDrive                :: !(Maybe Bool)
-    , _fcCanShare                              :: !(Maybe Bool)
+    , _fcCanMoveChildrenOutOfDrive :: !(Maybe Bool)
+    , _fcCanListChildren :: !(Maybe Bool)
+    , _fcCanMoveChildrenOutOfTeamDrive :: !(Maybe Bool)
+    , _fcCanEdit :: !(Maybe Bool)
+    , _fcCanChangeViewersCanCopyContent :: !(Maybe Bool)
+    , _fcCanReadRevisions :: !(Maybe Bool)
+    , _fcCanDeleteChildren :: !(Maybe Bool)
+    , _fcCanMoveItemOutOfTeamDrive :: !(Maybe Bool)
+    , _fcCanCopy :: !(Maybe Bool)
+    , _fcCanMoveItemWithinDrive :: !(Maybe Bool)
+    , _fcCanShare :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1596,8 +1596,8 @@ instance ToJSON FileCapabilities where
 data ReplyList =
   ReplyList'
     { _rlNextPageToken :: !(Maybe Text)
-    , _rlKind          :: !Text
-    , _rlReplies       :: !(Maybe [Reply])
+    , _rlKind :: !Text
+    , _rlReplies :: !(Maybe [Reply])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1670,8 +1670,8 @@ data DriveBackgRoundImageFile =
   DriveBackgRoundImageFile'
     { _dbrifXCoordinate :: !(Maybe (Textual Double))
     , _dbrifYCoordinate :: !(Maybe (Textual Double))
-    , _dbrifWidth       :: !(Maybe (Textual Double))
-    , _dbrifId          :: !(Maybe Text)
+    , _dbrifWidth :: !(Maybe (Textual Double))
+    , _dbrifId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1758,7 +1758,7 @@ instance ToJSON DriveBackgRoundImageFile where
 -- /See:/ 'fileContentHintsThumbnail' smart constructor.
 data FileContentHintsThumbnail =
   FileContentHintsThumbnail'
-    { _fchtImage    :: !(Maybe Bytes)
+    { _fchtImage :: !(Maybe Bytes)
     , _fchtMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1808,8 +1808,8 @@ instance ToJSON FileContentHintsThumbnail where
 data TeamDriveList =
   TeamDriveList'
     { _tdlNextPageToken :: !(Maybe Text)
-    , _tdlTeamDrives    :: !(Maybe [TeamDrive])
-    , _tdlKind          :: !Text
+    , _tdlTeamDrives :: !(Maybe [TeamDrive])
+    , _tdlKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1879,15 +1879,15 @@ instance ToJSON TeamDriveList where
 data Channel =
   Channel'
     { _cResourceURI :: !(Maybe Text)
-    , _cResourceId  :: !(Maybe Text)
-    , _cKind        :: !Text
-    , _cExpiration  :: !(Maybe (Textual Int64))
-    , _cToken       :: !(Maybe Text)
-    , _cAddress     :: !(Maybe Text)
-    , _cPayload     :: !(Maybe Bool)
-    , _cParams      :: !(Maybe ChannelParams)
-    , _cId          :: !(Maybe Text)
-    , _cType        :: !(Maybe Text)
+    , _cResourceId :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cExpiration :: !(Maybe (Textual Int64))
+    , _cToken :: !(Maybe Text)
+    , _cAddress :: !(Maybe Text)
+    , _cPayload :: !(Maybe Bool)
+    , _cParams :: !(Maybe ChannelParams)
+    , _cId :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2013,9 +2013,9 @@ instance ToJSON Channel where
 -- /See:/ 'aboutTeamDriveThemesItem' smart constructor.
 data AboutTeamDriveThemesItem =
   AboutTeamDriveThemesItem'
-    { _atdtiColorRgb            :: !(Maybe Text)
+    { _atdtiColorRgb :: !(Maybe Text)
     , _atdtiBackgRoundImageLink :: !(Maybe Text)
-    , _atdtiId                  :: !(Maybe Text)
+    , _atdtiId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2078,10 +2078,10 @@ instance ToJSON AboutTeamDriveThemesItem where
 -- /See:/ 'teamDriveRestrictions' smart constructor.
 data TeamDriveRestrictions =
   TeamDriveRestrictions'
-    { _tdrTeamMembersOnly              :: !(Maybe Bool)
-    , _tdrAdminManagedRestrictions     :: !(Maybe Bool)
+    { _tdrTeamMembersOnly :: !(Maybe Bool)
+    , _tdrAdminManagedRestrictions :: !(Maybe Bool)
     , _tdrCopyRequiresWriterPermission :: !(Maybe Bool)
-    , _tdrDomainUsersOnly              :: !(Maybe Bool)
+    , _tdrDomainUsersOnly :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2171,8 +2171,8 @@ data TeamDriveBackgRoundImageFile =
   TeamDriveBackgRoundImageFile'
     { _tdbrifXCoordinate :: !(Maybe (Textual Double))
     , _tdbrifYCoordinate :: !(Maybe (Textual Double))
-    , _tdbrifWidth       :: !(Maybe (Textual Double))
-    , _tdbrifId          :: !(Maybe Text)
+    , _tdbrifWidth :: !(Maybe (Textual Double))
+    , _tdbrifId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2259,8 +2259,8 @@ instance ToJSON TeamDriveBackgRoundImageFile where
 -- /See:/ 'fileVideoMediaMetadata' smart constructor.
 data FileVideoMediaMetadata =
   FileVideoMediaMetadata'
-    { _fvmmHeight         :: !(Maybe (Textual Int32))
-    , _fvmmWidth          :: !(Maybe (Textual Int32))
+    { _fvmmHeight :: !(Maybe (Textual Int32))
+    , _fvmmWidth :: !(Maybe (Textual Int32))
     , _fvmmDurationMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2359,17 +2359,17 @@ instance ToJSON FileAppProperties where
 -- /See:/ 'change' smart constructor.
 data Change =
   Change'
-    { _chaDrive       :: !(Maybe Drive)
-    , _chaRemoved     :: !(Maybe Bool)
-    , _chaTime        :: !(Maybe DateTime')
-    , _chaKind        :: !Text
-    , _chaTeamDrive   :: !(Maybe TeamDrive)
+    { _chaDrive :: !(Maybe Drive)
+    , _chaRemoved :: !(Maybe Bool)
+    , _chaTime :: !(Maybe DateTime')
+    , _chaKind :: !Text
+    , _chaTeamDrive :: !(Maybe TeamDrive)
     , _chaTeamDriveId :: !(Maybe Text)
-    , _chaType        :: !(Maybe Text)
-    , _chaFileId      :: !(Maybe Text)
-    , _chaFile        :: !(Maybe File)
-    , _chaChangeType  :: !(Maybe Text)
-    , _chaDriveId     :: !(Maybe Text)
+    , _chaType :: !(Maybe Text)
+    , _chaFileId :: !(Maybe Text)
+    , _chaFile :: !(Maybe File)
+    , _chaChangeType :: !(Maybe Text)
+    , _chaDriveId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2512,16 +2512,16 @@ instance ToJSON Change where
 -- /See:/ 'teamDrive' smart constructor.
 data TeamDrive =
   TeamDrive'
-    { _tdThemeId             :: !(Maybe Text)
+    { _tdThemeId :: !(Maybe Text)
     , _tdBackgRoundImageFile :: !(Maybe TeamDriveBackgRoundImageFile)
-    , _tdColorRgb            :: !(Maybe Text)
-    , _tdCreatedTime         :: !(Maybe DateTime')
-    , _tdKind                :: !Text
+    , _tdColorRgb :: !(Maybe Text)
+    , _tdCreatedTime :: !(Maybe DateTime')
+    , _tdKind :: !Text
     , _tdBackgRoundImageLink :: !(Maybe Text)
-    , _tdName                :: !(Maybe Text)
-    , _tdRestrictions        :: !(Maybe TeamDriveRestrictions)
-    , _tdId                  :: !(Maybe Text)
-    , _tdCapabilities        :: !(Maybe TeamDriveCapabilities)
+    , _tdName :: !(Maybe Text)
+    , _tdRestrictions :: !(Maybe TeamDriveRestrictions)
+    , _tdId :: !(Maybe Text)
+    , _tdCapabilities :: !(Maybe TeamDriveCapabilities)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2703,11 +2703,11 @@ instance ToJSON AboutExportFormats where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uPhotoLink    :: !(Maybe Text)
-    , _uMe           :: !(Maybe Bool)
-    , _uKind         :: !Text
+    { _uPhotoLink :: !(Maybe Text)
+    , _uMe :: !(Maybe Bool)
+    , _uKind :: !Text
     , _uEmailAddress :: !(Maybe Text)
-    , _uDisplayName  :: !(Maybe Text)
+    , _uDisplayName :: !(Maybe Text)
     , _uPermissionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2801,9 +2801,9 @@ instance ToJSON User where
 data ChangeList =
   ChangeList'
     { _clNewStartPageToken :: !(Maybe Text)
-    , _clNextPageToken     :: !(Maybe Text)
-    , _clChanges           :: !(Maybe [Change])
-    , _clKind              :: !Text
+    , _clNextPageToken :: !(Maybe Text)
+    , _clChanges :: !(Maybe [Change])
+    , _clKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2920,7 +2920,7 @@ instance ToJSON RevisionExportLinks where
 -- /See:/ 'fileContentHints' smart constructor.
 data FileContentHints =
   FileContentHints'
-    { _fchThumbnail     :: !(Maybe FileContentHintsThumbnail)
+    { _fchThumbnail :: !(Maybe FileContentHintsThumbnail)
     , _fchIndexableText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3079,19 +3079,19 @@ instance ToJSON AboutMaxImportSizes where
 -- /See:/ 'about' smart constructor.
 data About =
   About'
-    { _aExportFormats       :: !(Maybe AboutExportFormats)
-    , _aMaxImportSizes      :: !(Maybe AboutMaxImportSizes)
+    { _aExportFormats :: !(Maybe AboutExportFormats)
+    , _aMaxImportSizes :: !(Maybe AboutMaxImportSizes)
     , _aCanCreateTeamDrives :: !(Maybe Bool)
-    , _aImportFormats       :: !(Maybe AboutImportFormats)
-    , _aKind                :: !Text
-    , _aDriveThemes         :: !(Maybe [AboutDriveThemesItem])
-    , _aAppInstalled        :: !(Maybe Bool)
-    , _aUser                :: !(Maybe User)
-    , _aStorageQuota        :: !(Maybe AboutStorageQuota)
-    , _aCanCreateDrives     :: !(Maybe Bool)
-    , _aMaxUploadSize       :: !(Maybe (Textual Int64))
-    , _aTeamDriveThemes     :: !(Maybe [AboutTeamDriveThemesItem])
-    , _aFolderColorPalette  :: !(Maybe [Text])
+    , _aImportFormats :: !(Maybe AboutImportFormats)
+    , _aKind :: !Text
+    , _aDriveThemes :: !(Maybe [AboutDriveThemesItem])
+    , _aAppInstalled :: !(Maybe Bool)
+    , _aUser :: !(Maybe User)
+    , _aStorageQuota :: !(Maybe AboutStorageQuota)
+    , _aCanCreateDrives :: !(Maybe Bool)
+    , _aMaxUploadSize :: !(Maybe (Textual Int64))
+    , _aTeamDriveThemes :: !(Maybe [AboutTeamDriveThemesItem])
+    , _aFolderColorPalette :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3268,8 +3268,8 @@ instance ToJSON About where
 -- /See:/ 'fileImageMediaMetadataLocation' smart constructor.
 data FileImageMediaMetadataLocation =
   FileImageMediaMetadataLocation'
-    { _fimmlLatitude  :: !(Maybe (Textual Double))
-    , _fimmlAltitude  :: !(Maybe (Textual Double))
+    { _fimmlLatitude :: !(Maybe (Textual Double))
+    , _fimmlAltitude :: !(Maybe (Textual Double))
     , _fimmlLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3336,7 +3336,7 @@ instance ToJSON FileImageMediaMetadataLocation where
 -- /See:/ 'startPageToken' smart constructor.
 data StartPageToken =
   StartPageToken'
-    { _sptKind           :: !Text
+    { _sptKind :: !Text
     , _sptStartPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3387,27 +3387,27 @@ instance ToJSON StartPageToken where
 -- /See:/ 'fileImageMediaMetadata' smart constructor.
 data FileImageMediaMetadata =
   FileImageMediaMetadata'
-    { _fimmRotation         :: !(Maybe (Textual Int32))
-    , _fimmHeight           :: !(Maybe (Textual Int32))
-    , _fimmSubjectDistance  :: !(Maybe (Textual Int32))
+    { _fimmRotation :: !(Maybe (Textual Int32))
+    , _fimmHeight :: !(Maybe (Textual Int32))
+    , _fimmSubjectDistance :: !(Maybe (Textual Int32))
     , _fimmMaxApertureValue :: !(Maybe (Textual Double))
-    , _fimmIsoSpeed         :: !(Maybe (Textual Int32))
-    , _fimmTime             :: !(Maybe Text)
-    , _fimmLocation         :: !(Maybe FileImageMediaMetadataLocation)
-    , _fimmAperture         :: !(Maybe (Textual Double))
-    , _fimmFocalLength      :: !(Maybe (Textual Double))
-    , _fimmCameraMake       :: !(Maybe Text)
-    , _fimmWidth            :: !(Maybe (Textual Int32))
-    , _fimmExposureTime     :: !(Maybe (Textual Double))
-    , _fimmCameraModel      :: !(Maybe Text)
-    , _fimmWhiteBalance     :: !(Maybe Text)
-    , _fimmLens             :: !(Maybe Text)
-    , _fimmFlashUsed        :: !(Maybe Bool)
-    , _fimmExposureBias     :: !(Maybe (Textual Double))
-    , _fimmMeteringMode     :: !(Maybe Text)
-    , _fimmExposureMode     :: !(Maybe Text)
-    , _fimmSensor           :: !(Maybe Text)
-    , _fimmColorSpace       :: !(Maybe Text)
+    , _fimmIsoSpeed :: !(Maybe (Textual Int32))
+    , _fimmTime :: !(Maybe Text)
+    , _fimmLocation :: !(Maybe FileImageMediaMetadataLocation)
+    , _fimmAperture :: !(Maybe (Textual Double))
+    , _fimmFocalLength :: !(Maybe (Textual Double))
+    , _fimmCameraMake :: !(Maybe Text)
+    , _fimmWidth :: !(Maybe (Textual Int32))
+    , _fimmExposureTime :: !(Maybe (Textual Double))
+    , _fimmCameraModel :: !(Maybe Text)
+    , _fimmWhiteBalance :: !(Maybe Text)
+    , _fimmLens :: !(Maybe Text)
+    , _fimmFlashUsed :: !(Maybe Bool)
+    , _fimmExposureBias :: !(Maybe (Textual Double))
+    , _fimmMeteringMode :: !(Maybe Text)
+    , _fimmExposureMode :: !(Maybe Text)
+    , _fimmSensor :: !(Maybe Text)
+    , _fimmColorSpace :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3669,18 +3669,18 @@ instance ToJSON FileImageMediaMetadata where
 -- /See:/ 'comment' smart constructor.
 data Comment =
   Comment'
-    { _comHTMLContent       :: !(Maybe Text)
-    , _comModifiedTime      :: !(Maybe DateTime')
-    , _comCreatedTime       :: !(Maybe DateTime')
-    , _comKind              :: !Text
-    , _comResolved          :: !(Maybe Bool)
+    { _comHTMLContent :: !(Maybe Text)
+    , _comModifiedTime :: !(Maybe DateTime')
+    , _comCreatedTime :: !(Maybe DateTime')
+    , _comKind :: !Text
+    , _comResolved :: !(Maybe Bool)
     , _comQuotedFileContent :: !(Maybe CommentQuotedFileContent)
-    , _comAnchor            :: !(Maybe Text)
-    , _comContent           :: !(Maybe Text)
-    , _comReplies           :: !(Maybe [Reply])
-    , _comAuthor            :: !(Maybe User)
-    , _comId                :: !(Maybe Text)
-    , _comDeleted           :: !(Maybe Bool)
+    , _comAnchor :: !(Maybe Text)
+    , _comContent :: !(Maybe Text)
+    , _comReplies :: !(Maybe [Reply])
+    , _comAuthor :: !(Maybe User)
+    , _comId :: !(Maybe Text)
+    , _comDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3842,19 +3842,19 @@ instance ToJSON Comment where
 -- /See:/ 'revision' smart constructor.
 data Revision =
   Revision'
-    { _revModifiedTime           :: !(Maybe DateTime')
-    , _revSize                   :: !(Maybe (Textual Int64))
-    , _revOriginalFilename       :: !(Maybe Text)
-    , _revKind                   :: !Text
-    , _revPublished              :: !(Maybe Bool)
-    , _revLastModifyingUser      :: !(Maybe User)
-    , _revPublishAuto            :: !(Maybe Bool)
-    , _revMD5Checksum            :: !(Maybe Text)
-    , _revKeepForever            :: !(Maybe Bool)
-    , _revMimeType               :: !(Maybe Text)
-    , _revExportLinks            :: !(Maybe RevisionExportLinks)
+    { _revModifiedTime :: !(Maybe DateTime')
+    , _revSize :: !(Maybe (Textual Int64))
+    , _revOriginalFilename :: !(Maybe Text)
+    , _revKind :: !Text
+    , _revPublished :: !(Maybe Bool)
+    , _revLastModifyingUser :: !(Maybe User)
+    , _revPublishAuto :: !(Maybe Bool)
+    , _revMD5Checksum :: !(Maybe Text)
+    , _revKeepForever :: !(Maybe Bool)
+    , _revMimeType :: !(Maybe Text)
+    , _revExportLinks :: !(Maybe RevisionExportLinks)
     , _revPublishedOutsideDomain :: !(Maybe Bool)
-    , _revId                     :: !(Maybe Text)
+    , _revId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4035,19 +4035,19 @@ instance ToJSON Revision where
 -- /See:/ 'permission' smart constructor.
 data Permission =
   Permission'
-    { _pPhotoLink                  :: !(Maybe Text)
+    { _pPhotoLink :: !(Maybe Text)
     , _pTeamDrivePermissionDetails :: !(Maybe [PermissionTeamDrivePermissionDetailsItem])
-    , _pKind                       :: !Text
-    , _pDomain                     :: !(Maybe Text)
-    , _pRole                       :: !(Maybe Text)
-    , _pEmailAddress               :: !(Maybe Text)
-    , _pAllowFileDiscovery         :: !(Maybe Bool)
-    , _pDisplayName                :: !(Maybe Text)
-    , _pId                         :: !(Maybe Text)
-    , _pDeleted                    :: !(Maybe Bool)
-    , _pType                       :: !(Maybe Text)
-    , _pExpirationTime             :: !(Maybe DateTime')
-    , _pPermissionDetails          :: !(Maybe [PermissionPermissionDetailsItem])
+    , _pKind :: !Text
+    , _pDomain :: !(Maybe Text)
+    , _pRole :: !(Maybe Text)
+    , _pEmailAddress :: !(Maybe Text)
+    , _pAllowFileDiscovery :: !(Maybe Bool)
+    , _pDisplayName :: !(Maybe Text)
+    , _pId :: !(Maybe Text)
+    , _pDeleted :: !(Maybe Bool)
+    , _pType :: !(Maybe Text)
+    , _pExpirationTime :: !(Maybe DateTime')
+    , _pPermissionDetails :: !(Maybe [PermissionPermissionDetailsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4224,10 +4224,10 @@ instance ToJSON Permission where
 -- /See:/ 'driveRestrictions' smart constructor.
 data DriveRestrictions =
   DriveRestrictions'
-    { _drAdminManagedRestrictions     :: !(Maybe Bool)
-    , _drDriveMembersOnly             :: !(Maybe Bool)
+    { _drAdminManagedRestrictions :: !(Maybe Bool)
+    , _drDriveMembersOnly :: !(Maybe Bool)
     , _drCopyRequiresWriterPermission :: !(Maybe Bool)
-    , _drDomainUsersOnly              :: !(Maybe Bool)
+    , _drDomainUsersOnly :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4312,61 +4312,61 @@ instance ToJSON DriveRestrictions where
 -- /See:/ 'file' smart constructor.
 data File =
   File'
-    { _fOwnedByMe                    :: !(Maybe Bool)
-    , _fThumbnailLink                :: !(Maybe Text)
-    , _fFullFileExtension            :: !(Maybe Text)
-    , _fModifiedTime                 :: !(Maybe DateTime')
-    , _fModifiedByMeTime             :: !(Maybe DateTime')
-    , _fFileExtension                :: !(Maybe Text)
-    , _fViewedByMe                   :: !(Maybe Bool)
-    , _fOwners                       :: !(Maybe [User])
-    , _fViewedByMeTime               :: !(Maybe DateTime')
-    , _fModifiedByMe                 :: !(Maybe Bool)
-    , _fSize                         :: !(Maybe (Textual Int64))
-    , _fTrashed                      :: !(Maybe Bool)
-    , _fWebViewLink                  :: !(Maybe Text)
-    , _fCreatedTime                  :: !(Maybe DateTime')
-    , _fTrashedTime                  :: !(Maybe DateTime')
-    , _fOriginalFilename             :: !(Maybe Text)
-    , _fKind                         :: !Text
-    , _fLastModifyingUser            :: !(Maybe User)
-    , _fIconLink                     :: !(Maybe Text)
-    , _fHasThumbnail                 :: !(Maybe Bool)
-    , _fThumbnailVersion             :: !(Maybe (Textual Int64))
-    , _fImageMediaMetadata           :: !(Maybe FileImageMediaMetadata)
-    , _fExplicitlyTrashed            :: !(Maybe Bool)
-    , _fShared                       :: !(Maybe Bool)
-    , _fMD5Checksum                  :: !(Maybe Text)
-    , _fTeamDriveId                  :: !(Maybe Text)
-    , _fFolderColorRgb               :: !(Maybe Text)
-    , _fMimeType                     :: !(Maybe Text)
-    , _fIsAppAuthorized              :: !(Maybe Bool)
+    { _fOwnedByMe :: !(Maybe Bool)
+    , _fThumbnailLink :: !(Maybe Text)
+    , _fFullFileExtension :: !(Maybe Text)
+    , _fModifiedTime :: !(Maybe DateTime')
+    , _fModifiedByMeTime :: !(Maybe DateTime')
+    , _fFileExtension :: !(Maybe Text)
+    , _fViewedByMe :: !(Maybe Bool)
+    , _fOwners :: !(Maybe [User])
+    , _fViewedByMeTime :: !(Maybe DateTime')
+    , _fModifiedByMe :: !(Maybe Bool)
+    , _fSize :: !(Maybe (Textual Int64))
+    , _fTrashed :: !(Maybe Bool)
+    , _fWebViewLink :: !(Maybe Text)
+    , _fCreatedTime :: !(Maybe DateTime')
+    , _fTrashedTime :: !(Maybe DateTime')
+    , _fOriginalFilename :: !(Maybe Text)
+    , _fKind :: !Text
+    , _fLastModifyingUser :: !(Maybe User)
+    , _fIconLink :: !(Maybe Text)
+    , _fHasThumbnail :: !(Maybe Bool)
+    , _fThumbnailVersion :: !(Maybe (Textual Int64))
+    , _fImageMediaMetadata :: !(Maybe FileImageMediaMetadata)
+    , _fExplicitlyTrashed :: !(Maybe Bool)
+    , _fShared :: !(Maybe Bool)
+    , _fMD5Checksum :: !(Maybe Text)
+    , _fTeamDriveId :: !(Maybe Text)
+    , _fFolderColorRgb :: !(Maybe Text)
+    , _fMimeType :: !(Maybe Text)
+    , _fIsAppAuthorized :: !(Maybe Bool)
     , _fCopyRequiresWriterPermission :: !(Maybe Bool)
-    , _fName                         :: !(Maybe Text)
-    , _fExportLinks                  :: !(Maybe FileExportLinks)
-    , _fParents                      :: !(Maybe [Text])
-    , _fStarred                      :: !(Maybe Bool)
-    , _fSpaces                       :: !(Maybe [Text])
-    , _fVersion                      :: !(Maybe (Textual Int64))
-    , _fHasAugmentedPermissions      :: !(Maybe Bool)
-    , _fWritersCanShare              :: !(Maybe Bool)
-    , _fTrashingUser                 :: !(Maybe User)
-    , _fId                           :: !(Maybe Text)
-    , _fPermissionIds                :: !(Maybe [Text])
-    , _fPermissions                  :: !(Maybe [Permission])
-    , _fQuotaBytesUsed               :: !(Maybe (Textual Int64))
-    , _fAppProperties                :: !(Maybe FileAppProperties)
-    , _fVideoMediaMetadata           :: !(Maybe FileVideoMediaMetadata)
-    , _fSharedWithMeTime             :: !(Maybe DateTime')
-    , _fHeadRevisionId               :: !(Maybe Text)
-    , _fCapabilities                 :: !(Maybe FileCapabilities)
-    , _fDescription                  :: !(Maybe Text)
-    , _fViewersCanCopyContent        :: !(Maybe Bool)
-    , _fDriveId                      :: !(Maybe Text)
-    , _fSharingUser                  :: !(Maybe User)
-    , _fWebContentLink               :: !(Maybe Text)
-    , _fContentHints                 :: !(Maybe FileContentHints)
-    , _fProperties                   :: !(Maybe FileProperties)
+    , _fName :: !(Maybe Text)
+    , _fExportLinks :: !(Maybe FileExportLinks)
+    , _fParents :: !(Maybe [Text])
+    , _fStarred :: !(Maybe Bool)
+    , _fSpaces :: !(Maybe [Text])
+    , _fVersion :: !(Maybe (Textual Int64))
+    , _fHasAugmentedPermissions :: !(Maybe Bool)
+    , _fWritersCanShare :: !(Maybe Bool)
+    , _fTrashingUser :: !(Maybe User)
+    , _fId :: !(Maybe Text)
+    , _fPermissionIds :: !(Maybe [Text])
+    , _fPermissions :: !(Maybe [Permission])
+    , _fQuotaBytesUsed :: !(Maybe (Textual Int64))
+    , _fAppProperties :: !(Maybe FileAppProperties)
+    , _fVideoMediaMetadata :: !(Maybe FileVideoMediaMetadata)
+    , _fSharedWithMeTime :: !(Maybe DateTime')
+    , _fHeadRevisionId :: !(Maybe Text)
+    , _fCapabilities :: !(Maybe FileCapabilities)
+    , _fDescription :: !(Maybe Text)
+    , _fViewersCanCopyContent :: !(Maybe Bool)
+    , _fDriveId :: !(Maybe Text)
+    , _fSharingUser :: !(Maybe User)
+    , _fWebContentLink :: !(Maybe Text)
+    , _fContentHints :: !(Maybe FileContentHints)
+    , _fProperties :: !(Maybe FileProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5047,9 +5047,9 @@ instance ToJSON File where
 -- /See:/ 'aboutDriveThemesItem' smart constructor.
 data AboutDriveThemesItem =
   AboutDriveThemesItem'
-    { _adtiColorRgb            :: !(Maybe Text)
+    { _adtiColorRgb :: !(Maybe Text)
     , _adtiBackgRoundImageLink :: !(Maybe Text)
-    , _adtiId                  :: !(Maybe Text)
+    , _adtiId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5109,10 +5109,10 @@ instance ToJSON AboutDriveThemesItem where
 -- /See:/ 'permissionTeamDrivePermissionDetailsItem' smart constructor.
 data PermissionTeamDrivePermissionDetailsItem =
   PermissionTeamDrivePermissionDetailsItem'
-    { _ptdpdiInherited               :: !(Maybe Bool)
+    { _ptdpdiInherited :: !(Maybe Bool)
     , _ptdpdiTeamDrivePermissionType :: !(Maybe Text)
-    , _ptdpdiRole                    :: !(Maybe Text)
-    , _ptdpdiInheritedFrom           :: !(Maybe Text)
+    , _ptdpdiRole :: !(Maybe Text)
+    , _ptdpdiInheritedFrom :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5198,8 +5198,8 @@ instance ToJSON
 data DriveList =
   DriveList'
     { _dlNextPageToken :: !(Maybe Text)
-    , _dlKind          :: !Text
-    , _dlDrives        :: !(Maybe [Drive])
+    , _dlKind :: !Text
+    , _dlDrives :: !(Maybe [Drive])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5268,8 +5268,8 @@ instance ToJSON DriveList where
 data GeneratedIds =
   GeneratedIds'
     { _giSpace :: !(Maybe Text)
-    , _giKind  :: !Text
-    , _giIds   :: !(Maybe [Text])
+    , _giKind :: !Text
+    , _giIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5363,8 +5363,8 @@ instance ToJSON FileExportLinks where
 data CommentList =
   CommentList'
     { _cllNextPageToken :: !(Maybe Text)
-    , _cllKind          :: !Text
-    , _cllComments      :: !(Maybe [Comment])
+    , _cllKind :: !Text
+    , _cllComments :: !(Maybe [Comment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5433,8 +5433,8 @@ instance ToJSON CommentList where
 data RevisionList =
   RevisionList'
     { _rllNextPageToken :: !(Maybe Text)
-    , _rllKind          :: !Text
-    , _rllRevisions     :: !(Maybe [Revision])
+    , _rllKind :: !Text
+    , _rllRevisions :: !(Maybe [Revision])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5503,8 +5503,8 @@ instance ToJSON RevisionList where
 data PermissionList =
   PermissionList'
     { _plNextPageToken :: !(Maybe Text)
-    , _plKind          :: !Text
-    , _plPermissions   :: !(Maybe [Permission])
+    , _plKind :: !Text
+    , _plPermissions :: !(Maybe [Permission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

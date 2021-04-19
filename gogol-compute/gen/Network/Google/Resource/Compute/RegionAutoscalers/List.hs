@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.RegionAutoscalers.List
     , ralMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionAutoscalers.list@ method which the
 -- 'RegionAutoscalersList' request conforms to.
@@ -66,11 +66,11 @@ type RegionAutoscalersListResource =
 -- /See:/ 'regionAutoscalersList' smart constructor.
 data RegionAutoscalersList =
   RegionAutoscalersList'
-    { _ralOrderBy    :: !(Maybe Text)
-    , _ralProject    :: !Text
-    , _ralFilter     :: !(Maybe Text)
-    , _ralRegion     :: !Text
-    , _ralPageToken  :: !(Maybe Text)
+    { _ralOrderBy :: !(Maybe Text)
+    , _ralProject :: !Text
+    , _ralFilter :: !(Maybe Text)
+    , _ralRegion :: !Text
+    , _ralPageToken :: !(Maybe Text)
     , _ralMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

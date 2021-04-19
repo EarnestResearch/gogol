@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.MakeAdmin
     , umaUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.makeAdmin@ method which the
 -- 'UsersMakeAdmin' request conforms to.

@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Quests.Reset
     , qrQuestId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.quests.reset@ method which the
 -- 'QuestsReset' request conforms to.

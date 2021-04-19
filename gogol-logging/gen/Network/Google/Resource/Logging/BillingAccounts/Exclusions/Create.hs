@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Exclusions.Create
     , baecCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.exclusions.create@ method which the
 -- 'BillingAccountsExclusionsCreate' request conforms to.
@@ -69,13 +69,13 @@ type BillingAccountsExclusionsCreateResource =
 -- /See:/ 'billingAccountsExclusionsCreate' smart constructor.
 data BillingAccountsExclusionsCreate =
   BillingAccountsExclusionsCreate'
-    { _baecParent         :: !Text
-    , _baecXgafv          :: !(Maybe Xgafv)
+    { _baecParent :: !Text
+    , _baecXgafv :: !(Maybe Xgafv)
     , _baecUploadProtocol :: !(Maybe Text)
-    , _baecAccessToken    :: !(Maybe Text)
-    , _baecUploadType     :: !(Maybe Text)
-    , _baecPayload        :: !LogExclusion
-    , _baecCallback       :: !(Maybe Text)
+    , _baecAccessToken :: !(Maybe Text)
+    , _baecUploadType :: !(Maybe Text)
+    , _baecPayload :: !LogExclusion
+    , _baecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

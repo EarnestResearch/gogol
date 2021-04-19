@@ -16,7 +16,7 @@
 --
 module Network.Google.ContainerAnalysis.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. The recovered Dockerfile directive used to construct this
 -- layer.

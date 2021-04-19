@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.InfoTypes.List
     , itlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.infoTypes.list@ method which the
 -- 'InfoTypesList' request conforms to.
@@ -69,13 +69,13 @@ type InfoTypesListResource =
 -- /See:/ 'infoTypesList' smart constructor.
 data InfoTypesList =
   InfoTypesList'
-    { _itlXgafv          :: !(Maybe Xgafv)
-    , _itlLanguageCode   :: !(Maybe Text)
+    { _itlXgafv :: !(Maybe Xgafv)
+    , _itlLanguageCode :: !(Maybe Text)
     , _itlUploadProtocol :: !(Maybe Text)
-    , _itlAccessToken    :: !(Maybe Text)
-    , _itlUploadType     :: !(Maybe Text)
-    , _itlFilter         :: !(Maybe Text)
-    , _itlCallback       :: !(Maybe Text)
+    , _itlAccessToken :: !(Maybe Text)
+    , _itlUploadType :: !(Maybe Text)
+    , _itlFilter :: !(Maybe Text)
+    , _itlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

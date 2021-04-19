@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.SetAvailableProductSet
     , usapsUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.setAvailableProductSet@ method which the
 -- 'UsersSetAvailableProductSet' request conforms to.
@@ -66,8 +66,8 @@ type UsersSetAvailableProductSetResource =
 data UsersSetAvailableProductSet =
   UsersSetAvailableProductSet'
     { _usapsEnterpriseId :: !Text
-    , _usapsPayload      :: !ProductSet
-    , _usapsUserId       :: !Text
+    , _usapsPayload :: !ProductSet
+    , _usapsUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

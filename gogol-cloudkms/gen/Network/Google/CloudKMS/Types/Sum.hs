@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudKMS.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The immutable purpose of this CryptoKey.
 data CryptoKeyPurpose

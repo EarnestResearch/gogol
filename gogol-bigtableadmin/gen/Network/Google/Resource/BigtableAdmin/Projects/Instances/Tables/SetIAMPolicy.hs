@@ -43,8 +43,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.SetIAMPol
     , pitsipCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.tables.setIamPolicy@ method which the
 -- 'ProjectsInstancesTablesSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsInstancesTablesSetIAMPolicyResource =
 -- /See:/ 'projectsInstancesTablesSetIAMPolicy' smart constructor.
 data ProjectsInstancesTablesSetIAMPolicy =
   ProjectsInstancesTablesSetIAMPolicy'
-    { _pitsipXgafv          :: !(Maybe Xgafv)
+    { _pitsipXgafv :: !(Maybe Xgafv)
     , _pitsipUploadProtocol :: !(Maybe Text)
-    , _pitsipAccessToken    :: !(Maybe Text)
-    , _pitsipUploadType     :: !(Maybe Text)
-    , _pitsipPayload        :: !SetIAMPolicyRequest
-    , _pitsipResource       :: !Text
-    , _pitsipCallback       :: !(Maybe Text)
+    , _pitsipAccessToken :: !(Maybe Text)
+    , _pitsipUploadType :: !(Maybe Text)
+    , _pitsipPayload :: !SetIAMPolicyRequest
+    , _pitsipResource :: !Text
+    , _pitsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

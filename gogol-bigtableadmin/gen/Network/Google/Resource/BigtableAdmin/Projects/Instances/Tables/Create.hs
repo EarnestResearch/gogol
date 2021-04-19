@@ -43,8 +43,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.Create
     , pitcCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.tables.create@ method which the
 -- 'ProjectsInstancesTablesCreate' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsInstancesTablesCreateResource =
 -- /See:/ 'projectsInstancesTablesCreate' smart constructor.
 data ProjectsInstancesTablesCreate =
   ProjectsInstancesTablesCreate'
-    { _pitcParent         :: !Text
-    , _pitcXgafv          :: !(Maybe Xgafv)
+    { _pitcParent :: !Text
+    , _pitcXgafv :: !(Maybe Xgafv)
     , _pitcUploadProtocol :: !(Maybe Text)
-    , _pitcAccessToken    :: !(Maybe Text)
-    , _pitcUploadType     :: !(Maybe Text)
-    , _pitcPayload        :: !CreateTableRequest
-    , _pitcCallback       :: !(Maybe Text)
+    , _pitcAccessToken :: !(Maybe Text)
+    , _pitcUploadType :: !(Maybe Text)
+    , _pitcPayload :: !CreateTableRequest
+    , _pitcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

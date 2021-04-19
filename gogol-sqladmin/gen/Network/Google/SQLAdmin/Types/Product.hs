@@ -17,20 +17,20 @@
 --
 module Network.Google.SQLAdmin.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types.Sum
 
 -- | Read-replica configuration specific to MySQL databases.
 --
 -- /See:/ 'demoteMasterMySQLReplicaConfiguration' smart constructor.
 data DemoteMasterMySQLReplicaConfiguration =
   DemoteMasterMySQLReplicaConfiguration'
-    { _dmmsqlrcKind              :: !Text
-    , _dmmsqlrcClientKey         :: !(Maybe Text)
-    , _dmmsqlrcUsername          :: !(Maybe Text)
+    { _dmmsqlrcKind :: !Text
+    , _dmmsqlrcClientKey :: !(Maybe Text)
+    , _dmmsqlrcUsername :: !(Maybe Text)
     , _dmmsqlrcClientCertificate :: !(Maybe Text)
-    , _dmmsqlrcCaCertificate     :: !(Maybe Text)
-    , _dmmsqlrcPassword          :: !(Maybe Text)
+    , _dmmsqlrcCaCertificate :: !(Maybe Text)
+    , _dmmsqlrcPassword :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -133,15 +133,15 @@ instance ToJSON DemoteMasterMySQLReplicaConfiguration
 -- /See:/ 'sslCert' smart constructor.
 data SSLCert =
   SSLCert'
-    { _scCommonName       :: !(Maybe Text)
-    , _scKind             :: !Text
+    { _scCommonName :: !(Maybe Text)
+    , _scKind :: !Text
     , _scCertSerialNumber :: !(Maybe Text)
-    , _scSelfLink         :: !(Maybe Text)
-    , _scCert             :: !(Maybe Text)
-    , _scSha1Fingerprint  :: !(Maybe Text)
-    , _scExpirationTime   :: !(Maybe DateTime')
-    , _scCreateTime       :: !(Maybe DateTime')
-    , _scInstance         :: !(Maybe Text)
+    , _scSelfLink :: !(Maybe Text)
+    , _scCert :: !(Maybe Text)
+    , _scSha1Fingerprint :: !(Maybe Text)
+    , _scExpirationTime :: !(Maybe DateTime')
+    , _scCreateTime :: !(Maybe DateTime')
+    , _scInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -267,7 +267,7 @@ instance ToJSON SSLCert where
 -- /See:/ 'databasesListResponse' smart constructor.
 data DatabasesListResponse =
   DatabasesListResponse'
-    { _dlrKind  :: !Text
+    { _dlrKind :: !Text
     , _dlrItems :: !(Maybe [Database])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -355,8 +355,8 @@ instance ToJSON InstancesExportRequest where
 -- /See:/ 'instancesListServerCasResponse' smart constructor.
 data InstancesListServerCasResponse =
   InstancesListServerCasResponse'
-    { _ilscrKind          :: !Text
-    , _ilscrCerts         :: !(Maybe [SSLCert])
+    { _ilscrKind :: !Text
+    , _ilscrCerts :: !(Maybe [SSLCert])
     , _ilscrActiveVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -473,7 +473,7 @@ instance ToJSON
 -- /See:/ 'onPremisesConfiguration' smart constructor.
 data OnPremisesConfiguration =
   OnPremisesConfiguration'
-    { _opcKind     :: !Text
+    { _opcKind :: !Text
     , _opcHostPort :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -523,8 +523,8 @@ instance ToJSON OnPremisesConfiguration where
 data OperationsListResponse =
   OperationsListResponse'
     { _olrNextPageToken :: !(Maybe Text)
-    , _olrKind          :: !Text
-    , _olrItems         :: !(Maybe [Operation])
+    , _olrKind :: !Text
+    , _olrItems :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -588,7 +588,7 @@ instance ToJSON OperationsListResponse where
 -- /See:/ 'apiWarning' smart constructor.
 data APIWarning =
   APIWarning'
-    { _awCode    :: !(Maybe Text)
+    { _awCode :: !(Maybe Text)
     , _awMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -633,7 +633,7 @@ instance ToJSON APIWarning where
 -- /See:/ 'diskEncryptionConfiguration' smart constructor.
 data DiskEncryptionConfiguration =
   DiskEncryptionConfiguration'
-    { _decKind       :: !Text
+    { _decKind :: !Text
     , _decKmsKeyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -683,12 +683,12 @@ instance ToJSON DiskEncryptionConfiguration where
 -- /See:/ 'importContext' smart constructor.
 data ImportContext =
   ImportContext'
-    { _icDatabase         :: !(Maybe Text)
-    , _icKind             :: !Text
+    { _icDatabase :: !(Maybe Text)
+    , _icKind :: !Text
     , _icCSVImportOptions :: !(Maybe ImportContextCSVImportOptions)
-    , _icURI              :: !(Maybe Text)
-    , _icFileType         :: !(Maybe Text)
-    , _icImportUser       :: !(Maybe Text)
+    , _icURI :: !(Maybe Text)
+    , _icFileType :: !(Maybe Text)
+    , _icImportUser :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -788,21 +788,21 @@ instance ToJSON ImportContext where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oTargetId      :: !(Maybe Text)
+    { _oTargetId :: !(Maybe Text)
     , _oTargetProject :: !(Maybe Text)
-    , _oStatus        :: !(Maybe Text)
-    , _oInsertTime    :: !(Maybe DateTime')
+    , _oStatus :: !(Maybe Text)
+    , _oInsertTime :: !(Maybe DateTime')
     , _oImportContext :: !(Maybe ImportContext)
-    , _oStartTime     :: !(Maybe DateTime')
-    , _oKind          :: !Text
-    , _oError         :: !(Maybe OperationErrors)
+    , _oStartTime :: !(Maybe DateTime')
+    , _oKind :: !Text
+    , _oError :: !(Maybe OperationErrors)
     , _oExportContext :: !(Maybe ExportContext)
-    , _oUser          :: !(Maybe Text)
-    , _oSelfLink      :: !(Maybe Text)
-    , _oName          :: !(Maybe Text)
-    , _oEndTime       :: !(Maybe DateTime')
+    , _oUser :: !(Maybe Text)
+    , _oSelfLink :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
+    , _oEndTime :: !(Maybe DateTime')
     , _oOperationType :: !(Maybe Text)
-    , _oTargetLink    :: !(Maybe Text)
+    , _oTargetLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -990,26 +990,26 @@ instance ToJSON Operation where
 -- /See:/ 'settings' smart constructor.
 data Settings =
   Settings'
-    { _sStorageAutoResize           :: !(Maybe Bool)
-    , _sReplicationType             :: !(Maybe Text)
-    , _sActivationPolicy            :: !(Maybe Text)
-    , _sSettingsVersion             :: !(Maybe (Textual Int64))
-    , _sDataDiskSizeGb              :: !(Maybe (Textual Int64))
-    , _sAuthorizedGaeApplications   :: !(Maybe [Text])
-    , _sKind                        :: !Text
-    , _sPricingPlan                 :: !(Maybe Text)
-    , _sIPConfiguration             :: !(Maybe IPConfiguration)
-    , _sMaintenanceWindow           :: !(Maybe MaintenanceWindow)
-    , _sDatabaseReplicationEnabled  :: !(Maybe Bool)
-    , _sUserLabels                  :: !(Maybe SettingsUserLabels)
-    , _sTier                        :: !(Maybe Text)
-    , _sDatabaseFlags               :: !(Maybe [DatabaseFlags])
-    , _sDataDiskType                :: !(Maybe Text)
+    { _sStorageAutoResize :: !(Maybe Bool)
+    , _sReplicationType :: !(Maybe Text)
+    , _sActivationPolicy :: !(Maybe Text)
+    , _sSettingsVersion :: !(Maybe (Textual Int64))
+    , _sDataDiskSizeGb :: !(Maybe (Textual Int64))
+    , _sAuthorizedGaeApplications :: !(Maybe [Text])
+    , _sKind :: !Text
+    , _sPricingPlan :: !(Maybe Text)
+    , _sIPConfiguration :: !(Maybe IPConfiguration)
+    , _sMaintenanceWindow :: !(Maybe MaintenanceWindow)
+    , _sDatabaseReplicationEnabled :: !(Maybe Bool)
+    , _sUserLabels :: !(Maybe SettingsUserLabels)
+    , _sTier :: !(Maybe Text)
+    , _sDatabaseFlags :: !(Maybe [DatabaseFlags])
+    , _sDataDiskType :: !(Maybe Text)
     , _sCrashSafeReplicationEnabled :: !(Maybe Bool)
-    , _sLocationPreference          :: !(Maybe LocationPreference)
-    , _sBackupConfiguration         :: !(Maybe BackupConfiguration)
-    , _sAvailabilityType            :: !(Maybe Text)
-    , _sStorageAutoResizeLimit      :: !(Maybe (Textual Int64))
+    , _sLocationPreference :: !(Maybe LocationPreference)
+    , _sBackupConfiguration :: !(Maybe BackupConfiguration)
+    , _sAvailabilityType :: !(Maybe Text)
+    , _sStorageAutoResizeLimit :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1347,9 +1347,9 @@ instance ToJSON InstancesRotateServerCaRequest where
 -- /See:/ 'ipMApping' smart constructor.
 data IPMApping =
   IPMApping'
-    { _imaIPAddress    :: !(Maybe Text)
+    { _imaIPAddress :: !(Maybe Text)
     , _imaTimeToRetire :: !(Maybe DateTime')
-    , _imaType         :: !(Maybe Text)
+    , _imaType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1411,14 +1411,14 @@ instance ToJSON IPMApping where
 -- /See:/ 'database' smart constructor.
 data Database =
   Database'
-    { _dEtag      :: !(Maybe Text)
-    , _dProject   :: !(Maybe Text)
-    , _dKind      :: !Text
+    { _dEtag :: !(Maybe Text)
+    , _dProject :: !(Maybe Text)
+    , _dKind :: !Text
     , _dCollation :: !(Maybe Text)
-    , _dSelfLink  :: !(Maybe Text)
-    , _dName      :: !(Maybe Text)
-    , _dCharSet   :: !(Maybe Text)
-    , _dInstance  :: !(Maybe Text)
+    , _dSelfLink :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
+    , _dCharSet :: !(Maybe Text)
+    , _dInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1567,7 +1567,7 @@ instance ToJSON SSLCertsCreateEphemeralRequest where
 data BinLogCoordinates =
   BinLogCoordinates'
     { _blcBinLogPosition :: !(Maybe (Textual Int64))
-    , _blcKind           :: !Text
+    , _blcKind :: !Text
     , _blcBinLogFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1632,7 +1632,7 @@ instance ToJSON BinLogCoordinates where
 -- /See:/ 'databaseInstanceFailoverReplica' smart constructor.
 data DatabaseInstanceFailoverReplica =
   DatabaseInstanceFailoverReplica'
-    { _difrName      :: !(Maybe Text)
+    { _difrName :: !(Maybe Text)
     , _difrAvailable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1687,7 +1687,7 @@ instance ToJSON DatabaseInstanceFailoverReplica where
 -- /See:/ 'tiersListResponse' smart constructor.
 data TiersListResponse =
   TiersListResponse'
-    { _tlrKind  :: !Text
+    { _tlrKind :: !Text
     , _tlrItems :: !(Maybe [Tier])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1738,8 +1738,8 @@ instance ToJSON TiersListResponse where
 data UsersListResponse =
   UsersListResponse'
     { _ulrNextPageToken :: !(Maybe Text)
-    , _ulrKind          :: !Text
-    , _ulrItems         :: !(Maybe [User])
+    , _ulrKind :: !Text
+    , _ulrItems :: !(Maybe [User])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1805,11 +1805,11 @@ instance ToJSON UsersListResponse where
 data ExportContext =
   ExportContext'
     { _ecCSVExportOptions :: !(Maybe ExportContextCSVExportOptions)
-    , _ecKind             :: !Text
-    , _ecURI              :: !(Maybe Text)
-    , _ecFileType         :: !(Maybe Text)
+    , _ecKind :: !Text
+    , _ecURI :: !(Maybe Text)
+    , _ecFileType :: !(Maybe Text)
     , _ecSQLExportOptions :: !(Maybe ExportContextSQLExportOptions)
-    , _ecDatabases        :: !(Maybe [Text])
+    , _ecDatabases :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1913,7 +1913,7 @@ instance ToJSON ExportContext where
 -- /See:/ 'operationErrors' smart constructor.
 data OperationErrors =
   OperationErrors'
-    { _oeKind   :: !Text
+    { _oeKind :: !Text
     , _oeErrors :: !(Maybe [OperationError])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1963,7 +1963,7 @@ instance ToJSON OperationErrors where
 -- /See:/ 'sslCertsListResponse' smart constructor.
 data SSLCertsListResponse =
   SSLCertsListResponse'
-    { _sclrKind  :: !Text
+    { _sclrKind :: !Text
     , _sclrItems :: !(Maybe [SSLCert])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2014,7 +2014,7 @@ instance ToJSON SSLCertsListResponse where
 data DiskEncryptionStatus =
   DiskEncryptionStatus'
     { _desKmsKeyVersionName :: !(Maybe Text)
-    , _desKind              :: !Text
+    , _desKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2102,9 +2102,9 @@ instance ToJSON SSLCertsInsertRequest where
 data IPConfiguration =
   IPConfiguration'
     { _icAuthorizedNetworks :: !(Maybe [ACLEntry])
-    , _icPrivateNetwork     :: !(Maybe Text)
-    , _icRequireSSL         :: !(Maybe Bool)
-    , _icIPv4Enabled        :: !(Maybe Bool)
+    , _icPrivateNetwork :: !(Maybe Text)
+    , _icRequireSSL :: !(Maybe Bool)
+    , _icIPv4Enabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2186,9 +2186,9 @@ instance ToJSON IPConfiguration where
 -- /See:/ 'maintenanceWindow' smart constructor.
 data MaintenanceWindow =
   MaintenanceWindow'
-    { _mwKind        :: !Text
-    , _mwDay         :: !(Maybe (Textual Int32))
-    , _mwHour        :: !(Maybe (Textual Int32))
+    { _mwKind :: !Text
+    , _mwDay :: !(Maybe (Textual Int32))
+    , _mwHour :: !(Maybe (Textual Int32))
     , _mwUpdateTrack :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2263,7 +2263,7 @@ instance ToJSON MaintenanceWindow where
 data ImportContextCSVImportOptions =
   ImportContextCSVImportOptions'
     { _iccioColumns :: !(Maybe [Text])
-    , _iccioTable   :: !(Maybe Text)
+    , _iccioTable :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2315,7 +2315,7 @@ instance ToJSON ImportContextCSVImportOptions where
 data RotateServerCaContext =
   RotateServerCaContext'
     { _rsccNextVersion :: !(Maybe Text)
-    , _rsccKind        :: !Text
+    , _rsccKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2406,12 +2406,12 @@ instance ToJSON ExportContextCSVExportOptions where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uEtag     :: !(Maybe Text)
-    , _uProject  :: !(Maybe Text)
-    , _uKind     :: !Text
-    , _uName     :: !(Maybe Text)
+    { _uEtag :: !(Maybe Text)
+    , _uProject :: !(Maybe Text)
+    , _uKind :: !Text
+    , _uName :: !(Maybe Text)
     , _uPassword :: !(Maybe Text)
-    , _uHost     :: !(Maybe Text)
+    , _uHost :: !(Maybe Text)
     , _uInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2514,34 +2514,34 @@ instance ToJSON User where
 -- /See:/ 'databaseInstance' smart constructor.
 data DatabaseInstance =
   DatabaseInstance'
-    { _datBackendType                 :: !(Maybe Text)
-    , _datMaxDiskSize                 :: !(Maybe (Textual Int64))
-    , _datOnPremisesConfiguration     :: !(Maybe OnPremisesConfiguration)
-    , _datGceZone                     :: !(Maybe Text)
-    , _datEtag                        :: !(Maybe Text)
-    , _datState                       :: !(Maybe Text)
-    , _datIPv6Address                 :: !(Maybe Text)
-    , _datServerCaCert                :: !(Maybe SSLCert)
-    , _datDatabaseVersion             :: !(Maybe Text)
+    { _datBackendType :: !(Maybe Text)
+    , _datMaxDiskSize :: !(Maybe (Textual Int64))
+    , _datOnPremisesConfiguration :: !(Maybe OnPremisesConfiguration)
+    , _datGceZone :: !(Maybe Text)
+    , _datEtag :: !(Maybe Text)
+    , _datState :: !(Maybe Text)
+    , _datIPv6Address :: !(Maybe Text)
+    , _datServerCaCert :: !(Maybe SSLCert)
+    , _datDatabaseVersion :: !(Maybe Text)
     , _datDiskEncryptionConfiguration :: !(Maybe DiskEncryptionConfiguration)
-    , _datProject                     :: !(Maybe Text)
-    , _datSettings                    :: !(Maybe Settings)
-    , _datKind                        :: !Text
-    , _datDiskEncryptionStatus        :: !(Maybe DiskEncryptionStatus)
-    , _datConnectionName              :: !(Maybe Text)
-    , _datCurrentDiskSize             :: !(Maybe (Textual Int64))
-    , _datInstanceType                :: !(Maybe Text)
-    , _datRootPassword                :: !(Maybe Text)
-    , _datReplicaNames                :: !(Maybe [Text])
-    , _datSelfLink                    :: !(Maybe Text)
-    , _datFailoverReplica             :: !(Maybe DatabaseInstanceFailoverReplica)
-    , _datName                        :: !(Maybe Text)
-    , _datMasterInstanceName          :: !(Maybe Text)
-    , _datReplicaConfiguration        :: !(Maybe ReplicaConfiguration)
-    , _datRegion                      :: !(Maybe Text)
-    , _datServiceAccountEmailAddress  :: !(Maybe Text)
-    , _datIPAddresses                 :: !(Maybe [IPMApping])
-    , _datSuspensionReason            :: !(Maybe [Text])
+    , _datProject :: !(Maybe Text)
+    , _datSettings :: !(Maybe Settings)
+    , _datKind :: !Text
+    , _datDiskEncryptionStatus :: !(Maybe DiskEncryptionStatus)
+    , _datConnectionName :: !(Maybe Text)
+    , _datCurrentDiskSize :: !(Maybe (Textual Int64))
+    , _datInstanceType :: !(Maybe Text)
+    , _datRootPassword :: !(Maybe Text)
+    , _datReplicaNames :: !(Maybe [Text])
+    , _datSelfLink :: !(Maybe Text)
+    , _datFailoverReplica :: !(Maybe DatabaseInstanceFailoverReplica)
+    , _datName :: !(Maybe Text)
+    , _datMasterInstanceName :: !(Maybe Text)
+    , _datReplicaConfiguration :: !(Maybe ReplicaConfiguration)
+    , _datRegion :: !(Maybe Text)
+    , _datServiceAccountEmailAddress :: !(Maybe Text)
+    , _datIPAddresses :: !(Maybe [IPMApping])
+    , _datSuspensionReason :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2913,10 +2913,10 @@ instance ToJSON DatabaseInstance where
 -- /See:/ 'cloneContext' smart constructor.
 data CloneContext =
   CloneContext'
-    { _ccPitrTimestampMs         :: !(Maybe (Textual Int64))
+    { _ccPitrTimestampMs :: !(Maybe (Textual Int64))
     , _ccDestinationInstanceName :: !(Maybe Text)
-    , _ccBinLogCoordinates       :: !(Maybe BinLogCoordinates)
-    , _ccKind                    :: !Text
+    , _ccBinLogCoordinates :: !(Maybe BinLogCoordinates)
+    , _ccKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2993,15 +2993,15 @@ instance ToJSON CloneContext where
 -- /See:/ 'flag' smart constructor.
 data Flag =
   Flag'
-    { _fMaxValue            :: !(Maybe (Textual Int64))
-    , _fInBeta              :: !(Maybe Bool)
-    , _fKind                :: !Text
-    , _fAppliesTo           :: !(Maybe [Text])
-    , _fName                :: !(Maybe Text)
+    { _fMaxValue :: !(Maybe (Textual Int64))
+    , _fInBeta :: !(Maybe Bool)
+    , _fKind :: !Text
+    , _fAppliesTo :: !(Maybe [Text])
+    , _fName :: !(Maybe Text)
     , _fAllowedStringValues :: !(Maybe [Text])
-    , _fType                :: !(Maybe Text)
-    , _fMinValue            :: !(Maybe (Textual Int64))
-    , _fRequiresRestart     :: !(Maybe Bool)
+    , _fType :: !(Maybe Text)
+    , _fMinValue :: !(Maybe (Textual Int64))
+    , _fRequiresRestart :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3170,18 +3170,18 @@ instance ToJSON InstancesFailoverRequest where
 -- /See:/ 'backupRun' smart constructor.
 data BackupRun =
   BackupRun'
-    { _brStatus          :: !(Maybe Text)
-    , _brStartTime       :: !(Maybe DateTime')
-    , _brKind            :: !Text
-    , _brError           :: !(Maybe OperationError)
+    { _brStatus :: !(Maybe Text)
+    , _brStartTime :: !(Maybe DateTime')
+    , _brKind :: !Text
+    , _brError :: !(Maybe OperationError)
     , _brWindowStartTime :: !(Maybe DateTime')
-    , _brSelfLink        :: !(Maybe Text)
-    , _brEndTime         :: !(Maybe DateTime')
-    , _brId              :: !(Maybe (Textual Int64))
-    , _brType            :: !(Maybe Text)
-    , _brEnQueuedTime    :: !(Maybe DateTime')
-    , _brDescription     :: !(Maybe Text)
-    , _brInstance        :: !(Maybe Text)
+    , _brSelfLink :: !(Maybe Text)
+    , _brEndTime :: !(Maybe DateTime')
+    , _brId :: !(Maybe (Textual Int64))
+    , _brType :: !(Maybe Text)
+    , _brEnQueuedTime :: !(Maybe DateTime')
+    , _brDescription :: !(Maybe Text)
+    , _brInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3339,9 +3339,9 @@ instance ToJSON BackupRun where
 -- /See:/ 'aclEntry' smart constructor.
 data ACLEntry =
   ACLEntry'
-    { _aeKind           :: !Text
-    , _aeValue          :: !(Maybe Text)
-    , _aeName           :: !(Maybe Text)
+    { _aeKind :: !Text
+    , _aeValue :: !(Maybe Text)
+    , _aeName :: !(Maybe Text)
     , _aeExpirationTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3412,7 +3412,7 @@ instance ToJSON ACLEntry where
 data DatabaseFlags =
   DatabaseFlags'
     { _dfValue :: !(Maybe Text)
-    , _dfName  :: !(Maybe Text)
+    , _dfName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3459,11 +3459,11 @@ instance ToJSON DatabaseFlags where
 -- /See:/ 'tier' smart constructor.
 data Tier =
   Tier'
-    { _tKind      :: !Text
-    , _tTier      :: !(Maybe Text)
-    , _tRegion    :: !(Maybe [Text])
+    { _tKind :: !Text
+    , _tTier :: !(Maybe Text)
+    , _tRegion :: !(Maybe [Text])
     , _tDiskQuota :: !(Maybe (Textual Int64))
-    , _tRAM       :: !(Maybe (Textual Int64))
+    , _tRAM :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3545,16 +3545,16 @@ instance ToJSON Tier where
 data MySQLReplicaConfiguration =
   MySQLReplicaConfiguration'
     { _msqlrcVerifyServerCertificate :: !(Maybe Bool)
-    , _msqlrcKind                    :: !Text
-    , _msqlrcClientKey               :: !(Maybe Text)
-    , _msqlrcUsername                :: !(Maybe Text)
-    , _msqlrcSSLCipher               :: !(Maybe Text)
-    , _msqlrcMasterHeartbeatPeriod   :: !(Maybe (Textual Int64))
-    , _msqlrcConnectRetryInterval    :: !(Maybe (Textual Int32))
-    , _msqlrcClientCertificate       :: !(Maybe Text)
-    , _msqlrcCaCertificate           :: !(Maybe Text)
-    , _msqlrcDumpFilePath            :: !(Maybe Text)
-    , _msqlrcPassword                :: !(Maybe Text)
+    , _msqlrcKind :: !Text
+    , _msqlrcClientKey :: !(Maybe Text)
+    , _msqlrcUsername :: !(Maybe Text)
+    , _msqlrcSSLCipher :: !(Maybe Text)
+    , _msqlrcMasterHeartbeatPeriod :: !(Maybe (Textual Int64))
+    , _msqlrcConnectRetryInterval :: !(Maybe (Textual Int32))
+    , _msqlrcClientCertificate :: !(Maybe Text)
+    , _msqlrcCaCertificate :: !(Maybe Text)
+    , _msqlrcDumpFilePath :: !(Maybe Text)
+    , _msqlrcPassword :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3718,7 +3718,7 @@ instance ToJSON MySQLReplicaConfiguration where
 -- /See:/ 'sslCertDetail' smart constructor.
 data SSLCertDetail =
   SSLCertDetail'
-    { _scdCertInfo       :: !(Maybe SSLCert)
+    { _scdCertInfo :: !(Maybe SSLCert)
     , _scdCertPrivateKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3851,8 +3851,8 @@ instance ToJSON InstancesDemoteMasterRequest where
 data BackupRunsListResponse =
   BackupRunsListResponse'
     { _brlrNextPageToken :: !(Maybe Text)
-    , _brlrKind          :: !Text
-    , _brlrItems         :: !(Maybe [BackupRun])
+    , _brlrKind :: !Text
+    , _brlrItems :: !(Maybe [BackupRun])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3917,8 +3917,8 @@ instance ToJSON BackupRunsListResponse where
 -- /See:/ 'operationError' smart constructor.
 data OperationError =
   OperationError'
-    { _opeKind    :: !Text
-    , _opeCode    :: !(Maybe Text)
+    { _opeKind :: !Text
+    , _opeCode :: !(Maybe Text)
     , _opeMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3974,7 +3974,7 @@ instance ToJSON OperationError where
 -- /See:/ 'truncateLogContext' smart constructor.
 data TruncateLogContext =
   TruncateLogContext'
-    { _tlcKind    :: !Text
+    { _tlcKind :: !Text
     , _tlcLogType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4062,8 +4062,8 @@ instance ToJSON InstancesCloneRequest where
 -- /See:/ 'replicaConfiguration' smart constructor.
 data ReplicaConfiguration =
   ReplicaConfiguration'
-    { _rcFailoverTarget            :: !(Maybe Bool)
-    , _rcKind                      :: !Text
+    { _rcFailoverTarget :: !(Maybe Bool)
+    , _rcKind :: !Text
     , _rcMysqlReplicaConfiguration :: !(Maybe MySQLReplicaConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4137,7 +4137,7 @@ instance ToJSON ReplicaConfiguration where
 data FailoverContext =
   FailoverContext'
     { _fcSettingsVersion :: !(Maybe (Textual Int64))
-    , _fcKind            :: !Text
+    , _fcKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4189,9 +4189,9 @@ instance ToJSON FailoverContext where
 data SSLCertsInsertResponse =
   SSLCertsInsertResponse'
     { _scirServerCaCert :: !(Maybe SSLCert)
-    , _scirOperation    :: !(Maybe Operation)
-    , _scirKind         :: !Text
-    , _scirClientCert   :: !(Maybe SSLCertDetail)
+    , _scirOperation :: !(Maybe Operation)
+    , _scirKind :: !Text
+    , _scirClientCert :: !(Maybe SSLCertDetail)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4268,9 +4268,9 @@ instance ToJSON SSLCertsInsertResponse where
 data InstancesListResponse =
   InstancesListResponse'
     { _ilrNextPageToken :: !(Maybe Text)
-    , _ilrKind          :: !Text
-    , _ilrItems         :: !(Maybe [DatabaseInstance])
-    , _ilrWarnings      :: !(Maybe [APIWarning])
+    , _ilrKind :: !Text
+    , _ilrItems :: !(Maybe [DatabaseInstance])
+    , _ilrWarnings :: !(Maybe [APIWarning])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4346,7 +4346,7 @@ instance ToJSON InstancesListResponse where
 -- /See:/ 'demoteMasterConfiguration' smart constructor.
 data DemoteMasterConfiguration =
   DemoteMasterConfiguration'
-    { _dmcKind                      :: !Text
+    { _dmcKind :: !Text
     , _dmcMysqlReplicaConfiguration :: !(Maybe DemoteMasterMySQLReplicaConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4405,10 +4405,10 @@ instance ToJSON DemoteMasterConfiguration where
 data BackupConfiguration =
   BackupConfiguration'
     { _bcReplicationLogArchivingEnabled :: !(Maybe Bool)
-    , _bcEnabled                        :: !(Maybe Bool)
-    , _bcStartTime                      :: !(Maybe Text)
-    , _bcKind                           :: !Text
-    , _bcBinaryLogEnabled               :: !(Maybe Bool)
+    , _bcEnabled :: !(Maybe Bool)
+    , _bcStartTime :: !(Maybe Text)
+    , _bcKind :: !Text
+    , _bcBinaryLogEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4535,9 +4535,9 @@ instance ToJSON InstancesImportRequest where
 -- /See:/ 'locationPreference' smart constructor.
 data LocationPreference =
   LocationPreference'
-    { _lpKind                 :: !Text
+    { _lpKind :: !Text
     , _lpFollowGaeApplication :: !(Maybe Text)
-    , _lpZone                 :: !(Maybe Text)
+    , _lpZone :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4600,7 +4600,7 @@ instance ToJSON LocationPreference where
 -- /See:/ 'flagsListResponse' smart constructor.
 data FlagsListResponse =
   FlagsListResponse'
-    { _flrKind  :: !Text
+    { _flrKind :: !Text
     , _flrItems :: !(Maybe [Flag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4691,9 +4691,9 @@ instance ToJSON InstancesTruncateLogRequest where
 -- /See:/ 'exportContextSQLExportOptions' smart constructor.
 data ExportContextSQLExportOptions =
   ExportContextSQLExportOptions'
-    { _ecsqleoSchemaOnly         :: !(Maybe Bool)
+    { _ecsqleoSchemaOnly :: !(Maybe Bool)
     , _ecsqleoMysqlExportOptions :: !(Maybe ExportContextSQLExportOptionsMysqlExportOptions)
-    , _ecsqleoTables             :: !(Maybe [Text])
+    , _ecsqleoTables :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4761,9 +4761,9 @@ instance ToJSON ExportContextSQLExportOptions where
 -- /See:/ 'restoreBackupContext' smart constructor.
 data RestoreBackupContext =
   RestoreBackupContext'
-    { _rbcInstanceId  :: !(Maybe Text)
+    { _rbcInstanceId :: !(Maybe Text)
     , _rbcBackupRunId :: !(Maybe (Textual Int64))
-    , _rbcKind        :: !Text
+    , _rbcKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4826,9 +4826,9 @@ instance ToJSON RestoreBackupContext where
 data DemoteMasterContext =
   DemoteMasterContext'
     { _demVerifyGtidConsistency :: !(Maybe Bool)
-    , _demKind                  :: !Text
-    , _demMasterInstanceName    :: !(Maybe Text)
-    , _demReplicaConfiguration  :: !(Maybe DemoteMasterConfiguration)
+    , _demKind :: !Text
+    , _demMasterInstanceName :: !(Maybe Text)
+    , _demReplicaConfiguration :: !(Maybe DemoteMasterConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

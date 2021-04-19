@@ -17,8 +17,8 @@
 --
 module Network.Google.Composer.Types.Product where
 
-import           Network.Google.Composer.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Composer.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -215,7 +215,7 @@ instance ToJSON ListImageVersionsResponse where
 data ListEnvironmentsResponse =
   ListEnvironmentsResponse'
     { _lerNextPageToken :: !(Maybe Text)
-    , _lerEnvironments  :: !(Maybe [Environment])
+    , _lerEnvironments :: !(Maybe [Environment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -268,12 +268,12 @@ instance ToJSON ListEnvironmentsResponse where
 -- /See:/ 'environmentConfig' smart constructor.
 data EnvironmentConfig =
   EnvironmentConfig'
-    { _ecNodeConfig     :: !(Maybe NodeConfig)
-    , _ecNodeCount      :: !(Maybe (Textual Int32))
+    { _ecNodeConfig :: !(Maybe NodeConfig)
+    , _ecNodeCount :: !(Maybe (Textual Int32))
     , _ecSoftwareConfig :: !(Maybe SoftwareConfig)
-    , _ecDagGcsPrefix   :: !(Maybe Text)
-    , _ecGkeCluster     :: !(Maybe Text)
-    , _ecAirflowURI     :: !(Maybe Text)
+    , _ecDagGcsPrefix :: !(Maybe Text)
+    , _ecGkeCluster :: !(Maybe Text)
+    , _ecAirflowURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -374,7 +374,7 @@ instance ToJSON EnvironmentConfig where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -428,14 +428,14 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'nodeConfig' smart constructor.
 data NodeConfig =
   NodeConfig'
-    { _ncDiskSizeGb     :: !(Maybe (Textual Int32))
-    , _ncLocation       :: !(Maybe Text)
-    , _ncNetwork        :: !(Maybe Text)
-    , _ncOAuthScopes    :: !(Maybe [Text])
+    { _ncDiskSizeGb :: !(Maybe (Textual Int32))
+    , _ncLocation :: !(Maybe Text)
+    , _ncNetwork :: !(Maybe Text)
+    , _ncOAuthScopes :: !(Maybe [Text])
     , _ncServiceAccount :: !(Maybe Text)
-    , _ncSubnetwork     :: !(Maybe Text)
-    , _ncMachineType    :: !(Maybe Text)
-    , _ncTags           :: !(Maybe [Text])
+    , _ncSubnetwork :: !(Maybe Text)
+    , _ncMachineType :: !(Maybe Text)
+    , _ncTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -604,10 +604,10 @@ instance ToJSON NodeConfig where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -769,9 +769,9 @@ instance ToJSON SoftwareConfigEnvVariables where
 -- /See:/ 'imageVersion' smart constructor.
 data ImageVersion =
   ImageVersion'
-    { _ivImageVersionId          :: !(Maybe Text)
+    { _ivImageVersionId :: !(Maybe Text)
     , _ivSupportedPythonVersions :: !(Maybe [Text])
-    , _ivIsDefault               :: !(Maybe Bool)
+    , _ivIsDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -839,12 +839,12 @@ instance ToJSON ImageVersion where
 -- /See:/ 'environment' smart constructor.
 data Environment =
   Environment'
-    { _eState      :: !(Maybe EnvironmentState)
-    , _eConfig     :: !(Maybe EnvironmentConfig)
-    , _eUuid       :: !(Maybe Text)
+    { _eState :: !(Maybe EnvironmentState)
+    , _eConfig :: !(Maybe EnvironmentConfig)
+    , _eUuid :: !(Maybe Text)
     , _eUpdateTime :: !(Maybe DateTime')
-    , _eName       :: !(Maybe Text)
-    , _eLabels     :: !(Maybe EnvironmentLabels)
+    , _eName :: !(Maybe Text)
+    , _eLabels :: !(Maybe EnvironmentLabels)
     , _eCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1080,11 +1080,11 @@ instance ToJSON SoftwareConfigPypiPackages where
 -- /See:/ 'softwareConfig' smart constructor.
 data SoftwareConfig =
   SoftwareConfig'
-    { _scImageVersion           :: !(Maybe Text)
-    , _scPythonVersion          :: !(Maybe Text)
-    , _scPypiPackages           :: !(Maybe SoftwareConfigPypiPackages)
+    { _scImageVersion :: !(Maybe Text)
+    , _scPythonVersion :: !(Maybe Text)
+    , _scPypiPackages :: !(Maybe SoftwareConfigPypiPackages)
     , _scAirflowConfigOverrides :: !(Maybe SoftwareConfigAirflowConfigOverrides)
-    , _scEnvVariables           :: !(Maybe SoftwareConfigEnvVariables)
+    , _scEnvVariables :: !(Maybe SoftwareConfigEnvVariables)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1254,12 +1254,12 @@ instance ToJSON EnvironmentLabels where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omState         :: !(Maybe OperationMetadataState)
-    , _omResourceUuid  :: !(Maybe Text)
-    , _omResource      :: !(Maybe Text)
-    , _omEndTime       :: !(Maybe DateTime')
+    { _omState :: !(Maybe OperationMetadataState)
+    , _omResourceUuid :: !(Maybe Text)
+    , _omResource :: !(Maybe Text)
+    , _omEndTime :: !(Maybe DateTime')
     , _omOperationType :: !(Maybe OperationMetadataOperationType)
-    , _omCreateTime    :: !(Maybe DateTime')
+    , _omCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

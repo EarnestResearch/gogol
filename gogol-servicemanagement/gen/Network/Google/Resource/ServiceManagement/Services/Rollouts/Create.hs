@@ -51,8 +51,8 @@ module Network.Google.Resource.ServiceManagement.Services.Rollouts.Create
     , srcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.rollouts.create@ method which the
 -- 'ServicesRolloutsCreate' request conforms to.
@@ -83,13 +83,13 @@ type ServicesRolloutsCreateResource =
 -- /See:/ 'servicesRolloutsCreate' smart constructor.
 data ServicesRolloutsCreate =
   ServicesRolloutsCreate'
-    { _srcXgafv          :: !(Maybe Xgafv)
+    { _srcXgafv :: !(Maybe Xgafv)
     , _srcUploadProtocol :: !(Maybe Text)
-    , _srcAccessToken    :: !(Maybe Text)
-    , _srcUploadType     :: !(Maybe Text)
-    , _srcPayload        :: !Rollout
-    , _srcServiceName    :: !Text
-    , _srcCallback       :: !(Maybe Text)
+    , _srcAccessToken :: !(Maybe Text)
+    , _srcUploadType :: !(Maybe Text)
+    , _srcPayload :: !Rollout
+    , _srcServiceName :: !Text
+    , _srcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.Delete
     , rcdCalendarResourceId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.delete@ method which the
 -- 'ResourcesCalendarsDelete' request conforms to.
@@ -58,7 +58,7 @@ type ResourcesCalendarsDeleteResource =
 -- /See:/ 'resourcesCalendarsDelete' smart constructor.
 data ResourcesCalendarsDelete =
   ResourcesCalendarsDelete'
-    { _rcdCustomer           :: !Text
+    { _rcdCustomer :: !Text
     , _rcdCalendarResourceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

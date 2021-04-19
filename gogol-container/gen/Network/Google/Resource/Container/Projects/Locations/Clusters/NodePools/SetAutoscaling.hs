@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.NodePools.S
     , plcnpsaCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.nodePools.setAutoscaling@ method which the
 -- 'ProjectsLocationsClustersNodePoolsSetAutoscaling' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersNodePoolsSetAutoscalingResource
 -- /See:/ 'projectsLocationsClustersNodePoolsSetAutoscaling' smart constructor.
 data ProjectsLocationsClustersNodePoolsSetAutoscaling =
   ProjectsLocationsClustersNodePoolsSetAutoscaling'
-    { _plcnpsaXgafv          :: !(Maybe Xgafv)
+    { _plcnpsaXgafv :: !(Maybe Xgafv)
     , _plcnpsaUploadProtocol :: !(Maybe Text)
-    , _plcnpsaAccessToken    :: !(Maybe Text)
-    , _plcnpsaUploadType     :: !(Maybe Text)
-    , _plcnpsaPayload        :: !SetNodePoolAutoscalingRequest
-    , _plcnpsaName           :: !Text
-    , _plcnpsaCallback       :: !(Maybe Text)
+    , _plcnpsaAccessToken :: !(Maybe Text)
+    , _plcnpsaUploadType :: !(Maybe Text)
+    , _plcnpsaPayload :: !SetNodePoolAutoscalingRequest
+    , _plcnpsaName :: !Text
+    , _plcnpsaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

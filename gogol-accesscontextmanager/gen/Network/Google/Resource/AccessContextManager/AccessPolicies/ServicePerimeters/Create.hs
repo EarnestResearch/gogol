@@ -45,8 +45,8 @@ module Network.Google.Resource.AccessContextManager.AccessPolicies.ServicePerime
     , apspcCallback
     ) where
 
-import           Network.Google.AccessContextManager.Types
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accesscontextmanager.accessPolicies.servicePerimeters.create@ method which the
 -- 'AccessPoliciesServicePerimetersCreate' request conforms to.
@@ -71,13 +71,13 @@ type AccessPoliciesServicePerimetersCreateResource =
 -- /See:/ 'accessPoliciesServicePerimetersCreate' smart constructor.
 data AccessPoliciesServicePerimetersCreate =
   AccessPoliciesServicePerimetersCreate'
-    { _apspcParent         :: !Text
-    , _apspcXgafv          :: !(Maybe Xgafv)
+    { _apspcParent :: !Text
+    , _apspcXgafv :: !(Maybe Xgafv)
     , _apspcUploadProtocol :: !(Maybe Text)
-    , _apspcAccessToken    :: !(Maybe Text)
-    , _apspcUploadType     :: !(Maybe Text)
-    , _apspcPayload        :: !ServicePerimeter
-    , _apspcCallback       :: !(Maybe Text)
+    , _apspcAccessToken :: !(Maybe Text)
+    , _apspcUploadType :: !(Maybe Text)
+    , _apspcPayload :: !ServicePerimeter
+    , _apspcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

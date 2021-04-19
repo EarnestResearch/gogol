@@ -41,8 +41,8 @@ module Network.Google.Resource.Gmail.Users.Settings.UpdateLanguage
     , usulUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.updateLanguage@ method which the
 -- 'UsersSettingsUpdateLanguage' request conforms to.
@@ -67,7 +67,7 @@ type UsersSettingsUpdateLanguageResource =
 data UsersSettingsUpdateLanguage =
   UsersSettingsUpdateLanguage'
     { _usulPayload :: !LanguageSettings
-    , _usulUserId  :: !Text
+    , _usulUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

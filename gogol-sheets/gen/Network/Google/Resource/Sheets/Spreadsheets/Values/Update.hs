@@ -48,8 +48,8 @@ module Network.Google.Resource.Sheets.Spreadsheets.Values.Update
     , svuResponseValueRenderOption
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types
+import Network.Google.Prelude
+import Network.Google.Sheets.Types
 
 -- | A resource alias for @sheets.spreadsheets.values.update@ method which the
 -- 'SpreadsheetsValuesUpdate' request conforms to.
@@ -78,18 +78,18 @@ type SpreadsheetsValuesUpdateResource =
 -- /See:/ 'spreadsheetsValuesUpdate' smart constructor.
 data SpreadsheetsValuesUpdate =
   SpreadsheetsValuesUpdate'
-    { _svuXgafv                        :: !(Maybe Xgafv)
-    , _svuUploadProtocol               :: !(Maybe Text)
-    , _svuAccessToken                  :: !(Maybe Text)
-    , _svuSpreadsheetId                :: !Text
-    , _svuUploadType                   :: !(Maybe Text)
-    , _svuValueInputOption             :: !(Maybe Text)
-    , _svuPayload                      :: !ValueRange
-    , _svuRange                        :: !Text
-    , _svuIncludeValuesInResponse      :: !(Maybe Bool)
+    { _svuXgafv :: !(Maybe Xgafv)
+    , _svuUploadProtocol :: !(Maybe Text)
+    , _svuAccessToken :: !(Maybe Text)
+    , _svuSpreadsheetId :: !Text
+    , _svuUploadType :: !(Maybe Text)
+    , _svuValueInputOption :: !(Maybe Text)
+    , _svuPayload :: !ValueRange
+    , _svuRange :: !Text
+    , _svuIncludeValuesInResponse :: !(Maybe Bool)
     , _svuResponseDateTimeRenderOption :: !(Maybe Text)
-    , _svuCallback                     :: !(Maybe Text)
-    , _svuResponseValueRenderOption    :: !(Maybe Text)
+    , _svuCallback :: !(Maybe Text)
+    , _svuResponseValueRenderOption :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

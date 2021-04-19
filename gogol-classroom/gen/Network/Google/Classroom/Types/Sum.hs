@@ -16,7 +16,7 @@
 --
 module Network.Google.Classroom.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The type of grade change at this time in the submission grade history.
 data GradeHistoryGradeChangeType

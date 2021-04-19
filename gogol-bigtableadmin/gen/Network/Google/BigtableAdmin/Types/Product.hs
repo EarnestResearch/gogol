@@ -17,8 +17,8 @@
 --
 module Network.Google.BigtableAdmin.Types.Product where
 
-import           Network.Google.BigtableAdmin.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types.Sum
+import Network.Google.Prelude
 
 -- | Unconditionally routes all read\/write requests to a specific cluster.
 -- This option preserves read-your-writes consistency, but does not improve
@@ -28,7 +28,7 @@ import           Network.Google.Prelude
 data SingleClusterRouting =
   SingleClusterRouting'
     { _scrAllowTransactionalWrites :: !(Maybe Bool)
-    , _scrClusterId                :: !(Maybe Text)
+    , _scrClusterId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -159,7 +159,7 @@ instance ToJSON InstanceLabels where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -220,10 +220,10 @@ instance ToJSON Status where
 -- /See:/ 'createInstanceRequest' smart constructor.
 data CreateInstanceRequest =
   CreateInstanceRequest'
-    { _cirParent     :: !(Maybe Text)
+    { _cirParent :: !(Maybe Text)
     , _cirInstanceId :: !(Maybe Text)
-    , _cirClusters   :: !(Maybe CreateInstanceRequestClusters)
-    , _cirInstance   :: !(Maybe Instance)
+    , _cirClusters :: !(Maybe CreateInstanceRequestClusters)
+    , _cirInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -317,7 +317,7 @@ instance ToJSON CreateInstanceRequest where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -443,9 +443,9 @@ instance ToJSON ModifyColumnFamiliesRequest where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -522,7 +522,7 @@ instance ToJSON Expr where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -575,8 +575,8 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'createClusterRequest' smart constructor.
 data CreateClusterRequest =
   CreateClusterRequest'
-    { _ccrParent    :: !(Maybe Text)
-    , _ccrCluster   :: !(Maybe Cluster)
+    { _ccrParent :: !(Maybe Text)
+    , _ccrCluster :: !(Maybe Cluster)
     , _ccrClusterId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -662,11 +662,11 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'cluster' smart constructor.
 data Cluster =
   Cluster'
-    { _cState              :: !(Maybe ClusterType)
+    { _cState :: !(Maybe ClusterType)
     , _cDefaultStorageType :: !(Maybe ClusterDefaultStorageType)
-    , _cLocation           :: !(Maybe Text)
-    , _cServeNodes         :: !(Maybe (Textual Int32))
-    , _cName               :: !(Maybe Text)
+    , _cLocation :: !(Maybe Text)
+    , _cServeNodes :: !(Maybe (Textual Int32))
+    , _cName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -850,10 +850,10 @@ instance ToJSON ClusterState where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -969,9 +969,9 @@ instance ToJSON Empty where
 -- /See:/ 'listAppProFilesResponse' smart constructor.
 data ListAppProFilesResponse =
   ListAppProFilesResponse'
-    { _lapfrNextPageToken   :: !(Maybe Text)
+    { _lapfrNextPageToken :: !(Maybe Text)
     , _lapfrFailedLocations :: !(Maybe [Text])
-    , _lapfrAppProFiles     :: !(Maybe [AppProFile])
+    , _lapfrAppProFiles :: !(Maybe [AppProFile])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1121,8 +1121,8 @@ instance ToJSON TableColumnFamilies where
 data CreateTableRequest =
   CreateTableRequest'
     { _ctrInitialSplits :: !(Maybe [Split])
-    , _ctrTableId       :: !(Maybe Text)
-    , _ctrTable         :: !(Maybe Table)
+    , _ctrTableId :: !(Maybe Text)
+    , _ctrTable :: !(Maybe Table)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1193,10 +1193,10 @@ instance ToJSON CreateTableRequest where
 -- /See:/ 'createClusterMetadata' smart constructor.
 data CreateClusterMetadata =
   CreateClusterMetadata'
-    { _ccmRequestTime     :: !(Maybe DateTime')
-    , _ccmTables          :: !(Maybe CreateClusterMetadataTables)
+    { _ccmRequestTime :: !(Maybe DateTime')
+    , _ccmTables :: !(Maybe CreateClusterMetadataTables)
     , _ccmOriginalRequest :: !(Maybe CreateClusterRequest)
-    , _ccmFinishTime      :: !(Maybe DateTime')
+    , _ccmFinishTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1277,8 +1277,8 @@ instance ToJSON CreateClusterMetadata where
 -- /See:/ 'tableProgress' smart constructor.
 data TableProgress =
   TableProgress'
-    { _tpState                :: !(Maybe TableProgressState)
-    , _tpEstimatedSizeBytes   :: !(Maybe (Textual Int64))
+    { _tpState :: !(Maybe TableProgressState)
+    , _tpEstimatedSizeBytes :: !(Maybe (Textual Int64))
     , _tpEstimatedCopiedBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1479,9 +1479,9 @@ instance ToJSON UpdateAppProFileMetadata where
 -- /See:/ 'updateClusterMetadata' smart constructor.
 data UpdateClusterMetadata =
   UpdateClusterMetadata'
-    { _ucmRequestTime     :: !(Maybe DateTime')
+    { _ucmRequestTime :: !(Maybe DateTime')
     , _ucmOriginalRequest :: !(Maybe Cluster)
-    , _ucmFinishTime      :: !(Maybe DateTime')
+    , _ucmFinishTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1548,7 +1548,7 @@ instance ToJSON UpdateClusterMetadata where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1645,7 +1645,7 @@ instance ToJSON CheckConsistencyRequest where
 data ListTablesResponse =
   ListTablesResponse'
     { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTables        :: !(Maybe [Table])
+    , _ltrTables :: !(Maybe [Table])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1699,7 +1699,7 @@ instance ToJSON ListTablesResponse where
 data PartialUpdateInstanceRequest =
   PartialUpdateInstanceRequest'
     { _puirUpdateMask :: !(Maybe GFieldMask)
-    , _puirInstance   :: !(Maybe Instance)
+    , _puirInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1749,9 +1749,9 @@ instance ToJSON PartialUpdateInstanceRequest where
 -- /See:/ 'gcRule' smart constructor.
 data GcRule =
   GcRule'
-    { _grMaxAge         :: !(Maybe GDuration)
-    , _grUnion          :: !(Maybe Union)
-    , _grIntersection   :: !(Maybe Intersection)
+    { _grMaxAge :: !(Maybe GDuration)
+    , _grUnion :: !(Maybe Union)
+    , _grIntersection :: !(Maybe Intersection)
     , _grMaxNumVersions :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1871,11 +1871,11 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'appProFile' smart constructor.
 data AppProFile =
   AppProFile'
-    { _apfSingleClusterRouting      :: !(Maybe SingleClusterRouting)
-    , _apfEtag                      :: !(Maybe Text)
+    { _apfSingleClusterRouting :: !(Maybe SingleClusterRouting)
+    , _apfEtag :: !(Maybe Text)
     , _apfMultiClusterRoutingUseAny :: !(Maybe MultiClusterRoutingUseAny)
-    , _apfName                      :: !(Maybe Text)
-    , _apfDescription               :: !(Maybe Text)
+    , _apfName :: !(Maybe Text)
+    , _apfDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2052,7 +2052,7 @@ instance ToJSON GenerateConsistencyTokenResponse
 -- /See:/ 'dropRowRangeRequest' smart constructor.
 data DropRowRangeRequest =
   DropRowRangeRequest'
-    { _drrrRowKeyPrefix           :: !(Maybe Bytes)
+    { _drrrRowKeyPrefix :: !(Maybe Bytes)
     , _drrrDeleteAllDataFromTable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2107,9 +2107,9 @@ instance ToJSON DropRowRangeRequest where
 -- /See:/ 'updateInstanceMetadata' smart constructor.
 data UpdateInstanceMetadata =
   UpdateInstanceMetadata'
-    { _uimRequestTime     :: !(Maybe DateTime')
+    { _uimRequestTime :: !(Maybe DateTime')
     , _uimOriginalRequest :: !(Maybe PartialUpdateInstanceRequest)
-    , _uimFinishTime      :: !(Maybe DateTime')
+    , _uimFinishTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2289,9 +2289,9 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'listClustersResponse' smart constructor.
 data ListClustersResponse =
   ListClustersResponse'
-    { _lcrNextPageToken   :: !(Maybe Text)
+    { _lcrNextPageToken :: !(Maybe Text)
     , _lcrFailedLocations :: !(Maybe [Text])
-    , _lcrClusters        :: !(Maybe [Cluster])
+    , _lcrClusters :: !(Maybe [Cluster])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2378,9 +2378,9 @@ instance ToJSON ListClustersResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2465,9 +2465,9 @@ instance ToJSON Policy where
 -- /See:/ 'createInstanceMetadata' smart constructor.
 data CreateInstanceMetadata =
   CreateInstanceMetadata'
-    { _cimRequestTime     :: !(Maybe DateTime')
+    { _cimRequestTime :: !(Maybe DateTime')
     , _cimOriginalRequest :: !(Maybe CreateInstanceRequest)
-    , _cimFinishTime      :: !(Maybe DateTime')
+    , _cimFinishTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2576,7 +2576,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2629,9 +2629,9 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'listInstancesResponse' smart constructor.
 data ListInstancesResponse =
   ListInstancesResponse'
-    { _lirNextPageToken   :: !(Maybe Text)
+    { _lirNextPageToken :: !(Maybe Text)
     , _lirFailedLocations :: !(Maybe [Text])
-    , _lirInstances       :: !(Maybe [Instance])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2743,9 +2743,9 @@ instance ToJSON CheckConsistencyResponse where
 -- /See:/ 'modification' smart constructor.
 data Modification =
   Modification'
-    { _mDrop   :: !(Maybe Bool)
+    { _mDrop :: !(Maybe Bool)
     , _mCreate :: !(Maybe ColumnFamily)
-    , _mId     :: !(Maybe Text)
+    , _mId :: !(Maybe Text)
     , _mUpdate :: !(Maybe ColumnFamily)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2809,9 +2809,9 @@ instance ToJSON Modification where
 -- /See:/ 'table' smart constructor.
 data Table =
   Table'
-    { _tGranularity    :: !(Maybe TableGranularity)
-    , _tName           :: !(Maybe Text)
-    , _tClusterStates  :: !(Maybe TableClusterStates)
+    { _tGranularity :: !(Maybe TableGranularity)
+    , _tName :: !(Maybe Text)
+    , _tClusterStates :: !(Maybe TableClusterStates)
     , _tColumnFamilies :: !(Maybe TableColumnFamilies)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2936,8 +2936,8 @@ instance ToJSON OperationResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3012,11 +3012,11 @@ instance ToJSON Binding where
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iState       :: !(Maybe InstanceState)
-    , _iName        :: !(Maybe Text)
+    { _iState :: !(Maybe InstanceState)
+    , _iName :: !(Maybe Text)
     , _iDisplayName :: !(Maybe Text)
-    , _iLabels      :: !(Maybe InstanceLabels)
-    , _iType        :: !(Maybe InstanceType)
+    , _iLabels :: !(Maybe InstanceLabels)
+    , _iType :: !(Maybe InstanceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

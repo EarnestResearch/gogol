@@ -17,8 +17,8 @@
 --
 module Network.Google.MachineLearning.Types.Product where
 
-import           Network.Google.MachineLearning.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types.Sum
+import Network.Google.Prelude
 
 -- | Specifies the audit configuration for a service. The configuration
 -- determines which permission types are logged, and what identities, if
@@ -41,7 +41,7 @@ import           Network.Google.Prelude
 -- /See:/ 'googleIAMV1__AuditConfig' smart constructor.
 data GoogleIAMV1__AuditConfig =
   GoogleIAMV1__AuditConfig'
-    { _givacService         :: !(Maybe Text)
+    { _givacService :: !(Maybe Text)
     , _givacAuditLogConfigs :: !(Maybe [GoogleIAMV1__AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -101,24 +101,24 @@ instance ToJSON GoogleIAMV1__AuditConfig where
 -- /See:/ 'googleCloudMlV1__Version' smart constructor.
 data GoogleCloudMlV1__Version =
   GoogleCloudMlV1__Version'
-    { _gcmvvFramework       :: !(Maybe GoogleCloudMlV1__VersionFramework)
-    , _gcmvvEtag            :: !(Maybe Bytes)
-    , _gcmvvState           :: !(Maybe GoogleCloudMlV1__VersionState)
-    , _gcmvvAutoScaling     :: !(Maybe GoogleCloudMlV1__AutoScaling)
-    , _gcmvvPythonVersion   :: !(Maybe Text)
-    , _gcmvvRuntimeVersion  :: !(Maybe Text)
-    , _gcmvvLastUseTime     :: !(Maybe DateTime')
-    , _gcmvvName            :: !(Maybe Text)
-    , _gcmvvPackageURIs     :: !(Maybe [Text])
-    , _gcmvvDeploymentURI   :: !(Maybe Text)
-    , _gcmvvManualScaling   :: !(Maybe GoogleCloudMlV1__ManualScaling)
-    , _gcmvvMachineType     :: !(Maybe Text)
-    , _gcmvvLabels          :: !(Maybe GoogleCloudMlV1__VersionLabels)
+    { _gcmvvFramework :: !(Maybe GoogleCloudMlV1__VersionFramework)
+    , _gcmvvEtag :: !(Maybe Bytes)
+    , _gcmvvState :: !(Maybe GoogleCloudMlV1__VersionState)
+    , _gcmvvAutoScaling :: !(Maybe GoogleCloudMlV1__AutoScaling)
+    , _gcmvvPythonVersion :: !(Maybe Text)
+    , _gcmvvRuntimeVersion :: !(Maybe Text)
+    , _gcmvvLastUseTime :: !(Maybe DateTime')
+    , _gcmvvName :: !(Maybe Text)
+    , _gcmvvPackageURIs :: !(Maybe [Text])
+    , _gcmvvDeploymentURI :: !(Maybe Text)
+    , _gcmvvManualScaling :: !(Maybe GoogleCloudMlV1__ManualScaling)
+    , _gcmvvMachineType :: !(Maybe Text)
+    , _gcmvvLabels :: !(Maybe GoogleCloudMlV1__VersionLabels)
     , _gcmvvPredictionClass :: !(Maybe Text)
-    , _gcmvvErrorMessage    :: !(Maybe Text)
-    , _gcmvvDescription     :: !(Maybe Text)
-    , _gcmvvCreateTime      :: !(Maybe DateTime')
-    , _gcmvvIsDefault       :: !(Maybe Bool)
+    , _gcmvvErrorMessage :: !(Maybe Text)
+    , _gcmvvDescription :: !(Maybe Text)
+    , _gcmvvCreateTime :: !(Maybe DateTime')
+    , _gcmvvIsDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -417,10 +417,10 @@ instance ToJSON GoogleCloudMlV1__Version where
 -- /See:/ 'googleCloudMlV1__PredictionOutput' smart constructor.
 data GoogleCloudMlV1__PredictionOutput =
   GoogleCloudMlV1__PredictionOutput'
-    { _gcmvpoNodeHours       :: !(Maybe (Textual Double))
-    , _gcmvpoErrorCount      :: !(Maybe (Textual Int64))
+    { _gcmvpoNodeHours :: !(Maybe (Textual Double))
+    , _gcmvpoErrorCount :: !(Maybe (Textual Int64))
     , _gcmvpoPredictionCount :: !(Maybe (Textual Int64))
-    , _gcmvpoOutputPath      :: !(Maybe Text)
+    , _gcmvpoOutputPath :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -500,10 +500,10 @@ instance ToJSON GoogleCloudMlV1__PredictionOutput
 -- /See:/ 'googleCloudMlV1__BuiltInAlgorithmOutput' smart constructor.
 data GoogleCloudMlV1__BuiltInAlgorithmOutput =
   GoogleCloudMlV1__BuiltInAlgorithmOutput'
-    { _gcmvbiaoFramework      :: !(Maybe Text)
-    , _gcmvbiaoPythonVersion  :: !(Maybe Text)
+    { _gcmvbiaoFramework :: !(Maybe Text)
+    , _gcmvbiaoPythonVersion :: !(Maybe Text)
     , _gcmvbiaoRuntimeVersion :: !(Maybe Text)
-    , _gcmvbiaoModelPath      :: !(Maybe Text)
+    , _gcmvbiaoModelPath :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -722,7 +722,7 @@ instance ToJSON GoogleLongrunning__OperationResponse
 -- /See:/ 'googleIAMV1__AuditLogConfig' smart constructor.
 data GoogleIAMV1__AuditLogConfig =
   GoogleIAMV1__AuditLogConfig'
-    { _givalcLogType         :: !(Maybe GoogleIAMV1__AuditLogConfigLogType)
+    { _givalcLogType :: !(Maybe GoogleIAMV1__AuditLogConfigLogType)
     , _givalcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -778,7 +778,7 @@ instance ToJSON GoogleIAMV1__AuditLogConfig where
 data GoogleCloudMlV1__ListModelsResponse =
   GoogleCloudMlV1__ListModelsResponse'
     { _gcmvlmrNextPageToken :: !(Maybe Text)
-    , _gcmvlmrModels        :: !(Maybe [GoogleCloudMlV1__Model])
+    , _gcmvlmrModels :: !(Maybe [GoogleCloudMlV1__Model])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -835,7 +835,7 @@ instance ToJSON GoogleCloudMlV1__ListModelsResponse
 data GoogleLongrunning__ListOperationsResponse =
   GoogleLongrunning__ListOperationsResponse'
     { _gllorNextPageToken :: !(Maybe Text)
-    , _gllorOperations    :: !(Maybe [GoogleLongrunning__Operation])
+    , _gllorOperations :: !(Maybe [GoogleLongrunning__Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -894,7 +894,7 @@ instance ToJSON
 data GoogleCloudMlV1__AcceleratorConfig =
   GoogleCloudMlV1__AcceleratorConfig'
     { _gcmvacCount :: !(Maybe (Textual Int64))
-    , _gcmvacType  :: !(Maybe GoogleCloudMlV1__AcceleratorConfigType)
+    , _gcmvacType :: !(Maybe GoogleCloudMlV1__AcceleratorConfigType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -962,9 +962,9 @@ instance ToJSON GoogleCloudMlV1__AcceleratorConfig
 data GoogleIAMV1__Policy =
   GoogleIAMV1__Policy'
     { _givpAuditConfigs :: !(Maybe [GoogleIAMV1__AuditConfig])
-    , _givpEtag         :: !(Maybe Bytes)
-    , _givpVersion      :: !(Maybe (Textual Int32))
-    , _givpBindings     :: !(Maybe [GoogleIAMV1__Binding])
+    , _givpEtag :: !(Maybe Bytes)
+    , _givpVersion :: !(Maybe (Textual Int32))
+    , _givpBindings :: !(Maybe [GoogleIAMV1__Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1098,7 +1098,7 @@ instance ToJSON
 data GoogleCloudMlV1__ListJobsResponse =
   GoogleCloudMlV1__ListJobsResponse'
     { _gcmvljrNextPageToken :: !(Maybe Text)
-    , _gcmvljrJobs          :: !(Maybe [GoogleCloudMlV1__Job])
+    , _gcmvljrJobs :: !(Maybe [GoogleCloudMlV1__Job])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1154,7 +1154,7 @@ instance ToJSON GoogleCloudMlV1__ListJobsResponse
 data GoogleCloudMlV1__ListVersionsResponse =
   GoogleCloudMlV1__ListVersionsResponse'
     { _gcmvlvrNextPageToken :: !(Maybe Text)
-    , _gcmvlvrVersions      :: !(Maybe [GoogleCloudMlV1__Version])
+    , _gcmvlvrVersions :: !(Maybe [GoogleCloudMlV1__Version])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1213,9 +1213,9 @@ instance ToJSON GoogleCloudMlV1__ListVersionsResponse
 -- /See:/ 'googleType__Expr' smart constructor.
 data GoogleType__Expr =
   GoogleType__Expr'
-    { _gteLocation    :: !(Maybe Text)
-    , _gteExpression  :: !(Maybe Text)
-    , _gteTitle       :: !(Maybe Text)
+    { _gteLocation :: !(Maybe Text)
+    , _gteExpression :: !(Maybe Text)
+    , _gteTitle :: !(Maybe Text)
     , _gteDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1296,11 +1296,11 @@ instance ToJSON GoogleType__Expr where
 -- /See:/ 'googleCloudMlV1__HyperparameterOutput' smart constructor.
 data GoogleCloudMlV1__HyperparameterOutput =
   GoogleCloudMlV1__HyperparameterOutput'
-    { _gcmvhoIsTrialStoppedEarly    :: !(Maybe Bool)
-    , _gcmvhoAllMetrics             :: !(Maybe [GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric])
-    , _gcmvhoHyperparameters        :: !(Maybe GoogleCloudMlV1__HyperparameterOutputHyperparameters)
-    , _gcmvhoTrialId                :: !(Maybe Text)
-    , _gcmvhoFinalMetric            :: !(Maybe GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric)
+    { _gcmvhoIsTrialStoppedEarly :: !(Maybe Bool)
+    , _gcmvhoAllMetrics :: !(Maybe [GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric])
+    , _gcmvhoHyperparameters :: !(Maybe GoogleCloudMlV1__HyperparameterOutputHyperparameters)
+    , _gcmvhoTrialId :: !(Maybe Text)
+    , _gcmvhoFinalMetric :: !(Maybe GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric)
     , _gcmvhoBuiltInAlgorithmOutput :: !(Maybe GoogleCloudMlV1__BuiltInAlgorithmOutput)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1407,8 +1407,8 @@ instance ToJSON GoogleCloudMlV1__HyperparameterOutput
 -- /See:/ 'googleCloudMlV1__GetConfigResponse' smart constructor.
 data GoogleCloudMlV1__GetConfigResponse =
   GoogleCloudMlV1__GetConfigResponse'
-    { _gcmvgcrConfig                :: !(Maybe GoogleCloudMlV1__Config)
-    , _gcmvgcrServiceAccount        :: !(Maybe Text)
+    { _gcmvgcrConfig :: !(Maybe GoogleCloudMlV1__Config)
+    , _gcmvgcrServiceAccount :: !(Maybe Text)
     , _gcmvgcrServiceAccountProject :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1517,10 +1517,10 @@ instance ToJSON GoogleCloudMlV1__ManualScaling where
 -- /See:/ 'googleLongrunning__Operation' smart constructor.
 data GoogleLongrunning__Operation =
   GoogleLongrunning__Operation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe GoogleRpc__Status)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe GoogleRpc__Status)
     , _gloResponse :: !(Maybe GoogleLongrunning__OperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunning__OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1614,14 +1614,14 @@ instance ToJSON GoogleLongrunning__Operation where
 -- /See:/ 'googleCloudMlV1__Model' smart constructor.
 data GoogleCloudMlV1__Model =
   GoogleCloudMlV1__Model'
-    { _gcmvmEtag                           :: !(Maybe Bytes)
-    , _gcmvmRegions                        :: !(Maybe [Text])
-    , _gcmvmDefaultVersion                 :: !(Maybe GoogleCloudMlV1__Version)
-    , _gcmvmName                           :: !(Maybe Text)
-    , _gcmvmLabels                         :: !(Maybe GoogleCloudMlV1__ModelLabels)
+    { _gcmvmEtag :: !(Maybe Bytes)
+    , _gcmvmRegions :: !(Maybe [Text])
+    , _gcmvmDefaultVersion :: !(Maybe GoogleCloudMlV1__Version)
+    , _gcmvmName :: !(Maybe Text)
+    , _gcmvmLabels :: !(Maybe GoogleCloudMlV1__ModelLabels)
     , _gcmvmOnlinePredictionConsoleLogging :: !(Maybe Bool)
-    , _gcmvmDescription                    :: !(Maybe Text)
-    , _gcmvmOnlinePredictionLogging        :: !(Maybe Bool)
+    , _gcmvmDescription :: !(Maybe Text)
+    , _gcmvmOnlinePredictionLogging :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1773,18 +1773,18 @@ instance ToJSON GoogleCloudMlV1__Model where
 -- /See:/ 'googleCloudMlV1__Job' smart constructor.
 data GoogleCloudMlV1__Job =
   GoogleCloudMlV1__Job'
-    { _gcmvjEtag             :: !(Maybe Bytes)
-    , _gcmvjState            :: !(Maybe GoogleCloudMlV1__JobState)
-    , _gcmvjTrainingOutput   :: !(Maybe GoogleCloudMlV1__TrainingOutput)
-    , _gcmvjJobId            :: !(Maybe Text)
-    , _gcmvjStartTime        :: !(Maybe DateTime')
-    , _gcmvjPredictionInput  :: !(Maybe GoogleCloudMlV1__PredictionInput)
-    , _gcmvjEndTime          :: !(Maybe DateTime')
+    { _gcmvjEtag :: !(Maybe Bytes)
+    , _gcmvjState :: !(Maybe GoogleCloudMlV1__JobState)
+    , _gcmvjTrainingOutput :: !(Maybe GoogleCloudMlV1__TrainingOutput)
+    , _gcmvjJobId :: !(Maybe Text)
+    , _gcmvjStartTime :: !(Maybe DateTime')
+    , _gcmvjPredictionInput :: !(Maybe GoogleCloudMlV1__PredictionInput)
+    , _gcmvjEndTime :: !(Maybe DateTime')
     , _gcmvjPredictionOutput :: !(Maybe GoogleCloudMlV1__PredictionOutput)
-    , _gcmvjLabels           :: !(Maybe GoogleCloudMlV1__JobLabels)
-    , _gcmvjErrorMessage     :: !(Maybe Text)
-    , _gcmvjTrainingInput    :: !(Maybe GoogleCloudMlV1__TrainingInput)
-    , _gcmvjCreateTime       :: !(Maybe DateTime')
+    , _gcmvjLabels :: !(Maybe GoogleCloudMlV1__JobLabels)
+    , _gcmvjErrorMessage :: !(Maybe Text)
+    , _gcmvjTrainingInput :: !(Maybe GoogleCloudMlV1__TrainingInput)
+    , _gcmvjCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2103,7 +2103,7 @@ instance ToJSON GoogleCloudMlV1__JobLabels where
 data GoogleRpc__Status =
   GoogleRpc__Status'
     { _grsDetails :: !(Maybe [GoogleRpc__StatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2167,7 +2167,7 @@ instance ToJSON GoogleRpc__Status where
 -- /See:/ 'googleCloudMlV1__ReplicaConfig' smart constructor.
 data GoogleCloudMlV1__ReplicaConfig =
   GoogleCloudMlV1__ReplicaConfig'
-    { _gcmvrcImageURI          :: !(Maybe Text)
+    { _gcmvrcImageURI :: !(Maybe Text)
     , _gcmvrcAcceleratorConfig :: !(Maybe GoogleCloudMlV1__AcceleratorConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2264,15 +2264,15 @@ instance ToJSON GoogleCloudMlV1__Config where
 -- /See:/ 'googleCloudMlV1__HyperparameterSpec' smart constructor.
 data GoogleCloudMlV1__HyperparameterSpec =
   GoogleCloudMlV1__HyperparameterSpec'
-    { _gcmvhsResumePreviousJobId      :: !(Maybe Text)
-    , _gcmvhsParams                   :: !(Maybe [GoogleCloudMlV1__ParameterSpec])
-    , _gcmvhsAlgorithm                :: !(Maybe GoogleCloudMlV1__HyperparameterSpecAlgorithm)
-    , _gcmvhsGoal                     :: !(Maybe GoogleCloudMlV1__HyperparameterSpecGoal)
-    , _gcmvhsMaxTrials                :: !(Maybe (Textual Int32))
+    { _gcmvhsResumePreviousJobId :: !(Maybe Text)
+    , _gcmvhsParams :: !(Maybe [GoogleCloudMlV1__ParameterSpec])
+    , _gcmvhsAlgorithm :: !(Maybe GoogleCloudMlV1__HyperparameterSpecAlgorithm)
+    , _gcmvhsGoal :: !(Maybe GoogleCloudMlV1__HyperparameterSpecGoal)
+    , _gcmvhsMaxTrials :: !(Maybe (Textual Int32))
     , _gcmvhsEnableTrialEarlyStopping :: !(Maybe Bool)
-    , _gcmvhsMaxParallelTrials        :: !(Maybe (Textual Int32))
-    , _gcmvhsMaxFailedTrials          :: !(Maybe (Textual Int32))
-    , _gcmvhsHyperparameterMetricTag  :: !(Maybe Text)
+    , _gcmvhsMaxParallelTrials :: !(Maybe (Textual Int32))
+    , _gcmvhsMaxFailedTrials :: !(Maybe (Textual Int32))
+    , _gcmvhsHyperparameterMetricTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2545,13 +2545,13 @@ instance ToJSON GoogleLongrunning__OperationMetadata
 -- /See:/ 'googleCloudMlV1__ParameterSpec' smart constructor.
 data GoogleCloudMlV1__ParameterSpec =
   GoogleCloudMlV1__ParameterSpec'
-    { _gcmvpsMaxValue          :: !(Maybe (Textual Double))
-    , _gcmvpsScaleType         :: !(Maybe GoogleCloudMlV1__ParameterSpecScaleType)
-    , _gcmvpsType              :: !(Maybe GoogleCloudMlV1__ParameterSpecType)
-    , _gcmvpsDiscreteValues    :: !(Maybe [Textual Double])
-    , _gcmvpsParameterName     :: !(Maybe Text)
+    { _gcmvpsMaxValue :: !(Maybe (Textual Double))
+    , _gcmvpsScaleType :: !(Maybe GoogleCloudMlV1__ParameterSpecScaleType)
+    , _gcmvpsType :: !(Maybe GoogleCloudMlV1__ParameterSpecType)
+    , _gcmvpsDiscreteValues :: !(Maybe [Textual Double])
+    , _gcmvpsParameterName :: !(Maybe Text)
     , _gcmvpsCategoricalValues :: !(Maybe [Text])
-    , _gcmvpsMinValue          :: !(Maybe (Textual Double))
+    , _gcmvpsMinValue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2676,8 +2676,8 @@ instance ToJSON GoogleCloudMlV1__ParameterSpec where
 -- /See:/ 'googleIAMV1__Binding' smart constructor.
 data GoogleIAMV1__Binding =
   GoogleIAMV1__Binding'
-    { _givbMembers   :: !(Maybe [Text])
-    , _givbRole      :: !(Maybe Text)
+    { _givbMembers :: !(Maybe [Text])
+    , _givbRole :: !(Maybe Text)
     , _givbCondition :: !(Maybe GoogleType__Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2753,7 +2753,7 @@ instance ToJSON GoogleIAMV1__Binding where
 -- /See:/ 'googleCloudMlV1_HyperparameterOutput_HyperparameterMetric' smart constructor.
 data GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric =
   GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric'
-    { _gcmvhohmTrainingStep   :: !(Maybe (Textual Int64))
+    { _gcmvhohmTrainingStep :: !(Maybe (Textual Int64))
     , _gcmvhohmObjectiveValue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2814,7 +2814,7 @@ instance ToJSON
 data GoogleIAMV1__SetIAMPolicyRequest =
   GoogleIAMV1__SetIAMPolicyRequest'
     { _givsiprUpdateMask :: !(Maybe GFieldMask)
-    , _givsiprPolicy     :: !(Maybe GoogleIAMV1__Policy)
+    , _givsiprPolicy :: !(Maybe GoogleIAMV1__Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2872,18 +2872,18 @@ instance ToJSON GoogleIAMV1__SetIAMPolicyRequest
 -- /See:/ 'googleCloudMlV1__PredictionInput' smart constructor.
 data GoogleCloudMlV1__PredictionInput =
   GoogleCloudMlV1__PredictionInput'
-    { _gcmvpiVersionName      :: !(Maybe Text)
-    , _gcmvpiModelName        :: !(Maybe Text)
-    , _gcmvpiDataFormat       :: !(Maybe GoogleCloudMlV1__PredictionInputDataFormat)
-    , _gcmvpiURI              :: !(Maybe Text)
-    , _gcmvpiRuntimeVersion   :: !(Maybe Text)
-    , _gcmvpiBatchSize        :: !(Maybe (Textual Int64))
-    , _gcmvpiMaxWorkerCount   :: !(Maybe (Textual Int64))
+    { _gcmvpiVersionName :: !(Maybe Text)
+    , _gcmvpiModelName :: !(Maybe Text)
+    , _gcmvpiDataFormat :: !(Maybe GoogleCloudMlV1__PredictionInputDataFormat)
+    , _gcmvpiURI :: !(Maybe Text)
+    , _gcmvpiRuntimeVersion :: !(Maybe Text)
+    , _gcmvpiBatchSize :: !(Maybe (Textual Int64))
+    , _gcmvpiMaxWorkerCount :: !(Maybe (Textual Int64))
     , _gcmvpiOutputDataFormat :: !(Maybe GoogleCloudMlV1__PredictionInputOutputDataFormat)
-    , _gcmvpiOutputPath       :: !(Maybe Text)
-    , _gcmvpiRegion           :: !(Maybe Text)
-    , _gcmvpiInputPaths       :: !(Maybe [Text])
-    , _gcmvpiSignatureName    :: !(Maybe Text)
+    , _gcmvpiOutputPath :: !(Maybe Text)
+    , _gcmvpiRegion :: !(Maybe Text)
+    , _gcmvpiInputPaths :: !(Maybe [Text])
+    , _gcmvpiSignatureName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3076,22 +3076,22 @@ instance ToJSON GoogleCloudMlV1__PredictionInput
 -- /See:/ 'googleCloudMlV1__TrainingInput' smart constructor.
 data GoogleCloudMlV1__TrainingInput =
   GoogleCloudMlV1__TrainingInput'
-    { _gcmvtiMasterType            :: !(Maybe Text)
-    , _gcmvtiWorkerConfig          :: !(Maybe GoogleCloudMlV1__ReplicaConfig)
-    , _gcmvtiParameterServerCount  :: !(Maybe (Textual Int64))
-    , _gcmvtiArgs                  :: !(Maybe [Text])
-    , _gcmvtiWorkerCount           :: !(Maybe (Textual Int64))
-    , _gcmvtiJobDir                :: !(Maybe Text)
-    , _gcmvtiPythonVersion         :: !(Maybe Text)
-    , _gcmvtiRuntimeVersion        :: !(Maybe Text)
-    , _gcmvtiWorkerType            :: !(Maybe Text)
-    , _gcmvtiMasterConfig          :: !(Maybe GoogleCloudMlV1__ReplicaConfig)
-    , _gcmvtiPythonModule          :: !(Maybe Text)
-    , _gcmvtiParameterServerType   :: !(Maybe Text)
-    , _gcmvtiHyperparameters       :: !(Maybe GoogleCloudMlV1__HyperparameterSpec)
-    , _gcmvtiPackageURIs           :: !(Maybe [Text])
-    , _gcmvtiScaleTier             :: !(Maybe GoogleCloudMlV1__TrainingInputScaleTier)
-    , _gcmvtiRegion                :: !(Maybe Text)
+    { _gcmvtiMasterType :: !(Maybe Text)
+    , _gcmvtiWorkerConfig :: !(Maybe GoogleCloudMlV1__ReplicaConfig)
+    , _gcmvtiParameterServerCount :: !(Maybe (Textual Int64))
+    , _gcmvtiArgs :: !(Maybe [Text])
+    , _gcmvtiWorkerCount :: !(Maybe (Textual Int64))
+    , _gcmvtiJobDir :: !(Maybe Text)
+    , _gcmvtiPythonVersion :: !(Maybe Text)
+    , _gcmvtiRuntimeVersion :: !(Maybe Text)
+    , _gcmvtiWorkerType :: !(Maybe Text)
+    , _gcmvtiMasterConfig :: !(Maybe GoogleCloudMlV1__ReplicaConfig)
+    , _gcmvtiPythonModule :: !(Maybe Text)
+    , _gcmvtiParameterServerType :: !(Maybe Text)
+    , _gcmvtiHyperparameters :: !(Maybe GoogleCloudMlV1__HyperparameterSpec)
+    , _gcmvtiPackageURIs :: !(Maybe [Text])
+    , _gcmvtiScaleTier :: !(Maybe GoogleCloudMlV1__TrainingInputScaleTier)
+    , _gcmvtiRegion :: !(Maybe Text)
     , _gcmvtiParameterServerConfig :: !(Maybe GoogleCloudMlV1__ReplicaConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3508,7 +3508,7 @@ instance ToJSON GoogleProtobuf__Empty where
 -- /See:/ 'googleCloudMlV1__Location' smart constructor.
 data GoogleCloudMlV1__Location =
   GoogleCloudMlV1__Location'
-    { _gcmvlName         :: !(Maybe Text)
+    { _gcmvlName :: !(Maybe Text)
     , _gcmvlCapabilities :: !(Maybe [GoogleCloudMlV1__Capability])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3603,7 +3603,7 @@ instance ToJSON
 data GoogleCloudMlV1__Capability =
   GoogleCloudMlV1__Capability'
     { _gcmvcAvailableAccelerators :: !(Maybe [Text])
-    , _gcmvcType                  :: !(Maybe GoogleCloudMlV1__CapabilityType)
+    , _gcmvcType :: !(Maybe GoogleCloudMlV1__CapabilityType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3655,15 +3655,15 @@ instance ToJSON GoogleCloudMlV1__Capability where
 -- /See:/ 'googleCloudMlV1__OperationMetadata' smart constructor.
 data GoogleCloudMlV1__OperationMetadata =
   GoogleCloudMlV1__OperationMetadata'
-    { _gcmvomStartTime               :: !(Maybe DateTime')
-    , _gcmvomModelName               :: !(Maybe Text)
-    , _gcmvomProjectNumber           :: !(Maybe (Textual Int64))
-    , _gcmvomVersion                 :: !(Maybe GoogleCloudMlV1__Version)
-    , _gcmvomEndTime                 :: !(Maybe DateTime')
+    { _gcmvomStartTime :: !(Maybe DateTime')
+    , _gcmvomModelName :: !(Maybe Text)
+    , _gcmvomProjectNumber :: !(Maybe (Textual Int64))
+    , _gcmvomVersion :: !(Maybe GoogleCloudMlV1__Version)
+    , _gcmvomEndTime :: !(Maybe DateTime')
     , _gcmvomIsCancellationRequested :: !(Maybe Bool)
-    , _gcmvomLabels                  :: !(Maybe GoogleCloudMlV1__OperationMetadataLabels)
-    , _gcmvomOperationType           :: !(Maybe GoogleCloudMlV1__OperationMetadataOperationType)
-    , _gcmvomCreateTime              :: !(Maybe DateTime')
+    , _gcmvomLabels :: !(Maybe GoogleCloudMlV1__OperationMetadataLabels)
+    , _gcmvomOperationType :: !(Maybe GoogleCloudMlV1__OperationMetadataOperationType)
+    , _gcmvomCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3866,11 +3866,11 @@ instance ToJSON GoogleCloudMlV1__CancelJobRequest
 data GoogleCloudMlV1__TrainingOutput =
   GoogleCloudMlV1__TrainingOutput'
     { _gcmvtoIsHyperparameterTuningJob :: !(Maybe Bool)
-    , _gcmvtoIsBuiltInAlgorithmJob     :: !(Maybe Bool)
-    , _gcmvtoCompletedTrialCount       :: !(Maybe (Textual Int64))
-    , _gcmvtoConsumedMLUnits           :: !(Maybe (Textual Double))
-    , _gcmvtoBuiltInAlgorithmOutput    :: !(Maybe GoogleCloudMlV1__BuiltInAlgorithmOutput)
-    , _gcmvtoTrials                    :: !(Maybe [GoogleCloudMlV1__HyperparameterOutput])
+    , _gcmvtoIsBuiltInAlgorithmJob :: !(Maybe Bool)
+    , _gcmvtoCompletedTrialCount :: !(Maybe (Textual Int64))
+    , _gcmvtoConsumedMLUnits :: !(Maybe (Textual Double))
+    , _gcmvtoBuiltInAlgorithmOutput :: !(Maybe GoogleCloudMlV1__BuiltInAlgorithmOutput)
+    , _gcmvtoTrials :: !(Maybe [GoogleCloudMlV1__HyperparameterOutput])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3995,8 +3995,8 @@ instance ToJSON GoogleCloudMlV1__TrainingOutput where
 -- /See:/ 'googleAPI__HTTPBody' smart constructor.
 data GoogleAPI__HTTPBody =
   GoogleAPI__HTTPBody'
-    { _gahttpbExtensions  :: !(Maybe [GoogleAPI__HTTPBodyExtensionsItem])
-    , _gahttpbData        :: !(Maybe Bytes)
+    { _gahttpbExtensions :: !(Maybe [GoogleAPI__HTTPBodyExtensionsItem])
+    , _gahttpbData :: !(Maybe Bytes)
     , _gahttpbContentType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4113,7 +4113,7 @@ instance ToJSON
 data GoogleCloudMlV1__ListLocationsResponse =
   GoogleCloudMlV1__ListLocationsResponse'
     { _gcmvllrNextPageToken :: !(Maybe Text)
-    , _gcmvllrLocations     :: !(Maybe [GoogleCloudMlV1__Location])
+    , _gcmvllrLocations :: !(Maybe [GoogleCloudMlV1__Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

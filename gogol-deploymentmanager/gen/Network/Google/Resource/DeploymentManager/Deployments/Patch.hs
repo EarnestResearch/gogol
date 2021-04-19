@@ -42,8 +42,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.Patch
     , dpDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.patch@ method which the
 -- 'DeploymentsPatch' request conforms to.
@@ -72,11 +72,11 @@ type DeploymentsPatchResource =
 data DeploymentsPatch =
   DeploymentsPatch'
     { _dpCreatePolicy :: !DeploymentsPatchCreatePolicy
-    , _dpProject      :: !Text
-    , _dpPayload      :: !Deployment
+    , _dpProject :: !Text
+    , _dpPayload :: !Deployment
     , _dpDeletePolicy :: !DeploymentsPatchDeletePolicy
-    , _dpPreview      :: !Bool
-    , _dpDeployment   :: !Text
+    , _dpPreview :: !Bool
+    , _dpDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

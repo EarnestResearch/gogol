@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.List
     , psalCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.list@ method which the
 -- 'ProjectsServiceAccountsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsServiceAccountsListResource =
 -- /See:/ 'projectsServiceAccountsList' smart constructor.
 data ProjectsServiceAccountsList =
   ProjectsServiceAccountsList'
-    { _psalXgafv          :: !(Maybe Xgafv)
+    { _psalXgafv :: !(Maybe Xgafv)
     , _psalUploadProtocol :: !(Maybe Text)
-    , _psalAccessToken    :: !(Maybe Text)
-    , _psalUploadType     :: !(Maybe Text)
-    , _psalName           :: !Text
-    , _psalPageToken      :: !(Maybe Text)
-    , _psalPageSize       :: !(Maybe (Textual Int32))
-    , _psalCallback       :: !(Maybe Text)
+    , _psalAccessToken :: !(Maybe Text)
+    , _psalUploadType :: !(Maybe Text)
+    , _psalName :: !Text
+    , _psalPageToken :: !(Maybe Text)
+    , _psalPageSize :: !(Maybe (Textual Int32))
+    , _psalCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

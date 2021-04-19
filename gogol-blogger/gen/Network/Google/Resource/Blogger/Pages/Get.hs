@@ -38,8 +38,8 @@ module Network.Google.Resource.Blogger.Pages.Get
     , pgView
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pages.get@ method which the
 -- 'PagesGet' request conforms to.
@@ -60,7 +60,7 @@ data PagesGet =
   PagesGet'
     { _pgBlogId :: !Text
     , _pgPageId :: !Text
-    , _pgView   :: !(Maybe PagesGetView)
+    , _pgView :: !(Maybe PagesGetView)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

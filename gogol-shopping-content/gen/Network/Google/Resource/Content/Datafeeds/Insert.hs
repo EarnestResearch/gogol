@@ -35,20 +35,22 @@ module Network.Google.Resource.Content.Datafeeds.Insert
     -- * Request Lenses
     , diMerchantId
     , diPayload
+    , diDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.insert@ method which the
 -- 'DatafeedsInsert' request conforms to.
 type DatafeedsInsertResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] Datafeed :> Post '[JSON] Datafeed
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] Datafeed :> Post '[JSON] Datafeed
 
 -- | Registers a datafeed configuration with your Merchant Center account.
 --
@@ -56,7 +58,8 @@ type DatafeedsInsertResource =
 data DatafeedsInsert =
   DatafeedsInsert'
     { _diMerchantId :: !(Textual Word64)
-    , _diPayload    :: !Datafeed
+    , _diPayload :: !Datafeed
+    , _diDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -68,13 +71,18 @@ data DatafeedsInsert =
 -- * 'diMerchantId'
 --
 -- * 'diPayload'
+--
+-- * 'diDryRun'
 datafeedsInsert
     :: Word64 -- ^ 'diMerchantId'
     -> Datafeed -- ^ 'diPayload'
     -> DatafeedsInsert
 datafeedsInsert pDiMerchantId_ pDiPayload_ =
   DatafeedsInsert'
-    {_diMerchantId = _Coerce # pDiMerchantId_, _diPayload = pDiPayload_}
+    { _diMerchantId = _Coerce # pDiMerchantId_
+    , _diPayload = pDiPayload_
+    , _diDryRun = Nothing
+    }
 
 
 -- | The ID of the account that manages the datafeed. This account cannot be
@@ -89,12 +97,19 @@ diPayload :: Lens' DatafeedsInsert Datafeed
 diPayload
   = lens _diPayload (\ s a -> s{_diPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+diDryRun :: Lens' DatafeedsInsert (Maybe Bool)
+diDryRun = lens _diDryRun (\ s a -> s{_diDryRun = a})
+
 instance GoogleRequest DatafeedsInsert where
         type Rs DatafeedsInsert = Datafeed
         type Scopes DatafeedsInsert =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsInsert'{..}
-          = go _diMerchantId (Just AltJSON) _diPayload
+          = go _diMerchantId _diDryRun (Just AltJSON)
+              _diPayload
               shoppingContentService
           where go
                   = buildClient

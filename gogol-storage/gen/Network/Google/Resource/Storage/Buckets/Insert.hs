@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.Buckets.Insert
     , biProjection
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.insert@ method which the
 -- 'BucketsInsert' request conforms to.
@@ -66,12 +66,12 @@ type BucketsInsertResource =
 -- /See:/ 'bucketsInsert' smart constructor.
 data BucketsInsert =
   BucketsInsert'
-    { _biProject                    :: !Text
-    , _biPredefinedACL              :: !(Maybe BucketsInsertPredefinedACL)
-    , _biPayload                    :: !Bucket
+    { _biProject :: !Text
+    , _biPredefinedACL :: !(Maybe BucketsInsertPredefinedACL)
+    , _biPayload :: !Bucket
     , _biPredefinedDefaultObjectACL :: !(Maybe BucketsInsertPredefinedDefaultObjectACL)
-    , _biUserProject                :: !(Maybe Text)
-    , _biProjection                 :: !(Maybe BucketsInsertProjection)
+    , _biUserProject :: !(Maybe Text)
+    , _biProjection :: !(Maybe BucketsInsertProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

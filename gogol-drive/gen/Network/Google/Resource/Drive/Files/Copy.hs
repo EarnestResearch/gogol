@@ -43,8 +43,8 @@ module Network.Google.Resource.Drive.Files.Copy
     , fSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.copy@ method which the
 -- 'FilesCopy' request conforms to.
@@ -68,13 +68,13 @@ type FilesCopyResource =
 -- /See:/ 'filesCopy' smart constructor.
 data FilesCopy =
   FilesCopy'
-    { _fPayload                 :: !File
-    , _fOCRLanguage             :: !(Maybe Text)
-    , _fKeepRevisionForever     :: !Bool
-    , _fSupportsAllDrives       :: !Bool
+    { _fPayload :: !File
+    , _fOCRLanguage :: !(Maybe Text)
+    , _fKeepRevisionForever :: !Bool
+    , _fSupportsAllDrives :: !Bool
     , _fIgnoreDefaultVisibility :: !Bool
-    , _fFileId                  :: !Text
-    , _fSupportsTeamDrives      :: !Bool
+    , _fFileId :: !Text
+    , _fSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

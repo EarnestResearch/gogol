@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Users.Insert
     , uiPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.insert@ method which the
 -- 'UsersInsert' request conforms to.

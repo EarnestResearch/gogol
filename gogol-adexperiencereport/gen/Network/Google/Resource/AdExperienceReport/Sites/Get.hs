@@ -41,8 +41,8 @@ module Network.Google.Resource.AdExperienceReport.Sites.Get
     , sgCallback
     ) where
 
-import           Network.Google.AdExperienceReport.Types
-import           Network.Google.Prelude
+import Network.Google.AdExperienceReport.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexperiencereport.sites.get@ method which the
 -- 'SitesGet' request conforms to.
@@ -62,12 +62,12 @@ type SitesGetResource =
 -- /See:/ 'sitesGet' smart constructor.
 data SitesGet =
   SitesGet'
-    { _sgXgafv          :: !(Maybe Xgafv)
+    { _sgXgafv :: !(Maybe Xgafv)
     , _sgUploadProtocol :: !(Maybe Text)
-    , _sgAccessToken    :: !(Maybe Text)
-    , _sgUploadType     :: !(Maybe Text)
-    , _sgName           :: !Text
-    , _sgCallback       :: !(Maybe Text)
+    , _sgAccessToken :: !(Maybe Text)
+    , _sgUploadType :: !(Maybe Text)
+    , _sgName :: !Text
+    , _sgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

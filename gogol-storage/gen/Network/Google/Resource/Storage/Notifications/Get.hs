@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Notifications.Get
     , ngUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.notifications.get@ method which the
 -- 'NotificationsGet' request conforms to.
@@ -59,8 +59,8 @@ type NotificationsGetResource =
 data NotificationsGet =
   NotificationsGet'
     { _ngNotification :: !Text
-    , _ngBucket       :: !Text
-    , _ngUserProject  :: !(Maybe Text)
+    , _ngBucket :: !Text
+    , _ngUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

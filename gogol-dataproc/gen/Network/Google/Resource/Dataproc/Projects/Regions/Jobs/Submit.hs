@@ -43,8 +43,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Jobs.Submit
     , prjsCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.jobs.submit@ method which the
 -- 'ProjectsRegionsJobsSubmit' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsRegionsJobsSubmitResource =
 -- /See:/ 'projectsRegionsJobsSubmit' smart constructor.
 data ProjectsRegionsJobsSubmit =
   ProjectsRegionsJobsSubmit'
-    { _prjsXgafv          :: !(Maybe Xgafv)
+    { _prjsXgafv :: !(Maybe Xgafv)
     , _prjsUploadProtocol :: !(Maybe Text)
-    , _prjsAccessToken    :: !(Maybe Text)
-    , _prjsUploadType     :: !(Maybe Text)
-    , _prjsPayload        :: !SubmitJobRequest
-    , _prjsRegion         :: !Text
-    , _prjsProjectId      :: !Text
-    , _prjsCallback       :: !(Maybe Text)
+    , _prjsAccessToken :: !(Maybe Text)
+    , _prjsUploadType :: !(Maybe Text)
+    , _prjsPayload :: !SubmitJobRequest
+    , _prjsRegion :: !Text
+    , _prjsProjectId :: !Text
+    , _prjsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.Licensing.LicenseAssignments.Update
     , lauProductId
     ) where
 
-import           Network.Google.AppsLicensing.Types
-import           Network.Google.Prelude
+import Network.Google.AppsLicensing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @licensing.licenseAssignments.update@ method which the
 -- 'LicenseAssignmentsUpdate' request conforms to.
@@ -63,9 +63,9 @@ type LicenseAssignmentsUpdateResource =
 -- /See:/ 'licenseAssignmentsUpdate' smart constructor.
 data LicenseAssignmentsUpdate =
   LicenseAssignmentsUpdate'
-    { _lauSKUId     :: !Text
-    , _lauPayload   :: !LicenseAssignment
-    , _lauUserId    :: !Text
+    { _lauSKUId :: !Text
+    , _lauPayload :: !LicenseAssignment
+    , _lauUserId :: !Text
     , _lauProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

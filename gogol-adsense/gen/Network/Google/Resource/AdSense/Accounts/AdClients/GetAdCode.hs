@@ -37,8 +37,8 @@ module Network.Google.Resource.AdSense.Accounts.AdClients.GetAdCode
     , aacgacAccountId
     ) where
 
-import           Network.Google.AdSense.Types
-import           Network.Google.Prelude
+import Network.Google.AdSense.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adsense.accounts.adclients.getAdCode@ method which the
 -- 'AccountsAdClientsGetAdCode' request conforms to.
@@ -58,7 +58,7 @@ type AccountsAdClientsGetAdCodeResource =
 data AccountsAdClientsGetAdCode =
   AccountsAdClientsGetAdCode'
     { _aacgacAdClientId :: !Text
-    , _aacgacAccountId  :: !Text
+    , _aacgacAccountId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Regions.List
     , regMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regions.list@ method which the
 -- 'RegionsList' request conforms to.
@@ -64,10 +64,10 @@ type RegionsListResource =
 -- /See:/ 'regionsList' smart constructor.
 data RegionsList =
   RegionsList'
-    { _regOrderBy    :: !(Maybe Text)
-    , _regProject    :: !Text
-    , _regFilter     :: !(Maybe Text)
-    , _regPageToken  :: !(Maybe Text)
+    { _regOrderBy :: !(Maybe Text)
+    , _regProject :: !Text
+    , _regFilter :: !(Maybe Text)
+    , _regPageToken :: !(Maybe Text)
     , _regMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

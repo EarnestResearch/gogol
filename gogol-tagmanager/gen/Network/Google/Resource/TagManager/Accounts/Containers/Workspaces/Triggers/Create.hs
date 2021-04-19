@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Trigger
     , acwtcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.triggers.create@ method which the
 -- 'AccountsContainersWorkspacesTriggersCreate' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesTriggersCreateResource
 -- /See:/ 'accountsContainersWorkspacesTriggersCreate' smart constructor.
 data AccountsContainersWorkspacesTriggersCreate =
   AccountsContainersWorkspacesTriggersCreate'
-    { _acwtcParent  :: !Text
+    { _acwtcParent :: !Text
     , _acwtcPayload :: !Trigger
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -78,15 +78,15 @@ module Network.Google.AppsLicensing
     , laProductId
     ) where
 
-import           Network.Google.AppsLicensing.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Licensing.LicenseAssignments.Delete
-import           Network.Google.Resource.Licensing.LicenseAssignments.Get
-import           Network.Google.Resource.Licensing.LicenseAssignments.Insert
-import           Network.Google.Resource.Licensing.LicenseAssignments.ListForProduct
-import           Network.Google.Resource.Licensing.LicenseAssignments.ListForProductAndSKU
-import           Network.Google.Resource.Licensing.LicenseAssignments.Patch
-import           Network.Google.Resource.Licensing.LicenseAssignments.Update
+import Network.Google.Prelude
+import Network.Google.AppsLicensing.Types
+import Network.Google.Resource.Licensing.LicenseAssignments.Delete
+import Network.Google.Resource.Licensing.LicenseAssignments.Get
+import Network.Google.Resource.Licensing.LicenseAssignments.Insert
+import Network.Google.Resource.Licensing.LicenseAssignments.ListForProduct
+import Network.Google.Resource.Licensing.LicenseAssignments.ListForProductAndSKU
+import Network.Google.Resource.Licensing.LicenseAssignments.Patch
+import Network.Google.Resource.Licensing.LicenseAssignments.Update
 
 {- $resources
 TODO

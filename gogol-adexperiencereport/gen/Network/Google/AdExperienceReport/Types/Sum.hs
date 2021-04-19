@@ -16,7 +16,7 @@
 --
 module Network.Google.AdExperienceReport.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The ad filtering status of the site.
 data PlatformSummaryFilterStatus

@@ -17,8 +17,8 @@
 --
 module Network.Google.Spanner.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Spanner.Types.Sum
 
 -- | The SQL string can contain parameter placeholders. A parameter
 -- placeholder consists of \`\'\'\'\` followed by the parameter name.
@@ -333,9 +333,9 @@ instance ToJSON CreateDatabaseMetadata where
 -- /See:/ 'transactionOptions' smart constructor.
 data TransactionOptions =
   TransactionOptions'
-    { _toReadWrite      :: !(Maybe ReadWrite)
+    { _toReadWrite :: !(Maybe ReadWrite)
     , _toPartitionedDml :: !(Maybe PartitionedDml)
-    , _toReadOnly       :: !(Maybe ReadOnly)
+    , _toReadOnly :: !(Maybe ReadOnly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -476,7 +476,7 @@ instance ToJSON GetDatabaseDdlResponse where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -538,7 +538,7 @@ instance ToJSON Status where
 data CreateInstanceRequest =
   CreateInstanceRequest'
     { _cirInstanceId :: !(Maybe Text)
-    , _cirInstance   :: !(Maybe Instance)
+    , _cirInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -650,7 +650,7 @@ instance ToJSON RollbackRequest where
 data ListDatabasesResponse =
   ListDatabasesResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDatabases     :: !(Maybe [Database])
+    , _ldrDatabases :: !(Maybe [Database])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -704,9 +704,9 @@ instance ToJSON ListDatabasesResponse where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -783,7 +783,7 @@ instance ToJSON Expr where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -861,8 +861,8 @@ instance ToJSON GetIAMPolicyRequest where
 data ChildLink =
   ChildLink'
     { _clChildIndex :: !(Maybe (Textual Int32))
-    , _clVariable   :: !(Maybe Text)
-    , _clType       :: !(Maybe Text)
+    , _clVariable :: !(Maybe Text)
+    , _clType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -962,7 +962,7 @@ instance ToJSON BeginTransactionRequest where
 -- /See:/ 'partitionOptions' smart constructor.
 data PartitionOptions =
   PartitionOptions'
-    { _poMaxPartitions      :: !(Maybe (Textual Int64))
+    { _poMaxPartitions :: !(Maybe (Textual Int64))
     , _poPartitionSizeBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1025,10 +1025,10 @@ instance ToJSON PartitionOptions where
 -- /See:/ 'resultSetStats' smart constructor.
 data ResultSetStats =
   ResultSetStats'
-    { _rssRowCountExact      :: !(Maybe (Textual Int64))
+    { _rssRowCountExact :: !(Maybe (Textual Int64))
     , _rssRowCountLowerBound :: !(Maybe (Textual Int64))
-    , _rssQueryStats         :: !(Maybe ResultSetStatsQueryStats)
-    , _rssQueryPlan          :: !(Maybe QueryPlan)
+    , _rssQueryStats :: !(Maybe ResultSetStatsQueryStats)
+    , _rssQueryPlan :: !(Maybe QueryPlan)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1155,9 +1155,9 @@ instance ToJSON Field where
 -- /See:/ 'write' smart constructor.
 data Write =
   Write'
-    { _wValues  :: !(Maybe [[JSONValue]])
+    { _wValues :: !(Maybe [[JSONValue]])
     , _wColumns :: !(Maybe [Text])
-    , _wTable   :: !(Maybe Text)
+    , _wTable :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1228,9 +1228,9 @@ instance ToJSON Write where
 -- /See:/ 'keySet' smart constructor.
 data KeySet =
   KeySet'
-    { _ksAll    :: !(Maybe Bool)
+    { _ksAll :: !(Maybe Bool)
     , _ksRanges :: !(Maybe [KeyRange])
-    , _ksKeys   :: !(Maybe [[JSONValue]])
+    , _ksKeys :: !(Maybe [[JSONValue]])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1293,8 +1293,8 @@ instance ToJSON KeySet where
 data Statement =
   Statement'
     { _sParamTypes :: !(Maybe StatementParamTypes)
-    , _sParams     :: !(Maybe StatementParams)
-    , _sSQL        :: !(Maybe Text)
+    , _sParams :: !(Maybe StatementParams)
+    , _sSQL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1421,7 +1421,7 @@ instance ToJSON PartitionQueryRequestParams where
 -- /See:/ 'executeBatchDmlResponse' smart constructor.
 data ExecuteBatchDmlResponse =
   ExecuteBatchDmlResponse'
-    { _ebdrStatus     :: !(Maybe Status)
+    { _ebdrStatus :: !(Maybe Status)
     , _ebdrResultSets :: !(Maybe [ResultSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1478,10 +1478,10 @@ instance ToJSON ExecuteBatchDmlResponse where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1573,8 +1573,8 @@ instance ToJSON Operation where
 data UpdateDatabaseDdlMetadata =
   UpdateDatabaseDdlMetadata'
     { _uddmCommitTimestamps :: !(Maybe [DateTime'])
-    , _uddmDatabase         :: !(Maybe Text)
-    , _uddmStatements       :: !(Maybe [Text])
+    , _uddmDatabase :: !(Maybe Text)
+    , _uddmStatements :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1670,7 +1670,7 @@ instance ToJSON Empty where
 data Database =
   Database'
     { _dState :: !(Maybe DatabaseState)
-    , _dName  :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1715,13 +1715,13 @@ instance ToJSON Database where
 -- /See:/ 'planNode' smart constructor.
 data PlanNode =
   PlanNode'
-    { _pnKind                :: !(Maybe PlanNodeKind)
+    { _pnKind :: !(Maybe PlanNodeKind)
     , _pnShortRepresentation :: !(Maybe ShortRepresentation)
-    , _pnMetadata            :: !(Maybe PlanNodeMetadata)
-    , _pnDisplayName         :: !(Maybe Text)
-    , _pnExecutionStats      :: !(Maybe PlanNodeExecutionStats)
-    , _pnIndex               :: !(Maybe (Textual Int32))
-    , _pnChildLinks          :: !(Maybe [ChildLink])
+    , _pnMetadata :: !(Maybe PlanNodeMetadata)
+    , _pnDisplayName :: !(Maybe Text)
+    , _pnExecutionStats :: !(Maybe PlanNodeExecutionStats)
+    , _pnIndex :: !(Maybe (Textual Int32))
+    , _pnChildLinks :: !(Maybe [ChildLink])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1871,7 +1871,7 @@ instance ToJSON CreateSessionRequest where
 -- /See:/ 'shortRepresentation' smart constructor.
 data ShortRepresentation =
   ShortRepresentation'
-    { _srSubqueries  :: !(Maybe ShortRepresentationSubqueries)
+    { _srSubqueries :: !(Maybe ShortRepresentationSubqueries)
     , _srDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2151,7 +2151,7 @@ instance ToJSON StatementParamTypes where
 data UpdateDatabaseDdlRequest =
   UpdateDatabaseDdlRequest'
     { _uddrOperationId :: !(Maybe Text)
-    , _uddrStatements  :: !(Maybe [Text])
+    , _uddrStatements :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2216,11 +2216,11 @@ instance ToJSON UpdateDatabaseDdlRequest where
 -- /See:/ 'mutation' smart constructor.
 data Mutation =
   Mutation'
-    { _mReplace        :: !(Maybe Write)
-    , _mInsert         :: !(Maybe Write)
+    { _mReplace :: !(Maybe Write)
+    , _mInsert :: !(Maybe Write)
     , _mInsertOrUpdate :: !(Maybe Write)
-    , _mDelete         :: !(Maybe Delete')
-    , _mUpdate         :: !(Maybe Write)
+    , _mDelete :: !(Maybe Delete')
+    , _mUpdate :: !(Maybe Write)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2306,11 +2306,11 @@ instance ToJSON Mutation where
 data PartitionReadRequest =
   PartitionReadRequest'
     { _prrPartitionOptions :: !(Maybe PartitionOptions)
-    , _prrKeySet           :: !(Maybe KeySet)
-    , _prrTransaction      :: !(Maybe TransactionSelector)
-    , _prrColumns          :: !(Maybe [Text])
-    , _prrIndex            :: !(Maybe Text)
-    , _prrTable            :: !(Maybe Text)
+    , _prrKeySet :: !(Maybe KeySet)
+    , _prrTransaction :: !(Maybe TransactionSelector)
+    , _prrColumns :: !(Maybe [Text])
+    , _prrIndex :: !(Maybe Text)
+    , _prrTable :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2453,7 +2453,7 @@ instance ToJSON ExecuteSQLRequestParamTypes where
 data Transaction =
   Transaction'
     { _tReadTimestamp :: !(Maybe DateTime')
-    , _tId            :: !(Maybe Bytes)
+    , _tId :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2509,7 +2509,7 @@ instance ToJSON Transaction where
 data ListSessionsResponse =
   ListSessionsResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSessions      :: !(Maybe [Session])
+    , _lsrSessions :: !(Maybe [Session])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2561,9 +2561,9 @@ instance ToJSON ListSessionsResponse where
 -- /See:/ 'executeBatchDmlRequest' smart constructor.
 data ExecuteBatchDmlRequest =
   ExecuteBatchDmlRequest'
-    { _ebdrSeqno       :: !(Maybe (Textual Int64))
+    { _ebdrSeqno :: !(Maybe (Textual Int64))
     , _ebdrTransaction :: !(Maybe TransactionSelector)
-    , _ebdrStatements  :: !(Maybe [Statement])
+    , _ebdrStatements :: !(Maybe [Statement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2843,10 +2843,10 @@ instance ToJSON PartitionQueryRequestParamTypes where
 -- /See:/ 'updateInstanceMetadata' smart constructor.
 data UpdateInstanceMetadata =
   UpdateInstanceMetadata'
-    { _uimStartTime  :: !(Maybe DateTime')
+    { _uimStartTime :: !(Maybe DateTime')
     , _uimCancelTime :: !(Maybe DateTime')
-    , _uimEndTime    :: !(Maybe DateTime')
-    , _uimInstance   :: !(Maybe Instance)
+    , _uimEndTime :: !(Maybe DateTime')
+    , _uimInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3008,10 +3008,10 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'partialResultSet' smart constructor.
 data PartialResultSet =
   PartialResultSet'
-    { _prsResumeToken  :: !(Maybe Bytes)
-    , _prsValues       :: !(Maybe [JSONValue])
-    , _prsStats        :: !(Maybe ResultSetStats)
-    , _prsMetadata     :: !(Maybe ResultSetMetadata)
+    { _prsResumeToken :: !(Maybe Bytes)
+    , _prsValues :: !(Maybe [JSONValue])
+    , _prsStats :: !(Maybe ResultSetStats)
+    , _prsMetadata :: !(Maybe ResultSetMetadata)
     , _prsChunkedValue :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3159,8 +3159,8 @@ instance ToJSON PartialResultSet where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3290,14 +3290,14 @@ instance ToJSON CreateDatabaseRequest where
 -- /See:/ 'executeSQLRequest' smart constructor.
 data ExecuteSQLRequest =
   ExecuteSQLRequest'
-    { _esqlrParamTypes     :: !(Maybe ExecuteSQLRequestParamTypes)
-    , _esqlrResumeToken    :: !(Maybe Bytes)
-    , _esqlrSeqno          :: !(Maybe (Textual Int64))
-    , _esqlrParams         :: !(Maybe ExecuteSQLRequestParams)
-    , _esqlrTransaction    :: !(Maybe TransactionSelector)
-    , _esqlrSQL            :: !(Maybe Text)
+    { _esqlrParamTypes :: !(Maybe ExecuteSQLRequestParamTypes)
+    , _esqlrResumeToken :: !(Maybe Bytes)
+    , _esqlrSeqno :: !(Maybe (Textual Int64))
+    , _esqlrParams :: !(Maybe ExecuteSQLRequestParams)
+    , _esqlrTransaction :: !(Maybe TransactionSelector)
+    , _esqlrSQL :: !(Maybe Text)
     , _esqlrPartitionToken :: !(Maybe Bytes)
-    , _esqlrQueryMode      :: !(Maybe ExecuteSQLRequestQueryMode)
+    , _esqlrQueryMode :: !(Maybe ExecuteSQLRequestQueryMode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3452,8 +3452,8 @@ instance ToJSON ExecuteSQLRequest where
 -- /See:/ 'commitRequest' smart constructor.
 data CommitRequest =
   CommitRequest'
-    { _crMutations            :: !(Maybe [Mutation])
-    , _crTransactionId        :: !(Maybe Bytes)
+    { _crMutations :: !(Maybe [Mutation])
+    , _crTransactionId :: !(Maybe Bytes)
     , _crSingleUseTransaction :: !(Maybe TransactionOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3530,8 +3530,8 @@ instance ToJSON CommitRequest where
 data Type =
   Type'
     { _tArrayElementType :: !(Maybe Type)
-    , _tStructType       :: !(Maybe StructType)
-    , _tCode             :: !(Maybe TypeCode)
+    , _tStructType :: !(Maybe StructType)
+    , _tCode :: !(Maybe TypeCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3589,10 +3589,10 @@ instance ToJSON Type where
 -- /See:/ 'createInstanceMetadata' smart constructor.
 data CreateInstanceMetadata =
   CreateInstanceMetadata'
-    { _cimStartTime  :: !(Maybe DateTime')
+    { _cimStartTime :: !(Maybe DateTime')
     , _cimCancelTime :: !(Maybe DateTime')
-    , _cimEndTime    :: !(Maybe DateTime')
-    , _cimInstance   :: !(Maybe Instance)
+    , _cimEndTime :: !(Maybe DateTime')
+    , _cimInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3706,9 +3706,9 @@ instance ToJSON CreateInstanceMetadata where
 data KeyRange =
   KeyRange'
     { _krStartClosed :: !(Maybe [JSONValue])
-    , _krEndOpen     :: !(Maybe [JSONValue])
-    , _krStartOpen   :: !(Maybe [JSONValue])
-    , _krEndClosed   :: !(Maybe [JSONValue])
+    , _krEndOpen :: !(Maybe [JSONValue])
+    , _krStartOpen :: !(Maybe [JSONValue])
+    , _krEndClosed :: !(Maybe [JSONValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3832,7 +3832,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'instanceConfig' smart constructor.
 data InstanceConfig =
   InstanceConfig'
-    { _icName        :: !(Maybe Text)
+    { _icName :: !(Maybe Text)
     , _icDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3880,8 +3880,8 @@ instance ToJSON InstanceConfig where
 -- /See:/ 'resultSet' smart constructor.
 data ResultSet =
   ResultSet'
-    { _rsStats    :: !(Maybe ResultSetStats)
-    , _rsRows     :: !(Maybe [[JSONValue]])
+    { _rsStats :: !(Maybe ResultSetStats)
+    , _rsRows :: !(Maybe [[JSONValue]])
     , _rsMetadata :: !(Maybe ResultSetMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3987,7 +3987,7 @@ instance ToJSON SessionLabels where
 data ListInstancesResponse =
   ListInstancesResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirInstances     :: !(Maybe [Instance])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4039,13 +4039,13 @@ instance ToJSON ListInstancesResponse where
 -- /See:/ 'readRequest' smart constructor.
 data ReadRequest =
   ReadRequest'
-    { _rrResumeToken    :: !(Maybe Bytes)
-    , _rrKeySet         :: !(Maybe KeySet)
-    , _rrTransaction    :: !(Maybe TransactionSelector)
-    , _rrColumns        :: !(Maybe [Text])
-    , _rrLimit          :: !(Maybe (Textual Int64))
-    , _rrIndex          :: !(Maybe Text)
-    , _rrTable          :: !(Maybe Text)
+    { _rrResumeToken :: !(Maybe Bytes)
+    , _rrKeySet :: !(Maybe KeySet)
+    , _rrTransaction :: !(Maybe TransactionSelector)
+    , _rrColumns :: !(Maybe [Text])
+    , _rrLimit :: !(Maybe (Textual Int64))
+    , _rrIndex :: !(Maybe Text)
+    , _rrTable :: !(Maybe Text)
     , _rrPartitionToken :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4181,9 +4181,9 @@ instance ToJSON ReadRequest where
 data Session =
   Session'
     { _sApproximateLastUseTime :: !(Maybe DateTime')
-    , _sName                   :: !(Maybe Text)
-    , _sLabels                 :: !(Maybe SessionLabels)
-    , _sCreateTime             :: !(Maybe DateTime')
+    , _sName :: !(Maybe Text)
+    , _sLabels :: !(Maybe SessionLabels)
+    , _sCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4305,11 +4305,11 @@ instance ToJSON OperationResponse where
 -- /See:/ 'readOnly' smart constructor.
 data ReadOnly =
   ReadOnly'
-    { _roReadTimestamp       :: !(Maybe DateTime')
-    , _roExactStaleness      :: !(Maybe GDuration)
-    , _roMaxStaleness        :: !(Maybe GDuration)
-    , _roStrong              :: !(Maybe Bool)
-    , _roMinReadTimestamp    :: !(Maybe DateTime')
+    { _roReadTimestamp :: !(Maybe DateTime')
+    , _roExactStaleness :: !(Maybe GDuration)
+    , _roMaxStaleness :: !(Maybe GDuration)
+    , _roStrong :: !(Maybe Bool)
+    , _roMinReadTimestamp :: !(Maybe DateTime')
     , _roReturnReadTimestamp :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4438,7 +4438,7 @@ instance ToJSON ReadOnly where
 -- /See:/ 'resultSetMetadata' smart constructor.
 data ResultSetMetadata =
   ResultSetMetadata'
-    { _rsmRowType     :: !(Maybe StructType)
+    { _rsmRowType :: !(Maybe StructType)
     , _rsmTransaction :: !(Maybe Transaction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4493,7 +4493,7 @@ instance ToJSON ResultSetMetadata where
 data Delete' =
   Delete''
     { _dKeySet :: !(Maybe KeySet)
-    , _dTable  :: !(Maybe Text)
+    , _dTable :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4539,7 +4539,7 @@ instance ToJSON Delete' where
 data UpdateInstanceRequest =
   UpdateInstanceRequest'
     { _uirFieldMask :: !(Maybe GFieldMask)
-    , _uirInstance  :: !(Maybe Instance)
+    , _uirInstance :: !(Maybe Instance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4682,8 +4682,8 @@ instance ToJSON StatementParams where
 -- /See:/ 'transactionSelector' smart constructor.
 data TransactionSelector =
   TransactionSelector'
-    { _tsBegin     :: !(Maybe TransactionOptions)
-    , _tsId        :: !(Maybe Bytes)
+    { _tsBegin :: !(Maybe TransactionOptions)
+    , _tsId :: !(Maybe Bytes)
     , _tsSingleUse :: !(Maybe TransactionOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4743,7 +4743,7 @@ instance ToJSON TransactionSelector where
 -- /See:/ 'listInstanceConfigsResponse' smart constructor.
 data ListInstanceConfigsResponse =
   ListInstanceConfigsResponse'
-    { _licrNextPageToken   :: !(Maybe Text)
+    { _licrNextPageToken :: !(Maybe Text)
     , _licrInstanceConfigs :: !(Maybe [InstanceConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4798,8 +4798,8 @@ instance ToJSON ListInstanceConfigsResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4874,7 +4874,7 @@ instance ToJSON Binding where
 -- /See:/ 'partitionResponse' smart constructor.
 data PartitionResponse =
   PartitionResponse'
-    { _prPartitions  :: !(Maybe [Partition])
+    { _prPartitions :: !(Maybe [Partition])
     , _prTransaction :: !(Maybe Transaction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4926,11 +4926,11 @@ instance ToJSON PartitionResponse where
 -- /See:/ 'partitionQueryRequest' smart constructor.
 data PartitionQueryRequest =
   PartitionQueryRequest'
-    { _pqrParamTypes       :: !(Maybe PartitionQueryRequestParamTypes)
+    { _pqrParamTypes :: !(Maybe PartitionQueryRequestParamTypes)
     , _pqrPartitionOptions :: !(Maybe PartitionOptions)
-    , _pqrParams           :: !(Maybe PartitionQueryRequestParams)
-    , _pqrTransaction      :: !(Maybe TransactionSelector)
-    , _pqrSQL              :: !(Maybe Text)
+    , _pqrParams :: !(Maybe PartitionQueryRequestParams)
+    , _pqrTransaction :: !(Maybe TransactionSelector)
+    , _pqrSQL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5075,12 +5075,12 @@ instance ToJSON QueryPlan where
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iState       :: !(Maybe InstanceState)
-    , _iConfig      :: !(Maybe Text)
-    , _iNodeCount   :: !(Maybe (Textual Int32))
-    , _iName        :: !(Maybe Text)
+    { _iState :: !(Maybe InstanceState)
+    , _iConfig :: !(Maybe Text)
+    , _iNodeCount :: !(Maybe (Textual Int32))
+    , _iName :: !(Maybe Text)
     , _iDisplayName :: !(Maybe Text)
-    , _iLabels      :: !(Maybe InstanceLabels)
+    , _iLabels :: !(Maybe InstanceLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Addresses.List
     , alMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.addresses.list@ method which the
 -- 'AddressesList' request conforms to.
@@ -65,11 +65,11 @@ type AddressesListResource =
 -- /See:/ 'addressesList' smart constructor.
 data AddressesList =
   AddressesList'
-    { _alOrderBy    :: !(Maybe Text)
-    , _alProject    :: !Text
-    , _alFilter     :: !(Maybe Text)
-    , _alRegion     :: !Text
-    , _alPageToken  :: !(Maybe Text)
+    { _alOrderBy :: !(Maybe Text)
+    , _alProject :: !Text
+    , _alFilter :: !(Maybe Text)
+    , _alRegion :: !Text
+    , _alPageToken :: !(Maybe Text)
     , _alMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

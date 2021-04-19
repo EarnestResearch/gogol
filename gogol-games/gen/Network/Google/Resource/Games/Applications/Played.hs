@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Applications.Played
     , apBuiltinGameId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.applications.played@ method which the
 -- 'ApplicationsPlayed' request conforms to.

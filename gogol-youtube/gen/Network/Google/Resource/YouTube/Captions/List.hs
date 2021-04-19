@@ -43,8 +43,8 @@ module Network.Google.Resource.YouTube.Captions.List
     , clId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.captions.list@ method which the
 -- 'CaptionsList' request conforms to.
@@ -68,11 +68,11 @@ type CaptionsListResource =
 -- /See:/ 'captionsList' smart constructor.
 data CaptionsList =
   CaptionsList'
-    { _clOnBehalfOf             :: !(Maybe Text)
-    , _clPart                   :: !Text
+    { _clOnBehalfOf :: !(Maybe Text)
+    , _clPart :: !Text
     , _clOnBehalfOfContentOwner :: !(Maybe Text)
-    , _clVideoId                :: !Text
-    , _clId                     :: !(Maybe Text)
+    , _clVideoId :: !Text
+    , _clId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

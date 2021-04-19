@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.NetworkEndpointGroups.AggregatedList
     , negalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.networkEndpointGroups.aggregatedList@ method which the
 -- 'NetworkEndpointGroupsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type NetworkEndpointGroupsAggregatedListResource =
 -- /See:/ 'networkEndpointGroupsAggregatedList' smart constructor.
 data NetworkEndpointGroupsAggregatedList =
   NetworkEndpointGroupsAggregatedList'
-    { _negalOrderBy    :: !(Maybe Text)
-    , _negalProject    :: !Text
-    , _negalFilter     :: !(Maybe Text)
-    , _negalPageToken  :: !(Maybe Text)
+    { _negalOrderBy :: !(Maybe Text)
+    , _negalProject :: !Text
+    , _negalFilter :: !(Maybe Text)
+    , _negalPageToken :: !(Maybe Text)
     , _negalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

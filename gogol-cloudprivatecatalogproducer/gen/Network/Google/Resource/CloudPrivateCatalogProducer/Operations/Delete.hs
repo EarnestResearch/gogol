@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Operations.Delete
     , odCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.operations.delete@ method which the
 -- 'OperationsDelete' request conforms to.
@@ -68,12 +68,12 @@ type OperationsDeleteResource =
 -- /See:/ 'operationsDelete' smart constructor.
 data OperationsDelete =
   OperationsDelete'
-    { _odXgafv          :: !(Maybe Xgafv)
+    { _odXgafv :: !(Maybe Xgafv)
     , _odUploadProtocol :: !(Maybe Text)
-    , _odAccessToken    :: !(Maybe Text)
-    , _odUploadType     :: !(Maybe Text)
-    , _odName           :: !Text
-    , _odCallback       :: !(Maybe Text)
+    , _odAccessToken :: !(Maybe Text)
+    , _odUploadType :: !(Maybe Text)
+    , _odName :: !Text
+    , _odCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

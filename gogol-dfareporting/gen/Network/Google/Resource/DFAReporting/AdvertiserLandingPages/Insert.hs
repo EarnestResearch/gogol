@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Insert
     , alpiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.insert@ method which the
 -- 'AdvertiserLandingPagesInsert' request conforms to.
@@ -58,7 +58,7 @@ type AdvertiserLandingPagesInsertResource =
 data AdvertiserLandingPagesInsert =
   AdvertiserLandingPagesInsert'
     { _alpiProFileId :: !(Textual Int64)
-    , _alpiPayload   :: !LandingPage
+    , _alpiPayload :: !LandingPage
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.AchievementDefinitions.List
     , adlMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievementDefinitions.list@ method which the
 -- 'AchievementDefinitionsList' request conforms to.
@@ -58,8 +58,8 @@ type AchievementDefinitionsListResource =
 -- /See:/ 'achievementDefinitionsList' smart constructor.
 data AchievementDefinitionsList =
   AchievementDefinitionsList'
-    { _adlLanguage   :: !(Maybe Text)
-    , _adlPageToken  :: !(Maybe Text)
+    { _adlLanguage :: !(Maybe Text)
+    , _adlPageToken :: !(Maybe Text)
     , _adlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

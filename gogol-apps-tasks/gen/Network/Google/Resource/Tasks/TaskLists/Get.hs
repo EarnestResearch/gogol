@@ -36,8 +36,8 @@ module Network.Google.Resource.Tasks.TaskLists.Get
     , tlgTaskList
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasklists.get@ method which the
 -- 'TaskListsGet' request conforms to.

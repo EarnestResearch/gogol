@@ -42,8 +42,8 @@ module Network.Google.Resource.Books.MyLibrary.ReadingPositions.SetPosition
     , mlrpspPosition
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.readingpositions.setPosition@ method which the
 -- 'MyLibraryReadingPositionsSetPosition' request conforms to.
@@ -69,13 +69,13 @@ type MyLibraryReadingPositionsSetPositionResource =
 -- /See:/ 'myLibraryReadingPositionsSetPosition' smart constructor.
 data MyLibraryReadingPositionsSetPosition =
   MyLibraryReadingPositionsSetPosition'
-    { _mlrpspDeviceCookie   :: !(Maybe Text)
+    { _mlrpspDeviceCookie :: !(Maybe Text)
     , _mlrpspContentVersion :: !(Maybe Text)
-    , _mlrpspAction         :: !(Maybe MyLibraryReadingPositionsSetPositionAction)
-    , _mlrpspVolumeId       :: !Text
-    , _mlrpspSource         :: !(Maybe Text)
-    , _mlrpspTimestamp      :: !Text
-    , _mlrpspPosition       :: !Text
+    , _mlrpspAction :: !(Maybe MyLibraryReadingPositionsSetPositionAction)
+    , _mlrpspVolumeId :: !Text
+    , _mlrpspSource :: !(Maybe Text)
+    , _mlrpspTimestamp :: !Text
+    , _mlrpspPosition :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

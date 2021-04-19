@@ -40,8 +40,8 @@ module Network.Google.Resource.Storage.Objects.SetIAMPolicy
     , osipGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.setIamPolicy@ method which the
 -- 'ObjectsSetIAMPolicy' request conforms to.
@@ -63,11 +63,11 @@ type ObjectsSetIAMPolicyResource =
 -- /See:/ 'objectsSetIAMPolicy' smart constructor.
 data ObjectsSetIAMPolicy =
   ObjectsSetIAMPolicy'
-    { _osipBucket      :: !Text
-    , _osipPayload     :: !Policy
+    { _osipBucket :: !Text
+    , _osipPayload :: !Policy
     , _osipUserProject :: !(Maybe Text)
-    , _osipObject      :: !Text
-    , _osipGeneration  :: !(Maybe (Textual Int64))
+    , _osipObject :: !Text
+    , _osipGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

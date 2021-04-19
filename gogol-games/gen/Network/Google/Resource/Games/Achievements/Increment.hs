@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Achievements.Increment
     , aiStepsToIncrement
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievements.increment@ method which the
 -- 'AchievementsIncrement' request conforms to.
@@ -61,8 +61,8 @@ type AchievementsIncrementResource =
 -- /See:/ 'achievementsIncrement' smart constructor.
 data AchievementsIncrement =
   AchievementsIncrement'
-    { _aiRequestId        :: !(Maybe (Textual Int64))
-    , _aiAchievementId    :: !Text
+    { _aiRequestId :: !(Maybe (Textual Int64))
+    , _aiAchievementId :: !Text
     , _aiStepsToIncrement :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -46,8 +46,8 @@ module Network.Google.Resource.Games.Scores.Get
     , sgMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.scores.get@ method which the
 -- 'ScoresGet' request conforms to.
@@ -77,13 +77,13 @@ type ScoresGetResource =
 -- /See:/ 'scoresGet' smart constructor.
 data ScoresGet =
   ScoresGet'
-    { _sgTimeSpan        :: !ScoresGetTimeSpan
-    , _sgLeaderboardId   :: !Text
+    { _sgTimeSpan :: !ScoresGetTimeSpan
+    , _sgLeaderboardId :: !Text
     , _sgIncludeRankType :: !(Maybe ScoresGetIncludeRankType)
-    , _sgLanguage        :: !(Maybe Text)
-    , _sgPageToken       :: !(Maybe Text)
-    , _sgPlayerId        :: !Text
-    , _sgMaxResults      :: !(Maybe (Textual Int32))
+    , _sgLanguage :: !(Maybe Text)
+    , _sgPageToken :: !(Maybe Text)
+    , _sgPlayerId :: !Text
+    , _sgMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

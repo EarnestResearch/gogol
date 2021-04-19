@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -567,13 +567,13 @@ module Network.Google.VideoIntelligence.Types
     -- * GoogleCloudVideointelligenceV1_LabelSegment
     , GoogleCloudVideointelligenceV1_LabelSegment
     , googleCloudVideointelligenceV1_LabelSegment
-    , g2Confidence
-    , g2Segment
+    , g1Confidence
+    , g1Segment
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.VideoIntelligence.Types.Product
-import           Network.Google.VideoIntelligence.Types.Sum
+import Network.Google.Prelude
+import Network.Google.VideoIntelligence.Types.Product
+import Network.Google.VideoIntelligence.Types.Sum
 
 -- | Default request referring to version 'v1p2beta1' of the Cloud Video Intelligence API. This contains the host and root path used as a starting point for constructing service requests.
 videoIntelligenceService :: ServiceConfig

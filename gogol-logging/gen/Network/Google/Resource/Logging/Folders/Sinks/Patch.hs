@@ -47,8 +47,8 @@ module Network.Google.Resource.Logging.Folders.Sinks.Patch
     , fspCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.sinks.patch@ method which the
 -- 'FoldersSinksPatch' request conforms to.
@@ -73,15 +73,15 @@ type FoldersSinksPatchResource =
 -- /See:/ 'foldersSinksPatch' smart constructor.
 data FoldersSinksPatch =
   FoldersSinksPatch'
-    { _fspXgafv                :: !(Maybe Xgafv)
+    { _fspXgafv :: !(Maybe Xgafv)
     , _fspUniqueWriterIdentity :: !(Maybe Bool)
-    , _fspUploadProtocol       :: !(Maybe Text)
-    , _fspUpdateMask           :: !(Maybe GFieldMask)
-    , _fspAccessToken          :: !(Maybe Text)
-    , _fspUploadType           :: !(Maybe Text)
-    , _fspPayload              :: !LogSink
-    , _fspSinkName             :: !Text
-    , _fspCallback             :: !(Maybe Text)
+    , _fspUploadProtocol :: !(Maybe Text)
+    , _fspUpdateMask :: !(Maybe GFieldMask)
+    , _fspAccessToken :: !(Maybe Text)
+    , _fspUploadType :: !(Maybe Text)
+    , _fspPayload :: !LogSink
+    , _fspSinkName :: !Text
+    , _fspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

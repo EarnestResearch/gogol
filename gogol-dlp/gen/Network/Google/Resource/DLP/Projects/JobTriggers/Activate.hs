@@ -43,8 +43,8 @@ module Network.Google.Resource.DLP.Projects.JobTriggers.Activate
     , pjtaCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.jobTriggers.activate@ method which the
 -- 'ProjectsJobTriggersActivate' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsJobTriggersActivateResource =
 -- /See:/ 'projectsJobTriggersActivate' smart constructor.
 data ProjectsJobTriggersActivate =
   ProjectsJobTriggersActivate'
-    { _pjtaXgafv          :: !(Maybe Xgafv)
+    { _pjtaXgafv :: !(Maybe Xgafv)
     , _pjtaUploadProtocol :: !(Maybe Text)
-    , _pjtaAccessToken    :: !(Maybe Text)
-    , _pjtaUploadType     :: !(Maybe Text)
-    , _pjtaPayload        :: !GooglePrivacyDlpV2ActivateJobTriggerRequest
-    , _pjtaName           :: !Text
-    , _pjtaCallback       :: !(Maybe Text)
+    , _pjtaAccessToken :: !(Maybe Text)
+    , _pjtaUploadType :: !(Maybe Text)
+    , _pjtaPayload :: !GooglePrivacyDlpV2ActivateJobTriggerRequest
+    , _pjtaName :: !Text
+    , _pjtaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

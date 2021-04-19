@@ -44,8 +44,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferC
     , pltcrtllCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.locations.transferConfigs.runs.transferLogs.list@ method which the
 -- 'ProjectsLocationsTransferConfigsRunsTransferLogsList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsLocationsTransferConfigsRunsTransferLogsListResource
 -- /See:/ 'projectsLocationsTransferConfigsRunsTransferLogsList' smart constructor.
 data ProjectsLocationsTransferConfigsRunsTransferLogsList =
   ProjectsLocationsTransferConfigsRunsTransferLogsList'
-    { _pltcrtllParent         :: !Text
-    , _pltcrtllXgafv          :: !(Maybe Xgafv)
+    { _pltcrtllParent :: !Text
+    , _pltcrtllXgafv :: !(Maybe Xgafv)
     , _pltcrtllUploadProtocol :: !(Maybe Text)
-    , _pltcrtllMessageTypes   :: !(Maybe [Text])
-    , _pltcrtllAccessToken    :: !(Maybe Text)
-    , _pltcrtllUploadType     :: !(Maybe Text)
-    , _pltcrtllPageToken      :: !(Maybe Text)
-    , _pltcrtllPageSize       :: !(Maybe (Textual Int32))
-    , _pltcrtllCallback       :: !(Maybe Text)
+    , _pltcrtllMessageTypes :: !(Maybe [Text])
+    , _pltcrtllAccessToken :: !(Maybe Text)
+    , _pltcrtllUploadType :: !(Maybe Text)
+    , _pltcrtllPageToken :: !(Maybe Text)
+    , _pltcrtllPageSize :: !(Maybe (Textual Int32))
+    , _pltcrtllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

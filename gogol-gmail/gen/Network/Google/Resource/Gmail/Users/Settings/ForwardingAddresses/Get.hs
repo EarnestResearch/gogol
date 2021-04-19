@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.ForwardingAddresses.Get
     , usfagUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.forwardingAddresses.get@ method which the
 -- 'UsersSettingsForwardingAddressesGet' request conforms to.
@@ -59,7 +59,7 @@ type UsersSettingsForwardingAddressesGetResource =
 data UsersSettingsForwardingAddressesGet =
   UsersSettingsForwardingAddressesGet'
     { _usfagForwardingEmail :: !Text
-    , _usfagUserId          :: !Text
+    , _usfagUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

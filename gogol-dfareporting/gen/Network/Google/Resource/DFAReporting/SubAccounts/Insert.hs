@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Insert
     , saiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.insert@ method which the
 -- 'SubAccountsInsert' request conforms to.
@@ -57,7 +57,7 @@ type SubAccountsInsertResource =
 data SubAccountsInsert =
   SubAccountsInsert'
     { _saiProFileId :: !(Textual Int64)
-    , _saiPayload   :: !SubAccount
+    , _saiPayload :: !SubAccount
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

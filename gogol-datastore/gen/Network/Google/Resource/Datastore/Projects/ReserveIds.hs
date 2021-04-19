@@ -43,8 +43,8 @@ module Network.Google.Resource.Datastore.Projects.ReserveIds
     , priCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.reserveIds@ method which the
 -- 'ProjectsReserveIds' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsReserveIdsResource =
 -- /See:/ 'projectsReserveIds' smart constructor.
 data ProjectsReserveIds =
   ProjectsReserveIds'
-    { _priXgafv          :: !(Maybe Xgafv)
+    { _priXgafv :: !(Maybe Xgafv)
     , _priUploadProtocol :: !(Maybe Text)
-    , _priAccessToken    :: !(Maybe Text)
-    , _priUploadType     :: !(Maybe Text)
-    , _priPayload        :: !ReserveIdsRequest
-    , _priProjectId      :: !Text
-    , _priCallback       :: !(Maybe Text)
+    , _priAccessToken :: !(Maybe Text)
+    , _priUploadType :: !(Maybe Text)
+    , _priPayload :: !ReserveIdsRequest
+    , _priProjectId :: !Text
+    , _priCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

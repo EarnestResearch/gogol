@@ -45,8 +45,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.WellKnown.G
     , plcwkgocCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.well-known.getOpenid-configuration@ method which the
 -- 'ProjectsLocationsClustersWellKnownGetOpenidConfiguration' request conforms to.
@@ -73,12 +73,12 @@ type ProjectsLocationsClustersWellKnownGetOpenidConfigurationResource
 -- /See:/ 'projectsLocationsClustersWellKnownGetOpenidConfiguration' smart constructor.
 data ProjectsLocationsClustersWellKnownGetOpenidConfiguration =
   ProjectsLocationsClustersWellKnownGetOpenidConfiguration'
-    { _plcwkgocParent         :: !Text
-    , _plcwkgocXgafv          :: !(Maybe Xgafv)
+    { _plcwkgocParent :: !Text
+    , _plcwkgocXgafv :: !(Maybe Xgafv)
     , _plcwkgocUploadProtocol :: !(Maybe Text)
-    , _plcwkgocAccessToken    :: !(Maybe Text)
-    , _plcwkgocUploadType     :: !(Maybe Text)
-    , _plcwkgocCallback       :: !(Maybe Text)
+    , _plcwkgocAccessToken :: !(Maybe Text)
+    , _plcwkgocUploadType :: !(Maybe Text)
+    , _plcwkgocCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

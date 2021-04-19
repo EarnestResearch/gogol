@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Features.Insert
     , rfiCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.insert@ method which the
 -- 'ResourcesFeaturesInsert' request conforms to.
@@ -58,7 +58,7 @@ type ResourcesFeaturesInsertResource =
 -- /See:/ 'resourcesFeaturesInsert' smart constructor.
 data ResourcesFeaturesInsert =
   ResourcesFeaturesInsert'
-    { _rfiPayload  :: !Feature
+    { _rfiPayload :: !Feature
     , _rfiCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

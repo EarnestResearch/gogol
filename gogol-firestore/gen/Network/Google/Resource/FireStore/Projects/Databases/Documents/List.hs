@@ -49,8 +49,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.List
     , pCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.list@ method which the
 -- 'ProjectsDatabasesDocumentsList' request conforms to.
@@ -78,20 +78,20 @@ type ProjectsDatabasesDocumentsListResource =
 -- /See:/ 'projectsDatabasesDocumentsList' smart constructor.
 data ProjectsDatabasesDocumentsList =
   ProjectsDatabasesDocumentsList'
-    { _pParent         :: !Text
-    , _pXgafv          :: !(Maybe Xgafv)
-    , _pReadTime       :: !(Maybe DateTime')
+    { _pParent :: !Text
+    , _pXgafv :: !(Maybe Xgafv)
+    , _pReadTime :: !(Maybe DateTime')
     , _pUploadProtocol :: !(Maybe Text)
-    , _pOrderBy        :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pCollectionId   :: !Text
-    , _pUploadType     :: !(Maybe Text)
-    , _pTransaction    :: !(Maybe Bytes)
-    , _pShowMissing    :: !(Maybe Bool)
-    , _pPageToken      :: !(Maybe Text)
-    , _pPageSize       :: !(Maybe (Textual Int32))
+    , _pOrderBy :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pCollectionId :: !Text
+    , _pUploadType :: !(Maybe Text)
+    , _pTransaction :: !(Maybe Bytes)
+    , _pShowMissing :: !(Maybe Bool)
+    , _pPageToken :: !(Maybe Text)
+    , _pPageSize :: !(Maybe (Textual Int32))
     , _pMaskFieldPaths :: !(Maybe [Text])
-    , _pCallback       :: !(Maybe Text)
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

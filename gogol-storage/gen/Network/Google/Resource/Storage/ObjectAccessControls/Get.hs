@@ -40,8 +40,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Get
     , oacgGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.get@ method which the
 -- 'ObjectAccessControlsGet' request conforms to.
@@ -64,11 +64,11 @@ type ObjectAccessControlsGetResource =
 -- /See:/ 'objectAccessControlsGet' smart constructor.
 data ObjectAccessControlsGet =
   ObjectAccessControlsGet'
-    { _oacgBucket      :: !Text
+    { _oacgBucket :: !Text
     , _oacgUserProject :: !(Maybe Text)
-    , _oacgObject      :: !Text
-    , _oacgEntity      :: !Text
-    , _oacgGeneration  :: !(Maybe (Textual Int64))
+    , _oacgObject :: !Text
+    , _oacgEntity :: !Text
+    , _oacgGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

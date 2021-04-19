@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.Products.Get
     , pggProductId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.get@ method which the
 -- 'ProductsGet' request conforms to.
 type ProductsGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "products" :>
              Capture "productId" Text :>
@@ -56,7 +56,7 @@ type ProductsGetResource =
 data ProductsGet =
   ProductsGet'
     { _pggMerchantId :: !(Textual Word64)
-    , _pggProductId  :: !Text
+    , _pggProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

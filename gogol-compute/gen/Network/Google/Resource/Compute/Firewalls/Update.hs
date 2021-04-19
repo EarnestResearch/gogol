@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Firewalls.Update
     , fuFirewall
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.firewalls.update@ method which the
 -- 'FirewallsUpdate' request conforms to.
@@ -66,9 +66,9 @@ type FirewallsUpdateResource =
 data FirewallsUpdate =
   FirewallsUpdate'
     { _fuRequestId :: !(Maybe Text)
-    , _fuProject   :: !Text
-    , _fuPayload   :: !Firewall
-    , _fuFirewall  :: !Text
+    , _fuProject :: !Text
+    , _fuPayload :: !Firewall
+    , _fuFirewall :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

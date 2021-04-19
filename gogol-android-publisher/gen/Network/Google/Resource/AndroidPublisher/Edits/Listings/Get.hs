@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Listings.Get
     , elgEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.listings.get@ method which the
 -- 'EditsListingsGet' request conforms to.
@@ -60,8 +60,8 @@ type EditsListingsGetResource =
 data EditsListingsGet =
   EditsListingsGet'
     { _elgPackageName :: !Text
-    , _elgLanguage    :: !Text
-    , _elgEditId      :: !Text
+    , _elgLanguage :: !Text
+    , _elgEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

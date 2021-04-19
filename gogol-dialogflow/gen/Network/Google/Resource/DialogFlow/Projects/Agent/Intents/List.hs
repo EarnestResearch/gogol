@@ -45,8 +45,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.List
     , pailCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.list@ method which the
 -- 'ProjectsAgentIntentsList' request conforms to.
@@ -72,16 +72,16 @@ type ProjectsAgentIntentsListResource =
 -- /See:/ 'projectsAgentIntentsList' smart constructor.
 data ProjectsAgentIntentsList =
   ProjectsAgentIntentsList'
-    { _pailParent         :: !Text
-    , _pailXgafv          :: !(Maybe Xgafv)
-    , _pailLanguageCode   :: !(Maybe Text)
+    { _pailParent :: !Text
+    , _pailXgafv :: !(Maybe Xgafv)
+    , _pailLanguageCode :: !(Maybe Text)
     , _pailUploadProtocol :: !(Maybe Text)
-    , _pailAccessToken    :: !(Maybe Text)
-    , _pailUploadType     :: !(Maybe Text)
-    , _pailIntentView     :: !(Maybe Text)
-    , _pailPageToken      :: !(Maybe Text)
-    , _pailPageSize       :: !(Maybe (Textual Int32))
-    , _pailCallback       :: !(Maybe Text)
+    , _pailAccessToken :: !(Maybe Text)
+    , _pailUploadType :: !(Maybe Text)
+    , _pailIntentView :: !(Maybe Text)
+    , _pailPageToken :: !(Maybe Text)
+    , _pailPageSize :: !(Maybe (Textual Int32))
+    , _pailCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

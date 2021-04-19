@@ -48,8 +48,8 @@ module Network.Google.Resource.Blogger.PostUserInfos.List
     , puilMaxResults
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.postUserInfos.list@ method which the
 -- 'PostUserInfosList'' request conforms to.
@@ -80,17 +80,17 @@ type PostUserInfosListResource =
 -- /See:/ 'postUserInfosList'' smart constructor.
 data PostUserInfosList' =
   PostUserInfosList''
-    { _puilStatus      :: !(Maybe [PostUserInfosListStatus])
-    , _puilOrderBy     :: !PostUserInfosListOrderBy
-    , _puilEndDate     :: !(Maybe DateTime')
-    , _puilBlogId      :: !Text
-    , _puilUserId      :: !Text
-    , _puilStartDate   :: !(Maybe DateTime')
+    { _puilStatus :: !(Maybe [PostUserInfosListStatus])
+    , _puilOrderBy :: !PostUserInfosListOrderBy
+    , _puilEndDate :: !(Maybe DateTime')
+    , _puilBlogId :: !Text
+    , _puilUserId :: !Text
+    , _puilStartDate :: !(Maybe DateTime')
     , _puilFetchBodies :: !Bool
-    , _puilView        :: !(Maybe PostUserInfosListView)
-    , _puilLabels      :: !(Maybe Text)
-    , _puilPageToken   :: !(Maybe Text)
-    , _puilMaxResults  :: !(Maybe (Textual Word32))
+    , _puilView :: !(Maybe PostUserInfosListView)
+    , _puilLabels :: !(Maybe Text)
+    , _puilPageToken :: !(Maybe Text)
+    , _puilMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

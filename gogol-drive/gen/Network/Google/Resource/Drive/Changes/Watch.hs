@@ -48,8 +48,8 @@ module Network.Google.Resource.Drive.Changes.Watch
     , cwDriveId
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.changes.watch@ method which the
 -- 'ChangesWatch' request conforms to.
@@ -79,19 +79,19 @@ type ChangesWatchResource =
 -- /See:/ 'changesWatch' smart constructor.
 data ChangesWatch =
   ChangesWatch'
-    { _cwIncludeTeamDriveItems     :: !Bool
-    , _cwPayload                   :: !Channel
-    , _cwIncludeCorpusRemovals     :: !Bool
-    , _cwTeamDriveId               :: !(Maybe Text)
-    , _cwRestrictToMyDrive         :: !Bool
-    , _cwSpaces                    :: !Text
+    { _cwIncludeTeamDriveItems :: !Bool
+    , _cwPayload :: !Channel
+    , _cwIncludeCorpusRemovals :: !Bool
+    , _cwTeamDriveId :: !(Maybe Text)
+    , _cwRestrictToMyDrive :: !Bool
+    , _cwSpaces :: !Text
     , _cwIncludeItemsFromAllDrives :: !Bool
-    , _cwSupportsAllDrives         :: !Bool
-    , _cwPageToken                 :: !Text
-    , _cwPageSize                  :: !(Textual Int32)
-    , _cwIncludeRemoved            :: !Bool
-    , _cwSupportsTeamDrives        :: !Bool
-    , _cwDriveId                   :: !(Maybe Text)
+    , _cwSupportsAllDrives :: !Bool
+    , _cwPageToken :: !Text
+    , _cwPageSize :: !(Textual Int32)
+    , _cwIncludeRemoved :: !Bool
+    , _cwSupportsTeamDrives :: !Bool
+    , _cwDriveId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

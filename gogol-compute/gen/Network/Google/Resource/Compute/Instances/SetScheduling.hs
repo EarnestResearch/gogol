@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Instances.SetScheduling
     , issInstance
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.setScheduling@ method which the
 -- 'InstancesSetScheduling' request conforms to.
@@ -65,10 +65,10 @@ type InstancesSetSchedulingResource =
 data InstancesSetScheduling =
   InstancesSetScheduling'
     { _issRequestId :: !(Maybe Text)
-    , _issProject   :: !Text
-    , _issZone      :: !Text
-    , _issPayload   :: !Scheduling
-    , _issInstance  :: !Text
+    , _issProject :: !Text
+    , _issZone :: !Text
+    , _issPayload :: !Scheduling
+    , _issInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.SmimeInfo.Insert
     , ussasiiSendAsEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.smimeInfo.insert@ method which the
 -- 'UsersSettingsSendAsSmimeInfoInsert' request conforms to.
@@ -62,8 +62,8 @@ type UsersSettingsSendAsSmimeInfoInsertResource =
 -- /See:/ 'usersSettingsSendAsSmimeInfoInsert' smart constructor.
 data UsersSettingsSendAsSmimeInfoInsert =
   UsersSettingsSendAsSmimeInfoInsert'
-    { _ussasiiPayload     :: !SmimeInfo
-    , _ussasiiUserId      :: !Text
+    { _ussasiiPayload :: !SmimeInfo
+    , _ussasiiUserId :: !Text
     , _ussasiiSendAsEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

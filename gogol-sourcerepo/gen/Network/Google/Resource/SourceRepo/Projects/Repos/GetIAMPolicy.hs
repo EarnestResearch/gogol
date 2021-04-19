@@ -42,8 +42,8 @@ module Network.Google.Resource.SourceRepo.Projects.Repos.GetIAMPolicy
     , prgipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SourceRepo.Types
+import Network.Google.Prelude
+import Network.Google.SourceRepo.Types
 
 -- | A resource alias for @sourcerepo.projects.repos.getIamPolicy@ method which the
 -- 'ProjectsReposGetIAMPolicy' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsReposGetIAMPolicyResource =
 -- /See:/ 'projectsReposGetIAMPolicy' smart constructor.
 data ProjectsReposGetIAMPolicy =
   ProjectsReposGetIAMPolicy'
-    { _prgipXgafv          :: !(Maybe Xgafv)
+    { _prgipXgafv :: !(Maybe Xgafv)
     , _prgipUploadProtocol :: !(Maybe Text)
-    , _prgipAccessToken    :: !(Maybe Text)
-    , _prgipUploadType     :: !(Maybe Text)
-    , _prgipResource       :: !Text
-    , _prgipCallback       :: !(Maybe Text)
+    , _prgipAccessToken :: !(Maybe Text)
+    , _prgipUploadType :: !(Maybe Text)
+    , _prgipResource :: !Text
+    , _prgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

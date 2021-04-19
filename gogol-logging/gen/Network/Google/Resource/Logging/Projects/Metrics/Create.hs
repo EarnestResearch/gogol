@@ -42,8 +42,8 @@ module Network.Google.Resource.Logging.Projects.Metrics.Create
     , pmcCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.metrics.create@ method which the
 -- 'ProjectsMetricsCreate' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsMetricsCreateResource =
 -- /See:/ 'projectsMetricsCreate' smart constructor.
 data ProjectsMetricsCreate =
   ProjectsMetricsCreate'
-    { _pmcParent         :: !Text
-    , _pmcXgafv          :: !(Maybe Xgafv)
+    { _pmcParent :: !Text
+    , _pmcXgafv :: !(Maybe Xgafv)
     , _pmcUploadProtocol :: !(Maybe Text)
-    , _pmcAccessToken    :: !(Maybe Text)
-    , _pmcUploadType     :: !(Maybe Text)
-    , _pmcPayload        :: !LogMetric
-    , _pmcCallback       :: !(Maybe Text)
+    , _pmcAccessToken :: !(Maybe Text)
+    , _pmcUploadType :: !(Maybe Text)
+    , _pmcPayload :: !LogMetric
+    , _pmcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

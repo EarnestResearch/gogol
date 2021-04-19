@@ -16,7 +16,7 @@
 --
 module Network.Google.AppsReseller.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The deletionType query string enables the cancellation, downgrade, or
 -- suspension of a subscription.

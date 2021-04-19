@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudSearch.Query.Search
     , qCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.query.search@ method which the
 -- 'QuerySearch' request conforms to.
@@ -70,12 +70,12 @@ type QuerySearchResource =
 -- /See:/ 'querySearch' smart constructor.
 data QuerySearch =
   QuerySearch'
-    { _qXgafv          :: !(Maybe Xgafv)
+    { _qXgafv :: !(Maybe Xgafv)
     , _qUploadProtocol :: !(Maybe Text)
-    , _qAccessToken    :: !(Maybe Text)
-    , _qUploadType     :: !(Maybe Text)
-    , _qPayload        :: !SearchRequest
-    , _qCallback       :: !(Maybe Text)
+    , _qAccessToken :: !(Maybe Text)
+    , _qUploadType :: !(Maybe Text)
+    , _qPayload :: !SearchRequest
+    , _qCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

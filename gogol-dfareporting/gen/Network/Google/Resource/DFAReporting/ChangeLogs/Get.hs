@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ChangeLogs.Get
     , clgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.changeLogs.get@ method which the
 -- 'ChangeLogsGet' request conforms to.
@@ -57,7 +57,7 @@ type ChangeLogsGetResource =
 data ChangeLogsGet =
   ChangeLogsGet'
     { _clgProFileId :: !(Textual Int64)
-    , _clgId        :: !(Textual Int64)
+    , _clgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

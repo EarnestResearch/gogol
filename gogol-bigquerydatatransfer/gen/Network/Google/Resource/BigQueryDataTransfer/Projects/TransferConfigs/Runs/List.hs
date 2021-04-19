@@ -45,8 +45,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Run
     , ptcrlCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.transferConfigs.runs.list@ method which the
 -- 'ProjectsTransferConfigsRunsList' request conforms to.
@@ -71,16 +71,16 @@ type ProjectsTransferConfigsRunsListResource =
 -- /See:/ 'projectsTransferConfigsRunsList' smart constructor.
 data ProjectsTransferConfigsRunsList =
   ProjectsTransferConfigsRunsList'
-    { _ptcrlRunAttempt     :: !(Maybe Text)
-    , _ptcrlParent         :: !Text
-    , _ptcrlStates         :: !(Maybe [Text])
-    , _ptcrlXgafv          :: !(Maybe Xgafv)
+    { _ptcrlRunAttempt :: !(Maybe Text)
+    , _ptcrlParent :: !Text
+    , _ptcrlStates :: !(Maybe [Text])
+    , _ptcrlXgafv :: !(Maybe Xgafv)
     , _ptcrlUploadProtocol :: !(Maybe Text)
-    , _ptcrlAccessToken    :: !(Maybe Text)
-    , _ptcrlUploadType     :: !(Maybe Text)
-    , _ptcrlPageToken      :: !(Maybe Text)
-    , _ptcrlPageSize       :: !(Maybe (Textual Int32))
-    , _ptcrlCallback       :: !(Maybe Text)
+    , _ptcrlAccessToken :: !(Maybe Text)
+    , _ptcrlUploadType :: !(Maybe Text)
+    , _ptcrlPageToken :: !(Maybe Text)
+    , _ptcrlPageSize :: !(Maybe (Textual Int32))
+    , _ptcrlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

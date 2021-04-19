@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutclusters.List
     , sllPageId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutclusters.list@ method which the
 -- 'StorelayoutclustersList' request conforms to.
@@ -60,7 +60,7 @@ type StorelayoutclustersListResource =
 data StorelayoutclustersList =
   StorelayoutclustersList'
     { _sllEnterpriseId :: !Text
-    , _sllPageId       :: !Text
+    , _sllPageId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

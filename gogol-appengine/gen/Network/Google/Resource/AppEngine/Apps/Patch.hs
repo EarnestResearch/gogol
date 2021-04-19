@@ -46,8 +46,8 @@ module Network.Google.Resource.AppEngine.Apps.Patch
     , apCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.patch@ method which the
 -- 'AppsPatch' request conforms to.
@@ -73,14 +73,14 @@ type AppsPatchResource =
 -- /See:/ 'appsPatch' smart constructor.
 data AppsPatch =
   AppsPatch'
-    { _apXgafv          :: !(Maybe Xgafv)
+    { _apXgafv :: !(Maybe Xgafv)
     , _apUploadProtocol :: !(Maybe Text)
-    , _apUpdateMask     :: !(Maybe GFieldMask)
-    , _apAccessToken    :: !(Maybe Text)
-    , _apUploadType     :: !(Maybe Text)
-    , _apPayload        :: !Application
-    , _apAppsId         :: !Text
-    , _apCallback       :: !(Maybe Text)
+    , _apUpdateMask :: !(Maybe GFieldMask)
+    , _apAccessToken :: !(Maybe Text)
+    , _apUploadType :: !(Maybe Text)
+    , _apPayload :: !Application
+    , _apAppsId :: !Text
+    , _apCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

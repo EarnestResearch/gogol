@@ -54,8 +54,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Cre
     , pCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.sessions.create@ method which the
 -- 'ProjectsInstancesDatabasesSessionsCreate' request conforms to.
@@ -90,13 +90,13 @@ type ProjectsInstancesDatabasesSessionsCreateResource
 -- /See:/ 'projectsInstancesDatabasesSessionsCreate' smart constructor.
 data ProjectsInstancesDatabasesSessionsCreate =
   ProjectsInstancesDatabasesSessionsCreate'
-    { _pXgafv          :: !(Maybe Xgafv)
+    { _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pDatabase       :: !Text
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !CreateSessionRequest
-    , _pCallback       :: !(Maybe Text)
+    , _pDatabase :: !Text
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !CreateSessionRequest
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

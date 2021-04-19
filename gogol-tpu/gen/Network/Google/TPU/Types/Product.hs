@@ -17,8 +17,8 @@
 --
 module Network.Google.TPU.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.TPU.Types.Sum
+import Network.Google.Prelude
+import Network.Google.TPU.Types.Sum
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.TPU.Types.Sum
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -161,7 +161,7 @@ instance ToJSON OperationSchema where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -257,7 +257,7 @@ instance ToJSON AcceleratorType where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -311,7 +311,7 @@ instance ToJSON ListOperationsResponse where
 data ListAcceleratorTypesResponse =
   ListAcceleratorTypesResponse'
     { _latrAcceleratorTypes :: !(Maybe [AcceleratorType])
-    , _latrNextPageToken    :: !(Maybe Text)
+    , _latrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -364,11 +364,11 @@ instance ToJSON ListAcceleratorTypesResponse where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -451,10 +451,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -546,7 +546,7 @@ instance ToJSON Operation where
 data NetworkEndpoint =
   NetworkEndpoint'
     { _neIPAddress :: !(Maybe Text)
-    , _nePort      :: !(Maybe (Textual Int32))
+    , _nePort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -618,22 +618,22 @@ instance ToJSON Empty where
 -- /See:/ 'node' smart constructor.
 data Node =
   Node'
-    { _nAcceleratorType   :: !(Maybe Text)
-    , _nIPAddress         :: !(Maybe Text)
-    , _nState             :: !(Maybe NodeState)
-    , _nNetwork           :: !(Maybe Text)
-    , _nHealth            :: !(Maybe NodeHealth)
-    , _nServiceAccount    :: !(Maybe Text)
-    , _nName              :: !(Maybe Text)
-    , _nSchedulingConfig  :: !(Maybe SchedulingConfig)
+    { _nAcceleratorType :: !(Maybe Text)
+    , _nIPAddress :: !(Maybe Text)
+    , _nState :: !(Maybe NodeState)
+    , _nNetwork :: !(Maybe Text)
+    , _nHealth :: !(Maybe NodeHealth)
+    , _nServiceAccount :: !(Maybe Text)
+    , _nName :: !(Maybe Text)
+    , _nSchedulingConfig :: !(Maybe SchedulingConfig)
     , _nHealthDescription :: !(Maybe Text)
-    , _nCIdRBlock         :: !(Maybe Text)
-    , _nLabels            :: !(Maybe NodeLabels)
-    , _nNetworkEndpoints  :: !(Maybe [NetworkEndpoint])
-    , _nDescription       :: !(Maybe Text)
-    , _nCreateTime        :: !(Maybe DateTime')
+    , _nCIdRBlock :: !(Maybe Text)
+    , _nLabels :: !(Maybe NodeLabels)
+    , _nNetworkEndpoints :: !(Maybe [NetworkEndpoint])
+    , _nDescription :: !(Maybe Text)
+    , _nCreateTime :: !(Maybe DateTime')
     , _nTensorflowVersion :: !(Maybe Text)
-    , _nPort              :: !(Maybe Text)
+    , _nPort :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -939,8 +939,8 @@ instance ToJSON ReimageNodeRequest where
 data ListNodesResponse =
   ListNodesResponse'
     { _lnrNextPageToken :: !(Maybe Text)
-    , _lnrUnreachable   :: !(Maybe [Text])
-    , _lnrNodes         :: !(Maybe [Node])
+    , _lnrUnreachable :: !(Maybe [Text])
+    , _lnrNodes :: !(Maybe [Node])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1006,7 +1006,7 @@ instance ToJSON ListNodesResponse where
 -- /See:/ 'schedulingConfig' smart constructor.
 data SchedulingConfig =
   SchedulingConfig'
-    { _scReserved    :: !(Maybe Bool)
+    { _scReserved :: !(Maybe Bool)
     , _scPreemptible :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1161,13 +1161,13 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omAPIVersion      :: !(Maybe Text)
-    , _omEndTime         :: !(Maybe DateTime')
-    , _omStatusDetail    :: !(Maybe Text)
-    , _omVerb            :: !(Maybe Text)
+    { _omAPIVersion :: !(Maybe Text)
+    , _omEndTime :: !(Maybe DateTime')
+    , _omStatusDetail :: !(Maybe Text)
+    , _omVerb :: !(Maybe Text)
     , _omCancelRequested :: !(Maybe Bool)
-    , _omTarget          :: !(Maybe Text)
-    , _omCreateTime      :: !(Maybe DateTime')
+    , _omTarget :: !(Maybe Text)
+    , _omCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1273,7 +1273,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'listTensorFlowVersionsResponse' smart constructor.
 data ListTensorFlowVersionsResponse =
   ListTensorFlowVersionsResponse'
-    { _ltfvrNextPageToken      :: !(Maybe Text)
+    { _ltfvrNextPageToken :: !(Maybe Text)
     , _ltfvrTensorflowVersions :: !(Maybe [TensorFlowVersion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1372,7 +1372,7 @@ instance ToJSON OperationResponse where
 -- /See:/ 'tensorFlowVersion' smart constructor.
 data TensorFlowVersion =
   TensorFlowVersion'
-    { _tfvName    :: !(Maybe Text)
+    { _tfvName :: !(Maybe Text)
     , _tfvVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

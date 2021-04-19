@@ -17,8 +17,8 @@
 --
 module Network.Google.ServiceBroker.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceBroker.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ServiceBroker.Types.Sum
 
 -- | Defines an Identity and Access Management (IAM) policy. It is used to
 -- specify access control policies for Cloud Platform resources. A
@@ -41,8 +41,8 @@ import           Network.Google.ServiceBroker.Types.Sum
 -- /See:/ 'googleIAMV1__Policy' smart constructor.
 data GoogleIAMV1__Policy =
   GoogleIAMV1__Policy'
-    { _givpEtag     :: !(Maybe Bytes)
-    , _givpVersion  :: !(Maybe (Textual Int32))
+    { _givpEtag :: !(Maybe Bytes)
+    , _givpVersion :: !(Maybe (Textual Int32))
     , _givpBindings :: !(Maybe [GoogleIAMV1__Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -162,9 +162,9 @@ instance ToJSON
 -- /See:/ 'googleType__Expr' smart constructor.
 data GoogleType__Expr =
   GoogleType__Expr'
-    { _gteLocation    :: !(Maybe Text)
-    , _gteExpression  :: !(Maybe Text)
-    , _gteTitle       :: !(Maybe Text)
+    { _gteLocation :: !(Maybe Text)
+    , _gteExpression :: !(Maybe Text)
+    , _gteTitle :: !(Maybe Text)
     , _gteDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -242,8 +242,8 @@ instance ToJSON GoogleType__Expr where
 -- /See:/ 'googleIAMV1__Binding' smart constructor.
 data GoogleIAMV1__Binding =
   GoogleIAMV1__Binding'
-    { _givbMembers   :: !(Maybe [Text])
-    , _givbRole      :: !(Maybe Text)
+    { _givbMembers :: !(Maybe [Text])
+    , _givbRole :: !(Maybe Text)
     , _givbCondition :: !(Maybe GoogleType__Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

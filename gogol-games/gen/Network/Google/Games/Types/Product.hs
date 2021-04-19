@@ -17,8 +17,8 @@
 --
 module Network.Google.Games.Types.Product where
 
-import           Network.Google.Games.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Games.Types.Sum
+import Network.Google.Prelude
 
 -- | This is a JSON template for a join room request.
 --
@@ -26,9 +26,9 @@ import           Network.Google.Prelude
 data RoomJoinRequest =
   RoomJoinRequest'
     { _rjrNetworkDiagnostics :: !(Maybe NetworkDiagnostics)
-    , _rjrKind               :: !Text
-    , _rjrClientAddress      :: !(Maybe RoomClientAddress)
-    , _rjrCapabilities       :: !(Maybe [Text])
+    , _rjrKind :: !Text
+    , _rjrClientAddress :: !(Maybe RoomClientAddress)
+    , _rjrCapabilities :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -106,7 +106,7 @@ instance ToJSON RoomJoinRequest where
 -- /See:/ 'playerName' smart constructor.
 data PlayerName =
   PlayerName'
-    { _pnGivenName  :: !(Maybe Text)
+    { _pnGivenName :: !(Maybe Text)
     , _pnFamilyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -156,16 +156,16 @@ instance ToJSON PlayerName where
 data Snapshot =
   Snapshot'
     { _sLastModifiedMillis :: !(Maybe (Textual Int64))
-    , _sKind               :: !Text
-    , _sProgressValue      :: !(Maybe (Textual Int64))
-    , _sUniqueName         :: !(Maybe Text)
-    , _sCoverImage         :: !(Maybe SnapshotImage)
-    , _sId                 :: !(Maybe Text)
-    , _sDurationMillis     :: !(Maybe (Textual Int64))
-    , _sTitle              :: !(Maybe Text)
-    , _sType               :: !(Maybe Text)
-    , _sDescription        :: !(Maybe Text)
-    , _sDriveId            :: !(Maybe Text)
+    , _sKind :: !Text
+    , _sProgressValue :: !(Maybe (Textual Int64))
+    , _sUniqueName :: !(Maybe Text)
+    , _sCoverImage :: !(Maybe SnapshotImage)
+    , _sId :: !(Maybe Text)
+    , _sDurationMillis :: !(Maybe (Textual Int64))
+    , _sTitle :: !(Maybe Text)
+    , _sType :: !(Maybe Text)
+    , _sDescription :: !(Maybe Text)
+    , _sDriveId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -312,19 +312,19 @@ instance ToJSON Snapshot where
 -- /See:/ 'room' smart constructor.
 data Room =
   Room'
-    { _rStatus               :: !(Maybe Text)
-    , _rVariant              :: !(Maybe (Textual Int32))
-    , _rKind                 :: !Text
-    , _rAutoMatchingStatus   :: !(Maybe RoomAutoMatchStatus)
-    , _rCreationDetails      :: !(Maybe RoomModification)
-    , _rInviterId            :: !(Maybe Text)
-    , _rLastUpdateDetails    :: !(Maybe RoomModification)
-    , _rRoomStatusVersion    :: !(Maybe (Textual Int32))
-    , _rParticipants         :: !(Maybe [RoomParticipant])
-    , _rApplicationId        :: !(Maybe Text)
+    { _rStatus :: !(Maybe Text)
+    , _rVariant :: !(Maybe (Textual Int32))
+    , _rKind :: !Text
+    , _rAutoMatchingStatus :: !(Maybe RoomAutoMatchStatus)
+    , _rCreationDetails :: !(Maybe RoomModification)
+    , _rInviterId :: !(Maybe Text)
+    , _rLastUpdateDetails :: !(Maybe RoomModification)
+    , _rRoomStatusVersion :: !(Maybe (Textual Int32))
+    , _rParticipants :: !(Maybe [RoomParticipant])
+    , _rApplicationId :: !(Maybe Text)
     , _rAutoMatchingCriteria :: !(Maybe RoomAutoMatchingCriteria)
-    , _rRoomId               :: !(Maybe Text)
-    , _rDescription          :: !(Maybe Text)
+    , _rRoomId :: !(Maybe Text)
+    , _rDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -510,8 +510,8 @@ instance ToJSON Room where
 data QuestListResponse =
   QuestListResponse'
     { _qlrNextPageToken :: !(Maybe Text)
-    , _qlrKind          :: !Text
-    , _qlrItems         :: !(Maybe [Quest])
+    , _qlrKind :: !Text
+    , _qlrItems :: !(Maybe [Quest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -575,26 +575,26 @@ instance ToJSON QuestListResponse where
 -- /See:/ 'turnBasedMatch' smart constructor.
 data TurnBasedMatch =
   TurnBasedMatch'
-    { _tbmStatus               :: !(Maybe Text)
-    , _tbmVariant              :: !(Maybe (Textual Int32))
-    , _tbmResults              :: !(Maybe [ParticipantResult])
-    , _tbmMatchNumber          :: !(Maybe (Textual Int32))
-    , _tbmKind                 :: !Text
-    , _tbmData                 :: !(Maybe TurnBasedMatchData)
-    , _tbmWithParticipantId    :: !(Maybe Text)
-    , _tbmCreationDetails      :: !(Maybe TurnBasedMatchModification)
-    , _tbmInviterId            :: !(Maybe Text)
-    , _tbmLastUpdateDetails    :: !(Maybe TurnBasedMatchModification)
-    , _tbmParticipants         :: !(Maybe [TurnBasedMatchParticipant])
-    , _tbmApplicationId        :: !(Maybe Text)
+    { _tbmStatus :: !(Maybe Text)
+    , _tbmVariant :: !(Maybe (Textual Int32))
+    , _tbmResults :: !(Maybe [ParticipantResult])
+    , _tbmMatchNumber :: !(Maybe (Textual Int32))
+    , _tbmKind :: !Text
+    , _tbmData :: !(Maybe TurnBasedMatchData)
+    , _tbmWithParticipantId :: !(Maybe Text)
+    , _tbmCreationDetails :: !(Maybe TurnBasedMatchModification)
+    , _tbmInviterId :: !(Maybe Text)
+    , _tbmLastUpdateDetails :: !(Maybe TurnBasedMatchModification)
+    , _tbmParticipants :: !(Maybe [TurnBasedMatchParticipant])
+    , _tbmApplicationId :: !(Maybe Text)
     , _tbmAutoMatchingCriteria :: !(Maybe TurnBasedAutoMatchingCriteria)
-    , _tbmPreviousMatchData    :: !(Maybe TurnBasedMatchData)
+    , _tbmPreviousMatchData :: !(Maybe TurnBasedMatchData)
     , _tbmPendingParticipantId :: !(Maybe Text)
-    , _tbmUserMatchStatus      :: !(Maybe Text)
-    , _tbmMatchId              :: !(Maybe Text)
-    , _tbmDescription          :: !(Maybe Text)
-    , _tbmRematchId            :: !(Maybe Text)
-    , _tbmMatchVersion         :: !(Maybe (Textual Int32))
+    , _tbmUserMatchStatus :: !(Maybe Text)
+    , _tbmMatchId :: !(Maybe Text)
+    , _tbmDescription :: !(Maybe Text)
+    , _tbmRematchId :: !(Maybe Text)
+    , _tbmMatchVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -867,8 +867,8 @@ instance ToJSON TurnBasedMatch where
 -- /See:/ 'turnBasedMatchData' smart constructor.
 data TurnBasedMatchData =
   TurnBasedMatchData'
-    { _tbmdKind          :: !Text
-    , _tbmdData          :: !(Maybe Bytes)
+    { _tbmdKind :: !Text
+    , _tbmdData :: !(Maybe Bytes)
     , _tbmdDataAvailable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -934,11 +934,11 @@ instance ToJSON TurnBasedMatchData where
 -- /See:/ 'playerEvent' smart constructor.
 data PlayerEvent =
   PlayerEvent'
-    { _peKind               :: !Text
-    , _peNumEvents          :: !(Maybe (Textual Int64))
+    { _peKind :: !Text
+    , _peNumEvents :: !(Maybe (Textual Int64))
     , _peFormattedNumEvents :: !(Maybe Text)
-    , _peDefinitionId       :: !(Maybe Text)
-    , _pePlayerId           :: !(Maybe Text)
+    , _peDefinitionId :: !(Maybe Text)
+    , _pePlayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1024,14 +1024,14 @@ instance ToJSON PlayerEvent where
 -- /See:/ 'playerLeaderboardScore' smart constructor.
 data PlayerLeaderboardScore =
   PlayerLeaderboardScore'
-    { _plsScoreTag       :: !(Maybe Text)
-    , _plsScoreString    :: !(Maybe Text)
-    , _plsKind           :: !Text
-    , _plsScoreValue     :: !(Maybe (Textual Int64))
-    , _plsTimeSpan       :: !(Maybe Text)
-    , _plsPublicRank     :: !(Maybe LeaderboardScoreRank)
-    , _plsSocialRank     :: !(Maybe LeaderboardScoreRank)
-    , _plsLeaderboardId  :: !(Maybe Text)
+    { _plsScoreTag :: !(Maybe Text)
+    , _plsScoreString :: !(Maybe Text)
+    , _plsKind :: !Text
+    , _plsScoreValue :: !(Maybe (Textual Int64))
+    , _plsTimeSpan :: !(Maybe Text)
+    , _plsPublicRank :: !(Maybe LeaderboardScoreRank)
+    , _plsSocialRank :: !(Maybe LeaderboardScoreRank)
+    , _plsLeaderboardId :: !(Maybe Text)
     , _plsWriteTimestamp :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1165,18 +1165,18 @@ instance ToJSON PlayerLeaderboardScore where
 -- /See:/ 'application' smart constructor.
 data Application =
   Application'
-    { _aThemeColor           :: !(Maybe Text)
-    , _aLeaderboardCount     :: !(Maybe (Textual Int32))
-    , _aKind                 :: !Text
-    , _aCategory             :: !(Maybe ApplicationCategory)
-    , _aName                 :: !(Maybe Text)
-    , _aEnabledFeatures      :: !(Maybe [Text])
-    , _aInstances            :: !(Maybe [Instance])
-    , _aAuthor               :: !(Maybe Text)
-    , _aId                   :: !(Maybe Text)
-    , _aAchievementCount     :: !(Maybe (Textual Int32))
-    , _aAssets               :: !(Maybe [ImageAsset])
-    , _aDescription          :: !(Maybe Text)
+    { _aThemeColor :: !(Maybe Text)
+    , _aLeaderboardCount :: !(Maybe (Textual Int32))
+    , _aKind :: !Text
+    , _aCategory :: !(Maybe ApplicationCategory)
+    , _aName :: !(Maybe Text)
+    , _aEnabledFeatures :: !(Maybe [Text])
+    , _aInstances :: !(Maybe [Instance])
+    , _aAuthor :: !(Maybe Text)
+    , _aId :: !(Maybe Text)
+    , _aAchievementCount :: !(Maybe (Textual Int32))
+    , _aAssets :: !(Maybe [ImageAsset])
+    , _aDescription :: !(Maybe Text)
     , _aLastUpdatedTimestamp :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1351,8 +1351,8 @@ instance ToJSON Application where
 data ApplicationCategory =
   ApplicationCategory'
     { _acSecondary :: !(Maybe Text)
-    , _acKind      :: !Text
-    , _acPrimary   :: !(Maybe Text)
+    , _acKind :: !Text
+    , _acPrimary :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1414,7 +1414,7 @@ instance ToJSON ApplicationCategory where
 data PlayerScoreListResponse =
   PlayerScoreListResponse'
     { _pslrSubmittedScores :: !(Maybe [PlayerScoreResponse])
-    , _pslrKind            :: !Text
+    , _pslrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1468,13 +1468,13 @@ instance ToJSON PlayerScoreListResponse where
 -- /See:/ 'networkDiagnostics' smart constructor.
 data NetworkDiagnostics =
   NetworkDiagnostics'
-    { _ndAndroidNetworkType        :: !(Maybe (Textual Int32))
-    , _ndKind                      :: !Text
-    , _ndNetworkOperatorCode       :: !(Maybe Text)
-    , _ndNetworkOperatorName       :: !(Maybe Text)
+    { _ndAndroidNetworkType :: !(Maybe (Textual Int32))
+    , _ndKind :: !Text
+    , _ndNetworkOperatorCode :: !(Maybe Text)
+    , _ndNetworkOperatorName :: !(Maybe Text)
     , _ndRegistrationLatencyMillis :: !(Maybe (Textual Int32))
-    , _ndIosNetworkType            :: !(Maybe (Textual Int32))
-    , _ndAndroidNetworkSubtype     :: !(Maybe (Textual Int32))
+    , _ndIosNetworkType :: !(Maybe (Textual Int32))
+    , _ndAndroidNetworkSubtype :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1596,11 +1596,11 @@ instance ToJSON NetworkDiagnostics where
 -- /See:/ 'turnBasedMatchTurn' smart constructor.
 data TurnBasedMatchTurn =
   TurnBasedMatchTurn'
-    { _tbmtResults              :: !(Maybe [ParticipantResult])
-    , _tbmtKind                 :: !Text
-    , _tbmtData                 :: !(Maybe TurnBasedMatchDataRequest)
+    { _tbmtResults :: !(Maybe [ParticipantResult])
+    , _tbmtKind :: !Text
+    , _tbmtData :: !(Maybe TurnBasedMatchDataRequest)
     , _tbmtPendingParticipantId :: !(Maybe Text)
-    , _tbmtMatchVersion         :: !(Maybe (Textual Int32))
+    , _tbmtMatchVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1691,11 +1691,11 @@ instance ToJSON TurnBasedMatchTurn where
 -- /See:/ 'questCriterion' smart constructor.
 data QuestCriterion =
   QuestCriterion'
-    { _qcCurrentContribution    :: !(Maybe QuestContribution)
+    { _qcCurrentContribution :: !(Maybe QuestContribution)
     , _qcCompletionContribution :: !(Maybe QuestContribution)
-    , _qcKind                   :: !Text
-    , _qcInitialPlayerProgress  :: !(Maybe QuestContribution)
-    , _qcEventId                :: !(Maybe Text)
+    , _qcKind :: !Text
+    , _qcInitialPlayerProgress :: !(Maybe QuestContribution)
+    , _qcEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1791,8 +1791,8 @@ instance ToJSON QuestCriterion where
 data TurnBasedMatchList =
   TurnBasedMatchList'
     { _tbmlNextPageToken :: !(Maybe Text)
-    , _tbmlKind          :: !Text
-    , _tbmlItems         :: !(Maybe [TurnBasedMatch])
+    , _tbmlKind :: !Text
+    , _tbmlItems :: !(Maybe [TurnBasedMatch])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1856,14 +1856,14 @@ instance ToJSON TurnBasedMatchList where
 -- /See:/ 'peerChannelDiagnostics' smart constructor.
 data PeerChannelDiagnostics =
   PeerChannelDiagnostics'
-    { _pcdNumMessagesLost        :: !(Maybe (Textual Int32))
-    , _pcdBytesSent              :: !(Maybe AggregateStats)
-    , _pcdKind                   :: !Text
+    { _pcdNumMessagesLost :: !(Maybe (Textual Int32))
+    , _pcdBytesSent :: !(Maybe AggregateStats)
+    , _pcdKind :: !Text
     , _pcdRoundtripLatencyMillis :: !(Maybe AggregateStats)
-    , _pcdBytesReceived          :: !(Maybe AggregateStats)
-    , _pcdNumMessagesReceived    :: !(Maybe (Textual Int32))
-    , _pcdNumSendFailures        :: !(Maybe (Textual Int32))
-    , _pcdNumMessagesSent        :: !(Maybe (Textual Int32))
+    , _pcdBytesReceived :: !(Maybe AggregateStats)
+    , _pcdNumMessagesReceived :: !(Maybe (Textual Int32))
+    , _pcdNumSendFailures :: !(Maybe (Textual Int32))
+    , _pcdNumMessagesSent :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1986,8 +1986,8 @@ instance ToJSON PeerChannelDiagnostics where
 data RoomList =
   RoomList'
     { _rlNextPageToken :: !(Maybe Text)
-    , _rlKind          :: !Text
-    , _rlItems         :: !(Maybe [Room])
+    , _rlKind :: !Text
+    , _rlItems :: !(Maybe [Room])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2047,9 +2047,9 @@ instance ToJSON RoomList where
 data PushToken =
   PushToken'
     { _ptClientRevision :: !(Maybe Text)
-    , _ptKind           :: !Text
-    , _ptLanguage       :: !(Maybe Text)
-    , _ptId             :: !(Maybe PushTokenId)
+    , _ptKind :: !Text
+    , _ptLanguage :: !(Maybe Text)
+    , _ptId :: !(Maybe PushTokenId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2124,11 +2124,11 @@ instance ToJSON PushToken where
 data AchievementUpdateResponse =
   AchievementUpdateResponse'
     { _aurUpdateOccurred :: !(Maybe Bool)
-    , _aurAchievementId  :: !(Maybe Text)
-    , _aurKind           :: !Text
-    , _aurCurrentState   :: !(Maybe Text)
-    , _aurNewlyUnlocked  :: !(Maybe Bool)
-    , _aurCurrentSteps   :: !(Maybe (Textual Int32))
+    , _aurAchievementId :: !(Maybe Text)
+    , _aurKind :: !Text
+    , _aurCurrentState :: !(Maybe Text)
+    , _aurNewlyUnlocked :: !(Maybe Bool)
+    , _aurCurrentSteps :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2228,15 +2228,15 @@ instance ToJSON AchievementUpdateResponse where
 -- /See:/ 'leaderboardEntry' smart constructor.
 data LeaderboardEntry =
   LeaderboardEntry'
-    { _leScoreTag             :: !(Maybe Text)
+    { _leScoreTag :: !(Maybe Text)
     , _leWriteTimestampMillis :: !(Maybe (Textual Int64))
-    , _leKind                 :: !Text
-    , _leScoreValue           :: !(Maybe (Textual Int64))
-    , _leFormattedScore       :: !(Maybe Text)
-    , _leTimeSpan             :: !(Maybe Text)
-    , _leFormattedScoreRank   :: !(Maybe Text)
-    , _lePlayer               :: !(Maybe Player)
-    , _leScoreRank            :: !(Maybe (Textual Int64))
+    , _leKind :: !Text
+    , _leScoreValue :: !(Maybe (Textual Int64))
+    , _leFormattedScore :: !(Maybe Text)
+    , _leTimeSpan :: !(Maybe Text)
+    , _leFormattedScoreRank :: !(Maybe Text)
+    , _lePlayer :: !(Maybe Player)
+    , _leScoreRank :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2367,8 +2367,8 @@ instance ToJSON LeaderboardEntry where
 data SnapshotListResponse =
   SnapshotListResponse'
     { _slrNextPageToken :: !(Maybe Text)
-    , _slrKind          :: !Text
-    , _slrItems         :: !(Maybe [Snapshot])
+    , _slrKind :: !Text
+    , _slrItems :: !(Maybe [Snapshot])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2434,9 +2434,9 @@ instance ToJSON SnapshotListResponse where
 data PlayerLevel =
   PlayerLevel'
     { _plMaxExperiencePoints :: !(Maybe (Textual Int64))
-    , _plKind                :: !Text
+    , _plKind :: !Text
     , _plMinExperiencePoints :: !(Maybe (Textual Int64))
-    , _plLevel               :: !(Maybe (Textual Int32))
+    , _plLevel :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2514,7 +2514,7 @@ instance ToJSON PlayerLevel where
 -- /See:/ 'achievementUpdateMultipleResponse' smart constructor.
 data AchievementUpdateMultipleResponse =
   AchievementUpdateMultipleResponse'
-    { _aumrKind                :: !Text
+    { _aumrKind :: !Text
     , _aumrUpdatedAchievements :: !(Maybe [AchievementUpdateResponse])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2573,15 +2573,15 @@ instance ToJSON AchievementUpdateMultipleResponse
 -- /See:/ 'roomParticipant' smart constructor.
 data RoomParticipant =
   RoomParticipant'
-    { _rpStatus            :: !(Maybe Text)
-    , _rpConnected         :: !(Maybe Bool)
-    , _rpLeaveReason       :: !(Maybe Text)
-    , _rpKind              :: !Text
-    , _rpClientAddress     :: !(Maybe RoomClientAddress)
-    , _rpId                :: !(Maybe Text)
-    , _rpAutoMatched       :: !(Maybe Bool)
-    , _rpPlayer            :: !(Maybe Player)
-    , _rpCapabilities      :: !(Maybe [Text])
+    { _rpStatus :: !(Maybe Text)
+    , _rpConnected :: !(Maybe Bool)
+    , _rpLeaveReason :: !(Maybe Text)
+    , _rpKind :: !Text
+    , _rpClientAddress :: !(Maybe RoomClientAddress)
+    , _rpId :: !(Maybe Text)
+    , _rpAutoMatched :: !(Maybe Bool)
+    , _rpPlayer :: !(Maybe Player)
+    , _rpCapabilities :: !(Maybe [Text])
     , _rpAutoMatchedPlayer :: !(Maybe AnonymousPlayer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2740,8 +2740,8 @@ instance ToJSON RoomParticipant where
 data EventDefinitionListResponse =
   EventDefinitionListResponse'
     { _edlrNextPageToken :: !(Maybe Text)
-    , _edlrKind          :: !Text
-    , _edlrItems         :: !(Maybe [EventDefinition])
+    , _edlrKind :: !Text
+    , _edlrItems :: !(Maybe [EventDefinition])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2806,8 +2806,8 @@ instance ToJSON EventDefinitionListResponse where
 -- /See:/ 'category' smart constructor.
 data Category =
   Category'
-    { _cKind             :: !Text
-    , _cCategory         :: !(Maybe Text)
+    { _cKind :: !Text
+    , _cCategory :: !(Maybe Text)
     , _cExperiencePoints :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2871,9 +2871,9 @@ instance ToJSON Category where
 -- /See:/ 'instanceAndroidDetails' smart constructor.
 data InstanceAndroidDetails =
   InstanceAndroidDetails'
-    { _iadPackageName       :: !(Maybe Text)
-    , _iadPreferred         :: !(Maybe Bool)
-    , _iadKind              :: !Text
+    { _iadPackageName :: !(Maybe Text)
+    , _iadPreferred :: !(Maybe Bool)
+    , _iadKind :: !Text
     , _iadEnablePiracyCheck :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2946,11 +2946,11 @@ instance ToJSON InstanceAndroidDetails where
 -- /See:/ 'turnBasedMatchParticipant' smart constructor.
 data TurnBasedMatchParticipant =
   TurnBasedMatchParticipant'
-    { _tbmpStatus            :: !(Maybe Text)
-    , _tbmpKind              :: !Text
-    , _tbmpId                :: !(Maybe Text)
-    , _tbmpAutoMatched       :: !(Maybe Bool)
-    , _tbmpPlayer            :: !(Maybe Player)
+    { _tbmpStatus :: !(Maybe Text)
+    , _tbmpKind :: !Text
+    , _tbmpId :: !(Maybe Text)
+    , _tbmpAutoMatched :: !(Maybe Bool)
+    , _tbmpPlayer :: !(Maybe Player)
     , _tbmpAutoMatchedPlayer :: !(Maybe AnonymousPlayer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3059,8 +3059,8 @@ instance ToJSON TurnBasedMatchParticipant where
 data AchievementDefinitionsListResponse =
   AchievementDefinitionsListResponse'
     { _adlrNextPageToken :: !(Maybe Text)
-    , _adlrKind          :: !Text
-    , _adlrItems         :: !(Maybe [AchievementDefinition])
+    , _adlrKind :: !Text
+    , _adlrItems :: !(Maybe [AchievementDefinition])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3127,12 +3127,12 @@ instance ToJSON AchievementDefinitionsListResponse
 -- /See:/ 'playerScoreResponse' smart constructor.
 data PlayerScoreResponse =
   PlayerScoreResponse'
-    { _psrScoreTag             :: !(Maybe Text)
-    , _psrKind                 :: !Text
-    , _psrFormattedScore       :: !(Maybe Text)
-    , _psrLeaderboardId        :: !(Maybe Text)
+    { _psrScoreTag :: !(Maybe Text)
+    , _psrKind :: !Text
+    , _psrFormattedScore :: !(Maybe Text)
+    , _psrLeaderboardId :: !(Maybe Text)
     , _psrBeatenScoreTimeSpans :: !(Maybe [Text])
-    , _psrUnbeatenScores       :: !(Maybe [PlayerScore])
+    , _psrUnbeatenScores :: !(Maybe [PlayerScore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3239,8 +3239,8 @@ instance ToJSON PlayerScoreResponse where
 data AnonymousPlayer =
   AnonymousPlayer'
     { _apAvatarImageURL :: !(Maybe Text)
-    , _apKind           :: !Text
-    , _apDisplayName    :: !(Maybe Text)
+    , _apKind :: !Text
+    , _apDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3303,8 +3303,8 @@ instance ToJSON AnonymousPlayer where
 -- /See:/ 'questContribution' smart constructor.
 data QuestContribution =
   QuestContribution'
-    { _qKind           :: !Text
-    , _qValue          :: !(Maybe (Textual Int64))
+    { _qKind :: !Text
+    , _qValue :: !(Maybe (Textual Int64))
     , _qFormattedValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3369,7 +3369,7 @@ instance ToJSON QuestContribution where
 -- /See:/ 'roomClientAddress' smart constructor.
 data RoomClientAddress =
   RoomClientAddress'
-    { _rcaKind        :: !Text
+    { _rcaKind :: !Text
     , _rcaXmppAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3421,8 +3421,8 @@ instance ToJSON RoomClientAddress where
 data LeaderboardListResponse =
   LeaderboardListResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrKind          :: !Text
-    , _llrItems         :: !(Maybe [Leaderboard])
+    , _llrKind :: !Text
+    , _llrItems :: !(Maybe [Leaderboard])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3486,11 +3486,11 @@ instance ToJSON LeaderboardListResponse where
 -- /See:/ 'playerScore' smart constructor.
 data PlayerScore =
   PlayerScore'
-    { _psScoreTag       :: !(Maybe Text)
-    , _psScore          :: !(Maybe (Textual Int64))
-    , _psKind           :: !Text
+    { _psScoreTag :: !(Maybe Text)
+    , _psScore :: !(Maybe (Textual Int64))
+    , _psKind :: !Text
     , _psFormattedScore :: !(Maybe Text)
-    , _psTimeSpan       :: !(Maybe Text)
+    , _psTimeSpan :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3574,8 +3574,8 @@ instance ToJSON PlayerScore where
 -- /See:/ 'turnBasedAutoMatchingCriteria' smart constructor.
 data TurnBasedAutoMatchingCriteria =
   TurnBasedAutoMatchingCriteria'
-    { _tbamcKind                   :: !Text
-    , _tbamcExclusiveBitmask       :: !(Maybe (Textual Int64))
+    { _tbamcKind :: !Text
+    , _tbamcExclusiveBitmask :: !(Maybe (Textual Int64))
     , _tbamcMaxAutoMatchingPlayers :: !(Maybe (Textual Int32))
     , _tbamcMinAutoMatchingPlayers :: !(Maybe (Textual Int32))
     }
@@ -3662,11 +3662,11 @@ instance ToJSON TurnBasedAutoMatchingCriteria where
 -- /See:/ 'snapshotImage' smart constructor.
 data SnapshotImage =
   SnapshotImage'
-    { _siHeight   :: !(Maybe (Textual Int32))
-    , _siKind     :: !Text
-    , _siURL      :: !(Maybe Text)
+    { _siHeight :: !(Maybe (Textual Int32))
+    , _siKind :: !Text
+    , _siURL :: !(Maybe Text)
     , _siMimeType :: !(Maybe Text)
-    , _siWidth    :: !(Maybe (Textual Int32))
+    , _siWidth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3749,12 +3749,12 @@ instance ToJSON SnapshotImage where
 -- /See:/ 'roomStatus' smart constructor.
 data RoomStatus =
   RoomStatus'
-    { _rsStatus             :: !(Maybe Text)
-    , _rsKind               :: !Text
+    { _rsStatus :: !(Maybe Text)
+    , _rsKind :: !Text
     , _rsAutoMatchingStatus :: !(Maybe RoomAutoMatchStatus)
-    , _rsStatusVersion      :: !(Maybe (Textual Int32))
-    , _rsParticipants       :: !(Maybe [RoomParticipant])
-    , _rsRoomId             :: !(Maybe Text)
+    , _rsStatusVersion :: !(Maybe (Textual Int32))
+    , _rsParticipants :: !(Maybe [RoomParticipant])
+    , _rsRoomId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3859,9 +3859,9 @@ instance ToJSON RoomStatus where
 data PlayerLeaderboardScoreListResponse =
   PlayerLeaderboardScoreListResponse'
     { _plslrNextPageToken :: !(Maybe Text)
-    , _plslrKind          :: !Text
-    , _plslrItems         :: !(Maybe [PlayerLeaderboardScore])
-    , _plslrPlayer        :: !(Maybe Player)
+    , _plslrKind :: !Text
+    , _plslrItems :: !(Maybe [PlayerLeaderboardScore])
+    , _plslrPlayer :: !(Maybe Player)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3939,13 +3939,13 @@ instance ToJSON PlayerLeaderboardScoreListResponse
 -- /See:/ 'instanceIosDetails' smart constructor.
 data InstanceIosDetails =
   InstanceIosDetails'
-    { _iidItunesAppId        :: !(Maybe Text)
-    , _iidPreferredForIPad   :: !(Maybe Bool)
-    , _iidSupportIPhone      :: !(Maybe Bool)
-    , _iidKind               :: !Text
-    , _iidSupportIPad        :: !(Maybe Bool)
+    { _iidItunesAppId :: !(Maybe Text)
+    , _iidPreferredForIPad :: !(Maybe Bool)
+    , _iidSupportIPhone :: !(Maybe Bool)
+    , _iidKind :: !Text
+    , _iidSupportIPad :: !(Maybe Bool)
     , _iidPreferredForIPhone :: !(Maybe Bool)
-    , _iidBundleIdentifier   :: !(Maybe Text)
+    , _iidBundleIdentifier :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4053,10 +4053,10 @@ instance ToJSON InstanceIosDetails where
 -- /See:/ 'eventUpdateResponse' smart constructor.
 data EventUpdateResponse =
   EventUpdateResponse'
-    { _eurPlayerEvents  :: !(Maybe [PlayerEvent])
+    { _eurPlayerEvents :: !(Maybe [PlayerEvent])
     , _eurBatchFailures :: !(Maybe [EventBatchRecordFailure])
     , _eurEventFailures :: !(Maybe [EventRecordFailure])
-    , _eurKind          :: !Text
+    , _eurKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4136,8 +4136,8 @@ instance ToJSON EventUpdateResponse where
 -- /See:/ 'revisionCheckResponse' smart constructor.
 data RevisionCheckResponse =
   RevisionCheckResponse'
-    { _rcrAPIVersion     :: !(Maybe Text)
-    , _rcrKind           :: !Text
+    { _rcrAPIVersion :: !(Maybe Text)
+    , _rcrKind :: !Text
     , _rcrRevisionStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4207,9 +4207,9 @@ instance ToJSON RevisionCheckResponse where
 data ParticipantResult =
   ParticipantResult'
     { _prParticipantId :: !(Maybe Text)
-    , _prKind          :: !Text
-    , _prResult        :: !(Maybe Text)
-    , _prPlacing       :: !(Maybe (Textual Int32))
+    , _prKind :: !Text
+    , _prResult :: !(Maybe Text)
+    , _prPlacing :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4291,12 +4291,12 @@ instance ToJSON ParticipantResult where
 -- /See:/ 'leaderboard' smart constructor.
 data Leaderboard =
   Leaderboard'
-    { _lKind             :: !Text
+    { _lKind :: !Text
     , _lIsIconURLDefault :: !(Maybe Bool)
-    , _lName             :: !(Maybe Text)
-    , _lId               :: !(Maybe Text)
-    , _lIconURL          :: !(Maybe Text)
-    , _lOrder            :: !(Maybe Text)
+    , _lName :: !(Maybe Text)
+    , _lId :: !(Maybe Text)
+    , _lIconURL :: !(Maybe Text)
+    , _lOrder :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4387,9 +4387,9 @@ instance ToJSON Leaderboard where
 -- /See:/ 'metagameConfig' smart constructor.
 data MetagameConfig =
   MetagameConfig'
-    { _mcKind           :: !Text
+    { _mcKind :: !Text
     , _mcCurrentVersion :: !(Maybe (Textual Int32))
-    , _mcPlayerLevels   :: !(Maybe [PlayerLevel])
+    , _mcPlayerLevels :: !(Maybe [PlayerLevel])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4457,8 +4457,8 @@ instance ToJSON MetagameConfig where
 data CategoryListResponse =
   CategoryListResponse'
     { _clrNextPageToken :: !(Maybe Text)
-    , _clrKind          :: !Text
-    , _clrItems         :: !(Maybe [Category])
+    , _clrKind :: !Text
+    , _clrItems :: !(Maybe [Category])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4522,12 +4522,12 @@ instance ToJSON CategoryListResponse where
 -- /See:/ 'roomP2PStatus' smart constructor.
 data RoomP2PStatus =
   RoomP2PStatus'
-    { _rppsStatus                           :: !(Maybe Text)
-    , _rppsParticipantId                    :: !(Maybe Text)
-    , _rppsKind                             :: !Text
-    , _rppsError                            :: !(Maybe Text)
-    , _rppsErrorReason                      :: !(Maybe Text)
-    , _rppsConnectionSetupLatencyMillis     :: !(Maybe (Textual Int32))
+    { _rppsStatus :: !(Maybe Text)
+    , _rppsParticipantId :: !(Maybe Text)
+    , _rppsKind :: !Text
+    , _rppsError :: !(Maybe Text)
+    , _rppsErrorReason :: !(Maybe Text)
+    , _rppsConnectionSetupLatencyMillis :: !(Maybe (Textual Int32))
     , _rppsUnreliableRoundtripLatencyMillis :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4647,8 +4647,8 @@ instance ToJSON RoomP2PStatus where
 -- /See:/ 'turnBasedMatchModification' smart constructor.
 data TurnBasedMatchModification =
   TurnBasedMatchModification'
-    { _tbmmParticipantId           :: !(Maybe Text)
-    , _tbmmKind                    :: !Text
+    { _tbmmParticipantId :: !(Maybe Text)
+    , _tbmmKind :: !Text
     , _tbmmModifiedTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4716,13 +4716,13 @@ instance ToJSON TurnBasedMatchModification where
 data EventDefinition =
   EventDefinition'
     { _edIsDefaultImageURL :: !(Maybe Bool)
-    , _edKind              :: !Text
-    , _edVisibility        :: !(Maybe Text)
-    , _edImageURL          :: !(Maybe Text)
-    , _edDisplayName       :: !(Maybe Text)
-    , _edId                :: !(Maybe Text)
-    , _edChildEvents       :: !(Maybe [EventChild])
-    , _edDescription       :: !(Maybe Text)
+    , _edKind :: !Text
+    , _edVisibility :: !(Maybe Text)
+    , _edImageURL :: !(Maybe Text)
+    , _edDisplayName :: !(Maybe Text)
+    , _edId :: !(Maybe Text)
+    , _edChildEvents :: !(Maybe [EventChild])
+    , _edDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4842,8 +4842,8 @@ instance ToJSON EventDefinition where
 -- /See:/ 'roomModification' smart constructor.
 data RoomModification =
   RoomModification'
-    { _rmParticipantId           :: !(Maybe Text)
-    , _rmKind                    :: !Text
+    { _rmParticipantId :: !(Maybe Text)
+    , _rmKind :: !Text
     , _rmModifiedTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4910,8 +4910,8 @@ instance ToJSON RoomModification where
 -- /See:/ 'eventUpdateRequest' smart constructor.
 data EventUpdateRequest =
   EventUpdateRequest'
-    { _eUpdateCount  :: !(Maybe (Textual Int64))
-    , _eKind         :: !Text
+    { _eUpdateCount :: !(Maybe (Textual Int64))
+    , _eKind :: !Text
     , _eDefinitionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4975,7 +4975,7 @@ instance ToJSON EventUpdateRequest where
 -- /See:/ 'achievementUnlockResponse' smart constructor.
 data AchievementUnlockResponse =
   AchievementUnlockResponse'
-    { _achKind          :: !Text
+    { _achKind :: !Text
     , _achNewlyUnlocked :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5027,13 +5027,13 @@ instance ToJSON AchievementUnlockResponse where
 -- /See:/ 'playerAchievement' smart constructor.
 data PlayerAchievement =
   PlayerAchievement'
-    { _paKind                        :: !Text
-    , _paAchievementState            :: !(Maybe Text)
+    { _paKind :: !Text
+    , _paAchievementState :: !(Maybe Text)
     , _paFormattedCurrentStepsString :: !(Maybe Text)
-    , _paExperiencePoints            :: !(Maybe (Textual Int64))
-    , _paId                          :: !(Maybe Text)
-    , _paCurrentSteps                :: !(Maybe (Textual Int32))
-    , _paLastUpdatedTimestamp        :: !(Maybe (Textual Int64))
+    , _paExperiencePoints :: !(Maybe (Textual Int64))
+    , _paId :: !(Maybe Text)
+    , _paCurrentSteps :: !(Maybe (Textual Int32))
+    , _paLastUpdatedTimestamp :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5147,7 +5147,7 @@ instance ToJSON PlayerAchievement where
 -- /See:/ 'roomP2PStatuses' smart constructor.
 data RoomP2PStatuses =
   RoomP2PStatuses'
-    { _rppssKind    :: !Text
+    { _rppssKind :: !Text
     , _rppssUpdates :: !(Maybe [RoomP2PStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5201,10 +5201,10 @@ instance ToJSON RoomP2PStatuses where
 data ImageAsset =
   ImageAsset'
     { _iaHeight :: !(Maybe (Textual Int32))
-    , _iaKind   :: !Text
-    , _iaURL    :: !(Maybe Text)
-    , _iaWidth  :: !(Maybe (Textual Int32))
-    , _iaName   :: !(Maybe Text)
+    , _iaKind :: !Text
+    , _iaURL :: !(Maybe Text)
+    , _iaWidth :: !(Maybe (Textual Int32))
+    , _iaName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5283,7 +5283,7 @@ instance ToJSON ImageAsset where
 -- /See:/ 'achievementUpdateMultipleRequest' smart constructor.
 data AchievementUpdateMultipleRequest =
   AchievementUpdateMultipleRequest'
-    { _aumruKind    :: !Text
+    { _aumruKind :: !Text
     , _aumruUpdates :: !(Maybe [AchievementUpdateRequest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5342,7 +5342,7 @@ instance ToJSON AchievementUpdateMultipleRequest
 -- /See:/ 'roomAutoMatchStatus' smart constructor.
 data RoomAutoMatchStatus =
   RoomAutoMatchStatus'
-    { _ramsKind                :: !Text
+    { _ramsKind :: !Text
     , _ramsWaitEstimateSeconds :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5398,11 +5398,11 @@ instance ToJSON RoomAutoMatchStatus where
 -- /See:/ 'achievementUpdateRequest' smart constructor.
 data AchievementUpdateRequest =
   AchievementUpdateRequest'
-    { _auruAchievementId          :: !(Maybe Text)
-    , _auruKind                   :: !Text
-    , _auruUpdateType             :: !(Maybe Text)
+    { _auruAchievementId :: !(Maybe Text)
+    , _auruKind :: !Text
+    , _auruUpdateType :: !(Maybe Text)
     , _auruSetStepsAtLeastPayload :: !(Maybe GamesAchievementSetStepsAtLeast)
-    , _auruIncrementPayload       :: !(Maybe GamesAchievementIncrement)
+    , _auruIncrementPayload :: !(Maybe GamesAchievementIncrement)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5493,11 +5493,11 @@ instance ToJSON AchievementUpdateRequest where
 -- /See:/ 'leaderboardScoreRank' smart constructor.
 data LeaderboardScoreRank =
   LeaderboardScoreRank'
-    { _lsrNumScores          :: !(Maybe (Textual Int64))
-    , _lsrKind               :: !Text
-    , _lsrFormattedRank      :: !(Maybe Text)
+    { _lsrNumScores :: !(Maybe (Textual Int64))
+    , _lsrKind :: !Text
+    , _lsrFormattedRank :: !(Maybe Text)
     , _lsrFormattedNumScores :: !(Maybe Text)
-    , _lsrRank               :: !(Maybe (Textual Int64))
+    , _lsrRank :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5582,14 +5582,14 @@ instance ToJSON LeaderboardScoreRank where
 -- /See:/ 'roomCreateRequest' smart constructor.
 data RoomCreateRequest =
   RoomCreateRequest'
-    { _rooRequestId            :: !(Maybe (Textual Int64))
-    , _rooVariant              :: !(Maybe (Textual Int32))
-    , _rooNetworkDiagnostics   :: !(Maybe NetworkDiagnostics)
-    , _rooKind                 :: !Text
-    , _rooInvitedPlayerIds     :: !(Maybe [Text])
-    , _rooClientAddress        :: !(Maybe RoomClientAddress)
+    { _rooRequestId :: !(Maybe (Textual Int64))
+    , _rooVariant :: !(Maybe (Textual Int32))
+    , _rooNetworkDiagnostics :: !(Maybe NetworkDiagnostics)
+    , _rooKind :: !Text
+    , _rooInvitedPlayerIds :: !(Maybe [Text])
+    , _rooClientAddress :: !(Maybe RoomClientAddress)
     , _rooAutoMatchingCriteria :: !(Maybe RoomAutoMatchingCriteria)
-    , _rooCapabilities         :: !(Maybe [Text])
+    , _rooCapabilities :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5715,8 +5715,8 @@ instance ToJSON RoomCreateRequest where
 data PlayerListResponse =
   PlayerListResponse'
     { _plrNextPageToken :: !(Maybe Text)
-    , _plrKind          :: !Text
-    , _plrItems         :: !(Maybe [Player])
+    , _plrKind :: !Text
+    , _plrItems :: !(Maybe [Player])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5781,10 +5781,10 @@ instance ToJSON PlayerListResponse where
 data LeaderboardScores =
   LeaderboardScores'
     { _lsNextPageToken :: !(Maybe Text)
-    , _lsNumScores     :: !(Maybe (Textual Int64))
-    , _lsKind          :: !Text
-    , _lsPlayerScore   :: !(Maybe LeaderboardEntry)
-    , _lsItems         :: !(Maybe [LeaderboardEntry])
+    , _lsNumScores :: !(Maybe (Textual Int64))
+    , _lsKind :: !Text
+    , _lsPlayerScore :: !(Maybe LeaderboardEntry)
+    , _lsItems :: !(Maybe [LeaderboardEntry])
     , _lsPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5884,19 +5884,19 @@ instance ToJSON LeaderboardScores where
 -- /See:/ 'achievementDefinition' smart constructor.
 data AchievementDefinition =
   AchievementDefinition'
-    { _adAchievementType          :: !(Maybe Text)
-    , _adFormattedTotalSteps      :: !(Maybe Text)
-    , _adRevealedIconURL          :: !(Maybe Text)
-    , _adKind                     :: !Text
-    , _adExperiencePoints         :: !(Maybe (Textual Int64))
-    , _adInitialState             :: !(Maybe Text)
-    , _adName                     :: !(Maybe Text)
-    , _adId                       :: !(Maybe Text)
+    { _adAchievementType :: !(Maybe Text)
+    , _adFormattedTotalSteps :: !(Maybe Text)
+    , _adRevealedIconURL :: !(Maybe Text)
+    , _adKind :: !Text
+    , _adExperiencePoints :: !(Maybe (Textual Int64))
+    , _adInitialState :: !(Maybe Text)
+    , _adName :: !(Maybe Text)
+    , _adId :: !(Maybe Text)
     , _adIsUnlockedIconURLDefault :: !(Maybe Bool)
-    , _adTotalSteps               :: !(Maybe (Textual Int32))
-    , _adDescription              :: !(Maybe Text)
+    , _adTotalSteps :: !(Maybe (Textual Int32))
+    , _adDescription :: !(Maybe Text)
     , _adIsRevealedIconURLDefault :: !(Maybe Bool)
-    , _adUnlockedIconURL          :: !(Maybe Text)
+    , _adUnlockedIconURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6074,10 +6074,10 @@ instance ToJSON AchievementDefinition where
 -- /See:/ 'turnBasedMatchCreateRequest' smart constructor.
 data TurnBasedMatchCreateRequest =
   TurnBasedMatchCreateRequest'
-    { _tbmcrRequestId            :: !(Maybe (Textual Int64))
-    , _tbmcrVariant              :: !(Maybe (Textual Int32))
-    , _tbmcrKind                 :: !Text
-    , _tbmcrInvitedPlayerIds     :: !(Maybe [Text])
+    { _tbmcrRequestId :: !(Maybe (Textual Int64))
+    , _tbmcrVariant :: !(Maybe (Textual Int32))
+    , _tbmcrKind :: !Text
+    , _tbmcrInvitedPlayerIds :: !(Maybe [Text])
     , _tbmcrAutoMatchingCriteria :: !(Maybe TurnBasedAutoMatchingCriteria)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6171,8 +6171,8 @@ instance ToJSON TurnBasedMatchCreateRequest where
 -- /See:/ 'eventBatchRecordFailure' smart constructor.
 data EventBatchRecordFailure =
   EventBatchRecordFailure'
-    { _ebrfKind         :: !Text
-    , _ebrfRange        :: !(Maybe EventPeriodRange)
+    { _ebrfKind :: !Text
+    , _ebrfRange :: !(Maybe EventPeriodRange)
     , _ebrfFailureCause :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6243,9 +6243,9 @@ instance ToJSON EventBatchRecordFailure where
 -- /See:/ 'turnBasedMatchResults' smart constructor.
 data TurnBasedMatchResults =
   TurnBasedMatchResults'
-    { _tbmrResults      :: !(Maybe [ParticipantResult])
-    , _tbmrKind         :: !Text
-    , _tbmrData         :: !(Maybe TurnBasedMatchDataRequest)
+    { _tbmrResults :: !(Maybe [ParticipantResult])
+    , _tbmrKind :: !Text
+    , _tbmrData :: !(Maybe TurnBasedMatchDataRequest)
     , _tbmrMatchVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6375,8 +6375,8 @@ instance ToJSON PushTokenIdIos where
 -- /See:/ 'roomLeaveRequest' smart constructor.
 data RoomLeaveRequest =
   RoomLeaveRequest'
-    { _rlrKind             :: !Text
-    , _rlrReason           :: !(Maybe Text)
+    { _rlrKind :: !Text
+    , _rlrReason :: !(Maybe Text)
     , _rlrLeaveDiagnostics :: !(Maybe RoomLeaveDiagnostics)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6456,9 +6456,9 @@ instance ToJSON RoomLeaveRequest where
 -- /See:/ 'played' smart constructor.
 data Played =
   Played'
-    { _pKind        :: !Text
+    { _pKind :: !Text
     , _pAutoMatched :: !(Maybe Bool)
-    , _pTimeMillis  :: !(Maybe (Textual Int64))
+    , _pTimeMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6519,9 +6519,9 @@ instance ToJSON Played where
 -- /See:/ 'achievementIncrementResponse' smart constructor.
 data AchievementIncrementResponse =
   AchievementIncrementResponse'
-    { _airKind          :: !Text
+    { _airKind :: !Text
     , _airNewlyUnlocked :: !(Maybe Bool)
-    , _airCurrentSteps  :: !(Maybe (Textual Int32))
+    , _airCurrentSteps :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6587,7 +6587,7 @@ instance ToJSON AchievementIncrementResponse where
 -- /See:/ 'achievementRevealResponse' smart constructor.
 data AchievementRevealResponse =
   AchievementRevealResponse'
-    { _arrKind         :: !Text
+    { _arrKind :: !Text
     , _arrCurrentState :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6641,9 +6641,9 @@ instance ToJSON AchievementRevealResponse where
 -- /See:/ 'achievementSetStepsAtLeastResponse' smart constructor.
 data AchievementSetStepsAtLeastResponse =
   AchievementSetStepsAtLeastResponse'
-    { _assalrKind          :: !Text
+    { _assalrKind :: !Text
     , _assalrNewlyUnlocked :: !(Maybe Bool)
-    , _assalrCurrentSteps  :: !(Maybe (Textual Int32))
+    , _assalrCurrentSteps :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6713,8 +6713,8 @@ instance ToJSON AchievementSetStepsAtLeastResponse
 data PlayerAchievementListResponse =
   PlayerAchievementListResponse'
     { _palrNextPageToken :: !(Maybe Text)
-    , _palrKind          :: !Text
-    , _palrItems         :: !(Maybe [PlayerAchievement])
+    , _palrKind :: !Text
+    , _palrItems :: !(Maybe [PlayerAchievement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6779,10 +6779,10 @@ instance ToJSON PlayerAchievementListResponse where
 -- /See:/ 'eventRecordRequest' smart constructor.
 data EventRecordRequest =
   EventRecordRequest'
-    { _errRequestId         :: !(Maybe (Textual Int64))
-    , _errKind              :: !Text
+    { _errRequestId :: !(Maybe (Textual Int64))
+    , _errKind :: !Text
     , _errCurrentTimeMillis :: !(Maybe (Textual Int64))
-    , _errTimePeriods       :: !(Maybe [EventPeriodUpdate])
+    , _errTimePeriods :: !(Maybe [EventPeriodUpdate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6860,8 +6860,8 @@ instance ToJSON EventRecordRequest where
 -- /See:/ 'roomAutoMatchingCriteria' smart constructor.
 data RoomAutoMatchingCriteria =
   RoomAutoMatchingCriteria'
-    { _ramcKind                   :: !Text
-    , _ramcExclusiveBitmask       :: !(Maybe (Textual Int64))
+    { _ramcKind :: !Text
+    , _ramcExclusiveBitmask :: !(Maybe (Textual Int64))
     , _ramcMaxAutoMatchingPlayers :: !(Maybe (Textual Int32))
     , _ramcMinAutoMatchingPlayers :: !(Maybe (Textual Int32))
     }
@@ -6946,11 +6946,11 @@ instance ToJSON RoomAutoMatchingCriteria where
 -- /See:/ 'questMilestone' smart constructor.
 data QuestMilestone =
   QuestMilestone'
-    { _qmState                :: !(Maybe Text)
-    , _qmKind                 :: !Text
-    , _qmId                   :: !(Maybe Text)
+    { _qmState :: !(Maybe Text)
+    , _qmKind :: !Text
+    , _qmId :: !(Maybe Text)
     , _qmCompletionRewardData :: !(Maybe Bytes)
-    , _qmCriteria             :: !(Maybe [QuestCriterion])
+    , _qmCriteria :: !(Maybe [QuestCriterion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7041,10 +7041,10 @@ instance ToJSON QuestMilestone where
 data PeerSessionDiagnostics =
   PeerSessionDiagnostics'
     { _psdConnectedTimestampMillis :: !(Maybe (Textual Int64))
-    , _psdParticipantId            :: !(Maybe Text)
-    , _psdKind                     :: !Text
-    , _psdUnreliableChannel        :: !(Maybe PeerChannelDiagnostics)
-    , _psdReliableChannel          :: !(Maybe PeerChannelDiagnostics)
+    , _psdParticipantId :: !(Maybe Text)
+    , _psdKind :: !Text
+    , _psdUnreliableChannel :: !(Maybe PeerChannelDiagnostics)
+    , _psdReliableChannel :: !(Maybe PeerChannelDiagnostics)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7131,7 +7131,7 @@ instance ToJSON PeerSessionDiagnostics where
 -- /See:/ 'pushTokenId' smart constructor.
 data PushTokenId =
   PushTokenId'
-    { _ptiIos  :: !(Maybe PushTokenIdIos)
+    { _ptiIos :: !(Maybe PushTokenIdIos)
     , _ptiKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7177,9 +7177,9 @@ instance ToJSON PushTokenId where
 -- /See:/ 'eventPeriodUpdate' smart constructor.
 data EventPeriodUpdate =
   EventPeriodUpdate'
-    { _epuKind       :: !Text
+    { _epuKind :: !Text
     , _epuTimePeriod :: !(Maybe EventPeriodRange)
-    , _epuUpdates    :: !(Maybe [EventUpdateRequest])
+    , _epuUpdates :: !(Maybe [EventUpdateRequest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7246,8 +7246,8 @@ data TurnBasedMatchSync =
   TurnBasedMatchSync'
     { _tbmsMoreAvailable :: !(Maybe Bool)
     , _tbmsNextPageToken :: !(Maybe Text)
-    , _tbmsKind          :: !Text
-    , _tbmsItems         :: !(Maybe [TurnBasedMatch])
+    , _tbmsKind :: !Text
+    , _tbmsItems :: !(Maybe [TurnBasedMatch])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7323,10 +7323,10 @@ instance ToJSON TurnBasedMatchSync where
 -- /See:/ 'scoreSubmission' smart constructor.
 data ScoreSubmission =
   ScoreSubmission'
-    { _scoSignature     :: !(Maybe Text)
-    , _scoScoreTag      :: !(Maybe Text)
-    , _scoScore         :: !(Maybe (Textual Int64))
-    , _scoKind          :: !Text
+    { _scoSignature :: !(Maybe Text)
+    , _scoScoreTag :: !(Maybe Text)
+    , _scoScore :: !(Maybe (Textual Int64))
+    , _scoKind :: !Text
     , _scoLeaderboardId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7411,13 +7411,13 @@ instance ToJSON ScoreSubmission where
 -- /See:/ 'roomLeaveDiagnostics' smart constructor.
 data RoomLeaveDiagnostics =
   RoomLeaveDiagnostics'
-    { _rldPeerSession           :: !(Maybe [PeerSessionDiagnostics])
-    , _rldAndroidNetworkType    :: !(Maybe (Textual Int32))
-    , _rldKind                  :: !Text
-    , _rldNetworkOperatorCode   :: !(Maybe Text)
-    , _rldNetworkOperatorName   :: !(Maybe Text)
-    , _rldSocketsUsed           :: !(Maybe Bool)
-    , _rldIosNetworkType        :: !(Maybe (Textual Int32))
+    { _rldPeerSession :: !(Maybe [PeerSessionDiagnostics])
+    , _rldAndroidNetworkType :: !(Maybe (Textual Int32))
+    , _rldKind :: !Text
+    , _rldNetworkOperatorCode :: !(Maybe Text)
+    , _rldNetworkOperatorName :: !(Maybe Text)
+    , _rldSocketsUsed :: !(Maybe Bool)
+    , _rldIosNetworkType :: !(Maybe (Textual Int32))
     , _rldAndroidNetworkSubtype :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7552,11 +7552,11 @@ instance ToJSON RoomLeaveDiagnostics where
 -- /See:/ 'aggregateStats' smart constructor.
 data AggregateStats =
   AggregateStats'
-    { _asMax   :: !(Maybe (Textual Int64))
-    , _asKind  :: !Text
+    { _asMax :: !(Maybe (Textual Int64))
+    , _asKind :: !Text
     , _asCount :: !(Maybe (Textual Int64))
-    , _asMin   :: !(Maybe (Textual Int64))
-    , _asSum   :: !(Maybe (Textual Int64))
+    , _asMin :: !(Maybe (Textual Int64))
+    , _asSum :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7640,7 +7640,7 @@ instance ToJSON AggregateStats where
 data InstanceWebDetails =
   InstanceWebDetails'
     { _iwdPreferred :: !(Maybe Bool)
-    , _iwdKind      :: !Text
+    , _iwdKind :: !Text
     , _iwdLaunchURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7702,8 +7702,8 @@ instance ToJSON InstanceWebDetails where
 -- /See:/ 'turnBasedMatchRematch' smart constructor.
 data TurnBasedMatchRematch =
   TurnBasedMatchRematch'
-    { _tRematch       :: !(Maybe TurnBasedMatch)
-    , _tKind          :: !Text
+    { _tRematch :: !(Maybe TurnBasedMatch)
+    , _tKind :: !Text
     , _tPreviousMatch :: !(Maybe TurnBasedMatch)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7768,10 +7768,10 @@ instance ToJSON TurnBasedMatchRematch where
 -- /See:/ 'playerExperienceInfo' smart constructor.
 data PlayerExperienceInfo =
   PlayerExperienceInfo'
-    { _peiKind                       :: !Text
-    , _peiCurrentExperiencePoints    :: !(Maybe (Textual Int64))
-    , _peiCurrentLevel               :: !(Maybe PlayerLevel)
-    , _peiNextLevel                  :: !(Maybe PlayerLevel)
+    { _peiKind :: !Text
+    , _peiCurrentExperiencePoints :: !(Maybe (Textual Int64))
+    , _peiCurrentLevel :: !(Maybe PlayerLevel)
+    , _peiNextLevel :: !(Maybe PlayerLevel)
     , _peiLastLevelUpTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7863,7 +7863,7 @@ instance ToJSON PlayerExperienceInfo where
 -- /See:/ 'gamesAchievementSetStepsAtLeast' smart constructor.
 data GamesAchievementSetStepsAtLeast =
   GamesAchievementSetStepsAtLeast'
-    { _gassalKind  :: !Text
+    { _gassalKind :: !Text
     , _gassalSteps :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7920,17 +7920,17 @@ instance ToJSON GamesAchievementSetStepsAtLeast where
 data Player =
   Player'
     { _plaBannerURLLandscape :: !(Maybe Text)
-    , _plaLastPlayedWith     :: !(Maybe Played)
-    , _plaAvatarImageURL     :: !(Maybe Text)
-    , _plaKind               :: !Text
-    , _plaExperienceInfo     :: !(Maybe PlayerExperienceInfo)
-    , _plaName               :: !(Maybe PlayerName)
-    , _plaOriginalPlayerId   :: !(Maybe Text)
-    , _plaDisplayName        :: !(Maybe Text)
-    , _plaTitle              :: !(Maybe Text)
-    , _plaBannerURLPortrait  :: !(Maybe Text)
-    , _plaPlayerId           :: !(Maybe Text)
-    , _plaProFileSettings    :: !(Maybe ProFileSettings)
+    , _plaLastPlayedWith :: !(Maybe Played)
+    , _plaAvatarImageURL :: !(Maybe Text)
+    , _plaKind :: !Text
+    , _plaExperienceInfo :: !(Maybe PlayerExperienceInfo)
+    , _plaName :: !(Maybe PlayerName)
+    , _plaOriginalPlayerId :: !(Maybe Text)
+    , _plaDisplayName :: !(Maybe Text)
+    , _plaTitle :: !(Maybe Text)
+    , _plaBannerURLPortrait :: !(Maybe Text)
+    , _plaPlayerId :: !(Maybe Text)
+    , _plaProFileSettings :: !(Maybe ProFileSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8098,8 +8098,8 @@ instance ToJSON Player where
 data GamesAchievementIncrement =
   GamesAchievementIncrement'
     { _gaiRequestId :: !(Maybe (Textual Int64))
-    , _gaiKind      :: !Text
-    , _gaiSteps     :: !(Maybe (Textual Int32))
+    , _gaiKind :: !Text
+    , _gaiSteps :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8163,21 +8163,21 @@ instance ToJSON GamesAchievementIncrement where
 data Quest =
   Quest'
     { _queLastUpdatedTimestampMillis :: !(Maybe (Textual Int64))
-    , _queBannerURL                  :: !(Maybe Text)
-    , _queState                      :: !(Maybe Text)
-    , _queMilestones                 :: !(Maybe [QuestMilestone])
-    , _queKind                       :: !Text
-    , _queApplicationId              :: !(Maybe Text)
-    , _queEndTimestampMillis         :: !(Maybe (Textual Int64))
-    , _queName                       :: !(Maybe Text)
-    , _queId                         :: !(Maybe Text)
-    , _queIconURL                    :: !(Maybe Text)
-    , _queStartTimestampMillis       :: !(Maybe (Textual Int64))
-    , _queNotifyTimestampMillis      :: !(Maybe (Textual Int64))
-    , _queDescription                :: !(Maybe Text)
-    , _queIsDefaultBannerURL         :: !(Maybe Bool)
-    , _queIsDefaultIconURL           :: !(Maybe Bool)
-    , _queAcceptedTimestampMillis    :: !(Maybe (Textual Int64))
+    , _queBannerURL :: !(Maybe Text)
+    , _queState :: !(Maybe Text)
+    , _queMilestones :: !(Maybe [QuestMilestone])
+    , _queKind :: !Text
+    , _queApplicationId :: !(Maybe Text)
+    , _queEndTimestampMillis :: !(Maybe (Textual Int64))
+    , _queName :: !(Maybe Text)
+    , _queId :: !(Maybe Text)
+    , _queIconURL :: !(Maybe Text)
+    , _queStartTimestampMillis :: !(Maybe (Textual Int64))
+    , _queNotifyTimestampMillis :: !(Maybe (Textual Int64))
+    , _queDescription :: !(Maybe Text)
+    , _queIsDefaultBannerURL :: !(Maybe Bool)
+    , _queIsDefaultIconURL :: !(Maybe Bool)
+    , _queAcceptedTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8400,7 +8400,7 @@ instance ToJSON Quest where
 -- /See:/ 'eventChild' smart constructor.
 data EventChild =
   EventChild'
-    { _ecKind    :: !Text
+    { _ecKind :: !Text
     , _ecChildId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8449,9 +8449,9 @@ instance ToJSON EventChild where
 -- /See:/ 'applicationVerifyResponse' smart constructor.
 data ApplicationVerifyResponse =
   ApplicationVerifyResponse'
-    { _avrKind              :: !Text
+    { _avrKind :: !Text
     , _avrAlternatePlayerId :: !(Maybe Text)
-    , _avrPlayerId          :: !(Maybe Text)
+    , _avrPlayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8516,8 +8516,8 @@ instance ToJSON ApplicationVerifyResponse where
 data PlayerEventListResponse =
   PlayerEventListResponse'
     { _pelrNextPageToken :: !(Maybe Text)
-    , _pelrKind          :: !Text
-    , _pelrItems         :: !(Maybe [PlayerEvent])
+    , _pelrKind :: !Text
+    , _pelrItems :: !(Maybe [PlayerEvent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8635,7 +8635,7 @@ instance ToJSON TurnBasedMatchDataRequest where
 data ProFileSettings =
   ProFileSettings'
     { _pfsProFileVisible :: !(Maybe Bool)
-    , _pfsKind           :: !Text
+    , _pfsKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8686,9 +8686,9 @@ instance ToJSON ProFileSettings where
 -- /See:/ 'eventPeriodRange' smart constructor.
 data EventPeriodRange =
   EventPeriodRange'
-    { _eprKind              :: !Text
+    { _eprKind :: !Text
     , _eprPeriodStartMillis :: !(Maybe (Textual Int64))
-    , _eprPeriodEndMillis   :: !(Maybe (Textual Int64))
+    , _eprPeriodEndMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8755,9 +8755,9 @@ instance ToJSON EventPeriodRange where
 -- /See:/ 'eventRecordFailure' smart constructor.
 data EventRecordFailure =
   EventRecordFailure'
-    { _erfKind         :: !Text
+    { _erfKind :: !Text
     , _erfFailureCause :: !(Maybe Text)
-    , _erfEventId      :: !(Maybe Text)
+    , _erfEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8822,7 +8822,7 @@ instance ToJSON EventRecordFailure where
 -- /See:/ 'playerScoreSubmissionList' smart constructor.
 data PlayerScoreSubmissionList =
   PlayerScoreSubmissionList'
-    { _psslKind   :: !Text
+    { _psslKind :: !Text
     , _psslScores :: !(Maybe [ScoreSubmission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8875,14 +8875,14 @@ instance ToJSON PlayerScoreSubmissionList where
 data Instance =
   Instance'
     { _iAndroidInstance :: !(Maybe InstanceAndroidDetails)
-    , _iKind            :: !Text
-    , _iWebInstance     :: !(Maybe InstanceWebDetails)
-    , _iIosInstance     :: !(Maybe InstanceIosDetails)
-    , _iName            :: !(Maybe Text)
-    , _iAcquisitionURI  :: !(Maybe Text)
-    , _iPlatformType    :: !(Maybe Text)
-    , _iTurnBasedPlay   :: !(Maybe Bool)
-    , _iRealtimePlay    :: !(Maybe Bool)
+    , _iKind :: !Text
+    , _iWebInstance :: !(Maybe InstanceWebDetails)
+    , _iIosInstance :: !(Maybe InstanceIosDetails)
+    , _iName :: !(Maybe Text)
+    , _iAcquisitionURI :: !(Maybe Text)
+    , _iPlatformType :: !(Maybe Text)
+    , _iTurnBasedPlay :: !(Maybe Bool)
+    , _iRealtimePlay :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

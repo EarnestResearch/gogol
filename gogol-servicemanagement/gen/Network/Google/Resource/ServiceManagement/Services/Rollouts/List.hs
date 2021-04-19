@@ -45,8 +45,8 @@ module Network.Google.Resource.ServiceManagement.Services.Rollouts.List
     , srlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.rollouts.list@ method which the
 -- 'ServicesRolloutsList' request conforms to.
@@ -72,15 +72,15 @@ type ServicesRolloutsListResource =
 -- /See:/ 'servicesRolloutsList' smart constructor.
 data ServicesRolloutsList =
   ServicesRolloutsList'
-    { _srlXgafv          :: !(Maybe Xgafv)
+    { _srlXgafv :: !(Maybe Xgafv)
     , _srlUploadProtocol :: !(Maybe Text)
-    , _srlAccessToken    :: !(Maybe Text)
-    , _srlUploadType     :: !(Maybe Text)
-    , _srlServiceName    :: !Text
-    , _srlFilter         :: !(Maybe Text)
-    , _srlPageToken      :: !(Maybe Text)
-    , _srlPageSize       :: !(Maybe (Textual Int32))
-    , _srlCallback       :: !(Maybe Text)
+    , _srlAccessToken :: !(Maybe Text)
+    , _srlUploadType :: !(Maybe Text)
+    , _srlServiceName :: !Text
+    , _srlFilter :: !(Maybe Text)
+    , _srlPageToken :: !(Maybe Text)
+    , _srlPageSize :: !(Maybe (Textual Int32))
+    , _srlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

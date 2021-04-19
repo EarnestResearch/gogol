@@ -17,8 +17,8 @@
 --
 module Network.Google.AndroidManagement.Types.Product where
 
-import           Network.Google.AndroidManagement.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AndroidManagement.Types.Sum
+import Network.Google.Prelude
 
 -- | The Status type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -59,7 +59,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -121,7 +121,7 @@ instance ToJSON Status where
 data ListPoliciesResponse =
   ListPoliciesResponse'
     { _lprNextPageToken :: !(Maybe Text)
-    , _lprPolicies      :: !(Maybe [Policy])
+    , _lprPolicies :: !(Maybe [Policy])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -173,7 +173,7 @@ instance ToJSON ListPoliciesResponse where
 data MemoryInfo =
   MemoryInfo'
     { _miTotalInternalStorage :: !(Maybe (Textual Int64))
-    , _miTotalRam             :: !(Maybe (Textual Int64))
+    , _miTotalRam :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -267,12 +267,12 @@ instance ToJSON PackageNameList where
 data Command =
   Command'
     { _cResetPasswordFlags :: !(Maybe [Text])
-    , _cNewPassword        :: !(Maybe Text)
-    , _cUserName           :: !(Maybe Text)
-    , _cErrorCode          :: !(Maybe CommandErrorCode)
-    , _cType               :: !(Maybe CommandType)
-    , _cDuration           :: !(Maybe GDuration)
-    , _cCreateTime         :: !(Maybe DateTime')
+    , _cNewPassword :: !(Maybe Text)
+    , _cUserName :: !(Maybe Text)
+    , _cErrorCode :: !(Maybe CommandErrorCode)
+    , _cType :: !(Maybe CommandType)
+    , _cDuration :: !(Maybe GDuration)
+    , _cCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -385,7 +385,7 @@ instance ToJSON Command where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -438,13 +438,13 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'display' smart constructor.
 data Display =
   Display'
-    { _dHeight      :: !(Maybe (Textual Int32))
-    , _dState       :: !(Maybe DisplayState)
-    , _dWidth       :: !(Maybe (Textual Int32))
-    , _dName        :: !(Maybe Text)
+    { _dHeight :: !(Maybe (Textual Int32))
+    , _dState :: !(Maybe DisplayState)
+    , _dWidth :: !(Maybe (Textual Int32))
+    , _dName :: !(Maybe Text)
     , _dRefreshRate :: !(Maybe (Textual Int32))
-    , _dDisplayId   :: !(Maybe (Textual Int32))
-    , _dDensity     :: !(Maybe (Textual Int32))
+    , _dDisplayId :: !(Maybe (Textual Int32))
+    , _dDensity :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -547,7 +547,7 @@ instance ToJSON Display where
 data AlwaysOnVPNPackage =
   AlwaysOnVPNPackage'
     { _aovpLockdownEnabled :: !(Maybe Bool)
-    , _aovpPackageName     :: !(Maybe Text)
+    , _aovpPackageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -675,13 +675,13 @@ instance ToJSON LaunchAppAction where
 -- /See:/ 'hardwareStatus' smart constructor.
 data HardwareStatus =
   HardwareStatus'
-    { _hsCPUTemperatures     :: !(Maybe [Textual Double])
+    { _hsCPUTemperatures :: !(Maybe [Textual Double])
     , _hsBatteryTemperatures :: !(Maybe [Textual Double])
-    , _hsGpuTemperatures     :: !(Maybe [Textual Double])
-    , _hsFanSpeeds           :: !(Maybe [Textual Double])
-    , _hsSkinTemperatures    :: !(Maybe [Textual Double])
-    , _hsCPUUsages           :: !(Maybe [Textual Double])
-    , _hsCreateTime          :: !(Maybe DateTime')
+    , _hsGpuTemperatures :: !(Maybe [Textual Double])
+    , _hsFanSpeeds :: !(Maybe [Textual Double])
+    , _hsSkinTemperatures :: !(Maybe [Textual Double])
+    , _hsCPUUsages :: !(Maybe [Textual Double])
+    , _hsCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -804,9 +804,9 @@ instance ToJSON HardwareStatus where
 data Application =
   Application'
     { _aManagedProperties :: !(Maybe [ManagedProperty])
-    , _aName              :: !(Maybe Text)
-    , _aPermissions       :: !(Maybe [ApplicationPermission])
-    , _aTitle             :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
+    , _aPermissions :: !(Maybe [ApplicationPermission])
+    , _aTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -882,13 +882,13 @@ instance ToJSON Application where
 -- /See:/ 'managedProperty' smart constructor.
 data ManagedProperty =
   ManagedProperty'
-    { _mpEntries          :: !(Maybe [ManagedPropertyEntry])
+    { _mpEntries :: !(Maybe [ManagedPropertyEntry])
     , _mpNestedProperties :: !(Maybe [ManagedProperty])
-    , _mpKey              :: !(Maybe Text)
-    , _mpDefaultValue     :: !(Maybe JSONValue)
-    , _mpTitle            :: !(Maybe Text)
-    , _mpType             :: !(Maybe ManagedPropertyType)
-    , _mpDescription      :: !(Maybe Text)
+    , _mpKey :: !(Maybe Text)
+    , _mpDefaultValue :: !(Maybe JSONValue)
+    , _mpTitle :: !(Maybe Text)
+    , _mpType :: !(Maybe ManagedPropertyType)
+    , _mpDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -998,10 +998,10 @@ instance ToJSON ManagedProperty where
 -- /See:/ 'proxyInfo' smart constructor.
 data ProxyInfo =
   ProxyInfo'
-    { _piPacURI        :: !(Maybe Text)
-    , _piHost          :: !(Maybe Text)
+    { _piPacURI :: !(Maybe Text)
+    , _piHost :: !(Maybe Text)
     , _piExcludedHosts :: !(Maybe [Text])
-    , _piPort          :: !(Maybe (Textual Int32))
+    , _piPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1075,8 +1075,8 @@ instance ToJSON ProxyInfo where
 -- /See:/ 'persistentPreferredActivity' smart constructor.
 data PersistentPreferredActivity =
   PersistentPreferredActivity'
-    { _ppaActions          :: !(Maybe [Text])
-    , _ppaCategories       :: !(Maybe [Text])
+    { _ppaActions :: !(Maybe [Text])
+    , _ppaCategories :: !(Maybe [Text])
     , _ppaReceiverActivity :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1154,10 +1154,10 @@ instance ToJSON PersistentPreferredActivity where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1273,7 +1273,7 @@ instance ToJSON Empty where
 -- /See:/ 'externalData' smart constructor.
 data ExternalData =
   ExternalData'
-    { _edURL        :: !(Maybe Text)
+    { _edURL :: !(Maybe Text)
     , _edSha256Hash :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1366,13 +1366,13 @@ instance ToJSON APILevelCondition where
 -- /See:/ 'deviceSettings' smart constructor.
 data DeviceSettings =
   DeviceSettings'
-    { _dsIsEncrypted                :: !(Maybe Bool)
-    , _dsAdbEnabled                 :: !(Maybe Bool)
-    , _dsIsDeviceSecure             :: !(Maybe Bool)
-    , _dsVerifyAppsEnabled          :: !(Maybe Bool)
+    { _dsIsEncrypted :: !(Maybe Bool)
+    , _dsAdbEnabled :: !(Maybe Bool)
+    , _dsIsDeviceSecure :: !(Maybe Bool)
+    , _dsVerifyAppsEnabled :: !(Maybe Bool)
     , _dsDevelopmentSettingsEnabled :: !(Maybe Bool)
-    , _dsEncryptionStatus           :: !(Maybe DeviceSettingsEncryptionStatus)
-    , _dsUnknownSourcesEnabled      :: !(Maybe Bool)
+    , _dsEncryptionStatus :: !(Maybe DeviceSettingsEncryptionStatus)
+    , _dsUnknownSourcesEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1531,20 +1531,20 @@ instance ToJSON
 -- /See:/ 'hardwareInfo' smart constructor.
 data HardwareInfo =
   HardwareInfo'
-    { _hiCPUThrottlingTemperatures     :: !(Maybe [Textual Double])
-    , _hiManufacturer                  :: !(Maybe Text)
-    , _hiBrand                         :: !(Maybe Text)
-    , _hiCPUShutdownTemperatures       :: !(Maybe [Textual Double])
+    { _hiCPUThrottlingTemperatures :: !(Maybe [Textual Double])
+    , _hiManufacturer :: !(Maybe Text)
+    , _hiBrand :: !(Maybe Text)
+    , _hiCPUShutdownTemperatures :: !(Maybe [Textual Double])
     , _hiBatteryThrottlingTemperatures :: !(Maybe [Textual Double])
-    , _hiModel                         :: !(Maybe Text)
-    , _hiBatteryShutdownTemperatures   :: !(Maybe [Textual Double])
-    , _hiSkinThrottlingTemperatures    :: !(Maybe [Textual Double])
-    , _hiGpuShutdownTemperatures       :: !(Maybe [Textual Double])
-    , _hiGpuThrottlingTemperatures     :: !(Maybe [Textual Double])
-    , _hiSkinShutdownTemperatures      :: !(Maybe [Textual Double])
-    , _hiSerialNumber                  :: !(Maybe Text)
-    , _hiDeviceBasebandVersion         :: !(Maybe Text)
-    , _hiHardware                      :: !(Maybe Text)
+    , _hiModel :: !(Maybe Text)
+    , _hiBatteryShutdownTemperatures :: !(Maybe [Textual Double])
+    , _hiSkinThrottlingTemperatures :: !(Maybe [Textual Double])
+    , _hiGpuShutdownTemperatures :: !(Maybe [Textual Double])
+    , _hiGpuThrottlingTemperatures :: !(Maybe [Textual Double])
+    , _hiSkinShutdownTemperatures :: !(Maybe [Textual Double])
+    , _hiSerialNumber :: !(Maybe Text)
+    , _hiDeviceBasebandVersion :: !(Maybe Text)
+    , _hiHardware :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1757,36 +1757,36 @@ instance ToJSON HardwareInfo where
 -- /See:/ 'device' smart constructor.
 data Device =
   Device'
-    { _devMemoryInfo                     :: !(Maybe MemoryInfo)
-    , _devPolicyCompliant                :: !(Maybe Bool)
-    , _devApplicationReports             :: !(Maybe [ApplicationReport])
-    , _devPolicyName                     :: !(Maybe Text)
-    , _devState                          :: !(Maybe DeviceState)
-    , _devAppliedPolicyName              :: !(Maybe Text)
-    , _devLastStatusReportTime           :: !(Maybe DateTime')
-    , _devDeviceSettings                 :: !(Maybe DeviceSettings)
-    , _devEnrollmentTokenName            :: !(Maybe Text)
-    , _devManagementMode                 :: !(Maybe DeviceManagementMode)
-    , _devHardwareInfo                   :: !(Maybe HardwareInfo)
-    , _devPowerManagementEvents          :: !(Maybe [PowerManagementEvent])
-    , _devUserName                       :: !(Maybe Text)
-    , _devMemoryEvents                   :: !(Maybe [MemoryEvent])
-    , _devAPILevel                       :: !(Maybe (Textual Int32))
-    , _devUser                           :: !(Maybe User)
-    , _devDisabledReason                 :: !(Maybe UserFacingMessage)
+    { _devMemoryInfo :: !(Maybe MemoryInfo)
+    , _devPolicyCompliant :: !(Maybe Bool)
+    , _devApplicationReports :: !(Maybe [ApplicationReport])
+    , _devPolicyName :: !(Maybe Text)
+    , _devState :: !(Maybe DeviceState)
+    , _devAppliedPolicyName :: !(Maybe Text)
+    , _devLastStatusReportTime :: !(Maybe DateTime')
+    , _devDeviceSettings :: !(Maybe DeviceSettings)
+    , _devEnrollmentTokenName :: !(Maybe Text)
+    , _devManagementMode :: !(Maybe DeviceManagementMode)
+    , _devHardwareInfo :: !(Maybe HardwareInfo)
+    , _devPowerManagementEvents :: !(Maybe [PowerManagementEvent])
+    , _devUserName :: !(Maybe Text)
+    , _devMemoryEvents :: !(Maybe [MemoryEvent])
+    , _devAPILevel :: !(Maybe (Textual Int32))
+    , _devUser :: !(Maybe User)
+    , _devDisabledReason :: !(Maybe UserFacingMessage)
     , _devLastPolicyComplianceReportTime :: !(Maybe DateTime')
-    , _devEnrollmentTokenData            :: !(Maybe Text)
-    , _devName                           :: !(Maybe Text)
-    , _devAppliedPolicyVersion           :: !(Maybe (Textual Int64))
-    , _devHardwareStatusSamples          :: !(Maybe [HardwareStatus])
-    , _devAppliedState                   :: !(Maybe DeviceAppliedState)
-    , _devPreviousDeviceNames            :: !(Maybe [Text])
-    , _devLastPolicySyncTime             :: !(Maybe DateTime')
-    , _devNetworkInfo                    :: !(Maybe NetworkInfo)
-    , _devNonComplianceDetails           :: !(Maybe [NonComplianceDetail])
-    , _devSoftwareInfo                   :: !(Maybe SoftwareInfo)
-    , _devEnrollmentTime                 :: !(Maybe DateTime')
-    , _devDisplays                       :: !(Maybe [Display])
+    , _devEnrollmentTokenData :: !(Maybe Text)
+    , _devName :: !(Maybe Text)
+    , _devAppliedPolicyVersion :: !(Maybe (Textual Int64))
+    , _devHardwareStatusSamples :: !(Maybe [HardwareStatus])
+    , _devAppliedState :: !(Maybe DeviceAppliedState)
+    , _devPreviousDeviceNames :: !(Maybe [Text])
+    , _devLastPolicySyncTime :: !(Maybe DateTime')
+    , _devNetworkInfo :: !(Maybe NetworkInfo)
+    , _devNonComplianceDetails :: !(Maybe [NonComplianceDetail])
+    , _devSoftwareInfo :: !(Maybe SoftwareInfo)
+    , _devEnrollmentTime :: !(Maybe DateTime')
+    , _devDisplays :: !(Maybe [Display])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2232,7 +2232,7 @@ instance ToJSON StatusDetailsItem where
 data ManagedPropertyEntry =
   ManagedPropertyEntry'
     { _mpeValue :: !(Maybe Text)
-    , _mpeName  :: !(Maybe Text)
+    , _mpeName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2280,8 +2280,8 @@ instance ToJSON ManagedPropertyEntry where
 data ChoosePrivateKeyRule =
   ChoosePrivateKeyRule'
     { _cpkrPrivateKeyAlias :: !(Maybe Text)
-    , _cpkrURLPattern      :: !(Maybe Text)
-    , _cpkrPackageNames    :: !(Maybe [Text])
+    , _cpkrURLPattern :: !(Maybe Text)
+    , _cpkrPackageNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2437,9 +2437,9 @@ instance ToJSON User where
 -- /See:/ 'systemUpdate' smart constructor.
 data SystemUpdate =
   SystemUpdate'
-    { _suEndMinutes   :: !(Maybe (Textual Int32))
+    { _suEndMinutes :: !(Maybe (Textual Int32))
     , _suStartMinutes :: !(Maybe (Textual Int32))
-    , _suType         :: !(Maybe SystemUpdateType)
+    , _suType :: !(Maybe SystemUpdateType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2505,17 +2505,17 @@ instance ToJSON SystemUpdate where
 -- /See:/ 'applicationReport' smart constructor.
 data ApplicationReport =
   ApplicationReport'
-    { _arVersionCode                :: !(Maybe (Textual Int32))
+    { _arVersionCode :: !(Maybe (Textual Int32))
     , _arSigningKeyCertFingerprints :: !(Maybe [Text])
-    , _arState                      :: !(Maybe ApplicationReportState)
-    , _arVersionName                :: !(Maybe Text)
-    , _arPackageName                :: !(Maybe Text)
-    , _arPackageSha256Hash          :: !(Maybe Text)
-    , _arKeyedAppStates             :: !(Maybe [KeyedAppState])
-    , _arApplicationSource          :: !(Maybe ApplicationReportApplicationSource)
-    , _arEvents                     :: !(Maybe [ApplicationEvent])
-    , _arDisplayName                :: !(Maybe Text)
-    , _arInstallerPackageName       :: !(Maybe Text)
+    , _arState :: !(Maybe ApplicationReportState)
+    , _arVersionName :: !(Maybe Text)
+    , _arPackageName :: !(Maybe Text)
+    , _arPackageSha256Hash :: !(Maybe Text)
+    , _arKeyedAppStates :: !(Maybe [KeyedAppState])
+    , _arApplicationSource :: !(Maybe ApplicationReportApplicationSource)
+    , _arEvents :: !(Maybe [ApplicationEvent])
+    , _arDisplayName :: !(Maybe Text)
+    , _arInstallerPackageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2679,15 +2679,15 @@ instance ToJSON ApplicationReport where
 -- /See:/ 'enrollmentToken' smart constructor.
 data EnrollmentToken =
   EnrollmentToken'
-    { _etPolicyName          :: !(Maybe Text)
-    , _etValue               :: !(Maybe Text)
-    , _etQrCode              :: !(Maybe Text)
-    , _etAdditionalData      :: !(Maybe Text)
-    , _etUser                :: !(Maybe User)
-    , _etName                :: !(Maybe Text)
-    , _etOneTimeOnly         :: !(Maybe Bool)
+    { _etPolicyName :: !(Maybe Text)
+    , _etValue :: !(Maybe Text)
+    , _etQrCode :: !(Maybe Text)
+    , _etAdditionalData :: !(Maybe Text)
+    , _etUser :: !(Maybe User)
+    , _etName :: !(Maybe Text)
+    , _etOneTimeOnly :: !(Maybe Bool)
     , _etExpirationTimestamp :: !(Maybe DateTime')
-    , _etDuration            :: !(Maybe GDuration)
+    , _etDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2896,14 +2896,14 @@ instance ToJSON ApplicationPolicyManagedConfiguration
 -- /See:/ 'statusReportingSettings' smart constructor.
 data StatusReportingSettings =
   StatusReportingSettings'
-    { _srsSoftwareInfoEnabled          :: !(Maybe Bool)
-    , _srsHardwareStatusEnabled        :: !(Maybe Bool)
+    { _srsSoftwareInfoEnabled :: !(Maybe Bool)
+    , _srsHardwareStatusEnabled :: !(Maybe Bool)
     , _srsPowerManagementEventsEnabled :: !(Maybe Bool)
-    , _srsDisplayInfoEnabled           :: !(Maybe Bool)
-    , _srsApplicationReportsEnabled    :: !(Maybe Bool)
-    , _srsMemoryInfoEnabled            :: !(Maybe Bool)
-    , _srsNetworkInfoEnabled           :: !(Maybe Bool)
-    , _srsDeviceSettingsEnabled        :: !(Maybe Bool)
+    , _srsDisplayInfoEnabled :: !(Maybe Bool)
+    , _srsApplicationReportsEnabled :: !(Maybe Bool)
+    , _srsMemoryInfoEnabled :: !(Maybe Bool)
+    , _srsNetworkInfoEnabled :: !(Maybe Bool)
+    , _srsDeviceSettingsEnabled :: !(Maybe Bool)
     , _srsApplicationReportingSettings :: !(Maybe ApplicationReportingSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3082,16 +3082,16 @@ instance ToJSON WebAppIcon where
 -- /See:/ 'applicationPolicy' smart constructor.
 data ApplicationPolicy =
   ApplicationPolicy'
-    { _apDelegatedScopes              :: !(Maybe [Text])
-    , _apPackageName                  :: !(Maybe Text)
-    , _apManagedConfiguration         :: !(Maybe ApplicationPolicyManagedConfiguration)
-    , _apDefaultPermissionPolicy      :: !(Maybe ApplicationPolicyDefaultPermissionPolicy)
-    , _apDisabled                     :: !(Maybe Bool)
-    , _apLockTaskAllowed              :: !(Maybe Bool)
-    , _apPermissionGrants             :: !(Maybe [PermissionGrant])
+    { _apDelegatedScopes :: !(Maybe [Text])
+    , _apPackageName :: !(Maybe Text)
+    , _apManagedConfiguration :: !(Maybe ApplicationPolicyManagedConfiguration)
+    , _apDefaultPermissionPolicy :: !(Maybe ApplicationPolicyDefaultPermissionPolicy)
+    , _apDisabled :: !(Maybe Bool)
+    , _apLockTaskAllowed :: !(Maybe Bool)
+    , _apPermissionGrants :: !(Maybe [PermissionGrant])
     , _apManagedConfigurationTemplate :: !(Maybe ManagedConfigurationTemplate)
-    , _apMinimumVersionCode           :: !(Maybe (Textual Int32))
-    , _apInstallType                  :: !(Maybe ApplicationPolicyInstallType)
+    , _apMinimumVersionCode :: !(Maybe (Textual Int32))
+    , _apInstallType :: !(Maybe ApplicationPolicyInstallType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3276,7 +3276,7 @@ instance ToJSON ApplicationPolicy where
 data ListDevicesResponse =
   ListDevicesResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDevices       :: !(Maybe [Device])
+    , _ldrDevices :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3328,7 +3328,7 @@ instance ToJSON ListDevicesResponse where
 -- /See:/ 'managedConfigurationTemplate' smart constructor.
 data ManagedConfigurationTemplate =
   ManagedConfigurationTemplate'
-    { _mctTemplateId             :: !(Maybe Text)
+    { _mctTemplateId :: !(Maybe Text)
     , _mctConfigurationVariables :: !(Maybe ManagedConfigurationTemplateConfigurationVariables)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3382,15 +3382,15 @@ instance ToJSON ManagedConfigurationTemplate where
 -- /See:/ 'enterprise' smart constructor.
 data Enterprise =
   Enterprise'
-    { _eAppAutoApprovalEnabled   :: !(Maybe Bool)
+    { _eAppAutoApprovalEnabled :: !(Maybe Bool)
     , _eEnabledNotificationTypes :: !(Maybe [Text])
-    , _eSigninDetails            :: !(Maybe [SigninDetail])
-    , _eName                     :: !(Maybe Text)
-    , _ePubsubTopic              :: !(Maybe Text)
-    , _eEnterpriseDisplayName    :: !(Maybe Text)
-    , _eLogo                     :: !(Maybe ExternalData)
-    , _eTermsAndConditions       :: !(Maybe [TermsAndConditions])
-    , _ePrimaryColor             :: !(Maybe (Textual Int32))
+    , _eSigninDetails :: !(Maybe [SigninDetail])
+    , _eName :: !(Maybe Text)
+    , _ePubsubTopic :: !(Maybe Text)
+    , _eEnterpriseDisplayName :: !(Maybe Text)
+    , _eLogo :: !(Maybe ExternalData)
+    , _eTermsAndConditions :: !(Maybe [TermsAndConditions])
+    , _ePrimaryColor :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3536,8 +3536,8 @@ instance ToJSON Enterprise where
 -- /See:/ 'memoryEvent' smart constructor.
 data MemoryEvent =
   MemoryEvent'
-    { _meByteCount  :: !(Maybe (Textual Int64))
-    , _meEventType  :: !(Maybe MemoryEventEventType)
+    { _meByteCount :: !(Maybe (Textual Int64))
+    , _meEventType :: !(Maybe MemoryEventEventType)
     , _meCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3599,7 +3599,7 @@ instance ToJSON MemoryEvent where
 -- /See:/ 'permissionGrant' smart constructor.
 data PermissionGrant =
   PermissionGrant'
-    { _pgPolicy     :: !(Maybe PermissionGrantPolicy)
+    { _pgPolicy :: !(Maybe PermissionGrantPolicy)
     , _pgPermission :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3647,8 +3647,8 @@ instance ToJSON PermissionGrant where
 -- /See:/ 'signinDetail' smart constructor.
 data SigninDetail =
   SigninDetail'
-    { _sdSigninURL             :: !(Maybe Text)
-    , _sdQrCode                :: !(Maybe Text)
+    { _sdSigninURL :: !(Maybe Text)
+    , _sdQrCode :: !(Maybe Text)
     , _sdSigninEnrollmentToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3720,7 +3720,7 @@ instance ToJSON SigninDetail where
 -- /See:/ 'signupURL' smart constructor.
 data SignupURL =
   SignupURL'
-    { _suURL  :: !(Maybe Text)
+    { _suURL :: !(Maybe Text)
     , _suName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3766,9 +3766,9 @@ instance ToJSON SignupURL where
 data NetworkInfo =
   NetworkInfo'
     { _niNetworkOperatorName :: !(Maybe Text)
-    , _niMeid                :: !(Maybe Text)
-    , _niImei                :: !(Maybe Text)
-    , _niWifiMACAddress      :: !(Maybe Text)
+    , _niMeid :: !(Maybe Text)
+    , _niImei :: !(Maybe Text)
+    , _niWifiMACAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3839,8 +3839,8 @@ instance ToJSON NetworkInfo where
 data PowerManagementEvent =
   PowerManagementEvent'
     { _pmeBatteryLevel :: !(Maybe (Textual Double))
-    , _pmeEventType    :: !(Maybe PowerManagementEventEventType)
-    , _pmeCreateTime   :: !(Maybe DateTime')
+    , _pmeEventType :: !(Maybe PowerManagementEventEventType)
+    , _pmeCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3905,81 +3905,81 @@ instance ToJSON PowerManagementEvent where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pBluetoothConfigDisabled            :: !(Maybe Bool)
-    , _pUnmuteMicrophoneDisabled           :: !(Maybe Bool)
-    , _pMountPhysicalMediaDisabled         :: !(Maybe Bool)
-    , _pFrpAdminEmails                     :: !(Maybe [Text])
-    , _pAppAutoUpdatePolicy                :: !(Maybe PolicyAppAutoUpdatePolicy)
-    , _pEncryptionPolicy                   :: !(Maybe PolicyEncryptionPolicy)
-    , _pAndroidDevicePolicyTracks          :: !(Maybe [Text])
-    , _pSafeBootDisabled                   :: !(Maybe Bool)
-    , _pAlwaysOnVPNPackage                 :: !(Maybe AlwaysOnVPNPackage)
-    , _pChoosePrivateKeyRules              :: !(Maybe [ChoosePrivateKeyRule])
-    , _pCredentialsConfigDisabled          :: !(Maybe Bool)
-    , _pRecommendedGlobalProxy             :: !(Maybe ProxyInfo)
-    , _pKeyguardDisabled                   :: !(Maybe Bool)
-    , _pSkipFirstUseHintsEnabled           :: !(Maybe Bool)
-    , _pAdjustVolumeDisabled               :: !(Maybe Bool)
-    , _pDefaultPermissionPolicy            :: !(Maybe PolicyDefaultPermissionPolicy)
-    , _pUninstallAppsDisabled              :: !(Maybe Bool)
-    , _pSetUserIconDisabled                :: !(Maybe Bool)
-    , _pPermittedInputMethods              :: !(Maybe PackageNameList)
-    , _pScreenCaptureDisabled              :: !(Maybe Bool)
-    , _pAddUserDisabled                    :: !(Maybe Bool)
-    , _pShareLocationDisabled              :: !(Maybe Bool)
-    , _pAutoTimeRequired                   :: !(Maybe Bool)
-    , _pInstallAppsDisabled                :: !(Maybe Bool)
-    , _pCreateWindowsDisabled              :: !(Maybe Bool)
-    , _pNetworkResetDisabled               :: !(Maybe Bool)
-    , _pBluetoothContactSharingDisabled    :: !(Maybe Bool)
-    , _pPermissionGrants                   :: !(Maybe [PermissionGrant])
-    , _pShortSupportMessage                :: !(Maybe UserFacingMessage)
-    , _pStayOnPluggedModes                 :: !(Maybe [Text])
-    , _pDataRoamingDisabled                :: !(Maybe Bool)
-    , _pDebuggingFeaturesAllowed           :: !(Maybe Bool)
-    , _pKioskCustomLauncherEnabled         :: !(Maybe Bool)
-    , _pWifiConfigsLockdownEnabled         :: !(Maybe Bool)
-    , _pUsbMassStorageEnabled              :: !(Maybe Bool)
-    , _pNetworkEscapeHatchEnabled          :: !(Maybe Bool)
-    , _pSystemUpdate                       :: !(Maybe SystemUpdate)
-    , _pInstallUnknownSourcesAllowed       :: !(Maybe Bool)
-    , _pName                               :: !(Maybe Text)
-    , _pPrivateKeySelectionEnabled         :: !(Maybe Bool)
-    , _pOutgoingCallsDisabled              :: !(Maybe Bool)
-    , _pStatusReportingSettings            :: !(Maybe StatusReportingSettings)
-    , _pRemoveUserDisabled                 :: !(Maybe Bool)
-    , _pMobileNetworksConfigDisabled       :: !(Maybe Bool)
-    , _pVersion                            :: !(Maybe (Textual Int64))
-    , _pEnsureVerifyAppsEnabled            :: !(Maybe Bool)
-    , _pSetWallpaperDisabled               :: !(Maybe Bool)
-    , _pVPNConfigDisabled                  :: !(Maybe Bool)
-    , _pSetupActions                       :: !(Maybe [SetupAction])
-    , _pOpenNetworkConfiguration           :: !(Maybe PolicyOpenNetworkConfiguration)
-    , _pModifyAccountsDisabled             :: !(Maybe Bool)
-    , _pBlockApplicationsEnabled           :: !(Maybe Bool)
-    , _pKeyguardDisabledFeatures           :: !(Maybe [Text])
-    , _pFunDisabled                        :: !(Maybe Bool)
-    , _pSmsDisabled                        :: !(Maybe Bool)
-    , _pMaximumTimeToLock                  :: !(Maybe (Textual Int64))
-    , _pOutgoingBeamDisabled               :: !(Maybe Bool)
-    , _pStatusBarDisabled                  :: !(Maybe Bool)
-    , _pCellBroadcastsConfigDisabled       :: !(Maybe Bool)
-    , _pDeviceOwnerLockScreenInfo          :: !(Maybe UserFacingMessage)
-    , _pPlayStoreMode                      :: !(Maybe PolicyPlayStoreMode)
-    , _pComplianceRules                    :: !(Maybe [ComplianceRule])
-    , _pTetheringConfigDisabled            :: !(Maybe Bool)
+    { _pBluetoothConfigDisabled :: !(Maybe Bool)
+    , _pUnmuteMicrophoneDisabled :: !(Maybe Bool)
+    , _pMountPhysicalMediaDisabled :: !(Maybe Bool)
+    , _pFrpAdminEmails :: !(Maybe [Text])
+    , _pAppAutoUpdatePolicy :: !(Maybe PolicyAppAutoUpdatePolicy)
+    , _pEncryptionPolicy :: !(Maybe PolicyEncryptionPolicy)
+    , _pAndroidDevicePolicyTracks :: !(Maybe [Text])
+    , _pSafeBootDisabled :: !(Maybe Bool)
+    , _pAlwaysOnVPNPackage :: !(Maybe AlwaysOnVPNPackage)
+    , _pChoosePrivateKeyRules :: !(Maybe [ChoosePrivateKeyRule])
+    , _pCredentialsConfigDisabled :: !(Maybe Bool)
+    , _pRecommendedGlobalProxy :: !(Maybe ProxyInfo)
+    , _pKeyguardDisabled :: !(Maybe Bool)
+    , _pSkipFirstUseHintsEnabled :: !(Maybe Bool)
+    , _pAdjustVolumeDisabled :: !(Maybe Bool)
+    , _pDefaultPermissionPolicy :: !(Maybe PolicyDefaultPermissionPolicy)
+    , _pUninstallAppsDisabled :: !(Maybe Bool)
+    , _pSetUserIconDisabled :: !(Maybe Bool)
+    , _pPermittedInputMethods :: !(Maybe PackageNameList)
+    , _pScreenCaptureDisabled :: !(Maybe Bool)
+    , _pAddUserDisabled :: !(Maybe Bool)
+    , _pShareLocationDisabled :: !(Maybe Bool)
+    , _pAutoTimeRequired :: !(Maybe Bool)
+    , _pInstallAppsDisabled :: !(Maybe Bool)
+    , _pCreateWindowsDisabled :: !(Maybe Bool)
+    , _pNetworkResetDisabled :: !(Maybe Bool)
+    , _pBluetoothContactSharingDisabled :: !(Maybe Bool)
+    , _pPermissionGrants :: !(Maybe [PermissionGrant])
+    , _pShortSupportMessage :: !(Maybe UserFacingMessage)
+    , _pStayOnPluggedModes :: !(Maybe [Text])
+    , _pDataRoamingDisabled :: !(Maybe Bool)
+    , _pDebuggingFeaturesAllowed :: !(Maybe Bool)
+    , _pKioskCustomLauncherEnabled :: !(Maybe Bool)
+    , _pWifiConfigsLockdownEnabled :: !(Maybe Bool)
+    , _pUsbMassStorageEnabled :: !(Maybe Bool)
+    , _pNetworkEscapeHatchEnabled :: !(Maybe Bool)
+    , _pSystemUpdate :: !(Maybe SystemUpdate)
+    , _pInstallUnknownSourcesAllowed :: !(Maybe Bool)
+    , _pName :: !(Maybe Text)
+    , _pPrivateKeySelectionEnabled :: !(Maybe Bool)
+    , _pOutgoingCallsDisabled :: !(Maybe Bool)
+    , _pStatusReportingSettings :: !(Maybe StatusReportingSettings)
+    , _pRemoveUserDisabled :: !(Maybe Bool)
+    , _pMobileNetworksConfigDisabled :: !(Maybe Bool)
+    , _pVersion :: !(Maybe (Textual Int64))
+    , _pEnsureVerifyAppsEnabled :: !(Maybe Bool)
+    , _pSetWallpaperDisabled :: !(Maybe Bool)
+    , _pVPNConfigDisabled :: !(Maybe Bool)
+    , _pSetupActions :: !(Maybe [SetupAction])
+    , _pOpenNetworkConfiguration :: !(Maybe PolicyOpenNetworkConfiguration)
+    , _pModifyAccountsDisabled :: !(Maybe Bool)
+    , _pBlockApplicationsEnabled :: !(Maybe Bool)
+    , _pKeyguardDisabledFeatures :: !(Maybe [Text])
+    , _pFunDisabled :: !(Maybe Bool)
+    , _pSmsDisabled :: !(Maybe Bool)
+    , _pMaximumTimeToLock :: !(Maybe (Textual Int64))
+    , _pOutgoingBeamDisabled :: !(Maybe Bool)
+    , _pStatusBarDisabled :: !(Maybe Bool)
+    , _pCellBroadcastsConfigDisabled :: !(Maybe Bool)
+    , _pDeviceOwnerLockScreenInfo :: !(Maybe UserFacingMessage)
+    , _pPlayStoreMode :: !(Maybe PolicyPlayStoreMode)
+    , _pComplianceRules :: !(Maybe [ComplianceRule])
+    , _pTetheringConfigDisabled :: !(Maybe Bool)
     , _pAccountTypesWithManagementDisabled :: !(Maybe [Text])
-    , _pWifiConfigDisabled                 :: !(Maybe Bool)
-    , _pPersistentPreferredActivities      :: !(Maybe [PersistentPreferredActivity])
-    , _pPasswordRequirements               :: !(Maybe PasswordRequirements)
-    , _pLongSupportMessage                 :: !(Maybe UserFacingMessage)
-    , _pLocationMode                       :: !(Maybe PolicyLocationMode)
-    , _pBluetoothDisabled                  :: !(Maybe Bool)
-    , _pUsbFileTransferDisabled            :: !(Maybe Bool)
-    , _pCameraDisabled                     :: !(Maybe Bool)
-    , _pApplications                       :: !(Maybe [ApplicationPolicy])
-    , _pPasswordPolicies                   :: !(Maybe [PasswordRequirements])
-    , _pFactoryResetDisabled               :: !(Maybe Bool)
+    , _pWifiConfigDisabled :: !(Maybe Bool)
+    , _pPersistentPreferredActivities :: !(Maybe [PersistentPreferredActivity])
+    , _pPasswordRequirements :: !(Maybe PasswordRequirements)
+    , _pLongSupportMessage :: !(Maybe UserFacingMessage)
+    , _pLocationMode :: !(Maybe PolicyLocationMode)
+    , _pBluetoothDisabled :: !(Maybe Bool)
+    , _pUsbFileTransferDisabled :: !(Maybe Bool)
+    , _pCameraDisabled :: !(Maybe Bool)
+    , _pApplications :: !(Maybe [ApplicationPolicy])
+    , _pPasswordPolicies :: !(Maybe [PasswordRequirements])
+    , _pFactoryResetDisabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4969,9 +4969,9 @@ instance ToJSON Policy where
 -- /See:/ 'nonComplianceDetailCondition' smart constructor.
 data NonComplianceDetailCondition =
   NonComplianceDetailCondition'
-    { _ncdcPackageName         :: !(Maybe Text)
+    { _ncdcPackageName :: !(Maybe Text)
     , _ncdcNonComplianceReason :: !(Maybe NonComplianceDetailConditionNonComplianceReason)
-    , _ncdcSettingName         :: !(Maybe Text)
+    , _ncdcSettingName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5040,12 +5040,12 @@ instance ToJSON NonComplianceDetailCondition where
 -- /See:/ 'keyedAppState' smart constructor.
 data KeyedAppState =
   KeyedAppState'
-    { _kasData           :: !(Maybe Text)
-    , _kasSeverity       :: !(Maybe KeyedAppStateSeverity)
-    , _kasKey            :: !(Maybe Text)
-    , _kasMessage        :: !(Maybe Text)
+    { _kasData :: !(Maybe Text)
+    , _kasSeverity :: !(Maybe KeyedAppStateSeverity)
+    , _kasKey :: !(Maybe Text)
+    , _kasMessage :: !(Maybe Text)
     , _kasLastUpdateTime :: !(Maybe DateTime')
-    , _kasCreateTime     :: !(Maybe DateTime')
+    , _kasCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5183,9 +5183,9 @@ instance ToJSON OperationMetadata where
 data WebToken =
   WebToken'
     { _wtParentFrameURL :: !(Maybe Text)
-    , _wtValue          :: !(Maybe Text)
-    , _wtName           :: !(Maybe Text)
-    , _wtPermissions    :: !(Maybe [Text])
+    , _wtValue :: !(Maybe Text)
+    , _wtName :: !(Maybe Text)
+    , _wtPermissions :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5267,9 +5267,9 @@ instance ToJSON WebToken where
 -- /See:/ 'complianceRule' smart constructor.
 data ComplianceRule =
   ComplianceRule'
-    { _crAPILevelCondition            :: !(Maybe APILevelCondition)
-    , _crDisableApps                  :: !(Maybe Bool)
-    , _crPackageNamesToDisable        :: !(Maybe [Text])
+    { _crAPILevelCondition :: !(Maybe APILevelCondition)
+    , _crDisableApps :: !(Maybe Bool)
+    , _crPackageNamesToDisable :: !(Maybe [Text])
     , _crNonComplianceDetailCondition :: !(Maybe NonComplianceDetailCondition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5355,7 +5355,7 @@ instance ToJSON ComplianceRule where
 data ListWebAppsResponse =
   ListWebAppsResponse'
     { _lwarNextPageToken :: !(Maybe Text)
-    , _lwarWebApps       :: !(Maybe [WebApp])
+    , _lwarWebApps :: !(Maybe [WebApp])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5406,18 +5406,18 @@ instance ToJSON ListWebAppsResponse where
 -- /See:/ 'passwordRequirements' smart constructor.
 data PasswordRequirements =
   PasswordRequirements'
-    { _prPasswordMinimumSymbols        :: !(Maybe (Textual Int32))
+    { _prPasswordMinimumSymbols :: !(Maybe (Textual Int32))
     , _prMaximumFailedPasswordsForWipe :: !(Maybe (Textual Int32))
-    , _prPasswordExpirationTimeout     :: !(Maybe GDuration)
-    , _prPasswordMinimumNonLetter      :: !(Maybe (Textual Int32))
-    , _prPasswordHistoryLength         :: !(Maybe (Textual Int32))
-    , _prPasswordMinimumLetters        :: !(Maybe (Textual Int32))
-    , _prPasswordMinimumUpperCase      :: !(Maybe (Textual Int32))
-    , _prPasswordMinimumNumeric        :: !(Maybe (Textual Int32))
-    , _prPasswordQuality               :: !(Maybe PasswordRequirementsPasswordQuality)
-    , _prPasswordMinimumLength         :: !(Maybe (Textual Int32))
-    , _prPasswordScope                 :: !(Maybe PasswordRequirementsPasswordScope)
-    , _prPasswordMinimumLowerCase      :: !(Maybe (Textual Int32))
+    , _prPasswordExpirationTimeout :: !(Maybe GDuration)
+    , _prPasswordMinimumNonLetter :: !(Maybe (Textual Int32))
+    , _prPasswordHistoryLength :: !(Maybe (Textual Int32))
+    , _prPasswordMinimumLetters :: !(Maybe (Textual Int32))
+    , _prPasswordMinimumUpperCase :: !(Maybe (Textual Int32))
+    , _prPasswordMinimumNumeric :: !(Maybe (Textual Int32))
+    , _prPasswordQuality :: !(Maybe PasswordRequirementsPasswordQuality)
+    , _prPasswordMinimumLength :: !(Maybe (Textual Int32))
+    , _prPasswordScope :: !(Maybe PasswordRequirementsPasswordScope)
+    , _prPasswordMinimumLowerCase :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5612,12 +5612,12 @@ instance ToJSON PasswordRequirements where
 -- /See:/ 'nonComplianceDetail' smart constructor.
 data NonComplianceDetail =
   NonComplianceDetail'
-    { _ncdFieldPath                 :: !(Maybe Text)
-    , _ncdPackageName               :: !(Maybe Text)
+    { _ncdFieldPath :: !(Maybe Text)
+    , _ncdPackageName :: !(Maybe Text)
     , _ncdInstallationFailureReason :: !(Maybe NonComplianceDetailInstallationFailureReason)
-    , _ncdNonComplianceReason       :: !(Maybe NonComplianceDetailNonComplianceReason)
-    , _ncdSettingName               :: !(Maybe Text)
-    , _ncdCurrentValue              :: !(Maybe JSONValue)
+    , _ncdNonComplianceReason :: !(Maybe NonComplianceDetailNonComplianceReason)
+    , _ncdSettingName :: !(Maybe Text)
+    , _ncdCurrentValue :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5727,7 +5727,7 @@ instance ToJSON NonComplianceDetail where
 -- /See:/ 'applicationEvent' smart constructor.
 data ApplicationEvent =
   ApplicationEvent'
-    { _aeEventType  :: !(Maybe ApplicationEventEventType)
+    { _aeEventType :: !(Maybe ApplicationEventEventType)
     , _aeCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5777,7 +5777,7 @@ instance ToJSON ApplicationEvent where
 data TermsAndConditions =
   TermsAndConditions'
     { _tacContent :: !(Maybe UserFacingMessage)
-    , _tacHeader  :: !(Maybe UserFacingMessage)
+    , _tacHeader :: !(Maybe UserFacingMessage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5869,7 +5869,7 @@ instance ToJSON OperationResponse where
 data UserFacingMessage =
   UserFacingMessage'
     { _ufmLocalizedMessages :: !(Maybe UserFacingMessageLocalizedMessages)
-    , _ufmDefaultMessage    :: !(Maybe Text)
+    , _ufmDefaultMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5924,16 +5924,16 @@ instance ToJSON UserFacingMessage where
 -- /See:/ 'softwareInfo' smart constructor.
 data SoftwareInfo =
   SoftwareInfo'
-    { _siSecurityPatchLevel             :: !(Maybe Text)
+    { _siSecurityPatchLevel :: !(Maybe Text)
     , _siAndroidDevicePolicyVersionName :: !(Maybe Text)
-    , _siDeviceKernelVersion            :: !(Maybe Text)
+    , _siDeviceKernelVersion :: !(Maybe Text)
     , _siAndroidDevicePolicyVersionCode :: !(Maybe (Textual Int32))
-    , _siDeviceBuildSignature           :: !(Maybe Text)
-    , _siBootLoaderVersion              :: !(Maybe Text)
-    , _siAndroidBuildTime               :: !(Maybe DateTime')
-    , _siPrimaryLanguageCode            :: !(Maybe Text)
-    , _siAndroidBuildNumber             :: !(Maybe Text)
-    , _siAndroidVersion                 :: !(Maybe Text)
+    , _siDeviceBuildSignature :: !(Maybe Text)
+    , _siBootLoaderVersion :: !(Maybe Text)
+    , _siAndroidBuildTime :: !(Maybe DateTime')
+    , _siPrimaryLanguageCode :: !(Maybe Text)
+    , _siAndroidBuildNumber :: !(Maybe Text)
+    , _siAndroidVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6126,8 +6126,8 @@ instance ToJSON ApplicationReportingSettings where
 -- /See:/ 'applicationPermission' smart constructor.
 data ApplicationPermission =
   ApplicationPermission'
-    { _apName         :: !(Maybe Text)
-    , _apDescription  :: !(Maybe Text)
+    { _apName :: !(Maybe Text)
+    , _apDescription :: !(Maybe Text)
     , _apPermissionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6187,8 +6187,8 @@ instance ToJSON ApplicationPermission where
 -- /See:/ 'setupAction' smart constructor.
 data SetupAction =
   SetupAction'
-    { _saLaunchApp   :: !(Maybe LaunchAppAction)
-    , _saTitle       :: !(Maybe UserFacingMessage)
+    { _saLaunchApp :: !(Maybe LaunchAppAction)
+    , _saTitle :: !(Maybe UserFacingMessage)
     , _saDescription :: !(Maybe UserFacingMessage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6247,11 +6247,11 @@ instance ToJSON SetupAction where
 data WebApp =
   WebApp'
     { _waVersionCode :: !(Maybe (Textual Int64))
-    , _waIcons       :: !(Maybe [WebAppIcon])
-    , _waStartURL    :: !(Maybe Text)
+    , _waIcons :: !(Maybe [WebAppIcon])
+    , _waStartURL :: !(Maybe Text)
     , _waDisplayMode :: !(Maybe WebAppDisplayMode)
-    , _waName        :: !(Maybe Text)
-    , _waTitle       :: !(Maybe Text)
+    , _waName :: !(Maybe Text)
+    , _waTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

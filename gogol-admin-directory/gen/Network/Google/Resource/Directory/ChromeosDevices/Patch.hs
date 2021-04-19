@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.Patch
     , cdpProjection
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.patch@ method which the
 -- 'ChromeosDevicesPatch' request conforms to.
@@ -65,9 +65,9 @@ type ChromeosDevicesPatchResource =
 -- /See:/ 'chromeosDevicesPatch' smart constructor.
 data ChromeosDevicesPatch =
   ChromeosDevicesPatch'
-    { _cdpPayload    :: !ChromeOSDevice
+    { _cdpPayload :: !ChromeOSDevice
     , _cdpCustomerId :: !Text
-    , _cdpDeviceId   :: !Text
+    , _cdpDeviceId :: !Text
     , _cdpProjection :: !(Maybe ChromeosDevicesPatchProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

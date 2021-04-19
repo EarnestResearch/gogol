@@ -41,8 +41,8 @@ module Network.Google.Resource.TextToSpeech.Voices.List
     , vlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TextToSpeech.Types
+import Network.Google.Prelude
+import Network.Google.TextToSpeech.Types
 
 -- | A resource alias for @texttospeech.voices.list@ method which the
 -- 'VoicesList' request conforms to.
@@ -63,12 +63,12 @@ type VoicesListResource =
 -- /See:/ 'voicesList' smart constructor.
 data VoicesList =
   VoicesList'
-    { _vlXgafv          :: !(Maybe Xgafv)
-    , _vlLanguageCode   :: !(Maybe Text)
+    { _vlXgafv :: !(Maybe Xgafv)
+    , _vlLanguageCode :: !(Maybe Text)
     , _vlUploadProtocol :: !(Maybe Text)
-    , _vlAccessToken    :: !(Maybe Text)
-    , _vlUploadType     :: !(Maybe Text)
-    , _vlCallback       :: !(Maybe Text)
+    , _vlAccessToken :: !(Maybe Text)
+    , _vlUploadType :: !(Maybe Text)
+    , _vlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

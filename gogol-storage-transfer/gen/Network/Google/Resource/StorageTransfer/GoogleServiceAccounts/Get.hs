@@ -47,8 +47,8 @@ module Network.Google.Resource.StorageTransfer.GoogleServiceAccounts.Get
     , gsagCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.googleServiceAccounts.get@ method which the
 -- 'GoogleServiceAccountsGet' request conforms to.
@@ -75,12 +75,12 @@ type GoogleServiceAccountsGetResource =
 -- /See:/ 'googleServiceAccountsGet' smart constructor.
 data GoogleServiceAccountsGet =
   GoogleServiceAccountsGet'
-    { _gsagXgafv          :: !(Maybe Xgafv)
+    { _gsagXgafv :: !(Maybe Xgafv)
     , _gsagUploadProtocol :: !(Maybe Text)
-    , _gsagAccessToken    :: !(Maybe Text)
-    , _gsagUploadType     :: !(Maybe Text)
-    , _gsagProjectId      :: !Text
-    , _gsagCallback       :: !(Maybe Text)
+    , _gsagAccessToken :: !(Maybe Text)
+    , _gsagUploadType :: !(Maybe Text)
+    , _gsagProjectId :: !Text
+    , _gsagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

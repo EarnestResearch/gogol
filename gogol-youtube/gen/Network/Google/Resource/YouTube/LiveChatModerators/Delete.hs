@@ -36,8 +36,8 @@ module Network.Google.Resource.YouTube.LiveChatModerators.Delete
     , lcmdId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatModerators.delete@ method which the
 -- 'LiveChatModeratorsDelete' request conforms to.

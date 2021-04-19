@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Update
     , ccuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.update@ method which the
 -- 'ContentCategoriesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type ContentCategoriesUpdateResource =
 data ContentCategoriesUpdate =
   ContentCategoriesUpdate'
     { _ccuProFileId :: !(Textual Int64)
-    , _ccuPayload   :: !ContentCategory
+    , _ccuPayload :: !ContentCategory
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

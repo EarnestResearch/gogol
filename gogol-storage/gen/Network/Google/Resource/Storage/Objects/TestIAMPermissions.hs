@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.Objects.TestIAMPermissions
     , otipGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.testIamPermissions@ method which the
 -- 'ObjectsTestIAMPermissions' request conforms to.
@@ -67,11 +67,11 @@ type ObjectsTestIAMPermissionsResource =
 -- /See:/ 'objectsTestIAMPermissions' smart constructor.
 data ObjectsTestIAMPermissions =
   ObjectsTestIAMPermissions'
-    { _otipBucket      :: !Text
+    { _otipBucket :: !Text
     , _otipUserProject :: !(Maybe Text)
-    , _otipObject      :: !Text
+    , _otipObject :: !Text
     , _otipPermissions :: ![Text]
-    , _otipGeneration  :: !(Maybe (Textual Int64))
+    , _otipGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.List
     , phklMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.hmacKeys.list@ method which the
 -- 'ProjectsHmacKeysList' request conforms to.
@@ -63,11 +63,11 @@ type ProjectsHmacKeysListResource =
 -- /See:/ 'projectsHmacKeysList' smart constructor.
 data ProjectsHmacKeysList =
   ProjectsHmacKeysList'
-    { _phklShowDeletedKeys     :: !(Maybe Bool)
+    { _phklShowDeletedKeys :: !(Maybe Bool)
     , _phklServiceAccountEmail :: !(Maybe Text)
-    , _phklPageToken           :: !(Maybe Text)
-    , _phklProjectId           :: !Text
-    , _phklMaxResults          :: !(Textual Word32)
+    , _phklPageToken :: !(Maybe Text)
+    , _phklProjectId :: !Text
+    , _phklMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

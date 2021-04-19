@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.RegionCommitments.AggregatedList
     , rcalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionCommitments.aggregatedList@ method which the
 -- 'RegionCommitmentsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type RegionCommitmentsAggregatedListResource =
 -- /See:/ 'regionCommitmentsAggregatedList' smart constructor.
 data RegionCommitmentsAggregatedList =
   RegionCommitmentsAggregatedList'
-    { _rcalOrderBy    :: !(Maybe Text)
-    , _rcalProject    :: !Text
-    , _rcalFilter     :: !(Maybe Text)
-    , _rcalPageToken  :: !(Maybe Text)
+    { _rcalOrderBy :: !(Maybe Text)
+    , _rcalProject :: !Text
+    , _rcalFilter :: !(Maybe Text)
+    , _rcalPageToken :: !(Maybe Text)
     , _rcalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

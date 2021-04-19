@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.CryptoKeys.C
     , plkrckckvlCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions.list@ method which the
 -- 'ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsListResource
 -- /See:/ 'projectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList' smart constructor.
 data ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList =
   ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsList'
-    { _plkrckckvlParent         :: !Text
-    , _plkrckckvlXgafv          :: !(Maybe Xgafv)
+    { _plkrckckvlParent :: !Text
+    , _plkrckckvlXgafv :: !(Maybe Xgafv)
     , _plkrckckvlUploadProtocol :: !(Maybe Text)
-    , _plkrckckvlAccessToken    :: !(Maybe Text)
-    , _plkrckckvlUploadType     :: !(Maybe Text)
-    , _plkrckckvlView           :: !(Maybe Text)
-    , _plkrckckvlPageToken      :: !(Maybe Text)
-    , _plkrckckvlPageSize       :: !(Maybe (Textual Int32))
-    , _plkrckckvlCallback       :: !(Maybe Text)
+    , _plkrckckvlAccessToken :: !(Maybe Text)
+    , _plkrckckvlUploadType :: !(Maybe Text)
+    , _plkrckckvlView :: !(Maybe Text)
+    , _plkrckckvlPageToken :: !(Maybe Text)
+    , _plkrckckvlPageSize :: !(Maybe (Textual Int32))
+    , _plkrckckvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

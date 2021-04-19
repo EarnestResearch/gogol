@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.Subscriptions.Insert
     , siPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.subscriptions.insert@ method which the
 -- 'SubscriptionsInsert' request conforms to.
@@ -56,7 +56,7 @@ type SubscriptionsInsertResource =
 -- /See:/ 'subscriptionsInsert' smart constructor.
 data SubscriptionsInsert =
   SubscriptionsInsert'
-    { _siPart    :: !Text
+    { _siPart :: !Text
     , _siPayload :: !Subscription
     }
   deriving (Eq, Show, Data, Typeable, Generic)

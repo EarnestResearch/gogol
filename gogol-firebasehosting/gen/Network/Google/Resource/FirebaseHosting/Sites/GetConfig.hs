@@ -41,8 +41,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.GetConfig
     , sgcCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.getConfig@ method which the
 -- 'SitesGetConfig' request conforms to.
@@ -61,12 +61,12 @@ type SitesGetConfigResource =
 -- /See:/ 'sitesGetConfig' smart constructor.
 data SitesGetConfig =
   SitesGetConfig'
-    { _sgcXgafv          :: !(Maybe Xgafv)
+    { _sgcXgafv :: !(Maybe Xgafv)
     , _sgcUploadProtocol :: !(Maybe Text)
-    , _sgcAccessToken    :: !(Maybe Text)
-    , _sgcUploadType     :: !(Maybe Text)
-    , _sgcName           :: !Text
-    , _sgcCallback       :: !(Maybe Text)
+    , _sgcAccessToken :: !(Maybe Text)
+    , _sgcUploadType :: !(Maybe Text)
+    , _sgcName :: !Text
+    , _sgcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

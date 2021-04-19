@@ -46,8 +46,8 @@ module Network.Google.Resource.Monitoring.Projects.Groups.Members.List
     , pgmlCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.groups.members.list@ method which the
 -- 'ProjectsGroupsMembersList' request conforms to.
@@ -74,16 +74,16 @@ type ProjectsGroupsMembersListResource =
 data ProjectsGroupsMembersList =
   ProjectsGroupsMembersList'
     { _pgmlIntervalStartTime :: !(Maybe DateTime')
-    , _pgmlXgafv             :: !(Maybe Xgafv)
-    , _pgmlUploadProtocol    :: !(Maybe Text)
-    , _pgmlAccessToken       :: !(Maybe Text)
-    , _pgmlUploadType        :: !(Maybe Text)
-    , _pgmlName              :: !Text
-    , _pgmlFilter            :: !(Maybe Text)
-    , _pgmlPageToken         :: !(Maybe Text)
-    , _pgmlIntervalEndTime   :: !(Maybe DateTime')
-    , _pgmlPageSize          :: !(Maybe (Textual Int32))
-    , _pgmlCallback          :: !(Maybe Text)
+    , _pgmlXgafv :: !(Maybe Xgafv)
+    , _pgmlUploadProtocol :: !(Maybe Text)
+    , _pgmlAccessToken :: !(Maybe Text)
+    , _pgmlUploadType :: !(Maybe Text)
+    , _pgmlName :: !Text
+    , _pgmlFilter :: !(Maybe Text)
+    , _pgmlPageToken :: !(Maybe Text)
+    , _pgmlIntervalEndTime :: !(Maybe DateTime')
+    , _pgmlPageSize :: !(Maybe (Textual Int32))
+    , _pgmlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Dataproc.Projects.Locations.WorkflowTemplates.Cre
     , plwtcCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.locations.workflowTemplates.create@ method which the
 -- 'ProjectsLocationsWorkflowTemplatesCreate' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsWorkflowTemplatesCreateResource
 -- /See:/ 'projectsLocationsWorkflowTemplatesCreate' smart constructor.
 data ProjectsLocationsWorkflowTemplatesCreate =
   ProjectsLocationsWorkflowTemplatesCreate'
-    { _plwtcParent         :: !Text
-    , _plwtcXgafv          :: !(Maybe Xgafv)
+    { _plwtcParent :: !Text
+    , _plwtcXgafv :: !(Maybe Xgafv)
     , _plwtcUploadProtocol :: !(Maybe Text)
-    , _plwtcAccessToken    :: !(Maybe Text)
-    , _plwtcUploadType     :: !(Maybe Text)
-    , _plwtcPayload        :: !WorkflowTemplate
-    , _plwtcCallback       :: !(Maybe Text)
+    , _plwtcAccessToken :: !(Maybe Text)
+    , _plwtcUploadType :: !(Maybe Text)
+    , _plwtcPayload :: !WorkflowTemplate
+    , _plwtcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

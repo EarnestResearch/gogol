@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Members.Get
     , mgGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.get@ method which the
 -- 'MembersGet' request conforms to.
@@ -58,7 +58,7 @@ type MembersGetResource =
 data MembersGet =
   MembersGet'
     { _mgMemberKey :: !Text
-    , _mgGroupKey  :: !Text
+    , _mgGroupKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

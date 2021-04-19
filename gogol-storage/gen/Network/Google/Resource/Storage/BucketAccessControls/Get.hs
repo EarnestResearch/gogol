@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.Get
     , bacgEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.get@ method which the
 -- 'BucketAccessControlsGet' request conforms to.
@@ -59,9 +59,9 @@ type BucketAccessControlsGetResource =
 -- /See:/ 'bucketAccessControlsGet' smart constructor.
 data BucketAccessControlsGet =
   BucketAccessControlsGet'
-    { _bacgBucket      :: !Text
+    { _bacgBucket :: !Text
     , _bacgUserProject :: !(Maybe Text)
-    , _bacgEntity      :: !Text
+    , _bacgEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

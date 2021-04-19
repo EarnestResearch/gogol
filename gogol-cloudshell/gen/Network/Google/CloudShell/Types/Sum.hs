@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudShell.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Current state of the environment being started.
 data StartEnvironmentMetadataState

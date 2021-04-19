@@ -17,8 +17,8 @@
 --
 module Network.Google.Genomics.Types.Product where
 
-import           Network.Google.Genomics.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Genomics.Types.Sum
+import Network.Google.Prelude
 
 -- | The container-to-host port mappings installed for this container. This
 -- set will contain any ports exposed using the \`PUBLISH_EXPOSED_PORTS\`
@@ -68,8 +68,8 @@ instance ToJSON ContainerStartedEventPortMAppings
 -- /See:/ 'event' smart constructor.
 data Event =
   Event'
-    { _eDetails     :: !(Maybe EventDetails)
-    , _eTimestamp   :: !(Maybe DateTime')
+    { _eDetails :: !(Maybe EventDetails)
+    , _eTimestamp :: !(Maybe DateTime')
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -200,7 +200,7 @@ instance ToJSON CheckInRequestEvent where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -340,7 +340,7 @@ instance ToJSON RunPipelineRequestLabels where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -395,7 +395,7 @@ instance ToJSON ListOperationsResponse where
 data FailedEvent =
   FailedEvent'
     { _feCause :: !(Maybe Text)
-    , _feCode  :: !(Maybe FailedEventCode)
+    , _feCode :: !(Maybe FailedEventCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -463,8 +463,8 @@ data WorkerStatus =
     { _wsTotalRamBytes :: !(Maybe (Textual Word64))
     , _wsAttachedDisks :: !(Maybe WorkerStatusAttachedDisks)
     , _wsUptimeSeconds :: !(Maybe (Textual Int64))
-    , _wsBootDisk      :: !(Maybe DiskStatus)
-    , _wsFreeRamBytes  :: !(Maybe (Textual Word64))
+    , _wsBootDisk :: !(Maybe DiskStatus)
+    , _wsFreeRamBytes :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -552,8 +552,8 @@ instance ToJSON WorkerStatus where
 data ContainerStoppedEvent =
   ContainerStoppedEvent'
     { _cseExitStatus :: !(Maybe (Textual Int32))
-    , _cseActionId   :: !(Maybe (Textual Int32))
-    , _cseStderr     :: !(Maybe Text)
+    , _cseActionId :: !(Maybe (Textual Int32))
+    , _cseStderr :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -672,7 +672,7 @@ instance ToJSON CheckInResponse where
 -- /See:/ 'workerAssignedEvent' smart constructor.
 data WorkerAssignedEvent =
   WorkerAssignedEvent'
-    { _waeZone     :: !(Maybe Text)
+    { _waeZone :: !(Maybe Text)
     , _waeInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -757,10 +757,10 @@ instance ToJSON OperationMetadataLabels where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -870,9 +870,9 @@ instance ToJSON Empty where
 data Disk =
   Disk'
     { _dSourceImage :: !(Maybe Text)
-    , _dSizeGb      :: !(Maybe (Textual Int32))
-    , _dName        :: !(Maybe Text)
-    , _dType        :: !(Maybe Text)
+    , _dSizeGb :: !(Maybe (Textual Int32))
+    , _dName :: !(Maybe Text)
+    , _dType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -951,7 +951,7 @@ instance ToJSON Disk where
 data UnexpectedExitStatusEvent =
   UnexpectedExitStatusEvent'
     { _ueseExitStatus :: !(Maybe (Textual Int32))
-    , _ueseActionId   :: !(Maybe (Textual Int32))
+    , _ueseActionId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1004,7 +1004,7 @@ instance ToJSON UnexpectedExitStatusEvent where
 data DelayedEvent =
   DelayedEvent'
     { _deMetrics :: !(Maybe [Text])
-    , _deCause   :: !(Maybe Text)
+    , _deCause :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1132,9 +1132,9 @@ instance ToJSON MetadataLabels where
 -- /See:/ 'checkInRequest' smart constructor.
 data CheckInRequest =
   CheckInRequest'
-    { _cirEvent           :: !(Maybe CheckInRequestEvent)
-    , _cirWorkerStatus    :: !(Maybe WorkerStatus)
-    , _cirResult          :: !(Maybe Status)
+    { _cirEvent :: !(Maybe CheckInRequestEvent)
+    , _cirWorkerStatus :: !(Maybe WorkerStatus)
+    , _cirResult :: !(Maybe Status)
     , _cirDeadlineExpired :: !(Maybe Empty)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1353,8 +1353,8 @@ instance ToJSON StatusDetailsItem where
 data Network =
   Network'
     { _nUsePrivateAddress :: !(Maybe Bool)
-    , _nName              :: !(Maybe Text)
-    , _nSubnetwork        :: !(Maybe Text)
+    , _nName :: !(Maybe Text)
+    , _nSubnetwork :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1460,17 +1460,17 @@ instance ToJSON EventDetails where
 -- /See:/ 'action' smart constructor.
 data Action =
   Action'
-    { _aCommands     :: !(Maybe [Text])
-    , _aFlags        :: !(Maybe [Text])
-    , _aEnvironment  :: !(Maybe ActionEnvironment)
-    , _aCredentials  :: !(Maybe Secret)
-    , _aEntrypoint   :: !(Maybe Text)
+    { _aCommands :: !(Maybe [Text])
+    , _aFlags :: !(Maybe [Text])
+    , _aEnvironment :: !(Maybe ActionEnvironment)
+    , _aCredentials :: !(Maybe Secret)
+    , _aEntrypoint :: !(Maybe Text)
     , _aPortMAppings :: !(Maybe ActionPortMAppings)
-    , _aMounts       :: !(Maybe [Mount])
-    , _aImageURI     :: !(Maybe Text)
-    , _aName         :: !(Maybe Text)
-    , _aLabels       :: !(Maybe ActionLabels)
-    , _aTimeout      :: !(Maybe GDuration)
+    , _aMounts :: !(Maybe [Mount])
+    , _aImageURI :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
+    , _aLabels :: !(Maybe ActionLabels)
+    , _aTimeout :: !(Maybe GDuration)
     , _aPidNamespace :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1678,7 +1678,7 @@ instance ToJSON Action where
 -- /See:/ 'secret' smart constructor.
 data Secret =
   Secret'
-    { _sKeyName    :: !(Maybe Text)
+    { _sKeyName :: !(Maybe Text)
     , _sCipherText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1806,10 +1806,10 @@ instance ToJSON OperationMetadataRequest where
 -- /See:/ 'resources' smart constructor.
 data Resources =
   Resources'
-    { _rZones          :: !(Maybe [Text])
-    , _rRegions        :: !(Maybe [Text])
+    { _rZones :: !(Maybe [Text])
+    , _rRegions :: !(Maybe [Text])
     , _rVirtualMachine :: !(Maybe VirtualMachine)
-    , _rProjectId      :: !(Maybe Text)
+    , _rProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1887,7 +1887,7 @@ instance ToJSON Resources where
 data DiskStatus =
   DiskStatus'
     { _dsTotalSpaceBytes :: !(Maybe (Textual Word64))
-    , _dsFreeSpaceBytes  :: !(Maybe (Textual Word64))
+    , _dsFreeSpaceBytes :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2020,17 +2020,17 @@ instance ToJSON OperationMetadataRuntimeMetadata
 -- /See:/ 'virtualMachine' smart constructor.
 data VirtualMachine =
   VirtualMachine'
-    { _vmNetwork             :: !(Maybe Network)
-    , _vmCPUPlatform         :: !(Maybe Text)
-    , _vmServiceAccount      :: !(Maybe ServiceAccount)
-    , _vmAccelerators        :: !(Maybe [Accelerator])
-    , _vmMachineType         :: !(Maybe Text)
-    , _vmLabels              :: !(Maybe VirtualMachineLabels)
-    , _vmBootDiskSizeGb      :: !(Maybe (Textual Int32))
-    , _vmDisks               :: !(Maybe [Disk])
-    , _vmBootImage           :: !(Maybe Text)
+    { _vmNetwork :: !(Maybe Network)
+    , _vmCPUPlatform :: !(Maybe Text)
+    , _vmServiceAccount :: !(Maybe ServiceAccount)
+    , _vmAccelerators :: !(Maybe [Accelerator])
+    , _vmMachineType :: !(Maybe Text)
+    , _vmLabels :: !(Maybe VirtualMachineLabels)
+    , _vmBootDiskSizeGb :: !(Maybe (Textual Int32))
+    , _vmDisks :: !(Maybe [Disk])
+    , _vmBootImage :: !(Maybe Text)
     , _vmNvidiaDriverVersion :: !(Maybe Text)
-    , _vmPreemptible         :: !(Maybe Bool)
+    , _vmPreemptible :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2213,7 +2213,7 @@ instance ToJSON VirtualMachine where
 -- /See:/ 'serviceAccount' smart constructor.
 data ServiceAccount =
   ServiceAccount'
-    { _saEmail  :: !(Maybe Text)
+    { _saEmail :: !(Maybe Text)
     , _saScopes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2302,7 +2302,7 @@ instance ToJSON CheckInResponseMetadata where
 data Accelerator =
   Accelerator'
     { _aCount :: !(Maybe (Textual Int64))
-    , _aType  :: !(Maybe Text)
+    , _aType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2390,7 +2390,7 @@ instance ToJSON PipelineEnvironment where
 -- /See:/ 'workerReleasedEvent' smart constructor.
 data WorkerReleasedEvent =
   WorkerReleasedEvent'
-    { _wreZone     :: !(Maybe Text)
+    { _wreZone :: !(Maybe Text)
     , _wreInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2437,8 +2437,8 @@ instance ToJSON WorkerReleasedEvent where
 -- /See:/ 'containerStartedEvent' smart constructor.
 data ContainerStartedEvent =
   ContainerStartedEvent'
-    { _cIPAddress    :: !(Maybe Text)
-    , _cActionId     :: !(Maybe (Textual Int32))
+    { _cIPAddress :: !(Maybe Text)
+    , _cActionId :: !(Maybe (Textual Int32))
     , _cPortMAppings :: !(Maybe ContainerStartedEventPortMAppings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2506,7 +2506,7 @@ instance ToJSON ContainerStartedEvent where
 data RunPipelineRequest =
   RunPipelineRequest'
     { _rprPipeline :: !(Maybe Pipeline)
-    , _rprLabels   :: !(Maybe RunPipelineRequestLabels)
+    , _rprLabels :: !(Maybe RunPipelineRequestLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2558,10 +2558,10 @@ instance ToJSON RunPipelineRequest where
 -- /See:/ 'pipeline' smart constructor.
 data Pipeline =
   Pipeline'
-    { _pActions     :: !(Maybe [Action])
+    { _pActions :: !(Maybe [Action])
     , _pEnvironment :: !(Maybe PipelineEnvironment)
-    , _pResources   :: !(Maybe Resources)
-    , _pTimeout     :: !(Maybe GDuration)
+    , _pResources :: !(Maybe Resources)
+    , _pTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2642,11 +2642,11 @@ instance ToJSON Pipeline where
 -- /See:/ 'metadata' smart constructor.
 data Metadata =
   Metadata'
-    { _mStartTime  :: !(Maybe DateTime')
-    , _mEvents     :: !(Maybe [Event])
-    , _mEndTime    :: !(Maybe DateTime')
-    , _mPipeline   :: !(Maybe Pipeline)
-    , _mLabels     :: !(Maybe MetadataLabels)
+    { _mStartTime :: !(Maybe DateTime')
+    , _mEvents :: !(Maybe [Event])
+    , _mEndTime :: !(Maybe DateTime')
+    , _mPipeline :: !(Maybe Pipeline)
+    , _mLabels :: !(Maybe MetadataLabels)
     , _mCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2742,8 +2742,8 @@ instance ToJSON Metadata where
 -- /See:/ 'mount' smart constructor.
 data Mount =
   Mount'
-    { _mPath     :: !(Maybe Text)
-    , _mDisk     :: !(Maybe Text)
+    { _mPath :: !(Maybe Text)
+    , _mDisk :: !(Maybe Text)
     , _mReadOnly :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2854,15 +2854,15 @@ instance ToJSON RunPipelineResponse where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omClientId        :: !(Maybe Text)
-    , _omStartTime       :: !(Maybe DateTime')
-    , _omEvents          :: !(Maybe [OperationEvent])
-    , _omEndTime         :: !(Maybe DateTime')
-    , _omLabels          :: !(Maybe OperationMetadataLabels)
-    , _omProjectId       :: !(Maybe Text)
-    , _omCreateTime      :: !(Maybe DateTime')
+    { _omClientId :: !(Maybe Text)
+    , _omStartTime :: !(Maybe DateTime')
+    , _omEvents :: !(Maybe [OperationEvent])
+    , _omEndTime :: !(Maybe DateTime')
+    , _omLabels :: !(Maybe OperationMetadataLabels)
+    , _omProjectId :: !(Maybe Text)
+    , _omCreateTime :: !(Maybe DateTime')
     , _omRuntimeMetadata :: !(Maybe OperationMetadataRuntimeMetadata)
-    , _omRequest         :: !(Maybe OperationMetadataRequest)
+    , _omRequest :: !(Maybe OperationMetadataRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3042,9 +3042,9 @@ instance ToJSON ActionEnvironment where
 -- /See:/ 'computeEngine' smart constructor.
 data ComputeEngine =
   ComputeEngine'
-    { _ceZone         :: !(Maybe Text)
-    , _ceDiskNames    :: !(Maybe [Text])
-    , _ceMachineType  :: !(Maybe Text)
+    { _ceZone :: !(Maybe Text)
+    , _ceDiskNames :: !(Maybe [Text])
+    , _ceMachineType :: !(Maybe Text)
     , _ceInstanceName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3154,8 +3154,8 @@ instance ToJSON OperationResponse where
 -- /See:/ 'operationEvent' smart constructor.
 data OperationEvent =
   OperationEvent'
-    { _oeStartTime   :: !(Maybe DateTime')
-    , _oeEndTime     :: !(Maybe DateTime')
+    { _oeStartTime :: !(Maybe DateTime')
+    , _oeEndTime :: !(Maybe DateTime')
     , _oeDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

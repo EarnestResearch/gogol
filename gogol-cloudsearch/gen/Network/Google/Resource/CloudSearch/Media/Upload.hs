@@ -49,8 +49,8 @@ module Network.Google.Resource.CloudSearch.Media.Upload
     , muCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.media.upload@ method which the
 -- 'MediaUpload'' request conforms to.
@@ -92,13 +92,13 @@ type MediaUploadResource =
 -- /See:/ 'mediaUpload' smart constructor.
 data MediaUpload' =
   MediaUpload''
-    { _muXgafv          :: !(Maybe Xgafv)
+    { _muXgafv :: !(Maybe Xgafv)
     , _muUploadProtocol :: !(Maybe Text)
-    , _muResourceName   :: !Text
-    , _muAccessToken    :: !(Maybe Text)
-    , _muUploadType     :: !(Maybe Text)
-    , _muPayload        :: !Media
-    , _muCallback       :: !(Maybe Text)
+    , _muResourceName :: !Text
+    , _muAccessToken :: !(Maybe Text)
+    , _muUploadType :: !(Maybe Text)
+    , _muPayload :: !Media
+    , _muCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

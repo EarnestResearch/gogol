@@ -44,8 +44,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.Create
     , plicCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.create@ method which the
 -- 'ProjectsLocationsInstancesCreate' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsLocationsInstancesCreateResource =
 -- /See:/ 'projectsLocationsInstancesCreate' smart constructor.
 data ProjectsLocationsInstancesCreate =
   ProjectsLocationsInstancesCreate'
-    { _plicParent         :: !Text
-    , _plicInstanceId     :: !(Maybe Text)
-    , _plicXgafv          :: !(Maybe Xgafv)
+    { _plicParent :: !Text
+    , _plicInstanceId :: !(Maybe Text)
+    , _plicXgafv :: !(Maybe Xgafv)
     , _plicUploadProtocol :: !(Maybe Text)
-    , _plicAccessToken    :: !(Maybe Text)
-    , _plicUploadType     :: !(Maybe Text)
-    , _plicPayload        :: !Instance
-    , _plicCallback       :: !(Maybe Text)
+    , _plicAccessToken :: !(Maybe Text)
+    , _plicUploadType :: !(Maybe Text)
+    , _plicPayload :: !Instance
+    , _plicCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -1687,25 +1687,25 @@ module Network.Google.Sheets
     , uOldRule
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Sheets.Spreadsheets.BatchUpdate
-import           Network.Google.Resource.Sheets.Spreadsheets.Create
-import           Network.Google.Resource.Sheets.Spreadsheets.DeveloperMetadata.Get
-import           Network.Google.Resource.Sheets.Spreadsheets.DeveloperMetadata.Search
-import           Network.Google.Resource.Sheets.Spreadsheets.Get
-import           Network.Google.Resource.Sheets.Spreadsheets.GetByDataFilter
-import           Network.Google.Resource.Sheets.Spreadsheets.Sheets.CopyTo
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.Append
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchClear
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchClearByDataFilter
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchGet
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchGetByDataFilter
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchUpdate
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.BatchUpdateByDataFilter
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.Clear
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.Get
-import           Network.Google.Resource.Sheets.Spreadsheets.Values.Update
-import           Network.Google.Sheets.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Sheets.Spreadsheets.BatchUpdate
+import Network.Google.Resource.Sheets.Spreadsheets.Create
+import Network.Google.Resource.Sheets.Spreadsheets.DeveloperMetadata.Get
+import Network.Google.Resource.Sheets.Spreadsheets.DeveloperMetadata.Search
+import Network.Google.Resource.Sheets.Spreadsheets.Get
+import Network.Google.Resource.Sheets.Spreadsheets.GetByDataFilter
+import Network.Google.Resource.Sheets.Spreadsheets.Sheets.CopyTo
+import Network.Google.Resource.Sheets.Spreadsheets.Values.Append
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchClear
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchClearByDataFilter
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchGet
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchGetByDataFilter
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchUpdate
+import Network.Google.Resource.Sheets.Spreadsheets.Values.BatchUpdateByDataFilter
+import Network.Google.Resource.Sheets.Spreadsheets.Values.Clear
+import Network.Google.Resource.Sheets.Spreadsheets.Values.Get
+import Network.Google.Resource.Sheets.Spreadsheets.Values.Update
+import Network.Google.Sheets.Types
 
 {- $resources
 TODO

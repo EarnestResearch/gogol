@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Tracks.Patch
     , etptEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.tracks.patch@ method which the
 -- 'EditsTracksPatch' request conforms to.
@@ -63,10 +63,10 @@ type EditsTracksPatchResource =
 -- /See:/ 'editsTracksPatch' smart constructor.
 data EditsTracksPatch =
   EditsTracksPatch'
-    { _etptTrack       :: !Text
+    { _etptTrack :: !Text
     , _etptPackageName :: !Text
-    , _etptPayload     :: !Track
-    , _etptEditId      :: !Text
+    , _etptPayload :: !Track
+    , _etptEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

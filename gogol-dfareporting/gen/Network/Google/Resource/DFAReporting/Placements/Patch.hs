@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Placements.Patch
     , ppId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.patch@ method which the
 -- 'PlacementsPatch' request conforms to.
@@ -59,8 +59,8 @@ type PlacementsPatchResource =
 data PlacementsPatch =
   PlacementsPatch'
     { _ppProFileId :: !(Textual Int64)
-    , _ppPayload   :: !Placement
-    , _ppId        :: !(Textual Int64)
+    , _ppPayload :: !Placement
+    , _ppId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Reports.CustomerUsageReports.Get
     , curgPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
+import Network.Google.Prelude
+import Network.Google.Reports.Types
 
 -- | A resource alias for @reports.customerUsageReports.get@ method which the
 -- 'CustomerUsageReportsGet' request conforms to.
@@ -64,9 +64,9 @@ type CustomerUsageReportsGetResource =
 data CustomerUsageReportsGet =
   CustomerUsageReportsGet'
     { _curgCustomerId :: !(Maybe Text)
-    , _curgDate       :: !Text
+    , _curgDate :: !Text
     , _curgParameters :: !(Maybe Text)
-    , _curgPageToken  :: !(Maybe Text)
+    , _curgPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

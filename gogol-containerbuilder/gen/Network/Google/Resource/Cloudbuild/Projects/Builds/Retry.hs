@@ -59,8 +59,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Builds.Retry
     , pbrCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.builds.retry@ method which the
 -- 'ProjectsBuildsRetry' request conforms to.
@@ -100,14 +100,14 @@ type ProjectsBuildsRetryResource =
 -- /See:/ 'projectsBuildsRetry' smart constructor.
 data ProjectsBuildsRetry =
   ProjectsBuildsRetry'
-    { _pbrXgafv          :: !(Maybe Xgafv)
+    { _pbrXgafv :: !(Maybe Xgafv)
     , _pbrUploadProtocol :: !(Maybe Text)
-    , _pbrAccessToken    :: !(Maybe Text)
-    , _pbrUploadType     :: !(Maybe Text)
-    , _pbrPayload        :: !RetryBuildRequest
-    , _pbrId             :: !Text
-    , _pbrProjectId      :: !Text
-    , _pbrCallback       :: !(Maybe Text)
+    , _pbrAccessToken :: !(Maybe Text)
+    , _pbrUploadType :: !(Maybe Text)
+    , _pbrPayload :: !RetryBuildRequest
+    , _pbrId :: !Text
+    , _pbrProjectId :: !Text
+    , _pbrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

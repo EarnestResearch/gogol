@@ -42,8 +42,8 @@ module Network.Google.Resource.StorageTransfer.TransferJobs.Get
     , tjgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferJobs.get@ method which the
 -- 'TransferJobsGet' request conforms to.
@@ -63,13 +63,13 @@ type TransferJobsGetResource =
 -- /See:/ 'transferJobsGet' smart constructor.
 data TransferJobsGet =
   TransferJobsGet'
-    { _tjgXgafv          :: !(Maybe Xgafv)
+    { _tjgXgafv :: !(Maybe Xgafv)
     , _tjgUploadProtocol :: !(Maybe Text)
-    , _tjgAccessToken    :: !(Maybe Text)
-    , _tjgJobName        :: !Text
-    , _tjgUploadType     :: !(Maybe Text)
-    , _tjgProjectId      :: !(Maybe Text)
-    , _tjgCallback       :: !(Maybe Text)
+    , _tjgAccessToken :: !(Maybe Text)
+    , _tjgJobName :: !Text
+    , _tjgUploadType :: !(Maybe Text)
+    , _tjgProjectId :: !(Maybe Text)
+    , _tjgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.ShippingSettings.Get
     , shiAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.get@ method which the
 -- 'ShippingSettingsGet' request conforms to.
 type ShippingSettingsGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "shippingsettings" :>
              Capture "accountId" (Textual Word64) :>
@@ -57,7 +57,7 @@ type ShippingSettingsGetResource =
 data ShippingSettingsGet =
   ShippingSettingsGet'
     { _shiMerchantId :: !(Textual Word64)
-    , _shiAccountId  :: !(Textual Word64)
+    , _shiAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

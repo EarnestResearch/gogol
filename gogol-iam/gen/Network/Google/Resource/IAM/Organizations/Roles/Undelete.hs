@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.Undelete
     , oruCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.undelete@ method which the
 -- 'OrganizationsRolesUndelete' request conforms to.
@@ -64,13 +64,13 @@ type OrganizationsRolesUndeleteResource =
 -- /See:/ 'organizationsRolesUndelete' smart constructor.
 data OrganizationsRolesUndelete =
   OrganizationsRolesUndelete'
-    { _oruXgafv          :: !(Maybe Xgafv)
+    { _oruXgafv :: !(Maybe Xgafv)
     , _oruUploadProtocol :: !(Maybe Text)
-    , _oruAccessToken    :: !(Maybe Text)
-    , _oruUploadType     :: !(Maybe Text)
-    , _oruPayload        :: !UndeleteRoleRequest
-    , _oruName           :: !Text
-    , _oruCallback       :: !(Maybe Text)
+    , _oruAccessToken :: !(Maybe Text)
+    , _oruUploadType :: !(Maybe Text)
+    , _oruPayload :: !UndeleteRoleRequest
+    , _oruName :: !Text
+    , _oruCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

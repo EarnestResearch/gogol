@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.List
     , ulEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.list@ method which the
 -- 'UsersList' request conforms to.
@@ -63,7 +63,7 @@ type UsersListResource =
 -- /See:/ 'usersList' smart constructor.
 data UsersList =
   UsersList'
-    { _ulEmail        :: !Text
+    { _ulEmail :: !Text
     , _ulEnterpriseId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

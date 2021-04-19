@@ -36,8 +36,8 @@ module Network.Google.Resource.Reseller.Resellernotify.Register
     , rrServiceAccountEmailAddress
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.resellernotify.register@ method which the
 -- 'ResellernotifyRegister' request conforms to.

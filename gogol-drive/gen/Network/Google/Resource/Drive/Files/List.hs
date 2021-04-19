@@ -48,8 +48,8 @@ module Network.Google.Resource.Drive.Files.List
     , flDriveId
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.list@ method which the
 -- 'FilesList' request conforms to.
@@ -78,19 +78,19 @@ type FilesListResource =
 -- /See:/ 'filesList' smart constructor.
 data FilesList =
   FilesList'
-    { _flCorpora                   :: !(Maybe Text)
-    , _flOrderBy                   :: !(Maybe Text)
-    , _flIncludeTeamDriveItems     :: !Bool
-    , _flQ                         :: !(Maybe Text)
-    , _flTeamDriveId               :: !(Maybe Text)
-    , _flSpaces                    :: !Text
+    { _flCorpora :: !(Maybe Text)
+    , _flOrderBy :: !(Maybe Text)
+    , _flIncludeTeamDriveItems :: !Bool
+    , _flQ :: !(Maybe Text)
+    , _flTeamDriveId :: !(Maybe Text)
+    , _flSpaces :: !Text
     , _flIncludeItemsFromAllDrives :: !Bool
-    , _flSupportsAllDrives         :: !Bool
-    , _flCorpus                    :: !(Maybe FilesListCorpus)
-    , _flPageToken                 :: !(Maybe Text)
-    , _flPageSize                  :: !(Textual Int32)
-    , _flSupportsTeamDrives        :: !Bool
-    , _flDriveId                   :: !(Maybe Text)
+    , _flSupportsAllDrives :: !Bool
+    , _flCorpus :: !(Maybe FilesListCorpus)
+    , _flPageToken :: !(Maybe Text)
+    , _flPageSize :: !(Textual Int32)
+    , _flSupportsTeamDrives :: !Bool
+    , _flDriveId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

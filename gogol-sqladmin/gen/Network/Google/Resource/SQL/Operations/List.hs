@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.Operations.List
     , olInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.operations.list@ method which the
 -- 'OperationsList' request conforms to.
@@ -63,10 +63,10 @@ type OperationsListResource =
 -- /See:/ 'operationsList' smart constructor.
 data OperationsList =
   OperationsList'
-    { _olProject    :: !Text
-    , _olPageToken  :: !(Maybe Text)
+    { _olProject :: !Text
+    , _olPageToken :: !(Maybe Text)
     , _olMaxResults :: !(Maybe (Textual Word32))
-    , _olInstance   :: !Text
+    , _olInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

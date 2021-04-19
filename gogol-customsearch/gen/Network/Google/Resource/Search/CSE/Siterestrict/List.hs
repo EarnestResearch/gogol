@@ -68,8 +68,8 @@ module Network.Google.Resource.Search.CSE.Siterestrict.List
     , cseslHighRange
     ) where
 
-import           Network.Google.CustomSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CustomSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @search.cse.siterestrict.list@ method which the
 -- 'CSESiterestrictList' request conforms to.
@@ -155,35 +155,35 @@ data CSESiterestrictList =
   CSESiterestrictList'
     { _cseslImgDominantColor :: !(Maybe CSESiterestrictListImgDominantColor)
     , _cseslSiteSearchFilter :: !(Maybe CSESiterestrictListSiteSearchFilter)
-    , _cseslC2coff           :: !(Maybe Text)
-    , _cseslOrTerms          :: !(Maybe Text)
-    , _cseslStart            :: !(Maybe (Textual Word32))
-    , _cseslRights           :: !(Maybe Text)
-    , _cseslExcludeTerms     :: !(Maybe Text)
-    , _cseslNum              :: !(Textual Word32)
-    , _cseslFileType         :: !(Maybe Text)
-    , _cseslSearchType       :: !(Maybe CSESiterestrictListSearchType)
-    , _cseslLr               :: !(Maybe CSESiterestrictListLr)
-    , _cseslQ                :: !Text
-    , _cseslGooglehost       :: !(Maybe Text)
-    , _cseslRelatedSite      :: !(Maybe Text)
-    , _cseslHl               :: !(Maybe Text)
-    , _cseslSort             :: !(Maybe Text)
-    , _cseslSiteSearch       :: !(Maybe Text)
-    , _cseslFilter           :: !(Maybe CSESiterestrictListFilter)
-    , _cseslDateRestrict     :: !(Maybe Text)
-    , _cseslLinkSite         :: !(Maybe Text)
-    , _cseslLowRange         :: !(Maybe Text)
-    , _cseslImgType          :: !(Maybe CSESiterestrictListImgType)
-    , _cseslGl               :: !(Maybe Text)
-    , _cseslCx               :: !(Maybe Text)
-    , _cseslImgColorType     :: !(Maybe CSESiterestrictListImgColorType)
-    , _cseslImgSize          :: !(Maybe CSESiterestrictListImgSize)
-    , _cseslExactTerms       :: !(Maybe Text)
-    , _cseslCr               :: !(Maybe Text)
-    , _cseslSafe             :: !CSESiterestrictListSafe
-    , _cseslHq               :: !(Maybe Text)
-    , _cseslHighRange        :: !(Maybe Text)
+    , _cseslC2coff :: !(Maybe Text)
+    , _cseslOrTerms :: !(Maybe Text)
+    , _cseslStart :: !(Maybe (Textual Word32))
+    , _cseslRights :: !(Maybe Text)
+    , _cseslExcludeTerms :: !(Maybe Text)
+    , _cseslNum :: !(Textual Word32)
+    , _cseslFileType :: !(Maybe Text)
+    , _cseslSearchType :: !(Maybe CSESiterestrictListSearchType)
+    , _cseslLr :: !(Maybe CSESiterestrictListLr)
+    , _cseslQ :: !Text
+    , _cseslGooglehost :: !(Maybe Text)
+    , _cseslRelatedSite :: !(Maybe Text)
+    , _cseslHl :: !(Maybe Text)
+    , _cseslSort :: !(Maybe Text)
+    , _cseslSiteSearch :: !(Maybe Text)
+    , _cseslFilter :: !(Maybe CSESiterestrictListFilter)
+    , _cseslDateRestrict :: !(Maybe Text)
+    , _cseslLinkSite :: !(Maybe Text)
+    , _cseslLowRange :: !(Maybe Text)
+    , _cseslImgType :: !(Maybe CSESiterestrictListImgType)
+    , _cseslGl :: !(Maybe Text)
+    , _cseslCx :: !(Maybe Text)
+    , _cseslImgColorType :: !(Maybe CSESiterestrictListImgColorType)
+    , _cseslImgSize :: !(Maybe CSESiterestrictListImgSize)
+    , _cseslExactTerms :: !(Maybe Text)
+    , _cseslCr :: !(Maybe Text)
+    , _cseslSafe :: !CSESiterestrictListSafe
+    , _cseslHq :: !(Maybe Text)
+    , _cseslHighRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

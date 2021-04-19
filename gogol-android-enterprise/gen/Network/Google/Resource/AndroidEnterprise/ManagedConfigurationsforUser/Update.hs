@@ -44,8 +44,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforUser.Up
     , mcuuManagedConfigurationForUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsforuser.update@ method which the
 -- 'ManagedConfigurationsforUserUpdate' request conforms to.
@@ -72,9 +72,9 @@ type ManagedConfigurationsforUserUpdateResource =
 -- /See:/ 'managedConfigurationsforUserUpdate' smart constructor.
 data ManagedConfigurationsforUserUpdate =
   ManagedConfigurationsforUserUpdate'
-    { _mcuuEnterpriseId                  :: !Text
-    , _mcuuPayload                       :: !ManagedConfiguration
-    , _mcuuUserId                        :: !Text
+    { _mcuuEnterpriseId :: !Text
+    , _mcuuPayload :: !ManagedConfiguration
+    , _mcuuUserId :: !Text
     , _mcuuManagedConfigurationForUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

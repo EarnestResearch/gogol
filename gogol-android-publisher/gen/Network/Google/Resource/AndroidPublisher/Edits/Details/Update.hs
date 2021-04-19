@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Details.Update
     , eduEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.details.update@ method which the
 -- 'EditsDetailsUpdate' request conforms to.
@@ -60,8 +60,8 @@ type EditsDetailsUpdateResource =
 data EditsDetailsUpdate =
   EditsDetailsUpdate'
     { _eduPackageName :: !Text
-    , _eduPayload     :: !AppDetails
-    , _eduEditId      :: !Text
+    , _eduPayload :: !AppDetails
+    , _eduEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

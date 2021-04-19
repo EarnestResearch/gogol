@@ -17,8 +17,8 @@
 --
 module Network.Google.DNS.Types.Product where
 
-import           Network.Google.DNS.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DNS.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'operationDNSKeyContext' smart constructor.
@@ -71,7 +71,7 @@ instance ToJSON OperationDNSKeyContext where
 -- /See:/ 'managedZonePrivateVisibilityConfigNetwork' smart constructor.
 data ManagedZonePrivateVisibilityConfigNetwork =
   ManagedZonePrivateVisibilityConfigNetwork'
-    { _mzpvcnKind       :: !Text
+    { _mzpvcnKind :: !Text
     , _mzpvcnNetworkURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -134,9 +134,9 @@ instance ToJSON
 data DNSKeysListResponse =
   DNSKeysListResponse'
     { _dklrNextPageToken :: !(Maybe Text)
-    , _dklrDNSKeys       :: !(Maybe [DNSKey])
-    , _dklrKind          :: !Text
-    , _dklrHeader        :: !(Maybe ResponseHeader)
+    , _dklrDNSKeys :: !(Maybe [DNSKey])
+    , _dklrKind :: !Text
+    , _dklrHeader :: !(Maybe ResponseHeader)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -218,9 +218,9 @@ instance ToJSON DNSKeysListResponse where
 data ChangesListResponse =
   ChangesListResponse'
     { _clrNextPageToken :: !(Maybe Text)
-    , _clrChanges       :: !(Maybe [Change])
-    , _clrKind          :: !Text
-    , _clrHeader        :: !(Maybe ResponseHeader)
+    , _clrChanges :: !(Maybe [Change])
+    , _clrKind :: !Text
+    , _clrHeader :: !(Maybe ResponseHeader)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -302,10 +302,10 @@ instance ToJSON ChangesListResponse where
 -- /See:/ 'project' smart constructor.
 data Project =
   Project'
-    { _pKind   :: !Text
-    , _pId     :: !(Maybe Text)
+    { _pKind :: !Text
+    , _pId :: !(Maybe Text)
     , _pNumber :: !(Maybe (Textual Word64))
-    , _pQuota  :: !(Maybe Quota)
+    , _pQuota :: !(Maybe Quota)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -378,13 +378,13 @@ instance ToJSON Project where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oStatus        :: !(Maybe OperationStatus)
-    , _oStartTime     :: !(Maybe Text)
-    , _oKind          :: !Text
-    , _oUser          :: !(Maybe Text)
-    , _oId            :: !(Maybe Text)
-    , _oType          :: !(Maybe Text)
-    , _oZoneContext   :: !(Maybe OperationManagedZoneContext)
+    { _oStatus :: !(Maybe OperationStatus)
+    , _oStartTime :: !(Maybe Text)
+    , _oKind :: !Text
+    , _oUser :: !(Maybe Text)
+    , _oId :: !(Maybe Text)
+    , _oType :: !(Maybe Text)
+    , _oZoneContext :: !(Maybe OperationManagedZoneContext)
     , _oDNSKeyContext :: !(Maybe OperationDNSKeyContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -501,8 +501,8 @@ instance ToJSON Operation where
 -- /See:/ 'dnsKeySpec' smart constructor.
 data DNSKeySpec =
   DNSKeySpec'
-    { _dksKeyType   :: !(Maybe DNSKeySpecKeyType)
-    , _dksKind      :: !Text
+    { _dksKeyType :: !(Maybe DNSKeySpecKeyType)
+    , _dksKind :: !Text
     , _dksAlgorithm :: !(Maybe DNSKeySpecAlgorithm)
     , _dksKeyLength :: !(Maybe (Textual Word32))
     }
@@ -586,12 +586,12 @@ instance ToJSON DNSKeySpec where
 -- /See:/ 'change' smart constructor.
 data Change =
   Change'
-    { _cStatus    :: !(Maybe ChangeStatus)
+    { _cStatus :: !(Maybe ChangeStatus)
     , _cAdditions :: !(Maybe [ResourceRecordSet])
     , _cStartTime :: !(Maybe Text)
-    , _cKind      :: !Text
+    , _cKind :: !Text
     , _cDeletions :: !(Maybe [ResourceRecordSet])
-    , _cId        :: !(Maybe Text)
+    , _cId :: !(Maybe Text)
     , _cIsServing :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -697,16 +697,16 @@ instance ToJSON Change where
 data DNSKey =
   DNSKey'
     { _dkCreationTime :: !(Maybe Text)
-    , _dkKeyTag       :: !(Maybe (Textual Int32))
-    , _dkKind         :: !Text
-    , _dkDigests      :: !(Maybe [DNSKeyDigest])
-    , _dkPublicKey    :: !(Maybe Text)
-    , _dkAlgorithm    :: !(Maybe DNSKeyAlgorithm)
-    , _dkId           :: !(Maybe Text)
-    , _dkType         :: !(Maybe DNSKeyType)
-    , _dkKeyLength    :: !(Maybe (Textual Word32))
-    , _dkIsActive     :: !(Maybe Bool)
-    , _dkDescription  :: !(Maybe Text)
+    , _dkKeyTag :: !(Maybe (Textual Int32))
+    , _dkKind :: !Text
+    , _dkDigests :: !(Maybe [DNSKeyDigest])
+    , _dkPublicKey :: !(Maybe Text)
+    , _dkAlgorithm :: !(Maybe DNSKeyAlgorithm)
+    , _dkId :: !(Maybe Text)
+    , _dkType :: !(Maybe DNSKeyType)
+    , _dkKeyLength :: !(Maybe (Textual Word32))
+    , _dkIsActive :: !(Maybe Bool)
+    , _dkDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -953,9 +953,9 @@ instance ToJSON ResponseHeader where
 data ManagedZoneOperationsListResponse =
   ManagedZoneOperationsListResponse'
     { _mzolrNextPageToken :: !(Maybe Text)
-    , _mzolrKind          :: !Text
-    , _mzolrHeader        :: !(Maybe ResponseHeader)
-    , _mzolrOperations    :: !(Maybe [Operation])
+    , _mzolrKind :: !Text
+    , _mzolrHeader :: !(Maybe ResponseHeader)
+    , _mzolrOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1040,9 +1040,9 @@ instance ToJSON ManagedZoneOperationsListResponse
 data ResourceRecordSetsListResponse =
   ResourceRecordSetsListResponse'
     { _rrslrNextPageToken :: !(Maybe Text)
-    , _rrslrKind          :: !Text
-    , _rrslrHeader        :: !(Maybe ResponseHeader)
-    , _rrslrRrSets        :: !(Maybe [ResourceRecordSet])
+    , _rrslrKind :: !Text
+    , _rrslrHeader :: !(Maybe ResponseHeader)
+    , _rrslrRrSets :: !(Maybe [ResourceRecordSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1125,7 +1125,7 @@ instance ToJSON ResourceRecordSetsListResponse where
 data ManagedZonePrivateVisibilityConfig =
   ManagedZonePrivateVisibilityConfig'
     { _mzpvcNetworks :: !(Maybe [ManagedZonePrivateVisibilityConfigNetwork])
-    , _mzpvcKind     :: !Text
+    , _mzpvcKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1182,10 +1182,10 @@ instance ToJSON ManagedZonePrivateVisibilityConfig
 -- /See:/ 'managedZoneDNSSecConfig' smart constructor.
 data ManagedZoneDNSSecConfig =
   ManagedZoneDNSSecConfig'
-    { _mzdscState           :: !(Maybe ManagedZoneDNSSecConfigState)
-    , _mzdscKind            :: !Text
+    { _mzdscState :: !(Maybe ManagedZoneDNSSecConfigState)
+    , _mzdscKind :: !Text
     , _mzdscDefaultKeySpecs :: !(Maybe [DNSKeySpec])
-    , _mzdscNonExistence    :: !(Maybe ManagedZoneDNSSecConfigNonExistence)
+    , _mzdscNonExistence :: !(Maybe ManagedZoneDNSSecConfigNonExistence)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1263,12 +1263,12 @@ instance ToJSON ManagedZoneDNSSecConfig where
 -- /See:/ 'resourceRecordSet' smart constructor.
 data ResourceRecordSet =
   ResourceRecordSet'
-    { _rrsTtl              :: !(Maybe (Textual Int32))
-    , _rrsKind             :: !Text
+    { _rrsTtl :: !(Maybe (Textual Int32))
+    , _rrsKind :: !Text
     , _rrsSignatureRrDatas :: !(Maybe [Text])
-    , _rrsName             :: !(Maybe Text)
-    , _rrsType             :: !(Maybe Text)
-    , _rrsRrDatas          :: !(Maybe [Text])
+    , _rrsName :: !(Maybe Text)
+    , _rrsType :: !(Maybe Text)
+    , _rrsRrDatas :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1366,17 +1366,17 @@ instance ToJSON ResourceRecordSet where
 -- /See:/ 'managedZone' smart constructor.
 data ManagedZone =
   ManagedZone'
-    { _mzCreationTime            :: !(Maybe Text)
-    , _mzKind                    :: !Text
-    , _mzNameServerSet           :: !(Maybe Text)
-    , _mzVisibility              :: !(Maybe ManagedZoneVisibility)
-    , _mzName                    :: !(Maybe Text)
-    , _mzId                      :: !(Maybe (Textual Word64))
-    , _mzLabels                  :: !(Maybe ManagedZoneLabels)
-    , _mzDNSName                 :: !(Maybe Text)
-    , _mzDescription             :: !(Maybe Text)
-    , _mzDNSsecConfig            :: !(Maybe ManagedZoneDNSSecConfig)
-    , _mzNameServers             :: !(Maybe [Text])
+    { _mzCreationTime :: !(Maybe Text)
+    , _mzKind :: !Text
+    , _mzNameServerSet :: !(Maybe Text)
+    , _mzVisibility :: !(Maybe ManagedZoneVisibility)
+    , _mzName :: !(Maybe Text)
+    , _mzId :: !(Maybe (Textual Word64))
+    , _mzLabels :: !(Maybe ManagedZoneLabels)
+    , _mzDNSName :: !(Maybe Text)
+    , _mzDescription :: !(Maybe Text)
+    , _mzDNSsecConfig :: !(Maybe ManagedZoneDNSSecConfig)
+    , _mzNameServers :: !(Maybe [Text])
     , _mzPrivateVisibilityConfig :: !(Maybe ManagedZonePrivateVisibilityConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1581,17 +1581,17 @@ instance ToJSON ManagedZoneLabels where
 -- /See:/ 'quota' smart constructor.
 data Quota =
   Quota'
-    { _qRrSetDeletionsPerChange  :: !(Maybe (Textual Int32))
-    , _qWhiteListedKeySpecs      :: !(Maybe [DNSKeySpec])
-    , _qRrSetsPerManagedZone     :: !(Maybe (Textual Int32))
-    , _qKind                     :: !Text
-    , _qResourceRecordsPerRrSet  :: !(Maybe (Textual Int32))
-    , _qManagedZonesPerNetwork   :: !(Maybe (Textual Int32))
-    , _qRrSetAdditionsPerChange  :: !(Maybe (Textual Int32))
-    , _qManagedZones             :: !(Maybe (Textual Int32))
+    { _qRrSetDeletionsPerChange :: !(Maybe (Textual Int32))
+    , _qWhiteListedKeySpecs :: !(Maybe [DNSKeySpec])
+    , _qRrSetsPerManagedZone :: !(Maybe (Textual Int32))
+    , _qKind :: !Text
+    , _qResourceRecordsPerRrSet :: !(Maybe (Textual Int32))
+    , _qManagedZonesPerNetwork :: !(Maybe (Textual Int32))
+    , _qRrSetAdditionsPerChange :: !(Maybe (Textual Int32))
+    , _qManagedZones :: !(Maybe (Textual Int32))
     , _qTotalRrDataSizePerChange :: !(Maybe (Textual Int32))
-    , _qDNSKeysPerManagedZone    :: !(Maybe (Textual Int32))
-    , _qNetworksPerManagedZone   :: !(Maybe (Textual Int32))
+    , _qDNSKeysPerManagedZone :: !(Maybe (Textual Int32))
+    , _qNetworksPerManagedZone :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1766,7 +1766,7 @@ instance ToJSON Quota where
 data DNSKeyDigest =
   DNSKeyDigest'
     { _dkdDigest :: !(Maybe Text)
-    , _dkdType   :: !(Maybe DNSKeyDigestType)
+    , _dkdType :: !(Maybe DNSKeyDigestType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1812,9 +1812,9 @@ instance ToJSON DNSKeyDigest where
 data ManagedZonesListResponse =
   ManagedZonesListResponse'
     { _mzlrNextPageToken :: !(Maybe Text)
-    , _mzlrKind          :: !Text
-    , _mzlrHeader        :: !(Maybe ResponseHeader)
-    , _mzlrManagedZones  :: !(Maybe [ManagedZone])
+    , _mzlrKind :: !Text
+    , _mzlrHeader :: !(Maybe ResponseHeader)
+    , _mzlrManagedZones :: !(Maybe [ManagedZone])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

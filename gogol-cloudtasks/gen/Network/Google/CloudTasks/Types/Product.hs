@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudTasks.Types.Product where
 
-import           Network.Google.CloudTasks.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudTasks.Types.Sum
+import Network.Google.Prelude
 
 -- | Rate limits. This message determines the maximum rate that tasks can be
 -- dispatched by a queue, regardless of whether the dispatch is a first
@@ -29,8 +29,8 @@ import           Network.Google.Prelude
 data RateLimits =
   RateLimits'
     { _rlMaxConcurrentDispatches :: !(Maybe (Textual Int32))
-    , _rlMaxDispatchesPerSecond  :: !(Maybe (Textual Double))
-    , _rlMaxBurstSize            :: !(Maybe (Textual Int32))
+    , _rlMaxDispatchesPerSecond :: !(Maybe (Textual Double))
+    , _rlMaxBurstSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -163,7 +163,7 @@ instance ToJSON RateLimits where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -226,9 +226,9 @@ instance ToJSON Status where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -305,7 +305,7 @@ instance ToJSON Expr where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -380,11 +380,11 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'retryConfig' smart constructor.
 data RetryConfig =
   RetryConfig'
-    { _rcMaxDoublings     :: !(Maybe (Textual Int32))
+    { _rcMaxDoublings :: !(Maybe (Textual Int32))
     , _rcMaxRetryDuration :: !(Maybe GDuration)
-    , _rcMaxAttempts      :: !(Maybe (Textual Int32))
-    , _rcMaxBackoff       :: !(Maybe GDuration)
-    , _rcMinBackoff       :: !(Maybe GDuration)
+    , _rcMaxAttempts :: !(Maybe (Textual Int32))
+    , _rcMaxBackoff :: !(Maybe GDuration)
+    , _rcMinBackoff :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -553,11 +553,11 @@ instance ToJSON RunTaskRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -665,7 +665,7 @@ instance ToJSON Empty where
 data CreateTaskRequest =
   CreateTaskRequest'
     { _ctrResponseView :: !(Maybe CreateTaskRequestResponseView)
-    , _ctrTask         :: !(Maybe Task)
+    , _ctrTask :: !(Maybe Task)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -740,7 +740,7 @@ instance ToJSON CreateTaskRequest where
 data ListQueuesResponse =
   ListQueuesResponse'
     { _lqrNextPageToken :: !(Maybe Text)
-    , _lqrQueues        :: !(Maybe [Queue])
+    , _lqrQueues :: !(Maybe [Queue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -868,12 +868,12 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'queue' smart constructor.
 data Queue =
   Queue'
-    { _qRateLimits               :: !(Maybe RateLimits)
+    { _qRateLimits :: !(Maybe RateLimits)
     , _qAppEngineRoutingOverride :: !(Maybe AppEngineRouting)
-    , _qState                    :: !(Maybe QueueState)
-    , _qRetryConfig              :: !(Maybe RetryConfig)
-    , _qName                     :: !(Maybe Text)
-    , _qPurgeTime                :: !(Maybe DateTime')
+    , _qState :: !(Maybe QueueState)
+    , _qRetryConfig :: !(Maybe RetryConfig)
+    , _qName :: !(Maybe Text)
+    , _qPurgeTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1009,7 +1009,7 @@ instance ToJSON Queue where
 data ListTasksResponse =
   ListTasksResponse'
     { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTasks         :: !(Maybe [Task])
+    , _ltrTasks :: !(Maybe [Task])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1192,9 +1192,9 @@ instance ToJSON TestIAMPermissionsRequest where
 data Attempt =
   Attempt'
     { _aResponseStatus :: !(Maybe Status)
-    , _aScheduleTime   :: !(Maybe DateTime')
-    , _aDispatchTime   :: !(Maybe DateTime')
-    , _aResponseTime   :: !(Maybe DateTime')
+    , _aScheduleTime :: !(Maybe DateTime')
+    , _aDispatchTime :: !(Maybe DateTime')
+    , _aResponseTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1299,16 +1299,16 @@ instance ToJSON PurgeQueueRequest where
 -- /See:/ 'task' smart constructor.
 data Task =
   Task'
-    { _tLastAttempt          :: !(Maybe Attempt)
-    , _tDispatchDeadline     :: !(Maybe GDuration)
-    , _tScheduleTime         :: !(Maybe DateTime')
-    , _tName                 :: !(Maybe Text)
-    , _tFirstAttempt         :: !(Maybe Attempt)
-    , _tView                 :: !(Maybe TaskView)
-    , _tResponseCount        :: !(Maybe (Textual Int32))
-    , _tDispatchCount        :: !(Maybe (Textual Int32))
+    { _tLastAttempt :: !(Maybe Attempt)
+    , _tDispatchDeadline :: !(Maybe GDuration)
+    , _tScheduleTime :: !(Maybe DateTime')
+    , _tName :: !(Maybe Text)
+    , _tFirstAttempt :: !(Maybe Attempt)
+    , _tView :: !(Maybe TaskView)
+    , _tResponseCount :: !(Maybe (Textual Int32))
+    , _tDispatchCount :: !(Maybe (Textual Int32))
     , _tAppEngineHTTPRequest :: !(Maybe AppEngineHTTPRequest)
-    , _tCreateTime           :: !(Maybe DateTime')
+    , _tCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1549,8 +1549,8 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1701,9 +1701,9 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'appEngineRouting' smart constructor.
 data AppEngineRouting =
   AppEngineRouting'
-    { _aerService  :: !(Maybe Text)
-    , _aerVersion  :: !(Maybe Text)
-    , _aerHost     :: !(Maybe Text)
+    { _aerService :: !(Maybe Text)
+    , _aerVersion :: !(Maybe Text)
+    , _aerHost :: !(Maybe Text)
     , _aerInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1832,10 +1832,10 @@ instance ToJSON AppEngineRouting where
 -- /See:/ 'appEngineHTTPRequest' smart constructor.
 data AppEngineHTTPRequest =
   AppEngineHTTPRequest'
-    { _aehttprHTTPMethod       :: !(Maybe AppEngineHTTPRequestHTTPMethod)
-    , _aehttprRelativeURI      :: !(Maybe Text)
-    , _aehttprBody             :: !(Maybe Bytes)
-    , _aehttprHeaders          :: !(Maybe AppEngineHTTPRequestHeaders)
+    { _aehttprHTTPMethod :: !(Maybe AppEngineHTTPRequestHTTPMethod)
+    , _aehttprRelativeURI :: !(Maybe Text)
+    , _aehttprBody :: !(Maybe Bytes)
+    , _aehttprHeaders :: !(Maybe AppEngineHTTPRequestHeaders)
     , _aehttprAppEngineRouting :: !(Maybe AppEngineRouting)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1985,8 +1985,8 @@ instance ToJSON ResumeQueueRequest where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

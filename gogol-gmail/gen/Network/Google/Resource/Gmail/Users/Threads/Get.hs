@@ -39,8 +39,8 @@ module Network.Google.Resource.Gmail.Users.Threads.Get
     , utgMetadataHeaders
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.threads.get@ method which the
 -- 'UsersThreadsGet' request conforms to.
@@ -60,9 +60,9 @@ type UsersThreadsGetResource =
 -- /See:/ 'usersThreadsGet' smart constructor.
 data UsersThreadsGet =
   UsersThreadsGet'
-    { _utgFormat          :: !UsersThreadsGetFormat
-    , _utgUserId          :: !Text
-    , _utgId              :: !Text
+    { _utgFormat :: !UsersThreadsGetFormat
+    , _utgUserId :: !Text
+    , _utgId :: !Text
     , _utgMetadataHeaders :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

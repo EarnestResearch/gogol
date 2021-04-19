@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Databases.List
     , dlInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.databases.list@ method which the
 -- 'DatabasesList' request conforms to.
@@ -58,7 +58,7 @@ type DatabasesListResource =
 -- /See:/ 'databasesList' smart constructor.
 data DatabasesList =
   DatabasesList'
-    { _dlProject  :: !Text
+    { _dlProject :: !Text
     , _dlInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

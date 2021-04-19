@@ -17,15 +17,15 @@
 --
 module Network.Google.DeploymentManager.Types.Product where
 
-import           Network.Google.DeploymentManager.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'operationWarningsItemDataItem' smart constructor.
 data OperationWarningsItemDataItem =
   OperationWarningsItemDataItem'
     { _owidiValue :: !(Maybe Text)
-    , _owidiKey   :: !(Maybe Text)
+    , _owidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -127,7 +127,7 @@ instance ToJSON ConfigFile where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     , _acExemptedMembers :: !(Maybe [Text])
     }
@@ -200,9 +200,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -280,7 +280,7 @@ instance ToJSON Expr where
 data OperationsListResponse =
   OperationsListResponse'
     { _olrNextPageToken :: !(Maybe Text)
-    , _olrOperations    :: !(Maybe [Operation])
+    , _olrOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -333,7 +333,7 @@ instance ToJSON OperationsListResponse where
 data ResourceUpdateWarningsItemDataItem =
   ResourceUpdateWarningsItemDataItem'
     { _ruwidiValue :: !(Maybe Text)
-    , _ruwidiKey   :: !(Maybe Text)
+    , _ruwidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -390,7 +390,7 @@ instance ToJSON ResourceUpdateWarningsItemDataItem
 data TypesListResponse =
   TypesListResponse'
     { _tlrNextPageToken :: !(Maybe Text)
-    , _tlrTypes         :: !(Maybe [Type])
+    , _tlrTypes :: !(Maybe [Type])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -456,7 +456,7 @@ instance ToJSON TypesListResponse where
 -- /See:/ 'logConfigCounterOptions' smart constructor.
 data LogConfigCounterOptions =
   LogConfigCounterOptions'
-    { _lccoField  :: !(Maybe Text)
+    { _lccoField :: !(Maybe Text)
     , _lccoMetric :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -508,29 +508,29 @@ instance ToJSON LogConfigCounterOptions where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oTargetId            :: !(Maybe (Textual Word64))
-    , _oStatus              :: !(Maybe Text)
-    , _oInsertTime          :: !(Maybe Text)
-    , _oProgress            :: !(Maybe (Textual Int32))
-    , _oStartTime           :: !(Maybe Text)
-    , _oKind                :: !Text
-    , _oError               :: !(Maybe OperationError)
-    , _oHTTPErrorMessage    :: !(Maybe Text)
-    , _oZone                :: !(Maybe Text)
-    , _oWarnings            :: !(Maybe [OperationWarningsItem])
+    { _oTargetId :: !(Maybe (Textual Word64))
+    , _oStatus :: !(Maybe Text)
+    , _oInsertTime :: !(Maybe Text)
+    , _oProgress :: !(Maybe (Textual Int32))
+    , _oStartTime :: !(Maybe Text)
+    , _oKind :: !Text
+    , _oError :: !(Maybe OperationError)
+    , _oHTTPErrorMessage :: !(Maybe Text)
+    , _oZone :: !(Maybe Text)
+    , _oWarnings :: !(Maybe [OperationWarningsItem])
     , _oHTTPErrorStatusCode :: !(Maybe (Textual Int32))
-    , _oUser                :: !(Maybe Text)
-    , _oSelfLink            :: !(Maybe Text)
-    , _oName                :: !(Maybe Text)
-    , _oStatusMessage       :: !(Maybe Text)
-    , _oCreationTimestamp   :: !(Maybe Text)
-    , _oEndTime             :: !(Maybe Text)
-    , _oId                  :: !(Maybe (Textual Word64))
-    , _oOperationType       :: !(Maybe Text)
-    , _oRegion              :: !(Maybe Text)
-    , _oDescription         :: !(Maybe Text)
-    , _oTargetLink          :: !(Maybe Text)
-    , _oClientOperationId   :: !(Maybe Text)
+    , _oUser :: !(Maybe Text)
+    , _oSelfLink :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
+    , _oStatusMessage :: !(Maybe Text)
+    , _oCreationTimestamp :: !(Maybe Text)
+    , _oEndTime :: !(Maybe Text)
+    , _oId :: !(Maybe (Textual Word64))
+    , _oOperationType :: !(Maybe Text)
+    , _oRegion :: !(Maybe Text)
+    , _oDescription :: !(Maybe Text)
+    , _oTargetLink :: !(Maybe Text)
+    , _oClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -862,7 +862,7 @@ instance ToJSON TestPermissionsResponse where
 data ResourcesListResponse =
   ResourcesListResponse'
     { _rlrNextPageToken :: !(Maybe Text)
-    , _rlrResources     :: !(Maybe [Resource])
+    , _rlrResources :: !(Maybe [Resource])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -913,8 +913,8 @@ instance ToJSON ResourcesListResponse where
 -- /See:/ 'deploymentUpdate' smart constructor.
 data DeploymentUpdate =
   DeploymentUpdate'
-    { _duManifest    :: !(Maybe Text)
-    , _duLabels      :: !(Maybe [DeploymentUpdateLabelEntry])
+    { _duManifest :: !(Maybe Text)
+    , _duLabels :: !(Maybe [DeploymentUpdateLabelEntry])
     , _duDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -982,14 +982,14 @@ instance ToJSON DeploymentUpdate where
 -- /See:/ 'resourceUpdate' smart constructor.
 data ResourceUpdate =
   ResourceUpdate'
-    { _ruState           :: !(Maybe Text)
-    , _ruError           :: !(Maybe ResourceUpdateError)
-    , _ruAccessControl   :: !(Maybe ResourceAccessControl)
-    , _ruWarnings        :: !(Maybe [ResourceUpdateWarningsItem])
-    , _ruIntent          :: !(Maybe Text)
-    , _ruManifest        :: !(Maybe Text)
+    { _ruState :: !(Maybe Text)
+    , _ruError :: !(Maybe ResourceUpdateError)
+    , _ruAccessControl :: !(Maybe ResourceAccessControl)
+    , _ruWarnings :: !(Maybe [ResourceUpdateWarningsItem])
+    , _ruIntent :: !(Maybe Text)
+    , _ruManifest :: !(Maybe Text)
     , _ruFinalProperties :: !(Maybe Text)
-    , _ruProperties      :: !(Maybe Text)
+    , _ruProperties :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1106,7 +1106,7 @@ instance ToJSON ResourceUpdate where
 data DeploymentLabelEntry =
   DeploymentLabelEntry'
     { _dleValue :: !(Maybe Text)
-    , _dleKey   :: !(Maybe Text)
+    , _dleKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1148,11 +1148,11 @@ instance ToJSON DeploymentLabelEntry where
 -- /See:/ 'rule' smart constructor.
 data Rule =
   Rule'
-    { _rAction      :: !(Maybe Text)
-    , _rNotIns      :: !(Maybe [Text])
-    , _rIns         :: !(Maybe [Text])
-    , _rLogConfigs  :: !(Maybe [LogConfig])
-    , _rConditions  :: !(Maybe [Condition])
+    { _rAction :: !(Maybe Text)
+    , _rNotIns :: !(Maybe [Text])
+    , _rIns :: !(Maybe [Text])
+    , _rLogConfigs :: !(Maybe [LogConfig])
+    , _rConditions :: !(Maybe [Condition])
     , _rPermissions :: !(Maybe [Text])
     , _rDescription :: !(Maybe Text)
     }
@@ -1305,14 +1305,14 @@ instance ToJSON TestPermissionsRequest where
 -- /See:/ 'manifest' smart constructor.
 data Manifest =
   Manifest'
-    { _mInsertTime     :: !(Maybe Text)
-    , _mLayout         :: !(Maybe Text)
-    , _mConfig         :: !(Maybe ConfigFile)
+    { _mInsertTime :: !(Maybe Text)
+    , _mLayout :: !(Maybe Text)
+    , _mConfig :: !(Maybe ConfigFile)
     , _mExpandedConfig :: !(Maybe Text)
-    , _mImports        :: !(Maybe [ImportFile])
-    , _mSelfLink       :: !(Maybe Text)
-    , _mName           :: !(Maybe Text)
-    , _mId             :: !(Maybe (Textual Word64))
+    , _mImports :: !(Maybe [ImportFile])
+    , _mSelfLink :: !(Maybe Text)
+    , _mName :: !(Maybe Text)
+    , _mId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1420,8 +1420,8 @@ instance ToJSON Manifest where
 -- /See:/ 'resourceUpdateWarningsItem' smart constructor.
 data ResourceUpdateWarningsItem =
   ResourceUpdateWarningsItem'
-    { _ruwiData    :: !(Maybe [ResourceUpdateWarningsItemDataItem])
-    , _ruwiCode    :: !(Maybe Text)
+    { _ruwiData :: !(Maybe [ResourceUpdateWarningsItemDataItem])
+    , _ruwiCode :: !(Maybe Text)
     , _ruwiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1533,7 +1533,7 @@ instance ToJSON DeploymentsCancelPreviewRequest where
 data LogConfigCloudAuditOptions =
   LogConfigCloudAuditOptions'
     { _lccaoAuthorizationLoggingOptions :: !(Maybe AuthorizationLoggingOptions)
-    , _lccaoLogName                     :: !(Maybe Text)
+    , _lccaoLogName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1584,18 +1584,18 @@ instance ToJSON LogConfigCloudAuditOptions where
 -- /See:/ 'resource' smart constructor.
 data Resource =
   Resource'
-    { _rInsertTime      :: !(Maybe Text)
-    , _rAccessControl   :: !(Maybe ResourceAccessControl)
-    , _rURL             :: !(Maybe Text)
-    , _rWarnings        :: !(Maybe [ResourceWarningsItem])
-    , _rUpdateTime      :: !(Maybe Text)
-    , _rName            :: !(Maybe Text)
-    , _rManifest        :: !(Maybe Text)
+    { _rInsertTime :: !(Maybe Text)
+    , _rAccessControl :: !(Maybe ResourceAccessControl)
+    , _rURL :: !(Maybe Text)
+    , _rWarnings :: !(Maybe [ResourceWarningsItem])
+    , _rUpdateTime :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
+    , _rManifest :: !(Maybe Text)
     , _rFinalProperties :: !(Maybe Text)
-    , _rId              :: !(Maybe (Textual Word64))
-    , _rType            :: !(Maybe Text)
-    , _rUpdate          :: !(Maybe ResourceUpdate)
-    , _rProperties      :: !(Maybe Text)
+    , _rId :: !(Maybe (Textual Word64))
+    , _rType :: !(Maybe Text)
+    , _rUpdate :: !(Maybe ResourceUpdate)
+    , _rProperties :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1790,7 +1790,7 @@ instance ToJSON LogConfigDataAccessOptions where
 data DeploymentUpdateLabelEntry =
   DeploymentUpdateLabelEntry'
     { _duleValue :: !(Maybe Text)
-    , _duleKey   :: !(Maybe Text)
+    , _duleKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1834,8 +1834,8 @@ instance ToJSON DeploymentUpdateLabelEntry where
 data ResourceUpdateErrorErrorsItem =
   ResourceUpdateErrorErrorsItem'
     { _rueeiLocation :: !(Maybe Text)
-    , _rueeiCode     :: !(Maybe Text)
-    , _rueeiMessage  :: !(Maybe Text)
+    , _rueeiCode :: !(Maybe Text)
+    , _rueeiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1896,7 +1896,7 @@ instance ToJSON ResourceUpdateErrorErrorsItem where
 data ManifestsListResponse =
   ManifestsListResponse'
     { _mlrNextPageToken :: !(Maybe Text)
-    , _mlrManifests     :: !(Maybe [Manifest])
+    , _mlrManifests :: !(Maybe [Manifest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1985,9 +1985,9 @@ instance ToJSON OperationError where
 -- /See:/ 'globalSetPolicyRequest' smart constructor.
 data GlobalSetPolicyRequest =
   GlobalSetPolicyRequest'
-    { _gsprEtag     :: !(Maybe Bytes)
+    { _gsprEtag :: !(Maybe Bytes)
     , _gsprBindings :: !(Maybe [Binding])
-    , _gsprPolicy   :: !(Maybe Policy)
+    , _gsprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2109,11 +2109,11 @@ instance ToJSON AuthorizationLoggingOptions where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pRules        :: !(Maybe [Rule])
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
-    , _pIAMOwned     :: !(Maybe Bool)
+    , _pEtag :: !(Maybe Bytes)
+    , _pRules :: !(Maybe [Rule])
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
+    , _pIAMOwned :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2226,10 +2226,10 @@ instance ToJSON Policy where
 data Type =
   Type'
     { _tInsertTime :: !(Maybe Text)
-    , _tOperation  :: !(Maybe Operation)
-    , _tSelfLink   :: !(Maybe Text)
-    , _tName       :: !(Maybe Text)
-    , _tId         :: !(Maybe (Textual Word64))
+    , _tOperation :: !(Maybe Operation)
+    , _tSelfLink :: !(Maybe Text)
+    , _tName :: !(Maybe Text)
+    , _tId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2308,7 +2308,7 @@ instance ToJSON Type where
 data ImportFile =
   ImportFile'
     { _ifContent :: !(Maybe Text)
-    , _ifName    :: !(Maybe Text)
+    , _ifName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2352,8 +2352,8 @@ instance ToJSON ImportFile where
 data OperationErrorErrorsItem =
   OperationErrorErrorsItem'
     { _oeeiLocation :: !(Maybe Text)
-    , _oeeiCode     :: !(Maybe Text)
-    , _oeeiMessage  :: !(Maybe Text)
+    , _oeeiCode :: !(Maybe Text)
+    , _oeeiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2456,7 +2456,7 @@ instance ToJSON DeploymentsStopRequest where
 data ResourceWarningsItemDataItem =
   ResourceWarningsItemDataItem'
     { _rwidiValue :: !(Maybe Text)
-    , _rwidiKey   :: !(Maybe Text)
+    , _rwidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2512,7 +2512,7 @@ instance ToJSON ResourceWarningsItemDataItem where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe Text)
+    { _alcLogType :: !(Maybe Text)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2604,12 +2604,12 @@ instance ToJSON ResourceUpdateError where
 -- /See:/ 'condition' smart constructor.
 data Condition =
   Condition'
-    { _cOp     :: !(Maybe Text)
-    , _cIAM    :: !(Maybe Text)
+    { _cOp :: !(Maybe Text)
+    , _cIAM :: !(Maybe Text)
     , _cValues :: !(Maybe [Text])
-    , _cValue  :: !(Maybe Text)
-    , _cSys    :: !(Maybe Text)
-    , _cSvc    :: !(Maybe Text)
+    , _cValue :: !(Maybe Text)
+    , _cSys :: !(Maybe Text)
+    , _cSvc :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2695,7 +2695,7 @@ instance ToJSON Condition where
 data DeploymentsListResponse =
   DeploymentsListResponse'
     { _dlrNextPageToken :: !(Maybe Text)
-    , _dlrDeployments   :: !(Maybe [Deployment])
+    , _dlrDeployments :: !(Maybe [Deployment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2747,8 +2747,8 @@ instance ToJSON DeploymentsListResponse where
 -- /See:/ 'resourceWarningsItem' smart constructor.
 data ResourceWarningsItem =
   ResourceWarningsItem'
-    { _rwiData    :: !(Maybe [ResourceWarningsItemDataItem])
-    , _rwiCode    :: !(Maybe Text)
+    { _rwiData :: !(Maybe [ResourceWarningsItemDataItem])
+    , _rwiCode :: !(Maybe Text)
     , _rwiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2810,7 +2810,7 @@ data LogConfig =
   LogConfig'
     { _lcCloudAudit :: !(Maybe LogConfigCloudAuditOptions)
     , _lcDataAccess :: !(Maybe LogConfigDataAccessOptions)
-    , _lcCounter    :: !(Maybe LogConfigCounterOptions)
+    , _lcCounter :: !(Maybe LogConfigCounterOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2905,7 +2905,7 @@ instance ToJSON ResourceAccessControl where
 -- /See:/ 'targetConfiguration' smart constructor.
 data TargetConfiguration =
   TargetConfiguration'
-    { _tcConfig  :: !(Maybe ConfigFile)
+    { _tcConfig :: !(Maybe ConfigFile)
     , _tcImports :: !(Maybe [ImportFile])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2955,8 +2955,8 @@ instance ToJSON TargetConfiguration where
 -- /See:/ 'operationWarningsItem' smart constructor.
 data OperationWarningsItem =
   OperationWarningsItem'
-    { _owiData    :: !(Maybe [OperationWarningsItemDataItem])
-    , _owiCode    :: !(Maybe Text)
+    { _owiData :: !(Maybe [OperationWarningsItemDataItem])
+    , _owiCode :: !(Maybe Text)
     , _owiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3016,8 +3016,8 @@ instance ToJSON OperationWarningsItem where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3092,18 +3092,18 @@ instance ToJSON Binding where
 -- /See:/ 'deployment' smart constructor.
 data Deployment =
   Deployment'
-    { _dInsertTime  :: !(Maybe Text)
-    , _dOperation   :: !(Maybe Operation)
+    { _dInsertTime :: !(Maybe Text)
+    , _dOperation :: !(Maybe Operation)
     , _dFingerprint :: !(Maybe Bytes)
-    , _dUpdateTime  :: !(Maybe Text)
-    , _dSelfLink    :: !(Maybe Text)
-    , _dName        :: !(Maybe Text)
-    , _dManifest    :: !(Maybe Text)
-    , _dId          :: !(Maybe (Textual Word64))
-    , _dLabels      :: !(Maybe [DeploymentLabelEntry])
+    , _dUpdateTime :: !(Maybe Text)
+    , _dSelfLink :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
+    , _dManifest :: !(Maybe Text)
+    , _dId :: !(Maybe (Textual Word64))
+    , _dLabels :: !(Maybe [DeploymentLabelEntry])
     , _dDescription :: !(Maybe Text)
-    , _dUpdate      :: !(Maybe DeploymentUpdate)
-    , _dTarget      :: !(Maybe TargetConfiguration)
+    , _dUpdate :: !(Maybe DeploymentUpdate)
+    , _dTarget :: !(Maybe TargetConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

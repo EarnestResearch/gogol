@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Tokens.Get
     , tgUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.tokens.get@ method which the
 -- 'TokensGet' request conforms to.
@@ -58,7 +58,7 @@ type TokensGetResource =
 data TokensGet =
   TokensGet'
     { _tgClientId :: !Text
-    , _tgUserKey  :: !Text
+    , _tgUserKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

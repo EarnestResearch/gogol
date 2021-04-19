@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Insert
     , ciPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.insert@ method which the
 -- 'CreativesInsert' request conforms to.
@@ -57,7 +57,7 @@ type CreativesInsertResource =
 data CreativesInsert =
   CreativesInsert'
     { _ciProFileId :: !(Textual Int64)
-    , _ciPayload   :: !Creative
+    , _ciPayload :: !Creative
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

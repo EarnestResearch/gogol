@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Folders
     , acwfgPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.folders.get@ method which the
 -- 'AccountsContainersWorkspacesFoldersGet' request conforms to.

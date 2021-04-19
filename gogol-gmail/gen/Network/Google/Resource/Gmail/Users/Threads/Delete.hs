@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Threads.Delete
     , utdId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.threads.delete@ method which the
 -- 'UsersThreadsDelete' request conforms to.
@@ -59,7 +59,7 @@ type UsersThreadsDeleteResource =
 data UsersThreadsDelete =
   UsersThreadsDelete'
     { _utdUserId :: !Text
-    , _utdId     :: !Text
+    , _utdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

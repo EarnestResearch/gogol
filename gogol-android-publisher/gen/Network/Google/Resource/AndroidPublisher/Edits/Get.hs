@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Get
     , egEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.get@ method which the
 -- 'EditsGet' request conforms to.
@@ -59,7 +59,7 @@ type EditsGetResource =
 data EditsGet =
   EditsGet'
     { _egPackageName :: !Text
-    , _egEditId      :: !Text
+    , _egEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

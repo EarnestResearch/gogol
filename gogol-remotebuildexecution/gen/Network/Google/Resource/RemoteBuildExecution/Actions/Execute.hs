@@ -84,8 +84,8 @@ module Network.Google.Resource.RemoteBuildExecution.Actions.Execute
     , aeCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.actions.execute@ method which the
 -- 'ActionsExecute' request conforms to.
@@ -150,13 +150,13 @@ type ActionsExecuteResource =
 -- /See:/ 'actionsExecute' smart constructor.
 data ActionsExecute =
   ActionsExecute'
-    { _aeXgafv          :: !(Maybe Xgafv)
+    { _aeXgafv :: !(Maybe Xgafv)
     , _aeUploadProtocol :: !(Maybe Text)
-    , _aeAccessToken    :: !(Maybe Text)
-    , _aeUploadType     :: !(Maybe Text)
-    , _aePayload        :: !BuildBazelRemoteExecutionV2ExecuteRequest
-    , _aeInstanceName   :: !Text
-    , _aeCallback       :: !(Maybe Text)
+    , _aeAccessToken :: !(Maybe Text)
+    , _aeUploadType :: !(Maybe Text)
+    , _aePayload :: !BuildBazelRemoteExecutionV2ExecuteRequest
+    , _aeInstanceName :: !Text
+    , _aeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

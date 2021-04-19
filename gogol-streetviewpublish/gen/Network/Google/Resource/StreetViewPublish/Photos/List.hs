@@ -47,8 +47,8 @@ module Network.Google.Resource.StreetViewPublish.Photos.List
     , plCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photos.list@ method which the
 -- 'PhotosList' request conforms to.
@@ -75,16 +75,16 @@ type PhotosListResource =
 -- /See:/ 'photosList' smart constructor.
 data PhotosList =
   PhotosList'
-    { _plXgafv          :: !(Maybe Xgafv)
-    , _plLanguageCode   :: !(Maybe Text)
+    { _plXgafv :: !(Maybe Xgafv)
+    , _plLanguageCode :: !(Maybe Text)
     , _plUploadProtocol :: !(Maybe Text)
-    , _plAccessToken    :: !(Maybe Text)
-    , _plUploadType     :: !(Maybe Text)
-    , _plView           :: !(Maybe Text)
-    , _plFilter         :: !(Maybe Text)
-    , _plPageToken      :: !(Maybe Text)
-    , _plPageSize       :: !(Maybe (Textual Int32))
-    , _plCallback       :: !(Maybe Text)
+    , _plAccessToken :: !(Maybe Text)
+    , _plUploadType :: !(Maybe Text)
+    , _plView :: !(Maybe Text)
+    , _plFilter :: !(Maybe Text)
+    , _plPageToken :: !(Maybe Text)
+    , _plPageSize :: !(Maybe (Textual Int32))
+    , _plCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

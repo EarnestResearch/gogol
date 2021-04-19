@@ -42,8 +42,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Triggers.Get
     , ptgCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.triggers.get@ method which the
 -- 'ProjectsTriggersGet' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsTriggersGetResource =
 -- /See:/ 'projectsTriggersGet' smart constructor.
 data ProjectsTriggersGet =
   ProjectsTriggersGet'
-    { _ptgXgafv          :: !(Maybe Xgafv)
+    { _ptgXgafv :: !(Maybe Xgafv)
     , _ptgUploadProtocol :: !(Maybe Text)
-    , _ptgTriggerId      :: !Text
-    , _ptgAccessToken    :: !(Maybe Text)
-    , _ptgUploadType     :: !(Maybe Text)
-    , _ptgProjectId      :: !Text
-    , _ptgCallback       :: !(Maybe Text)
+    , _ptgTriggerId :: !Text
+    , _ptgAccessToken :: !(Maybe Text)
+    , _ptgUploadType :: !(Maybe Text)
+    , _ptgProjectId :: !Text
+    , _ptgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

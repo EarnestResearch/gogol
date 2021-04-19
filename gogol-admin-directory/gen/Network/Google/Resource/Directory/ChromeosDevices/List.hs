@@ -43,8 +43,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.List
     , cdlMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.list@ method which the
 -- 'ChromeosDevicesList' request conforms to.
@@ -73,14 +73,14 @@ type ChromeosDevicesListResource =
 -- /See:/ 'chromeosDevicesList' smart constructor.
 data ChromeosDevicesList =
   ChromeosDevicesList'
-    { _cdlOrderBy     :: !(Maybe ChromeosDevicesListOrderBy)
+    { _cdlOrderBy :: !(Maybe ChromeosDevicesListOrderBy)
     , _cdlOrgUnitPath :: !(Maybe Text)
-    , _cdlCustomerId  :: !Text
-    , _cdlSortOrder   :: !(Maybe ChromeosDevicesListSortOrder)
-    , _cdlQuery       :: !(Maybe Text)
-    , _cdlProjection  :: !(Maybe ChromeosDevicesListProjection)
-    , _cdlPageToken   :: !(Maybe Text)
-    , _cdlMaxResults  :: !(Maybe (Textual Int32))
+    , _cdlCustomerId :: !Text
+    , _cdlSortOrder :: !(Maybe ChromeosDevicesListSortOrder)
+    , _cdlQuery :: !(Maybe Text)
+    , _cdlProjection :: !(Maybe ChromeosDevicesListProjection)
+    , _cdlPageToken :: !(Maybe Text)
+    , _cdlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.A
     , sCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types
 
 -- | A resource alias for @serviceconsumermanagement.services.tenancyUnits.addProject@ method which the
 -- 'ServicesTenancyUnitsAddProject' request conforms to.
@@ -72,13 +72,13 @@ type ServicesTenancyUnitsAddProjectResource =
 -- /See:/ 'servicesTenancyUnitsAddProject' smart constructor.
 data ServicesTenancyUnitsAddProject =
   ServicesTenancyUnitsAddProject'
-    { _sParent         :: !Text
-    , _sXgafv          :: !(Maybe Xgafv)
+    { _sParent :: !Text
+    , _sXgafv :: !(Maybe Xgafv)
     , _sUploadProtocol :: !(Maybe Text)
-    , _sAccessToken    :: !(Maybe Text)
-    , _sUploadType     :: !(Maybe Text)
-    , _sPayload        :: !AddTenantProjectRequest
-    , _sCallback       :: !(Maybe Text)
+    , _sAccessToken :: !(Maybe Text)
+    , _sUploadType :: !(Maybe Text)
+    , _sPayload :: !AddTenantProjectRequest
+    , _sCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

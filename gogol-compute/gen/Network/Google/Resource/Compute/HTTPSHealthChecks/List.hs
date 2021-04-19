@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.HTTPSHealthChecks.List
     , hhclMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.httpsHealthChecks.list@ method which the
 -- 'HTTPSHealthChecksList' request conforms to.
@@ -66,10 +66,10 @@ type HTTPSHealthChecksListResource =
 -- /See:/ 'httpsHealthChecksList' smart constructor.
 data HTTPSHealthChecksList =
   HTTPSHealthChecksList'
-    { _hhclOrderBy    :: !(Maybe Text)
-    , _hhclProject    :: !Text
-    , _hhclFilter     :: !(Maybe Text)
-    , _hhclPageToken  :: !(Maybe Text)
+    { _hhclOrderBy :: !(Maybe Text)
+    , _hhclProject :: !Text
+    , _hhclFilter :: !(Maybe Text)
+    , _hhclPageToken :: !(Maybe Text)
     , _hhclMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

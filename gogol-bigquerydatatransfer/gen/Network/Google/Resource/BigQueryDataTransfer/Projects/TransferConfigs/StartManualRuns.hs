@@ -45,8 +45,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Sta
     , ptcsmrCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.transferConfigs.startManualRuns@ method which the
 -- 'ProjectsTransferConfigsStartManualRuns' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsTransferConfigsStartManualRunsResource =
 -- /See:/ 'projectsTransferConfigsStartManualRuns' smart constructor.
 data ProjectsTransferConfigsStartManualRuns =
   ProjectsTransferConfigsStartManualRuns'
-    { _ptcsmrParent         :: !Text
-    , _ptcsmrXgafv          :: !(Maybe Xgafv)
+    { _ptcsmrParent :: !Text
+    , _ptcsmrXgafv :: !(Maybe Xgafv)
     , _ptcsmrUploadProtocol :: !(Maybe Text)
-    , _ptcsmrAccessToken    :: !(Maybe Text)
-    , _ptcsmrUploadType     :: !(Maybe Text)
-    , _ptcsmrPayload        :: !StartManualTransferRunsRequest
-    , _ptcsmrCallback       :: !(Maybe Text)
+    , _ptcsmrAccessToken :: !(Maybe Text)
+    , _ptcsmrUploadType :: !(Maybe Text)
+    , _ptcsmrPayload :: !StartManualTransferRunsRequest
+    , _ptcsmrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

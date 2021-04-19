@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Filters.Get
     , usfgId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.filters.get@ method which the
 -- 'UsersSettingsFiltersGet' request conforms to.
@@ -58,7 +58,7 @@ type UsersSettingsFiltersGetResource =
 data UsersSettingsFiltersGet =
   UsersSettingsFiltersGet'
     { _usfgUserId :: !Text
-    , _usfgId     :: !Text
+    , _usfgId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

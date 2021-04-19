@@ -45,8 +45,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.NodePools.Delet
     , pzcnpdCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.nodePools.delete@ method which the
 -- 'ProjectsZonesClustersNodePoolsDelete' request conforms to.
@@ -74,16 +74,16 @@ type ProjectsZonesClustersNodePoolsDeleteResource =
 -- /See:/ 'projectsZonesClustersNodePoolsDelete' smart constructor.
 data ProjectsZonesClustersNodePoolsDelete =
   ProjectsZonesClustersNodePoolsDelete'
-    { _pzcnpdXgafv          :: !(Maybe Xgafv)
+    { _pzcnpdXgafv :: !(Maybe Xgafv)
     , _pzcnpdUploadProtocol :: !(Maybe Text)
-    , _pzcnpdAccessToken    :: !(Maybe Text)
-    , _pzcnpdUploadType     :: !(Maybe Text)
-    , _pzcnpdZone           :: !Text
-    , _pzcnpdNodePoolId     :: !Text
-    , _pzcnpdName           :: !(Maybe Text)
-    , _pzcnpdClusterId      :: !Text
-    , _pzcnpdProjectId      :: !Text
-    , _pzcnpdCallback       :: !(Maybe Text)
+    , _pzcnpdAccessToken :: !(Maybe Text)
+    , _pzcnpdUploadType :: !(Maybe Text)
+    , _pzcnpdZone :: !Text
+    , _pzcnpdNodePoolId :: !Text
+    , _pzcnpdName :: !(Maybe Text)
+    , _pzcnpdClusterId :: !Text
+    , _pzcnpdProjectId :: !Text
+    , _pzcnpdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

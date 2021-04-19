@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Groups.Update
     , guPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.update@ method which the
 -- 'GroupsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type GroupsUpdateResource =
 data GroupsUpdate =
   GroupsUpdate'
     { _guGroupKey :: !Text
-    , _guPayload  :: !Group
+    , _guPayload :: !Group
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

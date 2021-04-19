@@ -191,21 +191,21 @@ module Network.Google.BinaryAuthorization
     , bCondition
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Create
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Delete
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Get
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.GetIAMPolicy
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.List
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.SetIAMPolicy
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.TestIAMPermissions
-import           Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Update
-import           Network.Google.Resource.BinaryAuthorization.Projects.GetPolicy
-import           Network.Google.Resource.BinaryAuthorization.Projects.Policy.GetIAMPolicy
-import           Network.Google.Resource.BinaryAuthorization.Projects.Policy.SetIAMPolicy
-import           Network.Google.Resource.BinaryAuthorization.Projects.Policy.TestIAMPermissions
-import           Network.Google.Resource.BinaryAuthorization.Projects.UpdatePolicy
+import Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Create
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Delete
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Get
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.GetIAMPolicy
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.List
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.SetIAMPolicy
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.TestIAMPermissions
+import Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Update
+import Network.Google.Resource.BinaryAuthorization.Projects.GetPolicy
+import Network.Google.Resource.BinaryAuthorization.Projects.Policy.GetIAMPolicy
+import Network.Google.Resource.BinaryAuthorization.Projects.Policy.SetIAMPolicy
+import Network.Google.Resource.BinaryAuthorization.Projects.Policy.TestIAMPermissions
+import Network.Google.Resource.BinaryAuthorization.Projects.UpdatePolicy
 
 {- $resources
 TODO

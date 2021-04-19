@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.InterconnectLocations.List
     , illMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.interconnectLocations.list@ method which the
 -- 'InterconnectLocationsList' request conforms to.
@@ -66,10 +66,10 @@ type InterconnectLocationsListResource =
 -- /See:/ 'interconnectLocationsList' smart constructor.
 data InterconnectLocationsList =
   InterconnectLocationsList'
-    { _illOrderBy    :: !(Maybe Text)
-    , _illProject    :: !Text
-    , _illFilter     :: !(Maybe Text)
-    , _illPageToken  :: !(Maybe Text)
+    { _illOrderBy :: !(Maybe Text)
+    , _illProject :: !Text
+    , _illFilter :: !(Maybe Text)
+    , _illPageToken :: !(Maybe Text)
     , _illMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

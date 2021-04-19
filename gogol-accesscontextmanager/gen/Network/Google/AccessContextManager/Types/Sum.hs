@@ -16,7 +16,7 @@
 --
 module Network.Google.AccessContextManager.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | How the \`conditions\` list should be combined to determine if a request
 -- is granted this \`AccessLevel\`. If AND is used, each \`Condition\` in

@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Roles.List
     , rlMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roles.list@ method which the
 -- 'RolesList' request conforms to.
@@ -59,8 +59,8 @@ type RolesListResource =
 -- /See:/ 'rolesList' smart constructor.
 data RolesList =
   RolesList'
-    { _rlCustomer   :: !Text
-    , _rlPageToken  :: !(Maybe Text)
+    { _rlCustomer :: !Text
+    , _rlPageToken :: !(Maybe Text)
     , _rlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

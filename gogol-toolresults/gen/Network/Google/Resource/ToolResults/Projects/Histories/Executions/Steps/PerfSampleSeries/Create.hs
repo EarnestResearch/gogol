@@ -42,8 +42,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespsscProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.perfSampleSeries.create@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPerfSampleSeriesCreate' request conforms to.
@@ -72,10 +72,10 @@ type ProjectsHistoriesExecutionsStepsPerfSampleSeriesCreateResource
 data ProjectsHistoriesExecutionsStepsPerfSampleSeriesCreate =
   ProjectsHistoriesExecutionsStepsPerfSampleSeriesCreate'
     { _phespsscExecutionId :: !Text
-    , _phespsscStepId      :: !Text
-    , _phespsscPayload     :: !PerfSampleSeries
-    , _phespsscHistoryId   :: !Text
-    , _phespsscProjectId   :: !Text
+    , _phespsscStepId :: !Text
+    , _phespsscPayload :: !PerfSampleSeries
+    , _phespsscHistoryId :: !Text
+    , _phespsscProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

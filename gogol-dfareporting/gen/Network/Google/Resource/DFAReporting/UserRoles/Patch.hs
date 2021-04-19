@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Patch
     , urpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.patch@ method which the
 -- 'UserRolesPatch' request conforms to.
@@ -59,8 +59,8 @@ type UserRolesPatchResource =
 data UserRolesPatch =
   UserRolesPatch'
     { _urpProFileId :: !(Textual Int64)
-    , _urpPayload   :: !UserRole
-    , _urpId        :: !(Textual Int64)
+    , _urpPayload :: !UserRole
+    , _urpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

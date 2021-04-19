@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.TakeTurn
     , tbmttMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.takeTurn@ method which the
 -- 'TurnBasedMatchesTakeTurn' request conforms to.
@@ -59,9 +59,9 @@ type TurnBasedMatchesTakeTurnResource =
 -- /See:/ 'turnBasedMatchesTakeTurn' smart constructor.
 data TurnBasedMatchesTakeTurn =
   TurnBasedMatchesTakeTurn'
-    { _tbmttPayload  :: !TurnBasedMatchTurn
+    { _tbmttPayload :: !TurnBasedMatchTurn
     , _tbmttLanguage :: !(Maybe Text)
-    , _tbmttMatchId  :: !Text
+    , _tbmttMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

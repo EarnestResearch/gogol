@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Schemas.Get
     , sgSchemaKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.get@ method which the
 -- 'SchemasGet' request conforms to.
@@ -58,7 +58,7 @@ type SchemasGetResource =
 data SchemasGet =
   SchemasGet'
     { _sgCustomerId :: !Text
-    , _sgSchemaKey  :: !Text
+    , _sgSchemaKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Update
     , psuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.update@ method which the
 -- 'PlacementStrategiesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type PlacementStrategiesUpdateResource =
 data PlacementStrategiesUpdate =
   PlacementStrategiesUpdate'
     { _psuProFileId :: !(Textual Int64)
-    , _psuPayload   :: !PlacementStrategy
+    , _psuPayload :: !PlacementStrategy
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

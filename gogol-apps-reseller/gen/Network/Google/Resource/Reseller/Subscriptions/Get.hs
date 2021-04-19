@@ -37,8 +37,8 @@ module Network.Google.Resource.Reseller.Subscriptions.Get
     , sgSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.get@ method which the
 -- 'SubscriptionsGet' request conforms to.
@@ -57,7 +57,7 @@ type SubscriptionsGetResource =
 -- /See:/ 'subscriptionsGet' smart constructor.
 data SubscriptionsGet =
   SubscriptionsGet'
-    { _sgCustomerId     :: !Text
+    { _sgCustomerId :: !Text
     , _sgSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

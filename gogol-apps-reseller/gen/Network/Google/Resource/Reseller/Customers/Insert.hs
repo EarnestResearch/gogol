@@ -37,8 +37,8 @@ module Network.Google.Resource.Reseller.Customers.Insert
     , ciCustomerAuthToken
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.customers.insert@ method which the
 -- 'CustomersInsert' request conforms to.
@@ -56,7 +56,7 @@ type CustomersInsertResource =
 -- /See:/ 'customersInsert' smart constructor.
 data CustomersInsert =
   CustomersInsert'
-    { _ciPayload           :: !Customer
+    { _ciPayload :: !Customer
     , _ciCustomerAuthToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

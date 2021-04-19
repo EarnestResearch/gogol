@@ -16,7 +16,7 @@
 --
 module Network.Google.YouTube.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The video\'s rating from Portugal\'s Comissão de Classificação de
 -- Espect´culos.

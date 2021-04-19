@@ -53,8 +53,8 @@ module Network.Google.Resource.Script.Scripts.Run
     , srCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Script.Types
+import Network.Google.Prelude
+import Network.Google.Script.Types
 
 -- | A resource alias for @script.scripts.run@ method which the
 -- 'ScriptsRun' request conforms to.
@@ -87,13 +87,13 @@ type ScriptsRunResource =
 -- /See:/ 'scriptsRun' smart constructor.
 data ScriptsRun =
   ScriptsRun'
-    { _srXgafv          :: !(Maybe Xgafv)
+    { _srXgafv :: !(Maybe Xgafv)
     , _srUploadProtocol :: !(Maybe Text)
-    , _srAccessToken    :: !(Maybe Text)
-    , _srUploadType     :: !(Maybe Text)
-    , _srPayload        :: !ExecutionRequest
-    , _srScriptId       :: !Text
-    , _srCallback       :: !(Maybe Text)
+    , _srAccessToken :: !(Maybe Text)
+    , _srUploadType :: !(Maybe Text)
+    , _srPayload :: !ExecutionRequest
+    , _srScriptId :: !Text
+    , _srCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.NodeGroups.AggregatedList
     , ngalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeGroups.aggregatedList@ method which the
 -- 'NodeGroupsAggregatedList' request conforms to.
@@ -66,10 +66,10 @@ type NodeGroupsAggregatedListResource =
 -- /See:/ 'nodeGroupsAggregatedList' smart constructor.
 data NodeGroupsAggregatedList =
   NodeGroupsAggregatedList'
-    { _ngalOrderBy    :: !(Maybe Text)
-    , _ngalProject    :: !Text
-    , _ngalFilter     :: !(Maybe Text)
-    , _ngalPageToken  :: !(Maybe Text)
+    { _ngalOrderBy :: !(Maybe Text)
+    , _ngalProject :: !Text
+    , _ngalFilter :: !(Maybe Text)
+    , _ngalPageToken :: !(Maybe Text)
     , _ngalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

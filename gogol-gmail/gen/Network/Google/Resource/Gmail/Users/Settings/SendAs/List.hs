@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.List
     , ussalUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.list@ method which the
 -- 'UsersSettingsSendAsList' request conforms to.

@@ -37,8 +37,8 @@ module Network.Google.Resource.Blogger.Pages.Revert
     , pagPageId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pages.revert@ method which the
 -- 'PagesRevert' request conforms to.

@@ -47,8 +47,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsmcCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.messages.create@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesCreate' request conforms to.
@@ -76,13 +76,13 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesCreateResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesCreate' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesCreate =
   ProjectsLocationsDataSetsHl7V2StoresMessagesCreate'
-    { _pldshvsmcParent         :: !Text
-    , _pldshvsmcXgafv          :: !(Maybe Xgafv)
+    { _pldshvsmcParent :: !Text
+    , _pldshvsmcXgafv :: !(Maybe Xgafv)
     , _pldshvsmcUploadProtocol :: !(Maybe Text)
-    , _pldshvsmcAccessToken    :: !(Maybe Text)
-    , _pldshvsmcUploadType     :: !(Maybe Text)
-    , _pldshvsmcPayload        :: !CreateMessageRequest
-    , _pldshvsmcCallback       :: !(Maybe Text)
+    , _pldshvsmcAccessToken :: !(Maybe Text)
+    , _pldshvsmcUploadType :: !(Maybe Text)
+    , _pldshvsmcPayload :: !CreateMessageRequest
+    , _pldshvsmcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

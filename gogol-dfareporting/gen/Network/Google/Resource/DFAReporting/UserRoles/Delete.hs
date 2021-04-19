@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Delete
     , urdId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.delete@ method which the
 -- 'UserRolesDelete' request conforms to.
@@ -57,7 +57,7 @@ type UserRolesDeleteResource =
 data UserRolesDelete =
   UserRolesDelete'
     { _urdProFileId :: !(Textual Int64)
-    , _urdId        :: !(Textual Int64)
+    , _urdId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

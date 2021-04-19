@@ -44,8 +44,8 @@ module Network.Google.Resource.ServiceConsumerManagement.Services.Search
     , ssCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types
 
 -- | A resource alias for @serviceconsumermanagement.services.search@ method which the
 -- 'ServicesSearch' request conforms to.
@@ -68,15 +68,15 @@ type ServicesSearchResource =
 -- /See:/ 'servicesSearch' smart constructor.
 data ServicesSearch =
   ServicesSearch'
-    { _ssParent         :: !Text
-    , _ssXgafv          :: !(Maybe Xgafv)
+    { _ssParent :: !Text
+    , _ssXgafv :: !(Maybe Xgafv)
     , _ssUploadProtocol :: !(Maybe Text)
-    , _ssAccessToken    :: !(Maybe Text)
-    , _ssUploadType     :: !(Maybe Text)
-    , _ssQuery          :: !(Maybe Text)
-    , _ssPageToken      :: !(Maybe Text)
-    , _ssPageSize       :: !(Maybe (Textual Int32))
-    , _ssCallback       :: !(Maybe Text)
+    , _ssAccessToken :: !(Maybe Text)
+    , _ssUploadType :: !(Maybe Text)
+    , _ssQuery :: !(Maybe Text)
+    , _ssPageToken :: !(Maybe Text)
+    , _ssPageSize :: !(Maybe (Textual Int32))
+    , _ssCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

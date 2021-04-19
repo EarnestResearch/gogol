@@ -39,8 +39,8 @@ module Network.Google.Resource.SQL.Instances.Export
     , ieInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.export@ method which the
 -- 'InstancesExport' request conforms to.
@@ -62,8 +62,8 @@ type InstancesExportResource =
 -- /See:/ 'instancesExport' smart constructor.
 data InstancesExport =
   InstancesExport'
-    { _ieProject  :: !Text
-    , _iePayload  :: !InstancesExportRequest
+    { _ieProject :: !Text
+    , _iePayload :: !InstancesExportRequest
     , _ieInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

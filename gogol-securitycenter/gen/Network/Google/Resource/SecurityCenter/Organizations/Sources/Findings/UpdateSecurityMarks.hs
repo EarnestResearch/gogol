@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Upd
     , osfusmCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.updateSecurityMarks@ method which the
 -- 'OrganizationsSourcesFindingsUpdateSecurityMarks' request conforms to.
@@ -69,15 +69,15 @@ type OrganizationsSourcesFindingsUpdateSecurityMarksResource
 -- /See:/ 'organizationsSourcesFindingsUpdateSecurityMarks' smart constructor.
 data OrganizationsSourcesFindingsUpdateSecurityMarks =
   OrganizationsSourcesFindingsUpdateSecurityMarks'
-    { _osfusmXgafv          :: !(Maybe Xgafv)
+    { _osfusmXgafv :: !(Maybe Xgafv)
     , _osfusmUploadProtocol :: !(Maybe Text)
-    , _osfusmStartTime      :: !(Maybe DateTime')
-    , _osfusmUpdateMask     :: !(Maybe GFieldMask)
-    , _osfusmAccessToken    :: !(Maybe Text)
-    , _osfusmUploadType     :: !(Maybe Text)
-    , _osfusmPayload        :: !SecurityMarks
-    , _osfusmName           :: !Text
-    , _osfusmCallback       :: !(Maybe Text)
+    , _osfusmStartTime :: !(Maybe DateTime')
+    , _osfusmUpdateMask :: !(Maybe GFieldMask)
+    , _osfusmAccessToken :: !(Maybe Text)
+    , _osfusmUploadType :: !(Maybe Text)
+    , _osfusmPayload :: !SecurityMarks
+    , _osfusmName :: !Text
+    , _osfusmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

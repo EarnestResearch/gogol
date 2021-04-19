@@ -53,8 +53,8 @@ module Network.Google.Resource.Storage.Objects.Copy
     , ocDestinationObject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.copy@ method which the
 -- 'ObjectsCopy' request conforms to.
@@ -115,23 +115,23 @@ type ObjectsCopyResource =
 -- /See:/ 'objectsCopy' smart constructor.
 data ObjectsCopy =
   ObjectsCopy'
-    { _ocDestinationPredefinedACL       :: !(Maybe ObjectsCopyDestinationPredefinedACL)
-    , _ocIfSourceGenerationMatch        :: !(Maybe (Textual Int64))
-    , _ocIfMetagenerationMatch          :: !(Maybe (Textual Int64))
-    , _ocIfGenerationNotMatch           :: !(Maybe (Textual Int64))
+    { _ocDestinationPredefinedACL :: !(Maybe ObjectsCopyDestinationPredefinedACL)
+    , _ocIfSourceGenerationMatch :: !(Maybe (Textual Int64))
+    , _ocIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _ocIfGenerationNotMatch :: !(Maybe (Textual Int64))
     , _ocIfSourceMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _ocIfSourceMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _ocIfGenerationMatch              :: !(Maybe (Textual Int64))
-    , _ocSourceObject                   :: !Text
-    , _ocSourceBucket                   :: !Text
-    , _ocPayload                        :: !Object
-    , _ocUserProject                    :: !(Maybe Text)
-    , _ocDestinationBucket              :: !Text
-    , _ocIfMetagenerationNotMatch       :: !(Maybe (Textual Int64))
-    , _ocIfSourceGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _ocProjection                     :: !(Maybe ObjectsCopyProjection)
-    , _ocSourceGeneration               :: !(Maybe (Textual Int64))
-    , _ocDestinationObject              :: !Text
+    , _ocIfSourceMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _ocIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _ocSourceObject :: !Text
+    , _ocSourceBucket :: !Text
+    , _ocPayload :: !Object
+    , _ocUserProject :: !(Maybe Text)
+    , _ocDestinationBucket :: !Text
+    , _ocIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
+    , _ocIfSourceGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _ocProjection :: !(Maybe ObjectsCopyProjection)
+    , _ocSourceGeneration :: !(Maybe (Textual Int64))
+    , _ocDestinationObject :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

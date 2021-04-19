@@ -44,8 +44,8 @@ module Network.Google.Resource.LibraryAgent.Shelves.Books.Borrow
     , sbbCallback
     ) where
 
-import           Network.Google.LibraryAgent.Types
-import           Network.Google.Prelude
+import Network.Google.LibraryAgent.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @libraryagent.shelves.books.borrow@ method which the
 -- 'ShelvesBooksBorrow' request conforms to.
@@ -68,12 +68,12 @@ type ShelvesBooksBorrowResource =
 -- /See:/ 'shelvesBooksBorrow' smart constructor.
 data ShelvesBooksBorrow =
   ShelvesBooksBorrow'
-    { _sbbXgafv          :: !(Maybe Xgafv)
+    { _sbbXgafv :: !(Maybe Xgafv)
     , _sbbUploadProtocol :: !(Maybe Text)
-    , _sbbAccessToken    :: !(Maybe Text)
-    , _sbbUploadType     :: !(Maybe Text)
-    , _sbbName           :: !Text
-    , _sbbCallback       :: !(Maybe Text)
+    , _sbbAccessToken :: !(Maybe Text)
+    , _sbbUploadType :: !(Maybe Text)
+    , _sbbName :: !Text
+    , _sbbCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

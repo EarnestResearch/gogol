@@ -42,8 +42,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.GetPolicy
     , pgpCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.getPolicy@ method which the
 -- 'ProjectsGetPolicy' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsGetPolicyResource =
 -- /See:/ 'projectsGetPolicy' smart constructor.
 data ProjectsGetPolicy =
   ProjectsGetPolicy'
-    { _pgpXgafv          :: !(Maybe Xgafv)
+    { _pgpXgafv :: !(Maybe Xgafv)
     , _pgpUploadProtocol :: !(Maybe Text)
-    , _pgpAccessToken    :: !(Maybe Text)
-    , _pgpUploadType     :: !(Maybe Text)
-    , _pgpName           :: !Text
-    , _pgpCallback       :: !(Maybe Text)
+    , _pgpAccessToken :: !(Maybe Text)
+    , _pgpUploadType :: !(Maybe Text)
+    , _pgpName :: !Text
+    , _pgpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

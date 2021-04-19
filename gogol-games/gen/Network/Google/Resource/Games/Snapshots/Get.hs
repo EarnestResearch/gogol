@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Snapshots.Get
     , sSnapshotId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.snapshots.get@ method which the
 -- 'SnapshotsGet' request conforms to.
@@ -55,7 +55,7 @@ type SnapshotsGetResource =
 -- /See:/ 'snapshotsGet' smart constructor.
 data SnapshotsGet =
   SnapshotsGet'
-    { _sLanguage   :: !(Maybe Text)
+    { _sLanguage :: !(Maybe Text)
     , _sSnapshotId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

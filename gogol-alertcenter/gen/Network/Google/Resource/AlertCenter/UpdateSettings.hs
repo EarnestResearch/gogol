@@ -42,8 +42,8 @@ module Network.Google.Resource.AlertCenter.UpdateSettings
     , usCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.updateSettings@ method which the
 -- 'UpdateSettings' request conforms to.
@@ -64,13 +64,13 @@ type UpdateSettingsResource =
 -- /See:/ 'updateSettings' smart constructor.
 data UpdateSettings =
   UpdateSettings'
-    { _usXgafv          :: !(Maybe Xgafv)
+    { _usXgafv :: !(Maybe Xgafv)
     , _usUploadProtocol :: !(Maybe Text)
-    , _usAccessToken    :: !(Maybe Text)
-    , _usUploadType     :: !(Maybe Text)
-    , _usPayload        :: !Settings
-    , _usCustomerId     :: !(Maybe Text)
-    , _usCallback       :: !(Maybe Text)
+    , _usAccessToken :: !(Maybe Text)
+    , _usUploadType :: !(Maybe Text)
+    , _usPayload :: !Settings
+    , _usCustomerId :: !(Maybe Text)
+    , _usCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

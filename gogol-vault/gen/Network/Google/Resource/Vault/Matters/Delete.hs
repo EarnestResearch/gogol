@@ -41,8 +41,8 @@ module Network.Google.Resource.Vault.Matters.Delete
     , mdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.delete@ method which the
 -- 'MattersDelete' request conforms to.
@@ -62,12 +62,12 @@ type MattersDeleteResource =
 -- /See:/ 'mattersDelete' smart constructor.
 data MattersDelete =
   MattersDelete'
-    { _mdXgafv          :: !(Maybe Xgafv)
+    { _mdXgafv :: !(Maybe Xgafv)
     , _mdUploadProtocol :: !(Maybe Text)
-    , _mdAccessToken    :: !(Maybe Text)
-    , _mdUploadType     :: !(Maybe Text)
-    , _mdMatterId       :: !Text
-    , _mdCallback       :: !(Maybe Text)
+    , _mdAccessToken :: !(Maybe Text)
+    , _mdUploadType :: !(Maybe Text)
+    , _mdMatterId :: !Text
+    , _mdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

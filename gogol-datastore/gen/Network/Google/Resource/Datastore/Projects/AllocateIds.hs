@@ -43,8 +43,8 @@ module Network.Google.Resource.Datastore.Projects.AllocateIds
     , paiCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.allocateIds@ method which the
 -- 'ProjectsAllocateIds' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsAllocateIdsResource =
 -- /See:/ 'projectsAllocateIds' smart constructor.
 data ProjectsAllocateIds =
   ProjectsAllocateIds'
-    { _paiXgafv          :: !(Maybe Xgafv)
+    { _paiXgafv :: !(Maybe Xgafv)
     , _paiUploadProtocol :: !(Maybe Text)
-    , _paiAccessToken    :: !(Maybe Text)
-    , _paiUploadType     :: !(Maybe Text)
-    , _paiPayload        :: !AllocateIdsRequest
-    , _paiProjectId      :: !Text
-    , _paiCallback       :: !(Maybe Text)
+    , _paiAccessToken :: !(Maybe Text)
+    , _paiUploadType :: !(Maybe Text)
+    , _paiPayload :: !AllocateIdsRequest
+    , _paiProjectId :: !Text
+    , _paiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

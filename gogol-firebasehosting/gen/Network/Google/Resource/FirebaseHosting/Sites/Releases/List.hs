@@ -43,8 +43,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Releases.List
     , srlCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.releases.list@ method which the
 -- 'SitesReleasesList' request conforms to.
@@ -67,14 +67,14 @@ type SitesReleasesListResource =
 -- /See:/ 'sitesReleasesList' smart constructor.
 data SitesReleasesList =
   SitesReleasesList'
-    { _srlParent         :: !Text
-    , _srlXgafv          :: !(Maybe Xgafv)
+    { _srlParent :: !Text
+    , _srlXgafv :: !(Maybe Xgafv)
     , _srlUploadProtocol :: !(Maybe Text)
-    , _srlAccessToken    :: !(Maybe Text)
-    , _srlUploadType     :: !(Maybe Text)
-    , _srlPageToken      :: !(Maybe Text)
-    , _srlPageSize       :: !(Maybe (Textual Int32))
-    , _srlCallback       :: !(Maybe Text)
+    , _srlAccessToken :: !(Maybe Text)
+    , _srlUploadType :: !(Maybe Text)
+    , _srlPageToken :: !(Maybe Text)
+    , _srlPageSize :: !(Maybe (Textual Int32))
+    , _srlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

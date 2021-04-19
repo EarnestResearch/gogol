@@ -38,8 +38,8 @@ module Network.Google.Resource.Blogger.Comments.Delete
     , cdCommentId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.comments.delete@ method which the
 -- 'CommentsDelete' request conforms to.
@@ -59,8 +59,8 @@ type CommentsDeleteResource =
 -- /See:/ 'commentsDelete' smart constructor.
 data CommentsDelete =
   CommentsDelete'
-    { _cdBlogId    :: !Text
-    , _cdPostId    :: !Text
+    { _cdBlogId :: !Text
+    , _cdPostId :: !Text
     , _cdCommentId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

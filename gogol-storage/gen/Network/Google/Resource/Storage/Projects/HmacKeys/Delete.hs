@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Delete
     , phkdAccessId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.hmacKeys.delete@ method which the
 -- 'ProjectsHmacKeysDelete' request conforms to.
@@ -57,7 +57,7 @@ type ProjectsHmacKeysDeleteResource =
 data ProjectsHmacKeysDelete =
   ProjectsHmacKeysDelete'
     { _phkdProjectId :: !Text
-    , _phkdAccessId  :: !Text
+    , _phkdAccessId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

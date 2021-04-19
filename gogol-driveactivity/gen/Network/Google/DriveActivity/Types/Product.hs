@@ -17,8 +17,8 @@
 --
 module Network.Google.DriveActivity.Types.Product where
 
-import           Network.Google.DriveActivity.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DriveActivity.Types.Sum
+import Network.Google.Prelude
 
 -- | A suggestion.
 --
@@ -58,8 +58,8 @@ instance ToJSON Suggestion where
 -- /See:/ 'drive' smart constructor.
 data Drive =
   Drive'
-    { _dRoot  :: !(Maybe DriveItem)
-    , _dName  :: !(Maybe Text)
+    { _dRoot :: !(Maybe DriveItem)
+    , _dName :: !(Maybe Text)
     , _dTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -173,17 +173,17 @@ instance ToJSON Edit where
 -- /See:/ 'actionDetail' smart constructor.
 data ActionDetail =
   ActionDetail'
-    { _adEdit             :: !(Maybe Edit)
+    { _adEdit :: !(Maybe Edit)
     , _adPermissionChange :: !(Maybe PermissionChange)
-    , _adRestore          :: !(Maybe Restore)
-    , _adReference        :: !(Maybe ApplicationReference)
-    , _adCreate           :: !(Maybe Create)
-    , _adRename           :: !(Maybe Rename)
-    , _adComment          :: !(Maybe Comment)
-    , _adSettingsChange   :: !(Maybe SettingsChange)
-    , _adDlpChange        :: !(Maybe DataLeakPreventionChange)
-    , _adDelete           :: !(Maybe Delete')
-    , _adMove             :: !(Maybe Move)
+    , _adRestore :: !(Maybe Restore)
+    , _adReference :: !(Maybe ApplicationReference)
+    , _adCreate :: !(Maybe Create)
+    , _adRename :: !(Maybe Rename)
+    , _adComment :: !(Maybe Comment)
+    , _adSettingsChange :: !(Maybe SettingsChange)
+    , _adDlpChange :: !(Maybe DataLeakPreventionChange)
+    , _adDelete :: !(Maybe Delete')
+    , _adMove :: !(Maybe Move)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -320,7 +320,7 @@ instance ToJSON ActionDetail where
 -- /See:/ 'driveReference' smart constructor.
 data DriveReference =
   DriveReference'
-    { _drName  :: !(Maybe Text)
+    { _drName :: !(Maybe Text)
     , _drTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -432,7 +432,7 @@ instance ToJSON DriveFile where
 data TimeRange =
   TimeRange'
     { _trStartTime :: !(Maybe DateTime')
-    , _trEndTime   :: !(Maybe DateTime')
+    , _trEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -480,12 +480,12 @@ instance ToJSON TimeRange where
 -- /See:/ 'queryDriveActivityRequest' smart constructor.
 data QueryDriveActivityRequest =
   QueryDriveActivityRequest'
-    { _qdarAncestorName          :: !(Maybe Text)
-    , _qdarItemName              :: !(Maybe Text)
+    { _qdarAncestorName :: !(Maybe Text)
+    , _qdarItemName :: !(Maybe Text)
     , _qdarConsolidationStrategy :: !(Maybe ConsolidationStrategy)
-    , _qdarFilter                :: !(Maybe Text)
-    , _qdarPageToken             :: !(Maybe Text)
-    , _qdarPageSize              :: !(Maybe (Textual Int32))
+    , _qdarFilter :: !(Maybe Text)
+    , _qdarPageToken :: !(Maybe Text)
+    , _qdarPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -595,12 +595,12 @@ instance ToJSON QueryDriveActivityRequest where
 -- /See:/ 'driveItemReference' smart constructor.
 data DriveItemReference =
   DriveItemReference'
-    { _dirDriveFile   :: !(Maybe DriveFile)
-    , _dirFolder      :: !(Maybe Folder)
-    , _dirName        :: !(Maybe Text)
+    { _dirDriveFile :: !(Maybe DriveFile)
+    , _dirFolder :: !(Maybe Folder)
+    , _dirName :: !(Maybe Text)
     , _dirDriveFolder :: !(Maybe DriveFolder)
-    , _dirTitle       :: !(Maybe Text)
-    , _dirFile        :: !(Maybe File)
+    , _dirTitle :: !(Maybe Text)
+    , _dirFile :: !(Maybe File)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -688,7 +688,7 @@ instance ToJSON DriveItemReference where
 -- /See:/ 'knownUser' smart constructor.
 data KnownUser =
   KnownUser'
-    { _kuPersonName    :: !(Maybe Text)
+    { _kuPersonName :: !(Maybe Text)
     , _kuIsCurrentUser :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -738,7 +738,7 @@ instance ToJSON KnownUser where
 -- /See:/ 'targetReference' smart constructor.
 data TargetReference =
   TargetReference'
-    { _trDrive     :: !(Maybe DriveReference)
+    { _trDrive :: !(Maybe DriveReference)
     , _trTeamDrive :: !(Maybe TeamDriveReference)
     , _trDriveItem :: !(Maybe DriveItemReference)
     }
@@ -833,7 +833,7 @@ instance ToJSON Copy where
 -- /See:/ 'permissionChange' smart constructor.
 data PermissionChange =
   PermissionChange'
-    { _pcAddedPermissions   :: !(Maybe [Permission])
+    { _pcAddedPermissions :: !(Maybe [Permission])
     , _pcRemovedPermissions :: !(Maybe [Permission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -890,7 +890,7 @@ instance ToJSON PermissionChange where
 data QueryDriveActivityResponse =
   QueryDriveActivityResponse'
     { _qdarNextPageToken :: !(Maybe Text)
-    , _qdarActivities    :: !(Maybe [DriveActivity])
+    , _qdarActivities :: !(Maybe [DriveActivity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1011,7 +1011,7 @@ instance ToJSON Restore where
 data Domain =
   Domain'
     { _domLegacyId :: !(Maybe Text)
-    , _domName     :: !(Maybe Text)
+    , _domName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1112,10 +1112,10 @@ instance ToJSON DataLeakPreventionChange where
 data Actor =
   Actor'
     { _aImpersonation :: !(Maybe Impersonation)
-    , _aSystem        :: !(Maybe SystemEvent)
+    , _aSystem :: !(Maybe SystemEvent)
     , _aAdministrator :: !(Maybe Administrator)
-    , _aUser          :: !(Maybe User)
-    , _aAnonymous     :: !(Maybe AnonymousUser)
+    , _aUser :: !(Maybe User)
+    , _aAnonymous :: !(Maybe AnonymousUser)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1229,10 +1229,10 @@ instance ToJSON Folder where
 data Action =
   Action'
     { _aTimeRange :: !(Maybe TimeRange)
-    , _aActor     :: !(Maybe Actor)
+    , _aActor :: !(Maybe Actor)
     , _aTimestamp :: !(Maybe DateTime')
-    , _aTarget    :: !(Maybe Target)
-    , _aDetail    :: !(Maybe ActionDetail)
+    , _aTarget :: !(Maybe Target)
+    , _aDetail :: !(Maybe ActionDetail)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1313,8 +1313,8 @@ instance ToJSON Action where
 -- /See:/ 'teamDrive' smart constructor.
 data TeamDrive =
   TeamDrive'
-    { _tdRoot  :: !(Maybe DriveItem)
-    , _tdName  :: !(Maybe Text)
+    { _tdRoot :: !(Maybe DriveItem)
+    , _tdName :: !(Maybe Text)
     , _tdTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1389,10 +1389,10 @@ instance ToJSON UnknownUser where
 -- /See:/ 'owner' smart constructor.
 data Owner =
   Owner'
-    { _oDrive     :: !(Maybe DriveReference)
-    , _oDomain    :: !(Maybe Domain)
+    { _oDrive :: !(Maybe DriveReference)
+    , _oDomain :: !(Maybe Domain)
     , _oTeamDrive :: !(Maybe TeamDriveReference)
-    , _oUser      :: !(Maybe User)
+    , _oUser :: !(Maybe User)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1496,7 +1496,7 @@ instance ToJSON ApplicationReference where
 -- /See:/ 'consolidationStrategy' smart constructor.
 data ConsolidationStrategy =
   ConsolidationStrategy'
-    { _csNone   :: !(Maybe NoConsolidation)
+    { _csNone :: !(Maybe NoConsolidation)
     , _csLegacy :: !(Maybe Legacy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1542,7 +1542,7 @@ instance ToJSON ConsolidationStrategy where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uKnownUser   :: !(Maybe KnownUser)
+    { _uKnownUser :: !(Maybe KnownUser)
     , _uUnknownUser :: !(Maybe UnknownUser)
     , _uDeletedUser :: !(Maybe DeletedUser)
     }
@@ -1623,8 +1623,8 @@ instance ToJSON DeletedUser where
 -- /See:/ 'create' smart constructor.
 data Create =
   Create'
-    { _cCopy   :: !(Maybe Copy)
-    , _cNew    :: !(Maybe New)
+    { _cCopy :: !(Maybe Copy)
+    , _cNew :: !(Maybe New)
     , _cUpload :: !(Maybe Upload)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1700,7 +1700,7 @@ instance ToJSON New where
 -- /See:/ 'teamDriveReference' smart constructor.
 data TeamDriveReference =
   TeamDriveReference'
-    { _tdrName  :: !(Maybe Text)
+    { _tdrName :: !(Maybe Text)
     , _tdrTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1824,7 +1824,7 @@ instance ToJSON Anyone where
 -- /See:/ 'restrictionChange' smart constructor.
 data RestrictionChange =
   RestrictionChange'
-    { _rcFeature        :: !(Maybe RestrictionChangeFeature)
+    { _rcFeature :: !(Maybe RestrictionChangeFeature)
     , _rcNewRestriction :: !(Maybe RestrictionChangeNewRestriction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1899,10 +1899,10 @@ instance ToJSON Legacy where
 -- /See:/ 'fileComment' smart constructor.
 data FileComment =
   FileComment'
-    { _fcParent             :: !(Maybe DriveItem)
+    { _fcParent :: !(Maybe DriveItem)
     , _fcLegacyDiscussionId :: !(Maybe Text)
-    , _fcLegacyCommentId    :: !(Maybe Text)
-    , _fcLinkToDiscussion   :: !(Maybe Text)
+    , _fcLegacyCommentId :: !(Maybe Text)
+    , _fcLinkToDiscussion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2146,10 +2146,10 @@ instance ToJSON SettingsChange where
 -- /See:/ 'comment' smart constructor.
 data Comment =
   Comment'
-    { _cSuggestion     :: !(Maybe Suggestion)
-    , _cPost           :: !(Maybe Post')
+    { _cSuggestion :: !(Maybe Suggestion)
+    , _cPost :: !(Maybe Post')
     , _cMentionedUsers :: !(Maybe [User])
-    , _cAssignment     :: !(Maybe Assignment)
+    , _cAssignment :: !(Maybe Assignment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2221,11 +2221,11 @@ instance ToJSON Comment where
 -- /See:/ 'permission' smart constructor.
 data Permission =
   Permission'
-    { _pGroup          :: !(Maybe Group)
-    , _pDomain         :: !(Maybe Domain)
-    , _pUser           :: !(Maybe User)
-    , _pRole           :: !(Maybe PermissionRole)
-    , _pAnyone         :: !(Maybe Anyone)
+    { _pGroup :: !(Maybe Group)
+    , _pDomain :: !(Maybe Domain)
+    , _pUser :: !(Maybe User)
+    , _pRole :: !(Maybe PermissionRole)
+    , _pAnyone :: !(Maybe Anyone)
     , _pAllowDiscovery :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2367,10 +2367,10 @@ instance ToJSON Delete' where
 -- /See:/ 'target' smart constructor.
 data Target =
   Target'
-    { _tDrive       :: !(Maybe Drive)
-    , _tTeamDrive   :: !(Maybe TeamDrive)
+    { _tDrive :: !(Maybe Drive)
+    , _tTeamDrive :: !(Maybe TeamDrive)
     , _tFileComment :: !(Maybe FileComment)
-    , _tDriveItem   :: !(Maybe DriveItem)
+    , _tDriveItem :: !(Maybe DriveItem)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2439,7 +2439,7 @@ instance ToJSON Target where
 -- /See:/ 'move' smart constructor.
 data Move =
   Move'
-    { _mAddedParents   :: !(Maybe [TargetReference])
+    { _mAddedParents :: !(Maybe [TargetReference])
     , _mRemovedParents :: !(Maybe [TargetReference])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2499,12 +2499,12 @@ instance ToJSON Move where
 -- /See:/ 'driveActivity' smart constructor.
 data DriveActivity =
   DriveActivity'
-    { _daTimeRange           :: !(Maybe TimeRange)
-    , _daActions             :: !(Maybe [Action])
-    , _daActors              :: !(Maybe [Actor])
-    , _daTargets             :: !(Maybe [Target])
+    { _daTimeRange :: !(Maybe TimeRange)
+    , _daActions :: !(Maybe [Action])
+    , _daActors :: !(Maybe [Actor])
+    , _daTargets :: !(Maybe [Target])
     , _daPrimaryActionDetail :: !(Maybe ActionDetail)
-    , _daTimestamp           :: !(Maybe DateTime')
+    , _daTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2607,14 +2607,14 @@ instance ToJSON DriveActivity where
 -- /See:/ 'driveItem' smart constructor.
 data DriveItem =
   DriveItem'
-    { _diDriveFile   :: !(Maybe DriveFile)
-    , _diFolder      :: !(Maybe Folder)
-    , _diOwner       :: !(Maybe Owner)
-    , _diMimeType    :: !(Maybe Text)
-    , _diName        :: !(Maybe Text)
+    { _diDriveFile :: !(Maybe DriveFile)
+    , _diFolder :: !(Maybe Folder)
+    , _diOwner :: !(Maybe Owner)
+    , _diMimeType :: !(Maybe Text)
+    , _diName :: !(Maybe Text)
     , _diDriveFolder :: !(Maybe DriveFolder)
-    , _diTitle       :: !(Maybe Text)
-    , _diFile        :: !(Maybe File)
+    , _diTitle :: !(Maybe Text)
+    , _diFile :: !(Maybe File)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

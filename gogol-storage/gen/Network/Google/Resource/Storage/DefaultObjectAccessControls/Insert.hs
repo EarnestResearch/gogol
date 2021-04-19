@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.Insert
     , doaciUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.insert@ method which the
 -- 'DefaultObjectAccessControlsInsert' request conforms to.
@@ -59,8 +59,8 @@ type DefaultObjectAccessControlsInsertResource =
 -- /See:/ 'defaultObjectAccessControlsInsert' smart constructor.
 data DefaultObjectAccessControlsInsert =
   DefaultObjectAccessControlsInsert'
-    { _doaciBucket      :: !Text
-    , _doaciPayload     :: !ObjectAccessControl
+    { _doaciBucket :: !Text
+    , _doaciPayload :: !ObjectAccessControl
     , _doaciUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

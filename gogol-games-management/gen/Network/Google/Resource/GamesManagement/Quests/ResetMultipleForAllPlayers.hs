@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Quests.ResetMultipleForAllPlayers
     , qrmfapPayload
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.quests.resetMultipleForAllPlayers@ method which the
 -- 'QuestsResetMultipleForAllPlayers' request conforms to.

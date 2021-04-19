@@ -45,8 +45,8 @@ module Network.Google.Resource.Vault.Matters.Holds.RemoveHeldAccounts
     , mhrhaCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.removeHeldAccounts@ method which the
 -- 'MattersHoldsRemoveHeldAccounts' request conforms to.
@@ -72,14 +72,14 @@ type MattersHoldsRemoveHeldAccountsResource =
 -- /See:/ 'mattersHoldsRemoveHeldAccounts' smart constructor.
 data MattersHoldsRemoveHeldAccounts =
   MattersHoldsRemoveHeldAccounts'
-    { _mhrhaXgafv          :: !(Maybe Xgafv)
+    { _mhrhaXgafv :: !(Maybe Xgafv)
     , _mhrhaUploadProtocol :: !(Maybe Text)
-    , _mhrhaHoldId         :: !Text
-    , _mhrhaAccessToken    :: !(Maybe Text)
-    , _mhrhaUploadType     :: !(Maybe Text)
-    , _mhrhaPayload        :: !RemoveHeldAccountsRequest
-    , _mhrhaMatterId       :: !Text
-    , _mhrhaCallback       :: !(Maybe Text)
+    , _mhrhaHoldId :: !Text
+    , _mhrhaAccessToken :: !(Maybe Text)
+    , _mhrhaUploadType :: !(Maybe Text)
+    , _mhrhaPayload :: !RemoveHeldAccountsRequest
+    , _mhrhaMatterId :: !Text
+    , _mhrhaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.SQL.Instances.ResetSSLConfig
     , irscInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.resetSslConfig@ method which the
 -- 'InstancesResetSSLConfig' request conforms to.
@@ -59,7 +59,7 @@ type InstancesResetSSLConfigResource =
 -- /See:/ 'instancesResetSSLConfig' smart constructor.
 data InstancesResetSSLConfig =
   InstancesResetSSLConfig'
-    { _irscProject  :: !Text
+    { _irscProject :: !Text
     , _irscInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

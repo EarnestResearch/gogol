@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.OrgUnits.Update
     , ouuCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.update@ method which the
 -- 'OrgUnitsUpdate' request conforms to.
@@ -59,9 +59,9 @@ type OrgUnitsUpdateResource =
 -- /See:/ 'orgUnitsUpdate' smart constructor.
 data OrgUnitsUpdate =
   OrgUnitsUpdate'
-    { _ouuPayload     :: !OrgUnit
+    { _ouuPayload :: !OrgUnit
     , _ouuOrgUnitPath :: ![Text]
-    , _ouuCustomerId  :: !Text
+    , _ouuCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

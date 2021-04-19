@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Push
     , idipCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.push@ method which the
 -- 'IndexingDatasourcesItemsPush' request conforms to.
@@ -64,13 +64,13 @@ type IndexingDatasourcesItemsPushResource =
 -- /See:/ 'indexingDatasourcesItemsPush' smart constructor.
 data IndexingDatasourcesItemsPush =
   IndexingDatasourcesItemsPush'
-    { _idipXgafv          :: !(Maybe Xgafv)
+    { _idipXgafv :: !(Maybe Xgafv)
     , _idipUploadProtocol :: !(Maybe Text)
-    , _idipAccessToken    :: !(Maybe Text)
-    , _idipUploadType     :: !(Maybe Text)
-    , _idipPayload        :: !PushItemRequest
-    , _idipName           :: !Text
-    , _idipCallback       :: !(Maybe Text)
+    , _idipAccessToken :: !(Maybe Text)
+    , _idipUploadType :: !(Maybe Text)
+    , _idipPayload :: !PushItemRequest
+    , _idipName :: !Text
+    , _idipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

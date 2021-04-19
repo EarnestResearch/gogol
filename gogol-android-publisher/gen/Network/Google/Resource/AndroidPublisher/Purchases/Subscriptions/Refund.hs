@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Purchases.Subscriptions.Refund
     , psrSubscriptionId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.purchases.subscriptions.refund@ method which the
 -- 'PurchasesSubscriptionsRefund' request conforms to.
@@ -62,8 +62,8 @@ type PurchasesSubscriptionsRefundResource =
 -- /See:/ 'purchasesSubscriptionsRefund' smart constructor.
 data PurchasesSubscriptionsRefund =
   PurchasesSubscriptionsRefund'
-    { _psrPackageName    :: !Text
-    , _psrToken          :: !Text
+    { _psrPackageName :: !Text
+    , _psrToken :: !Text
     , _psrSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

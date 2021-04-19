@@ -47,8 +47,8 @@ module Network.Google.Resource.DLP.Projects.JobTriggers.List
     , pjtlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.jobTriggers.list@ method which the
 -- 'ProjectsJobTriggersList' request conforms to.
@@ -76,16 +76,16 @@ type ProjectsJobTriggersListResource =
 -- /See:/ 'projectsJobTriggersList' smart constructor.
 data ProjectsJobTriggersList =
   ProjectsJobTriggersList'
-    { _pjtlParent         :: !Text
-    , _pjtlXgafv          :: !(Maybe Xgafv)
+    { _pjtlParent :: !Text
+    , _pjtlXgafv :: !(Maybe Xgafv)
     , _pjtlUploadProtocol :: !(Maybe Text)
-    , _pjtlOrderBy        :: !(Maybe Text)
-    , _pjtlAccessToken    :: !(Maybe Text)
-    , _pjtlUploadType     :: !(Maybe Text)
-    , _pjtlFilter         :: !(Maybe Text)
-    , _pjtlPageToken      :: !(Maybe Text)
-    , _pjtlPageSize       :: !(Maybe (Textual Int32))
-    , _pjtlCallback       :: !(Maybe Text)
+    , _pjtlOrderBy :: !(Maybe Text)
+    , _pjtlAccessToken :: !(Maybe Text)
+    , _pjtlUploadType :: !(Maybe Text)
+    , _pjtlFilter :: !(Maybe Text)
+    , _pjtlPageToken :: !(Maybe Text)
+    , _pjtlPageSize :: !(Maybe (Textual Int32))
+    , _pjtlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

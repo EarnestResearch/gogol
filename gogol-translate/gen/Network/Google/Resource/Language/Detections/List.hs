@@ -43,8 +43,8 @@ module Network.Google.Resource.Language.Detections.List
     , dlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @language.detections.list@ method which the
 -- 'DetectionsList' request conforms to.
@@ -69,14 +69,14 @@ type DetectionsListResource =
 -- /See:/ 'detectionsList' smart constructor.
 data DetectionsList =
   DetectionsList'
-    { _dlXgafv          :: !(Maybe Xgafv)
+    { _dlXgafv :: !(Maybe Xgafv)
     , _dlUploadProtocol :: !(Maybe Text)
-    , _dlPp             :: !Bool
-    , _dlAccessToken    :: !(Maybe Text)
-    , _dlUploadType     :: !(Maybe Text)
-    , _dlQ              :: ![Text]
-    , _dlBearerToken    :: !(Maybe Text)
-    , _dlCallback       :: !(Maybe Text)
+    , _dlPp :: !Bool
+    , _dlAccessToken :: !(Maybe Text)
+    , _dlUploadType :: !(Maybe Text)
+    , _dlQ :: ![Text]
+    , _dlBearerToken :: !(Maybe Text)
+    , _dlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

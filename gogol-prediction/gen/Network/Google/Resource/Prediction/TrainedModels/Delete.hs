@@ -37,8 +37,8 @@ module Network.Google.Resource.Prediction.TrainedModels.Delete
     , tmdId
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.trainedmodels.delete@ method which the
 -- 'TrainedModelsDelete' request conforms to.
@@ -57,7 +57,7 @@ type TrainedModelsDeleteResource =
 data TrainedModelsDelete =
   TrainedModelsDelete'
     { _tmdProject :: !Text
-    , _tmdId      :: !Text
+    , _tmdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

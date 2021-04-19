@@ -40,8 +40,8 @@ module Network.Google.Resource.YouTube.LiveBroadcasts.Update
     , lbuOnBehalfOfContentOwnerChannel
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveBroadcasts.update@ method which the
 -- 'LiveBroadcastsUpdate' request conforms to.
@@ -62,9 +62,9 @@ type LiveBroadcastsUpdateResource =
 -- /See:/ 'liveBroadcastsUpdate' smart constructor.
 data LiveBroadcastsUpdate =
   LiveBroadcastsUpdate'
-    { _lbuPart                          :: !Text
-    , _lbuPayload                       :: !LiveBroadcast
-    , _lbuOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _lbuPart :: !Text
+    , _lbuPayload :: !LiveBroadcast
+    , _lbuOnBehalfOfContentOwner :: !(Maybe Text)
     , _lbuOnBehalfOfContentOwnerChannel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

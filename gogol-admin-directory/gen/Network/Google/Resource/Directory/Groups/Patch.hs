@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Groups.Patch
     , gpPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.patch@ method which the
 -- 'GroupsPatch' request conforms to.
@@ -57,7 +57,7 @@ type GroupsPatchResource =
 data GroupsPatch =
   GroupsPatch'
     { _gpGroupKey :: !Text
-    , _gpPayload  :: !Group
+    , _gpPayload :: !Group
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

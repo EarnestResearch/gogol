@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.Get
     , proProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.get@ method which the
 -- 'ProductsGet' request conforms to.
@@ -59,8 +59,8 @@ type ProductsGetResource =
 data ProductsGet =
   ProductsGet'
     { _proEnterpriseId :: !Text
-    , _proLanguage     :: !(Maybe Text)
-    , _proProductId    :: !Text
+    , _proLanguage :: !(Maybe Text)
+    , _proProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

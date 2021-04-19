@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.Approve
     , paProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.approve@ method which the
 -- 'ProductsApprove' request conforms to.
@@ -69,8 +69,8 @@ type ProductsApproveResource =
 data ProductsApprove =
   ProductsApprove'
     { _paEnterpriseId :: !Text
-    , _paPayload      :: !ProductsApproveRequest
-    , _paProductId    :: !Text
+    , _paPayload :: !ProductsApproveRequest
+    , _paProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

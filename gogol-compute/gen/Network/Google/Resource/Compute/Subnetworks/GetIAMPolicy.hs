@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Subnetworks.GetIAMPolicy
     , sgipRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.subnetworks.getIamPolicy@ method which the
 -- 'SubnetworksGetIAMPolicy' request conforms to.
@@ -62,9 +62,9 @@ type SubnetworksGetIAMPolicyResource =
 -- /See:/ 'subnetworksGetIAMPolicy' smart constructor.
 data SubnetworksGetIAMPolicy =
   SubnetworksGetIAMPolicy'
-    { _sgipProject  :: !Text
+    { _sgipProject :: !Text
     , _sgipResource :: !Text
-    , _sgipRegion   :: !Text
+    , _sgipRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

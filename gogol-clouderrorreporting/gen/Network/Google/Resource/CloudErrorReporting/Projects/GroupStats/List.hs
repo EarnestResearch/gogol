@@ -52,8 +52,8 @@ module Network.Google.Resource.CloudErrorReporting.Projects.GroupStats.List
     , pgslTimeRangePeriod
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouderrorreporting.projects.groupStats.list@ method which the
 -- 'ProjectsGroupStatsList' request conforms to.
@@ -87,23 +87,23 @@ type ProjectsGroupStatsListResource =
 -- /See:/ 'projectsGroupStatsList' smart constructor.
 data ProjectsGroupStatsList =
   ProjectsGroupStatsList'
-    { _pgslXgafv                     :: !(Maybe Xgafv)
-    , _pgslUploadProtocol            :: !(Maybe Text)
-    , _pgslAccessToken               :: !(Maybe Text)
-    , _pgslUploadType                :: !(Maybe Text)
-    , _pgslTimedCountDuration        :: !(Maybe GDuration)
-    , _pgslAlignment                 :: !(Maybe Text)
-    , _pgslProjectName               :: !Text
-    , _pgslGroupId                   :: !(Maybe [Text])
-    , _pgslAlignmentTime             :: !(Maybe DateTime')
-    , _pgslPageToken                 :: !(Maybe Text)
-    , _pgslPageSize                  :: !(Maybe (Textual Int32))
-    , _pgslServiceFilterService      :: !(Maybe Text)
-    , _pgslOrder                     :: !(Maybe Text)
+    { _pgslXgafv :: !(Maybe Xgafv)
+    , _pgslUploadProtocol :: !(Maybe Text)
+    , _pgslAccessToken :: !(Maybe Text)
+    , _pgslUploadType :: !(Maybe Text)
+    , _pgslTimedCountDuration :: !(Maybe GDuration)
+    , _pgslAlignment :: !(Maybe Text)
+    , _pgslProjectName :: !Text
+    , _pgslGroupId :: !(Maybe [Text])
+    , _pgslAlignmentTime :: !(Maybe DateTime')
+    , _pgslPageToken :: !(Maybe Text)
+    , _pgslPageSize :: !(Maybe (Textual Int32))
+    , _pgslServiceFilterService :: !(Maybe Text)
+    , _pgslOrder :: !(Maybe Text)
     , _pgslServiceFilterResourceType :: !(Maybe Text)
-    , _pgslCallback                  :: !(Maybe Text)
-    , _pgslServiceFilterVersion      :: !(Maybe Text)
-    , _pgslTimeRangePeriod           :: !(Maybe Text)
+    , _pgslCallback :: !(Maybe Text)
+    , _pgslServiceFilterVersion :: !(Maybe Text)
+    , _pgslTimeRangePeriod :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

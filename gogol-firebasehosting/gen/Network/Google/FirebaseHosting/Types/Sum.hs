@@ -16,7 +16,7 @@
 --
 module Network.Google.FirebaseHosting.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. Additional status of the domain association.
 data DomainStatus

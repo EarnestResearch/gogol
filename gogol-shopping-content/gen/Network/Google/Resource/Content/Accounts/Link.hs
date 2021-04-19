@@ -39,14 +39,14 @@ module Network.Google.Resource.Content.Accounts.Link
     , alAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.link@ method which the
 -- 'AccountsLink' request conforms to.
 type AccountsLinkResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accounts" :>
              Capture "accountId" (Textual Word64) :>
@@ -62,8 +62,8 @@ type AccountsLinkResource =
 data AccountsLink =
   AccountsLink'
     { _alMerchantId :: !(Textual Word64)
-    , _alPayload    :: !AccountsLinkRequest
-    , _alAccountId  :: !(Textual Word64)
+    , _alPayload :: !AccountsLinkRequest
+    , _alAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Reports.Listreports
     , rlQueryId
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.reports.listreports@ method which the
 -- 'ReportsListreports' request conforms to.

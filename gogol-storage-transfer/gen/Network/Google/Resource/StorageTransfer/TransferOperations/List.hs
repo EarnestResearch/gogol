@@ -53,8 +53,8 @@ module Network.Google.Resource.StorageTransfer.TransferOperations.List
     , tolCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferOperations.list@ method which the
 -- 'TransferOperationsList' request conforms to.
@@ -86,15 +86,15 @@ type TransferOperationsListResource =
 -- /See:/ 'transferOperationsList' smart constructor.
 data TransferOperationsList =
   TransferOperationsList'
-    { _tolXgafv          :: !(Maybe Xgafv)
+    { _tolXgafv :: !(Maybe Xgafv)
     , _tolUploadProtocol :: !(Maybe Text)
-    , _tolAccessToken    :: !(Maybe Text)
-    , _tolUploadType     :: !(Maybe Text)
-    , _tolName           :: !Text
-    , _tolFilter         :: !(Maybe Text)
-    , _tolPageToken      :: !(Maybe Text)
-    , _tolPageSize       :: !(Maybe (Textual Int32))
-    , _tolCallback       :: !(Maybe Text)
+    , _tolAccessToken :: !(Maybe Text)
+    , _tolUploadType :: !(Maybe Text)
+    , _tolName :: !Text
+    , _tolFilter :: !(Maybe Text)
+    , _tolPageToken :: !(Maybe Text)
+    , _tolPageSize :: !(Maybe (Textual Int32))
+    , _tolCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

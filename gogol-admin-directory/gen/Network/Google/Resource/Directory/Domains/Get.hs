@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Domains.Get
     , dgDomainName
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domains.get@ method which the
 -- 'DomainsGet' request conforms to.
@@ -57,7 +57,7 @@ type DomainsGetResource =
 -- /See:/ 'domainsGet' smart constructor.
 data DomainsGet =
   DomainsGet'
-    { _dgCustomer   :: !Text
+    { _dgCustomer :: !Text
     , _dgDomainName :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

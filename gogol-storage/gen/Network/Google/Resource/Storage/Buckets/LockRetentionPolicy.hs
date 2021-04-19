@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Buckets.LockRetentionPolicy
     , blrpUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.lockRetentionPolicy@ method which the
 -- 'BucketsLockRetentionPolicy' request conforms to.
@@ -59,8 +59,8 @@ type BucketsLockRetentionPolicyResource =
 data BucketsLockRetentionPolicy =
   BucketsLockRetentionPolicy'
     { _blrpIfMetagenerationMatch :: !(Textual Int64)
-    , _blrpBucket                :: !Text
-    , _blrpUserProject           :: !(Maybe Text)
+    , _blrpBucket :: !Text
+    , _blrpUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

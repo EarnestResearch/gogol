@@ -41,8 +41,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.CollectionGroups.Ind
     , pdcgidCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.collectionGroups.indexes.delete@ method which the
 -- 'ProjectsDatabasesCollectionGroupsIndexesDelete' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsDatabasesCollectionGroupsIndexesDeleteResource
 -- /See:/ 'projectsDatabasesCollectionGroupsIndexesDelete' smart constructor.
 data ProjectsDatabasesCollectionGroupsIndexesDelete =
   ProjectsDatabasesCollectionGroupsIndexesDelete'
-    { _pdcgidXgafv          :: !(Maybe Xgafv)
+    { _pdcgidXgafv :: !(Maybe Xgafv)
     , _pdcgidUploadProtocol :: !(Maybe Text)
-    , _pdcgidAccessToken    :: !(Maybe Text)
-    , _pdcgidUploadType     :: !(Maybe Text)
-    , _pdcgidName           :: !Text
-    , _pdcgidCallback       :: !(Maybe Text)
+    , _pdcgidAccessToken :: !(Maybe Text)
+    , _pdcgidUploadType :: !(Maybe Text)
+    , _pdcgidName :: !Text
+    , _pdcgidCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

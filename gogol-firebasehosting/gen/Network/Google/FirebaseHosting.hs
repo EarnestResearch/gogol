@@ -279,22 +279,22 @@ module Network.Google.FirebaseHosting
     , scMaxVersions
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.FirebaseHosting.Sites.Domains.Create
-import           Network.Google.Resource.FirebaseHosting.Sites.Domains.Delete
-import           Network.Google.Resource.FirebaseHosting.Sites.Domains.Get
-import           Network.Google.Resource.FirebaseHosting.Sites.Domains.List
-import           Network.Google.Resource.FirebaseHosting.Sites.Domains.Update
-import           Network.Google.Resource.FirebaseHosting.Sites.GetConfig
-import           Network.Google.Resource.FirebaseHosting.Sites.Releases.Create
-import           Network.Google.Resource.FirebaseHosting.Sites.Releases.List
-import           Network.Google.Resource.FirebaseHosting.Sites.UpdateConfig
-import           Network.Google.Resource.FirebaseHosting.Sites.Versions.Create
-import           Network.Google.Resource.FirebaseHosting.Sites.Versions.Delete
-import           Network.Google.Resource.FirebaseHosting.Sites.Versions.Files.List
-import           Network.Google.Resource.FirebaseHosting.Sites.Versions.Patch
-import           Network.Google.Resource.FirebaseHosting.Sites.Versions.PopulateFiles
+import Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Resource.FirebaseHosting.Sites.Domains.Create
+import Network.Google.Resource.FirebaseHosting.Sites.Domains.Delete
+import Network.Google.Resource.FirebaseHosting.Sites.Domains.Get
+import Network.Google.Resource.FirebaseHosting.Sites.Domains.List
+import Network.Google.Resource.FirebaseHosting.Sites.Domains.Update
+import Network.Google.Resource.FirebaseHosting.Sites.GetConfig
+import Network.Google.Resource.FirebaseHosting.Sites.Releases.Create
+import Network.Google.Resource.FirebaseHosting.Sites.Releases.List
+import Network.Google.Resource.FirebaseHosting.Sites.UpdateConfig
+import Network.Google.Resource.FirebaseHosting.Sites.Versions.Create
+import Network.Google.Resource.FirebaseHosting.Sites.Versions.Delete
+import Network.Google.Resource.FirebaseHosting.Sites.Versions.Files.List
+import Network.Google.Resource.FirebaseHosting.Sites.Versions.Patch
+import Network.Google.Resource.FirebaseHosting.Sites.Versions.PopulateFiles
 
 {- $resources
 TODO

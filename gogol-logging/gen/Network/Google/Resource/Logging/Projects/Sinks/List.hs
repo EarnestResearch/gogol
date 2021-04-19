@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Projects.Sinks.List
     , pslCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.sinks.list@ method which the
 -- 'ProjectsSinksList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsSinksListResource =
 -- /See:/ 'projectsSinksList' smart constructor.
 data ProjectsSinksList =
   ProjectsSinksList'
-    { _pslParent         :: !Text
-    , _pslXgafv          :: !(Maybe Xgafv)
+    { _pslParent :: !Text
+    , _pslXgafv :: !(Maybe Xgafv)
     , _pslUploadProtocol :: !(Maybe Text)
-    , _pslAccessToken    :: !(Maybe Text)
-    , _pslUploadType     :: !(Maybe Text)
-    , _pslPageToken      :: !(Maybe Text)
-    , _pslPageSize       :: !(Maybe (Textual Int32))
-    , _pslCallback       :: !(Maybe Text)
+    , _pslAccessToken :: !(Maybe Text)
+    , _pslUploadType :: !(Maybe Text)
+    , _pslPageToken :: !(Maybe Text)
+    , _pslPageSize :: !(Maybe (Textual Int32))
+    , _pslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

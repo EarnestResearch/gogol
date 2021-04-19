@@ -42,8 +42,8 @@ module Network.Google.Resource.Datastore.Projects.BeginTransaction
     , pbtCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.beginTransaction@ method which the
 -- 'ProjectsBeginTransaction' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsBeginTransactionResource =
 -- /See:/ 'projectsBeginTransaction' smart constructor.
 data ProjectsBeginTransaction =
   ProjectsBeginTransaction'
-    { _pbtXgafv          :: !(Maybe Xgafv)
+    { _pbtXgafv :: !(Maybe Xgafv)
     , _pbtUploadProtocol :: !(Maybe Text)
-    , _pbtAccessToken    :: !(Maybe Text)
-    , _pbtUploadType     :: !(Maybe Text)
-    , _pbtPayload        :: !BeginTransactionRequest
-    , _pbtProjectId      :: !Text
-    , _pbtCallback       :: !(Maybe Text)
+    , _pbtAccessToken :: !(Maybe Text)
+    , _pbtUploadType :: !(Maybe Text)
+    , _pbtPayload :: !BeginTransactionRequest
+    , _pbtProjectId :: !Text
+    , _pbtCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

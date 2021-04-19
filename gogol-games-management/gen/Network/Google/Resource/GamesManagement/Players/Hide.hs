@@ -39,8 +39,8 @@ module Network.Google.Resource.GamesManagement.Players.Hide
     , phPlayerId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.players.hide@ method which the
 -- 'PlayersHide' request conforms to.
@@ -62,7 +62,7 @@ type PlayersHideResource =
 data PlayersHide =
   PlayersHide'
     { _phApplicationId :: !Text
-    , _phPlayerId      :: !Text
+    , _phPlayerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

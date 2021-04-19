@@ -16,7 +16,7 @@
 --
 module Network.Google.WebSecurityScanner.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. Indicates the error reason code.
 data ScanRunErrorTraceCode

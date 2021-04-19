@@ -37,8 +37,8 @@ module Network.Google.Resource.Blogger.PageViews.Get
     , pvgRange
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pageViews.get@ method which the
 -- 'PageViewsGet' request conforms to.
@@ -57,7 +57,7 @@ type PageViewsGetResource =
 data PageViewsGet =
   PageViewsGet'
     { _pvgBlogId :: !Text
-    , _pvgRange  :: !(Maybe [PageViewsGetRange])
+    , _pvgRange :: !(Maybe [PageViewsGetRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

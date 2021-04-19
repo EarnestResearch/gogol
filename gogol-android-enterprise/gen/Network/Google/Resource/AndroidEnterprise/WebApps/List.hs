@@ -36,8 +36,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.List
     , walEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.list@ method which the
 -- 'WebAppsList' request conforms to.

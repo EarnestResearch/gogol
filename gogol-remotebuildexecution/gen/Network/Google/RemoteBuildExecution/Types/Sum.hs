@@ -16,7 +16,7 @@
 --
 module Network.Google.RemoteBuildExecution.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 data BuildBazelRemoteExecutionV2ExecuteOperationMetadataStage
     = Unknown

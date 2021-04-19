@@ -17,8 +17,8 @@
 --
 module Network.Google.IAM.Types.Product where
 
-import           Network.Google.IAM.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.IAM.Types.Sum
+import Network.Google.Prelude
 
 -- | The response of a lint operation. An empty response indicates the
 -- operation was able to fully execute and no lint issue was found.
@@ -123,7 +123,7 @@ instance ToJSON UndeleteRoleRequest where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -178,9 +178,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -382,7 +382,7 @@ instance ToJSON Empty where
 data QueryTestablePermissionsResponse =
   QueryTestablePermissionsResponse'
     { _qtprNextPageToken :: !(Maybe Text)
-    , _qtprPermissions   :: !(Maybe [Permission])
+    , _qtprPermissions :: !(Maybe [Permission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -528,13 +528,13 @@ instance ToJSON QueryAuditableServicesResponse where
 -- /See:/ 'serviceAccountKey' smart constructor.
 data ServiceAccountKey =
   ServiceAccountKey'
-    { _sakValidAfterTime  :: !(Maybe DateTime')
-    , _sakPrivateKeyData  :: !(Maybe Bytes)
-    , _sakPublicKeyData   :: !(Maybe Bytes)
-    , _sakName            :: !(Maybe Text)
-    , _sakPrivateKeyType  :: !(Maybe ServiceAccountKeyPrivateKeyType)
+    { _sakValidAfterTime :: !(Maybe DateTime')
+    , _sakPrivateKeyData :: !(Maybe Bytes)
+    , _sakPublicKeyData :: !(Maybe Bytes)
+    , _sakName :: !(Maybe Text)
+    , _sakPrivateKeyType :: !(Maybe ServiceAccountKeyPrivateKeyType)
     , _sakValidBeforeTime :: !(Maybe DateTime')
-    , _sakKeyAlgorithm    :: !(Maybe ServiceAccountKeyKeyAlgorithm)
+    , _sakKeyAlgorithm :: !(Maybe ServiceAccountKeyKeyAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -655,12 +655,12 @@ instance ToJSON ServiceAccountKey where
 data LintResult =
   LintResult'
     { _lrValidationUnitName :: !(Maybe Text)
-    , _lrDebugMessage       :: !(Maybe Text)
-    , _lrLocationOffSet     :: !(Maybe (Textual Int32))
-    , _lrSeverity           :: !(Maybe LintResultSeverity)
-    , _lrBindingOrdinal     :: !(Maybe (Textual Int32))
-    , _lrFieldName          :: !(Maybe Text)
-    , _lrLevel              :: !(Maybe LintResultLevel)
+    , _lrDebugMessage :: !(Maybe Text)
+    , _lrLocationOffSet :: !(Maybe (Textual Int32))
+    , _lrSeverity :: !(Maybe LintResultSeverity)
+    , _lrBindingOrdinal :: !(Maybe (Textual Int32))
+    , _lrFieldName :: !(Maybe Text)
+    , _lrLevel :: !(Maybe LintResultLevel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -783,7 +783,7 @@ instance ToJSON LintResult where
 data CreateServiceAccountKeyRequest =
   CreateServiceAccountKeyRequest'
     { _csakrPrivateKeyType :: !(Maybe CreateServiceAccountKeyRequestPrivateKeyType)
-    , _csakrKeyAlgorithm   :: !(Maybe CreateServiceAccountKeyRequestKeyAlgorithm)
+    , _csakrKeyAlgorithm :: !(Maybe CreateServiceAccountKeyRequestKeyAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -838,7 +838,7 @@ instance ToJSON CreateServiceAccountKeyRequest where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -892,7 +892,7 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'signJwtResponse' smart constructor.
 data SignJwtResponse =
   SignJwtResponse'
-    { _sjrKeyId     :: !(Maybe Text)
+    { _sjrKeyId :: !(Maybe Text)
     , _sjrSignedJwt :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -940,9 +940,9 @@ instance ToJSON SignJwtResponse where
 -- /See:/ 'bindingDelta' smart constructor.
 data BindingDelta =
   BindingDelta'
-    { _bdAction    :: !(Maybe BindingDeltaAction)
-    , _bdRole      :: !(Maybe Text)
-    , _bdMember    :: !(Maybe Text)
+    { _bdAction :: !(Maybe BindingDeltaAction)
+    , _bdRole :: !(Maybe Text)
+    , _bdMember :: !(Maybe Text)
     , _bdCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1153,13 +1153,13 @@ instance ToJSON EnableServiceAccountRequest where
 -- /See:/ 'role'' smart constructor.
 data Role =
   Role'
-    { _rStage               :: !(Maybe RoleStage)
-    , _rEtag                :: !(Maybe Bytes)
+    { _rStage :: !(Maybe RoleStage)
+    , _rEtag :: !(Maybe Bytes)
     , _rIncludedPermissions :: !(Maybe [Text])
-    , _rName                :: !(Maybe Text)
-    , _rDeleted             :: !(Maybe Bool)
-    , _rTitle               :: !(Maybe Text)
-    , _rDescription         :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
+    , _rDeleted :: !(Maybe Bool)
+    , _rTitle :: !(Maybe Text)
+    , _rDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1279,14 +1279,14 @@ instance ToJSON Role where
 -- /See:/ 'serviceAccount' smart constructor.
 data ServiceAccount =
   ServiceAccount'
-    { _saEmail          :: !(Maybe Text)
-    , _saEtag           :: !(Maybe Bytes)
-    , _saDisabled       :: !(Maybe Bool)
-    , _saUniqueId       :: !(Maybe Text)
-    , _saName           :: !(Maybe Text)
-    , _saDisplayName    :: !(Maybe Text)
-    , _saProjectId      :: !(Maybe Text)
-    , _saDescription    :: !(Maybe Text)
+    { _saEmail :: !(Maybe Text)
+    , _saEtag :: !(Maybe Bytes)
+    , _saDisabled :: !(Maybe Bool)
+    , _saUniqueId :: !(Maybe Text)
+    , _saName :: !(Maybe Text)
+    , _saDisplayName :: !(Maybe Text)
+    , _saProjectId :: !(Maybe Text)
+    , _saDescription :: !(Maybe Text)
     , _saOAuth2ClientId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1421,8 +1421,8 @@ instance ToJSON ServiceAccount where
 data QueryTestablePermissionsRequest =
   QueryTestablePermissionsRequest'
     { _qtprFullResourceName :: !(Maybe Text)
-    , _qtprPageToken        :: !(Maybe Text)
-    , _qtprPageSize         :: !(Maybe (Textual Int32))
+    , _qtprPageToken :: !(Maybe Text)
+    , _qtprPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1490,7 +1490,7 @@ instance ToJSON QueryTestablePermissionsRequest where
 -- /See:/ 'queryGrantableRolesResponse' smart constructor.
 data QueryGrantableRolesResponse =
   QueryGrantableRolesResponse'
-    { _qgrrRoles         :: !(Maybe [Role])
+    { _qgrrRoles :: !(Maybe [Role])
     , _qgrrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1688,9 +1688,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1816,9 +1816,9 @@ instance ToJSON PolicyDelta where
 data QueryGrantableRolesRequest =
   QueryGrantableRolesRequest'
     { _qgrrFullResourceName :: !(Maybe Text)
-    , _qgrrView             :: !(Maybe QueryGrantableRolesRequestView)
-    , _qgrrPageToken        :: !(Maybe Text)
-    , _qgrrPageSize         :: !(Maybe (Textual Int32))
+    , _qgrrView :: !(Maybe QueryGrantableRolesRequestView)
+    , _qgrrPageToken :: !(Maybe Text)
+    , _qgrrPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1927,7 +1927,7 @@ instance ToJSON SignJwtRequest where
 -- /See:/ 'patchServiceAccountRequest' smart constructor.
 data PatchServiceAccountRequest =
   PatchServiceAccountRequest'
-    { _psarUpdateMask     :: !(Maybe GFieldMask)
+    { _psarUpdateMask :: !(Maybe GFieldMask)
     , _psarServiceAccount :: !(Maybe ServiceAccount)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1980,7 +1980,7 @@ instance ToJSON PatchServiceAccountRequest where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2033,13 +2033,13 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'permission' smart constructor.
 data Permission =
   Permission'
-    { _perStage                   :: !(Maybe PermissionStage)
-    , _perOnlyInPredefinedRoles   :: !(Maybe Bool)
+    { _perStage :: !(Maybe PermissionStage)
+    , _perOnlyInPredefinedRoles :: !(Maybe Bool)
     , _perCustomRolesSupportLevel :: !(Maybe PermissionCustomRolesSupportLevel)
-    , _perName                    :: !(Maybe Text)
-    , _perTitle                   :: !(Maybe Text)
-    , _perAPIdisabled             :: !(Maybe Bool)
-    , _perDescription             :: !(Maybe Text)
+    , _perName :: !(Maybe Text)
+    , _perTitle :: !(Maybe Text)
+    , _perAPIdisabled :: !(Maybe Bool)
+    , _perDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2142,7 +2142,7 @@ instance ToJSON Permission where
 data SignBlobResponse =
   SignBlobResponse'
     { _sbrSignature :: !(Maybe Bytes)
-    , _sbrKeyId     :: !(Maybe Text)
+    , _sbrKeyId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2190,7 +2190,7 @@ instance ToJSON SignBlobResponse where
 data ListServiceAccountsResponse =
   ListServiceAccountsResponse'
     { _lsarNextPageToken :: !(Maybe Text)
-    , _lsarAccounts      :: !(Maybe [ServiceAccount])
+    , _lsarAccounts :: !(Maybe [ServiceAccount])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2244,11 +2244,11 @@ instance ToJSON ListServiceAccountsResponse where
 -- /See:/ 'lintPolicyRequest' smart constructor.
 data LintPolicyRequest =
   LintPolicyRequest'
-    { _lprContext          :: !(Maybe LintPolicyRequestContext)
+    { _lprContext :: !(Maybe LintPolicyRequestContext)
     , _lprFullResourceName :: !(Maybe Text)
-    , _lprPolicy           :: !(Maybe Policy)
-    , _lprCondition        :: !(Maybe Expr)
-    , _lprBinding          :: !(Maybe Binding)
+    , _lprPolicy :: !(Maybe Policy)
+    , _lprCondition :: !(Maybe Expr)
+    , _lprBinding :: !(Maybe Binding)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2342,7 +2342,7 @@ instance ToJSON LintPolicyRequest where
 -- /See:/ 'listRolesResponse' smart constructor.
 data ListRolesResponse =
   ListRolesResponse'
-    { _lrrRoles         :: !(Maybe [Role])
+    { _lrrRoles :: !(Maybe [Role])
     , _lrrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2396,7 +2396,7 @@ instance ToJSON ListRolesResponse where
 data CreateServiceAccountRequest =
   CreateServiceAccountRequest'
     { _csarServiceAccount :: !(Maybe ServiceAccount)
-    , _csarAccountId      :: !(Maybe Text)
+    , _csarAccountId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2451,7 +2451,7 @@ instance ToJSON CreateServiceAccountRequest where
 data CreateRoleRequest =
   CreateRoleRequest'
     { _crrRoleId :: !(Maybe Text)
-    , _crrRole   :: !(Maybe Role)
+    , _crrRole :: !(Maybe Role)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2497,8 +2497,8 @@ instance ToJSON CreateRoleRequest where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

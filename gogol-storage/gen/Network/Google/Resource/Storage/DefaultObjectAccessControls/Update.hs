@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.Update
     , doacuEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.update@ method which the
 -- 'DefaultObjectAccessControlsUpdate' request conforms to.
@@ -61,10 +61,10 @@ type DefaultObjectAccessControlsUpdateResource =
 -- /See:/ 'defaultObjectAccessControlsUpdate' smart constructor.
 data DefaultObjectAccessControlsUpdate =
   DefaultObjectAccessControlsUpdate'
-    { _doacuBucket      :: !Text
-    , _doacuPayload     :: !ObjectAccessControl
+    { _doacuBucket :: !Text
+    , _doacuPayload :: !ObjectAccessControl
     , _doacuUserProject :: !(Maybe Text)
-    , _doacuEntity      :: !Text
+    , _doacuEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.SQL.Instances.Patch
     , ipInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.patch@ method which the
 -- 'InstancesPatch' request conforms to.
@@ -65,8 +65,8 @@ type InstancesPatchResource =
 -- /See:/ 'instancesPatch' smart constructor.
 data InstancesPatch =
   InstancesPatch'
-    { _ipProject  :: !Text
-    , _ipPayload  :: !DatabaseInstance
+    { _ipProject :: !Text
+    , _ipPayload :: !DatabaseInstance
     , _ipInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Unb
     , plrgudfgCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.unbindDeviceFromGateway@ method which the
 -- 'ProjectsLocationsRegistriesGroupsUnbindDeviceFromGateway' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsRegistriesGroupsUnbindDeviceFromGatewayResource
 -- /See:/ 'projectsLocationsRegistriesGroupsUnbindDeviceFromGateway' smart constructor.
 data ProjectsLocationsRegistriesGroupsUnbindDeviceFromGateway =
   ProjectsLocationsRegistriesGroupsUnbindDeviceFromGateway'
-    { _plrgudfgParent         :: !Text
-    , _plrgudfgXgafv          :: !(Maybe Xgafv)
+    { _plrgudfgParent :: !Text
+    , _plrgudfgXgafv :: !(Maybe Xgafv)
     , _plrgudfgUploadProtocol :: !(Maybe Text)
-    , _plrgudfgAccessToken    :: !(Maybe Text)
-    , _plrgudfgUploadType     :: !(Maybe Text)
-    , _plrgudfgPayload        :: !UnbindDeviceFromGatewayRequest
-    , _plrgudfgCallback       :: !(Maybe Text)
+    , _plrgudfgAccessToken :: !(Maybe Text)
+    , _plrgudfgUploadType :: !(Maybe Text)
+    , _plrgudfgPayload :: !UnbindDeviceFromGatewayRequest
+    , _plrgudfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -224,19 +224,19 @@ module Network.Google.FirebaseRules
     , urrRelease
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.Create
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.Delete
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.Get
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.GetExecutable
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.List
-import           Network.Google.Resource.FirebaseRules.Projects.Releases.Patch
-import           Network.Google.Resource.FirebaseRules.Projects.Rulesets.Create
-import           Network.Google.Resource.FirebaseRules.Projects.Rulesets.Delete
-import           Network.Google.Resource.FirebaseRules.Projects.Rulesets.Get
-import           Network.Google.Resource.FirebaseRules.Projects.Rulesets.List
-import           Network.Google.Resource.FirebaseRules.Projects.Test
+import Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Resource.FirebaseRules.Projects.Releases.Create
+import Network.Google.Resource.FirebaseRules.Projects.Releases.Delete
+import Network.Google.Resource.FirebaseRules.Projects.Releases.Get
+import Network.Google.Resource.FirebaseRules.Projects.Releases.GetExecutable
+import Network.Google.Resource.FirebaseRules.Projects.Releases.List
+import Network.Google.Resource.FirebaseRules.Projects.Releases.Patch
+import Network.Google.Resource.FirebaseRules.Projects.Rulesets.Create
+import Network.Google.Resource.FirebaseRules.Projects.Rulesets.Delete
+import Network.Google.Resource.FirebaseRules.Projects.Rulesets.Get
+import Network.Google.Resource.FirebaseRules.Projects.Rulesets.List
+import Network.Google.Resource.FirebaseRules.Projects.Test
 
 {- $resources
 TODO

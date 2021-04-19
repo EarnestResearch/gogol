@@ -43,8 +43,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.SetIAMPoli
     , pasipCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.setIamPolicy@ method which the
 -- 'ProjectsAttestorsSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAttestorsSetIAMPolicyResource =
 -- /See:/ 'projectsAttestorsSetIAMPolicy' smart constructor.
 data ProjectsAttestorsSetIAMPolicy =
   ProjectsAttestorsSetIAMPolicy'
-    { _pasipXgafv          :: !(Maybe Xgafv)
+    { _pasipXgafv :: !(Maybe Xgafv)
     , _pasipUploadProtocol :: !(Maybe Text)
-    , _pasipAccessToken    :: !(Maybe Text)
-    , _pasipUploadType     :: !(Maybe Text)
-    , _pasipPayload        :: !SetIAMPolicyRequest
-    , _pasipResource       :: !Text
-    , _pasipCallback       :: !(Maybe Text)
+    , _pasipAccessToken :: !(Maybe Text)
+    , _pasipUploadType :: !(Maybe Text)
+    , _pasipPayload :: !SetIAMPolicyRequest
+    , _pasipResource :: !Text
+    , _pasipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

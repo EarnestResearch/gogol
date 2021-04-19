@@ -45,8 +45,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Builds.List
     , pblCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.builds.list@ method which the
 -- 'ProjectsBuildsList' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsBuildsListResource =
 -- /See:/ 'projectsBuildsList' smart constructor.
 data ProjectsBuildsList =
   ProjectsBuildsList'
-    { _pblXgafv          :: !(Maybe Xgafv)
+    { _pblXgafv :: !(Maybe Xgafv)
     , _pblUploadProtocol :: !(Maybe Text)
-    , _pblAccessToken    :: !(Maybe Text)
-    , _pblUploadType     :: !(Maybe Text)
-    , _pblFilter         :: !(Maybe Text)
-    , _pblPageToken      :: !(Maybe Text)
-    , _pblProjectId      :: !Text
-    , _pblPageSize       :: !(Maybe (Textual Int32))
-    , _pblCallback       :: !(Maybe Text)
+    , _pblAccessToken :: !(Maybe Text)
+    , _pblUploadType :: !(Maybe Text)
+    , _pblFilter :: !(Maybe Text)
+    , _pblPageToken :: !(Maybe Text)
+    , _pblProjectId :: !Text
+    , _pblPageSize :: !(Maybe (Textual Int32))
+    , _pblCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

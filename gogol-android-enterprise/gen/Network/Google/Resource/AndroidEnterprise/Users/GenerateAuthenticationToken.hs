@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.GenerateAuthenticationTok
     , ugatUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.generateAuthenticationToken@ method which the
 -- 'UsersGenerateAuthenticationToken' request conforms to.
@@ -67,7 +67,7 @@ type UsersGenerateAuthenticationTokenResource =
 data UsersGenerateAuthenticationToken =
   UsersGenerateAuthenticationToken'
     { _ugatEnterpriseId :: !Text
-    , _ugatUserId       :: !Text
+    , _ugatUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Script.Projects.GetMetrics
     , pgmCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Script.Types
+import Network.Google.Prelude
+import Network.Google.Script.Types
 
 -- | A resource alias for @script.projects.getMetrics@ method which the
 -- 'ProjectsGetMetrics' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsGetMetricsResource =
 -- /See:/ 'projectsGetMetrics' smart constructor.
 data ProjectsGetMetrics =
   ProjectsGetMetrics'
-    { _pgmXgafv                     :: !(Maybe Xgafv)
-    , _pgmUploadProtocol            :: !(Maybe Text)
-    , _pgmAccessToken               :: !(Maybe Text)
-    , _pgmUploadType                :: !(Maybe Text)
-    , _pgmMetricsGranularity        :: !(Maybe Text)
-    , _pgmScriptId                  :: !Text
+    { _pgmXgafv :: !(Maybe Xgafv)
+    , _pgmUploadProtocol :: !(Maybe Text)
+    , _pgmAccessToken :: !(Maybe Text)
+    , _pgmUploadType :: !(Maybe Text)
+    , _pgmMetricsGranularity :: !(Maybe Text)
+    , _pgmScriptId :: !Text
     , _pgmMetricsFilterDeploymentId :: !(Maybe Text)
-    , _pgmCallback                  :: !(Maybe Text)
+    , _pgmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

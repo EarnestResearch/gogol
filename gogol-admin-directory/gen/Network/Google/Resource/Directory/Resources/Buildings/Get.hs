@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Buildings.Get
     , rbgCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.buildings.get@ method which the
 -- 'ResourcesBuildingsGet' request conforms to.
@@ -59,7 +59,7 @@ type ResourcesBuildingsGetResource =
 data ResourcesBuildingsGet =
   ResourcesBuildingsGet'
     { _rbgBuildingId :: !Text
-    , _rbgCustomer   :: !Text
+    , _rbgCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

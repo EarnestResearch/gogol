@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Firewalls.List
     , flMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.firewalls.list@ method which the
 -- 'FirewallsList' request conforms to.
@@ -63,10 +63,10 @@ type FirewallsListResource =
 -- /See:/ 'firewallsList' smart constructor.
 data FirewallsList =
   FirewallsList'
-    { _flOrderBy    :: !(Maybe Text)
-    , _flProject    :: !Text
-    , _flFilter     :: !(Maybe Text)
-    , _flPageToken  :: !(Maybe Text)
+    { _flOrderBy :: !(Maybe Text)
+    , _flProject :: !Text
+    , _flFilter :: !(Maybe Text)
+    , _flPageToken :: !(Maybe Text)
     , _flMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -17,16 +17,16 @@
 --
 module Network.Google.Compute.Types.Product where
 
-import           Network.Google.Compute.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Compute.Types.Sum
+import Network.Google.Prelude
 
 -- | [Output Only] Informational warning message.
 --
 -- /See:/ 'instanceAggregatedListWarning' smart constructor.
 data InstanceAggregatedListWarning =
   InstanceAggregatedListWarning'
-    { _ialwData    :: !(Maybe [InstanceAggregatedListWarningDataItem])
-    , _ialwCode    :: !(Maybe InstanceAggregatedListWarningCode)
+    { _ialwData :: !(Maybe [InstanceAggregatedListWarningDataItem])
+    , _ialwCode :: !(Maybe InstanceAggregatedListWarningCode)
     , _ialwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -89,11 +89,11 @@ instance ToJSON InstanceAggregatedListWarning where
 data TargetHTTPSProxyList =
   TargetHTTPSProxyList'
     { _thplNextPageToken :: !(Maybe Text)
-    , _thplKind          :: !Text
-    , _thplItems         :: !(Maybe [TargetHTTPSProxy])
-    , _thplSelfLink      :: !(Maybe Text)
-    , _thplWarning       :: !(Maybe TargetHTTPSProxyListWarning)
-    , _thplId            :: !(Maybe Text)
+    , _thplKind :: !Text
+    , _thplItems :: !(Maybe [TargetHTTPSProxy])
+    , _thplSelfLink :: !(Maybe Text)
+    , _thplWarning :: !(Maybe TargetHTTPSProxyListWarning)
+    , _thplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -239,7 +239,7 @@ instance ToJSON RoutersScopedList where
 -- /See:/ 'routerStatusResponse' smart constructor.
 data RouterStatusResponse =
   RouterStatusResponse'
-    { _rsrKind   :: !Text
+    { _rsrKind :: !Text
     , _rsrResult :: !(Maybe RouterStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -334,9 +334,9 @@ instance ToJSON
 -- /See:/ 'interconnectDiagnosticsLinkLACPStatus' smart constructor.
 data InterconnectDiagnosticsLinkLACPStatus =
   InterconnectDiagnosticsLinkLACPStatus'
-    { _idllacpsState            :: !(Maybe InterconnectDiagnosticsLinkLACPStatusState)
+    { _idllacpsState :: !(Maybe InterconnectDiagnosticsLinkLACPStatusState)
     , _idllacpsNeighborSystemId :: !(Maybe Text)
-    , _idllacpsGoogleSystemId   :: !(Maybe Text)
+    , _idllacpsGoogleSystemId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -402,7 +402,7 @@ instance ToJSON InterconnectDiagnosticsLinkLACPStatus
 data AddressesScopedList =
   AddressesScopedList'
     { _aslAddresses :: !(Maybe [Address])
-    , _aslWarning   :: !(Maybe AddressesScopedListWarning)
+    , _aslWarning :: !(Maybe AddressesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -452,7 +452,7 @@ instance ToJSON AddressesScopedList where
 data OperationWarningsItemDataItem =
   OperationWarningsItemDataItem'
     { _owidiValue :: !(Maybe Text)
-    , _owidiKey   :: !(Maybe Text)
+    , _owidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -503,10 +503,10 @@ instance ToJSON OperationWarningsItemDataItem where
 -- /See:/ 'instanceGroupManagerUpdatePolicy' smart constructor.
 data InstanceGroupManagerUpdatePolicy =
   InstanceGroupManagerUpdatePolicy'
-    { _igmupMaxSurge       :: !(Maybe FixedOrPercent)
+    { _igmupMaxSurge :: !(Maybe FixedOrPercent)
     , _igmupMaxUnavailable :: !(Maybe FixedOrPercent)
-    , _igmupMinimalAction  :: !(Maybe InstanceGroupManagerUpdatePolicyMinimalAction)
-    , _igmupType           :: !(Maybe InstanceGroupManagerUpdatePolicyType)
+    , _igmupMinimalAction :: !(Maybe InstanceGroupManagerUpdatePolicyMinimalAction)
+    , _igmupType :: !(Maybe InstanceGroupManagerUpdatePolicyType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -602,7 +602,7 @@ instance ToJSON InstanceGroupManagerUpdatePolicy
 data RegionInstanceGroupsListInstancesRequest =
   RegionInstanceGroupsListInstancesRequest'
     { _riglirInstanceState :: !(Maybe RegionInstanceGroupsListInstancesRequestInstanceState)
-    , _riglirPortName      :: !(Maybe Text)
+    , _riglirPortName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -660,8 +660,8 @@ instance ToJSON
 -- /See:/ 'backendServiceAggregatedListWarning' smart constructor.
 data BackendServiceAggregatedListWarning =
   BackendServiceAggregatedListWarning'
-    { _bsalwData    :: !(Maybe [BackendServiceAggregatedListWarningDataItem])
-    , _bsalwCode    :: !(Maybe BackendServiceAggregatedListWarningCode)
+    { _bsalwData :: !(Maybe [BackendServiceAggregatedListWarningDataItem])
+    , _bsalwCode :: !(Maybe BackendServiceAggregatedListWarningCode)
     , _bsalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -730,18 +730,18 @@ instance ToJSON BackendServiceAggregatedListWarning
 -- /See:/ 'sslPolicy' smart constructor.
 data SSLPolicy =
   SSLPolicy'
-    { _spKind              :: !Text
-    , _spFingerprint       :: !(Maybe Bytes)
-    , _spProFile           :: !(Maybe SSLPolicyProFile)
-    , _spWarnings          :: !(Maybe [SSLPolicyWarningsItem])
-    , _spCustomFeatures    :: !(Maybe [Text])
-    , _spSelfLink          :: !(Maybe Text)
-    , _spName              :: !(Maybe Text)
+    { _spKind :: !Text
+    , _spFingerprint :: !(Maybe Bytes)
+    , _spProFile :: !(Maybe SSLPolicyProFile)
+    , _spWarnings :: !(Maybe [SSLPolicyWarningsItem])
+    , _spCustomFeatures :: !(Maybe [Text])
+    , _spSelfLink :: !(Maybe Text)
+    , _spName :: !(Maybe Text)
     , _spCreationTimestamp :: !(Maybe Text)
-    , _spEnabledFeatures   :: !(Maybe [Text])
-    , _spId                :: !(Maybe (Textual Word64))
-    , _spMinTLSVersion     :: !(Maybe SSLPolicyMinTLSVersion)
-    , _spDescription       :: !(Maybe Text)
+    , _spEnabledFeatures :: !(Maybe [Text])
+    , _spId :: !(Maybe (Textual Word64))
+    , _spMinTLSVersion :: !(Maybe SSLPolicyMinTLSVersion)
+    , _spDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -925,7 +925,7 @@ instance ToJSON SSLPolicy where
 data BackendServiceListWarningDataItem =
   BackendServiceListWarningDataItem'
     { _bslwdiValue :: !(Maybe Text)
-    , _bslwdiKey   :: !(Maybe Text)
+    , _bslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -981,7 +981,7 @@ instance ToJSON BackendServiceListWarningDataItem
 data FirewallDeniedItem =
   FirewallDeniedItem'
     { _fdiIPProtocol :: !(Maybe Text)
-    , _fdiPorts      :: !(Maybe [Text])
+    , _fdiPorts :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1162,7 +1162,7 @@ instance ToJSON DiskTypeAggregatedListItems where
 -- /See:/ 'instancesSetLabelsRequest' smart constructor.
 data InstancesSetLabelsRequest =
   InstancesSetLabelsRequest'
-    { _islrLabels           :: !(Maybe InstancesSetLabelsRequestLabels)
+    { _islrLabels :: !(Maybe InstancesSetLabelsRequestLabels)
     , _islrLabelFingerprint :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1215,11 +1215,11 @@ instance ToJSON InstancesSetLabelsRequest where
 data RouterAggregatedList =
   RouterAggregatedList'
     { _ralNextPageToken :: !(Maybe Text)
-    , _ralKind          :: !Text
-    , _ralItems         :: !(Maybe RouterAggregatedListItems)
-    , _ralSelfLink      :: !(Maybe Text)
-    , _ralWarning       :: !(Maybe RouterAggregatedListWarning)
-    , _ralId            :: !(Maybe Text)
+    , _ralKind :: !Text
+    , _ralItems :: !(Maybe RouterAggregatedListItems)
+    , _ralSelfLink :: !(Maybe Text)
+    , _ralWarning :: !(Maybe RouterAggregatedListWarning)
+    , _ralId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1313,11 +1313,11 @@ instance ToJSON RouterAggregatedList where
 data FirewallList =
   FirewallList'
     { _flNextPageToken :: !(Maybe Text)
-    , _flKind          :: !Text
-    , _flItems         :: !(Maybe [Firewall])
-    , _flSelfLink      :: !(Maybe Text)
-    , _flWarning       :: !(Maybe FirewallListWarning)
-    , _flId            :: !(Maybe Text)
+    , _flKind :: !Text
+    , _flItems :: !(Maybe [Firewall])
+    , _flSelfLink :: !(Maybe Text)
+    , _flWarning :: !(Maybe FirewallListWarning)
+    , _flId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1412,8 +1412,8 @@ instance ToJSON FirewallList where
 -- /See:/ 'instancesScopedListWarning' smart constructor.
 data InstancesScopedListWarning =
   InstancesScopedListWarning'
-    { _islwData    :: !(Maybe [InstancesScopedListWarningDataItem])
-    , _islwCode    :: !(Maybe InstancesScopedListWarningCode)
+    { _islwData :: !(Maybe [InstancesScopedListWarningDataItem])
+    , _islwCode :: !(Maybe InstancesScopedListWarningCode)
     , _islwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1559,8 +1559,8 @@ instance ToJSON InstanceLabels where
 -- /See:/ 'backendServicesScopedListWarning' smart constructor.
 data BackendServicesScopedListWarning =
   BackendServicesScopedListWarning'
-    { _bsslwData    :: !(Maybe [BackendServicesScopedListWarningDataItem])
-    , _bsslwCode    :: !(Maybe BackendServicesScopedListWarningCode)
+    { _bsslwData :: !(Maybe [BackendServicesScopedListWarningDataItem])
+    , _bsslwCode :: !(Maybe BackendServicesScopedListWarningCode)
     , _bsslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1627,7 +1627,7 @@ instance ToJSON BackendServicesScopedListWarning
 data SecurityPolicyRuleMatcher =
   SecurityPolicyRuleMatcher'
     { _sprmVersionedExpr :: !(Maybe SecurityPolicyRuleMatcherVersionedExpr)
-    , _sprmConfig        :: !(Maybe SecurityPolicyRuleMatcherConfig)
+    , _sprmConfig :: !(Maybe SecurityPolicyRuleMatcherConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1682,11 +1682,11 @@ instance ToJSON SecurityPolicyRuleMatcher where
 data InstanceGroupList =
   InstanceGroupList'
     { _iglNextPageToken :: !(Maybe Text)
-    , _iglKind          :: !Text
-    , _iglItems         :: !(Maybe [InstanceGroup])
-    , _iglSelfLink      :: !(Maybe Text)
-    , _iglWarning       :: !(Maybe InstanceGroupListWarning)
-    , _iglId            :: !(Maybe Text)
+    , _iglKind :: !Text
+    , _iglItems :: !(Maybe [InstanceGroup])
+    , _iglSelfLink :: !(Maybe Text)
+    , _iglWarning :: !(Maybe InstanceGroupListWarning)
+    , _iglId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1825,7 +1825,7 @@ instance ToJSON InstancesSetMachineTypeRequest where
 -- /See:/ 'vMEndpointNATMAppings' smart constructor.
 data VMEndpointNATMAppings =
   VMEndpointNATMAppings'
-    { _vmenatmaInstanceName         :: !(Maybe Text)
+    { _vmenatmaInstanceName :: !(Maybe Text)
     , _vmenatmaInterfaceNATMAppings :: !(Maybe [VMEndpointNATMAppingsInterfaceNATMAppings])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1880,8 +1880,8 @@ instance ToJSON VMEndpointNATMAppings where
 data CustomerEncryptionKey =
   CustomerEncryptionKey'
     { _cekKmsKeyName :: !(Maybe Text)
-    , _cekSha256     :: !(Maybe Text)
-    , _cekRawKey     :: !(Maybe Text)
+    , _cekSha256 :: !(Maybe Text)
+    , _cekRawKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1980,7 +1980,7 @@ instance ToJSON AutoscalerAggregatedListItems where
 data InstanceListWarningDataItem =
   InstanceListWarningDataItem'
     { _ilwdiValue :: !(Maybe Text)
-    , _ilwdiKey   :: !(Maybe Text)
+    , _ilwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2081,11 +2081,11 @@ instance ToJSON
 -- /See:/ 'deprecationStatus' smart constructor.
 data DeprecationStatus =
   DeprecationStatus'
-    { _dsState       :: !(Maybe DeprecationStatusState)
-    , _dsDeleted     :: !(Maybe Text)
+    { _dsState :: !(Maybe DeprecationStatusState)
+    , _dsDeleted :: !(Maybe Text)
     , _dsReplacement :: !(Maybe Text)
-    , _dsObsolete    :: !(Maybe Text)
-    , _dsDeprecated  :: !(Maybe Text)
+    , _dsObsolete :: !(Maybe Text)
+    , _dsDeprecated :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2179,7 +2179,7 @@ instance ToJSON DeprecationStatus where
 data HTTPSHealthCheckListWarningDataItem =
   HTTPSHealthCheckListWarningDataItem'
     { _hhclwdiValue :: !(Maybe Text)
-    , _hhclwdiKey   :: !(Maybe Text)
+    , _hhclwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2236,25 +2236,25 @@ instance ToJSON HTTPSHealthCheckListWarningDataItem
 -- /See:/ 'snapshot' smart constructor.
 data Snapshot =
   Snapshot'
-    { _sStorageBytesStatus      :: !(Maybe SnapshotStorageBytesStatus)
-    , _sStatus                  :: !(Maybe SnapshotStatus)
-    , _sDiskSizeGb              :: !(Maybe (Textual Int64))
-    , _sSourceDiskId            :: !(Maybe Text)
-    , _sKind                    :: !Text
+    { _sStorageBytesStatus :: !(Maybe SnapshotStorageBytesStatus)
+    , _sStatus :: !(Maybe SnapshotStatus)
+    , _sDiskSizeGb :: !(Maybe (Textual Int64))
+    , _sSourceDiskId :: !(Maybe Text)
+    , _sKind :: !Text
     , _sSourceDiskEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _sStorageBytes            :: !(Maybe (Textual Int64))
-    , _sSelfLink                :: !(Maybe Text)
-    , _sSnapshotEncryptionKey   :: !(Maybe CustomerEncryptionKey)
-    , _sName                    :: !(Maybe Text)
-    , _sStorageLocations        :: !(Maybe [Text])
-    , _sCreationTimestamp       :: !(Maybe Text)
-    , _sLicenseCodes            :: !(Maybe [Textual Int64])
-    , _sId                      :: !(Maybe (Textual Word64))
-    , _sLabels                  :: !(Maybe SnapshotLabels)
-    , _sLicenses                :: !(Maybe [Text])
-    , _sSourceDisk              :: !(Maybe Text)
-    , _sLabelFingerprint        :: !(Maybe Bytes)
-    , _sDescription             :: !(Maybe Text)
+    , _sStorageBytes :: !(Maybe (Textual Int64))
+    , _sSelfLink :: !(Maybe Text)
+    , _sSnapshotEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _sName :: !(Maybe Text)
+    , _sStorageLocations :: !(Maybe [Text])
+    , _sCreationTimestamp :: !(Maybe Text)
+    , _sLicenseCodes :: !(Maybe [Textual Int64])
+    , _sId :: !(Maybe (Textual Word64))
+    , _sLabels :: !(Maybe SnapshotLabels)
+    , _sLicenses :: !(Maybe [Text])
+    , _sSourceDisk :: !(Maybe Text)
+    , _sLabelFingerprint :: !(Maybe Bytes)
+    , _sDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2526,10 +2526,10 @@ instance ToJSON Snapshot where
 data RouterStatus =
   RouterStatus'
     { _rsBestRoutesForRouter :: !(Maybe [Route])
-    , _rsBGPPeerStatus       :: !(Maybe [RouterStatusBGPPeerStatus])
-    , _rsNetwork             :: !(Maybe Text)
-    , _rsNATStatus           :: !(Maybe [RouterStatusNATStatus])
-    , _rsBestRoutes          :: !(Maybe [Route])
+    , _rsBGPPeerStatus :: !(Maybe [RouterStatusBGPPeerStatus])
+    , _rsNetwork :: !(Maybe Text)
+    , _rsNATStatus :: !(Maybe [RouterStatusNATStatus])
+    , _rsBestRoutes :: !(Maybe [Route])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2619,8 +2619,8 @@ instance ToJSON RouterStatus where
 -- /See:/ 'autoscalingPolicyCustomMetricUtilization' smart constructor.
 data AutoscalingPolicyCustomMetricUtilization =
   AutoscalingPolicyCustomMetricUtilization'
-    { _apcmuUtilizationTarget     :: !(Maybe (Textual Double))
-    , _apcmuMetric                :: !(Maybe Text)
+    { _apcmuUtilizationTarget :: !(Maybe (Textual Double))
+    , _apcmuMetric :: !(Maybe Text)
     , _apcmuUtilizationTargetType :: !(Maybe AutoscalingPolicyCustomMetricUtilizationUtilizationTargetType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2701,11 +2701,11 @@ instance ToJSON
 data ForwardingRuleList =
   ForwardingRuleList'
     { _frlNextPageToken :: !(Maybe Text)
-    , _frlKind          :: !Text
-    , _frlItems         :: !(Maybe [ForwardingRule])
-    , _frlSelfLink      :: !(Maybe Text)
-    , _frlWarning       :: !(Maybe ForwardingRuleListWarning)
-    , _frlId            :: !(Maybe Text)
+    , _frlKind :: !Text
+    , _frlItems :: !(Maybe [ForwardingRule])
+    , _frlSelfLink :: !(Maybe Text)
+    , _frlWarning :: !(Maybe ForwardingRuleListWarning)
+    , _frlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2804,16 +2804,16 @@ instance ToJSON ForwardingRuleList where
 -- /See:/ 'nodeGroup' smart constructor.
 data NodeGroup =
   NodeGroup'
-    { _ngStatus            :: !(Maybe NodeGroupStatus)
-    , _ngSize              :: !(Maybe (Textual Int32))
-    , _ngKind              :: !Text
-    , _ngZone              :: !(Maybe Text)
-    , _ngSelfLink          :: !(Maybe Text)
-    , _ngName              :: !(Maybe Text)
+    { _ngStatus :: !(Maybe NodeGroupStatus)
+    , _ngSize :: !(Maybe (Textual Int32))
+    , _ngKind :: !Text
+    , _ngZone :: !(Maybe Text)
+    , _ngSelfLink :: !(Maybe Text)
+    , _ngName :: !(Maybe Text)
     , _ngCreationTimestamp :: !(Maybe Text)
-    , _ngId                :: !(Maybe (Textual Word64))
-    , _ngNodeTemplate      :: !(Maybe Text)
-    , _ngDescription       :: !(Maybe Text)
+    , _ngId :: !(Maybe (Textual Word64))
+    , _ngNodeTemplate :: !(Maybe Text)
+    , _ngDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2952,7 +2952,7 @@ instance ToJSON NodeGroup where
 data VPNTunnelsScopedList =
   VPNTunnelsScopedList'
     { _vtslVPNTunnels :: !(Maybe [VPNTunnel])
-    , _vtslWarning    :: !(Maybe VPNTunnelsScopedListWarning)
+    , _vtslWarning :: !(Maybe VPNTunnelsScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3004,7 +3004,7 @@ instance ToJSON VPNTunnelsScopedList where
 -- /See:/ 'subnetworkSecondaryRange' smart constructor.
 data SubnetworkSecondaryRange =
   SubnetworkSecondaryRange'
-    { _ssrRangeName   :: !(Maybe Text)
+    { _ssrRangeName :: !(Maybe Text)
     , _ssrIPCIdRRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3059,7 +3059,7 @@ instance ToJSON SubnetworkSecondaryRange where
 data NodeTypesScopedList =
   NodeTypesScopedList'
     { _ntslNodeTypes :: !(Maybe [NodeType])
-    , _ntslWarning   :: !(Maybe NodeTypesScopedListWarning)
+    , _ntslWarning :: !(Maybe NodeTypesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3110,8 +3110,8 @@ instance ToJSON NodeTypesScopedList where
 -- /See:/ 'regionInstanceGroupsListInstancesWarning' smart constructor.
 data RegionInstanceGroupsListInstancesWarning =
   RegionInstanceGroupsListInstancesWarning'
-    { _rigliwData    :: !(Maybe [RegionInstanceGroupsListInstancesWarningDataItem])
-    , _rigliwCode    :: !(Maybe RegionInstanceGroupsListInstancesWarningCode)
+    { _rigliwData :: !(Maybe [RegionInstanceGroupsListInstancesWarningDataItem])
+    , _rigliwCode :: !(Maybe RegionInstanceGroupsListInstancesWarningCode)
     , _rigliwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3245,7 +3245,7 @@ instance ToJSON
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     , _acExemptedMembers :: !(Maybe [Text])
     }
@@ -3316,7 +3316,7 @@ instance ToJSON AuditConfig where
 data AcceleratorTypeAggregatedListWarningDataItem =
   AcceleratorTypeAggregatedListWarningDataItem'
     { _atalwdiValue :: !(Maybe Text)
-    , _atalwdiKey   :: !(Maybe Text)
+    , _atalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3376,7 +3376,7 @@ instance ToJSON
 data InstanceGroupsSetNamedPortsRequest =
   InstanceGroupsSetNamedPortsRequest'
     { _igsnprFingerprint :: !(Maybe Bytes)
-    , _igsnprNamedPorts  :: !(Maybe [NamedPort])
+    , _igsnprNamedPorts :: !(Maybe [NamedPort])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3479,11 +3479,11 @@ instance ToJSON NodeTemplateNodeAffinityLabels where
 data OperationList =
   OperationList'
     { _olNextPageToken :: !(Maybe Text)
-    , _olKind          :: !Text
-    , _olItems         :: !(Maybe [Operation])
-    , _olSelfLink      :: !(Maybe Text)
-    , _olWarning       :: !(Maybe OperationListWarning)
-    , _olId            :: !(Maybe Text)
+    , _olKind :: !Text
+    , _olItems :: !(Maybe [Operation])
+    , _olSelfLink :: !(Maybe Text)
+    , _olWarning :: !(Maybe OperationListWarning)
+    , _olId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3578,8 +3578,8 @@ instance ToJSON OperationList where
 -- /See:/ 'nodeGroupListWarning' smart constructor.
 data NodeGroupListWarning =
   NodeGroupListWarning'
-    { _nglwData    :: !(Maybe [NodeGroupListWarningDataItem])
-    , _nglwCode    :: !(Maybe NodeGroupListWarningCode)
+    { _nglwData :: !(Maybe [NodeGroupListWarningDataItem])
+    , _nglwCode :: !(Maybe NodeGroupListWarningCode)
     , _nglwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3642,11 +3642,11 @@ instance ToJSON NodeGroupListWarning where
 data DiskList =
   DiskList'
     { _dlNextPageToken :: !(Maybe Text)
-    , _dlKind          :: !Text
-    , _dlItems         :: !(Maybe [Disk])
-    , _dlSelfLink      :: !(Maybe Text)
-    , _dlWarning       :: !(Maybe DiskListWarning)
-    , _dlId            :: !(Maybe Text)
+    , _dlKind :: !Text
+    , _dlItems :: !(Maybe [Disk])
+    , _dlSelfLink :: !(Maybe Text)
+    , _dlWarning :: !(Maybe DiskListWarning)
+    , _dlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3740,8 +3740,8 @@ instance ToJSON DiskList where
 -- /See:/ 'networkEndpointGroupsListNetworkEndpointsWarning' smart constructor.
 data NetworkEndpointGroupsListNetworkEndpointsWarning =
   NetworkEndpointGroupsListNetworkEndpointsWarning'
-    { _neglnewData    :: !(Maybe [NetworkEndpointGroupsListNetworkEndpointsWarningDataItem])
-    , _neglnewCode    :: !(Maybe NetworkEndpointGroupsListNetworkEndpointsWarningCode)
+    { _neglnewData :: !(Maybe [NetworkEndpointGroupsListNetworkEndpointsWarningDataItem])
+    , _neglnewCode :: !(Maybe NetworkEndpointGroupsListNetworkEndpointsWarningCode)
     , _neglnewMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3894,11 +3894,11 @@ instance ToJSON NodeGroupsDeleteNodesRequest where
 data RegionAutoscalerList =
   RegionAutoscalerList'
     { _rNextPageToken :: !(Maybe Text)
-    , _rKind          :: !Text
-    , _rItems         :: !(Maybe [Autoscaler])
-    , _rSelfLink      :: !(Maybe Text)
-    , _rWarning       :: !(Maybe RegionAutoscalerListWarning)
-    , _rId            :: !(Maybe Text)
+    , _rKind :: !Text
+    , _rItems :: !(Maybe [Autoscaler])
+    , _rSelfLink :: !(Maybe Text)
+    , _rWarning :: !(Maybe RegionAutoscalerListWarning)
+    , _rId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3990,7 +3990,7 @@ instance ToJSON RegionAutoscalerList where
 data HealthCheckListWarningDataItem =
   HealthCheckListWarningDataItem'
     { _hclwdiValue :: !(Maybe Text)
-    , _hclwdiKey   :: !(Maybe Text)
+    , _hclwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4044,7 +4044,7 @@ instance ToJSON HealthCheckListWarningDataItem where
 data NodeGroupAggregatedListWarningDataItem =
   NodeGroupAggregatedListWarningDataItem'
     { _ngalwdiValue :: !(Maybe Text)
-    , _ngalwdiKey   :: !(Maybe Text)
+    , _ngalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4143,10 +4143,10 @@ instance ToJSON InstanceGroupsAddInstancesRequest
 -- /See:/ 'nodeGroupNode' smart constructor.
 data NodeGroupNode =
   NodeGroupNode'
-    { _ngnStatus    :: !(Maybe NodeGroupNodeStatus)
-    , _ngnName      :: !(Maybe Text)
+    { _ngnStatus :: !(Maybe NodeGroupNodeStatus)
+    , _ngnName :: !(Maybe Text)
     , _ngnInstances :: !(Maybe [Text])
-    , _ngnNodeType  :: !(Maybe Text)
+    , _ngnNodeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4217,11 +4217,11 @@ instance ToJSON NodeGroupNode where
 data InstanceGroupManagerList =
   InstanceGroupManagerList'
     { _igmlNextPageToken :: !(Maybe Text)
-    , _igmlKind          :: !Text
-    , _igmlItems         :: !(Maybe [InstanceGroupManager])
-    , _igmlSelfLink      :: !(Maybe Text)
-    , _igmlWarning       :: !(Maybe InstanceGroupManagerListWarning)
-    , _igmlId            :: !(Maybe Text)
+    , _igmlKind :: !Text
+    , _igmlItems :: !(Maybe [InstanceGroupManager])
+    , _igmlSelfLink :: !(Maybe Text)
+    , _igmlWarning :: !(Maybe InstanceGroupManagerListWarning)
+    , _igmlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4318,8 +4318,8 @@ instance ToJSON InstanceGroupManagerList where
 data InstanceGroupManagerVersion =
   InstanceGroupManagerVersion'
     { _igmvInstanceTemplate :: !(Maybe Text)
-    , _igmvTargetSize       :: !(Maybe FixedOrPercent)
-    , _igmvName             :: !(Maybe Text)
+    , _igmvTargetSize :: !(Maybe FixedOrPercent)
+    , _igmvName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4393,8 +4393,8 @@ instance ToJSON InstanceGroupManagerVersion where
 -- /See:/ 'networkEndpointGroupsScopedListWarning' smart constructor.
 data NetworkEndpointGroupsScopedListWarning =
   NetworkEndpointGroupsScopedListWarning'
-    { _negslwData    :: !(Maybe [NetworkEndpointGroupsScopedListWarningDataItem])
-    , _negslwCode    :: !(Maybe NetworkEndpointGroupsScopedListWarningCode)
+    { _negslwData :: !(Maybe [NetworkEndpointGroupsScopedListWarningDataItem])
+    , _negslwCode :: !(Maybe NetworkEndpointGroupsScopedListWarningCode)
     , _negslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4463,8 +4463,8 @@ instance ToJSON
 -- /See:/ 'subnetworksScopedListWarning' smart constructor.
 data SubnetworksScopedListWarning =
   SubnetworksScopedListWarning'
-    { _sslwData    :: !(Maybe [SubnetworksScopedListWarningDataItem])
-    , _sslwCode    :: !(Maybe SubnetworksScopedListWarningCode)
+    { _sslwData :: !(Maybe [SubnetworksScopedListWarningDataItem])
+    , _sslwCode :: !(Maybe SubnetworksScopedListWarningCode)
     , _sslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4568,8 +4568,8 @@ instance ToJSON NodeGroupsSetNodeTemplateRequest
 -- /See:/ 'acceleratorTypeListWarning' smart constructor.
 data AcceleratorTypeListWarning =
   AcceleratorTypeListWarning'
-    { _atlwData    :: !(Maybe [AcceleratorTypeListWarningDataItem])
-    , _atlwCode    :: !(Maybe AcceleratorTypeListWarningCode)
+    { _atlwData :: !(Maybe [AcceleratorTypeListWarningDataItem])
+    , _atlwCode :: !(Maybe AcceleratorTypeListWarningCode)
     , _atlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4632,34 +4632,34 @@ instance ToJSON AcceleratorTypeListWarning where
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iStatus                      :: !(Maybe ImageStatus)
-    , _iSourceSnapshotId            :: !(Maybe Text)
-    , _iImageEncryptionKey          :: !(Maybe CustomerEncryptionKey)
-    , _iSourceImage                 :: !(Maybe Text)
-    , _iDiskSizeGb                  :: !(Maybe (Textual Int64))
-    , _iSourceType                  :: !ImageSourceType
-    , _iSourceDiskId                :: !(Maybe Text)
-    , _iKind                        :: !Text
-    , _iSourceDiskEncryptionKey     :: !(Maybe CustomerEncryptionKey)
-    , _iGuestOSFeatures             :: !(Maybe [GuestOSFeature])
-    , _iArchiveSizeBytes            :: !(Maybe (Textual Int64))
-    , _iFamily                      :: !(Maybe Text)
-    , _iRawDisk                     :: !(Maybe ImageRawDisk)
-    , _iSelfLink                    :: !(Maybe Text)
-    , _iName                        :: !(Maybe Text)
-    , _iSourceImageId               :: !(Maybe Text)
-    , _iCreationTimestamp           :: !(Maybe Text)
-    , _iSourceImageEncryptionKey    :: !(Maybe CustomerEncryptionKey)
-    , _iLicenseCodes                :: !(Maybe [Textual Int64])
-    , _iId                          :: !(Maybe (Textual Word64))
-    , _iLabels                      :: !(Maybe ImageLabels)
-    , _iLicenses                    :: !(Maybe [Text])
-    , _iSourceDisk                  :: !(Maybe Text)
-    , _iLabelFingerprint            :: !(Maybe Bytes)
-    , _iDescription                 :: !(Maybe Text)
+    { _iStatus :: !(Maybe ImageStatus)
+    , _iSourceSnapshotId :: !(Maybe Text)
+    , _iImageEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _iSourceImage :: !(Maybe Text)
+    , _iDiskSizeGb :: !(Maybe (Textual Int64))
+    , _iSourceType :: !ImageSourceType
+    , _iSourceDiskId :: !(Maybe Text)
+    , _iKind :: !Text
+    , _iSourceDiskEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _iGuestOSFeatures :: !(Maybe [GuestOSFeature])
+    , _iArchiveSizeBytes :: !(Maybe (Textual Int64))
+    , _iFamily :: !(Maybe Text)
+    , _iRawDisk :: !(Maybe ImageRawDisk)
+    , _iSelfLink :: !(Maybe Text)
+    , _iName :: !(Maybe Text)
+    , _iSourceImageId :: !(Maybe Text)
+    , _iCreationTimestamp :: !(Maybe Text)
+    , _iSourceImageEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _iLicenseCodes :: !(Maybe [Textual Int64])
+    , _iId :: !(Maybe (Textual Word64))
+    , _iLabels :: !(Maybe ImageLabels)
+    , _iLicenses :: !(Maybe [Text])
+    , _iSourceDisk :: !(Maybe Text)
+    , _iLabelFingerprint :: !(Maybe Bytes)
+    , _iDescription :: !(Maybe Text)
     , _iSourceSnapshotEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _iDeprecated                  :: !(Maybe DeprecationStatus)
-    , _iSourceSnapshot              :: !(Maybe Text)
+    , _iDeprecated :: !(Maybe DeprecationStatus)
+    , _iSourceSnapshot :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5038,9 +5038,9 @@ instance ToJSON Image where
 -- /See:/ 'networksAddPeeringRequest' smart constructor.
 data NetworksAddPeeringRequest =
   NetworksAddPeeringRequest'
-    { _naprNetworkPeering   :: !(Maybe NetworkPeering)
-    , _naprPeerNetwork      :: !(Maybe Text)
-    , _naprName             :: !(Maybe Text)
+    { _naprNetworkPeering :: !(Maybe NetworkPeering)
+    , _naprPeerNetwork :: !(Maybe Text)
+    , _naprName :: !(Maybe Text)
     , _naprAutoCreateRoutes :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5122,7 +5122,7 @@ instance ToJSON NetworksAddPeeringRequest where
 data NodeTemplatesScopedList =
   NodeTemplatesScopedList'
     { _nNodeTemplates :: !(Maybe [NodeTemplate])
-    , _nWarning       :: !(Maybe NodeTemplatesScopedListWarning)
+    , _nWarning :: !(Maybe NodeTemplatesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5173,8 +5173,8 @@ instance ToJSON NodeTemplatesScopedList where
 -- /See:/ 'urlMapListWarning' smart constructor.
 data URLMapListWarning =
   URLMapListWarning'
-    { _umlwData    :: !(Maybe [URLMapListWarningDataItem])
-    , _umlwCode    :: !(Maybe URLMapListWarningCode)
+    { _umlwData :: !(Maybe [URLMapListWarningDataItem])
+    , _umlwCode :: !(Maybe URLMapListWarningCode)
     , _umlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5236,7 +5236,7 @@ instance ToJSON URLMapListWarning where
 data NodeGroupsScopedListWarningDataItem =
   NodeGroupsScopedListWarningDataItem'
     { _ngslwdiValue :: !(Maybe Text)
-    , _ngslwdiKey   :: !(Maybe Text)
+    , _ngslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5294,17 +5294,17 @@ instance ToJSON NodeGroupsScopedListWarningDataItem
 -- /See:/ 'urlMap' smart constructor.
 data URLMap =
   URLMap'
-    { _umTests             :: !(Maybe [URLMapTest])
-    , _umKind              :: !Text
-    , _umFingerprint       :: !(Maybe Bytes)
-    , _umDefaultService    :: !(Maybe Text)
-    , _umSelfLink          :: !(Maybe Text)
-    , _umName              :: !(Maybe Text)
+    { _umTests :: !(Maybe [URLMapTest])
+    , _umKind :: !Text
+    , _umFingerprint :: !(Maybe Bytes)
+    , _umDefaultService :: !(Maybe Text)
+    , _umSelfLink :: !(Maybe Text)
+    , _umName :: !(Maybe Text)
     , _umCreationTimestamp :: !(Maybe Text)
-    , _umPathMatchers      :: !(Maybe [PathMatcher])
-    , _umId                :: !(Maybe (Textual Word64))
-    , _umHostRules         :: !(Maybe [HostRule])
-    , _umDescription       :: !(Maybe Text)
+    , _umPathMatchers :: !(Maybe [PathMatcher])
+    , _umId :: !(Maybe (Textual Word64))
+    , _umHostRules :: !(Maybe [HostRule])
+    , _umDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5477,8 +5477,8 @@ instance ToJSON URLMap where
 -- /See:/ 'imageListWarning' smart constructor.
 data ImageListWarning =
   ImageListWarning'
-    { _ilwData    :: !(Maybe [ImageListWarningDataItem])
-    , _ilwCode    :: !(Maybe ImageListWarningCode)
+    { _ilwData :: !(Maybe [ImageListWarningDataItem])
+    , _ilwCode :: !(Maybe ImageListWarningCode)
     , _ilwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5540,9 +5540,9 @@ instance ToJSON ImageListWarning where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5696,11 +5696,11 @@ instance ToJSON InstanceGroupAggregatedListItems
 data TargetPoolList =
   TargetPoolList'
     { _tplNextPageToken :: !(Maybe Text)
-    , _tplKind          :: !Text
-    , _tplItems         :: !(Maybe [TargetPool])
-    , _tplSelfLink      :: !(Maybe Text)
-    , _tplWarning       :: !(Maybe TargetPoolListWarning)
-    , _tplId            :: !(Maybe Text)
+    , _tplKind :: !Text
+    , _tplItems :: !(Maybe [TargetPool])
+    , _tplSelfLink :: !(Maybe Text)
+    , _tplWarning :: !(Maybe TargetPoolListWarning)
+    , _tplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5798,15 +5798,15 @@ instance ToJSON TargetPoolList where
 -- /See:/ 'acceleratorType' smart constructor.
 data AcceleratorType =
   AcceleratorType'
-    { _atKind                    :: !Text
-    , _atZone                    :: !(Maybe Text)
+    { _atKind :: !Text
+    , _atZone :: !(Maybe Text)
     , _atMaximumCardsPerInstance :: !(Maybe (Textual Int32))
-    , _atSelfLink                :: !(Maybe Text)
-    , _atName                    :: !(Maybe Text)
-    , _atCreationTimestamp       :: !(Maybe Text)
-    , _atId                      :: !(Maybe (Textual Word64))
-    , _atDescription             :: !(Maybe Text)
-    , _atDeprecated              :: !(Maybe DeprecationStatus)
+    , _atSelfLink :: !(Maybe Text)
+    , _atName :: !(Maybe Text)
+    , _atCreationTimestamp :: !(Maybe Text)
+    , _atId :: !(Maybe (Textual Word64))
+    , _atDescription :: !(Maybe Text)
+    , _atDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5934,7 +5934,7 @@ instance ToJSON AcceleratorType where
 data BackendBucketListWarningDataItem =
   BackendBucketListWarningDataItem'
     { _bblwdiValue :: !(Maybe Text)
-    , _bblwdiKey   :: !(Maybe Text)
+    , _bblwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5990,7 +5990,7 @@ instance ToJSON BackendBucketListWarningDataItem
 data AcceleratorTypesScopedListWarningDataItem =
   AcceleratorTypesScopedListWarningDataItem'
     { _atslwdiValue :: !(Maybe Text)
-    , _atslwdiKey   :: !(Maybe Text)
+    , _atslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6049,11 +6049,11 @@ instance ToJSON
 data RegionDiskTypeList =
   RegionDiskTypeList'
     { _rdtlNextPageToken :: !(Maybe Text)
-    , _rdtlKind          :: !Text
-    , _rdtlItems         :: !(Maybe [DiskType])
-    , _rdtlSelfLink      :: !(Maybe Text)
-    , _rdtlWarning       :: !(Maybe RegionDiskTypeListWarning)
-    , _rdtlId            :: !(Maybe Text)
+    , _rdtlKind :: !Text
+    , _rdtlItems :: !(Maybe [DiskType])
+    , _rdtlSelfLink :: !(Maybe Text)
+    , _rdtlWarning :: !(Maybe RegionDiskTypeListWarning)
+    , _rdtlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6150,11 +6150,11 @@ instance ToJSON RegionDiskTypeList where
 data TargetInstanceAggregatedList =
   TargetInstanceAggregatedList'
     { _tialNextPageToken :: !(Maybe Text)
-    , _tialKind          :: !Text
-    , _tialItems         :: !(Maybe TargetInstanceAggregatedListItems)
-    , _tialSelfLink      :: !(Maybe Text)
-    , _tialWarning       :: !(Maybe TargetInstanceAggregatedListWarning)
-    , _tialId            :: !(Maybe Text)
+    , _tialKind :: !Text
+    , _tialItems :: !(Maybe TargetInstanceAggregatedListItems)
+    , _tialSelfLink :: !(Maybe Text)
+    , _tialWarning :: !(Maybe TargetInstanceAggregatedListWarning)
+    , _tialId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6249,7 +6249,7 @@ instance ToJSON TargetInstanceAggregatedList where
 data NodeGroupsListNodesWarningDataItem =
   NodeGroupsListNodesWarningDataItem'
     { _nglnwdiValue :: !(Maybe Text)
-    , _nglnwdiKey   :: !(Maybe Text)
+    , _nglnwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6305,11 +6305,11 @@ instance ToJSON NodeGroupsListNodesWarningDataItem
 data UsableSubnetworksAggregatedList =
   UsableSubnetworksAggregatedList'
     { _usalNextPageToken :: !(Maybe Text)
-    , _usalKind          :: !Text
-    , _usalItems         :: !(Maybe [UsableSubnetwork])
-    , _usalSelfLink      :: !(Maybe Text)
-    , _usalWarning       :: !(Maybe UsableSubnetworksAggregatedListWarning)
-    , _usalId            :: !(Maybe Text)
+    , _usalKind :: !Text
+    , _usalItems :: !(Maybe [UsableSubnetwork])
+    , _usalSelfLink :: !(Maybe Text)
+    , _usalWarning :: !(Maybe UsableSubnetworksAggregatedListWarning)
+    , _usalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6410,7 +6410,7 @@ instance ToJSON UsableSubnetworksAggregatedList where
 data DisksScopedList =
   DisksScopedList'
     { _dslWarning :: !(Maybe DisksScopedListWarning)
-    , _dslDisks   :: !(Maybe [Disk])
+    , _dslDisks :: !(Maybe [Disk])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6459,7 +6459,7 @@ instance ToJSON DisksScopedList where
 data InterconnectLocationListWarningDataItem =
   InterconnectLocationListWarningDataItem'
     { _illwdiValue :: !(Maybe Text)
-    , _illwdiKey   :: !(Maybe Text)
+    , _illwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6517,7 +6517,7 @@ instance ToJSON
 -- /See:/ 'instanceGroupManagersScopedList' smart constructor.
 data InstanceGroupManagersScopedList =
   InstanceGroupManagersScopedList'
-    { _igmslWarning               :: !(Maybe InstanceGroupManagersScopedListWarning)
+    { _igmslWarning :: !(Maybe InstanceGroupManagersScopedListWarning)
     , _igmslInstanceGroupManagers :: !(Maybe [InstanceGroupManager])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6574,8 +6574,8 @@ instance ToJSON InstanceGroupManagersScopedList where
 -- /See:/ 'subnetworkListWarning' smart constructor.
 data SubnetworkListWarning =
   SubnetworkListWarning'
-    { _slwData    :: !(Maybe [SubnetworkListWarningDataItem])
-    , _slwCode    :: !(Maybe SubnetworkListWarningCode)
+    { _slwData :: !(Maybe [SubnetworkListWarningDataItem])
+    , _slwCode :: !(Maybe SubnetworkListWarningCode)
     , _slwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6635,8 +6635,8 @@ instance ToJSON SubnetworkListWarning where
 -- /See:/ 'networkEndpointGroupListWarning' smart constructor.
 data NetworkEndpointGroupListWarning =
   NetworkEndpointGroupListWarning'
-    { _neglwData    :: !(Maybe [NetworkEndpointGroupListWarningDataItem])
-    , _neglwCode    :: !(Maybe NetworkEndpointGroupListWarningCode)
+    { _neglwData :: !(Maybe [NetworkEndpointGroupListWarningDataItem])
+    , _neglwCode :: !(Maybe NetworkEndpointGroupListWarningCode)
     , _neglwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6702,22 +6702,22 @@ instance ToJSON NetworkEndpointGroupListWarning where
 -- /See:/ 'healthCheck' smart constructor.
 data HealthCheck =
   HealthCheck'
-    { _hcHealthyThreshold   :: !(Maybe (Textual Int32))
-    , _hcTCPHealthCheck     :: !(Maybe TCPHealthCheck)
-    , _hcHTTP2HealthCheck   :: !(Maybe HTTP2HealthCheck)
-    , _hcKind               :: !Text
-    , _hcSSLHealthCheck     :: !(Maybe SSLHealthCheck)
-    , _hcSelfLink           :: !(Maybe Text)
-    , _hcCheckIntervalSec   :: !(Maybe (Textual Int32))
-    , _hcName               :: !(Maybe Text)
-    , _hcCreationTimestamp  :: !(Maybe Text)
-    , _hcHTTPHealthCheck    :: !(Maybe HTTPHealthCheck)
-    , _hcId                 :: !(Maybe (Textual Word64))
-    , _hcType               :: !(Maybe HealthCheckType)
-    , _hcTimeoutSec         :: !(Maybe (Textual Int32))
-    , _hcDescription        :: !(Maybe Text)
+    { _hcHealthyThreshold :: !(Maybe (Textual Int32))
+    , _hcTCPHealthCheck :: !(Maybe TCPHealthCheck)
+    , _hcHTTP2HealthCheck :: !(Maybe HTTP2HealthCheck)
+    , _hcKind :: !Text
+    , _hcSSLHealthCheck :: !(Maybe SSLHealthCheck)
+    , _hcSelfLink :: !(Maybe Text)
+    , _hcCheckIntervalSec :: !(Maybe (Textual Int32))
+    , _hcName :: !(Maybe Text)
+    , _hcCreationTimestamp :: !(Maybe Text)
+    , _hcHTTPHealthCheck :: !(Maybe HTTPHealthCheck)
+    , _hcId :: !(Maybe (Textual Word64))
+    , _hcType :: !(Maybe HealthCheckType)
+    , _hcTimeoutSec :: !(Maybe (Textual Int32))
+    , _hcDescription :: !(Maybe Text)
     , _hcUnhealthyThreshold :: !(Maybe (Textual Int32))
-    , _hcHTTPSHealthCheck   :: !(Maybe HTTPSHealthCheck)
+    , _hcHTTPSHealthCheck :: !(Maybe HTTPSHealthCheck)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6930,8 +6930,8 @@ instance ToJSON HealthCheck where
 -- /See:/ 'hTTPHealthCheckListWarning' smart constructor.
 data HTTPHealthCheckListWarning =
   HTTPHealthCheckListWarning'
-    { _httphclwData    :: !(Maybe [HTTPHealthCheckListWarningDataItem])
-    , _httphclwCode    :: !(Maybe HTTPHealthCheckListWarningCode)
+    { _httphclwData :: !(Maybe [HTTPHealthCheckListWarningDataItem])
+    , _httphclwCode :: !(Maybe HTTPHealthCheckListWarningCode)
     , _httphclwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6998,8 +6998,8 @@ instance ToJSON HTTPHealthCheckListWarning where
 -- /See:/ 'sslPoliciesListWarning' smart constructor.
 data SSLPoliciesListWarning =
   SSLPoliciesListWarning'
-    { _splwData    :: !(Maybe [SSLPoliciesListWarningDataItem])
-    , _splwCode    :: !(Maybe SSLPoliciesListWarningCode)
+    { _splwData :: !(Maybe [SSLPoliciesListWarningDataItem])
+    , _splwCode :: !(Maybe SSLPoliciesListWarningCode)
     , _splwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7100,11 +7100,11 @@ instance ToJSON CommitmentAggregatedListItems where
 data DiskAggregatedList =
   DiskAggregatedList'
     { _dalNextPageToken :: !(Maybe Text)
-    , _dalKind          :: !Text
-    , _dalItems         :: !(Maybe DiskAggregatedListItems)
-    , _dalSelfLink      :: !(Maybe Text)
-    , _dalWarning       :: !(Maybe DiskAggregatedListWarning)
-    , _dalId            :: !(Maybe Text)
+    , _dalKind :: !Text
+    , _dalItems :: !(Maybe DiskAggregatedListItems)
+    , _dalSelfLink :: !(Maybe Text)
+    , _dalWarning :: !(Maybe DiskAggregatedListWarning)
+    , _dalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7198,7 +7198,7 @@ instance ToJSON DiskAggregatedList where
 data InstanceGroupsListInstancesWarningDataItem =
   InstanceGroupsListInstancesWarningDataItem'
     { _igliwdiValue :: !(Maybe Text)
-    , _igliwdiKey   :: !(Maybe Text)
+    , _igliwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7257,9 +7257,9 @@ instance ToJSON
 -- /See:/ 'instanceWithNamedPorts' smart constructor.
 data InstanceWithNamedPorts =
   InstanceWithNamedPorts'
-    { _iwnpStatus     :: !(Maybe InstanceWithNamedPortsStatus)
+    { _iwnpStatus :: !(Maybe InstanceWithNamedPortsStatus)
     , _iwnpNamedPorts :: !(Maybe [NamedPort])
-    , _iwnpInstance   :: !(Maybe Text)
+    , _iwnpInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7319,8 +7319,8 @@ instance ToJSON InstanceWithNamedPorts where
 -- /See:/ 'interconnectListWarning' smart constructor.
 data InterconnectListWarning =
   InterconnectListWarning'
-    { _iData    :: !(Maybe [InterconnectListWarningDataItem])
-    , _iCode    :: !(Maybe InterconnectListWarningCode)
+    { _iData :: !(Maybe [InterconnectListWarningDataItem])
+    , _iCode :: !(Maybe InterconnectListWarningCode)
     , _iMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7378,7 +7378,7 @@ instance ToJSON InterconnectListWarning where
 -- /See:/ 'forwardingRulesScopedList' smart constructor.
 data ForwardingRulesScopedList =
   ForwardingRulesScopedList'
-    { _frslWarning         :: !(Maybe ForwardingRulesScopedListWarning)
+    { _frslWarning :: !(Maybe ForwardingRulesScopedListWarning)
     , _frslForwardingRules :: !(Maybe [ForwardingRule])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7465,11 +7465,11 @@ instance ToJSON InstanceReference where
 data OperationAggregatedList =
   OperationAggregatedList'
     { _oalNextPageToken :: !(Maybe Text)
-    , _oalKind          :: !Text
-    , _oalItems         :: !(Maybe OperationAggregatedListItems)
-    , _oalSelfLink      :: !(Maybe Text)
-    , _oalWarning       :: !(Maybe OperationAggregatedListWarning)
-    , _oalId            :: !(Maybe Text)
+    , _oalKind :: !Text
+    , _oalItems :: !(Maybe OperationAggregatedListItems)
+    , _oalSelfLink :: !(Maybe Text)
+    , _oalWarning :: !(Maybe OperationAggregatedListWarning)
+    , _oalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7563,7 +7563,7 @@ instance ToJSON OperationAggregatedList where
 -- /See:/ 'operationsScopedList' smart constructor.
 data OperationsScopedList =
   OperationsScopedList'
-    { _oslWarning    :: !(Maybe OperationsScopedListWarning)
+    { _oslWarning :: !(Maybe OperationsScopedListWarning)
     , _oslOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7708,7 +7708,7 @@ instance ToJSON
 data SubnetworkAggregatedListWarningDataItem =
   SubnetworkAggregatedListWarningDataItem'
     { _salwdiValue :: !(Maybe Text)
-    , _salwdiKey   :: !(Maybe Text)
+    , _salwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7766,11 +7766,11 @@ instance ToJSON
 -- /See:/ 'interconnectDiagnosticsLinkStatus' smart constructor.
 data InterconnectDiagnosticsLinkStatus =
   InterconnectDiagnosticsLinkStatus'
-    { _idlsLacpStatus               :: !(Maybe InterconnectDiagnosticsLinkLACPStatus)
-    , _idlsReceivingOpticalPower    :: !(Maybe InterconnectDiagnosticsLinkOpticalPower)
-    , _idlsGoogleDemarc             :: !(Maybe Text)
-    , _idlsCircuitId                :: !(Maybe Text)
-    , _idlsArpCaches                :: !(Maybe [InterconnectDiagnosticsARPEntry])
+    { _idlsLacpStatus :: !(Maybe InterconnectDiagnosticsLinkLACPStatus)
+    , _idlsReceivingOpticalPower :: !(Maybe InterconnectDiagnosticsLinkOpticalPower)
+    , _idlsGoogleDemarc :: !(Maybe Text)
+    , _idlsCircuitId :: !(Maybe Text)
+    , _idlsArpCaches :: !(Maybe [InterconnectDiagnosticsARPEntry])
     , _idlsTransmittingOpticalPower :: !(Maybe InterconnectDiagnosticsLinkOpticalPower)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7915,7 +7915,7 @@ instance ToJSON BackendServiceReference where
 data NetworkEndpointGroupAggregatedListWarningDataItem =
   NetworkEndpointGroupAggregatedListWarningDataItem'
     { _negalwdiValue :: !(Maybe Text)
-    , _negalwdiKey   :: !(Maybe Text)
+    , _negalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7977,11 +7977,11 @@ instance ToJSON
 data TargetInstanceList =
   TargetInstanceList'
     { _tilNextPageToken :: !(Maybe Text)
-    , _tilKind          :: !Text
-    , _tilItems         :: !(Maybe [TargetInstance])
-    , _tilSelfLink      :: !(Maybe Text)
-    , _tilWarning       :: !(Maybe TargetInstanceListWarning)
-    , _tilId            :: !(Maybe Text)
+    , _tilKind :: !Text
+    , _tilItems :: !(Maybe [TargetInstance])
+    , _tilSelfLink :: !(Maybe Text)
+    , _tilWarning :: !(Maybe TargetInstanceListWarning)
+    , _tilId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8077,8 +8077,8 @@ instance ToJSON TargetInstanceList where
 -- /See:/ 'targetTCPProxyListWarning' smart constructor.
 data TargetTCPProxyListWarning =
   TargetTCPProxyListWarning'
-    { _ttplwData    :: !(Maybe [TargetTCPProxyListWarningDataItem])
-    , _ttplwCode    :: !(Maybe TargetTCPProxyListWarningCode)
+    { _ttplwData :: !(Maybe [TargetTCPProxyListWarningDataItem])
+    , _ttplwCode :: !(Maybe TargetTCPProxyListWarningCode)
     , _ttplwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8141,11 +8141,11 @@ instance ToJSON TargetTCPProxyListWarning where
 data InstanceGroupManagerAggregatedList =
   InstanceGroupManagerAggregatedList'
     { _igmalNextPageToken :: !(Maybe Text)
-    , _igmalKind          :: !Text
-    , _igmalItems         :: !(Maybe InstanceGroupManagerAggregatedListItems)
-    , _igmalSelfLink      :: !(Maybe Text)
-    , _igmalWarning       :: !(Maybe InstanceGroupManagerAggregatedListWarning)
-    , _igmalId            :: !(Maybe Text)
+    , _igmalKind :: !Text
+    , _igmalItems :: !(Maybe InstanceGroupManagerAggregatedListItems)
+    , _igmalSelfLink :: !(Maybe Text)
+    , _igmalWarning :: !(Maybe InstanceGroupManagerAggregatedListWarning)
+    , _igmalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8246,15 +8246,15 @@ instance ToJSON InstanceGroupManagerAggregatedList
 -- /See:/ 'backendBucket' smart constructor.
 data BackendBucket =
   BackendBucket'
-    { _bbKind              :: !Text
-    , _bbEnableCdn         :: !(Maybe Bool)
-    , _bbBucketName        :: !(Maybe Text)
-    , _bbCdnPolicy         :: !(Maybe BackendBucketCdnPolicy)
-    , _bbSelfLink          :: !(Maybe Text)
-    , _bbName              :: !(Maybe Text)
+    { _bbKind :: !Text
+    , _bbEnableCdn :: !(Maybe Bool)
+    , _bbBucketName :: !(Maybe Text)
+    , _bbCdnPolicy :: !(Maybe BackendBucketCdnPolicy)
+    , _bbSelfLink :: !(Maybe Text)
+    , _bbName :: !(Maybe Text)
     , _bbCreationTimestamp :: !(Maybe Text)
-    , _bbId                :: !(Maybe (Textual Word64))
-    , _bbDescription       :: !(Maybe Text)
+    , _bbId :: !(Maybe (Textual Word64))
+    , _bbDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8423,7 +8423,7 @@ instance ToJSON ProjectsEnableXpnResourceRequest
 -- /See:/ 'targetPoolsScopedList' smart constructor.
 data TargetPoolsScopedList =
   TargetPoolsScopedList'
-    { _tpslWarning     :: !(Maybe TargetPoolsScopedListWarning)
+    { _tpslWarning :: !(Maybe TargetPoolsScopedListWarning)
     , _tpslTargetPools :: !(Maybe [TargetPool])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8521,7 +8521,7 @@ instance ToJSON
 -- /See:/ 'instanceGroupManagerAutoHealingPolicy' smart constructor.
 data InstanceGroupManagerAutoHealingPolicy =
   InstanceGroupManagerAutoHealingPolicy'
-    { _igmahpHealthCheck     :: !(Maybe Text)
+    { _igmahpHealthCheck :: !(Maybe Text)
     , _igmahpInitialDelaySec :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8596,7 +8596,7 @@ instance ToJSON InstanceGroupManagerAutoHealingPolicy
 -- /See:/ 'logConfigCounterOptions' smart constructor.
 data LogConfigCounterOptions =
   LogConfigCounterOptions'
-    { _lccoField  :: !(Maybe Text)
+    { _lccoField :: !(Maybe Text)
     , _lccoMetric :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8685,11 +8685,11 @@ instance ToJSON InstancesSetMinCPUPlatformRequest
 data ForwardingRuleAggregatedList =
   ForwardingRuleAggregatedList'
     { _fralNextPageToken :: !(Maybe Text)
-    , _fralKind          :: !Text
-    , _fralItems         :: !(Maybe ForwardingRuleAggregatedListItems)
-    , _fralSelfLink      :: !(Maybe Text)
-    , _fralWarning       :: !(Maybe ForwardingRuleAggregatedListWarning)
-    , _fralId            :: !(Maybe Text)
+    , _fralKind :: !Text
+    , _fralItems :: !(Maybe ForwardingRuleAggregatedListItems)
+    , _fralSelfLink :: !(Maybe Text)
+    , _fralWarning :: !(Maybe ForwardingRuleAggregatedListWarning)
+    , _fralId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8816,11 +8816,11 @@ instance ToJSON TargetReference where
 data TargetPoolAggregatedList =
   TargetPoolAggregatedList'
     { _tpalNextPageToken :: !(Maybe Text)
-    , _tpalKind          :: !Text
-    , _tpalItems         :: !(Maybe TargetPoolAggregatedListItems)
-    , _tpalSelfLink      :: !(Maybe Text)
-    , _tpalWarning       :: !(Maybe TargetPoolAggregatedListWarning)
-    , _tpalId            :: !(Maybe Text)
+    , _tpalKind :: !Text
+    , _tpalItems :: !(Maybe TargetPoolAggregatedListItems)
+    , _tpalSelfLink :: !(Maybe Text)
+    , _tpalWarning :: !(Maybe TargetPoolAggregatedListWarning)
+    , _tpalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8915,7 +8915,7 @@ instance ToJSON TargetPoolAggregatedList where
 data OperationsScopedListWarningDataItem =
   OperationsScopedListWarningDataItem'
     { _oslwdiValue :: !(Maybe Text)
-    , _oslwdiKey   :: !(Maybe Text)
+    , _oslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8970,7 +8970,7 @@ instance ToJSON OperationsScopedListWarningDataItem
 -- /See:/ 'globalSetLabelsRequest' smart constructor.
 data GlobalSetLabelsRequest =
   GlobalSetLabelsRequest'
-    { _gslrLabels           :: !(Maybe GlobalSetLabelsRequestLabels)
+    { _gslrLabels :: !(Maybe GlobalSetLabelsRequestLabels)
     , _gslrLabelFingerprint :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9035,18 +9035,18 @@ instance ToJSON GlobalSetLabelsRequest where
 -- /See:/ 'targetPool' smart constructor.
 data TargetPool =
   TargetPool'
-    { _tpSessionAffinity   :: !(Maybe TargetPoolSessionAffinity)
-    , _tpBackupPool        :: !(Maybe Text)
-    , _tpKind              :: !Text
-    , _tpSelfLink          :: !(Maybe Text)
-    , _tpName              :: !(Maybe Text)
+    { _tpSessionAffinity :: !(Maybe TargetPoolSessionAffinity)
+    , _tpBackupPool :: !(Maybe Text)
+    , _tpKind :: !Text
+    , _tpSelfLink :: !(Maybe Text)
+    , _tpName :: !(Maybe Text)
     , _tpCreationTimestamp :: !(Maybe Text)
-    , _tpInstances         :: !(Maybe [Text])
-    , _tpId                :: !(Maybe (Textual Word64))
-    , _tpFailoverRatio     :: !(Maybe (Textual Double))
-    , _tpRegion            :: !(Maybe Text)
-    , _tpDescription       :: !(Maybe Text)
-    , _tpHealthChecks      :: !(Maybe [Text])
+    , _tpInstances :: !(Maybe [Text])
+    , _tpId :: !(Maybe (Textual Word64))
+    , _tpFailoverRatio :: !(Maybe (Textual Double))
+    , _tpRegion :: !(Maybe Text)
+    , _tpDescription :: !(Maybe Text)
+    , _tpHealthChecks :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9246,11 +9246,11 @@ instance ToJSON TargetPool where
 data ImageList =
   ImageList'
     { _ilNextPageToken :: !(Maybe Text)
-    , _ilKind          :: !Text
-    , _ilItems         :: !(Maybe [Image])
-    , _ilSelfLink      :: !(Maybe Text)
-    , _ilWarning       :: !(Maybe ImageListWarning)
-    , _ilId            :: !(Maybe Text)
+    , _ilKind :: !Text
+    , _ilItems :: !(Maybe [Image])
+    , _ilSelfLink :: !(Maybe Text)
+    , _ilWarning :: !(Maybe ImageListWarning)
+    , _ilId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9343,7 +9343,7 @@ instance ToJSON ImageList where
 data OperationAggregatedListWarningDataItem =
   OperationAggregatedListWarningDataItem'
     { _oalwdiValue :: !(Maybe Text)
-    , _oalwdiKey   :: !(Maybe Text)
+    , _oalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9401,8 +9401,8 @@ instance ToJSON
 -- /See:/ 'forwardingRuleListWarning' smart constructor.
 data ForwardingRuleListWarning =
   ForwardingRuleListWarning'
-    { _frlwData    :: !(Maybe [ForwardingRuleListWarningDataItem])
-    , _frlwCode    :: !(Maybe ForwardingRuleListWarningCode)
+    { _frlwData :: !(Maybe [ForwardingRuleListWarningDataItem])
+    , _frlwCode :: !(Maybe ForwardingRuleListWarningCode)
     , _frlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9465,8 +9465,8 @@ instance ToJSON ForwardingRuleListWarning where
 -- /See:/ 'vpnTunnelsScopedListWarning' smart constructor.
 data VPNTunnelsScopedListWarning =
   VPNTunnelsScopedListWarning'
-    { _vtslwData    :: !(Maybe [VPNTunnelsScopedListWarningDataItem])
-    , _vtslwCode    :: !(Maybe VPNTunnelsScopedListWarningCode)
+    { _vtslwData :: !(Maybe [VPNTunnelsScopedListWarningDataItem])
+    , _vtslwCode :: !(Maybe VPNTunnelsScopedListWarningCode)
     , _vtslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9565,8 +9565,8 @@ instance ToJSON RegionDisksResizeRequest where
 -- /See:/ 'nodeTypesScopedListWarning' smart constructor.
 data NodeTypesScopedListWarning =
   NodeTypesScopedListWarning'
-    { _ntslwData    :: !(Maybe [NodeTypesScopedListWarningDataItem])
-    , _ntslwCode    :: !(Maybe NodeTypesScopedListWarningCode)
+    { _ntslwData :: !(Maybe [NodeTypesScopedListWarningDataItem])
+    , _ntslwCode :: !(Maybe NodeTypesScopedListWarningCode)
     , _ntslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9628,8 +9628,8 @@ instance ToJSON NodeTypesScopedListWarning where
 -- /See:/ 'nodeTemplateNodeTypeFlexibility' smart constructor.
 data NodeTemplateNodeTypeFlexibility =
   NodeTemplateNodeTypeFlexibility'
-    { _ntntfMemory   :: !(Maybe Text)
-    , _ntntfCPUs     :: !(Maybe Text)
+    { _ntntfMemory :: !(Maybe Text)
+    , _ntntfCPUs :: !(Maybe Text)
     , _ntntfLocalSsd :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9685,7 +9685,7 @@ instance ToJSON NodeTemplateNodeTypeFlexibility where
 -- /See:/ 'licenseResourceRequirements' smart constructor.
 data LicenseResourceRequirements =
   LicenseResourceRequirements'
-    { _lrrMinMemoryMb      :: !(Maybe (Textual Int32))
+    { _lrrMinMemoryMb :: !(Maybe (Textual Int32))
     , _lrrMinGuestCPUCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9740,8 +9740,8 @@ instance ToJSON LicenseResourceRequirements where
 -- /See:/ 'regionDiskTypeListWarning' smart constructor.
 data RegionDiskTypeListWarning =
   RegionDiskTypeListWarning'
-    { _rdtlwData    :: !(Maybe [RegionDiskTypeListWarningDataItem])
-    , _rdtlwCode    :: !(Maybe RegionDiskTypeListWarningCode)
+    { _rdtlwData :: !(Maybe [RegionDiskTypeListWarningDataItem])
+    , _rdtlwCode :: !(Maybe RegionDiskTypeListWarningCode)
     , _rdtlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9853,27 +9853,27 @@ instance ToJSON
 -- /See:/ 'forwardingRule' smart constructor.
 data ForwardingRule =
   ForwardingRule'
-    { _frNetworkTier         :: !(Maybe ForwardingRuleNetworkTier)
-    , _frIPAddress           :: !(Maybe Text)
+    { _frNetworkTier :: !(Maybe ForwardingRuleNetworkTier)
+    , _frIPAddress :: !(Maybe Text)
     , _frLoadBalancingScheme :: !(Maybe ForwardingRuleLoadBalancingScheme)
-    , _frKind                :: !Text
-    , _frIPVersion           :: !(Maybe ForwardingRuleIPVersion)
-    , _frAllPorts            :: !(Maybe Bool)
-    , _frNetwork             :: !(Maybe Text)
-    , _frPortRange           :: !(Maybe Text)
-    , _frSelfLink            :: !(Maybe Text)
-    , _frName                :: !(Maybe Text)
-    , _frIPProtocol          :: !(Maybe ForwardingRuleIPProtocol)
-    , _frCreationTimestamp   :: !(Maybe Text)
-    , _frServiceName         :: !(Maybe Text)
-    , _frSubnetwork          :: !(Maybe Text)
-    , _frPorts               :: !(Maybe [Text])
-    , _frId                  :: !(Maybe (Textual Word64))
-    , _frRegion              :: !(Maybe Text)
-    , _frServiceLabel        :: !(Maybe Text)
-    , _frDescription         :: !(Maybe Text)
-    , _frTarget              :: !(Maybe Text)
-    , _frBackendService      :: !(Maybe Text)
+    , _frKind :: !Text
+    , _frIPVersion :: !(Maybe ForwardingRuleIPVersion)
+    , _frAllPorts :: !(Maybe Bool)
+    , _frNetwork :: !(Maybe Text)
+    , _frPortRange :: !(Maybe Text)
+    , _frSelfLink :: !(Maybe Text)
+    , _frName :: !(Maybe Text)
+    , _frIPProtocol :: !(Maybe ForwardingRuleIPProtocol)
+    , _frCreationTimestamp :: !(Maybe Text)
+    , _frServiceName :: !(Maybe Text)
+    , _frSubnetwork :: !(Maybe Text)
+    , _frPorts :: !(Maybe [Text])
+    , _frId :: !(Maybe (Textual Word64))
+    , _frRegion :: !(Maybe Text)
+    , _frServiceLabel :: !(Maybe Text)
+    , _frDescription :: !(Maybe Text)
+    , _frTarget :: !(Maybe Text)
+    , _frBackendService :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10212,11 +10212,11 @@ instance ToJSON ForwardingRule where
 data URLMapList =
   URLMapList'
     { _umlNextPageToken :: !(Maybe Text)
-    , _umlKind          :: !Text
-    , _umlItems         :: !(Maybe [URLMap])
-    , _umlSelfLink      :: !(Maybe Text)
-    , _umlWarning       :: !(Maybe URLMapListWarning)
-    , _umlId            :: !(Maybe Text)
+    , _umlKind :: !Text
+    , _umlItems :: !(Maybe [URLMap])
+    , _umlSelfLink :: !(Maybe Text)
+    , _umlWarning :: !(Maybe URLMapListWarning)
+    , _umlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10312,7 +10312,7 @@ instance ToJSON URLMapList where
 data ForwardingRulesScopedListWarningDataItem =
   ForwardingRulesScopedListWarningDataItem'
     { _frslwdiValue :: !(Maybe Text)
-    , _frslwdiKey   :: !(Maybe Text)
+    , _frslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10371,8 +10371,8 @@ instance ToJSON
 -- /See:/ 'targetInstanceAggregatedListWarning' smart constructor.
 data TargetInstanceAggregatedListWarning =
   TargetInstanceAggregatedListWarning'
-    { _tialwData    :: !(Maybe [TargetInstanceAggregatedListWarningDataItem])
-    , _tialwCode    :: !(Maybe TargetInstanceAggregatedListWarningCode)
+    { _tialwData :: !(Maybe [TargetInstanceAggregatedListWarningDataItem])
+    , _tialwCode :: !(Maybe TargetInstanceAggregatedListWarningCode)
     , _tialwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10437,7 +10437,7 @@ instance ToJSON TargetInstanceAggregatedListWarning
 data InstanceGroupManagersScopedListWarningDataItem =
   InstanceGroupManagersScopedListWarningDataItem'
     { _igmslwdiValue :: !(Maybe Text)
-    , _igmslwdiKey   :: !(Maybe Text)
+    , _igmslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10498,7 +10498,7 @@ instance ToJSON
 data SubnetworksScopedList =
   SubnetworksScopedList'
     { _sslSubnetworks :: !(Maybe [Subnetwork])
-    , _sslWarning     :: !(Maybe SubnetworksScopedListWarning)
+    , _sslWarning :: !(Maybe SubnetworksScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10550,7 +10550,7 @@ instance ToJSON SubnetworksScopedList where
 data NetworkEndpointGroupsScopedList =
   NetworkEndpointGroupsScopedList'
     { _negslNetworkEndpointGroups :: !(Maybe [NetworkEndpointGroup])
-    , _negslWarning               :: !(Maybe NetworkEndpointGroupsScopedListWarning)
+    , _negslWarning :: !(Maybe NetworkEndpointGroupsScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10607,11 +10607,11 @@ instance ToJSON NetworkEndpointGroupsScopedList where
 data AcceleratorTypeList =
   AcceleratorTypeList'
     { _atlNextPageToken :: !(Maybe Text)
-    , _atlKind          :: !Text
-    , _atlItems         :: !(Maybe [AcceleratorType])
-    , _atlSelfLink      :: !(Maybe Text)
-    , _atlWarning       :: !(Maybe AcceleratorTypeListWarning)
-    , _atlId            :: !(Maybe Text)
+    , _atlKind :: !Text
+    , _atlItems :: !(Maybe [AcceleratorType])
+    , _atlSelfLink :: !(Maybe Text)
+    , _atlWarning :: !(Maybe AcceleratorTypeListWarning)
+    , _atlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10708,7 +10708,7 @@ instance ToJSON AcceleratorTypeList where
 data DiskAggregatedListWarningDataItem =
   DiskAggregatedListWarningDataItem'
     { _dalwdiValue :: !(Maybe Text)
-    , _dalwdiKey   :: !(Maybe Text)
+    , _dalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10764,8 +10764,8 @@ instance ToJSON DiskAggregatedListWarningDataItem
 -- /See:/ 'targetPoolListWarning' smart constructor.
 data TargetPoolListWarning =
   TargetPoolListWarning'
-    { _tplwData    :: !(Maybe [TargetPoolListWarningDataItem])
-    , _tplwCode    :: !(Maybe TargetPoolListWarningCode)
+    { _tplwData :: !(Maybe [TargetPoolListWarningDataItem])
+    , _tplwCode :: !(Maybe TargetPoolListWarningCode)
     , _tplwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10828,8 +10828,8 @@ instance ToJSON TargetPoolListWarning where
 -- /See:/ 'nodeTemplatesScopedListWarning' smart constructor.
 data NodeTemplatesScopedListWarning =
   NodeTemplatesScopedListWarning'
-    { _nData    :: !(Maybe [NodeTemplatesScopedListWarningDataItem])
-    , _nCode    :: !(Maybe NodeTemplatesScopedListWarningCode)
+    { _nData :: !(Maybe [NodeTemplatesScopedListWarningDataItem])
+    , _nCode :: !(Maybe NodeTemplatesScopedListWarningCode)
     , _nMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10889,7 +10889,7 @@ instance ToJSON NodeTemplatesScopedListWarning where
 data TargetPoolAggregatedListWarningDataItem =
   TargetPoolAggregatedListWarningDataItem'
     { _tpalwdiValue :: !(Maybe Text)
-    , _tpalwdiKey   :: !(Maybe Text)
+    , _tpalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10950,18 +10950,18 @@ instance ToJSON
 -- /See:/ 'project' smart constructor.
 data Project =
   Project'
-    { _pXpnProjectStatus       :: !(Maybe ProjectXpnProjectStatus)
-    , _pKind                   :: !Text
-    , _pUsageExportLocation    :: !(Maybe UsageExportLocation)
-    , _pSelfLink               :: !(Maybe Text)
-    , _pName                   :: !(Maybe Text)
-    , _pDefaultServiceAccount  :: !(Maybe Text)
-    , _pDefaultNetworkTier     :: !(Maybe ProjectDefaultNetworkTier)
-    , _pCreationTimestamp      :: !(Maybe Text)
-    , _pEnabledFeatures        :: !(Maybe [Text])
-    , _pQuotas                 :: !(Maybe [Quota])
-    , _pId                     :: !(Maybe (Textual Word64))
-    , _pDescription            :: !(Maybe Text)
+    { _pXpnProjectStatus :: !(Maybe ProjectXpnProjectStatus)
+    , _pKind :: !Text
+    , _pUsageExportLocation :: !(Maybe UsageExportLocation)
+    , _pSelfLink :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
+    , _pDefaultServiceAccount :: !(Maybe Text)
+    , _pDefaultNetworkTier :: !(Maybe ProjectDefaultNetworkTier)
+    , _pCreationTimestamp :: !(Maybe Text)
+    , _pEnabledFeatures :: !(Maybe [Text])
+    , _pQuotas :: !(Maybe [Quota])
+    , _pId :: !(Maybe (Textual Word64))
+    , _pDescription :: !(Maybe Text)
     , _pCommonInstanceMetadata :: !(Maybe Metadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11194,29 +11194,29 @@ instance ToJSON
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oTargetId            :: !(Maybe (Textual Word64))
-    , _oStatus              :: !(Maybe OperationStatus)
-    , _oInsertTime          :: !(Maybe Text)
-    , _oProgress            :: !(Maybe (Textual Int32))
-    , _oStartTime           :: !(Maybe Text)
-    , _oKind                :: !Text
-    , _oError               :: !(Maybe OperationError)
-    , _oHTTPErrorMessage    :: !(Maybe Text)
-    , _oZone                :: !(Maybe Text)
-    , _oWarnings            :: !(Maybe [OperationWarningsItem])
+    { _oTargetId :: !(Maybe (Textual Word64))
+    , _oStatus :: !(Maybe OperationStatus)
+    , _oInsertTime :: !(Maybe Text)
+    , _oProgress :: !(Maybe (Textual Int32))
+    , _oStartTime :: !(Maybe Text)
+    , _oKind :: !Text
+    , _oError :: !(Maybe OperationError)
+    , _oHTTPErrorMessage :: !(Maybe Text)
+    , _oZone :: !(Maybe Text)
+    , _oWarnings :: !(Maybe [OperationWarningsItem])
     , _oHTTPErrorStatusCode :: !(Maybe (Textual Int32))
-    , _oUser                :: !(Maybe Text)
-    , _oSelfLink            :: !(Maybe Text)
-    , _oName                :: !(Maybe Text)
-    , _oStatusMessage       :: !(Maybe Text)
-    , _oCreationTimestamp   :: !(Maybe Text)
-    , _oEndTime             :: !(Maybe Text)
-    , _oId                  :: !(Maybe (Textual Word64))
-    , _oOperationType       :: !(Maybe Text)
-    , _oRegion              :: !(Maybe Text)
-    , _oDescription         :: !(Maybe Text)
-    , _oTargetLink          :: !(Maybe Text)
-    , _oClientOperationId   :: !(Maybe Text)
+    , _oUser :: !(Maybe Text)
+    , _oSelfLink :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
+    , _oStatusMessage :: !(Maybe Text)
+    , _oCreationTimestamp :: !(Maybe Text)
+    , _oEndTime :: !(Maybe Text)
+    , _oId :: !(Maybe (Textual Word64))
+    , _oOperationType :: !(Maybe Text)
+    , _oRegion :: !(Maybe Text)
+    , _oDescription :: !(Maybe Text)
+    , _oTargetLink :: !(Maybe Text)
+    , _oClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11507,8 +11507,8 @@ instance ToJSON Operation where
 data NetworkEndpoint =
   NetworkEndpoint'
     { _neIPAddress :: !(Maybe Text)
-    , _nePort      :: !(Maybe (Textual Int32))
-    , _neInstance  :: !(Maybe Text)
+    , _nePort :: !(Maybe (Textual Int32))
+    , _neInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11575,7 +11575,7 @@ instance ToJSON NetworkEndpoint where
 data DisksScopedListWarningDataItem =
   DisksScopedListWarningDataItem'
     { _dslwdiValue :: !(Maybe Text)
-    , _dslwdiKey   :: !(Maybe Text)
+    , _dslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11630,35 +11630,35 @@ instance ToJSON DisksScopedListWarningDataItem where
 -- /See:/ 'disk' smart constructor.
 data Disk =
   Disk'
-    { _dStatus                      :: !(Maybe DiskStatus)
-    , _dSourceSnapshotId            :: !(Maybe Text)
-    , _dLastAttachTimestamp         :: !(Maybe Text)
-    , _dUsers                       :: !(Maybe [Text])
-    , _dSourceImage                 :: !(Maybe Text)
-    , _dReplicaZones                :: !(Maybe [Text])
-    , _dDiskEncryptionKey           :: !(Maybe CustomerEncryptionKey)
-    , _dSizeGb                      :: !(Maybe (Textual Int64))
-    , _dKind                        :: !Text
-    , _dLastDetachTimestamp         :: !(Maybe Text)
-    , _dGuestOSFeatures             :: !(Maybe [GuestOSFeature])
-    , _dZone                        :: !(Maybe Text)
-    , _dSelfLink                    :: !(Maybe Text)
-    , _dName                        :: !(Maybe Text)
-    , _dSourceImageId               :: !(Maybe Text)
-    , _dCreationTimestamp           :: !(Maybe Text)
-    , _dSourceImageEncryptionKey    :: !(Maybe CustomerEncryptionKey)
-    , _dLicenseCodes                :: !(Maybe [Textual Int64])
-    , _dId                          :: !(Maybe (Textual Word64))
-    , _dLabels                      :: !(Maybe DiskLabels)
-    , _dLicenses                    :: !(Maybe [Text])
-    , _dRegion                      :: !(Maybe Text)
-    , _dOptions                     :: !(Maybe Text)
-    , _dPhysicalBlockSizeBytes      :: !(Maybe (Textual Int64))
-    , _dType                        :: !(Maybe Text)
-    , _dLabelFingerprint            :: !(Maybe Bytes)
-    , _dDescription                 :: !(Maybe Text)
+    { _dStatus :: !(Maybe DiskStatus)
+    , _dSourceSnapshotId :: !(Maybe Text)
+    , _dLastAttachTimestamp :: !(Maybe Text)
+    , _dUsers :: !(Maybe [Text])
+    , _dSourceImage :: !(Maybe Text)
+    , _dReplicaZones :: !(Maybe [Text])
+    , _dDiskEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _dSizeGb :: !(Maybe (Textual Int64))
+    , _dKind :: !Text
+    , _dLastDetachTimestamp :: !(Maybe Text)
+    , _dGuestOSFeatures :: !(Maybe [GuestOSFeature])
+    , _dZone :: !(Maybe Text)
+    , _dSelfLink :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
+    , _dSourceImageId :: !(Maybe Text)
+    , _dCreationTimestamp :: !(Maybe Text)
+    , _dSourceImageEncryptionKey :: !(Maybe CustomerEncryptionKey)
+    , _dLicenseCodes :: !(Maybe [Textual Int64])
+    , _dId :: !(Maybe (Textual Word64))
+    , _dLabels :: !(Maybe DiskLabels)
+    , _dLicenses :: !(Maybe [Text])
+    , _dRegion :: !(Maybe Text)
+    , _dOptions :: !(Maybe Text)
+    , _dPhysicalBlockSizeBytes :: !(Maybe (Textual Int64))
+    , _dType :: !(Maybe Text)
+    , _dLabelFingerprint :: !(Maybe Bytes)
+    , _dDescription :: !(Maybe Text)
     , _dSourceSnapshotEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _dSourceSnapshot              :: !(Maybe Text)
+    , _dSourceSnapshot :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12066,7 +12066,7 @@ instance ToJSON Disk where
 data UsableSubnetworksAggregatedListWarningDataItem =
   UsableSubnetworksAggregatedListWarningDataItem'
     { _usalwdiValue :: !(Maybe Text)
-    , _usalwdiKey   :: !(Maybe Text)
+    , _usalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12127,11 +12127,11 @@ instance ToJSON
 data NodeGroupList =
   NodeGroupList'
     { _nglNextPageToken :: !(Maybe Text)
-    , _nglKind          :: !Text
-    , _nglItems         :: !(Maybe [NodeGroup])
-    , _nglSelfLink      :: !(Maybe Text)
-    , _nglWarning       :: !(Maybe NodeGroupListWarning)
-    , _nglId            :: !(Maybe Text)
+    , _nglKind :: !Text
+    , _nglItems :: !(Maybe [NodeGroup])
+    , _nglSelfLink :: !(Maybe Text)
+    , _nglWarning :: !(Maybe NodeGroupListWarning)
+    , _nglId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12227,7 +12227,7 @@ instance ToJSON NodeGroupList where
 -- /See:/ 'diskMoveRequest' smart constructor.
 data DiskMoveRequest =
   DiskMoveRequest'
-    { _dmrTargetDisk      :: !(Maybe Text)
+    { _dmrTargetDisk :: !(Maybe Text)
     , _dmrDestinationZone :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12283,7 +12283,7 @@ instance ToJSON DiskMoveRequest where
 data SSLPolicyWarningsItemDataItem =
   SSLPolicyWarningsItemDataItem'
     { _spwidiValue :: !(Maybe Text)
-    , _spwidiKey   :: !(Maybe Text)
+    , _spwidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12385,10 +12385,10 @@ instance ToJSON
 data NetworkEndpointGroupsListNetworkEndpoints =
   NetworkEndpointGroupsListNetworkEndpoints'
     { _neglneNextPageToken :: !(Maybe Text)
-    , _neglneKind          :: !Text
-    , _neglneItems         :: !(Maybe [NetworkEndpointWithHealthStatus])
-    , _neglneWarning       :: !(Maybe NetworkEndpointGroupsListNetworkEndpointsWarning)
-    , _neglneId            :: !(Maybe Text)
+    , _neglneKind :: !Text
+    , _neglneItems :: !(Maybe [NetworkEndpointWithHealthStatus])
+    , _neglneWarning :: !(Maybe NetworkEndpointGroupsListNetworkEndpointsWarning)
+    , _neglneId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12484,7 +12484,7 @@ instance ToJSON
 data ForwardingRuleAggregatedListWarningDataItem =
   ForwardingRuleAggregatedListWarningDataItem'
     { _fralwdiValue :: !(Maybe Text)
-    , _fralwdiKey   :: !(Maybe Text)
+    , _fralwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12544,7 +12544,7 @@ instance ToJSON
 data TargetPoolsScopedListWarningDataItem =
   TargetPoolsScopedListWarningDataItem'
     { _tpslwdiValue :: !(Maybe Text)
-    , _tpslwdiKey   :: !(Maybe Text)
+    , _tpslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12604,27 +12604,27 @@ instance ToJSON TargetPoolsScopedListWarningDataItem
 -- /See:/ 'instanceGroupManager' smart constructor.
 data InstanceGroupManager =
   InstanceGroupManager'
-    { _igmStatus              :: !(Maybe InstanceGroupManagerStatus)
-    , _igmKind                :: !Text
-    , _igmFingerprint         :: !(Maybe Bytes)
-    , _igmBaseInstanceName    :: !(Maybe Text)
-    , _igmZone                :: !(Maybe Text)
+    { _igmStatus :: !(Maybe InstanceGroupManagerStatus)
+    , _igmKind :: !Text
+    , _igmFingerprint :: !(Maybe Bytes)
+    , _igmBaseInstanceName :: !(Maybe Text)
+    , _igmZone :: !(Maybe Text)
     , _igmAutoHealingPolicies :: !(Maybe [InstanceGroupManagerAutoHealingPolicy])
-    , _igmVersions            :: !(Maybe [InstanceGroupManagerVersion])
-    , _igmInstanceTemplate    :: !(Maybe Text)
-    , _igmUpdatePolicy        :: !(Maybe InstanceGroupManagerUpdatePolicy)
-    , _igmTargetSize          :: !(Maybe (Textual Int32))
-    , _igmSelfLink            :: !(Maybe Text)
-    , _igmCurrentActions      :: !(Maybe InstanceGroupManagerActionsSummary)
-    , _igmName                :: !(Maybe Text)
-    , _igmCreationTimestamp   :: !(Maybe Text)
-    , _igmDistributionPolicy  :: !(Maybe DistributionPolicy)
-    , _igmId                  :: !(Maybe (Textual Word64))
-    , _igmRegion              :: !(Maybe Text)
-    , _igmTargetPools         :: !(Maybe [Text])
-    , _igmDescription         :: !(Maybe Text)
-    , _igmInstanceGroup       :: !(Maybe Text)
-    , _igmNamedPorts          :: !(Maybe [NamedPort])
+    , _igmVersions :: !(Maybe [InstanceGroupManagerVersion])
+    , _igmInstanceTemplate :: !(Maybe Text)
+    , _igmUpdatePolicy :: !(Maybe InstanceGroupManagerUpdatePolicy)
+    , _igmTargetSize :: !(Maybe (Textual Int32))
+    , _igmSelfLink :: !(Maybe Text)
+    , _igmCurrentActions :: !(Maybe InstanceGroupManagerActionsSummary)
+    , _igmName :: !(Maybe Text)
+    , _igmCreationTimestamp :: !(Maybe Text)
+    , _igmDistributionPolicy :: !(Maybe DistributionPolicy)
+    , _igmId :: !(Maybe (Textual Word64))
+    , _igmRegion :: !(Maybe Text)
+    , _igmTargetPools :: !(Maybe [Text])
+    , _igmDescription :: !(Maybe Text)
+    , _igmInstanceGroup :: !(Maybe Text)
+    , _igmNamedPorts :: !(Maybe [NamedPort])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12919,8 +12919,8 @@ instance ToJSON InstanceGroupManager where
 -- /See:/ 'instanceGroupManagerListWarning' smart constructor.
 data InstanceGroupManagerListWarning =
   InstanceGroupManagerListWarning'
-    { _igmlwData    :: !(Maybe [InstanceGroupManagerListWarningDataItem])
-    , _igmlwCode    :: !(Maybe InstanceGroupManagerListWarningCode)
+    { _igmlwData :: !(Maybe [InstanceGroupManagerListWarningDataItem])
+    , _igmlwCode :: !(Maybe InstanceGroupManagerListWarningCode)
     , _igmlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12984,11 +12984,11 @@ instance ToJSON InstanceGroupManagerListWarning where
 data RegionInstanceGroupsListInstances =
   RegionInstanceGroupsListInstances'
     { _rigliNextPageToken :: !(Maybe Text)
-    , _rigliKind          :: !Text
-    , _rigliItems         :: !(Maybe [InstanceWithNamedPorts])
-    , _rigliSelfLink      :: !(Maybe Text)
-    , _rigliWarning       :: !(Maybe RegionInstanceGroupsListInstancesWarning)
-    , _rigliId            :: !(Maybe Text)
+    , _rigliKind :: !Text
+    , _rigliItems :: !(Maybe [InstanceWithNamedPorts])
+    , _rigliSelfLink :: !(Maybe Text)
+    , _rigliWarning :: !(Maybe RegionInstanceGroupsListInstancesWarning)
+    , _rigliId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13089,8 +13089,8 @@ instance ToJSON RegionInstanceGroupsListInstances
 -- /See:/ 'diskListWarning' smart constructor.
 data DiskListWarning =
   DiskListWarning'
-    { _dlwData    :: !(Maybe [DiskListWarningDataItem])
-    , _dlwCode    :: !(Maybe DiskListWarningCode)
+    { _dlwData :: !(Maybe [DiskListWarningDataItem])
+    , _dlwCode :: !(Maybe DiskListWarningCode)
     , _dlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13149,12 +13149,12 @@ instance ToJSON DiskListWarning where
 -- /See:/ 'tcpHealthCheck' smart constructor.
 data TCPHealthCheck =
   TCPHealthCheck'
-    { _thcResponse          :: !(Maybe Text)
+    { _thcResponse :: !(Maybe Text)
     , _thcPortSpecification :: !(Maybe TCPHealthCheckPortSpecification)
-    , _thcProxyHeader       :: !(Maybe TCPHealthCheckProxyHeader)
-    , _thcPortName          :: !(Maybe Text)
-    , _thcPort              :: !(Maybe (Textual Int32))
-    , _thcRequest           :: !(Maybe Text)
+    , _thcProxyHeader :: !(Maybe TCPHealthCheckProxyHeader)
+    , _thcPortName :: !(Maybe Text)
+    , _thcPort :: !(Maybe (Textual Int32))
+    , _thcRequest :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13262,7 +13262,7 @@ instance ToJSON TCPHealthCheck where
 data InstanceGroupManagerAggregatedListWarningDataItem =
   InstanceGroupManagerAggregatedListWarningDataItem'
     { _igmalwdiValue :: !(Maybe Text)
-    , _igmalwdiKey   :: !(Maybe Text)
+    , _igmalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13363,8 +13363,8 @@ instance ToJSON TestPermissionsResponse where
 -- /See:/ 'regionAutoscalerListWarning' smart constructor.
 data RegionAutoscalerListWarning =
   RegionAutoscalerListWarning'
-    { _ralwData    :: !(Maybe [RegionAutoscalerListWarningDataItem])
-    , _ralwCode    :: !(Maybe RegionAutoscalerListWarningCode)
+    { _ralwData :: !(Maybe [RegionAutoscalerListWarningDataItem])
+    , _ralwCode :: !(Maybe RegionAutoscalerListWarningCode)
     , _ralwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13426,7 +13426,7 @@ instance ToJSON RegionAutoscalerListWarning where
 data TargetInstanceListWarningDataItem =
   TargetInstanceListWarningDataItem'
     { _tilwdiValue :: !(Maybe Text)
-    , _tilwdiKey   :: !(Maybe Text)
+    , _tilwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13482,8 +13482,8 @@ instance ToJSON TargetInstanceListWarningDataItem
 -- /See:/ 'operationListWarning' smart constructor.
 data OperationListWarning =
   OperationListWarning'
-    { _olwData    :: !(Maybe [OperationListWarningDataItem])
-    , _olwCode    :: !(Maybe OperationListWarningCode)
+    { _olwData :: !(Maybe [OperationListWarningDataItem])
+    , _olwCode :: !(Maybe OperationListWarningCode)
     , _olwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13588,9 +13588,9 @@ instance ToJSON InstanceGroupsRemoveInstancesRequest
 -- /See:/ 'interconnectAttachmentPartnerMetadata' smart constructor.
 data InterconnectAttachmentPartnerMetadata =
   InterconnectAttachmentPartnerMetadata'
-    { _iapmPortalURL        :: !(Maybe Text)
+    { _iapmPortalURL :: !(Maybe Text)
     , _iapmInterconnectName :: !(Maybe Text)
-    , _iapmPartnerName      :: !(Maybe Text)
+    , _iapmPartnerName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13661,7 +13661,7 @@ instance ToJSON InterconnectAttachmentPartnerMetadata
 data MachineTypeListWarningDataItem =
   MachineTypeListWarningDataItem'
     { _mtlwdiValue :: !(Maybe Text)
-    , _mtlwdiKey   :: !(Maybe Text)
+    , _mtlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13749,7 +13749,7 @@ instance ToJSON NetworksRemovePeeringRequest where
 data TargetHTTPProxyListWarningDataItem =
   TargetHTTPProxyListWarningDataItem'
     { _thttpplwdiValue :: !(Maybe Text)
-    , _thttpplwdiKey   :: !(Maybe Text)
+    , _thttpplwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13807,8 +13807,8 @@ instance ToJSON TargetHTTPProxyListWarningDataItem
 -- /See:/ 'machineTypeAggregatedListWarning' smart constructor.
 data MachineTypeAggregatedListWarning =
   MachineTypeAggregatedListWarning'
-    { _mtalwData    :: !(Maybe [MachineTypeAggregatedListWarningDataItem])
-    , _mtalwCode    :: !(Maybe MachineTypeAggregatedListWarningCode)
+    { _mtalwData :: !(Maybe [MachineTypeAggregatedListWarningDataItem])
+    , _mtalwCode :: !(Maybe MachineTypeAggregatedListWarningCode)
     , _mtalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13873,7 +13873,7 @@ instance ToJSON MachineTypeAggregatedListWarning
 data NodeTemplateAggregatedListWarningDataItem =
   NodeTemplateAggregatedListWarningDataItem'
     { _ntalwdiValue :: !(Maybe Text)
-    , _ntalwdiKey   :: !(Maybe Text)
+    , _ntalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13933,11 +13933,11 @@ instance ToJSON
 data BackendBucketList =
   BackendBucketList'
     { _bblNextPageToken :: !(Maybe Text)
-    , _bblKind          :: !Text
-    , _bblItems         :: !(Maybe [BackendBucket])
-    , _bblSelfLink      :: !(Maybe Text)
-    , _bblWarning       :: !(Maybe BackendBucketListWarning)
-    , _bblId            :: !(Maybe Text)
+    , _bblKind :: !Text
+    , _bblItems :: !(Maybe [BackendBucket])
+    , _bblSelfLink :: !(Maybe Text)
+    , _bblWarning :: !(Maybe BackendBucketListWarning)
+    , _bblId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14076,7 +14076,7 @@ instance ToJSON InterconnectAttachmentPrivateInfo
 data AcceleratorTypesScopedList =
   AcceleratorTypesScopedList'
     { _atslAcceleratorTypes :: !(Maybe [AcceleratorType])
-    , _atslWarning          :: !(Maybe AcceleratorTypesScopedListWarning)
+    , _atslWarning :: !(Maybe AcceleratorTypesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14130,8 +14130,8 @@ instance ToJSON AcceleratorTypesScopedList where
 data BackendServiceCdnPolicy =
   BackendServiceCdnPolicy'
     { _bscpSignedURLCacheMaxAgeSec :: !(Maybe (Textual Int64))
-    , _bscpSignedURLKeyNames       :: !(Maybe [Text])
-    , _bscpCacheKeyPolicy          :: !(Maybe CacheKeyPolicy)
+    , _bscpSignedURLKeyNames :: !(Maybe [Text])
+    , _bscpCacheKeyPolicy :: !(Maybe CacheKeyPolicy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14205,7 +14205,7 @@ instance ToJSON BackendServiceCdnPolicy where
 data RouteWarningsItemDataItem =
   RouteWarningsItemDataItem'
     { _rwidiValue :: !(Maybe Text)
-    , _rwidiKey   :: !(Maybe Text)
+    , _rwidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14257,11 +14257,11 @@ instance ToJSON RouteWarningsItemDataItem where
 data NodeGroupAggregatedList =
   NodeGroupAggregatedList'
     { _ngalNextPageToken :: !(Maybe Text)
-    , _ngalKind          :: !Text
-    , _ngalItems         :: !(Maybe NodeGroupAggregatedListItems)
-    , _ngalSelfLink      :: !(Maybe Text)
-    , _ngalWarning       :: !(Maybe NodeGroupAggregatedListWarning)
-    , _ngalId            :: !(Maybe Text)
+    , _ngalKind :: !Text
+    , _ngalItems :: !(Maybe NodeGroupAggregatedListItems)
+    , _ngalSelfLink :: !(Maybe Text)
+    , _ngalWarning :: !(Maybe NodeGroupAggregatedListWarning)
+    , _ngalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14356,8 +14356,8 @@ instance ToJSON NodeGroupAggregatedList where
 -- /See:/ 'vpnTunnelListWarning' smart constructor.
 data VPNTunnelListWarning =
   VPNTunnelListWarning'
-    { _vtlwData    :: !(Maybe [VPNTunnelListWarningDataItem])
-    , _vtlwCode    :: !(Maybe VPNTunnelListWarningCode)
+    { _vtlwData :: !(Maybe [VPNTunnelListWarningDataItem])
+    , _vtlwCode :: !(Maybe VPNTunnelListWarningCode)
     , _vtlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14500,8 +14500,8 @@ instance ToJSON InstanceAggregatedListItems where
 -- /See:/ 'autoscalersScopedListWarning' smart constructor.
 data AutoscalersScopedListWarning =
   AutoscalersScopedListWarning'
-    { _aslwData    :: !(Maybe [AutoscalersScopedListWarningDataItem])
-    , _aslwCode    :: !(Maybe AutoscalersScopedListWarningCode)
+    { _aslwData :: !(Maybe [AutoscalersScopedListWarningDataItem])
+    , _aslwCode :: !(Maybe AutoscalersScopedListWarningCode)
     , _aslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14564,10 +14564,10 @@ instance ToJSON AutoscalersScopedListWarning where
 -- /See:/ 'diskInstantiationConfig' smart constructor.
 data DiskInstantiationConfig =
   DiskInstantiationConfig'
-    { _dicAutoDelete      :: !(Maybe Bool)
+    { _dicAutoDelete :: !(Maybe Bool)
     , _dicInstantiateFrom :: !(Maybe DiskInstantiationConfigInstantiateFrom)
-    , _dicCustomImage     :: !(Maybe Text)
-    , _dicDeviceName      :: !(Maybe Text)
+    , _dicCustomImage :: !(Maybe Text)
+    , _dicDeviceName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14655,8 +14655,8 @@ instance ToJSON DiskInstantiationConfig where
 -- /See:/ 'diskTypeAggregatedListWarning' smart constructor.
 data DiskTypeAggregatedListWarning =
   DiskTypeAggregatedListWarning'
-    { _dtalwData    :: !(Maybe [DiskTypeAggregatedListWarningDataItem])
-    , _dtalwCode    :: !(Maybe DiskTypeAggregatedListWarningCode)
+    { _dtalwData :: !(Maybe [DiskTypeAggregatedListWarningDataItem])
+    , _dtalwCode :: !(Maybe DiskTypeAggregatedListWarningCode)
     , _dtalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14719,7 +14719,7 @@ instance ToJSON DiskTypeAggregatedListWarning where
 data DiskTypeListWarningDataItem =
   DiskTypeListWarningDataItem'
     { _dtlwdiValue :: !(Maybe Text)
-    , _dtlwdiKey   :: !(Maybe Text)
+    , _dtlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14774,11 +14774,11 @@ instance ToJSON DiskTypeListWarningDataItem where
 -- /See:/ 'securityPolicyRule' smart constructor.
 data SecurityPolicyRule =
   SecurityPolicyRule'
-    { _sprPriority    :: !(Maybe (Textual Int32))
-    , _sprKind        :: !Text
-    , _sprAction      :: !(Maybe Text)
-    , _sprPreview     :: !(Maybe Bool)
-    , _sprMatch       :: !(Maybe SecurityPolicyRuleMatcher)
+    { _sprPriority :: !(Maybe (Textual Int32))
+    , _sprKind :: !Text
+    , _sprAction :: !(Maybe Text)
+    , _sprPreview :: !(Maybe Bool)
+    , _sprMatch :: !(Maybe SecurityPolicyRuleMatcher)
     , _sprDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14916,7 +14916,7 @@ instance ToJSON InterconnectsGetDiagnosticsResponse
 data VPNTunnelAggregatedListWarningDataItem =
   VPNTunnelAggregatedListWarningDataItem'
     { _vtalwdiValue :: !(Maybe Text)
-    , _vtalwdiKey   :: !(Maybe Text)
+    , _vtalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14975,8 +14975,8 @@ instance ToJSON
 data FixedOrPercent =
   FixedOrPercent'
     { _fopCalculated :: !(Maybe (Textual Int32))
-    , _fopPercent    :: !(Maybe (Textual Int32))
-    , _fopFixed      :: !(Maybe (Textual Int32))
+    , _fopPercent :: !(Maybe (Textual Int32))
+    , _fopFixed :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15129,16 +15129,16 @@ instance ToJSON ShieldedInstanceIntegrityPolicy where
 -- /See:/ 'routerNAT' smart constructor.
 data RouterNAT =
   RouterNAT'
-    { _rnatNATIPAllocateOption           :: !(Maybe RouterNATNATIPAllocateOption)
-    , _rnatICMPIdleTimeoutSec            :: !(Maybe (Textual Int32))
-    , _rnatUdpIdleTimeoutSec             :: !(Maybe (Textual Int32))
-    , _rnatNATIPs                        :: !(Maybe [Text])
-    , _rnatSubnetworks                   :: !(Maybe [RouterNATSubnetworkToNAT])
-    , _rnatMinPortsPerVM                 :: !(Maybe (Textual Int32))
-    , _rnatName                          :: !(Maybe Text)
+    { _rnatNATIPAllocateOption :: !(Maybe RouterNATNATIPAllocateOption)
+    , _rnatICMPIdleTimeoutSec :: !(Maybe (Textual Int32))
+    , _rnatUdpIdleTimeoutSec :: !(Maybe (Textual Int32))
+    , _rnatNATIPs :: !(Maybe [Text])
+    , _rnatSubnetworks :: !(Maybe [RouterNATSubnetworkToNAT])
+    , _rnatMinPortsPerVM :: !(Maybe (Textual Int32))
+    , _rnatName :: !(Maybe Text)
     , _rnatSourceSubnetworkIPRangesToNAT :: !(Maybe RouterNATSourceSubnetworkIPRangesToNAT)
-    , _rnatTCPEstablishedIdleTimeoutSec  :: !(Maybe (Textual Int32))
-    , _rnatTCPTransitoryIdleTimeoutSec   :: !(Maybe (Textual Int32))
+    , _rnatTCPEstablishedIdleTimeoutSec :: !(Maybe (Textual Int32))
+    , _rnatTCPTransitoryIdleTimeoutSec :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15304,8 +15304,8 @@ instance ToJSON RouterNAT where
 -- /See:/ 'autoscalerAggregatedListWarning' smart constructor.
 data AutoscalerAggregatedListWarning =
   AutoscalerAggregatedListWarning'
-    { _aalwData    :: !(Maybe [AutoscalerAggregatedListWarningDataItem])
-    , _aalwCode    :: !(Maybe AutoscalerAggregatedListWarningCode)
+    { _aalwData :: !(Maybe [AutoscalerAggregatedListWarningDataItem])
+    , _aalwCode :: !(Maybe AutoscalerAggregatedListWarningCode)
     , _aalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15368,7 +15368,7 @@ instance ToJSON AutoscalerAggregatedListWarning where
 data AutoscalerListWarningDataItem =
   AutoscalerListWarningDataItem'
     { _alwdiValue :: !(Maybe Text)
-    , _alwdiKey   :: !(Maybe Text)
+    , _alwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15420,8 +15420,8 @@ instance ToJSON AutoscalerListWarningDataItem where
 -- /See:/ 'nodeTypeListWarning' smart constructor.
 data NodeTypeListWarning =
   NodeTypeListWarning'
-    { _ntlwData    :: !(Maybe [NodeTypeListWarningDataItem])
-    , _ntlwCode    :: !(Maybe NodeTypeListWarningCode)
+    { _ntlwData :: !(Maybe [NodeTypeListWarningDataItem])
+    , _ntlwCode :: !(Maybe NodeTypeListWarningCode)
     , _ntlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15484,11 +15484,11 @@ instance ToJSON NodeTypeListWarning where
 data HealthCheckList =
   HealthCheckList'
     { _hclNextPageToken :: !(Maybe Text)
-    , _hclKind          :: !Text
-    , _hclItems         :: !(Maybe [HealthCheck])
-    , _hclSelfLink      :: !(Maybe Text)
-    , _hclWarning       :: !(Maybe HealthCheckListWarning)
-    , _hclId            :: !(Maybe Text)
+    , _hclKind :: !Text
+    , _hclItems :: !(Maybe [HealthCheck])
+    , _hclSelfLink :: !(Maybe Text)
+    , _hclWarning :: !(Maybe HealthCheckListWarning)
+    , _hclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15627,12 +15627,12 @@ instance ToJSON ManagedInstanceLastAttemptErrors
 -- /See:/ 'routerStatusNATStatus' smart constructor.
 data RouterStatusNATStatus =
   RouterStatusNATStatus'
-    { _rsnatsUserAllocatedNATIPResources   :: !(Maybe [Text])
-    , _rsnatsName                          :: !(Maybe Text)
-    , _rsnatsAutoAllocatedNATIPs           :: !(Maybe [Text])
-    , _rsnatsMinExtraNATIPsNeeded          :: !(Maybe (Textual Int32))
+    { _rsnatsUserAllocatedNATIPResources :: !(Maybe [Text])
+    , _rsnatsName :: !(Maybe Text)
+    , _rsnatsAutoAllocatedNATIPs :: !(Maybe [Text])
+    , _rsnatsMinExtraNATIPsNeeded :: !(Maybe (Textual Int32))
     , _rsnatsNumVMEndpointsWithNATMAppings :: !(Maybe (Textual Int32))
-    , _rsnatsUserAllocatedNATIPs           :: !(Maybe [Text])
+    , _rsnatsUserAllocatedNATIPs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15789,7 +15789,7 @@ instance ToJSON TargetPoolsRemoveInstanceRequest
 data NodeTypeAggregatedListWarningDataItem =
   NodeTypeAggregatedListWarningDataItem'
     { _nValue :: !(Maybe Text)
-    , _nKey   :: !(Maybe Text)
+    , _nKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15842,7 +15842,7 @@ instance ToJSON NodeTypeAggregatedListWarningDataItem
 data TargetInstancesScopedListWarningDataItem =
   TargetInstancesScopedListWarningDataItem'
     { _tislwdiValue :: !(Maybe Text)
-    , _tislwdiKey   :: !(Maybe Text)
+    , _tislwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15902,8 +15902,8 @@ instance ToJSON
 -- /See:/ 'machineTypesScopedListWarning' smart constructor.
 data MachineTypesScopedListWarning =
   MachineTypesScopedListWarning'
-    { _mtslwData    :: !(Maybe [MachineTypesScopedListWarningDataItem])
-    , _mtslwCode    :: !(Maybe MachineTypesScopedListWarningCode)
+    { _mtslwData :: !(Maybe [MachineTypesScopedListWarningDataItem])
+    , _mtslwCode :: !(Maybe MachineTypesScopedListWarningCode)
     , _mtslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15965,7 +15965,7 @@ instance ToJSON MachineTypesScopedListWarning where
 -- /See:/ 'zoneSetLabelsRequest' smart constructor.
 data ZoneSetLabelsRequest =
   ZoneSetLabelsRequest'
-    { _zslrLabels           :: !(Maybe ZoneSetLabelsRequestLabels)
+    { _zslrLabels :: !(Maybe ZoneSetLabelsRequestLabels)
     , _zslrLabelFingerprint :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16022,15 +16022,15 @@ instance ToJSON ZoneSetLabelsRequest where
 -- /See:/ 'targetInstance' smart constructor.
 data TargetInstance =
   TargetInstance'
-    { _tiKind              :: !Text
-    , _tiNATPolicy         :: !(Maybe TargetInstanceNATPolicy)
-    , _tiZone              :: !(Maybe Text)
-    , _tiSelfLink          :: !(Maybe Text)
-    , _tiName              :: !(Maybe Text)
+    { _tiKind :: !Text
+    , _tiNATPolicy :: !(Maybe TargetInstanceNATPolicy)
+    , _tiZone :: !(Maybe Text)
+    , _tiSelfLink :: !(Maybe Text)
+    , _tiName :: !(Maybe Text)
     , _tiCreationTimestamp :: !(Maybe Text)
-    , _tiId                :: !(Maybe (Textual Word64))
-    , _tiDescription       :: !(Maybe Text)
-    , _tiInstance          :: !(Maybe Text)
+    , _tiId :: !(Maybe (Textual Word64))
+    , _tiDescription :: !(Maybe Text)
+    , _tiInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16168,7 +16168,7 @@ instance ToJSON TargetInstance where
 -- /See:/ 'targetPoolInstanceHealth' smart constructor.
 data TargetPoolInstanceHealth =
   TargetPoolInstanceHealth'
-    { _tpihKind         :: !Text
+    { _tpihKind :: !Text
     , _tpihHealthStatus :: !(Maybe [HealthStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16222,11 +16222,11 @@ instance ToJSON TargetPoolInstanceHealth where
 data AcceleratorTypeAggregatedList =
   AcceleratorTypeAggregatedList'
     { _atalNextPageToken :: !(Maybe Text)
-    , _atalKind          :: !Text
-    , _atalItems         :: !(Maybe AcceleratorTypeAggregatedListItems)
-    , _atalSelfLink      :: !(Maybe Text)
-    , _atalWarning       :: !(Maybe AcceleratorTypeAggregatedListWarning)
-    , _atalId            :: !(Maybe Text)
+    , _atalKind :: !Text
+    , _atalItems :: !(Maybe AcceleratorTypeAggregatedListItems)
+    , _atalSelfLink :: !(Maybe Text)
+    , _atalWarning :: !(Maybe AcceleratorTypeAggregatedListWarning)
+    , _atalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16366,8 +16366,8 @@ instance ToJSON NetworkRoutingConfig where
 -- /See:/ 'nodeTemplateListWarning' smart constructor.
 data NodeTemplateListWarning =
   NodeTemplateListWarning'
-    { _nodData    :: !(Maybe [NodeTemplateListWarningDataItem])
-    , _nodCode    :: !(Maybe NodeTemplateListWarningCode)
+    { _nodData :: !(Maybe [NodeTemplateListWarningDataItem])
+    , _nodCode :: !(Maybe NodeTemplateListWarningCode)
     , _nodMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16476,19 +16476,19 @@ instance ToJSON
 -- /See:/ 'instanceProperties' smart constructor.
 data InstanceProperties =
   InstanceProperties'
-    { _ipServiceAccounts        :: !(Maybe [ServiceAccount])
-    , _ipNetworkInterfaces      :: !(Maybe [NetworkInterface])
-    , _ipGuestAccelerators      :: !(Maybe [AcceleratorConfig])
-    , _ipMachineType            :: !(Maybe Text)
-    , _ipMetadata               :: !(Maybe Metadata)
+    { _ipServiceAccounts :: !(Maybe [ServiceAccount])
+    , _ipNetworkInterfaces :: !(Maybe [NetworkInterface])
+    , _ipGuestAccelerators :: !(Maybe [AcceleratorConfig])
+    , _ipMachineType :: !(Maybe Text)
+    , _ipMetadata :: !(Maybe Metadata)
     , _ipShieldedInstanceConfig :: !(Maybe ShieldedInstanceConfig)
-    , _ipLabels                 :: !(Maybe InstancePropertiesLabels)
-    , _ipScheduling             :: !(Maybe Scheduling)
-    , _ipMinCPUPlatform         :: !(Maybe Text)
-    , _ipDisks                  :: !(Maybe [AttachedDisk])
-    , _ipCanIPForward           :: !(Maybe Bool)
-    , _ipDescription            :: !(Maybe Text)
-    , _ipTags                   :: !(Maybe Tags)
+    , _ipLabels :: !(Maybe InstancePropertiesLabels)
+    , _ipScheduling :: !(Maybe Scheduling)
+    , _ipMinCPUPlatform :: !(Maybe Text)
+    , _ipDisks :: !(Maybe [AttachedDisk])
+    , _ipCanIPForward :: !(Maybe Bool)
+    , _ipDescription :: !(Maybe Text)
+    , _ipTags :: !(Maybe Tags)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16725,8 +16725,8 @@ instance ToJSON ProjectsListXpnHostsRequest where
 -- /See:/ 'regionListWarning' smart constructor.
 data RegionListWarning =
   RegionListWarning'
-    { _rlwData    :: !(Maybe [RegionListWarningDataItem])
-    , _rlwCode    :: !(Maybe RegionListWarningCode)
+    { _rlwData :: !(Maybe [RegionListWarningDataItem])
+    , _rlwCode :: !(Maybe RegionListWarningCode)
     , _rlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16785,13 +16785,13 @@ instance ToJSON RegionListWarning where
 -- /See:/ 'hTTP2HealthCheck' smart constructor.
 data HTTP2HealthCheck =
   HTTP2HealthCheck'
-    { _httphcResponse          :: !(Maybe Text)
+    { _httphcResponse :: !(Maybe Text)
     , _httphcPortSpecification :: !(Maybe HTTP2HealthCheckPortSpecification)
-    , _httphcRequestPath       :: !(Maybe Text)
-    , _httphcHost              :: !(Maybe Text)
-    , _httphcProxyHeader       :: !(Maybe HTTP2HealthCheckProxyHeader)
-    , _httphcPortName          :: !(Maybe Text)
-    , _httphcPort              :: !(Maybe (Textual Int32))
+    , _httphcRequestPath :: !(Maybe Text)
+    , _httphcHost :: !(Maybe Text)
+    , _httphcProxyHeader :: !(Maybe HTTP2HealthCheckProxyHeader)
+    , _httphcPortName :: !(Maybe Text)
+    , _httphcPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16913,7 +16913,7 @@ instance ToJSON HTTP2HealthCheck where
 data NodeGroupsScopedList =
   NodeGroupsScopedList'
     { _ngslNodeGroups :: !(Maybe [NodeGroup])
-    , _ngslWarning    :: !(Maybe NodeGroupsScopedListWarning)
+    , _ngslWarning :: !(Maybe NodeGroupsScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16966,8 +16966,8 @@ instance ToJSON NodeGroupsScopedList where
 -- /See:/ 'diskTypesScopedListWarning' smart constructor.
 data DiskTypesScopedListWarning =
   DiskTypesScopedListWarning'
-    { _dtslwData    :: !(Maybe [DiskTypesScopedListWarningDataItem])
-    , _dtslwCode    :: !(Maybe DiskTypesScopedListWarningCode)
+    { _dtslwData :: !(Maybe [DiskTypesScopedListWarningDataItem])
+    , _dtslwCode :: !(Maybe DiskTypesScopedListWarningCode)
     , _dtslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17030,7 +17030,7 @@ instance ToJSON DiskTypesScopedListWarning where
 data RegionInstanceGroupManagerListWarningDataItem =
   RegionInstanceGroupManagerListWarningDataItem'
     { _rigmlwdiValue :: !(Maybe Text)
-    , _rigmlwdiKey   :: !(Maybe Text)
+    , _rigmlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17095,13 +17095,13 @@ instance ToJSON
 -- /See:/ 'attachedDiskInitializeParams' smart constructor.
 data AttachedDiskInitializeParams =
   AttachedDiskInitializeParams'
-    { _adipSourceImage              :: !(Maybe Text)
-    , _adipDiskSizeGb               :: !(Maybe (Textual Int64))
-    , _adipDiskName                 :: !(Maybe Text)
+    { _adipSourceImage :: !(Maybe Text)
+    , _adipDiskSizeGb :: !(Maybe (Textual Int64))
+    , _adipDiskName :: !(Maybe Text)
     , _adipSourceImageEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _adipDiskType                 :: !(Maybe Text)
-    , _adipLabels                   :: !(Maybe AttachedDiskInitializeParamsLabels)
-    , _adipDescription              :: !(Maybe Text)
+    , _adipDiskType :: !(Maybe Text)
+    , _adipLabels :: !(Maybe AttachedDiskInitializeParamsLabels)
+    , _adipDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17237,7 +17237,7 @@ instance ToJSON AttachedDiskInitializeParams where
 -- /See:/ 'usableSubnetworkSecondaryRange' smart constructor.
 data UsableSubnetworkSecondaryRange =
   UsableSubnetworkSecondaryRange'
-    { _ussrRangeName   :: !(Maybe Text)
+    { _ussrRangeName :: !(Maybe Text)
     , _ussrIPCIdRRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17341,7 +17341,7 @@ instance ToJSON
 data AddressesScopedListWarningDataItem =
   AddressesScopedListWarningDataItem'
     { _aslwdiValue :: !(Maybe Text)
-    , _aslwdiKey   :: !(Maybe Text)
+    , _aslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17397,7 +17397,7 @@ instance ToJSON AddressesScopedListWarningDataItem
 data InstanceGroupListWarningDataItem =
   InstanceGroupListWarningDataItem'
     { _iglwdiValue :: !(Maybe Text)
-    , _iglwdiKey   :: !(Maybe Text)
+    , _iglwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17453,13 +17453,13 @@ instance ToJSON InstanceGroupListWarningDataItem
 -- /See:/ 'networkInterface' smart constructor.
 data NetworkInterface =
   NetworkInterface'
-    { _niKind          :: !Text
-    , _niFingerprint   :: !(Maybe Bytes)
+    { _niKind :: !Text
+    , _niFingerprint :: !(Maybe Bytes)
     , _niAliasIPRanges :: !(Maybe [AliasIPRange])
-    , _niNetwork       :: !(Maybe Text)
-    , _niName          :: !(Maybe Text)
-    , _niNetworkIP     :: !(Maybe Text)
-    , _niSubnetwork    :: !(Maybe Text)
+    , _niNetwork :: !(Maybe Text)
+    , _niName :: !(Maybe Text)
+    , _niNetworkIP :: !(Maybe Text)
+    , _niSubnetwork :: !(Maybe Text)
     , _niAccessConfigs :: !(Maybe [AccessConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17606,8 +17606,8 @@ instance ToJSON NetworkInterface where
 -- /See:/ 'routerListWarning' smart constructor.
 data RouterListWarning =
   RouterListWarning'
-    { _rData    :: !(Maybe [RouterListWarningDataItem])
-    , _rCode    :: !(Maybe RouterListWarningCode)
+    { _rData :: !(Maybe [RouterListWarningDataItem])
+    , _rCode :: !(Maybe RouterListWarningCode)
     , _rMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17665,7 +17665,7 @@ instance ToJSON RouterListWarning where
 data FirewallListWarningDataItem =
   FirewallListWarningDataItem'
     { _flwdiValue :: !(Maybe Text)
-    , _flwdiKey   :: !(Maybe Text)
+    , _flwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17829,7 +17829,7 @@ instance ToJSON
 data BackendBucketCdnPolicy =
   BackendBucketCdnPolicy'
     { _bbcpSignedURLCacheMaxAgeSec :: !(Maybe (Textual Int64))
-    , _bbcpSignedURLKeyNames       :: !(Maybe [Text])
+    , _bbcpSignedURLKeyNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17891,11 +17891,11 @@ instance ToJSON BackendBucketCdnPolicy where
 data TargetSSLProxyList =
   TargetSSLProxyList'
     { _tsplNextPageToken :: !(Maybe Text)
-    , _tsplKind          :: !Text
-    , _tsplItems         :: !(Maybe [TargetSSLProxy])
-    , _tsplSelfLink      :: !(Maybe Text)
-    , _tsplWarning       :: !(Maybe TargetSSLProxyListWarning)
-    , _tsplId            :: !(Maybe Text)
+    , _tsplKind :: !Text
+    , _tsplItems :: !(Maybe [TargetSSLProxy])
+    , _tsplSelfLink :: !(Maybe Text)
+    , _tsplWarning :: !(Maybe TargetSSLProxyListWarning)
+    , _tsplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17991,7 +17991,7 @@ instance ToJSON TargetSSLProxyList where
 data CustomerEncryptionKeyProtectedDisk =
   CustomerEncryptionKeyProtectedDisk'
     { _cekpdDiskEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _cekpdSource            :: !(Maybe Text)
+    , _cekpdSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18046,11 +18046,11 @@ instance ToJSON CustomerEncryptionKeyProtectedDisk
 data InstanceTemplateList =
   InstanceTemplateList'
     { _itlNextPageToken :: !(Maybe Text)
-    , _itlKind          :: !Text
-    , _itlItems         :: !(Maybe [InstanceTemplate])
-    , _itlSelfLink      :: !(Maybe Text)
-    , _itlWarning       :: !(Maybe InstanceTemplateListWarning)
-    , _itlId            :: !(Maybe Text)
+    , _itlKind :: !Text
+    , _itlItems :: !(Maybe [InstanceTemplate])
+    , _itlSelfLink :: !(Maybe Text)
+    , _itlWarning :: !(Maybe InstanceTemplateListWarning)
+    , _itlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18147,10 +18147,10 @@ instance ToJSON InstanceTemplateList where
 -- /See:/ 'reference' smart constructor.
 data Reference =
   Reference'
-    { _refKind          :: !Text
-    , _refReferrer      :: !(Maybe Text)
+    { _refKind :: !Text
+    , _refReferrer :: !(Maybe Text)
     , _refReferenceType :: !(Maybe Text)
-    , _refTarget        :: !(Maybe Text)
+    , _refTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18223,8 +18223,8 @@ instance ToJSON Reference where
 -- /See:/ 'instanceGroupAggregatedListWarning' smart constructor.
 data InstanceGroupAggregatedListWarning =
   InstanceGroupAggregatedListWarning'
-    { _igalwData    :: !(Maybe [InstanceGroupAggregatedListWarningDataItem])
-    , _igalwCode    :: !(Maybe InstanceGroupAggregatedListWarningCode)
+    { _igalwData :: !(Maybe [InstanceGroupAggregatedListWarningDataItem])
+    , _igalwCode :: !(Maybe InstanceGroupAggregatedListWarningCode)
     , _igalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18290,11 +18290,11 @@ instance ToJSON InstanceGroupAggregatedListWarning
 data RouteList =
   RouteList'
     { _rlNextPageToken :: !(Maybe Text)
-    , _rlKind          :: !Text
-    , _rlItems         :: !(Maybe [Route])
-    , _rlSelfLink      :: !(Maybe Text)
-    , _rlWarning       :: !(Maybe RouteListWarning)
-    , _rlId            :: !(Maybe Text)
+    , _rlKind :: !Text
+    , _rlItems :: !(Maybe [Route])
+    , _rlSelfLink :: !(Maybe Text)
+    , _rlWarning :: !(Maybe RouteListWarning)
+    , _rlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18388,11 +18388,11 @@ instance ToJSON RouteList where
 data InstanceListReferrers =
   InstanceListReferrers'
     { _ilrNextPageToken :: !(Maybe Text)
-    , _ilrKind          :: !Text
-    , _ilrItems         :: !(Maybe [Reference])
-    , _ilrSelfLink      :: !(Maybe Text)
-    , _ilrWarning       :: !(Maybe InstanceListReferrersWarning)
-    , _ilrId            :: !(Maybe Text)
+    , _ilrKind :: !Text
+    , _ilrItems :: !(Maybe [Reference])
+    , _ilrSelfLink :: !(Maybe Text)
+    , _ilrWarning :: !(Maybe InstanceListReferrersWarning)
+    , _ilrId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18489,18 +18489,18 @@ instance ToJSON InstanceListReferrers where
 -- /See:/ 'router' smart constructor.
 data Router =
   Router'
-    { _rouBGPPeers          :: !(Maybe [RouterBGPPeer])
-    , _rouBGP               :: !(Maybe RouterBGP)
-    , _rouKind              :: !Text
-    , _rouNetwork           :: !(Maybe Text)
-    , _rouInterfaces        :: !(Maybe [RouterInterface])
-    , _rouSelfLink          :: !(Maybe Text)
-    , _rouName              :: !(Maybe Text)
+    { _rouBGPPeers :: !(Maybe [RouterBGPPeer])
+    , _rouBGP :: !(Maybe RouterBGP)
+    , _rouKind :: !Text
+    , _rouNetwork :: !(Maybe Text)
+    , _rouInterfaces :: !(Maybe [RouterInterface])
+    , _rouSelfLink :: !(Maybe Text)
+    , _rouName :: !(Maybe Text)
     , _rouCreationTimestamp :: !(Maybe Text)
-    , _rouId                :: !(Maybe (Textual Word64))
-    , _rouRegion            :: !(Maybe Text)
-    , _rouNATs              :: !(Maybe [RouterNAT])
-    , _rouDescription       :: !(Maybe Text)
+    , _rouId :: !(Maybe (Textual Word64))
+    , _rouRegion :: !(Maybe Text)
+    , _rouNATs :: !(Maybe [RouterNAT])
+    , _rouDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18668,7 +18668,7 @@ instance ToJSON Router where
 data RouterAggregatedListWarningDataItem =
   RouterAggregatedListWarningDataItem'
     { _ralwdiValue :: !(Maybe Text)
-    , _ralwdiKey   :: !(Maybe Text)
+    , _ralwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18724,7 +18724,7 @@ instance ToJSON RouterAggregatedListWarningDataItem
 data RoutersScopedListWarningDataItem =
   RoutersScopedListWarningDataItem'
     { _rslwdiValue :: !(Maybe Text)
-    , _rslwdiKey   :: !(Maybe Text)
+    , _rslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18826,7 +18826,7 @@ instance ToJSON
 data TargetHTTPSProxyListWarningDataItem =
   TargetHTTPSProxyListWarningDataItem'
     { _thplwdiValue :: !(Maybe Text)
-    , _thplwdiKey   :: !(Maybe Text)
+    , _thplwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18883,11 +18883,11 @@ instance ToJSON TargetHTTPSProxyListWarningDataItem
 data TargetVPNGatewayList =
   TargetVPNGatewayList'
     { _tvglNextPageToken :: !(Maybe Text)
-    , _tvglKind          :: !Text
-    , _tvglItems         :: !(Maybe [TargetVPNGateway])
-    , _tvglSelfLink      :: !(Maybe Text)
-    , _tvglWarning       :: !(Maybe TargetVPNGatewayListWarning)
-    , _tvglId            :: !(Maybe Text)
+    , _tvglKind :: !Text
+    , _tvglItems :: !(Maybe [TargetVPNGateway])
+    , _tvglSelfLink :: !(Maybe Text)
+    , _tvglWarning :: !(Maybe TargetVPNGatewayListWarning)
+    , _tvglId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18985,11 +18985,11 @@ instance ToJSON TargetVPNGatewayList where
 data SSLCertificateList =
   SSLCertificateList'
     { _sclNextPageToken :: !(Maybe Text)
-    , _sclKind          :: !Text
-    , _sclItems         :: !(Maybe [SSLCertificate])
-    , _sclSelfLink      :: !(Maybe Text)
-    , _sclWarning       :: !(Maybe SSLCertificateListWarning)
-    , _sclId            :: !(Maybe Text)
+    , _sclKind :: !Text
+    , _sclItems :: !(Maybe [SSLCertificate])
+    , _sclSelfLink :: !(Maybe Text)
+    , _sclWarning :: !(Maybe SSLCertificateListWarning)
+    , _sclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19085,7 +19085,7 @@ instance ToJSON SSLCertificateList where
 data FirewallAllowedItem =
   FirewallAllowedItem'
     { _faiIPProtocol :: !(Maybe Text)
-    , _faiPorts      :: !(Maybe [Text])
+    , _faiPorts :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19142,7 +19142,7 @@ instance ToJSON FirewallAllowedItem where
 -- /See:/ 'routerAdvertisedIPRange' smart constructor.
 data RouterAdvertisedIPRange =
   RouterAdvertisedIPRange'
-    { _rairRange       :: !(Maybe Text)
+    { _rairRange :: !(Maybe Text)
     , _rairDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19191,7 +19191,7 @@ instance ToJSON RouterAdvertisedIPRange where
 data RouterListWarningDataItem =
   RouterListWarningDataItem'
     { _rlwdiValue :: !(Maybe Text)
-    , _rlwdiKey   :: !(Maybe Text)
+    , _rlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19243,11 +19243,11 @@ instance ToJSON RouterListWarningDataItem where
 -- /See:/ 'rule' smart constructor.
 data Rule =
   Rule'
-    { _rAction      :: !(Maybe RuleAction)
-    , _rNotIns      :: !(Maybe [Text])
-    , _rIns         :: !(Maybe [Text])
-    , _rLogConfigs  :: !(Maybe [LogConfig])
-    , _rConditions  :: !(Maybe [Condition])
+    { _rAction :: !(Maybe RuleAction)
+    , _rNotIns :: !(Maybe [Text])
+    , _rIns :: !(Maybe [Text])
+    , _rLogConfigs :: !(Maybe [LogConfig])
+    , _rConditions :: !(Maybe [Condition])
     , _rPermissions :: !(Maybe [Text])
     , _rDescription :: !(Maybe Text)
     }
@@ -19362,11 +19362,11 @@ instance ToJSON Rule where
 data BackendServiceAggregatedList =
   BackendServiceAggregatedList'
     { _bsalNextPageToken :: !(Maybe Text)
-    , _bsalKind          :: !Text
-    , _bsalItems         :: !(Maybe BackendServiceAggregatedListItems)
-    , _bsalSelfLink      :: !(Maybe Text)
-    , _bsalWarning       :: !(Maybe BackendServiceAggregatedListWarning)
-    , _bsalId            :: !(Maybe Text)
+    , _bsalKind :: !Text
+    , _bsalItems :: !(Maybe BackendServiceAggregatedListItems)
+    , _bsalSelfLink :: !(Maybe Text)
+    , _bsalWarning :: !(Maybe BackendServiceAggregatedListWarning)
+    , _bsalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19464,17 +19464,17 @@ instance ToJSON BackendServiceAggregatedList where
 data Network =
   Network'
     { _nAutoCreateSubnetworks :: !(Maybe Bool)
-    , _nKind                  :: !Text
-    , _nRoutingConfig         :: !(Maybe NetworkRoutingConfig)
-    , _nSubnetworks           :: !(Maybe [Text])
-    , _nIPv4Range             :: !(Maybe Text)
-    , _nSelfLink              :: !(Maybe Text)
-    , _nName                  :: !(Maybe Text)
-    , _nCreationTimestamp     :: !(Maybe Text)
-    , _nId                    :: !(Maybe (Textual Word64))
-    , _nGatewayIPv4           :: !(Maybe Text)
-    , _nDescription           :: !(Maybe Text)
-    , _nPeerings              :: !(Maybe [NetworkPeering])
+    , _nKind :: !Text
+    , _nRoutingConfig :: !(Maybe NetworkRoutingConfig)
+    , _nSubnetworks :: !(Maybe [Text])
+    , _nIPv4Range :: !(Maybe Text)
+    , _nSelfLink :: !(Maybe Text)
+    , _nName :: !(Maybe Text)
+    , _nCreationTimestamp :: !(Maybe Text)
+    , _nId :: !(Maybe (Textual Word64))
+    , _nGatewayIPv4 :: !(Maybe Text)
+    , _nDescription :: !(Maybe Text)
+    , _nPeerings :: !(Maybe [NetworkPeering])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19650,8 +19650,8 @@ instance ToJSON Network where
 -- /See:/ 'routersScopedListWarning' smart constructor.
 data RoutersScopedListWarning =
   RoutersScopedListWarning'
-    { _rslwData    :: !(Maybe [RoutersScopedListWarningDataItem])
-    , _rslwCode    :: !(Maybe RoutersScopedListWarningCode)
+    { _rslwData :: !(Maybe [RoutersScopedListWarningDataItem])
+    , _rslwCode :: !(Maybe RoutersScopedListWarningCode)
     , _rslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19714,10 +19714,10 @@ instance ToJSON RoutersScopedListWarning where
 -- /See:/ 'usableSubnetwork' smart constructor.
 data UsableSubnetwork =
   UsableSubnetwork'
-    { _usNetwork           :: !(Maybe Text)
+    { _usNetwork :: !(Maybe Text)
     , _usSecondaryIPRanges :: !(Maybe [UsableSubnetworkSecondaryRange])
-    , _usIPCIdRRange       :: !(Maybe Text)
-    , _usSubnetwork        :: !(Maybe Text)
+    , _usIPCIdRRange :: !(Maybe Text)
+    , _usSubnetwork :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -19792,8 +19792,8 @@ instance ToJSON UsableSubnetwork where
 -- /See:/ 'targetHTTPSProxyListWarning' smart constructor.
 data TargetHTTPSProxyListWarning =
   TargetHTTPSProxyListWarning'
-    { _thplwData    :: !(Maybe [TargetHTTPSProxyListWarningDataItem])
-    , _thplwCode    :: !(Maybe TargetHTTPSProxyListWarningCode)
+    { _thplwData :: !(Maybe [TargetHTTPSProxyListWarningDataItem])
+    , _thplwCode :: !(Maybe TargetHTTPSProxyListWarningCode)
     , _thplwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19857,8 +19857,8 @@ instance ToJSON TargetHTTPSProxyListWarning where
 -- /See:/ 'addressesScopedListWarning' smart constructor.
 data AddressesScopedListWarning =
   AddressesScopedListWarning'
-    { _aData    :: !(Maybe [AddressesScopedListWarningDataItem])
-    , _aCode    :: !(Maybe AddressesScopedListWarningCode)
+    { _aData :: !(Maybe [AddressesScopedListWarningDataItem])
+    , _aCode :: !(Maybe AddressesScopedListWarningCode)
     , _aMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19919,14 +19919,14 @@ instance ToJSON AddressesScopedListWarning where
 -- /See:/ 'securityPolicy' smart constructor.
 data SecurityPolicy =
   SecurityPolicy'
-    { _secRules             :: !(Maybe [SecurityPolicyRule])
-    , _secKind              :: !Text
-    , _secFingerprint       :: !(Maybe Bytes)
-    , _secSelfLink          :: !(Maybe Text)
-    , _secName              :: !(Maybe Text)
+    { _secRules :: !(Maybe [SecurityPolicyRule])
+    , _secKind :: !Text
+    , _secFingerprint :: !(Maybe Bytes)
+    , _secSelfLink :: !(Maybe Text)
+    , _secName :: !(Maybe Text)
     , _secCreationTimestamp :: !(Maybe Text)
-    , _secId                :: !(Maybe (Textual Word64))
-    , _secDescription       :: !(Maybe Text)
+    , _secId :: !(Maybe (Textual Word64))
+    , _secDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20060,7 +20060,7 @@ instance ToJSON SecurityPolicy where
 data InstanceGroupAggregatedListWarningDataItem =
   InstanceGroupAggregatedListWarningDataItem'
     { _igalwdiValue :: !(Maybe Text)
-    , _igalwdiKey   :: !(Maybe Text)
+    , _igalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20121,8 +20121,8 @@ instance ToJSON
 data ImageRawDisk =
   ImageRawDisk'
     { _irdContainerType :: !(Maybe ImageRawDiskContainerType)
-    , _irdSource        :: !(Maybe Text)
-    , _irdSha1Checksum  :: !(Maybe Text)
+    , _irdSource :: !(Maybe Text)
+    , _irdSha1Checksum :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20189,11 +20189,11 @@ instance ToJSON ImageRawDisk where
 data InstanceAggregatedList =
   InstanceAggregatedList'
     { _ialNextPageToken :: !(Maybe Text)
-    , _ialKind          :: !Text
-    , _ialItems         :: !(Maybe InstanceAggregatedListItems)
-    , _ialSelfLink      :: !(Maybe Text)
-    , _ialWarning       :: !(Maybe InstanceAggregatedListWarning)
-    , _ialId            :: !(Maybe Text)
+    , _ialKind :: !Text
+    , _ialItems :: !(Maybe InstanceAggregatedListItems)
+    , _ialSelfLink :: !(Maybe Text)
+    , _ialWarning :: !(Maybe InstanceAggregatedListWarning)
+    , _ialId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20367,12 +20367,12 @@ instance ToJSON
 -- /See:/ 'sslHealthCheck' smart constructor.
 data SSLHealthCheck =
   SSLHealthCheck'
-    { _shcResponse          :: !(Maybe Text)
+    { _shcResponse :: !(Maybe Text)
     , _shcPortSpecification :: !(Maybe SSLHealthCheckPortSpecification)
-    , _shcProxyHeader       :: !(Maybe SSLHealthCheckProxyHeader)
-    , _shcPortName          :: !(Maybe Text)
-    , _shcPort              :: !(Maybe (Textual Int32))
-    , _shcRequest           :: !(Maybe Text)
+    , _shcProxyHeader :: !(Maybe SSLHealthCheckProxyHeader)
+    , _shcPortName :: !(Maybe Text)
+    , _shcPort :: !(Maybe (Textual Int32))
+    , _shcRequest :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20482,23 +20482,23 @@ instance ToJSON SSLHealthCheck where
 -- /See:/ 'address' smart constructor.
 data Address =
   Address'
-    { _aPrefixLength      :: !(Maybe (Textual Int32))
-    , _aNetworkTier       :: !(Maybe AddressNetworkTier)
-    , _aStatus            :: !(Maybe AddressStatus)
-    , _aUsers             :: !(Maybe [Text])
-    , _aKind              :: !Text
-    , _aIPVersion         :: !(Maybe AddressIPVersion)
-    , _aNetwork           :: !(Maybe Text)
-    , _aAddress           :: !(Maybe Text)
-    , _aPurpose           :: !(Maybe AddressPurpose)
-    , _aSelfLink          :: !(Maybe Text)
-    , _aName              :: !(Maybe Text)
+    { _aPrefixLength :: !(Maybe (Textual Int32))
+    , _aNetworkTier :: !(Maybe AddressNetworkTier)
+    , _aStatus :: !(Maybe AddressStatus)
+    , _aUsers :: !(Maybe [Text])
+    , _aKind :: !Text
+    , _aIPVersion :: !(Maybe AddressIPVersion)
+    , _aNetwork :: !(Maybe Text)
+    , _aAddress :: !(Maybe Text)
+    , _aPurpose :: !(Maybe AddressPurpose)
+    , _aSelfLink :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
     , _aCreationTimestamp :: !(Maybe Text)
-    , _aSubnetwork        :: !(Maybe Text)
-    , _aId                :: !(Maybe (Textual Word64))
-    , _aRegion            :: !(Maybe Text)
-    , _aDescription       :: !(Maybe Text)
-    , _aAddressType       :: !(Maybe AddressAddressType)
+    , _aSubnetwork :: !(Maybe Text)
+    , _aId :: !(Maybe (Textual Word64))
+    , _aRegion :: !(Maybe Text)
+    , _aDescription :: !(Maybe Text)
+    , _aAddressType :: !(Maybe AddressAddressType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20760,8 +20760,8 @@ instance ToJSON NodeGroupAggregatedListItems where
 -- /See:/ 'instanceGroupListWarning' smart constructor.
 data InstanceGroupListWarning =
   InstanceGroupListWarning'
-    { _iglwData    :: !(Maybe [InstanceGroupListWarningDataItem])
-    , _iglwCode    :: !(Maybe InstanceGroupListWarningCode)
+    { _iglwData :: !(Maybe [InstanceGroupListWarningDataItem])
+    , _iglwCode :: !(Maybe InstanceGroupListWarningCode)
     , _iglwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -20867,16 +20867,16 @@ instance ToJSON AttachedDiskInitializeParamsLabels
 -- /See:/ 'zone' smart constructor.
 data Zone =
   Zone'
-    { _zStatus                :: !(Maybe ZoneStatus)
-    , _zKind                  :: !Text
-    , _zSelfLink              :: !(Maybe Text)
-    , _zName                  :: !(Maybe Text)
-    , _zCreationTimestamp     :: !(Maybe Text)
-    , _zId                    :: !(Maybe (Textual Word64))
-    , _zRegion                :: !(Maybe Text)
+    { _zStatus :: !(Maybe ZoneStatus)
+    , _zKind :: !Text
+    , _zSelfLink :: !(Maybe Text)
+    , _zName :: !(Maybe Text)
+    , _zCreationTimestamp :: !(Maybe Text)
+    , _zId :: !(Maybe (Textual Word64))
+    , _zRegion :: !(Maybe Text)
     , _zAvailableCPUPlatforms :: !(Maybe [Text])
-    , _zDescription           :: !(Maybe Text)
-    , _zDeprecated            :: !(Maybe DeprecationStatus)
+    , _zDescription :: !(Maybe Text)
+    , _zDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21006,9 +21006,9 @@ instance ToJSON Zone where
 -- /See:/ 'routerBGP' smart constructor.
 data RouterBGP =
   RouterBGP'
-    { _rbASN                :: !(Maybe (Textual Word32))
-    , _rbAdvertiseMode      :: !(Maybe RouterBGPAdvertiseMode)
-    , _rbAdvertisedGroups   :: !(Maybe [RouterBGPAdvertisedGroupsItem])
+    { _rbASN :: !(Maybe (Textual Word32))
+    , _rbAdvertiseMode :: !(Maybe RouterBGPAdvertiseMode)
+    , _rbAdvertisedGroups :: !(Maybe [RouterBGPAdvertisedGroupsItem])
     , _rbAdvertisedIPRanges :: !(Maybe [RouterAdvertisedIPRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21098,8 +21098,8 @@ instance ToJSON RouterBGP where
 -- /See:/ 'firewallListWarning' smart constructor.
 data FirewallListWarning =
   FirewallListWarning'
-    { _flwData    :: !(Maybe [FirewallListWarningDataItem])
-    , _flwCode    :: !(Maybe FirewallListWarningCode)
+    { _flwData :: !(Maybe [FirewallListWarningDataItem])
+    , _flwCode :: !(Maybe FirewallListWarningCode)
     , _flwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21158,7 +21158,7 @@ instance ToJSON FirewallListWarning where
 -- /See:/ 'backendServicesScopedList' smart constructor.
 data BackendServicesScopedList =
   BackendServicesScopedList'
-    { _bsslWarning         :: !(Maybe BackendServicesScopedListWarning)
+    { _bsslWarning :: !(Maybe BackendServicesScopedListWarning)
     , _bsslBackendServices :: !(Maybe [BackendService])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21305,9 +21305,9 @@ instance ToJSON
 -- /See:/ 'healthStatusForNetworkEndpoint' smart constructor.
 data HealthStatusForNetworkEndpoint =
   HealthStatusForNetworkEndpoint'
-    { _hsfneHealthCheck    :: !(Maybe HealthCheckReference)
+    { _hsfneHealthCheck :: !(Maybe HealthCheckReference)
     , _hsfneForwardingRule :: !(Maybe ForwardingRuleReference)
-    , _hsfneHealthState    :: !(Maybe HealthStatusForNetworkEndpointHealthState)
+    , _hsfneHealthState :: !(Maybe HealthStatusForNetworkEndpointHealthState)
     , _hsfneBackendService :: !(Maybe BackendServiceReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21387,8 +21387,8 @@ instance ToJSON HealthStatusForNetworkEndpoint where
 -- /See:/ 'routerAggregatedListWarning' smart constructor.
 data RouterAggregatedListWarning =
   RouterAggregatedListWarning'
-    { _rouData    :: !(Maybe [RouterAggregatedListWarningDataItem])
-    , _rouCode    :: !(Maybe RouterAggregatedListWarningCode)
+    { _rouData :: !(Maybe [RouterAggregatedListWarningDataItem])
+    , _rouCode :: !(Maybe RouterAggregatedListWarningCode)
     , _rouMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21447,7 +21447,7 @@ instance ToJSON RouterAggregatedListWarning where
 -- /See:/ 'instancesScopedList' smart constructor.
 data InstancesScopedList =
   InstancesScopedList'
-    { _islWarning   :: !(Maybe InstancesScopedListWarning)
+    { _islWarning :: !(Maybe InstancesScopedListWarning)
     , _islInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21541,7 +21541,7 @@ instance ToJSON AcceleratorTypeAggregatedListItems
 data TargetVPNGatewayAggregatedListWarningDataItem =
   TargetVPNGatewayAggregatedListWarningDataItem'
     { _tvgalwdiValue :: !(Maybe Text)
-    , _tvgalwdiKey   :: !(Maybe Text)
+    , _tvgalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21728,8 +21728,8 @@ instance ToJSON
 -- /See:/ 'targetSSLProxyListWarning' smart constructor.
 data TargetSSLProxyListWarning =
   TargetSSLProxyListWarning'
-    { _tsplwData    :: !(Maybe [TargetSSLProxyListWarningDataItem])
-    , _tsplwCode    :: !(Maybe TargetSSLProxyListWarningCode)
+    { _tsplwData :: !(Maybe [TargetSSLProxyListWarningDataItem])
+    , _tsplwCode :: !(Maybe TargetSSLProxyListWarningCode)
     , _tsplwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21792,8 +21792,8 @@ instance ToJSON TargetSSLProxyListWarning where
 -- /See:/ 'instanceTemplateListWarning' smart constructor.
 data InstanceTemplateListWarning =
   InstanceTemplateListWarning'
-    { _itlwData    :: !(Maybe [InstanceTemplateListWarningDataItem])
-    , _itlwCode    :: !(Maybe InstanceTemplateListWarningCode)
+    { _itlwData :: !(Maybe [InstanceTemplateListWarningDataItem])
+    , _itlwCode :: !(Maybe InstanceTemplateListWarningCode)
     , _itlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21855,8 +21855,8 @@ instance ToJSON InstanceTemplateListWarning where
 -- /See:/ 'instanceListReferrersWarning' smart constructor.
 data InstanceListReferrersWarning =
   InstanceListReferrersWarning'
-    { _ilrwData    :: !(Maybe [InstanceListReferrersWarningDataItem])
-    , _ilrwCode    :: !(Maybe InstanceListReferrersWarningCode)
+    { _ilrwData :: !(Maybe [InstanceListReferrersWarningDataItem])
+    , _ilrwCode :: !(Maybe InstanceListReferrersWarningCode)
     , _ilrwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21918,8 +21918,8 @@ instance ToJSON InstanceListReferrersWarning where
 -- /See:/ 'routeListWarning' smart constructor.
 data RouteListWarning =
   RouteListWarning'
-    { _rlwlData    :: !(Maybe [RouteListWarningDataItem])
-    , _rlwlCode    :: !(Maybe RouteListWarningCode)
+    { _rlwlData :: !(Maybe [RouteListWarningDataItem])
+    , _rlwlCode :: !(Maybe RouteListWarningCode)
     , _rlwlMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21981,11 +21981,11 @@ instance ToJSON RouteListWarning where
 data InstanceGroupAggregatedList =
   InstanceGroupAggregatedList'
     { _igalNextPageToken :: !(Maybe Text)
-    , _igalKind          :: !Text
-    , _igalItems         :: !(Maybe InstanceGroupAggregatedListItems)
-    , _igalSelfLink      :: !(Maybe Text)
-    , _igalWarning       :: !(Maybe InstanceGroupAggregatedListWarning)
-    , _igalId            :: !(Maybe Text)
+    , _igalKind :: !Text
+    , _igalItems :: !(Maybe InstanceGroupAggregatedListItems)
+    , _igalSelfLink :: !(Maybe Text)
+    , _igalWarning :: !(Maybe InstanceGroupAggregatedListWarning)
+    , _igalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22096,23 +22096,23 @@ instance ToJSON InstanceGroupAggregatedList where
 -- /See:/ 'route' smart constructor.
 data Route =
   Route'
-    { _rrNextHopPeering    :: !(Maybe Text)
-    , _rrPriority          :: !(Maybe (Textual Word32))
-    , _rrKind              :: !Text
-    , _rrNextHopGateway    :: !(Maybe Text)
-    , _rrNextHopNetwork    :: !(Maybe Text)
-    , _rrNetwork           :: !(Maybe Text)
-    , _rrWarnings          :: !(Maybe [RouteWarningsItem])
-    , _rrNextHopIP         :: !(Maybe Text)
-    , _rrDestRange         :: !(Maybe Text)
-    , _rrSelfLink          :: !(Maybe Text)
-    , _rrName              :: !(Maybe Text)
+    { _rrNextHopPeering :: !(Maybe Text)
+    , _rrPriority :: !(Maybe (Textual Word32))
+    , _rrKind :: !Text
+    , _rrNextHopGateway :: !(Maybe Text)
+    , _rrNextHopNetwork :: !(Maybe Text)
+    , _rrNetwork :: !(Maybe Text)
+    , _rrWarnings :: !(Maybe [RouteWarningsItem])
+    , _rrNextHopIP :: !(Maybe Text)
+    , _rrDestRange :: !(Maybe Text)
+    , _rrSelfLink :: !(Maybe Text)
+    , _rrName :: !(Maybe Text)
     , _rrCreationTimestamp :: !(Maybe Text)
-    , _rrId                :: !(Maybe (Textual Word64))
-    , _rrNextHopVPNTunnel  :: !(Maybe Text)
-    , _rrDescription       :: !(Maybe Text)
-    , _rrTags              :: !(Maybe [Text])
-    , _rrNextHopInstance   :: !(Maybe Text)
+    , _rrId :: !(Maybe (Textual Word64))
+    , _rrNextHopVPNTunnel :: !(Maybe Text)
+    , _rrDescription :: !(Maybe Text)
+    , _rrTags :: !(Maybe [Text])
+    , _rrNextHopInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22343,7 +22343,7 @@ instance ToJSON Route where
 data TargetVPNGatewaysScopedListWarningDataItem =
   TargetVPNGatewaysScopedListWarningDataItem'
     { _tvgslwdiValue :: !(Maybe Text)
-    , _tvgslwdiKey   :: !(Maybe Text)
+    , _tvgslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22407,8 +22407,8 @@ instance ToJSON
 data InterconnectLocationRegionInfo =
   InterconnectLocationRegionInfo'
     { _ilriLocationPresence :: !(Maybe InterconnectLocationRegionInfoLocationPresence)
-    , _ilriExpectedRttMs    :: !(Maybe (Textual Int64))
-    , _ilriRegion           :: !(Maybe Text)
+    , _ilriExpectedRttMs :: !(Maybe (Textual Int64))
+    , _ilriRegion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22525,15 +22525,15 @@ instance ToJSON
 -- /See:/ 'instanceTemplate' smart constructor.
 data InstanceTemplate =
   InstanceTemplate'
-    { _itSourceInstance       :: !(Maybe Text)
-    , _itKind                 :: !Text
-    , _itSelfLink             :: !(Maybe Text)
-    , _itName                 :: !(Maybe Text)
-    , _itCreationTimestamp    :: !(Maybe Text)
-    , _itId                   :: !(Maybe (Textual Word64))
+    { _itSourceInstance :: !(Maybe Text)
+    , _itKind :: !Text
+    , _itSelfLink :: !(Maybe Text)
+    , _itName :: !(Maybe Text)
+    , _itCreationTimestamp :: !(Maybe Text)
+    , _itId :: !(Maybe (Textual Word64))
     , _itSourceInstanceParams :: !(Maybe SourceInstanceParams)
-    , _itDescription          :: !(Maybe Text)
-    , _itProperties           :: !(Maybe InstanceProperties)
+    , _itDescription :: !(Maybe Text)
+    , _itProperties :: !(Maybe InstanceProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22673,7 +22673,7 @@ instance ToJSON InstanceTemplate where
 -- /See:/ 'xpnResourceId' smart constructor.
 data XpnResourceId =
   XpnResourceId'
-    { _xriId   :: !(Maybe Text)
+    { _xriId :: !(Maybe Text)
     , _xriType :: !(Maybe XpnResourceIdType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -22719,11 +22719,11 @@ instance ToJSON XpnResourceId where
 data RouterList =
   RouterList'
     { _rllNextPageToken :: !(Maybe Text)
-    , _rllKind          :: !Text
-    , _rllItems         :: !(Maybe [Router])
-    , _rllSelfLink      :: !(Maybe Text)
-    , _rllWarning       :: !(Maybe RouterListWarning)
-    , _rllId            :: !(Maybe Text)
+    , _rllKind :: !Text
+    , _rllItems :: !(Maybe [Router])
+    , _rllSelfLink :: !(Maybe Text)
+    , _rllWarning :: !(Maybe RouterListWarning)
+    , _rllId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22821,16 +22821,16 @@ instance ToJSON RouterList where
 -- /See:/ 'targetSSLProxy' smart constructor.
 data TargetSSLProxy =
   TargetSSLProxy'
-    { _tspSSLPolicy         :: !(Maybe Text)
-    , _tspSSLCertificates   :: !(Maybe [Text])
-    , _tspService           :: !(Maybe Text)
-    , _tspKind              :: !Text
-    , _tspSelfLink          :: !(Maybe Text)
-    , _tspName              :: !(Maybe Text)
+    { _tspSSLPolicy :: !(Maybe Text)
+    , _tspSSLCertificates :: !(Maybe [Text])
+    , _tspService :: !(Maybe Text)
+    , _tspKind :: !Text
+    , _tspSelfLink :: !(Maybe Text)
+    , _tspName :: !(Maybe Text)
     , _tspCreationTimestamp :: !(Maybe Text)
-    , _tspId                :: !(Maybe (Textual Word64))
-    , _tspProxyHeader       :: !(Maybe TargetSSLProxyProxyHeader)
-    , _tspDescription       :: !(Maybe Text)
+    , _tspId :: !(Maybe (Textual Word64))
+    , _tspProxyHeader :: !(Maybe TargetSSLProxyProxyHeader)
+    , _tspDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23021,8 +23021,8 @@ instance ToJSON InstanceGroupManagerStatus where
 -- /See:/ 'sslCertificateListWarning' smart constructor.
 data SSLCertificateListWarning =
   SSLCertificateListWarning'
-    { _sclwData    :: !(Maybe [SSLCertificateListWarningDataItem])
-    , _sclwCode    :: !(Maybe SSLCertificateListWarningCode)
+    { _sclwData :: !(Maybe [SSLCertificateListWarningDataItem])
+    , _sclwCode :: !(Maybe SSLCertificateListWarningCode)
     , _sclwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23084,7 +23084,7 @@ instance ToJSON SSLCertificateListWarning where
 data SnapshotListWarningDataItem =
   SnapshotListWarningDataItem'
     { _slwdiValue :: !(Maybe Text)
-    , _slwdiKey   :: !(Maybe Text)
+    , _slwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23137,17 +23137,17 @@ instance ToJSON SnapshotListWarningDataItem where
 -- /See:/ 'targetVPNGateway' smart constructor.
 data TargetVPNGateway =
   TargetVPNGateway'
-    { _tvgStatus            :: !(Maybe TargetVPNGatewayStatus)
-    , _tvgKind              :: !Text
-    , _tvgNetwork           :: !(Maybe Text)
-    , _tvgSelfLink          :: !(Maybe Text)
-    , _tvgName              :: !(Maybe Text)
+    { _tvgStatus :: !(Maybe TargetVPNGatewayStatus)
+    , _tvgKind :: !Text
+    , _tvgNetwork :: !(Maybe Text)
+    , _tvgSelfLink :: !(Maybe Text)
+    , _tvgName :: !(Maybe Text)
     , _tvgCreationTimestamp :: !(Maybe Text)
-    , _tvgId                :: !(Maybe (Textual Word64))
-    , _tvgRegion            :: !(Maybe Text)
-    , _tvgTunnels           :: !(Maybe [Text])
-    , _tvgDescription       :: !(Maybe Text)
-    , _tvgForwardingRules   :: !(Maybe [Text])
+    , _tvgId :: !(Maybe (Textual Word64))
+    , _tvgRegion :: !(Maybe Text)
+    , _tvgTunnels :: !(Maybe [Text])
+    , _tvgDescription :: !(Maybe Text)
+    , _tvgForwardingRules :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23312,7 +23312,7 @@ instance ToJSON TargetVPNGateway where
 data ResourceCommitment =
   ResourceCommitment'
     { _rcAmount :: !(Maybe (Textual Int64))
-    , _rcType   :: !(Maybe ResourceCommitmentType)
+    , _rcType :: !(Maybe ResourceCommitmentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23363,10 +23363,10 @@ instance ToJSON ResourceCommitment where
 -- /See:/ 'backendServiceIAP' smart constructor.
 data BackendServiceIAP =
   BackendServiceIAP'
-    { _bsiapEnabled                  :: !(Maybe Bool)
+    { _bsiapEnabled :: !(Maybe Bool)
     , _bsiapOAuth2ClientSecretSha256 :: !(Maybe Text)
-    , _bsiapOAuth2ClientSecret       :: !(Maybe Text)
-    , _bsiapOAuth2ClientId           :: !(Maybe Text)
+    , _bsiapOAuth2ClientSecret :: !(Maybe Text)
+    , _bsiapOAuth2ClientId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23440,8 +23440,8 @@ instance ToJSON BackendServiceIAP where
 -- /See:/ 'targetVPNGatewayListWarning' smart constructor.
 data TargetVPNGatewayListWarning =
   TargetVPNGatewayListWarning'
-    { _tvglwData    :: !(Maybe [TargetVPNGatewayListWarningDataItem])
-    , _tvglwCode    :: !(Maybe TargetVPNGatewayListWarningCode)
+    { _tvglwData :: !(Maybe [TargetVPNGatewayListWarningDataItem])
+    , _tvglwCode :: !(Maybe TargetVPNGatewayListWarningCode)
     , _tvglwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23504,7 +23504,7 @@ instance ToJSON TargetVPNGatewayListWarning where
 data VMEndpointNATMAppingsListWarningDataItem =
   VMEndpointNATMAppingsListWarningDataItem'
     { _vmenatmalwdiValue :: !(Maybe Text)
-    , _vmenatmalwdiKey   :: !(Maybe Text)
+    , _vmenatmalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23601,14 +23601,14 @@ instance ToJSON URLMapsValidateResponse where
 -- /See:/ 'sslCertificate' smart constructor.
 data SSLCertificate =
   SSLCertificate'
-    { _scPrivateKey        :: !(Maybe Text)
-    , _scKind              :: !Text
-    , _scSelfLink          :: !(Maybe Text)
-    , _scName              :: !(Maybe Text)
+    { _scPrivateKey :: !(Maybe Text)
+    , _scKind :: !Text
+    , _scSelfLink :: !(Maybe Text)
+    , _scName :: !(Maybe Text)
     , _scCreationTimestamp :: !(Maybe Text)
-    , _scId                :: !(Maybe (Textual Word64))
-    , _scCertificate       :: !(Maybe Text)
-    , _scDescription       :: !(Maybe Text)
+    , _scId :: !(Maybe (Textual Word64))
+    , _scCertificate :: !(Maybe Text)
+    , _scDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23732,16 +23732,16 @@ instance ToJSON SSLCertificate where
 -- /See:/ 'routerStatusBGPPeerStatus' smart constructor.
 data RouterStatusBGPPeerStatus =
   RouterStatusBGPPeerStatus'
-    { _rsbpsStatus           :: !(Maybe RouterStatusBGPPeerStatusStatus)
-    , _rsbpsIPAddress        :: !(Maybe Text)
-    , _rsbpsState            :: !(Maybe Text)
-    , _rsbpsPeerIPAddress    :: !(Maybe Text)
-    , _rsbpsUptime           :: !(Maybe Text)
+    { _rsbpsStatus :: !(Maybe RouterStatusBGPPeerStatusStatus)
+    , _rsbpsIPAddress :: !(Maybe Text)
+    , _rsbpsState :: !(Maybe Text)
+    , _rsbpsPeerIPAddress :: !(Maybe Text)
+    , _rsbpsUptime :: !(Maybe Text)
     , _rsbpsNumLearnedRoutes :: !(Maybe (Textual Word32))
-    , _rsbpsName             :: !(Maybe Text)
-    , _rsbpsUptimeSeconds    :: !(Maybe Text)
+    , _rsbpsName :: !(Maybe Text)
+    , _rsbpsUptimeSeconds :: !(Maybe Text)
     , _rsbpsAdvertisedRoutes :: !(Maybe [Route])
-    , _rsbpsLinkedVPNTunnel  :: !(Maybe Text)
+    , _rsbpsLinkedVPNTunnel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -23955,7 +23955,7 @@ instance ToJSON TargetPoolsAddHealthCheckRequest
 -- /See:/ 'commitmentsScopedList' smart constructor.
 data CommitmentsScopedList =
   CommitmentsScopedList'
-    { _cslWarning     :: !(Maybe CommitmentsScopedListWarning)
+    { _cslWarning :: !(Maybe CommitmentsScopedListWarning)
     , _cslCommitments :: !(Maybe [Commitment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -24046,8 +24046,8 @@ instance ToJSON DiskAggregatedListItems where
 -- /See:/ 'targetVPNGatewayAggregatedListWarning' smart constructor.
 data TargetVPNGatewayAggregatedListWarning =
   TargetVPNGatewayAggregatedListWarning'
-    { _tvgalwData    :: !(Maybe [TargetVPNGatewayAggregatedListWarningDataItem])
-    , _tvgalwCode    :: !(Maybe TargetVPNGatewayAggregatedListWarningCode)
+    { _tvgalwData :: !(Maybe [TargetVPNGatewayAggregatedListWarningDataItem])
+    , _tvgalwCode :: !(Maybe TargetVPNGatewayAggregatedListWarningCode)
     , _tvgalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -24116,7 +24116,7 @@ instance ToJSON TargetVPNGatewayAggregatedListWarning
 data UsageExportLocation =
   UsageExportLocation'
     { _uelReportNamePrefix :: !(Maybe Text)
-    , _uelBucketName       :: !(Maybe Text)
+    , _uelBucketName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24176,11 +24176,11 @@ instance ToJSON UsageExportLocation where
 data ZoneList =
   ZoneList'
     { _zlNextPageToken :: !(Maybe Text)
-    , _zlKind          :: !Text
-    , _zlItems         :: !(Maybe [Zone])
-    , _zlSelfLink      :: !(Maybe Text)
-    , _zlWarning       :: !(Maybe ZoneListWarning)
-    , _zlId            :: !(Maybe Text)
+    , _zlKind :: !Text
+    , _zlItems :: !(Maybe [Zone])
+    , _zlSelfLink :: !(Maybe Text)
+    , _zlWarning :: !(Maybe ZoneListWarning)
+    , _zlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24273,7 +24273,7 @@ instance ToJSON ZoneList where
 data SSLCertificateListWarningDataItem =
   SSLCertificateListWarningDataItem'
     { _sclwdiValue :: !(Maybe Text)
-    , _sclwdiKey   :: !(Maybe Text)
+    , _sclwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24409,16 +24409,16 @@ instance ToJSON TargetTCPProxiesSetProxyHeaderRequest
 -- /See:/ 'routerBGPPeer' smart constructor.
 data RouterBGPPeer =
   RouterBGPPeer'
-    { _rbpIPAddress               :: !(Maybe Text)
-    , _rbpInterfaceName           :: !(Maybe Text)
-    , _rbpPeerIPAddress           :: !(Maybe Text)
+    { _rbpIPAddress :: !(Maybe Text)
+    , _rbpInterfaceName :: !(Maybe Text)
+    , _rbpPeerIPAddress :: !(Maybe Text)
     , _rbpAdvertisedRoutePriority :: !(Maybe (Textual Word32))
-    , _rbpPeerASN                 :: !(Maybe (Textual Word32))
-    , _rbpAdvertiseMode           :: !(Maybe RouterBGPPeerAdvertiseMode)
-    , _rbpName                    :: !(Maybe Text)
-    , _rbpAdvertisedGroups        :: !(Maybe [RouterBGPPeerAdvertisedGroupsItem])
-    , _rbpManagementType          :: !(Maybe RouterBGPPeerManagementType)
-    , _rbpAdvertisedIPRanges      :: !(Maybe [RouterAdvertisedIPRange])
+    , _rbpPeerASN :: !(Maybe (Textual Word32))
+    , _rbpAdvertiseMode :: !(Maybe RouterBGPPeerAdvertiseMode)
+    , _rbpName :: !(Maybe Text)
+    , _rbpAdvertisedGroups :: !(Maybe [RouterBGPPeerAdvertisedGroupsItem])
+    , _rbpManagementType :: !(Maybe RouterBGPPeerManagementType)
+    , _rbpAdvertisedIPRanges :: !(Maybe [RouterAdvertisedIPRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24626,12 +24626,12 @@ instance ToJSON SubnetworksExpandIPCIdRRangeRequest
 -- /See:/ 'managedInstance' smart constructor.
 data ManagedInstance =
   ManagedInstance'
-    { _miLastAttempt    :: !(Maybe ManagedInstanceLastAttempt)
-    , _miCurrentAction  :: !(Maybe ManagedInstanceCurrentAction)
-    , _miVersion        :: !(Maybe ManagedInstanceVersion)
-    , _miId             :: !(Maybe (Textual Word64))
+    { _miLastAttempt :: !(Maybe ManagedInstanceLastAttempt)
+    , _miCurrentAction :: !(Maybe ManagedInstanceCurrentAction)
+    , _miVersion :: !(Maybe ManagedInstanceVersion)
+    , _miId :: !(Maybe (Textual Word64))
     , _miInstanceStatus :: !(Maybe ManagedInstanceInstanceStatus)
-    , _miInstance       :: !(Maybe Text)
+    , _miInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -24840,17 +24840,17 @@ instance ToJSON
 -- /See:/ 'backend' smart constructor.
 data Backend =
   Backend'
-    { _bGroup                     :: !(Maybe Text)
-    , _bBalancingMode             :: !(Maybe BackendBalancingMode)
-    , _bMaxUtilization            :: !(Maybe (Textual Double))
-    , _bMaxRate                   :: !(Maybe (Textual Int32))
-    , _bMaxConnections            :: !(Maybe (Textual Int32))
+    { _bGroup :: !(Maybe Text)
+    , _bBalancingMode :: !(Maybe BackendBalancingMode)
+    , _bMaxUtilization :: !(Maybe (Textual Double))
+    , _bMaxRate :: !(Maybe (Textual Int32))
+    , _bMaxConnections :: !(Maybe (Textual Int32))
     , _bMaxConnectionsPerInstance :: !(Maybe (Textual Int32))
-    , _bMaxRatePerEndpoint        :: !(Maybe (Textual Double))
+    , _bMaxRatePerEndpoint :: !(Maybe (Textual Double))
     , _bMaxConnectionsPerEndpoint :: !(Maybe (Textual Int32))
-    , _bMaxRatePerInstance        :: !(Maybe (Textual Double))
-    , _bDescription               :: !(Maybe Text)
-    , _bCapacityScaler            :: !(Maybe (Textual Double))
+    , _bMaxRatePerInstance :: !(Maybe (Textual Double))
+    , _bDescription :: !(Maybe Text)
+    , _bCapacityScaler :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25056,8 +25056,8 @@ instance ToJSON Backend where
 -- /See:/ 'targetVPNGatewaysScopedListWarning' smart constructor.
 data TargetVPNGatewaysScopedListWarning =
   TargetVPNGatewaysScopedListWarning'
-    { _tvgslwData    :: !(Maybe [TargetVPNGatewaysScopedListWarningDataItem])
-    , _tvgslwCode    :: !(Maybe TargetVPNGatewaysScopedListWarningCode)
+    { _tvgslwData :: !(Maybe [TargetVPNGatewaysScopedListWarningDataItem])
+    , _tvgslwCode :: !(Maybe TargetVPNGatewaysScopedListWarningCode)
     , _tvgslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -25124,11 +25124,11 @@ instance ToJSON TargetVPNGatewaysScopedListWarning
 data AddressList =
   AddressList'
     { _alNextPageToken :: !(Maybe Text)
-    , _alKind          :: !Text
-    , _alItems         :: !(Maybe [Address])
-    , _alSelfLink      :: !(Maybe Text)
-    , _alWarning       :: !(Maybe AddressListWarning)
-    , _alId            :: !(Maybe Text)
+    , _alKind :: !Text
+    , _alItems :: !(Maybe [Address])
+    , _alSelfLink :: !(Maybe Text)
+    , _alWarning :: !(Maybe AddressListWarning)
+    , _alId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25222,7 +25222,7 @@ instance ToJSON AddressList where
 data TargetVPNGatewayListWarningDataItem =
   TargetVPNGatewayListWarningDataItem'
     { _tvglwdiValue :: !(Maybe Text)
-    , _tvglwdiKey   :: !(Maybe Text)
+    , _tvglwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25320,11 +25320,11 @@ instance ToJSON ForwardingRuleAggregatedListItems
 data InterconnectAttachmentAggregatedList =
   InterconnectAttachmentAggregatedList'
     { _iaalNextPageToken :: !(Maybe Text)
-    , _iaalKind          :: !Text
-    , _iaalItems         :: !(Maybe InterconnectAttachmentAggregatedListItems)
-    , _iaalSelfLink      :: !(Maybe Text)
-    , _iaalWarning       :: !(Maybe InterconnectAttachmentAggregatedListWarning)
-    , _iaalId            :: !(Maybe Text)
+    , _iaalKind :: !Text
+    , _iaalItems :: !(Maybe InterconnectAttachmentAggregatedListItems)
+    , _iaalSelfLink :: !(Maybe Text)
+    , _iaalWarning :: !(Maybe InterconnectAttachmentAggregatedListWarning)
+    , _iaalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25462,15 +25462,15 @@ instance ToJSON OperationAggregatedListItems where
 -- /See:/ 'instanceGroupManagerActionsSummary' smart constructor.
 data InstanceGroupManagerActionsSummary =
   InstanceGroupManagerActionsSummary'
-    { _igmasDeleting               :: !(Maybe (Textual Int32))
-    , _igmasRestarting             :: !(Maybe (Textual Int32))
-    , _igmasNone                   :: !(Maybe (Textual Int32))
-    , _igmasCreating               :: !(Maybe (Textual Int32))
-    , _igmasVerifying              :: !(Maybe (Textual Int32))
-    , _igmasRefreshing             :: !(Maybe (Textual Int32))
+    { _igmasDeleting :: !(Maybe (Textual Int32))
+    , _igmasRestarting :: !(Maybe (Textual Int32))
+    , _igmasNone :: !(Maybe (Textual Int32))
+    , _igmasCreating :: !(Maybe (Textual Int32))
+    , _igmasVerifying :: !(Maybe (Textual Int32))
+    , _igmasRefreshing :: !(Maybe (Textual Int32))
     , _igmasCreatingWithoutRetries :: !(Maybe (Textual Int32))
-    , _igmasRecreating             :: !(Maybe (Textual Int32))
-    , _igmasAbandoning             :: !(Maybe (Textual Int32))
+    , _igmasRecreating :: !(Maybe (Textual Int32))
+    , _igmasAbandoning :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25632,11 +25632,11 @@ instance ToJSON InstanceGroupManagerActionsSummary
 data XpnHostList =
   XpnHostList'
     { _xhlNextPageToken :: !(Maybe Text)
-    , _xhlKind          :: !Text
-    , _xhlItems         :: !(Maybe [Project])
-    , _xhlSelfLink      :: !(Maybe Text)
-    , _xhlWarning       :: !(Maybe XpnHostListWarning)
-    , _xhlId            :: !(Maybe Text)
+    , _xhlKind :: !Text
+    , _xhlItems :: !(Maybe [Project])
+    , _xhlSelfLink :: !(Maybe Text)
+    , _xhlWarning :: !(Maybe XpnHostListWarning)
+    , _xhlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25733,7 +25733,7 @@ instance ToJSON XpnHostList where
 data InstanceTemplateListWarningDataItem =
   InstanceTemplateListWarningDataItem'
     { _itlwdiValue :: !(Maybe Text)
-    , _itlwdiKey   :: !(Maybe Text)
+    , _itlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -25789,7 +25789,7 @@ instance ToJSON InstanceTemplateListWarningDataItem
 -- /See:/ 'serviceAccount' smart constructor.
 data ServiceAccount =
   ServiceAccount'
-    { _saEmail  :: !(Maybe Text)
+    { _saEmail :: !(Maybe Text)
     , _saScopes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -25837,8 +25837,8 @@ instance ToJSON ServiceAccount where
 -- /See:/ 'snapshotListWarning' smart constructor.
 data SnapshotListWarning =
   SnapshotListWarning'
-    { _sData    :: !(Maybe [SnapshotListWarningDataItem])
-    , _sCode    :: !(Maybe SnapshotListWarningCode)
+    { _sData :: !(Maybe [SnapshotListWarningDataItem])
+    , _sCode :: !(Maybe SnapshotListWarningCode)
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -25945,11 +25945,11 @@ instance ToJSON
 data NetworkList =
   NetworkList'
     { _nlNextPageToken :: !(Maybe Text)
-    , _nlKind          :: !Text
-    , _nlItems         :: !(Maybe [Network])
-    , _nlSelfLink      :: !(Maybe Text)
-    , _nlWarning       :: !(Maybe NetworkListWarning)
-    , _nlId            :: !(Maybe Text)
+    , _nlKind :: !Text
+    , _nlItems :: !(Maybe [Network])
+    , _nlSelfLink :: !(Maybe Text)
+    , _nlWarning :: !(Maybe NetworkListWarning)
+    , _nlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26046,12 +26046,12 @@ instance ToJSON NetworkList where
 -- /See:/ 'networkPeering' smart constructor.
 data NetworkPeering =
   NetworkPeering'
-    { _netState                :: !(Maybe NetworkPeeringState)
+    { _netState :: !(Maybe NetworkPeeringState)
     , _netExchangeSubnetRoutes :: !(Maybe Bool)
-    , _netStateDetails         :: !(Maybe Text)
-    , _netNetwork              :: !(Maybe Text)
-    , _netName                 :: !(Maybe Text)
-    , _netAutoCreateRoutes     :: !(Maybe Bool)
+    , _netStateDetails :: !(Maybe Text)
+    , _netNetwork :: !(Maybe Text)
+    , _netName :: !(Maybe Text)
+    , _netAutoCreateRoutes :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26161,7 +26161,7 @@ instance ToJSON NetworkPeering where
 data TargetSSLProxyListWarningDataItem =
   TargetSSLProxyListWarningDataItem'
     { _tsplwdiValue :: !(Maybe Text)
-    , _tsplwdiKey   :: !(Maybe Text)
+    , _tsplwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26260,7 +26260,7 @@ instance ToJSON InstanceGroupsListInstancesRequest
 data InstanceListReferrersWarningDataItem =
   InstanceListReferrersWarningDataItem'
     { _ilrwdiValue :: !(Maybe Text)
-    , _ilrwdiKey   :: !(Maybe Text)
+    , _ilrwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26317,7 +26317,7 @@ instance ToJSON InstanceListReferrersWarningDataItem
 data RouteListWarningDataItem =
   RouteListWarningDataItem'
     { _rValue :: !(Maybe Text)
-    , _rKey   :: !(Maybe Text)
+    , _rKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26366,7 +26366,7 @@ instance ToJSON RouteListWarningDataItem where
 -- /See:/ 'interconnectAttachmentsScopedList' smart constructor.
 data InterconnectAttachmentsScopedList =
   InterconnectAttachmentsScopedList'
-    { _iaslWarning                 :: !(Maybe InterconnectAttachmentsScopedListWarning)
+    { _iaslWarning :: !(Maybe InterconnectAttachmentsScopedListWarning)
     , _iaslInterconnectAttachments :: !(Maybe [InterconnectAttachment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -26423,10 +26423,10 @@ instance ToJSON InterconnectAttachmentsScopedList
 data SecurityPolicyList =
   SecurityPolicyList'
     { _splNextPageToken :: !(Maybe Text)
-    , _splKind          :: !Text
-    , _splItems         :: !(Maybe [SecurityPolicy])
-    , _splWarning       :: !(Maybe SecurityPolicyListWarning)
-    , _splId            :: !(Maybe Text)
+    , _splKind :: !Text
+    , _splItems :: !(Maybe [SecurityPolicy])
+    , _splWarning :: !(Maybe SecurityPolicyListWarning)
+    , _splId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26513,11 +26513,11 @@ instance ToJSON SecurityPolicyList where
 data CommitmentAggregatedList =
   CommitmentAggregatedList'
     { _calNextPageToken :: !(Maybe Text)
-    , _calKind          :: !Text
-    , _calItems         :: !(Maybe CommitmentAggregatedListItems)
-    , _calSelfLink      :: !(Maybe Text)
-    , _calWarning       :: !(Maybe CommitmentAggregatedListWarning)
-    , _calId            :: !(Maybe Text)
+    , _calKind :: !Text
+    , _calItems :: !(Maybe CommitmentAggregatedListItems)
+    , _calSelfLink :: !(Maybe Text)
+    , _calWarning :: !(Maybe CommitmentAggregatedListWarning)
+    , _calId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26612,11 +26612,11 @@ instance ToJSON CommitmentAggregatedList where
 data RegionInstanceGroupList =
   RegionInstanceGroupList'
     { _riglNextPageToken :: !(Maybe Text)
-    , _riglKind          :: !Text
-    , _riglItems         :: !(Maybe [InstanceGroup])
-    , _riglSelfLink      :: !(Maybe Text)
-    , _riglWarning       :: !(Maybe RegionInstanceGroupListWarning)
-    , _riglId            :: !(Maybe Text)
+    , _riglKind :: !Text
+    , _riglItems :: !(Maybe [InstanceGroup])
+    , _riglSelfLink :: !(Maybe Text)
+    , _riglWarning :: !(Maybe RegionInstanceGroupListWarning)
+    , _riglId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26712,8 +26712,8 @@ instance ToJSON RegionInstanceGroupList where
 -- /See:/ 'vMEndpointNATMAppingsListWarning' smart constructor.
 data VMEndpointNATMAppingsListWarning =
   VMEndpointNATMAppingsListWarning'
-    { _vmenatmalwData    :: !(Maybe [VMEndpointNATMAppingsListWarningDataItem])
-    , _vmenatmalwCode    :: !(Maybe VMEndpointNATMAppingsListWarningCode)
+    { _vmenatmalwData :: !(Maybe [VMEndpointNATMAppingsListWarningDataItem])
+    , _vmenatmalwCode :: !(Maybe VMEndpointNATMAppingsListWarningCode)
     , _vmenatmalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -26864,11 +26864,11 @@ instance ToJSON NodeGroupsAddNodesRequest where
 data NodeTypeAggregatedList =
   NodeTypeAggregatedList'
     { _ntalNextPageToken :: !(Maybe Text)
-    , _ntalKind          :: !Text
-    , _ntalItems         :: !(Maybe NodeTypeAggregatedListItems)
-    , _ntalSelfLink      :: !(Maybe Text)
-    , _ntalWarning       :: !(Maybe NodeTypeAggregatedListWarning)
-    , _ntalId            :: !(Maybe Text)
+    , _ntalKind :: !Text
+    , _ntalItems :: !(Maybe NodeTypeAggregatedListItems)
+    , _ntalSelfLink :: !(Maybe Text)
+    , _ntalWarning :: !(Maybe NodeTypeAggregatedListWarning)
+    , _ntalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -26962,7 +26962,7 @@ instance ToJSON NodeTypeAggregatedList where
 -- /See:/ 'targetInstancesScopedList' smart constructor.
 data TargetInstancesScopedList =
   TargetInstancesScopedList'
-    { _tislWarning         :: !(Maybe TargetInstancesScopedListWarning)
+    { _tislWarning :: !(Maybe TargetInstancesScopedListWarning)
     , _tislTargetInstances :: !(Maybe [TargetInstance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -27016,7 +27016,7 @@ instance ToJSON TargetInstancesScopedList where
 data SubnetworkListWarningDataItem =
   SubnetworkListWarningDataItem'
     { _sValue :: !(Maybe Text)
-    , _sKey   :: !(Maybe Text)
+    , _sKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27066,7 +27066,7 @@ instance ToJSON SubnetworkListWarningDataItem where
 data NetworkEndpointGroupListWarningDataItem =
   NetworkEndpointGroupListWarningDataItem'
     { _neglwdiValue :: !(Maybe Text)
-    , _neglwdiKey   :: !(Maybe Text)
+    , _neglwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27204,11 +27204,11 @@ instance ToJSON AddressAggregatedListItems where
 data AutoscalerList =
   AutoscalerList'
     { _autNextPageToken :: !(Maybe Text)
-    , _autKind          :: !Text
-    , _autItems         :: !(Maybe [Autoscaler])
-    , _autSelfLink      :: !(Maybe Text)
-    , _autWarning       :: !(Maybe AutoscalerListWarning)
-    , _autId            :: !(Maybe Text)
+    , _autKind :: !Text
+    , _autItems :: !(Maybe [Autoscaler])
+    , _autSelfLink :: !(Maybe Text)
+    , _autWarning :: !(Maybe AutoscalerListWarning)
+    , _autId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27305,8 +27305,8 @@ instance ToJSON AutoscalerList where
 -- /See:/ 'networkEndpointGroupAggregatedListWarning' smart constructor.
 data NetworkEndpointGroupAggregatedListWarning =
   NetworkEndpointGroupAggregatedListWarning'
-    { _negalwData    :: !(Maybe [NetworkEndpointGroupAggregatedListWarningDataItem])
-    , _negalwCode    :: !(Maybe NetworkEndpointGroupAggregatedListWarningCode)
+    { _negalwData :: !(Maybe [NetworkEndpointGroupAggregatedListWarningDataItem])
+    , _negalwCode :: !(Maybe NetworkEndpointGroupAggregatedListWarningCode)
     , _negalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -27375,7 +27375,7 @@ instance ToJSON
 data InterconnectListWarningDataItem =
   InterconnectListWarningDataItem'
     { _iValue :: !(Maybe Text)
-    , _iKey   :: !(Maybe Text)
+    , _iKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27426,8 +27426,8 @@ instance ToJSON InterconnectListWarningDataItem where
 -- /See:/ 'subnetworkAggregatedListWarning' smart constructor.
 data SubnetworkAggregatedListWarning =
   SubnetworkAggregatedListWarning'
-    { _salwData    :: !(Maybe [SubnetworkAggregatedListWarningDataItem])
-    , _salwCode    :: !(Maybe SubnetworkAggregatedListWarningCode)
+    { _salwData :: !(Maybe [SubnetworkAggregatedListWarningDataItem])
+    , _salwCode :: !(Maybe SubnetworkAggregatedListWarningCode)
     , _salwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -27493,20 +27493,20 @@ instance ToJSON SubnetworkAggregatedListWarning where
 data InterconnectLocation =
   InterconnectLocation'
     { _intFacilityProviderFacilityId :: !(Maybe Text)
-    , _intStatus                     :: !(Maybe InterconnectLocationStatus)
-    , _intRegionInfos                :: !(Maybe [InterconnectLocationRegionInfo])
-    , _intKind                       :: !Text
-    , _intAddress                    :: !(Maybe Text)
-    , _intFacilityProvider           :: !(Maybe Text)
-    , _intSelfLink                   :: !(Maybe Text)
-    , _intPeeringdbFacilityId        :: !(Maybe Text)
-    , _intName                       :: !(Maybe Text)
-    , _intCity                       :: !(Maybe Text)
-    , _intAvailabilityZone           :: !(Maybe Text)
-    , _intCreationTimestamp          :: !(Maybe Text)
-    , _intId                         :: !(Maybe (Textual Word64))
-    , _intContinent                  :: !(Maybe InterconnectLocationContinent)
-    , _intDescription                :: !(Maybe Text)
+    , _intStatus :: !(Maybe InterconnectLocationStatus)
+    , _intRegionInfos :: !(Maybe [InterconnectLocationRegionInfo])
+    , _intKind :: !Text
+    , _intAddress :: !(Maybe Text)
+    , _intFacilityProvider :: !(Maybe Text)
+    , _intSelfLink :: !(Maybe Text)
+    , _intPeeringdbFacilityId :: !(Maybe Text)
+    , _intName :: !(Maybe Text)
+    , _intCity :: !(Maybe Text)
+    , _intAvailabilityZone :: !(Maybe Text)
+    , _intCreationTimestamp :: !(Maybe Text)
+    , _intId :: !(Maybe (Textual Word64))
+    , _intContinent :: !(Maybe InterconnectLocationContinent)
+    , _intDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27754,11 +27754,11 @@ instance ToJSON TargetSSLProxiesSetProxyHeaderRequest
 data VPNTunnelAggregatedList =
   VPNTunnelAggregatedList'
     { _vtalNextPageToken :: !(Maybe Text)
-    , _vtalKind          :: !Text
-    , _vtalItems         :: !(Maybe VPNTunnelAggregatedListItems)
-    , _vtalSelfLink      :: !(Maybe Text)
-    , _vtalWarning       :: !(Maybe VPNTunnelAggregatedListWarning)
-    , _vtalId            :: !(Maybe Text)
+    , _vtalKind :: !Text
+    , _vtalItems :: !(Maybe VPNTunnelAggregatedListItems)
+    , _vtalSelfLink :: !(Maybe Text)
+    , _vtalWarning :: !(Maybe VPNTunnelAggregatedListWarning)
+    , _vtalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27853,7 +27853,7 @@ instance ToJSON VPNTunnelAggregatedList where
 data SSLPoliciesListWarningDataItem =
   SSLPoliciesListWarningDataItem'
     { _splwdiValue :: !(Maybe Text)
-    , _splwdiKey   :: !(Maybe Text)
+    , _splwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27909,9 +27909,9 @@ instance ToJSON SSLPoliciesListWarningDataItem where
 -- /See:/ 'interconnectCircuitInfo' smart constructor.
 data InterconnectCircuitInfo =
   InterconnectCircuitInfo'
-    { _iciGoogleCircuitId  :: !(Maybe Text)
+    { _iciGoogleCircuitId :: !(Maybe Text)
     , _iciCustomerDemarcId :: !(Maybe Text)
-    , _iciGoogleDemarcId   :: !(Maybe Text)
+    , _iciGoogleDemarcId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -27977,18 +27977,18 @@ instance ToJSON InterconnectCircuitInfo where
 data AttachedDisk =
   AttachedDisk'
     { _adDiskEncryptionKey :: !(Maybe CustomerEncryptionKey)
-    , _adKind              :: !Text
-    , _adMode              :: !(Maybe AttachedDiskMode)
-    , _adGuestOSFeatures   :: !(Maybe [GuestOSFeature])
-    , _adBoot              :: !(Maybe Bool)
-    , _adAutoDelete        :: !(Maybe Bool)
-    , _adInitializeParams  :: !(Maybe AttachedDiskInitializeParams)
-    , _adDeviceName        :: !(Maybe Text)
-    , _adInterface         :: !(Maybe AttachedDiskInterface)
-    , _adSource            :: !(Maybe Text)
-    , _adLicenses          :: !(Maybe [Text])
-    , _adType              :: !(Maybe AttachedDiskType)
-    , _adIndex             :: !(Maybe (Textual Int32))
+    , _adKind :: !Text
+    , _adMode :: !(Maybe AttachedDiskMode)
+    , _adGuestOSFeatures :: !(Maybe [GuestOSFeature])
+    , _adBoot :: !(Maybe Bool)
+    , _adAutoDelete :: !(Maybe Bool)
+    , _adInitializeParams :: !(Maybe AttachedDiskInitializeParams)
+    , _adDeviceName :: !(Maybe Text)
+    , _adInterface :: !(Maybe AttachedDiskInterface)
+    , _adSource :: !(Maybe Text)
+    , _adLicenses :: !(Maybe [Text])
+    , _adType :: !(Maybe AttachedDiskType)
+    , _adIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28194,7 +28194,7 @@ instance ToJSON AttachedDisk where
 data HTTPHealthCheckListWarningDataItem =
   HTTPHealthCheckListWarningDataItem'
     { _httphclwdiValue :: !(Maybe Text)
-    , _httphclwdiKey   :: !(Maybe Text)
+    , _httphclwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28253,11 +28253,11 @@ instance ToJSON HTTPHealthCheckListWarningDataItem
 data DiskTypeList =
   DiskTypeList'
     { _dtlNextPageToken :: !(Maybe Text)
-    , _dtlKind          :: !Text
-    , _dtlItems         :: !(Maybe [DiskType])
-    , _dtlSelfLink      :: !(Maybe Text)
-    , _dtlWarning       :: !(Maybe DiskTypeListWarning)
-    , _dtlId            :: !(Maybe Text)
+    , _dtlKind :: !Text
+    , _dtlItems :: !(Maybe [DiskType])
+    , _dtlSelfLink :: !(Maybe Text)
+    , _dtlWarning :: !(Maybe DiskTypeListWarning)
+    , _dtlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28354,7 +28354,7 @@ instance ToJSON DiskTypeList where
 data RegionInstanceGroupsSetNamedPortsRequest =
   RegionInstanceGroupsSetNamedPortsRequest'
     { _rigsnprFingerprint :: !(Maybe Bytes)
-    , _rigsnprNamedPorts  :: !(Maybe [NamedPort])
+    , _rigsnprNamedPorts :: !(Maybe [NamedPort])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28457,7 +28457,7 @@ instance ToJSON TestPermissionsRequest where
 data TargetTCPProxyListWarningDataItem =
   TargetTCPProxyListWarningDataItem'
     { _ttplwdiValue :: !(Maybe Text)
-    , _ttplwdiKey   :: !(Maybe Text)
+    , _ttplwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28513,8 +28513,8 @@ instance ToJSON TargetTCPProxyListWarningDataItem
 data ProjectsGetXpnResources =
   ProjectsGetXpnResources'
     { _pgxrNextPageToken :: !(Maybe Text)
-    , _pgxrKind          :: !Text
-    , _pgxrResources     :: !(Maybe [XpnResourceId])
+    , _pgxrKind :: !Text
+    , _pgxrResources :: !(Maybe [XpnResourceId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28583,7 +28583,7 @@ instance ToJSON ProjectsGetXpnResources where
 -- /See:/ 'networkEndpointWithHealthStatus' smart constructor.
 data NetworkEndpointWithHealthStatus =
   NetworkEndpointWithHealthStatus'
-    { _newhsHealths         :: !(Maybe [HealthStatusForNetworkEndpoint])
+    { _newhsHealths :: !(Maybe [HealthStatusForNetworkEndpoint])
     , _newhsNetworkEndpoint :: !(Maybe NetworkEndpoint)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -28638,11 +28638,11 @@ instance ToJSON NetworkEndpointWithHealthStatus where
 data MachineTypeList =
   MachineTypeList'
     { _mtlNextPageToken :: !(Maybe Text)
-    , _mtlKind          :: !Text
-    , _mtlItems         :: !(Maybe [MachineType])
-    , _mtlSelfLink      :: !(Maybe Text)
-    , _mtlWarning       :: !(Maybe MachineTypeListWarning)
-    , _mtlId            :: !(Maybe Text)
+    , _mtlKind :: !Text
+    , _mtlItems :: !(Maybe [MachineType])
+    , _mtlSelfLink :: !(Maybe Text)
+    , _mtlWarning :: !(Maybe MachineTypeListWarning)
+    , _mtlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28740,11 +28740,11 @@ instance ToJSON MachineTypeList where
 data TargetHTTPProxyList =
   TargetHTTPProxyList'
     { _thttpplNextPageToken :: !(Maybe Text)
-    , _thttpplKind          :: !Text
-    , _thttpplItems         :: !(Maybe [TargetHTTPProxy])
-    , _thttpplSelfLink      :: !(Maybe Text)
-    , _thttpplWarning       :: !(Maybe TargetHTTPProxyListWarning)
-    , _thttpplId            :: !(Maybe Text)
+    , _thttpplKind :: !Text
+    , _thttpplItems :: !(Maybe [TargetHTTPProxy])
+    , _thttpplSelfLink :: !(Maybe Text)
+    , _thttpplWarning :: !(Maybe TargetHTTPProxyListWarning)
+    , _thttpplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -28845,8 +28845,8 @@ instance ToJSON TargetHTTPProxyList where
 -- /See:/ 'nodeGroupsListNodesWarning' smart constructor.
 data NodeGroupsListNodesWarning =
   NodeGroupsListNodesWarning'
-    { _nglnwData    :: !(Maybe [NodeGroupsListNodesWarningDataItem])
-    , _nglnwCode    :: !(Maybe NodeGroupsListNodesWarningCode)
+    { _nglnwData :: !(Maybe [NodeGroupsListNodesWarningDataItem])
+    , _nglnwCode :: !(Maybe NodeGroupsListNodesWarningCode)
     , _nglnwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -28909,11 +28909,11 @@ instance ToJSON NodeGroupsListNodesWarning where
 data NodeTemplateAggregatedList =
   NodeTemplateAggregatedList'
     { _nodNextPageToken :: !(Maybe Text)
-    , _nodKind          :: !Text
-    , _nodItems         :: !(Maybe NodeTemplateAggregatedListItems)
-    , _nodSelfLink      :: !(Maybe Text)
-    , _nodWarning       :: !(Maybe NodeTemplateAggregatedListWarning)
-    , _nodId            :: !(Maybe Text)
+    , _nodKind :: !Text
+    , _nodItems :: !(Maybe NodeTemplateAggregatedListItems)
+    , _nodSelfLink :: !(Maybe Text)
+    , _nodWarning :: !(Maybe NodeTemplateAggregatedListWarning)
+    , _nodId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29008,8 +29008,8 @@ instance ToJSON NodeTemplateAggregatedList where
 -- /See:/ 'interconnectLocationListWarning' smart constructor.
 data InterconnectLocationListWarning =
   InterconnectLocationListWarning'
-    { _illwData    :: !(Maybe [InterconnectLocationListWarningDataItem])
-    , _illwCode    :: !(Maybe InterconnectLocationListWarningCode)
+    { _illwData :: !(Maybe [InterconnectLocationListWarningDataItem])
+    , _illwCode :: !(Maybe InterconnectLocationListWarningCode)
     , _illwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -29072,8 +29072,8 @@ instance ToJSON InterconnectLocationListWarning where
 -- /See:/ 'instanceGroupsListInstancesWarning' smart constructor.
 data InstanceGroupsListInstancesWarning =
   InstanceGroupsListInstancesWarning'
-    { _igliwData    :: !(Maybe [InstanceGroupsListInstancesWarningDataItem])
-    , _igliwCode    :: !(Maybe InstanceGroupsListInstancesWarningCode)
+    { _igliwData :: !(Maybe [InstanceGroupsListInstancesWarningDataItem])
+    , _igliwCode :: !(Maybe InstanceGroupsListInstancesWarningCode)
     , _igliwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -29139,11 +29139,11 @@ instance ToJSON InstanceGroupsListInstancesWarning
 data RegionInstanceGroupManagerList =
   RegionInstanceGroupManagerList'
     { _rigmlNextPageToken :: !(Maybe Text)
-    , _rigmlKind          :: !Text
-    , _rigmlItems         :: !(Maybe [InstanceGroupManager])
-    , _rigmlSelfLink      :: !(Maybe Text)
-    , _rigmlWarning       :: !(Maybe RegionInstanceGroupManagerListWarning)
-    , _rigmlId            :: !(Maybe Text)
+    , _rigmlKind :: !Text
+    , _rigmlItems :: !(Maybe [InstanceGroupManager])
+    , _rigmlSelfLink :: !(Maybe Text)
+    , _rigmlWarning :: !(Maybe RegionInstanceGroupManagerListWarning)
+    , _rigmlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29245,7 +29245,7 @@ instance ToJSON RegionInstanceGroupManagerList where
 data DiskTypesScopedList =
   DiskTypesScopedList'
     { _dtslDiskTypes :: !(Maybe [DiskType])
-    , _dtslWarning   :: !(Maybe DiskTypesScopedListWarning)
+    , _dtslWarning :: !(Maybe DiskTypesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29297,7 +29297,7 @@ instance ToJSON DiskTypesScopedList where
 data LogConfigCloudAuditOptions =
   LogConfigCloudAuditOptions'
     { _lccaoAuthorizationLoggingOptions :: !(Maybe AuthorizationLoggingOptions)
-    , _lccaoLogName                     :: !(Maybe LogConfigCloudAuditOptionsLogName)
+    , _lccaoLogName :: !(Maybe LogConfigCloudAuditOptionsLogName)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29390,7 +29390,7 @@ instance ToJSON ProjectsSetDefaultNetworkTierRequest
 data ImageListWarningDataItem =
   ImageListWarningDataItem'
     { _imaValue :: !(Maybe Text)
-    , _imaKey   :: !(Maybe Text)
+    , _imaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29440,7 +29440,7 @@ instance ToJSON ImageListWarningDataItem where
 data AcceleratorTypeListWarningDataItem =
   AcceleratorTypeListWarningDataItem'
     { _atlwdiValue :: !(Maybe Text)
-    , _atlwdiKey   :: !(Maybe Text)
+    , _atlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29496,14 +29496,14 @@ instance ToJSON AcceleratorTypeListWarningDataItem
 -- /See:/ 'interconnectOutageNotification' smart constructor.
 data InterconnectOutageNotification =
   InterconnectOutageNotification'
-    { _ionState            :: !(Maybe InterconnectOutageNotificationState)
+    { _ionState :: !(Maybe InterconnectOutageNotificationState)
     , _ionAffectedCircuits :: !(Maybe [Text])
-    , _ionStartTime        :: !(Maybe (Textual Int64))
-    , _ionIssueType        :: !(Maybe InterconnectOutageNotificationIssueType)
-    , _ionName             :: !(Maybe Text)
-    , _ionEndTime          :: !(Maybe (Textual Int64))
-    , _ionSource           :: !(Maybe InterconnectOutageNotificationSource)
-    , _ionDescription      :: !(Maybe Text)
+    , _ionStartTime :: !(Maybe (Textual Int64))
+    , _ionIssueType :: !(Maybe InterconnectOutageNotificationIssueType)
+    , _ionName :: !(Maybe Text)
+    , _ionEndTime :: !(Maybe (Textual Int64))
+    , _ionSource :: !(Maybe InterconnectOutageNotificationSource)
+    , _ionDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29624,11 +29624,11 @@ instance ToJSON InterconnectOutageNotification where
 data NodeTemplateList =
   NodeTemplateList'
     { _ntlNextPageToken :: !(Maybe Text)
-    , _ntlKind          :: !Text
-    , _ntlItems         :: !(Maybe [NodeTemplate])
-    , _ntlSelfLink      :: !(Maybe Text)
-    , _ntlWarning       :: !(Maybe NodeTemplateListWarning)
-    , _ntlId            :: !(Maybe Text)
+    , _ntlKind :: !Text
+    , _ntlItems :: !(Maybe [NodeTemplate])
+    , _ntlSelfLink :: !(Maybe Text)
+    , _ntlWarning :: !(Maybe NodeTemplateListWarning)
+    , _ntlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29725,11 +29725,11 @@ instance ToJSON NodeTemplateList where
 data DiskTypeAggregatedList =
   DiskTypeAggregatedList'
     { _dtalNextPageToken :: !(Maybe Text)
-    , _dtalKind          :: !Text
-    , _dtalItems         :: !(Maybe DiskTypeAggregatedListItems)
-    , _dtalSelfLink      :: !(Maybe Text)
-    , _dtalWarning       :: !(Maybe DiskTypeAggregatedListWarning)
-    , _dtalId            :: !(Maybe Text)
+    , _dtalKind :: !Text
+    , _dtalItems :: !(Maybe DiskTypeAggregatedListItems)
+    , _dtalSelfLink :: !(Maybe Text)
+    , _dtalWarning :: !(Maybe DiskTypeAggregatedListWarning)
+    , _dtalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29822,13 +29822,13 @@ instance ToJSON DiskTypeAggregatedList where
 -- /See:/ 'hTTPHealthCheck' smart constructor.
 data HTTPHealthCheck =
   HTTPHealthCheck'
-    { _hResponse          :: !(Maybe Text)
+    { _hResponse :: !(Maybe Text)
     , _hPortSpecification :: !(Maybe HTTPHealthCheckPortSpecification)
-    , _hRequestPath       :: !(Maybe Text)
-    , _hHost              :: !(Maybe Text)
-    , _hProxyHeader       :: !(Maybe HTTPHealthCheckProxyHeader)
-    , _hPortName          :: !(Maybe Text)
-    , _hPort              :: !(Maybe (Textual Int32))
+    , _hRequestPath :: !(Maybe Text)
+    , _hHost :: !(Maybe Text)
+    , _hProxyHeader :: !(Maybe HTTPHealthCheckProxyHeader)
+    , _hPortName :: !(Maybe Text)
+    , _hPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29944,7 +29944,7 @@ instance ToJSON HTTPHealthCheck where
 data URLMapListWarningDataItem =
   URLMapListWarningDataItem'
     { _umlwdiValue :: !(Maybe Text)
-    , _umlwdiKey   :: !(Maybe Text)
+    , _umlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -29997,8 +29997,8 @@ instance ToJSON URLMapListWarningDataItem where
 -- /See:/ 'routerNATSubnetworkToNAT' smart constructor.
 data RouterNATSubnetworkToNAT =
   RouterNATSubnetworkToNAT'
-    { _rnatstnatSourceIPRangesToNAT   :: !(Maybe [RouterNATSubnetworkToNATSourceIPRangesToNATItem])
-    , _rnatstnatName                  :: !(Maybe Text)
+    { _rnatstnatSourceIPRangesToNAT :: !(Maybe [RouterNATSubnetworkToNATSourceIPRangesToNATItem])
+    , _rnatstnatName :: !(Maybe Text)
     , _rnatstnatSecondaryIPRangeNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -30073,7 +30073,7 @@ instance ToJSON RouterNATSubnetworkToNAT where
 -- /See:/ 'backendServiceGroupHealth' smart constructor.
 data BackendServiceGroupHealth =
   BackendServiceGroupHealth'
-    { _bsghKind         :: !Text
+    { _bsghKind :: !Text
     , _bsghHealthStatus :: !(Maybe [HealthStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -30130,7 +30130,7 @@ instance ToJSON BackendServiceGroupHealth where
 data AutoscalersScopedList =
   AutoscalersScopedList'
     { _aAutoscalers :: !(Maybe [Autoscaler])
-    , _aWarning     :: !(Maybe AutoscalersScopedListWarning)
+    , _aWarning :: !(Maybe AutoscalersScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -30222,11 +30222,11 @@ instance ToJSON LogConfigDataAccessOptions where
 data AutoscalerAggregatedList =
   AutoscalerAggregatedList'
     { _aalNextPageToken :: !(Maybe Text)
-    , _aalKind          :: !Text
-    , _aalItems         :: !(Maybe AutoscalerAggregatedListItems)
-    , _aalSelfLink      :: !(Maybe Text)
-    , _aalWarning       :: !(Maybe AutoscalerAggregatedListWarning)
-    , _aalId            :: !(Maybe Text)
+    , _aalKind :: !Text
+    , _aalItems :: !(Maybe AutoscalerAggregatedListItems)
+    , _aalSelfLink :: !(Maybe Text)
+    , _aalWarning :: !(Maybe AutoscalerAggregatedListWarning)
+    , _aalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -30359,8 +30359,8 @@ instance ToJSON RouterAggregatedListItems where
 -- /See:/ 'acceleratorTypesScopedListWarning' smart constructor.
 data AcceleratorTypesScopedListWarning =
   AcceleratorTypesScopedListWarning'
-    { _atslwData    :: !(Maybe [AcceleratorTypesScopedListWarningDataItem])
-    , _atslwCode    :: !(Maybe AcceleratorTypesScopedListWarningCode)
+    { _atslwData :: !(Maybe [AcceleratorTypesScopedListWarningDataItem])
+    , _atslwCode :: !(Maybe AcceleratorTypesScopedListWarningCode)
     , _atslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -30427,14 +30427,14 @@ instance ToJSON AcceleratorTypesScopedListWarning
 -- /See:/ 'targetTCPProxy' smart constructor.
 data TargetTCPProxy =
   TargetTCPProxy'
-    { _ttpService           :: !(Maybe Text)
-    , _ttpKind              :: !Text
-    , _ttpSelfLink          :: !(Maybe Text)
-    , _ttpName              :: !(Maybe Text)
+    { _ttpService :: !(Maybe Text)
+    , _ttpKind :: !Text
+    , _ttpSelfLink :: !(Maybe Text)
+    , _ttpName :: !(Maybe Text)
     , _ttpCreationTimestamp :: !(Maybe Text)
-    , _ttpId                :: !(Maybe (Textual Word64))
-    , _ttpProxyHeader       :: !(Maybe TargetTCPProxyProxyHeader)
-    , _ttpDescription       :: !(Maybe Text)
+    , _ttpId :: !(Maybe (Textual Word64))
+    , _ttpProxyHeader :: !(Maybe TargetTCPProxyProxyHeader)
+    , _ttpDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -30557,8 +30557,8 @@ instance ToJSON TargetTCPProxy where
 -- /See:/ 'backendBucketListWarning' smart constructor.
 data BackendBucketListWarning =
   BackendBucketListWarning'
-    { _bblwData    :: !(Maybe [BackendBucketListWarningDataItem])
-    , _bblwCode    :: !(Maybe BackendBucketListWarningCode)
+    { _bblwData :: !(Maybe [BackendBucketListWarningDataItem])
+    , _bblwCode :: !(Maybe BackendBucketListWarningCode)
     , _bblwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -30691,7 +30691,7 @@ instance ToJSON DistributionPolicy where
 data NodeGroupListWarningDataItem =
   NodeGroupListWarningDataItem'
     { _nglwdiValue :: !(Maybe Text)
-    , _nglwdiKey   :: !(Maybe Text)
+    , _nglwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -30745,11 +30745,11 @@ instance ToJSON NodeGroupListWarningDataItem where
 data AutoscalingPolicy =
   AutoscalingPolicy'
     { _apCustomMetricUtilizations :: !(Maybe [AutoscalingPolicyCustomMetricUtilization])
-    , _apMaxNumReplicas           :: !(Maybe (Textual Int32))
-    , _apCPUUtilization           :: !(Maybe AutoscalingPolicyCPUUtilization)
+    , _apMaxNumReplicas :: !(Maybe (Textual Int32))
+    , _apCPUUtilization :: !(Maybe AutoscalingPolicyCPUUtilization)
     , _apLoadBalancingUtilization :: !(Maybe AutoscalingPolicyLoadBalancingUtilization)
-    , _apMinNumReplicas           :: !(Maybe (Textual Int32))
-    , _apCoolDownPeriodSec        :: !(Maybe (Textual Int32))
+    , _apMinNumReplicas :: !(Maybe (Textual Int32))
+    , _apCoolDownPeriodSec :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -30865,8 +30865,8 @@ instance ToJSON AutoscalingPolicy where
 -- /See:/ 'nodeGroupAggregatedListWarning' smart constructor.
 data NodeGroupAggregatedListWarning =
   NodeGroupAggregatedListWarning'
-    { _ngalwData    :: !(Maybe [NodeGroupAggregatedListWarningDataItem])
-    , _ngalwCode    :: !(Maybe NodeGroupAggregatedListWarningCode)
+    { _ngalwData :: !(Maybe [NodeGroupAggregatedListWarningDataItem])
+    , _ngalwCode :: !(Maybe NodeGroupAggregatedListWarningCode)
     , _ngalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -30931,11 +30931,11 @@ instance ToJSON NodeGroupAggregatedListWarning where
 data RegionList =
   RegionList'
     { _regNextPageToken :: !(Maybe Text)
-    , _regKind          :: !Text
-    , _regItems         :: !(Maybe [Region])
-    , _regSelfLink      :: !(Maybe Text)
-    , _regWarning       :: !(Maybe RegionListWarning)
-    , _regId            :: !(Maybe Text)
+    , _regKind :: !Text
+    , _regItems :: !(Maybe [Region])
+    , _regSelfLink :: !(Maybe Text)
+    , _regWarning :: !(Maybe RegionListWarning)
+    , _regId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31034,8 +31034,8 @@ instance ToJSON RegionList where
 data SchedulingNodeAffinity =
   SchedulingNodeAffinity'
     { _snaOperator :: !(Maybe SchedulingNodeAffinityOperator)
-    , _snaValues   :: !(Maybe [Text])
-    , _snaKey      :: !(Maybe Text)
+    , _snaValues :: !(Maybe [Text])
+    , _snaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31094,11 +31094,11 @@ instance ToJSON SchedulingNodeAffinity where
 data VPNTunnelList =
   VPNTunnelList'
     { _vtlNextPageToken :: !(Maybe Text)
-    , _vtlKind          :: !Text
-    , _vtlItems         :: !(Maybe [VPNTunnel])
-    , _vtlSelfLink      :: !(Maybe Text)
-    , _vtlWarning       :: !(Maybe VPNTunnelListWarning)
-    , _vtlId            :: !(Maybe Text)
+    , _vtlKind :: !Text
+    , _vtlItems :: !(Maybe [VPNTunnel])
+    , _vtlSelfLink :: !(Maybe Text)
+    , _vtlWarning :: !(Maybe VPNTunnelListWarning)
+    , _vtlId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31195,8 +31195,8 @@ instance ToJSON VPNTunnelList where
 -- /See:/ 'acceleratorTypeAggregatedListWarning' smart constructor.
 data AcceleratorTypeAggregatedListWarning =
   AcceleratorTypeAggregatedListWarning'
-    { _atalwData    :: !(Maybe [AcceleratorTypeAggregatedListWarningDataItem])
-    , _atalwCode    :: !(Maybe AcceleratorTypeAggregatedListWarningCode)
+    { _atalwData :: !(Maybe [AcceleratorTypeAggregatedListWarningDataItem])
+    , _atalwCode :: !(Maybe AcceleratorTypeAggregatedListWarningCode)
     , _atalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -31262,7 +31262,7 @@ instance ToJSON AcceleratorTypeAggregatedListWarning
 data RegionInstanceGroupsListInstancesWarningDataItem =
   RegionInstanceGroupsListInstancesWarningDataItem'
     { _rigliwdiValue :: !(Maybe Text)
-    , _rigliwdiKey   :: !(Maybe Text)
+    , _rigliwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31327,28 +31327,28 @@ instance ToJSON
 -- /See:/ 'interconnect' smart constructor.
 data Interconnect =
   Interconnect'
-    { _iiState                   :: !(Maybe InterconnectState)
-    , _iiInterconnectType        :: !(Maybe InterconnectInterconnectType)
-    , _iiLocation                :: !(Maybe Text)
-    , _iiPeerIPAddress           :: !(Maybe Text)
-    , _iiKind                    :: !Text
-    , _iiExpectedOutages         :: !(Maybe [InterconnectOutageNotification])
-    , _iiProvisionedLinkCount    :: !(Maybe (Textual Int32))
-    , _iiCustomerName            :: !(Maybe Text)
-    , _iiRequestedLinkCount      :: !(Maybe (Textual Int32))
-    , _iiOperationalStatus       :: !(Maybe InterconnectOperationalStatus)
-    , _iiSelfLink                :: !(Maybe Text)
-    , _iiName                    :: !(Maybe Text)
-    , _iiGoogleReferenceId       :: !(Maybe Text)
-    , _iiCreationTimestamp       :: !(Maybe Text)
-    , _iiAdminEnabled            :: !(Maybe Bool)
-    , _iiId                      :: !(Maybe (Textual Word64))
+    { _iiState :: !(Maybe InterconnectState)
+    , _iiInterconnectType :: !(Maybe InterconnectInterconnectType)
+    , _iiLocation :: !(Maybe Text)
+    , _iiPeerIPAddress :: !(Maybe Text)
+    , _iiKind :: !Text
+    , _iiExpectedOutages :: !(Maybe [InterconnectOutageNotification])
+    , _iiProvisionedLinkCount :: !(Maybe (Textual Int32))
+    , _iiCustomerName :: !(Maybe Text)
+    , _iiRequestedLinkCount :: !(Maybe (Textual Int32))
+    , _iiOperationalStatus :: !(Maybe InterconnectOperationalStatus)
+    , _iiSelfLink :: !(Maybe Text)
+    , _iiName :: !(Maybe Text)
+    , _iiGoogleReferenceId :: !(Maybe Text)
+    , _iiCreationTimestamp :: !(Maybe Text)
+    , _iiAdminEnabled :: !(Maybe Bool)
+    , _iiId :: !(Maybe (Textual Word64))
     , _iiInterconnectAttachments :: !(Maybe [Text])
-    , _iiLinkType                :: !(Maybe InterconnectLinkType)
-    , _iiGoogleIPAddress         :: !(Maybe Text)
-    , _iiDescription             :: !(Maybe Text)
-    , _iiNocContactEmail         :: !(Maybe Text)
-    , _iiCircuitInfos            :: !(Maybe [InterconnectCircuitInfo])
+    , _iiLinkType :: !(Maybe InterconnectLinkType)
+    , _iiGoogleIPAddress :: !(Maybe Text)
+    , _iiDescription :: !(Maybe Text)
+    , _iiNocContactEmail :: !(Maybe Text)
+    , _iiCircuitInfos :: !(Maybe [InterconnectCircuitInfo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31686,7 +31686,7 @@ instance ToJSON MachineTypeScratchDisksItem where
 data NetworkEndpointGroupsScopedListWarningDataItem =
   NetworkEndpointGroupsScopedListWarningDataItem'
     { _negslwdiValue :: !(Maybe Text)
-    , _negslwdiKey   :: !(Maybe Text)
+    , _negslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31747,7 +31747,7 @@ instance ToJSON
 data SubnetworksScopedListWarningDataItem =
   SubnetworksScopedListWarningDataItem'
     { _sslwdiValue :: !(Maybe Text)
-    , _sslwdiKey   :: !(Maybe Text)
+    , _sslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31804,7 +31804,7 @@ instance ToJSON SubnetworksScopedListWarningDataItem
 data MachineTypesScopedList =
   MachineTypesScopedList'
     { _mtslMachineTypes :: !(Maybe [MachineType])
-    , _mtslWarning      :: !(Maybe MachineTypesScopedListWarning)
+    , _mtslWarning :: !(Maybe MachineTypesScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -31856,18 +31856,18 @@ instance ToJSON MachineTypesScopedList where
 -- /See:/ 'networkEndpointGroup' smart constructor.
 data NetworkEndpointGroup =
   NetworkEndpointGroup'
-    { _negSize                :: !(Maybe (Textual Int32))
-    , _negKind                :: !Text
-    , _negNetwork             :: !(Maybe Text)
-    , _negZone                :: !(Maybe Text)
-    , _negSelfLink            :: !(Maybe Text)
-    , _negName                :: !(Maybe Text)
-    , _negCreationTimestamp   :: !(Maybe Text)
-    , _negDefaultPort         :: !(Maybe (Textual Int32))
-    , _negSubnetwork          :: !(Maybe Text)
+    { _negSize :: !(Maybe (Textual Int32))
+    , _negKind :: !Text
+    , _negNetwork :: !(Maybe Text)
+    , _negZone :: !(Maybe Text)
+    , _negSelfLink :: !(Maybe Text)
+    , _negName :: !(Maybe Text)
+    , _negCreationTimestamp :: !(Maybe Text)
+    , _negDefaultPort :: !(Maybe (Textual Int32))
+    , _negSubnetwork :: !(Maybe Text)
     , _negNetworkEndpointType :: !(Maybe NetworkEndpointGroupNetworkEndpointType)
-    , _negId                  :: !(Maybe (Textual Word64))
-    , _negDescription         :: !(Maybe Text)
+    , _negId :: !(Maybe (Textual Word64))
+    , _negDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32038,19 +32038,19 @@ instance ToJSON NetworkEndpointGroup where
 -- /See:/ 'subnetwork' smart constructor.
 data Subnetwork =
   Subnetwork'
-    { _subKind                  :: !Text
-    , _subFingerprint           :: !(Maybe Bytes)
-    , _subNetwork               :: !(Maybe Text)
-    , _subGatewayAddress        :: !(Maybe Text)
-    , _subSelfLink              :: !(Maybe Text)
-    , _subEnableFlowLogs        :: !(Maybe Bool)
-    , _subName                  :: !(Maybe Text)
-    , _subSecondaryIPRanges     :: !(Maybe [SubnetworkSecondaryRange])
-    , _subCreationTimestamp     :: !(Maybe Text)
-    , _subIPCIdRRange           :: !(Maybe Text)
-    , _subId                    :: !(Maybe (Textual Word64))
-    , _subRegion                :: !(Maybe Text)
-    , _subDescription           :: !(Maybe Text)
+    { _subKind :: !Text
+    , _subFingerprint :: !(Maybe Bytes)
+    , _subNetwork :: !(Maybe Text)
+    , _subGatewayAddress :: !(Maybe Text)
+    , _subSelfLink :: !(Maybe Text)
+    , _subEnableFlowLogs :: !(Maybe Bool)
+    , _subName :: !(Maybe Text)
+    , _subSecondaryIPRanges :: !(Maybe [SubnetworkSecondaryRange])
+    , _subCreationTimestamp :: !(Maybe Text)
+    , _subIPCIdRRange :: !(Maybe Text)
+    , _subId :: !(Maybe (Textual Word64))
+    , _subRegion :: !(Maybe Text)
+    , _subDescription :: !(Maybe Text)
     , _subPrivateIPGoogleAccess :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -32264,8 +32264,8 @@ instance ToJSON Subnetwork where
 -- /See:/ 'healthCheckListWarning' smart constructor.
 data HealthCheckListWarning =
   HealthCheckListWarning'
-    { _hclwData    :: !(Maybe [HealthCheckListWarningDataItem])
-    , _hclwCode    :: !(Maybe HealthCheckListWarningCode)
+    { _hclwData :: !(Maybe [HealthCheckListWarningDataItem])
+    , _hclwCode :: !(Maybe HealthCheckListWarningCode)
     , _hclwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -32327,11 +32327,11 @@ instance ToJSON HealthCheckListWarning where
 data MachineTypeAggregatedList =
   MachineTypeAggregatedList'
     { _mtalNextPageToken :: !(Maybe Text)
-    , _mtalKind          :: !Text
-    , _mtalItems         :: !(Maybe MachineTypeAggregatedListItems)
-    , _mtalSelfLink      :: !(Maybe Text)
-    , _mtalWarning       :: !(Maybe MachineTypeAggregatedListWarning)
-    , _mtalId            :: !(Maybe Text)
+    , _mtalKind :: !Text
+    , _mtalItems :: !(Maybe MachineTypeAggregatedListItems)
+    , _mtalSelfLink :: !(Maybe Text)
+    , _mtalWarning :: !(Maybe MachineTypeAggregatedListWarning)
+    , _mtalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32427,7 +32427,7 @@ instance ToJSON MachineTypeAggregatedList where
 data NetworkEndpointGroupsListNetworkEndpointsWarningDataItem =
   NetworkEndpointGroupsListNetworkEndpointsWarningDataItem'
     { _neglnewdiValue :: !(Maybe Text)
-    , _neglnewdiKey   :: !(Maybe Text)
+    , _neglnewdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32489,8 +32489,8 @@ instance ToJSON
 -- /See:/ 'nodeGroupsScopedListWarning' smart constructor.
 data NodeGroupsScopedListWarning =
   NodeGroupsScopedListWarning'
-    { _ngslwData    :: !(Maybe [NodeGroupsScopedListWarningDataItem])
-    , _ngslwCode    :: !(Maybe NodeGroupsScopedListWarningCode)
+    { _ngslwData :: !(Maybe [NodeGroupsScopedListWarningDataItem])
+    , _ngslwCode :: !(Maybe NodeGroupsScopedListWarningCode)
     , _ngslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -32554,11 +32554,11 @@ instance ToJSON NodeGroupsScopedListWarning where
 data NodeTypeList =
   NodeTypeList'
     { _ntltNextPageToken :: !(Maybe Text)
-    , _ntltKind          :: !Text
-    , _ntltItems         :: !(Maybe [NodeType])
-    , _ntltSelfLink      :: !(Maybe Text)
-    , _ntltWarning       :: !(Maybe NodeTypeListWarning)
-    , _ntltId            :: !(Maybe Text)
+    , _ntltKind :: !Text
+    , _ntltItems :: !(Maybe [NodeType])
+    , _ntltSelfLink :: !(Maybe Text)
+    , _ntltWarning :: !(Maybe NodeTypeListWarning)
+    , _ntltId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32656,17 +32656,17 @@ instance ToJSON NodeTypeList where
 -- /See:/ 'diskType' smart constructor.
 data DiskType =
   DiskType'
-    { _dtKind              :: !Text
-    , _dtZone              :: !(Maybe Text)
-    , _dtSelfLink          :: !(Maybe Text)
-    , _dtName              :: !(Maybe Text)
+    { _dtKind :: !Text
+    , _dtZone :: !(Maybe Text)
+    , _dtSelfLink :: !(Maybe Text)
+    , _dtName :: !(Maybe Text)
     , _dtCreationTimestamp :: !(Maybe Text)
-    , _dtId                :: !(Maybe (Textual Word64))
-    , _dtRegion            :: !(Maybe Text)
-    , _dtValidDiskSize     :: !(Maybe Text)
-    , _dtDescription       :: !(Maybe Text)
+    , _dtId :: !(Maybe (Textual Word64))
+    , _dtRegion :: !(Maybe Text)
+    , _dtValidDiskSize :: !(Maybe Text)
+    , _dtDescription :: !(Maybe Text)
     , _dtDefaultDiskSizeGb :: !(Maybe (Textual Int64))
-    , _dtDeprecated        :: !(Maybe DeprecationStatus)
+    , _dtDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32815,8 +32815,8 @@ instance ToJSON DiskType where
 -- /See:/ 'nodeTemplateAggregatedListWarning' smart constructor.
 data NodeTemplateAggregatedListWarning =
   NodeTemplateAggregatedListWarning'
-    { _ntalwData    :: !(Maybe [NodeTemplateAggregatedListWarningDataItem])
-    , _ntalwCode    :: !(Maybe NodeTemplateAggregatedListWarningCode)
+    { _ntalwData :: !(Maybe [NodeTemplateAggregatedListWarningDataItem])
+    , _ntalwCode :: !(Maybe NodeTemplateAggregatedListWarningCode)
     , _ntalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -32881,7 +32881,7 @@ instance ToJSON NodeTemplateAggregatedListWarning
 data AutoscalerAggregatedListWarningDataItem =
   AutoscalerAggregatedListWarningDataItem'
     { _aalwdiValue :: !(Maybe Text)
-    , _aalwdiKey   :: !(Maybe Text)
+    , _aalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -32977,7 +32977,7 @@ instance ToJSON ZoneSetLabelsRequestLabels where
 data NodeTypeListWarningDataItem =
   NodeTypeListWarningDataItem'
     { _ntlwdiValue :: !(Maybe Text)
-    , _ntlwdiKey   :: !(Maybe Text)
+    , _ntlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33030,10 +33030,10 @@ instance ToJSON NodeTypeListWarningDataItem where
 -- /See:/ 'urlMapValidationResult' smart constructor.
 data URLMapValidationResult =
   URLMapValidationResult'
-    { _umvrLoadErrors    :: !(Maybe [Text])
+    { _umvrLoadErrors :: !(Maybe [Text])
     , _umvrLoadSucceeded :: !(Maybe Bool)
-    , _umvrTestPassed    :: !(Maybe Bool)
-    , _umvrTestFailures  :: !(Maybe [TestFailure])
+    , _umvrTestPassed :: !(Maybe Bool)
+    , _umvrTestFailures :: !(Maybe [TestFailure])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33112,9 +33112,9 @@ instance ToJSON URLMapValidationResult where
 -- /See:/ 'metadata' smart constructor.
 data Metadata =
   Metadata'
-    { _mKind        :: !Text
+    { _mKind :: !Text
     , _mFingerprint :: !(Maybe Bytes)
-    , _mItems       :: !(Maybe [MetadataItemsItem])
+    , _mItems :: !(Maybe [MetadataItemsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33180,8 +33180,8 @@ instance ToJSON Metadata where
 -- /See:/ 'routeWarningsItem' smart constructor.
 data RouteWarningsItem =
   RouteWarningsItem'
-    { _rwiData    :: !(Maybe [RouteWarningsItemDataItem])
-    , _rwiCode    :: !(Maybe RouteWarningsItemCode)
+    { _rwiData :: !(Maybe [RouteWarningsItemDataItem])
+    , _rwiCode :: !(Maybe RouteWarningsItemCode)
     , _rwiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -33241,11 +33241,11 @@ instance ToJSON RouteWarningsItem where
 data NodeGroupsListNodes =
   NodeGroupsListNodes'
     { _nglnNextPageToken :: !(Maybe Text)
-    , _nglnKind          :: !Text
-    , _nglnItems         :: !(Maybe [NodeGroupNode])
-    , _nglnSelfLink      :: !(Maybe Text)
-    , _nglnWarning       :: !(Maybe NodeGroupsListNodesWarning)
-    , _nglnId            :: !(Maybe Text)
+    , _nglnKind :: !Text
+    , _nglnItems :: !(Maybe [NodeGroupNode])
+    , _nglnSelfLink :: !(Maybe Text)
+    , _nglnWarning :: !(Maybe NodeGroupsListNodesWarning)
+    , _nglnId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33345,11 +33345,11 @@ instance ToJSON NodeGroupsListNodes where
 data InterconnectLocationList =
   InterconnectLocationList'
     { _illNextPageToken :: !(Maybe Text)
-    , _illKind          :: !Text
-    , _illItems         :: !(Maybe [InterconnectLocation])
-    , _illSelfLink      :: !(Maybe Text)
-    , _illWarning       :: !(Maybe InterconnectLocationListWarning)
-    , _illId            :: !(Maybe Text)
+    , _illKind :: !Text
+    , _illItems :: !(Maybe [InterconnectLocation])
+    , _illSelfLink :: !(Maybe Text)
+    , _illWarning :: !(Maybe InterconnectLocationListWarning)
+    , _illId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33526,7 +33526,7 @@ instance ToJSON InstancePropertiesLabels where
 data MachineTypesScopedListWarningDataItem =
   MachineTypesScopedListWarningDataItem'
     { _mtslwdiValue :: !(Maybe Text)
-    , _mtslwdiKey   :: !(Maybe Text)
+    , _mtslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33583,8 +33583,8 @@ instance ToJSON MachineTypesScopedListWarningDataItem
 -- /See:/ 'diskTypeListWarning' smart constructor.
 data DiskTypeListWarning =
   DiskTypeListWarning'
-    { _dtlwData    :: !(Maybe [DiskTypeListWarningDataItem])
-    , _dtlwCode    :: !(Maybe DiskTypeListWarningCode)
+    { _dtlwData :: !(Maybe [DiskTypeListWarningDataItem])
+    , _dtlwCode :: !(Maybe DiskTypeListWarningCode)
     , _dtlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -33646,7 +33646,7 @@ instance ToJSON DiskTypeListWarning where
 data NodeTemplateListWarningDataItem =
   NodeTemplateListWarningDataItem'
     { _nodValue :: !(Maybe Text)
-    , _nodKey   :: !(Maybe Text)
+    , _nodKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33697,7 +33697,7 @@ instance ToJSON NodeTemplateListWarningDataItem where
 data RegionListWarningDataItem =
   RegionListWarningDataItem'
     { _regValue :: !(Maybe Text)
-    , _regKey   :: !(Maybe Text)
+    , _regKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33791,7 +33791,7 @@ instance ToJSON InstancesSetMachineResourcesRequest
 -- /See:/ 'instancesSetServiceAccountRequest' smart constructor.
 data InstancesSetServiceAccountRequest =
   InstancesSetServiceAccountRequest'
-    { _issarEmail  :: !(Maybe Text)
+    { _issarEmail :: !(Maybe Text)
     , _issarScopes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -33882,7 +33882,7 @@ instance ToJSON SecurityPolicyReference where
 data DiskTypesScopedListWarningDataItem =
   DiskTypesScopedListWarningDataItem'
     { _dtslwdiValue :: !(Maybe Text)
-    , _dtslwdiKey   :: !(Maybe Text)
+    , _dtslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -33939,9 +33939,9 @@ instance ToJSON DiskTypesScopedListWarningDataItem
 data VMEndpointNATMAppingsInterfaceNATMAppings =
   VMEndpointNATMAppingsInterfaceNATMAppings'
     { _vmenatmainatmaSourceAliasIPRange :: !(Maybe Text)
-    , _vmenatmainatmaSourceVirtualIP    :: !(Maybe Text)
-    , _vmenatmainatmaNATIPPortRanges    :: !(Maybe [Text])
-    , _vmenatmainatmaNumTotalNATPorts   :: !(Maybe (Textual Int32))
+    , _vmenatmainatmaSourceVirtualIP :: !(Maybe Text)
+    , _vmenatmainatmaNATIPPortRanges :: !(Maybe [Text])
+    , _vmenatmainatmaNumTotalNATPorts :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34032,8 +34032,8 @@ instance ToJSON
 -- /See:/ 'vpnTunnelAggregatedListWarning' smart constructor.
 data VPNTunnelAggregatedListWarning =
   VPNTunnelAggregatedListWarning'
-    { _vtalwData    :: !(Maybe [VPNTunnelAggregatedListWarningDataItem])
-    , _vtalwCode    :: !(Maybe VPNTunnelAggregatedListWarningCode)
+    { _vtalwData :: !(Maybe [VPNTunnelAggregatedListWarningDataItem])
+    , _vtalwCode :: !(Maybe VPNTunnelAggregatedListWarningCode)
     , _vtalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -34099,13 +34099,13 @@ instance ToJSON VPNTunnelAggregatedListWarning where
 -- /See:/ 'targetHTTPProxy' smart constructor.
 data TargetHTTPProxy =
   TargetHTTPProxy'
-    { _thttppURLMap            :: !(Maybe Text)
-    , _thttppKind              :: !Text
-    , _thttppSelfLink          :: !(Maybe Text)
-    , _thttppName              :: !(Maybe Text)
+    { _thttppURLMap :: !(Maybe Text)
+    , _thttppKind :: !Text
+    , _thttppSelfLink :: !(Maybe Text)
+    , _thttppName :: !(Maybe Text)
     , _thttppCreationTimestamp :: !(Maybe Text)
-    , _thttppId                :: !(Maybe (Textual Word64))
-    , _thttppDescription       :: !(Maybe Text)
+    , _thttppId :: !(Maybe (Textual Word64))
+    , _thttppDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34221,9 +34221,9 @@ instance ToJSON TargetHTTPProxy where
 -- /See:/ 'shieldedInstanceConfig' smart constructor.
 data ShieldedInstanceConfig =
   ShieldedInstanceConfig'
-    { _sicEnableVtpm                :: !(Maybe Bool)
+    { _sicEnableVtpm :: !(Maybe Bool)
     , _sicEnableIntegrityMonitoring :: !(Maybe Bool)
-    , _sicEnableSecureBoot          :: !(Maybe Bool)
+    , _sicEnableSecureBoot :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34289,21 +34289,21 @@ instance ToJSON ShieldedInstanceConfig where
 -- /See:/ 'machineType' smart constructor.
 data MachineType =
   MachineType'
-    { _mtIsSharedCPU                  :: !(Maybe Bool)
-    , _mtKind                         :: !Text
-    , _mtImageSpaceGb                 :: !(Maybe (Textual Int32))
-    , _mtZone                         :: !(Maybe Text)
-    , _mtSelfLink                     :: !(Maybe Text)
-    , _mtName                         :: !(Maybe Text)
-    , _mtCreationTimestamp            :: !(Maybe Text)
-    , _mtScratchDisks                 :: !(Maybe [MachineTypeScratchDisksItem])
-    , _mtId                           :: !(Maybe (Textual Word64))
-    , _mtGuestCPUs                    :: !(Maybe (Textual Int32))
+    { _mtIsSharedCPU :: !(Maybe Bool)
+    , _mtKind :: !Text
+    , _mtImageSpaceGb :: !(Maybe (Textual Int32))
+    , _mtZone :: !(Maybe Text)
+    , _mtSelfLink :: !(Maybe Text)
+    , _mtName :: !(Maybe Text)
+    , _mtCreationTimestamp :: !(Maybe Text)
+    , _mtScratchDisks :: !(Maybe [MachineTypeScratchDisksItem])
+    , _mtId :: !(Maybe (Textual Word64))
+    , _mtGuestCPUs :: !(Maybe (Textual Int32))
     , _mtMaximumPersistentDisksSizeGb :: !(Maybe (Textual Int64))
-    , _mtMaximumPersistentDisks       :: !(Maybe (Textual Int32))
-    , _mtMemoryMb                     :: !(Maybe (Textual Int32))
-    , _mtDescription                  :: !(Maybe Text)
-    , _mtDeprecated                   :: !(Maybe DeprecationStatus)
+    , _mtMaximumPersistentDisks :: !(Maybe (Textual Int32))
+    , _mtMemoryMb :: !(Maybe (Textual Int32))
+    , _mtDescription :: !(Maybe Text)
+    , _mtDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34507,7 +34507,7 @@ instance ToJSON MachineType where
 data AcceleratorConfig =
   AcceleratorConfig'
     { _acAcceleratorCount :: !(Maybe (Textual Int32))
-    , _acAcceleratorType  :: !(Maybe Text)
+    , _acAcceleratorType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34563,8 +34563,8 @@ instance ToJSON AcceleratorConfig where
 -- /See:/ 'autoscalerListWarning' smart constructor.
 data AutoscalerListWarning =
   AutoscalerListWarning'
-    { _alwData    :: !(Maybe [AutoscalerListWarningDataItem])
-    , _alwCode    :: !(Maybe AutoscalerListWarningCode)
+    { _alwData :: !(Maybe [AutoscalerListWarningDataItem])
+    , _alwCode :: !(Maybe AutoscalerListWarningCode)
     , _alwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -34624,7 +34624,7 @@ instance ToJSON AutoscalerListWarning where
 data MachineTypeAggregatedListWarningDataItem =
   MachineTypeAggregatedListWarningDataItem'
     { _mtalwdiValue :: !(Maybe Text)
-    , _mtalwdiKey   :: !(Maybe Text)
+    , _mtalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34722,8 +34722,8 @@ instance ToJSON OperationError where
 -- /See:/ 'nodeTypeAggregatedListWarning' smart constructor.
 data NodeTypeAggregatedListWarning =
   NodeTypeAggregatedListWarning'
-    { _ntalwtData    :: !(Maybe [NodeTypeAggregatedListWarningDataItem])
-    , _ntalwtCode    :: !(Maybe NodeTypeAggregatedListWarningCode)
+    { _ntalwtData :: !(Maybe [NodeTypeAggregatedListWarningDataItem])
+    , _ntalwtCode :: !(Maybe NodeTypeAggregatedListWarningCode)
     , _ntalwtMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -34788,8 +34788,8 @@ instance ToJSON NodeTypeAggregatedListWarning where
 -- /See:/ 'targetInstancesScopedListWarning' smart constructor.
 data TargetInstancesScopedListWarning =
   TargetInstancesScopedListWarning'
-    { _tislwData    :: !(Maybe [TargetInstancesScopedListWarningDataItem])
-    , _tislwCode    :: !(Maybe TargetInstancesScopedListWarningCode)
+    { _tislwData :: !(Maybe [TargetInstancesScopedListWarningDataItem])
+    , _tislwCode :: !(Maybe TargetInstancesScopedListWarningCode)
     , _tislwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -34854,11 +34854,11 @@ instance ToJSON TargetInstancesScopedListWarning
 data NetworkEndpointGroupAggregatedList =
   NetworkEndpointGroupAggregatedList'
     { _negalNextPageToken :: !(Maybe Text)
-    , _negalKind          :: !Text
-    , _negalItems         :: !(Maybe NetworkEndpointGroupAggregatedListItems)
-    , _negalSelfLink      :: !(Maybe Text)
-    , _negalWarning       :: !(Maybe NetworkEndpointGroupAggregatedListWarning)
-    , _negalId            :: !(Maybe Text)
+    , _negalKind :: !Text
+    , _negalItems :: !(Maybe NetworkEndpointGroupAggregatedListItems)
+    , _negalSelfLink :: !(Maybe Text)
+    , _negalWarning :: !(Maybe NetworkEndpointGroupAggregatedListWarning)
+    , _negalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -34959,11 +34959,11 @@ instance ToJSON NetworkEndpointGroupAggregatedList
 data SubnetworkAggregatedList =
   SubnetworkAggregatedList'
     { _salNextPageToken :: !(Maybe Text)
-    , _salKind          :: !Text
-    , _salItems         :: !(Maybe SubnetworkAggregatedListItems)
-    , _salSelfLink      :: !(Maybe Text)
-    , _salWarning       :: !(Maybe SubnetworkAggregatedListWarning)
-    , _salId            :: !(Maybe Text)
+    , _salKind :: !Text
+    , _salItems :: !(Maybe SubnetworkAggregatedListItems)
+    , _salSelfLink :: !(Maybe Text)
+    , _salWarning :: !(Maybe SubnetworkAggregatedListWarning)
+    , _salId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35057,7 +35057,7 @@ instance ToJSON SubnetworkAggregatedList where
 data VPNTunnelListWarningDataItem =
   VPNTunnelListWarningDataItem'
     { _vtlwdiValue :: !(Maybe Text)
-    , _vtlwdiKey   :: !(Maybe Text)
+    , _vtlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35207,7 +35207,7 @@ instance ToJSON DisksResizeRequest where
 data AutoscalersScopedListWarningDataItem =
   AutoscalersScopedListWarningDataItem'
     { _aValue :: !(Maybe Text)
-    , _aKey   :: !(Maybe Text)
+    , _aKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35259,9 +35259,9 @@ instance ToJSON AutoscalersScopedListWarningDataItem
 -- /See:/ 'zoneSetPolicyRequest' smart constructor.
 data ZoneSetPolicyRequest =
   ZoneSetPolicyRequest'
-    { _zsprEtag     :: !(Maybe Bytes)
+    { _zsprEtag :: !(Maybe Bytes)
     , _zsprBindings :: !(Maybe [Binding])
-    , _zsprPolicy   :: !(Maybe Policy)
+    , _zsprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35326,7 +35326,7 @@ instance ToJSON ZoneSetPolicyRequest where
 data DiskTypeAggregatedListWarningDataItem =
   DiskTypeAggregatedListWarningDataItem'
     { _dtalwdiValue :: !(Maybe Text)
-    , _dtalwdiKey   :: !(Maybe Text)
+    , _dtalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35384,7 +35384,7 @@ instance ToJSON DiskTypeAggregatedListWarningDataItem
 data ShieldedInstanceIdentityEntry =
   ShieldedInstanceIdentityEntry'
     { _siieEkCert :: !(Maybe Text)
-    , _siieEkPub  :: !(Maybe Text)
+    , _siieEkPub :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35431,8 +35431,8 @@ instance ToJSON ShieldedInstanceIdentityEntry where
 -- /See:/ 'regionInstanceGroupManagerListWarning' smart constructor.
 data RegionInstanceGroupManagerListWarning =
   RegionInstanceGroupManagerListWarning'
-    { _rigmlwData    :: !(Maybe [RegionInstanceGroupManagerListWarningDataItem])
-    , _rigmlwCode    :: !(Maybe RegionInstanceGroupManagerListWarningCode)
+    { _rigmlwData :: !(Maybe [RegionInstanceGroupManagerListWarningDataItem])
+    , _rigmlwCode :: !(Maybe RegionInstanceGroupManagerListWarningCode)
     , _rigmlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -35547,11 +35547,11 @@ instance ToJSON
 data InstanceGroupsListInstances =
   InstanceGroupsListInstances'
     { _igliNextPageToken :: !(Maybe Text)
-    , _igliKind          :: !Text
-    , _igliItems         :: !(Maybe [InstanceWithNamedPorts])
-    , _igliSelfLink      :: !(Maybe Text)
-    , _igliWarning       :: !(Maybe InstanceGroupsListInstancesWarning)
-    , _igliId            :: !(Maybe Text)
+    , _igliKind :: !Text
+    , _igliItems :: !(Maybe [InstanceWithNamedPorts])
+    , _igliSelfLink :: !(Maybe Text)
+    , _igliWarning :: !(Maybe InstanceGroupsListInstancesWarning)
+    , _igliId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35656,18 +35656,18 @@ instance ToJSON InstanceGroupsListInstances where
 -- /See:/ 'autoscaler' smart constructor.
 data Autoscaler =
   Autoscaler'
-    { _aaStatus            :: !(Maybe AutoscalerStatus)
-    , _aaKind              :: !Text
-    , _aaZone              :: !(Maybe Text)
-    , _aaStatusDetails     :: !(Maybe [AutoscalerStatusDetails])
-    , _aaSelfLink          :: !(Maybe Text)
-    , _aaName              :: !(Maybe Text)
+    { _aaStatus :: !(Maybe AutoscalerStatus)
+    , _aaKind :: !Text
+    , _aaZone :: !(Maybe Text)
+    , _aaStatusDetails :: !(Maybe [AutoscalerStatusDetails])
+    , _aaSelfLink :: !(Maybe Text)
+    , _aaName :: !(Maybe Text)
     , _aaCreationTimestamp :: !(Maybe Text)
     , _aaAutoscalingPolicy :: !(Maybe AutoscalingPolicy)
-    , _aaId                :: !(Maybe (Textual Word64))
-    , _aaRegion            :: !(Maybe Text)
-    , _aaDescription       :: !(Maybe Text)
-    , _aaTarget            :: !(Maybe Text)
+    , _aaId :: !(Maybe (Textual Word64))
+    , _aaRegion :: !(Maybe Text)
+    , _aaDescription :: !(Maybe Text)
+    , _aaTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -35834,8 +35834,8 @@ instance ToJSON Autoscaler where
 -- /See:/ 'machineTypeListWarning' smart constructor.
 data MachineTypeListWarning =
   MachineTypeListWarning'
-    { _mtlwData    :: !(Maybe [MachineTypeListWarningDataItem])
-    , _mtlwCode    :: !(Maybe MachineTypeListWarningCode)
+    { _mtlwData :: !(Maybe [MachineTypeListWarningDataItem])
+    , _mtlwCode :: !(Maybe MachineTypeListWarningCode)
     , _mtlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -35897,8 +35897,8 @@ instance ToJSON MachineTypeListWarning where
 -- /See:/ 'targetHTTPProxyListWarning' smart constructor.
 data TargetHTTPProxyListWarning =
   TargetHTTPProxyListWarning'
-    { _thttpplwData    :: !(Maybe [TargetHTTPProxyListWarningDataItem])
-    , _thttpplwCode    :: !(Maybe TargetHTTPProxyListWarningCode)
+    { _thttpplwData :: !(Maybe [TargetHTTPProxyListWarningDataItem])
+    , _thttpplwCode :: !(Maybe TargetHTTPProxyListWarningCode)
     , _thttpplwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -35965,8 +35965,8 @@ instance ToJSON TargetHTTPProxyListWarning where
 -- /See:/ 'diskAggregatedListWarning' smart constructor.
 data DiskAggregatedListWarning =
   DiskAggregatedListWarning'
-    { _dalwData    :: !(Maybe [DiskAggregatedListWarningDataItem])
-    , _dalwCode    :: !(Maybe DiskAggregatedListWarningCode)
+    { _dalwData :: !(Maybe [DiskAggregatedListWarningDataItem])
+    , _dalwCode :: !(Maybe DiskAggregatedListWarningCode)
     , _dalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36028,8 +36028,8 @@ instance ToJSON DiskAggregatedListWarning where
 -- /See:/ 'targetPoolAggregatedListWarning' smart constructor.
 data TargetPoolAggregatedListWarning =
   TargetPoolAggregatedListWarning'
-    { _tpalwData    :: !(Maybe [TargetPoolAggregatedListWarningDataItem])
-    , _tpalwCode    :: !(Maybe TargetPoolAggregatedListWarningCode)
+    { _tpalwData :: !(Maybe [TargetPoolAggregatedListWarningDataItem])
+    , _tpalwCode :: !(Maybe TargetPoolAggregatedListWarningCode)
     , _tpalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36093,8 +36093,8 @@ instance ToJSON TargetPoolAggregatedListWarning where
 -- /See:/ 'usableSubnetworksAggregatedListWarning' smart constructor.
 data UsableSubnetworksAggregatedListWarning =
   UsableSubnetworksAggregatedListWarning'
-    { _usalwData    :: !(Maybe [UsableSubnetworksAggregatedListWarningDataItem])
-    , _usalwCode    :: !(Maybe UsableSubnetworksAggregatedListWarningCode)
+    { _usalwData :: !(Maybe [UsableSubnetworksAggregatedListWarningDataItem])
+    , _usalwCode :: !(Maybe UsableSubnetworksAggregatedListWarningCode)
     , _usalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36162,8 +36162,8 @@ instance ToJSON
 -- /See:/ 'disksScopedListWarning' smart constructor.
 data DisksScopedListWarning =
   DisksScopedListWarning'
-    { _dslwData    :: !(Maybe [DisksScopedListWarningDataItem])
-    , _dslwCode    :: !(Maybe DisksScopedListWarningCode)
+    { _dslwData :: !(Maybe [DisksScopedListWarningDataItem])
+    , _dslwCode :: !(Maybe DisksScopedListWarningCode)
     , _dslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36225,7 +36225,7 @@ instance ToJSON DisksScopedListWarning where
 data NodeTemplatesScopedListWarningDataItem =
   NodeTemplatesScopedListWarningDataItem'
     { _ntslwdiValue :: !(Maybe Text)
-    , _ntslwdiKey   :: !(Maybe Text)
+    , _ntslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36361,7 +36361,7 @@ instance ToJSON DiskLabels where
 data InstanceGroupManagerListWarningDataItem =
   InstanceGroupManagerListWarningDataItem'
     { _igmlwdiValue :: !(Maybe Text)
-    , _igmlwdiKey   :: !(Maybe Text)
+    , _igmlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36420,8 +36420,8 @@ instance ToJSON
 -- /See:/ 'forwardingRuleAggregatedListWarning' smart constructor.
 data ForwardingRuleAggregatedListWarning =
   ForwardingRuleAggregatedListWarning'
-    { _fralwData    :: !(Maybe [ForwardingRuleAggregatedListWarningDataItem])
-    , _fralwCode    :: !(Maybe ForwardingRuleAggregatedListWarningCode)
+    { _fralwData :: !(Maybe [ForwardingRuleAggregatedListWarningDataItem])
+    , _fralwCode :: !(Maybe ForwardingRuleAggregatedListWarningCode)
     , _fralwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36485,8 +36485,8 @@ instance ToJSON ForwardingRuleAggregatedListWarning
 -- /See:/ 'sslPolicyWarningsItem' smart constructor.
 data SSLPolicyWarningsItem =
   SSLPolicyWarningsItem'
-    { _spwiData    :: !(Maybe [SSLPolicyWarningsItemDataItem])
-    , _spwiCode    :: !(Maybe SSLPolicyWarningsItemCode)
+    { _spwiData :: !(Maybe [SSLPolicyWarningsItemDataItem])
+    , _spwiCode :: !(Maybe SSLPolicyWarningsItemCode)
     , _spwiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36547,9 +36547,9 @@ instance ToJSON SSLPolicyWarningsItem where
 -- /See:/ 'globalSetPolicyRequest' smart constructor.
 data GlobalSetPolicyRequest =
   GlobalSetPolicyRequest'
-    { _gsprEtag     :: !(Maybe Bytes)
+    { _gsprEtag :: !(Maybe Bytes)
     , _gsprBindings :: !(Maybe [Binding])
-    , _gsprPolicy   :: !(Maybe Policy)
+    , _gsprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36614,7 +36614,7 @@ instance ToJSON GlobalSetPolicyRequest where
 data RegionAutoscalerListWarningDataItem =
   RegionAutoscalerListWarningDataItem'
     { _ralwdiaValue :: !(Maybe Text)
-    , _ralwdiaKey   :: !(Maybe Text)
+    , _ralwdiaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36715,8 +36715,8 @@ instance ToJSON GlobalSetLabelsRequestLabels where
 -- /See:/ 'targetPoolsScopedListWarning' smart constructor.
 data TargetPoolsScopedListWarning =
   TargetPoolsScopedListWarning'
-    { _tpslwData    :: !(Maybe [TargetPoolsScopedListWarningDataItem])
-    , _tpslwCode    :: !(Maybe TargetPoolsScopedListWarningCode)
+    { _tpslwData :: !(Maybe [TargetPoolsScopedListWarningDataItem])
+    , _tpslwCode :: !(Maybe TargetPoolsScopedListWarningCode)
     , _tpslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -36778,10 +36778,10 @@ instance ToJSON TargetPoolsScopedListWarning where
 -- /See:/ 'healthStatus' smart constructor.
 data HealthStatus =
   HealthStatus'
-    { _hsIPAddress   :: !(Maybe Text)
+    { _hsIPAddress :: !(Maybe Text)
     , _hsHealthState :: !(Maybe HealthStatusHealthState)
-    , _hsPort        :: !(Maybe (Textual Int32))
-    , _hsInstance    :: !(Maybe Text)
+    , _hsPort :: !(Maybe (Textual Int32))
+    , _hsInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36854,11 +36854,11 @@ instance ToJSON HealthStatus where
 data TargetTCPProxyList =
   TargetTCPProxyList'
     { _ttplNextPageToken :: !(Maybe Text)
-    , _ttplKind          :: !Text
-    , _ttplItems         :: !(Maybe [TargetTCPProxy])
-    , _ttplSelfLink      :: !(Maybe Text)
-    , _ttplWarning       :: !(Maybe TargetTCPProxyListWarning)
-    , _ttplId            :: !(Maybe Text)
+    , _ttplKind :: !Text
+    , _ttplItems :: !(Maybe [TargetTCPProxy])
+    , _ttplSelfLink :: !(Maybe Text)
+    , _ttplWarning :: !(Maybe TargetTCPProxyListWarning)
+    , _ttplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -36955,16 +36955,16 @@ instance ToJSON TargetTCPProxyList where
 -- /See:/ 'region' smart constructor.
 data Region =
   Region'
-    { _regeStatus            :: !(Maybe RegionStatus)
-    , _regeZones             :: !(Maybe [Text])
-    , _regeKind              :: !Text
-    , _regeSelfLink          :: !(Maybe Text)
-    , _regeName              :: !(Maybe Text)
+    { _regeStatus :: !(Maybe RegionStatus)
+    , _regeZones :: !(Maybe [Text])
+    , _regeKind :: !Text
+    , _regeSelfLink :: !(Maybe Text)
+    , _regeName :: !(Maybe Text)
     , _regeCreationTimestamp :: !(Maybe Text)
-    , _regeQuotas            :: !(Maybe [Quota])
-    , _regeId                :: !(Maybe (Textual Word64))
-    , _regeDescription       :: !(Maybe Text)
-    , _regeDeprecated        :: !(Maybe DeprecationStatus)
+    , _regeQuotas :: !(Maybe [Quota])
+    , _regeId :: !(Maybe (Textual Word64))
+    , _regeDescription :: !(Maybe Text)
+    , _regeDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -37101,7 +37101,7 @@ instance ToJSON Region where
 data OperationListWarningDataItem =
   OperationListWarningDataItem'
     { _olwdiValue :: !(Maybe Text)
-    , _olwdiKey   :: !(Maybe Text)
+    , _olwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -37188,23 +37188,23 @@ instance ToJSON GuestOSFeature where
 -- /See:/ 'vpnTunnel' smart constructor.
 data VPNTunnel =
   VPNTunnel'
-    { _vtDetailedStatus        :: !(Maybe Text)
-    , _vtStatus                :: !(Maybe VPNTunnelStatus)
-    , _vtLocalTrafficSelector  :: !(Maybe [Text])
-    , _vtKind                  :: !Text
-    , _vtPeerIP                :: !(Maybe Text)
-    , _vtRouter                :: !(Maybe Text)
-    , _vtTargetVPNGateway      :: !(Maybe Text)
+    { _vtDetailedStatus :: !(Maybe Text)
+    , _vtStatus :: !(Maybe VPNTunnelStatus)
+    , _vtLocalTrafficSelector :: !(Maybe [Text])
+    , _vtKind :: !Text
+    , _vtPeerIP :: !(Maybe Text)
+    , _vtRouter :: !(Maybe Text)
+    , _vtTargetVPNGateway :: !(Maybe Text)
     , _vtRemoteTrafficSelector :: !(Maybe [Text])
-    , _vtSelfLink              :: !(Maybe Text)
-    , _vtSharedSecret          :: !(Maybe Text)
-    , _vtName                  :: !(Maybe Text)
-    , _vtCreationTimestamp     :: !(Maybe Text)
-    , _vtSharedSecretHash      :: !(Maybe Text)
-    , _vtId                    :: !(Maybe (Textual Word64))
-    , _vtIkeVersion            :: !(Maybe (Textual Int32))
-    , _vtRegion                :: !(Maybe Text)
-    , _vtDescription           :: !(Maybe Text)
+    , _vtSelfLink :: !(Maybe Text)
+    , _vtSharedSecret :: !(Maybe Text)
+    , _vtName :: !(Maybe Text)
+    , _vtCreationTimestamp :: !(Maybe Text)
+    , _vtSharedSecretHash :: !(Maybe Text)
+    , _vtId :: !(Maybe (Textual Word64))
+    , _vtIkeVersion :: !(Maybe (Textual Int32))
+    , _vtRegion :: !(Maybe Text)
+    , _vtDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -37446,8 +37446,8 @@ instance ToJSON VPNTunnel where
 -- /See:/ 'instanceGroupManagerAggregatedListWarning' smart constructor.
 data InstanceGroupManagerAggregatedListWarning =
   InstanceGroupManagerAggregatedListWarning'
-    { _igmalwData    :: !(Maybe [InstanceGroupManagerAggregatedListWarningDataItem])
-    , _igmalwCode    :: !(Maybe InstanceGroupManagerAggregatedListWarningCode)
+    { _igmalwData :: !(Maybe [InstanceGroupManagerAggregatedListWarningDataItem])
+    , _igmalwCode :: !(Maybe InstanceGroupManagerAggregatedListWarningCode)
     , _igmalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -37516,7 +37516,7 @@ instance ToJSON
 data DiskListWarningDataItem =
   DiskListWarningDataItem'
     { _dlwdiValue :: !(Maybe Text)
-    , _dlwdiKey   :: !(Maybe Text)
+    , _dlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -37612,7 +37612,7 @@ instance ToJSON SourceInstanceParams where
 -- /See:/ 'aliasIPRange' smart constructor.
 data AliasIPRange =
   AliasIPRange'
-    { _airIPCIdRRange         :: !(Maybe Text)
+    { _airIPCIdRRange :: !(Maybe Text)
     , _airSubnetworkRangeName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -37670,7 +37670,7 @@ instance ToJSON AliasIPRange where
 data NodeTypesScopedListWarningDataItem =
   NodeTypesScopedListWarningDataItem'
     { _ntslwditValue :: !(Maybe Text)
-    , _ntslwditKey   :: !(Maybe Text)
+    , _ntslwditKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -37727,8 +37727,8 @@ instance ToJSON NodeTypesScopedListWarningDataItem
 -- /See:/ 'targetInstanceListWarning' smart constructor.
 data TargetInstanceListWarning =
   TargetInstanceListWarning'
-    { _tilwData    :: !(Maybe [TargetInstanceListWarningDataItem])
-    , _tilwCode    :: !(Maybe TargetInstanceListWarningCode)
+    { _tilwData :: !(Maybe [TargetInstanceListWarningDataItem])
+    , _tilwCode :: !(Maybe TargetInstanceListWarningCode)
     , _tilwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -37790,18 +37790,18 @@ instance ToJSON TargetInstanceListWarning where
 -- /See:/ 'nodeType' smart constructor.
 data NodeType =
   NodeType'
-    { _ntKind              :: !Text
-    , _ntZone              :: !(Maybe Text)
-    , _ntCPUPlatform       :: !(Maybe Text)
-    , _ntLocalSsdGb        :: !(Maybe (Textual Int32))
-    , _ntSelfLink          :: !(Maybe Text)
-    , _ntName              :: !(Maybe Text)
+    { _ntKind :: !Text
+    , _ntZone :: !(Maybe Text)
+    , _ntCPUPlatform :: !(Maybe Text)
+    , _ntLocalSsdGb :: !(Maybe (Textual Int32))
+    , _ntSelfLink :: !(Maybe Text)
+    , _ntName :: !(Maybe Text)
     , _ntCreationTimestamp :: !(Maybe Text)
-    , _ntId                :: !(Maybe (Textual Word64))
-    , _ntGuestCPUs         :: !(Maybe (Textual Int32))
-    , _ntMemoryMb          :: !(Maybe (Textual Int32))
-    , _ntDescription       :: !(Maybe Text)
-    , _ntDeprecated        :: !(Maybe DeprecationStatus)
+    , _ntId :: !(Maybe (Textual Word64))
+    , _ntGuestCPUs :: !(Maybe (Textual Int32))
+    , _ntMemoryMb :: !(Maybe (Textual Int32))
+    , _ntDescription :: !(Maybe Text)
+    , _ntDeprecated :: !(Maybe DeprecationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38017,11 +38017,11 @@ instance ToJSON AuthorizationLoggingOptions where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pRules        :: !(Maybe [Rule])
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
-    , _pIAMOwned     :: !(Maybe Bool)
+    , _pEtag :: !(Maybe Bytes)
+    , _pRules :: !(Maybe [Rule])
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
+    , _pIAMOwned :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38133,8 +38133,8 @@ instance ToJSON Policy where
 -- /See:/ 'operationAggregatedListWarning' smart constructor.
 data OperationAggregatedListWarning =
   OperationAggregatedListWarning'
-    { _oalwData    :: !(Maybe [OperationAggregatedListWarningDataItem])
-    , _oalwCode    :: !(Maybe OperationAggregatedListWarningCode)
+    { _oalwData :: !(Maybe [OperationAggregatedListWarningDataItem])
+    , _oalwCode :: !(Maybe OperationAggregatedListWarningCode)
     , _oalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -38197,7 +38197,7 @@ instance ToJSON OperationAggregatedListWarning where
 data TargetInstanceAggregatedListWarningDataItem =
   TargetInstanceAggregatedListWarningDataItem'
     { _tialwdiValue :: !(Maybe Text)
-    , _tialwdiKey   :: !(Maybe Text)
+    , _tialwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38258,8 +38258,8 @@ instance ToJSON
 -- /See:/ 'operationsScopedListWarning' smart constructor.
 data OperationsScopedListWarning =
   OperationsScopedListWarning'
-    { _oslwData    :: !(Maybe [OperationsScopedListWarningDataItem])
-    , _oslwCode    :: !(Maybe OperationsScopedListWarningCode)
+    { _oslwData :: !(Maybe [OperationsScopedListWarningDataItem])
+    , _oslwCode :: !(Maybe OperationsScopedListWarningCode)
     , _oslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -38321,7 +38321,7 @@ instance ToJSON OperationsScopedListWarning where
 data RegionDiskTypeListWarningDataItem =
   RegionDiskTypeListWarningDataItem'
     { _rdtlwdiValue :: !(Maybe Text)
-    , _rdtlwdiKey   :: !(Maybe Text)
+    , _rdtlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38377,7 +38377,7 @@ instance ToJSON RegionDiskTypeListWarningDataItem
 data ForwardingRuleListWarningDataItem =
   ForwardingRuleListWarningDataItem'
     { _frlwdiValue :: !(Maybe Text)
-    , _frlwdiKey   :: !(Maybe Text)
+    , _frlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38433,10 +38433,10 @@ instance ToJSON ForwardingRuleListWarningDataItem
 -- /See:/ 'scheduling' smart constructor.
 data Scheduling =
   Scheduling'
-    { _sAutomaticRestart  :: !(Maybe Bool)
-    , _sNodeAffinities    :: !(Maybe [SchedulingNodeAffinity])
+    { _sAutomaticRestart :: !(Maybe Bool)
+    , _sNodeAffinities :: !(Maybe [SchedulingNodeAffinity])
     , _sOnHostMaintenance :: !(Maybe SchedulingOnHostMaintenance)
-    , _sPreemptible       :: !(Maybe Bool)
+    , _sPreemptible :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38522,7 +38522,7 @@ instance ToJSON Scheduling where
 data VPNTunnelsScopedListWarningDataItem =
   VPNTunnelsScopedListWarningDataItem'
     { _vtslwdiValue :: !(Maybe Text)
-    , _vtslwdiKey   :: !(Maybe Text)
+    , _vtslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38579,11 +38579,11 @@ instance ToJSON VPNTunnelsScopedListWarningDataItem
 data InterconnectList =
   InterconnectList'
     { _intnNextPageToken :: !(Maybe Text)
-    , _intnKind          :: !Text
-    , _intnItems         :: !(Maybe [Interconnect])
-    , _intnSelfLink      :: !(Maybe Text)
-    , _intnWarning       :: !(Maybe InterconnectListWarning)
-    , _intnId            :: !(Maybe Text)
+    , _intnKind :: !Text
+    , _intnItems :: !(Maybe [Interconnect])
+    , _intnSelfLink :: !(Maybe Text)
+    , _intnWarning :: !(Maybe InterconnectListWarning)
+    , _intnId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38680,7 +38680,7 @@ instance ToJSON InterconnectList where
 data TargetPoolListWarningDataItem =
   TargetPoolListWarningDataItem'
     { _tplwdiValue :: !(Maybe Text)
-    , _tplwdiKey   :: !(Maybe Text)
+    , _tplwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38736,18 +38736,18 @@ instance ToJSON TargetPoolListWarningDataItem where
 -- /See:/ 'nodeTemplate' smart constructor.
 data NodeTemplate =
   NodeTemplate'
-    { _nttStatus              :: !(Maybe NodeTemplateStatus)
-    , _nttKind                :: !Text
-    , _nttSelfLink            :: !(Maybe Text)
-    , _nttName                :: !(Maybe Text)
-    , _nttStatusMessage       :: !(Maybe Text)
-    , _nttCreationTimestamp   :: !(Maybe Text)
-    , _nttNodeAffinityLabels  :: !(Maybe NodeTemplateNodeAffinityLabels)
-    , _nttId                  :: !(Maybe (Textual Word64))
+    { _nttStatus :: !(Maybe NodeTemplateStatus)
+    , _nttKind :: !Text
+    , _nttSelfLink :: !(Maybe Text)
+    , _nttName :: !(Maybe Text)
+    , _nttStatusMessage :: !(Maybe Text)
+    , _nttCreationTimestamp :: !(Maybe Text)
+    , _nttNodeAffinityLabels :: !(Maybe NodeTemplateNodeAffinityLabels)
+    , _nttId :: !(Maybe (Textual Word64))
     , _nttNodeTypeFlexibility :: !(Maybe NodeTemplateNodeTypeFlexibility)
-    , _nttNodeType            :: !(Maybe Text)
-    , _nttRegion              :: !(Maybe Text)
-    , _nttDescription         :: !(Maybe Text)
+    , _nttNodeType :: !(Maybe Text)
+    , _nttRegion :: !(Maybe Text)
+    , _nttDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -38919,11 +38919,11 @@ instance ToJSON NodeTemplate where
 data NetworkEndpointGroupList =
   NetworkEndpointGroupList'
     { _neglNextPageToken :: !(Maybe Text)
-    , _neglKind          :: !Text
-    , _neglItems         :: !(Maybe [NetworkEndpointGroup])
-    , _neglSelfLink      :: !(Maybe Text)
-    , _neglWarning       :: !(Maybe NetworkEndpointGroupListWarning)
-    , _neglId            :: !(Maybe Text)
+    , _neglKind :: !Text
+    , _neglItems :: !(Maybe [NetworkEndpointGroup])
+    , _neglSelfLink :: !(Maybe Text)
+    , _neglWarning :: !(Maybe NetworkEndpointGroupListWarning)
+    , _neglId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39021,11 +39021,11 @@ instance ToJSON NetworkEndpointGroupList where
 data SubnetworkList =
   SubnetworkList'
     { _slNextPageToken :: !(Maybe Text)
-    , _slKind          :: !Text
-    , _slItems         :: !(Maybe [Subnetwork])
-    , _slSelfLink      :: !(Maybe Text)
-    , _slWarning       :: !(Maybe SubnetworkListWarning)
-    , _slId            :: !(Maybe Text)
+    , _slKind :: !Text
+    , _slItems :: !(Maybe [Subnetwork])
+    , _slSelfLink :: !(Maybe Text)
+    , _slWarning :: !(Maybe SubnetworkListWarning)
+    , _slId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39120,8 +39120,8 @@ instance ToJSON SubnetworkList where
 -- /See:/ 'forwardingRulesScopedListWarning' smart constructor.
 data ForwardingRulesScopedListWarning =
   ForwardingRulesScopedListWarning'
-    { _frslwData    :: !(Maybe [ForwardingRulesScopedListWarningDataItem])
-    , _frslwCode    :: !(Maybe ForwardingRulesScopedListWarningCode)
+    { _frslwData :: !(Maybe [ForwardingRulesScopedListWarningDataItem])
+    , _frslwCode :: !(Maybe ForwardingRulesScopedListWarningCode)
     , _frslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -39187,11 +39187,11 @@ instance ToJSON ForwardingRulesScopedListWarning
 data HTTPHealthCheckList =
   HTTPHealthCheckList'
     { _httphclNextPageToken :: !(Maybe Text)
-    , _httphclKind          :: !Text
-    , _httphclItems         :: !(Maybe [HTTPHealthCheck])
-    , _httphclSelfLink      :: !(Maybe Text)
-    , _httphclWarning       :: !(Maybe HTTPHealthCheckListWarning)
-    , _httphclId            :: !(Maybe Text)
+    , _httphclKind :: !Text
+    , _httphclItems :: !(Maybe [HTTPHealthCheck])
+    , _httphclSelfLink :: !(Maybe Text)
+    , _httphclWarning :: !(Maybe HTTPHealthCheckListWarning)
+    , _httphclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39292,8 +39292,8 @@ instance ToJSON HTTPHealthCheckList where
 -- /See:/ 'instanceGroupManagersScopedListWarning' smart constructor.
 data InstanceGroupManagersScopedListWarning =
   InstanceGroupManagersScopedListWarning'
-    { _igmslwData    :: !(Maybe [InstanceGroupManagersScopedListWarningDataItem])
-    , _igmslwCode    :: !(Maybe InstanceGroupManagersScopedListWarningCode)
+    { _igmslwData :: !(Maybe [InstanceGroupManagersScopedListWarningDataItem])
+    , _igmslwCode :: !(Maybe InstanceGroupManagersScopedListWarningCode)
     , _igmslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -39361,11 +39361,11 @@ instance ToJSON
 data SSLPoliciesList =
   SSLPoliciesList'
     { _sslplNextPageToken :: !(Maybe Text)
-    , _sslplKind          :: !Text
-    , _sslplItems         :: !(Maybe [SSLPolicy])
-    , _sslplSelfLink      :: !(Maybe Text)
-    , _sslplWarning       :: !(Maybe SSLPoliciesListWarning)
-    , _sslplId            :: !(Maybe Text)
+    , _sslplKind :: !Text
+    , _sslplItems :: !(Maybe [SSLPolicy])
+    , _sslplSelfLink :: !(Maybe Text)
+    , _sslplWarning :: !(Maybe SSLPoliciesListWarning)
+    , _sslplId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39576,19 +39576,19 @@ instance ToJSON
 -- /See:/ 'commitment' smart constructor.
 data Commitment =
   Commitment'
-    { _cStatus            :: !(Maybe CommitmentStatus)
-    , _cKind              :: !Text
-    , _cPlan              :: !(Maybe CommitmentPlan)
-    , _cResources         :: !(Maybe [ResourceCommitment])
-    , _cEndTimestamp      :: !(Maybe Text)
-    , _cSelfLink          :: !(Maybe Text)
-    , _cName              :: !(Maybe Text)
-    , _cStatusMessage     :: !(Maybe Text)
+    { _cStatus :: !(Maybe CommitmentStatus)
+    , _cKind :: !Text
+    , _cPlan :: !(Maybe CommitmentPlan)
+    , _cResources :: !(Maybe [ResourceCommitment])
+    , _cEndTimestamp :: !(Maybe Text)
+    , _cSelfLink :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cStatusMessage :: !(Maybe Text)
     , _cCreationTimestamp :: !(Maybe Text)
-    , _cId                :: !(Maybe (Textual Word64))
-    , _cRegion            :: !(Maybe Text)
-    , _cStartTimestamp    :: !(Maybe Text)
-    , _cDescription       :: !(Maybe Text)
+    , _cId :: !(Maybe (Textual Word64))
+    , _cRegion :: !(Maybe Text)
+    , _cStartTimestamp :: !(Maybe Text)
+    , _cDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39763,11 +39763,11 @@ instance ToJSON Commitment where
 data HTTPSHealthCheckList =
   HTTPSHealthCheckList'
     { _hhclNextPageToken :: !(Maybe Text)
-    , _hhclKind          :: !Text
-    , _hhclItems         :: !(Maybe [HTTPSHealthCheck])
-    , _hhclSelfLink      :: !(Maybe Text)
-    , _hhclWarning       :: !(Maybe HTTPSHealthCheckListWarning)
-    , _hhclId            :: !(Maybe Text)
+    , _hhclKind :: !Text
+    , _hhclItems :: !(Maybe [HTTPSHealthCheck])
+    , _hhclSelfLink :: !(Maybe Text)
+    , _hhclWarning :: !(Maybe HTTPSHealthCheckListWarning)
+    , _hhclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39863,7 +39863,7 @@ instance ToJSON HTTPSHealthCheckList where
 data AddressListWarningDataItem =
   AddressListWarningDataItem'
     { _addValue :: !(Maybe Text)
-    , _addKey   :: !(Maybe Text)
+    , _addKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39913,8 +39913,8 @@ instance ToJSON AddressListWarningDataItem where
 data OperationErrorErrorsItem =
   OperationErrorErrorsItem'
     { _oeeiLocation :: !(Maybe Text)
-    , _oeeiCode     :: !(Maybe Text)
-    , _oeeiMessage  :: !(Maybe Text)
+    , _oeeiCode :: !(Maybe Text)
+    , _oeeiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -39971,8 +39971,8 @@ instance ToJSON OperationErrorErrorsItem where
 -- /See:/ 'commitmentListWarning' smart constructor.
 data CommitmentListWarning =
   CommitmentListWarning'
-    { _clwData    :: !(Maybe [CommitmentListWarningDataItem])
-    , _clwCode    :: !(Maybe CommitmentListWarningCode)
+    { _clwData :: !(Maybe [CommitmentListWarningDataItem])
+    , _clwCode :: !(Maybe CommitmentListWarningCode)
     , _clwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -40032,16 +40032,16 @@ instance ToJSON CommitmentListWarning where
 -- /See:/ 'license' smart constructor.
 data License =
   License'
-    { _lChargesUseFee        :: !(Maybe Bool)
-    , _lKind                 :: !Text
+    { _lChargesUseFee :: !(Maybe Bool)
+    , _lKind :: !Text
     , _lResourceRequirements :: !(Maybe LicenseResourceRequirements)
-    , _lTransferable         :: !(Maybe Bool)
-    , _lSelfLink             :: !(Maybe Text)
-    , _lName                 :: !(Maybe Text)
-    , _lCreationTimestamp    :: !(Maybe Text)
-    , _lId                   :: !(Maybe (Textual Word64))
-    , _lDescription          :: !(Maybe Text)
-    , _lLicenseCode          :: !(Maybe (Textual Word64))
+    , _lTransferable :: !(Maybe Bool)
+    , _lSelfLink :: !(Maybe Text)
+    , _lName :: !(Maybe Text)
+    , _lCreationTimestamp :: !(Maybe Text)
+    , _lId :: !(Maybe (Textual Word64))
+    , _lDescription :: !(Maybe Text)
+    , _lLicenseCode :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -40184,7 +40184,7 @@ instance ToJSON License where
 data PathRule =
   PathRule'
     { _prService :: !(Maybe Text)
-    , _prPaths   :: !(Maybe [Text])
+    , _prPaths :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -40240,7 +40240,7 @@ instance ToJSON PathRule where
 -- /See:/ 'licenseCodeLicenseAlias' smart constructor.
 data LicenseCodeLicenseAlias =
   LicenseCodeLicenseAlias'
-    { _lclaSelfLink    :: !(Maybe Text)
+    { _lclaSelfLink :: !(Maybe Text)
     , _lclaDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -40289,7 +40289,7 @@ instance ToJSON LicenseCodeLicenseAlias where
 data InterconnectAttachmentsScopedListWarningDataItem =
   InterconnectAttachmentsScopedListWarningDataItem'
     { _iaslwdiValue :: !(Maybe Text)
-    , _iaslwdiKey   :: !(Maybe Text)
+    , _iaslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -40349,7 +40349,7 @@ instance ToJSON
 data SecurityPolicyListWarningDataItem =
   SecurityPolicyListWarningDataItem'
     { _secValue :: !(Maybe Text)
-    , _secKey   :: !(Maybe Text)
+    , _secKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -40405,7 +40405,7 @@ instance ToJSON SecurityPolicyListWarningDataItem
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -40458,7 +40458,7 @@ instance ToJSON AuditLogConfig where
 data CommitmentsScopedListWarningDataItem =
   CommitmentsScopedListWarningDataItem'
     { _cslwdiValue :: !(Maybe Text)
-    , _cslwdiKey   :: !(Maybe Text)
+    , _cslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -40518,29 +40518,29 @@ instance ToJSON CommitmentsScopedListWarningDataItem
 -- /See:/ 'interconnectAttachment' smart constructor.
 data InterconnectAttachment =
   InterconnectAttachment'
-    { _iaState                   :: !(Maybe InterconnectAttachmentState)
-    , _iaPartnerASN              :: !(Maybe (Textual Int64))
-    , _iaPairingKey              :: !(Maybe Text)
-    , _iaKind                    :: !Text
+    { _iaState :: !(Maybe InterconnectAttachmentState)
+    , _iaPartnerASN :: !(Maybe (Textual Int64))
+    , _iaPairingKey :: !(Maybe Text)
+    , _iaKind :: !Text
     , _iaCustomerRouterIPAddress :: !(Maybe Text)
-    , _iaPartnerMetadata         :: !(Maybe InterconnectAttachmentPartnerMetadata)
-    , _iaRouter                  :: !(Maybe Text)
-    , _iaOperationalStatus       :: !(Maybe InterconnectAttachmentOperationalStatus)
-    , _iaSelfLink                :: !(Maybe Text)
-    , _iaName                    :: !(Maybe Text)
-    , _iaBandwidth               :: !(Maybe InterconnectAttachmentBandwidth)
-    , _iaGoogleReferenceId       :: !(Maybe Text)
-    , _iaCreationTimestamp       :: !(Maybe Text)
-    , _iaEdgeAvailabilityDomain  :: !(Maybe InterconnectAttachmentEdgeAvailabilityDomain)
-    , _iaInterconnect            :: !(Maybe Text)
-    , _iaAdminEnabled            :: !(Maybe Bool)
-    , _iaVLANTag8021q            :: !(Maybe (Textual Int32))
-    , _iaCloudRouterIPAddress    :: !(Maybe Text)
-    , _iaId                      :: !(Maybe (Textual Word64))
-    , _iaCandidateSubnets        :: !(Maybe [Text])
-    , _iaRegion                  :: !(Maybe Text)
-    , _iaType                    :: !(Maybe InterconnectAttachmentType)
-    , _iaDescription             :: !(Maybe Text)
+    , _iaPartnerMetadata :: !(Maybe InterconnectAttachmentPartnerMetadata)
+    , _iaRouter :: !(Maybe Text)
+    , _iaOperationalStatus :: !(Maybe InterconnectAttachmentOperationalStatus)
+    , _iaSelfLink :: !(Maybe Text)
+    , _iaName :: !(Maybe Text)
+    , _iaBandwidth :: !(Maybe InterconnectAttachmentBandwidth)
+    , _iaGoogleReferenceId :: !(Maybe Text)
+    , _iaCreationTimestamp :: !(Maybe Text)
+    , _iaEdgeAvailabilityDomain :: !(Maybe InterconnectAttachmentEdgeAvailabilityDomain)
+    , _iaInterconnect :: !(Maybe Text)
+    , _iaAdminEnabled :: !(Maybe Bool)
+    , _iaVLANTag8021q :: !(Maybe (Textual Int32))
+    , _iaCloudRouterIPAddress :: !(Maybe Text)
+    , _iaId :: !(Maybe (Textual Word64))
+    , _iaCandidateSubnets :: !(Maybe [Text])
+    , _iaRegion :: !(Maybe Text)
+    , _iaType :: !(Maybe InterconnectAttachmentType)
+    , _iaDescription :: !(Maybe Text)
     , _iaPrivateInterconnectInfo :: !(Maybe InterconnectAttachmentPrivateInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -40873,11 +40873,11 @@ instance ToJSON InterconnectAttachment where
 data InstanceList =
   InstanceList'
     { _insNextPageToken :: !(Maybe Text)
-    , _insKind          :: !Text
-    , _insItems         :: !(Maybe [Instance])
-    , _insSelfLink      :: !(Maybe Text)
-    , _insWarning       :: !(Maybe InstanceListWarning)
-    , _insId            :: !(Maybe Text)
+    , _insKind :: !Text
+    , _insItems :: !(Maybe [Instance])
+    , _insSelfLink :: !(Maybe Text)
+    , _insWarning :: !(Maybe InstanceListWarning)
+    , _insId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41012,7 +41012,7 @@ instance ToJSON RegionSetLabelsRequestLabels where
 data NetworkListWarningDataItem =
   NetworkListWarningDataItem'
     { _nlwdiValue :: !(Maybe Text)
-    , _nlwdiKey   :: !(Maybe Text)
+    , _nlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41066,10 +41066,10 @@ instance ToJSON NetworkListWarningDataItem where
 data CacheKeyPolicy =
   CacheKeyPolicy'
     { _ckpQueryStringWhiteList :: !(Maybe [Text])
-    , _ckpIncludeHost          :: !(Maybe Bool)
-    , _ckpIncludeProtocol      :: !(Maybe Bool)
+    , _ckpIncludeHost :: !(Maybe Bool)
+    , _ckpIncludeProtocol :: !(Maybe Bool)
     , _ckpQueryStringBlackList :: !(Maybe [Text])
-    , _ckpIncludeQueryString   :: !(Maybe Bool)
+    , _ckpIncludeQueryString :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41171,7 +41171,7 @@ instance ToJSON CacheKeyPolicy where
 data CommitmentAggregatedListWarningDataItem =
   CommitmentAggregatedListWarningDataItem'
     { _calwdiValue :: !(Maybe Text)
-    , _calwdiKey   :: !(Maybe Text)
+    , _calwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41230,7 +41230,7 @@ instance ToJSON
 data RegionInstanceGroupListWarningDataItem =
   RegionInstanceGroupListWarningDataItem'
     { _riglwdiValue :: !(Maybe Text)
-    , _riglwdiKey   :: !(Maybe Text)
+    , _riglwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41372,7 +41372,7 @@ instance ToJSON
 data InterconnectAttachmentAggregatedListWarningDataItem =
   InterconnectAttachmentAggregatedListWarningDataItem'
     { _iaalwdiValue :: !(Maybe Text)
-    , _iaalwdiKey   :: !(Maybe Text)
+    , _iaalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41432,8 +41432,8 @@ instance ToJSON
 -- /See:/ 'interconnectAttachmentListWarning' smart constructor.
 data InterconnectAttachmentListWarning =
   InterconnectAttachmentListWarning'
-    { _intData    :: !(Maybe [InterconnectAttachmentListWarningDataItem])
-    , _intCode    :: !(Maybe InterconnectAttachmentListWarningCode)
+    { _intData :: !(Maybe [InterconnectAttachmentListWarningDataItem])
+    , _intCode :: !(Maybe InterconnectAttachmentListWarningCode)
     , _intMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -41495,11 +41495,11 @@ instance ToJSON InterconnectAttachmentListWarning
 -- /See:/ 'condition' smart constructor.
 data Condition =
   Condition'
-    { _cOp     :: !(Maybe ConditionOp)
-    , _cIAM    :: !(Maybe ConditionIAM)
+    { _cOp :: !(Maybe ConditionOp)
+    , _cIAM :: !(Maybe ConditionIAM)
     , _cValues :: !(Maybe [Text])
-    , _cSys    :: !(Maybe ConditionSys)
-    , _cSvc    :: !(Maybe Text)
+    , _cSys :: !(Maybe ConditionSys)
+    , _cSvc :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41575,8 +41575,8 @@ instance ToJSON Condition where
 -- /See:/ 'addressAggregatedListWarning' smart constructor.
 data AddressAggregatedListWarning =
   AddressAggregatedListWarning'
-    { _addData    :: !(Maybe [AddressAggregatedListWarningDataItem])
-    , _addCode    :: !(Maybe AddressAggregatedListWarningCode)
+    { _addData :: !(Maybe [AddressAggregatedListWarningDataItem])
+    , _addCode :: !(Maybe AddressAggregatedListWarningCode)
     , _addMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -41671,8 +41671,8 @@ instance ToJSON ManagedInstanceLastAttempt where
 -- /See:/ 'licensesListResponseWarning' smart constructor.
 data LicensesListResponseWarning =
   LicensesListResponseWarning'
-    { _llrwData    :: !(Maybe [LicensesListResponseWarningDataItem])
-    , _llrwCode    :: !(Maybe LicensesListResponseWarningCode)
+    { _llrwData :: !(Maybe [LicensesListResponseWarningDataItem])
+    , _llrwCode :: !(Maybe LicensesListResponseWarningCode)
     , _llrwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -41733,7 +41733,7 @@ instance ToJSON LicensesListResponseWarning where
 -- /See:/ 'autoscalerStatusDetails' smart constructor.
 data AutoscalerStatusDetails =
   AutoscalerStatusDetails'
-    { _asdType    :: !(Maybe AutoscalerStatusDetailsType)
+    { _asdType :: !(Maybe AutoscalerStatusDetailsType)
     , _asdMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -41781,11 +41781,11 @@ instance ToJSON AutoscalerStatusDetails where
 data BackendServiceList =
   BackendServiceList'
     { _bslNextPageToken :: !(Maybe Text)
-    , _bslKind          :: !Text
-    , _bslItems         :: !(Maybe [BackendService])
-    , _bslSelfLink      :: !(Maybe Text)
-    , _bslWarning       :: !(Maybe BackendServiceListWarning)
-    , _bslId            :: !(Maybe Text)
+    , _bslKind :: !Text
+    , _bslItems :: !(Maybe [BackendService])
+    , _bslSelfLink :: !(Maybe Text)
+    , _bslWarning :: !(Maybe BackendServiceListWarning)
+    , _bslId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41882,7 +41882,7 @@ instance ToJSON BackendServiceList where
 data XpnHostListWarningDataItem =
   XpnHostListWarningDataItem'
     { _xhlwdiValue :: !(Maybe Text)
-    , _xhlwdiKey   :: !(Maybe Text)
+    , _xhlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41935,7 +41935,7 @@ instance ToJSON XpnHostListWarningDataItem where
 data ZoneListWarningDataItem =
   ZoneListWarningDataItem'
     { _zlwdiValue :: !(Maybe Text)
-    , _zlwdiKey   :: !(Maybe Text)
+    , _zlwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41986,9 +41986,9 @@ instance ToJSON ZoneListWarningDataItem where
 -- /See:/ 'regionSetPolicyRequest' smart constructor.
 data RegionSetPolicyRequest =
   RegionSetPolicyRequest'
-    { _rsprEtag     :: !(Maybe Bytes)
+    { _rsprEtag :: !(Maybe Bytes)
     , _rsprBindings :: !(Maybe [Binding])
-    , _rsprPolicy   :: !(Maybe Policy)
+    , _rsprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -42054,8 +42054,8 @@ instance ToJSON RegionSetPolicyRequest where
 -- /See:/ 'instanceGroupsScopedListWarning' smart constructor.
 data InstanceGroupsScopedListWarning =
   InstanceGroupsScopedListWarning'
-    { _igslwData    :: !(Maybe [InstanceGroupsScopedListWarningDataItem])
-    , _igslwCode    :: !(Maybe InstanceGroupsScopedListWarningCode)
+    { _igslwData :: !(Maybe [InstanceGroupsScopedListWarningDataItem])
+    , _igslwCode :: !(Maybe InstanceGroupsScopedListWarningCode)
     , _igslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -42170,7 +42170,7 @@ instance ToJSON AutoscalingPolicyCPUUtilization where
 data InstanceGroupsScopedListWarningDataItem =
   InstanceGroupsScopedListWarningDataItem'
     { _igslwdiValue :: !(Maybe Text)
-    , _igslwdiKey   :: !(Maybe Text)
+    , _igslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -42271,7 +42271,7 @@ instance ToJSON SecurityPolicyRuleMatcherConfig where
 data LicensesListResponseWarningDataItem =
   LicensesListResponseWarningDataItem'
     { _llrwdiValue :: !(Maybe Text)
-    , _llrwdiKey   :: !(Maybe Text)
+    , _llrwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -42327,8 +42327,8 @@ instance ToJSON LicensesListResponseWarningDataItem
 -- /See:/ 'xpnHostListWarning' smart constructor.
 data XpnHostListWarning =
   XpnHostListWarning'
-    { _xhlwData    :: !(Maybe [XpnHostListWarningDataItem])
-    , _xhlwCode    :: !(Maybe XpnHostListWarningCode)
+    { _xhlwData :: !(Maybe [XpnHostListWarningDataItem])
+    , _xhlwCode :: !(Maybe XpnHostListWarningCode)
     , _xhlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -42424,11 +42424,11 @@ instance ToJSON ResourceGroupReference where
 data VMEndpointNATMAppingsList =
   VMEndpointNATMAppingsList'
     { _vmenatmalNextPageToken :: !(Maybe Text)
-    , _vmenatmalKind          :: !Text
-    , _vmenatmalResult        :: !(Maybe [VMEndpointNATMAppings])
-    , _vmenatmalSelfLink      :: !(Maybe Text)
-    , _vmenatmalWarning       :: !(Maybe VMEndpointNATMAppingsListWarning)
-    , _vmenatmalId            :: !(Maybe Text)
+    , _vmenatmalKind :: !Text
+    , _vmenatmalResult :: !(Maybe [VMEndpointNATMAppings])
+    , _vmenatmalSelfLink :: !(Maybe Text)
+    , _vmenatmalWarning :: !(Maybe VMEndpointNATMAppingsListWarning)
+    , _vmenatmalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -42533,25 +42533,25 @@ instance ToJSON VMEndpointNATMAppingsList where
 -- /See:/ 'firewall' smart constructor.
 data Firewall =
   Firewall'
-    { _fSourceTags            :: !(Maybe [Text])
+    { _fSourceTags :: !(Maybe [Text])
     , _fSourceServiceAccounts :: !(Maybe [Text])
-    , _fPriority              :: !(Maybe (Textual Int32))
-    , _fDirection             :: !(Maybe FirewallDirection)
-    , _fKind                  :: !Text
-    , _fDisabled              :: !(Maybe Bool)
-    , _fTargetTags            :: !(Maybe [Text])
-    , _fNetwork               :: !(Maybe Text)
-    , _fSourceRanges          :: !(Maybe [Text])
-    , _fSelfLink              :: !(Maybe Text)
-    , _fName                  :: !(Maybe Text)
-    , _fDenied                :: !(Maybe [FirewallDeniedItem])
-    , _fCreationTimestamp     :: !(Maybe Text)
-    , _fId                    :: !(Maybe (Textual Word64))
-    , _fAllowed               :: !(Maybe [FirewallAllowedItem])
-    , _fDestinationRanges     :: !(Maybe [Text])
-    , _fLogConfig             :: !(Maybe FirewallLogConfig)
+    , _fPriority :: !(Maybe (Textual Int32))
+    , _fDirection :: !(Maybe FirewallDirection)
+    , _fKind :: !Text
+    , _fDisabled :: !(Maybe Bool)
+    , _fTargetTags :: !(Maybe [Text])
+    , _fNetwork :: !(Maybe Text)
+    , _fSourceRanges :: !(Maybe [Text])
+    , _fSelfLink :: !(Maybe Text)
+    , _fName :: !(Maybe Text)
+    , _fDenied :: !(Maybe [FirewallDeniedItem])
+    , _fCreationTimestamp :: !(Maybe Text)
+    , _fId :: !(Maybe (Textual Word64))
+    , _fAllowed :: !(Maybe [FirewallAllowedItem])
+    , _fDestinationRanges :: !(Maybe [Text])
+    , _fLogConfig :: !(Maybe FirewallLogConfig)
     , _fTargetServiceAccounts :: !(Maybe [Text])
-    , _fDescription           :: !(Maybe Text)
+    , _fDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -42859,8 +42859,8 @@ instance ToJSON Firewall where
 -- /See:/ 'interconnectAttachmentsScopedListWarning' smart constructor.
 data InterconnectAttachmentsScopedListWarning =
   InterconnectAttachmentsScopedListWarning'
-    { _iaslwData    :: !(Maybe [InterconnectAttachmentsScopedListWarningDataItem])
-    , _iaslwCode    :: !(Maybe InterconnectAttachmentsScopedListWarningCode)
+    { _iaslwData :: !(Maybe [InterconnectAttachmentsScopedListWarningDataItem])
+    , _iaslwCode :: !(Maybe InterconnectAttachmentsScopedListWarningCode)
     , _iaslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -42929,7 +42929,7 @@ instance ToJSON
 -- /See:/ 'hostRule' smart constructor.
 data HostRule =
   HostRule'
-    { _hrHosts       :: !(Maybe [Text])
+    { _hrHosts :: !(Maybe [Text])
     , _hrDescription :: !(Maybe Text)
     , _hrPathMatcher :: !(Maybe Text)
     }
@@ -42995,8 +42995,8 @@ instance ToJSON HostRule where
 -- /See:/ 'securityPolicyListWarning' smart constructor.
 data SecurityPolicyListWarning =
   SecurityPolicyListWarning'
-    { _secData    :: !(Maybe [SecurityPolicyListWarningDataItem])
-    , _secCode    :: !(Maybe SecurityPolicyListWarningCode)
+    { _secData :: !(Maybe [SecurityPolicyListWarningDataItem])
+    , _secCode :: !(Maybe SecurityPolicyListWarningCode)
     , _secMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -43056,10 +43056,10 @@ instance ToJSON SecurityPolicyListWarning where
 -- /See:/ 'quota' smart constructor.
 data Quota =
   Quota'
-    { _qOwner  :: !(Maybe Text)
+    { _qOwner :: !(Maybe Text)
     , _qMetric :: !(Maybe QuotaMetric)
-    , _qLimit  :: !(Maybe (Textual Double))
-    , _qUsage  :: !(Maybe (Textual Double))
+    , _qLimit :: !(Maybe (Textual Double))
+    , _qUsage :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43131,19 +43131,19 @@ instance ToJSON Quota where
 -- /See:/ 'instanceGroup' smart constructor.
 data InstanceGroup =
   InstanceGroup'
-    { _ig1Size              :: !(Maybe (Textual Int32))
-    , _ig1Kind              :: !Text
-    , _ig1Fingerprint       :: !(Maybe Bytes)
-    , _ig1Network           :: !(Maybe Text)
-    , _ig1Zone              :: !(Maybe Text)
-    , _ig1SelfLink          :: !(Maybe Text)
-    , _ig1Name              :: !(Maybe Text)
+    { _ig1Size :: !(Maybe (Textual Int32))
+    , _ig1Kind :: !Text
+    , _ig1Fingerprint :: !(Maybe Bytes)
+    , _ig1Network :: !(Maybe Text)
+    , _ig1Zone :: !(Maybe Text)
+    , _ig1SelfLink :: !(Maybe Text)
+    , _ig1Name :: !(Maybe Text)
     , _ig1CreationTimestamp :: !(Maybe Text)
-    , _ig1Subnetwork        :: !(Maybe Text)
-    , _ig1Id                :: !(Maybe (Textual Word64))
-    , _ig1Region            :: !(Maybe Text)
-    , _ig1Description       :: !(Maybe Text)
-    , _ig1NamedPorts        :: !(Maybe [NamedPort])
+    , _ig1Subnetwork :: !(Maybe Text)
+    , _ig1Id :: !(Maybe (Textual Word64))
+    , _ig1Region :: !(Maybe Text)
+    , _ig1Description :: !(Maybe Text)
+    , _ig1NamedPorts :: !(Maybe [NamedPort])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43325,8 +43325,8 @@ instance ToJSON InstanceGroup where
 -- /See:/ 'addressListWarning' smart constructor.
 data AddressListWarning =
   AddressListWarning'
-    { _alwlData    :: !(Maybe [AddressListWarningDataItem])
-    , _alwlCode    :: !(Maybe AddressListWarningCode)
+    { _alwlData :: !(Maybe [AddressListWarningDataItem])
+    , _alwlCode :: !(Maybe AddressListWarningCode)
     , _alwlMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -43387,7 +43387,7 @@ instance ToJSON AddressListWarning where
 -- /See:/ 'regionSetLabelsRequest' smart constructor.
 data RegionSetLabelsRequest =
   RegionSetLabelsRequest'
-    { _rslrLabels           :: !(Maybe RegionSetLabelsRequestLabels)
+    { _rslrLabels :: !(Maybe RegionSetLabelsRequestLabels)
     , _rslrLabelFingerprint :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -43443,10 +43443,10 @@ instance ToJSON RegionSetLabelsRequest where
 data RouterInterface =
   RouterInterface'
     { _riLinkedInterconnectAttachment :: !(Maybe Text)
-    , _riName                         :: !(Maybe Text)
-    , _riManagementType               :: !(Maybe RouterInterfaceManagementType)
-    , _riIPRange                      :: !(Maybe Text)
-    , _riLinkedVPNTunnel              :: !(Maybe Text)
+    , _riName :: !(Maybe Text)
+    , _riManagementType :: !(Maybe RouterInterfaceManagementType)
+    , _riIPRange :: !(Maybe Text)
+    , _riLinkedVPNTunnel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43544,8 +43544,8 @@ instance ToJSON RouterInterface where
 -- /See:/ 'networkListWarning' smart constructor.
 data NetworkListWarning =
   NetworkListWarning'
-    { _nlwData    :: !(Maybe [NetworkListWarningDataItem])
-    , _nlwCode    :: !(Maybe NetworkListWarningCode)
+    { _nlwData :: !(Maybe [NetworkListWarningDataItem])
+    , _nlwCode :: !(Maybe NetworkListWarningCode)
     , _nlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -43606,11 +43606,11 @@ instance ToJSON NetworkListWarning where
 data SnapshotList =
   SnapshotList'
     { _snaNextPageToken :: !(Maybe Text)
-    , _snaKind          :: !Text
-    , _snaItems         :: !(Maybe [Snapshot])
-    , _snaSelfLink      :: !(Maybe Text)
-    , _snaWarning       :: !(Maybe SnapshotListWarning)
-    , _snaId            :: !(Maybe Text)
+    , _snaKind :: !Text
+    , _snaItems :: !(Maybe [Snapshot])
+    , _snaSelfLink :: !(Maybe Text)
+    , _snaWarning :: !(Maybe SnapshotListWarning)
+    , _snaId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43708,8 +43708,8 @@ instance ToJSON SnapshotList where
 data InterconnectDiagnostics =
   InterconnectDiagnostics'
     { _idMACAddress :: !(Maybe Text)
-    , _idArpCaches  :: !(Maybe [InterconnectDiagnosticsARPEntry])
-    , _idLinks      :: !(Maybe [InterconnectDiagnosticsLinkStatus])
+    , _idArpCaches :: !(Maybe [InterconnectDiagnosticsARPEntry])
+    , _idLinks :: !(Maybe [InterconnectDiagnosticsLinkStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43773,15 +43773,15 @@ instance ToJSON InterconnectDiagnostics where
 -- /See:/ 'licenseCode' smart constructor.
 data LicenseCode =
   LicenseCode'
-    { _lcState             :: !(Maybe LicenseCodeState)
-    , _lcKind              :: !Text
-    , _lcTransferable      :: !(Maybe Bool)
-    , _lcSelfLink          :: !(Maybe Text)
-    , _lcName              :: !(Maybe Text)
+    { _lcState :: !(Maybe LicenseCodeState)
+    , _lcKind :: !Text
+    , _lcTransferable :: !(Maybe Bool)
+    , _lcSelfLink :: !(Maybe Text)
+    , _lcName :: !(Maybe Text)
     , _lcCreationTimestamp :: !(Maybe Text)
-    , _lcId                :: !(Maybe (Textual Word64))
-    , _lcLicenseAlias      :: !(Maybe [LicenseCodeLicenseAlias])
-    , _lcDescription       :: !(Maybe Text)
+    , _lcId :: !(Maybe (Textual Word64))
+    , _lcLicenseAlias :: !(Maybe [LicenseCodeLicenseAlias])
+    , _lcDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43909,10 +43909,10 @@ instance ToJSON LicenseCode where
 -- /See:/ 'testFailure' smart constructor.
 data TestFailure =
   TestFailure'
-    { _tfPath            :: !(Maybe Text)
+    { _tfPath :: !(Maybe Text)
     , _tfExpectedService :: !(Maybe Text)
-    , _tfHost            :: !(Maybe Text)
-    , _tfActualService   :: !(Maybe Text)
+    , _tfHost :: !(Maybe Text)
+    , _tfActualService :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -43978,7 +43978,7 @@ instance ToJSON TestFailure where
 data CommitmentListWarningDataItem =
   CommitmentListWarningDataItem'
     { _clwdiValue :: !(Maybe Text)
-    , _clwdiKey   :: !(Maybe Text)
+    , _clwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44030,7 +44030,7 @@ instance ToJSON CommitmentListWarningDataItem where
 data ManagedInstanceVersion =
   ManagedInstanceVersion'
     { _mivInstanceTemplate :: !(Maybe Text)
-    , _mivName             :: !(Maybe Text)
+    , _mivName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44079,8 +44079,8 @@ instance ToJSON ManagedInstanceVersion where
 -- /See:/ 'commitmentsScopedListWarning' smart constructor.
 data CommitmentsScopedListWarning =
   CommitmentsScopedListWarning'
-    { _cslwData    :: !(Maybe [CommitmentsScopedListWarningDataItem])
-    , _cslwCode    :: !(Maybe CommitmentsScopedListWarningCode)
+    { _cslwData :: !(Maybe [CommitmentsScopedListWarningDataItem])
+    , _cslwCode :: !(Maybe CommitmentsScopedListWarningCode)
     , _cslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -44142,10 +44142,10 @@ instance ToJSON CommitmentsScopedListWarning where
 -- /See:/ 'serialPortOutput' smart constructor.
 data SerialPortOutput =
   SerialPortOutput'
-    { _spoNext     :: !(Maybe (Textual Int64))
+    { _spoNext :: !(Maybe (Textual Int64))
     , _spoContents :: !(Maybe Text)
-    , _spoKind     :: !Text
-    , _spoStart    :: !(Maybe (Textual Int64))
+    , _spoKind :: !Text
+    , _spoStart :: !(Maybe (Textual Int64))
     , _spoSelfLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -44233,11 +44233,11 @@ instance ToJSON SerialPortOutput where
 data TargetVPNGatewayAggregatedList =
   TargetVPNGatewayAggregatedList'
     { _tvgalNextPageToken :: !(Maybe Text)
-    , _tvgalKind          :: !Text
-    , _tvgalItems         :: !(Maybe TargetVPNGatewayAggregatedListItems)
-    , _tvgalSelfLink      :: !(Maybe Text)
-    , _tvgalWarning       :: !(Maybe TargetVPNGatewayAggregatedListWarning)
-    , _tvgalId            :: !(Maybe Text)
+    , _tvgalKind :: !Text
+    , _tvgalItems :: !(Maybe TargetVPNGatewayAggregatedListItems)
+    , _tvgalSelfLink :: !(Maybe Text)
+    , _tvgalWarning :: !(Maybe TargetVPNGatewayAggregatedListWarning)
+    , _tvgalId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44336,8 +44336,8 @@ instance ToJSON TargetVPNGatewayAggregatedList where
 -- /See:/ 'interconnectAttachmentAggregatedListWarning' smart constructor.
 data InterconnectAttachmentAggregatedListWarning =
   InterconnectAttachmentAggregatedListWarning'
-    { _iaalwData    :: !(Maybe [InterconnectAttachmentAggregatedListWarningDataItem])
-    , _iaalwCode    :: !(Maybe InterconnectAttachmentAggregatedListWarningCode)
+    { _iaalwData :: !(Maybe [InterconnectAttachmentAggregatedListWarningDataItem])
+    , _iaalwCode :: !(Maybe InterconnectAttachmentAggregatedListWarningCode)
     , _iaalwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -44406,7 +44406,7 @@ instance ToJSON
 data MetadataItemsItem =
   MetadataItemsItem'
     { _miiValue :: !(Maybe Text)
-    , _miiKey   :: !(Maybe Text)
+    , _miiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44457,7 +44457,7 @@ instance ToJSON MetadataItemsItem where
 data SignedURLKey =
   SignedURLKey'
     { _sukKeyValue :: !(Maybe Text)
-    , _sukKeyName  :: !(Maybe Text)
+    , _sukKeyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44511,16 +44511,16 @@ instance ToJSON SignedURLKey where
 -- /See:/ 'targetHTTPSProxy' smart constructor.
 data TargetHTTPSProxy =
   TargetHTTPSProxy'
-    { _thpSSLPolicy         :: !(Maybe Text)
-    , _thpURLMap            :: !(Maybe Text)
-    , _thpSSLCertificates   :: !(Maybe [Text])
-    , _thpQuicOverride      :: !(Maybe TargetHTTPSProxyQuicOverride)
-    , _thpKind              :: !Text
-    , _thpSelfLink          :: !(Maybe Text)
-    , _thpName              :: !(Maybe Text)
+    { _thpSSLPolicy :: !(Maybe Text)
+    , _thpURLMap :: !(Maybe Text)
+    , _thpSSLCertificates :: !(Maybe [Text])
+    , _thpQuicOverride :: !(Maybe TargetHTTPSProxyQuicOverride)
+    , _thpKind :: !Text
+    , _thpSelfLink :: !(Maybe Text)
+    , _thpName :: !(Maybe Text)
     , _thpCreationTimestamp :: !(Maybe Text)
-    , _thpId                :: !(Maybe (Textual Word64))
-    , _thpDescription       :: !(Maybe Text)
+    , _thpId :: !(Maybe (Textual Word64))
+    , _thpDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44720,7 +44720,7 @@ instance ToJSON ConnectionDraining where
 data InterconnectAttachmentListWarningDataItem =
   InterconnectAttachmentListWarningDataItem'
     { _ialwdiValue :: !(Maybe Text)
-    , _ialwdiKey   :: !(Maybe Text)
+    , _ialwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44823,7 +44823,7 @@ instance ToJSON CacheInvalidationRule where
 data AddressAggregatedListWarningDataItem =
   AddressAggregatedListWarningDataItem'
     { _aalwdiaValue :: !(Maybe Text)
-    , _aalwdiaKey   :: !(Maybe Text)
+    , _aalwdiaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44880,7 +44880,7 @@ instance ToJSON AddressAggregatedListWarningDataItem
 data TargetVPNGatewaysScopedList =
   TargetVPNGatewaysScopedList'
     { _tvgslTargetVPNGateways :: !(Maybe [TargetVPNGateway])
-    , _tvgslWarning           :: !(Maybe TargetVPNGatewaysScopedListWarning)
+    , _tvgslWarning :: !(Maybe TargetVPNGatewaysScopedListWarning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -44934,8 +44934,8 @@ instance ToJSON TargetVPNGatewaysScopedList where
 -- /See:/ 'commitmentAggregatedListWarning' smart constructor.
 data CommitmentAggregatedListWarning =
   CommitmentAggregatedListWarning'
-    { _calwData    :: !(Maybe [CommitmentAggregatedListWarningDataItem])
-    , _calwCode    :: !(Maybe CommitmentAggregatedListWarningCode)
+    { _calwData :: !(Maybe [CommitmentAggregatedListWarningDataItem])
+    , _calwCode :: !(Maybe CommitmentAggregatedListWarningCode)
     , _calwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -44998,8 +44998,8 @@ instance ToJSON CommitmentAggregatedListWarning where
 -- /See:/ 'regionInstanceGroupListWarning' smart constructor.
 data RegionInstanceGroupListWarning =
   RegionInstanceGroupListWarning'
-    { _riglwData    :: !(Maybe [RegionInstanceGroupListWarningDataItem])
-    , _riglwCode    :: !(Maybe RegionInstanceGroupListWarningCode)
+    { _riglwData :: !(Maybe [RegionInstanceGroupListWarningDataItem])
+    , _riglwCode :: !(Maybe RegionInstanceGroupListWarningCode)
     , _riglwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -45064,13 +45064,13 @@ instance ToJSON RegionInstanceGroupListWarning where
 -- /See:/ 'accessConfig' smart constructor.
 data AccessConfig =
   AccessConfig'
-    { _acNetworkTier         :: !(Maybe AccessConfigNetworkTier)
-    , _acSetPublicPtr        :: !(Maybe Bool)
-    , _acKind                :: !Text
-    , _acName                :: !(Maybe Text)
-    , _acNATIP               :: !(Maybe Text)
+    { _acNetworkTier :: !(Maybe AccessConfigNetworkTier)
+    , _acSetPublicPtr :: !(Maybe Bool)
+    , _acKind :: !Text
+    , _acName :: !(Maybe Text)
+    , _acNATIP :: !(Maybe Text)
     , _acPublicPtrDomainName :: !(Maybe Text)
-    , _acType                :: !AccessConfigType
+    , _acType :: !AccessConfigType
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45186,7 +45186,7 @@ data LogConfig =
   LogConfig'
     { _lcCloudAudit :: !(Maybe LogConfigCloudAuditOptions)
     , _lcDataAccess :: !(Maybe LogConfigDataAccessOptions)
-    , _lcCounter    :: !(Maybe LogConfigCounterOptions)
+    , _lcCounter :: !(Maybe LogConfigCounterOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45243,8 +45243,8 @@ instance ToJSON LogConfig where
 -- /See:/ 'zoneListWarning' smart constructor.
 data ZoneListWarning =
   ZoneListWarning'
-    { _zlwData    :: !(Maybe [ZoneListWarningDataItem])
-    , _zlwCode    :: !(Maybe ZoneListWarningCode)
+    { _zlwData :: !(Maybe [ZoneListWarningDataItem])
+    , _zlwCode :: !(Maybe ZoneListWarningCode)
     , _zlwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -45304,8 +45304,8 @@ instance ToJSON ZoneListWarning where
 data ManagedInstanceLastAttemptErrorsErrorsItem =
   ManagedInstanceLastAttemptErrorsErrorsItem'
     { _milaeeiLocation :: !(Maybe Text)
-    , _milaeeiCode     :: !(Maybe Text)
-    , _milaeeiMessage  :: !(Maybe Text)
+    , _milaeeiCode :: !(Maybe Text)
+    , _milaeeiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45374,7 +45374,7 @@ instance ToJSON
 data InstancesScopedListWarningDataItem =
   InstancesScopedListWarningDataItem'
     { _islwdiValue :: !(Maybe Text)
-    , _islwdiKey   :: !(Maybe Text)
+    , _islwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45466,7 +45466,7 @@ instance ToJSON SnapshotLabels where
 data BackendServicesScopedListWarningDataItem =
   BackendServicesScopedListWarningDataItem'
     { _bsslwdiValue :: !(Maybe Text)
-    , _bsslwdiKey   :: !(Maybe Text)
+    , _bsslwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45568,29 +45568,29 @@ instance ToJSON NodeTemplateAggregatedListItems where
 -- /See:/ 'backendService' smart constructor.
 data BackendService =
   BackendService'
-    { _bsSessionAffinity      :: !(Maybe BackendServiceSessionAffinity)
-    , _bsBackends             :: !(Maybe [Backend])
+    { _bsSessionAffinity :: !(Maybe BackendServiceSessionAffinity)
+    , _bsBackends :: !(Maybe [Backend])
     , _bsAffinityCookieTtlSec :: !(Maybe (Textual Int32))
-    , _bsIap                  :: !(Maybe BackendServiceIAP)
-    , _bsLoadBalancingScheme  :: !(Maybe BackendServiceLoadBalancingScheme)
-    , _bsKind                 :: !Text
-    , _bsEnableCDN            :: !(Maybe Bool)
-    , _bsFingerprint          :: !(Maybe Bytes)
-    , _bsProtocol             :: !(Maybe BackendServiceProtocol)
+    , _bsIap :: !(Maybe BackendServiceIAP)
+    , _bsLoadBalancingScheme :: !(Maybe BackendServiceLoadBalancingScheme)
+    , _bsKind :: !Text
+    , _bsEnableCDN :: !(Maybe Bool)
+    , _bsFingerprint :: !(Maybe Bytes)
+    , _bsProtocol :: !(Maybe BackendServiceProtocol)
     , _bsCustomRequestHeaders :: !(Maybe [Text])
-    , _bsSecurityPolicy       :: !(Maybe Text)
-    , _bsCdnPolicy            :: !(Maybe BackendServiceCdnPolicy)
-    , _bsSelfLink             :: !(Maybe Text)
-    , _bsName                 :: !(Maybe Text)
-    , _bsCreationTimestamp    :: !(Maybe Text)
-    , _bsId                   :: !(Maybe (Textual Word64))
-    , _bsRegion               :: !(Maybe Text)
-    , _bsConnectionDraining   :: !(Maybe ConnectionDraining)
-    , _bsTimeoutSec           :: !(Maybe (Textual Int32))
-    , _bsDescription          :: !(Maybe Text)
-    , _bsPortName             :: !(Maybe Text)
-    , _bsHealthChecks         :: !(Maybe [Text])
-    , _bsPort                 :: !(Maybe (Textual Int32))
+    , _bsSecurityPolicy :: !(Maybe Text)
+    , _bsCdnPolicy :: !(Maybe BackendServiceCdnPolicy)
+    , _bsSelfLink :: !(Maybe Text)
+    , _bsName :: !(Maybe Text)
+    , _bsCreationTimestamp :: !(Maybe Text)
+    , _bsId :: !(Maybe (Textual Word64))
+    , _bsRegion :: !(Maybe Text)
+    , _bsConnectionDraining :: !(Maybe ConnectionDraining)
+    , _bsTimeoutSec :: !(Maybe (Textual Int32))
+    , _bsDescription :: !(Maybe Text)
+    , _bsPortName :: !(Maybe Text)
+    , _bsHealthChecks :: !(Maybe [Text])
+    , _bsPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -45912,8 +45912,8 @@ instance ToJSON BackendService where
 -- /See:/ 'instanceListWarning' smart constructor.
 data InstanceListWarning =
   InstanceListWarning'
-    { _insData    :: !(Maybe [InstanceListWarningDataItem])
-    , _insCode    :: !(Maybe InstanceListWarningCode)
+    { _insData :: !(Maybe [InstanceListWarningDataItem])
+    , _insCode :: !(Maybe InstanceListWarningCode)
     , _insMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -45972,7 +45972,7 @@ instance ToJSON InstanceListWarning where
 -- /See:/ 'instanceMoveRequest' smart constructor.
 data InstanceMoveRequest =
   InstanceMoveRequest'
-    { _imrTargetInstance  :: !(Maybe Text)
+    { _imrTargetInstance :: !(Maybe Text)
     , _imrDestinationZone :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46032,7 +46032,7 @@ instance ToJSON InstanceMoveRequest where
 -- /See:/ 'interconnectDiagnosticsARPEntry' smart constructor.
 data InterconnectDiagnosticsARPEntry =
   InterconnectDiagnosticsARPEntry'
-    { _idarpeIPAddress  :: !(Maybe Text)
+    { _idarpeIPAddress :: !(Maybe Text)
     , _idarpeMACAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46084,8 +46084,8 @@ instance ToJSON InterconnectDiagnosticsARPEntry where
 -- /See:/ 'shieldedInstanceIdentity' smart constructor.
 data ShieldedInstanceIdentity =
   ShieldedInstanceIdentity'
-    { _siiSigningKey    :: !(Maybe ShieldedInstanceIdentityEntry)
-    , _siiKind          :: !Text
+    { _siiSigningKey :: !(Maybe ShieldedInstanceIdentityEntry)
+    , _siiKind :: !Text
     , _siiEncryptionKey :: !(Maybe ShieldedInstanceIdentityEntry)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46150,11 +46150,11 @@ instance ToJSON ShieldedInstanceIdentity where
 data CommitmentList =
   CommitmentList'
     { _clNextPageToken :: !(Maybe Text)
-    , _clKind          :: !Text
-    , _clItems         :: !(Maybe [Commitment])
-    , _clSelfLink      :: !(Maybe Text)
-    , _clWarning       :: !(Maybe CommitmentListWarning)
-    , _clId            :: !(Maybe Text)
+    , _clKind :: !Text
+    , _clItems :: !(Maybe [Commitment])
+    , _clSelfLink :: !(Maybe Text)
+    , _clWarning :: !(Maybe CommitmentListWarning)
+    , _clId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46286,7 +46286,7 @@ instance ToJSON InstancesSetLabelsRequestLabels where
 -- /See:/ 'instanceGroupsScopedList' smart constructor.
 data InstanceGroupsScopedList =
   InstanceGroupsScopedList'
-    { _igslWarning        :: !(Maybe InstanceGroupsScopedListWarning)
+    { _igslWarning :: !(Maybe InstanceGroupsScopedListWarning)
     , _igslInstanceGroups :: !(Maybe [InstanceGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46386,13 +46386,13 @@ instance ToJSON
 -- /See:/ 'httpsHealthCheck' smart constructor.
 data HTTPSHealthCheck =
   HTTPSHealthCheck'
-    { _hhcResponse          :: !(Maybe Text)
+    { _hhcResponse :: !(Maybe Text)
     , _hhcPortSpecification :: !(Maybe HTTPSHealthCheckPortSpecification)
-    , _hhcRequestPath       :: !(Maybe Text)
-    , _hhcHost              :: !(Maybe Text)
-    , _hhcProxyHeader       :: !(Maybe HTTPSHealthCheckProxyHeader)
-    , _hhcPortName          :: !(Maybe Text)
-    , _hhcPort              :: !(Maybe (Textual Int32))
+    , _hhcRequestPath :: !(Maybe Text)
+    , _hhcHost :: !(Maybe Text)
+    , _hhcProxyHeader :: !(Maybe HTTPSHealthCheckProxyHeader)
+    , _hhcPortName :: !(Maybe Text)
+    , _hhcPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46549,7 +46549,7 @@ instance ToJSON VPNTunnelAggregatedListItems where
 data InstanceAggregatedListWarningDataItem =
   InstanceAggregatedListWarningDataItem'
     { _insValue :: !(Maybe Text)
-    , _insKey   :: !(Maybe Text)
+    , _insKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46604,7 +46604,7 @@ instance ToJSON InstanceAggregatedListWarningDataItem
 data Tags =
   Tags'
     { _tFingerprint :: !(Maybe Bytes)
-    , _tItems       :: !(Maybe [Text])
+    , _tItems :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46658,11 +46658,11 @@ instance ToJSON Tags where
 data AddressAggregatedList =
   AddressAggregatedList'
     { _addNextPageToken :: !(Maybe Text)
-    , _addKind          :: !Text
-    , _addItems         :: !(Maybe AddressAggregatedListItems)
-    , _addSelfLink      :: !(Maybe Text)
-    , _addWarning       :: !(Maybe AddressAggregatedListWarning)
-    , _addId            :: !(Maybe Text)
+    , _addKind :: !Text
+    , _addItems :: !(Maybe AddressAggregatedListItems)
+    , _addSelfLink :: !(Maybe Text)
+    , _addWarning :: !(Maybe AddressAggregatedListWarning)
+    , _addId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46758,11 +46758,11 @@ instance ToJSON AddressAggregatedList where
 data InterconnectAttachmentList =
   InterconnectAttachmentList'
     { _ialaNextPageToken :: !(Maybe Text)
-    , _ialaKind          :: !Text
-    , _ialaItems         :: !(Maybe [InterconnectAttachment])
-    , _ialaSelfLink      :: !(Maybe Text)
-    , _ialaWarning       :: !(Maybe InterconnectAttachmentListWarning)
-    , _ialaId            :: !(Maybe Text)
+    , _ialaKind :: !Text
+    , _ialaItems :: !(Maybe [InterconnectAttachment])
+    , _ialaSelfLink :: !(Maybe Text)
+    , _ialaWarning :: !(Maybe InterconnectAttachmentListWarning)
+    , _ialaId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -46860,8 +46860,8 @@ instance ToJSON InterconnectAttachmentList where
 -- /See:/ 'operationWarningsItem' smart constructor.
 data OperationWarningsItem =
   OperationWarningsItem'
-    { _owiData    :: !(Maybe [OperationWarningsItemDataItem])
-    , _owiCode    :: !(Maybe OperationWarningsItemCode)
+    { _owiData :: !(Maybe [OperationWarningsItemDataItem])
+    , _owiCode :: !(Maybe OperationWarningsItemCode)
     , _owiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46921,8 +46921,8 @@ instance ToJSON OperationWarningsItem where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -46996,9 +46996,9 @@ instance ToJSON Binding where
 -- /See:/ 'urlMapTest' smart constructor.
 data URLMapTest =
   URLMapTest'
-    { _umtPath        :: !(Maybe Text)
-    , _umtService     :: !(Maybe Text)
-    , _umtHost        :: !(Maybe Text)
+    { _umtPath :: !(Maybe Text)
+    , _umtService :: !(Maybe Text)
+    , _umtHost :: !(Maybe Text)
     , _umtDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -47068,8 +47068,8 @@ instance ToJSON URLMapTest where
 -- /See:/ 'httpsHealthCheckListWarning' smart constructor.
 data HTTPSHealthCheckListWarning =
   HTTPSHealthCheckListWarning'
-    { _hhclwData    :: !(Maybe [HTTPSHealthCheckListWarningDataItem])
-    , _hhclwCode    :: !(Maybe HTTPSHealthCheckListWarningCode)
+    { _hhclwData :: !(Maybe [HTTPSHealthCheckListWarningDataItem])
+    , _hhclwCode :: !(Maybe HTTPSHealthCheckListWarningCode)
     , _hhclwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -47204,10 +47204,10 @@ instance ToJSON RoutersPreviewResponse where
 data LicensesListResponse =
   LicensesListResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrItems         :: !(Maybe [License])
-    , _llrSelfLink      :: !(Maybe Text)
-    , _llrWarning       :: !(Maybe LicensesListResponseWarning)
-    , _llrId            :: !(Maybe Text)
+    , _llrItems :: !(Maybe [License])
+    , _llrSelfLink :: !(Maybe Text)
+    , _llrWarning :: !(Maybe LicensesListResponseWarning)
+    , _llrId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -47294,7 +47294,7 @@ instance ToJSON LicensesListResponse where
 data BackendServiceAggregatedListWarningDataItem =
   BackendServiceAggregatedListWarningDataItem'
     { _bsalwdiValue :: !(Maybe Text)
-    , _bsalwdiKey   :: !(Maybe Text)
+    , _bsalwdiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -47355,33 +47355,33 @@ instance ToJSON
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _i1Status                          :: !(Maybe InstanceStatus)
-    , _i1ServiceAccounts                 :: !(Maybe [ServiceAccount])
-    , _i1DeletionProtection              :: !(Maybe Bool)
-    , _i1Hostname                        :: !(Maybe Text)
-    , _i1NetworkInterfaces               :: !(Maybe [NetworkInterface])
+    { _i1Status :: !(Maybe InstanceStatus)
+    , _i1ServiceAccounts :: !(Maybe [ServiceAccount])
+    , _i1DeletionProtection :: !(Maybe Bool)
+    , _i1Hostname :: !(Maybe Text)
+    , _i1NetworkInterfaces :: !(Maybe [NetworkInterface])
     , _i1ShieldedInstanceIntegrityPolicy :: !(Maybe ShieldedInstanceIntegrityPolicy)
-    , _i1Kind                            :: !Text
-    , _i1Zone                            :: !(Maybe Text)
-    , _i1CPUPlatform                     :: !(Maybe Text)
-    , _i1SelfLink                        :: !(Maybe Text)
-    , _i1GuestAccelerators               :: !(Maybe [AcceleratorConfig])
-    , _i1Name                            :: !(Maybe Text)
-    , _i1StatusMessage                   :: !(Maybe Text)
-    , _i1CreationTimestamp               :: !(Maybe Text)
-    , _i1MachineType                     :: !(Maybe Text)
-    , _i1Metadata                        :: !(Maybe Metadata)
-    , _i1ShieldedInstanceConfig          :: !(Maybe ShieldedInstanceConfig)
-    , _i1Id                              :: !(Maybe (Textual Word64))
-    , _i1Labels                          :: !(Maybe InstanceLabels)
-    , _i1StartRestricted                 :: !(Maybe Bool)
-    , _i1Scheduling                      :: !(Maybe Scheduling)
-    , _i1MinCPUPlatform                  :: !(Maybe Text)
-    , _i1Disks                           :: !(Maybe [AttachedDisk])
-    , _i1CanIPForward                    :: !(Maybe Bool)
-    , _i1LabelFingerprint                :: !(Maybe Bytes)
-    , _i1Description                     :: !(Maybe Text)
-    , _i1Tags                            :: !(Maybe Tags)
+    , _i1Kind :: !Text
+    , _i1Zone :: !(Maybe Text)
+    , _i1CPUPlatform :: !(Maybe Text)
+    , _i1SelfLink :: !(Maybe Text)
+    , _i1GuestAccelerators :: !(Maybe [AcceleratorConfig])
+    , _i1Name :: !(Maybe Text)
+    , _i1StatusMessage :: !(Maybe Text)
+    , _i1CreationTimestamp :: !(Maybe Text)
+    , _i1MachineType :: !(Maybe Text)
+    , _i1Metadata :: !(Maybe Metadata)
+    , _i1ShieldedInstanceConfig :: !(Maybe ShieldedInstanceConfig)
+    , _i1Id :: !(Maybe (Textual Word64))
+    , _i1Labels :: !(Maybe InstanceLabels)
+    , _i1StartRestricted :: !(Maybe Bool)
+    , _i1Scheduling :: !(Maybe Scheduling)
+    , _i1MinCPUPlatform :: !(Maybe Text)
+    , _i1Disks :: !(Maybe [AttachedDisk])
+    , _i1CanIPForward :: !(Maybe Bool)
+    , _i1LabelFingerprint :: !(Maybe Bytes)
+    , _i1Description :: !(Maybe Text)
+    , _i1Tags :: !(Maybe Tags)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -47750,9 +47750,9 @@ instance ToJSON Instance where
 data PathMatcher =
   PathMatcher'
     { _pmDefaultService :: !(Maybe Text)
-    , _pmName           :: !(Maybe Text)
-    , _pmPathRules      :: !(Maybe [PathRule])
-    , _pmDescription    :: !(Maybe Text)
+    , _pmName :: !(Maybe Text)
+    , _pmPathRules :: !(Maybe [PathRule])
+    , _pmDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -47849,8 +47849,8 @@ instance ToJSON PathMatcher where
 -- /See:/ 'backendServiceListWarning' smart constructor.
 data BackendServiceListWarning =
   BackendServiceListWarning'
-    { _bslwData    :: !(Maybe [BackendServiceListWarningDataItem])
-    , _bslwCode    :: !(Maybe BackendServiceListWarningCode)
+    { _bslwData :: !(Maybe [BackendServiceListWarningDataItem])
+    , _bslwCode :: !(Maybe BackendServiceListWarningCode)
     , _bslwMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

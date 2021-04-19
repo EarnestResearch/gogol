@@ -42,8 +42,8 @@ module Network.Google.Resource.People.People.CreateContact
     , pccCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.people.createContact@ method which the
 -- 'PeopleCreateContact' request conforms to.
@@ -64,13 +64,13 @@ type PeopleCreateContactResource =
 -- /See:/ 'peopleCreateContact' smart constructor.
 data PeopleCreateContact =
   PeopleCreateContact'
-    { _pccParent         :: !(Maybe Text)
-    , _pccXgafv          :: !(Maybe Xgafv)
+    { _pccParent :: !(Maybe Text)
+    , _pccXgafv :: !(Maybe Xgafv)
     , _pccUploadProtocol :: !(Maybe Text)
-    , _pccAccessToken    :: !(Maybe Text)
-    , _pccUploadType     :: !(Maybe Text)
-    , _pccPayload        :: !Person
-    , _pccCallback       :: !(Maybe Text)
+    , _pccAccessToken :: !(Maybe Text)
+    , _pccUploadType :: !(Maybe Text)
+    , _pccPayload :: !Person
+    , _pccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

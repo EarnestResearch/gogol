@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.DirectorySites.Get
     , dsgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.directorySites.get@ method which the
 -- 'DirectorySitesGet' request conforms to.
@@ -57,7 +57,7 @@ type DirectorySitesGetResource =
 data DirectorySitesGet =
   DirectorySitesGet'
     { _dsgProFileId :: !(Textual Int64)
-    , _dsgId        :: !(Textual Int64)
+    , _dsgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

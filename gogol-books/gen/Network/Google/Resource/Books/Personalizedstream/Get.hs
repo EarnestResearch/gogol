@@ -38,8 +38,8 @@ module Network.Google.Resource.Books.Personalizedstream.Get
     , pgSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.personalizedstream.get@ method which the
 -- 'PersonalizedstreamGet' request conforms to.
@@ -61,9 +61,9 @@ type PersonalizedstreamGetResource =
 -- /See:/ 'personalizedstreamGet' smart constructor.
 data PersonalizedstreamGet =
   PersonalizedstreamGet'
-    { _pgLocale                   :: !(Maybe Text)
+    { _pgLocale :: !(Maybe Text)
     , _pgMaxAllowedMaturityRating :: !(Maybe PersonalizedstreamGetMaxAllowedMaturityRating)
-    , _pgSource                   :: !(Maybe Text)
+    , _pgSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,16 +17,16 @@
 --
 module Network.Google.Blogger.Types.Product where
 
-import           Network.Google.Blogger.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'postUserInfo' smart constructor.
 data PostUserInfo =
   PostUserInfo'
     { _puiPostUserInfo :: !(Maybe PostPerUserInfo)
-    , _puiPost         :: !(Maybe Post')
-    , _puiKind         :: !Text
+    , _puiPost :: !(Maybe Post')
+    , _puiKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -116,10 +116,10 @@ instance ToJSON PostAuthorImage where
 -- /See:/ 'postList' smart constructor.
 data PostList =
   PostList'
-    { _plEtag          :: !(Maybe Text)
+    { _plEtag :: !(Maybe Text)
     , _plNextPageToken :: !(Maybe Text)
-    , _plKind          :: !Text
-    , _plItems         :: !(Maybe [Post'])
+    , _plKind :: !Text
+    , _plItems :: !(Maybe [Post'])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -253,7 +253,7 @@ instance ToJSON CommentBlog where
 -- /See:/ 'pageviews' smart constructor.
 data Pageviews =
   Pageviews'
-    { _pKind   :: !Text
+    { _pKind :: !Text
     , _pCounts :: !(Maybe [PageviewsCountsItem])
     , _pBlogId :: !(Maybe Text)
     }
@@ -312,9 +312,9 @@ instance ToJSON Pageviews where
 data PostLocation =
   PostLocation'
     { _plSpan :: !(Maybe Text)
-    , _plLat  :: !(Maybe (Textual Double))
+    , _plLat :: !(Maybe (Textual Double))
     , _plName :: !(Maybe Text)
-    , _plLng  :: !(Maybe (Textual Double))
+    , _plLng :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -378,8 +378,8 @@ instance ToJSON PostLocation where
 data BlogPosts =
   BlogPosts'
     { _bpTotalItems :: !(Maybe (Textual Int32))
-    , _bpItems      :: !(Maybe [Post'])
-    , _bpSelfLink   :: !(Maybe Text)
+    , _bpItems :: !(Maybe [Post'])
+    , _bpSelfLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -437,25 +437,25 @@ instance ToJSON BlogPosts where
 -- /See:/ 'post' smart constructor.
 data Post' =
   Post''
-    { _posImages         :: !(Maybe [PostImagesItem])
-    , _posStatus         :: !(Maybe Text)
-    , _posEtag           :: !(Maybe Text)
+    { _posImages :: !(Maybe [PostImagesItem])
+    , _posStatus :: !(Maybe Text)
+    , _posEtag :: !(Maybe Text)
     , _posReaderComments :: !(Maybe Text)
-    , _posLocation       :: !(Maybe PostLocation)
-    , _posKind           :: !Text
-    , _posPublished      :: !(Maybe DateTime')
-    , _posURL            :: !(Maybe Text)
-    , _posBlog           :: !(Maybe PostBlog)
+    , _posLocation :: !(Maybe PostLocation)
+    , _posKind :: !Text
+    , _posPublished :: !(Maybe DateTime')
+    , _posURL :: !(Maybe Text)
+    , _posBlog :: !(Maybe PostBlog)
     , _posCustomMetaData :: !(Maybe Text)
-    , _posContent        :: !(Maybe Text)
-    , _posReplies        :: !(Maybe PostReplies)
-    , _posSelfLink       :: !(Maybe Text)
-    , _posAuthor         :: !(Maybe PostAuthor)
-    , _posId             :: !(Maybe Text)
-    , _posLabels         :: !(Maybe [Text])
-    , _posUpdated        :: !(Maybe DateTime')
-    , _posTitleLink      :: !(Maybe Text)
-    , _posTitle          :: !(Maybe Text)
+    , _posContent :: !(Maybe Text)
+    , _posReplies :: !(Maybe PostReplies)
+    , _posSelfLink :: !(Maybe Text)
+    , _posAuthor :: !(Maybe PostAuthor)
+    , _posId :: !(Maybe Text)
+    , _posLabels :: !(Maybe [Text])
+    , _posUpdated :: !(Maybe DateTime')
+    , _posTitleLink :: !(Maybe Text)
+    , _posTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -674,18 +674,18 @@ instance ToJSON Post' where
 -- /See:/ 'page' smart constructor.
 data Page =
   Page'
-    { _pagStatus    :: !(Maybe Text)
-    , _pagEtag      :: !(Maybe Text)
-    , _pagKind      :: !Text
+    { _pagStatus :: !(Maybe Text)
+    , _pagEtag :: !(Maybe Text)
+    , _pagKind :: !Text
     , _pagPublished :: !(Maybe DateTime')
-    , _pagURL       :: !(Maybe Text)
-    , _pagBlog      :: !(Maybe PageBlog)
-    , _pagContent   :: !(Maybe Text)
-    , _pagSelfLink  :: !(Maybe Text)
-    , _pagAuthor    :: !(Maybe PageAuthor)
-    , _pagId        :: !(Maybe Text)
-    , _pagUpdated   :: !(Maybe DateTime')
-    , _pagTitle     :: !(Maybe Text)
+    , _pagURL :: !(Maybe Text)
+    , _pagBlog :: !(Maybe PageBlog)
+    , _pagContent :: !(Maybe Text)
+    , _pagSelfLink :: !(Maybe Text)
+    , _pagAuthor :: !(Maybe PageAuthor)
+    , _pagId :: !(Maybe Text)
+    , _pagUpdated :: !(Maybe DateTime')
+    , _pagTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -829,8 +829,8 @@ instance ToJSON Page where
 -- /See:/ 'blogLocale' smart constructor.
 data BlogLocale =
   BlogLocale'
-    { _blVariant  :: !(Maybe Text)
-    , _blCountry  :: !(Maybe Text)
+    { _blVariant :: !(Maybe Text)
+    , _blCountry :: !(Maybe Text)
     , _blLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -888,10 +888,10 @@ instance ToJSON BlogLocale where
 -- /See:/ 'pageAuthor' smart constructor.
 data PageAuthor =
   PageAuthor'
-    { _paImage       :: !(Maybe PageAuthorImage)
-    , _paURL         :: !(Maybe Text)
+    { _paImage :: !(Maybe PageAuthorImage)
+    , _paURL :: !(Maybe Text)
     , _paDisplayName :: !(Maybe Text)
-    , _paId          :: !(Maybe Text)
+    , _paId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -957,19 +957,19 @@ instance ToJSON PageAuthor where
 -- /See:/ 'blog' smart constructor.
 data Blog =
   Blog'
-    { _bStatus         :: !(Maybe Text)
-    , _bKind           :: !Text
-    , _bPages          :: !(Maybe BlogPages)
-    , _bLocale         :: !(Maybe BlogLocale)
-    , _bPublished      :: !(Maybe DateTime')
-    , _bURL            :: !(Maybe Text)
+    { _bStatus :: !(Maybe Text)
+    , _bKind :: !Text
+    , _bPages :: !(Maybe BlogPages)
+    , _bLocale :: !(Maybe BlogLocale)
+    , _bPublished :: !(Maybe DateTime')
+    , _bURL :: !(Maybe Text)
     , _bCustomMetaData :: !(Maybe Text)
-    , _bSelfLink       :: !(Maybe Text)
-    , _bName           :: !(Maybe Text)
-    , _bId             :: !(Maybe Text)
-    , _bUpdated        :: !(Maybe DateTime')
-    , _bPosts          :: !(Maybe BlogPosts)
-    , _bDescription    :: !(Maybe Text)
+    , _bSelfLink :: !(Maybe Text)
+    , _bName :: !(Maybe Text)
+    , _bId :: !(Maybe Text)
+    , _bUpdated :: !(Maybe DateTime')
+    , _bPosts :: !(Maybe BlogPosts)
+    , _bDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1123,7 +1123,7 @@ instance ToJSON Blog where
 data BlogPages =
   BlogPages'
     { _bpsTotalItems :: !(Maybe (Textual Int32))
-    , _bpsSelfLink   :: !(Maybe Text)
+    , _bpsSelfLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1203,10 +1203,10 @@ instance ToJSON PostBlog where
 -- /See:/ 'pageList' smart constructor.
 data PageList =
   PageList'
-    { _pllEtag          :: !(Maybe Text)
+    { _pllEtag :: !(Maybe Text)
     , _pllNextPageToken :: !(Maybe Text)
-    , _pllKind          :: !Text
-    , _pllItems         :: !(Maybe [Page])
+    , _pllKind :: !Text
+    , _pllItems :: !(Maybe [Page])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1277,8 +1277,8 @@ instance ToJSON PageList where
 -- /See:/ 'userLocale' smart constructor.
 data UserLocale =
   UserLocale'
-    { _ulVariant  :: !(Maybe Text)
-    , _ulCountry  :: !(Maybe Text)
+    { _ulVariant :: !(Maybe Text)
+    , _ulCountry :: !(Maybe Text)
     , _ulLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1368,15 +1368,15 @@ instance ToJSON CommentAuthorImage where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uBlogs       :: !(Maybe UserBlogs)
-    , _uKind        :: !Text
-    , _uCreated     :: !(Maybe DateTime')
-    , _uLocale      :: !(Maybe UserLocale)
-    , _uURL         :: !(Maybe Text)
-    , _uSelfLink    :: !(Maybe Text)
-    , _uAbout       :: !(Maybe Text)
+    { _uBlogs :: !(Maybe UserBlogs)
+    , _uKind :: !Text
+    , _uCreated :: !(Maybe DateTime')
+    , _uLocale :: !(Maybe UserLocale)
+    , _uURL :: !(Maybe Text)
+    , _uSelfLink :: !(Maybe Text)
+    , _uAbout :: !(Maybe Text)
     , _uDisplayName :: !(Maybe Text)
-    , _uId          :: !(Maybe Text)
+    , _uId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1525,8 +1525,8 @@ instance ToJSON UserBlogs where
 data PostReplies =
   PostReplies'
     { _prTotalItems :: !(Maybe (Textual Int64))
-    , _prItems      :: !(Maybe [Comment])
-    , _prSelfLink   :: !(Maybe Text)
+    , _prItems :: !(Maybe [Comment])
+    , _prSelfLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1584,8 +1584,8 @@ instance ToJSON PostReplies where
 -- /See:/ 'blogList' smart constructor.
 data BlogList =
   BlogList'
-    { _blKind          :: !Text
-    , _blItems         :: !(Maybe [Blog])
+    { _blKind :: !Text
+    , _blItems :: !(Maybe [Blog])
     , _blBlogUserInfos :: !(Maybe [BlogUserInfo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1682,10 +1682,10 @@ instance ToJSON PageBlog where
 -- /See:/ 'postAuthor' smart constructor.
 data PostAuthor =
   PostAuthor'
-    { _paaImage       :: !(Maybe PostAuthorImage)
-    , _paaURL         :: !(Maybe Text)
+    { _paaImage :: !(Maybe PostAuthorImage)
+    , _paaURL :: !(Maybe Text)
     , _paaDisplayName :: !(Maybe Text)
-    , _paaId          :: !(Maybe Text)
+    , _paaId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1751,11 +1751,11 @@ instance ToJSON PostAuthor where
 -- /See:/ 'postPerUserInfo' smart constructor.
 data PostPerUserInfo =
   PostPerUserInfo'
-    { _ppuiKind          :: !Text
-    , _ppuiBlogId        :: !(Maybe Text)
-    , _ppuiUserId        :: !(Maybe Text)
+    { _ppuiKind :: !Text
+    , _ppuiBlogId :: !(Maybe Text)
+    , _ppuiUserId :: !(Maybe Text)
     , _ppuiHasEditAccess :: !(Maybe Bool)
-    , _ppuiPostId        :: !(Maybe Text)
+    , _ppuiPostId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1836,7 +1836,7 @@ instance ToJSON PostPerUserInfo where
 data PageviewsCountsItem =
   PageviewsCountsItem'
     { _pciTimeRange :: !(Maybe Text)
-    , _pciCount     :: !(Maybe (Textual Int64))
+    , _pciCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1883,16 +1883,16 @@ instance ToJSON PageviewsCountsItem where
 -- /See:/ 'comment' smart constructor.
 data Comment =
   Comment'
-    { _cStatus    :: !(Maybe Text)
-    , _cPost      :: !(Maybe CommentPost)
-    , _cKind      :: !Text
+    { _cStatus :: !(Maybe Text)
+    , _cPost :: !(Maybe CommentPost)
+    , _cKind :: !Text
     , _cPublished :: !(Maybe DateTime')
-    , _cBlog      :: !(Maybe CommentBlog)
-    , _cContent   :: !(Maybe Text)
-    , _cSelfLink  :: !(Maybe Text)
-    , _cAuthor    :: !(Maybe CommentAuthor)
-    , _cId        :: !(Maybe Text)
-    , _cUpdated   :: !(Maybe DateTime')
+    , _cBlog :: !(Maybe CommentBlog)
+    , _cContent :: !(Maybe Text)
+    , _cSelfLink :: !(Maybe Text)
+    , _cAuthor :: !(Maybe CommentAuthor)
+    , _cId :: !(Maybe Text)
+    , _cUpdated :: !(Maybe DateTime')
     , _cInReplyTo :: !(Maybe CommentInReplyTo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2058,10 +2058,10 @@ instance ToJSON CommentPost where
 data BlogPerUserInfo =
   BlogPerUserInfo'
     { _bpuiPhotosAlbumKey :: !(Maybe Text)
-    , _bpuiKind           :: !Text
-    , _bpuiBlogId         :: !(Maybe Text)
-    , _bpuiUserId         :: !(Maybe Text)
-    , _bpuiRole           :: !(Maybe Text)
+    , _bpuiKind :: !Text
+    , _bpuiBlogId :: !(Maybe Text)
+    , _bpuiUserId :: !(Maybe Text)
+    , _bpuiRole :: !(Maybe Text)
     , _bpuiHasAdminAccess :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2154,8 +2154,8 @@ instance ToJSON BlogPerUserInfo where
 data PostUserInfosList =
   PostUserInfosList'
     { _puilNextPageToken :: !(Maybe Text)
-    , _puilKind          :: !Text
-    , _puilItems         :: !(Maybe [PostUserInfo])
+    , _puilKind :: !Text
+    , _puilItems :: !(Maybe [PostUserInfo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2218,10 +2218,10 @@ instance ToJSON PostUserInfosList where
 -- /See:/ 'commentAuthor' smart constructor.
 data CommentAuthor =
   CommentAuthor'
-    { _caImage       :: !(Maybe CommentAuthorImage)
-    , _caURL         :: !(Maybe Text)
+    { _caImage :: !(Maybe CommentAuthorImage)
+    , _caURL :: !(Maybe Text)
     , _caDisplayName :: !(Maybe Text)
-    , _caId          :: !(Maybe Text)
+    , _caId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2287,8 +2287,8 @@ instance ToJSON CommentAuthor where
 -- /See:/ 'blogUserInfo' smart constructor.
 data BlogUserInfo =
   BlogUserInfo'
-    { _buiKind         :: !Text
-    , _buiBlog         :: !(Maybe Blog)
+    { _buiKind :: !Text
+    , _buiBlog :: !(Maybe Blog)
     , _buiBlogUserInfo :: !(Maybe BlogPerUserInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2380,10 +2380,10 @@ instance ToJSON PageAuthorImage where
 -- /See:/ 'commentList' smart constructor.
 data CommentList =
   CommentList'
-    { _clEtag          :: !(Maybe Text)
+    { _clEtag :: !(Maybe Text)
     , _clNextPageToken :: !(Maybe Text)
-    , _clKind          :: !Text
-    , _clItems         :: !(Maybe [Comment])
+    , _clKind :: !Text
+    , _clItems :: !(Maybe [Comment])
     , _clPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.SmimeInfo.Delete
     , ussasidId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.smimeInfo.delete@ method which the
 -- 'UsersSettingsSendAsSmimeInfoDelete' request conforms to.
@@ -60,9 +60,9 @@ type UsersSettingsSendAsSmimeInfoDeleteResource =
 -- /See:/ 'usersSettingsSendAsSmimeInfoDelete' smart constructor.
 data UsersSettingsSendAsSmimeInfoDelete =
   UsersSettingsSendAsSmimeInfoDelete'
-    { _ussasidUserId      :: !Text
+    { _ussasidUserId :: !Text
     , _ussasidSendAsEmail :: !Text
-    , _ussasidId          :: !Text
+    , _ussasidId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

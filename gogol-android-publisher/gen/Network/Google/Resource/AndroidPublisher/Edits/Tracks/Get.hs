@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Tracks.Get
     , etgtEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.tracks.get@ method which the
 -- 'EditsTracksGet' request conforms to.
@@ -61,9 +61,9 @@ type EditsTracksGetResource =
 -- /See:/ 'editsTracksGet' smart constructor.
 data EditsTracksGet =
   EditsTracksGet'
-    { _etgtTrack       :: !Text
+    { _etgtTrack :: !Text
     , _etgtPackageName :: !Text
-    , _etgtEditId      :: !Text
+    , _etgtEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

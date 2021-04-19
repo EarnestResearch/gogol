@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -74,9 +74,9 @@ module Network.Google.SearchConsole.Types
     , mfiRule
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SearchConsole.Types.Product
-import           Network.Google.SearchConsole.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SearchConsole.Types.Product
+import Network.Google.SearchConsole.Types.Sum
 
 -- | Default request referring to version 'v1' of the Google Search Console URL Testing Tools API. This contains the host and root path used as a starting point for constructing service requests.
 searchConsoleService :: ServiceConfig

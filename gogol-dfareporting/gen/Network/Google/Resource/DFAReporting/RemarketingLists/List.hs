@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.List
     , rllMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.list@ method which the
 -- 'RemarketingListsList' request conforms to.
@@ -76,14 +76,14 @@ type RemarketingListsListResource =
 data RemarketingListsList =
   RemarketingListsList'
     { _rllFloodlightActivityId :: !(Maybe (Textual Int64))
-    , _rllAdvertiserId         :: !(Textual Int64)
-    , _rllProFileId            :: !(Textual Int64)
-    , _rllSortOrder            :: !RemarketingListsListSortOrder
-    , _rllActive               :: !(Maybe Bool)
-    , _rllName                 :: !(Maybe Text)
-    , _rllPageToken            :: !(Maybe Text)
-    , _rllSortField            :: !RemarketingListsListSortField
-    , _rllMaxResults           :: !(Textual Int32)
+    , _rllAdvertiserId :: !(Textual Int64)
+    , _rllProFileId :: !(Textual Int64)
+    , _rllSortOrder :: !RemarketingListsListSortOrder
+    , _rllActive :: !(Maybe Bool)
+    , _rllName :: !(Maybe Text)
+    , _rllPageToken :: !(Maybe Text)
+    , _rllSortField :: !RemarketingListsListSortField
+    , _rllMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

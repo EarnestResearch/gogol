@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Leaderboards.List
     , llMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.leaderboards.list@ method which the
 -- 'LeaderboardsList' request conforms to.
@@ -58,8 +58,8 @@ type LeaderboardsListResource =
 -- /See:/ 'leaderboardsList' smart constructor.
 data LeaderboardsList =
   LeaderboardsList'
-    { _llLanguage   :: !(Maybe Text)
-    , _llPageToken  :: !(Maybe Text)
+    { _llLanguage :: !(Maybe Text)
+    , _llPageToken :: !(Maybe Text)
     , _llMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

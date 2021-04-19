@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutpages.Insert
     , siPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutpages.insert@ method which the
 -- 'StorelayoutpagesInsert' request conforms to.
@@ -58,7 +58,7 @@ type StorelayoutpagesInsertResource =
 data StorelayoutpagesInsert =
   StorelayoutpagesInsert'
     { _siEnterpriseId :: !Text
-    , _siPayload      :: !StorePage
+    , _siPayload :: !StorePage
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

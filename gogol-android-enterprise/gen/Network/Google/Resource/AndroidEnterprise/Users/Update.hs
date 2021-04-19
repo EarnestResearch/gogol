@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.Update
     , uuUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.update@ method which the
 -- 'UsersUpdate' request conforms to.
@@ -65,8 +65,8 @@ type UsersUpdateResource =
 data UsersUpdate =
   UsersUpdate'
     { _uuEnterpriseId :: !Text
-    , _uuPayload      :: !User
-    , _uuUserId       :: !Text
+    , _uuPayload :: !User
+    , _uuUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

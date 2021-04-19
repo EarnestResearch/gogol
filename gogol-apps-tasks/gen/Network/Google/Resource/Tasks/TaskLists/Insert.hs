@@ -37,8 +37,8 @@ module Network.Google.Resource.Tasks.TaskLists.Insert
     , tliPayload
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasklists.insert@ method which the
 -- 'TaskListsInsert' request conforms to.

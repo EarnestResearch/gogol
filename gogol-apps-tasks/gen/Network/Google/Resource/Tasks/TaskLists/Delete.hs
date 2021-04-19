@@ -36,8 +36,8 @@ module Network.Google.Resource.Tasks.TaskLists.Delete
     , tldTaskList
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasklists.delete@ method which the
 -- 'TaskListsDelete' request conforms to.

@@ -40,8 +40,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Insert
     , oaciGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.insert@ method which the
 -- 'ObjectAccessControlsInsert' request conforms to.
@@ -64,11 +64,11 @@ type ObjectAccessControlsInsertResource =
 -- /See:/ 'objectAccessControlsInsert' smart constructor.
 data ObjectAccessControlsInsert =
   ObjectAccessControlsInsert'
-    { _oaciBucket      :: !Text
-    , _oaciPayload     :: !ObjectAccessControl
+    { _oaciBucket :: !Text
+    , _oaciPayload :: !ObjectAccessControl
     , _oaciUserProject :: !(Maybe Text)
-    , _oaciObject      :: !Text
-    , _oaciGeneration  :: !(Maybe (Textual Int64))
+    , _oaciObject :: !Text
+    , _oaciGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

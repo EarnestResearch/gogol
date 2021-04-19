@@ -42,8 +42,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.GetIAMPolicy
     , osgipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.getIamPolicy@ method which the
 -- 'OrganizationsSourcesGetIAMPolicy' request conforms to.
@@ -64,13 +64,13 @@ type OrganizationsSourcesGetIAMPolicyResource =
 -- /See:/ 'organizationsSourcesGetIAMPolicy' smart constructor.
 data OrganizationsSourcesGetIAMPolicy =
   OrganizationsSourcesGetIAMPolicy'
-    { _osgipXgafv          :: !(Maybe Xgafv)
+    { _osgipXgafv :: !(Maybe Xgafv)
     , _osgipUploadProtocol :: !(Maybe Text)
-    , _osgipAccessToken    :: !(Maybe Text)
-    , _osgipUploadType     :: !(Maybe Text)
-    , _osgipPayload        :: !GetIAMPolicyRequest
-    , _osgipResource       :: !Text
-    , _osgipCallback       :: !(Maybe Text)
+    , _osgipAccessToken :: !(Maybe Text)
+    , _osgipUploadType :: !(Maybe Text)
+    , _osgipPayload :: !GetIAMPolicyRequest
+    , _osgipResource :: !Text
+    , _osgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

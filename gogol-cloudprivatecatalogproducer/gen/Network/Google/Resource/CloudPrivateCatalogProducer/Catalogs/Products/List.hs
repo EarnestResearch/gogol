@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Lis
     , cplCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.products.list@ method which the
 -- 'CatalogsProductsList' request conforms to.
@@ -72,15 +72,15 @@ type CatalogsProductsListResource =
 -- /See:/ 'catalogsProductsList' smart constructor.
 data CatalogsProductsList =
   CatalogsProductsList'
-    { _cplParent         :: !Text
-    , _cplXgafv          :: !(Maybe Xgafv)
+    { _cplParent :: !Text
+    , _cplXgafv :: !(Maybe Xgafv)
     , _cplUploadProtocol :: !(Maybe Text)
-    , _cplAccessToken    :: !(Maybe Text)
-    , _cplUploadType     :: !(Maybe Text)
-    , _cplFilter         :: !(Maybe Text)
-    , _cplPageToken      :: !(Maybe Text)
-    , _cplPageSize       :: !(Maybe (Textual Int32))
-    , _cplCallback       :: !(Maybe Text)
+    , _cplAccessToken :: !(Maybe Text)
+    , _cplUploadType :: !(Maybe Text)
+    , _cplFilter :: !(Maybe Text)
+    , _cplPageToken :: !(Maybe Text)
+    , _cplPageSize :: !(Maybe (Textual Int32))
+    , _cplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

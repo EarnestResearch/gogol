@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.UserPermissions.Create
     , aupcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.user_permissions.create@ method which the
 -- 'AccountsUserPermissionsCreate' request conforms to.
@@ -56,7 +56,7 @@ type AccountsUserPermissionsCreateResource =
 -- /See:/ 'accountsUserPermissionsCreate' smart constructor.
 data AccountsUserPermissionsCreate =
   AccountsUserPermissionsCreate'
-    { _aupcParent  :: !Text
+    { _aupcParent :: !Text
     , _aupcPayload :: !UserPermission
     }
   deriving (Eq, Show, Data, Typeable, Generic)

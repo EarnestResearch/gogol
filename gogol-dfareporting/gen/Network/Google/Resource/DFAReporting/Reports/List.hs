@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Reports.List
     , rlMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.list@ method which the
 -- 'ReportsList' request conforms to.
@@ -64,11 +64,11 @@ type ReportsListResource =
 -- /See:/ 'reportsList' smart constructor.
 data ReportsList =
   ReportsList'
-    { _rlProFileId  :: !(Textual Int64)
-    , _rlSortOrder  :: !ReportsListSortOrder
-    , _rlScope      :: !ReportsListScope
-    , _rlPageToken  :: !(Maybe Text)
-    , _rlSortField  :: !ReportsListSortField
+    { _rlProFileId :: !(Textual Int64)
+    , _rlSortOrder :: !ReportsListSortOrder
+    , _rlScope :: !ReportsListScope
+    , _rlPageToken :: !(Maybe Text)
+    , _rlSortField :: !ReportsListSortField
     , _rlMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

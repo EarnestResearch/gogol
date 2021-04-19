@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Zones.G
     , acwzgPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.zones.get@ method which the
 -- 'AccountsContainersWorkspacesZonesGet' request conforms to.

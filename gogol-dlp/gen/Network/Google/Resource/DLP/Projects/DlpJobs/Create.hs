@@ -48,8 +48,8 @@ module Network.Google.Resource.DLP.Projects.DlpJobs.Create
     , pCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.dlpJobs.create@ method which the
 -- 'ProjectsDlpJobsCreate' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsDlpJobsCreateResource =
 -- /See:/ 'projectsDlpJobsCreate' smart constructor.
 data ProjectsDlpJobsCreate =
   ProjectsDlpJobsCreate'
-    { _pParent         :: !Text
-    , _pXgafv          :: !(Maybe Xgafv)
+    { _pParent :: !Text
+    , _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !GooglePrivacyDlpV2CreateDlpJobRequest
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !GooglePrivacyDlpV2CreateDlpJobRequest
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

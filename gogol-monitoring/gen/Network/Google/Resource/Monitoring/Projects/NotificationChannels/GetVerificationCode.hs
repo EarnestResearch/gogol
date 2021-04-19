@@ -61,8 +61,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.GetVerif
     , pncgvcCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.getVerificationCode@ method which the
 -- 'ProjectsNotificationChannelsGetVerificationCode' request conforms to.
@@ -106,13 +106,13 @@ type ProjectsNotificationChannelsGetVerificationCodeResource
 -- /See:/ 'projectsNotificationChannelsGetVerificationCode' smart constructor.
 data ProjectsNotificationChannelsGetVerificationCode =
   ProjectsNotificationChannelsGetVerificationCode'
-    { _pncgvcXgafv          :: !(Maybe Xgafv)
+    { _pncgvcXgafv :: !(Maybe Xgafv)
     , _pncgvcUploadProtocol :: !(Maybe Text)
-    , _pncgvcAccessToken    :: !(Maybe Text)
-    , _pncgvcUploadType     :: !(Maybe Text)
-    , _pncgvcPayload        :: !GetNotificationChannelVerificationCodeRequest
-    , _pncgvcName           :: !Text
-    , _pncgvcCallback       :: !(Maybe Text)
+    , _pncgvcAccessToken :: !(Maybe Text)
+    , _pncgvcUploadType :: !(Maybe Text)
+    , _pncgvcPayload :: !GetNotificationChannelVerificationCodeRequest
+    , _pncgvcName :: !Text
+    , _pncgvcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

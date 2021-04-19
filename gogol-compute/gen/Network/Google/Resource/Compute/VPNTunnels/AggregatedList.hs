@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.VPNTunnels.AggregatedList
     , vtalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.vpnTunnels.aggregatedList@ method which the
 -- 'VPNTunnelsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type VPNTunnelsAggregatedListResource =
 -- /See:/ 'vpnTunnelsAggregatedList' smart constructor.
 data VPNTunnelsAggregatedList =
   VPNTunnelsAggregatedList'
-    { _vtalOrderBy    :: !(Maybe Text)
-    , _vtalProject    :: !Text
-    , _vtalFilter     :: !(Maybe Text)
-    , _vtalPageToken  :: !(Maybe Text)
+    { _vtalOrderBy :: !(Maybe Text)
+    , _vtalProject :: !Text
+    , _vtalFilter :: !(Maybe Text)
+    , _vtalPageToken :: !(Maybe Text)
     , _vtalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.Delete
     , agdId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.delete@ method which the
 -- 'AdvertiserGroupsDelete' request conforms to.
@@ -57,7 +57,7 @@ type AdvertiserGroupsDeleteResource =
 data AdvertiserGroupsDelete =
   AdvertiserGroupsDelete'
     { _agdProFileId :: !(Textual Int64)
-    , _agdId        :: !(Textual Int64)
+    , _agdId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

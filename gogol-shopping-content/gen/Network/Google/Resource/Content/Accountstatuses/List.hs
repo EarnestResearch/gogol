@@ -33,20 +33,20 @@ module Network.Google.Resource.Content.Accountstatuses.List
     , AccountstatusesList
 
     -- * Request Lenses
-    , a2MerchantId
-    , a2Destinations
-    , a2PageToken
-    , a2MaxResults
+    , a1MerchantId
+    , a1Destinations
+    , a1PageToken
+    , a1MaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accountstatuses.list@ method which the
 -- 'AccountstatusesList' request conforms to.
 type AccountstatusesListResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accountstatuses" :>
              QueryParams "destinations" Text :>
@@ -60,10 +60,10 @@ type AccountstatusesListResource =
 -- /See:/ 'accountstatusesList' smart constructor.
 data AccountstatusesList =
   AccountstatusesList'
-    { _a2MerchantId   :: !(Textual Word64)
-    , _a2Destinations :: !(Maybe [Text])
-    , _a2PageToken    :: !(Maybe Text)
-    , _a2MaxResults   :: !(Maybe (Textual Word32))
+    { _a1MerchantId :: !(Textual Word64)
+    , _a1Destinations :: !(Maybe [Text])
+    , _a1PageToken :: !(Maybe Text)
+    , _a1MaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,50 +72,50 @@ data AccountstatusesList =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'a2MerchantId'
+-- * 'a1MerchantId'
 --
--- * 'a2Destinations'
+-- * 'a1Destinations'
 --
--- * 'a2PageToken'
+-- * 'a1PageToken'
 --
--- * 'a2MaxResults'
+-- * 'a1MaxResults'
 accountstatusesList
-    :: Word64 -- ^ 'a2MerchantId'
+    :: Word64 -- ^ 'a1MerchantId'
     -> AccountstatusesList
-accountstatusesList pA2MerchantId_ =
+accountstatusesList pA1MerchantId_ =
   AccountstatusesList'
-    { _a2MerchantId = _Coerce # pA2MerchantId_
-    , _a2Destinations = Nothing
-    , _a2PageToken = Nothing
-    , _a2MaxResults = Nothing
+    { _a1MerchantId = _Coerce # pA1MerchantId_
+    , _a1Destinations = Nothing
+    , _a1PageToken = Nothing
+    , _a1MaxResults = Nothing
     }
 
 
 -- | The ID of the managing account. This must be a multi-client account.
-a2MerchantId :: Lens' AccountstatusesList Word64
-a2MerchantId
-  = lens _a2MerchantId (\ s a -> s{_a2MerchantId = a})
+a1MerchantId :: Lens' AccountstatusesList Word64
+a1MerchantId
+  = lens _a1MerchantId (\ s a -> s{_a1MerchantId = a})
       . _Coerce
 
 -- | If set, only issues for the specified destinations are returned,
 -- otherwise only issues for the Shopping destination.
-a2Destinations :: Lens' AccountstatusesList [Text]
-a2Destinations
-  = lens _a2Destinations
-      (\ s a -> s{_a2Destinations = a})
+a1Destinations :: Lens' AccountstatusesList [Text]
+a1Destinations
+  = lens _a1Destinations
+      (\ s a -> s{_a1Destinations = a})
       . _Default
       . _Coerce
 
 -- | The token returned by the previous request.
-a2PageToken :: Lens' AccountstatusesList (Maybe Text)
-a2PageToken
-  = lens _a2PageToken (\ s a -> s{_a2PageToken = a})
+a1PageToken :: Lens' AccountstatusesList (Maybe Text)
+a1PageToken
+  = lens _a1PageToken (\ s a -> s{_a1PageToken = a})
 
 -- | The maximum number of account statuses to return in the response, used
 -- for paging.
-a2MaxResults :: Lens' AccountstatusesList (Maybe Word32)
-a2MaxResults
-  = lens _a2MaxResults (\ s a -> s{_a2MaxResults = a})
+a1MaxResults :: Lens' AccountstatusesList (Maybe Word32)
+a1MaxResults
+  = lens _a1MaxResults (\ s a -> s{_a1MaxResults = a})
       . mapping _Coerce
 
 instance GoogleRequest AccountstatusesList where
@@ -124,9 +124,9 @@ instance GoogleRequest AccountstatusesList where
         type Scopes AccountstatusesList =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountstatusesList'{..}
-          = go _a2MerchantId (_a2Destinations ^. _Default)
-              _a2PageToken
-              _a2MaxResults
+          = go _a1MerchantId (_a1Destinations ^. _Default)
+              _a1PageToken
+              _a1MaxResults
               (Just AltJSON)
               shoppingContentService
           where go

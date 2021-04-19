@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Countries.Get
     , cgDartId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.countries.get@ method which the
 -- 'CountriesGet' request conforms to.
@@ -57,7 +57,7 @@ type CountriesGetResource =
 data CountriesGet =
   CountriesGet'
     { _cgProFileId :: !(Textual Int64)
-    , _cgDartId    :: !(Textual Int64)
+    , _cgDartId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

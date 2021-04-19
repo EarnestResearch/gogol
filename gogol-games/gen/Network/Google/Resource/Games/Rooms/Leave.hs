@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Rooms.Leave
     , rlLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.leave@ method which the
 -- 'RoomsLeave' request conforms to.
@@ -60,8 +60,8 @@ type RoomsLeaveResource =
 -- /See:/ 'roomsLeave' smart constructor.
 data RoomsLeave =
   RoomsLeave'
-    { _rlPayload  :: !RoomLeaveRequest
-    , _rlRoomId   :: !Text
+    { _rlPayload :: !RoomLeaveRequest
+    , _rlRoomId :: !Text
     , _rlLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

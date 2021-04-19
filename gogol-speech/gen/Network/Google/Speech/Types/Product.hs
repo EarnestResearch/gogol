@@ -17,8 +17,8 @@
 --
 module Network.Google.Speech.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Speech.Types.Sum
 
 -- | Describes the progress of a long-running \`LongRunningRecognize\` call.
 -- It is included in the \`metadata\` field of the \`Operation\` returned
@@ -28,9 +28,9 @@ import           Network.Google.Speech.Types.Sum
 -- /See:/ 'longRunningRecognizeMetadata' smart constructor.
 data LongRunningRecognizeMetadata =
   LongRunningRecognizeMetadata'
-    { _lrrmStartTime       :: !(Maybe DateTime')
+    { _lrrmStartTime :: !(Maybe DateTime')
     , _lrrmProgressPercent :: !(Maybe (Textual Int32))
-    , _lrrmLastUpdateTime  :: !(Maybe DateTime')
+    , _lrrmLastUpdateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -132,7 +132,7 @@ instance ToJSON LongRunningRecognizeMetadata where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -237,7 +237,7 @@ instance ToJSON SpeechContext where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -290,15 +290,15 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'recognitionMetadata' smart constructor.
 data RecognitionMetadata =
   RecognitionMetadata'
-    { _rmAudioTopic               :: !(Maybe Text)
-    , _rmInteractionType          :: !(Maybe RecognitionMetadataInteractionType)
-    , _rmOriginalMediaType        :: !(Maybe RecognitionMetadataOriginalMediaType)
-    , _rmOriginalMimeType         :: !(Maybe Text)
+    { _rmAudioTopic :: !(Maybe Text)
+    , _rmInteractionType :: !(Maybe RecognitionMetadataInteractionType)
+    , _rmOriginalMediaType :: !(Maybe RecognitionMetadataOriginalMediaType)
+    , _rmOriginalMimeType :: !(Maybe Text)
     , _rmIndustryNaicsCodeOfAudio :: !(Maybe (Textual Word32))
-    , _rmObfuscatedId             :: !(Maybe (Textual Int64))
-    , _rmRecordingDeviceName      :: !(Maybe Text)
-    , _rmRecordingDeviceType      :: !(Maybe RecognitionMetadataRecordingDeviceType)
-    , _rmMicrophoneDistance       :: !(Maybe RecognitionMetadataMicrophoneDistance)
+    , _rmObfuscatedId :: !(Maybe (Textual Int64))
+    , _rmRecordingDeviceName :: !(Maybe Text)
+    , _rmRecordingDeviceType :: !(Maybe RecognitionMetadataRecordingDeviceType)
+    , _rmMicrophoneDistance :: !(Maybe RecognitionMetadataMicrophoneDistance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -442,8 +442,8 @@ instance ToJSON RecognitionMetadata where
 data RecognizeRequest =
   RecognizeRequest'
     { _rrConfig :: !(Maybe RecognitionConfig)
-    , _rrName   :: !(Maybe Text)
-    , _rrAudio  :: !(Maybe RecognitionAudio)
+    , _rrName :: !(Maybe Text)
+    , _rrAudio :: !(Maybe RecognitionAudio)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -497,10 +497,10 @@ instance ToJSON RecognizeRequest where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -592,7 +592,7 @@ instance ToJSON Operation where
 data SpeechRecognitionAlternative =
   SpeechRecognitionAlternative'
     { _sraConfidence :: !(Maybe (Textual Double))
-    , _sraWords      :: !(Maybe [WordInfo])
+    , _sraWords :: !(Maybe [WordInfo])
     , _sraTranscript :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -663,10 +663,10 @@ instance ToJSON SpeechRecognitionAlternative where
 -- /See:/ 'wordInfo' smart constructor.
 data WordInfo =
   WordInfo'
-    { _wiStartTime  :: !(Maybe GDuration)
+    { _wiStartTime :: !(Maybe GDuration)
     , _wiConfidence :: !(Maybe (Textual Double))
-    , _wiEndTime    :: !(Maybe GDuration)
-    , _wiWord       :: !(Maybe Text)
+    , _wiEndTime :: !(Maybe GDuration)
+    , _wiWord :: !(Maybe Text)
     , _wiSpeakerTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -803,7 +803,7 @@ data SpeechRecognitionResult =
   SpeechRecognitionResult'
     { _srrAlternatives :: !(Maybe [SpeechRecognitionAlternative])
     , _srrLanguageCode :: !(Maybe Text)
-    , _srrChannelTag   :: !(Maybe (Textual Int32))
+    , _srrChannelTag :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -882,7 +882,7 @@ instance ToJSON SpeechRecognitionResult where
 -- /See:/ 'recognitionAudio' smart constructor.
 data RecognitionAudio =
   RecognitionAudio'
-    { _raURI     :: !(Maybe Text)
+    { _raURI :: !(Maybe Text)
     , _raContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1024,24 +1024,24 @@ instance ToJSON LongRunningRecognizeResponse where
 -- /See:/ 'recognitionConfig' smart constructor.
 data RecognitionConfig =
   RecognitionConfig'
-    { _rcEnableWordTimeOffSets               :: !(Maybe Bool)
-    , _rcSpeechContexts                      :: !(Maybe [SpeechContext])
-    , _rcLanguageCode                        :: !(Maybe Text)
-    , _rcDiarizationConfig                   :: !(Maybe SpeakerDiarizationConfig)
-    , _rcSampleRateHertz                     :: !(Maybe (Textual Int32))
-    , _rcEnableAutomaticPunctuation          :: !(Maybe Bool)
-    , _rcMaxAlternatives                     :: !(Maybe (Textual Int32))
-    , _rcAudioChannelCount                   :: !(Maybe (Textual Int32))
+    { _rcEnableWordTimeOffSets :: !(Maybe Bool)
+    , _rcSpeechContexts :: !(Maybe [SpeechContext])
+    , _rcLanguageCode :: !(Maybe Text)
+    , _rcDiarizationConfig :: !(Maybe SpeakerDiarizationConfig)
+    , _rcSampleRateHertz :: !(Maybe (Textual Int32))
+    , _rcEnableAutomaticPunctuation :: !(Maybe Bool)
+    , _rcMaxAlternatives :: !(Maybe (Textual Int32))
+    , _rcAudioChannelCount :: !(Maybe (Textual Int32))
     , _rcEnableSeparateRecognitionPerChannel :: !(Maybe Bool)
-    , _rcModel                               :: !(Maybe Text)
-    , _rcEnableSpeakerDiarization            :: !(Maybe Bool)
-    , _rcMetadata                            :: !(Maybe RecognitionMetadata)
-    , _rcUseEnhanced                         :: !(Maybe Bool)
-    , _rcProfanityFilter                     :: !(Maybe Bool)
-    , _rcDiarizationSpeakerCount             :: !(Maybe (Textual Int32))
-    , _rcEncoding                            :: !(Maybe RecognitionConfigEncoding)
-    , _rcAlternativeLanguageCodes            :: !(Maybe [Text])
-    , _rcEnableWordConfidence                :: !(Maybe Bool)
+    , _rcModel :: !(Maybe Text)
+    , _rcEnableSpeakerDiarization :: !(Maybe Bool)
+    , _rcMetadata :: !(Maybe RecognitionMetadata)
+    , _rcUseEnhanced :: !(Maybe Bool)
+    , _rcProfanityFilter :: !(Maybe Bool)
+    , _rcDiarizationSpeakerCount :: !(Maybe (Textual Int32))
+    , _rcEncoding :: !(Maybe RecognitionConfigEncoding)
+    , _rcAlternativeLanguageCodes :: !(Maybe [Text])
+    , _rcEnableWordConfidence :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1219,32 +1219,28 @@ rcEnableSeparateRecognitionPerChannel
 -- best suited to your domain to get best results. If a model is not
 -- explicitly specified, then we auto-select a model based on the
 -- parameters in the RecognitionConfig.
--- > +-----------------------------------+-----------------------------------+
--- > | __Model__                         | __Description__                   |
--- > +-----------------------------------+-----------------------------------+
--- > | 'command_and_search'              | Best for short queries such as    |
--- > |                                   | voice commands or voice search.   |
--- > +-----------------------------------+-----------------------------------+
--- > | 'phone_call'                      | Best for audio that originated    |
--- > |                                   | from a phone call (typically      |
--- > |                                   | recorded at an 8khz sampling      |
--- > |                                   | rate).                            |
--- > +-----------------------------------+-----------------------------------+
--- > | 'video'                           | Best for audio that originated    |
--- > |                                   | from from video or includes       |
--- > |                                   | multiple speakers. Ideally the    |
--- > |                                   | audio is recorded at a 16khz or   |
--- > |                                   | greater sampling rate. This is a  |
--- > |                                   | premium model that costs more     |
--- > |                                   | than the standard rate.           |
--- > +-----------------------------------+-----------------------------------+
--- > | 'default'                         | Best for audio that is not one of |
--- > |                                   | the specific audio models. For    |
--- > |                                   | example, long-form audio. Ideally |
--- > |                                   | the audio is high-fidelity,       |
--- > |                                   | recorded at a 16khz or greater    |
--- > |                                   | sampling rate.                    |
--- > +-----------------------------------+-----------------------------------+
+-- > +----------------------+----------------------------------------------+
+-- > | __Model__            | __Description__                              |
+-- > +----------------------+----------------------------------------------+
+-- > | 'command_and_search' | Best for short queries such as voice         |
+-- > |                      | commands or voice search.                    |
+-- > +----------------------+----------------------------------------------+
+-- > | 'phone_call'         | Best for audio that originated from a phone  |
+-- > |                      | call (typically recorded at an 8khz sampling |
+-- > |                      | rate).                                       |
+-- > +----------------------+----------------------------------------------+
+-- > | 'video'              | Best for audio that originated from from     |
+-- > |                      | video or includes multiple speakers. Ideally |
+-- > |                      | the audio is recorded at a 16khz or greater  |
+-- > |                      | sampling rate. This is a premium model that  |
+-- > |                      | costs more than the standard rate.           |
+-- > +----------------------+----------------------------------------------+
+-- > | 'default'            | Best for audio that is not one of the        |
+-- > |                      | specific audio models. For example,          |
+-- > |                      | long-form audio. Ideally the audio is        |
+-- > |                      | high-fidelity, recorded at a 16khz or        |
+-- > |                      | greater sampling rate.                       |
+-- > +----------------------+----------------------------------------------+
 rcModel :: Lens' RecognitionConfig (Maybe Text)
 rcModel = lens _rcModel (\ s a -> s{_rcModel = a})
 
@@ -1391,7 +1387,7 @@ instance ToJSON RecognitionConfig where
 data LongRunningRecognizeRequest =
   LongRunningRecognizeRequest'
     { _lrrrConfig :: !(Maybe RecognitionConfig)
-    , _lrrrAudio  :: !(Maybe RecognitionAudio)
+    , _lrrrAudio :: !(Maybe RecognitionAudio)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1520,8 +1516,8 @@ instance ToJSON OperationResponse where
 -- /See:/ 'speakerDiarizationConfig' smart constructor.
 data SpeakerDiarizationConfig =
   SpeakerDiarizationConfig'
-    { _sdcMinSpeakerCount          :: !(Maybe (Textual Int32))
-    , _sdcMaxSpeakerCount          :: !(Maybe (Textual Int32))
+    { _sdcMinSpeakerCount :: !(Maybe (Textual Int32))
+    , _sdcMaxSpeakerCount :: !(Maybe (Textual Int32))
     , _sdcEnableSpeakerDiarization :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

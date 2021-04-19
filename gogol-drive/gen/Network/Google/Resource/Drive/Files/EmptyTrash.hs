@@ -34,8 +34,8 @@ module Network.Google.Resource.Drive.Files.EmptyTrash
 
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.emptyTrash@ method which the
 -- 'FilesEmptyTrash' request conforms to.

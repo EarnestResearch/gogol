@@ -36,8 +36,8 @@ module Network.Google.Resource.Books.Onboarding.ListCategories
     , olcLocale
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.onboarding.listCategories@ method which the
 -- 'OnboardingListCategories' request conforms to.

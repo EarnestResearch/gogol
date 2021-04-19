@@ -48,8 +48,8 @@ module Network.Google.Resource.DLP.Projects.Content.Deidentify
     , pcdCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.content.deidentify@ method which the
 -- 'ProjectsContentDeidentify' request conforms to.
@@ -80,13 +80,13 @@ type ProjectsContentDeidentifyResource =
 -- /See:/ 'projectsContentDeidentify' smart constructor.
 data ProjectsContentDeidentify =
   ProjectsContentDeidentify'
-    { _pcdParent         :: !Text
-    , _pcdXgafv          :: !(Maybe Xgafv)
+    { _pcdParent :: !Text
+    , _pcdXgafv :: !(Maybe Xgafv)
     , _pcdUploadProtocol :: !(Maybe Text)
-    , _pcdAccessToken    :: !(Maybe Text)
-    , _pcdUploadType     :: !(Maybe Text)
-    , _pcdPayload        :: !GooglePrivacyDlpV2DeidentifyContentRequest
-    , _pcdCallback       :: !(Maybe Text)
+    , _pcdAccessToken :: !(Maybe Text)
+    , _pcdUploadType :: !(Maybe Text)
+    , _pcdPayload :: !GooglePrivacyDlpV2DeidentifyContentRequest
+    , _pcdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

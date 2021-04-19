@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.RevokeToken
     , urtUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.revokeToken@ method which the
 -- 'UsersRevokeToken' request conforms to.
@@ -58,7 +58,7 @@ type UsersRevokeTokenResource =
 data UsersRevokeToken =
   UsersRevokeToken'
     { _urtEnterpriseId :: !Text
-    , _urtUserId       :: !Text
+    , _urtUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

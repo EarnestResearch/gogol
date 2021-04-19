@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessContextManager.AccessPolicies.AccessLevels.
     , apalpCallback
     ) where
 
-import           Network.Google.AccessContextManager.Types
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accesscontextmanager.accessPolicies.accessLevels.patch@ method which the
 -- 'AccessPoliciesAccessLevelsPatch' request conforms to.
@@ -72,14 +72,14 @@ type AccessPoliciesAccessLevelsPatchResource =
 -- /See:/ 'accessPoliciesAccessLevelsPatch' smart constructor.
 data AccessPoliciesAccessLevelsPatch =
   AccessPoliciesAccessLevelsPatch'
-    { _apalpXgafv          :: !(Maybe Xgafv)
+    { _apalpXgafv :: !(Maybe Xgafv)
     , _apalpUploadProtocol :: !(Maybe Text)
-    , _apalpUpdateMask     :: !(Maybe GFieldMask)
-    , _apalpAccessToken    :: !(Maybe Text)
-    , _apalpUploadType     :: !(Maybe Text)
-    , _apalpPayload        :: !AccessLevel
-    , _apalpName           :: !Text
-    , _apalpCallback       :: !(Maybe Text)
+    , _apalpUpdateMask :: !(Maybe GFieldMask)
+    , _apalpAccessToken :: !(Maybe Text)
+    , _apalpUploadType :: !(Maybe Text)
+    , _apalpPayload :: !AccessLevel
+    , _apalpName :: !Text
+    , _apalpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

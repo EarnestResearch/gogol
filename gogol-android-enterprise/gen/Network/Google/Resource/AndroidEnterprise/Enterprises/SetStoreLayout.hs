@@ -43,8 +43,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.SetStoreLayout
     , esslPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.setStoreLayout@ method which the
 -- 'EnterprisesSetStoreLayout' request conforms to.
@@ -70,7 +70,7 @@ type EnterprisesSetStoreLayoutResource =
 data EnterprisesSetStoreLayout =
   EnterprisesSetStoreLayout'
     { _esslEnterpriseId :: !Text
-    , _esslPayload      :: !StoreLayout
+    , _esslPayload :: !StoreLayout
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

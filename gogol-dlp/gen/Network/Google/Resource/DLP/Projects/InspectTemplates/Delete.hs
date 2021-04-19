@@ -42,8 +42,8 @@ module Network.Google.Resource.DLP.Projects.InspectTemplates.Delete
     , pitdCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.inspectTemplates.delete@ method which the
 -- 'ProjectsInspectTemplatesDelete' request conforms to.
@@ -64,12 +64,12 @@ type ProjectsInspectTemplatesDeleteResource =
 -- /See:/ 'projectsInspectTemplatesDelete' smart constructor.
 data ProjectsInspectTemplatesDelete =
   ProjectsInspectTemplatesDelete'
-    { _pitdXgafv          :: !(Maybe Xgafv)
+    { _pitdXgafv :: !(Maybe Xgafv)
     , _pitdUploadProtocol :: !(Maybe Text)
-    , _pitdAccessToken    :: !(Maybe Text)
-    , _pitdUploadType     :: !(Maybe Text)
-    , _pitdName           :: !Text
-    , _pitdCallback       :: !(Maybe Text)
+    , _pitdAccessToken :: !(Maybe Text)
+    , _pitdUploadType :: !(Maybe Text)
+    , _pitdName :: !Text
+    , _pitdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Variabl
     , acwvrFingerprint
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.variables.revert@ method which the
 -- 'AccountsContainersWorkspacesVariablesRevert' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesVariablesRevertResource
 -- /See:/ 'accountsContainersWorkspacesVariablesRevert' smart constructor.
 data AccountsContainersWorkspacesVariablesRevert =
   AccountsContainersWorkspacesVariablesRevert'
-    { _acwvrPath        :: !Text
+    { _acwvrPath :: !Text
     , _acwvrFingerprint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

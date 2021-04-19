@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Variabl
     , acwvcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.variables.create@ method which the
 -- 'AccountsContainersWorkspacesVariablesCreate' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesVariablesCreateResource
 -- /See:/ 'accountsContainersWorkspacesVariablesCreate' smart constructor.
 data AccountsContainersWorkspacesVariablesCreate =
   AccountsContainersWorkspacesVariablesCreate'
-    { _acwvcParent  :: !Text
+    { _acwvcParent :: !Text
     , _acwvcPayload :: !Variable
     }
   deriving (Eq, Show, Data, Typeable, Generic)

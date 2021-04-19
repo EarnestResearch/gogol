@@ -39,8 +39,8 @@ module Network.Google.Resource.GamesManagement.Applications.ListHidden
     , alhMaxResults
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.applications.listHidden@ method which the
 -- 'ApplicationsListHidden' request conforms to.
@@ -63,8 +63,8 @@ type ApplicationsListHiddenResource =
 data ApplicationsListHidden =
   ApplicationsListHidden'
     { _alhApplicationId :: !Text
-    , _alhPageToken     :: !(Maybe Text)
-    , _alhMaxResults    :: !(Maybe (Textual Int32))
+    , _alhPageToken :: !(Maybe Text)
+    , _alhMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

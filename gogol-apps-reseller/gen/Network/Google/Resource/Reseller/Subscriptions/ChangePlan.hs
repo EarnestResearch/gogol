@@ -40,8 +40,8 @@ module Network.Google.Resource.Reseller.Subscriptions.ChangePlan
     , scpSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.changePlan@ method which the
 -- 'SubscriptionsChangePlan' request conforms to.
@@ -65,8 +65,8 @@ type SubscriptionsChangePlanResource =
 -- /See:/ 'subscriptionsChangePlan' smart constructor.
 data SubscriptionsChangePlan =
   SubscriptionsChangePlan'
-    { _scpPayload        :: !ChangePlanRequest
-    , _scpCustomerId     :: !Text
+    { _scpPayload :: !ChangePlanRequest
+    , _scpCustomerId :: !Text
     , _scpSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

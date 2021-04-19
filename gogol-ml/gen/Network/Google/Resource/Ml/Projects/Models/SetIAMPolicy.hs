@@ -43,8 +43,8 @@ module Network.Google.Resource.Ml.Projects.Models.SetIAMPolicy
     , pmsipCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.setIamPolicy@ method which the
 -- 'ProjectsModelsSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsModelsSetIAMPolicyResource =
 -- /See:/ 'projectsModelsSetIAMPolicy' smart constructor.
 data ProjectsModelsSetIAMPolicy =
   ProjectsModelsSetIAMPolicy'
-    { _pmsipXgafv          :: !(Maybe Xgafv)
+    { _pmsipXgafv :: !(Maybe Xgafv)
     , _pmsipUploadProtocol :: !(Maybe Text)
-    , _pmsipAccessToken    :: !(Maybe Text)
-    , _pmsipUploadType     :: !(Maybe Text)
-    , _pmsipPayload        :: !GoogleIAMV1__SetIAMPolicyRequest
-    , _pmsipResource       :: !Text
-    , _pmsipCallback       :: !(Maybe Text)
+    , _pmsipAccessToken :: !(Maybe Text)
+    , _pmsipUploadType :: !(Maybe Text)
+    , _pmsipPayload :: !GoogleIAMV1__SetIAMPolicyRequest
+    , _pmsipResource :: !Text
+    , _pmsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

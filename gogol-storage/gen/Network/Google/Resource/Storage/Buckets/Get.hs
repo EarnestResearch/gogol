@@ -40,8 +40,8 @@ module Network.Google.Resource.Storage.Buckets.Get
     , bgProjection
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.get@ method which the
 -- 'BucketsGet' request conforms to.
@@ -62,11 +62,11 @@ type BucketsGetResource =
 -- /See:/ 'bucketsGet' smart constructor.
 data BucketsGet =
   BucketsGet'
-    { _bgIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _bgBucket                   :: !Text
-    , _bgUserProject              :: !(Maybe Text)
+    { _bgIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _bgBucket :: !Text
+    , _bgUserProject :: !(Maybe Text)
     , _bgIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _bgProjection               :: !(Maybe BucketsGetProjection)
+    , _bgProjection :: !(Maybe BucketsGetProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

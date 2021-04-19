@@ -42,8 +42,8 @@ module Network.Google.Resource.Datastore.Projects.Lookup
     , plCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.lookup@ method which the
 -- 'ProjectsLookup' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLookupResource =
 -- /See:/ 'projectsLookup' smart constructor.
 data ProjectsLookup =
   ProjectsLookup'
-    { _plXgafv          :: !(Maybe Xgafv)
+    { _plXgafv :: !(Maybe Xgafv)
     , _plUploadProtocol :: !(Maybe Text)
-    , _plAccessToken    :: !(Maybe Text)
-    , _plUploadType     :: !(Maybe Text)
-    , _plPayload        :: !LookupRequest
-    , _plProjectId      :: !Text
-    , _plCallback       :: !(Maybe Text)
+    , _plAccessToken :: !(Maybe Text)
+    , _plUploadType :: !(Maybe Text)
+    , _plPayload :: !LookupRequest
+    , _plProjectId :: !Text
+    , _plCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Sync
     , acwsPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.sync@ method which the
 -- 'AccountsContainersWorkspacesSync' request conforms to.

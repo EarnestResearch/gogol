@@ -44,8 +44,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Patch
     , pncpCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.patch@ method which the
 -- 'ProjectsNotificationChannelsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsNotificationChannelsPatchResource =
 -- /See:/ 'projectsNotificationChannelsPatch' smart constructor.
 data ProjectsNotificationChannelsPatch =
   ProjectsNotificationChannelsPatch'
-    { _pncpXgafv          :: !(Maybe Xgafv)
+    { _pncpXgafv :: !(Maybe Xgafv)
     , _pncpUploadProtocol :: !(Maybe Text)
-    , _pncpUpdateMask     :: !(Maybe GFieldMask)
-    , _pncpAccessToken    :: !(Maybe Text)
-    , _pncpUploadType     :: !(Maybe Text)
-    , _pncpPayload        :: !NotificationChannel
-    , _pncpName           :: !Text
-    , _pncpCallback       :: !(Maybe Text)
+    , _pncpUpdateMask :: !(Maybe GFieldMask)
+    , _pncpAccessToken :: !(Maybe Text)
+    , _pncpUploadType :: !(Maybe Text)
+    , _pncpPayload :: !NotificationChannel
+    , _pncpName :: !Text
+    , _pncpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Redis.Projects.Locations.Instances.Delete
     , plidCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Redis.Types
+import Network.Google.Prelude
+import Network.Google.Redis.Types
 
 -- | A resource alias for @redis.projects.locations.instances.delete@ method which the
 -- 'ProjectsLocationsInstancesDelete' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsLocationsInstancesDeleteResource =
 -- /See:/ 'projectsLocationsInstancesDelete' smart constructor.
 data ProjectsLocationsInstancesDelete =
   ProjectsLocationsInstancesDelete'
-    { _plidXgafv          :: !(Maybe Xgafv)
+    { _plidXgafv :: !(Maybe Xgafv)
     , _plidUploadProtocol :: !(Maybe Text)
-    , _plidAccessToken    :: !(Maybe Text)
-    , _plidUploadType     :: !(Maybe Text)
-    , _plidName           :: !Text
-    , _plidCallback       :: !(Maybe Text)
+    , _plidAccessToken :: !(Maybe Text)
+    , _plidUploadType :: !(Maybe Text)
+    , _plidName :: !Text
+    , _plidCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

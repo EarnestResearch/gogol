@@ -181,12 +181,12 @@ module Network.Google.Poly
     , uaAsset
     ) where
 
-import           Network.Google.Poly.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Poly.Assets.Get
-import           Network.Google.Resource.Poly.Assets.List
-import           Network.Google.Resource.Poly.Users.Assets.List
-import           Network.Google.Resource.Poly.Users.Likedassets.List
+import Network.Google.Prelude
+import Network.Google.Poly.Types
+import Network.Google.Resource.Poly.Assets.Get
+import Network.Google.Resource.Poly.Assets.List
+import Network.Google.Resource.Poly.Users.Assets.List
+import Network.Google.Resource.Poly.Users.Likedassets.List
 
 {- $resources
 TODO

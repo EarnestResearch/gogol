@@ -46,8 +46,8 @@ module Network.Google.Resource.Reports.Activities.List
     , alOrgUnitId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
+import Network.Google.Prelude
+import Network.Google.Reports.Types
 
 -- | A resource alias for @reports.activities.list@ method which the
 -- 'ActivitiesList' request conforms to.
@@ -77,17 +77,17 @@ type ActivitiesListResource =
 -- /See:/ 'activitiesList' smart constructor.
 data ActivitiesList =
   ActivitiesList'
-    { _alStartTime       :: !(Maybe Text)
-    , _alFilters         :: !(Maybe Text)
-    , _alCustomerId      :: !(Maybe Text)
-    , _alActorIPAddress  :: !(Maybe Text)
-    , _alEndTime         :: !(Maybe Text)
+    { _alStartTime :: !(Maybe Text)
+    , _alFilters :: !(Maybe Text)
+    , _alCustomerId :: !(Maybe Text)
+    , _alActorIPAddress :: !(Maybe Text)
+    , _alEndTime :: !(Maybe Text)
     , _alApplicationName :: !Text
-    , _alPageToken       :: !(Maybe Text)
-    , _alEventName       :: !(Maybe Text)
-    , _alUserKey         :: !Text
-    , _alMaxResults      :: !(Maybe (Textual Int32))
-    , _alOrgUnitId       :: !Text
+    , _alPageToken :: !(Maybe Text)
+    , _alEventName :: !(Maybe Text)
+    , _alUserKey :: !Text
+    , _alMaxResults :: !(Maybe (Textual Int32))
+    , _alOrgUnitId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

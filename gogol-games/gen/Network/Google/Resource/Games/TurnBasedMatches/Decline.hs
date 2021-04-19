@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Decline
     , tbmdMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.decline@ method which the
 -- 'TurnBasedMatchesDecline' request conforms to.
@@ -58,7 +58,7 @@ type TurnBasedMatchesDeclineResource =
 data TurnBasedMatchesDecline =
   TurnBasedMatchesDecline'
     { _tbmdLanguage :: !(Maybe Text)
-    , _tbmdMatchId  :: !Text
+    , _tbmdMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -47,8 +47,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.GetServiceAccount
     , egsaEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.getServiceAccount@ method which the
 -- 'EnterprisesGetServiceAccount' request conforms to.
@@ -79,7 +79,7 @@ type EnterprisesGetServiceAccountResource =
 -- /See:/ 'enterprisesGetServiceAccount' smart constructor.
 data EnterprisesGetServiceAccount =
   EnterprisesGetServiceAccount'
-    { _egsaKeyType      :: !(Maybe EnterprisesGetServiceAccountKeyType)
+    { _egsaKeyType :: !(Maybe EnterprisesGetServiceAccountKeyType)
     , _egsaEnterpriseId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

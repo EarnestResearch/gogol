@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Rooms.Get
     , rgLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.get@ method which the
 -- 'RoomsGet' request conforms to.
@@ -55,7 +55,7 @@ type RoomsGetResource =
 -- /See:/ 'roomsGet' smart constructor.
 data RoomsGet =
   RoomsGet'
-    { _rgRoomId   :: !Text
+    { _rgRoomId :: !Text
     , _rgLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

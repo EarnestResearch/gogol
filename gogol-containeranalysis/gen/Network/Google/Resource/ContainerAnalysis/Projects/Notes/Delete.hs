@@ -41,8 +41,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Notes.Delete
     , pndCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.notes.delete@ method which the
 -- 'ProjectsNotesDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsNotesDeleteResource =
 -- /See:/ 'projectsNotesDelete' smart constructor.
 data ProjectsNotesDelete =
   ProjectsNotesDelete'
-    { _pndXgafv          :: !(Maybe Xgafv)
+    { _pndXgafv :: !(Maybe Xgafv)
     , _pndUploadProtocol :: !(Maybe Text)
-    , _pndAccessToken    :: !(Maybe Text)
-    , _pndUploadType     :: !(Maybe Text)
-    , _pndName           :: !Text
-    , _pndCallback       :: !(Maybe Text)
+    , _pndAccessToken :: !(Maybe Text)
+    , _pndUploadType :: !(Maybe Text)
+    , _pndName :: !Text
+    , _pndCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

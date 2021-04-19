@@ -41,8 +41,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Occurrences.Get
     , pogCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.occurrences.get@ method which the
 -- 'ProjectsOccurrencesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsOccurrencesGetResource =
 -- /See:/ 'projectsOccurrencesGet' smart constructor.
 data ProjectsOccurrencesGet =
   ProjectsOccurrencesGet'
-    { _pogXgafv          :: !(Maybe Xgafv)
+    { _pogXgafv :: !(Maybe Xgafv)
     , _pogUploadProtocol :: !(Maybe Text)
-    , _pogAccessToken    :: !(Maybe Text)
-    , _pogUploadType     :: !(Maybe Text)
-    , _pogName           :: !Text
-    , _pogCallback       :: !(Maybe Text)
+    , _pogAccessToken :: !(Maybe Text)
+    , _pogUploadType :: !(Maybe Text)
+    , _pogName :: !Text
+    , _pogCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

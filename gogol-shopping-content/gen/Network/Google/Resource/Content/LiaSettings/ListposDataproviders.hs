@@ -35,14 +35,14 @@ module Network.Google.Resource.Content.LiaSettings.ListposDataproviders
 
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.listposdataproviders@ method which the
 -- 'LiaSettingsListposDataproviders' request conforms to.
 type LiaSettingsListposDataprovidersResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "liasettings" :>
            "posdataproviders" :>
              QueryParam "alt" AltJSON :>

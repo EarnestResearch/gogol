@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AccountActiveAdSummaries.Get
     , aaasgSummaryAccountId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountActiveAdSummaries.get@ method which the
 -- 'AccountActiveAdSummariesGet' request conforms to.
@@ -57,7 +57,7 @@ type AccountActiveAdSummariesGetResource =
 -- /See:/ 'accountActiveAdSummariesGet' smart constructor.
 data AccountActiveAdSummariesGet =
   AccountActiveAdSummariesGet'
-    { _aaasgProFileId        :: !(Textual Int64)
+    { _aaasgProFileId :: !(Textual Int64)
     , _aaasgSummaryAccountId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

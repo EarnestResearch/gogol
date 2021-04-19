@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Notifications.Patch
     , npNotificationId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.notifications.patch@ method which the
 -- 'NotificationsPatch' request conforms to.
@@ -60,8 +60,8 @@ type NotificationsPatchResource =
 -- /See:/ 'notificationsPatch' smart constructor.
 data NotificationsPatch =
   NotificationsPatch'
-    { _npPayload        :: !Notification
-    , _npCustomer       :: !Text
+    { _npPayload :: !Notification
+    , _npCustomer :: !Text
     , _npNotificationId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.CreateQuery
     , qcqPayload
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.createquery@ method which the
 -- 'QueriesCreateQuery' request conforms to.

@@ -44,8 +44,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdsssidDicomWebPath
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.studies.series.instances.delete@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesDelete' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesDeleteResource
 -- /See:/ 'projectsLocationsDataSetsDicomStoresStudiesSeriesInstancesDelete' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesDelete =
   ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesDelete'
-    { _pldsdsssidParent         :: !Text
-    , _pldsdsssidXgafv          :: !(Maybe Xgafv)
+    { _pldsdsssidParent :: !Text
+    , _pldsdsssidXgafv :: !(Maybe Xgafv)
     , _pldsdsssidUploadProtocol :: !(Maybe Text)
-    , _pldsdsssidAccessToken    :: !(Maybe Text)
-    , _pldsdsssidUploadType     :: !(Maybe Text)
-    , _pldsdsssidCallback       :: !(Maybe Text)
-    , _pldsdsssidDicomWebPath   :: !Text
+    , _pldsdsssidAccessToken :: !(Maybe Text)
+    , _pldsdsssidUploadType :: !(Maybe Text)
+    , _pldsdsssidCallback :: !(Maybe Text)
+    , _pldsdsssidDicomWebPath :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.GlobalOperations.List
     , golMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.globalOperations.list@ method which the
 -- 'GlobalOperationsList' request conforms to.
@@ -65,10 +65,10 @@ type GlobalOperationsListResource =
 -- /See:/ 'globalOperationsList' smart constructor.
 data GlobalOperationsList =
   GlobalOperationsList'
-    { _golOrderBy    :: !(Maybe Text)
-    , _golProject    :: !Text
-    , _golFilter     :: !(Maybe Text)
-    , _golPageToken  :: !(Maybe Text)
+    { _golOrderBy :: !(Maybe Text)
+    , _golProject :: !Text
+    , _golFilter :: !(Maybe Text)
+    , _golPageToken :: !(Maybe Text)
     , _golMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

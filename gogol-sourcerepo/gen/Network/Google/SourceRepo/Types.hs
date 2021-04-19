@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -183,9 +183,9 @@ module Network.Google.SourceRepo.Types
     , bCondition
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SourceRepo.Types.Product
-import           Network.Google.SourceRepo.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SourceRepo.Types.Product
+import Network.Google.SourceRepo.Types.Sum
 
 -- | Default request referring to version 'v1' of the Cloud Source Repositories API. This contains the host and root path used as a starting point for constructing service requests.
 sourceRepoService :: ServiceConfig

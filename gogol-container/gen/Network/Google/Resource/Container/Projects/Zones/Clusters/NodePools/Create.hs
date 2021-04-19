@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.NodePools.Creat
     , pzcnpcCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.nodePools.create@ method which the
 -- 'ProjectsZonesClustersNodePoolsCreate' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsZonesClustersNodePoolsCreateResource =
 -- /See:/ 'projectsZonesClustersNodePoolsCreate' smart constructor.
 data ProjectsZonesClustersNodePoolsCreate =
   ProjectsZonesClustersNodePoolsCreate'
-    { _pzcnpcXgafv          :: !(Maybe Xgafv)
+    { _pzcnpcXgafv :: !(Maybe Xgafv)
     , _pzcnpcUploadProtocol :: !(Maybe Text)
-    , _pzcnpcAccessToken    :: !(Maybe Text)
-    , _pzcnpcUploadType     :: !(Maybe Text)
-    , _pzcnpcZone           :: !Text
-    , _pzcnpcPayload        :: !CreateNodePoolRequest
-    , _pzcnpcClusterId      :: !Text
-    , _pzcnpcProjectId      :: !Text
-    , _pzcnpcCallback       :: !(Maybe Text)
+    , _pzcnpcAccessToken :: !(Maybe Text)
+    , _pzcnpcUploadType :: !(Maybe Text)
+    , _pzcnpcZone :: !Text
+    , _pzcnpcPayload :: !CreateNodePoolRequest
+    , _pzcnpcClusterId :: !Text
+    , _pzcnpcProjectId :: !Text
+    , _pzcnpcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

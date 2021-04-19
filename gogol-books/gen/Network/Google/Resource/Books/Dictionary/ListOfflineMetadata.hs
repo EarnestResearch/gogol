@@ -36,8 +36,8 @@ module Network.Google.Resource.Books.Dictionary.ListOfflineMetadata
     , dlomCpksver
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.dictionary.listOfflineMetadata@ method which the
 -- 'DictionaryListOfflineMetadata' request conforms to.

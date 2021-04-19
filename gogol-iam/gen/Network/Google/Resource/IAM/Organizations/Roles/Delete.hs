@@ -48,8 +48,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.Delete
     , ordCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.delete@ method which the
 -- 'OrganizationsRolesDelete' request conforms to.
@@ -75,13 +75,13 @@ type OrganizationsRolesDeleteResource =
 -- /See:/ 'organizationsRolesDelete' smart constructor.
 data OrganizationsRolesDelete =
   OrganizationsRolesDelete'
-    { _ordXgafv          :: !(Maybe Xgafv)
-    , _ordEtag           :: !(Maybe Bytes)
+    { _ordXgafv :: !(Maybe Xgafv)
+    , _ordEtag :: !(Maybe Bytes)
     , _ordUploadProtocol :: !(Maybe Text)
-    , _ordAccessToken    :: !(Maybe Text)
-    , _ordUploadType     :: !(Maybe Text)
-    , _ordName           :: !Text
-    , _ordCallback       :: !(Maybe Text)
+    , _ordAccessToken :: !(Maybe Text)
+    , _ordUploadType :: !(Maybe Text)
+    , _ordName :: !Text
+    , _ordCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

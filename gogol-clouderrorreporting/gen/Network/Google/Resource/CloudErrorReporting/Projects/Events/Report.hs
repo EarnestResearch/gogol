@@ -47,8 +47,8 @@ module Network.Google.Resource.CloudErrorReporting.Projects.Events.Report
     , perCallback
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouderrorreporting.projects.events.report@ method which the
 -- 'ProjectsEventsReport' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsEventsReportResource =
 -- /See:/ 'projectsEventsReport' smart constructor.
 data ProjectsEventsReport =
   ProjectsEventsReport'
-    { _perXgafv          :: !(Maybe Xgafv)
+    { _perXgafv :: !(Maybe Xgafv)
     , _perUploadProtocol :: !(Maybe Text)
-    , _perAccessToken    :: !(Maybe Text)
-    , _perUploadType     :: !(Maybe Text)
-    , _perPayload        :: !ReportedErrorEvent
-    , _perProjectName    :: !Text
-    , _perCallback       :: !(Maybe Text)
+    , _perAccessToken :: !(Maybe Text)
+    , _perUploadType :: !(Maybe Text)
+    , _perPayload :: !ReportedErrorEvent
+    , _perProjectName :: !Text
+    , _perCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

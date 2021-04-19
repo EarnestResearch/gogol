@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.PlatformTypes.List
     , ptlProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.platformTypes.list@ method which the
 -- 'PlatformTypesList' request conforms to.

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Get
     , fId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.get@ method which the
 -- 'FloodlightActivitiesGet' request conforms to.
@@ -58,7 +58,7 @@ type FloodlightActivitiesGetResource =
 data FloodlightActivitiesGet =
   FloodlightActivitiesGet'
     { _fProFileId :: !(Textual Int64)
-    , _fId        :: !(Textual Int64)
+    , _fId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

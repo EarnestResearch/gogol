@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.Reaut
     , acerPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.reauthorize@ method which the
 -- 'AccountsContainersEnvironmentsReauthorize' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersEnvironmentsReauthorizeResource
 -- /See:/ 'accountsContainersEnvironmentsReauthorize' smart constructor.
 data AccountsContainersEnvironmentsReauthorize =
   AccountsContainersEnvironmentsReauthorize'
-    { _acerPath    :: !Text
+    { _acerPath :: !Text
     , _acerPayload :: !Environment
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Patch
     , sapId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.patch@ method which the
 -- 'SubAccountsPatch' request conforms to.
@@ -60,8 +60,8 @@ type SubAccountsPatchResource =
 data SubAccountsPatch =
   SubAccountsPatch'
     { _sapProFileId :: !(Textual Int64)
-    , _sapPayload   :: !SubAccount
-    , _sapId        :: !(Textual Int64)
+    , _sapPayload :: !SubAccount
+    , _sapId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

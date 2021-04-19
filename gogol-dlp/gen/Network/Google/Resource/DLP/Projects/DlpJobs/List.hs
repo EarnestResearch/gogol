@@ -49,8 +49,8 @@ module Network.Google.Resource.DLP.Projects.DlpJobs.List
     , pdjlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.dlpJobs.list@ method which the
 -- 'ProjectsDlpJobsList' request conforms to.
@@ -80,17 +80,17 @@ type ProjectsDlpJobsListResource =
 -- /See:/ 'projectsDlpJobsList' smart constructor.
 data ProjectsDlpJobsList =
   ProjectsDlpJobsList'
-    { _pdjlParent         :: !Text
-    , _pdjlXgafv          :: !(Maybe Xgafv)
+    { _pdjlParent :: !Text
+    , _pdjlXgafv :: !(Maybe Xgafv)
     , _pdjlUploadProtocol :: !(Maybe Text)
-    , _pdjlOrderBy        :: !(Maybe Text)
-    , _pdjlAccessToken    :: !(Maybe Text)
-    , _pdjlUploadType     :: !(Maybe Text)
-    , _pdjlFilter         :: !(Maybe Text)
-    , _pdjlPageToken      :: !(Maybe Text)
-    , _pdjlType           :: !(Maybe Text)
-    , _pdjlPageSize       :: !(Maybe (Textual Int32))
-    , _pdjlCallback       :: !(Maybe Text)
+    , _pdjlOrderBy :: !(Maybe Text)
+    , _pdjlAccessToken :: !(Maybe Text)
+    , _pdjlUploadType :: !(Maybe Text)
+    , _pdjlFilter :: !(Maybe Text)
+    , _pdjlPageToken :: !(Maybe Text)
+    , _pdjlType :: !(Maybe Text)
+    , _pdjlPageSize :: !(Maybe (Textual Int32))
+    , _pdjlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

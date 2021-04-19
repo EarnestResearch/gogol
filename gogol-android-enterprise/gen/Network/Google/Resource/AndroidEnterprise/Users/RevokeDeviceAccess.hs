@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.RevokeDeviceAccess
     , urdaUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.revokeDeviceAccess@ method which the
 -- 'UsersRevokeDeviceAccess' request conforms to.
@@ -62,7 +62,7 @@ type UsersRevokeDeviceAccessResource =
 data UsersRevokeDeviceAccess =
   UsersRevokeDeviceAccess'
     { _urdaEnterpriseId :: !Text
-    , _urdaUserId       :: !Text
+    , _urdaUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

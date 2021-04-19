@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.List
     , ddlCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.debugger.debuggees.list@ method which the
 -- 'DebuggerDebuggeesList' request conforms to.
@@ -68,14 +68,14 @@ type DebuggerDebuggeesListResource =
 -- /See:/ 'debuggerDebuggeesList' smart constructor.
 data DebuggerDebuggeesList =
   DebuggerDebuggeesList'
-    { _ddlXgafv           :: !(Maybe Xgafv)
+    { _ddlXgafv :: !(Maybe Xgafv)
     , _ddlIncludeInactive :: !(Maybe Bool)
-    , _ddlUploadProtocol  :: !(Maybe Text)
-    , _ddlProject         :: !(Maybe Text)
-    , _ddlAccessToken     :: !(Maybe Text)
-    , _ddlUploadType      :: !(Maybe Text)
-    , _ddlClientVersion   :: !(Maybe Text)
-    , _ddlCallback        :: !(Maybe Text)
+    , _ddlUploadProtocol :: !(Maybe Text)
+    , _ddlProject :: !(Maybe Text)
+    , _ddlAccessToken :: !(Maybe Text)
+    , _ddlUploadType :: !(Maybe Text)
+    , _ddlClientVersion :: !(Maybe Text)
+    , _ddlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

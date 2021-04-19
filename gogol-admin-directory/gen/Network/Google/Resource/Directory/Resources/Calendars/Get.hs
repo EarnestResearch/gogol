@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.Get
     , rcgCalendarResourceId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.get@ method which the
 -- 'ResourcesCalendarsGet' request conforms to.
@@ -59,7 +59,7 @@ type ResourcesCalendarsGetResource =
 -- /See:/ 'resourcesCalendarsGet' smart constructor.
 data ResourcesCalendarsGet =
   ResourcesCalendarsGet'
-    { _rcgCustomer           :: !Text
+    { _rcgCustomer :: !Text
     , _rcgCalendarResourceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

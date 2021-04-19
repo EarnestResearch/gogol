@@ -49,8 +49,8 @@ module Network.Google.Resource.Jobs.Projects.Complete
     , pcCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.complete@ method which the
 -- 'ProjectsComplete' request conforms to.
@@ -78,19 +78,19 @@ type ProjectsCompleteResource =
 -- /See:/ 'projectsComplete' smart constructor.
 data ProjectsComplete =
   ProjectsComplete'
-    { _pcLanguageCodes  :: !(Maybe [Text])
-    , _pcXgafv          :: !(Maybe Xgafv)
-    , _pcLanguageCode   :: !(Maybe Text)
+    { _pcLanguageCodes :: !(Maybe [Text])
+    , _pcXgafv :: !(Maybe Xgafv)
+    , _pcLanguageCode :: !(Maybe Text)
     , _pcUploadProtocol :: !(Maybe Text)
-    , _pcCompanyName    :: !(Maybe Text)
-    , _pcAccessToken    :: !(Maybe Text)
-    , _pcUploadType     :: !(Maybe Text)
-    , _pcName           :: !Text
-    , _pcScope          :: !(Maybe Text)
-    , _pcQuery          :: !(Maybe Text)
-    , _pcType           :: !(Maybe Text)
-    , _pcPageSize       :: !(Maybe (Textual Int32))
-    , _pcCallback       :: !(Maybe Text)
+    , _pcCompanyName :: !(Maybe Text)
+    , _pcAccessToken :: !(Maybe Text)
+    , _pcUploadType :: !(Maybe Text)
+    , _pcName :: !Text
+    , _pcScope :: !(Maybe Text)
+    , _pcQuery :: !(Maybe Text)
+    , _pcType :: !(Maybe Text)
+    , _pcPageSize :: !(Maybe (Textual Int32))
+    , _pcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

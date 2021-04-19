@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.GetIAMPolicy
     , cgipCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.getIamPolicy@ method which the
 -- 'CatalogsGetIAMPolicy' request conforms to.
@@ -62,12 +62,12 @@ type CatalogsGetIAMPolicyResource =
 -- /See:/ 'catalogsGetIAMPolicy' smart constructor.
 data CatalogsGetIAMPolicy =
   CatalogsGetIAMPolicy'
-    { _cgipXgafv          :: !(Maybe Xgafv)
+    { _cgipXgafv :: !(Maybe Xgafv)
     , _cgipUploadProtocol :: !(Maybe Text)
-    , _cgipAccessToken    :: !(Maybe Text)
-    , _cgipUploadType     :: !(Maybe Text)
-    , _cgipResource       :: !Text
-    , _cgipCallback       :: !(Maybe Text)
+    , _cgipAccessToken :: !(Maybe Text)
+    , _cgipUploadType :: !(Maybe Text)
+    , _cgipResource :: !Text
+    , _cgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

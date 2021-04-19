@@ -213,9 +213,9 @@ module Network.Google.PageSpeed
     , lrvaAddtional
     ) where
 
-import           Network.Google.PageSpeed.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.PagespeedOnline.PagespeedAPI.RunPagespeed
+import Network.Google.Prelude
+import Network.Google.PageSpeed.Types
+import Network.Google.Resource.PagespeedOnline.PagespeedAPI.RunPagespeed
 
 {- $resources
 TODO

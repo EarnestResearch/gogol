@@ -580,13 +580,13 @@ module Network.Google.VideoIntelligence
     -- ** GoogleCloudVideointelligenceV1_LabelSegment
     , GoogleCloudVideointelligenceV1_LabelSegment
     , googleCloudVideointelligenceV1_LabelSegment
-    , g2Confidence
-    , g2Segment
+    , g1Confidence
+    , g1Segment
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.VideoIntelligence.Videos.Annotate
-import           Network.Google.VideoIntelligence.Types
+import Network.Google.Prelude
+import Network.Google.Resource.VideoIntelligence.Videos.Annotate
+import Network.Google.VideoIntelligence.Types
 
 {- $resources
 TODO

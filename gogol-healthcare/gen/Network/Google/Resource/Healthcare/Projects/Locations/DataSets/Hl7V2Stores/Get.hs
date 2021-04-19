@@ -41,8 +41,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsgCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.get@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresGet' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsLocationsDataSetsHl7V2StoresGetResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresGet' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresGet =
   ProjectsLocationsDataSetsHl7V2StoresGet'
-    { _pldshvsgXgafv          :: !(Maybe Xgafv)
+    { _pldshvsgXgafv :: !(Maybe Xgafv)
     , _pldshvsgUploadProtocol :: !(Maybe Text)
-    , _pldshvsgAccessToken    :: !(Maybe Text)
-    , _pldshvsgUploadType     :: !(Maybe Text)
-    , _pldshvsgName           :: !Text
-    , _pldshvsgCallback       :: !(Maybe Text)
+    , _pldshvsgAccessToken :: !(Maybe Text)
+    , _pldshvsgUploadType :: !(Maybe Text)
+    , _pldshvsgName :: !Text
+    , _pldshvsgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

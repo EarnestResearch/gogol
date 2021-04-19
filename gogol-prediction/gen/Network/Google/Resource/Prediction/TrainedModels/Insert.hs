@@ -37,8 +37,8 @@ module Network.Google.Resource.Prediction.TrainedModels.Insert
     , tmiPayload
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.trainedmodels.insert@ method which the
 -- 'TrainedModelsInsert' request conforms to.

@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Get
     , idigCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.get@ method which the
 -- 'IndexingDatasourcesItemsGet' request conforms to.
@@ -66,14 +66,14 @@ type IndexingDatasourcesItemsGetResource =
 -- /See:/ 'indexingDatasourcesItemsGet' smart constructor.
 data IndexingDatasourcesItemsGet =
   IndexingDatasourcesItemsGet'
-    { _idigXgafv                       :: !(Maybe Xgafv)
-    , _idigUploadProtocol              :: !(Maybe Text)
-    , _idigAccessToken                 :: !(Maybe Text)
-    , _idigUploadType                  :: !(Maybe Text)
-    , _idigConnectorName               :: !(Maybe Text)
-    , _idigName                        :: !Text
+    { _idigXgafv :: !(Maybe Xgafv)
+    , _idigUploadProtocol :: !(Maybe Text)
+    , _idigAccessToken :: !(Maybe Text)
+    , _idigUploadType :: !(Maybe Text)
+    , _idigConnectorName :: !(Maybe Text)
+    , _idigName :: !Text
     , _idigDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _idigCallback                    :: !(Maybe Text)
+    , _idigCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.Storage.Objects.Update
     , ouGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.update@ method which the
 -- 'ObjectsUpdate' request conforms to.
@@ -76,17 +76,17 @@ type ObjectsUpdateResource =
 -- /See:/ 'objectsUpdate' smart constructor.
 data ObjectsUpdate =
   ObjectsUpdate'
-    { _ouIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _ouIfGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _ouIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _ouPredefinedACL            :: !(Maybe ObjectsUpdatePredefinedACL)
-    , _ouBucket                   :: !Text
-    , _ouPayload                  :: !Object
-    , _ouUserProject              :: !(Maybe Text)
+    { _ouIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _ouIfGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _ouIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _ouPredefinedACL :: !(Maybe ObjectsUpdatePredefinedACL)
+    , _ouBucket :: !Text
+    , _ouPayload :: !Object
+    , _ouUserProject :: !(Maybe Text)
     , _ouIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _ouObject                   :: !Text
-    , _ouProjection               :: !(Maybe ObjectsUpdateProjection)
-    , _ouGeneration               :: !(Maybe (Textual Int64))
+    , _ouObject :: !Text
+    , _ouProjection :: !(Maybe ObjectsUpdateProjection)
+    , _ouGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Domains.Insert
     , diCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domains.insert@ method which the
 -- 'DomainsInsert' request conforms to.
@@ -57,7 +57,7 @@ type DomainsInsertResource =
 -- /See:/ 'domainsInsert' smart constructor.
 data DomainsInsert =
   DomainsInsert'
-    { _diPayload  :: !Domains
+    { _diPayload :: !Domains
     , _diCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

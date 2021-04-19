@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.UserPermissions.Delete
     , aupdPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.user_permissions.delete@ method which the
 -- 'AccountsUserPermissionsDelete' request conforms to.

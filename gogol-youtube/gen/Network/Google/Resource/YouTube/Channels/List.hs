@@ -47,8 +47,8 @@ module Network.Google.Resource.YouTube.Channels.List
     , cMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.channels.list@ method which the
 -- 'ChannelsList' request conforms to.
@@ -76,17 +76,17 @@ type ChannelsListResource =
 -- /See:/ 'channelsList' smart constructor.
 data ChannelsList =
   ChannelsList'
-    { _cPart                   :: !Text
-    , _cMine                   :: !(Maybe Bool)
-    , _cForUsername            :: !(Maybe Text)
-    , _cHl                     :: !(Maybe Text)
+    { _cPart :: !Text
+    , _cMine :: !(Maybe Bool)
+    , _cForUsername :: !(Maybe Text)
+    , _cHl :: !(Maybe Text)
     , _cOnBehalfOfContentOwner :: !(Maybe Text)
-    , _cCategoryId             :: !(Maybe Text)
-    , _cId                     :: !(Maybe Text)
-    , _cMySubscribers          :: !(Maybe Bool)
-    , _cPageToken              :: !(Maybe Text)
-    , _cManagedByMe            :: !(Maybe Bool)
-    , _cMaxResults             :: !(Textual Word32)
+    , _cCategoryId :: !(Maybe Text)
+    , _cId :: !(Maybe Text)
+    , _cMySubscribers :: !(Maybe Bool)
+    , _cPageToken :: !(Maybe Text)
+    , _cManagedByMe :: !(Maybe Bool)
+    , _cMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

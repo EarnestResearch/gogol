@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.Instances.Update
     , iuInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.update@ method which the
 -- 'InstancesUpdate' request conforms to.
@@ -63,8 +63,8 @@ type InstancesUpdateResource =
 -- /See:/ 'instancesUpdate' smart constructor.
 data InstancesUpdate =
   InstancesUpdate'
-    { _iuProject  :: !Text
-    , _iuPayload  :: !DatabaseInstance
+    { _iuProject :: !Text
+    , _iuPayload :: !DatabaseInstance
     , _iuInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

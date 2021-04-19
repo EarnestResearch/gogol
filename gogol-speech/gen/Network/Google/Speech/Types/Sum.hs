@@ -16,7 +16,7 @@
 --
 module Network.Google.Speech.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The original media the speech was recorded on.
 data RecognitionMetadataOriginalMediaType

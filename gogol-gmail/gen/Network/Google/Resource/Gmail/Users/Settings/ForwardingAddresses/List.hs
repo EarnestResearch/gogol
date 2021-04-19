@@ -36,8 +36,8 @@ module Network.Google.Resource.Gmail.Users.Settings.ForwardingAddresses.List
     , usfalUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.forwardingAddresses.list@ method which the
 -- 'UsersSettingsForwardingAddressesList' request conforms to.

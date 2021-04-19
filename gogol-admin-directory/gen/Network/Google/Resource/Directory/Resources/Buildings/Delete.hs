@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Buildings.Delete
     , rbdCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.buildings.delete@ method which the
 -- 'ResourcesBuildingsDelete' request conforms to.
@@ -59,7 +59,7 @@ type ResourcesBuildingsDeleteResource =
 data ResourcesBuildingsDelete =
   ResourcesBuildingsDelete'
     { _rbdBuildingId :: !Text
-    , _rbdCustomer   :: !Text
+    , _rbdCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.ServiceBroker.SetIAMPolicy
     , sipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceBroker.Types
+import Network.Google.Prelude
+import Network.Google.ServiceBroker.Types
 
 -- | A resource alias for @servicebroker.setIamPolicy@ method which the
 -- 'SetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type SetIAMPolicyResource =
 -- /See:/ 'setIAMPolicy' smart constructor.
 data SetIAMPolicy =
   SetIAMPolicy'
-    { _sipXgafv          :: !(Maybe Xgafv)
+    { _sipXgafv :: !(Maybe Xgafv)
     , _sipUploadProtocol :: !(Maybe Text)
-    , _sipAccessToken    :: !(Maybe Text)
-    , _sipUploadType     :: !(Maybe Text)
-    , _sipPayload        :: !GoogleIAMV1__SetIAMPolicyRequest
-    , _sipResource       :: !Text
-    , _sipCallback       :: !(Maybe Text)
+    , _sipAccessToken :: !(Maybe Text)
+    , _sipUploadType :: !(Maybe Text)
+    , _sipPayload :: !GoogleIAMV1__SetIAMPolicyRequest
+    , _sipResource :: !Text
+    , _sipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,21 +36,23 @@ module Network.Google.Resource.Content.Accounts.Delete
     , adMerchantId
     , adForce
     , adAccountId
+    , adDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.delete@ method which the
 -- 'AccountsDelete' request conforms to.
 type AccountsDeleteResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accounts" :>
              Capture "accountId" (Textual Word64) :>
                QueryParam "force" Bool :>
-                 QueryParam "alt" AltJSON :> Delete '[JSON] ()
+                 QueryParam "dryRun" Bool :>
+                   QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a Merchant Center sub-account.
 --
@@ -58,8 +60,9 @@ type AccountsDeleteResource =
 data AccountsDelete =
   AccountsDelete'
     { _adMerchantId :: !(Textual Word64)
-    , _adForce      :: !Bool
-    , _adAccountId  :: !(Textual Word64)
+    , _adForce :: !Bool
+    , _adAccountId :: !(Textual Word64)
+    , _adDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -73,6 +76,8 @@ data AccountsDelete =
 -- * 'adForce'
 --
 -- * 'adAccountId'
+--
+-- * 'adDryRun'
 accountsDelete
     :: Word64 -- ^ 'adMerchantId'
     -> Word64 -- ^ 'adAccountId'
@@ -82,6 +87,7 @@ accountsDelete pAdMerchantId_ pAdAccountId_ =
     { _adMerchantId = _Coerce # pAdMerchantId_
     , _adForce = False
     , _adAccountId = _Coerce # pAdAccountId_
+    , _adDryRun = Nothing
     }
 
 
@@ -102,12 +108,19 @@ adAccountId
   = lens _adAccountId (\ s a -> s{_adAccountId = a}) .
       _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+adDryRun :: Lens' AccountsDelete (Maybe Bool)
+adDryRun = lens _adDryRun (\ s a -> s{_adDryRun = a})
+
 instance GoogleRequest AccountsDelete where
         type Rs AccountsDelete = ()
         type Scopes AccountsDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountsDelete'{..}
           = go _adMerchantId _adAccountId (Just _adForce)
+              _adDryRun
               (Just AltJSON)
               shoppingContentService
           where go

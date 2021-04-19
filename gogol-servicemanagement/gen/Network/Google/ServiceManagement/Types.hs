@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -751,9 +751,9 @@ module Network.Google.ServiceManagement.Types
     , crAllowedResponseExtensions
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types.Product
-import           Network.Google.ServiceManagement.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types.Product
+import Network.Google.ServiceManagement.Types.Sum
 
 -- | Default request referring to version 'v1' of the Service Management API. This contains the host and root path used as a starting point for constructing service requests.
 serviceManagementService :: ServiceConfig

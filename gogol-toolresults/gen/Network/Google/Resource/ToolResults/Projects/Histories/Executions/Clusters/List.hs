@@ -44,8 +44,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Cluster
     , pheclProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.clusters.list@ method which the
 -- 'ProjectsHistoriesExecutionsClustersList' request conforms to.
@@ -75,8 +75,8 @@ type ProjectsHistoriesExecutionsClustersListResource
 data ProjectsHistoriesExecutionsClustersList =
   ProjectsHistoriesExecutionsClustersList'
     { _pheclExecutionId :: !Text
-    , _pheclHistoryId   :: !Text
-    , _pheclProjectId   :: !Text
+    , _pheclHistoryId :: !Text
+    , _pheclProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

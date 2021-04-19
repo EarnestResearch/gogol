@@ -45,8 +45,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.Create
     , pacCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.create@ method which the
 -- 'ProjectsAttestorsCreate' request conforms to.
@@ -70,14 +70,14 @@ type ProjectsAttestorsCreateResource =
 -- /See:/ 'projectsAttestorsCreate' smart constructor.
 data ProjectsAttestorsCreate =
   ProjectsAttestorsCreate'
-    { _pacParent         :: !Text
-    , _pacXgafv          :: !(Maybe Xgafv)
+    { _pacParent :: !Text
+    , _pacXgafv :: !(Maybe Xgafv)
     , _pacUploadProtocol :: !(Maybe Text)
-    , _pacAccessToken    :: !(Maybe Text)
-    , _pacUploadType     :: !(Maybe Text)
-    , _pacPayload        :: !Attestor
-    , _pacAttestorId     :: !(Maybe Text)
-    , _pacCallback       :: !(Maybe Text)
+    , _pacAccessToken :: !(Maybe Text)
+    , _pacUploadType :: !(Maybe Text)
+    , _pacPayload :: !Attestor
+    , _pacAttestorId :: !(Maybe Text)
+    , _pacCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

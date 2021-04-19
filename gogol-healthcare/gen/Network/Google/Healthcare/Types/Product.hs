@@ -17,8 +17,8 @@
 --
 module Network.Google.Healthcare.Types.Product where
 
-import           Network.Google.Healthcare.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -161,7 +161,7 @@ instance ToJSON OperationSchema where
 data ExportResourcesRequest =
   ExportResourcesRequest'
     { _errBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1beta1FhirBigQueryDestination)
-    , _errGcsDestination      :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsDestination)
+    , _errGcsDestination :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsDestination)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -259,12 +259,12 @@ instance ToJSON CharacterMaskConfig where
 -- /See:/ 'infoTypeTransformation' smart constructor.
 data InfoTypeTransformation =
   InfoTypeTransformation'
-    { _ittRedactConfig              :: !(Maybe RedactConfig)
-    , _ittCharacterMaskConfig       :: !(Maybe CharacterMaskConfig)
-    , _ittInfoTypes                 :: !(Maybe [Text])
-    , _ittDateShiftConfig           :: !(Maybe DateShiftConfig)
+    { _ittRedactConfig :: !(Maybe RedactConfig)
+    , _ittCharacterMaskConfig :: !(Maybe CharacterMaskConfig)
+    , _ittInfoTypes :: !(Maybe [Text])
+    , _ittDateShiftConfig :: !(Maybe DateShiftConfig)
     , _ittReplaceWithInfoTypeConfig :: !(Maybe ReplaceWithInfoTypeConfig)
-    , _ittCryptoHashConfig          :: !(Maybe CryptoHashConfig)
+    , _ittCryptoHashConfig :: !(Maybe CryptoHashConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -381,7 +381,7 @@ instance ToJSON InfoTypeTransformation where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -495,10 +495,10 @@ instance ToJSON RedactConfig where
 -- /See:/ 'deidentifyErrorDetails' smart constructor.
 data DeidentifyErrorDetails =
   DeidentifyErrorDetails'
-    { _dedSuccessStoreCount    :: !(Maybe (Textual Int64))
+    { _dedSuccessStoreCount :: !(Maybe (Textual Int64))
     , _dedSuccessResourceCount :: !(Maybe (Textual Int64))
     , _dedFailureResourceCount :: !(Maybe (Textual Int64))
-    , _dedFailureStoreCount    :: !(Maybe (Textual Int64))
+    , _dedFailureStoreCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -735,9 +735,9 @@ instance ToJSON FhirConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -853,7 +853,7 @@ instance ToJSON TextConfig where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -905,7 +905,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -960,7 +960,7 @@ instance ToJSON ListOperationsResponse where
 data GoogleCloudHealthcareV1beta1DicomGcsDestination =
   GoogleCloudHealthcareV1beta1DicomGcsDestination'
     { _gchvdgdURIPrefix :: !(Maybe Text)
-    , _gchvdgdMimeType  :: !(Maybe Text)
+    , _gchvdgdMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1029,13 +1029,13 @@ instance ToJSON
 -- /See:/ 'fhirStore' smart constructor.
 data FhirStore =
   FhirStore'
-    { _fsEnableUpdateCreate          :: !(Maybe Bool)
-    , _fsNotificationConfig          :: !(Maybe NotificationConfig)
+    { _fsEnableUpdateCreate :: !(Maybe Bool)
+    , _fsNotificationConfig :: !(Maybe NotificationConfig)
     , _fsDisableReferentialIntegrity :: !(Maybe Bool)
-    , _fsDisableResourceVersioning   :: !(Maybe Bool)
-    , _fsName                        :: !(Maybe Text)
-    , _fsLabels                      :: !(Maybe FhirStoreLabels)
-    , _fsEnableHistoryImport         :: !(Maybe Bool)
+    , _fsDisableResourceVersioning :: !(Maybe Bool)
+    , _fsName :: !(Maybe Text)
+    , _fsLabels :: !(Maybe FhirStoreLabels)
+    , _fsEnableHistoryImport :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1224,7 +1224,7 @@ instance ToJSON SegmentFields where
 -- /See:/ 'dataSet' smart constructor.
 data DataSet =
   DataSet'
-    { _dsName     :: !(Maybe Text)
+    { _dsName :: !(Maybe Text)
     , _dsTimeZone :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1328,11 +1328,11 @@ instance ToJSON
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1415,10 +1415,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1614,9 +1614,9 @@ instance ToJSON ImportDicomDataRequest where
 data Hl7V2Store =
   Hl7V2Store'
     { _hvsNotificationConfig :: !(Maybe NotificationConfig)
-    , _hvsName               :: !(Maybe Text)
-    , _hvsParserConfig       :: !(Maybe ParserConfig)
-    , _hvsLabels             :: !(Maybe Hl7V2StoreLabels)
+    , _hvsName :: !(Maybe Text)
+    , _hvsParserConfig :: !(Maybe ParserConfig)
+    , _hvsLabels :: !(Maybe Hl7V2StoreLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1786,7 +1786,7 @@ instance ToJSON StatusDetailsItem where
 data SchemaConfig =
   SchemaConfig'
     { _scRecursiveStructureDepth :: !(Maybe (Textual Int64))
-    , _scSchemaType              :: !(Maybe SchemaConfigSchemaType)
+    , _scSchemaType :: !(Maybe SchemaConfigSchemaType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1844,10 +1844,10 @@ instance ToJSON SchemaConfig where
 -- /See:/ 'googleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails' smart constructor.
 data GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails =
   GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails'
-    { _gchvfriredFhirStore    :: !(Maybe Text)
-    , _gchvfriredErrorCount   :: !(Maybe (Textual Int64))
+    { _gchvfriredFhirStore :: !(Maybe Text)
+    , _gchvfriredErrorCount :: !(Maybe (Textual Int64))
     , _gchvfriredSuccessCount :: !(Maybe (Textual Int64))
-    , _gchvfriredInputSize    :: !(Maybe (Textual Int64))
+    , _gchvfriredInputSize :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1975,7 +1975,7 @@ instance ToJSON DateShiftConfig where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2029,7 +2029,7 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'deidentifySummary' smart constructor.
 data DeidentifySummary =
   DeidentifySummary'
-    { _dsSuccessStoreCount    :: !(Maybe (Textual Int64))
+    { _dsSuccessStoreCount :: !(Maybe (Textual Int64))
     , _dsSuccessResourceCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2148,7 +2148,7 @@ instance ToJSON ProgressCounter where
 data FieldMetadata =
   FieldMetadata'
     { _fmAction :: !(Maybe FieldMetadataAction)
-    , _fmPaths  :: !(Maybe [Text])
+    , _fmPaths :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2206,8 +2206,8 @@ data DeidentifyConfig =
   DeidentifyConfig'
     { _dcDicom :: !(Maybe DicomConfig)
     , _dcImage :: !(Maybe ImageConfig)
-    , _dcFhir  :: !(Maybe FhirConfig)
-    , _dcText  :: !(Maybe TextConfig)
+    , _dcFhir :: !(Maybe FhirConfig)
+    , _dcText :: !(Maybe TextConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2317,7 +2317,7 @@ instance ToJSON FhirStoreLabels where
 data GoogleCloudHealthcareV1beta1FhirBigQueryDestination =
   GoogleCloudHealthcareV1beta1FhirBigQueryDestination'
     { _gchvfbqdSchemaConfig :: !(Maybe SchemaConfig)
-    , _gchvfbqdDataSetURI   :: !(Maybe Text)
+    , _gchvfbqdDataSetURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2401,7 +2401,7 @@ instance ToJSON ReplaceWithInfoTypeConfig where
 -- /See:/ 'ingestMessageResponse' smart constructor.
 data IngestMessageResponse =
   IngestMessageResponse'
-    { _imrHl7Ack  :: !(Maybe Bytes)
+    { _imrHl7Ack :: !(Maybe Bytes)
     , _imrMessage :: !(Maybe Message)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2495,7 +2495,7 @@ instance ToJSON TestIAMPermissionsRequest where
 data ListHl7V2StoresResponse =
   ListHl7V2StoresResponse'
     { _lhvsrNextPageToken :: !(Maybe Text)
-    , _lhvsrHl7V2Stores   :: !(Maybe [Hl7V2Store])
+    , _lhvsrHl7V2Stores :: !(Maybe [Hl7V2Store])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2550,7 +2550,7 @@ instance ToJSON ListHl7V2StoresResponse where
 -- /See:/ 'importResourcesRequest' smart constructor.
 data ImportResourcesRequest =
   ImportResourcesRequest'
-    { _irrGcsSource        :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsSource)
+    { _irrGcsSource :: !(Maybe GoogleCloudHealthcareV1beta1FhirRestGcsSource)
     , _irrContentStructure :: !(Maybe ImportResourcesRequestContentStructure)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2652,7 +2652,7 @@ instance ToJSON Hl7V2StoreLabels where
 data ParserConfig =
   ParserConfig'
     { _pcSegmentTerminator :: !(Maybe Bytes)
-    , _pcAllowNullHeader   :: !(Maybe Bool)
+    , _pcAllowNullHeader :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2721,8 +2721,8 @@ instance ToJSON ParserConfig where
 -- /See:/ 'hTTPBody' smart constructor.
 data HTTPBody =
   HTTPBody'
-    { _httpbExtensions  :: !(Maybe [HTTPBodyExtensionsItem])
-    , _httpbData        :: !(Maybe Bytes)
+    { _httpbExtensions :: !(Maybe [HTTPBodyExtensionsItem])
+    , _httpbData :: !(Maybe Bytes)
     , _httpbContentType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2873,7 +2873,7 @@ instance ToJSON TestIAMPermissionsResponse where
 data ListDataSetsResponse =
   ListDataSetsResponse'
     { _ldsrNextPageToken :: !(Maybe Text)
-    , _ldsrDataSets      :: !(Maybe [DataSet])
+    , _ldsrDataSets :: !(Maybe [DataSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2942,9 +2942,9 @@ instance ToJSON ListDataSetsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3030,7 +3030,7 @@ instance ToJSON Policy where
 data ListFhirStoresResponse =
   ListFhirStoresResponse'
     { _lfsrNextPageToken :: !(Maybe Text)
-    , _lfsrFhirStores    :: !(Maybe [FhirStore])
+    , _lfsrFhirStores :: !(Maybe [FhirStore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3192,10 +3192,10 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omCounter       :: !(Maybe ProgressCounter)
-    , _omEndTime       :: !(Maybe DateTime')
+    { _omCounter :: !(Maybe ProgressCounter)
+    , _omEndTime :: !(Maybe DateTime')
     , _omAPIMethodName :: !(Maybe Text)
-    , _omCreateTime    :: !(Maybe DateTime')
+    , _omCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3269,15 +3269,15 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'message' smart constructor.
 data Message =
   Message'
-    { _mData         :: !(Maybe Bytes)
-    , _mMessageType  :: !(Maybe Text)
-    , _mName         :: !(Maybe Text)
-    , _mPatientIds   :: !(Maybe [PatientId])
-    , _mLabels       :: !(Maybe MessageLabels)
-    , _mSendTime     :: !(Maybe DateTime')
+    { _mData :: !(Maybe Bytes)
+    , _mMessageType :: !(Maybe Text)
+    , _mName :: !(Maybe Text)
+    , _mPatientIds :: !(Maybe [PatientId])
+    , _mLabels :: !(Maybe MessageLabels)
+    , _mSendTime :: !(Maybe DateTime')
     , _mSendFacility :: !(Maybe Text)
-    , _mCreateTime   :: !(Maybe DateTime')
-    , _mParsedData   :: !(Maybe ParsedData)
+    , _mCreateTime :: !(Maybe DateTime')
+    , _mParsedData :: !(Maybe ParsedData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3508,8 +3508,8 @@ instance ToJSON CryptoHashConfig where
 data DicomStore =
   DicomStore'
     { _dNotificationConfig :: !(Maybe NotificationConfig)
-    , _dName               :: !(Maybe Text)
-    , _dLabels             :: !(Maybe DicomStoreLabels)
+    , _dName :: !(Maybe Text)
+    , _dLabels :: !(Maybe DicomStoreLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3621,7 +3621,7 @@ instance ToJSON ImportDicomDataErrorDetails where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3674,7 +3674,7 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'googleCloudHealthcareV1beta1DicomBigQueryDestination' smart constructor.
 data GoogleCloudHealthcareV1beta1DicomBigQueryDestination =
   GoogleCloudHealthcareV1beta1DicomBigQueryDestination'
-    { _gchvdbqdForce    :: !(Maybe Bool)
+    { _gchvdbqdForce :: !(Maybe Bool)
     , _gchvdbqdTableURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3735,9 +3735,9 @@ instance ToJSON
 -- /See:/ 'segment' smart constructor.
 data Segment =
   Segment'
-    { _sSetId     :: !(Maybe Text)
+    { _sSetId :: !(Maybe Text)
     , _sSegmentId :: !(Maybe Text)
-    , _sFields    :: !(Maybe SegmentFields)
+    , _sFields :: !(Maybe SegmentFields)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3880,7 +3880,7 @@ instance ToJSON SearchResourcesRequest where
 -- /See:/ 'deidentifyDataSetRequest' smart constructor.
 data DeidentifyDataSetRequest =
   DeidentifyDataSetRequest'
-    { _ddsrConfig             :: !(Maybe DeidentifyConfig)
+    { _ddsrConfig :: !(Maybe DeidentifyConfig)
     , _ddsrDestinationDataSet :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3935,7 +3935,7 @@ instance ToJSON DeidentifyDataSetRequest where
 data PatientId =
   PatientId'
     { _piValue :: !(Maybe Text)
-    , _piType  :: !(Maybe Text)
+    , _piType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3979,7 +3979,7 @@ instance ToJSON PatientId where
 -- /See:/ 'googleCloudHealthcareV1beta1FhirRestExportResourcesResponse' smart constructor.
 data GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse =
   GoogleCloudHealthcareV1beta1FhirRestExportResourcesResponse'
-    { _gchvfrerrFhirStore     :: !(Maybe Text)
+    { _gchvfrerrFhirStore :: !(Maybe Text)
     , _gchvfrerrResourceCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4039,8 +4039,8 @@ instance ToJSON
 -- /See:/ 'dicomConfig' smart constructor.
 data DicomConfig =
   DicomConfig'
-    { _dcKeepList      :: !(Maybe TagFilterList)
-    , _dcRemoveList    :: !(Maybe TagFilterList)
+    { _dcKeepList :: !(Maybe TagFilterList)
+    , _dcRemoveList :: !(Maybe TagFilterList)
     , _dcFilterProFile :: !(Maybe DicomConfigFilterProFile)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4219,7 +4219,7 @@ instance ToJSON DicomStoreLabels where
 data ListMessagesResponse =
   ListMessagesResponse'
     { _lmrNextPageToken :: !(Maybe Text)
-    , _lmrMessages      :: !(Maybe [Text])
+    , _lmrMessages :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4273,7 +4273,7 @@ instance ToJSON ListMessagesResponse where
 data ListDicomStoresResponse =
   ListDicomStoresResponse'
     { _lNextPageToken :: !(Maybe Text)
-    , _lDicomStores   :: !(Maybe [DicomStore])
+    , _lDicomStores :: !(Maybe [DicomStore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4326,8 +4326,8 @@ instance ToJSON ListDicomStoresResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4406,7 +4406,7 @@ instance ToJSON Binding where
 data ExportDicomDataRequest =
   ExportDicomDataRequest'
     { _eddrBigQueryDestination :: !(Maybe GoogleCloudHealthcareV1beta1DicomBigQueryDestination)
-    , _eddrGcsDestination      :: !(Maybe GoogleCloudHealthcareV1beta1DicomGcsDestination)
+    , _eddrGcsDestination :: !(Maybe GoogleCloudHealthcareV1beta1DicomGcsDestination)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4500,7 +4500,7 @@ instance ToJSON ParsedData where
 -- /See:/ 'errorDetail' smart constructor.
 data ErrorDetail =
   ErrorDetail'
-    { _edError    :: !(Maybe Status)
+    { _edError :: !(Maybe Status)
     , _edResource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

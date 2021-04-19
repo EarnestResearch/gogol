@@ -32,8 +32,8 @@ module Network.Google.Method.OAuth2.GetCertForOpenIdConnect
 
     ) where
 
-import           Network.Google.OAuth2.Types
-import           Network.Google.Prelude
+import Network.Google.OAuth2.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @oauth2.getCertForOpenIdConnect@ method which the
 -- 'GetCertForOpenIdConnect' request conforms to.

@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Schemas.Delete
     , sdSchemaKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.delete@ method which the
 -- 'SchemasDelete' request conforms to.
@@ -58,7 +58,7 @@ type SchemasDeleteResource =
 data SchemasDelete =
   SchemasDelete'
     { _sdCustomerId :: !Text
-    , _sdSchemaKey  :: !Text
+    , _sdSchemaKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

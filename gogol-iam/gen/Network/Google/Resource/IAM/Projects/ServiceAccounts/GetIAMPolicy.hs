@@ -51,8 +51,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.GetIAMPolicy
     , psagipCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.getIamPolicy@ method which the
 -- 'ProjectsServiceAccountsGetIAMPolicy' request conforms to.
@@ -81,12 +81,12 @@ type ProjectsServiceAccountsGetIAMPolicyResource =
 -- /See:/ 'projectsServiceAccountsGetIAMPolicy' smart constructor.
 data ProjectsServiceAccountsGetIAMPolicy =
   ProjectsServiceAccountsGetIAMPolicy'
-    { _psagipXgafv          :: !(Maybe Xgafv)
+    { _psagipXgafv :: !(Maybe Xgafv)
     , _psagipUploadProtocol :: !(Maybe Text)
-    , _psagipAccessToken    :: !(Maybe Text)
-    , _psagipUploadType     :: !(Maybe Text)
-    , _psagipResource       :: !Text
-    , _psagipCallback       :: !(Maybe Text)
+    , _psagipAccessToken :: !(Maybe Text)
+    , _psagipUploadType :: !(Maybe Text)
+    , _psagipResource :: !Text
+    , _psagipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

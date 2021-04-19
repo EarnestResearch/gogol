@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Folders.Logs.Delete
     , fldCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.logs.delete@ method which the
 -- 'FoldersLogsDelete' request conforms to.
@@ -65,12 +65,12 @@ type FoldersLogsDeleteResource =
 -- /See:/ 'foldersLogsDelete' smart constructor.
 data FoldersLogsDelete =
   FoldersLogsDelete'
-    { _fldXgafv          :: !(Maybe Xgafv)
+    { _fldXgafv :: !(Maybe Xgafv)
     , _fldUploadProtocol :: !(Maybe Text)
-    , _fldAccessToken    :: !(Maybe Text)
-    , _fldUploadType     :: !(Maybe Text)
-    , _fldLogName        :: !Text
-    , _fldCallback       :: !(Maybe Text)
+    , _fldAccessToken :: !(Maybe Text)
+    , _fldUploadType :: !(Maybe Text)
+    , _fldLogName :: !Text
+    , _fldCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

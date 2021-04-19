@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.OrgUnits.Patch
     , oupCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.patch@ method which the
 -- 'OrgUnitsPatch' request conforms to.
@@ -59,9 +59,9 @@ type OrgUnitsPatchResource =
 -- /See:/ 'orgUnitsPatch' smart constructor.
 data OrgUnitsPatch =
   OrgUnitsPatch'
-    { _oupPayload     :: !OrgUnit
+    { _oupPayload :: !OrgUnit
     , _oupOrgUnitPath :: ![Text]
-    , _oupCustomerId  :: !Text
+    , _oupCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.Fitness.Types.Product where
 
-import           Network.Google.Fitness.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types.Sum
+import Network.Google.Prelude
 
 -- | A dataset represents a projection container for data points. They do not
 -- carry any info of their own. Datasets represent a set of data points
@@ -28,11 +28,11 @@ import           Network.Google.Prelude
 -- /See:/ 'dataSet' smart constructor.
 data DataSet =
   DataSet'
-    { _dsNextPageToken  :: !(Maybe Text)
-    , _dsDataSourceId   :: !(Maybe Text)
-    , _dsPoint          :: !(Maybe [DataPoint])
+    { _dsNextPageToken :: !(Maybe Text)
+    , _dsDataSourceId :: !(Maybe Text)
+    , _dsPoint :: !(Maybe [DataPoint])
     , _dsMinStartTimeNs :: !(Maybe (Textual Int64))
-    , _dsMaxEndTimeNs   :: !(Maybe (Textual Int64))
+    , _dsMaxEndTimeNs :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -131,9 +131,9 @@ instance ToJSON DataSet where
 data Application =
   Application'
     { _aPackageName :: !(Maybe Text)
-    , _aName        :: !(Maybe Text)
-    , _aVersion     :: !(Maybe Text)
-    , _aDetailsURL  :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
+    , _aVersion :: !(Maybe Text)
+    , _aDetailsURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -298,7 +298,7 @@ instance ToJSON AggregateBy where
 -- /See:/ 'bucketByActivity' smart constructor.
 data BucketByActivity =
   BucketByActivity'
-    { _bbaMinDurationMillis    :: !(Maybe (Textual Int64))
+    { _bbaMinDurationMillis :: !(Maybe (Textual Int64))
     , _bbaActivityDataSourceId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -355,14 +355,14 @@ instance ToJSON BucketByActivity where
 -- /See:/ 'aggregateRequest' smart constructor.
 data AggregateRequest =
   AggregateRequest'
-    { _arEndTimeMillis               :: !(Maybe (Textual Int64))
+    { _arEndTimeMillis :: !(Maybe (Textual Int64))
     , _arFilteredDataQualityStandard :: !(Maybe [AggregateRequestFilteredDataQualityStandardItem])
-    , _arAggregateBy                 :: !(Maybe [AggregateBy])
-    , _arBucketBySession             :: !(Maybe BucketBySession)
-    , _arBucketByActivityType        :: !(Maybe BucketByActivity)
-    , _arBucketByTime                :: !(Maybe BucketByTime)
-    , _arStartTimeMillis             :: !(Maybe (Textual Int64))
-    , _arBucketByActivitySegment     :: !(Maybe BucketByActivity)
+    , _arAggregateBy :: !(Maybe [AggregateBy])
+    , _arBucketBySession :: !(Maybe BucketBySession)
+    , _arBucketByActivityType :: !(Maybe BucketByActivity)
+    , _arBucketByTime :: !(Maybe BucketByTime)
+    , _arStartTimeMillis :: !(Maybe (Textual Int64))
+    , _arBucketByActivitySegment :: !(Maybe BucketByActivity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -519,10 +519,10 @@ instance ToJSON AggregateRequest where
 data Device =
   Device'
     { _dManufacturer :: !(Maybe Text)
-    , _dUid          :: !(Maybe Text)
-    , _dModel        :: !(Maybe Text)
-    , _dVersion      :: !(Maybe Text)
-    , _dType         :: !(Maybe DeviceType)
+    , _dUid :: !(Maybe Text)
+    , _dModel :: !(Maybe Text)
+    , _dVersion :: !(Maybe Text)
+    , _dType :: !(Maybe DeviceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -603,9 +603,9 @@ instance ToJSON Device where
 -- /See:/ 'value' smart constructor.
 data Value =
   Value'
-    { _vMapVal    :: !(Maybe [ValueMapValEntry])
-    , _vFpVal     :: !(Maybe (Textual Double))
-    , _vIntVal    :: !(Maybe (Textual Int32))
+    { _vMapVal :: !(Maybe [ValueMapValEntry])
+    , _vFpVal :: !(Maybe (Textual Double))
+    , _vIntVal :: !(Maybe (Textual Int32))
     , _vStringVal :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -730,14 +730,14 @@ instance ToJSON BucketBySession where
 -- /See:/ 'dataPoint' smart constructor.
 data DataPoint =
   DataPoint'
-    { _dpOriginDataSourceId    :: !(Maybe Text)
-    , _dpRawTimestampNanos     :: !(Maybe (Textual Int64))
-    , _dpDataTypeName          :: !(Maybe Text)
-    , _dpValue                 :: !(Maybe [Value])
+    { _dpOriginDataSourceId :: !(Maybe Text)
+    , _dpRawTimestampNanos :: !(Maybe (Textual Int64))
+    , _dpDataTypeName :: !(Maybe Text)
+    , _dpValue :: !(Maybe [Value])
     , _dpComputationTimeMillis :: !(Maybe (Textual Int64))
-    , _dpEndTimeNanos          :: !(Maybe (Textual Int64))
-    , _dpModifiedTimeMillis    :: !(Maybe (Textual Int64))
-    , _dpStartTimeNanos        :: !(Maybe (Textual Int64))
+    , _dpEndTimeNanos :: !(Maybe (Textual Int64))
+    , _dpModifiedTimeMillis :: !(Maybe (Textual Int64))
+    , _dpStartTimeNanos :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -874,10 +874,10 @@ instance ToJSON DataPoint where
 -- /See:/ 'listSessionsResponse' smart constructor.
 data ListSessionsResponse =
   ListSessionsResponse'
-    { _lsrNextPageToken  :: !(Maybe Text)
+    { _lsrNextPageToken :: !(Maybe Text)
     , _lsrDeletedSession :: !(Maybe [Session])
-    , _lsrHasMoreData    :: !(Maybe Bool)
-    , _lsrSession        :: !(Maybe [Session])
+    , _lsrHasMoreData :: !(Maybe Bool)
+    , _lsrSession :: !(Maybe [Session])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -959,12 +959,12 @@ instance ToJSON ListSessionsResponse where
 -- /See:/ 'aggregateBucket' smart constructor.
 data AggregateBucket =
   AggregateBucket'
-    { _abEndTimeMillis   :: !(Maybe (Textual Int64))
-    , _abDataSet         :: !(Maybe [DataSet])
-    , _abActivity        :: !(Maybe (Textual Int32))
-    , _abType            :: !(Maybe AggregateBucketType)
+    { _abEndTimeMillis :: !(Maybe (Textual Int64))
+    , _abDataSet :: !(Maybe [DataSet])
+    , _abActivity :: !(Maybe (Textual Int32))
+    , _abType :: !(Maybe AggregateBucketType)
     , _abStartTimeMillis :: !(Maybe (Textual Int64))
-    , _abSession         :: !(Maybe Session)
+    , _abSession :: !(Maybe Session)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1144,8 +1144,8 @@ instance ToJSON ListDataSourcesResponse where
 -- /See:/ 'dataTypeField' smart constructor.
 data DataTypeField =
   DataTypeField'
-    { _dtfFormat   :: !(Maybe DataTypeFieldFormat)
-    , _dtfName     :: !(Maybe Text)
+    { _dtfFormat :: !(Maybe DataTypeFieldFormat)
+    , _dtfName :: !(Maybe Text)
     , _dtfOptional :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1215,14 +1215,14 @@ instance ToJSON DataTypeField where
 -- /See:/ 'dataSource' smart constructor.
 data DataSource =
   DataSource'
-    { _dsApplication         :: !(Maybe Application)
-    , _dsDevice              :: !(Maybe Device)
+    { _dsApplication :: !(Maybe Application)
+    , _dsDevice :: !(Maybe Device)
     , _dsDataQualityStandard :: !(Maybe [DataSourceDataQualityStandardItem])
-    , _dsName                :: !(Maybe Text)
-    , _dsDataType            :: !(Maybe DataType)
-    , _dsType                :: !(Maybe DataSourceType)
-    , _dsDataStreamName      :: !(Maybe Text)
-    , _dsDataStreamId        :: !(Maybe Text)
+    , _dsName :: !(Maybe Text)
+    , _dsDataType :: !(Maybe DataType)
+    , _dsType :: !(Maybe DataSourceType)
+    , _dsDataStreamName :: !(Maybe Text)
+    , _dsDataStreamId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1367,8 +1367,8 @@ instance ToJSON DataSource where
 -- /See:/ 'bucketByTimePeriod' smart constructor.
 data BucketByTimePeriod =
   BucketByTimePeriod'
-    { _bbtpValue      :: !(Maybe (Textual Int32))
-    , _bbtpType       :: !(Maybe BucketByTimePeriodType)
+    { _bbtpValue :: !(Maybe (Textual Int32))
+    , _bbtpType :: !(Maybe BucketByTimePeriodType)
     , _bbtpTimeZoneId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1425,7 +1425,7 @@ instance ToJSON BucketByTimePeriod where
 data ValueMapValEntry =
   ValueMapValEntry'
     { _vmveValue :: !(Maybe MapValue)
-    , _vmveKey   :: !(Maybe Text)
+    , _vmveKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1467,7 +1467,7 @@ instance ToJSON ValueMapValEntry where
 -- /See:/ 'bucketByTime' smart constructor.
 data BucketByTime =
   BucketByTime'
-    { _bbtPeriod         :: !(Maybe BucketByTimePeriod)
+    { _bbtPeriod :: !(Maybe BucketByTimePeriod)
     , _bbtDurationMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1519,7 +1519,7 @@ instance ToJSON BucketByTime where
 data DataType =
   DataType'
     { _dtField :: !(Maybe [DataTypeField])
-    , _dtName  :: !(Maybe Text)
+    , _dtName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1564,10 +1564,10 @@ instance ToJSON DataType where
 -- /See:/ 'listDataPointChangesResponse' smart constructor.
 data ListDataPointChangesResponse =
   ListDataPointChangesResponse'
-    { _ldpcrNextPageToken     :: !(Maybe Text)
+    { _ldpcrNextPageToken :: !(Maybe Text)
     , _ldpcrInsertedDataPoint :: !(Maybe [DataPoint])
-    , _ldpcrDataSourceId      :: !(Maybe Text)
-    , _ldpcrDeletedDataPoint  :: !(Maybe [DataPoint])
+    , _ldpcrDataSourceId :: !(Maybe Text)
+    , _ldpcrDeletedDataPoint :: !(Maybe [DataPoint])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1650,15 +1650,15 @@ instance ToJSON ListDataPointChangesResponse where
 -- /See:/ 'session' smart constructor.
 data Session =
   Session'
-    { _sEndTimeMillis      :: !(Maybe (Textual Int64))
-    , _sActiveTimeMillis   :: !(Maybe (Textual Int64))
-    , _sApplication        :: !(Maybe Application)
-    , _sActivityType       :: !(Maybe (Textual Int32))
-    , _sName               :: !(Maybe Text)
+    { _sEndTimeMillis :: !(Maybe (Textual Int64))
+    , _sActiveTimeMillis :: !(Maybe (Textual Int64))
+    , _sApplication :: !(Maybe Application)
+    , _sActivityType :: !(Maybe (Textual Int32))
+    , _sName :: !(Maybe Text)
     , _sModifiedTimeMillis :: !(Maybe (Textual Int64))
-    , _sId                 :: !(Maybe Text)
-    , _sStartTimeMillis    :: !(Maybe (Textual Int64))
-    , _sDescription        :: !(Maybe Text)
+    , _sId :: !(Maybe Text)
+    , _sStartTimeMillis :: !(Maybe (Textual Int64))
+    , _sDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.Container.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | This field is to determine the status of the secondary range
 -- programmably.

@@ -38,8 +38,8 @@ module Network.Google.Resource.SQL.Instances.PromoteReplica
     , iprInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.promoteReplica@ method which the
 -- 'InstancesPromoteReplica' request conforms to.
@@ -59,7 +59,7 @@ type InstancesPromoteReplicaResource =
 -- /See:/ 'instancesPromoteReplica' smart constructor.
 data InstancesPromoteReplica =
   InstancesPromoteReplica'
-    { _iprProject  :: !Text
+    { _iprProject :: !Text
     , _iprInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

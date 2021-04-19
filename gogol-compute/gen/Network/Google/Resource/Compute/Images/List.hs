@@ -45,8 +45,8 @@ module Network.Google.Resource.Compute.Images.List
     , imamMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.images.list@ method which the
 -- 'ImagesList' request conforms to.
@@ -73,10 +73,10 @@ type ImagesListResource =
 -- /See:/ 'imagesList' smart constructor.
 data ImagesList =
   ImagesList'
-    { _imamOrderBy    :: !(Maybe Text)
-    , _imamProject    :: !Text
-    , _imamFilter     :: !(Maybe Text)
-    , _imamPageToken  :: !(Maybe Text)
+    { _imamOrderBy :: !(Maybe Text)
+    , _imamProject :: !Text
+    , _imamFilter :: !(Maybe Text)
+    , _imamPageToken :: !(Maybe Text)
     , _imamMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

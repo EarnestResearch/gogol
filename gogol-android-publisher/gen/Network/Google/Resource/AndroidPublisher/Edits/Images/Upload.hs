@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Images.Upload
     , eiuEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.images.upload@ method which the
 -- 'EditsImagesUpload' request conforms to.
@@ -79,9 +79,9 @@ type EditsImagesUploadResource =
 data EditsImagesUpload =
   EditsImagesUpload'
     { _eiuPackageName :: !Text
-    , _eiuImageType   :: !EditsImagesUploadImageType
-    , _eiuLanguage    :: !Text
-    , _eiuEditId      :: !Text
+    , _eiuImageType :: !EditsImagesUploadImageType
+    , _eiuLanguage :: !Text
+    , _eiuEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

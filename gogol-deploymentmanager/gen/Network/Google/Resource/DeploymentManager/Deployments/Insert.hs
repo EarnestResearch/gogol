@@ -40,8 +40,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.Insert
     , diPreview
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.insert@ method which the
 -- 'DeploymentsInsert' request conforms to.
@@ -66,9 +66,9 @@ type DeploymentsInsertResource =
 data DeploymentsInsert =
   DeploymentsInsert'
     { _diCreatePolicy :: !DeploymentsInsertCreatePolicy
-    , _diProject      :: !Text
-    , _diPayload      :: !Deployment
-    , _diPreview      :: !(Maybe Bool)
+    , _diProject :: !Text
+    , _diPayload :: !Deployment
+    , _diPreview :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

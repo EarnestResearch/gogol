@@ -42,8 +42,8 @@ module Network.Google.Resource.Books.Volumes.Get
     , vgUserLibraryConsistentRead
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.volumes.get@ method which the
 -- 'VolumesGet' request conforms to.
@@ -65,12 +65,12 @@ type VolumesGetResource =
 -- /See:/ 'volumesGet' smart constructor.
 data VolumesGet =
   VolumesGet'
-    { _vgCountry                   :: !(Maybe Text)
-    , _vgIncludeNonComicsSeries    :: !(Maybe Bool)
-    , _vgPartner                   :: !(Maybe Text)
-    , _vgVolumeId                  :: !Text
-    , _vgSource                    :: !(Maybe Text)
-    , _vgProjection                :: !(Maybe VolumesGetProjection)
+    { _vgCountry :: !(Maybe Text)
+    , _vgIncludeNonComicsSeries :: !(Maybe Bool)
+    , _vgPartner :: !(Maybe Text)
+    , _vgVolumeId :: !Text
+    , _vgSource :: !(Maybe Text)
+    , _vgProjection :: !(Maybe VolumesGetProjection)
     , _vgUserLibraryConsistentRead :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

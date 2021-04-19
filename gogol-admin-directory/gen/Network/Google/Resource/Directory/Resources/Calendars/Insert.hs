@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.Insert
     , rciCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.insert@ method which the
 -- 'ResourcesCalendarsInsert' request conforms to.
@@ -59,7 +59,7 @@ type ResourcesCalendarsInsertResource =
 -- /See:/ 'resourcesCalendarsInsert' smart constructor.
 data ResourcesCalendarsInsert =
   ResourcesCalendarsInsert'
-    { _rciPayload  :: !CalendarResource
+    { _rciPayload :: !CalendarResource
     , _rciCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

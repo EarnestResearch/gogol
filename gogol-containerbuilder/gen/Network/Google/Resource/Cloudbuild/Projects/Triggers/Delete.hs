@@ -43,8 +43,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Triggers.Delete
     , ptdCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.triggers.delete@ method which the
 -- 'ProjectsTriggersDelete' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsTriggersDeleteResource =
 -- /See:/ 'projectsTriggersDelete' smart constructor.
 data ProjectsTriggersDelete =
   ProjectsTriggersDelete'
-    { _ptdXgafv          :: !(Maybe Xgafv)
+    { _ptdXgafv :: !(Maybe Xgafv)
     , _ptdUploadProtocol :: !(Maybe Text)
-    , _ptdTriggerId      :: !Text
-    , _ptdAccessToken    :: !(Maybe Text)
-    , _ptdUploadType     :: !(Maybe Text)
-    , _ptdProjectId      :: !Text
-    , _ptdCallback       :: !(Maybe Text)
+    , _ptdTriggerId :: !Text
+    , _ptdAccessToken :: !(Maybe Text)
+    , _ptdUploadType :: !(Maybe Text)
+    , _ptdProjectId :: !Text
+    , _ptdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

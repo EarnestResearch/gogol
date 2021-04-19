@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.GetStoreLayout
     , egslEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.getStoreLayout@ method which the
 -- 'EnterprisesGetStoreLayout' request conforms to.

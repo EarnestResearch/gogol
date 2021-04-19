@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Notifications.Get
     , ngNotificationId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.notifications.get@ method which the
 -- 'NotificationsGet' request conforms to.
@@ -57,7 +57,7 @@ type NotificationsGetResource =
 -- /See:/ 'notificationsGet' smart constructor.
 data NotificationsGet =
   NotificationsGet'
-    { _ngCustomer       :: !Text
+    { _ngCustomer :: !Text
     , _ngNotificationId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

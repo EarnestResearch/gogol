@@ -17,8 +17,8 @@
 --
 module Network.Google.FirebaseHosting.Types.Product where
 
-import           Network.Google.FirebaseHosting.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types.Sum
+import Network.Google.Prelude
 
 -- | The labels used for extra metadata and\/or filtering.
 --
@@ -59,7 +59,7 @@ instance ToJSON VersionLabels where
 -- /See:/ 'populateVersionFilesResponse' smart constructor.
 data PopulateVersionFilesResponse =
   PopulateVersionFilesResponse'
-    { _pvfrUploadURL            :: !(Maybe Text)
+    { _pvfrUploadURL :: !(Maybe Text)
     , _pvfrUploadRequiredHashes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -80,7 +80,7 @@ populateVersionFilesResponse =
 
 
 -- | The URL to which the files should be uploaded, in the format:
--- \"https:\/\/upload-firebasehosting.googleapis.com\/upload\/sites\/site-name\/versions\/versionID\/files\".
+-- \"https:\/\/upload-firebasehosting.googleapis.com\/upload\/sites\/'site-name'\/versions\/'versionID'\/files\".
 -- Perform a multipart \`POST\` of the Gzipped file contents to the URL
 -- using a forward slash and the hash of the file appended to the end.
 pvfrUploadURL :: Lens' PopulateVersionFilesResponse (Maybe Text)
@@ -118,7 +118,7 @@ instance ToJSON PopulateVersionFilesResponse where
 -- /See:/ 'certDNSChallenge' smart constructor.
 data CertDNSChallenge =
   CertDNSChallenge'
-    { _cdcToken      :: !(Maybe Text)
+    { _cdcToken :: !(Maybe Text)
     , _cdcDomainName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -233,11 +233,11 @@ instance ToJSON PopulateVersionFilesRequest where
 -- /See:/ 'servingConfig' smart constructor.
 data ServingConfig =
   ServingConfig'
-    { _scCleanURLs             :: !(Maybe Bool)
-    , _scAppAssociation        :: !(Maybe ServingConfigAppAssociation)
-    , _scRewrites              :: !(Maybe [Rewrite])
-    , _scRedirects             :: !(Maybe [Redirect])
-    , _scHeaders               :: !(Maybe [Header])
+    { _scCleanURLs :: !(Maybe Bool)
+    , _scAppAssociation :: !(Maybe ServingConfigAppAssociation)
+    , _scRewrites :: !(Maybe [Rewrite])
+    , _scRedirects :: !(Maybe [Redirect])
+    , _scHeaders :: !(Maybe [Header])
     , _scTrailingSlashBehavior :: !(Maybe ServingConfigTrailingSlashBehavior)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -340,12 +340,12 @@ instance ToJSON ServingConfig where
 -- /See:/ 'domain' smart constructor.
 data Domain =
   Domain'
-    { _dStatus         :: !(Maybe DomainStatus)
-    , _dProvisioning   :: !(Maybe DomainProvisioning)
-    , _dUpdateTime     :: !(Maybe DateTime')
-    , _dDomainName     :: !(Maybe Text)
+    { _dStatus :: !(Maybe DomainStatus)
+    , _dProvisioning :: !(Maybe DomainProvisioning)
+    , _dUpdateTime :: !(Maybe DateTime')
+    , _dDomainName :: !(Maybe Text)
     , _dDomainRedirect :: !(Maybe DomainRedirect)
-    , _dSite           :: !(Maybe Text)
+    , _dSite :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -437,7 +437,7 @@ instance ToJSON Domain where
 data ListReleasesResponse =
   ListReleasesResponse'
     { _lrrNextPageToken :: !(Maybe Text)
-    , _lrrReleases      :: !(Maybe [Release])
+    , _lrrReleases :: !(Maybe [Release])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -492,13 +492,13 @@ instance ToJSON ListReleasesResponse where
 -- /See:/ 'domainProvisioning' smart constructor.
 data DomainProvisioning =
   DomainProvisioning'
-    { _dpExpectedIPs                :: !(Maybe [Text])
-    , _dpCertChallengeDNS           :: !(Maybe CertDNSChallenge)
-    , _dpDNSFetchTime               :: !(Maybe DateTime')
-    , _dpCertStatus                 :: !(Maybe DomainProvisioningCertStatus)
-    , _dpDNSStatus                  :: !(Maybe DomainProvisioningDNSStatus)
-    , _dpDiscoveredIPs              :: !(Maybe [Text])
-    , _dpCertChallengeHTTP          :: !(Maybe CertHTTPChallenge)
+    { _dpExpectedIPs :: !(Maybe [Text])
+    , _dpCertChallengeDNS :: !(Maybe CertDNSChallenge)
+    , _dpDNSFetchTime :: !(Maybe DateTime')
+    , _dpCertStatus :: !(Maybe DomainProvisioningCertStatus)
+    , _dpDNSStatus :: !(Maybe DomainProvisioningDNSStatus)
+    , _dpDiscoveredIPs :: !(Maybe [Text])
+    , _dpCertChallengeHTTP :: !(Maybe CertHTTPChallenge)
     , _dpCertChallengeDiscoveredTxt :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -629,10 +629,10 @@ data Release =
   Release'
     { _rReleaseTime :: !(Maybe DateTime')
     , _rReleaseUser :: !(Maybe ActingUser)
-    , _rName        :: !(Maybe Text)
-    , _rVersion     :: !(Maybe Version)
-    , _rType        :: !(Maybe ReleaseType)
-    , _rMessage     :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
+    , _rVersion :: !(Maybe Version)
+    , _rType :: !(Maybe ReleaseType)
+    , _rMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -725,8 +725,8 @@ instance ToJSON Release where
 data VersionFile =
   VersionFile'
     { _vfStatus :: !(Maybe VersionFileStatus)
-    , _vfHash   :: !(Maybe Text)
-    , _vfPath   :: !(Maybe Text)
+    , _vfHash :: !(Maybe Text)
+    , _vfPath :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -783,7 +783,7 @@ instance ToJSON VersionFile where
 data Header =
   Header'
     { _hHeaders :: !(Maybe HeaderHeaders)
-    , _hGlob    :: !(Maybe Text)
+    , _hGlob :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -829,7 +829,7 @@ instance ToJSON Header where
 -- /See:/ 'actingUser' smart constructor.
 data ActingUser =
   ActingUser'
-    { _auEmail    :: !(Maybe Text)
+    { _auEmail :: !(Maybe Text)
     , _auImageURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -877,18 +877,18 @@ instance ToJSON ActingUser where
 -- /See:/ 'version' smart constructor.
 data Version =
   Version'
-    { _vStatus       :: !(Maybe VersionStatus)
+    { _vStatus :: !(Maybe VersionStatus)
     , _vFinalizeTime :: !(Maybe DateTime')
-    , _vConfig       :: !(Maybe ServingConfig)
-    , _vFileCount    :: !(Maybe (Textual Int64))
+    , _vConfig :: !(Maybe ServingConfig)
+    , _vFileCount :: !(Maybe (Textual Int64))
     , _vFinalizeUser :: !(Maybe ActingUser)
     , _vVersionBytes :: !(Maybe (Textual Int64))
-    , _vDeleteTime   :: !(Maybe DateTime')
-    , _vName         :: !(Maybe Text)
-    , _vLabels       :: !(Maybe VersionLabels)
-    , _vCreateUser   :: !(Maybe ActingUser)
-    , _vDeleteUser   :: !(Maybe ActingUser)
-    , _vCreateTime   :: !(Maybe DateTime')
+    , _vDeleteTime :: !(Maybe DateTime')
+    , _vName :: !(Maybe Text)
+    , _vLabels :: !(Maybe VersionLabels)
+    , _vCreateUser :: !(Maybe ActingUser)
+    , _vDeleteUser :: !(Maybe ActingUser)
+    , _vCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1058,7 +1058,7 @@ instance ToJSON Version where
 data ListDomainsResponse =
   ListDomainsResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDomains       :: !(Maybe [Domain])
+    , _ldrDomains :: !(Maybe [Domain])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1111,8 +1111,8 @@ instance ToJSON ListDomainsResponse where
 -- /See:/ 'redirect' smart constructor.
 data Redirect =
   Redirect'
-    { _rLocation   :: !(Maybe Text)
-    , _rGlob       :: !(Maybe Text)
+    { _rLocation :: !(Maybe Text)
+    , _rGlob :: !(Maybe Text)
     , _rStatusCode :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1182,7 +1182,7 @@ instance ToJSON Redirect where
 data CloudRunRewrite =
   CloudRunRewrite'
     { _crrServiceId :: !(Maybe Text)
-    , _crrRegion    :: !(Maybe Text)
+    , _crrRegion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1233,7 +1233,7 @@ instance ToJSON CloudRunRewrite where
 data DomainRedirect =
   DomainRedirect'
     { _drDomainName :: !(Maybe Text)
-    , _drType       :: !(Maybe DomainRedirectType)
+    , _drType :: !(Maybe DomainRedirectType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1281,10 +1281,10 @@ instance ToJSON DomainRedirect where
 -- /See:/ 'rewrite' smart constructor.
 data Rewrite =
   Rewrite'
-    { _rewFunction     :: !(Maybe Text)
-    , _rewPath         :: !(Maybe Text)
-    , _rewRun          :: !(Maybe CloudRunRewrite)
-    , _rewGlob         :: !(Maybe Text)
+    { _rewFunction :: !(Maybe Text)
+    , _rewPath :: !(Maybe Text)
+    , _rewRun :: !(Maybe CloudRunRewrite)
+    , _rewGlob :: !(Maybe Text)
     , _rewDynamicLinks :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1444,7 +1444,7 @@ instance ToJSON HeaderHeaders where
 -- /See:/ 'certHTTPChallenge' smart constructor.
 data CertHTTPChallenge =
   CertHTTPChallenge'
-    { _chttpcPath  :: !(Maybe Text)
+    { _chttpcPath :: !(Maybe Text)
     , _chttpcToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1494,7 +1494,7 @@ instance ToJSON CertHTTPChallenge where
 data ListVersionFilesResponse =
   ListVersionFilesResponse'
     { _lvfrNextPageToken :: !(Maybe Text)
-    , _lvfrFiles         :: !(Maybe [VersionFile])
+    , _lvfrFiles :: !(Maybe [VersionFile])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

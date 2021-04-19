@@ -45,8 +45,8 @@ module Network.Google.Resource.People.People.Get
     , pgCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.people.get@ method which the
 -- 'PeopleGet' request conforms to.
@@ -69,14 +69,14 @@ type PeopleGetResource =
 -- /See:/ 'peopleGet' smart constructor.
 data PeopleGet =
   PeopleGet'
-    { _pgXgafv                   :: !(Maybe Xgafv)
-    , _pgUploadProtocol          :: !(Maybe Text)
-    , _pgResourceName            :: !Text
+    { _pgXgafv :: !(Maybe Xgafv)
+    , _pgUploadProtocol :: !(Maybe Text)
+    , _pgResourceName :: !Text
     , _pgRequestMaskIncludeField :: !(Maybe GFieldMask)
-    , _pgAccessToken             :: !(Maybe Text)
-    , _pgUploadType              :: !(Maybe Text)
-    , _pgPersonFields            :: !(Maybe GFieldMask)
-    , _pgCallback                :: !(Maybe Text)
+    , _pgAccessToken :: !(Maybe Text)
+    , _pgUploadType :: !(Maybe Text)
+    , _pgPersonFields :: !(Maybe GFieldMask)
+    , _pgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -128,9 +128,9 @@ pgUploadProtocol
 
 -- | The resource name of the person to provide information about. - To get
 -- information about the authenticated user, specify \`people\/me\`. - To
--- get information about a google account, specify \`people\/\`account_id.
--- - To get information about a contact, specify the resource name that
--- identifies the contact as returned by
+-- get information about a google account, specify
+-- \`people\/\`'account_id'. - To get information about a contact, specify
+-- the resource name that identifies the contact as returned by
 -- [\`people.connections.list\`](\/people\/api\/rest\/v1\/people.connections\/list).
 pgResourceName :: Lens' PeopleGet Text
 pgResourceName

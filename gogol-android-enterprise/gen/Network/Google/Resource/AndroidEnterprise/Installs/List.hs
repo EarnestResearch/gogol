@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Installs.List
     , ilDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.installs.list@ method which the
 -- 'InstallsList' request conforms to.
@@ -62,8 +62,8 @@ type InstallsListResource =
 data InstallsList =
   InstallsList'
     { _ilEnterpriseId :: !Text
-    , _ilUserId       :: !Text
-    , _ilDeviceId     :: !Text
+    , _ilUserId :: !Text
+    , _ilDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

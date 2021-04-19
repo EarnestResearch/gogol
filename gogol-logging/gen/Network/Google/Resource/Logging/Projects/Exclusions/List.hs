@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Projects.Exclusions.List
     , pelCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.exclusions.list@ method which the
 -- 'ProjectsExclusionsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsExclusionsListResource =
 -- /See:/ 'projectsExclusionsList' smart constructor.
 data ProjectsExclusionsList =
   ProjectsExclusionsList'
-    { _pelParent         :: !Text
-    , _pelXgafv          :: !(Maybe Xgafv)
+    { _pelParent :: !Text
+    , _pelXgafv :: !(Maybe Xgafv)
     , _pelUploadProtocol :: !(Maybe Text)
-    , _pelAccessToken    :: !(Maybe Text)
-    , _pelUploadType     :: !(Maybe Text)
-    , _pelPageToken      :: !(Maybe Text)
-    , _pelPageSize       :: !(Maybe (Textual Int32))
-    , _pelCallback       :: !(Maybe Text)
+    , _pelAccessToken :: !(Maybe Text)
+    , _pelUploadType :: !(Maybe Text)
+    , _pelPageToken :: !(Maybe Text)
+    , _pelPageSize :: !(Maybe (Textual Int32))
+    , _pelCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

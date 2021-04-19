@@ -43,8 +43,8 @@ module Network.Google.Resource.Container.Projects.Zones.Operations.List
     , pzolCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.operations.list@ method which the
 -- 'ProjectsZonesOperationsList' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsZonesOperationsListResource =
 -- /See:/ 'projectsZonesOperationsList' smart constructor.
 data ProjectsZonesOperationsList =
   ProjectsZonesOperationsList'
-    { _pzolParent         :: !(Maybe Text)
-    , _pzolXgafv          :: !(Maybe Xgafv)
+    { _pzolParent :: !(Maybe Text)
+    , _pzolXgafv :: !(Maybe Xgafv)
     , _pzolUploadProtocol :: !(Maybe Text)
-    , _pzolAccessToken    :: !(Maybe Text)
-    , _pzolUploadType     :: !(Maybe Text)
-    , _pzolZone           :: !Text
-    , _pzolProjectId      :: !Text
-    , _pzolCallback       :: !(Maybe Text)
+    , _pzolAccessToken :: !(Maybe Text)
+    , _pzolUploadType :: !(Maybe Text)
+    , _pzolZone :: !Text
+    , _pzolProjectId :: !Text
+    , _pzolCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

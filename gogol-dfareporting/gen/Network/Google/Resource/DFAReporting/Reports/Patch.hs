@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Reports.Patch
     , rpPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.patch@ method which the
 -- 'ReportsPatch' request conforms to.
@@ -58,9 +58,9 @@ type ReportsPatchResource =
 -- /See:/ 'reportsPatch' smart constructor.
 data ReportsPatch =
   ReportsPatch'
-    { _rpReportId  :: !(Textual Int64)
+    { _rpReportId :: !(Textual Int64)
     , _rpProFileId :: !(Textual Int64)
-    , _rpPayload   :: !Report
+    , _rpPayload :: !Report
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Patch
     , uspkpCallback
     ) where
 
-import           Network.Google.OSLogin.Types
-import           Network.Google.Prelude
+import Network.Google.OSLogin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @oslogin.users.sshPublicKeys.patch@ method which the
 -- 'UsersSSHPublicKeysPatch' request conforms to.
@@ -68,14 +68,14 @@ type UsersSSHPublicKeysPatchResource =
 -- /See:/ 'usersSSHPublicKeysPatch' smart constructor.
 data UsersSSHPublicKeysPatch =
   UsersSSHPublicKeysPatch'
-    { _uspkpXgafv          :: !(Maybe Xgafv)
+    { _uspkpXgafv :: !(Maybe Xgafv)
     , _uspkpUploadProtocol :: !(Maybe Text)
-    , _uspkpUpdateMask     :: !(Maybe GFieldMask)
-    , _uspkpAccessToken    :: !(Maybe Text)
-    , _uspkpUploadType     :: !(Maybe Text)
-    , _uspkpPayload        :: !SSHPublicKey
-    , _uspkpName           :: !Text
-    , _uspkpCallback       :: !(Maybe Text)
+    , _uspkpUpdateMask :: !(Maybe GFieldMask)
+    , _uspkpAccessToken :: !(Maybe Text)
+    , _uspkpUploadType :: !(Maybe Text)
+    , _uspkpPayload :: !SSHPublicKey
+    , _uspkpName :: !Text
+    , _uspkpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

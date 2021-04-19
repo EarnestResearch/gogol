@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Projects.Get
     , proId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.projects.get@ method which the
 -- 'ProjectsGet' request conforms to.
@@ -57,7 +57,7 @@ type ProjectsGetResource =
 data ProjectsGet =
   ProjectsGet'
     { _proProFileId :: !(Textual Int64)
-    , _proId        :: !(Textual Int64)
+    , _proId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

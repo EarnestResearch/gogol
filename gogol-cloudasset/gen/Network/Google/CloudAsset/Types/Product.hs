@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudAsset.Types.Product where
 
-import           Network.Google.CloudAsset.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudAsset.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -137,7 +137,7 @@ instance ToJSON Status where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -192,9 +192,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -271,10 +271,10 @@ instance ToJSON Expr where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -366,8 +366,8 @@ instance ToJSON Operation where
 -- /See:/ 'asset' smart constructor.
 data Asset =
   Asset'
-    { _aName      :: !(Maybe Text)
-    , _aResource  :: !(Maybe Resource)
+    { _aName :: !(Maybe Text)
+    , _aResource :: !(Maybe Resource)
     , _aIAMPolicy :: !(Maybe Policy)
     , _aAssetType :: !(Maybe Text)
     }
@@ -444,7 +444,7 @@ instance ToJSON Asset where
 data GcsDestination =
   GcsDestination'
     { _gdURIPrefix :: !(Maybe Text)
-    , _gdURI       :: !(Maybe Text)
+    , _gdURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -536,10 +536,10 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'exportAssetsRequest' smart constructor.
 data ExportAssetsRequest =
   ExportAssetsRequest'
-    { _earReadTime     :: !(Maybe DateTime')
-    , _earAssetTypes   :: !(Maybe [Text])
+    { _earReadTime :: !(Maybe DateTime')
+    , _earAssetTypes :: !(Maybe [Text])
     , _earOutputConfig :: !(Maybe OutputConfig)
-    , _earContentType  :: !(Maybe ExportAssetsRequestContentType)
+    , _earContentType :: !(Maybe ExportAssetsRequestContentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -627,7 +627,7 @@ instance ToJSON ExportAssetsRequest where
 data TimeWindow =
   TimeWindow'
     { _twStartTime :: !(Maybe DateTime')
-    , _twEndTime   :: !(Maybe DateTime')
+    , _twEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -677,8 +677,8 @@ instance ToJSON TimeWindow where
 -- /See:/ 'temporalAsset' smart constructor.
 data TemporalAsset =
   TemporalAsset'
-    { _taWindow  :: !(Maybe TimeWindow)
-    , _taAsset   :: !(Maybe Asset)
+    { _taWindow :: !(Maybe TimeWindow)
+    , _taAsset :: !(Maybe Asset)
     , _taDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -733,12 +733,12 @@ instance ToJSON TemporalAsset where
 -- /See:/ 'resource' smart constructor.
 data Resource =
   Resource'
-    { _rParent               :: !(Maybe Text)
-    , _rData                 :: !(Maybe ResourceData)
-    , _rVersion              :: !(Maybe Text)
-    , _rDiscoveryName        :: !(Maybe Text)
+    { _rParent :: !(Maybe Text)
+    , _rData :: !(Maybe ResourceData)
+    , _rVersion :: !(Maybe Text)
+    , _rDiscoveryName :: !(Maybe Text)
     , _rDiscoveryDocumentURI :: !(Maybe Text)
-    , _rResourceURL          :: !(Maybe Text)
+    , _rResourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -935,9 +935,9 @@ instance ToJSON OutputConfig where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1104,7 +1104,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1200,8 +1200,8 @@ instance ToJSON OperationResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

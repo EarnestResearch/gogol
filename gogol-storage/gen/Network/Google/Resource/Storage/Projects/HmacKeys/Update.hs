@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Update
     , phkuAccessId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.hmacKeys.update@ method which the
 -- 'ProjectsHmacKeysUpdate' request conforms to.
@@ -61,9 +61,9 @@ type ProjectsHmacKeysUpdateResource =
 -- /See:/ 'projectsHmacKeysUpdate' smart constructor.
 data ProjectsHmacKeysUpdate =
   ProjectsHmacKeysUpdate'
-    { _phkuPayload   :: !HmacKeyMetadata
+    { _phkuPayload :: !HmacKeyMetadata
     , _phkuProjectId :: !Text
-    , _phkuAccessId  :: !Text
+    , _phkuAccessId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

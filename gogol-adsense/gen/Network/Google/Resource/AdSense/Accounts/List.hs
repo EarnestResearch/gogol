@@ -37,8 +37,8 @@ module Network.Google.Resource.AdSense.Accounts.List
     , alMaxResults
     ) where
 
-import           Network.Google.AdSense.Types
-import           Network.Google.Prelude
+import Network.Google.AdSense.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adsense.accounts.list@ method which the
 -- 'AccountsList' request conforms to.
@@ -55,7 +55,7 @@ type AccountsListResource =
 -- /See:/ 'accountsList' smart constructor.
 data AccountsList =
   AccountsList'
-    { _alPageToken  :: !(Maybe Text)
+    { _alPageToken :: !(Maybe Text)
     , _alMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

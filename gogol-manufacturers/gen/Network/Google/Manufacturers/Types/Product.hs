@@ -17,17 +17,17 @@
 --
 module Network.Google.Manufacturers.Types.Product where
 
-import           Network.Google.Manufacturers.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Manufacturers.Types.Sum
+import Network.Google.Prelude
 
 -- | An image.
 --
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iStatus   :: !(Maybe ImageStatus)
+    { _iStatus :: !(Maybe ImageStatus)
     , _iImageURL :: !(Maybe Text)
-    , _iType     :: !(Maybe ImageType)
+    , _iType :: !(Maybe ImageType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -83,8 +83,8 @@ instance ToJSON Image where
 -- /See:/ 'featureDescription' smart constructor.
 data FeatureDescription =
   FeatureDescription'
-    { _fdImage    :: !(Maybe Image)
-    , _fdText     :: !(Maybe Text)
+    { _fdImage :: !(Maybe Image)
+    , _fdText :: !(Maybe Text)
     , _fdHeadline :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -141,8 +141,8 @@ instance ToJSON FeatureDescription where
 data ProductDetail =
   ProductDetail'
     { _pdAttributeValue :: !(Maybe Text)
-    , _pdAttributeName  :: !(Maybe Text)
-    , _pdSectionName    :: !(Maybe Text)
+    , _pdAttributeName :: !(Maybe Text)
+    , _pdSectionName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -232,7 +232,7 @@ instance ToJSON Empty where
 data DestinationStatus =
   DestinationStatus'
     { _dsDestination :: !(Maybe Text)
-    , _dsStatus      :: !(Maybe DestinationStatusStatus)
+    , _dsStatus :: !(Maybe DestinationStatusStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -281,7 +281,7 @@ instance ToJSON DestinationStatus where
 data Count =
   Count'
     { _cValue :: !(Maybe (Textual Int64))
-    , _cUnit  :: !(Maybe Text)
+    , _cUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -327,7 +327,7 @@ instance ToJSON Count where
 data Capacity =
   Capacity'
     { _capValue :: !(Maybe (Textual Int64))
-    , _capUnit  :: !(Maybe Text)
+    , _capUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -373,41 +373,41 @@ instance ToJSON Capacity where
 -- /See:/ 'attributes' smart constructor.
 data Attributes =
   Attributes'
-    { _aProductName          :: !(Maybe Text)
-    , _aScent                :: !(Maybe Text)
-    , _aImageLink            :: !(Maybe Image)
-    , _aFeatureDescription   :: !(Maybe [FeatureDescription])
-    , _aProductDetail        :: !(Maybe [ProductDetail])
-    , _aProductLine          :: !(Maybe Text)
-    , _aColor                :: !(Maybe Text)
-    , _aSize                 :: !(Maybe Text)
-    , _aFlavor               :: !(Maybe Text)
-    , _aPattern              :: !(Maybe Text)
-    , _aSizeSystem           :: !(Maybe Text)
-    , _aMaterial             :: !(Maybe Text)
-    , _aFormat               :: !(Maybe Text)
-    , _aProductType          :: !(Maybe [Text])
-    , _aCount                :: !(Maybe Count)
-    , _aDisclosureDate       :: !(Maybe Text)
-    , _aBrand                :: !(Maybe Text)
-    , _aAdditionalImageLink  :: !(Maybe [Image])
-    , _aExcludedDestination  :: !(Maybe [Text])
-    , _aVideoLink            :: !(Maybe [Text])
-    , _aCapacity             :: !(Maybe Capacity)
-    , _aGtin                 :: !(Maybe [Text])
-    , _aAgeGroup             :: !(Maybe Text)
-    , _aIncludedDestination  :: !(Maybe [Text])
-    , _aGender               :: !(Maybe Text)
+    { _aProductName :: !(Maybe Text)
+    , _aScent :: !(Maybe Text)
+    , _aImageLink :: !(Maybe Image)
+    , _aFeatureDescription :: !(Maybe [FeatureDescription])
+    , _aProductDetail :: !(Maybe [ProductDetail])
+    , _aProductLine :: !(Maybe Text)
+    , _aColor :: !(Maybe Text)
+    , _aSize :: !(Maybe Text)
+    , _aFlavor :: !(Maybe Text)
+    , _aPattern :: !(Maybe Text)
+    , _aSizeSystem :: !(Maybe Text)
+    , _aMaterial :: !(Maybe Text)
+    , _aFormat :: !(Maybe Text)
+    , _aProductType :: !(Maybe [Text])
+    , _aCount :: !(Maybe Count)
+    , _aDisclosureDate :: !(Maybe Text)
+    , _aBrand :: !(Maybe Text)
+    , _aAdditionalImageLink :: !(Maybe [Image])
+    , _aExcludedDestination :: !(Maybe [Text])
+    , _aVideoLink :: !(Maybe [Text])
+    , _aCapacity :: !(Maybe Capacity)
+    , _aGtin :: !(Maybe [Text])
+    , _aAgeGroup :: !(Maybe Text)
+    , _aIncludedDestination :: !(Maybe [Text])
+    , _aGender :: !(Maybe Text)
     , _aSuggestedRetailPrice :: !(Maybe Price)
-    , _aItemGroupId          :: !(Maybe Text)
-    , _aTargetClientId       :: !(Maybe Text)
-    , _aSizeType             :: !(Maybe Text)
-    , _aReleaseDate          :: !(Maybe Text)
-    , _aTitle                :: !(Maybe Text)
-    , _aMpn                  :: !(Maybe Text)
-    , _aProductPageURL       :: !(Maybe Text)
-    , _aDescription          :: !(Maybe Text)
-    , _aTheme                :: !(Maybe Text)
+    , _aItemGroupId :: !(Maybe Text)
+    , _aTargetClientId :: !(Maybe Text)
+    , _aSizeType :: !(Maybe Text)
+    , _aReleaseDate :: !(Maybe Text)
+    , _aTitle :: !(Maybe Text)
+    , _aMpn :: !(Maybe Text)
+    , _aProductPageURL :: !(Maybe Text)
+    , _aDescription :: !(Maybe Text)
+    , _aTheme :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -833,7 +833,7 @@ instance ToJSON Attributes where
 -- /See:/ 'price' smart constructor.
 data Price =
   Price'
-    { _pAmount   :: !(Maybe Text)
+    { _pAmount :: !(Maybe Text)
     , _pCurrency :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -878,14 +878,14 @@ instance ToJSON Price where
 -- /See:/ 'product' smart constructor.
 data Product =
   Product'
-    { _pParent              :: !(Maybe Text)
+    { _pParent :: !(Maybe Text)
     , _pDestinationStatuses :: !(Maybe [DestinationStatus])
-    , _pTargetCountry       :: !(Maybe Text)
-    , _pName                :: !(Maybe Text)
-    , _pAttributes          :: !(Maybe Attributes)
-    , _pIssues              :: !(Maybe [Issue])
-    , _pContentLanguage     :: !(Maybe Text)
-    , _pProductId           :: !(Maybe Text)
+    , _pTargetCountry :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
+    , _pAttributes :: !(Maybe Attributes)
+    , _pIssues :: !(Maybe [Issue])
+    , _pContentLanguage :: !(Maybe Text)
+    , _pProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1011,13 +1011,13 @@ instance ToJSON Product where
 -- /See:/ 'issue' smart constructor.
 data Issue =
   Issue'
-    { _issAttribute   :: !(Maybe Text)
+    { _issAttribute :: !(Maybe Text)
     , _issDestination :: !(Maybe Text)
-    , _issSeverity    :: !(Maybe IssueSeverity)
-    , _issResolution  :: !(Maybe IssueResolution)
-    , _issTitle       :: !(Maybe Text)
-    , _issType        :: !(Maybe Text)
-    , _issTimestamp   :: !(Maybe DateTime')
+    , _issSeverity :: !(Maybe IssueSeverity)
+    , _issResolution :: !(Maybe IssueResolution)
+    , _issTitle :: !(Maybe Text)
+    , _issType :: !(Maybe Text)
+    , _issTimestamp :: !(Maybe DateTime')
     , _issDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1132,7 +1132,7 @@ instance ToJSON Issue where
 data ListProductsResponse =
   ListProductsResponse'
     { _lprNextPageToken :: !(Maybe Text)
-    , _lprProducts      :: !(Maybe [Product])
+    , _lprProducts :: !(Maybe [Product])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

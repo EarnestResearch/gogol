@@ -17,20 +17,20 @@
 --
 module Network.Google.Directory.Types.Product where
 
-import           Network.Google.Directory.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Directory.Types.Sum
+import Network.Google.Prelude
 
 -- | JSON template for a location entry.
 --
 -- /See:/ 'userLocation' smart constructor.
 data UserLocation =
   UserLocation'
-    { _ulArea         :: !(Maybe Text)
-    , _ulBuildingId   :: !(Maybe Text)
-    , _ulDeskCode     :: !(Maybe Text)
-    , _ulFloorName    :: !(Maybe Text)
-    , _ulType         :: !(Maybe Text)
-    , _ulCustomType   :: !(Maybe Text)
+    { _ulArea :: !(Maybe Text)
+    , _ulBuildingId :: !(Maybe Text)
+    , _ulDeskCode :: !(Maybe Text)
+    , _ulFloorName :: !(Maybe Text)
+    , _ulType :: !(Maybe Text)
+    , _ulCustomType :: !(Maybe Text)
     , _ulFloorSection :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -139,9 +139,9 @@ instance ToJSON UserLocation where
 data VerificationCode =
   VerificationCode'
     { _vcVerificationCode :: !(Maybe Text)
-    , _vcEtag             :: !(Maybe Text)
-    , _vcKind             :: !Text
-    , _vcUserId           :: !(Maybe Text)
+    , _vcEtag :: !(Maybe Text)
+    , _vcKind :: !Text
+    , _vcUserId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -211,8 +211,8 @@ instance ToJSON VerificationCode where
 data Feature =
   Feature'
     { _fEtags :: !(Maybe Text)
-    , _fKind  :: !Text
-    , _fName  :: !(Maybe Text)
+    , _fKind :: !Text
+    , _fName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -270,15 +270,15 @@ instance ToJSON Feature where
 -- /See:/ 'orgUnit' smart constructor.
 data OrgUnit =
   OrgUnit'
-    { _ouEtag              :: !(Maybe Text)
+    { _ouEtag :: !(Maybe Text)
     , _ouParentOrgUnitPath :: !(Maybe Text)
-    , _ouKind              :: !Text
-    , _ouOrgUnitPath       :: !(Maybe Text)
-    , _ouName              :: !(Maybe Text)
-    , _ouBlockInheritance  :: !(Maybe Bool)
-    , _ouParentOrgUnitId   :: !(Maybe Text)
-    , _ouDescription       :: !(Maybe Text)
-    , _ouOrgUnitId         :: !(Maybe Text)
+    , _ouKind :: !Text
+    , _ouOrgUnitPath :: !(Maybe Text)
+    , _ouName :: !(Maybe Text)
+    , _ouBlockInheritance :: !(Maybe Bool)
+    , _ouParentOrgUnitId :: !(Maybe Text)
+    , _ouDescription :: !(Maybe Text)
+    , _ouOrgUnitId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -435,7 +435,7 @@ instance ToJSON UserMakeAdmin where
 -- /See:/ 'userAbout' smart constructor.
 data UserAbout =
   UserAbout'
-    { _uaValue       :: !(Maybe Text)
+    { _uaValue :: !(Maybe Text)
     , _uaContentType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -484,8 +484,8 @@ instance ToJSON UserAbout where
 -- /See:/ 'privileges' smart constructor.
 data Privileges =
   Privileges'
-    { _pEtag  :: !(Maybe Text)
-    , _pKind  :: !Text
+    { _pEtag :: !(Maybe Text)
+    , _pKind :: !Text
     , _pItems :: !(Maybe [Privilege])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -542,10 +542,10 @@ instance ToJSON Privileges where
 -- /See:/ 'groups' smart constructor.
 data Groups =
   Groups'
-    { _gGroups        :: !(Maybe [Group])
-    , _gEtag          :: !(Maybe Text)
+    { _gGroups :: !(Maybe [Group])
+    , _gEtag :: !(Maybe Text)
     , _gNextPageToken :: !(Maybe Text)
-    , _gKind          :: !Text
+    , _gKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -615,10 +615,10 @@ instance ToJSON Groups where
 -- /See:/ 'roleAssignments' smart constructor.
 data RoleAssignments =
   RoleAssignments'
-    { _raEtag          :: !(Maybe Text)
+    { _raEtag :: !(Maybe Text)
     , _raNextPageToken :: !(Maybe Text)
-    , _raKind          :: !Text
-    , _raItems         :: !(Maybe [RoleAssignment])
+    , _raKind :: !Text
+    , _raItems :: !(Maybe [RoleAssignment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -687,12 +687,12 @@ instance ToJSON RoleAssignments where
 -- /See:/ 'privilege' smart constructor.
 data Privilege =
   Privilege'
-    { _priEtag            :: !(Maybe Text)
-    , _priIsOuScopable    :: !(Maybe Bool)
-    , _priKind            :: !Text
-    , _priServiceName     :: !(Maybe Text)
-    , _priServiceId       :: !(Maybe Text)
-    , _priPrivilegeName   :: !(Maybe Text)
+    { _priEtag :: !(Maybe Text)
+    , _priIsOuScopable :: !(Maybe Bool)
+    , _priKind :: !Text
+    , _priServiceName :: !(Maybe Text)
+    , _priServiceId :: !(Maybe Text)
+    , _priPrivilegeName :: !(Maybe Text)
     , _priChildPrivileges :: !(Maybe [Privilege])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -799,10 +799,10 @@ instance ToJSON Privilege where
 -- /See:/ 'roles' smart constructor.
 data Roles =
   Roles'
-    { _rEtag          :: !(Maybe Text)
+    { _rEtag :: !(Maybe Text)
     , _rNextPageToken :: !(Maybe Text)
-    , _rKind          :: !Text
-    , _rItems         :: !(Maybe [Role])
+    , _rKind :: !Text
+    , _rItems :: !(Maybe [Role])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -913,18 +913,18 @@ instance ToJSON ChromeOSDeviceDiskVolumeReportsItem
 -- /See:/ 'userAddress' smart constructor.
 data UserAddress =
   UserAddress'
-    { _uaStreetAddress      :: !(Maybe Text)
-    , _uaPoBox              :: !(Maybe Text)
-    , _uaCountry            :: !(Maybe Text)
-    , _uaPostalCode         :: !(Maybe Text)
-    , _uaFormatted          :: !(Maybe Text)
-    , _uaExtendedAddress    :: !(Maybe Text)
-    , _uaLocality           :: !(Maybe Text)
-    , _uaPrimary            :: !(Maybe Bool)
-    , _uaCountryCode        :: !(Maybe Text)
-    , _uaRegion             :: !(Maybe Text)
-    , _uaType               :: !(Maybe Text)
-    , _uaCustomType         :: !(Maybe Text)
+    { _uaStreetAddress :: !(Maybe Text)
+    , _uaPoBox :: !(Maybe Text)
+    , _uaCountry :: !(Maybe Text)
+    , _uaPostalCode :: !(Maybe Text)
+    , _uaFormatted :: !(Maybe Text)
+    , _uaExtendedAddress :: !(Maybe Text)
+    , _uaLocality :: !(Maybe Text)
+    , _uaPrimary :: !(Maybe Bool)
+    , _uaCountryCode :: !(Maybe Text)
+    , _uaRegion :: !(Maybe Text)
+    , _uaType :: !(Maybe Text)
+    , _uaCustomType :: !(Maybe Text)
     , _uaSourceIsStructured :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1093,14 +1093,14 @@ instance ToJSON UserAddress where
 data CustomerPostalAddress =
   CustomerPostalAddress'
     { _cpaOrganizationName :: !(Maybe Text)
-    , _cpaPostalCode       :: !(Maybe Text)
-    , _cpaAddressLine1     :: !(Maybe Text)
-    , _cpaLocality         :: !(Maybe Text)
-    , _cpaContactName      :: !(Maybe Text)
-    , _cpaAddressLine2     :: !(Maybe Text)
-    , _cpaCountryCode      :: !(Maybe Text)
-    , _cpaRegion           :: !(Maybe Text)
-    , _cpaAddressLine3     :: !(Maybe Text)
+    , _cpaPostalCode :: !(Maybe Text)
+    , _cpaAddressLine1 :: !(Maybe Text)
+    , _cpaLocality :: !(Maybe Text)
+    , _cpaContactName :: !(Maybe Text)
+    , _cpaAddressLine2 :: !(Maybe Text)
+    , _cpaCountryCode :: !(Maybe Text)
+    , _cpaRegion :: !(Maybe Text)
+    , _cpaAddressLine3 :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1233,13 +1233,13 @@ instance ToJSON CustomerPostalAddress where
 -- /See:/ 'roleAssignment' smart constructor.
 data RoleAssignment =
   RoleAssignment'
-    { _rolEtag             :: !(Maybe Text)
-    , _rolScopeType        :: !(Maybe Text)
-    , _rolKind             :: !Text
-    , _rolAssignedTo       :: !(Maybe Text)
-    , _rolRoleId           :: !(Maybe (Textual Int64))
+    { _rolEtag :: !(Maybe Text)
+    , _rolScopeType :: !(Maybe Text)
+    , _rolKind :: !Text
+    , _rolAssignedTo :: !(Maybe Text)
+    , _rolRoleId :: !(Maybe (Textual Int64))
     , _rolRoleAssignmentId :: !(Maybe (Textual Int64))
-    , _rolOrgUnitId        :: !(Maybe Text)
+    , _rolOrgUnitId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1344,16 +1344,16 @@ instance ToJSON RoleAssignment where
 -- /See:/ 'group'' smart constructor.
 data Group =
   Group'
-    { _groEmail              :: !(Maybe Text)
-    , _groEtag               :: !(Maybe Text)
+    { _groEmail :: !(Maybe Text)
+    , _groEtag :: !(Maybe Text)
     , _groDirectMembersCount :: !(Maybe (Textual Int64))
-    , _groKind               :: !Text
-    , _groAliases            :: !(Maybe [Text])
+    , _groKind :: !Text
+    , _groAliases :: !(Maybe [Text])
     , _groNonEditableAliases :: !(Maybe [Text])
-    , _groName               :: !(Maybe Text)
-    , _groAdminCreated       :: !(Maybe Bool)
-    , _groId                 :: !(Maybe Text)
-    , _groDescription        :: !(Maybe Text)
+    , _groName :: !(Maybe Text)
+    , _groAdminCreated :: !(Maybe Bool)
+    , _groId :: !(Maybe Text)
+    , _groDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1487,37 +1487,37 @@ instance ToJSON Group where
 -- /See:/ 'chromeOSDevice' smart constructor.
 data ChromeOSDevice =
   ChromeOSDevice'
-    { _codStatus               :: !(Maybe Text)
-    , _codEtag                 :: !(Maybe Text)
-    , _codCPUStatusReports     :: !(Maybe [ChromeOSDeviceCPUStatusReportsItem])
-    , _codAnnotatedUser        :: !(Maybe Text)
+    { _codStatus :: !(Maybe Text)
+    , _codEtag :: !(Maybe Text)
+    , _codCPUStatusReports :: !(Maybe [ChromeOSDeviceCPUStatusReportsItem])
+    , _codAnnotatedUser :: !(Maybe Text)
     , _codSystemRamFreeReports :: !(Maybe [ChromeOSDeviceSystemRamFreeReportsItem])
-    , _codPlatformVersion      :: !(Maybe Text)
-    , _codLastSync             :: !(Maybe DateTime')
-    , _codActiveTimeRanges     :: !(Maybe [ChromeOSDeviceActiveTimeRangesItem])
-    , _codKind                 :: !Text
-    , _codEthernetMACAddress   :: !(Maybe Text)
-    , _codLastEnrollmentTime   :: !(Maybe DateTime')
-    , _codAnnotatedLocation    :: !(Maybe Text)
-    , _codMACAddress           :: !(Maybe Text)
-    , _codOrgUnitPath          :: !(Maybe Text)
-    , _codRecentUsers          :: !(Maybe [ChromeOSDeviceRecentUsersItem])
-    , _codSupportEndDate       :: !(Maybe DateTime')
-    , _codModel                :: !(Maybe Text)
-    , _codWillAutoRenew        :: !(Maybe Bool)
-    , _codMeid                 :: !(Maybe Text)
-    , _codDeviceFiles          :: !(Maybe [ChromeOSDeviceDeviceFilesItem])
-    , _codDeviceId             :: !(Maybe Text)
-    , _codBootMode             :: !(Maybe Text)
-    , _codTpmVersionInfo       :: !(Maybe ChromeOSDeviceTpmVersionInfo)
-    , _codOrderNumber          :: !(Maybe Text)
-    , _codDiskVolumeReports    :: !(Maybe [ChromeOSDeviceDiskVolumeReportsItem])
-    , _codAnnotatedAssetId     :: !(Maybe Text)
-    , _codNotes                :: !(Maybe Text)
-    , _codSerialNumber         :: !(Maybe Text)
-    , _codFirmwareVersion      :: !(Maybe Text)
-    , _codOSVersion            :: !(Maybe Text)
-    , _codSystemRamTotal       :: !(Maybe (Textual Int64))
+    , _codPlatformVersion :: !(Maybe Text)
+    , _codLastSync :: !(Maybe DateTime')
+    , _codActiveTimeRanges :: !(Maybe [ChromeOSDeviceActiveTimeRangesItem])
+    , _codKind :: !Text
+    , _codEthernetMACAddress :: !(Maybe Text)
+    , _codLastEnrollmentTime :: !(Maybe DateTime')
+    , _codAnnotatedLocation :: !(Maybe Text)
+    , _codMACAddress :: !(Maybe Text)
+    , _codOrgUnitPath :: !(Maybe Text)
+    , _codRecentUsers :: !(Maybe [ChromeOSDeviceRecentUsersItem])
+    , _codSupportEndDate :: !(Maybe DateTime')
+    , _codModel :: !(Maybe Text)
+    , _codWillAutoRenew :: !(Maybe Bool)
+    , _codMeid :: !(Maybe Text)
+    , _codDeviceFiles :: !(Maybe [ChromeOSDeviceDeviceFilesItem])
+    , _codDeviceId :: !(Maybe Text)
+    , _codBootMode :: !(Maybe Text)
+    , _codTpmVersionInfo :: !(Maybe ChromeOSDeviceTpmVersionInfo)
+    , _codOrderNumber :: !(Maybe Text)
+    , _codDiskVolumeReports :: !(Maybe [ChromeOSDeviceDiskVolumeReportsItem])
+    , _codAnnotatedAssetId :: !(Maybe Text)
+    , _codNotes :: !(Maybe Text)
+    , _codSerialNumber :: !(Maybe Text)
+    , _codFirmwareVersion :: !(Maybe Text)
+    , _codOSVersion :: !(Maybe Text)
+    , _codSystemRamTotal :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1894,11 +1894,11 @@ instance ToJSON ChromeOSDevice where
 -- /See:/ 'users' smart constructor.
 data Users =
   Users'
-    { _uEtag          :: !(Maybe Text)
+    { _uEtag :: !(Maybe Text)
     , _uNextPageToken :: !(Maybe Text)
-    , _uUsers         :: !(Maybe [User])
-    , _uKind          :: !Text
-    , _uTriggerEvent  :: !(Maybe Text)
+    , _uUsers :: !(Maybe [User])
+    , _uKind :: !Text
+    , _uTriggerEvent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1979,12 +1979,12 @@ instance ToJSON Users where
 data Asp =
   Asp'
     { _aCreationTime :: !(Maybe (Textual Int64))
-    , _aEtag         :: !(Maybe Text)
-    , _aCodeId       :: !(Maybe (Textual Int32))
-    , _aKind         :: !Text
-    , _aName         :: !(Maybe Text)
+    , _aEtag :: !(Maybe Text)
+    , _aCodeId :: !(Maybe (Textual Int32))
+    , _aKind :: !Text
+    , _aName :: !(Maybe Text)
     , _aLastTimeUsed :: !(Maybe (Textual Int64))
-    , _aUserKey      :: !(Maybe Text)
+    , _aUserKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2084,9 +2084,9 @@ instance ToJSON Asp where
 -- /See:/ 'schemas' smart constructor.
 data Schemas =
   Schemas'
-    { _sEtag    :: !(Maybe Text)
+    { _sEtag :: !(Maybe Text)
     , _sSchemas :: !(Maybe [Schema])
-    , _sKind    :: !Text
+    , _sKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2142,10 +2142,10 @@ instance ToJSON Schemas where
 -- /See:/ 'chromeOSDeviceDeviceFilesItem' smart constructor.
 data ChromeOSDeviceDeviceFilesItem =
   ChromeOSDeviceDeviceFilesItem'
-    { _coddfiName        :: !(Maybe Text)
+    { _coddfiName :: !(Maybe Text)
     , _coddfiDownloadURL :: !(Maybe Text)
-    , _coddfiType        :: !(Maybe Text)
-    , _coddfiCreateTime  :: !(Maybe DateTime')
+    , _coddfiType :: !(Maybe Text)
+    , _coddfiCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2218,10 +2218,10 @@ instance ToJSON ChromeOSDeviceDeviceFilesItem where
 -- /See:/ 'buildings' smart constructor.
 data Buildings =
   Buildings'
-    { _bEtag          :: !(Maybe Text)
+    { _bEtag :: !(Maybe Text)
     , _bNextPageToken :: !(Maybe Text)
-    , _bBuildings     :: !(Maybe [Building])
-    , _bKind          :: !Text
+    , _bBuildings :: !(Maybe [Building])
+    , _bKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2295,14 +2295,14 @@ instance ToJSON Buildings where
 -- /See:/ 'notification' smart constructor.
 data Notification =
   Notification'
-    { _nSubject        :: !(Maybe Text)
-    , _nEtag           :: !(Maybe Text)
-    , _nKind           :: !Text
-    , _nBody           :: !(Maybe Text)
-    , _nFromAddress    :: !(Maybe Text)
-    , _nIsUnread       :: !(Maybe Bool)
+    { _nSubject :: !(Maybe Text)
+    , _nEtag :: !(Maybe Text)
+    , _nKind :: !Text
+    , _nBody :: !(Maybe Text)
+    , _nFromAddress :: !(Maybe Text)
+    , _nIsUnread :: !(Maybe Bool)
     , _nNotificationId :: !(Maybe Text)
-    , _nSendTime       :: !(Maybe DateTime')
+    , _nSendTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2408,12 +2408,12 @@ instance ToJSON Notification where
 -- /See:/ 'userIm' smart constructor.
 data UserIm =
   UserIm'
-    { _uiIm             :: !(Maybe Text)
-    , _uiProtocol       :: !(Maybe Text)
-    , _uiPrimary        :: !(Maybe Bool)
+    { _uiIm :: !(Maybe Text)
+    , _uiProtocol :: !(Maybe Text)
+    , _uiPrimary :: !(Maybe Bool)
     , _uiCustomProtocol :: !(Maybe Text)
-    , _uiType           :: !(Maybe Text)
-    , _uiCustomType     :: !(Maybe Text)
+    , _uiType :: !(Maybe Text)
+    , _uiCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2509,13 +2509,13 @@ instance ToJSON UserIm where
 -- /See:/ 'buildingAddress' smart constructor.
 data BuildingAddress =
   BuildingAddress'
-    { _baLanguageCode       :: !(Maybe Text)
-    , _baRegionCode         :: !(Maybe Text)
-    , _baSublocality        :: !(Maybe Text)
-    , _baPostalCode         :: !(Maybe Text)
-    , _baLocality           :: !(Maybe Text)
+    { _baLanguageCode :: !(Maybe Text)
+    , _baRegionCode :: !(Maybe Text)
+    , _baSublocality :: !(Maybe Text)
+    , _baPostalCode :: !(Maybe Text)
+    , _baLocality :: !(Maybe Text)
     , _baAdministrativeArea :: !(Maybe Text)
-    , _baAddressLines       :: !(Maybe [Text])
+    , _baAddressLines :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2626,8 +2626,8 @@ instance ToJSON BuildingAddress where
 -- /See:/ 'tokens' smart constructor.
 data Tokens =
   Tokens'
-    { _tEtag  :: !(Maybe Text)
-    , _tKind  :: !Text
+    { _tEtag :: !(Maybe Text)
+    , _tKind :: !Text
     , _tItems :: !(Maybe [Token])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2719,8 +2719,8 @@ instance ToJSON UserCustomSchemas where
 -- /See:/ 'userKeyword' smart constructor.
 data UserKeyword =
   UserKeyword'
-    { _ukValue      :: !(Maybe Text)
-    , _ukType       :: !(Maybe Text)
+    { _ukValue :: !(Maybe Text)
+    , _ukType :: !(Maybe Text)
     , _ukCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2778,8 +2778,8 @@ instance ToJSON UserKeyword where
 -- /See:/ 'domainAliases' smart constructor.
 data DomainAliases =
   DomainAliases'
-    { _daEtag          :: !(Maybe Text)
-    , _daKind          :: !Text
+    { _daEtag :: !(Maybe Text)
+    , _daKind :: !Text
     , _daDomainAliases :: !(Maybe [DomainAlias])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2841,8 +2841,8 @@ instance ToJSON DomainAliases where
 -- /See:/ 'aliases' smart constructor.
 data Aliases =
   Aliases'
-    { _aliEtag    :: !(Maybe Text)
-    , _aliKind    :: !Text
+    { _aliEtag :: !(Maybe Text)
+    , _aliKind :: !Text
     , _aliAliases :: !(Maybe [JSONValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2903,20 +2903,20 @@ instance ToJSON Aliases where
 -- /See:/ 'calendarResource' smart constructor.
 data CalendarResource =
   CalendarResource'
-    { _crEtags                  :: !(Maybe Text)
-    , _crResourceId             :: !(Maybe Text)
-    , _crResourceType           :: !(Maybe Text)
-    , _crResourceName           :: !(Maybe Text)
-    , _crKind                   :: !Text
-    , _crBuildingId             :: !(Maybe Text)
-    , _crFeatureInstances       :: !(Maybe JSONValue)
-    , _crResourceEmail          :: !(Maybe Text)
-    , _crCapacity               :: !(Maybe (Textual Int32))
-    , _crResourceDescription    :: !(Maybe Text)
-    , _crFloorName              :: !(Maybe Text)
-    , _crGeneratedResourceName  :: !(Maybe Text)
-    , _crResourceCategory       :: !(Maybe Text)
-    , _crFloorSection           :: !(Maybe Text)
+    { _crEtags :: !(Maybe Text)
+    , _crResourceId :: !(Maybe Text)
+    , _crResourceType :: !(Maybe Text)
+    , _crResourceName :: !(Maybe Text)
+    , _crKind :: !Text
+    , _crBuildingId :: !(Maybe Text)
+    , _crFeatureInstances :: !(Maybe JSONValue)
+    , _crResourceEmail :: !(Maybe Text)
+    , _crCapacity :: !(Maybe (Textual Int32))
+    , _crResourceDescription :: !(Maybe Text)
+    , _crFloorName :: !(Maybe Text)
+    , _crGeneratedResourceName :: !(Maybe Text)
+    , _crResourceCategory :: !(Maybe Text)
+    , _crFloorSection :: !(Maybe Text)
     , _crUserVisibleDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3150,10 +3150,10 @@ instance ToJSON UserUndelete where
 -- /See:/ 'members' smart constructor.
 data Members =
   Members'
-    { _mEtag          :: !(Maybe Text)
+    { _mEtag :: !(Maybe Text)
     , _mNextPageToken :: !(Maybe Text)
-    , _mKind          :: !Text
-    , _mMembers       :: !(Maybe [Member])
+    , _mKind :: !Text
+    , _mMembers :: !(Maybe [Member])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3225,15 +3225,15 @@ instance ToJSON Members where
 data Channel =
   Channel'
     { _cResourceURI :: !(Maybe Text)
-    , _cResourceId  :: !(Maybe Text)
-    , _cKind        :: !Text
-    , _cExpiration  :: !(Maybe (Textual Int64))
-    , _cToken       :: !(Maybe Text)
-    , _cAddress     :: !(Maybe Text)
-    , _cPayload     :: !(Maybe Bool)
-    , _cParams      :: !(Maybe ChannelParams)
-    , _cId          :: !(Maybe Text)
-    , _cType        :: !(Maybe Text)
+    , _cResourceId :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cExpiration :: !(Maybe (Textual Int64))
+    , _cToken :: !(Maybe Text)
+    , _cAddress :: !(Maybe Text)
+    , _cPayload :: !(Maybe Bool)
+    , _cParams :: !(Maybe ChannelParams)
+    , _cId :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3361,9 +3361,9 @@ instance ToJSON Channel where
 -- /See:/ 'mobileDevices' smart constructor.
 data MobileDevices =
   MobileDevices'
-    { _mdEtag          :: !(Maybe Text)
+    { _mdEtag :: !(Maybe Text)
     , _mdNextPageToken :: !(Maybe Text)
-    , _mdKind          :: !Text
+    , _mdKind :: !Text
     , _mdMobileDevices :: !(Maybe [MobileDevice])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3436,14 +3436,14 @@ instance ToJSON MobileDevices where
 -- /See:/ 'token' smart constructor.
 data Token =
   Token'
-    { _tokClientId    :: !(Maybe Text)
-    , _tokEtag        :: !(Maybe Text)
+    { _tokClientId :: !(Maybe Text)
+    , _tokEtag :: !(Maybe Text)
     , _tokDisplayText :: !(Maybe Text)
-    , _tokKind        :: !Text
-    , _tokScopes      :: !(Maybe [Text])
-    , _tokNATiveApp   :: !(Maybe Bool)
-    , _tokAnonymous   :: !(Maybe Bool)
-    , _tokUserKey     :: !(Maybe Text)
+    , _tokKind :: !Text
+    , _tokScopes :: !(Maybe [Text])
+    , _tokNATiveApp :: !(Maybe Bool)
+    , _tokAnonymous :: !(Maybe Bool)
+    , _tokUserKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3556,8 +3556,8 @@ instance ToJSON Token where
 -- /See:/ 'userName' smart constructor.
 data UserName =
   UserName'
-    { _unGivenName  :: !(Maybe Text)
-    , _unFullName   :: !(Maybe Text)
+    { _unGivenName :: !(Maybe Text)
+    , _unFullName :: !(Maybe Text)
     , _unFamilyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3615,14 +3615,14 @@ instance ToJSON UserName where
 -- /See:/ 'building' smart constructor.
 data Building =
   Building'
-    { _buiEtags        :: !(Maybe Text)
-    , _buiKind         :: !Text
-    , _buiBuildingId   :: !(Maybe Text)
-    , _buiAddress      :: !(Maybe BuildingAddress)
-    , _buiCoordinates  :: !(Maybe BuildingCoordinates)
+    { _buiEtags :: !(Maybe Text)
+    , _buiKind :: !Text
+    , _buiBuildingId :: !(Maybe Text)
+    , _buiAddress :: !(Maybe BuildingAddress)
+    , _buiCoordinates :: !(Maybe BuildingCoordinates)
     , _buiBuildingName :: !(Maybe Text)
-    , _buiFloorNames   :: !(Maybe [Text])
-    , _buiDescription  :: !(Maybe Text)
+    , _buiFloorNames :: !(Maybe [Text])
+    , _buiDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3747,7 +3747,7 @@ instance ToJSON Building where
 data ChromeOSDeviceRecentUsersItem =
   ChromeOSDeviceRecentUsersItem'
     { _codruiEmail :: !(Maybe Text)
-    , _codruiType  :: !(Maybe Text)
+    , _codruiType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3794,11 +3794,11 @@ instance ToJSON ChromeOSDeviceRecentUsersItem where
 -- /See:/ 'domainAlias' smart constructor.
 data DomainAlias =
   DomainAlias'
-    { _dCreationTime     :: !(Maybe (Textual Int64))
-    , _dEtag             :: !(Maybe Text)
-    , _dKind             :: !Text
-    , _dVerified         :: !(Maybe Bool)
-    , _dDomainAliasName  :: !(Maybe Text)
+    { _dCreationTime :: !(Maybe (Textual Int64))
+    , _dEtag :: !(Maybe Text)
+    , _dKind :: !Text
+    , _dVerified :: !(Maybe Bool)
+    , _dDomainAliasName :: !(Maybe Text)
     , _dParentDomainName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3890,9 +3890,9 @@ instance ToJSON DomainAlias where
 -- /See:/ 'userGender' smart constructor.
 data UserGender =
   UserGender'
-    { _ugAddressMeAs  :: !(Maybe Text)
+    { _ugAddressMeAs :: !(Maybe Text)
     , _ugCustomGender :: !(Maybe Text)
-    , _ugType         :: !(Maybe Text)
+    , _ugType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3952,10 +3952,10 @@ instance ToJSON UserGender where
 -- /See:/ 'alias' smart constructor.
 data Alias =
   Alias'
-    { _aaEtag         :: !(Maybe Text)
-    , _aaKind         :: !Text
-    , _aaAlias        :: !(Maybe Text)
-    , _aaId           :: !(Maybe Text)
+    { _aaEtag :: !(Maybe Text)
+    , _aaKind :: !Text
+    , _aaAlias :: !(Maybe Text)
+    , _aaId :: !(Maybe Text)
     , _aaPrimaryEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4032,12 +4032,12 @@ instance ToJSON Alias where
 -- /See:/ 'schema' smart constructor.
 data Schema =
   Schema'
-    { _schEtag        :: !(Maybe Text)
-    , _schKind        :: !Text
-    , _schSchemaName  :: !(Maybe Text)
-    , _schSchemaId    :: !(Maybe Text)
+    { _schEtag :: !(Maybe Text)
+    , _schKind :: !Text
+    , _schSchemaName :: !(Maybe Text)
+    , _schSchemaId :: !(Maybe Text)
     , _schDisplayName :: !(Maybe Text)
-    , _schFields      :: !(Maybe [SchemaFieldSpec])
+    , _schFields :: !(Maybe [SchemaFieldSpec])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4170,50 +4170,50 @@ instance ToJSON ChromeOSMoveDevicesToOu where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _useCreationTime               :: !(Maybe DateTime')
-    , _useLastLoginTime              :: !(Maybe DateTime')
-    , _useThumbnailPhotoEtag         :: !(Maybe Text)
-    , _useEtag                       :: !(Maybe Text)
-    , _usePosixAccounts              :: !(Maybe JSONValue)
-    , _useIPWhiteListed              :: !(Maybe Bool)
-    , _useRelations                  :: !(Maybe JSONValue)
-    , _useSSHPublicKeys              :: !(Maybe JSONValue)
-    , _useHashFunction               :: !(Maybe Text)
-    , _useKind                       :: !Text
-    , _useChangePasswordAtNextLogin  :: !(Maybe Bool)
-    , _useWebsites                   :: !(Maybe JSONValue)
-    , _useAddresses                  :: !(Maybe JSONValue)
-    , _useAliases                    :: !(Maybe [Text])
-    , _useThumbnailPhotoURL          :: !(Maybe Text)
-    , _useExternalIds                :: !(Maybe JSONValue)
-    , _useSuspended                  :: !(Maybe Bool)
-    , _useAgreedToTerms              :: !(Maybe Bool)
-    , _useDeletionTime               :: !(Maybe DateTime')
-    , _useNonEditableAliases         :: !(Maybe [Text])
-    , _useOrgUnitPath                :: !(Maybe Text)
-    , _useCustomerId                 :: !(Maybe Text)
-    , _useLanguages                  :: !(Maybe JSONValue)
+    { _useCreationTime :: !(Maybe DateTime')
+    , _useLastLoginTime :: !(Maybe DateTime')
+    , _useThumbnailPhotoEtag :: !(Maybe Text)
+    , _useEtag :: !(Maybe Text)
+    , _usePosixAccounts :: !(Maybe JSONValue)
+    , _useIPWhiteListed :: !(Maybe Bool)
+    , _useRelations :: !(Maybe JSONValue)
+    , _useSSHPublicKeys :: !(Maybe JSONValue)
+    , _useHashFunction :: !(Maybe Text)
+    , _useKind :: !Text
+    , _useChangePasswordAtNextLogin :: !(Maybe Bool)
+    , _useWebsites :: !(Maybe JSONValue)
+    , _useAddresses :: !(Maybe JSONValue)
+    , _useAliases :: !(Maybe [Text])
+    , _useThumbnailPhotoURL :: !(Maybe Text)
+    , _useExternalIds :: !(Maybe JSONValue)
+    , _useSuspended :: !(Maybe Bool)
+    , _useAgreedToTerms :: !(Maybe Bool)
+    , _useDeletionTime :: !(Maybe DateTime')
+    , _useNonEditableAliases :: !(Maybe [Text])
+    , _useOrgUnitPath :: !(Maybe Text)
+    , _useCustomerId :: !(Maybe Text)
+    , _useLanguages :: !(Maybe JSONValue)
     , _useIncludeInGlobalAddressList :: !(Maybe Bool)
-    , _useGender                     :: !(Maybe JSONValue)
-    , _usePhones                     :: !(Maybe JSONValue)
-    , _useName                       :: !(Maybe UserName)
-    , _usePassword                   :: !(Maybe Text)
-    , _useEmails                     :: !(Maybe JSONValue)
-    , _useIms                        :: !(Maybe JSONValue)
-    , _useKeywords                   :: !(Maybe JSONValue)
-    , _useIsAdmin                    :: !(Maybe Bool)
-    , _useIsEnrolledIn2Sv            :: !(Maybe Bool)
-    , _useId                         :: !(Maybe Text)
-    , _useOrganizations              :: !(Maybe JSONValue)
-    , _usePrimaryEmail               :: !(Maybe Text)
-    , _useIsEnforcedIn2Sv            :: !(Maybe Bool)
-    , _useNotes                      :: !(Maybe JSONValue)
-    , _useIsDelegatedAdmin           :: !(Maybe Bool)
-    , _useLocations                  :: !(Maybe JSONValue)
-    , _useArchived                   :: !(Maybe Bool)
-    , _useIsMailboxSetup             :: !(Maybe Bool)
-    , _useCustomSchemas              :: !(Maybe UserCustomSchemas)
-    , _useSuspensionReason           :: !(Maybe Text)
+    , _useGender :: !(Maybe JSONValue)
+    , _usePhones :: !(Maybe JSONValue)
+    , _useName :: !(Maybe UserName)
+    , _usePassword :: !(Maybe Text)
+    , _useEmails :: !(Maybe JSONValue)
+    , _useIms :: !(Maybe JSONValue)
+    , _useKeywords :: !(Maybe JSONValue)
+    , _useIsAdmin :: !(Maybe Bool)
+    , _useIsEnrolledIn2Sv :: !(Maybe Bool)
+    , _useId :: !(Maybe Text)
+    , _useOrganizations :: !(Maybe JSONValue)
+    , _usePrimaryEmail :: !(Maybe Text)
+    , _useIsEnforcedIn2Sv :: !(Maybe Bool)
+    , _useNotes :: !(Maybe JSONValue)
+    , _useIsDelegatedAdmin :: !(Maybe Bool)
+    , _useLocations :: !(Maybe JSONValue)
+    , _useArchived :: !(Maybe Bool)
+    , _useIsMailboxSetup :: !(Maybe Bool)
+    , _useCustomSchemas :: !(Maybe UserCustomSchemas)
+    , _useSuspensionReason :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4694,7 +4694,7 @@ instance ToJSON User where
 -- /See:/ 'chromeOSDeviceAction' smart constructor.
 data ChromeOSDeviceAction =
   ChromeOSDeviceAction'
-    { _codaAction            :: !(Maybe Text)
+    { _codaAction :: !(Maybe Text)
     , _codaDeprovisionReason :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4777,14 +4777,14 @@ instance ToJSON FeatureRename where
 -- /See:/ 'role'' smart constructor.
 data Role =
   Role'
-    { _rrEtag             :: !(Maybe Text)
-    , _rrKind             :: !Text
-    , _rrRoleName         :: !(Maybe Text)
-    , _rrIsSystemRole     :: !(Maybe Bool)
-    , _rrRoleId           :: !(Maybe (Textual Int64))
-    , _rrRoleDescription  :: !(Maybe Text)
+    { _rrEtag :: !(Maybe Text)
+    , _rrKind :: !Text
+    , _rrRoleName :: !(Maybe Text)
+    , _rrIsSystemRole :: !(Maybe Bool)
+    , _rrRoleId :: !(Maybe (Textual Int64))
+    , _rrRoleDescription :: !(Maybe Text)
     , _rrIsSuperAdminRole :: !(Maybe Bool)
-    , _rrRolePrivileges   :: !(Maybe [RoleRolePrivilegesItem])
+    , _rrRolePrivileges :: !(Maybe [RoleRolePrivilegesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4899,15 +4899,15 @@ instance ToJSON Role where
 -- /See:/ 'customer' smart constructor.
 data Customer =
   Customer'
-    { _cusEtag                 :: !(Maybe Text)
-    , _cusKind                 :: !Text
-    , _cusAlternateEmail       :: !(Maybe Text)
-    , _cusCustomerDomain       :: !(Maybe Text)
-    , _cusPhoneNumber          :: !(Maybe Text)
-    , _cusLanguage             :: !(Maybe Text)
-    , _cusId                   :: !(Maybe Text)
+    { _cusEtag :: !(Maybe Text)
+    , _cusKind :: !Text
+    , _cusAlternateEmail :: !(Maybe Text)
+    , _cusCustomerDomain :: !(Maybe Text)
+    , _cusPhoneNumber :: !(Maybe Text)
+    , _cusLanguage :: !(Maybe Text)
+    , _cusId :: !(Maybe Text)
     , _cusCustomerCreationTime :: !(Maybe DateTime')
-    , _cusPostalAddress        :: !(Maybe CustomerPostalAddress)
+    , _cusPostalAddress :: !(Maybe CustomerPostalAddress)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5036,7 +5036,7 @@ data MobileDeviceApplicationsItem =
     , _mdaiVersionName :: !(Maybe Text)
     , _mdaiPackageName :: !(Maybe Text)
     , _mdaiDisplayName :: !(Maybe Text)
-    , _mdaiPermission  :: !(Maybe [Text])
+    , _mdaiPermission :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5123,9 +5123,9 @@ instance ToJSON MobileDeviceApplicationsItem where
 -- /See:/ 'chromeOSDeviceDiskVolumeReportsItemVolumeInfoItem' smart constructor.
 data ChromeOSDeviceDiskVolumeReportsItemVolumeInfoItem =
   ChromeOSDeviceDiskVolumeReportsItemVolumeInfoItem'
-    { _coddvriviiStorageFree  :: !(Maybe (Textual Int64))
+    { _coddvriviiStorageFree :: !(Maybe (Textual Int64))
     , _coddvriviiStorageTotal :: !(Maybe (Textual Int64))
-    , _coddvriviiVolumeId     :: !(Maybe Text)
+    , _coddvriviiVolumeId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5198,8 +5198,8 @@ instance ToJSON
 -- /See:/ 'orgUnits' smart constructor.
 data OrgUnits =
   OrgUnits'
-    { _oEtag              :: !(Maybe Text)
-    , _oKind              :: !Text
+    { _oEtag :: !(Maybe Text)
+    , _oKind :: !Text
     , _oOrganizationUnits :: !(Maybe [OrgUnit])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5261,8 +5261,8 @@ instance ToJSON OrgUnits where
 -- /See:/ 'userSSHPublicKey' smart constructor.
 data UserSSHPublicKey =
   UserSSHPublicKey'
-    { _uspkFingerprint        :: !(Maybe Text)
-    , _uspkKey                :: !(Maybe Text)
+    { _uspkFingerprint :: !(Maybe Text)
+    , _uspkKey :: !(Maybe Text)
     , _uspkExpirationTimeUsec :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5327,8 +5327,8 @@ instance ToJSON UserSSHPublicKey where
 -- /See:/ 'verificationCodes' smart constructor.
 data VerificationCodes =
   VerificationCodes'
-    { _vEtag  :: !(Maybe Text)
-    , _vKind  :: !Text
+    { _vEtag :: !(Maybe Text)
+    , _vKind :: !Text
     , _vItems :: !(Maybe [VerificationCode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5390,7 +5390,7 @@ instance ToJSON VerificationCodes where
 -- /See:/ 'buildingCoordinates' smart constructor.
 data BuildingCoordinates =
   BuildingCoordinates'
-    { _bcLatitude  :: !(Maybe (Textual Double))
+    { _bcLatitude :: !(Maybe (Textual Double))
     , _bcLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5440,8 +5440,8 @@ instance ToJSON BuildingCoordinates where
 -- /See:/ 'userRelation' smart constructor.
 data UserRelation =
   UserRelation'
-    { _urValue      :: !(Maybe Text)
-    , _urType       :: !(Maybe Text)
+    { _urValue :: !(Maybe Text)
+    , _urType :: !(Maybe Text)
     , _urCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5497,10 +5497,10 @@ instance ToJSON UserRelation where
 -- /See:/ 'trustedApps' smart constructor.
 data TrustedApps =
   TrustedApps'
-    { _taEtag          :: !(Maybe Text)
+    { _taEtag :: !(Maybe Text)
     , _taNextPageToken :: !(Maybe Text)
-    , _taKind          :: !Text
-    , _taTrustedApps   :: !(Maybe [TrustedAppId])
+    , _taKind :: !Text
+    , _taTrustedApps :: !(Maybe [TrustedAppId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5571,10 +5571,10 @@ instance ToJSON TrustedApps where
 -- /See:/ 'features' smart constructor.
 data Features =
   Features'
-    { _feaEtag          :: !(Maybe Text)
+    { _feaEtag :: !(Maybe Text)
     , _feaNextPageToken :: !(Maybe Text)
-    , _feaKind          :: !Text
-    , _feaFeatures      :: !(Maybe [Feature])
+    , _feaKind :: !Text
+    , _feaFeatures :: !(Maybe [Feature])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5683,11 +5683,11 @@ instance ToJSON ChannelParams where
 -- /See:/ 'chromeOSDeviceTpmVersionInfo' smart constructor.
 data ChromeOSDeviceTpmVersionInfo =
   ChromeOSDeviceTpmVersionInfo'
-    { _codtviVendorSpecific  :: !(Maybe Text)
-    , _codtviManufacturer    :: !(Maybe Text)
-    , _codtviSpecLevel       :: !(Maybe Text)
-    , _codtviTpmModel        :: !(Maybe Text)
-    , _codtviFamily          :: !(Maybe Text)
+    { _codtviVendorSpecific :: !(Maybe Text)
+    , _codtviManufacturer :: !(Maybe Text)
+    , _codtviSpecLevel :: !(Maybe Text)
+    , _codtviTpmModel :: !(Maybe Text)
+    , _codtviFamily :: !(Maybe Text)
     , _codtviFirmwareVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5783,18 +5783,18 @@ instance ToJSON ChromeOSDeviceTpmVersionInfo where
 -- /See:/ 'userOrganization' smart constructor.
 data UserOrganization =
   UserOrganization'
-    { _uoDePartment         :: !(Maybe Text)
-    , _uoLocation           :: !(Maybe Text)
-    , _uoCostCenter         :: !(Maybe Text)
-    , _uoDomain             :: !(Maybe Text)
-    , _uoSymbol             :: !(Maybe Text)
-    , _uoPrimary            :: !(Maybe Bool)
-    , _uoName               :: !(Maybe Text)
+    { _uoDePartment :: !(Maybe Text)
+    , _uoLocation :: !(Maybe Text)
+    , _uoCostCenter :: !(Maybe Text)
+    , _uoDomain :: !(Maybe Text)
+    , _uoSymbol :: !(Maybe Text)
+    , _uoPrimary :: !(Maybe Bool)
+    , _uoName :: !(Maybe Text)
     , _uoFullTimeEquivalent :: !(Maybe (Textual Int32))
-    , _uoTitle              :: !(Maybe Text)
-    , _uoType               :: !(Maybe Text)
-    , _uoCustomType         :: !(Maybe Text)
-    , _uoDescription        :: !(Maybe Text)
+    , _uoTitle :: !(Maybe Text)
+    , _uoType :: !(Maybe Text)
+    , _uoCustomType :: !(Maybe Text)
+    , _uoDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5946,9 +5946,9 @@ instance ToJSON UserOrganization where
 -- /See:/ 'userWebsite' smart constructor.
 data UserWebsite =
   UserWebsite'
-    { _uwValue      :: !(Maybe Text)
-    , _uwPrimary    :: !(Maybe Bool)
-    , _uwType       :: !(Maybe Text)
+    { _uwValue :: !(Maybe Text)
+    , _uwPrimary :: !(Maybe Bool)
+    , _uwType :: !(Maybe Text)
     , _uwCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6020,7 +6020,7 @@ instance ToJSON UserWebsite where
 -- /See:/ 'chromeOSDeviceActiveTimeRangesItem' smart constructor.
 data ChromeOSDeviceActiveTimeRangesItem =
   ChromeOSDeviceActiveTimeRangesItem'
-    { _codatriDate       :: !(Maybe Date')
+    { _codatriDate :: !(Maybe Date')
     , _codatriActiveTime :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6074,9 +6074,9 @@ instance ToJSON ChromeOSDeviceActiveTimeRangesItem
 -- /See:/ 'userEmail' smart constructor.
 data UserEmail =
   UserEmail'
-    { _ueAddress    :: !(Maybe Text)
-    , _uePrimary    :: !(Maybe Bool)
-    , _ueType       :: !(Maybe Text)
+    { _ueAddress :: !(Maybe Text)
+    , _uePrimary :: !(Maybe Bool)
+    , _ueType :: !(Maybe Text)
     , _ueCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6151,9 +6151,9 @@ instance ToJSON UserEmail where
 -- /See:/ 'userPhone' smart constructor.
 data UserPhone =
   UserPhone'
-    { _upValue      :: !(Maybe Text)
-    , _upPrimary    :: !(Maybe Bool)
-    , _upType       :: !(Maybe Text)
+    { _upValue :: !(Maybe Text)
+    , _upPrimary :: !(Maybe Bool)
+    , _upType :: !(Maybe Text)
     , _upCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6226,13 +6226,13 @@ instance ToJSON UserPhone where
 -- /See:/ 'userPhoto' smart constructor.
 data UserPhoto =
   UserPhoto'
-    { _upPhotoData    :: !(Maybe Bytes)
-    , _upEtag         :: !(Maybe Text)
-    , _upHeight       :: !(Maybe (Textual Int32))
-    , _upKind         :: !Text
-    , _upWidth        :: !(Maybe (Textual Int32))
-    , _upMimeType     :: !(Maybe Text)
-    , _upId           :: !(Maybe Text)
+    { _upPhotoData :: !(Maybe Bytes)
+    , _upEtag :: !(Maybe Text)
+    , _upHeight :: !(Maybe (Textual Int32))
+    , _upKind :: !Text
+    , _upWidth :: !(Maybe (Textual Int32))
+    , _upMimeType :: !(Maybe Text)
+    , _upId :: !(Maybe Text)
     , _upPrimaryEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6340,7 +6340,7 @@ instance ToJSON UserPhoto where
 -- /See:/ 'chromeOSDeviceSystemRamFreeReportsItem' smart constructor.
 data ChromeOSDeviceSystemRamFreeReportsItem =
   ChromeOSDeviceSystemRamFreeReportsItem'
-    { _codsrfriReportTime        :: !(Maybe DateTime')
+    { _codsrfriReportTime :: !(Maybe DateTime')
     , _codsrfriSystemRamFreeInfo :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6400,16 +6400,16 @@ instance ToJSON
 -- /See:/ 'userPosixAccount' smart constructor.
 data UserPosixAccount =
   UserPosixAccount'
-    { _upaGecos               :: !(Maybe Text)
-    , _upaUid                 :: !(Maybe (Textual Word64))
-    , _upaUsername            :: !(Maybe Text)
-    , _upaShell               :: !(Maybe Text)
-    , _upaPrimary             :: !(Maybe Bool)
-    , _upaAccountId           :: !(Maybe Text)
-    , _upaGid                 :: !(Maybe (Textual Word64))
+    { _upaGecos :: !(Maybe Text)
+    , _upaUid :: !(Maybe (Textual Word64))
+    , _upaUsername :: !(Maybe Text)
+    , _upaShell :: !(Maybe Text)
+    , _upaPrimary :: !(Maybe Bool)
+    , _upaAccountId :: !(Maybe Text)
+    , _upaGid :: !(Maybe (Textual Word64))
     , _upaOperatingSystemType :: !(Maybe Text)
-    , _upaSystemId            :: !(Maybe Text)
-    , _upaHomeDirectory       :: !(Maybe Text)
+    , _upaSystemId :: !(Maybe Text)
+    , _upaHomeDirectory :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6576,46 +6576,46 @@ instance ToJSON FeatureInstance where
 -- /See:/ 'mobileDevice' smart constructor.
 data MobileDevice =
   MobileDevice'
-    { _mobEmail                          :: !(Maybe [Text])
-    , _mobStatus                         :: !(Maybe Text)
-    , _mobPrivilege                      :: !(Maybe Text)
-    , _mobEtag                           :: !(Maybe Text)
-    , _mobResourceId                     :: !(Maybe Text)
-    , _mobManufacturer                   :: !(Maybe Text)
-    , _mobBuildNumber                    :: !(Maybe Text)
+    { _mobEmail :: !(Maybe [Text])
+    , _mobStatus :: !(Maybe Text)
+    , _mobPrivilege :: !(Maybe Text)
+    , _mobEtag :: !(Maybe Text)
+    , _mobResourceId :: !(Maybe Text)
+    , _mobManufacturer :: !(Maybe Text)
+    , _mobBuildNumber :: !(Maybe Text)
     , _mobManagedAccountIsOnOwnerProFile :: !(Maybe Bool)
-    , _mobLastSync                       :: !(Maybe DateTime')
-    , _mobOtherAccountsInfo              :: !(Maybe [Text])
-    , _mobKind                           :: !Text
-    , _mobAdbStatus                      :: !(Maybe Bool)
-    , _mobReleaseVersion                 :: !(Maybe Text)
-    , _mobBrand                          :: !(Maybe Text)
-    , _mobSecurityPatchLevel             :: !(Maybe (Textual Int64))
-    , _mobNetworkOperator                :: !(Maybe Text)
-    , _mobKernelVersion                  :: !(Maybe Text)
-    , _mobOS                             :: !(Maybe Text)
-    , _mobName                           :: !(Maybe [Text])
-    , _mobModel                          :: !(Maybe Text)
-    , _mobDeveloperOptionsStatus         :: !(Maybe Bool)
-    , _mobUnknownSourcesStatus           :: !(Maybe Bool)
-    , _mobMeid                           :: !(Maybe Text)
-    , _mobBootLoaderVersion              :: !(Maybe Text)
-    , _mobDeviceId                       :: !(Maybe Text)
-    , _mobFirstSync                      :: !(Maybe DateTime')
-    , _mobUserAgent                      :: !(Maybe Text)
-    , _mobImei                           :: !(Maybe Text)
-    , _mobType                           :: !(Maybe Text)
-    , _mobWifiMACAddress                 :: !(Maybe Text)
-    , _mobEncryptionStatus               :: !(Maybe Text)
-    , _mobSerialNumber                   :: !(Maybe Text)
-    , _mobDevicePasswordStatus           :: !(Maybe Text)
-    , _mobHardwareId                     :: !(Maybe Text)
-    , _mobBasebandVersion                :: !(Maybe Text)
-    , _mobSupportsWorkProFile            :: !(Maybe Bool)
-    , _mobHardware                       :: !(Maybe Text)
-    , _mobDeviceCompromisedStatus        :: !(Maybe Text)
-    , _mobApplications                   :: !(Maybe [MobileDeviceApplicationsItem])
-    , _mobDefaultLanguage                :: !(Maybe Text)
+    , _mobLastSync :: !(Maybe DateTime')
+    , _mobOtherAccountsInfo :: !(Maybe [Text])
+    , _mobKind :: !Text
+    , _mobAdbStatus :: !(Maybe Bool)
+    , _mobReleaseVersion :: !(Maybe Text)
+    , _mobBrand :: !(Maybe Text)
+    , _mobSecurityPatchLevel :: !(Maybe (Textual Int64))
+    , _mobNetworkOperator :: !(Maybe Text)
+    , _mobKernelVersion :: !(Maybe Text)
+    , _mobOS :: !(Maybe Text)
+    , _mobName :: !(Maybe [Text])
+    , _mobModel :: !(Maybe Text)
+    , _mobDeveloperOptionsStatus :: !(Maybe Bool)
+    , _mobUnknownSourcesStatus :: !(Maybe Bool)
+    , _mobMeid :: !(Maybe Text)
+    , _mobBootLoaderVersion :: !(Maybe Text)
+    , _mobDeviceId :: !(Maybe Text)
+    , _mobFirstSync :: !(Maybe DateTime')
+    , _mobUserAgent :: !(Maybe Text)
+    , _mobImei :: !(Maybe Text)
+    , _mobType :: !(Maybe Text)
+    , _mobWifiMACAddress :: !(Maybe Text)
+    , _mobEncryptionStatus :: !(Maybe Text)
+    , _mobSerialNumber :: !(Maybe Text)
+    , _mobDevicePasswordStatus :: !(Maybe Text)
+    , _mobHardwareId :: !(Maybe Text)
+    , _mobBasebandVersion :: !(Maybe Text)
+    , _mobSupportsWorkProFile :: !(Maybe Bool)
+    , _mobHardware :: !(Maybe Text)
+    , _mobDeviceCompromisedStatus :: !(Maybe Text)
+    , _mobApplications :: !(Maybe [MobileDeviceApplicationsItem])
+    , _mobDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7076,8 +7076,8 @@ instance ToJSON MobileDevice where
 data ChromeOSDeviceCPUStatusReportsItem =
   ChromeOSDeviceCPUStatusReportsItem'
     { _codcsriCPUUtilizationPercentageInfo :: !(Maybe [Textual Int32])
-    , _codcsriCPUTemperatureInfo           :: !(Maybe [ChromeOSDeviceCPUStatusReportsItemCPUTemperatureInfoItem])
-    , _codcsriReportTime                   :: !(Maybe DateTime')
+    , _codcsriCPUTemperatureInfo :: !(Maybe [ChromeOSDeviceCPUStatusReportsItemCPUTemperatureInfoItem])
+    , _codcsriReportTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7150,14 +7150,14 @@ instance ToJSON ChromeOSDeviceCPUStatusReportsItem
 -- /See:/ 'member' smart constructor.
 data Member =
   Member'
-    { _memEmail            :: !(Maybe Text)
-    , _memStatus           :: !(Maybe Text)
-    , _memEtag             :: !(Maybe Text)
-    , _memKind             :: !Text
+    { _memEmail :: !(Maybe Text)
+    , _memStatus :: !(Maybe Text)
+    , _memEtag :: !(Maybe Text)
+    , _memKind :: !Text
     , _memDeliverySettings :: !(Maybe Text)
-    , _memRole             :: !(Maybe Text)
-    , _memId               :: !(Maybe Text)
-    , _memType             :: !(Maybe Text)
+    , _memRole :: !(Maybe Text)
+    , _memId :: !(Maybe Text)
+    , _memType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7262,14 +7262,14 @@ instance ToJSON Member where
 -- /See:/ 'appAccessCollections' smart constructor.
 data AppAccessCollections =
   AppAccessCollections'
-    { _aacEtag                           :: !(Maybe Text)
-    , _aacResourceId                     :: !(Maybe (Textual Int64))
+    { _aacEtag :: !(Maybe Text)
+    , _aacResourceId :: !(Maybe (Textual Int64))
     , _aacEnforceSettingsForAndroidDrive :: !(Maybe Bool)
-    , _aacResourceName                   :: !(Maybe Text)
-    , _aacKind                           :: !Text
-    , _aacTrustDomainOwnedApps           :: !(Maybe Bool)
-    , _aacBlockedAPIAccessBuckets        :: !(Maybe [Text])
-    , _aacErrorMessage                   :: !(Maybe Text)
+    , _aacResourceName :: !(Maybe Text)
+    , _aacKind :: !Text
+    , _aacTrustDomainOwnedApps :: !(Maybe Bool)
+    , _aacBlockedAPIAccessBuckets :: !(Maybe [Text])
+    , _aacErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7432,7 +7432,7 @@ instance ToJSON UserCustomProperties where
 -- /See:/ 'userLanguage' smart constructor.
 data UserLanguage =
   UserLanguage'
-    { _ulLanguageCode   :: !(Maybe Text)
+    { _ulLanguageCode :: !(Maybe Text)
     , _ulCustomLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7485,13 +7485,13 @@ instance ToJSON UserLanguage where
 -- /See:/ 'domains' smart constructor.
 data Domains =
   Domains'
-    { _domCreationTime  :: !(Maybe (Textual Int64))
-    , _domEtag          :: !(Maybe Text)
-    , _domKind          :: !Text
+    { _domCreationTime :: !(Maybe (Textual Int64))
+    , _domEtag :: !(Maybe Text)
+    , _domKind :: !Text
     , _domDomainAliases :: !(Maybe [DomainAlias])
-    , _domVerified      :: !(Maybe Bool)
-    , _domDomainName    :: !(Maybe Text)
-    , _domIsPrimary     :: !(Maybe Bool)
+    , _domVerified :: !(Maybe Bool)
+    , _domDomainName :: !(Maybe Text)
+    , _domIsPrimary :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7595,10 +7595,10 @@ instance ToJSON Domains where
 -- /See:/ 'calendarResources' smart constructor.
 data CalendarResources =
   CalendarResources'
-    { _crsEtag          :: !(Maybe Text)
+    { _crsEtag :: !(Maybe Text)
     , _crsNextPageToken :: !(Maybe Text)
-    , _crsKind          :: !Text
-    , _crsItems         :: !(Maybe [CalendarResource])
+    , _crsKind :: !Text
+    , _crsItems :: !(Maybe [CalendarResource])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7672,10 +7672,10 @@ instance ToJSON CalendarResources where
 -- /See:/ 'notifications' smart constructor.
 data Notifications =
   Notifications'
-    { _notEtag                     :: !(Maybe Text)
-    , _notNextPageToken            :: !(Maybe Text)
-    , _notKind                     :: !Text
-    , _notItems                    :: !(Maybe [Notification])
+    { _notEtag :: !(Maybe Text)
+    , _notNextPageToken :: !(Maybe Text)
+    , _notKind :: !Text
+    , _notItems :: !(Maybe [Notification])
     , _notUnreadNotificationsCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7856,16 +7856,16 @@ instance ToJSON MobileDeviceAction where
 -- /See:/ 'schemaFieldSpec' smart constructor.
 data SchemaFieldSpec =
   SchemaFieldSpec'
-    { _sfsEtag                :: !(Maybe Text)
-    , _sfsKind                :: !Text
+    { _sfsEtag :: !(Maybe Text)
+    , _sfsKind :: !Text
     , _sfsNumericIndexingSpec :: !(Maybe SchemaFieldSpecNumericIndexingSpec)
-    , _sfsReadAccessType      :: !Text
-    , _sfsFieldId             :: !(Maybe Text)
-    , _sfsIndexed             :: !Bool
-    , _sfsFieldType           :: !(Maybe Text)
-    , _sfsFieldName           :: !(Maybe Text)
-    , _sfsDisplayName         :: !(Maybe Text)
-    , _sfsMultiValued         :: !(Maybe Bool)
+    , _sfsReadAccessType :: !Text
+    , _sfsFieldId :: !(Maybe Text)
+    , _sfsIndexed :: !Bool
+    , _sfsFieldType :: !(Maybe Text)
+    , _sfsFieldName :: !(Maybe Text)
+    , _sfsDisplayName :: !(Maybe Text)
+    , _sfsMultiValued :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8002,9 +8002,9 @@ instance ToJSON SchemaFieldSpec where
 -- /See:/ 'chromeOSDevices' smart constructor.
 data ChromeOSDevices =
   ChromeOSDevices'
-    { _cosdEtag            :: !(Maybe Text)
-    , _cosdNextPageToken   :: !(Maybe Text)
-    , _cosdKind            :: !Text
+    { _cosdEtag :: !(Maybe Text)
+    , _cosdNextPageToken :: !(Maybe Text)
+    , _cosdKind :: !Text
     , _cosdChromeosDevices :: !(Maybe [ChromeOSDevice])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8114,10 +8114,10 @@ instance ToJSON MembersHasMember where
 data TrustedAppId =
   TrustedAppId'
     { _taiCertificateHashSHA256 :: !(Maybe Text)
-    , _taiEtag                  :: !(Maybe Text)
-    , _taiKind                  :: !Text
-    , _taiCertificateHashSHA1   :: !(Maybe Text)
-    , _taiAndroidPackageName    :: !(Maybe Text)
+    , _taiEtag :: !(Maybe Text)
+    , _taiKind :: !Text
+    , _taiCertificateHashSHA1 :: !(Maybe Text)
+    , _taiAndroidPackageName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8199,8 +8199,8 @@ instance ToJSON TrustedAppId where
 -- /See:/ 'userExternalId' smart constructor.
 data UserExternalId =
   UserExternalId'
-    { _ueiValue      :: !(Maybe Text)
-    , _ueiType       :: !(Maybe Text)
+    { _ueiValue :: !(Maybe Text)
+    , _ueiType :: !(Maybe Text)
     , _ueiCustomType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8256,8 +8256,8 @@ instance ToJSON UserExternalId where
 -- /See:/ 'asps' smart constructor.
 data Asps =
   Asps'
-    { _aspEtag  :: !(Maybe Text)
-    , _aspKind  :: !Text
+    { _aspEtag :: !(Maybe Text)
+    , _aspKind :: !Text
     , _aspItems :: !(Maybe [Asp])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8318,7 +8318,7 @@ instance ToJSON Asps where
 data ChromeOSDeviceCPUStatusReportsItemCPUTemperatureInfoItem =
   ChromeOSDeviceCPUStatusReportsItemCPUTemperatureInfoItem'
     { _codcsrictiiTemperature :: !(Maybe (Textual Int32))
-    , _codcsrictiiLabel       :: !(Maybe Text)
+    , _codcsrictiiLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8374,7 +8374,7 @@ instance ToJSON
 -- /See:/ 'roleRolePrivilegesItem' smart constructor.
 data RoleRolePrivilegesItem =
   RoleRolePrivilegesItem'
-    { _rrpiServiceId     :: !(Maybe Text)
+    { _rrpiServiceId :: !(Maybe Text)
     , _rrpiPrivilegeName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8425,8 +8425,8 @@ instance ToJSON RoleRolePrivilegesItem where
 -- /See:/ 'domains2' smart constructor.
 data Domains2 =
   Domains2'
-    { _ddEtag    :: !(Maybe Text)
-    , _ddKind    :: !Text
+    { _ddEtag :: !(Maybe Text)
+    , _ddKind :: !Text
     , _ddDomains :: !(Maybe [Domains])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -48,8 +48,8 @@ module Network.Google.Resource.CloudSearch.Stats.GetIndex
     , sgiCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.stats.getIndex@ method which the
 -- 'StatsGetIndex' request conforms to.
@@ -78,17 +78,17 @@ type StatsGetIndexResource =
 -- /See:/ 'statsGetIndex' smart constructor.
 data StatsGetIndex =
   StatsGetIndex'
-    { _sgiFromDateMonth  :: !(Maybe (Textual Int32))
-    , _sgiXgafv          :: !(Maybe Xgafv)
+    { _sgiFromDateMonth :: !(Maybe (Textual Int32))
+    , _sgiXgafv :: !(Maybe Xgafv)
     , _sgiUploadProtocol :: !(Maybe Text)
-    , _sgiFromDateDay    :: !(Maybe (Textual Int32))
-    , _sgiAccessToken    :: !(Maybe Text)
-    , _sgiUploadType     :: !(Maybe Text)
-    , _sgiFromDateYear   :: !(Maybe (Textual Int32))
-    , _sgiToDateDay      :: !(Maybe (Textual Int32))
-    , _sgiToDateYear     :: !(Maybe (Textual Int32))
-    , _sgiToDateMonth    :: !(Maybe (Textual Int32))
-    , _sgiCallback       :: !(Maybe Text)
+    , _sgiFromDateDay :: !(Maybe (Textual Int32))
+    , _sgiAccessToken :: !(Maybe Text)
+    , _sgiUploadType :: !(Maybe Text)
+    , _sgiFromDateYear :: !(Maybe (Textual Int32))
+    , _sgiToDateDay :: !(Maybe (Textual Int32))
+    , _sgiToDateYear :: !(Maybe (Textual Int32))
+    , _sgiToDateMonth :: !(Maybe (Textual Int32))
+    , _sgiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

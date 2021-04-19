@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.TargetInstances.List
     , tilMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetInstances.list@ method which the
 -- 'TargetInstancesList' request conforms to.
@@ -68,11 +68,11 @@ type TargetInstancesListResource =
 -- /See:/ 'targetInstancesList' smart constructor.
 data TargetInstancesList =
   TargetInstancesList'
-    { _tilOrderBy    :: !(Maybe Text)
-    , _tilProject    :: !Text
-    , _tilZone       :: !Text
-    , _tilFilter     :: !(Maybe Text)
-    , _tilPageToken  :: !(Maybe Text)
+    { _tilOrderBy :: !(Maybe Text)
+    , _tilProject :: !Text
+    , _tilZone :: !Text
+    , _tilFilter :: !(Maybe Text)
+    , _tilPageToken :: !(Maybe Text)
     , _tilMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

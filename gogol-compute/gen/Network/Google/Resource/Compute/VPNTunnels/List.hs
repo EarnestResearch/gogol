@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.VPNTunnels.List
     , vtlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.vpnTunnels.list@ method which the
 -- 'VPNTunnelsList' request conforms to.
@@ -67,11 +67,11 @@ type VPNTunnelsListResource =
 -- /See:/ 'vpnTunnelsList' smart constructor.
 data VPNTunnelsList =
   VPNTunnelsList'
-    { _vtlOrderBy    :: !(Maybe Text)
-    , _vtlProject    :: !Text
-    , _vtlFilter     :: !(Maybe Text)
-    , _vtlRegion     :: !Text
-    , _vtlPageToken  :: !(Maybe Text)
+    { _vtlOrderBy :: !(Maybe Text)
+    , _vtlProject :: !Text
+    , _vtlFilter :: !(Maybe Text)
+    , _vtlRegion :: !Text
+    , _vtlPageToken :: !(Maybe Text)
     , _vtlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -38,8 +38,8 @@ module Network.Google.Resource.Licensing.LicenseAssignments.Get
     , lagProductId
     ) where
 
-import           Network.Google.AppsLicensing.Types
-import           Network.Google.Prelude
+import Network.Google.AppsLicensing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @licensing.licenseAssignments.get@ method which the
 -- 'LicenseAssignmentsGet' request conforms to.
@@ -61,8 +61,8 @@ type LicenseAssignmentsGetResource =
 -- /See:/ 'licenseAssignmentsGet' smart constructor.
 data LicenseAssignmentsGet =
   LicenseAssignmentsGet'
-    { _lagSKUId     :: !Text
-    , _lagUserId    :: !Text
+    { _lagSKUId :: !Text
+    , _lagUserId :: !Text
     , _lagProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

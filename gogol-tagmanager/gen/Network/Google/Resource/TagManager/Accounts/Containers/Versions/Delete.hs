@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Delete
     , acvdPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.delete@ method which the
 -- 'AccountsContainersVersionsDelete' request conforms to.

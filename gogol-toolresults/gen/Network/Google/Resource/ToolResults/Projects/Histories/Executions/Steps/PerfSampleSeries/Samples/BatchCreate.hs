@@ -48,8 +48,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespsssbcSampleSeriesId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.perfSampleSeries.samples.batchCreate@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesBatchCreate' request conforms to.
@@ -85,11 +85,11 @@ type ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesBatchCreateResource
 -- /See:/ 'projectsHistoriesExecutionsStepsPerfSampleSeriesSamplesBatchCreate' smart constructor.
 data ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesBatchCreate =
   ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesBatchCreate'
-    { _phespsssbcExecutionId    :: !Text
-    , _phespsssbcStepId         :: !Text
-    , _phespsssbcPayload        :: !BatchCreatePerfSamplesRequest
-    , _phespsssbcHistoryId      :: !Text
-    , _phespsssbcProjectId      :: !Text
+    { _phespsssbcExecutionId :: !Text
+    , _phespsssbcStepId :: !Text
+    , _phespsssbcPayload :: !BatchCreatePerfSamplesRequest
+    , _phespsssbcHistoryId :: !Text
+    , _phespsssbcProjectId :: !Text
     , _phespsssbcSampleSeriesId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

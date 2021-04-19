@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.Entitlements.Update
     , euUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.entitlements.update@ method which the
 -- 'EntitlementsUpdate' request conforms to.
@@ -65,10 +65,10 @@ type EntitlementsUpdateResource =
 data EntitlementsUpdate =
   EntitlementsUpdate'
     { _euEntitlementId :: !Text
-    , _euEnterpriseId  :: !Text
-    , _euPayload       :: !Entitlement
-    , _euInstall       :: !(Maybe Bool)
-    , _euUserId        :: !Text
+    , _euEnterpriseId :: !Text
+    , _euPayload :: !Entitlement
+    , _euInstall :: !(Maybe Bool)
+    , _euUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Drive.Permissions.Update
     , puPermissionId
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.permissions.update@ method which the
 -- 'PermissionsUpdate' request conforms to.
@@ -69,14 +69,14 @@ type PermissionsUpdateResource =
 -- /See:/ 'permissionsUpdate' smart constructor.
 data PermissionsUpdate =
   PermissionsUpdate'
-    { _puPayload              :: !Permission
-    , _puSupportsAllDrives    :: !Bool
-    , _puRemoveExpiration     :: !Bool
+    { _puPayload :: !Permission
+    , _puSupportsAllDrives :: !Bool
+    , _puRemoveExpiration :: !Bool
     , _puUseDomainAdminAccess :: !Bool
-    , _puTransferOwnership    :: !Bool
-    , _puFileId               :: !Text
-    , _puSupportsTeamDrives   :: !Bool
-    , _puPermissionId         :: !Text
+    , _puTransferOwnership :: !Bool
+    , _puFileId :: !Text
+    , _puSupportsTeamDrives :: !Bool
+    , _puPermissionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

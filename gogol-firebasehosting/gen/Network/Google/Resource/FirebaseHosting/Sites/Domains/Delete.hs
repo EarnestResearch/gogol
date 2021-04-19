@@ -41,8 +41,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Domains.Delete
     , sddCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.domains.delete@ method which the
 -- 'SitesDomainsDelete' request conforms to.
@@ -61,12 +61,12 @@ type SitesDomainsDeleteResource =
 -- /See:/ 'sitesDomainsDelete' smart constructor.
 data SitesDomainsDelete =
   SitesDomainsDelete'
-    { _sddXgafv          :: !(Maybe Xgafv)
+    { _sddXgafv :: !(Maybe Xgafv)
     , _sddUploadProtocol :: !(Maybe Text)
-    , _sddAccessToken    :: !(Maybe Text)
-    , _sddUploadType     :: !(Maybe Text)
-    , _sddName           :: !Text
-    , _sddCallback       :: !(Maybe Text)
+    , _sddAccessToken :: !(Maybe Text)
+    , _sddUploadType :: !(Maybe Text)
+    , _sddName :: !Text
+    , _sddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

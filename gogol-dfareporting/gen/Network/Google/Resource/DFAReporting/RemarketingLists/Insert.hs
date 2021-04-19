@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Insert
     , rliPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.insert@ method which the
 -- 'RemarketingListsInsert' request conforms to.
@@ -58,7 +58,7 @@ type RemarketingListsInsertResource =
 data RemarketingListsInsert =
   RemarketingListsInsert'
     { _rliProFileId :: !(Textual Int64)
-    , _rliPayload   :: !RemarketingList
+    , _rliPayload :: !RemarketingList
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

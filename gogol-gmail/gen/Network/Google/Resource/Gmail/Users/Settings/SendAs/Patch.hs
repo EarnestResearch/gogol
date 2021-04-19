@@ -42,8 +42,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.Patch
     , ussapSendAsEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.patch@ method which the
 -- 'UsersSettingsSendAsPatch' request conforms to.
@@ -67,8 +67,8 @@ type UsersSettingsSendAsPatchResource =
 -- /See:/ 'usersSettingsSendAsPatch' smart constructor.
 data UsersSettingsSendAsPatch =
   UsersSettingsSendAsPatch'
-    { _ussapPayload     :: !SendAs
-    , _ussapUserId      :: !Text
+    { _ussapPayload :: !SendAs
+    , _ussapUserId :: !Text
     , _ussapSendAsEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

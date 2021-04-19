@@ -47,8 +47,8 @@ module Network.Google.Resource.ServiceManagement.Services.Consumers.TestIAMPermi
     , sctipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.consumers.testIamPermissions@ method which the
 -- 'ServicesConsumersTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ServicesConsumersTestIAMPermissionsResource =
 -- /See:/ 'servicesConsumersTestIAMPermissions' smart constructor.
 data ServicesConsumersTestIAMPermissions =
   ServicesConsumersTestIAMPermissions'
-    { _sctipXgafv          :: !(Maybe Xgafv)
+    { _sctipXgafv :: !(Maybe Xgafv)
     , _sctipUploadProtocol :: !(Maybe Text)
-    , _sctipAccessToken    :: !(Maybe Text)
-    , _sctipUploadType     :: !(Maybe Text)
-    , _sctipPayload        :: !TestIAMPermissionsRequest
-    , _sctipResource       :: !Text
-    , _sctipCallback       :: !(Maybe Text)
+    , _sctipAccessToken :: !(Maybe Text)
+    , _sctipUploadType :: !(Maybe Text)
+    , _sctipPayload :: !TestIAMPermissionsRequest
+    , _sctipResource :: !Text
+    , _sctipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

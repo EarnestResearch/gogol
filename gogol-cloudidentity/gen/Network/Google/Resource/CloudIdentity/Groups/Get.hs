@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Get
     , ggCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.get@ method which the
 -- 'GroupsGet' request conforms to.
@@ -61,12 +61,12 @@ type GroupsGetResource =
 -- /See:/ 'groupsGet' smart constructor.
 data GroupsGet =
   GroupsGet'
-    { _ggXgafv          :: !(Maybe Xgafv)
+    { _ggXgafv :: !(Maybe Xgafv)
     , _ggUploadProtocol :: !(Maybe Text)
-    , _ggAccessToken    :: !(Maybe Text)
-    , _ggUploadType     :: !(Maybe Text)
-    , _ggName           :: !Text
-    , _ggCallback       :: !(Maybe Text)
+    , _ggAccessToken :: !(Maybe Text)
+    , _ggUploadType :: !(Maybe Text)
+    , _ggName :: !Text
+    , _ggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

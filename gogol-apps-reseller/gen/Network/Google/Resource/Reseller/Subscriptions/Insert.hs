@@ -38,8 +38,8 @@ module Network.Google.Resource.Reseller.Subscriptions.Insert
     , siCustomerAuthToken
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.insert@ method which the
 -- 'SubscriptionsInsert' request conforms to.
@@ -60,8 +60,8 @@ type SubscriptionsInsertResource =
 -- /See:/ 'subscriptionsInsert' smart constructor.
 data SubscriptionsInsert =
   SubscriptionsInsert'
-    { _siPayload           :: !Subscription
-    , _siCustomerId        :: !Text
+    { _siPayload :: !Subscription
+    , _siCustomerId :: !Text
     , _siCustomerAuthToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

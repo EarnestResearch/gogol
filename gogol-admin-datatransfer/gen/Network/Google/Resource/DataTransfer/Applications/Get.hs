@@ -36,8 +36,8 @@ module Network.Google.Resource.DataTransfer.Applications.Get
     , agApplicationId
     ) where
 
-import           Network.Google.DataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.DataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datatransfer.applications.get@ method which the
 -- 'ApplicationsGet' request conforms to.

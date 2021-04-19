@@ -47,8 +47,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Delegates.Create
     , usdcUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.delegates.create@ method which the
 -- 'UsersSettingsDelegatesCreate' request conforms to.
@@ -78,7 +78,7 @@ type UsersSettingsDelegatesCreateResource =
 data UsersSettingsDelegatesCreate =
   UsersSettingsDelegatesCreate'
     { _usdcPayload :: !Delegate
-    , _usdcUserId  :: !Text
+    , _usdcUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.YouTube.I18nLanguages.List
     , illHl
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.i18nLanguages.list@ method which the
 -- 'I18nLanguagesList' request conforms to.
@@ -59,7 +59,7 @@ type I18nLanguagesListResource =
 data I18nLanguagesList =
   I18nLanguagesList'
     { _illPart :: !Text
-    , _illHl   :: !Text
+    , _illHl :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

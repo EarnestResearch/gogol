@@ -289,15 +289,15 @@ module Network.Google.SafeBrowsing
     , ftlurMinimumWaitDuration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.SafeBrowsing.EncodedFullHashes.Get
-import           Network.Google.Resource.SafeBrowsing.EncodedUpdates.Get
-import           Network.Google.Resource.SafeBrowsing.FullHashes.Find
-import           Network.Google.Resource.SafeBrowsing.ThreatHits.Create
-import           Network.Google.Resource.SafeBrowsing.ThreatLists.List
-import           Network.Google.Resource.SafeBrowsing.ThreatListUpdates.Fetch
-import           Network.Google.Resource.SafeBrowsing.ThreatMatches.Find
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.Resource.SafeBrowsing.EncodedFullHashes.Get
+import Network.Google.Resource.SafeBrowsing.EncodedUpdates.Get
+import Network.Google.Resource.SafeBrowsing.FullHashes.Find
+import Network.Google.Resource.SafeBrowsing.ThreatHits.Create
+import Network.Google.Resource.SafeBrowsing.ThreatListUpdates.Fetch
+import Network.Google.Resource.SafeBrowsing.ThreatLists.List
+import Network.Google.Resource.SafeBrowsing.ThreatMatches.Find
+import Network.Google.SafeBrowsing.Types
 
 {- $resources
 TODO

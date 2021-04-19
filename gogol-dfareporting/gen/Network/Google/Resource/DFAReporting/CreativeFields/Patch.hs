@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.Patch
     , cfpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.patch@ method which the
 -- 'CreativeFieldsPatch' request conforms to.
@@ -62,8 +62,8 @@ type CreativeFieldsPatchResource =
 data CreativeFieldsPatch =
   CreativeFieldsPatch'
     { _cfpProFileId :: !(Textual Int64)
-    , _cfpPayload   :: !CreativeField
-    , _cfpId        :: !(Textual Int64)
+    , _cfpPayload :: !CreativeField
+    , _cfpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

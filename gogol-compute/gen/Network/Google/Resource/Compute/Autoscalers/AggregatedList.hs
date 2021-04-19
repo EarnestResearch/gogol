@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Autoscalers.AggregatedList
     , autMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.autoscalers.aggregatedList@ method which the
 -- 'AutoscalersAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type AutoscalersAggregatedListResource =
 -- /See:/ 'autoscalersAggregatedList' smart constructor.
 data AutoscalersAggregatedList =
   AutoscalersAggregatedList'
-    { _autOrderBy    :: !(Maybe Text)
-    , _autProject    :: !Text
-    , _autFilter     :: !(Maybe Text)
-    , _autPageToken  :: !(Maybe Text)
+    { _autOrderBy :: !(Maybe Text)
+    , _autProject :: !Text
+    , _autFilter :: !(Maybe Text)
+    , _autPageToken :: !(Maybe Text)
     , _autMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Lineitems.Uploadlineitems
     , luPayload
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.lineitems.uploadlineitems@ method which the
 -- 'LineitemsUploadlineitems' request conforms to.

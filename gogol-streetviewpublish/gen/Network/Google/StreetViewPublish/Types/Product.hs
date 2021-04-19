@@ -17,8 +17,8 @@
 --
 module Network.Google.StreetViewPublish.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types.Sum
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types.Sum
 
 -- | An object representing a latitude\/longitude pair. This is expressed as
 -- a pair of doubles representing degrees latitude and degrees longitude.
@@ -29,7 +29,7 @@ import           Network.Google.StreetViewPublish.Types.Sum
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
   LatLng'
-    { _llLatitude  :: !(Maybe (Textual Double))
+    { _llLatitude :: !(Maybe (Textual Double))
     , _llLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -78,18 +78,18 @@ instance ToJSON LatLng where
 -- /See:/ 'photo' smart constructor.
 data Photo =
   Photo'
-    { _pThumbnailURL      :: !(Maybe Text)
+    { _pThumbnailURL :: !(Maybe Text)
     , _pMapsPublishStatus :: !(Maybe PhotoMapsPublishStatus)
-    , _pConnections       :: !(Maybe [Connection])
-    , _pShareLink         :: !(Maybe Text)
-    , _pUploadReference   :: !(Maybe UploadRef)
-    , _pCaptureTime       :: !(Maybe DateTime')
-    , _pPose              :: !(Maybe Pose)
-    , _pDownloadURL       :: !(Maybe Text)
-    , _pTransferStatus    :: !(Maybe PhotoTransferStatus)
-    , _pPlaces            :: !(Maybe [Place])
-    , _pViewCount         :: !(Maybe (Textual Int64))
-    , _pPhotoId           :: !(Maybe PhotoId)
+    , _pConnections :: !(Maybe [Connection])
+    , _pShareLink :: !(Maybe Text)
+    , _pUploadReference :: !(Maybe UploadRef)
+    , _pCaptureTime :: !(Maybe DateTime')
+    , _pPose :: !(Maybe Pose)
+    , _pDownloadURL :: !(Maybe Text)
+    , _pTransferStatus :: !(Maybe PhotoTransferStatus)
+    , _pPlaces :: !(Maybe [Place])
+    , _pViewCount :: !(Maybe (Textual Int64))
+    , _pPhotoId :: !(Maybe PhotoId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -254,7 +254,7 @@ instance ToJSON Photo where
 -- /See:/ 'updatePhotoRequest' smart constructor.
 data UpdatePhotoRequest =
   UpdatePhotoRequest'
-    { _uprPhoto      :: !(Maybe Photo)
+    { _uprPhoto :: !(Maybe Photo)
     , _uprUpdateMask :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -348,7 +348,7 @@ instance ToJSON UpdatePhotoRequest where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -410,7 +410,7 @@ instance ToJSON Status where
 -- /See:/ 'photoResponse' smart constructor.
 data PhotoResponse =
   PhotoResponse'
-    { _prPhoto  :: !(Maybe Photo)
+    { _prPhoto :: !(Maybe Photo)
     , _prStatus :: !(Maybe Status)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -457,10 +457,10 @@ instance ToJSON PhotoResponse where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -612,7 +612,7 @@ instance ToJSON StatusDetailsItem where
 data ListPhotosResponse =
   ListPhotosResponse'
     { _lprNextPageToken :: !(Maybe Text)
-    , _lprPhotos        :: !(Maybe [Photo])
+    , _lprPhotos :: !(Maybe [Photo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -778,13 +778,13 @@ instance ToJSON BatchDeletePhotosResponse where
 -- /See:/ 'pose' smart constructor.
 data Pose =
   Pose'
-    { _pRoll           :: !(Maybe (Textual Double))
-    , _pHeading        :: !(Maybe (Textual Double))
-    , _pLatLngPair     :: !(Maybe LatLng)
+    { _pRoll :: !(Maybe (Textual Double))
+    , _pHeading :: !(Maybe (Textual Double))
+    , _pLatLngPair :: !(Maybe LatLng)
     , _pAccuracyMeters :: !(Maybe (Textual Double))
-    , _pAltitude       :: !(Maybe (Textual Double))
-    , _pLevel          :: !(Maybe Level)
-    , _pPitch          :: !(Maybe (Textual Double))
+    , _pAltitude :: !(Maybe (Textual Double))
+    , _pLevel :: !(Maybe Level)
+    , _pPitch :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1066,8 +1066,8 @@ instance ToJSON BatchDeletePhotosRequest where
 data Place =
   Place'
     { _pLanguageCode :: !(Maybe Text)
-    , _pName         :: !(Maybe Text)
-    , _pPlaceId      :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
+    , _pPlaceId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1124,7 +1124,7 @@ instance ToJSON Place where
 -- /See:/ 'level' smart constructor.
 data Level =
   Level'
-    { _lName   :: !(Maybe Text)
+    { _lName :: !(Maybe Text)
     , _lNumber :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

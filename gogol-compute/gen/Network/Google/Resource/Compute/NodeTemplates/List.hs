@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.NodeTemplates.List
     , ntlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeTemplates.list@ method which the
 -- 'NodeTemplatesList' request conforms to.
@@ -66,11 +66,11 @@ type NodeTemplatesListResource =
 -- /See:/ 'nodeTemplatesList' smart constructor.
 data NodeTemplatesList =
   NodeTemplatesList'
-    { _ntlOrderBy    :: !(Maybe Text)
-    , _ntlProject    :: !Text
-    , _ntlFilter     :: !(Maybe Text)
-    , _ntlRegion     :: !Text
-    , _ntlPageToken  :: !(Maybe Text)
+    { _ntlOrderBy :: !(Maybe Text)
+    , _ntlProject :: !Text
+    , _ntlFilter :: !(Maybe Text)
+    , _ntlRegion :: !Text
+    , _ntlPageToken :: !(Maybe Text)
     , _ntlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

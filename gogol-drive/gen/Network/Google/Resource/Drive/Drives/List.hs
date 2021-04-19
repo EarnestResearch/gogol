@@ -39,8 +39,8 @@ module Network.Google.Resource.Drive.Drives.List
     , dlPageSize
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.drives.list@ method which the
 -- 'DrivesList' request conforms to.
@@ -59,10 +59,10 @@ type DrivesListResource =
 -- /See:/ 'drivesList' smart constructor.
 data DrivesList =
   DrivesList'
-    { _dlQ                    :: !(Maybe Text)
-    , _dlPageToken            :: !(Maybe Text)
+    { _dlQ :: !(Maybe Text)
+    , _dlPageToken :: !(Maybe Text)
     , _dlUseDomainAdminAccess :: !Bool
-    , _dlPageSize             :: !(Textual Int32)
+    , _dlPageSize :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

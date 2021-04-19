@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Rooms.Decline
     , rooLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.decline@ method which the
 -- 'RoomsDecline' request conforms to.
@@ -58,7 +58,7 @@ type RoomsDeclineResource =
 -- /See:/ 'roomsDecline' smart constructor.
 data RoomsDecline =
   RoomsDecline'
-    { _rooRoomId   :: !Text
+    { _rooRoomId :: !Text
     , _rooLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

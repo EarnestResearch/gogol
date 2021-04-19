@@ -17,8 +17,8 @@
 --
 module Network.Google.DataTransfer.Types.Product where
 
-import           Network.Google.DataTransfer.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DataTransfer.Types.Sum
+import Network.Google.Prelude
 
 -- | The JSON template for an Application resource.
 --
@@ -26,10 +26,10 @@ import           Network.Google.Prelude
 data Application =
   Application'
     { _aTransferParams :: !(Maybe [ApplicationTransferParam])
-    , _aEtag           :: !(Maybe Text)
-    , _aKind           :: !Text
-    , _aName           :: !(Maybe Text)
-    , _aId             :: !(Maybe (Textual Int64))
+    , _aEtag :: !(Maybe Text)
+    , _aKind :: !Text
+    , _aName :: !(Maybe Text)
+    , _aId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -113,7 +113,7 @@ instance ToJSON Application where
 data ApplicationTransferParam =
   ApplicationTransferParam'
     { _atpValue :: !(Maybe [Text])
-    , _atpKey   :: !(Maybe Text)
+    , _atpKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -161,10 +161,10 @@ instance ToJSON ApplicationTransferParam where
 -- /See:/ 'applicationsListResponse' smart constructor.
 data ApplicationsListResponse =
   ApplicationsListResponse'
-    { _alrEtag          :: !(Maybe Text)
+    { _alrEtag :: !(Maybe Text)
     , _alrNextPageToken :: !(Maybe Text)
-    , _alrKind          :: !Text
-    , _alrApplications  :: !(Maybe [Application])
+    , _alrKind :: !Text
+    , _alrApplications :: !(Maybe [Application])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -238,13 +238,13 @@ instance ToJSON ApplicationsListResponse where
 -- /See:/ 'dataTransfer' smart constructor.
 data DataTransfer =
   DataTransfer'
-    { _dtEtag                      :: !(Maybe Text)
-    , _dtOldOwnerUserId            :: !(Maybe Text)
-    , _dtKind                      :: !Text
-    , _dtNewOwnerUserId            :: !(Maybe Text)
-    , _dtRequestTime               :: !(Maybe DateTime')
-    , _dtApplicationDataTransfers  :: !(Maybe [ApplicationDataTransfer])
-    , _dtId                        :: !(Maybe Text)
+    { _dtEtag :: !(Maybe Text)
+    , _dtOldOwnerUserId :: !(Maybe Text)
+    , _dtKind :: !Text
+    , _dtNewOwnerUserId :: !(Maybe Text)
+    , _dtRequestTime :: !(Maybe DateTime')
+    , _dtApplicationDataTransfers :: !(Maybe [ApplicationDataTransfer])
+    , _dtId :: !(Maybe Text)
     , _dtOverallTransferStatusCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -366,9 +366,9 @@ instance ToJSON DataTransfer where
 -- /See:/ 'dataTransfersListResponse' smart constructor.
 data DataTransfersListResponse =
   DataTransfersListResponse'
-    { _dtlrEtag          :: !(Maybe Text)
+    { _dtlrEtag :: !(Maybe Text)
     , _dtlrNextPageToken :: !(Maybe Text)
-    , _dtlrKind          :: !Text
+    , _dtlrKind :: !Text
     , _dtlrDataTransfers :: !(Maybe [DataTransfer])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -443,7 +443,7 @@ instance ToJSON DataTransfersListResponse where
 data ApplicationDataTransfer =
   ApplicationDataTransfer'
     { _adtApplicationTransferParams :: !(Maybe [ApplicationTransferParam])
-    , _adtApplicationId             :: !(Maybe (Textual Int64))
+    , _adtApplicationId :: !(Maybe (Textual Int64))
     , _adtApplicationTransferStatus :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

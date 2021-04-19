@@ -49,8 +49,8 @@ module Network.Google.Resource.Compute.RegionInstanceGroupManagers.RecreateInsta
     , rigmriRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionInstanceGroupManagers.recreateInstances@ method which the
 -- 'RegionInstanceGroupManagersRecreateInstances' request conforms to.
@@ -85,11 +85,11 @@ type RegionInstanceGroupManagersRecreateInstancesResource
 -- /See:/ 'regionInstanceGroupManagersRecreateInstances' smart constructor.
 data RegionInstanceGroupManagersRecreateInstances =
   RegionInstanceGroupManagersRecreateInstances'
-    { _rigmriRequestId            :: !(Maybe Text)
-    , _rigmriProject              :: !Text
+    { _rigmriRequestId :: !(Maybe Text)
+    , _rigmriProject :: !Text
     , _rigmriInstanceGroupManager :: !Text
-    , _rigmriPayload              :: !RegionInstanceGroupManagersRecreateRequest
-    , _rigmriRegion               :: !Text
+    , _rigmriPayload :: !RegionInstanceGroupManagersRecreateRequest
+    , _rigmriRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

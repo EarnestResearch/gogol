@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudSearch.Query.Sources.List
     , qslCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.query.sources.list@ method which the
 -- 'QuerySourcesList' request conforms to.
@@ -76,16 +76,16 @@ type QuerySourcesListResource =
 -- /See:/ 'querySourcesList' smart constructor.
 data QuerySourcesList =
   QuerySourcesList'
-    { _qslXgafv                                     :: !(Maybe Xgafv)
-    , _qslRequestOptionsTimeZone                    :: !(Maybe Text)
+    { _qslXgafv :: !(Maybe Xgafv)
+    , _qslRequestOptionsTimeZone :: !(Maybe Text)
     , _qslRequestOptionsDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _qslUploadProtocol                            :: !(Maybe Text)
-    , _qslAccessToken                               :: !(Maybe Text)
-    , _qslUploadType                                :: !(Maybe Text)
-    , _qslRequestOptionsSearchApplicationId         :: !(Maybe Text)
-    , _qslRequestOptionsLanguageCode                :: !(Maybe Text)
-    , _qslPageToken                                 :: !(Maybe Text)
-    , _qslCallback                                  :: !(Maybe Text)
+    , _qslUploadProtocol :: !(Maybe Text)
+    , _qslAccessToken :: !(Maybe Text)
+    , _qslUploadType :: !(Maybe Text)
+    , _qslRequestOptionsSearchApplicationId :: !(Maybe Text)
+    , _qslRequestOptionsLanguageCode :: !(Maybe Text)
+    , _qslPageToken :: !(Maybe Text)
+    , _qslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

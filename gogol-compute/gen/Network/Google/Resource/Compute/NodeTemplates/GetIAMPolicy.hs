@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.NodeTemplates.GetIAMPolicy
     , ntgipRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeTemplates.getIamPolicy@ method which the
 -- 'NodeTemplatesGetIAMPolicy' request conforms to.
@@ -62,9 +62,9 @@ type NodeTemplatesGetIAMPolicyResource =
 -- /See:/ 'nodeTemplatesGetIAMPolicy' smart constructor.
 data NodeTemplatesGetIAMPolicy =
   NodeTemplatesGetIAMPolicy'
-    { _ntgipProject  :: !Text
+    { _ntgipProject :: !Text
     , _ntgipResource :: !Text
-    , _ntgipRegion   :: !Text
+    , _ntgipRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

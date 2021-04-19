@@ -41,8 +41,8 @@ module Network.Google.Resource.IAM.Roles.Get
     , rgCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.roles.get@ method which the
 -- 'RolesGet' request conforms to.
@@ -61,12 +61,12 @@ type RolesGetResource =
 -- /See:/ 'rolesGet' smart constructor.
 data RolesGet =
   RolesGet'
-    { _rgXgafv          :: !(Maybe Xgafv)
+    { _rgXgafv :: !(Maybe Xgafv)
     , _rgUploadProtocol :: !(Maybe Text)
-    , _rgAccessToken    :: !(Maybe Text)
-    , _rgUploadType     :: !(Maybe Text)
-    , _rgName           :: !Text
-    , _rgCallback       :: !(Maybe Text)
+    , _rgAccessToken :: !(Maybe Text)
+    , _rgUploadType :: !(Maybe Text)
+    , _rgName :: !Text
+    , _rgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

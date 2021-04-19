@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Sites.Update
     , suPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.update@ method which the
 -- 'SitesUpdate' request conforms to.
@@ -57,7 +57,7 @@ type SitesUpdateResource =
 data SitesUpdate =
   SitesUpdate'
     { _suProFileId :: !(Textual Int64)
-    , _suPayload   :: !Site
+    , _suPayload :: !Site
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

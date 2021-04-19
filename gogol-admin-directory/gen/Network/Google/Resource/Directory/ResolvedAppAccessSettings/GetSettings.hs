@@ -34,8 +34,8 @@ module Network.Google.Resource.Directory.ResolvedAppAccessSettings.GetSettings
 
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resolvedAppAccessSettings.GetSettings@ method which the
 -- 'ResolvedAppAccessSettingsGetSettings' request conforms to.

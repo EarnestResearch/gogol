@@ -45,8 +45,8 @@ module Network.Google.Resource.DFAReporting.Orders.List
     , olMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.orders.list@ method which the
 -- 'OrdersList' request conforms to.
@@ -75,14 +75,14 @@ type OrdersListResource =
 data OrdersList =
   OrdersList'
     { _olSearchString :: !(Maybe Text)
-    , _olIds          :: !(Maybe [Textual Int64])
-    , _olProFileId    :: !(Textual Int64)
-    , _olSortOrder    :: !OrdersListSortOrder
-    , _olPageToken    :: !(Maybe Text)
-    , _olProjectId    :: !(Textual Int64)
-    , _olSortField    :: !OrdersListSortField
-    , _olSiteId       :: !(Maybe [Textual Int64])
-    , _olMaxResults   :: !(Textual Int32)
+    , _olIds :: !(Maybe [Textual Int64])
+    , _olProFileId :: !(Textual Int64)
+    , _olSortOrder :: !OrdersListSortOrder
+    , _olPageToken :: !(Maybe Text)
+    , _olProjectId :: !(Textual Int64)
+    , _olSortField :: !OrdersListSortField
+    , _olSiteId :: !(Maybe [Textual Int64])
+    , _olMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

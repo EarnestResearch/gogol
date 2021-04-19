@@ -42,8 +42,8 @@ module Network.Google.Resource.DataTransfer.Transfers.List
     , tlMaxResults
     ) where
 
-import           Network.Google.DataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.DataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datatransfer.transfers.list@ method which the
 -- 'TransfersList' request conforms to.
@@ -67,12 +67,12 @@ type TransfersListResource =
 -- /See:/ 'transfersList' smart constructor.
 data TransfersList =
   TransfersList'
-    { _tlStatus         :: !(Maybe Text)
+    { _tlStatus :: !(Maybe Text)
     , _tlOldOwnerUserId :: !(Maybe Text)
     , _tlNewOwnerUserId :: !(Maybe Text)
-    , _tlCustomerId     :: !(Maybe Text)
-    , _tlPageToken      :: !(Maybe Text)
-    , _tlMaxResults     :: !(Maybe (Textual Int32))
+    , _tlCustomerId :: !(Maybe Text)
+    , _tlPageToken :: !(Maybe Text)
+    , _tlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickSearch.Conversion.Insert
     , ciPayload
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.conversion.insert@ method which the
 -- 'ConversionInsert' request conforms to.

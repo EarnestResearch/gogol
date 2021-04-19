@@ -44,8 +44,8 @@ module Network.Google.Resource.VideoIntelligence.Videos.Annotate
     , vaCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.VideoIntelligence.Types
+import Network.Google.Prelude
+import Network.Google.VideoIntelligence.Types
 
 -- | A resource alias for @videointelligence.videos.annotate@ method which the
 -- 'VideosAnnotate' request conforms to.
@@ -70,12 +70,12 @@ type VideosAnnotateResource =
 -- /See:/ 'videosAnnotate' smart constructor.
 data VideosAnnotate =
   VideosAnnotate'
-    { _vaXgafv          :: !(Maybe Xgafv)
+    { _vaXgafv :: !(Maybe Xgafv)
     , _vaUploadProtocol :: !(Maybe Text)
-    , _vaAccessToken    :: !(Maybe Text)
-    , _vaUploadType     :: !(Maybe Text)
-    , _vaPayload        :: !GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest
-    , _vaCallback       :: !(Maybe Text)
+    , _vaAccessToken :: !(Maybe Text)
+    , _vaUploadType :: !(Maybe Text)
+    , _vaPayload :: !GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest
+    , _vaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

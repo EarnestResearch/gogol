@@ -47,8 +47,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfseCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.export@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresExport' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsLocationsDataSetsFhirStoresExportResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresExport' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresExport =
   ProjectsLocationsDataSetsFhirStoresExport'
-    { _pldsfseXgafv          :: !(Maybe Xgafv)
+    { _pldsfseXgafv :: !(Maybe Xgafv)
     , _pldsfseUploadProtocol :: !(Maybe Text)
-    , _pldsfseAccessToken    :: !(Maybe Text)
-    , _pldsfseUploadType     :: !(Maybe Text)
-    , _pldsfsePayload        :: !ExportResourcesRequest
-    , _pldsfseName           :: !Text
-    , _pldsfseCallback       :: !(Maybe Text)
+    , _pldsfseAccessToken :: !(Maybe Text)
+    , _pldsfseUploadType :: !(Maybe Text)
+    , _pldsfsePayload :: !ExportResourcesRequest
+    , _pldsfseName :: !Text
+    , _pldsfseCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

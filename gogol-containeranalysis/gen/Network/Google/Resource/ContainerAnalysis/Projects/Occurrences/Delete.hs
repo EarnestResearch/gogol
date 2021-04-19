@@ -43,8 +43,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Occurrences.Delete
     , podCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.occurrences.delete@ method which the
 -- 'ProjectsOccurrencesDelete' request conforms to.
@@ -65,12 +65,12 @@ type ProjectsOccurrencesDeleteResource =
 -- /See:/ 'projectsOccurrencesDelete' smart constructor.
 data ProjectsOccurrencesDelete =
   ProjectsOccurrencesDelete'
-    { _podXgafv          :: !(Maybe Xgafv)
+    { _podXgafv :: !(Maybe Xgafv)
     , _podUploadProtocol :: !(Maybe Text)
-    , _podAccessToken    :: !(Maybe Text)
-    , _podUploadType     :: !(Maybe Text)
-    , _podName           :: !Text
-    , _podCallback       :: !(Maybe Text)
+    , _podAccessToken :: !(Maybe Text)
+    , _podUploadType :: !(Maybe Text)
+    , _podName :: !Text
+    , _podCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

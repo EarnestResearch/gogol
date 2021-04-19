@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Rooms.Dismiss
     , rdRoomId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.dismiss@ method which the
 -- 'RoomsDismiss' request conforms to.

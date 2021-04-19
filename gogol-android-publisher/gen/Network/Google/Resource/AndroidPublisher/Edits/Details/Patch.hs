@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Details.Patch
     , edpEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.details.patch@ method which the
 -- 'EditsDetailsPatch' request conforms to.
@@ -61,8 +61,8 @@ type EditsDetailsPatchResource =
 data EditsDetailsPatch =
   EditsDetailsPatch'
     { _edpPackageName :: !Text
-    , _edpPayload     :: !AppDetails
-    , _edpEditId      :: !Text
+    , _edpPayload :: !AppDetails
+    , _edpEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -48,8 +48,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.Seek
     , pssCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.seek@ method which the
 -- 'ProjectsSubscriptionsSeek' request conforms to.
@@ -76,13 +76,13 @@ type ProjectsSubscriptionsSeekResource =
 -- /See:/ 'projectsSubscriptionsSeek' smart constructor.
 data ProjectsSubscriptionsSeek =
   ProjectsSubscriptionsSeek'
-    { _pssXgafv          :: !(Maybe Xgafv)
+    { _pssXgafv :: !(Maybe Xgafv)
     , _pssUploadProtocol :: !(Maybe Text)
-    , _pssAccessToken    :: !(Maybe Text)
-    , _pssUploadType     :: !(Maybe Text)
-    , _pssPayload        :: !SeekRequest
-    , _pssSubscription   :: !Text
-    , _pssCallback       :: !(Maybe Text)
+    , _pssAccessToken :: !(Maybe Text)
+    , _pssUploadType :: !(Maybe Text)
+    , _pssPayload :: !SeekRequest
+    , _pssSubscription :: !Text
+    , _pssCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

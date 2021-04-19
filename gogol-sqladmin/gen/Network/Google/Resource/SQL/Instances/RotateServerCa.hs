@@ -39,8 +39,8 @@ module Network.Google.Resource.SQL.Instances.RotateServerCa
     , iInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.rotateServerCa@ method which the
 -- 'InstancesRotateServerCa' request conforms to.
@@ -62,8 +62,8 @@ type InstancesRotateServerCaResource =
 -- /See:/ 'instancesRotateServerCa' smart constructor.
 data InstancesRotateServerCa =
   InstancesRotateServerCa'
-    { _iProject  :: !Text
-    , _iPayload  :: !InstancesRotateServerCaRequest
+    { _iProject :: !Text
+    , _iPayload :: !InstancesRotateServerCaRequest
     , _iInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

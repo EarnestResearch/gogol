@@ -45,8 +45,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Patch
     , phepProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.patch@ method which the
 -- 'ProjectsHistoriesExecutionsPatch' request conforms to.
@@ -73,11 +73,11 @@ type ProjectsHistoriesExecutionsPatchResource =
 -- /See:/ 'projectsHistoriesExecutionsPatch' smart constructor.
 data ProjectsHistoriesExecutionsPatch =
   ProjectsHistoriesExecutionsPatch'
-    { _phepRequestId   :: !(Maybe Text)
+    { _phepRequestId :: !(Maybe Text)
     , _phepExecutionId :: !Text
-    , _phepPayload     :: !Execution
-    , _phepHistoryId   :: !Text
-    , _phepProjectId   :: !Text
+    , _phepPayload :: !Execution
+    , _phepHistoryId :: !Text
+    , _phepProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

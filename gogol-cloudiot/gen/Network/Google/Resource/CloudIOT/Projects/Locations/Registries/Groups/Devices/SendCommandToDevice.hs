@@ -54,8 +54,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Dev
     , plrgdsctdCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.devices.sendCommandToDevice@ method which the
 -- 'ProjectsLocationsRegistriesGroupsDevicesSendCommandToDevice' request conforms to.
@@ -89,13 +89,13 @@ type ProjectsLocationsRegistriesGroupsDevicesSendCommandToDeviceResource
 -- /See:/ 'projectsLocationsRegistriesGroupsDevicesSendCommandToDevice' smart constructor.
 data ProjectsLocationsRegistriesGroupsDevicesSendCommandToDevice =
   ProjectsLocationsRegistriesGroupsDevicesSendCommandToDevice'
-    { _plrgdsctdXgafv          :: !(Maybe Xgafv)
+    { _plrgdsctdXgafv :: !(Maybe Xgafv)
     , _plrgdsctdUploadProtocol :: !(Maybe Text)
-    , _plrgdsctdAccessToken    :: !(Maybe Text)
-    , _plrgdsctdUploadType     :: !(Maybe Text)
-    , _plrgdsctdPayload        :: !SendCommandToDeviceRequest
-    , _plrgdsctdName           :: !Text
-    , _plrgdsctdCallback       :: !(Maybe Text)
+    , _plrgdsctdAccessToken :: !(Maybe Text)
+    , _plrgdsctdUploadType :: !(Maybe Text)
+    , _plrgdsctdPayload :: !SendCommandToDeviceRequest
+    , _plrgdsctdName :: !Text
+    , _plrgdsctdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

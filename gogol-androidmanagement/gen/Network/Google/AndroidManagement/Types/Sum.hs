@@ -16,7 +16,7 @@
 --
 module Network.Google.AndroidManagement.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Event type.
 data PowerManagementEventEventType

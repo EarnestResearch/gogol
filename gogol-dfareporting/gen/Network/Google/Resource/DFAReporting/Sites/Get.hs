@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Sites.Get
     , sggId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sites.get@ method which the
 -- 'SitesGet' request conforms to.
@@ -57,7 +57,7 @@ type SitesGetResource =
 data SitesGet =
   SitesGet'
     { _sggProFileId :: !(Textual Int64)
-    , _sggId        :: !(Textual Int64)
+    , _sggId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

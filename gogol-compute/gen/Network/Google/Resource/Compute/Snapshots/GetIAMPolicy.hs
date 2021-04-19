@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Snapshots.GetIAMPolicy
     , sgiampResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.snapshots.getIamPolicy@ method which the
 -- 'SnapshotsGetIAMPolicy' request conforms to.
@@ -60,7 +60,7 @@ type SnapshotsGetIAMPolicyResource =
 -- /See:/ 'snapshotsGetIAMPolicy' smart constructor.
 data SnapshotsGetIAMPolicy =
   SnapshotsGetIAMPolicy'
-    { _sgiampProject  :: !Text
+    { _sgiampProject :: !Text
     , _sgiampResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

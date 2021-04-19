@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Patch
     , rlpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.patch@ method which the
 -- 'RemarketingListsPatch' request conforms to.
@@ -62,8 +62,8 @@ type RemarketingListsPatchResource =
 data RemarketingListsPatch =
   RemarketingListsPatch'
     { _rlpProFileId :: !(Textual Int64)
-    , _rlpPayload   :: !RemarketingList
-    , _rlpId        :: !(Textual Int64)
+    , _rlpPayload :: !RemarketingList
+    , _rlpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

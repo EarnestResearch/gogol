@@ -38,8 +38,8 @@ module Network.Google.Resource.YouTube.VideoAbuseReportReasons.List
     , varrlHl
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videoAbuseReportReasons.list@ method which the
 -- 'VideoAbuseReportReasonsList' request conforms to.
@@ -59,7 +59,7 @@ type VideoAbuseReportReasonsListResource =
 data VideoAbuseReportReasonsList =
   VideoAbuseReportReasonsList'
     { _varrlPart :: !Text
-    , _varrlHl   :: !Text
+    , _varrlHl :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

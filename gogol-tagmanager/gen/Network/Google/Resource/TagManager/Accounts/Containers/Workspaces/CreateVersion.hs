@@ -39,8 +39,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.CreateV
     , acwcvPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.create_version@ method which the
 -- 'AccountsContainersWorkspacesCreateVersion' request conforms to.
@@ -61,7 +61,7 @@ type AccountsContainersWorkspacesCreateVersionResource
 -- /See:/ 'accountsContainersWorkspacesCreateVersion' smart constructor.
 data AccountsContainersWorkspacesCreateVersion =
   AccountsContainersWorkspacesCreateVersion'
-    { _acwcvPath    :: !Text
+    { _acwcvPath :: !Text
     , _acwcvPayload :: !CreateContainerVersionRequestVersionOptions
     }
   deriving (Eq, Show, Data, Typeable, Generic)

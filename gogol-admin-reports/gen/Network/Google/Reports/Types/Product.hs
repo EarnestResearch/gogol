@@ -17,19 +17,19 @@
 --
 module Network.Google.Reports.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Reports.Types.Sum
 
 --
 -- /See:/ 'usageReportParametersItem' smart constructor.
 data UsageReportParametersItem =
   UsageReportParametersItem'
     { _urpiDatetimeValue :: !(Maybe DateTime')
-    , _urpiBoolValue     :: !(Maybe Bool)
-    , _urpiIntValue      :: !(Maybe (Textual Int64))
-    , _urpiStringValue   :: !(Maybe Text)
-    , _urpiName          :: !(Maybe Text)
-    , _urpiMsgValue      :: !(Maybe [UsageReportParametersItemMsgValueItem])
+    , _urpiBoolValue :: !(Maybe Bool)
+    , _urpiIntValue :: !(Maybe (Textual Int64))
+    , _urpiStringValue :: !(Maybe Text)
+    , _urpiName :: !(Maybe Text)
+    , _urpiMsgValue :: !(Maybe [UsageReportParametersItemMsgValueItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -125,9 +125,9 @@ instance ToJSON UsageReportParametersItem where
 -- /See:/ 'activityId' smart constructor.
 data ActivityId =
   ActivityId'
-    { _aiTime            :: !(Maybe DateTime')
+    { _aiTime :: !(Maybe DateTime')
     , _aiUniqueQualifier :: !(Maybe (Textual Int64))
-    , _aiCustomerId      :: !(Maybe Text)
+    , _aiCustomerId :: !(Maybe Text)
     , _aiApplicationName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -202,11 +202,11 @@ instance ToJSON ActivityId where
 -- /See:/ 'usageReports' smart constructor.
 data UsageReports =
   UsageReports'
-    { _urEtag          :: !(Maybe Text)
+    { _urEtag :: !(Maybe Text)
     , _urNextPageToken :: !(Maybe Text)
-    , _urUsageReports  :: !(Maybe [UsageReport])
-    , _urKind          :: !Text
-    , _urWarnings      :: !(Maybe [UsageReportsWarningsItem])
+    , _urUsageReports :: !(Maybe [UsageReport])
+    , _urKind :: !Text
+    , _urWarnings :: !(Maybe [UsageReportsWarningsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -331,10 +331,10 @@ instance ToJSON UsageReportParametersItemMsgValueItem
 -- /See:/ 'activities' smart constructor.
 data Activities =
   Activities'
-    { _aEtag          :: !(Maybe Text)
+    { _aEtag :: !(Maybe Text)
     , _aNextPageToken :: !(Maybe Text)
-    , _aKind          :: !Text
-    , _aItems         :: !(Maybe [Activity])
+    , _aKind :: !Text
+    , _aItems :: !(Maybe [Activity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -404,15 +404,15 @@ instance ToJSON Activities where
 data Channel =
   Channel'
     { _cResourceURI :: !(Maybe Text)
-    , _cResourceId  :: !(Maybe Text)
-    , _cKind        :: !Text
-    , _cExpiration  :: !(Maybe (Textual Int64))
-    , _cToken       :: !(Maybe Text)
-    , _cAddress     :: !(Maybe Text)
-    , _cPayload     :: !(Maybe Bool)
-    , _cParams      :: !(Maybe ChannelParams)
-    , _cId          :: !(Maybe Text)
-    , _cType        :: !(Maybe Text)
+    , _cResourceId :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cExpiration :: !(Maybe (Textual Int64))
+    , _cToken :: !(Maybe Text)
+    , _cAddress :: !(Maybe Text)
+    , _cPayload :: !(Maybe Bool)
+    , _cParams :: !(Maybe ChannelParams)
+    , _cId :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -539,11 +539,11 @@ instance ToJSON Channel where
 -- /See:/ 'usageReport' smart constructor.
 data UsageReport =
   UsageReport'
-    { _uEtag       :: !(Maybe Text)
-    , _uKind       :: !Text
-    , _uDate       :: !(Maybe Text)
+    { _uEtag :: !(Maybe Text)
+    , _uKind :: !Text
+    , _uDate :: !(Maybe Text)
     , _uParameters :: !(Maybe [UsageReportParametersItem])
-    , _uEntity     :: !(Maybe UsageReportEntity)
+    , _uEntity :: !(Maybe UsageReportEntity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -621,7 +621,7 @@ instance ToJSON UsageReport where
 data UsageReportsWarningsItemDataItem =
   UsageReportsWarningsItemDataItem'
     { _urwidiValue :: !(Maybe Text)
-    , _urwidiKey   :: !(Maybe Text)
+    , _urwidiKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -672,8 +672,8 @@ instance ToJSON UsageReportsWarningsItemDataItem
 -- /See:/ 'usageReportsWarningsItem' smart constructor.
 data UsageReportsWarningsItem =
   UsageReportsWarningsItem'
-    { _urwiData    :: !(Maybe [UsageReportsWarningsItemDataItem])
-    , _urwiCode    :: !(Maybe Text)
+    { _urwiData :: !(Maybe [UsageReportsWarningsItemDataItem])
+    , _urwiCode :: !(Maybe Text)
     , _urwiMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -731,9 +731,9 @@ instance ToJSON UsageReportsWarningsItem where
 -- /See:/ 'activityEventsItem' smart constructor.
 data ActivityEventsItem =
   ActivityEventsItem'
-    { _aeiName       :: !(Maybe Text)
+    { _aeiName :: !(Maybe Text)
     , _aeiParameters :: !(Maybe [ActivityEventsItemParametersItem])
-    , _aeiType       :: !(Maybe Text)
+    , _aeiType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -827,13 +827,13 @@ instance ToJSON ChannelParams where
 -- /See:/ 'activity' smart constructor.
 data Activity =
   Activity'
-    { _actEtag        :: !(Maybe Text)
-    , _actIPAddress   :: !(Maybe Text)
-    , _actKind        :: !Text
-    , _actActor       :: !(Maybe ActivityActor)
+    { _actEtag :: !(Maybe Text)
+    , _actIPAddress :: !(Maybe Text)
+    , _actKind :: !Text
+    , _actActor :: !(Maybe ActivityActor)
     , _actOwnerDomain :: !(Maybe Text)
-    , _actEvents      :: !(Maybe [ActivityEventsItem])
-    , _actId          :: !(Maybe ActivityId)
+    , _actEvents :: !(Maybe [ActivityEventsItem])
+    , _actId :: !(Maybe ActivityId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -931,11 +931,11 @@ instance ToJSON Activity where
 -- /See:/ 'usageReportEntity' smart constructor.
 data UsageReportEntity =
   UsageReportEntity'
-    { _ureProFileId  :: !(Maybe Text)
+    { _ureProFileId :: !(Maybe Text)
     , _ureCustomerId :: !(Maybe Text)
-    , _ureUserEmail  :: !(Maybe Text)
-    , _ureType       :: !(Maybe Text)
-    , _ureEntityId   :: !(Maybe Text)
+    , _ureUserEmail :: !(Maybe Text)
+    , _ureType :: !(Maybe Text)
+    , _ureEntityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1015,12 +1015,12 @@ instance ToJSON UsageReportEntity where
 -- /See:/ 'activityEventsItemParametersItem' smart constructor.
 data ActivityEventsItemParametersItem =
   ActivityEventsItemParametersItem'
-    { _aeipiBoolValue     :: !(Maybe Bool)
-    , _aeipiIntValue      :: !(Maybe (Textual Int64))
-    , _aeipiValue         :: !(Maybe Text)
+    { _aeipiBoolValue :: !(Maybe Bool)
+    , _aeipiIntValue :: !(Maybe (Textual Int64))
+    , _aeipiValue :: !(Maybe Text)
     , _aeipiMultiIntValue :: !(Maybe [Textual Int64])
-    , _aeipiName          :: !(Maybe Text)
-    , _aeipiMultiValue    :: !(Maybe [Text])
+    , _aeipiName :: !(Maybe Text)
+    , _aeipiMultiValue :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1121,10 +1121,10 @@ instance ToJSON ActivityEventsItemParametersItem
 -- /See:/ 'activityActor' smart constructor.
 data ActivityActor =
   ActivityActor'
-    { _aaEmail      :: !(Maybe Text)
+    { _aaEmail :: !(Maybe Text)
     , _aaCallerType :: !(Maybe Text)
-    , _aaProFileId  :: !(Maybe Text)
-    , _aaKey        :: !(Maybe Text)
+    , _aaProFileId :: !(Maybe Text)
+    , _aaKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.LegacyAbac
     , pzclaCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.legacyAbac@ method which the
 -- 'ProjectsZonesClustersLegacyAbac' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsZonesClustersLegacyAbacResource =
 -- /See:/ 'projectsZonesClustersLegacyAbac' smart constructor.
 data ProjectsZonesClustersLegacyAbac =
   ProjectsZonesClustersLegacyAbac'
-    { _pzclaXgafv          :: !(Maybe Xgafv)
+    { _pzclaXgafv :: !(Maybe Xgafv)
     , _pzclaUploadProtocol :: !(Maybe Text)
-    , _pzclaAccessToken    :: !(Maybe Text)
-    , _pzclaUploadType     :: !(Maybe Text)
-    , _pzclaZone           :: !Text
-    , _pzclaPayload        :: !SetLegacyAbacRequest
-    , _pzclaClusterId      :: !Text
-    , _pzclaProjectId      :: !Text
-    , _pzclaCallback       :: !(Maybe Text)
+    , _pzclaAccessToken :: !(Maybe Text)
+    , _pzclaUploadType :: !(Maybe Text)
+    , _pzclaZone :: !Text
+    , _pzclaPayload :: !SetLegacyAbacRequest
+    , _pzclaClusterId :: !Text
+    , _pzclaProjectId :: !Text
+    , _pzclaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

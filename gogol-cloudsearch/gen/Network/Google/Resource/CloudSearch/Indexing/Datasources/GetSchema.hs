@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.GetSchema
     , idgsCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.getSchema@ method which the
 -- 'IndexingDatasourcesGetSchema' request conforms to.
@@ -65,13 +65,13 @@ type IndexingDatasourcesGetSchemaResource =
 -- /See:/ 'indexingDatasourcesGetSchema' smart constructor.
 data IndexingDatasourcesGetSchema =
   IndexingDatasourcesGetSchema'
-    { _idgsXgafv                       :: !(Maybe Xgafv)
-    , _idgsUploadProtocol              :: !(Maybe Text)
-    , _idgsAccessToken                 :: !(Maybe Text)
-    , _idgsUploadType                  :: !(Maybe Text)
-    , _idgsName                        :: !Text
+    { _idgsXgafv :: !(Maybe Xgafv)
+    , _idgsUploadProtocol :: !(Maybe Text)
+    , _idgsAccessToken :: !(Maybe Text)
+    , _idgsUploadType :: !(Maybe Text)
+    , _idgsName :: !Text
     , _idgsDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _idgsCallback                    :: !(Maybe Text)
+    , _idgsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

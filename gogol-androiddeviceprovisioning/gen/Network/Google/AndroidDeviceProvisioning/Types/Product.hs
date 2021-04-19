@@ -17,8 +17,8 @@
 --
 module Network.Google.AndroidDeviceProvisioning.Types.Product where
 
-import           Network.Google.AndroidDeviceProvisioning.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AndroidDeviceProvisioning.Types.Sum
+import Network.Google.Prelude
 
 -- | Identifies metdata updates to one device.
 --
@@ -26,8 +26,8 @@ import           Network.Google.Prelude
 data UpdateMetadataArguments =
   UpdateMetadataArguments'
     { _umaDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _umaDeviceId         :: !(Maybe (Textual Int64))
-    , _umaDeviceMetadata   :: !(Maybe DeviceMetadata)
+    , _umaDeviceId :: !(Maybe (Textual Int64))
+    , _umaDeviceMetadata :: !(Maybe DeviceMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -125,7 +125,7 @@ instance ToJSON UpdateMetadataArguments where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -187,9 +187,9 @@ instance ToJSON Status where
 data PartnerClaim =
   PartnerClaim'
     { _pcDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _pcSectionType      :: !(Maybe PartnerClaimSectionType)
-    , _pcCustomerId       :: !(Maybe (Textual Int64))
-    , _pcDeviceMetadata   :: !(Maybe DeviceMetadata)
+    , _pcSectionType :: !(Maybe PartnerClaimSectionType)
+    , _pcCustomerId :: !(Maybe (Textual Int64))
+    , _pcDeviceMetadata :: !(Maybe DeviceMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -300,8 +300,8 @@ instance ToJSON CustomerUnclaimDeviceRequest where
 data FindDevicesByDeviceIdentifierRequest =
   FindDevicesByDeviceIdentifierRequest'
     { _fdbdirDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _fdbdirLimit            :: !(Maybe (Textual Int64))
-    , _fdbdirPageToken        :: !(Maybe Text)
+    , _fdbdirLimit :: !(Maybe (Textual Int64))
+    , _fdbdirPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -369,8 +369,8 @@ instance ToJSON FindDevicesByDeviceIdentifierRequest
 data FindDevicesByOwnerResponse =
   FindDevicesByOwnerResponse'
     { _fdborNextPageToken :: !(Maybe Text)
-    , _fdborTotalSize     :: !(Maybe (Textual Int32))
-    , _fdborDevices       :: !(Maybe [Device])
+    , _fdborTotalSize :: !(Maybe (Textual Int32))
+    , _fdborDevices :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -472,11 +472,11 @@ instance ToJSON DeviceMetadataEntries where
 -- /See:/ 'partnerUnclaim' smart constructor.
 data PartnerUnclaim =
   PartnerUnclaim'
-    { _puDeviceIdentifier       :: !(Maybe DeviceIdentifier)
-    , _puSectionType            :: !(Maybe PartnerUnclaimSectionType)
+    { _puDeviceIdentifier :: !(Maybe DeviceIdentifier)
+    , _puSectionType :: !(Maybe PartnerUnclaimSectionType)
     , _puVacationModeExpireTime :: !(Maybe DateTime')
-    , _puVacationModeDays       :: !(Maybe (Textual Int32))
-    , _puDeviceId               :: !(Maybe (Textual Int64))
+    , _puVacationModeDays :: !(Maybe (Textual Int32))
+    , _puDeviceId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -571,8 +571,8 @@ instance ToJSON PartnerUnclaim where
 data Dpc =
   Dpc'
     { _dPackageName :: !(Maybe Text)
-    , _dName        :: !(Maybe Text)
-    , _dDpcName     :: !(Maybe Text)
+    , _dName :: !(Maybe Text)
+    , _dDpcName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -631,9 +631,9 @@ instance ToJSON Dpc where
 -- /See:/ 'listVendorCustomersResponse' smart constructor.
 data ListVendorCustomersResponse =
   ListVendorCustomersResponse'
-    { _lvcrCustomers     :: !(Maybe [Company])
+    { _lvcrCustomers :: !(Maybe [Company])
     , _lvcrNextPageToken :: !(Maybe Text)
-    , _lvcrTotalSize     :: !(Maybe (Textual Int32))
+    , _lvcrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -703,9 +703,9 @@ instance ToJSON ListVendorCustomersResponse where
 data OperationPerDevice =
   OperationPerDevice'
     { _opdUpdateMetadata :: !(Maybe UpdateMetadataArguments)
-    , _opdResult         :: !(Maybe PerDeviceStatusInBatch)
-    , _opdClaim          :: !(Maybe PartnerClaim)
-    , _opdUnclaim        :: !(Maybe PartnerUnclaim)
+    , _opdResult :: !(Maybe PerDeviceStatusInBatch)
+    , _opdClaim :: !(Maybe PartnerClaim)
+    , _opdUnclaim :: !(Maybe PartnerUnclaim)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -776,10 +776,10 @@ instance ToJSON OperationPerDevice where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -892,10 +892,10 @@ instance ToJSON Empty where
 -- /See:/ 'perDeviceStatusInBatch' smart constructor.
 data PerDeviceStatusInBatch =
   PerDeviceStatusInBatch'
-    { _pdsibStatus          :: !(Maybe PerDeviceStatusInBatchStatus)
+    { _pdsibStatus :: !(Maybe PerDeviceStatusInBatchStatus)
     , _pdsibErrorIdentifier :: !(Maybe Text)
-    , _pdsibDeviceId        :: !(Maybe (Textual Int64))
-    , _pdsibErrorMessage    :: !(Maybe Text)
+    , _pdsibDeviceId :: !(Maybe (Textual Int64))
+    , _pdsibErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1009,11 +1009,11 @@ instance ToJSON ClaimDevicesRequest where
 data Device =
   Device'
     { _devDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _devClaims           :: !(Maybe [DeviceClaim])
-    , _devName             :: !(Maybe Text)
-    , _devDeviceId         :: !(Maybe (Textual Int64))
-    , _devDeviceMetadata   :: !(Maybe DeviceMetadata)
-    , _devConfiguration    :: !(Maybe Text)
+    , _devClaims :: !(Maybe [DeviceClaim])
+    , _devName :: !(Maybe Text)
+    , _devDeviceId :: !(Maybe (Textual Int64))
+    , _devDeviceMetadata :: !(Maybe DeviceMetadata)
+    , _devConfiguration :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1118,9 +1118,9 @@ instance ToJSON Device where
 data ClaimDeviceRequest =
   ClaimDeviceRequest'
     { _cdrDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _cdrSectionType      :: !(Maybe ClaimDeviceRequestSectionType)
-    , _cdrCustomerId       :: !(Maybe (Textual Int64))
-    , _cdrDeviceMetadata   :: !(Maybe DeviceMetadata)
+    , _cdrSectionType :: !(Maybe ClaimDeviceRequestSectionType)
+    , _cdrCustomerId :: !(Maybe (Textual Int64))
+    , _cdrDeviceMetadata :: !(Maybe DeviceMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1202,7 +1202,7 @@ instance ToJSON ClaimDeviceRequest where
 data DeviceReference =
   DeviceReference'
     { _drDeviceIdentifier :: !(Maybe DeviceIdentifier)
-    , _drDeviceId         :: !(Maybe (Textual Int64))
+    , _drDeviceId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1293,9 +1293,9 @@ instance ToJSON CustomerRemoveConfigurationRequest
 data DeviceIdentifier =
   DeviceIdentifier'
     { _diManufacturer :: !(Maybe Text)
-    , _diModel        :: !(Maybe Text)
-    , _diMeid         :: !(Maybe Text)
-    , _diImei         :: !(Maybe Text)
+    , _diModel :: !(Maybe Text)
+    , _diMeid :: !(Maybe Text)
+    , _diImei :: !(Maybe Text)
     , _diSerialNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1455,8 +1455,8 @@ instance ToJSON StatusDetailsItem where
 data ListVendorsResponse =
   ListVendorsResponse'
     { _lvrNextPageToken :: !(Maybe Text)
-    , _lvrTotalSize     :: !(Maybe (Textual Int32))
-    , _lvrVendors       :: !(Maybe [Company])
+    , _lvrTotalSize :: !(Maybe (Textual Int32))
+    , _lvrVendors :: !(Maybe [Company])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1566,7 +1566,7 @@ instance ToJSON CustomerListConfigurationsResponse
 -- /See:/ 'customerApplyConfigurationRequest' smart constructor.
 data CustomerApplyConfigurationRequest =
   CustomerApplyConfigurationRequest'
-    { _cacrDevice        :: !(Maybe DeviceReference)
+    { _cacrDevice :: !(Maybe DeviceReference)
     , _cacrConfiguration :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1620,11 +1620,11 @@ instance ToJSON CustomerApplyConfigurationRequest
 -- /See:/ 'company' smart constructor.
 data Company =
   Company'
-    { _cCompanyId   :: !(Maybe (Textual Int64))
+    { _cCompanyId :: !(Maybe (Textual Int64))
     , _cCompanyName :: !(Maybe Text)
     , _cOwnerEmails :: !(Maybe [Text])
     , _cTermsStatus :: !(Maybe CompanyTermsStatus)
-    , _cName        :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
     , _cAdminEmails :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1730,7 +1730,7 @@ instance ToJSON Company where
 -- /See:/ 'customerListCustomersResponse' smart constructor.
 data CustomerListCustomersResponse =
   CustomerListCustomersResponse'
-    { _clcrCustomers     :: !(Maybe [Company])
+    { _clcrCustomers :: !(Maybe [Company])
     , _clcrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1788,11 +1788,11 @@ instance ToJSON CustomerListCustomersResponse where
 -- /See:/ 'deviceClaim' smart constructor.
 data DeviceClaim =
   DeviceClaim'
-    { _dcSectionType            :: !(Maybe DeviceClaimSectionType)
+    { _dcSectionType :: !(Maybe DeviceClaimSectionType)
     , _dcVacationModeExpireTime :: !(Maybe DateTime')
-    , _dcVacationModeStartTime  :: !(Maybe DateTime')
-    , _dcOwnerCompanyId         :: !(Maybe (Textual Int64))
-    , _dcResellerId             :: !(Maybe (Textual Int64))
+    , _dcVacationModeStartTime :: !(Maybe DateTime')
+    , _dcOwnerCompanyId :: !(Maybe (Textual Int64))
+    , _dcResellerId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1961,9 +1961,9 @@ instance ToJSON DeviceMetadata where
 data FindDevicesByOwnerRequest =
   FindDevicesByOwnerRequest'
     { _fdborSectionType :: !(Maybe FindDevicesByOwnerRequestSectionType)
-    , _fdborCustomerId  :: !(Maybe [Textual Int64])
-    , _fdborLimit       :: !(Maybe (Textual Int64))
-    , _fdborPageToken   :: !(Maybe Text)
+    , _fdborCustomerId :: !(Maybe [Textual Int64])
+    , _fdborLimit :: !(Maybe (Textual Int64))
+    , _fdborPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2042,8 +2042,8 @@ instance ToJSON FindDevicesByOwnerRequest where
 data FindDevicesByDeviceIdentifierResponse =
   FindDevicesByDeviceIdentifierResponse'
     { _fdbdirNextPageToken :: !(Maybe Text)
-    , _fdbdirTotalSize     :: !(Maybe (Textual Int32))
-    , _fdbdirDevices       :: !(Maybe [Device])
+    , _fdbdirTotalSize :: !(Maybe (Textual Int32))
+    , _fdbdirDevices :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2113,11 +2113,11 @@ instance ToJSON FindDevicesByDeviceIdentifierResponse
 -- /See:/ 'unclaimDeviceRequest' smart constructor.
 data UnclaimDeviceRequest =
   UnclaimDeviceRequest'
-    { _udrDeviceIdentifier       :: !(Maybe DeviceIdentifier)
-    , _udrSectionType            :: !(Maybe UnclaimDeviceRequestSectionType)
+    { _udrDeviceIdentifier :: !(Maybe DeviceIdentifier)
+    , _udrSectionType :: !(Maybe UnclaimDeviceRequestSectionType)
     , _udrVacationModeExpireTime :: !(Maybe DateTime')
-    , _udrVacationModeDays       :: !(Maybe (Textual Int32))
-    , _udrDeviceId               :: !(Maybe (Textual Int64))
+    , _udrVacationModeDays :: !(Maybe (Textual Int32))
+    , _udrDeviceId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2208,7 +2208,7 @@ instance ToJSON UnclaimDeviceRequest where
 -- /See:/ 'devicesLongRunningOperationResponse' smart constructor.
 data DevicesLongRunningOperationResponse =
   DevicesLongRunningOperationResponse'
-    { _dlrorSuccessCount    :: !(Maybe (Textual Int32))
+    { _dlrorSuccessCount :: !(Maybe (Textual Int32))
     , _dlrorPerDeviceStatus :: !(Maybe [OperationPerDevice])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2275,16 +2275,16 @@ instance ToJSON DevicesLongRunningOperationResponse
 -- /See:/ 'configuration' smart constructor.
 data Configuration =
   Configuration'
-    { _conContactPhone      :: !(Maybe Text)
-    , _conContactEmail      :: !(Maybe Text)
+    { _conContactPhone :: !(Maybe Text)
+    , _conContactEmail :: !(Maybe Text)
     , _conConfigurationName :: !(Maybe Text)
-    , _conConfigurationId   :: !(Maybe (Textual Int64))
-    , _conCustomMessage     :: !(Maybe Text)
-    , _conCompanyName       :: !(Maybe Text)
-    , _conDpcExtras         :: !(Maybe Text)
-    , _conName              :: !(Maybe Text)
-    , _conDpcResourcePath   :: !(Maybe Text)
-    , _conIsDefault         :: !(Maybe Bool)
+    , _conConfigurationId :: !(Maybe (Textual Int64))
+    , _conCustomMessage :: !(Maybe Text)
+    , _conCompanyName :: !(Maybe Text)
+    , _conDpcExtras :: !(Maybe Text)
+    , _conName :: !(Maybe Text)
+    , _conDpcResourcePath :: !(Maybe Text)
+    , _conIsDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2478,9 +2478,9 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'listCustomersResponse' smart constructor.
 data ListCustomersResponse =
   ListCustomersResponse'
-    { _lcrCustomers     :: !(Maybe [Company])
+    { _lcrCustomers :: !(Maybe [Company])
     , _lcrNextPageToken :: !(Maybe Text)
-    , _lcrTotalSize     :: !(Maybe (Textual Int32))
+    , _lcrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2549,8 +2549,8 @@ instance ToJSON ListCustomersResponse where
 -- /See:/ 'devicesLongRunningOperationMetadata' smart constructor.
 data DevicesLongRunningOperationMetadata =
   DevicesLongRunningOperationMetadata'
-    { _dlromProgress         :: !(Maybe (Textual Int32))
-    , _dlromDevicesCount     :: !(Maybe (Textual Int32))
+    { _dlromProgress :: !(Maybe (Textual Int32))
+    , _dlromDevicesCount :: !(Maybe (Textual Int32))
     , _dlromProcessingStatus :: !(Maybe DevicesLongRunningOperationMetadataProcessingStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2661,7 +2661,7 @@ instance ToJSON OperationResponse where
 data CustomerListDevicesResponse =
   CustomerListDevicesResponse'
     { _cldrNextPageToken :: !(Maybe Text)
-    , _cldrDevices       :: !(Maybe [Device])
+    , _cldrDevices :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2797,7 +2797,7 @@ instance ToJSON CustomerListDpcsResponse where
 data ClaimDeviceResponse =
   ClaimDeviceResponse'
     { _cdrDeviceName :: !(Maybe Text)
-    , _cdrDeviceId   :: !(Maybe (Textual Int64))
+    , _cdrDeviceId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

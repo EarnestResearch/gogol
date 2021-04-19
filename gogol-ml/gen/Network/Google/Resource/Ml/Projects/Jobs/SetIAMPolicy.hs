@@ -43,8 +43,8 @@ module Network.Google.Resource.Ml.Projects.Jobs.SetIAMPolicy
     , pjsipCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.jobs.setIamPolicy@ method which the
 -- 'ProjectsJobsSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsJobsSetIAMPolicyResource =
 -- /See:/ 'projectsJobsSetIAMPolicy' smart constructor.
 data ProjectsJobsSetIAMPolicy =
   ProjectsJobsSetIAMPolicy'
-    { _pjsipXgafv          :: !(Maybe Xgafv)
+    { _pjsipXgafv :: !(Maybe Xgafv)
     , _pjsipUploadProtocol :: !(Maybe Text)
-    , _pjsipAccessToken    :: !(Maybe Text)
-    , _pjsipUploadType     :: !(Maybe Text)
-    , _pjsipPayload        :: !GoogleIAMV1__SetIAMPolicyRequest
-    , _pjsipResource       :: !Text
-    , _pjsipCallback       :: !(Maybe Text)
+    , _pjsipAccessToken :: !(Maybe Text)
+    , _pjsipUploadType :: !(Maybe Text)
+    , _pjsipPayload :: !GoogleIAMV1__SetIAMPolicyRequest
+    , _pjsipResource :: !Text
+    , _pjsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

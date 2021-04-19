@@ -41,8 +41,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Delete
     , pscdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.delete@ method which the
 -- 'ProjectsScanConfigsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsScanConfigsDeleteResource =
 -- /See:/ 'projectsScanConfigsDelete' smart constructor.
 data ProjectsScanConfigsDelete =
   ProjectsScanConfigsDelete'
-    { _pscdXgafv          :: !(Maybe Xgafv)
+    { _pscdXgafv :: !(Maybe Xgafv)
     , _pscdUploadProtocol :: !(Maybe Text)
-    , _pscdAccessToken    :: !(Maybe Text)
-    , _pscdUploadType     :: !(Maybe Text)
-    , _pscdName           :: !Text
-    , _pscdCallback       :: !(Maybe Text)
+    , _pscdAccessToken :: !(Maybe Text)
+    , _pscdUploadType :: !(Maybe Text)
+    , _pscdName :: !Text
+    , _pscdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

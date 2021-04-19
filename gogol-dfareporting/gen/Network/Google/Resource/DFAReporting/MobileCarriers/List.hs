@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.MobileCarriers.List
     , mclProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileCarriers.list@ method which the
 -- 'MobileCarriersList' request conforms to.

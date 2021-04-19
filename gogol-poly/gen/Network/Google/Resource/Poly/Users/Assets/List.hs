@@ -49,8 +49,8 @@ module Network.Google.Resource.Poly.Users.Assets.List
     , ualCallback
     ) where
 
-import           Network.Google.Poly.Types
-import           Network.Google.Prelude
+import Network.Google.Poly.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @poly.users.assets.list@ method which the
 -- 'UsersAssetsList' request conforms to.
@@ -79,17 +79,17 @@ type UsersAssetsListResource =
 -- /See:/ 'usersAssetsList' smart constructor.
 data UsersAssetsList =
   UsersAssetsList'
-    { _ualXgafv          :: !(Maybe Xgafv)
+    { _ualXgafv :: !(Maybe Xgafv)
     , _ualUploadProtocol :: !(Maybe Text)
-    , _ualOrderBy        :: !(Maybe Text)
-    , _ualAccessToken    :: !(Maybe Text)
-    , _ualFormat         :: !(Maybe Text)
-    , _ualUploadType     :: !(Maybe Text)
-    , _ualVisibility     :: !(Maybe Text)
-    , _ualName           :: !Text
-    , _ualPageToken      :: !(Maybe Text)
-    , _ualPageSize       :: !(Maybe (Textual Int32))
-    , _ualCallback       :: !(Maybe Text)
+    , _ualOrderBy :: !(Maybe Text)
+    , _ualAccessToken :: !(Maybe Text)
+    , _ualFormat :: !(Maybe Text)
+    , _ualUploadType :: !(Maybe Text)
+    , _ualVisibility :: !(Maybe Text)
+    , _ualName :: !Text
+    , _ualPageToken :: !(Maybe Text)
+    , _ualPageSize :: !(Maybe (Textual Int32))
+    , _ualCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

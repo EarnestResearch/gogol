@@ -39,8 +39,8 @@ module Network.Google.Resource.Blogger.Comments.Get
     , cgCommentId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.comments.get@ method which the
 -- 'CommentsGet' request conforms to.
@@ -61,9 +61,9 @@ type CommentsGetResource =
 -- /See:/ 'commentsGet' smart constructor.
 data CommentsGet =
   CommentsGet'
-    { _cgBlogId    :: !Text
-    , _cgView      :: !(Maybe CommentsGetView)
-    , _cgPostId    :: !Text
+    { _cgBlogId :: !Text
+    , _cgView :: !(Maybe CommentsGetView)
+    , _cgPostId :: !Text
     , _cgCommentId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

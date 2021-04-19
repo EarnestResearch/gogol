@@ -330,22 +330,22 @@ module Network.Google.CloudFunctions
     , bCondition
     ) where
 
-import           Network.Google.CloudFunctions.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudFunctions.Operations.Get
-import           Network.Google.Resource.CloudFunctions.Operations.List
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Call
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Create
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Delete
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GenerateDownloadURL
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GenerateUploadURL
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Get
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GetIAMPolicy
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.List
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Patch
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.SetIAMPolicy
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.TestIAMPermissions
-import           Network.Google.Resource.CloudFunctions.Projects.Locations.List
+import Network.Google.Prelude
+import Network.Google.CloudFunctions.Types
+import Network.Google.Resource.CloudFunctions.Operations.Get
+import Network.Google.Resource.CloudFunctions.Operations.List
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Call
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Create
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Delete
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GenerateDownloadURL
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GenerateUploadURL
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Get
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GetIAMPolicy
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.List
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.Patch
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.SetIAMPolicy
+import Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.TestIAMPermissions
+import Network.Google.Resource.CloudFunctions.Projects.Locations.List
 
 {- $resources
 TODO

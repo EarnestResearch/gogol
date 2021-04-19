@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Associations
     , calCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.associations.list@ method which the
 -- 'CatalogsAssociationsList' request conforms to.
@@ -68,14 +68,14 @@ type CatalogsAssociationsListResource =
 -- /See:/ 'catalogsAssociationsList' smart constructor.
 data CatalogsAssociationsList =
   CatalogsAssociationsList'
-    { _calParent         :: !Text
-    , _calXgafv          :: !(Maybe Xgafv)
+    { _calParent :: !Text
+    , _calXgafv :: !(Maybe Xgafv)
     , _calUploadProtocol :: !(Maybe Text)
-    , _calAccessToken    :: !(Maybe Text)
-    , _calUploadType     :: !(Maybe Text)
-    , _calPageToken      :: !(Maybe Text)
-    , _calPageSize       :: !(Maybe (Textual Int32))
-    , _calCallback       :: !(Maybe Text)
+    , _calAccessToken :: !(Maybe Text)
+    , _calUploadType :: !(Maybe Text)
+    , _calPageToken :: !(Maybe Text)
+    , _calPageSize :: !(Maybe (Textual Int32))
+    , _calCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

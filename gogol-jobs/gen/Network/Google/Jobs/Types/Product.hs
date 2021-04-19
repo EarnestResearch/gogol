@@ -17,8 +17,8 @@
 --
 module Network.Google.Jobs.Types.Product where
 
-import           Network.Google.Jobs.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types.Sum
+import Network.Google.Prelude
 
 -- | An object representing a latitude\/longitude pair. This is expressed as
 -- a pair of doubles representing degrees latitude and degrees longitude.
@@ -29,7 +29,7 @@ import           Network.Google.Prelude
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
   LatLng'
-    { _llLatitude  :: !(Maybe (Textual Double))
+    { _llLatitude :: !(Maybe (Textual Double))
     , _llLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -78,8 +78,8 @@ instance ToJSON LatLng where
 -- /See:/ 'applicationInfo' smart constructor.
 data ApplicationInfo =
   ApplicationInfo'
-    { _aiURIs        :: !(Maybe [Text])
-    , _aiEmails      :: !(Maybe [Text])
+    { _aiURIs :: !(Maybe [Text])
+    , _aiEmails :: !(Maybe [Text])
     , _aiInstruction :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -153,11 +153,11 @@ instance ToJSON ApplicationInfo where
 -- /See:/ 'matchingJob' smart constructor.
 data MatchingJob =
   MatchingJob'
-    { _mjJobTitleSnippet   :: !(Maybe Text)
-    , _mjJobSummary        :: !(Maybe Text)
-    , _mjCommuteInfo       :: !(Maybe CommuteInfo)
+    { _mjJobTitleSnippet :: !(Maybe Text)
+    , _mjJobSummary :: !(Maybe Text)
+    , _mjCommuteInfo :: !(Maybe CommuteInfo)
     , _mjSearchTextSnippet :: !(Maybe Text)
-    , _mjJob               :: !(Maybe Job)
+    , _mjJob :: !(Maybe Job)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -280,7 +280,7 @@ instance ToJSON MatchingJob where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -343,9 +343,9 @@ instance ToJSON Status where
 -- /See:/ 'requestMetadata' smart constructor.
 data RequestMetadata =
   RequestMetadata'
-    { _rmDomain     :: !(Maybe Text)
-    , _rmUserId     :: !(Maybe Text)
-    , _rmSessionId  :: !(Maybe Text)
+    { _rmDomain :: !(Maybe Text)
+    , _rmUserId :: !(Maybe Text)
+    , _rmSessionId :: !(Maybe Text)
     , _rmDeviceInfo :: !(Maybe DeviceInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -437,7 +437,7 @@ instance ToJSON RequestMetadata where
 data UpdateCompanyRequest =
   UpdateCompanyRequest'
     { _ucrUpdateMask :: !(Maybe GFieldMask)
-    , _ucrCompany    :: !(Maybe Company)
+    , _ucrCompany :: !(Maybe Company)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -491,7 +491,7 @@ instance ToJSON UpdateCompanyRequest where
 data UpdateJobRequest =
   UpdateJobRequest'
     { _ujrUpdateMask :: !(Maybe GFieldMask)
-    , _ujrJob        :: !(Maybe Job)
+    , _ujrJob :: !(Maybe Job)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -591,8 +591,8 @@ instance ToJSON BucketizedCount where
 data CompensationInfo =
   CompensationInfo'
     { _ciAnnualizedTotalCompensationRange :: !(Maybe CompensationRange)
-    , _ciEntries                          :: !(Maybe [CompensationEntry])
-    , _ciAnnualizedBaseCompensationRange  :: !(Maybe CompensationRange)
+    , _ciEntries :: !(Maybe [CompensationEntry])
+    , _ciAnnualizedBaseCompensationRange :: !(Maybe CompensationRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -832,8 +832,8 @@ instance ToJSON CreateJobRequest where
 data CompletionResult =
   CompletionResult'
     { _crSuggestion :: !(Maybe Text)
-    , _crImageURI   :: !(Maybe Text)
-    , _crType       :: !(Maybe CompletionResultType)
+    , _crImageURI :: !(Maybe Text)
+    , _crType :: !(Maybe CompletionResultType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -890,8 +890,8 @@ instance ToJSON CompletionResult where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lLatLng        :: !(Maybe LatLng)
-    , _lLocationType  :: !(Maybe LocationLocationType)
+    { _lLatLng :: !(Maybe LatLng)
+    , _lLocationType :: !(Maybe LocationLocationType)
     , _lPostalAddress :: !(Maybe PostalAddress)
     , _lRadiusInMiles :: !(Maybe (Textual Double))
     }
@@ -977,10 +977,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1101,12 +1101,12 @@ instance ToJSON Empty where
 -- /See:/ 'clientEvent' smart constructor.
 data ClientEvent =
   ClientEvent'
-    { _ceRequestId     :: !(Maybe Text)
-    , _ceExtraInfo     :: !(Maybe ClientEventExtraInfo)
-    , _ceJobEvent      :: !(Maybe JobEvent)
+    { _ceRequestId :: !(Maybe Text)
+    , _ceExtraInfo :: !(Maybe ClientEventExtraInfo)
+    , _ceJobEvent :: !(Maybe JobEvent)
     , _ceParentEventId :: !(Maybe Text)
-    , _ceCreateTime    :: !(Maybe DateTime')
-    , _ceEventId       :: !(Maybe Text)
+    , _ceCreateTime :: !(Maybe DateTime')
+    , _ceEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1210,7 +1210,7 @@ instance ToJSON ClientEvent where
 data CompensationHistogramRequest =
   CompensationHistogramRequest'
     { _chrBucketingOption :: !(Maybe NumericBucketingOption)
-    , _chrType            :: !(Maybe CompensationHistogramRequestType)
+    , _chrType :: !(Maybe CompensationHistogramRequestType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1262,8 +1262,8 @@ instance ToJSON CompensationHistogramRequest where
 data Money =
   Money'
     { _mCurrencyCode :: !(Maybe Text)
-    , _mNanos        :: !(Maybe (Textual Int32))
-    , _mUnits        :: !(Maybe (Textual Int64))
+    , _mNanos :: !(Maybe (Textual Int32))
+    , _mUnits :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1327,8 +1327,8 @@ instance ToJSON Money where
 data ListCompaniesResponse =
   ListCompaniesResponse'
     { _lcrNextPageToken :: !(Maybe Text)
-    , _lcrCompanies     :: !(Maybe [Company])
-    , _lcrMetadata      :: !(Maybe ResponseMetadata)
+    , _lcrCompanies :: !(Maybe [Company])
+    , _lcrMetadata :: !(Maybe ResponseMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1393,12 +1393,12 @@ instance ToJSON ListCompaniesResponse where
 -- /See:/ 'commuteFilter' smart constructor.
 data CommuteFilter =
   CommuteFilter'
-    { _cfCommuteMethod           :: !(Maybe CommuteFilterCommuteMethod)
+    { _cfCommuteMethod :: !(Maybe CommuteFilterCommuteMethod)
     , _cfAllowImpreciseAddresses :: !(Maybe Bool)
-    , _cfTravelDuration          :: !(Maybe GDuration)
-    , _cfStartCoordinates        :: !(Maybe LatLng)
-    , _cfRoadTraffic             :: !(Maybe CommuteFilterRoadTraffic)
-    , _cfDePartureTime           :: !(Maybe TimeOfDay')
+    , _cfTravelDuration :: !(Maybe GDuration)
+    , _cfStartCoordinates :: !(Maybe LatLng)
+    , _cfRoadTraffic :: !(Maybe CommuteFilterRoadTraffic)
+    , _cfDePartureTime :: !(Maybe TimeOfDay')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1642,21 +1642,21 @@ instance ToJSON JobEvent where
 -- /See:/ 'searchJobsRequest' smart constructor.
 data SearchJobsRequest =
   SearchJobsRequest'
-    { _sjrRequestMetadata          :: !(Maybe RequestMetadata)
-    , _sjrJobView                  :: !(Maybe SearchJobsRequestJobView)
-    , _sjrOrderBy                  :: !(Maybe Text)
-    , _sjrOffSet                   :: !(Maybe (Textual Int32))
-    , _sjrSearchMode               :: !(Maybe SearchJobsRequestSearchMode)
-    , _sjrDiversificationLevel     :: !(Maybe SearchJobsRequestDiversificationLevel)
-    , _sjrHistogramQueries         :: !(Maybe [HistogramQuery])
+    { _sjrRequestMetadata :: !(Maybe RequestMetadata)
+    , _sjrJobView :: !(Maybe SearchJobsRequestJobView)
+    , _sjrOrderBy :: !(Maybe Text)
+    , _sjrOffSet :: !(Maybe (Textual Int32))
+    , _sjrSearchMode :: !(Maybe SearchJobsRequestSearchMode)
+    , _sjrDiversificationLevel :: !(Maybe SearchJobsRequestDiversificationLevel)
+    , _sjrHistogramQueries :: !(Maybe [HistogramQuery])
     , _sjrRequirePreciseResultSize :: !(Maybe Bool)
-    , _sjrJobQuery                 :: !(Maybe JobQuery)
-    , _sjrEnableBroadening         :: !(Maybe Bool)
-    , _sjrPageToken                :: !(Maybe Text)
-    , _sjrCustomRankingInfo        :: !(Maybe CustomRankingInfo)
-    , _sjrDisableKeywordMatch      :: !(Maybe Bool)
-    , _sjrPageSize                 :: !(Maybe (Textual Int32))
-    , _sjrHistogramFacets          :: !(Maybe HistogramFacets)
+    , _sjrJobQuery :: !(Maybe JobQuery)
+    , _sjrEnableBroadening :: !(Maybe Bool)
+    , _sjrPageToken :: !(Maybe Text)
+    , _sjrCustomRankingInfo :: !(Maybe CustomRankingInfo)
+    , _sjrDisableKeywordMatch :: !(Maybe Bool)
+    , _sjrPageSize :: !(Maybe (Textual Int32))
+    , _sjrHistogramFacets :: !(Maybe HistogramFacets)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2011,7 +2011,7 @@ instance ToJSON StatusDetailsItem where
 data HistogramQueryResult =
   HistogramQueryResult'
     { _hqrHistogramQuery :: !(Maybe Text)
-    , _hqrHistogram      :: !(Maybe HistogramQueryResultHistogram)
+    , _hqrHistogram :: !(Maybe HistogramQueryResultHistogram)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2068,8 +2068,8 @@ instance ToJSON HistogramQueryResult where
 data CustomAttributeHistogramRequest =
   CustomAttributeHistogramRequest'
     { _cahrLongValueHistogramBucketingOption :: !(Maybe NumericBucketingOption)
-    , _cahrKey                               :: !(Maybe Text)
-    , _cahrStringValueHistogram              :: !(Maybe Bool)
+    , _cahrKey :: !(Maybe Text)
+    , _cahrStringValueHistogram :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2178,7 +2178,7 @@ instance ToJSON ResponseMetadata where
 data CommuteInfo =
   CommuteInfo'
     { _ciTravelDuration :: !(Maybe GDuration)
-    , _ciJobLocation    :: !(Maybe Location)
+    , _ciJobLocation :: !(Maybe Location)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2232,8 +2232,8 @@ instance ToJSON CommuteInfo where
 data CustomAttributeHistogramResult =
   CustomAttributeHistogramResult'
     { _cStringValueHistogramResult :: !(Maybe CustomAttributeHistogramResultStringValueHistogramResult)
-    , _cLongValueHistogramResult   :: !(Maybe NumericBucketingResult)
-    , _cKey                        :: !(Maybe Text)
+    , _cLongValueHistogramResult :: !(Maybe NumericBucketingResult)
+    , _cKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2300,7 +2300,7 @@ instance ToJSON CustomAttributeHistogramResult where
 -- /See:/ 'bucketRange' smart constructor.
 data BucketRange =
   BucketRange'
-    { _brTo   :: !(Maybe (Textual Double))
+    { _brTo :: !(Maybe (Textual Double))
     , _brFrom :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2348,7 +2348,7 @@ instance ToJSON BucketRange where
 data NumericBucketingResult =
   NumericBucketingResult'
     { _nbrMaxValue :: !(Maybe (Textual Double))
-    , _nbrCounts   :: !(Maybe [BucketizedCount])
+    , _nbrCounts :: !(Maybe [BucketizedCount])
     , _nbrMinValue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2414,7 +2414,7 @@ instance ToJSON NumericBucketingResult where
 data JobDerivedInfo =
   JobDerivedInfo'
     { _jdiJobCategories :: !(Maybe [Text])
-    , _jdiLocations     :: !(Maybe [Location])
+    , _jdiLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2510,9 +2510,9 @@ instance ToJSON CompanyDerivedInfo where
 data CompensationFilter =
   CompensationFilter'
     { _cfIncludeJobsWithUnspecifiedCompensationRange :: !(Maybe Bool)
-    , _cfRange                                       :: !(Maybe CompensationRange)
-    , _cfUnits                                       :: !(Maybe [Text])
-    , _cfType                                        :: !(Maybe CompensationFilterType)
+    , _cfRange :: !(Maybe CompensationRange)
+    , _cfUnits :: !(Maybe [Text])
+    , _cfType :: !(Maybe CompensationFilterType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2589,19 +2589,19 @@ instance ToJSON CompensationFilter where
 -- /See:/ 'company' smart constructor.
 data Company =
   Company'
-    { _cHiringAgency                         :: !(Maybe Bool)
-    , _cCareerSiteURI                        :: !(Maybe Text)
-    , _cEeoText                              :: !(Maybe Text)
-    , _cSize                                 :: !(Maybe CompanySize)
-    , _cWebsiteURI                           :: !(Maybe Text)
-    , _cSuspended                            :: !(Maybe Bool)
+    { _cHiringAgency :: !(Maybe Bool)
+    , _cCareerSiteURI :: !(Maybe Text)
+    , _cEeoText :: !(Maybe Text)
+    , _cSize :: !(Maybe CompanySize)
+    , _cWebsiteURI :: !(Maybe Text)
+    , _cSuspended :: !(Maybe Bool)
     , _cKeywordSearchableJobCustomAttributes :: !(Maybe [Text])
-    , _cImageURI                             :: !(Maybe Text)
-    , _cHeadquartersAddress                  :: !(Maybe Text)
-    , _cName                                 :: !(Maybe Text)
-    , _cDisplayName                          :: !(Maybe Text)
-    , _cExternalId                           :: !(Maybe Text)
-    , _cDerivedInfo                          :: !(Maybe CompanyDerivedInfo)
+    , _cImageURI :: !(Maybe Text)
+    , _cHeadquartersAddress :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cDisplayName :: !(Maybe Text)
+    , _cExternalId :: !(Maybe Text)
+    , _cDerivedInfo :: !(Maybe CompanyDerivedInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2787,8 +2787,8 @@ instance ToJSON Company where
 -- /See:/ 'customAttribute' smart constructor.
 data CustomAttribute =
   CustomAttribute'
-    { _caLongValues   :: !(Maybe [Textual Int64])
-    , _caFilterable   :: !(Maybe Bool)
+    { _caLongValues :: !(Maybe [Textual Int64])
+    , _caFilterable :: !(Maybe Bool)
     , _caStringValues :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2867,36 +2867,36 @@ instance ToJSON CustomAttribute where
 -- /See:/ 'job' smart constructor.
 data Job =
   Job'
-    { _jDePartment         :: !(Maybe Text)
-    , _jApplicationInfo    :: !(Maybe ApplicationInfo)
-    , _jLanguageCode       :: !(Maybe Text)
-    , _jCompensationInfo   :: !(Maybe CompensationInfo)
-    , _jResponsibilities   :: !(Maybe Text)
-    , _jJobStartTime       :: !(Maybe DateTime')
-    , _jPromotionValue     :: !(Maybe (Textual Int32))
-    , _jCompanyName        :: !(Maybe Text)
-    , _jAddresses          :: !(Maybe [Text])
-    , _jJobBenefits        :: !(Maybe [Text])
-    , _jVisibility         :: !(Maybe JobVisibility)
-    , _jJobLevel           :: !(Maybe JobJobLevel)
-    , _jPostingUpdateTime  :: !(Maybe DateTime')
-    , _jCustomAttributes   :: !(Maybe JobCustomAttributes)
+    { _jDePartment :: !(Maybe Text)
+    , _jApplicationInfo :: !(Maybe ApplicationInfo)
+    , _jLanguageCode :: !(Maybe Text)
+    , _jCompensationInfo :: !(Maybe CompensationInfo)
+    , _jResponsibilities :: !(Maybe Text)
+    , _jJobStartTime :: !(Maybe DateTime')
+    , _jPromotionValue :: !(Maybe (Textual Int32))
+    , _jCompanyName :: !(Maybe Text)
+    , _jAddresses :: !(Maybe [Text])
+    , _jJobBenefits :: !(Maybe [Text])
+    , _jVisibility :: !(Maybe JobVisibility)
+    , _jJobLevel :: !(Maybe JobJobLevel)
+    , _jPostingUpdateTime :: !(Maybe DateTime')
+    , _jCustomAttributes :: !(Maybe JobCustomAttributes)
     , _jPostingPublishTime :: !(Maybe DateTime')
-    , _jName               :: !(Maybe Text)
-    , _jDegreeTypes        :: !(Maybe [Text])
-    , _jQualifications     :: !(Maybe Text)
+    , _jName :: !(Maybe Text)
+    , _jDegreeTypes :: !(Maybe [Text])
+    , _jQualifications :: !(Maybe Text)
     , _jCompanyDisplayName :: !(Maybe Text)
-    , _jIncentives         :: !(Maybe Text)
-    , _jJobEndTime         :: !(Maybe DateTime')
-    , _jPostingRegion      :: !(Maybe JobPostingRegion)
-    , _jTitle              :: !(Maybe Text)
-    , _jEmploymentTypes    :: !(Maybe [Text])
-    , _jDerivedInfo        :: !(Maybe JobDerivedInfo)
-    , _jProcessingOptions  :: !(Maybe ProcessingOptions)
-    , _jPostingExpireTime  :: !(Maybe DateTime')
-    , _jDescription        :: !(Maybe Text)
-    , _jRequisitionId      :: !(Maybe Text)
-    , _jPostingCreateTime  :: !(Maybe DateTime')
+    , _jIncentives :: !(Maybe Text)
+    , _jJobEndTime :: !(Maybe DateTime')
+    , _jPostingRegion :: !(Maybe JobPostingRegion)
+    , _jTitle :: !(Maybe Text)
+    , _jEmploymentTypes :: !(Maybe [Text])
+    , _jDerivedInfo :: !(Maybe JobDerivedInfo)
+    , _jProcessingOptions :: !(Maybe ProcessingOptions)
+    , _jPostingExpireTime :: !(Maybe DateTime')
+    , _jDescription :: !(Maybe Text)
+    , _jRequisitionId :: !(Maybe Text)
+    , _jPostingCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3357,9 +3357,9 @@ instance ToJSON Job where
 -- /See:/ 'histogramResults' smart constructor.
 data HistogramResults =
   HistogramResults'
-    { _hrSimpleHistogramResults          :: !(Maybe [HistogramResult])
+    { _hrSimpleHistogramResults :: !(Maybe [HistogramResult])
     , _hrCustomAttributeHistogramResults :: !(Maybe [CustomAttributeHistogramResult])
-    , _hrCompensationHistogramResults    :: !(Maybe [CompensationHistogramResult])
+    , _hrCompensationHistogramResults :: !(Maybe [CompensationHistogramResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3436,11 +3436,11 @@ instance ToJSON HistogramResults where
 -- /See:/ 'locationFilter' smart constructor.
 data LocationFilter =
   LocationFilter'
-    { _lfLatLng                :: !(Maybe LatLng)
-    , _lfDistanceInMiles       :: !(Maybe (Textual Double))
-    , _lfRegionCode            :: !(Maybe Text)
+    { _lfLatLng :: !(Maybe LatLng)
+    , _lfDistanceInMiles :: !(Maybe (Textual Double))
+    , _lfRegionCode :: !(Maybe Text)
     , _lfTelecommutePreference :: !(Maybe LocationFilterTelecommutePreference)
-    , _lfAddress               :: !(Maybe Text)
+    , _lfAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3546,8 +3546,8 @@ instance ToJSON LocationFilter where
 data ListJobsResponse =
   ListJobsResponse'
     { _ljrNextPageToken :: !(Maybe Text)
-    , _ljrJobs          :: !(Maybe [Job])
-    , _ljrMetadata      :: !(Maybe ResponseMetadata)
+    , _ljrJobs :: !(Maybe [Job])
+    , _ljrMetadata :: !(Maybe ResponseMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3609,7 +3609,7 @@ instance ToJSON ListJobsResponse where
 data CompensationHistogramResult =
   CompensationHistogramResult'
     { _cResult :: !(Maybe NumericBucketingResult)
-    , _cType   :: !(Maybe CompensationHistogramResultType)
+    , _cType :: !(Maybe CompensationHistogramResultType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3653,19 +3653,19 @@ instance ToJSON CompensationHistogramResult where
 -- /See:/ 'jobQuery' smart constructor.
 data JobQuery =
   JobQuery'
-    { _jqLanguageCodes         :: !(Maybe [Text])
-    , _jqDisableSpellCheck     :: !(Maybe Bool)
+    { _jqLanguageCodes :: !(Maybe [Text])
+    , _jqDisableSpellCheck :: !(Maybe Bool)
     , _jqCustomAttributeFilter :: !(Maybe Text)
-    , _jqCommuteFilter         :: !(Maybe CommuteFilter)
-    , _jqPublishTimeRange      :: !(Maybe TimestampRange)
-    , _jqLocationFilters       :: !(Maybe [LocationFilter])
-    , _jqCompanyDisplayNames   :: !(Maybe [Text])
-    , _jqJobCategories         :: !(Maybe [Text])
-    , _jqCompensationFilter    :: !(Maybe CompensationFilter)
-    , _jqQuery                 :: !(Maybe Text)
-    , _jqCompanyNames          :: !(Maybe [Text])
-    , _jqEmploymentTypes       :: !(Maybe [Text])
-    , _jqExcludedJobs          :: !(Maybe [Text])
+    , _jqCommuteFilter :: !(Maybe CommuteFilter)
+    , _jqPublishTimeRange :: !(Maybe TimestampRange)
+    , _jqLocationFilters :: !(Maybe [LocationFilter])
+    , _jqCompanyDisplayNames :: !(Maybe [Text])
+    , _jqJobCategories :: !(Maybe [Text])
+    , _jqCompensationFilter :: !(Maybe CompensationFilter)
+    , _jqQuery :: !(Maybe Text)
+    , _jqCompanyNames :: !(Maybe [Text])
+    , _jqEmploymentTypes :: !(Maybe [Text])
+    , _jqExcludedJobs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3950,7 +3950,7 @@ instance ToJSON CreateClientEventRequest where
 -- /See:/ 'spellingCorrection' smart constructor.
 data SpellingCorrection =
   SpellingCorrection'
-    { _scCorrected     :: !(Maybe Bool)
+    { _scCorrected :: !(Maybe Bool)
     , _scCorrectedText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3999,7 +3999,7 @@ instance ToJSON SpellingCorrection where
 -- /See:/ 'completeQueryResponse' smart constructor.
 data CompleteQueryResponse =
   CompleteQueryResponse'
-    { _cqrMetadata          :: !(Maybe ResponseMetadata)
+    { _cqrMetadata :: !(Maybe ResponseMetadata)
     , _cqrCompletionResults :: !(Maybe [CompletionResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4056,8 +4056,8 @@ instance ToJSON CompleteQueryResponse where
 -- /See:/ 'timeOfDay' smart constructor.
 data TimeOfDay' =
   TimeOfDay''
-    { _todNanos   :: !(Maybe (Textual Int32))
-    , _todHours   :: !(Maybe (Textual Int32))
+    { _todNanos :: !(Maybe (Textual Int32))
+    , _todHours :: !(Maybe (Textual Int32))
     , _todMinutes :: !(Maybe (Textual Int32))
     , _todSeconds :: !(Maybe (Textual Int32))
     }
@@ -4141,12 +4141,12 @@ instance ToJSON TimeOfDay' where
 -- /See:/ 'compensationEntry' smart constructor.
 data CompensationEntry =
   CompensationEntry'
-    { _ceAmount               :: !(Maybe Money)
+    { _ceAmount :: !(Maybe Money)
     , _ceExpectedUnitsPerYear :: !(Maybe (Textual Double))
-    , _ceRange                :: !(Maybe CompensationRange)
-    , _ceType                 :: !(Maybe CompensationEntryType)
-    , _ceDescription          :: !(Maybe Text)
-    , _ceUnit                 :: !(Maybe CompensationEntryUnit)
+    , _ceRange :: !(Maybe CompensationRange)
+    , _ceType :: !(Maybe CompensationEntryType)
+    , _ceDescription :: !(Maybe Text)
+    , _ceUnit :: !(Maybe CompensationEntryUnit)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4336,7 +4336,7 @@ instance ToJSON CompensationRange where
 -- /See:/ 'customRankingInfo' smart constructor.
 data CustomRankingInfo =
   CustomRankingInfo'
-    { _criImportanceLevel   :: !(Maybe CustomRankingInfoImportanceLevel)
+    { _criImportanceLevel :: !(Maybe CustomRankingInfoImportanceLevel)
     , _criRankingExpression :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4399,7 +4399,7 @@ instance ToJSON CustomRankingInfo where
 -- /See:/ 'processingOptions' smart constructor.
 data ProcessingOptions =
   ProcessingOptions'
-    { _poHTMLSanitization               :: !(Maybe ProcessingOptionsHTMLSanitization)
+    { _poHTMLSanitization :: !(Maybe ProcessingOptionsHTMLSanitization)
     , _poDisableStreetAddressResolution :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4468,17 +4468,17 @@ instance ToJSON ProcessingOptions where
 -- /See:/ 'postalAddress' smart constructor.
 data PostalAddress =
   PostalAddress'
-    { _paLanguageCode       :: !(Maybe Text)
-    , _paSortingCode        :: !(Maybe Text)
-    , _paRegionCode         :: !(Maybe Text)
-    , _paSublocality        :: !(Maybe Text)
-    , _paPostalCode         :: !(Maybe Text)
-    , _paLocality           :: !(Maybe Text)
-    , _paRecipients         :: !(Maybe [Text])
+    { _paLanguageCode :: !(Maybe Text)
+    , _paSortingCode :: !(Maybe Text)
+    , _paRegionCode :: !(Maybe Text)
+    , _paSublocality :: !(Maybe Text)
+    , _paPostalCode :: !(Maybe Text)
+    , _paLocality :: !(Maybe Text)
+    , _paRecipients :: !(Maybe [Text])
     , _paAdministrativeArea :: !(Maybe Text)
-    , _paAddressLines       :: !(Maybe [Text])
-    , _paRevision           :: !(Maybe (Textual Int32))
-    , _paOrganization       :: !(Maybe Text)
+    , _paAddressLines :: !(Maybe [Text])
+    , _paRevision :: !(Maybe (Textual Int32))
+    , _paOrganization :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4681,7 +4681,7 @@ instance ToJSON PostalAddress where
 -- /See:/ 'deviceInfo' smart constructor.
 data DeviceInfo =
   DeviceInfo'
-    { _diId         :: !(Maybe Text)
+    { _diId :: !(Maybe Text)
     , _diDeviceType :: !(Maybe DeviceInfoDeviceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4729,7 +4729,7 @@ instance ToJSON DeviceInfo where
 -- /See:/ 'numericBucketingOption' smart constructor.
 data NumericBucketingOption =
   NumericBucketingOption'
-    { _nboBucketBounds   :: !(Maybe [Textual Double])
+    { _nboBucketBounds :: !(Maybe [Textual Double])
     , _nboRequiresMinMax :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4830,9 +4830,9 @@ instance ToJSON OperationResponse where
 -- /See:/ 'histogramFacets' smart constructor.
 data HistogramFacets =
   HistogramFacets'
-    { _hfCompensationHistogramFacets    :: !(Maybe [CompensationHistogramRequest])
+    { _hfCompensationHistogramFacets :: !(Maybe [CompensationHistogramRequest])
     , _hfCustomAttributeHistogramFacets :: !(Maybe [CustomAttributeHistogramRequest])
-    , _hfSimpleHistogramFacets          :: !(Maybe [Text])
+    , _hfSimpleHistogramFacets :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4911,7 +4911,7 @@ instance ToJSON HistogramFacets where
 -- /See:/ 'histogramResult' smart constructor.
 data HistogramResult =
   HistogramResult'
-    { _hrValues     :: !(Maybe HistogramResultValues)
+    { _hrValues :: !(Maybe HistogramResultValues)
     , _hrSearchType :: !(Maybe HistogramResultSearchType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5046,16 +5046,16 @@ instance ToJSON ClientEventExtraInfo where
 -- /See:/ 'searchJobsResponse' smart constructor.
 data SearchJobsResponse =
   SearchJobsResponse'
-    { _sjrNextPageToken           :: !(Maybe Text)
-    , _sjrEstimatedTotalSize      :: !(Maybe (Textual Int32))
-    , _sjrHistogramQueryResults   :: !(Maybe [HistogramQueryResult])
-    , _sjrLocationFilters         :: !(Maybe [Location])
-    , _sjrMatchingJobs            :: !(Maybe [MatchingJob])
-    , _sjrTotalSize               :: !(Maybe (Textual Int32))
-    , _sjrHistogramResults        :: !(Maybe HistogramResults)
-    , _sjrMetadata                :: !(Maybe ResponseMetadata)
+    { _sjrNextPageToken :: !(Maybe Text)
+    , _sjrEstimatedTotalSize :: !(Maybe (Textual Int32))
+    , _sjrHistogramQueryResults :: !(Maybe [HistogramQueryResult])
+    , _sjrLocationFilters :: !(Maybe [Location])
+    , _sjrMatchingJobs :: !(Maybe [MatchingJob])
+    , _sjrTotalSize :: !(Maybe (Textual Int32))
+    , _sjrHistogramResults :: !(Maybe HistogramResults)
+    , _sjrMetadata :: !(Maybe ResponseMetadata)
     , _sjrBroadenedQueryJobsCount :: !(Maybe (Textual Int32))
-    , _sjrSpellCorrection         :: !(Maybe SpellingCorrection)
+    , _sjrSpellCorrection :: !(Maybe SpellingCorrection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5262,7 +5262,7 @@ instance ToJSON HistogramResultValues where
 data TimestampRange =
   TimestampRange'
     { _trStartTime :: !(Maybe DateTime')
-    , _trEndTime   :: !(Maybe DateTime')
+    , _trEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

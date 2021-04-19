@@ -41,8 +41,8 @@ module Network.Google.Resource.DeploymentManager.Manifests.List
     , mlDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.manifests.list@ method which the
 -- 'ManifestsList' request conforms to.
@@ -67,10 +67,10 @@ type ManifestsListResource =
 -- /See:/ 'manifestsList' smart constructor.
 data ManifestsList =
   ManifestsList'
-    { _mlOrderBy    :: !(Maybe Text)
-    , _mlProject    :: !Text
-    , _mlFilter     :: !(Maybe Text)
-    , _mlPageToken  :: !(Maybe Text)
+    { _mlOrderBy :: !(Maybe Text)
+    , _mlProject :: !Text
+    , _mlFilter :: !(Maybe Text)
+    , _mlPageToken :: !(Maybe Text)
     , _mlMaxResults :: !(Textual Word32)
     , _mlDeployment :: !Text
     }

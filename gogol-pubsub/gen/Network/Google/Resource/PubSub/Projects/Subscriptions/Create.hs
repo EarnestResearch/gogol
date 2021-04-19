@@ -51,8 +51,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.Create
     , pscCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.create@ method which the
 -- 'ProjectsSubscriptionsCreate' request conforms to.
@@ -82,13 +82,13 @@ type ProjectsSubscriptionsCreateResource =
 -- /See:/ 'projectsSubscriptionsCreate' smart constructor.
 data ProjectsSubscriptionsCreate =
   ProjectsSubscriptionsCreate'
-    { _pscXgafv          :: !(Maybe Xgafv)
+    { _pscXgafv :: !(Maybe Xgafv)
     , _pscUploadProtocol :: !(Maybe Text)
-    , _pscAccessToken    :: !(Maybe Text)
-    , _pscUploadType     :: !(Maybe Text)
-    , _pscPayload        :: !Subscription
-    , _pscName           :: !Text
-    , _pscCallback       :: !(Maybe Text)
+    , _pscAccessToken :: !(Maybe Text)
+    , _pscUploadType :: !(Maybe Text)
+    , _pscPayload :: !Subscription
+    , _pscName :: !Text
+    , _pscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Docs.Documents.Get
     , dgCallback
     ) where
 
-import           Network.Google.Docs.Types
-import           Network.Google.Prelude
+import Network.Google.Docs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @docs.documents.get@ method which the
 -- 'DocumentsGet' request conforms to.
@@ -64,13 +64,13 @@ type DocumentsGetResource =
 -- /See:/ 'documentsGet' smart constructor.
 data DocumentsGet =
   DocumentsGet'
-    { _dgXgafv               :: !(Maybe Xgafv)
-    , _dgDocumentId          :: !Text
-    , _dgUploadProtocol      :: !(Maybe Text)
-    , _dgAccessToken         :: !(Maybe Text)
-    , _dgUploadType          :: !(Maybe Text)
+    { _dgXgafv :: !(Maybe Xgafv)
+    , _dgDocumentId :: !Text
+    , _dgUploadProtocol :: !(Maybe Text)
+    , _dgAccessToken :: !(Maybe Text)
+    , _dgUploadType :: !(Maybe Text)
     , _dgSuggestionsViewMode :: !(Maybe Text)
-    , _dgCallback            :: !(Maybe Text)
+    , _dgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

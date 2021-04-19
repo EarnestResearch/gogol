@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Update
     , oacuGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.update@ method which the
 -- 'ObjectAccessControlsUpdate' request conforms to.
@@ -66,12 +66,12 @@ type ObjectAccessControlsUpdateResource =
 -- /See:/ 'objectAccessControlsUpdate' smart constructor.
 data ObjectAccessControlsUpdate =
   ObjectAccessControlsUpdate'
-    { _oacuBucket      :: !Text
-    , _oacuPayload     :: !ObjectAccessControl
+    { _oacuBucket :: !Text
+    , _oacuPayload :: !ObjectAccessControl
     , _oacuUserProject :: !(Maybe Text)
-    , _oacuObject      :: !Text
-    , _oacuEntity      :: !Text
-    , _oacuGeneration  :: !(Maybe (Textual Int64))
+    , _oacuObject :: !Text
+    , _oacuEntity :: !Text
+    , _oacuGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

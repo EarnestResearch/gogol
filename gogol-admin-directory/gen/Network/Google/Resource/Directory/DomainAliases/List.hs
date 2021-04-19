@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.DomainAliases.List
     , dalParentDomainName
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domainAliases.list@ method which the
 -- 'DomainAliasesList' request conforms to.
@@ -57,7 +57,7 @@ type DomainAliasesListResource =
 -- /See:/ 'domainAliasesList' smart constructor.
 data DomainAliasesList =
   DomainAliasesList'
-    { _dalCustomer         :: !Text
+    { _dalCustomer :: !Text
     , _dalParentDomainName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -41,8 +41,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Rematch
     , tbmrMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.rematch@ method which the
 -- 'TurnBasedMatchesRematch' request conforms to.
@@ -66,8 +66,8 @@ type TurnBasedMatchesRematchResource =
 data TurnBasedMatchesRematch =
   TurnBasedMatchesRematch'
     { _tbmrRequestId :: !(Maybe (Textual Int64))
-    , _tbmrLanguage  :: !(Maybe Text)
-    , _tbmrMatchId   :: !Text
+    , _tbmrLanguage :: !(Maybe Text)
+    , _tbmrMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

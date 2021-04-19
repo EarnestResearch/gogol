@@ -37,8 +37,8 @@ module Network.Google.Resource.DoubleClickSearch.Reports.GetFile
     , rgfReportFragment
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.reports.getFile@ method which the
 -- 'ReportsGetFile' request conforms to.
@@ -65,7 +65,7 @@ type ReportsGetFileResource =
 -- /See:/ 'reportsGetFile' smart constructor.
 data ReportsGetFile =
   ReportsGetFile'
-    { _rgfReportId       :: !Text
+    { _rgfReportId :: !Text
     , _rgfReportFragment :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

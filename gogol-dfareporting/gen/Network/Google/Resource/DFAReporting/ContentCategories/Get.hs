@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Get
     , ccgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.get@ method which the
 -- 'ContentCategoriesGet' request conforms to.
@@ -58,7 +58,7 @@ type ContentCategoriesGetResource =
 data ContentCategoriesGet =
   ContentCategoriesGet'
     { _ccgProFileId :: !(Textual Int64)
-    , _ccgId        :: !(Textual Int64)
+    , _ccgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

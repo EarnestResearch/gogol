@@ -38,8 +38,8 @@ module Network.Google.Resource.SQL.Instances.Failover
     , ifInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.failover@ method which the
 -- 'InstancesFailover' request conforms to.
@@ -60,8 +60,8 @@ type InstancesFailoverResource =
 -- /See:/ 'instancesFailover' smart constructor.
 data InstancesFailover =
   InstancesFailover'
-    { _ifProject  :: !Text
-    , _ifPayload  :: !InstancesFailoverRequest
+    { _ifProject :: !Text
+    , _ifPayload :: !InstancesFailoverRequest
     , _ifInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

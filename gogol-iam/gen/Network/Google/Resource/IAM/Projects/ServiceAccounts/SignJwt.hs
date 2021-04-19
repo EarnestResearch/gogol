@@ -48,8 +48,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.SignJwt
     , psasjCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.signJwt@ method which the
 -- 'ProjectsServiceAccountsSignJwt' request conforms to.
@@ -76,13 +76,13 @@ type ProjectsServiceAccountsSignJwtResource =
 -- /See:/ 'projectsServiceAccountsSignJwt' smart constructor.
 data ProjectsServiceAccountsSignJwt =
   ProjectsServiceAccountsSignJwt'
-    { _psasjXgafv          :: !(Maybe Xgafv)
+    { _psasjXgafv :: !(Maybe Xgafv)
     , _psasjUploadProtocol :: !(Maybe Text)
-    , _psasjAccessToken    :: !(Maybe Text)
-    , _psasjUploadType     :: !(Maybe Text)
-    , _psasjPayload        :: !SignJwtRequest
-    , _psasjName           :: !Text
-    , _psasjCallback       :: !(Maybe Text)
+    , _psasjAccessToken :: !(Maybe Text)
+    , _psasjUploadType :: !(Maybe Text)
+    , _psasjPayload :: !SignJwtRequest
+    , _psasjName :: !Text
+    , _psasjCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

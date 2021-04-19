@@ -45,8 +45,8 @@ module Network.Google.Resource.AlertCenter.Alerts.List
     , alCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.alerts.list@ method which the
 -- 'AlertsList' request conforms to.
@@ -71,16 +71,16 @@ type AlertsListResource =
 -- /See:/ 'alertsList' smart constructor.
 data AlertsList =
   AlertsList'
-    { _alXgafv          :: !(Maybe Xgafv)
+    { _alXgafv :: !(Maybe Xgafv)
     , _alUploadProtocol :: !(Maybe Text)
-    , _alOrderBy        :: !(Maybe Text)
-    , _alAccessToken    :: !(Maybe Text)
-    , _alUploadType     :: !(Maybe Text)
-    , _alCustomerId     :: !(Maybe Text)
-    , _alFilter         :: !(Maybe Text)
-    , _alPageToken      :: !(Maybe Text)
-    , _alPageSize       :: !(Maybe (Textual Int32))
-    , _alCallback       :: !(Maybe Text)
+    , _alOrderBy :: !(Maybe Text)
+    , _alAccessToken :: !(Maybe Text)
+    , _alUploadType :: !(Maybe Text)
+    , _alCustomerId :: !(Maybe Text)
+    , _alFilter :: !(Maybe Text)
+    , _alPageToken :: !(Maybe Text)
+    , _alPageSize :: !(Maybe (Textual Int32))
+    , _alCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

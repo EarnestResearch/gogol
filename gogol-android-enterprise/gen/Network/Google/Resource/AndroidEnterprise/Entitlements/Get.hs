@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Entitlements.Get
     , egUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.entitlements.get@ method which the
 -- 'EntitlementsGet' request conforms to.
@@ -60,8 +60,8 @@ type EntitlementsGetResource =
 data EntitlementsGet =
   EntitlementsGet'
     { _egEntitlementId :: !Text
-    , _egEnterpriseId  :: !Text
-    , _egUserId        :: !Text
+    , _egEnterpriseId :: !Text
+    , _egUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

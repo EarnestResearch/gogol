@@ -43,8 +43,8 @@ module Network.Google.Resource.PubSub.Projects.Topics.Subscriptions.List
     , ptslCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.topics.subscriptions.list@ method which the
 -- 'ProjectsTopicsSubscriptionsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsTopicsSubscriptionsListResource =
 -- /See:/ 'projectsTopicsSubscriptionsList' smart constructor.
 data ProjectsTopicsSubscriptionsList =
   ProjectsTopicsSubscriptionsList'
-    { _ptslXgafv          :: !(Maybe Xgafv)
+    { _ptslXgafv :: !(Maybe Xgafv)
     , _ptslUploadProtocol :: !(Maybe Text)
-    , _ptslAccessToken    :: !(Maybe Text)
-    , _ptslUploadType     :: !(Maybe Text)
-    , _ptslTopic          :: !Text
-    , _ptslPageToken      :: !(Maybe Text)
-    , _ptslPageSize       :: !(Maybe (Textual Int32))
-    , _ptslCallback       :: !(Maybe Text)
+    , _ptslAccessToken :: !(Maybe Text)
+    , _ptslUploadType :: !(Maybe Text)
+    , _ptslTopic :: !Text
+    , _ptslPageToken :: !(Maybe Text)
+    , _ptslPageSize :: !(Maybe (Textual Int32))
+    , _ptslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

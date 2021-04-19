@@ -43,8 +43,8 @@ module Network.Google.Resource.Compute.BackendServices.Patch
     , bspBackendService
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendServices.patch@ method which the
 -- 'BackendServicesPatch' request conforms to.
@@ -70,9 +70,9 @@ type BackendServicesPatchResource =
 -- /See:/ 'backendServicesPatch' smart constructor.
 data BackendServicesPatch =
   BackendServicesPatch'
-    { _bspRequestId      :: !(Maybe Text)
-    , _bspProject        :: !Text
-    , _bspPayload        :: !BackendService
+    { _bspRequestId :: !(Maybe Text)
+    , _bspProject :: !Text
+    , _bspPayload :: !BackendService
     , _bspBackendService :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

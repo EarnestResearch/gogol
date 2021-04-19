@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.LiaSettings.GetAccessiblegmbAccounts
     , lsgaaAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.getaccessiblegmbaccounts@ method which the
 -- 'LiaSettingsGetAccessiblegmbAccounts' request conforms to.
 type LiaSettingsGetAccessiblegmbAccountsResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "liasettings" :>
              Capture "accountId" (Textual Word64) :>
@@ -59,7 +59,7 @@ type LiaSettingsGetAccessiblegmbAccountsResource =
 data LiaSettingsGetAccessiblegmbAccounts =
   LiaSettingsGetAccessiblegmbAccounts'
     { _lsgaaMerchantId :: !(Textual Word64)
-    , _lsgaaAccountId  :: !(Textual Word64)
+    , _lsgaaAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

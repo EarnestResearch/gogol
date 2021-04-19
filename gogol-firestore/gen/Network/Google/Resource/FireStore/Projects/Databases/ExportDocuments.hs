@@ -49,8 +49,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.ExportDocuments
     , pdedCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.exportDocuments@ method which the
 -- 'ProjectsDatabasesExportDocuments' request conforms to.
@@ -79,13 +79,13 @@ type ProjectsDatabasesExportDocumentsResource =
 -- /See:/ 'projectsDatabasesExportDocuments' smart constructor.
 data ProjectsDatabasesExportDocuments =
   ProjectsDatabasesExportDocuments'
-    { _pdedXgafv          :: !(Maybe Xgafv)
+    { _pdedXgafv :: !(Maybe Xgafv)
     , _pdedUploadProtocol :: !(Maybe Text)
-    , _pdedAccessToken    :: !(Maybe Text)
-    , _pdedUploadType     :: !(Maybe Text)
-    , _pdedPayload        :: !GoogleFirestoreAdminV1ExportDocumentsRequest
-    , _pdedName           :: !Text
-    , _pdedCallback       :: !(Maybe Text)
+    , _pdedAccessToken :: !(Maybe Text)
+    , _pdedUploadType :: !(Maybe Text)
+    , _pdedPayload :: !GoogleFirestoreAdminV1ExportDocumentsRequest
+    , _pdedName :: !Text
+    , _pdedCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

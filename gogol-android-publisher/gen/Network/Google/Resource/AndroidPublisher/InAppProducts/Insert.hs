@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.InAppProducts.Insert
     , iapiPayload
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.inappproducts.insert@ method which the
 -- 'InAppProductsInsert' request conforms to.
@@ -60,8 +60,8 @@ type InAppProductsInsertResource =
 data InAppProductsInsert =
   InAppProductsInsert'
     { _iapiAutoConvertMissingPrices :: !(Maybe Bool)
-    , _iapiPackageName              :: !Text
-    , _iapiPayload                  :: !InAppProduct
+    , _iapiPackageName :: !Text
+    , _iapiPayload :: !InAppProduct
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.Action
     , cdaCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.action@ method which the
 -- 'ChromeosDevicesAction' request conforms to.
@@ -63,7 +63,7 @@ type ChromeosDevicesActionResource =
 data ChromeosDevicesAction =
   ChromeosDevicesAction'
     { _cdaResourceId :: !Text
-    , _cdaPayload    :: !ChromeOSDeviceAction
+    , _cdaPayload :: !ChromeOSDeviceAction
     , _cdaCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

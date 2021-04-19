@@ -45,8 +45,8 @@ module Network.Google.Resource.PubSub.Projects.Snapshots.Get
     , psgsCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.snapshots.get@ method which the
 -- 'ProjectsSnapshotsGet' request conforms to.
@@ -69,12 +69,12 @@ type ProjectsSnapshotsGetResource =
 -- /See:/ 'projectsSnapshotsGet' smart constructor.
 data ProjectsSnapshotsGet =
   ProjectsSnapshotsGet'
-    { _psgsXgafv          :: !(Maybe Xgafv)
-    , _psgsSnapshot       :: !Text
+    { _psgsXgafv :: !(Maybe Xgafv)
+    , _psgsSnapshot :: !Text
     , _psgsUploadProtocol :: !(Maybe Text)
-    , _psgsAccessToken    :: !(Maybe Text)
-    , _psgsUploadType     :: !(Maybe Text)
-    , _psgsCallback       :: !(Maybe Text)
+    , _psgsAccessToken :: !(Maybe Text)
+    , _psgsUploadType :: !(Maybe Text)
+    , _psgsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

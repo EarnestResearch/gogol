@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.Achievements.SetStepsAtLeast
     , assalSteps
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievements.setStepsAtLeast@ method which the
 -- 'AchievementsSetStepsAtLeast' request conforms to.
@@ -64,7 +64,7 @@ type AchievementsSetStepsAtLeastResource =
 data AchievementsSetStepsAtLeast =
   AchievementsSetStepsAtLeast'
     { _assalAchievementId :: !Text
-    , _assalSteps         :: !(Textual Int32)
+    , _assalSteps :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

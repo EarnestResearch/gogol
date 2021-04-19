@@ -518,21 +518,21 @@ module Network.Google.People
     , cpMetadata
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.People.ContactGroups.BatchGet
-import           Network.Google.Resource.People.ContactGroups.Create
-import           Network.Google.Resource.People.ContactGroups.Delete
-import           Network.Google.Resource.People.ContactGroups.Get
-import           Network.Google.Resource.People.ContactGroups.List
-import           Network.Google.Resource.People.ContactGroups.Members.Modify
-import           Network.Google.Resource.People.ContactGroups.Update
-import           Network.Google.Resource.People.People.Connections.List
-import           Network.Google.Resource.People.People.CreateContact
-import           Network.Google.Resource.People.People.DeleteContact
-import           Network.Google.Resource.People.People.Get
-import           Network.Google.Resource.People.People.GetBatchGet
-import           Network.Google.Resource.People.People.UpdateContact
+import Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Resource.People.ContactGroups.BatchGet
+import Network.Google.Resource.People.ContactGroups.Create
+import Network.Google.Resource.People.ContactGroups.Delete
+import Network.Google.Resource.People.ContactGroups.Get
+import Network.Google.Resource.People.ContactGroups.List
+import Network.Google.Resource.People.ContactGroups.Members.Modify
+import Network.Google.Resource.People.ContactGroups.Update
+import Network.Google.Resource.People.People.Connections.List
+import Network.Google.Resource.People.People.CreateContact
+import Network.Google.Resource.People.People.DeleteContact
+import Network.Google.Resource.People.People.Get
+import Network.Google.Resource.People.People.GetBatchGet
+import Network.Google.Resource.People.People.UpdateContact
 
 {- $resources
 TODO

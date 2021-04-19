@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudIdentity.Types.Product where
 
-import           Network.Google.CloudIdentity.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'lookupMembershipNameResponse' smart constructor.
@@ -99,7 +99,7 @@ instance ToJSON LookupMembershipNameResponse where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -160,14 +160,14 @@ instance ToJSON Status where
 -- /See:/ 'group'' smart constructor.
 data Group =
   Group'
-    { _gParent      :: !(Maybe Text)
-    , _gGroupKey    :: !(Maybe EntityKey)
-    , _gUpdateTime  :: !(Maybe DateTime')
-    , _gName        :: !(Maybe Text)
+    { _gParent :: !(Maybe Text)
+    , _gGroupKey :: !(Maybe EntityKey)
+    , _gUpdateTime :: !(Maybe DateTime')
+    , _gName :: !(Maybe Text)
     , _gDisplayName :: !(Maybe Text)
-    , _gLabels      :: !(Maybe GroupLabels)
+    , _gLabels :: !(Maybe GroupLabels)
     , _gDescription :: !(Maybe Text)
-    , _gCreateTime  :: !(Maybe DateTime')
+    , _gCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -288,11 +288,11 @@ instance ToJSON Group where
 -- /See:/ 'membership' smart constructor.
 data Membership =
   Membership'
-    { _mRoles              :: !(Maybe [MembershipRole])
-    , _mUpdateTime         :: !(Maybe DateTime')
-    , _mName               :: !(Maybe Text)
+    { _mRoles :: !(Maybe [MembershipRole])
+    , _mUpdateTime :: !(Maybe DateTime')
+    , _mName :: !(Maybe Text)
     , _mPreferredMemberKey :: !(Maybe EntityKey)
-    , _mCreateTime         :: !(Maybe DateTime')
+    , _mCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -385,10 +385,10 @@ instance ToJSON Membership where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -479,7 +479,7 @@ instance ToJSON Operation where
 -- /See:/ 'listGroupsResponse' smart constructor.
 data ListGroupsResponse =
   ListGroupsResponse'
-    { _lgrGroups        :: !(Maybe [Group])
+    { _lgrGroups :: !(Maybe [Group])
     , _lgrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -635,7 +635,7 @@ instance ToJSON LookupGroupNameResponse where
 -- /See:/ 'searchGroupsResponse' smart constructor.
 data SearchGroupsResponse =
   SearchGroupsResponse'
-    { _sgrGroups        :: !(Maybe [Group])
+    { _sgrGroups :: !(Maybe [Group])
     , _sgrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -691,7 +691,7 @@ instance ToJSON SearchGroupsResponse where
 data EntityKey =
   EntityKey'
     { _ekNamespace :: !(Maybe Text)
-    , _ekId        :: !(Maybe Text)
+    , _ekId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -777,7 +777,7 @@ instance ToJSON GroupLabels where
 data ListMembershipsResponse =
   ListMembershipsResponse'
     { _lmrNextPageToken :: !(Maybe Text)
-    , _lmrMemberships   :: !(Maybe [Membership])
+    , _lmrMemberships :: !(Maybe [Membership])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

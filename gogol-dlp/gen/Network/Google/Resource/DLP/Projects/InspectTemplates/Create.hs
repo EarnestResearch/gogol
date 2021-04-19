@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.Projects.InspectTemplates.Create
     , pitcCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.inspectTemplates.create@ method which the
 -- 'ProjectsInspectTemplatesCreate' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsInspectTemplatesCreateResource =
 -- /See:/ 'projectsInspectTemplatesCreate' smart constructor.
 data ProjectsInspectTemplatesCreate =
   ProjectsInspectTemplatesCreate'
-    { _pitcParent         :: !Text
-    , _pitcXgafv          :: !(Maybe Xgafv)
+    { _pitcParent :: !Text
+    , _pitcXgafv :: !(Maybe Xgafv)
     , _pitcUploadProtocol :: !(Maybe Text)
-    , _pitcAccessToken    :: !(Maybe Text)
-    , _pitcUploadType     :: !(Maybe Text)
-    , _pitcPayload        :: !GooglePrivacyDlpV2CreateInspectTemplateRequest
-    , _pitcCallback       :: !(Maybe Text)
+    , _pitcAccessToken :: !(Maybe Text)
+    , _pitcUploadType :: !(Maybe Text)
+    , _pitcPayload :: !GooglePrivacyDlpV2CreateInspectTemplateRequest
+    , _pitcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

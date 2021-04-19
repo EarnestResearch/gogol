@@ -55,8 +55,8 @@ module Network.Google.Resource.ToolResults.Projects.InitializeSettings
     , pisProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.initializeSettings@ method which the
 -- 'ProjectsInitializeSettings' request conforms to.

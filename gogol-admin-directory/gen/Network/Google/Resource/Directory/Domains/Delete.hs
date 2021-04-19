@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Domains.Delete
     , ddDomainName
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domains.delete@ method which the
 -- 'DomainsDelete' request conforms to.
@@ -57,7 +57,7 @@ type DomainsDeleteResource =
 -- /See:/ 'domainsDelete' smart constructor.
 data DomainsDelete =
   DomainsDelete'
-    { _ddCustomer   :: !Text
+    { _ddCustomer :: !Text
     , _ddDomainName :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

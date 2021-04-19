@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Assets.UpdateSecurit
     , oausmCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.assets.updateSecurityMarks@ method which the
 -- 'OrganizationsAssetsUpdateSecurityMarks' request conforms to.
@@ -68,15 +68,15 @@ type OrganizationsAssetsUpdateSecurityMarksResource =
 -- /See:/ 'organizationsAssetsUpdateSecurityMarks' smart constructor.
 data OrganizationsAssetsUpdateSecurityMarks =
   OrganizationsAssetsUpdateSecurityMarks'
-    { _oausmXgafv          :: !(Maybe Xgafv)
+    { _oausmXgafv :: !(Maybe Xgafv)
     , _oausmUploadProtocol :: !(Maybe Text)
-    , _oausmStartTime      :: !(Maybe DateTime')
-    , _oausmUpdateMask     :: !(Maybe GFieldMask)
-    , _oausmAccessToken    :: !(Maybe Text)
-    , _oausmUploadType     :: !(Maybe Text)
-    , _oausmPayload        :: !SecurityMarks
-    , _oausmName           :: !Text
-    , _oausmCallback       :: !(Maybe Text)
+    , _oausmStartTime :: !(Maybe DateTime')
+    , _oausmUpdateMask :: !(Maybe GFieldMask)
+    , _oausmAccessToken :: !(Maybe Text)
+    , _oausmUploadType :: !(Maybe Text)
+    , _oausmPayload :: !SecurityMarks
+    , _oausmName :: !Text
+    , _oausmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

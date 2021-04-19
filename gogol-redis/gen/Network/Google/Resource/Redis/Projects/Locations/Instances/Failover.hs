@@ -43,8 +43,8 @@ module Network.Google.Resource.Redis.Projects.Locations.Instances.Failover
     , plifCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Redis.Types
+import Network.Google.Prelude
+import Network.Google.Redis.Types
 
 -- | A resource alias for @redis.projects.locations.instances.failover@ method which the
 -- 'ProjectsLocationsInstancesFailover' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsInstancesFailoverResource =
 -- /See:/ 'projectsLocationsInstancesFailover' smart constructor.
 data ProjectsLocationsInstancesFailover =
   ProjectsLocationsInstancesFailover'
-    { _plifXgafv          :: !(Maybe Xgafv)
+    { _plifXgafv :: !(Maybe Xgafv)
     , _plifUploadProtocol :: !(Maybe Text)
-    , _plifAccessToken    :: !(Maybe Text)
-    , _plifUploadType     :: !(Maybe Text)
-    , _plifPayload        :: !FailoverInstanceRequest
-    , _plifName           :: !Text
-    , _plifCallback       :: !(Maybe Text)
+    , _plifAccessToken :: !(Maybe Text)
+    , _plifUploadType :: !(Maybe Text)
+    , _plifPayload :: !FailoverInstanceRequest
+    , _plifName :: !Text
+    , _plifCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

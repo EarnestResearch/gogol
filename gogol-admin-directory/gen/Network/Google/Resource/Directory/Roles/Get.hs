@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Roles.Get
     , rgCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roles.get@ method which the
 -- 'RolesGet' request conforms to.
@@ -57,7 +57,7 @@ type RolesGetResource =
 -- /See:/ 'rolesGet' smart constructor.
 data RolesGet =
   RolesGet'
-    { _rgRoleId   :: !Text
+    { _rgRoleId :: !Text
     , _rgCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

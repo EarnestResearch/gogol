@@ -17,8 +17,8 @@
 --
 module Network.Google.SafeBrowsing.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types.Sum
 
 -- | The metadata associated with a specific threat entry. The client is
 -- expected to know the metadata key\/value pairs associated with each
@@ -66,7 +66,7 @@ instance ToJSON ThreatEntryMetadata where
 data UserInfo =
   UserInfo'
     { _uiRegionCode :: !(Maybe Text)
-    , _uiUserId     :: !(Maybe Bytes)
+    , _uiUserId :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -213,9 +213,9 @@ instance ToJSON Empty where
 -- /See:/ 'threatInfo' smart constructor.
 data ThreatInfo =
   ThreatInfo'
-    { _tiThreatEntries    :: !(Maybe [ThreatEntry])
-    , _tiThreatTypes      :: !(Maybe [Text])
-    , _tiPlatformTypes    :: !(Maybe [Text])
+    { _tiThreatEntries :: !(Maybe [ThreatEntry])
+    , _tiThreatTypes :: !(Maybe [Text])
+    , _tiPlatformTypes :: !(Maybe [Text])
     , _tiThreatEntryTypes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -298,11 +298,11 @@ instance ToJSON ThreatInfo where
 -- /See:/ 'threatHit' smart constructor.
 data ThreatHit =
   ThreatHit'
-    { _thUserInfo     :: !(Maybe UserInfo)
-    , _thThreatType   :: !(Maybe ThreatHitThreatType)
-    , _thResources    :: !(Maybe [ThreatSource])
-    , _thEntry        :: !(Maybe ThreatEntry)
-    , _thClientInfo   :: !(Maybe ClientInfo)
+    { _thUserInfo :: !(Maybe UserInfo)
+    , _thThreatType :: !(Maybe ThreatHitThreatType)
+    , _thResources :: !(Maybe [ThreatSource])
+    , _thEntry :: !(Maybe ThreatEntry)
+    , _thClientInfo :: !(Maybe ClientInfo)
     , _thPlatformType :: !(Maybe ThreatHitPlatformType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -399,7 +399,7 @@ instance ToJSON ThreatHit where
 data FetchThreatListUpdatesRequest =
   FetchThreatListUpdatesRequest'
     { _ftlurListUpdateRequests :: !(Maybe [ListUpdateRequest])
-    , _ftlurClient             :: !(Maybe ClientInfo)
+    , _ftlurClient :: !(Maybe ClientInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -452,10 +452,10 @@ instance ToJSON FetchThreatListUpdatesRequest where
 -- /See:/ 'findFullHashesRequest' smart constructor.
 data FindFullHashesRequest =
   FindFullHashesRequest'
-    { _ffhrThreatInfo   :: !(Maybe ThreatInfo)
-    , _ffhrAPIClient    :: !(Maybe ClientInfo)
+    { _ffhrThreatInfo :: !(Maybe ThreatInfo)
+    , _ffhrAPIClient :: !(Maybe ClientInfo)
     , _ffhrClientStates :: !(Maybe [Bytes])
-    , _ffhrClient       :: !(Maybe ClientInfo)
+    , _ffhrClient :: !(Maybe ClientInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -531,12 +531,12 @@ instance ToJSON FindFullHashesRequest where
 -- /See:/ 'constraints' smart constructor.
 data Constraints =
   Constraints'
-    { _cMaxUpdateEntries      :: !(Maybe (Textual Int32))
-    , _cDeviceLocation        :: !(Maybe Text)
-    , _cLanguage              :: !(Maybe Text)
-    , _cRegion                :: !(Maybe Text)
+    { _cMaxUpdateEntries :: !(Maybe (Textual Int32))
+    , _cDeviceLocation :: !(Maybe Text)
+    , _cLanguage :: !(Maybe Text)
+    , _cRegion :: !(Maybe Text)
     , _cSupportedCompressions :: !(Maybe [Text])
-    , _cMaxDatabaseEntries    :: !(Maybe (Textual Int32))
+    , _cMaxDatabaseEntries :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -644,10 +644,10 @@ instance ToJSON Constraints where
 -- /See:/ 'riceDeltaEncoding' smart constructor.
 data RiceDeltaEncoding =
   RiceDeltaEncoding'
-    { _rdeFirstValue    :: !(Maybe (Textual Int64))
+    { _rdeFirstValue :: !(Maybe (Textual Int64))
     , _rdeRiceParameter :: !(Maybe (Textual Int32))
-    , _rdeNumEntries    :: !(Maybe (Textual Int32))
-    , _rdeEncodedData   :: !(Maybe Bytes)
+    , _rdeNumEntries :: !(Maybe (Textual Int32))
+    , _rdeEncodedData :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -772,8 +772,8 @@ instance ToJSON ListThreatListsResponse where
 data ThreatListDescriptor =
   ThreatListDescriptor'
     { _tldThreatEntryType :: !(Maybe ThreatListDescriptorThreatEntryType)
-    , _tldThreatType      :: !(Maybe ThreatListDescriptorThreatType)
-    , _tldPlatformType    :: !(Maybe ThreatListDescriptorPlatformType)
+    , _tldThreatType :: !(Maybe ThreatListDescriptorThreatType)
+    , _tldPlatformType :: !(Maybe ThreatListDescriptorPlatformType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -836,7 +836,7 @@ instance ToJSON ThreatListDescriptor where
 -- /See:/ 'clientInfo' smart constructor.
 data ClientInfo =
   ClientInfo'
-    { _ciClientId      :: !(Maybe Text)
+    { _ciClientId :: !(Maybe Text)
     , _ciClientVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -886,7 +886,7 @@ instance ToJSON ClientInfo where
 data FindThreatMatchesRequest =
   FindThreatMatchesRequest'
     { _ftmrThreatInfo :: !(Maybe ThreatInfo)
-    , _ftmrClient     :: !(Maybe ClientInfo)
+    , _ftmrClient :: !(Maybe ClientInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -934,11 +934,11 @@ instance ToJSON FindThreatMatchesRequest where
 -- /See:/ 'listUpdateRequest' smart constructor.
 data ListUpdateRequest =
   ListUpdateRequest'
-    { _lurState           :: !(Maybe Bytes)
+    { _lurState :: !(Maybe Bytes)
     , _lurThreatEntryType :: !(Maybe ListUpdateRequestThreatEntryType)
-    , _lurConstraints     :: !(Maybe Constraints)
-    , _lurThreatType      :: !(Maybe ListUpdateRequestThreatType)
-    , _lurPlatformType    :: !(Maybe ListUpdateRequestPlatformType)
+    , _lurConstraints :: !(Maybe Constraints)
+    , _lurThreatType :: !(Maybe ListUpdateRequestThreatType)
+    , _lurPlatformType :: !(Maybe ListUpdateRequestPlatformType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1025,8 +1025,8 @@ instance ToJSON ListUpdateRequest where
 -- /See:/ 'threatEntry' smart constructor.
 data ThreatEntry =
   ThreatEntry'
-    { _teHash   :: !(Maybe Bytes)
-    , _teURL    :: !(Maybe Text)
+    { _teHash :: !(Maybe Bytes)
+    , _teURL :: !(Maybe Text)
     , _teDigest :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1087,11 +1087,11 @@ instance ToJSON ThreatEntry where
 data ThreatMatch =
   ThreatMatch'
     { _tmThreatEntryMetadata :: !(Maybe ThreatEntryMetadata)
-    , _tmThreatEntryType     :: !(Maybe ThreatMatchThreatEntryType)
-    , _tmThreatType          :: !(Maybe ThreatMatchThreatType)
-    , _tmPlatformType        :: !(Maybe ThreatMatchPlatformType)
-    , _tmCacheDuration       :: !(Maybe GDuration)
-    , _tmThreat              :: !(Maybe ThreatEntry)
+    , _tmThreatEntryType :: !(Maybe ThreatMatchThreatEntryType)
+    , _tmThreatType :: !(Maybe ThreatMatchThreatType)
+    , _tmPlatformType :: !(Maybe ThreatMatchPlatformType)
+    , _tmCacheDuration :: !(Maybe GDuration)
+    , _tmThreat :: !(Maybe ThreatEntry)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1194,7 +1194,7 @@ instance ToJSON ThreatMatch where
 data RawHashes =
   RawHashes'
     { _rhPrefixSize :: !(Maybe (Textual Int32))
-    , _rhRawHashes  :: !(Maybe Bytes)
+    , _rhRawHashes :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1245,14 +1245,14 @@ instance ToJSON RawHashes where
 -- /See:/ 'listUpdateResponse' smart constructor.
 data ListUpdateResponse =
   ListUpdateResponse'
-    { _lAdditions       :: !(Maybe [ThreatEntrySet])
+    { _lAdditions :: !(Maybe [ThreatEntrySet])
     , _lThreatEntryType :: !(Maybe ListUpdateResponseThreatEntryType)
-    , _lChecksum        :: !(Maybe Checksum)
-    , _lThreatType      :: !(Maybe ListUpdateResponseThreatType)
-    , _lPlatformType    :: !(Maybe ListUpdateResponsePlatformType)
-    , _lNewClientState  :: !(Maybe Bytes)
-    , _lRemovals        :: !(Maybe [ThreatEntrySet])
-    , _lResponseType    :: !(Maybe ListUpdateResponseResponseType)
+    , _lChecksum :: !(Maybe Checksum)
+    , _lThreatType :: !(Maybe ListUpdateResponseThreatType)
+    , _lPlatformType :: !(Maybe ListUpdateResponsePlatformType)
+    , _lNewClientState :: !(Maybe Bytes)
+    , _lRemovals :: !(Maybe [ThreatEntrySet])
+    , _lResponseType :: !(Maybe ListUpdateResponseResponseType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1380,10 +1380,10 @@ instance ToJSON ListUpdateResponse where
 -- /See:/ 'threatEntrySet' smart constructor.
 data ThreatEntrySet =
   ThreatEntrySet'
-    { _tesRiceHashes      :: !(Maybe RiceDeltaEncoding)
-    , _tesRiceIndices     :: !(Maybe RiceDeltaEncoding)
-    , _tesRawHashes       :: !(Maybe RawHashes)
-    , _tesRawIndices      :: !(Maybe RawIndices)
+    { _tesRiceHashes :: !(Maybe RiceDeltaEncoding)
+    , _tesRiceIndices :: !(Maybe RiceDeltaEncoding)
+    , _tesRawHashes :: !(Maybe RawHashes)
+    , _tesRawIndices :: !(Maybe RawIndices)
     , _tesCompressionType :: !(Maybe ThreatEntrySetCompressionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1510,9 +1510,9 @@ instance ToJSON RawIndices where
 data ThreatSource =
   ThreatSource'
     { _tsRemoteIP :: !(Maybe Text)
-    , _tsURL      :: !(Maybe Text)
+    , _tsURL :: !(Maybe Text)
     , _tsReferrer :: !(Maybe Text)
-    , _tsType     :: !(Maybe ThreatSourceType)
+    , _tsType :: !(Maybe ThreatSourceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1579,9 +1579,9 @@ instance ToJSON ThreatSource where
 -- /See:/ 'findFullHashesResponse' smart constructor.
 data FindFullHashesResponse =
   FindFullHashesResponse'
-    { _ffhrMatches               :: !(Maybe [ThreatMatch])
+    { _ffhrMatches :: !(Maybe [ThreatMatch])
     , _ffhrNegativeCacheDuration :: !(Maybe GDuration)
-    , _ffhrMinimumWaitDuration   :: !(Maybe GDuration)
+    , _ffhrMinimumWaitDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1654,7 +1654,7 @@ instance ToJSON FindFullHashesResponse where
 data MetadataEntry =
   MetadataEntry'
     { _meValue :: !(Maybe Bytes)
-    , _meKey   :: !(Maybe Bytes)
+    , _meKey :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

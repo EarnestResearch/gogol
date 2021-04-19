@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlatformTypes.Get
     , ptgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.platformTypes.get@ method which the
 -- 'PlatformTypesGet' request conforms to.
@@ -57,7 +57,7 @@ type PlatformTypesGetResource =
 data PlatformTypesGet =
   PlatformTypesGet'
     { _ptgProFileId :: !(Textual Int64)
-    , _ptgId        :: !(Textual Int64)
+    , _ptgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

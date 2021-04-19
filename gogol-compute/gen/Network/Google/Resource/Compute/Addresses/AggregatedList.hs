@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Addresses.AggregatedList
     , aalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.addresses.aggregatedList@ method which the
 -- 'AddressesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type AddressesAggregatedListResource =
 -- /See:/ 'addressesAggregatedList' smart constructor.
 data AddressesAggregatedList =
   AddressesAggregatedList'
-    { _aalOrderBy    :: !(Maybe Text)
-    , _aalProject    :: !Text
-    , _aalFilter     :: !(Maybe Text)
-    , _aalPageToken  :: !(Maybe Text)
+    { _aalOrderBy :: !(Maybe Text)
+    , _aalProject :: !Text
+    , _aalFilter :: !(Maybe Text)
+    , _aalPageToken :: !(Maybe Text)
     , _aalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

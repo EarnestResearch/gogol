@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -159,9 +159,9 @@ module Network.Google.Manufacturers.Types
     , lprProducts
     ) where
 
-import           Network.Google.Manufacturers.Types.Product
-import           Network.Google.Manufacturers.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Manufacturers.Types.Product
+import Network.Google.Manufacturers.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the Manufacturer Center API. This contains the host and root path used as a starting point for constructing service requests.
 manufacturersService :: ServiceConfig

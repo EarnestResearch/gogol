@@ -36,8 +36,8 @@ module Network.Google.Resource.GamesManagement.Events.ResetAll
 
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.events.resetAll@ method which the
 -- 'EventsResetAll' request conforms to.

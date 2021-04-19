@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.MobileApps.Get
     , magId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileApps.get@ method which the
 -- 'MobileAppsGet' request conforms to.
@@ -57,7 +57,7 @@ type MobileAppsGetResource =
 data MobileAppsGet =
   MobileAppsGet'
     { _magProFileId :: !(Textual Int64)
-    , _magId        :: !Text
+    , _magId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

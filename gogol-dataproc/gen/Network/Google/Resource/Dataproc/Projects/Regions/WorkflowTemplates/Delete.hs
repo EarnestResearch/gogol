@@ -42,8 +42,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.WorkflowTemplates.Delet
     , prwtdCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.workflowTemplates.delete@ method which the
 -- 'ProjectsRegionsWorkflowTemplatesDelete' request conforms to.
@@ -63,13 +63,13 @@ type ProjectsRegionsWorkflowTemplatesDeleteResource =
 -- /See:/ 'projectsRegionsWorkflowTemplatesDelete' smart constructor.
 data ProjectsRegionsWorkflowTemplatesDelete =
   ProjectsRegionsWorkflowTemplatesDelete'
-    { _prwtdXgafv          :: !(Maybe Xgafv)
+    { _prwtdXgafv :: !(Maybe Xgafv)
     , _prwtdUploadProtocol :: !(Maybe Text)
-    , _prwtdAccessToken    :: !(Maybe Text)
-    , _prwtdUploadType     :: !(Maybe Text)
-    , _prwtdName           :: !Text
-    , _prwtdVersion        :: !(Maybe (Textual Int32))
-    , _prwtdCallback       :: !(Maybe Text)
+    , _prwtdAccessToken :: !(Maybe Text)
+    , _prwtdUploadType :: !(Maybe Text)
+    , _prwtdName :: !Text
+    , _prwtdVersion :: !(Maybe (Textual Int32))
+    , _prwtdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

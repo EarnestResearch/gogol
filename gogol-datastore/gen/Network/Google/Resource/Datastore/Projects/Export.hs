@@ -49,8 +49,8 @@ module Network.Google.Resource.Datastore.Projects.Export
     , peCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.export@ method which the
 -- 'ProjectsExport' request conforms to.
@@ -80,13 +80,13 @@ type ProjectsExportResource =
 -- /See:/ 'projectsExport' smart constructor.
 data ProjectsExport =
   ProjectsExport'
-    { _peXgafv          :: !(Maybe Xgafv)
+    { _peXgafv :: !(Maybe Xgafv)
     , _peUploadProtocol :: !(Maybe Text)
-    , _peAccessToken    :: !(Maybe Text)
-    , _peUploadType     :: !(Maybe Text)
-    , _pePayload        :: !GoogleDatastoreAdminV1ExportEntitiesRequest
-    , _peProjectId      :: !Text
-    , _peCallback       :: !(Maybe Text)
+    , _peAccessToken :: !(Maybe Text)
+    , _peUploadType :: !(Maybe Text)
+    , _pePayload :: !GoogleDatastoreAdminV1ExportEntitiesRequest
+    , _peProjectId :: !Text
+    , _peCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

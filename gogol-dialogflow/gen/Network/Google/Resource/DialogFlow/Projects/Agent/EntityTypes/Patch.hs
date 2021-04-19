@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.EntityTypes.Patch
     , paetpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.entityTypes.patch@ method which the
 -- 'ProjectsAgentEntityTypesPatch' request conforms to.
@@ -68,15 +68,15 @@ type ProjectsAgentEntityTypesPatchResource =
 -- /See:/ 'projectsAgentEntityTypesPatch' smart constructor.
 data ProjectsAgentEntityTypesPatch =
   ProjectsAgentEntityTypesPatch'
-    { _paetpXgafv          :: !(Maybe Xgafv)
-    , _paetpLanguageCode   :: !(Maybe Text)
+    { _paetpXgafv :: !(Maybe Xgafv)
+    , _paetpLanguageCode :: !(Maybe Text)
     , _paetpUploadProtocol :: !(Maybe Text)
-    , _paetpUpdateMask     :: !(Maybe GFieldMask)
-    , _paetpAccessToken    :: !(Maybe Text)
-    , _paetpUploadType     :: !(Maybe Text)
-    , _paetpPayload        :: !GoogleCloudDialogflowV2EntityType
-    , _paetpName           :: !Text
-    , _paetpCallback       :: !(Maybe Text)
+    , _paetpUpdateMask :: !(Maybe GFieldMask)
+    , _paetpAccessToken :: !(Maybe Text)
+    , _paetpUploadType :: !(Maybe Text)
+    , _paetpPayload :: !GoogleCloudDialogflowV2EntityType
+    , _paetpName :: !Text
+    , _paetpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

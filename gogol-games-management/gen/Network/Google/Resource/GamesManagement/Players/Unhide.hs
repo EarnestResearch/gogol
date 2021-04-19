@@ -39,8 +39,8 @@ module Network.Google.Resource.GamesManagement.Players.Unhide
     , puPlayerId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.players.unhide@ method which the
 -- 'PlayersUnhide' request conforms to.
@@ -62,7 +62,7 @@ type PlayersUnhideResource =
 data PlayersUnhide =
   PlayersUnhide'
     { _puApplicationId :: !Text
-    , _puPlayerId      :: !Text
+    , _puPlayerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.T
     , phestcgProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.testCases.get@ method which the
 -- 'ProjectsHistoriesExecutionsStepsTestCasesGet' request conforms to.
@@ -75,10 +75,10 @@ type ProjectsHistoriesExecutionsStepsTestCasesGetResource
 data ProjectsHistoriesExecutionsStepsTestCasesGet =
   ProjectsHistoriesExecutionsStepsTestCasesGet'
     { _phestcgExecutionId :: !Text
-    , _phestcgStepId      :: !Text
-    , _phestcgTestCaseId  :: !Text
-    , _phestcgHistoryId   :: !Text
-    , _phestcgProjectId   :: !Text
+    , _phestcgStepId :: !Text
+    , _phestcgTestCaseId :: !Text
+    , _phestcgHistoryId :: !Text
+    , _phestcgProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

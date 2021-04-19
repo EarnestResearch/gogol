@@ -40,8 +40,8 @@ module Network.Google.Resource.Directory.RoleAssignments.List
     , ralMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roleAssignments.list@ method which the
 -- 'RoleAssignmentsList' request conforms to.
@@ -64,10 +64,10 @@ type RoleAssignmentsListResource =
 -- /See:/ 'roleAssignmentsList' smart constructor.
 data RoleAssignmentsList =
   RoleAssignmentsList'
-    { _ralRoleId     :: !(Maybe Text)
-    , _ralCustomer   :: !Text
-    , _ralPageToken  :: !(Maybe Text)
-    , _ralUserKey    :: !(Maybe Text)
+    { _ralRoleId :: !(Maybe Text)
+    , _ralCustomer :: !Text
+    , _ralPageToken :: !(Maybe Text)
+    , _ralUserKey :: !(Maybe Text)
     , _ralMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

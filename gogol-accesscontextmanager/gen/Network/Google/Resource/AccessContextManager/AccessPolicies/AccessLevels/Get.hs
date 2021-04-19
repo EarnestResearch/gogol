@@ -42,8 +42,8 @@ module Network.Google.Resource.AccessContextManager.AccessPolicies.AccessLevels.
     , apalgCallback
     ) where
 
-import           Network.Google.AccessContextManager.Types
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accesscontextmanager.accessPolicies.accessLevels.get@ method which the
 -- 'AccessPoliciesAccessLevelsGet' request conforms to.
@@ -63,13 +63,13 @@ type AccessPoliciesAccessLevelsGetResource =
 -- /See:/ 'accessPoliciesAccessLevelsGet' smart constructor.
 data AccessPoliciesAccessLevelsGet =
   AccessPoliciesAccessLevelsGet'
-    { _apalgXgafv             :: !(Maybe Xgafv)
-    , _apalgUploadProtocol    :: !(Maybe Text)
-    , _apalgAccessToken       :: !(Maybe Text)
-    , _apalgUploadType        :: !(Maybe Text)
+    { _apalgXgafv :: !(Maybe Xgafv)
+    , _apalgUploadProtocol :: !(Maybe Text)
+    , _apalgAccessToken :: !(Maybe Text)
+    , _apalgUploadType :: !(Maybe Text)
     , _apalgAccessLevelFormat :: !(Maybe Text)
-    , _apalgName              :: !Text
-    , _apalgCallback          :: !(Maybe Text)
+    , _apalgName :: !Text
+    , _apalgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

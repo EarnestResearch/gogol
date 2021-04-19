@@ -40,8 +40,8 @@ module Network.Google.Resource.DFAReporting.CampaignCreativeAssociations.Insert
     , ccaiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaignCreativeAssociations.insert@ method which the
 -- 'CampaignCreativeAssociationsInsert' request conforms to.
@@ -65,8 +65,8 @@ type CampaignCreativeAssociationsInsertResource =
 data CampaignCreativeAssociationsInsert =
   CampaignCreativeAssociationsInsert'
     { _ccaiCampaignId :: !(Textual Int64)
-    , _ccaiProFileId  :: !(Textual Int64)
-    , _ccaiPayload    :: !CampaignCreativeAssociation
+    , _ccaiProFileId :: !(Textual Int64)
+    , _ccaiPayload :: !CampaignCreativeAssociation
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

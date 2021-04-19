@@ -50,8 +50,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Lis
     , osflCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.list@ method which the
 -- 'OrganizationsSourcesFindingsList' request conforms to.
@@ -81,19 +81,19 @@ type OrganizationsSourcesFindingsListResource =
 -- /See:/ 'organizationsSourcesFindingsList' smart constructor.
 data OrganizationsSourcesFindingsList =
   OrganizationsSourcesFindingsList'
-    { _osflParent          :: !Text
-    , _osflXgafv           :: !(Maybe Xgafv)
-    , _osflReadTime        :: !(Maybe DateTime')
-    , _osflUploadProtocol  :: !(Maybe Text)
-    , _osflOrderBy         :: !(Maybe Text)
-    , _osflAccessToken     :: !(Maybe Text)
-    , _osflUploadType      :: !(Maybe Text)
-    , _osflFieldMask       :: !(Maybe GFieldMask)
-    , _osflFilter          :: !(Maybe Text)
-    , _osflPageToken       :: !(Maybe Text)
-    , _osflPageSize        :: !(Maybe (Textual Int32))
+    { _osflParent :: !Text
+    , _osflXgafv :: !(Maybe Xgafv)
+    , _osflReadTime :: !(Maybe DateTime')
+    , _osflUploadProtocol :: !(Maybe Text)
+    , _osflOrderBy :: !(Maybe Text)
+    , _osflAccessToken :: !(Maybe Text)
+    , _osflUploadType :: !(Maybe Text)
+    , _osflFieldMask :: !(Maybe GFieldMask)
+    , _osflFilter :: !(Maybe Text)
+    , _osflPageToken :: !(Maybe Text)
+    , _osflPageSize :: !(Maybe (Textual Int32))
     , _osflCompareDuration :: !(Maybe GDuration)
-    , _osflCallback        :: !(Maybe Text)
+    , _osflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

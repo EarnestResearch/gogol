@@ -17,8 +17,8 @@
 --
 module Network.Google.PlayCustomApp.Types.Product where
 
-import           Network.Google.PlayCustomApp.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.PlayCustomApp.Types.Sum
+import Network.Google.Prelude
 
 -- | This resource represents a custom app.
 --
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 data CustomApp =
   CustomApp'
     { _caLanguageCode :: !(Maybe Text)
-    , _caTitle        :: !(Maybe Text)
+    , _caTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

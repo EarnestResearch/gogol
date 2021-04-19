@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Get
     , cgggId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.get@ method which the
 -- 'CreativeGroupsGet' request conforms to.
@@ -57,7 +57,7 @@ type CreativeGroupsGetResource =
 data CreativeGroupsGet =
   CreativeGroupsGet'
     { _cgggProFileId :: !(Textual Int64)
-    , _cgggId        :: !(Textual Int64)
+    , _cgggId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

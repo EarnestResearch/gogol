@@ -37,8 +37,8 @@ module Network.Google.Resource.CivicInfo.Divisions.Search
     , dsQuery
     ) where
 
-import           Network.Google.CivicInfo.Types
-import           Network.Google.Prelude
+import Network.Google.CivicInfo.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @civicinfo.divisions.search@ method which the
 -- 'DivisionsSearch' request conforms to.
@@ -57,7 +57,7 @@ type DivisionsSearchResource =
 data DivisionsSearch =
   DivisionsSearch'
     { _dsPayload :: !DivisionSearchRequest
-    , _dsQuery   :: !(Maybe Text)
+    , _dsQuery :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

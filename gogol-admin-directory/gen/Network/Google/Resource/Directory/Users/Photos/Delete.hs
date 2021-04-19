@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Users.Photos.Delete
     , updUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.photos.delete@ method which the
 -- 'UsersPhotosDelete' request conforms to.

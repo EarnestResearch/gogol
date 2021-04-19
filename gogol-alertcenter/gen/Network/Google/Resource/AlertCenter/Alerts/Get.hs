@@ -43,8 +43,8 @@ module Network.Google.Resource.AlertCenter.Alerts.Get
     , agCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.alerts.get@ method which the
 -- 'AlertsGet' request conforms to.
@@ -66,13 +66,13 @@ type AlertsGetResource =
 -- /See:/ 'alertsGet' smart constructor.
 data AlertsGet =
   AlertsGet'
-    { _agXgafv          :: !(Maybe Xgafv)
+    { _agXgafv :: !(Maybe Xgafv)
     , _agUploadProtocol :: !(Maybe Text)
-    , _agAccessToken    :: !(Maybe Text)
-    , _agAlertId        :: !Text
-    , _agUploadType     :: !(Maybe Text)
-    , _agCustomerId     :: !(Maybe Text)
-    , _agCallback       :: !(Maybe Text)
+    , _agAccessToken :: !(Maybe Text)
+    , _agAlertId :: !Text
+    , _agUploadType :: !(Maybe Text)
+    , _agCustomerId :: !(Maybe Text)
+    , _agCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

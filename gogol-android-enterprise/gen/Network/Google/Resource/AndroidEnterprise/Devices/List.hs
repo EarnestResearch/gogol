@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.List
     , dlUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.list@ method which the
 -- 'DevicesList' request conforms to.
@@ -59,7 +59,7 @@ type DevicesListResource =
 data DevicesList =
   DevicesList'
     { _dlEnterpriseId :: !Text
-    , _dlUserId       :: !Text
+    , _dlUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

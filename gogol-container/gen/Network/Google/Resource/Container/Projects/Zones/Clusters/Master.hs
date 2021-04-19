@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.Master
     , pzcmCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.master@ method which the
 -- 'ProjectsZonesClustersMaster' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsZonesClustersMasterResource =
 -- /See:/ 'projectsZonesClustersMaster' smart constructor.
 data ProjectsZonesClustersMaster =
   ProjectsZonesClustersMaster'
-    { _pzcmXgafv          :: !(Maybe Xgafv)
+    { _pzcmXgafv :: !(Maybe Xgafv)
     , _pzcmUploadProtocol :: !(Maybe Text)
-    , _pzcmAccessToken    :: !(Maybe Text)
-    , _pzcmUploadType     :: !(Maybe Text)
-    , _pzcmZone           :: !Text
-    , _pzcmPayload        :: !UpdateMasterRequest
-    , _pzcmClusterId      :: !Text
-    , _pzcmProjectId      :: !Text
-    , _pzcmCallback       :: !(Maybe Text)
+    , _pzcmAccessToken :: !(Maybe Text)
+    , _pzcmUploadType :: !(Maybe Text)
+    , _pzcmZone :: !Text
+    , _pzcmPayload :: !UpdateMasterRequest
+    , _pzcmClusterId :: !Text
+    , _pzcmProjectId :: !Text
+    , _pzcmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

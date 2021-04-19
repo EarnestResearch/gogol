@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.VideoFormats.Get
     , vfgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.videoFormats.get@ method which the
 -- 'VideoFormatsGet' request conforms to.
@@ -57,7 +57,7 @@ type VideoFormatsGetResource =
 data VideoFormatsGet =
   VideoFormatsGet'
     { _vfgProFileId :: !(Textual Int64)
-    , _vfgId        :: !(Textual Int32)
+    , _vfgId :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

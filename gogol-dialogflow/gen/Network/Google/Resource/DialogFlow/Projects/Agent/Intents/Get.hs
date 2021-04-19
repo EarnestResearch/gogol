@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.Get
     , paigCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.get@ method which the
 -- 'ProjectsAgentIntentsGet' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsAgentIntentsGetResource =
 -- /See:/ 'projectsAgentIntentsGet' smart constructor.
 data ProjectsAgentIntentsGet =
   ProjectsAgentIntentsGet'
-    { _paigXgafv          :: !(Maybe Xgafv)
-    , _paigLanguageCode   :: !(Maybe Text)
+    { _paigXgafv :: !(Maybe Xgafv)
+    , _paigLanguageCode :: !(Maybe Text)
     , _paigUploadProtocol :: !(Maybe Text)
-    , _paigAccessToken    :: !(Maybe Text)
-    , _paigUploadType     :: !(Maybe Text)
-    , _paigIntentView     :: !(Maybe Text)
-    , _paigName           :: !Text
-    , _paigCallback       :: !(Maybe Text)
+    , _paigAccessToken :: !(Maybe Text)
+    , _paigUploadType :: !(Maybe Text)
+    , _paigIntentView :: !(Maybe Text)
+    , _paigName :: !Text
+    , _paigCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

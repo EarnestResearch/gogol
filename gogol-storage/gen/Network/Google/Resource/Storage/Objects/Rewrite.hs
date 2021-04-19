@@ -56,8 +56,8 @@ module Network.Google.Resource.Storage.Objects.Rewrite
     , orDestinationObject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.rewrite@ method which the
 -- 'ObjectsRewrite' request conforms to.
@@ -134,26 +134,26 @@ type ObjectsRewriteResource =
 -- /See:/ 'objectsRewrite' smart constructor.
 data ObjectsRewrite =
   ObjectsRewrite'
-    { _orDestinationPredefinedACL       :: !(Maybe ObjectsRewriteDestinationPredefinedACL)
-    , _orIfSourceGenerationMatch        :: !(Maybe (Textual Int64))
-    , _orIfMetagenerationMatch          :: !(Maybe (Textual Int64))
-    , _orIfGenerationNotMatch           :: !(Maybe (Textual Int64))
+    { _orDestinationPredefinedACL :: !(Maybe ObjectsRewriteDestinationPredefinedACL)
+    , _orIfSourceGenerationMatch :: !(Maybe (Textual Int64))
+    , _orIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _orIfGenerationNotMatch :: !(Maybe (Textual Int64))
     , _orIfSourceMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _orIfSourceMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _orIfGenerationMatch              :: !(Maybe (Textual Int64))
-    , _orSourceObject                   :: !Text
-    , _orMaxBytesRewrittenPerCall       :: !(Maybe (Textual Int64))
-    , _orSourceBucket                   :: !Text
-    , _orPayload                        :: !Object
-    , _orUserProject                    :: !(Maybe Text)
-    , _orDestinationBucket              :: !Text
-    , _orIfMetagenerationNotMatch       :: !(Maybe (Textual Int64))
-    , _orIfSourceGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _orProjection                     :: !(Maybe ObjectsRewriteProjection)
-    , _orSourceGeneration               :: !(Maybe (Textual Int64))
-    , _orDestinationKmsKeyName          :: !(Maybe Text)
-    , _orRewriteToken                   :: !(Maybe Text)
-    , _orDestinationObject              :: !Text
+    , _orIfSourceMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _orIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _orSourceObject :: !Text
+    , _orMaxBytesRewrittenPerCall :: !(Maybe (Textual Int64))
+    , _orSourceBucket :: !Text
+    , _orPayload :: !Object
+    , _orUserProject :: !(Maybe Text)
+    , _orDestinationBucket :: !Text
+    , _orIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
+    , _orIfSourceGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _orProjection :: !(Maybe ObjectsRewriteProjection)
+    , _orSourceGeneration :: !(Maybe (Textual Int64))
+    , _orDestinationKmsKeyName :: !(Maybe Text)
+    , _orRewriteToken :: !(Maybe Text)
+    , _orDestinationObject :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

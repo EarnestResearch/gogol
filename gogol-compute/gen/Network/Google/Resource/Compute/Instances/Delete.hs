@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Instances.Delete
     , idInstance
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.delete@ method which the
 -- 'InstancesDelete' request conforms to.
@@ -64,9 +64,9 @@ type InstancesDeleteResource =
 data InstancesDelete =
   InstancesDelete'
     { _idRequestId :: !(Maybe Text)
-    , _idProject   :: !Text
-    , _idZone      :: !Text
-    , _idInstance  :: !Text
+    , _idProject :: !Text
+    , _idZone :: !Text
+    , _idInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

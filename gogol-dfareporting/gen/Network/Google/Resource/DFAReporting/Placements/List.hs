@@ -59,8 +59,8 @@ module Network.Google.Resource.DFAReporting.Placements.List
     , pMinEndDate
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.list@ method which the
 -- 'PlacementsList' request conforms to.
@@ -124,28 +124,28 @@ type PlacementsListResource =
 data PlacementsList =
   PlacementsList'
     { _pPlacementStrategyIds :: !(Maybe [Textual Int64])
-    , _pContentCategoryIds   :: !(Maybe [Textual Int64])
-    , _pMaxEndDate           :: !(Maybe Text)
-    , _pCampaignIds          :: !(Maybe [Textual Int64])
-    , _pPricingTypes         :: !(Maybe [PlacementsListPricingTypes])
-    , _pSearchString         :: !(Maybe Text)
-    , _pSizeIds              :: !(Maybe [Textual Int64])
-    , _pIds                  :: !(Maybe [Textual Int64])
-    , _pProFileId            :: !(Textual Int64)
-    , _pGroupIds             :: !(Maybe [Textual Int64])
-    , _pDirectorySiteIds     :: !(Maybe [Textual Int64])
-    , _pSortOrder            :: !PlacementsListSortOrder
-    , _pPaymentSource        :: !(Maybe PlacementsListPaymentSource)
-    , _pSiteIds              :: !(Maybe [Textual Int64])
-    , _pPageToken            :: !(Maybe Text)
-    , _pSortField            :: !PlacementsListSortField
-    , _pCompatibilities      :: !(Maybe [PlacementsListCompatibilities])
-    , _pMaxStartDate         :: !(Maybe Text)
-    , _pAdvertiserIds        :: !(Maybe [Textual Int64])
-    , _pMinStartDate         :: !(Maybe Text)
-    , _pArchived             :: !(Maybe Bool)
-    , _pMaxResults           :: !(Textual Int32)
-    , _pMinEndDate           :: !(Maybe Text)
+    , _pContentCategoryIds :: !(Maybe [Textual Int64])
+    , _pMaxEndDate :: !(Maybe Text)
+    , _pCampaignIds :: !(Maybe [Textual Int64])
+    , _pPricingTypes :: !(Maybe [PlacementsListPricingTypes])
+    , _pSearchString :: !(Maybe Text)
+    , _pSizeIds :: !(Maybe [Textual Int64])
+    , _pIds :: !(Maybe [Textual Int64])
+    , _pProFileId :: !(Textual Int64)
+    , _pGroupIds :: !(Maybe [Textual Int64])
+    , _pDirectorySiteIds :: !(Maybe [Textual Int64])
+    , _pSortOrder :: !PlacementsListSortOrder
+    , _pPaymentSource :: !(Maybe PlacementsListPaymentSource)
+    , _pSiteIds :: !(Maybe [Textual Int64])
+    , _pPageToken :: !(Maybe Text)
+    , _pSortField :: !PlacementsListSortField
+    , _pCompatibilities :: !(Maybe [PlacementsListCompatibilities])
+    , _pMaxStartDate :: !(Maybe Text)
+    , _pAdvertiserIds :: !(Maybe [Textual Int64])
+    , _pMinStartDate :: !(Maybe Text)
+    , _pArchived :: !(Maybe Bool)
+    , _pMaxResults :: !(Textual Int32)
+    , _pMinEndDate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

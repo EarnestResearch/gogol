@@ -16,7 +16,7 @@
 --
 module Network.Google.SecurityCenter.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | State change of the finding between the points in time.
 data ListFindingsResultStateChange

@@ -49,8 +49,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Devices.Li
     , plrdlCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.devices.list@ method which the
 -- 'ProjectsLocationsRegistriesDevicesList' request conforms to.
@@ -83,20 +83,20 @@ type ProjectsLocationsRegistriesDevicesListResource =
 -- /See:/ 'projectsLocationsRegistriesDevicesList' smart constructor.
 data ProjectsLocationsRegistriesDevicesList =
   ProjectsLocationsRegistriesDevicesList'
-    { _plrdlParent                                  :: !Text
-    , _plrdlXgafv                                   :: !(Maybe Xgafv)
-    , _plrdlUploadProtocol                          :: !(Maybe Text)
-    , _plrdlAccessToken                             :: !(Maybe Text)
-    , _plrdlDeviceNumIds                            :: !(Maybe [Textual Word64])
-    , _plrdlGatewayListOptionsAssociationsDeviceId  :: !(Maybe Text)
+    { _plrdlParent :: !Text
+    , _plrdlXgafv :: !(Maybe Xgafv)
+    , _plrdlUploadProtocol :: !(Maybe Text)
+    , _plrdlAccessToken :: !(Maybe Text)
+    , _plrdlDeviceNumIds :: !(Maybe [Textual Word64])
+    , _plrdlGatewayListOptionsAssociationsDeviceId :: !(Maybe Text)
     , _plrdlGatewayListOptionsAssociationsGatewayId :: !(Maybe Text)
-    , _plrdlUploadType                              :: !(Maybe Text)
-    , _plrdlDeviceIds                               :: !(Maybe [Text])
-    , _plrdlFieldMask                               :: !(Maybe GFieldMask)
-    , _plrdlGatewayListOptionsGatewayType           :: !(Maybe Text)
-    , _plrdlPageToken                               :: !(Maybe Text)
-    , _plrdlPageSize                                :: !(Maybe (Textual Int32))
-    , _plrdlCallback                                :: !(Maybe Text)
+    , _plrdlUploadType :: !(Maybe Text)
+    , _plrdlDeviceIds :: !(Maybe [Text])
+    , _plrdlFieldMask :: !(Maybe GFieldMask)
+    , _plrdlGatewayListOptionsGatewayType :: !(Maybe Text)
+    , _plrdlPageToken :: !(Maybe Text)
+    , _plrdlPageSize :: !(Maybe (Textual Int32))
+    , _plrdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

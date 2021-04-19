@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Holds.Create
     , mhcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.create@ method which the
 -- 'MattersHoldsCreate' request conforms to.
@@ -65,13 +65,13 @@ type MattersHoldsCreateResource =
 -- /See:/ 'mattersHoldsCreate' smart constructor.
 data MattersHoldsCreate =
   MattersHoldsCreate'
-    { _mhcXgafv          :: !(Maybe Xgafv)
+    { _mhcXgafv :: !(Maybe Xgafv)
     , _mhcUploadProtocol :: !(Maybe Text)
-    , _mhcAccessToken    :: !(Maybe Text)
-    , _mhcUploadType     :: !(Maybe Text)
-    , _mhcPayload        :: !Hold
-    , _mhcMatterId       :: !Text
-    , _mhcCallback       :: !(Maybe Text)
+    , _mhcAccessToken :: !(Maybe Text)
+    , _mhcUploadType :: !(Maybe Text)
+    , _mhcPayload :: !Hold
+    , _mhcMatterId :: !Text
+    , _mhcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

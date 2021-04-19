@@ -40,14 +40,14 @@ module Network.Google.Resource.Content.LiaSettings.SetposDataprovider
     , lssdPosDataProviderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.setposdataprovider@ method which the
 -- 'LiaSettingsSetposDataprovider' request conforms to.
 type LiaSettingsSetposDataproviderResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "liasettings" :>
              Capture "accountId" (Textual Word64) :>
@@ -63,11 +63,11 @@ type LiaSettingsSetposDataproviderResource =
 -- /See:/ 'liaSettingsSetposDataprovider' smart constructor.
 data LiaSettingsSetposDataprovider =
   LiaSettingsSetposDataprovider'
-    { _lssdMerchantId           :: !(Textual Word64)
-    , _lssdCountry              :: !Text
-    , _lssdAccountId            :: !(Textual Word64)
+    { _lssdMerchantId :: !(Textual Word64)
+    , _lssdCountry :: !Text
+    , _lssdAccountId :: !(Textual Word64)
     , _lssdPosExternalAccountId :: !(Maybe Text)
-    , _lssdPosDataProviderId    :: !(Maybe (Textual Word64))
+    , _lssdPosDataProviderId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

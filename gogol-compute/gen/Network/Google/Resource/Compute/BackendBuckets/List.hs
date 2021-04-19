@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.BackendBuckets.List
     , bblMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendBuckets.list@ method which the
 -- 'BackendBucketsList' request conforms to.
@@ -66,10 +66,10 @@ type BackendBucketsListResource =
 -- /See:/ 'backendBucketsList' smart constructor.
 data BackendBucketsList =
   BackendBucketsList'
-    { _bblOrderBy    :: !(Maybe Text)
-    , _bblProject    :: !Text
-    , _bblFilter     :: !(Maybe Text)
-    , _bblPageToken  :: !(Maybe Text)
+    { _bblOrderBy :: !(Maybe Text)
+    , _bblProject :: !Text
+    , _bblFilter :: !(Maybe Text)
+    , _bblPageToken :: !(Maybe Text)
     , _bblMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -17,8 +17,8 @@
 --
 module Network.Google.GamesConfiguration.Types.Product where
 
-import           Network.Google.GamesConfiguration.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types.Sum
+import Network.Google.Prelude
 
 -- | This is a JSON template for an image configuration resource.
 --
@@ -26,9 +26,9 @@ import           Network.Google.Prelude
 data ImageConfiguration =
   ImageConfiguration'
     { _icResourceId :: !(Maybe Text)
-    , _icKind       :: !Text
-    , _icURL        :: !(Maybe Text)
-    , _icImageType  :: !(Maybe Text)
+    , _icKind :: !Text
+    , _icURL :: !(Maybe Text)
+    , _icImageType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -99,8 +99,8 @@ instance ToJSON ImageConfiguration where
 data LeaderboardConfigurationListResponse =
   LeaderboardConfigurationListResponse'
     { _lclrNextPageToken :: !(Maybe Text)
-    , _lclrKind          :: !Text
-    , _lclrItems         :: !(Maybe [LeaderboardConfiguration])
+    , _lclrKind :: !Text
+    , _lclrItems :: !(Maybe [LeaderboardConfiguration])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -168,12 +168,12 @@ instance ToJSON LeaderboardConfigurationListResponse
 -- /See:/ 'gamesNumberAffixConfiguration' smart constructor.
 data GamesNumberAffixConfiguration =
   GamesNumberAffixConfiguration'
-    { _gnacFew   :: !(Maybe LocalizedStringBundle)
+    { _gnacFew :: !(Maybe LocalizedStringBundle)
     , _gnacOther :: !(Maybe LocalizedStringBundle)
-    , _gnacTwo   :: !(Maybe LocalizedStringBundle)
-    , _gnacOne   :: !(Maybe LocalizedStringBundle)
-    , _gnacZero  :: !(Maybe LocalizedStringBundle)
-    , _gnacMany  :: !(Maybe LocalizedStringBundle)
+    , _gnacTwo :: !(Maybe LocalizedStringBundle)
+    , _gnacOne :: !(Maybe LocalizedStringBundle)
+    , _gnacZero :: !(Maybe LocalizedStringBundle)
+    , _gnacMany :: !(Maybe LocalizedStringBundle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -264,8 +264,8 @@ instance ToJSON GamesNumberAffixConfiguration where
 data AchievementConfigurationListResponse =
   AchievementConfigurationListResponse'
     { _aclrNextPageToken :: !(Maybe Text)
-    , _aclrKind          :: !Text
-    , _aclrItems         :: !(Maybe [AchievementConfiguration])
+    , _aclrKind :: !Text
+    , _aclrItems :: !(Maybe [AchievementConfiguration])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -333,13 +333,13 @@ instance ToJSON AchievementConfigurationListResponse
 -- /See:/ 'leaderboardConfiguration' smart constructor.
 data LeaderboardConfiguration =
   LeaderboardConfiguration'
-    { _lcScoreMax   :: !(Maybe (Textual Int64))
-    , _lcKind       :: !Text
-    , _lcPublished  :: !(Maybe LeaderboardConfigurationDetail)
-    , _lcToken      :: !(Maybe Text)
-    , _lcScoreMin   :: !(Maybe (Textual Int64))
-    , _lcDraft      :: !(Maybe LeaderboardConfigurationDetail)
-    , _lcId         :: !(Maybe Text)
+    { _lcScoreMax :: !(Maybe (Textual Int64))
+    , _lcKind :: !Text
+    , _lcPublished :: !(Maybe LeaderboardConfigurationDetail)
+    , _lcToken :: !(Maybe Text)
+    , _lcScoreMin :: !(Maybe (Textual Int64))
+    , _lcDraft :: !(Maybe LeaderboardConfigurationDetail)
+    , _lcId :: !(Maybe Text)
     , _lcScoreOrder :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -453,13 +453,13 @@ instance ToJSON LeaderboardConfiguration where
 data AchievementConfiguration =
   AchievementConfiguration'
     { _acAchievementType :: !(Maybe Text)
-    , _acStepsToUnlock   :: !(Maybe (Textual Int32))
-    , _acKind            :: !Text
-    , _acPublished       :: !(Maybe AchievementConfigurationDetail)
-    , _acToken           :: !(Maybe Text)
-    , _acInitialState    :: !(Maybe Text)
-    , _acDraft           :: !(Maybe AchievementConfigurationDetail)
-    , _acId              :: !(Maybe Text)
+    , _acStepsToUnlock :: !(Maybe (Textual Int32))
+    , _acKind :: !Text
+    , _acPublished :: !(Maybe AchievementConfigurationDetail)
+    , _acToken :: !(Maybe Text)
+    , _acInitialState :: !(Maybe Text)
+    , _acDraft :: !(Maybe AchievementConfigurationDetail)
+    , _acId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -575,9 +575,9 @@ instance ToJSON AchievementConfiguration where
 -- /See:/ 'localizedString' smart constructor.
 data LocalizedString =
   LocalizedString'
-    { _lsKind   :: !Text
+    { _lsKind :: !Text
     , _lsLocale :: !(Maybe Text)
-    , _lsValue  :: !(Maybe Text)
+    , _lsValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -637,8 +637,8 @@ instance ToJSON LocalizedString where
 -- /See:/ 'gamesNumberFormatConfiguration' smart constructor.
 data GamesNumberFormatConfiguration =
   GamesNumberFormatConfiguration'
-    { _gnfcSuffix           :: !(Maybe GamesNumberAffixConfiguration)
-    , _gnfcCurrencyCode     :: !(Maybe Text)
+    { _gnfcSuffix :: !(Maybe GamesNumberAffixConfiguration)
+    , _gnfcCurrencyCode :: !(Maybe Text)
     , _gnfcNumberFormatType :: !(Maybe Text)
     , _gnfcNumDecimalPlaces :: !(Maybe (Textual Int32))
     }
@@ -722,11 +722,11 @@ instance ToJSON GamesNumberFormatConfiguration where
 -- /See:/ 'leaderboardConfigurationDetail' smart constructor.
 data LeaderboardConfigurationDetail =
   LeaderboardConfigurationDetail'
-    { _lcdKind        :: !Text
+    { _lcdKind :: !Text
     , _lcdScoreFormat :: !(Maybe GamesNumberFormatConfiguration)
-    , _lcdSortRank    :: !(Maybe (Textual Int32))
-    , _lcdName        :: !(Maybe LocalizedStringBundle)
-    , _lcdIconURL     :: !(Maybe Text)
+    , _lcdSortRank :: !(Maybe (Textual Int32))
+    , _lcdName :: !(Maybe LocalizedStringBundle)
+    , _lcdIconURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -810,11 +810,11 @@ instance ToJSON LeaderboardConfigurationDetail where
 -- /See:/ 'achievementConfigurationDetail' smart constructor.
 data AchievementConfigurationDetail =
   AchievementConfigurationDetail'
-    { _acdKind        :: !Text
-    , _acdSortRank    :: !(Maybe (Textual Int32))
-    , _acdName        :: !(Maybe LocalizedStringBundle)
-    , _acdPointValue  :: !(Maybe (Textual Int32))
-    , _acdIconURL     :: !(Maybe Text)
+    { _acdKind :: !Text
+    , _acdSortRank :: !(Maybe (Textual Int32))
+    , _acdName :: !(Maybe LocalizedStringBundle)
+    , _acdPointValue :: !(Maybe (Textual Int32))
+    , _acdIconURL :: !(Maybe Text)
     , _acdDescription :: !(Maybe LocalizedStringBundle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -911,7 +911,7 @@ instance ToJSON AchievementConfigurationDetail where
 -- /See:/ 'localizedStringBundle' smart constructor.
 data LocalizedStringBundle =
   LocalizedStringBundle'
-    { _lsbKind         :: !Text
+    { _lsbKind :: !Text
     , _lsbTranslations :: !(Maybe [LocalizedString])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

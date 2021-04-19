@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.AcknowledgeNotifica
     , eansNotificationSetId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.acknowledgeNotificationSet@ method which the
 -- 'EnterprisesAcknowledgeNotificationSet' request conforms to.

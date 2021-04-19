@@ -42,8 +42,8 @@ module Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.D
     , studCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types
 
 -- | A resource alias for @serviceconsumermanagement.services.tenancyUnits.delete@ method which the
 -- 'ServicesTenancyUnitsDelete' request conforms to.
@@ -63,12 +63,12 @@ type ServicesTenancyUnitsDeleteResource =
 -- /See:/ 'servicesTenancyUnitsDelete' smart constructor.
 data ServicesTenancyUnitsDelete =
   ServicesTenancyUnitsDelete'
-    { _studXgafv          :: !(Maybe Xgafv)
+    { _studXgafv :: !(Maybe Xgafv)
     , _studUploadProtocol :: !(Maybe Text)
-    , _studAccessToken    :: !(Maybe Text)
-    , _studUploadType     :: !(Maybe Text)
-    , _studName           :: !Text
-    , _studCallback       :: !(Maybe Text)
+    , _studAccessToken :: !(Maybe Text)
+    , _studUploadType :: !(Maybe Text)
+    , _studName :: !Text
+    , _studCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

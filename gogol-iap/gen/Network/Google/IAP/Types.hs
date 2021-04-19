@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -67,9 +67,9 @@ module Network.Google.IAP.Types
     , bCondition
     ) where
 
-import           Network.Google.IAP.Types.Product
-import           Network.Google.IAP.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.IAP.Types.Product
+import Network.Google.IAP.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the Cloud Identity-Aware Proxy API. This contains the host and root path used as a starting point for constructing service requests.
 iAPService :: ServiceConfig

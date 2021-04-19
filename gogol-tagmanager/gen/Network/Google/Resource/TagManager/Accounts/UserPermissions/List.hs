@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.UserPermissions.List
     , auplPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.user_permissions.list@ method which the
 -- 'AccountsUserPermissionsList' request conforms to.
@@ -58,7 +58,7 @@ type AccountsUserPermissionsListResource =
 -- /See:/ 'accountsUserPermissionsList' smart constructor.
 data AccountsUserPermissionsList =
   AccountsUserPermissionsList'
-    { _auplParent    :: !Text
+    { _auplParent :: !Text
     , _auplPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

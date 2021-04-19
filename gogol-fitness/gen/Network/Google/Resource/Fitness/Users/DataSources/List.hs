@@ -40,8 +40,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.List
     , udslUserId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.list@ method which the
 -- 'UsersDataSourcesList' request conforms to.
@@ -64,7 +64,7 @@ type UsersDataSourcesListResource =
 data UsersDataSourcesList =
   UsersDataSourcesList'
     { _udslDataTypeName :: !(Maybe [Text])
-    , _udslUserId       :: !Text
+    , _udslUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

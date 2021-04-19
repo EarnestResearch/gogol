@@ -17,8 +17,8 @@
 --
 module Network.Google.CivicInfo.Types.Product where
 
-import           Network.Google.CivicInfo.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CivicInfo.Types.Sum
+import Network.Google.Prelude
 
 -- | Political geographic divisions that contain the requested address.
 --
@@ -67,18 +67,18 @@ instance ToJSON RepresentativeInfoResponseDivisions
 -- /See:/ 'voterInfoResponse' smart constructor.
 data VoterInfoResponse =
   VoterInfoResponse'
-    { _virOtherElections   :: !(Maybe [Election])
-    , _virContests         :: !(Maybe [Contest])
-    , _virState            :: !(Maybe [AdministrationRegion])
-    , _virKind             :: !Text
+    { _virOtherElections :: !(Maybe [Election])
+    , _virContests :: !(Maybe [Contest])
+    , _virState :: !(Maybe [AdministrationRegion])
+    , _virKind :: !Text
     , _virDropOffLocations :: !(Maybe [PollingLocation])
-    , _virElection         :: !(Maybe Election)
-    , _virNormalizedInput  :: !(Maybe SimpleAddressType)
-    , _virMailOnly         :: !(Maybe Bool)
-    , _virSegments         :: !(Maybe [StreetSegment])
-    , _virEarlyVoteSites   :: !(Maybe [PollingLocation])
+    , _virElection :: !(Maybe Election)
+    , _virNormalizedInput :: !(Maybe SimpleAddressType)
+    , _virMailOnly :: !(Maybe Bool)
+    , _virSegments :: !(Maybe [StreetSegment])
+    , _virEarlyVoteSites :: !(Maybe [PollingLocation])
     , _virPollingLocations :: !(Maybe [PollingLocation])
-    , _virPrecinctId       :: !(Maybe Text)
+    , _virPrecinctId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -267,16 +267,16 @@ instance ToJSON VoterInfoResponse where
 data PollingLocation =
   PollingLocation'
     { _plVoterServices :: !(Maybe Text)
-    , _plLatitude      :: !(Maybe (Textual Double))
-    , _plEndDate       :: !(Maybe Text)
-    , _plSources       :: !(Maybe [Source])
-    , _plAddress       :: !(Maybe SimpleAddressType)
-    , _plStartDate     :: !(Maybe Text)
-    , _plPollingHours  :: !(Maybe Text)
-    , _plName          :: !(Maybe Text)
-    , _plId            :: !(Maybe Text)
-    , _plNotes         :: !(Maybe Text)
-    , _plLongitude     :: !(Maybe (Textual Double))
+    , _plLatitude :: !(Maybe (Textual Double))
+    , _plEndDate :: !(Maybe Text)
+    , _plSources :: !(Maybe [Source])
+    , _plAddress :: !(Maybe SimpleAddressType)
+    , _plStartDate :: !(Maybe Text)
+    , _plPollingHours :: !(Maybe Text)
+    , _plName :: !(Maybe Text)
+    , _plId :: !(Maybe Text)
+    , _plNotes :: !(Maybe Text)
+    , _plLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -431,9 +431,9 @@ instance ToJSON PollingLocation where
 -- /See:/ 'geographicDivision' smart constructor.
 data GeographicDivision =
   GeographicDivision'
-    { _gdName          :: !(Maybe Text)
+    { _gdName :: !(Maybe Text)
     , _gdOfficeIndices :: !(Maybe [Textual Word32])
-    , _gdAlsoKnownAs   :: !(Maybe [Text])
+    , _gdAlsoKnownAs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -504,51 +504,51 @@ instance ToJSON GeographicDivision where
 -- /See:/ 'streetSegment' smart constructor.
 data StreetSegment =
   StreetSegment'
-    { _ssOriginalId                    :: !(Maybe Text)
-    , _ssPollinglocationByIds          :: !(Maybe [Text])
-    , _ssStartHouseNumber              :: !(Maybe (Textual Int64))
-    , _ssCataListUniquePrecinctCode    :: !(Maybe Text)
-    , _ssState                         :: !(Maybe Text)
-    , _ssContestIds                    :: !(Maybe [Text])
-    , _ssStateHouseDistrict            :: !(Maybe Text)
-    , _ssNcoaAddress                   :: !(Maybe Text)
-    , _ssEarlyVoteSiteByIds            :: !(Maybe [Text])
-    , _ssCountyCouncilDistrict         :: !(Maybe Text)
-    , _ssCityCouncilDistrict           :: !(Maybe Text)
-    , _ssGeocodedPoint                 :: !(Maybe PointProto)
-    , _ssEndHouseNumber                :: !(Maybe (Textual Int64))
-    , _ssSubAdministrativeAreaName     :: !(Maybe Text)
-    , _ssPublished                     :: !(Maybe Bool)
-    , _ssStartLatE7                    :: !(Maybe (Textual Int64))
-    , _ssZip                           :: !(Maybe Text)
-    , _ssSurrogateId                   :: !(Maybe (Textual Int64))
-    , _ssMunicipalDistrict             :: !(Maybe Text)
-    , _ssWardDistrict                  :: !(Maybe Text)
+    { _ssOriginalId :: !(Maybe Text)
+    , _ssPollinglocationByIds :: !(Maybe [Text])
+    , _ssStartHouseNumber :: !(Maybe (Textual Int64))
+    , _ssCataListUniquePrecinctCode :: !(Maybe Text)
+    , _ssState :: !(Maybe Text)
+    , _ssContestIds :: !(Maybe [Text])
+    , _ssStateHouseDistrict :: !(Maybe Text)
+    , _ssNcoaAddress :: !(Maybe Text)
+    , _ssEarlyVoteSiteByIds :: !(Maybe [Text])
+    , _ssCountyCouncilDistrict :: !(Maybe Text)
+    , _ssCityCouncilDistrict :: !(Maybe Text)
+    , _ssGeocodedPoint :: !(Maybe PointProto)
+    , _ssEndHouseNumber :: !(Maybe (Textual Int64))
+    , _ssSubAdministrativeAreaName :: !(Maybe Text)
+    , _ssPublished :: !(Maybe Bool)
+    , _ssStartLatE7 :: !(Maybe (Textual Int64))
+    , _ssZip :: !(Maybe Text)
+    , _ssSurrogateId :: !(Maybe (Textual Int64))
+    , _ssMunicipalDistrict :: !(Maybe Text)
+    , _ssWardDistrict :: !(Maybe Text)
     , _ssVoterGeographicDivisionOcdIds :: !(Maybe [Text])
-    , _ssStreetName                    :: !(Maybe Text)
-    , _ssTownshipDistrict              :: !(Maybe Text)
-    , _ssUnitType                      :: !(Maybe Text)
-    , _ssCongressionalDistrict         :: !(Maybe Text)
-    , _ssStateSenateDistrict           :: !(Maybe Text)
-    , _ssOddOrEvens                    :: !(Maybe [Text])
-    , _ssGeographicDivisionOcdIds      :: !(Maybe [Text])
-    , _ssBeforeGeocodeId               :: !(Maybe Text)
-    , _ssDataSetId                     :: !(Maybe (Textual Int64))
-    , _ssStartLngE7                    :: !(Maybe (Textual Int64))
-    , _ssCity                          :: !(Maybe Text)
-    , _ssWildcard                      :: !(Maybe Bool)
+    , _ssStreetName :: !(Maybe Text)
+    , _ssTownshipDistrict :: !(Maybe Text)
+    , _ssUnitType :: !(Maybe Text)
+    , _ssCongressionalDistrict :: !(Maybe Text)
+    , _ssStateSenateDistrict :: !(Maybe Text)
+    , _ssOddOrEvens :: !(Maybe [Text])
+    , _ssGeographicDivisionOcdIds :: !(Maybe [Text])
+    , _ssBeforeGeocodeId :: !(Maybe Text)
+    , _ssDataSetId :: !(Maybe (Textual Int64))
+    , _ssStartLngE7 :: !(Maybe (Textual Int64))
+    , _ssCity :: !(Maybe Text)
+    , _ssWildcard :: !(Maybe Bool)
     , _ssTargetsmartUniquePrecinctCode :: !(Maybe Text)
-    , _ssProvenances                   :: !(Maybe [Provenance])
-    , _ssSchoolDistrict                :: !(Maybe Text)
-    , _ssMailOnly                      :: !(Maybe Bool)
-    , _ssId                            :: !(Maybe Text)
-    , _ssUnitNumber                    :: !(Maybe Text)
-    , _ssAdministrationRegionIds       :: !(Maybe [Text])
-    , _ssVanPrecinctCode               :: !(Maybe Text)
-    , _ssJudicialDistrict              :: !(Maybe Text)
-    , _ssPrecinctName                  :: !(Maybe Text)
-    , _ssCountyFips                    :: !(Maybe Text)
-    , _ssPrecinctOcdId                 :: !(Maybe Text)
+    , _ssProvenances :: !(Maybe [Provenance])
+    , _ssSchoolDistrict :: !(Maybe Text)
+    , _ssMailOnly :: !(Maybe Bool)
+    , _ssId :: !(Maybe Text)
+    , _ssUnitNumber :: !(Maybe Text)
+    , _ssAdministrationRegionIds :: !(Maybe [Text])
+    , _ssVanPrecinctCode :: !(Maybe Text)
+    , _ssJudicialDistrict :: !(Maybe Text)
+    , _ssPrecinctName :: !(Maybe Text)
+    , _ssCountyFips :: !(Maybe Text)
+    , _ssPrecinctOcdId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1041,14 +1041,14 @@ instance ToJSON StreetSegment where
 -- /See:/ 'candidate' smart constructor.
 data Candidate =
   Candidate'
-    { _cEmail         :: !(Maybe Text)
-    , _cPhone         :: !(Maybe Text)
-    , _cPhotoURL      :: !(Maybe Text)
-    , _cChannels      :: !(Maybe [Channel])
-    , _cCandidateURL  :: !(Maybe Text)
+    { _cEmail :: !(Maybe Text)
+    , _cPhone :: !(Maybe Text)
+    , _cPhotoURL :: !(Maybe Text)
+    , _cChannels :: !(Maybe [Channel])
+    , _cCandidateURL :: !(Maybe Text)
     , _cOrderOnBallot :: !(Maybe (Textual Int64))
-    , _cName          :: !(Maybe Text)
-    , _cParty         :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cParty :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1160,12 +1160,12 @@ instance ToJSON Candidate where
 -- /See:/ 'office' smart constructor.
 data Office =
   Office'
-    { _oDivisionId      :: !(Maybe Text)
-    , _oRoles           :: !(Maybe [Text])
+    { _oDivisionId :: !(Maybe Text)
+    , _oRoles :: !(Maybe [Text])
     , _oOfficialIndices :: !(Maybe [Textual Word32])
-    , _oSources         :: !(Maybe [Source])
-    , _oName            :: !(Maybe Text)
-    , _oLevels          :: !(Maybe [Text])
+    , _oSources :: !(Maybe [Source])
+    , _oName :: !(Maybe Text)
+    , _oLevels :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1305,20 +1305,20 @@ instance ToJSON StreetSegmentList where
 data LivegraphBacktraceRecordInfo =
   LivegraphBacktraceRecordInfo'
     { _lbriDataSourcePublishMsec :: !(Maybe (Textual Int64))
-    , _lbriTopicBuildStartMsec   :: !(Maybe (Textual Int64))
-    , _lbriIsRecon               :: !(Maybe Bool)
-    , _lbriPriority              :: !(Maybe Text)
-    , _lbriShouldMonitorLatency  :: !(Maybe Bool)
-    , _lbriRecordId              :: !(Maybe Text)
-    , _lbriProxySentMsec         :: !(Maybe (Textual Int64))
-    , _lbriExpInfo               :: !(Maybe LivegraphBacktraceRecordInfoExpInfo)
-    , _lbriProcess               :: !(Maybe Text)
-    , _lbriTopicBuildFinishMsec  :: !(Maybe (Textual Int64))
-    , _lbriNumberOfTriples       :: !(Maybe (Textual Int64))
-    , _lbriProxyReceiveMsec      :: !(Maybe (Textual Int64))
-    , _lbriVersion               :: !(Maybe Text)
-    , _lbriIsWlmThrottled        :: !(Maybe Bool)
-    , _lbriExpId                 :: !(Maybe Text)
+    , _lbriTopicBuildStartMsec :: !(Maybe (Textual Int64))
+    , _lbriIsRecon :: !(Maybe Bool)
+    , _lbriPriority :: !(Maybe Text)
+    , _lbriShouldMonitorLatency :: !(Maybe Bool)
+    , _lbriRecordId :: !(Maybe Text)
+    , _lbriProxySentMsec :: !(Maybe (Textual Int64))
+    , _lbriExpInfo :: !(Maybe LivegraphBacktraceRecordInfoExpInfo)
+    , _lbriProcess :: !(Maybe Text)
+    , _lbriTopicBuildFinishMsec :: !(Maybe (Textual Int64))
+    , _lbriNumberOfTriples :: !(Maybe (Textual Int64))
+    , _lbriProxyReceiveMsec :: !(Maybe (Textual Int64))
+    , _lbriVersion :: !(Maybe Text)
+    , _lbriIsWlmThrottled :: !(Maybe Bool)
+    , _lbriExpId :: !(Maybe Text)
     , _lbriSubscriberReceiveMsec :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1551,7 +1551,7 @@ instance ToJSON ElectionsQueryRequest where
 -- /See:/ 'channel' smart constructor.
 data Channel =
   Channel'
-    { _cId   :: !(Maybe Text)
+    { _cId :: !(Maybe Text)
     , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1596,9 +1596,9 @@ instance ToJSON Channel where
 data Election =
   Election'
     { _eOcdDivisionId :: !(Maybe Text)
-    , _eElectionDay   :: !(Maybe Text)
-    , _eName          :: !(Maybe Text)
-    , _eId            :: !(Maybe (Textual Int64))
+    , _eElectionDay :: !(Maybe Text)
+    , _eName :: !(Maybe Text)
+    , _eId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1671,11 +1671,11 @@ instance ToJSON Election where
 -- /See:/ 'representativeInfoResponse' smart constructor.
 data RepresentativeInfoResponse =
   RepresentativeInfoResponse'
-    { _rirKind            :: !Text
+    { _rirKind :: !Text
     , _rirNormalizedInput :: !(Maybe SimpleAddressType)
-    , _rirOfficials       :: !(Maybe [Official])
-    , _rirDivisions       :: !(Maybe RepresentativeInfoResponseDivisions)
-    , _rirOffices         :: !(Maybe [Office])
+    , _rirOfficials :: !(Maybe [Official])
+    , _rirDivisions :: !(Maybe RepresentativeInfoResponseDivisions)
+    , _rirOffices :: !(Maybe [Office])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1763,10 +1763,10 @@ instance ToJSON RepresentativeInfoResponse where
 -- /See:/ 'voterInfoSegmentResult' smart constructor.
 data VoterInfoSegmentResult =
   VoterInfoSegmentResult'
-    { _visrResponse        :: !(Maybe VoterInfoResponse)
+    { _visrResponse :: !(Maybe VoterInfoResponse)
     , _visrGeneratedMillis :: !(Maybe (Textual Int64))
-    , _visrPostalAddress   :: !(Maybe PostalAddress)
-    , _visrRequest         :: !(Maybe VoterInfoRequest)
+    , _visrPostalAddress :: !(Maybe PostalAddress)
+    , _visrRequest :: !(Maybe VoterInfoRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1837,8 +1837,8 @@ instance ToJSON VoterInfoSegmentResult where
 data DivisionSearchResult =
   DivisionSearchResult'
     { _dsrAliases :: !(Maybe [Text])
-    , _dsrName    :: !(Maybe Text)
-    , _dsrOcdId   :: !(Maybe Text)
+    , _dsrName :: !(Maybe Text)
+    , _dsrOcdId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2008,20 +2008,20 @@ instance ToJSON MessageSet where
 -- /See:/ 'administrativeBody' smart constructor.
 data AdministrativeBody =
   AdministrativeBody'
-    { _abCorrespondenceAddress               :: !(Maybe SimpleAddressType)
-    , _abAbsenteeVotingInfoURL               :: !(Maybe Text)
-    , _abHoursOfOperation                    :: !(Maybe Text)
-    , _abBallotInfoURL                       :: !(Maybe Text)
-    , _abPhysicalAddress                     :: !(Maybe SimpleAddressType)
+    { _abCorrespondenceAddress :: !(Maybe SimpleAddressType)
+    , _abAbsenteeVotingInfoURL :: !(Maybe Text)
+    , _abHoursOfOperation :: !(Maybe Text)
+    , _abBallotInfoURL :: !(Maybe Text)
+    , _abPhysicalAddress :: !(Maybe SimpleAddressType)
     , _abElectionRegistrationConfirmationURL :: !(Maybe Text)
-    , _abElectionInfoURL                     :: !(Maybe Text)
-    , _abVotingLocationFinderURL             :: !(Maybe Text)
-    , _abElectionOfficials                   :: !(Maybe [ElectionOfficial])
-    , _abName                                :: !(Maybe Text)
-    , _abElectionRulesURL                    :: !(Maybe Text)
-    , _abAddressLines                        :: !(Maybe [Text])
-    , _abVoterServices                       :: !(Maybe [Text])
-    , _abElectionRegistrationURL             :: !(Maybe Text)
+    , _abElectionInfoURL :: !(Maybe Text)
+    , _abVotingLocationFinderURL :: !(Maybe Text)
+    , _abElectionOfficials :: !(Maybe [ElectionOfficial])
+    , _abName :: !(Maybe Text)
+    , _abElectionRulesURL :: !(Maybe Text)
+    , _abAddressLines :: !(Maybe [Text])
+    , _abVoterServices :: !(Maybe [Text])
+    , _abElectionRegistrationURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2262,30 +2262,30 @@ instance ToJSON RepresentativeInfoRequest where
 data Contest =
   Contest'
     { _conReferendumPassageThreshold :: !(Maybe Text)
-    , _conRoles                      :: !(Maybe [Text])
-    , _conReferendumURL              :: !(Maybe Text)
-    , _conReferendumEffectOfAbstain  :: !(Maybe Text)
-    , _conReferendumSubtitle         :: !(Maybe Text)
-    , _conNumberVotingFor            :: !(Maybe (Textual Int64))
-    , _conOffice                     :: !(Maybe Text)
-    , _conReferendumConStatement     :: !(Maybe Text)
-    , _conSources                    :: !(Maybe [Source])
-    , _conReferendumProStatement     :: !(Maybe Text)
-    , _conReferendumBallotResponses  :: !(Maybe [Text])
-    , _conNumberElected              :: !(Maybe (Textual Int64))
-    , _conSpecial                    :: !(Maybe Text)
-    , _conReferendumText             :: !(Maybe Text)
-    , _conPrimaryParty               :: !(Maybe Text)
-    , _conId                         :: !(Maybe Text)
-    , _conType                       :: !(Maybe Text)
-    , _conBallotTitle                :: !(Maybe Text)
-    , _conElectorateSpecifications   :: !(Maybe Text)
-    , _conReferendumBrief            :: !(Maybe Text)
-    , _conDistrict                   :: !(Maybe ElectoralDistrict)
-    , _conLevel                      :: !(Maybe [Text])
-    , _conCandidates                 :: !(Maybe [Candidate])
-    , _conReferendumTitle            :: !(Maybe Text)
-    , _conBallotPlacement            :: !(Maybe (Textual Int64))
+    , _conRoles :: !(Maybe [Text])
+    , _conReferendumURL :: !(Maybe Text)
+    , _conReferendumEffectOfAbstain :: !(Maybe Text)
+    , _conReferendumSubtitle :: !(Maybe Text)
+    , _conNumberVotingFor :: !(Maybe (Textual Int64))
+    , _conOffice :: !(Maybe Text)
+    , _conReferendumConStatement :: !(Maybe Text)
+    , _conSources :: !(Maybe [Source])
+    , _conReferendumProStatement :: !(Maybe Text)
+    , _conReferendumBallotResponses :: !(Maybe [Text])
+    , _conNumberElected :: !(Maybe (Textual Int64))
+    , _conSpecial :: !(Maybe Text)
+    , _conReferendumText :: !(Maybe Text)
+    , _conPrimaryParty :: !(Maybe Text)
+    , _conId :: !(Maybe Text)
+    , _conType :: !(Maybe Text)
+    , _conBallotTitle :: !(Maybe Text)
+    , _conElectorateSpecifications :: !(Maybe Text)
+    , _conReferendumBrief :: !(Maybe Text)
+    , _conDistrict :: !(Maybe ElectoralDistrict)
+    , _conLevel :: !(Maybe [Text])
+    , _conCandidates :: !(Maybe [Candidate])
+    , _conReferendumTitle :: !(Maybe Text)
+    , _conBallotPlacement :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2629,7 +2629,7 @@ instance ToJSON Contest where
 data DivisionSearchResponse =
   DivisionSearchResponse'
     { _dsrResults :: !(Maybe [DivisionSearchResult])
-    , _dsrKind    :: !Text
+    , _dsrKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2720,11 +2720,11 @@ instance ToJSON RepresentativeInfoDataDivisions where
 -- /See:/ 'electionOfficial' smart constructor.
 data ElectionOfficial =
   ElectionOfficial'
-    { _eoFaxNumber         :: !(Maybe Text)
-    , _eoName              :: !(Maybe Text)
+    { _eoFaxNumber :: !(Maybe Text)
+    , _eoName :: !(Maybe Text)
     , _eoOfficePhoneNumber :: !(Maybe Text)
-    , _eoEmailAddress      :: !(Maybe Text)
-    , _eoTitle             :: !(Maybe Text)
+    , _eoEmailAddress :: !(Maybe Text)
+    , _eoTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2803,9 +2803,9 @@ instance ToJSON ElectionOfficial where
 -- /See:/ 'pointProto' smart constructor.
 data PointProto =
   PointProto'
-    { _ppLatE7         :: !(Maybe (Textual Word32))
-    , _ppLngE7         :: !(Maybe (Textual Word32))
-    , _ppMetadata      :: !(Maybe FieldMetadataProto)
+    { _ppLatE7 :: !(Maybe (Textual Word32))
+    , _ppLngE7 :: !(Maybe (Textual Word32))
+    , _ppMetadata :: !(Maybe FieldMetadataProto)
     , _ppTemporaryData :: !(Maybe MessageSet)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2876,7 +2876,7 @@ data RepresentativeInfoData =
   RepresentativeInfoData'
     { _ridOfficials :: !(Maybe [Official])
     , _ridDivisions :: !(Maybe RepresentativeInfoDataDivisions)
-    , _ridOffices   :: !(Maybe [Office])
+    , _ridOffices :: !(Maybe [Office])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2941,7 +2941,7 @@ instance ToJSON RepresentativeInfoData where
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sName     :: !(Maybe Text)
+    { _sName :: !(Maybe Text)
     , _sOfficial :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3028,9 +3028,9 @@ instance ToJSON DivisionRepresentativeInfoRequest
 data ElectoralDistrict =
   ElectoralDistrict'
     { _edKgForeignKey :: !(Maybe Text)
-    , _edName         :: !(Maybe Text)
-    , _edScope        :: !(Maybe Text)
-    , _edId           :: !(Maybe Text)
+    , _edName :: !(Maybe Text)
+    , _edScope :: !(Maybe Text)
+    , _edId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3102,7 +3102,7 @@ instance ToJSON ElectoralDistrict where
 data VoterInfoRequest =
   VoterInfoRequest'
     { _virVoterInfoSegmentResult :: !(Maybe VoterInfoSegmentResult)
-    , _virContextParams          :: !(Maybe ContextParams)
+    , _virContextParams :: !(Maybe ContextParams)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3152,12 +3152,12 @@ instance ToJSON VoterInfoRequest where
 -- /See:/ 'simpleAddressType' smart constructor.
 data SimpleAddressType =
   SimpleAddressType'
-    { _satLine2        :: !(Maybe Text)
-    , _satState        :: !(Maybe Text)
-    , _satLine3        :: !(Maybe Text)
-    , _satZip          :: !(Maybe Text)
-    , _satCity         :: !(Maybe Text)
-    , _satLine1        :: !(Maybe Text)
+    { _satLine2 :: !(Maybe Text)
+    , _satState :: !(Maybe Text)
+    , _satLine3 :: !(Maybe Text)
+    , _satZip :: !(Maybe Text)
+    , _satCity :: !(Maybe Text)
+    , _satLine1 :: !(Maybe Text)
     , _satLocationName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3250,7 +3250,7 @@ instance ToJSON SimpleAddressType where
 -- /See:/ 'internalSourceSummaryProto' smart constructor.
 data InternalSourceSummaryProto =
   InternalSourceSummaryProto'
-    { _isspDataSet  :: !(Maybe Text)
+    { _isspDataSet :: !(Maybe Text)
     , _isspProvider :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3371,26 +3371,26 @@ instance ToJSON ContextParams where
 -- /See:/ 'postalAddress' smart constructor.
 data PostalAddress =
   PostalAddress'
-    { _paAdministrativeAreaName    :: !(Maybe Text)
-    , _paRecipientName             :: !(Maybe Text)
-    , _paLanguageCode              :: !(Maybe Text)
-    , _paSortingCode               :: !(Maybe Text)
-    , _paPremiseName               :: !(Maybe Text)
+    { _paAdministrativeAreaName :: !(Maybe Text)
+    , _paRecipientName :: !(Maybe Text)
+    , _paLanguageCode :: !(Maybe Text)
+    , _paSortingCode :: !(Maybe Text)
+    , _paPremiseName :: !(Maybe Text)
     , _paPostalCodeNumberExtension :: !(Maybe Text)
-    , _paCountryNameCode           :: !(Maybe Text)
+    , _paCountryNameCode :: !(Maybe Text)
     , _paSubAdministrativeAreaName :: !(Maybe Text)
-    , _paPostBoxNumber             :: !(Maybe Text)
-    , _paLocalityName              :: !(Maybe Text)
-    , _paIsDisputed                :: !(Maybe Bool)
-    , _paThoroughfareNumber        :: !(Maybe Text)
-    , _paDependentLocalityName     :: !(Maybe Text)
-    , _paFirmName                  :: !(Maybe Text)
-    , _paCountryName               :: !(Maybe Text)
+    , _paPostBoxNumber :: !(Maybe Text)
+    , _paLocalityName :: !(Maybe Text)
+    , _paIsDisputed :: !(Maybe Bool)
+    , _paThoroughfareNumber :: !(Maybe Text)
+    , _paDependentLocalityName :: !(Maybe Text)
+    , _paFirmName :: !(Maybe Text)
+    , _paCountryName :: !(Maybe Text)
     , _paDependentThoroughfareName :: !(Maybe Text)
-    , _paAddressLines              :: !(Maybe [Text])
-    , _paPostalCodeNumber          :: !(Maybe Text)
-    , _paThoroughfareName          :: !(Maybe Text)
-    , _paSubPremiseName            :: !(Maybe Text)
+    , _paAddressLines :: !(Maybe [Text])
+    , _paPostalCodeNumber :: !(Maybe Text)
+    , _paThoroughfareName :: !(Maybe Text)
+    , _paSubPremiseName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3626,7 +3626,7 @@ instance ToJSON PostalAddress where
 data InternalFieldMetadataProto =
   InternalFieldMetadataProto'
     { _ifmpSourceSummary :: !(Maybe InternalSourceSummaryProto)
-    , _ifmpIsAuto        :: !(Maybe Bool)
+    , _ifmpIsAuto :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3673,11 +3673,11 @@ instance ToJSON InternalFieldMetadataProto where
 -- /See:/ 'administrationRegion' smart constructor.
 data AdministrationRegion =
   AdministrationRegion'
-    { _arLocalJurisdiction          :: !(Maybe AdministrationRegion)
-    , _arSources                    :: !(Maybe [Source])
-    , _arName                       :: !(Maybe Text)
+    { _arLocalJurisdiction :: !(Maybe AdministrationRegion)
+    , _arSources :: !(Maybe [Source])
+    , _arName :: !(Maybe Text)
     , _arElectionAdministrationBody :: !(Maybe AdministrativeBody)
-    , _arId                         :: !(Maybe Text)
+    , _arId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3764,16 +3764,16 @@ instance ToJSON AdministrationRegion where
 -- /See:/ 'provenance' smart constructor.
 data Provenance =
   Provenance'
-    { _pTsStreetSegmentId     :: !(Maybe Text)
-    , _pVIPStreetSegmentId    :: !(Maybe (Textual Int64))
+    { _pTsStreetSegmentId :: !(Maybe Text)
+    , _pVIPStreetSegmentId :: !(Maybe (Textual Int64))
     , _pCollidedSegmentSource :: !(Maybe StreetSegmentList)
-    , _pCtclContestUuid       :: !(Maybe Text)
-    , _pDataSetId             :: !(Maybe (Textual Int64))
-    , _pVIP5StreetSegmentId   :: !(Maybe Text)
-    , _pCtclOfficeUuid        :: !(Maybe Text)
-    , _pVIP5PrecinctId        :: !(Maybe Text)
-    , _pPrecinctSplitId       :: !(Maybe (Textual Int64))
-    , _pPrecinctId            :: !(Maybe (Textual Int64))
+    , _pCtclContestUuid :: !(Maybe Text)
+    , _pDataSetId :: !(Maybe (Textual Int64))
+    , _pVIP5StreetSegmentId :: !(Maybe Text)
+    , _pCtclOfficeUuid :: !(Maybe Text)
+    , _pVIP5PrecinctId :: !(Maybe Text)
+    , _pPrecinctSplitId :: !(Maybe (Textual Int64))
+    , _pPrecinctId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3907,7 +3907,7 @@ instance ToJSON Provenance where
 -- /See:/ 'electionsQueryResponse' smart constructor.
 data ElectionsQueryResponse =
   ElectionsQueryResponse'
-    { _eqrKind      :: !Text
+    { _eqrKind :: !Text
     , _eqrElections :: !(Maybe [Election])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3960,13 +3960,13 @@ instance ToJSON ElectionsQueryResponse where
 data Official =
   Official'
     { _offPhotoURL :: !(Maybe Text)
-    , _offURLs     :: !(Maybe [Text])
+    , _offURLs :: !(Maybe [Text])
     , _offChannels :: !(Maybe [Channel])
-    , _offAddress  :: !(Maybe [SimpleAddressType])
-    , _offPhones   :: !(Maybe [Text])
-    , _offName     :: !(Maybe Text)
-    , _offEmails   :: !(Maybe [Text])
-    , _offParty    :: !(Maybe Text)
+    , _offAddress :: !(Maybe [SimpleAddressType])
+    , _offPhones :: !(Maybe [Text])
+    , _offName :: !(Maybe Text)
+    , _offEmails :: !(Maybe [Text])
+    , _offParty :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

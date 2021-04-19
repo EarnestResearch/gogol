@@ -109,13 +109,13 @@ module Network.Google.Translate
     , tlrTranslations
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Language.Detections.Detect
-import           Network.Google.Resource.Language.Detections.List
-import           Network.Google.Resource.Language.Languages.List
-import           Network.Google.Resource.Language.Translations.List
-import           Network.Google.Resource.Language.Translations.Translate
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Language.Detections.Detect
+import Network.Google.Resource.Language.Detections.List
+import Network.Google.Resource.Language.Languages.List
+import Network.Google.Resource.Language.Translations.List
+import Network.Google.Resource.Language.Translations.Translate
+import Network.Google.Translate.Types
 
 {- $resources
 TODO

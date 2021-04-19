@@ -37,8 +37,8 @@ module Network.Google.Resource.Books.MyLibrary.Annotations.Delete
     , mladSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.annotations.delete@ method which the
 -- 'MyLibraryAnnotationsDelete' request conforms to.
@@ -57,7 +57,7 @@ type MyLibraryAnnotationsDeleteResource =
 data MyLibraryAnnotationsDelete =
   MyLibraryAnnotationsDelete'
     { _mladAnnotationId :: !Text
-    , _mladSource       :: !(Maybe Text)
+    , _mladSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.Games.Pushtokens.Update
     , puPayload
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.pushtokens.update@ method which the
 -- 'PushtokensUpdate' request conforms to.

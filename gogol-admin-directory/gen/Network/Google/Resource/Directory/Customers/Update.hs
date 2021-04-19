@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Customers.Update
     , cuPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.customers.update@ method which the
 -- 'CustomersUpdate' request conforms to.
@@ -57,7 +57,7 @@ type CustomersUpdateResource =
 data CustomersUpdate =
   CustomersUpdate'
     { _cuCustomerKey :: !Text
-    , _cuPayload     :: !Customer
+    , _cuPayload :: !Customer
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

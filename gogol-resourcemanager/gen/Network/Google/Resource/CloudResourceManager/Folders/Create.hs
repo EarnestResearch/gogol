@@ -59,8 +59,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Create
     , fcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.create@ method which the
 -- 'FoldersCreate' request conforms to.
@@ -98,13 +98,13 @@ type FoldersCreateResource =
 -- /See:/ 'foldersCreate' smart constructor.
 data FoldersCreate =
   FoldersCreate'
-    { _fcParent         :: !(Maybe Text)
-    , _fcXgafv          :: !(Maybe Xgafv)
+    { _fcParent :: !(Maybe Text)
+    , _fcXgafv :: !(Maybe Xgafv)
     , _fcUploadProtocol :: !(Maybe Text)
-    , _fcAccessToken    :: !(Maybe Text)
-    , _fcUploadType     :: !(Maybe Text)
-    , _fcPayload        :: !Folder
-    , _fcCallback       :: !(Maybe Text)
+    , _fcAccessToken :: !(Maybe Text)
+    , _fcUploadType :: !(Maybe Text)
+    , _fcPayload :: !Folder
+    , _fcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

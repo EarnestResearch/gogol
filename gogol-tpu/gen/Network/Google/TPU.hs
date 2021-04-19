@@ -250,25 +250,25 @@ module Network.Google.TPU
     , startNodeRequest
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.TPU.Projects.Locations.AcceleratorTypes.Get
-import           Network.Google.Resource.TPU.Projects.Locations.AcceleratorTypes.List
-import           Network.Google.Resource.TPU.Projects.Locations.Get
-import           Network.Google.Resource.TPU.Projects.Locations.List
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Create
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Delete
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Get
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.List
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Reimage
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Start
-import           Network.Google.Resource.TPU.Projects.Locations.Nodes.Stop
-import           Network.Google.Resource.TPU.Projects.Locations.Operations.Cancel
-import           Network.Google.Resource.TPU.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.TPU.Projects.Locations.Operations.Get
-import           Network.Google.Resource.TPU.Projects.Locations.Operations.List
-import           Network.Google.Resource.TPU.Projects.Locations.TensorflowVersions.Get
-import           Network.Google.Resource.TPU.Projects.Locations.TensorflowVersions.List
-import           Network.Google.TPU.Types
+import Network.Google.Prelude
+import Network.Google.Resource.TPU.Projects.Locations.AcceleratorTypes.Get
+import Network.Google.Resource.TPU.Projects.Locations.AcceleratorTypes.List
+import Network.Google.Resource.TPU.Projects.Locations.Get
+import Network.Google.Resource.TPU.Projects.Locations.List
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Create
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Delete
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Get
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.List
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Reimage
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Start
+import Network.Google.Resource.TPU.Projects.Locations.Nodes.Stop
+import Network.Google.Resource.TPU.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.TPU.Projects.Locations.Operations.Delete
+import Network.Google.Resource.TPU.Projects.Locations.Operations.Get
+import Network.Google.Resource.TPU.Projects.Locations.Operations.List
+import Network.Google.Resource.TPU.Projects.Locations.TensorflowVersions.Get
+import Network.Google.Resource.TPU.Projects.Locations.TensorflowVersions.List
+import Network.Google.TPU.Types
 
 {- $resources
 TODO

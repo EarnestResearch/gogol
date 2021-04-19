@@ -17,8 +17,8 @@
 --
 module Network.Google.PageSpeed.Types.Product where
 
-import           Network.Google.PageSpeed.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.PageSpeed.Types.Sum
+import Network.Google.Prelude
 
 -- | Map of category groups in the LHR.
 --
@@ -68,7 +68,7 @@ instance ToJSON LighthouseResultV5CategoryGroups
 -- /See:/ 'lighthouseResultV5RuntimeError' smart constructor.
 data LighthouseResultV5RuntimeError =
   LighthouseResultV5RuntimeError'
-    { _lrvreCode    :: !(Maybe Text)
+    { _lrvreCode :: !(Maybe Text)
     , _lrvreMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -157,9 +157,9 @@ instance ToJSON LighthouseAuditResultV5Details where
 -- /See:/ 'lighthouseResultV5ConfigSettings' smart constructor.
 data LighthouseResultV5ConfigSettings =
   LighthouseResultV5ConfigSettings'
-    { _lrvcsLocale             :: !(Maybe Text)
+    { _lrvcsLocale :: !(Maybe Text)
     , _lrvcsEmulatedFormFactor :: !(Maybe Text)
-    , _lrvcsOnlyCategories     :: !(Maybe JSONValue)
+    , _lrvcsOnlyCategories :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -223,8 +223,8 @@ instance ToJSON LighthouseResultV5ConfigSettings
 -- /See:/ 'lighthouseResultV5Environment' smart constructor.
 data LighthouseResultV5Environment =
   LighthouseResultV5Environment'
-    { _lrveHostUserAgent    :: !(Maybe Text)
-    , _lrveBenchmarkIndex   :: !(Maybe (Textual Double))
+    { _lrveHostUserAgent :: !(Maybe Text)
+    , _lrveBenchmarkIndex :: !(Maybe (Textual Double))
     , _lrveNetworkUserAgent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -289,7 +289,7 @@ instance ToJSON LighthouseResultV5Environment where
 -- /See:/ 'lighthouseResultV5CategoryGroupsAdditional' smart constructor.
 data LighthouseResultV5CategoryGroupsAdditional =
   LighthouseResultV5CategoryGroupsAdditional'
-    { _lrvcgaTitle       :: !(Maybe Text)
+    { _lrvcgaTitle :: !(Maybe Text)
     , _lrvcgaDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -344,16 +344,16 @@ instance ToJSON
 -- /See:/ 'lighthouseAuditResultV5' smart constructor.
 data LighthouseAuditResultV5 =
   LighthouseAuditResultV5'
-    { _larvScore            :: !(Maybe JSONValue)
-    , _larvExplanation      :: !(Maybe Text)
-    , _larvWarnings         :: !(Maybe JSONValue)
+    { _larvScore :: !(Maybe JSONValue)
+    , _larvExplanation :: !(Maybe Text)
+    , _larvWarnings :: !(Maybe JSONValue)
     , _larvScoreDisplayMode :: !(Maybe Text)
-    , _larvDisplayValue     :: !(Maybe Text)
-    , _larvDetails          :: !(Maybe LighthouseAuditResultV5Details)
-    , _larvId               :: !(Maybe Text)
-    , _larvTitle            :: !(Maybe Text)
-    , _larvErrorMessage     :: !(Maybe Text)
-    , _larvDescription      :: !(Maybe Text)
+    , _larvDisplayValue :: !(Maybe Text)
+    , _larvDetails :: !(Maybe LighthouseAuditResultV5Details)
+    , _larvId :: !(Maybe Text)
+    , _larvTitle :: !(Maybe Text)
+    , _larvErrorMessage :: !(Maybe Text)
+    , _larvDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -483,14 +483,14 @@ instance ToJSON LighthouseAuditResultV5 where
 -- /See:/ 'pagespeedAPIPagespeedResponseV5' smart constructor.
 data PagespeedAPIPagespeedResponseV5 =
   PagespeedAPIPagespeedResponseV5'
-    { _paprvKind                    :: !Text
+    { _paprvKind :: !Text
     , _paprvOriginLoadingExperience :: !(Maybe PagespeedAPILoadingExperienceV5)
-    , _paprvVersion                 :: !(Maybe PagespeedAPIPagespeedResponseV5Version)
-    , _paprvCaptchaResult           :: !(Maybe Text)
-    , _paprvId                      :: !(Maybe Text)
-    , _paprvLoadingExperience       :: !(Maybe PagespeedAPILoadingExperienceV5)
-    , _paprvLighthouseResult        :: !(Maybe LighthouseResultV5)
-    , _paprvAnalysisUTCTimestamp    :: !(Maybe Text)
+    , _paprvVersion :: !(Maybe PagespeedAPIPagespeedResponseV5Version)
+    , _paprvCaptchaResult :: !(Maybe Text)
+    , _paprvId :: !(Maybe Text)
+    , _paprvLoadingExperience :: !(Maybe PagespeedAPILoadingExperienceV5)
+    , _paprvLighthouseResult :: !(Maybe LighthouseResultV5)
+    , _paprvAnalysisUTCTimestamp :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -651,20 +651,20 @@ instance ToJSON
 -- /See:/ 'lighthouseResultV5' smart constructor.
 data LighthouseResultV5 =
   LighthouseResultV5'
-    { _lrvRuntimeError      :: !(Maybe LighthouseResultV5RuntimeError)
-    , _lrvCategoryGroups    :: !(Maybe LighthouseResultV5CategoryGroups)
-    , _lrvFinalURL          :: !(Maybe Text)
-    , _lrvConfigSettings    :: !(Maybe LighthouseResultV5ConfigSettings)
-    , _lrvEnvironment       :: !(Maybe LighthouseResultV5Environment)
+    { _lrvRuntimeError :: !(Maybe LighthouseResultV5RuntimeError)
+    , _lrvCategoryGroups :: !(Maybe LighthouseResultV5CategoryGroups)
+    , _lrvFinalURL :: !(Maybe Text)
+    , _lrvConfigSettings :: !(Maybe LighthouseResultV5ConfigSettings)
+    , _lrvEnvironment :: !(Maybe LighthouseResultV5Environment)
     , _lrvLighthouseVersion :: !(Maybe Text)
-    , _lrvRunWarnings       :: !(Maybe [JSONValue])
-    , _lrvRequestedURL      :: !(Maybe Text)
-    , _lrvCategories        :: !(Maybe LighthouseResultV5Categories)
-    , _lrvFetchTime         :: !(Maybe Text)
-    , _lrvUserAgent         :: !(Maybe Text)
-    , _lrvTiming            :: !(Maybe LighthouseResultV5Timing)
-    , _lrvAudits            :: !(Maybe LighthouseResultV5Audits)
-    , _lrvI18n              :: !(Maybe LighthouseResultV5I18n)
+    , _lrvRunWarnings :: !(Maybe [JSONValue])
+    , _lrvRequestedURL :: !(Maybe Text)
+    , _lrvCategories :: !(Maybe LighthouseResultV5Categories)
+    , _lrvFetchTime :: !(Maybe Text)
+    , _lrvUserAgent :: !(Maybe Text)
+    , _lrvTiming :: !(Maybe LighthouseResultV5Timing)
+    , _lrvAudits :: !(Maybe LighthouseResultV5Audits)
+    , _lrvI18n :: !(Maybe LighthouseResultV5I18n)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -846,9 +846,9 @@ instance ToJSON LighthouseResultV5 where
 data LighthouseResultV5Categories =
   LighthouseResultV5Categories'
     { _lrvcBestPractices :: !(Maybe LighthouseCategoryV5)
-    , _lrvcPerformance   :: !(Maybe LighthouseCategoryV5)
-    , _lrvcPwa           :: !(Maybe LighthouseCategoryV5)
-    , _lrvcSeo           :: !(Maybe LighthouseCategoryV5)
+    , _lrvcPerformance :: !(Maybe LighthouseCategoryV5)
+    , _lrvcPwa :: !(Maybe LighthouseCategoryV5)
+    , _lrvcSeo :: !(Maybe LighthouseCategoryV5)
     , _lrvcAccessibility :: !(Maybe LighthouseCategoryV5)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -932,11 +932,11 @@ instance ToJSON LighthouseResultV5Categories where
 data LighthouseCategoryV5 =
   LighthouseCategoryV5'
     { _lcvManualDescription :: !(Maybe Text)
-    , _lcvScore             :: !(Maybe JSONValue)
-    , _lcvAuditRefs         :: !(Maybe [LighthouseCategoryV5AuditRefsItem])
-    , _lcvId                :: !(Maybe Text)
-    , _lcvTitle             :: !(Maybe Text)
-    , _lcvDescription       :: !(Maybe Text)
+    , _lcvScore :: !(Maybe JSONValue)
+    , _lcvAuditRefs :: !(Maybe [LighthouseCategoryV5AuditRefsItem])
+    , _lcvId :: !(Maybe Text)
+    , _lcvTitle :: !(Maybe Text)
+    , _lcvDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1025,8 +1025,8 @@ instance ToJSON LighthouseCategoryV5 where
 -- /See:/ 'pagespeedAPILoadingExperienceV5MetricsAdditional' smart constructor.
 data PagespeedAPILoadingExperienceV5MetricsAdditional =
   PagespeedAPILoadingExperienceV5MetricsAdditional'
-    { _palevmaCategory      :: !(Maybe Text)
-    , _palevmaPercentile    :: !(Maybe (Textual Int32))
+    { _palevmaCategory :: !(Maybe Text)
+    , _palevmaPercentile :: !(Maybe (Textual Int32))
     , _palevmaDistributions :: !(Maybe [PagespeedAPILoadingExperienceV5MetricsAdditionalDistributionsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1095,9 +1095,9 @@ instance ToJSON
 -- /See:/ 'pagespeedAPILoadingExperienceV5' smart constructor.
 data PagespeedAPILoadingExperienceV5 =
   PagespeedAPILoadingExperienceV5'
-    { _palevMetrics         :: !(Maybe PagespeedAPILoadingExperienceV5Metrics)
-    , _palevInitialURL      :: !(Maybe Text)
-    , _palevId              :: !(Maybe Text)
+    { _palevMetrics :: !(Maybe PagespeedAPILoadingExperienceV5Metrics)
+    , _palevInitialURL :: !(Maybe Text)
+    , _palevId :: !(Maybe Text)
     , _palevOverallCategory :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1221,9 +1221,9 @@ instance ToJSON
 -- /See:/ 'pagespeedAPILoadingExperienceV5MetricsAdditionalDistributionsItem' smart constructor.
 data PagespeedAPILoadingExperienceV5MetricsAdditionalDistributionsItem =
   PagespeedAPILoadingExperienceV5MetricsAdditionalDistributionsItem'
-    { _palevmadiMax        :: !(Maybe (Textual Int32))
+    { _palevmadiMax :: !(Maybe (Textual Int32))
     , _palevmadiProportion :: !(Maybe (Textual Double))
-    , _palevmadiMin        :: !(Maybe (Textual Int32))
+    , _palevmadiMin :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1328,22 +1328,22 @@ instance ToJSON LighthouseResultV5Timing where
 -- /See:/ 'lighthouseResultV5I18nRendererFormattedStrings' smart constructor.
 data LighthouseResultV5I18nRendererFormattedStrings =
   LighthouseResultV5I18nRendererFormattedStrings'
-    { _lrvirfsLabDataTitle                     :: !(Maybe Text)
-    , _lrvirfsWarningHeader                    :: !(Maybe Text)
-    , _lrvirfsOpportUnityResourceColumnLabel   :: !(Maybe Text)
-    , _lrvirfsManualAuditsGroupTitle           :: !(Maybe Text)
-    , _lrvirfsCrcInitialNavigation             :: !(Maybe Text)
-    , _lrvirfsVarianceDisclaimer               :: !(Maybe Text)
-    , _lrvirfsPassedAuditsGroupTitle           :: !(Maybe Text)
-    , _lrvirfsToplevelWarningsMessage          :: !(Maybe Text)
-    , _lrvirfsErrorMissingAuditInfo            :: !(Maybe Text)
-    , _lrvirfsCrcLongestDurationLabel          :: !(Maybe Text)
-    , _lrvirfsScorescaleLabel                  :: !(Maybe Text)
-    , _lrvirfsOpportUnitySavingsColumnLabel    :: !(Maybe Text)
-    , _lrvirfsErrorLabel                       :: !(Maybe Text)
+    { _lrvirfsLabDataTitle :: !(Maybe Text)
+    , _lrvirfsWarningHeader :: !(Maybe Text)
+    , _lrvirfsOpportUnityResourceColumnLabel :: !(Maybe Text)
+    , _lrvirfsManualAuditsGroupTitle :: !(Maybe Text)
+    , _lrvirfsCrcInitialNavigation :: !(Maybe Text)
+    , _lrvirfsVarianceDisclaimer :: !(Maybe Text)
+    , _lrvirfsPassedAuditsGroupTitle :: !(Maybe Text)
+    , _lrvirfsToplevelWarningsMessage :: !(Maybe Text)
+    , _lrvirfsErrorMissingAuditInfo :: !(Maybe Text)
+    , _lrvirfsCrcLongestDurationLabel :: !(Maybe Text)
+    , _lrvirfsScorescaleLabel :: !(Maybe Text)
+    , _lrvirfsOpportUnitySavingsColumnLabel :: !(Maybe Text)
+    , _lrvirfsErrorLabel :: !(Maybe Text)
     , _lrvirfsLsPerformanceCategoryDescription :: !(Maybe Text)
-    , _lrvirfsAuditGroupExpandTooltip          :: !(Maybe Text)
-    , _lrvirfsNotApplicableAuditsGroupTitle    :: !(Maybe Text)
+    , _lrvirfsAuditGroupExpandTooltip :: !(Maybe Text)
+    , _lrvirfsNotApplicableAuditsGroupTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1573,9 +1573,9 @@ instance ToJSON
 -- /See:/ 'lighthouseCategoryV5AuditRefsItem' smart constructor.
 data LighthouseCategoryV5AuditRefsItem =
   LighthouseCategoryV5AuditRefsItem'
-    { _lcvariGroup  :: !(Maybe Text)
+    { _lcvariGroup :: !(Maybe Text)
     , _lcvariWeight :: !(Maybe (Textual Double))
-    , _lcvariId     :: !(Maybe Text)
+    , _lcvariId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

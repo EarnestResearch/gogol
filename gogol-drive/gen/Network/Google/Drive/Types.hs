@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -556,9 +556,9 @@ module Network.Google.Drive.Types
     , plPermissions
     ) where
 
-import           Network.Google.Drive.Types.Product
-import           Network.Google.Drive.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Drive.Types.Product
+import Network.Google.Drive.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v3' of the Drive API. This contains the host and root path used as a starting point for constructing service requests.
 driveService :: ServiceConfig

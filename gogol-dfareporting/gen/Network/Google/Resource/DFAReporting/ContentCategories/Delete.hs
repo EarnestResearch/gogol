@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Delete
     , ccdId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.delete@ method which the
 -- 'ContentCategoriesDelete' request conforms to.
@@ -57,7 +57,7 @@ type ContentCategoriesDeleteResource =
 data ContentCategoriesDelete =
   ContentCategoriesDelete'
     { _ccdProFileId :: !(Textual Int64)
-    , _ccdId        :: !(Textual Int64)
+    , _ccdId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

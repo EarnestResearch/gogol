@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.UpdateSchema
     , idusCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.updateSchema@ method which the
 -- 'IndexingDatasourcesUpdateSchema' request conforms to.
@@ -66,13 +66,13 @@ type IndexingDatasourcesUpdateSchemaResource =
 -- /See:/ 'indexingDatasourcesUpdateSchema' smart constructor.
 data IndexingDatasourcesUpdateSchema =
   IndexingDatasourcesUpdateSchema'
-    { _idusXgafv          :: !(Maybe Xgafv)
+    { _idusXgafv :: !(Maybe Xgafv)
     , _idusUploadProtocol :: !(Maybe Text)
-    , _idusAccessToken    :: !(Maybe Text)
-    , _idusUploadType     :: !(Maybe Text)
-    , _idusPayload        :: !UpdateSchemaRequest
-    , _idusName           :: !Text
-    , _idusCallback       :: !(Maybe Text)
+    , _idusAccessToken :: !(Maybe Text)
+    , _idusUploadType :: !(Maybe Text)
+    , _idusPayload :: !UpdateSchemaRequest
+    , _idusName :: !Text
+    , _idusCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

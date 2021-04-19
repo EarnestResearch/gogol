@@ -17,8 +17,8 @@
 --
 module Network.Google.Discovery.Types.Product where
 
-import           Network.Google.Discovery.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Discovery.Types.Sum
+import Network.Google.Prelude
 
 -- | The schema for the response.
 --
@@ -94,21 +94,21 @@ instance ToJSON RestDescriptionParameters where
 -- /See:/ 'restMethod' smart constructor.
 data RestMethod =
   RestMethod'
-    { _rmSupportsMediaDownload   :: !(Maybe Bool)
-    , _rmParameterOrder          :: !(Maybe [Text])
-    , _rmMediaUpload             :: !(Maybe RestMethodMediaUpload)
-    , _rmHTTPMethod              :: !(Maybe Text)
-    , _rmPath                    :: !(Maybe Text)
-    , _rmResponse                :: !(Maybe RestMethodResponse)
-    , _rmSupportsMediaUpload     :: !(Maybe Bool)
-    , _rmScopes                  :: !(Maybe [Text])
-    , _rmSupportsSubscription    :: !(Maybe Bool)
-    , _rmParameters              :: !(Maybe RestMethodParameters)
-    , _rmId                      :: !(Maybe Text)
-    , _rmEtagRequired            :: !(Maybe Bool)
+    { _rmSupportsMediaDownload :: !(Maybe Bool)
+    , _rmParameterOrder :: !(Maybe [Text])
+    , _rmMediaUpload :: !(Maybe RestMethodMediaUpload)
+    , _rmHTTPMethod :: !(Maybe Text)
+    , _rmPath :: !(Maybe Text)
+    , _rmResponse :: !(Maybe RestMethodResponse)
+    , _rmSupportsMediaUpload :: !(Maybe Bool)
+    , _rmScopes :: !(Maybe [Text])
+    , _rmSupportsSubscription :: !(Maybe Bool)
+    , _rmParameters :: !(Maybe RestMethodParameters)
+    , _rmId :: !(Maybe Text)
+    , _rmEtagRequired :: !(Maybe Bool)
     , _rmUseMediaDownloadService :: !(Maybe Bool)
-    , _rmDescription             :: !(Maybe Text)
-    , _rmRequest                 :: !(Maybe RestMethodRequest)
+    , _rmDescription :: !(Maybe Text)
+    , _rmRequest :: !(Maybe RestMethodRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -310,7 +310,7 @@ instance ToJSON RestMethod where
 data RestResource =
   RestResource'
     { _rrResources :: !(Maybe RestResourceResources)
-    , _rrMethods   :: !(Maybe RestResourceMethods)
+    , _rrMethods :: !(Maybe RestResourceMethods)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -433,18 +433,18 @@ instance ToJSON RestDescriptionMethods where
 -- /See:/ 'directoryListItemsItem' smart constructor.
 data DirectoryListItemsItem =
   DirectoryListItemsItem'
-    { _dliiDiscoveryLink     :: !(Maybe Text)
-    , _dliiPreferred         :: !(Maybe Bool)
-    , _dliiKind              :: !Text
-    , _dliiIcons             :: !(Maybe DirectoryListItemsItemIcons)
-    , _dliiName              :: !(Maybe Text)
-    , _dliiVersion           :: !(Maybe Text)
+    { _dliiDiscoveryLink :: !(Maybe Text)
+    , _dliiPreferred :: !(Maybe Bool)
+    , _dliiKind :: !Text
+    , _dliiIcons :: !(Maybe DirectoryListItemsItemIcons)
+    , _dliiName :: !(Maybe Text)
+    , _dliiVersion :: !(Maybe Text)
     , _dliiDocumentationLink :: !(Maybe Text)
-    , _dliiId                :: !(Maybe Text)
-    , _dliiLabels            :: !(Maybe [Text])
-    , _dliiTitle             :: !(Maybe Text)
-    , _dliiDescription       :: !(Maybe Text)
-    , _dliiDiscoveryRestURL  :: !(Maybe Text)
+    , _dliiId :: !(Maybe Text)
+    , _dliiLabels :: !(Maybe [Text])
+    , _dliiTitle :: !(Maybe Text)
+    , _dliiDescription :: !(Maybe Text)
+    , _dliiDiscoveryRestURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -759,7 +759,7 @@ instance ToJSON
 -- /See:/ 'restMethodMediaUploadProtocolsSimple' smart constructor.
 data RestMethodMediaUploadProtocolsSimple =
   RestMethodMediaUploadProtocolsSimple'
-    { _rmmupsPath      :: !(Maybe Text)
+    { _rmmupsPath :: !(Maybe Text)
     , _rmmupsMultiPart :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -861,7 +861,7 @@ instance ToJSON RestDescriptionIcons where
 data JSONSchemaVariant =
   JSONSchemaVariant'
     { _jsvDiscriminant :: !(Maybe Text)
-    , _jsvMap          :: !(Maybe [JSONSchemaVariantMapItem])
+    , _jsvMap :: !(Maybe [JSONSchemaVariantMapItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -979,36 +979,36 @@ instance ToJSON RestDescriptionAuth where
 -- /See:/ 'restDescription' smart constructor.
 data RestDescription =
   RestDescription'
-    { _rdEtag                      :: !(Maybe Text)
-    , _rdSchemas                   :: !(Maybe RestDescriptionSchemas)
-    , _rdServicePath               :: !(Maybe Text)
-    , _rdBasePath                  :: !(Maybe Text)
-    , _rdKind                      :: !Text
+    { _rdEtag :: !(Maybe Text)
+    , _rdSchemas :: !(Maybe RestDescriptionSchemas)
+    , _rdServicePath :: !(Maybe Text)
+    , _rdBasePath :: !(Maybe Text)
+    , _rdKind :: !Text
     , _rdExponentialBackoffDefault :: !(Maybe Bool)
-    , _rdAuth                      :: !(Maybe RestDescriptionAuth)
-    , _rdIcons                     :: !(Maybe RestDescriptionIcons)
-    , _rdBaseURL                   :: !(Maybe Text)
-    , _rdProtocol                  :: !Text
-    , _rdOwnerName                 :: !(Maybe Text)
-    , _rdResources                 :: !(Maybe RestDescriptionResources)
-    , _rdOwnerDomain               :: !(Maybe Text)
-    , _rdBatchPath                 :: !(Maybe Text)
-    , _rdMethods                   :: !(Maybe RestDescriptionMethods)
-    , _rdName                      :: !(Maybe Text)
-    , _rdPackagePath               :: !(Maybe Text)
-    , _rdFeatures                  :: !(Maybe [Text])
-    , _rdVersionModule             :: !(Maybe Bool)
-    , _rdVersion                   :: !(Maybe Text)
-    , _rdParameters                :: !(Maybe RestDescriptionParameters)
-    , _rdDocumentationLink         :: !(Maybe Text)
-    , _rdRootURL                   :: !(Maybe Text)
-    , _rdId                        :: !(Maybe Text)
-    , _rdCanonicalName             :: !(Maybe Text)
-    , _rdLabels                    :: !(Maybe [Text])
-    , _rdDiscoveryVersion          :: !Text
-    , _rdTitle                     :: !(Maybe Text)
-    , _rdRevision                  :: !(Maybe Text)
-    , _rdDescription               :: !(Maybe Text)
+    , _rdAuth :: !(Maybe RestDescriptionAuth)
+    , _rdIcons :: !(Maybe RestDescriptionIcons)
+    , _rdBaseURL :: !(Maybe Text)
+    , _rdProtocol :: !Text
+    , _rdOwnerName :: !(Maybe Text)
+    , _rdResources :: !(Maybe RestDescriptionResources)
+    , _rdOwnerDomain :: !(Maybe Text)
+    , _rdBatchPath :: !(Maybe Text)
+    , _rdMethods :: !(Maybe RestDescriptionMethods)
+    , _rdName :: !(Maybe Text)
+    , _rdPackagePath :: !(Maybe Text)
+    , _rdFeatures :: !(Maybe [Text])
+    , _rdVersionModule :: !(Maybe Bool)
+    , _rdVersion :: !(Maybe Text)
+    , _rdParameters :: !(Maybe RestDescriptionParameters)
+    , _rdDocumentationLink :: !(Maybe Text)
+    , _rdRootURL :: !(Maybe Text)
+    , _rdId :: !(Maybe Text)
+    , _rdCanonicalName :: !(Maybe Text)
+    , _rdLabels :: !(Maybe [Text])
+    , _rdDiscoveryVersion :: !Text
+    , _rdTitle :: !(Maybe Text)
+    , _rdRevision :: !(Maybe Text)
+    , _rdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1345,26 +1345,26 @@ instance ToJSON RestDescription where
 -- /See:/ 'jsonSchema' smart constructor.
 data JSONSchema =
   JSONSchema'
-    { _jsAnnotations          :: !(Maybe JSONSchemaAnnotations)
-    , _jsVariant              :: !(Maybe JSONSchemaVariant)
-    , _jsLocation             :: !(Maybe Text)
-    , _jsRef                  :: !(Maybe Text)
-    , _jsPattern              :: !(Maybe Text)
-    , _jsMaximum              :: !(Maybe Text)
-    , _jsDefault              :: !(Maybe Text)
-    , _jsFormat               :: !(Maybe Text)
-    , _jsItems                :: !(Maybe JSONSchema)
-    , _jsMinimum              :: !(Maybe Text)
-    , _jsRequired             :: !(Maybe Bool)
-    , _jsId                   :: !(Maybe Text)
+    { _jsAnnotations :: !(Maybe JSONSchemaAnnotations)
+    , _jsVariant :: !(Maybe JSONSchemaVariant)
+    , _jsLocation :: !(Maybe Text)
+    , _jsRef :: !(Maybe Text)
+    , _jsPattern :: !(Maybe Text)
+    , _jsMaximum :: !(Maybe Text)
+    , _jsDefault :: !(Maybe Text)
+    , _jsFormat :: !(Maybe Text)
+    , _jsItems :: !(Maybe JSONSchema)
+    , _jsMinimum :: !(Maybe Text)
+    , _jsRequired :: !(Maybe Bool)
+    , _jsId :: !(Maybe Text)
     , _jsAdditionalProperties :: !(Maybe JSONSchema)
-    , _jsType                 :: !(Maybe Text)
-    , _jsEnum                 :: !(Maybe [Text])
-    , _jsRepeated             :: !(Maybe Bool)
-    , _jsReadOnly             :: !(Maybe Bool)
-    , _jsEnumDescriptions     :: !(Maybe [Text])
-    , _jsDescription          :: !(Maybe Text)
-    , _jsProperties           :: !(Maybe JSONSchemaProperties)
+    , _jsType :: !(Maybe Text)
+    , _jsEnum :: !(Maybe [Text])
+    , _jsRepeated :: !(Maybe Bool)
+    , _jsReadOnly :: !(Maybe Bool)
+    , _jsEnumDescriptions :: !(Maybe [Text])
+    , _jsDescription :: !(Maybe Text)
+    , _jsProperties :: !(Maybe JSONSchemaProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1645,7 +1645,7 @@ instance ToJSON RestDescriptionSchemas where
 -- /See:/ 'jsonSchemaVariantMapItem' smart constructor.
 data JSONSchemaVariantMapItem =
   JSONSchemaVariantMapItem'
-    { _jsvmiRef       :: !(Maybe Text)
+    { _jsvmiRef :: !(Maybe Text)
     , _jsvmiTypeValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1729,7 +1729,7 @@ instance ToJSON RestDescriptionResources where
 -- /See:/ 'restMethodMediaUploadProtocols' smart constructor.
 data RestMethodMediaUploadProtocols =
   RestMethodMediaUploadProtocols'
-    { _rmmupSimple    :: !(Maybe RestMethodMediaUploadProtocolsSimple)
+    { _rmmupSimple :: !(Maybe RestMethodMediaUploadProtocolsSimple)
     , _rmmupResumable :: !(Maybe RestMethodMediaUploadProtocolsResumable)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1857,8 +1857,8 @@ instance ToJSON RestMethodParameters where
 data RestMethodMediaUpload =
   RestMethodMediaUpload'
     { _rmmuProtocols :: !(Maybe RestMethodMediaUploadProtocols)
-    , _rmmuAccept    :: !(Maybe [Text])
-    , _rmmuMaxSize   :: !(Maybe Text)
+    , _rmmuAccept :: !(Maybe [Text])
+    , _rmmuMaxSize :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1957,7 +1957,7 @@ instance ToJSON JSONSchemaProperties where
 -- /See:/ 'restMethodMediaUploadProtocolsResumable' smart constructor.
 data RestMethodMediaUploadProtocolsResumable =
   RestMethodMediaUploadProtocolsResumable'
-    { _rmmuprPath      :: !(Maybe Text)
+    { _rmmuprPath :: !(Maybe Text)
     , _rmmuprMultiPart :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2012,8 +2012,8 @@ instance ToJSON
 -- /See:/ 'directoryList' smart constructor.
 data DirectoryList =
   DirectoryList'
-    { _dlKind             :: !Text
-    , _dlItems            :: !(Maybe [DirectoryListItemsItem])
+    { _dlKind :: !Text
+    , _dlItems :: !(Maybe [DirectoryListItemsItem])
     , _dlDiscoveryVersion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2075,7 +2075,7 @@ instance ToJSON DirectoryList where
 -- /See:/ 'restMethodRequest' smart constructor.
 data RestMethodRequest =
   RestMethodRequest'
-    { _rRef           :: !(Maybe Text)
+    { _rRef :: !(Maybe Text)
     , _rParameterName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

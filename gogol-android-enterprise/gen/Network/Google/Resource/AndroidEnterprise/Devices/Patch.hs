@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.Patch
     , dpDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.patch@ method which the
 -- 'DevicesPatch' request conforms to.
@@ -63,11 +63,11 @@ type DevicesPatchResource =
 -- /See:/ 'devicesPatch' smart constructor.
 data DevicesPatch =
   DevicesPatch'
-    { _dpUpdateMask   :: !(Maybe Text)
+    { _dpUpdateMask :: !(Maybe Text)
     , _dpEnterpriseId :: !Text
-    , _dpPayload      :: !Device
-    , _dpUserId       :: !Text
-    , _dpDeviceId     :: !Text
+    , _dpPayload :: !Device
+    , _dpUserId :: !Text
+    , _dpDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

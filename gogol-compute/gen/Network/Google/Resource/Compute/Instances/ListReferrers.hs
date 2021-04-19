@@ -44,8 +44,8 @@ module Network.Google.Resource.Compute.Instances.ListReferrers
     , ilrInstance
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.listReferrers@ method which the
 -- 'InstancesListReferrers' request conforms to.
@@ -73,13 +73,13 @@ type InstancesListReferrersResource =
 -- /See:/ 'instancesListReferrers' smart constructor.
 data InstancesListReferrers =
   InstancesListReferrers'
-    { _ilrOrderBy    :: !(Maybe Text)
-    , _ilrProject    :: !Text
-    , _ilrZone       :: !Text
-    , _ilrFilter     :: !(Maybe Text)
-    , _ilrPageToken  :: !(Maybe Text)
+    { _ilrOrderBy :: !(Maybe Text)
+    , _ilrProject :: !Text
+    , _ilrZone :: !Text
+    , _ilrFilter :: !(Maybe Text)
+    , _ilrPageToken :: !(Maybe Text)
     , _ilrMaxResults :: !(Textual Word32)
-    , _ilrInstance   :: !Text
+    , _ilrInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

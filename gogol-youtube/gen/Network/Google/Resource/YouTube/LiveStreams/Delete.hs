@@ -38,8 +38,8 @@ module Network.Google.Resource.YouTube.LiveStreams.Delete
     , lsdId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveStreams.delete@ method which the
 -- 'LiveStreamsDelete' request conforms to.
@@ -57,9 +57,9 @@ type LiveStreamsDeleteResource =
 -- /See:/ 'liveStreamsDelete' smart constructor.
 data LiveStreamsDelete =
   LiveStreamsDelete'
-    { _lsdOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _lsdOnBehalfOfContentOwner :: !(Maybe Text)
     , _lsdOnBehalfOfContentOwnerChannel :: !(Maybe Text)
-    , _lsdId                            :: !Text
+    , _lsdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

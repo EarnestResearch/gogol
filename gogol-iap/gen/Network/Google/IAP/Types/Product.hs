@@ -17,8 +17,8 @@
 --
 module Network.Google.IAP.Types.Product where
 
-import           Network.Google.IAP.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.IAP.Types.Sum
+import Network.Google.Prelude
 
 -- | Represents an expression text. Example: title: \"User account presence\"
 -- description: \"Determines whether the request has a user account\"
@@ -27,9 +27,9 @@ import           Network.Google.Prelude
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -268,8 +268,8 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -338,8 +338,8 @@ instance ToJSON Policy where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

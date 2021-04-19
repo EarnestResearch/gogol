@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Conversions.Batchupdate
     , conPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.conversions.batchupdate@ method which the
 -- 'ConversionsBatchupdate' request conforms to.
@@ -59,7 +59,7 @@ type ConversionsBatchupdateResource =
 data ConversionsBatchupdate =
   ConversionsBatchupdate'
     { _conProFileId :: !(Textual Int64)
-    , _conPayload   :: !ConversionsBatchUpdateRequest
+    , _conPayload :: !ConversionsBatchUpdateRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

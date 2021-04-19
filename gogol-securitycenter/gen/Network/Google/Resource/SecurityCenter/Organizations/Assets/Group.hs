@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Assets.Group
     , oagCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.assets.group@ method which the
 -- 'OrganizationsAssetsGroup' request conforms to.
@@ -67,13 +67,13 @@ type OrganizationsAssetsGroupResource =
 -- /See:/ 'organizationsAssetsGroup' smart constructor.
 data OrganizationsAssetsGroup =
   OrganizationsAssetsGroup'
-    { _oagParent         :: !Text
-    , _oagXgafv          :: !(Maybe Xgafv)
+    { _oagParent :: !Text
+    , _oagXgafv :: !(Maybe Xgafv)
     , _oagUploadProtocol :: !(Maybe Text)
-    , _oagAccessToken    :: !(Maybe Text)
-    , _oagUploadType     :: !(Maybe Text)
-    , _oagPayload        :: !GroupAssetsRequest
-    , _oagCallback       :: !(Maybe Text)
+    , _oagAccessToken :: !(Maybe Text)
+    , _oagUploadType :: !(Maybe Text)
+    , _oagPayload :: !GroupAssetsRequest
+    , _oagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

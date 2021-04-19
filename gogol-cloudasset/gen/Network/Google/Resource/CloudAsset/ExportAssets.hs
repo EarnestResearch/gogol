@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudAsset.ExportAssets
     , eaCallback
     ) where
 
-import           Network.Google.CloudAsset.Types
-import           Network.Google.Prelude
+import Network.Google.CloudAsset.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudasset.exportAssets@ method which the
 -- 'ExportAssets' request conforms to.
@@ -70,13 +70,13 @@ type ExportAssetsResource =
 -- /See:/ 'exportAssets' smart constructor.
 data ExportAssets =
   ExportAssets'
-    { _eaParent         :: !Text
-    , _eaXgafv          :: !(Maybe Xgafv)
+    { _eaParent :: !Text
+    , _eaXgafv :: !(Maybe Xgafv)
     , _eaUploadProtocol :: !(Maybe Text)
-    , _eaAccessToken    :: !(Maybe Text)
-    , _eaUploadType     :: !(Maybe Text)
-    , _eaPayload        :: !ExportAssetsRequest
-    , _eaCallback       :: !(Maybe Text)
+    , _eaAccessToken :: !(Maybe Text)
+    , _eaUploadType :: !(Maybe Text)
+    , _eaPayload :: !ExportAssetsRequest
+    , _eaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

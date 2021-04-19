@@ -663,17 +663,17 @@ module Network.Google.ServiceUsage
     , gasvscQuota
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.ServiceUsage.Operations.Cancel
-import           Network.Google.Resource.ServiceUsage.Operations.Delete
-import           Network.Google.Resource.ServiceUsage.Operations.Get
-import           Network.Google.Resource.ServiceUsage.Operations.List
-import           Network.Google.Resource.ServiceUsage.Services.BatchEnable
-import           Network.Google.Resource.ServiceUsage.Services.Disable
-import           Network.Google.Resource.ServiceUsage.Services.Enable
-import           Network.Google.Resource.ServiceUsage.Services.Get
-import           Network.Google.Resource.ServiceUsage.Services.List
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.Resource.ServiceUsage.Operations.Cancel
+import Network.Google.Resource.ServiceUsage.Operations.Delete
+import Network.Google.Resource.ServiceUsage.Operations.Get
+import Network.Google.Resource.ServiceUsage.Operations.List
+import Network.Google.Resource.ServiceUsage.Services.BatchEnable
+import Network.Google.Resource.ServiceUsage.Services.Disable
+import Network.Google.Resource.ServiceUsage.Services.Enable
+import Network.Google.Resource.ServiceUsage.Services.Get
+import Network.Google.Resource.ServiceUsage.Services.List
+import Network.Google.ServiceUsage.Types
 
 {- $resources
 TODO

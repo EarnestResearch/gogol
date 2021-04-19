@@ -46,8 +46,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.DataSources.CheckVa
     , pdscvcCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.dataSources.checkValidCreds@ method which the
 -- 'ProjectsDataSourcesCheckValidCreds' request conforms to.
@@ -72,13 +72,13 @@ type ProjectsDataSourcesCheckValidCredsResource =
 -- /See:/ 'projectsDataSourcesCheckValidCreds' smart constructor.
 data ProjectsDataSourcesCheckValidCreds =
   ProjectsDataSourcesCheckValidCreds'
-    { _pdscvcXgafv          :: !(Maybe Xgafv)
+    { _pdscvcXgafv :: !(Maybe Xgafv)
     , _pdscvcUploadProtocol :: !(Maybe Text)
-    , _pdscvcAccessToken    :: !(Maybe Text)
-    , _pdscvcUploadType     :: !(Maybe Text)
-    , _pdscvcPayload        :: !CheckValidCredsRequest
-    , _pdscvcName           :: !Text
-    , _pdscvcCallback       :: !(Maybe Text)
+    , _pdscvcAccessToken :: !(Maybe Text)
+    , _pdscvcUploadType :: !(Maybe Text)
+    , _pdscvcPayload :: !CheckValidCredsRequest
+    , _pdscvcName :: !Text
+    , _pdscvcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

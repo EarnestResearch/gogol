@@ -40,14 +40,14 @@ module Network.Google.Resource.Content.Orderreports.Listdisbursements
     , olMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderreports.listdisbursements@ method which the
 -- 'OrderreportsListdisbursements' request conforms to.
 type OrderreportsListdisbursementsResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orderreports" :>
              "disbursements" :>
@@ -63,11 +63,11 @@ type OrderreportsListdisbursementsResource =
 -- /See:/ 'orderreportsListdisbursements' smart constructor.
 data OrderreportsListdisbursements =
   OrderreportsListdisbursements'
-    { _olDisbursementEndDate   :: !(Maybe Text)
-    , _olMerchantId            :: !(Textual Word64)
-    , _olPageToken             :: !(Maybe Text)
+    { _olDisbursementEndDate :: !(Maybe Text)
+    , _olMerchantId :: !(Textual Word64)
+    , _olPageToken :: !(Maybe Text)
     , _olDisbursementStartDate :: !Text
-    , _olMaxResults            :: !(Maybe (Textual Word32))
+    , _olMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

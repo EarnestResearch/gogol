@@ -39,8 +39,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.DataPointChanges.List
     , udsdpclPageToken
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.dataPointChanges.list@ method which the
 -- 'UsersDataSourcesDataPointChangesList' request conforms to.
@@ -63,9 +63,9 @@ type UsersDataSourcesDataPointChangesListResource =
 data UsersDataSourcesDataPointChangesList =
   UsersDataSourcesDataPointChangesList'
     { _udsdpclDataSourceId :: !Text
-    , _udsdpclUserId       :: !Text
-    , _udsdpclLimit        :: !(Maybe (Textual Int32))
-    , _udsdpclPageToken    :: !(Maybe Text)
+    , _udsdpclUserId :: !Text
+    , _udsdpclLimit :: !(Maybe (Textual Int32))
+    , _udsdpclPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

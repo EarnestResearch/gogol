@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Get
     , agPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.get@ method which the
 -- 'AccountsGet' request conforms to.

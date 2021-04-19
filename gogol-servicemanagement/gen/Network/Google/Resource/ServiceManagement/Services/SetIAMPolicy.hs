@@ -43,8 +43,8 @@ module Network.Google.Resource.ServiceManagement.Services.SetIAMPolicy
     , ssipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.setIamPolicy@ method which the
 -- 'ServicesSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ServicesSetIAMPolicyResource =
 -- /See:/ 'servicesSetIAMPolicy' smart constructor.
 data ServicesSetIAMPolicy =
   ServicesSetIAMPolicy'
-    { _ssipXgafv          :: !(Maybe Xgafv)
+    { _ssipXgafv :: !(Maybe Xgafv)
     , _ssipUploadProtocol :: !(Maybe Text)
-    , _ssipAccessToken    :: !(Maybe Text)
-    , _ssipUploadType     :: !(Maybe Text)
-    , _ssipPayload        :: !SetIAMPolicyRequest
-    , _ssipResource       :: !Text
-    , _ssipCallback       :: !(Maybe Text)
+    , _ssipAccessToken :: !(Maybe Text)
+    , _ssipUploadType :: !(Maybe Text)
+    , _ssipPayload :: !SetIAMPolicyRequest
+    , _ssipResource :: !Text
+    , _ssipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

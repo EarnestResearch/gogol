@@ -37,8 +37,8 @@ module Network.Google.Resource.GroupsSettings.Groups.Patch
     , gpGroupUniqueId
     ) where
 
-import           Network.Google.GroupsSettings.Types
-import           Network.Google.Prelude
+import Network.Google.GroupsSettings.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @groupsSettings.groups.patch@ method which the
 -- 'GroupsPatch' request conforms to.
@@ -55,7 +55,7 @@ type GroupsPatchResource =
 -- /See:/ 'groupsPatch' smart constructor.
 data GroupsPatch =
   GroupsPatch'
-    { _gpPayload       :: !Groups
+    { _gpPayload :: !Groups
     , _gpGroupUniqueId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

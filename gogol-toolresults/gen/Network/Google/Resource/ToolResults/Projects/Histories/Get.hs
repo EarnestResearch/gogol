@@ -40,8 +40,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Get
     , phgProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.get@ method which the
 -- 'ProjectsHistoriesGet' request conforms to.

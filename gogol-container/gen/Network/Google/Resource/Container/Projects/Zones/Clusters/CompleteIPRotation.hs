@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.CompleteIPRotat
     , pzccirCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.completeIpRotation@ method which the
 -- 'ProjectsZonesClustersCompleteIPRotation' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsZonesClustersCompleteIPRotationResource
 -- /See:/ 'projectsZonesClustersCompleteIPRotation' smart constructor.
 data ProjectsZonesClustersCompleteIPRotation =
   ProjectsZonesClustersCompleteIPRotation'
-    { _pzccirXgafv          :: !(Maybe Xgafv)
+    { _pzccirXgafv :: !(Maybe Xgafv)
     , _pzccirUploadProtocol :: !(Maybe Text)
-    , _pzccirAccessToken    :: !(Maybe Text)
-    , _pzccirUploadType     :: !(Maybe Text)
-    , _pzccirZone           :: !Text
-    , _pzccirPayload        :: !CompleteIPRotationRequest
-    , _pzccirClusterId      :: !Text
-    , _pzccirProjectId      :: !Text
-    , _pzccirCallback       :: !(Maybe Text)
+    , _pzccirAccessToken :: !(Maybe Text)
+    , _pzccirUploadType :: !(Maybe Text)
+    , _pzccirZone :: !Text
+    , _pzccirPayload :: !CompleteIPRotationRequest
+    , _pzccirClusterId :: !Text
+    , _pzccirProjectId :: !Text
+    , _pzccirCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

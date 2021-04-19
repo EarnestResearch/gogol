@@ -43,8 +43,8 @@ module Network.Google.Resource.AdExchangeBuyer2.Accounts.Creatives.Create
     , acccCallback
     ) where
 
-import           Network.Google.AdExchangeBuyer2.Types
-import           Network.Google.Prelude
+import Network.Google.AdExchangeBuyer2.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexchangebuyer2.accounts.creatives.create@ method which the
 -- 'AccountsCreativesCreate' request conforms to.
@@ -67,14 +67,14 @@ type AccountsCreativesCreateResource =
 -- /See:/ 'accountsCreativesCreate' smart constructor.
 data AccountsCreativesCreate =
   AccountsCreativesCreate'
-    { _acccXgafv           :: !(Maybe Xgafv)
-    , _acccUploadProtocol  :: !(Maybe Text)
-    , _acccAccessToken     :: !(Maybe Text)
-    , _acccUploadType      :: !(Maybe Text)
-    , _acccPayload         :: !Creative
-    , _acccAccountId       :: !Text
+    { _acccXgafv :: !(Maybe Xgafv)
+    , _acccUploadProtocol :: !(Maybe Text)
+    , _acccAccessToken :: !(Maybe Text)
+    , _acccUploadType :: !(Maybe Text)
+    , _acccPayload :: !Creative
+    , _acccAccountId :: !Text
     , _acccDuplicateIdMode :: !(Maybe Text)
-    , _acccCallback        :: !(Maybe Text)
+    , _acccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

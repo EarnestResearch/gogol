@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.Delete
     , udUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.delete@ method which the
 -- 'UsersDelete' request conforms to.
@@ -57,7 +57,7 @@ type UsersDeleteResource =
 data UsersDelete =
   UsersDelete'
     { _udEnterpriseId :: !Text
-    , _udUserId       :: !Text
+    , _udUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

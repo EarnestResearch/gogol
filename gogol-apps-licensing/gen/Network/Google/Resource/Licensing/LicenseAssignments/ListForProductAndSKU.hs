@@ -40,8 +40,8 @@ module Network.Google.Resource.Licensing.LicenseAssignments.ListForProductAndSKU
     , lalfpaskuMaxResults
     ) where
 
-import           Network.Google.AppsLicensing.Types
-import           Network.Google.Prelude
+import Network.Google.AppsLicensing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @licensing.licenseAssignments.listForProductAndSku@ method which the
 -- 'LicenseAssignmentsListForProductAndSKU' request conforms to.
@@ -65,10 +65,10 @@ type LicenseAssignmentsListForProductAndSKUResource =
 -- /See:/ 'licenseAssignmentsListForProductAndSKU' smart constructor.
 data LicenseAssignmentsListForProductAndSKU =
   LicenseAssignmentsListForProductAndSKU'
-    { _lalfpaskuSKUId      :: !Text
+    { _lalfpaskuSKUId :: !Text
     , _lalfpaskuCustomerId :: !Text
-    , _lalfpaskuPageToken  :: !Text
-    , _lalfpaskuProductId  :: !Text
+    , _lalfpaskuPageToken :: !Text
+    , _lalfpaskuProductId :: !Text
     , _lalfpaskuMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

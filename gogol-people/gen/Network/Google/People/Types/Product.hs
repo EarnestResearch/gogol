@@ -17,8 +17,8 @@
 --
 module Network.Google.People.Types.Product where
 
-import           Network.Google.People.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.People.Types.Sum
+import Network.Google.Prelude
 
 -- | A person\'s SIP address. Session Initial Protocol addresses are used for
 -- VoIP communications to make voice or video calls over the internet.
@@ -26,9 +26,9 @@ import           Network.Google.Prelude
 -- /See:/ 'sipAddress' smart constructor.
 data SipAddress =
   SipAddress'
-    { _saValue         :: !(Maybe Text)
-    , _saMetadata      :: !(Maybe FieldMetadata)
-    , _saType          :: !(Maybe Text)
+    { _saValue :: !(Maybe Text)
+    , _saMetadata :: !(Maybe FieldMetadata)
+    , _saType :: !(Maybe Text)
     , _saFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -103,8 +103,8 @@ instance ToJSON SipAddress where
 -- /See:/ 'photo' smart constructor.
 data Photo =
   Photo'
-    { _pDefault  :: !(Maybe Bool)
-    , _pURL      :: !(Maybe Text)
+    { _pDefault :: !(Maybe Bool)
+    , _pURL :: !(Maybe Text)
     , _pMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -130,7 +130,7 @@ pDefault :: Lens' Photo (Maybe Bool)
 pDefault = lens _pDefault (\ s a -> s{_pDefault = a})
 
 -- | The URL of the photo. You can change the desired size by appending a
--- query parameter \`sz=\`size at the end of the url. Example:
+-- query parameter \`sz=\`'size' at the end of the url. Example:
 -- \`https:\/\/lh3.googleusercontent.com\/-T_wVWLlmg7w\/AAAAAAAAAAI\/AAAAAAAABa8\/00gzXvDBYqw\/s100\/photo.jpg?sz=50\`
 pURL :: Lens' Photo (Maybe Text)
 pURL = lens _pURL (\ s a -> s{_pURL = a})
@@ -160,9 +160,9 @@ instance ToJSON Photo where
 -- /See:/ 'event' smart constructor.
 data Event =
   Event'
-    { _eDate          :: !(Maybe Date)
-    , _eMetadata      :: !(Maybe FieldMetadata)
-    , _eType          :: !(Maybe Text)
+    { _eDate :: !(Maybe Date)
+    , _eMetadata :: !(Maybe FieldMetadata)
+    , _eType :: !(Maybe Text)
     , _eFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -233,11 +233,11 @@ instance ToJSON Event where
 -- /See:/ 'listConnectionsResponse' smart constructor.
 data ListConnectionsResponse =
   ListConnectionsResponse'
-    { _lcrTotalItems    :: !(Maybe (Textual Int32))
+    { _lcrTotalItems :: !(Maybe (Textual Int32))
     , _lcrNextPageToken :: !(Maybe Text)
-    , _lcrConnections   :: !(Maybe [Person])
+    , _lcrConnections :: !(Maybe [Person])
     , _lcrNextSyncToken :: !(Maybe Text)
-    , _lcrTotalPeople   :: !(Maybe (Textual Int32))
+    , _lcrTotalPeople :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -362,7 +362,7 @@ instance ToJSON ListConnectionsResponse where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -423,8 +423,8 @@ instance ToJSON Status where
 -- /See:/ 'contactGroupResponse' smart constructor.
 data ContactGroupResponse =
   ContactGroupResponse'
-    { _cgrStatus                :: !(Maybe Status)
-    , _cgrContactGroup          :: !(Maybe ContactGroup)
+    { _cgrStatus :: !(Maybe Status)
+    , _cgrContactGroup :: !(Maybe ContactGroup)
     , _cgrRequestedResourceName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -488,14 +488,14 @@ instance ToJSON ContactGroupResponse where
 -- /See:/ 'contactGroup' smart constructor.
 data ContactGroup =
   ContactGroup'
-    { _cgEtag                :: !(Maybe Text)
-    , _cgResourceName        :: !(Maybe Text)
+    { _cgEtag :: !(Maybe Text)
+    , _cgResourceName :: !(Maybe Text)
     , _cgMemberResourceNames :: !(Maybe [Text])
-    , _cgFormattedName       :: !(Maybe Text)
-    , _cgName                :: !(Maybe Text)
-    , _cgGroupType           :: !(Maybe ContactGroupGroupType)
-    , _cgMetadata            :: !(Maybe ContactGroupMetadata)
-    , _cgMemberCount         :: !(Maybe (Textual Int32))
+    , _cgFormattedName :: !(Maybe Text)
+    , _cgName :: !(Maybe Text)
+    , _cgGroupType :: !(Maybe ContactGroupGroupType)
+    , _cgMetadata :: !(Maybe ContactGroupMetadata)
+    , _cgMemberCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -540,7 +540,7 @@ cgEtag :: Lens' ContactGroup (Maybe Text)
 cgEtag = lens _cgEtag (\ s a -> s{_cgEtag = a})
 
 -- | The resource name for the contact group, assigned by the server. An
--- ASCII string, in the form of \`contactGroups\/\`contact_group_id.
+-- ASCII string, in the form of \`contactGroups\/\`'contact_group_id'.
 cgResourceName :: Lens' ContactGroup (Maybe Text)
 cgResourceName
   = lens _cgResourceName
@@ -744,8 +744,8 @@ instance ToJSON DomainMembership where
 -- /See:/ 'relationshipInterest' smart constructor.
 data RelationshipInterest =
   RelationshipInterest'
-    { _riValue          :: !(Maybe Text)
-    , _riMetadata       :: !(Maybe FieldMetadata)
+    { _riValue :: !(Maybe Text)
+    , _riMetadata :: !(Maybe FieldMetadata)
     , _riFormattedValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -807,7 +807,7 @@ instance ToJSON RelationshipInterest where
 -- /See:/ 'braggingRights' smart constructor.
 data BraggingRights =
   BraggingRights'
-    { _brValue    :: !(Maybe Text)
+    { _brValue :: !(Maybe Text)
     , _brMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -854,9 +854,9 @@ instance ToJSON BraggingRights where
 -- /See:/ 'membership' smart constructor.
 data Membership =
   Membership'
-    { _mDomainMembership       :: !(Maybe DomainMembership)
+    { _mDomainMembership :: !(Maybe DomainMembership)
     , _mContactGroupMembership :: !(Maybe ContactGroupMembership)
-    , _mMetadata               :: !(Maybe FieldMetadata)
+    , _mMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -924,37 +924,37 @@ instance ToJSON Membership where
 -- /See:/ 'person' smart constructor.
 data Person =
   Person'
-    { _perEmailAddresses        :: !(Maybe [EmailAddress])
-    , _perAgeRange              :: !(Maybe PersonAgeRange)
-    , _perEtag                  :: !(Maybe Text)
-    , _perResidences            :: !(Maybe [Residence])
-    , _perBiographies           :: !(Maybe [Biography])
-    , _perTaglines              :: !(Maybe [Tagline])
-    , _perBraggingRights        :: !(Maybe [BraggingRights])
-    , _perBirthdays             :: !(Maybe [Birthday])
-    , _perResourceName          :: !(Maybe Text)
-    , _perRelations             :: !(Maybe [Relation])
-    , _perURLs                  :: !(Maybe [URL])
-    , _perAddresses             :: !(Maybe [Address])
-    , _perUserDefined           :: !(Maybe [UserDefined])
-    , _perNicknames             :: !(Maybe [Nickname])
-    , _perRelationshipStatuses  :: !(Maybe [RelationshipStatus])
-    , _perImClients             :: !(Maybe [ImClient])
-    , _perPhoneNumbers          :: !(Maybe [PhoneNumber])
-    , _perOccupations           :: !(Maybe [Occupation])
-    , _perNames                 :: !(Maybe [Name])
-    , _perGenders               :: !(Maybe [Gender])
-    , _perPhotos                :: !(Maybe [Photo])
-    , _perAgeRanges             :: !(Maybe [AgeRangeType])
-    , _perEvents                :: !(Maybe [Event])
-    , _perCoverPhotos           :: !(Maybe [CoverPhoto])
-    , _perSkills                :: !(Maybe [Skill])
-    , _perSipAddresses          :: !(Maybe [SipAddress])
-    , _perMetadata              :: !(Maybe PersonMetadata)
-    , _perInterests             :: !(Maybe [Interest])
-    , _perOrganizations         :: !(Maybe [Organization])
-    , _perLocales               :: !(Maybe [Locale])
-    , _perMemberships           :: !(Maybe [Membership])
+    { _perEmailAddresses :: !(Maybe [EmailAddress])
+    , _perAgeRange :: !(Maybe PersonAgeRange)
+    , _perEtag :: !(Maybe Text)
+    , _perResidences :: !(Maybe [Residence])
+    , _perBiographies :: !(Maybe [Biography])
+    , _perTaglines :: !(Maybe [Tagline])
+    , _perBraggingRights :: !(Maybe [BraggingRights])
+    , _perBirthdays :: !(Maybe [Birthday])
+    , _perResourceName :: !(Maybe Text)
+    , _perRelations :: !(Maybe [Relation])
+    , _perURLs :: !(Maybe [URL])
+    , _perAddresses :: !(Maybe [Address])
+    , _perUserDefined :: !(Maybe [UserDefined])
+    , _perNicknames :: !(Maybe [Nickname])
+    , _perRelationshipStatuses :: !(Maybe [RelationshipStatus])
+    , _perImClients :: !(Maybe [ImClient])
+    , _perPhoneNumbers :: !(Maybe [PhoneNumber])
+    , _perOccupations :: !(Maybe [Occupation])
+    , _perNames :: !(Maybe [Name])
+    , _perGenders :: !(Maybe [Gender])
+    , _perPhotos :: !(Maybe [Photo])
+    , _perAgeRanges :: !(Maybe [AgeRangeType])
+    , _perEvents :: !(Maybe [Event])
+    , _perCoverPhotos :: !(Maybe [CoverPhoto])
+    , _perSkills :: !(Maybe [Skill])
+    , _perSipAddresses :: !(Maybe [SipAddress])
+    , _perMetadata :: !(Maybe PersonMetadata)
+    , _perInterests :: !(Maybe [Interest])
+    , _perOrganizations :: !(Maybe [Organization])
+    , _perLocales :: !(Maybe [Locale])
+    , _perMemberships :: !(Maybe [Membership])
     , _perRelationshipInterests :: !(Maybe [RelationshipInterest])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1125,7 +1125,7 @@ perBirthdays
 
 -- | The resource name for the person, assigned by the server. An ASCII
 -- string with a max length of 27 characters, in the form of
--- \`people\/\`person_id.
+-- \`people\/\`'person_id'.
 perResourceName :: Lens' Person (Maybe Text)
 perResourceName
   = lens _perResourceName
@@ -1406,7 +1406,7 @@ instance ToJSON Empty where
 data ListContactGroupsResponse =
   ListContactGroupsResponse'
     { _lcgrContactGroups :: !(Maybe [ContactGroup])
-    , _lcgrTotalItems    :: !(Maybe (Textual Int32))
+    , _lcgrTotalItems :: !(Maybe (Textual Int32))
     , _lcgrNextPageToken :: !(Maybe Text)
     , _lcgrNextSyncToken :: !(Maybe Text)
     }
@@ -1488,7 +1488,7 @@ instance ToJSON ListContactGroupsResponse where
 data ContactGroupMembership =
   ContactGroupMembership'
     { _cgmContactGroupResourceName :: !(Maybe Text)
-    , _cgmContactGroupId           :: !(Maybe Text)
+    , _cgmContactGroupId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1508,7 +1508,7 @@ contactGroupMembership =
 
 
 -- | The resource name for the contact group, assigned by the server. An
--- ASCII string, in the form of \`contactGroups\/\`contact_group_id. Only
+-- ASCII string, in the form of \`contactGroups\/\`'contact_group_id'. Only
 -- contact_group_resource_name can be used for modifying memberships. Any
 -- contact group membership can be removed, but only user group or
 -- \"myContacts\" or \"starred\" system groups memberships can be added. A
@@ -1545,8 +1545,8 @@ instance ToJSON ContactGroupMembership where
 -- /See:/ 'userDefined' smart constructor.
 data UserDefined =
   UserDefined'
-    { _udValue    :: !(Maybe Text)
-    , _udKey      :: !(Maybe Text)
+    { _udValue :: !(Maybe Text)
+    , _udKey :: !(Maybe Text)
     , _udMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1600,7 +1600,7 @@ instance ToJSON UserDefined where
 -- /See:/ 'locale' smart constructor.
 data Locale =
   Locale'
-    { _lValue    :: !(Maybe Text)
+    { _lValue :: !(Maybe Text)
     , _lMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1646,8 +1646,8 @@ instance ToJSON Locale where
 -- /See:/ 'relationshipStatus' smart constructor.
 data RelationshipStatus =
   RelationshipStatus'
-    { _rsValue          :: !(Maybe Text)
-    , _rsMetadata       :: !(Maybe FieldMetadata)
+    { _rsValue :: !(Maybe Text)
+    , _rsMetadata :: !(Maybe FieldMetadata)
     , _rsFormattedValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1710,9 +1710,9 @@ instance ToJSON RelationshipStatus where
 -- /See:/ 'url' smart constructor.
 data URL =
   URL'
-    { _uValue         :: !(Maybe Text)
-    , _uMetadata      :: !(Maybe FieldMetadata)
-    , _uType          :: !(Maybe Text)
+    { _uValue :: !(Maybe Text)
+    , _uMetadata :: !(Maybe FieldMetadata)
+    , _uType :: !(Maybe Text)
     , _uFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1822,18 +1822,18 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'address' smart constructor.
 data Address =
   Address'
-    { _aStreetAddress   :: !(Maybe Text)
-    , _aPoBox           :: !(Maybe Text)
-    , _aCountry         :: !(Maybe Text)
-    , _aPostalCode      :: !(Maybe Text)
+    { _aStreetAddress :: !(Maybe Text)
+    , _aPoBox :: !(Maybe Text)
+    , _aCountry :: !(Maybe Text)
+    , _aPostalCode :: !(Maybe Text)
     , _aExtendedAddress :: !(Maybe Text)
-    , _aCity            :: !(Maybe Text)
-    , _aMetadata        :: !(Maybe FieldMetadata)
-    , _aCountryCode     :: !(Maybe Text)
-    , _aFormattedValue  :: !(Maybe Text)
-    , _aRegion          :: !(Maybe Text)
-    , _aType            :: !(Maybe Text)
-    , _aFormattedType   :: !(Maybe Text)
+    , _aCity :: !(Maybe Text)
+    , _aMetadata :: !(Maybe FieldMetadata)
+    , _aCountryCode :: !(Maybe Text)
+    , _aFormattedValue :: !(Maybe Text)
+    , _aRegion :: !(Maybe Text)
+    , _aType :: !(Maybe Text)
+    , _aFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1986,7 +1986,7 @@ instance ToJSON Address where
 data ProFileMetadata =
   ProFileMetadata'
     { _pfmObjectType :: !(Maybe ProFileMetadataObjectType)
-    , _pfmUserTypes  :: !(Maybe [Text])
+    , _pfmUserTypes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2037,9 +2037,9 @@ instance ToJSON ProFileMetadata where
 -- /See:/ 'relation' smart constructor.
 data Relation =
   Relation'
-    { _rPerson        :: !(Maybe Text)
-    , _rMetadata      :: !(Maybe FieldMetadata)
-    , _rType          :: !(Maybe Text)
+    { _rPerson :: !(Maybe Text)
+    , _rMetadata :: !(Maybe FieldMetadata)
+    , _rType :: !(Maybe Text)
     , _rFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2155,8 +2155,8 @@ instance ToJSON GetPeopleResponse where
 -- /See:/ 'birthday' smart constructor.
 data Birthday =
   Birthday'
-    { _bText     :: !(Maybe Text)
-    , _bDate     :: !(Maybe Date)
+    { _bText :: !(Maybe Text)
+    , _bDate :: !(Maybe Date)
     , _bMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2215,8 +2215,8 @@ instance ToJSON Birthday where
 -- /See:/ 'date' smart constructor.
 data Date =
   Date'
-    { _dDay   :: !(Maybe (Textual Int32))
-    , _dYear  :: !(Maybe (Textual Int32))
+    { _dDay :: !(Maybe (Textual Int32))
+    , _dYear :: !(Maybe (Textual Int32))
     , _dMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2277,7 +2277,7 @@ instance ToJSON Date where
 -- /See:/ 'tagline' smart constructor.
 data Tagline =
   Tagline'
-    { _tValue    :: !(Maybe Text)
+    { _tValue :: !(Maybe Text)
     , _tMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2322,8 +2322,8 @@ instance ToJSON Tagline where
 -- /See:/ 'residence' smart constructor.
 data Residence =
   Residence'
-    { _resValue    :: !(Maybe Text)
-    , _resCurrent  :: !(Maybe Bool)
+    { _resValue :: !(Maybe Text)
+    , _resCurrent :: !(Maybe Bool)
     , _resMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2428,8 +2428,8 @@ instance ToJSON AgeRangeType where
 -- /See:/ 'gender' smart constructor.
 data Gender =
   Gender'
-    { _gValue          :: !(Maybe Text)
-    , _gMetadata       :: !(Maybe FieldMetadata)
+    { _gValue :: !(Maybe Text)
+    , _gMetadata :: !(Maybe FieldMetadata)
     , _gFormattedValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2488,20 +2488,20 @@ instance ToJSON Gender where
 -- /See:/ 'name' smart constructor.
 data Name =
   Name'
-    { _nGivenName               :: !(Maybe Text)
+    { _nGivenName :: !(Maybe Text)
     , _nPhoneticHonorificSuffix :: !(Maybe Text)
-    , _nMiddleName              :: !(Maybe Text)
-    , _nPhoneticMiddleName      :: !(Maybe Text)
-    , _nPhoneticFamilyName      :: !(Maybe Text)
+    , _nMiddleName :: !(Maybe Text)
+    , _nPhoneticMiddleName :: !(Maybe Text)
+    , _nPhoneticFamilyName :: !(Maybe Text)
     , _nPhoneticHonorificPrefix :: !(Maybe Text)
-    , _nHonorificPrefix         :: !(Maybe Text)
-    , _nFamilyName              :: !(Maybe Text)
-    , _nMetadata                :: !(Maybe FieldMetadata)
-    , _nDisplayName             :: !(Maybe Text)
-    , _nDisplayNameLastFirst    :: !(Maybe Text)
-    , _nPhoneticGivenName       :: !(Maybe Text)
-    , _nHonorificSuffix         :: !(Maybe Text)
-    , _nPhoneticFullName        :: !(Maybe Text)
+    , _nHonorificPrefix :: !(Maybe Text)
+    , _nFamilyName :: !(Maybe Text)
+    , _nMetadata :: !(Maybe FieldMetadata)
+    , _nDisplayName :: !(Maybe Text)
+    , _nDisplayNameLastFirst :: !(Maybe Text)
+    , _nPhoneticGivenName :: !(Maybe Text)
+    , _nHonorificSuffix :: !(Maybe Text)
+    , _nPhoneticFullName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2688,8 +2688,8 @@ instance ToJSON Name where
 data FieldMetadata =
   FieldMetadata'
     { _fmVerified :: !(Maybe Bool)
-    , _fmPrimary  :: !(Maybe Bool)
-    , _fmSource   :: !(Maybe Source)
+    , _fmPrimary :: !(Maybe Bool)
+    , _fmSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2749,9 +2749,9 @@ instance ToJSON FieldMetadata where
 data PhoneNumber =
   PhoneNumber'
     { _pnCanonicalForm :: !(Maybe Text)
-    , _pnValue         :: !(Maybe Text)
-    , _pnMetadata      :: !(Maybe FieldMetadata)
-    , _pnType          :: !(Maybe Text)
+    , _pnValue :: !(Maybe Text)
+    , _pnMetadata :: !(Maybe FieldMetadata)
+    , _pnType :: !(Maybe Text)
     , _pnFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2838,7 +2838,7 @@ instance ToJSON PhoneNumber where
 -- /See:/ 'occupation' smart constructor.
 data Occupation =
   Occupation'
-    { _oValue    :: !(Maybe Text)
+    { _oValue :: !(Maybe Text)
     , _oMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2884,10 +2884,10 @@ instance ToJSON Occupation where
 -- /See:/ 'emailAddress' smart constructor.
 data EmailAddress =
   EmailAddress'
-    { _eaValue         :: !(Maybe Text)
-    , _eaMetadata      :: !(Maybe FieldMetadata)
-    , _eaDisplayName   :: !(Maybe Text)
-    , _eaType          :: !(Maybe Text)
+    { _eaValue :: !(Maybe Text)
+    , _eaMetadata :: !(Maybe FieldMetadata)
+    , _eaDisplayName :: !(Maybe Text)
+    , _eaType :: !(Maybe Text)
     , _eaFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3011,7 +3011,7 @@ instance ToJSON CreateContactGroupRequest where
 data ContactGroupMetadata =
   ContactGroupMetadata'
     { _cgmUpdateTime :: !(Maybe DateTime')
-    , _cgmDeleted    :: !(Maybe Bool)
+    , _cgmDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3064,7 +3064,7 @@ instance ToJSON ContactGroupMetadata where
 -- /See:/ 'modifyContactGroupMembersRequest' smart constructor.
 data ModifyContactGroupMembersRequest =
   ModifyContactGroupMembersRequest'
-    { _mcgmrResourceNamesToAdd    :: !(Maybe [Text])
+    { _mcgmrResourceNamesToAdd :: !(Maybe [Text])
     , _mcgmrResourceNamesToRemove :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3085,7 +3085,7 @@ modifyContactGroupMembersRequest =
 
 
 -- | The resource names of the contact people to add in the form of in the
--- form \`people\/\`person_id.
+-- form \`people\/\`'person_id'.
 mcgmrResourceNamesToAdd :: Lens' ModifyContactGroupMembersRequest [Text]
 mcgmrResourceNamesToAdd
   = lens _mcgmrResourceNamesToAdd
@@ -3094,7 +3094,7 @@ mcgmrResourceNamesToAdd
       . _Coerce
 
 -- | The resource names of the contact people to remove in the form of in the
--- form of \`people\/\`person_id.
+-- form of \`people\/\`'person_id'.
 mcgmrResourceNamesToRemove :: Lens' ModifyContactGroupMembersRequest [Text]
 mcgmrResourceNamesToRemove
   = lens _mcgmrResourceNamesToRemove
@@ -3126,11 +3126,11 @@ instance ToJSON ModifyContactGroupMembersRequest
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sEtag            :: !(Maybe Text)
+    { _sEtag :: !(Maybe Text)
     , _sProFileMetadata :: !(Maybe ProFileMetadata)
-    , _sUpdateTime      :: !(Maybe DateTime')
-    , _sId              :: !(Maybe Text)
-    , _sType            :: !(Maybe SourceType)
+    , _sUpdateTime :: !(Maybe DateTime')
+    , _sId :: !(Maybe Text)
+    , _sType :: !(Maybe SourceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3213,11 +3213,11 @@ instance ToJSON Source where
 data ImClient =
   ImClient'
     { _icFormattedProtocol :: !(Maybe Text)
-    , _icUsername          :: !(Maybe Text)
-    , _icProtocol          :: !(Maybe Text)
-    , _icMetadata          :: !(Maybe FieldMetadata)
-    , _icType              :: !(Maybe Text)
-    , _icFormattedType     :: !(Maybe Text)
+    , _icUsername :: !(Maybe Text)
+    , _icProtocol :: !(Maybe Text)
+    , _icMetadata :: !(Maybe FieldMetadata)
+    , _icType :: !(Maybe Text)
+    , _icFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3354,11 +3354,11 @@ instance ToJSON BatchGetContactGroupsResponse where
 -- /See:/ 'personMetadata' smart constructor.
 data PersonMetadata =
   PersonMetadata'
-    { _pmPreviousResourceNames     :: !(Maybe [Text])
-    , _pmObjectType                :: !(Maybe PersonMetadataObjectType)
-    , _pmSources                   :: !(Maybe [Source])
+    { _pmPreviousResourceNames :: !(Maybe [Text])
+    , _pmObjectType :: !(Maybe PersonMetadataObjectType)
+    , _pmSources :: !(Maybe [Source])
     , _pmLinkedPeopleResourceNames :: !(Maybe [Text])
-    , _pmDeleted                   :: !(Maybe Bool)
+    , _pmDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3457,9 +3457,9 @@ instance ToJSON PersonMetadata where
 -- /See:/ 'nickname' smart constructor.
 data Nickname =
   Nickname'
-    { _nicValue    :: !(Maybe Text)
+    { _nicValue :: !(Maybe Text)
     , _nicMetadata :: !(Maybe FieldMetadata)
-    , _nicType     :: !(Maybe NicknameType)
+    , _nicType :: !(Maybe NicknameType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3514,20 +3514,20 @@ instance ToJSON Nickname where
 -- /See:/ 'organization' smart constructor.
 data Organization =
   Organization'
-    { _orgDePartment     :: !(Maybe Text)
-    , _orgLocation       :: !(Maybe Text)
-    , _orgDomain         :: !(Maybe Text)
-    , _orgEndDate        :: !(Maybe Date)
-    , _orgSymbol         :: !(Maybe Text)
+    { _orgDePartment :: !(Maybe Text)
+    , _orgLocation :: !(Maybe Text)
+    , _orgDomain :: !(Maybe Text)
+    , _orgEndDate :: !(Maybe Date)
+    , _orgSymbol :: !(Maybe Text)
     , _orgJobDescription :: !(Maybe Text)
-    , _orgCurrent        :: !(Maybe Bool)
-    , _orgStartDate      :: !(Maybe Date)
-    , _orgName           :: !(Maybe Text)
-    , _orgMetadata       :: !(Maybe FieldMetadata)
-    , _orgPhoneticName   :: !(Maybe Text)
-    , _orgTitle          :: !(Maybe Text)
-    , _orgType           :: !(Maybe Text)
-    , _orgFormattedType  :: !(Maybe Text)
+    , _orgCurrent :: !(Maybe Bool)
+    , _orgStartDate :: !(Maybe Date)
+    , _orgName :: !(Maybe Text)
+    , _orgMetadata :: !(Maybe FieldMetadata)
+    , _orgPhoneticName :: !(Maybe Text)
+    , _orgTitle :: !(Maybe Text)
+    , _orgType :: !(Maybe Text)
+    , _orgFormattedType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3702,7 +3702,7 @@ instance ToJSON Organization where
 -- /See:/ 'interest' smart constructor.
 data Interest =
   Interest'
-    { _iValue    :: !(Maybe Text)
+    { _iValue :: !(Maybe Text)
     , _iMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3747,10 +3747,10 @@ instance ToJSON Interest where
 -- /See:/ 'personResponse' smart constructor.
 data PersonResponse =
   PersonResponse'
-    { _prStatus                :: !(Maybe Status)
+    { _prStatus :: !(Maybe Status)
     , _prRequestedResourceName :: !(Maybe Text)
-    , _prPerson                :: !(Maybe Person)
-    , _prHTTPStatusCode        :: !(Maybe (Textual Int32))
+    , _prPerson :: !(Maybe Person)
+    , _prHTTPStatusCode :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3826,7 +3826,7 @@ instance ToJSON PersonResponse where
 -- /See:/ 'skill' smart constructor.
 data Skill =
   Skill'
-    { _sValue    :: !(Maybe Text)
+    { _sValue :: !(Maybe Text)
     , _sMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3871,8 +3871,8 @@ instance ToJSON Skill where
 -- /See:/ 'biography' smart constructor.
 data Biography =
   Biography'
-    { _bioValue       :: !(Maybe Text)
-    , _bioMetadata    :: !(Maybe FieldMetadata)
+    { _bioValue :: !(Maybe Text)
+    , _bioMetadata :: !(Maybe FieldMetadata)
     , _bioContentType :: !(Maybe BiographyContentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3931,8 +3931,8 @@ instance ToJSON Biography where
 -- /See:/ 'coverPhoto' smart constructor.
 data CoverPhoto =
   CoverPhoto'
-    { _cpDefault  :: !(Maybe Bool)
-    , _cpURL      :: !(Maybe Text)
+    { _cpDefault :: !(Maybe Bool)
+    , _cpURL :: !(Maybe Text)
     , _cpMetadata :: !(Maybe FieldMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

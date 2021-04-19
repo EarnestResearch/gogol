@@ -43,8 +43,8 @@ module Network.Google.Resource.DLP.Organizations.DeidentifyTemplates.Get
     , odtgCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.deidentifyTemplates.get@ method which the
 -- 'OrganizationsDeidentifyTemplatesGet' request conforms to.
@@ -66,12 +66,12 @@ type OrganizationsDeidentifyTemplatesGetResource =
 -- /See:/ 'organizationsDeidentifyTemplatesGet' smart constructor.
 data OrganizationsDeidentifyTemplatesGet =
   OrganizationsDeidentifyTemplatesGet'
-    { _odtgXgafv          :: !(Maybe Xgafv)
+    { _odtgXgafv :: !(Maybe Xgafv)
     , _odtgUploadProtocol :: !(Maybe Text)
-    , _odtgAccessToken    :: !(Maybe Text)
-    , _odtgUploadType     :: !(Maybe Text)
-    , _odtgName           :: !Text
-    , _odtgCallback       :: !(Maybe Text)
+    , _odtgAccessToken :: !(Maybe Text)
+    , _odtgUploadType :: !(Maybe Text)
+    , _odtgName :: !Text
+    , _odtgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

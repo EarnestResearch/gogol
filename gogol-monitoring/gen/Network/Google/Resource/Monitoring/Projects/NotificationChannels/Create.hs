@@ -43,8 +43,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Create
     , pnccCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.create@ method which the
 -- 'ProjectsNotificationChannelsCreate' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsNotificationChannelsCreateResource =
 -- /See:/ 'projectsNotificationChannelsCreate' smart constructor.
 data ProjectsNotificationChannelsCreate =
   ProjectsNotificationChannelsCreate'
-    { _pnccXgafv          :: !(Maybe Xgafv)
+    { _pnccXgafv :: !(Maybe Xgafv)
     , _pnccUploadProtocol :: !(Maybe Text)
-    , _pnccAccessToken    :: !(Maybe Text)
-    , _pnccUploadType     :: !(Maybe Text)
-    , _pnccPayload        :: !NotificationChannel
-    , _pnccName           :: !Text
-    , _pnccCallback       :: !(Maybe Text)
+    , _pnccAccessToken :: !(Maybe Text)
+    , _pnccUploadType :: !(Maybe Text)
+    , _pnccPayload :: !NotificationChannel
+    , _pnccName :: !Text
+    , _pnccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

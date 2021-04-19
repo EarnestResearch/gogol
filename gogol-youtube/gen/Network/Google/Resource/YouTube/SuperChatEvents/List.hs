@@ -39,8 +39,8 @@ module Network.Google.Resource.YouTube.SuperChatEvents.List
     , scelMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.superChatEvents.list@ method which the
 -- 'SuperChatEventsList' request conforms to.
@@ -60,9 +60,9 @@ type SuperChatEventsListResource =
 -- /See:/ 'superChatEventsList' smart constructor.
 data SuperChatEventsList =
   SuperChatEventsList'
-    { _scelPart       :: !Text
-    , _scelHl         :: !(Maybe Text)
-    , _scelPageToken  :: !(Maybe Text)
+    { _scelPart :: !Text
+    , _scelHl :: !(Maybe Text)
+    , _scelPageToken :: !(Maybe Text)
     , _scelMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

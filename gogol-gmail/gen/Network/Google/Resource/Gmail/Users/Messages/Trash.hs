@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Trash
     , umtId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.trash@ method which the
 -- 'UsersMessagesTrash' request conforms to.
@@ -58,7 +58,7 @@ type UsersMessagesTrashResource =
 data UsersMessagesTrash =
   UsersMessagesTrash'
     { _umtUserId :: !Text
-    , _umtId     :: !Text
+    , _umtId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

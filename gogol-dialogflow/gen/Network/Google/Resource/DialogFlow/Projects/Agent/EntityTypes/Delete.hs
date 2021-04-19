@@ -41,8 +41,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.EntityTypes.Delete
     , paetdCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.entityTypes.delete@ method which the
 -- 'ProjectsAgentEntityTypesDelete' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsAgentEntityTypesDeleteResource =
 -- /See:/ 'projectsAgentEntityTypesDelete' smart constructor.
 data ProjectsAgentEntityTypesDelete =
   ProjectsAgentEntityTypesDelete'
-    { _paetdXgafv          :: !(Maybe Xgafv)
+    { _paetdXgafv :: !(Maybe Xgafv)
     , _paetdUploadProtocol :: !(Maybe Text)
-    , _paetdAccessToken    :: !(Maybe Text)
-    , _paetdUploadType     :: !(Maybe Text)
-    , _paetdName           :: !Text
-    , _paetdCallback       :: !(Maybe Text)
+    , _paetdAccessToken :: !(Maybe Text)
+    , _paetdUploadType :: !(Maybe Text)
+    , _paetdName :: !Text
+    , _paetdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

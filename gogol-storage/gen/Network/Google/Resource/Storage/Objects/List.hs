@@ -44,8 +44,8 @@ module Network.Google.Resource.Storage.Objects.List
     , olMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.list@ method which the
 -- 'ObjectsList' request conforms to.
@@ -70,15 +70,15 @@ type ObjectsListResource =
 -- /See:/ 'objectsList' smart constructor.
 data ObjectsList =
   ObjectsList'
-    { _olPrefix                   :: !(Maybe Text)
-    , _olBucket                   :: !Text
-    , _olVersions                 :: !(Maybe Bool)
-    , _olUserProject              :: !(Maybe Text)
+    { _olPrefix :: !(Maybe Text)
+    , _olBucket :: !Text
+    , _olVersions :: !(Maybe Bool)
+    , _olUserProject :: !(Maybe Text)
     , _olIncludeTrailingDelimiter :: !(Maybe Bool)
-    , _olProjection               :: !(Maybe ObjectsListProjection)
-    , _olPageToken                :: !(Maybe Text)
-    , _olDelimiter                :: !(Maybe Text)
-    , _olMaxResults               :: !(Textual Word32)
+    , _olProjection :: !(Maybe ObjectsListProjection)
+    , _olPageToken :: !(Maybe Text)
+    , _olDelimiter :: !(Maybe Text)
+    , _olMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Speech.Projects.Operations.ManualRecognitionTasks
     , pomrtgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Speech.Types
 
 -- | A resource alias for @speech.projects.operations.manualRecognitionTasks.get@ method which the
 -- 'ProjectsOperationsManualRecognitionTasksGet' request conforms to.
@@ -66,12 +66,12 @@ type ProjectsOperationsManualRecognitionTasksGetResource
 -- /See:/ 'projectsOperationsManualRecognitionTasksGet' smart constructor.
 data ProjectsOperationsManualRecognitionTasksGet =
   ProjectsOperationsManualRecognitionTasksGet'
-    { _pomrtgXgafv          :: !(Maybe Xgafv)
+    { _pomrtgXgafv :: !(Maybe Xgafv)
     , _pomrtgUploadProtocol :: !(Maybe Text)
-    , _pomrtgAccessToken    :: !(Maybe Text)
-    , _pomrtgUploadType     :: !(Maybe Text)
-    , _pomrtgName           :: !Text
-    , _pomrtgCallback       :: !(Maybe Text)
+    , _pomrtgAccessToken :: !(Maybe Text)
+    , _pomrtgUploadType :: !(Maybe Text)
+    , _pomrtgName :: !Text
+    , _pomrtgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

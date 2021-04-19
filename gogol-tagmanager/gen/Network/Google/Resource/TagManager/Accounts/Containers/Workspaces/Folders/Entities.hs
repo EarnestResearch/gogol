@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Folders
     , acwfePageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.folders.entities@ method which the
 -- 'AccountsContainersWorkspacesFoldersEntities' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesFoldersEntitiesResource
 -- /See:/ 'accountsContainersWorkspacesFoldersEntities' smart constructor.
 data AccountsContainersWorkspacesFoldersEntities =
   AccountsContainersWorkspacesFoldersEntities'
-    { _acwfePath      :: !Text
+    { _acwfePath :: !Text
     , _acwfePageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

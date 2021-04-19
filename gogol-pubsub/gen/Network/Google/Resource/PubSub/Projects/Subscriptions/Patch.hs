@@ -43,8 +43,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.Patch
     , pspCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.patch@ method which the
 -- 'ProjectsSubscriptionsPatch' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsSubscriptionsPatchResource =
 -- /See:/ 'projectsSubscriptionsPatch' smart constructor.
 data ProjectsSubscriptionsPatch =
   ProjectsSubscriptionsPatch'
-    { _pspXgafv          :: !(Maybe Xgafv)
+    { _pspXgafv :: !(Maybe Xgafv)
     , _pspUploadProtocol :: !(Maybe Text)
-    , _pspAccessToken    :: !(Maybe Text)
-    , _pspUploadType     :: !(Maybe Text)
-    , _pspPayload        :: !UpdateSubscriptionRequest
-    , _pspName           :: !Text
-    , _pspCallback       :: !(Maybe Text)
+    , _pspAccessToken :: !(Maybe Text)
+    , _pspUploadType :: !(Maybe Text)
+    , _pspPayload :: !UpdateSubscriptionRequest
+    , _pspName :: !Text
+    , _pspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

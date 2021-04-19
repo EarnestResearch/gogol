@@ -42,8 +42,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Create
     , phcProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.create@ method which the
 -- 'ProjectsHistoriesCreate' request conforms to.
@@ -67,7 +67,7 @@ type ProjectsHistoriesCreateResource =
 data ProjectsHistoriesCreate =
   ProjectsHistoriesCreate'
     { _phcRequestId :: !(Maybe Text)
-    , _phcPayload   :: !History
+    , _phcPayload :: !History
     , _phcProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

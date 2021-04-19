@@ -61,8 +61,8 @@ module Network.Google.Resource.Classroom.Registrations.Create
     , rcCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.registrations.create@ method which the
 -- 'RegistrationsCreate' request conforms to.
@@ -103,12 +103,12 @@ type RegistrationsCreateResource =
 -- /See:/ 'registrationsCreate' smart constructor.
 data RegistrationsCreate =
   RegistrationsCreate'
-    { _rcXgafv          :: !(Maybe Xgafv)
+    { _rcXgafv :: !(Maybe Xgafv)
     , _rcUploadProtocol :: !(Maybe Text)
-    , _rcAccessToken    :: !(Maybe Text)
-    , _rcUploadType     :: !(Maybe Text)
-    , _rcPayload        :: !Registration
-    , _rcCallback       :: !(Maybe Text)
+    , _rcAccessToken :: !(Maybe Text)
+    , _rcUploadType :: !(Maybe Text)
+    , _rcPayload :: !Registration
+    , _rcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

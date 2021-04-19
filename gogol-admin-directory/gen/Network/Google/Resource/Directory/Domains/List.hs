@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Domains.List
     , dlCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domains.list@ method which the
 -- 'DomainsList' request conforms to.

@@ -42,8 +42,8 @@ module Network.Google.Resource.Jobs.Projects.Companies.Delete
     , pcdCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.companies.delete@ method which the
 -- 'ProjectsCompaniesDelete' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsCompaniesDeleteResource =
 -- /See:/ 'projectsCompaniesDelete' smart constructor.
 data ProjectsCompaniesDelete =
   ProjectsCompaniesDelete'
-    { _pcdXgafv          :: !(Maybe Xgafv)
+    { _pcdXgafv :: !(Maybe Xgafv)
     , _pcdUploadProtocol :: !(Maybe Text)
-    , _pcdAccessToken    :: !(Maybe Text)
-    , _pcdUploadType     :: !(Maybe Text)
-    , _pcdName           :: !Text
-    , _pcdCallback       :: !(Maybe Text)
+    , _pcdAccessToken :: !(Maybe Text)
+    , _pcdUploadType :: !(Maybe Text)
+    , _pcdName :: !Text
+    , _pcdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

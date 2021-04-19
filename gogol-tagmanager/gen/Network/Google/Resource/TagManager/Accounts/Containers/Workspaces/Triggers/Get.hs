@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Trigger
     , accPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.triggers.get@ method which the
 -- 'AccountsContainersWorkspacesTriggersGet' request conforms to.

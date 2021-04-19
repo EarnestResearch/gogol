@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.EntityTypes.List
     , paetlCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.entityTypes.list@ method which the
 -- 'ProjectsAgentEntityTypesList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsAgentEntityTypesListResource =
 -- /See:/ 'projectsAgentEntityTypesList' smart constructor.
 data ProjectsAgentEntityTypesList =
   ProjectsAgentEntityTypesList'
-    { _paetlParent         :: !Text
-    , _paetlXgafv          :: !(Maybe Xgafv)
-    , _paetlLanguageCode   :: !(Maybe Text)
+    { _paetlParent :: !Text
+    , _paetlXgafv :: !(Maybe Xgafv)
+    , _paetlLanguageCode :: !(Maybe Text)
     , _paetlUploadProtocol :: !(Maybe Text)
-    , _paetlAccessToken    :: !(Maybe Text)
-    , _paetlUploadType     :: !(Maybe Text)
-    , _paetlPageToken      :: !(Maybe Text)
-    , _paetlPageSize       :: !(Maybe (Textual Int32))
-    , _paetlCallback       :: !(Maybe Text)
+    , _paetlAccessToken :: !(Maybe Text)
+    , _paetlUploadType :: !(Maybe Text)
+    , _paetlPageToken :: !(Maybe Text)
+    , _paetlPageSize :: !(Maybe (Textual Int32))
+    , _paetlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

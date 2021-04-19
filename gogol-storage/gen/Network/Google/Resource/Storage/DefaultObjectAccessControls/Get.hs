@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.Get
     , doacgEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.get@ method which the
 -- 'DefaultObjectAccessControlsGet' request conforms to.
@@ -61,9 +61,9 @@ type DefaultObjectAccessControlsGetResource =
 -- /See:/ 'defaultObjectAccessControlsGet' smart constructor.
 data DefaultObjectAccessControlsGet =
   DefaultObjectAccessControlsGet'
-    { _doacgBucket      :: !Text
+    { _doacgBucket :: !Text
     , _doacgUserProject :: !(Maybe Text)
-    , _doacgEntity      :: !Text
+    , _doacgEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

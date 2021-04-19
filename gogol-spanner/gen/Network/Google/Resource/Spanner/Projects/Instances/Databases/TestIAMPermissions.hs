@@ -46,8 +46,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.TestIAMPermi
     , pidtipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.testIamPermissions@ method which the
 -- 'ProjectsInstancesDatabasesTestIAMPermissions' request conforms to.
@@ -73,13 +73,13 @@ type ProjectsInstancesDatabasesTestIAMPermissionsResource
 -- /See:/ 'projectsInstancesDatabasesTestIAMPermissions' smart constructor.
 data ProjectsInstancesDatabasesTestIAMPermissions =
   ProjectsInstancesDatabasesTestIAMPermissions'
-    { _pidtipXgafv          :: !(Maybe Xgafv)
+    { _pidtipXgafv :: !(Maybe Xgafv)
     , _pidtipUploadProtocol :: !(Maybe Text)
-    , _pidtipAccessToken    :: !(Maybe Text)
-    , _pidtipUploadType     :: !(Maybe Text)
-    , _pidtipPayload        :: !TestIAMPermissionsRequest
-    , _pidtipResource       :: !Text
-    , _pidtipCallback       :: !(Maybe Text)
+    , _pidtipAccessToken :: !(Maybe Text)
+    , _pidtipUploadType :: !(Maybe Text)
+    , _pidtipPayload :: !TestIAMPermissionsRequest
+    , _pidtipResource :: !Text
+    , _pidtipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

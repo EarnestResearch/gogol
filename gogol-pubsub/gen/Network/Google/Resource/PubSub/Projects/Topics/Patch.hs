@@ -43,8 +43,8 @@ module Network.Google.Resource.PubSub.Projects.Topics.Patch
     , ptpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.topics.patch@ method which the
 -- 'ProjectsTopicsPatch' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsTopicsPatchResource =
 -- /See:/ 'projectsTopicsPatch' smart constructor.
 data ProjectsTopicsPatch =
   ProjectsTopicsPatch'
-    { _ptpXgafv          :: !(Maybe Xgafv)
+    { _ptpXgafv :: !(Maybe Xgafv)
     , _ptpUploadProtocol :: !(Maybe Text)
-    , _ptpAccessToken    :: !(Maybe Text)
-    , _ptpUploadType     :: !(Maybe Text)
-    , _ptpPayload        :: !UpdateTopicRequest
-    , _ptpName           :: !Text
-    , _ptpCallback       :: !(Maybe Text)
+    , _ptpAccessToken :: !(Maybe Text)
+    , _ptpUploadType :: !(Maybe Text)
+    , _ptpPayload :: !UpdateTopicRequest
+    , _ptpName :: !Text
+    , _ptpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

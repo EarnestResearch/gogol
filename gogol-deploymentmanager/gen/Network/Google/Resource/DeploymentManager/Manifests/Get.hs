@@ -38,8 +38,8 @@ module Network.Google.Resource.DeploymentManager.Manifests.Get
     , mgDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.manifests.get@ method which the
 -- 'ManifestsGet' request conforms to.
@@ -60,8 +60,8 @@ type ManifestsGetResource =
 -- /See:/ 'manifestsGet' smart constructor.
 data ManifestsGet =
   ManifestsGet'
-    { _mgProject    :: !Text
-    , _mgManifest   :: !Text
+    { _mgProject :: !Text
+    , _mgManifest :: !Text
     , _mgDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

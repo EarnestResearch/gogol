@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Delete
     , edEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.delete@ method which the
 -- 'EditsDelete' request conforms to.
@@ -61,7 +61,7 @@ type EditsDeleteResource =
 data EditsDelete =
   EditsDelete'
     { _edPackageName :: !Text
-    , _edEditId      :: !Text
+    , _edEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

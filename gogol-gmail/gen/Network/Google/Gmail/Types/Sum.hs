@@ -16,7 +16,7 @@
 --
 module Network.Google.Gmail.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | How the message size in bytes should be in relation to the size field.
 data FilterCriteriaSizeComparison

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.GlobalForwardingRules.List
     , gfrlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.globalForwardingRules.list@ method which the
 -- 'GlobalForwardingRulesList' request conforms to.
@@ -66,10 +66,10 @@ type GlobalForwardingRulesListResource =
 -- /See:/ 'globalForwardingRulesList' smart constructor.
 data GlobalForwardingRulesList =
   GlobalForwardingRulesList'
-    { _gfrlOrderBy    :: !(Maybe Text)
-    , _gfrlProject    :: !Text
-    , _gfrlFilter     :: !(Maybe Text)
-    , _gfrlPageToken  :: !(Maybe Text)
+    { _gfrlOrderBy :: !(Maybe Text)
+    , _gfrlProject :: !Text
+    , _gfrlFilter :: !(Maybe Text)
+    , _gfrlPageToken :: !(Maybe Text)
     , _gfrlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -40,8 +40,8 @@ module Network.Google.Resource.SafeBrowsing.ThreatLists.List
     , tllCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types
 
 -- | A resource alias for @safebrowsing.threatLists.list@ method which the
 -- 'ThreatListsList' request conforms to.
@@ -61,11 +61,11 @@ type ThreatListsListResource =
 -- /See:/ 'threatListsList' smart constructor.
 data ThreatListsList =
   ThreatListsList'
-    { _tllXgafv          :: !(Maybe Xgafv)
+    { _tllXgafv :: !(Maybe Xgafv)
     , _tllUploadProtocol :: !(Maybe Text)
-    , _tllAccessToken    :: !(Maybe Text)
-    , _tllUploadType     :: !(Maybe Text)
-    , _tllCallback       :: !(Maybe Text)
+    , _tllAccessToken :: !(Maybe Text)
+    , _tllUploadType :: !(Maybe Text)
+    , _tllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

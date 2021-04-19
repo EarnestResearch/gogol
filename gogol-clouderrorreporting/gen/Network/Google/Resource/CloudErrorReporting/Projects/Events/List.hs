@@ -48,8 +48,8 @@ module Network.Google.Resource.CloudErrorReporting.Projects.Events.List
     , pelTimeRangePeriod
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouderrorreporting.projects.events.list@ method which the
 -- 'ProjectsEventsList' request conforms to.
@@ -77,19 +77,19 @@ type ProjectsEventsListResource =
 -- /See:/ 'projectsEventsList' smart constructor.
 data ProjectsEventsList =
   ProjectsEventsList'
-    { _pelXgafv                     :: !(Maybe Xgafv)
-    , _pelUploadProtocol            :: !(Maybe Text)
-    , _pelAccessToken               :: !(Maybe Text)
-    , _pelUploadType                :: !(Maybe Text)
-    , _pelProjectName               :: !Text
-    , _pelGroupId                   :: !(Maybe Text)
-    , _pelPageToken                 :: !(Maybe Text)
-    , _pelPageSize                  :: !(Maybe (Textual Int32))
-    , _pelServiceFilterService      :: !(Maybe Text)
+    { _pelXgafv :: !(Maybe Xgafv)
+    , _pelUploadProtocol :: !(Maybe Text)
+    , _pelAccessToken :: !(Maybe Text)
+    , _pelUploadType :: !(Maybe Text)
+    , _pelProjectName :: !Text
+    , _pelGroupId :: !(Maybe Text)
+    , _pelPageToken :: !(Maybe Text)
+    , _pelPageSize :: !(Maybe (Textual Int32))
+    , _pelServiceFilterService :: !(Maybe Text)
     , _pelServiceFilterResourceType :: !(Maybe Text)
-    , _pelCallback                  :: !(Maybe Text)
-    , _pelServiceFilterVersion      :: !(Maybe Text)
-    , _pelTimeRangePeriod           :: !(Maybe Text)
+    , _pelCallback :: !(Maybe Text)
+    , _pelServiceFilterVersion :: !(Maybe Text)
+    , _pelTimeRangePeriod :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

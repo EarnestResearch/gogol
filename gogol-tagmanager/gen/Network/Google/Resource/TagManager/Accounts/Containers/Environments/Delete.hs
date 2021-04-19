@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.Delet
     , acedPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.delete@ method which the
 -- 'AccountsContainersEnvironmentsDelete' request conforms to.

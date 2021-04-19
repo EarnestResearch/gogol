@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -446,9 +446,9 @@ module Network.Google.MachineLearning.Types
     , gcmvvlAddtional
     ) where
 
-import           Network.Google.MachineLearning.Types.Product
-import           Network.Google.MachineLearning.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types.Product
+import Network.Google.MachineLearning.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the Cloud Machine Learning Engine. This contains the host and root path used as a starting point for constructing service requests.
 machineLearningService :: ServiceConfig

@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Reports.Run
     , rrProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.run@ method which the
 -- 'ReportsRun' request conforms to.
@@ -60,8 +60,8 @@ type ReportsRunResource =
 data ReportsRun =
   ReportsRun'
     { _rrSynchronous :: !Bool
-    , _rrReportId    :: !(Textual Int64)
-    , _rrProFileId   :: !(Textual Int64)
+    , _rrReportId :: !(Textual Int64)
+    , _rrProFileId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

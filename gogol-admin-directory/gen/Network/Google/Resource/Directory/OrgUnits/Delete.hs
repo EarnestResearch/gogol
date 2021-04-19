@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.OrgUnits.Delete
     , oudCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.delete@ method which the
 -- 'OrgUnitsDelete' request conforms to.
@@ -58,7 +58,7 @@ type OrgUnitsDeleteResource =
 data OrgUnitsDelete =
   OrgUnitsDelete'
     { _oudOrgUnitPath :: ![Text]
-    , _oudCustomerId  :: !Text
+    , _oudCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

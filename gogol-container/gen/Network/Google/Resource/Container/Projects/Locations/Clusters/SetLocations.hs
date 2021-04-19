@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.SetLocation
     , plcslsCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.setLocations@ method which the
 -- 'ProjectsLocationsClustersSetLocations' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsLocationsClustersSetLocationsResource =
 -- /See:/ 'projectsLocationsClustersSetLocations' smart constructor.
 data ProjectsLocationsClustersSetLocations =
   ProjectsLocationsClustersSetLocations'
-    { _plcslsXgafv          :: !(Maybe Xgafv)
+    { _plcslsXgafv :: !(Maybe Xgafv)
     , _plcslsUploadProtocol :: !(Maybe Text)
-    , _plcslsAccessToken    :: !(Maybe Text)
-    , _plcslsUploadType     :: !(Maybe Text)
-    , _plcslsPayload        :: !SetLocationsRequest
-    , _plcslsName           :: !Text
-    , _plcslsCallback       :: !(Maybe Text)
+    , _plcslsAccessToken :: !(Maybe Text)
+    , _plcslsUploadType :: !(Maybe Text)
+    , _plcslsPayload :: !SetLocationsRequest
+    , _plcslsName :: !Text
+    , _plcslsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

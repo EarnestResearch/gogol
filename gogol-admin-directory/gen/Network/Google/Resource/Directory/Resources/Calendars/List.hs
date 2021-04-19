@@ -40,8 +40,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.List
     , rclMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.list@ method which the
 -- 'ResourcesCalendarsList' request conforms to.
@@ -65,10 +65,10 @@ type ResourcesCalendarsListResource =
 -- /See:/ 'resourcesCalendarsList' smart constructor.
 data ResourcesCalendarsList =
   ResourcesCalendarsList'
-    { _rclOrderBy    :: !(Maybe Text)
-    , _rclCustomer   :: !Text
-    , _rclQuery      :: !(Maybe Text)
-    , _rclPageToken  :: !(Maybe Text)
+    { _rclOrderBy :: !(Maybe Text)
+    , _rclCustomer :: !Text
+    , _rclQuery :: !(Maybe Text)
+    , _rclPageToken :: !(Maybe Text)
     , _rclMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

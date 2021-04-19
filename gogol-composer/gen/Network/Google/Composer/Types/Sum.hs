@@ -16,7 +16,7 @@
 --
 module Network.Google.Composer.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. The type of operation being performed.
 data OperationMetadataOperationType

@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Bin
     , plrgbdtgCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.bindDeviceToGateway@ method which the
 -- 'ProjectsLocationsRegistriesGroupsBindDeviceToGateway' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsRegistriesGroupsBindDeviceToGatewayResource
 -- /See:/ 'projectsLocationsRegistriesGroupsBindDeviceToGateway' smart constructor.
 data ProjectsLocationsRegistriesGroupsBindDeviceToGateway =
   ProjectsLocationsRegistriesGroupsBindDeviceToGateway'
-    { _plrgbdtgParent         :: !Text
-    , _plrgbdtgXgafv          :: !(Maybe Xgafv)
+    { _plrgbdtgParent :: !Text
+    , _plrgbdtgXgafv :: !(Maybe Xgafv)
     , _plrgbdtgUploadProtocol :: !(Maybe Text)
-    , _plrgbdtgAccessToken    :: !(Maybe Text)
-    , _plrgbdtgUploadType     :: !(Maybe Text)
-    , _plrgbdtgPayload        :: !BindDeviceToGatewayRequest
-    , _plrgbdtgCallback       :: !(Maybe Text)
+    , _plrgbdtgAccessToken :: !(Maybe Text)
+    , _plrgbdtgUploadType :: !(Maybe Text)
+    , _plrgbdtgPayload :: !BindDeviceToGatewayRequest
+    , _plrgbdtgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.OrgUnits.List
     , oulType
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.list@ method which the
 -- 'OrgUnitsList' request conforms to.
@@ -60,8 +60,8 @@ type OrgUnitsListResource =
 data OrgUnitsList =
   OrgUnitsList'
     { _oulOrgUnitPath :: !Text
-    , _oulCustomerId  :: !Text
-    , _oulType        :: !(Maybe OrgUnitsListType)
+    , _oulCustomerId :: !Text
+    , _oulType :: !(Maybe OrgUnitsListType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1206,9 +1206,9 @@ module Network.Google.Docs.Types
     , smcText
     ) where
 
-import           Network.Google.Docs.Types.Product
-import           Network.Google.Docs.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Docs.Types.Product
+import Network.Google.Docs.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the Google Docs API. This contains the host and root path used as a starting point for constructing service requests.
 docsService :: ServiceConfig

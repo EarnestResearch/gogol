@@ -47,8 +47,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.ImportJobs.T
     , plkrijtipCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.importJobs.testIamPermissions@ method which the
 -- 'ProjectsLocationsKeyRingsImportJobsTestIAMPermissions' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsLocationsKeyRingsImportJobsTestIAMPermissionsResource
 -- /See:/ 'projectsLocationsKeyRingsImportJobsTestIAMPermissions' smart constructor.
 data ProjectsLocationsKeyRingsImportJobsTestIAMPermissions =
   ProjectsLocationsKeyRingsImportJobsTestIAMPermissions'
-    { _plkrijtipXgafv          :: !(Maybe Xgafv)
+    { _plkrijtipXgafv :: !(Maybe Xgafv)
     , _plkrijtipUploadProtocol :: !(Maybe Text)
-    , _plkrijtipAccessToken    :: !(Maybe Text)
-    , _plkrijtipUploadType     :: !(Maybe Text)
-    , _plkrijtipPayload        :: !TestIAMPermissionsRequest
-    , _plkrijtipResource       :: !Text
-    , _plkrijtipCallback       :: !(Maybe Text)
+    , _plkrijtipAccessToken :: !(Maybe Text)
+    , _plkrijtipUploadType :: !(Maybe Text)
+    , _plkrijtipPayload :: !TestIAMPermissionsRequest
+    , _plkrijtipResource :: !Text
+    , _plkrijtipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

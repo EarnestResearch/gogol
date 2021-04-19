@@ -45,8 +45,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Builds.Create
     , pCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.builds.create@ method which the
 -- 'ProjectsBuildsCreate' request conforms to.
@@ -71,13 +71,13 @@ type ProjectsBuildsCreateResource =
 -- /See:/ 'projectsBuildsCreate' smart constructor.
 data ProjectsBuildsCreate =
   ProjectsBuildsCreate'
-    { _pXgafv          :: !(Maybe Xgafv)
+    { _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !Build
-    , _pProjectId      :: !Text
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !Build
+    , _pProjectId :: !Text
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

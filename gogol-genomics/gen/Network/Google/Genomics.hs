@@ -409,13 +409,13 @@ module Network.Google.Genomics
     , rmComputeEngine
     ) where
 
-import           Network.Google.Genomics.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Genomics.Pipelines.Run
-import           Network.Google.Resource.Genomics.Projects.Operations.Cancel
-import           Network.Google.Resource.Genomics.Projects.Operations.Get
-import           Network.Google.Resource.Genomics.Projects.Operations.List
-import           Network.Google.Resource.Genomics.Workers.CheckIn
+import Network.Google.Prelude
+import Network.Google.Genomics.Types
+import Network.Google.Resource.Genomics.Pipelines.Run
+import Network.Google.Resource.Genomics.Projects.Operations.Cancel
+import Network.Google.Resource.Genomics.Projects.Operations.Get
+import Network.Google.Resource.Genomics.Projects.Operations.List
+import Network.Google.Resource.Genomics.Workers.CheckIn
 
 {- $resources
 TODO

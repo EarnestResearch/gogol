@@ -46,8 +46,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Create
     , pldscCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.create@ method which the
 -- 'ProjectsLocationsDataSetsCreate' request conforms to.
@@ -72,14 +72,14 @@ type ProjectsLocationsDataSetsCreateResource =
 -- /See:/ 'projectsLocationsDataSetsCreate' smart constructor.
 data ProjectsLocationsDataSetsCreate =
   ProjectsLocationsDataSetsCreate'
-    { _pldscParent         :: !Text
-    , _pldscXgafv          :: !(Maybe Xgafv)
+    { _pldscParent :: !Text
+    , _pldscXgafv :: !(Maybe Xgafv)
     , _pldscUploadProtocol :: !(Maybe Text)
-    , _pldscAccessToken    :: !(Maybe Text)
-    , _pldscUploadType     :: !(Maybe Text)
-    , _pldscPayload        :: !DataSet
-    , _pldscDataSetId      :: !(Maybe Text)
-    , _pldscCallback       :: !(Maybe Text)
+    , _pldscAccessToken :: !(Maybe Text)
+    , _pldscUploadType :: !(Maybe Text)
+    , _pldscPayload :: !DataSet
+    , _pldscDataSetId :: !(Maybe Text)
+    , _pldscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

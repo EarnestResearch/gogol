@@ -44,8 +44,8 @@ module Network.Google.Resource.ServiceUsage.Services.BatchEnable
     , sbeCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.ServiceUsage.Types
 
 -- | A resource alias for @serviceusage.services.batchEnable@ method which the
 -- 'ServicesBatchEnable' request conforms to.
@@ -69,13 +69,13 @@ type ServicesBatchEnableResource =
 -- /See:/ 'servicesBatchEnable' smart constructor.
 data ServicesBatchEnable =
   ServicesBatchEnable'
-    { _sbeParent         :: !Text
-    , _sbeXgafv          :: !(Maybe Xgafv)
+    { _sbeParent :: !Text
+    , _sbeXgafv :: !(Maybe Xgafv)
     , _sbeUploadProtocol :: !(Maybe Text)
-    , _sbeAccessToken    :: !(Maybe Text)
-    , _sbeUploadType     :: !(Maybe Text)
-    , _sbePayload        :: !BatchEnableServicesRequest
-    , _sbeCallback       :: !(Maybe Text)
+    , _sbeAccessToken :: !(Maybe Text)
+    , _sbeUploadType :: !(Maybe Text)
+    , _sbePayload :: !BatchEnableServicesRequest
+    , _sbeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

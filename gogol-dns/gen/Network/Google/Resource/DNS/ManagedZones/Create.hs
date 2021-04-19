@@ -38,8 +38,8 @@ module Network.Google.Resource.DNS.ManagedZones.Create
     , mzcClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.managedZones.create@ method which the
 -- 'ManagedZonesCreate' request conforms to.
@@ -59,8 +59,8 @@ type ManagedZonesCreateResource =
 -- /See:/ 'managedZonesCreate' smart constructor.
 data ManagedZonesCreate =
   ManagedZonesCreate'
-    { _mzcProject           :: !Text
-    , _mzcPayload           :: !ManagedZone
+    { _mzcProject :: !Text
+    , _mzcPayload :: !ManagedZone
     , _mzcClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

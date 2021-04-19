@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.RemarketingListShares.Get
     , rlsgRemarketingListId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingListShares.get@ method which the
 -- 'RemarketingListSharesGet' request conforms to.
@@ -57,7 +57,7 @@ type RemarketingListSharesGetResource =
 -- /See:/ 'remarketingListSharesGet' smart constructor.
 data RemarketingListSharesGet =
   RemarketingListSharesGet'
-    { _rlsgProFileId         :: !(Textual Int64)
+    { _rlsgProFileId :: !(Textual Int64)
     , _rlsgRemarketingListId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

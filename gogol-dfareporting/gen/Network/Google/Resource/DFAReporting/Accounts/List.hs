@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.Accounts.List
     , accMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.list@ method which the
 -- 'AccountsList' request conforms to.
@@ -72,13 +72,13 @@ type AccountsListResource =
 data AccountsList =
   AccountsList'
     { _accSearchString :: !(Maybe Text)
-    , _accIds          :: !(Maybe [Textual Int64])
-    , _accProFileId    :: !(Textual Int64)
-    , _accSortOrder    :: !AccountsListSortOrder
-    , _accActive       :: !(Maybe Bool)
-    , _accPageToken    :: !(Maybe Text)
-    , _accSortField    :: !AccountsListSortField
-    , _accMaxResults   :: !(Textual Int32)
+    , _accIds :: !(Maybe [Textual Int64])
+    , _accProFileId :: !(Textual Int64)
+    , _accSortOrder :: !AccountsListSortOrder
+    , _accActive :: !(Maybe Bool)
+    , _accPageToken :: !(Maybe Text)
+    , _accSortField :: !AccountsListSortField
+    , _accMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.DynamicTargetingKeys.Delete
     , dtkdName
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.dynamicTargetingKeys.delete@ method which the
 -- 'DynamicTargetingKeysDelete' request conforms to.
@@ -62,9 +62,9 @@ type DynamicTargetingKeysDeleteResource =
 data DynamicTargetingKeysDelete =
   DynamicTargetingKeysDelete'
     { _dtkdObjectType :: !DynamicTargetingKeysDeleteObjectType
-    , _dtkdObjectId   :: !(Textual Int64)
-    , _dtkdProFileId  :: !(Textual Int64)
-    , _dtkdName       :: !Text
+    , _dtkdObjectId :: !(Textual Int64)
+    , _dtkdProFileId :: !(Textual Int64)
+    , _dtkdName :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Chat.Spaces.List
     , slCallback
     ) where
 
-import           Network.Google.Chat.Types
-import           Network.Google.Prelude
+import Network.Google.Chat.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @chat.spaces.list@ method which the
 -- 'SpacesList' request conforms to.
@@ -65,13 +65,13 @@ type SpacesListResource =
 -- /See:/ 'spacesList' smart constructor.
 data SpacesList =
   SpacesList'
-    { _slXgafv          :: !(Maybe Xgafv)
+    { _slXgafv :: !(Maybe Xgafv)
     , _slUploadProtocol :: !(Maybe Text)
-    , _slAccessToken    :: !(Maybe Text)
-    , _slUploadType     :: !(Maybe Text)
-    , _slPageToken      :: !(Maybe Text)
-    , _slPageSize       :: !(Maybe (Textual Int32))
-    , _slCallback       :: !(Maybe Text)
+    , _slAccessToken :: !(Maybe Text)
+    , _slUploadType :: !(Maybe Text)
+    , _slPageToken :: !(Maybe Text)
+    , _slPageSize :: !(Maybe (Textual Int32))
+    , _slCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

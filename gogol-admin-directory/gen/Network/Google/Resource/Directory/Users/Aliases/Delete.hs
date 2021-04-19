@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.Aliases.Delete
     , uadUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.aliases.delete@ method which the
 -- 'UsersAliasesDelete' request conforms to.
@@ -57,7 +57,7 @@ type UsersAliasesDeleteResource =
 -- /See:/ 'usersAliasesDelete' smart constructor.
 data UsersAliasesDelete =
   UsersAliasesDelete'
-    { _uadAlias   :: !Text
+    { _uadAlias :: !Text
     , _uadUserKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

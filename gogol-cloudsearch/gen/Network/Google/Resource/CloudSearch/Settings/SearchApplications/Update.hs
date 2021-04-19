@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Settings.SearchApplications.Update
     , ssauCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.searchapplications.update@ method which the
 -- 'SettingsSearchApplicationsUpdate' request conforms to.
@@ -65,13 +65,13 @@ type SettingsSearchApplicationsUpdateResource =
 -- /See:/ 'settingsSearchApplicationsUpdate' smart constructor.
 data SettingsSearchApplicationsUpdate =
   SettingsSearchApplicationsUpdate'
-    { _ssauXgafv          :: !(Maybe Xgafv)
+    { _ssauXgafv :: !(Maybe Xgafv)
     , _ssauUploadProtocol :: !(Maybe Text)
-    , _ssauAccessToken    :: !(Maybe Text)
-    , _ssauUploadType     :: !(Maybe Text)
-    , _ssauPayload        :: !SearchApplication
-    , _ssauName           :: !Text
-    , _ssauCallback       :: !(Maybe Text)
+    , _ssauAccessToken :: !(Maybe Text)
+    , _ssauUploadType :: !(Maybe Text)
+    , _ssauPayload :: !SearchApplication
+    , _ssauName :: !Text
+    , _ssauCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Projects.Exclusions.Create
     , pecCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.exclusions.create@ method which the
 -- 'ProjectsExclusionsCreate' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsExclusionsCreateResource =
 -- /See:/ 'projectsExclusionsCreate' smart constructor.
 data ProjectsExclusionsCreate =
   ProjectsExclusionsCreate'
-    { _pecParent         :: !Text
-    , _pecXgafv          :: !(Maybe Xgafv)
+    { _pecParent :: !Text
+    , _pecXgafv :: !(Maybe Xgafv)
     , _pecUploadProtocol :: !(Maybe Text)
-    , _pecAccessToken    :: !(Maybe Text)
-    , _pecUploadType     :: !(Maybe Text)
-    , _pecPayload        :: !LogExclusion
-    , _pecCallback       :: !(Maybe Text)
+    , _pecAccessToken :: !(Maybe Text)
+    , _pecUploadType :: !(Maybe Text)
+    , _pecPayload :: !LogExclusion
+    , _pecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

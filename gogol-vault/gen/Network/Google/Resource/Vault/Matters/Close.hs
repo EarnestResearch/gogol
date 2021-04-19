@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Close
     , mcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.close@ method which the
 -- 'MattersClose' request conforms to.
@@ -65,13 +65,13 @@ type MattersCloseResource =
 -- /See:/ 'mattersClose' smart constructor.
 data MattersClose =
   MattersClose'
-    { _mcXgafv          :: !(Maybe Xgafv)
+    { _mcXgafv :: !(Maybe Xgafv)
     , _mcUploadProtocol :: !(Maybe Text)
-    , _mcAccessToken    :: !(Maybe Text)
-    , _mcUploadType     :: !(Maybe Text)
-    , _mcPayload        :: !CloseMatterRequest
-    , _mcMatterId       :: !Text
-    , _mcCallback       :: !(Maybe Text)
+    , _mcAccessToken :: !(Maybe Text)
+    , _mcUploadType :: !(Maybe Text)
+    , _mcPayload :: !CloseMatterRequest
+    , _mcMatterId :: !Text
+    , _mcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

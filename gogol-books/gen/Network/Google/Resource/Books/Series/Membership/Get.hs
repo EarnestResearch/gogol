@@ -38,8 +38,8 @@ module Network.Google.Resource.Books.Series.Membership.Get
     , smgSeriesId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.series.membership.get@ method which the
 -- 'SeriesMembershipGet' request conforms to.
@@ -61,8 +61,8 @@ type SeriesMembershipGetResource =
 data SeriesMembershipGet =
   SeriesMembershipGet'
     { _smgPageToken :: !(Maybe Text)
-    , _smgPageSize  :: !(Maybe (Textual Word32))
-    , _smgSeriesId  :: !Text
+    , _smgPageSize :: !(Maybe (Textual Word32))
+    , _smgSeriesId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

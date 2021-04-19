@@ -46,8 +46,8 @@ module Network.Google.Resource.Tasks.Tasks.List
     , tlMaxResults
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasks.list@ method which the
 -- 'TasksList' request conforms to.
@@ -74,17 +74,17 @@ type TasksListResource =
 -- /See:/ 'tasksList' smart constructor.
 data TasksList =
   TasksList'
-    { _tlDueMax        :: !(Maybe Text)
-    , _tlShowDeleted   :: !(Maybe Bool)
+    { _tlDueMax :: !(Maybe Text)
+    , _tlShowDeleted :: !(Maybe Bool)
     , _tlShowCompleted :: !(Maybe Bool)
-    , _tlDueMin        :: !(Maybe Text)
-    , _tlShowHidden    :: !(Maybe Bool)
-    , _tlCompletedMax  :: !(Maybe Text)
-    , _tlUpdatedMin    :: !(Maybe Text)
-    , _tlTaskList      :: !Text
-    , _tlCompletedMin  :: !(Maybe Text)
-    , _tlPageToken     :: !(Maybe Text)
-    , _tlMaxResults    :: !(Maybe (Textual Int64))
+    , _tlDueMin :: !(Maybe Text)
+    , _tlShowHidden :: !(Maybe Bool)
+    , _tlCompletedMax :: !(Maybe Text)
+    , _tlUpdatedMin :: !(Maybe Text)
+    , _tlTaskList :: !Text
+    , _tlCompletedMin :: !(Maybe Text)
+    , _tlPageToken :: !(Maybe Text)
+    , _tlMaxResults :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

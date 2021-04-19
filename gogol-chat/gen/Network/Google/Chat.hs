@@ -281,16 +281,16 @@ module Network.Google.Chat
     , UserType (..)
     ) where
 
-import           Network.Google.Chat.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Chat.Spaces.Get
-import           Network.Google.Resource.Chat.Spaces.List
-import           Network.Google.Resource.Chat.Spaces.Members.Get
-import           Network.Google.Resource.Chat.Spaces.Members.List
-import           Network.Google.Resource.Chat.Spaces.Messages.Create
-import           Network.Google.Resource.Chat.Spaces.Messages.Delete
-import           Network.Google.Resource.Chat.Spaces.Messages.Get
-import           Network.Google.Resource.Chat.Spaces.Messages.Update
+import Network.Google.Prelude
+import Network.Google.Chat.Types
+import Network.Google.Resource.Chat.Spaces.Get
+import Network.Google.Resource.Chat.Spaces.List
+import Network.Google.Resource.Chat.Spaces.Members.Get
+import Network.Google.Resource.Chat.Spaces.Members.List
+import Network.Google.Resource.Chat.Spaces.Messages.Create
+import Network.Google.Resource.Chat.Spaces.Messages.Delete
+import Network.Google.Resource.Chat.Spaces.Messages.Get
+import Network.Google.Resource.Chat.Spaces.Messages.Update
 
 {- $resources
 TODO

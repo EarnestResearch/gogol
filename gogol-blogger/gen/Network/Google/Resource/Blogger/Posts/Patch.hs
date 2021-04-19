@@ -43,8 +43,8 @@ module Network.Google.Resource.Blogger.Posts.Patch
     , posoPublish
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.patch@ method which the
 -- 'PostsPatch' request conforms to.
@@ -68,14 +68,14 @@ type PostsPatchResource =
 -- /See:/ 'postsPatch' smart constructor.
 data PostsPatch =
   PostsPatch'
-    { _posoFetchBody   :: !Bool
+    { _posoFetchBody :: !Bool
     , _posoFetchImages :: !(Maybe Bool)
-    , _posoBlogId      :: !Text
-    , _posoPayload     :: !Post'
+    , _posoBlogId :: !Text
+    , _posoPayload :: !Post'
     , _posoMaxComments :: !(Maybe (Textual Word32))
-    , _posoRevert      :: !(Maybe Bool)
-    , _posoPostId      :: !Text
-    , _posoPublish     :: !(Maybe Bool)
+    , _posoRevert :: !(Maybe Bool)
+    , _posoPostId :: !Text
+    , _posoPublish :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

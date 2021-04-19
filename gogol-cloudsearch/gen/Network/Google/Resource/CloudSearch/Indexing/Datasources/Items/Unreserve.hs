@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Unreserve
     , idiuCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.unreserve@ method which the
 -- 'IndexingDatasourcesItemsUnreserve' request conforms to.
@@ -70,13 +70,13 @@ type IndexingDatasourcesItemsUnreserveResource =
 -- /See:/ 'indexingDatasourcesItemsUnreserve' smart constructor.
 data IndexingDatasourcesItemsUnreserve =
   IndexingDatasourcesItemsUnreserve'
-    { _idiuXgafv          :: !(Maybe Xgafv)
+    { _idiuXgafv :: !(Maybe Xgafv)
     , _idiuUploadProtocol :: !(Maybe Text)
-    , _idiuAccessToken    :: !(Maybe Text)
-    , _idiuUploadType     :: !(Maybe Text)
-    , _idiuPayload        :: !UnreserveItemsRequest
-    , _idiuName           :: !Text
-    , _idiuCallback       :: !(Maybe Text)
+    , _idiuAccessToken :: !(Maybe Text)
+    , _idiuUploadType :: !(Maybe Text)
+    , _idiuPayload :: !UnreserveItemsRequest
+    , _idiuName :: !Text
+    , _idiuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

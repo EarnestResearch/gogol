@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Reports.Delete
     , rdProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.delete@ method which the
 -- 'ReportsDelete' request conforms to.
@@ -56,7 +56,7 @@ type ReportsDeleteResource =
 -- /See:/ 'reportsDelete' smart constructor.
 data ReportsDelete =
   ReportsDelete'
-    { _rdReportId  :: !(Textual Int64)
+    { _rdReportId :: !(Textual Int64)
     , _rdProFileId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

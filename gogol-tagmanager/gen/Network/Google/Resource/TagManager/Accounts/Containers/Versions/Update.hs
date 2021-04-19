@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Update
     , acvucPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.update@ method which the
 -- 'AccountsContainersVersionsUpdate' request conforms to.
@@ -57,9 +57,9 @@ type AccountsContainersVersionsUpdateResource =
 -- /See:/ 'accountsContainersVersionsUpdate' smart constructor.
 data AccountsContainersVersionsUpdate =
   AccountsContainersVersionsUpdate'
-    { _acvucPath        :: !Text
+    { _acvucPath :: !Text
     , _acvucFingerprint :: !(Maybe Text)
-    , _acvucPayload     :: !ContainerVersion
+    , _acvucPayload :: !ContainerVersion
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

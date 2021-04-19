@@ -17,21 +17,21 @@
 --
 module Network.Google.YouTube.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types.Sum
+import Network.Google.Prelude
+import Network.Google.YouTube.Types.Sum
 
 --
 -- /See:/ 'liveChatMessageAuthorDetails' smart constructor.
 data LiveChatMessageAuthorDetails =
   LiveChatMessageAuthorDetails'
-    { _lcmadIsVerified      :: !(Maybe Bool)
-    , _lcmadIsChatOwner     :: !(Maybe Bool)
-    , _lcmadChannelId       :: !(Maybe Text)
+    { _lcmadIsVerified :: !(Maybe Bool)
+    , _lcmadIsChatOwner :: !(Maybe Bool)
+    , _lcmadChannelId :: !(Maybe Text)
     , _lcmadProFileImageURL :: !(Maybe Text)
     , _lcmadIsChatModerator :: !(Maybe Bool)
-    , _lcmadDisplayName     :: !(Maybe Text)
-    , _lcmadIsChatSponsor   :: !(Maybe Bool)
-    , _lcmadChannelURL      :: !(Maybe Text)
+    , _lcmadDisplayName :: !(Maybe Text)
+    , _lcmadIsChatSponsor :: !(Maybe Bool)
+    , _lcmadChannelURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -150,9 +150,9 @@ instance ToJSON LiveChatMessageAuthorDetails where
 -- /See:/ 'subscriptionSubscriberSnippet' smart constructor.
 data SubscriptionSubscriberSnippet =
   SubscriptionSubscriberSnippet'
-    { _sssChannelId   :: !(Maybe Text)
-    , _sssThumbnails  :: !(Maybe ThumbnailDetails)
-    , _sssTitle       :: !(Maybe Text)
+    { _sssChannelId :: !(Maybe Text)
+    , _sssThumbnails :: !(Maybe ThumbnailDetails)
+    , _sssTitle :: !(Maybe Text)
     , _sssDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -225,8 +225,8 @@ instance ToJSON SubscriptionSubscriberSnippet where
 data IngestionInfo =
   IngestionInfo'
     { _iiBackupIngestionAddress :: !(Maybe Text)
-    , _iiIngestionAddress       :: !(Maybe Text)
-    , _iiStreamName             :: !(Maybe Text)
+    , _iiIngestionAddress :: !(Maybe Text)
+    , _iiStreamName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -297,8 +297,8 @@ instance ToJSON IngestionInfo where
 -- /See:/ 'channelAuditDetails' smart constructor.
 data ChannelAuditDetails =
   ChannelAuditDetails'
-    { _cadContentIdClaimsGoodStanding     :: !(Maybe Bool)
-    , _cadCopyrightStrikesGoodStanding    :: !(Maybe Bool)
+    { _cadContentIdClaimsGoodStanding :: !(Maybe Bool)
+    , _cadCopyrightStrikesGoodStanding :: !(Maybe Bool)
     , _cadCommUnityGuidelinesGoodStanding :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -367,8 +367,8 @@ instance ToJSON ChannelAuditDetails where
 data Thumbnail =
   Thumbnail'
     { _tHeight :: !(Maybe (Textual Word32))
-    , _tURL    :: !(Maybe Text)
-    , _tWidth  :: !(Maybe (Textual Word32))
+    , _tURL :: !(Maybe Text)
+    , _tWidth :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -462,9 +462,9 @@ instance ToJSON LiveChatTextMessageDetails where
 -- /See:/ 'activityContentDetailsRecommendation' smart constructor.
 data ActivityContentDetailsRecommendation =
   ActivityContentDetailsRecommendation'
-    { _acdrResourceId     :: !(Maybe ResourceId)
+    { _acdrResourceId :: !(Maybe ResourceId)
     , _acdrSeedResourceId :: !(Maybe ResourceId)
-    , _acdrReason         :: !(Maybe ActivityContentDetailsRecommendationReason)
+    , _acdrReason :: !(Maybe ActivityContentDetailsRecommendationReason)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -570,15 +570,15 @@ instance ToJSON LiveChatMessageRetractedDetails where
 -- /See:/ 'playListListResponse' smart constructor.
 data PlayListListResponse =
   PlayListListResponse'
-    { _pllrEtag            :: !(Maybe Text)
+    { _pllrEtag :: !(Maybe Text)
     , _pllrTokenPagination :: !(Maybe TokenPagination)
-    , _pllrNextPageToken   :: !(Maybe Text)
-    , _pllrPageInfo        :: !(Maybe PageInfo)
-    , _pllrKind            :: !Text
-    , _pllrItems           :: !(Maybe [PlayList])
-    , _pllrVisitorId       :: !(Maybe Text)
-    , _pllrEventId         :: !(Maybe Text)
-    , _pllrPrevPageToken   :: !(Maybe Text)
+    , _pllrNextPageToken :: !(Maybe Text)
+    , _pllrPageInfo :: !(Maybe PageInfo)
+    , _pllrKind :: !Text
+    , _pllrItems :: !(Maybe [PlayList])
+    , _pllrVisitorId :: !(Maybe Text)
+    , _pllrEventId :: !(Maybe Text)
+    , _pllrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -704,12 +704,12 @@ instance ToJSON PlayListListResponse where
 -- /See:/ 'channelSectionSnippet' smart constructor.
 data ChannelSectionSnippet =
   ChannelSectionSnippet'
-    { _cssStyle           :: !(Maybe ChannelSectionSnippetStyle)
-    , _cssChannelId       :: !(Maybe Text)
-    , _cssLocalized       :: !(Maybe ChannelSectionLocalization)
-    , _cssTitle           :: !(Maybe Text)
-    , _cssType            :: !(Maybe ChannelSectionSnippetType)
-    , _cssPosition        :: !(Maybe (Textual Word32))
+    { _cssStyle :: !(Maybe ChannelSectionSnippetStyle)
+    , _cssChannelId :: !(Maybe Text)
+    , _cssLocalized :: !(Maybe ChannelSectionLocalization)
+    , _cssTitle :: !(Maybe Text)
+    , _cssType :: !(Maybe ChannelSectionSnippetType)
+    , _cssPosition :: !(Maybe (Textual Word32))
     , _cssDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -810,9 +810,9 @@ instance ToJSON ChannelSectionSnippet where
 -- /See:/ 'channelStatus' smart constructor.
 data ChannelStatus =
   ChannelStatus'
-    { _csIsLinked          :: !(Maybe Bool)
+    { _csIsLinked :: !(Maybe Bool)
     , _csLongUploadsStatus :: !(Maybe ChannelStatusLongUploadsStatus)
-    , _csPrivacyStatus     :: !(Maybe ChannelStatusPrivacyStatus)
+    , _csPrivacyStatus :: !(Maybe ChannelStatusPrivacyStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -909,10 +909,10 @@ instance ToJSON LiveChatPollClosedDetails where
 -- /See:/ 'promotedItem' smart constructor.
 data PromotedItem =
   PromotedItem'
-    { _piCustomMessage          :: !(Maybe Text)
+    { _piCustomMessage :: !(Maybe Text)
     , _piPromotedByContentOwner :: !(Maybe Bool)
-    , _piId                     :: !(Maybe PromotedItemId)
-    , _piTiming                 :: !(Maybe InvideoTiming)
+    , _piId :: !(Maybe PromotedItemId)
+    , _piTiming :: !(Maybe InvideoTiming)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -986,11 +986,11 @@ instance ToJSON PromotedItem where
 -- /See:/ 'liveStreamSnippet' smart constructor.
 data LiveStreamSnippet =
   LiveStreamSnippet'
-    { _lssPublishedAt     :: !(Maybe DateTime')
-    , _lssChannelId       :: !(Maybe Text)
+    { _lssPublishedAt :: !(Maybe DateTime')
+    , _lssChannelId :: !(Maybe Text)
     , _lssIsDefaultStream :: !(Maybe Bool)
-    , _lssTitle           :: !(Maybe Text)
-    , _lssDescription     :: !(Maybe Text)
+    , _lssTitle :: !(Maybe Text)
+    , _lssDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1079,10 +1079,10 @@ instance ToJSON LiveStreamSnippet where
 -- /See:/ 'searchResult' smart constructor.
 data SearchResult =
   SearchResult'
-    { _srEtag    :: !(Maybe Text)
+    { _srEtag :: !(Maybe Text)
     , _srSnippet :: !(Maybe SearchResultSnippet)
-    , _srKind    :: !Text
-    , _srId      :: !(Maybe ResourceId)
+    , _srKind :: !Text
+    , _srId :: !(Maybe ResourceId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1177,9 +1177,9 @@ instance ToJSON TokenPagination where
 -- /See:/ 'resourceId' smart constructor.
 data ResourceId =
   ResourceId'
-    { _riKind       :: !(Maybe Text)
-    , _riChannelId  :: !(Maybe Text)
-    , _riVideoId    :: !(Maybe Text)
+    { _riKind :: !(Maybe Text)
+    , _riChannelId :: !(Maybe Text)
+    , _riVideoId :: !(Maybe Text)
     , _riPlayListId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1254,16 +1254,16 @@ instance ToJSON ResourceId where
 -- /See:/ 'searchListResponse' smart constructor.
 data SearchListResponse =
   SearchListResponse'
-    { _slrEtag            :: !(Maybe Text)
+    { _slrEtag :: !(Maybe Text)
     , _slrTokenPagination :: !(Maybe TokenPagination)
-    , _slrNextPageToken   :: !(Maybe Text)
-    , _slrRegionCode      :: !(Maybe Text)
-    , _slrPageInfo        :: !(Maybe PageInfo)
-    , _slrKind            :: !Text
-    , _slrItems           :: !(Maybe [SearchResult])
-    , _slrVisitorId       :: !(Maybe Text)
-    , _slrEventId         :: !(Maybe Text)
-    , _slrPrevPageToken   :: !(Maybe Text)
+    , _slrNextPageToken :: !(Maybe Text)
+    , _slrRegionCode :: !(Maybe Text)
+    , _slrPageInfo :: !(Maybe PageInfo)
+    , _slrKind :: !Text
+    , _slrItems :: !(Maybe [SearchResult])
+    , _slrVisitorId :: !(Maybe Text)
+    , _slrEventId :: !(Maybe Text)
+    , _slrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1432,16 +1432,16 @@ instance ToJSON PlayListStatus where
 -- /See:/ 'liveChatMessageListResponse' smart constructor.
 data LiveChatMessageListResponse =
   LiveChatMessageListResponse'
-    { _lcmlrOfflineAt             :: !(Maybe DateTime')
-    , _lcmlrEtag                  :: !(Maybe Text)
-    , _lcmlrTokenPagination       :: !(Maybe TokenPagination)
-    , _lcmlrNextPageToken         :: !(Maybe Text)
-    , _lcmlrPageInfo              :: !(Maybe PageInfo)
-    , _lcmlrKind                  :: !Text
-    , _lcmlrItems                 :: !(Maybe [LiveChatMessage])
-    , _lcmlrVisitorId             :: !(Maybe Text)
+    { _lcmlrOfflineAt :: !(Maybe DateTime')
+    , _lcmlrEtag :: !(Maybe Text)
+    , _lcmlrTokenPagination :: !(Maybe TokenPagination)
+    , _lcmlrNextPageToken :: !(Maybe Text)
+    , _lcmlrPageInfo :: !(Maybe PageInfo)
+    , _lcmlrKind :: !Text
+    , _lcmlrItems :: !(Maybe [LiveChatMessage])
+    , _lcmlrVisitorId :: !(Maybe Text)
     , _lcmlrPollingIntervalMillis :: !(Maybe (Textual Word32))
-    , _lcmlrEventId               :: !(Maybe Text)
+    , _lcmlrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1584,15 +1584,15 @@ instance ToJSON LiveChatMessageListResponse where
 -- /See:/ 'channelListResponse' smart constructor.
 data ChannelListResponse =
   ChannelListResponse'
-    { _clrEtag            :: !(Maybe Text)
+    { _clrEtag :: !(Maybe Text)
     , _clrTokenPagination :: !(Maybe TokenPagination)
-    , _clrNextPageToken   :: !(Maybe Text)
-    , _clrPageInfo        :: !(Maybe PageInfo)
-    , _clrKind            :: !Text
-    , _clrItems           :: !(Maybe [Channel])
-    , _clrVisitorId       :: !(Maybe Text)
-    , _clrEventId         :: !(Maybe Text)
-    , _clrPrevPageToken   :: !(Maybe Text)
+    , _clrNextPageToken :: !(Maybe Text)
+    , _clrPageInfo :: !(Maybe PageInfo)
+    , _clrKind :: !Text
+    , _clrItems :: !(Maybe [Channel])
+    , _clrVisitorId :: !(Maybe Text)
+    , _clrEventId :: !(Maybe Text)
+    , _clrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1715,10 +1715,10 @@ instance ToJSON ChannelListResponse where
 -- /See:/ 'channelProFileDetails' smart constructor.
 data ChannelProFileDetails =
   ChannelProFileDetails'
-    { _cpfdChannelId       :: !(Maybe Text)
+    { _cpfdChannelId :: !(Maybe Text)
     , _cpfdProFileImageURL :: !(Maybe Text)
-    , _cpfdDisplayName     :: !(Maybe Text)
-    , _cpfdChannelURL      :: !(Maybe Text)
+    , _cpfdDisplayName :: !(Maybe Text)
+    , _cpfdChannelURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1791,14 +1791,14 @@ instance ToJSON ChannelProFileDetails where
 -- /See:/ 'superChatEventListResponse' smart constructor.
 data SuperChatEventListResponse =
   SuperChatEventListResponse'
-    { _scelrEtag            :: !(Maybe Text)
+    { _scelrEtag :: !(Maybe Text)
     , _scelrTokenPagination :: !(Maybe TokenPagination)
-    , _scelrNextPageToken   :: !(Maybe Text)
-    , _scelrPageInfo        :: !(Maybe PageInfo)
-    , _scelrKind            :: !Text
-    , _scelrItems           :: !(Maybe [SuperChatEvent])
-    , _scelrVisitorId       :: !(Maybe Text)
-    , _scelrEventId         :: !(Maybe Text)
+    , _scelrNextPageToken :: !(Maybe Text)
+    , _scelrPageInfo :: !(Maybe PageInfo)
+    , _scelrKind :: !Text
+    , _scelrItems :: !(Maybe [SuperChatEvent])
+    , _scelrVisitorId :: !(Maybe Text)
+    , _scelrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1915,11 +1915,11 @@ instance ToJSON SuperChatEventListResponse where
 -- /See:/ 'videoAbuseReportReasonListResponse' smart constructor.
 data VideoAbuseReportReasonListResponse =
   VideoAbuseReportReasonListResponse'
-    { _varrlrEtag      :: !(Maybe Text)
-    , _varrlrKind      :: !Text
-    , _varrlrItems     :: !(Maybe [VideoAbuseReportReason])
+    { _varrlrEtag :: !(Maybe Text)
+    , _varrlrKind :: !Text
+    , _varrlrItems :: !(Maybe [VideoAbuseReportReason])
     , _varrlrVisitorId :: !(Maybe Text)
-    , _varrlrEventId   :: !(Maybe Text)
+    , _varrlrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2007,8 +2007,8 @@ instance ToJSON VideoAbuseReportReasonListResponse
 -- /See:/ 'liveChatUserBannedMessageDetails' smart constructor.
 data LiveChatUserBannedMessageDetails =
   LiveChatUserBannedMessageDetails'
-    { _lcubmdBanType            :: !(Maybe LiveChatUserBannedMessageDetailsBanType)
-    , _lcubmdBannedUserDetails  :: !(Maybe ChannelProFileDetails)
+    { _lcubmdBanType :: !(Maybe LiveChatUserBannedMessageDetailsBanType)
+    , _lcubmdBannedUserDetails :: !(Maybe ChannelProFileDetails)
     , _lcubmdBanDurationSeconds :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2078,22 +2078,22 @@ instance ToJSON LiveChatUserBannedMessageDetails
 -- /See:/ 'liveBroadcastContentDetails' smart constructor.
 data LiveBroadcastContentDetails =
   LiveBroadcastContentDetails'
-    { _lbcdEnableContentEncryption     :: !(Maybe Bool)
-    , _lbcdEnableLowLatency            :: !(Maybe Bool)
-    , _lbcdLatencyPreference           :: !(Maybe LiveBroadcastContentDetailsLatencyPreference)
-    , _lbcdClosedCaptionsType          :: !(Maybe LiveBroadcastContentDetailsClosedCaptionsType)
-    , _lbcdEnableEmbed                 :: !(Maybe Bool)
-    , _lbcdStartWithSlate              :: !(Maybe Bool)
-    , _lbcdProjection                  :: !(Maybe LiveBroadcastContentDetailsProjection)
-    , _lbcdMonitorStream               :: !(Maybe MonitorStreamInfo)
-    , _lbcdStereoLayout                :: !(Maybe LiveBroadcastContentDetailsStereoLayout)
-    , _lbcdBoundStreamId               :: !(Maybe Text)
-    , _lbcdRecordFromStart             :: !(Maybe Bool)
-    , _lbcdMesh                        :: !(Maybe Bytes)
-    , _lbcdEnableClosedCaptions        :: !(Maybe Bool)
-    , _lbcdEnableAutoStart             :: !(Maybe Bool)
+    { _lbcdEnableContentEncryption :: !(Maybe Bool)
+    , _lbcdEnableLowLatency :: !(Maybe Bool)
+    , _lbcdLatencyPreference :: !(Maybe LiveBroadcastContentDetailsLatencyPreference)
+    , _lbcdClosedCaptionsType :: !(Maybe LiveBroadcastContentDetailsClosedCaptionsType)
+    , _lbcdEnableEmbed :: !(Maybe Bool)
+    , _lbcdStartWithSlate :: !(Maybe Bool)
+    , _lbcdProjection :: !(Maybe LiveBroadcastContentDetailsProjection)
+    , _lbcdMonitorStream :: !(Maybe MonitorStreamInfo)
+    , _lbcdStereoLayout :: !(Maybe LiveBroadcastContentDetailsStereoLayout)
+    , _lbcdBoundStreamId :: !(Maybe Text)
+    , _lbcdRecordFromStart :: !(Maybe Bool)
+    , _lbcdMesh :: !(Maybe Bytes)
+    , _lbcdEnableClosedCaptions :: !(Maybe Bool)
+    , _lbcdEnableAutoStart :: !(Maybe Bool)
     , _lbcdBoundStreamLastUpdateTimeMs :: !(Maybe DateTime')
-    , _lbcdEnableDvr                   :: !(Maybe Bool)
+    , _lbcdEnableDvr :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2331,13 +2331,13 @@ instance ToJSON LiveBroadcastContentDetails where
 -- /See:/ 'channelSection' smart constructor.
 data ChannelSection =
   ChannelSection'
-    { _csEtag           :: !(Maybe Text)
-    , _csSnippet        :: !(Maybe ChannelSectionSnippet)
-    , _csKind           :: !Text
+    { _csEtag :: !(Maybe Text)
+    , _csSnippet :: !(Maybe ChannelSectionSnippet)
+    , _csKind :: !Text
     , _csContentDetails :: !(Maybe ChannelSectionContentDetails)
-    , _csTargeting      :: !(Maybe ChannelSectionTargeting)
-    , _csId             :: !(Maybe Text)
-    , _csLocalizations  :: !(Maybe ChannelSectionLocalizations)
+    , _csTargeting :: !(Maybe ChannelSectionTargeting)
+    , _csId :: !(Maybe Text)
+    , _csLocalizations :: !(Maybe ChannelSectionLocalizations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2440,11 +2440,11 @@ instance ToJSON ChannelSection where
 -- /See:/ 'channelContentDetailsRelatedPlayLists' smart constructor.
 data ChannelContentDetailsRelatedPlayLists =
   ChannelContentDetailsRelatedPlayLists'
-    { _ccdrplFavorites    :: !(Maybe Text)
+    { _ccdrplFavorites :: !(Maybe Text)
     , _ccdrplWatchHistory :: !(Maybe Text)
-    , _ccdrplWatchLater   :: !(Maybe Text)
-    , _ccdrplUploads      :: !(Maybe Text)
-    , _ccdrplLikes        :: !(Maybe Text)
+    , _ccdrplWatchLater :: !(Maybe Text)
+    , _ccdrplUploads :: !(Maybe Text)
+    , _ccdrplLikes :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2541,13 +2541,13 @@ instance ToJSON ChannelContentDetailsRelatedPlayLists
 -- /See:/ 'liveStream' smart constructor.
 data LiveStream =
   LiveStream'
-    { _lsStatus         :: !(Maybe LiveStreamStatus)
-    , _lsEtag           :: !(Maybe Text)
-    , _lsSnippet        :: !(Maybe LiveStreamSnippet)
-    , _lsKind           :: !Text
+    { _lsStatus :: !(Maybe LiveStreamStatus)
+    , _lsEtag :: !(Maybe Text)
+    , _lsSnippet :: !(Maybe LiveStreamSnippet)
+    , _lsKind :: !Text
     , _lsContentDetails :: !(Maybe LiveStreamContentDetails)
-    , _lsId             :: !(Maybe Text)
-    , _lsCdn            :: !(Maybe CdnSettings)
+    , _lsId :: !(Maybe Text)
+    , _lsCdn :: !(Maybe CdnSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2690,14 +2690,14 @@ data VideoContentDetails =
   VideoContentDetails'
     { _vcdCountryRestriction :: !(Maybe AccessPolicy)
     , _vcdHasCustomThumbnail :: !(Maybe Bool)
-    , _vcdDefinition         :: !(Maybe VideoContentDetailsDefinition)
-    , _vcdDimension          :: !(Maybe Text)
-    , _vcdCaption            :: !(Maybe VideoContentDetailsCaption)
-    , _vcdRegionRestriction  :: !(Maybe VideoContentDetailsRegionRestriction)
-    , _vcdProjection         :: !(Maybe VideoContentDetailsProjection)
-    , _vcdDuration           :: !(Maybe Text)
-    , _vcdContentRating      :: !(Maybe ContentRating)
-    , _vcdLicensedContent    :: !(Maybe Bool)
+    , _vcdDefinition :: !(Maybe VideoContentDetailsDefinition)
+    , _vcdDimension :: !(Maybe Text)
+    , _vcdCaption :: !(Maybe VideoContentDetailsCaption)
+    , _vcdRegionRestriction :: !(Maybe VideoContentDetailsRegionRestriction)
+    , _vcdProjection :: !(Maybe VideoContentDetailsProjection)
+    , _vcdDuration :: !(Maybe Text)
+    , _vcdContentRating :: !(Maybe ContentRating)
+    , _vcdLicensedContent :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2852,28 +2852,28 @@ instance ToJSON VideoContentDetails where
 -- /See:/ 'imageSettings' smart constructor.
 data ImageSettings =
   ImageSettings'
-    { _isBannerMobileLowImageURL           :: !(Maybe Text)
-    , _isBannerTabletExtraHdImageURL       :: !(Maybe Text)
+    { _isBannerMobileLowImageURL :: !(Maybe Text)
+    , _isBannerTabletExtraHdImageURL :: !(Maybe Text)
     , _isSmallBrandedBannerImageImapScript :: !(Maybe LocalizedProperty)
-    , _isBannerTvHighImageURL              :: !(Maybe Text)
-    , _isBannerMobileHdImageURL            :: !(Maybe Text)
-    , _isBannerTvMediumImageURL            :: !(Maybe Text)
-    , _isBannerTvImageURL                  :: !(Maybe Text)
-    , _isBannerTabletImageURL              :: !(Maybe Text)
-    , _isBannerMobileImageURL              :: !(Maybe Text)
-    , _isTrackingImageURL                  :: !(Maybe Text)
-    , _isBannerMobileMediumHdImageURL      :: !(Maybe Text)
-    , _isLargeBrandedBannerImageURL        :: !(Maybe LocalizedProperty)
-    , _isBannerExternalURL                 :: !(Maybe Text)
-    , _isBackgRoundImageURL                :: !(Maybe LocalizedProperty)
-    , _isSmallBrandedBannerImageURL        :: !(Maybe LocalizedProperty)
-    , _isBannerImageURL                    :: !(Maybe Text)
-    , _isWatchIconImageURL                 :: !(Maybe Text)
-    , _isBannerTvLowImageURL               :: !(Maybe Text)
-    , _isBannerMobileExtraHdImageURL       :: !(Maybe Text)
+    , _isBannerTvHighImageURL :: !(Maybe Text)
+    , _isBannerMobileHdImageURL :: !(Maybe Text)
+    , _isBannerTvMediumImageURL :: !(Maybe Text)
+    , _isBannerTvImageURL :: !(Maybe Text)
+    , _isBannerTabletImageURL :: !(Maybe Text)
+    , _isBannerMobileImageURL :: !(Maybe Text)
+    , _isTrackingImageURL :: !(Maybe Text)
+    , _isBannerMobileMediumHdImageURL :: !(Maybe Text)
+    , _isLargeBrandedBannerImageURL :: !(Maybe LocalizedProperty)
+    , _isBannerExternalURL :: !(Maybe Text)
+    , _isBackgRoundImageURL :: !(Maybe LocalizedProperty)
+    , _isSmallBrandedBannerImageURL :: !(Maybe LocalizedProperty)
+    , _isBannerImageURL :: !(Maybe Text)
+    , _isWatchIconImageURL :: !(Maybe Text)
+    , _isBannerTvLowImageURL :: !(Maybe Text)
+    , _isBannerMobileExtraHdImageURL :: !(Maybe Text)
     , _isLargeBrandedBannerImageImapScript :: !(Maybe LocalizedProperty)
-    , _isBannerTabletLowImageURL           :: !(Maybe Text)
-    , _isBannerTabletHdImageURL            :: !(Maybe Text)
+    , _isBannerTabletLowImageURL :: !(Maybe Text)
+    , _isBannerTabletHdImageURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3171,9 +3171,9 @@ instance ToJSON ImageSettings where
 -- /See:/ 'videoTopicDetails' smart constructor.
 data VideoTopicDetails =
   VideoTopicDetails'
-    { _vtdTopicIds         :: !(Maybe [Text])
+    { _vtdTopicIds :: !(Maybe [Text])
     , _vtdRelevantTopicIds :: !(Maybe [Text])
-    , _vtdTopicCategories  :: !(Maybe [Text])
+    , _vtdTopicCategories :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3289,9 +3289,9 @@ instance ToJSON ActivityContentDetailsComment where
 data LiveBroadcastStatus =
   LiveBroadcastStatus'
     { _lbsLiveBroadcastPriority :: !(Maybe LiveBroadcastStatusLiveBroadcastPriority)
-    , _lbsRecordingStatus       :: !(Maybe LiveBroadcastStatusRecordingStatus)
-    , _lbsLifeCycleStatus       :: !(Maybe LiveBroadcastStatusLifeCycleStatus)
-    , _lbsPrivacyStatus         :: !(Maybe LiveBroadcastStatusPrivacyStatus)
+    , _lbsRecordingStatus :: !(Maybe LiveBroadcastStatusRecordingStatus)
+    , _lbsLifeCycleStatus :: !(Maybe LiveBroadcastStatusLifeCycleStatus)
+    , _lbsPrivacyStatus :: !(Maybe LiveBroadcastStatusPrivacyStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3409,8 +3409,8 @@ instance ToJSON ActivityContentDetailsUpload where
 -- /See:/ 'activityContentDetailsPlayListItem' smart constructor.
 data ActivityContentDetailsPlayListItem =
   ActivityContentDetailsPlayListItem'
-    { _acdpliResourceId     :: !(Maybe ResourceId)
-    , _acdpliPlayListId     :: !(Maybe Text)
+    { _acdpliResourceId :: !(Maybe ResourceId)
+    , _acdpliPlayListId :: !(Maybe Text)
     , _acdpliPlayListItemId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3476,8 +3476,8 @@ instance ToJSON ActivityContentDetailsPlayListItem
 -- /See:/ 'superStickerMetadata' smart constructor.
 data SuperStickerMetadata =
   SuperStickerMetadata'
-    { _ssmAltText         :: !(Maybe Text)
-    , _ssmStickerId       :: !(Maybe Text)
+    { _ssmAltText :: !(Maybe Text)
+    , _ssmStickerId :: !(Maybe Text)
     , _ssmAltTextLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3542,11 +3542,11 @@ instance ToJSON SuperStickerMetadata where
 -- /See:/ 'activityContentDetailsSocial' smart constructor.
 data ActivityContentDetailsSocial =
   ActivityContentDetailsSocial'
-    { _acdsResourceId   :: !(Maybe ResourceId)
-    , _acdsImageURL     :: !(Maybe Text)
-    , _acdsAuthor       :: !(Maybe Text)
+    { _acdsResourceId :: !(Maybe ResourceId)
+    , _acdsImageURL :: !(Maybe Text)
+    , _acdsAuthor :: !(Maybe Text)
     , _acdsReferenceURL :: !(Maybe Text)
-    , _acdsType         :: !(Maybe ActivityContentDetailsSocialType)
+    , _acdsType :: !(Maybe ActivityContentDetailsSocialType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3628,10 +3628,10 @@ instance ToJSON ActivityContentDetailsSocial where
 -- /See:/ 'liveChatBan' smart constructor.
 data LiveChatBan =
   LiveChatBan'
-    { _lcbEtag    :: !(Maybe Text)
+    { _lcbEtag :: !(Maybe Text)
     , _lcbSnippet :: !(Maybe LiveChatBanSnippet)
-    , _lcbKind    :: !Text
-    , _lcbId      :: !(Maybe Text)
+    , _lcbKind :: !Text
+    , _lcbId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3814,11 +3814,11 @@ instance ToJSON PlayListContentDetails where
 -- /See:/ 'liveChatSuperChatDetails' smart constructor.
 data LiveChatSuperChatDetails =
   LiveChatSuperChatDetails'
-    { _lcscdUserComment         :: !(Maybe Text)
-    , _lcscdAmountMicros        :: !(Maybe (Textual Word64))
+    { _lcscdUserComment :: !(Maybe Text)
+    , _lcscdAmountMicros :: !(Maybe (Textual Word64))
     , _lcscdAmountDisplayString :: !(Maybe Text)
-    , _lcscdCurrency            :: !(Maybe Text)
-    , _lcscdTier                :: !(Maybe (Textual Word32))
+    , _lcscdCurrency :: !(Maybe Text)
+    , _lcscdTier :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3909,7 +3909,7 @@ instance ToJSON LiveChatSuperChatDetails where
 data PageInfo =
   PageInfo'
     { _piResultsPerPage :: !(Maybe (Textual Int32))
-    , _piTotalResults   :: !(Maybe (Textual Int32))
+    , _piTotalResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3959,14 +3959,14 @@ instance ToJSON PageInfo where
 -- /See:/ 'videoStatus' smart constructor.
 data VideoStatus =
   VideoStatus'
-    { _vsFailureReason       :: !(Maybe VideoStatusFailureReason)
+    { _vsFailureReason :: !(Maybe VideoStatusFailureReason)
     , _vsPublicStatsViewable :: !(Maybe Bool)
-    , _vsRejectionReason     :: !(Maybe VideoStatusRejectionReason)
-    , _vsPublishAt           :: !(Maybe DateTime')
-    , _vsUploadStatus        :: !(Maybe VideoStatusUploadStatus)
-    , _vsPrivacyStatus       :: !(Maybe VideoStatusPrivacyStatus)
-    , _vsEmbeddable          :: !(Maybe Bool)
-    , _vsLicense             :: !(Maybe VideoStatusLicense)
+    , _vsRejectionReason :: !(Maybe VideoStatusRejectionReason)
+    , _vsPublishAt :: !(Maybe DateTime')
+    , _vsUploadStatus :: !(Maybe VideoStatusUploadStatus)
+    , _vsPrivacyStatus :: !(Maybe VideoStatusPrivacyStatus)
+    , _vsEmbeddable :: !(Maybe Bool)
+    , _vsLicense :: !(Maybe VideoStatusLicense)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4093,15 +4093,15 @@ instance ToJSON VideoStatus where
 -- /See:/ 'videoFileDetails' smart constructor.
 data VideoFileDetails =
   VideoFileDetails'
-    { _vfdBitrateBps   :: !(Maybe (Textual Word64))
+    { _vfdBitrateBps :: !(Maybe (Textual Word64))
     , _vfdCreationTime :: !(Maybe Text)
-    , _vfdDurationMs   :: !(Maybe (Textual Word64))
-    , _vfdFileSize     :: !(Maybe (Textual Word64))
-    , _vfdFileType     :: !(Maybe VideoFileDetailsFileType)
-    , _vfdContainer    :: !(Maybe Text)
+    , _vfdDurationMs :: !(Maybe (Textual Word64))
+    , _vfdFileSize :: !(Maybe (Textual Word64))
+    , _vfdFileType :: !(Maybe VideoFileDetailsFileType)
+    , _vfdContainer :: !(Maybe Text)
     , _vfdVideoStreams :: !(Maybe [VideoFileDetailsVideoStream])
     , _vfdAudioStreams :: !(Maybe [VideoFileDetailsAudioStream])
-    , _vfdFileName     :: !(Maybe Text)
+    , _vfdFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4242,11 +4242,11 @@ instance ToJSON VideoFileDetails where
 -- /See:/ 'thumbnailSetResponse' smart constructor.
 data ThumbnailSetResponse =
   ThumbnailSetResponse'
-    { _tsrEtag      :: !(Maybe Text)
-    , _tsrKind      :: !Text
-    , _tsrItems     :: !(Maybe [ThumbnailDetails])
+    { _tsrEtag :: !(Maybe Text)
+    , _tsrKind :: !Text
+    , _tsrItems :: !(Maybe [ThumbnailDetails])
     , _tsrVisitorId :: !(Maybe Text)
-    , _tsrEventId   :: !(Maybe Text)
+    , _tsrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4326,15 +4326,15 @@ instance ToJSON ThumbnailSetResponse where
 -- /See:/ 'liveBroadcastListResponse' smart constructor.
 data LiveBroadcastListResponse =
   LiveBroadcastListResponse'
-    { _lblrEtag            :: !(Maybe Text)
+    { _lblrEtag :: !(Maybe Text)
     , _lblrTokenPagination :: !(Maybe TokenPagination)
-    , _lblrNextPageToken   :: !(Maybe Text)
-    , _lblrPageInfo        :: !(Maybe PageInfo)
-    , _lblrKind            :: !Text
-    , _lblrItems           :: !(Maybe [LiveBroadcast])
-    , _lblrVisitorId       :: !(Maybe Text)
-    , _lblrEventId         :: !(Maybe Text)
-    , _lblrPrevPageToken   :: !(Maybe Text)
+    , _lblrNextPageToken :: !(Maybe Text)
+    , _lblrPageInfo :: !(Maybe PageInfo)
+    , _lblrKind :: !Text
+    , _lblrItems :: !(Maybe [LiveBroadcast])
+    , _lblrVisitorId :: !(Maybe Text)
+    , _lblrEventId :: !(Maybe Text)
+    , _lblrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4540,15 +4540,15 @@ instance ToJSON ActivityContentDetailsChannelItem
 -- /See:/ 'videoListResponse' smart constructor.
 data VideoListResponse =
   VideoListResponse'
-    { _vlrEtag            :: !(Maybe Text)
+    { _vlrEtag :: !(Maybe Text)
     , _vlrTokenPagination :: !(Maybe TokenPagination)
-    , _vlrNextPageToken   :: !(Maybe Text)
-    , _vlrPageInfo        :: !(Maybe PageInfo)
-    , _vlrKind            :: !Text
-    , _vlrItems           :: !(Maybe [Video])
-    , _vlrVisitorId       :: !(Maybe Text)
-    , _vlrEventId         :: !(Maybe Text)
-    , _vlrPrevPageToken   :: !(Maybe Text)
+    , _vlrNextPageToken :: !(Maybe Text)
+    , _vlrPageInfo :: !(Maybe PageInfo)
+    , _vlrKind :: !Text
+    , _vlrItems :: !(Maybe [Video])
+    , _vlrVisitorId :: !(Maybe Text)
+    , _vlrEventId :: !(Maybe Text)
+    , _vlrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4707,7 +4707,7 @@ instance ToJSON VideoMonetizationDetails where
 -- /See:/ 'videoSuggestionsTagSuggestion' smart constructor.
 data VideoSuggestionsTagSuggestion =
   VideoSuggestionsTagSuggestion'
-    { _vstsTag               :: !(Maybe Text)
+    { _vstsTag :: !(Maybe Text)
     , _vstsCategoryRestricts :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4762,15 +4762,15 @@ instance ToJSON VideoSuggestionsTagSuggestion where
 -- /See:/ 'liveChatModeratorListResponse' smart constructor.
 data LiveChatModeratorListResponse =
   LiveChatModeratorListResponse'
-    { _lEtag            :: !(Maybe Text)
+    { _lEtag :: !(Maybe Text)
     , _lTokenPagination :: !(Maybe TokenPagination)
-    , _lNextPageToken   :: !(Maybe Text)
-    , _lPageInfo        :: !(Maybe PageInfo)
-    , _lKind            :: !Text
-    , _lItems           :: !(Maybe [LiveChatModerator])
-    , _lVisitorId       :: !(Maybe Text)
-    , _lEventId         :: !(Maybe Text)
-    , _lPrevPageToken   :: !(Maybe Text)
+    , _lNextPageToken :: !(Maybe Text)
+    , _lPageInfo :: !(Maybe PageInfo)
+    , _lKind :: !Text
+    , _lItems :: !(Maybe [LiveChatModerator])
+    , _lVisitorId :: !(Maybe Text)
+    , _lEventId :: !(Maybe Text)
+    , _lPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4894,14 +4894,14 @@ instance ToJSON LiveChatModeratorListResponse where
 -- /See:/ 'activitySnippet' smart constructor.
 data ActivitySnippet =
   ActivitySnippet'
-    { _asPublishedAt  :: !(Maybe DateTime')
+    { _asPublishedAt :: !(Maybe DateTime')
     , _asChannelTitle :: !(Maybe Text)
-    , _asChannelId    :: !(Maybe Text)
-    , _asThumbnails   :: !(Maybe ThumbnailDetails)
-    , _asGroupId      :: !(Maybe Text)
-    , _asTitle        :: !(Maybe Text)
-    , _asType         :: !(Maybe ActivitySnippetType)
-    , _asDescription  :: !(Maybe Text)
+    , _asChannelId :: !(Maybe Text)
+    , _asThumbnails :: !(Maybe ThumbnailDetails)
+    , _asGroupId :: !(Maybe Text)
+    , _asTitle :: !(Maybe Text)
+    , _asType :: !(Maybe ActivitySnippetType)
+    , _asDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5022,7 +5022,7 @@ instance ToJSON ActivitySnippet where
 -- /See:/ 'channelTopicDetails' smart constructor.
 data ChannelTopicDetails =
   ChannelTopicDetails'
-    { _ctdTopicIds        :: !(Maybe [Text])
+    { _ctdTopicIds :: !(Maybe [Text])
     , _ctdTopicCategories :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5077,8 +5077,8 @@ instance ToJSON ChannelTopicDetails where
 data LiveChatPollEditedDetails =
   LiveChatPollEditedDetails'
     { _lcpedPrompt :: !(Maybe Text)
-    , _lcpedItems  :: !(Maybe [LiveChatPollItem])
-    , _lcpedId     :: !(Maybe Text)
+    , _lcpedItems :: !(Maybe [LiveChatPollItem])
+    , _lcpedId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5132,15 +5132,15 @@ instance ToJSON LiveChatPollEditedDetails where
 -- /See:/ 'videoCategoryListResponse' smart constructor.
 data VideoCategoryListResponse =
   VideoCategoryListResponse'
-    { _vclrEtag            :: !(Maybe Text)
+    { _vclrEtag :: !(Maybe Text)
     , _vclrTokenPagination :: !(Maybe TokenPagination)
-    , _vclrNextPageToken   :: !(Maybe Text)
-    , _vclrPageInfo        :: !(Maybe PageInfo)
-    , _vclrKind            :: !Text
-    , _vclrItems           :: !(Maybe [VideoCategory])
-    , _vclrVisitorId       :: !(Maybe Text)
-    , _vclrEventId         :: !(Maybe Text)
-    , _vclrPrevPageToken   :: !(Maybe Text)
+    , _vclrNextPageToken :: !(Maybe Text)
+    , _vclrPageInfo :: !(Maybe PageInfo)
+    , _vclrKind :: !Text
+    , _vclrItems :: !(Maybe [VideoCategory])
+    , _vclrVisitorId :: !(Maybe Text)
+    , _vclrEventId :: !(Maybe Text)
+    , _vclrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5270,14 +5270,14 @@ instance ToJSON VideoCategoryListResponse where
 -- /See:/ 'videoProcessingDetails' smart constructor.
 data VideoProcessingDetails =
   VideoProcessingDetails'
-    { _vpdProcessingFailureReason       :: !(Maybe VideoProcessingDetailsProcessingFailureReason)
-    , _vpdProcessingIssuesAvailability  :: !(Maybe Text)
-    , _vpdProcessingProgress            :: !(Maybe VideoProcessingDetailsProcessingProgress)
-    , _vpdThumbnailsAvailability        :: !(Maybe Text)
-    , _vpdTagSuggestionsAvailability    :: !(Maybe Text)
-    , _vpdProcessingStatus              :: !(Maybe VideoProcessingDetailsProcessingStatus)
+    { _vpdProcessingFailureReason :: !(Maybe VideoProcessingDetailsProcessingFailureReason)
+    , _vpdProcessingIssuesAvailability :: !(Maybe Text)
+    , _vpdProcessingProgress :: !(Maybe VideoProcessingDetailsProcessingProgress)
+    , _vpdThumbnailsAvailability :: !(Maybe Text)
+    , _vpdTagSuggestionsAvailability :: !(Maybe Text)
+    , _vpdProcessingStatus :: !(Maybe VideoProcessingDetailsProcessingStatus)
     , _vpdEditorSuggestionsAvailability :: !(Maybe Text)
-    , _vpdFileDetailsAvailability       :: !(Maybe Text)
+    , _vpdFileDetailsAvailability :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5419,10 +5419,10 @@ instance ToJSON VideoProcessingDetails where
 -- /See:/ 'commentThreadSnippet' smart constructor.
 data CommentThreadSnippet =
   CommentThreadSnippet'
-    { _ctsIsPublic        :: !(Maybe Bool)
-    , _ctsChannelId       :: !(Maybe Text)
-    , _ctsCanReply        :: !(Maybe Bool)
-    , _ctsVideoId         :: !(Maybe Text)
+    { _ctsIsPublic :: !(Maybe Bool)
+    , _ctsChannelId :: !(Maybe Text)
+    , _ctsCanReply :: !(Maybe Bool)
+    , _ctsVideoId :: !(Maybe Text)
     , _ctsTotalReplyCount :: !(Maybe (Textual Word32))
     , _ctsTopLevelComment :: !(Maybe Comment)
     }
@@ -5521,11 +5521,11 @@ instance ToJSON CommentThreadSnippet where
 -- /See:/ 'channelSectionListResponse' smart constructor.
 data ChannelSectionListResponse =
   ChannelSectionListResponse'
-    { _cslrEtag      :: !(Maybe Text)
-    , _cslrKind      :: !Text
-    , _cslrItems     :: !(Maybe [ChannelSection])
+    { _cslrEtag :: !(Maybe Text)
+    , _cslrKind :: !Text
+    , _cslrItems :: !(Maybe [ChannelSection])
     , _cslrVisitorId :: !(Maybe Text)
-    , _cslrEventId   :: !(Maybe Text)
+    , _cslrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5610,10 +5610,10 @@ instance ToJSON ChannelSectionListResponse where
 -- /See:/ 'superChatEvent' smart constructor.
 data SuperChatEvent =
   SuperChatEvent'
-    { _sceEtag    :: !(Maybe Text)
+    { _sceEtag :: !(Maybe Text)
     , _sceSnippet :: !(Maybe SuperChatEventSnippet)
-    , _sceKind    :: !Text
-    , _sceId      :: !(Maybe Text)
+    , _sceKind :: !Text
+    , _sceId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5682,10 +5682,10 @@ instance ToJSON SuperChatEvent where
 -- /See:/ 'videoAbuseReportReason' smart constructor.
 data VideoAbuseReportReason =
   VideoAbuseReportReason'
-    { _varrEtag    :: !(Maybe Text)
+    { _varrEtag :: !(Maybe Text)
     , _varrSnippet :: !(Maybe VideoAbuseReportReasonSnippet)
-    , _varrKind    :: !Text
-    , _varrId      :: !(Maybe Text)
+    , _varrKind :: !Text
+    , _varrId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5752,9 +5752,9 @@ instance ToJSON VideoAbuseReportReason where
 -- /See:/ 'liveStreamConfigurationIssue' smart constructor.
 data LiveStreamConfigurationIssue =
   LiveStreamConfigurationIssue'
-    { _lsciSeverity    :: !(Maybe LiveStreamConfigurationIssueSeverity)
-    , _lsciReason      :: !(Maybe Text)
-    , _lsciType        :: !(Maybe LiveStreamConfigurationIssueType)
+    { _lsciSeverity :: !(Maybe LiveStreamConfigurationIssueSeverity)
+    , _lsciReason :: !(Maybe Text)
+    , _lsciType :: !(Maybe LiveStreamConfigurationIssueType)
     , _lsciDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5826,11 +5826,11 @@ instance ToJSON LiveStreamConfigurationIssue where
 -- /See:/ 'liveChatMessage' smart constructor.
 data LiveChatMessage =
   LiveChatMessage'
-    { _lcmEtag          :: !(Maybe Text)
-    , _lcmSnippet       :: !(Maybe LiveChatMessageSnippet)
-    , _lcmKind          :: !Text
+    { _lcmEtag :: !(Maybe Text)
+    , _lcmSnippet :: !(Maybe LiveChatMessageSnippet)
+    , _lcmKind :: !Text
     , _lcmAuthorDetails :: !(Maybe LiveChatMessageAuthorDetails)
-    , _lcmId            :: !(Maybe Text)
+    , _lcmId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5910,20 +5910,20 @@ instance ToJSON LiveChatMessage where
 -- /See:/ 'channel' smart constructor.
 data Channel =
   Channel'
-    { _chaStatus              :: !(Maybe ChannelStatus)
-    , _chaEtag                :: !(Maybe Text)
-    , _chaAuditDetails        :: !(Maybe ChannelAuditDetails)
+    { _chaStatus :: !(Maybe ChannelStatus)
+    , _chaEtag :: !(Maybe Text)
+    , _chaAuditDetails :: !(Maybe ChannelAuditDetails)
     , _chaContentOwnerDetails :: !(Maybe ChannelContentOwnerDetails)
-    , _chaSnippet             :: !(Maybe ChannelSnippet)
-    , _chaKind                :: !Text
-    , _chaTopicDetails        :: !(Maybe ChannelTopicDetails)
-    , _chaContentDetails      :: !(Maybe ChannelContentDetails)
-    , _chaConversionPings     :: !(Maybe ChannelConversionPings)
-    , _chaBrandingSettings    :: !(Maybe ChannelBrandingSettings)
-    , _chaId                  :: !(Maybe Text)
-    , _chaInvideoPromotion    :: !(Maybe InvideoPromotion)
-    , _chaStatistics          :: !(Maybe ChannelStatistics)
-    , _chaLocalizations       :: !(Maybe ChannelLocalizations)
+    , _chaSnippet :: !(Maybe ChannelSnippet)
+    , _chaKind :: !Text
+    , _chaTopicDetails :: !(Maybe ChannelTopicDetails)
+    , _chaContentDetails :: !(Maybe ChannelContentDetails)
+    , _chaConversionPings :: !(Maybe ChannelConversionPings)
+    , _chaBrandingSettings :: !(Maybe ChannelBrandingSettings)
+    , _chaId :: !(Maybe Text)
+    , _chaInvideoPromotion :: !(Maybe InvideoPromotion)
+    , _chaStatistics :: !(Maybe ChannelStatistics)
+    , _chaLocalizations :: !(Maybe ChannelLocalizations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6110,7 +6110,7 @@ instance ToJSON Channel where
 -- /See:/ 'channelSectionTargeting' smart constructor.
 data ChannelSectionTargeting =
   ChannelSectionTargeting'
-    { _cstRegions   :: !(Maybe [Text])
+    { _cstRegions :: !(Maybe [Text])
     , _cstCountries :: !(Maybe [Text])
     , _cstLanguages :: !(Maybe [Text])
     }
@@ -6175,15 +6175,15 @@ instance ToJSON ChannelSectionTargeting where
 -- /See:/ 'liveStreamListResponse' smart constructor.
 data LiveStreamListResponse =
   LiveStreamListResponse'
-    { _lslrEtag            :: !(Maybe Text)
+    { _lslrEtag :: !(Maybe Text)
     , _lslrTokenPagination :: !(Maybe TokenPagination)
-    , _lslrNextPageToken   :: !(Maybe Text)
-    , _lslrPageInfo        :: !(Maybe PageInfo)
-    , _lslrKind            :: !Text
-    , _lslrItems           :: !(Maybe [LiveStream])
-    , _lslrVisitorId       :: !(Maybe Text)
-    , _lslrEventId         :: !(Maybe Text)
-    , _lslrPrevPageToken   :: !(Maybe Text)
+    , _lslrNextPageToken :: !(Maybe Text)
+    , _lslrPageInfo :: !(Maybe PageInfo)
+    , _lslrKind :: !Text
+    , _lslrItems :: !(Maybe [LiveStream])
+    , _lslrVisitorId :: !(Maybe Text)
+    , _lslrEventId :: !(Maybe Text)
+    , _lslrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6347,14 +6347,14 @@ instance ToJSON ChannelLocalizations where
 -- /See:/ 'playListSnippet' smart constructor.
 data PlayListSnippet =
   PlayListSnippet'
-    { _plsPublishedAt     :: !(Maybe DateTime')
-    , _plsChannelTitle    :: !(Maybe Text)
-    , _plsChannelId       :: !(Maybe Text)
-    , _plsThumbnails      :: !(Maybe ThumbnailDetails)
-    , _plsLocalized       :: !(Maybe PlayListLocalization)
-    , _plsTitle           :: !(Maybe Text)
-    , _plsDescription     :: !(Maybe Text)
-    , _plsTags            :: !(Maybe [Text])
+    { _plsPublishedAt :: !(Maybe DateTime')
+    , _plsChannelTitle :: !(Maybe Text)
+    , _plsChannelId :: !(Maybe Text)
+    , _plsThumbnails :: !(Maybe ThumbnailDetails)
+    , _plsLocalized :: !(Maybe PlayListLocalization)
+    , _plsTitle :: !(Maybe Text)
+    , _plsDescription :: !(Maybe Text)
+    , _plsTags :: !(Maybe [Text])
     , _plsDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6484,11 +6484,11 @@ instance ToJSON PlayListSnippet where
 -- /See:/ 'videoGetRatingResponse' smart constructor.
 data VideoGetRatingResponse =
   VideoGetRatingResponse'
-    { _vgrrEtag      :: !(Maybe Text)
-    , _vgrrKind      :: !Text
-    , _vgrrItems     :: !(Maybe [VideoRating])
+    { _vgrrEtag :: !(Maybe Text)
+    , _vgrrKind :: !Text
+    , _vgrrItems :: !(Maybe [VideoRating])
     , _vgrrVisitorId :: !(Maybe Text)
-    , _vgrrEventId   :: !(Maybe Text)
+    , _vgrrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6570,18 +6570,18 @@ instance ToJSON VideoGetRatingResponse where
 -- /See:/ 'superChatEventSnippet' smart constructor.
 data SuperChatEventSnippet =
   SuperChatEventSnippet'
-    { _scesDisplayString        :: !(Maybe Text)
-    , _scesSupporterDetails     :: !(Maybe ChannelProFileDetails)
-    , _scesCreatedAt            :: !(Maybe DateTime')
+    { _scesDisplayString :: !(Maybe Text)
+    , _scesSupporterDetails :: !(Maybe ChannelProFileDetails)
+    , _scesCreatedAt :: !(Maybe DateTime')
     , _scesSuperStickerMetadata :: !(Maybe SuperStickerMetadata)
-    , _scesAmountMicros         :: !(Maybe (Textual Word64))
-    , _scesMessageType          :: !(Maybe (Textual Word32))
-    , _scesChannelId            :: !(Maybe Text)
-    , _scesCommentText          :: !(Maybe Text)
-    , _scesNonprofit            :: !(Maybe Nonprofit)
-    , _scesCurrency             :: !(Maybe Text)
-    , _scesIsSuperChatForGood   :: !(Maybe Bool)
-    , _scesIsSuperStickerEvent  :: !(Maybe Bool)
+    , _scesAmountMicros :: !(Maybe (Textual Word64))
+    , _scesMessageType :: !(Maybe (Textual Word32))
+    , _scesChannelId :: !(Maybe Text)
+    , _scesCommentText :: !(Maybe Text)
+    , _scesNonprofit :: !(Maybe Nonprofit)
+    , _scesCurrency :: !(Maybe Text)
+    , _scesIsSuperChatForGood :: !(Maybe Bool)
+    , _scesIsSuperStickerEvent :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6756,7 +6756,7 @@ instance ToJSON SuperChatEventSnippet where
 data VideoAbuseReportReasonSnippet =
   VideoAbuseReportReasonSnippet'
     { _varrsSecondaryReasons :: !(Maybe [VideoAbuseReportSecondaryReason])
-    , _varrsLabel            :: !(Maybe Text)
+    , _varrsLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6810,10 +6810,10 @@ instance ToJSON VideoAbuseReportReasonSnippet where
 -- /See:/ 'caption' smart constructor.
 data Caption =
   Caption'
-    { _capEtag    :: !(Maybe Text)
+    { _capEtag :: !(Maybe Text)
     , _capSnippet :: !(Maybe CaptionSnippet)
-    , _capKind    :: !Text
-    , _capId      :: !(Maybe Text)
+    , _capKind :: !Text
+    , _capId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6946,8 +6946,8 @@ instance ToJSON VideoContentDetailsRegionRestriction
 data InvideoTiming =
   InvideoTiming'
     { _itDurationMs :: !(Maybe (Textual Word64))
-    , _itOffSetMs   :: !(Maybe (Textual Word64))
-    , _itType       :: !(Maybe InvideoTimingType)
+    , _itOffSetMs :: !(Maybe (Textual Word64))
+    , _itType :: !(Maybe InvideoTimingType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7049,8 +7049,8 @@ instance ToJSON PlayListLocalizations where
 -- /See:/ 'videoProcessingDetailsProcessingProgress' smart constructor.
 data VideoProcessingDetailsProcessingProgress =
   VideoProcessingDetailsProcessingProgress'
-    { _vpdppTimeLeftMs     :: !(Maybe (Textual Word64))
-    , _vpdppPartsTotal     :: !(Maybe (Textual Word64))
+    { _vpdppTimeLeftMs :: !(Maybe (Textual Word64))
+    , _vpdppPartsTotal :: !(Maybe (Textual Word64))
     , _vpdppPartsProcessed :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7132,13 +7132,13 @@ instance ToJSON
 -- /See:/ 'channelSnippet' smart constructor.
 data ChannelSnippet =
   ChannelSnippet'
-    { _csPublishedAt     :: !(Maybe DateTime')
-    , _csCountry         :: !(Maybe Text)
-    , _csThumbnails      :: !(Maybe ThumbnailDetails)
-    , _csLocalized       :: !(Maybe ChannelLocalization)
-    , _csCustomURL       :: !(Maybe Text)
-    , _csTitle           :: !(Maybe Text)
-    , _csDescription     :: !(Maybe Text)
+    { _csPublishedAt :: !(Maybe DateTime')
+    , _csCountry :: !(Maybe Text)
+    , _csThumbnails :: !(Maybe ThumbnailDetails)
+    , _csLocalized :: !(Maybe ChannelLocalization)
+    , _csCustomURL :: !(Maybe Text)
+    , _csTitle :: !(Maybe Text)
+    , _csDescription :: !(Maybe Text)
     , _csDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7263,11 +7263,11 @@ instance ToJSON ChannelSnippet where
 -- /See:/ 'thumbnailDetails' smart constructor.
 data ThumbnailDetails =
   ThumbnailDetails'
-    { _tdMedium   :: !(Maybe Thumbnail)
-    , _tdMaxres   :: !(Maybe Thumbnail)
-    , _tdDefault  :: !(Maybe Thumbnail)
+    { _tdMedium :: !(Maybe Thumbnail)
+    , _tdMaxres :: !(Maybe Thumbnail)
+    , _tdDefault :: !(Maybe Thumbnail)
     , _tdStandard :: !(Maybe Thumbnail)
-    , _tdHigh     :: !(Maybe Thumbnail)
+    , _tdHigh :: !(Maybe Thumbnail)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7345,8 +7345,8 @@ instance ToJSON ThumbnailDetails where
 data MonitorStreamInfo =
   MonitorStreamInfo'
     { _msiBroadcastStreamDelayMs :: !(Maybe (Textual Word32))
-    , _msiEmbedHTML              :: !(Maybe Text)
-    , _msiEnableMonitorStream    :: !(Maybe Bool)
+    , _msiEmbedHTML :: !(Maybe Text)
+    , _msiEnableMonitorStream :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7419,23 +7419,23 @@ instance ToJSON MonitorStreamInfo where
 -- /See:/ 'liveChatMessageSnippet' smart constructor.
 data LiveChatMessageSnippet =
   LiveChatMessageSnippet'
-    { _lcmsMessageDeletedDetails   :: !(Maybe LiveChatMessageDeletedDetails)
-    , _lcmsSuperStickerDetails     :: !(Maybe LiveChatSuperStickerDetails)
-    , _lcmsLiveChatId              :: !(Maybe Text)
-    , _lcmsPublishedAt             :: !(Maybe DateTime')
-    , _lcmsPollOpenedDetails       :: !(Maybe LiveChatPollOpenedDetails)
-    , _lcmsPollVotedDetails        :: !(Maybe LiveChatPollVotedDetails)
-    , _lcmsUserBannedDetails       :: !(Maybe LiveChatUserBannedMessageDetails)
-    , _lcmsTextMessageDetails      :: !(Maybe LiveChatTextMessageDetails)
-    , _lcmsPollClosedDetails       :: !(Maybe LiveChatPollClosedDetails)
+    { _lcmsMessageDeletedDetails :: !(Maybe LiveChatMessageDeletedDetails)
+    , _lcmsSuperStickerDetails :: !(Maybe LiveChatSuperStickerDetails)
+    , _lcmsLiveChatId :: !(Maybe Text)
+    , _lcmsPublishedAt :: !(Maybe DateTime')
+    , _lcmsPollOpenedDetails :: !(Maybe LiveChatPollOpenedDetails)
+    , _lcmsPollVotedDetails :: !(Maybe LiveChatPollVotedDetails)
+    , _lcmsUserBannedDetails :: !(Maybe LiveChatUserBannedMessageDetails)
+    , _lcmsTextMessageDetails :: !(Maybe LiveChatTextMessageDetails)
+    , _lcmsPollClosedDetails :: !(Maybe LiveChatPollClosedDetails)
     , _lcmsMessageRetractedDetails :: !(Maybe LiveChatMessageRetractedDetails)
-    , _lcmsSuperChatDetails        :: !(Maybe LiveChatSuperChatDetails)
-    , _lcmsPollEditedDetails       :: !(Maybe LiveChatPollEditedDetails)
-    , _lcmsType                    :: !(Maybe LiveChatMessageSnippetType)
-    , _lcmsAuthorChannelId         :: !(Maybe Text)
-    , _lcmsFanFundingEventDetails  :: !(Maybe LiveChatFanFundingEventDetails)
-    , _lcmsHasDisplayContent       :: !(Maybe Bool)
-    , _lcmsDisplayMessage          :: !(Maybe Text)
+    , _lcmsSuperChatDetails :: !(Maybe LiveChatSuperChatDetails)
+    , _lcmsPollEditedDetails :: !(Maybe LiveChatPollEditedDetails)
+    , _lcmsType :: !(Maybe LiveChatMessageSnippetType)
+    , _lcmsAuthorChannelId :: !(Maybe Text)
+    , _lcmsFanFundingEventDetails :: !(Maybe LiveChatFanFundingEventDetails)
+    , _lcmsHasDisplayContent :: !(Maybe Bool)
+    , _lcmsDisplayMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7664,10 +7664,10 @@ instance ToJSON LiveChatMessageSnippet where
 -- /See:/ 'i18nRegion' smart constructor.
 data I18nRegion =
   I18nRegion'
-    { _irEtag    :: !(Maybe Text)
+    { _irEtag :: !(Maybe Text)
     , _irSnippet :: !(Maybe I18nRegionSnippet)
-    , _irKind    :: !Text
-    , _irId      :: !(Maybe Text)
+    , _irKind :: !Text
+    , _irId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7736,11 +7736,11 @@ instance ToJSON I18nRegion where
 -- /See:/ 'channelStatistics' smart constructor.
 data ChannelStatistics =
   ChannelStatistics'
-    { _csCommentCount          :: !(Maybe (Textual Word64))
-    , _csSubscriberCount       :: !(Maybe (Textual Word64))
-    , _csVideoCount            :: !(Maybe (Textual Word64))
+    { _csCommentCount :: !(Maybe (Textual Word64))
+    , _csSubscriberCount :: !(Maybe (Textual Word64))
+    , _csVideoCount :: !(Maybe (Textual Word64))
     , _csHiddenSubscriberCount :: !(Maybe Bool)
-    , _csViewCount             :: !(Maybe (Textual Word64))
+    , _csViewCount :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7827,10 +7827,10 @@ instance ToJSON ChannelStatistics where
 -- /See:/ 'liveChatFanFundingEventDetails' smart constructor.
 data LiveChatFanFundingEventDetails =
   LiveChatFanFundingEventDetails'
-    { _lcffedUserComment         :: !(Maybe Text)
-    , _lcffedAmountMicros        :: !(Maybe (Textual Word64))
+    { _lcffedUserComment :: !(Maybe Text)
+    , _lcffedAmountMicros :: !(Maybe (Textual Word64))
     , _lcffedAmountDisplayString :: !(Maybe Text)
-    , _lcffedCurrency            :: !(Maybe Text)
+    , _lcffedCurrency :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7909,16 +7909,16 @@ instance ToJSON LiveChatFanFundingEventDetails where
 -- /See:/ 'activityContentDetails' smart constructor.
 data ActivityContentDetails =
   ActivityContentDetails'
-    { _acdPromotedItem   :: !(Maybe ActivityContentDetailsPromotedItem)
-    , _acdChannelItem    :: !(Maybe ActivityContentDetailsChannelItem)
-    , _acdBulletin       :: !(Maybe ActivityContentDetailsBulletin)
-    , _acdFavorite       :: !(Maybe ActivityContentDetailsFavorite)
-    , _acdUpload         :: !(Maybe ActivityContentDetailsUpload)
-    , _acdComment        :: !(Maybe ActivityContentDetailsComment)
-    , _acdSocial         :: !(Maybe ActivityContentDetailsSocial)
-    , _acdSubscription   :: !(Maybe ActivityContentDetailsSubscription)
-    , _acdPlayListItem   :: !(Maybe ActivityContentDetailsPlayListItem)
-    , _acdLike           :: !(Maybe ActivityContentDetailsLike)
+    { _acdPromotedItem :: !(Maybe ActivityContentDetailsPromotedItem)
+    , _acdChannelItem :: !(Maybe ActivityContentDetailsChannelItem)
+    , _acdBulletin :: !(Maybe ActivityContentDetailsBulletin)
+    , _acdFavorite :: !(Maybe ActivityContentDetailsFavorite)
+    , _acdUpload :: !(Maybe ActivityContentDetailsUpload)
+    , _acdComment :: !(Maybe ActivityContentDetailsComment)
+    , _acdSocial :: !(Maybe ActivityContentDetailsSocial)
+    , _acdSubscription :: !(Maybe ActivityContentDetailsSubscription)
+    , _acdPlayListItem :: !(Maybe ActivityContentDetailsPlayListItem)
+    , _acdLike :: !(Maybe ActivityContentDetailsLike)
     , _acdRecommendation :: !(Maybe ActivityContentDetailsRecommendation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8081,10 +8081,10 @@ instance ToJSON ActivityContentDetails where
 -- /See:/ 'videoCategory' smart constructor.
 data VideoCategory =
   VideoCategory'
-    { _vcEtag    :: !(Maybe Text)
+    { _vcEtag :: !(Maybe Text)
     , _vcSnippet :: !(Maybe VideoCategorySnippet)
-    , _vcKind    :: !Text
-    , _vcId      :: !(Maybe Text)
+    , _vcKind :: !Text
+    , _vcId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8188,7 +8188,7 @@ instance ToJSON VideoLocalizations where
 -- /See:/ 'channelSectionContentDetails' smart constructor.
 data ChannelSectionContentDetails =
   ChannelSectionContentDetails'
-    { _cscdChannels  :: !(Maybe [Text])
+    { _cscdChannels :: !(Maybe [Text])
     , _cscdPlayLists :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8244,24 +8244,24 @@ instance ToJSON ChannelSectionContentDetails where
 -- /See:/ 'video' smart constructor.
 data Video =
   Video'
-    { _vStatus               :: !(Maybe VideoStatus)
-    , _vEtag                 :: !(Maybe Text)
-    , _vProjectDetails       :: !(Maybe VideoProjectDetails)
-    , _vRecordingDetails     :: !(Maybe VideoRecordingDetails)
-    , _vSnippet              :: !(Maybe VideoSnippet)
-    , _vKind                 :: !Text
-    , _vTopicDetails         :: !(Maybe VideoTopicDetails)
-    , _vContentDetails       :: !(Maybe VideoContentDetails)
-    , _vAgeGating            :: !(Maybe VideoAgeGating)
-    , _vFileDetails          :: !(Maybe VideoFileDetails)
-    , _vSuggestions          :: !(Maybe VideoSuggestions)
-    , _vId                   :: !(Maybe Text)
-    , _vStatistics           :: !(Maybe VideoStatistics)
-    , _vLocalizations        :: !(Maybe VideoLocalizations)
+    { _vStatus :: !(Maybe VideoStatus)
+    , _vEtag :: !(Maybe Text)
+    , _vProjectDetails :: !(Maybe VideoProjectDetails)
+    , _vRecordingDetails :: !(Maybe VideoRecordingDetails)
+    , _vSnippet :: !(Maybe VideoSnippet)
+    , _vKind :: !Text
+    , _vTopicDetails :: !(Maybe VideoTopicDetails)
+    , _vContentDetails :: !(Maybe VideoContentDetails)
+    , _vAgeGating :: !(Maybe VideoAgeGating)
+    , _vFileDetails :: !(Maybe VideoFileDetails)
+    , _vSuggestions :: !(Maybe VideoSuggestions)
+    , _vId :: !(Maybe Text)
+    , _vStatistics :: !(Maybe VideoStatistics)
+    , _vLocalizations :: !(Maybe VideoLocalizations)
     , _vLiveStreamingDetails :: !(Maybe VideoLiveStreamingDetails)
-    , _vPlayer               :: !(Maybe VideoPlayer)
-    , _vProcessingDetails    :: !(Maybe VideoProcessingDetails)
-    , _vMonetizationDetails  :: !(Maybe VideoMonetizationDetails)
+    , _vPlayer :: !(Maybe VideoPlayer)
+    , _vProcessingDetails :: !(Maybe VideoProcessingDetails)
+    , _vMonetizationDetails :: !(Maybe VideoMonetizationDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8500,13 +8500,13 @@ instance ToJSON Video where
 -- /See:/ 'liveBroadcast' smart constructor.
 data LiveBroadcast =
   LiveBroadcast'
-    { _lbStatus         :: !(Maybe LiveBroadcastStatus)
-    , _lbEtag           :: !(Maybe Text)
-    , _lbSnippet        :: !(Maybe LiveBroadcastSnippet)
-    , _lbKind           :: !Text
+    { _lbStatus :: !(Maybe LiveBroadcastStatus)
+    , _lbEtag :: !(Maybe Text)
+    , _lbSnippet :: !(Maybe LiveBroadcastSnippet)
+    , _lbKind :: !Text
     , _lbContentDetails :: !(Maybe LiveBroadcastContentDetails)
-    , _lbId             :: !(Maybe Text)
-    , _lbStatistics     :: !(Maybe LiveBroadcastStatistics)
+    , _lbId :: !(Maybe Text)
+    , _lbStatistics :: !(Maybe LiveBroadcastStatistics)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8611,7 +8611,7 @@ instance ToJSON LiveBroadcast where
 -- /See:/ 'nonprofit' smart constructor.
 data Nonprofit =
   Nonprofit'
-    { _nNonprofitId        :: !(Maybe NonprofitId)
+    { _nNonprofitId :: !(Maybe NonprofitId)
     , _nNonprofitLegalName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8662,10 +8662,10 @@ instance ToJSON Nonprofit where
 -- /See:/ 'liveChatModerator' smart constructor.
 data LiveChatModerator =
   LiveChatModerator'
-    { _livEtag    :: !(Maybe Text)
+    { _livEtag :: !(Maybe Text)
     , _livSnippet :: !(Maybe LiveChatModeratorSnippet)
-    , _livKind    :: !Text
-    , _livId      :: !(Maybe Text)
+    , _livKind :: !Text
+    , _livId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8733,7 +8733,7 @@ instance ToJSON LiveChatModerator where
 data LiveStreamContentDetails =
   LiveStreamContentDetails'
     { _lscdClosedCaptionsIngestionURL :: !(Maybe Text)
-    , _lscdIsReusable                 :: !(Maybe Bool)
+    , _lscdIsReusable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8795,7 +8795,7 @@ instance ToJSON LiveStreamContentDetails where
 -- /See:/ 'liveChatModeratorSnippet' smart constructor.
 data LiveChatModeratorSnippet =
   LiveChatModeratorSnippet'
-    { _lLiveChatId       :: !(Maybe Text)
+    { _lLiveChatId :: !(Maybe Text)
     , _lModeratorDetails :: !(Maybe ChannelProFileDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8846,7 +8846,7 @@ instance ToJSON LiveChatModeratorSnippet where
 data PropertyValue =
   PropertyValue'
     { _pvProperty :: !(Maybe Text)
-    , _pvValue    :: !(Maybe Text)
+    , _pvValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8893,17 +8893,17 @@ instance ToJSON PropertyValue where
 data VideoSnippet =
   VideoSnippet'
     { _vsDefaultAudioLanguage :: !(Maybe Text)
-    , _vsPublishedAt          :: !(Maybe DateTime')
-    , _vsChannelTitle         :: !(Maybe Text)
-    , _vsChannelId            :: !(Maybe Text)
-    , _vsThumbnails           :: !(Maybe ThumbnailDetails)
-    , _vsLocalized            :: !(Maybe VideoLocalization)
-    , _vsCategoryId           :: !(Maybe Text)
-    , _vsTitle                :: !(Maybe Text)
+    , _vsPublishedAt :: !(Maybe DateTime')
+    , _vsChannelTitle :: !(Maybe Text)
+    , _vsChannelId :: !(Maybe Text)
+    , _vsThumbnails :: !(Maybe ThumbnailDetails)
+    , _vsLocalized :: !(Maybe VideoLocalization)
+    , _vsCategoryId :: !(Maybe Text)
+    , _vsTitle :: !(Maybe Text)
     , _vsLiveBroadcastContent :: !(Maybe VideoSnippetLiveBroadcastContent)
-    , _vsDescription          :: !(Maybe Text)
-    , _vsTags                 :: !(Maybe [Text])
-    , _vsDefaultLanguage      :: !(Maybe Text)
+    , _vsDescription :: !(Maybe Text)
+    , _vsTags :: !(Maybe [Text])
+    , _vsDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9071,17 +9071,17 @@ instance ToJSON VideoSnippet where
 -- /See:/ 'liveBroadcastSnippet' smart constructor.
 data LiveBroadcastSnippet =
   LiveBroadcastSnippet'
-    { _lbsActualEndTime      :: !(Maybe DateTime')
-    , _lbsLiveChatId         :: !(Maybe Text)
-    , _lbsPublishedAt        :: !(Maybe DateTime')
-    , _lbsScheduledEndTime   :: !(Maybe DateTime')
-    , _lbsChannelId          :: !(Maybe Text)
+    { _lbsActualEndTime :: !(Maybe DateTime')
+    , _lbsLiveChatId :: !(Maybe Text)
+    , _lbsPublishedAt :: !(Maybe DateTime')
+    , _lbsScheduledEndTime :: !(Maybe DateTime')
+    , _lbsChannelId :: !(Maybe Text)
     , _lbsScheduledStartTime :: !(Maybe DateTime')
-    , _lbsThumbnails         :: !(Maybe ThumbnailDetails)
-    , _lbsTitle              :: !(Maybe Text)
-    , _lbsActualStartTime    :: !(Maybe DateTime')
+    , _lbsThumbnails :: !(Maybe ThumbnailDetails)
+    , _lbsTitle :: !(Maybe Text)
+    , _lbsActualStartTime :: !(Maybe DateTime')
     , _lbsIsDefaultBroadcast :: !(Maybe Bool)
-    , _lbsDescription        :: !(Maybe Text)
+    , _lbsDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9251,7 +9251,7 @@ instance ToJSON LiveBroadcastSnippet where
 data AccessPolicy =
   AccessPolicy'
     { _apException :: !(Maybe [Text])
-    , _apAllowed   :: !(Maybe Bool)
+    , _apAllowed :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9303,9 +9303,9 @@ instance ToJSON AccessPolicy where
 -- /See:/ 'sponsor' smart constructor.
 data Sponsor =
   Sponsor'
-    { _sEtag    :: !(Maybe Text)
+    { _sEtag :: !(Maybe Text)
     , _sSnippet :: !(Maybe SponsorSnippet)
-    , _sKind    :: !Text
+    , _sKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9396,14 +9396,14 @@ instance ToJSON LiveChatMessageDeletedDetails where
 -- /See:/ 'commentThreadListResponse' smart constructor.
 data CommentThreadListResponse =
   CommentThreadListResponse'
-    { _ctlrEtag            :: !(Maybe Text)
+    { _ctlrEtag :: !(Maybe Text)
     , _ctlrTokenPagination :: !(Maybe TokenPagination)
-    , _ctlrNextPageToken   :: !(Maybe Text)
-    , _ctlrPageInfo        :: !(Maybe PageInfo)
-    , _ctlrKind            :: !Text
-    , _ctlrItems           :: !(Maybe [CommentThread])
-    , _ctlrVisitorId       :: !(Maybe Text)
-    , _ctlrEventId         :: !(Maybe Text)
+    , _ctlrNextPageToken :: !(Maybe Text)
+    , _ctlrPageInfo :: !(Maybe PageInfo)
+    , _ctlrKind :: !Text
+    , _ctlrItems :: !(Maybe [CommentThread])
+    , _ctlrVisitorId :: !(Maybe Text)
+    , _ctlrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9519,8 +9519,8 @@ instance ToJSON CommentThreadListResponse where
 data WatchSettings =
   WatchSettings'
     { _wsFeaturedPlayListId :: !(Maybe Text)
-    , _wsBackgRoundColor    :: !(Maybe Text)
-    , _wsTextColor          :: !(Maybe Text)
+    , _wsBackgRoundColor :: !(Maybe Text)
+    , _wsTextColor :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9585,9 +9585,9 @@ instance ToJSON WatchSettings where
 data CdnSettings =
   CdnSettings'
     { _csIngestionInfo :: !(Maybe IngestionInfo)
-    , _csFrameRate     :: !(Maybe CdnSettingsFrameRate)
-    , _csFormat        :: !(Maybe Text)
-    , _csResolution    :: !(Maybe CdnSettingsResolution)
+    , _csFrameRate :: !(Maybe CdnSettingsFrameRate)
+    , _csFormat :: !(Maybe Text)
+    , _csResolution :: !(Maybe CdnSettingsResolution)
     , _csIngestionType :: !(Maybe CdnSettingsIngestionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9703,7 +9703,7 @@ instance ToJSON NonprofitId where
 -- /See:/ 'liveBroadcastStatistics' smart constructor.
 data LiveBroadcastStatistics =
   LiveBroadcastStatistics'
-    { _lbsTotalChatCount    :: !(Maybe (Textual Word64))
+    { _lbsTotalChatCount :: !(Maybe (Textual Word64))
     , _lbsConcurrentViewers :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9769,8 +9769,8 @@ instance ToJSON LiveBroadcastStatistics where
 data VideoCategorySnippet =
   VideoCategorySnippet'
     { _vcsAssignable :: !(Maybe Bool)
-    , _vcsChannelId  :: !Text
-    , _vcsTitle      :: !(Maybe Text)
+    , _vcsChannelId :: !Text
+    , _vcsTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9831,10 +9831,10 @@ instance ToJSON VideoCategorySnippet where
 -- /See:/ 'i18nLanguage' smart constructor.
 data I18nLanguage =
   I18nLanguage'
-    { _ilEtag    :: !(Maybe Text)
+    { _ilEtag :: !(Maybe Text)
     , _ilSnippet :: !(Maybe I18nLanguageSnippet)
-    , _ilKind    :: !Text
-    , _ilId      :: !(Maybe Text)
+    , _ilKind :: !Text
+    , _ilId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9903,11 +9903,11 @@ instance ToJSON I18nLanguage where
 -- /See:/ 'videoStatistics' smart constructor.
 data VideoStatistics =
   VideoStatistics'
-    { _vsLikeCount     :: !(Maybe (Textual Word64))
-    , _vsCommentCount  :: !(Maybe (Textual Word64))
+    { _vsLikeCount :: !(Maybe (Textual Word64))
+    , _vsCommentCount :: !(Maybe (Textual Word64))
     , _vsFavoriteCount :: !(Maybe (Textual Word64))
-    , _vsDislikeCount  :: !(Maybe (Textual Word64))
-    , _vsViewCount     :: !(Maybe (Textual Word64))
+    , _vsDislikeCount :: !(Maybe (Textual Word64))
+    , _vsViewCount :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9997,15 +9997,15 @@ instance ToJSON VideoStatistics where
 -- /See:/ 'activityListResponse' smart constructor.
 data ActivityListResponse =
   ActivityListResponse'
-    { _alrEtag            :: !(Maybe Text)
+    { _alrEtag :: !(Maybe Text)
     , _alrTokenPagination :: !(Maybe TokenPagination)
-    , _alrNextPageToken   :: !(Maybe Text)
-    , _alrPageInfo        :: !(Maybe PageInfo)
-    , _alrKind            :: !Text
-    , _alrItems           :: !(Maybe [Activity])
-    , _alrVisitorId       :: !(Maybe Text)
-    , _alrEventId         :: !(Maybe Text)
-    , _alrPrevPageToken   :: !(Maybe Text)
+    , _alrNextPageToken :: !(Maybe Text)
+    , _alrPageInfo :: !(Maybe PageInfo)
+    , _alrKind :: !Text
+    , _alrItems :: !(Maybe [Activity])
+    , _alrVisitorId :: !(Maybe Text)
+    , _alrEventId :: !(Maybe Text)
+    , _alrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10170,10 +10170,10 @@ instance ToJSON ActivityContentDetailsBulletin where
 data VideoAbuseReport =
   VideoAbuseReport'
     { _varSecondaryReasonId :: !(Maybe Text)
-    , _varReasonId          :: !(Maybe Text)
-    , _varVideoId           :: !(Maybe Text)
-    , _varLanguage          :: !(Maybe Text)
-    , _varComments          :: !(Maybe Text)
+    , _varReasonId :: !(Maybe Text)
+    , _varVideoId :: !(Maybe Text)
+    , _varLanguage :: !(Maybe Text)
+    , _varComments :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10255,9 +10255,9 @@ instance ToJSON VideoAbuseReport where
 -- /See:/ 'videoFileDetailsAudioStream' smart constructor.
 data VideoFileDetailsAudioStream =
   VideoFileDetailsAudioStream'
-    { _vfdasBitrateBps   :: !(Maybe (Textual Word64))
-    , _vfdasVendor       :: !(Maybe Text)
-    , _vfdasCodec        :: !(Maybe Text)
+    { _vfdasBitrateBps :: !(Maybe (Textual Word64))
+    , _vfdasVendor :: !(Maybe Text)
+    , _vfdasCodec :: !(Maybe Text)
     , _vfdasChannelCount :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10332,11 +10332,11 @@ instance ToJSON VideoFileDetailsAudioStream where
 -- /See:/ 'i18nRegionListResponse' smart constructor.
 data I18nRegionListResponse =
   I18nRegionListResponse'
-    { _irlrEtag      :: !(Maybe Text)
-    , _irlrKind      :: !Text
-    , _irlrItems     :: !(Maybe [I18nRegion])
+    { _irlrEtag :: !(Maybe Text)
+    , _irlrKind :: !Text
+    , _irlrItems :: !(Maybe [I18nRegion])
     , _irlrVisitorId :: !(Maybe Text)
-    , _irlrEventId   :: !(Maybe Text)
+    , _irlrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10422,7 +10422,7 @@ instance ToJSON I18nRegionListResponse where
 data GuideCategorySnippet =
   GuideCategorySnippet'
     { _gcsChannelId :: !Text
-    , _gcsTitle     :: !(Maybe Text)
+    , _gcsTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10468,11 +10468,11 @@ instance ToJSON GuideCategorySnippet where
 -- /See:/ 'captionListResponse' smart constructor.
 data CaptionListResponse =
   CaptionListResponse'
-    { _cEtag      :: !(Maybe Text)
-    , _cKind      :: !Text
-    , _cItems     :: !(Maybe [Caption])
+    { _cEtag :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cItems :: !(Maybe [Caption])
     , _cVisitorId :: !(Maybe Text)
-    , _cEventId   :: !(Maybe Text)
+    , _cEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10591,7 +10591,7 @@ instance ToJSON PlayListItemStatus where
 data InvideoPosition =
   InvideoPosition'
     { _ipCornerPosition :: !(Maybe InvideoPositionCornerPosition)
-    , _ipType           :: !(Maybe InvideoPositionType)
+    , _ipType :: !(Maybe InvideoPositionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10638,10 +10638,10 @@ instance ToJSON InvideoPosition where
 data LiveChatSuperStickerDetails =
   LiveChatSuperStickerDetails'
     { _lcssdSuperStickerMetadata :: !(Maybe SuperStickerMetadata)
-    , _lcssdAmountMicros         :: !(Maybe (Textual Word64))
-    , _lcssdAmountDisplayString  :: !(Maybe Text)
-    , _lcssdCurrency             :: !(Maybe Text)
-    , _lcssdTier                 :: !(Maybe (Textual Word32))
+    , _lcssdAmountMicros :: !(Maybe (Textual Word64))
+    , _lcssdAmountDisplayString :: !(Maybe Text)
+    , _lcssdCurrency :: !(Maybe Text)
+    , _lcssdTier :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10731,8 +10731,8 @@ instance ToJSON LiveChatSuperStickerDetails where
 -- /See:/ 'liveStreamHealthStatus' smart constructor.
 data LiveStreamHealthStatus =
   LiveStreamHealthStatus'
-    { _lshsStatus                :: !(Maybe LiveStreamHealthStatusStatus)
-    , _lshsConfigurationIssues   :: !(Maybe [LiveStreamConfigurationIssue])
+    { _lshsStatus :: !(Maybe LiveStreamHealthStatusStatus)
+    , _lshsConfigurationIssues :: !(Maybe [LiveStreamConfigurationIssue])
     , _lshsLastUpdateTimeSeconds :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10837,15 +10837,15 @@ instance ToJSON ChannelSectionLocalizations where
 -- /See:/ 'subscriptionListResponse' smart constructor.
 data SubscriptionListResponse =
   SubscriptionListResponse'
-    { _subEtag            :: !(Maybe Text)
+    { _subEtag :: !(Maybe Text)
     , _subTokenPagination :: !(Maybe TokenPagination)
-    , _subNextPageToken   :: !(Maybe Text)
-    , _subPageInfo        :: !(Maybe PageInfo)
-    , _subKind            :: !Text
-    , _subItems           :: !(Maybe [Subscription])
-    , _subVisitorId       :: !(Maybe Text)
-    , _subEventId         :: !(Maybe Text)
-    , _subPrevPageToken   :: !(Maybe Text)
+    , _subNextPageToken :: !(Maybe Text)
+    , _subPageInfo :: !(Maybe PageInfo)
+    , _subKind :: !Text
+    , _subItems :: !(Maybe [Subscription])
+    , _subVisitorId :: !(Maybe Text)
+    , _subEventId :: !(Maybe Text)
+    , _subPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10970,7 +10970,7 @@ instance ToJSON SubscriptionListResponse where
 -- /See:/ 'videoLocalization' smart constructor.
 data VideoLocalization =
   VideoLocalization'
-    { _vlTitle       :: !(Maybe Text)
+    { _vlTitle :: !(Maybe Text)
     , _vlDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11017,14 +11017,14 @@ instance ToJSON VideoLocalization where
 -- /See:/ 'commentListResponse' smart constructor.
 data CommentListResponse =
   CommentListResponse'
-    { _comEtag            :: !(Maybe Text)
+    { _comEtag :: !(Maybe Text)
     , _comTokenPagination :: !(Maybe TokenPagination)
-    , _comNextPageToken   :: !(Maybe Text)
-    , _comPageInfo        :: !(Maybe PageInfo)
-    , _comKind            :: !Text
-    , _comItems           :: !(Maybe [Comment])
-    , _comVisitorId       :: !(Maybe Text)
-    , _comEventId         :: !(Maybe Text)
+    , _comNextPageToken :: !(Maybe Text)
+    , _comPageInfo :: !(Maybe PageInfo)
+    , _comKind :: !Text
+    , _comItems :: !(Maybe [Comment])
+    , _comVisitorId :: !(Maybe Text)
+    , _comEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11137,8 +11137,8 @@ instance ToJSON CommentListResponse where
 data VideoPlayer =
   VideoPlayer'
     { _vpEmbedHeight :: !(Maybe (Textual Int64))
-    , _vpEmbedWidth  :: !(Maybe (Textual Int64))
-    , _vpEmbedHTML   :: !(Maybe Text)
+    , _vpEmbedWidth :: !(Maybe (Textual Int64))
+    , _vpEmbedHTML :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11200,9 +11200,9 @@ instance ToJSON VideoPlayer where
 data PromotedItemId =
   PromotedItemId'
     { _piiRecentlyUploadedBy :: !(Maybe Text)
-    , _piiVideoId            :: !(Maybe Text)
-    , _piiWebsiteURL         :: !(Maybe Text)
-    , _piiType               :: !(Maybe PromotedItemIdType)
+    , _piiVideoId :: !(Maybe Text)
+    , _piiWebsiteURL :: !(Maybe Text)
+    , _piiType :: !(Maybe PromotedItemIdType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11279,7 +11279,7 @@ instance ToJSON PromotedItemId where
 -- /See:/ 'localizedString' smart constructor.
 data LocalizedString =
   LocalizedString'
-    { _lsValue    :: !(Maybe Text)
+    { _lsValue :: !(Maybe Text)
     , _lsLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11322,15 +11322,15 @@ instance ToJSON LocalizedString where
 -- /See:/ 'playListItemListResponse' smart constructor.
 data PlayListItemListResponse =
   PlayListItemListResponse'
-    { _plilrEtag            :: !(Maybe Text)
+    { _plilrEtag :: !(Maybe Text)
     , _plilrTokenPagination :: !(Maybe TokenPagination)
-    , _plilrNextPageToken   :: !(Maybe Text)
-    , _plilrPageInfo        :: !(Maybe PageInfo)
-    , _plilrKind            :: !Text
-    , _plilrItems           :: !(Maybe [PlayListItem])
-    , _plilrVisitorId       :: !(Maybe Text)
-    , _plilrEventId         :: !(Maybe Text)
-    , _plilrPrevPageToken   :: !(Maybe Text)
+    , _plilrNextPageToken :: !(Maybe Text)
+    , _plilrPageInfo :: !(Maybe PageInfo)
+    , _plilrKind :: !Text
+    , _plilrItems :: !(Maybe [PlayListItem])
+    , _plilrVisitorId :: !(Maybe Text)
+    , _plilrEventId :: !(Maybe Text)
+    , _plilrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11463,10 +11463,10 @@ instance ToJSON PlayListItemListResponse where
 -- /See:/ 'guideCategory' smart constructor.
 data GuideCategory =
   GuideCategory'
-    { _gcEtag    :: !(Maybe Text)
+    { _gcEtag :: !(Maybe Text)
     , _gcSnippet :: !(Maybe GuideCategorySnippet)
-    , _gcKind    :: !Text
-    , _gcId      :: !(Maybe Text)
+    , _gcKind :: !Text
+    , _gcId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11535,13 +11535,13 @@ instance ToJSON GuideCategory where
 -- /See:/ 'searchResultSnippet' smart constructor.
 data SearchResultSnippet =
   SearchResultSnippet'
-    { _srsPublishedAt          :: !(Maybe DateTime')
-    , _srsChannelTitle         :: !(Maybe Text)
-    , _srsChannelId            :: !(Maybe Text)
-    , _srsThumbnails           :: !(Maybe ThumbnailDetails)
-    , _srsTitle                :: !(Maybe Text)
+    { _srsPublishedAt :: !(Maybe DateTime')
+    , _srsChannelTitle :: !(Maybe Text)
+    , _srsChannelId :: !(Maybe Text)
+    , _srsThumbnails :: !(Maybe ThumbnailDetails)
+    , _srsTitle :: !(Maybe Text)
     , _srsLiveBroadcastContent :: !(Maybe SearchResultSnippetLiveBroadcastContent)
-    , _srsDescription          :: !(Maybe Text)
+    , _srsDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11654,7 +11654,7 @@ instance ToJSON SearchResultSnippet where
 -- /See:/ 'liveChatPollItem' smart constructor.
 data LiveChatPollItem =
   LiveChatPollItem'
-    { _lcpiItemId      :: !(Maybe Text)
+    { _lcpiItemId :: !(Maybe Text)
     , _lcpiDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11701,14 +11701,14 @@ instance ToJSON LiveChatPollItem where
 -- /See:/ 'sponsorListResponse' smart constructor.
 data SponsorListResponse =
   SponsorListResponse'
-    { _spoEtag            :: !(Maybe Text)
+    { _spoEtag :: !(Maybe Text)
     , _spoTokenPagination :: !(Maybe TokenPagination)
-    , _spoNextPageToken   :: !(Maybe Text)
-    , _spoPageInfo        :: !(Maybe PageInfo)
-    , _spoKind            :: !Text
-    , _spoItems           :: !(Maybe [Sponsor])
-    , _spoVisitorId       :: !(Maybe Text)
-    , _spoEventId         :: !(Maybe Text)
+    , _spoNextPageToken :: !(Maybe Text)
+    , _spoPageInfo :: !(Maybe PageInfo)
+    , _spoKind :: !Text
+    , _spoItems :: !(Maybe [Sponsor])
+    , _spoVisitorId :: !(Maybe Text)
+    , _spoEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11826,11 +11826,11 @@ instance ToJSON SponsorListResponse where
 -- /See:/ 'activity' smart constructor.
 data Activity =
   Activity'
-    { _aEtag           :: !(Maybe Text)
-    , _aSnippet        :: !(Maybe ActivitySnippet)
-    , _aKind           :: !Text
+    { _aEtag :: !(Maybe Text)
+    , _aSnippet :: !(Maybe ActivitySnippet)
+    , _aKind :: !Text
     , _aContentDetails :: !(Maybe ActivityContentDetails)
-    , _aId             :: !(Maybe Text)
+    , _aId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11914,9 +11914,9 @@ instance ToJSON Activity where
 data InvideoPromotion =
   InvideoPromotion'
     { _ipUseSmartTiming :: !(Maybe Bool)
-    , _ipItems          :: !(Maybe [PromotedItem])
-    , _ipDefaultTiming  :: !(Maybe InvideoTiming)
-    , _ipPosition       :: !(Maybe InvideoPosition)
+    , _ipItems :: !(Maybe [PromotedItem])
+    , _ipDefaultTiming :: !(Maybe InvideoTiming)
+    , _ipPosition :: !(Maybe InvideoPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11995,11 +11995,11 @@ instance ToJSON InvideoPromotion where
 -- /See:/ 'invideoBranding' smart constructor.
 data InvideoBranding =
   InvideoBranding'
-    { _ibImageURL        :: !(Maybe Text)
+    { _ibImageURL :: !(Maybe Text)
     , _ibTargetChannelId :: !(Maybe Text)
-    , _ibTiming          :: !(Maybe InvideoTiming)
-    , _ibImageBytes      :: !(Maybe Bytes)
-    , _ibPosition        :: !(Maybe InvideoPosition)
+    , _ibTiming :: !(Maybe InvideoTiming)
+    , _ibImageBytes :: !(Maybe Bytes)
+    , _ibPosition :: !(Maybe InvideoPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12078,7 +12078,7 @@ data ChannelBannerResource =
   ChannelBannerResource'
     { _cbrEtag :: !(Maybe Text)
     , _cbrKind :: !Text
-    , _cbrURL  :: !(Maybe Text)
+    , _cbrURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12135,11 +12135,11 @@ instance ToJSON ChannelBannerResource where
 -- /See:/ 'i18nLanguageListResponse' smart constructor.
 data I18nLanguageListResponse =
   I18nLanguageListResponse'
-    { _illrEtag      :: !(Maybe Text)
-    , _illrKind      :: !Text
-    , _illrItems     :: !(Maybe [I18nLanguage])
+    { _illrEtag :: !(Maybe Text)
+    , _illrKind :: !Text
+    , _illrItems :: !(Maybe [I18nLanguage])
     , _illrVisitorId :: !(Maybe Text)
-    , _illrEventId   :: !(Maybe Text)
+    , _illrEventId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12258,10 +12258,10 @@ instance ToJSON PlayListPlayer where
 -- /See:/ 'channelBrandingSettings' smart constructor.
 data ChannelBrandingSettings =
   ChannelBrandingSettings'
-    { _cbsImage   :: !(Maybe ImageSettings)
-    , _cbsHints   :: !(Maybe [PropertyValue])
+    { _cbsImage :: !(Maybe ImageSettings)
+    , _cbsHints :: !(Maybe [PropertyValue])
     , _cbsChannel :: !(Maybe ChannelSettings)
-    , _cbsWatch   :: !(Maybe WatchSettings)
+    , _cbsWatch :: !(Maybe WatchSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12333,11 +12333,11 @@ instance ToJSON ChannelBrandingSettings where
 -- /See:/ 'commentThread' smart constructor.
 data CommentThread =
   CommentThread'
-    { _ctEtag    :: !(Maybe Text)
+    { _ctEtag :: !(Maybe Text)
     , _ctSnippet :: !(Maybe CommentThreadSnippet)
-    , _ctKind    :: !Text
+    , _ctKind :: !Text
     , _ctReplies :: !(Maybe CommentThreadReplies)
-    , _ctId      :: !(Maybe Text)
+    , _ctId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12416,7 +12416,7 @@ instance ToJSON CommentThread where
 -- /See:/ 'playListLocalization' smart constructor.
 data PlayListLocalization =
   PlayListLocalization'
-    { _pllTitle       :: !(Maybe Text)
+    { _pllTitle :: !(Maybe Text)
     , _pllDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12463,10 +12463,10 @@ instance ToJSON PlayListLocalization where
 -- /See:/ 'liveChatBanSnippet' smart constructor.
 data LiveChatBanSnippet =
   LiveChatBanSnippet'
-    { _lcbsLiveChatId         :: !(Maybe Text)
-    , _lcbsBannedUserDetails  :: !(Maybe ChannelProFileDetails)
+    { _lcbsLiveChatId :: !(Maybe Text)
+    , _lcbsBannedUserDetails :: !(Maybe ChannelProFileDetails)
     , _lcbsBanDurationSeconds :: !(Maybe (Textual Word64))
-    , _lcbsType               :: !(Maybe LiveChatBanSnippetType)
+    , _lcbsType :: !(Maybe LiveChatBanSnippetType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12539,9 +12539,9 @@ instance ToJSON LiveChatBanSnippet where
 -- /See:/ 'subscriptionContentDetails' smart constructor.
 data SubscriptionContentDetails =
   SubscriptionContentDetails'
-    { _scdActivityType   :: !(Maybe SubscriptionContentDetailsActivityType)
+    { _scdActivityType :: !(Maybe SubscriptionContentDetailsActivityType)
     , _scdTotalItemCount :: !(Maybe (Textual Word32))
-    , _scdNewItemCount   :: !(Maybe (Textual Word32))
+    , _scdNewItemCount :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12648,8 +12648,8 @@ instance ToJSON ChannelConversionPings where
 -- /See:/ 'localizedProperty' smart constructor.
 data LocalizedProperty =
   LocalizedProperty'
-    { _lpDefault         :: !(Maybe Text)
-    , _lpLocalized       :: !(Maybe [LocalizedString])
+    { _lpDefault :: !(Maybe Text)
+    , _lpLocalized :: !(Maybe [LocalizedString])
     , _lpDefaultLanguage :: !(Maybe LanguageTag)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12708,7 +12708,7 @@ instance ToJSON LocalizedProperty where
 -- /See:/ 'channelLocalization' smart constructor.
 data ChannelLocalization =
   ChannelLocalization'
-    { _clTitle       :: !(Maybe Text)
+    { _clTitle :: !(Maybe Text)
     , _clDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12755,11 +12755,11 @@ instance ToJSON ChannelLocalization where
 -- /See:/ 'playListItemContentDetails' smart constructor.
 data PlayListItemContentDetails =
   PlayListItemContentDetails'
-    { _plicdStartAt          :: !(Maybe Text)
-    , _plicdNote             :: !(Maybe Text)
+    { _plicdStartAt :: !(Maybe Text)
+    , _plicdNote :: !(Maybe Text)
     , _plicdVideoPublishedAt :: !(Maybe DateTime')
-    , _plicdVideoId          :: !(Maybe Text)
-    , _plicdEndAt            :: !(Maybe Text)
+    , _plicdVideoId :: !(Maybe Text)
+    , _plicdEndAt :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12850,8 +12850,8 @@ instance ToJSON PlayListItemContentDetails where
 -- /See:/ 'videoAgeGating' smart constructor.
 data VideoAgeGating =
   VideoAgeGating'
-    { _vagAlcoholContent  :: !(Maybe Bool)
-    , _vagRestricted      :: !(Maybe Bool)
+    { _vagAlcoholContent :: !(Maybe Bool)
+    , _vagRestricted :: !(Maybe Bool)
     , _vagVideoGameRating :: !(Maybe VideoAgeGatingVideoGameRating)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12951,8 +12951,8 @@ instance ToJSON LanguageTag where
 data LiveChatPollOpenedDetails =
   LiveChatPollOpenedDetails'
     { _lcpodPrompt :: !(Maybe Text)
-    , _lcpodItems  :: !(Maybe [LiveChatPollItem])
-    , _lcpodId     :: !(Maybe Text)
+    , _lcpodItems :: !(Maybe [LiveChatPollItem])
+    , _lcpodId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13008,13 +13008,13 @@ instance ToJSON LiveChatPollOpenedDetails where
 data VideoFileDetailsVideoStream =
   VideoFileDetailsVideoStream'
     { _vfdvsHeightPixels :: !(Maybe (Textual Word32))
-    , _vfdvsBitrateBps   :: !(Maybe (Textual Word64))
-    , _vfdvsVendor       :: !(Maybe Text)
-    , _vfdvsRotation     :: !(Maybe VideoFileDetailsVideoStreamRotation)
+    , _vfdvsBitrateBps :: !(Maybe (Textual Word64))
+    , _vfdvsVendor :: !(Maybe Text)
+    , _vfdvsRotation :: !(Maybe VideoFileDetailsVideoStreamRotation)
     , _vfdvsFrameRateFps :: !(Maybe (Textual Double))
-    , _vfdvsCodec        :: !(Maybe Text)
-    , _vfdvsAspectRatio  :: !(Maybe (Textual Double))
-    , _vfdvsWidthPixels  :: !(Maybe (Textual Word32))
+    , _vfdvsCodec :: !(Maybe Text)
+    , _vfdvsAspectRatio :: !(Maybe (Textual Double))
+    , _vfdvsWidthPixels :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13141,7 +13141,7 @@ instance ToJSON VideoFileDetailsVideoStream where
 -- /See:/ 'channelConversionPing' smart constructor.
 data ChannelConversionPing =
   ChannelConversionPing'
-    { _ccpContext       :: !(Maybe ChannelConversionPingContext)
+    { _ccpContext :: !(Maybe ChannelConversionPingContext)
     , _ccpConversionURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13212,12 +13212,12 @@ instance ToJSON ChannelConversionPing where
 -- /See:/ 'playListItem' smart constructor.
 data PlayListItem =
   PlayListItem'
-    { _pliStatus         :: !(Maybe PlayListItemStatus)
-    , _pliEtag           :: !(Maybe Text)
-    , _pliSnippet        :: !(Maybe PlayListItemSnippet)
-    , _pliKind           :: !Text
+    { _pliStatus :: !(Maybe PlayListItemStatus)
+    , _pliEtag :: !(Maybe Text)
+    , _pliSnippet :: !(Maybe PlayListItemSnippet)
+    , _pliKind :: !Text
     , _pliContentDetails :: !(Maybe PlayListItemContentDetails)
-    , _pliId             :: !(Maybe Text)
+    , _pliId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13309,15 +13309,15 @@ instance ToJSON PlayListItem where
 -- /See:/ 'guideCategoryListResponse' smart constructor.
 data GuideCategoryListResponse =
   GuideCategoryListResponse'
-    { _gclrEtag            :: !(Maybe Text)
+    { _gclrEtag :: !(Maybe Text)
     , _gclrTokenPagination :: !(Maybe TokenPagination)
-    , _gclrNextPageToken   :: !(Maybe Text)
-    , _gclrPageInfo        :: !(Maybe PageInfo)
-    , _gclrKind            :: !Text
-    , _gclrItems           :: !(Maybe [GuideCategory])
-    , _gclrVisitorId       :: !(Maybe Text)
-    , _gclrEventId         :: !(Maybe Text)
-    , _gclrPrevPageToken   :: !(Maybe Text)
+    , _gclrNextPageToken :: !(Maybe Text)
+    , _gclrPageInfo :: !(Maybe PageInfo)
+    , _gclrKind :: !Text
+    , _gclrItems :: !(Maybe [GuideCategory])
+    , _gclrVisitorId :: !(Maybe Text)
+    , _gclrEventId :: !(Maybe Text)
+    , _gclrPrevPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13446,18 +13446,18 @@ instance ToJSON GuideCategoryListResponse where
 -- /See:/ 'captionSnippet' smart constructor.
 data CaptionSnippet =
   CaptionSnippet'
-    { _csFailureReason  :: !(Maybe CaptionSnippetFailureReason)
-    , _csStatus         :: !(Maybe CaptionSnippetStatus)
-    , _csLastUpdated    :: !(Maybe DateTime')
-    , _csTrackKind      :: !(Maybe CaptionSnippetTrackKind)
-    , _csIsDraft        :: !(Maybe Bool)
-    , _csIsCC           :: !(Maybe Bool)
-    , _csVideoId        :: !(Maybe Text)
-    , _csName           :: !(Maybe Text)
-    , _csIsLarge        :: !(Maybe Bool)
-    , _csLanguage       :: !(Maybe Text)
-    , _csIsAutoSynced   :: !(Maybe Bool)
-    , _csIsEasyReader   :: !(Maybe Bool)
+    { _csFailureReason :: !(Maybe CaptionSnippetFailureReason)
+    , _csStatus :: !(Maybe CaptionSnippetStatus)
+    , _csLastUpdated :: !(Maybe DateTime')
+    , _csTrackKind :: !(Maybe CaptionSnippetTrackKind)
+    , _csIsDraft :: !(Maybe Bool)
+    , _csIsCC :: !(Maybe Bool)
+    , _csVideoId :: !(Maybe Text)
+    , _csName :: !(Maybe Text)
+    , _csIsLarge :: !(Maybe Bool)
+    , _csLanguage :: !(Maybe Text)
+    , _csIsAutoSynced :: !(Maybe Bool)
+    , _csIsEasyReader :: !(Maybe Bool)
     , _csAudioTrackType :: !(Maybe CaptionSnippetAudioTrackType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13637,10 +13637,10 @@ instance ToJSON CaptionSnippet where
 -- /See:/ 'comment' smart constructor.
 data Comment =
   Comment'
-    { _ccEtag    :: !(Maybe Text)
+    { _ccEtag :: !(Maybe Text)
     , _ccSnippet :: !(Maybe CommentSnippet)
-    , _ccKind    :: !Text
-    , _ccId      :: !(Maybe Text)
+    , _ccKind :: !Text
+    , _ccId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13709,7 +13709,7 @@ instance ToJSON Comment where
 data I18nRegionSnippet =
   I18nRegionSnippet'
     { _irsName :: !(Maybe Text)
-    , _irsGl   :: !(Maybe Text)
+    , _irsGl :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13756,12 +13756,12 @@ instance ToJSON I18nRegionSnippet where
 -- /See:/ 'subscription' smart constructor.
 data Subscription =
   Subscription'
-    { _ssEtag              :: !(Maybe Text)
+    { _ssEtag :: !(Maybe Text)
     , _ssSubscriberSnippet :: !(Maybe SubscriptionSubscriberSnippet)
-    , _ssSnippet           :: !(Maybe SubscriptionSnippet)
-    , _ssKind              :: !Text
-    , _ssContentDetails    :: !(Maybe SubscriptionContentDetails)
-    , _ssId                :: !(Maybe Text)
+    , _ssSnippet :: !(Maybe SubscriptionSnippet)
+    , _ssKind :: !Text
+    , _ssContentDetails :: !(Maybe SubscriptionContentDetails)
+    , _ssId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13854,9 +13854,9 @@ instance ToJSON Subscription where
 -- /See:/ 'videoRecordingDetails' smart constructor.
 data VideoRecordingDetails =
   VideoRecordingDetails'
-    { _vrdLocation            :: !(Maybe GeoPoint)
+    { _vrdLocation :: !(Maybe GeoPoint)
     , _vrdLocationDescription :: !(Maybe Text)
-    , _vrdRecordingDate       :: !(Maybe DateTime')
+    , _vrdRecordingDate :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13920,7 +13920,7 @@ instance ToJSON VideoRecordingDetails where
 -- /See:/ 'videoRating' smart constructor.
 data VideoRating =
   VideoRating'
-    { _vRating  :: !(Maybe VideoRatingRating)
+    { _vRating :: !(Maybe VideoRatingRating)
     , _vVideoId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13963,21 +13963,21 @@ instance ToJSON VideoRating where
 -- /See:/ 'commentSnippet' smart constructor.
 data CommentSnippet =
   CommentSnippet'
-    { _cViewerRating          :: !(Maybe CommentSnippetViewerRating)
-    , _cPublishedAt           :: !(Maybe DateTime')
-    , _cAuthorChannelURL      :: !(Maybe Text)
-    , _cModerationStatus      :: !(Maybe CommentSnippetModerationStatus)
-    , _cLikeCount             :: !(Maybe (Textual Word32))
-    , _cChannelId             :: !(Maybe Text)
-    , _cTextOriginal          :: !(Maybe Text)
-    , _cVideoId               :: !(Maybe Text)
-    , _cTextDisplay           :: !(Maybe Text)
+    { _cViewerRating :: !(Maybe CommentSnippetViewerRating)
+    , _cPublishedAt :: !(Maybe DateTime')
+    , _cAuthorChannelURL :: !(Maybe Text)
+    , _cModerationStatus :: !(Maybe CommentSnippetModerationStatus)
+    , _cLikeCount :: !(Maybe (Textual Word32))
+    , _cChannelId :: !(Maybe Text)
+    , _cTextOriginal :: !(Maybe Text)
+    , _cVideoId :: !(Maybe Text)
+    , _cTextDisplay :: !(Maybe Text)
     , _cAuthorProFileImageURL :: !(Maybe Text)
-    , _cAuthorDisplayName     :: !(Maybe Text)
-    , _cUpdatedAt             :: !(Maybe DateTime')
-    , _cAuthorChannelId       :: !(Maybe JSONValue)
-    , _cCanRate               :: !(Maybe Bool)
-    , _cParentId              :: !(Maybe Text)
+    , _cAuthorDisplayName :: !(Maybe Text)
+    , _cUpdatedAt :: !(Maybe DateTime')
+    , _cAuthorChannelId :: !(Maybe JSONValue)
+    , _cCanRate :: !(Maybe Bool)
+    , _cParentId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14228,11 +14228,11 @@ instance ToJSON LiveStreamStatus where
 -- /See:/ 'videoSuggestions' smart constructor.
 data VideoSuggestions =
   VideoSuggestions'
-    { _vsProcessingErrors   :: !(Maybe [VideoSuggestionsProcessingErrorsItem])
-    , _vsProcessingHints    :: !(Maybe [VideoSuggestionsProcessingHintsItem])
-    , _vsEditorSuggestions  :: !(Maybe [VideoSuggestionsEditorSuggestionsItem])
+    { _vsProcessingErrors :: !(Maybe [VideoSuggestionsProcessingErrorsItem])
+    , _vsProcessingHints :: !(Maybe [VideoSuggestionsProcessingHintsItem])
+    , _vsEditorSuggestions :: !(Maybe [VideoSuggestionsEditorSuggestionsItem])
     , _vsProcessingWarnings :: !(Maybe [VideoSuggestionsProcessingWarningsItem])
-    , _vsTagSuggestions     :: !(Maybe [VideoSuggestionsTagSuggestion])
+    , _vsTagSuggestions :: !(Maybe [VideoSuggestionsTagSuggestion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14341,15 +14341,15 @@ instance ToJSON VideoSuggestions where
 -- /See:/ 'playListItemSnippet' smart constructor.
 data PlayListItemSnippet =
   PlayListItemSnippet'
-    { _plisResourceId   :: !(Maybe ResourceId)
-    , _plisPublishedAt  :: !(Maybe DateTime')
+    { _plisResourceId :: !(Maybe ResourceId)
+    , _plisPublishedAt :: !(Maybe DateTime')
     , _plisChannelTitle :: !(Maybe Text)
-    , _plisChannelId    :: !(Maybe Text)
-    , _plisThumbnails   :: !(Maybe ThumbnailDetails)
-    , _plisTitle        :: !(Maybe Text)
-    , _plisPlayListId   :: !(Maybe Text)
-    , _plisDescription  :: !(Maybe Text)
-    , _plisPosition     :: !(Maybe (Textual Word32))
+    , _plisChannelId :: !(Maybe Text)
+    , _plisThumbnails :: !(Maybe ThumbnailDetails)
+    , _plisTitle :: !(Maybe Text)
+    , _plisPlayListId :: !(Maybe Text)
+    , _plisDescription :: !(Maybe Text)
+    , _plisPosition :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14523,76 +14523,76 @@ instance ToJSON VideoProjectDetails where
 -- /See:/ 'contentRating' smart constructor.
 data ContentRating =
   ContentRating'
-    { _crFpbRatingReasons       :: !(Maybe [ContentRatingFpbRatingReasonsItem])
-    , _crPefilmRating           :: !(Maybe ContentRatingPefilmRating)
-    , _crCccRating              :: !(Maybe ContentRatingCccRating)
-    , _crAnatelRating           :: !(Maybe ContentRatingAnatelRating)
-    , _crMpaaRating             :: !(Maybe ContentRatingMpaaRating)
-    , _crCceRating              :: !(Maybe ContentRatingCceRating)
-    , _crMccaaRating            :: !(Maybe ContentRatingMccaaRating)
-    , _crChfilmRating           :: !(Maybe ContentRatingChfilmRating)
-    , _crIcaaRating             :: !(Maybe ContentRatingIcaaRating)
-    , _crFcbmRating             :: !(Maybe ContentRatingFcbmRating)
-    , _crBmukkRating            :: !(Maybe ContentRatingBmukkRating)
-    , _crMoctwRating            :: !(Maybe ContentRatingMoctwRating)
-    , _crNfvcbRating            :: !(Maybe ContentRatingNfvcbRating)
-    , _crDjctqRatingReasons     :: !(Maybe [ContentRatingDjctqRatingReasonsItem])
-    , _crAgcomRating            :: !(Maybe ContentRatingAgcomRating)
-    , _crCnaRating              :: !(Maybe ContentRatingCnaRating)
-    , _crCatvfrRating           :: !(Maybe ContentRatingCatvfrRating)
-    , _crCbfcRating             :: !(Maybe ContentRatingCbfcRating)
-    , _crKfcbRating             :: !(Maybe ContentRatingKfcbRating)
-    , _crSmsaRating             :: !(Maybe ContentRatingSmsaRating)
-    , _crChvrsRating            :: !(Maybe ContentRatingChvrsRating)
-    , _crIncaaRating            :: !(Maybe ContentRatingIncaaRating)
-    , _crMcstRating             :: !(Maybe ContentRatingMcstRating)
-    , _crNfrcRating             :: !(Maybe ContentRatingNfrcRating)
-    , _crCsaRating              :: !(Maybe ContentRatingCsaRating)
-    , _crMocRating              :: !(Maybe ContentRatingMocRating)
-    , _crEirinRating            :: !(Maybe ContentRatingEirinRating)
-    , _crFskRating              :: !(Maybe ContentRatingFskRating)
-    , _crEefilmRating           :: !(Maybe ContentRatingEefilmRating)
-    , _crRcnofRating            :: !(Maybe ContentRatingRcnofRating)
-    , _crMekuRating             :: !(Maybe ContentRatingMekuRating)
-    , _crIlfilmRating           :: !(Maybe ContentRatingIlfilmRating)
-    , _crIfcoRating             :: !(Maybe ContentRatingIfcoRating)
-    , _crNbcplRating            :: !(Maybe ContentRatingNbcplRating)
-    , _crGrfilmRating           :: !(Maybe ContentRatingGrfilmRating)
-    , _crRteRating              :: !(Maybe ContentRatingRteRating)
-    , _crAcbRating              :: !(Maybe ContentRatingAcbRating)
-    , _crCatvRating             :: !(Maybe ContentRatingCatvRating)
-    , _crMdaRating              :: !(Maybe ContentRatingMdaRating)
-    , _crDjctqRating            :: !(Maybe ContentRatingDjctqRating)
-    , _crSmaisRating            :: !(Maybe ContentRatingSmaisRating)
-    , _crCscfRating             :: !(Maybe ContentRatingCscfRating)
-    , _crTvpgRating             :: !(Maybe ContentRatingTvpgRating)
-    , _crRtcRating              :: !(Maybe ContentRatingRtcRating)
-    , _crYtRating               :: !(Maybe ContentRatingYtRating)
-    , _crBbfcRating             :: !(Maybe ContentRatingBbfcRating)
-    , _crMenaMpaaRating         :: !(Maybe ContentRatingMenaMpaaRating)
-    , _crKijkwijzerRating       :: !(Maybe ContentRatingKijkwijzerRating)
-    , _crMtrcbRating            :: !(Maybe ContentRatingMtrcbRating)
-    , _crFcoRating              :: !(Maybe ContentRatingFcoRating)
-    , _crCicfRating             :: !(Maybe ContentRatingCicfRating)
-    , _crCzfilmRating           :: !(Maybe ContentRatingCzfilmRating)
-    , _crNbcRating              :: !(Maybe ContentRatingNbcRating)
-    , _crFmocRating             :: !(Maybe ContentRatingFmocRating)
-    , _crRussiaRating           :: !(Maybe ContentRatingRussiaRating)
-    , _crEgfilmRating           :: !(Maybe ContentRatingEgfilmRating)
+    { _crFpbRatingReasons :: !(Maybe [ContentRatingFpbRatingReasonsItem])
+    , _crPefilmRating :: !(Maybe ContentRatingPefilmRating)
+    , _crCccRating :: !(Maybe ContentRatingCccRating)
+    , _crAnatelRating :: !(Maybe ContentRatingAnatelRating)
+    , _crMpaaRating :: !(Maybe ContentRatingMpaaRating)
+    , _crCceRating :: !(Maybe ContentRatingCceRating)
+    , _crMccaaRating :: !(Maybe ContentRatingMccaaRating)
+    , _crChfilmRating :: !(Maybe ContentRatingChfilmRating)
+    , _crIcaaRating :: !(Maybe ContentRatingIcaaRating)
+    , _crFcbmRating :: !(Maybe ContentRatingFcbmRating)
+    , _crBmukkRating :: !(Maybe ContentRatingBmukkRating)
+    , _crMoctwRating :: !(Maybe ContentRatingMoctwRating)
+    , _crNfvcbRating :: !(Maybe ContentRatingNfvcbRating)
+    , _crDjctqRatingReasons :: !(Maybe [ContentRatingDjctqRatingReasonsItem])
+    , _crAgcomRating :: !(Maybe ContentRatingAgcomRating)
+    , _crCnaRating :: !(Maybe ContentRatingCnaRating)
+    , _crCatvfrRating :: !(Maybe ContentRatingCatvfrRating)
+    , _crCbfcRating :: !(Maybe ContentRatingCbfcRating)
+    , _crKfcbRating :: !(Maybe ContentRatingKfcbRating)
+    , _crSmsaRating :: !(Maybe ContentRatingSmsaRating)
+    , _crChvrsRating :: !(Maybe ContentRatingChvrsRating)
+    , _crIncaaRating :: !(Maybe ContentRatingIncaaRating)
+    , _crMcstRating :: !(Maybe ContentRatingMcstRating)
+    , _crNfrcRating :: !(Maybe ContentRatingNfrcRating)
+    , _crCsaRating :: !(Maybe ContentRatingCsaRating)
+    , _crMocRating :: !(Maybe ContentRatingMocRating)
+    , _crEirinRating :: !(Maybe ContentRatingEirinRating)
+    , _crFskRating :: !(Maybe ContentRatingFskRating)
+    , _crEefilmRating :: !(Maybe ContentRatingEefilmRating)
+    , _crRcnofRating :: !(Maybe ContentRatingRcnofRating)
+    , _crMekuRating :: !(Maybe ContentRatingMekuRating)
+    , _crIlfilmRating :: !(Maybe ContentRatingIlfilmRating)
+    , _crIfcoRating :: !(Maybe ContentRatingIfcoRating)
+    , _crNbcplRating :: !(Maybe ContentRatingNbcplRating)
+    , _crGrfilmRating :: !(Maybe ContentRatingGrfilmRating)
+    , _crRteRating :: !(Maybe ContentRatingRteRating)
+    , _crAcbRating :: !(Maybe ContentRatingAcbRating)
+    , _crCatvRating :: !(Maybe ContentRatingCatvRating)
+    , _crMdaRating :: !(Maybe ContentRatingMdaRating)
+    , _crDjctqRating :: !(Maybe ContentRatingDjctqRating)
+    , _crSmaisRating :: !(Maybe ContentRatingSmaisRating)
+    , _crCscfRating :: !(Maybe ContentRatingCscfRating)
+    , _crTvpgRating :: !(Maybe ContentRatingTvpgRating)
+    , _crRtcRating :: !(Maybe ContentRatingRtcRating)
+    , _crYtRating :: !(Maybe ContentRatingYtRating)
+    , _crBbfcRating :: !(Maybe ContentRatingBbfcRating)
+    , _crMenaMpaaRating :: !(Maybe ContentRatingMenaMpaaRating)
+    , _crKijkwijzerRating :: !(Maybe ContentRatingKijkwijzerRating)
+    , _crMtrcbRating :: !(Maybe ContentRatingMtrcbRating)
+    , _crFcoRating :: !(Maybe ContentRatingFcoRating)
+    , _crCicfRating :: !(Maybe ContentRatingCicfRating)
+    , _crCzfilmRating :: !(Maybe ContentRatingCzfilmRating)
+    , _crNbcRating :: !(Maybe ContentRatingNbcRating)
+    , _crFmocRating :: !(Maybe ContentRatingFmocRating)
+    , _crRussiaRating :: !(Maybe ContentRatingRussiaRating)
+    , _crEgfilmRating :: !(Maybe ContentRatingEgfilmRating)
     , _crResorteviolenciaRating :: !(Maybe ContentRatingResorteviolenciaRating)
-    , _crMibacRating            :: !(Maybe ContentRatingMibacRating)
-    , _crMedietilsynetRating    :: !(Maybe ContentRatingMedietilsynetRating)
-    , _crMccypRating            :: !(Maybe ContentRatingMccypRating)
-    , _crNkclvRating            :: !(Maybe ContentRatingNkclvRating)
-    , _crFpbRating              :: !(Maybe ContentRatingFpbRating)
-    , _crLsfRating              :: !(Maybe ContentRatingLsfRating)
-    , _crBfvcRating             :: !(Maybe ContentRatingBfvcRating)
-    , _crMpaatRating            :: !(Maybe ContentRatingMpaatRating)
-    , _crEcbmctRating           :: !(Maybe ContentRatingEcbmctRating)
-    , _crCNCRating              :: !(Maybe ContentRatingCNCRating)
-    , _crSkfilmRating           :: !(Maybe ContentRatingSkfilmRating)
-    , _crOflcRating             :: !(Maybe ContentRatingOflcRating)
-    , _crKmrbRating             :: !(Maybe ContentRatingKmrbRating)
+    , _crMibacRating :: !(Maybe ContentRatingMibacRating)
+    , _crMedietilsynetRating :: !(Maybe ContentRatingMedietilsynetRating)
+    , _crMccypRating :: !(Maybe ContentRatingMccypRating)
+    , _crNkclvRating :: !(Maybe ContentRatingNkclvRating)
+    , _crFpbRating :: !(Maybe ContentRatingFpbRating)
+    , _crLsfRating :: !(Maybe ContentRatingLsfRating)
+    , _crBfvcRating :: !(Maybe ContentRatingBfvcRating)
+    , _crMpaatRating :: !(Maybe ContentRatingMpaatRating)
+    , _crEcbmctRating :: !(Maybe ContentRatingEcbmctRating)
+    , _crCNCRating :: !(Maybe ContentRatingCNCRating)
+    , _crSkfilmRating :: !(Maybe ContentRatingSkfilmRating)
+    , _crOflcRating :: !(Maybe ContentRatingOflcRating)
+    , _crKmrbRating :: !(Maybe ContentRatingKmrbRating)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15417,14 +15417,14 @@ instance ToJSON ContentRating where
 -- /See:/ 'playList' smart constructor.
 data PlayList =
   PlayList'
-    { _plStatus         :: !(Maybe PlayListStatus)
-    , _plEtag           :: !(Maybe Text)
-    , _plSnippet        :: !(Maybe PlayListSnippet)
-    , _plKind           :: !Text
+    { _plStatus :: !(Maybe PlayListStatus)
+    , _plEtag :: !(Maybe Text)
+    , _plSnippet :: !(Maybe PlayListSnippet)
+    , _plKind :: !Text
     , _plContentDetails :: !(Maybe PlayListContentDetails)
-    , _plId             :: !(Maybe Text)
-    , _plLocalizations  :: !(Maybe PlayListLocalizations)
-    , _plPlayer         :: !(Maybe PlayListPlayer)
+    , _plId :: !(Maybe Text)
+    , _plLocalizations :: !(Maybe PlayListLocalizations)
+    , _plPlayer :: !(Maybe PlayListPlayer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15534,20 +15534,20 @@ instance ToJSON PlayList where
 -- /See:/ 'channelSettings' smart constructor.
 data ChannelSettings =
   ChannelSettings'
-    { _cShowRelatedChannels        :: !(Maybe Bool)
-    , _cDefaultTab                 :: !(Maybe Text)
-    , _cFeaturedChannelsTitle      :: !(Maybe Text)
-    , _cCountry                    :: !(Maybe Text)
-    , _cProFileColor               :: !(Maybe Text)
-    , _cModerateComments           :: !(Maybe Bool)
-    , _cKeywords                   :: !(Maybe Text)
-    , _cUnsubscribedTrailer        :: !(Maybe Text)
+    { _cShowRelatedChannels :: !(Maybe Bool)
+    , _cDefaultTab :: !(Maybe Text)
+    , _cFeaturedChannelsTitle :: !(Maybe Text)
+    , _cCountry :: !(Maybe Text)
+    , _cProFileColor :: !(Maybe Text)
+    , _cModerateComments :: !(Maybe Bool)
+    , _cKeywords :: !(Maybe Text)
+    , _cUnsubscribedTrailer :: !(Maybe Text)
     , _cTrackingAnalyticsAccountId :: !(Maybe Text)
-    , _cFeaturedChannelsURLs       :: !(Maybe [Text])
-    , _cShowBrowseView             :: !(Maybe Bool)
-    , _cTitle                      :: !(Maybe Text)
-    , _cDescription                :: !(Maybe Text)
-    , _cDefaultLanguage            :: !(Maybe Text)
+    , _cFeaturedChannelsURLs :: !(Maybe [Text])
+    , _cShowBrowseView :: !(Maybe Bool)
+    , _cTitle :: !(Maybe Text)
+    , _cDescription :: !(Maybe Text)
+    , _cDefaultLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15733,13 +15733,13 @@ instance ToJSON ChannelSettings where
 -- /See:/ 'subscriptionSnippet' smart constructor.
 data SubscriptionSnippet =
   SubscriptionSnippet'
-    { _ssResourceId   :: !(Maybe ResourceId)
-    , _ssPublishedAt  :: !(Maybe DateTime')
+    { _ssResourceId :: !(Maybe ResourceId)
+    , _ssPublishedAt :: !(Maybe DateTime')
     , _ssChannelTitle :: !(Maybe Text)
-    , _ssChannelId    :: !(Maybe Text)
-    , _ssThumbnails   :: !(Maybe ThumbnailDetails)
-    , _ssTitle        :: !(Maybe Text)
-    , _ssDescription  :: !(Maybe Text)
+    , _ssChannelId :: !(Maybe Text)
+    , _ssThumbnails :: !(Maybe ThumbnailDetails)
+    , _ssTitle :: !(Maybe Text)
+    , _ssDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15846,12 +15846,12 @@ instance ToJSON SubscriptionSnippet where
 -- /See:/ 'videoLiveStreamingDetails' smart constructor.
 data VideoLiveStreamingDetails =
   VideoLiveStreamingDetails'
-    { _vlsdActualEndTime      :: !(Maybe DateTime')
-    , _vlsdConcurrentViewers  :: !(Maybe (Textual Word64))
-    , _vlsdScheduledEndTime   :: !(Maybe DateTime')
+    { _vlsdActualEndTime :: !(Maybe DateTime')
+    , _vlsdConcurrentViewers :: !(Maybe (Textual Word64))
+    , _vlsdScheduledEndTime :: !(Maybe DateTime')
     , _vlsdScheduledStartTime :: !(Maybe DateTime')
-    , _vlsdActualStartTime    :: !(Maybe DateTime')
-    , _vlsdActiveLiveChatId   :: !(Maybe Text)
+    , _vlsdActualStartTime :: !(Maybe DateTime')
+    , _vlsdActiveLiveChatId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15973,15 +15973,15 @@ instance ToJSON VideoLiveStreamingDetails where
 -- /See:/ 'activityContentDetailsPromotedItem' smart constructor.
 data ActivityContentDetailsPromotedItem =
   ActivityContentDetailsPromotedItem'
-    { _acdpiDestinationURL      :: !(Maybe Text)
-    , _acdpiClickTrackingURL    :: !(Maybe Text)
-    , _acdpiForecastingURL      :: !(Maybe [Text])
-    , _acdpiDescriptionText     :: !(Maybe Text)
-    , _acdpiCtaType             :: !(Maybe ActivityContentDetailsPromotedItemCtaType)
-    , _acdpiVideoId             :: !(Maybe Text)
-    , _acdpiAdTag               :: !(Maybe Text)
-    , _acdpiCreativeViewURL     :: !(Maybe Text)
-    , _acdpiImpressionURL       :: !(Maybe [Text])
+    { _acdpiDestinationURL :: !(Maybe Text)
+    , _acdpiClickTrackingURL :: !(Maybe Text)
+    , _acdpiForecastingURL :: !(Maybe [Text])
+    , _acdpiDescriptionText :: !(Maybe Text)
+    , _acdpiCtaType :: !(Maybe ActivityContentDetailsPromotedItemCtaType)
+    , _acdpiVideoId :: !(Maybe Text)
+    , _acdpiAdTag :: !(Maybe Text)
+    , _acdpiCreativeViewURL :: !(Maybe Text)
+    , _acdpiImpressionURL :: !(Maybe [Text])
     , _acdpiCustomCtaButtonText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16135,9 +16135,9 @@ instance ToJSON ActivityContentDetailsPromotedItem
 data SponsorSnippet =
   SponsorSnippet'
     { _sCumulativeDurationMonths :: !(Maybe (Textual Int32))
-    , _sChannelId                :: !(Maybe Text)
-    , _sSponsorDetails           :: !(Maybe ChannelProFileDetails)
-    , _sSponsorSince             :: !(Maybe DateTime')
+    , _sChannelId :: !(Maybe Text)
+    , _sSponsorDetails :: !(Maybe ChannelProFileDetails)
+    , _sSponsorSince :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16215,8 +16215,8 @@ instance ToJSON SponsorSnippet where
 -- /See:/ 'geoPoint' smart constructor.
 data GeoPoint =
   GeoPoint'
-    { _gpLatitude  :: !(Maybe (Textual Double))
-    , _gpAltitude  :: !(Maybe (Textual Double))
+    { _gpLatitude :: !(Maybe (Textual Double))
+    , _gpAltitude :: !(Maybe (Textual Double))
     , _gpLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16351,7 +16351,7 @@ instance ToJSON ChannelSectionLocalization where
 -- /See:/ 'videoAbuseReportSecondaryReason' smart constructor.
 data VideoAbuseReportSecondaryReason =
   VideoAbuseReportSecondaryReason'
-    { _varsrId    :: !(Maybe Text)
+    { _varsrId :: !(Maybe Text)
     , _varsrLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16400,7 +16400,7 @@ instance ToJSON VideoAbuseReportSecondaryReason where
 -- /See:/ 'channelContentOwnerDetails' smart constructor.
 data ChannelContentOwnerDetails =
   ChannelContentOwnerDetails'
-    { _ccodTimeLinked   :: !(Maybe DateTime')
+    { _ccodTimeLinked :: !(Maybe DateTime')
     , _ccodContentOwner :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16454,7 +16454,7 @@ instance ToJSON ChannelContentOwnerDetails where
 -- /See:/ 'i18nLanguageSnippet' smart constructor.
 data I18nLanguageSnippet =
   I18nLanguageSnippet'
-    { _ilsHl   :: !(Maybe Text)
+    { _ilsHl :: !(Maybe Text)
     , _ilsName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

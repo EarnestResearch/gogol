@@ -43,8 +43,8 @@ module Network.Google.Resource.Dataproc.Projects.Locations.WorkflowTemplates.Upd
     , plwtuCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.locations.workflowTemplates.update@ method which the
 -- 'ProjectsLocationsWorkflowTemplatesUpdate' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsWorkflowTemplatesUpdateResource
 -- /See:/ 'projectsLocationsWorkflowTemplatesUpdate' smart constructor.
 data ProjectsLocationsWorkflowTemplatesUpdate =
   ProjectsLocationsWorkflowTemplatesUpdate'
-    { _plwtuXgafv          :: !(Maybe Xgafv)
+    { _plwtuXgafv :: !(Maybe Xgafv)
     , _plwtuUploadProtocol :: !(Maybe Text)
-    , _plwtuAccessToken    :: !(Maybe Text)
-    , _plwtuUploadType     :: !(Maybe Text)
-    , _plwtuPayload        :: !WorkflowTemplate
-    , _plwtuName           :: !Text
-    , _plwtuCallback       :: !(Maybe Text)
+    , _plwtuAccessToken :: !(Maybe Text)
+    , _plwtuUploadType :: !(Maybe Text)
+    , _plwtuPayload :: !WorkflowTemplate
+    , _plwtuName :: !Text
+    , _plwtuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

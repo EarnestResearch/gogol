@@ -16,7 +16,7 @@
 --
 module Network.Google.Spanner.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. The TypeCode for this type.
 data TypeCode

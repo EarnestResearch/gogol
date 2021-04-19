@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Update
     , acuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.update@ method which the
 -- 'AccountsContainersUpdate' request conforms to.
@@ -56,9 +56,9 @@ type AccountsContainersUpdateResource =
 -- /See:/ 'accountsContainersUpdate' smart constructor.
 data AccountsContainersUpdate =
   AccountsContainersUpdate'
-    { _acuPath        :: !Text
+    { _acuPath :: !Text
     , _acuFingerprint :: !(Maybe Text)
-    , _acuPayload     :: !Container
+    , _acuPayload :: !Container
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

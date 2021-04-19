@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.Members.Patch
     , mpPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.patch@ method which the
 -- 'MembersPatch' request conforms to.
@@ -62,8 +62,8 @@ type MembersPatchResource =
 data MembersPatch =
   MembersPatch'
     { _mpMemberKey :: !Text
-    , _mpGroupKey  :: !Text
-    , _mpPayload   :: !Member
+    , _mpGroupKey :: !Text
+    , _mpPayload :: !Member
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

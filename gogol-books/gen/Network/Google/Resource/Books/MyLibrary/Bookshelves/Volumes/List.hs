@@ -43,8 +43,8 @@ module Network.Google.Resource.Books.MyLibrary.Bookshelves.Volumes.List
     , mlbvlShowPreOrders
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.bookshelves.volumes.list@ method which the
 -- 'MyLibraryBookshelvesVolumesList' request conforms to.
@@ -71,13 +71,13 @@ type MyLibraryBookshelvesVolumesListResource =
 -- /See:/ 'myLibraryBookshelvesVolumesList' smart constructor.
 data MyLibraryBookshelvesVolumesList =
   MyLibraryBookshelvesVolumesList'
-    { _mlbvlCountry       :: !(Maybe Text)
-    , _mlbvlQ             :: !(Maybe Text)
-    , _mlbvlShelf         :: !Text
-    , _mlbvlSource        :: !(Maybe Text)
-    , _mlbvlProjection    :: !(Maybe MyLibraryBookshelvesVolumesListProjection)
-    , _mlbvlStartIndex    :: !(Maybe (Textual Word32))
-    , _mlbvlMaxResults    :: !(Maybe (Textual Word32))
+    { _mlbvlCountry :: !(Maybe Text)
+    , _mlbvlQ :: !(Maybe Text)
+    , _mlbvlShelf :: !Text
+    , _mlbvlSource :: !(Maybe Text)
+    , _mlbvlProjection :: !(Maybe MyLibraryBookshelvesVolumesListProjection)
+    , _mlbvlStartIndex :: !(Maybe (Textual Word32))
+    , _mlbvlMaxResults :: !(Maybe (Textual Word32))
     , _mlbvlShowPreOrders :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

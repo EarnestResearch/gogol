@@ -43,8 +43,8 @@ module Network.Google.Resource.People.ContactGroups.Get
     , cggCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.contactGroups.get@ method which the
 -- 'ContactGroupsGet' request conforms to.
@@ -65,13 +65,13 @@ type ContactGroupsGetResource =
 -- /See:/ 'contactGroupsGet' smart constructor.
 data ContactGroupsGet =
   ContactGroupsGet'
-    { _cggXgafv          :: !(Maybe Xgafv)
-    , _cggMaxMembers     :: !(Maybe (Textual Int32))
+    { _cggXgafv :: !(Maybe Xgafv)
+    , _cggMaxMembers :: !(Maybe (Textual Int32))
     , _cggUploadProtocol :: !(Maybe Text)
-    , _cggResourceName   :: !Text
-    , _cggAccessToken    :: !(Maybe Text)
-    , _cggUploadType     :: !(Maybe Text)
-    , _cggCallback       :: !(Maybe Text)
+    , _cggResourceName :: !Text
+    , _cggAccessToken :: !(Maybe Text)
+    , _cggUploadType :: !(Maybe Text)
+    , _cggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

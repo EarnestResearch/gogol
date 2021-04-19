@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Update
     , alpuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.update@ method which the
 -- 'AdvertiserLandingPagesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type AdvertiserLandingPagesUpdateResource =
 data AdvertiserLandingPagesUpdate =
   AdvertiserLandingPagesUpdate'
     { _alpuProFileId :: !(Textual Int64)
-    , _alpuPayload   :: !LandingPage
+    , _alpuPayload :: !LandingPage
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

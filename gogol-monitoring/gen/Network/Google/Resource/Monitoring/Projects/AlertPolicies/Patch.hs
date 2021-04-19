@@ -46,8 +46,8 @@ module Network.Google.Resource.Monitoring.Projects.AlertPolicies.Patch
     , pAppCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.alertPolicies.patch@ method which the
 -- 'ProjectsAlertPoliciesPatch' request conforms to.
@@ -72,14 +72,14 @@ type ProjectsAlertPoliciesPatchResource =
 -- /See:/ 'projectsAlertPoliciesPatch' smart constructor.
 data ProjectsAlertPoliciesPatch =
   ProjectsAlertPoliciesPatch'
-    { _pAppXgafv          :: !(Maybe Xgafv)
+    { _pAppXgafv :: !(Maybe Xgafv)
     , _pAppUploadProtocol :: !(Maybe Text)
-    , _pAppUpdateMask     :: !(Maybe GFieldMask)
-    , _pAppAccessToken    :: !(Maybe Text)
-    , _pAppUploadType     :: !(Maybe Text)
-    , _pAppPayload        :: !AlertPolicy
-    , _pAppName           :: !Text
-    , _pAppCallback       :: !(Maybe Text)
+    , _pAppUpdateMask :: !(Maybe GFieldMask)
+    , _pAppAccessToken :: !(Maybe Text)
+    , _pAppUploadType :: !(Maybe Text)
+    , _pAppPayload :: !AlertPolicy
+    , _pAppName :: !Text
+    , _pAppCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

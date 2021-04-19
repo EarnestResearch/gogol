@@ -44,8 +44,8 @@ module Network.Google.Resource.Manufacturers.Accounts.Products.List
     , aplCallback
     ) where
 
-import           Network.Google.Manufacturers.Types
-import           Network.Google.Prelude
+import Network.Google.Manufacturers.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @manufacturers.accounts.products.list@ method which the
 -- 'AccountsProductsList' request conforms to.
@@ -69,15 +69,15 @@ type AccountsProductsListResource =
 -- /See:/ 'accountsProductsList' smart constructor.
 data AccountsProductsList =
   AccountsProductsList'
-    { _aplParent         :: !Text
-    , _aplInclude        :: !(Maybe [Text])
-    , _aplXgafv          :: !(Maybe Xgafv)
+    { _aplParent :: !Text
+    , _aplInclude :: !(Maybe [Text])
+    , _aplXgafv :: !(Maybe Xgafv)
     , _aplUploadProtocol :: !(Maybe Text)
-    , _aplAccessToken    :: !(Maybe Text)
-    , _aplUploadType     :: !(Maybe Text)
-    , _aplPageToken      :: !(Maybe Text)
-    , _aplPageSize       :: !(Maybe (Textual Int32))
-    , _aplCallback       :: !(Maybe Text)
+    , _aplAccessToken :: !(Maybe Text)
+    , _aplUploadType :: !(Maybe Text)
+    , _aplPageToken :: !(Maybe Text)
+    , _aplPageSize :: !(Maybe (Textual Int32))
+    , _aplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

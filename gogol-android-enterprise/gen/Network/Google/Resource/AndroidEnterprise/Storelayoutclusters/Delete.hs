@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutclusters.Delete
     , sddClusterId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutclusters.delete@ method which the
 -- 'StorelayoutclustersDelete' request conforms to.
@@ -61,8 +61,8 @@ type StorelayoutclustersDeleteResource =
 data StorelayoutclustersDelete =
   StorelayoutclustersDelete'
     { _sddEnterpriseId :: !Text
-    , _sddPageId       :: !Text
-    , _sddClusterId    :: !Text
+    , _sddPageId :: !Text
+    , _sddClusterId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

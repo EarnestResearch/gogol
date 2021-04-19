@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Update
     , fauPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.update@ method which the
 -- 'FloodlightActivitiesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type FloodlightActivitiesUpdateResource =
 data FloodlightActivitiesUpdate =
   FloodlightActivitiesUpdate'
     { _fauProFileId :: !(Textual Int64)
-    , _fauPayload   :: !FloodlightActivity
+    , _fauPayload :: !FloodlightActivity
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

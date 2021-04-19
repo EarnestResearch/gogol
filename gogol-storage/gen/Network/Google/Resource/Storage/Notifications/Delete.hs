@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Notifications.Delete
     , ndUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.notifications.delete@ method which the
 -- 'NotificationsDelete' request conforms to.
@@ -59,8 +59,8 @@ type NotificationsDeleteResource =
 data NotificationsDelete =
   NotificationsDelete'
     { _ndNotification :: !Text
-    , _ndBucket       :: !Text
-    , _ndUserProject  :: !(Maybe Text)
+    , _ndBucket :: !Text
+    , _ndUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

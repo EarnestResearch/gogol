@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.Get
     , cdgProjection
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.get@ method which the
 -- 'ChromeosDevicesGet' request conforms to.
@@ -63,7 +63,7 @@ type ChromeosDevicesGetResource =
 data ChromeosDevicesGet =
   ChromeosDevicesGet'
     { _cdgCustomerId :: !Text
-    , _cdgDeviceId   :: !Text
+    , _cdgDeviceId :: !Text
     , _cdgProjection :: !(Maybe ChromeosDevicesGetProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

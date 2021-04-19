@@ -39,8 +39,8 @@ module Network.Google.Resource.Licensing.LicenseAssignments.ListForProduct
     , lalfpMaxResults
     ) where
 
-import           Network.Google.AppsLicensing.Types
-import           Network.Google.Prelude
+import Network.Google.AppsLicensing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @licensing.licenseAssignments.listForProduct@ method which the
 -- 'LicenseAssignmentsListForProduct' request conforms to.
@@ -63,8 +63,8 @@ type LicenseAssignmentsListForProductResource =
 data LicenseAssignmentsListForProduct =
   LicenseAssignmentsListForProduct'
     { _lalfpCustomerId :: !Text
-    , _lalfpPageToken  :: !Text
-    , _lalfpProductId  :: !Text
+    , _lalfpPageToken :: !Text
+    , _lalfpProductId :: !Text
     , _lalfpMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

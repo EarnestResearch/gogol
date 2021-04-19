@@ -16,4 +16,4 @@
 --
 module Network.Google.GroupsMigration.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)

@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Notifications.Update
     , nuNotificationId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.notifications.update@ method which the
 -- 'NotificationsUpdate' request conforms to.
@@ -60,8 +60,8 @@ type NotificationsUpdateResource =
 -- /See:/ 'notificationsUpdate' smart constructor.
 data NotificationsUpdate =
   NotificationsUpdate'
-    { _nuPayload        :: !Notification
-    , _nuCustomer       :: !Text
+    { _nuPayload :: !Notification
+    , _nuCustomer :: !Text
     , _nuNotificationId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

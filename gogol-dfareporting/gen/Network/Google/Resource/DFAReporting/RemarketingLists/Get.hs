@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Get
     , rlgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.get@ method which the
 -- 'RemarketingListsGet' request conforms to.
@@ -58,7 +58,7 @@ type RemarketingListsGetResource =
 data RemarketingListsGet =
   RemarketingListsGet'
     { _rlgProFileId :: !(Textual Int64)
-    , _rlgId        :: !(Textual Int64)
+    , _rlgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

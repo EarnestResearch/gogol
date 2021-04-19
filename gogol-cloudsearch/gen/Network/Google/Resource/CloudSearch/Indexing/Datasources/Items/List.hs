@@ -46,8 +46,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.List
     , idilCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.list@ method which the
 -- 'IndexingDatasourcesItemsList' request conforms to.
@@ -74,17 +74,17 @@ type IndexingDatasourcesItemsListResource =
 -- /See:/ 'indexingDatasourcesItemsList' smart constructor.
 data IndexingDatasourcesItemsList =
   IndexingDatasourcesItemsList'
-    { _idilXgafv                       :: !(Maybe Xgafv)
-    , _idilUploadProtocol              :: !(Maybe Text)
-    , _idilAccessToken                 :: !(Maybe Text)
-    , _idilUploadType                  :: !(Maybe Text)
-    , _idilConnectorName               :: !(Maybe Text)
-    , _idilName                        :: !Text
-    , _idilBrief                       :: !(Maybe Bool)
+    { _idilXgafv :: !(Maybe Xgafv)
+    , _idilUploadProtocol :: !(Maybe Text)
+    , _idilAccessToken :: !(Maybe Text)
+    , _idilUploadType :: !(Maybe Text)
+    , _idilConnectorName :: !(Maybe Text)
+    , _idilName :: !Text
+    , _idilBrief :: !(Maybe Bool)
     , _idilDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _idilPageToken                   :: !(Maybe Text)
-    , _idilPageSize                    :: !(Maybe (Textual Int32))
-    , _idilCallback                    :: !(Maybe Text)
+    , _idilPageToken :: !(Maybe Text)
+    , _idilPageSize :: !(Maybe (Textual Int32))
+    , _idilCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Events.Record
     , erLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.events.record@ method which the
 -- 'EventsRecord' request conforms to.
@@ -58,7 +58,7 @@ type EventsRecordResource =
 -- /See:/ 'eventsRecord' smart constructor.
 data EventsRecord =
   EventsRecord'
-    { _erPayload  :: !EventRecordRequest
+    { _erPayload :: !EventRecordRequest
     , _erLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

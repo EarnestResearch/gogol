@@ -55,8 +55,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfolCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.Observation-lastn@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirObservationLastn' request conforms to.
@@ -93,12 +93,12 @@ type ProjectsLocationsDataSetsFhirStoresFhirObservationLastnResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirObservationLastn' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirObservationLastn =
   ProjectsLocationsDataSetsFhirStoresFhirObservationLastn'
-    { _pldsfsfolParent         :: !Text
-    , _pldsfsfolXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfolParent :: !Text
+    , _pldsfsfolXgafv :: !(Maybe Xgafv)
     , _pldsfsfolUploadProtocol :: !(Maybe Text)
-    , _pldsfsfolAccessToken    :: !(Maybe Text)
-    , _pldsfsfolUploadType     :: !(Maybe Text)
-    , _pldsfsfolCallback       :: !(Maybe Text)
+    , _pldsfsfolAccessToken :: !(Maybe Text)
+    , _pldsfsfolUploadType :: !(Maybe Text)
+    , _pldsfsfolCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

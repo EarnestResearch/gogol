@@ -41,8 +41,8 @@ module Network.Google.Resource.People.ContactGroups.Create
     , cgcCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.contactGroups.create@ method which the
 -- 'ContactGroupsCreate' request conforms to.
@@ -63,12 +63,12 @@ type ContactGroupsCreateResource =
 -- /See:/ 'contactGroupsCreate' smart constructor.
 data ContactGroupsCreate =
   ContactGroupsCreate'
-    { _cgcXgafv          :: !(Maybe Xgafv)
+    { _cgcXgafv :: !(Maybe Xgafv)
     , _cgcUploadProtocol :: !(Maybe Text)
-    , _cgcAccessToken    :: !(Maybe Text)
-    , _cgcUploadType     :: !(Maybe Text)
-    , _cgcPayload        :: !CreateContactGroupRequest
-    , _cgcCallback       :: !(Maybe Text)
+    , _cgcAccessToken :: !(Maybe Text)
+    , _cgcUploadType :: !(Maybe Text)
+    , _cgcPayload :: !CreateContactGroupRequest
+    , _cgcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

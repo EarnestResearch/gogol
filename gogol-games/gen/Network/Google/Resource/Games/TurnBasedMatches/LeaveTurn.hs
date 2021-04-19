@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.LeaveTurn
     , tbmltMatchVersion
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.leaveTurn@ method which the
 -- 'TurnBasedMatchesLeaveTurn' request conforms to.
@@ -63,10 +63,10 @@ type TurnBasedMatchesLeaveTurnResource =
 -- /See:/ 'turnBasedMatchesLeaveTurn' smart constructor.
 data TurnBasedMatchesLeaveTurn =
   TurnBasedMatchesLeaveTurn'
-    { _tbmltLanguage             :: !(Maybe Text)
+    { _tbmltLanguage :: !(Maybe Text)
     , _tbmltPendingParticipantId :: !(Maybe Text)
-    , _tbmltMatchId              :: !Text
-    , _tbmltMatchVersion         :: !(Textual Int32)
+    , _tbmltMatchId :: !Text
+    , _tbmltMatchVersion :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

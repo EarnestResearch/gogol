@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidPublisher.Purchases.Voidedpurchases.List
     , pvlMaxResults
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.purchases.voidedpurchases.list@ method which the
 -- 'PurchasesVoidedpurchasesList' request conforms to.
@@ -67,11 +67,11 @@ type PurchasesVoidedpurchasesListResource =
 data PurchasesVoidedpurchasesList =
   PurchasesVoidedpurchasesList'
     { _pvlPackageName :: !Text
-    , _pvlStartTime   :: !(Maybe (Textual Int64))
-    , _pvlToken       :: !(Maybe Text)
-    , _pvlEndTime     :: !(Maybe (Textual Int64))
-    , _pvlStartIndex  :: !(Maybe (Textual Word32))
-    , _pvlMaxResults  :: !(Maybe (Textual Word32))
+    , _pvlStartTime :: !(Maybe (Textual Int64))
+    , _pvlToken :: !(Maybe Text)
+    , _pvlEndTime :: !(Maybe (Textual Int64))
+    , _pvlStartIndex :: !(Maybe (Textual Word32))
+    , _pvlMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

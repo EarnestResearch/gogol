@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Insert
     , aupfiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.insert@ method which the
 -- 'AccountUserProFilesInsert' request conforms to.
@@ -58,7 +58,7 @@ type AccountUserProFilesInsertResource =
 data AccountUserProFilesInsert =
   AccountUserProFilesInsert'
     { _aupfiProFileId :: !(Textual Int64)
-    , _aupfiPayload   :: !AccountUserProFile
+    , _aupfiPayload :: !AccountUserProFile
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

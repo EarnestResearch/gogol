@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Autoscalers.List
     , aMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.autoscalers.list@ method which the
 -- 'AutoscalersList' request conforms to.
@@ -66,11 +66,11 @@ type AutoscalersListResource =
 -- /See:/ 'autoscalersList' smart constructor.
 data AutoscalersList =
   AutoscalersList'
-    { _aOrderBy    :: !(Maybe Text)
-    , _aProject    :: !Text
-    , _aZone       :: !Text
-    , _aFilter     :: !(Maybe Text)
-    , _aPageToken  :: !(Maybe Text)
+    { _aOrderBy :: !(Maybe Text)
+    , _aProject :: !Text
+    , _aZone :: !Text
+    , _aFilter :: !(Maybe Text)
+    , _aPageToken :: !(Maybe Text)
     , _aMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

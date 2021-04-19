@@ -43,8 +43,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.Patch
     , plipCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.patch@ method which the
 -- 'ProjectsLocationsInstancesPatch' request conforms to.
@@ -65,14 +65,14 @@ type ProjectsLocationsInstancesPatchResource =
 -- /See:/ 'projectsLocationsInstancesPatch' smart constructor.
 data ProjectsLocationsInstancesPatch =
   ProjectsLocationsInstancesPatch'
-    { _plipXgafv          :: !(Maybe Xgafv)
+    { _plipXgafv :: !(Maybe Xgafv)
     , _plipUploadProtocol :: !(Maybe Text)
-    , _plipUpdateMask     :: !(Maybe GFieldMask)
-    , _plipAccessToken    :: !(Maybe Text)
-    , _plipUploadType     :: !(Maybe Text)
-    , _plipPayload        :: !Instance
-    , _plipName           :: !Text
-    , _plipCallback       :: !(Maybe Text)
+    , _plipUpdateMask :: !(Maybe GFieldMask)
+    , _plipAccessToken :: !(Maybe Text)
+    , _plipUploadType :: !(Maybe Text)
+    , _plipPayload :: !Instance
+    , _plipName :: !Text
+    , _plipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

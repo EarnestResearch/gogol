@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.LiveChatMessages.Insert
     , lcmiPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatMessages.insert@ method which the
 -- 'LiveChatMessagesInsert' request conforms to.
@@ -57,7 +57,7 @@ type LiveChatMessagesInsertResource =
 -- /See:/ 'liveChatMessagesInsert' smart constructor.
 data LiveChatMessagesInsert =
   LiveChatMessagesInsert'
-    { _lcmiPart    :: !Text
+    { _lcmiPart :: !Text
     , _lcmiPayload :: !LiveChatMessage
     }
   deriving (Eq, Show, Data, Typeable, Generic)

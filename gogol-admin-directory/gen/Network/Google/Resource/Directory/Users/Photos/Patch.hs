@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.Photos.Patch
     , uppUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.photos.patch@ method which the
 -- 'UsersPhotosPatch' request conforms to.

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.AcceleratorTypes.AggregatedList
     , atalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.acceleratorTypes.aggregatedList@ method which the
 -- 'AcceleratorTypesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type AcceleratorTypesAggregatedListResource =
 -- /See:/ 'acceleratorTypesAggregatedList' smart constructor.
 data AcceleratorTypesAggregatedList =
   AcceleratorTypesAggregatedList'
-    { _atalOrderBy    :: !(Maybe Text)
-    , _atalProject    :: !Text
-    , _atalFilter     :: !(Maybe Text)
-    , _atalPageToken  :: !(Maybe Text)
+    { _atalOrderBy :: !(Maybe Text)
+    , _atalProject :: !Text
+    , _atalFilter :: !(Maybe Text)
+    , _atalPageToken :: !(Maybe Text)
     , _atalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

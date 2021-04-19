@@ -42,8 +42,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.
     , pscsrsCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.scanRuns.stop@ method which the
 -- 'ProjectsScanConfigsScanRunsStop' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsScanConfigsScanRunsStopResource =
 -- /See:/ 'projectsScanConfigsScanRunsStop' smart constructor.
 data ProjectsScanConfigsScanRunsStop =
   ProjectsScanConfigsScanRunsStop'
-    { _pscsrsXgafv          :: !(Maybe Xgafv)
+    { _pscsrsXgafv :: !(Maybe Xgafv)
     , _pscsrsUploadProtocol :: !(Maybe Text)
-    , _pscsrsAccessToken    :: !(Maybe Text)
-    , _pscsrsUploadType     :: !(Maybe Text)
-    , _pscsrsPayload        :: !StopScanRunRequest
-    , _pscsrsName           :: !Text
-    , _pscsrsCallback       :: !(Maybe Text)
+    , _pscsrsAccessToken :: !(Maybe Text)
+    , _pscsrsUploadType :: !(Maybe Text)
+    , _pscsrsPayload :: !StopScanRunRequest
+    , _pscsrsName :: !Text
+    , _pscsrsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

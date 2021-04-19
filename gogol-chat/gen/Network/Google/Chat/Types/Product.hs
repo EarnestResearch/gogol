@@ -17,8 +17,8 @@
 --
 module Network.Google.Chat.Types.Product where
 
-import           Network.Google.Chat.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Chat.Types.Sum
+import Network.Google.Prelude
 
 -- | A card is a UI element that can contain UI widgets such as texts,
 -- images.
@@ -27,9 +27,9 @@ import           Network.Google.Prelude
 data Card =
   Card'
     { _cCardActions :: !(Maybe [CardAction])
-    , _cName        :: !(Maybe Text)
-    , _cHeader      :: !(Maybe CardHeader)
-    , _cSections    :: !(Maybe [Section])
+    , _cName :: !(Maybe Text)
+    , _cHeader :: !(Maybe CardHeader)
+    , _cSections :: !(Maybe [Section])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -100,9 +100,9 @@ instance ToJSON Card where
 -- /See:/ 'space' smart constructor.
 data Space =
   Space'
-    { _sName        :: !(Maybe Text)
+    { _sName :: !(Maybe Text)
     , _sDisplayName :: !(Maybe Text)
-    , _sType        :: !(Maybe SpaceType)
+    , _sType :: !(Maybe SpaceType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -157,14 +157,14 @@ instance ToJSON Space where
 -- /See:/ 'keyValue' smart constructor.
 data KeyValue =
   KeyValue'
-    { _kvOnClick          :: !(Maybe OnClick)
-    , _kvTopLabel         :: !(Maybe Text)
-    , _kvIcon             :: !(Maybe KeyValueIcon)
-    , _kvButton           :: !(Maybe Button)
-    , _kvContent          :: !(Maybe Text)
-    , _kvIconURL          :: !(Maybe Text)
+    { _kvOnClick :: !(Maybe OnClick)
+    , _kvTopLabel :: !(Maybe Text)
+    , _kvIcon :: !(Maybe KeyValueIcon)
+    , _kvButton :: !(Maybe Button)
+    , _kvContent :: !(Maybe Text)
+    , _kvIconURL :: !(Maybe Text)
     , _kvContentMultiline :: !(Maybe Bool)
-    , _kvBottomLabel      :: !(Maybe Text)
+    , _kvBottomLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -275,9 +275,9 @@ instance ToJSON KeyValue where
 -- /See:/ 'widgetMarkup' smart constructor.
 data WidgetMarkup =
   WidgetMarkup'
-    { _wmKeyValue      :: !(Maybe KeyValue)
-    , _wmImage         :: !(Maybe Image)
-    , _wmButtons       :: !(Maybe [Button])
+    { _wmKeyValue :: !(Maybe KeyValue)
+    , _wmImage :: !(Maybe Image)
+    , _wmButtons :: !(Maybe [Button])
     , _wmTextParagraph :: !(Maybe TextParagraph)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -351,7 +351,7 @@ instance ToJSON WidgetMarkup where
 -- /See:/ 'onClick' smart constructor.
 data OnClick =
   OnClick'
-    { _ocAction   :: !(Maybe FormAction)
+    { _ocAction :: !(Maybe FormAction)
     , _ocOpenLink :: !(Maybe OpenLink)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -403,10 +403,10 @@ instance ToJSON OnClick where
 -- /See:/ 'annotation' smart constructor.
 data Annotation =
   Annotation'
-    { _aLength      :: !(Maybe (Textual Int32))
-    , _aType        :: !(Maybe AnnotationType)
+    { _aLength :: !(Maybe (Textual Int32))
+    , _aType :: !(Maybe AnnotationType)
     , _aUserMention :: !(Maybe UserMentionMetadata)
-    , _aStartIndex  :: !(Maybe (Textual Int32))
+    , _aStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -478,9 +478,9 @@ instance ToJSON Annotation where
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iOnClick     :: !(Maybe OnClick)
+    { _iOnClick :: !(Maybe OnClick)
     , _iAspectRatio :: !(Maybe (Textual Double))
-    , _iImageURL    :: !(Maybe Text)
+    , _iImageURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -540,7 +540,7 @@ instance ToJSON Image where
 data ActionParameter =
   ActionParameter'
     { _apValue :: !(Maybe Text)
-    , _apKey   :: !(Maybe Text)
+    , _apKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -583,9 +583,9 @@ instance ToJSON ActionParameter where
 -- /See:/ 'membership' smart constructor.
 data Membership =
   Membership'
-    { _mState      :: !(Maybe MembershipState)
-    , _mName       :: !(Maybe Text)
-    , _mMember     :: !(Maybe User)
+    { _mState :: !(Maybe MembershipState)
+    , _mName :: !(Maybe Text)
+    , _mMember :: !(Maybe User)
     , _mCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -680,15 +680,15 @@ instance ToJSON Empty where
 -- /See:/ 'deprecatedEvent' smart constructor.
 data DeprecatedEvent =
   DeprecatedEvent'
-    { _deSpace                     :: !(Maybe Space)
-    , _deToken                     :: !(Maybe Text)
-    , _deAction                    :: !(Maybe FormAction)
-    , _deEventTime                 :: !(Maybe DateTime')
-    , _deUser                      :: !(Maybe User)
+    { _deSpace :: !(Maybe Space)
+    , _deToken :: !(Maybe Text)
+    , _deAction :: !(Maybe FormAction)
+    , _deEventTime :: !(Maybe DateTime')
+    , _deUser :: !(Maybe User)
     , _deConfigCompleteRedirectURL :: !(Maybe Text)
-    , _deType                      :: !(Maybe DeprecatedEventType)
-    , _deMessage                   :: !(Maybe Message)
-    , _deThreadKey                 :: !(Maybe Text)
+    , _deType :: !(Maybe DeprecatedEventType)
+    , _deMessage :: !(Maybe Message)
+    , _deThreadKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -850,7 +850,7 @@ instance ToJSON TextParagraph where
 -- /See:/ 'button' smart constructor.
 data Button =
   Button'
-    { _bTextButton  :: !(Maybe TextButton)
+    { _bTextButton :: !(Maybe TextButton)
     , _bImageButton :: !(Maybe ImageButton)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -897,7 +897,7 @@ instance ToJSON Button where
 data ListSpacesResponse =
   ListSpacesResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSpaces        :: !(Maybe [Space])
+    , _lsrSpaces :: !(Maybe [Space])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -950,9 +950,9 @@ instance ToJSON ListSpacesResponse where
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uName        :: !(Maybe Text)
+    { _uName :: !(Maybe Text)
     , _uDisplayName :: !(Maybe Text)
-    , _uType        :: !(Maybe UserType)
+    , _uType :: !(Maybe UserType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1040,7 +1040,7 @@ instance ToJSON OpenLink where
 -- /See:/ 'cardAction' smart constructor.
 data CardAction =
   CardAction'
-    { _caOnClick     :: !(Maybe OnClick)
+    { _caOnClick :: !(Maybe OnClick)
     , _caActionLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1088,7 +1088,7 @@ instance ToJSON CardAction where
 -- /See:/ 'actionResponse' smart constructor.
 data ActionResponse =
   ActionResponse'
-    { _arURL  :: !(Maybe Text)
+    { _arURL :: !(Maybe Text)
     , _arType :: !(Maybe ActionResponseType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1134,7 +1134,7 @@ instance ToJSON ActionResponse where
 data FormAction =
   FormAction'
     { _faActionMethodName :: !(Maybe Text)
-    , _faParameters       :: !(Maybe [ActionParameter])
+    , _faParameters :: !(Maybe [ActionParameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1186,7 +1186,7 @@ instance ToJSON FormAction where
 data ListMembershipsResponse =
   ListMembershipsResponse'
     { _lmrNextPageToken :: !(Maybe Text)
-    , _lmrMemberships   :: !(Maybe [Membership])
+    , _lmrMemberships :: !(Maybe [Membership])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1240,18 +1240,18 @@ instance ToJSON ListMembershipsResponse where
 -- /See:/ 'message' smart constructor.
 data Message =
   Message'
-    { _mesAnnotations    :: !(Maybe [Annotation])
-    , _mesSpace          :: !(Maybe Space)
-    , _mesText           :: !(Maybe Text)
-    , _mesSender         :: !(Maybe User)
-    , _mesName           :: !(Maybe Text)
-    , _mesPreviewText    :: !(Maybe Text)
-    , _mesCards          :: !(Maybe [Card])
+    { _mesAnnotations :: !(Maybe [Annotation])
+    , _mesSpace :: !(Maybe Space)
+    , _mesText :: !(Maybe Text)
+    , _mesSender :: !(Maybe User)
+    , _mesName :: !(Maybe Text)
+    , _mesPreviewText :: !(Maybe Text)
+    , _mesCards :: !(Maybe [Card])
     , _mesActionResponse :: !(Maybe ActionResponse)
-    , _mesArgumentText   :: !(Maybe Text)
-    , _mesThread         :: !(Maybe Thread)
-    , _mesFallbackText   :: !(Maybe Text)
-    , _mesCreateTime     :: !(Maybe DateTime')
+    , _mesArgumentText :: !(Maybe Text)
+    , _mesThread :: !(Maybe Thread)
+    , _mesFallbackText :: !(Maybe Text)
+    , _mesCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1415,9 +1415,9 @@ instance ToJSON Message where
 -- /See:/ 'cardHeader' smart constructor.
 data CardHeader =
   CardHeader'
-    { _chSubtitle   :: !(Maybe Text)
-    , _chImageURL   :: !(Maybe Text)
-    , _chTitle      :: !(Maybe Text)
+    { _chSubtitle :: !(Maybe Text)
+    , _chImageURL :: !(Maybe Text)
+    , _chTitle :: !(Maybe Text)
     , _chImageStyle :: !(Maybe CardHeaderImageStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1490,7 +1490,7 @@ instance ToJSON CardHeader where
 data TextButton =
   TextButton'
     { _tbOnClick :: !(Maybe OnClick)
-    , _tbText    :: !(Maybe Text)
+    , _tbText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1614,8 +1614,8 @@ instance ToJSON UserMentionMetadata where
 data ImageButton =
   ImageButton'
     { _ibOnClick :: !(Maybe OnClick)
-    , _ibIcon    :: !(Maybe ImageButtonIcon)
-    , _ibName    :: !(Maybe Text)
+    , _ibIcon :: !(Maybe ImageButtonIcon)
+    , _ibName :: !(Maybe Text)
     , _ibIconURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1689,7 +1689,7 @@ instance ToJSON ImageButton where
 data Section =
   Section'
     { _sWidgets :: !(Maybe [WidgetMarkup])
-    , _sHeader  :: !(Maybe Text)
+    , _sHeader :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

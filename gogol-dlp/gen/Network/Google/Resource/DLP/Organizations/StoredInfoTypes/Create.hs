@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.Organizations.StoredInfoTypes.Create
     , ositcCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.storedInfoTypes.create@ method which the
 -- 'OrganizationsStoredInfoTypesCreate' request conforms to.
@@ -70,13 +70,13 @@ type OrganizationsStoredInfoTypesCreateResource =
 -- /See:/ 'organizationsStoredInfoTypesCreate' smart constructor.
 data OrganizationsStoredInfoTypesCreate =
   OrganizationsStoredInfoTypesCreate'
-    { _ositcParent         :: !Text
-    , _ositcXgafv          :: !(Maybe Xgafv)
+    { _ositcParent :: !Text
+    , _ositcXgafv :: !(Maybe Xgafv)
     , _ositcUploadProtocol :: !(Maybe Text)
-    , _ositcAccessToken    :: !(Maybe Text)
-    , _ositcUploadType     :: !(Maybe Text)
-    , _ositcPayload        :: !GooglePrivacyDlpV2CreateStoredInfoTypeRequest
-    , _ositcCallback       :: !(Maybe Text)
+    , _ositcAccessToken :: !(Maybe Text)
+    , _ositcUploadType :: !(Maybe Text)
+    , _ositcPayload :: !GooglePrivacyDlpV2CreateStoredInfoTypeRequest
+    , _ositcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

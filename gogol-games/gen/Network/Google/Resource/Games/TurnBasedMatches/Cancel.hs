@@ -36,8 +36,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Cancel
     , tbmcMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.cancel@ method which the
 -- 'TurnBasedMatchesCancel' request conforms to.

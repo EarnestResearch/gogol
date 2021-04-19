@@ -17,15 +17,15 @@
 --
 module Network.Google.BigQuery.Types.Product where
 
-import           Network.Google.BigQuery.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BigQuery.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'jobReference' smart constructor.
 data JobReference =
   JobReference'
-    { _jrJobId     :: !(Maybe Text)
-    , _jrLocation  :: !(Maybe Text)
+    { _jrJobId :: !(Maybe Text)
+    , _jrLocation :: !(Maybe Text)
     , _jrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -84,11 +84,11 @@ instance ToJSON JobReference where
 -- /See:/ 'tableList' smart constructor.
 data TableList =
   TableList'
-    { _tlTotalItems    :: !(Maybe (Textual Int32))
-    , _tlEtag          :: !(Maybe Text)
+    { _tlTotalItems :: !(Maybe (Textual Int32))
+    , _tlEtag :: !(Maybe Text)
     , _tlNextPageToken :: !(Maybe Text)
-    , _tlKind          :: !Text
-    , _tlTables        :: !(Maybe [TableListTablesItem])
+    , _tlKind :: !Text
+    , _tlTables :: !(Maybe [TableListTablesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -169,12 +169,12 @@ instance ToJSON TableList where
 -- /See:/ 'dataSetListDataSetsItem' smart constructor.
 data DataSetListDataSetsItem =
   DataSetListDataSetsItem'
-    { _dsldsiLocation         :: !(Maybe Text)
-    , _dsldsiFriendlyName     :: !(Maybe Text)
-    , _dsldsiKind             :: !Text
+    { _dsldsiLocation :: !(Maybe Text)
+    , _dsldsiFriendlyName :: !(Maybe Text)
+    , _dsldsiKind :: !Text
     , _dsldsiDataSetReference :: !(Maybe DataSetReference)
-    , _dsldsiId               :: !(Maybe Text)
-    , _dsldsiLabels           :: !(Maybe DataSetListDataSetsItemLabels)
+    , _dsldsiId :: !(Maybe Text)
+    , _dsldsiLabels :: !(Maybe DataSetListDataSetsItemLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -268,9 +268,9 @@ instance ToJSON DataSetListDataSetsItem where
 -- /See:/ 'tableDataList' smart constructor.
 data TableDataList =
   TableDataList'
-    { _tdlEtag      :: !(Maybe Text)
-    , _tdlKind      :: !Text
-    , _tdlRows      :: !(Maybe [TableRow])
+    { _tdlEtag :: !(Maybe Text)
+    , _tdlKind :: !Text
+    , _tdlRows :: !(Maybe [TableRow])
     , _tdlPageToken :: !(Maybe Text)
     , _tdlTotalRows :: !(Maybe (Textual Int64))
     }
@@ -353,11 +353,11 @@ instance ToJSON TableDataList where
 -- /See:/ 'jobConfigurationTableCopy' smart constructor.
 data JobConfigurationTableCopy =
   JobConfigurationTableCopy'
-    { _jctcDestinationTable                   :: !(Maybe TableReference)
-    , _jctcWriteDisPosition                   :: !(Maybe Text)
-    , _jctcSourceTables                       :: !(Maybe [TableReference])
-    , _jctcCreateDisPosition                  :: !(Maybe Text)
-    , _jctcSourceTable                        :: !(Maybe TableReference)
+    { _jctcDestinationTable :: !(Maybe TableReference)
+    , _jctcWriteDisPosition :: !(Maybe Text)
+    , _jctcSourceTables :: !(Maybe [TableReference])
+    , _jctcCreateDisPosition :: !(Maybe Text)
+    , _jctcSourceTable :: !(Maybe TableReference)
     , _jctcDestinationEncryptionConfiguration :: !(Maybe EncryptionConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -471,17 +471,17 @@ instance ToJSON JobConfigurationTableCopy where
 -- /See:/ 'tableListTablesItem' smart constructor.
 data TableListTablesItem =
   TableListTablesItem'
-    { _tltiCreationTime     :: !(Maybe (Textual Int64))
-    , _tltiClustering       :: !(Maybe Clustering)
-    , _tltiTableReference   :: !(Maybe TableReference)
-    , _tltiFriendlyName     :: !(Maybe Text)
-    , _tltiKind             :: !Text
+    { _tltiCreationTime :: !(Maybe (Textual Int64))
+    , _tltiClustering :: !(Maybe Clustering)
+    , _tltiTableReference :: !(Maybe TableReference)
+    , _tltiFriendlyName :: !(Maybe Text)
+    , _tltiKind :: !Text
     , _tltiTimePartitioning :: !(Maybe TimePartitioning)
-    , _tltiView             :: !(Maybe TableListTablesItemView)
-    , _tltiId               :: !(Maybe Text)
-    , _tltiLabels           :: !(Maybe TableListTablesItemLabels)
-    , _tltiType             :: !(Maybe Text)
-    , _tltiExpirationTime   :: !(Maybe (Textual Int64))
+    , _tltiView :: !(Maybe TableListTablesItemView)
+    , _tltiId :: !(Maybe Text)
+    , _tltiLabels :: !(Maybe TableListTablesItemLabels)
+    , _tltiType :: !(Maybe Text)
+    , _tltiExpirationTime :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -661,11 +661,11 @@ instance ToJSON TableSchema where
 -- /See:/ 'projectList' smart constructor.
 data ProjectList =
   ProjectList'
-    { _plTotalItems    :: !(Maybe (Textual Int32))
-    , _plEtag          :: !(Maybe Text)
+    { _plTotalItems :: !(Maybe (Textual Int32))
+    , _plEtag :: !(Maybe Text)
     , _plNextPageToken :: !(Maybe Text)
-    , _plKind          :: !Text
-    , _plProjects      :: !(Maybe [ProjectListProjectsItem])
+    , _plKind :: !Text
+    , _plProjects :: !(Maybe [ProjectListProjectsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -747,7 +747,7 @@ instance ToJSON ProjectList where
 data ExplainQueryStep =
   ExplainQueryStep'
     { _eqsSubsteps :: !(Maybe [Text])
-    , _eqsKind     :: !(Maybe Text)
+    , _eqsKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -794,10 +794,10 @@ instance ToJSON ExplainQueryStep where
 -- /See:/ 'queryTimelineSample' smart constructor.
 data QueryTimelineSample =
   QueryTimelineSample'
-    { _qtsPendingUnits   :: !(Maybe (Textual Int64))
-    , _qtsTotalSlotMs    :: !(Maybe (Textual Int64))
-    , _qtsActiveUnits    :: !(Maybe (Textual Int64))
-    , _qtsElapsedMs      :: !(Maybe (Textual Int64))
+    { _qtsPendingUnits :: !(Maybe (Textual Int64))
+    , _qtsTotalSlotMs :: !(Maybe (Textual Int64))
+    , _qtsActiveUnits :: !(Maybe (Textual Int64))
+    , _qtsElapsedMs :: !(Maybe (Textual Int64))
     , _qtsCompletedUnits :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -888,8 +888,8 @@ instance ToJSON QueryTimelineSample where
 -- /See:/ 'queryParameterTypeStructTypesItem' smart constructor.
 data QueryParameterTypeStructTypesItem =
   QueryParameterTypeStructTypesItem'
-    { _qptstiName        :: !(Maybe Text)
-    , _qptstiType        :: !(Maybe QueryParameterType)
+    { _qptstiName :: !(Maybe Text)
+    , _qptstiType :: !(Maybe QueryParameterType)
     , _qptstiDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -949,11 +949,11 @@ instance ToJSON QueryParameterTypeStructTypesItem
 -- /See:/ 'bigtableColumnFamily' smart constructor.
 data BigtableColumnFamily =
   BigtableColumnFamily'
-    { _bcfFamilyId       :: !(Maybe Text)
-    , _bcfColumns        :: !(Maybe [BigtableColumn])
+    { _bcfFamilyId :: !(Maybe Text)
+    , _bcfColumns :: !(Maybe [BigtableColumn])
     , _bcfOnlyReadLatest :: !(Maybe Bool)
-    , _bcfType           :: !(Maybe Text)
-    , _bcfEncoding       :: !(Maybe Text)
+    , _bcfType :: !(Maybe Text)
+    , _bcfEncoding :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1050,19 +1050,19 @@ instance ToJSON BigtableColumnFamily where
 -- /See:/ 'jobStatistics' smart constructor.
 data JobStatistics =
   JobStatistics'
-    { _jsCreationTime        :: !(Maybe (Textual Int64))
-    , _jsStartTime           :: !(Maybe (Textual Int64))
-    , _jsCompletionRatio     :: !(Maybe (Textual Double))
-    , _jsNumChildJobs        :: !(Maybe (Textual Int64))
-    , _jsTotalSlotMs         :: !(Maybe (Textual Int64))
-    , _jsLoad                :: !(Maybe JobStatistics3)
+    { _jsCreationTime :: !(Maybe (Textual Int64))
+    , _jsStartTime :: !(Maybe (Textual Int64))
+    , _jsCompletionRatio :: !(Maybe (Textual Double))
+    , _jsNumChildJobs :: !(Maybe (Textual Int64))
+    , _jsTotalSlotMs :: !(Maybe (Textual Int64))
+    , _jsLoad :: !(Maybe JobStatistics3)
     , _jsTotalBytesProcessed :: !(Maybe (Textual Int64))
-    , _jsQuotaDeferments     :: !(Maybe [Text])
-    , _jsEndTime             :: !(Maybe (Textual Int64))
-    , _jsQuery               :: !(Maybe JobStatistics2)
-    , _jsExtract             :: !(Maybe JobStatistics4)
-    , _jsReservationUsage    :: !(Maybe [JobStatisticsReservationUsageItem])
-    , _jsParentJobId         :: !(Maybe Text)
+    , _jsQuotaDeferments :: !(Maybe [Text])
+    , _jsEndTime :: !(Maybe (Textual Int64))
+    , _jsQuery :: !(Maybe JobStatistics2)
+    , _jsExtract :: !(Maybe JobStatistics4)
+    , _jsReservationUsage :: !(Maybe [JobStatisticsReservationUsageItem])
+    , _jsParentJobId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1286,20 +1286,20 @@ instance ToJSON JobConfigurationLabels where
 -- /See:/ 'dataSet' smart constructor.
 data DataSet =
   DataSet'
-    { _dsCreationTime                 :: !(Maybe (Textual Int64))
+    { _dsCreationTime :: !(Maybe (Textual Int64))
     , _dsDefaultPartitionExpirationMs :: !(Maybe (Textual Int64))
-    , _dsAccess                       :: !(Maybe [DataSetAccessItem])
-    , _dsEtag                         :: !(Maybe Text)
-    , _dsLocation                     :: !(Maybe Text)
-    , _dsFriendlyName                 :: !(Maybe Text)
-    , _dsKind                         :: !Text
-    , _dsLastModifiedTime             :: !(Maybe (Textual Int64))
-    , _dsDataSetReference             :: !(Maybe DataSetReference)
-    , _dsSelfLink                     :: !(Maybe Text)
-    , _dsId                           :: !(Maybe Text)
-    , _dsLabels                       :: !(Maybe DataSetLabels)
-    , _dsDefaultTableExpirationMs     :: !(Maybe (Textual Int64))
-    , _dsDescription                  :: !(Maybe Text)
+    , _dsAccess :: !(Maybe [DataSetAccessItem])
+    , _dsEtag :: !(Maybe Text)
+    , _dsLocation :: !(Maybe Text)
+    , _dsFriendlyName :: !(Maybe Text)
+    , _dsKind :: !Text
+    , _dsLastModifiedTime :: !(Maybe (Textual Int64))
+    , _dsDataSetReference :: !(Maybe DataSetReference)
+    , _dsSelfLink :: !(Maybe Text)
+    , _dsId :: !(Maybe Text)
+    , _dsLabels :: !(Maybe DataSetLabels)
+    , _dsDefaultTableExpirationMs :: !(Maybe (Textual Int64))
+    , _dsDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1518,9 +1518,9 @@ instance ToJSON DataSet where
 -- /See:/ 'rangePartitioningRange' smart constructor.
 data RangePartitioningRange =
   RangePartitioningRange'
-    { _rprStart    :: !(Maybe (Textual Int64))
+    { _rprStart :: !(Maybe (Textual Int64))
     , _rprInterval :: !(Maybe (Textual Int64))
-    , _rprEnd      :: !(Maybe (Textual Int64))
+    , _rprEnd :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1579,7 +1579,7 @@ instance ToJSON RangePartitioningRange where
 -- /See:/ 'jobStatisticsReservationUsageItem' smart constructor.
 data JobStatisticsReservationUsageItem =
   JobStatisticsReservationUsageItem'
-    { _jsruiName   :: !(Maybe Text)
+    { _jsruiName :: !(Maybe Text)
     , _jsruiSlotMs :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1631,9 +1631,9 @@ instance ToJSON JobStatisticsReservationUsageItem
 -- /See:/ 'bigtableOptions' smart constructor.
 data BigtableOptions =
   BigtableOptions'
-    { _boReadRowkeyAsString              :: !(Maybe Bool)
+    { _boReadRowkeyAsString :: !(Maybe Bool)
     , _boIgnoreUnspecifiedColumnFamilies :: !(Maybe Bool)
-    , _boColumnFamilies                  :: !(Maybe [BigtableColumnFamily])
+    , _boColumnFamilies :: !(Maybe [BigtableColumnFamily])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1749,17 +1749,17 @@ instance ToJSON Clustering where
 -- /See:/ 'externalDataConfiguration' smart constructor.
 data ExternalDataConfiguration =
   ExternalDataConfiguration'
-    { _edcBigtableOptions      :: !(Maybe BigtableOptions)
-    , _edcIgnoreUnknownValues  :: !(Maybe Bool)
+    { _edcBigtableOptions :: !(Maybe BigtableOptions)
+    , _edcIgnoreUnknownValues :: !(Maybe Bool)
     , _edcHivePartitioningMode :: !(Maybe Text)
-    , _edcCompression          :: !(Maybe Text)
-    , _edcSourceFormat         :: !(Maybe Text)
-    , _edcSchema               :: !(Maybe TableSchema)
-    , _edcMaxBadRecords        :: !(Maybe (Textual Int32))
-    , _edcGoogleSheetsOptions  :: !(Maybe GoogleSheetsOptions)
-    , _edcAutodetect           :: !(Maybe Bool)
-    , _edcSourceURIs           :: !(Maybe [Text])
-    , _edcCSVOptions           :: !(Maybe CSVOptions)
+    , _edcCompression :: !(Maybe Text)
+    , _edcSourceFormat :: !(Maybe Text)
+    , _edcSchema :: !(Maybe TableSchema)
+    , _edcMaxBadRecords :: !(Maybe (Textual Int32))
+    , _edcGoogleSheetsOptions :: !(Maybe GoogleSheetsOptions)
+    , _edcAutodetect :: !(Maybe Bool)
+    , _edcSourceURIs :: !(Maybe [Text])
+    , _edcCSVOptions :: !(Maybe CSVOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1952,7 +1952,7 @@ data TableReference =
   TableReference'
     { _trDataSetId :: !(Maybe Text)
     , _trProjectId :: !(Maybe Text)
-    , _trTableId   :: !(Maybe Text)
+    , _trTableId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2014,8 +2014,8 @@ instance ToJSON TableReference where
 data ModelDefinitionModelOptions =
   ModelDefinitionModelOptions'
     { _mdmoModelType :: !(Maybe Text)
-    , _mdmoLabels    :: !(Maybe [Text])
-    , _mdmoLossType  :: !(Maybe Text)
+    , _mdmoLabels :: !(Maybe [Text])
+    , _mdmoLossType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2177,12 +2177,12 @@ instance ToJSON RangePartitioning where
 -- /See:/ 'tableFieldSchema' smart constructor.
 data TableFieldSchema =
   TableFieldSchema'
-    { _tfsMode        :: !(Maybe Text)
-    , _tfsCategories  :: !(Maybe TableFieldSchemaCategories)
-    , _tfsName        :: !(Maybe Text)
-    , _tfsType        :: !(Maybe Text)
+    { _tfsMode :: !(Maybe Text)
+    , _tfsCategories :: !(Maybe TableFieldSchemaCategories)
+    , _tfsName :: !(Maybe Text)
+    , _tfsType :: !(Maybe Text)
     , _tfsDescription :: !(Maybe Text)
-    , _tfsFields      :: !(Maybe [TableFieldSchema])
+    , _tfsFields :: !(Maybe [TableFieldSchema])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2281,18 +2281,18 @@ instance ToJSON TableFieldSchema where
 -- /See:/ 'getQueryResultsResponse' smart constructor.
 data GetQueryResultsResponse =
   GetQueryResultsResponse'
-    { _gqrrJobReference        :: !(Maybe JobReference)
-    , _gqrrEtag                :: !(Maybe Text)
-    , _gqrrKind                :: !Text
-    , _gqrrSchema              :: !(Maybe TableSchema)
+    { _gqrrJobReference :: !(Maybe JobReference)
+    , _gqrrEtag :: !(Maybe Text)
+    , _gqrrKind :: !Text
+    , _gqrrSchema :: !(Maybe TableSchema)
     , _gqrrTotalBytesProcessed :: !(Maybe (Textual Int64))
-    , _gqrrRows                :: !(Maybe [TableRow])
-    , _gqrrPageToken           :: !(Maybe Text)
-    , _gqrrNumDmlAffectedRows  :: !(Maybe (Textual Int64))
-    , _gqrrTotalRows           :: !(Maybe (Textual Word64))
-    , _gqrrErrors              :: !(Maybe [ErrorProto])
-    , _gqrrJobComplete         :: !(Maybe Bool)
-    , _gqrrCacheHit            :: !(Maybe Bool)
+    , _gqrrRows :: !(Maybe [TableRow])
+    , _gqrrPageToken :: !(Maybe Text)
+    , _gqrrNumDmlAffectedRows :: !(Maybe (Textual Int64))
+    , _gqrrTotalRows :: !(Maybe (Textual Word64))
+    , _gqrrErrors :: !(Maybe [ErrorProto])
+    , _gqrrJobComplete :: !(Maybe Bool)
+    , _gqrrCacheHit :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2471,10 +2471,10 @@ instance ToJSON GetQueryResultsResponse where
 -- /See:/ 'dataSetList' smart constructor.
 data DataSetList =
   DataSetList'
-    { _dslEtag          :: !(Maybe Text)
+    { _dslEtag :: !(Maybe Text)
     , _dslNextPageToken :: !(Maybe Text)
-    , _dslKind          :: !Text
-    , _dslDataSets      :: !(Maybe [DataSetListDataSetsItem])
+    , _dslKind :: !Text
+    , _dslDataSets :: !(Maybe [DataSetListDataSetsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2550,18 +2550,18 @@ instance ToJSON DataSetList where
 -- /See:/ 'queryRequest' smart constructor.
 data QueryRequest =
   QueryRequest'
-    { _qrLocation        :: !(Maybe Text)
-    , _qrUseQueryCache   :: !Bool
-    , _qrPreserveNulls   :: !(Maybe Bool)
-    , _qrKind            :: !Text
+    { _qrLocation :: !(Maybe Text)
+    , _qrUseQueryCache :: !Bool
+    , _qrPreserveNulls :: !(Maybe Bool)
+    , _qrKind :: !Text
     , _qrQueryParameters :: !(Maybe [QueryParameter])
-    , _qrQuery           :: !(Maybe Text)
-    , _qrParameterMode   :: !(Maybe Text)
-    , _qrTimeoutMs       :: !(Maybe (Textual Word32))
-    , _qrUseLegacySQL    :: !Bool
-    , _qrDryRun          :: !(Maybe Bool)
-    , _qrMaxResults      :: !(Maybe (Textual Word32))
-    , _qrDefaultDataSet  :: !(Maybe DataSetReference)
+    , _qrQuery :: !(Maybe Text)
+    , _qrParameterMode :: !(Maybe Text)
+    , _qrTimeoutMs :: !(Maybe (Textual Word32))
+    , _qrUseLegacySQL :: !Bool
+    , _qrDryRun :: !(Maybe Bool)
+    , _qrMaxResults :: !(Maybe (Textual Word32))
+    , _qrDefaultDataSet :: !(Maybe DataSetReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2753,14 +2753,14 @@ instance ToJSON QueryRequest where
 data BqmlTrainingRunTrainingOptions =
   BqmlTrainingRunTrainingOptions'
     { _btrtoLineSearchInitLearnRate :: !(Maybe (Textual Double))
-    , _btrtoMinRelProgress          :: !(Maybe (Textual Double))
-    , _btrtoL1Reg                   :: !(Maybe (Textual Double))
-    , _btrtoLearnRate               :: !(Maybe (Textual Double))
-    , _btrtoLearnRateStrategy       :: !(Maybe Text)
-    , _btrtoMaxIteration            :: !(Maybe (Textual Int64))
-    , _btrtoEarlyStop               :: !(Maybe Bool)
-    , _btrtoL2Reg                   :: !(Maybe (Textual Double))
-    , _btrtoWarmStart               :: !(Maybe Bool)
+    , _btrtoMinRelProgress :: !(Maybe (Textual Double))
+    , _btrtoL1Reg :: !(Maybe (Textual Double))
+    , _btrtoLearnRate :: !(Maybe (Textual Double))
+    , _btrtoLearnRateStrategy :: !(Maybe Text)
+    , _btrtoMaxIteration :: !(Maybe (Textual Int64))
+    , _btrtoEarlyStop :: !(Maybe Bool)
+    , _btrtoL2Reg :: !(Maybe (Textual Double))
+    , _btrtoWarmStart :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2887,8 +2887,8 @@ instance ToJSON BqmlTrainingRunTrainingOptions where
 data QueryParameter =
   QueryParameter'
     { _qpParameterValue :: !(Maybe QueryParameterValue)
-    , _qpParameterType  :: !(Maybe QueryParameterType)
-    , _qpName           :: !(Maybe Text)
+    , _qpParameterType :: !(Maybe QueryParameterType)
+    , _qpName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2946,7 +2946,7 @@ instance ToJSON QueryParameter where
 -- /See:/ 'jobStatistics4' smart constructor.
 data JobStatistics4 =
   JobStatistics4'
-    { _jsInputBytes               :: !(Maybe (Textual Int64))
+    { _jsInputBytes :: !(Maybe (Textual Int64))
     , _jsDestinationURIFileCounts :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3038,35 +3038,35 @@ instance ToJSON ProjectReference where
 -- /See:/ 'explainQueryStage' smart constructor.
 data ExplainQueryStage =
   ExplainQueryStage'
-    { _eqsReadMsAvg                 :: !(Maybe (Textual Int64))
-    , _eqsStatus                    :: !(Maybe Text)
+    { _eqsReadMsAvg :: !(Maybe (Textual Int64))
+    , _eqsStatus :: !(Maybe Text)
     , _eqsShuffleOutputBytesSpilled :: !(Maybe (Textual Int64))
-    , _eqsReadMsMax                 :: !(Maybe (Textual Int64))
-    , _eqsCompletedParallelInputs   :: !(Maybe (Textual Int64))
-    , _eqsWaitRatioMax              :: !(Maybe (Textual Double))
-    , _eqsParallelInputs            :: !(Maybe (Textual Int64))
-    , _eqsShuffleOutputBytes        :: !(Maybe (Textual Int64))
-    , _eqsRecordsWritten            :: !(Maybe (Textual Int64))
-    , _eqsSteps                     :: !(Maybe [ExplainQueryStep])
-    , _eqsInputStages               :: !(Maybe [Textual Int64])
-    , _eqsWriteRatioAvg             :: !(Maybe (Textual Double))
-    , _eqsRecordsRead               :: !(Maybe (Textual Int64))
-    , _eqsComputeRatioAvg           :: !(Maybe (Textual Double))
-    , _eqsName                      :: !(Maybe Text)
-    , _eqsComputeMsMax              :: !(Maybe (Textual Int64))
-    , _eqsReadRatioMax              :: !(Maybe (Textual Double))
-    , _eqsWriteMsMax                :: !(Maybe (Textual Int64))
-    , _eqsWaitRatioAvg              :: !(Maybe (Textual Double))
-    , _eqsWaitMsAvg                 :: !(Maybe (Textual Int64))
-    , _eqsId                        :: !(Maybe (Textual Int64))
-    , _eqsComputeRatioMax           :: !(Maybe (Textual Double))
-    , _eqsWriteRatioMax             :: !(Maybe (Textual Double))
-    , _eqsComputeMsAvg              :: !(Maybe (Textual Int64))
-    , _eqsReadRatioAvg              :: !(Maybe (Textual Double))
-    , _eqsWriteMsAvg                :: !(Maybe (Textual Int64))
-    , _eqsStartMs                   :: !(Maybe (Textual Int64))
-    , _eqsEndMs                     :: !(Maybe (Textual Int64))
-    , _eqsWaitMsMax                 :: !(Maybe (Textual Int64))
+    , _eqsReadMsMax :: !(Maybe (Textual Int64))
+    , _eqsCompletedParallelInputs :: !(Maybe (Textual Int64))
+    , _eqsWaitRatioMax :: !(Maybe (Textual Double))
+    , _eqsParallelInputs :: !(Maybe (Textual Int64))
+    , _eqsShuffleOutputBytes :: !(Maybe (Textual Int64))
+    , _eqsRecordsWritten :: !(Maybe (Textual Int64))
+    , _eqsSteps :: !(Maybe [ExplainQueryStep])
+    , _eqsInputStages :: !(Maybe [Textual Int64])
+    , _eqsWriteRatioAvg :: !(Maybe (Textual Double))
+    , _eqsRecordsRead :: !(Maybe (Textual Int64))
+    , _eqsComputeRatioAvg :: !(Maybe (Textual Double))
+    , _eqsName :: !(Maybe Text)
+    , _eqsComputeMsMax :: !(Maybe (Textual Int64))
+    , _eqsReadRatioMax :: !(Maybe (Textual Double))
+    , _eqsWriteMsMax :: !(Maybe (Textual Int64))
+    , _eqsWaitRatioAvg :: !(Maybe (Textual Double))
+    , _eqsWaitMsAvg :: !(Maybe (Textual Int64))
+    , _eqsId :: !(Maybe (Textual Int64))
+    , _eqsComputeRatioMax :: !(Maybe (Textual Double))
+    , _eqsWriteRatioMax :: !(Maybe (Textual Double))
+    , _eqsComputeMsAvg :: !(Maybe (Textual Int64))
+    , _eqsReadRatioAvg :: !(Maybe (Textual Double))
+    , _eqsWriteMsAvg :: !(Maybe (Textual Int64))
+    , _eqsStartMs :: !(Maybe (Textual Int64))
+    , _eqsEndMs :: !(Maybe (Textual Int64))
+    , _eqsWaitMsMax :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3436,7 +3436,7 @@ instance ToJSON ExplainQueryStage where
 data BigQueryModelTraining =
   BigQueryModelTraining'
     { _bqmtExpectedTotalIterations :: !(Maybe (Textual Int64))
-    , _bqmtCurrentIteration        :: !(Maybe (Textual Int32))
+    , _bqmtCurrentIteration :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3493,33 +3493,33 @@ instance ToJSON BigQueryModelTraining where
 -- /See:/ 'jobConfigurationLoad' smart constructor.
 data JobConfigurationLoad =
   JobConfigurationLoad'
-    { _jclSkipLeadingRows                    :: !(Maybe (Textual Int32))
-    , _jclProjectionFields                   :: !(Maybe [Text])
-    , _jclDestinationTable                   :: !(Maybe TableReference)
-    , _jclWriteDisPosition                   :: !(Maybe Text)
-    , _jclAllowJaggedRows                    :: !(Maybe Bool)
-    , _jclClustering                         :: !(Maybe Clustering)
-    , _jclRangePartitioning                  :: !(Maybe RangePartitioning)
-    , _jclSchemaInline                       :: !(Maybe Text)
-    , _jclIgnoreUnknownValues                :: !(Maybe Bool)
-    , _jclSchemaUpdateOptions                :: !(Maybe [Text])
-    , _jclHivePartitioningMode               :: !(Maybe Text)
-    , _jclCreateDisPosition                  :: !(Maybe Text)
-    , _jclSchemaInlineFormat                 :: !(Maybe Text)
-    , _jclAllowQuotedNewlines                :: !(Maybe Bool)
-    , _jclSourceFormat                       :: !(Maybe Text)
-    , _jclUseAvroLogicalTypes                :: !(Maybe Bool)
-    , _jclSchema                             :: !(Maybe TableSchema)
-    , _jclTimePartitioning                   :: !(Maybe TimePartitioning)
-    , _jclQuote                              :: !(Maybe Text)
-    , _jclMaxBadRecords                      :: !(Maybe (Textual Int32))
-    , _jclAutodetect                         :: !(Maybe Bool)
-    , _jclSourceURIs                         :: !(Maybe [Text])
-    , _jclEncoding                           :: !(Maybe Text)
-    , _jclDestinationTableProperties         :: !(Maybe DestinationTableProperties)
+    { _jclSkipLeadingRows :: !(Maybe (Textual Int32))
+    , _jclProjectionFields :: !(Maybe [Text])
+    , _jclDestinationTable :: !(Maybe TableReference)
+    , _jclWriteDisPosition :: !(Maybe Text)
+    , _jclAllowJaggedRows :: !(Maybe Bool)
+    , _jclClustering :: !(Maybe Clustering)
+    , _jclRangePartitioning :: !(Maybe RangePartitioning)
+    , _jclSchemaInline :: !(Maybe Text)
+    , _jclIgnoreUnknownValues :: !(Maybe Bool)
+    , _jclSchemaUpdateOptions :: !(Maybe [Text])
+    , _jclHivePartitioningMode :: !(Maybe Text)
+    , _jclCreateDisPosition :: !(Maybe Text)
+    , _jclSchemaInlineFormat :: !(Maybe Text)
+    , _jclAllowQuotedNewlines :: !(Maybe Bool)
+    , _jclSourceFormat :: !(Maybe Text)
+    , _jclUseAvroLogicalTypes :: !(Maybe Bool)
+    , _jclSchema :: !(Maybe TableSchema)
+    , _jclTimePartitioning :: !(Maybe TimePartitioning)
+    , _jclQuote :: !(Maybe Text)
+    , _jclMaxBadRecords :: !(Maybe (Textual Int32))
+    , _jclAutodetect :: !(Maybe Bool)
+    , _jclSourceURIs :: !(Maybe [Text])
+    , _jclEncoding :: !(Maybe Text)
+    , _jclDestinationTableProperties :: !(Maybe DestinationTableProperties)
     , _jclDestinationEncryptionConfiguration :: !(Maybe EncryptionConfiguration)
-    , _jclFieldDelimiter                     :: !(Maybe Text)
-    , _jclNullMarker                         :: !(Maybe Text)
+    , _jclFieldDelimiter :: !(Maybe Text)
+    , _jclNullMarker :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4000,7 +4000,7 @@ instance ToJSON DataSetReference where
 -- /See:/ 'materializedViewDefinition' smart constructor.
 data MaterializedViewDefinition =
   MaterializedViewDefinition'
-    { _mvdQuery           :: !(Maybe Text)
+    { _mvdQuery :: !(Maybe Text)
     , _mvdLastRefreshTime :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4050,11 +4050,11 @@ instance ToJSON MaterializedViewDefinition where
 -- /See:/ 'tableDataInsertAllRequest' smart constructor.
 data TableDataInsertAllRequest =
   TableDataInsertAllRequest'
-    { _tdiarKind                :: !Text
+    { _tdiarKind :: !Text
     , _tdiarIgnoreUnknownValues :: !(Maybe Bool)
-    , _tdiarRows                :: !(Maybe [TableDataInsertAllRequestRowsItem])
-    , _tdiarTemplateSuffix      :: !(Maybe Text)
-    , _tdiarSkipInvalidRows     :: !(Maybe Bool)
+    , _tdiarRows :: !(Maybe [TableDataInsertAllRequestRowsItem])
+    , _tdiarTemplateSuffix :: !(Maybe Text)
+    , _tdiarSkipInvalidRows :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4151,7 +4151,7 @@ instance ToJSON TableDataInsertAllRequest where
 data GetServiceAccountResponse =
   GetServiceAccountResponse'
     { _gsarEmail :: !(Maybe Text)
-    , _gsarKind  :: !Text
+    , _gsarKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4199,11 +4199,11 @@ instance ToJSON GetServiceAccountResponse where
 -- /See:/ 'projectListProjectsItem' smart constructor.
 data ProjectListProjectsItem =
   ProjectListProjectsItem'
-    { _plpiFriendlyName     :: !(Maybe Text)
-    , _plpiKind             :: !Text
+    { _plpiFriendlyName :: !(Maybe Text)
+    , _plpiKind :: !Text
     , _plpiProjectReference :: !(Maybe ProjectReference)
-    , _plpiId               :: !(Maybe Text)
-    , _plpiNumericId        :: !(Maybe (Textual Word64))
+    , _plpiId :: !(Maybe Text)
+    , _plpiNumericId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4285,11 +4285,11 @@ instance ToJSON ProjectListProjectsItem where
 -- /See:/ 'bqmlIterationResult' smart constructor.
 data BqmlIterationResult =
   BqmlIterationResult'
-    { _birDurationMs   :: !(Maybe (Textual Int64))
-    , _birLearnRate    :: !(Maybe (Textual Double))
-    , _birEvalLoss     :: !(Maybe (Textual Double))
+    { _birDurationMs :: !(Maybe (Textual Int64))
+    , _birLearnRate :: !(Maybe (Textual Double))
+    , _birEvalLoss :: !(Maybe (Textual Double))
     , _birTrainingLoss :: !(Maybe (Textual Double))
-    , _birIndex        :: !(Maybe (Textual Int32))
+    , _birIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4385,11 +4385,11 @@ instance ToJSON BqmlIterationResult where
 data BigtableColumn =
   BigtableColumn'
     { _bcQualifierEncoded :: !(Maybe Bytes)
-    , _bcFieldName        :: !(Maybe Text)
-    , _bcQualifierString  :: !(Maybe Text)
-    , _bcOnlyReadLatest   :: !(Maybe Bool)
-    , _bcType             :: !(Maybe Text)
-    , _bcEncoding         :: !(Maybe Text)
+    , _bcFieldName :: !(Maybe Text)
+    , _bcQualifierString :: !(Maybe Text)
+    , _bcOnlyReadLatest :: !(Maybe Bool)
+    , _bcType :: !(Maybe Text)
+    , _bcEncoding :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4503,9 +4503,9 @@ instance ToJSON BigtableColumn where
 -- /See:/ 'streamingbuffer' smart constructor.
 data Streamingbuffer =
   Streamingbuffer'
-    { _sEstimatedBytes  :: !(Maybe (Textual Word64))
+    { _sEstimatedBytes :: !(Maybe (Textual Word64))
     , _sOldestEntryTime :: !(Maybe (Textual Word64))
-    , _sEstimatedRows   :: !(Maybe (Textual Word64))
+    , _sEstimatedRows :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4610,14 +4610,14 @@ instance ToJSON TableRow where
 -- /See:/ 'jobListJobsItem' smart constructor.
 data JobListJobsItem =
   JobListJobsItem'
-    { _jljiJobReference  :: !(Maybe JobReference)
-    , _jljiStatus        :: !(Maybe JobStatus)
-    , _jljiState         :: !(Maybe Text)
-    , _jljiUserEmail     :: !(Maybe Text)
-    , _jljiKind          :: !Text
-    , _jljiErrorResult   :: !(Maybe ErrorProto)
-    , _jljiId            :: !(Maybe Text)
-    , _jljiStatistics    :: !(Maybe JobStatistics)
+    { _jljiJobReference :: !(Maybe JobReference)
+    , _jljiStatus :: !(Maybe JobStatus)
+    , _jljiState :: !(Maybe Text)
+    , _jljiUserEmail :: !(Maybe Text)
+    , _jljiKind :: !Text
+    , _jljiErrorResult :: !(Maybe ErrorProto)
+    , _jljiId :: !(Maybe Text)
+    , _jljiStatistics :: !(Maybe JobStatistics)
     , _jljiConfiguration :: !(Maybe JobConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4742,10 +4742,10 @@ instance ToJSON JobListJobsItem where
 -- /See:/ 'timePartitioning' smart constructor.
 data TimePartitioning =
   TimePartitioning'
-    { _tpField                  :: !(Maybe Text)
-    , _tpExpirationMs           :: !(Maybe (Textual Int64))
+    { _tpField :: !(Maybe Text)
+    , _tpExpirationMs :: !(Maybe (Textual Int64))
     , _tpRequirePartitionFilter :: !(Maybe Bool)
-    , _tpType                   :: !(Maybe Text)
+    , _tpType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4901,14 +4901,14 @@ instance ToJSON DataSetLabels where
 -- /See:/ 'jobConfiguration' smart constructor.
 data JobConfiguration =
   JobConfiguration'
-    { _jcJobType      :: !(Maybe Text)
-    , _jcCopy         :: !(Maybe JobConfigurationTableCopy)
-    , _jcLoad         :: !(Maybe JobConfigurationLoad)
-    , _jcQuery        :: !(Maybe JobConfigurationQuery)
+    { _jcJobType :: !(Maybe Text)
+    , _jcCopy :: !(Maybe JobConfigurationTableCopy)
+    , _jcLoad :: !(Maybe JobConfigurationLoad)
+    , _jcQuery :: !(Maybe JobConfigurationQuery)
     , _jcJobTimeoutMs :: !(Maybe (Textual Int64))
-    , _jcExtract      :: !(Maybe JobConfigurationExtract)
-    , _jcLabels       :: !(Maybe JobConfigurationLabels)
-    , _jcDryRun       :: !(Maybe Bool)
+    , _jcExtract :: !(Maybe JobConfigurationExtract)
+    , _jcLabels :: !(Maybe JobConfigurationLabels)
+    , _jcDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5023,14 +5023,14 @@ instance ToJSON JobConfiguration where
 -- /See:/ 'job' smart constructor.
 data Job =
   Job'
-    { _jJobReference  :: !(Maybe JobReference)
-    , _jStatus        :: !(Maybe JobStatus)
-    , _jEtag          :: !(Maybe Text)
-    , _jUserEmail     :: !(Maybe Text)
-    , _jKind          :: !Text
-    , _jSelfLink      :: !(Maybe Text)
-    , _jId            :: !(Maybe Text)
-    , _jStatistics    :: !(Maybe JobStatistics)
+    { _jJobReference :: !(Maybe JobReference)
+    , _jStatus :: !(Maybe JobStatus)
+    , _jEtag :: !(Maybe Text)
+    , _jUserEmail :: !(Maybe Text)
+    , _jKind :: !Text
+    , _jSelfLink :: !(Maybe Text)
+    , _jId :: !(Maybe Text)
+    , _jStatistics :: !(Maybe JobStatistics)
     , _jConfiguration :: !(Maybe JobConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5186,7 +5186,7 @@ instance ToJSON EncryptionConfiguration where
 data TableDataInsertAllResponseInsertErrorsItem =
   TableDataInsertAllResponseInsertErrorsItem'
     { _tdiarieiErrors :: !(Maybe [ErrorProto])
-    , _tdiarieiIndex  :: !(Maybe (Textual Word32))
+    , _tdiarieiIndex :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5245,12 +5245,12 @@ instance ToJSON
 data JobConfigurationExtract =
   JobConfigurationExtract'
     { _jceDestinationFormat :: !(Maybe Text)
-    , _jceSourceTable       :: !(Maybe TableReference)
-    , _jcePrintHeader       :: !Bool
-    , _jceCompression       :: !(Maybe Text)
-    , _jceDestinationURIs   :: !(Maybe [Text])
-    , _jceDestinationURI    :: !(Maybe Text)
-    , _jceFieldDelimiter    :: !(Maybe Text)
+    , _jceSourceTable :: !(Maybe TableReference)
+    , _jcePrintHeader :: !Bool
+    , _jceCompression :: !(Maybe Text)
+    , _jceDestinationURIs :: !(Maybe [Text])
+    , _jceDestinationURI :: !(Maybe Text)
+    , _jceFieldDelimiter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5425,7 +5425,7 @@ instance ToJSON ModelDefinition where
 data JobCancelResponse =
   JobCancelResponse'
     { _jcrKind :: !Text
-    , _jcrJob  :: !(Maybe Job)
+    , _jcrJob :: !(Maybe Job)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5504,28 +5504,28 @@ instance ToJSON JSONObject where
 -- /See:/ 'jobConfigurationQuery' smart constructor.
 data JobConfigurationQuery =
   JobConfigurationQuery'
-    { _jcqDestinationTable                   :: !(Maybe TableReference)
-    , _jcqWriteDisPosition                   :: !(Maybe Text)
-    , _jcqPriority                           :: !(Maybe Text)
-    , _jcqClustering                         :: !(Maybe Clustering)
-    , _jcqRangePartitioning                  :: !(Maybe RangePartitioning)
-    , _jcqUseQueryCache                      :: !Bool
-    , _jcqPreserveNulls                      :: !(Maybe Bool)
-    , _jcqTableDefinitions                   :: !(Maybe JobConfigurationQueryTableDefinitions)
-    , _jcqQueryParameters                    :: !(Maybe [QueryParameter])
-    , _jcqSchemaUpdateOptions                :: !(Maybe [Text])
-    , _jcqMaximumBytesBilled                 :: !(Maybe (Textual Int64))
-    , _jcqCreateDisPosition                  :: !(Maybe Text)
-    , _jcqUserDefinedFunctionResources       :: !(Maybe [UserDefinedFunctionResource])
-    , _jcqAllowLargeResults                  :: !Bool
-    , _jcqMaximumBillingTier                 :: !(Textual Int32)
-    , _jcqTimePartitioning                   :: !(Maybe TimePartitioning)
-    , _jcqQuery                              :: !(Maybe Text)
-    , _jcqFlattenResults                     :: !Bool
-    , _jcqParameterMode                      :: !(Maybe Text)
-    , _jcqUseLegacySQL                       :: !Bool
+    { _jcqDestinationTable :: !(Maybe TableReference)
+    , _jcqWriteDisPosition :: !(Maybe Text)
+    , _jcqPriority :: !(Maybe Text)
+    , _jcqClustering :: !(Maybe Clustering)
+    , _jcqRangePartitioning :: !(Maybe RangePartitioning)
+    , _jcqUseQueryCache :: !Bool
+    , _jcqPreserveNulls :: !(Maybe Bool)
+    , _jcqTableDefinitions :: !(Maybe JobConfigurationQueryTableDefinitions)
+    , _jcqQueryParameters :: !(Maybe [QueryParameter])
+    , _jcqSchemaUpdateOptions :: !(Maybe [Text])
+    , _jcqMaximumBytesBilled :: !(Maybe (Textual Int64))
+    , _jcqCreateDisPosition :: !(Maybe Text)
+    , _jcqUserDefinedFunctionResources :: !(Maybe [UserDefinedFunctionResource])
+    , _jcqAllowLargeResults :: !Bool
+    , _jcqMaximumBillingTier :: !(Textual Int32)
+    , _jcqTimePartitioning :: !(Maybe TimePartitioning)
+    , _jcqQuery :: !(Maybe Text)
+    , _jcqFlattenResults :: !Bool
+    , _jcqParameterMode :: !(Maybe Text)
+    , _jcqUseLegacySQL :: !Bool
     , _jcqDestinationEncryptionConfiguration :: !(Maybe EncryptionConfiguration)
-    , _jcqDefaultDataSet                     :: !(Maybe DataSetReference)
+    , _jcqDefaultDataSet :: !(Maybe DataSetReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5867,7 +5867,7 @@ instance ToJSON JobConfigurationQuery where
 data GoogleSheetsOptions =
   GoogleSheetsOptions'
     { _gsoSkipLeadingRows :: !(Maybe (Textual Int64))
-    , _gsoRange           :: !(Maybe Text)
+    , _gsoRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5927,7 +5927,7 @@ instance ToJSON GoogleSheetsOptions where
 -- /See:/ 'tableDataInsertAllRequestRowsItem' smart constructor.
 data TableDataInsertAllRequestRowsItem =
   TableDataInsertAllRequestRowsItem'
-    { _tdiarriJSON     :: !(Maybe JSONObject)
+    { _tdiarriJSON :: !(Maybe JSONObject)
     , _tdiarriInsertId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5980,10 +5980,10 @@ instance ToJSON TableDataInsertAllRequestRowsItem
 -- /See:/ 'jobList' smart constructor.
 data JobList =
   JobList'
-    { _jlEtag          :: !(Maybe Text)
+    { _jlEtag :: !(Maybe Text)
     , _jlNextPageToken :: !(Maybe Text)
-    , _jlKind          :: !Text
-    , _jlJobs          :: !(Maybe [JobListJobsItem])
+    , _jlKind :: !Text
+    , _jlJobs :: !(Maybe [JobListJobsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6127,7 +6127,7 @@ instance ToJSON TableCell where
 -- /See:/ 'jobStatistics2ReservationUsageItem' smart constructor.
 data JobStatistics2ReservationUsageItem =
   JobStatistics2ReservationUsageItem'
-    { _jName   :: !(Maybe Text)
+    { _jName :: !(Maybe Text)
     , _jSlotMs :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6177,8 +6177,8 @@ instance ToJSON JobStatistics2ReservationUsageItem
 data QueryParameterValue =
   QueryParameterValue'
     { _qpvStructValues :: !(Maybe QueryParameterValueStructValues)
-    , _qpvValue        :: !(Maybe Text)
-    , _qpvArrayValues  :: !(Maybe [QueryParameterValue])
+    , _qpvValue :: !(Maybe Text)
+    , _qpvArrayValues :: !(Maybe [QueryParameterValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6239,8 +6239,8 @@ instance ToJSON QueryParameterValue where
 data ViewDefinition =
   ViewDefinition'
     { _vdUserDefinedFunctionResources :: !(Maybe [UserDefinedFunctionResource])
-    , _vdQuery                        :: !(Maybe Text)
-    , _vdUseLegacySQL                 :: !(Maybe Bool)
+    , _vdQuery :: !(Maybe Text)
+    , _vdUseLegacySQL :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6308,7 +6308,7 @@ instance ToJSON ViewDefinition where
 data UserDefinedFunctionResource =
   UserDefinedFunctionResource'
     { _udfrResourceURI :: !(Maybe Text)
-    , _udfrInlineCode  :: !(Maybe Text)
+    , _udfrInlineCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6361,27 +6361,27 @@ instance ToJSON UserDefinedFunctionResource where
 data JobStatistics2 =
   JobStatistics2'
     { _jModelTrainingExpectedTotalIteration :: !(Maybe (Textual Int64))
-    , _jModelTraining                       :: !(Maybe BigQueryModelTraining)
-    , _jTotalSlotMs                         :: !(Maybe (Textual Int64))
-    , _jDdlTargetRoutine                    :: !(Maybe RoutineReference)
-    , _jDdlTargetTable                      :: !(Maybe TableReference)
-    , _jEstimatedBytesProcessed             :: !(Maybe (Textual Int64))
-    , _jModelTrainingCurrentIteration       :: !(Maybe (Textual Int32))
-    , _jSchema                              :: !(Maybe TableSchema)
-    , _jTotalBytesProcessed                 :: !(Maybe (Textual Int64))
-    , _jBillingTier                         :: !(Maybe (Textual Int32))
-    , _jTotalBytesProcessedAccuracy         :: !(Maybe Text)
-    , _jUndeclaredQueryParameters           :: !(Maybe [QueryParameter])
-    , _jReferencedTables                    :: !(Maybe [TableReference])
-    , _jStatementType                       :: !(Maybe Text)
-    , _jReservationUsage                    :: !(Maybe [JobStatistics2ReservationUsageItem])
-    , _jNumDmlAffectedRows                  :: !(Maybe (Textual Int64))
-    , _jTimeline                            :: !(Maybe [QueryTimelineSample])
-    , _jQueryPlan                           :: !(Maybe [ExplainQueryStage])
-    , _jCacheHit                            :: !(Maybe Bool)
-    , _jTotalBytesBilled                    :: !(Maybe (Textual Int64))
-    , _jDdlOperationPerformed               :: !(Maybe Text)
-    , _jTotalPartitionsProcessed            :: !(Maybe (Textual Int64))
+    , _jModelTraining :: !(Maybe BigQueryModelTraining)
+    , _jTotalSlotMs :: !(Maybe (Textual Int64))
+    , _jDdlTargetRoutine :: !(Maybe RoutineReference)
+    , _jDdlTargetTable :: !(Maybe TableReference)
+    , _jEstimatedBytesProcessed :: !(Maybe (Textual Int64))
+    , _jModelTrainingCurrentIteration :: !(Maybe (Textual Int32))
+    , _jSchema :: !(Maybe TableSchema)
+    , _jTotalBytesProcessed :: !(Maybe (Textual Int64))
+    , _jBillingTier :: !(Maybe (Textual Int32))
+    , _jTotalBytesProcessedAccuracy :: !(Maybe Text)
+    , _jUndeclaredQueryParameters :: !(Maybe [QueryParameter])
+    , _jReferencedTables :: !(Maybe [TableReference])
+    , _jStatementType :: !(Maybe Text)
+    , _jReservationUsage :: !(Maybe [JobStatistics2ReservationUsageItem])
+    , _jNumDmlAffectedRows :: !(Maybe (Textual Int64))
+    , _jTimeline :: !(Maybe [QueryTimelineSample])
+    , _jQueryPlan :: !(Maybe [ExplainQueryStage])
+    , _jCacheHit :: !(Maybe Bool)
+    , _jTotalBytesBilled :: !(Maybe (Textual Int64))
+    , _jDdlOperationPerformed :: !(Maybe Text)
+    , _jTotalPartitionsProcessed :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6747,9 +6747,9 @@ instance ToJSON TableFieldSchemaCategories where
 -- /See:/ 'jobStatus' smart constructor.
 data JobStatus =
   JobStatus'
-    { _jsState       :: !(Maybe Text)
+    { _jsState :: !(Maybe Text)
     , _jsErrorResult :: !(Maybe ErrorProto)
-    , _jsErrors      :: !(Maybe [ErrorProto])
+    , _jsErrors :: !(Maybe [ErrorProto])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6851,8 +6851,8 @@ instance ToJSON TableLabels where
 data DestinationTableProperties =
   DestinationTableProperties'
     { _dtpFriendlyName :: !(Maybe Text)
-    , _dtpLabels       :: !(Maybe DestinationTablePropertiesLabels)
-    , _dtpDescription  :: !(Maybe Text)
+    , _dtpLabels :: !(Maybe DestinationTablePropertiesLabels)
+    , _dtpDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6924,12 +6924,12 @@ instance ToJSON DestinationTableProperties where
 data DataSetAccessItem =
   DataSetAccessItem'
     { _dsaiGroupByEmail :: !(Maybe Text)
-    , _dsaiDomain       :: !(Maybe Text)
+    , _dsaiDomain :: !(Maybe Text)
     , _dsaiSpecialGroup :: !(Maybe Text)
-    , _dsaiRole         :: !(Maybe Text)
-    , _dsaiIAMMember    :: !(Maybe Text)
-    , _dsaiView         :: !(Maybe TableReference)
-    , _dsaiUserByEmail  :: !(Maybe Text)
+    , _dsaiRole :: !(Maybe Text)
+    , _dsaiIAMMember :: !(Maybe Text)
+    , _dsaiView :: !(Maybe TableReference)
+    , _dsaiUserByEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7050,10 +7050,10 @@ instance ToJSON DataSetAccessItem where
 -- /See:/ 'bqmlTrainingRun' smart constructor.
 data BqmlTrainingRun =
   BqmlTrainingRun'
-    { _btrState            :: !(Maybe Text)
-    , _btrStartTime        :: !(Maybe DateTime')
+    { _btrState :: !(Maybe Text)
+    , _btrStartTime :: !(Maybe DateTime')
     , _btrIterationResults :: !(Maybe [BqmlIterationResult])
-    , _btrTrainingOptions  :: !(Maybe BqmlTrainingRunTrainingOptions)
+    , _btrTrainingOptions :: !(Maybe BqmlTrainingRunTrainingOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7135,7 +7135,7 @@ instance ToJSON BqmlTrainingRun where
 -- /See:/ 'tableDataInsertAllResponse' smart constructor.
 data TableDataInsertAllResponse =
   TableDataInsertAllResponse'
-    { _tKind         :: !Text
+    { _tKind :: !Text
     , _tInsertErrors :: !(Maybe [TableDataInsertAllResponseInsertErrorsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7188,8 +7188,8 @@ instance ToJSON TableDataInsertAllResponse where
 data QueryParameterType =
   QueryParameterType'
     { _qptStructTypes :: !(Maybe [QueryParameterTypeStructTypesItem])
-    , _qptType        :: !(Maybe Text)
-    , _qptArrayType   :: !(Maybe QueryParameterType)
+    , _qptType :: !(Maybe Text)
+    , _qptArrayType :: !(Maybe QueryParameterType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7248,34 +7248,34 @@ instance ToJSON QueryParameterType where
 -- /See:/ 'table' smart constructor.
 data Table =
   Table'
-    { _tabMaterializedView          :: !(Maybe MaterializedViewDefinition)
-    , _tabCreationTime              :: !(Maybe (Textual Int64))
-    , _tabEtag                      :: !(Maybe Text)
-    , _tabNumBytes                  :: !(Maybe (Textual Int64))
-    , _tabClustering                :: !(Maybe Clustering)
+    { _tabMaterializedView :: !(Maybe MaterializedViewDefinition)
+    , _tabCreationTime :: !(Maybe (Textual Int64))
+    , _tabEtag :: !(Maybe Text)
+    , _tabNumBytes :: !(Maybe (Textual Int64))
+    , _tabClustering :: !(Maybe Clustering)
     , _tabExternalDataConfiguration :: !(Maybe ExternalDataConfiguration)
-    , _tabRangePartitioning         :: !(Maybe RangePartitioning)
-    , _tabLocation                  :: !(Maybe Text)
-    , _tabTableReference            :: !(Maybe TableReference)
-    , _tabFriendlyName              :: !(Maybe Text)
-    , _tabKind                      :: !Text
-    , _tabLastModifiedTime          :: !(Maybe (Textual Word64))
-    , _tabSchema                    :: !(Maybe TableSchema)
-    , _tabStreamingBuffer           :: !(Maybe Streamingbuffer)
-    , _tabSelfLink                  :: !(Maybe Text)
-    , _tabRequirePartitionFilter    :: !(Maybe Bool)
-    , _tabEncryptionConfiguration   :: !(Maybe EncryptionConfiguration)
-    , _tabModel                     :: !(Maybe ModelDefinition)
-    , _tabTimePartitioning          :: !(Maybe TimePartitioning)
-    , _tabNumRows                   :: !(Maybe (Textual Word64))
-    , _tabNumPhysicalBytes          :: !(Maybe (Textual Int64))
-    , _tabView                      :: !(Maybe ViewDefinition)
-    , _tabId                        :: !(Maybe Text)
-    , _tabLabels                    :: !(Maybe TableLabels)
-    , _tabType                      :: !(Maybe Text)
-    , _tabNumLongTermBytes          :: !(Maybe (Textual Int64))
-    , _tabExpirationTime            :: !(Maybe (Textual Int64))
-    , _tabDescription               :: !(Maybe Text)
+    , _tabRangePartitioning :: !(Maybe RangePartitioning)
+    , _tabLocation :: !(Maybe Text)
+    , _tabTableReference :: !(Maybe TableReference)
+    , _tabFriendlyName :: !(Maybe Text)
+    , _tabKind :: !Text
+    , _tabLastModifiedTime :: !(Maybe (Textual Word64))
+    , _tabSchema :: !(Maybe TableSchema)
+    , _tabStreamingBuffer :: !(Maybe Streamingbuffer)
+    , _tabSelfLink :: !(Maybe Text)
+    , _tabRequirePartitionFilter :: !(Maybe Bool)
+    , _tabEncryptionConfiguration :: !(Maybe EncryptionConfiguration)
+    , _tabModel :: !(Maybe ModelDefinition)
+    , _tabTimePartitioning :: !(Maybe TimePartitioning)
+    , _tabNumRows :: !(Maybe (Textual Word64))
+    , _tabNumPhysicalBytes :: !(Maybe (Textual Int64))
+    , _tabView :: !(Maybe ViewDefinition)
+    , _tabId :: !(Maybe Text)
+    , _tabLabels :: !(Maybe TableLabels)
+    , _tabType :: !(Maybe Text)
+    , _tabNumLongTermBytes :: !(Maybe (Textual Int64))
+    , _tabExpirationTime :: !(Maybe (Textual Int64))
+    , _tabDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7641,9 +7641,9 @@ instance ToJSON Table where
 data ErrorProto =
   ErrorProto'
     { _epDebugInfo :: !(Maybe Text)
-    , _epLocation  :: !(Maybe Text)
-    , _epReason    :: !(Maybe Text)
-    , _epMessage   :: !(Maybe Text)
+    , _epLocation :: !(Maybe Text)
+    , _epReason :: !(Maybe Text)
+    , _epMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7712,12 +7712,12 @@ instance ToJSON ErrorProto where
 -- /See:/ 'csvOptions' smart constructor.
 data CSVOptions =
   CSVOptions'
-    { _coSkipLeadingRows     :: !(Maybe (Textual Int64))
-    , _coAllowJaggedRows     :: !(Maybe Bool)
+    { _coSkipLeadingRows :: !(Maybe (Textual Int64))
+    , _coAllowJaggedRows :: !(Maybe Bool)
     , _coAllowQuotedNewlines :: !(Maybe Bool)
-    , _coQuote               :: !Text
-    , _coEncoding            :: !(Maybe Text)
-    , _coFieldDelimiter      :: !(Maybe Text)
+    , _coQuote :: !Text
+    , _coEncoding :: !(Maybe Text)
+    , _coFieldDelimiter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7876,11 +7876,11 @@ instance ToJSON DestinationTablePropertiesLabels
 -- /See:/ 'jobStatistics3' smart constructor.
 data JobStatistics3 =
   JobStatistics3'
-    { _jsInputFiles     :: !(Maybe (Textual Int64))
-    , _jsOutputRows     :: !(Maybe (Textual Int64))
-    , _jsOutputBytes    :: !(Maybe (Textual Int64))
+    { _jsInputFiles :: !(Maybe (Textual Int64))
+    , _jsOutputRows :: !(Maybe (Textual Int64))
+    , _jsOutputBytes :: !(Maybe (Textual Int64))
     , _jsInputFileBytes :: !(Maybe (Textual Int64))
-    , _jsBadRecords     :: !(Maybe (Textual Int64))
+    , _jsBadRecords :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7971,17 +7971,17 @@ instance ToJSON JobStatistics3 where
 -- /See:/ 'queryResponse' smart constructor.
 data QueryResponse =
   QueryResponse'
-    { _qJobReference        :: !(Maybe JobReference)
-    , _qKind                :: !Text
-    , _qSchema              :: !(Maybe TableSchema)
+    { _qJobReference :: !(Maybe JobReference)
+    , _qKind :: !Text
+    , _qSchema :: !(Maybe TableSchema)
     , _qTotalBytesProcessed :: !(Maybe (Textual Int64))
-    , _qRows                :: !(Maybe [TableRow])
-    , _qPageToken           :: !(Maybe Text)
-    , _qNumDmlAffectedRows  :: !(Maybe (Textual Int64))
-    , _qTotalRows           :: !(Maybe (Textual Word64))
-    , _qErrors              :: !(Maybe [ErrorProto])
-    , _qJobComplete         :: !(Maybe Bool)
-    , _qCacheHit            :: !(Maybe Bool)
+    , _qRows :: !(Maybe [TableRow])
+    , _qPageToken :: !(Maybe Text)
+    , _qNumDmlAffectedRows :: !(Maybe (Textual Int64))
+    , _qTotalRows :: !(Maybe (Textual Word64))
+    , _qErrors :: !(Maybe [ErrorProto])
+    , _qJobComplete :: !(Maybe Bool)
+    , _qCacheHit :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

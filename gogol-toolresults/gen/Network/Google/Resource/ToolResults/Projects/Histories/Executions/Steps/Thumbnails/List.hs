@@ -45,8 +45,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.T
     , phestlPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.thumbnails.list@ method which the
 -- 'ProjectsHistoriesExecutionsStepsThumbnailsList' request conforms to.
@@ -78,11 +78,11 @@ type ProjectsHistoriesExecutionsStepsThumbnailsListResource
 data ProjectsHistoriesExecutionsStepsThumbnailsList =
   ProjectsHistoriesExecutionsStepsThumbnailsList'
     { _phestlExecutionId :: !Text
-    , _phestlStepId      :: !Text
-    , _phestlHistoryId   :: !Text
-    , _phestlPageToken   :: !(Maybe Text)
-    , _phestlProjectId   :: !Text
-    , _phestlPageSize    :: !(Maybe (Textual Int32))
+    , _phestlStepId :: !Text
+    , _phestlHistoryId :: !Text
+    , _phestlPageToken :: !(Maybe Text)
+    , _phestlProjectId :: !Text
+    , _phestlPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

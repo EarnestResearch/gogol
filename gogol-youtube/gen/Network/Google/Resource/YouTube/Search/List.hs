@@ -69,8 +69,8 @@ module Network.Google.Resource.YouTube.Search.List
     , slVideoDimension
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.search.list@ method which the
 -- 'SearchList' request conforms to.
@@ -166,37 +166,37 @@ type SearchListResource =
 -- /See:/ 'searchList' smart constructor.
 data SearchList =
   SearchList'
-    { _slPublishedAfter         :: !(Maybe DateTime')
-    , _slVideoDefinition        :: !(Maybe SearchListVideoDefinition)
-    , _slPart                   :: !Text
-    , _slVideoDuration          :: !(Maybe SearchListVideoDuration)
-    , _slVideoCaption           :: !(Maybe SearchListVideoCaption)
-    , _slVideoLicense           :: !(Maybe SearchListVideoLicense)
-    , _slRegionCode             :: !(Maybe Text)
-    , _slForDeveloper           :: !(Maybe Bool)
-    , _slLocation               :: !(Maybe Text)
-    , _slLocationRadius         :: !(Maybe Text)
-    , _slForContentOwner        :: !(Maybe Bool)
-    , _slChannelId              :: !(Maybe Text)
-    , _slQ                      :: !(Maybe Text)
-    , _slForMine                :: !(Maybe Bool)
-    , _slVideoEmbeddable        :: !(Maybe SearchListVideoEmbeddable)
-    , _slEventType              :: !(Maybe SearchListEventType)
+    { _slPublishedAfter :: !(Maybe DateTime')
+    , _slVideoDefinition :: !(Maybe SearchListVideoDefinition)
+    , _slPart :: !Text
+    , _slVideoDuration :: !(Maybe SearchListVideoDuration)
+    , _slVideoCaption :: !(Maybe SearchListVideoCaption)
+    , _slVideoLicense :: !(Maybe SearchListVideoLicense)
+    , _slRegionCode :: !(Maybe Text)
+    , _slForDeveloper :: !(Maybe Bool)
+    , _slLocation :: !(Maybe Text)
+    , _slLocationRadius :: !(Maybe Text)
+    , _slForContentOwner :: !(Maybe Bool)
+    , _slChannelId :: !(Maybe Text)
+    , _slQ :: !(Maybe Text)
+    , _slForMine :: !(Maybe Bool)
+    , _slVideoEmbeddable :: !(Maybe SearchListVideoEmbeddable)
+    , _slEventType :: !(Maybe SearchListEventType)
     , _slOnBehalfOfContentOwner :: !(Maybe Text)
-    , _slVideoCategoryId        :: !(Maybe Text)
-    , _slTopicId                :: !(Maybe Text)
-    , _slSafeSearch             :: !(Maybe SearchListSafeSearch)
-    , _slVideoSyndicated        :: !(Maybe SearchListVideoSyndicated)
-    , _slRelatedToVideoId       :: !(Maybe Text)
-    , _slPageToken              :: !(Maybe Text)
-    , _slType                   :: !Text
-    , _slChannelType            :: !(Maybe SearchListChannelType)
-    , _slRelevanceLanguage      :: !(Maybe Text)
-    , _slOrder                  :: !SearchListOrder
-    , _slMaxResults             :: !(Textual Word32)
-    , _slPublishedBefore        :: !(Maybe DateTime')
-    , _slVideoType              :: !(Maybe SearchListVideoType)
-    , _slVideoDimension         :: !(Maybe SearchListVideoDimension)
+    , _slVideoCategoryId :: !(Maybe Text)
+    , _slTopicId :: !(Maybe Text)
+    , _slSafeSearch :: !(Maybe SearchListSafeSearch)
+    , _slVideoSyndicated :: !(Maybe SearchListVideoSyndicated)
+    , _slRelatedToVideoId :: !(Maybe Text)
+    , _slPageToken :: !(Maybe Text)
+    , _slType :: !Text
+    , _slChannelType :: !(Maybe SearchListChannelType)
+    , _slRelevanceLanguage :: !(Maybe Text)
+    , _slOrder :: !SearchListOrder
+    , _slMaxResults :: !(Textual Word32)
+    , _slPublishedBefore :: !(Maybe DateTime')
+    , _slVideoType :: !(Maybe SearchListVideoType)
+    , _slVideoDimension :: !(Maybe SearchListVideoDimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

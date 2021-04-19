@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Listings.Update
     , eluEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.listings.update@ method which the
 -- 'EditsListingsUpdate' request conforms to.
@@ -62,9 +62,9 @@ type EditsListingsUpdateResource =
 data EditsListingsUpdate =
   EditsListingsUpdate'
     { _eluPackageName :: !Text
-    , _eluPayload     :: !Listing
-    , _eluLanguage    :: !Text
-    , _eluEditId      :: !Text
+    , _eluPayload :: !Listing
+    , _eluLanguage :: !Text
+    , _eluEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

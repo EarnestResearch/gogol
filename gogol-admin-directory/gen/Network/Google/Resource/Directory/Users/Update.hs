@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.Update
     , uUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.update@ method which the
 -- 'UsersUpdate' request conforms to.

@@ -39,8 +39,8 @@ module Network.Google.Resource.GamesManagement.Events.Reset
     , erEventId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.events.reset@ method which the
 -- 'EventsReset' request conforms to.

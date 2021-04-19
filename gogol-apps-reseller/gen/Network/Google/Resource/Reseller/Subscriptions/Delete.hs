@@ -38,8 +38,8 @@ module Network.Google.Resource.Reseller.Subscriptions.Delete
     , sdSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.delete@ method which the
 -- 'SubscriptionsDelete' request conforms to.
@@ -60,8 +60,8 @@ type SubscriptionsDeleteResource =
 -- /See:/ 'subscriptionsDelete' smart constructor.
 data SubscriptionsDelete =
   SubscriptionsDelete'
-    { _sdCustomerId     :: !Text
-    , _sdDeletionType   :: !SubscriptionsDeleteDeletionType
+    { _sdCustomerId :: !Text
+    , _sdDeletionType :: !SubscriptionsDeleteDeletionType
     , _sdSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

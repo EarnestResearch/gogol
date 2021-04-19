@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.Patch
     , bacpEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.patch@ method which the
 -- 'BucketAccessControlsPatch' request conforms to.
@@ -61,10 +61,10 @@ type BucketAccessControlsPatchResource =
 -- /See:/ 'bucketAccessControlsPatch' smart constructor.
 data BucketAccessControlsPatch =
   BucketAccessControlsPatch'
-    { _bacpBucket      :: !Text
-    , _bacpPayload     :: !BucketAccessControl
+    { _bacpBucket :: !Text
+    , _bacpPayload :: !BucketAccessControl
     , _bacpUserProject :: !(Maybe Text)
-    , _bacpEntity      :: !Text
+    , _bacpEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

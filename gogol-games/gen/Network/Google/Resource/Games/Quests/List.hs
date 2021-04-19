@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.Quests.List
     , qlMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.quests.list@ method which the
 -- 'QuestsList' request conforms to.
@@ -63,9 +63,9 @@ type QuestsListResource =
 -- /See:/ 'questsList' smart constructor.
 data QuestsList =
   QuestsList'
-    { _qlLanguage   :: !(Maybe Text)
-    , _qlPageToken  :: !(Maybe Text)
-    , _qlPlayerId   :: !Text
+    { _qlLanguage :: !(Maybe Text)
+    , _qlPageToken :: !(Maybe Text)
+    , _qlPlayerId :: !Text
     , _qlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

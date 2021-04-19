@@ -17,8 +17,8 @@
 --
 module Network.Google.Container.Types.Product where
 
-import           Network.Google.Container.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Container.Types.Sum
+import Network.Google.Prelude
 
 -- | Configuration for NetworkPolicy. This only tracks whether the addon is
 -- enabled or not on the Master, it does not track whether network policy
@@ -64,7 +64,7 @@ instance ToJSON NetworkPolicyConfig where
 data ListUsableSubnetworksResponse =
   ListUsableSubnetworksResponse'
     { _lusrNextPageToken :: !(Maybe Text)
-    , _lusrSubnetworks   :: !(Maybe [UsableSubnetwork])
+    , _lusrSubnetworks :: !(Maybe [UsableSubnetwork])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -121,13 +121,13 @@ instance ToJSON ListUsableSubnetworksResponse where
 -- /See:/ 'updateNodePoolRequest' smart constructor.
 data UpdateNodePoolRequest =
   UpdateNodePoolRequest'
-    { _unprZone        :: !(Maybe Text)
-    , _unprNodePoolId  :: !(Maybe Text)
-    , _unprImageType   :: !(Maybe Text)
-    , _unprName        :: !(Maybe Text)
-    , _unprClusterId   :: !(Maybe Text)
+    { _unprZone :: !(Maybe Text)
+    , _unprNodePoolId :: !(Maybe Text)
+    , _unprImageType :: !(Maybe Text)
+    , _unprName :: !(Maybe Text)
+    , _unprClusterId :: !(Maybe Text)
     , _unprNodeVersion :: !(Maybe Text)
-    , _unprProjectId   :: !(Maybe Text)
+    , _unprProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -245,10 +245,10 @@ instance ToJSON UpdateNodePoolRequest where
 -- /See:/ 'updateMasterRequest' smart constructor.
 data UpdateMasterRequest =
   UpdateMasterRequest'
-    { _umrZone          :: !(Maybe Text)
-    , _umrName          :: !(Maybe Text)
-    , _umrClusterId     :: !(Maybe Text)
-    , _umrProjectId     :: !(Maybe Text)
+    { _umrZone :: !(Maybe Text)
+    , _umrName :: !(Maybe Text)
+    , _umrClusterId :: !(Maybe Text)
+    , _umrProjectId :: !(Maybe Text)
     , _umrMasterVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -340,11 +340,11 @@ instance ToJSON UpdateMasterRequest where
 -- /See:/ 'startIPRotationRequest' smart constructor.
 data StartIPRotationRequest =
   StartIPRotationRequest'
-    { _sirrZone              :: !(Maybe Text)
+    { _sirrZone :: !(Maybe Text)
     , _sirrRotateCredentials :: !(Maybe Bool)
-    , _sirrName              :: !(Maybe Text)
-    , _sirrClusterId         :: !(Maybe Text)
-    , _sirrProjectId         :: !(Maybe Text)
+    , _sirrName :: !(Maybe Text)
+    , _sirrClusterId :: !(Maybe Text)
+    , _sirrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -433,9 +433,9 @@ instance ToJSON StartIPRotationRequest where
 -- /See:/ 'setLegacyAbacRequest' smart constructor.
 data SetLegacyAbacRequest =
   SetLegacyAbacRequest'
-    { _slarEnabled   :: !(Maybe Bool)
-    , _slarZone      :: !(Maybe Text)
-    , _slarName      :: !(Maybe Text)
+    { _slarEnabled :: !(Maybe Bool)
+    , _slarZone :: !(Maybe Text)
+    , _slarName :: !(Maybe Text)
     , _slarClusterId :: !(Maybe Text)
     , _slarProjectId :: !(Maybe Text)
     }
@@ -563,12 +563,12 @@ instance ToJSON HorizontalPodAutoscaling where
 -- /See:/ 'setMasterAuthRequest' smart constructor.
 data SetMasterAuthRequest =
   SetMasterAuthRequest'
-    { _smarAction    :: !(Maybe SetMasterAuthRequestAction)
-    , _smarZone      :: !(Maybe Text)
-    , _smarName      :: !(Maybe Text)
+    { _smarAction :: !(Maybe SetMasterAuthRequestAction)
+    , _smarZone :: !(Maybe Text)
+    , _smarName :: !(Maybe Text)
     , _smarClusterId :: !(Maybe Text)
     , _smarProjectId :: !(Maybe Text)
-    , _smarUpdate    :: !(Maybe MasterAuth)
+    , _smarUpdate :: !(Maybe MasterAuth)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -663,7 +663,7 @@ instance ToJSON SetMasterAuthRequest where
 -- /See:/ 'listOperationsResponse' smart constructor.
 data ListOperationsResponse =
   ListOperationsResponse'
-    { _lorOperations   :: !(Maybe [Operation])
+    { _lorOperations :: !(Maybe [Operation])
     , _lorMissingZones :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -719,9 +719,9 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'createClusterRequest' smart constructor.
 data CreateClusterRequest =
   CreateClusterRequest'
-    { _ccrParent    :: !(Maybe Text)
-    , _ccrCluster   :: !(Maybe Cluster)
-    , _ccrZone      :: !(Maybe Text)
+    { _ccrParent :: !(Maybe Text)
+    , _ccrCluster :: !(Maybe Cluster)
+    , _ccrZone :: !(Maybe Text)
     , _ccrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -797,48 +797,48 @@ instance ToJSON CreateClusterRequest where
 -- /See:/ 'cluster' smart constructor.
 data Cluster =
   Cluster'
-    { _cStatus                         :: !(Maybe ClusterStatus)
-    , _cNodePools                      :: !(Maybe [NodePool])
-    , _cEnableKubernetesAlpha          :: !(Maybe Bool)
-    , _cResourceLabels                 :: !(Maybe ClusterResourceLabels)
-    , _cTpuIPv4CIdRBlock               :: !(Maybe Text)
-    , _cNodeConfig                     :: !(Maybe NodeConfig)
-    , _cNodeIPv4CIdRSize               :: !(Maybe (Textual Int32))
-    , _cClusterIPv4CIdR                :: !(Maybe Text)
-    , _cLocation                       :: !(Maybe Text)
-    , _cInitialNodeCount               :: !(Maybe (Textual Int32))
-    , _cCurrentNodeVersion             :: !(Maybe Text)
-    , _cNetwork                        :: !(Maybe Text)
-    , _cInitialClusterVersion          :: !(Maybe Text)
-    , _cZone                           :: !(Maybe Text)
-    , _cAddonsConfig                   :: !(Maybe AddonsConfig)
-    , _cServicesIPv4CIdR               :: !(Maybe Text)
-    , _cIPAllocationPolicy             :: !(Maybe IPAllocationPolicy)
+    { _cStatus :: !(Maybe ClusterStatus)
+    , _cNodePools :: !(Maybe [NodePool])
+    , _cEnableKubernetesAlpha :: !(Maybe Bool)
+    , _cResourceLabels :: !(Maybe ClusterResourceLabels)
+    , _cTpuIPv4CIdRBlock :: !(Maybe Text)
+    , _cNodeConfig :: !(Maybe NodeConfig)
+    , _cNodeIPv4CIdRSize :: !(Maybe (Textual Int32))
+    , _cClusterIPv4CIdR :: !(Maybe Text)
+    , _cLocation :: !(Maybe Text)
+    , _cInitialNodeCount :: !(Maybe (Textual Int32))
+    , _cCurrentNodeVersion :: !(Maybe Text)
+    , _cNetwork :: !(Maybe Text)
+    , _cInitialClusterVersion :: !(Maybe Text)
+    , _cZone :: !(Maybe Text)
+    , _cAddonsConfig :: !(Maybe AddonsConfig)
+    , _cServicesIPv4CIdR :: !(Maybe Text)
+    , _cIPAllocationPolicy :: !(Maybe IPAllocationPolicy)
     , _cMasterAuthorizedNetworksConfig :: !(Maybe MasterAuthorizedNetworksConfig)
-    , _cLegacyAbac                     :: !(Maybe LegacyAbac)
-    , _cNetworkConfig                  :: !(Maybe NetworkConfig)
-    , _cMasterAuth                     :: !(Maybe MasterAuth)
-    , _cSelfLink                       :: !(Maybe Text)
-    , _cName                           :: !(Maybe Text)
-    , _cCurrentMasterVersion           :: !(Maybe Text)
-    , _cStatusMessage                  :: !(Maybe Text)
-    , _cDefaultMaxPodsConstraint       :: !(Maybe MaxPodsConstraint)
-    , _cSubnetwork                     :: !(Maybe Text)
-    , _cCurrentNodeCount               :: !(Maybe (Textual Int32))
-    , _cPrivateClusterConfig           :: !(Maybe PrivateClusterConfig)
-    , _cMaintenancePolicy              :: !(Maybe MaintenancePolicy)
-    , _cConditions                     :: !(Maybe [StatusCondition])
-    , _cEnableTpu                      :: !(Maybe Bool)
-    , _cEndpoint                       :: !(Maybe Text)
-    , _cExpireTime                     :: !(Maybe Text)
-    , _cNetworkPolicy                  :: !(Maybe NetworkPolicy)
-    , _cLocations                      :: !(Maybe [Text])
-    , _cLoggingService                 :: !(Maybe Text)
-    , _cLabelFingerprint               :: !(Maybe Text)
-    , _cDescription                    :: !(Maybe Text)
-    , _cInstanceGroupURLs              :: !(Maybe [Text])
-    , _cMonitoringService              :: !(Maybe Text)
-    , _cCreateTime                     :: !(Maybe Text)
+    , _cLegacyAbac :: !(Maybe LegacyAbac)
+    , _cNetworkConfig :: !(Maybe NetworkConfig)
+    , _cMasterAuth :: !(Maybe MasterAuth)
+    , _cSelfLink :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cCurrentMasterVersion :: !(Maybe Text)
+    , _cStatusMessage :: !(Maybe Text)
+    , _cDefaultMaxPodsConstraint :: !(Maybe MaxPodsConstraint)
+    , _cSubnetwork :: !(Maybe Text)
+    , _cCurrentNodeCount :: !(Maybe (Textual Int32))
+    , _cPrivateClusterConfig :: !(Maybe PrivateClusterConfig)
+    , _cMaintenancePolicy :: !(Maybe MaintenancePolicy)
+    , _cConditions :: !(Maybe [StatusCondition])
+    , _cEnableTpu :: !(Maybe Bool)
+    , _cEndpoint :: !(Maybe Text)
+    , _cExpireTime :: !(Maybe Text)
+    , _cNetworkPolicy :: !(Maybe NetworkPolicy)
+    , _cLocations :: !(Maybe [Text])
+    , _cLoggingService :: !(Maybe Text)
+    , _cLabelFingerprint :: !(Maybe Text)
+    , _cDescription :: !(Maybe Text)
+    , _cInstanceGroupURLs :: !(Maybe [Text])
+    , _cMonitoringService :: !(Maybe Text)
+    , _cCreateTime :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1404,9 +1404,9 @@ instance ToJSON Cluster where
 -- /See:/ 'cancelOperationRequest' smart constructor.
 data CancelOperationRequest =
   CancelOperationRequest'
-    { _corZone        :: !(Maybe Text)
-    , _corName        :: !(Maybe Text)
-    , _corProjectId   :: !(Maybe Text)
+    { _corZone :: !(Maybe Text)
+    , _corName :: !(Maybe Text)
+    , _corProjectId :: !(Maybe Text)
     , _corOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1481,11 +1481,11 @@ instance ToJSON CancelOperationRequest where
 -- /See:/ 'updateClusterRequest' smart constructor.
 data UpdateClusterRequest =
   UpdateClusterRequest'
-    { _ucrZone      :: !(Maybe Text)
-    , _ucrName      :: !(Maybe Text)
+    { _ucrZone :: !(Maybe Text)
+    , _ucrName :: !(Maybe Text)
     , _ucrClusterId :: !(Maybe Text)
     , _ucrProjectId :: !(Maybe Text)
-    , _ucrUpdate    :: !(Maybe ClusterUpdate)
+    , _ucrUpdate :: !(Maybe ClusterUpdate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1568,11 +1568,11 @@ instance ToJSON UpdateClusterRequest where
 -- /See:/ 'setAddonsConfigRequest' smart constructor.
 data SetAddonsConfigRequest =
   SetAddonsConfigRequest'
-    { _sacrZone         :: !(Maybe Text)
+    { _sacrZone :: !(Maybe Text)
     , _sacrAddonsConfig :: !(Maybe AddonsConfig)
-    , _sacrName         :: !(Maybe Text)
-    , _sacrClusterId    :: !(Maybe Text)
-    , _sacrProjectId    :: !(Maybe Text)
+    , _sacrName :: !(Maybe Text)
+    , _sacrClusterId :: !(Maybe Text)
+    , _sacrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1660,20 +1660,20 @@ instance ToJSON SetAddonsConfigRequest where
 -- /See:/ 'nodeConfig' smart constructor.
 data NodeConfig =
   NodeConfig'
-    { _ncLocalSsdCount  :: !(Maybe (Textual Int32))
-    , _ncDiskSizeGb     :: !(Maybe (Textual Int32))
-    , _ncTaints         :: !(Maybe [NodeTaint])
-    , _ncOAuthScopes    :: !(Maybe [Text])
+    { _ncLocalSsdCount :: !(Maybe (Textual Int32))
+    , _ncDiskSizeGb :: !(Maybe (Textual Int32))
+    , _ncTaints :: !(Maybe [NodeTaint])
+    , _ncOAuthScopes :: !(Maybe [Text])
     , _ncServiceAccount :: !(Maybe Text)
-    , _ncAccelerators   :: !(Maybe [AcceleratorConfig])
-    , _ncImageType      :: !(Maybe Text)
-    , _ncMachineType    :: !(Maybe Text)
-    , _ncMetadata       :: !(Maybe NodeConfigMetadata)
-    , _ncDiskType       :: !(Maybe Text)
-    , _ncLabels         :: !(Maybe NodeConfigLabels)
+    , _ncAccelerators :: !(Maybe [AcceleratorConfig])
+    , _ncImageType :: !(Maybe Text)
+    , _ncMachineType :: !(Maybe Text)
+    , _ncMetadata :: !(Maybe NodeConfigMetadata)
+    , _ncDiskType :: !(Maybe Text)
+    , _ncLabels :: !(Maybe NodeConfigLabels)
     , _ncMinCPUPlatform :: !(Maybe Text)
-    , _ncTags           :: !(Maybe [Text])
-    , _ncPreemptible    :: !(Maybe Bool)
+    , _ncTags :: !(Maybe [Text])
+    , _ncPreemptible :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1954,18 +1954,18 @@ instance ToJSON HTTPLoadBalancing where
 data Operation =
   Operation'
     { _oNodepoolConditions :: !(Maybe [StatusCondition])
-    , _oStatus             :: !(Maybe OperationStatus)
-    , _oLocation           :: !(Maybe Text)
-    , _oStartTime          :: !(Maybe Text)
-    , _oZone               :: !(Maybe Text)
-    , _oSelfLink           :: !(Maybe Text)
-    , _oName               :: !(Maybe Text)
-    , _oStatusMessage      :: !(Maybe Text)
-    , _oEndTime            :: !(Maybe Text)
-    , _oClusterConditions  :: !(Maybe [StatusCondition])
-    , _oOperationType      :: !(Maybe OperationOperationType)
-    , _oTargetLink         :: !(Maybe Text)
-    , _oDetail             :: !(Maybe Text)
+    , _oStatus :: !(Maybe OperationStatus)
+    , _oLocation :: !(Maybe Text)
+    , _oStartTime :: !(Maybe Text)
+    , _oZone :: !(Maybe Text)
+    , _oSelfLink :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
+    , _oStatusMessage :: !(Maybe Text)
+    , _oEndTime :: !(Maybe Text)
+    , _oClusterConditions :: !(Maybe [StatusCondition])
+    , _oOperationType :: !(Maybe OperationOperationType)
+    , _oTargetLink :: !(Maybe Text)
+    , _oDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2200,11 +2200,11 @@ instance ToJSON Empty where
 data SetNodePoolAutoscalingRequest =
   SetNodePoolAutoscalingRequest'
     { _snparAutoscaling :: !(Maybe NodePoolAutoscaling)
-    , _snparZone        :: !(Maybe Text)
-    , _snparNodePoolId  :: !(Maybe Text)
-    , _snparName        :: !(Maybe Text)
-    , _snparClusterId   :: !(Maybe Text)
-    , _snparProjectId   :: !(Maybe Text)
+    , _snparZone :: !(Maybe Text)
+    , _snparNodePoolId :: !(Maybe Text)
+    , _snparName :: !(Maybe Text)
+    , _snparClusterId :: !(Maybe Text)
+    , _snparProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2307,8 +2307,8 @@ instance ToJSON SetNodePoolAutoscalingRequest where
 -- /See:/ 'completeIPRotationRequest' smart constructor.
 data CompleteIPRotationRequest =
   CompleteIPRotationRequest'
-    { _cirrZone      :: !(Maybe Text)
-    , _cirrName      :: !(Maybe Text)
+    { _cirrZone :: !(Maybe Text)
+    , _cirrName :: !(Maybe Text)
     , _cirrClusterId :: !(Maybe Text)
     , _cirrProjectId :: !(Maybe Text)
     }
@@ -2387,8 +2387,8 @@ instance ToJSON CompleteIPRotationRequest where
 -- /See:/ 'usableSubnetworkSecondaryRange' smart constructor.
 data UsableSubnetworkSecondaryRange =
   UsableSubnetworkSecondaryRange'
-    { _ussrStatus      :: !(Maybe UsableSubnetworkSecondaryRangeStatus)
-    , _ussrRangeName   :: !(Maybe Text)
+    { _ussrStatus :: !(Maybe UsableSubnetworkSecondaryRangeStatus)
+    , _ussrRangeName :: !(Maybe Text)
     , _ussrIPCIdRRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2455,8 +2455,8 @@ instance ToJSON UsableSubnetworkSecondaryRange where
 -- /See:/ 'nodeManagement' smart constructor.
 data NodeManagement =
   NodeManagement'
-    { _nmAutoUpgrade    :: !(Maybe Bool)
-    , _nmAutoRepair     :: !(Maybe Bool)
+    { _nmAutoUpgrade :: !(Maybe Bool)
+    , _nmAutoRepair :: !(Maybe Bool)
     , _nmUpgradeOptions :: !(Maybe AutoUpgradeOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2529,8 +2529,8 @@ instance ToJSON NodeManagement where
 data NodeTaint =
   NodeTaint'
     { _ntEffect :: !(Maybe NodeTaintEffect)
-    , _ntValue  :: !(Maybe Text)
-    , _ntKey    :: !(Maybe Text)
+    , _ntValue :: !(Maybe Text)
+    , _ntKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2584,7 +2584,7 @@ instance ToJSON NodeTaint where
 data NodePoolAutoscaling =
   NodePoolAutoscaling'
     { _npaMaxNodeCount :: !(Maybe (Textual Int32))
-    , _npaEnabled      :: !(Maybe Bool)
+    , _npaEnabled :: !(Maybe Bool)
     , _npaMinNodeCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2651,11 +2651,11 @@ instance ToJSON NodePoolAutoscaling where
 -- /See:/ 'setMaintenancePolicyRequest' smart constructor.
 data SetMaintenancePolicyRequest =
   SetMaintenancePolicyRequest'
-    { _smprZone              :: !(Maybe Text)
-    , _smprName              :: !(Maybe Text)
-    , _smprClusterId         :: !(Maybe Text)
+    { _smprZone :: !(Maybe Text)
+    , _smprName :: !(Maybe Text)
+    , _smprClusterId :: !(Maybe Text)
     , _smprMaintenancePolicy :: !(Maybe MaintenancePolicy)
-    , _smprProjectId         :: !(Maybe Text)
+    , _smprProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2742,11 +2742,11 @@ instance ToJSON SetMaintenancePolicyRequest where
 -- /See:/ 'usableSubnetwork' smart constructor.
 data UsableSubnetwork =
   UsableSubnetwork'
-    { _usNetwork           :: !(Maybe Text)
-    , _usStatusMessage     :: !(Maybe Text)
+    { _usNetwork :: !(Maybe Text)
+    , _usStatusMessage :: !(Maybe Text)
     , _usSecondaryIPRanges :: !(Maybe [UsableSubnetworkSecondaryRange])
-    , _usIPCIdRRange       :: !(Maybe Text)
-    , _usSubnetwork        :: !(Maybe Text)
+    , _usIPCIdRRange :: !(Maybe Text)
+    , _usSubnetwork :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2914,11 +2914,11 @@ instance ToJSON ClientCertificateConfig where
 -- /See:/ 'setLabelsRequest' smart constructor.
 data SetLabelsRequest =
   SetLabelsRequest'
-    { _slrResourceLabels   :: !(Maybe SetLabelsRequestResourceLabels)
-    , _slrZone             :: !(Maybe Text)
-    , _slrName             :: !(Maybe Text)
-    , _slrClusterId        :: !(Maybe Text)
-    , _slrProjectId        :: !(Maybe Text)
+    { _slrResourceLabels :: !(Maybe SetLabelsRequestResourceLabels)
+    , _slrZone :: !(Maybe Text)
+    , _slrName :: !(Maybe Text)
+    , _slrClusterId :: !(Maybe Text)
+    , _slrProjectId :: !(Maybe Text)
     , _slrLabelFingerprint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3021,12 +3021,12 @@ instance ToJSON SetLabelsRequest where
 data GetOpenIdConfigResponse =
   GetOpenIdConfigResponse'
     { _goicrIdTokenSigningAlgValuesSupported :: !(Maybe [Text])
-    , _goicrResponseTypesSupported           :: !(Maybe [Text])
-    , _goicrJWKsURI                          :: !(Maybe Text)
-    , _goicrGrantTypes                       :: !(Maybe [Text])
-    , _goicrClaimsSupported                  :: !(Maybe [Text])
-    , _goicrIssuer                           :: !(Maybe Text)
-    , _goicrSubjectTypesSupported            :: !(Maybe [Text])
+    , _goicrResponseTypesSupported :: !(Maybe [Text])
+    , _goicrJWKsURI :: !(Maybe Text)
+    , _goicrGrantTypes :: !(Maybe [Text])
+    , _goicrClaimsSupported :: !(Maybe [Text])
+    , _goicrIssuer :: !(Maybe Text)
+    , _goicrSubjectTypesSupported :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3151,11 +3151,11 @@ data JWK =
     , _jAlg :: !(Maybe Text)
     , _jUse :: !(Maybe Text)
     , _jKid :: !(Maybe Text)
-    , _jN   :: !(Maybe Text)
-    , _jE   :: !(Maybe Text)
-    , _jX   :: !(Maybe Text)
+    , _jN :: !(Maybe Text)
+    , _jE :: !(Maybe Text)
+    , _jX :: !(Maybe Text)
     , _jKty :: !(Maybe Text)
-    , _jY   :: !(Maybe Text)
+    , _jY :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3341,17 +3341,17 @@ instance ToJSON MaxPodsConstraint where
 data IPAllocationPolicy =
   IPAllocationPolicy'
     { _iapServicesSecondaryRangeName :: !(Maybe Text)
-    , _iapTpuIPv4CIdRBlock           :: !(Maybe Text)
-    , _iapNodeIPv4CIdR               :: !(Maybe Text)
-    , _iapUseIPAliases               :: !(Maybe Bool)
-    , _iapClusterIPv4CIdR            :: !(Maybe Text)
-    , _iapSubnetworkName             :: !(Maybe Text)
-    , _iapClusterSecondaryRangeName  :: !(Maybe Text)
-    , _iapNodeIPv4CIdRBlock          :: !(Maybe Text)
-    , _iapServicesIPv4CIdR           :: !(Maybe Text)
-    , _iapClusterIPv4CIdRBlock       :: !(Maybe Text)
-    , _iapServicesIPv4CIdRBlock      :: !(Maybe Text)
-    , _iapCreateSubnetwork           :: !(Maybe Bool)
+    , _iapTpuIPv4CIdRBlock :: !(Maybe Text)
+    , _iapNodeIPv4CIdR :: !(Maybe Text)
+    , _iapUseIPAliases :: !(Maybe Bool)
+    , _iapClusterIPv4CIdR :: !(Maybe Text)
+    , _iapSubnetworkName :: !(Maybe Text)
+    , _iapClusterSecondaryRangeName :: !(Maybe Text)
+    , _iapNodeIPv4CIdRBlock :: !(Maybe Text)
+    , _iapServicesIPv4CIdR :: !(Maybe Text)
+    , _iapClusterIPv4CIdRBlock :: !(Maybe Text)
+    , _iapServicesIPv4CIdRBlock :: !(Maybe Text)
+    , _iapCreateSubnetwork :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3561,10 +3561,10 @@ instance ToJSON IPAllocationPolicy where
 -- /See:/ 'addonsConfig' smart constructor.
 data AddonsConfig =
   AddonsConfig'
-    { _acNetworkPolicyConfig      :: !(Maybe NetworkPolicyConfig)
+    { _acNetworkPolicyConfig :: !(Maybe NetworkPolicyConfig)
     , _acHorizontalPodAutoscaling :: !(Maybe HorizontalPodAutoscaling)
-    , _acHTTPLoadBalancing        :: !(Maybe HTTPLoadBalancing)
-    , _acKubernetesDashboard      :: !(Maybe KubernetesDashboard)
+    , _acHTTPLoadBalancing :: !(Maybe HTTPLoadBalancing)
+    , _acKubernetesDashboard :: !(Maybe KubernetesDashboard)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3647,7 +3647,7 @@ instance ToJSON AddonsConfig where
 -- /See:/ 'networkConfig' smart constructor.
 data NetworkConfig =
   NetworkConfig'
-    { _ncNetwork    :: !(Maybe Text)
+    { _ncNetwork :: !(Maybe Text)
     , _ncSubnetwork :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3705,17 +3705,17 @@ instance ToJSON NetworkConfig where
 -- /See:/ 'nodePool' smart constructor.
 data NodePool =
   NodePool'
-    { _npStatus            :: !(Maybe NodePoolStatus)
-    , _npAutoscaling       :: !(Maybe NodePoolAutoscaling)
-    , _npConfig            :: !(Maybe NodeConfig)
-    , _npInitialNodeCount  :: !(Maybe (Textual Int32))
-    , _npManagement        :: !(Maybe NodeManagement)
+    { _npStatus :: !(Maybe NodePoolStatus)
+    , _npAutoscaling :: !(Maybe NodePoolAutoscaling)
+    , _npConfig :: !(Maybe NodeConfig)
+    , _npInitialNodeCount :: !(Maybe (Textual Int32))
+    , _npManagement :: !(Maybe NodeManagement)
     , _npMaxPodsConstraint :: !(Maybe MaxPodsConstraint)
-    , _npSelfLink          :: !(Maybe Text)
-    , _npName              :: !(Maybe Text)
-    , _npStatusMessage     :: !(Maybe Text)
-    , _npVersion           :: !(Maybe Text)
-    , _npConditions        :: !(Maybe [StatusCondition])
+    , _npSelfLink :: !(Maybe Text)
+    , _npName :: !(Maybe Text)
+    , _npStatusMessage :: !(Maybe Text)
+    , _npVersion :: !(Maybe Text)
+    , _npConditions :: !(Maybe [StatusCondition])
     , _npInstanceGroupURLs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3883,11 +3883,11 @@ instance ToJSON NodePool where
 data SetNodePoolManagementRequest =
   SetNodePoolManagementRequest'
     { _snpmrManagement :: !(Maybe NodeManagement)
-    , _snpmrZone       :: !(Maybe Text)
+    , _snpmrZone :: !(Maybe Text)
     , _snpmrNodePoolId :: !(Maybe Text)
-    , _snpmrName       :: !(Maybe Text)
-    , _snpmrClusterId  :: !(Maybe Text)
-    , _snpmrProjectId  :: !(Maybe Text)
+    , _snpmrName :: !(Maybe Text)
+    , _snpmrClusterId :: !(Maybe Text)
+    , _snpmrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3992,7 +3992,7 @@ instance ToJSON SetNodePoolManagementRequest where
 -- /See:/ 'masterAuthorizedNetworksConfig' smart constructor.
 data MasterAuthorizedNetworksConfig =
   MasterAuthorizedNetworksConfig'
-    { _mancEnabled    :: !(Maybe Bool)
+    { _mancEnabled :: !(Maybe Bool)
     , _mancCIdRBlocks :: !(Maybe [CIdRBlock])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4087,12 +4087,12 @@ instance ToJSON LegacyAbac where
 -- /See:/ 'masterAuth' smart constructor.
 data MasterAuth =
   MasterAuth'
-    { _maClientKey               :: !(Maybe Text)
-    , _maUsername                :: !(Maybe Text)
+    { _maClientKey :: !(Maybe Text)
+    , _maUsername :: !(Maybe Text)
     , _maClientCertificateConfig :: !(Maybe ClientCertificateConfig)
-    , _maClientCertificate       :: !(Maybe Text)
-    , _maPassword                :: !(Maybe Text)
-    , _maClusterCaCertificate    :: !(Maybe Text)
+    , _maClientCertificate :: !(Maybe Text)
+    , _maPassword :: !(Maybe Text)
+    , _maClusterCaCertificate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4199,7 +4199,7 @@ instance ToJSON MasterAuth where
 -- /See:/ 'statusCondition' smart constructor.
 data StatusCondition =
   StatusCondition'
-    { _scCode    :: !(Maybe StatusConditionCode)
+    { _scCode :: !(Maybe StatusConditionCode)
     , _scMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4333,11 +4333,11 @@ instance ToJSON NodeConfigLabels where
 -- /See:/ 'serverConfig' smart constructor.
 data ServerConfig =
   ServerConfig'
-    { _scDefaultImageType      :: !(Maybe Text)
-    , _scValidNodeVersions     :: !(Maybe [Text])
-    , _scValidImageTypes       :: !(Maybe [Text])
+    { _scDefaultImageType :: !(Maybe Text)
+    , _scValidNodeVersions :: !(Maybe [Text])
+    , _scValidImageTypes :: !(Maybe [Text])
     , _scDefaultClusterVersion :: !(Maybe Text)
-    , _scValidMasterVersions   :: !(Maybe [Text])
+    , _scValidMasterVersions :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4433,7 +4433,7 @@ instance ToJSON ServerConfig where
 data AutoUpgradeOptions =
   AutoUpgradeOptions'
     { _auoAutoUpgradeStartTime :: !(Maybe Text)
-    , _auoDescription          :: !(Maybe Text)
+    , _auoDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4488,12 +4488,12 @@ instance ToJSON AutoUpgradeOptions where
 -- /See:/ 'setNodePoolSizeRequest' smart constructor.
 data SetNodePoolSizeRequest =
   SetNodePoolSizeRequest'
-    { _snpsrNodeCount  :: !(Maybe (Textual Int32))
-    , _snpsrZone       :: !(Maybe Text)
+    { _snpsrNodeCount :: !(Maybe (Textual Int32))
+    , _snpsrZone :: !(Maybe Text)
     , _snpsrNodePoolId :: !(Maybe Text)
-    , _snpsrName       :: !(Maybe Text)
-    , _snpsrClusterId  :: !(Maybe Text)
-    , _snpsrProjectId  :: !(Maybe Text)
+    , _snpsrName :: !(Maybe Text)
+    , _snpsrClusterId :: !(Maybe Text)
+    , _snpsrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4596,10 +4596,10 @@ instance ToJSON SetNodePoolSizeRequest where
 -- /See:/ 'setMonitoringServiceRequest' smart constructor.
 data SetMonitoringServiceRequest =
   SetMonitoringServiceRequest'
-    { _smsrZone              :: !(Maybe Text)
-    , _smsrName              :: !(Maybe Text)
-    , _smsrClusterId         :: !(Maybe Text)
-    , _smsrProjectId         :: !(Maybe Text)
+    { _smsrZone :: !(Maybe Text)
+    , _smsrName :: !(Maybe Text)
+    , _smsrClusterId :: !(Maybe Text)
+    , _smsrProjectId :: !(Maybe Text)
     , _smsrMonitoringService :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4690,10 +4690,10 @@ instance ToJSON SetMonitoringServiceRequest where
 -- /See:/ 'setLoggingServiceRequest' smart constructor.
 data SetLoggingServiceRequest =
   SetLoggingServiceRequest'
-    { _slsrZone           :: !(Maybe Text)
-    , _slsrName           :: !(Maybe Text)
-    , _slsrClusterId      :: !(Maybe Text)
-    , _slsrProjectId      :: !(Maybe Text)
+    { _slsrZone :: !(Maybe Text)
+    , _slsrName :: !(Maybe Text)
+    , _slsrClusterId :: !(Maybe Text)
+    , _slsrProjectId :: !(Maybe Text)
     , _slsrLoggingService :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4818,7 +4818,7 @@ instance ToJSON MaintenancePolicy where
 -- /See:/ 'cIdRBlock' smart constructor.
 data CIdRBlock =
   CIdRBlock'
-    { _cirbCIdRBlock   :: !(Maybe Text)
+    { _cirbCIdRBlock :: !(Maybe Text)
     , _cirbDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4868,7 +4868,7 @@ instance ToJSON CIdRBlock where
 data AcceleratorConfig =
   AcceleratorConfig'
     { _acAcceleratorCount :: !(Maybe (Textual Int64))
-    , _acAcceleratorType  :: !(Maybe Text)
+    , _acAcceleratorType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4921,8 +4921,8 @@ instance ToJSON AcceleratorConfig where
 -- /See:/ 'setLocationsRequest' smart constructor.
 data SetLocationsRequest =
   SetLocationsRequest'
-    { _sZone      :: !(Maybe Text)
-    , _sName      :: !(Maybe Text)
+    { _sZone :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
     , _sClusterId :: !(Maybe Text)
     , _sProjectId :: !(Maybe Text)
     , _sLocations :: !(Maybe [Text])
@@ -5015,10 +5015,10 @@ instance ToJSON SetLocationsRequest where
 -- /See:/ 'setNetworkPolicyRequest' smart constructor.
 data SetNetworkPolicyRequest =
   SetNetworkPolicyRequest'
-    { _snprZone          :: !(Maybe Text)
-    , _snprName          :: !(Maybe Text)
-    , _snprClusterId     :: !(Maybe Text)
-    , _snprProjectId     :: !(Maybe Text)
+    { _snprZone :: !(Maybe Text)
+    , _snprName :: !(Maybe Text)
+    , _snprClusterId :: !(Maybe Text)
+    , _snprProjectId :: !(Maybe Text)
     , _snprNetworkPolicy :: !(Maybe NetworkPolicy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5107,11 +5107,11 @@ instance ToJSON SetNetworkPolicyRequest where
 -- /See:/ 'privateClusterConfig' smart constructor.
 data PrivateClusterConfig =
   PrivateClusterConfig'
-    { _pccEnablePrivateNodes    :: !(Maybe Bool)
+    { _pccEnablePrivateNodes :: !(Maybe Bool)
     , _pccEnablePrivateEndpoint :: !(Maybe Bool)
-    , _pccPublicEndpoint        :: !(Maybe Text)
-    , _pccMasterIPv4CIdRBlock   :: !(Maybe Text)
-    , _pccPrivateEndpoint       :: !(Maybe Text)
+    , _pccPublicEndpoint :: !(Maybe Text)
+    , _pccMasterIPv4CIdRBlock :: !(Maybe Text)
+    , _pccPrivateEndpoint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5207,7 +5207,7 @@ instance ToJSON PrivateClusterConfig where
 data DailyMaintenanceWindow =
   DailyMaintenanceWindow'
     { _dmwStartTime :: !(Maybe Text)
-    , _dmwDuration  :: !(Maybe Text)
+    , _dmwDuration :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5259,7 +5259,7 @@ instance ToJSON DailyMaintenanceWindow where
 -- /See:/ 'listClustersResponse' smart constructor.
 data ListClustersResponse =
   ListClustersResponse'
-    { _lcrClusters     :: !(Maybe [Cluster])
+    { _lcrClusters :: !(Maybe [Cluster])
     , _lcrMissingZones :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5317,15 +5317,15 @@ instance ToJSON ListClustersResponse where
 -- /See:/ 'clusterUpdate' smart constructor.
 data ClusterUpdate =
   ClusterUpdate'
-    { _cuDesiredNodePoolAutoscaling            :: !(Maybe NodePoolAutoscaling)
-    , _cuDesiredAddonsConfig                   :: !(Maybe AddonsConfig)
-    , _cuDesiredNodePoolId                     :: !(Maybe Text)
+    { _cuDesiredNodePoolAutoscaling :: !(Maybe NodePoolAutoscaling)
+    , _cuDesiredAddonsConfig :: !(Maybe AddonsConfig)
+    , _cuDesiredNodePoolId :: !(Maybe Text)
     , _cuDesiredMasterAuthorizedNetworksConfig :: !(Maybe MasterAuthorizedNetworksConfig)
-    , _cuDesiredImageType                      :: !(Maybe Text)
-    , _cuDesiredNodeVersion                    :: !(Maybe Text)
-    , _cuDesiredMasterVersion                  :: !(Maybe Text)
-    , _cuDesiredLocations                      :: !(Maybe [Text])
-    , _cuDesiredMonitoringService              :: !(Maybe Text)
+    , _cuDesiredImageType :: !(Maybe Text)
+    , _cuDesiredNodeVersion :: !(Maybe Text)
+    , _cuDesiredMasterVersion :: !(Maybe Text)
+    , _cuDesiredLocations :: !(Maybe [Text])
+    , _cuDesiredMonitoringService :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5494,11 +5494,11 @@ instance ToJSON ClusterUpdate where
 -- /See:/ 'rollbackNodePoolUpgradeRequest' smart constructor.
 data RollbackNodePoolUpgradeRequest =
   RollbackNodePoolUpgradeRequest'
-    { _rnpurZone       :: !(Maybe Text)
+    { _rnpurZone :: !(Maybe Text)
     , _rnpurNodePoolId :: !(Maybe Text)
-    , _rnpurName       :: !(Maybe Text)
-    , _rnpurClusterId  :: !(Maybe Text)
-    , _rnpurProjectId  :: !(Maybe Text)
+    , _rnpurName :: !(Maybe Text)
+    , _rnpurClusterId :: !(Maybe Text)
+    , _rnpurProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5591,7 +5591,7 @@ instance ToJSON RollbackNodePoolUpgradeRequest where
 -- /See:/ 'networkPolicy' smart constructor.
 data NetworkPolicy =
   NetworkPolicy'
-    { _npEnabled  :: !(Maybe Bool)
+    { _npEnabled :: !(Maybe Bool)
     , _npProvider :: !(Maybe NetworkPolicyProvider)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5718,9 +5718,9 @@ instance ToJSON GetJSONWebKeysResponse where
 -- /See:/ 'createNodePoolRequest' smart constructor.
 data CreateNodePoolRequest =
   CreateNodePoolRequest'
-    { _cnprParent    :: !(Maybe Text)
-    , _cnprZone      :: !(Maybe Text)
-    , _cnprNodePool  :: !(Maybe NodePool)
+    { _cnprParent :: !(Maybe Text)
+    , _cnprZone :: !(Maybe Text)
+    , _cnprNodePool :: !(Maybe NodePool)
     , _cnprClusterId :: !(Maybe Text)
     , _cnprProjectId :: !(Maybe Text)
     }

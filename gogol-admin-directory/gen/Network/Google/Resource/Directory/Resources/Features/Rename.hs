@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Resources.Features.Rename
     , rfrOldName
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.rename@ method which the
 -- 'ResourcesFeaturesRename' request conforms to.
@@ -61,9 +61,9 @@ type ResourcesFeaturesRenameResource =
 -- /See:/ 'resourcesFeaturesRename' smart constructor.
 data ResourcesFeaturesRename =
   ResourcesFeaturesRename'
-    { _rfrPayload  :: !FeatureRename
+    { _rfrPayload :: !FeatureRename
     , _rfrCustomer :: !Text
-    , _rfrOldName  :: !Text
+    , _rfrOldName :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

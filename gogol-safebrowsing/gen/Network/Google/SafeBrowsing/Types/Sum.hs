@@ -16,7 +16,7 @@
 --
 module Network.Google.SafeBrowsing.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The type of threat posed by entries present in the list.
 data ListUpdateRequestThreatType

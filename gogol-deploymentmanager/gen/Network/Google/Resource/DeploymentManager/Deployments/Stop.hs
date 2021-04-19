@@ -39,8 +39,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.Stop
     , dsDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.stop@ method which the
 -- 'DeploymentsStop' request conforms to.
@@ -63,8 +63,8 @@ type DeploymentsStopResource =
 -- /See:/ 'deploymentsStop' smart constructor.
 data DeploymentsStop =
   DeploymentsStop'
-    { _dsProject    :: !Text
-    , _dsPayload    :: !DeploymentsStopRequest
+    { _dsProject :: !Text
+    , _dsPayload :: !DeploymentsStopRequest
     , _dsDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

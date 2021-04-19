@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Notifications.Delete
     , ndNotificationId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.notifications.delete@ method which the
 -- 'NotificationsDelete' request conforms to.
@@ -57,7 +57,7 @@ type NotificationsDeleteResource =
 -- /See:/ 'notificationsDelete' smart constructor.
 data NotificationsDelete =
   NotificationsDelete'
-    { _ndCustomer       :: !Text
+    { _ndCustomer :: !Text
     , _ndNotificationId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -53,8 +53,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Operations.List
     , oolCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.operations.list@ method which the
 -- 'OrganizationsOperationsList' request conforms to.
@@ -86,15 +86,15 @@ type OrganizationsOperationsListResource =
 -- /See:/ 'organizationsOperationsList' smart constructor.
 data OrganizationsOperationsList =
   OrganizationsOperationsList'
-    { _oolXgafv          :: !(Maybe Xgafv)
+    { _oolXgafv :: !(Maybe Xgafv)
     , _oolUploadProtocol :: !(Maybe Text)
-    , _oolAccessToken    :: !(Maybe Text)
-    , _oolUploadType     :: !(Maybe Text)
-    , _oolName           :: !Text
-    , _oolFilter         :: !(Maybe Text)
-    , _oolPageToken      :: !(Maybe Text)
-    , _oolPageSize       :: !(Maybe (Textual Int32))
-    , _oolCallback       :: !(Maybe Text)
+    , _oolAccessToken :: !(Maybe Text)
+    , _oolUploadType :: !(Maybe Text)
+    , _oolName :: !Text
+    , _oolFilter :: !(Maybe Text)
+    , _oolPageToken :: !(Maybe Text)
+    , _oolPageSize :: !(Maybe (Textual Int32))
+    , _oolCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

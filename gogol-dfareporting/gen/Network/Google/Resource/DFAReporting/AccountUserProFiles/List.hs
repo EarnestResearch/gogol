@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.List
     , aupflMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.list@ method which the
 -- 'AccountUserProFilesList' request conforms to.
@@ -79,16 +79,16 @@ type AccountUserProFilesListResource =
 -- /See:/ 'accountUserProFilesList' smart constructor.
 data AccountUserProFilesList =
   AccountUserProFilesList'
-    { _aupflUserRoleId   :: !(Maybe (Textual Int64))
+    { _aupflUserRoleId :: !(Maybe (Textual Int64))
     , _aupflSearchString :: !(Maybe Text)
-    , _aupflIds          :: !(Maybe [Textual Int64])
-    , _aupflProFileId    :: !(Textual Int64)
-    , _aupflSortOrder    :: !AccountUserProFilesListSortOrder
-    , _aupflActive       :: !(Maybe Bool)
-    , _aupflPageToken    :: !(Maybe Text)
-    , _aupflSortField    :: !AccountUserProFilesListSortField
+    , _aupflIds :: !(Maybe [Textual Int64])
+    , _aupflProFileId :: !(Textual Int64)
+    , _aupflSortOrder :: !AccountUserProFilesListSortOrder
+    , _aupflActive :: !(Maybe Bool)
+    , _aupflPageToken :: !(Maybe Text)
+    , _aupflSortField :: !AccountUserProFilesListSortField
     , _aupflSubAccountId :: !(Maybe (Textual Int64))
-    , _aupflMaxResults   :: !(Textual Int32)
+    , _aupflMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

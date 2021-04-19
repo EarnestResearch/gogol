@@ -48,8 +48,8 @@ module Network.Google.Resource.Genomics.Pipelines.Run
     , prCallback
     ) where
 
-import           Network.Google.Genomics.Types
-import           Network.Google.Prelude
+import Network.Google.Genomics.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @genomics.pipelines.run@ method which the
 -- 'PipelinesRun' request conforms to.
@@ -77,12 +77,12 @@ type PipelinesRunResource =
 -- /See:/ 'pipelinesRun' smart constructor.
 data PipelinesRun =
   PipelinesRun'
-    { _prXgafv          :: !(Maybe Xgafv)
+    { _prXgafv :: !(Maybe Xgafv)
     , _prUploadProtocol :: !(Maybe Text)
-    , _prAccessToken    :: !(Maybe Text)
-    , _prUploadType     :: !(Maybe Text)
-    , _prPayload        :: !RunPipelineRequest
-    , _prCallback       :: !(Maybe Text)
+    , _prAccessToken :: !(Maybe Text)
+    , _prUploadType :: !(Maybe Text)
+    , _prPayload :: !RunPipelineRequest
+    , _prCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

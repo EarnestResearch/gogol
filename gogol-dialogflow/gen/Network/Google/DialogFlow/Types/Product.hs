@@ -17,8 +17,8 @@
 --
 module Network.Google.DialogFlow.Types.Product where
 
-import           Network.Google.DialogFlow.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data GoogleRpcStatus =
   GoogleRpcStatus'
     { _grsDetails :: !(Maybe [GoogleRpcStatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -124,7 +124,7 @@ instance ToJSON GoogleRpcStatus where
 -- /See:/ 'googleCloudDialogflowV2IntentFollowupIntentInfo' smart constructor.
 data GoogleCloudDialogflowV2IntentFollowupIntentInfo =
   GoogleCloudDialogflowV2IntentFollowupIntentInfo'
-    { _gcdvifiiFollowupIntentName       :: !(Maybe Text)
+    { _gcdvifiiFollowupIntentName :: !(Maybe Text)
     , _gcdvifiiParentFollowupIntentName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -241,11 +241,11 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2SynthesizeSpeechConfig' smart constructor.
 data GoogleCloudDialogflowV2SynthesizeSpeechConfig =
   GoogleCloudDialogflowV2SynthesizeSpeechConfig'
-    { _gcdvsscVolumeGainDB     :: !(Maybe (Textual Double))
+    { _gcdvsscVolumeGainDB :: !(Maybe (Textual Double))
     , _gcdvsscEffectsProFileId :: !(Maybe [Text])
-    , _gcdvsscVoice            :: !(Maybe GoogleCloudDialogflowV2VoiceSelectionParams)
-    , _gcdvsscSpeakingRate     :: !(Maybe (Textual Double))
-    , _gcdvsscPitch            :: !(Maybe (Textual Double))
+    , _gcdvsscVoice :: !(Maybe GoogleCloudDialogflowV2VoiceSelectionParams)
+    , _gcdvsscSpeakingRate :: !(Maybe (Textual Double))
+    , _gcdvsscPitch :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -354,11 +354,11 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2InputAudioConfig' smart constructor.
 data GoogleCloudDialogflowV2InputAudioConfig =
   GoogleCloudDialogflowV2InputAudioConfig'
-    { _gcdviacLanguageCode    :: !(Maybe Text)
-    , _gcdviacPhraseHints     :: !(Maybe [Text])
+    { _gcdviacLanguageCode :: !(Maybe Text)
+    , _gcdviacPhraseHints :: !(Maybe [Text])
     , _gcdviacSampleRateHertz :: !(Maybe (Textual Int32))
-    , _gcdviacModelVariant    :: !(Maybe GoogleCloudDialogflowV2InputAudioConfigModelVariant)
-    , _gcdviacAudioEncoding   :: !(Maybe GoogleCloudDialogflowV2InputAudioConfigAudioEncoding)
+    , _gcdviacModelVariant :: !(Maybe GoogleCloudDialogflowV2InputAudioConfigModelVariant)
+    , _gcdviacAudioEncoding :: !(Maybe GoogleCloudDialogflowV2InputAudioConfigAudioEncoding)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -559,9 +559,9 @@ instance ToJSON
 data GoogleCloudDialogflowV2WebhookRequest =
   GoogleCloudDialogflowV2WebhookRequest'
     { _gcdvwrOriginalDetectIntentRequest :: !(Maybe GoogleCloudDialogflowV2OriginalDetectIntentRequest)
-    , _gcdvwrResponseId                  :: !(Maybe Text)
-    , _gcdvwrQueryResult                 :: !(Maybe GoogleCloudDialogflowV2QueryResult)
-    , _gcdvwrSession                     :: !(Maybe Text)
+    , _gcdvwrResponseId :: !(Maybe Text)
+    , _gcdvwrQueryResult :: !(Maybe GoogleCloudDialogflowV2QueryResult)
+    , _gcdvwrSession :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -646,10 +646,10 @@ instance ToJSON GoogleCloudDialogflowV2WebhookRequest
 -- /See:/ 'googleCloudDialogflowV2IntentMessageCarouselSelectItem' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageCarouselSelectItem =
   GoogleCloudDialogflowV2IntentMessageCarouselSelectItem'
-    { _gcdvimcsiImage       :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
-    , _gcdvimcsiTitle       :: !(Maybe Text)
+    { _gcdvimcsiImage :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
+    , _gcdvimcsiTitle :: !(Maybe Text)
     , _gcdvimcsiDescription :: !(Maybe Text)
-    , _gcdvimcsiInfo        :: !(Maybe GoogleCloudDialogflowV2IntentMessageSelectItemInfo)
+    , _gcdvimcsiInfo :: !(Maybe GoogleCloudDialogflowV2IntentMessageSelectItemInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -735,8 +735,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2EventInput =
   GoogleCloudDialogflowV2EventInput'
     { _gcdveiLanguageCode :: !(Maybe Text)
-    , _gcdveiName         :: !(Maybe Text)
-    , _gcdveiParameters   :: !(Maybe GoogleCloudDialogflowV2EventInputParameters)
+    , _gcdveiName :: !(Maybe Text)
+    , _gcdveiParameters :: !(Maybe GoogleCloudDialogflowV2EventInputParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -804,8 +804,8 @@ instance ToJSON GoogleCloudDialogflowV2EventInput
 -- /See:/ 'googleCloudDialogflowV2IntentMessageSimpleResponse' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageSimpleResponse =
   GoogleCloudDialogflowV2IntentMessageSimpleResponse'
-    { _gcdvimsrDisplayText  :: !(Maybe Text)
-    , _gcdvimsrSsml         :: !(Maybe Text)
+    { _gcdvimsrDisplayText :: !(Maybe Text)
+    , _gcdvimsrSsml :: !(Maybe Text)
     , _gcdvimsrTextToSpeech :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -923,10 +923,10 @@ instance ToJSON GoogleLongrunningOperationMetadata
 -- /See:/ 'googleCloudDialogflowV2IntentTrainingPhrase' smart constructor.
 data GoogleCloudDialogflowV2IntentTrainingPhrase =
   GoogleCloudDialogflowV2IntentTrainingPhrase'
-    { _gcdvitpParts           :: !(Maybe [GoogleCloudDialogflowV2IntentTrainingPhrasePart])
-    , _gcdvitpName            :: !(Maybe Text)
+    { _gcdvitpParts :: !(Maybe [GoogleCloudDialogflowV2IntentTrainingPhrasePart])
+    , _gcdvitpName :: !(Maybe Text)
     , _gcdvitpTimesAddedCount :: !(Maybe (Textual Int32))
-    , _gcdvitpType            :: !(Maybe GoogleCloudDialogflowV2IntentTrainingPhraseType)
+    , _gcdvitpType :: !(Maybe GoogleCloudDialogflowV2IntentTrainingPhraseType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1020,10 +1020,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageCarouselSelectItem' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem =
   GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem'
-    { _gImage       :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
-    , _gTitle       :: !(Maybe Text)
+    { _gImage :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
+    , _gTitle :: !(Maybe Text)
     , _gDescription :: !(Maybe Text)
-    , _gInfo        :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo)
+    , _gInfo :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1096,10 +1096,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageBasicCard' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageBasicCard =
   GoogleCloudDialogflowV2IntentMessageBasicCard'
-    { _gcdvimbcImage         :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
-    , _gcdvimbcButtons       :: !(Maybe [GoogleCloudDialogflowV2IntentMessageBasicCardButton])
-    , _gcdvimbcSubtitle      :: !(Maybe Text)
-    , _gcdvimbcTitle         :: !(Maybe Text)
+    { _gcdvimbcImage :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
+    , _gcdvimbcButtons :: !(Maybe [GoogleCloudDialogflowV2IntentMessageBasicCardButton])
+    , _gcdvimbcSubtitle :: !(Maybe Text)
+    , _gcdvimbcTitle :: !(Maybe Text)
     , _gcdvimbcFormattedText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1193,8 +1193,8 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageSimpleResponse' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageSimpleResponse =
   GoogleCloudDialogflowV2beta1IntentMessageSimpleResponse'
-    { _gDisplayText  :: !(Maybe Text)
-    , _gSsml         :: !(Maybe Text)
+    { _gDisplayText :: !(Maybe Text)
+    , _gSsml :: !(Maybe Text)
     , _gTextToSpeech :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1265,23 +1265,23 @@ instance ToJSON
 data GoogleCloudDialogflowV2Intent =
   GoogleCloudDialogflowV2Intent'
     { _gcdviDefaultResponsePlatforms :: !(Maybe [Text])
-    , _gcdviWebhookState             :: !(Maybe GoogleCloudDialogflowV2IntentWebhookState)
-    , _gcdviPriority                 :: !(Maybe (Textual Int32))
-    , _gcdviAction                   :: !(Maybe Text)
-    , _gcdviRootFollowupIntentName   :: !(Maybe Text)
-    , _gcdviName                     :: !(Maybe Text)
-    , _gcdviEvents                   :: !(Maybe [Text])
-    , _gcdviParameters               :: !(Maybe [GoogleCloudDialogflowV2IntentParameter])
-    , _gcdviDisplayName              :: !(Maybe Text)
-    , _gcdviInputContextNames        :: !(Maybe [Text])
-    , _gcdviMessages                 :: !(Maybe [GoogleCloudDialogflowV2IntentMessage])
+    , _gcdviWebhookState :: !(Maybe GoogleCloudDialogflowV2IntentWebhookState)
+    , _gcdviPriority :: !(Maybe (Textual Int32))
+    , _gcdviAction :: !(Maybe Text)
+    , _gcdviRootFollowupIntentName :: !(Maybe Text)
+    , _gcdviName :: !(Maybe Text)
+    , _gcdviEvents :: !(Maybe [Text])
+    , _gcdviParameters :: !(Maybe [GoogleCloudDialogflowV2IntentParameter])
+    , _gcdviDisplayName :: !(Maybe Text)
+    , _gcdviInputContextNames :: !(Maybe [Text])
+    , _gcdviMessages :: !(Maybe [GoogleCloudDialogflowV2IntentMessage])
     , _gcdviParentFollowupIntentName :: !(Maybe Text)
-    , _gcdviOutputContexts           :: !(Maybe [GoogleCloudDialogflowV2Context])
-    , _gcdviTrainingPhrases          :: !(Maybe [GoogleCloudDialogflowV2IntentTrainingPhrase])
-    , _gcdviFollowupIntentInfo       :: !(Maybe [GoogleCloudDialogflowV2IntentFollowupIntentInfo])
-    , _gcdviIsFallback               :: !(Maybe Bool)
-    , _gcdviMlDisabled               :: !(Maybe Bool)
-    , _gcdviResetContexts            :: !(Maybe Bool)
+    , _gcdviOutputContexts :: !(Maybe [GoogleCloudDialogflowV2Context])
+    , _gcdviTrainingPhrases :: !(Maybe [GoogleCloudDialogflowV2IntentTrainingPhrase])
+    , _gcdviFollowupIntentInfo :: !(Maybe [GoogleCloudDialogflowV2IntentFollowupIntentInfo])
+    , _gcdviIsFallback :: !(Maybe Bool)
+    , _gcdviMlDisabled :: !(Maybe Bool)
+    , _gcdviResetContexts :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1556,7 +1556,7 @@ instance ToJSON GoogleCloudDialogflowV2Intent where
 data GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton =
   GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton'
     { _gcdvimbcbOpenURIAction :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageBasicCardButtonOpenURIAction)
-    , _gcdvimbcbTitle         :: !(Maybe Text)
+    , _gcdvimbcbTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1662,7 +1662,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2BatchCreateEntitiesRequest =
   GoogleCloudDialogflowV2BatchCreateEntitiesRequest'
     { _gcdvbcerLanguageCode :: !(Maybe Text)
-    , _gcdvbcerEntities     :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
+    , _gcdvbcerEntities :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1823,21 +1823,21 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2QueryResult' smart constructor.
 data GoogleCloudDialogflowV2QueryResult =
   GoogleCloudDialogflowV2QueryResult'
-    { _gcdvqrLanguageCode                :: !(Maybe Text)
-    , _gcdvqrAllRequiredParamsPresent    :: !(Maybe Bool)
-    , _gcdvqrIntentDetectionConfidence   :: !(Maybe (Textual Double))
-    , _gcdvqrFulfillmentMessages         :: !(Maybe [GoogleCloudDialogflowV2IntentMessage])
+    { _gcdvqrLanguageCode :: !(Maybe Text)
+    , _gcdvqrAllRequiredParamsPresent :: !(Maybe Bool)
+    , _gcdvqrIntentDetectionConfidence :: !(Maybe (Textual Double))
+    , _gcdvqrFulfillmentMessages :: !(Maybe [GoogleCloudDialogflowV2IntentMessage])
     , _gcdvqrSpeechRecognitionConfidence :: !(Maybe (Textual Double))
-    , _gcdvqrAction                      :: !(Maybe Text)
-    , _gcdvqrIntent                      :: !(Maybe GoogleCloudDialogflowV2Intent)
-    , _gcdvqrSentimentAnalysisResult     :: !(Maybe GoogleCloudDialogflowV2SentimentAnalysisResult)
-    , _gcdvqrQueryText                   :: !(Maybe Text)
-    , _gcdvqrFulfillmentText             :: !(Maybe Text)
-    , _gcdvqrParameters                  :: !(Maybe GoogleCloudDialogflowV2QueryResultParameters)
-    , _gcdvqrWebhookPayload              :: !(Maybe GoogleCloudDialogflowV2QueryResultWebhookPayload)
-    , _gcdvqrOutputContexts              :: !(Maybe [GoogleCloudDialogflowV2Context])
-    , _gcdvqrWebhookSource               :: !(Maybe Text)
-    , _gcdvqrDiagnosticInfo              :: !(Maybe GoogleCloudDialogflowV2QueryResultDiagnosticInfo)
+    , _gcdvqrAction :: !(Maybe Text)
+    , _gcdvqrIntent :: !(Maybe GoogleCloudDialogflowV2Intent)
+    , _gcdvqrSentimentAnalysisResult :: !(Maybe GoogleCloudDialogflowV2SentimentAnalysisResult)
+    , _gcdvqrQueryText :: !(Maybe Text)
+    , _gcdvqrFulfillmentText :: !(Maybe Text)
+    , _gcdvqrParameters :: !(Maybe GoogleCloudDialogflowV2QueryResultParameters)
+    , _gcdvqrWebhookPayload :: !(Maybe GoogleCloudDialogflowV2QueryResultWebhookPayload)
+    , _gcdvqrOutputContexts :: !(Maybe [GoogleCloudDialogflowV2Context])
+    , _gcdvqrWebhookSource :: !(Maybe Text)
+    , _gcdvqrDiagnosticInfo :: !(Maybe GoogleCloudDialogflowV2QueryResultDiagnosticInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2074,10 +2074,10 @@ instance ToJSON GoogleCloudDialogflowV2QueryResult
 -- /See:/ 'googleCloudDialogflowV2BatchUpdateIntentsRequest' smart constructor.
 data GoogleCloudDialogflowV2BatchUpdateIntentsRequest =
   GoogleCloudDialogflowV2BatchUpdateIntentsRequest'
-    { _gcdvbuirLanguageCode      :: !(Maybe Text)
-    , _gcdvbuirUpdateMask        :: !(Maybe GFieldMask)
-    , _gcdvbuirIntentView        :: !(Maybe GoogleCloudDialogflowV2BatchUpdateIntentsRequestIntentView)
-    , _gcdvbuirIntentBatchURI    :: !(Maybe Text)
+    { _gcdvbuirLanguageCode :: !(Maybe Text)
+    , _gcdvbuirUpdateMask :: !(Maybe GFieldMask)
+    , _gcdvbuirIntentView :: !(Maybe GoogleCloudDialogflowV2BatchUpdateIntentsRequestIntentView)
+    , _gcdvbuirIntentBatchURI :: !(Maybe Text)
     , _gcdvbuirIntentBatchInline :: !(Maybe GoogleCloudDialogflowV2IntentBatch)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2181,7 +2181,7 @@ instance ToJSON
 -- /See:/ 'googleTypeLatLng' smart constructor.
 data GoogleTypeLatLng =
   GoogleTypeLatLng'
-    { _gtllLatitude  :: !(Maybe (Textual Double))
+    { _gtllLatitude :: !(Maybe (Textual Double))
     , _gtllLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2233,12 +2233,12 @@ instance ToJSON GoogleTypeLatLng where
 data GoogleCloudDialogflowV2beta1WebhookResponse =
   GoogleCloudDialogflowV2beta1WebhookResponse'
     { _gcdvwrFulfillmentMessages :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessage])
-    , _gcdvwrPayload             :: !(Maybe GoogleCloudDialogflowV2beta1WebhookResponsePayload)
-    , _gcdvwrFulfillmentText     :: !(Maybe Text)
-    , _gcdvwrSource              :: !(Maybe Text)
-    , _gcdvwrEndInteraction      :: !(Maybe Bool)
-    , _gcdvwrOutputContexts      :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
-    , _gcdvwrFollowupEventInput  :: !(Maybe GoogleCloudDialogflowV2beta1EventInput)
+    , _gcdvwrPayload :: !(Maybe GoogleCloudDialogflowV2beta1WebhookResponsePayload)
+    , _gcdvwrFulfillmentText :: !(Maybe Text)
+    , _gcdvwrSource :: !(Maybe Text)
+    , _gcdvwrEndInteraction :: !(Maybe Bool)
+    , _gcdvwrOutputContexts :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
+    , _gcdvwrFollowupEventInput :: !(Maybe GoogleCloudDialogflowV2beta1EventInput)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2491,7 +2491,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageQuickReplies' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageQuickReplies =
   GoogleCloudDialogflowV2IntentMessageQuickReplies'
-    { _gcdvimqrTitle        :: !(Maybe Text)
+    { _gcdvimqrTitle :: !(Maybe Text)
     , _gcdvimqrQuickReplies :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2598,7 +2598,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageCardButton' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageCardButton =
   GoogleCloudDialogflowV2beta1IntentMessageCardButton'
-    { _gcdvimcbText     :: !(Maybe Text)
+    { _gcdvimcbText :: !(Maybe Text)
     , _gcdvimcbPostback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2912,10 +2912,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentTrainingPhrasePart' smart constructor.
 data GoogleCloudDialogflowV2IntentTrainingPhrasePart =
   GoogleCloudDialogflowV2IntentTrainingPhrasePart'
-    { _gcdvitppText        :: !(Maybe Text)
+    { _gcdvitppText :: !(Maybe Text)
     , _gcdvitppUserDefined :: !(Maybe Bool)
-    , _gcdvitppEntityType  :: !(Maybe Text)
-    , _gcdvitppAlias       :: !(Maybe Text)
+    , _gcdvitppEntityType :: !(Maybe Text)
+    , _gcdvitppAlias :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3093,7 +3093,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageQuickReplies' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageQuickReplies =
   GoogleCloudDialogflowV2beta1IntentMessageQuickReplies'
-    { _gcdvimqrsTitle        :: !(Maybe Text)
+    { _gcdvimqrsTitle :: !(Maybe Text)
     , _gcdvimqrsQuickReplies :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3155,7 +3155,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageLinkOutSuggestion' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion =
   GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion'
-    { _gcdvimlosURI             :: !(Maybe Text)
+    { _gcdvimlosURI :: !(Maybe Text)
     , _gcdvimlosDestinationName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3213,7 +3213,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2ImportAgentRequest' smart constructor.
 data GoogleCloudDialogflowV2ImportAgentRequest =
   GoogleCloudDialogflowV2ImportAgentRequest'
-    { _gcdviarAgentURI     :: !(Maybe Text)
+    { _gcdviarAgentURI :: !(Maybe Text)
     , _gcdviarAgentContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3417,7 +3417,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageCardButton' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageCardButton =
   GoogleCloudDialogflowV2IntentMessageCardButton'
-    { _gText     :: !(Maybe Text)
+    { _gText :: !(Maybe Text)
     , _gPostback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3527,10 +3527,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageCard' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageCard =
   GoogleCloudDialogflowV2beta1IntentMessageCard'
-    { _gcdvimcButtons  :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessageCardButton])
+    { _gcdvimcButtons :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessageCardButton])
     , _gcdvimcImageURI :: !(Maybe Text)
     , _gcdvimcSubtitle :: !(Maybe Text)
-    , _gcdvimcTitle    :: !(Maybe Text)
+    , _gcdvimcTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3611,7 +3611,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2RestoreAgentRequest' smart constructor.
 data GoogleCloudDialogflowV2RestoreAgentRequest =
   GoogleCloudDialogflowV2RestoreAgentRequest'
-    { _gcdvrarAgentURI     :: !(Maybe Text)
+    { _gcdvrarAgentURI :: !(Maybe Text)
     , _gcdvrarAgentContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3775,13 +3775,13 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2QueryParameters' smart constructor.
 data GoogleCloudDialogflowV2QueryParameters =
   GoogleCloudDialogflowV2QueryParameters'
-    { _gcdvqpContexts                       :: !(Maybe [GoogleCloudDialogflowV2Context])
+    { _gcdvqpContexts :: !(Maybe [GoogleCloudDialogflowV2Context])
     , _gcdvqpSentimentAnalysisRequestConfig :: !(Maybe GoogleCloudDialogflowV2SentimentAnalysisRequestConfig)
-    , _gcdvqpPayload                        :: !(Maybe GoogleCloudDialogflowV2QueryParametersPayload)
-    , _gcdvqpGeoLocation                    :: !(Maybe GoogleTypeLatLng)
-    , _gcdvqpTimeZone                       :: !(Maybe Text)
-    , _gcdvqpSessionEntityTypes             :: !(Maybe [GoogleCloudDialogflowV2SessionEntityType])
-    , _gcdvqpResetContexts                  :: !(Maybe Bool)
+    , _gcdvqpPayload :: !(Maybe GoogleCloudDialogflowV2QueryParametersPayload)
+    , _gcdvqpGeoLocation :: !(Maybe GoogleTypeLatLng)
+    , _gcdvqpTimeZone :: !(Maybe Text)
+    , _gcdvqpSessionEntityTypes :: !(Maybe [GoogleCloudDialogflowV2SessionEntityType])
+    , _gcdvqpResetContexts :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3956,7 +3956,7 @@ data GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest =
   GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest'
     { _gcdvodirPayload :: !(Maybe GoogleCloudDialogflowV2beta1OriginalDetectIntentRequestPayload)
     , _gcdvodirVersion :: !(Maybe Text)
-    , _gcdvodirSource  :: !(Maybe Text)
+    , _gcdvodirSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4089,10 +4089,10 @@ instance ToJSON
 data GoogleCloudDialogflowV2DetectIntentResponse =
   GoogleCloudDialogflowV2DetectIntentResponse'
     { _gcdvdirOutputAudioConfig :: !(Maybe GoogleCloudDialogflowV2OutputAudioConfig)
-    , _gcdvdirResponseId        :: !(Maybe Text)
-    , _gcdvdirOutputAudio       :: !(Maybe Bytes)
-    , _gcdvdirWebhookStatus     :: !(Maybe GoogleRpcStatus)
-    , _gcdvdirQueryResult       :: !(Maybe GoogleCloudDialogflowV2QueryResult)
+    , _gcdvdirResponseId :: !(Maybe Text)
+    , _gcdvdirOutputAudio :: !(Maybe Bytes)
+    , _gcdvdirWebhookStatus :: !(Maybe GoogleRpcStatus)
+    , _gcdvdirQueryResult :: !(Maybe GoogleCloudDialogflowV2QueryResult)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4192,10 +4192,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageListSelectItem' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageListSelectItem =
   GoogleCloudDialogflowV2IntentMessageListSelectItem'
-    { _gcdvimlsiImage       :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
-    , _gcdvimlsiTitle       :: !(Maybe Text)
+    { _gcdvimlsiImage :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
+    , _gcdvimlsiTitle :: !(Maybe Text)
     , _gcdvimlsiDescription :: !(Maybe Text)
-    , _gcdvimlsiInfo        :: !(Maybe GoogleCloudDialogflowV2IntentMessageSelectItemInfo)
+    , _gcdvimlsiInfo :: !(Maybe GoogleCloudDialogflowV2IntentMessageSelectItemInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4371,7 +4371,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2VoiceSelectionParams =
   GoogleCloudDialogflowV2VoiceSelectionParams'
     { _gcdvvspSsmlGender :: !(Maybe GoogleCloudDialogflowV2VoiceSelectionParamsSsmlGender)
-    , _gcdvvspName       :: !(Maybe Text)
+    , _gcdvvspName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4523,10 +4523,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2DetectIntentRequest' smart constructor.
 data GoogleCloudDialogflowV2DetectIntentRequest =
   GoogleCloudDialogflowV2DetectIntentRequest'
-    { _gQueryInput        :: !(Maybe GoogleCloudDialogflowV2QueryInput)
+    { _gQueryInput :: !(Maybe GoogleCloudDialogflowV2QueryInput)
     , _gOutputAudioConfig :: !(Maybe GoogleCloudDialogflowV2OutputAudioConfig)
-    , _gInputAudio        :: !(Maybe Bytes)
-    , _gQueryParams       :: !(Maybe GoogleCloudDialogflowV2QueryParameters)
+    , _gInputAudio :: !(Maybe Bytes)
+    , _gQueryParams :: !(Maybe GoogleCloudDialogflowV2QueryParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4656,10 +4656,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageBasicCard' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageBasicCard =
   GoogleCloudDialogflowV2beta1IntentMessageBasicCard'
-    { _gcdvimbccImage         :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
-    , _gcdvimbccButtons       :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton])
-    , _gcdvimbccSubtitle      :: !(Maybe Text)
-    , _gcdvimbccTitle         :: !(Maybe Text)
+    { _gcdvimbccImage :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
+    , _gcdvimbccButtons :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessageBasicCardButton])
+    , _gcdvimbccSubtitle :: !(Maybe Text)
+    , _gcdvimbccTitle :: !(Maybe Text)
     , _gcdvimbccFormattedText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4754,10 +4754,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentTrainingPhrase' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentTrainingPhrase =
   GoogleCloudDialogflowV2beta1IntentTrainingPhrase'
-    { _gParts           :: !(Maybe [GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart])
-    , _gName            :: !(Maybe Text)
+    { _gParts :: !(Maybe [GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart])
+    , _gName :: !(Maybe Text)
     , _gTimesAddedCount :: !(Maybe (Textual Int32))
-    , _gType            :: !(Maybe GoogleCloudDialogflowV2beta1IntentTrainingPhraseType)
+    , _gType :: !(Maybe GoogleCloudDialogflowV2beta1IntentTrainingPhraseType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4847,10 +4847,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1KnowledgeAnswersAnswer' smart constructor.
 data GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer =
   GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer'
-    { _gcdvkaaMatchConfidence      :: !(Maybe (Textual Double))
-    , _gcdvkaaAnswer               :: !(Maybe Text)
-    , _gcdvkaaSource               :: !(Maybe Text)
-    , _gcdvkaaFaqQuestion          :: !(Maybe Text)
+    { _gcdvkaaMatchConfidence :: !(Maybe (Textual Double))
+    , _gcdvkaaAnswer :: !(Maybe Text)
+    , _gcdvkaaSource :: !(Maybe Text)
+    , _gcdvkaaFaqQuestion :: !(Maybe Text)
     , _gcdvkaaMatchConfidenceLevel :: !(Maybe GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswerMatchConfidenceLevel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4964,8 +4964,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2beta1EventInput =
   GoogleCloudDialogflowV2beta1EventInput'
     { _gooLanguageCode :: !(Maybe Text)
-    , _gooName         :: !(Maybe Text)
-    , _gooParameters   :: !(Maybe GoogleCloudDialogflowV2beta1EventInputParameters)
+    , _gooName :: !(Maybe Text)
+    , _gooParameters :: !(Maybe GoogleCloudDialogflowV2beta1EventInputParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5032,8 +5032,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2BatchUpdateEntitiesRequest =
   GoogleCloudDialogflowV2BatchUpdateEntitiesRequest'
     { _gcdvbuerLanguageCode :: !(Maybe Text)
-    , _gcdvbuerUpdateMask   :: !(Maybe GFieldMask)
-    , _gcdvbuerEntities     :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
+    , _gcdvbuerUpdateMask :: !(Maybe GFieldMask)
+    , _gcdvbuerEntities :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5200,10 +5200,10 @@ instance ToJSON
 data GoogleCloudDialogflowV2beta1WebhookRequest =
   GoogleCloudDialogflowV2beta1WebhookRequest'
     { _gOriginalDetectIntentRequest :: !(Maybe GoogleCloudDialogflowV2beta1OriginalDetectIntentRequest)
-    , _gResponseId                  :: !(Maybe Text)
-    , _gAlternativeQueryResults     :: !(Maybe [GoogleCloudDialogflowV2beta1QueryResult])
-    , _gQueryResult                 :: !(Maybe GoogleCloudDialogflowV2beta1QueryResult)
-    , _gSession                     :: !(Maybe Text)
+    , _gResponseId :: !(Maybe Text)
+    , _gAlternativeQueryResults :: !(Maybe [GoogleCloudDialogflowV2beta1QueryResult])
+    , _gQueryResult :: !(Maybe GoogleCloudDialogflowV2beta1QueryResult)
+    , _gSession :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5397,7 +5397,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentFollowupIntentInfo' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo =
   GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo'
-    { _gFollowupIntentName       :: !(Maybe Text)
+    { _gFollowupIntentName :: !(Maybe Text)
     , _gParentFollowupIntentName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5664,7 +5664,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2ListEntityTypesResponse =
   GoogleCloudDialogflowV2ListEntityTypesResponse'
     { _gcdvletrNextPageToken :: !(Maybe Text)
-    , _gcdvletrEntityTypes   :: !(Maybe [GoogleCloudDialogflowV2EntityType])
+    , _gcdvletrEntityTypes :: !(Maybe [GoogleCloudDialogflowV2EntityType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5725,16 +5725,16 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2Agent' smart constructor.
 data GoogleCloudDialogflowV2Agent =
   GoogleCloudDialogflowV2Agent'
-    { _gcdvaParent                  :: !(Maybe Text)
-    , _gcdvaDefaultLanguageCode     :: !(Maybe Text)
-    , _gcdvaEnableLogging           :: !(Maybe Bool)
+    { _gcdvaParent :: !(Maybe Text)
+    , _gcdvaDefaultLanguageCode :: !(Maybe Text)
+    , _gcdvaEnableLogging :: !(Maybe Bool)
     , _gcdvaClassificationThreshold :: !(Maybe (Textual Double))
-    , _gcdvaAvatarURI               :: !(Maybe Text)
-    , _gcdvaSupportedLanguageCodes  :: !(Maybe [Text])
-    , _gcdvaDisplayName             :: !(Maybe Text)
-    , _gcdvaMatchMode               :: !(Maybe GoogleCloudDialogflowV2AgentMatchMode)
-    , _gcdvaTimeZone                :: !(Maybe Text)
-    , _gcdvaDescription             :: !(Maybe Text)
+    , _gcdvaAvatarURI :: !(Maybe Text)
+    , _gcdvaSupportedLanguageCodes :: !(Maybe [Text])
+    , _gcdvaDisplayName :: !(Maybe Text)
+    , _gcdvaMatchMode :: !(Maybe GoogleCloudDialogflowV2AgentMatchMode)
+    , _gcdvaTimeZone :: !(Maybe Text)
+    , _gcdvaDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5896,21 +5896,21 @@ instance ToJSON GoogleCloudDialogflowV2Agent where
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessage' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessage =
   GoogleCloudDialogflowV2beta1IntentMessage'
-    { _gcdvimCard                      :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageCard)
-    , _gcdvimImage                     :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
-    , _gcdvimPlatform                  :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessagePlatform)
-    , _gcdvimLinkOutSuggestion         :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion)
-    , _gcdvimText                      :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageText)
-    , _gcdvimCarouselSelect            :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect)
+    { _gcdvimCard :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageCard)
+    , _gcdvimImage :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
+    , _gcdvimPlatform :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessagePlatform)
+    , _gcdvimLinkOutSuggestion :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion)
+    , _gcdvimText :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageText)
+    , _gcdvimCarouselSelect :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect)
     , _gcdvimTelephonySynthesizeSpeech :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech)
-    , _gcdvimSimpleResponses           :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses)
-    , _gcdvimPayload                   :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessagePayload)
-    , _gcdvimTelephonyTransferCall     :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall)
-    , _gcdvimSuggestions               :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSuggestions)
-    , _gcdvimListSelect                :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageListSelect)
-    , _gcdvimTelephonyPlayAudio        :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio)
-    , _gcdvimBasicCard                 :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageBasicCard)
-    , _gcdvimQuickReplies              :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageQuickReplies)
+    , _gcdvimSimpleResponses :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses)
+    , _gcdvimPayload :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessagePayload)
+    , _gcdvimTelephonyTransferCall :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall)
+    , _gcdvimSuggestions :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSuggestions)
+    , _gcdvimListSelect :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageListSelect)
+    , _gcdvimTelephonyPlayAudio :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio)
+    , _gcdvimBasicCard :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageBasicCard)
+    , _gcdvimQuickReplies :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageQuickReplies)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6114,7 +6114,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageSelectItemInfo' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageSelectItemInfo =
   GoogleCloudDialogflowV2IntentMessageSelectItemInfo'
-    { _gcdvimsiiKey      :: !(Maybe Text)
+    { _gcdvimsiiKey :: !(Maybe Text)
     , _gcdvimsiiSynonyms :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6175,7 +6175,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1Sentiment' smart constructor.
 data GoogleCloudDialogflowV2beta1Sentiment =
   GoogleCloudDialogflowV2beta1Sentiment'
-    { _gcdvsScore     :: !(Maybe (Textual Double))
+    { _gcdvsScore :: !(Maybe (Textual Double))
     , _gcdvsMagnitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6288,8 +6288,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2QueryInput =
   GoogleCloudDialogflowV2QueryInput'
     { _gcdvqiAudioConfig :: !(Maybe GoogleCloudDialogflowV2InputAudioConfig)
-    , _gcdvqiEvent       :: !(Maybe GoogleCloudDialogflowV2EventInput)
-    , _gcdvqiText        :: !(Maybe GoogleCloudDialogflowV2TextInput)
+    , _gcdvqiEvent :: !(Maybe GoogleCloudDialogflowV2EventInput)
+    , _gcdvqiText :: !(Maybe GoogleCloudDialogflowV2TextInput)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6448,8 +6448,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2beta1Context =
   GoogleCloudDialogflowV2beta1Context'
     { _gcdvcLifespanCount :: !(Maybe (Textual Int32))
-    , _gcdvcName          :: !(Maybe Text)
-    , _gcdvcParameters    :: !(Maybe GoogleCloudDialogflowV2beta1ContextParameters)
+    , _gcdvcName :: !(Maybe Text)
+    , _gcdvcParameters :: !(Maybe GoogleCloudDialogflowV2beta1ContextParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6527,10 +6527,10 @@ instance ToJSON GoogleCloudDialogflowV2beta1Context
 -- /See:/ 'googleCloudDialogflowV2BatchUpdateEntityTypesRequest' smart constructor.
 data GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest =
   GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest'
-    { _gcdvbuetrLanguageCode          :: !(Maybe Text)
-    , _gcdvbuetrUpdateMask            :: !(Maybe GFieldMask)
+    { _gcdvbuetrLanguageCode :: !(Maybe Text)
+    , _gcdvbuetrUpdateMask :: !(Maybe GFieldMask)
     , _gcdvbuetrEntityTypeBatchInline :: !(Maybe GoogleCloudDialogflowV2EntityTypeBatch)
-    , _gcdvbuetrEntityTypeBatchURI    :: !(Maybe Text)
+    , _gcdvbuetrEntityTypeBatchURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6730,10 +6730,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageListSelectItem' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageListSelectItem =
   GoogleCloudDialogflowV2beta1IntentMessageListSelectItem'
-    { _gcdvimlsicImage       :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
-    , _gcdvimlsicTitle       :: !(Maybe Text)
+    { _gcdvimlsicImage :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageImage)
+    , _gcdvimlsicTitle :: !(Maybe Text)
     , _gcdvimlsicDescription :: !(Maybe Text)
-    , _gcdvimlsicInfo        :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo)
+    , _gcdvimlsicInfo :: !(Maybe GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6860,7 +6860,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1EntityTypeEntity' smart constructor.
 data GoogleCloudDialogflowV2beta1EntityTypeEntity =
   GoogleCloudDialogflowV2beta1EntityTypeEntity'
-    { _gcdveteValue    :: !(Maybe Text)
+    { _gcdveteValue :: !(Maybe Text)
     , _gcdveteSynonyms :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6927,11 +6927,11 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2EntityType' smart constructor.
 data GoogleCloudDialogflowV2EntityType =
   GoogleCloudDialogflowV2EntityType'
-    { _gcdvetEntities          :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
-    , _gcdvetKind              :: !(Maybe GoogleCloudDialogflowV2EntityTypeKind)
-    , _gcdvetName              :: !(Maybe Text)
+    { _gcdvetEntities :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
+    , _gcdvetKind :: !(Maybe GoogleCloudDialogflowV2EntityTypeKind)
+    , _gcdvetName :: !(Maybe Text)
     , _gcdvetAutoExpansionMode :: !(Maybe GoogleCloudDialogflowV2EntityTypeAutoExpansionMode)
-    , _gcdvetDisplayName       :: !(Maybe Text)
+    , _gcdvetDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7024,7 +7024,7 @@ instance ToJSON GoogleCloudDialogflowV2EntityType
 data GoogleCloudDialogflowV2TextInput =
   GoogleCloudDialogflowV2TextInput'
     { _gcdvtiLanguageCode :: !(Maybe Text)
-    , _gcdvtiText         :: !(Maybe Text)
+    , _gcdvtiText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7126,10 +7126,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentMessageCard' smart constructor.
 data GoogleCloudDialogflowV2IntentMessageCard =
   GoogleCloudDialogflowV2IntentMessageCard'
-    { _gcdvimccButtons  :: !(Maybe [GoogleCloudDialogflowV2IntentMessageCardButton])
+    { _gcdvimccButtons :: !(Maybe [GoogleCloudDialogflowV2IntentMessageCardButton])
     , _gcdvimccImageURI :: !(Maybe Text)
     , _gcdvimccSubtitle :: !(Maybe Text)
-    , _gcdvimccTitle    :: !(Maybe Text)
+    , _gcdvimccTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7213,7 +7213,7 @@ data GoogleCloudDialogflowV2OriginalDetectIntentRequest =
   GoogleCloudDialogflowV2OriginalDetectIntentRequest'
     { _gPayload :: !(Maybe GoogleCloudDialogflowV2OriginalDetectIntentRequestPayload)
     , _gVersion :: !(Maybe Text)
-    , _gSource  :: !(Maybe Text)
+    , _gSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7292,7 +7292,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2beta1IntentMessageImage =
   GoogleCloudDialogflowV2beta1IntentMessageImage'
     { _gcdvimiAccessibilityText :: !(Maybe Text)
-    , _gcdvimiImageURI          :: !(Maybe Text)
+    , _gcdvimiImageURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7351,9 +7351,9 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2OutputAudioConfig' smart constructor.
 data GoogleCloudDialogflowV2OutputAudioConfig =
   GoogleCloudDialogflowV2OutputAudioConfig'
-    { _gcdvoacSampleRateHertz        :: !(Maybe (Textual Int32))
+    { _gcdvoacSampleRateHertz :: !(Maybe (Textual Int32))
     , _gcdvoacSynthesizeSpeechConfig :: !(Maybe GoogleCloudDialogflowV2SynthesizeSpeechConfig)
-    , _gcdvoacAudioEncoding          :: !(Maybe GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding)
+    , _gcdvoacAudioEncoding :: !(Maybe GoogleCloudDialogflowV2OutputAudioConfigAudioEncoding)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7428,7 +7428,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2ExportAgentResponse' smart constructor.
 data GoogleCloudDialogflowV2ExportAgentResponse =
   GoogleCloudDialogflowV2ExportAgentResponse'
-    { _gAgentURI     :: !(Maybe Text)
+    { _gAgentURI :: !(Maybe Text)
     , _gAgentContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7566,7 +7566,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion =
   GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion'
-    { _gURI             :: !(Maybe Text)
+    { _gURI :: !(Maybe Text)
     , _gDestinationName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7622,7 +7622,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2ListIntentsResponse' smart constructor.
 data GoogleCloudDialogflowV2ListIntentsResponse =
   GoogleCloudDialogflowV2ListIntentsResponse'
-    { _gcdvlirIntents       :: !(Maybe [GoogleCloudDialogflowV2Intent])
+    { _gcdvlirIntents :: !(Maybe [GoogleCloudDialogflowV2Intent])
     , _gcdvlirNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7777,13 +7777,13 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentParameter' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentParameter =
   GoogleCloudDialogflowV2beta1IntentParameter'
-    { _gcdvipValue                 :: !(Maybe Text)
-    , _gcdvipName                  :: !(Maybe Text)
-    , _gcdvipPrompts               :: !(Maybe [Text])
-    , _gcdvipMandatory             :: !(Maybe Bool)
-    , _gcdvipDisplayName           :: !(Maybe Text)
-    , _gcdvipDefaultValue          :: !(Maybe Text)
-    , _gcdvipIsList                :: !(Maybe Bool)
+    { _gcdvipValue :: !(Maybe Text)
+    , _gcdvipName :: !(Maybe Text)
+    , _gcdvipPrompts :: !(Maybe [Text])
+    , _gcdvipMandatory :: !(Maybe Bool)
+    , _gcdvipDisplayName :: !(Maybe Text)
+    , _gcdvipDefaultValue :: !(Maybe Text)
+    , _gcdvipIsList :: !(Maybe Bool)
     , _gcdvipEntityTypeDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7918,13 +7918,13 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2IntentParameter' smart constructor.
 data GoogleCloudDialogflowV2IntentParameter =
   GoogleCloudDialogflowV2IntentParameter'
-    { _gcdvipcValue                 :: !(Maybe Text)
-    , _gcdvipcName                  :: !(Maybe Text)
-    , _gcdvipcPrompts               :: !(Maybe [Text])
-    , _gcdvipcMandatory             :: !(Maybe Bool)
-    , _gcdvipcDisplayName           :: !(Maybe Text)
-    , _gcdvipcDefaultValue          :: !(Maybe Text)
-    , _gcdvipcIsList                :: !(Maybe Bool)
+    { _gcdvipcValue :: !(Maybe Text)
+    , _gcdvipcName :: !(Maybe Text)
+    , _gcdvipcPrompts :: !(Maybe [Text])
+    , _gcdvipcMandatory :: !(Maybe Bool)
+    , _gcdvipcDisplayName :: !(Maybe Text)
+    , _gcdvipcDefaultValue :: !(Maybe Text)
+    , _gcdvipcIsList :: !(Maybe Bool)
     , _gcdvipcEntityTypeDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8104,10 +8104,10 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1IntentTrainingPhrasePart' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart =
   GoogleCloudDialogflowV2beta1IntentTrainingPhrasePart'
-    { _gcdvitppcText        :: !(Maybe Text)
+    { _gcdvitppcText :: !(Maybe Text)
     , _gcdvitppcUserDefined :: !(Maybe Bool)
-    , _gcdvitppcEntityType  :: !(Maybe Text)
-    , _gcdvitppcAlias       :: !(Maybe Text)
+    , _gcdvitppcEntityType :: !(Maybe Text)
+    , _gcdvitppcAlias :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8194,7 +8194,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2ListContextsResponse' smart constructor.
 data GoogleCloudDialogflowV2ListContextsResponse =
   GoogleCloudDialogflowV2ListContextsResponse'
-    { _gcdvlcrContexts      :: !(Maybe [GoogleCloudDialogflowV2Context])
+    { _gcdvlcrContexts :: !(Maybe [GoogleCloudDialogflowV2Context])
     , _gcdvlcrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8305,7 +8305,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1ExportAgentResponse' smart constructor.
 data GoogleCloudDialogflowV2beta1ExportAgentResponse =
   GoogleCloudDialogflowV2beta1ExportAgentResponse'
-    { _gooAgentURI     :: !(Maybe Text)
+    { _gooAgentURI :: !(Maybe Text)
     , _gooAgentContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8440,8 +8440,8 @@ instance ToJSON
 data GoogleCloudDialogflowV2SessionEntityType =
   GoogleCloudDialogflowV2SessionEntityType'
     { _gcdvSetEntityOverrideMode :: !(Maybe GoogleCloudDialogflowV2SessionEntityTypeEntityOverrideMode)
-    , _gcdvSetEntities           :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
-    , _gcdvSetName               :: !(Maybe Text)
+    , _gcdvSetEntities :: !(Maybe [GoogleCloudDialogflowV2EntityTypeEntity])
+    , _gcdvSetName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8517,7 +8517,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2EntityTypeEntity' smart constructor.
 data GoogleCloudDialogflowV2EntityTypeEntity =
   GoogleCloudDialogflowV2EntityTypeEntity'
-    { _gValue    :: !(Maybe Text)
+    { _gValue :: !(Maybe Text)
     , _gSynonyms :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8580,22 +8580,22 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2beta1QueryResult' smart constructor.
 data GoogleCloudDialogflowV2beta1QueryResult =
   GoogleCloudDialogflowV2beta1QueryResult'
-    { _gLanguageCode                :: !(Maybe Text)
-    , _gAllRequiredParamsPresent    :: !(Maybe Bool)
-    , _gIntentDetectionConfidence   :: !(Maybe (Textual Double))
-    , _gFulfillmentMessages         :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessage])
-    , _gKnowledgeAnswers            :: !(Maybe GoogleCloudDialogflowV2beta1KnowledgeAnswers)
+    { _gLanguageCode :: !(Maybe Text)
+    , _gAllRequiredParamsPresent :: !(Maybe Bool)
+    , _gIntentDetectionConfidence :: !(Maybe (Textual Double))
+    , _gFulfillmentMessages :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessage])
+    , _gKnowledgeAnswers :: !(Maybe GoogleCloudDialogflowV2beta1KnowledgeAnswers)
     , _gSpeechRecognitionConfidence :: !(Maybe (Textual Double))
-    , _gAction                      :: !(Maybe Text)
-    , _gIntent                      :: !(Maybe GoogleCloudDialogflowV2beta1Intent)
-    , _gSentimentAnalysisResult     :: !(Maybe GoogleCloudDialogflowV2beta1SentimentAnalysisResult)
-    , _gQueryText                   :: !(Maybe Text)
-    , _gFulfillmentText             :: !(Maybe Text)
-    , _gParameters                  :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultParameters)
-    , _gWebhookPayload              :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultWebhookPayload)
-    , _gOutputContexts              :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
-    , _gWebhookSource               :: !(Maybe Text)
-    , _gDiagnosticInfo              :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultDiagnosticInfo)
+    , _gAction :: !(Maybe Text)
+    , _gIntent :: !(Maybe GoogleCloudDialogflowV2beta1Intent)
+    , _gSentimentAnalysisResult :: !(Maybe GoogleCloudDialogflowV2beta1SentimentAnalysisResult)
+    , _gQueryText :: !(Maybe Text)
+    , _gFulfillmentText :: !(Maybe Text)
+    , _gParameters :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultParameters)
+    , _gWebhookPayload :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultWebhookPayload)
+    , _gOutputContexts :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
+    , _gWebhookSource :: !(Maybe Text)
+    , _gDiagnosticInfo :: !(Maybe GoogleCloudDialogflowV2beta1QueryResultDiagnosticInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8843,7 +8843,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2IntentMessageImage =
   GoogleCloudDialogflowV2IntentMessageImage'
     { _gAccessibilityText :: !(Maybe Text)
-    , _gImageURI          :: !(Maybe Text)
+    , _gImageURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8899,11 +8899,11 @@ instance ToJSON
 data GoogleCloudDialogflowV2WebhookResponse =
   GoogleCloudDialogflowV2WebhookResponse'
     { _gooFulfillmentMessages :: !(Maybe [GoogleCloudDialogflowV2IntentMessage])
-    , _gooPayload             :: !(Maybe GoogleCloudDialogflowV2WebhookResponsePayload)
-    , _gooFulfillmentText     :: !(Maybe Text)
-    , _gooSource              :: !(Maybe Text)
-    , _gooOutputContexts      :: !(Maybe [GoogleCloudDialogflowV2Context])
-    , _gooFollowupEventInput  :: !(Maybe GoogleCloudDialogflowV2EventInput)
+    , _gooPayload :: !(Maybe GoogleCloudDialogflowV2WebhookResponsePayload)
+    , _gooFulfillmentText :: !(Maybe Text)
+    , _gooSource :: !(Maybe Text)
+    , _gooOutputContexts :: !(Maybe [GoogleCloudDialogflowV2Context])
+    , _gooFollowupEventInput :: !(Maybe GoogleCloudDialogflowV2EventInput)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9108,11 +9108,11 @@ instance ToJSON GoogleCloudDialogflowV2IntentBatch
 -- /See:/ 'googleCloudDialogflowV2beta1EntityType' smart constructor.
 data GoogleCloudDialogflowV2beta1EntityType =
   GoogleCloudDialogflowV2beta1EntityType'
-    { _gcdvetcEntities          :: !(Maybe [GoogleCloudDialogflowV2beta1EntityTypeEntity])
-    , _gcdvetcKind              :: !(Maybe GoogleCloudDialogflowV2beta1EntityTypeKind)
-    , _gcdvetcName              :: !(Maybe Text)
+    { _gcdvetcEntities :: !(Maybe [GoogleCloudDialogflowV2beta1EntityTypeEntity])
+    , _gcdvetcKind :: !(Maybe GoogleCloudDialogflowV2beta1EntityTypeKind)
+    , _gcdvetcName :: !(Maybe Text)
     , _gcdvetcAutoExpansionMode :: !(Maybe GoogleCloudDialogflowV2beta1EntityTypeAutoExpansionMode)
-    , _gcdvetcDisplayName       :: !(Maybe Text)
+    , _gcdvetcDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9207,7 +9207,7 @@ instance ToJSON
 data GoogleCloudDialogflowV2SearchAgentsResponse =
   GoogleCloudDialogflowV2SearchAgentsResponse'
     { _gcdvsarNextPageToken :: !(Maybe Text)
-    , _gcdvsarAgents        :: !(Maybe [GoogleCloudDialogflowV2Agent])
+    , _gcdvsarAgents :: !(Maybe [GoogleCloudDialogflowV2Agent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9268,7 +9268,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2ListSessionEntityTypesResponse' smart constructor.
 data GoogleCloudDialogflowV2ListSessionEntityTypesResponse =
   GoogleCloudDialogflowV2ListSessionEntityTypesResponse'
-    { _gcdvlSetrNextPageToken      :: !(Maybe Text)
+    { _gcdvlSetrNextPageToken :: !(Maybe Text)
     , _gcdvlSetrSessionEntityTypes :: !(Maybe [GoogleCloudDialogflowV2SessionEntityType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9333,10 +9333,10 @@ instance ToJSON
 -- /See:/ 'googleLongrunningOperation' smart constructor.
 data GoogleLongrunningOperation =
   GoogleLongrunningOperation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe GoogleRpcStatus)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe GoogleRpcStatus)
     , _gloResponse :: !(Maybe GoogleLongrunningOperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunningOperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9428,18 +9428,18 @@ instance ToJSON GoogleLongrunningOperation where
 -- /See:/ 'googleCloudDialogflowV2IntentMessage' smart constructor.
 data GoogleCloudDialogflowV2IntentMessage =
   GoogleCloudDialogflowV2IntentMessage'
-    { _gcdvimcCard              :: !(Maybe GoogleCloudDialogflowV2IntentMessageCard)
-    , _gcdvimcImage             :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
-    , _gcdvimcPlatform          :: !(Maybe GoogleCloudDialogflowV2IntentMessagePlatform)
+    { _gcdvimcCard :: !(Maybe GoogleCloudDialogflowV2IntentMessageCard)
+    , _gcdvimcImage :: !(Maybe GoogleCloudDialogflowV2IntentMessageImage)
+    , _gcdvimcPlatform :: !(Maybe GoogleCloudDialogflowV2IntentMessagePlatform)
     , _gcdvimcLinkOutSuggestion :: !(Maybe GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion)
-    , _gcdvimcText              :: !(Maybe GoogleCloudDialogflowV2IntentMessageText)
-    , _gcdvimcCarouselSelect    :: !(Maybe GoogleCloudDialogflowV2IntentMessageCarouselSelect)
-    , _gcdvimcSimpleResponses   :: !(Maybe GoogleCloudDialogflowV2IntentMessageSimpleResponses)
-    , _gcdvimcPayload           :: !(Maybe GoogleCloudDialogflowV2IntentMessagePayload)
-    , _gcdvimcSuggestions       :: !(Maybe GoogleCloudDialogflowV2IntentMessageSuggestions)
-    , _gcdvimcListSelect        :: !(Maybe GoogleCloudDialogflowV2IntentMessageListSelect)
-    , _gcdvimcBasicCard         :: !(Maybe GoogleCloudDialogflowV2IntentMessageBasicCard)
-    , _gcdvimcQuickReplies      :: !(Maybe GoogleCloudDialogflowV2IntentMessageQuickReplies)
+    , _gcdvimcText :: !(Maybe GoogleCloudDialogflowV2IntentMessageText)
+    , _gcdvimcCarouselSelect :: !(Maybe GoogleCloudDialogflowV2IntentMessageCarouselSelect)
+    , _gcdvimcSimpleResponses :: !(Maybe GoogleCloudDialogflowV2IntentMessageSimpleResponses)
+    , _gcdvimcPayload :: !(Maybe GoogleCloudDialogflowV2IntentMessagePayload)
+    , _gcdvimcSuggestions :: !(Maybe GoogleCloudDialogflowV2IntentMessageSuggestions)
+    , _gcdvimcListSelect :: !(Maybe GoogleCloudDialogflowV2IntentMessageListSelect)
+    , _gcdvimcBasicCard :: !(Maybe GoogleCloudDialogflowV2IntentMessageBasicCard)
+    , _gcdvimcQuickReplies :: !(Maybe GoogleCloudDialogflowV2IntentMessageQuickReplies)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9649,7 +9649,7 @@ instance ToJSON
 -- /See:/ 'googleCloudDialogflowV2Sentiment' smart constructor.
 data GoogleCloudDialogflowV2Sentiment =
   GoogleCloudDialogflowV2Sentiment'
-    { _gScore     :: !(Maybe (Textual Double))
+    { _gScore :: !(Maybe (Textual Double))
     , _gMagnitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9705,7 +9705,7 @@ instance ToJSON GoogleCloudDialogflowV2Sentiment
 -- /See:/ 'googleCloudDialogflowV2beta1IntentMessageSelectItemInfo' smart constructor.
 data GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo =
   GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo'
-    { _gooKey      :: !(Maybe Text)
+    { _gooKey :: !(Maybe Text)
     , _gooSynonyms :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9766,25 +9766,25 @@ instance ToJSON
 data GoogleCloudDialogflowV2beta1Intent =
   GoogleCloudDialogflowV2beta1Intent'
     { _gcdvicDefaultResponsePlatforms :: !(Maybe [Text])
-    , _gcdvicWebhookState             :: !(Maybe GoogleCloudDialogflowV2beta1IntentWebhookState)
-    , _gcdvicMlEnabled                :: !(Maybe Bool)
-    , _gcdvicPriority                 :: !(Maybe (Textual Int32))
-    , _gcdvicAction                   :: !(Maybe Text)
-    , _gcdvicRootFollowupIntentName   :: !(Maybe Text)
-    , _gcdvicName                     :: !(Maybe Text)
-    , _gcdvicEvents                   :: !(Maybe [Text])
-    , _gcdvicParameters               :: !(Maybe [GoogleCloudDialogflowV2beta1IntentParameter])
-    , _gcdvicDisplayName              :: !(Maybe Text)
-    , _gcdvicInputContextNames        :: !(Maybe [Text])
-    , _gcdvicEndInteraction           :: !(Maybe Bool)
-    , _gcdvicMessages                 :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessage])
+    , _gcdvicWebhookState :: !(Maybe GoogleCloudDialogflowV2beta1IntentWebhookState)
+    , _gcdvicMlEnabled :: !(Maybe Bool)
+    , _gcdvicPriority :: !(Maybe (Textual Int32))
+    , _gcdvicAction :: !(Maybe Text)
+    , _gcdvicRootFollowupIntentName :: !(Maybe Text)
+    , _gcdvicName :: !(Maybe Text)
+    , _gcdvicEvents :: !(Maybe [Text])
+    , _gcdvicParameters :: !(Maybe [GoogleCloudDialogflowV2beta1IntentParameter])
+    , _gcdvicDisplayName :: !(Maybe Text)
+    , _gcdvicInputContextNames :: !(Maybe [Text])
+    , _gcdvicEndInteraction :: !(Maybe Bool)
+    , _gcdvicMessages :: !(Maybe [GoogleCloudDialogflowV2beta1IntentMessage])
     , _gcdvicParentFollowupIntentName :: !(Maybe Text)
-    , _gcdvicOutputContexts           :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
-    , _gcdvicTrainingPhrases          :: !(Maybe [GoogleCloudDialogflowV2beta1IntentTrainingPhrase])
-    , _gcdvicFollowupIntentInfo       :: !(Maybe [GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo])
-    , _gcdvicIsFallback               :: !(Maybe Bool)
-    , _gcdvicMlDisabled               :: !(Maybe Bool)
-    , _gcdvicResetContexts            :: !(Maybe Bool)
+    , _gcdvicOutputContexts :: !(Maybe [GoogleCloudDialogflowV2beta1Context])
+    , _gcdvicTrainingPhrases :: !(Maybe [GoogleCloudDialogflowV2beta1IntentTrainingPhrase])
+    , _gcdvicFollowupIntentInfo :: !(Maybe [GoogleCloudDialogflowV2beta1IntentFollowupIntentInfo])
+    , _gcdvicIsFallback :: !(Maybe Bool)
+    , _gcdvicMlDisabled :: !(Maybe Bool)
+    , _gcdvicResetContexts :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10095,8 +10095,8 @@ instance ToJSON GoogleCloudDialogflowV2beta1Intent
 data GoogleCloudDialogflowV2Context =
   GoogleCloudDialogflowV2Context'
     { _gcdvccLifespanCount :: !(Maybe (Textual Int32))
-    , _gcdvccName          :: !(Maybe Text)
-    , _gcdvccParameters    :: !(Maybe GoogleCloudDialogflowV2ContextParameters)
+    , _gcdvccName :: !(Maybe Text)
+    , _gcdvccParameters :: !(Maybe GoogleCloudDialogflowV2ContextParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10170,7 +10170,7 @@ instance ToJSON GoogleCloudDialogflowV2Context where
 data GoogleCloudDialogflowV2IntentMessageBasicCardButton =
   GoogleCloudDialogflowV2IntentMessageBasicCardButton'
     { _gcdvimbcbcOpenURIAction :: !(Maybe GoogleCloudDialogflowV2IntentMessageBasicCardButtonOpenURIAction)
-    , _gcdvimbcbcTitle         :: !(Maybe Text)
+    , _gcdvimbcbcTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

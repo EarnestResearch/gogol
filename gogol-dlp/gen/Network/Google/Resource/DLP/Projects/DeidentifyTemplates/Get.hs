@@ -43,8 +43,8 @@ module Network.Google.Resource.DLP.Projects.DeidentifyTemplates.Get
     , pdtgCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.deidentifyTemplates.get@ method which the
 -- 'ProjectsDeidentifyTemplatesGet' request conforms to.
@@ -66,12 +66,12 @@ type ProjectsDeidentifyTemplatesGetResource =
 -- /See:/ 'projectsDeidentifyTemplatesGet' smart constructor.
 data ProjectsDeidentifyTemplatesGet =
   ProjectsDeidentifyTemplatesGet'
-    { _pdtgXgafv          :: !(Maybe Xgafv)
+    { _pdtgXgafv :: !(Maybe Xgafv)
     , _pdtgUploadProtocol :: !(Maybe Text)
-    , _pdtgAccessToken    :: !(Maybe Text)
-    , _pdtgUploadType     :: !(Maybe Text)
-    , _pdtgName           :: !Text
-    , _pdtgCallback       :: !(Maybe Text)
+    , _pdtgAccessToken :: !(Maybe Text)
+    , _pdtgUploadType :: !(Maybe Text)
+    , _pdtgName :: !Text
+    , _pdtgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

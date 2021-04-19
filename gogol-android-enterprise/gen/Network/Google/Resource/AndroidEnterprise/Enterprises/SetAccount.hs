@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.SetAccount
     , esaPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.setAccount@ method which the
 -- 'EnterprisesSetAccount' request conforms to.
@@ -60,7 +60,7 @@ type EnterprisesSetAccountResource =
 data EnterprisesSetAccount =
   EnterprisesSetAccount'
     { _esaEnterpriseId :: !Text
-    , _esaPayload      :: !EnterpriseAccount
+    , _esaPayload :: !EnterpriseAccount
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

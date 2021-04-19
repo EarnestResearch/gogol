@@ -44,8 +44,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.Search
     , pjsCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.search@ method which the
 -- 'ProjectsJobsSearch' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsJobsSearchResource =
 -- /See:/ 'projectsJobsSearch' smart constructor.
 data ProjectsJobsSearch =
   ProjectsJobsSearch'
-    { _pjsParent         :: !Text
-    , _pjsXgafv          :: !(Maybe Xgafv)
+    { _pjsParent :: !Text
+    , _pjsXgafv :: !(Maybe Xgafv)
     , _pjsUploadProtocol :: !(Maybe Text)
-    , _pjsAccessToken    :: !(Maybe Text)
-    , _pjsUploadType     :: !(Maybe Text)
-    , _pjsPayload        :: !SearchJobsRequest
-    , _pjsCallback       :: !(Maybe Text)
+    , _pjsAccessToken :: !(Maybe Text)
+    , _pjsUploadType :: !(Maybe Text)
+    , _pjsPayload :: !SearchJobsRequest
+    , _pjsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -168,20 +168,20 @@ module Network.Google.CloudIdentity
     , orAddtional
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudIdentity.Groups.Create
-import           Network.Google.Resource.CloudIdentity.Groups.Delete
-import           Network.Google.Resource.CloudIdentity.Groups.Get
-import           Network.Google.Resource.CloudIdentity.Groups.List
-import           Network.Google.Resource.CloudIdentity.Groups.Lookup
-import           Network.Google.Resource.CloudIdentity.Groups.Memberships.Create
-import           Network.Google.Resource.CloudIdentity.Groups.Memberships.Delete
-import           Network.Google.Resource.CloudIdentity.Groups.Memberships.Get
-import           Network.Google.Resource.CloudIdentity.Groups.Memberships.List
-import           Network.Google.Resource.CloudIdentity.Groups.Memberships.Lookup
-import           Network.Google.Resource.CloudIdentity.Groups.Patch
-import           Network.Google.Resource.CloudIdentity.Groups.Search
+import Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Resource.CloudIdentity.Groups.Create
+import Network.Google.Resource.CloudIdentity.Groups.Delete
+import Network.Google.Resource.CloudIdentity.Groups.Get
+import Network.Google.Resource.CloudIdentity.Groups.List
+import Network.Google.Resource.CloudIdentity.Groups.Lookup
+import Network.Google.Resource.CloudIdentity.Groups.Memberships.Create
+import Network.Google.Resource.CloudIdentity.Groups.Memberships.Delete
+import Network.Google.Resource.CloudIdentity.Groups.Memberships.Get
+import Network.Google.Resource.CloudIdentity.Groups.Memberships.List
+import Network.Google.Resource.CloudIdentity.Groups.Memberships.Lookup
+import Network.Google.Resource.CloudIdentity.Groups.Patch
+import Network.Google.Resource.CloudIdentity.Groups.Search
 
 {- $resources
 TODO

@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.SendTestPushNotific
     , estpnEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.sendTestPushNotification@ method which the
 -- 'EnterprisesSendTestPushNotification' request conforms to.

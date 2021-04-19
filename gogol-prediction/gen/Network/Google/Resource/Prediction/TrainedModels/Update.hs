@@ -38,8 +38,8 @@ module Network.Google.Resource.Prediction.TrainedModels.Update
     , tmuId
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.trainedmodels.update@ method which the
 -- 'TrainedModelsUpdate' request conforms to.
@@ -60,7 +60,7 @@ data TrainedModelsUpdate =
   TrainedModelsUpdate'
     { _tmuProject :: !Text
     , _tmuPayload :: !Update
-    , _tmuId      :: !Text
+    , _tmuId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

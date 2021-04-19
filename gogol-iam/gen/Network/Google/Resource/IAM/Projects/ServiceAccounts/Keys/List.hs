@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Keys.List
     , psaklCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.keys.list@ method which the
 -- 'ProjectsServiceAccountsKeysList' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsServiceAccountsKeysListResource =
 -- /See:/ 'projectsServiceAccountsKeysList' smart constructor.
 data ProjectsServiceAccountsKeysList =
   ProjectsServiceAccountsKeysList'
-    { _psaklKeyTypes       :: !(Maybe [Text])
-    , _psaklXgafv          :: !(Maybe Xgafv)
+    { _psaklKeyTypes :: !(Maybe [Text])
+    , _psaklXgafv :: !(Maybe Xgafv)
     , _psaklUploadProtocol :: !(Maybe Text)
-    , _psaklAccessToken    :: !(Maybe Text)
-    , _psaklUploadType     :: !(Maybe Text)
-    , _psaklName           :: !Text
-    , _psaklCallback       :: !(Maybe Text)
+    , _psaklAccessToken :: !(Maybe Text)
+    , _psaklUploadType :: !(Maybe Text)
+    , _psaklName :: !Text
+    , _psaklCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

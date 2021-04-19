@@ -39,8 +39,8 @@ module Network.Google.Resource.SQL.BackupRuns.Insert
     , briInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.backupRuns.insert@ method which the
 -- 'BackupRunsInsert' request conforms to.
@@ -61,8 +61,8 @@ type BackupRunsInsertResource =
 -- /See:/ 'backupRunsInsert' smart constructor.
 data BackupRunsInsert =
   BackupRunsInsert'
-    { _briProject  :: !Text
-    , _briPayload  :: !BackupRun
+    { _briProject :: !Text
+    , _briPayload :: !BackupRun
     , _briInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

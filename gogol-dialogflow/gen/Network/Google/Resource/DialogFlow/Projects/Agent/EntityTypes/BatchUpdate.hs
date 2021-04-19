@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.EntityTypes.BatchUpdate
     , paetbuCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.entityTypes.batchUpdate@ method which the
 -- 'ProjectsAgentEntityTypesBatchUpdate' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentEntityTypesBatchUpdateResource =
 -- /See:/ 'projectsAgentEntityTypesBatchUpdate' smart constructor.
 data ProjectsAgentEntityTypesBatchUpdate =
   ProjectsAgentEntityTypesBatchUpdate'
-    { _paetbuParent         :: !Text
-    , _paetbuXgafv          :: !(Maybe Xgafv)
+    { _paetbuParent :: !Text
+    , _paetbuXgafv :: !(Maybe Xgafv)
     , _paetbuUploadProtocol :: !(Maybe Text)
-    , _paetbuAccessToken    :: !(Maybe Text)
-    , _paetbuUploadType     :: !(Maybe Text)
-    , _paetbuPayload        :: !GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest
-    , _paetbuCallback       :: !(Maybe Text)
+    , _paetbuAccessToken :: !(Maybe Text)
+    , _paetbuUploadType :: !(Maybe Text)
+    , _paetbuPayload :: !GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest
+    , _paetbuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

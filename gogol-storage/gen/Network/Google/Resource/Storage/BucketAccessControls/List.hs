@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.List
     , baclUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.list@ method which the
 -- 'BucketAccessControlsList' request conforms to.
@@ -57,7 +57,7 @@ type BucketAccessControlsListResource =
 -- /See:/ 'bucketAccessControlsList' smart constructor.
 data BucketAccessControlsList =
   BucketAccessControlsList'
-    { _baclBucket      :: !Text
+    { _baclBucket :: !Text
     , _baclUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

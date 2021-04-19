@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.InterconnectAttachments.List
     , ialMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.interconnectAttachments.list@ method which the
 -- 'InterconnectAttachmentsList' request conforms to.
@@ -68,11 +68,11 @@ type InterconnectAttachmentsListResource =
 -- /See:/ 'interconnectAttachmentsList' smart constructor.
 data InterconnectAttachmentsList =
   InterconnectAttachmentsList'
-    { _ialOrderBy    :: !(Maybe Text)
-    , _ialProject    :: !Text
-    , _ialFilter     :: !(Maybe Text)
-    , _ialRegion     :: !Text
-    , _ialPageToken  :: !(Maybe Text)
+    { _ialOrderBy :: !(Maybe Text)
+    , _ialProject :: !Text
+    , _ialFilter :: !(Maybe Text)
+    , _ialRegion :: !Text
+    , _ialPageToken :: !(Maybe Text)
     , _ialMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

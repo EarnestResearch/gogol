@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Schemas.Update
     , suSchemaKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.update@ method which the
 -- 'SchemasUpdate' request conforms to.
@@ -59,9 +59,9 @@ type SchemasUpdateResource =
 -- /See:/ 'schemasUpdate' smart constructor.
 data SchemasUpdate =
   SchemasUpdate'
-    { _suPayload    :: !Schema
+    { _suPayload :: !Schema
     , _suCustomerId :: !Text
-    , _suSchemaKey  :: !Text
+    , _suSchemaKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

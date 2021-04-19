@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Drafts.Delete
     , uddId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.drafts.delete@ method which the
 -- 'UsersDraftsDelete' request conforms to.
@@ -59,7 +59,7 @@ type UsersDraftsDeleteResource =
 data UsersDraftsDelete =
   UsersDraftsDelete'
     { _uddUserId :: !Text
-    , _uddId     :: !Text
+    , _uddId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

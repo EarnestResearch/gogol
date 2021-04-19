@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.GetIA
     , plfgipCallback
     ) where
 
-import           Network.Google.CloudFunctions.Types
-import           Network.Google.Prelude
+import Network.Google.CloudFunctions.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudfunctions.projects.locations.functions.getIamPolicy@ method which the
 -- 'ProjectsLocationsFunctionsGetIAMPolicy' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsLocationsFunctionsGetIAMPolicyResource =
 -- /See:/ 'projectsLocationsFunctionsGetIAMPolicy' smart constructor.
 data ProjectsLocationsFunctionsGetIAMPolicy =
   ProjectsLocationsFunctionsGetIAMPolicy'
-    { _plfgipXgafv          :: !(Maybe Xgafv)
+    { _plfgipXgafv :: !(Maybe Xgafv)
     , _plfgipUploadProtocol :: !(Maybe Text)
-    , _plfgipAccessToken    :: !(Maybe Text)
-    , _plfgipUploadType     :: !(Maybe Text)
-    , _plfgipResource       :: !Text
-    , _plfgipCallback       :: !(Maybe Text)
+    , _plfgipAccessToken :: !(Maybe Text)
+    , _plfgipUploadType :: !(Maybe Text)
+    , _plfgipResource :: !Text
+    , _plfgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

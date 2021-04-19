@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.BackendServices.AggregatedList
     , bsalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendServices.aggregatedList@ method which the
 -- 'BackendServicesAggregatedList' request conforms to.
@@ -66,10 +66,10 @@ type BackendServicesAggregatedListResource =
 -- /See:/ 'backendServicesAggregatedList' smart constructor.
 data BackendServicesAggregatedList =
   BackendServicesAggregatedList'
-    { _bsalOrderBy    :: !(Maybe Text)
-    , _bsalProject    :: !Text
-    , _bsalFilter     :: !(Maybe Text)
-    , _bsalPageToken  :: !(Maybe Text)
+    { _bsalOrderBy :: !(Maybe Text)
+    , _bsalProject :: !Text
+    , _bsalFilter :: !(Maybe Text)
+    , _bsalPageToken :: !(Maybe Text)
     , _bsalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

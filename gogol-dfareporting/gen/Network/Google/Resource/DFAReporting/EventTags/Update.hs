@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Update
     , etuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.update@ method which the
 -- 'EventTagsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type EventTagsUpdateResource =
 data EventTagsUpdate =
   EventTagsUpdate'
     { _etuProFileId :: !(Textual Int64)
-    , _etuPayload   :: !EventTag
+    , _etuPayload :: !EventTag
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

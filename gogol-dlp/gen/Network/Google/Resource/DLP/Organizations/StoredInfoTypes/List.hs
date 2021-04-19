@@ -46,8 +46,8 @@ module Network.Google.Resource.DLP.Organizations.StoredInfoTypes.List
     , ositlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.storedInfoTypes.list@ method which the
 -- 'OrganizationsStoredInfoTypesList' request conforms to.
@@ -74,15 +74,15 @@ type OrganizationsStoredInfoTypesListResource =
 -- /See:/ 'organizationsStoredInfoTypesList' smart constructor.
 data OrganizationsStoredInfoTypesList =
   OrganizationsStoredInfoTypesList'
-    { _ositlParent         :: !Text
-    , _ositlXgafv          :: !(Maybe Xgafv)
+    { _ositlParent :: !Text
+    , _ositlXgafv :: !(Maybe Xgafv)
     , _ositlUploadProtocol :: !(Maybe Text)
-    , _ositlOrderBy        :: !(Maybe Text)
-    , _ositlAccessToken    :: !(Maybe Text)
-    , _ositlUploadType     :: !(Maybe Text)
-    , _ositlPageToken      :: !(Maybe Text)
-    , _ositlPageSize       :: !(Maybe (Textual Int32))
-    , _ositlCallback       :: !(Maybe Text)
+    , _ositlOrderBy :: !(Maybe Text)
+    , _ositlAccessToken :: !(Maybe Text)
+    , _ositlUploadType :: !(Maybe Text)
+    , _ositlPageToken :: !(Maybe Text)
+    , _ositlPageSize :: !(Maybe (Textual Int32))
+    , _ositlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

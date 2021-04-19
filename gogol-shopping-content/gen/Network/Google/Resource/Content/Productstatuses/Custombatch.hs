@@ -34,28 +34,31 @@ module Network.Google.Resource.Content.Productstatuses.Custombatch
 
     -- * Request Lenses
     , proPayload
+    , proIncludeAttributes
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.productstatuses.custombatch@ method which the
 -- 'ProductstatusesCustombatch' request conforms to.
 type ProductstatusesCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "productstatuses" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] ProductstatusesCustomBatchRequest :>
-                 Post '[JSON] ProductstatusesCustomBatchResponse
+             QueryParam "includeAttributes" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] ProductstatusesCustomBatchRequest :>
+                   Post '[JSON] ProductstatusesCustomBatchResponse
 
 -- | Gets the statuses of multiple products in a single request.
 --
 -- /See:/ 'productstatusesCustombatch' smart constructor.
-newtype ProductstatusesCustombatch =
+data ProductstatusesCustombatch =
   ProductstatusesCustombatch'
-    { _proPayload :: ProductstatusesCustomBatchRequest
+    { _proPayload :: !ProductstatusesCustomBatchRequest
+    , _proIncludeAttributes :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -65,17 +68,27 @@ newtype ProductstatusesCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'proPayload'
+--
+-- * 'proIncludeAttributes'
 productstatusesCustombatch
     :: ProductstatusesCustomBatchRequest -- ^ 'proPayload'
     -> ProductstatusesCustombatch
 productstatusesCustombatch pProPayload_ =
-  ProductstatusesCustombatch' {_proPayload = pProPayload_}
+  ProductstatusesCustombatch'
+    {_proPayload = pProPayload_, _proIncludeAttributes = Nothing}
 
 
 -- | Multipart request metadata.
 proPayload :: Lens' ProductstatusesCustombatch ProductstatusesCustomBatchRequest
 proPayload
   = lens _proPayload (\ s a -> s{_proPayload = a})
+
+-- | Flag to include full product data in the results of this request. The
+-- default value is false.
+proIncludeAttributes :: Lens' ProductstatusesCustombatch (Maybe Bool)
+proIncludeAttributes
+  = lens _proIncludeAttributes
+      (\ s a -> s{_proIncludeAttributes = a})
 
 instance GoogleRequest ProductstatusesCustombatch
          where
@@ -84,7 +97,7 @@ instance GoogleRequest ProductstatusesCustombatch
         type Scopes ProductstatusesCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductstatusesCustombatch'{..}
-          = go (Just AltJSON) _proPayload
+          = go _proIncludeAttributes (Just AltJSON) _proPayload
               shoppingContentService
           where go
                   = buildClient

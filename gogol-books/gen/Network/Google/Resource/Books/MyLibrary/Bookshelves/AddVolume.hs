@@ -39,8 +39,8 @@ module Network.Google.Resource.Books.MyLibrary.Bookshelves.AddVolume
     , mlbavSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.bookshelves.addVolume@ method which the
 -- 'MyLibraryBookshelvesAddVolume' request conforms to.
@@ -63,10 +63,10 @@ type MyLibraryBookshelvesAddVolumeResource =
 -- /See:/ 'myLibraryBookshelvesAddVolume' smart constructor.
 data MyLibraryBookshelvesAddVolume =
   MyLibraryBookshelvesAddVolume'
-    { _mlbavReason   :: !(Maybe MyLibraryBookshelvesAddVolumeReason)
-    , _mlbavShelf    :: !Text
+    { _mlbavReason :: !(Maybe MyLibraryBookshelvesAddVolumeReason)
+    , _mlbavShelf :: !Text
     , _mlbavVolumeId :: !Text
-    , _mlbavSource   :: !(Maybe Text)
+    , _mlbavSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.LiveChatBans.Insert
     , lcbiPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatBans.insert@ method which the
 -- 'LiveChatBansInsert' request conforms to.
@@ -57,7 +57,7 @@ type LiveChatBansInsertResource =
 -- /See:/ 'liveChatBansInsert' smart constructor.
 data LiveChatBansInsert =
   LiveChatBansInsert'
-    { _lcbiPart    :: !Text
+    { _lcbiPart :: !Text
     , _lcbiPayload :: !LiveChatBan
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -17,8 +17,8 @@
 --
 module Network.Google.BigQueryDataTransfer.Types.Product where
 
-import           Network.Google.BigQueryDataTransfer.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -122,7 +122,7 @@ instance ToJSON Status where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -175,7 +175,7 @@ instance ToJSON ListLocationsResponse where
 data TimeRange =
   TimeRange'
     { _trStartTime :: !(Maybe DateTime')
-    , _trEndTime   :: !(Maybe DateTime')
+    , _trEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -229,18 +229,18 @@ instance ToJSON TimeRange where
 -- /See:/ 'transferRun' smart constructor.
 data TransferRun =
   TransferRun'
-    { _tRunTime              :: !(Maybe DateTime')
-    , _tErrorStatus          :: !(Maybe Status)
-    , _tState                :: !(Maybe TransferRunState)
-    , _tSchedule             :: !(Maybe Text)
-    , _tStartTime            :: !(Maybe DateTime')
-    , _tScheduleTime         :: !(Maybe DateTime')
-    , _tDataSourceId         :: !(Maybe Text)
-    , _tParams               :: !(Maybe TransferRunParams)
-    , _tUserId               :: !(Maybe (Textual Int64))
-    , _tUpdateTime           :: !(Maybe DateTime')
-    , _tName                 :: !(Maybe Text)
-    , _tEndTime              :: !(Maybe DateTime')
+    { _tRunTime :: !(Maybe DateTime')
+    , _tErrorStatus :: !(Maybe Status)
+    , _tState :: !(Maybe TransferRunState)
+    , _tSchedule :: !(Maybe Text)
+    , _tStartTime :: !(Maybe DateTime')
+    , _tScheduleTime :: !(Maybe DateTime')
+    , _tDataSourceId :: !(Maybe Text)
+    , _tParams :: !(Maybe TransferRunParams)
+    , _tUserId :: !(Maybe (Textual Int64))
+    , _tUpdateTime :: !(Maybe DateTime')
+    , _tName :: !(Maybe Text)
+    , _tEndTime :: !(Maybe DateTime')
     , _tDestinationDataSetId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -482,7 +482,7 @@ instance ToJSON TransferConfigParams where
 data ScheduleTransferRunsRequest =
   ScheduleTransferRunsRequest'
     { _strrStartTime :: !(Maybe DateTime')
-    , _strrEndTime   :: !(Maybe DateTime')
+    , _strrEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -535,11 +535,11 @@ instance ToJSON ScheduleTransferRunsRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -646,9 +646,9 @@ instance ToJSON Empty where
 -- /See:/ 'scheduleOptions' smart constructor.
 data ScheduleOptions =
   ScheduleOptions'
-    { _soStartTime             :: !(Maybe DateTime')
+    { _soStartTime :: !(Maybe DateTime')
     , _soDisableAutoScheduling :: !(Maybe Bool)
-    , _soEndTime               :: !(Maybe DateTime')
+    , _soEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -723,7 +723,7 @@ instance ToJSON ScheduleOptions where
 -- /See:/ 'listTransferLogsResponse' smart constructor.
 data ListTransferLogsResponse =
   ListTransferLogsResponse'
-    { _ltlrNextPageToken    :: !(Maybe Text)
+    { _ltlrNextPageToken :: !(Maybe Text)
     , _ltlrTransferMessages :: !(Maybe [TransferMessage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -893,21 +893,21 @@ instance ToJSON TransferRunParams where
 -- /See:/ 'dataSourceParameter' smart constructor.
 data DataSourceParameter =
   DataSourceParameter'
-    { _dspMaxValue              :: !(Maybe (Textual Double))
-    , _dspParamId               :: !(Maybe Text)
-    , _dspImmutable             :: !(Maybe Bool)
-    , _dspRecurse               :: !(Maybe Bool)
+    { _dspMaxValue :: !(Maybe (Textual Double))
+    , _dspParamId :: !(Maybe Text)
+    , _dspImmutable :: !(Maybe Bool)
+    , _dspRecurse :: !(Maybe Bool)
     , _dspValidationDescription :: !(Maybe Text)
-    , _dspRequired              :: !(Maybe Bool)
-    , _dspDisplayName           :: !(Maybe Text)
-    , _dspType                  :: !(Maybe DataSourceParameterType)
-    , _dspAllowedValues         :: !(Maybe [Text])
-    , _dspRepeated              :: !(Maybe Bool)
-    , _dspDescription           :: !(Maybe Text)
-    , _dspValidationRegex       :: !(Maybe Text)
-    , _dspMinValue              :: !(Maybe (Textual Double))
-    , _dspValidationHelpURL     :: !(Maybe Text)
-    , _dspFields                :: !(Maybe [DataSourceParameter])
+    , _dspRequired :: !(Maybe Bool)
+    , _dspDisplayName :: !(Maybe Text)
+    , _dspType :: !(Maybe DataSourceParameterType)
+    , _dspAllowedValues :: !(Maybe [Text])
+    , _dspRepeated :: !(Maybe Bool)
+    , _dspDescription :: !(Maybe Text)
+    , _dspValidationRegex :: !(Maybe Text)
+    , _dspMinValue :: !(Maybe (Textual Double))
+    , _dspValidationHelpURL :: !(Maybe Text)
+    , _dspFields :: !(Maybe [DataSourceParameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1140,7 +1140,7 @@ instance ToJSON ScheduleTransferRunsResponse where
 data ListDataSourcesResponse =
   ListDataSourcesResponse'
     { _ldsrNextPageToken :: !(Maybe Text)
-    , _ldsrDataSources   :: !(Maybe [DataSource])
+    , _ldsrDataSources :: !(Maybe [DataSource])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1195,7 +1195,7 @@ instance ToJSON ListDataSourcesResponse where
 -- /See:/ 'startManualTransferRunsRequest' smart constructor.
 data StartManualTransferRunsRequest =
   StartManualTransferRunsRequest'
-    { _smtrrRequestedRunTime   :: !(Maybe DateTime')
+    { _smtrrRequestedRunTime :: !(Maybe DateTime')
     , _smtrrRequestedTimeRange :: !(Maybe TimeRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1252,24 +1252,24 @@ instance ToJSON StartManualTransferRunsRequest where
 -- /See:/ 'dataSource' smart constructor.
 data DataSource =
   DataSource'
-    { _dsClientId                     :: !(Maybe Text)
-    , _dsMinimumScheduleInterval      :: !(Maybe GDuration)
-    , _dsSupportsCustomSchedule       :: !(Maybe Bool)
-    , _dsUpdateDeadlineSeconds        :: !(Maybe (Textual Int32))
-    , _dsManualRunsDisabled           :: !(Maybe Bool)
-    , _dsDataSourceId                 :: !(Maybe Text)
-    , _dsTransferType                 :: !(Maybe DataSourceTransferType)
-    , _dsScopes                       :: !(Maybe [Text])
-    , _dsSupportsMultipleTransfers    :: !(Maybe Bool)
-    , _dsName                         :: !(Maybe Text)
-    , _dsParameters                   :: !(Maybe [DataSourceParameter])
-    , _dsHelpURL                      :: !(Maybe Text)
+    { _dsClientId :: !(Maybe Text)
+    , _dsMinimumScheduleInterval :: !(Maybe GDuration)
+    , _dsSupportsCustomSchedule :: !(Maybe Bool)
+    , _dsUpdateDeadlineSeconds :: !(Maybe (Textual Int32))
+    , _dsManualRunsDisabled :: !(Maybe Bool)
+    , _dsDataSourceId :: !(Maybe Text)
+    , _dsTransferType :: !(Maybe DataSourceTransferType)
+    , _dsScopes :: !(Maybe [Text])
+    , _dsSupportsMultipleTransfers :: !(Maybe Bool)
+    , _dsName :: !(Maybe Text)
+    , _dsParameters :: !(Maybe [DataSourceParameter])
+    , _dsHelpURL :: !(Maybe Text)
     , _dsDefaultDataRefreshWindowDays :: !(Maybe (Textual Int32))
-    , _dsDisplayName                  :: !(Maybe Text)
-    , _dsDataRefreshType              :: !(Maybe DataSourceDataRefreshType)
-    , _dsAuthorizationType            :: !(Maybe DataSourceAuthorizationType)
-    , _dsDefaultSchedule              :: !(Maybe Text)
-    , _dsDescription                  :: !(Maybe Text)
+    , _dsDisplayName :: !(Maybe Text)
+    , _dsDataRefreshType :: !(Maybe DataSourceDataRefreshType)
+    , _dsAuthorizationType :: !(Maybe DataSourceAuthorizationType)
+    , _dsDefaultSchedule :: !(Maybe Text)
+    , _dsDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1516,7 +1516,7 @@ instance ToJSON DataSource where
 data ListTransferRunsResponse =
   ListTransferRunsResponse'
     { _ltrrNextPageToken :: !(Maybe Text)
-    , _ltrrTransferRuns  :: !(Maybe [TransferRun])
+    , _ltrrTransferRuns :: !(Maybe [TransferRun])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1571,7 +1571,7 @@ instance ToJSON ListTransferRunsResponse where
 -- /See:/ 'transferMessage' smart constructor.
 data TransferMessage =
   TransferMessage'
-    { _tmSeverity    :: !(Maybe TransferMessageSeverity)
+    { _tmSeverity :: !(Maybe TransferMessageSeverity)
     , _tmMessageTime :: !(Maybe DateTime')
     , _tmMessageText :: !(Maybe Text)
     }
@@ -1746,7 +1746,7 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'listTransferConfigsResponse' smart constructor.
 data ListTransferConfigsResponse =
   ListTransferConfigsResponse'
-    { _ltcrNextPageToken   :: !(Maybe Text)
+    { _ltcrNextPageToken :: !(Maybe Text)
     , _ltcrTransferConfigs :: !(Maybe [TransferConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1807,19 +1807,19 @@ instance ToJSON ListTransferConfigsResponse where
 -- /See:/ 'transferConfig' smart constructor.
 data TransferConfig =
   TransferConfig'
-    { _tcState                 :: !(Maybe TransferConfigState)
-    , _tcSchedule              :: !(Maybe Text)
-    , _tcScheduleOptions       :: !(Maybe ScheduleOptions)
-    , _tcDisabled              :: !(Maybe Bool)
-    , _tcDataSourceId          :: !(Maybe Text)
-    , _tcParams                :: !(Maybe TransferConfigParams)
-    , _tcUserId                :: !(Maybe (Textual Int64))
-    , _tcUpdateTime            :: !(Maybe DateTime')
-    , _tcName                  :: !(Maybe Text)
-    , _tcDataSetRegion         :: !(Maybe Text)
-    , _tcDisplayName           :: !(Maybe Text)
-    , _tcNextRunTime           :: !(Maybe DateTime')
-    , _tcDestinationDataSetId  :: !(Maybe Text)
+    { _tcState :: !(Maybe TransferConfigState)
+    , _tcSchedule :: !(Maybe Text)
+    , _tcScheduleOptions :: !(Maybe ScheduleOptions)
+    , _tcDisabled :: !(Maybe Bool)
+    , _tcDataSourceId :: !(Maybe Text)
+    , _tcParams :: !(Maybe TransferConfigParams)
+    , _tcUserId :: !(Maybe (Textual Int64))
+    , _tcUpdateTime :: !(Maybe DateTime')
+    , _tcName :: !(Maybe Text)
+    , _tcDataSetRegion :: !(Maybe Text)
+    , _tcDisplayName :: !(Maybe Text)
+    , _tcNextRunTime :: !(Maybe DateTime')
+    , _tcDestinationDataSetId :: !(Maybe Text)
     , _tcDataRefreshWindowDays :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

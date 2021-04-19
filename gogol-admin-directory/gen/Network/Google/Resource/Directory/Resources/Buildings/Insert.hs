@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Resources.Buildings.Insert
     , rbiCoordinatesSource
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.buildings.insert@ method which the
 -- 'ResourcesBuildingsInsert' request conforms to.
@@ -62,8 +62,8 @@ type ResourcesBuildingsInsertResource =
 -- /See:/ 'resourcesBuildingsInsert' smart constructor.
 data ResourcesBuildingsInsert =
   ResourcesBuildingsInsert'
-    { _rbiPayload           :: !Building
-    , _rbiCustomer          :: !Text
+    { _rbiPayload :: !Building
+    , _rbiCustomer :: !Text
     , _rbiCoordinatesSource :: !ResourcesBuildingsInsertCoordinatesSource
     }
   deriving (Eq, Show, Data, Typeable, Generic)

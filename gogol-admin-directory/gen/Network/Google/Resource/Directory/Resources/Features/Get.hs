@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Features.Get
     , rfgFeatureKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.get@ method which the
 -- 'ResourcesFeaturesGet' request conforms to.
@@ -58,7 +58,7 @@ type ResourcesFeaturesGetResource =
 -- /See:/ 'resourcesFeaturesGet' smart constructor.
 data ResourcesFeaturesGet =
   ResourcesFeaturesGet'
-    { _rfgCustomer   :: !Text
+    { _rfgCustomer :: !Text
     , _rfgFeatureKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

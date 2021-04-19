@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforDevice.
     , mcduManagedConfigurationForDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsfordevice.update@ method which the
 -- 'ManagedConfigurationsforDeviceUpdate' request conforms to.
@@ -67,10 +67,10 @@ type ManagedConfigurationsforDeviceUpdateResource =
 -- /See:/ 'managedConfigurationsforDeviceUpdate' smart constructor.
 data ManagedConfigurationsforDeviceUpdate =
   ManagedConfigurationsforDeviceUpdate'
-    { _mcduEnterpriseId                    :: !Text
-    , _mcduPayload                         :: !ManagedConfiguration
-    , _mcduUserId                          :: !Text
-    , _mcduDeviceId                        :: !Text
+    { _mcduEnterpriseId :: !Text
+    , _mcduPayload :: !ManagedConfiguration
+    , _mcduUserId :: !Text
+    , _mcduDeviceId :: !Text
     , _mcduManagedConfigurationForDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

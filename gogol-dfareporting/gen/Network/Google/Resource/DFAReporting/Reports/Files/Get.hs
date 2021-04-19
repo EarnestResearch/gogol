@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Reports.Files.Get
     , rfgFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.files.get@ method which the
 -- 'ReportsFilesGet' request conforms to.
@@ -70,9 +70,9 @@ type ReportsFilesGetResource =
 -- /See:/ 'reportsFilesGet' smart constructor.
 data ReportsFilesGet =
   ReportsFilesGet'
-    { _rfgReportId  :: !(Textual Int64)
+    { _rfgReportId :: !(Textual Int64)
     , _rfgProFileId :: !(Textual Int64)
-    , _rfgFileId    :: !(Textual Int64)
+    , _rfgFileId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

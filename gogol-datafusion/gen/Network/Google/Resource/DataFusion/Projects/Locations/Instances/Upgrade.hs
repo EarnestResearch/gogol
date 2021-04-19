@@ -43,8 +43,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.Upgrade
     , pliuCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.upgrade@ method which the
 -- 'ProjectsLocationsInstancesUpgrade' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsInstancesUpgradeResource =
 -- /See:/ 'projectsLocationsInstancesUpgrade' smart constructor.
 data ProjectsLocationsInstancesUpgrade =
   ProjectsLocationsInstancesUpgrade'
-    { _pliuXgafv          :: !(Maybe Xgafv)
+    { _pliuXgafv :: !(Maybe Xgafv)
     , _pliuUploadProtocol :: !(Maybe Text)
-    , _pliuAccessToken    :: !(Maybe Text)
-    , _pliuUploadType     :: !(Maybe Text)
-    , _pliuPayload        :: !UpgradeInstanceRequest
-    , _pliuName           :: !Text
-    , _pliuCallback       :: !(Maybe Text)
+    , _pliuAccessToken :: !(Maybe Text)
+    , _pliuUploadType :: !(Maybe Text)
+    , _pliuPayload :: !UpgradeInstanceRequest
+    , _pliuName :: !Text
+    , _pliuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

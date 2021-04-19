@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Get
     , ttgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.get@ method which the
 -- 'TargetingTemplatesGet' request conforms to.
@@ -58,7 +58,7 @@ type TargetingTemplatesGetResource =
 data TargetingTemplatesGet =
   TargetingTemplatesGet'
     { _ttgProFileId :: !(Textual Int64)
-    , _ttgId        :: !(Textual Int64)
+    , _ttgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

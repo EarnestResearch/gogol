@@ -45,8 +45,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.Patch
     , paipCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.patch@ method which the
 -- 'ProjectsAgentIntentsPatch' request conforms to.
@@ -70,16 +70,16 @@ type ProjectsAgentIntentsPatchResource =
 -- /See:/ 'projectsAgentIntentsPatch' smart constructor.
 data ProjectsAgentIntentsPatch =
   ProjectsAgentIntentsPatch'
-    { _paipXgafv          :: !(Maybe Xgafv)
-    , _paipLanguageCode   :: !(Maybe Text)
+    { _paipXgafv :: !(Maybe Xgafv)
+    , _paipLanguageCode :: !(Maybe Text)
     , _paipUploadProtocol :: !(Maybe Text)
-    , _paipUpdateMask     :: !(Maybe GFieldMask)
-    , _paipAccessToken    :: !(Maybe Text)
-    , _paipUploadType     :: !(Maybe Text)
-    , _paipPayload        :: !GoogleCloudDialogflowV2Intent
-    , _paipIntentView     :: !(Maybe Text)
-    , _paipName           :: !Text
-    , _paipCallback       :: !(Maybe Text)
+    , _paipUpdateMask :: !(Maybe GFieldMask)
+    , _paipAccessToken :: !(Maybe Text)
+    , _paipUploadType :: !(Maybe Text)
+    , _paipPayload :: !GoogleCloudDialogflowV2Intent
+    , _paipIntentView :: !(Maybe Text)
+    , _paipName :: !Text
+    , _paipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

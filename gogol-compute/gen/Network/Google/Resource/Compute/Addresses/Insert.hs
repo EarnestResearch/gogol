@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Addresses.Insert
     , aiRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.addresses.insert@ method which the
 -- 'AddressesInsert' request conforms to.
@@ -64,9 +64,9 @@ type AddressesInsertResource =
 data AddressesInsert =
   AddressesInsert'
     { _aiRequestId :: !(Maybe Text)
-    , _aiProject   :: !Text
-    , _aiPayload   :: !Address
-    , _aiRegion    :: !Text
+    , _aiProject :: !Text
+    , _aiPayload :: !Address
+    , _aiRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

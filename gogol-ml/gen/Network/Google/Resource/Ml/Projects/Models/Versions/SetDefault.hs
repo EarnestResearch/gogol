@@ -46,8 +46,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.SetDefault
     , pmvsdCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.setDefault@ method which the
 -- 'ProjectsModelsVersionsSetDefault' request conforms to.
@@ -73,13 +73,13 @@ type ProjectsModelsVersionsSetDefaultResource =
 -- /See:/ 'projectsModelsVersionsSetDefault' smart constructor.
 data ProjectsModelsVersionsSetDefault =
   ProjectsModelsVersionsSetDefault'
-    { _pmvsdXgafv          :: !(Maybe Xgafv)
+    { _pmvsdXgafv :: !(Maybe Xgafv)
     , _pmvsdUploadProtocol :: !(Maybe Text)
-    , _pmvsdAccessToken    :: !(Maybe Text)
-    , _pmvsdUploadType     :: !(Maybe Text)
-    , _pmvsdPayload        :: !GoogleCloudMlV1__SetDefaultVersionRequest
-    , _pmvsdName           :: !Text
-    , _pmvsdCallback       :: !(Maybe Text)
+    , _pmvsdAccessToken :: !(Maybe Text)
+    , _pmvsdUploadType :: !(Maybe Text)
+    , _pmvsdPayload :: !GoogleCloudMlV1__SetDefaultVersionRequest
+    , _pmvsdName :: !Text
+    , _pmvsdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

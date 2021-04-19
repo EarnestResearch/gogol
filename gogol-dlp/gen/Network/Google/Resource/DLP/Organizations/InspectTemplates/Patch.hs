@@ -43,8 +43,8 @@ module Network.Google.Resource.DLP.Organizations.InspectTemplates.Patch
     , oitpCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.inspectTemplates.patch@ method which the
 -- 'OrganizationsInspectTemplatesPatch' request conforms to.
@@ -67,13 +67,13 @@ type OrganizationsInspectTemplatesPatchResource =
 -- /See:/ 'organizationsInspectTemplatesPatch' smart constructor.
 data OrganizationsInspectTemplatesPatch =
   OrganizationsInspectTemplatesPatch'
-    { _oitpXgafv          :: !(Maybe Xgafv)
+    { _oitpXgafv :: !(Maybe Xgafv)
     , _oitpUploadProtocol :: !(Maybe Text)
-    , _oitpAccessToken    :: !(Maybe Text)
-    , _oitpUploadType     :: !(Maybe Text)
-    , _oitpPayload        :: !GooglePrivacyDlpV2UpdateInspectTemplateRequest
-    , _oitpName           :: !Text
-    , _oitpCallback       :: !(Maybe Text)
+    , _oitpAccessToken :: !(Maybe Text)
+    , _oitpUploadType :: !(Maybe Text)
+    , _oitpPayload :: !GooglePrivacyDlpV2UpdateInspectTemplateRequest
+    , _oitpName :: !Text
+    , _oitpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

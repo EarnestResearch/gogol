@@ -36,8 +36,8 @@ module Network.Google.Resource.GamesManagement.Rooms.Reset
 
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.rooms.reset@ method which the
 -- 'RoomsReset' request conforms to.

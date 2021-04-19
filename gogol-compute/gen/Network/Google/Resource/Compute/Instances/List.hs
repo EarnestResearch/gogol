@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Instances.List
     , il1MaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.list@ method which the
 -- 'InstancesList' request conforms to.
@@ -65,11 +65,11 @@ type InstancesListResource =
 -- /See:/ 'instancesList' smart constructor.
 data InstancesList =
   InstancesList'
-    { _il1OrderBy    :: !(Maybe Text)
-    , _il1Project    :: !Text
-    , _il1Zone       :: !Text
-    , _il1Filter     :: !(Maybe Text)
-    , _il1PageToken  :: !(Maybe Text)
+    { _il1OrderBy :: !(Maybe Text)
+    , _il1Project :: !Text
+    , _il1Zone :: !Text
+    , _il1Filter :: !(Maybe Text)
+    , _il1PageToken :: !(Maybe Text)
     , _il1MaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

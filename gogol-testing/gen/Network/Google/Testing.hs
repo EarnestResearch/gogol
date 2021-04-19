@@ -524,13 +524,13 @@ module Network.Google.Testing
     , tsDirectoriesToPull
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Testing.ApplicationDetailService.GetAPKDetails
-import           Network.Google.Resource.Testing.Projects.TestMatrices.Cancel
-import           Network.Google.Resource.Testing.Projects.TestMatrices.Create
-import           Network.Google.Resource.Testing.Projects.TestMatrices.Get
-import           Network.Google.Resource.Testing.TestEnvironmentCatalog.Get
-import           Network.Google.Testing.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Testing.ApplicationDetailService.GetAPKDetails
+import Network.Google.Resource.Testing.Projects.TestMatrices.Cancel
+import Network.Google.Resource.Testing.Projects.TestMatrices.Create
+import Network.Google.Resource.Testing.Projects.TestMatrices.Get
+import Network.Google.Resource.Testing.TestEnvironmentCatalog.Get
+import Network.Google.Testing.Types
 
 {- $resources
 TODO

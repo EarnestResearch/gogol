@@ -38,8 +38,8 @@ module Network.Google.Resource.Reseller.Subscriptions.StartPaidService
     , sspsSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.startPaidService@ method which the
 -- 'SubscriptionsStartPaidService' request conforms to.
@@ -60,7 +60,7 @@ type SubscriptionsStartPaidServiceResource =
 -- /See:/ 'subscriptionsStartPaidService' smart constructor.
 data SubscriptionsStartPaidService =
   SubscriptionsStartPaidService'
-    { _sspsCustomerId     :: !Text
+    { _sspsCustomerId :: !Text
     , _sspsSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

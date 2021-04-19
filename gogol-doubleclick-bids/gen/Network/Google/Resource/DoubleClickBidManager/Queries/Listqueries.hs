@@ -34,8 +34,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.Listqueries
 
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.listqueries@ method which the
 -- 'QueriesListqueries' request conforms to.

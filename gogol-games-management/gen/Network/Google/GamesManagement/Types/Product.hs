@@ -17,8 +17,8 @@
 --
 module Network.Google.GamesManagement.Types.Product where
 
-import           Network.Google.GamesManagement.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types.Sum
+import Network.Google.Prelude
 
 -- | This is a JSON template for 1P\/3P metadata about the player\'s
 -- experience.
@@ -26,9 +26,9 @@ import           Network.Google.Prelude
 -- /See:/ 'gamesPlayerExperienceInfoResource' smart constructor.
 data GamesPlayerExperienceInfoResource =
   GamesPlayerExperienceInfoResource'
-    { _gpeirCurrentExperiencePoints    :: !(Maybe (Textual Int64))
-    , _gpeirCurrentLevel               :: !(Maybe GamesPlayerLevelResource)
-    , _gpeirNextLevel                  :: !(Maybe GamesPlayerLevelResource)
+    { _gpeirCurrentExperiencePoints :: !(Maybe (Textual Int64))
+    , _gpeirCurrentLevel :: !(Maybe GamesPlayerLevelResource)
+    , _gpeirNextLevel :: !(Maybe GamesPlayerLevelResource)
     , _gpeirLastLevelUpTimestampMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -113,7 +113,7 @@ instance ToJSON GamesPlayerExperienceInfoResource
 -- /See:/ 'playerName' smart constructor.
 data PlayerName =
   PlayerName'
-    { _pnGivenName  :: !(Maybe Text)
+    { _pnGivenName :: !(Maybe Text)
     , _pnFamilyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -163,7 +163,7 @@ instance ToJSON PlayerName where
 data PlayerScoreResetAllResponse =
   PlayerScoreResetAllResponse'
     { _psrarResults :: !(Maybe [PlayerScoreResetResponse])
-    , _psrarKind    :: !Text
+    , _psrarKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -220,7 +220,7 @@ instance ToJSON PlayerScoreResetAllResponse where
 data GamesPlayedResource =
   GamesPlayedResource'
     { _gprAutoMatched :: !(Maybe Bool)
-    , _gprTimeMillis  :: !(Maybe (Textual Int64))
+    , _gprTimeMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -274,7 +274,7 @@ data GamesPlayerLevelResource =
   GamesPlayerLevelResource'
     { _gplrMaxExperiencePoints :: !(Maybe (Textual Int64))
     , _gplrMinExperiencePoints :: !(Maybe (Textual Int64))
-    , _gplrLevel               :: !(Maybe (Textual Int32))
+    , _gplrLevel :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -342,9 +342,9 @@ instance ToJSON GamesPlayerLevelResource where
 -- /See:/ 'playerScoreResetResponse' smart constructor.
 data PlayerScoreResetResponse =
   PlayerScoreResetResponse'
-    { _psrrKind                :: !Text
+    { _psrrKind :: !Text
     , _psrrResetScoreTimeSpans :: !(Maybe [Text])
-    , _psrrDefinitionId        :: !(Maybe Text)
+    , _psrrDefinitionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -413,7 +413,7 @@ instance ToJSON PlayerScoreResetResponse where
 -- /See:/ 'scoresResetMultipleForAllRequest' smart constructor.
 data ScoresResetMultipleForAllRequest =
   ScoresResetMultipleForAllRequest'
-    { _srmfarKind           :: !Text
+    { _srmfarKind :: !Text
     , _srmfarLeaderboardIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -472,7 +472,7 @@ instance ToJSON ScoresResetMultipleForAllRequest
 -- /See:/ 'questsResetMultipleForAllRequest' smart constructor.
 data QuestsResetMultipleForAllRequest =
   QuestsResetMultipleForAllRequest'
-    { _qrmfarKind     :: !Text
+    { _qrmfarKind :: !Text
     , _qrmfarQuestIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -532,8 +532,8 @@ instance ToJSON QuestsResetMultipleForAllRequest
 data HiddenPlayerList =
   HiddenPlayerList'
     { _hplNextPageToken :: !(Maybe Text)
-    , _hplKind          :: !Text
-    , _hplItems         :: !(Maybe [HiddenPlayer])
+    , _hplKind :: !Text
+    , _hplItems :: !(Maybe [HiddenPlayer])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -597,7 +597,7 @@ instance ToJSON HiddenPlayerList where
 -- /See:/ 'eventsResetMultipleForAllRequest' smart constructor.
 data EventsResetMultipleForAllRequest =
   EventsResetMultipleForAllRequest'
-    { _ermfarKind     :: !Text
+    { _ermfarKind :: !Text
     , _ermfarEventIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -656,7 +656,7 @@ instance ToJSON EventsResetMultipleForAllRequest
 -- /See:/ 'achievementResetMultipleForAllRequest' smart constructor.
 data AchievementResetMultipleForAllRequest =
   AchievementResetMultipleForAllRequest'
-    { _armfarKind           :: !Text
+    { _armfarKind :: !Text
     , _armfarAchievementIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -716,9 +716,9 @@ instance ToJSON AchievementResetMultipleForAllRequest
 -- /See:/ 'hiddenPlayer' smart constructor.
 data HiddenPlayer =
   HiddenPlayer'
-    { _hpKind             :: !Text
+    { _hpKind :: !Text
     , _hpHiddenTimeMillis :: !(Maybe (Textual Int64))
-    , _hpPlayer           :: !(Maybe Player)
+    , _hpPlayer :: !(Maybe Player)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -781,7 +781,7 @@ instance ToJSON HiddenPlayer where
 data AchievementResetAllResponse =
   AchievementResetAllResponse'
     { _ararResults :: !(Maybe [AchievementResetResponse])
-    , _ararKind    :: !Text
+    , _ararKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -836,17 +836,17 @@ instance ToJSON AchievementResetAllResponse where
 data Player =
   Player'
     { _pBannerURLLandscape :: !(Maybe Text)
-    , _pLastPlayedWith     :: !(Maybe GamesPlayedResource)
-    , _pAvatarImageURL     :: !(Maybe Text)
-    , _pKind               :: !Text
-    , _pExperienceInfo     :: !(Maybe GamesPlayerExperienceInfoResource)
-    , _pName               :: !(Maybe PlayerName)
-    , _pOriginalPlayerId   :: !(Maybe Text)
-    , _pDisplayName        :: !(Maybe Text)
-    , _pTitle              :: !(Maybe Text)
-    , _pBannerURLPortrait  :: !(Maybe Text)
-    , _pPlayerId           :: !(Maybe Text)
-    , _pProFileSettings    :: !(Maybe ProFileSettings)
+    , _pLastPlayedWith :: !(Maybe GamesPlayedResource)
+    , _pAvatarImageURL :: !(Maybe Text)
+    , _pKind :: !Text
+    , _pExperienceInfo :: !(Maybe GamesPlayerExperienceInfoResource)
+    , _pName :: !(Maybe PlayerName)
+    , _pOriginalPlayerId :: !(Maybe Text)
+    , _pDisplayName :: !(Maybe Text)
+    , _pTitle :: !(Maybe Text)
+    , _pBannerURLPortrait :: !(Maybe Text)
+    , _pPlayerId :: !(Maybe Text)
+    , _pProFileSettings :: !(Maybe ProFileSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1011,7 +1011,7 @@ instance ToJSON Player where
 data ProFileSettings =
   ProFileSettings'
     { _pfsProFileVisible :: !(Maybe Bool)
-    , _pfsKind           :: !Text
+    , _pfsKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1063,9 +1063,9 @@ instance ToJSON ProFileSettings where
 data AchievementResetResponse =
   AchievementResetResponse'
     { _arrUpdateOccurred :: !(Maybe Bool)
-    , _arrKind           :: !Text
-    , _arrCurrentState   :: !(Maybe Text)
-    , _arrDefinitionId   :: !(Maybe Text)
+    , _arrKind :: !Text
+    , _arrCurrentState :: !(Maybe Text)
+    , _arrDefinitionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

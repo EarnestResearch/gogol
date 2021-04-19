@@ -45,8 +45,8 @@ module Network.Google.Resource.DLP.Projects.JobTriggers.Create
     , pjtcCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.jobTriggers.create@ method which the
 -- 'ProjectsJobTriggersCreate' request conforms to.
@@ -72,13 +72,13 @@ type ProjectsJobTriggersCreateResource =
 -- /See:/ 'projectsJobTriggersCreate' smart constructor.
 data ProjectsJobTriggersCreate =
   ProjectsJobTriggersCreate'
-    { _pjtcParent         :: !Text
-    , _pjtcXgafv          :: !(Maybe Xgafv)
+    { _pjtcParent :: !Text
+    , _pjtcXgafv :: !(Maybe Xgafv)
     , _pjtcUploadProtocol :: !(Maybe Text)
-    , _pjtcAccessToken    :: !(Maybe Text)
-    , _pjtcUploadType     :: !(Maybe Text)
-    , _pjtcPayload        :: !GooglePrivacyDlpV2CreateJobTriggerRequest
-    , _pjtcCallback       :: !(Maybe Text)
+    , _pjtcAccessToken :: !(Maybe Text)
+    , _pjtcUploadType :: !(Maybe Text)
+    , _pjtcPayload :: !GooglePrivacyDlpV2CreateJobTriggerRequest
+    , _pjtcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

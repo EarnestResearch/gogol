@@ -17,8 +17,8 @@
 --
 module Network.Google.Language.Types.Product where
 
-import           Network.Google.Language.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Language.Types.Sum
+import Network.Google.Prelude
 
 -- | The syntax analysis request message.
 --
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 data AnalyzeSyntaxRequest =
   AnalyzeSyntaxRequest'
     { _asrEncodingType :: !(Maybe AnalyzeSyntaxRequestEncodingType)
-    , _asrDocument     :: !(Maybe Document)
+    , _asrDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -77,7 +77,7 @@ instance ToJSON AnalyzeSyntaxRequest where
 data DependencyEdge =
   DependencyEdge'
     { _deHeadTokenIndex :: !(Maybe (Textual Int32))
-    , _deLabel          :: !(Maybe DependencyEdgeLabel)
+    , _deLabel :: !(Maybe DependencyEdgeLabel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -199,7 +199,7 @@ instance ToJSON ClassifyTextRequest where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -261,7 +261,7 @@ instance ToJSON Status where
 -- /See:/ 'sentiment' smart constructor.
 data Sentiment =
   Sentiment'
-    { _sScore     :: !(Maybe (Textual Double))
+    { _sScore :: !(Maybe (Textual Double))
     , _sMagnitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -314,9 +314,9 @@ instance ToJSON Sentiment where
 data Token =
   Token'
     { _tDependencyEdge :: !(Maybe DependencyEdge)
-    , _tText           :: !(Maybe TextSpan)
-    , _tLemma          :: !(Maybe Text)
-    , _tPartOfSpeech   :: !(Maybe PartOfSpeech)
+    , _tText :: !(Maybe TextSpan)
+    , _tLemma :: !(Maybe Text)
+    , _tPartOfSpeech :: !(Maybe PartOfSpeech)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -422,7 +422,7 @@ instance ToJSON StatusDetailsItem where
 data ClassificationCategory =
   ClassificationCategory'
     { _ccConfidence :: !(Maybe (Textual Double))
-    , _ccName       :: !(Maybe Text)
+    , _ccName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -473,8 +473,8 @@ instance ToJSON ClassificationCategory where
 data AnnotateTextRequest =
   AnnotateTextRequest'
     { _atrEncodingType :: !(Maybe AnnotateTextRequestEncodingType)
-    , _atrFeatures     :: !(Maybe Features)
-    , _atrDocument     :: !(Maybe Document)
+    , _atrFeatures :: !(Maybe Features)
+    , _atrDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -534,8 +534,8 @@ instance ToJSON AnnotateTextRequest where
 data EntityMention =
   EntityMention'
     { _emSentiment :: !(Maybe Sentiment)
-    , _emText      :: !(Maybe TextSpan)
-    , _emType      :: !(Maybe EntityMentionType)
+    , _emText :: !(Maybe TextSpan)
+    , _emType :: !(Maybe EntityMentionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -592,7 +592,7 @@ instance ToJSON EntityMention where
 data TextSpan =
   TextSpan'
     { _tsBeginOffSet :: !(Maybe (Textual Int32))
-    , _tsContent     :: !(Maybe Text)
+    , _tsContent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -642,7 +642,7 @@ instance ToJSON TextSpan where
 data AnalyzeEntitySentimentRequest =
   AnalyzeEntitySentimentRequest'
     { _aesrEncodingType :: !(Maybe AnalyzeEntitySentimentRequestEncodingType)
-    , _aesrDocument     :: !(Maybe Document)
+    , _aesrDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -691,12 +691,12 @@ instance ToJSON AnalyzeEntitySentimentRequest where
 -- /See:/ 'annotateTextResponse' smart constructor.
 data AnnotateTextResponse =
   AnnotateTextResponse'
-    { _atrEntities          :: !(Maybe [Entity])
-    , _atrTokens            :: !(Maybe [Token])
+    { _atrEntities :: !(Maybe [Entity])
+    , _atrTokens :: !(Maybe [Token])
     , _atrDocumentSentiment :: !(Maybe Sentiment)
-    , _atrCategories        :: !(Maybe [ClassificationCategory])
-    , _atrSentences         :: !(Maybe [Sentence])
-    , _atrLanguage          :: !(Maybe Text)
+    , _atrCategories :: !(Maybe [ClassificationCategory])
+    , _atrSentences :: !(Maybe [Sentence])
+    , _atrLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -808,11 +808,11 @@ instance ToJSON AnnotateTextResponse where
 -- /See:/ 'features' smart constructor.
 data Features =
   Features'
-    { _fExtractSyntax            :: !(Maybe Bool)
+    { _fExtractSyntax :: !(Maybe Bool)
     , _fExtractDocumentSentiment :: !(Maybe Bool)
-    , _fClassifyText             :: !(Maybe Bool)
-    , _fExtractEntitySentiment   :: !(Maybe Bool)
-    , _fExtractEntities          :: !(Maybe Bool)
+    , _fClassifyText :: !(Maybe Bool)
+    , _fExtractEntitySentiment :: !(Maybe Bool)
+    , _fExtractEntities :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -901,10 +901,10 @@ instance ToJSON Features where
 -- /See:/ 'document' smart constructor.
 data Document =
   Document'
-    { _dContent       :: !(Maybe Text)
-    , _dLanguage      :: !(Maybe Text)
+    { _dContent :: !(Maybe Text)
+    , _dLanguage :: !(Maybe Text)
     , _dGcsContentURI :: !(Maybe Text)
-    , _dType          :: !(Maybe DocumentType)
+    , _dType :: !(Maybe DocumentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -985,7 +985,7 @@ instance ToJSON Document where
 data AnalyzeSentimentRequest =
   AnalyzeSentimentRequest'
     { _aEncodingType :: !(Maybe AnalyzeSentimentRequestEncodingType)
-    , _aDocument     :: !(Maybe Document)
+    , _aDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1087,8 +1087,8 @@ instance ToJSON AnalyzeEntitiesResponse where
 data AnalyzeSentimentResponse =
   AnalyzeSentimentResponse'
     { _asrDocumentSentiment :: !(Maybe Sentiment)
-    , _asrSentences         :: !(Maybe [Sentence])
-    , _asrLanguage          :: !(Maybe Text)
+    , _asrSentences :: !(Maybe [Sentence])
+    , _asrLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1156,7 +1156,7 @@ instance ToJSON AnalyzeSentimentResponse where
 data AnalyzeEntitiesRequest =
   AnalyzeEntitiesRequest'
     { _aerEncodingType :: !(Maybe AnalyzeEntitiesRequestEncodingType)
-    , _aerDocument     :: !(Maybe Document)
+    , _aerDocument :: !(Maybe Document)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1207,11 +1207,11 @@ instance ToJSON AnalyzeEntitiesRequest where
 data Entity =
   Entity'
     { _eSentiment :: !(Maybe Sentiment)
-    , _eName      :: !(Maybe Text)
-    , _eSalience  :: !(Maybe (Textual Double))
-    , _eMetadata  :: !(Maybe EntityMetadata)
-    , _eType      :: !(Maybe EntityType)
-    , _eMentions  :: !(Maybe [EntityMention])
+    , _eName :: !(Maybe Text)
+    , _eSalience :: !(Maybe (Textual Double))
+    , _eMetadata :: !(Maybe EntityMetadata)
+    , _eType :: !(Maybe EntityType)
+    , _eMentions :: !(Maybe [EntityMention])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1368,9 +1368,9 @@ instance ToJSON AnalyzeEntitySentimentResponse where
 -- /See:/ 'analyzeSyntaxResponse' smart constructor.
 data AnalyzeSyntaxResponse =
   AnalyzeSyntaxResponse'
-    { _aTokens    :: !(Maybe [Token])
+    { _aTokens :: !(Maybe [Token])
     , _aSentences :: !(Maybe [Sentence])
-    , _aLanguage  :: !(Maybe Text)
+    , _aLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1514,18 +1514,18 @@ instance ToJSON ClassifyTextResponse where
 -- /See:/ 'partOfSpeech' smart constructor.
 data PartOfSpeech =
   PartOfSpeech'
-    { _posProper      :: !(Maybe PartOfSpeechProper)
-    , _posTag         :: !(Maybe PartOfSpeechTag)
-    , _posPerson      :: !(Maybe PartOfSpeechPerson)
-    , _posAspect      :: !(Maybe PartOfSpeechAspect)
-    , _posCase        :: !(Maybe PartOfSpeechCase)
-    , _posGender      :: !(Maybe PartOfSpeechGender)
+    { _posProper :: !(Maybe PartOfSpeechProper)
+    , _posTag :: !(Maybe PartOfSpeechTag)
+    , _posPerson :: !(Maybe PartOfSpeechPerson)
+    , _posAspect :: !(Maybe PartOfSpeechAspect)
+    , _posCase :: !(Maybe PartOfSpeechCase)
+    , _posGender :: !(Maybe PartOfSpeechGender)
     , _posReciprocity :: !(Maybe PartOfSpeechReciprocity)
-    , _posNumber      :: !(Maybe PartOfSpeechNumber)
-    , _posVoice       :: !(Maybe PartOfSpeechVoice)
-    , _posForm        :: !(Maybe PartOfSpeechForm)
-    , _posTense       :: !(Maybe PartOfSpeechTense)
-    , _posMood        :: !(Maybe PartOfSpeechMood)
+    , _posNumber :: !(Maybe PartOfSpeechNumber)
+    , _posVoice :: !(Maybe PartOfSpeechVoice)
+    , _posForm :: !(Maybe PartOfSpeechForm)
+    , _posTense :: !(Maybe PartOfSpeechTense)
+    , _posMood :: !(Maybe PartOfSpeechMood)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1669,7 +1669,7 @@ instance ToJSON PartOfSpeech where
 data Sentence =
   Sentence'
     { _sSentiment :: !(Maybe Sentiment)
-    , _sText      :: !(Maybe TextSpan)
+    , _sText :: !(Maybe TextSpan)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

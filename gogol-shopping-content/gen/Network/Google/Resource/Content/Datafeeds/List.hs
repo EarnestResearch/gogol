@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.Datafeeds.List
     , datMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.list@ method which the
 -- 'DatafeedsList' request conforms to.
 type DatafeedsListResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              QueryParam "pageToken" Text :>
@@ -59,7 +59,7 @@ type DatafeedsListResource =
 data DatafeedsList =
   DatafeedsList'
     { _datMerchantId :: !(Textual Word64)
-    , _datPageToken  :: !(Maybe Text)
+    , _datPageToken :: !(Maybe Text)
     , _datMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

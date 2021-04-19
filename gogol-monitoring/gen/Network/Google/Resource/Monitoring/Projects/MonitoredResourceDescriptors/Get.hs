@@ -42,8 +42,8 @@ module Network.Google.Resource.Monitoring.Projects.MonitoredResourceDescriptors.
     , pmrdgCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.monitoredResourceDescriptors.get@ method which the
 -- 'ProjectsMonitoredResourceDescriptorsGet' request conforms to.
@@ -65,12 +65,12 @@ type ProjectsMonitoredResourceDescriptorsGetResource
 -- /See:/ 'projectsMonitoredResourceDescriptorsGet' smart constructor.
 data ProjectsMonitoredResourceDescriptorsGet =
   ProjectsMonitoredResourceDescriptorsGet'
-    { _pmrdgXgafv          :: !(Maybe Xgafv)
+    { _pmrdgXgafv :: !(Maybe Xgafv)
     , _pmrdgUploadProtocol :: !(Maybe Text)
-    , _pmrdgAccessToken    :: !(Maybe Text)
-    , _pmrdgUploadType     :: !(Maybe Text)
-    , _pmrdgName           :: !Text
-    , _pmrdgCallback       :: !(Maybe Text)
+    , _pmrdgAccessToken :: !(Maybe Text)
+    , _pmrdgUploadType :: !(Maybe Text)
+    , _pmrdgName :: !Text
+    , _pmrdgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

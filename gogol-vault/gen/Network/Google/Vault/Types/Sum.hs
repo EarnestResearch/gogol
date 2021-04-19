@@ -16,7 +16,7 @@
 --
 module Network.Google.Vault.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The requested export location.
 data ExportOptionsRegion

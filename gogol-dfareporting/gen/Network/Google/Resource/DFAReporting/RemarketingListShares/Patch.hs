@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.RemarketingListShares.Patch
     , rlspRemarketingListId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingListShares.patch@ method which the
 -- 'RemarketingListSharesPatch' request conforms to.
@@ -61,8 +61,8 @@ type RemarketingListSharesPatchResource =
 -- /See:/ 'remarketingListSharesPatch' smart constructor.
 data RemarketingListSharesPatch =
   RemarketingListSharesPatch'
-    { _rlspProFileId         :: !(Textual Int64)
-    , _rlspPayload           :: !RemarketingListShare
+    { _rlspProFileId :: !(Textual Int64)
+    , _rlspPayload :: !RemarketingListShare
     , _rlspRemarketingListId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

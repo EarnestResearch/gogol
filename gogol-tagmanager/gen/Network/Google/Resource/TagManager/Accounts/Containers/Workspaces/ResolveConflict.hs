@@ -39,8 +39,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Resolve
     , acwrcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.resolve_conflict@ method which the
 -- 'AccountsContainersWorkspacesResolveConflict' request conforms to.
@@ -59,9 +59,9 @@ type AccountsContainersWorkspacesResolveConflictResource
 -- /See:/ 'accountsContainersWorkspacesResolveConflict' smart constructor.
 data AccountsContainersWorkspacesResolveConflict =
   AccountsContainersWorkspacesResolveConflict'
-    { _acwrcPath        :: !Text
+    { _acwrcPath :: !Text
     , _acwrcFingerprint :: !(Maybe Text)
-    , _acwrcPayload     :: !Entity
+    , _acwrcPayload :: !Entity
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

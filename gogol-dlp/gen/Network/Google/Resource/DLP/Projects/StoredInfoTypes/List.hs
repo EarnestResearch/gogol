@@ -46,8 +46,8 @@ module Network.Google.Resource.DLP.Projects.StoredInfoTypes.List
     , psitlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.storedInfoTypes.list@ method which the
 -- 'ProjectsStoredInfoTypesList' request conforms to.
@@ -74,15 +74,15 @@ type ProjectsStoredInfoTypesListResource =
 -- /See:/ 'projectsStoredInfoTypesList' smart constructor.
 data ProjectsStoredInfoTypesList =
   ProjectsStoredInfoTypesList'
-    { _psitlParent         :: !Text
-    , _psitlXgafv          :: !(Maybe Xgafv)
+    { _psitlParent :: !Text
+    , _psitlXgafv :: !(Maybe Xgafv)
     , _psitlUploadProtocol :: !(Maybe Text)
-    , _psitlOrderBy        :: !(Maybe Text)
-    , _psitlAccessToken    :: !(Maybe Text)
-    , _psitlUploadType     :: !(Maybe Text)
-    , _psitlPageToken      :: !(Maybe Text)
-    , _psitlPageSize       :: !(Maybe (Textual Int32))
-    , _psitlCallback       :: !(Maybe Text)
+    , _psitlOrderBy :: !(Maybe Text)
+    , _psitlAccessToken :: !(Maybe Text)
+    , _psitlUploadType :: !(Maybe Text)
+    , _psitlPageToken :: !(Maybe Text)
+    , _psitlPageSize :: !(Maybe (Textual Int32))
+    , _psitlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.ServiceControl.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Quota mode for this operation.
 data QuotaPropertiesQuotaMode

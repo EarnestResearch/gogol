@@ -44,8 +44,8 @@ module Network.Google.Resource.Compute.RegionBackendServices.Patch
     , rbspBackendService
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionBackendServices.patch@ method which the
 -- 'RegionBackendServicesPatch' request conforms to.
@@ -72,10 +72,10 @@ type RegionBackendServicesPatchResource =
 -- /See:/ 'regionBackendServicesPatch' smart constructor.
 data RegionBackendServicesPatch =
   RegionBackendServicesPatch'
-    { _rbspRequestId      :: !(Maybe Text)
-    , _rbspProject        :: !Text
-    , _rbspPayload        :: !BackendService
-    , _rbspRegion         :: !Text
+    { _rbspRequestId :: !(Maybe Text)
+    , _rbspProject :: !Text
+    , _rbspPayload :: !BackendService
+    , _rbspRegion :: !Text
     , _rbspBackendService :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.SetState
     , dssDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.setState@ method which the
 -- 'DevicesSetState' request conforms to.
@@ -72,9 +72,9 @@ type DevicesSetStateResource =
 data DevicesSetState =
   DevicesSetState'
     { _dssEnterpriseId :: !Text
-    , _dssPayload      :: !DeviceState
-    , _dssUserId       :: !Text
-    , _dssDeviceId     :: !Text
+    , _dssPayload :: !DeviceState
+    , _dssUserId :: !Text
+    , _dssDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

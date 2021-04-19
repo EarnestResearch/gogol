@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Update
     , ttuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.update@ method which the
 -- 'TargetingTemplatesUpdate' request conforms to.
@@ -58,7 +58,7 @@ type TargetingTemplatesUpdateResource =
 data TargetingTemplatesUpdate =
   TargetingTemplatesUpdate'
     { _ttuProFileId :: !(Textual Int64)
-    , _ttuPayload   :: !TargetingTemplate
+    , _ttuPayload :: !TargetingTemplate
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

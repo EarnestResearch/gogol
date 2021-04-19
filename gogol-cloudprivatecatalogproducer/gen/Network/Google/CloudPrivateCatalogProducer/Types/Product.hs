@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudPrivateCatalogProducer.Types.Product where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data GoogleRpcStatus =
   GoogleRpcStatus'
     { _grsDetails :: !(Maybe [GoogleRpcStatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -169,7 +169,7 @@ instance ToJSON GoogleLongrunningOperationMetadata
 data GoogleCloudPrivatecatalogproducerV1beta1ListVersionsResponse =
   GoogleCloudPrivatecatalogproducerV1beta1ListVersionsResponse'
     { _gcpvlvrNextPageToken :: !(Maybe Text)
-    , _gcpvlvrVersions      :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Version])
+    , _gcpvlvrVersions :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Version])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -261,8 +261,8 @@ instance ToJSON
 -- /See:/ 'googleIAMV1Binding' smart constructor.
 data GoogleIAMV1Binding =
   GoogleIAMV1Binding'
-    { _givbMembers   :: !(Maybe [Text])
-    , _givbRole      :: !(Maybe Text)
+    { _givbMembers :: !(Maybe [Text])
+    , _givbRole :: !(Maybe Text)
     , _givbCondition :: !(Maybe GoogleTypeExpr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -339,7 +339,7 @@ instance ToJSON GoogleIAMV1Binding where
 data GoogleIAMV1SetIAMPolicyRequest =
   GoogleIAMV1SetIAMPolicyRequest'
     { _givsiprUpdateMask :: !(Maybe GFieldMask)
-    , _givsiprPolicy     :: !(Maybe GoogleIAMV1Policy)
+    , _givsiprPolicy :: !(Maybe GoogleIAMV1Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -396,7 +396,7 @@ instance ToJSON GoogleIAMV1SetIAMPolicyRequest where
 data GoogleCloudPrivatecatalogproducerV1beta1ListCatalogsResponse =
   GoogleCloudPrivatecatalogproducerV1beta1ListCatalogsResponse'
     { _gcpvlcrNextPageToken :: !(Maybe Text)
-    , _gcpvlcrCatalogs      :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Catalog])
+    , _gcpvlcrCatalogs :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Catalog])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -673,12 +673,12 @@ instance ToJSON
 -- /See:/ 'googleCloudPrivatecatalogproducerV1beta1Catalog' smart constructor.
 data GoogleCloudPrivatecatalogproducerV1beta1Catalog =
   GoogleCloudPrivatecatalogproducerV1beta1Catalog'
-    { _gcpvcParent      :: !(Maybe Text)
-    , _gcpvcUpdateTime  :: !(Maybe DateTime')
-    , _gcpvcName        :: !(Maybe Text)
+    { _gcpvcParent :: !(Maybe Text)
+    , _gcpvcUpdateTime :: !(Maybe DateTime')
+    , _gcpvcName :: !(Maybe Text)
     , _gcpvcDisplayName :: !(Maybe Text)
     , _gcpvcDescription :: !(Maybe Text)
-    , _gcpvcCreateTime  :: !(Maybe DateTime')
+    , _gcpvcCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -852,7 +852,7 @@ instance ToJSON GoogleIAMV1TestIAMPermissionsRequest
 -- /See:/ 'googleIAMV1AuditConfig' smart constructor.
 data GoogleIAMV1AuditConfig =
   GoogleIAMV1AuditConfig'
-    { _givacService         :: !(Maybe Text)
+    { _givacService :: !(Maybe Text)
     , _givacAuditLogConfigs :: !(Maybe [GoogleIAMV1AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1007,7 +1007,7 @@ instance ToJSON
 -- /See:/ 'googleIAMV1AuditLogConfig' smart constructor.
 data GoogleIAMV1AuditLogConfig =
   GoogleIAMV1AuditLogConfig'
-    { _givalcLogType         :: !(Maybe GoogleIAMV1AuditLogConfigLogType)
+    { _givalcLogType :: !(Maybe GoogleIAMV1AuditLogConfigLogType)
     , _givalcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1063,12 +1063,12 @@ instance ToJSON GoogleIAMV1AuditLogConfig where
 -- /See:/ 'googleCloudPrivatecatalogproducerV1beta1Version' smart constructor.
 data GoogleCloudPrivatecatalogproducerV1beta1Version =
   GoogleCloudPrivatecatalogproducerV1beta1Version'
-    { _gcpvvAsset         :: !(Maybe GoogleCloudPrivatecatalogproducerV1beta1VersionAsset)
+    { _gcpvvAsset :: !(Maybe GoogleCloudPrivatecatalogproducerV1beta1VersionAsset)
     , _gcpvvOriginalAsset :: !(Maybe GoogleCloudPrivatecatalogproducerV1beta1VersionOriginalAsset)
-    , _gcpvvUpdateTime    :: !(Maybe DateTime')
-    , _gcpvvName          :: !(Maybe Text)
-    , _gcpvvDescription   :: !(Maybe Text)
-    , _gcpvvCreateTime    :: !(Maybe DateTime')
+    , _gcpvvUpdateTime :: !(Maybe DateTime')
+    , _gcpvvName :: !(Maybe Text)
+    , _gcpvvDescription :: !(Maybe Text)
+    , _gcpvvCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1231,7 +1231,7 @@ instance ToJSON
 data GoogleLongrunningListOperationsResponse =
   GoogleLongrunningListOperationsResponse'
     { _gllorNextPageToken :: !(Maybe Text)
-    , _gllorOperations    :: !(Maybe [GoogleLongrunningOperation])
+    , _gllorOperations :: !(Maybe [GoogleLongrunningOperation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1306,9 +1306,9 @@ instance ToJSON
 data GoogleIAMV1Policy =
   GoogleIAMV1Policy'
     { _givpAuditConfigs :: !(Maybe [GoogleIAMV1AuditConfig])
-    , _givpEtag         :: !(Maybe Bytes)
-    , _givpVersion      :: !(Maybe (Textual Int32))
-    , _givpBindings     :: !(Maybe [GoogleIAMV1Binding])
+    , _givpEtag :: !(Maybe Bytes)
+    , _givpVersion :: !(Maybe (Textual Int32))
+    , _givpBindings :: !(Maybe [GoogleIAMV1Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1406,8 +1406,8 @@ instance ToJSON GoogleIAMV1Policy where
 -- /See:/ 'googleCloudPrivatecatalogproducerV1beta1Association' smart constructor.
 data GoogleCloudPrivatecatalogproducerV1beta1Association =
   GoogleCloudPrivatecatalogproducerV1beta1Association'
-    { _gcpvaName       :: !(Maybe Text)
-    , _gcpvaResource   :: !(Maybe Text)
+    { _gcpvaName :: !(Maybe Text)
+    , _gcpvaResource :: !(Maybe Text)
     , _gcpvaCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1483,7 +1483,7 @@ instance ToJSON
 data GoogleCloudPrivatecatalogproducerV1beta1ListProductsResponse =
   GoogleCloudPrivatecatalogproducerV1beta1ListProductsResponse'
     { _gcpvlprNextPageToken :: !(Maybe Text)
-    , _gcpvlprProducts      :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Product])
+    , _gcpvlprProducts :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Product])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1642,9 +1642,9 @@ instance ToJSON
 -- /See:/ 'googleTypeExpr' smart constructor.
 data GoogleTypeExpr =
   GoogleTypeExpr'
-    { _gteLocation    :: !(Maybe Text)
-    , _gteExpression  :: !(Maybe Text)
-    , _gteTitle       :: !(Maybe Text)
+    { _gteLocation :: !(Maybe Text)
+    , _gteExpression :: !(Maybe Text)
+    , _gteTitle :: !(Maybe Text)
     , _gteDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1723,10 +1723,10 @@ instance ToJSON GoogleTypeExpr where
 -- /See:/ 'googleLongrunningOperation' smart constructor.
 data GoogleLongrunningOperation =
   GoogleLongrunningOperation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe GoogleRpcStatus)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe GoogleRpcStatus)
     , _gloResponse :: !(Maybe GoogleLongrunningOperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunningOperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1819,12 +1819,12 @@ instance ToJSON GoogleLongrunningOperation where
 -- /See:/ 'googleCloudPrivatecatalogproducerV1beta1Product' smart constructor.
 data GoogleCloudPrivatecatalogproducerV1beta1Product =
   GoogleCloudPrivatecatalogproducerV1beta1Product'
-    { _gcpvpIconURI         :: !(Maybe Text)
-    , _gcpvpUpdateTime      :: !(Maybe DateTime')
+    { _gcpvpIconURI :: !(Maybe Text)
+    , _gcpvpUpdateTime :: !(Maybe DateTime')
     , _gcpvpDisplayMetadata :: !(Maybe GoogleCloudPrivatecatalogproducerV1beta1ProductDisplayMetadata)
-    , _gcpvpName            :: !(Maybe Text)
-    , _gcpvpAssetType       :: !(Maybe Text)
-    , _gcpvpCreateTime      :: !(Maybe DateTime')
+    , _gcpvpName :: !(Maybe Text)
+    , _gcpvpAssetType :: !(Maybe Text)
+    , _gcpvpCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2022,7 +2022,7 @@ instance ToJSON
 data GoogleCloudPrivatecatalogproducerV1beta1ListAssociationsResponse =
   GoogleCloudPrivatecatalogproducerV1beta1ListAssociationsResponse'
     { _gcpvlarNextPageToken :: !(Maybe Text)
-    , _gcpvlarAssociations  :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Association])
+    , _gcpvlarAssociations :: !(Maybe [GoogleCloudPrivatecatalogproducerV1beta1Association])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

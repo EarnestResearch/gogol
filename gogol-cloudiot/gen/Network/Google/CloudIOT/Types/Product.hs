@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudIOT.Types.Product where
 
-import           Network.Google.CloudIOT.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -197,9 +197,9 @@ instance ToJSON DeviceState where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -298,7 +298,7 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'listDeviceRegistriesResponse' smart constructor.
 data ListDeviceRegistriesResponse =
   ListDeviceRegistriesResponse'
-    { _ldrrNextPageToken    :: !(Maybe Text)
+    { _ldrrNextPageToken :: !(Maybe Text)
     , _ldrrDeviceRegistries :: !(Maybe [DeviceRegistry])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -354,10 +354,10 @@ instance ToJSON ListDeviceRegistriesResponse where
 -- /See:/ 'deviceConfig' smart constructor.
 data DeviceConfig =
   DeviceConfig'
-    { _dcDeviceAckTime   :: !(Maybe DateTime')
+    { _dcDeviceAckTime :: !(Maybe DateTime')
     , _dcCloudUpdateTime :: !(Maybe DateTime')
-    , _dcBinaryData      :: !(Maybe Bytes)
-    , _dcVersion         :: !(Maybe (Textual Int64))
+    , _dcBinaryData :: !(Maybe Bytes)
+    , _dcVersion :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -491,10 +491,10 @@ instance ToJSON ListDeviceConfigVersionsResponse
 -- /See:/ 'gatewayConfig' smart constructor.
 data GatewayConfig =
   GatewayConfig'
-    { _gcLastAccessedGatewayId   :: !(Maybe Text)
-    , _gcGatewayAuthMethod       :: !(Maybe GatewayConfigGatewayAuthMethod)
+    { _gcLastAccessedGatewayId :: !(Maybe Text)
+    , _gcGatewayAuthMethod :: !(Maybe GatewayConfigGatewayAuthMethod)
     , _gcLastAccessedGatewayTime :: !(Maybe DateTime')
-    , _gcGatewayType             :: !(Maybe GatewayConfigGatewayType)
+    , _gcGatewayType :: !(Maybe GatewayConfigGatewayType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -684,23 +684,23 @@ instance ToJSON StateNotificationConfig where
 -- /See:/ 'device' smart constructor.
 data Device =
   Device'
-    { _dState              :: !(Maybe DeviceState)
-    , _dLastHeartbeatTime  :: !(Maybe DateTime')
-    , _dGatewayConfig      :: !(Maybe GatewayConfig)
-    , _dLogLevel           :: !(Maybe DeviceLogLevel)
-    , _dConfig             :: !(Maybe DeviceConfig)
-    , _dCredentials        :: !(Maybe [DeviceCredential])
-    , _dNumId              :: !(Maybe (Textual Word64))
-    , _dLastErrorStatus    :: !(Maybe Status)
+    { _dState :: !(Maybe DeviceState)
+    , _dLastHeartbeatTime :: !(Maybe DateTime')
+    , _dGatewayConfig :: !(Maybe GatewayConfig)
+    , _dLogLevel :: !(Maybe DeviceLogLevel)
+    , _dConfig :: !(Maybe DeviceConfig)
+    , _dCredentials :: !(Maybe [DeviceCredential])
+    , _dNumId :: !(Maybe (Textual Word64))
+    , _dLastErrorStatus :: !(Maybe Status)
     , _dLastConfigSendTime :: !(Maybe DateTime')
-    , _dLastConfigAckTime  :: !(Maybe DateTime')
-    , _dName               :: !(Maybe Text)
-    , _dLastErrorTime      :: !(Maybe DateTime')
-    , _dMetadata           :: !(Maybe DeviceMetadata)
-    , _dId                 :: !(Maybe Text)
-    , _dLastStateTime      :: !(Maybe DateTime')
-    , _dBlocked            :: !(Maybe Bool)
-    , _dLastEventTime      :: !(Maybe DateTime')
+    , _dLastConfigAckTime :: !(Maybe DateTime')
+    , _dName :: !(Maybe Text)
+    , _dLastErrorTime :: !(Maybe DateTime')
+    , _dMetadata :: !(Maybe DeviceMetadata)
+    , _dId :: !(Maybe Text)
+    , _dLastStateTime :: !(Maybe DateTime')
+    , _dBlocked :: !(Maybe Bool)
+    , _dLastEventTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -954,7 +954,7 @@ instance ToJSON Device where
 -- /See:/ 'deviceCredential' smart constructor.
 data DeviceCredential =
   DeviceCredential'
-    { _dcPublicKey      :: !(Maybe PublicKeyCredential)
+    { _dcPublicKey :: !(Maybe PublicKeyCredential)
     , _dcExpirationTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1016,7 +1016,7 @@ instance ToJSON DeviceCredential where
 -- /See:/ 'eventNotificationConfig' smart constructor.
 data EventNotificationConfig =
   EventNotificationConfig'
-    { _encPubsubTopicName  :: !(Maybe Text)
+    { _encPubsubTopicName :: !(Maybe Text)
     , _encSubfolderMatches :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1072,12 +1072,12 @@ instance ToJSON EventNotificationConfig where
 -- /See:/ 'x509CertificateDetails' smart constructor.
 data X509CertificateDetails =
   X509CertificateDetails'
-    { _xcdSubject            :: !(Maybe Text)
-    , _xcdExpiryTime         :: !(Maybe DateTime')
-    , _xcdStartTime          :: !(Maybe DateTime')
+    { _xcdSubject :: !(Maybe Text)
+    , _xcdExpiryTime :: !(Maybe DateTime')
+    , _xcdStartTime :: !(Maybe DateTime')
     , _xcdSignatureAlgorithm :: !(Maybe Text)
-    , _xcdIssuer             :: !(Maybe Text)
-    , _xcdPublicKeyType      :: !(Maybe Text)
+    , _xcdIssuer :: !(Maybe Text)
+    , _xcdPublicKeyType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1172,7 +1172,7 @@ instance ToJSON X509CertificateDetails where
 -- /See:/ 'publicKeyCertificate' smart constructor.
 data PublicKeyCertificate =
   PublicKeyCertificate'
-    { _pkcFormat      :: !(Maybe PublicKeyCertificateFormat)
+    { _pkcFormat :: !(Maybe PublicKeyCertificateFormat)
     , _pkcCertificate :: !(Maybe Text)
     , _pkcX509Details :: !(Maybe X509CertificateDetails)
     }
@@ -1384,7 +1384,7 @@ instance ToJSON RegistryCredential where
 data SendCommandToDeviceRequest =
   SendCommandToDeviceRequest'
     { _sctdrBinaryData :: !(Maybe Bytes)
-    , _sctdrSubfolder  :: !(Maybe Text)
+    , _sctdrSubfolder :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1546,7 +1546,7 @@ instance ToJSON TestIAMPermissionsRequest where
 data ListDevicesResponse =
   ListDevicesResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDevices       :: !(Maybe [Device])
+    , _ldrDevices :: !(Maybe [Device])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1639,14 +1639,14 @@ instance ToJSON DeviceMetadata where
 -- /See:/ 'deviceRegistry' smart constructor.
 data DeviceRegistry =
   DeviceRegistry'
-    { _drLogLevel                 :: !(Maybe DeviceRegistryLogLevel)
-    , _drCredentials              :: !(Maybe [RegistryCredential])
-    , _drStateNotificationConfig  :: !(Maybe StateNotificationConfig)
+    { _drLogLevel :: !(Maybe DeviceRegistryLogLevel)
+    , _drCredentials :: !(Maybe [RegistryCredential])
+    , _drStateNotificationConfig :: !(Maybe StateNotificationConfig)
     , _drEventNotificationConfigs :: !(Maybe [EventNotificationConfig])
-    , _drMqttConfig               :: !(Maybe MqttConfig)
-    , _drName                     :: !(Maybe Text)
-    , _drHTTPConfig               :: !(Maybe HTTPConfig)
-    , _drId                       :: !(Maybe Text)
+    , _drMqttConfig :: !(Maybe MqttConfig)
+    , _drName :: !(Maybe Text)
+    , _drHTTPConfig :: !(Maybe HTTPConfig)
+    , _drId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1790,7 +1790,7 @@ instance ToJSON DeviceRegistry where
 data PublicKeyCredential =
   PublicKeyCredential'
     { _pFormat :: !(Maybe PublicKeyCredentialFormat)
-    , _pKey    :: !(Maybe Text)
+    , _pKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1833,7 +1833,7 @@ instance ToJSON PublicKeyCredential where
 -- /See:/ 'unbindDeviceFromGatewayRequest' smart constructor.
 data UnbindDeviceFromGatewayRequest =
   UnbindDeviceFromGatewayRequest'
-    { _udfgrDeviceId  :: !(Maybe Text)
+    { _udfgrDeviceId :: !(Maybe Text)
     , _udfgrGatewayId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1947,8 +1947,8 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2040,7 +2040,7 @@ instance ToJSON SendCommandToDeviceResponse where
 -- /See:/ 'bindDeviceToGatewayRequest' smart constructor.
 data BindDeviceToGatewayRequest =
   BindDeviceToGatewayRequest'
-    { _bdtgrDeviceId  :: !(Maybe Text)
+    { _bdtgrDeviceId :: !(Maybe Text)
     , _bdtgrGatewayId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2095,7 +2095,7 @@ instance ToJSON BindDeviceToGatewayRequest where
 data ModifyCloudToDeviceConfigRequest =
   ModifyCloudToDeviceConfigRequest'
     { _mctdcrVersionToUpdate :: !(Maybe (Textual Int64))
-    , _mctdcrBinaryData      :: !(Maybe Bytes)
+    , _mctdcrBinaryData :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2153,8 +2153,8 @@ instance ToJSON ModifyCloudToDeviceConfigRequest
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.DeleteQueu
     , ididqiCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.deleteQueueItems@ method which the
 -- 'IndexingDatasourcesItemsDeleteQueueItems' request conforms to.
@@ -69,13 +69,13 @@ type IndexingDatasourcesItemsDeleteQueueItemsResource
 -- /See:/ 'indexingDatasourcesItemsDeleteQueueItems' smart constructor.
 data IndexingDatasourcesItemsDeleteQueueItems =
   IndexingDatasourcesItemsDeleteQueueItems'
-    { _ididqiXgafv          :: !(Maybe Xgafv)
+    { _ididqiXgafv :: !(Maybe Xgafv)
     , _ididqiUploadProtocol :: !(Maybe Text)
-    , _ididqiAccessToken    :: !(Maybe Text)
-    , _ididqiUploadType     :: !(Maybe Text)
-    , _ididqiPayload        :: !DeleteQueueItemsRequest
-    , _ididqiName           :: !Text
-    , _ididqiCallback       :: !(Maybe Text)
+    , _ididqiAccessToken :: !(Maybe Text)
+    , _ididqiUploadType :: !(Maybe Text)
+    , _ididqiPayload :: !DeleteQueueItemsRequest
+    , _ididqiName :: !Text
+    , _ididqiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

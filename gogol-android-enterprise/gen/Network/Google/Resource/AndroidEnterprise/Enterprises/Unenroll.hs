@@ -36,8 +36,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.Unenroll
     , entEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.unenroll@ method which the
 -- 'EnterprisesUnenroll' request conforms to.

@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.EntityTypes.Cr
     , paSetcCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.entityTypes.create@ method which the
 -- 'ProjectsAgentSessionsEntityTypesCreate' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsAgentSessionsEntityTypesCreateResource =
 -- /See:/ 'projectsAgentSessionsEntityTypesCreate' smart constructor.
 data ProjectsAgentSessionsEntityTypesCreate =
   ProjectsAgentSessionsEntityTypesCreate'
-    { _paSetcParent         :: !Text
-    , _paSetcXgafv          :: !(Maybe Xgafv)
+    { _paSetcParent :: !Text
+    , _paSetcXgafv :: !(Maybe Xgafv)
     , _paSetcUploadProtocol :: !(Maybe Text)
-    , _paSetcAccessToken    :: !(Maybe Text)
-    , _paSetcUploadType     :: !(Maybe Text)
-    , _paSetcPayload        :: !GoogleCloudDialogflowV2SessionEntityType
-    , _paSetcCallback       :: !(Maybe Text)
+    , _paSetcAccessToken :: !(Maybe Text)
+    , _paSetcUploadType :: !(Maybe Text)
+    , _paSetcPayload :: !GoogleCloudDialogflowV2SessionEntityType
+    , _paSetcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

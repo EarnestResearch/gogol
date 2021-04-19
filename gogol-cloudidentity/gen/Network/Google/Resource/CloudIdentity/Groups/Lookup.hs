@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Lookup
     , glCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.lookup@ method which the
 -- 'GroupsLookup' request conforms to.
@@ -69,13 +69,13 @@ type GroupsLookupResource =
 -- /See:/ 'groupsLookup' smart constructor.
 data GroupsLookup =
   GroupsLookup'
-    { _glXgafv             :: !(Maybe Xgafv)
-    , _glUploadProtocol    :: !(Maybe Text)
-    , _glAccessToken       :: !(Maybe Text)
-    , _glGroupKeyId        :: !(Maybe Text)
-    , _glUploadType        :: !(Maybe Text)
+    { _glXgafv :: !(Maybe Xgafv)
+    , _glUploadProtocol :: !(Maybe Text)
+    , _glAccessToken :: !(Maybe Text)
+    , _glGroupKeyId :: !(Maybe Text)
+    , _glUploadType :: !(Maybe Text)
     , _glGroupKeyNamespace :: !(Maybe Text)
-    , _glCallback          :: !(Maybe Text)
+    , _glCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

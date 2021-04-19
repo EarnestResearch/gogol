@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.ConnectionTypes.List
     , ctlProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.connectionTypes.list@ method which the
 -- 'ConnectionTypesList' request conforms to.

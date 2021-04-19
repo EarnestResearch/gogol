@@ -41,8 +41,8 @@ module Network.Google.Resource.AlertCenter.GetSettings
     , gsCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.getSettings@ method which the
 -- 'GetSettings' request conforms to.
@@ -62,12 +62,12 @@ type GetSettingsResource =
 -- /See:/ 'getSettings' smart constructor.
 data GetSettings =
   GetSettings'
-    { _gsXgafv          :: !(Maybe Xgafv)
+    { _gsXgafv :: !(Maybe Xgafv)
     , _gsUploadProtocol :: !(Maybe Text)
-    , _gsAccessToken    :: !(Maybe Text)
-    , _gsUploadType     :: !(Maybe Text)
-    , _gsCustomerId     :: !(Maybe Text)
-    , _gsCallback       :: !(Maybe Text)
+    , _gsAccessToken :: !(Maybe Text)
+    , _gsUploadType :: !(Maybe Text)
+    , _gsCustomerId :: !(Maybe Text)
+    , _gsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

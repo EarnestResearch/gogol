@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PostalCodes.Get
     , pcgCode
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.postalCodes.get@ method which the
 -- 'PostalCodesGet' request conforms to.
@@ -57,7 +57,7 @@ type PostalCodesGetResource =
 data PostalCodesGet =
   PostalCodesGet'
     { _pcgProFileId :: !(Textual Int64)
-    , _pcgCode      :: !Text
+    , _pcgCode :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

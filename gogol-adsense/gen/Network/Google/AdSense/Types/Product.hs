@@ -17,17 +17,17 @@
 --
 module Network.Google.AdSense.Types.Product where
 
-import           Network.Google.AdSense.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AdSense.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'adClients' smart constructor.
 data AdClients =
   AdClients'
-    { _acEtag          :: !(Maybe Text)
+    { _acEtag :: !(Maybe Text)
     , _acNextPageToken :: !(Maybe Text)
-    , _acKind          :: !Text
-    , _acItems         :: !(Maybe [AdClient])
+    , _acKind :: !Text
+    , _acItems :: !(Maybe [AdClient])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -96,13 +96,13 @@ instance ToJSON AdClients where
 -- /See:/ 'reportingMetadataEntry' smart constructor.
 data ReportingMetadataEntry =
   ReportingMetadataEntry'
-    { _rmeKind                 :: !Text
-    , _rmeRequiredMetrics      :: !(Maybe [Text])
-    , _rmeCompatibleMetrics    :: !(Maybe [Text])
-    , _rmeRequiredDimensions   :: !(Maybe [Text])
-    , _rmeId                   :: !(Maybe Text)
+    { _rmeKind :: !Text
+    , _rmeRequiredMetrics :: !(Maybe [Text])
+    , _rmeCompatibleMetrics :: !(Maybe [Text])
+    , _rmeRequiredDimensions :: !(Maybe [Text])
+    , _rmeId :: !(Maybe Text)
     , _rmeCompatibleDimensions :: !(Maybe [Text])
-    , _rmeSupportedProducts    :: !(Maybe [Text])
+    , _rmeSupportedProducts :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -227,9 +227,9 @@ instance ToJSON ReportingMetadataEntry where
 -- /See:/ 'adsenseReportsGenerateResponseHeadersItem' smart constructor.
 data AdsenseReportsGenerateResponseHeadersItem =
   AdsenseReportsGenerateResponseHeadersItem'
-    { _argrhiName     :: !(Maybe Text)
+    { _argrhiName :: !(Maybe Text)
     , _argrhiCurrency :: !(Maybe Text)
-    , _argrhiType     :: !(Maybe Text)
+    , _argrhiType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -294,10 +294,10 @@ instance ToJSON
 data Payment =
   Payment'
     { _pPaymentAmountCurrencyCode :: !(Maybe Text)
-    , _pKind                      :: !Text
-    , _pPaymentDate               :: !(Maybe Text)
-    , _pId                        :: !(Maybe Text)
-    , _pPaymentAmount             :: !(Maybe Text)
+    , _pKind :: !Text
+    , _pPaymentDate :: !(Maybe Text)
+    , _pId :: !(Maybe Text)
+    , _pPaymentAmount :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -379,10 +379,10 @@ instance ToJSON Payment where
 -- /See:/ 'accounts' smart constructor.
 data Accounts =
   Accounts'
-    { _aEtag          :: !(Maybe Text)
+    { _aEtag :: !(Maybe Text)
     , _aNextPageToken :: !(Maybe Text)
-    , _aKind          :: !Text
-    , _aItems         :: !(Maybe [Account])
+    , _aKind :: !Text
+    , _aItems :: !(Maybe [Account])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -451,7 +451,7 @@ instance ToJSON Accounts where
 -- /See:/ 'alerts' smart constructor.
 data Alerts =
   Alerts'
-    { _aleKind  :: !Text
+    { _aleKind :: !Text
     , _aleItems :: !(Maybe [Alert])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -499,10 +499,10 @@ instance ToJSON Alerts where
 -- /See:/ 'savedReports' smart constructor.
 data SavedReports =
   SavedReports'
-    { _srEtag          :: !(Maybe Text)
+    { _srEtag :: !(Maybe Text)
     , _srNextPageToken :: !(Maybe Text)
-    , _srKind          :: !Text
-    , _srItems         :: !(Maybe [SavedReport])
+    , _srKind :: !Text
+    , _srItems :: !(Maybe [SavedReport])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -572,10 +572,10 @@ instance ToJSON SavedReports where
 -- /See:/ 'adUnits' smart constructor.
 data AdUnits =
   AdUnits'
-    { _auEtag          :: !(Maybe Text)
+    { _auEtag :: !(Maybe Text)
     , _auNextPageToken :: !(Maybe Text)
-    , _auKind          :: !Text
-    , _auItems         :: !(Maybe [AdUnit])
+    , _auKind :: !Text
+    , _auItems :: !(Maybe [AdUnit])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -646,7 +646,7 @@ data SavedReport =
   SavedReport'
     { _sKind :: !Text
     , _sName :: !(Maybe Text)
-    , _sId   :: !(Maybe Text)
+    , _sId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -699,10 +699,10 @@ instance ToJSON SavedReport where
 -- /See:/ 'urlChannels' smart constructor.
 data URLChannels =
   URLChannels'
-    { _ucEtag          :: !(Maybe Text)
+    { _ucEtag :: !(Maybe Text)
     , _ucNextPageToken :: !(Maybe Text)
-    , _ucKind          :: !Text
-    , _ucItems         :: !(Maybe [URLChannel])
+    , _ucKind :: !Text
+    , _ucItems :: !(Maybe [URLChannel])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -772,10 +772,10 @@ instance ToJSON URLChannels where
 -- /See:/ 'customChannels' smart constructor.
 data CustomChannels =
   CustomChannels'
-    { _ccEtag          :: !(Maybe Text)
+    { _ccEtag :: !(Maybe Text)
     , _ccNextPageToken :: !(Maybe Text)
-    , _ccKind          :: !Text
-    , _ccItems         :: !(Maybe [CustomChannel])
+    , _ccKind :: !Text
+    , _ccItems :: !(Maybe [CustomChannel])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -845,16 +845,16 @@ instance ToJSON CustomChannels where
 -- /See:/ 'adUnit' smart constructor.
 data AdUnit =
   AdUnit'
-    { _auuStatus                   :: !(Maybe Text)
+    { _auuStatus :: !(Maybe Text)
     , _auuMobileContentAdsSettings :: !(Maybe AdUnitMobileContentAdsSettings)
-    , _auuKind                     :: !Text
-    , _auuFeedAdsSettings          :: !(Maybe AdUnitFeedAdsSettings)
-    , _auuCustomStyle              :: !(Maybe AdStyle)
-    , _auuSavedStyleId             :: !(Maybe Text)
-    , _auuName                     :: !(Maybe Text)
-    , _auuContentAdsSettings       :: !(Maybe AdUnitContentAdsSettings)
-    , _auuCode                     :: !(Maybe Text)
-    , _auuId                       :: !(Maybe Text)
+    , _auuKind :: !Text
+    , _auuFeedAdsSettings :: !(Maybe AdUnitFeedAdsSettings)
+    , _auuCustomStyle :: !(Maybe AdStyle)
+    , _auuSavedStyleId :: !(Maybe Text)
+    , _auuName :: !(Maybe Text)
+    , _auuContentAdsSettings :: !(Maybe AdUnitContentAdsSettings)
+    , _auuCode :: !(Maybe Text)
+    , _auuId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -992,11 +992,11 @@ instance ToJSON AdUnit where
 data Alert =
   Alert'
     { _aaIsDismissible :: !(Maybe Bool)
-    , _aaKind          :: !Text
-    , _aaSeverity      :: !(Maybe Text)
-    , _aaId            :: !(Maybe Text)
-    , _aaType          :: !(Maybe Text)
-    , _aaMessage       :: !(Maybe Text)
+    , _aaKind :: !Text
+    , _aaSeverity :: !(Maybe Text)
+    , _aaId :: !(Maybe Text)
+    , _aaType :: !(Maybe Text)
+    , _aaMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1087,7 +1087,7 @@ instance ToJSON Alert where
 -- /See:/ 'adStyleFont' smart constructor.
 data AdStyleFont =
   AdStyleFont'
-    { _asfSize   :: !(Maybe Text)
+    { _asfSize :: !(Maybe Text)
     , _asfFamily :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1131,13 +1131,13 @@ instance ToJSON AdStyleFont where
 -- /See:/ 'account' smart constructor.
 data Account =
   Account'
-    { _accKind         :: !Text
+    { _accKind :: !Text
     , _accCreationTime :: !(Maybe (Textual Int64))
-    , _accPremium      :: !(Maybe Bool)
-    , _accName         :: !(Maybe Text)
-    , _accId           :: !(Maybe Text)
-    , _accTimezone     :: !(Maybe Text)
-    , _accSubAccounts  :: !(Maybe [Account])
+    , _accPremium :: !(Maybe Bool)
+    , _accName :: !(Maybe Text)
+    , _accId :: !(Maybe Text)
+    , _accTimezone :: !(Maybe Text)
+    , _accSubAccounts :: !(Maybe [Account])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1238,10 +1238,10 @@ instance ToJSON Account where
 -- /See:/ 'adUnitMobileContentAdsSettings' smart constructor.
 data AdUnitMobileContentAdsSettings =
   AdUnitMobileContentAdsSettings'
-    { _aumcasSize              :: !(Maybe Text)
+    { _aumcasSize :: !(Maybe Text)
     , _aumcasScriptingLanguage :: !(Maybe Text)
-    , _aumcasMarkupLanguage    :: !(Maybe Text)
-    , _aumcasType              :: !(Maybe Text)
+    , _aumcasMarkupLanguage :: !(Maybe Text)
+    , _aumcasType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1314,10 +1314,10 @@ instance ToJSON AdUnitMobileContentAdsSettings where
 -- /See:/ 'savedAdStyles' smart constructor.
 data SavedAdStyles =
   SavedAdStyles'
-    { _sasEtag          :: !(Maybe Text)
+    { _sasEtag :: !(Maybe Text)
     , _sasNextPageToken :: !(Maybe Text)
-    , _sasKind          :: !Text
-    , _sasItems         :: !(Maybe [SavedAdStyle])
+    , _sasKind :: !Text
+    , _sasItems :: !(Maybe [SavedAdStyle])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1391,10 +1391,10 @@ instance ToJSON SavedAdStyles where
 -- /See:/ 'adStyleColors' smart constructor.
 data AdStyleColors =
   AdStyleColors'
-    { _ascText       :: !(Maybe Text)
-    , _ascURL        :: !(Maybe Text)
-    , _ascBOrder     :: !(Maybe Text)
-    , _ascTitle      :: !(Maybe Text)
+    { _ascText :: !(Maybe Text)
+    , _ascURL :: !(Maybe Text)
+    , _ascBOrder :: !(Maybe Text)
+    , _ascTitle :: !(Maybe Text)
     , _ascBackgRound :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1472,8 +1472,8 @@ instance ToJSON AdStyleColors where
 data AdUnitContentAdsSettingsBackupOption =
   AdUnitContentAdsSettingsBackupOption'
     { _aucasboColor :: !(Maybe Text)
-    , _aucasboURL   :: !(Maybe Text)
-    , _aucasboType  :: !(Maybe Text)
+    , _aucasboURL :: !(Maybe Text)
+    , _aucasboType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1531,11 +1531,11 @@ instance ToJSON AdUnitContentAdsSettingsBackupOption
 -- /See:/ 'adClient' smart constructor.
 data AdClient =
   AdClient'
-    { _adKind              :: !Text
-    , _adArcOptIn          :: !(Maybe Bool)
+    { _adKind :: !Text
+    , _adArcOptIn :: !(Maybe Bool)
     , _adSupportsReporting :: !(Maybe Bool)
-    , _adId                :: !(Maybe Text)
-    , _adProductCode       :: !(Maybe Text)
+    , _adId :: !(Maybe Text)
+    , _adProductCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1616,10 +1616,10 @@ instance ToJSON AdClient where
 -- /See:/ 'savedAdStyle' smart constructor.
 data SavedAdStyle =
   SavedAdStyle'
-    { _savKind    :: !Text
-    , _savName    :: !(Maybe Text)
+    { _savKind :: !Text
+    , _savName :: !(Maybe Text)
     , _savAdStyle :: !(Maybe AdStyle)
-    , _savId      :: !(Maybe Text)
+    , _savId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1688,10 +1688,10 @@ instance ToJSON SavedAdStyle where
 -- /See:/ 'customChannelTargetingInfo' smart constructor.
 data CustomChannelTargetingInfo =
   CustomChannelTargetingInfo'
-    { _cctiLocation     :: !(Maybe Text)
+    { _cctiLocation :: !(Maybe Text)
     , _cctiSiteLanguage :: !(Maybe Text)
-    , _cctiAdsAppearOn  :: !(Maybe Text)
-    , _cctiDescription  :: !(Maybe Text)
+    , _cctiAdsAppearOn :: !(Maybe Text)
+    , _cctiDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1769,9 +1769,9 @@ instance ToJSON CustomChannelTargetingInfo where
 data AdStyle =
   AdStyle'
     { _asCorners :: !(Maybe Text)
-    , _asKind    :: !Text
-    , _asFont    :: !(Maybe AdStyleFont)
-    , _asColors  :: !(Maybe AdStyleColors)
+    , _asKind :: !Text
+    , _asFont :: !(Maybe AdStyleFont)
+    , _asColors :: !(Maybe AdStyleColors)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1841,9 +1841,9 @@ instance ToJSON AdStyle where
 -- /See:/ 'adUnitFeedAdsSettings' smart constructor.
 data AdUnitFeedAdsSettings =
   AdUnitFeedAdsSettings'
-    { _aufasFrequency        :: !(Maybe (Textual Int32))
-    , _aufasAdPosition       :: !(Maybe Text)
-    , _aufasType             :: !(Maybe Text)
+    { _aufasFrequency :: !(Maybe (Textual Int32))
+    , _aufasAdPosition :: !(Maybe Text)
+    , _aufasType :: !(Maybe Text)
     , _aufasMinimumWordCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1919,7 +1919,7 @@ instance ToJSON AdUnitFeedAdsSettings where
 -- /See:/ 'metadata' smart constructor.
 data Metadata =
   Metadata'
-    { _mKind  :: !Text
+    { _mKind :: !Text
     , _mItems :: !(Maybe [ReportingMetadataEntry])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1965,10 +1965,10 @@ instance ToJSON Metadata where
 data CustomChannel =
   CustomChannel'
     { _cTargetingInfo :: !(Maybe CustomChannelTargetingInfo)
-    , _cKind          :: !Text
-    , _cName          :: !(Maybe Text)
-    , _cCode          :: !(Maybe Text)
-    , _cId            :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cName :: !(Maybe Text)
+    , _cCode :: !(Maybe Text)
+    , _cId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2045,8 +2045,8 @@ instance ToJSON CustomChannel where
 -- /See:/ 'urlChannel' smart constructor.
 data URLChannel =
   URLChannel'
-    { _urlcKind       :: !Text
-    , _urlcId         :: !(Maybe Text)
+    { _urlcKind :: !Text
+    , _urlcId :: !(Maybe Text)
     , _urlcURLPattern :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2108,10 +2108,10 @@ instance ToJSON URLChannel where
 -- /See:/ 'adCode' smart constructor.
 data AdCode =
   AdCode'
-    { _addKind    :: !Text
+    { _addKind :: !Text
     , _addAmpHead :: !(Maybe Text)
     , _addAmpBody :: !(Maybe Text)
-    , _addAdCode  :: !(Maybe Text)
+    , _addAdCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2180,14 +2180,14 @@ instance ToJSON AdCode where
 -- /See:/ 'adsenseReportsGenerateResponse' smart constructor.
 data AdsenseReportsGenerateResponse =
   AdsenseReportsGenerateResponse'
-    { _argrKind             :: !Text
-    , _argrAverages         :: !(Maybe [Text])
-    , _argrEndDate          :: !(Maybe Text)
-    , _argrWarnings         :: !(Maybe [Text])
-    , _argrRows             :: !(Maybe [[Text]])
-    , _argrTotals           :: !(Maybe [Text])
-    , _argrStartDate        :: !(Maybe Text)
-    , _argrHeaders          :: !(Maybe [AdsenseReportsGenerateResponseHeadersItem])
+    { _argrKind :: !Text
+    , _argrAverages :: !(Maybe [Text])
+    , _argrEndDate :: !(Maybe Text)
+    , _argrWarnings :: !(Maybe [Text])
+    , _argrRows :: !(Maybe [[Text]])
+    , _argrTotals :: !(Maybe [Text])
+    , _argrStartDate :: !(Maybe Text)
+    , _argrHeaders :: !(Maybe [AdsenseReportsGenerateResponseHeadersItem])
     , _argrTotalMatchedRows :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2333,8 +2333,8 @@ instance ToJSON AdsenseReportsGenerateResponse where
 data AdUnitContentAdsSettings =
   AdUnitContentAdsSettings'
     { _aucasBackupOption :: !(Maybe AdUnitContentAdsSettingsBackupOption)
-    , _aucasSize         :: !(Maybe Text)
-    , _aucasType         :: !(Maybe Text)
+    , _aucasSize :: !(Maybe Text)
+    , _aucasType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2391,7 +2391,7 @@ instance ToJSON AdUnitContentAdsSettings where
 -- /See:/ 'payments' smart constructor.
 data Payments =
   Payments'
-    { _payKind  :: !Text
+    { _payKind :: !Text
     , _payItems :: !(Maybe [Payment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

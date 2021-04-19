@@ -16,7 +16,7 @@
 --
 module Network.Google.Manufacturers.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The status of the destination.
 data DestinationStatusStatus

@@ -53,8 +53,8 @@ module Network.Google.Resource.Dataflow.Projects.Locations.Jobs.Messages.List
     , pljmlCallback
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.locations.jobs.messages.list@ method which the
 -- 'ProjectsLocationsJobsMessagesList' request conforms to.
@@ -90,19 +90,19 @@ type ProjectsLocationsJobsMessagesListResource =
 -- /See:/ 'projectsLocationsJobsMessagesList' smart constructor.
 data ProjectsLocationsJobsMessagesList =
   ProjectsLocationsJobsMessagesList'
-    { _pljmlXgafv             :: !(Maybe Xgafv)
-    , _pljmlJobId             :: !Text
-    , _pljmlUploadProtocol    :: !(Maybe Text)
-    , _pljmlLocation          :: !Text
-    , _pljmlStartTime         :: !(Maybe DateTime')
-    , _pljmlAccessToken       :: !(Maybe Text)
-    , _pljmlUploadType        :: !(Maybe Text)
-    , _pljmlEndTime           :: !(Maybe DateTime')
+    { _pljmlXgafv :: !(Maybe Xgafv)
+    , _pljmlJobId :: !Text
+    , _pljmlUploadProtocol :: !(Maybe Text)
+    , _pljmlLocation :: !Text
+    , _pljmlStartTime :: !(Maybe DateTime')
+    , _pljmlAccessToken :: !(Maybe Text)
+    , _pljmlUploadType :: !(Maybe Text)
+    , _pljmlEndTime :: !(Maybe DateTime')
     , _pljmlMinimumImportance :: !(Maybe Text)
-    , _pljmlPageToken         :: !(Maybe Text)
-    , _pljmlProjectId         :: !Text
-    , _pljmlPageSize          :: !(Maybe (Textual Int32))
-    , _pljmlCallback          :: !(Maybe Text)
+    , _pljmlPageToken :: !(Maybe Text)
+    , _pljmlProjectId :: !Text
+    , _pljmlPageSize :: !(Maybe (Textual Int32))
+    , _pljmlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

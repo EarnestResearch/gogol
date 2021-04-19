@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.Get
     , dgDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.get@ method which the
 -- 'DevicesGet' request conforms to.
@@ -60,8 +60,8 @@ type DevicesGetResource =
 data DevicesGet =
   DevicesGet'
     { _dgEnterpriseId :: !Text
-    , _dgUserId       :: !Text
-    , _dgDeviceId     :: !Text
+    , _dgUserId :: !Text
+    , _dgDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

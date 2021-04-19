@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.LiveChatModerators.Insert
     , lPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatModerators.insert@ method which the
 -- 'LiveChatModeratorsInsert' request conforms to.
@@ -57,7 +57,7 @@ type LiveChatModeratorsInsertResource =
 -- /See:/ 'liveChatModeratorsInsert' smart constructor.
 data LiveChatModeratorsInsert =
   LiveChatModeratorsInsert'
-    { _lPart    :: !Text
+    { _lPart :: !Text
     , _lPayload :: !LiveChatModerator
     }
   deriving (Eq, Show, Data, Typeable, Generic)

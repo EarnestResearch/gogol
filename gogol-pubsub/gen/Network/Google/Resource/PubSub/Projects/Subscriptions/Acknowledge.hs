@@ -47,8 +47,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.Acknowledge
     , psaCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.acknowledge@ method which the
 -- 'ProjectsSubscriptionsAcknowledge' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsSubscriptionsAcknowledgeResource =
 -- /See:/ 'projectsSubscriptionsAcknowledge' smart constructor.
 data ProjectsSubscriptionsAcknowledge =
   ProjectsSubscriptionsAcknowledge'
-    { _psaXgafv          :: !(Maybe Xgafv)
+    { _psaXgafv :: !(Maybe Xgafv)
     , _psaUploadProtocol :: !(Maybe Text)
-    , _psaAccessToken    :: !(Maybe Text)
-    , _psaUploadType     :: !(Maybe Text)
-    , _psaPayload        :: !AcknowledgeRequest
-    , _psaSubscription   :: !Text
-    , _psaCallback       :: !(Maybe Text)
+    , _psaAccessToken :: !(Maybe Text)
+    , _psaUploadType :: !(Maybe Text)
+    , _psaPayload :: !AcknowledgeRequest
+    , _psaSubscription :: !Text
+    , _psaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

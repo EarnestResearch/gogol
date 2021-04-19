@@ -41,8 +41,8 @@ module Network.Google.Resource.Games.Achievements.List
     , alMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievements.list@ method which the
 -- 'AchievementsList' request conforms to.
@@ -65,10 +65,10 @@ type AchievementsListResource =
 -- /See:/ 'achievementsList' smart constructor.
 data AchievementsList =
   AchievementsList'
-    { _alState      :: !(Maybe AchievementsListState)
-    , _alLanguage   :: !(Maybe Text)
-    , _alPageToken  :: !(Maybe Text)
-    , _alPlayerId   :: !Text
+    { _alState :: !(Maybe AchievementsListState)
+    , _alLanguage :: !(Maybe Text)
+    , _alPageToken :: !(Maybe Text)
+    , _alPlayerId :: !Text
     , _alMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

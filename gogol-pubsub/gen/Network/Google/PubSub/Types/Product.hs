@@ -17,16 +17,16 @@
 --
 module Network.Google.PubSub.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types.Sum
+import Network.Google.Prelude
+import Network.Google.PubSub.Types.Sum
 
 -- | Configuration for a push delivery endpoint.
 --
 -- /See:/ 'pushConfig' smart constructor.
 data PushConfig =
   PushConfig'
-    { _pcOidcToken    :: !(Maybe OidcToken)
-    , _pcAttributes   :: !(Maybe PushConfigAttributes)
+    { _pcOidcToken :: !(Maybe OidcToken)
+    , _pcAttributes :: !(Maybe PushConfigAttributes)
     , _pcPushEndpoint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -101,7 +101,7 @@ instance ToJSON PushConfig where
 -- /See:/ 'receivedMessage' smart constructor.
 data ReceivedMessage =
   ReceivedMessage'
-    { _rmAckId   :: !(Maybe Text)
+    { _rmAckId :: !(Maybe Text)
     , _rmMessage :: !(Maybe PubsubMessage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -151,9 +151,9 @@ instance ToJSON ReceivedMessage where
 -- /See:/ 'snapshot' smart constructor.
 data Snapshot =
   Snapshot'
-    { _sTopic      :: !(Maybe Text)
-    , _sName       :: !(Maybe Text)
-    , _sLabels     :: !(Maybe SnapshotLabels)
+    { _sTopic :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
+    , _sLabels :: !(Maybe SnapshotLabels)
     , _sExpireTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -232,7 +232,7 @@ instance ToJSON Snapshot where
 data ListTopicSnapshotsResponse =
   ListTopicSnapshotsResponse'
     { _ltsrNextPageToken :: !(Maybe Text)
-    , _ltsrSnapshots     :: !(Maybe [Text])
+    , _ltsrSnapshots :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -289,9 +289,9 @@ instance ToJSON ListTopicSnapshotsResponse where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -368,7 +368,7 @@ instance ToJSON Expr where
 -- /See:/ 'oidcToken' smart constructor.
 data OidcToken =
   OidcToken'
-    { _otAudience            :: !(Maybe Text)
+    { _otAudience :: !(Maybe Text)
     , _otServiceAccountEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -427,7 +427,7 @@ instance ToJSON OidcToken where
 -- /See:/ 'modifyAckDeadlineRequest' smart constructor.
 data ModifyAckDeadlineRequest =
   ModifyAckDeadlineRequest'
-    { _madrAckIds             :: !(Maybe [Text])
+    { _madrAckIds :: !(Maybe [Text])
     , _madrAckDeadlineSeconds :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -562,10 +562,10 @@ instance ToJSON Empty where
 -- /See:/ 'pubsubMessage' smart constructor.
 data PubsubMessage =
   PubsubMessage'
-    { _pmData        :: !(Maybe Bytes)
+    { _pmData :: !(Maybe Bytes)
     , _pmPublishTime :: !(Maybe DateTime')
-    , _pmAttributes  :: !(Maybe PubsubMessageAttributes)
-    , _pmMessageId   :: !(Maybe Text)
+    , _pmAttributes :: !(Maybe PubsubMessageAttributes)
+    , _pmMessageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -703,7 +703,7 @@ instance ToJSON ListTopicSubscriptionsResponse where
 data ListTopicsResponse =
   ListTopicsResponse'
     { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTopics        :: !(Maybe [Topic])
+    , _ltrTopics :: !(Maybe [Topic])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -801,7 +801,7 @@ instance ToJSON PullResponse where
 data ListSnapshotsResponse =
   ListSnapshotsResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSnapshots     :: !(Maybe [Snapshot])
+    , _lsrSnapshots :: !(Maybe [Snapshot])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -890,7 +890,7 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'createSnapshotRequest' smart constructor.
 data CreateSnapshotRequest =
   CreateSnapshotRequest'
-    { _csrLabels       :: !(Maybe CreateSnapshotRequestLabels)
+    { _csrLabels :: !(Maybe CreateSnapshotRequestLabels)
     , _csrSubscription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -948,7 +948,7 @@ instance ToJSON CreateSnapshotRequest where
 data SeekRequest =
   SeekRequest'
     { _srSnapshot :: !(Maybe Text)
-    , _srTime     :: !(Maybe DateTime')
+    , _srTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1006,7 +1006,7 @@ instance ToJSON SeekRequest where
 -- /See:/ 'topic' smart constructor.
 data Topic =
   Topic'
-    { _tName   :: !(Maybe Text)
+    { _tName :: !(Maybe Text)
     , _tLabels :: !(Maybe TopicLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1130,7 +1130,7 @@ instance ToJSON CreateSnapshotRequestLabels where
 -- /See:/ 'updateSnapshotRequest' smart constructor.
 data UpdateSnapshotRequest =
   UpdateSnapshotRequest'
-    { _usrSnapshot   :: !(Maybe Snapshot)
+    { _usrSnapshot :: !(Maybe Snapshot)
     , _usrUpdateMask :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1180,7 +1180,7 @@ instance ToJSON UpdateSnapshotRequest where
 -- /See:/ 'pullRequest' smart constructor.
 data PullRequest =
   PullRequest'
-    { _prMaxMessages       :: !(Maybe (Textual Int32))
+    { _prMaxMessages :: !(Maybe (Textual Int32))
     , _prReturnImmediately :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1453,8 +1453,8 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1637,14 +1637,14 @@ instance ToJSON PushConfigAttributes where
 -- /See:/ 'subscription' smart constructor.
 data Subscription =
   Subscription'
-    { _subPushConfig               :: !(Maybe PushConfig)
+    { _subPushConfig :: !(Maybe PushConfig)
     , _subMessageRetentionDuration :: !(Maybe GDuration)
-    , _subTopic                    :: !(Maybe Text)
-    , _subName                     :: !(Maybe Text)
-    , _subLabels                   :: !(Maybe SubscriptionLabels)
-    , _subRetainAckedMessages      :: !(Maybe Bool)
-    , _subAckDeadlineSeconds       :: !(Maybe (Textual Int32))
-    , _subExpirationPolicy         :: !(Maybe ExpirationPolicy)
+    , _subTopic :: !(Maybe Text)
+    , _subName :: !(Maybe Text)
+    , _subLabels :: !(Maybe SubscriptionLabels)
+    , _subRetainAckedMessages :: !(Maybe Bool)
+    , _subAckDeadlineSeconds :: !(Maybe (Textual Int32))
+    , _subExpirationPolicy :: !(Maybe ExpirationPolicy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1805,7 +1805,7 @@ instance ToJSON Subscription where
 -- /See:/ 'updateSubscriptionRequest' smart constructor.
 data UpdateSubscriptionRequest =
   UpdateSubscriptionRequest'
-    { _uUpdateMask   :: !(Maybe GFieldMask)
+    { _uUpdateMask :: !(Maybe GFieldMask)
     , _uSubscription :: !(Maybe Subscription)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1983,8 +1983,8 @@ instance ToJSON ListSubscriptionsResponse where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2059,7 +2059,7 @@ instance ToJSON Binding where
 data UpdateTopicRequest =
   UpdateTopicRequest'
     { _utrUpdateMask :: !(Maybe GFieldMask)
-    , _utrTopic      :: !(Maybe Topic)
+    , _utrTopic :: !(Maybe Topic)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

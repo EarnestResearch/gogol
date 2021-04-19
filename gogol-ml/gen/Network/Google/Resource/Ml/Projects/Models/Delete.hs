@@ -43,8 +43,8 @@ module Network.Google.Resource.Ml.Projects.Models.Delete
     , pmdCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.delete@ method which the
 -- 'ProjectsModelsDelete' request conforms to.
@@ -66,12 +66,12 @@ type ProjectsModelsDeleteResource =
 -- /See:/ 'projectsModelsDelete' smart constructor.
 data ProjectsModelsDelete =
   ProjectsModelsDelete'
-    { _pmdXgafv          :: !(Maybe Xgafv)
+    { _pmdXgafv :: !(Maybe Xgafv)
     , _pmdUploadProtocol :: !(Maybe Text)
-    , _pmdAccessToken    :: !(Maybe Text)
-    , _pmdUploadType     :: !(Maybe Text)
-    , _pmdName           :: !Text
-    , _pmdCallback       :: !(Maybe Text)
+    , _pmdAccessToken :: !(Maybe Text)
+    , _pmdUploadType :: !(Maybe Text)
+    , _pmdName :: !Text
+    , _pmdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

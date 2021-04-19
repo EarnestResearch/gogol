@@ -17,8 +17,8 @@
 --
 module Network.Google.DoubleClickSearch.Types.Product where
 
-import           Network.Google.DoubleClickSearch.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types.Sum
+import Network.Google.Prelude
 
 -- | A row in a DoubleClick Search report.
 --
@@ -61,20 +61,20 @@ instance ToJSON ReportRow where
 -- /See:/ 'reportRequest' smart constructor.
 data ReportRequest =
   ReportRequest'
-    { _rrMaxRowsPerFile         :: !(Maybe (Textual Int32))
-    , _rrReportScope            :: !(Maybe ReportRequestReportScope)
-    , _rrStatisticsCurrency     :: !(Maybe Text)
-    , _rrTimeRange              :: !(Maybe ReportRequestTimeRange)
-    , _rrOrderBy                :: !(Maybe [ReportRequestOrderByItem])
-    , _rrFilters                :: !(Maybe [ReportRequestFiltersItem])
+    { _rrMaxRowsPerFile :: !(Maybe (Textual Int32))
+    , _rrReportScope :: !(Maybe ReportRequestReportScope)
+    , _rrStatisticsCurrency :: !(Maybe Text)
+    , _rrTimeRange :: !(Maybe ReportRequestTimeRange)
+    , _rrOrderBy :: !(Maybe [ReportRequestOrderByItem])
+    , _rrFilters :: !(Maybe [ReportRequestFiltersItem])
     , _rrIncludeRemovedEntities :: !Bool
     , _rrIncludeDeletedEntities :: !Bool
-    , _rrDownloadFormat         :: !(Maybe Text)
-    , _rrStartRow               :: !(Textual Int32)
-    , _rrColumns                :: !(Maybe [ReportAPIColumnSpec])
-    , _rrReportType             :: !(Maybe Text)
-    , _rrVerifySingleTimeZone   :: !Bool
-    , _rrRowCount               :: !(Textual Int32)
+    , _rrDownloadFormat :: !(Maybe Text)
+    , _rrStartRow :: !(Textual Int32)
+    , _rrColumns :: !(Maybe [ReportAPIColumnSpec])
+    , _rrReportType :: !(Maybe Text)
+    , _rrVerifySingleTimeZone :: !Bool
+    , _rrRowCount :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -293,7 +293,7 @@ instance ToJSON ReportRequest where
 data ReportRequestOrderByItem =
   ReportRequestOrderByItem'
     { _rrobiSortOrder :: !(Maybe Text)
-    , _rrobiColumn    :: !(Maybe ReportAPIColumnSpec)
+    , _rrobiColumn :: !(Maybe ReportAPIColumnSpec)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -344,15 +344,15 @@ instance ToJSON ReportRequestOrderByItem where
 -- /See:/ 'report' smart constructor.
 data Report =
   Report'
-    { _rKind                   :: !Text
-    , _rRows                   :: !(Maybe [ReportRow])
+    { _rKind :: !Text
+    , _rRows :: !(Maybe [ReportRow])
     , _rStatisticsCurrencyCode :: !(Maybe Text)
-    , _rIsReportReady          :: !(Maybe Bool)
-    , _rFiles                  :: !(Maybe [ReportFilesItem])
-    , _rId                     :: !(Maybe Text)
-    , _rStatisticsTimeZone     :: !(Maybe Text)
-    , _rRowCount               :: !(Maybe (Textual Int32))
-    , _rRequest                :: !(Maybe ReportRequest)
+    , _rIsReportReady :: !(Maybe Bool)
+    , _rFiles :: !(Maybe [ReportFilesItem])
+    , _rId :: !(Maybe Text)
+    , _rStatisticsTimeZone :: !(Maybe Text)
+    , _rRowCount :: !(Maybe (Textual Int32))
+    , _rRequest :: !(Maybe ReportRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -483,7 +483,7 @@ instance ToJSON Report where
 -- /See:/ 'reportFilesItem' smart constructor.
 data ReportFilesItem =
   ReportFilesItem'
-    { _rfiURL       :: !(Maybe Text)
+    { _rfiURL :: !(Maybe Text)
     , _rfiByteCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -530,8 +530,8 @@ instance ToJSON ReportFilesItem where
 data ReportRequestFiltersItem =
   ReportRequestFiltersItem'
     { _rrfiOperator :: !(Maybe Text)
-    , _rrfiValues   :: !(Maybe [JSONValue])
-    , _rrfiColumn   :: !(Maybe ReportAPIColumnSpec)
+    , _rrfiValues :: !(Maybe [JSONValue])
+    , _rrfiColumn :: !(Maybe ReportAPIColumnSpec)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -593,12 +593,12 @@ instance ToJSON ReportRequestFiltersItem where
 -- /See:/ 'availability' smart constructor.
 data Availability =
   Availability'
-    { _aAgencyId              :: !(Maybe (Textual Int64))
-    , _aAdvertiserId          :: !(Maybe (Textual Int64))
-    , _aSegmentationId        :: !(Maybe (Textual Int64))
-    , _aSegmentationName      :: !(Maybe Text)
+    { _aAgencyId :: !(Maybe (Textual Int64))
+    , _aAdvertiserId :: !(Maybe (Textual Int64))
+    , _aSegmentationId :: !(Maybe (Textual Int64))
+    , _aSegmentationName :: !(Maybe Text)
     , _aAvailabilityTimestamp :: !(Maybe (Textual Word64))
-    , _aSegmentationType      :: !(Maybe Text)
+    , _aSegmentationType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -745,7 +745,7 @@ instance ToJSON UpdateAvailabilityRequest where
 data CustomMetric =
   CustomMetric'
     { _cmValue :: !(Maybe (Textual Double))
-    , _cmName  :: !(Maybe Text)
+    , _cmName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -789,7 +789,7 @@ instance ToJSON CustomMetric where
 -- /See:/ 'conversionList' smart constructor.
 data ConversionList =
   ConversionList'
-    { _clKind       :: !Text
+    { _clKind :: !Text
     , _clConversion :: !(Maybe [Conversion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -841,16 +841,16 @@ instance ToJSON ConversionList where
 -- /See:/ 'reportAPIColumnSpec' smart constructor.
 data ReportAPIColumnSpec =
   ReportAPIColumnSpec'
-    { _racsCustomDimensionName      :: !(Maybe Text)
-    , _racsSavedColumnName          :: !(Maybe Text)
-    , _racsGroupByColumn            :: !Bool
-    , _racsCustomMetricName         :: !(Maybe Text)
-    , _racsEndDate                  :: !(Maybe Text)
+    { _racsCustomDimensionName :: !(Maybe Text)
+    , _racsSavedColumnName :: !(Maybe Text)
+    , _racsGroupByColumn :: !Bool
+    , _racsCustomMetricName :: !(Maybe Text)
+    , _racsEndDate :: !(Maybe Text)
     , _racsProductReportPerspective :: !(Maybe Text)
-    , _racsStartDate                :: !(Maybe Text)
-    , _racsHeaderText               :: !(Maybe Text)
-    , _racsPlatformSource           :: !(Maybe Text)
-    , _racsColumnName               :: !(Maybe Text)
+    , _racsStartDate :: !(Maybe Text)
+    , _racsHeaderText :: !(Maybe Text)
+    , _racsPlatformSource :: !(Maybe Text)
+    , _racsColumnName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1015,10 +1015,10 @@ instance ToJSON ReportAPIColumnSpec where
 -- /See:/ 'reportRequestTimeRange' smart constructor.
 data ReportRequestTimeRange =
   ReportRequestTimeRange'
-    { _rrtrEndDate                         :: !(Maybe Text)
+    { _rrtrEndDate :: !(Maybe Text)
     , _rrtrChangedAttributesSinceTimestamp :: !(Maybe DateTime')
-    , _rrtrStartDate                       :: !(Maybe Text)
-    , _rrtrChangedMetricsSinceTimestamp    :: !(Maybe DateTime')
+    , _rrtrStartDate :: !(Maybe Text)
+    , _rrtrChangedMetricsSinceTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1099,39 +1099,39 @@ instance ToJSON ReportRequestTimeRange where
 -- /See:/ 'conversion' smart constructor.
 data Conversion =
   Conversion'
-    { _cAdGroupId                   :: !(Maybe (Textual Int64))
+    { _cAdGroupId :: !(Maybe (Textual Int64))
     , _cConversionModifiedTimestamp :: !(Maybe (Textual Word64))
-    , _cState                       :: !(Maybe Text)
-    , _cEngineAccountId             :: !(Maybe (Textual Int64))
-    , _cAgencyId                    :: !(Maybe (Textual Int64))
-    , _cCurrencyCode                :: !(Maybe Text)
-    , _cStoreId                     :: !(Maybe Text)
-    , _cDsConversionId              :: !(Maybe (Textual Int64))
-    , _cConversionId                :: !(Maybe Text)
-    , _cAdvertiserId                :: !(Maybe (Textual Int64))
-    , _cSegmentationId              :: !(Maybe (Textual Int64))
-    , _cChannel                     :: !(Maybe Text)
-    , _cProductCountry              :: !(Maybe Text)
-    , _cCampaignId                  :: !(Maybe (Textual Int64))
-    , _cCriterionId                 :: !(Maybe (Textual Int64))
-    , _cConversionTimestamp         :: !(Maybe (Textual Word64))
-    , _cAttributionModel            :: !(Maybe Text)
-    , _cSegmentationName            :: !(Maybe Text)
-    , _cProductLanguage             :: !(Maybe Text)
-    , _cCustomMetric                :: !(Maybe [CustomMetric])
-    , _cCountMillis                 :: !(Maybe (Textual Int64))
-    , _cQuantityMillis              :: !(Maybe (Textual Int64))
-    , _cAdId                        :: !(Maybe (Textual Int64))
-    , _cDeviceType                  :: !(Maybe Text)
-    , _cType                        :: !(Maybe Text)
-    , _cCustomDimension             :: !(Maybe [CustomDimension])
-    , _cFloodlightOrderId           :: !(Maybe Text)
-    , _cRevenueMicros               :: !(Maybe (Textual Int64))
-    , _cClickId                     :: !(Maybe Text)
-    , _cInventoryAccountId          :: !(Maybe (Textual Int64))
-    , _cSegmentationType            :: !(Maybe Text)
-    , _cProductId                   :: !(Maybe Text)
-    , _cProductGroupId              :: !(Maybe (Textual Int64))
+    , _cState :: !(Maybe Text)
+    , _cEngineAccountId :: !(Maybe (Textual Int64))
+    , _cAgencyId :: !(Maybe (Textual Int64))
+    , _cCurrencyCode :: !(Maybe Text)
+    , _cStoreId :: !(Maybe Text)
+    , _cDsConversionId :: !(Maybe (Textual Int64))
+    , _cConversionId :: !(Maybe Text)
+    , _cAdvertiserId :: !(Maybe (Textual Int64))
+    , _cSegmentationId :: !(Maybe (Textual Int64))
+    , _cChannel :: !(Maybe Text)
+    , _cProductCountry :: !(Maybe Text)
+    , _cCampaignId :: !(Maybe (Textual Int64))
+    , _cCriterionId :: !(Maybe (Textual Int64))
+    , _cConversionTimestamp :: !(Maybe (Textual Word64))
+    , _cAttributionModel :: !(Maybe Text)
+    , _cSegmentationName :: !(Maybe Text)
+    , _cProductLanguage :: !(Maybe Text)
+    , _cCustomMetric :: !(Maybe [CustomMetric])
+    , _cCountMillis :: !(Maybe (Textual Int64))
+    , _cQuantityMillis :: !(Maybe (Textual Int64))
+    , _cAdId :: !(Maybe (Textual Int64))
+    , _cDeviceType :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
+    , _cCustomDimension :: !(Maybe [CustomDimension])
+    , _cFloodlightOrderId :: !(Maybe Text)
+    , _cRevenueMicros :: !(Maybe (Textual Int64))
+    , _cClickId :: !(Maybe Text)
+    , _cInventoryAccountId :: !(Maybe (Textual Int64))
+    , _cSegmentationType :: !(Maybe Text)
+    , _cProductId :: !(Maybe Text)
+    , _cProductGroupId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1552,8 +1552,8 @@ instance ToJSON Conversion where
 data SavedColumn =
   SavedColumn'
     { _scSavedColumnName :: !(Maybe Text)
-    , _scKind            :: !Text
-    , _scType            :: !(Maybe Text)
+    , _scKind :: !Text
+    , _scType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1614,7 +1614,7 @@ instance ToJSON SavedColumn where
 data CustomDimension =
   CustomDimension'
     { _cdValue :: !(Maybe Text)
-    , _cdName  :: !(Maybe Text)
+    , _cdName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1701,13 +1701,13 @@ instance ToJSON UpdateAvailabilityResponse where
 -- /See:/ 'reportRequestReportScope' smart constructor.
 data ReportRequestReportScope =
   ReportRequestReportScope'
-    { _rrrsKeywordId       :: !(Maybe (Textual Int64))
-    , _rrrsAdGroupId       :: !(Maybe (Textual Int64))
+    { _rrrsKeywordId :: !(Maybe (Textual Int64))
+    , _rrrsAdGroupId :: !(Maybe (Textual Int64))
     , _rrrsEngineAccountId :: !(Maybe (Textual Int64))
-    , _rrrsAgencyId        :: !(Maybe (Textual Int64))
-    , _rrrsAdvertiserId    :: !(Maybe (Textual Int64))
-    , _rrrsCampaignId      :: !(Maybe (Textual Int64))
-    , _rrrsAdId            :: !(Maybe (Textual Int64))
+    , _rrrsAgencyId :: !(Maybe (Textual Int64))
+    , _rrrsAdvertiserId :: !(Maybe (Textual Int64))
+    , _rrrsCampaignId :: !(Maybe (Textual Int64))
+    , _rrrsAdId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1822,7 +1822,7 @@ instance ToJSON ReportRequestReportScope where
 -- /See:/ 'savedColumnList' smart constructor.
 data SavedColumnList =
   SavedColumnList'
-    { _sclKind  :: !Text
+    { _sclKind :: !Text
     , _sclItems :: !(Maybe [SavedColumn])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

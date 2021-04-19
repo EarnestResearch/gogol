@@ -42,8 +42,8 @@ module Network.Google.Resource.YouTube.Captions.Update
     , capSync
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.captions.update@ method which the
 -- 'CaptionsUpdate' request conforms to.
@@ -78,11 +78,11 @@ type CaptionsUpdateResource =
 -- /See:/ 'captionsUpdate' smart constructor.
 data CaptionsUpdate =
   CaptionsUpdate'
-    { _capOnBehalfOf             :: !(Maybe Text)
-    , _capPart                   :: !Text
-    , _capPayload                :: !Caption
+    { _capOnBehalfOf :: !(Maybe Text)
+    , _capPart :: !Text
+    , _capPayload :: !Caption
     , _capOnBehalfOfContentOwner :: !(Maybe Text)
-    , _capSync                   :: !(Maybe Bool)
+    , _capSync :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

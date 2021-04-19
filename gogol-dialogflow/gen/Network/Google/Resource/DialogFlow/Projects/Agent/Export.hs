@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Export
     , paeCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.export@ method which the
 -- 'ProjectsAgentExport' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentExportResource =
 -- /See:/ 'projectsAgentExport' smart constructor.
 data ProjectsAgentExport =
   ProjectsAgentExport'
-    { _paeParent         :: !Text
-    , _paeXgafv          :: !(Maybe Xgafv)
+    { _paeParent :: !Text
+    , _paeXgafv :: !(Maybe Xgafv)
     , _paeUploadProtocol :: !(Maybe Text)
-    , _paeAccessToken    :: !(Maybe Text)
-    , _paeUploadType     :: !(Maybe Text)
-    , _paePayload        :: !GoogleCloudDialogflowV2ExportAgentRequest
-    , _paeCallback       :: !(Maybe Text)
+    , _paeAccessToken :: !(Maybe Text)
+    , _paeUploadType :: !(Maybe Text)
+    , _paePayload :: !GoogleCloudDialogflowV2ExportAgentRequest
+    , _paeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -180,12 +180,12 @@ module Network.Google.Manufacturers
     , lprProducts
     ) where
 
-import           Network.Google.Manufacturers.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Manufacturers.Accounts.Products.Delete
-import           Network.Google.Resource.Manufacturers.Accounts.Products.Get
-import           Network.Google.Resource.Manufacturers.Accounts.Products.List
-import           Network.Google.Resource.Manufacturers.Accounts.Products.Update
+import Network.Google.Prelude
+import Network.Google.Manufacturers.Types
+import Network.Google.Resource.Manufacturers.Accounts.Products.Delete
+import Network.Google.Resource.Manufacturers.Accounts.Products.Get
+import Network.Google.Resource.Manufacturers.Accounts.Products.List
+import Network.Google.Resource.Manufacturers.Accounts.Products.Update
 
 {- $resources
 TODO

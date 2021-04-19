@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Update
     , acwuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.update@ method which the
 -- 'AccountsContainersWorkspacesUpdate' request conforms to.
@@ -56,9 +56,9 @@ type AccountsContainersWorkspacesUpdateResource =
 -- /See:/ 'accountsContainersWorkspacesUpdate' smart constructor.
 data AccountsContainersWorkspacesUpdate =
   AccountsContainersWorkspacesUpdate'
-    { _acwuPath        :: !Text
+    { _acwuPath :: !Text
     , _acwuFingerprint :: !(Maybe Text)
-    , _acwuPayload     :: !Workspace
+    , _acwuPayload :: !Workspace
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

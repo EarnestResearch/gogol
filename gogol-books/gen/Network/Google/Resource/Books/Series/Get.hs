@@ -36,8 +36,8 @@ module Network.Google.Resource.Books.Series.Get
     , sgSeriesId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.series.get@ method which the
 -- 'SeriesGet' request conforms to.

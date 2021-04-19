@@ -48,8 +48,8 @@ module Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.L
     , stulCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types
 
 -- | A resource alias for @serviceconsumermanagement.services.tenancyUnits.list@ method which the
 -- 'ServicesTenancyUnitsList' request conforms to.
@@ -77,15 +77,15 @@ type ServicesTenancyUnitsListResource =
 -- /See:/ 'servicesTenancyUnitsList' smart constructor.
 data ServicesTenancyUnitsList =
   ServicesTenancyUnitsList'
-    { _stulParent         :: !Text
-    , _stulXgafv          :: !(Maybe Xgafv)
+    { _stulParent :: !Text
+    , _stulXgafv :: !(Maybe Xgafv)
     , _stulUploadProtocol :: !(Maybe Text)
-    , _stulAccessToken    :: !(Maybe Text)
-    , _stulUploadType     :: !(Maybe Text)
-    , _stulFilter         :: !(Maybe Text)
-    , _stulPageToken      :: !(Maybe Text)
-    , _stulPageSize       :: !(Maybe (Textual Int32))
-    , _stulCallback       :: !(Maybe Text)
+    , _stulAccessToken :: !(Maybe Text)
+    , _stulUploadType :: !(Maybe Text)
+    , _stulFilter :: !(Maybe Text)
+    , _stulPageToken :: !(Maybe Text)
+    , _stulPageSize :: !(Maybe (Textual Int32))
+    , _stulCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

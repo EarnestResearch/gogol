@@ -46,8 +46,8 @@ module Network.Google.Resource.CloudBilling.Services.SKUs.List
     , sskulCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.services.skus.list@ method which the
 -- 'ServicesSKUsList' request conforms to.
@@ -73,17 +73,17 @@ type ServicesSKUsListResource =
 -- /See:/ 'servicesSKUsList' smart constructor.
 data ServicesSKUsList =
   ServicesSKUsList'
-    { _sskulParent         :: !Text
-    , _sskulXgafv          :: !(Maybe Xgafv)
-    , _sskulCurrencyCode   :: !(Maybe Text)
+    { _sskulParent :: !Text
+    , _sskulXgafv :: !(Maybe Xgafv)
+    , _sskulCurrencyCode :: !(Maybe Text)
     , _sskulUploadProtocol :: !(Maybe Text)
-    , _sskulStartTime      :: !(Maybe DateTime')
-    , _sskulAccessToken    :: !(Maybe Text)
-    , _sskulUploadType     :: !(Maybe Text)
-    , _sskulEndTime        :: !(Maybe DateTime')
-    , _sskulPageToken      :: !(Maybe Text)
-    , _sskulPageSize       :: !(Maybe (Textual Int32))
-    , _sskulCallback       :: !(Maybe Text)
+    , _sskulStartTime :: !(Maybe DateTime')
+    , _sskulAccessToken :: !(Maybe Text)
+    , _sskulUploadType :: !(Maybe Text)
+    , _sskulEndTime :: !(Maybe DateTime')
+    , _sskulPageToken :: !(Maybe Text)
+    , _sskulPageSize :: !(Maybe (Textual Int32))
+    , _sskulCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

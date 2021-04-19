@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Patch
     , oacpGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.patch@ method which the
 -- 'ObjectAccessControlsPatch' request conforms to.
@@ -66,12 +66,12 @@ type ObjectAccessControlsPatchResource =
 -- /See:/ 'objectAccessControlsPatch' smart constructor.
 data ObjectAccessControlsPatch =
   ObjectAccessControlsPatch'
-    { _oacpBucket      :: !Text
-    , _oacpPayload     :: !ObjectAccessControl
+    { _oacpBucket :: !Text
+    , _oacpPayload :: !ObjectAccessControl
     , _oacpUserProject :: !(Maybe Text)
-    , _oacpObject      :: !Text
-    , _oacpEntity      :: !Text
-    , _oacpGeneration  :: !(Maybe (Textual Int64))
+    , _oacpObject :: !Text
+    , _oacpEntity :: !Text
+    , _oacpGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

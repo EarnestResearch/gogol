@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.Entitlements.Patch
     , epUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.entitlements.patch@ method which the
 -- 'EntitlementsPatch' request conforms to.
@@ -67,10 +67,10 @@ type EntitlementsPatchResource =
 data EntitlementsPatch =
   EntitlementsPatch'
     { _epEntitlementId :: !Text
-    , _epEnterpriseId  :: !Text
-    , _epPayload       :: !Entitlement
-    , _epInstall       :: !(Maybe Bool)
-    , _epUserId        :: !Text
+    , _epEnterpriseId :: !Text
+    , _epPayload :: !Entitlement
+    , _epInstall :: !(Maybe Bool)
+    , _epUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

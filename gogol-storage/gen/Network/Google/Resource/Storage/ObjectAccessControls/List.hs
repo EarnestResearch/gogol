@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.List
     , oaclGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.list@ method which the
 -- 'ObjectAccessControlsList' request conforms to.
@@ -62,10 +62,10 @@ type ObjectAccessControlsListResource =
 -- /See:/ 'objectAccessControlsList' smart constructor.
 data ObjectAccessControlsList =
   ObjectAccessControlsList'
-    { _oaclBucket      :: !Text
+    { _oaclBucket :: !Text
     , _oaclUserProject :: !(Maybe Text)
-    , _oaclObject      :: !Text
-    , _oaclGeneration  :: !(Maybe (Textual Int64))
+    , _oaclObject :: !Text
+    , _oaclGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

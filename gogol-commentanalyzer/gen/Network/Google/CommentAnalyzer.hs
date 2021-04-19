@@ -153,10 +153,10 @@ module Network.Google.CommentAnalyzer
     , TextEntryType (..)
     ) where
 
-import           Network.Google.CommentAnalyzer.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CommentAnalyzer.Comments.Analyze
-import           Network.Google.Resource.CommentAnalyzer.Comments.Suggestscore
+import Network.Google.Prelude
+import Network.Google.CommentAnalyzer.Types
+import Network.Google.Resource.CommentAnalyzer.Comments.Analyze
+import Network.Google.Resource.CommentAnalyzer.Comments.Suggestscore
 
 {- $resources
 TODO

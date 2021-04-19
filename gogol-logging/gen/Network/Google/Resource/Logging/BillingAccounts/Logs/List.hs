@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Logs.List
     , ballCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.logs.list@ method which the
 -- 'BillingAccountsLogsList' request conforms to.
@@ -69,14 +69,14 @@ type BillingAccountsLogsListResource =
 -- /See:/ 'billingAccountsLogsList' smart constructor.
 data BillingAccountsLogsList =
   BillingAccountsLogsList'
-    { _ballParent         :: !Text
-    , _ballXgafv          :: !(Maybe Xgafv)
+    { _ballParent :: !Text
+    , _ballXgafv :: !(Maybe Xgafv)
     , _ballUploadProtocol :: !(Maybe Text)
-    , _ballAccessToken    :: !(Maybe Text)
-    , _ballUploadType     :: !(Maybe Text)
-    , _ballPageToken      :: !(Maybe Text)
-    , _ballPageSize       :: !(Maybe (Textual Int32))
-    , _ballCallback       :: !(Maybe Text)
+    , _ballAccessToken :: !(Maybe Text)
+    , _ballUploadType :: !(Maybe Text)
+    , _ballPageToken :: !(Maybe Text)
+    , _ballPageSize :: !(Maybe (Textual Int32))
+    , _ballCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

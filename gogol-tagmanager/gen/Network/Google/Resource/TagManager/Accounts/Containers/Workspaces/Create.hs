@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Create
     , acwcPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.create@ method which the
 -- 'AccountsContainersWorkspacesCreate' request conforms to.
@@ -55,7 +55,7 @@ type AccountsContainersWorkspacesCreateResource =
 -- /See:/ 'accountsContainersWorkspacesCreate' smart constructor.
 data AccountsContainersWorkspacesCreate =
   AccountsContainersWorkspacesCreate'
-    { _acwcParent  :: !Text
+    { _acwcParent :: !Text
     , _acwcPayload :: !Workspace
     }
   deriving (Eq, Show, Data, Typeable, Generic)

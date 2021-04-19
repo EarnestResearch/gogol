@@ -43,8 +43,8 @@ module Network.Google.Resource.Ml.Projects.Models.Get
     , pmgCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.get@ method which the
 -- 'ProjectsModelsGet' request conforms to.
@@ -66,12 +66,12 @@ type ProjectsModelsGetResource =
 -- /See:/ 'projectsModelsGet' smart constructor.
 data ProjectsModelsGet =
   ProjectsModelsGet'
-    { _pmgXgafv          :: !(Maybe Xgafv)
+    { _pmgXgafv :: !(Maybe Xgafv)
     , _pmgUploadProtocol :: !(Maybe Text)
-    , _pmgAccessToken    :: !(Maybe Text)
-    , _pmgUploadType     :: !(Maybe Text)
-    , _pmgName           :: !Text
-    , _pmgCallback       :: !(Maybe Text)
+    , _pmgAccessToken :: !(Maybe Text)
+    , _pmgUploadType :: !(Maybe Text)
+    , _pmgName :: !Text
+    , _pmgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

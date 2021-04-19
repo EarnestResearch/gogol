@@ -41,8 +41,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.Get
     , orgCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.get@ method which the
 -- 'OrganizationsRolesGet' request conforms to.
@@ -61,12 +61,12 @@ type OrganizationsRolesGetResource =
 -- /See:/ 'organizationsRolesGet' smart constructor.
 data OrganizationsRolesGet =
   OrganizationsRolesGet'
-    { _orgXgafv          :: !(Maybe Xgafv)
+    { _orgXgafv :: !(Maybe Xgafv)
     , _orgUploadProtocol :: !(Maybe Text)
-    , _orgAccessToken    :: !(Maybe Text)
-    , _orgUploadType     :: !(Maybe Text)
-    , _orgName           :: !Text
-    , _orgCallback       :: !(Maybe Text)
+    , _orgAccessToken :: !(Maybe Text)
+    , _orgUploadType :: !(Maybe Text)
+    , _orgName :: !Text
+    , _orgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

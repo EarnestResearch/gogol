@@ -42,8 +42,8 @@ module Network.Google.Resource.SafeBrowsing.ThreatListUpdates.Fetch
     , tlufCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types
 
 -- | A resource alias for @safebrowsing.threatListUpdates.fetch@ method which the
 -- 'ThreatListUpdatesFetch' request conforms to.
@@ -65,12 +65,12 @@ type ThreatListUpdatesFetchResource =
 -- /See:/ 'threatListUpdatesFetch' smart constructor.
 data ThreatListUpdatesFetch =
   ThreatListUpdatesFetch'
-    { _tlufXgafv          :: !(Maybe Xgafv)
+    { _tlufXgafv :: !(Maybe Xgafv)
     , _tlufUploadProtocol :: !(Maybe Text)
-    , _tlufAccessToken    :: !(Maybe Text)
-    , _tlufUploadType     :: !(Maybe Text)
-    , _tlufPayload        :: !FetchThreatListUpdatesRequest
-    , _tlufCallback       :: !(Maybe Text)
+    , _tlufAccessToken :: !(Maybe Text)
+    , _tlufUploadType :: !(Maybe Text)
+    , _tlufPayload :: !FetchThreatListUpdatesRequest
+    , _tlufCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

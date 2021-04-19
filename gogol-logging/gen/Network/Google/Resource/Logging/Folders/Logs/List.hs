@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Folders.Logs.List
     , fllCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.logs.list@ method which the
 -- 'FoldersLogsList' request conforms to.
@@ -69,14 +69,14 @@ type FoldersLogsListResource =
 -- /See:/ 'foldersLogsList' smart constructor.
 data FoldersLogsList =
   FoldersLogsList'
-    { _fllParent         :: !Text
-    , _fllXgafv          :: !(Maybe Xgafv)
+    { _fllParent :: !Text
+    , _fllXgafv :: !(Maybe Xgafv)
     , _fllUploadProtocol :: !(Maybe Text)
-    , _fllAccessToken    :: !(Maybe Text)
-    , _fllUploadType     :: !(Maybe Text)
-    , _fllPageToken      :: !(Maybe Text)
-    , _fllPageSize       :: !(Maybe (Textual Int32))
-    , _fllCallback       :: !(Maybe Text)
+    , _fllAccessToken :: !(Maybe Text)
+    , _fllUploadType :: !(Maybe Text)
+    , _fllPageToken :: !(Maybe Text)
+    , _fllPageSize :: !(Maybe (Textual Int32))
+    , _fllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

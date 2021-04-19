@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudBilling.BillingAccounts.GetIAMPolicy
     , bagipCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.billingAccounts.getIamPolicy@ method which the
 -- 'BillingAccountsGetIAMPolicy' request conforms to.
@@ -67,12 +67,12 @@ type BillingAccountsGetIAMPolicyResource =
 -- /See:/ 'billingAccountsGetIAMPolicy' smart constructor.
 data BillingAccountsGetIAMPolicy =
   BillingAccountsGetIAMPolicy'
-    { _bagipXgafv          :: !(Maybe Xgafv)
+    { _bagipXgafv :: !(Maybe Xgafv)
     , _bagipUploadProtocol :: !(Maybe Text)
-    , _bagipAccessToken    :: !(Maybe Text)
-    , _bagipUploadType     :: !(Maybe Text)
-    , _bagipResource       :: !Text
-    , _bagipCallback       :: !(Maybe Text)
+    , _bagipAccessToken :: !(Maybe Text)
+    , _bagipUploadType :: !(Maybe Text)
+    , _bagipResource :: !Text
+    , _bagipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

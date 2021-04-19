@@ -44,8 +44,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.CheckCons
     , pitccCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.tables.checkConsistency@ method which the
 -- 'ProjectsInstancesTablesCheckConsistency' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsInstancesTablesCheckConsistencyResource
 -- /See:/ 'projectsInstancesTablesCheckConsistency' smart constructor.
 data ProjectsInstancesTablesCheckConsistency =
   ProjectsInstancesTablesCheckConsistency'
-    { _pitccXgafv          :: !(Maybe Xgafv)
+    { _pitccXgafv :: !(Maybe Xgafv)
     , _pitccUploadProtocol :: !(Maybe Text)
-    , _pitccAccessToken    :: !(Maybe Text)
-    , _pitccUploadType     :: !(Maybe Text)
-    , _pitccPayload        :: !CheckConsistencyRequest
-    , _pitccName           :: !Text
-    , _pitccCallback       :: !(Maybe Text)
+    , _pitccAccessToken :: !(Maybe Text)
+    , _pitccUploadType :: !(Maybe Text)
+    , _pitccPayload :: !CheckConsistencyRequest
+    , _pitccName :: !Text
+    , _pitccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

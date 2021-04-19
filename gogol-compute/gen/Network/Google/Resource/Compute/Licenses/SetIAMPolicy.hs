@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Licenses.SetIAMPolicy
     , lsipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.setIamPolicy@ method which the
 -- 'LicensesSetIAMPolicy' request conforms to.
@@ -63,8 +63,8 @@ type LicensesSetIAMPolicyResource =
 -- /See:/ 'licensesSetIAMPolicy' smart constructor.
 data LicensesSetIAMPolicy =
   LicensesSetIAMPolicy'
-    { _lsipProject  :: !Text
-    , _lsipPayload  :: !GlobalSetPolicyRequest
+    { _lsipProject :: !Text
+    , _lsipPayload :: !GlobalSetPolicyRequest
     , _lsipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

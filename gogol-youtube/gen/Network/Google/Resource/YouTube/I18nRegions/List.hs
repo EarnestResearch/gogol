@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.I18nRegions.List
     , irlHl
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.i18nRegions.list@ method which the
 -- 'I18nRegionsList' request conforms to.
@@ -57,7 +57,7 @@ type I18nRegionsListResource =
 data I18nRegionsList =
   I18nRegionsList'
     { _irlPart :: !Text
-    , _irlHl   :: !Text
+    , _irlHl :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

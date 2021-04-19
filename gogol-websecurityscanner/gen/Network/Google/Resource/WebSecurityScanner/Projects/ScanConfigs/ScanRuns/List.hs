@@ -44,8 +44,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.
     , pscsrlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.scanRuns.list@ method which the
 -- 'ProjectsScanConfigsScanRunsList' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsScanConfigsScanRunsListResource =
 -- /See:/ 'projectsScanConfigsScanRunsList' smart constructor.
 data ProjectsScanConfigsScanRunsList =
   ProjectsScanConfigsScanRunsList'
-    { _pscsrlParent         :: !Text
-    , _pscsrlXgafv          :: !(Maybe Xgafv)
+    { _pscsrlParent :: !Text
+    , _pscsrlXgafv :: !(Maybe Xgafv)
     , _pscsrlUploadProtocol :: !(Maybe Text)
-    , _pscsrlAccessToken    :: !(Maybe Text)
-    , _pscsrlUploadType     :: !(Maybe Text)
-    , _pscsrlPageToken      :: !(Maybe Text)
-    , _pscsrlPageSize       :: !(Maybe (Textual Int32))
-    , _pscsrlCallback       :: !(Maybe Text)
+    , _pscsrlAccessToken :: !(Maybe Text)
+    , _pscsrlUploadType :: !(Maybe Text)
+    , _pscsrlPageToken :: !(Maybe Text)
+    , _pscsrlPageSize :: !(Maybe (Textual Int32))
+    , _pscsrlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

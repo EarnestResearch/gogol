@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.SSLPolicies.List
     , sslplMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.sslPolicies.list@ method which the
 -- 'SSLPoliciesList'' request conforms to.
@@ -66,10 +66,10 @@ type SSLPoliciesListResource =
 -- /See:/ 'sslPoliciesList'' smart constructor.
 data SSLPoliciesList' =
   SSLPoliciesList''
-    { _sslplOrderBy    :: !(Maybe Text)
-    , _sslplProject    :: !Text
-    , _sslplFilter     :: !(Maybe Text)
-    , _sslplPageToken  :: !(Maybe Text)
+    { _sslplOrderBy :: !(Maybe Text)
+    , _sslplProject :: !Text
+    , _sslplFilter :: !(Maybe Text)
+    , _sslplPageToken :: !(Maybe Text)
     , _sslplMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

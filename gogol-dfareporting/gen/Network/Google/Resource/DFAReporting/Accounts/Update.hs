@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Accounts.Update
     , auuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.update@ method which the
 -- 'AccountsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type AccountsUpdateResource =
 data AccountsUpdate =
   AccountsUpdate'
     { _auuProFileId :: !(Textual Int64)
-    , _auuPayload   :: !Account
+    , _auuPayload :: !Account
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

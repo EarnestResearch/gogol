@@ -40,8 +40,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.Update
     , udsuUserId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.update@ method which the
 -- 'UsersDataSourcesUpdate' request conforms to.
@@ -63,8 +63,8 @@ type UsersDataSourcesUpdateResource =
 data UsersDataSourcesUpdate =
   UsersDataSourcesUpdate'
     { _udsuDataSourceId :: !Text
-    , _udsuPayload      :: !DataSource
-    , _udsuUserId       :: !Text
+    , _udsuPayload :: !DataSource
+    , _udsuUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.DiskTypes.List
     , dtlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.diskTypes.list@ method which the
 -- 'DiskTypesList' request conforms to.
@@ -65,11 +65,11 @@ type DiskTypesListResource =
 -- /See:/ 'diskTypesList' smart constructor.
 data DiskTypesList =
   DiskTypesList'
-    { _dtlOrderBy    :: !(Maybe Text)
-    , _dtlProject    :: !Text
-    , _dtlZone       :: !Text
-    , _dtlFilter     :: !(Maybe Text)
-    , _dtlPageToken  :: !(Maybe Text)
+    { _dtlOrderBy :: !(Maybe Text)
+    , _dtlProject :: !Text
+    , _dtlZone :: !Text
+    , _dtlFilter :: !(Maybe Text)
+    , _dtlPageToken :: !(Maybe Text)
     , _dtlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

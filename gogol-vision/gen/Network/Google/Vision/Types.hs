@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1242,11 +1242,11 @@ module Network.Google.Vision.Types
     -- * GoogleCloudVisionV1p1beta1Page
     , GoogleCloudVisionV1p1beta1Page
     , googleCloudVisionV1p1beta1Page
-    , g2Property
-    , g2Height
-    , g2Blocks
-    , g2Width
-    , g2Confidence
+    , g1Property
+    , g1Height
+    , g1Blocks
+    , g1Width
+    , g1Confidence
 
     -- * GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult
     , GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult
@@ -1609,11 +1609,11 @@ module Network.Google.Vision.Types
     -- * GoogleCloudVisionV1p2beta1Page
     , GoogleCloudVisionV1p2beta1Page
     , googleCloudVisionV1p2beta1Page
-    , goo3Property
-    , goo3Height
-    , goo3Blocks
-    , goo3Width
-    , goo3Confidence
+    , goo1Property
+    , goo1Height
+    , goo1Blocks
+    , goo1Width
+    , goo1Confidence
 
     -- * GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak
     , GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak
@@ -1715,9 +1715,9 @@ module Network.Google.Vision.Types
     , gcvvgdcURI
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vision.Types.Product
-import           Network.Google.Vision.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Vision.Types.Product
+import Network.Google.Vision.Types.Sum
 
 -- | Default request referring to version 'v1p2beta1' of the Cloud Vision API. This contains the host and root path used as a starting point for constructing service requests.
 visionService :: ServiceConfig

@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Reopen
     , mrCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.reopen@ method which the
 -- 'MattersReopen' request conforms to.
@@ -65,13 +65,13 @@ type MattersReopenResource =
 -- /See:/ 'mattersReopen' smart constructor.
 data MattersReopen =
   MattersReopen'
-    { _mrXgafv          :: !(Maybe Xgafv)
+    { _mrXgafv :: !(Maybe Xgafv)
     , _mrUploadProtocol :: !(Maybe Text)
-    , _mrAccessToken    :: !(Maybe Text)
-    , _mrUploadType     :: !(Maybe Text)
-    , _mrPayload        :: !ReopenMatterRequest
-    , _mrMatterId       :: !Text
-    , _mrCallback       :: !(Maybe Text)
+    , _mrAccessToken :: !(Maybe Text)
+    , _mrUploadType :: !(Maybe Text)
+    , _mrPayload :: !ReopenMatterRequest
+    , _mrMatterId :: !Text
+    , _mrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Get
     , cgCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.get@ method which the
 -- 'CatalogsGet' request conforms to.
@@ -63,12 +63,12 @@ type CatalogsGetResource =
 -- /See:/ 'catalogsGet' smart constructor.
 data CatalogsGet =
   CatalogsGet'
-    { _cgXgafv          :: !(Maybe Xgafv)
+    { _cgXgafv :: !(Maybe Xgafv)
     , _cgUploadProtocol :: !(Maybe Text)
-    , _cgAccessToken    :: !(Maybe Text)
-    , _cgUploadType     :: !(Maybe Text)
-    , _cgName           :: !Text
-    , _cgCallback       :: !(Maybe Text)
+    , _cgAccessToken :: !(Maybe Text)
+    , _cgUploadType :: !(Maybe Text)
+    , _cgName :: !Text
+    , _cgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

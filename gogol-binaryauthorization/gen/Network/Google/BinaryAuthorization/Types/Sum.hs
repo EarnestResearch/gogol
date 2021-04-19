@@ -16,7 +16,7 @@
 --
 module Network.Google.BinaryAuthorization.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. The action when a pod creation is denied by the admission
 -- rule.

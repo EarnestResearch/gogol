@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Events.ListDefinitions
     , eldMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.events.listDefinitions@ method which the
 -- 'EventsListDefinitions' request conforms to.
@@ -58,8 +58,8 @@ type EventsListDefinitionsResource =
 -- /See:/ 'eventsListDefinitions' smart constructor.
 data EventsListDefinitions =
   EventsListDefinitions'
-    { _eldLanguage   :: !(Maybe Text)
-    , _eldPageToken  :: !(Maybe Text)
+    { _eldLanguage :: !(Maybe Text)
+    , _eldPageToken :: !(Maybe Text)
     , _eldMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

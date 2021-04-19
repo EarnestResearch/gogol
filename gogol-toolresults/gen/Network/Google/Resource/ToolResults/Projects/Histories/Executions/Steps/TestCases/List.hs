@@ -45,8 +45,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.T
     , phestclPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.testCases.list@ method which the
 -- 'ProjectsHistoriesExecutionsStepsTestCasesList' request conforms to.
@@ -78,11 +78,11 @@ type ProjectsHistoriesExecutionsStepsTestCasesListResource
 data ProjectsHistoriesExecutionsStepsTestCasesList =
   ProjectsHistoriesExecutionsStepsTestCasesList'
     { _phestclExecutionId :: !Text
-    , _phestclStepId      :: !Text
-    , _phestclHistoryId   :: !Text
-    , _phestclPageToken   :: !(Maybe Text)
-    , _phestclProjectId   :: !Text
-    , _phestclPageSize    :: !(Maybe (Textual Int32))
+    , _phestclStepId :: !Text
+    , _phestclHistoryId :: !Text
+    , _phestclPageToken :: !(Maybe Text)
+    , _phestclProjectId :: !Text
+    , _phestclPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.YouTube.VideoCategories.List
     , vclId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videoCategories.list@ method which the
 -- 'VideoCategoriesList' request conforms to.
@@ -60,10 +60,10 @@ type VideoCategoriesListResource =
 -- /See:/ 'videoCategoriesList' smart constructor.
 data VideoCategoriesList =
   VideoCategoriesList'
-    { _vclPart       :: !Text
+    { _vclPart :: !Text
     , _vclRegionCode :: !(Maybe Text)
-    , _vclHl         :: !Text
-    , _vclId         :: !(Maybe Text)
+    , _vclHl :: !Text
+    , _vclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

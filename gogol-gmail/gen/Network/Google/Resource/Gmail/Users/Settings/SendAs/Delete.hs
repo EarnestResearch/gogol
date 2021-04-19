@@ -39,8 +39,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.Delete
     , ussadSendAsEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.delete@ method which the
 -- 'UsersSettingsSendAsDelete' request conforms to.
@@ -61,7 +61,7 @@ type UsersSettingsSendAsDeleteResource =
 -- /See:/ 'usersSettingsSendAsDelete' smart constructor.
 data UsersSettingsSendAsDelete =
   UsersSettingsSendAsDelete'
-    { _ussadUserId      :: !Text
+    { _ussadUserId :: !Text
     , _ussadSendAsEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

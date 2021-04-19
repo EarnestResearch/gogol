@@ -61,8 +61,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfebCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.executeBundle@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirExecuteBundle' request conforms to.
@@ -103,13 +103,13 @@ type ProjectsLocationsDataSetsFhirStoresFhirExecuteBundleResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirExecuteBundle' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirExecuteBundle =
   ProjectsLocationsDataSetsFhirStoresFhirExecuteBundle'
-    { _pldsfsfebParent         :: !Text
-    , _pldsfsfebXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfebParent :: !Text
+    , _pldsfsfebXgafv :: !(Maybe Xgafv)
     , _pldsfsfebUploadProtocol :: !(Maybe Text)
-    , _pldsfsfebAccessToken    :: !(Maybe Text)
-    , _pldsfsfebUploadType     :: !(Maybe Text)
-    , _pldsfsfebPayload        :: !HTTPBody
-    , _pldsfsfebCallback       :: !(Maybe Text)
+    , _pldsfsfebAccessToken :: !(Maybe Text)
+    , _pldsfsfebUploadType :: !(Maybe Text)
+    , _pldsfsfebPayload :: !HTTPBody
+    , _pldsfsfebCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

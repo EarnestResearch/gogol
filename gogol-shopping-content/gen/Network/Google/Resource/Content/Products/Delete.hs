@@ -35,20 +35,22 @@ module Network.Google.Resource.Content.Products.Delete
     -- * Request Lenses
     , proMerchantId
     , proProductId
+    , proDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.delete@ method which the
 -- 'ProductsDelete' request conforms to.
 type ProductsDeleteResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "products" :>
              Capture "productId" Text :>
-               QueryParam "alt" AltJSON :> Delete '[JSON] ()
+               QueryParam "dryRun" Bool :>
+                 QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a product from your Merchant Center account.
 --
@@ -56,7 +58,8 @@ type ProductsDeleteResource =
 data ProductsDelete =
   ProductsDelete'
     { _proMerchantId :: !(Textual Word64)
-    , _proProductId  :: !Text
+    , _proProductId :: !Text
+    , _proDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -68,13 +71,18 @@ data ProductsDelete =
 -- * 'proMerchantId'
 --
 -- * 'proProductId'
+--
+-- * 'proDryRun'
 productsDelete
     :: Word64 -- ^ 'proMerchantId'
     -> Text -- ^ 'proProductId'
     -> ProductsDelete
 productsDelete pProMerchantId_ pProProductId_ =
   ProductsDelete'
-    {_proMerchantId = _Coerce # pProMerchantId_, _proProductId = pProProductId_}
+    { _proMerchantId = _Coerce # pProMerchantId_
+    , _proProductId = pProProductId_
+    , _proDryRun = Nothing
+    }
 
 
 -- | The ID of the account that contains the product. This account cannot be
@@ -90,12 +98,20 @@ proProductId :: Lens' ProductsDelete Text
 proProductId
   = lens _proProductId (\ s a -> s{_proProductId = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+proDryRun :: Lens' ProductsDelete (Maybe Bool)
+proDryRun
+  = lens _proDryRun (\ s a -> s{_proDryRun = a})
+
 instance GoogleRequest ProductsDelete where
         type Rs ProductsDelete = ()
         type Scopes ProductsDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsDelete'{..}
-          = go _proMerchantId _proProductId (Just AltJSON)
+          = go _proMerchantId _proProductId _proDryRun
+              (Just AltJSON)
               shoppingContentService
           where go
                   = buildClient (Proxy :: Proxy ProductsDeleteResource)

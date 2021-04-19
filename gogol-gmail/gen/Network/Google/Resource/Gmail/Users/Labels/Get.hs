@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Labels.Get
     , ulgId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.labels.get@ method which the
 -- 'UsersLabelsGet' request conforms to.
@@ -57,7 +57,7 @@ type UsersLabelsGetResource =
 data UsersLabelsGet =
   UsersLabelsGet'
     { _ulgUserId :: !Text
-    , _ulgId     :: !Text
+    , _ulgId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

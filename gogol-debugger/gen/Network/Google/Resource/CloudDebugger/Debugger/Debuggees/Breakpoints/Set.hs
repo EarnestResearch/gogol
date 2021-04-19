@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.Set
     , ddbsCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.debugger.debuggees.breakpoints.set@ method which the
 -- 'DebuggerDebuggeesBreakpointsSet' request conforms to.
@@ -70,14 +70,14 @@ type DebuggerDebuggeesBreakpointsSetResource =
 -- /See:/ 'debuggerDebuggeesBreakpointsSet' smart constructor.
 data DebuggerDebuggeesBreakpointsSet =
   DebuggerDebuggeesBreakpointsSet'
-    { _ddbsXgafv          :: !(Maybe Xgafv)
+    { _ddbsXgafv :: !(Maybe Xgafv)
     , _ddbsUploadProtocol :: !(Maybe Text)
-    , _ddbsAccessToken    :: !(Maybe Text)
-    , _ddbsUploadType     :: !(Maybe Text)
-    , _ddbsPayload        :: !Breakpoint
-    , _ddbsDebuggeeId     :: !Text
-    , _ddbsClientVersion  :: !(Maybe Text)
-    , _ddbsCallback       :: !(Maybe Text)
+    , _ddbsAccessToken :: !(Maybe Text)
+    , _ddbsUploadType :: !(Maybe Text)
+    , _ddbsPayload :: !Breakpoint
+    , _ddbsDebuggeeId :: !Text
+    , _ddbsClientVersion :: !(Maybe Text)
+    , _ddbsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

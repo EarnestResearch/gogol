@@ -17,8 +17,8 @@
 --
 module Network.Google.Docs.Types.Product where
 
-import           Network.Google.Docs.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Docs.Types.Sum
+import Network.Google.Prelude
 
 -- | A mask that indicates which of the fields on the base TableCellStyle
 -- have been changed in this suggestion. For any field set to true, there
@@ -27,18 +27,18 @@ import           Network.Google.Prelude
 -- /See:/ 'tableCellStyleSuggestionState' smart constructor.
 data TableCellStyleSuggestionState =
   TableCellStyleSuggestionState'
-    { _tcsssPaddingLeftSuggested      :: !(Maybe Bool)
-    , _tcsssPaddingTopSuggested       :: !(Maybe Bool)
-    , _tcsssBOrderTopSuggested        :: !(Maybe Bool)
-    , _tcsssRowSpanSuggested          :: !(Maybe Bool)
-    , _tcsssPaddingBottomSuggested    :: !(Maybe Bool)
-    , _tcsssBOrderBottomSuggested     :: !(Maybe Bool)
-    , _tcsssPaddingRightSuggested     :: !(Maybe Bool)
-    , _tcsssColumnSpanSuggested       :: !(Maybe Bool)
-    , _tcsssBOrderLeftSuggested       :: !(Maybe Bool)
+    { _tcsssPaddingLeftSuggested :: !(Maybe Bool)
+    , _tcsssPaddingTopSuggested :: !(Maybe Bool)
+    , _tcsssBOrderTopSuggested :: !(Maybe Bool)
+    , _tcsssRowSpanSuggested :: !(Maybe Bool)
+    , _tcsssPaddingBottomSuggested :: !(Maybe Bool)
+    , _tcsssBOrderBottomSuggested :: !(Maybe Bool)
+    , _tcsssPaddingRightSuggested :: !(Maybe Bool)
+    , _tcsssColumnSpanSuggested :: !(Maybe Bool)
+    , _tcsssBOrderLeftSuggested :: !(Maybe Bool)
     , _tcsssContentAlignmentSuggested :: !(Maybe Bool)
-    , _tcsssBackgRoundColorSuggested  :: !(Maybe Bool)
-    , _tcsssBOrderRightSuggested      :: !(Maybe Bool)
+    , _tcsssBackgRoundColorSuggested :: !(Maybe Bool)
+    , _tcsssBOrderRightSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -214,10 +214,10 @@ instance ToJSON TableCellStyleSuggestionState where
 -- /See:/ 'embeddedObjectBOrderSuggestionState' smart constructor.
 data EmbeddedObjectBOrderSuggestionState =
   EmbeddedObjectBOrderSuggestionState'
-    { _eobossDashStyleSuggested     :: !(Maybe Bool)
+    { _eobossDashStyleSuggested :: !(Maybe Bool)
     , _eobossPropertyStateSuggested :: !(Maybe Bool)
-    , _eobossColorSuggested         :: !(Maybe Bool)
-    , _eobossWidthSuggested         :: !(Maybe Bool)
+    , _eobossColorSuggested :: !(Maybe Bool)
+    , _eobossWidthSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -297,8 +297,8 @@ instance ToJSON EmbeddedObjectBOrderSuggestionState
 -- /See:/ 'tableCellBOrder' smart constructor.
 data TableCellBOrder =
   TableCellBOrder'
-    { _tcboColor     :: !(Maybe OptionalColor)
-    , _tcboWidth     :: !(Maybe Dimension)
+    { _tcboColor :: !(Maybe OptionalColor)
+    , _tcboWidth :: !(Maybe Dimension)
     , _tcboDashStyle :: !(Maybe TableCellBOrderDashStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -449,8 +449,8 @@ instance ToJSON NamedStylesSuggestionState where
 -- /See:/ 'positionedObjectPositioning' smart constructor.
 data PositionedObjectPositioning =
   PositionedObjectPositioning'
-    { _popLayout     :: !(Maybe PositionedObjectPositioningLayout)
-    , _popTopOffSet  :: !(Maybe Dimension)
+    { _popLayout :: !(Maybe PositionedObjectPositioningLayout)
+    , _popTopOffSet :: !(Maybe Dimension)
     , _popLeftOffSet :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -516,7 +516,7 @@ instance ToJSON PositionedObjectPositioning where
 data SuggestedParagraphStyle =
   SuggestedParagraphStyle'
     { _spsParagraphStyleSuggestionState :: !(Maybe ParagraphStyleSuggestionState)
-    , _spsParagraphStyle                :: !(Maybe ParagraphStyle)
+    , _spsParagraphStyle :: !(Maybe ParagraphStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -572,7 +572,7 @@ instance ToJSON SuggestedParagraphStyle where
 data PositionedObjectProperties =
   PositionedObjectProperties'
     { _popEmbeddedObject :: !(Maybe EmbeddedObject)
-    , _popPositioning    :: !(Maybe PositionedObjectPositioning)
+    , _popPositioning :: !(Maybe PositionedObjectPositioning)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -626,7 +626,7 @@ instance ToJSON PositionedObjectProperties where
 data NamedStyle =
   NamedStyle'
     { _nsNamedStyleType :: !(Maybe NamedStyleNamedStyleType)
-    , _nsTextStyle      :: !(Maybe TextStyle)
+    , _nsTextStyle :: !(Maybe TextStyle)
     , _nsParagraphStyle :: !(Maybe ParagraphStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -690,7 +690,7 @@ instance ToJSON NamedStyle where
 data DeleteNamedRangeRequest =
   DeleteNamedRangeRequest'
     { _dnrrNamedRangeId :: !(Maybe Text)
-    , _dnrrName         :: !(Maybe Text)
+    , _dnrrName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -770,7 +770,7 @@ instance ToJSON
 -- /See:/ 'tabStop' smart constructor.
 data TabStop =
   TabStop'
-    { _tsOffSet    :: !(Maybe Dimension)
+    { _tsOffSet :: !(Maybe Dimension)
     , _tsAlignment :: !(Maybe TabStopAlignment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -818,7 +818,7 @@ instance ToJSON TabStop where
 data NamedRanges =
   NamedRanges'
     { _nrNamedRanges :: !(Maybe [NamedRange])
-    , _nrName        :: !(Maybe Text)
+    , _nrName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -910,7 +910,7 @@ instance ToJSON TableRowSuggestedTableRowStyleChanges
 -- /See:/ 'positionedObjectPropertiesSuggestionState' smart constructor.
 data PositionedObjectPropertiesSuggestionState =
   PositionedObjectPropertiesSuggestionState'
-    { _popssPositioningSuggestionState    :: !(Maybe PositionedObjectPositioningSuggestionState)
+    { _popssPositioningSuggestionState :: !(Maybe PositionedObjectPositioningSuggestionState)
     , _popssEmbeddedObjectSuggestionState :: !(Maybe EmbeddedObjectSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -975,8 +975,8 @@ instance ToJSON
 -- /See:/ 'positionedObjectPositioningSuggestionState' smart constructor.
 data PositionedObjectPositioningSuggestionState =
   PositionedObjectPositioningSuggestionState'
-    { _popssTopOffSetSuggested  :: !(Maybe Bool)
-    , _popssLayoutSuggested     :: !(Maybe Bool)
+    { _popssTopOffSetSuggested :: !(Maybe Bool)
+    , _popssLayoutSuggested :: !(Maybe Bool)
     , _popssLeftOffSetSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1050,8 +1050,8 @@ instance ToJSON
 data NamedStyleSuggestionState =
   NamedStyleSuggestionState'
     { _nsssParagraphStyleSuggestionState :: !(Maybe ParagraphStyleSuggestionState)
-    , _nsssNamedStyleType                :: !(Maybe NamedStyleSuggestionStateNamedStyleType)
-    , _nsssTextStyleSuggestionState      :: !(Maybe TextStyleSuggestionState)
+    , _nsssNamedStyleType :: !(Maybe NamedStyleSuggestionStateNamedStyleType)
+    , _nsssTextStyleSuggestionState :: !(Maybe TextStyleSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1129,10 +1129,10 @@ instance ToJSON NamedStyleSuggestionState where
 data CropProperties =
   CropProperties'
     { _cpOffSetBottom :: !(Maybe (Textual Double))
-    , _cpOffSetRight  :: !(Maybe (Textual Double))
-    , _cpAngle        :: !(Maybe (Textual Double))
-    , _cpOffSetTop    :: !(Maybe (Textual Double))
-    , _cpOffSetLeft   :: !(Maybe (Textual Double))
+    , _cpOffSetRight :: !(Maybe (Textual Double))
+    , _cpAngle :: !(Maybe (Textual Double))
+    , _cpOffSetTop :: !(Maybe (Textual Double))
+    , _cpOffSetLeft :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1230,26 +1230,26 @@ instance ToJSON CropProperties where
 -- /See:/ 'paragraphStyleSuggestionState' smart constructor.
 data ParagraphStyleSuggestionState =
   ParagraphStyleSuggestionState'
-    { _psssSpacingModeSuggested         :: !(Maybe Bool)
-    , _psssBOrderTopSuggested           :: !(Maybe Bool)
-    , _psssLineSpacingSuggested         :: !(Maybe Bool)
-    , _psssDirectionSuggested           :: !(Maybe Bool)
+    { _psssSpacingModeSuggested :: !(Maybe Bool)
+    , _psssBOrderTopSuggested :: !(Maybe Bool)
+    , _psssLineSpacingSuggested :: !(Maybe Bool)
+    , _psssDirectionSuggested :: !(Maybe Bool)
     , _psssAvoidWidowAndOrphanSuggested :: !(Maybe Bool)
-    , _psssBOrderBottomSuggested        :: !(Maybe Bool)
-    , _psssSpaceAboveSuggested          :: !(Maybe Bool)
-    , _psssNamedStyleTypeSuggested      :: !(Maybe Bool)
-    , _psssIndentStartSuggested         :: !(Maybe Bool)
-    , _psssAlignmentSuggested           :: !(Maybe Bool)
-    , _psssBOrderLeftSuggested          :: !(Maybe Bool)
-    , _psssSpaceBelowSuggested          :: !(Maybe Bool)
-    , _psssIndentFirstLineSuggested     :: !(Maybe Bool)
-    , _psssShadingSuggestionState       :: !(Maybe ShadingSuggestionState)
-    , _psssHeadingIdSuggested           :: !(Maybe Bool)
-    , _psssBOrderBetweenSuggested       :: !(Maybe Bool)
-    , _psssKeepWithNextSuggested        :: !(Maybe Bool)
-    , _psssIndentEndSuggested           :: !(Maybe Bool)
-    , _psssBOrderRightSuggested         :: !(Maybe Bool)
-    , _psssKeepLinesTogetherSuggested   :: !(Maybe Bool)
+    , _psssBOrderBottomSuggested :: !(Maybe Bool)
+    , _psssSpaceAboveSuggested :: !(Maybe Bool)
+    , _psssNamedStyleTypeSuggested :: !(Maybe Bool)
+    , _psssIndentStartSuggested :: !(Maybe Bool)
+    , _psssAlignmentSuggested :: !(Maybe Bool)
+    , _psssBOrderLeftSuggested :: !(Maybe Bool)
+    , _psssSpaceBelowSuggested :: !(Maybe Bool)
+    , _psssIndentFirstLineSuggested :: !(Maybe Bool)
+    , _psssShadingSuggestionState :: !(Maybe ShadingSuggestionState)
+    , _psssHeadingIdSuggested :: !(Maybe Bool)
+    , _psssBOrderBetweenSuggested :: !(Maybe Bool)
+    , _psssKeepWithNextSuggested :: !(Maybe Bool)
+    , _psssIndentEndSuggested :: !(Maybe Bool)
+    , _psssBOrderRightSuggested :: !(Maybe Bool)
+    , _psssKeepLinesTogetherSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1521,7 +1521,7 @@ instance ToJSON ParagraphStyleSuggestionState where
 -- /See:/ 'footNote' smart constructor.
 data FootNote =
   FootNote'
-    { _fnContent    :: !(Maybe [StructuralElement])
+    { _fnContent :: !(Maybe [StructuralElement])
     , _fnFootNoteId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1573,11 +1573,11 @@ instance ToJSON FootNote where
 -- /See:/ 'autoText' smart constructor.
 data AutoText =
   AutoText'
-    { _atSuggestedInsertionIds     :: !(Maybe [Text])
+    { _atSuggestedInsertionIds :: !(Maybe [Text])
     , _atSuggestedTextStyleChanges :: !(Maybe AutoTextSuggestedTextStyleChanges)
-    , _atSuggestedDeletionIds      :: !(Maybe [Text])
-    , _atTextStyle                 :: !(Maybe TextStyle)
-    , _atType                      :: !(Maybe AutoTextType)
+    , _atSuggestedDeletionIds :: !(Maybe [Text])
+    , _atTextStyle :: !(Maybe TextStyle)
+    , _atType :: !(Maybe AutoTextType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1673,10 +1673,10 @@ instance ToJSON AutoText where
 -- /See:/ 'list' smart constructor.
 data List =
   List'
-    { _lSuggestedInsertionId           :: !(Maybe Text)
+    { _lSuggestedInsertionId :: !(Maybe Text)
     , _lSuggestedListPropertiesChanges :: !(Maybe ListSuggestedListPropertiesChanges)
-    , _lSuggestedDeletionIds           :: !(Maybe [Text])
-    , _lListProperties                 :: !(Maybe ListProperties)
+    , _lSuggestedDeletionIds :: !(Maybe [Text])
+    , _lListProperties :: !(Maybe ListProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1758,10 +1758,10 @@ instance ToJSON List where
 -- /See:/ 'paragraphBOrder' smart constructor.
 data ParagraphBOrder =
   ParagraphBOrder'
-    { _pboColor     :: !(Maybe OptionalColor)
-    , _pboWidth     :: !(Maybe Dimension)
+    { _pboColor :: !(Maybe OptionalColor)
+    , _pboWidth :: !(Maybe Dimension)
     , _pboDashStyle :: !(Maybe ParagraphBOrderDashStyle)
-    , _pboPadding   :: !(Maybe Dimension)
+    , _pboPadding :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1830,7 +1830,7 @@ instance ToJSON ParagraphBOrder where
 data SuggestedTableCellStyle =
   SuggestedTableCellStyle'
     { _stcsTableCellStyleSuggestionState :: !(Maybe TableCellStyleSuggestionState)
-    , _stcsTableCellStyle                :: !(Maybe TableCellStyle)
+    , _stcsTableCellStyle :: !(Maybe TableCellStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1923,9 +1923,9 @@ instance ToJSON InsertInlineImageResponse where
 -- /See:/ 'rgbColor' smart constructor.
 data RgbColor =
   RgbColor'
-    { _rcRed   :: !(Maybe (Textual Double))
+    { _rcRed :: !(Maybe (Textual Double))
     , _rcGreen :: !(Maybe (Textual Double))
-    , _rcBlue  :: !(Maybe (Textual Double))
+    , _rcBlue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1981,7 +1981,7 @@ instance ToJSON RgbColor where
 -- /See:/ 'insertPageBreakRequest' smart constructor.
 data InsertPageBreakRequest =
   InsertPageBreakRequest'
-    { _ipbrLocation             :: !(Maybe Location)
+    { _ipbrLocation :: !(Maybe Location)
     , _ipbrEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2124,7 +2124,7 @@ instance ToJSON InlineObjectProperties where
 -- /See:/ 'suggestedDocumentStyle' smart constructor.
 data SuggestedDocumentStyle =
   SuggestedDocumentStyle'
-    { _sdsDocumentStyle                :: !(Maybe DocumentStyle)
+    { _sdsDocumentStyle :: !(Maybe DocumentStyle)
     , _sdsDocumentStyleSuggestionState :: !(Maybe DocumentStyleSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2180,7 +2180,7 @@ instance ToJSON SuggestedDocumentStyle where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lIndex     :: !(Maybe (Textual Int32))
+    { _lIndex :: !(Maybe (Textual Int32))
     , _lSegmentId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2231,8 +2231,8 @@ instance ToJSON Location where
 data TableOfContents =
   TableOfContents'
     { _tocSuggestedInsertionIds :: !(Maybe [Text])
-    , _tocContent               :: !(Maybe [StructuralElement])
-    , _tocSuggestedDeletionIds  :: !(Maybe [Text])
+    , _tocContent :: !(Maybe [StructuralElement])
+    , _tocSuggestedDeletionIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2341,7 +2341,7 @@ instance ToJSON Color where
 data Size =
   Size'
     { _sHeight :: !(Maybe Dimension)
-    , _sWidth  :: !(Maybe Dimension)
+    , _sWidth :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2666,8 +2666,8 @@ instance ToJSON ParagraphSuggestedPositionedObjectIds
 -- /See:/ 'link' smart constructor.
 data Link =
   Link'
-    { _lURL        :: !(Maybe Text)
-    , _lHeadingId  :: !(Maybe Text)
+    { _lURL :: !(Maybe Text)
+    , _lHeadingId :: !(Maybe Text)
     , _lBookmarkId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2764,10 +2764,10 @@ instance ToJSON AutoTextSuggestedTextStyleChanges
 -- /See:/ 'insertInlineImageRequest' smart constructor.
 data InsertInlineImageRequest =
   InsertInlineImageRequest'
-    { _iiirLocation             :: !(Maybe Location)
+    { _iiirLocation :: !(Maybe Location)
     , _iiirEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
-    , _iiirURI                  :: !(Maybe Text)
-    , _iiirObjectSize           :: !(Maybe Size)
+    , _iiirURI :: !(Maybe Text)
+    , _iiirObjectSize :: !(Maybe Size)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2857,7 +2857,7 @@ instance ToJSON InsertInlineImageRequest where
 data Dimension =
   Dimension'
     { _dMagnitude :: !(Maybe (Textual Double))
-    , _dUnit      :: !(Maybe DimensionUnit)
+    , _dUnit :: !(Maybe DimensionUnit)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2903,21 +2903,21 @@ instance ToJSON Dimension where
 -- /See:/ 'documentStyle' smart constructor.
 data DocumentStyle =
   DocumentStyle'
-    { _dsMarginTop                :: !(Maybe Dimension)
-    , _dsDefaultFooterId          :: !(Maybe Text)
-    , _dsFirstPageHeaderId        :: !(Maybe Text)
-    , _dsFirstPageFooterId        :: !(Maybe Text)
-    , _dsDefaultHeaderId          :: !(Maybe Text)
-    , _dsUseEvenPageHeaderFooter  :: !(Maybe Bool)
-    , _dsMarginLeft               :: !(Maybe Dimension)
-    , _dsPageNumberStart          :: !(Maybe (Textual Int32))
+    { _dsMarginTop :: !(Maybe Dimension)
+    , _dsDefaultFooterId :: !(Maybe Text)
+    , _dsFirstPageHeaderId :: !(Maybe Text)
+    , _dsFirstPageFooterId :: !(Maybe Text)
+    , _dsDefaultHeaderId :: !(Maybe Text)
+    , _dsUseEvenPageHeaderFooter :: !(Maybe Bool)
+    , _dsMarginLeft :: !(Maybe Dimension)
+    , _dsPageNumberStart :: !(Maybe (Textual Int32))
     , _dsUseFirstPageHeaderFooter :: !(Maybe Bool)
-    , _dsEvenPageFooterId         :: !(Maybe Text)
-    , _dsPageSize                 :: !(Maybe Size)
-    , _dsBackgRound               :: !(Maybe BackgRound)
-    , _dsMarginRight              :: !(Maybe Dimension)
-    , _dsMarginBottom             :: !(Maybe Dimension)
-    , _dsEvenPageHeaderId         :: !(Maybe Text)
+    , _dsEvenPageFooterId :: !(Maybe Text)
+    , _dsPageSize :: !(Maybe Size)
+    , _dsBackgRound :: !(Maybe BackgRound)
+    , _dsMarginRight :: !(Maybe Dimension)
+    , _dsMarginBottom :: !(Maybe Dimension)
+    , _dsEvenPageHeaderId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3252,9 +3252,9 @@ instance ToJSON ParagraphSuggestedBulletChanges where
 -- /See:/ 'response' smart constructor.
 data Response =
   Response'
-    { _rReplaceAllText          :: !(Maybe ReplaceAllTextResponse)
-    , _rCreateNamedRange        :: !(Maybe CreateNamedRangeResponse)
-    , _rInsertInlineImage       :: !(Maybe InsertInlineImageResponse)
+    { _rReplaceAllText :: !(Maybe ReplaceAllTextResponse)
+    , _rCreateNamedRange :: !(Maybe CreateNamedRangeResponse)
+    , _rInsertInlineImage :: !(Maybe InsertInlineImageResponse)
     , _rInsertInlineSheetsChart :: !(Maybe InsertInlineSheetsChartResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3332,7 +3332,7 @@ instance ToJSON Response where
 data SheetsChartReference =
   SheetsChartReference'
     { _scrSpreadsheetId :: !(Maybe Text)
-    , _scrChartId       :: !(Maybe (Textual Int32))
+    , _scrChartId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3455,7 +3455,7 @@ instance ToJSON CreateNamedRangeResponse where
 -- /See:/ 'suggestedBullet' smart constructor.
 data SuggestedBullet =
   SuggestedBullet'
-    { _sbBullet                :: !(Maybe Bullet)
+    { _sbBullet :: !(Maybe Bullet)
     , _sbBulletSuggestionState :: !(Maybe BulletSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3507,17 +3507,17 @@ instance ToJSON SuggestedBullet where
 -- /See:/ 'embeddedObject' smart constructor.
 data EmbeddedObject =
   EmbeddedObject'
-    { _eoMarginTop                 :: !(Maybe Dimension)
-    , _eoSize                      :: !(Maybe Size)
-    , _eoLinkedContentReference    :: !(Maybe LinkedContentReference)
-    , _eoImageProperties           :: !(Maybe ImageProperties)
-    , _eoEmbeddedObjectBOrder      :: !(Maybe EmbeddedObjectBOrder)
+    { _eoMarginTop :: !(Maybe Dimension)
+    , _eoSize :: !(Maybe Size)
+    , _eoLinkedContentReference :: !(Maybe LinkedContentReference)
+    , _eoImageProperties :: !(Maybe ImageProperties)
+    , _eoEmbeddedObjectBOrder :: !(Maybe EmbeddedObjectBOrder)
     , _eoEmbeddedDrawingProperties :: !(Maybe EmbeddedDrawingProperties)
-    , _eoMarginLeft                :: !(Maybe Dimension)
-    , _eoTitle                     :: !(Maybe Text)
-    , _eoMarginRight               :: !(Maybe Dimension)
-    , _eoDescription               :: !(Maybe Text)
-    , _eoMarginBottom              :: !(Maybe Dimension)
+    , _eoMarginLeft :: !(Maybe Dimension)
+    , _eoTitle :: !(Maybe Text)
+    , _eoMarginRight :: !(Maybe Dimension)
+    , _eoDescription :: !(Maybe Text)
+    , _eoMarginBottom :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3713,21 +3713,21 @@ instance ToJSON ReplaceAllTextResponse where
 -- /See:/ 'documentStyleSuggestionState' smart constructor.
 data DocumentStyleSuggestionState =
   DocumentStyleSuggestionState'
-    { _dsssFirstPageFooterIdSuggested        :: !(Maybe Bool)
-    , _dsssDefaultHeaderIdSuggested          :: !(Maybe Bool)
-    , _dsssUseEvenPageHeaderFooterSuggested  :: !(Maybe Bool)
-    , _dsssPageNumberStartSuggested          :: !(Maybe Bool)
-    , _dsssBackgRoundSuggestionState         :: !(Maybe BackgRoundSuggestionState)
+    { _dsssFirstPageFooterIdSuggested :: !(Maybe Bool)
+    , _dsssDefaultHeaderIdSuggested :: !(Maybe Bool)
+    , _dsssUseEvenPageHeaderFooterSuggested :: !(Maybe Bool)
+    , _dsssPageNumberStartSuggested :: !(Maybe Bool)
+    , _dsssBackgRoundSuggestionState :: !(Maybe BackgRoundSuggestionState)
     , _dsssUseFirstPageHeaderFooterSuggested :: !(Maybe Bool)
-    , _dsssPageSizeSuggestionState           :: !(Maybe SizeSuggestionState)
-    , _dsssMarginTopSuggested                :: !(Maybe Bool)
-    , _dsssEvenPageFooterIdSuggested         :: !(Maybe Bool)
-    , _dsssMarginBottomSuggested             :: !(Maybe Bool)
-    , _dsssEvenPageHeaderIdSuggested         :: !(Maybe Bool)
-    , _dsssMarginLeftSuggested               :: !(Maybe Bool)
-    , _dsssMarginRightSuggested              :: !(Maybe Bool)
-    , _dsssFirstPageHeaderIdSuggested        :: !(Maybe Bool)
-    , _dsssDefaultFooterIdSuggested          :: !(Maybe Bool)
+    , _dsssPageSizeSuggestionState :: !(Maybe SizeSuggestionState)
+    , _dsssMarginTopSuggested :: !(Maybe Bool)
+    , _dsssEvenPageFooterIdSuggested :: !(Maybe Bool)
+    , _dsssMarginBottomSuggested :: !(Maybe Bool)
+    , _dsssEvenPageHeaderIdSuggested :: !(Maybe Bool)
+    , _dsssMarginLeftSuggested :: !(Maybe Bool)
+    , _dsssMarginRightSuggested :: !(Maybe Bool)
+    , _dsssFirstPageHeaderIdSuggested :: !(Maybe Bool)
+    , _dsssDefaultFooterIdSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4193,8 +4193,8 @@ instance ToJSON DeleteContentRangeRequest where
 -- /See:/ 'bullet' smart constructor.
 data Bullet =
   Bullet'
-    { _bListId       :: !(Maybe Text)
-    , _bTextStyle    :: !(Maybe TextStyle)
+    { _bListId :: !(Maybe Text)
+    , _bTextStyle :: !(Maybe TextStyle)
     , _bNestingLevel :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4253,13 +4253,13 @@ instance ToJSON Bullet where
 -- /See:/ 'paragraph' smart constructor.
 data Paragraph =
   Paragraph'
-    { _pBullet                         :: !(Maybe Bullet)
-    , _pSuggestedBulletChanges         :: !(Maybe ParagraphSuggestedBulletChanges)
-    , _pSuggestedPositionedObjectIds   :: !(Maybe ParagraphSuggestedPositionedObjectIds)
+    { _pBullet :: !(Maybe Bullet)
+    , _pSuggestedBulletChanges :: !(Maybe ParagraphSuggestedBulletChanges)
+    , _pSuggestedPositionedObjectIds :: !(Maybe ParagraphSuggestedPositionedObjectIds)
     , _pSuggestedParagraphStyleChanges :: !(Maybe ParagraphSuggestedParagraphStyleChanges)
-    , _pElements                       :: !(Maybe [ParagraphElement])
-    , _pPositionedObjectIds            :: !(Maybe [Text])
-    , _pParagraphStyle                 :: !(Maybe ParagraphStyle)
+    , _pElements :: !(Maybe [ParagraphElement])
+    , _pPositionedObjectIds :: !(Maybe [Text])
+    , _pParagraphStyle :: !(Maybe ParagraphStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4415,7 +4415,7 @@ instance ToJSON TextRunSuggestedTextStyleChanges
 data SuggestedTableRowStyle =
   SuggestedTableRowStyle'
     { _strsTableRowStyleSuggestionState :: !(Maybe TableRowStyleSuggestionState)
-    , _strsTableRowStyle                :: !(Maybe TableRowStyle)
+    , _strsTableRowStyle :: !(Maybe TableRowStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4506,12 +4506,12 @@ instance ToJSON DocumentFootNotes where
 data ImageProperties =
   ImageProperties'
     { _ipCropProperties :: !(Maybe CropProperties)
-    , _ipContentURI     :: !(Maybe Text)
-    , _ipTransparency   :: !(Maybe (Textual Double))
-    , _ipAngle          :: !(Maybe (Textual Double))
-    , _ipContrast       :: !(Maybe (Textual Double))
-    , _ipSourceURI      :: !(Maybe Text)
-    , _ipBrightness     :: !(Maybe (Textual Double))
+    , _ipContentURI :: !(Maybe Text)
+    , _ipTransparency :: !(Maybe (Textual Double))
+    , _ipAngle :: !(Maybe (Textual Double))
+    , _ipContrast :: !(Maybe (Textual Double))
+    , _ipSourceURI :: !(Maybe Text)
+    , _ipBrightness :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4629,7 +4629,7 @@ instance ToJSON ImageProperties where
 data SizeSuggestionState =
   SizeSuggestionState'
     { _sssHeightSuggested :: !(Maybe Bool)
-    , _sssWidthSuggested  :: !(Maybe Bool)
+    , _sssWidthSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4721,8 +4721,8 @@ instance ToJSON ListSuggestedListPropertiesChanges
 -- /See:/ 'batchUpdateDocumentResponse' smart constructor.
 data BatchUpdateDocumentResponse =
   BatchUpdateDocumentResponse'
-    { _budrDocumentId   :: !(Maybe Text)
-    , _budrReplies      :: !(Maybe [Response])
+    { _budrDocumentId :: !(Maybe Text)
+    , _budrReplies :: !(Maybe [Response])
     , _budrWriteControl :: !(Maybe WriteControl)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4834,12 +4834,12 @@ instance ToJSON TableStyle where
 -- /See:/ 'footNoteReference' smart constructor.
 data FootNoteReference =
   FootNoteReference'
-    { _fnrSuggestedInsertionIds     :: !(Maybe [Text])
+    { _fnrSuggestedInsertionIds :: !(Maybe [Text])
     , _fnrSuggestedTextStyleChanges :: !(Maybe FootNoteReferenceSuggestedTextStyleChanges)
-    , _fnrFootNoteId                :: !(Maybe Text)
-    , _fnrSuggestedDeletionIds      :: !(Maybe [Text])
-    , _fnrTextStyle                 :: !(Maybe TextStyle)
-    , _fnrFootNoteNumber            :: !(Maybe Text)
+    , _fnrFootNoteId :: !(Maybe Text)
+    , _fnrSuggestedDeletionIds :: !(Maybe [Text])
+    , _fnrTextStyle :: !(Maybe TextStyle)
+    , _fnrFootNoteNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4948,10 +4948,10 @@ instance ToJSON FootNoteReference where
 -- /See:/ 'columnBreak' smart constructor.
 data ColumnBreak =
   ColumnBreak'
-    { _cbSuggestedInsertionIds     :: !(Maybe [Text])
+    { _cbSuggestedInsertionIds :: !(Maybe [Text])
     , _cbSuggestedTextStyleChanges :: !(Maybe ColumnBreakSuggestedTextStyleChanges)
-    , _cbSuggestedDeletionIds      :: !(Maybe [Text])
-    , _cbTextStyle                 :: !(Maybe TextStyle)
+    , _cbSuggestedDeletionIds :: !(Maybe [Text])
+    , _cbTextStyle :: !(Maybe TextStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5085,7 +5085,7 @@ instance ToJSON
 data Equation =
   Equation'
     { _eSuggestedInsertionIds :: !(Maybe [Text])
-    , _eSuggestedDeletionIds  :: !(Maybe [Text])
+    , _eSuggestedDeletionIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5155,8 +5155,8 @@ instance ToJSON Equation where
 data NamedRange =
   NamedRange'
     { _nNamedRangeId :: !(Maybe Text)
-    , _nRanges       :: !(Maybe [Range])
-    , _nName         :: !(Maybe Text)
+    , _nRanges :: !(Maybe [Range])
+    , _nName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5215,11 +5215,11 @@ instance ToJSON NamedRange where
 -- /See:/ 'cropPropertiesSuggestionState' smart constructor.
 data CropPropertiesSuggestionState =
   CropPropertiesSuggestionState'
-    { _cpssAngleSuggested        :: !(Maybe Bool)
-    , _cpssOffSetRightSuggested  :: !(Maybe Bool)
+    { _cpssAngleSuggested :: !(Maybe Bool)
+    , _cpssOffSetRightSuggested :: !(Maybe Bool)
     , _cpssOffSetBottomSuggested :: !(Maybe Bool)
-    , _cpssOffSetTopSuggested    :: !(Maybe Bool)
-    , _cpssOffSetLeftSuggested   :: !(Maybe Bool)
+    , _cpssOffSetTopSuggested :: !(Maybe Bool)
+    , _cpssOffSetLeftSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5310,11 +5310,11 @@ instance ToJSON CropPropertiesSuggestionState where
 -- /See:/ 'textRun' smart constructor.
 data TextRun =
   TextRun'
-    { _trSuggestedInsertionIds     :: !(Maybe [Text])
+    { _trSuggestedInsertionIds :: !(Maybe [Text])
     , _trSuggestedTextStyleChanges :: !(Maybe TextRunSuggestedTextStyleChanges)
-    , _trContent                   :: !(Maybe Text)
-    , _trSuggestedDeletionIds      :: !(Maybe [Text])
-    , _trTextStyle                 :: !(Maybe TextStyle)
+    , _trContent :: !(Maybe Text)
+    , _trSuggestedDeletionIds :: !(Maybe [Text])
+    , _trTextStyle :: !(Maybe TextStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5409,13 +5409,13 @@ instance ToJSON TextRun where
 -- /See:/ 'tableRow' smart constructor.
 data TableRow =
   TableRow'
-    { _tSuggestedInsertionIds         :: !(Maybe [Text])
-    , _tTableCells                    :: !(Maybe [TableCell])
-    , _tEndIndex                      :: !(Maybe (Textual Int32))
-    , _tSuggestedDeletionIds          :: !(Maybe [Text])
+    { _tSuggestedInsertionIds :: !(Maybe [Text])
+    , _tTableCells :: !(Maybe [TableCell])
+    , _tEndIndex :: !(Maybe (Textual Int32))
+    , _tSuggestedDeletionIds :: !(Maybe [Text])
     , _tSuggestedTableRowStyleChanges :: !(Maybe TableRowSuggestedTableRowStyleChanges)
-    , _tTableRowStyle                 :: !(Maybe TableRowStyle)
-    , _tStartIndex                    :: !(Maybe (Textual Int32))
+    , _tTableRowStyle :: !(Maybe TableRowStyle)
+    , _tStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5537,7 +5537,7 @@ instance ToJSON TableRow where
 data WeightedFontFamily =
   WeightedFontFamily'
     { _wffFontFamily :: !(Maybe Text)
-    , _wffWeight     :: !(Maybe (Textual Int32))
+    , _wffWeight :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5603,10 +5603,10 @@ instance ToJSON WeightedFontFamily where
 -- /See:/ 'pageBreak' smart constructor.
 data PageBreak =
   PageBreak'
-    { _pbSuggestedInsertionIds     :: !(Maybe [Text])
+    { _pbSuggestedInsertionIds :: !(Maybe [Text])
     , _pbSuggestedTextStyleChanges :: !(Maybe PageBreakSuggestedTextStyleChanges)
-    , _pbSuggestedDeletionIds      :: !(Maybe [Text])
-    , _pbTextStyle                 :: !(Maybe TextStyle)
+    , _pbSuggestedDeletionIds :: !(Maybe [Text])
+    , _pbTextStyle :: !(Maybe TextStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5694,10 +5694,10 @@ instance ToJSON PageBreak where
 -- /See:/ 'inlineObject' smart constructor.
 data InlineObject =
   InlineObject'
-    { _ioSuggestedInsertionId                   :: !(Maybe Text)
-    , _ioInlineObjectProperties                 :: !(Maybe InlineObjectProperties)
-    , _ioObjectId                               :: !(Maybe Text)
-    , _ioSuggestedDeletionIds                   :: !(Maybe [Text])
+    { _ioSuggestedInsertionId :: !(Maybe Text)
+    , _ioInlineObjectProperties :: !(Maybe InlineObjectProperties)
+    , _ioObjectId :: !(Maybe Text)
+    , _ioSuggestedDeletionIds :: !(Maybe [Text])
     , _ioSuggestedInlineObjectPropertiesChanges :: !(Maybe InlineObjectSuggestedInlineObjectPropertiesChanges)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5793,9 +5793,9 @@ instance ToJSON InlineObject where
 -- /See:/ 'embeddedObjectBOrder' smart constructor.
 data EmbeddedObjectBOrder =
   EmbeddedObjectBOrder'
-    { _eoboColor         :: !(Maybe OptionalColor)
-    , _eoboWidth         :: !(Maybe Dimension)
-    , _eoboDashStyle     :: !(Maybe EmbeddedObjectBOrderDashStyle)
+    { _eoboColor :: !(Maybe OptionalColor)
+    , _eoboWidth :: !(Maybe Dimension)
+    , _eoboDashStyle :: !(Maybe EmbeddedObjectBOrderDashStyle)
     , _eoboPropertyState :: !(Maybe EmbeddedObjectBOrderPropertyState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5914,18 +5914,18 @@ instance ToJSON
 -- /See:/ 'tableCellStyle' smart constructor.
 data TableCellStyle =
   TableCellStyle'
-    { _tcsBOrderRight      :: !(Maybe TableCellBOrder)
-    , _tcsBOrderTop        :: !(Maybe TableCellBOrder)
-    , _tcsColumnSpan       :: !(Maybe (Textual Int32))
-    , _tcsBackgRoundColor  :: !(Maybe OptionalColor)
-    , _tcsPaddingBottom    :: !(Maybe Dimension)
-    , _tcsRowSpan          :: !(Maybe (Textual Int32))
-    , _tcsBOrderLeft       :: !(Maybe TableCellBOrder)
-    , _tcsPaddingLeft      :: !(Maybe Dimension)
-    , _tcsPaddingTop       :: !(Maybe Dimension)
-    , _tcsBOrderBottom     :: !(Maybe TableCellBOrder)
+    { _tcsBOrderRight :: !(Maybe TableCellBOrder)
+    , _tcsBOrderTop :: !(Maybe TableCellBOrder)
+    , _tcsColumnSpan :: !(Maybe (Textual Int32))
+    , _tcsBackgRoundColor :: !(Maybe OptionalColor)
+    , _tcsPaddingBottom :: !(Maybe Dimension)
+    , _tcsRowSpan :: !(Maybe (Textual Int32))
+    , _tcsBOrderLeft :: !(Maybe TableCellBOrder)
+    , _tcsPaddingLeft :: !(Maybe Dimension)
+    , _tcsPaddingTop :: !(Maybe Dimension)
+    , _tcsBOrderBottom :: !(Maybe TableCellBOrder)
     , _tcsContentAlignment :: !(Maybe TableCellStyleContentAlignment)
-    , _tcsPaddingRight     :: !(Maybe Dimension)
+    , _tcsPaddingRight :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6089,7 +6089,7 @@ instance ToJSON TableCellStyle where
 data Header =
   Header'
     { _hHeaderId :: !(Maybe Text)
-    , _hContent  :: !(Maybe [StructuralElement])
+    , _hContent :: !(Maybe [StructuralElement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6138,9 +6138,9 @@ instance ToJSON Header where
 -- /See:/ 'range' smart constructor.
 data Range =
   Range'
-    { _rEndIndex   :: !(Maybe (Textual Int32))
+    { _rEndIndex :: !(Maybe (Textual Int32))
     , _rStartIndex :: !(Maybe (Textual Int32))
-    , _rSegmentId  :: !(Maybe Text)
+    , _rSegmentId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6205,22 +6205,22 @@ instance ToJSON Range where
 -- /See:/ 'document' smart constructor.
 data Document =
   Document'
-    { _dNamedRanges                   :: !(Maybe DocumentNamedRanges)
-    , _dInlineObjects                 :: !(Maybe DocumentInlineObjects)
-    , _dDocumentId                    :: !(Maybe Text)
-    , _dBody                          :: !(Maybe Body)
-    , _dDocumentStyle                 :: !(Maybe DocumentStyle)
-    , _dFooters                       :: !(Maybe DocumentFooters)
-    , _dPositionedObjects             :: !(Maybe DocumentPositionedObjects)
-    , _dSuggestionsViewMode           :: !(Maybe DocumentSuggestionsViewMode)
-    , _dHeaders                       :: !(Maybe DocumentHeaders)
-    , _dNamedStyles                   :: !(Maybe NamedStyles)
-    , _dSuggestedNamedStylesChanges   :: !(Maybe DocumentSuggestedNamedStylesChanges)
+    { _dNamedRanges :: !(Maybe DocumentNamedRanges)
+    , _dInlineObjects :: !(Maybe DocumentInlineObjects)
+    , _dDocumentId :: !(Maybe Text)
+    , _dBody :: !(Maybe Body)
+    , _dDocumentStyle :: !(Maybe DocumentStyle)
+    , _dFooters :: !(Maybe DocumentFooters)
+    , _dPositionedObjects :: !(Maybe DocumentPositionedObjects)
+    , _dSuggestionsViewMode :: !(Maybe DocumentSuggestionsViewMode)
+    , _dHeaders :: !(Maybe DocumentHeaders)
+    , _dNamedStyles :: !(Maybe NamedStyles)
+    , _dSuggestedNamedStylesChanges :: !(Maybe DocumentSuggestedNamedStylesChanges)
     , _dSuggestedDocumentStyleChanges :: !(Maybe DocumentSuggestedDocumentStyleChanges)
-    , _dTitle                         :: !(Maybe Text)
-    , _dRevisionId                    :: !(Maybe Text)
-    , _dFootNotes                     :: !(Maybe DocumentFootNotes)
-    , _dLists                         :: !(Maybe DocumentLists)
+    , _dTitle :: !(Maybe Text)
+    , _dRevisionId :: !(Maybe Text)
+    , _dFootNotes :: !(Maybe DocumentFootNotes)
+    , _dLists :: !(Maybe DocumentLists)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6575,7 +6575,7 @@ instance ToJSON EmbeddedDrawingProperties where
 -- /See:/ 'suggestedTextStyle' smart constructor.
 data SuggestedTextStyle =
   SuggestedTextStyle'
-    { _stsTextStyle                :: !(Maybe TextStyle)
+    { _stsTextStyle :: !(Maybe TextStyle)
     , _stsTextStyleSuggestionState :: !(Maybe TextStyleSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6630,7 +6630,7 @@ instance ToJSON SuggestedTextStyle where
 -- /See:/ 'insertTableRowRequest' smart constructor.
 data InsertTableRowRequest =
   InsertTableRowRequest'
-    { _itrrInsertBelow       :: !(Maybe Bool)
+    { _itrrInsertBelow :: !(Maybe Bool)
     , _itrrTableCellLocation :: !(Maybe TableCellLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6687,7 +6687,7 @@ instance ToJSON InsertTableRowRequest where
 data SuggestedNamedStyles =
   SuggestedNamedStyles'
     { _snsNamedStylesSuggestionState :: !(Maybe NamedStylesSuggestionState)
-    , _snsNamedStyles                :: !(Maybe NamedStyles)
+    , _snsNamedStyles :: !(Maybe NamedStyles)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6743,7 +6743,7 @@ instance ToJSON SuggestedNamedStyles where
 data WriteControl =
   WriteControl'
     { _wcRequiredRevisionId :: !(Maybe Text)
-    , _wcTargetRevisionId   :: !(Maybe Text)
+    , _wcTargetRevisionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6821,17 +6821,17 @@ instance ToJSON WriteControl where
 -- /See:/ 'textStyle' smart constructor.
 data TextStyle =
   TextStyle'
-    { _tsLink               :: !(Maybe Link)
-    , _tsBackgRoundColor    :: !(Maybe OptionalColor)
-    , _tsBaselineOffSet     :: !(Maybe TextStyleBaselineOffSet)
-    , _tsForegRoundColor    :: !(Maybe OptionalColor)
-    , _tsFontSize           :: !(Maybe Dimension)
-    , _tsSmallCaps          :: !(Maybe Bool)
-    , _tsUnderline          :: !(Maybe Bool)
+    { _tsLink :: !(Maybe Link)
+    , _tsBackgRoundColor :: !(Maybe OptionalColor)
+    , _tsBaselineOffSet :: !(Maybe TextStyleBaselineOffSet)
+    , _tsForegRoundColor :: !(Maybe OptionalColor)
+    , _tsFontSize :: !(Maybe Dimension)
+    , _tsSmallCaps :: !(Maybe Bool)
+    , _tsUnderline :: !(Maybe Bool)
     , _tsWeightedFontFamily :: !(Maybe WeightedFontFamily)
-    , _tsItalic             :: !(Maybe Bool)
-    , _tsBold               :: !(Maybe Bool)
-    , _tsStrikethrough      :: !(Maybe Bool)
+    , _tsItalic :: !(Maybe Bool)
+    , _tsBold :: !(Maybe Bool)
+    , _tsStrikethrough :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7044,9 +7044,9 @@ instance ToJSON
 -- /See:/ 'updateTextStyleRequest' smart constructor.
 data UpdateTextStyleRequest =
   UpdateTextStyleRequest'
-    { _utsrRange     :: !(Maybe Range)
+    { _utsrRange :: !(Maybe Range)
     , _utsrTextStyle :: !(Maybe TextStyle)
-    , _utsrFields    :: !(Maybe GFieldMask)
+    , _utsrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7116,11 +7116,11 @@ instance ToJSON UpdateTextStyleRequest where
 -- /See:/ 'inlineObjectElement' smart constructor.
 data InlineObjectElement =
   InlineObjectElement'
-    { _ioeSuggestedInsertionIds     :: !(Maybe [Text])
+    { _ioeSuggestedInsertionIds :: !(Maybe [Text])
     , _ioeSuggestedTextStyleChanges :: !(Maybe InlineObjectElementSuggestedTextStyleChanges)
-    , _ioeInlineObjectId            :: !(Maybe Text)
-    , _ioeSuggestedDeletionIds      :: !(Maybe [Text])
-    , _ioeTextStyle                 :: !(Maybe TextStyle)
+    , _ioeInlineObjectId :: !(Maybe Text)
+    , _ioeSuggestedDeletionIds :: !(Maybe [Text])
+    , _ioeTextStyle :: !(Maybe TextStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7221,13 +7221,13 @@ instance ToJSON InlineObjectElement where
 data NestingLevel =
   NestingLevel'
     { _nlIndentFirstLine :: !(Maybe Dimension)
-    , _nlGlyphFormat     :: !(Maybe Text)
+    , _nlGlyphFormat :: !(Maybe Text)
     , _nlBulletAlignment :: !(Maybe NestingLevelBulletAlignment)
-    , _nlIndentStart     :: !(Maybe Dimension)
-    , _nlGlyphSymbol     :: !(Maybe Text)
-    , _nlTextStyle       :: !(Maybe TextStyle)
-    , _nlGlyphType       :: !(Maybe NestingLevelGlyphType)
-    , _nlStartNumber     :: !(Maybe (Textual Int32))
+    , _nlIndentStart :: !(Maybe Dimension)
+    , _nlGlyphSymbol :: !(Maybe Text)
+    , _nlTextStyle :: !(Maybe TextStyle)
+    , _nlGlyphType :: !(Maybe NestingLevelGlyphType)
+    , _nlStartNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7396,9 +7396,9 @@ instance ToJSON NestingLevel where
 -- /See:/ 'tableCellLocation' smart constructor.
 data TableCellLocation =
   TableCellLocation'
-    { _tclColumnIndex        :: !(Maybe (Textual Int32))
+    { _tclColumnIndex :: !(Maybe (Textual Int32))
     , _tclTableStartLocation :: !(Maybe Location)
-    , _tclRowIndex           :: !(Maybe (Textual Int32))
+    , _tclRowIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7504,7 +7504,7 @@ instance ToJSON DeletePositionedObjectRequest where
 data Footer =
   Footer'
     { _fFooterId :: !(Maybe Text)
-    , _fContent  :: !(Maybe [StructuralElement])
+    , _fContent :: !(Maybe [StructuralElement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7556,10 +7556,10 @@ instance ToJSON Footer where
 data PositionedObject =
   PositionedObject'
     { _poSuggestedPositionedObjectPropertiesChanges :: !(Maybe PositionedObjectSuggestedPositionedObjectPropertiesChanges)
-    , _poPositionedObjectProperties                 :: !(Maybe PositionedObjectProperties)
-    , _poSuggestedInsertionId                       :: !(Maybe Text)
-    , _poObjectId                                   :: !(Maybe Text)
-    , _poSuggestedDeletionIds                       :: !(Maybe [Text])
+    , _poPositionedObjectProperties :: !(Maybe PositionedObjectProperties)
+    , _poSuggestedInsertionId :: !(Maybe Text)
+    , _poObjectId :: !(Maybe Text)
+    , _poSuggestedDeletionIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7694,8 +7694,8 @@ instance ToJSON ObjectReferences where
 -- /See:/ 'bulletSuggestionState' smart constructor.
 data BulletSuggestionState =
   BulletSuggestionState'
-    { _bssNestingLevelSuggested    :: !(Maybe Bool)
-    , _bssListIdSuggested          :: !(Maybe Bool)
+    { _bssNestingLevelSuggested :: !(Maybe Bool)
+    , _bssListIdSuggested :: !(Maybe Bool)
     , _bssTextStyleSuggestionState :: !(Maybe TextStyleSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7765,13 +7765,13 @@ instance ToJSON BulletSuggestionState where
 -- /See:/ 'imagePropertiesSuggestionState' smart constructor.
 data ImagePropertiesSuggestionState =
   ImagePropertiesSuggestionState'
-    { _ipssAngleSuggested                :: !(Maybe Bool)
-    , _ipssContrastSuggested             :: !(Maybe Bool)
-    , _ipssContentURISuggested           :: !(Maybe Bool)
-    , _ipssSourceURISuggested            :: !(Maybe Bool)
+    { _ipssAngleSuggested :: !(Maybe Bool)
+    , _ipssContrastSuggested :: !(Maybe Bool)
+    , _ipssContentURISuggested :: !(Maybe Bool)
+    , _ipssSourceURISuggested :: !(Maybe Bool)
     , _ipssCropPropertiesSuggestionState :: !(Maybe CropPropertiesSuggestionState)
-    , _ipssBrightnessSuggested           :: !(Maybe Bool)
-    , _ipssTransparencySuggested         :: !(Maybe Bool)
+    , _ipssBrightnessSuggested :: !(Maybe Bool)
+    , _ipssTransparencySuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7971,13 +7971,13 @@ instance ToJSON DocumentSuggestedNamedStylesChanges
 -- /See:/ 'tableCell' smart constructor.
 data TableCell =
   TableCell'
-    { _tcSuggestedInsertionIds          :: !(Maybe [Text])
+    { _tcSuggestedInsertionIds :: !(Maybe [Text])
     , _tcSuggestedTableCellStyleChanges :: !(Maybe TableCellSuggestedTableCellStyleChanges)
-    , _tcEndIndex                       :: !(Maybe (Textual Int32))
-    , _tcContent                        :: !(Maybe [StructuralElement])
-    , _tcTableCellStyle                 :: !(Maybe TableCellStyle)
-    , _tcSuggestedDeletionIds           :: !(Maybe [Text])
-    , _tcStartIndex                     :: !(Maybe (Textual Int32))
+    , _tcEndIndex :: !(Maybe (Textual Int32))
+    , _tcContent :: !(Maybe [StructuralElement])
+    , _tcTableCellStyle :: !(Maybe TableCellStyle)
+    , _tcSuggestedDeletionIds :: !(Maybe [Text])
+    , _tcStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8098,7 +8098,7 @@ instance ToJSON TableCell where
 -- /See:/ 'sheetsChartReferenceSuggestionState' smart constructor.
 data SheetsChartReferenceSuggestionState =
   SheetsChartReferenceSuggestionState'
-    { _scrssChartIdSuggested       :: !(Maybe Bool)
+    { _scrssChartIdSuggested :: !(Maybe Bool)
     , _scrssSpreadsheetIdSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8153,16 +8153,16 @@ instance ToJSON SheetsChartReferenceSuggestionState
 -- /See:/ 'paragraphElement' smart constructor.
 data ParagraphElement =
   ParagraphElement'
-    { _peAutoText            :: !(Maybe AutoText)
-    , _peEndIndex            :: !(Maybe (Textual Int32))
-    , _peFootNoteReference   :: !(Maybe FootNoteReference)
-    , _peColumnBreak         :: !(Maybe ColumnBreak)
-    , _peTextRun             :: !(Maybe TextRun)
-    , _peEquation            :: !(Maybe Equation)
-    , _pePageBreak           :: !(Maybe PageBreak)
+    { _peAutoText :: !(Maybe AutoText)
+    , _peEndIndex :: !(Maybe (Textual Int32))
+    , _peFootNoteReference :: !(Maybe FootNoteReference)
+    , _peColumnBreak :: !(Maybe ColumnBreak)
+    , _peTextRun :: !(Maybe TextRun)
+    , _peEquation :: !(Maybe Equation)
+    , _pePageBreak :: !(Maybe PageBreak)
     , _peInlineObjectElement :: !(Maybe InlineObjectElement)
-    , _peHorizontalRule      :: !(Maybe HorizontalRule)
-    , _peStartIndex          :: !(Maybe (Textual Int32))
+    , _peHorizontalRule :: !(Maybe HorizontalRule)
+    , _peStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8301,10 +8301,10 @@ instance ToJSON ParagraphElement where
 -- /See:/ 'horizontalRule' smart constructor.
 data HorizontalRule =
   HorizontalRule'
-    { _hrSuggestedInsertionIds     :: !(Maybe [Text])
+    { _hrSuggestedInsertionIds :: !(Maybe [Text])
     , _hrSuggestedTextStyleChanges :: !(Maybe HorizontalRuleSuggestedTextStyleChanges)
-    , _hrSuggestedDeletionIds      :: !(Maybe [Text])
-    , _hrTextStyle                 :: !(Maybe TextStyle)
+    , _hrSuggestedDeletionIds :: !(Maybe [Text])
+    , _hrTextStyle :: !(Maybe TextStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8394,17 +8394,17 @@ instance ToJSON HorizontalRule where
 -- /See:/ 'embeddedObjectSuggestionState' smart constructor.
 data EmbeddedObjectSuggestionState =
   EmbeddedObjectSuggestionState'
-    { _eossEmbeddedObjectBOrderSuggestionState      :: !(Maybe EmbeddedObjectBOrderSuggestionState)
+    { _eossEmbeddedObjectBOrderSuggestionState :: !(Maybe EmbeddedObjectBOrderSuggestionState)
     , _eossEmbeddedDrawingPropertiesSuggestionState :: !(Maybe EmbeddedDrawingPropertiesSuggestionState)
-    , _eossTitleSuggested                           :: !(Maybe Bool)
-    , _eossMarginTopSuggested                       :: !(Maybe Bool)
-    , _eossSizeSuggestionState                      :: !(Maybe SizeSuggestionState)
-    , _eossMarginBottomSuggested                    :: !(Maybe Bool)
-    , _eossImagePropertiesSuggestionState           :: !(Maybe ImagePropertiesSuggestionState)
-    , _eossMarginLeftSuggested                      :: !(Maybe Bool)
-    , _eossLinkedContentReferenceSuggestionState    :: !(Maybe LinkedContentReferenceSuggestionState)
-    , _eossDescriptionSuggested                     :: !(Maybe Bool)
-    , _eossMarginRightSuggested                     :: !(Maybe Bool)
+    , _eossTitleSuggested :: !(Maybe Bool)
+    , _eossMarginTopSuggested :: !(Maybe Bool)
+    , _eossSizeSuggestionState :: !(Maybe SizeSuggestionState)
+    , _eossMarginBottomSuggested :: !(Maybe Bool)
+    , _eossImagePropertiesSuggestionState :: !(Maybe ImagePropertiesSuggestionState)
+    , _eossMarginLeftSuggested :: !(Maybe Bool)
+    , _eossLinkedContentReferenceSuggestionState :: !(Maybe LinkedContentReferenceSuggestionState)
+    , _eossDescriptionSuggested :: !(Maybe Bool)
+    , _eossMarginRightSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8575,10 +8575,10 @@ instance ToJSON EmbeddedObjectSuggestionState where
 -- /See:/ 'insertTableRequest' smart constructor.
 data InsertTableRequest =
   InsertTableRequest'
-    { _itrLocation             :: !(Maybe Location)
+    { _itrLocation :: !(Maybe Location)
     , _itrEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
-    , _itrRows                 :: !(Maybe (Textual Int32))
-    , _itrColumns              :: !(Maybe (Textual Int32))
+    , _itrRows :: !(Maybe (Textual Int32))
+    , _itrColumns :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8660,7 +8660,7 @@ instance ToJSON InsertTableRequest where
 -- /See:/ 'suggestedInlineObjectProperties' smart constructor.
 data SuggestedInlineObjectProperties =
   SuggestedInlineObjectProperties'
-    { _siopInlineObjectProperties                :: !(Maybe InlineObjectProperties)
+    { _siopInlineObjectProperties :: !(Maybe InlineObjectProperties)
     , _siopInlineObjectPropertiesSuggestionState :: !(Maybe InlineObjectPropertiesSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8818,11 +8818,11 @@ instance ToJSON
 data StructuralElement =
   StructuralElement'
     { _seTableOfContents :: !(Maybe TableOfContents)
-    , _seParagraph       :: !(Maybe Paragraph)
-    , _seEndIndex        :: !(Maybe (Textual Int32))
-    , _seTable           :: !(Maybe Table)
-    , _seStartIndex      :: !(Maybe (Textual Int32))
-    , _seSectionBreak    :: !(Maybe SectionBreak)
+    , _seParagraph :: !(Maybe Paragraph)
+    , _seEndIndex :: !(Maybe (Textual Int32))
+    , _seTable :: !(Maybe Table)
+    , _seStartIndex :: !(Maybe (Textual Int32))
+    , _seSectionBreak :: !(Maybe SectionBreak)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8955,7 +8955,7 @@ instance ToJSON DeleteParagraphBulletsRequest where
 -- /See:/ 'batchUpdateDocumentRequest' smart constructor.
 data BatchUpdateDocumentRequest =
   BatchUpdateDocumentRequest'
-    { _bRequests     :: !(Maybe [Request'])
+    { _bRequests :: !(Maybe [Request'])
     , _bWriteControl :: !(Maybe WriteControl)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9053,8 +9053,8 @@ instance ToJSON ListProperties where
 -- /See:/ 'insertTextRequest' smart constructor.
 data InsertTextRequest =
   InsertTextRequest'
-    { _iLocation             :: !(Maybe Location)
-    , _iText                 :: !(Maybe Text)
+    { _iLocation :: !(Maybe Location)
+    , _iText :: !(Maybe Text)
     , _iEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9294,8 +9294,8 @@ instance ToJSON TableRowStyle where
 data SectionBreak =
   SectionBreak'
     { _sbSuggestedInsertionIds :: !(Maybe [Text])
-    , _sbSuggestedDeletionIds  :: !(Maybe [Text])
-    , _sbSectionStyle          :: !(Maybe SectionStyle)
+    , _sbSuggestedDeletionIds :: !(Maybe [Text])
+    , _sbSectionStyle :: !(Maybe SectionStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9369,11 +9369,11 @@ instance ToJSON SectionBreak where
 data Table =
   Table'
     { _tabSuggestedInsertionIds :: !(Maybe [Text])
-    , _tabTableRows             :: !(Maybe [TableRow])
-    , _tabRows                  :: !(Maybe (Textual Int32))
-    , _tabTableStyle            :: !(Maybe TableStyle)
-    , _tabSuggestedDeletionIds  :: !(Maybe [Text])
-    , _tabColumns               :: !(Maybe (Textual Int32))
+    , _tabTableRows :: !(Maybe [TableRow])
+    , _tabRows :: !(Maybe (Textual Int32))
+    , _tabTableStyle :: !(Maybe TableStyle)
+    , _tabSuggestedDeletionIds :: !(Maybe [Text])
+    , _tabColumns :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9482,8 +9482,8 @@ instance ToJSON Table where
 data SectionStyle =
   SectionStyle'
     { _ssColumnSeparatorStyle :: !(Maybe SectionStyleColumnSeparatorStyle)
-    , _ssContentDirection     :: !(Maybe SectionStyleContentDirection)
-    , _ssColumnProperties     :: !(Maybe [SectionColumnProperties])
+    , _ssContentDirection :: !(Maybe SectionStyleContentDirection)
+    , _ssColumnProperties :: !(Maybe [SectionColumnProperties])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9587,7 +9587,7 @@ instance ToJSON BackgRound where
 data SuggestedListProperties =
   SuggestedListProperties'
     { _slpListPropertiesSuggestionState :: !(Maybe ListPropertiesSuggestionState)
-    , _slpListProperties                :: !(Maybe ListProperties)
+    , _slpListProperties :: !(Maybe ListProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9642,7 +9642,7 @@ instance ToJSON SuggestedListProperties where
 -- /See:/ 'sectionColumnProperties' smart constructor.
 data SectionColumnProperties =
   SectionColumnProperties'
-    { _scpWidth      :: !(Maybe Dimension)
+    { _scpWidth :: !(Maybe Dimension)
     , _scpPaddingEnd :: !(Maybe Dimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9698,7 +9698,7 @@ instance ToJSON SectionColumnProperties where
 data CreateParagraphBulletsRequest =
   CreateParagraphBulletsRequest'
     { _cpbrBulletPreset :: !(Maybe CreateParagraphBulletsRequestBulletPreset)
-    , _cpbrRange        :: !(Maybe Range)
+    , _cpbrRange :: !(Maybe Range)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9782,7 +9782,7 @@ instance ToJSON DocumentFooters where
 -- /See:/ 'createNamedRangeRequest' smart constructor.
 data CreateNamedRangeRequest =
   CreateNamedRangeRequest'
-    { _cnrrName  :: !(Maybe Text)
+    { _cnrrName :: !(Maybe Text)
     , _cnrrRange :: !(Maybe Range)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9833,17 +9833,17 @@ instance ToJSON CreateNamedRangeRequest where
 -- /See:/ 'textStyleSuggestionState' smart constructor.
 data TextStyleSuggestionState =
   TextStyleSuggestionState'
-    { _tsssItalicSuggested             :: !(Maybe Bool)
-    , _tsssUnderlineSuggested          :: !(Maybe Bool)
-    , _tsssFontSizeSuggested           :: !(Maybe Bool)
-    , _tsssSmallCapsSuggested          :: !(Maybe Bool)
-    , _tsssForegRoundColorSuggested    :: !(Maybe Bool)
-    , _tsssBaselineOffSetSuggested     :: !(Maybe Bool)
+    { _tsssItalicSuggested :: !(Maybe Bool)
+    , _tsssUnderlineSuggested :: !(Maybe Bool)
+    , _tsssFontSizeSuggested :: !(Maybe Bool)
+    , _tsssSmallCapsSuggested :: !(Maybe Bool)
+    , _tsssForegRoundColorSuggested :: !(Maybe Bool)
+    , _tsssBaselineOffSetSuggested :: !(Maybe Bool)
     , _tsssWeightedFontFamilySuggested :: !(Maybe Bool)
-    , _tsssStrikethroughSuggested      :: !(Maybe Bool)
-    , _tsssLinkSuggested               :: !(Maybe Bool)
-    , _tsssBoldSuggested               :: !(Maybe Bool)
-    , _tsssBackgRoundColorSuggested    :: !(Maybe Bool)
+    , _tsssStrikethroughSuggested :: !(Maybe Bool)
+    , _tsssLinkSuggested :: !(Maybe Bool)
+    , _tsssBoldSuggested :: !(Maybe Bool)
+    , _tsssBackgRoundColorSuggested :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10004,12 +10004,12 @@ instance ToJSON TextStyleSuggestionState where
 -- /See:/ 'nestingLevelSuggestionState' smart constructor.
 data NestingLevelSuggestionState =
   NestingLevelSuggestionState'
-    { _nlssGlyphFormatSuggested     :: !(Maybe Bool)
+    { _nlssGlyphFormatSuggested :: !(Maybe Bool)
     , _nlssBulletAlignmentSuggested :: !(Maybe Bool)
-    , _nlssGlyphTypeSuggested       :: !(Maybe Bool)
-    , _nlssStartNumberSuggested     :: !(Maybe Bool)
-    , _nlssIndentStartSuggested     :: !(Maybe Bool)
-    , _nlssGlyphSymbolSuggested     :: !(Maybe Bool)
+    , _nlssGlyphTypeSuggested :: !(Maybe Bool)
+    , _nlssStartNumberSuggested :: !(Maybe Bool)
+    , _nlssIndentStartSuggested :: !(Maybe Bool)
+    , _nlssGlyphSymbolSuggested :: !(Maybe Bool)
     , _nlssIndentFirstLineSuggested :: !(Maybe Bool)
     , _nlssTextStyleSuggestionState :: !(Maybe TextStyleSuggestionState)
     }
@@ -10149,27 +10149,27 @@ instance ToJSON NestingLevelSuggestionState where
 -- /See:/ 'paragraphStyle' smart constructor.
 data ParagraphStyle =
   ParagraphStyle'
-    { _psBOrderRight         :: !(Maybe ParagraphBOrder)
-    , _psKeepLinesTogether   :: !(Maybe Bool)
-    , _psTabStops            :: !(Maybe [TabStop])
-    , _psBOrderTop           :: !(Maybe ParagraphBOrder)
-    , _psLineSpacing         :: !(Maybe (Textual Double))
-    , _psDirection           :: !(Maybe ParagraphStyleDirection)
-    , _psIndentFirstLine     :: !(Maybe Dimension)
-    , _psIndentEnd           :: !(Maybe Dimension)
-    , _psShading             :: !(Maybe Shading)
+    { _psBOrderRight :: !(Maybe ParagraphBOrder)
+    , _psKeepLinesTogether :: !(Maybe Bool)
+    , _psTabStops :: !(Maybe [TabStop])
+    , _psBOrderTop :: !(Maybe ParagraphBOrder)
+    , _psLineSpacing :: !(Maybe (Textual Double))
+    , _psDirection :: !(Maybe ParagraphStyleDirection)
+    , _psIndentFirstLine :: !(Maybe Dimension)
+    , _psIndentEnd :: !(Maybe Dimension)
+    , _psShading :: !(Maybe Shading)
     , _psAvoidWidowAndOrphan :: !(Maybe Bool)
-    , _psNamedStyleType      :: !(Maybe ParagraphStyleNamedStyleType)
-    , _psIndentStart         :: !(Maybe Dimension)
-    , _psAlignment           :: !(Maybe ParagraphStyleAlignment)
-    , _psBOrderLeft          :: !(Maybe ParagraphBOrder)
-    , _psSpaceBelow          :: !(Maybe Dimension)
-    , _psSpacingMode         :: !(Maybe ParagraphStyleSpacingMode)
-    , _psHeadingId           :: !(Maybe Text)
-    , _psSpaceAbove          :: !(Maybe Dimension)
-    , _psBOrderBottom        :: !(Maybe ParagraphBOrder)
-    , _psKeepWithNext        :: !(Maybe Bool)
-    , _psBOrderBetween       :: !(Maybe ParagraphBOrder)
+    , _psNamedStyleType :: !(Maybe ParagraphStyleNamedStyleType)
+    , _psIndentStart :: !(Maybe Dimension)
+    , _psAlignment :: !(Maybe ParagraphStyleAlignment)
+    , _psBOrderLeft :: !(Maybe ParagraphBOrder)
+    , _psSpaceBelow :: !(Maybe Dimension)
+    , _psSpacingMode :: !(Maybe ParagraphStyleSpacingMode)
+    , _psHeadingId :: !(Maybe Text)
+    , _psSpaceAbove :: !(Maybe Dimension)
+    , _psBOrderBottom :: !(Maybe ParagraphBOrder)
+    , _psKeepWithNext :: !(Maybe Bool)
+    , _psBOrderBetween :: !(Maybe ParagraphBOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10462,7 +10462,7 @@ instance ToJSON ParagraphStyle where
 -- /See:/ 'suggestedPositionedObjectProperties' smart constructor.
 data SuggestedPositionedObjectProperties =
   SuggestedPositionedObjectProperties'
-    { _spopPositionedObjectProperties                :: !(Maybe PositionedObjectProperties)
+    { _spopPositionedObjectProperties :: !(Maybe PositionedObjectProperties)
     , _spopPositionedObjectPropertiesSuggestionState :: !(Maybe PositionedObjectPropertiesSuggestionState)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10526,7 +10526,7 @@ instance ToJSON SuggestedPositionedObjectProperties
 -- /See:/ 'tableColumnProperties' smart constructor.
 data TableColumnProperties =
   TableColumnProperties'
-    { _tcpWidth     :: !(Maybe Dimension)
+    { _tcpWidth :: !(Maybe Dimension)
     , _tcpWidthType :: !(Maybe TableColumnPropertiesWidthType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10574,8 +10574,8 @@ instance ToJSON TableColumnProperties where
 -- /See:/ 'updateParagraphStyleRequest' smart constructor.
 data UpdateParagraphStyleRequest =
   UpdateParagraphStyleRequest'
-    { _upsrRange          :: !(Maybe Range)
-    , _upsrFields         :: !(Maybe GFieldMask)
+    { _upsrRange :: !(Maybe Range)
+    , _upsrFields :: !(Maybe GFieldMask)
     , _upsrParagraphStyle :: !(Maybe ParagraphStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10642,7 +10642,7 @@ instance ToJSON UpdateParagraphStyleRequest where
 data ReplaceAllTextRequest =
   ReplaceAllTextRequest'
     { _ratrContainsText :: !(Maybe SubstringMatchCriteria)
-    , _ratrReplaceText  :: !(Maybe Text)
+    , _ratrReplaceText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10730,20 +10730,20 @@ data Request' =
   Request''
     { _reqDeletePositionedObject :: !(Maybe DeletePositionedObjectRequest)
     , _reqCreateParagraphBullets :: !(Maybe CreateParagraphBulletsRequest)
-    , _reqInsertText             :: !(Maybe InsertTextRequest)
+    , _reqInsertText :: !(Maybe InsertTextRequest)
     , _reqDeleteParagraphBullets :: !(Maybe DeleteParagraphBulletsRequest)
-    , _reqDeleteTableRow         :: !(Maybe DeleteTableRowRequest)
-    , _reqDeleteNamedRange       :: !(Maybe DeleteNamedRangeRequest)
-    , _reqReplaceAllText         :: !(Maybe ReplaceAllTextRequest)
-    , _reqUpdateParagraphStyle   :: !(Maybe UpdateParagraphStyleRequest)
-    , _reqCreateNamedRange       :: !(Maybe CreateNamedRangeRequest)
-    , _reqInsertPageBreak        :: !(Maybe InsertPageBreakRequest)
-    , _reqDeleteTableColumn      :: !(Maybe DeleteTableColumnRequest)
-    , _reqInsertInlineImage      :: !(Maybe InsertInlineImageRequest)
-    , _reqDeleteContentRange     :: !(Maybe DeleteContentRangeRequest)
-    , _reqInsertTableRow         :: !(Maybe InsertTableRowRequest)
-    , _reqUpdateTextStyle        :: !(Maybe UpdateTextStyleRequest)
-    , _reqInsertTable            :: !(Maybe InsertTableRequest)
+    , _reqDeleteTableRow :: !(Maybe DeleteTableRowRequest)
+    , _reqDeleteNamedRange :: !(Maybe DeleteNamedRangeRequest)
+    , _reqReplaceAllText :: !(Maybe ReplaceAllTextRequest)
+    , _reqUpdateParagraphStyle :: !(Maybe UpdateParagraphStyleRequest)
+    , _reqCreateNamedRange :: !(Maybe CreateNamedRangeRequest)
+    , _reqInsertPageBreak :: !(Maybe InsertPageBreakRequest)
+    , _reqDeleteTableColumn :: !(Maybe DeleteTableColumnRequest)
+    , _reqInsertInlineImage :: !(Maybe InsertInlineImageRequest)
+    , _reqDeleteContentRange :: !(Maybe DeleteContentRangeRequest)
+    , _reqInsertTableRow :: !(Maybe InsertTableRowRequest)
+    , _reqUpdateTextStyle :: !(Maybe UpdateTextStyleRequest)
+    , _reqInsertTable :: !(Maybe InsertTableRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11000,7 +11000,7 @@ instance ToJSON
 data SubstringMatchCriteria =
   SubstringMatchCriteria'
     { _smcMatchCase :: !(Maybe Bool)
-    , _smcText      :: !(Maybe Text)
+    , _smcText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

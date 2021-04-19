@@ -42,14 +42,14 @@ module Network.Google.Resource.Content.Orders.Setlineitemmetadata
     , ossOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.setlineitemmetadata@ method which the
 -- 'OrdersSetlineitemmetadata' request conforms to.
 type OrdersSetlineitemmetadataResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -68,8 +68,8 @@ type OrdersSetlineitemmetadataResource =
 data OrdersSetlineitemmetadata =
   OrdersSetlineitemmetadata'
     { _ossMerchantId :: !(Textual Word64)
-    , _ossPayload    :: !OrdersSetLineItemMetadataRequest
-    , _ossOrderId    :: !Text
+    , _ossPayload :: !OrdersSetLineItemMetadataRequest
+    , _ossOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

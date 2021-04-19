@@ -41,8 +41,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.Get
     , pligCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.get@ method which the
 -- 'ProjectsLocationsInstancesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsLocationsInstancesGetResource =
 -- /See:/ 'projectsLocationsInstancesGet' smart constructor.
 data ProjectsLocationsInstancesGet =
   ProjectsLocationsInstancesGet'
-    { _pligXgafv          :: !(Maybe Xgafv)
+    { _pligXgafv :: !(Maybe Xgafv)
     , _pligUploadProtocol :: !(Maybe Text)
-    , _pligAccessToken    :: !(Maybe Text)
-    , _pligUploadType     :: !(Maybe Text)
-    , _pligName           :: !Text
-    , _pligCallback       :: !(Maybe Text)
+    , _pligAccessToken :: !(Maybe Text)
+    , _pligUploadType :: !(Maybe Text)
+    , _pligName :: !Text
+    , _pligCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

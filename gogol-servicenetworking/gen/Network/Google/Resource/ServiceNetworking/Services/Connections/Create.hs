@@ -50,8 +50,8 @@ module Network.Google.Resource.ServiceNetworking.Services.Connections.Create
     , sccCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceNetworking.Types
+import Network.Google.Prelude
+import Network.Google.ServiceNetworking.Types
 
 -- | A resource alias for @servicenetworking.services.connections.create@ method which the
 -- 'ServicesConnectionsCreate' request conforms to.
@@ -80,13 +80,13 @@ type ServicesConnectionsCreateResource =
 -- /See:/ 'servicesConnectionsCreate' smart constructor.
 data ServicesConnectionsCreate =
   ServicesConnectionsCreate'
-    { _sccParent         :: !Text
-    , _sccXgafv          :: !(Maybe Xgafv)
+    { _sccParent :: !Text
+    , _sccXgafv :: !(Maybe Xgafv)
     , _sccUploadProtocol :: !(Maybe Text)
-    , _sccAccessToken    :: !(Maybe Text)
-    , _sccUploadType     :: !(Maybe Text)
-    , _sccPayload        :: !Connection
-    , _sccCallback       :: !(Maybe Text)
+    , _sccAccessToken :: !(Maybe Text)
+    , _sccUploadType :: !(Maybe Text)
+    , _sccPayload :: !Connection
+    , _sccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Chat.Spaces.Messages.Delete
     , smdCallback
     ) where
 
-import           Network.Google.Chat.Types
-import           Network.Google.Prelude
+import Network.Google.Chat.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @chat.spaces.messages.delete@ method which the
 -- 'SpacesMessagesDelete' request conforms to.
@@ -61,12 +61,12 @@ type SpacesMessagesDeleteResource =
 -- /See:/ 'spacesMessagesDelete' smart constructor.
 data SpacesMessagesDelete =
   SpacesMessagesDelete'
-    { _smdXgafv          :: !(Maybe Xgafv)
+    { _smdXgafv :: !(Maybe Xgafv)
     , _smdUploadProtocol :: !(Maybe Text)
-    , _smdAccessToken    :: !(Maybe Text)
-    , _smdUploadType     :: !(Maybe Text)
-    , _smdName           :: !Text
-    , _smdCallback       :: !(Maybe Text)
+    , _smdAccessToken :: !(Maybe Text)
+    , _smdUploadType :: !(Maybe Text)
+    , _smdName :: !Text
+    , _smdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

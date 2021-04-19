@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Instances.GetIAMPolicy
     , igiampResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.getIamPolicy@ method which the
 -- 'InstancesGetIAMPolicy' request conforms to.
@@ -62,8 +62,8 @@ type InstancesGetIAMPolicyResource =
 -- /See:/ 'instancesGetIAMPolicy' smart constructor.
 data InstancesGetIAMPolicy =
   InstancesGetIAMPolicy'
-    { _igiampProject  :: !Text
-    , _igiampZone     :: !Text
+    { _igiampProject :: !Text
+    , _igiampZone :: !Text
     , _igiampResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

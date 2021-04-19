@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.GlobalAddresses.Insert
     , gaiPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.globalAddresses.insert@ method which the
 -- 'GlobalAddressesInsert' request conforms to.
@@ -62,8 +62,8 @@ type GlobalAddressesInsertResource =
 data GlobalAddressesInsert =
   GlobalAddressesInsert'
     { _gaiRequestId :: !(Maybe Text)
-    , _gaiProject   :: !Text
-    , _gaiPayload   :: !Address
+    , _gaiProject :: !Text
+    , _gaiPayload :: !Address
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

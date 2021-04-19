@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.NodeTypes.List
     , ntltMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeTypes.list@ method which the
 -- 'NodeTypesList' request conforms to.
@@ -65,11 +65,11 @@ type NodeTypesListResource =
 -- /See:/ 'nodeTypesList' smart constructor.
 data NodeTypesList =
   NodeTypesList'
-    { _ntltOrderBy    :: !(Maybe Text)
-    , _ntltProject    :: !Text
-    , _ntltZone       :: !Text
-    , _ntltFilter     :: !(Maybe Text)
-    , _ntltPageToken  :: !(Maybe Text)
+    { _ntltOrderBy :: !(Maybe Text)
+    , _ntltProject :: !Text
+    , _ntltZone :: !Text
+    , _ntltFilter :: !(Maybe Text)
+    , _ntltPageToken :: !(Maybe Text)
     , _ntltMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

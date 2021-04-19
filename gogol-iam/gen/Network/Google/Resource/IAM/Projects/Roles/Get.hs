@@ -41,8 +41,8 @@ module Network.Google.Resource.IAM.Projects.Roles.Get
     , prgCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.get@ method which the
 -- 'ProjectsRolesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsRolesGetResource =
 -- /See:/ 'projectsRolesGet' smart constructor.
 data ProjectsRolesGet =
   ProjectsRolesGet'
-    { _prgXgafv          :: !(Maybe Xgafv)
+    { _prgXgafv :: !(Maybe Xgafv)
     , _prgUploadProtocol :: !(Maybe Text)
-    , _prgAccessToken    :: !(Maybe Text)
-    , _prgUploadType     :: !(Maybe Text)
-    , _prgName           :: !Text
-    , _prgCallback       :: !(Maybe Text)
+    , _prgAccessToken :: !(Maybe Text)
+    , _prgUploadType :: !(Maybe Text)
+    , _prgName :: !Text
+    , _prgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.Get
     , dgDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.get@ method which the
 -- 'DeploymentsGet' request conforms to.
@@ -57,7 +57,7 @@ type DeploymentsGetResource =
 -- /See:/ 'deploymentsGet' smart constructor.
 data DeploymentsGet =
   DeploymentsGet'
-    { _dgProject    :: !Text
+    { _dgProject :: !Text
     , _dgDeployment :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

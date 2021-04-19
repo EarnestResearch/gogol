@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Disks.GetIAMPolicy
     , dgipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.disks.getIamPolicy@ method which the
 -- 'DisksGetIAMPolicy' request conforms to.
@@ -62,8 +62,8 @@ type DisksGetIAMPolicyResource =
 -- /See:/ 'disksGetIAMPolicy' smart constructor.
 data DisksGetIAMPolicy =
   DisksGetIAMPolicy'
-    { _dgipProject  :: !Text
-    , _dgipZone     :: !Text
+    { _dgipProject :: !Text
+    , _dgipZone :: !Text
     , _dgipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

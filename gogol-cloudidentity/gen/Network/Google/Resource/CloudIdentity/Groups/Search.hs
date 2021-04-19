@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Search
     , gsCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.search@ method which the
 -- 'GroupsSearch' request conforms to.
@@ -69,15 +69,15 @@ type GroupsSearchResource =
 -- /See:/ 'groupsSearch' smart constructor.
 data GroupsSearch =
   GroupsSearch'
-    { _gsXgafv          :: !(Maybe Xgafv)
+    { _gsXgafv :: !(Maybe Xgafv)
     , _gsUploadProtocol :: !(Maybe Text)
-    , _gsAccessToken    :: !(Maybe Text)
-    , _gsUploadType     :: !(Maybe Text)
-    , _gsQuery          :: !(Maybe Text)
-    , _gsView           :: !(Maybe Text)
-    , _gsPageToken      :: !(Maybe Text)
-    , _gsPageSize       :: !(Maybe (Textual Int32))
-    , _gsCallback       :: !(Maybe Text)
+    , _gsAccessToken :: !(Maybe Text)
+    , _gsUploadType :: !(Maybe Text)
+    , _gsQuery :: !(Maybe Text)
+    , _gsView :: !(Maybe Text)
+    , _gsPageToken :: !(Maybe Text)
+    , _gsPageSize :: !(Maybe (Textual Int32))
+    , _gsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

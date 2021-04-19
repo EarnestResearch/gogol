@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudFunctions.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Type of operation.
 data OperationMetadataV1Type

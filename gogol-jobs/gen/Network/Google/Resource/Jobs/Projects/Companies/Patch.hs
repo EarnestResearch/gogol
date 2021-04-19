@@ -44,8 +44,8 @@ module Network.Google.Resource.Jobs.Projects.Companies.Patch
     , pcpCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.companies.patch@ method which the
 -- 'ProjectsCompaniesPatch' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsCompaniesPatchResource =
 -- /See:/ 'projectsCompaniesPatch' smart constructor.
 data ProjectsCompaniesPatch =
   ProjectsCompaniesPatch'
-    { _pcpXgafv          :: !(Maybe Xgafv)
+    { _pcpXgafv :: !(Maybe Xgafv)
     , _pcpUploadProtocol :: !(Maybe Text)
-    , _pcpAccessToken    :: !(Maybe Text)
-    , _pcpUploadType     :: !(Maybe Text)
-    , _pcpPayload        :: !UpdateCompanyRequest
-    , _pcpName           :: !Text
-    , _pcpCallback       :: !(Maybe Text)
+    , _pcpAccessToken :: !(Maybe Text)
+    , _pcpUploadType :: !(Maybe Text)
+    , _pcpPayload :: !UpdateCompanyRequest
+    , _pcpName :: !Text
+    , _pcpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

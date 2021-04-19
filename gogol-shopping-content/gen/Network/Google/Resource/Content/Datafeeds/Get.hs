@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.Datafeeds.Get
     , dgDatafeedId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.get@ method which the
 -- 'DatafeedsGet' request conforms to.
 type DatafeedsGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>

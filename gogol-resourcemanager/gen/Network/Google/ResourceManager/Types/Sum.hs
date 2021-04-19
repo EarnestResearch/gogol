@@ -16,7 +16,7 @@
 --
 module Network.Google.ResourceManager.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. The lifecycle state of the folder. Updates to the
 -- lifecycle_state must be performed via DeleteFolder and UndeleteFolder.

@@ -49,8 +49,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.List
     , flCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.list@ method which the
 -- 'FoldersList' request conforms to.
@@ -79,15 +79,15 @@ type FoldersListResource =
 -- /See:/ 'foldersList' smart constructor.
 data FoldersList =
   FoldersList'
-    { _flParent         :: !(Maybe Text)
-    , _flXgafv          :: !(Maybe Xgafv)
+    { _flParent :: !(Maybe Text)
+    , _flXgafv :: !(Maybe Xgafv)
     , _flUploadProtocol :: !(Maybe Text)
-    , _flAccessToken    :: !(Maybe Text)
-    , _flUploadType     :: !(Maybe Text)
-    , _flShowDeleted    :: !(Maybe Bool)
-    , _flPageToken      :: !(Maybe Text)
-    , _flPageSize       :: !(Maybe (Textual Int32))
-    , _flCallback       :: !(Maybe Text)
+    , _flAccessToken :: !(Maybe Text)
+    , _flUploadType :: !(Maybe Text)
+    , _flShowDeleted :: !(Maybe Bool)
+    , _flPageToken :: !(Maybe Text)
+    , _flPageSize :: !(Maybe (Textual Int32))
+    , _flCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

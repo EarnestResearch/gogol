@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Scores.SubmitMultiple
     , ssmLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.scores.submitMultiple@ method which the
 -- 'ScoresSubmitMultiple' request conforms to.
@@ -57,7 +57,7 @@ type ScoresSubmitMultipleResource =
 -- /See:/ 'scoresSubmitMultiple' smart constructor.
 data ScoresSubmitMultiple =
   ScoresSubmitMultiple'
-    { _ssmPayload  :: !PlayerScoreSubmissionList
+    { _ssmPayload :: !PlayerScoreSubmissionList
     , _ssmLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

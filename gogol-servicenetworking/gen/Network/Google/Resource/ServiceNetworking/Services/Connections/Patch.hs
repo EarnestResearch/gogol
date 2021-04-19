@@ -46,8 +46,8 @@ module Network.Google.Resource.ServiceNetworking.Services.Connections.Patch
     , scpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceNetworking.Types
+import Network.Google.Prelude
+import Network.Google.ServiceNetworking.Types
 
 -- | A resource alias for @servicenetworking.services.connections.patch@ method which the
 -- 'ServicesConnectionsPatch' request conforms to.
@@ -71,15 +71,15 @@ type ServicesConnectionsPatchResource =
 -- /See:/ 'servicesConnectionsPatch' smart constructor.
 data ServicesConnectionsPatch =
   ServicesConnectionsPatch'
-    { _scpXgafv          :: !(Maybe Xgafv)
+    { _scpXgafv :: !(Maybe Xgafv)
     , _scpUploadProtocol :: !(Maybe Text)
-    , _scpForce          :: !(Maybe Bool)
-    , _scpUpdateMask     :: !(Maybe GFieldMask)
-    , _scpAccessToken    :: !(Maybe Text)
-    , _scpUploadType     :: !(Maybe Text)
-    , _scpPayload        :: !Connection
-    , _scpName           :: !Text
-    , _scpCallback       :: !(Maybe Text)
+    , _scpForce :: !(Maybe Bool)
+    , _scpUpdateMask :: !(Maybe GFieldMask)
+    , _scpAccessToken :: !(Maybe Text)
+    , _scpUploadType :: !(Maybe Text)
+    , _scpPayload :: !Connection
+    , _scpName :: !Text
+    , _scpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

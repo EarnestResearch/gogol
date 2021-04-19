@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Dis
     , oardCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.organizations.approvalRequests.dismiss@ method which the
 -- 'OrganizationsApprovalRequestsDismiss' request conforms to.
@@ -72,13 +72,13 @@ type OrganizationsApprovalRequestsDismissResource =
 -- /See:/ 'organizationsApprovalRequestsDismiss' smart constructor.
 data OrganizationsApprovalRequestsDismiss =
   OrganizationsApprovalRequestsDismiss'
-    { _oardXgafv          :: !(Maybe Xgafv)
+    { _oardXgafv :: !(Maybe Xgafv)
     , _oardUploadProtocol :: !(Maybe Text)
-    , _oardAccessToken    :: !(Maybe Text)
-    , _oardUploadType     :: !(Maybe Text)
-    , _oardPayload        :: !DismissApprovalRequestMessage
-    , _oardName           :: !Text
-    , _oardCallback       :: !(Maybe Text)
+    , _oardAccessToken :: !(Maybe Text)
+    , _oardUploadType :: !(Maybe Text)
+    , _oardPayload :: !DismissApprovalRequestMessage
+    , _oardName :: !Text
+    , _oardCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

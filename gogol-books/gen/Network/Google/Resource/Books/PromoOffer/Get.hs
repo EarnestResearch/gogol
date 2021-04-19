@@ -41,8 +41,8 @@ module Network.Google.Resource.Books.PromoOffer.Get
     , pogAndroidId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.promooffer.get@ method which the
 -- 'PromoOfferGet' request conforms to.
@@ -65,11 +65,11 @@ type PromoOfferGetResource =
 data PromoOfferGet =
   PromoOfferGet'
     { _pogManufacturer :: !(Maybe Text)
-    , _pogSerial       :: !(Maybe Text)
-    , _pogDevice       :: !(Maybe Text)
-    , _pogModel        :: !(Maybe Text)
-    , _pogProduct      :: !(Maybe Text)
-    , _pogAndroidId    :: !(Maybe Text)
+    , _pogSerial :: !(Maybe Text)
+    , _pogDevice :: !(Maybe Text)
+    , _pogModel :: !(Maybe Text)
+    , _pogProduct :: !(Maybe Text)
+    , _pogAndroidId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

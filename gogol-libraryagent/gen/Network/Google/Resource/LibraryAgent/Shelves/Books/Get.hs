@@ -41,8 +41,8 @@ module Network.Google.Resource.LibraryAgent.Shelves.Books.Get
     , sbgCallback
     ) where
 
-import           Network.Google.LibraryAgent.Types
-import           Network.Google.Prelude
+import Network.Google.LibraryAgent.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @libraryagent.shelves.books.get@ method which the
 -- 'ShelvesBooksGet' request conforms to.
@@ -62,12 +62,12 @@ type ShelvesBooksGetResource =
 -- /See:/ 'shelvesBooksGet' smart constructor.
 data ShelvesBooksGet =
   ShelvesBooksGet'
-    { _sbgXgafv          :: !(Maybe Xgafv)
+    { _sbgXgafv :: !(Maybe Xgafv)
     , _sbgUploadProtocol :: !(Maybe Text)
-    , _sbgAccessToken    :: !(Maybe Text)
-    , _sbgUploadType     :: !(Maybe Text)
-    , _sbgName           :: !Text
-    , _sbgCallback       :: !(Maybe Text)
+    , _sbgAccessToken :: !(Maybe Text)
+    , _sbgUploadType :: !(Maybe Text)
+    , _sbgName :: !Text
+    , _sbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

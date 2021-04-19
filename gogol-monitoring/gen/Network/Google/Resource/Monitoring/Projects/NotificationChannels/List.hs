@@ -45,8 +45,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.List
     , pnclCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.list@ method which the
 -- 'ProjectsNotificationChannelsList' request conforms to.
@@ -71,16 +71,16 @@ type ProjectsNotificationChannelsListResource =
 -- /See:/ 'projectsNotificationChannelsList' smart constructor.
 data ProjectsNotificationChannelsList =
   ProjectsNotificationChannelsList'
-    { _pnclXgafv          :: !(Maybe Xgafv)
+    { _pnclXgafv :: !(Maybe Xgafv)
     , _pnclUploadProtocol :: !(Maybe Text)
-    , _pnclOrderBy        :: !(Maybe Text)
-    , _pnclAccessToken    :: !(Maybe Text)
-    , _pnclUploadType     :: !(Maybe Text)
-    , _pnclName           :: !Text
-    , _pnclFilter         :: !(Maybe Text)
-    , _pnclPageToken      :: !(Maybe Text)
-    , _pnclPageSize       :: !(Maybe (Textual Int32))
-    , _pnclCallback       :: !(Maybe Text)
+    , _pnclOrderBy :: !(Maybe Text)
+    , _pnclAccessToken :: !(Maybe Text)
+    , _pnclUploadType :: !(Maybe Text)
+    , _pnclName :: !Text
+    , _pnclFilter :: !(Maybe Text)
+    , _pnclPageToken :: !(Maybe Text)
+    , _pnclPageSize :: !(Maybe (Textual Int32))
+    , _pnclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

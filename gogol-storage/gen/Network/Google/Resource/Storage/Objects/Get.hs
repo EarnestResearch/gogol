@@ -44,8 +44,8 @@ module Network.Google.Resource.Storage.Objects.Get
     , ogGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.get@ method which the
 -- 'ObjectsGet' request conforms to.
@@ -88,15 +88,15 @@ type ObjectsGetResource =
 -- /See:/ 'objectsGet' smart constructor.
 data ObjectsGet =
   ObjectsGet'
-    { _ogIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _ogIfGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _ogIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _ogBucket                   :: !Text
-    , _ogUserProject              :: !(Maybe Text)
+    { _ogIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _ogIfGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _ogIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _ogBucket :: !Text
+    , _ogUserProject :: !(Maybe Text)
     , _ogIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _ogObject                   :: !Text
-    , _ogProjection               :: !(Maybe ObjectsGetProjection)
-    , _ogGeneration               :: !(Maybe (Textual Int64))
+    , _ogObject :: !Text
+    , _ogProjection :: !(Maybe ObjectsGetProjection)
+    , _ogGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

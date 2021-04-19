@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Snapshots.List
     , snaMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.snapshots.list@ method which the
 -- 'SnapshotsList' request conforms to.
@@ -65,10 +65,10 @@ type SnapshotsListResource =
 -- /See:/ 'snapshotsList' smart constructor.
 data SnapshotsList =
   SnapshotsList'
-    { _snaOrderBy    :: !(Maybe Text)
-    , _snaProject    :: !Text
-    , _snaFilter     :: !(Maybe Text)
-    , _snaPageToken  :: !(Maybe Text)
+    { _snaOrderBy :: !(Maybe Text)
+    , _snaProject :: !Text
+    , _snaFilter :: !(Maybe Text)
+    , _snaPageToken :: !(Maybe Text)
     , _snaMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

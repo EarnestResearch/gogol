@@ -48,8 +48,8 @@ module Network.Google.Resource.StreetViewPublish.Photos.BatchGet
     , pbgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photos.batchGet@ method which the
 -- 'PhotosBatchGet' request conforms to.
@@ -77,14 +77,14 @@ type PhotosBatchGetResource =
 -- /See:/ 'photosBatchGet' smart constructor.
 data PhotosBatchGet =
   PhotosBatchGet'
-    { _pbgXgafv          :: !(Maybe Xgafv)
-    , _pbgLanguageCode   :: !(Maybe Text)
+    { _pbgXgafv :: !(Maybe Xgafv)
+    , _pbgLanguageCode :: !(Maybe Text)
     , _pbgUploadProtocol :: !(Maybe Text)
-    , _pbgAccessToken    :: !(Maybe Text)
-    , _pbgUploadType     :: !(Maybe Text)
-    , _pbgPhotoIds       :: !(Maybe [Text])
-    , _pbgView           :: !(Maybe Text)
-    , _pbgCallback       :: !(Maybe Text)
+    , _pbgAccessToken :: !(Maybe Text)
+    , _pbgUploadType :: !(Maybe Text)
+    , _pbgPhotoIds :: !(Maybe [Text])
+    , _pbgView :: !(Maybe Text)
+    , _pbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

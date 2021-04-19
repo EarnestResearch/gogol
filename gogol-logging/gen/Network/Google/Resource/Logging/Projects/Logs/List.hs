@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Projects.Logs.List
     , pllCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.logs.list@ method which the
 -- 'ProjectsLogsList' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsLogsListResource =
 -- /See:/ 'projectsLogsList' smart constructor.
 data ProjectsLogsList =
   ProjectsLogsList'
-    { _pllParent         :: !Text
-    , _pllXgafv          :: !(Maybe Xgafv)
+    { _pllParent :: !Text
+    , _pllXgafv :: !(Maybe Xgafv)
     , _pllUploadProtocol :: !(Maybe Text)
-    , _pllAccessToken    :: !(Maybe Text)
-    , _pllUploadType     :: !(Maybe Text)
-    , _pllPageToken      :: !(Maybe Text)
-    , _pllPageSize       :: !(Maybe (Textual Int32))
-    , _pllCallback       :: !(Maybe Text)
+    , _pllAccessToken :: !(Maybe Text)
+    , _pllUploadType :: !(Maybe Text)
+    , _pllPageToken :: !(Maybe Text)
+    , _pllPageSize :: !(Maybe (Textual Int32))
+    , _pllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

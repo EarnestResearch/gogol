@@ -38,8 +38,8 @@ module Network.Google.Resource.Blogger.Pages.Insert
     , piPayload
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.pages.insert@ method which the
 -- 'PagesInsert' request conforms to.
@@ -59,7 +59,7 @@ type PagesInsertResource =
 data PagesInsert =
   PagesInsert'
     { _piIsDraft :: !(Maybe Bool)
-    , _piBlogId  :: !Text
+    , _piBlogId :: !Text
     , _piPayload :: !Page
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Get
     , pggId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.get@ method which the
 -- 'PlacementGroupsGet' request conforms to.
@@ -58,7 +58,7 @@ type PlacementGroupsGetResource =
 data PlacementGroupsGet =
   PlacementGroupsGet'
     { _pggProFileId :: !(Textual Int64)
-    , _pggId        :: !(Textual Int64)
+    , _pggId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

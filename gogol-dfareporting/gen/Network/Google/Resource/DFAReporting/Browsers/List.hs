@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.Browsers.List
     , blProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.browsers.list@ method which the
 -- 'BrowsersList' request conforms to.

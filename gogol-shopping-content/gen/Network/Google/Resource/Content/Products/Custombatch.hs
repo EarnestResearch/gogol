@@ -34,28 +34,31 @@ module Network.Google.Resource.Content.Products.Custombatch
 
     -- * Request Lenses
     , pcPayload
+    , pcDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.custombatch@ method which the
 -- 'ProductsCustombatch' request conforms to.
 type ProductsCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "products" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] ProductsCustomBatchRequest :>
-                 Post '[JSON] ProductsCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] ProductsCustomBatchRequest :>
+                   Post '[JSON] ProductsCustomBatchResponse
 
 -- | Retrieves, inserts, and deletes multiple products in a single request.
 --
 -- /See:/ 'productsCustombatch' smart constructor.
-newtype ProductsCustombatch =
+data ProductsCustombatch =
   ProductsCustombatch'
-    { _pcPayload :: ProductsCustomBatchRequest
+    { _pcPayload :: !ProductsCustomBatchRequest
+    , _pcDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -65,11 +68,13 @@ newtype ProductsCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'pcPayload'
+--
+-- * 'pcDryRun'
 productsCustombatch
     :: ProductsCustomBatchRequest -- ^ 'pcPayload'
     -> ProductsCustombatch
 productsCustombatch pPcPayload_ =
-  ProductsCustombatch' {_pcPayload = pPcPayload_}
+  ProductsCustombatch' {_pcPayload = pPcPayload_, _pcDryRun = Nothing}
 
 
 -- | Multipart request metadata.
@@ -77,13 +82,20 @@ pcPayload :: Lens' ProductsCustombatch ProductsCustomBatchRequest
 pcPayload
   = lens _pcPayload (\ s a -> s{_pcPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+pcDryRun :: Lens' ProductsCustombatch (Maybe Bool)
+pcDryRun = lens _pcDryRun (\ s a -> s{_pcDryRun = a})
+
 instance GoogleRequest ProductsCustombatch where
         type Rs ProductsCustombatch =
              ProductsCustomBatchResponse
         type Scopes ProductsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsCustombatch'{..}
-          = go (Just AltJSON) _pcPayload shoppingContentService
+          = go _pcDryRun (Just AltJSON) _pcPayload
+              shoppingContentService
           where go
                   = buildClient
                       (Proxy :: Proxy ProductsCustombatchResource)

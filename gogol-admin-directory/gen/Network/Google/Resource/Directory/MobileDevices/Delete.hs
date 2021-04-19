@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.MobileDevices.Delete
     , mddCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.mobiledevices.delete@ method which the
 -- 'MobileDevicesDelete' request conforms to.

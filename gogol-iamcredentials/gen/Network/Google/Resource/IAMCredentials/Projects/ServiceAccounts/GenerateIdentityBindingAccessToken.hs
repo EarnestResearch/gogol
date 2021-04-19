@@ -42,8 +42,8 @@ module Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateI
     , psagibatCallback
     ) where
 
-import           Network.Google.IAMCredentials.Types
-import           Network.Google.Prelude
+import Network.Google.IAMCredentials.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iamcredentials.projects.serviceAccounts.generateIdentityBindingAccessToken@ method which the
 -- 'ProjectsServiceAccountsGenerateIdentityBindingAccessToken' request conforms to.
@@ -71,13 +71,13 @@ type ProjectsServiceAccountsGenerateIdentityBindingAccessTokenResource
 -- /See:/ 'projectsServiceAccountsGenerateIdentityBindingAccessToken' smart constructor.
 data ProjectsServiceAccountsGenerateIdentityBindingAccessToken =
   ProjectsServiceAccountsGenerateIdentityBindingAccessToken'
-    { _psagibatXgafv          :: !(Maybe Xgafv)
+    { _psagibatXgafv :: !(Maybe Xgafv)
     , _psagibatUploadProtocol :: !(Maybe Text)
-    , _psagibatAccessToken    :: !(Maybe Text)
-    , _psagibatUploadType     :: !(Maybe Text)
-    , _psagibatPayload        :: !GenerateIdentityBindingAccessTokenRequest
-    , _psagibatName           :: !Text
-    , _psagibatCallback       :: !(Maybe Text)
+    , _psagibatAccessToken :: !(Maybe Text)
+    , _psagibatUploadType :: !(Maybe Text)
+    , _psagibatPayload :: !GenerateIdentityBindingAccessTokenRequest
+    , _psagibatName :: !Text
+    , _psagibatCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

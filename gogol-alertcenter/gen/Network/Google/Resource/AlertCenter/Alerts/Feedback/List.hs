@@ -44,8 +44,8 @@ module Network.Google.Resource.AlertCenter.Alerts.Feedback.List
     , aflCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.alerts.feedback.list@ method which the
 -- 'AlertsFeedbackList' request conforms to.
@@ -70,14 +70,14 @@ type AlertsFeedbackListResource =
 -- /See:/ 'alertsFeedbackList' smart constructor.
 data AlertsFeedbackList =
   AlertsFeedbackList'
-    { _aflXgafv          :: !(Maybe Xgafv)
+    { _aflXgafv :: !(Maybe Xgafv)
     , _aflUploadProtocol :: !(Maybe Text)
-    , _aflAccessToken    :: !(Maybe Text)
-    , _aflAlertId        :: !Text
-    , _aflUploadType     :: !(Maybe Text)
-    , _aflCustomerId     :: !(Maybe Text)
-    , _aflFilter         :: !(Maybe Text)
-    , _aflCallback       :: !(Maybe Text)
+    , _aflAccessToken :: !(Maybe Text)
+    , _aflAlertId :: !Text
+    , _aflUploadType :: !(Maybe Text)
+    , _aflCustomerId :: !(Maybe Text)
+    , _aflFilter :: !(Maybe Text)
+    , _aflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

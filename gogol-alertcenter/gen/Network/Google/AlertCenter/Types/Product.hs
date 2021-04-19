@@ -17,8 +17,8 @@
 --
 module Network.Google.AlertCenter.Types.Product where
 
-import           Network.Google.AlertCenter.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types.Sum
+import Network.Google.Prelude
 
 -- | Response message for an alert listing request.
 --
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 data ListAlertsResponse =
   ListAlertsResponse'
     { _larNextPageToken :: !(Maybe Text)
-    , _larAlerts        :: !(Maybe [Alert])
+    , _larAlerts :: !(Maybe [Alert])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -118,10 +118,10 @@ instance ToJSON CSVRow where
 data AlertFeedback =
   AlertFeedback'
     { _afFeedbackId :: !(Maybe Text)
-    , _afEmail      :: !(Maybe Text)
-    , _afAlertId    :: !(Maybe Text)
+    , _afEmail :: !(Maybe Text)
+    , _afAlertId :: !(Maybe Text)
     , _afCustomerId :: !(Maybe Text)
-    , _afType       :: !(Maybe AlertFeedbackType)
+    , _afType :: !(Maybe AlertFeedbackType)
     , _afCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -212,7 +212,7 @@ instance ToJSON AlertFeedback where
 -- /See:/ 'deviceCompromised' smart constructor.
 data DeviceCompromised =
   DeviceCompromised'
-    { _dcEmail  :: !(Maybe Text)
+    { _dcEmail :: !(Maybe Text)
     , _dcEvents :: !(Maybe [DeviceCompromisedSecurityDetail])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -294,9 +294,9 @@ instance ToJSON StateSponsoredAttack where
 -- /See:/ 'badWhiteList' smart constructor.
 data BadWhiteList =
   BadWhiteList'
-    { _bwlSourceIP        :: !(Maybe Text)
-    , _bwlDomainId        :: !(Maybe DomainId)
-    , _bwlMessages        :: !(Maybe [GmailMessageInfo])
+    { _bwlSourceIP :: !(Maybe Text)
+    , _bwlDomainId :: !(Maybe DomainId)
+    , _bwlMessages :: !(Maybe [GmailMessageInfo])
     , _bwlMaliciousEntity :: !(Maybe MaliciousEntity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -372,14 +372,14 @@ instance ToJSON BadWhiteList where
 data SuspiciousActivitySecurityDetail =
   SuspiciousActivitySecurityDetail'
     { _sasdDeviceProperty :: !(Maybe Text)
-    , _sasdResourceId     :: !(Maybe Text)
-    , _sasdIosVendorId    :: !(Maybe Text)
-    , _sasdOldValue       :: !(Maybe Text)
-    , _sasdNewValue       :: !(Maybe Text)
-    , _sasdDeviceModel    :: !(Maybe Text)
-    , _sasdDeviceId       :: !(Maybe Text)
-    , _sasdDeviceType     :: !(Maybe Text)
-    , _sasdSerialNumber   :: !(Maybe Text)
+    , _sasdResourceId :: !(Maybe Text)
+    , _sasdIosVendorId :: !(Maybe Text)
+    , _sasdOldValue :: !(Maybe Text)
+    , _sasdNewValue :: !(Maybe Text)
+    , _sasdDeviceModel :: !(Maybe Text)
+    , _sasdDeviceId :: !(Maybe Text)
+    , _sasdDeviceType :: !(Maybe Text)
+    , _sasdSerialNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -650,17 +650,17 @@ instance ToJSON Notification where
 data ActivityRule =
   ActivityRule'
     { _arSupersededAlerts :: !(Maybe [Text])
-    , _arActionNames      :: !(Maybe [Text])
+    , _arActionNames :: !(Maybe [Text])
     , _arSupersedingAlert :: !(Maybe Text)
-    , _arTriggerSource    :: !(Maybe Text)
-    , _arWindowSize       :: !(Maybe GDuration)
-    , _arUpdateTime       :: !(Maybe DateTime')
-    , _arName             :: !(Maybe Text)
-    , _arThreshold        :: !(Maybe Text)
-    , _arQuery            :: !(Maybe Text)
-    , _arDisplayName      :: !(Maybe Text)
-    , _arDescription      :: !(Maybe Text)
-    , _arCreateTime       :: !(Maybe DateTime')
+    , _arTriggerSource :: !(Maybe Text)
+    , _arWindowSize :: !(Maybe GDuration)
+    , _arUpdateTime :: !(Maybe DateTime')
+    , _arName :: !(Maybe Text)
+    , _arThreshold :: !(Maybe Text)
+    , _arQuery :: !(Maybe Text)
+    , _arDisplayName :: !(Maybe Text)
+    , _arDescription :: !(Maybe Text)
+    , _arCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -827,7 +827,7 @@ instance ToJSON ActivityRule where
 -- /See:/ 'accountWarning' smart constructor.
 data AccountWarning =
   AccountWarning'
-    { _awEmail        :: !(Maybe Text)
+    { _awEmail :: !(Maybe Text)
     , _awLoginDetails :: !(Maybe LoginDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -880,9 +880,9 @@ instance ToJSON AccountWarning where
 -- /See:/ 'mailPhishing' smart constructor.
 data MailPhishing =
   MailPhishing'
-    { _mpIsInternal      :: !(Maybe Bool)
-    , _mpDomainId        :: !(Maybe DomainId)
-    , _mpMessages        :: !(Maybe [GmailMessageInfo])
+    { _mpIsInternal :: !(Maybe Bool)
+    , _mpDomainId :: !(Maybe DomainId)
+    , _mpMessages :: !(Maybe [GmailMessageInfo])
     , _mpMaliciousEntity :: !(Maybe MaliciousEntity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -956,14 +956,14 @@ instance ToJSON MailPhishing where
 -- /See:/ 'gmailMessageInfo' smart constructor.
 data GmailMessageInfo =
   GmailMessageInfo'
-    { _gmiMD5HashSubject        :: !(Maybe Text)
-    , _gmiSubjectText           :: !(Maybe Text)
-    , _gmiDate                  :: !(Maybe DateTime')
-    , _gmiMD5HashMessageBody    :: !(Maybe Text)
+    { _gmiMD5HashSubject :: !(Maybe Text)
+    , _gmiSubjectText :: !(Maybe Text)
+    , _gmiDate :: !(Maybe DateTime')
+    , _gmiMD5HashMessageBody :: !(Maybe Text)
     , _gmiAttachmentsSha256Hash :: !(Maybe [Text])
-    , _gmiRecipient             :: !(Maybe Text)
-    , _gmiMessageBodySnippet    :: !(Maybe Text)
-    , _gmiMessageId             :: !(Maybe Text)
+    , _gmiRecipient :: !(Maybe Text)
+    , _gmiMessageBodySnippet :: !(Maybe Text)
+    , _gmiMessageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1122,9 +1122,9 @@ instance ToJSON AlertData where
 -- /See:/ 'phishingSpike' smart constructor.
 data PhishingSpike =
   PhishingSpike'
-    { _psIsInternal      :: !(Maybe Bool)
-    , _psDomainId        :: !(Maybe DomainId)
-    , _psMessages        :: !(Maybe [GmailMessageInfo])
+    { _psIsInternal :: !(Maybe Bool)
+    , _psDomainId :: !(Maybe DomainId)
+    , _psMessages :: !(Maybe [GmailMessageInfo])
     , _psMaliciousEntity :: !(Maybe MaliciousEntity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1200,7 +1200,7 @@ instance ToJSON PhishingSpike where
 data CSV =
   CSV'
     { _cDataRows :: !(Maybe [CSVRow])
-    , _cHeaders  :: !(Maybe [Text])
+    , _cHeaders :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1252,17 +1252,17 @@ instance ToJSON CSV where
 -- /See:/ 'alert' smart constructor.
 data Alert =
   Alert'
-    { _aStartTime                     :: !(Maybe DateTime')
-    , _aData                          :: !(Maybe AlertData)
-    , _aAlertId                       :: !(Maybe Text)
+    { _aStartTime :: !(Maybe DateTime')
+    , _aData :: !(Maybe AlertData)
+    , _aAlertId :: !(Maybe Text)
     , _aSecurityInvestigationToolLink :: !(Maybe Text)
-    , _aCustomerId                    :: !(Maybe Text)
-    , _aUpdateTime                    :: !(Maybe DateTime')
-    , _aEndTime                       :: !(Maybe DateTime')
-    , _aSource                        :: !(Maybe Text)
-    , _aDeleted                       :: !(Maybe Bool)
-    , _aType                          :: !(Maybe Text)
-    , _aCreateTime                    :: !(Maybe DateTime')
+    , _aCustomerId :: !(Maybe Text)
+    , _aUpdateTime :: !(Maybe DateTime')
+    , _aEndTime :: !(Maybe DateTime')
+    , _aSource :: !(Maybe Text)
+    , _aDeleted :: !(Maybe Bool)
+    , _aType :: !(Maybe Text)
+    , _aCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1447,10 +1447,10 @@ instance ToJSON Attachment where
 -- /See:/ 'googleOperations' smart constructor.
 data GoogleOperations =
   GoogleOperations'
-    { _goAttachmentData     :: !(Maybe Attachment)
+    { _goAttachmentData :: !(Maybe Attachment)
     , _goAffectedUserEmails :: !(Maybe [Text])
-    , _goTitle              :: !(Maybe Text)
-    , _goDescription        :: !(Maybe Text)
+    , _goTitle :: !(Maybe Text)
+    , _goDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1528,7 +1528,7 @@ instance ToJSON GoogleOperations where
 -- /See:/ 'suspiciousActivity' smart constructor.
 data SuspiciousActivity =
   SuspiciousActivity'
-    { _saEmail  :: !(Maybe Text)
+    { _saEmail :: !(Maybe Text)
     , _saEvents :: !(Maybe [SuspiciousActivitySecurityDetail])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1578,7 +1578,7 @@ instance ToJSON SuspiciousActivity where
 -- /See:/ 'domainWideTakeoutInitiated' smart constructor.
 data DomainWideTakeoutInitiated =
   DomainWideTakeoutInitiated'
-    { _dwtiEmail            :: !(Maybe Text)
+    { _dwtiEmail :: !(Maybe Text)
     , _dwtiTakeoutRequestId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1667,13 +1667,13 @@ instance ToJSON DomainId where
 -- /See:/ 'deviceCompromisedSecurityDetail' smart constructor.
 data DeviceCompromisedSecurityDetail =
   DeviceCompromisedSecurityDetail'
-    { _dcsdResourceId             :: !(Maybe Text)
+    { _dcsdResourceId :: !(Maybe Text)
     , _dcsdDeviceCompromisedState :: !(Maybe Text)
-    , _dcsdIosVendorId            :: !(Maybe Text)
-    , _dcsdDeviceModel            :: !(Maybe Text)
-    , _dcsdDeviceId               :: !(Maybe Text)
-    , _dcsdDeviceType             :: !(Maybe Text)
-    , _dcsdSerialNumber           :: !(Maybe Text)
+    , _dcsdIosVendorId :: !(Maybe Text)
+    , _dcsdDeviceModel :: !(Maybe Text)
+    , _dcsdDeviceId :: !(Maybe Text)
+    , _dcsdDeviceType :: !(Maybe Text)
+    , _dcsdSerialNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1786,7 +1786,7 @@ instance ToJSON DeviceCompromisedSecurityDetail where
 -- /See:/ 'cloudPubsubTopic' smart constructor.
 data CloudPubsubTopic =
   CloudPubsubTopic'
-    { _cptTopicName     :: !(Maybe Text)
+    { _cptTopicName :: !(Maybe Text)
     , _cptPayloadFormat :: !(Maybe CloudPubsubTopicPayloadFormat)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

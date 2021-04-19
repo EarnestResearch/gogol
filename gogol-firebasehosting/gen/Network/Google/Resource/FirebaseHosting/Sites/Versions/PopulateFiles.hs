@@ -42,8 +42,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Versions.PopulateFiles
     , svpfCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.versions.populateFiles@ method which the
 -- 'SitesVersionsPopulateFiles' request conforms to.
@@ -64,13 +64,13 @@ type SitesVersionsPopulateFilesResource =
 -- /See:/ 'sitesVersionsPopulateFiles' smart constructor.
 data SitesVersionsPopulateFiles =
   SitesVersionsPopulateFiles'
-    { _svpfParent         :: !Text
-    , _svpfXgafv          :: !(Maybe Xgafv)
+    { _svpfParent :: !Text
+    , _svpfXgafv :: !(Maybe Xgafv)
     , _svpfUploadProtocol :: !(Maybe Text)
-    , _svpfAccessToken    :: !(Maybe Text)
-    , _svpfUploadType     :: !(Maybe Text)
-    , _svpfPayload        :: !PopulateVersionFilesRequest
-    , _svpfCallback       :: !(Maybe Text)
+    , _svpfAccessToken :: !(Maybe Text)
+    , _svpfUploadType :: !(Maybe Text)
+    , _svpfPayload :: !PopulateVersionFilesRequest
+    , _svpfCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

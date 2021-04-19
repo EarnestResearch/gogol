@@ -45,8 +45,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.SignBlob
     , psasbCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.signBlob@ method which the
 -- 'ProjectsServiceAccountsSignBlob' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsServiceAccountsSignBlobResource =
 -- /See:/ 'projectsServiceAccountsSignBlob' smart constructor.
 data ProjectsServiceAccountsSignBlob =
   ProjectsServiceAccountsSignBlob'
-    { _psasbXgafv          :: !(Maybe Xgafv)
+    { _psasbXgafv :: !(Maybe Xgafv)
     , _psasbUploadProtocol :: !(Maybe Text)
-    , _psasbAccessToken    :: !(Maybe Text)
-    , _psasbUploadType     :: !(Maybe Text)
-    , _psasbPayload        :: !SignBlobRequest
-    , _psasbName           :: !Text
-    , _psasbCallback       :: !(Maybe Text)
+    , _psasbAccessToken :: !(Maybe Text)
+    , _psasbUploadType :: !(Maybe Text)
+    , _psasbPayload :: !SignBlobRequest
+    , _psasbName :: !Text
+    , _psasbCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

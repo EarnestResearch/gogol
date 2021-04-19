@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.Delete
     , bacdEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.delete@ method which the
 -- 'BucketAccessControlsDelete' request conforms to.
@@ -60,9 +60,9 @@ type BucketAccessControlsDeleteResource =
 -- /See:/ 'bucketAccessControlsDelete' smart constructor.
 data BucketAccessControlsDelete =
   BucketAccessControlsDelete'
-    { _bacdBucket      :: !Text
+    { _bacdBucket :: !Text
     , _bacdUserProject :: !(Maybe Text)
-    , _bacdEntity      :: !Text
+    , _bacdEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

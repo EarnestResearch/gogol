@@ -44,8 +44,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforUser.Pa
     , mcupManagedConfigurationForUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsforuser.patch@ method which the
 -- 'ManagedConfigurationsforUserPatch' request conforms to.
@@ -72,9 +72,9 @@ type ManagedConfigurationsforUserPatchResource =
 -- /See:/ 'managedConfigurationsforUserPatch' smart constructor.
 data ManagedConfigurationsforUserPatch =
   ManagedConfigurationsforUserPatch'
-    { _mcupEnterpriseId                  :: !Text
-    , _mcupPayload                       :: !ManagedConfiguration
-    , _mcupUserId                        :: !Text
+    { _mcupEnterpriseId :: !Text
+    , _mcupPayload :: !ManagedConfiguration
+    , _mcupUserId :: !Text
     , _mcupManagedConfigurationForUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

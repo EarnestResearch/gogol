@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -687,9 +687,9 @@ module Network.Google.AppEngine.Types
     , dFiles
     ) where
 
-import           Network.Google.AppEngine.Types.Product
-import           Network.Google.AppEngine.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types.Product
+import Network.Google.AppEngine.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the App Engine Admin API. This contains the host and root path used as a starting point for constructing service requests.
 appEngineService :: ServiceConfig

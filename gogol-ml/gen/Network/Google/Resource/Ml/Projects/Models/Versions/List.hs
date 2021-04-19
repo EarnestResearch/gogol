@@ -48,8 +48,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.List
     , pmvlCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.list@ method which the
 -- 'ProjectsModelsVersionsList' request conforms to.
@@ -77,15 +77,15 @@ type ProjectsModelsVersionsListResource =
 -- /See:/ 'projectsModelsVersionsList' smart constructor.
 data ProjectsModelsVersionsList =
   ProjectsModelsVersionsList'
-    { _pmvlParent         :: !Text
-    , _pmvlXgafv          :: !(Maybe Xgafv)
+    { _pmvlParent :: !Text
+    , _pmvlXgafv :: !(Maybe Xgafv)
     , _pmvlUploadProtocol :: !(Maybe Text)
-    , _pmvlAccessToken    :: !(Maybe Text)
-    , _pmvlUploadType     :: !(Maybe Text)
-    , _pmvlFilter         :: !(Maybe Text)
-    , _pmvlPageToken      :: !(Maybe Text)
-    , _pmvlPageSize       :: !(Maybe (Textual Int32))
-    , _pmvlCallback       :: !(Maybe Text)
+    , _pmvlAccessToken :: !(Maybe Text)
+    , _pmvlUploadType :: !(Maybe Text)
+    , _pmvlFilter :: !(Maybe Text)
+    , _pmvlPageToken :: !(Maybe Text)
+    , _pmvlPageSize :: !(Maybe (Textual Int32))
+    , _pmvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

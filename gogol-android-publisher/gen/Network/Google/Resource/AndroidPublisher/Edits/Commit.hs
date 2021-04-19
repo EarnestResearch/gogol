@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Commit
     , ecEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.commit@ method which the
 -- 'EditsCommit' request conforms to.
@@ -57,7 +57,7 @@ type EditsCommitResource =
 data EditsCommit =
   EditsCommit'
     { _ecPackageName :: !Text
-    , _ecEditId      :: !Text
+    , _ecEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

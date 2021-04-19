@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Drafts.Send
     , udsUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.drafts.send@ method which the
 -- 'UsersDraftsSend' request conforms to.
@@ -72,7 +72,7 @@ type UsersDraftsSendResource =
 data UsersDraftsSend =
   UsersDraftsSend'
     { _udsPayload :: !Draft
-    , _udsUserId  :: !Text
+    , _udsUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

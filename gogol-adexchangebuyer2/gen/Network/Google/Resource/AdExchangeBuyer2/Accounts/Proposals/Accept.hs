@@ -47,8 +47,8 @@ module Network.Google.Resource.AdExchangeBuyer2.Accounts.Proposals.Accept
     , apaCallback
     ) where
 
-import           Network.Google.AdExchangeBuyer2.Types
-import           Network.Google.Prelude
+import Network.Google.AdExchangeBuyer2.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexchangebuyer2.accounts.proposals.accept@ method which the
 -- 'AccountsProposalsAccept' request conforms to.
@@ -76,14 +76,14 @@ type AccountsProposalsAcceptResource =
 -- /See:/ 'accountsProposalsAccept' smart constructor.
 data AccountsProposalsAccept =
   AccountsProposalsAccept'
-    { _apaXgafv          :: !(Maybe Xgafv)
+    { _apaXgafv :: !(Maybe Xgafv)
     , _apaUploadProtocol :: !(Maybe Text)
-    , _apaAccessToken    :: !(Maybe Text)
-    , _apaUploadType     :: !(Maybe Text)
-    , _apaPayload        :: !AcceptProposalRequest
-    , _apaProposalId     :: !Text
-    , _apaAccountId      :: !Text
-    , _apaCallback       :: !(Maybe Text)
+    , _apaAccessToken :: !(Maybe Text)
+    , _apaUploadType :: !(Maybe Text)
+    , _apaPayload :: !AcceptProposalRequest
+    , _apaProposalId :: !Text
+    , _apaAccountId :: !Text
+    , _apaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

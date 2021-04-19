@@ -17,8 +17,8 @@
 --
 module Network.Google.OSLogin.Types.Product where
 
-import           Network.Google.OSLogin.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.OSLogin.Types.Sum
+import Network.Google.Prelude
 
 -- | A map from SSH public key fingerprint to the associated key object.
 --
@@ -90,7 +90,7 @@ data LoginProFile =
   LoginProFile'
     { _lpfPosixAccounts :: !(Maybe [PosixAccount])
     , _lpfSSHPublicKeys :: !(Maybe LoginProFileSSHPublicKeys)
-    , _lpfName          :: !(Maybe Text)
+    , _lpfName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -194,8 +194,8 @@ instance ToJSON ImportSSHPublicKeyResponse where
 -- /See:/ 'sshPublicKey' smart constructor.
 data SSHPublicKey =
   SSHPublicKey'
-    { _spkFingerprint        :: !(Maybe Text)
-    , _spkKey                :: !(Maybe Text)
+    { _spkFingerprint :: !(Maybe Text)
+    , _spkKey :: !(Maybe Text)
     , _spkExpirationTimeUsec :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -260,16 +260,16 @@ instance ToJSON SSHPublicKey where
 -- /See:/ 'posixAccount' smart constructor.
 data PosixAccount =
   PosixAccount'
-    { _paGecos               :: !(Maybe Text)
-    , _paUid                 :: !(Maybe (Textual Int64))
-    , _paUsername            :: !(Maybe Text)
-    , _paShell               :: !(Maybe Text)
-    , _paPrimary             :: !(Maybe Bool)
-    , _paAccountId           :: !(Maybe Text)
-    , _paGid                 :: !(Maybe (Textual Int64))
+    { _paGecos :: !(Maybe Text)
+    , _paUid :: !(Maybe (Textual Int64))
+    , _paUsername :: !(Maybe Text)
+    , _paShell :: !(Maybe Text)
+    , _paPrimary :: !(Maybe Bool)
+    , _paAccountId :: !(Maybe Text)
+    , _paGid :: !(Maybe (Textual Int64))
     , _paOperatingSystemType :: !(Maybe PosixAccountOperatingSystemType)
-    , _paSystemId            :: !(Maybe Text)
-    , _paHomeDirectory       :: !(Maybe Text)
+    , _paSystemId :: !(Maybe Text)
+    , _paHomeDirectory :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

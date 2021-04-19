@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Roles.Patch
     , rpCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roles.patch@ method which the
 -- 'RolesPatch' request conforms to.
@@ -59,8 +59,8 @@ type RolesPatchResource =
 -- /See:/ 'rolesPatch' smart constructor.
 data RolesPatch =
   RolesPatch'
-    { _rpPayload  :: !Role
-    , _rpRoleId   :: !Text
+    { _rpPayload :: !Role
+    , _rpRoleId :: !Text
     , _rpCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

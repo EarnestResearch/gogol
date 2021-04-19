@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Images.Deleteall
     , ediEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.images.deleteall@ method which the
 -- 'EditsImagesDeleteall' request conforms to.
@@ -63,9 +63,9 @@ type EditsImagesDeleteallResource =
 data EditsImagesDeleteall =
   EditsImagesDeleteall'
     { _ediPackageName :: !Text
-    , _ediImageType   :: !EditsImagesDeleteallImageType
-    , _ediLanguage    :: !Text
-    , _ediEditId      :: !Text
+    , _ediImageType :: !EditsImagesDeleteallImageType
+    , _ediLanguage :: !Text
+    , _ediEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

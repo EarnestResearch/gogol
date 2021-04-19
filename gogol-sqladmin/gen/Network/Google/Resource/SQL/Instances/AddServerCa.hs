@@ -41,8 +41,8 @@ module Network.Google.Resource.SQL.Instances.AddServerCa
     , iascInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.addServerCa@ method which the
 -- 'InstancesAddServerCa' request conforms to.
@@ -65,7 +65,7 @@ type InstancesAddServerCaResource =
 -- /See:/ 'instancesAddServerCa' smart constructor.
 data InstancesAddServerCa =
   InstancesAddServerCa'
-    { _iascProject  :: !Text
+    { _iascProject :: !Text
     , _iascInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

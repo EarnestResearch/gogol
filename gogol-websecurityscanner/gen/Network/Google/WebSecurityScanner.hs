@@ -284,21 +284,21 @@ module Network.Google.WebSecurityScanner
     , srErrorTrace
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Create
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Delete
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Get
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.List
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Patch
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.CrawledURLs.List
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Findings.Get
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Findings.List
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.FindingTypeStats.List
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Get
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.List
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Stop
-import           Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Start
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Create
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Delete
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Get
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.List
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Patch
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.CrawledURLs.List
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.FindingTypeStats.List
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Findings.Get
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Findings.List
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Get
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.List
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Stop
+import Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Start
+import Network.Google.WebSecurityScanner.Types
 
 {- $resources
 TODO

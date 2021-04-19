@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Folders.Exclusions.Patch
     , fepCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.exclusions.patch@ method which the
 -- 'FoldersExclusionsPatch' request conforms to.
@@ -66,14 +66,14 @@ type FoldersExclusionsPatchResource =
 -- /See:/ 'foldersExclusionsPatch' smart constructor.
 data FoldersExclusionsPatch =
   FoldersExclusionsPatch'
-    { _fepXgafv          :: !(Maybe Xgafv)
+    { _fepXgafv :: !(Maybe Xgafv)
     , _fepUploadProtocol :: !(Maybe Text)
-    , _fepUpdateMask     :: !(Maybe GFieldMask)
-    , _fepAccessToken    :: !(Maybe Text)
-    , _fepUploadType     :: !(Maybe Text)
-    , _fepPayload        :: !LogExclusion
-    , _fepName           :: !Text
-    , _fepCallback       :: !(Maybe Text)
+    , _fepUpdateMask :: !(Maybe GFieldMask)
+    , _fepAccessToken :: !(Maybe Text)
+    , _fepUploadType :: !(Maybe Text)
+    , _fepPayload :: !LogExclusion
+    , _fepName :: !Text
+    , _fepCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

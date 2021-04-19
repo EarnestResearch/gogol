@@ -43,8 +43,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Policy.SetIAMPolicy
     , ppsipCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.policy.setIamPolicy@ method which the
 -- 'ProjectsPolicySetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsPolicySetIAMPolicyResource =
 -- /See:/ 'projectsPolicySetIAMPolicy' smart constructor.
 data ProjectsPolicySetIAMPolicy =
   ProjectsPolicySetIAMPolicy'
-    { _ppsipXgafv          :: !(Maybe Xgafv)
+    { _ppsipXgafv :: !(Maybe Xgafv)
     , _ppsipUploadProtocol :: !(Maybe Text)
-    , _ppsipAccessToken    :: !(Maybe Text)
-    , _ppsipUploadType     :: !(Maybe Text)
-    , _ppsipPayload        :: !SetIAMPolicyRequest
-    , _ppsipResource       :: !Text
-    , _ppsipCallback       :: !(Maybe Text)
+    , _ppsipAccessToken :: !(Maybe Text)
+    , _ppsipUploadType :: !(Maybe Text)
+    , _ppsipPayload :: !SetIAMPolicyRequest
+    , _ppsipResource :: !Text
+    , _ppsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

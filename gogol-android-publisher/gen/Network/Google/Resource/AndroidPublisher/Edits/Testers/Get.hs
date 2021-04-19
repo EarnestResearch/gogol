@@ -36,8 +36,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Testers.Get
     , etgEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.testers.get@ method which the
 -- 'EditsTestersGet' request conforms to.
@@ -56,9 +56,9 @@ type EditsTestersGetResource =
 -- /See:/ 'editsTestersGet' smart constructor.
 data EditsTestersGet =
   EditsTestersGet'
-    { _etgTrack       :: !Text
+    { _etgTrack :: !Text
     , _etgPackageName :: !Text
-    , _etgEditId      :: !Text
+    , _etgEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

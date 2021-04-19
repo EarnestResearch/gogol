@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Get
     , cggId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.get@ method which the
 -- 'CampaignsGet' request conforms to.
@@ -57,7 +57,7 @@ type CampaignsGetResource =
 data CampaignsGet =
   CampaignsGet'
     { _cggProFileId :: !(Textual Int64)
-    , _cggId        :: !(Textual Int64)
+    , _cggId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

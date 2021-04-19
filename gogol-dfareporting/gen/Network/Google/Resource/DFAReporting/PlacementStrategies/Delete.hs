@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Delete
     , psdId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.delete@ method which the
 -- 'PlacementStrategiesDelete' request conforms to.
@@ -57,7 +57,7 @@ type PlacementStrategiesDeleteResource =
 data PlacementStrategiesDelete =
   PlacementStrategiesDelete'
     { _psdProFileId :: !(Textual Int64)
-    , _psdId        :: !(Textual Int64)
+    , _psdId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

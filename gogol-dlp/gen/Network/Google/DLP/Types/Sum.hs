@@ -16,7 +16,7 @@
 --
 module Network.Google.DLP.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Likelihood to return for this CustomInfoType. This base value can be
 -- altered by a detection rule if the finding meets the criteria specified

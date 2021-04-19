@@ -34,28 +34,31 @@ module Network.Google.Resource.Content.Pos.Custombatch
 
     -- * Request Lenses
     , pPayload
+    , pDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.custombatch@ method which the
 -- 'PosCustombatch' request conforms to.
 type PosCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "pos" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] PosCustomBatchRequest :>
-                 Post '[JSON] PosCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] PosCustomBatchRequest :>
+                   Post '[JSON] PosCustomBatchResponse
 
 -- | Batches multiple POS-related calls in a single request.
 --
 -- /See:/ 'posCustombatch' smart constructor.
-newtype PosCustombatch =
+data PosCustombatch =
   PosCustombatch'
-    { _pPayload :: PosCustomBatchRequest
+    { _pPayload :: !PosCustomBatchRequest
+    , _pDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -65,22 +68,32 @@ newtype PosCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'pPayload'
+--
+-- * 'pDryRun'
 posCustombatch
     :: PosCustomBatchRequest -- ^ 'pPayload'
     -> PosCustombatch
-posCustombatch pPPayload_ = PosCustombatch' {_pPayload = pPPayload_}
+posCustombatch pPPayload_ =
+  PosCustombatch' {_pPayload = pPPayload_, _pDryRun = Nothing}
 
 
 -- | Multipart request metadata.
 pPayload :: Lens' PosCustombatch PosCustomBatchRequest
 pPayload = lens _pPayload (\ s a -> s{_pPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+pDryRun :: Lens' PosCustombatch (Maybe Bool)
+pDryRun = lens _pDryRun (\ s a -> s{_pDryRun = a})
+
 instance GoogleRequest PosCustombatch where
         type Rs PosCustombatch = PosCustomBatchResponse
         type Scopes PosCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosCustombatch'{..}
-          = go (Just AltJSON) _pPayload shoppingContentService
+          = go _pDryRun (Just AltJSON) _pPayload
+              shoppingContentService
           where go
                   = buildClient (Proxy :: Proxy PosCustombatchResource)
                       mempty

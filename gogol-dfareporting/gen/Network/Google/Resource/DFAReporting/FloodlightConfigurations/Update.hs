@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.FloodlightConfigurations.Update
     , fcuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightConfigurations.update@ method which the
 -- 'FloodlightConfigurationsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type FloodlightConfigurationsUpdateResource =
 data FloodlightConfigurationsUpdate =
   FloodlightConfigurationsUpdate'
     { _fcuProFileId :: !(Textual Int64)
-    , _fcuPayload   :: !FloodlightConfiguration
+    , _fcuPayload :: !FloodlightConfiguration
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Associations
     , cadCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.associations.delete@ method which the
 -- 'CatalogsAssociationsDelete' request conforms to.
@@ -62,12 +62,12 @@ type CatalogsAssociationsDeleteResource =
 -- /See:/ 'catalogsAssociationsDelete' smart constructor.
 data CatalogsAssociationsDelete =
   CatalogsAssociationsDelete'
-    { _cadXgafv          :: !(Maybe Xgafv)
+    { _cadXgafv :: !(Maybe Xgafv)
     , _cadUploadProtocol :: !(Maybe Text)
-    , _cadAccessToken    :: !(Maybe Text)
-    , _cadUploadType     :: !(Maybe Text)
-    , _cadName           :: !Text
-    , _cadCallback       :: !(Maybe Text)
+    , _cadAccessToken :: !(Maybe Text)
+    , _cadUploadType :: !(Maybe Text)
+    , _cadName :: !Text
+    , _cadCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

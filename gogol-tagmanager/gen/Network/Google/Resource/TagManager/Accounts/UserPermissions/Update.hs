@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.UserPermissions.Update
     , aupuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.user_permissions.update@ method which the
 -- 'AccountsUserPermissionsUpdate' request conforms to.
@@ -55,7 +55,7 @@ type AccountsUserPermissionsUpdateResource =
 -- /See:/ 'accountsUserPermissionsUpdate' smart constructor.
 data AccountsUserPermissionsUpdate =
   AccountsUserPermissionsUpdate'
-    { _aupuPath    :: !Text
+    { _aupuPath :: !Text
     , _aupuPayload :: !UserPermission
     }
   deriving (Eq, Show, Data, Typeable, Generic)

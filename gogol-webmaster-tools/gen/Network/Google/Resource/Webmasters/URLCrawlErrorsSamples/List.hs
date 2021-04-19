@@ -39,8 +39,8 @@ module Network.Google.Resource.Webmasters.URLCrawlErrorsSamples.List
     , uceslSiteURL
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebmasterTools.Types
+import Network.Google.Prelude
+import Network.Google.WebmasterTools.Types
 
 -- | A resource alias for @webmasters.urlcrawlerrorssamples.list@ method which the
 -- 'URLCrawlErrorsSamplesList' request conforms to.
@@ -67,7 +67,7 @@ data URLCrawlErrorsSamplesList =
   URLCrawlErrorsSamplesList'
     { _uceslPlatform :: !URLCrawlErrorsSamplesListPlatform
     , _uceslCategory :: !URLCrawlErrorsSamplesListCategory
-    , _uceslSiteURL  :: !Text
+    , _uceslSiteURL :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

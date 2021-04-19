@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Roles.QueryGrantableRoles
     , rqgrCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.roles.queryGrantableRoles@ method which the
 -- 'RolesQueryGrantableRoles' request conforms to.
@@ -67,12 +67,12 @@ type RolesQueryGrantableRolesResource =
 -- /See:/ 'rolesQueryGrantableRoles' smart constructor.
 data RolesQueryGrantableRoles =
   RolesQueryGrantableRoles'
-    { _rqgrXgafv          :: !(Maybe Xgafv)
+    { _rqgrXgafv :: !(Maybe Xgafv)
     , _rqgrUploadProtocol :: !(Maybe Text)
-    , _rqgrAccessToken    :: !(Maybe Text)
-    , _rqgrUploadType     :: !(Maybe Text)
-    , _rqgrPayload        :: !QueryGrantableRolesRequest
-    , _rqgrCallback       :: !(Maybe Text)
+    , _rqgrAccessToken :: !(Maybe Text)
+    , _rqgrUploadType :: !(Maybe Text)
+    , _rqgrPayload :: !QueryGrantableRolesRequest
+    , _rqgrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

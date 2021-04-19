@@ -50,8 +50,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.Create
     , plccCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.create@ method which the
 -- 'ProjectsLocationsClustersCreate' request conforms to.
@@ -81,13 +81,13 @@ type ProjectsLocationsClustersCreateResource =
 -- /See:/ 'projectsLocationsClustersCreate' smart constructor.
 data ProjectsLocationsClustersCreate =
   ProjectsLocationsClustersCreate'
-    { _plccParent         :: !Text
-    , _plccXgafv          :: !(Maybe Xgafv)
+    { _plccParent :: !Text
+    , _plccXgafv :: !(Maybe Xgafv)
     , _plccUploadProtocol :: !(Maybe Text)
-    , _plccAccessToken    :: !(Maybe Text)
-    , _plccUploadType     :: !(Maybe Text)
-    , _plccPayload        :: !CreateClusterRequest
-    , _plccCallback       :: !(Maybe Text)
+    , _plccAccessToken :: !(Maybe Text)
+    , _plccUploadType :: !(Maybe Text)
+    , _plccPayload :: !CreateClusterRequest
+    , _plccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

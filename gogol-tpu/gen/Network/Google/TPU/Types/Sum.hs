@@ -16,7 +16,7 @@
 --
 module Network.Google.TPU.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. The current state for the TPU Node.
 data NodeState

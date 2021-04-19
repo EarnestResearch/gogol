@@ -44,8 +44,8 @@ module Network.Google.Resource.StorageTransfer.TransferJobs.Patch
     , tjpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferJobs.patch@ method which the
 -- 'TransferJobsPatch' request conforms to.
@@ -68,13 +68,13 @@ type TransferJobsPatchResource =
 -- /See:/ 'transferJobsPatch' smart constructor.
 data TransferJobsPatch =
   TransferJobsPatch'
-    { _tjpXgafv          :: !(Maybe Xgafv)
+    { _tjpXgafv :: !(Maybe Xgafv)
     , _tjpUploadProtocol :: !(Maybe Text)
-    , _tjpAccessToken    :: !(Maybe Text)
-    , _tjpJobName        :: !Text
-    , _tjpUploadType     :: !(Maybe Text)
-    , _tjpPayload        :: !UpdateTransferJobRequest
-    , _tjpCallback       :: !(Maybe Text)
+    , _tjpAccessToken :: !(Maybe Text)
+    , _tjpJobName :: !Text
+    , _tjpUploadType :: !(Maybe Text)
+    , _tjpPayload :: !UpdateTransferJobRequest
+    , _tjpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

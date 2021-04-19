@@ -41,8 +41,8 @@ module Network.Google.Resource.ServiceUsage.Services.Get
     , sgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.ServiceUsage.Types
 
 -- | A resource alias for @serviceusage.services.get@ method which the
 -- 'ServicesGet' request conforms to.
@@ -62,12 +62,12 @@ type ServicesGetResource =
 -- /See:/ 'servicesGet' smart constructor.
 data ServicesGet =
   ServicesGet'
-    { _sgXgafv          :: !(Maybe Xgafv)
+    { _sgXgafv :: !(Maybe Xgafv)
     , _sgUploadProtocol :: !(Maybe Text)
-    , _sgAccessToken    :: !(Maybe Text)
-    , _sgUploadType     :: !(Maybe Text)
-    , _sgName           :: !Text
-    , _sgCallback       :: !(Maybe Text)
+    , _sgAccessToken :: !(Maybe Text)
+    , _sgUploadType :: !(Maybe Text)
+    , _sgName :: !Text
+    , _sgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

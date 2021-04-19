@@ -54,8 +54,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.SetIAMPolicy
     , psasipCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.setIamPolicy@ method which the
 -- 'ProjectsServiceAccountsSetIAMPolicy' request conforms to.
@@ -88,13 +88,13 @@ type ProjectsServiceAccountsSetIAMPolicyResource =
 -- /See:/ 'projectsServiceAccountsSetIAMPolicy' smart constructor.
 data ProjectsServiceAccountsSetIAMPolicy =
   ProjectsServiceAccountsSetIAMPolicy'
-    { _psasipXgafv          :: !(Maybe Xgafv)
+    { _psasipXgafv :: !(Maybe Xgafv)
     , _psasipUploadProtocol :: !(Maybe Text)
-    , _psasipAccessToken    :: !(Maybe Text)
-    , _psasipUploadType     :: !(Maybe Text)
-    , _psasipPayload        :: !SetIAMPolicyRequest
-    , _psasipResource       :: !Text
-    , _psasipCallback       :: !(Maybe Text)
+    , _psasipAccessToken :: !(Maybe Text)
+    , _psasipUploadType :: !(Maybe Text)
+    , _psasipPayload :: !SetIAMPolicyRequest
+    , _psasipResource :: !Text
+    , _psasipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

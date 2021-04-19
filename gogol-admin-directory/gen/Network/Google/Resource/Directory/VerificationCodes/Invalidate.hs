@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.VerificationCodes.Invalidate
     , vciUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.verificationCodes.invalidate@ method which the
 -- 'VerificationCodesInvalidate' request conforms to.

@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.SetMaintena
     , plcsmpCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.setMaintenancePolicy@ method which the
 -- 'ProjectsLocationsClustersSetMaintenancePolicy' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersSetMaintenancePolicyResource
 -- /See:/ 'projectsLocationsClustersSetMaintenancePolicy' smart constructor.
 data ProjectsLocationsClustersSetMaintenancePolicy =
   ProjectsLocationsClustersSetMaintenancePolicy'
-    { _plcsmpXgafv          :: !(Maybe Xgafv)
+    { _plcsmpXgafv :: !(Maybe Xgafv)
     , _plcsmpUploadProtocol :: !(Maybe Text)
-    , _plcsmpAccessToken    :: !(Maybe Text)
-    , _plcsmpUploadType     :: !(Maybe Text)
-    , _plcsmpPayload        :: !SetMaintenancePolicyRequest
-    , _plcsmpName           :: !Text
-    , _plcsmpCallback       :: !(Maybe Text)
+    , _plcsmpAccessToken :: !(Maybe Text)
+    , _plcsmpUploadType :: !(Maybe Text)
+    , _plcsmpPayload :: !SetMaintenancePolicyRequest
+    , _plcsmpName :: !Text
+    , _plcsmpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

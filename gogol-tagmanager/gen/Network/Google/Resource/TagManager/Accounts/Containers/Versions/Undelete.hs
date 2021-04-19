@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Undelete
     , acvuPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.undelete@ method which the
 -- 'AccountsContainersVersionsUndelete' request conforms to.

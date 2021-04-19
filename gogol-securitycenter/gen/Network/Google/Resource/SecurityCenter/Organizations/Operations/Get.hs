@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Operations.Get
     , oogCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.operations.get@ method which the
 -- 'OrganizationsOperationsGet' request conforms to.
@@ -65,12 +65,12 @@ type OrganizationsOperationsGetResource =
 -- /See:/ 'organizationsOperationsGet' smart constructor.
 data OrganizationsOperationsGet =
   OrganizationsOperationsGet'
-    { _oogXgafv          :: !(Maybe Xgafv)
+    { _oogXgafv :: !(Maybe Xgafv)
     , _oogUploadProtocol :: !(Maybe Text)
-    , _oogAccessToken    :: !(Maybe Text)
-    , _oogUploadType     :: !(Maybe Text)
-    , _oogName           :: !Text
-    , _oogCallback       :: !(Maybe Text)
+    , _oogAccessToken :: !(Maybe Text)
+    , _oogUploadType :: !(Maybe Text)
+    , _oogName :: !Text
+    , _oogCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Create
     , psccCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.create@ method which the
 -- 'ProjectsScanConfigsCreate' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsScanConfigsCreateResource =
 -- /See:/ 'projectsScanConfigsCreate' smart constructor.
 data ProjectsScanConfigsCreate =
   ProjectsScanConfigsCreate'
-    { _psccParent         :: !Text
-    , _psccXgafv          :: !(Maybe Xgafv)
+    { _psccParent :: !Text
+    , _psccXgafv :: !(Maybe Xgafv)
     , _psccUploadProtocol :: !(Maybe Text)
-    , _psccAccessToken    :: !(Maybe Text)
-    , _psccUploadType     :: !(Maybe Text)
-    , _psccPayload        :: !ScanConfig
-    , _psccCallback       :: !(Maybe Text)
+    , _psccAccessToken :: !(Maybe Text)
+    , _psccUploadType :: !(Maybe Text)
+    , _psccPayload :: !ScanConfig
+    , _psccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

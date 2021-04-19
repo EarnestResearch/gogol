@@ -16,7 +16,7 @@
 --
 module Network.Google.FirebaseRules.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | State of the test.
 data TestResultState

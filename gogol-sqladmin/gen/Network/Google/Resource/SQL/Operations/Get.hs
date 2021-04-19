@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Operations.Get
     , ogOperation
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.operations.get@ method which the
 -- 'OperationsGet' request conforms to.
@@ -56,7 +56,7 @@ type OperationsGetResource =
 -- /See:/ 'operationsGet' smart constructor.
 data OperationsGet =
   OperationsGet'
-    { _ogProject   :: !Text
+    { _ogProject :: !Text
     , _ogOperation :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

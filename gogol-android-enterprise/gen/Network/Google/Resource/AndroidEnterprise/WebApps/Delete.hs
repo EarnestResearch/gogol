@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.Delete
     , wadEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.delete@ method which the
 -- 'WebAppsDelete' request conforms to.
@@ -56,7 +56,7 @@ type WebAppsDeleteResource =
 -- /See:/ 'webAppsDelete' smart constructor.
 data WebAppsDelete =
   WebAppsDelete'
-    { _wadWebAppId     :: !Text
+    { _wadWebAppId :: !Text
     , _wadEnterpriseId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

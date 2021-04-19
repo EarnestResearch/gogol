@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.OperatingSystemVersions.Get
     , osvgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.operatingSystemVersions.get@ method which the
 -- 'OperatingSystemVersionsGet' request conforms to.
@@ -58,7 +58,7 @@ type OperatingSystemVersionsGetResource =
 data OperatingSystemVersionsGet =
   OperatingSystemVersionsGet'
     { _osvgProFileId :: !(Textual Int64)
-    , _osvgId        :: !(Textual Int64)
+    , _osvgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

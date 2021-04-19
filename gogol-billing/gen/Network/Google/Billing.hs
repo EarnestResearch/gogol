@@ -239,20 +239,20 @@ module Network.Google.Billing
     , bCondition
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudBilling.BillingAccounts.Create
-import           Network.Google.Resource.CloudBilling.BillingAccounts.Get
-import           Network.Google.Resource.CloudBilling.BillingAccounts.GetIAMPolicy
-import           Network.Google.Resource.CloudBilling.BillingAccounts.List
-import           Network.Google.Resource.CloudBilling.BillingAccounts.Patch
-import           Network.Google.Resource.CloudBilling.BillingAccounts.Projects.List
-import           Network.Google.Resource.CloudBilling.BillingAccounts.SetIAMPolicy
-import           Network.Google.Resource.CloudBilling.BillingAccounts.TestIAMPermissions
-import           Network.Google.Resource.CloudBilling.Projects.GetBillingInfo
-import           Network.Google.Resource.CloudBilling.Projects.UpdateBillingInfo
-import           Network.Google.Resource.CloudBilling.Services.List
-import           Network.Google.Resource.CloudBilling.Services.SKUs.List
+import Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Resource.CloudBilling.BillingAccounts.Create
+import Network.Google.Resource.CloudBilling.BillingAccounts.Get
+import Network.Google.Resource.CloudBilling.BillingAccounts.GetIAMPolicy
+import Network.Google.Resource.CloudBilling.BillingAccounts.List
+import Network.Google.Resource.CloudBilling.BillingAccounts.Patch
+import Network.Google.Resource.CloudBilling.BillingAccounts.Projects.List
+import Network.Google.Resource.CloudBilling.BillingAccounts.SetIAMPolicy
+import Network.Google.Resource.CloudBilling.BillingAccounts.TestIAMPermissions
+import Network.Google.Resource.CloudBilling.Projects.GetBillingInfo
+import Network.Google.Resource.CloudBilling.Projects.UpdateBillingInfo
+import Network.Google.Resource.CloudBilling.Services.List
+import Network.Google.Resource.CloudBilling.Services.SKUs.List
 
 {- $resources
 TODO

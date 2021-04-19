@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Train
     , patCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.train@ method which the
 -- 'ProjectsAgentTrain' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentTrainResource =
 -- /See:/ 'projectsAgentTrain' smart constructor.
 data ProjectsAgentTrain =
   ProjectsAgentTrain'
-    { _patParent         :: !Text
-    , _patXgafv          :: !(Maybe Xgafv)
+    { _patParent :: !Text
+    , _patXgafv :: !(Maybe Xgafv)
     , _patUploadProtocol :: !(Maybe Text)
-    , _patAccessToken    :: !(Maybe Text)
-    , _patUploadType     :: !(Maybe Text)
-    , _patPayload        :: !GoogleCloudDialogflowV2TrainAgentRequest
-    , _patCallback       :: !(Maybe Text)
+    , _patAccessToken :: !(Maybe Text)
+    , _patUploadType :: !(Maybe Text)
+    , _patPayload :: !GoogleCloudDialogflowV2TrainAgentRequest
+    , _patCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

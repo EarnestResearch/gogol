@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.InventoryItems.Get
     , iigProjectId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.inventoryItems.get@ method which the
 -- 'InventoryItemsGet' request conforms to.
@@ -60,7 +60,7 @@ type InventoryItemsGetResource =
 data InventoryItemsGet =
   InventoryItemsGet'
     { _iigProFileId :: !(Textual Int64)
-    , _iigId        :: !(Textual Int64)
+    , _iigId :: !(Textual Int64)
     , _iigProjectId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

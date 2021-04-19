@@ -356,24 +356,24 @@ module Network.Google.DataFusion
     , iCreateTime
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.DataFusion.Projects.Locations.Get
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Create
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Delete
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Get
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.GetIAMPolicy
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.List
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Patch
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Restart
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.SetIAMPolicy
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.TestIAMPermissions
-import           Network.Google.Resource.DataFusion.Projects.Locations.Instances.Upgrade
-import           Network.Google.Resource.DataFusion.Projects.Locations.List
-import           Network.Google.Resource.DataFusion.Projects.Locations.Operations.Cancel
-import           Network.Google.Resource.DataFusion.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.DataFusion.Projects.Locations.Operations.Get
-import           Network.Google.Resource.DataFusion.Projects.Locations.Operations.List
+import Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Resource.DataFusion.Projects.Locations.Get
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Create
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Delete
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Get
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.GetIAMPolicy
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.List
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Patch
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Restart
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.SetIAMPolicy
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.TestIAMPermissions
+import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Upgrade
+import Network.Google.Resource.DataFusion.Projects.Locations.List
+import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Delete
+import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Get
+import Network.Google.Resource.DataFusion.Projects.Locations.Operations.List
 
 {- $resources
 TODO

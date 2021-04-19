@@ -17,16 +17,16 @@
 --
 module Network.Google.Books.Types.Product where
 
-import           Network.Google.Books.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Books.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'userSettings' smart constructor.
 data UserSettings =
   UserSettings'
     { _usNotification :: !(Maybe UserSettingsNotification)
-    , _usKind         :: !Text
-    , _usNotesExport  :: !(Maybe UserSettingsNotesExport)
+    , _usKind :: !Text
+    , _usNotesExport :: !(Maybe UserSettingsNotesExport)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -86,10 +86,10 @@ instance ToJSON UserSettings where
 -- /See:/ 'annotations' smart constructor.
 data Annotations =
   Annotations'
-    { _aTotalItems    :: !(Maybe (Textual Int32))
+    { _aTotalItems :: !(Maybe (Textual Int32))
     , _aNextPageToken :: !(Maybe Text)
-    , _aKind          :: !Text
-    , _aItems         :: !(Maybe [Annotation])
+    , _aKind :: !Text
+    , _aItems :: !(Maybe [Annotation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -161,10 +161,10 @@ instance ToJSON Annotations where
 -- /See:/ 'annotationsData' smart constructor.
 data AnnotationsData =
   AnnotationsData'
-    { _adTotalItems    :: !(Maybe (Textual Int32))
+    { _adTotalItems :: !(Maybe (Textual Int32))
     , _adNextPageToken :: !(Maybe Text)
-    , _adKind          :: !Text
-    , _adItems         :: !(Maybe [AnnotationData])
+    , _adKind :: !Text
+    , _adItems :: !(Maybe [AnnotationData])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -278,11 +278,11 @@ instance ToJSON
 -- /See:/ 'volumeannotations' smart constructor.
 data Volumeannotations =
   Volumeannotations'
-    { _vTotalItems    :: !(Maybe (Textual Int32))
+    { _vTotalItems :: !(Maybe (Textual Int32))
     , _vNextPageToken :: !(Maybe Text)
-    , _vKind          :: !Text
-    , _vItems         :: !(Maybe [Volumeannotation])
-    , _vVersion       :: !(Maybe Text)
+    , _vKind :: !Text
+    , _vItems :: !(Maybe [Volumeannotation])
+    , _vVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -368,8 +368,8 @@ instance ToJSON Volumeannotations where
 data ReviewSource =
   ReviewSource'
     { _rsExtraDescription :: !(Maybe Text)
-    , _rsURL              :: !(Maybe Text)
-    , _rsDescription      :: !(Maybe Text)
+    , _rsURL :: !(Maybe Text)
+    , _rsDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -426,15 +426,15 @@ instance ToJSON ReviewSource where
 -- /See:/ 'annotationData' smart constructor.
 data AnnotationData =
   AnnotationData'
-    { _annEncodedData    :: !(Maybe Bytes)
-    , _annKind           :: !Text
-    , _annData           :: !(Maybe JSONValue)
-    , _annSelfLink       :: !(Maybe Text)
+    { _annEncodedData :: !(Maybe Bytes)
+    , _annKind :: !Text
+    , _annData :: !(Maybe JSONValue)
+    , _annSelfLink :: !(Maybe Text)
     , _annAnnotationType :: !(Maybe Text)
-    , _annVolumeId       :: !(Maybe Text)
-    , _annId             :: !(Maybe Text)
-    , _annUpdated        :: !(Maybe DateTime')
-    , _annLayerId        :: !(Maybe Text)
+    , _annVolumeId :: !(Maybe Text)
+    , _annId :: !(Maybe Text)
+    , _annUpdated :: !(Maybe DateTime')
+    , _annLayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -553,20 +553,20 @@ instance ToJSON AnnotationData where
 -- /See:/ 'volumeannotation' smart constructor.
 data Volumeannotation =
   Volumeannotation'
-    { _volSelectedText       :: !(Maybe Text)
+    { _volSelectedText :: !(Maybe Text)
     , _volAnnotationDataLink :: !(Maybe Text)
-    , _volPageIds            :: !(Maybe [Text])
-    , _volKind               :: !Text
-    , _volData               :: !(Maybe Text)
-    , _volSelfLink           :: !(Maybe Text)
-    , _volAnnotationType     :: !(Maybe Text)
-    , _volAnnotationDataId   :: !(Maybe Text)
-    , _volContentRanges      :: !(Maybe VolumeannotationContentRanges)
-    , _volVolumeId           :: !(Maybe Text)
-    , _volId                 :: !(Maybe Text)
-    , _volDeleted            :: !(Maybe Bool)
-    , _volUpdated            :: !(Maybe DateTime')
-    , _volLayerId            :: !(Maybe Text)
+    , _volPageIds :: !(Maybe [Text])
+    , _volKind :: !Text
+    , _volData :: !(Maybe Text)
+    , _volSelfLink :: !(Maybe Text)
+    , _volAnnotationType :: !(Maybe Text)
+    , _volAnnotationDataId :: !(Maybe Text)
+    , _volContentRanges :: !(Maybe VolumeannotationContentRanges)
+    , _volVolumeId :: !(Maybe Text)
+    , _volId :: !(Maybe Text)
+    , _volDeleted :: !(Maybe Bool)
+    , _volUpdated :: !(Maybe DateTime')
+    , _volLayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -741,9 +741,9 @@ instance ToJSON Volumeannotation where
 data BooksCloudLoadingResource =
   BooksCloudLoadingResource'
     { _bclrProcessingState :: !(Maybe Text)
-    , _bclrVolumeId        :: !(Maybe Text)
-    , _bclrAuthor          :: !(Maybe Text)
-    , _bclrTitle           :: !(Maybe Text)
+    , _bclrVolumeId :: !(Maybe Text)
+    , _bclrAuthor :: !(Maybe Text)
+    , _bclrTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -809,7 +809,7 @@ instance ToJSON BooksCloudLoadingResource where
 -- /See:/ 'volumeseriesInfoVolumeSeriesItemIssueItem' smart constructor.
 data VolumeseriesInfoVolumeSeriesItemIssueItem =
   VolumeseriesInfoVolumeSeriesItemIssueItem'
-    { _vivsiiiIssueOrderNumber   :: !(Maybe (Textual Int32))
+    { _vivsiiiIssueOrderNumber :: !(Maybe (Textual Int32))
     , _vivsiiiIssueDisplayNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -866,23 +866,23 @@ instance ToJSON
 -- /See:/ 'annotation' smart constructor.
 data Annotation =
   Annotation'
-    { _aaSelectedText         :: !(Maybe Text)
-    , _aaLayerSummary         :: !(Maybe AnnotationLayerSummary)
-    , _aaHighlightStyle       :: !(Maybe Text)
-    , _aaClientVersionRanges  :: !(Maybe AnnotationClientVersionRanges)
-    , _aaPageIds              :: !(Maybe [Text])
-    , _aaKind                 :: !Text
-    , _aaData                 :: !(Maybe Text)
-    , _aaCreated              :: !(Maybe DateTime')
-    , _aaAfterSelectedText    :: !(Maybe Text)
-    , _aaSelfLink             :: !(Maybe Text)
+    { _aaSelectedText :: !(Maybe Text)
+    , _aaLayerSummary :: !(Maybe AnnotationLayerSummary)
+    , _aaHighlightStyle :: !(Maybe Text)
+    , _aaClientVersionRanges :: !(Maybe AnnotationClientVersionRanges)
+    , _aaPageIds :: !(Maybe [Text])
+    , _aaKind :: !Text
+    , _aaData :: !(Maybe Text)
+    , _aaCreated :: !(Maybe DateTime')
+    , _aaAfterSelectedText :: !(Maybe Text)
+    , _aaSelfLink :: !(Maybe Text)
     , _aaCurrentVersionRanges :: !(Maybe AnnotationCurrentVersionRanges)
-    , _aaVolumeId             :: !(Maybe Text)
-    , _aaBeforeSelectedText   :: !(Maybe Text)
-    , _aaId                   :: !(Maybe Text)
-    , _aaDeleted              :: !(Maybe Bool)
-    , _aaUpdated              :: !(Maybe DateTime')
-    , _aaLayerId              :: !(Maybe Text)
+    , _aaVolumeId :: !(Maybe Text)
+    , _aaBeforeSelectedText :: !(Maybe Text)
+    , _aaId :: !(Maybe Text)
+    , _aaDeleted :: !(Maybe Bool)
+    , _aaUpdated :: !(Maybe DateTime')
+    , _aaLayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1172,24 +1172,24 @@ instance ToJSON GeolayerDataGeoViewport where
 -- /See:/ 'volumeUserInfo' smart constructor.
 data VolumeUserInfo =
   VolumeUserInfo'
-    { _vuiIsFamilySharingAllowed       :: !(Maybe Bool)
-    , _vuiIsFamilySharedToUser         :: !(Maybe Bool)
-    , _vuiCopy                         :: !(Maybe VolumeUserInfoCopy)
-    , _vuiUserUploadedVolumeInfo       :: !(Maybe VolumeUserInfoUserUploadedVolumeInfo)
-    , _vuiIsPurchased                  :: !(Maybe Bool)
-    , _vuiEntitlementType              :: !(Maybe (Textual Int32))
-    , _vuiAcquisitionType              :: !(Maybe (Textual Int32))
-    , _vuiAcquiredTime                 :: !(Maybe DateTime')
-    , _vuiRentalState                  :: !(Maybe Text)
-    , _vuiIsPreOrdered                 :: !(Maybe Bool)
-    , _vuiReview                       :: !(Maybe Review)
-    , _vuiIsFamilySharedFromUser       :: !(Maybe Bool)
-    , _vuiRentalPeriod                 :: !(Maybe VolumeUserInfoRentalPeriod)
-    , _vuiUpdated                      :: !(Maybe DateTime')
-    , _vuiIsUploaded                   :: !(Maybe Bool)
-    , _vuiIsInMyBooks                  :: !(Maybe Bool)
-    , _vuiReadingPosition              :: !(Maybe ReadingPosition)
-    , _vuiFamilySharing                :: !(Maybe VolumeUserInfoFamilySharing)
+    { _vuiIsFamilySharingAllowed :: !(Maybe Bool)
+    , _vuiIsFamilySharedToUser :: !(Maybe Bool)
+    , _vuiCopy :: !(Maybe VolumeUserInfoCopy)
+    , _vuiUserUploadedVolumeInfo :: !(Maybe VolumeUserInfoUserUploadedVolumeInfo)
+    , _vuiIsPurchased :: !(Maybe Bool)
+    , _vuiEntitlementType :: !(Maybe (Textual Int32))
+    , _vuiAcquisitionType :: !(Maybe (Textual Int32))
+    , _vuiAcquiredTime :: !(Maybe DateTime')
+    , _vuiRentalState :: !(Maybe Text)
+    , _vuiIsPreOrdered :: !(Maybe Bool)
+    , _vuiReview :: !(Maybe Review)
+    , _vuiIsFamilySharedFromUser :: !(Maybe Bool)
+    , _vuiRentalPeriod :: !(Maybe VolumeUserInfoRentalPeriod)
+    , _vuiUpdated :: !(Maybe DateTime')
+    , _vuiIsUploaded :: !(Maybe Bool)
+    , _vuiIsInMyBooks :: !(Maybe Bool)
+    , _vuiReadingPosition :: !(Maybe ReadingPosition)
+    , _vuiFamilySharing :: !(Maybe VolumeUserInfoFamilySharing)
     , _vuiIsFamilySharingDisabledByFop :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1440,19 +1440,19 @@ instance ToJSON VolumeUserInfo where
 -- /See:/ 'layersummary' smart constructor.
 data Layersummary =
   Layersummary'
-    { _lAnnotationsDataLink      :: !(Maybe Text)
-    , _lAnnotationsLink          :: !(Maybe Text)
-    , _lKind                     :: !Text
-    , _lDataCount                :: !(Maybe (Textual Int32))
-    , _lContentVersion           :: !(Maybe Text)
+    { _lAnnotationsDataLink :: !(Maybe Text)
+    , _lAnnotationsLink :: !(Maybe Text)
+    , _lKind :: !Text
+    , _lDataCount :: !(Maybe (Textual Int32))
+    , _lContentVersion :: !(Maybe Text)
     , _lVolumeAnnotationsVersion :: !(Maybe Text)
-    , _lAnnotationCount          :: !(Maybe (Textual Int32))
-    , _lAnnotationTypes          :: !(Maybe [Text])
-    , _lSelfLink                 :: !(Maybe Text)
-    , _lVolumeId                 :: !(Maybe Text)
-    , _lId                       :: !(Maybe Text)
-    , _lUpdated                  :: !(Maybe DateTime')
-    , _lLayerId                  :: !(Maybe Text)
+    , _lAnnotationCount :: !(Maybe (Textual Int32))
+    , _lAnnotationTypes :: !(Maybe [Text])
+    , _lSelfLink :: !(Maybe Text)
+    , _lVolumeId :: !(Maybe Text)
+    , _lId :: !(Maybe Text)
+    , _lUpdated :: !(Maybe DateTime')
+    , _lLayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1625,10 +1625,10 @@ instance ToJSON Layersummary where
 -- /See:/ 'volumeannotationContentRanges' smart constructor.
 data VolumeannotationContentRanges =
   VolumeannotationContentRanges'
-    { _vcrGbImageRange   :: !(Maybe BooksAnnotationsRange)
+    { _vcrGbImageRange :: !(Maybe BooksAnnotationsRange)
     , _vcrContentVersion :: !(Maybe Text)
-    , _vcrGbTextRange    :: !(Maybe BooksAnnotationsRange)
-    , _vcrCfiRange       :: !(Maybe BooksAnnotationsRange)
+    , _vcrGbTextRange :: !(Maybe BooksAnnotationsRange)
+    , _vcrCfiRange :: !(Maybe BooksAnnotationsRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1703,20 +1703,20 @@ instance ToJSON VolumeannotationContentRanges where
 -- /See:/ 'volumeAccessInfo' smart constructor.
 data VolumeAccessInfo =
   VolumeAccessInfo'
-    { _vaiWebReaderLink                    :: !(Maybe Text)
-    , _vaiCountry                          :: !(Maybe Text)
-    , _vaiDriveImportedContentLink         :: !(Maybe Text)
+    { _vaiWebReaderLink :: !(Maybe Text)
+    , _vaiCountry :: !(Maybe Text)
+    , _vaiDriveImportedContentLink :: !(Maybe Text)
     , _vaiExplicitOfflineLicenseManagement :: !(Maybe Bool)
-    , _vaiViewability                      :: !(Maybe Text)
-    , _vaiQuoteSharingAllowed              :: !(Maybe Bool)
-    , _vaiEpub                             :: !(Maybe VolumeAccessInfoEpub)
-    , _vaiPdf                              :: !(Maybe VolumeAccessInfoPdf)
-    , _vaiTextToSpeechPermission           :: !(Maybe Text)
-    , _vaiEmbeddable                       :: !(Maybe Bool)
-    , _vaiAccessViewStatus                 :: !(Maybe Text)
-    , _vaiDownloadAccess                   :: !(Maybe DownloadAccessRestriction)
-    , _vaiViewOrderURL                     :: !(Maybe Text)
-    , _vaiPublicDomain                     :: !(Maybe Bool)
+    , _vaiViewability :: !(Maybe Text)
+    , _vaiQuoteSharingAllowed :: !(Maybe Bool)
+    , _vaiEpub :: !(Maybe VolumeAccessInfoEpub)
+    , _vaiPdf :: !(Maybe VolumeAccessInfoPdf)
+    , _vaiTextToSpeechPermission :: !(Maybe Text)
+    , _vaiEmbeddable :: !(Maybe Bool)
+    , _vaiAccessViewStatus :: !(Maybe Text)
+    , _vaiDownloadAccess :: !(Maybe DownloadAccessRestriction)
+    , _vaiViewOrderURL :: !(Maybe Text)
+    , _vaiPublicDomain :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1914,10 +1914,10 @@ instance ToJSON VolumeAccessInfo where
 -- /See:/ 'volumeVolumeInfoPanelizationSummary' smart constructor.
 data VolumeVolumeInfoPanelizationSummary =
   VolumeVolumeInfoPanelizationSummary'
-    { _vvipsEpubBubbleVersion    :: !(Maybe Text)
+    { _vvipsEpubBubbleVersion :: !(Maybe Text)
     , _vvipsContainsImageBubbles :: !(Maybe Bool)
-    , _vvipsContainsEpubBubbles  :: !(Maybe Bool)
-    , _vvipsImageBubbleVersion   :: !(Maybe Text)
+    , _vvipsContainsEpubBubbles :: !(Maybe Bool)
+    , _vvipsImageBubbleVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1995,11 +1995,11 @@ instance ToJSON VolumeVolumeInfoPanelizationSummary
 -- /See:/ 'volumeVolumeInfoImageLinks' smart constructor.
 data VolumeVolumeInfoImageLinks =
   VolumeVolumeInfoImageLinks'
-    { _vviilThumbnail      :: !(Maybe Text)
-    , _vviilSmall          :: !(Maybe Text)
-    , _vviilExtraLarge     :: !(Maybe Text)
-    , _vviilLarge          :: !(Maybe Text)
-    , _vviilMedium         :: !(Maybe Text)
+    { _vviilThumbnail :: !(Maybe Text)
+    , _vviilSmall :: !(Maybe Text)
+    , _vviilExtraLarge :: !(Maybe Text)
+    , _vviilLarge :: !(Maybe Text)
+    , _vviilMedium :: !(Maybe Text)
     , _vviilSmallThumbnail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2137,9 +2137,9 @@ instance ToJSON VolumeUserInfoUserUploadedVolumeInfo
 -- /See:/ 'volumeUserInfoCopy' smart constructor.
 data VolumeUserInfoCopy =
   VolumeUserInfoCopy'
-    { _vuicLimitType               :: !(Maybe Text)
-    , _vuicAllowedCharacterCount   :: !(Maybe (Textual Int32))
-    , _vuicUpdated                 :: !(Maybe DateTime')
+    { _vuicLimitType :: !(Maybe Text)
+    , _vuicAllowedCharacterCount :: !(Maybe (Textual Int32))
+    , _vuicUpdated :: !(Maybe DateTime')
     , _vuicRemainingCharacterCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2294,10 +2294,10 @@ instance ToJSON UserSettingsNotificationPriceDrop
 -- /See:/ 'volumeseriesInfo' smart constructor.
 data VolumeseriesInfo =
   VolumeseriesInfo'
-    { _viBookDisplayNumber    :: !(Maybe Text)
-    , _viKind                 :: !Text
+    { _viBookDisplayNumber :: !(Maybe Text)
+    , _viKind :: !Text
     , _viShortSeriesBookTitle :: !(Maybe Text)
-    , _viVolumeSeries         :: !(Maybe [VolumeseriesInfoVolumeSeriesItem])
+    , _viVolumeSeries :: !(Maybe [VolumeseriesInfoVolumeSeriesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2372,16 +2372,16 @@ instance ToJSON VolumeseriesInfo where
 -- /See:/ 'bookshelf' smart constructor.
 data Bookshelf =
   Bookshelf'
-    { _bAccess             :: !(Maybe Text)
+    { _bAccess :: !(Maybe Text)
     , _bVolumesLastUpdated :: !(Maybe DateTime')
-    , _bKind               :: !Text
-    , _bCreated            :: !(Maybe DateTime')
-    , _bVolumeCount        :: !(Maybe (Textual Int32))
-    , _bSelfLink           :: !(Maybe Text)
-    , _bId                 :: !(Maybe (Textual Int32))
-    , _bUpdated            :: !(Maybe DateTime')
-    , _bTitle              :: !(Maybe Text)
-    , _bDescription        :: !(Maybe Text)
+    , _bKind :: !Text
+    , _bCreated :: !(Maybe DateTime')
+    , _bVolumeCount :: !(Maybe (Textual Int32))
+    , _bSelfLink :: !(Maybe Text)
+    , _bId :: !(Maybe (Textual Int32))
+    , _bUpdated :: !(Maybe DateTime')
+    , _bTitle :: !(Maybe Text)
+    , _bDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2514,22 +2514,22 @@ instance ToJSON Bookshelf where
 -- /See:/ 'notification' smart constructor.
 data Notification =
   Notification'
-    { _nDocType                        :: !(Maybe Text)
-    , _nTargetURL                      :: !(Maybe Text)
+    { _nDocType :: !(Maybe Text)
+    , _nTargetURL :: !(Maybe Text)
     , _nShowNotificationSettingsAction :: !(Maybe Bool)
-    , _nDocId                          :: !(Maybe Text)
-    , _nKind                           :: !Text
-    , _nBody                           :: !(Maybe Text)
-    , _nCrmExperimentIds               :: !(Maybe [Textual Int64])
-    , _nTimeToExpireMs                 :: !(Maybe (Textual Int64))
-    , _nPcampaignId                    :: !(Maybe Text)
-    , _nReason                         :: !(Maybe Text)
-    , _nIsDocumentMature               :: !(Maybe Bool)
-    , _nDontShowNotification           :: !(Maybe Bool)
-    , _nNotificationType               :: !(Maybe Text)
-    , _nNotificationGroup              :: !(Maybe Text)
-    , _nIconURL                        :: !(Maybe Text)
-    , _nTitle                          :: !(Maybe Text)
+    , _nDocId :: !(Maybe Text)
+    , _nKind :: !Text
+    , _nBody :: !(Maybe Text)
+    , _nCrmExperimentIds :: !(Maybe [Textual Int64])
+    , _nTimeToExpireMs :: !(Maybe (Textual Int64))
+    , _nPcampaignId :: !(Maybe Text)
+    , _nReason :: !(Maybe Text)
+    , _nIsDocumentMature :: !(Maybe Bool)
+    , _nDontShowNotification :: !(Maybe Bool)
+    , _nNotificationType :: !(Maybe Text)
+    , _nNotificationGroup :: !(Maybe Text)
+    , _nIconURL :: !(Maybe Text)
+    , _nTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2708,10 +2708,10 @@ instance ToJSON Notification where
 -- /See:/ 'annotationsSummaryLayersItem' smart constructor.
 data AnnotationsSummaryLayersItem =
   AnnotationsSummaryLayersItem'
-    { _asliLimitType               :: !(Maybe Text)
-    , _asliAllowedCharacterCount   :: !(Maybe (Textual Int32))
-    , _asliUpdated                 :: !(Maybe DateTime')
-    , _asliLayerId                 :: !(Maybe Text)
+    { _asliLimitType :: !(Maybe Text)
+    , _asliAllowedCharacterCount :: !(Maybe (Textual Int32))
+    , _asliUpdated :: !(Maybe DateTime')
+    , _asliLayerId :: !(Maybe Text)
     , _asliRemainingCharacterCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2797,7 +2797,7 @@ instance ToJSON AnnotationsSummaryLayersItem where
 data VolumeSaleInfoOffersItemRentalDuration =
   VolumeSaleInfoOffersItemRentalDuration'
     { _vsioirdCount :: !(Maybe (Textual Double))
-    , _vsioirdUnit  :: !(Maybe Text)
+    , _vsioirdUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2847,7 +2847,7 @@ instance ToJSON
 -- /See:/ 'dictlayerDataDictWordsItemExamplesItem' smart constructor.
 data DictlayerDataDictWordsItemExamplesItem =
   DictlayerDataDictWordsItemExamplesItem'
-    { _dddwieiText   :: !(Maybe Text)
+    { _dddwieiText :: !(Maybe Text)
     , _dddwieiSource :: !(Maybe DictlayerDataDictWordsItemExamplesItemSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2898,9 +2898,9 @@ instance ToJSON
 -- /See:/ 'offersItemsItem' smart constructor.
 data OffersItemsItem =
   OffersItemsItem'
-    { _oiiItems        :: !(Maybe [OffersItemsItemItemsItem])
-    , _oiiArtURL       :: !(Maybe Text)
-    , _oiiId           :: !(Maybe Text)
+    { _oiiItems :: !(Maybe [OffersItemsItemItemsItem])
+    , _oiiArtURL :: !(Maybe Text)
+    , _oiiId :: !(Maybe Text)
     , _oiiGServicesKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2967,8 +2967,8 @@ instance ToJSON OffersItemsItem where
 -- /See:/ 'annotationLayerSummary' smart constructor.
 data AnnotationLayerSummary =
   AnnotationLayerSummary'
-    { _alsLimitType               :: !(Maybe Text)
-    , _alsAllowedCharacterCount   :: !(Maybe (Textual Int32))
+    { _alsLimitType :: !(Maybe Text)
+    , _alsAllowedCharacterCount :: !(Maybe (Textual Int32))
     , _alsRemainingCharacterCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3074,7 +3074,7 @@ instance ToJSON VolumeSearchInfo where
 -- /See:/ 'annotationsSummary' smart constructor.
 data AnnotationsSummary =
   AnnotationsSummary'
-    { _asKind   :: !Text
+    { _asKind :: !Text
     , _asLayers :: !(Maybe [AnnotationsSummaryLayersItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3122,7 +3122,7 @@ instance ToJSON AnnotationsSummary where
 -- /See:/ 'category' smart constructor.
 data Category =
   Category'
-    { _cKind  :: !Text
+    { _cKind :: !Text
     , _cItems :: !(Maybe [CategoryItemsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3168,12 +3168,12 @@ instance ToJSON Category where
 -- /See:/ 'discoveryclustersClustersItemBanner_with_content_container' smart constructor.
 data DiscoveryclustersClustersItemBanner_with_content_container =
   DiscoveryclustersClustersItemBanner_with_content_container'
-    { _dcibFillColorArgb  :: !(Maybe Text)
-    , _dcibMoreButtonURL  :: !(Maybe Text)
-    , _dcibTextColorArgb  :: !(Maybe Text)
+    { _dcibFillColorArgb :: !(Maybe Text)
+    , _dcibMoreButtonURL :: !(Maybe Text)
+    , _dcibTextColorArgb :: !(Maybe Text)
     , _dcibMoreButtonText :: !(Maybe Text)
-    , _dcibImageURL       :: !(Maybe Text)
-    , _dcibMaskColorArgb  :: !(Maybe Text)
+    , _dcibImageURL :: !(Maybe Text)
+    , _dcibMaskColorArgb :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3268,17 +3268,17 @@ instance ToJSON
 -- /See:/ 'volume' smart constructor.
 data Volume =
   Volume'
-    { _vvUserInfo        :: !(Maybe VolumeUserInfo)
-    , _vvEtag            :: !(Maybe Text)
-    , _vvAccessInfo      :: !(Maybe VolumeAccessInfo)
-    , _vvKind            :: !Text
-    , _vvSearchInfo      :: !(Maybe VolumeSearchInfo)
-    , _vvSelfLink        :: !(Maybe Text)
-    , _vvLayerInfo       :: !(Maybe VolumeLayerInfo)
-    , _vvSaleInfo        :: !(Maybe VolumeSaleInfo)
-    , _vvId              :: !(Maybe Text)
+    { _vvUserInfo :: !(Maybe VolumeUserInfo)
+    , _vvEtag :: !(Maybe Text)
+    , _vvAccessInfo :: !(Maybe VolumeAccessInfo)
+    , _vvKind :: !Text
+    , _vvSearchInfo :: !(Maybe VolumeSearchInfo)
+    , _vvSelfLink :: !(Maybe Text)
+    , _vvLayerInfo :: !(Maybe VolumeLayerInfo)
+    , _vvSaleInfo :: !(Maybe VolumeSaleInfo)
+    , _vvId :: !(Maybe Text)
     , _vvRecommendedInfo :: !(Maybe VolumeRecommendedInfo)
-    , _vvVolumeInfo      :: !(Maybe VolumeVolumeInfo)
+    , _vvVolumeInfo :: !(Maybe VolumeVolumeInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3421,7 +3421,7 @@ instance ToJSON Volume where
 -- /See:/ 'geolayerDataGeoBoundaryItemItem' smart constructor.
 data GeolayerDataGeoBoundaryItemItem =
   GeolayerDataGeoBoundaryItemItem'
-    { _gdgbiiLatitude  :: !(Maybe (Textual Word32))
+    { _gdgbiiLatitude :: !(Maybe (Textual Word32))
     , _gdgbiiLongitude :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3472,7 +3472,7 @@ instance ToJSON GeolayerDataGeoBoundaryItemItem where
 -- /See:/ 'series' smart constructor.
 data Series =
   Series'
-    { _sKind   :: !Text
+    { _sKind :: !Text
     , _sSeries :: !(Maybe [SeriesSeriesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3519,11 +3519,11 @@ instance ToJSON Series where
 data OffersItemsItemItemsItem =
   OffersItemsItemItemsItem'
     { _oiiiiCanonicalVolumeLink :: !(Maybe Text)
-    , _oiiiiCoverURL            :: !(Maybe Text)
-    , _oiiiiVolumeId            :: !(Maybe Text)
-    , _oiiiiAuthor              :: !(Maybe Text)
-    , _oiiiiTitle               :: !(Maybe Text)
-    , _oiiiiDescription         :: !(Maybe Text)
+    , _oiiiiCoverURL :: !(Maybe Text)
+    , _oiiiiVolumeId :: !(Maybe Text)
+    , _oiiiiAuthor :: !(Maybe Text)
+    , _oiiiiTitle :: !(Maybe Text)
+    , _oiiiiDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3611,7 +3611,7 @@ instance ToJSON OffersItemsItemItemsItem where
 -- /See:/ 'dictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItemSource' smart constructor.
 data DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItemSource =
   DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItemSource'
-    { _dddwisidieisURL         :: !(Maybe Text)
+    { _dddwisidieisURL :: !(Maybe Text)
     , _dddwisidieisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3665,10 +3665,10 @@ instance ToJSON
 -- /See:/ 'geolayerDataCommon' smart constructor.
 data GeolayerDataCommon =
   GeolayerDataCommon'
-    { _gdcSnippet         :: !(Maybe Text)
-    , _gdcSnippetURL      :: !(Maybe Text)
-    , _gdcLang            :: !(Maybe Text)
-    , _gdcTitle           :: !(Maybe Text)
+    { _gdcSnippet :: !(Maybe Text)
+    , _gdcSnippetURL :: !(Maybe Text)
+    , _gdcLang :: !(Maybe Text)
+    , _gdcTitle :: !(Maybe Text)
     , _gdcPreviewImageURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3748,14 +3748,14 @@ instance ToJSON GeolayerDataCommon where
 -- /See:/ 'geolayerDataGeo' smart constructor.
 data GeolayerDataGeo =
   GeolayerDataGeo'
-    { _gdgMapType     :: !(Maybe Text)
+    { _gdgMapType :: !(Maybe Text)
     , _gdgCachePolicy :: !(Maybe Text)
-    , _gdgViewport    :: !(Maybe GeolayerDataGeoViewport)
-    , _gdgBoundary    :: !(Maybe [[GeolayerDataGeoBoundaryItemItem]])
-    , _gdgLatitude    :: !(Maybe (Textual Double))
-    , _gdgZoom        :: !(Maybe (Textual Int32))
+    , _gdgViewport :: !(Maybe GeolayerDataGeoViewport)
+    , _gdgBoundary :: !(Maybe [[GeolayerDataGeoBoundaryItemItem]])
+    , _gdgLatitude :: !(Maybe (Textual Double))
+    , _gdgZoom :: !(Maybe (Textual Int32))
     , _gdgCountryCode :: !(Maybe Text)
-    , _gdgLongitude   :: !(Maybe (Textual Double))
+    , _gdgLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3878,10 +3878,10 @@ instance ToJSON GeolayerDataGeo where
 -- /See:/ 'dictlayerDataDictWordsItem' smart constructor.
 data DictlayerDataDictWordsItem =
   DictlayerDataDictWordsItem'
-    { _dddwiSenses      :: !(Maybe [DictlayerDataDictWordsItemSensesItem])
-    , _dddwiSource      :: !(Maybe DictlayerDataDictWordsItemSource)
+    { _dddwiSenses :: !(Maybe [DictlayerDataDictWordsItemSensesItem])
+    , _dddwiSource :: !(Maybe DictlayerDataDictWordsItemSource)
     , _dddwiDerivatives :: !(Maybe [DictlayerDataDictWordsItemDerivativesItem])
-    , _dddwiExamples    :: !(Maybe [DictlayerDataDictWordsItemExamplesItem])
+    , _dddwiExamples :: !(Maybe [DictlayerDataDictWordsItemExamplesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3956,9 +3956,9 @@ instance ToJSON DictlayerDataDictWordsItem where
 -- /See:/ 'categoryItemsItem' smart constructor.
 data CategoryItemsItem =
   CategoryItemsItem'
-    { _ciiName       :: !(Maybe Text)
+    { _ciiName :: !(Maybe Text)
     , _ciiCategoryId :: !(Maybe Text)
-    , _ciiBadgeURL   :: !(Maybe Text)
+    , _ciiBadgeURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4011,7 +4011,7 @@ instance ToJSON CategoryItemsItem where
 -- /See:/ 'dictlayerDataDictWordsItemDerivativesItemSource' smart constructor.
 data DictlayerDataDictWordsItemDerivativesItemSource =
   DictlayerDataDictWordsItemDerivativesItemSource'
-    { _dddwidisURL         :: !(Maybe Text)
+    { _dddwidisURL :: !(Maybe Text)
     , _dddwidisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4064,8 +4064,8 @@ instance ToJSON
 -- /See:/ 'geolayerData' smart constructor.
 data GeolayerData =
   GeolayerData'
-    { _gdKind   :: !Text
-    , _gdGeo    :: !(Maybe GeolayerDataGeo)
+    { _gdKind :: !Text
+    , _gdGeo :: !(Maybe GeolayerDataGeo)
     , _gdCommon :: !(Maybe GeolayerDataCommon)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4118,7 +4118,7 @@ instance ToJSON GeolayerData where
 -- /See:/ 'dictlayerDataDictWordsItemSource' smart constructor.
 data DictlayerDataDictWordsItemSource =
   DictlayerDataDictWordsItemSource'
-    { _dddwisURL         :: !(Maybe Text)
+    { _dddwisURL :: !(Maybe Text)
     , _dddwisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4167,7 +4167,7 @@ instance ToJSON DictlayerDataDictWordsItemSource
 -- /See:/ 'dictlayerDataDictWordsItemDerivativesItem' smart constructor.
 data DictlayerDataDictWordsItemDerivativesItem =
   DictlayerDataDictWordsItemDerivativesItem'
-    { _dddwidiText   :: !(Maybe Text)
+    { _dddwidiText :: !(Maybe Text)
     , _dddwidiSource :: !(Maybe DictlayerDataDictWordsItemDerivativesItemSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4219,7 +4219,7 @@ instance ToJSON
 -- /See:/ 'dictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItem' smart constructor.
 data DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItem =
   DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItem'
-    { _dddwisidieiText   :: !(Maybe Text)
+    { _dddwisidieiText :: !(Maybe Text)
     , _dddwisidieiSource :: !(Maybe DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItemSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4315,8 +4315,8 @@ instance ToJSON
 -- /See:/ 'dictlayerData' smart constructor.
 data DictlayerData =
   DictlayerData'
-    { _ddKind   :: !Text
-    , _ddDict   :: !(Maybe DictlayerDataDict)
+    { _ddKind :: !Text
+    , _ddDict :: !(Maybe DictlayerDataDict)
     , _ddCommon :: !(Maybe DictlayerDataCommon)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4367,7 +4367,7 @@ instance ToJSON DictlayerData where
 -- /See:/ 'dictlayerDataDictWordsItemSensesItemSynonymsItemSource' smart constructor.
 data DictlayerDataDictWordsItemSensesItemSynonymsItemSource =
   DictlayerDataDictWordsItemSensesItemSynonymsItemSource'
-    { _dddwisisisURL         :: !(Maybe Text)
+    { _dddwisisisURL :: !(Maybe Text)
     , _dddwisisisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4422,8 +4422,8 @@ instance ToJSON
 data Seriesmembership =
   Seriesmembership'
     { _serNextPageToken :: !(Maybe Text)
-    , _serKind          :: !Text
-    , _serMember        :: !(Maybe [Volume])
+    , _serKind :: !Text
+    , _serMember :: !(Maybe [Volume])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4484,10 +4484,10 @@ instance ToJSON Seriesmembership where
 data UserSettingsNotification =
   UserSettingsNotification'
     { _usnRewardExpirations :: !(Maybe UserSettingsNotificationRewardExpirations)
-    , _usnPriceDrop         :: !(Maybe UserSettingsNotificationPriceDrop)
-    , _usnMatchMyInterests  :: !(Maybe UserSettingsNotificationMatchMyInterests)
-    , _usnMoreFromAuthors   :: !(Maybe UserSettingsNotificationMoreFromAuthors)
-    , _usnMoreFromSeries    :: !(Maybe UserSettingsNotificationMoreFromSeries)
+    , _usnPriceDrop :: !(Maybe UserSettingsNotificationPriceDrop)
+    , _usnMatchMyInterests :: !(Maybe UserSettingsNotificationMatchMyInterests)
+    , _usnMoreFromAuthors :: !(Maybe UserSettingsNotificationMoreFromAuthors)
+    , _usnMoreFromSeries :: !(Maybe UserSettingsNotificationMoreFromSeries)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4565,7 +4565,7 @@ instance ToJSON UserSettingsNotification where
 -- /See:/ 'dictlayerDataDictWordsItemSensesItemSynonymsItem' smart constructor.
 data DictlayerDataDictWordsItemSensesItemSynonymsItem =
   DictlayerDataDictWordsItemSensesItemSynonymsItem'
-    { _dddwisisiText   :: !(Maybe Text)
+    { _dddwisisiText :: !(Maybe Text)
     , _dddwisisiSource :: !(Maybe DictlayerDataDictWordsItemSensesItemSynonymsItemSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4619,7 +4619,7 @@ instance ToJSON
 -- /See:/ 'geolayerDataGeoViewportLo' smart constructor.
 data GeolayerDataGeoViewportLo =
   GeolayerDataGeoViewportLo'
-    { _gdgvlLatitude  :: !(Maybe (Textual Double))
+    { _gdgvlLatitude :: !(Maybe (Textual Double))
     , _gdgvlLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4670,7 +4670,7 @@ instance ToJSON GeolayerDataGeoViewportLo where
 -- /See:/ 'volumeSaleInfoOffersItemListPrice' smart constructor.
 data VolumeSaleInfoOffersItemListPrice =
   VolumeSaleInfoOffersItemListPrice'
-    { _vsioilpCurrencyCode   :: !(Maybe Text)
+    { _vsioilpCurrencyCode :: !(Maybe Text)
     , _vsioilpAmountInMicros :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4721,18 +4721,18 @@ instance ToJSON VolumeSaleInfoOffersItemListPrice
 -- /See:/ 'downloadAccessRestriction' smart constructor.
 data DownloadAccessRestriction =
   DownloadAccessRestriction'
-    { _darJustAcquired       :: !(Maybe Bool)
-    , _darSignature          :: !(Maybe Text)
-    , _darKind               :: !Text
+    { _darJustAcquired :: !(Maybe Bool)
+    , _darSignature :: !(Maybe Text)
+    , _darKind :: !Text
     , _darMaxDownloadDevices :: !(Maybe (Textual Int32))
-    , _darDownloadsAcquired  :: !(Maybe (Textual Int32))
-    , _darReasonCode         :: !(Maybe Text)
-    , _darVolumeId           :: !(Maybe Text)
-    , _darRestricted         :: !(Maybe Bool)
-    , _darSource             :: !(Maybe Text)
-    , _darDeviceAllowed      :: !(Maybe Bool)
-    , _darMessage            :: !(Maybe Text)
-    , _darNonce              :: !(Maybe Text)
+    , _darDownloadsAcquired :: !(Maybe (Textual Int32))
+    , _darReasonCode :: !(Maybe Text)
+    , _darVolumeId :: !(Maybe Text)
+    , _darRestricted :: !(Maybe Bool)
+    , _darSource :: !(Maybe Text)
+    , _darDeviceAllowed :: !(Maybe Bool)
+    , _darMessage :: !(Maybe Text)
+    , _darNonce :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4928,11 +4928,11 @@ instance ToJSON DictlayerDataCommon where
 data DiscoveryclustersClustersItem =
   DiscoveryclustersClustersItem'
     { _dciBannerWithContentContainer :: !(Maybe DiscoveryclustersClustersItemBanner_with_content_container)
-    , _dciUid                        :: !(Maybe Text)
-    , _dciTotalVolumes               :: !(Maybe (Textual Int32))
-    , _dciSubTitle                   :: !(Maybe Text)
-    , _dciTitle                      :: !(Maybe Text)
-    , _dciVolumes                    :: !(Maybe [Volume])
+    , _dciUid :: !(Maybe Text)
+    , _dciTotalVolumes :: !(Maybe (Textual Int32))
+    , _dciSubTitle :: !(Maybe Text)
+    , _dciTitle :: !(Maybe Text)
+    , _dciVolumes :: !(Maybe [Volume])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5023,7 +5023,7 @@ instance ToJSON DiscoveryclustersClustersItem where
 -- /See:/ 'volumeSaleInfoRetailPrice' smart constructor.
 data VolumeSaleInfoRetailPrice =
   VolumeSaleInfoRetailPrice'
-    { _vsirpAmount       :: !(Maybe (Textual Double))
+    { _vsirpAmount :: !(Maybe (Textual Double))
     , _vsirpCurrencyCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5074,7 +5074,7 @@ instance ToJSON VolumeSaleInfoRetailPrice where
 -- /See:/ 'volumeSaleInfoListPrice' smart constructor.
 data VolumeSaleInfoListPrice =
   VolumeSaleInfoListPrice'
-    { _vsilpAmount       :: !(Maybe (Textual Double))
+    { _vsilpAmount :: !(Maybe (Textual Double))
     , _vsilpCurrencyCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5125,7 +5125,7 @@ instance ToJSON VolumeSaleInfoListPrice where
 data DictlayerDataDictWordsItemSensesItemConjugationsItem =
   DictlayerDataDictWordsItemSensesItemConjugationsItem'
     { _dddwisiciValue :: !(Maybe Text)
-    , _dddwisiciType  :: !(Maybe Text)
+    , _dddwisiciType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5180,10 +5180,10 @@ instance ToJSON
 data FamilyInfoMembership =
   FamilyInfoMembership'
     { _fimAllowedMaturityRating :: !(Maybe Text)
-    , _fimAcquirePermission     :: !(Maybe Text)
-    , _fimRole                  :: !(Maybe Text)
-    , _fimAgeGroup              :: !(Maybe Text)
-    , _fimIsInFamily            :: !(Maybe Bool)
+    , _fimAcquirePermission :: !(Maybe Text)
+    , _fimRole :: !(Maybe Text)
+    , _fimAgeGroup :: !(Maybe Text)
+    , _fimIsInFamily :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5266,8 +5266,8 @@ instance ToJSON FamilyInfoMembership where
 data Volume2 =
   Volume2'
     { _voloNextPageToken :: !(Maybe Text)
-    , _voloKind          :: !Text
-    , _voloItems         :: !(Maybe [Volume])
+    , _voloKind :: !Text
+    , _voloItems :: !(Maybe [Volume])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5328,16 +5328,16 @@ instance ToJSON Volume2 where
 -- /See:/ 'review' smart constructor.
 data Review =
   Review'
-    { _rRating      :: !(Maybe Text)
-    , _rKind        :: !Text
-    , _rContent     :: !(Maybe Text)
-    , _rDate        :: !(Maybe Text)
-    , _rVolumeId    :: !(Maybe Text)
-    , _rAuthor      :: !(Maybe ReviewAuthor)
-    , _rSource      :: !(Maybe ReviewSource)
+    { _rRating :: !(Maybe Text)
+    , _rKind :: !Text
+    , _rContent :: !(Maybe Text)
+    , _rDate :: !(Maybe Text)
+    , _rVolumeId :: !(Maybe Text)
+    , _rAuthor :: !(Maybe ReviewAuthor)
+    , _rSource :: !(Maybe ReviewSource)
     , _rFullTextURL :: !(Maybe Text)
-    , _rTitle       :: !(Maybe Text)
-    , _rType        :: !(Maybe Text)
+    , _rTitle :: !(Maybe Text)
+    , _rType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5460,7 +5460,7 @@ instance ToJSON Review where
 -- /See:/ 'volumeUserInfoRentalPeriod' smart constructor.
 data VolumeUserInfoRentalPeriod =
   VolumeUserInfoRentalPeriod'
-    { _vuirpEndUtcSec   :: !(Maybe (Textual Int64))
+    { _vuirpEndUtcSec :: !(Maybe (Textual Int64))
     , _vuirpStartUtcSec :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5514,13 +5514,13 @@ instance ToJSON VolumeUserInfoRentalPeriod where
 -- /See:/ 'volumeSaleInfo' smart constructor.
 data VolumeSaleInfo =
   VolumeSaleInfo'
-    { _vsiCountry     :: !(Maybe Text)
-    , _vsiOnSaleDate  :: !(Maybe DateTime')
-    , _vsiListPrice   :: !(Maybe VolumeSaleInfoListPrice)
+    { _vsiCountry :: !(Maybe Text)
+    , _vsiOnSaleDate :: !(Maybe DateTime')
+    , _vsiListPrice :: !(Maybe VolumeSaleInfoListPrice)
     , _vsiRetailPrice :: !(Maybe VolumeSaleInfoRetailPrice)
-    , _vsiOffers      :: !(Maybe [VolumeSaleInfoOffersItem])
-    , _vsiBuyLink     :: !(Maybe Text)
-    , _vsiIsEbook     :: !(Maybe Bool)
+    , _vsiOffers :: !(Maybe [VolumeSaleInfoOffersItem])
+    , _vsiBuyLink :: !(Maybe Text)
+    , _vsiIsEbook :: !(Maybe Bool)
     , _vsiSaleability :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5644,11 +5644,11 @@ instance ToJSON VolumeSaleInfo where
 -- /See:/ 'seriesSeriesItem' smart constructor.
 data SeriesSeriesItem =
   SeriesSeriesItem'
-    { _ssiSeriesId       :: !(Maybe Text)
-    , _ssiImageURL       :: !(Maybe Text)
+    { _ssiSeriesId :: !(Maybe Text)
+    , _ssiImageURL :: !(Maybe Text)
     , _ssiBannerImageURL :: !(Maybe Text)
-    , _ssiTitle          :: !(Maybe Text)
-    , _ssiSeriesType     :: !(Maybe Text)
+    , _ssiTitle :: !(Maybe Text)
+    , _ssiSeriesType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5723,7 +5723,7 @@ instance ToJSON SeriesSeriesItem where
 -- /See:/ 'metadata' smart constructor.
 data Metadata =
   Metadata'
-    { _mKind  :: !Text
+    { _mKind :: !Text
     , _mItems :: !(Maybe [MetadataItemsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5808,8 +5808,8 @@ instance ToJSON VolumeLayerInfo where
 -- /See:/ 'volumeVolumeInfoDimensions' smart constructor.
 data VolumeVolumeInfoDimensions =
   VolumeVolumeInfoDimensions'
-    { _vvidHeight    :: !(Maybe Text)
-    , _vvidWidth     :: !(Maybe Text)
+    { _vvidHeight :: !(Maybe Text)
+    , _vvidWidth :: !(Maybe Text)
     , _vvidThickness :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5868,8 +5868,8 @@ instance ToJSON VolumeVolumeInfoDimensions where
 data RequestAccess =
   RequestAccess'
     { _raConcurrentAccess :: !(Maybe ConcurrentAccessRestriction)
-    , _raKind             :: !Text
-    , _raDownloadAccess   :: !(Maybe DownloadAccessRestriction)
+    , _raKind :: !Text
+    , _raDownloadAccess :: !(Maybe DownloadAccessRestriction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5931,7 +5931,7 @@ instance ToJSON RequestAccess where
 data FamilyInfo =
   FamilyInfo'
     { _fiMembership :: !(Maybe FamilyInfoMembership)
-    , _fiKind       :: !Text
+    , _fiKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5977,11 +5977,11 @@ instance ToJSON FamilyInfo where
 -- /See:/ 'annotationClientVersionRanges' smart constructor.
 data AnnotationClientVersionRanges =
   AnnotationClientVersionRanges'
-    { _acvrGbImageRange   :: !(Maybe BooksAnnotationsRange)
+    { _acvrGbImageRange :: !(Maybe BooksAnnotationsRange)
     , _acvrContentVersion :: !(Maybe Text)
-    , _acvrImageCfiRange  :: !(Maybe BooksAnnotationsRange)
-    , _acvrGbTextRange    :: !(Maybe BooksAnnotationsRange)
-    , _acvrCfiRange       :: !(Maybe BooksAnnotationsRange)
+    , _acvrImageCfiRange :: !(Maybe BooksAnnotationsRange)
+    , _acvrGbTextRange :: !(Maybe BooksAnnotationsRange)
+    , _acvrCfiRange :: !(Maybe BooksAnnotationsRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6065,7 +6065,7 @@ instance ToJSON AnnotationClientVersionRanges where
 data DictlayerDataDictWordsItemSensesItemDefinitionsItem =
   DictlayerDataDictWordsItemSensesItemDefinitionsItem'
     { _dddwisidiDefinition :: !(Maybe Text)
-    , _dddwisidiExamples   :: !(Maybe [DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItem])
+    , _dddwisidiExamples :: !(Maybe [DictlayerDataDictWordsItemSensesItemDefinitionsItemExamplesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6123,7 +6123,7 @@ instance ToJSON
 data VolumeLayerInfoLayersItem =
   VolumeLayerInfoLayersItem'
     { _vliliVolumeAnnotationsVersion :: !(Maybe Text)
-    , _vliliLayerId                  :: !(Maybe Text)
+    , _vliliLayerId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6176,11 +6176,11 @@ instance ToJSON VolumeLayerInfoLayersItem where
 -- /See:/ 'annotationCurrentVersionRanges' smart constructor.
 data AnnotationCurrentVersionRanges =
   AnnotationCurrentVersionRanges'
-    { _aGbImageRange   :: !(Maybe BooksAnnotationsRange)
+    { _aGbImageRange :: !(Maybe BooksAnnotationsRange)
     , _aContentVersion :: !(Maybe Text)
-    , _aImageCfiRange  :: !(Maybe BooksAnnotationsRange)
-    , _aGbTextRange    :: !(Maybe BooksAnnotationsRange)
-    , _aCfiRange       :: !(Maybe BooksAnnotationsRange)
+    , _aImageCfiRange :: !(Maybe BooksAnnotationsRange)
+    , _aGbTextRange :: !(Maybe BooksAnnotationsRange)
+    , _aCfiRange :: !(Maybe BooksAnnotationsRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6265,7 +6265,7 @@ instance ToJSON AnnotationCurrentVersionRanges where
 data VolumeAccessInfoPdf =
   VolumeAccessInfoPdf'
     { _vaipAcsTokenLink :: !(Maybe Text)
-    , _vaipIsAvailable  :: !(Maybe Bool)
+    , _vaipIsAvailable :: !(Maybe Bool)
     , _vaipDownloadLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6329,7 +6329,7 @@ instance ToJSON VolumeAccessInfoPdf where
 -- /See:/ 'dictlayerDataDictWordsItemExamplesItemSource' smart constructor.
 data DictlayerDataDictWordsItemExamplesItemSource =
   DictlayerDataDictWordsItemExamplesItemSource'
-    { _dddwieisURL         :: !(Maybe Text)
+    { _dddwieisURL :: !(Maybe Text)
     , _dddwieisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6384,7 +6384,7 @@ instance ToJSON
 data VolumeAccessInfoEpub =
   VolumeAccessInfoEpub'
     { _vaieAcsTokenLink :: !(Maybe Text)
-    , _vaieIsAvailable  :: !(Maybe Bool)
+    , _vaieIsAvailable :: !(Maybe Bool)
     , _vaieDownloadLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6449,12 +6449,12 @@ instance ToJSON VolumeAccessInfoEpub where
 data ReadingPosition =
   ReadingPosition'
     { _rpEpubCfiPosition :: !(Maybe Text)
-    , _rpKind            :: !Text
+    , _rpKind :: !Text
     , _rpGbImagePosition :: !(Maybe Text)
-    , _rpPdfPosition     :: !(Maybe Text)
-    , _rpVolumeId        :: !(Maybe Text)
-    , _rpUpdated         :: !(Maybe DateTime')
-    , _rpGbTextPosition  :: !(Maybe Text)
+    , _rpPdfPosition :: !(Maybe Text)
+    , _rpVolumeId :: !(Maybe Text)
+    , _rpUpdated :: !(Maybe DateTime')
+    , _rpGbTextPosition :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6560,10 +6560,10 @@ instance ToJSON ReadingPosition where
 data VolumeSaleInfoOffersItem =
   VolumeSaleInfoOffersItem'
     { _vsioiFinskyOfferType :: !(Maybe (Textual Int32))
-    , _vsioiRentalDuration  :: !(Maybe VolumeSaleInfoOffersItemRentalDuration)
-    , _vsioiListPrice       :: !(Maybe VolumeSaleInfoOffersItemListPrice)
-    , _vsioiRetailPrice     :: !(Maybe VolumeSaleInfoOffersItemRetailPrice)
-    , _vsioiGiftable        :: !(Maybe Bool)
+    , _vsioiRentalDuration :: !(Maybe VolumeSaleInfoOffersItemRentalDuration)
+    , _vsioiListPrice :: !(Maybe VolumeSaleInfoOffersItemListPrice)
+    , _vsioiRetailPrice :: !(Maybe VolumeSaleInfoOffersItemRetailPrice)
+    , _vsioiGiftable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6650,7 +6650,7 @@ instance ToJSON VolumeSaleInfoOffersItem where
 data DictlayerDataDict =
   DictlayerDataDict'
     { _dddSource :: !(Maybe DictlayerDataDictSource)
-    , _dddWords  :: !(Maybe [DictlayerDataDictWordsItem])
+    , _dddWords :: !(Maybe [DictlayerDataDictWordsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6698,13 +6698,13 @@ instance ToJSON DictlayerDataDict where
 data DictlayerDataDictWordsItemSensesItem =
   DictlayerDataDictWordsItemSensesItem'
     { _dddwisiPronunciationURL :: !(Maybe Text)
-    , _dddwisiConjugations     :: !(Maybe [DictlayerDataDictWordsItemSensesItemConjugationsItem])
-    , _dddwisiPronunciation    :: !(Maybe Text)
-    , _dddwisiSynonyms         :: !(Maybe [DictlayerDataDictWordsItemSensesItemSynonymsItem])
-    , _dddwisiSource           :: !(Maybe DictlayerDataDictWordsItemSensesItemSource)
-    , _dddwisiPartOfSpeech     :: !(Maybe Text)
-    , _dddwisiDefinitions      :: !(Maybe [DictlayerDataDictWordsItemSensesItemDefinitionsItem])
-    , _dddwisiSyllabification  :: !(Maybe Text)
+    , _dddwisiConjugations :: !(Maybe [DictlayerDataDictWordsItemSensesItemConjugationsItem])
+    , _dddwisiPronunciation :: !(Maybe Text)
+    , _dddwisiSynonyms :: !(Maybe [DictlayerDataDictWordsItemSensesItemSynonymsItem])
+    , _dddwisiSource :: !(Maybe DictlayerDataDictWordsItemSensesItemSource)
+    , _dddwisiPartOfSpeech :: !(Maybe Text)
+    , _dddwisiDefinitions :: !(Maybe [DictlayerDataDictWordsItemSensesItemDefinitionsItem])
+    , _dddwisiSyllabification :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6861,7 +6861,7 @@ instance ToJSON VolumeRecommendedInfo where
 -- /See:/ 'offers' smart constructor.
 data Offers =
   Offers'
-    { _oKind  :: !Text
+    { _oKind :: !Text
     , _oItems :: !(Maybe [OffersItemsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6907,9 +6907,9 @@ instance ToJSON Offers where
 -- /See:/ 'discoveryclusters' smart constructor.
 data Discoveryclusters =
   Discoveryclusters'
-    { _dKind          :: !Text
+    { _dKind :: !Text
     , _dTotalClusters :: !(Maybe (Textual Int32))
-    , _dClusters      :: !(Maybe [DiscoveryclustersClustersItem])
+    , _dClusters :: !(Maybe [DiscoveryclustersClustersItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6970,10 +6970,10 @@ instance ToJSON Discoveryclusters where
 -- /See:/ 'volumeseriesInfoVolumeSeriesItem' smart constructor.
 data VolumeseriesInfoVolumeSeriesItem =
   VolumeseriesInfoVolumeSeriesItem'
-    { _vivsiSeriesId       :: !(Maybe Text)
+    { _vivsiSeriesId :: !(Maybe Text)
     , _vivsiSeriesBookType :: !(Maybe Text)
-    , _vivsiOrderNumber    :: !(Maybe (Textual Int32))
-    , _vivsiIssue          :: !(Maybe [VolumeseriesInfoVolumeSeriesItemIssueItem])
+    , _vivsiOrderNumber :: !(Maybe (Textual Int32))
+    , _vivsiIssue :: !(Maybe [VolumeseriesInfoVolumeSeriesItemIssueItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7053,7 +7053,7 @@ instance ToJSON VolumeseriesInfoVolumeSeriesItem
 data UserSettingsNotesExport =
   UserSettingsNotesExport'
     { _usneFolderName :: !(Maybe Text)
-    , _usneIsEnabled  :: !(Maybe Bool)
+    , _usneIsEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7100,16 +7100,16 @@ instance ToJSON UserSettingsNotesExport where
 data ConcurrentAccessRestriction =
   ConcurrentAccessRestriction'
     { _carMaxConcurrentDevices :: !(Maybe (Textual Int32))
-    , _carSignature            :: !(Maybe Text)
-    , _carTimeWindowSeconds    :: !(Maybe (Textual Int32))
-    , _carKind                 :: !Text
-    , _carReasonCode           :: !(Maybe Text)
-    , _carVolumeId             :: !(Maybe Text)
-    , _carRestricted           :: !(Maybe Bool)
-    , _carSource               :: !(Maybe Text)
-    , _carDeviceAllowed        :: !(Maybe Bool)
-    , _carMessage              :: !(Maybe Text)
-    , _carNonce                :: !(Maybe Text)
+    , _carSignature :: !(Maybe Text)
+    , _carTimeWindowSeconds :: !(Maybe (Textual Int32))
+    , _carKind :: !Text
+    , _carReasonCode :: !(Maybe Text)
+    , _carVolumeId :: !(Maybe Text)
+    , _carRestricted :: !(Maybe Bool)
+    , _carSource :: !(Maybe Text)
+    , _carDeviceAllowed :: !(Maybe Bool)
+    , _carMessage :: !(Maybe Text)
+    , _carNonce :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7260,8 +7260,8 @@ instance ToJSON ConcurrentAccessRestriction where
 data Volumes =
   Volumes'
     { _v1TotalItems :: !(Maybe (Textual Int32))
-    , _v1Kind       :: !Text
-    , _v1Items      :: !(Maybe [Volume])
+    , _v1Kind :: !Text
+    , _v1Items :: !(Maybe [Volume])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7362,7 +7362,7 @@ instance ToJSON
 -- /See:/ 'bookshelves' smart constructor.
 data Bookshelves =
   Bookshelves'
-    { _booKind  :: !Text
+    { _booKind :: !Text
     , _booItems :: !(Maybe [Bookshelf])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7411,7 +7411,7 @@ instance ToJSON Bookshelves where
 -- /See:/ 'dictlayerDataDictSource' smart constructor.
 data DictlayerDataDictSource =
   DictlayerDataDictSource'
-    { _dddsURL         :: !(Maybe Text)
+    { _dddsURL :: !(Maybe Text)
     , _dddsAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7456,7 +7456,7 @@ instance ToJSON DictlayerDataDictSource where
 -- /See:/ 'downloadAccesses' smart constructor.
 data DownloadAccesses =
   DownloadAccesses'
-    { _daKind               :: !Text
+    { _daKind :: !Text
     , _daDownloadAccessList :: !(Maybe [DownloadAccessRestriction])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7507,7 +7507,7 @@ instance ToJSON DownloadAccesses where
 -- /See:/ 'geolayerDataGeoViewportHi' smart constructor.
 data GeolayerDataGeoViewportHi =
   GeolayerDataGeoViewportHi'
-    { _gdgvhLatitude  :: !(Maybe (Textual Double))
+    { _gdgvhLatitude :: !(Maybe (Textual Double))
     , _gdgvhLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7558,34 +7558,34 @@ instance ToJSON GeolayerDataGeoViewportHi where
 -- /See:/ 'volumeVolumeInfo' smart constructor.
 data VolumeVolumeInfo =
   VolumeVolumeInfo'
-    { _vviImageLinks          :: !(Maybe VolumeVolumeInfoImageLinks)
+    { _vviImageLinks :: !(Maybe VolumeVolumeInfoImageLinks)
     , _vviPanelizationSummary :: !(Maybe VolumeVolumeInfoPanelizationSummary)
-    , _vviAverageRating       :: !(Maybe (Textual Double))
-    , _vviRatingsCount        :: !(Maybe (Textual Int32))
+    , _vviAverageRating :: !(Maybe (Textual Double))
+    , _vviRatingsCount :: !(Maybe (Textual Int32))
     , _vviCanonicalVolumeLink :: !(Maybe Text)
-    , _vviReadingModes        :: !(Maybe JSONValue)
+    , _vviReadingModes :: !(Maybe JSONValue)
     , _vviIndustryIdentifiers :: !(Maybe [VolumeVolumeInfoIndustryIdentifiersItem])
-    , _vviSeriesInfo          :: !(Maybe VolumeseriesInfo)
-    , _vviPrintedPageCount    :: !(Maybe (Textual Int32))
-    , _vviMainCategory        :: !(Maybe Text)
-    , _vviContentVersion      :: !(Maybe Text)
-    , _vviSamplePageCount     :: !(Maybe (Textual Int32))
-    , _vviCategories          :: !(Maybe [Text])
-    , _vviAuthors             :: !(Maybe [Text])
-    , _vviComicsContent       :: !(Maybe Bool)
-    , _vviAllowAnonLogging    :: !(Maybe Bool)
-    , _vviSubtitle            :: !(Maybe Text)
-    , _vviPublishedDate       :: !(Maybe Text)
-    , _vviMaturityRating      :: !(Maybe Text)
-    , _vviPreviewLink         :: !(Maybe Text)
-    , _vviLanguage            :: !(Maybe Text)
-    , _vviTitle               :: !(Maybe Text)
-    , _vviPageCount           :: !(Maybe (Textual Int32))
-    , _vviDimensions          :: !(Maybe VolumeVolumeInfoDimensions)
-    , _vviInfoLink            :: !(Maybe Text)
-    , _vviPublisher           :: !(Maybe Text)
-    , _vviDescription         :: !(Maybe Text)
-    , _vviPrintType           :: !(Maybe Text)
+    , _vviSeriesInfo :: !(Maybe VolumeseriesInfo)
+    , _vviPrintedPageCount :: !(Maybe (Textual Int32))
+    , _vviMainCategory :: !(Maybe Text)
+    , _vviContentVersion :: !(Maybe Text)
+    , _vviSamplePageCount :: !(Maybe (Textual Int32))
+    , _vviCategories :: !(Maybe [Text])
+    , _vviAuthors :: !(Maybe [Text])
+    , _vviComicsContent :: !(Maybe Bool)
+    , _vviAllowAnonLogging :: !(Maybe Bool)
+    , _vviSubtitle :: !(Maybe Text)
+    , _vviPublishedDate :: !(Maybe Text)
+    , _vviMaturityRating :: !(Maybe Text)
+    , _vviPreviewLink :: !(Maybe Text)
+    , _vviLanguage :: !(Maybe Text)
+    , _vviTitle :: !(Maybe Text)
+    , _vviPageCount :: !(Maybe (Textual Int32))
+    , _vviDimensions :: !(Maybe VolumeVolumeInfoDimensions)
+    , _vviInfoLink :: !(Maybe Text)
+    , _vviPublisher :: !(Maybe Text)
+    , _vviDescription :: !(Maybe Text)
+    , _vviPrintType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7935,10 +7935,10 @@ instance ToJSON VolumeVolumeInfo where
 -- /See:/ 'metadataItemsItem' smart constructor.
 data MetadataItemsItem =
   MetadataItemsItem'
-    { _miiSize         :: !(Maybe (Textual Int64))
-    , _miiVersion      :: !(Maybe (Textual Int64))
-    , _miiLanguage     :: !(Maybe Text)
-    , _miiDownloadURL  :: !(Maybe Text)
+    { _miiSize :: !(Maybe (Textual Int64))
+    , _miiVersion :: !(Maybe (Textual Int64))
+    , _miiLanguage :: !(Maybe Text)
+    , _miiDownloadURL :: !(Maybe Text)
     , _miiEncryptedKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8017,7 +8017,7 @@ instance ToJSON MetadataItemsItem where
 -- /See:/ 'dictlayerDataDictWordsItemSensesItemSource' smart constructor.
 data DictlayerDataDictWordsItemSensesItemSource =
   DictlayerDataDictWordsItemSensesItemSource'
-    { _dddwisisURL         :: !(Maybe Text)
+    { _dddwisisURL :: !(Maybe Text)
     , _dddwisisAttribution :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8071,7 +8071,7 @@ instance ToJSON
 -- /See:/ 'volumeSaleInfoOffersItemRetailPrice' smart constructor.
 data VolumeSaleInfoOffersItemRetailPrice =
   VolumeSaleInfoOffersItemRetailPrice'
-    { _vsioirpCurrencyCode   :: !(Maybe Text)
+    { _vsioirpCurrencyCode :: !(Maybe Text)
     , _vsioirpAmountInMicros :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8123,8 +8123,8 @@ instance ToJSON VolumeSaleInfoOffersItemRetailPrice
 -- /See:/ 'volumeUserInfoFamilySharing' smart constructor.
 data VolumeUserInfoFamilySharing =
   VolumeUserInfoFamilySharing'
-    { _vuifsFamilyRole             :: !(Maybe Text)
-    , _vuifsIsSharingAllowed       :: !(Maybe Bool)
+    { _vuifsFamilyRole :: !(Maybe Text)
+    , _vuifsIsSharingAllowed :: !(Maybe Bool)
     , _vuifsIsSharingDisabledByFop :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8234,7 +8234,7 @@ instance ToJSON
 data VolumeVolumeInfoIndustryIdentifiersItem =
   VolumeVolumeInfoIndustryIdentifiersItem'
     { _vviiiiIdentifier :: !(Maybe Text)
-    , _vviiiiType       :: !(Maybe Text)
+    , _vviiiiType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8287,9 +8287,9 @@ instance ToJSON
 -- /See:/ 'booksAnnotationsRange' smart constructor.
 data BooksAnnotationsRange =
   BooksAnnotationsRange'
-    { _barStartOffSet   :: !(Maybe Text)
-    , _barEndOffSet     :: !(Maybe Text)
-    , _barEndPosition   :: !(Maybe Text)
+    { _barStartOffSet :: !(Maybe Text)
+    , _barEndOffSet :: !(Maybe Text)
+    , _barEndPosition :: !(Maybe Text)
     , _barStartPosition :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8363,8 +8363,8 @@ instance ToJSON BooksAnnotationsRange where
 data Layersummaries =
   Layersummaries'
     { _layTotalItems :: !(Maybe (Textual Int32))
-    , _layKind       :: !Text
-    , _layItems      :: !(Maybe [Layersummary])
+    , _layKind :: !Text
+    , _layItems :: !(Maybe [Layersummary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

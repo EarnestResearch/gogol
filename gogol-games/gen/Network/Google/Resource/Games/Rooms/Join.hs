@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Rooms.Join
     , rjLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.join@ method which the
 -- 'RoomsJoin' request conforms to.
@@ -60,8 +60,8 @@ type RoomsJoinResource =
 -- /See:/ 'roomsJoin' smart constructor.
 data RoomsJoin =
   RoomsJoin'
-    { _rjPayload  :: !RoomJoinRequest
-    , _rjRoomId   :: !Text
+    { _rjPayload :: !RoomJoinRequest
+    , _rjRoomId :: !Text
     , _rjLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -16,7 +16,7 @@
 --
 module Network.Google.Poly.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The type of image error encountered. Optional for older image errors.
 data ImageErrorCode

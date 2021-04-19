@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.OperatingSystemVersions.List
     , osvlProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.operatingSystemVersions.list@ method which the
 -- 'OperatingSystemVersionsList' request conforms to.

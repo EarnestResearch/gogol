@@ -17,20 +17,20 @@
 --
 module Network.Google.Fonts.Types.Product where
 
-import           Network.Google.Fonts.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Fonts.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'webfont' smart constructor.
 data Webfont =
   Webfont'
-    { _wVariants     :: !(Maybe [Text])
-    , _wKind         :: !Text
-    , _wCategory     :: !(Maybe Text)
-    , _wFamily       :: !(Maybe Text)
-    , _wVersion      :: !(Maybe Text)
-    , _wFiles        :: !(Maybe WebfontFiles)
-    , _wSubSets      :: !(Maybe [Text])
+    { _wVariants :: !(Maybe [Text])
+    , _wKind :: !Text
+    , _wCategory :: !(Maybe Text)
+    , _wFamily :: !(Maybe Text)
+    , _wVersion :: !(Maybe Text)
+    , _wFiles :: !(Maybe WebfontFiles)
+    , _wSubSets :: !(Maybe [Text])
     , _wLastModified :: !(Maybe Date')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -145,7 +145,7 @@ instance ToJSON Webfont where
 -- /See:/ 'webfontList' smart constructor.
 data WebfontList =
   WebfontList'
-    { _wlKind  :: !Text
+    { _wlKind :: !Text
     , _wlItems :: !(Maybe [Webfont])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

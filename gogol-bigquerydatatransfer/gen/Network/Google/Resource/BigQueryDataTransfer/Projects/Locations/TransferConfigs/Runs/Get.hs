@@ -41,8 +41,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferC
     , pltcrgCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.locations.transferConfigs.runs.get@ method which the
 -- 'ProjectsLocationsTransferConfigsRunsGet' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsLocationsTransferConfigsRunsGetResource
 -- /See:/ 'projectsLocationsTransferConfigsRunsGet' smart constructor.
 data ProjectsLocationsTransferConfigsRunsGet =
   ProjectsLocationsTransferConfigsRunsGet'
-    { _pltcrgXgafv          :: !(Maybe Xgafv)
+    { _pltcrgXgafv :: !(Maybe Xgafv)
     , _pltcrgUploadProtocol :: !(Maybe Text)
-    , _pltcrgAccessToken    :: !(Maybe Text)
-    , _pltcrgUploadType     :: !(Maybe Text)
-    , _pltcrgName           :: !Text
-    , _pltcrgCallback       :: !(Maybe Text)
+    , _pltcrgAccessToken :: !(Maybe Text)
+    , _pltcrgUploadType :: !(Maybe Text)
+    , _pltcrgName :: !Text
+    , _pltcrgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

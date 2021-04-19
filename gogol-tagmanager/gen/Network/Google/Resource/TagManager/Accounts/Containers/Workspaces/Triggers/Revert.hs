@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Trigger
     , acwtrFingerprint
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.triggers.revert@ method which the
 -- 'AccountsContainersWorkspacesTriggersRevert' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersWorkspacesTriggersRevertResource
 -- /See:/ 'accountsContainersWorkspacesTriggersRevert' smart constructor.
 data AccountsContainersWorkspacesTriggersRevert =
   AccountsContainersWorkspacesTriggersRevert'
-    { _acwtrPath        :: !Text
+    { _acwtrPath :: !Text
     , _acwtrFingerprint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -45,8 +45,8 @@ module Network.Google.Resource.DLP.Organizations.DeidentifyTemplates.Create
     , odtcCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.deidentifyTemplates.create@ method which the
 -- 'OrganizationsDeidentifyTemplatesCreate' request conforms to.
@@ -72,13 +72,13 @@ type OrganizationsDeidentifyTemplatesCreateResource =
 -- /See:/ 'organizationsDeidentifyTemplatesCreate' smart constructor.
 data OrganizationsDeidentifyTemplatesCreate =
   OrganizationsDeidentifyTemplatesCreate'
-    { _odtcParent         :: !Text
-    , _odtcXgafv          :: !(Maybe Xgafv)
+    { _odtcParent :: !Text
+    , _odtcXgafv :: !(Maybe Xgafv)
     , _odtcUploadProtocol :: !(Maybe Text)
-    , _odtcAccessToken    :: !(Maybe Text)
-    , _odtcUploadType     :: !(Maybe Text)
-    , _odtcPayload        :: !GooglePrivacyDlpV2CreateDeidentifyTemplateRequest
-    , _odtcCallback       :: !(Maybe Text)
+    , _odtcAccessToken :: !(Maybe Text)
+    , _odtcUploadType :: !(Maybe Text)
+    , _odtcPayload :: !GooglePrivacyDlpV2CreateDeidentifyTemplateRequest
+    , _odtcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

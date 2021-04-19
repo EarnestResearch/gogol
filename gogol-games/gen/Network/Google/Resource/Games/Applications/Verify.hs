@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Applications.Verify
     , avApplicationId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.applications.verify@ method which the
 -- 'ApplicationsVerify' request conforms to.

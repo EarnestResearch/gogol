@@ -84,10 +84,10 @@ module Network.Google.DigitalAssetLinks
     , ciSha256Fingerprint
     ) where
 
-import           Network.Google.DigitalAssetLinks.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.DigitalAssetLinks.Assetlinks.Check
-import           Network.Google.Resource.DigitalAssetLinks.Statements.List
+import Network.Google.Prelude
+import Network.Google.DigitalAssetLinks.Types
+import Network.Google.Resource.DigitalAssetLinks.Assetlinks.Check
+import Network.Google.Resource.DigitalAssetLinks.Statements.List
 
 {- $resources
 TODO

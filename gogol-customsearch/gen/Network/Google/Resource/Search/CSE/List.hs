@@ -67,8 +67,8 @@ module Network.Google.Resource.Search.CSE.List
     , cselHighRange
     ) where
 
-import           Network.Google.CustomSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CustomSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @search.cse.list@ method which the
 -- 'CSEList' request conforms to.
@@ -145,35 +145,35 @@ data CSEList =
   CSEList'
     { _cselImgDominantColor :: !(Maybe CSEListImgDominantColor)
     , _cselSiteSearchFilter :: !(Maybe CSEListSiteSearchFilter)
-    , _cselC2coff           :: !(Maybe Text)
-    , _cselOrTerms          :: !(Maybe Text)
-    , _cselStart            :: !(Maybe (Textual Word32))
-    , _cselRights           :: !(Maybe Text)
-    , _cselExcludeTerms     :: !(Maybe Text)
-    , _cselNum              :: !(Textual Word32)
-    , _cselFileType         :: !(Maybe Text)
-    , _cselSearchType       :: !(Maybe CSEListSearchType)
-    , _cselLr               :: !(Maybe CSEListLr)
-    , _cselQ                :: !Text
-    , _cselGooglehost       :: !(Maybe Text)
-    , _cselRelatedSite      :: !(Maybe Text)
-    , _cselHl               :: !(Maybe Text)
-    , _cselSort             :: !(Maybe Text)
-    , _cselSiteSearch       :: !(Maybe Text)
-    , _cselFilter           :: !(Maybe CSEListFilter)
-    , _cselDateRestrict     :: !(Maybe Text)
-    , _cselLinkSite         :: !(Maybe Text)
-    , _cselLowRange         :: !(Maybe Text)
-    , _cselImgType          :: !(Maybe CSEListImgType)
-    , _cselGl               :: !(Maybe Text)
-    , _cselCx               :: !(Maybe Text)
-    , _cselImgColorType     :: !(Maybe CSEListImgColorType)
-    , _cselImgSize          :: !(Maybe CSEListImgSize)
-    , _cselExactTerms       :: !(Maybe Text)
-    , _cselCr               :: !(Maybe Text)
-    , _cselSafe             :: !CSEListSafe
-    , _cselHq               :: !(Maybe Text)
-    , _cselHighRange        :: !(Maybe Text)
+    , _cselC2coff :: !(Maybe Text)
+    , _cselOrTerms :: !(Maybe Text)
+    , _cselStart :: !(Maybe (Textual Word32))
+    , _cselRights :: !(Maybe Text)
+    , _cselExcludeTerms :: !(Maybe Text)
+    , _cselNum :: !(Textual Word32)
+    , _cselFileType :: !(Maybe Text)
+    , _cselSearchType :: !(Maybe CSEListSearchType)
+    , _cselLr :: !(Maybe CSEListLr)
+    , _cselQ :: !Text
+    , _cselGooglehost :: !(Maybe Text)
+    , _cselRelatedSite :: !(Maybe Text)
+    , _cselHl :: !(Maybe Text)
+    , _cselSort :: !(Maybe Text)
+    , _cselSiteSearch :: !(Maybe Text)
+    , _cselFilter :: !(Maybe CSEListFilter)
+    , _cselDateRestrict :: !(Maybe Text)
+    , _cselLinkSite :: !(Maybe Text)
+    , _cselLowRange :: !(Maybe Text)
+    , _cselImgType :: !(Maybe CSEListImgType)
+    , _cselGl :: !(Maybe Text)
+    , _cselCx :: !(Maybe Text)
+    , _cselImgColorType :: !(Maybe CSEListImgColorType)
+    , _cselImgSize :: !(Maybe CSEListImgSize)
+    , _cselExactTerms :: !(Maybe Text)
+    , _cselCr :: !(Maybe Text)
+    , _cselSafe :: !CSEListSafe
+    , _cselHq :: !(Maybe Text)
+    , _cselHighRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

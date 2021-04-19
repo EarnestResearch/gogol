@@ -41,8 +41,8 @@ module Network.Google.Resource.Monitoring.Projects.AlertPolicies.Delete
     , papdCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.alertPolicies.delete@ method which the
 -- 'ProjectsAlertPoliciesDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsAlertPoliciesDeleteResource =
 -- /See:/ 'projectsAlertPoliciesDelete' smart constructor.
 data ProjectsAlertPoliciesDelete =
   ProjectsAlertPoliciesDelete'
-    { _papdXgafv          :: !(Maybe Xgafv)
+    { _papdXgafv :: !(Maybe Xgafv)
     , _papdUploadProtocol :: !(Maybe Text)
-    , _papdAccessToken    :: !(Maybe Text)
-    , _papdUploadType     :: !(Maybe Text)
-    , _papdName           :: !Text
-    , _papdCallback       :: !(Maybe Text)
+    , _papdAccessToken :: !(Maybe Text)
+    , _papdUploadType :: !(Maybe Text)
+    , _papdName :: !Text
+    , _papdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

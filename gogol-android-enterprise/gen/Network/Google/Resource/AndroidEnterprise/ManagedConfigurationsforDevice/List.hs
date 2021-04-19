@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforDevice.
     , mcdlDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsfordevice.list@ method which the
 -- 'ManagedConfigurationsforDeviceList' request conforms to.
@@ -65,8 +65,8 @@ type ManagedConfigurationsforDeviceListResource =
 data ManagedConfigurationsforDeviceList =
   ManagedConfigurationsforDeviceList'
     { _mcdlEnterpriseId :: !Text
-    , _mcdlUserId       :: !Text
-    , _mcdlDeviceId     :: !Text
+    , _mcdlUserId :: !Text
+    , _mcdlDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

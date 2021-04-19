@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Achievements.Reset
     , arAchievementId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.achievements.reset@ method which the
 -- 'AchievementsReset' request conforms to.

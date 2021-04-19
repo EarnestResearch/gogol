@@ -43,8 +43,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Domains.Update
     , sduCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.domains.update@ method which the
 -- 'SitesDomainsUpdate' request conforms to.
@@ -65,13 +65,13 @@ type SitesDomainsUpdateResource =
 -- /See:/ 'sitesDomainsUpdate' smart constructor.
 data SitesDomainsUpdate =
   SitesDomainsUpdate'
-    { _sduXgafv          :: !(Maybe Xgafv)
+    { _sduXgafv :: !(Maybe Xgafv)
     , _sduUploadProtocol :: !(Maybe Text)
-    , _sduAccessToken    :: !(Maybe Text)
-    , _sduUploadType     :: !(Maybe Text)
-    , _sduPayload        :: !Domain
-    , _sduName           :: !Text
-    , _sduCallback       :: !(Maybe Text)
+    , _sduAccessToken :: !(Maybe Text)
+    , _sduUploadType :: !(Maybe Text)
+    , _sduPayload :: !Domain
+    , _sduName :: !Text
+    , _sduCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

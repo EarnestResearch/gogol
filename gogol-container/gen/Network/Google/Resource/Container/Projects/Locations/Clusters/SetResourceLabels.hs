@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.SetResource
     , plcsrlCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.setResourceLabels@ method which the
 -- 'ProjectsLocationsClustersSetResourceLabels' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersSetResourceLabelsResource
 -- /See:/ 'projectsLocationsClustersSetResourceLabels' smart constructor.
 data ProjectsLocationsClustersSetResourceLabels =
   ProjectsLocationsClustersSetResourceLabels'
-    { _plcsrlXgafv          :: !(Maybe Xgafv)
+    { _plcsrlXgafv :: !(Maybe Xgafv)
     , _plcsrlUploadProtocol :: !(Maybe Text)
-    , _plcsrlAccessToken    :: !(Maybe Text)
-    , _plcsrlUploadType     :: !(Maybe Text)
-    , _plcsrlPayload        :: !SetLabelsRequest
-    , _plcsrlName           :: !Text
-    , _plcsrlCallback       :: !(Maybe Text)
+    , _plcsrlAccessToken :: !(Maybe Text)
+    , _plcsrlUploadType :: !(Maybe Text)
+    , _plcsrlPayload :: !SetLabelsRequest
+    , _plcsrlName :: !Text
+    , _plcsrlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

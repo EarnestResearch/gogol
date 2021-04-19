@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.Files.List
     , flMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.files.list@ method which the
 -- 'FilesList' request conforms to.
@@ -64,11 +64,11 @@ type FilesListResource =
 -- /See:/ 'filesList' smart constructor.
 data FilesList =
   FilesList'
-    { _flProFileId  :: !(Textual Int64)
-    , _flSortOrder  :: !FilesListSortOrder
-    , _flScope      :: !FilesListScope
-    , _flPageToken  :: !(Maybe Text)
-    , _flSortField  :: !FilesListSortField
+    { _flProFileId :: !(Textual Int64)
+    , _flSortOrder :: !FilesListSortOrder
+    , _flScope :: !FilesListScope
+    , _flPageToken :: !(Maybe Text)
+    , _flSortField :: !FilesListSortField
     , _flMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

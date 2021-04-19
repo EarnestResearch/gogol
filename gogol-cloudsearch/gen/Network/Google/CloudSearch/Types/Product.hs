@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudSearch.Types.Product where
 
-import           Network.Google.CloudSearch.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types.Sum
+import Network.Google.Prelude
 
 -- | Gmail Folder restricts (i.e. in Drafts\/Sent\/Chats\/User Generated
 -- Labels).
@@ -58,10 +58,10 @@ instance ToJSON GmailFolderRestrict where
 -- /See:/ 'itemContent' smart constructor.
 data ItemContent =
   ItemContent'
-    { _icHash           :: !(Maybe Text)
-    , _icContentFormat  :: !(Maybe ItemContentContentFormat)
+    { _icHash :: !(Maybe Text)
+    , _icContentFormat :: !(Maybe ItemContentContentFormat)
     , _icContentDataRef :: !(Maybe UploadItemRef)
-    , _icInlineContent  :: !(Maybe Bytes)
+    , _icInlineContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -169,8 +169,8 @@ instance ToJSON Photo where
 data SearchItemsByViewURLRequest =
   SearchItemsByViewURLRequest'
     { _sibvurDebugOptions :: !(Maybe DebugOptions)
-    , _sibvurPageToken    :: !(Maybe Text)
-    , _sibvurViewURL      :: !(Maybe Text)
+    , _sibvurPageToken :: !(Maybe Text)
+    , _sibvurViewURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -235,13 +235,13 @@ instance ToJSON SearchItemsByViewURLRequest where
 data SearchApplication =
   SearchApplication'
     { _saDataSourceRestrictions :: !(Maybe [DataSourceRestriction])
-    , _saOperationIds           :: !(Maybe [Text])
-    , _saDefaultFacetOptions    :: !(Maybe [FacetOptions])
-    , _saScoringConfig          :: !(Maybe ScoringConfig)
-    , _saName                   :: !(Maybe Text)
-    , _saSourceConfig           :: !(Maybe [SourceConfig])
-    , _saDisplayName            :: !(Maybe Text)
-    , _saDefaultSortOptions     :: !(Maybe SortOptions)
+    , _saOperationIds :: !(Maybe [Text])
+    , _saDefaultFacetOptions :: !(Maybe [FacetOptions])
+    , _saScoringConfig :: !(Maybe ScoringConfig)
+    , _saName :: !(Maybe Text)
+    , _saSourceConfig :: !(Maybe [SourceConfig])
+    , _saDisplayName :: !(Maybe Text)
+    , _saDefaultSortOptions :: !(Maybe SortOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -456,7 +456,7 @@ instance ToJSON BooleanOperatorOptions where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -525,8 +525,8 @@ instance ToJSON Status where
 -- /See:/ 'enumPropertyOptions' smart constructor.
 data EnumPropertyOptions =
   EnumPropertyOptions'
-    { _epoPossibleValues  :: !(Maybe [EnumValuePair])
-    , _epoOrderedRanking  :: !(Maybe EnumPropertyOptionsOrderedRanking)
+    { _epoPossibleValues :: !(Maybe [EnumValuePair])
+    , _epoOrderedRanking :: !(Maybe EnumPropertyOptionsOrderedRanking)
     , _epoOperatorOptions :: !(Maybe EnumOperatorOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -636,8 +636,8 @@ instance ToJSON GmailActionRestrict where
 -- /See:/ 'unreserveItemsRequest' smart constructor.
 data UnreserveItemsRequest =
   UnreserveItemsRequest'
-    { _uirQueue         :: !(Maybe Text)
-    , _uirDebugOptions  :: !(Maybe DebugOptions)
+    { _uirQueue :: !(Maybe Text)
+    , _uirDebugOptions :: !(Maybe DebugOptions)
     , _uirConnectorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -702,8 +702,8 @@ instance ToJSON UnreserveItemsRequest where
 -- /See:/ 'dateOperatorOptions' smart constructor.
 data DateOperatorOptions =
   DateOperatorOptions'
-    { _dooOperatorName            :: !(Maybe Text)
-    , _dooLessThanOperatorName    :: !(Maybe Text)
+    { _dooOperatorName :: !(Maybe Text)
+    , _dooLessThanOperatorName :: !(Maybe Text)
     , _dooGreaterThanOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -830,7 +830,7 @@ instance ToJSON GetDataSourceIndexStatsResponse where
 -- /See:/ 'objectDisplayOptions' smart constructor.
 data ObjectDisplayOptions =
   ObjectDisplayOptions'
-    { _odoMetalines          :: !(Maybe [Metaline])
+    { _odoMetalines :: !(Maybe [Metaline])
     , _odoObjectDisplayLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -929,7 +929,7 @@ instance ToJSON QueryItem where
 -- /See:/ 'listUnmAppedIdentitiesResponse' smart constructor.
 data ListUnmAppedIdentitiesResponse =
   ListUnmAppedIdentitiesResponse'
-    { _luairNextPageToken      :: !(Maybe Text)
+    { _luairNextPageToken :: !(Maybe Text)
     , _luairUnmAppedIdentities :: !(Maybe [UnmAppedIdentity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -984,8 +984,8 @@ instance ToJSON ListUnmAppedIdentitiesResponse where
 -- /See:/ 'deleteQueueItemsRequest' smart constructor.
 data DeleteQueueItemsRequest =
   DeleteQueueItemsRequest'
-    { _dqirQueue         :: !(Maybe Text)
-    , _dqirDebugOptions  :: !(Maybe DebugOptions)
+    { _dqirQueue :: !(Maybe Text)
+    , _dqirDebugOptions :: !(Maybe DebugOptions)
     , _dqirConnectorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1049,12 +1049,12 @@ instance ToJSON DeleteQueueItemsRequest where
 -- /See:/ 'searchResult' smart constructor.
 data SearchResult =
   SearchResult'
-    { _srDebugInfo        :: !(Maybe ResultDebugInfo)
-    , _srSnippet          :: !(Maybe Snippet)
-    , _srURL              :: !(Maybe Text)
+    { _srDebugInfo :: !(Maybe ResultDebugInfo)
+    , _srSnippet :: !(Maybe Snippet)
+    , _srURL :: !(Maybe Text)
     , _srClusteredResults :: !(Maybe [SearchResult])
-    , _srMetadata         :: !(Maybe Metadata)
-    , _srTitle            :: !(Maybe Text)
+    , _srMetadata :: !(Maybe Metadata)
+    , _srTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1217,10 +1217,10 @@ instance ToJSON PeopleSuggestion where
 -- /See:/ 'querySource' smart constructor.
 data QuerySource =
   QuerySource'
-    { _qsShortName   :: !(Maybe Text)
+    { _qsShortName :: !(Maybe Text)
     , _qsDisplayName :: !(Maybe Text)
-    , _qsSource      :: !(Maybe Source)
-    , _qsOperators   :: !(Maybe [QueryOperator])
+    , _qsSource :: !(Maybe Source)
+    , _qsOperators :: !(Maybe [QueryOperator])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1335,8 +1335,8 @@ instance ToJSON SuggestResponse where
 data RepositoryError =
   RepositoryError'
     { _reHTTPStatusCode :: !(Maybe (Textual Int32))
-    , _reType           :: !(Maybe RepositoryErrorType)
-    , _reErrorMessage   :: !(Maybe Text)
+    , _reType :: !(Maybe RepositoryErrorType)
+    , _reErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1397,7 +1397,7 @@ instance ToJSON RepositoryError where
 data HTMLPropertyOptions =
   HTMLPropertyOptions'
     { _hpoRetrievalImportance :: !(Maybe RetrievalImportance)
-    , _hpoOperatorOptions     :: !(Maybe HTMLOperatorOptions)
+    , _hpoOperatorOptions :: !(Maybe HTMLOperatorOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1450,21 +1450,21 @@ instance ToJSON HTMLPropertyOptions where
 -- /See:/ 'propertyDefinition' smart constructor.
 data PropertyDefinition =
   PropertyDefinition'
-    { _pdEnumPropertyOptions      :: !(Maybe EnumPropertyOptions)
-    , _pdHTMLPropertyOptions      :: !(Maybe HTMLPropertyOptions)
-    , _pdObjectPropertyOptions    :: !(Maybe ObjectPropertyOptions)
-    , _pdIsReturnable             :: !(Maybe Bool)
+    { _pdEnumPropertyOptions :: !(Maybe EnumPropertyOptions)
+    , _pdHTMLPropertyOptions :: !(Maybe HTMLPropertyOptions)
+    , _pdObjectPropertyOptions :: !(Maybe ObjectPropertyOptions)
+    , _pdIsReturnable :: !(Maybe Bool)
     , _pdTimestampPropertyOptions :: !(Maybe TimestampPropertyOptions)
-    , _pdIntegerPropertyOptions   :: !(Maybe IntegerPropertyOptions)
-    , _pdName                     :: !(Maybe Text)
-    , _pdIsRepeatable             :: !(Maybe Bool)
-    , _pdDoublePropertyOptions    :: !(Maybe DoublePropertyOptions)
-    , _pdDisplayOptions           :: !(Maybe PropertyDisplayOptions)
-    , _pdTextPropertyOptions      :: !(Maybe TextPropertyOptions)
-    , _pdIsSortable               :: !(Maybe Bool)
-    , _pdIsFacetable              :: !(Maybe Bool)
-    , _pdBooleanPropertyOptions   :: !(Maybe BooleanPropertyOptions)
-    , _pdDatePropertyOptions      :: !(Maybe DatePropertyOptions)
+    , _pdIntegerPropertyOptions :: !(Maybe IntegerPropertyOptions)
+    , _pdName :: !(Maybe Text)
+    , _pdIsRepeatable :: !(Maybe Bool)
+    , _pdDoublePropertyOptions :: !(Maybe DoublePropertyOptions)
+    , _pdDisplayOptions :: !(Maybe PropertyDisplayOptions)
+    , _pdTextPropertyOptions :: !(Maybe TextPropertyOptions)
+    , _pdIsSortable :: !(Maybe Bool)
+    , _pdIsFacetable :: !(Maybe Bool)
+    , _pdBooleanPropertyOptions :: !(Maybe BooleanPropertyOptions)
+    , _pdDatePropertyOptions :: !(Maybe DatePropertyOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1682,7 +1682,7 @@ instance ToJSON PropertyDefinition where
 -- /See:/ 'sortOptions' smart constructor.
 data SortOptions =
   SortOptions'
-    { _soSortOrder    :: !(Maybe SortOptionsSortOrder)
+    { _soSortOrder :: !(Maybe SortOptionsSortOrder)
     , _soOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1777,17 +1777,17 @@ instance ToJSON ObjectPropertyOptions where
 -- /See:/ 'searchResponse' smart constructor.
 data SearchResponse =
   SearchResponse'
-    { _sSpellResults        :: !(Maybe [SpellResult])
-    , _sFacetResults        :: !(Maybe [FacetResult])
-    , _sDebugInfo           :: !(Maybe ResponseDebugInfo)
-    , _sResults             :: !(Maybe [SearchResult])
-    , _sHasMoreResults      :: !(Maybe Bool)
-    , _sResultCounts        :: !(Maybe ResultCounts)
-    , _sResultCountExact    :: !(Maybe (Textual Int64))
+    { _sSpellResults :: !(Maybe [SpellResult])
+    , _sFacetResults :: !(Maybe [FacetResult])
+    , _sDebugInfo :: !(Maybe ResponseDebugInfo)
+    , _sResults :: !(Maybe [SearchResult])
+    , _sHasMoreResults :: !(Maybe Bool)
+    , _sResultCounts :: !(Maybe ResultCounts)
+    , _sResultCountExact :: !(Maybe (Textual Int64))
     , _sResultCountEstimate :: !(Maybe (Textual Int64))
     , _sQueryInterpretation :: !(Maybe QueryInterpretation)
-    , _sStructuredResults   :: !(Maybe [StructuredResult])
-    , _sErrorInfo           :: !(Maybe ErrorInfo)
+    , _sStructuredResults :: !(Maybe [StructuredResult])
+    , _sErrorInfo :: !(Maybe ErrorInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1949,9 +1949,9 @@ instance ToJSON SearchResponse where
 data SuggestResult =
   SuggestResult'
     { _sPeopleSuggestion :: !(Maybe PeopleSuggestion)
-    , _sQuerySuggestion  :: !(Maybe QuerySuggestion)
-    , _sSuggestedQuery   :: !(Maybe Text)
-    , _sSource           :: !(Maybe Source)
+    , _sQuerySuggestion :: !(Maybe QuerySuggestion)
+    , _sSuggestedQuery :: !(Maybe Text)
+    , _sSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2096,7 +2096,7 @@ instance ToJSON DriveLocationRestrict where
 data ListQuerySourcesResponse =
   ListQuerySourcesResponse'
     { _lqsrNextPageToken :: !(Maybe Text)
-    , _lqsrSources       :: !(Maybe [QuerySource])
+    , _lqsrSources :: !(Maybe [QuerySource])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2188,10 +2188,10 @@ instance ToJSON DoubleOperatorOptions where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2283,10 +2283,10 @@ instance ToJSON Operation where
 data Person =
   Person'
     { _pEmailAddresses :: !(Maybe [EmailAddress])
-    , _pPersonNames    :: !(Maybe [Name])
-    , _pPhotos         :: !(Maybe [Photo])
-    , _pName           :: !(Maybe Text)
-    , _pObfuscatedId   :: !(Maybe Text)
+    , _pPersonNames :: !(Maybe [Name])
+    , _pPhotos :: !(Maybe [Photo])
+    , _pName :: !(Maybe Text)
+    , _pObfuscatedId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2374,7 +2374,7 @@ instance ToJSON Person where
 -- /See:/ 'compositeFilter' smart constructor.
 data CompositeFilter =
   CompositeFilter'
-    { _cfSubFilters    :: !(Maybe [Filter])
+    { _cfSubFilters :: !(Maybe [Filter])
     , _cfLogicOperator :: !(Maybe CompositeFilterLogicOperator)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2500,7 +2500,7 @@ instance ToJSON DoubleValues where
 data Snippet =
   Snippet'
     { _sMatchRanges :: !(Maybe [MatchRange])
-    , _sSnippet     :: !(Maybe Text)
+    , _sSnippet :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2551,7 +2551,7 @@ instance ToJSON Snippet where
 -- /See:/ 'textOperatorOptions' smart constructor.
 data TextOperatorOptions =
   TextOperatorOptions'
-    { _tooOperatorName           :: !(Maybe Text)
+    { _tooOperatorName :: !(Maybe Text)
     , _tooExactMatchWithOperator :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2701,18 +2701,18 @@ instance ToJSON ResetSearchApplicationRequest where
 -- /See:/ 'itemMetadata' smart constructor.
 data ItemMetadata =
   ItemMetadata'
-    { _imSourceRepositoryURL   :: !(Maybe Text)
-    , _imHash                  :: !(Maybe Text)
-    , _imObjectType            :: !(Maybe Text)
-    , _imContainerName         :: !(Maybe Text)
-    , _imInteractions          :: !(Maybe [Interaction])
-    , _imMimeType              :: !(Maybe Text)
-    , _imUpdateTime            :: !(Maybe DateTime')
-    , _imKeywords              :: !(Maybe [Text])
-    , _imTitle                 :: !(Maybe Text)
-    , _imContentLanguage       :: !(Maybe Text)
+    { _imSourceRepositoryURL :: !(Maybe Text)
+    , _imHash :: !(Maybe Text)
+    , _imObjectType :: !(Maybe Text)
+    , _imContainerName :: !(Maybe Text)
+    , _imInteractions :: !(Maybe [Interaction])
+    , _imMimeType :: !(Maybe Text)
+    , _imUpdateTime :: !(Maybe DateTime')
+    , _imKeywords :: !(Maybe [Text])
+    , _imTitle :: !(Maybe Text)
+    , _imContentLanguage :: !(Maybe Text)
     , _imSearchQualityMetadata :: !(Maybe SearchQualityMetadata)
-    , _imCreateTime            :: !(Maybe DateTime')
+    , _imCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2894,7 +2894,7 @@ instance ToJSON ItemMetadata where
 data FilterOptions =
   FilterOptions'
     { _foObjectType :: !(Maybe Text)
-    , _foFilter     :: !(Maybe Filter)
+    , _foFilter :: !(Maybe Filter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2975,8 +2975,8 @@ instance ToJSON StructuredResult where
 data ProcessingError =
   ProcessingError'
     { _peFieldViolations :: !(Maybe [FieldViolation])
-    , _peCode            :: !(Maybe ProcessingErrorCode)
-    , _peErrorMessage    :: !(Maybe Text)
+    , _peCode :: !(Maybe ProcessingErrorCode)
+    , _peErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3038,7 +3038,7 @@ instance ToJSON ProcessingError where
 data ListItemNamesForUnmAppedIdentityResponse =
   ListItemNamesForUnmAppedIdentityResponse'
     { _linfuairNextPageToken :: !(Maybe Text)
-    , _linfuairItemNames     :: !(Maybe [Text])
+    , _linfuairItemNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3097,11 +3097,11 @@ instance ToJSON
 -- /See:/ 'itemACL' smart constructor.
 data ItemACL =
   ItemACL'
-    { _iaOwners             :: !(Maybe [Principal])
-    , _iaReaders            :: !(Maybe [Principal])
+    { _iaOwners :: !(Maybe [Principal])
+    , _iaReaders :: !(Maybe [Principal])
     , _iaACLInheritanceType :: !(Maybe ItemACLACLInheritanceType)
-    , _iaInheritACLFrom     :: !(Maybe Text)
-    , _iaDeniedReaders      :: !(Maybe [Principal])
+    , _iaInheritACLFrom :: !(Maybe Text)
+    , _iaDeniedReaders :: !(Maybe [Principal])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3212,12 +3212,12 @@ instance ToJSON ItemACL where
 -- /See:/ 'value' smart constructor.
 data Value =
   Value'
-    { _vIntegerValue   :: !(Maybe (Textual Int64))
+    { _vIntegerValue :: !(Maybe (Textual Int64))
     , _vTimestampValue :: !(Maybe DateTime')
-    , _vDoubleValue    :: !(Maybe (Textual Double))
-    , _vStringValue    :: !(Maybe Text)
-    , _vDateValue      :: !(Maybe Date)
-    , _vBooleanValue   :: !(Maybe Bool)
+    , _vDoubleValue :: !(Maybe (Textual Double))
+    , _vStringValue :: !(Maybe Text)
+    , _vDateValue :: !(Maybe Date)
+    , _vBooleanValue :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3306,7 +3306,7 @@ instance ToJSON Value where
 -- /See:/ 'fieldViolation' smart constructor.
 data FieldViolation =
   FieldViolation'
-    { _fvField       :: !(Maybe Text)
+    { _fvField :: !(Maybe Text)
     , _fvDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3396,8 +3396,8 @@ instance ToJSON Metaline where
 -- /See:/ 'facetBucket' smart constructor.
 data FacetBucket =
   FacetBucket'
-    { _fbValue      :: !(Maybe Value)
-    , _fbCount      :: !(Maybe (Textual Int32))
+    { _fbValue :: !(Maybe Value)
+    , _fbCount :: !(Maybe (Textual Int32))
     , _fbPercentage :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3495,8 +3495,8 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'timestampOperatorOptions' smart constructor.
 data TimestampOperatorOptions =
   TimestampOperatorOptions'
-    { _tOperatorName            :: !(Maybe Text)
-    , _tLessThanOperatorName    :: !(Maybe Text)
+    { _tOperatorName :: !(Maybe Text)
+    , _tLessThanOperatorName :: !(Maybe Text)
     , _tGreaterThanOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3585,8 +3585,8 @@ instance ToJSON TimestampOperatorOptions where
 -- /See:/ 'integerOperatorOptions' smart constructor.
 data IntegerOperatorOptions =
   IntegerOperatorOptions'
-    { _iooOperatorName            :: !(Maybe Text)
-    , _iooLessThanOperatorName    :: !(Maybe Text)
+    { _iooOperatorName :: !(Maybe Text)
+    , _iooLessThanOperatorName :: !(Maybe Text)
     , _iooGreaterThanOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3696,7 +3696,7 @@ instance ToJSON QuerySuggestion where
 -- /See:/ 'listSearchApplicationsResponse' smart constructor.
 data ListSearchApplicationsResponse =
   ListSearchApplicationsResponse'
-    { _lsarNextPageToken      :: !(Maybe Text)
+    { _lsarNextPageToken :: !(Maybe Text)
     , _lsarSearchApplications :: !(Maybe [SearchApplication])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3790,7 +3790,7 @@ instance ToJSON ResultDebugInfo where
 -- /See:/ 'itemCountByStatus' smart constructor.
 data ItemCountByStatus =
   ItemCountByStatus'
-    { _icbsCount      :: !(Maybe (Textual Int64))
+    { _icbsCount :: !(Maybe (Textual Int64))
     , _icbsStatusCode :: !(Maybe ItemCountByStatusStatusCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4025,9 +4025,9 @@ instance ToJSON DebugOptions where
 -- /See:/ 'integerPropertyOptions' smart constructor.
 data IntegerPropertyOptions =
   IntegerPropertyOptions'
-    { _ipoMaximumValue    :: !(Maybe (Textual Int64))
-    , _ipoOrderedRanking  :: !(Maybe IntegerPropertyOptionsOrderedRanking)
-    , _ipoMinimumValue    :: !(Maybe (Textual Int64))
+    { _ipoMaximumValue :: !(Maybe (Textual Int64))
+    , _ipoOrderedRanking :: !(Maybe IntegerPropertyOptionsOrderedRanking)
+    , _ipoMinimumValue :: !(Maybe (Textual Int64))
     , _ipoOperatorOptions :: !(Maybe IntegerOperatorOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4112,7 +4112,7 @@ instance ToJSON IntegerPropertyOptions where
 data DataSourceRestriction =
   DataSourceRestriction'
     { _dsrFilterOptions :: !(Maybe [FilterOptions])
-    , _dsrSource        :: !(Maybe Source)
+    , _dsrSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4170,7 +4170,7 @@ instance ToJSON DataSourceRestriction where
 data Schema =
   Schema'
     { _sObjectDefinitions :: !(Maybe [ObjectDefinition])
-    , _sOperationIds      :: !(Maybe [Text])
+    , _sOperationIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4259,9 +4259,9 @@ instance ToJSON DriveTimeSpanRestrict where
 -- /See:/ 'resultDisplayField' smart constructor.
 data ResultDisplayField =
   ResultDisplayField'
-    { _rdfProperty     :: !(Maybe NamedProperty)
+    { _rdfProperty :: !(Maybe NamedProperty)
     , _rdfOperatorName :: !(Maybe Text)
-    , _rdfLabel        :: !(Maybe Text)
+    , _rdfLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4318,7 +4318,7 @@ instance ToJSON ResultDisplayField where
 data UpdateSchemaRequest =
   UpdateSchemaRequest'
     { _usrValidateOnly :: !(Maybe Bool)
-    , _usrSchema       :: !(Maybe Schema)
+    , _usrSchema :: !(Maybe Schema)
     , _usrDebugOptions :: !(Maybe DebugOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4385,8 +4385,8 @@ instance ToJSON UpdateSchemaRequest where
 -- /See:/ 'date' smart constructor.
 data Date =
   Date'
-    { _dDay   :: !(Maybe (Textual Int32))
-    , _dYear  :: !(Maybe (Textual Int32))
+    { _dDay :: !(Maybe (Textual Int32))
+    , _dYear :: !(Maybe (Textual Int32))
     , _dMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4486,9 +4486,9 @@ instance ToJSON DisplayedProperty where
 -- /See:/ 'facetResult' smart constructor.
 data FacetResult =
   FacetResult'
-    { _frSourceName   :: !(Maybe Text)
-    , _frBuckets      :: !(Maybe [FacetBucket])
-    , _frObjectType   :: !(Maybe Text)
+    { _frSourceName :: !(Maybe Text)
+    , _frBuckets :: !(Maybe [FacetBucket])
+    , _frObjectType :: !(Maybe Text)
     , _frOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4671,7 +4671,7 @@ instance ToJSON Media where
 -- /See:/ 'itemStructuredData' smart constructor.
 data ItemStructuredData =
   ItemStructuredData'
-    { _isdHash   :: !(Maybe Text)
+    { _isdHash :: !(Maybe Text)
     , _isdObject :: !(Maybe StructuredDataObject)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4789,16 +4789,16 @@ instance ToJSON DateValues where
 -- /See:/ 'namedProperty' smart constructor.
 data NamedProperty =
   NamedProperty'
-    { _npDoubleValues    :: !(Maybe DoubleValues)
-    , _npTextValues      :: !(Maybe TextValues)
-    , _npDateValues      :: !(Maybe DateValues)
-    , _npName            :: !(Maybe Text)
-    , _npBooleanValue    :: !(Maybe Bool)
-    , _npObjectValues    :: !(Maybe ObjectValues)
-    , _npHTMLValues      :: !(Maybe HTMLValues)
-    , _npEnumValues      :: !(Maybe EnumValues)
+    { _npDoubleValues :: !(Maybe DoubleValues)
+    , _npTextValues :: !(Maybe TextValues)
+    , _npDateValues :: !(Maybe DateValues)
+    , _npName :: !(Maybe Text)
+    , _npBooleanValue :: !(Maybe Bool)
+    , _npObjectValues :: !(Maybe ObjectValues)
+    , _npHTMLValues :: !(Maybe HTMLValues)
+    , _npEnumValues :: !(Maybe EnumValues)
     , _npTimestampValues :: !(Maybe TimestampValues)
-    , _npIntegerValues   :: !(Maybe IntegerValues)
+    , _npIntegerValues :: !(Maybe IntegerValues)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4926,7 +4926,7 @@ instance ToJSON NamedProperty where
 data MatchRange =
   MatchRange'
     { _mrStart :: !(Maybe (Textual Int32))
-    , _mrEnd   :: !(Maybe (Textual Int32))
+    , _mrEnd :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5010,7 +5010,7 @@ instance ToJSON ResponseDebugInfo where
 data ListDataSourceResponse =
   ListDataSourceResponse'
     { _ldsrNextPageToken :: !(Maybe Text)
-    , _ldsrSources       :: !(Maybe [DataSource])
+    , _ldsrSources :: !(Maybe [DataSource])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5061,14 +5061,14 @@ instance ToJSON ListDataSourceResponse where
 -- /See:/ 'searchRequest' smart constructor.
 data SearchRequest =
   SearchRequest'
-    { _srSortOptions                :: !(Maybe SortOptions)
-    , _srDataSourceRestrictions     :: !(Maybe [DataSourceRestriction])
+    { _srSortOptions :: !(Maybe SortOptions)
+    , _srDataSourceRestrictions :: !(Maybe [DataSourceRestriction])
     , _srQueryInterpretationOptions :: !(Maybe QueryInterpretationOptions)
-    , _srStart                      :: !(Maybe (Textual Int32))
-    , _srQuery                      :: !(Maybe Text)
-    , _srFacetOptions               :: !(Maybe [FacetOptions])
-    , _srPageSize                   :: !(Maybe (Textual Int32))
-    , _srRequestOptions             :: !(Maybe RequestOptions)
+    , _srStart :: !(Maybe (Textual Int32))
+    , _srQuery :: !(Maybe Text)
+    , _srFacetOptions :: !(Maybe [FacetOptions])
+    , _srPageSize :: !(Maybe (Textual Int32))
+    , _srRequestOptions :: !(Maybe RequestOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5229,10 +5229,10 @@ instance ToJSON Name where
 -- /See:/ 'sourceResultCount' smart constructor.
 data SourceResultCount =
   SourceResultCount'
-    { _srcHasMoreResults      :: !(Maybe Bool)
-    , _srcResultCountExact    :: !(Maybe (Textual Int64))
+    { _srcHasMoreResults :: !(Maybe Bool)
+    , _srcResultCountExact :: !(Maybe (Textual Int64))
     , _srcResultCountEstimate :: !(Maybe (Textual Int64))
-    , _srcSource              :: !(Maybe Source)
+    , _srcSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5311,8 +5311,8 @@ instance ToJSON SourceResultCount where
 data SourceConfig =
   SourceConfig'
     { _scCrowdingConfig :: !(Maybe SourceCrowdingConfig)
-    , _scScoringConfig  :: !(Maybe SourceScoringConfig)
-    , _scSource         :: !(Maybe Source)
+    , _scScoringConfig :: !(Maybe SourceScoringConfig)
+    , _scSource :: !(Maybe Source)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5373,7 +5373,7 @@ instance ToJSON SourceConfig where
 data ListItemsResponse =
   ListItemsResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirItems         :: !(Maybe [Item])
+    , _lirItems :: !(Maybe [Item])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5426,7 +5426,7 @@ instance ToJSON ListItemsResponse where
 data ScoringConfig =
   ScoringConfig'
     { _scDisablePersonalization :: !(Maybe Bool)
-    , _scDisableFreshness       :: !(Maybe Bool)
+    , _scDisableFreshness :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5481,7 +5481,7 @@ instance ToJSON ScoringConfig where
 -- /See:/ 'startUploadItemRequest' smart constructor.
 data StartUploadItemRequest =
   StartUploadItemRequest'
-    { _suirDebugOptions  :: !(Maybe DebugOptions)
+    { _suirDebugOptions :: !(Maybe DebugOptions)
     , _suirConnectorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5599,9 +5599,9 @@ instance ToJSON GmailTimeRestrict where
 -- /See:/ 'pushItemRequest' smart constructor.
 data PushItemRequest =
   PushItemRequest'
-    { _pirDebugOptions  :: !(Maybe DebugOptions)
+    { _pirDebugOptions :: !(Maybe DebugOptions)
     , _pirConnectorName :: !(Maybe Text)
-    , _pirItem          :: !(Maybe PushItem)
+    , _pirItem :: !(Maybe PushItem)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5702,16 +5702,16 @@ instance ToJSON DoublePropertyOptions where
 -- /See:/ 'queryOperator' smart constructor.
 data QueryOperator =
   QueryOperator'
-    { _qoIsSuggestable           :: !(Maybe Bool)
-    , _qoIsReturnable            :: !(Maybe Bool)
-    , _qoIsRepeatable            :: !(Maybe Bool)
-    , _qoOperatorName            :: !(Maybe Text)
-    , _qoIsSortable              :: !(Maybe Bool)
-    , _qoIsFacetable             :: !(Maybe Bool)
-    , _qoDisplayName             :: !(Maybe Text)
-    , _qoLessThanOperatorName    :: !(Maybe Text)
-    , _qoType                    :: !(Maybe QueryOperatorType)
-    , _qoEnumValues              :: !(Maybe [Text])
+    { _qoIsSuggestable :: !(Maybe Bool)
+    , _qoIsReturnable :: !(Maybe Bool)
+    , _qoIsRepeatable :: !(Maybe Bool)
+    , _qoOperatorName :: !(Maybe Text)
+    , _qoIsSortable :: !(Maybe Bool)
+    , _qoIsFacetable :: !(Maybe Bool)
+    , _qoDisplayName :: !(Maybe Text)
+    , _qoLessThanOperatorName :: !(Maybe Text)
+    , _qoType :: !(Maybe QueryOperatorType)
+    , _qoEnumValues :: !(Maybe [Text])
     , _qoGreaterThanOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6025,7 +6025,7 @@ instance ToJSON RetrievalImportance where
 data DataSourceIndexStats =
   DataSourceIndexStats'
     { _dsisItemCountByStatus :: !(Maybe [ItemCountByStatus])
-    , _dsisDate              :: !(Maybe Date)
+    , _dsisDate :: !(Maybe Date)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6082,10 +6082,10 @@ instance ToJSON DataSourceIndexStats where
 -- /See:/ 'sourceCrowdingConfig' smart constructor.
 data SourceCrowdingConfig =
   SourceCrowdingConfig'
-    { _sccField          :: !(Maybe Text)
+    { _sccField :: !(Maybe Text)
     , _sccNumSuggestions :: !(Maybe (Textual Int32))
-    , _sccNumResults     :: !(Maybe (Textual Int32))
-    , _sccSource         :: !(Maybe Bool)
+    , _sccNumResults :: !(Maybe (Textual Int32))
+    , _sccSource :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6166,8 +6166,8 @@ instance ToJSON SourceCrowdingConfig where
 data Interaction =
   Interaction'
     { _iInteractionTime :: !(Maybe DateTime')
-    , _iPrincipal       :: !(Maybe Principal)
-    , _iType            :: !(Maybe InteractionType)
+    , _iPrincipal :: !(Maybe Principal)
+    , _iType :: !(Maybe InteractionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6226,9 +6226,9 @@ instance ToJSON Interaction where
 -- /See:/ 'principal' smart constructor.
 data Principal =
   Principal'
-    { _pUserResourceName  :: !(Maybe Text)
+    { _pUserResourceName :: !(Maybe Text)
     , _pGroupResourceName :: !(Maybe Text)
-    , _pGsuitePrincipal   :: !(Maybe GSuitePrincipal)
+    , _pGsuitePrincipal :: !(Maybe GSuitePrincipal)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6295,10 +6295,10 @@ instance ToJSON Principal where
 -- /See:/ 'indexItemRequest' smart constructor.
 data IndexItemRequest =
   IndexItemRequest'
-    { _iirMode             :: !(Maybe IndexItemRequestMode)
-    , _iirDebugOptions     :: !(Maybe DebugOptions)
-    , _iirConnectorName    :: !(Maybe Text)
-    , _iirItem             :: !(Maybe Item)
+    { _iirMode :: !(Maybe IndexItemRequestMode)
+    , _iirDebugOptions :: !(Maybe DebugOptions)
+    , _iirConnectorName :: !(Maybe Text)
+    , _iirItem :: !(Maybe Item)
     , _iirIndexItemOptions :: !(Maybe IndexItemOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6381,7 +6381,7 @@ instance ToJSON IndexItemRequest where
 data TextPropertyOptions =
   TextPropertyOptions'
     { _tRetrievalImportance :: !(Maybe RetrievalImportance)
-    , _tOperatorOptions     :: !(Maybe TextOperatorOptions)
+    , _tOperatorOptions :: !(Maybe TextOperatorOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6447,7 +6447,7 @@ instance ToJSON TextPropertyOptions where
 data EnumValuePair =
   EnumValuePair'
     { _evpIntegerValue :: !(Maybe (Textual Int32))
-    , _evpStringValue  :: !(Maybe Text)
+    , _evpStringValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6499,14 +6499,14 @@ instance ToJSON EnumValuePair where
 -- /See:/ 'metadata' smart constructor.
 data Metadata =
   Metadata'
-    { _mObjectType     :: !(Maybe Text)
-    , _mOwner          :: !(Maybe Person)
-    , _mMimeType       :: !(Maybe Text)
-    , _mUpdateTime     :: !(Maybe DateTime')
+    { _mObjectType :: !(Maybe Text)
+    , _mOwner :: !(Maybe Person)
+    , _mMimeType :: !(Maybe Text)
+    , _mUpdateTime :: !(Maybe DateTime')
     , _mDisplayOptions :: !(Maybe ResultDisplayMetadata)
-    , _mSource         :: !(Maybe Source)
-    , _mCreateTime     :: !(Maybe DateTime')
-    , _mFields         :: !(Maybe [NamedProperty])
+    , _mSource :: !(Maybe Source)
+    , _mCreateTime :: !(Maybe DateTime')
+    , _mFields :: !(Maybe [NamedProperty])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6621,7 +6621,7 @@ instance ToJSON Metadata where
 data UpdateDataSourceRequest =
   UpdateDataSourceRequest'
     { _udsrDebugOptions :: !(Maybe DebugOptions)
-    , _udsrSource       :: !(Maybe DataSource)
+    , _udsrSource :: !(Maybe DataSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6670,14 +6670,14 @@ instance ToJSON UpdateDataSourceRequest where
 -- /See:/ 'dataSource' smart constructor.
 data DataSource =
   DataSource'
-    { _dsShortName               :: !(Maybe Text)
-    , _dsItemsVisibility         :: !(Maybe [GSuitePrincipal])
-    , _dsOperationIds            :: !(Maybe [Text])
-    , _dsDisableServing          :: !(Maybe Bool)
+    { _dsShortName :: !(Maybe Text)
+    , _dsItemsVisibility :: !(Maybe [GSuitePrincipal])
+    , _dsOperationIds :: !(Maybe [Text])
+    , _dsDisableServing :: !(Maybe Bool)
     , _dsIndexingServiceAccounts :: !(Maybe [Text])
-    , _dsDisableModifications    :: !(Maybe Bool)
-    , _dsName                    :: !(Maybe Text)
-    , _dsDisplayName             :: !(Maybe Text)
+    , _dsDisableModifications :: !(Maybe Bool)
+    , _dsName :: !(Maybe Text)
+    , _dsDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6935,16 +6935,16 @@ instance ToJSON HTMLOperatorOptions where
 -- /See:/ 'item' smart constructor.
 data Item =
   Item'
-    { _iStatus         :: !(Maybe ItemStatus)
-    , _iItemType       :: !(Maybe ItemItemType)
-    , _iPayload        :: !(Maybe Bytes)
+    { _iStatus :: !(Maybe ItemStatus)
+    , _iItemType :: !(Maybe ItemItemType)
+    , _iPayload :: !(Maybe Bytes)
     , _iStructuredData :: !(Maybe ItemStructuredData)
-    , _iQueue          :: !(Maybe Text)
-    , _iContent        :: !(Maybe ItemContent)
-    , _iName           :: !(Maybe Text)
-    , _iVersion        :: !(Maybe Bytes)
-    , _iMetadata       :: !(Maybe ItemMetadata)
-    , _iACL            :: !(Maybe ItemACL)
+    , _iQueue :: !(Maybe Text)
+    , _iContent :: !(Maybe ItemContent)
+    , _iName :: !(Maybe Text)
+    , _iVersion :: !(Maybe Bytes)
+    , _iMetadata :: !(Maybe ItemMetadata)
+    , _iACL :: !(Maybe ItemACL)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7079,7 +7079,7 @@ instance ToJSON Item where
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sName             :: !(Maybe Text)
+    { _sName :: !(Maybe Text)
     , _sPredefinedSource :: !(Maybe SourcePredefinedSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7209,7 +7209,7 @@ instance ToJSON ObjectValues where
 data ObjectOptions =
   ObjectOptions'
     { _ooFreshnessOptions :: !(Maybe FreshnessOptions)
-    , _ooDisplayOptions   :: !(Maybe ObjectDisplayOptions)
+    , _ooDisplayOptions :: !(Maybe ObjectDisplayOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7262,10 +7262,10 @@ instance ToJSON ObjectOptions where
 -- /See:/ 'facetOptions' smart constructor.
 data FacetOptions =
   FacetOptions'
-    { _fSourceName      :: !(Maybe Text)
-    , _fObjectType      :: !(Maybe Text)
+    { _fSourceName :: !(Maybe Text)
+    , _fObjectType :: !(Maybe Text)
     , _fNumFacetBuckets :: !(Maybe (Textual Int32))
-    , _fOperatorName    :: !(Maybe Text)
+    , _fOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7344,8 +7344,8 @@ instance ToJSON FacetOptions where
 data SuggestRequest =
   SuggestRequest'
     { _sDataSourceRestrictions :: !(Maybe [DataSourceRestriction])
-    , _sQuery                  :: !(Maybe Text)
-    , _sRequestOptions         :: !(Maybe RequestOptions)
+    , _sQuery :: !(Maybe Text)
+    , _sRequestOptions :: !(Maybe RequestOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7422,7 +7422,7 @@ instance ToJSON SuggestRequest where
 data Filter =
   Filter'
     { _fCompositeFilter :: !(Maybe CompositeFilter)
-    , _fValueFilter     :: !(Maybe ValueFilter)
+    , _fValueFilter :: !(Maybe ValueFilter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7467,8 +7467,8 @@ instance ToJSON Filter where
 -- /See:/ 'objectDefinition' smart constructor.
 data ObjectDefinition =
   ObjectDefinition'
-    { _odName                :: !(Maybe Text)
-    , _odOptions             :: !(Maybe ObjectOptions)
+    { _odName :: !(Maybe Text)
+    , _odOptions :: !(Maybe ObjectOptions)
     , _odPropertyDefinitions :: !(Maybe [PropertyDefinition])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7535,11 +7535,11 @@ instance ToJSON ObjectDefinition where
 -- /See:/ 'pollItemsRequest' smart constructor.
 data PollItemsRequest =
   PollItemsRequest'
-    { _pQueue         :: !(Maybe Text)
-    , _pDebugOptions  :: !(Maybe DebugOptions)
+    { _pQueue :: !(Maybe Text)
+    , _pDebugOptions :: !(Maybe DebugOptions)
     , _pConnectorName :: !(Maybe Text)
-    , _pStatusCodes   :: !(Maybe [Text])
-    , _pLimit         :: !(Maybe (Textual Int32))
+    , _pStatusCodes :: !(Maybe [Text])
+    , _pLimit :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7625,7 +7625,7 @@ instance ToJSON PollItemsRequest where
 -- /See:/ 'queryInterpretation' smart constructor.
 data QueryInterpretation =
   QueryInterpretation'
-    { _qiInterpretedQuery   :: !(Maybe Text)
+    { _qiInterpretedQuery :: !(Maybe Text)
     , _qiInterpretationType :: !(Maybe QueryInterpretationInterpretationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7677,7 +7677,7 @@ instance ToJSON QueryInterpretation where
 data UnmAppedIdentity =
   UnmAppedIdentity'
     { _uaiResolutionStatusCode :: !(Maybe UnmAppedIdentityResolutionStatusCode)
-    , _uaiExternalIdentity     :: !(Maybe Principal)
+    , _uaiExternalIdentity :: !(Maybe Principal)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7769,7 +7769,7 @@ instance ToJSON OperationMetadata where
 data CustomerIndexStats =
   CustomerIndexStats'
     { _cisItemCountByStatus :: !(Maybe [ItemCountByStatus])
-    , _cisDate              :: !(Maybe Date)
+    , _cisDate :: !(Maybe Date)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7819,13 +7819,13 @@ instance ToJSON CustomerIndexStats where
 -- /See:/ 'pushItem' smart constructor.
 data PushItem =
   PushItem'
-    { _piRepositoryError    :: !(Maybe RepositoryError)
-    , _piContentHash        :: !(Maybe Text)
+    { _piRepositoryError :: !(Maybe RepositoryError)
+    , _piContentHash :: !(Maybe Text)
     , _piStructuredDataHash :: !(Maybe Text)
-    , _piPayload            :: !(Maybe Bytes)
-    , _piQueue              :: !(Maybe Text)
-    , _piMetadataHash       :: !(Maybe Text)
-    , _piType               :: !(Maybe PushItemType)
+    , _piPayload :: !(Maybe Bytes)
+    , _piQueue :: !(Maybe Text)
+    , _piMetadataHash :: !(Maybe Text)
+    , _piType :: !(Maybe PushItemType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7942,7 +7942,7 @@ instance ToJSON PushItem where
 -- /See:/ 'errorMessage' smart constructor.
 data ErrorMessage =
   ErrorMessage'
-    { _emSource       :: !(Maybe Source)
+    { _emSource :: !(Maybe Source)
     , _emErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8025,7 +8025,7 @@ instance ToJSON BooleanPropertyOptions where
 -- /See:/ 'valueFilter' smart constructor.
 data ValueFilter =
   ValueFilter'
-    { _vfValue        :: !(Maybe Value)
+    { _vfValue :: !(Maybe Value)
     , _vfOperatorName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8241,8 +8241,8 @@ instance ToJSON EnumValues where
 data GSuitePrincipal =
   GSuitePrincipal'
     { _gspGsuiteGroupEmail :: !(Maybe Text)
-    , _gspGsuiteUserEmail  :: !(Maybe Text)
-    , _gspGsuiteDomain     :: !(Maybe Bool)
+    , _gspGsuiteUserEmail :: !(Maybe Text)
+    , _gspGsuiteDomain :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8458,7 +8458,7 @@ instance ToJSON ErrorInfo where
 -- /See:/ 'resultDisplayMetadata' smart constructor.
 data ResultDisplayMetadata =
   ResultDisplayMetadata'
-    { _rdmMetalines       :: !(Maybe [ResultDisplayLine])
+    { _rdmMetalines :: !(Maybe [ResultDisplayLine])
     , _rdmObjectTypeLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8590,7 +8590,7 @@ instance ToJSON IntegerValues where
 data SearchItemsByViewURLResponse =
   SearchItemsByViewURLResponse'
     { _sibvurNextPageToken :: !(Maybe Text)
-    , _sibvurItems         :: !(Maybe [Item])
+    , _sibvurItems :: !(Maybe [Item])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8680,16 +8680,16 @@ instance ToJSON GetCustomerIndexStatsResponse where
 -- /See:/ 'restrictItem' smart constructor.
 data RestrictItem =
   RestrictItem'
-    { _riGmailFolderRestrict      :: !(Maybe GmailFolderRestrict)
-    , _riGmailActionRestrict      :: !(Maybe GmailActionRestrict)
-    , _riDriveLocationRestrict    :: !(Maybe DriveLocationRestrict)
-    , _riDriveTimeSpanRestrict    :: !(Maybe DriveTimeSpanRestrict)
-    , _riDriveMimeTypeRestrict    :: !(Maybe DriveMimeTypeRestrict)
-    , _riDriveFollowUpRestrict    :: !(Maybe DriveFollowUpRestrict)
-    , _riGmailTimeRestrict        :: !(Maybe GmailTimeRestrict)
+    { _riGmailFolderRestrict :: !(Maybe GmailFolderRestrict)
+    , _riGmailActionRestrict :: !(Maybe GmailActionRestrict)
+    , _riDriveLocationRestrict :: !(Maybe DriveLocationRestrict)
+    , _riDriveTimeSpanRestrict :: !(Maybe DriveTimeSpanRestrict)
+    , _riDriveMimeTypeRestrict :: !(Maybe DriveMimeTypeRestrict)
+    , _riDriveFollowUpRestrict :: !(Maybe DriveFollowUpRestrict)
+    , _riGmailTimeRestrict :: !(Maybe GmailTimeRestrict)
     , _riGmailIntelligentRestrict :: !(Maybe GmailIntelligentRestrict)
-    , _riGmailAttachmentRestrict  :: !(Maybe GmailAttachmentRestrict)
-    , _riSearchOperator           :: !(Maybe Text)
+    , _riGmailAttachmentRestrict :: !(Maybe GmailAttachmentRestrict)
+    , _riSearchOperator :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8866,9 +8866,9 @@ instance ToJSON CheckAccessResponse where
 -- /See:/ 'requestOptions' smart constructor.
 data RequestOptions =
   RequestOptions'
-    { _roLanguageCode        :: !(Maybe Text)
-    , _roDebugOptions        :: !(Maybe DebugOptions)
-    , _roTimeZone            :: !(Maybe Text)
+    { _roLanguageCode :: !(Maybe Text)
+    , _roDebugOptions :: !(Maybe DebugOptions)
+    , _roTimeZone :: !(Maybe Text)
     , _roSearchApplicationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8953,7 +8953,7 @@ instance ToJSON RequestOptions where
 data ItemStatus =
   ItemStatus'
     { _isProcessingErrors :: !(Maybe [ProcessingError])
-    , _isCode             :: !(Maybe ItemStatusCode)
+    , _isCode :: !(Maybe ItemStatusCode)
     , _isRepositoryErrors :: !(Maybe [RepositoryError])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

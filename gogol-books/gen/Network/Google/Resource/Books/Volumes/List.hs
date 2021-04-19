@@ -49,8 +49,8 @@ module Network.Google.Resource.Books.Volumes.List
     , vlPrintType
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.volumes.list@ method which the
 -- 'VolumesList' request conforms to.
@@ -85,20 +85,20 @@ type VolumesListResource =
 -- /See:/ 'volumesList' smart constructor.
 data VolumesList =
   VolumesList'
-    { _vlOrderBy                  :: !(Maybe VolumesListOrderBy)
+    { _vlOrderBy :: !(Maybe VolumesListOrderBy)
     , _vlMaxAllowedMaturityRating :: !(Maybe VolumesListMaxAllowedMaturityRating)
-    , _vlLibraryRestrict          :: !(Maybe VolumesListLibraryRestrict)
-    , _vlPartner                  :: !(Maybe Text)
-    , _vlQ                        :: !Text
-    , _vlDownload                 :: !(Maybe VolumesListDownload)
-    , _vlSource                   :: !(Maybe Text)
-    , _vlProjection               :: !(Maybe VolumesListProjection)
-    , _vlFilter                   :: !(Maybe VolumesListFilter)
-    , _vlLangRestrict             :: !(Maybe Text)
-    , _vlStartIndex               :: !(Maybe (Textual Word32))
-    , _vlMaxResults               :: !(Maybe (Textual Word32))
-    , _vlShowPreOrders            :: !(Maybe Bool)
-    , _vlPrintType                :: !(Maybe VolumesListPrintType)
+    , _vlLibraryRestrict :: !(Maybe VolumesListLibraryRestrict)
+    , _vlPartner :: !(Maybe Text)
+    , _vlQ :: !Text
+    , _vlDownload :: !(Maybe VolumesListDownload)
+    , _vlSource :: !(Maybe Text)
+    , _vlProjection :: !(Maybe VolumesListProjection)
+    , _vlFilter :: !(Maybe VolumesListFilter)
+    , _vlLangRestrict :: !(Maybe Text)
+    , _vlStartIndex :: !(Maybe (Textual Word32))
+    , _vlMaxResults :: !(Maybe (Textual Word32))
+    , _vlShowPreOrders :: !(Maybe Bool)
+    , _vlPrintType :: !(Maybe VolumesListPrintType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

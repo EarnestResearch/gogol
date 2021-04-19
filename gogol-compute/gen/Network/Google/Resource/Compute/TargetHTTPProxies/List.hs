@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.TargetHTTPProxies.List
     , thttpplMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetHttpProxies.list@ method which the
 -- 'TargetHTTPProxiesList' request conforms to.
@@ -66,10 +66,10 @@ type TargetHTTPProxiesListResource =
 -- /See:/ 'targetHTTPProxiesList' smart constructor.
 data TargetHTTPProxiesList =
   TargetHTTPProxiesList'
-    { _thttpplOrderBy    :: !(Maybe Text)
-    , _thttpplProject    :: !Text
-    , _thttpplFilter     :: !(Maybe Text)
-    , _thttpplPageToken  :: !(Maybe Text)
+    { _thttpplOrderBy :: !(Maybe Text)
+    , _thttpplProject :: !Text
+    , _thttpplFilter :: !(Maybe Text)
+    , _thttpplPageToken :: !(Maybe Text)
     , _thttpplMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

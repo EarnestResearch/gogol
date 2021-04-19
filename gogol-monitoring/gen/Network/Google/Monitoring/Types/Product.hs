@@ -17,8 +17,8 @@
 --
 module Network.Google.Monitoring.Types.Product where
 
-import           Network.Google.Monitoring.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types.Sum
+import Network.Google.Prelude
 
 -- | An object that describes the schema of a MonitoredResource object using
 -- a type name and a set of labels. For example, the monitored resource
@@ -31,10 +31,10 @@ import           Network.Google.Prelude
 -- /See:/ 'monitoredResourceDescriptor' smart constructor.
 data MonitoredResourceDescriptor =
   MonitoredResourceDescriptor'
-    { _mrdName        :: !(Maybe Text)
+    { _mrdName :: !(Maybe Text)
     , _mrdDisplayName :: !(Maybe Text)
-    , _mrdLabels      :: !(Maybe [LabelDescriptor])
-    , _mrdType        :: !(Maybe Text)
+    , _mrdLabels :: !(Maybe [LabelDescriptor])
+    , _mrdType :: !(Maybe Text)
     , _mrdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -164,7 +164,7 @@ instance ToJSON MonitoredResourceDescriptor where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -225,7 +225,7 @@ instance ToJSON Status where
 -- /See:/ 'listNotificationChannelsResponse' smart constructor.
 data ListNotificationChannelsResponse =
   ListNotificationChannelsResponse'
-    { _lncrNextPageToken        :: !(Maybe Text)
+    { _lncrNextPageToken :: !(Maybe Text)
     , _lncrNotificationChannels :: !(Maybe [NotificationChannel])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -285,9 +285,9 @@ instance ToJSON ListNotificationChannelsResponse
 -- /See:/ 'listTimeSeriesResponse' smart constructor.
 data ListTimeSeriesResponse =
   ListTimeSeriesResponse'
-    { _ltsrNextPageToken   :: !(Maybe Text)
+    { _ltsrNextPageToken :: !(Maybe Text)
     , _ltsrExecutionErrors :: !(Maybe [Status])
-    , _ltsrTimeSeries      :: !(Maybe [TimeSeries])
+    , _ltsrTimeSeries :: !(Maybe [TimeSeries])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -358,7 +358,7 @@ instance ToJSON ListTimeSeriesResponse where
 -- /See:/ 'getNotificationChannelVerificationCodeResponse' smart constructor.
 data GetNotificationChannelVerificationCodeResponse =
   GetNotificationChannelVerificationCodeResponse'
-    { _gncvcrCode       :: !(Maybe Text)
+    { _gncvcrCode :: !(Maybe Text)
     , _gncvcrExpireTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -420,7 +420,7 @@ instance ToJSON
 -- /See:/ 'listNotificationChannelDescriptorsResponse' smart constructor.
 data ListNotificationChannelDescriptorsResponse =
   ListNotificationChannelDescriptorsResponse'
-    { _lncdrNextPageToken      :: !(Maybe Text)
+    { _lncdrNextPageToken :: !(Maybe Text)
     , _lncdrChannelDescriptors :: !(Maybe [NotificationChannelDescriptor])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -487,15 +487,15 @@ instance ToJSON
 -- /See:/ 'metricDescriptor' smart constructor.
 data MetricDescriptor =
   MetricDescriptor'
-    { _mdMetricKind  :: !(Maybe MetricDescriptorMetricKind)
-    , _mdName        :: !(Maybe Text)
-    , _mdMetadata    :: !(Maybe MetricDescriptorMetadata)
+    { _mdMetricKind :: !(Maybe MetricDescriptorMetricKind)
+    , _mdName :: !(Maybe Text)
+    , _mdMetadata :: !(Maybe MetricDescriptorMetadata)
     , _mdDisplayName :: !(Maybe Text)
-    , _mdLabels      :: !(Maybe [LabelDescriptor])
-    , _mdType        :: !(Maybe Text)
-    , _mdValueType   :: !(Maybe MetricDescriptorValueType)
+    , _mdLabels :: !(Maybe [LabelDescriptor])
+    , _mdType :: !(Maybe Text)
+    , _mdValueType :: !(Maybe MetricDescriptorValueType)
     , _mdDescription :: !(Maybe Text)
-    , _mdUnit        :: !(Maybe Text)
+    , _mdUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -674,11 +674,11 @@ instance ToJSON MetricDescriptor where
 -- /See:/ 'group'' smart constructor.
 data Group =
   Group'
-    { _gName        :: !(Maybe Text)
+    { _gName :: !(Maybe Text)
     , _gDisplayName :: !(Maybe Text)
-    , _gFilter      :: !(Maybe Text)
-    , _gIsCluster   :: !(Maybe Bool)
-    , _gParentName  :: !(Maybe Text)
+    , _gFilter :: !(Maybe Text)
+    , _gIsCluster :: !(Maybe Bool)
+    , _gParentName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -764,11 +764,11 @@ instance ToJSON Group where
 -- /See:/ 'typedValue' smart constructor.
 data TypedValue =
   TypedValue'
-    { _tvBoolValue         :: !(Maybe Bool)
-    , _tvDoubleValue       :: !(Maybe (Textual Double))
-    , _tvStringValue       :: !(Maybe Text)
+    { _tvBoolValue :: !(Maybe Bool)
+    , _tvDoubleValue :: !(Maybe (Textual Double))
+    , _tvStringValue :: !(Maybe Text)
     , _tvDistributionValue :: !(Maybe Distribution)
-    , _tvInt64Value        :: !(Maybe (Textual Int64))
+    , _tvInt64Value :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -897,7 +897,7 @@ instance ToJSON MonitoredResourceLabels where
 -- /See:/ 'monitoredResourceMetadata' smart constructor.
 data MonitoredResourceMetadata =
   MonitoredResourceMetadata'
-    { _mrmUserLabels   :: !(Maybe MonitoredResourceMetadataUserLabels)
+    { _mrmUserLabels :: !(Maybe MonitoredResourceMetadataUserLabels)
     , _mrmSystemLabels :: !(Maybe MonitoredResourceMetadataSystemLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1098,12 +1098,12 @@ instance ToJSON BasicAuthentication where
 data Distribution =
   Distribution'
     { _dSumOfSquaredDeviation :: !(Maybe (Textual Double))
-    , _dMean                  :: !(Maybe (Textual Double))
-    , _dCount                 :: !(Maybe (Textual Int64))
-    , _dBucketCounts          :: !(Maybe [Textual Int64])
-    , _dExemplars             :: !(Maybe [Exemplar])
-    , _dRange                 :: !(Maybe Range)
-    , _dBucketOptions         :: !(Maybe BucketOptions)
+    , _dMean :: !(Maybe (Textual Double))
+    , _dCount :: !(Maybe (Textual Int64))
+    , _dBucketCounts :: !(Maybe [Textual Int64])
+    , _dExemplars :: !(Maybe [Exemplar])
+    , _dRange :: !(Maybe Range)
+    , _dBucketOptions :: !(Maybe BucketOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1230,16 +1230,16 @@ instance ToJSON Distribution where
 -- /See:/ 'field' smart constructor.
 data Field =
   Field'
-    { _fKind         :: !(Maybe FieldKind)
-    , _fOneofIndex   :: !(Maybe (Textual Int32))
-    , _fName         :: !(Maybe Text)
-    , _fJSONName     :: !(Maybe Text)
-    , _fCardinality  :: !(Maybe FieldCardinality)
-    , _fOptions      :: !(Maybe [Option])
-    , _fPacked       :: !(Maybe Bool)
+    { _fKind :: !(Maybe FieldKind)
+    , _fOneofIndex :: !(Maybe (Textual Int32))
+    , _fName :: !(Maybe Text)
+    , _fJSONName :: !(Maybe Text)
+    , _fCardinality :: !(Maybe FieldCardinality)
+    , _fOptions :: !(Maybe [Option])
+    , _fPacked :: !(Maybe Bool)
     , _fDefaultValue :: !(Maybe Text)
-    , _fNumber       :: !(Maybe (Textual Int32))
-    , _fTypeURL      :: !(Maybe Text)
+    , _fNumber :: !(Maybe (Textual Int32))
+    , _fTypeURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1411,12 +1411,12 @@ instance ToJSON ExemplarAttachmentsItem where
 -- /See:/ 'notificationChannelDescriptor' smart constructor.
 data NotificationChannelDescriptor =
   NotificationChannelDescriptor'
-    { _ncdName           :: !(Maybe Text)
+    { _ncdName :: !(Maybe Text)
     , _ncdSupportedTiers :: !(Maybe [Text])
-    , _ncdDisplayName    :: !(Maybe Text)
-    , _ncdLabels         :: !(Maybe [LabelDescriptor])
-    , _ncdType           :: !(Maybe Text)
-    , _ncdDescription    :: !(Maybe Text)
+    , _ncdDisplayName :: !(Maybe Text)
+    , _ncdLabels :: !(Maybe [LabelDescriptor])
+    , _ncdType :: !(Maybe Text)
+    , _ncdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1547,7 +1547,7 @@ instance ToJSON Empty where
 data ListGroupsResponse =
   ListGroupsResponse'
     { _lgrNextPageToken :: !(Maybe Text)
-    , _lgrGroup         :: !(Maybe [Group])
+    , _lgrGroup :: !(Maybe [Group])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1601,7 +1601,7 @@ instance ToJSON ListGroupsResponse where
 data ListMetricDescriptorsResponse =
   ListMetricDescriptorsResponse'
     { _lmdrMetricDescriptors :: !(Maybe [MetricDescriptor])
-    , _lmdrNextPageToken     :: !(Maybe Text)
+    , _lmdrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1860,14 +1860,14 @@ instance ToJSON DroppedLabelsLabel where
 -- /See:/ 'metricThreshold' smart constructor.
 data MetricThreshold =
   MetricThreshold'
-    { _mtThresholdValue          :: !(Maybe (Textual Double))
-    , _mtAggregations            :: !(Maybe [Aggregation])
+    { _mtThresholdValue :: !(Maybe (Textual Double))
+    , _mtAggregations :: !(Maybe [Aggregation])
     , _mtDenominatorAggregations :: !(Maybe [Aggregation])
-    , _mtComparison              :: !(Maybe MetricThresholdComparison)
-    , _mtDenominatorFilter       :: !(Maybe Text)
-    , _mtFilter                  :: !(Maybe Text)
-    , _mtTrigger                 :: !(Maybe Trigger)
-    , _mtDuration                :: !(Maybe GDuration)
+    , _mtComparison :: !(Maybe MetricThresholdComparison)
+    , _mtDenominatorFilter :: !(Maybe Text)
+    , _mtFilter :: !(Maybe Text)
+    , _mtTrigger :: !(Maybe Trigger)
+    , _mtDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2154,12 +2154,12 @@ instance ToJSON MonitoredResourceMetadataUserLabels
 -- /See:/ 'internalChecker' smart constructor.
 data InternalChecker =
   InternalChecker'
-    { _icState         :: !(Maybe InternalCheckerState)
-    , _icNetwork       :: !(Maybe Text)
-    , _icName          :: !(Maybe Text)
+    { _icState :: !(Maybe InternalCheckerState)
+    , _icNetwork :: !(Maybe Text)
+    , _icName :: !(Maybe Text)
     , _icPeerProjectId :: !(Maybe Text)
-    , _icGcpZone       :: !(Maybe Text)
-    , _icDisplayName   :: !(Maybe Text)
+    , _icGcpZone :: !(Maybe Text)
+    , _icDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2261,14 +2261,14 @@ instance ToJSON InternalChecker where
 -- /See:/ 'notificationChannel' smart constructor.
 data NotificationChannel =
   NotificationChannel'
-    { _ncEnabled            :: !(Maybe Bool)
-    , _ncUserLabels         :: !(Maybe NotificationChannelUserLabels)
-    , _ncName               :: !(Maybe Text)
-    , _ncDisplayName        :: !(Maybe Text)
+    { _ncEnabled :: !(Maybe Bool)
+    , _ncUserLabels :: !(Maybe NotificationChannelUserLabels)
+    , _ncName :: !(Maybe Text)
+    , _ncDisplayName :: !(Maybe Text)
     , _ncVerificationStatus :: !(Maybe NotificationChannelVerificationStatus)
-    , _ncLabels             :: !(Maybe NotificationChannelLabels)
-    , _ncType               :: !(Maybe Text)
-    , _ncDescription        :: !(Maybe Text)
+    , _ncLabels :: !(Maybe NotificationChannelLabels)
+    , _ncType :: !(Maybe Text)
+    , _ncDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2411,7 +2411,7 @@ instance ToJSON NotificationChannel where
 -- /See:/ 'listMonitoredResourceDescriptorsResponse' smart constructor.
 data ListMonitoredResourceDescriptorsResponse =
   ListMonitoredResourceDescriptorsResponse'
-    { _lmrdrNextPageToken       :: !(Maybe Text)
+    { _lmrdrNextPageToken :: !(Maybe Text)
     , _lmrdrResourceDescriptors :: !(Maybe [MonitoredResourceDescriptor])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2588,7 +2588,7 @@ data CollectdValue =
   CollectdValue'
     { _cvDataSourceName :: !(Maybe Text)
     , _cvDataSourceType :: !(Maybe CollectdValueDataSourceType)
-    , _cvValue          :: !(Maybe TypedValue)
+    , _cvValue :: !(Maybe TypedValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2651,8 +2651,8 @@ instance ToJSON CollectdValue where
 data CreateCollectdTimeSeriesRequest =
   CreateCollectdTimeSeriesRequest'
     { _cctsrCollectdPayloads :: !(Maybe [CollectdPayload])
-    , _cctsrResource         :: !(Maybe MonitoredResource)
-    , _cctsrCollectdVersion  :: !(Maybe Text)
+    , _cctsrResource :: !(Maybe MonitoredResource)
+    , _cctsrCollectdVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2728,10 +2728,10 @@ instance ToJSON CreateCollectdTimeSeriesRequest where
 -- /See:/ 'aggregation' smart constructor.
 data Aggregation =
   Aggregation'
-    { _aPerSeriesAligner   :: !(Maybe AggregationPerSeriesAligner)
+    { _aPerSeriesAligner :: !(Maybe AggregationPerSeriesAligner)
     , _aCrossSeriesReducer :: !(Maybe AggregationCrossSeriesReducer)
-    , _aAlignmentPeriod    :: !(Maybe GDuration)
-    , _aGroupByFields      :: !(Maybe [Text])
+    , _aAlignmentPeriod :: !(Maybe GDuration)
+    , _aGroupByFields :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2841,17 +2841,17 @@ instance ToJSON Aggregation where
 -- /See:/ 'uptimeCheckConfig' smart constructor.
 data UptimeCheckConfig =
   UptimeCheckConfig'
-    { _uccInternalCheckers  :: !(Maybe [InternalChecker])
-    , _uccPeriod            :: !(Maybe GDuration)
-    , _uccContentMatchers   :: !(Maybe [ContentMatcher])
-    , _uccName              :: !(Maybe Text)
+    { _uccInternalCheckers :: !(Maybe [InternalChecker])
+    , _uccPeriod :: !(Maybe GDuration)
+    , _uccContentMatchers :: !(Maybe [ContentMatcher])
+    , _uccName :: !(Maybe Text)
     , _uccMonitoredResource :: !(Maybe MonitoredResource)
-    , _uccSelectedRegions   :: !(Maybe [Text])
-    , _uccDisplayName       :: !(Maybe Text)
-    , _uccResourceGroup     :: !(Maybe ResourceGroup)
-    , _uccTimeout           :: !(Maybe GDuration)
-    , _uccHTTPCheck         :: !(Maybe HTTPCheck)
-    , _uccTCPCheck          :: !(Maybe TCPCheck)
+    , _uccSelectedRegions :: !(Maybe [Text])
+    , _uccDisplayName :: !(Maybe Text)
+    , _uccResourceGroup :: !(Maybe ResourceGroup)
+    , _uccTimeout :: !(Maybe GDuration)
+    , _uccHTTPCheck :: !(Maybe HTTPCheck)
+    , _uccTCPCheck :: !(Maybe TCPCheck)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3028,7 +3028,7 @@ instance ToJSON UptimeCheckConfig where
 -- /See:/ 'point' smart constructor.
 data Point =
   Point'
-    { _pValue    :: !(Maybe TypedValue)
+    { _pValue :: !(Maybe TypedValue)
     , _pInterval :: !(Maybe TimeInterval)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3081,14 +3081,14 @@ instance ToJSON Point where
 -- /See:/ 'collectdPayload' smart constructor.
 data CollectdPayload =
   CollectdPayload'
-    { _cpStartTime      :: !(Maybe DateTime')
+    { _cpStartTime :: !(Maybe DateTime')
     , _cpPluginInstance :: !(Maybe Text)
-    , _cpValues         :: !(Maybe [CollectdValue])
-    , _cpTypeInstance   :: !(Maybe Text)
-    , _cpEndTime        :: !(Maybe DateTime')
-    , _cpMetadata       :: !(Maybe CollectdPayloadMetadata)
-    , _cpType           :: !(Maybe Text)
-    , _cpPlugin         :: !(Maybe Text)
+    , _cpValues :: !(Maybe [CollectdValue])
+    , _cpTypeInstance :: !(Maybe Text)
+    , _cpEndTime :: !(Maybe DateTime')
+    , _cpMetadata :: !(Maybe CollectdPayloadMetadata)
+    , _cpType :: !(Maybe Text)
+    , _cpPlugin :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3203,7 +3203,7 @@ instance ToJSON CollectdPayload where
 -- /See:/ 'mutationRecord' smart constructor.
 data MutationRecord =
   MutationRecord'
-    { _mrMutatedBy  :: !(Maybe Text)
+    { _mrMutatedBy :: !(Maybe Text)
     , _mrMutateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3254,7 +3254,7 @@ instance ToJSON MutationRecord where
 data Metric =
   Metric'
     { _mLabels :: !(Maybe MetricLabels)
-    , _mType   :: !(Maybe Text)
+    , _mType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3298,9 +3298,9 @@ instance ToJSON Metric where
 -- /See:/ 'collectdPayloadError' smart constructor.
 data CollectdPayloadError =
   CollectdPayloadError'
-    { _cpeError       :: !(Maybe Status)
+    { _cpeError :: !(Maybe Status)
     , _cpeValueErrors :: !(Maybe [CollectdValueError])
-    , _cpeIndex       :: !(Maybe (Textual Int32))
+    , _cpeIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3399,8 +3399,8 @@ instance ToJSON
 -- /See:/ 'exponential' smart constructor.
 data Exponential =
   Exponential'
-    { _eGrowthFactor     :: !(Maybe (Textual Double))
-    , _eScale            :: !(Maybe (Textual Double))
+    { _eGrowthFactor :: !(Maybe (Textual Double))
+    , _eScale :: !(Maybe (Textual Double))
     , _eNumFiniteBuckets :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3520,7 +3520,7 @@ instance ToJSON Range where
 data MonitoredResource =
   MonitoredResource'
     { _mrLabels :: !(Maybe MonitoredResourceLabels)
-    , _mrType   :: !(Maybe Text)
+    , _mrType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3571,8 +3571,8 @@ instance ToJSON MonitoredResource where
 data UptimeCheckIP =
   UptimeCheckIP'
     { _uciIPAddress :: !(Maybe Text)
-    , _uciLocation  :: !(Maybe Text)
-    , _uciRegion    :: !(Maybe UptimeCheckIPRegion)
+    , _uciLocation :: !(Maybe Text)
+    , _uciRegion :: !(Maybe UptimeCheckIPRegion)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3677,7 +3677,7 @@ instance ToJSON AlertPolicyUserLabels where
 -- /See:/ 'documentation' smart constructor.
 data Documentation =
   Documentation'
-    { _dContent  :: !(Maybe Text)
+    { _dContent :: !(Maybe Text)
     , _dMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3732,8 +3732,8 @@ instance ToJSON Documentation where
 data Exemplar =
   Exemplar'
     { _eAttachments :: !(Maybe [ExemplarAttachmentsItem])
-    , _eValue       :: !(Maybe (Textual Double))
-    , _eTimestamp   :: !(Maybe DateTime')
+    , _eValue :: !(Maybe (Textual Double))
+    , _eTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3801,8 +3801,8 @@ instance ToJSON Exemplar where
 data MetricDescriptorMetadata =
   MetricDescriptorMetadata'
     { _mdmSamplePeriod :: !(Maybe GDuration)
-    , _mdmIngestDelay  :: !(Maybe GDuration)
-    , _mdmLaunchStage  :: !(Maybe MetricDescriptorMetadataLaunchStage)
+    , _mdmIngestDelay :: !(Maybe GDuration)
+    , _mdmLaunchStage :: !(Maybe MetricDescriptorMetadataLaunchStage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3879,7 +3879,7 @@ instance ToJSON MetricDescriptorMetadata where
 data TimeInterval =
   TimeInterval'
     { _tiStartTime :: !(Maybe DateTime')
-    , _tiEndTime   :: !(Maybe DateTime')
+    , _tiEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4056,8 +4056,8 @@ instance ToJSON ContentMatcher where
 data ListGroupMembersResponse =
   ListGroupMembersResponse'
     { _lgmrNextPageToken :: !(Maybe Text)
-    , _lgmrMembers       :: !(Maybe [MonitoredResource])
-    , _lgmrTotalSize     :: !(Maybe (Textual Int32))
+    , _lgmrMembers :: !(Maybe [MonitoredResource])
+    , _lgmrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4125,8 +4125,8 @@ instance ToJSON ListGroupMembersResponse where
 -- /See:/ 'labelDescriptor' smart constructor.
 data LabelDescriptor =
   LabelDescriptor'
-    { _ldKey         :: !(Maybe Text)
-    , _ldValueType   :: !(Maybe LabelDescriptorValueType)
+    { _ldKey :: !(Maybe Text)
+    , _ldValueType :: !(Maybe LabelDescriptorValueType)
     , _ldDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4189,8 +4189,8 @@ instance ToJSON LabelDescriptor where
 -- /See:/ 'linear' smart constructor.
 data Linear =
   Linear'
-    { _lOffSet           :: !(Maybe (Textual Double))
-    , _lWidth            :: !(Maybe (Textual Double))
+    { _lOffSet :: !(Maybe (Textual Double))
+    , _lWidth :: !(Maybe (Textual Double))
     , _lNumFiniteBuckets :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4251,7 +4251,7 @@ instance ToJSON Linear where
 -- /See:/ 'listUptimeCheckIPsResponse' smart constructor.
 data ListUptimeCheckIPsResponse =
   ListUptimeCheckIPsResponse'
-    { _lucirNextPageToken  :: !(Maybe Text)
+    { _lucirNextPageToken :: !(Maybe Text)
     , _lucirUptimeCheckIPs :: !(Maybe [UptimeCheckIP])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4366,7 +4366,7 @@ instance ToJSON
 data ResourceGroup =
   ResourceGroup'
     { _rgResourceType :: !(Maybe ResourceGroupResourceType)
-    , _rgGroupId      :: !(Maybe Text)
+    , _rgGroupId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4460,7 +4460,7 @@ instance ToJSON DroppedLabels where
 data Trigger =
   Trigger'
     { _tPercent :: !(Maybe (Textual Double))
-    , _tCount   :: !(Maybe (Textual Int32))
+    , _tCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4510,11 +4510,11 @@ instance ToJSON Trigger where
 data Type =
   Type'
     { _tSourceContext :: !(Maybe SourceContext)
-    , _tOneofs        :: !(Maybe [Text])
-    , _tName          :: !(Maybe Text)
-    , _tOptions       :: !(Maybe [Option])
-    , _tFields        :: !(Maybe [Field])
-    , _tSyntax        :: !(Maybe TypeSyntax)
+    , _tOneofs :: !(Maybe [Text])
+    , _tName :: !(Maybe Text)
+    , _tOptions :: !(Maybe [Option])
+    , _tFields :: !(Maybe [Field])
+    , _tSyntax :: !(Maybe TypeSyntax)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4655,7 +4655,7 @@ instance ToJSON CreateCollectdTimeSeriesResponse
 data Option =
   Option'
     { _oValue :: !(Maybe OptionValue)
-    , _oName  :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4706,10 +4706,10 @@ instance ToJSON Option where
 -- /See:/ 'condition' smart constructor.
 data Condition =
   Condition'
-    { _cConditionAbsent    :: !(Maybe MetricAbsence)
+    { _cConditionAbsent :: !(Maybe MetricAbsence)
     , _cConditionThreshold :: !(Maybe MetricThreshold)
-    , _cName               :: !(Maybe Text)
-    , _cDisplayName        :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4812,8 +4812,8 @@ instance ToJSON Condition where
 data BucketOptions =
   BucketOptions'
     { _boExponentialBuckets :: !(Maybe Exponential)
-    , _boLinearBuckets      :: !(Maybe Linear)
-    , _boExplicitBuckets    :: !(Maybe Explicit)
+    , _boLinearBuckets :: !(Maybe Linear)
+    , _boExplicitBuckets :: !(Maybe Explicit)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4878,8 +4878,8 @@ instance ToJSON BucketOptions where
 data ListUptimeCheckConfigsResponse =
   ListUptimeCheckConfigsResponse'
     { _luccrUptimeCheckConfigs :: !(Maybe [UptimeCheckConfig])
-    , _luccrNextPageToken      :: !(Maybe Text)
-    , _luccrTotalSize          :: !(Maybe (Textual Int32))
+    , _luccrNextPageToken :: !(Maybe Text)
+    , _luccrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4953,12 +4953,12 @@ instance ToJSON ListUptimeCheckConfigsResponse where
 -- /See:/ 'hTTPCheck' smart constructor.
 data HTTPCheck =
   HTTPCheck'
-    { _httpcUseSSL      :: !(Maybe Bool)
-    , _httpcPath        :: !(Maybe Text)
+    { _httpcUseSSL :: !(Maybe Bool)
+    , _httpcPath :: !(Maybe Text)
     , _httpcMaskHeaders :: !(Maybe Bool)
-    , _httpcHeaders     :: !(Maybe HTTPCheckHeaders)
-    , _httpcAuthInfo    :: !(Maybe BasicAuthentication)
-    , _httpcPort        :: !(Maybe (Textual Int32))
+    , _httpcHeaders :: !(Maybe HTTPCheckHeaders)
+    , _httpcAuthInfo :: !(Maybe BasicAuthentication)
+    , _httpcPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5072,12 +5072,12 @@ instance ToJSON HTTPCheck where
 -- /See:/ 'timeSeries' smart constructor.
 data TimeSeries =
   TimeSeries'
-    { _tsPoints     :: !(Maybe [Point])
+    { _tsPoints :: !(Maybe [Point])
     , _tsMetricKind :: !(Maybe TimeSeriesMetricKind)
-    , _tsMetric     :: !(Maybe Metric)
-    , _tsResource   :: !(Maybe MonitoredResource)
-    , _tsMetadata   :: !(Maybe MonitoredResourceMetadata)
-    , _tsValueType  :: !(Maybe TimeSeriesValueType)
+    , _tsMetric :: !(Maybe Metric)
+    , _tsResource :: !(Maybe MonitoredResource)
+    , _tsMetadata :: !(Maybe MonitoredResourceMetadata)
+    , _tsValueType :: !(Maybe TimeSeriesValueType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5193,16 +5193,16 @@ instance ToJSON TimeSeries where
 -- /See:/ 'alertPolicy' smart constructor.
 data AlertPolicy =
   AlertPolicy'
-    { _apEnabled              :: !(Maybe Bool)
+    { _apEnabled :: !(Maybe Bool)
     , _apNotificationChannels :: !(Maybe [Text])
-    , _apMutationRecord       :: !(Maybe MutationRecord)
-    , _apCreationRecord       :: !(Maybe MutationRecord)
-    , _apUserLabels           :: !(Maybe AlertPolicyUserLabels)
-    , _apName                 :: !(Maybe Text)
-    , _apDocumentation        :: !(Maybe Documentation)
-    , _apDisplayName          :: !(Maybe Text)
-    , _apConditions           :: !(Maybe [Condition])
-    , _apCombiner             :: !(Maybe AlertPolicyCombiner)
+    , _apMutationRecord :: !(Maybe MutationRecord)
+    , _apCreationRecord :: !(Maybe MutationRecord)
+    , _apUserLabels :: !(Maybe AlertPolicyUserLabels)
+    , _apName :: !(Maybe Text)
+    , _apDocumentation :: !(Maybe Documentation)
+    , _apDisplayName :: !(Maybe Text)
+    , _apConditions :: !(Maybe [Condition])
+    , _apCombiner :: !(Maybe AlertPolicyCombiner)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5473,9 +5473,9 @@ instance ToJSON TCPCheck where
 data MetricAbsence =
   MetricAbsence'
     { _maAggregations :: !(Maybe [Aggregation])
-    , _maFilter       :: !(Maybe Text)
-    , _maTrigger      :: !(Maybe Trigger)
-    , _maDuration     :: !(Maybe GDuration)
+    , _maFilter :: !(Maybe Text)
+    , _maTrigger :: !(Maybe Trigger)
+    , _maDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

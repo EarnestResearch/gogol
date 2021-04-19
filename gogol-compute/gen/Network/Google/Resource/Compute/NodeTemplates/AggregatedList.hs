@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.NodeTemplates.AggregatedList
     , nMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeTemplates.aggregatedList@ method which the
 -- 'NodeTemplatesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type NodeTemplatesAggregatedListResource =
 -- /See:/ 'nodeTemplatesAggregatedList' smart constructor.
 data NodeTemplatesAggregatedList =
   NodeTemplatesAggregatedList'
-    { _nOrderBy    :: !(Maybe Text)
-    , _nProject    :: !Text
-    , _nFilter     :: !(Maybe Text)
-    , _nPageToken  :: !(Maybe Text)
+    { _nOrderBy :: !(Maybe Text)
+    , _nProject :: !Text
+    , _nFilter :: !(Maybe Text)
+    , _nPageToken :: !(Maybe Text)
     , _nMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

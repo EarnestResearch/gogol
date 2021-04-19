@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -257,9 +257,9 @@ module Network.Google.PubSub.Types
     , arAckIds
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types.Product
-import           Network.Google.PubSub.Types.Sum
+import Network.Google.Prelude
+import Network.Google.PubSub.Types.Product
+import Network.Google.PubSub.Types.Sum
 
 -- | Default request referring to version 'v1' of the Cloud Pub/Sub API. This contains the host and root path used as a starting point for constructing service requests.
 pubSubService :: ServiceConfig

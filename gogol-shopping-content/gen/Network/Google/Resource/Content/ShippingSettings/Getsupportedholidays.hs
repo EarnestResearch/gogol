@@ -36,14 +36,14 @@ module Network.Google.Resource.Content.ShippingSettings.Getsupportedholidays
     , ssgMerchantId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.getsupportedholidays@ method which the
 -- 'ShippingSettingsGetsupportedholidays' request conforms to.
 type ShippingSettingsGetsupportedholidaysResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "supportedHolidays" :>
              QueryParam "alt" AltJSON :>

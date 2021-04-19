@@ -36,8 +36,8 @@ module Network.Google.Resource.YouTube.LiveChatBans.Delete
     , lcbdId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatBans.delete@ method which the
 -- 'LiveChatBansDelete' request conforms to.

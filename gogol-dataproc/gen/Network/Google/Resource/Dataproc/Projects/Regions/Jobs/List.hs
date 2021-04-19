@@ -47,8 +47,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Jobs.List
     , prjlCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.jobs.list@ method which the
 -- 'ProjectsRegionsJobsList' request conforms to.
@@ -78,17 +78,17 @@ type ProjectsRegionsJobsListResource =
 data ProjectsRegionsJobsList =
   ProjectsRegionsJobsList'
     { _prjlJobStateMatcher :: !(Maybe Text)
-    , _prjlXgafv           :: !(Maybe Xgafv)
-    , _prjlUploadProtocol  :: !(Maybe Text)
-    , _prjlAccessToken     :: !(Maybe Text)
-    , _prjlUploadType      :: !(Maybe Text)
-    , _prjlClusterName     :: !(Maybe Text)
-    , _prjlFilter          :: !(Maybe Text)
-    , _prjlRegion          :: !Text
-    , _prjlPageToken       :: !(Maybe Text)
-    , _prjlProjectId       :: !Text
-    , _prjlPageSize        :: !(Maybe (Textual Int32))
-    , _prjlCallback        :: !(Maybe Text)
+    , _prjlXgafv :: !(Maybe Xgafv)
+    , _prjlUploadProtocol :: !(Maybe Text)
+    , _prjlAccessToken :: !(Maybe Text)
+    , _prjlUploadType :: !(Maybe Text)
+    , _prjlClusterName :: !(Maybe Text)
+    , _prjlFilter :: !(Maybe Text)
+    , _prjlRegion :: !Text
+    , _prjlPageToken :: !(Maybe Text)
+    , _prjlProjectId :: !Text
+    , _prjlPageSize :: !(Maybe (Textual Int32))
+    , _prjlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

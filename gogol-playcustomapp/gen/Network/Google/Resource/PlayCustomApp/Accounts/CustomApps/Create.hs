@@ -37,8 +37,8 @@ module Network.Google.Resource.PlayCustomApp.Accounts.CustomApps.Create
     , acacAccount
     ) where
 
-import           Network.Google.PlayCustomApp.Types
-import           Network.Google.Prelude
+import Network.Google.PlayCustomApp.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @playcustomapp.accounts.customApps.create@ method which the
 -- 'AccountsCustomAppsCreate' request conforms to.

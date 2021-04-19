@@ -51,8 +51,8 @@ module Network.Google.Resource.Classroom.Courses.Announcements.List
     , calCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.courses.announcements.list@ method which the
 -- 'CoursesAnnouncementsList' request conforms to.
@@ -84,16 +84,16 @@ type CoursesAnnouncementsListResource =
 -- /See:/ 'coursesAnnouncementsList' smart constructor.
 data CoursesAnnouncementsList =
   CoursesAnnouncementsList'
-    { _calXgafv              :: !(Maybe Xgafv)
-    , _calUploadProtocol     :: !(Maybe Text)
-    , _calOrderBy            :: !(Maybe Text)
+    { _calXgafv :: !(Maybe Xgafv)
+    , _calUploadProtocol :: !(Maybe Text)
+    , _calOrderBy :: !(Maybe Text)
     , _calAnnouncementStates :: !(Maybe [Text])
-    , _calCourseId           :: !Text
-    , _calAccessToken        :: !(Maybe Text)
-    , _calUploadType         :: !(Maybe Text)
-    , _calPageToken          :: !(Maybe Text)
-    , _calPageSize           :: !(Maybe (Textual Int32))
-    , _calCallback           :: !(Maybe Text)
+    , _calCourseId :: !Text
+    , _calAccessToken :: !(Maybe Text)
+    , _calUploadType :: !(Maybe Text)
+    , _calPageToken :: !(Maybe Text)
+    , _calPageSize :: !(Maybe (Textual Int32))
+    , _calCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

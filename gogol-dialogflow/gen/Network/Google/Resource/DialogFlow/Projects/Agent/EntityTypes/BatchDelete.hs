@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.EntityTypes.BatchDelete
     , paetbdCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.entityTypes.batchDelete@ method which the
 -- 'ProjectsAgentEntityTypesBatchDelete' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentEntityTypesBatchDeleteResource =
 -- /See:/ 'projectsAgentEntityTypesBatchDelete' smart constructor.
 data ProjectsAgentEntityTypesBatchDelete =
   ProjectsAgentEntityTypesBatchDelete'
-    { _paetbdParent         :: !Text
-    , _paetbdXgafv          :: !(Maybe Xgafv)
+    { _paetbdParent :: !Text
+    , _paetbdXgafv :: !(Maybe Xgafv)
     , _paetbdUploadProtocol :: !(Maybe Text)
-    , _paetbdAccessToken    :: !(Maybe Text)
-    , _paetbdUploadType     :: !(Maybe Text)
-    , _paetbdPayload        :: !GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest
-    , _paetbdCallback       :: !(Maybe Text)
+    , _paetbdAccessToken :: !(Maybe Text)
+    , _paetbdUploadType :: !(Maybe Text)
+    , _paetbdPayload :: !GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest
+    , _paetbdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

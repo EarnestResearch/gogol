@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Schemas.List
     , slCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.list@ method which the
 -- 'SchemasList' request conforms to.

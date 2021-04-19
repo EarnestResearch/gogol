@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.List
     , pldslCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.list@ method which the
 -- 'ProjectsLocationsDataSetsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsDataSetsListResource =
 -- /See:/ 'projectsLocationsDataSetsList' smart constructor.
 data ProjectsLocationsDataSetsList =
   ProjectsLocationsDataSetsList'
-    { _pldslParent         :: !Text
-    , _pldslXgafv          :: !(Maybe Xgafv)
+    { _pldslParent :: !Text
+    , _pldslXgafv :: !(Maybe Xgafv)
     , _pldslUploadProtocol :: !(Maybe Text)
-    , _pldslAccessToken    :: !(Maybe Text)
-    , _pldslUploadType     :: !(Maybe Text)
-    , _pldslPageToken      :: !(Maybe Text)
-    , _pldslPageSize       :: !(Maybe (Textual Int32))
-    , _pldslCallback       :: !(Maybe Text)
+    , _pldslAccessToken :: !(Maybe Text)
+    , _pldslUploadType :: !(Maybe Text)
+    , _pldslPageToken :: !(Maybe Text)
+    , _pldslPageSize :: !(Maybe (Textual Int32))
+    , _pldslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

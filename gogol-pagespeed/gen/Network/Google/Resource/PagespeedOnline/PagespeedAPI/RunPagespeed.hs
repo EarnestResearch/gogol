@@ -43,8 +43,8 @@ module Network.Google.Resource.PagespeedOnline.PagespeedAPI.RunPagespeed
     , parpUtmSource
     ) where
 
-import           Network.Google.PageSpeed.Types
-import           Network.Google.Prelude
+import Network.Google.PageSpeed.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @pagespeedonline.pagespeedapi.runpagespeed@ method which the
 -- 'PagespeedAPIRunPagespeed' request conforms to.
@@ -73,11 +73,11 @@ type PagespeedAPIRunPagespeedResource =
 data PagespeedAPIRunPagespeed =
   PagespeedAPIRunPagespeed'
     { _parpUtmCampaign :: !(Maybe Text)
-    , _parpLocale      :: !(Maybe Text)
-    , _parpCategory    :: !(Maybe [PagespeedAPIRunPagespeedCategory])
-    , _parpURL         :: !Text
-    , _parpStrategy    :: !(Maybe PagespeedAPIRunPagespeedStrategy)
-    , _parpUtmSource   :: !(Maybe Text)
+    , _parpLocale :: !(Maybe Text)
+    , _parpCategory :: !(Maybe [PagespeedAPIRunPagespeedCategory])
+    , _parpURL :: !Text
+    , _parpStrategy :: !(Maybe PagespeedAPIRunPagespeedStrategy)
+    , _parpUtmSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

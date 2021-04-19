@@ -17,8 +17,8 @@
 --
 module Network.Google.Vault.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Vault.Types.Sum
 
 -- | An account being held in a particular hold. This structure is immutable.
 -- This can be either a single user or a google group, depending on the
@@ -27,10 +27,10 @@ import           Network.Google.Vault.Types.Sum
 -- /See:/ 'heldAccount' smart constructor.
 data HeldAccount =
   HeldAccount'
-    { _haEmail     :: !(Maybe Text)
-    , _haLastName  :: !(Maybe Text)
+    { _haEmail :: !(Maybe Text)
+    , _haLastName :: !(Maybe Text)
     , _haAccountId :: !(Maybe Text)
-    , _haHoldTime  :: !(Maybe DateTime')
+    , _haHoldTime :: !(Maybe DateTime')
     , _haFirstName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -151,16 +151,16 @@ instance ToJSON HeldHangoutsChatQuery where
 -- /See:/ 'export'' smart constructor.
 data Export =
   Export'
-    { _eStatus           :: !(Maybe ExportStatus)
+    { _eStatus :: !(Maybe ExportStatus)
     , _eCloudStorageSink :: !(Maybe CloudStorageSink)
-    , _eMatterId         :: !(Maybe Text)
-    , _eStats            :: !(Maybe ExportStats)
-    , _eExportOptions    :: !(Maybe ExportOptions)
-    , _eName             :: !(Maybe Text)
-    , _eQuery            :: !(Maybe Query)
-    , _eId               :: !(Maybe Text)
-    , _eRequester        :: !(Maybe UserInfo)
-    , _eCreateTime       :: !(Maybe DateTime')
+    , _eMatterId :: !(Maybe Text)
+    , _eStats :: !(Maybe ExportStats)
+    , _eExportOptions :: !(Maybe ExportOptions)
+    , _eName :: !(Maybe Text)
+    , _eQuery :: !(Maybe Query)
+    , _eId :: !(Maybe Text)
+    , _eRequester :: !(Maybe UserInfo)
+    , _eCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -321,7 +321,7 @@ instance ToJSON Export where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -495,7 +495,7 @@ instance ToJSON HangoutsChatExportOptions where
 -- /See:/ 'userInfo' smart constructor.
 data UserInfo =
   UserInfo'
-    { _uiEmail       :: !(Maybe Text)
+    { _uiEmail :: !(Maybe Text)
     , _uiDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -584,7 +584,7 @@ instance ToJSON TeamDriveInfo where
 data AddHeldAccountsRequest =
   AddHeldAccountsRequest'
     { _aharAccountIds :: !(Maybe [Text])
-    , _aharEmails     :: !(Maybe [Text])
+    , _aharEmails :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -639,10 +639,10 @@ instance ToJSON AddHeldAccountsRequest where
 -- /See:/ 'corpusQuery' smart constructor.
 data CorpusQuery =
   CorpusQuery'
-    { _cqGroupsQuery       :: !(Maybe HeldGroupsQuery)
-    , _cqDriveQuery        :: !(Maybe HeldDriveQuery)
+    { _cqGroupsQuery :: !(Maybe HeldGroupsQuery)
+    , _cqDriveQuery :: !(Maybe HeldDriveQuery)
     , _cqHangoutsChatQuery :: !(Maybe HeldHangoutsChatQuery)
-    , _cqMailQuery         :: !(Maybe HeldMailQuery)
+    , _cqMailQuery :: !(Maybe HeldMailQuery)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -817,8 +817,8 @@ instance ToJSON Empty where
 -- /See:/ 'exportStats' smart constructor.
 data ExportStats =
   ExportStats'
-    { _esTotalArtifactCount    :: !(Maybe (Textual Int64))
-    , _esSizeInBytes           :: !(Maybe (Textual Int64))
+    { _esTotalArtifactCount :: !(Maybe (Textual Int64))
+    , _esSizeInBytes :: !(Maybe (Textual Int64))
     , _esExportedArtifactCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -966,7 +966,7 @@ instance ToJSON RemoveHeldAccountsRequest where
 data ListSavedQueriesResponse =
   ListSavedQueriesResponse'
     { _lsqrNextPageToken :: !(Maybe Text)
-    , _lsqrSavedQueries  :: !(Maybe [SavedQuery])
+    , _lsqrSavedQueries :: !(Maybe [SavedQuery])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1121,8 +1121,8 @@ instance ToJSON HangoutsChatOptions where
 -- /See:/ 'addMatterPermissionsRequest' smart constructor.
 data AddMatterPermissionsRequest =
   AddMatterPermissionsRequest'
-    { _amprSendEmails       :: !(Maybe Bool)
-    , _amprCcMe             :: !(Maybe Bool)
+    { _amprSendEmails :: !(Maybe Bool)
+    , _amprCcMe :: !(Maybe Bool)
     , _amprMatterPermission :: !(Maybe MatterPermission)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1221,11 +1221,11 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'matter' smart constructor.
 data Matter =
   Matter'
-    { _mState             :: !(Maybe MatterState)
+    { _mState :: !(Maybe MatterState)
     , _mMatterPermissions :: !(Maybe [MatterPermission])
-    , _mMatterId          :: !(Maybe Text)
-    , _mName              :: !(Maybe Text)
-    , _mDescription       :: !(Maybe Text)
+    , _mMatterId :: !(Maybe Text)
+    , _mName :: !(Maybe Text)
+    , _mDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1344,8 +1344,8 @@ instance ToJSON CloseMatterResponse where
 data HeldMailQuery =
   HeldMailQuery'
     { _hmqStartTime :: !(Maybe DateTime')
-    , _hmqTerms     :: !(Maybe Text)
-    , _hmqEndTime   :: !(Maybe DateTime')
+    , _hmqTerms :: !(Maybe Text)
+    , _hmqEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1445,7 +1445,7 @@ instance ToJSON ListHeldAccountsResponse where
 data ListExportsResponse =
   ListExportsResponse'
     { _lerNextPageToken :: !(Maybe Text)
-    , _lerExports       :: !(Maybe [Export])
+    , _lerExports :: !(Maybe [Export])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1497,7 +1497,7 @@ instance ToJSON ListExportsResponse where
 -- /See:/ 'heldOrgUnit' smart constructor.
 data HeldOrgUnit =
   HeldOrgUnit'
-    { _houHoldTime  :: !(Maybe DateTime')
+    { _houHoldTime :: !(Maybe DateTime')
     , _houOrgUnitId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1546,7 +1546,7 @@ instance ToJSON HeldOrgUnit where
 data ListMattersResponse =
   ListMattersResponse'
     { _lmrNextPageToken :: !(Maybe Text)
-    , _lmrMatters       :: !(Maybe [Matter])
+    , _lmrMatters :: !(Maybe [Matter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1661,10 +1661,10 @@ instance ToJSON RemoveMatterPermissionsRequest where
 data ExportOptions =
   ExportOptions'
     { _eoHangoutsChatOptions :: !(Maybe HangoutsChatExportOptions)
-    , _eoDriveOptions        :: !(Maybe DriveExportOptions)
-    , _eoGroupsOptions       :: !(Maybe GroupsExportOptions)
-    , _eoRegion              :: !(Maybe ExportOptionsRegion)
-    , _eoMailOptions         :: !(Maybe MailExportOptions)
+    , _eoDriveOptions :: !(Maybe DriveExportOptions)
+    , _eoGroupsOptions :: !(Maybe GroupsExportOptions)
+    , _eoRegion :: !(Maybe ExportOptionsRegion)
+    , _eoMailOptions :: !(Maybe MailExportOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1773,7 +1773,7 @@ instance ToJSON CloseMatterRequest where
 data DriveOptions =
   DriveOptions'
     { _doIncludeTeamDrives :: !(Maybe Bool)
-    , _doVersionDate       :: !(Maybe DateTime')
+    , _doVersionDate :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1826,7 +1826,7 @@ instance ToJSON DriveOptions where
 -- /See:/ 'addHeldAccountResult' smart constructor.
 data AddHeldAccountResult =
   AddHeldAccountResult'
-    { _aharStatus  :: !(Maybe Status)
+    { _aharStatus :: !(Maybe Status)
     , _aharAccount :: !(Maybe HeldAccount)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1875,10 +1875,10 @@ instance ToJSON AddHeldAccountResult where
 data SavedQuery =
   SavedQuery'
     { _sqSavedQueryId :: !(Maybe Text)
-    , _sqMatterId     :: !(Maybe Text)
-    , _sqQuery        :: !(Maybe Query)
-    , _sqDisplayName  :: !(Maybe Text)
-    , _sqCreateTime   :: !(Maybe DateTime')
+    , _sqMatterId :: !(Maybe Text)
+    , _sqQuery :: !(Maybe Query)
+    , _sqDisplayName :: !(Maybe Text)
+    , _sqCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1966,13 +1966,13 @@ instance ToJSON SavedQuery where
 -- /See:/ 'hold' smart constructor.
 data Hold =
   Hold'
-    { _hOrgUnit    :: !(Maybe HeldOrgUnit)
-    , _hHoldId     :: !(Maybe Text)
-    , _hAccounts   :: !(Maybe [HeldAccount])
+    { _hOrgUnit :: !(Maybe HeldOrgUnit)
+    , _hHoldId :: !(Maybe Text)
+    , _hAccounts :: !(Maybe [HeldAccount])
     , _hUpdateTime :: !(Maybe DateTime')
-    , _hName       :: !(Maybe Text)
-    , _hQuery      :: !(Maybe CorpusQuery)
-    , _hCorpus     :: !(Maybe HoldCorpus)
+    , _hName :: !(Maybe Text)
+    , _hQuery :: !(Maybe CorpusQuery)
+    , _hCorpus :: !(Maybe HoldCorpus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2073,20 +2073,20 @@ instance ToJSON Hold where
 -- /See:/ 'query' smart constructor.
 data Query =
   Query'
-    { _qAccountInfo         :: !(Maybe AccountInfo)
-    , _qTeamDriveInfo       :: !(Maybe TeamDriveInfo)
-    , _qOrgUnitInfo         :: !(Maybe OrgUnitInfo)
-    , _qStartTime           :: !(Maybe DateTime')
-    , _qTerms               :: !(Maybe Text)
-    , _qHangoutsChatInfo    :: !(Maybe HangoutsChatInfo)
+    { _qAccountInfo :: !(Maybe AccountInfo)
+    , _qTeamDriveInfo :: !(Maybe TeamDriveInfo)
+    , _qOrgUnitInfo :: !(Maybe OrgUnitInfo)
+    , _qStartTime :: !(Maybe DateTime')
+    , _qTerms :: !(Maybe Text)
+    , _qHangoutsChatInfo :: !(Maybe HangoutsChatInfo)
     , _qHangoutsChatOptions :: !(Maybe HangoutsChatOptions)
-    , _qDriveOptions        :: !(Maybe DriveOptions)
-    , _qEndTime             :: !(Maybe DateTime')
-    , _qDataScope           :: !(Maybe QueryDataScope)
-    , _qCorpus              :: !(Maybe QueryCorpus)
-    , _qTimeZone            :: !(Maybe Text)
-    , _qMailOptions         :: !(Maybe MailOptions)
-    , _qSearchMethod        :: !(Maybe QuerySearchMethod)
+    , _qDriveOptions :: !(Maybe DriveOptions)
+    , _qEndTime :: !(Maybe DateTime')
+    , _qDataScope :: !(Maybe QueryDataScope)
+    , _qCorpus :: !(Maybe QueryCorpus)
+    , _qTimeZone :: !(Maybe Text)
+    , _qMailOptions :: !(Maybe MailOptions)
+    , _qSearchMethod :: !(Maybe QuerySearchMethod)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2312,7 +2312,7 @@ instance ToJSON AddHeldAccountsResponse where
 -- /See:/ 'mailExportOptions' smart constructor.
 data MailExportOptions =
   MailExportOptions'
-    { _meoExportFormat                :: !(Maybe MailExportOptionsExportFormat)
+    { _meoExportFormat :: !(Maybe MailExportOptionsExportFormat)
     , _meoShowConfidentialModeContent :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2366,7 +2366,7 @@ instance ToJSON MailExportOptions where
 data ListHoldsResponse =
   ListHoldsResponse'
     { _lhrNextPageToken :: !(Maybe Text)
-    , _lhrHolds         :: !(Maybe [Hold])
+    , _lhrHolds :: !(Maybe [Hold])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2458,7 +2458,7 @@ instance ToJSON GroupsExportOptions where
 -- /See:/ 'matterPermission' smart constructor.
 data MatterPermission =
   MatterPermission'
-    { _mpRole      :: !(Maybe MatterPermissionRole)
+    { _mpRole :: !(Maybe MatterPermissionRole)
     , _mpAccountId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2546,8 +2546,8 @@ instance ToJSON DriveExportOptions where
 data HeldGroupsQuery =
   HeldGroupsQuery'
     { _hgqStartTime :: !(Maybe DateTime')
-    , _hgqTerms     :: !(Maybe Text)
-    , _hgqEndTime   :: !(Maybe DateTime')
+    , _hgqTerms :: !(Maybe Text)
+    , _hgqEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2642,9 +2642,9 @@ instance ToJSON ReopenMatterResponse where
 data CloudStorageFile =
   CloudStorageFile'
     { _csfObjectName :: !(Maybe Text)
-    , _csfSize       :: !(Maybe (Textual Int64))
+    , _csfSize :: !(Maybe (Textual Int64))
     , _csfBucketName :: !(Maybe Text)
-    , _csfMD5Hash    :: !(Maybe Text)
+    , _csfMD5Hash :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

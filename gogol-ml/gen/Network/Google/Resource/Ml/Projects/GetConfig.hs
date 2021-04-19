@@ -44,8 +44,8 @@ module Network.Google.Resource.Ml.Projects.GetConfig
     , pgcCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.getConfig@ method which the
 -- 'ProjectsGetConfig' request conforms to.
@@ -68,12 +68,12 @@ type ProjectsGetConfigResource =
 -- /See:/ 'projectsGetConfig' smart constructor.
 data ProjectsGetConfig =
   ProjectsGetConfig'
-    { _pgcXgafv          :: !(Maybe Xgafv)
+    { _pgcXgafv :: !(Maybe Xgafv)
     , _pgcUploadProtocol :: !(Maybe Text)
-    , _pgcAccessToken    :: !(Maybe Text)
-    , _pgcUploadType     :: !(Maybe Text)
-    , _pgcName           :: !Text
-    , _pgcCallback       :: !(Maybe Text)
+    , _pgcAccessToken :: !(Maybe Text)
+    , _pgcUploadType :: !(Maybe Text)
+    , _pgcName :: !Text
+    , _pgcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

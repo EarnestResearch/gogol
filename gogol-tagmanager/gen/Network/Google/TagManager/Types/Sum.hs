@@ -16,7 +16,7 @@
 --
 module Network.Google.TagManager.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Type of built-in variable.
 data BuiltInVariableType

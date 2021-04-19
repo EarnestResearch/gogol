@@ -46,8 +46,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Delete
     , fdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.delete@ method which the
 -- 'FoldersDelete' request conforms to.
@@ -71,12 +71,12 @@ type FoldersDeleteResource =
 -- /See:/ 'foldersDelete' smart constructor.
 data FoldersDelete =
   FoldersDelete'
-    { _fdXgafv          :: !(Maybe Xgafv)
+    { _fdXgafv :: !(Maybe Xgafv)
     , _fdUploadProtocol :: !(Maybe Text)
-    , _fdAccessToken    :: !(Maybe Text)
-    , _fdUploadType     :: !(Maybe Text)
-    , _fdName           :: !Text
-    , _fdCallback       :: !(Maybe Text)
+    , _fdAccessToken :: !(Maybe Text)
+    , _fdUploadType :: !(Maybe Text)
+    , _fdName :: !Text
+    , _fdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.FirebaseRules.Projects.Releases.List
     , prlrCallback
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebaserules.projects.releases.list@ method which the
 -- 'ProjectsReleasesList' request conforms to.
@@ -73,15 +73,15 @@ type ProjectsReleasesListResource =
 -- /See:/ 'projectsReleasesList' smart constructor.
 data ProjectsReleasesList =
   ProjectsReleasesList'
-    { _prlrXgafv          :: !(Maybe Xgafv)
+    { _prlrXgafv :: !(Maybe Xgafv)
     , _prlrUploadProtocol :: !(Maybe Text)
-    , _prlrAccessToken    :: !(Maybe Text)
-    , _prlrUploadType     :: !(Maybe Text)
-    , _prlrName           :: !Text
-    , _prlrFilter         :: !(Maybe Text)
-    , _prlrPageToken      :: !(Maybe Text)
-    , _prlrPageSize       :: !(Maybe (Textual Int32))
-    , _prlrCallback       :: !(Maybe Text)
+    , _prlrAccessToken :: !(Maybe Text)
+    , _prlrUploadType :: !(Maybe Text)
+    , _prlrName :: !Text
+    , _prlrFilter :: !(Maybe Text)
+    , _prlrPageToken :: !(Maybe Text)
+    , _prlrPageSize :: !(Maybe (Textual Int32))
+    , _prlrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

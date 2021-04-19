@@ -39,8 +39,8 @@ module Network.Google.Resource.DNS.ManagedZones.Update
     , mzuClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.managedZones.update@ method which the
 -- 'ManagedZonesUpdate' request conforms to.
@@ -60,9 +60,9 @@ type ManagedZonesUpdateResource =
 -- /See:/ 'managedZonesUpdate' smart constructor.
 data ManagedZonesUpdate =
   ManagedZonesUpdate'
-    { _mzuProject           :: !Text
-    , _mzuPayload           :: !ManagedZone
-    , _mzuManagedZone       :: !Text
+    { _mzuProject :: !Text
+    , _mzuPayload :: !ManagedZone
+    , _mzuManagedZone :: !Text
     , _mzuClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

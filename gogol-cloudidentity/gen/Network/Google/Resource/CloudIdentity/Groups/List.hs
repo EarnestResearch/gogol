@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudIdentity.Groups.List
     , gllCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.list@ method which the
 -- 'GroupsList' request conforms to.
@@ -69,15 +69,15 @@ type GroupsListResource =
 -- /See:/ 'groupsList' smart constructor.
 data GroupsList =
   GroupsList'
-    { _gllParent         :: !(Maybe Text)
-    , _gllXgafv          :: !(Maybe Xgafv)
+    { _gllParent :: !(Maybe Text)
+    , _gllXgafv :: !(Maybe Xgafv)
     , _gllUploadProtocol :: !(Maybe Text)
-    , _gllAccessToken    :: !(Maybe Text)
-    , _gllUploadType     :: !(Maybe Text)
-    , _gllView           :: !(Maybe Text)
-    , _gllPageToken      :: !(Maybe Text)
-    , _gllPageSize       :: !(Maybe (Textual Int32))
-    , _gllCallback       :: !(Maybe Text)
+    , _gllAccessToken :: !(Maybe Text)
+    , _gllUploadType :: !(Maybe Text)
+    , _gllView :: !(Maybe Text)
+    , _gllPageToken :: !(Maybe Text)
+    , _gllPageSize :: !(Maybe (Textual Int32))
+    , _gllCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

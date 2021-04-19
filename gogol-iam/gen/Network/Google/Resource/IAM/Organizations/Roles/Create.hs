@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.Create
     , orcCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.create@ method which the
 -- 'OrganizationsRolesCreate' request conforms to.
@@ -65,13 +65,13 @@ type OrganizationsRolesCreateResource =
 -- /See:/ 'organizationsRolesCreate' smart constructor.
 data OrganizationsRolesCreate =
   OrganizationsRolesCreate'
-    { _orcParent         :: !Text
-    , _orcXgafv          :: !(Maybe Xgafv)
+    { _orcParent :: !Text
+    , _orcXgafv :: !(Maybe Xgafv)
     , _orcUploadProtocol :: !(Maybe Text)
-    , _orcAccessToken    :: !(Maybe Text)
-    , _orcUploadType     :: !(Maybe Text)
-    , _orcPayload        :: !CreateRoleRequest
-    , _orcCallback       :: !(Maybe Text)
+    , _orcAccessToken :: !(Maybe Text)
+    , _orcUploadType :: !(Maybe Text)
+    , _orcPayload :: !CreateRoleRequest
+    , _orcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.CreativeFields.Insert
     , cfiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFields.insert@ method which the
 -- 'CreativeFieldsInsert' request conforms to.
@@ -58,7 +58,7 @@ type CreativeFieldsInsertResource =
 data CreativeFieldsInsert =
   CreativeFieldsInsert'
     { _cfiProFileId :: !(Textual Int64)
-    , _cfiPayload   :: !CreativeField
+    , _cfiPayload :: !CreativeField
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Vault.Matters.List
     , mlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.list@ method which the
 -- 'MattersList' request conforms to.
@@ -69,15 +69,15 @@ type MattersListResource =
 -- /See:/ 'mattersList' smart constructor.
 data MattersList =
   MattersList'
-    { _mlXgafv          :: !(Maybe Xgafv)
-    , _mlState          :: !(Maybe Text)
+    { _mlXgafv :: !(Maybe Xgafv)
+    , _mlState :: !(Maybe Text)
     , _mlUploadProtocol :: !(Maybe Text)
-    , _mlAccessToken    :: !(Maybe Text)
-    , _mlUploadType     :: !(Maybe Text)
-    , _mlView           :: !(Maybe Text)
-    , _mlPageToken      :: !(Maybe Text)
-    , _mlPageSize       :: !(Maybe (Textual Int32))
-    , _mlCallback       :: !(Maybe Text)
+    , _mlAccessToken :: !(Maybe Text)
+    , _mlUploadType :: !(Maybe Text)
+    , _mlView :: !(Maybe Text)
+    , _mlPageToken :: !(Maybe Text)
+    , _mlPageSize :: !(Maybe (Textual Int32))
+    , _mlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

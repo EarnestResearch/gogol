@@ -50,8 +50,8 @@ module Network.Google.Resource.Books.Layers.VolumeAnnotations.List
     , lvalStartPosition
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.layers.volumeAnnotations.list@ method which the
 -- 'LayersVolumeAnnotationsList' request conforms to.
@@ -84,21 +84,21 @@ type LayersVolumeAnnotationsListResource =
 -- /See:/ 'layersVolumeAnnotationsList' smart constructor.
 data LayersVolumeAnnotationsList =
   LayersVolumeAnnotationsList'
-    { _lvalStartOffSet              :: !(Maybe Text)
-    , _lvalLocale                   :: !(Maybe Text)
-    , _lvalContentVersion           :: !Text
-    , _lvalShowDeleted              :: !(Maybe Bool)
+    { _lvalStartOffSet :: !(Maybe Text)
+    , _lvalLocale :: !(Maybe Text)
+    , _lvalContentVersion :: !Text
+    , _lvalShowDeleted :: !(Maybe Bool)
     , _lvalVolumeAnnotationsVersion :: !(Maybe Text)
-    , _lvalUpdatedMax               :: !(Maybe Text)
-    , _lvalUpdatedMin               :: !(Maybe Text)
-    , _lvalEndOffSet                :: !(Maybe Text)
-    , _lvalVolumeId                 :: !Text
-    , _lvalSource                   :: !(Maybe Text)
-    , _lvalPageToken                :: !(Maybe Text)
-    , _lvalEndPosition              :: !(Maybe Text)
-    , _lvalLayerId                  :: !Text
-    , _lvalMaxResults               :: !(Maybe (Textual Word32))
-    , _lvalStartPosition            :: !(Maybe Text)
+    , _lvalUpdatedMax :: !(Maybe Text)
+    , _lvalUpdatedMin :: !(Maybe Text)
+    , _lvalEndOffSet :: !(Maybe Text)
+    , _lvalVolumeId :: !Text
+    , _lvalSource :: !(Maybe Text)
+    , _lvalPageToken :: !(Maybe Text)
+    , _lvalEndPosition :: !(Maybe Text)
+    , _lvalLayerId :: !Text
+    , _lvalMaxResults :: !(Maybe (Textual Word32))
+    , _lvalStartPosition :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

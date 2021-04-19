@@ -45,8 +45,8 @@ module Network.Google.Resource.Storage.Objects.Delete
     , odGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.delete@ method which the
 -- 'ObjectsDelete' request conforms to.
@@ -73,14 +73,14 @@ type ObjectsDeleteResource =
 -- /See:/ 'objectsDelete' smart constructor.
 data ObjectsDelete =
   ObjectsDelete'
-    { _odIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _odIfGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _odIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _odBucket                   :: !Text
-    , _odUserProject              :: !(Maybe Text)
+    { _odIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _odIfGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _odIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _odBucket :: !Text
+    , _odUserProject :: !(Maybe Text)
     , _odIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _odObject                   :: !Text
-    , _odGeneration               :: !(Maybe (Textual Int64))
+    , _odObject :: !Text
+    , _odGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

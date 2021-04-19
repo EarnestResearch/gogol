@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.Projects.ListXpnHosts
     , plxhMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.projects.listXpnHosts@ method which the
 -- 'ProjectsListXpnHosts' request conforms to.
@@ -67,11 +67,11 @@ type ProjectsListXpnHostsResource =
 -- /See:/ 'projectsListXpnHosts' smart constructor.
 data ProjectsListXpnHosts =
   ProjectsListXpnHosts'
-    { _plxhProject    :: !Text
-    , _plxhPayload    :: !ProjectsListXpnHostsRequest
-    , _plxhOrderBy    :: !(Maybe Text)
-    , _plxhFilter     :: !(Maybe Text)
-    , _plxhPageToken  :: !(Maybe Text)
+    { _plxhProject :: !Text
+    , _plxhPayload :: !ProjectsListXpnHostsRequest
+    , _plxhOrderBy :: !(Maybe Text)
+    , _plxhFilter :: !(Maybe Text)
+    , _plxhPageToken :: !(Maybe Text)
     , _plxhMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

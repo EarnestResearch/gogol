@@ -41,8 +41,8 @@ module Network.Google.Resource.Books.MyConfig.RequestAccess
     , mcraNonce
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.myconfig.requestAccess@ method which the
 -- 'MyConfigRequestAccess' request conforms to.
@@ -67,12 +67,12 @@ type MyConfigRequestAccessResource =
 -- /See:/ 'myConfigRequestAccess' smart constructor.
 data MyConfigRequestAccess =
   MyConfigRequestAccess'
-    { _mcraCpksver      :: !Text
-    , _mcraLocale       :: !(Maybe Text)
+    { _mcraCpksver :: !Text
+    , _mcraLocale :: !(Maybe Text)
     , _mcraLicenseTypes :: !(Maybe MyConfigRequestAccessLicenseTypes)
-    , _mcraVolumeId     :: !Text
-    , _mcraSource       :: !Text
-    , _mcraNonce        :: !Text
+    , _mcraVolumeId :: !Text
+    , _mcraSource :: !Text
+    , _mcraNonce :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

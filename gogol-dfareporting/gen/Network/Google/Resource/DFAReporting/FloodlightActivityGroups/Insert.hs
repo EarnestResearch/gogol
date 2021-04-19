@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.Insert
     , fagiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.insert@ method which the
 -- 'FloodlightActivityGroupsInsert' request conforms to.
@@ -58,7 +58,7 @@ type FloodlightActivityGroupsInsertResource =
 data FloodlightActivityGroupsInsert =
   FloodlightActivityGroupsInsert'
     { _fagiProFileId :: !(Textual Int64)
-    , _fagiPayload   :: !FloodlightActivityGroup
+    , _fagiPayload :: !FloodlightActivityGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

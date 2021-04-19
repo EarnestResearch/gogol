@@ -43,8 +43,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.AppProFiles.List
     , piapflCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.appProfiles.list@ method which the
 -- 'ProjectsInstancesAppProFilesList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsInstancesAppProFilesListResource =
 -- /See:/ 'projectsInstancesAppProFilesList' smart constructor.
 data ProjectsInstancesAppProFilesList =
   ProjectsInstancesAppProFilesList'
-    { _piapflParent         :: !Text
-    , _piapflXgafv          :: !(Maybe Xgafv)
+    { _piapflParent :: !Text
+    , _piapflXgafv :: !(Maybe Xgafv)
     , _piapflUploadProtocol :: !(Maybe Text)
-    , _piapflAccessToken    :: !(Maybe Text)
-    , _piapflUploadType     :: !(Maybe Text)
-    , _piapflPageToken      :: !(Maybe Text)
-    , _piapflPageSize       :: !(Maybe (Textual Int32))
-    , _piapflCallback       :: !(Maybe Text)
+    , _piapflAccessToken :: !(Maybe Text)
+    , _piapflUploadType :: !(Maybe Text)
+    , _piapflPageToken :: !(Maybe Text)
+    , _piapflPageSize :: !(Maybe (Textual Int32))
+    , _piapflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

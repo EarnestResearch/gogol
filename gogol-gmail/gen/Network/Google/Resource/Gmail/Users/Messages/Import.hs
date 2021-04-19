@@ -43,8 +43,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Import
     , umiInternalDateSource
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.import@ method which the
 -- 'UsersMessagesImport' request conforms to.
@@ -89,11 +89,11 @@ type UsersMessagesImportResource =
 -- /See:/ 'usersMessagesImport' smart constructor.
 data UsersMessagesImport =
   UsersMessagesImport'
-    { _umiPayload            :: !Message
-    , _umiUserId             :: !Text
+    { _umiPayload :: !Message
+    , _umiUserId :: !Text
     , _umiProcessForCalendar :: !Bool
-    , _umiDeleted            :: !Bool
-    , _umiNeverMarkSpam      :: !Bool
+    , _umiDeleted :: !Bool
+    , _umiNeverMarkSpam :: !Bool
     , _umiInternalDateSource :: !UsersMessagesImportInternalDateSource
     }
   deriving (Eq, Show, Data, Typeable, Generic)

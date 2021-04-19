@@ -39,14 +39,14 @@ module Network.Google.Resource.Content.Datafeedstatuses.Get
     , dggLanguage
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeedstatuses.get@ method which the
 -- 'DatafeedstatusesGet' request conforms to.
 type DatafeedstatusesGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeedstatuses" :>
              Capture "datafeedId" (Textual Word64) :>
@@ -61,9 +61,9 @@ type DatafeedstatusesGetResource =
 data DatafeedstatusesGet =
   DatafeedstatusesGet'
     { _dggMerchantId :: !(Textual Word64)
-    , _dggCountry    :: !(Maybe Text)
+    , _dggCountry :: !(Maybe Text)
     , _dggDatafeedId :: !(Textual Word64)
-    , _dggLanguage   :: !(Maybe Text)
+    , _dggLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

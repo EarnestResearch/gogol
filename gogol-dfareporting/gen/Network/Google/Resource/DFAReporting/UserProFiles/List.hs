@@ -34,8 +34,8 @@ module Network.Google.Resource.DFAReporting.UserProFiles.List
 
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userProfiles.list@ method which the
 -- 'UserProFilesList' request conforms to.

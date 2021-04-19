@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.SSLPolicies.ListAvailableFeatures
     , splafMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.sslPolicies.listAvailableFeatures@ method which the
 -- 'SSLPoliciesListAvailableFeatures' request conforms to.
@@ -68,10 +68,10 @@ type SSLPoliciesListAvailableFeaturesResource =
 -- /See:/ 'sslPoliciesListAvailableFeatures' smart constructor.
 data SSLPoliciesListAvailableFeatures =
   SSLPoliciesListAvailableFeatures'
-    { _splafOrderBy    :: !(Maybe Text)
-    , _splafProject    :: !Text
-    , _splafFilter     :: !(Maybe Text)
-    , _splafPageToken  :: !(Maybe Text)
+    { _splafOrderBy :: !(Maybe Text)
+    , _splafProject :: !Text
+    , _splafFilter :: !(Maybe Text)
+    , _splafPageToken :: !(Maybe Text)
     , _splafMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -35,8 +35,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Bundles.List
     , eblEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.bundles.list@ method which the
 -- 'EditsBundlesList' request conforms to.
@@ -56,7 +56,7 @@ type EditsBundlesListResource =
 data EditsBundlesList =
   EditsBundlesList'
     { _eblPackageName :: !Text
-    , _eblEditId      :: !Text
+    , _eblEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.C
     , phescProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.create@ method which the
 -- 'ProjectsHistoriesExecutionsStepsCreate' request conforms to.
@@ -74,11 +74,11 @@ type ProjectsHistoriesExecutionsStepsCreateResource =
 -- /See:/ 'projectsHistoriesExecutionsStepsCreate' smart constructor.
 data ProjectsHistoriesExecutionsStepsCreate =
   ProjectsHistoriesExecutionsStepsCreate'
-    { _phescRequestId   :: !(Maybe Text)
+    { _phescRequestId :: !(Maybe Text)
     , _phescExecutionId :: !Text
-    , _phescPayload     :: !Step
-    , _phescHistoryId   :: !Text
-    , _phescProjectId   :: !Text
+    , _phescPayload :: !Step
+    , _phescHistoryId :: !Text
+    , _phescProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

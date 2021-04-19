@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Delete
     , ididCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.delete@ method which the
 -- 'IndexingDatasourcesItemsDelete' request conforms to.
@@ -71,16 +71,16 @@ type IndexingDatasourcesItemsDeleteResource =
 -- /See:/ 'indexingDatasourcesItemsDelete' smart constructor.
 data IndexingDatasourcesItemsDelete =
   IndexingDatasourcesItemsDelete'
-    { _ididXgafv                       :: !(Maybe Xgafv)
-    , _ididUploadProtocol              :: !(Maybe Text)
-    , _ididAccessToken                 :: !(Maybe Text)
-    , _ididMode                        :: !(Maybe Text)
-    , _ididUploadType                  :: !(Maybe Text)
-    , _ididConnectorName               :: !(Maybe Text)
-    , _ididName                        :: !Text
-    , _ididVersion                     :: !(Maybe Bytes)
+    { _ididXgafv :: !(Maybe Xgafv)
+    , _ididUploadProtocol :: !(Maybe Text)
+    , _ididAccessToken :: !(Maybe Text)
+    , _ididMode :: !(Maybe Text)
+    , _ididUploadType :: !(Maybe Text)
+    , _ididConnectorName :: !(Maybe Text)
+    , _ididName :: !Text
+    , _ididVersion :: !(Maybe Bytes)
     , _ididDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _ididCallback                    :: !(Maybe Text)
+    , _ididCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

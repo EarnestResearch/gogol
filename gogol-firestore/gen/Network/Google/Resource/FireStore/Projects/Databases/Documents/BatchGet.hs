@@ -43,8 +43,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.BatchGet
     , pddbgCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.batchGet@ method which the
 -- 'ProjectsDatabasesDocumentsBatchGet' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsDatabasesDocumentsBatchGetResource =
 -- /See:/ 'projectsDatabasesDocumentsBatchGet' smart constructor.
 data ProjectsDatabasesDocumentsBatchGet =
   ProjectsDatabasesDocumentsBatchGet'
-    { _pddbgXgafv          :: !(Maybe Xgafv)
+    { _pddbgXgafv :: !(Maybe Xgafv)
     , _pddbgUploadProtocol :: !(Maybe Text)
-    , _pddbgDatabase       :: !Text
-    , _pddbgAccessToken    :: !(Maybe Text)
-    , _pddbgUploadType     :: !(Maybe Text)
-    , _pddbgPayload        :: !BatchGetDocumentsRequest
-    , _pddbgCallback       :: !(Maybe Text)
+    , _pddbgDatabase :: !Text
+    , _pddbgAccessToken :: !(Maybe Text)
+    , _pddbgUploadType :: !(Maybe Text)
+    , _pddbgPayload :: !BatchGetDocumentsRequest
+    , _pddbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.Delete
     , pitdCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.tables.delete@ method which the
 -- 'ProjectsInstancesTablesDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsInstancesTablesDeleteResource =
 -- /See:/ 'projectsInstancesTablesDelete' smart constructor.
 data ProjectsInstancesTablesDelete =
   ProjectsInstancesTablesDelete'
-    { _pitdXgafv          :: !(Maybe Xgafv)
+    { _pitdXgafv :: !(Maybe Xgafv)
     , _pitdUploadProtocol :: !(Maybe Text)
-    , _pitdAccessToken    :: !(Maybe Text)
-    , _pitdUploadType     :: !(Maybe Text)
-    , _pitdName           :: !Text
-    , _pitdCallback       :: !(Maybe Text)
+    , _pitdAccessToken :: !(Maybe Text)
+    , _pitdUploadType :: !(Maybe Text)
+    , _pitdName :: !Text
+    , _pitdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

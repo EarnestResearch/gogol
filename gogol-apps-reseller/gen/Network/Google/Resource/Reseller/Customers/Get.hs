@@ -36,8 +36,8 @@ module Network.Google.Resource.Reseller.Customers.Get
     , cgCustomerId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.customers.get@ method which the
 -- 'CustomersGet' request conforms to.

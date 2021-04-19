@@ -47,8 +47,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Search
     , pasCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.search@ method which the
 -- 'ProjectsAgentSearch' request conforms to.
@@ -76,14 +76,14 @@ type ProjectsAgentSearchResource =
 -- /See:/ 'projectsAgentSearch' smart constructor.
 data ProjectsAgentSearch =
   ProjectsAgentSearch'
-    { _pasParent         :: !Text
-    , _pasXgafv          :: !(Maybe Xgafv)
+    { _pasParent :: !Text
+    , _pasXgafv :: !(Maybe Xgafv)
     , _pasUploadProtocol :: !(Maybe Text)
-    , _pasAccessToken    :: !(Maybe Text)
-    , _pasUploadType     :: !(Maybe Text)
-    , _pasPageToken      :: !(Maybe Text)
-    , _pasPageSize       :: !(Maybe (Textual Int32))
-    , _pasCallback       :: !(Maybe Text)
+    , _pasAccessToken :: !(Maybe Text)
+    , _pasUploadType :: !(Maybe Text)
+    , _pasPageToken :: !(Maybe Text)
+    , _pasPageSize :: !(Maybe (Textual Int32))
+    , _pasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

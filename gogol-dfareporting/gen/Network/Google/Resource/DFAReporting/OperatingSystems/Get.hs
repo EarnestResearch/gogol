@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.OperatingSystems.Get
     , osgDartId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.operatingSystems.get@ method which the
 -- 'OperatingSystemsGet' request conforms to.
@@ -58,7 +58,7 @@ type OperatingSystemsGetResource =
 data OperatingSystemsGet =
   OperatingSystemsGet'
     { _osgProFileId :: !(Textual Int64)
-    , _osgDartId    :: !(Textual Int64)
+    , _osgDartId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

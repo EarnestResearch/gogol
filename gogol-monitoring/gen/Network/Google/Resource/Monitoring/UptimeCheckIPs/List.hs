@@ -42,8 +42,8 @@ module Network.Google.Resource.Monitoring.UptimeCheckIPs.List
     , ucilCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.uptimeCheckIps.list@ method which the
 -- 'UptimeCheckIPsList' request conforms to.
@@ -65,13 +65,13 @@ type UptimeCheckIPsListResource =
 -- /See:/ 'uptimeCheckIPsList' smart constructor.
 data UptimeCheckIPsList =
   UptimeCheckIPsList'
-    { _ucilXgafv          :: !(Maybe Xgafv)
+    { _ucilXgafv :: !(Maybe Xgafv)
     , _ucilUploadProtocol :: !(Maybe Text)
-    , _ucilAccessToken    :: !(Maybe Text)
-    , _ucilUploadType     :: !(Maybe Text)
-    , _ucilPageToken      :: !(Maybe Text)
-    , _ucilPageSize       :: !(Maybe (Textual Int32))
-    , _ucilCallback       :: !(Maybe Text)
+    , _ucilAccessToken :: !(Maybe Text)
+    , _ucilUploadType :: !(Maybe Text)
+    , _ucilPageToken :: !(Maybe Text)
+    , _ucilPageSize :: !(Maybe (Textual Int32))
+    , _ucilCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

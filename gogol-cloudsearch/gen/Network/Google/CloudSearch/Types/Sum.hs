@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudSearch.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 data DriveMimeTypeRestrictType
     = Unspecified

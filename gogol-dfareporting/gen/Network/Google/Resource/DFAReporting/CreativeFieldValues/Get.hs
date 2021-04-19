@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.Get
     , cfvgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.get@ method which the
 -- 'CreativeFieldValuesGet' request conforms to.
@@ -61,8 +61,8 @@ type CreativeFieldValuesGetResource =
 data CreativeFieldValuesGet =
   CreativeFieldValuesGet'
     { _cfvgCreativeFieldId :: !(Textual Int64)
-    , _cfvgProFileId       :: !(Textual Int64)
-    , _cfvgId              :: !(Textual Int64)
+    , _cfvgProFileId :: !(Textual Int64)
+    , _cfvgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

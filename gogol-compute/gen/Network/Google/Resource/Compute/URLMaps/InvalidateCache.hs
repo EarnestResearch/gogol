@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.URLMaps.InvalidateCache
     , umicPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.urlMaps.invalidateCache@ method which the
 -- 'URLMapsInvalidateCache' request conforms to.
@@ -66,9 +66,9 @@ type URLMapsInvalidateCacheResource =
 data URLMapsInvalidateCache =
   URLMapsInvalidateCache'
     { _umicRequestId :: !(Maybe Text)
-    , _umicURLMap    :: !Text
-    , _umicProject   :: !Text
-    , _umicPayload   :: !CacheInvalidationRule
+    , _umicURLMap :: !Text
+    , _umicProject :: !Text
+    , _umicPayload :: !CacheInvalidationRule
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

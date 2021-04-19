@@ -48,8 +48,8 @@ module Network.Google.Resource.StreetViewPublish.Photo.Get
     , pgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photo.get@ method which the
 -- 'PhotoGet' request conforms to.
@@ -76,14 +76,14 @@ type PhotoGetResource =
 -- /See:/ 'photoGet' smart constructor.
 data PhotoGet =
   PhotoGet'
-    { _pgXgafv          :: !(Maybe Xgafv)
-    , _pgLanguageCode   :: !(Maybe Text)
+    { _pgXgafv :: !(Maybe Xgafv)
+    , _pgLanguageCode :: !(Maybe Text)
     , _pgUploadProtocol :: !(Maybe Text)
-    , _pgAccessToken    :: !(Maybe Text)
-    , _pgUploadType     :: !(Maybe Text)
-    , _pgView           :: !(Maybe Text)
-    , _pgPhotoId        :: !Text
-    , _pgCallback       :: !(Maybe Text)
+    , _pgAccessToken :: !(Maybe Text)
+    , _pgUploadType :: !(Maybe Text)
+    , _pgView :: !(Maybe Text)
+    , _pgPhotoId :: !Text
+    , _pgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

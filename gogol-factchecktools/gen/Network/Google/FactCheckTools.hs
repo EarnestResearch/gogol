@@ -138,14 +138,14 @@ module Network.Google.FactCheckTools
     , gffvlcrmprClaimReviewMarkupPages
     ) where
 
-import           Network.Google.FactCheckTools.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.FactCheckTools.Claims.Search
-import           Network.Google.Resource.FactCheckTools.Pages.Create
-import           Network.Google.Resource.FactCheckTools.Pages.Delete
-import           Network.Google.Resource.FactCheckTools.Pages.Get
-import           Network.Google.Resource.FactCheckTools.Pages.List
-import           Network.Google.Resource.FactCheckTools.Pages.Update
+import Network.Google.Prelude
+import Network.Google.FactCheckTools.Types
+import Network.Google.Resource.FactCheckTools.Claims.Search
+import Network.Google.Resource.FactCheckTools.Pages.Create
+import Network.Google.Resource.FactCheckTools.Pages.Delete
+import Network.Google.Resource.FactCheckTools.Pages.Get
+import Network.Google.Resource.FactCheckTools.Pages.List
+import Network.Google.Resource.FactCheckTools.Pages.Update
 
 {- $resources
 TODO

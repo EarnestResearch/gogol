@@ -44,8 +44,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.Get
     , pddgCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.get@ method which the
 -- 'ProjectsDatabasesDocumentsGet' request conforms to.
@@ -67,15 +67,15 @@ type ProjectsDatabasesDocumentsGetResource =
 -- /See:/ 'projectsDatabasesDocumentsGet' smart constructor.
 data ProjectsDatabasesDocumentsGet =
   ProjectsDatabasesDocumentsGet'
-    { _pddgXgafv          :: !(Maybe Xgafv)
-    , _pddgReadTime       :: !(Maybe DateTime')
+    { _pddgXgafv :: !(Maybe Xgafv)
+    , _pddgReadTime :: !(Maybe DateTime')
     , _pddgUploadProtocol :: !(Maybe Text)
-    , _pddgAccessToken    :: !(Maybe Text)
-    , _pddgUploadType     :: !(Maybe Text)
-    , _pddgTransaction    :: !(Maybe Bytes)
-    , _pddgName           :: !Text
+    , _pddgAccessToken :: !(Maybe Text)
+    , _pddgUploadType :: !(Maybe Text)
+    , _pddgTransaction :: !(Maybe Bytes)
+    , _pddgName :: !Text
     , _pddgMaskFieldPaths :: !(Maybe [Text])
-    , _pddgCallback       :: !(Maybe Text)
+    , _pddgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

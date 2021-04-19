@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Patch
     , etpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.patch@ method which the
 -- 'EventTagsPatch' request conforms to.
@@ -59,8 +59,8 @@ type EventTagsPatchResource =
 data EventTagsPatch =
   EventTagsPatch'
     { _etpProFileId :: !(Textual Int64)
-    , _etpPayload   :: !EventTag
-    , _etpId        :: !(Textual Int64)
+    , _etpPayload :: !EventTag
+    , _etpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

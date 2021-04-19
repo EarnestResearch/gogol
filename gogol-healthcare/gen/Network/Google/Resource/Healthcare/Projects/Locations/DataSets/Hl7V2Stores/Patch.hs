@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvspCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.patch@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresPatch' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsDataSetsHl7V2StoresPatchResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresPatch' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresPatch =
   ProjectsLocationsDataSetsHl7V2StoresPatch'
-    { _pldshvspXgafv          :: !(Maybe Xgafv)
+    { _pldshvspXgafv :: !(Maybe Xgafv)
     , _pldshvspUploadProtocol :: !(Maybe Text)
-    , _pldshvspUpdateMask     :: !(Maybe GFieldMask)
-    , _pldshvspAccessToken    :: !(Maybe Text)
-    , _pldshvspUploadType     :: !(Maybe Text)
-    , _pldshvspPayload        :: !Hl7V2Store
-    , _pldshvspName           :: !Text
-    , _pldshvspCallback       :: !(Maybe Text)
+    , _pldshvspUpdateMask :: !(Maybe GFieldMask)
+    , _pldshvspAccessToken :: !(Maybe Text)
+    , _pldshvspUploadType :: !(Maybe Text)
+    , _pldshvspPayload :: !Hl7V2Store
+    , _pldshvspName :: !Text
+    , _pldshvspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

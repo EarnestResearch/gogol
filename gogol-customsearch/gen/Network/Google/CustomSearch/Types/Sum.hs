@@ -16,7 +16,7 @@
 --
 module Network.Google.CustomSearch.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Returns images of a type, which can be one of: clipart, face, lineart,
 -- news, and photo.

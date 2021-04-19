@@ -42,8 +42,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.TestIAMPermi
     , ostipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.testIamPermissions@ method which the
 -- 'OrganizationsSourcesTestIAMPermissions' request conforms to.
@@ -64,13 +64,13 @@ type OrganizationsSourcesTestIAMPermissionsResource =
 -- /See:/ 'organizationsSourcesTestIAMPermissions' smart constructor.
 data OrganizationsSourcesTestIAMPermissions =
   OrganizationsSourcesTestIAMPermissions'
-    { _ostipXgafv          :: !(Maybe Xgafv)
+    { _ostipXgafv :: !(Maybe Xgafv)
     , _ostipUploadProtocol :: !(Maybe Text)
-    , _ostipAccessToken    :: !(Maybe Text)
-    , _ostipUploadType     :: !(Maybe Text)
-    , _ostipPayload        :: !TestIAMPermissionsRequest
-    , _ostipResource       :: !Text
-    , _ostipCallback       :: !(Maybe Text)
+    , _ostipAccessToken :: !(Maybe Text)
+    , _ostipUploadType :: !(Maybe Text)
+    , _ostipPayload :: !TestIAMPermissionsRequest
+    , _ostipResource :: !Text
+    , _ostipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

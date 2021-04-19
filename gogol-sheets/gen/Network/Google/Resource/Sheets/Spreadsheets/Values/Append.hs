@@ -58,8 +58,8 @@ module Network.Google.Resource.Sheets.Spreadsheets.Values.Append
     , svaResponseValueRenderOption
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types
+import Network.Google.Prelude
+import Network.Google.Sheets.Types
 
 -- | A resource alias for @sheets.spreadsheets.values.append@ method which the
 -- 'SpreadsheetsValuesAppend' request conforms to.
@@ -98,19 +98,19 @@ type SpreadsheetsValuesAppendResource =
 -- /See:/ 'spreadsheetsValuesAppend' smart constructor.
 data SpreadsheetsValuesAppend =
   SpreadsheetsValuesAppend'
-    { _svaXgafv                        :: !(Maybe Xgafv)
-    , _svaUploadProtocol               :: !(Maybe Text)
-    , _svaAccessToken                  :: !(Maybe Text)
-    , _svaSpreadsheetId                :: !Text
-    , _svaUploadType                   :: !(Maybe Text)
-    , _svaValueInputOption             :: !(Maybe Text)
-    , _svaPayload                      :: !ValueRange
-    , _svaInsertDataOption             :: !(Maybe Text)
-    , _svaRange                        :: !Text
-    , _svaIncludeValuesInResponse      :: !(Maybe Bool)
+    { _svaXgafv :: !(Maybe Xgafv)
+    , _svaUploadProtocol :: !(Maybe Text)
+    , _svaAccessToken :: !(Maybe Text)
+    , _svaSpreadsheetId :: !Text
+    , _svaUploadType :: !(Maybe Text)
+    , _svaValueInputOption :: !(Maybe Text)
+    , _svaPayload :: !ValueRange
+    , _svaInsertDataOption :: !(Maybe Text)
+    , _svaRange :: !Text
+    , _svaIncludeValuesInResponse :: !(Maybe Bool)
     , _svaResponseDateTimeRenderOption :: !(Maybe Text)
-    , _svaCallback                     :: !(Maybe Text)
-    , _svaResponseValueRenderOption    :: !(Maybe Text)
+    , _svaCallback :: !(Maybe Text)
+    , _svaResponseValueRenderOption :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

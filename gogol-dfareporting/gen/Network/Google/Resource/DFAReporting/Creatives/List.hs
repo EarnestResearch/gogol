@@ -53,8 +53,8 @@ module Network.Google.Resource.DFAReporting.Creatives.List
     , cMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.list@ method which the
 -- 'CreativesList' request conforms to.
@@ -98,23 +98,23 @@ type CreativesListResource =
 -- /See:/ 'creativesList' smart constructor.
 data CreativesList =
   CreativesList'
-    { _cRenderingIds         :: !(Maybe [Textual Int64])
-    , _cAdvertiserId         :: !(Maybe (Textual Int64))
-    , _cSearchString         :: !(Maybe Text)
-    , _cSizeIds              :: !(Maybe [Textual Int64])
+    { _cRenderingIds :: !(Maybe [Textual Int64])
+    , _cAdvertiserId :: !(Maybe (Textual Int64))
+    , _cSearchString :: !(Maybe Text)
+    , _cSizeIds :: !(Maybe [Textual Int64])
     , _cCompanionCreativeIds :: !(Maybe [Textual Int64])
-    , _cCampaignId           :: !(Maybe (Textual Int64))
-    , _cTypes                :: !(Maybe [CreativesListTypes])
-    , _cIds                  :: !(Maybe [Textual Int64])
-    , _cProFileId            :: !(Textual Int64)
-    , _cSortOrder            :: !CreativesListSortOrder
-    , _cActive               :: !(Maybe Bool)
-    , _cCreativeFieldIds     :: !(Maybe [Textual Int64])
-    , _cPageToken            :: !(Maybe Text)
-    , _cSortField            :: !CreativesListSortField
-    , _cStudioCreativeId     :: !(Maybe (Textual Int64))
-    , _cArchived             :: !(Maybe Bool)
-    , _cMaxResults           :: !(Textual Int32)
+    , _cCampaignId :: !(Maybe (Textual Int64))
+    , _cTypes :: !(Maybe [CreativesListTypes])
+    , _cIds :: !(Maybe [Textual Int64])
+    , _cProFileId :: !(Textual Int64)
+    , _cSortOrder :: !CreativesListSortOrder
+    , _cActive :: !(Maybe Bool)
+    , _cCreativeFieldIds :: !(Maybe [Textual Int64])
+    , _cPageToken :: !(Maybe Text)
+    , _cSortField :: !CreativesListSortField
+    , _cStudioCreativeId :: !(Maybe (Textual Int64))
+    , _cArchived :: !(Maybe Bool)
+    , _cMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -142,9 +142,9 @@ module Network.Google.BinaryAuthorization.Types
     , bCondition
     ) where
 
-import           Network.Google.BinaryAuthorization.Types.Product
-import           Network.Google.BinaryAuthorization.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types.Product
+import Network.Google.BinaryAuthorization.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1beta1' of the Binary Authorization API. This contains the host and root path used as a starting point for constructing service requests.
 binaryAuthorizationService :: ServiceConfig

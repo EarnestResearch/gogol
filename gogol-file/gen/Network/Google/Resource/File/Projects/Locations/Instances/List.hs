@@ -46,8 +46,8 @@ module Network.Google.Resource.File.Projects.Locations.Instances.List
     , plilCallback
     ) where
 
-import           Network.Google.File.Types
-import           Network.Google.Prelude
+import Network.Google.File.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @file.projects.locations.instances.list@ method which the
 -- 'ProjectsLocationsInstancesList' request conforms to.
@@ -73,16 +73,16 @@ type ProjectsLocationsInstancesListResource =
 -- /See:/ 'projectsLocationsInstancesList' smart constructor.
 data ProjectsLocationsInstancesList =
   ProjectsLocationsInstancesList'
-    { _plilParent         :: !Text
-    , _plilXgafv          :: !(Maybe Xgafv)
+    { _plilParent :: !Text
+    , _plilXgafv :: !(Maybe Xgafv)
     , _plilUploadProtocol :: !(Maybe Text)
-    , _plilOrderBy        :: !(Maybe Text)
-    , _plilAccessToken    :: !(Maybe Text)
-    , _plilUploadType     :: !(Maybe Text)
-    , _plilFilter         :: !(Maybe Text)
-    , _plilPageToken      :: !(Maybe Text)
-    , _plilPageSize       :: !(Maybe (Textual Int32))
-    , _plilCallback       :: !(Maybe Text)
+    , _plilOrderBy :: !(Maybe Text)
+    , _plilAccessToken :: !(Maybe Text)
+    , _plilUploadType :: !(Maybe Text)
+    , _plilFilter :: !(Maybe Text)
+    , _plilPageToken :: !(Maybe Text)
+    , _plilPageSize :: !(Maybe (Textual Int32))
+    , _plilCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

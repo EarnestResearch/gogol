@@ -39,8 +39,8 @@ module Network.Google.Resource.Drive.Files.Get
     , fgSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.get@ method which the
 -- 'FilesGet' request conforms to.
@@ -69,9 +69,9 @@ type FilesGetResource =
 -- /See:/ 'filesGet' smart constructor.
 data FilesGet =
   FilesGet'
-    { _fgSupportsAllDrives  :: !Bool
-    , _fgAcknowledgeAbuse   :: !Bool
-    , _fgFileId             :: !Text
+    { _fgSupportsAllDrives :: !Bool
+    , _fgAcknowledgeAbuse :: !Bool
+    , _fgFileId :: !Text
     , _fgSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)

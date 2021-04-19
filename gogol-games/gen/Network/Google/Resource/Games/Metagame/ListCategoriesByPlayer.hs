@@ -41,8 +41,8 @@ module Network.Google.Resource.Games.Metagame.ListCategoriesByPlayer
     , mlcbpMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.metagame.listCategoriesByPlayer@ method which the
 -- 'MetagameListCategoriesByPlayer' request conforms to.
@@ -68,9 +68,9 @@ type MetagameListCategoriesByPlayerResource =
 data MetagameListCategoriesByPlayer =
   MetagameListCategoriesByPlayer'
     { _mlcbpCollection :: !MetagameListCategoriesByPlayerCollection
-    , _mlcbpLanguage   :: !(Maybe Text)
-    , _mlcbpPageToken  :: !(Maybe Text)
-    , _mlcbpPlayerId   :: !Text
+    , _mlcbpLanguage :: !(Maybe Text)
+    , _mlcbpPageToken :: !(Maybe Text)
+    , _mlcbpPlayerId :: !Text
     , _mlcbpMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudSearch.Query.Suggest
     , qsCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.query.suggest@ method which the
 -- 'QuerySuggest' request conforms to.
@@ -64,12 +64,12 @@ type QuerySuggestResource =
 -- /See:/ 'querySuggest' smart constructor.
 data QuerySuggest =
   QuerySuggest'
-    { _qsXgafv          :: !(Maybe Xgafv)
+    { _qsXgafv :: !(Maybe Xgafv)
     , _qsUploadProtocol :: !(Maybe Text)
-    , _qsAccessToken    :: !(Maybe Text)
-    , _qsUploadType     :: !(Maybe Text)
-    , _qsPayload        :: !SuggestRequest
-    , _qsCallback       :: !(Maybe Text)
+    , _qsAccessToken :: !(Maybe Text)
+    , _qsUploadType :: !(Maybe Text)
+    , _qsPayload :: !SuggestRequest
+    , _qsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

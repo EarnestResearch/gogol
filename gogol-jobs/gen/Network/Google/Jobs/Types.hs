@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -588,9 +588,9 @@ module Network.Google.Jobs.Types
     , trEndTime
     ) where
 
-import           Network.Google.Jobs.Types.Product
-import           Network.Google.Jobs.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types.Product
+import Network.Google.Jobs.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v3p1beta1' of the Cloud Talent Solution API. This contains the host and root path used as a starting point for constructing service requests.
 jobsService :: ServiceConfig

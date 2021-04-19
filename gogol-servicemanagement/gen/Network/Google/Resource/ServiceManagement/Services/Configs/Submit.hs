@@ -49,8 +49,8 @@ module Network.Google.Resource.ServiceManagement.Services.Configs.Submit
     , scsCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.configs.submit@ method which the
 -- 'ServicesConfigsSubmit' request conforms to.
@@ -80,13 +80,13 @@ type ServicesConfigsSubmitResource =
 -- /See:/ 'servicesConfigsSubmit' smart constructor.
 data ServicesConfigsSubmit =
   ServicesConfigsSubmit'
-    { _scsXgafv          :: !(Maybe Xgafv)
+    { _scsXgafv :: !(Maybe Xgafv)
     , _scsUploadProtocol :: !(Maybe Text)
-    , _scsAccessToken    :: !(Maybe Text)
-    , _scsUploadType     :: !(Maybe Text)
-    , _scsPayload        :: !SubmitConfigSourceRequest
-    , _scsServiceName    :: !Text
-    , _scsCallback       :: !(Maybe Text)
+    , _scsAccessToken :: !(Maybe Text)
+    , _scsUploadType :: !(Maybe Text)
+    , _scsPayload :: !SubmitConfigSourceRequest
+    , _scsServiceName :: !Text
+    , _scsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

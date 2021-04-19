@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.AccountPermissionGroups.List
     , apglProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountPermissionGroups.list@ method which the
 -- 'AccountPermissionGroupsList' request conforms to.

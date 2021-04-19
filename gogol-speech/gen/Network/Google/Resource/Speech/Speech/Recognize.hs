@@ -42,8 +42,8 @@ module Network.Google.Resource.Speech.Speech.Recognize
     , srCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Speech.Types
 
 -- | A resource alias for @speech.speech.recognize@ method which the
 -- 'SpeechRecognize' request conforms to.
@@ -65,12 +65,12 @@ type SpeechRecognizeResource =
 -- /See:/ 'speechRecognize' smart constructor.
 data SpeechRecognize =
   SpeechRecognize'
-    { _srXgafv          :: !(Maybe Xgafv)
+    { _srXgafv :: !(Maybe Xgafv)
     , _srUploadProtocol :: !(Maybe Text)
-    , _srAccessToken    :: !(Maybe Text)
-    , _srUploadType     :: !(Maybe Text)
-    , _srPayload        :: !RecognizeRequest
-    , _srCallback       :: !(Maybe Text)
+    , _srAccessToken :: !(Maybe Text)
+    , _srUploadType :: !(Maybe Text)
+    , _srPayload :: !RecognizeRequest
+    , _srCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

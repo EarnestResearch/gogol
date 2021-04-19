@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Networks.List
     , nlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.networks.list@ method which the
 -- 'NetworksList' request conforms to.
@@ -63,10 +63,10 @@ type NetworksListResource =
 -- /See:/ 'networksList' smart constructor.
 data NetworksList =
   NetworksList'
-    { _nlOrderBy    :: !(Maybe Text)
-    , _nlProject    :: !Text
-    , _nlFilter     :: !(Maybe Text)
-    , _nlPageToken  :: !(Maybe Text)
+    { _nlOrderBy :: !(Maybe Text)
+    , _nlProject :: !Text
+    , _nlFilter :: !(Maybe Text)
+    , _nlPageToken :: !(Maybe Text)
     , _nlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -42,8 +42,8 @@ module Network.Google.Resource.Ml.Projects.Jobs.Create
     , pCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.jobs.create@ method which the
 -- 'ProjectsJobsCreate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsJobsCreateResource =
 -- /See:/ 'projectsJobsCreate' smart constructor.
 data ProjectsJobsCreate =
   ProjectsJobsCreate'
-    { _pParent         :: !Text
-    , _pXgafv          :: !(Maybe Xgafv)
+    { _pParent :: !Text
+    , _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !GoogleCloudMlV1__Job
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !GoogleCloudMlV1__Job
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

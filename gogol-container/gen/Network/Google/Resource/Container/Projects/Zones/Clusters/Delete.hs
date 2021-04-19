@@ -48,8 +48,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.Delete
     , pzcdCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.delete@ method which the
 -- 'ProjectsZonesClustersDelete' request conforms to.
@@ -79,15 +79,15 @@ type ProjectsZonesClustersDeleteResource =
 -- /See:/ 'projectsZonesClustersDelete' smart constructor.
 data ProjectsZonesClustersDelete =
   ProjectsZonesClustersDelete'
-    { _pzcdXgafv          :: !(Maybe Xgafv)
+    { _pzcdXgafv :: !(Maybe Xgafv)
     , _pzcdUploadProtocol :: !(Maybe Text)
-    , _pzcdAccessToken    :: !(Maybe Text)
-    , _pzcdUploadType     :: !(Maybe Text)
-    , _pzcdZone           :: !Text
-    , _pzcdName           :: !(Maybe Text)
-    , _pzcdClusterId      :: !Text
-    , _pzcdProjectId      :: !Text
-    , _pzcdCallback       :: !(Maybe Text)
+    , _pzcdAccessToken :: !(Maybe Text)
+    , _pzcdUploadType :: !(Maybe Text)
+    , _pzcdZone :: !Text
+    , _pzcdName :: !(Maybe Text)
+    , _pzcdClusterId :: !Text
+    , _pzcdProjectId :: !Text
+    , _pzcdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

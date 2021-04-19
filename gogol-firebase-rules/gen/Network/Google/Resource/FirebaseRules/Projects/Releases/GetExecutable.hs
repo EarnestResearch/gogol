@@ -42,8 +42,8 @@ module Network.Google.Resource.FirebaseRules.Projects.Releases.GetExecutable
     , prgeCallback
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebaserules.projects.releases.getExecutable@ method which the
 -- 'ProjectsReleasesGetExecutable' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsReleasesGetExecutableResource =
 -- /See:/ 'projectsReleasesGetExecutable' smart constructor.
 data ProjectsReleasesGetExecutable =
   ProjectsReleasesGetExecutable'
-    { _prgeXgafv             :: !(Maybe Xgafv)
-    , _prgeUploadProtocol    :: !(Maybe Text)
-    , _prgeAccessToken       :: !(Maybe Text)
-    , _prgeUploadType        :: !(Maybe Text)
-    , _prgeName              :: !Text
+    { _prgeXgafv :: !(Maybe Xgafv)
+    , _prgeUploadProtocol :: !(Maybe Text)
+    , _prgeAccessToken :: !(Maybe Text)
+    , _prgeUploadType :: !(Maybe Text)
+    , _prgeName :: !Text
     , _prgeExecutableVersion :: !(Maybe Text)
-    , _prgeCallback          :: !(Maybe Text)
+    , _prgeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

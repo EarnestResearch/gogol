@@ -48,8 +48,8 @@ module Network.Google.Resource.CloudBilling.BillingAccounts.Patch
     , bapCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.billingAccounts.patch@ method which the
 -- 'BillingAccountsPatch' request conforms to.
@@ -76,14 +76,14 @@ type BillingAccountsPatchResource =
 -- /See:/ 'billingAccountsPatch' smart constructor.
 data BillingAccountsPatch =
   BillingAccountsPatch'
-    { _bapXgafv          :: !(Maybe Xgafv)
+    { _bapXgafv :: !(Maybe Xgafv)
     , _bapUploadProtocol :: !(Maybe Text)
-    , _bapUpdateMask     :: !(Maybe GFieldMask)
-    , _bapAccessToken    :: !(Maybe Text)
-    , _bapUploadType     :: !(Maybe Text)
-    , _bapPayload        :: !BillingAccount
-    , _bapName           :: !Text
-    , _bapCallback       :: !(Maybe Text)
+    , _bapUpdateMask :: !(Maybe GFieldMask)
+    , _bapAccessToken :: !(Maybe Text)
+    , _bapUploadType :: !(Maybe Text)
+    , _bapPayload :: !BillingAccount
+    , _bapName :: !Text
+    , _bapCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

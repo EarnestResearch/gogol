@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.InAppProducts.Get
     , iapgSKU
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.inappproducts.get@ method which the
 -- 'InAppProductsGet' request conforms to.
@@ -57,7 +57,7 @@ type InAppProductsGetResource =
 data InAppProductsGet =
   InAppProductsGet'
     { _iapgPackageName :: !Text
-    , _iapgSKU         :: !Text
+    , _iapgSKU :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

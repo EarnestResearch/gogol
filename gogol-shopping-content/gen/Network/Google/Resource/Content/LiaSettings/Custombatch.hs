@@ -35,29 +35,32 @@ module Network.Google.Resource.Content.LiaSettings.Custombatch
 
     -- * Request Lenses
     , lscPayload
+    , lscDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.custombatch@ method which the
 -- 'LiaSettingsCustombatch' request conforms to.
 type LiaSettingsCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "liasettings" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] LiaSettingsCustomBatchRequest :>
-                 Post '[JSON] LiaSettingsCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] LiaSettingsCustomBatchRequest :>
+                   Post '[JSON] LiaSettingsCustomBatchResponse
 
 -- | Retrieves and\/or updates the LIA settings of multiple accounts in a
 -- single request.
 --
 -- /See:/ 'liaSettingsCustombatch' smart constructor.
-newtype LiaSettingsCustombatch =
+data LiaSettingsCustombatch =
   LiaSettingsCustombatch'
-    { _lscPayload :: LiaSettingsCustomBatchRequest
+    { _lscPayload :: !LiaSettingsCustomBatchRequest
+    , _lscDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,11 +70,13 @@ newtype LiaSettingsCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'lscPayload'
+--
+-- * 'lscDryRun'
 liaSettingsCustombatch
     :: LiaSettingsCustomBatchRequest -- ^ 'lscPayload'
     -> LiaSettingsCustombatch
 liaSettingsCustombatch pLscPayload_ =
-  LiaSettingsCustombatch' {_lscPayload = pLscPayload_}
+  LiaSettingsCustombatch' {_lscPayload = pLscPayload_, _lscDryRun = Nothing}
 
 
 -- | Multipart request metadata.
@@ -79,13 +84,20 @@ lscPayload :: Lens' LiaSettingsCustombatch LiaSettingsCustomBatchRequest
 lscPayload
   = lens _lscPayload (\ s a -> s{_lscPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+lscDryRun :: Lens' LiaSettingsCustombatch (Maybe Bool)
+lscDryRun
+  = lens _lscDryRun (\ s a -> s{_lscDryRun = a})
+
 instance GoogleRequest LiaSettingsCustombatch where
         type Rs LiaSettingsCustombatch =
              LiaSettingsCustomBatchResponse
         type Scopes LiaSettingsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient LiaSettingsCustombatch'{..}
-          = go (Just AltJSON) _lscPayload
+          = go _lscDryRun (Just AltJSON) _lscPayload
               shoppingContentService
           where go
                   = buildClient

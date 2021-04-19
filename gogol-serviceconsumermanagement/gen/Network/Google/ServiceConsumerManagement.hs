@@ -756,22 +756,22 @@ module Network.Google.ServiceConsumerManagement
     , aTag
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.ServiceConsumerManagement.Operations.Cancel
-import           Network.Google.Resource.ServiceConsumerManagement.Operations.Delete
-import           Network.Google.Resource.ServiceConsumerManagement.Operations.Get
-import           Network.Google.Resource.ServiceConsumerManagement.Operations.List
-import           Network.Google.Resource.ServiceConsumerManagement.Services.Search
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.AddProject
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.ApplyProjectConfig
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.AttachProject
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.Create
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.Delete
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.DeleteProject
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.List
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.RemoveProject
-import           Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.UndeleteProject
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.Resource.ServiceConsumerManagement.Operations.Cancel
+import Network.Google.Resource.ServiceConsumerManagement.Operations.Delete
+import Network.Google.Resource.ServiceConsumerManagement.Operations.Get
+import Network.Google.Resource.ServiceConsumerManagement.Operations.List
+import Network.Google.Resource.ServiceConsumerManagement.Services.Search
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.AddProject
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.ApplyProjectConfig
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.AttachProject
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.Create
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.Delete
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.DeleteProject
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.List
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.RemoveProject
+import Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.UndeleteProject
+import Network.Google.ServiceConsumerManagement.Types
 
 {- $resources
 TODO

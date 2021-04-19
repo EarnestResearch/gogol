@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivities.Delete
     , fadId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivities.delete@ method which the
 -- 'FloodlightActivitiesDelete' request conforms to.
@@ -57,7 +57,7 @@ type FloodlightActivitiesDeleteResource =
 data FloodlightActivitiesDelete =
   FloodlightActivitiesDelete'
     { _fadProFileId :: !(Textual Int64)
-    , _fadId        :: !(Textual Int64)
+    , _fadId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

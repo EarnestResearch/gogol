@@ -39,8 +39,8 @@ module Network.Google.Resource.Blogger.Posts.Publish
     , pppPostId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.publish@ method which the
 -- 'PostsPublish' request conforms to.
@@ -62,8 +62,8 @@ type PostsPublishResource =
 data PostsPublish =
   PostsPublish'
     { _pppPublishDate :: !(Maybe DateTime')
-    , _pppBlogId      :: !Text
-    , _pppPostId      :: !Text
+    , _pppBlogId :: !Text
+    , _pppPostId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

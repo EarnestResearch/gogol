@@ -43,8 +43,8 @@ module Network.Google.Resource.Directory.Groups.List
     , glMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.list@ method which the
 -- 'GroupsList' request conforms to.
@@ -68,13 +68,13 @@ type GroupsListResource =
 -- /See:/ 'groupsList' smart constructor.
 data GroupsList =
   GroupsList'
-    { _glOrderBy    :: !(Maybe GroupsListOrderBy)
-    , _glDomain     :: !(Maybe Text)
-    , _glSortOrder  :: !(Maybe GroupsListSortOrder)
-    , _glCustomer   :: !(Maybe Text)
-    , _glQuery      :: !(Maybe Text)
-    , _glPageToken  :: !(Maybe Text)
-    , _glUserKey    :: !(Maybe Text)
+    { _glOrderBy :: !(Maybe GroupsListOrderBy)
+    , _glDomain :: !(Maybe Text)
+    , _glSortOrder :: !(Maybe GroupsListSortOrder)
+    , _glCustomer :: !(Maybe Text)
+    , _glQuery :: !(Maybe Text)
+    , _glPageToken :: !(Maybe Text)
+    , _glUserKey :: !(Maybe Text)
     , _glMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

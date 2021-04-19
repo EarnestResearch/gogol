@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Zones.List
     , zlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.zones.list@ method which the
 -- 'ZonesList' request conforms to.
@@ -62,10 +62,10 @@ type ZonesListResource =
 -- /See:/ 'zonesList' smart constructor.
 data ZonesList =
   ZonesList'
-    { _zlOrderBy    :: !(Maybe Text)
-    , _zlProject    :: !Text
-    , _zlFilter     :: !(Maybe Text)
-    , _zlPageToken  :: !(Maybe Text)
+    { _zlOrderBy :: !(Maybe Text)
+    , _zlProject :: !Text
+    , _zlFilter :: !(Maybe Text)
+    , _zlPageToken :: !(Maybe Text)
     , _zlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

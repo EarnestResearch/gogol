@@ -16,7 +16,7 @@
 --
 module Network.Google.DialogFlow.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Optional. The resource view to apply to the returned intent.
 data GoogleCloudDialogflowV2BatchUpdateIntentsRequestIntentView

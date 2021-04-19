@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Instances.Restart
     , irInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.restart@ method which the
 -- 'InstancesRestart' request conforms to.
@@ -57,7 +57,7 @@ type InstancesRestartResource =
 -- /See:/ 'instancesRestart' smart constructor.
 data InstancesRestart =
   InstancesRestart'
-    { _irProject  :: !Text
+    { _irProject :: !Text
     , _irInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

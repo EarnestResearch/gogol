@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Memberships.Delete
     , gmdCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.memberships.delete@ method which the
 -- 'GroupsMembershipsDelete' request conforms to.
@@ -61,12 +61,12 @@ type GroupsMembershipsDeleteResource =
 -- /See:/ 'groupsMembershipsDelete' smart constructor.
 data GroupsMembershipsDelete =
   GroupsMembershipsDelete'
-    { _gmdXgafv          :: !(Maybe Xgafv)
+    { _gmdXgafv :: !(Maybe Xgafv)
     , _gmdUploadProtocol :: !(Maybe Text)
-    , _gmdAccessToken    :: !(Maybe Text)
-    , _gmdUploadType     :: !(Maybe Text)
-    , _gmdName           :: !Text
-    , _gmdCallback       :: !(Maybe Text)
+    , _gmdAccessToken :: !(Maybe Text)
+    , _gmdUploadType :: !(Maybe Text)
+    , _gmdName :: !Text
+    , _gmdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

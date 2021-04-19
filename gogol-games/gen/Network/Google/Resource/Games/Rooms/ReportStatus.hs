@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.Rooms.ReportStatus
     , rrsLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.reportStatus@ method which the
 -- 'RoomsReportStatus' request conforms to.
@@ -63,8 +63,8 @@ type RoomsReportStatusResource =
 -- /See:/ 'roomsReportStatus' smart constructor.
 data RoomsReportStatus =
   RoomsReportStatus'
-    { _rrsPayload  :: !RoomP2PStatuses
-    , _rrsRoomId   :: !Text
+    { _rrsPayload :: !RoomP2PStatuses
+    , _rrsRoomId :: !Text
     , _rrsLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

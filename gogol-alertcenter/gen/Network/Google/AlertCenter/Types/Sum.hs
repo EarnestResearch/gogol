@@ -16,7 +16,7 @@
 --
 module Network.Google.AlertCenter.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Optional. The format of the payload that would be sent. If not specified
 -- the format will be JSON.

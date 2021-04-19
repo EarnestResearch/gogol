@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Routers.Preview
     , rppRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.preview@ method which the
 -- 'RoutersPreview' request conforms to.
@@ -66,9 +66,9 @@ type RoutersPreviewResource =
 data RoutersPreview =
   RoutersPreview'
     { _rppProject :: !Text
-    , _rppRouter  :: !Text
+    , _rppRouter :: !Text
     , _rppPayload :: !Router
-    , _rppRegion  :: !Text
+    , _rppRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

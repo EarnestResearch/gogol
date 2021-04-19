@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.List
     , salMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.list@ method which the
 -- 'SubAccountsList' request conforms to.
@@ -70,12 +70,12 @@ type SubAccountsListResource =
 data SubAccountsList =
   SubAccountsList'
     { _salSearchString :: !(Maybe Text)
-    , _salIds          :: !(Maybe [Textual Int64])
-    , _salProFileId    :: !(Textual Int64)
-    , _salSortOrder    :: !SubAccountsListSortOrder
-    , _salPageToken    :: !(Maybe Text)
-    , _salSortField    :: !SubAccountsListSortField
-    , _salMaxResults   :: !(Textual Int32)
+    , _salIds :: !(Maybe [Textual Int64])
+    , _salProFileId :: !(Textual Int64)
+    , _salSortOrder :: !SubAccountsListSortOrder
+    , _salPageToken :: !(Maybe Text)
+    , _salSortField :: !SubAccountsListSortField
+    , _salMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

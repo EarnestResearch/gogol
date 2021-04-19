@@ -40,8 +40,8 @@ module Network.Google.Resource.Directory.Members.List
     , mlMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.list@ method which the
 -- 'MembersList' request conforms to.
@@ -63,11 +63,11 @@ type MembersListResource =
 -- /See:/ 'membersList' smart constructor.
 data MembersList =
   MembersList'
-    { _mlRoles                    :: !(Maybe Text)
-    , _mlGroupKey                 :: !Text
-    , _mlPageToken                :: !(Maybe Text)
+    { _mlRoles :: !(Maybe Text)
+    , _mlGroupKey :: !Text
+    , _mlPageToken :: !(Maybe Text)
     , _mlIncludeDerivedMembership :: !(Maybe Bool)
-    , _mlMaxResults               :: !(Maybe (Textual Int32))
+    , _mlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

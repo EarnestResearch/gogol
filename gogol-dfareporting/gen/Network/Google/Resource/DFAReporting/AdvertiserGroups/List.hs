@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserGroups.List
     , aglMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserGroups.list@ method which the
 -- 'AdvertiserGroupsList' request conforms to.
@@ -72,12 +72,12 @@ type AdvertiserGroupsListResource =
 data AdvertiserGroupsList =
   AdvertiserGroupsList'
     { _aglSearchString :: !(Maybe Text)
-    , _aglIds          :: !(Maybe [Textual Int64])
-    , _aglProFileId    :: !(Textual Int64)
-    , _aglSortOrder    :: !AdvertiserGroupsListSortOrder
-    , _aglPageToken    :: !(Maybe Text)
-    , _aglSortField    :: !AdvertiserGroupsListSortField
-    , _aglMaxResults   :: !(Textual Int32)
+    , _aglIds :: !(Maybe [Textual Int64])
+    , _aglProFileId :: !(Textual Int64)
+    , _aglSortOrder :: !AdvertiserGroupsListSortOrder
+    , _aglPageToken :: !(Maybe Text)
+    , _aglSortField :: !AdvertiserGroupsListSortField
+    , _aglMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

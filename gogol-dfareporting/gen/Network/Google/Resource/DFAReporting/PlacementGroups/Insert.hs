@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Insert
     , pgiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.insert@ method which the
 -- 'PlacementGroupsInsert' request conforms to.
@@ -58,7 +58,7 @@ type PlacementGroupsInsertResource =
 data PlacementGroupsInsert =
   PlacementGroupsInsert'
     { _pgiProFileId :: !(Textual Int64)
-    , _pgiPayload   :: !PlacementGroup
+    , _pgiPayload :: !PlacementGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

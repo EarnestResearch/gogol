@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Dismiss
     , tMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.dismiss@ method which the
 -- 'TurnBasedMatchesDismiss' request conforms to.

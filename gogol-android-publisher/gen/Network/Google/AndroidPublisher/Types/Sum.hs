@@ -16,7 +16,7 @@
 --
 module Network.Google.AndroidPublisher.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 data EditsImagesDeleteallImageType
     = FeatureGraphic

@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.List
     , acelPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.list@ method which the
 -- 'AccountsContainersEnvironmentsList' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersEnvironmentsListResource =
 -- /See:/ 'accountsContainersEnvironmentsList' smart constructor.
 data AccountsContainersEnvironmentsList =
   AccountsContainersEnvironmentsList'
-    { _acelParent    :: !Text
+    { _acelParent :: !Text
     , _acelPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

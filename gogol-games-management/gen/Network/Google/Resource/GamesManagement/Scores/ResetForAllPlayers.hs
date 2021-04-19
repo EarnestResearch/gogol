@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Scores.ResetForAllPlayers
     , srfapLeaderboardId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.scores.resetForAllPlayers@ method which the
 -- 'ScoresResetForAllPlayers' request conforms to.

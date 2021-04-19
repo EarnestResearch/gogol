@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudFunctions.Projects.Locations.Functions.List
     , plflCallback
     ) where
 
-import           Network.Google.CloudFunctions.Types
-import           Network.Google.Prelude
+import Network.Google.CloudFunctions.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudfunctions.projects.locations.functions.list@ method which the
 -- 'ProjectsLocationsFunctionsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsLocationsFunctionsListResource =
 -- /See:/ 'projectsLocationsFunctionsList' smart constructor.
 data ProjectsLocationsFunctionsList =
   ProjectsLocationsFunctionsList'
-    { _plflParent         :: !Text
-    , _plflXgafv          :: !(Maybe Xgafv)
+    { _plflParent :: !Text
+    , _plflXgafv :: !(Maybe Xgafv)
     , _plflUploadProtocol :: !(Maybe Text)
-    , _plflAccessToken    :: !(Maybe Text)
-    , _plflUploadType     :: !(Maybe Text)
-    , _plflPageToken      :: !(Maybe Text)
-    , _plflPageSize       :: !(Maybe (Textual Int32))
-    , _plflCallback       :: !(Maybe Text)
+    , _plflAccessToken :: !(Maybe Text)
+    , _plflUploadType :: !(Maybe Text)
+    , _plflPageToken :: !(Maybe Text)
+    , _plflPageSize :: !(Maybe (Textual Int32))
+    , _plflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

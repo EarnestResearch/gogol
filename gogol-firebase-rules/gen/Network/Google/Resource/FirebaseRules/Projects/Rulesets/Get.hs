@@ -41,8 +41,8 @@ module Network.Google.Resource.FirebaseRules.Projects.Rulesets.Get
     , prgCallback
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebaserules.projects.rulesets.get@ method which the
 -- 'ProjectsRulesetsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsRulesetsGetResource =
 -- /See:/ 'projectsRulesetsGet' smart constructor.
 data ProjectsRulesetsGet =
   ProjectsRulesetsGet'
-    { _prgXgafv          :: !(Maybe Xgafv)
+    { _prgXgafv :: !(Maybe Xgafv)
     , _prgUploadProtocol :: !(Maybe Text)
-    , _prgAccessToken    :: !(Maybe Text)
-    , _prgUploadType     :: !(Maybe Text)
-    , _prgName           :: !Text
-    , _prgCallback       :: !(Maybe Text)
+    , _prgAccessToken :: !(Maybe Text)
+    , _prgUploadType :: !(Maybe Text)
+    , _prgName :: !Text
+    , _prgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

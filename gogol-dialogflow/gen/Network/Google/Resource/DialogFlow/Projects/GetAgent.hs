@@ -41,8 +41,8 @@ module Network.Google.Resource.DialogFlow.Projects.GetAgent
     , pgaCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.getAgent@ method which the
 -- 'ProjectsGetAgent' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsGetAgentResource =
 -- /See:/ 'projectsGetAgent' smart constructor.
 data ProjectsGetAgent =
   ProjectsGetAgent'
-    { _pgaParent         :: !Text
-    , _pgaXgafv          :: !(Maybe Xgafv)
+    { _pgaParent :: !Text
+    , _pgaXgafv :: !(Maybe Xgafv)
     , _pgaUploadProtocol :: !(Maybe Text)
-    , _pgaAccessToken    :: !(Maybe Text)
-    , _pgaUploadType     :: !(Maybe Text)
-    , _pgaCallback       :: !(Maybe Text)
+    , _pgaAccessToken :: !(Maybe Text)
+    , _pgaUploadType :: !(Maybe Text)
+    , _pgaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

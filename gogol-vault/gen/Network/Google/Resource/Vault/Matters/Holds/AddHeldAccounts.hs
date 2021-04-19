@@ -45,8 +45,8 @@ module Network.Google.Resource.Vault.Matters.Holds.AddHeldAccounts
     , mhahaCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.addHeldAccounts@ method which the
 -- 'MattersHoldsAddHeldAccounts' request conforms to.
@@ -72,14 +72,14 @@ type MattersHoldsAddHeldAccountsResource =
 -- /See:/ 'mattersHoldsAddHeldAccounts' smart constructor.
 data MattersHoldsAddHeldAccounts =
   MattersHoldsAddHeldAccounts'
-    { _mhahaXgafv          :: !(Maybe Xgafv)
+    { _mhahaXgafv :: !(Maybe Xgafv)
     , _mhahaUploadProtocol :: !(Maybe Text)
-    , _mhahaHoldId         :: !Text
-    , _mhahaAccessToken    :: !(Maybe Text)
-    , _mhahaUploadType     :: !(Maybe Text)
-    , _mhahaPayload        :: !AddHeldAccountsRequest
-    , _mhahaMatterId       :: !Text
-    , _mhahaCallback       :: !(Maybe Text)
+    , _mhahaHoldId :: !Text
+    , _mhahaAccessToken :: !(Maybe Text)
+    , _mhahaUploadType :: !(Maybe Text)
+    , _mhahaPayload :: !AddHeldAccountsRequest
+    , _mhahaMatterId :: !Text
+    , _mhahaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

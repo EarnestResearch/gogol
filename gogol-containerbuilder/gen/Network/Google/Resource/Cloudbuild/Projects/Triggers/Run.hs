@@ -43,8 +43,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Triggers.Run
     , ptrCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.triggers.run@ method which the
 -- 'ProjectsTriggersRun' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsTriggersRunResource =
 -- /See:/ 'projectsTriggersRun' smart constructor.
 data ProjectsTriggersRun =
   ProjectsTriggersRun'
-    { _ptrXgafv          :: !(Maybe Xgafv)
+    { _ptrXgafv :: !(Maybe Xgafv)
     , _ptrUploadProtocol :: !(Maybe Text)
-    , _ptrTriggerId      :: !Text
-    , _ptrAccessToken    :: !(Maybe Text)
-    , _ptrUploadType     :: !(Maybe Text)
-    , _ptrPayload        :: !RepoSource
-    , _ptrProjectId      :: !Text
-    , _ptrCallback       :: !(Maybe Text)
+    , _ptrTriggerId :: !Text
+    , _ptrAccessToken :: !(Maybe Text)
+    , _ptrUploadType :: !(Maybe Text)
+    , _ptrPayload :: !RepoSource
+    , _ptrProjectId :: !Text
+    , _ptrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

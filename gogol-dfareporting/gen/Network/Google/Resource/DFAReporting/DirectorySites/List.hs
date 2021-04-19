@@ -48,8 +48,8 @@ module Network.Google.Resource.DFAReporting.DirectorySites.List
     , dslDfpNetworkCode
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.directorySites.list@ method which the
 -- 'DirectorySitesList' request conforms to.
@@ -81,18 +81,18 @@ type DirectorySitesListResource =
 -- /See:/ 'directorySitesList' smart constructor.
 data DirectorySitesList =
   DirectorySitesList'
-    { _dslSearchString                   :: !(Maybe Text)
-    , _dslAcceptsInterstitialPlacements  :: !(Maybe Bool)
+    { _dslSearchString :: !(Maybe Text)
+    , _dslAcceptsInterstitialPlacements :: !(Maybe Bool)
     , _dslAcceptsPublisherPaidPlacements :: !(Maybe Bool)
-    , _dslIds                            :: !(Maybe [Textual Int64])
-    , _dslProFileId                      :: !(Textual Int64)
-    , _dslSortOrder                      :: !DirectorySitesListSortOrder
-    , _dslActive                         :: !(Maybe Bool)
-    , _dslPageToken                      :: !(Maybe Text)
-    , _dslSortField                      :: !DirectorySitesListSortField
+    , _dslIds :: !(Maybe [Textual Int64])
+    , _dslProFileId :: !(Textual Int64)
+    , _dslSortOrder :: !DirectorySitesListSortOrder
+    , _dslActive :: !(Maybe Bool)
+    , _dslPageToken :: !(Maybe Text)
+    , _dslSortField :: !DirectorySitesListSortField
     , _dslAcceptsInStreamVideoPlacements :: !(Maybe Bool)
-    , _dslMaxResults                     :: !(Textual Int32)
-    , _dslDfpNetworkCode                 :: !(Maybe Text)
+    , _dslMaxResults :: !(Textual Int32)
+    , _dslDfpNetworkCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

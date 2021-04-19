@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.GlobalOperations.AggregatedList
     , goalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.globalOperations.aggregatedList@ method which the
 -- 'GlobalOperationsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type GlobalOperationsAggregatedListResource =
 -- /See:/ 'globalOperationsAggregatedList' smart constructor.
 data GlobalOperationsAggregatedList =
   GlobalOperationsAggregatedList'
-    { _goalOrderBy    :: !(Maybe Text)
-    , _goalProject    :: !Text
-    , _goalFilter     :: !(Maybe Text)
-    , _goalPageToken  :: !(Maybe Text)
+    { _goalOrderBy :: !(Maybe Text)
+    , _goalProject :: !Text
+    , _goalFilter :: !(Maybe Text)
+    , _goalPageToken :: !(Maybe Text)
     , _goalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

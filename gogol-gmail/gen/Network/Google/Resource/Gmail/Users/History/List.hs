@@ -42,8 +42,8 @@ module Network.Google.Resource.Gmail.Users.History.List
     , uhlMaxResults
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.history.list@ method which the
 -- 'UsersHistoryList' request conforms to.
@@ -69,12 +69,12 @@ type UsersHistoryListResource =
 -- /See:/ 'usersHistoryList' smart constructor.
 data UsersHistoryList =
   UsersHistoryList'
-    { _uhlHistoryTypes   :: !(Maybe [UsersHistoryListHistoryTypes])
-    , _uhlUserId         :: !Text
+    { _uhlHistoryTypes :: !(Maybe [UsersHistoryListHistoryTypes])
+    , _uhlUserId :: !Text
     , _uhlStartHistoryId :: !(Maybe (Textual Word64))
-    , _uhlPageToken      :: !(Maybe Text)
-    , _uhlLabelId        :: !(Maybe Text)
-    , _uhlMaxResults     :: !(Textual Word32)
+    , _uhlPageToken :: !(Maybe Text)
+    , _uhlLabelId :: !(Maybe Text)
+    , _uhlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

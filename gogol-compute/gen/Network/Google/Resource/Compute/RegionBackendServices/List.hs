@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.RegionBackendServices.List
     , rbslMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionBackendServices.list@ method which the
 -- 'RegionBackendServicesList' request conforms to.
@@ -68,11 +68,11 @@ type RegionBackendServicesListResource =
 -- /See:/ 'regionBackendServicesList' smart constructor.
 data RegionBackendServicesList =
   RegionBackendServicesList'
-    { _rbslOrderBy    :: !(Maybe Text)
-    , _rbslProject    :: !Text
-    , _rbslFilter     :: !(Maybe Text)
-    , _rbslRegion     :: !Text
-    , _rbslPageToken  :: !(Maybe Text)
+    { _rbslOrderBy :: !(Maybe Text)
+    , _rbslProject :: !Text
+    , _rbslFilter :: !(Maybe Text)
+    , _rbslRegion :: !Text
+    , _rbslPageToken :: !(Maybe Text)
     , _rbslMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

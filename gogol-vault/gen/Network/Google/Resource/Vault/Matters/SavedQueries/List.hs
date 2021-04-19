@@ -44,8 +44,8 @@ module Network.Google.Resource.Vault.Matters.SavedQueries.List
     , msqlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.savedQueries.list@ method which the
 -- 'MattersSavedQueriesList' request conforms to.
@@ -70,14 +70,14 @@ type MattersSavedQueriesListResource =
 -- /See:/ 'mattersSavedQueriesList' smart constructor.
 data MattersSavedQueriesList =
   MattersSavedQueriesList'
-    { _msqlXgafv          :: !(Maybe Xgafv)
+    { _msqlXgafv :: !(Maybe Xgafv)
     , _msqlUploadProtocol :: !(Maybe Text)
-    , _msqlAccessToken    :: !(Maybe Text)
-    , _msqlUploadType     :: !(Maybe Text)
-    , _msqlMatterId       :: !Text
-    , _msqlPageToken      :: !(Maybe Text)
-    , _msqlPageSize       :: !(Maybe (Textual Int32))
-    , _msqlCallback       :: !(Maybe Text)
+    , _msqlAccessToken :: !(Maybe Text)
+    , _msqlUploadType :: !(Maybe Text)
+    , _msqlMatterId :: !Text
+    , _msqlPageToken :: !(Maybe Text)
+    , _msqlPageSize :: !(Maybe (Textual Int32))
+    , _msqlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

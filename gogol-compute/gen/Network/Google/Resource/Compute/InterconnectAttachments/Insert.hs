@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.InterconnectAttachments.Insert
     , iaiRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.interconnectAttachments.insert@ method which the
 -- 'InterconnectAttachmentsInsert' request conforms to.
@@ -65,9 +65,9 @@ type InterconnectAttachmentsInsertResource =
 data InterconnectAttachmentsInsert =
   InterconnectAttachmentsInsert'
     { _iaiRequestId :: !(Maybe Text)
-    , _iaiProject   :: !Text
-    , _iaiPayload   :: !InterconnectAttachment
-    , _iaiRegion    :: !Text
+    , _iaiProject :: !Text
+    , _iaiPayload :: !InterconnectAttachment
+    , _iaiRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

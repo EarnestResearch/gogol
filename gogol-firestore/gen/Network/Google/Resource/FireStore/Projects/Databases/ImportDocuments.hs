@@ -47,8 +47,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.ImportDocuments
     , pdidCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.importDocuments@ method which the
 -- 'ProjectsDatabasesImportDocuments' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsDatabasesImportDocumentsResource =
 -- /See:/ 'projectsDatabasesImportDocuments' smart constructor.
 data ProjectsDatabasesImportDocuments =
   ProjectsDatabasesImportDocuments'
-    { _pdidXgafv          :: !(Maybe Xgafv)
+    { _pdidXgafv :: !(Maybe Xgafv)
     , _pdidUploadProtocol :: !(Maybe Text)
-    , _pdidAccessToken    :: !(Maybe Text)
-    , _pdidUploadType     :: !(Maybe Text)
-    , _pdidPayload        :: !GoogleFirestoreAdminV1ImportDocumentsRequest
-    , _pdidName           :: !Text
-    , _pdidCallback       :: !(Maybe Text)
+    , _pdidAccessToken :: !(Maybe Text)
+    , _pdidUploadType :: !(Maybe Text)
+    , _pdidPayload :: !GoogleFirestoreAdminV1ImportDocumentsRequest
+    , _pdidName :: !Text
+    , _pdidCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

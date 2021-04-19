@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Gro
     , osfgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.group@ method which the
 -- 'OrganizationsSourcesFindingsGroup' request conforms to.
@@ -69,13 +69,13 @@ type OrganizationsSourcesFindingsGroupResource =
 -- /See:/ 'organizationsSourcesFindingsGroup' smart constructor.
 data OrganizationsSourcesFindingsGroup =
   OrganizationsSourcesFindingsGroup'
-    { _osfgParent         :: !Text
-    , _osfgXgafv          :: !(Maybe Xgafv)
+    { _osfgParent :: !Text
+    , _osfgXgafv :: !(Maybe Xgafv)
     , _osfgUploadProtocol :: !(Maybe Text)
-    , _osfgAccessToken    :: !(Maybe Text)
-    , _osfgUploadType     :: !(Maybe Text)
-    , _osfgPayload        :: !GroupFindingsRequest
-    , _osfgCallback       :: !(Maybe Text)
+    , _osfgAccessToken :: !(Maybe Text)
+    , _osfgUploadType :: !(Maybe Text)
+    , _osfgPayload :: !GroupFindingsRequest
+    , _osfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

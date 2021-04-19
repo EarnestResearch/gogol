@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Routers.AggregatedList
     , rMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.aggregatedList@ method which the
 -- 'RoutersAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type RoutersAggregatedListResource =
 -- /See:/ 'routersAggregatedList' smart constructor.
 data RoutersAggregatedList =
   RoutersAggregatedList'
-    { _rOrderBy    :: !(Maybe Text)
-    , _rProject    :: !Text
-    , _rFilter     :: !(Maybe Text)
-    , _rPageToken  :: !(Maybe Text)
+    { _rOrderBy :: !(Maybe Text)
+    , _rProject :: !Text
+    , _rFilter :: !(Maybe Text)
+    , _rPageToken :: !(Maybe Text)
     , _rMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -16,7 +16,7 @@
 --
 module Network.Google.Redis.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Optional. Available data protection modes that the user can choose. If
 -- it\'s unspecified, data protection mode will be LIMITED_DATA_LOSS by

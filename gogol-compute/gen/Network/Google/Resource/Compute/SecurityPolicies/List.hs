@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.SecurityPolicies.List
     , splMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.securityPolicies.list@ method which the
 -- 'SecurityPoliciesList' request conforms to.
@@ -66,10 +66,10 @@ type SecurityPoliciesListResource =
 -- /See:/ 'securityPoliciesList' smart constructor.
 data SecurityPoliciesList =
   SecurityPoliciesList'
-    { _splOrderBy    :: !(Maybe Text)
-    , _splProject    :: !Text
-    , _splFilter     :: !(Maybe Text)
-    , _splPageToken  :: !(Maybe Text)
+    { _splOrderBy :: !(Maybe Text)
+    , _splProject :: !Text
+    , _splFilter :: !(Maybe Text)
+    , _splPageToken :: !(Maybe Text)
     , _splMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

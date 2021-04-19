@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.ChannelSections.Delete
     , csdId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.channelSections.delete@ method which the
 -- 'ChannelSectionsDelete' request conforms to.
@@ -56,7 +56,7 @@ type ChannelSectionsDeleteResource =
 data ChannelSectionsDelete =
   ChannelSectionsDelete'
     { _csdOnBehalfOfContentOwner :: !(Maybe Text)
-    , _csdId                     :: !Text
+    , _csdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

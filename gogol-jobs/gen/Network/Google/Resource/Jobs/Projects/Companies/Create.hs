@@ -42,8 +42,8 @@ module Network.Google.Resource.Jobs.Projects.Companies.Create
     , pccCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.companies.create@ method which the
 -- 'ProjectsCompaniesCreate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsCompaniesCreateResource =
 -- /See:/ 'projectsCompaniesCreate' smart constructor.
 data ProjectsCompaniesCreate =
   ProjectsCompaniesCreate'
-    { _pccParent         :: !Text
-    , _pccXgafv          :: !(Maybe Xgafv)
+    { _pccParent :: !Text
+    , _pccXgafv :: !(Maybe Xgafv)
     , _pccUploadProtocol :: !(Maybe Text)
-    , _pccAccessToken    :: !(Maybe Text)
-    , _pccUploadType     :: !(Maybe Text)
-    , _pccPayload        :: !CreateCompanyRequest
-    , _pccCallback       :: !(Maybe Text)
+    , _pccAccessToken :: !(Maybe Text)
+    , _pccUploadType :: !(Maybe Text)
+    , _pccPayload :: !CreateCompanyRequest
+    , _pccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

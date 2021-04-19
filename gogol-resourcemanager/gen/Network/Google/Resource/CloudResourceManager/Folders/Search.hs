@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Search
     , fsCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.search@ method which the
 -- 'FoldersSearch' request conforms to.
@@ -69,12 +69,12 @@ type FoldersSearchResource =
 -- /See:/ 'foldersSearch' smart constructor.
 data FoldersSearch =
   FoldersSearch'
-    { _fsXgafv          :: !(Maybe Xgafv)
+    { _fsXgafv :: !(Maybe Xgafv)
     , _fsUploadProtocol :: !(Maybe Text)
-    , _fsAccessToken    :: !(Maybe Text)
-    , _fsUploadType     :: !(Maybe Text)
-    , _fsPayload        :: !SearchFoldersRequest
-    , _fsCallback       :: !(Maybe Text)
+    , _fsAccessToken :: !(Maybe Text)
+    , _fsUploadType :: !(Maybe Text)
+    , _fsPayload :: !SearchFoldersRequest
+    , _fsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Storage.Objects.Compose
     , oDestinationObject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.compose@ method which the
 -- 'ObjectsCompose' request conforms to.
@@ -75,13 +75,13 @@ type ObjectsComposeResource =
 data ObjectsCompose =
   ObjectsCompose'
     { _oDestinationPredefinedACL :: !(Maybe ObjectsComposeDestinationPredefinedACL)
-    , _oIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _oIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _oPayload                  :: !ComposeRequest
-    , _oUserProject              :: !(Maybe Text)
-    , _oDestinationBucket        :: !Text
-    , _oKmsKeyName               :: !(Maybe Text)
-    , _oDestinationObject        :: !Text
+    , _oIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _oIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _oPayload :: !ComposeRequest
+    , _oUserProject :: !(Maybe Text)
+    , _oDestinationBucket :: !Text
+    , _oKmsKeyName :: !(Maybe Text)
+    , _oDestinationObject :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

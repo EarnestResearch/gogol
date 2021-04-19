@@ -53,8 +53,8 @@ module Network.Google.Resource.Monitoring.Projects.TimeSeries.List
     , ptslCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.timeSeries.list@ method which the
 -- 'ProjectsTimeSeriesList' request conforms to.
@@ -89,23 +89,23 @@ type ProjectsTimeSeriesListResource =
 -- /See:/ 'projectsTimeSeriesList' smart constructor.
 data ProjectsTimeSeriesList =
   ProjectsTimeSeriesList'
-    { _ptslIntervalStartTime             :: !(Maybe DateTime')
-    , _ptslXgafv                         :: !(Maybe Xgafv)
-    , _ptslUploadProtocol                :: !(Maybe Text)
-    , _ptslOrderBy                       :: !(Maybe Text)
-    , _ptslAccessToken                   :: !(Maybe Text)
-    , _ptslUploadType                    :: !(Maybe Text)
-    , _ptslAggregationPerSeriesAligner   :: !(Maybe Text)
-    , _ptslName                          :: !Text
-    , _ptslAggregationGroupByFields      :: !(Maybe [Text])
-    , _ptslView                          :: !(Maybe Text)
+    { _ptslIntervalStartTime :: !(Maybe DateTime')
+    , _ptslXgafv :: !(Maybe Xgafv)
+    , _ptslUploadProtocol :: !(Maybe Text)
+    , _ptslOrderBy :: !(Maybe Text)
+    , _ptslAccessToken :: !(Maybe Text)
+    , _ptslUploadType :: !(Maybe Text)
+    , _ptslAggregationPerSeriesAligner :: !(Maybe Text)
+    , _ptslName :: !Text
+    , _ptslAggregationGroupByFields :: !(Maybe [Text])
+    , _ptslView :: !(Maybe Text)
     , _ptslAggregationCrossSeriesReducer :: !(Maybe Text)
-    , _ptslFilter                        :: !(Maybe Text)
-    , _ptslAggregationAlignmentPeriod    :: !(Maybe GDuration)
-    , _ptslPageToken                     :: !(Maybe Text)
-    , _ptslIntervalEndTime               :: !(Maybe DateTime')
-    , _ptslPageSize                      :: !(Maybe (Textual Int32))
-    , _ptslCallback                      :: !(Maybe Text)
+    , _ptslFilter :: !(Maybe Text)
+    , _ptslAggregationAlignmentPeriod :: !(Maybe GDuration)
+    , _ptslPageToken :: !(Maybe Text)
+    , _ptslIntervalEndTime :: !(Maybe DateTime')
+    , _ptslPageSize :: !(Maybe (Textual Int32))
+    , _ptslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

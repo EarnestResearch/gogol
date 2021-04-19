@@ -36,8 +36,8 @@ module Network.Google.Resource.Books.MyLibrary.Bookshelves.List
     , mlblSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.bookshelves.list@ method which the
 -- 'MyLibraryBookshelvesList' request conforms to.

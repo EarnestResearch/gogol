@@ -17,8 +17,8 @@
 --
 module Network.Google.WebSecurityScanner.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types.Sum
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types.Sum
 
 -- | A FindingTypeStats resource represents stats regarding a specific
 -- FindingType of Findings under a given ScanRun.
@@ -27,7 +27,7 @@ import           Network.Google.WebSecurityScanner.Types.Sum
 data FindingTypeStats =
   FindingTypeStats'
     { _ftsFindingCount :: !(Maybe (Textual Int32))
-    , _ftsFindingType  :: !(Maybe Text)
+    , _ftsFindingType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -78,7 +78,7 @@ instance ToJSON FindingTypeStats where
 data ListFindingsResponse =
   ListFindingsResponse'
     { _lfrNextPageToken :: !(Maybe Text)
-    , _lfrFindings      :: !(Maybe [Finding])
+    , _lfrFindings :: !(Maybe [Finding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -157,7 +157,7 @@ instance ToJSON StopScanRunRequest where
 data ScanConfigError =
   ScanConfigError'
     { _sceFieldName :: !(Maybe Text)
-    , _sceCode      :: !(Maybe ScanConfigErrorCode)
+    , _sceCode :: !(Maybe ScanConfigErrorCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -205,7 +205,7 @@ instance ToJSON ScanConfigError where
 -- /See:/ 'schedule' smart constructor.
 data Schedule =
   Schedule'
-    { _sScheduleTime         :: !(Maybe DateTime')
+    { _sScheduleTime :: !(Maybe DateTime')
     , _sIntervalDurationDays :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -263,22 +263,22 @@ instance ToJSON Schedule where
 -- /See:/ 'finding' smart constructor.
 data Finding =
   Finding'
-    { _fFinalURL             :: !(Maybe Text)
-    , _fHTTPMethod           :: !(Maybe Text)
-    , _fReProductionURL      :: !(Maybe Text)
-    , _fTrackingId           :: !(Maybe Text)
-    , _fBody                 :: !(Maybe Text)
-    , _fXss                  :: !(Maybe Xss)
+    { _fFinalURL :: !(Maybe Text)
+    , _fHTTPMethod :: !(Maybe Text)
+    , _fReProductionURL :: !(Maybe Text)
+    , _fTrackingId :: !(Maybe Text)
+    , _fBody :: !(Maybe Text)
+    , _fXss :: !(Maybe Xss)
     , _fVulnerableParameters :: !(Maybe VulnerableParameters)
-    , _fOutdatedLibrary      :: !(Maybe OutdatedLibrary)
-    , _fFuzzedURL            :: !(Maybe Text)
-    , _fName                 :: !(Maybe Text)
-    , _fFindingType          :: !(Maybe Text)
-    , _fVulnerableHeaders    :: !(Maybe VulnerableHeaders)
-    , _fViolatingResource    :: !(Maybe ViolatingResource)
-    , _fForm                 :: !(Maybe Form)
-    , _fFrameURL             :: !(Maybe Text)
-    , _fDescription          :: !(Maybe Text)
+    , _fOutdatedLibrary :: !(Maybe OutdatedLibrary)
+    , _fFuzzedURL :: !(Maybe Text)
+    , _fName :: !(Maybe Text)
+    , _fFindingType :: !(Maybe Text)
+    , _fVulnerableHeaders :: !(Maybe VulnerableHeaders)
+    , _fViolatingResource :: !(Maybe ViolatingResource)
+    , _fForm :: !(Maybe Form)
+    , _fFrameURL :: !(Maybe Text)
+    , _fDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -637,7 +637,7 @@ instance ToJSON GoogleAccount where
 -- /See:/ 'xss' smart constructor.
 data Xss =
   Xss'
-    { _xStackTraces  :: !(Maybe [Text])
+    { _xStackTraces :: !(Maybe [Text])
     , _xErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -739,7 +739,7 @@ instance ToJSON Authentication where
 data ListCrawledURLsResponse =
   ListCrawledURLsResponse'
     { _lcurNextPageToken :: !(Maybe Text)
-    , _lcurCrawledURLs   :: !(Maybe [CrawledURL])
+    , _lcurCrawledURLs :: !(Maybe [CrawledURL])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -838,8 +838,8 @@ instance ToJSON VulnerableParameters where
 data CrawledURL =
   CrawledURL'
     { _cuHTTPMethod :: !(Maybe Text)
-    , _cuBody       :: !(Maybe Text)
-    , _cuURL        :: !(Maybe Text)
+    , _cuBody :: !(Maybe Text)
+    , _cuURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -894,8 +894,8 @@ instance ToJSON CrawledURL where
 data OutdatedLibrary =
   OutdatedLibrary'
     { _olLearnMoreURLs :: !(Maybe [Text])
-    , _olVersion       :: !(Maybe Text)
-    , _olLibraryName   :: !(Maybe Text)
+    , _olVersion :: !(Maybe Text)
+    , _olLibraryName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -958,7 +958,7 @@ instance ToJSON OutdatedLibrary where
 data ListScanRunsResponse =
   ListScanRunsResponse'
     { _lsrrNextPageToken :: !(Maybe Text)
-    , _lsrrScanRuns      :: !(Maybe [ScanRun])
+    , _lsrrScanRuns :: !(Maybe [ScanRun])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1011,7 +1011,7 @@ instance ToJSON ListScanRunsResponse where
 data Header =
   Header'
     { _hValue :: !(Maybe Text)
-    , _hName  :: !(Maybe Text)
+    , _hName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1054,8 +1054,8 @@ instance ToJSON Header where
 data ScanRunErrorTrace =
   ScanRunErrorTrace'
     { _sretMostCommonHTTPErrorCode :: !(Maybe (Textual Int32))
-    , _sretScanConfigError         :: !(Maybe ScanConfigError)
-    , _sretCode                    :: !(Maybe ScanRunErrorTraceCode)
+    , _sretScanConfigError :: !(Maybe ScanConfigError)
+    , _sretCode :: !(Maybe ScanRunErrorTraceCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1125,7 +1125,7 @@ instance ToJSON ScanRunErrorTrace where
 data ListScanConfigsResponse =
   ListScanConfigsResponse'
     { _lscrNextPageToken :: !(Maybe Text)
-    , _lscrScanConfigs   :: !(Maybe [ScanConfig])
+    , _lscrScanConfigs :: !(Maybe [ScanConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1264,17 +1264,17 @@ instance ToJSON CustomAccount where
 -- /See:/ 'scanConfig' smart constructor.
 data ScanConfig =
   ScanConfig'
-    { _scLatestRun                     :: !(Maybe ScanRun)
-    , _scSchedule                      :: !(Maybe Schedule)
-    , _scTargetPlatforms               :: !(Maybe [Text])
-    , _scStartingURLs                  :: !(Maybe [Text])
-    , _scAuthentication                :: !(Maybe Authentication)
-    , _scMaxQps                        :: !(Maybe (Textual Int32))
-    , _scName                          :: !(Maybe Text)
+    { _scLatestRun :: !(Maybe ScanRun)
+    , _scSchedule :: !(Maybe Schedule)
+    , _scTargetPlatforms :: !(Maybe [Text])
+    , _scStartingURLs :: !(Maybe [Text])
+    , _scAuthentication :: !(Maybe Authentication)
+    , _scMaxQps :: !(Maybe (Textual Int32))
+    , _scName :: !(Maybe Text)
     , _scExportToSecurityCommandCenter :: !(Maybe ScanConfigExportToSecurityCommandCenter)
-    , _scDisplayName                   :: !(Maybe Text)
-    , _scUserAgent                     :: !(Maybe ScanConfigUserAgent)
-    , _scBlackListPatterns             :: !(Maybe [Text])
+    , _scDisplayName :: !(Maybe Text)
+    , _scUserAgent :: !(Maybe ScanConfigUserAgent)
+    , _scBlackListPatterns :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1436,7 +1436,7 @@ instance ToJSON ScanConfig where
 data VulnerableHeaders =
   VulnerableHeaders'
     { _vhMissingHeaders :: !(Maybe [Header])
-    , _vhHeaders        :: !(Maybe [Header])
+    , _vhHeaders :: !(Maybe [Header])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1541,7 +1541,7 @@ instance ToJSON ViolatingResource where
 data Form =
   Form'
     { _fActionURI :: !(Maybe Text)
-    , _fFields    :: !(Maybe [Text])
+    , _fFields :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1589,17 +1589,17 @@ instance ToJSON Form where
 -- /See:/ 'scanRun' smart constructor.
 data ScanRun =
   ScanRun'
-    { _srStartTime          :: !(Maybe DateTime')
+    { _srStartTime :: !(Maybe DateTime')
     , _srHasVulnerabilities :: !(Maybe Bool)
-    , _srWarningTraces      :: !(Maybe [ScanRunWarningTrace])
-    , _srResultState        :: !(Maybe ScanRunResultState)
-    , _srProgressPercent    :: !(Maybe (Textual Int32))
-    , _srURLsCrawledCount   :: !(Maybe (Textual Int64))
-    , _srURLsTestedCount    :: !(Maybe (Textual Int64))
-    , _srName               :: !(Maybe Text)
-    , _srEndTime            :: !(Maybe DateTime')
-    , _srExecutionState     :: !(Maybe ScanRunExecutionState)
-    , _srErrorTrace         :: !(Maybe ScanRunErrorTrace)
+    , _srWarningTraces :: !(Maybe [ScanRunWarningTrace])
+    , _srResultState :: !(Maybe ScanRunResultState)
+    , _srProgressPercent :: !(Maybe (Textual Int32))
+    , _srURLsCrawledCount :: !(Maybe (Textual Int64))
+    , _srURLsTestedCount :: !(Maybe (Textual Int64))
+    , _srName :: !(Maybe Text)
+    , _srEndTime :: !(Maybe DateTime')
+    , _srExecutionState :: !(Maybe ScanRunExecutionState)
+    , _srErrorTrace :: !(Maybe ScanRunErrorTrace)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

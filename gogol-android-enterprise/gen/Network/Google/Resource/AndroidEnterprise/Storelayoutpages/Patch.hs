@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutpages.Patch
     , spPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutpages.patch@ method which the
 -- 'StorelayoutpagesPatch' request conforms to.
@@ -62,8 +62,8 @@ type StorelayoutpagesPatchResource =
 data StorelayoutpagesPatch =
   StorelayoutpagesPatch'
     { _spEnterpriseId :: !Text
-    , _spPageId       :: !Text
-    , _spPayload      :: !StorePage
+    , _spPageId :: !Text
+    , _spPayload :: !StorePage
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

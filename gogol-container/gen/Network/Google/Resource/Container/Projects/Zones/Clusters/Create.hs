@@ -51,8 +51,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.Create
     , pzccCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.create@ method which the
 -- 'ProjectsZonesClustersCreate' request conforms to.
@@ -85,14 +85,14 @@ type ProjectsZonesClustersCreateResource =
 -- /See:/ 'projectsZonesClustersCreate' smart constructor.
 data ProjectsZonesClustersCreate =
   ProjectsZonesClustersCreate'
-    { _pzccXgafv          :: !(Maybe Xgafv)
+    { _pzccXgafv :: !(Maybe Xgafv)
     , _pzccUploadProtocol :: !(Maybe Text)
-    , _pzccAccessToken    :: !(Maybe Text)
-    , _pzccUploadType     :: !(Maybe Text)
-    , _pzccZone           :: !Text
-    , _pzccPayload        :: !CreateClusterRequest
-    , _pzccProjectId      :: !Text
-    , _pzccCallback       :: !(Maybe Text)
+    , _pzccAccessToken :: !(Maybe Text)
+    , _pzccUploadType :: !(Maybe Text)
+    , _pzccZone :: !Text
+    , _pzccPayload :: !CreateClusterRequest
+    , _pzccProjectId :: !Text
+    , _pzccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

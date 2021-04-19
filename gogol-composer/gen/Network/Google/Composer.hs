@@ -203,17 +203,17 @@ module Network.Google.Composer
     , orAddtional
     ) where
 
-import           Network.Google.Composer.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Composer.Projects.Locations.Environments.Create
-import           Network.Google.Resource.Composer.Projects.Locations.Environments.Delete
-import           Network.Google.Resource.Composer.Projects.Locations.Environments.Get
-import           Network.Google.Resource.Composer.Projects.Locations.Environments.List
-import           Network.Google.Resource.Composer.Projects.Locations.Environments.Patch
-import           Network.Google.Resource.Composer.Projects.Locations.ImageVersions.List
-import           Network.Google.Resource.Composer.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.Composer.Projects.Locations.Operations.Get
-import           Network.Google.Resource.Composer.Projects.Locations.Operations.List
+import Network.Google.Prelude
+import Network.Google.Composer.Types
+import Network.Google.Resource.Composer.Projects.Locations.Environments.Create
+import Network.Google.Resource.Composer.Projects.Locations.Environments.Delete
+import Network.Google.Resource.Composer.Projects.Locations.Environments.Get
+import Network.Google.Resource.Composer.Projects.Locations.Environments.List
+import Network.Google.Resource.Composer.Projects.Locations.Environments.Patch
+import Network.Google.Resource.Composer.Projects.Locations.ImageVersions.List
+import Network.Google.Resource.Composer.Projects.Locations.Operations.Delete
+import Network.Google.Resource.Composer.Projects.Locations.Operations.Get
+import Network.Google.Resource.Composer.Projects.Locations.Operations.List
 
 {- $resources
 TODO

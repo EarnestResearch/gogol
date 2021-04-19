@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Delegates.List
     , usdlUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.delegates.list@ method which the
 -- 'UsersSettingsDelegatesList' request conforms to.

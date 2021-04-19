@@ -44,8 +44,8 @@ module Network.Google.Resource.Monitoring.Projects.CollectdTimeSeries.Create
     , pctscCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.collectdTimeSeries.create@ method which the
 -- 'ProjectsCollectdTimeSeriesCreate' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsCollectdTimeSeriesCreateResource =
 -- /See:/ 'projectsCollectdTimeSeriesCreate' smart constructor.
 data ProjectsCollectdTimeSeriesCreate =
   ProjectsCollectdTimeSeriesCreate'
-    { _pctscXgafv          :: !(Maybe Xgafv)
+    { _pctscXgafv :: !(Maybe Xgafv)
     , _pctscUploadProtocol :: !(Maybe Text)
-    , _pctscAccessToken    :: !(Maybe Text)
-    , _pctscUploadType     :: !(Maybe Text)
-    , _pctscPayload        :: !CreateCollectdTimeSeriesRequest
-    , _pctscName           :: !Text
-    , _pctscCallback       :: !(Maybe Text)
+    , _pctscAccessToken :: !(Maybe Text)
+    , _pctscUploadType :: !(Maybe Text)
+    , _pctscPayload :: !CreateCollectdTimeSeriesRequest
+    , _pctscName :: !Text
+    , _pctscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

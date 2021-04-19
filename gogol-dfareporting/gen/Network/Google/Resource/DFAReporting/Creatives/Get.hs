@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Get
     , ccId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.get@ method which the
 -- 'CreativesGet' request conforms to.
@@ -57,7 +57,7 @@ type CreativesGetResource =
 data CreativesGet =
   CreativesGet'
     { _ccProFileId :: !(Textual Int64)
-    , _ccId        :: !(Textual Int64)
+    , _ccId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

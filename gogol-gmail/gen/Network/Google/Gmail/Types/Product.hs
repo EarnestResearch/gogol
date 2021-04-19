@@ -17,8 +17,8 @@
 --
 module Network.Google.Gmail.Types.Product where
 
-import           Network.Google.Gmail.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'batchDeleteMessagesRequest' smart constructor.
@@ -64,7 +64,7 @@ instance ToJSON BatchDeleteMessagesRequest where
 data Delegate =
   Delegate'
     { _dVerificationStatus :: !(Maybe DelegateVerificationStatus)
-    , _dDelegateEmail      :: !(Maybe Text)
+    , _dDelegateEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -114,7 +114,7 @@ instance ToJSON Delegate where
 data ModifyThreadRequest =
   ModifyThreadRequest'
     { _mtrRemoveLabelIds :: !(Maybe [Text])
-    , _mtrAddLabelIds    :: !(Maybe [Text])
+    , _mtrAddLabelIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -205,7 +205,7 @@ instance ToJSON ListFiltersResponse where
 data ModifyMessageRequest =
   ModifyMessageRequest'
     { _mmrRemoveLabelIds :: !(Maybe [Text])
-    , _mmrAddLabelIds    :: !(Maybe [Text])
+    , _mmrAddLabelIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -305,7 +305,7 @@ instance ToJSON ListForwardingAddressesResponse where
 data PopSettings =
   PopSettings'
     { _psAccessWindow :: !(Maybe PopSettingsAccessWindow)
-    , _psDisPosition  :: !(Maybe PopSettingsDisPosition)
+    , _psDisPosition :: !(Maybe PopSettingsDisPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -355,12 +355,12 @@ instance ToJSON PopSettings where
 -- /See:/ 'history' smart constructor.
 data History =
   History'
-    { _hLabelsRemoved   :: !(Maybe [HistoryLabelRemoved])
+    { _hLabelsRemoved :: !(Maybe [HistoryLabelRemoved])
     , _hMessagesDeleted :: !(Maybe [HistoryMessageDeleted])
-    , _hMessagesAdded   :: !(Maybe [HistoryMessageAdded])
-    , _hLabelsAdded     :: !(Maybe [HistoryLabelAdded])
-    , _hId              :: !(Maybe (Textual Word64))
-    , _hMessages        :: !(Maybe [Message])
+    , _hMessagesAdded :: !(Maybe [HistoryMessageAdded])
+    , _hLabelsAdded :: !(Maybe [HistoryLabelAdded])
+    , _hId :: !(Maybe (Textual Word64))
+    , _hMessages :: !(Maybe [Message])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -505,7 +505,7 @@ instance ToJSON ListDelegatesResponse where
 data LabelColor =
   LabelColor'
     { _lcBackgRoundColor :: !(Maybe Text)
-    , _lcTextColor       :: !(Maybe Text)
+    , _lcTextColor :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -573,14 +573,14 @@ instance ToJSON LabelColor where
 data FilterCriteria =
   FilterCriteria'
     { _fcSizeComparison :: !(Maybe FilterCriteriaSizeComparison)
-    , _fcSubject        :: !(Maybe Text)
-    , _fcSize           :: !(Maybe (Textual Int32))
-    , _fcExcludeChats   :: !(Maybe Bool)
-    , _fcTo             :: !(Maybe Text)
-    , _fcFrom           :: !(Maybe Text)
-    , _fcQuery          :: !(Maybe Text)
-    , _fcNegatedQuery   :: !(Maybe Text)
-    , _fcHasAttachment  :: !(Maybe Bool)
+    , _fcSubject :: !(Maybe Text)
+    , _fcSize :: !(Maybe (Textual Int32))
+    , _fcExcludeChats :: !(Maybe Bool)
+    , _fcTo :: !(Maybe Text)
+    , _fcFrom :: !(Maybe Text)
+    , _fcQuery :: !(Maybe Text)
+    , _fcNegatedQuery :: !(Maybe Text)
+    , _fcHasAttachment :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -712,9 +712,9 @@ instance ToJSON FilterCriteria where
 data ProFile =
   ProFile'
     { _pfMessagesTotal :: !(Maybe (Textual Int32))
-    , _pfThreadsTotal  :: !(Maybe (Textual Int32))
-    , _pfHistoryId     :: !(Maybe (Textual Word64))
-    , _pfEmailAddress  :: !(Maybe Text)
+    , _pfThreadsTotal :: !(Maybe (Textual Int32))
+    , _pfHistoryId :: !(Maybe (Textual Word64))
+    , _pfEmailAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -790,7 +790,7 @@ instance ToJSON ProFile where
 data MessagePartHeader =
   MessagePartHeader'
     { _mphValue :: !(Maybe Text)
-    , _mphName  :: !(Maybe Text)
+    , _mphName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -835,8 +835,8 @@ instance ToJSON MessagePartHeader where
 data ListHistoryResponse =
   ListHistoryResponse'
     { _lhrNextPageToken :: !(Maybe Text)
-    , _lhrHistory       :: !(Maybe [History])
-    , _lhrHistoryId     :: !(Maybe (Textual Word64))
+    , _lhrHistory :: !(Maybe [History])
+    , _lhrHistoryId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -905,15 +905,15 @@ instance ToJSON ListHistoryResponse where
 -- /See:/ 'sendAs' smart constructor.
 data SendAs =
   SendAs'
-    { _saSignature          :: !(Maybe Text)
-    , _saReplyToAddress     :: !(Maybe Text)
-    , _saTreatAsAlias       :: !(Maybe Bool)
-    , _saSendAsEmail        :: !(Maybe Text)
-    , _saDisplayName        :: !(Maybe Text)
+    { _saSignature :: !(Maybe Text)
+    , _saReplyToAddress :: !(Maybe Text)
+    , _saTreatAsAlias :: !(Maybe Bool)
+    , _saSendAsEmail :: !(Maybe Text)
+    , _saDisplayName :: !(Maybe Text)
     , _saVerificationStatus :: !(Maybe SendAsVerificationStatus)
-    , _saSmtpMsa            :: !(Maybe SmtpMsa)
-    , _saIsPrimary          :: !(Maybe Bool)
-    , _saIsDefault          :: !(Maybe Bool)
+    , _saSmtpMsa :: !(Maybe SmtpMsa)
+    , _saIsPrimary :: !(Maybe Bool)
+    , _saIsDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1060,9 +1060,9 @@ instance ToJSON SendAs where
 -- /See:/ 'listThreadsResponse' smart constructor.
 data ListThreadsResponse =
   ListThreadsResponse'
-    { _ltrNextPageToken      :: !(Maybe Text)
+    { _ltrNextPageToken :: !(Maybe Text)
     , _ltrResultSizeEstimate :: !(Maybe (Textual Word32))
-    , _ltrThreads            :: !(Maybe [Thread])
+    , _ltrThreads :: !(Maybe [Thread])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1130,11 +1130,11 @@ instance ToJSON ListThreadsResponse where
 -- /See:/ 'messagePart' smart constructor.
 data MessagePart =
   MessagePart'
-    { _mpParts    :: !(Maybe [MessagePart])
-    , _mpBody     :: !(Maybe MessagePartBody)
+    { _mpParts :: !(Maybe [MessagePart])
+    , _mpBody :: !(Maybe MessagePartBody)
     , _mpMimeType :: !(Maybe Text)
-    , _mpHeaders  :: !(Maybe [MessagePartHeader])
-    , _mpPartId   :: !(Maybe Text)
+    , _mpHeaders :: !(Maybe [MessagePartHeader])
+    , _mpPartId :: !(Maybe Text)
     , _mpFilename :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1232,7 +1232,7 @@ instance ToJSON MessagePart where
 data HistoryLabelAdded =
   HistoryLabelAdded'
     { _hlaLabelIds :: !(Maybe [Text])
-    , _hlaMessage  :: !(Maybe Message)
+    , _hlaMessage :: !(Maybe Message)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1317,14 +1317,14 @@ instance ToJSON ListLabelsResponse where
 -- /See:/ 'vacationSettings' smart constructor.
 data VacationSettings =
   VacationSettings'
-    { _vsEnableAutoReply       :: !(Maybe Bool)
+    { _vsEnableAutoReply :: !(Maybe Bool)
     , _vsResponseBodyPlainText :: !(Maybe Text)
-    , _vsRestrictToDomain      :: !(Maybe Bool)
-    , _vsStartTime             :: !(Maybe (Textual Int64))
-    , _vsResponseBodyHTML      :: !(Maybe Text)
-    , _vsRestrictToContacts    :: !(Maybe Bool)
-    , _vsResponseSubject       :: !(Maybe Text)
-    , _vsEndTime               :: !(Maybe (Textual Int64))
+    , _vsRestrictToDomain :: !(Maybe Bool)
+    , _vsStartTime :: !(Maybe (Textual Int64))
+    , _vsResponseBodyHTML :: !(Maybe Text)
+    , _vsRestrictToContacts :: !(Maybe Bool)
+    , _vsResponseSubject :: !(Maybe Text)
+    , _vsEndTime :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1488,8 +1488,8 @@ instance ToJSON HistoryMessageDeleted where
 -- /See:/ 'messagePartBody' smart constructor.
 data MessagePartBody =
   MessagePartBody'
-    { _mpbSize         :: !(Maybe (Textual Int32))
-    , _mpbData         :: !(Maybe Bytes)
+    { _mpbSize :: !(Maybe (Textual Int32))
+    , _mpbData :: !(Maybe Bytes)
     , _mpbAttachmentId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1555,8 +1555,8 @@ instance ToJSON MessagePartBody where
 -- /See:/ 'autoForwarding' smart constructor.
 data AutoForwarding =
   AutoForwarding'
-    { _afEnabled      :: !(Maybe Bool)
-    , _afDisPosition  :: !(Maybe AutoForwardingDisPosition)
+    { _afEnabled :: !(Maybe Bool)
+    , _afDisPosition :: !(Maybe AutoForwardingDisPosition)
     , _afEmailAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1616,9 +1616,9 @@ instance ToJSON AutoForwarding where
 -- /See:/ 'listDraftsResponse' smart constructor.
 data ListDraftsResponse =
   ListDraftsResponse'
-    { _ldrNextPageToken      :: !(Maybe Text)
+    { _ldrNextPageToken :: !(Maybe Text)
     , _ldrResultSizeEstimate :: !(Maybe (Textual Word32))
-    , _ldrDrafts             :: !(Maybe [Draft])
+    , _ldrDrafts :: !(Maybe [Draft])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1771,7 +1771,7 @@ instance ToJSON LanguageSettings where
 data WatchResponse =
   WatchResponse'
     { _wrExpiration :: !(Maybe (Textual Int64))
-    , _wrHistoryId  :: !(Maybe (Textual Word64))
+    , _wrHistoryId :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1819,9 +1819,9 @@ instance ToJSON WatchResponse where
 -- /See:/ 'batchModifyMessagesRequest' smart constructor.
 data BatchModifyMessagesRequest =
   BatchModifyMessagesRequest'
-    { _bmmrIds            :: !(Maybe [Text])
+    { _bmmrIds :: !(Maybe [Text])
     , _bmmrRemoveLabelIds :: !(Maybe [Text])
-    , _bmmrAddLabelIds    :: !(Maybe [Text])
+    , _bmmrAddLabelIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1890,7 +1890,7 @@ instance ToJSON BatchModifyMessagesRequest where
 -- /See:/ 'draft' smart constructor.
 data Draft =
   Draft'
-    { _dId      :: !(Maybe Text)
+    { _dId :: !(Maybe Text)
     , _dMessage :: !(Maybe Message)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1934,10 +1934,10 @@ instance ToJSON Draft where
 data SmtpMsa =
   SmtpMsa'
     { _smSecurityMode :: !(Maybe SmtpMsaSecurityMode)
-    , _smUsername     :: !(Maybe Text)
-    , _smPassword     :: !(Maybe Text)
-    , _smHost         :: !(Maybe Text)
-    , _smPort         :: !(Maybe (Textual Int32))
+    , _smUsername :: !(Maybe Text)
+    , _smPassword :: !(Maybe Text)
+    , _smHost :: !(Maybe Text)
+    , _smPort :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2022,7 +2022,7 @@ instance ToJSON SmtpMsa where
 -- /See:/ 'forwardingAddress' smart constructor.
 data ForwardingAddress =
   ForwardingAddress'
-    { _faForwardingEmail    :: !(Maybe Text)
+    { _faForwardingEmail :: !(Maybe Text)
     , _faVerificationStatus :: !(Maybe ForwardingAddressVerificationStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2076,8 +2076,8 @@ instance ToJSON ForwardingAddress where
 -- /See:/ 'filter'' smart constructor.
 data Filter =
   Filter'
-    { _fAction   :: !(Maybe FilterAction)
-    , _fId       :: !(Maybe Text)
+    { _fAction :: !(Maybe FilterAction)
+    , _fId :: !(Maybe Text)
     , _fCriteria :: !(Maybe FilterCriteria)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2131,8 +2131,8 @@ instance ToJSON Filter where
 data WatchRequest =
   WatchRequest'
     { _wrLabelFilterAction :: !(Maybe WatchRequestLabelFilterAction)
-    , _wrTopicName         :: !(Maybe Text)
-    , _wrLabelIds          :: !(Maybe [Text])
+    , _wrTopicName :: !(Maybe Text)
+    , _wrLabelIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2203,10 +2203,10 @@ instance ToJSON WatchRequest where
 -- /See:/ 'imapSettings' smart constructor.
 data ImapSettings =
   ImapSettings'
-    { _isEnabled         :: !(Maybe Bool)
+    { _isEnabled :: !(Maybe Bool)
     , _isExpungeBehavior :: !(Maybe ImapSettingsExpungeBehavior)
-    , _isAutoExpunge     :: !(Maybe Bool)
-    , _isMaxFolderSize   :: !(Maybe (Textual Int32))
+    , _isAutoExpunge :: !(Maybe Bool)
+    , _isMaxFolderSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2324,14 +2324,14 @@ instance ToJSON ListSmimeInfoResponse where
 -- /See:/ 'message' smart constructor.
 data Message =
   Message'
-    { _mRaw          :: !(Maybe Bytes)
-    , _mSnippet      :: !(Maybe Text)
+    { _mRaw :: !(Maybe Bytes)
+    , _mSnippet :: !(Maybe Text)
     , _mSizeEstimate :: !(Maybe (Textual Int32))
-    , _mPayload      :: !(Maybe MessagePart)
-    , _mHistoryId    :: !(Maybe (Textual Word64))
-    , _mId           :: !(Maybe Text)
-    , _mLabelIds     :: !(Maybe [Text])
-    , _mThreadId     :: !(Maybe Text)
+    , _mPayload :: !(Maybe MessagePart)
+    , _mHistoryId :: !(Maybe (Textual Word64))
+    , _mId :: !(Maybe Text)
+    , _mLabelIds :: !(Maybe [Text])
+    , _mThreadId :: !(Maybe Text)
     , _mInternalDate :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2465,7 +2465,7 @@ instance ToJSON Message where
 data HistoryLabelRemoved =
   HistoryLabelRemoved'
     { _hlrLabelIds :: !(Maybe [Text])
-    , _hlrMessage  :: !(Maybe Message)
+    , _hlrMessage :: !(Maybe Message)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2513,10 +2513,10 @@ instance ToJSON HistoryLabelRemoved where
 -- /See:/ 'thread' smart constructor.
 data Thread =
   Thread'
-    { _tSnippet   :: !(Maybe Text)
+    { _tSnippet :: !(Maybe Text)
     , _tHistoryId :: !(Maybe (Textual Word64))
-    , _tId        :: !(Maybe Text)
-    , _tMessages  :: !(Maybe [Message])
+    , _tId :: !(Maybe Text)
+    , _tMessages :: !(Maybe [Message])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2586,9 +2586,9 @@ instance ToJSON Thread where
 -- /See:/ 'filterAction' smart constructor.
 data FilterAction =
   FilterAction'
-    { _faForward        :: !(Maybe Text)
+    { _faForward :: !(Maybe Text)
     , _faRemoveLabelIds :: !(Maybe [Text])
-    , _faAddLabelIds    :: !(Maybe [Text])
+    , _faAddLabelIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2656,16 +2656,16 @@ instance ToJSON FilterAction where
 -- /See:/ 'label' smart constructor.
 data Label =
   Label'
-    { _lThreadsUnread         :: !(Maybe (Textual Int32))
+    { _lThreadsUnread :: !(Maybe (Textual Int32))
     , _lMessageListVisibility :: !(Maybe LabelMessageListVisibility)
-    , _lMessagesTotal         :: !(Maybe (Textual Int32))
-    , _lColor                 :: !(Maybe LabelColor)
-    , _lMessagesUnread        :: !(Maybe (Textual Int32))
-    , _lName                  :: !(Maybe Text)
-    , _lThreadsTotal          :: !(Maybe (Textual Int32))
-    , _lLabelListVisibility   :: !(Maybe LabelLabelListVisibility)
-    , _lId                    :: !(Maybe Text)
-    , _lType                  :: !(Maybe LabelType)
+    , _lMessagesTotal :: !(Maybe (Textual Int32))
+    , _lColor :: !(Maybe LabelColor)
+    , _lMessagesUnread :: !(Maybe (Textual Int32))
+    , _lName :: !(Maybe Text)
+    , _lThreadsTotal :: !(Maybe (Textual Int32))
+    , _lLabelListVisibility :: !(Maybe LabelLabelListVisibility)
+    , _lId :: !(Maybe Text)
+    , _lType :: !(Maybe LabelType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2812,13 +2812,13 @@ instance ToJSON Label where
 -- /See:/ 'smimeInfo' smart constructor.
 data SmimeInfo =
   SmimeInfo'
-    { _siPem                  :: !(Maybe Text)
-    , _siExpiration           :: !(Maybe (Textual Int64))
+    { _siPem :: !(Maybe Text)
+    , _siExpiration :: !(Maybe (Textual Int64))
     , _siEncryptedKeyPassword :: !(Maybe Text)
-    , _siId                   :: !(Maybe Text)
-    , _siPkcs12               :: !(Maybe Bytes)
-    , _siIssuerCn             :: !(Maybe Text)
-    , _siIsDefault            :: !(Maybe Bool)
+    , _siId :: !(Maybe Text)
+    , _siPkcs12 :: !(Maybe Bytes)
+    , _siIssuerCn :: !(Maybe Text)
+    , _siIsDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2925,9 +2925,9 @@ instance ToJSON SmimeInfo where
 -- /See:/ 'listMessagesResponse' smart constructor.
 data ListMessagesResponse =
   ListMessagesResponse'
-    { _lmrNextPageToken      :: !(Maybe Text)
+    { _lmrNextPageToken :: !(Maybe Text)
     , _lmrResultSizeEstimate :: !(Maybe (Textual Word32))
-    , _lmrMessages           :: !(Maybe [Message])
+    , _lmrMessages :: !(Maybe [Message])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

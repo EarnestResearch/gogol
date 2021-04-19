@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.Roles.Undelete
     , pruCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.undelete@ method which the
 -- 'ProjectsRolesUndelete' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsRolesUndeleteResource =
 -- /See:/ 'projectsRolesUndelete' smart constructor.
 data ProjectsRolesUndelete =
   ProjectsRolesUndelete'
-    { _pruXgafv          :: !(Maybe Xgafv)
+    { _pruXgafv :: !(Maybe Xgafv)
     , _pruUploadProtocol :: !(Maybe Text)
-    , _pruAccessToken    :: !(Maybe Text)
-    , _pruUploadType     :: !(Maybe Text)
-    , _pruPayload        :: !UndeleteRoleRequest
-    , _pruName           :: !Text
-    , _pruCallback       :: !(Maybe Text)
+    , _pruAccessToken :: !(Maybe Text)
+    , _pruUploadType :: !(Maybe Text)
+    , _pruPayload :: !UndeleteRoleRequest
+    , _pruName :: !Text
+    , _pruCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

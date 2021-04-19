@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Orders.Refund
     , orOrderId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.orders.refund@ method which the
 -- 'OrdersRefund' request conforms to.
@@ -59,8 +59,8 @@ type OrdersRefundResource =
 data OrdersRefund =
   OrdersRefund'
     { _orPackageName :: !Text
-    , _orRevoke      :: !(Maybe Bool)
-    , _orOrderId     :: !Text
+    , _orRevoke :: !(Maybe Bool)
+    , _orOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

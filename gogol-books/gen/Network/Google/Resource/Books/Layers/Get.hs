@@ -39,8 +39,8 @@ module Network.Google.Resource.Books.Layers.Get
     , lgSummaryId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.layers.get@ method which the
 -- 'LayersGet' request conforms to.
@@ -61,9 +61,9 @@ type LayersGetResource =
 data LayersGet =
   LayersGet'
     { _lgContentVersion :: !(Maybe Text)
-    , _lgVolumeId       :: !Text
-    , _lgSource         :: !(Maybe Text)
-    , _lgSummaryId      :: !Text
+    , _lgVolumeId :: !Text
+    , _lgSource :: !(Maybe Text)
+    , _lgSummaryId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Filters.Delete
     , usfdId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.filters.delete@ method which the
 -- 'UsersSettingsFiltersDelete' request conforms to.
@@ -58,7 +58,7 @@ type UsersSettingsFiltersDeleteResource =
 data UsersSettingsFiltersDelete =
   UsersSettingsFiltersDelete'
     { _usfdUserId :: !Text
-    , _usfdId     :: !Text
+    , _usfdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

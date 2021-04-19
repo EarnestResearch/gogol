@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Insert
     , cciPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.insert@ method which the
 -- 'ContentCategoriesInsert' request conforms to.
@@ -58,7 +58,7 @@ type ContentCategoriesInsertResource =
 data ContentCategoriesInsert =
   ContentCategoriesInsert'
     { _cciProFileId :: !(Textual Int64)
-    , _cciPayload   :: !ContentCategory
+    , _cciPayload :: !ContentCategory
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

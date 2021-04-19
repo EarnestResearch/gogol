@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Disks.AggregatedList
     , dalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.disks.aggregatedList@ method which the
 -- 'DisksAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type DisksAggregatedListResource =
 -- /See:/ 'disksAggregatedList' smart constructor.
 data DisksAggregatedList =
   DisksAggregatedList'
-    { _dalOrderBy    :: !(Maybe Text)
-    , _dalProject    :: !Text
-    , _dalFilter     :: !(Maybe Text)
-    , _dalPageToken  :: !(Maybe Text)
+    { _dalOrderBy :: !(Maybe Text)
+    , _dalProject :: !Text
+    , _dalFilter :: !(Maybe Text)
+    , _dalPageToken :: !(Maybe Text)
     , _dalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

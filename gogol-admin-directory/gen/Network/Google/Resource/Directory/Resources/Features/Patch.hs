@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Resources.Features.Patch
     , rfpFeatureKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.patch@ method which the
 -- 'ResourcesFeaturesPatch' request conforms to.
@@ -60,8 +60,8 @@ type ResourcesFeaturesPatchResource =
 -- /See:/ 'resourcesFeaturesPatch' smart constructor.
 data ResourcesFeaturesPatch =
   ResourcesFeaturesPatch'
-    { _rfpPayload    :: !Feature
-    , _rfpCustomer   :: !Text
+    { _rfpPayload :: !Feature
+    , _rfpCustomer :: !Text
     , _rfpFeatureKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

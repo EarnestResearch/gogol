@@ -41,8 +41,8 @@ module Network.Google.Resource.Chat.Spaces.Members.Get
     , spaCallback
     ) where
 
-import           Network.Google.Chat.Types
-import           Network.Google.Prelude
+import Network.Google.Chat.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @chat.spaces.members.get@ method which the
 -- 'SpacesMembersGet' request conforms to.
@@ -61,12 +61,12 @@ type SpacesMembersGetResource =
 -- /See:/ 'spacesMembersGet' smart constructor.
 data SpacesMembersGet =
   SpacesMembersGet'
-    { _spaXgafv          :: !(Maybe Xgafv)
+    { _spaXgafv :: !(Maybe Xgafv)
     , _spaUploadProtocol :: !(Maybe Text)
-    , _spaAccessToken    :: !(Maybe Text)
-    , _spaUploadType     :: !(Maybe Text)
-    , _spaName           :: !Text
-    , _spaCallback       :: !(Maybe Text)
+    , _spaAccessToken :: !(Maybe Text)
+    , _spaUploadType :: !(Maybe Text)
+    , _spaName :: !Text
+    , _spaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

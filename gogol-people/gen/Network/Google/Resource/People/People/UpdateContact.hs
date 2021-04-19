@@ -51,8 +51,8 @@ module Network.Google.Resource.People.People.UpdateContact
     , pucCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.people.updateContact@ method which the
 -- 'PeopleUpdateContact' request conforms to.
@@ -81,14 +81,14 @@ type PeopleUpdateContactResource =
 -- /See:/ 'peopleUpdateContact' smart constructor.
 data PeopleUpdateContact =
   PeopleUpdateContact'
-    { _pucXgafv              :: !(Maybe Xgafv)
-    , _pucUploadProtocol     :: !(Maybe Text)
-    , _pucResourceName       :: !Text
+    { _pucXgafv :: !(Maybe Xgafv)
+    , _pucUploadProtocol :: !(Maybe Text)
+    , _pucResourceName :: !Text
     , _pucUpdatePersonFields :: !(Maybe GFieldMask)
-    , _pucAccessToken        :: !(Maybe Text)
-    , _pucUploadType         :: !(Maybe Text)
-    , _pucPayload            :: !Person
-    , _pucCallback           :: !(Maybe Text)
+    , _pucAccessToken :: !(Maybe Text)
+    , _pucUploadType :: !(Maybe Text)
+    , _pucPayload :: !Person
+    , _pucCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -141,7 +141,7 @@ pucUploadProtocol
 
 -- | The resource name for the person, assigned by the server. An ASCII
 -- string with a max length of 27 characters, in the form of
--- \`people\/\`person_id.
+-- \`people\/\`'person_id'.
 pucResourceName :: Lens' PeopleUpdateContact Text
 pucResourceName
   = lens _pucResourceName

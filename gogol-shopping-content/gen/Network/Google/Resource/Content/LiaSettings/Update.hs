@@ -36,22 +36,24 @@ module Network.Google.Resource.Content.LiaSettings.Update
     , lsuMerchantId
     , lsuPayload
     , lsuAccountId
+    , lsuDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.update@ method which the
 -- 'LiaSettingsUpdate' request conforms to.
 type LiaSettingsUpdateResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "liasettings" :>
              Capture "accountId" (Textual Word64) :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] LiaSettings :>
-                   Put '[JSON] LiaSettings
+               QueryParam "dryRun" Bool :>
+                 QueryParam "alt" AltJSON :>
+                   ReqBody '[JSON] LiaSettings :>
+                     Put '[JSON] LiaSettings
 
 -- | Updates the LIA settings of the account.
 --
@@ -59,8 +61,9 @@ type LiaSettingsUpdateResource =
 data LiaSettingsUpdate =
   LiaSettingsUpdate'
     { _lsuMerchantId :: !(Textual Word64)
-    , _lsuPayload    :: !LiaSettings
-    , _lsuAccountId  :: !(Textual Word64)
+    , _lsuPayload :: !LiaSettings
+    , _lsuAccountId :: !(Textual Word64)
+    , _lsuDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -74,6 +77,8 @@ data LiaSettingsUpdate =
 -- * 'lsuPayload'
 --
 -- * 'lsuAccountId'
+--
+-- * 'lsuDryRun'
 liaSettingsUpdate
     :: Word64 -- ^ 'lsuMerchantId'
     -> LiaSettings -- ^ 'lsuPayload'
@@ -84,6 +89,7 @@ liaSettingsUpdate pLsuMerchantId_ pLsuPayload_ pLsuAccountId_ =
     { _lsuMerchantId = _Coerce # pLsuMerchantId_
     , _lsuPayload = pLsuPayload_
     , _lsuAccountId = _Coerce # pLsuAccountId_
+    , _lsuDryRun = Nothing
     }
 
 
@@ -107,12 +113,20 @@ lsuAccountId
   = lens _lsuAccountId (\ s a -> s{_lsuAccountId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+lsuDryRun :: Lens' LiaSettingsUpdate (Maybe Bool)
+lsuDryRun
+  = lens _lsuDryRun (\ s a -> s{_lsuDryRun = a})
+
 instance GoogleRequest LiaSettingsUpdate where
         type Rs LiaSettingsUpdate = LiaSettings
         type Scopes LiaSettingsUpdate =
              '["https://www.googleapis.com/auth/content"]
         requestClient LiaSettingsUpdate'{..}
-          = go _lsuMerchantId _lsuAccountId (Just AltJSON)
+          = go _lsuMerchantId _lsuAccountId _lsuDryRun
+              (Just AltJSON)
               _lsuPayload
               shoppingContentService
           where go

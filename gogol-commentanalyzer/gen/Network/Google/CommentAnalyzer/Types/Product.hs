@@ -17,8 +17,8 @@
 --
 module Network.Google.CommentAnalyzer.Types.Product where
 
-import           Network.Google.CommentAnalyzer.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CommentAnalyzer.Types.Sum
+import Network.Google.Prelude
 
 -- | This is a single score for a given span of text.
 --
@@ -27,7 +27,7 @@ data SpanScore =
   SpanScore'
     { _ssBegin :: !(Maybe (Textual Int32))
     , _ssScore :: !(Maybe Score)
-    , _ssEnd   :: !(Maybe (Textual Int32))
+    , _ssEnd :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -87,9 +87,9 @@ instance ToJSON SpanScore where
 data AnalyzeCommentResponse =
   AnalyzeCommentResponse'
     { _acrDetectedLanguages :: !(Maybe [Text])
-    , _acrClientToken       :: !(Maybe Text)
-    , _acrLanguages         :: !(Maybe [Text])
-    , _acrAttributeScores   :: !(Maybe AnalyzeCommentResponseAttributeScores)
+    , _acrClientToken :: !(Maybe Text)
+    , _acrLanguages :: !(Maybe [Text])
+    , _acrAttributeScores :: !(Maybe AnalyzeCommentResponseAttributeScores)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -173,8 +173,8 @@ instance ToJSON AnalyzeCommentResponse where
 -- /See:/ 'suggestCommentScoreResponse' smart constructor.
 data SuggestCommentScoreResponse =
   SuggestCommentScoreResponse'
-    { _scsrDetectedLanguages  :: !(Maybe [Text])
-    , _scsrClientToken        :: !(Maybe Text)
+    { _scsrDetectedLanguages :: !(Maybe [Text])
+    , _scsrClientToken :: !(Maybe Text)
     , _scsrRequestedLanguages :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -249,7 +249,7 @@ instance ToJSON SuggestCommentScoreResponse where
 -- /See:/ 'context' smart constructor.
 data Context =
   Context'
-    { _cEntries                 :: !(Maybe [TextEntry])
+    { _cEntries :: !(Maybe [TextEntry])
     , _cArticleAndParentComment :: !(Maybe ArticleAndParentComment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -304,7 +304,7 @@ instance ToJSON Context where
 data Score =
   Score'
     { _sValue :: !(Maybe (Textual Double))
-    , _sType  :: !(Maybe ScoreType)
+    , _sType :: !(Maybe ScoreType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -350,7 +350,7 @@ instance ToJSON Score where
 -- /See:/ 'articleAndParentComment' smart constructor.
 data ArticleAndParentComment =
   ArticleAndParentComment'
-    { _aapcArticle       :: !(Maybe TextEntry)
+    { _aapcArticle :: !(Maybe TextEntry)
     , _aapcParentComment :: !(Maybe TextEntry)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -405,7 +405,7 @@ instance ToJSON ArticleAndParentComment where
 data AttributeParameters =
   AttributeParameters'
     { _apScoreThreshold :: !(Maybe (Textual Double))
-    , _apScoreType      :: !(Maybe AttributeParametersScoreType)
+    , _apScoreType :: !(Maybe AttributeParametersScoreType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -501,7 +501,7 @@ instance ToJSON TextEntry where
 data AttributeScores =
   AttributeScores'
     { _asSummaryScore :: !(Maybe Score)
-    , _asSpanScores   :: !(Maybe [SpanScore])
+    , _asSpanScores :: !(Maybe [SpanScore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -596,13 +596,13 @@ instance ToJSON AnalyzeCommentResponseAttributeScores
 -- /See:/ 'suggestCommentScoreRequest' smart constructor.
 data SuggestCommentScoreRequest =
   SuggestCommentScoreRequest'
-    { _sContext         :: !(Maybe Context)
-    , _sClientToken     :: !(Maybe Text)
-    , _sLanguages       :: !(Maybe [Text])
+    { _sContext :: !(Maybe Context)
+    , _sClientToken :: !(Maybe Text)
+    , _sLanguages :: !(Maybe [Text])
     , _sAttributeScores :: !(Maybe SuggestCommentScoreRequestAttributeScores)
-    , _sSessionId       :: !(Maybe Text)
-    , _sComment         :: !(Maybe TextEntry)
-    , _sCommUnityId     :: !(Maybe Text)
+    , _sSessionId :: !(Maybe Text)
+    , _sComment :: !(Maybe TextEntry)
+    , _sCommUnityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -728,15 +728,15 @@ instance ToJSON SuggestCommentScoreRequest where
 -- /See:/ 'analyzeCommentRequest' smart constructor.
 data AnalyzeCommentRequest =
   AnalyzeCommentRequest'
-    { _aContext             :: !(Maybe Context)
-    , _aClientToken         :: !(Maybe Text)
-    , _aSpanAnnotations     :: !(Maybe Bool)
-    , _aDoNotStore          :: !(Maybe Bool)
-    , _aLanguages           :: !(Maybe [Text])
+    { _aContext :: !(Maybe Context)
+    , _aClientToken :: !(Maybe Text)
+    , _aSpanAnnotations :: !(Maybe Bool)
+    , _aDoNotStore :: !(Maybe Bool)
+    , _aLanguages :: !(Maybe [Text])
     , _aRequestedAttributes :: !(Maybe AnalyzeCommentRequestRequestedAttributes)
-    , _aSessionId           :: !(Maybe Text)
-    , _aComment             :: !(Maybe TextEntry)
-    , _aCommUnityId         :: !(Maybe Text)
+    , _aSessionId :: !(Maybe Text)
+    , _aComment :: !(Maybe TextEntry)
+    , _aCommUnityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

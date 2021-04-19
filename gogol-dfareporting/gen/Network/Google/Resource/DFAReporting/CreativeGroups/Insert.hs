@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Insert
     , cgiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.insert@ method which the
 -- 'CreativeGroupsInsert' request conforms to.
@@ -58,7 +58,7 @@ type CreativeGroupsInsertResource =
 data CreativeGroupsInsert =
   CreativeGroupsInsert'
     { _cgiProFileId :: !(Textual Int64)
-    , _cgiPayload   :: !CreativeGroup
+    , _cgiPayload :: !CreativeGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

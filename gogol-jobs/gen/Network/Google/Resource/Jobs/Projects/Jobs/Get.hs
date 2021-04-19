@@ -42,8 +42,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.Get
     , pjgCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.get@ method which the
 -- 'ProjectsJobsGet' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsJobsGetResource =
 -- /See:/ 'projectsJobsGet' smart constructor.
 data ProjectsJobsGet =
   ProjectsJobsGet'
-    { _pjgXgafv          :: !(Maybe Xgafv)
+    { _pjgXgafv :: !(Maybe Xgafv)
     , _pjgUploadProtocol :: !(Maybe Text)
-    , _pjgAccessToken    :: !(Maybe Text)
-    , _pjgUploadType     :: !(Maybe Text)
-    , _pjgName           :: !Text
-    , _pjgCallback       :: !(Maybe Text)
+    , _pjgAccessToken :: !(Maybe Text)
+    , _pjgUploadType :: !(Maybe Text)
+    , _pjgName :: !Text
+    , _pjgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -57,8 +57,8 @@ module Network.Google.Resource.FirebaseRules.Projects.Releases.Create
     , prcrCallback
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebaserules.projects.releases.create@ method which the
 -- 'ProjectsReleasesCreate' request conforms to.
@@ -94,13 +94,13 @@ type ProjectsReleasesCreateResource =
 -- /See:/ 'projectsReleasesCreate' smart constructor.
 data ProjectsReleasesCreate =
   ProjectsReleasesCreate'
-    { _prcrXgafv          :: !(Maybe Xgafv)
+    { _prcrXgafv :: !(Maybe Xgafv)
     , _prcrUploadProtocol :: !(Maybe Text)
-    , _prcrAccessToken    :: !(Maybe Text)
-    , _prcrUploadType     :: !(Maybe Text)
-    , _prcrPayload        :: !Release
-    , _prcrName           :: !Text
-    , _prcrCallback       :: !(Maybe Text)
+    , _prcrAccessToken :: !(Maybe Text)
+    , _prcrUploadType :: !(Maybe Text)
+    , _prcrPayload :: !Release
+    , _prcrName :: !Text
+    , _prcrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

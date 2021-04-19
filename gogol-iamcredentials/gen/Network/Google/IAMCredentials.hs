@@ -112,13 +112,13 @@ module Network.Google.IAMCredentials
     , gitrToken
     ) where
 
-import           Network.Google.IAMCredentials.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateAccessToken
-import           Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateIdentityBindingAccessToken
-import           Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateIdToken
-import           Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.SignBlob
-import           Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.SignJwt
+import Network.Google.Prelude
+import Network.Google.IAMCredentials.Types
+import Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateAccessToken
+import Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateIdToken
+import Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.GenerateIdentityBindingAccessToken
+import Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.SignBlob
+import Network.Google.Resource.IAMCredentials.Projects.ServiceAccounts.SignJwt
 
 {- $resources
 TODO

@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Exclusions.Create
     , ecCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.exclusions.create@ method which the
 -- 'ExclusionsCreate' request conforms to.
@@ -69,13 +69,13 @@ type ExclusionsCreateResource =
 -- /See:/ 'exclusionsCreate' smart constructor.
 data ExclusionsCreate =
   ExclusionsCreate'
-    { _ecParent         :: !Text
-    , _ecXgafv          :: !(Maybe Xgafv)
+    { _ecParent :: !Text
+    , _ecXgafv :: !(Maybe Xgafv)
     , _ecUploadProtocol :: !(Maybe Text)
-    , _ecAccessToken    :: !(Maybe Text)
-    , _ecUploadType     :: !(Maybe Text)
-    , _ecPayload        :: !LogExclusion
-    , _ecCallback       :: !(Maybe Text)
+    , _ecAccessToken :: !(Maybe Text)
+    , _ecUploadType :: !(Maybe Text)
+    , _ecPayload :: !LogExclusion
+    , _ecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

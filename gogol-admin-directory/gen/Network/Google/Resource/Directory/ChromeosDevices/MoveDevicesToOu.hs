@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.ChromeosDevices.MoveDevicesToOu
     , cdmdtoCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.chromeosdevices.moveDevicesToOu@ method which the
 -- 'ChromeosDevicesMoveDevicesToOu' request conforms to.
@@ -62,9 +62,9 @@ type ChromeosDevicesMoveDevicesToOuResource =
 -- /See:/ 'chromeosDevicesMoveDevicesToOu' smart constructor.
 data ChromeosDevicesMoveDevicesToOu =
   ChromeosDevicesMoveDevicesToOu'
-    { _cdmdtoPayload     :: !ChromeOSMoveDevicesToOu
+    { _cdmdtoPayload :: !ChromeOSMoveDevicesToOu
     , _cdmdtoOrgUnitPath :: !Text
-    , _cdmdtoCustomerId  :: !Text
+    , _cdmdtoCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

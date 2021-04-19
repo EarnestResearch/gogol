@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Placements.Insert
     , piPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placements.insert@ method which the
 -- 'PlacementsInsert' request conforms to.
@@ -57,7 +57,7 @@ type PlacementsInsertResource =
 data PlacementsInsert =
   PlacementsInsert'
     { _piProFileId :: !(Textual Int64)
-    , _piPayload   :: !Placement
+    , _piPayload :: !Placement
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

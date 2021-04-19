@@ -47,8 +47,8 @@ module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.List
     , ddblCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.debugger.debuggees.breakpoints.list@ method which the
 -- 'DebuggerDebuggeesBreakpointsList' request conforms to.
@@ -77,18 +77,18 @@ type DebuggerDebuggeesBreakpointsListResource =
 -- /See:/ 'debuggerDebuggeesBreakpointsList' smart constructor.
 data DebuggerDebuggeesBreakpointsList =
   DebuggerDebuggeesBreakpointsList'
-    { _ddblXgafv           :: !(Maybe Xgafv)
+    { _ddblXgafv :: !(Maybe Xgafv)
     , _ddblIncludeInactive :: !(Maybe Bool)
-    , _ddblUploadProtocol  :: !(Maybe Text)
-    , _ddblAccessToken     :: !(Maybe Text)
-    , _ddblActionValue     :: !(Maybe Text)
-    , _ddblUploadType      :: !(Maybe Text)
-    , _ddblStripResults    :: !(Maybe Bool)
+    , _ddblUploadProtocol :: !(Maybe Text)
+    , _ddblAccessToken :: !(Maybe Text)
+    , _ddblActionValue :: !(Maybe Text)
+    , _ddblUploadType :: !(Maybe Text)
+    , _ddblStripResults :: !(Maybe Bool)
     , _ddblIncludeAllUsers :: !(Maybe Bool)
-    , _ddblWaitToken       :: !(Maybe Text)
-    , _ddblDebuggeeId      :: !Text
-    , _ddblClientVersion   :: !(Maybe Text)
-    , _ddblCallback        :: !(Maybe Text)
+    , _ddblWaitToken :: !(Maybe Text)
+    , _ddblDebuggeeId :: !Text
+    , _ddblClientVersion :: !(Maybe Text)
+    , _ddblCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

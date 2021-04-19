@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.SavedQueries.Get
     , msqgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.savedQueries.get@ method which the
 -- 'MattersSavedQueriesGet' request conforms to.
@@ -65,13 +65,13 @@ type MattersSavedQueriesGetResource =
 -- /See:/ 'mattersSavedQueriesGet' smart constructor.
 data MattersSavedQueriesGet =
   MattersSavedQueriesGet'
-    { _msqgXgafv          :: !(Maybe Xgafv)
-    , _msqgSavedQueryId   :: !Text
+    { _msqgXgafv :: !(Maybe Xgafv)
+    , _msqgSavedQueryId :: !Text
     , _msqgUploadProtocol :: !(Maybe Text)
-    , _msqgAccessToken    :: !(Maybe Text)
-    , _msqgUploadType     :: !(Maybe Text)
-    , _msqgMatterId       :: !Text
-    , _msqgCallback       :: !(Maybe Text)
+    , _msqgAccessToken :: !(Maybe Text)
+    , _msqgUploadType :: !(Maybe Text)
+    , _msqgMatterId :: !Text
+    , _msqgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

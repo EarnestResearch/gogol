@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Logs.List
     , llCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.logs.list@ method which the
 -- 'LogsList' request conforms to.
@@ -69,14 +69,14 @@ type LogsListResource =
 -- /See:/ 'logsList' smart constructor.
 data LogsList =
   LogsList'
-    { _llParent         :: !Text
-    , _llXgafv          :: !(Maybe Xgafv)
+    { _llParent :: !Text
+    , _llXgafv :: !(Maybe Xgafv)
     , _llUploadProtocol :: !(Maybe Text)
-    , _llAccessToken    :: !(Maybe Text)
-    , _llUploadType     :: !(Maybe Text)
-    , _llPageToken      :: !(Maybe Text)
-    , _llPageSize       :: !(Maybe (Textual Int32))
-    , _llCallback       :: !(Maybe Text)
+    , _llAccessToken :: !(Maybe Text)
+    , _llUploadType :: !(Maybe Text)
+    , _llPageToken :: !(Maybe Text)
+    , _llPageSize :: !(Maybe (Textual Int32))
+    , _llCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

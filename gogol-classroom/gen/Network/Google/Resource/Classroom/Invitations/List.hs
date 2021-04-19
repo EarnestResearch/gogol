@@ -48,8 +48,8 @@ module Network.Google.Resource.Classroom.Invitations.List
     , ilCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.invitations.list@ method which the
 -- 'InvitationsList' request conforms to.
@@ -77,15 +77,15 @@ type InvitationsListResource =
 -- /See:/ 'invitationsList' smart constructor.
 data InvitationsList =
   InvitationsList'
-    { _ilXgafv          :: !(Maybe Xgafv)
+    { _ilXgafv :: !(Maybe Xgafv)
     , _ilUploadProtocol :: !(Maybe Text)
-    , _ilCourseId       :: !(Maybe Text)
-    , _ilAccessToken    :: !(Maybe Text)
-    , _ilUploadType     :: !(Maybe Text)
-    , _ilUserId         :: !(Maybe Text)
-    , _ilPageToken      :: !(Maybe Text)
-    , _ilPageSize       :: !(Maybe (Textual Int32))
-    , _ilCallback       :: !(Maybe Text)
+    , _ilCourseId :: !(Maybe Text)
+    , _ilAccessToken :: !(Maybe Text)
+    , _ilUploadType :: !(Maybe Text)
+    , _ilUserId :: !(Maybe Text)
+    , _ilPageToken :: !(Maybe Text)
+    , _ilPageSize :: !(Maybe (Textual Int32))
+    , _ilCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

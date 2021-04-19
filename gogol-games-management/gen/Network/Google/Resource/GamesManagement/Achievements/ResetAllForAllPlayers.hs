@@ -35,8 +35,8 @@ module Network.Google.Resource.GamesManagement.Achievements.ResetAllForAllPlayer
 
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.achievements.resetAllForAllPlayers@ method which the
 -- 'AchievementsResetAllForAllPlayers' request conforms to.

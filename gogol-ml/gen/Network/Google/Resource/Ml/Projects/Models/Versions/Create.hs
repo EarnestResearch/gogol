@@ -48,8 +48,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.Create
     , pmvcCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.create@ method which the
 -- 'ProjectsModelsVersionsCreate' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsModelsVersionsCreateResource =
 -- /See:/ 'projectsModelsVersionsCreate' smart constructor.
 data ProjectsModelsVersionsCreate =
   ProjectsModelsVersionsCreate'
-    { _pmvcParent         :: !Text
-    , _pmvcXgafv          :: !(Maybe Xgafv)
+    { _pmvcParent :: !Text
+    , _pmvcXgafv :: !(Maybe Xgafv)
     , _pmvcUploadProtocol :: !(Maybe Text)
-    , _pmvcAccessToken    :: !(Maybe Text)
-    , _pmvcUploadType     :: !(Maybe Text)
-    , _pmvcPayload        :: !GoogleCloudMlV1__Version
-    , _pmvcCallback       :: !(Maybe Text)
+    , _pmvcAccessToken :: !(Maybe Text)
+    , _pmvcUploadType :: !(Maybe Text)
+    , _pmvcPayload :: !GoogleCloudMlV1__Version
+    , _pmvcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

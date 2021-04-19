@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Variabl
     , acwvuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.variables.update@ method which the
 -- 'AccountsContainersWorkspacesVariablesUpdate' request conforms to.
@@ -57,9 +57,9 @@ type AccountsContainersWorkspacesVariablesUpdateResource
 -- /See:/ 'accountsContainersWorkspacesVariablesUpdate' smart constructor.
 data AccountsContainersWorkspacesVariablesUpdate =
   AccountsContainersWorkspacesVariablesUpdate'
-    { _acwvuPath        :: !Text
+    { _acwvuPath :: !Text
     , _acwvuFingerprint :: !(Maybe Text)
-    , _acwvuPayload     :: !Variable
+    , _acwvuPayload :: !Variable
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

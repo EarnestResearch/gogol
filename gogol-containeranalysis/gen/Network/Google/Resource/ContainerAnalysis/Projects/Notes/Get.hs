@@ -41,8 +41,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Notes.Get
     , pngCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.notes.get@ method which the
 -- 'ProjectsNotesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsNotesGetResource =
 -- /See:/ 'projectsNotesGet' smart constructor.
 data ProjectsNotesGet =
   ProjectsNotesGet'
-    { _pngXgafv          :: !(Maybe Xgafv)
+    { _pngXgafv :: !(Maybe Xgafv)
     , _pngUploadProtocol :: !(Maybe Text)
-    , _pngAccessToken    :: !(Maybe Text)
-    , _pngUploadType     :: !(Maybe Text)
-    , _pngName           :: !Text
-    , _pngCallback       :: !(Maybe Text)
+    , _pngAccessToken :: !(Maybe Text)
+    , _pngUploadType :: !(Maybe Text)
+    , _pngName :: !Text
+    , _pngCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

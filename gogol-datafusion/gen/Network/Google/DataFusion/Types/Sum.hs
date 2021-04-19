@@ -16,7 +16,7 @@
 --
 module Network.Google.DataFusion.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The log_name to populate in the Cloud Audit Record.
 data CloudAuditOptionsLogName

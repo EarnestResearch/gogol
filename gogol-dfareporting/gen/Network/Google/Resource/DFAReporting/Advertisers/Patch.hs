@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Advertisers.Patch
     , apId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertisers.patch@ method which the
 -- 'AdvertisersPatch' request conforms to.
@@ -60,8 +60,8 @@ type AdvertisersPatchResource =
 data AdvertisersPatch =
   AdvertisersPatch'
     { _apProFileId :: !(Textual Int64)
-    , _apPayload   :: !Advertiser
-    , _apId        :: !(Textual Int64)
+    , _apPayload :: !Advertiser
+    , _apId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

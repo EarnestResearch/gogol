@@ -42,8 +42,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.Write
     , pddwCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.write@ method which the
 -- 'ProjectsDatabasesDocumentsWrite' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsDatabasesDocumentsWriteResource =
 -- /See:/ 'projectsDatabasesDocumentsWrite' smart constructor.
 data ProjectsDatabasesDocumentsWrite =
   ProjectsDatabasesDocumentsWrite'
-    { _pddwXgafv          :: !(Maybe Xgafv)
+    { _pddwXgafv :: !(Maybe Xgafv)
     , _pddwUploadProtocol :: !(Maybe Text)
-    , _pddwDatabase       :: !Text
-    , _pddwAccessToken    :: !(Maybe Text)
-    , _pddwUploadType     :: !(Maybe Text)
-    , _pddwPayload        :: !WriteRequest
-    , _pddwCallback       :: !(Maybe Text)
+    , _pddwDatabase :: !Text
+    , _pddwAccessToken :: !(Maybe Text)
+    , _pddwUploadType :: !(Maybe Text)
+    , _pddwPayload :: !WriteRequest
+    , _pddwCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

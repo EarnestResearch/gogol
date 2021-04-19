@@ -50,8 +50,8 @@ module Network.Google.Resource.AdExchangeBuyer2.Accounts.Proposals.List
     , aplCallback
     ) where
 
-import           Network.Google.AdExchangeBuyer2.Types
-import           Network.Google.Prelude
+import Network.Google.AdExchangeBuyer2.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexchangebuyer2.accounts.proposals.list@ method which the
 -- 'AccountsProposalsList' request conforms to.
@@ -82,16 +82,16 @@ type AccountsProposalsListResource =
 -- /See:/ 'accountsProposalsList' smart constructor.
 data AccountsProposalsList =
   AccountsProposalsList'
-    { _aplXgafv          :: !(Maybe Xgafv)
+    { _aplXgafv :: !(Maybe Xgafv)
     , _aplUploadProtocol :: !(Maybe Text)
-    , _aplAccessToken    :: !(Maybe Text)
-    , _aplUploadType     :: !(Maybe Text)
-    , _aplFilterSyntax   :: !(Maybe Text)
-    , _aplAccountId      :: !Text
-    , _aplFilter         :: !(Maybe Text)
-    , _aplPageToken      :: !(Maybe Text)
-    , _aplPageSize       :: !(Maybe (Textual Int32))
-    , _aplCallback       :: !(Maybe Text)
+    , _aplAccessToken :: !(Maybe Text)
+    , _aplUploadType :: !(Maybe Text)
+    , _aplFilterSyntax :: !(Maybe Text)
+    , _aplAccountId :: !Text
+    , _aplFilter :: !(Maybe Text)
+    , _aplPageToken :: !(Maybe Text)
+    , _aplPageSize :: !(Maybe (Textual Int32))
+    , _aplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.CreativeGroups.Update
     , cguPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeGroups.update@ method which the
 -- 'CreativeGroupsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type CreativeGroupsUpdateResource =
 data CreativeGroupsUpdate =
   CreativeGroupsUpdate'
     { _cguProFileId :: !(Textual Int64)
-    , _cguPayload   :: !CreativeGroup
+    , _cguPayload :: !CreativeGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

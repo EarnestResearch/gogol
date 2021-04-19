@@ -41,8 +41,8 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Delete
     , oacdGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objectAccessControls.delete@ method which the
 -- 'ObjectAccessControlsDelete' request conforms to.
@@ -65,11 +65,11 @@ type ObjectAccessControlsDeleteResource =
 -- /See:/ 'objectAccessControlsDelete' smart constructor.
 data ObjectAccessControlsDelete =
   ObjectAccessControlsDelete'
-    { _oacdBucket      :: !Text
+    { _oacdBucket :: !Text
     , _oacdUserProject :: !(Maybe Text)
-    , _oacdObject      :: !Text
-    , _oacdEntity      :: !Text
-    , _oacdGeneration  :: !(Maybe (Textual Int64))
+    , _oacdObject :: !Text
+    , _oacdEntity :: !Text
+    , _oacdGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

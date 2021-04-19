@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Get
     , fgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.get@ method which the
 -- 'FoldersGet' request conforms to.
@@ -67,12 +67,12 @@ type FoldersGetResource =
 -- /See:/ 'foldersGet' smart constructor.
 data FoldersGet =
   FoldersGet'
-    { _fgXgafv          :: !(Maybe Xgafv)
+    { _fgXgafv :: !(Maybe Xgafv)
     , _fgUploadProtocol :: !(Maybe Text)
-    , _fgAccessToken    :: !(Maybe Text)
-    , _fgUploadType     :: !(Maybe Text)
-    , _fgName           :: !Text
-    , _fgCallback       :: !(Maybe Text)
+    , _fgAccessToken :: !(Maybe Text)
+    , _fgUploadType :: !(Maybe Text)
+    , _fgName :: !Text
+    , _fgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

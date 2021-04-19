@@ -148,26 +148,26 @@ module Network.Google.AccessApproval
     , arDetail
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Approve
-import           Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Dismiss
-import           Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Get
-import           Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.List
-import           Network.Google.Resource.AccessApproval.Folders.GetAccessApprovalSettings
-import           Network.Google.Resource.AccessApproval.Folders.UpdateAccessApprovalSettings
-import           Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Approve
-import           Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Dismiss
-import           Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Get
-import           Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.List
-import           Network.Google.Resource.AccessApproval.Organizations.GetAccessApprovalSettings
-import           Network.Google.Resource.AccessApproval.Organizations.UpdateAccessApprovalSettings
-import           Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Approve
-import           Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Dismiss
-import           Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Get
-import           Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.List
-import           Network.Google.Resource.AccessApproval.Projects.GetAccessApprovalSettings
-import           Network.Google.Resource.AccessApproval.Projects.UpdateAccessApprovalSettings
+import Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Approve
+import Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Dismiss
+import Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.Get
+import Network.Google.Resource.AccessApproval.Folders.ApprovalRequests.List
+import Network.Google.Resource.AccessApproval.Folders.GetAccessApprovalSettings
+import Network.Google.Resource.AccessApproval.Folders.UpdateAccessApprovalSettings
+import Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Approve
+import Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Dismiss
+import Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Get
+import Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.List
+import Network.Google.Resource.AccessApproval.Organizations.GetAccessApprovalSettings
+import Network.Google.Resource.AccessApproval.Organizations.UpdateAccessApprovalSettings
+import Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Approve
+import Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Dismiss
+import Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Get
+import Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.List
+import Network.Google.Resource.AccessApproval.Projects.GetAccessApprovalSettings
+import Network.Google.Resource.AccessApproval.Projects.UpdateAccessApprovalSettings
 
 {- $resources
 TODO

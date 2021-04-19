@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Events.ListByPlayer
     , elbpMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.events.listByPlayer@ method which the
 -- 'EventsListByPlayer' request conforms to.
@@ -60,8 +60,8 @@ type EventsListByPlayerResource =
 -- /See:/ 'eventsListByPlayer' smart constructor.
 data EventsListByPlayer =
   EventsListByPlayer'
-    { _elbpLanguage   :: !(Maybe Text)
-    , _elbpPageToken  :: !(Maybe Text)
+    { _elbpLanguage :: !(Maybe Text)
+    , _elbpPageToken :: !(Maybe Text)
     , _elbpMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

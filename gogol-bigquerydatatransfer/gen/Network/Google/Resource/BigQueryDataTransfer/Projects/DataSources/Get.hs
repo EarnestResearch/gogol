@@ -42,8 +42,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.DataSources.Get
     , pdsgCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.dataSources.get@ method which the
 -- 'ProjectsDataSourcesGet' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsDataSourcesGetResource =
 -- /See:/ 'projectsDataSourcesGet' smart constructor.
 data ProjectsDataSourcesGet =
   ProjectsDataSourcesGet'
-    { _pdsgXgafv          :: !(Maybe Xgafv)
+    { _pdsgXgafv :: !(Maybe Xgafv)
     , _pdsgUploadProtocol :: !(Maybe Text)
-    , _pdsgAccessToken    :: !(Maybe Text)
-    , _pdsgUploadType     :: !(Maybe Text)
-    , _pdsgName           :: !Text
-    , _pdsgCallback       :: !(Maybe Text)
+    , _pdsgAccessToken :: !(Maybe Text)
+    , _pdsgUploadType :: !(Maybe Text)
+    , _pdsgName :: !Text
+    , _pdsgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.BatchUpdate
     , paibuCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.batchUpdate@ method which the
 -- 'ProjectsAgentIntentsBatchUpdate' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentIntentsBatchUpdateResource =
 -- /See:/ 'projectsAgentIntentsBatchUpdate' smart constructor.
 data ProjectsAgentIntentsBatchUpdate =
   ProjectsAgentIntentsBatchUpdate'
-    { _paibuParent         :: !Text
-    , _paibuXgafv          :: !(Maybe Xgafv)
+    { _paibuParent :: !Text
+    , _paibuXgafv :: !(Maybe Xgafv)
     , _paibuUploadProtocol :: !(Maybe Text)
-    , _paibuAccessToken    :: !(Maybe Text)
-    , _paibuUploadType     :: !(Maybe Text)
-    , _paibuPayload        :: !GoogleCloudDialogflowV2BatchUpdateIntentsRequest
-    , _paibuCallback       :: !(Maybe Text)
+    , _paibuAccessToken :: !(Maybe Text)
+    , _paibuUploadType :: !(Maybe Text)
+    , _paibuPayload :: !GoogleCloudDialogflowV2BatchUpdateIntentsRequest
+    , _paibuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

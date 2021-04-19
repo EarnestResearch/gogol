@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Entitlements.Delete
     , edUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.entitlements.delete@ method which the
 -- 'EntitlementsDelete' request conforms to.
@@ -60,8 +60,8 @@ type EntitlementsDeleteResource =
 data EntitlementsDelete =
   EntitlementsDelete'
     { _edEntitlementId :: !Text
-    , _edEnterpriseId  :: !Text
-    , _edUserId        :: !Text
+    , _edEnterpriseId :: !Text
+    , _edUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

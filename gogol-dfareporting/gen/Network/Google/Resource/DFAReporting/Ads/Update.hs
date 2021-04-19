@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Ads.Update
     , aPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.ads.update@ method which the
 -- 'AdsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type AdsUpdateResource =
 data AdsUpdate =
   AdsUpdate'
     { _aProFileId :: !(Textual Int64)
-    , _aPayload   :: !Ad
+    , _aPayload :: !Ad
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

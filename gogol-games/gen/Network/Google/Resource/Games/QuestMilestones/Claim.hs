@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.QuestMilestones.Claim
     , qmcQuestId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.questMilestones.claim@ method which the
 -- 'QuestMilestonesClaim' request conforms to.
@@ -63,9 +63,9 @@ type QuestMilestonesClaimResource =
 -- /See:/ 'questMilestonesClaim' smart constructor.
 data QuestMilestonesClaim =
   QuestMilestonesClaim'
-    { _qmcRequestId   :: !(Textual Int64)
+    { _qmcRequestId :: !(Textual Int64)
     , _qmcMilestoneId :: !Text
-    , _qmcQuestId     :: !Text
+    , _qmcQuestId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

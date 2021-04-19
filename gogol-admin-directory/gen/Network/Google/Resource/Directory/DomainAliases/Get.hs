@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.DomainAliases.Get
     , dagCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domainAliases.get@ method which the
 -- 'DomainAliasesGet' request conforms to.
@@ -58,7 +58,7 @@ type DomainAliasesGetResource =
 data DomainAliasesGet =
   DomainAliasesGet'
     { _dagDomainAliasName :: !Text
-    , _dagCustomer        :: !Text
+    , _dagCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

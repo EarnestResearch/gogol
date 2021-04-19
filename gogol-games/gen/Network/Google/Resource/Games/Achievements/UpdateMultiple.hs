@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Achievements.UpdateMultiple
     , aumPayload
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievements.updateMultiple@ method which the
 -- 'AchievementsUpdateMultiple' request conforms to.
@@ -58,7 +58,7 @@ type AchievementsUpdateMultipleResource =
 data AchievementsUpdateMultiple =
   AchievementsUpdateMultiple'
     { _aumBuiltinGameId :: !(Maybe Text)
-    , _aumPayload       :: !AchievementUpdateMultipleRequest
+    , _aumPayload :: !AchievementUpdateMultipleRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

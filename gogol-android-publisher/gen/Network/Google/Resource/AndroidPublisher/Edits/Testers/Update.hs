@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Testers.Update
     , etutEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.testers.update@ method which the
 -- 'EditsTestersUpdate' request conforms to.
@@ -58,10 +58,10 @@ type EditsTestersUpdateResource =
 -- /See:/ 'editsTestersUpdate' smart constructor.
 data EditsTestersUpdate =
   EditsTestersUpdate'
-    { _etutTrack       :: !Text
+    { _etutTrack :: !Text
     , _etutPackageName :: !Text
-    , _etutPayload     :: !Testers
-    , _etutEditId      :: !Text
+    , _etutPayload :: !Testers
+    , _etutEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

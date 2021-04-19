@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -556,9 +556,9 @@ module Network.Google.TagManager.Types
     , pType
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types.Product
-import           Network.Google.TagManager.Types.Sum
+import Network.Google.Prelude
+import Network.Google.TagManager.Types.Product
+import Network.Google.TagManager.Types.Sum
 
 -- | Default request referring to version 'v2' of the Tag Manager API. This contains the host and root path used as a starting point for constructing service requests.
 tagManagerService :: ServiceConfig

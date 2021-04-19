@@ -17,8 +17,8 @@
 --
 module Network.Google.AppEngine.Types.Product where
 
-import           Network.Google.AppEngine.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types.Sum
+import Network.Google.Prelude
 
 -- | Target scaling by network usage. Only applicable in the App Engine
 -- flexible environment.
@@ -26,10 +26,10 @@ import           Network.Google.Prelude
 -- /See:/ 'networkUtilization' smart constructor.
 data NetworkUtilization =
   NetworkUtilization'
-    { _nuTargetReceivedBytesPerSecond   :: !(Maybe (Textual Int32))
-    , _nuTargetSentPacketsPerSecond     :: !(Maybe (Textual Int32))
+    { _nuTargetReceivedBytesPerSecond :: !(Maybe (Textual Int32))
+    , _nuTargetSentPacketsPerSecond :: !(Maybe (Textual Int32))
     , _nuTargetReceivedPacketsPerSecond :: !(Maybe (Textual Int32))
-    , _nuTargetSentBytesPerSecond       :: !(Maybe (Textual Int32))
+    , _nuTargetSentBytesPerSecond :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -146,7 +146,7 @@ instance ToJSON NetworkUtilization where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -247,7 +247,7 @@ instance ToJSON LocationSchema where
 data AuthorizedDomain =
   AuthorizedDomain'
     { _adName :: !(Maybe Text)
-    , _adId   :: !(Maybe Text)
+    , _adId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -294,7 +294,7 @@ instance ToJSON AuthorizedDomain where
 -- /See:/ 'trafficSplit' smart constructor.
 data TrafficSplit =
   TrafficSplit'
-    { _tsShardBy     :: !(Maybe TrafficSplitShardBy)
+    { _tsShardBy :: !(Maybe TrafficSplitShardBy)
     , _tsAllocations :: !(Maybe TrafficSplitAllocations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -387,7 +387,7 @@ instance ToJSON ScriptHandler where
 data ListServicesResponse =
   ListServicesResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrServices      :: !(Maybe [Service])
+    , _lsrServices :: !(Maybe [Service])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -440,14 +440,14 @@ instance ToJSON ListServicesResponse where
 -- /See:/ 'urlMap' smart constructor.
 data URLMap =
   URLMap'
-    { _umScript                   :: !(Maybe ScriptHandler)
-    , _umSecurityLevel            :: !(Maybe URLMapSecurityLevel)
-    , _umAPIEndpoint              :: !(Maybe APIEndpointHandler)
-    , _umURLRegex                 :: !(Maybe Text)
+    { _umScript :: !(Maybe ScriptHandler)
+    , _umSecurityLevel :: !(Maybe URLMapSecurityLevel)
+    , _umAPIEndpoint :: !(Maybe APIEndpointHandler)
+    , _umURLRegex :: !(Maybe Text)
     , _umRedirectHTTPResponseCode :: !(Maybe URLMapRedirectHTTPResponseCode)
-    , _umAuthFailAction           :: !(Maybe URLMapAuthFailAction)
-    , _umStaticFiles              :: !(Maybe StaticFilesHandler)
-    , _umLogin                    :: !(Maybe URLMapLogin)
+    , _umAuthFailAction :: !(Maybe URLMapAuthFailAction)
+    , _umStaticFiles :: !(Maybe StaticFilesHandler)
+    , _umLogin :: !(Maybe URLMapLogin)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -569,7 +569,7 @@ instance ToJSON URLMap where
 -- /See:/ 'library' smart constructor.
 data Library =
   Library'
-    { _lName    :: !(Maybe Text)
+    { _lName :: !(Maybe Text)
     , _lVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -614,8 +614,8 @@ instance ToJSON Library where
 data ResourceRecord =
   ResourceRecord'
     { _rrRrData :: !(Maybe Text)
-    , _rrName   :: !(Maybe Text)
-    , _rrType   :: !(Maybe ResourceRecordType)
+    , _rrName :: !(Maybe Text)
+    , _rrType :: !(Maybe ResourceRecordType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -670,7 +670,7 @@ instance ToJSON ResourceRecord where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -722,9 +722,9 @@ instance ToJSON ListLocationsResponse where
 -- /See:/ 'diskUtilization' smart constructor.
 data DiskUtilization =
   DiskUtilization'
-    { _duTargetReadBytesPerSecond  :: !(Maybe (Textual Int32))
-    , _duTargetReadOpsPerSecond    :: !(Maybe (Textual Int32))
-    , _duTargetWriteOpsPerSecond   :: !(Maybe (Textual Int32))
+    { _duTargetReadBytesPerSecond :: !(Maybe (Textual Int32))
+    , _duTargetReadOpsPerSecond :: !(Maybe (Textual Int32))
+    , _duTargetWriteOpsPerSecond :: !(Maybe (Textual Int32))
     , _duTargetWriteBytesPerSecond :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -809,7 +809,7 @@ instance ToJSON DiskUtilization where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -864,12 +864,12 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'healthCheck' smart constructor.
 data HealthCheck =
   HealthCheck'
-    { _hcHealthyThreshold   :: !(Maybe (Textual Word32))
+    { _hcHealthyThreshold :: !(Maybe (Textual Word32))
     , _hcDisableHealthCheck :: !(Maybe Bool)
-    , _hcCheckInterval      :: !(Maybe GDuration)
-    , _hcRestartThreshold   :: !(Maybe (Textual Word32))
-    , _hcHost               :: !(Maybe Text)
-    , _hcTimeout            :: !(Maybe GDuration)
+    , _hcCheckInterval :: !(Maybe GDuration)
+    , _hcRestartThreshold :: !(Maybe (Textual Word32))
+    , _hcHost :: !(Maybe Text)
+    , _hcTimeout :: !(Maybe GDuration)
     , _hcUnhealthyThreshold :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -986,14 +986,14 @@ instance ToJSON HealthCheck where
 -- /See:/ 'authorizedCertificate' smart constructor.
 data AuthorizedCertificate =
   AuthorizedCertificate'
-    { _acManagedCertificate    :: !(Maybe ManagedCertificate)
-    , _acCertificateRawData    :: !(Maybe CertificateRawData)
-    , _acDomainNames           :: !(Maybe [Text])
-    , _acDomainMAppingsCount   :: !(Maybe (Textual Int32))
-    , _acName                  :: !(Maybe Text)
-    , _acDisplayName           :: !(Maybe Text)
-    , _acId                    :: !(Maybe Text)
-    , _acExpireTime            :: !(Maybe DateTime')
+    { _acManagedCertificate :: !(Maybe ManagedCertificate)
+    , _acCertificateRawData :: !(Maybe CertificateRawData)
+    , _acDomainNames :: !(Maybe [Text])
+    , _acDomainMAppingsCount :: !(Maybe (Textual Int32))
+    , _acName :: !(Maybe Text)
+    , _acDisplayName :: !(Maybe Text)
+    , _acId :: !(Maybe Text)
+    , _acExpireTime :: !(Maybe DateTime')
     , _acVisibleDomainMAppings :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1186,11 +1186,11 @@ instance ToJSON VPCAccessConnector where
 -- /See:/ 'apiConfigHandler' smart constructor.
 data APIConfigHandler =
   APIConfigHandler'
-    { _achScript         :: !(Maybe Text)
-    , _achSecurityLevel  :: !(Maybe APIConfigHandlerSecurityLevel)
-    , _achURL            :: !(Maybe Text)
+    { _achScript :: !(Maybe Text)
+    , _achSecurityLevel :: !(Maybe APIConfigHandlerSecurityLevel)
+    , _achURL :: !(Maybe Text)
     , _achAuthFailAction :: !(Maybe APIConfigHandlerAuthFailAction)
-    , _achLogin          :: !(Maybe APIConfigHandlerLogin)
+    , _achLogin :: !(Maybe APIConfigHandlerLogin)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1308,19 +1308,19 @@ instance ToJSON VersionEnvVariables where
 -- /See:/ 'application' smart constructor.
 data Application =
   Application'
-    { _aDefaultHostname         :: !(Maybe Text)
+    { _aDefaultHostname :: !(Maybe Text)
     , _aDefaultCookieExpiration :: !(Maybe GDuration)
-    , _aIap                     :: !(Maybe IdentityAwareProxy)
-    , _aAuthDomain              :: !(Maybe Text)
-    , _aCodeBucket              :: !(Maybe Text)
-    , _aGcrDomain               :: !(Maybe Text)
-    , _aFeatureSettings         :: !(Maybe FeatureSettings)
-    , _aName                    :: !(Maybe Text)
-    , _aDispatchRules           :: !(Maybe [URLDispatchRule])
-    , _aDefaultBucket           :: !(Maybe Text)
-    , _aId                      :: !(Maybe Text)
-    , _aLocationId              :: !(Maybe Text)
-    , _aServingStatus           :: !(Maybe ApplicationServingStatus)
+    , _aIap :: !(Maybe IdentityAwareProxy)
+    , _aAuthDomain :: !(Maybe Text)
+    , _aCodeBucket :: !(Maybe Text)
+    , _aGcrDomain :: !(Maybe Text)
+    , _aFeatureSettings :: !(Maybe FeatureSettings)
+    , _aName :: !(Maybe Text)
+    , _aDispatchRules :: !(Maybe [URLDispatchRule])
+    , _aDefaultBucket :: !(Maybe Text)
+    , _aId :: !(Maybe Text)
+    , _aLocationId :: !(Maybe Text)
+    , _aServingStatus :: !(Maybe ApplicationServingStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1546,8 +1546,8 @@ instance ToJSON VersionBetaSettings where
 data Service =
   Service'
     { _sSplit :: !(Maybe TrafficSplit)
-    , _sName  :: !(Maybe Text)
-    , _sId    :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
+    , _sId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1606,9 +1606,9 @@ instance ToJSON Service where
 data EndpointsAPIService =
   EndpointsAPIService'
     { _easDisableTraceSampling :: !(Maybe Bool)
-    , _easName                 :: !(Maybe Text)
-    , _easConfigId             :: !(Maybe Text)
-    , _easRolloutStrategy      :: !(Maybe EndpointsAPIServiceRolloutStrategy)
+    , _easName :: !(Maybe Text)
+    , _easConfigId :: !(Maybe Text)
+    , _easRolloutStrategy :: !(Maybe EndpointsAPIServiceRolloutStrategy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1693,11 +1693,11 @@ instance ToJSON EndpointsAPIService where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _locName        :: !(Maybe Text)
-    , _locMetadata    :: !(Maybe LocationSchema)
+    { _locName :: !(Maybe Text)
+    , _locMetadata :: !(Maybe LocationSchema)
     , _locDisplayName :: !(Maybe Text)
-    , _locLabels      :: !(Maybe LocationLabels)
-    , _locLocationId  :: !(Maybe Text)
+    , _locLabels :: !(Maybe LocationLabels)
+    , _locLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1783,10 +1783,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1877,7 +1877,7 @@ instance ToJSON Operation where
 data ZipInfo =
   ZipInfo'
     { _ziFilesCount :: !(Maybe (Textual Int32))
-    , _ziSourceURL  :: !(Maybe Text)
+    , _ziSourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1954,9 +1954,9 @@ instance ToJSON Empty where
 -- /See:/ 'urlDispatchRule' smart constructor.
 data URLDispatchRule =
   URLDispatchRule'
-    { _udrPath    :: !(Maybe Text)
+    { _udrPath :: !(Maybe Text)
     , _udrService :: !(Maybe Text)
-    , _udrDomain  :: !(Maybe Text)
+    , _udrDomain :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2017,14 +2017,14 @@ instance ToJSON URLDispatchRule where
 -- /See:/ 'operationMetadataV1Beta' smart constructor.
 data OperationMetadataV1Beta =
   OperationMetadataV1Beta'
-    { _omvbEphemeralMessage      :: !(Maybe Text)
-    , _omvbInsertTime            :: !(Maybe DateTime')
-    , _omvbUser                  :: !(Maybe Text)
-    , _omvbMethod                :: !(Maybe Text)
-    , _omvbEndTime               :: !(Maybe DateTime')
-    , _omvbWarning               :: !(Maybe [Text])
+    { _omvbEphemeralMessage :: !(Maybe Text)
+    , _omvbInsertTime :: !(Maybe DateTime')
+    , _omvbUser :: !(Maybe Text)
+    , _omvbMethod :: !(Maybe Text)
+    , _omvbEndTime :: !(Maybe DateTime')
+    , _omvbWarning :: !(Maybe [Text])
     , _omvbCreateVersionMetadata :: !(Maybe CreateVersionMetadataV1Beta)
-    , _omvbTarget                :: !(Maybe Text)
+    , _omvbTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2144,7 +2144,7 @@ instance ToJSON OperationMetadataV1Beta where
 data ListAuthorizedDomainsResponse =
   ListAuthorizedDomainsResponse'
     { _ladrNextPageToken :: !(Maybe Text)
-    , _ladrDomains       :: !(Maybe [AuthorizedDomain])
+    , _ladrDomains :: !(Maybe [AuthorizedDomain])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2230,7 +2230,7 @@ instance ToJSON Entrypoint where
 data ListVersionsResponse =
   ListVersionsResponse'
     { _lvrNextPageToken :: !(Maybe Text)
-    , _lvrVersions      :: !(Maybe [Version])
+    , _lvrVersions :: !(Maybe [Version])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2281,7 +2281,7 @@ instance ToJSON ListVersionsResponse where
 -- /See:/ 'managedCertificate' smart constructor.
 data ManagedCertificate =
   ManagedCertificate'
-    { _mcStatus          :: !(Maybe ManagedCertificateStatus)
+    { _mcStatus :: !(Maybe ManagedCertificateStatus)
     , _mcLastRenewalTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2377,8 +2377,8 @@ instance ToJSON CreateVersionMetadataV1Alpha where
 -- /See:/ 'fileInfo' smart constructor.
 data FileInfo =
   FileInfo'
-    { _fiSha1Sum   :: !(Maybe Text)
-    , _fiMimeType  :: !(Maybe Text)
+    { _fiSha1Sum :: !(Maybe Text)
+    , _fiMimeType :: !(Maybe Text)
     , _fiSourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2441,18 +2441,18 @@ instance ToJSON FileInfo where
 -- /See:/ 'automaticScaling' smart constructor.
 data AutomaticScaling =
   AutomaticScaling'
-    { _asNetworkUtilization        :: !(Maybe NetworkUtilization)
-    , _asMaxTotalInstances         :: !(Maybe (Textual Int32))
-    , _asMinIdleInstances          :: !(Maybe (Textual Int32))
-    , _asDiskUtilization           :: !(Maybe DiskUtilization)
-    , _asMinPendingLatency         :: !(Maybe GDuration)
-    , _asCPUUtilization            :: !(Maybe CPUUtilization)
-    , _asMaxIdleInstances          :: !(Maybe (Textual Int32))
-    , _asMinTotalInstances         :: !(Maybe (Textual Int32))
-    , _asMaxConcurrentRequests     :: !(Maybe (Textual Int32))
-    , _asCoolDownPeriod            :: !(Maybe GDuration)
-    , _asRequestUtilization        :: !(Maybe RequestUtilization)
-    , _asMaxPendingLatency         :: !(Maybe GDuration)
+    { _asNetworkUtilization :: !(Maybe NetworkUtilization)
+    , _asMaxTotalInstances :: !(Maybe (Textual Int32))
+    , _asMinIdleInstances :: !(Maybe (Textual Int32))
+    , _asDiskUtilization :: !(Maybe DiskUtilization)
+    , _asMinPendingLatency :: !(Maybe GDuration)
+    , _asCPUUtilization :: !(Maybe CPUUtilization)
+    , _asMaxIdleInstances :: !(Maybe (Textual Int32))
+    , _asMinTotalInstances :: !(Maybe (Textual Int32))
+    , _asMaxConcurrentRequests :: !(Maybe (Textual Int32))
+    , _asCoolDownPeriod :: !(Maybe GDuration)
+    , _asRequestUtilization :: !(Maybe RequestUtilization)
+    , _asMaxPendingLatency :: !(Maybe GDuration)
     , _asStandardSchedulerSettings :: !(Maybe StandardSchedulerSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2651,8 +2651,8 @@ instance ToJSON AutomaticScaling where
 -- /See:/ 'volume' smart constructor.
 data Volume =
   Volume'
-    { _vSizeGb     :: !(Maybe (Textual Double))
-    , _vName       :: !(Maybe Text)
+    { _vSizeGb :: !(Maybe (Textual Double))
+    , _vName :: !(Maybe Text)
     , _vVolumeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2779,7 +2779,7 @@ instance ToJSON StatusDetailsItem where
 data ListIngressRulesResponse =
   ListIngressRulesResponse'
     { _lirrNextPageToken :: !(Maybe Text)
-    , _lirrIngressRules  :: !(Maybe [FirewallRule])
+    , _lirrIngressRules :: !(Maybe [FirewallRule])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2834,10 +2834,10 @@ instance ToJSON ListIngressRulesResponse where
 data Network =
   Network'
     { _nSessionAffinity :: !(Maybe Bool)
-    , _nSubnetworkName  :: !(Maybe Text)
-    , _nForwardedPorts  :: !(Maybe [Text])
-    , _nInstanceTag     :: !(Maybe Text)
-    , _nName            :: !(Maybe Text)
+    , _nSubnetworkName :: !(Maybe Text)
+    , _nForwardedPorts :: !(Maybe [Text])
+    , _nInstanceTag :: !(Maybe Text)
+    , _nName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2943,11 +2943,11 @@ data ReadinessCheck =
   ReadinessCheck'
     { _rcSuccessThreshold :: !(Maybe (Textual Word32))
     , _rcFailureThreshold :: !(Maybe (Textual Word32))
-    , _rcPath             :: !(Maybe Text)
-    , _rcCheckInterval    :: !(Maybe GDuration)
-    , _rcAppStartTimeout  :: !(Maybe GDuration)
-    , _rcHost             :: !(Maybe Text)
-    , _rcTimeout          :: !(Maybe GDuration)
+    , _rcPath :: !(Maybe Text)
+    , _rcCheckInterval :: !(Maybe GDuration)
+    , _rcAppStartTimeout :: !(Maybe GDuration)
+    , _rcHost :: !(Maybe Text)
+    , _rcTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3180,9 +3180,9 @@ instance ToJSON StaticFilesHandlerHTTPHeaders where
 data Resources =
   Resources'
     { _rMemoryGb :: !(Maybe (Textual Double))
-    , _rDiskGb   :: !(Maybe (Textual Double))
-    , _rVolumes  :: !(Maybe [Volume])
-    , _rCPU      :: !(Maybe (Textual Double))
+    , _rDiskGb :: !(Maybe (Textual Double))
+    , _rVolumes :: !(Maybe [Volume])
+    , _rCPU :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3258,7 +3258,7 @@ instance ToJSON Resources where
 data FeatureSettings =
   FeatureSettings'
     { _fsUseContainerOptimizedOS :: !(Maybe Bool)
-    , _fsSplitHealthChecks       :: !(Maybe Bool)
+    , _fsSplitHealthChecks :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3316,7 +3316,7 @@ instance ToJSON FeatureSettings where
 -- /See:/ 'certificateRawData' smart constructor.
 data CertificateRawData =
   CertificateRawData'
-    { _crdPrivateKey        :: !(Maybe Text)
+    { _crdPrivateKey :: !(Maybe Text)
     , _crdPublicCertificate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3340,7 +3340,7 @@ certificateRawData =
 -- certificate creation and then encrypted. The key size must be 2048 bits
 -- or fewer. Must include the header and footer. Example:
 --
--- >  -----BEGIN RSA PRIVATE KEY-----  -----END RSA PRIVATE KEY-----
+-- >  -----BEGIN RSA PRIVATE KEY-----  -----END RSA PRIVATE KEY----- 
 --
 -- \'InputOnly
 crdPrivateKey :: Lens' CertificateRawData (Maybe Text)
@@ -3377,9 +3377,9 @@ instance ToJSON CertificateRawData where
 data DomainMApping =
   DomainMApping'
     { _dmaResourceRecords :: !(Maybe [ResourceRecord])
-    , _dmaName            :: !(Maybe Text)
-    , _dmaId              :: !(Maybe Text)
-    , _dmaSSLSettings     :: !(Maybe SSLSettings)
+    , _dmaName :: !(Maybe Text)
+    , _dmaId :: !(Maybe Text)
+    , _dmaSSLSettings :: !(Maybe SSLSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3536,7 +3536,7 @@ instance ToJSON BatchUpdateIngressRulesResponse where
 data CPUUtilization =
   CPUUtilization'
     { _cuAggregationWindowLength :: !(Maybe GDuration)
-    , _cuTargetUtilization       :: !(Maybe (Textual Double))
+    , _cuTargetUtilization :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3677,7 +3677,7 @@ instance ToJSON TrafficSplitAllocations where
 data CloudBuildOptions =
   CloudBuildOptions'
     { _cboCloudBuildTimeout :: !(Maybe GDuration)
-    , _cboAppYamlPath       :: !(Maybe Text)
+    , _cboAppYamlPath :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3777,7 +3777,7 @@ instance ToJSON ManualScaling where
 data BasicScaling =
   BasicScaling'
     { _bsMaxInstances :: !(Maybe (Textual Int32))
-    , _bsIdleTimeout  :: !(Maybe GDuration)
+    , _bsIdleTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3829,14 +3829,14 @@ instance ToJSON BasicScaling where
 -- /See:/ 'operationMetadataV1' smart constructor.
 data OperationMetadataV1 =
   OperationMetadataV1'
-    { _omvEphemeralMessage      :: !(Maybe Text)
-    , _omvInsertTime            :: !(Maybe DateTime')
-    , _omvUser                  :: !(Maybe Text)
-    , _omvMethod                :: !(Maybe Text)
-    , _omvEndTime               :: !(Maybe DateTime')
-    , _omvWarning               :: !(Maybe [Text])
+    { _omvEphemeralMessage :: !(Maybe Text)
+    , _omvInsertTime :: !(Maybe DateTime')
+    , _omvUser :: !(Maybe Text)
+    , _omvMethod :: !(Maybe Text)
+    , _omvEndTime :: !(Maybe DateTime')
+    , _omvWarning :: !(Maybe [Text])
     , _omvCreateVersionMetadata :: !(Maybe CreateVersionMetadataV1)
-    , _omvTarget                :: !(Maybe Text)
+    , _omvTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3956,43 +3956,43 @@ instance ToJSON OperationMetadataV1 where
 -- /See:/ 'version' smart constructor.
 data Version =
   Version'
-    { _verRuntime                   :: !(Maybe Text)
-    , _verNobuildFilesRegex         :: !(Maybe Text)
-    , _verInstanceClass             :: !(Maybe Text)
-    , _verRuntimeChannel            :: !(Maybe Text)
+    { _verRuntime :: !(Maybe Text)
+    , _verNobuildFilesRegex :: !(Maybe Text)
+    , _verInstanceClass :: !(Maybe Text)
+    , _verRuntimeChannel :: !(Maybe Text)
     , _verRuntimeMainExecutablePath :: !(Maybe Text)
-    , _verVPCAccessConnector        :: !(Maybe VPCAccessConnector)
-    , _verHealthCheck               :: !(Maybe HealthCheck)
-    , _verEndpointsAPIService       :: !(Maybe EndpointsAPIService)
-    , _verEnv                       :: !(Maybe Text)
-    , _verZones                     :: !(Maybe [Text])
-    , _verEntrypoint                :: !(Maybe Entrypoint)
-    , _verDefaultExpiration         :: !(Maybe GDuration)
-    , _verAutomaticScaling          :: !(Maybe AutomaticScaling)
-    , _verErrorHandlers             :: !(Maybe [ErrorHandler])
-    , _verCreatedBy                 :: !(Maybe Text)
-    , _verVM                        :: !(Maybe Bool)
-    , _verHandlers                  :: !(Maybe [URLMap])
-    , _verInboundServices           :: !(Maybe [Text])
-    , _verReadinessCheck            :: !(Maybe ReadinessCheck)
-    , _verNetwork                   :: !(Maybe Network)
-    , _verResources                 :: !(Maybe Resources)
-    , _verName                      :: !(Maybe Text)
-    , _verThreadsafe                :: !(Maybe Bool)
-    , _verBetaSettings              :: !(Maybe VersionBetaSettings)
-    , _verBasicScaling              :: !(Maybe BasicScaling)
-    , _verManualScaling             :: !(Maybe ManualScaling)
-    , _verAPIConfig                 :: !(Maybe APIConfigHandler)
-    , _verId                        :: !(Maybe Text)
-    , _verEnvVariables              :: !(Maybe VersionEnvVariables)
-    , _verLivenessCheck             :: !(Maybe LivenessCheck)
-    , _verRuntimeAPIVersion         :: !(Maybe Text)
-    , _verServingStatus             :: !(Maybe VersionServingStatus)
-    , _verDiskUsageBytes            :: !(Maybe (Textual Int64))
-    , _verCreateTime                :: !(Maybe DateTime')
-    , _verLibraries                 :: !(Maybe [Library])
-    , _verVersionURL                :: !(Maybe Text)
-    , _verDeployment                :: !(Maybe Deployment)
+    , _verVPCAccessConnector :: !(Maybe VPCAccessConnector)
+    , _verHealthCheck :: !(Maybe HealthCheck)
+    , _verEndpointsAPIService :: !(Maybe EndpointsAPIService)
+    , _verEnv :: !(Maybe Text)
+    , _verZones :: !(Maybe [Text])
+    , _verEntrypoint :: !(Maybe Entrypoint)
+    , _verDefaultExpiration :: !(Maybe GDuration)
+    , _verAutomaticScaling :: !(Maybe AutomaticScaling)
+    , _verErrorHandlers :: !(Maybe [ErrorHandler])
+    , _verCreatedBy :: !(Maybe Text)
+    , _verVM :: !(Maybe Bool)
+    , _verHandlers :: !(Maybe [URLMap])
+    , _verInboundServices :: !(Maybe [Text])
+    , _verReadinessCheck :: !(Maybe ReadinessCheck)
+    , _verNetwork :: !(Maybe Network)
+    , _verResources :: !(Maybe Resources)
+    , _verName :: !(Maybe Text)
+    , _verThreadsafe :: !(Maybe Bool)
+    , _verBetaSettings :: !(Maybe VersionBetaSettings)
+    , _verBasicScaling :: !(Maybe BasicScaling)
+    , _verManualScaling :: !(Maybe ManualScaling)
+    , _verAPIConfig :: !(Maybe APIConfigHandler)
+    , _verId :: !(Maybe Text)
+    , _verEnvVariables :: !(Maybe VersionEnvVariables)
+    , _verLivenessCheck :: !(Maybe LivenessCheck)
+    , _verRuntimeAPIVersion :: !(Maybe Text)
+    , _verServingStatus :: !(Maybe VersionServingStatus)
+    , _verDiskUsageBytes :: !(Maybe (Textual Int64))
+    , _verCreateTime :: !(Maybe DateTime')
+    , _verLibraries :: !(Maybe [Library])
+    , _verVersionURL :: !(Maybe Text)
+    , _verDeployment :: !(Maybe Deployment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4474,10 +4474,10 @@ instance ToJSON Version where
 -- /See:/ 'identityAwareProxy' smart constructor.
 data IdentityAwareProxy =
   IdentityAwareProxy'
-    { _iapEnabled                  :: !(Maybe Bool)
+    { _iapEnabled :: !(Maybe Bool)
     , _iapOAuth2ClientSecretSha256 :: !(Maybe Text)
-    , _iapOAuth2ClientSecret       :: !(Maybe Text)
-    , _iapOAuth2ClientId           :: !(Maybe Text)
+    , _iapOAuth2ClientSecret :: !(Maybe Text)
+    , _iapOAuth2ClientId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4560,13 +4560,13 @@ instance ToJSON IdentityAwareProxy where
 -- /See:/ 'staticFilesHandler' smart constructor.
 data StaticFilesHandler =
   StaticFilesHandler'
-    { _sfhHTTPHeaders         :: !(Maybe StaticFilesHandlerHTTPHeaders)
-    , _sfhPath                :: !(Maybe Text)
+    { _sfhHTTPHeaders :: !(Maybe StaticFilesHandlerHTTPHeaders)
+    , _sfhPath :: !(Maybe Text)
     , _sfhRequireMatchingFile :: !(Maybe Bool)
-    , _sfhExpiration          :: !(Maybe GDuration)
-    , _sfhMimeType            :: !(Maybe Text)
+    , _sfhExpiration :: !(Maybe GDuration)
+    , _sfhMimeType :: !(Maybe Text)
     , _sfhApplicationReadable :: !(Maybe Bool)
-    , _sfhUploadPathRegex     :: !(Maybe Text)
+    , _sfhUploadPathRegex :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4684,8 +4684,8 @@ instance ToJSON StaticFilesHandler where
 -- /See:/ 'errorHandler' smart constructor.
 data ErrorHandler =
   ErrorHandler'
-    { _ehMimeType   :: !(Maybe Text)
-    , _ehErrorCode  :: !(Maybe ErrorHandlerErrorCode)
+    { _ehMimeType :: !(Maybe Text)
+    , _ehErrorCode :: !(Maybe ErrorHandlerErrorCode)
     , _ehStaticFile :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4780,7 +4780,7 @@ instance ToJSON LocationLabels where
 data ListAuthorizedCertificatesResponse =
   ListAuthorizedCertificatesResponse'
     { _lacrNextPageToken :: !(Maybe Text)
-    , _lacrCertificates  :: !(Maybe [AuthorizedCertificate])
+    , _lacrCertificates :: !(Maybe [AuthorizedCertificate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4836,8 +4836,8 @@ instance ToJSON ListAuthorizedCertificatesResponse
 -- /See:/ 'firewallRule' smart constructor.
 data FirewallRule =
   FirewallRule'
-    { _frPriority    :: !(Maybe (Textual Int32))
-    , _frAction      :: !(Maybe FirewallRuleAction)
+    { _frPriority :: !(Maybe (Textual Int32))
+    , _frAction :: !(Maybe FirewallRuleAction)
     , _frSourceRange :: !(Maybe Text)
     , _frDescription :: !(Maybe Text)
     }
@@ -5023,7 +5023,7 @@ instance ToJSON OperationMetadata where
 data ListInstancesResponse =
   ListInstancesResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirInstances     :: !(Maybe [Instance])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5074,14 +5074,14 @@ instance ToJSON ListInstancesResponse where
 -- /See:/ 'operationMetadataV1Alpha' smart constructor.
 data OperationMetadataV1Alpha =
   OperationMetadataV1Alpha'
-    { _omvaEphemeralMessage      :: !(Maybe Text)
-    , _omvaInsertTime            :: !(Maybe DateTime')
-    , _omvaUser                  :: !(Maybe Text)
-    , _omvaMethod                :: !(Maybe Text)
-    , _omvaEndTime               :: !(Maybe DateTime')
-    , _omvaWarning               :: !(Maybe [Text])
+    { _omvaEphemeralMessage :: !(Maybe Text)
+    , _omvaInsertTime :: !(Maybe DateTime')
+    , _omvaUser :: !(Maybe Text)
+    , _omvaMethod :: !(Maybe Text)
+    , _omvaEndTime :: !(Maybe DateTime')
+    , _omvaWarning :: !(Maybe [Text])
     , _omvaCreateVersionMetadata :: !(Maybe CreateVersionMetadataV1Alpha)
-    , _omvaTarget                :: !(Maybe Text)
+    , _omvaTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5203,11 +5203,11 @@ data LivenessCheck =
   LivenessCheck'
     { _lcSuccessThreshold :: !(Maybe (Textual Word32))
     , _lcFailureThreshold :: !(Maybe (Textual Word32))
-    , _lcPath             :: !(Maybe Text)
-    , _lcCheckInterval    :: !(Maybe GDuration)
-    , _lcHost             :: !(Maybe Text)
-    , _lcInitialDelay     :: !(Maybe GDuration)
-    , _lcTimeout          :: !(Maybe GDuration)
+    , _lcPath :: !(Maybe Text)
+    , _lcCheckInterval :: !(Maybe GDuration)
+    , _lcHost :: !(Maybe Text)
+    , _lcInitialDelay :: !(Maybe GDuration)
+    , _lcTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5319,7 +5319,7 @@ instance ToJSON LivenessCheck where
 -- /See:/ 'requestUtilization' smart constructor.
 data RequestUtilization =
   RequestUtilization'
-    { _ruTargetConcurrentRequests    :: !(Maybe (Textual Int32))
+    { _ruTargetConcurrentRequests :: !(Maybe (Textual Int32))
     , _ruTargetRequestCountPerSecond :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5485,7 +5485,7 @@ instance ToJSON CreateVersionMetadataV1Beta where
 data ListDomainMAppingsResponse =
   ListDomainMAppingsResponse'
     { _ldmarDomainMAppings :: !(Maybe [DomainMApping])
-    , _ldmarNextPageToken  :: !(Maybe Text)
+    , _ldmarNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5538,9 +5538,9 @@ instance ToJSON ListDomainMAppingsResponse where
 -- /See:/ 'standardSchedulerSettings' smart constructor.
 data StandardSchedulerSettings =
   StandardSchedulerSettings'
-    { _sssTargetCPUUtilization        :: !(Maybe (Textual Double))
-    , _sssMinInstances                :: !(Maybe (Textual Int32))
-    , _sssMaxInstances                :: !(Maybe (Textual Int32))
+    { _sssTargetCPUUtilization :: !(Maybe (Textual Double))
+    , _sssMinInstances :: !(Maybe (Textual Int32))
+    , _sssMaxInstances :: !(Maybe (Textual Int32))
     , _sssTargetThroughputUtilization :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5663,21 +5663,21 @@ instance ToJSON ContainerInfo where
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iMemoryUsage      :: !(Maybe (Textual Int64))
-    , _iVMStatus         :: !(Maybe Text)
-    , _iVMZoneName       :: !(Maybe Text)
-    , _iVMIP             :: !(Maybe Text)
-    , _iStartTime        :: !(Maybe DateTime')
-    , _iVMId             :: !(Maybe Text)
-    , _iAvailability     :: !(Maybe InstanceAvailability)
-    , _iVMName           :: !(Maybe Text)
-    , _iName             :: !(Maybe Text)
-    , _iVMDebugEnabled   :: !(Maybe Bool)
-    , _iRequests         :: !(Maybe (Textual Int32))
-    , _iQps              :: !(Maybe (Textual Double))
-    , _iId               :: !(Maybe Text)
-    , _iErrors           :: !(Maybe (Textual Int32))
-    , _iAverageLatency   :: !(Maybe (Textual Int32))
+    { _iMemoryUsage :: !(Maybe (Textual Int64))
+    , _iVMStatus :: !(Maybe Text)
+    , _iVMZoneName :: !(Maybe Text)
+    , _iVMIP :: !(Maybe Text)
+    , _iStartTime :: !(Maybe DateTime')
+    , _iVMId :: !(Maybe Text)
+    , _iAvailability :: !(Maybe InstanceAvailability)
+    , _iVMName :: !(Maybe Text)
+    , _iName :: !(Maybe Text)
+    , _iVMDebugEnabled :: !(Maybe Bool)
+    , _iRequests :: !(Maybe (Textual Int32))
+    , _iQps :: !(Maybe (Textual Double))
+    , _iId :: !(Maybe Text)
+    , _iErrors :: !(Maybe (Textual Int32))
+    , _iAverageLatency :: !(Maybe (Textual Int32))
     , _iAppEngineRelease :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5878,8 +5878,8 @@ instance ToJSON Instance where
 -- /See:/ 'sslSettings' smart constructor.
 data SSLSettings =
   SSLSettings'
-    { _ssSSLManagementType           :: !(Maybe SSLSettingsSSLManagementType)
-    , _ssCertificateId               :: !(Maybe Text)
+    { _ssSSLManagementType :: !(Maybe SSLSettingsSSLManagementType)
+    , _ssCertificateId :: !(Maybe Text)
     , _ssPendingManagedCertificateId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5960,10 +5960,10 @@ instance ToJSON SSLSettings where
 -- /See:/ 'deployment' smart constructor.
 data Deployment =
   Deployment'
-    { _dZip               :: !(Maybe ZipInfo)
+    { _dZip :: !(Maybe ZipInfo)
     , _dCloudBuildOptions :: !(Maybe CloudBuildOptions)
-    , _dContainer         :: !(Maybe ContainerInfo)
-    , _dFiles             :: !(Maybe DeploymentFiles)
+    , _dContainer :: !(Maybe ContainerInfo)
+    , _dFiles :: !(Maybe DeploymentFiles)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Orders.Get
     , ogProjectId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.orders.get@ method which the
 -- 'OrdersGet' request conforms to.
@@ -60,7 +60,7 @@ type OrdersGetResource =
 data OrdersGet =
   OrdersGet'
     { _ogProFileId :: !(Textual Int64)
-    , _ogId        :: !(Textual Int64)
+    , _ogId :: !(Textual Int64)
     , _ogProjectId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudKMS.Types.Product where
 
-import           Network.Google.CloudKMS.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types.Sum
+import Network.Google.Prelude
 
 -- | Response message for KeyManagementService.AsymmetricDecrypt.
 --
@@ -62,7 +62,7 @@ instance ToJSON AsymmetricDecryptResponse where
 -- /See:/ 'encryptResponse' smart constructor.
 data EncryptResponse =
   EncryptResponse'
-    { _erName       :: !(Maybe Text)
+    { _erName :: !(Maybe Text)
     , _erCiphertext :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -162,7 +162,7 @@ instance ToJSON LocationSchema where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -217,9 +217,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -296,7 +296,7 @@ instance ToJSON Expr where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -348,8 +348,8 @@ instance ToJSON ListLocationsResponse where
 data ListKeyRingsResponse =
   ListKeyRingsResponse'
     { _lkrrNextPageToken :: !(Maybe Text)
-    , _lkrrTotalSize     :: !(Maybe (Textual Int32))
-    , _lkrrKeyRings      :: !(Maybe [KeyRing])
+    , _lkrrTotalSize :: !(Maybe (Textual Int32))
+    , _lkrrKeyRings :: !(Maybe [KeyRing])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -452,7 +452,7 @@ instance ToJSON AsymmetricSignResponse where
 -- /See:/ 'keyRing' smart constructor.
 data KeyRing =
   KeyRing'
-    { _krName       :: !(Maybe Text)
+    { _krName :: !(Maybe Text)
     , _krCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -523,11 +523,11 @@ instance ToJSON DestroyCryptoKeyVersionRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationSchema)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationSchema)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -645,7 +645,7 @@ instance ToJSON AsymmetricSignRequest where
 -- /See:/ 'publicKey' smart constructor.
 data PublicKey =
   PublicKey'
-    { _pkPem       :: !(Maybe Text)
+    { _pkPem :: !(Maybe Text)
     , _pkAlgorithm :: !(Maybe PublicKeyAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -733,7 +733,7 @@ instance ToJSON DecryptResponse where
 -- /See:/ 'cryptoKeyVersionTemplate' smart constructor.
 data CryptoKeyVersionTemplate =
   CryptoKeyVersionTemplate'
-    { _ckvtAlgorithm       :: !(Maybe CryptoKeyVersionTemplateAlgorithm)
+    { _ckvtAlgorithm :: !(Maybe CryptoKeyVersionTemplateAlgorithm)
     , _ckvtProtectionLevel :: !(Maybe CryptoKeyVersionTemplateProtectionLevel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -789,7 +789,7 @@ instance ToJSON CryptoKeyVersionTemplate where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -881,14 +881,14 @@ instance ToJSON CryptoKeyLabels where
 -- /See:/ 'cryptoKey' smart constructor.
 data CryptoKey =
   CryptoKey'
-    { _ckVersionTemplate  :: !(Maybe CryptoKeyVersionTemplate)
-    , _ckPurpose          :: !(Maybe CryptoKeyPurpose)
-    , _ckRotationPeriod   :: !(Maybe GDuration)
-    , _ckPrimary          :: !(Maybe CryptoKeyVersion)
-    , _ckName             :: !(Maybe Text)
-    , _ckLabels           :: !(Maybe CryptoKeyLabels)
+    { _ckVersionTemplate :: !(Maybe CryptoKeyVersionTemplate)
+    , _ckPurpose :: !(Maybe CryptoKeyPurpose)
+    , _ckRotationPeriod :: !(Maybe GDuration)
+    , _ckPrimary :: !(Maybe CryptoKeyVersion)
+    , _ckName :: !(Maybe Text)
+    , _ckLabels :: !(Maybe CryptoKeyLabels)
     , _ckNextRotationTime :: !(Maybe DateTime')
-    , _ckCreateTime       :: !(Maybe DateTime')
+    , _ckCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1019,7 +1019,7 @@ instance ToJSON CryptoKey where
 data DecryptRequest =
   DecryptRequest'
     { _drAdditionalAuthenticatedData :: !(Maybe Bytes)
-    , _drCiphertext                  :: !(Maybe Bytes)
+    , _drCiphertext :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1076,7 +1076,7 @@ instance ToJSON DecryptRequest where
 -- /See:/ 'keyOperationAttestation' smart constructor.
 data KeyOperationAttestation =
   KeyOperationAttestation'
-    { _koaFormat  :: !(Maybe KeyOperationAttestationFormat)
+    { _koaFormat :: !(Maybe KeyOperationAttestationFormat)
     , _koaContent :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1126,8 +1126,8 @@ instance ToJSON KeyOperationAttestation where
 -- /See:/ 'listCryptoKeyVersionsResponse' smart constructor.
 data ListCryptoKeyVersionsResponse =
   ListCryptoKeyVersionsResponse'
-    { _lckvrNextPageToken     :: !(Maybe Text)
-    , _lckvrTotalSize         :: !(Maybe (Textual Int32))
+    { _lckvrNextPageToken :: !(Maybe Text)
+    , _lckvrTotalSize :: !(Maybe (Textual Int32))
     , _lckvrCryptoKeyVersions :: !(Maybe [CryptoKeyVersion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1429,9 +1429,9 @@ instance ToJSON Digest where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1593,7 +1593,7 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1646,9 +1646,9 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'listCryptoKeysResponse' smart constructor.
 data ListCryptoKeysResponse =
   ListCryptoKeysResponse'
-    { _lckrCryptoKeys    :: !(Maybe [CryptoKey])
+    { _lckrCryptoKeys :: !(Maybe [CryptoKey])
     , _lckrNextPageToken :: !(Maybe Text)
-    , _lckrTotalSize     :: !(Maybe (Textual Int32))
+    , _lckrTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1760,15 +1760,15 @@ instance ToJSON AsymmetricDecryptRequest where
 -- /See:/ 'cryptoKeyVersion' smart constructor.
 data CryptoKeyVersion =
   CryptoKeyVersion'
-    { _ckvState            :: !(Maybe CryptoKeyVersionState)
-    , _ckvAttestation      :: !(Maybe KeyOperationAttestation)
-    , _ckvGenerateTime     :: !(Maybe DateTime')
-    , _ckvName             :: !(Maybe Text)
-    , _ckvAlgorithm        :: !(Maybe CryptoKeyVersionAlgorithm)
-    , _ckvDestroyTime      :: !(Maybe DateTime')
-    , _ckvProtectionLevel  :: !(Maybe CryptoKeyVersionProtectionLevel)
+    { _ckvState :: !(Maybe CryptoKeyVersionState)
+    , _ckvAttestation :: !(Maybe KeyOperationAttestation)
+    , _ckvGenerateTime :: !(Maybe DateTime')
+    , _ckvName :: !(Maybe Text)
+    , _ckvAlgorithm :: !(Maybe CryptoKeyVersionAlgorithm)
+    , _ckvDestroyTime :: !(Maybe DateTime')
+    , _ckvProtectionLevel :: !(Maybe CryptoKeyVersionProtectionLevel)
     , _ckvDestroyEventTime :: !(Maybe DateTime')
-    , _ckvCreateTime       :: !(Maybe DateTime')
+    , _ckvCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1906,7 +1906,7 @@ instance ToJSON CryptoKeyVersion where
 data EncryptRequest =
   EncryptRequest'
     { _erAdditionalAuthenticatedData :: !(Maybe Bytes)
-    , _erPlaintext                   :: !(Maybe Bytes)
+    , _erPlaintext :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1968,8 +1968,8 @@ instance ToJSON EncryptRequest where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

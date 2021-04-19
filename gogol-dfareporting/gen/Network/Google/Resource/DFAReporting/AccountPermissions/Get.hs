@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AccountPermissions.Get
     , apgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountPermissions.get@ method which the
 -- 'AccountPermissionsGet' request conforms to.
@@ -58,7 +58,7 @@ type AccountPermissionsGetResource =
 data AccountPermissionsGet =
   AccountPermissionsGet'
     { _apgProFileId :: !(Textual Int64)
-    , _apgId        :: !(Textual Int64)
+    , _apgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

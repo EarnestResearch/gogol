@@ -219,18 +219,18 @@ module Network.Google.CloudScheduler
     , AppEngineHTTPTargetHTTPMethod (..)
     ) where
 
-import           Network.Google.CloudScheduler.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Get
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Create
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Delete
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Get
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.List
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Patch
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Pause
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Resume
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Run
-import           Network.Google.Resource.CloudScheduler.Projects.Locations.List
+import Network.Google.Prelude
+import Network.Google.CloudScheduler.Types
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Get
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Create
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Delete
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Get
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.List
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Patch
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Pause
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Resume
+import Network.Google.Resource.CloudScheduler.Projects.Locations.Jobs.Run
+import Network.Google.Resource.CloudScheduler.Projects.Locations.List
 
 {- $resources
 TODO

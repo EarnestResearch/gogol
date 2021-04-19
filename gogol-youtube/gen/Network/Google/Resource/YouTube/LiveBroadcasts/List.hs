@@ -45,8 +45,8 @@ module Network.Google.Resource.YouTube.LiveBroadcasts.List
     , lblMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveBroadcasts.list@ method which the
 -- 'LiveBroadcastsList' request conforms to.
@@ -76,15 +76,15 @@ type LiveBroadcastsListResource =
 -- /See:/ 'liveBroadcastsList' smart constructor.
 data LiveBroadcastsList =
   LiveBroadcastsList'
-    { _lblPart                          :: !Text
-    , _lblMine                          :: !(Maybe Bool)
-    , _lblBroadcastStatus               :: !(Maybe LiveBroadcastsListBroadcastStatus)
-    , _lblOnBehalfOfContentOwner        :: !(Maybe Text)
-    , _lblBroadcastType                 :: !LiveBroadcastsListBroadcastType
+    { _lblPart :: !Text
+    , _lblMine :: !(Maybe Bool)
+    , _lblBroadcastStatus :: !(Maybe LiveBroadcastsListBroadcastStatus)
+    , _lblOnBehalfOfContentOwner :: !(Maybe Text)
+    , _lblBroadcastType :: !LiveBroadcastsListBroadcastType
     , _lblOnBehalfOfContentOwnerChannel :: !(Maybe Text)
-    , _lblId                            :: !(Maybe Text)
-    , _lblPageToken                     :: !(Maybe Text)
-    , _lblMaxResults                    :: !(Textual Word32)
+    , _lblId :: !(Maybe Text)
+    , _lblPageToken :: !(Maybe Text)
+    , _lblMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

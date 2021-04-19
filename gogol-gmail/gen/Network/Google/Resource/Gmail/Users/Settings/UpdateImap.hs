@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.UpdateImap
     , usuiUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.updateImap@ method which the
 -- 'UsersSettingsUpdateImap' request conforms to.
@@ -59,7 +59,7 @@ type UsersSettingsUpdateImapResource =
 data UsersSettingsUpdateImap =
   UsersSettingsUpdateImap'
     { _usuiPayload :: !ImapSettings
-    , _usuiUserId  :: !Text
+    , _usuiUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

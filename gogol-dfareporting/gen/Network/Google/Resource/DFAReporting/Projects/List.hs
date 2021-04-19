@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.Projects.List
     , plMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.projects.list@ method which the
 -- 'ProjectsList' request conforms to.
@@ -71,14 +71,14 @@ type ProjectsListResource =
 -- /See:/ 'projectsList' smart constructor.
 data ProjectsList =
   ProjectsList'
-    { _plSearchString  :: !(Maybe Text)
-    , _plIds           :: !(Maybe [Textual Int64])
-    , _plProFileId     :: !(Textual Int64)
-    , _plSortOrder     :: !ProjectsListSortOrder
-    , _plPageToken     :: !(Maybe Text)
-    , _plSortField     :: !ProjectsListSortField
+    { _plSearchString :: !(Maybe Text)
+    , _plIds :: !(Maybe [Textual Int64])
+    , _plProFileId :: !(Textual Int64)
+    , _plSortOrder :: !ProjectsListSortOrder
+    , _plPageToken :: !(Maybe Text)
+    , _plSortField :: !ProjectsListSortField
     , _plAdvertiserIds :: !(Maybe [Textual Int64])
-    , _plMaxResults    :: !(Textual Int32)
+    , _plMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

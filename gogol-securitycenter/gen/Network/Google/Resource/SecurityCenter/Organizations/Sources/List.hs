@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.List
     , oslCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.list@ method which the
 -- 'OrganizationsSourcesList' request conforms to.
@@ -67,14 +67,14 @@ type OrganizationsSourcesListResource =
 -- /See:/ 'organizationsSourcesList' smart constructor.
 data OrganizationsSourcesList =
   OrganizationsSourcesList'
-    { _oslParent         :: !Text
-    , _oslXgafv          :: !(Maybe Xgafv)
+    { _oslParent :: !Text
+    , _oslXgafv :: !(Maybe Xgafv)
     , _oslUploadProtocol :: !(Maybe Text)
-    , _oslAccessToken    :: !(Maybe Text)
-    , _oslUploadType     :: !(Maybe Text)
-    , _oslPageToken      :: !(Maybe Text)
-    , _oslPageSize       :: !(Maybe (Textual Int32))
-    , _oslCallback       :: !(Maybe Text)
+    , _oslAccessToken :: !(Maybe Text)
+    , _oslUploadType :: !(Maybe Text)
+    , _oslPageToken :: !(Maybe Text)
+    , _oslPageSize :: !(Maybe (Textual Int32))
+    , _oslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Patch
     , pldspCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.patch@ method which the
 -- 'ProjectsLocationsDataSetsPatch' request conforms to.
@@ -65,14 +65,14 @@ type ProjectsLocationsDataSetsPatchResource =
 -- /See:/ 'projectsLocationsDataSetsPatch' smart constructor.
 data ProjectsLocationsDataSetsPatch =
   ProjectsLocationsDataSetsPatch'
-    { _pldspXgafv          :: !(Maybe Xgafv)
+    { _pldspXgafv :: !(Maybe Xgafv)
     , _pldspUploadProtocol :: !(Maybe Text)
-    , _pldspUpdateMask     :: !(Maybe GFieldMask)
-    , _pldspAccessToken    :: !(Maybe Text)
-    , _pldspUploadType     :: !(Maybe Text)
-    , _pldspPayload        :: !DataSet
-    , _pldspName           :: !Text
-    , _pldspCallback       :: !(Maybe Text)
+    , _pldspUpdateMask :: !(Maybe GFieldMask)
+    , _pldspAccessToken :: !(Maybe Text)
+    , _pldspUploadType :: !(Maybe Text)
+    , _pldspPayload :: !DataSet
+    , _pldspName :: !Text
+    , _pldspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

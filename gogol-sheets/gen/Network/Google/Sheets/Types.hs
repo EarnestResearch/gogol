@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -1627,9 +1627,9 @@ module Network.Google.Sheets.Types
     , uOldRule
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types.Product
-import           Network.Google.Sheets.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Sheets.Types.Product
+import Network.Google.Sheets.Types.Sum
 
 -- | Default request referring to version 'v4' of the Google Sheets API. This contains the host and root path used as a starting point for constructing service requests.
 sheetsService :: ServiceConfig

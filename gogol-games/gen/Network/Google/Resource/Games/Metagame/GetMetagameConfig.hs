@@ -34,8 +34,8 @@ module Network.Google.Resource.Games.Metagame.GetMetagameConfig
 
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.metagame.getMetagameConfig@ method which the
 -- 'MetagameGetMetagameConfig' request conforms to.

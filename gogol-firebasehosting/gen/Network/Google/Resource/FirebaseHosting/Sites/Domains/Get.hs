@@ -41,8 +41,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Domains.Get
     , sdgCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.domains.get@ method which the
 -- 'SitesDomainsGet' request conforms to.
@@ -61,12 +61,12 @@ type SitesDomainsGetResource =
 -- /See:/ 'sitesDomainsGet' smart constructor.
 data SitesDomainsGet =
   SitesDomainsGet'
-    { _sdgXgafv          :: !(Maybe Xgafv)
+    { _sdgXgafv :: !(Maybe Xgafv)
     , _sdgUploadProtocol :: !(Maybe Text)
-    , _sdgAccessToken    :: !(Maybe Text)
-    , _sdgUploadType     :: !(Maybe Text)
-    , _sdgName           :: !Text
-    , _sdgCallback       :: !(Maybe Text)
+    , _sdgAccessToken :: !(Maybe Text)
+    , _sdgUploadType :: !(Maybe Text)
+    , _sdgName :: !Text
+    , _sdgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

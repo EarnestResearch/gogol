@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutclusters.Get
     , stoClusterId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutclusters.get@ method which the
 -- 'StorelayoutclustersGet' request conforms to.
@@ -61,8 +61,8 @@ type StorelayoutclustersGetResource =
 data StorelayoutclustersGet =
   StorelayoutclustersGet'
     { _stoEnterpriseId :: !Text
-    , _stoPageId       :: !Text
-    , _stoClusterId    :: !Text
+    , _stoPageId :: !Text
+    , _stoClusterId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

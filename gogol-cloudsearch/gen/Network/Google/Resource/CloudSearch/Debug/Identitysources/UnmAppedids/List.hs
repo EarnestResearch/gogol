@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudSearch.Debug.Identitysources.UnmAppedids.Lis
     , diualCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.debug.identitysources.unmappedids.list@ method which the
 -- 'DebugIdentitysourcesUnmAppedidsList' request conforms to.
@@ -72,16 +72,16 @@ type DebugIdentitysourcesUnmAppedidsListResource =
 -- /See:/ 'debugIdentitysourcesUnmAppedidsList' smart constructor.
 data DebugIdentitysourcesUnmAppedidsList =
   DebugIdentitysourcesUnmAppedidsList'
-    { _diualParent                      :: !Text
-    , _diualXgafv                       :: !(Maybe Xgafv)
-    , _diualResolutionStatusCode        :: !(Maybe Text)
-    , _diualUploadProtocol              :: !(Maybe Text)
-    , _diualAccessToken                 :: !(Maybe Text)
-    , _diualUploadType                  :: !(Maybe Text)
+    { _diualParent :: !Text
+    , _diualXgafv :: !(Maybe Xgafv)
+    , _diualResolutionStatusCode :: !(Maybe Text)
+    , _diualUploadProtocol :: !(Maybe Text)
+    , _diualAccessToken :: !(Maybe Text)
+    , _diualUploadType :: !(Maybe Text)
     , _diualDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _diualPageToken                   :: !(Maybe Text)
-    , _diualPageSize                    :: !(Maybe (Textual Int32))
-    , _diualCallback                    :: !(Maybe Text)
+    , _diualPageToken :: !(Maybe Text)
+    , _diualPageSize :: !(Maybe (Textual Int32))
+    , _diualCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

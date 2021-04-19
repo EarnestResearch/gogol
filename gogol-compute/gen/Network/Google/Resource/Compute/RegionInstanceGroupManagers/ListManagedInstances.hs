@@ -44,8 +44,8 @@ module Network.Google.Resource.Compute.RegionInstanceGroupManagers.ListManagedIn
     , rigmlmiMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionInstanceGroupManagers.listManagedInstances@ method which the
 -- 'RegionInstanceGroupManagersListManagedInstances' request conforms to.
@@ -75,13 +75,13 @@ type RegionInstanceGroupManagersListManagedInstancesResource
 -- /See:/ 'regionInstanceGroupManagersListManagedInstances' smart constructor.
 data RegionInstanceGroupManagersListManagedInstances =
   RegionInstanceGroupManagersListManagedInstances'
-    { _rigmlmiProject              :: !Text
+    { _rigmlmiProject :: !Text
     , _rigmlmiInstanceGroupManager :: !Text
-    , _rigmlmiOrderBy              :: !(Maybe Text)
-    , _rigmlmiFilter               :: !(Maybe Text)
-    , _rigmlmiRegion               :: !Text
-    , _rigmlmiPageToken            :: !(Maybe Text)
-    , _rigmlmiMaxResults           :: !(Textual Word32)
+    , _rigmlmiOrderBy :: !(Maybe Text)
+    , _rigmlmiFilter :: !(Maybe Text)
+    , _rigmlmiRegion :: !Text
+    , _rigmlmiPageToken :: !(Maybe Text)
+    , _rigmlmiMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

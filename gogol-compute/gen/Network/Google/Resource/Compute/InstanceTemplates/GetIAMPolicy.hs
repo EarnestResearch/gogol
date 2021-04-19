@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.InstanceTemplates.GetIAMPolicy
     , itgipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceTemplates.getIamPolicy@ method which the
 -- 'InstanceTemplatesGetIAMPolicy' request conforms to.
@@ -60,7 +60,7 @@ type InstanceTemplatesGetIAMPolicyResource =
 -- /See:/ 'instanceTemplatesGetIAMPolicy' smart constructor.
 data InstanceTemplatesGetIAMPolicy =
   InstanceTemplatesGetIAMPolicy'
-    { _itgipProject  :: !Text
+    { _itgipProject :: !Text
     , _itgipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

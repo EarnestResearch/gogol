@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.Get
     , acegPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.get@ method which the
 -- 'AccountsContainersEnvironmentsGet' request conforms to.

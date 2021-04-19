@@ -17,20 +17,20 @@
 --
 module Network.Google.TextToSpeech.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.TextToSpeech.Types.Sum
+import Network.Google.Prelude
+import Network.Google.TextToSpeech.Types.Sum
 
 -- | Description of audio data to be synthesized.
 --
 -- /See:/ 'audioConfig' smart constructor.
 data AudioConfig =
   AudioConfig'
-    { _acVolumeGainDB     :: !(Maybe (Textual Double))
-    , _acSampleRateHertz  :: !(Maybe (Textual Int32))
+    { _acVolumeGainDB :: !(Maybe (Textual Double))
+    , _acSampleRateHertz :: !(Maybe (Textual Int32))
     , _acEffectsProFileId :: !(Maybe [Text])
-    , _acAudioEncoding    :: !(Maybe AudioConfigAudioEncoding)
-    , _acSpeakingRate     :: !(Maybe (Textual Double))
-    , _acPitch            :: !(Maybe (Textual Double))
+    , _acAudioEncoding :: !(Maybe AudioConfigAudioEncoding)
+    , _acSpeakingRate :: !(Maybe (Textual Double))
+    , _acPitch :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -153,8 +153,8 @@ instance ToJSON AudioConfig where
 data VoiceSelectionParams =
   VoiceSelectionParams'
     { _vspLanguageCode :: !(Maybe Text)
-    , _vspSsmlGender   :: !(Maybe VoiceSelectionParamsSsmlGender)
-    , _vspName         :: !(Maybe Text)
+    , _vspSsmlGender :: !(Maybe VoiceSelectionParamsSsmlGender)
+    , _vspName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -230,8 +230,8 @@ instance ToJSON VoiceSelectionParams where
 data SynthesizeSpeechRequest =
   SynthesizeSpeechRequest'
     { _ssrAudioConfig :: !(Maybe AudioConfig)
-    , _ssrInput       :: !(Maybe SynthesisInput)
-    , _ssrVoice       :: !(Maybe VoiceSelectionParams)
+    , _ssrInput :: !(Maybe SynthesisInput)
+    , _ssrVoice :: !(Maybe VoiceSelectionParams)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -417,10 +417,10 @@ instance ToJSON SynthesizeSpeechResponse where
 -- /See:/ 'voice' smart constructor.
 data Voice =
   Voice'
-    { _vLanguageCodes          :: !(Maybe [Text])
+    { _vLanguageCodes :: !(Maybe [Text])
     , _vNATuralSampleRateHertz :: !(Maybe (Textual Int32))
-    , _vSsmlGender             :: !(Maybe VoiceSsmlGender)
-    , _vName                   :: !(Maybe Text)
+    , _vSsmlGender :: !(Maybe VoiceSsmlGender)
+    , _vName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

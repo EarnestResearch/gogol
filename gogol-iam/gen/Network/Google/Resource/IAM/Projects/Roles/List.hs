@@ -45,8 +45,8 @@ module Network.Google.Resource.IAM.Projects.Roles.List
     , prlCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.list@ method which the
 -- 'ProjectsRolesList' request conforms to.
@@ -71,16 +71,16 @@ type ProjectsRolesListResource =
 -- /See:/ 'projectsRolesList' smart constructor.
 data ProjectsRolesList =
   ProjectsRolesList'
-    { _prlParent         :: !Text
-    , _prlXgafv          :: !(Maybe Xgafv)
+    { _prlParent :: !Text
+    , _prlXgafv :: !(Maybe Xgafv)
     , _prlUploadProtocol :: !(Maybe Text)
-    , _prlAccessToken    :: !(Maybe Text)
-    , _prlUploadType     :: !(Maybe Text)
-    , _prlShowDeleted    :: !(Maybe Bool)
-    , _prlView           :: !(Maybe Text)
-    , _prlPageToken      :: !(Maybe Text)
-    , _prlPageSize       :: !(Maybe (Textual Int32))
-    , _prlCallback       :: !(Maybe Text)
+    , _prlAccessToken :: !(Maybe Text)
+    , _prlUploadType :: !(Maybe Text)
+    , _prlShowDeleted :: !(Maybe Bool)
+    , _prlView :: !(Maybe Text)
+    , _prlPageToken :: !(Maybe Text)
+    , _prlPageSize :: !(Maybe (Textual Int32))
+    , _prlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

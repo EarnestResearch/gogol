@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Groups.Aliases.Delete
     , gadAlias
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.aliases.delete@ method which the
 -- 'GroupsAliasesDelete' request conforms to.
@@ -58,7 +58,7 @@ type GroupsAliasesDeleteResource =
 data GroupsAliasesDelete =
   GroupsAliasesDelete'
     { _gadGroupKey :: !Text
-    , _gadAlias    :: !Text
+    , _gadAlias :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

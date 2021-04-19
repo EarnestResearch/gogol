@@ -119,17 +119,17 @@ module Network.Google.CloudPrivateCatalog
     , gcpvpCreateTime
     ) where
 
-import           Network.Google.CloudPrivateCatalog.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudPrivateCatalog.Folders.Catalogs.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Folders.Products.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Folders.Versions.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Organizations.Catalogs.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Organizations.Products.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Organizations.Versions.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Projects.Catalogs.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Projects.Products.Search
-import           Network.Google.Resource.CloudPrivateCatalog.Projects.Versions.Search
+import Network.Google.Prelude
+import Network.Google.CloudPrivateCatalog.Types
+import Network.Google.Resource.CloudPrivateCatalog.Folders.Catalogs.Search
+import Network.Google.Resource.CloudPrivateCatalog.Folders.Products.Search
+import Network.Google.Resource.CloudPrivateCatalog.Folders.Versions.Search
+import Network.Google.Resource.CloudPrivateCatalog.Organizations.Catalogs.Search
+import Network.Google.Resource.CloudPrivateCatalog.Organizations.Products.Search
+import Network.Google.Resource.CloudPrivateCatalog.Organizations.Versions.Search
+import Network.Google.Resource.CloudPrivateCatalog.Projects.Catalogs.Search
+import Network.Google.Resource.CloudPrivateCatalog.Projects.Products.Search
+import Network.Google.Resource.CloudPrivateCatalog.Projects.Versions.Search
 
 {- $resources
 TODO

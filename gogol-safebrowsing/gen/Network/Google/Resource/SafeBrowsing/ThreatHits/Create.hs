@@ -42,8 +42,8 @@ module Network.Google.Resource.SafeBrowsing.ThreatHits.Create
     , thcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types
 
 -- | A resource alias for @safebrowsing.threatHits.create@ method which the
 -- 'ThreatHitsCreate' request conforms to.
@@ -64,12 +64,12 @@ type ThreatHitsCreateResource =
 -- /See:/ 'threatHitsCreate' smart constructor.
 data ThreatHitsCreate =
   ThreatHitsCreate'
-    { _thcXgafv          :: !(Maybe Xgafv)
+    { _thcXgafv :: !(Maybe Xgafv)
     , _thcUploadProtocol :: !(Maybe Text)
-    , _thcAccessToken    :: !(Maybe Text)
-    , _thcUploadType     :: !(Maybe Text)
-    , _thcPayload        :: !ThreatHit
-    , _thcCallback       :: !(Maybe Text)
+    , _thcAccessToken :: !(Maybe Text)
+    , _thcUploadType :: !(Maybe Text)
+    , _thcPayload :: !ThreatHit
+    , _thcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

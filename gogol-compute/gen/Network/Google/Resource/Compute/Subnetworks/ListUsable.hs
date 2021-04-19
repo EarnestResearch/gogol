@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Subnetworks.ListUsable
     , sluMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.subnetworks.listUsable@ method which the
 -- 'SubnetworksListUsable' request conforms to.
@@ -65,10 +65,10 @@ type SubnetworksListUsableResource =
 -- /See:/ 'subnetworksListUsable' smart constructor.
 data SubnetworksListUsable =
   SubnetworksListUsable'
-    { _sluOrderBy    :: !(Maybe Text)
-    , _sluProject    :: !Text
-    , _sluFilter     :: !(Maybe Text)
-    , _sluPageToken  :: !(Maybe Text)
+    { _sluOrderBy :: !(Maybe Text)
+    , _sluProject :: !Text
+    , _sluFilter :: !(Maybe Text)
+    , _sluPageToken :: !(Maybe Text)
     , _sluMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

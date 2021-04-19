@@ -47,8 +47,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.TestIAMPer
     , patipCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.testIamPermissions@ method which the
 -- 'ProjectsAttestorsTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsAttestorsTestIAMPermissionsResource =
 -- /See:/ 'projectsAttestorsTestIAMPermissions' smart constructor.
 data ProjectsAttestorsTestIAMPermissions =
   ProjectsAttestorsTestIAMPermissions'
-    { _patipXgafv          :: !(Maybe Xgafv)
+    { _patipXgafv :: !(Maybe Xgafv)
     , _patipUploadProtocol :: !(Maybe Text)
-    , _patipAccessToken    :: !(Maybe Text)
-    , _patipUploadType     :: !(Maybe Text)
-    , _patipPayload        :: !TestIAMPermissionsRequest
-    , _patipResource       :: !Text
-    , _patipCallback       :: !(Maybe Text)
+    , _patipAccessToken :: !(Maybe Text)
+    , _patipUploadType :: !(Maybe Text)
+    , _patipPayload :: !TestIAMPermissionsRequest
+    , _patipResource :: !Text
+    , _patipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

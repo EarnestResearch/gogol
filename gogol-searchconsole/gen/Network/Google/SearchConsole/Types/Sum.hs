@@ -16,7 +16,7 @@
 --
 module Network.Google.SearchConsole.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Test verdict, whether the page is mobile friendly or not.
 data RunMobileFriendlyTestResponseMobileFriendliness

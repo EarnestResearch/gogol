@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Purchases.Subscriptions.Defer
     , psdSubscriptionId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.purchases.subscriptions.defer@ method which the
 -- 'PurchasesSubscriptionsDefer' request conforms to.
@@ -65,9 +65,9 @@ type PurchasesSubscriptionsDeferResource =
 -- /See:/ 'purchasesSubscriptionsDefer' smart constructor.
 data PurchasesSubscriptionsDefer =
   PurchasesSubscriptionsDefer'
-    { _psdPackageName    :: !Text
-    , _psdToken          :: !Text
-    , _psdPayload        :: !SubscriptionPurchasesDeferRequest
+    { _psdPackageName :: !Text
+    , _psdToken :: !Text
+    , _psdPayload :: !SubscriptionPurchasesDeferRequest
     , _psdSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

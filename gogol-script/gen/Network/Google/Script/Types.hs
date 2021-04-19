@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -294,9 +294,9 @@ module Network.Google.Script.Types
     , udrDeploymentConfig
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Script.Types.Product
-import           Network.Google.Script.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Script.Types.Product
+import Network.Google.Script.Types.Sum
 
 -- | Default request referring to version 'v1' of the Apps Script API. This contains the host and root path used as a starting point for constructing service requests.
 scriptService :: ServiceConfig

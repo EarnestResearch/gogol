@@ -42,8 +42,8 @@ module Network.Google.Resource.Monitoring.Projects.Groups.Delete
     , pgdCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.groups.delete@ method which the
 -- 'ProjectsGroupsDelete' request conforms to.
@@ -63,13 +63,13 @@ type ProjectsGroupsDeleteResource =
 -- /See:/ 'projectsGroupsDelete' smart constructor.
 data ProjectsGroupsDelete =
   ProjectsGroupsDelete'
-    { _pgdXgafv          :: !(Maybe Xgafv)
+    { _pgdXgafv :: !(Maybe Xgafv)
     , _pgdUploadProtocol :: !(Maybe Text)
-    , _pgdAccessToken    :: !(Maybe Text)
-    , _pgdUploadType     :: !(Maybe Text)
-    , _pgdName           :: !Text
-    , _pgdRecursive      :: !(Maybe Bool)
-    , _pgdCallback       :: !(Maybe Text)
+    , _pgdAccessToken :: !(Maybe Text)
+    , _pgdUploadType :: !(Maybe Text)
+    , _pgdName :: !Text
+    , _pgdRecursive :: !(Maybe Bool)
+    , _pgdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

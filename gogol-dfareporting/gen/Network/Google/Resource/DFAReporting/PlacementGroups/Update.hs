@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Update
     , pguPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.update@ method which the
 -- 'PlacementGroupsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type PlacementGroupsUpdateResource =
 data PlacementGroupsUpdate =
   PlacementGroupsUpdate'
     { _pguProFileId :: !(Textual Int64)
-    , _pguPayload   :: !PlacementGroup
+    , _pguPayload :: !PlacementGroup
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

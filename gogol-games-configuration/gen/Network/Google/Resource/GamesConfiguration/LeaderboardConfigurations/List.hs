@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesConfiguration.LeaderboardConfigurations.List
     , lclMaxResults
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.leaderboardConfigurations.list@ method which the
 -- 'LeaderboardConfigurationsList' request conforms to.
@@ -60,8 +60,8 @@ type LeaderboardConfigurationsListResource =
 data LeaderboardConfigurationsList =
   LeaderboardConfigurationsList'
     { _lclApplicationId :: !Text
-    , _lclPageToken     :: !(Maybe Text)
-    , _lclMaxResults    :: !(Maybe (Textual Int32))
+    , _lclPageToken :: !(Maybe Text)
+    , _lclMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

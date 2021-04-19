@@ -44,8 +44,8 @@ module Network.Google.Resource.Language.Languages.List
     , llCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @language.languages.list@ method which the
 -- 'LanguagesList' request conforms to.
@@ -71,15 +71,15 @@ type LanguagesListResource =
 -- /See:/ 'languagesList' smart constructor.
 data LanguagesList =
   LanguagesList'
-    { _llXgafv          :: !(Maybe Xgafv)
+    { _llXgafv :: !(Maybe Xgafv)
     , _llUploadProtocol :: !(Maybe Text)
-    , _llPp             :: !Bool
-    , _llAccessToken    :: !(Maybe Text)
-    , _llUploadType     :: !(Maybe Text)
-    , _llBearerToken    :: !(Maybe Text)
-    , _llModel          :: !(Maybe Text)
-    , _llTarget         :: !(Maybe Text)
-    , _llCallback       :: !(Maybe Text)
+    , _llPp :: !Bool
+    , _llAccessToken :: !(Maybe Text)
+    , _llUploadType :: !(Maybe Text)
+    , _llBearerToken :: !(Maybe Text)
+    , _llModel :: !(Maybe Text)
+    , _llTarget :: !(Maybe Text)
+    , _llCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

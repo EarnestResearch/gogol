@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.UpdateOrganizationSe
     , ouosCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.updateOrganizationSettings@ method which the
 -- 'OrganizationsUpdateOrganizationSettings' request conforms to.
@@ -67,14 +67,14 @@ type OrganizationsUpdateOrganizationSettingsResource
 -- /See:/ 'organizationsUpdateOrganizationSettings' smart constructor.
 data OrganizationsUpdateOrganizationSettings =
   OrganizationsUpdateOrganizationSettings'
-    { _ouosXgafv          :: !(Maybe Xgafv)
+    { _ouosXgafv :: !(Maybe Xgafv)
     , _ouosUploadProtocol :: !(Maybe Text)
-    , _ouosUpdateMask     :: !(Maybe GFieldMask)
-    , _ouosAccessToken    :: !(Maybe Text)
-    , _ouosUploadType     :: !(Maybe Text)
-    , _ouosPayload        :: !OrganizationSettings
-    , _ouosName           :: !Text
-    , _ouosCallback       :: !(Maybe Text)
+    , _ouosUpdateMask :: !(Maybe GFieldMask)
+    , _ouosAccessToken :: !(Maybe Text)
+    , _ouosUploadType :: !(Maybe Text)
+    , _ouosPayload :: !OrganizationSettings
+    , _ouosName :: !Text
+    , _ouosCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

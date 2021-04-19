@@ -17,8 +17,8 @@
 --
 module Network.Google.FirebaseRules.Types.Product where
 
-import           Network.Google.FirebaseRules.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types.Sum
+import Network.Google.Prelude
 
 -- | Position in the \`Source\` content including its line, column number,
 -- and an index of the \`File\` in the \`Source\` message. Used for debug
@@ -27,8 +27,8 @@ import           Network.Google.Prelude
 -- /See:/ 'sourcePosition' smart constructor.
 data SourcePosition =
   SourcePosition'
-    { _spLine     :: !(Maybe (Textual Int32))
-    , _spColumn   :: !(Maybe (Textual Int32))
+    { _spLine :: !(Maybe (Textual Int32))
+    , _spColumn :: !(Maybe (Textual Int32))
     , _spFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -94,10 +94,10 @@ instance ToJSON SourcePosition where
 -- /See:/ 'testCase' smart constructor.
 data TestCase =
   TestCase'
-    { _tcResource      :: !(Maybe JSONValue)
-    , _tcExpectation   :: !(Maybe TestCaseExpectation)
+    { _tcResource :: !(Maybe JSONValue)
+    , _tcExpectation :: !(Maybe TestCaseExpectation)
     , _tcFunctionMocks :: !(Maybe [FunctionMock])
-    , _tcRequest       :: !(Maybe JSONValue)
+    , _tcRequest :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -185,7 +185,7 @@ instance ToJSON TestCase where
 data VisitedExpression =
   VisitedExpression'
     { _veSourcePosition :: !(Maybe SourcePosition)
-    , _veValue          :: !(Maybe JSONValue)
+    , _veValue :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -265,9 +265,9 @@ instance ToJSON Empty where
 -- /See:/ 'functionMock' smart constructor.
 data FunctionMock =
   FunctionMock'
-    { _fmArgs     :: !(Maybe [Arg])
+    { _fmArgs :: !(Maybe [Arg])
     , _fmFunction :: !(Maybe Text)
-    , _fmResult   :: !(Maybe Result)
+    , _fmResult :: !(Maybe Result)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -327,7 +327,7 @@ instance ToJSON FunctionMock where
 -- /See:/ 'functionCall' smart constructor.
 data FunctionCall =
   FunctionCall'
-    { _fcArgs     :: !(Maybe [JSONValue])
+    { _fcArgs :: !(Maybe [JSONValue])
     , _fcFunction :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -376,7 +376,7 @@ instance ToJSON FunctionCall where
 data ListReleasesResponse =
   ListReleasesResponse'
     { _lrrNextPageToken :: !(Maybe Text)
-    , _lrrReleases      :: !(Maybe [Release])
+    , _lrrReleases :: !(Maybe [Release])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -428,7 +428,7 @@ instance ToJSON ListReleasesResponse where
 -- /See:/ 'result' smart constructor.
 data Result =
   Result'
-    { _rValue     :: !(Maybe JSONValue)
+    { _rValue :: !(Maybe JSONValue)
     , _rUndefined :: !(Maybe Empty)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -475,7 +475,7 @@ instance ToJSON Result where
 data TestRulesetResponse =
   TestRulesetResponse'
     { _trrTestResults :: !(Maybe [TestResult])
-    , _trrIssues      :: !(Maybe [Issue])
+    , _trrIssues :: !(Maybe [Issue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -534,9 +534,9 @@ instance ToJSON TestRulesetResponse where
 data Release =
   Release'
     { _rRulesetName :: !(Maybe Text)
-    , _rUpdateTime  :: !(Maybe DateTime')
-    , _rName        :: !(Maybe Text)
-    , _rCreateTime  :: !(Maybe DateTime')
+    , _rUpdateTime :: !(Maybe DateTime')
+    , _rName :: !(Maybe Text)
+    , _rCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -624,7 +624,7 @@ instance ToJSON Release where
 -- /See:/ 'arg' smart constructor.
 data Arg =
   Arg'
-    { _aAnyValue   :: !(Maybe Empty)
+    { _aAnyValue :: !(Maybe Empty)
     , _aExactValue :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -671,8 +671,8 @@ instance ToJSON Arg where
 -- /See:/ 'ruleset' smart constructor.
 data Ruleset =
   Ruleset'
-    { _rulName       :: !(Maybe Text)
-    , _rulSource     :: !(Maybe Source)
+    { _rulName :: !(Maybe Text)
+    , _rulSource :: !(Maybe Source)
     , _rulCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -732,12 +732,12 @@ instance ToJSON Ruleset where
 -- /See:/ 'getReleaseExecutableResponse' smart constructor.
 data GetReleaseExecutableResponse =
   GetReleaseExecutableResponse'
-    { _grerExecutable        :: !(Maybe Bytes)
-    , _grerRulesetName       :: !(Maybe Text)
-    , _grerUpdateTime        :: !(Maybe DateTime')
-    , _grerSyncTime          :: !(Maybe DateTime')
+    { _grerExecutable :: !(Maybe Bytes)
+    , _grerRulesetName :: !(Maybe Text)
+    , _grerUpdateTime :: !(Maybe DateTime')
+    , _grerSyncTime :: !(Maybe DateTime')
     , _grerExecutableVersion :: !(Maybe GetReleaseExecutableResponseExecutableVersion)
-    , _grerLanguage          :: !(Maybe GetReleaseExecutableResponseLanguage)
+    , _grerLanguage :: !(Maybe GetReleaseExecutableResponseLanguage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -837,11 +837,11 @@ instance ToJSON GetReleaseExecutableResponse where
 -- /See:/ 'testResult' smart constructor.
 data TestResult =
   TestResult'
-    { _trState              :: !(Maybe TestResultState)
-    , _trFunctionCalls      :: !(Maybe [FunctionCall])
+    { _trState :: !(Maybe TestResultState)
+    , _trFunctionCalls :: !(Maybe [FunctionCall])
     , _trVisitedExpressions :: !(Maybe [VisitedExpression])
-    , _trErrorPosition      :: !(Maybe SourcePosition)
-    , _trDebugMessages      :: !(Maybe [Text])
+    , _trErrorPosition :: !(Maybe SourcePosition)
+    , _trDebugMessages :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1024,7 +1024,7 @@ instance ToJSON TestSuite where
 -- /See:/ 'testRulesetRequest' smart constructor.
 data TestRulesetRequest =
   TestRulesetRequest'
-    { _trrSource    :: !(Maybe Source)
+    { _trrSource :: !(Maybe Source)
     , _trrTestSuite :: !(Maybe TestSuite)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1074,8 +1074,8 @@ instance ToJSON TestRulesetRequest where
 data File =
   File'
     { _fFingerprint :: !(Maybe Bytes)
-    , _fContent     :: !(Maybe Text)
-    , _fName        :: !(Maybe Text)
+    , _fContent :: !(Maybe Text)
+    , _fName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1129,7 +1129,7 @@ instance ToJSON File where
 -- /See:/ 'listRulesetsResponse' smart constructor.
 data ListRulesetsResponse =
   ListRulesetsResponse'
-    { _lRulesets      :: !(Maybe [Ruleset])
+    { _lRulesets :: !(Maybe [Ruleset])
     , _lNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1183,8 +1183,8 @@ instance ToJSON ListRulesetsResponse where
 data Issue =
   Issue'
     { _iSourcePosition :: !(Maybe SourcePosition)
-    , _iSeverity       :: !(Maybe IssueSeverity)
-    , _iDescription    :: !(Maybe Text)
+    , _iSeverity :: !(Maybe IssueSeverity)
+    , _iDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1243,7 +1243,7 @@ instance ToJSON Issue where
 data UpdateReleaseRequest =
   UpdateReleaseRequest'
     { _urrUpdateMask :: !(Maybe GFieldMask)
-    , _urrRelease    :: !(Maybe Release)
+    , _urrRelease :: !(Maybe Release)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

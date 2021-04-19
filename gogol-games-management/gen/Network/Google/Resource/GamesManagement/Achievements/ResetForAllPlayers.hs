@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Achievements.ResetForAllPlayers
     , arfapAchievementId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.achievements.resetForAllPlayers@ method which the
 -- 'AchievementsResetForAllPlayers' request conforms to.

@@ -43,8 +43,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Notes.Create
     , pncCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.notes.create@ method which the
 -- 'ProjectsNotesCreate' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsNotesCreateResource =
 -- /See:/ 'projectsNotesCreate' smart constructor.
 data ProjectsNotesCreate =
   ProjectsNotesCreate'
-    { _pncParent         :: !Text
-    , _pncXgafv          :: !(Maybe Xgafv)
+    { _pncParent :: !Text
+    , _pncXgafv :: !(Maybe Xgafv)
     , _pncUploadProtocol :: !(Maybe Text)
-    , _pncAccessToken    :: !(Maybe Text)
-    , _pncUploadType     :: !(Maybe Text)
-    , _pncPayload        :: !Note
-    , _pncNoteId         :: !(Maybe Text)
-    , _pncCallback       :: !(Maybe Text)
+    , _pncAccessToken :: !(Maybe Text)
+    , _pncUploadType :: !(Maybe Text)
+    , _pncPayload :: !Note
+    , _pncNoteId :: !(Maybe Text)
+    , _pncCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

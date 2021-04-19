@@ -49,8 +49,8 @@ module Network.Google.Resource.Poly.Assets.List
     , alCallback
     ) where
 
-import           Network.Google.Poly.Types
-import           Network.Google.Prelude
+import Network.Google.Poly.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @poly.assets.list@ method which the
 -- 'AssetsList' request conforms to.
@@ -79,19 +79,19 @@ type AssetsListResource =
 -- /See:/ 'assetsList' smart constructor.
 data AssetsList =
   AssetsList'
-    { _alXgafv          :: !(Maybe Xgafv)
+    { _alXgafv :: !(Maybe Xgafv)
     , _alUploadProtocol :: !(Maybe Text)
-    , _alOrderBy        :: !(Maybe Text)
-    , _alCategory       :: !(Maybe Text)
-    , _alAccessToken    :: !(Maybe Text)
-    , _alFormat         :: !(Maybe Text)
-    , _alUploadType     :: !(Maybe Text)
-    , _alKeywords       :: !(Maybe Text)
-    , _alPageToken      :: !(Maybe Text)
-    , _alCurated        :: !(Maybe Bool)
-    , _alMaxComplexity  :: !(Maybe Text)
-    , _alPageSize       :: !(Maybe (Textual Int32))
-    , _alCallback       :: !(Maybe Text)
+    , _alOrderBy :: !(Maybe Text)
+    , _alCategory :: !(Maybe Text)
+    , _alAccessToken :: !(Maybe Text)
+    , _alFormat :: !(Maybe Text)
+    , _alUploadType :: !(Maybe Text)
+    , _alKeywords :: !(Maybe Text)
+    , _alPageToken :: !(Maybe Text)
+    , _alCurated :: !(Maybe Bool)
+    , _alMaxComplexity :: !(Maybe Text)
+    , _alPageSize :: !(Maybe (Textual Int32))
+    , _alCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

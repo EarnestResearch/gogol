@@ -45,8 +45,8 @@ module Network.Google.Resource.Books.Layers.AnnotationData.Get
     , ladgLayerId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.layers.annotationData.get@ method which the
 -- 'LayersAnnotationDataGet' request conforms to.
@@ -74,16 +74,16 @@ type LayersAnnotationDataGetResource =
 -- /See:/ 'layersAnnotationDataGet' smart constructor.
 data LayersAnnotationDataGet =
   LayersAnnotationDataGet'
-    { _ladgW                   :: !(Maybe (Textual Int32))
-    , _ladgScale               :: !(Maybe (Textual Int32))
-    , _ladgLocale              :: !(Maybe Text)
-    , _ladgContentVersion      :: !Text
+    { _ladgW :: !(Maybe (Textual Int32))
+    , _ladgScale :: !(Maybe (Textual Int32))
+    , _ladgLocale :: !(Maybe Text)
+    , _ladgContentVersion :: !Text
     , _ladgAllowWebDefinitions :: !(Maybe Bool)
-    , _ladgAnnotationDataId    :: !Text
-    , _ladgVolumeId            :: !Text
-    , _ladgSource              :: !(Maybe Text)
-    , _ladgH                   :: !(Maybe (Textual Int32))
-    , _ladgLayerId             :: !Text
+    , _ladgAnnotationDataId :: !Text
+    , _ladgVolumeId :: !Text
+    , _ladgSource :: !(Maybe Text)
+    , _ladgH :: !(Maybe (Textual Int32))
+    , _ladgLayerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.SQL.Flags.List
     , flDatabaseVersion
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.flags.list@ method which the
 -- 'FlagsList' request conforms to.

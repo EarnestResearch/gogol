@@ -47,8 +47,8 @@ module Network.Google.Resource.BigQuery.Jobs.List
     , jlMaxResults
     ) where
 
-import           Network.Google.BigQuery.Types
-import           Network.Google.Prelude
+import Network.Google.BigQuery.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquery.jobs.list@ method which the
 -- 'JobsList' request conforms to.
@@ -78,12 +78,12 @@ data JobsList =
   JobsList'
     { _jlMaxCreationTime :: !(Maybe (Textual Word64))
     , _jlMinCreationTime :: !(Maybe (Textual Word64))
-    , _jlStateFilter     :: !(Maybe [JobsListStateFilter])
-    , _jlProjection      :: !(Maybe JobsListProjection)
-    , _jlPageToken       :: !(Maybe Text)
-    , _jlProjectId       :: !Text
-    , _jlAllUsers        :: !(Maybe Bool)
-    , _jlMaxResults      :: !(Maybe (Textual Word32))
+    , _jlStateFilter :: !(Maybe [JobsListStateFilter])
+    , _jlProjection :: !(Maybe JobsListProjection)
+    , _jlPageToken :: !(Maybe Text)
+    , _jlProjectId :: !Text
+    , _jlAllUsers :: !(Maybe Bool)
+    , _jlMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

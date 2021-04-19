@@ -477,10 +477,10 @@ module Network.Google.AnalyticsReporting
     , sdScreenName
     ) where
 
-import           Network.Google.AnalyticsReporting.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.AnalyticsReporting.Reports.BatchGet
-import           Network.Google.Resource.AnalyticsReporting.UserActivity.Search
+import Network.Google.Prelude
+import Network.Google.AnalyticsReporting.Types
+import Network.Google.Resource.AnalyticsReporting.Reports.BatchGet
+import Network.Google.Resource.AnalyticsReporting.UserActivity.Search
 
 {- $resources
 TODO

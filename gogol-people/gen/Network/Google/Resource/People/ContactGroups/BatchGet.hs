@@ -43,8 +43,8 @@ module Network.Google.Resource.People.ContactGroups.BatchGet
     , cgbgCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.contactGroups.batchGet@ method which the
 -- 'ContactGroupsBatchGet' request conforms to.
@@ -67,13 +67,13 @@ type ContactGroupsBatchGetResource =
 -- /See:/ 'contactGroupsBatchGet' smart constructor.
 data ContactGroupsBatchGet =
   ContactGroupsBatchGet'
-    { _cgbgXgafv          :: !(Maybe Xgafv)
-    , _cgbgMaxMembers     :: !(Maybe (Textual Int32))
+    { _cgbgXgafv :: !(Maybe Xgafv)
+    , _cgbgMaxMembers :: !(Maybe (Textual Int32))
     , _cgbgUploadProtocol :: !(Maybe Text)
-    , _cgbgAccessToken    :: !(Maybe Text)
-    , _cgbgUploadType     :: !(Maybe Text)
-    , _cgbgResourceNames  :: !(Maybe [Text])
-    , _cgbgCallback       :: !(Maybe Text)
+    , _cgbgAccessToken :: !(Maybe Text)
+    , _cgbgUploadType :: !(Maybe Text)
+    , _cgbgResourceNames :: !(Maybe [Text])
+    , _cgbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.YouTube.GuideCategories.List
     , gclId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.guideCategories.list@ method which the
 -- 'GuideCategoriesList' request conforms to.
@@ -62,10 +62,10 @@ type GuideCategoriesListResource =
 -- /See:/ 'guideCategoriesList' smart constructor.
 data GuideCategoriesList =
   GuideCategoriesList'
-    { _gclPart       :: !Text
+    { _gclPart :: !Text
     , _gclRegionCode :: !(Maybe Text)
-    , _gclHl         :: !Text
-    , _gclId         :: !(Maybe Text)
+    , _gclHl :: !Text
+    , _gclId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

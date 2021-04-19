@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.Update
     , wauPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.update@ method which the
 -- 'WebAppsUpdate' request conforms to.
@@ -58,9 +58,9 @@ type WebAppsUpdateResource =
 -- /See:/ 'webAppsUpdate' smart constructor.
 data WebAppsUpdate =
   WebAppsUpdate'
-    { _wauWebAppId     :: !Text
+    { _wauWebAppId :: !Text
     , _wauEnterpriseId :: !Text
-    , _wauPayload      :: !WebApp
+    , _wauPayload :: !WebApp
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

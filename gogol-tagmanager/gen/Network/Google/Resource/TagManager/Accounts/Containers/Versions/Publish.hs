@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Publish
     , acvpFingerprint
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.publish@ method which the
 -- 'AccountsContainersVersionsPublish' request conforms to.
@@ -55,7 +55,7 @@ type AccountsContainersVersionsPublishResource =
 -- /See:/ 'accountsContainersVersionsPublish' smart constructor.
 data AccountsContainersVersionsPublish =
   AccountsContainersVersionsPublish'
-    { _acvpPath        :: !Text
+    { _acvpPath :: !Text
     , _acvpFingerprint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

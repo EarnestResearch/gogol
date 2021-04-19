@@ -17,8 +17,8 @@
 --
 module Network.Google.Billing.Types.Product where
 
-import           Network.Google.Billing.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Billing.Types.Sum
+import Network.Google.Prelude
 
 -- | Specifies the audit configuration for a service. The configuration
 -- determines which permission types are logged, and what identities, if
@@ -41,7 +41,7 @@ import           Network.Google.Prelude
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -95,7 +95,7 @@ instance ToJSON AuditConfig where
 data ListServicesResponse =
   ListServicesResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrServices      :: !(Maybe [Service])
+    , _lsrServices :: !(Maybe [Service])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -150,9 +150,9 @@ instance ToJSON ListServicesResponse where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -231,9 +231,9 @@ instance ToJSON Expr where
 data BillingAccount =
   BillingAccount'
     { _baMasterBillingAccount :: !(Maybe Text)
-    , _baOpen                 :: !(Maybe Bool)
-    , _baName                 :: !(Maybe Text)
-    , _baDisplayName          :: !(Maybe Text)
+    , _baOpen :: !(Maybe Bool)
+    , _baName :: !(Maybe Text)
+    , _baDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -314,9 +314,9 @@ instance ToJSON BillingAccount where
 data Service =
   Service'
     { _sBusinessEntityName :: !(Maybe Text)
-    , _sName               :: !(Maybe Text)
-    , _sDisplayName        :: !(Maybe Text)
-    , _sServiceId          :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
+    , _sDisplayName :: !(Maybe Text)
+    , _sServiceId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -389,10 +389,10 @@ instance ToJSON Service where
 -- /See:/ 'projectBillingInfo' smart constructor.
 data ProjectBillingInfo =
   ProjectBillingInfo'
-    { _pbiName               :: !(Maybe Text)
+    { _pbiName :: !(Maybe Text)
     , _pbiBillingAccountName :: !(Maybe Text)
-    , _pbiProjectId          :: !(Maybe Text)
-    , _pbiBillingEnabled     :: !(Maybe Bool)
+    , _pbiProjectId :: !(Maybe Text)
+    , _pbiBillingEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -473,7 +473,7 @@ instance ToJSON ProjectBillingInfo where
 -- /See:/ 'tierRate' smart constructor.
 data TierRate =
   TierRate'
-    { _trUnitPrice        :: !(Maybe Money)
+    { _trUnitPrice :: !(Maybe Money)
     , _trStartUsageAmount :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -526,8 +526,8 @@ instance ToJSON TierRate where
 data Money =
   Money'
     { _mCurrencyCode :: !(Maybe Text)
-    , _mNanos        :: !(Maybe (Textual Int32))
-    , _mUnits        :: !(Maybe (Textual Int64))
+    , _mNanos :: !(Maybe (Textual Int32))
+    , _mUnits :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -590,10 +590,10 @@ instance ToJSON Money where
 -- /See:/ 'category' smart constructor.
 data Category =
   Category'
-    { _cResourceFamily     :: !(Maybe Text)
-    , _cUsageType          :: !(Maybe Text)
+    { _cResourceFamily :: !(Maybe Text)
+    , _cUsageType :: !(Maybe Text)
     , _cServiceDisplayName :: !(Maybe Text)
-    , _cResourceGroup      :: !(Maybe Text)
+    , _cResourceGroup :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -670,7 +670,7 @@ instance ToJSON Category where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -724,7 +724,7 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'listProjectBillingInfoResponse' smart constructor.
 data ListProjectBillingInfoResponse =
   ListProjectBillingInfoResponse'
-    { _lpbirNextPageToken      :: !(Maybe Text)
+    { _lpbirNextPageToken :: !(Maybe Text)
     , _lpbirProjectBillingInfo :: !(Maybe [ProjectBillingInfo])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -785,7 +785,7 @@ instance ToJSON ListProjectBillingInfoResponse where
 data ListSKUsResponse =
   ListSKUsResponse'
     { _lskurNextPageToken :: !(Maybe Text)
-    , _lskurSKUs          :: !(Maybe [SKU])
+    , _lskurSKUs :: !(Maybe [SKU])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -842,13 +842,13 @@ instance ToJSON ListSKUsResponse where
 -- /See:/ 'pricingExpression' smart constructor.
 data PricingExpression =
   PricingExpression'
-    { _peUsageUnitDescription     :: !(Maybe Text)
-    , _peBaseUnit                 :: !(Maybe Text)
+    { _peUsageUnitDescription :: !(Maybe Text)
+    , _peBaseUnit :: !(Maybe Text)
     , _peBaseUnitConversionFactor :: !(Maybe (Textual Double))
-    , _peDisplayQuantity          :: !(Maybe (Textual Double))
-    , _peTieredRates              :: !(Maybe [TierRate])
-    , _peBaseUnitDescription      :: !(Maybe Text)
-    , _peUsageUnit                :: !(Maybe Text)
+    , _peDisplayQuantity :: !(Maybe (Textual Double))
+    , _peTieredRates :: !(Maybe [TierRate])
+    , _peBaseUnitDescription :: !(Maybe Text)
+    , _peUsageUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1020,8 +1020,8 @@ instance ToJSON TestIAMPermissionsRequest where
 data AggregationInfo =
   AggregationInfo'
     { _aiAggregationInterval :: !(Maybe AggregationInfoAggregationInterval)
-    , _aiAggregationCount    :: !(Maybe (Textual Int32))
-    , _aiAggregationLevel    :: !(Maybe AggregationInfoAggregationLevel)
+    , _aiAggregationCount :: !(Maybe (Textual Int32))
+    , _aiAggregationLevel :: !(Maybe AggregationInfoAggregationLevel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1087,13 +1087,13 @@ instance ToJSON AggregationInfo where
 -- /See:/ 'sKU' smart constructor.
 data SKU =
   SKU'
-    { _skukCategory            :: !(Maybe Category)
-    , _skukSKUId               :: !(Maybe Text)
+    { _skukCategory :: !(Maybe Category)
+    , _skukSKUId :: !(Maybe Text)
     , _skukServiceProviderName :: !(Maybe Text)
-    , _skukServiceRegions      :: !(Maybe [Text])
-    , _skukName                :: !(Maybe Text)
-    , _skukPricingInfo         :: !(Maybe [PricingInfo])
-    , _skukDescription         :: !(Maybe Text)
+    , _skukServiceRegions :: !(Maybe [Text])
+    , _skukName :: !(Maybe Text)
+    , _skukPricingInfo :: !(Maybe [PricingInfo])
+    , _skukDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1266,9 +1266,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1353,7 +1353,7 @@ instance ToJSON Policy where
 -- /See:/ 'listBillingAccountsResponse' smart constructor.
 data ListBillingAccountsResponse =
   ListBillingAccountsResponse'
-    { _lbarNextPageToken   :: !(Maybe Text)
+    { _lbarNextPageToken :: !(Maybe Text)
     , _lbarBillingAccounts :: !(Maybe [BillingAccount])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1414,7 +1414,7 @@ instance ToJSON ListBillingAccountsResponse where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1467,11 +1467,11 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'pricingInfo' smart constructor.
 data PricingInfo =
   PricingInfo'
-    { _piSummary                :: !(Maybe Text)
-    , _piAggregationInfo        :: !(Maybe AggregationInfo)
-    , _piPricingExpression      :: !(Maybe PricingExpression)
+    { _piSummary :: !(Maybe Text)
+    , _piAggregationInfo :: !(Maybe AggregationInfo)
+    , _piPricingExpression :: !(Maybe PricingExpression)
     , _piCurrencyConversionRate :: !(Maybe (Textual Double))
-    , _piEffectiveTime          :: !(Maybe DateTime')
+    , _piEffectiveTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1569,8 +1569,8 @@ instance ToJSON PricingInfo where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

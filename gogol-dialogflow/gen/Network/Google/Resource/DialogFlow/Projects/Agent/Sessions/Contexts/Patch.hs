@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.Contexts.Patch
     , pascpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.contexts.patch@ method which the
 -- 'ProjectsAgentSessionsContextsPatch' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsAgentSessionsContextsPatchResource =
 -- /See:/ 'projectsAgentSessionsContextsPatch' smart constructor.
 data ProjectsAgentSessionsContextsPatch =
   ProjectsAgentSessionsContextsPatch'
-    { _pascpXgafv          :: !(Maybe Xgafv)
+    { _pascpXgafv :: !(Maybe Xgafv)
     , _pascpUploadProtocol :: !(Maybe Text)
-    , _pascpUpdateMask     :: !(Maybe GFieldMask)
-    , _pascpAccessToken    :: !(Maybe Text)
-    , _pascpUploadType     :: !(Maybe Text)
-    , _pascpPayload        :: !GoogleCloudDialogflowV2Context
-    , _pascpName           :: !Text
-    , _pascpCallback       :: !(Maybe Text)
+    , _pascpUpdateMask :: !(Maybe GFieldMask)
+    , _pascpAccessToken :: !(Maybe Text)
+    , _pascpUploadType :: !(Maybe Text)
+    , _pascpPayload :: !GoogleCloudDialogflowV2Context
+    , _pascpName :: !Text
+    , _pascpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

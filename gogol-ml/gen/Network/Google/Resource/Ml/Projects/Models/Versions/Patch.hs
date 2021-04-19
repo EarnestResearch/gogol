@@ -44,8 +44,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.Patch
     , pmvpCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.patch@ method which the
 -- 'ProjectsModelsVersionsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsModelsVersionsPatchResource =
 -- /See:/ 'projectsModelsVersionsPatch' smart constructor.
 data ProjectsModelsVersionsPatch =
   ProjectsModelsVersionsPatch'
-    { _pmvpXgafv          :: !(Maybe Xgafv)
+    { _pmvpXgafv :: !(Maybe Xgafv)
     , _pmvpUploadProtocol :: !(Maybe Text)
-    , _pmvpUpdateMask     :: !(Maybe GFieldMask)
-    , _pmvpAccessToken    :: !(Maybe Text)
-    , _pmvpUploadType     :: !(Maybe Text)
-    , _pmvpPayload        :: !GoogleCloudMlV1__Version
-    , _pmvpName           :: !Text
-    , _pmvpCallback       :: !(Maybe Text)
+    , _pmvpUpdateMask :: !(Maybe GFieldMask)
+    , _pmvpAccessToken :: !(Maybe Text)
+    , _pmvpUploadType :: !(Maybe Text)
+    , _pmvpPayload :: !GoogleCloudMlV1__Version
+    , _pmvpName :: !Text
+    , _pmvpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

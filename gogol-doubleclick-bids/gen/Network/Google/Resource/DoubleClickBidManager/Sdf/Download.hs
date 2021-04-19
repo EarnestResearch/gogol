@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Sdf.Download
     , sdPayload
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.sdf.download@ method which the
 -- 'SdfDownload' request conforms to.

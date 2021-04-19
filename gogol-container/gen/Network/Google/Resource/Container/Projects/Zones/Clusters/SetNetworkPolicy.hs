@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.SetNetworkPolic
     , pzcsnpCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.setNetworkPolicy@ method which the
 -- 'ProjectsZonesClustersSetNetworkPolicy' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsZonesClustersSetNetworkPolicyResource =
 -- /See:/ 'projectsZonesClustersSetNetworkPolicy' smart constructor.
 data ProjectsZonesClustersSetNetworkPolicy =
   ProjectsZonesClustersSetNetworkPolicy'
-    { _pzcsnpXgafv          :: !(Maybe Xgafv)
+    { _pzcsnpXgafv :: !(Maybe Xgafv)
     , _pzcsnpUploadProtocol :: !(Maybe Text)
-    , _pzcsnpAccessToken    :: !(Maybe Text)
-    , _pzcsnpUploadType     :: !(Maybe Text)
-    , _pzcsnpZone           :: !Text
-    , _pzcsnpPayload        :: !SetNetworkPolicyRequest
-    , _pzcsnpClusterId      :: !Text
-    , _pzcsnpProjectId      :: !Text
-    , _pzcsnpCallback       :: !(Maybe Text)
+    , _pzcsnpAccessToken :: !(Maybe Text)
+    , _pzcsnpUploadType :: !(Maybe Text)
+    , _pzcsnpZone :: !Text
+    , _pzcsnpPayload :: !SetNetworkPolicyRequest
+    , _pzcsnpClusterId :: !Text
+    , _pzcsnpProjectId :: !Text
+    , _pzcsnpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

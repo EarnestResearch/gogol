@@ -44,8 +44,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.Delete
     , pmvdCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.delete@ method which the
 -- 'ProjectsModelsVersionsDelete' request conforms to.
@@ -68,12 +68,12 @@ type ProjectsModelsVersionsDeleteResource =
 -- /See:/ 'projectsModelsVersionsDelete' smart constructor.
 data ProjectsModelsVersionsDelete =
   ProjectsModelsVersionsDelete'
-    { _pmvdXgafv          :: !(Maybe Xgafv)
+    { _pmvdXgafv :: !(Maybe Xgafv)
     , _pmvdUploadProtocol :: !(Maybe Text)
-    , _pmvdAccessToken    :: !(Maybe Text)
-    , _pmvdUploadType     :: !(Maybe Text)
-    , _pmvdName           :: !Text
-    , _pmvdCallback       :: !(Maybe Text)
+    , _pmvdAccessToken :: !(Maybe Text)
+    , _pmvdUploadType :: !(Maybe Text)
+    , _pmvdName :: !Text
+    , _pmvdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

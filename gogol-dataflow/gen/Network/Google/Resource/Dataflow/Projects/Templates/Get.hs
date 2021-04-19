@@ -44,8 +44,8 @@ module Network.Google.Resource.Dataflow.Projects.Templates.Get
     , ptgCallback
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.templates.get@ method which the
 -- 'ProjectsTemplatesGet' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsTemplatesGetResource =
 -- /See:/ 'projectsTemplatesGet' smart constructor.
 data ProjectsTemplatesGet =
   ProjectsTemplatesGet'
-    { _ptgXgafv          :: !(Maybe Xgafv)
+    { _ptgXgafv :: !(Maybe Xgafv)
     , _ptgUploadProtocol :: !(Maybe Text)
-    , _ptgLocation       :: !(Maybe Text)
-    , _ptgAccessToken    :: !(Maybe Text)
-    , _ptgUploadType     :: !(Maybe Text)
-    , _ptgGcsPath        :: !(Maybe Text)
-    , _ptgView           :: !(Maybe Text)
-    , _ptgProjectId      :: !Text
-    , _ptgCallback       :: !(Maybe Text)
+    , _ptgLocation :: !(Maybe Text)
+    , _ptgAccessToken :: !(Maybe Text)
+    , _ptgUploadType :: !(Maybe Text)
+    , _ptgGcsPath :: !(Maybe Text)
+    , _ptgView :: !(Maybe Text)
+    , _ptgProjectId :: !Text
+    , _ptgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

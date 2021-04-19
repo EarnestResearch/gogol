@@ -43,8 +43,8 @@ module Network.Google.Resource.AccessContextManager.AccessPolicies.ServicePerime
     , apspdCallback
     ) where
 
-import           Network.Google.AccessContextManager.Types
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accesscontextmanager.accessPolicies.servicePerimeters.delete@ method which the
 -- 'AccessPoliciesServicePerimetersDelete' request conforms to.
@@ -65,12 +65,12 @@ type AccessPoliciesServicePerimetersDeleteResource =
 -- /See:/ 'accessPoliciesServicePerimetersDelete' smart constructor.
 data AccessPoliciesServicePerimetersDelete =
   AccessPoliciesServicePerimetersDelete'
-    { _apspdXgafv          :: !(Maybe Xgafv)
+    { _apspdXgafv :: !(Maybe Xgafv)
     , _apspdUploadProtocol :: !(Maybe Text)
-    , _apspdAccessToken    :: !(Maybe Text)
-    , _apspdUploadType     :: !(Maybe Text)
-    , _apspdName           :: !Text
-    , _apspdCallback       :: !(Maybe Text)
+    , _apspdAccessToken :: !(Maybe Text)
+    , _apspdUploadType :: !(Maybe Text)
+    , _apspdName :: !Text
+    , _apspdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

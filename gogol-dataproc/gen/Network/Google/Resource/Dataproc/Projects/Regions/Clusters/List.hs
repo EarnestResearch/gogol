@@ -45,8 +45,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.List
     , prclCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.clusters.list@ method which the
 -- 'ProjectsRegionsClustersList' request conforms to.
@@ -73,16 +73,16 @@ type ProjectsRegionsClustersListResource =
 -- /See:/ 'projectsRegionsClustersList' smart constructor.
 data ProjectsRegionsClustersList =
   ProjectsRegionsClustersList'
-    { _prclXgafv          :: !(Maybe Xgafv)
+    { _prclXgafv :: !(Maybe Xgafv)
     , _prclUploadProtocol :: !(Maybe Text)
-    , _prclAccessToken    :: !(Maybe Text)
-    , _prclUploadType     :: !(Maybe Text)
-    , _prclFilter         :: !(Maybe Text)
-    , _prclRegion         :: !Text
-    , _prclPageToken      :: !(Maybe Text)
-    , _prclProjectId      :: !Text
-    , _prclPageSize       :: !(Maybe (Textual Int32))
-    , _prclCallback       :: !(Maybe Text)
+    , _prclAccessToken :: !(Maybe Text)
+    , _prclUploadType :: !(Maybe Text)
+    , _prclFilter :: !(Maybe Text)
+    , _prclRegion :: !Text
+    , _prclPageToken :: !(Maybe Text)
+    , _prclProjectId :: !Text
+    , _prclPageSize :: !(Maybe (Textual Int32))
+    , _prclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

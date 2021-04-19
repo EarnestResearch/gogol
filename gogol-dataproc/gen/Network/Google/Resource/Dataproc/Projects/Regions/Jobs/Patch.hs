@@ -45,8 +45,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Jobs.Patch
     , prjpCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.jobs.patch@ method which the
 -- 'ProjectsRegionsJobsPatch' request conforms to.
@@ -72,16 +72,16 @@ type ProjectsRegionsJobsPatchResource =
 -- /See:/ 'projectsRegionsJobsPatch' smart constructor.
 data ProjectsRegionsJobsPatch =
   ProjectsRegionsJobsPatch'
-    { _prjpXgafv          :: !(Maybe Xgafv)
-    , _prjpJobId          :: !Text
+    { _prjpXgafv :: !(Maybe Xgafv)
+    , _prjpJobId :: !Text
     , _prjpUploadProtocol :: !(Maybe Text)
-    , _prjpUpdateMask     :: !(Maybe GFieldMask)
-    , _prjpAccessToken    :: !(Maybe Text)
-    , _prjpUploadType     :: !(Maybe Text)
-    , _prjpPayload        :: !Job
-    , _prjpRegion         :: !Text
-    , _prjpProjectId      :: !Text
-    , _prjpCallback       :: !(Maybe Text)
+    , _prjpUpdateMask :: !(Maybe GFieldMask)
+    , _prjpAccessToken :: !(Maybe Text)
+    , _prjpUploadType :: !(Maybe Text)
+    , _prjpPayload :: !Job
+    , _prjpRegion :: !Text
+    , _prjpProjectId :: !Text
+    , _prjpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

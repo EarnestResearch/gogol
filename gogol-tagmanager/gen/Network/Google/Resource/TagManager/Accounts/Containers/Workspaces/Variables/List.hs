@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Variabl
     , acwvlPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.variables.list@ method which the
 -- 'AccountsContainersWorkspacesVariablesList' request conforms to.
@@ -57,7 +57,7 @@ type AccountsContainersWorkspacesVariablesListResource
 -- /See:/ 'accountsContainersWorkspacesVariablesList' smart constructor.
 data AccountsContainersWorkspacesVariablesList =
   AccountsContainersWorkspacesVariablesList'
-    { _acwvlParent    :: !Text
+    { _acwvlParent :: !Text
     , _acwvlPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

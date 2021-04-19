@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.SetNetworkP
     , plcsnpCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.setNetworkPolicy@ method which the
 -- 'ProjectsLocationsClustersSetNetworkPolicy' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersSetNetworkPolicyResource
 -- /See:/ 'projectsLocationsClustersSetNetworkPolicy' smart constructor.
 data ProjectsLocationsClustersSetNetworkPolicy =
   ProjectsLocationsClustersSetNetworkPolicy'
-    { _plcsnpXgafv          :: !(Maybe Xgafv)
+    { _plcsnpXgafv :: !(Maybe Xgafv)
     , _plcsnpUploadProtocol :: !(Maybe Text)
-    , _plcsnpAccessToken    :: !(Maybe Text)
-    , _plcsnpUploadType     :: !(Maybe Text)
-    , _plcsnpPayload        :: !SetNetworkPolicyRequest
-    , _plcsnpName           :: !Text
-    , _plcsnpCallback       :: !(Maybe Text)
+    , _plcsnpAccessToken :: !(Maybe Text)
+    , _plcsnpUploadType :: !(Maybe Text)
+    , _plcsnpPayload :: !SetNetworkPolicyRequest
+    , _plcsnpName :: !Text
+    , _plcsnpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

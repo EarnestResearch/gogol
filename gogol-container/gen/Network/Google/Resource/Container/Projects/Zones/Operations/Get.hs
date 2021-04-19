@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Operations.Get
     , pzogCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.operations.get@ method which the
 -- 'ProjectsZonesOperationsGet' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsZonesOperationsGetResource =
 -- /See:/ 'projectsZonesOperationsGet' smart constructor.
 data ProjectsZonesOperationsGet =
   ProjectsZonesOperationsGet'
-    { _pzogXgafv          :: !(Maybe Xgafv)
+    { _pzogXgafv :: !(Maybe Xgafv)
     , _pzogUploadProtocol :: !(Maybe Text)
-    , _pzogAccessToken    :: !(Maybe Text)
-    , _pzogUploadType     :: !(Maybe Text)
-    , _pzogZone           :: !Text
-    , _pzogName           :: !(Maybe Text)
-    , _pzogProjectId      :: !Text
-    , _pzogOperationId    :: !Text
-    , _pzogCallback       :: !(Maybe Text)
+    , _pzogAccessToken :: !(Maybe Text)
+    , _pzogUploadType :: !(Maybe Text)
+    , _pzogZone :: !Text
+    , _pzogName :: !(Maybe Text)
+    , _pzogProjectId :: !Text
+    , _pzogOperationId :: !Text
+    , _pzogCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

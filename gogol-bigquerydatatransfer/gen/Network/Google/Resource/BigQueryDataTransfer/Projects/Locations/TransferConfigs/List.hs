@@ -44,8 +44,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferC
     , pltclCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.locations.transferConfigs.list@ method which the
 -- 'ProjectsLocationsTransferConfigsList' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsLocationsTransferConfigsListResource =
 -- /See:/ 'projectsLocationsTransferConfigsList' smart constructor.
 data ProjectsLocationsTransferConfigsList =
   ProjectsLocationsTransferConfigsList'
-    { _pltclParent         :: !Text
-    , _pltclXgafv          :: !(Maybe Xgafv)
+    { _pltclParent :: !Text
+    , _pltclXgafv :: !(Maybe Xgafv)
     , _pltclUploadProtocol :: !(Maybe Text)
-    , _pltclAccessToken    :: !(Maybe Text)
-    , _pltclUploadType     :: !(Maybe Text)
-    , _pltclPageToken      :: !(Maybe Text)
-    , _pltclDataSourceIds  :: !(Maybe [Text])
-    , _pltclPageSize       :: !(Maybe (Textual Int32))
-    , _pltclCallback       :: !(Maybe Text)
+    , _pltclAccessToken :: !(Maybe Text)
+    , _pltclUploadType :: !(Maybe Text)
+    , _pltclPageToken :: !(Maybe Text)
+    , _pltclDataSourceIds :: !(Maybe [Text])
+    , _pltclPageSize :: !(Maybe (Textual Int32))
+    , _pltclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

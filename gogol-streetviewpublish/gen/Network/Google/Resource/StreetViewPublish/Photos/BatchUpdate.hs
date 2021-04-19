@@ -53,8 +53,8 @@ module Network.Google.Resource.StreetViewPublish.Photos.BatchUpdate
     , pbuCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photos.batchUpdate@ method which the
 -- 'PhotosBatchUpdate' request conforms to.
@@ -87,12 +87,12 @@ type PhotosBatchUpdateResource =
 -- /See:/ 'photosBatchUpdate' smart constructor.
 data PhotosBatchUpdate =
   PhotosBatchUpdate'
-    { _pbuXgafv          :: !(Maybe Xgafv)
+    { _pbuXgafv :: !(Maybe Xgafv)
     , _pbuUploadProtocol :: !(Maybe Text)
-    , _pbuAccessToken    :: !(Maybe Text)
-    , _pbuUploadType     :: !(Maybe Text)
-    , _pbuPayload        :: !BatchUpdatePhotosRequest
-    , _pbuCallback       :: !(Maybe Text)
+    , _pbuAccessToken :: !(Maybe Text)
+    , _pbuUploadType :: !(Maybe Text)
+    , _pbuPayload :: !BatchUpdatePhotosRequest
+    , _pbuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Get
     , pncgCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.get@ method which the
 -- 'ProjectsNotificationChannelsGet' request conforms to.
@@ -70,12 +70,12 @@ type ProjectsNotificationChannelsGetResource =
 -- /See:/ 'projectsNotificationChannelsGet' smart constructor.
 data ProjectsNotificationChannelsGet =
   ProjectsNotificationChannelsGet'
-    { _pncgXgafv          :: !(Maybe Xgafv)
+    { _pncgXgafv :: !(Maybe Xgafv)
     , _pncgUploadProtocol :: !(Maybe Text)
-    , _pncgAccessToken    :: !(Maybe Text)
-    , _pncgUploadType     :: !(Maybe Text)
-    , _pncgName           :: !Text
-    , _pncgCallback       :: !(Maybe Text)
+    , _pncgAccessToken :: !(Maybe Text)
+    , _pncgUploadType :: !(Maybe Text)
+    , _pncgName :: !Text
+    , _pncgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,27 +17,27 @@
 --
 module Network.Google.ContainerBuilder.Types.Product where
 
-import           Network.Google.ContainerBuilder.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types.Sum
+import Network.Google.Prelude
 
 -- | A step in the build pipeline.
 --
 -- /See:/ 'buildStep' smart constructor.
 data BuildStep =
   BuildStep'
-    { _bsStatus     :: !(Maybe BuildStepStatus)
-    , _bsDir        :: !(Maybe Text)
-    , _bsArgs       :: !(Maybe [Text])
-    , _bsEnv        :: !(Maybe [Text])
+    { _bsStatus :: !(Maybe BuildStepStatus)
+    , _bsDir :: !(Maybe Text)
+    , _bsArgs :: !(Maybe [Text])
+    , _bsEnv :: !(Maybe [Text])
     , _bsPullTiming :: !(Maybe TimeSpan)
     , _bsEntrypoint :: !(Maybe Text)
-    , _bsWaitFor    :: !(Maybe [Text])
-    , _bsName       :: !(Maybe Text)
-    , _bsId         :: !(Maybe Text)
-    , _bsTiming     :: !(Maybe TimeSpan)
-    , _bsSecretEnv  :: !(Maybe [Text])
-    , _bsTimeout    :: !(Maybe GDuration)
-    , _bsVolumes    :: !(Maybe [Volume])
+    , _bsWaitFor :: !(Maybe [Text])
+    , _bsName :: !(Maybe Text)
+    , _bsId :: !(Maybe Text)
+    , _bsTiming :: !(Maybe TimeSpan)
+    , _bsSecretEnv :: !(Maybe [Text])
+    , _bsTimeout :: !(Maybe GDuration)
+    , _bsVolumes :: !(Maybe [Volume])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -240,9 +240,9 @@ instance ToJSON BuildStep where
 -- /See:/ 'sourceProvenance' smart constructor.
 data SourceProvenance =
   SourceProvenance'
-    { _spResolvedRepoSource    :: !(Maybe RepoSource)
+    { _spResolvedRepoSource :: !(Maybe RepoSource)
     , _spResolvedStorageSource :: !(Maybe StorageSource)
-    , _spFileHashes            :: !(Maybe SourceProvenanceFileHashes)
+    , _spFileHashes :: !(Maybe SourceProvenanceFileHashes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -316,7 +316,7 @@ instance ToJSON SourceProvenance where
 data ListBuildsResponse =
   ListBuildsResponse'
     { _lbrNextPageToken :: !(Maybe Text)
-    , _lbrBuilds        :: !(Maybe [Build])
+    , _lbrBuilds :: !(Maybe [Build])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -402,7 +402,7 @@ instance ToJSON ListBuildsResponse where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -465,7 +465,7 @@ instance ToJSON Status where
 data PullRequestFilter =
   PullRequestFilter'
     { _prfCommentControl :: !(Maybe PullRequestFilterCommentControl)
-    , _prfBranch         :: !(Maybe Text)
+    , _prfBranch :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -540,7 +540,7 @@ instance ToJSON RetryBuildRequest where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -617,7 +617,7 @@ instance ToJSON CancelOperationRequest where
 data Hash =
   Hash'
     { _hValue :: !(Maybe Bytes)
-    , _hType  :: !(Maybe HashType)
+    , _hType :: !(Maybe HashType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -660,12 +660,12 @@ instance ToJSON Hash where
 -- /See:/ 'results' smart constructor.
 data Results =
   Results'
-    { _rImages           :: !(Maybe [BuiltImage])
-    , _rBuildStepImages  :: !(Maybe [Text])
+    { _rImages :: !(Maybe [BuiltImage])
+    , _rBuildStepImages :: !(Maybe [Text])
     , _rArtifactManifest :: !(Maybe Text)
     , _rBuildStepOutputs :: !(Maybe [Bytes])
-    , _rNumArtifacts     :: !(Maybe (Textual Int64))
-    , _rArtifactTiming   :: !(Maybe TimeSpan)
+    , _rNumArtifacts :: !(Maybe (Textual Int64))
+    , _rArtifactTiming :: !(Maybe TimeSpan)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -810,12 +810,12 @@ instance ToJSON BuildTriggerSubstitutions where
 -- /See:/ 'repoSource' smart constructor.
 data RepoSource =
   RepoSource'
-    { _rsRepoName   :: !(Maybe Text)
-    , _rsDir        :: !(Maybe Text)
-    , _rsCommitSha  :: !(Maybe Text)
+    { _rsRepoName :: !(Maybe Text)
+    , _rsDir :: !(Maybe Text)
+    , _rsCommitSha :: !(Maybe Text)
     , _rsBranchName :: !(Maybe Text)
-    , _rsTagName    :: !(Maybe Text)
-    , _rsProjectId  :: !(Maybe Text)
+    , _rsTagName :: !(Maybe Text)
+    , _rsProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -909,10 +909,10 @@ instance ToJSON RepoSource where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1068,7 +1068,7 @@ instance ToJSON SecretSecretEnv where
 -- /See:/ 'artifacts' smart constructor.
 data Artifacts =
   Artifacts'
-    { _aImages  :: !(Maybe [Text])
+    { _aImages :: !(Maybe [Text])
     , _aObjects :: !(Maybe ArtifactObjects)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1151,8 +1151,8 @@ instance ToJSON CheckSuiteFilter where
 data ArtifactObjects =
   ArtifactObjects'
     { _aoLocation :: !(Maybe Text)
-    , _aoTiming   :: !(Maybe TimeSpan)
-    , _aoPaths    :: !(Maybe [Text])
+    , _aoTiming :: !(Maybe TimeSpan)
+    , _aoPaths :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1215,11 +1215,11 @@ instance ToJSON ArtifactObjects where
 -- /See:/ 'gitHubEventsConfig' smart constructor.
 data GitHubEventsConfig =
   GitHubEventsConfig'
-    { _ghecOwner          :: !(Maybe Text)
-    , _ghecPullRequest    :: !(Maybe PullRequestFilter)
-    , _ghecName           :: !(Maybe Text)
-    , _ghecCheckSuite     :: !(Maybe CheckSuiteFilter)
-    , _ghecPush           :: !(Maybe PushFilter)
+    { _ghecOwner :: !(Maybe Text)
+    , _ghecPullRequest :: !(Maybe PullRequestFilter)
+    , _ghecName :: !(Maybe Text)
+    , _ghecCheckSuite :: !(Maybe CheckSuiteFilter)
+    , _ghecPush :: !(Maybe PushFilter)
     , _ghecInstallationId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1406,28 +1406,28 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'build' smart constructor.
 data Build =
   Build'
-    { _bImages           :: !(Maybe [Text])
-    , _bStatus           :: !(Maybe BuildStatus)
+    { _bImages :: !(Maybe [Text])
+    , _bStatus :: !(Maybe BuildStatus)
     , _bSourceProvenance :: !(Maybe SourceProvenance)
-    , _bSubstitutions    :: !(Maybe BuildSubstitutions)
-    , _bLogURL           :: !(Maybe Text)
-    , _bResults          :: !(Maybe Results)
-    , _bSecrets          :: !(Maybe [Secret])
-    , _bStartTime        :: !(Maybe DateTime')
-    , _bArtifacts        :: !(Maybe Artifacts)
-    , _bLogsBucket       :: !(Maybe Text)
-    , _bSteps            :: !(Maybe [BuildStep])
-    , _bStatusDetail     :: !(Maybe Text)
-    , _bSource           :: !(Maybe Source)
-    , _bId               :: !(Maybe Text)
-    , _bOptions          :: !(Maybe BuildOptions)
-    , _bProjectId        :: !(Maybe Text)
-    , _bTiming           :: !(Maybe BuildTiming)
-    , _bBuildTriggerId   :: !(Maybe Text)
-    , _bTimeout          :: !(Maybe GDuration)
-    , _bFinishTime       :: !(Maybe DateTime')
-    , _bCreateTime       :: !(Maybe DateTime')
-    , _bTags             :: !(Maybe [Text])
+    , _bSubstitutions :: !(Maybe BuildSubstitutions)
+    , _bLogURL :: !(Maybe Text)
+    , _bResults :: !(Maybe Results)
+    , _bSecrets :: !(Maybe [Secret])
+    , _bStartTime :: !(Maybe DateTime')
+    , _bArtifacts :: !(Maybe Artifacts)
+    , _bLogsBucket :: !(Maybe Text)
+    , _bSteps :: !(Maybe [BuildStep])
+    , _bStatusDetail :: !(Maybe Text)
+    , _bSource :: !(Maybe Source)
+    , _bId :: !(Maybe Text)
+    , _bOptions :: !(Maybe BuildOptions)
+    , _bProjectId :: !(Maybe Text)
+    , _bTiming :: !(Maybe BuildTiming)
+    , _bBuildTriggerId :: !(Maybe Text)
+    , _bTimeout :: !(Maybe GDuration)
+    , _bFinishTime :: !(Maybe DateTime')
+    , _bCreateTime :: !(Maybe DateTime')
+    , _bTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1746,7 +1746,7 @@ instance ToJSON SourceProvenanceFileHashes where
 data Secret =
   Secret'
     { _sKmsKeyName :: !(Maybe Text)
-    , _sSecretEnv  :: !(Maybe SecretSecretEnv)
+    , _sSecretEnv :: !(Maybe SecretSecretEnv)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1796,7 +1796,7 @@ instance ToJSON Secret where
 -- /See:/ 'pushFilter' smart constructor.
 data PushFilter =
   PushFilter'
-    { _pfTag    :: !(Maybe Text)
+    { _pfTag :: !(Maybe Text)
     , _pfBranch :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1867,7 +1867,7 @@ instance ToJSON CancelBuildRequest where
 data TimeSpan =
   TimeSpan'
     { _tsStartTime :: !(Maybe DateTime')
-    , _tsEndTime   :: !(Maybe DateTime')
+    , _tsEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1915,8 +1915,8 @@ instance ToJSON TimeSpan where
 -- /See:/ 'storageSource' smart constructor.
 data StorageSource =
   StorageSource'
-    { _ssBucket     :: !(Maybe Text)
-    , _ssObject     :: !(Maybe Text)
+    { _ssBucket :: !(Maybe Text)
+    , _ssObject :: !(Maybe Text)
     , _ssGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1977,7 +1977,7 @@ instance ToJSON StorageSource where
 data ListBuildTriggersResponse =
   ListBuildTriggersResponse'
     { _lbtrNextPageToken :: !(Maybe Text)
-    , _lbtrTriggers      :: !(Maybe [BuildTrigger])
+    , _lbtrTriggers :: !(Maybe [BuildTrigger])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2156,7 +2156,7 @@ instance ToJSON BuildSubstitutions where
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sRepoSource    :: !(Maybe RepoSource)
+    { _sRepoSource :: !(Maybe RepoSource)
     , _sStorageSource :: !(Maybe StorageSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2315,17 +2315,17 @@ instance ToJSON BuildOperationMetadata where
 -- /See:/ 'buildOptions' smart constructor.
 data BuildOptions =
   BuildOptions'
-    { _boDiskSizeGb            :: !(Maybe (Textual Int64))
-    , _boEnv                   :: !(Maybe [Text])
-    , _boSubstitutionOption    :: !(Maybe BuildOptionsSubstitutionOption)
+    { _boDiskSizeGb :: !(Maybe (Textual Int64))
+    , _boEnv :: !(Maybe [Text])
+    , _boSubstitutionOption :: !(Maybe BuildOptionsSubstitutionOption)
     , _boRequestedVerifyOption :: !(Maybe BuildOptionsRequestedVerifyOption)
-    , _boWorkerPool            :: !(Maybe Text)
-    , _boMachineType           :: !(Maybe BuildOptionsMachineType)
-    , _boSecretEnv             :: !(Maybe [Text])
-    , _boVolumes               :: !(Maybe [Volume])
-    , _boLogStreamingOption    :: !(Maybe BuildOptionsLogStreamingOption)
-    , _boLogging               :: !(Maybe BuildOptionsLogging)
-    , _boSourceProvenanceHash  :: !(Maybe [Text])
+    , _boWorkerPool :: !(Maybe Text)
+    , _boMachineType :: !(Maybe BuildOptionsMachineType)
+    , _boSecretEnv :: !(Maybe [Text])
+    , _boVolumes :: !(Maybe [Volume])
+    , _boLogStreamingOption :: !(Maybe BuildOptionsLogStreamingOption)
+    , _boLogging :: !(Maybe BuildOptionsLogging)
+    , _boSourceProvenanceHash :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2546,17 +2546,17 @@ instance ToJSON OperationResponse where
 -- /See:/ 'buildTrigger' smart constructor.
 data BuildTrigger =
   BuildTrigger'
-    { _btSubstitutions   :: !(Maybe BuildTriggerSubstitutions)
-    , _btIncludedFiles   :: !(Maybe [Text])
-    , _btDisabled        :: !(Maybe Bool)
+    { _btSubstitutions :: !(Maybe BuildTriggerSubstitutions)
+    , _btIncludedFiles :: !(Maybe [Text])
+    , _btDisabled :: !(Maybe Bool)
     , _btTriggerTemplate :: !(Maybe RepoSource)
-    , _btBuild           :: !(Maybe Build)
-    , _btIgnoredFiles    :: !(Maybe [Text])
-    , _btId              :: !(Maybe Text)
-    , _btGithub          :: !(Maybe GitHubEventsConfig)
-    , _btDescription     :: !(Maybe Text)
-    , _btFilename        :: !(Maybe Text)
-    , _btCreateTime      :: !(Maybe DateTime')
+    , _btBuild :: !(Maybe Build)
+    , _btIgnoredFiles :: !(Maybe [Text])
+    , _btId :: !(Maybe Text)
+    , _btGithub :: !(Maybe GitHubEventsConfig)
+    , _btDescription :: !(Maybe Text)
+    , _btFilename :: !(Maybe Text)
+    , _btCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2720,8 +2720,8 @@ instance ToJSON BuildTrigger where
 data BuiltImage =
   BuiltImage'
     { _biPushTiming :: !(Maybe TimeSpan)
-    , _biName       :: !(Maybe Text)
-    , _biDigest     :: !(Maybe Text)
+    , _biName :: !(Maybe Text)
+    , _biDigest :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

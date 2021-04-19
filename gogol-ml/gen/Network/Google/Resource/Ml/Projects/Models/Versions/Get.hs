@@ -45,8 +45,8 @@ module Network.Google.Resource.Ml.Projects.Models.Versions.Get
     , pmvgCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.versions.get@ method which the
 -- 'ProjectsModelsVersionsGet' request conforms to.
@@ -70,12 +70,12 @@ type ProjectsModelsVersionsGetResource =
 -- /See:/ 'projectsModelsVersionsGet' smart constructor.
 data ProjectsModelsVersionsGet =
   ProjectsModelsVersionsGet'
-    { _pmvgXgafv          :: !(Maybe Xgafv)
+    { _pmvgXgafv :: !(Maybe Xgafv)
     , _pmvgUploadProtocol :: !(Maybe Text)
-    , _pmvgAccessToken    :: !(Maybe Text)
-    , _pmvgUploadType     :: !(Maybe Text)
-    , _pmvgName           :: !Text
-    , _pmvgCallback       :: !(Maybe Text)
+    , _pmvgAccessToken :: !(Maybe Text)
+    , _pmvgUploadType :: !(Maybe Text)
+    , _pmvgName :: !Text
+    , _pmvgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

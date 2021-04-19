@@ -38,8 +38,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.Delete
     , udsdUserId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.delete@ method which the
 -- 'UsersDataSourcesDelete' request conforms to.
@@ -59,7 +59,7 @@ type UsersDataSourcesDeleteResource =
 data UsersDataSourcesDelete =
   UsersDataSourcesDelete'
     { _udsdDataSourceId :: !Text
-    , _udsdUserId       :: !Text
+    , _udsdUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

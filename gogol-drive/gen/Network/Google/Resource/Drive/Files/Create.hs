@@ -42,8 +42,8 @@ module Network.Google.Resource.Drive.Files.Create
     , fcSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.create@ method which the
 -- 'FilesCreate' request conforms to.
@@ -80,13 +80,13 @@ type FilesCreateResource =
 -- /See:/ 'filesCreate' smart constructor.
 data FilesCreate =
   FilesCreate'
-    { _fcPayload                   :: !File
+    { _fcPayload :: !File
     , _fcUseContentAsIndexableText :: !Bool
-    , _fcOCRLanguage               :: !(Maybe Text)
-    , _fcKeepRevisionForever       :: !Bool
-    , _fcSupportsAllDrives         :: !Bool
-    , _fcIgnoreDefaultVisibility   :: !Bool
-    , _fcSupportsTeamDrives        :: !Bool
+    , _fcOCRLanguage :: !(Maybe Text)
+    , _fcKeepRevisionForever :: !Bool
+    , _fcSupportsAllDrives :: !Bool
+    , _fcIgnoreDefaultVisibility :: !Bool
+    , _fcSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

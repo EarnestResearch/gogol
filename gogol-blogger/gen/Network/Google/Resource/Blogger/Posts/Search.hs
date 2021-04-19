@@ -39,8 +39,8 @@ module Network.Google.Resource.Blogger.Posts.Search
     , psFetchBodies
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.search@ method which the
 -- 'PostsSearch' request conforms to.
@@ -61,9 +61,9 @@ type PostsSearchResource =
 -- /See:/ 'postsSearch' smart constructor.
 data PostsSearch =
   PostsSearch'
-    { _psOrderBy     :: !PostsSearchOrderBy
-    , _psBlogId      :: !Text
-    , _psQ           :: !Text
+    { _psOrderBy :: !PostsSearchOrderBy
+    , _psBlogId :: !Text
+    , _psQ :: !Text
     , _psFetchBodies :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)

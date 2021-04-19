@@ -16,7 +16,7 @@
 --
 module Network.Google.DriveActivity.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Indicates the
 -- </drive/web/manage-sharing#roles Google Drive permissions role>. The

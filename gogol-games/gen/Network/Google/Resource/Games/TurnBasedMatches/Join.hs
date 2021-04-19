@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Join
     , tbmjMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.join@ method which the
 -- 'TurnBasedMatchesJoin' request conforms to.
@@ -58,7 +58,7 @@ type TurnBasedMatchesJoinResource =
 data TurnBasedMatchesJoin =
   TurnBasedMatchesJoin'
     { _tbmjLanguage :: !(Maybe Text)
-    , _tbmjMatchId  :: !Text
+    , _tbmjMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

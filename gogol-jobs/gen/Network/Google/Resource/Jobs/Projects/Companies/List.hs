@@ -44,8 +44,8 @@ module Network.Google.Resource.Jobs.Projects.Companies.List
     , pclCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.companies.list@ method which the
 -- 'ProjectsCompaniesList' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsCompaniesListResource =
 -- /See:/ 'projectsCompaniesList' smart constructor.
 data ProjectsCompaniesList =
   ProjectsCompaniesList'
-    { _pclParent          :: !Text
-    , _pclXgafv           :: !(Maybe Xgafv)
-    , _pclUploadProtocol  :: !(Maybe Text)
+    { _pclParent :: !Text
+    , _pclXgafv :: !(Maybe Xgafv)
+    , _pclUploadProtocol :: !(Maybe Text)
     , _pclRequireOpenJobs :: !(Maybe Bool)
-    , _pclAccessToken     :: !(Maybe Text)
-    , _pclUploadType      :: !(Maybe Text)
-    , _pclPageToken       :: !(Maybe Text)
-    , _pclPageSize        :: !(Maybe (Textual Int32))
-    , _pclCallback        :: !(Maybe Text)
+    , _pclAccessToken :: !(Maybe Text)
+    , _pclUploadType :: !(Maybe Text)
+    , _pclPageToken :: !(Maybe Text)
+    , _pclPageSize :: !(Maybe (Textual Int32))
+    , _pclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

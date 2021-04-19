@@ -49,8 +49,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Operations.Cancel
     , oocCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.operations.cancel@ method which the
 -- 'OrganizationsOperationsCancel' request conforms to.
@@ -77,12 +77,12 @@ type OrganizationsOperationsCancelResource =
 -- /See:/ 'organizationsOperationsCancel' smart constructor.
 data OrganizationsOperationsCancel =
   OrganizationsOperationsCancel'
-    { _oocXgafv          :: !(Maybe Xgafv)
+    { _oocXgafv :: !(Maybe Xgafv)
     , _oocUploadProtocol :: !(Maybe Text)
-    , _oocAccessToken    :: !(Maybe Text)
-    , _oocUploadType     :: !(Maybe Text)
-    , _oocName           :: !Text
-    , _oocCallback       :: !(Maybe Text)
+    , _oocAccessToken :: !(Maybe Text)
+    , _oocUploadType :: !(Maybe Text)
+    , _oocName :: !Text
+    , _oocCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

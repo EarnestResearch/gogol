@@ -43,8 +43,8 @@ module Network.Google.Resource.People.ContactGroups.Update
     , cguCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.contactGroups.update@ method which the
 -- 'ContactGroupsUpdate' request conforms to.
@@ -66,13 +66,13 @@ type ContactGroupsUpdateResource =
 -- /See:/ 'contactGroupsUpdate' smart constructor.
 data ContactGroupsUpdate =
   ContactGroupsUpdate'
-    { _cguXgafv          :: !(Maybe Xgafv)
+    { _cguXgafv :: !(Maybe Xgafv)
     , _cguUploadProtocol :: !(Maybe Text)
-    , _cguResourceName   :: !Text
-    , _cguAccessToken    :: !(Maybe Text)
-    , _cguUploadType     :: !(Maybe Text)
-    , _cguPayload        :: !UpdateContactGroupRequest
-    , _cguCallback       :: !(Maybe Text)
+    , _cguResourceName :: !Text
+    , _cguAccessToken :: !(Maybe Text)
+    , _cguUploadType :: !(Maybe Text)
+    , _cguPayload :: !UpdateContactGroupRequest
+    , _cguCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -121,7 +121,7 @@ cguUploadProtocol
       (\ s a -> s{_cguUploadProtocol = a})
 
 -- | The resource name for the contact group, assigned by the server. An
--- ASCII string, in the form of \`contactGroups\/\`contact_group_id.
+-- ASCII string, in the form of \`contactGroups\/\`'contact_group_id'.
 cguResourceName :: Lens' ContactGroupsUpdate Text
 cguResourceName
   = lens _cguResourceName

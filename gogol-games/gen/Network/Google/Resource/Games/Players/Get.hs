@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Players.Get
     , pgPlayerId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.players.get@ method which the
 -- 'PlayersGet' request conforms to.

@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.Projects.Content.Reidentify
     , pcrCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.content.reidentify@ method which the
 -- 'ProjectsContentReidentify' request conforms to.
@@ -72,13 +72,13 @@ type ProjectsContentReidentifyResource =
 -- /See:/ 'projectsContentReidentify' smart constructor.
 data ProjectsContentReidentify =
   ProjectsContentReidentify'
-    { _pcrParent         :: !Text
-    , _pcrXgafv          :: !(Maybe Xgafv)
+    { _pcrParent :: !Text
+    , _pcrXgafv :: !(Maybe Xgafv)
     , _pcrUploadProtocol :: !(Maybe Text)
-    , _pcrAccessToken    :: !(Maybe Text)
-    , _pcrUploadType     :: !(Maybe Text)
-    , _pcrPayload        :: !GooglePrivacyDlpV2ReidentifyContentRequest
-    , _pcrCallback       :: !(Maybe Text)
+    , _pcrAccessToken :: !(Maybe Text)
+    , _pcrUploadType :: !(Maybe Text)
+    , _pcrPayload :: !GooglePrivacyDlpV2ReidentifyContentRequest
+    , _pcrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

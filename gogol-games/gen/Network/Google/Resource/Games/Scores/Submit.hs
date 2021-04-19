@@ -39,8 +39,8 @@ module Network.Google.Resource.Games.Scores.Submit
     , ssLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.scores.submit@ method which the
 -- 'ScoresSubmit' request conforms to.
@@ -61,10 +61,10 @@ type ScoresSubmitResource =
 -- /See:/ 'scoresSubmit' smart constructor.
 data ScoresSubmit =
   ScoresSubmit'
-    { _ssScoreTag      :: !(Maybe Text)
-    , _ssScore         :: !(Textual Int64)
+    { _ssScoreTag :: !(Maybe Text)
+    , _ssScore :: !(Textual Int64)
     , _ssLeaderboardId :: !Text
-    , _ssLanguage      :: !(Maybe Text)
+    , _ssLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

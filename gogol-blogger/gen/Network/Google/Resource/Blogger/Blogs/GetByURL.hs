@@ -37,8 +37,8 @@ module Network.Google.Resource.Blogger.Blogs.GetByURL
     , bgbuView
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.blogs.getByUrl@ method which the
 -- 'BlogsGetByURL' request conforms to.
@@ -56,7 +56,7 @@ type BlogsGetByURLResource =
 -- /See:/ 'blogsGetByURL' smart constructor.
 data BlogsGetByURL =
   BlogsGetByURL'
-    { _bgbuURL  :: !Text
+    { _bgbuURL :: !Text
     , _bgbuView :: !(Maybe BlogsGetByURLView)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

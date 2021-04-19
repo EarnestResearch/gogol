@@ -186,10 +186,10 @@ module Network.Google.CloudTrace
     , teTime
     ) where
 
-import           Network.Google.CloudTrace.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudTrace.Projects.Traces.BatchWrite
-import           Network.Google.Resource.CloudTrace.Projects.Traces.Spans.CreateSpan
+import Network.Google.Prelude
+import Network.Google.CloudTrace.Types
+import Network.Google.Resource.CloudTrace.Projects.Traces.BatchWrite
+import Network.Google.Resource.CloudTrace.Projects.Traces.Spans.CreateSpan
 
 {- $resources
 TODO

@@ -43,8 +43,8 @@ module Network.Google.Resource.AccessApproval.Folders.UpdateAccessApprovalSettin
     , fuaasCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.folders.updateAccessApprovalSettings@ method which the
 -- 'FoldersUpdateAccessApprovalSettings' request conforms to.
@@ -66,13 +66,13 @@ type FoldersUpdateAccessApprovalSettingsResource =
 -- /See:/ 'foldersUpdateAccessApprovalSettings' smart constructor.
 data FoldersUpdateAccessApprovalSettings =
   FoldersUpdateAccessApprovalSettings'
-    { _fuaasXgafv          :: !(Maybe Xgafv)
+    { _fuaasXgafv :: !(Maybe Xgafv)
     , _fuaasUploadProtocol :: !(Maybe Text)
-    , _fuaasAccessToken    :: !(Maybe Text)
-    , _fuaasUploadType     :: !(Maybe Text)
-    , _fuaasPayload        :: !AccessApprovalSettings
-    , _fuaasName           :: !Text
-    , _fuaasCallback       :: !(Maybe Text)
+    , _fuaasAccessToken :: !(Maybe Text)
+    , _fuaasUploadType :: !(Maybe Text)
+    , _fuaasPayload :: !AccessApprovalSettings
+    , _fuaasName :: !Text
+    , _fuaasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

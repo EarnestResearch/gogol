@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Projects.Exclusions.Patch
     , pepCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.exclusions.patch@ method which the
 -- 'ProjectsExclusionsPatch' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsExclusionsPatchResource =
 -- /See:/ 'projectsExclusionsPatch' smart constructor.
 data ProjectsExclusionsPatch =
   ProjectsExclusionsPatch'
-    { _pepXgafv          :: !(Maybe Xgafv)
+    { _pepXgafv :: !(Maybe Xgafv)
     , _pepUploadProtocol :: !(Maybe Text)
-    , _pepUpdateMask     :: !(Maybe GFieldMask)
-    , _pepAccessToken    :: !(Maybe Text)
-    , _pepUploadType     :: !(Maybe Text)
-    , _pepPayload        :: !LogExclusion
-    , _pepName           :: !Text
-    , _pepCallback       :: !(Maybe Text)
+    , _pepUpdateMask :: !(Maybe GFieldMask)
+    , _pepAccessToken :: !(Maybe Text)
+    , _pepUploadType :: !(Maybe Text)
+    , _pepPayload :: !LogExclusion
+    , _pepName :: !Text
+    , _pepCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

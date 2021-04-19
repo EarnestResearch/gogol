@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Resources.Features.List
     , rflMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.list@ method which the
 -- 'ResourcesFeaturesList' request conforms to.
@@ -60,8 +60,8 @@ type ResourcesFeaturesListResource =
 -- /See:/ 'resourcesFeaturesList' smart constructor.
 data ResourcesFeaturesList =
   ResourcesFeaturesList'
-    { _rflCustomer   :: !Text
-    , _rflPageToken  :: !(Maybe Text)
+    { _rflCustomer :: !Text
+    , _rflPageToken :: !(Maybe Text)
     , _rflMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

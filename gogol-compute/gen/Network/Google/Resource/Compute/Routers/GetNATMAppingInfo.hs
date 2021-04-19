@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.Routers.GetNATMAppingInfo
     , rgnatmaiMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.getNatMappingInfo@ method which the
 -- 'RoutersGetNATMAppingInfo' request conforms to.
@@ -69,12 +69,12 @@ type RoutersGetNATMAppingInfoResource =
 -- /See:/ 'routersGetNATMAppingInfo' smart constructor.
 data RoutersGetNATMAppingInfo =
   RoutersGetNATMAppingInfo'
-    { _rgnatmaiOrderBy    :: !(Maybe Text)
-    , _rgnatmaiProject    :: !Text
-    , _rgnatmaiRouter     :: !Text
-    , _rgnatmaiFilter     :: !(Maybe Text)
-    , _rgnatmaiRegion     :: !Text
-    , _rgnatmaiPageToken  :: !(Maybe Text)
+    { _rgnatmaiOrderBy :: !(Maybe Text)
+    , _rgnatmaiProject :: !Text
+    , _rgnatmaiRouter :: !Text
+    , _rgnatmaiFilter :: !(Maybe Text)
+    , _rgnatmaiRegion :: !Text
+    , _rgnatmaiPageToken :: !(Maybe Text)
     , _rgnatmaiMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

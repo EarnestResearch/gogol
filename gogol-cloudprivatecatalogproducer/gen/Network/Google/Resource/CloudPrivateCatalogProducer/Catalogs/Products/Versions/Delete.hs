@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Ver
     , cpvdCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.products.versions.delete@ method which the
 -- 'CatalogsProductsVersionsDelete' request conforms to.
@@ -62,12 +62,12 @@ type CatalogsProductsVersionsDeleteResource =
 -- /See:/ 'catalogsProductsVersionsDelete' smart constructor.
 data CatalogsProductsVersionsDelete =
   CatalogsProductsVersionsDelete'
-    { _cpvdXgafv          :: !(Maybe Xgafv)
+    { _cpvdXgafv :: !(Maybe Xgafv)
     , _cpvdUploadProtocol :: !(Maybe Text)
-    , _cpvdAccessToken    :: !(Maybe Text)
-    , _cpvdUploadType     :: !(Maybe Text)
-    , _cpvdName           :: !Text
-    , _cpvdCallback       :: !(Maybe Text)
+    , _cpvdAccessToken :: !(Maybe Text)
+    , _cpvdUploadType :: !(Maybe Text)
+    , _cpvdName :: !Text
+    , _cpvdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudAsset.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Asset content type. If not specified, no content but the asset name will
 -- be returned.

@@ -46,8 +46,8 @@ module Network.Google.Resource.Sheets.Spreadsheets.Values.Get
     , svgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types
+import Network.Google.Prelude
+import Network.Google.Sheets.Types
 
 -- | A resource alias for @sheets.spreadsheets.values.get@ method which the
 -- 'SpreadsheetsValuesGet' request conforms to.
@@ -74,16 +74,16 @@ type SpreadsheetsValuesGetResource =
 -- /See:/ 'spreadsheetsValuesGet' smart constructor.
 data SpreadsheetsValuesGet =
   SpreadsheetsValuesGet'
-    { _svgXgafv                :: !(Maybe Xgafv)
-    , _svgValueRenderOption    :: !(Maybe Text)
-    , _svgUploadProtocol       :: !(Maybe Text)
-    , _svgAccessToken          :: !(Maybe Text)
-    , _svgSpreadsheetId        :: !Text
-    , _svgUploadType           :: !(Maybe Text)
-    , _svgRange                :: !Text
+    { _svgXgafv :: !(Maybe Xgafv)
+    , _svgValueRenderOption :: !(Maybe Text)
+    , _svgUploadProtocol :: !(Maybe Text)
+    , _svgAccessToken :: !(Maybe Text)
+    , _svgSpreadsheetId :: !Text
+    , _svgUploadType :: !(Maybe Text)
+    , _svgRange :: !Text
     , _svgDateTimeRenderOption :: !(Maybe Text)
-    , _svgMajorDimension       :: !(Maybe Text)
-    , _svgCallback             :: !(Maybe Text)
+    , _svgMajorDimension :: !(Maybe Text)
+    , _svgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

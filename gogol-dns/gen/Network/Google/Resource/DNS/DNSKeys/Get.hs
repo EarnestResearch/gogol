@@ -40,8 +40,8 @@ module Network.Google.Resource.DNS.DNSKeys.Get
     , dkgClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.dnsKeys.get@ method which the
 -- 'DNSKeysGet' request conforms to.
@@ -63,10 +63,10 @@ type DNSKeysGetResource =
 -- /See:/ 'dnsKeysGet' smart constructor.
 data DNSKeysGet =
   DNSKeysGet'
-    { _dkgProject           :: !Text
-    , _dkgDigestType        :: !(Maybe Text)
-    , _dkgDNSKeyId          :: !Text
-    , _dkgManagedZone       :: !Text
+    { _dkgProject :: !Text
+    , _dkgDigestType :: !(Maybe Text)
+    , _dkgDNSKeyId :: !Text
+    , _dkgManagedZone :: !Text
     , _dkgClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

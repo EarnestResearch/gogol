@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Files.Get
     , fgFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.files.get@ method which the
 -- 'FilesGet' request conforms to.
@@ -68,7 +68,7 @@ type FilesGetResource =
 data FilesGet =
   FilesGet'
     { _fgReportId :: !(Textual Int64)
-    , _fgFileId   :: !(Textual Int64)
+    , _fgFileId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

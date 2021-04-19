@@ -41,8 +41,8 @@ module Network.Google.Resource.StorageTransfer.TransferOperations.Delete
     , todCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferOperations.delete@ method which the
 -- 'TransferOperationsDelete' request conforms to.
@@ -61,12 +61,12 @@ type TransferOperationsDeleteResource =
 -- /See:/ 'transferOperationsDelete' smart constructor.
 data TransferOperationsDelete =
   TransferOperationsDelete'
-    { _todXgafv          :: !(Maybe Xgafv)
+    { _todXgafv :: !(Maybe Xgafv)
     , _todUploadProtocol :: !(Maybe Text)
-    , _todAccessToken    :: !(Maybe Text)
-    , _todUploadType     :: !(Maybe Text)
-    , _todName           :: !Text
-    , _todCallback       :: !(Maybe Text)
+    , _todAccessToken :: !(Maybe Text)
+    , _todUploadType :: !(Maybe Text)
+    , _todName :: !Text
+    , _todCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Compute.InstanceGroups.ListInstances
     , igliMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroups.listInstances@ method which the
 -- 'InstanceGroupsListInstances'' request conforms to.
@@ -72,14 +72,14 @@ type InstanceGroupsListInstancesResource =
 -- /See:/ 'instanceGroupsListInstances'' smart constructor.
 data InstanceGroupsListInstances' =
   InstanceGroupsListInstances''
-    { _igliOrderBy       :: !(Maybe Text)
-    , _igliProject       :: !Text
-    , _igliZone          :: !Text
-    , _igliPayload       :: !InstanceGroupsListInstancesRequest
-    , _igliFilter        :: !(Maybe Text)
-    , _igliPageToken     :: !(Maybe Text)
+    { _igliOrderBy :: !(Maybe Text)
+    , _igliProject :: !Text
+    , _igliZone :: !Text
+    , _igliPayload :: !InstanceGroupsListInstancesRequest
+    , _igliFilter :: !(Maybe Text)
+    , _igliPageToken :: !(Maybe Text)
     , _igliInstanceGroup :: !Text
-    , _igliMaxResults    :: !(Textual Word32)
+    , _igliMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

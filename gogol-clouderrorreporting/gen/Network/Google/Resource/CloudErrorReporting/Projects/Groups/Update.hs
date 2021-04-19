@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudErrorReporting.Projects.Groups.Update
     , pguCallback
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouderrorreporting.projects.groups.update@ method which the
 -- 'ProjectsGroupsUpdate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsGroupsUpdateResource =
 -- /See:/ 'projectsGroupsUpdate' smart constructor.
 data ProjectsGroupsUpdate =
   ProjectsGroupsUpdate'
-    { _pguXgafv          :: !(Maybe Xgafv)
+    { _pguXgafv :: !(Maybe Xgafv)
     , _pguUploadProtocol :: !(Maybe Text)
-    , _pguAccessToken    :: !(Maybe Text)
-    , _pguUploadType     :: !(Maybe Text)
-    , _pguPayload        :: !ErrorGroup
-    , _pguName           :: !Text
-    , _pguCallback       :: !(Maybe Text)
+    , _pguAccessToken :: !(Maybe Text)
+    , _pguUploadType :: !(Maybe Text)
+    , _pguPayload :: !ErrorGroup
+    , _pguName :: !Text
+    , _pguCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

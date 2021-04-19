@@ -36,8 +36,8 @@ module Network.Google.Resource.Gmail.Users.Settings.GetPop
     , usgpUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.getPop@ method which the
 -- 'UsersSettingsGetPop' request conforms to.

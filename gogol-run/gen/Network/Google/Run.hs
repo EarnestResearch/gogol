@@ -58,9 +58,9 @@ module Network.Google.Run
     , lmAddtional
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Run.Projects.Locations.Get
-import           Network.Google.Run.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Run.Projects.Locations.Get
+import Network.Google.Run.Types
 
 {- $resources
 TODO

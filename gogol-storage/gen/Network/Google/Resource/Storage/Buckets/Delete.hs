@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.Buckets.Delete
     , bdIfMetagenerationNotMatch
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.delete@ method which the
 -- 'BucketsDelete' request conforms to.
@@ -59,9 +59,9 @@ type BucketsDeleteResource =
 -- /See:/ 'bucketsDelete' smart constructor.
 data BucketsDelete =
   BucketsDelete'
-    { _bdIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _bdBucket                   :: !Text
-    , _bdUserProject              :: !(Maybe Text)
+    { _bdIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _bdBucket :: !Text
+    , _bdUserProject :: !(Maybe Text)
     , _bdIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

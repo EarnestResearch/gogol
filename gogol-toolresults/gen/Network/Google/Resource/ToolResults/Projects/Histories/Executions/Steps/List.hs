@@ -48,8 +48,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.L
     , pheslPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.list@ method which the
 -- 'ProjectsHistoriesExecutionsStepsList' request conforms to.
@@ -82,10 +82,10 @@ type ProjectsHistoriesExecutionsStepsListResource =
 data ProjectsHistoriesExecutionsStepsList =
   ProjectsHistoriesExecutionsStepsList'
     { _pheslExecutionId :: !Text
-    , _pheslHistoryId   :: !Text
-    , _pheslPageToken   :: !(Maybe Text)
-    , _pheslProjectId   :: !Text
-    , _pheslPageSize    :: !(Maybe (Textual Int32))
+    , _pheslHistoryId :: !Text
+    , _pheslPageToken :: !(Maybe Text)
+    , _pheslProjectId :: !Text
+    , _pheslPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

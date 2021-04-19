@@ -43,8 +43,8 @@ module Network.Google.Resource.Drive.Permissions.Create
     , pcSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.permissions.create@ method which the
 -- 'PermissionsCreate' request conforms to.
@@ -70,13 +70,13 @@ type PermissionsCreateResource =
 data PermissionsCreate =
   PermissionsCreate'
     { _pcSendNotificationEmail :: !(Maybe Bool)
-    , _pcPayload               :: !Permission
-    , _pcEmailMessage          :: !(Maybe Text)
-    , _pcSupportsAllDrives     :: !Bool
-    , _pcUseDomainAdminAccess  :: !Bool
-    , _pcTransferOwnership     :: !Bool
-    , _pcFileId                :: !Text
-    , _pcSupportsTeamDrives    :: !Bool
+    , _pcPayload :: !Permission
+    , _pcEmailMessage :: !(Maybe Text)
+    , _pcSupportsAllDrives :: !Bool
+    , _pcUseDomainAdminAccess :: !Bool
+    , _pcTransferOwnership :: !Bool
+    , _pcFileId :: !Text
+    , _pcSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

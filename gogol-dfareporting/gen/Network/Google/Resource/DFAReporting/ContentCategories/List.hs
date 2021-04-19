@@ -43,8 +43,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.List
     , cclMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.list@ method which the
 -- 'ContentCategoriesList' request conforms to.
@@ -72,12 +72,12 @@ type ContentCategoriesListResource =
 data ContentCategoriesList =
   ContentCategoriesList'
     { _cclSearchString :: !(Maybe Text)
-    , _cclIds          :: !(Maybe [Textual Int64])
-    , _cclProFileId    :: !(Textual Int64)
-    , _cclSortOrder    :: !ContentCategoriesListSortOrder
-    , _cclPageToken    :: !(Maybe Text)
-    , _cclSortField    :: !ContentCategoriesListSortField
-    , _cclMaxResults   :: !(Textual Int32)
+    , _cclIds :: !(Maybe [Textual Int64])
+    , _cclProFileId :: !(Textual Int64)
+    , _cclSortOrder :: !ContentCategoriesListSortOrder
+    , _cclPageToken :: !(Maybe Text)
+    , _cclSortField :: !ContentCategoriesListSortField
+    , _cclMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

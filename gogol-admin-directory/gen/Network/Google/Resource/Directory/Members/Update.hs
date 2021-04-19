@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Members.Update
     , muPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.update@ method which the
 -- 'MembersUpdate' request conforms to.
@@ -60,8 +60,8 @@ type MembersUpdateResource =
 data MembersUpdate =
   MembersUpdate'
     { _muMemberKey :: !Text
-    , _muGroupKey  :: !Text
-    , _muPayload   :: !Member
+    , _muGroupKey :: !Text
+    , _muPayload :: !Member
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

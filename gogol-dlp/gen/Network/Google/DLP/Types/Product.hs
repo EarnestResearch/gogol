@@ -17,15 +17,15 @@
 --
 module Network.Google.DLP.Types.Product where
 
-import           Network.Google.DLP.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DLP.Types.Sum
+import Network.Google.Prelude
 
 -- | Statistics regarding a specific InfoType.
 --
 -- /See:/ 'googlePrivacyDlpV2InfoTypeStats' smart constructor.
 data GooglePrivacyDlpV2InfoTypeStats =
   GooglePrivacyDlpV2InfoTypeStats'
-    { _gpdvitsCount    :: !(Maybe (Textual Int64))
+    { _gpdvitsCount :: !(Maybe (Textual Int64))
     , _gpdvitsInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -161,7 +161,7 @@ instance ToJSON
 data GooglePrivacyDlpV2Range =
   GooglePrivacyDlpV2Range'
     { _gpdvrStart :: !(Maybe (Textual Int64))
-    , _gpdvrEnd   :: !(Maybe (Textual Int64))
+    , _gpdvrEnd :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -245,7 +245,7 @@ instance ToJSON GooglePrivacyDlpV2Range where
 data GoogleRpcStatus =
   GoogleRpcStatus'
     { _grsDetails :: !(Maybe [GoogleRpcStatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -402,7 +402,7 @@ instance ToJSON
 data GooglePrivacyDlpV2InspectResult =
   GooglePrivacyDlpV2InspectResult'
     { _gpdvirFindingsTruncated :: !(Maybe Bool)
-    , _gpdvirFindings          :: !(Maybe [GooglePrivacyDlpV2Finding])
+    , _gpdvirFindings :: !(Maybe [GooglePrivacyDlpV2Finding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -463,8 +463,8 @@ instance ToJSON GooglePrivacyDlpV2InspectResult where
 data GooglePrivacyDlpV2StoredInfoTypeConfig =
   GooglePrivacyDlpV2StoredInfoTypeConfig'
     { _gpdvsitcLargeCustomDictionary :: !(Maybe GooglePrivacyDlpV2LargeCustomDictionaryConfig)
-    , _gpdvsitcDisplayName           :: !(Maybe Text)
-    , _gpdvsitcDescription           :: !(Maybe Text)
+    , _gpdvsitcDisplayName :: !(Maybe Text)
+    , _gpdvsitcDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -534,7 +534,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2InfoTypeTransformation' smart constructor.
 data GooglePrivacyDlpV2InfoTypeTransformation =
   GooglePrivacyDlpV2InfoTypeTransformation'
-    { _gpdvittInfoTypes               :: !(Maybe [GooglePrivacyDlpV2InfoType])
+    { _gpdvittInfoTypes :: !(Maybe [GooglePrivacyDlpV2InfoType])
     , _gpdvittPrimitiveTransformation :: !(Maybe GooglePrivacyDlpV2PrimitiveTransformation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -632,15 +632,15 @@ instance ToJSON GooglePrivacyDlpV2FieldId where
 data GooglePrivacyDlpV2DlpJob =
   GooglePrivacyDlpV2DlpJob'
     { _gpdvdjInspectDetails :: !(Maybe GooglePrivacyDlpV2InspectDataSourceDetails)
-    , _gpdvdjState          :: !(Maybe GooglePrivacyDlpV2DlpJobState)
-    , _gpdvdjStartTime      :: !(Maybe DateTime')
+    , _gpdvdjState :: !(Maybe GooglePrivacyDlpV2DlpJobState)
+    , _gpdvdjStartTime :: !(Maybe DateTime')
     , _gpdvdjJobTriggerName :: !(Maybe Text)
-    , _gpdvdjRiskDetails    :: !(Maybe GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails)
-    , _gpdvdjName           :: !(Maybe Text)
-    , _gpdvdjEndTime        :: !(Maybe DateTime')
-    , _gpdvdjType           :: !(Maybe GooglePrivacyDlpV2DlpJobType)
-    , _gpdvdjErrors         :: !(Maybe [GooglePrivacyDlpV2Error])
-    , _gpdvdjCreateTime     :: !(Maybe DateTime')
+    , _gpdvdjRiskDetails :: !(Maybe GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails)
+    , _gpdvdjName :: !(Maybe Text)
+    , _gpdvdjEndTime :: !(Maybe DateTime')
+    , _gpdvdjType :: !(Maybe GooglePrivacyDlpV2DlpJobType)
+    , _gpdvdjErrors :: !(Maybe [GooglePrivacyDlpV2Error])
+    , _gpdvdjCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -783,7 +783,7 @@ instance ToJSON GooglePrivacyDlpV2DlpJob where
 -- /See:/ 'googlePrivacyDlpV2RecordTransformations' smart constructor.
 data GooglePrivacyDlpV2RecordTransformations =
   GooglePrivacyDlpV2RecordTransformations'
-    { _gpdvrtRecordSuppressions   :: !(Maybe [GooglePrivacyDlpV2RecordSuppression])
+    { _gpdvrtRecordSuppressions :: !(Maybe [GooglePrivacyDlpV2RecordSuppression])
     , _gpdvrtFieldTransformations :: !(Maybe [GooglePrivacyDlpV2FieldTransformation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -851,7 +851,7 @@ instance ToJSON
 data GooglePrivacyDlpV2Key =
   GooglePrivacyDlpV2Key'
     { _gpdvkPartitionId :: !(Maybe GooglePrivacyDlpV2PartitionId)
-    , _gpdvkPath        :: !(Maybe [GooglePrivacyDlpV2PathElement])
+    , _gpdvkPath :: !(Maybe [GooglePrivacyDlpV2PathElement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -960,14 +960,14 @@ instance ToJSON GooglePrivacyDlpV2BucketingConfig
 -- /See:/ 'googlePrivacyDlpV2InspectConfig' smart constructor.
 data GooglePrivacyDlpV2InspectConfig =
   GooglePrivacyDlpV2InspectConfig'
-    { _gpdvicInfoTypes        :: !(Maybe [GooglePrivacyDlpV2InfoType])
-    , _gpdvicMinLikelihood    :: !(Maybe GooglePrivacyDlpV2InspectConfigMinLikelihood)
+    { _gpdvicInfoTypes :: !(Maybe [GooglePrivacyDlpV2InfoType])
+    , _gpdvicMinLikelihood :: !(Maybe GooglePrivacyDlpV2InspectConfigMinLikelihood)
     , _gpdvicExcludeInfoTypes :: !(Maybe Bool)
-    , _gpdvicIncludeQuote     :: !(Maybe Bool)
-    , _gpdvicCustomInfoTypes  :: !(Maybe [GooglePrivacyDlpV2CustomInfoType])
-    , _gpdvicLimits           :: !(Maybe GooglePrivacyDlpV2FindingLimits)
-    , _gpdvicContentOptions   :: !(Maybe [Text])
-    , _gpdvicRuleSet          :: !(Maybe [GooglePrivacyDlpV2InspectionRuleSet])
+    , _gpdvicIncludeQuote :: !(Maybe Bool)
+    , _gpdvicCustomInfoTypes :: !(Maybe [GooglePrivacyDlpV2CustomInfoType])
+    , _gpdvicLimits :: !(Maybe GooglePrivacyDlpV2FindingLimits)
+    , _gpdvicContentOptions :: !(Maybe [Text])
+    , _gpdvicRuleSet :: !(Maybe [GooglePrivacyDlpV2InspectionRuleSet])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1113,8 +1113,8 @@ instance ToJSON GooglePrivacyDlpV2InspectConfig where
 data GooglePrivacyDlpV2RiskAnalysisJobConfig =
   GooglePrivacyDlpV2RiskAnalysisJobConfig'
     { _gpdvrajcPrivacyMetric :: !(Maybe GooglePrivacyDlpV2PrivacyMetric)
-    , _gpdvrajcActions       :: !(Maybe [GooglePrivacyDlpV2Action])
-    , _gpdvrajcSourceTable   :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    , _gpdvrajcActions :: !(Maybe [GooglePrivacyDlpV2Action])
+    , _gpdvrajcSourceTable :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1270,9 +1270,9 @@ instance ToJSON GooglePrivacyDlpV2RecordSuppression
 -- /See:/ 'googlePrivacyDlpV2CryptoKey' smart constructor.
 data GooglePrivacyDlpV2CryptoKey =
   GooglePrivacyDlpV2CryptoKey'
-    { _gpdvckTransient  :: !(Maybe GooglePrivacyDlpV2TransientCryptoKey)
+    { _gpdvckTransient :: !(Maybe GooglePrivacyDlpV2TransientCryptoKey)
     , _gpdvckKmsWrApped :: !(Maybe GooglePrivacyDlpV2KmsWrAppedCryptoKey)
-    , _gpdvckUnwrApped  :: !(Maybe GooglePrivacyDlpV2UnwrAppedCryptoKey)
+    , _gpdvckUnwrApped :: !(Maybe GooglePrivacyDlpV2UnwrAppedCryptoKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1337,9 +1337,9 @@ instance ToJSON GooglePrivacyDlpV2CryptoKey where
 -- /See:/ 'googlePrivacyDlpV2LargeCustomDictionaryConfig' smart constructor.
 data GooglePrivacyDlpV2LargeCustomDictionaryConfig =
   GooglePrivacyDlpV2LargeCustomDictionaryConfig'
-    { _gpdvlcdcBigQueryField       :: !(Maybe GooglePrivacyDlpV2BigQueryField)
+    { _gpdvlcdcBigQueryField :: !(Maybe GooglePrivacyDlpV2BigQueryField)
     , _gpdvlcdcCloudStorageFileSet :: !(Maybe GooglePrivacyDlpV2CloudStorageFileSet)
-    , _gpdvlcdcOutputPath          :: !(Maybe GooglePrivacyDlpV2CloudStoragePath)
+    , _gpdvlcdcOutputPath :: !(Maybe GooglePrivacyDlpV2CloudStoragePath)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1455,9 +1455,9 @@ instance ToJSON GooglePrivacyDlpV2WordList where
 -- /See:/ 'googlePrivacyDlpV2ContentItem' smart constructor.
 data GooglePrivacyDlpV2ContentItem =
   GooglePrivacyDlpV2ContentItem'
-    { _gpdvciValue    :: !(Maybe Text)
+    { _gpdvciValue :: !(Maybe Text)
     , _gpdvciByteItem :: !(Maybe GooglePrivacyDlpV2ByteContentItem)
-    , _gpdvciTable    :: !(Maybe GooglePrivacyDlpV2Table)
+    , _gpdvciTable :: !(Maybe GooglePrivacyDlpV2Table)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1517,10 +1517,10 @@ instance ToJSON GooglePrivacyDlpV2ContentItem where
 data GooglePrivacyDlpV2CategoricalStatsHistogramBucket =
   GooglePrivacyDlpV2CategoricalStatsHistogramBucket'
     { _gpdvcshbValueFrequencyLowerBound :: !(Maybe (Textual Int64))
-    , _gpdvcshbBucketValues             :: !(Maybe [GooglePrivacyDlpV2ValueFrequency])
+    , _gpdvcshbBucketValues :: !(Maybe [GooglePrivacyDlpV2ValueFrequency])
     , _gpdvcshbValueFrequencyUpperBound :: !(Maybe (Textual Int64))
-    , _gpdvcshbBucketSize               :: !(Maybe (Textual Int64))
-    , _gpdvcshbBucketValueCount         :: !(Maybe (Textual Int64))
+    , _gpdvcshbBucketSize :: !(Maybe (Textual Int64))
+    , _gpdvcshbBucketValueCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1624,8 +1624,8 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2Result' smart constructor.
 data GooglePrivacyDlpV2Result =
   GooglePrivacyDlpV2Result'
-    { _gpdvrProcessedBytes      :: !(Maybe (Textual Int64))
-    , _gpdvrInfoTypeStats       :: !(Maybe [GooglePrivacyDlpV2InfoTypeStats])
+    { _gpdvrProcessedBytes :: !(Maybe (Textual Int64))
+    , _gpdvrInfoTypeStats :: !(Maybe [GooglePrivacyDlpV2InfoTypeStats])
     , _gpdvrTotalEstimatedBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1696,7 +1696,7 @@ instance ToJSON GooglePrivacyDlpV2Result where
 -- /See:/ 'googlePrivacyDlpV2InspectDataSourceDetails' smart constructor.
 data GooglePrivacyDlpV2InspectDataSourceDetails =
   GooglePrivacyDlpV2InspectDataSourceDetails'
-    { _gpdvidsdResult           :: !(Maybe GooglePrivacyDlpV2Result)
+    { _gpdvidsdResult :: !(Maybe GooglePrivacyDlpV2Result)
     , _gpdvidsdRequestedOptions :: !(Maybe GooglePrivacyDlpV2RequestedOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1871,7 +1871,7 @@ instance ToJSON GooglePrivacyDlpV2PublishToPubSub
 data GooglePrivacyDlpV2BigQueryKey =
   GooglePrivacyDlpV2BigQueryKey'
     { _gpdvbqkTableReference :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
-    , _gpdvbqkRowNumber      :: !(Maybe (Textual Int64))
+    , _gpdvbqkRowNumber :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2012,9 +2012,9 @@ instance ToJSON GooglePrivacyDlpV2RecordCondition
 -- /See:/ 'googlePrivacyDlpV2DateShiftConfig' smart constructor.
 data GooglePrivacyDlpV2DateShiftConfig =
   GooglePrivacyDlpV2DateShiftConfig'
-    { _gpdvdscContext        :: !(Maybe GooglePrivacyDlpV2FieldId)
+    { _gpdvdscContext :: !(Maybe GooglePrivacyDlpV2FieldId)
     , _gpdvdscUpperBoundDays :: !(Maybe (Textual Int32))
-    , _gpdvdscCryptoKey      :: !(Maybe GooglePrivacyDlpV2CryptoKey)
+    , _gpdvdscCryptoKey :: !(Maybe GooglePrivacyDlpV2CryptoKey)
     , _gpdvdscLowerBoundDays :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2101,8 +2101,8 @@ instance ToJSON GooglePrivacyDlpV2DateShiftConfig
 -- /See:/ 'googlePrivacyDlpV2InspectContentRequest' smart constructor.
 data GooglePrivacyDlpV2InspectContentRequest =
   GooglePrivacyDlpV2InspectContentRequest'
-    { _gpdvicrInspectConfig       :: !(Maybe GooglePrivacyDlpV2InspectConfig)
-    , _gpdvicrItem                :: !(Maybe GooglePrivacyDlpV2ContentItem)
+    { _gpdvicrInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
+    , _gpdvicrItem :: !(Maybe GooglePrivacyDlpV2ContentItem)
     , _gpdvicrInspectTemplateName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2226,9 +2226,9 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2NumericalStatsResult' smart constructor.
 data GooglePrivacyDlpV2NumericalStatsResult =
   GooglePrivacyDlpV2NumericalStatsResult'
-    { _gpdvnsrMaxValue       :: !(Maybe GooglePrivacyDlpV2Value)
+    { _gpdvnsrMaxValue :: !(Maybe GooglePrivacyDlpV2Value)
     , _gpdvnsrQuantileValues :: !(Maybe [GooglePrivacyDlpV2Value])
-    , _gpdvnsrMinValue       :: !(Maybe GooglePrivacyDlpV2Value)
+    , _gpdvnsrMinValue :: !(Maybe GooglePrivacyDlpV2Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2333,7 +2333,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2UpdateInspectTemplateRequest' smart constructor.
 data GooglePrivacyDlpV2UpdateInspectTemplateRequest =
   GooglePrivacyDlpV2UpdateInspectTemplateRequest'
-    { _gpdvuitrUpdateMask      :: !(Maybe GFieldMask)
+    { _gpdvuitrUpdateMask :: !(Maybe GFieldMask)
     , _gpdvuitrInspectTemplate :: !(Maybe GooglePrivacyDlpV2InspectTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2481,9 +2481,9 @@ instance ToJSON GooglePrivacyDlpV2ByteContentItem
 -- /See:/ 'googlePrivacyDlpV2TaggedField' smart constructor.
 data GooglePrivacyDlpV2TaggedField =
   GooglePrivacyDlpV2TaggedField'
-    { _gpdvtfField     :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvtfInfoType  :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvtfInferred  :: !(Maybe GoogleProtobufEmpty)
+    { _gpdvtfField :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvtfInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvtfInferred :: !(Maybe GoogleProtobufEmpty)
     , _gpdvtfCustomTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2564,12 +2564,12 @@ instance ToJSON GooglePrivacyDlpV2TaggedField where
 -- /See:/ 'googlePrivacyDlpV2BigQueryOptions' smart constructor.
 data GooglePrivacyDlpV2BigQueryOptions =
   GooglePrivacyDlpV2BigQueryOptions'
-    { _gpdvbqoRowsLimit         :: !(Maybe (Textual Int64))
-    , _gpdvbqoRowsLimitPercent  :: !(Maybe (Textual Int32))
-    , _gpdvbqoTableReference    :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    { _gpdvbqoRowsLimit :: !(Maybe (Textual Int64))
+    , _gpdvbqoRowsLimitPercent :: !(Maybe (Textual Int32))
+    , _gpdvbqoTableReference :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
     , _gpdvbqoIdentifyingFields :: !(Maybe [GooglePrivacyDlpV2FieldId])
-    , _gpdvbqoExcludedFields    :: !(Maybe [GooglePrivacyDlpV2FieldId])
-    , _gpdvbqoSampleMethod      :: !(Maybe GooglePrivacyDlpV2BigQueryOptionsSampleMethod)
+    , _gpdvbqoExcludedFields :: !(Maybe [GooglePrivacyDlpV2FieldId])
+    , _gpdvbqoSampleMethod :: !(Maybe GooglePrivacyDlpV2BigQueryOptionsSampleMethod)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2683,7 +2683,7 @@ instance ToJSON GooglePrivacyDlpV2BigQueryOptions
 data GooglePrivacyDlpV2KMapEstimationQuasiIdValues =
   GooglePrivacyDlpV2KMapEstimationQuasiIdValues'
     { _gpdvkmeqivEstimatedAnonymity :: !(Maybe (Textual Int64))
-    , _gpdvkmeqivQuasiIdsValues     :: !(Maybe [GooglePrivacyDlpV2Value])
+    , _gpdvkmeqivQuasiIdsValues :: !(Maybe [GooglePrivacyDlpV2Value])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2796,7 +2796,7 @@ instance ToJSON GooglePrivacyDlpV2ExcludeInfoTypes
 -- /See:/ 'googlePrivacyDlpV2CreateInspectTemplateRequest' smart constructor.
 data GooglePrivacyDlpV2CreateInspectTemplateRequest =
   GooglePrivacyDlpV2CreateInspectTemplateRequest'
-    { _gpdvcitrTemplateId      :: !(Maybe Text)
+    { _gpdvcitrTemplateId :: !(Maybe Text)
     , _gpdvcitrInspectTemplate :: !(Maybe GooglePrivacyDlpV2InspectTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2860,7 +2860,7 @@ data GooglePrivacyDlpV2PathElement =
   GooglePrivacyDlpV2PathElement'
     { _gpdvpeKind :: !(Maybe Text)
     , _gpdvpeName :: !(Maybe Text)
-    , _gpdvpeId   :: !(Maybe (Textual Int64))
+    , _gpdvpeId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2980,9 +2980,9 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2InspectJobConfig' smart constructor.
 data GooglePrivacyDlpV2InspectJobConfig =
   GooglePrivacyDlpV2InspectJobConfig'
-    { _gpdvijcActions             :: !(Maybe [GooglePrivacyDlpV2Action])
-    , _gpdvijcStorageConfig       :: !(Maybe GooglePrivacyDlpV2StorageConfig)
-    , _gpdvijcInspectConfig       :: !(Maybe GooglePrivacyDlpV2InspectConfig)
+    { _gpdvijcActions :: !(Maybe [GooglePrivacyDlpV2Action])
+    , _gpdvijcStorageConfig :: !(Maybe GooglePrivacyDlpV2StorageConfig)
+    , _gpdvijcInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
     , _gpdvijcInspectTemplateName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3065,7 +3065,7 @@ instance ToJSON GooglePrivacyDlpV2InspectJobConfig
 -- /See:/ 'googlePrivacyDlpV2StoredType' smart constructor.
 data GooglePrivacyDlpV2StoredType =
   GooglePrivacyDlpV2StoredType'
-    { _gpdvstName       :: !(Maybe Text)
+    { _gpdvstName :: !(Maybe Text)
     , _gpdvstCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3121,8 +3121,8 @@ data GooglePrivacyDlpV2FieldTransformation =
   GooglePrivacyDlpV2FieldTransformation'
     { _gpdvftInfoTypeTransformations :: !(Maybe GooglePrivacyDlpV2InfoTypeTransformations)
     , _gpdvftPrimitiveTransformation :: !(Maybe GooglePrivacyDlpV2PrimitiveTransformation)
-    , _gpdvftCondition               :: !(Maybe GooglePrivacyDlpV2RecordCondition)
-    , _gpdvftFields                  :: !(Maybe [GooglePrivacyDlpV2FieldId])
+    , _gpdvftCondition :: !(Maybe GooglePrivacyDlpV2RecordCondition)
+    , _gpdvftFields :: !(Maybe [GooglePrivacyDlpV2FieldId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3210,9 +3210,9 @@ instance ToJSON GooglePrivacyDlpV2FieldTransformation
 -- /See:/ 'googlePrivacyDlpV2HotwordRule' smart constructor.
 data GooglePrivacyDlpV2HotwordRule =
   GooglePrivacyDlpV2HotwordRule'
-    { _gpdvhrProximity            :: !(Maybe GooglePrivacyDlpV2Proximity)
+    { _gpdvhrProximity :: !(Maybe GooglePrivacyDlpV2Proximity)
     , _gpdvhrLikelihoodAdjustment :: !(Maybe GooglePrivacyDlpV2LikelihoodAdjustment)
-    , _gpdvhrHotwordRegex         :: !(Maybe GooglePrivacyDlpV2Regex)
+    , _gpdvhrHotwordRegex :: !(Maybe GooglePrivacyDlpV2Regex)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3285,9 +3285,9 @@ instance ToJSON GooglePrivacyDlpV2HotwordRule where
 -- /See:/ 'googlePrivacyDlpV2RedactImageRequest' smart constructor.
 data GooglePrivacyDlpV2RedactImageRequest =
   GooglePrivacyDlpV2RedactImageRequest'
-    { _gpdvrirIncludeFindings       :: !(Maybe Bool)
-    , _gpdvrirInspectConfig         :: !(Maybe GooglePrivacyDlpV2InspectConfig)
-    , _gpdvrirByteItem              :: !(Maybe GooglePrivacyDlpV2ByteContentItem)
+    { _gpdvrirIncludeFindings :: !(Maybe Bool)
+    , _gpdvrirInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
+    , _gpdvrirByteItem :: !(Maybe GooglePrivacyDlpV2ByteContentItem)
     , _gpdvrirImageRedactionConfigs :: !(Maybe [GooglePrivacyDlpV2ImageRedactionConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3368,9 +3368,9 @@ instance ToJSON GooglePrivacyDlpV2RedactImageRequest
 -- /See:/ 'googlePrivacyDlpV2FindingLimits' smart constructor.
 data GooglePrivacyDlpV2FindingLimits =
   GooglePrivacyDlpV2FindingLimits'
-    { _gpdvflMaxFindingsPerItem     :: !(Maybe (Textual Int32))
+    { _gpdvflMaxFindingsPerItem :: !(Maybe (Textual Int32))
     , _gpdvflMaxFindingsPerInfoType :: !(Maybe [GooglePrivacyDlpV2InfoTypeLimit])
-    , _gpdvflMaxFindingsPerRequest  :: !(Maybe (Textual Int32))
+    , _gpdvflMaxFindingsPerRequest :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3459,9 +3459,9 @@ instance ToJSON GooglePrivacyDlpV2FindingLimits where
 -- /See:/ 'googlePrivacyDlpV2Condition' smart constructor.
 data GooglePrivacyDlpV2Condition =
   GooglePrivacyDlpV2Condition'
-    { _gpdvcField    :: !(Maybe GooglePrivacyDlpV2FieldId)
+    { _gpdvcField :: !(Maybe GooglePrivacyDlpV2FieldId)
     , _gpdvcOperator :: !(Maybe GooglePrivacyDlpV2ConditionOperator)
-    , _gpdvcValue    :: !(Maybe GooglePrivacyDlpV2Value)
+    , _gpdvcValue :: !(Maybe GooglePrivacyDlpV2Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3521,10 +3521,10 @@ instance ToJSON GooglePrivacyDlpV2Condition where
 -- /See:/ 'googlePrivacyDlpV2TimespanConfig' smart constructor.
 data GooglePrivacyDlpV2TimespanConfig =
   GooglePrivacyDlpV2TimespanConfig'
-    { _gpdvtcTimestampField                       :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvtcStartTime                            :: !(Maybe DateTime')
+    { _gpdvtcTimestampField :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvtcStartTime :: !(Maybe DateTime')
     , _gpdvtcEnableAutoPopulationOfTimespanConfig :: !(Maybe Bool)
-    , _gpdvtcEndTime                              :: !(Maybe DateTime')
+    , _gpdvtcEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3614,7 +3614,7 @@ instance ToJSON GooglePrivacyDlpV2TimespanConfig
 -- /See:/ 'googlePrivacyDlpV2CreateDeidentifyTemplateRequest' smart constructor.
 data GooglePrivacyDlpV2CreateDeidentifyTemplateRequest =
   GooglePrivacyDlpV2CreateDeidentifyTemplateRequest'
-    { _gpdvcdtrTemplateId         :: !(Maybe Text)
+    { _gpdvcdtrTemplateId :: !(Maybe Text)
     , _gpdvcdtrDeidentifyTemplate :: !(Maybe GooglePrivacyDlpV2DeidentifyTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3723,7 +3723,7 @@ instance ToJSON GooglePrivacyDlpV2TransientCryptoKey
 -- /See:/ 'googlePrivacyDlpV2InfoTypeDescription' smart constructor.
 data GooglePrivacyDlpV2InfoTypeDescription =
   GooglePrivacyDlpV2InfoTypeDescription'
-    { _gpdvitdName        :: !(Maybe Text)
+    { _gpdvitdName :: !(Maybe Text)
     , _gpdvitdDisplayName :: !(Maybe Text)
     , _gpdvitdSupportedBy :: !(Maybe [Text])
     , _gpdvitdDescription :: !(Maybe Text)
@@ -3870,8 +3870,8 @@ instance ToJSON GoogleRpcStatusDetailsItem where
 data GooglePrivacyDlpV2ImageRedactionConfig =
   GooglePrivacyDlpV2ImageRedactionConfig'
     { _gpdvircRedactionColor :: !(Maybe GooglePrivacyDlpV2Color)
-    , _gpdvircInfoType       :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvircRedactAllText  :: !(Maybe Bool)
+    , _gpdvircInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvircRedactAllText :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3982,12 +3982,12 @@ instance ToJSON GooglePrivacyDlpV2Trigger where
 -- /See:/ 'googlePrivacyDlpV2CloudStorageOptions' smart constructor.
 data GooglePrivacyDlpV2CloudStorageOptions =
   GooglePrivacyDlpV2CloudStorageOptions'
-    { _gpdvcsoFileSet                  :: !(Maybe GooglePrivacyDlpV2FileSet)
-    , _gpdvcsoBytesLimitPerFile        :: !(Maybe (Textual Int64))
-    , _gpdvcsoFileTypes                :: !(Maybe [Text])
+    { _gpdvcsoFileSet :: !(Maybe GooglePrivacyDlpV2FileSet)
+    , _gpdvcsoBytesLimitPerFile :: !(Maybe (Textual Int64))
+    , _gpdvcsoFileTypes :: !(Maybe [Text])
     , _gpdvcsoBytesLimitPerFilePercent :: !(Maybe (Textual Int32))
-    , _gpdvcsoFilesLimitPercent        :: !(Maybe (Textual Int32))
-    , _gpdvcsoSampleMethod             :: !(Maybe GooglePrivacyDlpV2CloudStorageOptionsSampleMethod)
+    , _gpdvcsoFilesLimitPercent :: !(Maybe (Textual Int32))
+    , _gpdvcsoSampleMethod :: !(Maybe GooglePrivacyDlpV2CloudStorageOptionsSampleMethod)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4108,8 +4108,8 @@ instance ToJSON GooglePrivacyDlpV2CloudStorageOptions
 data GooglePrivacyDlpV2DeltaPresenceEstimationConfig =
   GooglePrivacyDlpV2DeltaPresenceEstimationConfig'
     { _gpdvdpecAuxiliaryTables :: !(Maybe [GooglePrivacyDlpV2StatisticalTable])
-    , _gpdvdpecRegionCode      :: !(Maybe Text)
-    , _gpdvdpecQuasiIds        :: !(Maybe [GooglePrivacyDlpV2QuasiId])
+    , _gpdvdpecRegionCode :: !(Maybe Text)
+    , _gpdvdpecQuasiIds :: !(Maybe [GooglePrivacyDlpV2QuasiId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4188,7 +4188,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2CreateStoredInfoTypeRequest' smart constructor.
 data GooglePrivacyDlpV2CreateStoredInfoTypeRequest =
   GooglePrivacyDlpV2CreateStoredInfoTypeRequest'
-    { _gpdvcsitrConfig           :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
+    { _gpdvcsitrConfig :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
     , _gpdvcsitrStoredInfoTypeId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4250,7 +4250,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2QuasiIdField' smart constructor.
 data GooglePrivacyDlpV2QuasiIdField =
   GooglePrivacyDlpV2QuasiIdField'
-    { _gpdvqifField     :: !(Maybe GooglePrivacyDlpV2FieldId)
+    { _gpdvqifField :: !(Maybe GooglePrivacyDlpV2FieldId)
     , _gpdvqifCustomTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4343,7 +4343,7 @@ instance ToJSON GooglePrivacyDlpV2TimePartConfig
 data GooglePrivacyDlpV2InspectionRule =
   GooglePrivacyDlpV2InspectionRule'
     { _gpdvirExclusionRule :: !(Maybe GooglePrivacyDlpV2ExclusionRule)
-    , _gpdvirHotwordRule   :: !(Maybe GooglePrivacyDlpV2HotwordRule)
+    , _gpdvirHotwordRule :: !(Maybe GooglePrivacyDlpV2HotwordRule)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4397,14 +4397,14 @@ instance ToJSON GooglePrivacyDlpV2InspectionRule
 -- /See:/ 'googlePrivacyDlpV2CustomInfoType' smart constructor.
 data GooglePrivacyDlpV2CustomInfoType =
   GooglePrivacyDlpV2CustomInfoType'
-    { _gpdvcitRegex          :: !(Maybe GooglePrivacyDlpV2Regex)
-    , _gpdvcitStoredType     :: !(Maybe GooglePrivacyDlpV2StoredType)
-    , _gpdvcitInfoType       :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvcitExclusionType  :: !(Maybe GooglePrivacyDlpV2CustomInfoTypeExclusionType)
-    , _gpdvcitLikelihood     :: !(Maybe GooglePrivacyDlpV2CustomInfoTypeLikelihood)
+    { _gpdvcitRegex :: !(Maybe GooglePrivacyDlpV2Regex)
+    , _gpdvcitStoredType :: !(Maybe GooglePrivacyDlpV2StoredType)
+    , _gpdvcitInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvcitExclusionType :: !(Maybe GooglePrivacyDlpV2CustomInfoTypeExclusionType)
+    , _gpdvcitLikelihood :: !(Maybe GooglePrivacyDlpV2CustomInfoTypeLikelihood)
     , _gpdvcitDetectionRules :: !(Maybe [GooglePrivacyDlpV2DetectionRule])
-    , _gpdvcitDictionary     :: !(Maybe GooglePrivacyDlpV2Dictionary)
-    , _gpdvcitSurrogateType  :: !(Maybe GooglePrivacyDlpV2SurrogateType)
+    , _gpdvcitDictionary :: !(Maybe GooglePrivacyDlpV2Dictionary)
+    , _gpdvcitSurrogateType :: !(Maybe GooglePrivacyDlpV2SurrogateType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4593,13 +4593,13 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2TransformationSummary' smart constructor.
 data GooglePrivacyDlpV2TransformationSummary =
   GooglePrivacyDlpV2TransformationSummary'
-    { _gpdvtsResults              :: !(Maybe [GooglePrivacyDlpV2SummaryResult])
-    , _gpdvtsField                :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvtsInfoType             :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvtsRecordSuppress       :: !(Maybe GooglePrivacyDlpV2RecordSuppression)
-    , _gpdvtsTransformedBytes     :: !(Maybe (Textual Int64))
+    { _gpdvtsResults :: !(Maybe [GooglePrivacyDlpV2SummaryResult])
+    , _gpdvtsField :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvtsInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvtsRecordSuppress :: !(Maybe GooglePrivacyDlpV2RecordSuppression)
+    , _gpdvtsTransformedBytes :: !(Maybe (Textual Int64))
     , _gpdvtsFieldTransformations :: !(Maybe [GooglePrivacyDlpV2FieldTransformation])
-    , _gpdvtsTransformation       :: !(Maybe GooglePrivacyDlpV2PrimitiveTransformation)
+    , _gpdvtsTransformation :: !(Maybe GooglePrivacyDlpV2PrimitiveTransformation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4718,7 +4718,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2LikelihoodAdjustment' smart constructor.
 data GooglePrivacyDlpV2LikelihoodAdjustment =
   GooglePrivacyDlpV2LikelihoodAdjustment'
-    { _gpdvlaFixedLikelihood    :: !(Maybe GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood)
+    { _gpdvlaFixedLikelihood :: !(Maybe GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood)
     , _gpdvlaRelativeLikelihood :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4784,7 +4784,7 @@ instance ToJSON
 data GooglePrivacyDlpV2Regex =
   GooglePrivacyDlpV2Regex'
     { _gpdvrGroupIndexes :: !(Maybe [Textual Int32])
-    , _gpdvrPattern      :: !(Maybe Text)
+    , _gpdvrPattern :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4839,7 +4839,7 @@ instance ToJSON GooglePrivacyDlpV2Regex where
 -- /See:/ 'googlePrivacyDlpV2UpdateStoredInfoTypeRequest' smart constructor.
 data GooglePrivacyDlpV2UpdateStoredInfoTypeRequest =
   GooglePrivacyDlpV2UpdateStoredInfoTypeRequest'
-    { _gpdvusitrConfig     :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
+    { _gpdvusitrConfig :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
     , _gpdvusitrUpdateMask :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4899,7 +4899,7 @@ instance ToJSON
 data GooglePrivacyDlpV2KAnonymityEquivalenceClass =
   GooglePrivacyDlpV2KAnonymityEquivalenceClass'
     { _gpdvkaecEquivalenceClassSize :: !(Maybe (Textual Int64))
-    , _gpdvkaecQuasiIdsValues       :: !(Maybe [GooglePrivacyDlpV2Value])
+    , _gpdvkaecQuasiIdsValues :: !(Maybe [GooglePrivacyDlpV2Value])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4963,7 +4963,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2UpdateDeidentifyTemplateRequest' smart constructor.
 data GooglePrivacyDlpV2UpdateDeidentifyTemplateRequest =
   GooglePrivacyDlpV2UpdateDeidentifyTemplateRequest'
-    { _gpdvudtrUpdateMask         :: !(Maybe GFieldMask)
+    { _gpdvudtrUpdateMask :: !(Maybe GFieldMask)
     , _gpdvudtrDeidentifyTemplate :: !(Maybe GooglePrivacyDlpV2DeidentifyTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5024,7 +5024,7 @@ instance ToJSON
 data GooglePrivacyDlpV2LDiversityConfig =
   GooglePrivacyDlpV2LDiversityConfig'
     { _gpdvldcSensitiveAttribute :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvldcQuasiIds           :: !(Maybe [GooglePrivacyDlpV2FieldId])
+    , _gpdvldcQuasiIds :: !(Maybe [GooglePrivacyDlpV2FieldId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5113,11 +5113,11 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2DeidentifyContentRequest' smart constructor.
 data GooglePrivacyDlpV2DeidentifyContentRequest =
   GooglePrivacyDlpV2DeidentifyContentRequest'
-    { _gpdvdcrInspectConfig          :: !(Maybe GooglePrivacyDlpV2InspectConfig)
-    , _gpdvdcrDeidentifyConfig       :: !(Maybe GooglePrivacyDlpV2DeidentifyConfig)
+    { _gpdvdcrInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
+    , _gpdvdcrDeidentifyConfig :: !(Maybe GooglePrivacyDlpV2DeidentifyConfig)
     , _gpdvdcrDeidentifyTemplateName :: !(Maybe Text)
-    , _gpdvdcrItem                   :: !(Maybe GooglePrivacyDlpV2ContentItem)
-    , _gpdvdcrInspectTemplateName    :: !(Maybe Text)
+    , _gpdvdcrItem :: !(Maybe GooglePrivacyDlpV2ContentItem)
+    , _gpdvdcrInspectTemplateName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5221,9 +5221,9 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2Color' smart constructor.
 data GooglePrivacyDlpV2Color =
   GooglePrivacyDlpV2Color'
-    { _gpdvcRed   :: !(Maybe (Textual Double))
+    { _gpdvcRed :: !(Maybe (Textual Double))
     , _gpdvcGreen :: !(Maybe (Textual Double))
-    , _gpdvcBlue  :: !(Maybe (Textual Double))
+    , _gpdvcBlue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5283,7 +5283,7 @@ instance ToJSON GooglePrivacyDlpV2Color where
 data GooglePrivacyDlpV2ListDlpJobsResponse =
   GooglePrivacyDlpV2ListDlpJobsResponse'
     { _gpdvldjrNextPageToken :: !(Maybe Text)
-    , _gpdvldjrJobs          :: !(Maybe [GooglePrivacyDlpV2DlpJob])
+    , _gpdvldjrJobs :: !(Maybe [GooglePrivacyDlpV2DlpJob])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5339,7 +5339,7 @@ instance ToJSON GooglePrivacyDlpV2ListDlpJobsResponse
 -- /See:/ 'googlePrivacyDlpV2Proximity' smart constructor.
 data GooglePrivacyDlpV2Proximity =
   GooglePrivacyDlpV2Proximity'
-    { _gpdvpWindowAfter  :: !(Maybe (Textual Int32))
+    { _gpdvpWindowAfter :: !(Maybe (Textual Int32))
     , _gpdvpWindowBefore :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5392,11 +5392,11 @@ instance ToJSON GooglePrivacyDlpV2Proximity where
 -- /See:/ 'googlePrivacyDlpV2Finding' smart constructor.
 data GooglePrivacyDlpV2Finding =
   GooglePrivacyDlpV2Finding'
-    { _gpdvfLocation   :: !(Maybe GooglePrivacyDlpV2Location)
-    , _gpdvfInfoType   :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvfQuoteInfo  :: !(Maybe GooglePrivacyDlpV2QuoteInfo)
+    { _gpdvfLocation :: !(Maybe GooglePrivacyDlpV2Location)
+    , _gpdvfInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvfQuoteInfo :: !(Maybe GooglePrivacyDlpV2QuoteInfo)
     , _gpdvfLikelihood :: !(Maybe GooglePrivacyDlpV2FindingLikelihood)
-    , _gpdvfQuote      :: !(Maybe Text)
+    , _gpdvfQuote :: !(Maybe Text)
     , _gpdvfCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5501,9 +5501,9 @@ instance ToJSON GooglePrivacyDlpV2Finding where
 -- /See:/ 'googlePrivacyDlpV2SummaryResult' smart constructor.
 data GooglePrivacyDlpV2SummaryResult =
   GooglePrivacyDlpV2SummaryResult'
-    { _gpdvsrCount   :: !(Maybe (Textual Int64))
+    { _gpdvsrCount :: !(Maybe (Textual Int64))
     , _gpdvsrDetails :: !(Maybe Text)
-    , _gpdvsrCode    :: !(Maybe GooglePrivacyDlpV2SummaryResultCode)
+    , _gpdvsrCode :: !(Maybe GooglePrivacyDlpV2SummaryResultCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5631,8 +5631,8 @@ instance ToJSON
 -- /See:/ 'googleTypeTimeOfDay' smart constructor.
 data GoogleTypeTimeOfDay =
   GoogleTypeTimeOfDay'
-    { _gttodNanos   :: !(Maybe (Textual Int32))
-    , _gttodHours   :: !(Maybe (Textual Int32))
+    { _gttodNanos :: !(Maybe (Textual Int32))
+    , _gttodHours :: !(Maybe (Textual Int32))
     , _gttodMinutes :: !(Maybe (Textual Int32))
     , _gttodSeconds :: !(Maybe (Textual Int32))
     }
@@ -5712,10 +5712,10 @@ instance ToJSON GoogleTypeTimeOfDay where
 -- /See:/ 'googlePrivacyDlpV2ExclusionRule' smart constructor.
 data GooglePrivacyDlpV2ExclusionRule =
   GooglePrivacyDlpV2ExclusionRule'
-    { _gpdverRegex            :: !(Maybe GooglePrivacyDlpV2Regex)
+    { _gpdverRegex :: !(Maybe GooglePrivacyDlpV2Regex)
     , _gpdverExcludeInfoTypes :: !(Maybe GooglePrivacyDlpV2ExcludeInfoTypes)
-    , _gpdverDictionary       :: !(Maybe GooglePrivacyDlpV2Dictionary)
-    , _gpdverMatchingType     :: !(Maybe GooglePrivacyDlpV2ExclusionRuleMatchingType)
+    , _gpdverDictionary :: !(Maybe GooglePrivacyDlpV2Dictionary)
+    , _gpdverMatchingType :: !(Maybe GooglePrivacyDlpV2ExclusionRuleMatchingType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5791,8 +5791,8 @@ instance ToJSON GooglePrivacyDlpV2ExclusionRule where
 -- /See:/ 'googlePrivacyDlpV2CreateDlpJobRequest' smart constructor.
 data GooglePrivacyDlpV2CreateDlpJobRequest =
   GooglePrivacyDlpV2CreateDlpJobRequest'
-    { _gpdvcdjrRiskJob    :: !(Maybe GooglePrivacyDlpV2RiskAnalysisJobConfig)
-    , _gpdvcdjrJobId      :: !(Maybe Text)
+    { _gpdvcdjrRiskJob :: !(Maybe GooglePrivacyDlpV2RiskAnalysisJobConfig)
+    , _gpdvcdjrJobId :: !(Maybe Text)
     , _gpdvcdjrInspectJob :: !(Maybe GooglePrivacyDlpV2InspectJobConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5860,9 +5860,9 @@ instance ToJSON GooglePrivacyDlpV2CreateDlpJobRequest
 -- /See:/ 'googlePrivacyDlpV2RecordKey' smart constructor.
 data GooglePrivacyDlpV2RecordKey =
   GooglePrivacyDlpV2RecordKey'
-    { _gpdvrkIdValues     :: !(Maybe [Text])
+    { _gpdvrkIdValues :: !(Maybe [Text])
     , _gpdvrkDatastoreKey :: !(Maybe GooglePrivacyDlpV2DatastoreKey)
-    , _gpdvrkBigQueryKey  :: !(Maybe GooglePrivacyDlpV2BigQueryKey)
+    , _gpdvrkBigQueryKey :: !(Maybe GooglePrivacyDlpV2BigQueryKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5932,10 +5932,10 @@ instance ToJSON GooglePrivacyDlpV2RecordKey where
 -- /See:/ 'googlePrivacyDlpV2KMapEstimationHistogramBucket' smart constructor.
 data GooglePrivacyDlpV2KMapEstimationHistogramBucket =
   GooglePrivacyDlpV2KMapEstimationHistogramBucket'
-    { _gpdvkmehbMaxAnonymity     :: !(Maybe (Textual Int64))
-    , _gpdvkmehbBucketValues     :: !(Maybe [GooglePrivacyDlpV2KMapEstimationQuasiIdValues])
-    , _gpdvkmehbMinAnonymity     :: !(Maybe (Textual Int64))
-    , _gpdvkmehbBucketSize       :: !(Maybe (Textual Int64))
+    { _gpdvkmehbMaxAnonymity :: !(Maybe (Textual Int64))
+    , _gpdvkmehbBucketValues :: !(Maybe [GooglePrivacyDlpV2KMapEstimationQuasiIdValues])
+    , _gpdvkmehbMinAnonymity :: !(Maybe (Textual Int64))
+    , _gpdvkmehbBucketSize :: !(Maybe (Textual Int64))
     , _gpdvkmehbBucketValueCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6036,7 +6036,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2ListDeidentifyTemplatesResponse' smart constructor.
 data GooglePrivacyDlpV2ListDeidentifyTemplatesResponse =
   GooglePrivacyDlpV2ListDeidentifyTemplatesResponse'
-    { _gpdvldtrNextPageToken       :: !(Maybe Text)
+    { _gpdvldtrNextPageToken :: !(Maybe Text)
     , _gpdvldtrDeidentifyTemplates :: !(Maybe [GooglePrivacyDlpV2DeidentifyTemplate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6167,7 +6167,7 @@ instance ToJSON GooglePrivacyDlpV2KAnonymityConfig
 data GooglePrivacyDlpV2DeidentifyContentResponse =
   GooglePrivacyDlpV2DeidentifyContentResponse'
     { _gOverview :: !(Maybe GooglePrivacyDlpV2TransformationOverview)
-    , _gItem     :: !(Maybe GooglePrivacyDlpV2ContentItem)
+    , _gItem :: !(Maybe GooglePrivacyDlpV2ContentItem)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6222,16 +6222,16 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2JobTrigger' smart constructor.
 data GooglePrivacyDlpV2JobTrigger =
   GooglePrivacyDlpV2JobTrigger'
-    { _gpdvjtStatus      :: !(Maybe GooglePrivacyDlpV2JobTriggerStatus)
-    , _gpdvjtTriggers    :: !(Maybe [GooglePrivacyDlpV2Trigger])
+    { _gpdvjtStatus :: !(Maybe GooglePrivacyDlpV2JobTriggerStatus)
+    , _gpdvjtTriggers :: !(Maybe [GooglePrivacyDlpV2Trigger])
     , _gpdvjtLastRunTime :: !(Maybe DateTime')
-    , _gpdvjtInspectJob  :: !(Maybe GooglePrivacyDlpV2InspectJobConfig)
-    , _gpdvjtUpdateTime  :: !(Maybe DateTime')
-    , _gpdvjtName        :: !(Maybe Text)
+    , _gpdvjtInspectJob :: !(Maybe GooglePrivacyDlpV2InspectJobConfig)
+    , _gpdvjtUpdateTime :: !(Maybe DateTime')
+    , _gpdvjtName :: !(Maybe Text)
     , _gpdvjtDisplayName :: !(Maybe Text)
-    , _gpdvjtErrors      :: !(Maybe [GooglePrivacyDlpV2Error])
+    , _gpdvjtErrors :: !(Maybe [GooglePrivacyDlpV2Error])
     , _gpdvjtDescription :: !(Maybe Text)
-    , _gpdvjtCreateTime  :: !(Maybe DateTime')
+    , _gpdvjtCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6381,7 +6381,7 @@ instance ToJSON GooglePrivacyDlpV2JobTrigger where
 -- /See:/ 'googlePrivacyDlpV2ListStoredInfoTypesResponse' smart constructor.
 data GooglePrivacyDlpV2ListStoredInfoTypesResponse =
   GooglePrivacyDlpV2ListStoredInfoTypesResponse'
-    { _gpdvlsitrNextPageToken   :: !(Maybe Text)
+    { _gpdvlsitrNextPageToken :: !(Maybe Text)
     , _gpdvlsitrStoredInfoTypes :: !(Maybe [GooglePrivacyDlpV2StoredInfoType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6443,10 +6443,10 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2LDiversityEquivalenceClass' smart constructor.
 data GooglePrivacyDlpV2LDiversityEquivalenceClass =
   GooglePrivacyDlpV2LDiversityEquivalenceClass'
-    { _gpdvldecTopSensitiveValues         :: !(Maybe [GooglePrivacyDlpV2ValueFrequency])
-    , _gpdvldecEquivalenceClassSize       :: !(Maybe (Textual Int64))
+    { _gpdvldecTopSensitiveValues :: !(Maybe [GooglePrivacyDlpV2ValueFrequency])
+    , _gpdvldecEquivalenceClassSize :: !(Maybe (Textual Int64))
     , _gpdvldecNumDistinctSensitiveValues :: !(Maybe (Textual Int64))
-    , _gpdvldecQuasiIdsValues             :: !(Maybe [GooglePrivacyDlpV2Value])
+    , _gpdvldecQuasiIdsValues :: !(Maybe [GooglePrivacyDlpV2Value])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6568,7 +6568,7 @@ instance ToJSON
 data GooglePrivacyDlpV2DeidentifyConfig =
   GooglePrivacyDlpV2DeidentifyConfig'
     { _gpdvdcInfoTypeTransformations :: !(Maybe GooglePrivacyDlpV2InfoTypeTransformations)
-    , _gpdvdcRecordTransformations   :: !(Maybe GooglePrivacyDlpV2RecordTransformations)
+    , _gpdvdcRecordTransformations :: !(Maybe GooglePrivacyDlpV2RecordTransformations)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6633,9 +6633,9 @@ instance ToJSON GooglePrivacyDlpV2DeidentifyConfig
 -- /See:/ 'googlePrivacyDlpV2CharacterMaskConfig' smart constructor.
 data GooglePrivacyDlpV2CharacterMaskConfig =
   GooglePrivacyDlpV2CharacterMaskConfig'
-    { _gpdvcmcNumberToMask       :: !(Maybe (Textual Int32))
-    , _gpdvcmcMaskingCharacter   :: !(Maybe Text)
-    , _gpdvcmcReverseOrder       :: !(Maybe Bool)
+    { _gpdvcmcNumberToMask :: !(Maybe (Textual Int32))
+    , _gpdvcmcMaskingCharacter :: !(Maybe Text)
+    , _gpdvcmcReverseOrder :: !(Maybe Bool)
     , _gpdvcmcCharactersToIgnore :: !(Maybe [GooglePrivacyDlpV2CharsToIgnore])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6728,7 +6728,7 @@ instance ToJSON GooglePrivacyDlpV2CharacterMaskConfig
 data GooglePrivacyDlpV2DatastoreOptions =
   GooglePrivacyDlpV2DatastoreOptions'
     { _gpdvdoPartitionId :: !(Maybe GooglePrivacyDlpV2PartitionId)
-    , _gpdvdoKind        :: !(Maybe GooglePrivacyDlpV2KindExpression)
+    , _gpdvdoKind :: !(Maybe GooglePrivacyDlpV2KindExpression)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6833,9 +6833,9 @@ instance ToJSON GooglePrivacyDlpV2ValueFrequency
 data GooglePrivacyDlpV2BoundingBox =
   GooglePrivacyDlpV2BoundingBox'
     { _gpdvbbHeight :: !(Maybe (Textual Int32))
-    , _gpdvbbLeft   :: !(Maybe (Textual Int32))
-    , _gpdvbbWidth  :: !(Maybe (Textual Int32))
-    , _gpdvbbTop    :: !(Maybe (Textual Int32))
+    , _gpdvbbLeft :: !(Maybe (Textual Int32))
+    , _gpdvbbWidth :: !(Maybe (Textual Int32))
+    , _gpdvbbTop :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6913,7 +6913,7 @@ instance ToJSON GooglePrivacyDlpV2BoundingBox where
 data GooglePrivacyDlpV2PartitionId =
   GooglePrivacyDlpV2PartitionId'
     { _gpdvpiNamespaceId :: !(Maybe Text)
-    , _gpdvpiProjectId   :: !(Maybe Text)
+    , _gpdvpiProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7006,9 +7006,9 @@ instance ToJSON GooglePrivacyDlpV2SaveFindings where
 -- /See:/ 'googlePrivacyDlpV2StoredInfoTypeVersion' smart constructor.
 data GooglePrivacyDlpV2StoredInfoTypeVersion =
   GooglePrivacyDlpV2StoredInfoTypeVersion'
-    { _gpdvsitvState      :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeVersionState)
-    , _gpdvsitvConfig     :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
-    , _gpdvsitvErrors     :: !(Maybe [GooglePrivacyDlpV2Error])
+    { _gpdvsitvState :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeVersionState)
+    , _gpdvsitvConfig :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeConfig)
+    , _gpdvsitvErrors :: !(Maybe [GooglePrivacyDlpV2Error])
     , _gpdvsitvCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7151,12 +7151,12 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2ContentLocation' smart constructor.
 data GooglePrivacyDlpV2ContentLocation =
   GooglePrivacyDlpV2ContentLocation'
-    { _gpdvclImageLocation      :: !(Maybe GooglePrivacyDlpV2ImageLocation)
-    , _gpdvclContainerName      :: !(Maybe Text)
+    { _gpdvclImageLocation :: !(Maybe GooglePrivacyDlpV2ImageLocation)
+    , _gpdvclContainerName :: !(Maybe Text)
     , _gpdvclContainerTimestamp :: !(Maybe DateTime')
-    , _gpdvclDocumentLocation   :: !(Maybe GooglePrivacyDlpV2DocumentLocation)
-    , _gpdvclContainerVersion   :: !(Maybe Text)
-    , _gpdvclRecordLocation     :: !(Maybe GooglePrivacyDlpV2RecordLocation)
+    , _gpdvclDocumentLocation :: !(Maybe GooglePrivacyDlpV2DocumentLocation)
+    , _gpdvclContainerVersion :: !(Maybe Text)
+    , _gpdvclRecordLocation :: !(Maybe GooglePrivacyDlpV2RecordLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7272,8 +7272,8 @@ instance ToJSON GooglePrivacyDlpV2ContentLocation
 data GooglePrivacyDlpV2AuxiliaryTable =
   GooglePrivacyDlpV2AuxiliaryTable'
     { _gpdvatRelativeFrequency :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvatTable             :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
-    , _gpdvatQuasiIds          :: !(Maybe [GooglePrivacyDlpV2QuasiIdField])
+    , _gpdvatTable :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    , _gpdvatQuasiIds :: !(Maybe [GooglePrivacyDlpV2QuasiIdField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7347,10 +7347,10 @@ instance ToJSON GooglePrivacyDlpV2AuxiliaryTable
 -- /See:/ 'googlePrivacyDlpV2DeltaPresenceEstimationHistogramBucket' smart constructor.
 data GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket =
   GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket'
-    { _gpdvdpehbBucketValues     :: !(Maybe [GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues])
-    , _gpdvdpehbMaxProbability   :: !(Maybe (Textual Double))
-    , _gpdvdpehbMinProbability   :: !(Maybe (Textual Double))
-    , _gpdvdpehbBucketSize       :: !(Maybe (Textual Int64))
+    { _gpdvdpehbBucketValues :: !(Maybe [GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues])
+    , _gpdvdpehbMaxProbability :: !(Maybe (Textual Double))
+    , _gpdvdpehbMinProbability :: !(Maybe (Textual Double))
+    , _gpdvdpehbBucketSize :: !(Maybe (Textual Int64))
     , _gpdvdpehbBucketValueCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7452,7 +7452,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2FileSet' smart constructor.
 data GooglePrivacyDlpV2FileSet =
   GooglePrivacyDlpV2FileSet'
-    { _gpdvfsURL          :: !(Maybe Text)
+    { _gpdvfsURL :: !(Maybe Text)
     , _gpdvfsRegexFileSet :: !(Maybe GooglePrivacyDlpV2CloudStorageRegexFileSet)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7510,7 +7510,7 @@ instance ToJSON GooglePrivacyDlpV2FileSet where
 -- /See:/ 'googlePrivacyDlpV2ListInspectTemplatesResponse' smart constructor.
 data GooglePrivacyDlpV2ListInspectTemplatesResponse =
   GooglePrivacyDlpV2ListInspectTemplatesResponse'
-    { _gpdvlitrNextPageToken    :: !(Maybe Text)
+    { _gpdvlitrNextPageToken :: !(Maybe Text)
     , _gpdvlitrInspectTemplates :: !(Maybe [GooglePrivacyDlpV2InspectTemplate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7672,7 +7672,7 @@ instance ToJSON GooglePrivacyDlpV2BigQueryField where
 data GooglePrivacyDlpV2OutputStorageConfig =
   GooglePrivacyDlpV2OutputStorageConfig'
     { _gpdvoscOutputSchema :: !(Maybe GooglePrivacyDlpV2OutputStorageConfigOutputSchema)
-    , _gpdvoscTable        :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    , _gpdvoscTable :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7836,7 +7836,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2KmsWrAppedCryptoKey' smart constructor.
 data GooglePrivacyDlpV2KmsWrAppedCryptoKey =
   GooglePrivacyDlpV2KmsWrAppedCryptoKey'
-    { _gpdvkwackWrAppedKey    :: !(Maybe Bytes)
+    { _gpdvkwackWrAppedKey :: !(Maybe Bytes)
     , _gpdvkwackCryptoKeyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7934,11 +7934,11 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2LDiversityHistogramBucket' smart constructor.
 data GooglePrivacyDlpV2LDiversityHistogramBucket =
   GooglePrivacyDlpV2LDiversityHistogramBucket'
-    { _gpdvldhbBucketValues                      :: !(Maybe [GooglePrivacyDlpV2LDiversityEquivalenceClass])
+    { _gpdvldhbBucketValues :: !(Maybe [GooglePrivacyDlpV2LDiversityEquivalenceClass])
     , _gpdvldhbSensitiveValueFrequencyLowerBound :: !(Maybe (Textual Int64))
     , _gpdvldhbSensitiveValueFrequencyUpperBound :: !(Maybe (Textual Int64))
-    , _gpdvldhbBucketSize                        :: !(Maybe (Textual Int64))
-    , _gpdvldhbBucketValueCount                  :: !(Maybe (Textual Int64))
+    , _gpdvldhbBucketSize :: !(Maybe (Textual Int64))
+    , _gpdvldhbBucketValueCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8045,7 +8045,7 @@ instance ToJSON
 data GooglePrivacyDlpV2ReidentifyContentResponse =
   GooglePrivacyDlpV2ReidentifyContentResponse'
     { _gpdvrcrOverview :: !(Maybe GooglePrivacyDlpV2TransformationOverview)
-    , _gpdvrcrItem     :: !(Maybe GooglePrivacyDlpV2ContentItem)
+    , _gpdvrcrItem :: !(Maybe GooglePrivacyDlpV2ContentItem)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8101,7 +8101,7 @@ instance ToJSON
 data GooglePrivacyDlpV2Expressions =
   GooglePrivacyDlpV2Expressions'
     { _gpdveLogicalOperator :: !(Maybe GooglePrivacyDlpV2ExpressionsLogicalOperator)
-    , _gpdveConditions      :: !(Maybe GooglePrivacyDlpV2Conditions)
+    , _gpdveConditions :: !(Maybe GooglePrivacyDlpV2Conditions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8151,9 +8151,9 @@ instance ToJSON GooglePrivacyDlpV2Expressions where
 -- /See:/ 'googlePrivacyDlpV2DateTime' smart constructor.
 data GooglePrivacyDlpV2DateTime =
   GooglePrivacyDlpV2DateTime'
-    { _gpdvdtTime      :: !(Maybe GoogleTypeTimeOfDay)
-    , _gpdvdtDate      :: !(Maybe GoogleTypeDate)
-    , _gpdvdtTimeZone  :: !(Maybe GooglePrivacyDlpV2TimeZone)
+    { _gpdvdtTime :: !(Maybe GoogleTypeTimeOfDay)
+    , _gpdvdtDate :: !(Maybe GoogleTypeDate)
+    , _gpdvdtTimeZone :: !(Maybe GooglePrivacyDlpV2TimeZone)
     , _gpdvdtDayOfWeek :: !(Maybe GooglePrivacyDlpV2DateTimeDayOfWeek)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8248,7 +8248,7 @@ instance ToJSON GooglePrivacyDlpV2DateTime where
 data GooglePrivacyDlpV2CloudStorageRegexFileSet =
   GooglePrivacyDlpV2CloudStorageRegexFileSet'
     { _gpdvcsrfsExcludeRegex :: !(Maybe [Text])
-    , _gpdvcsrfsBucketName   :: !(Maybe Text)
+    , _gpdvcsrfsBucketName :: !(Maybe Text)
     , _gpdvcsrfsIncludeRegex :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8334,9 +8334,9 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2Bucket' smart constructor.
 data GooglePrivacyDlpV2Bucket =
   GooglePrivacyDlpV2Bucket'
-    { _gpdvbMax              :: !(Maybe GooglePrivacyDlpV2Value)
+    { _gpdvbMax :: !(Maybe GooglePrivacyDlpV2Value)
     , _gpdvbReplacementValue :: !(Maybe GooglePrivacyDlpV2Value)
-    , _gpdvbMin              :: !(Maybe GooglePrivacyDlpV2Value)
+    , _gpdvbMin :: !(Maybe GooglePrivacyDlpV2Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8396,9 +8396,9 @@ instance ToJSON GooglePrivacyDlpV2Bucket where
 data GooglePrivacyDlpV2Action =
   GooglePrivacyDlpV2Action'
     { _gpdvaJobNotificationEmails :: !(Maybe GooglePrivacyDlpV2JobNotificationEmails)
-    , _gpdvaPubSub                :: !(Maybe GooglePrivacyDlpV2PublishToPubSub)
-    , _gpdvaSaveFindings          :: !(Maybe GooglePrivacyDlpV2SaveFindings)
-    , _gpdvaPublishSummaryToCscc  :: !(Maybe GooglePrivacyDlpV2PublishSummaryToCscc)
+    , _gpdvaPubSub :: !(Maybe GooglePrivacyDlpV2PublishToPubSub)
+    , _gpdvaSaveFindings :: !(Maybe GooglePrivacyDlpV2SaveFindings)
+    , _gpdvaPublishSummaryToCscc :: !(Maybe GooglePrivacyDlpV2PublishSummaryToCscc)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8481,8 +8481,8 @@ instance ToJSON GooglePrivacyDlpV2Action where
 -- /See:/ 'googleTypeDate' smart constructor.
 data GoogleTypeDate =
   GoogleTypeDate'
-    { _gtdDay   :: !(Maybe (Textual Int32))
-    , _gtdYear  :: !(Maybe (Textual Int32))
+    { _gtdDay :: !(Maybe (Textual Int32))
+    , _gtdYear :: !(Maybe (Textual Int32))
     , _gtdMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8578,7 +8578,7 @@ instance ToJSON GooglePrivacyDlpV2SurrogateType where
 -- /See:/ 'googlePrivacyDlpV2Table' smart constructor.
 data GooglePrivacyDlpV2Table =
   GooglePrivacyDlpV2Table'
-    { _gpdvtRows    :: !(Maybe [GooglePrivacyDlpV2Row])
+    { _gpdvtRows :: !(Maybe [GooglePrivacyDlpV2Row])
     , _gpdvtHeaders :: !(Maybe [GooglePrivacyDlpV2FieldId])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8686,8 +8686,8 @@ instance ToJSON GooglePrivacyDlpV2LDiversityResult
 data GooglePrivacyDlpV2KMapEstimationConfig =
   GooglePrivacyDlpV2KMapEstimationConfig'
     { _gpdvkmecAuxiliaryTables :: !(Maybe [GooglePrivacyDlpV2AuxiliaryTable])
-    , _gpdvkmecRegionCode      :: !(Maybe Text)
-    , _gpdvkmecQuasiIds        :: !(Maybe [GooglePrivacyDlpV2TaggedField])
+    , _gpdvkmecRegionCode :: !(Maybe Text)
+    , _gpdvkmecQuasiIds :: !(Maybe [GooglePrivacyDlpV2TaggedField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8775,12 +8775,12 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2CryptoReplaceFfxFpeConfig' smart constructor.
 data GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig =
   GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig'
-    { _gpdvcrffcContext           :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvcrffcCommonAlphabet    :: !(Maybe GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet)
+    { _gpdvcrffcContext :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvcrffcCommonAlphabet :: !(Maybe GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet)
     , _gpdvcrffcSurrogateInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvcrffcCustomAlphabet    :: !(Maybe Text)
-    , _gpdvcrffcCryptoKey         :: !(Maybe GooglePrivacyDlpV2CryptoKey)
-    , _gpdvcrffcRadix             :: !(Maybe (Textual Int32))
+    , _gpdvcrffcCustomAlphabet :: !(Maybe Text)
+    , _gpdvcrffcCryptoKey :: !(Maybe GooglePrivacyDlpV2CryptoKey)
+    , _gpdvcrffcRadix :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8919,7 +8919,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2QuasiIdentifierField' smart constructor.
 data GooglePrivacyDlpV2QuasiIdentifierField =
   GooglePrivacyDlpV2QuasiIdentifierField'
-    { _gField     :: !(Maybe GooglePrivacyDlpV2FieldId)
+    { _gField :: !(Maybe GooglePrivacyDlpV2FieldId)
     , _gCustomTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9012,11 +9012,11 @@ instance ToJSON GooglePrivacyDlpV2InfoType where
 data GooglePrivacyDlpV2InspectTemplate =
   GooglePrivacyDlpV2InspectTemplate'
     { _gInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
-    , _gUpdateTime    :: !(Maybe DateTime')
-    , _gName          :: !(Maybe Text)
-    , _gDisplayName   :: !(Maybe Text)
-    , _gDescription   :: !(Maybe Text)
-    , _gCreateTime    :: !(Maybe DateTime')
+    , _gUpdateTime :: !(Maybe DateTime')
+    , _gName :: !(Maybe Text)
+    , _gDisplayName :: !(Maybe Text)
+    , _gDescription :: !(Maybe Text)
+    , _gCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9114,9 +9114,9 @@ data GooglePrivacyDlpV2KAnonymityHistogramBucket =
   GooglePrivacyDlpV2KAnonymityHistogramBucket'
     { _gpdvkahbEquivalenceClassSizeLowerBound :: !(Maybe (Textual Int64))
     , _gpdvkahbEquivalenceClassSizeUpperBound :: !(Maybe (Textual Int64))
-    , _gpdvkahbBucketValues                   :: !(Maybe [GooglePrivacyDlpV2KAnonymityEquivalenceClass])
-    , _gpdvkahbBucketSize                     :: !(Maybe (Textual Int64))
-    , _gpdvkahbBucketValueCount               :: !(Maybe (Textual Int64))
+    , _gpdvkahbBucketValues :: !(Maybe [GooglePrivacyDlpV2KAnonymityEquivalenceClass])
+    , _gpdvkahbBucketSize :: !(Maybe (Textual Int64))
+    , _gpdvkahbBucketValueCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9220,11 +9220,11 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2ReidentifyContentRequest' smart constructor.
 data GooglePrivacyDlpV2ReidentifyContentRequest =
   GooglePrivacyDlpV2ReidentifyContentRequest'
-    { _gooInspectConfig          :: !(Maybe GooglePrivacyDlpV2InspectConfig)
+    { _gooInspectConfig :: !(Maybe GooglePrivacyDlpV2InspectConfig)
     , _gooReidentifyTemplateName :: !(Maybe Text)
-    , _gooItem                   :: !(Maybe GooglePrivacyDlpV2ContentItem)
-    , _gooInspectTemplateName    :: !(Maybe Text)
-    , _gooReidentifyConfig       :: !(Maybe GooglePrivacyDlpV2DeidentifyConfig)
+    , _gooItem :: !(Maybe GooglePrivacyDlpV2ContentItem)
+    , _gooInspectTemplateName :: !(Maybe Text)
+    , _gooReidentifyConfig :: !(Maybe GooglePrivacyDlpV2DeidentifyConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9379,7 +9379,7 @@ instance ToJSON GooglePrivacyDlpV2CryptoHashConfig
 data GooglePrivacyDlpV2InfoTypeLimit =
   GooglePrivacyDlpV2InfoTypeLimit'
     { _gpdvitlMaxFindings :: !(Maybe (Textual Int32))
-    , _gpdvitlInfoType    :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvitlInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9516,9 +9516,9 @@ instance ToJSON GooglePrivacyDlpV2TimeZone where
 -- /See:/ 'googlePrivacyDlpV2StorageConfig' smart constructor.
 data GooglePrivacyDlpV2StorageConfig =
   GooglePrivacyDlpV2StorageConfig'
-    { _gpdvscTimespanConfig      :: !(Maybe GooglePrivacyDlpV2TimespanConfig)
-    , _gpdvscBigQueryOptions     :: !(Maybe GooglePrivacyDlpV2BigQueryOptions)
-    , _gpdvscDatastoreOptions    :: !(Maybe GooglePrivacyDlpV2DatastoreOptions)
+    { _gpdvscTimespanConfig :: !(Maybe GooglePrivacyDlpV2TimespanConfig)
+    , _gpdvscBigQueryOptions :: !(Maybe GooglePrivacyDlpV2BigQueryOptions)
+    , _gpdvscDatastoreOptions :: !(Maybe GooglePrivacyDlpV2DatastoreOptions)
     , _gpdvscCloudStorageOptions :: !(Maybe GooglePrivacyDlpV2CloudStorageOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9601,13 +9601,13 @@ instance ToJSON GooglePrivacyDlpV2StorageConfig where
 data GooglePrivacyDlpV2Value =
   GooglePrivacyDlpV2Value'
     { _gpdvvDayOfWeekValue :: !(Maybe GooglePrivacyDlpV2ValueDayOfWeekValue)
-    , _gpdvvIntegerValue   :: !(Maybe (Textual Int64))
+    , _gpdvvIntegerValue :: !(Maybe (Textual Int64))
     , _gpdvvTimestampValue :: !(Maybe DateTime')
-    , _gpdvvTimeValue      :: !(Maybe GoogleTypeTimeOfDay)
-    , _gpdvvStringValue    :: !(Maybe Text)
-    , _gpdvvDateValue      :: !(Maybe GoogleTypeDate)
-    , _gpdvvBooleanValue   :: !(Maybe Bool)
-    , _gpdvvFloatValue     :: !(Maybe (Textual Double))
+    , _gpdvvTimeValue :: !(Maybe GoogleTypeTimeOfDay)
+    , _gpdvvStringValue :: !(Maybe Text)
+    , _gpdvvDateValue :: !(Maybe GoogleTypeDate)
+    , _gpdvvBooleanValue :: !(Maybe Bool)
+    , _gpdvvFloatValue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9739,7 +9739,7 @@ instance ToJSON GooglePrivacyDlpV2Value where
 -- /See:/ 'googlePrivacyDlpV2Dictionary' smart constructor.
 data GooglePrivacyDlpV2Dictionary =
   GooglePrivacyDlpV2Dictionary'
-    { _gpdvdWordList         :: !(Maybe GooglePrivacyDlpV2WordList)
+    { _gpdvdWordList :: !(Maybe GooglePrivacyDlpV2WordList)
     , _gpdvdCloudStoragePath :: !(Maybe GooglePrivacyDlpV2CloudStoragePath)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9791,14 +9791,14 @@ instance ToJSON GooglePrivacyDlpV2Dictionary where
 -- /See:/ 'googlePrivacyDlpV2AnalyzeDataSourceRiskDetails' smart constructor.
 data GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails =
   GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails'
-    { _gpdvadsrdRequestedPrivacyMetric        :: !(Maybe GooglePrivacyDlpV2PrivacyMetric)
-    , _gpdvadsrdRequestedSourceTable          :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
-    , _gpdvadsrdLDiversityResult              :: !(Maybe GooglePrivacyDlpV2LDiversityResult)
-    , _gpdvadsrdKAnonymityResult              :: !(Maybe GooglePrivacyDlpV2KAnonymityResult)
-    , _gpdvadsrdKMapEstimationResult          :: !(Maybe GooglePrivacyDlpV2KMapEstimationResult)
+    { _gpdvadsrdRequestedPrivacyMetric :: !(Maybe GooglePrivacyDlpV2PrivacyMetric)
+    , _gpdvadsrdRequestedSourceTable :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    , _gpdvadsrdLDiversityResult :: !(Maybe GooglePrivacyDlpV2LDiversityResult)
+    , _gpdvadsrdKAnonymityResult :: !(Maybe GooglePrivacyDlpV2KAnonymityResult)
+    , _gpdvadsrdKMapEstimationResult :: !(Maybe GooglePrivacyDlpV2KMapEstimationResult)
     , _gpdvadsrdDeltaPresenceEstimationResult :: !(Maybe GooglePrivacyDlpV2DeltaPresenceEstimationResult)
-    , _gpdvadsrdNumericalStatsResult          :: !(Maybe GooglePrivacyDlpV2NumericalStatsResult)
-    , _gpdvadsrdCategoricalStatsResult        :: !(Maybe GooglePrivacyDlpV2CategoricalStatsResult)
+    , _gpdvadsrdNumericalStatsResult :: !(Maybe GooglePrivacyDlpV2NumericalStatsResult)
+    , _gpdvadsrdCategoricalStatsResult :: !(Maybe GooglePrivacyDlpV2CategoricalStatsResult)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10007,7 +10007,7 @@ instance ToJSON GooglePrivacyDlpV2DatastoreKey where
 data GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues =
   GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues'
     { _gpdvdpeqivEstimatedProbability :: !(Maybe (Textual Double))
-    , _gpdvdpeqivQuasiIdsValues       :: !(Maybe [GooglePrivacyDlpV2Value])
+    , _gpdvdpeqivQuasiIdsValues :: !(Maybe [GooglePrivacyDlpV2Value])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10080,7 +10080,7 @@ instance ToJSON
 data GooglePrivacyDlpV2CharsToIgnore =
   GooglePrivacyDlpV2CharsToIgnore'
     { _gpdvctiCommonCharactersToIgnore :: !(Maybe GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore)
-    , _gpdvctiCharactersToSkip         :: !(Maybe Text)
+    , _gpdvctiCharactersToSkip :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10139,7 +10139,7 @@ data GooglePrivacyDlpV2BigQueryTable =
   GooglePrivacyDlpV2BigQueryTable'
     { _gpdvbqtDataSetId :: !(Maybe Text)
     , _gpdvbqtProjectId :: !(Maybe Text)
-    , _gpdvbqtTableId   :: !(Maybe Text)
+    , _gpdvbqtTableId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10204,7 +10204,7 @@ instance ToJSON GooglePrivacyDlpV2BigQueryTable where
 data GooglePrivacyDlpV2RequestedOptions =
   GooglePrivacyDlpV2RequestedOptions'
     { _gpdvroSnapshotInspectTemplate :: !(Maybe GooglePrivacyDlpV2InspectTemplate)
-    , _gpdvroJobConfig               :: !(Maybe GooglePrivacyDlpV2InspectJobConfig)
+    , _gpdvroJobConfig :: !(Maybe GooglePrivacyDlpV2InspectJobConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10258,16 +10258,16 @@ instance ToJSON GooglePrivacyDlpV2RequestedOptions
 -- /See:/ 'googlePrivacyDlpV2PrimitiveTransformation' smart constructor.
 data GooglePrivacyDlpV2PrimitiveTransformation =
   GooglePrivacyDlpV2PrimitiveTransformation'
-    { _gpdvptFixedSizeBucketingConfig  :: !(Maybe GooglePrivacyDlpV2FixedSizeBucketingConfig)
-    , _gpdvptRedactConfig              :: !(Maybe GooglePrivacyDlpV2RedactConfig)
-    , _gpdvptCharacterMaskConfig       :: !(Maybe GooglePrivacyDlpV2CharacterMaskConfig)
-    , _gpdvptTimePartConfig            :: !(Maybe GooglePrivacyDlpV2TimePartConfig)
-    , _gpdvptDateShiftConfig           :: !(Maybe GooglePrivacyDlpV2DateShiftConfig)
-    , _gpdvptBucketingConfig           :: !(Maybe GooglePrivacyDlpV2BucketingConfig)
+    { _gpdvptFixedSizeBucketingConfig :: !(Maybe GooglePrivacyDlpV2FixedSizeBucketingConfig)
+    , _gpdvptRedactConfig :: !(Maybe GooglePrivacyDlpV2RedactConfig)
+    , _gpdvptCharacterMaskConfig :: !(Maybe GooglePrivacyDlpV2CharacterMaskConfig)
+    , _gpdvptTimePartConfig :: !(Maybe GooglePrivacyDlpV2TimePartConfig)
+    , _gpdvptDateShiftConfig :: !(Maybe GooglePrivacyDlpV2DateShiftConfig)
+    , _gpdvptBucketingConfig :: !(Maybe GooglePrivacyDlpV2BucketingConfig)
     , _gpdvptReplaceWithInfoTypeConfig :: !(Maybe GooglePrivacyDlpV2ReplaceWithInfoTypeConfig)
     , _gpdvptCryptoDeterministicConfig :: !(Maybe GooglePrivacyDlpV2CryptoDeterministicConfig)
-    , _gpdvptCryptoHashConfig          :: !(Maybe GooglePrivacyDlpV2CryptoHashConfig)
-    , _gpdvptReplaceConfig             :: !(Maybe GooglePrivacyDlpV2ReplaceValueConfig)
+    , _gpdvptCryptoHashConfig :: !(Maybe GooglePrivacyDlpV2CryptoHashConfig)
+    , _gpdvptReplaceConfig :: !(Maybe GooglePrivacyDlpV2ReplaceValueConfig)
     , _gpdvptCryptoReplaceFfxFpeConfig :: !(Maybe GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10446,8 +10446,8 @@ instance ToJSON GooglePrivacyDlpV2CancelDlpJobRequest
 data GooglePrivacyDlpV2RecordLocation =
   GooglePrivacyDlpV2RecordLocation'
     { _gpdvrlTableLocation :: !(Maybe GooglePrivacyDlpV2TableLocation)
-    , _gpdvrlFieldId       :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvrlRecordKey     :: !(Maybe GooglePrivacyDlpV2RecordKey)
+    , _gpdvrlFieldId :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvrlRecordKey :: !(Maybe GooglePrivacyDlpV2RecordKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10514,7 +10514,7 @@ instance ToJSON GooglePrivacyDlpV2RecordLocation
 -- /See:/ 'googlePrivacyDlpV2Error' smart constructor.
 data GooglePrivacyDlpV2Error =
   GooglePrivacyDlpV2Error'
-    { _gpdveDetails    :: !(Maybe GoogleRpcStatus)
+    { _gpdveDetails :: !(Maybe GoogleRpcStatus)
     , _gpdveTimestamps :: !(Maybe [DateTime'])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10566,8 +10566,8 @@ instance ToJSON GooglePrivacyDlpV2Error where
 -- /See:/ 'googlePrivacyDlpV2StoredInfoType' smart constructor.
 data GooglePrivacyDlpV2StoredInfoType =
   GooglePrivacyDlpV2StoredInfoType'
-    { _gpdvsitCurrentVersion  :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeVersion)
-    , _gpdvsitName            :: !(Maybe Text)
+    { _gpdvsitCurrentVersion :: !(Maybe GooglePrivacyDlpV2StoredInfoTypeVersion)
+    , _gpdvsitName :: !(Maybe Text)
     , _gpdvsitPendingVersions :: !(Maybe [GooglePrivacyDlpV2StoredInfoTypeVersion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10638,9 +10638,9 @@ instance ToJSON GooglePrivacyDlpV2StoredInfoType
 -- /See:/ 'googlePrivacyDlpV2CryptoDeterministicConfig' smart constructor.
 data GooglePrivacyDlpV2CryptoDeterministicConfig =
   GooglePrivacyDlpV2CryptoDeterministicConfig'
-    { _gpdvcdcContext           :: !(Maybe GooglePrivacyDlpV2FieldId)
+    { _gpdvcdcContext :: !(Maybe GooglePrivacyDlpV2FieldId)
     , _gpdvcdcSurrogateInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvcdcCryptoKey         :: !(Maybe GooglePrivacyDlpV2CryptoKey)
+    , _gpdvcdcCryptoKey :: !(Maybe GooglePrivacyDlpV2CryptoKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10748,8 +10748,8 @@ instance ToJSON
 data GooglePrivacyDlpV2StatisticalTable =
   GooglePrivacyDlpV2StatisticalTable'
     { _gpdvstRelativeFrequency :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvstTable             :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
-    , _gpdvstQuasiIds          :: !(Maybe [GooglePrivacyDlpV2QuasiIdentifierField])
+    , _gpdvstTable :: !(Maybe GooglePrivacyDlpV2BigQueryTable)
+    , _gpdvstQuasiIds :: !(Maybe [GooglePrivacyDlpV2QuasiIdentifierField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10820,12 +10820,12 @@ instance ToJSON GooglePrivacyDlpV2StatisticalTable
 -- /See:/ 'googlePrivacyDlpV2DeidentifyTemplate' smart constructor.
 data GooglePrivacyDlpV2DeidentifyTemplate =
   GooglePrivacyDlpV2DeidentifyTemplate'
-    { _gpdvdtUpdateTime       :: !(Maybe DateTime')
-    , _gpdvdtName             :: !(Maybe Text)
+    { _gpdvdtUpdateTime :: !(Maybe DateTime')
+    , _gpdvdtName :: !(Maybe Text)
     , _gpdvdtDeidentifyConfig :: !(Maybe GooglePrivacyDlpV2DeidentifyConfig)
-    , _gpdvdtDisplayName      :: !(Maybe Text)
-    , _gpdvdtDescription      :: !(Maybe Text)
-    , _gpdvdtCreateTime       :: !(Maybe DateTime')
+    , _gpdvdtDisplayName :: !(Maybe Text)
+    , _gpdvdtDescription :: !(Maybe Text)
+    , _gpdvdtCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11061,7 +11061,7 @@ instance ToJSON
 data GooglePrivacyDlpV2ListJobTriggersResponse =
   GooglePrivacyDlpV2ListJobTriggersResponse'
     { _gpdvljtrNextPageToken :: !(Maybe Text)
-    , _gpdvljtrJobTriggers   :: !(Maybe [GooglePrivacyDlpV2JobTrigger])
+    , _gpdvljtrJobTriggers :: !(Maybe [GooglePrivacyDlpV2JobTrigger])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11160,9 +11160,9 @@ instance ToJSON GooglePrivacyDlpV2CloudStoragePath
 -- /See:/ 'googlePrivacyDlpV2Location' smart constructor.
 data GooglePrivacyDlpV2Location =
   GooglePrivacyDlpV2Location'
-    { _gpdvlCodepointRange   :: !(Maybe GooglePrivacyDlpV2Range)
+    { _gpdvlCodepointRange :: !(Maybe GooglePrivacyDlpV2Range)
     , _gpdvlContentLocations :: !(Maybe [GooglePrivacyDlpV2ContentLocation])
-    , _gpdvlByteRange        :: !(Maybe GooglePrivacyDlpV2Range)
+    , _gpdvlByteRange :: !(Maybe GooglePrivacyDlpV2Range)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11279,7 +11279,7 @@ instance ToJSON GooglePrivacyDlpV2Schedule where
 -- /See:/ 'googlePrivacyDlpV2CreateJobTriggerRequest' smart constructor.
 data GooglePrivacyDlpV2CreateJobTriggerRequest =
   GooglePrivacyDlpV2CreateJobTriggerRequest'
-    { _gpdvcjtrTriggerId  :: !(Maybe Text)
+    { _gpdvcjtrTriggerId :: !(Maybe Text)
     , _gpdvcjtrJobTrigger :: !(Maybe GooglePrivacyDlpV2JobTrigger)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11338,7 +11338,7 @@ instance ToJSON
 -- /See:/ 'googlePrivacyDlpV2TransformationOverview' smart constructor.
 data GooglePrivacyDlpV2TransformationOverview =
   GooglePrivacyDlpV2TransformationOverview'
-    { _gpdvtoTransformedBytes        :: !(Maybe (Textual Int64))
+    { _gpdvtoTransformedBytes :: !(Maybe (Textual Int64))
     , _gpdvtoTransformationSummaries :: !(Maybe [GooglePrivacyDlpV2TransformationSummary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11483,11 +11483,11 @@ instance ToJSON GooglePrivacyDlpV2KindExpression
 -- /See:/ 'googlePrivacyDlpV2PrivacyMetric' smart constructor.
 data GooglePrivacyDlpV2PrivacyMetric =
   GooglePrivacyDlpV2PrivacyMetric'
-    { _gpdvpmNumericalStatsConfig          :: !(Maybe GooglePrivacyDlpV2NumericalStatsConfig)
-    , _gpdvpmCategoricalStatsConfig        :: !(Maybe GooglePrivacyDlpV2CategoricalStatsConfig)
-    , _gpdvpmKMapEstimationConfig          :: !(Maybe GooglePrivacyDlpV2KMapEstimationConfig)
-    , _gpdvpmKAnonymityConfig              :: !(Maybe GooglePrivacyDlpV2KAnonymityConfig)
-    , _gpdvpmLDiversityConfig              :: !(Maybe GooglePrivacyDlpV2LDiversityConfig)
+    { _gpdvpmNumericalStatsConfig :: !(Maybe GooglePrivacyDlpV2NumericalStatsConfig)
+    , _gpdvpmCategoricalStatsConfig :: !(Maybe GooglePrivacyDlpV2CategoricalStatsConfig)
+    , _gpdvpmKMapEstimationConfig :: !(Maybe GooglePrivacyDlpV2KMapEstimationConfig)
+    , _gpdvpmKAnonymityConfig :: !(Maybe GooglePrivacyDlpV2KAnonymityConfig)
+    , _gpdvpmLDiversityConfig :: !(Maybe GooglePrivacyDlpV2LDiversityConfig)
     , _gpdvpmDeltaPresenceEstimationConfig :: !(Maybe GooglePrivacyDlpV2DeltaPresenceEstimationConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11629,7 +11629,7 @@ instance ToJSON GooglePrivacyDlpV2UnwrAppedCryptoKey
 -- /See:/ 'googlePrivacyDlpV2InspectionRuleSet' smart constructor.
 data GooglePrivacyDlpV2InspectionRuleSet =
   GooglePrivacyDlpV2InspectionRuleSet'
-    { _gpdvirsRules     :: !(Maybe [GooglePrivacyDlpV2InspectionRule])
+    { _gpdvirsRules :: !(Maybe [GooglePrivacyDlpV2InspectionRule])
     , _gpdvirsInfoTypes :: !(Maybe [GooglePrivacyDlpV2InfoType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11686,9 +11686,9 @@ instance ToJSON GooglePrivacyDlpV2InspectionRuleSet
 -- /See:/ 'googlePrivacyDlpV2QuasiId' smart constructor.
 data GooglePrivacyDlpV2QuasiId =
   GooglePrivacyDlpV2QuasiId'
-    { _gpdvqiField     :: !(Maybe GooglePrivacyDlpV2FieldId)
-    , _gpdvqiInfoType  :: !(Maybe GooglePrivacyDlpV2InfoType)
-    , _gpdvqiInferred  :: !(Maybe GoogleProtobufEmpty)
+    { _gpdvqiField :: !(Maybe GooglePrivacyDlpV2FieldId)
+    , _gpdvqiInfoType :: !(Maybe GooglePrivacyDlpV2InfoType)
+    , _gpdvqiInferred :: !(Maybe GoogleProtobufEmpty)
     , _gpdvqiCustomTag :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

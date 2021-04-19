@@ -43,8 +43,8 @@ module Network.Google.Resource.AppEngine.Apps.AuthorizedCertificates.Get
     , aacgCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.authorizedCertificates.get@ method which the
 -- 'AppsAuthorizedCertificatesGet' request conforms to.
@@ -69,13 +69,13 @@ type AppsAuthorizedCertificatesGetResource =
 data AppsAuthorizedCertificatesGet =
   AppsAuthorizedCertificatesGet'
     { _aacgAuthorizedCertificatesId :: !Text
-    , _aacgXgafv                    :: !(Maybe Xgafv)
-    , _aacgUploadProtocol           :: !(Maybe Text)
-    , _aacgAccessToken              :: !(Maybe Text)
-    , _aacgUploadType               :: !(Maybe Text)
-    , _aacgAppsId                   :: !Text
-    , _aacgView                     :: !(Maybe Text)
-    , _aacgCallback                 :: !(Maybe Text)
+    , _aacgXgafv :: !(Maybe Xgafv)
+    , _aacgUploadProtocol :: !(Maybe Text)
+    , _aacgAccessToken :: !(Maybe Text)
+    , _aacgUploadType :: !(Maybe Text)
+    , _aacgAppsId :: !Text
+    , _aacgView :: !(Maybe Text)
+    , _aacgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

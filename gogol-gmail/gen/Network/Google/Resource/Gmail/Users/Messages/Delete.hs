@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Delete
     , umdId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.delete@ method which the
 -- 'UsersMessagesDelete' request conforms to.
@@ -59,7 +59,7 @@ type UsersMessagesDeleteResource =
 data UsersMessagesDelete =
   UsersMessagesDelete'
     { _umdUserId :: !Text
-    , _umdId     :: !Text
+    , _umdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

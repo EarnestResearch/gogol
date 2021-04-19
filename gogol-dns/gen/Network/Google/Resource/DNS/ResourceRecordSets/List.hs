@@ -41,8 +41,8 @@ module Network.Google.Resource.DNS.ResourceRecordSets.List
     , rrslMaxResults
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.resourceRecordSets.list@ method which the
 -- 'ResourceRecordSetsList' request conforms to.
@@ -66,12 +66,12 @@ type ResourceRecordSetsListResource =
 -- /See:/ 'resourceRecordSetsList' smart constructor.
 data ResourceRecordSetsList =
   ResourceRecordSetsList'
-    { _rrslProject     :: !Text
-    , _rrslName        :: !(Maybe Text)
-    , _rrslPageToken   :: !(Maybe Text)
-    , _rrslType        :: !(Maybe Text)
+    { _rrslProject :: !Text
+    , _rrslName :: !(Maybe Text)
+    , _rrslPageToken :: !(Maybe Text)
+    , _rrslType :: !(Maybe Text)
     , _rrslManagedZone :: !Text
-    , _rrslMaxResults  :: !(Maybe (Textual Int32))
+    , _rrslMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

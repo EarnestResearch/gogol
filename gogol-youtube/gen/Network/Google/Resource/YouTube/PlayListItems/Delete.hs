@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.PlayListItems.Delete
     , plidId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.playlistItems.delete@ method which the
 -- 'PlayListItemsDelete' request conforms to.
@@ -56,7 +56,7 @@ type PlayListItemsDeleteResource =
 data PlayListItemsDelete =
   PlayListItemsDelete'
     { _plidOnBehalfOfContentOwner :: !(Maybe Text)
-    , _plidId                     :: !Text
+    , _plidId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

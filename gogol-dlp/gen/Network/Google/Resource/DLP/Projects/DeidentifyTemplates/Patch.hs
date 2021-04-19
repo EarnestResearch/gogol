@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.Projects.DeidentifyTemplates.Patch
     , pdtpCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.deidentifyTemplates.patch@ method which the
 -- 'ProjectsDeidentifyTemplatesPatch' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsDeidentifyTemplatesPatchResource =
 -- /See:/ 'projectsDeidentifyTemplatesPatch' smart constructor.
 data ProjectsDeidentifyTemplatesPatch =
   ProjectsDeidentifyTemplatesPatch'
-    { _pdtpXgafv          :: !(Maybe Xgafv)
+    { _pdtpXgafv :: !(Maybe Xgafv)
     , _pdtpUploadProtocol :: !(Maybe Text)
-    , _pdtpAccessToken    :: !(Maybe Text)
-    , _pdtpUploadType     :: !(Maybe Text)
-    , _pdtpPayload        :: !GooglePrivacyDlpV2UpdateDeidentifyTemplateRequest
-    , _pdtpName           :: !Text
-    , _pdtpCallback       :: !(Maybe Text)
+    , _pdtpAccessToken :: !(Maybe Text)
+    , _pdtpUploadType :: !(Maybe Text)
+    , _pdtpPayload :: !GooglePrivacyDlpV2UpdateDeidentifyTemplateRequest
+    , _pdtpName :: !Text
+    , _pdtpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

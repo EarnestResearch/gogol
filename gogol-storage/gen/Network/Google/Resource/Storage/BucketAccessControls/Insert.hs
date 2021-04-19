@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.Insert
     , baciUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.insert@ method which the
 -- 'BucketAccessControlsInsert' request conforms to.
@@ -59,8 +59,8 @@ type BucketAccessControlsInsertResource =
 -- /See:/ 'bucketAccessControlsInsert' smart constructor.
 data BucketAccessControlsInsert =
   BucketAccessControlsInsert'
-    { _baciBucket      :: !Text
-    , _baciPayload     :: !BucketAccessControl
+    { _baciBucket :: !Text
+    , _baciPayload :: !BucketAccessControl
     , _baciUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

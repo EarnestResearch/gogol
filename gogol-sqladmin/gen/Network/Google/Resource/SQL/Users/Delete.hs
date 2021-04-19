@@ -39,8 +39,8 @@ module Network.Google.Resource.SQL.Users.Delete
     , udInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.users.delete@ method which the
 -- 'UsersDelete' request conforms to.
@@ -61,9 +61,9 @@ type UsersDeleteResource =
 -- /See:/ 'usersDelete' smart constructor.
 data UsersDelete =
   UsersDelete'
-    { _udProject  :: !Text
-    , _udName     :: !Text
-    , _udHost     :: !Text
+    { _udProject :: !Text
+    , _udName :: !Text
+    , _udHost :: !Text
     , _udInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

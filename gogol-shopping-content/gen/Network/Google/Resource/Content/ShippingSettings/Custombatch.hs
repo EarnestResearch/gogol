@@ -35,29 +35,32 @@ module Network.Google.Resource.Content.ShippingSettings.Custombatch
 
     -- * Request Lenses
     , sscPayload
+    , sscDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.shippingsettings.custombatch@ method which the
 -- 'ShippingSettingsCustombatch' request conforms to.
 type ShippingSettingsCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "shippingsettings" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] ShippingSettingsCustomBatchRequest :>
-                 Post '[JSON] ShippingSettingsCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] ShippingSettingsCustomBatchRequest :>
+                   Post '[JSON] ShippingSettingsCustomBatchResponse
 
 -- | Retrieves and updates the shipping settings of multiple accounts in a
 -- single request.
 --
 -- /See:/ 'shippingSettingsCustombatch' smart constructor.
-newtype ShippingSettingsCustombatch =
+data ShippingSettingsCustombatch =
   ShippingSettingsCustombatch'
-    { _sscPayload :: ShippingSettingsCustomBatchRequest
+    { _sscPayload :: !ShippingSettingsCustomBatchRequest
+    , _sscDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,17 +70,27 @@ newtype ShippingSettingsCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'sscPayload'
+--
+-- * 'sscDryRun'
 shippingSettingsCustombatch
     :: ShippingSettingsCustomBatchRequest -- ^ 'sscPayload'
     -> ShippingSettingsCustombatch
 shippingSettingsCustombatch pSscPayload_ =
-  ShippingSettingsCustombatch' {_sscPayload = pSscPayload_}
+  ShippingSettingsCustombatch'
+    {_sscPayload = pSscPayload_, _sscDryRun = Nothing}
 
 
 -- | Multipart request metadata.
 sscPayload :: Lens' ShippingSettingsCustombatch ShippingSettingsCustomBatchRequest
 sscPayload
   = lens _sscPayload (\ s a -> s{_sscPayload = a})
+
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+sscDryRun :: Lens' ShippingSettingsCustombatch (Maybe Bool)
+sscDryRun
+  = lens _sscDryRun (\ s a -> s{_sscDryRun = a})
 
 instance GoogleRequest ShippingSettingsCustombatch
          where
@@ -86,7 +99,7 @@ instance GoogleRequest ShippingSettingsCustombatch
         type Scopes ShippingSettingsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ShippingSettingsCustombatch'{..}
-          = go (Just AltJSON) _sscPayload
+          = go _sscDryRun (Just AltJSON) _sscPayload
               shoppingContentService
           where go
                   = buildClient

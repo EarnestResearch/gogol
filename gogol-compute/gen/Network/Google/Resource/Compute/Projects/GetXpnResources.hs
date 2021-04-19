@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Projects.GetXpnResources
     , pgxrMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.projects.getXpnResources@ method which the
 -- 'ProjectsGetXpnResources'' request conforms to.
@@ -65,10 +65,10 @@ type ProjectsGetXpnResourcesResource =
 -- /See:/ 'projectsGetXpnResources'' smart constructor.
 data ProjectsGetXpnResources' =
   ProjectsGetXpnResources''
-    { _pgxrProject    :: !Text
-    , _pgxrOrderBy    :: !(Maybe Text)
-    , _pgxrFilter     :: !(Maybe Text)
-    , _pgxrPageToken  :: !(Maybe Text)
+    { _pgxrProject :: !Text
+    , _pgxrOrderBy :: !(Maybe Text)
+    , _pgxrFilter :: !(Maybe Text)
+    , _pgxrPageToken :: !(Maybe Text)
     , _pgxrMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

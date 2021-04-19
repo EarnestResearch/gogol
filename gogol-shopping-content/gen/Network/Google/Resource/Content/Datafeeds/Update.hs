@@ -36,21 +36,23 @@ module Network.Google.Resource.Content.Datafeeds.Update
     , duMerchantId
     , duPayload
     , duDatafeedId
+    , duDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.update@ method which the
 -- 'DatafeedsUpdate' request conforms to.
 type DatafeedsUpdateResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] Datafeed :> Put '[JSON] Datafeed
+               QueryParam "dryRun" Bool :>
+                 QueryParam "alt" AltJSON :>
+                   ReqBody '[JSON] Datafeed :> Put '[JSON] Datafeed
 
 -- | Updates a datafeed configuration of your Merchant Center account.
 --
@@ -58,8 +60,9 @@ type DatafeedsUpdateResource =
 data DatafeedsUpdate =
   DatafeedsUpdate'
     { _duMerchantId :: !(Textual Word64)
-    , _duPayload    :: !Datafeed
+    , _duPayload :: !Datafeed
     , _duDatafeedId :: !(Textual Word64)
+    , _duDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -73,6 +76,8 @@ data DatafeedsUpdate =
 -- * 'duPayload'
 --
 -- * 'duDatafeedId'
+--
+-- * 'duDryRun'
 datafeedsUpdate
     :: Word64 -- ^ 'duMerchantId'
     -> Datafeed -- ^ 'duPayload'
@@ -83,6 +88,7 @@ datafeedsUpdate pDuMerchantId_ pDuPayload_ pDuDatafeedId_ =
     { _duMerchantId = _Coerce # pDuMerchantId_
     , _duPayload = pDuPayload_
     , _duDatafeedId = _Coerce # pDuDatafeedId_
+    , _duDryRun = Nothing
     }
 
 
@@ -104,12 +110,19 @@ duDatafeedId
   = lens _duDatafeedId (\ s a -> s{_duDatafeedId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+duDryRun :: Lens' DatafeedsUpdate (Maybe Bool)
+duDryRun = lens _duDryRun (\ s a -> s{_duDryRun = a})
+
 instance GoogleRequest DatafeedsUpdate where
         type Rs DatafeedsUpdate = Datafeed
         type Scopes DatafeedsUpdate =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsUpdate'{..}
-          = go _duMerchantId _duDatafeedId (Just AltJSON)
+          = go _duMerchantId _duDatafeedId _duDryRun
+              (Just AltJSON)
               _duPayload
               shoppingContentService
           where go

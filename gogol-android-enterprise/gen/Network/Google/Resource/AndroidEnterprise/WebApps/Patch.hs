@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.Patch
     , wapPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.patch@ method which the
 -- 'WebAppsPatch' request conforms to.
@@ -58,9 +58,9 @@ type WebAppsPatchResource =
 -- /See:/ 'webAppsPatch' smart constructor.
 data WebAppsPatch =
   WebAppsPatch'
-    { _wapWebAppId     :: !Text
+    { _wapWebAppId :: !Text
     , _wapEnterpriseId :: !Text
-    , _wapPayload      :: !WebApp
+    , _wapPayload :: !WebApp
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

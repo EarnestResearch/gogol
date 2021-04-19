@@ -41,8 +41,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Versions.Delete
     , svdCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.versions.delete@ method which the
 -- 'SitesVersionsDelete' request conforms to.
@@ -61,12 +61,12 @@ type SitesVersionsDeleteResource =
 -- /See:/ 'sitesVersionsDelete' smart constructor.
 data SitesVersionsDelete =
   SitesVersionsDelete'
-    { _svdXgafv          :: !(Maybe Xgafv)
+    { _svdXgafv :: !(Maybe Xgafv)
     , _svdUploadProtocol :: !(Maybe Text)
-    , _svdAccessToken    :: !(Maybe Text)
-    , _svdUploadType     :: !(Maybe Text)
-    , _svdName           :: !Text
-    , _svdCallback       :: !(Maybe Text)
+    , _svdAccessToken :: !(Maybe Text)
+    , _svdUploadType :: !(Maybe Text)
+    , _svdName :: !Text
+    , _svdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

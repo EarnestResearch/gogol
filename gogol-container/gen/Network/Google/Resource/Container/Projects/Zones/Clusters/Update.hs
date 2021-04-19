@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.Update
     , pzcuCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.update@ method which the
 -- 'ProjectsZonesClustersUpdate' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsZonesClustersUpdateResource =
 -- /See:/ 'projectsZonesClustersUpdate' smart constructor.
 data ProjectsZonesClustersUpdate =
   ProjectsZonesClustersUpdate'
-    { _pzcuXgafv          :: !(Maybe Xgafv)
+    { _pzcuXgafv :: !(Maybe Xgafv)
     , _pzcuUploadProtocol :: !(Maybe Text)
-    , _pzcuAccessToken    :: !(Maybe Text)
-    , _pzcuUploadType     :: !(Maybe Text)
-    , _pzcuZone           :: !Text
-    , _pzcuPayload        :: !UpdateClusterRequest
-    , _pzcuClusterId      :: !Text
-    , _pzcuProjectId      :: !Text
-    , _pzcuCallback       :: !(Maybe Text)
+    , _pzcuAccessToken :: !(Maybe Text)
+    , _pzcuUploadType :: !(Maybe Text)
+    , _pzcuZone :: !Text
+    , _pzcuPayload :: !UpdateClusterRequest
+    , _pzcuClusterId :: !Text
+    , _pzcuProjectId :: !Text
+    , _pzcuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

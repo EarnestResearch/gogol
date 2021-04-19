@@ -44,8 +44,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.AppProFiles.Patc
     , piapfpCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.appProfiles.patch@ method which the
 -- 'ProjectsInstancesAppProFilesPatch' request conforms to.
@@ -67,15 +67,15 @@ type ProjectsInstancesAppProFilesPatchResource =
 -- /See:/ 'projectsInstancesAppProFilesPatch' smart constructor.
 data ProjectsInstancesAppProFilesPatch =
   ProjectsInstancesAppProFilesPatch'
-    { _piapfpXgafv          :: !(Maybe Xgafv)
+    { _piapfpXgafv :: !(Maybe Xgafv)
     , _piapfpUploadProtocol :: !(Maybe Text)
-    , _piapfpUpdateMask     :: !(Maybe GFieldMask)
-    , _piapfpAccessToken    :: !(Maybe Text)
-    , _piapfpUploadType     :: !(Maybe Text)
-    , _piapfpPayload        :: !AppProFile
+    , _piapfpUpdateMask :: !(Maybe GFieldMask)
+    , _piapfpAccessToken :: !(Maybe Text)
+    , _piapfpUploadType :: !(Maybe Text)
+    , _piapfpPayload :: !AppProFile
     , _piapfpIgnoreWarnings :: !(Maybe Bool)
-    , _piapfpName           :: !Text
-    , _piapfpCallback       :: !(Maybe Text)
+    , _piapfpName :: !Text
+    , _piapfpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

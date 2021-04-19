@@ -39,14 +39,14 @@ module Network.Google.Resource.Content.Orders.GettestOrdertemplate
     , ogoCountry
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.gettestordertemplate@ method which the
 -- 'OrdersGettestOrdertemplate' request conforms to.
 type OrdersGettestOrdertemplateResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "testordertemplates" :>
              Capture "templateName"
@@ -62,9 +62,9 @@ type OrdersGettestOrdertemplateResource =
 -- /See:/ 'ordersGettestOrdertemplate' smart constructor.
 data OrdersGettestOrdertemplate =
   OrdersGettestOrdertemplate'
-    { _ogoMerchantId   :: !(Textual Word64)
+    { _ogoMerchantId :: !(Textual Word64)
     , _ogoTemplateName :: !OrdersGettestOrdertemplateTemplateName
-    , _ogoCountry      :: !(Maybe Text)
+    , _ogoCountry :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

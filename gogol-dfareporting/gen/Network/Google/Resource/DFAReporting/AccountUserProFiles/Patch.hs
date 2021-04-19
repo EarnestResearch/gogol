@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Patch
     , aupfpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.patch@ method which the
 -- 'AccountUserProFilesPatch' request conforms to.
@@ -62,8 +62,8 @@ type AccountUserProFilesPatchResource =
 data AccountUserProFilesPatch =
   AccountUserProFilesPatch'
     { _aupfpProFileId :: !(Textual Int64)
-    , _aupfpPayload   :: !AccountUserProFile
-    , _aupfpId        :: !(Textual Int64)
+    , _aupfpPayload :: !AccountUserProFile
+    , _aupfpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

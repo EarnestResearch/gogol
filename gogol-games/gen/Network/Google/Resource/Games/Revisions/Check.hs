@@ -36,8 +36,8 @@ module Network.Google.Resource.Games.Revisions.Check
     , rcClientRevision
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.revisions.check@ method which the
 -- 'RevisionsCheck' request conforms to.

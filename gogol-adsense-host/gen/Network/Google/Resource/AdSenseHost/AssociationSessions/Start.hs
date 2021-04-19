@@ -40,8 +40,8 @@ module Network.Google.Resource.AdSenseHost.AssociationSessions.Start
     , assProductCode
     ) where
 
-import           Network.Google.AdSenseHost.Types
-import           Network.Google.Prelude
+import Network.Google.AdSenseHost.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adsensehost.associationsessions.start@ method which the
 -- 'AssociationSessionsStart' request conforms to.
@@ -66,9 +66,9 @@ type AssociationSessionsStartResource =
 data AssociationSessionsStart =
   AssociationSessionsStart'
     { _assWebsiteLocale :: !(Maybe Text)
-    , _assUserLocale    :: !(Maybe Text)
-    , _assWebsiteURL    :: !Text
-    , _assProductCode   :: ![AssociationSessionsStartProductCode]
+    , _assUserLocale :: !(Maybe Text)
+    , _assWebsiteURL :: !Text
+    , _assProductCode :: ![AssociationSessionsStartProductCode]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.Updat
     , aceuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.update@ method which the
 -- 'AccountsContainersEnvironmentsUpdate' request conforms to.
@@ -57,9 +57,9 @@ type AccountsContainersEnvironmentsUpdateResource =
 -- /See:/ 'accountsContainersEnvironmentsUpdate' smart constructor.
 data AccountsContainersEnvironmentsUpdate =
   AccountsContainersEnvironmentsUpdate'
-    { _aceuPath        :: !Text
+    { _aceuPath :: !Text
     , _aceuFingerprint :: !(Maybe Text)
-    , _aceuPayload     :: !Environment
+    , _aceuPayload :: !Environment
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

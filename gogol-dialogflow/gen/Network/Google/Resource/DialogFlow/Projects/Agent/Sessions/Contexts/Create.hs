@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.Contexts.Creat
     , pasccCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.contexts.create@ method which the
 -- 'ProjectsAgentSessionsContextsCreate' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsAgentSessionsContextsCreateResource =
 -- /See:/ 'projectsAgentSessionsContextsCreate' smart constructor.
 data ProjectsAgentSessionsContextsCreate =
   ProjectsAgentSessionsContextsCreate'
-    { _pasccParent         :: !Text
-    , _pasccXgafv          :: !(Maybe Xgafv)
+    { _pasccParent :: !Text
+    , _pasccXgafv :: !(Maybe Xgafv)
     , _pasccUploadProtocol :: !(Maybe Text)
-    , _pasccAccessToken    :: !(Maybe Text)
-    , _pasccUploadType     :: !(Maybe Text)
-    , _pasccPayload        :: !GoogleCloudDialogflowV2Context
-    , _pasccCallback       :: !(Maybe Text)
+    , _pasccAccessToken :: !(Maybe Text)
+    , _pasccUploadType :: !(Maybe Text)
+    , _pasccPayload :: !GoogleCloudDialogflowV2Context
+    , _pasccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

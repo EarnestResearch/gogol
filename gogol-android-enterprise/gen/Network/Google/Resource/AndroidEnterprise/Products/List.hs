@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.List
     , plMaxResults
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.list@ method which the
 -- 'ProductsList' request conforms to.
@@ -68,11 +68,11 @@ type ProductsListResource =
 data ProductsList =
   ProductsList'
     { _plEnterpriseId :: !Text
-    , _plToken        :: !(Maybe Text)
-    , _plQuery        :: !(Maybe Text)
-    , _plLanguage     :: !(Maybe Text)
-    , _plApproved     :: !(Maybe Bool)
-    , _plMaxResults   :: !(Maybe (Textual Word32))
+    , _plToken :: !(Maybe Text)
+    , _plQuery :: !(Maybe Text)
+    , _plLanguage :: !(Maybe Text)
+    , _plApproved :: !(Maybe Bool)
+    , _plMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

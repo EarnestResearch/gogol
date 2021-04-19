@@ -41,8 +41,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Run
     , ptcrdCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.transferConfigs.runs.delete@ method which the
 -- 'ProjectsTransferConfigsRunsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsTransferConfigsRunsDeleteResource =
 -- /See:/ 'projectsTransferConfigsRunsDelete' smart constructor.
 data ProjectsTransferConfigsRunsDelete =
   ProjectsTransferConfigsRunsDelete'
-    { _ptcrdXgafv          :: !(Maybe Xgafv)
+    { _ptcrdXgafv :: !(Maybe Xgafv)
     , _ptcrdUploadProtocol :: !(Maybe Text)
-    , _ptcrdAccessToken    :: !(Maybe Text)
-    , _ptcrdUploadType     :: !(Maybe Text)
-    , _ptcrdName           :: !Text
-    , _ptcrdCallback       :: !(Maybe Text)
+    , _ptcrdAccessToken :: !(Maybe Text)
+    , _ptcrdUploadType :: !(Maybe Text)
+    , _ptcrdName :: !Text
+    , _ptcrdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

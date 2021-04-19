@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Users.Photos.Get
     , upgUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.photos.get@ method which the
 -- 'UsersPhotosGet' request conforms to.

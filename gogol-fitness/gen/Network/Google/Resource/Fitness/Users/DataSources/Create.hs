@@ -44,8 +44,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.Create
     , udscUserId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.create@ method which the
 -- 'UsersDataSourcesCreate' request conforms to.
@@ -71,7 +71,7 @@ type UsersDataSourcesCreateResource =
 data UsersDataSourcesCreate =
   UsersDataSourcesCreate'
     { _udscPayload :: !DataSource
-    , _udscUserId  :: !Text
+    , _udscUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

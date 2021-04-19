@@ -38,8 +38,8 @@ module Network.Google.Resource.Reseller.Subscriptions.ChangeSeats
     , scsSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.changeSeats@ method which the
 -- 'SubscriptionsChangeSeats' request conforms to.
@@ -60,8 +60,8 @@ type SubscriptionsChangeSeatsResource =
 -- /See:/ 'subscriptionsChangeSeats' smart constructor.
 data SubscriptionsChangeSeats =
   SubscriptionsChangeSeats'
-    { _scsPayload        :: !Seats
-    , _scsCustomerId     :: !Text
+    { _scsPayload :: !Seats
+    , _scsCustomerId :: !Text
     , _scsSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

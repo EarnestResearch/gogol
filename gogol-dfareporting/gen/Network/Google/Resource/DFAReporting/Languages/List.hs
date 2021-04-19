@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.Languages.List
     , llProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.languages.list@ method which the
 -- 'LanguagesList' request conforms to.

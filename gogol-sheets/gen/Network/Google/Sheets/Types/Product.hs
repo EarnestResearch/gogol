@@ -17,8 +17,8 @@
 --
 module Network.Google.Sheets.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Sheets.Types.Sum
 
 -- | Information about which values in a pivot group should be used for
 -- sorting.
@@ -26,7 +26,7 @@ import           Network.Google.Sheets.Types.Sum
 -- /See:/ 'pivotGroupSortValueBucket' smart constructor.
 data PivotGroupSortValueBucket =
   PivotGroupSortValueBucket'
-    { _pgsvbBuckets     :: !(Maybe [ExtendedValue])
+    { _pgsvbBuckets :: !(Maybe [ExtendedValue])
     , _pgsvbValuesIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -88,8 +88,8 @@ instance ToJSON PivotGroupSortValueBucket where
 -- /See:/ 'valueRange' smart constructor.
 data ValueRange =
   ValueRange'
-    { _vrValues         :: !(Maybe [[JSONValue]])
-    , _vrRange          :: !(Maybe Text)
+    { _vrValues :: !(Maybe [[JSONValue]])
+    , _vrRange :: !(Maybe Text)
     , _vrMajorDimension :: !(Maybe ValueRangeMajorDimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -168,7 +168,7 @@ instance ToJSON ValueRange where
 data SortRangeRequest =
   SortRangeRequest'
     { _srrSortSpecs :: !(Maybe [SortSpec])
-    , _srrRange     :: !(Maybe GridRange)
+    , _srrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -256,7 +256,7 @@ instance ToJSON DeleteNamedRangeRequest where
 data UpdateNamedRangeRequest =
   UpdateNamedRangeRequest'
     { _unrrNamedRange :: !(Maybe NamedRange)
-    , _unrrFields     :: !(Maybe GFieldMask)
+    , _unrrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -465,12 +465,12 @@ instance ToJSON DateTimeRule where
 -- /See:/ 'spreadsheetProperties' smart constructor.
 data SpreadsheetProperties =
   SpreadsheetProperties'
-    { _spDefaultFormat                :: !(Maybe CellFormat)
-    , _spLocale                       :: !(Maybe Text)
+    { _spDefaultFormat :: !(Maybe CellFormat)
+    , _spLocale :: !(Maybe Text)
     , _spIterativeCalculationSettings :: !(Maybe IterativeCalculationSettings)
-    , _spAutoRecalc                   :: !(Maybe SpreadsheetPropertiesAutoRecalc)
-    , _spTitle                        :: !(Maybe Text)
-    , _spTimeZone                     :: !(Maybe Text)
+    , _spAutoRecalc :: !(Maybe SpreadsheetPropertiesAutoRecalc)
+    , _spTitle :: !(Maybe Text)
+    , _spTimeZone :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -572,9 +572,9 @@ instance ToJSON SpreadsheetProperties where
 data BOrders =
   BOrders'
     { _boBottom :: !(Maybe BOrder)
-    , _boLeft   :: !(Maybe BOrder)
-    , _boRight  :: !(Maybe BOrder)
-    , _boTop    :: !(Maybe BOrder)
+    , _boLeft :: !(Maybe BOrder)
+    , _boRight :: !(Maybe BOrder)
+    , _boTop :: !(Maybe BOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -685,7 +685,7 @@ instance ToJSON BatchClearValuesByDataFilterRequest
 -- /See:/ 'textFormatRun' smart constructor.
 data TextFormatRun =
   TextFormatRun'
-    { _tfrFormat     :: !(Maybe TextFormat)
+    { _tfrFormat :: !(Maybe TextFormat)
     , _tfrStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -775,7 +775,7 @@ instance ToJSON DeleteDimensionGroupRequest where
 data UpdateDimensionGroupRequest =
   UpdateDimensionGroupRequest'
     { _udgrDimensionGroup :: !(Maybe DimensionGroup)
-    , _udgrFields         :: !(Maybe GFieldMask)
+    , _udgrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -870,7 +870,7 @@ instance ToJSON AddSheetRequest where
 -- /See:/ 'sortSpec' smart constructor.
 data SortSpec =
   SortSpec'
-    { _ssSortOrder      :: !(Maybe SortSpecSortOrder)
+    { _ssSortOrder :: !(Maybe SortSpecSortOrder)
     , _ssDimensionIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -922,8 +922,8 @@ instance ToJSON SortSpec where
 data DimensionGroup =
   DimensionGroup'
     { _dgCollapsed :: !(Maybe Bool)
-    , _dgRange     :: !(Maybe DimensionRange)
-    , _dgDepth     :: !(Maybe (Textual Int32))
+    , _dgRange :: !(Maybe DimensionRange)
+    , _dgDepth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -987,10 +987,10 @@ instance ToJSON DimensionGroup where
 -- /See:/ 'copyPasteRequest' smart constructor.
 data CopyPasteRequest =
   CopyPasteRequest'
-    { _cprDestination      :: !(Maybe GridRange)
-    , _cprSource           :: !(Maybe GridRange)
+    { _cprDestination :: !(Maybe GridRange)
+    , _cprSource :: !(Maybe GridRange)
     , _cprPasteOrientation :: !(Maybe CopyPasteRequestPasteOrientation)
-    , _cprPasteType        :: !(Maybe CopyPasteRequestPasteType)
+    , _cprPasteType :: !(Maybe CopyPasteRequestPasteType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1079,11 +1079,11 @@ instance ToJSON CopyPasteRequest where
 -- /See:/ 'gridRange' smart constructor.
 data GridRange =
   GridRange'
-    { _grEndColumnIndex   :: !(Maybe (Textual Int32))
+    { _grEndColumnIndex :: !(Maybe (Textual Int32))
     , _grStartColumnIndex :: !(Maybe (Textual Int32))
-    , _grEndRowIndex      :: !(Maybe (Textual Int32))
-    , _grStartRowIndex    :: !(Maybe (Textual Int32))
-    , _grSheetId          :: !(Maybe (Textual Int32))
+    , _grEndRowIndex :: !(Maybe (Textual Int32))
+    , _grStartRowIndex :: !(Maybe (Textual Int32))
+    , _grSheetId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1210,7 +1210,7 @@ instance ToJSON AddFilterViewResponse where
 data BooleanCondition =
   BooleanCondition'
     { _bcValues :: !(Maybe [ConditionValue])
-    , _bcType   :: !(Maybe BooleanConditionType)
+    , _bcType :: !(Maybe BooleanConditionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1299,17 +1299,17 @@ instance ToJSON AutoResizeDimensionsRequest where
 -- /See:/ 'bubbleChartSpec' smart constructor.
 data BubbleChartSpec =
   BubbleChartSpec'
-    { _bcsBubbleTextStyle     :: !(Maybe TextFormat)
-    , _bcsBubbleBOrderColor   :: !(Maybe Color)
-    , _bcsLegendPosition      :: !(Maybe BubbleChartSpecLegendPosition)
-    , _bcsDomain              :: !(Maybe ChartData)
-    , _bcsSeries              :: !(Maybe ChartData)
-    , _bcsBubbleLabels        :: !(Maybe ChartData)
-    , _bcsGroupIds            :: !(Maybe ChartData)
+    { _bcsBubbleTextStyle :: !(Maybe TextFormat)
+    , _bcsBubbleBOrderColor :: !(Maybe Color)
+    , _bcsLegendPosition :: !(Maybe BubbleChartSpecLegendPosition)
+    , _bcsDomain :: !(Maybe ChartData)
+    , _bcsSeries :: !(Maybe ChartData)
+    , _bcsBubbleLabels :: !(Maybe ChartData)
+    , _bcsGroupIds :: !(Maybe ChartData)
     , _bcsBubbleMinRadiusSize :: !(Maybe (Textual Int32))
     , _bcsBubbleMaxRadiusSize :: !(Maybe (Textual Int32))
-    , _bcsBubbleOpacity       :: !(Maybe (Textual Double))
-    , _bcsBubbleSizes         :: !(Maybe ChartData)
+    , _bcsBubbleOpacity :: !(Maybe (Textual Double))
+    , _bcsBubbleSizes :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1475,7 +1475,7 @@ instance ToJSON BubbleChartSpec where
 data DeleteRangeRequest =
   DeleteRangeRequest'
     { _drrShiftDimension :: !(Maybe DeleteRangeRequestShiftDimension)
-    , _drrRange          :: !(Maybe GridRange)
+    , _drrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1525,18 +1525,18 @@ instance ToJSON DeleteRangeRequest where
 -- /See:/ 'sheet' smart constructor.
 data Sheet =
   Sheet'
-    { _sColumnGroups       :: !(Maybe [DimensionGroup])
-    , _sData               :: !(Maybe [GridData])
-    , _sMerges             :: !(Maybe [GridRange])
-    , _sRowGroups          :: !(Maybe [DimensionGroup])
-    , _sProtectedRanges    :: !(Maybe [ProtectedRange])
-    , _sBandedRanges       :: !(Maybe [BandedRange])
-    , _sCharts             :: !(Maybe [EmbeddedChart])
-    , _sBasicFilter        :: !(Maybe BasicFilter)
-    , _sDeveloperMetadata  :: !(Maybe [DeveloperMetadata])
+    { _sColumnGroups :: !(Maybe [DimensionGroup])
+    , _sData :: !(Maybe [GridData])
+    , _sMerges :: !(Maybe [GridRange])
+    , _sRowGroups :: !(Maybe [DimensionGroup])
+    , _sProtectedRanges :: !(Maybe [ProtectedRange])
+    , _sBandedRanges :: !(Maybe [BandedRange])
+    , _sCharts :: !(Maybe [EmbeddedChart])
+    , _sBasicFilter :: !(Maybe BasicFilter)
+    , _sDeveloperMetadata :: !(Maybe [DeveloperMetadata])
     , _sConditionalFormats :: !(Maybe [ConditionalFormatRule])
-    , _sFilterViews        :: !(Maybe [FilterView])
-    , _sProperties         :: !(Maybe SheetProperties)
+    , _sFilterViews :: !(Maybe [FilterView])
+    , _sProperties :: !(Maybe SheetProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1718,8 +1718,8 @@ instance ToJSON Sheet where
 data GridCoordinate =
   GridCoordinate'
     { _gcColumnIndex :: !(Maybe (Textual Int32))
-    , _gcRowIndex    :: !(Maybe (Textual Int32))
-    , _gcSheetId     :: !(Maybe (Textual Int32))
+    , _gcRowIndex :: !(Maybe (Textual Int32))
+    , _gcSheetId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1780,7 +1780,7 @@ instance ToJSON GridCoordinate where
 -- /See:/ 'clearValuesResponse' smart constructor.
 data ClearValuesResponse =
   ClearValuesResponse'
-    { _cvrClearedRange  :: !(Maybe Text)
+    { _cvrClearedRange :: !(Maybe Text)
     , _cvrSpreadsheetId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1872,8 +1872,8 @@ instance ToJSON ClearBasicFilterRequest where
 data UpdateEmbeddedObjectPositionRequest =
   UpdateEmbeddedObjectPositionRequest'
     { _ueoprNewPosition :: !(Maybe EmbeddedObjectPosition)
-    , _ueoprObjectId    :: !(Maybe (Textual Int32))
-    , _ueoprFields      :: !(Maybe GFieldMask)
+    , _ueoprObjectId :: !(Maybe (Textual Int32))
+    , _ueoprFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1945,7 +1945,7 @@ instance ToJSON UpdateEmbeddedObjectPositionRequest
 -- /See:/ 'booleanRule' smart constructor.
 data BooleanRule =
   BooleanRule'
-    { _brFormat    :: !(Maybe CellFormat)
+    { _brFormat :: !(Maybe CellFormat)
     , _brCondition :: !(Maybe BooleanCondition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1996,7 +1996,7 @@ instance ToJSON BooleanRule where
 data BatchGetValuesByDataFilterResponse =
   BatchGetValuesByDataFilterResponse'
     { _bgvbdfrSpreadsheetId :: !(Maybe Text)
-    , _bgvbdfrValueRanges   :: !(Maybe [MatchedValueRange])
+    , _bgvbdfrValueRanges :: !(Maybe [MatchedValueRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2051,8 +2051,8 @@ instance ToJSON BatchGetValuesByDataFilterResponse
 -- /See:/ 'sourceAndDestination' smart constructor.
 data SourceAndDestination =
   SourceAndDestination'
-    { _sadDimension  :: !(Maybe SourceAndDestinationDimension)
-    , _sadSource     :: !(Maybe GridRange)
+    { _sadDimension :: !(Maybe SourceAndDestinationDimension)
+    , _sadSource :: !(Maybe GridRange)
     , _sadFillLength :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2115,11 +2115,11 @@ instance ToJSON SourceAndDestination where
 -- /See:/ 'pasteDataRequest' smart constructor.
 data PasteDataRequest =
   PasteDataRequest'
-    { _pdrData       :: !(Maybe Text)
+    { _pdrData :: !(Maybe Text)
     , _pdrCoordinate :: !(Maybe GridCoordinate)
-    , _pdrHTML       :: !(Maybe Bool)
-    , _pdrType       :: !(Maybe PasteDataRequestType)
-    , _pdrDelimiter  :: !(Maybe Text)
+    , _pdrHTML :: !(Maybe Bool)
+    , _pdrType :: !(Maybe PasteDataRequestType)
+    , _pdrDelimiter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2197,9 +2197,9 @@ instance ToJSON PasteDataRequest where
 -- /See:/ 'appendCellsRequest' smart constructor.
 data AppendCellsRequest =
   AppendCellsRequest'
-    { _acrRows    :: !(Maybe [RowData])
+    { _acrRows :: !(Maybe [RowData])
     , _acrSheetId :: !(Maybe (Textual Int32))
-    , _acrFields  :: !(Maybe GFieldMask)
+    , _acrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2261,10 +2261,10 @@ instance ToJSON AppendCellsRequest where
 -- /See:/ 'findReplaceResponse' smart constructor.
 data FindReplaceResponse =
   FindReplaceResponse'
-    { _frrValuesChanged      :: !(Maybe (Textual Int32))
-    , _frrFormulasChanged    :: !(Maybe (Textual Int32))
-    , _frrRowsChanged        :: !(Maybe (Textual Int32))
-    , _frrSheetsChanged      :: !(Maybe (Textual Int32))
+    { _frrValuesChanged :: !(Maybe (Textual Int32))
+    , _frrFormulasChanged :: !(Maybe (Textual Int32))
+    , _frrRowsChanged :: !(Maybe (Textual Int32))
+    , _frrSheetsChanged :: !(Maybe (Textual Int32))
     , _frrOccurrencesChanged :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2401,10 +2401,10 @@ instance ToJSON AddDimensionGroupResponse where
 -- /See:/ 'pieChartSpec' smart constructor.
 data PieChartSpec =
   PieChartSpec'
-    { _pcsPieHole          :: !(Maybe (Textual Double))
-    , _pcsLegendPosition   :: !(Maybe PieChartSpecLegendPosition)
-    , _pcsDomain           :: !(Maybe ChartData)
-    , _pcsSeries           :: !(Maybe ChartData)
+    { _pcsPieHole :: !(Maybe (Textual Double))
+    , _pcsLegendPosition :: !(Maybe PieChartSpecLegendPosition)
+    , _pcsDomain :: !(Maybe ChartData)
+    , _pcsSeries :: !(Maybe ChartData)
     , _pcsThreeDimensional :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2489,11 +2489,11 @@ instance ToJSON PieChartSpec where
 data BatchUpdateValuesByDataFilterResponse =
   BatchUpdateValuesByDataFilterResponse'
     { _buvbdfrTotalUpdatedColumns :: !(Maybe (Textual Int32))
-    , _buvbdfrResponses           :: !(Maybe [UpdateValuesByDataFilterResponse])
-    , _buvbdfrSpreadsheetId       :: !(Maybe Text)
-    , _buvbdfrTotalUpdatedSheets  :: !(Maybe (Textual Int32))
-    , _buvbdfrTotalUpdatedCells   :: !(Maybe (Textual Int32))
-    , _buvbdfrTotalUpdatedRows    :: !(Maybe (Textual Int32))
+    , _buvbdfrResponses :: !(Maybe [UpdateValuesByDataFilterResponse])
+    , _buvbdfrSpreadsheetId :: !(Maybe Text)
+    , _buvbdfrTotalUpdatedSheets :: !(Maybe (Textual Int32))
+    , _buvbdfrTotalUpdatedCells :: !(Maybe (Textual Int32))
+    , _buvbdfrTotalUpdatedRows :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2606,8 +2606,8 @@ instance ToJSON BatchUpdateValuesByDataFilterResponse
 data AppendValuesResponse =
   AppendValuesResponse'
     { _avrSpreadsheetId :: !(Maybe Text)
-    , _avrUpdates       :: !(Maybe UpdateValuesResponse)
-    , _avrTableRange    :: !(Maybe Text)
+    , _avrUpdates :: !(Maybe UpdateValuesResponse)
+    , _avrTableRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2672,8 +2672,8 @@ data DataValidationRule =
   DataValidationRule'
     { _dvrShowCustomUi :: !(Maybe Bool)
     , _dvrInputMessage :: !(Maybe Text)
-    , _dvrStrict       :: !(Maybe Bool)
-    , _dvrCondition    :: !(Maybe BooleanCondition)
+    , _dvrStrict :: !(Maybe Bool)
+    , _dvrCondition :: !(Maybe BooleanCondition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2746,12 +2746,12 @@ instance ToJSON DataValidationRule where
 -- /See:/ 'filterView' smart constructor.
 data FilterView =
   FilterView'
-    { _fvSortSpecs    :: !(Maybe [SortSpec])
+    { _fvSortSpecs :: !(Maybe [SortSpec])
     , _fvNamedRangeId :: !(Maybe Text)
-    , _fvRange        :: !(Maybe GridRange)
+    , _fvRange :: !(Maybe GridRange)
     , _fvFilterViewId :: !(Maybe (Textual Int32))
-    , _fvTitle        :: !(Maybe Text)
-    , _fvCriteria     :: !(Maybe FilterViewCriteria)
+    , _fvTitle :: !(Maybe Text)
+    , _fvCriteria :: !(Maybe FilterViewCriteria)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2897,10 +2897,10 @@ instance ToJSON FilterView where
 -- /See:/ 'color' smart constructor.
 data Color =
   Color'
-    { _cRed   :: !(Maybe (Textual Double))
+    { _cRed :: !(Maybe (Textual Double))
     , _cAlpha :: !(Maybe (Textual Double))
     , _cGreen :: !(Maybe (Textual Double))
-    , _cBlue  :: !(Maybe (Textual Double))
+    , _cBlue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3065,10 +3065,10 @@ instance ToJSON UpdateFilterViewRequest where
 data BasicChartSeries =
   BasicChartSeries'
     { _bTargetAxis :: !(Maybe BasicChartSeriesTargetAxis)
-    , _bColor      :: !(Maybe Color)
-    , _bSeries     :: !(Maybe ChartData)
-    , _bType       :: !(Maybe BasicChartSeriesType)
-    , _bLineStyle  :: !(Maybe LineStyle)
+    , _bColor :: !(Maybe Color)
+    , _bSeries :: !(Maybe ChartData)
+    , _bType :: !(Maybe BasicChartSeriesType)
+    , _bLineStyle :: !(Maybe LineStyle)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3158,8 +3158,8 @@ instance ToJSON BasicChartSeries where
 -- /See:/ 'pivotGroupRule' smart constructor.
 data PivotGroupRule =
   PivotGroupRule'
-    { _pgrDateTimeRule  :: !(Maybe DateTimeRule)
-    , _pgrManualRule    :: !(Maybe ManualRule)
+    { _pgrDateTimeRule :: !(Maybe DateTimeRule)
+    , _pgrManualRule :: !(Maybe ManualRule)
     , _pgrHistogramRule :: !(Maybe HistogramRule)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3273,8 +3273,8 @@ instance ToJSON AddProtectedRangeRequest where
 -- /See:/ 'repeatCellRequest' smart constructor.
 data RepeatCellRequest =
   RepeatCellRequest'
-    { _rcrCell   :: !(Maybe CellData)
-    , _rcrRange  :: !(Maybe GridRange)
+    { _rcrCell :: !(Maybe CellData)
+    , _rcrRange :: !(Maybe GridRange)
     , _rcrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3332,7 +3332,7 @@ instance ToJSON RepeatCellRequest where
 -- /See:/ 'conditionValue' smart constructor.
 data ConditionValue =
   ConditionValue'
-    { _cvRelativeDate     :: !(Maybe ConditionValueRelativeDate)
+    { _cvRelativeDate :: !(Maybe ConditionValueRelativeDate)
     , _cvUserEnteredValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3444,15 +3444,15 @@ instance ToJSON ClearValuesRequest where
 -- /See:/ 'findReplaceRequest' smart constructor.
 data FindReplaceRequest =
   FindReplaceRequest'
-    { _frrMatchCase       :: !(Maybe Bool)
-    , _frrAllSheets       :: !(Maybe Bool)
+    { _frrMatchCase :: !(Maybe Bool)
+    , _frrAllSheets :: !(Maybe Bool)
     , _frrIncludeFormulas :: !(Maybe Bool)
     , _frrMatchEntireCell :: !(Maybe Bool)
-    , _frrRange           :: !(Maybe GridRange)
-    , _frrSheetId         :: !(Maybe (Textual Int32))
-    , _frrFind            :: !(Maybe Text)
-    , _frrSearchByRegex   :: !(Maybe Bool)
-    , _frrReplacement     :: !(Maybe Text)
+    , _frrRange :: !(Maybe GridRange)
+    , _frrSheetId :: !(Maybe (Textual Int32))
+    , _frrFind :: !(Maybe Text)
+    , _frrSearchByRegex :: !(Maybe Bool)
+    , _frrReplacement :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3584,7 +3584,7 @@ instance ToJSON FindReplaceRequest where
 data MoveDimensionRequest =
   MoveDimensionRequest'
     { _mdrDestinationIndex :: !(Maybe (Textual Int32))
-    , _mdrSource           :: !(Maybe DimensionRange)
+    , _mdrSource :: !(Maybe DimensionRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3643,10 +3643,10 @@ instance ToJSON MoveDimensionRequest where
 -- /See:/ 'batchGetValuesByDataFilterRequest' smart constructor.
 data BatchGetValuesByDataFilterRequest =
   BatchGetValuesByDataFilterRequest'
-    { _bgvbdfrValueRenderOption    :: !(Maybe BatchGetValuesByDataFilterRequestValueRenderOption)
-    , _bgvbdfrDataFilters          :: !(Maybe [DataFilter])
+    { _bgvbdfrValueRenderOption :: !(Maybe BatchGetValuesByDataFilterRequestValueRenderOption)
+    , _bgvbdfrDataFilters :: !(Maybe [DataFilter])
     , _bgvbdfrDateTimeRenderOption :: !(Maybe BatchGetValuesByDataFilterRequestDateTimeRenderOption)
-    , _bgvbdfrMajorDimension       :: !(Maybe BatchGetValuesByDataFilterRequestMajorDimension)
+    , _bgvbdfrMajorDimension :: !(Maybe BatchGetValuesByDataFilterRequestMajorDimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3798,8 +3798,8 @@ instance ToJSON GradientRule where
 data CutPasteRequest =
   CutPasteRequest'
     { _cDestination :: !(Maybe GridCoordinate)
-    , _cSource      :: !(Maybe GridRange)
-    , _cPasteType   :: !(Maybe CutPasteRequestPasteType)
+    , _cSource :: !(Maybe GridRange)
+    , _cPasteType :: !(Maybe CutPasteRequestPasteType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3899,8 +3899,8 @@ instance ToJSON UpdateEmbeddedObjectPositionResponse
 data WaterfallChartCustomSubtotal =
   WaterfallChartCustomSubtotal'
     { _wccsDataIsSubtotal :: !(Maybe Bool)
-    , _wccsSubtotalIndex  :: !(Maybe (Textual Int32))
-    , _wccsLabel          :: !(Maybe Text)
+    , _wccsSubtotalIndex :: !(Maybe (Textual Int32))
+    , _wccsLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3971,23 +3971,23 @@ instance ToJSON WaterfallChartCustomSubtotal where
 -- /See:/ 'response' smart constructor.
 data Response =
   Response'
-    { _rAddFilterView                :: !(Maybe AddFilterViewResponse)
-    , _rCreateDeveloperMetadata      :: !(Maybe CreateDeveloperMetadataResponse)
-    , _rDuplicateFilterView          :: !(Maybe DuplicateFilterViewResponse)
+    { _rAddFilterView :: !(Maybe AddFilterViewResponse)
+    , _rCreateDeveloperMetadata :: !(Maybe CreateDeveloperMetadataResponse)
+    , _rDuplicateFilterView :: !(Maybe DuplicateFilterViewResponse)
     , _rUpdateEmbeddedObjectPosition :: !(Maybe UpdateEmbeddedObjectPositionResponse)
-    , _rDeleteDimensionGroup         :: !(Maybe DeleteDimensionGroupResponse)
-    , _rAddSheet                     :: !(Maybe AddSheetResponse)
-    , _rFindReplace                  :: !(Maybe FindReplaceResponse)
-    , _rAddProtectedRange            :: !(Maybe AddProtectedRangeResponse)
-    , _rDeleteConditionalFormatRule  :: !(Maybe DeleteConditionalFormatRuleResponse)
-    , _rUpdateConditionalFormatRule  :: !(Maybe UpdateConditionalFormatRuleResponse)
-    , _rDeleteDeveloperMetadata      :: !(Maybe DeleteDeveloperMetadataResponse)
-    , _rUpdateDeveloperMetadata      :: !(Maybe UpdateDeveloperMetadataResponse)
-    , _rAddNamedRange                :: !(Maybe AddNamedRangeResponse)
-    , _rAddChart                     :: !(Maybe AddChartResponse)
-    , _rAddBanding                   :: !(Maybe AddBandingResponse)
-    , _rDuplicateSheet               :: !(Maybe DuplicateSheetResponse)
-    , _rAddDimensionGroup            :: !(Maybe AddDimensionGroupResponse)
+    , _rDeleteDimensionGroup :: !(Maybe DeleteDimensionGroupResponse)
+    , _rAddSheet :: !(Maybe AddSheetResponse)
+    , _rFindReplace :: !(Maybe FindReplaceResponse)
+    , _rAddProtectedRange :: !(Maybe AddProtectedRangeResponse)
+    , _rDeleteConditionalFormatRule :: !(Maybe DeleteConditionalFormatRuleResponse)
+    , _rUpdateConditionalFormatRule :: !(Maybe UpdateConditionalFormatRuleResponse)
+    , _rDeleteDeveloperMetadata :: !(Maybe DeleteDeveloperMetadataResponse)
+    , _rUpdateDeveloperMetadata :: !(Maybe UpdateDeveloperMetadataResponse)
+    , _rAddNamedRange :: !(Maybe AddNamedRangeResponse)
+    , _rAddChart :: !(Maybe AddChartResponse)
+    , _rAddBanding :: !(Maybe AddBandingResponse)
+    , _rDuplicateSheet :: !(Maybe DuplicateSheetResponse)
+    , _rAddDimensionGroup :: !(Maybe AddDimensionGroupResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4209,7 +4209,7 @@ instance ToJSON Response where
 data FilterCriteria =
   FilterCriteria'
     { _fcHiddenValues :: !(Maybe [Text])
-    , _fcCondition    :: !(Maybe BooleanCondition)
+    , _fcCondition :: !(Maybe BooleanCondition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4262,7 +4262,7 @@ instance ToJSON FilterCriteria where
 -- /See:/ 'errorValue' smart constructor.
 data ErrorValue =
   ErrorValue'
-    { _evType    :: !(Maybe ErrorValueType)
+    { _evType :: !(Maybe ErrorValueType)
     , _evMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4309,10 +4309,10 @@ instance ToJSON ErrorValue where
 -- /See:/ 'updateConditionalFormatRuleRequest' smart constructor.
 data UpdateConditionalFormatRuleRequest =
   UpdateConditionalFormatRuleRequest'
-    { _ucfrrRule     :: !(Maybe ConditionalFormatRule)
+    { _ucfrrRule :: !(Maybe ConditionalFormatRule)
     , _ucfrrNewIndex :: !(Maybe (Textual Int32))
-    , _ucfrrSheetId  :: !(Maybe (Textual Int32))
-    , _ucfrrIndex    :: !(Maybe (Textual Int32))
+    , _ucfrrSheetId :: !(Maybe (Textual Int32))
+    , _ucfrrIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4391,7 +4391,7 @@ instance ToJSON UpdateConditionalFormatRuleRequest
 data DeleteConditionalFormatRuleRequest =
   DeleteConditionalFormatRuleRequest'
     { _dcfrrSheetId :: !(Maybe (Textual Int32))
-    , _dcfrrIndex   :: !(Maybe (Textual Int32))
+    , _dcfrrIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4448,9 +4448,9 @@ instance ToJSON DeleteConditionalFormatRuleRequest
 -- /See:/ 'updateDeveloperMetadataRequest' smart constructor.
 data UpdateDeveloperMetadataRequest =
   UpdateDeveloperMetadataRequest'
-    { _udmrDataFilters       :: !(Maybe [DataFilter])
+    { _udmrDataFilters :: !(Maybe [DataFilter])
     , _udmrDeveloperMetadata :: !(Maybe DeveloperMetadata)
-    , _udmrFields            :: !(Maybe GFieldMask)
+    , _udmrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4560,12 +4560,12 @@ instance ToJSON DeleteDeveloperMetadataRequest where
 -- /See:/ 'waterfallChartSpec' smart constructor.
 data WaterfallChartSpec =
   WaterfallChartSpec'
-    { _wcsStackedType        :: !(Maybe WaterfallChartSpecStackedType)
+    { _wcsStackedType :: !(Maybe WaterfallChartSpecStackedType)
     , _wcsConnectorLineStyle :: !(Maybe LineStyle)
-    , _wcsDomain             :: !(Maybe WaterfallChartDomain)
-    , _wcsSeries             :: !(Maybe [WaterfallChartSeries])
+    , _wcsDomain :: !(Maybe WaterfallChartDomain)
+    , _wcsSeries :: !(Maybe [WaterfallChartSeries])
     , _wcsHideConnectorLines :: !(Maybe Bool)
-    , _wcsFirstValueIsTotal  :: !(Maybe Bool)
+    , _wcsFirstValueIsTotal :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4662,10 +4662,10 @@ instance ToJSON WaterfallChartSpec where
 -- /See:/ 'overlayPosition' smart constructor.
 data OverlayPosition =
   OverlayPosition'
-    { _opHeightPixels  :: !(Maybe (Textual Int32))
+    { _opHeightPixels :: !(Maybe (Textual Int32))
     , _opOffSetYPixels :: !(Maybe (Textual Int32))
-    , _opAnchorCell    :: !(Maybe GridCoordinate)
-    , _opWidthPixels   :: !(Maybe (Textual Int32))
+    , _opAnchorCell :: !(Maybe GridCoordinate)
+    , _opWidthPixels :: !(Maybe (Textual Int32))
     , _opOffSetXPixels :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4794,10 +4794,10 @@ instance ToJSON DeleteEmbeddedObjectRequest where
 -- /See:/ 'developerMetadataLocation' smart constructor.
 data DeveloperMetadataLocation =
   DeveloperMetadataLocation'
-    { _dmlSpreadsheet    :: !(Maybe Bool)
+    { _dmlSpreadsheet :: !(Maybe Bool)
     , _dmlDimensionRange :: !(Maybe DimensionRange)
-    , _dmlSheetId        :: !(Maybe (Textual Int32))
-    , _dmlLocationType   :: !(Maybe DeveloperMetadataLocationLocationType)
+    , _dmlSheetId :: !(Maybe (Textual Int32))
+    , _dmlLocationType :: !(Maybe DeveloperMetadataLocationLocationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4873,14 +4873,14 @@ instance ToJSON DeveloperMetadataLocation where
 -- /See:/ 'sheetProperties' smart constructor.
 data SheetProperties =
   SheetProperties'
-    { _sTabColor       :: !(Maybe Color)
+    { _sTabColor :: !(Maybe Color)
     , _sGridProperties :: !(Maybe GridProperties)
-    , _sSheetType      :: !(Maybe SheetPropertiesSheetType)
-    , _sHidden         :: !(Maybe Bool)
-    , _sSheetId        :: !(Maybe (Textual Int32))
-    , _sTitle          :: !(Maybe Text)
-    , _sRightToLeft    :: !(Maybe Bool)
-    , _sIndex          :: !(Maybe (Textual Int32))
+    , _sSheetType :: !(Maybe SheetPropertiesSheetType)
+    , _sHidden :: !(Maybe Bool)
+    , _sSheetId :: !(Maybe (Textual Int32))
+    , _sTitle :: !(Maybe Text)
+    , _sRightToLeft :: !(Maybe Bool)
+    , _sIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5041,11 +5041,11 @@ instance ToJSON FilterViewCriteria where
 data BatchUpdateValuesResponse =
   BatchUpdateValuesResponse'
     { _buvrTotalUpdatedColumns :: !(Maybe (Textual Int32))
-    , _buvrResponses           :: !(Maybe [UpdateValuesResponse])
-    , _buvrSpreadsheetId       :: !(Maybe Text)
-    , _buvrTotalUpdatedSheets  :: !(Maybe (Textual Int32))
-    , _buvrTotalUpdatedCells   :: !(Maybe (Textual Int32))
-    , _buvrTotalUpdatedRows    :: !(Maybe (Textual Int32))
+    , _buvrResponses :: !(Maybe [UpdateValuesResponse])
+    , _buvrSpreadsheetId :: !(Maybe Text)
+    , _buvrTotalUpdatedSheets :: !(Maybe (Textual Int32))
+    , _buvrTotalUpdatedCells :: !(Maybe (Textual Int32))
+    , _buvrTotalUpdatedRows :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5153,7 +5153,7 @@ instance ToJSON BatchUpdateValuesResponse where
 -- /See:/ 'updateSheetPropertiesRequest' smart constructor.
 data UpdateSheetPropertiesRequest =
   UpdateSheetPropertiesRequest'
-    { _usprFields     :: !(Maybe GFieldMask)
+    { _usprFields :: !(Maybe GFieldMask)
     , _usprProperties :: !(Maybe SheetProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5205,12 +5205,12 @@ instance ToJSON UpdateSheetPropertiesRequest where
 -- /See:/ 'spreadsheet' smart constructor.
 data Spreadsheet =
   Spreadsheet'
-    { _sprSheets            :: !(Maybe [Sheet])
-    , _sprNamedRanges       :: !(Maybe [NamedRange])
-    , _sprSpreadsheetId     :: !(Maybe Text)
-    , _sprSpreadsheetURL    :: !(Maybe Text)
+    { _sprSheets :: !(Maybe [Sheet])
+    , _sprNamedRanges :: !(Maybe [NamedRange])
+    , _sprSpreadsheetId :: !(Maybe Text)
+    , _sprSpreadsheetURL :: !(Maybe Text)
     , _sprDeveloperMetadata :: !(Maybe [DeveloperMetadata])
-    , _sprProperties        :: !(Maybe SpreadsheetProperties)
+    , _sprProperties :: !(Maybe SpreadsheetProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5312,7 +5312,7 @@ instance ToJSON Spreadsheet where
 -- /See:/ 'candlestickChartSpec' smart constructor.
 data CandlestickChartSpec =
   CandlestickChartSpec'
-    { _ccsData   :: !(Maybe [CandlestickData])
+    { _ccsData :: !(Maybe [CandlestickData])
     , _ccsDomain :: !(Maybe CandlestickDomain)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5363,7 +5363,7 @@ instance ToJSON CandlestickChartSpec where
 -- /See:/ 'insertDimensionRequest' smart constructor.
 data InsertDimensionRequest =
   InsertDimensionRequest'
-    { _idrRange             :: !(Maybe DimensionRange)
+    { _idrRange :: !(Maybe DimensionRange)
     , _idrInheritFromBefore :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5468,7 +5468,7 @@ data InterpolationPoint =
   InterpolationPoint'
     { _ipColor :: !(Maybe Color)
     , _ipValue :: !(Maybe Text)
-    , _ipType  :: !(Maybe InterpolationPointType)
+    , _ipType :: !(Maybe InterpolationPointType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5522,16 +5522,16 @@ instance ToJSON InterpolationPoint where
 -- /See:/ 'cellData' smart constructor.
 data CellData =
   CellData'
-    { _cdTextFormatRuns    :: !(Maybe [TextFormatRun])
-    , _cdNote              :: !(Maybe Text)
-    , _cdUserEnteredValue  :: !(Maybe ExtendedValue)
+    { _cdTextFormatRuns :: !(Maybe [TextFormatRun])
+    , _cdNote :: !(Maybe Text)
+    , _cdUserEnteredValue :: !(Maybe ExtendedValue)
     , _cdUserEnteredFormat :: !(Maybe CellFormat)
-    , _cdEffectiveFormat   :: !(Maybe CellFormat)
-    , _cdPivotTable        :: !(Maybe PivotTable)
-    , _cdFormattedValue    :: !(Maybe Text)
-    , _cdDataValidation    :: !(Maybe DataValidationRule)
-    , _cdHyperlink         :: !(Maybe Text)
-    , _cdEffectiveValue    :: !(Maybe ExtendedValue)
+    , _cdEffectiveFormat :: !(Maybe CellFormat)
+    , _cdPivotTable :: !(Maybe PivotTable)
+    , _cdFormattedValue :: !(Maybe Text)
+    , _cdDataValidation :: !(Maybe DataValidationRule)
+    , _cdHyperlink :: !(Maybe Text)
+    , _cdEffectiveValue :: !(Maybe ExtendedValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5777,7 +5777,7 @@ instance ToJSON AddNamedRangeResponse where
 data WaterfallChartDomain =
   WaterfallChartDomain'
     { _wcdReversed :: !(Maybe Bool)
-    , _wcdData     :: !(Maybe ChartData)
+    , _wcdData :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5858,7 +5858,7 @@ instance ToJSON AddChartResponse where
 -- /See:/ 'updateChartSpecRequest' smart constructor.
 data UpdateChartSpecRequest =
   UpdateChartSpecRequest'
-    { _ucsrSpec    :: !(Maybe ChartSpec)
+    { _ucsrSpec :: !(Maybe ChartSpec)
     , _ucsrChartId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5941,7 +5941,7 @@ instance ToJSON SetBasicFilterRequest where
 -- /See:/ 'iterativeCalculationSettings' smart constructor.
 data IterativeCalculationSettings =
   IterativeCalculationSettings'
-    { _icsMaxIterations        :: !(Maybe (Textual Int32))
+    { _icsMaxIterations :: !(Maybe (Textual Int32))
     , _icsConvergenceThreshold :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5999,12 +5999,12 @@ instance ToJSON IterativeCalculationSettings where
 -- /See:/ 'updateValuesByDataFilterResponse' smart constructor.
 data UpdateValuesByDataFilterResponse =
   UpdateValuesByDataFilterResponse'
-    { _uvbdfrUpdatedCells   :: !(Maybe (Textual Int32))
-    , _uvbdfrUpdatedRows    :: !(Maybe (Textual Int32))
-    , _uvbdfrUpdatedRange   :: !(Maybe Text)
-    , _uvbdfrUpdatedData    :: !(Maybe ValueRange)
+    { _uvbdfrUpdatedCells :: !(Maybe (Textual Int32))
+    , _uvbdfrUpdatedRows :: !(Maybe (Textual Int32))
+    , _uvbdfrUpdatedRange :: !(Maybe Text)
+    , _uvbdfrUpdatedData :: !(Maybe ValueRange)
     , _uvbdfrUpdatedColumns :: !(Maybe (Textual Int32))
-    , _uvbdfrDataFilter     :: !(Maybe DataFilter)
+    , _uvbdfrDataFilter :: !(Maybe DataFilter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6107,13 +6107,13 @@ instance ToJSON UpdateValuesByDataFilterResponse
 -- /See:/ 'gridProperties' smart constructor.
 data GridProperties =
   GridProperties'
-    { _gpFrozenColumnCount       :: !(Maybe (Textual Int32))
-    , _gpColumnCount             :: !(Maybe (Textual Int32))
+    { _gpFrozenColumnCount :: !(Maybe (Textual Int32))
+    , _gpColumnCount :: !(Maybe (Textual Int32))
     , _gpColumnGroupControlAfter :: !(Maybe Bool)
-    , _gpHideGridlines           :: !(Maybe Bool)
-    , _gpFrozenRowCount          :: !(Maybe (Textual Int32))
-    , _gpRowGroupControlAfter    :: !(Maybe Bool)
-    , _gpRowCount                :: !(Maybe (Textual Int32))
+    , _gpHideGridlines :: !(Maybe Bool)
+    , _gpFrozenRowCount :: !(Maybe (Textual Int32))
+    , _gpRowGroupControlAfter :: !(Maybe Bool)
+    , _gpRowCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6230,11 +6230,11 @@ instance ToJSON GridProperties where
 -- /See:/ 'histogramChartSpec' smart constructor.
 data HistogramChartSpec =
   HistogramChartSpec'
-    { _hcsLegendPosition    :: !(Maybe HistogramChartSpecLegendPosition)
-    , _hcsSeries            :: !(Maybe [HistogramSeries])
-    , _hcsShowItemDividers  :: !(Maybe Bool)
+    { _hcsLegendPosition :: !(Maybe HistogramChartSpecLegendPosition)
+    , _hcsSeries :: !(Maybe [HistogramSeries])
+    , _hcsShowItemDividers :: !(Maybe Bool)
     , _hcsOutlierPercentile :: !(Maybe (Textual Double))
-    , _hcsBucketSize        :: !(Maybe (Textual Double))
+    , _hcsBucketSize :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6409,8 +6409,8 @@ instance ToJSON AddBandingRequest where
 -- /See:/ 'updateDimensionPropertiesRequest' smart constructor.
 data UpdateDimensionPropertiesRequest =
   UpdateDimensionPropertiesRequest'
-    { _udprRange      :: !(Maybe DimensionRange)
-    , _udprFields     :: !(Maybe GFieldMask)
+    { _udprRange :: !(Maybe DimensionRange)
+    , _udprFields :: !(Maybe GFieldMask)
     , _udprProperties :: !(Maybe DimensionProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6514,8 +6514,8 @@ instance ToJSON PivotTableCriteria where
 data AutoFillRequest =
   AutoFillRequest'
     { _afrSourceAndDestination :: !(Maybe SourceAndDestination)
-    , _afrUseAlternateSeries   :: !(Maybe Bool)
-    , _afrRange                :: !(Maybe GridRange)
+    , _afrUseAlternateSeries :: !(Maybe Bool)
+    , _afrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6591,12 +6591,12 @@ instance ToJSON AutoFillRequest where
 data DeveloperMetadataLookup =
   DeveloperMetadataLookup'
     { _dLocationMatchingStrategy :: !(Maybe DeveloperMetadataLookupLocationMatchingStrategy)
-    , _dMetadataId               :: !(Maybe (Textual Int32))
-    , _dVisibility               :: !(Maybe DeveloperMetadataLookupVisibility)
-    , _dMetadataKey              :: !(Maybe Text)
-    , _dLocationType             :: !(Maybe DeveloperMetadataLookupLocationType)
-    , _dMetadataLocation         :: !(Maybe DeveloperMetadataLocation)
-    , _dMetadataValue            :: !(Maybe Text)
+    , _dMetadataId :: !(Maybe (Textual Int32))
+    , _dVisibility :: !(Maybe DeveloperMetadataLookupVisibility)
+    , _dMetadataKey :: !(Maybe Text)
+    , _dLocationType :: !(Maybe DeveloperMetadataLookupLocationType)
+    , _dMetadataLocation :: !(Maybe DeveloperMetadataLocation)
+    , _dMetadataValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6725,10 +6725,10 @@ instance ToJSON DeveloperMetadataLookup where
 -- /See:/ 'duplicateSheetRequest' smart constructor.
 data DuplicateSheetRequest =
   DuplicateSheetRequest'
-    { _dsrNewSheetName     :: !(Maybe Text)
+    { _dsrNewSheetName :: !(Maybe Text)
     , _dsrInsertSheetIndex :: !(Maybe (Textual Int32))
-    , _dsrSourceSheetId    :: !(Maybe (Textual Int32))
-    , _dsrNewSheetId       :: !(Maybe (Textual Int32))
+    , _dsrSourceSheetId :: !(Maybe (Textual Int32))
+    , _dsrNewSheetId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6808,7 +6808,7 @@ instance ToJSON DuplicateSheetRequest where
 -- /See:/ 'textRotation' smart constructor.
 data TextRotation =
   TextRotation'
-    { _trAngle    :: !(Maybe (Textual Int32))
+    { _trAngle :: !(Maybe (Textual Int32))
     , _trVertical :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6898,11 +6898,11 @@ instance ToJSON DuplicateFilterViewResponse where
 -- /See:/ 'batchUpdateValuesRequest' smart constructor.
 data BatchUpdateValuesRequest =
   BatchUpdateValuesRequest'
-    { _buvrData                         :: !(Maybe [ValueRange])
-    , _buvrValueInputOption             :: !(Maybe BatchUpdateValuesRequestValueInputOption)
-    , _buvrIncludeValuesInResponse      :: !(Maybe Bool)
+    { _buvrData :: !(Maybe [ValueRange])
+    , _buvrValueInputOption :: !(Maybe BatchUpdateValuesRequestValueInputOption)
+    , _buvrIncludeValuesInResponse :: !(Maybe Bool)
     , _buvrResponseDateTimeRenderOption :: !(Maybe BatchUpdateValuesRequestResponseDateTimeRenderOption)
-    , _buvrResponseValueRenderOption    :: !(Maybe BatchUpdateValuesRequestResponseValueRenderOption)
+    , _buvrResponseValueRenderOption :: !(Maybe BatchUpdateValuesRequestResponseValueRenderOption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7002,8 +7002,8 @@ instance ToJSON BatchUpdateValuesRequest where
 -- /See:/ 'dataFilterValueRange' smart constructor.
 data DataFilterValueRange =
   DataFilterValueRange'
-    { _dfvrValues         :: !(Maybe [[JSONValue]])
-    , _dfvrDataFilter     :: !(Maybe DataFilter)
+    { _dfvrValues :: !(Maybe [[JSONValue]])
+    , _dfvrDataFilter :: !(Maybe DataFilter)
     , _dfvrMajorDimension :: !(Maybe DataFilterValueRangeMajorDimension)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7110,8 +7110,8 @@ instance ToJSON AddChartRequest where
 data NamedRange =
   NamedRange'
     { _nrNamedRangeId :: !(Maybe Text)
-    , _nrName         :: !(Maybe Text)
-    , _nrRange        :: !(Maybe GridRange)
+    , _nrName :: !(Maybe Text)
+    , _nrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7166,7 +7166,7 @@ instance ToJSON NamedRange where
 data MergeCellsRequest =
   MergeCellsRequest'
     { _mcrMergeType :: !(Maybe MergeCellsRequestMergeType)
-    , _mcrRange     :: !(Maybe GridRange)
+    , _mcrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7435,10 +7435,10 @@ instance ToJSON CandlestickSeries where
 -- /See:/ 'extendedValue' smart constructor.
 data ExtendedValue =
   ExtendedValue'
-    { _evBoolValue    :: !(Maybe Bool)
-    , _evNumberValue  :: !(Maybe (Textual Double))
-    , _evErrorValue   :: !(Maybe ErrorValue)
-    , _evStringValue  :: !(Maybe Text)
+    { _evBoolValue :: !(Maybe Bool)
+    , _evNumberValue :: !(Maybe (Textual Double))
+    , _evErrorValue :: !(Maybe ErrorValue)
+    , _evStringValue :: !(Maybe Text)
     , _evFormulaValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7607,9 +7607,9 @@ instance ToJSON PivotFilterCriteria where
 -- /See:/ 'dimensionRange' smart constructor.
 data DimensionRange =
   DimensionRange'
-    { _drDimension  :: !(Maybe DimensionRangeDimension)
-    , _drEndIndex   :: !(Maybe (Textual Int32))
-    , _drSheetId    :: !(Maybe (Textual Int32))
+    { _drDimension :: !(Maybe DimensionRangeDimension)
+    , _drEndIndex :: !(Maybe (Textual Int32))
+    , _drSheetId :: !(Maybe (Textual Int32))
     , _drStartIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7683,7 +7683,7 @@ instance ToJSON DimensionRange where
 -- /See:/ 'updateSpreadsheetPropertiesRequest' smart constructor.
 data UpdateSpreadsheetPropertiesRequest =
   UpdateSpreadsheetPropertiesRequest'
-    { _uFields     :: !(Maybe GFieldMask)
+    { _uFields :: !(Maybe GFieldMask)
     , _uProperties :: !(Maybe SpreadsheetProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7736,7 +7736,7 @@ instance ToJSON UpdateSpreadsheetPropertiesRequest
 data CandlestickDomain =
   CandlestickDomain'
     { _cdReversed :: !(Maybe Bool)
-    , _cdData     :: !(Maybe ChartData)
+    , _cdData :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7822,9 +7822,9 @@ instance ToJSON AddProtectedRangeResponse where
 -- /See:/ 'appendDimensionRequest' smart constructor.
 data AppendDimensionRequest =
   AppendDimensionRequest'
-    { _adrLength    :: !(Maybe (Textual Int32))
+    { _adrLength :: !(Maybe (Textual Int32))
     , _adrDimension :: !(Maybe AppendDimensionRequestDimension)
-    , _adrSheetId   :: !(Maybe (Textual Int32))
+    , _adrSheetId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7883,11 +7883,11 @@ instance ToJSON AppendDimensionRequest where
 -- /See:/ 'pivotValue' smart constructor.
 data PivotValue =
   PivotValue'
-    { _pvSourceColumnOffSet    :: !(Maybe (Textual Int32))
-    , _pvFormula               :: !(Maybe Text)
-    , _pvName                  :: !(Maybe Text)
+    { _pvSourceColumnOffSet :: !(Maybe (Textual Int32))
+    , _pvFormula :: !(Maybe Text)
+    , _pvName :: !(Maybe Text)
     , _pvCalculatedDisplayType :: !(Maybe PivotValueCalculatedDisplayType)
-    , _pvSummarizeFunction     :: !(Maybe PivotValueSummarizeFunction)
+    , _pvSummarizeFunction :: !(Maybe PivotValueSummarizeFunction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8146,9 +8146,9 @@ instance ToJSON WaterfallChartColumnStyle where
 -- /See:/ 'candlestickData' smart constructor.
 data CandlestickData =
   CandlestickData'
-    { _cdLowSeries   :: !(Maybe CandlestickSeries)
-    , _cdHighSeries  :: !(Maybe CandlestickSeries)
-    , _cdOpenSeries  :: !(Maybe CandlestickSeries)
+    { _cdLowSeries :: !(Maybe CandlestickSeries)
+    , _cdHighSeries :: !(Maybe CandlestickSeries)
+    , _cdOpenSeries :: !(Maybe CandlestickSeries)
     , _cdCloseSeries :: !(Maybe CandlestickSeries)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8226,9 +8226,9 @@ instance ToJSON CandlestickData where
 -- /See:/ 'bandedRange' smart constructor.
 data BandedRange =
   BandedRange'
-    { _brBandedRangeId    :: !(Maybe (Textual Int32))
-    , _brRowProperties    :: !(Maybe BandingProperties)
-    , _brRange            :: !(Maybe GridRange)
+    { _brBandedRangeId :: !(Maybe (Textual Int32))
+    , _brRowProperties :: !(Maybe BandingProperties)
+    , _brRange :: !(Maybe GridRange)
     , _brColumnProperties :: !(Maybe BandingProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8311,13 +8311,13 @@ instance ToJSON BandedRange where
 -- /See:/ 'updateBOrdersRequest' smart constructor.
 data UpdateBOrdersRequest =
   UpdateBOrdersRequest'
-    { _uborBottom          :: !(Maybe BOrder)
+    { _uborBottom :: !(Maybe BOrder)
     , _uborInnerHorizontal :: !(Maybe BOrder)
-    , _uborLeft            :: !(Maybe BOrder)
-    , _uborInnerVertical   :: !(Maybe BOrder)
-    , _uborRange           :: !(Maybe GridRange)
-    , _uborRight           :: !(Maybe BOrder)
-    , _uborTop             :: !(Maybe BOrder)
+    , _uborLeft :: !(Maybe BOrder)
+    , _uborInnerVertical :: !(Maybe BOrder)
+    , _uborRange :: !(Maybe GridRange)
+    , _uborRight :: !(Maybe BOrder)
+    , _uborTop :: !(Maybe BOrder)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8417,11 +8417,11 @@ instance ToJSON UpdateBOrdersRequest where
 -- /See:/ 'batchUpdateValuesByDataFilterRequest' smart constructor.
 data BatchUpdateValuesByDataFilterRequest =
   BatchUpdateValuesByDataFilterRequest'
-    { _buvbdfrData                         :: !(Maybe [DataFilterValueRange])
-    , _buvbdfrValueInputOption             :: !(Maybe BatchUpdateValuesByDataFilterRequestValueInputOption)
-    , _buvbdfrIncludeValuesInResponse      :: !(Maybe Bool)
+    { _buvbdfrData :: !(Maybe [DataFilterValueRange])
+    , _buvbdfrValueInputOption :: !(Maybe BatchUpdateValuesByDataFilterRequestValueInputOption)
+    , _buvbdfrIncludeValuesInResponse :: !(Maybe Bool)
     , _buvbdfrResponseDateTimeRenderOption :: !(Maybe BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption)
-    , _buvbdfrResponseValueRenderOption    :: !(Maybe BatchUpdateValuesByDataFilterRequestResponseValueRenderOption)
+    , _buvbdfrResponseValueRenderOption :: !(Maybe BatchUpdateValuesByDataFilterRequestResponseValueRenderOption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8527,9 +8527,9 @@ instance ToJSON BatchUpdateValuesByDataFilterRequest
 -- /See:/ 'embeddedChart' smart constructor.
 data EmbeddedChart =
   EmbeddedChart'
-    { _ecSpec     :: !(Maybe ChartSpec)
+    { _ecSpec :: !(Maybe ChartSpec)
     , _ecPosition :: !(Maybe EmbeddedObjectPosition)
-    , _ecChartId  :: !(Maybe (Textual Int32))
+    , _ecChartId :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8622,8 +8622,8 @@ instance ToJSON RowData where
 -- /See:/ 'editors' smart constructor.
 data Editors =
   Editors'
-    { _eGroups             :: !(Maybe [Text])
-    , _eUsers              :: !(Maybe [Text])
+    { _eGroups :: !(Maybe [Text])
+    , _eUsers :: !(Maybe [Text])
     , _eDomainUsersCanEdit :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8687,12 +8687,12 @@ instance ToJSON Editors where
 -- /See:/ 'pivotTable' smart constructor.
 data PivotTable =
   PivotTable'
-    { _ptValues      :: !(Maybe [PivotValue])
+    { _ptValues :: !(Maybe [PivotValue])
     , _ptValueLayout :: !(Maybe PivotTableValueLayout)
-    , _ptRows        :: !(Maybe [PivotGroup])
-    , _ptSource      :: !(Maybe GridRange)
-    , _ptColumns     :: !(Maybe [PivotGroup])
-    , _ptCriteria    :: !(Maybe PivotTableCriteria)
+    , _ptRows :: !(Maybe [PivotGroup])
+    , _ptSource :: !(Maybe GridRange)
+    , _ptColumns :: !(Maybe [PivotGroup])
+    , _ptCriteria :: !(Maybe PivotTableCriteria)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8793,8 +8793,8 @@ instance ToJSON PivotTable where
 data EmbeddedObjectPosition =
   EmbeddedObjectPosition'
     { _eopOverlayPosition :: !(Maybe OverlayPosition)
-    , _eopSheetId         :: !(Maybe (Textual Int32))
-    , _eopNewSheet        :: !(Maybe Bool)
+    , _eopSheetId :: !(Maybe (Textual Int32))
+    , _eopNewSheet :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8859,8 +8859,8 @@ instance ToJSON EmbeddedObjectPosition where
 data BasicFilter =
   BasicFilter'
     { _bfSortSpecs :: !(Maybe [SortSpec])
-    , _bfRange     :: !(Maybe GridRange)
-    , _bfCriteria  :: !(Maybe BasicFilterCriteria)
+    , _bfRange :: !(Maybe GridRange)
+    , _bfCriteria :: !(Maybe BasicFilterCriteria)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8922,8 +8922,8 @@ instance ToJSON BasicFilter where
 data TextToColumnsRequest =
   TextToColumnsRequest'
     { _ttcrDelimiterType :: !(Maybe TextToColumnsRequestDelimiterType)
-    , _ttcrSource        :: !(Maybe GridRange)
-    , _ttcrDelimiter     :: !(Maybe Text)
+    , _ttcrSource :: !(Maybe GridRange)
+    , _ttcrDelimiter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8985,7 +8985,7 @@ instance ToJSON TextToColumnsRequest where
 -- /See:/ 'getSpreadsheetByDataFilterRequest' smart constructor.
 data GetSpreadsheetByDataFilterRequest =
   GetSpreadsheetByDataFilterRequest'
-    { _gsbdfrDataFilters     :: !(Maybe [DataFilter])
+    { _gsbdfrDataFilters :: !(Maybe [DataFilter])
     , _gsbdfrIncludeGridData :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9043,9 +9043,9 @@ instance ToJSON GetSpreadsheetByDataFilterRequest
 -- /See:/ 'batchUpdateSpreadsheetRequest' smart constructor.
 data BatchUpdateSpreadsheetRequest =
   BatchUpdateSpreadsheetRequest'
-    { _busrResponseIncludeGridData      :: !(Maybe Bool)
-    , _busrResponseRanges               :: !(Maybe [Text])
-    , _busrRequests                     :: !(Maybe [Request'])
+    { _busrResponseIncludeGridData :: !(Maybe Bool)
+    , _busrResponseRanges :: !(Maybe [Text])
+    , _busrRequests :: !(Maybe [Request'])
     , _busrIncludeSpreadsheetInResponse :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9132,11 +9132,11 @@ instance ToJSON BatchUpdateSpreadsheetRequest where
 -- /See:/ 'updateValuesResponse' smart constructor.
 data UpdateValuesResponse =
   UpdateValuesResponse'
-    { _uvrUpdatedCells   :: !(Maybe (Textual Int32))
-    , _uvrSpreadsheetId  :: !(Maybe Text)
-    , _uvrUpdatedRows    :: !(Maybe (Textual Int32))
-    , _uvrUpdatedRange   :: !(Maybe Text)
-    , _uvrUpdatedData    :: !(Maybe ValueRange)
+    { _uvrUpdatedCells :: !(Maybe (Textual Int32))
+    , _uvrSpreadsheetId :: !(Maybe Text)
+    , _uvrUpdatedRows :: !(Maybe (Textual Int32))
+    , _uvrUpdatedRange :: !(Maybe Text)
+    , _uvrUpdatedData :: !(Maybe ValueRange)
     , _uvrUpdatedColumns :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9360,7 +9360,7 @@ instance ToJSON AddFilterViewRequest where
 -- /See:/ 'pivotGroupValueMetadata' smart constructor.
 data PivotGroupValueMetadata =
   PivotGroupValueMetadata'
-    { _pgvmValue     :: !(Maybe ExtendedValue)
+    { _pgvmValue :: !(Maybe ExtendedValue)
     , _pgvmCollapsed :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9471,8 +9471,8 @@ instance ToJSON BatchClearValuesByDataFilterResponse
 -- /See:/ 'waterfallChartSeries' smart constructor.
 data WaterfallChartSeries =
   WaterfallChartSeries'
-    { _wcsData                 :: !(Maybe ChartData)
-    , _wcsCustomSubtotals      :: !(Maybe [WaterfallChartCustomSubtotal])
+    { _wcsData :: !(Maybe ChartData)
+    , _wcsCustomSubtotals :: !(Maybe [WaterfallChartCustomSubtotal])
     , _wcsNegativeColumnsStyle :: !(Maybe WaterfallChartColumnStyle)
     , _wcsHideTrailingSubtotal :: !(Maybe Bool)
     , _wcsSubtotalColumnsStyle :: !(Maybe WaterfallChartColumnStyle)
@@ -9581,9 +9581,9 @@ instance ToJSON WaterfallChartSeries where
 -- /See:/ 'updateCellsRequest' smart constructor.
 data UpdateCellsRequest =
   UpdateCellsRequest'
-    { _updStart  :: !(Maybe GridCoordinate)
-    , _updRows   :: !(Maybe [RowData])
-    , _updRange  :: !(Maybe GridRange)
+    { _updStart :: !(Maybe GridCoordinate)
+    , _updRows :: !(Maybe [RowData])
+    , _updRange :: !(Maybe GridRange)
     , _updFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9658,17 +9658,17 @@ instance ToJSON UpdateCellsRequest where
 -- /See:/ 'cellFormat' smart constructor.
 data CellFormat =
   CellFormat'
-    { _cfBOrders              :: !(Maybe BOrders)
-    , _cfVerticalAlignment    :: !(Maybe CellFormatVerticalAlignment)
-    , _cfBackgRoundColor      :: !(Maybe Color)
-    , _cfTextRotation         :: !(Maybe TextRotation)
+    { _cfBOrders :: !(Maybe BOrders)
+    , _cfVerticalAlignment :: !(Maybe CellFormatVerticalAlignment)
+    , _cfBackgRoundColor :: !(Maybe Color)
+    , _cfTextRotation :: !(Maybe TextRotation)
     , _cfHyperlinkDisplayType :: !(Maybe CellFormatHyperlinkDisplayType)
-    , _cfWrapStrategy         :: !(Maybe CellFormatWrapStrategy)
-    , _cfNumberFormat         :: !(Maybe NumberFormat)
-    , _cfTextDirection        :: !(Maybe CellFormatTextDirection)
-    , _cfTextFormat           :: !(Maybe TextFormat)
-    , _cfHorizontalAlignment  :: !(Maybe CellFormatHorizontalAlignment)
-    , _cfPadding              :: !(Maybe Padding)
+    , _cfWrapStrategy :: !(Maybe CellFormatWrapStrategy)
+    , _cfNumberFormat :: !(Maybe NumberFormat)
+    , _cfTextDirection :: !(Maybe CellFormatTextDirection)
+    , _cfTextFormat :: !(Maybe TextFormat)
+    , _cfHorizontalAlignment :: !(Maybe CellFormatHorizontalAlignment)
+    , _cfPadding :: !(Maybe Padding)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9860,7 +9860,7 @@ instance ToJSON DeleteProtectedRangeRequest where
 data UpdateProtectedRangeRequest =
   UpdateProtectedRangeRequest'
     { _uprrProtectedRange :: !(Maybe ProtectedRange)
-    , _uprrFields         :: !(Maybe GFieldMask)
+    , _uprrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9946,14 +9946,14 @@ instance ToJSON AddSheetResponse where
 -- /See:/ 'protectedRange' smart constructor.
 data ProtectedRange =
   ProtectedRange'
-    { _prProtectedRangeId      :: !(Maybe (Textual Int32))
-    , _prWarningOnly           :: !(Maybe Bool)
-    , _prNamedRangeId          :: !(Maybe Text)
-    , _prRange                 :: !(Maybe GridRange)
-    , _prEditors               :: !(Maybe Editors)
-    , _prUnprotectedRanges     :: !(Maybe [GridRange])
+    { _prProtectedRangeId :: !(Maybe (Textual Int32))
+    , _prWarningOnly :: !(Maybe Bool)
+    , _prNamedRangeId :: !(Maybe Text)
+    , _prRange :: !(Maybe GridRange)
+    , _prEditors :: !(Maybe Editors)
+    , _prUnprotectedRanges :: !(Maybe [GridRange])
     , _prRequestingUserCanEdit :: !(Maybe Bool)
-    , _prDescription           :: !(Maybe Text)
+    , _prDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10087,9 +10087,9 @@ instance ToJSON ProtectedRange where
 data BasicChartAxis =
   BasicChartAxis'
     { _bcaTitleTextPosition :: !(Maybe TextPosition)
-    , _bcaFormat            :: !(Maybe TextFormat)
-    , _bcaTitle             :: !(Maybe Text)
-    , _bcaPosition          :: !(Maybe BasicChartAxisPosition)
+    , _bcaFormat :: !(Maybe TextFormat)
+    , _bcaTitle :: !(Maybe Text)
+    , _bcaPosition :: !(Maybe BasicChartAxisPosition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10161,11 +10161,11 @@ instance ToJSON BasicChartAxis where
 -- /See:/ 'gridData' smart constructor.
 data GridData =
   GridData'
-    { _gdRowMetadata    :: !(Maybe [DimensionProperties])
-    , _gdStartRow       :: !(Maybe (Textual Int32))
-    , _gdRowData        :: !(Maybe [RowData])
+    { _gdRowMetadata :: !(Maybe [DimensionProperties])
+    , _gdStartRow :: !(Maybe (Textual Int32))
+    , _gdRowData :: !(Maybe [RowData])
     , _gdColumnMetadata :: !(Maybe [DimensionProperties])
-    , _gdStartColumn    :: !(Maybe (Textual Int32))
+    , _gdStartColumn :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10262,7 +10262,7 @@ instance ToJSON GridData where
 data NumberFormat =
   NumberFormat'
     { _nfPattern :: !(Maybe Text)
-    , _nfType    :: !(Maybe NumberFormatType)
+    , _nfType :: !(Maybe NumberFormatType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10310,8 +10310,8 @@ instance ToJSON NumberFormat where
 -- /See:/ 'batchUpdateSpreadsheetResponse' smart constructor.
 data BatchUpdateSpreadsheetResponse =
   BatchUpdateSpreadsheetResponse'
-    { _busrSpreadsheetId      :: !(Maybe Text)
-    , _busrReplies            :: !(Maybe [Response])
+    { _busrSpreadsheetId :: !(Maybe Text)
+    , _busrReplies :: !(Maybe [Response])
     , _busrUpdatedSpreadsheet :: !(Maybe Spreadsheet)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10383,8 +10383,8 @@ instance ToJSON BatchUpdateSpreadsheetResponse where
 -- /See:/ 'dataFilter' smart constructor.
 data DataFilter =
   DataFilter'
-    { _dfGridRange               :: !(Maybe GridRange)
-    , _dfA1Range                 :: !(Maybe Text)
+    { _dfGridRange :: !(Maybe GridRange)
+    , _dfA1Range :: !(Maybe Text)
     , _dfDeveloperMetadataLookup :: !(Maybe DeveloperMetadataLookup)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10449,7 +10449,7 @@ instance ToJSON DataFilter where
 -- /See:/ 'setDataValidationRequest' smart constructor.
 data SetDataValidationRequest =
   SetDataValidationRequest'
-    { _sdvrRule  :: !(Maybe DataValidationRule)
+    { _sdvrRule :: !(Maybe DataValidationRule)
     , _sdvrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10508,9 +10508,9 @@ instance ToJSON SetDataValidationRequest where
 data BandingProperties =
   BandingProperties'
     { _bpSecondBandColor :: !(Maybe Color)
-    , _bpHeaderColor     :: !(Maybe Color)
-    , _bpFooterColor     :: !(Maybe Color)
-    , _bpFirstBandColor  :: !(Maybe Color)
+    , _bpHeaderColor :: !(Maybe Color)
+    , _bpFooterColor :: !(Maybe Color)
+    , _bpFirstBandColor :: !(Maybe Color)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10627,14 +10627,14 @@ instance ToJSON DuplicateFilterViewRequest where
 -- /See:/ 'pivotGroup' smart constructor.
 data PivotGroup =
   PivotGroup'
-    { _pgRepeatHeadings     :: !(Maybe Bool)
-    , _pgValueMetadata      :: !(Maybe [PivotGroupValueMetadata])
+    { _pgRepeatHeadings :: !(Maybe Bool)
+    , _pgValueMetadata :: !(Maybe [PivotGroupValueMetadata])
     , _pgSourceColumnOffSet :: !(Maybe (Textual Int32))
-    , _pgSortOrder          :: !(Maybe PivotGroupSortOrder)
-    , _pgShowTotals         :: !(Maybe Bool)
-    , _pgValueBucket        :: !(Maybe PivotGroupSortValueBucket)
-    , _pgLabel              :: !(Maybe Text)
-    , _pgGroupRule          :: !(Maybe PivotGroupRule)
+    , _pgSortOrder :: !(Maybe PivotGroupSortOrder)
+    , _pgShowTotals :: !(Maybe Bool)
+    , _pgValueBucket :: !(Maybe PivotGroupSortValueBucket)
+    , _pgLabel :: !(Maybe Text)
+    , _pgGroupRule :: !(Maybe PivotGroupRule)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10817,12 +10817,12 @@ instance ToJSON AddBandingResponse where
 -- /See:/ 'orgChartSpec' smart constructor.
 data OrgChartSpec =
   OrgChartSpec'
-    { _ocsNodeColor         :: !(Maybe Color)
-    , _ocsNodeSize          :: !(Maybe OrgChartSpecNodeSize)
-    , _ocsTooltips          :: !(Maybe ChartData)
+    { _ocsNodeColor :: !(Maybe Color)
+    , _ocsNodeSize :: !(Maybe OrgChartSpecNodeSize)
+    , _ocsTooltips :: !(Maybe ChartData)
     , _ocsSelectedNodeColor :: !(Maybe Color)
-    , _ocsLabels            :: !(Maybe ChartData)
-    , _ocsParentLabels      :: !(Maybe ChartData)
+    , _ocsLabels :: !(Maybe ChartData)
+    , _ocsParentLabels :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10953,7 +10953,7 @@ instance ToJSON RandomizeRangeRequest where
 data HistogramSeries =
   HistogramSeries'
     { _hsBarColor :: !(Maybe Color)
-    , _hsData     :: !(Maybe ChartData)
+    , _hsData :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11000,16 +11000,16 @@ instance ToJSON HistogramSeries where
 data TreemapChartSpec =
   TreemapChartSpec'
     { _tcsHintedLevels :: !(Maybe (Textual Int32))
-    , _tcsMaxValue     :: !(Maybe (Textual Double))
-    , _tcsHeaderColor  :: !(Maybe Color)
-    , _tcsSizeData     :: !(Maybe ChartData)
-    , _tcsColorData    :: !(Maybe ChartData)
+    , _tcsMaxValue :: !(Maybe (Textual Double))
+    , _tcsHeaderColor :: !(Maybe Color)
+    , _tcsSizeData :: !(Maybe ChartData)
+    , _tcsColorData :: !(Maybe ChartData)
     , _tcsHideTooltips :: !(Maybe Bool)
-    , _tcsLevels       :: !(Maybe (Textual Int32))
-    , _tcsLabels       :: !(Maybe ChartData)
-    , _tcsColorScale   :: !(Maybe TreemapChartColorScale)
-    , _tcsTextFormat   :: !(Maybe TextFormat)
-    , _tcsMinValue     :: !(Maybe (Textual Double))
+    , _tcsLevels :: !(Maybe (Textual Int32))
+    , _tcsLabels :: !(Maybe ChartData)
+    , _tcsColorScale :: !(Maybe TreemapChartColorScale)
+    , _tcsTextFormat :: !(Maybe TextFormat)
+    , _tcsMinValue :: !(Maybe (Textual Double))
     , _tcsParentLabels :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11197,9 +11197,9 @@ instance ToJSON TreemapChartSpec where
 -- /See:/ 'conditionalFormatRule' smart constructor.
 data ConditionalFormatRule =
   ConditionalFormatRule'
-    { _cfrBooleanRule  :: !(Maybe BooleanRule)
+    { _cfrBooleanRule :: !(Maybe BooleanRule)
     , _cfrGradientRule :: !(Maybe GradientRule)
-    , _cfrRanges       :: !(Maybe [GridRange])
+    , _cfrRanges :: !(Maybe [GridRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11265,17 +11265,17 @@ instance ToJSON ConditionalFormatRule where
 -- /See:/ 'basicChartSpec' smart constructor.
 data BasicChartSpec =
   BasicChartSpec'
-    { _basHeaderCount      :: !(Maybe (Textual Int32))
-    , _basLineSmoothing    :: !(Maybe Bool)
+    { _basHeaderCount :: !(Maybe (Textual Int32))
+    , _basLineSmoothing :: !(Maybe Bool)
     , _basInterpolateNulls :: !(Maybe Bool)
-    , _basStackedType      :: !(Maybe BasicChartSpecStackedType)
-    , _basLegendPosition   :: !(Maybe BasicChartSpecLegendPosition)
-    , _basSeries           :: !(Maybe [BasicChartSeries])
-    , _basCompareMode      :: !(Maybe BasicChartSpecCompareMode)
-    , _basChartType        :: !(Maybe BasicChartSpecChartType)
+    , _basStackedType :: !(Maybe BasicChartSpecStackedType)
+    , _basLegendPosition :: !(Maybe BasicChartSpecLegendPosition)
+    , _basSeries :: !(Maybe [BasicChartSeries])
+    , _basCompareMode :: !(Maybe BasicChartSpecCompareMode)
+    , _basChartType :: !(Maybe BasicChartSpecChartType)
     , _basThreeDimensional :: !(Maybe Bool)
-    , _basDomains          :: !(Maybe [BasicChartDomain])
-    , _basAxis             :: !(Maybe [BasicChartAxis])
+    , _basDomains :: !(Maybe [BasicChartDomain])
+    , _basAxis :: !(Maybe [BasicChartAxis])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11437,7 +11437,7 @@ instance ToJSON BasicChartSpec where
 -- /See:/ 'manualRuleGroup' smart constructor.
 data ManualRuleGroup =
   ManualRuleGroup'
-    { _mrgItems     :: !(Maybe [ExtendedValue])
+    { _mrgItems :: !(Maybe [ExtendedValue])
     , _mrgGroupName :: !(Maybe ExtendedValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11492,7 +11492,7 @@ instance ToJSON ManualRuleGroup where
 -- /See:/ 'addConditionalFormatRuleRequest' smart constructor.
 data AddConditionalFormatRuleRequest =
   AddConditionalFormatRuleRequest'
-    { _acfrrRule  :: !(Maybe ConditionalFormatRule)
+    { _acfrrRule :: !(Maybe ConditionalFormatRule)
     , _acfrrIndex :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11550,10 +11550,10 @@ instance ToJSON AddConditionalFormatRuleRequest where
 -- /See:/ 'developerMetadata' smart constructor.
 data DeveloperMetadata =
   DeveloperMetadata'
-    { _dmLocation      :: !(Maybe DeveloperMetadataLocation)
-    , _dmMetadataId    :: !(Maybe (Textual Int32))
-    , _dmVisibility    :: !(Maybe DeveloperMetadataVisibility)
-    , _dmMetadataKey   :: !(Maybe Text)
+    { _dmLocation :: !(Maybe DeveloperMetadataLocation)
+    , _dmMetadataId :: !(Maybe (Textual Int32))
+    , _dmVisibility :: !(Maybe DeveloperMetadataVisibility)
+    , _dmMetadataKey :: !(Maybe Text)
     , _dmMetadataValue :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11642,7 +11642,7 @@ instance ToJSON DeveloperMetadata where
 data TreemapChartColorScale =
   TreemapChartColorScale'
     { _tccsMinValueColor :: !(Maybe Color)
-    , _tccsNoDataColor   :: !(Maybe Color)
+    , _tccsNoDataColor :: !(Maybe Color)
     , _tccsMaxValueColor :: !(Maybe Color)
     , _tccsMidValueColor :: !(Maybe Color)
     }
@@ -11760,13 +11760,13 @@ instance ToJSON DuplicateSheetResponse where
 -- /See:/ 'textFormat' smart constructor.
 data TextFormat =
   TextFormat'
-    { _tfFontFamily      :: !(Maybe Text)
+    { _tfFontFamily :: !(Maybe Text)
     , _tfForegRoundColor :: !(Maybe Color)
-    , _tfFontSize        :: !(Maybe (Textual Int32))
-    , _tfUnderline       :: !(Maybe Bool)
-    , _tfItalic          :: !(Maybe Bool)
-    , _tfBold            :: !(Maybe Bool)
-    , _tfStrikethrough   :: !(Maybe Bool)
+    , _tfFontSize :: !(Maybe (Textual Int32))
+    , _tfUnderline :: !(Maybe Bool)
+    , _tfItalic :: !(Maybe Bool)
+    , _tfBold :: !(Maybe Bool)
+    , _tfStrikethrough :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11964,7 +11964,7 @@ instance ToJSON BatchClearValuesResponse where
 -- /See:/ 'matchedValueRange' smart constructor.
 data MatchedValueRange =
   MatchedValueRange'
-    { _mvrValueRange  :: !(Maybe ValueRange)
+    { _mvrValueRange :: !(Maybe ValueRange)
     , _mvrDataFilters :: !(Maybe [DataFilter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12019,7 +12019,7 @@ instance ToJSON MatchedValueRange where
 data BasicChartDomain =
   BasicChartDomain'
     { _bcdReversed :: !(Maybe Bool)
-    , _bcdDomain   :: !(Maybe ChartData)
+    , _bcdDomain :: !(Maybe ChartData)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12085,9 +12085,9 @@ instance ToJSON BasicChartDomain where
 -- /See:/ 'histogramRule' smart constructor.
 data HistogramRule =
   HistogramRule'
-    { _hrStart    :: !(Maybe (Textual Double))
+    { _hrStart :: !(Maybe (Textual Double))
     , _hrInterval :: !(Maybe (Textual Double))
-    , _hrEnd      :: !(Maybe (Textual Double))
+    , _hrEnd :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12151,7 +12151,7 @@ instance ToJSON HistogramRule where
 -- /See:/ 'matchedDeveloperMetadata' smart constructor.
 data MatchedDeveloperMetadata =
   MatchedDeveloperMetadata'
-    { _mdmDataFilters       :: !(Maybe [DataFilter])
+    { _mdmDataFilters :: !(Maybe [DataFilter])
     , _mdmDeveloperMetadata :: !(Maybe DeveloperMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12206,7 +12206,7 @@ instance ToJSON MatchedDeveloperMetadata where
 data InsertRangeRequest =
   InsertRangeRequest'
     { _irrShiftDimension :: !(Maybe InsertRangeRequestShiftDimension)
-    , _irrRange          :: !(Maybe GridRange)
+    , _irrRange :: !(Maybe GridRange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12257,9 +12257,9 @@ instance ToJSON InsertRangeRequest where
 data Padding =
   Padding'
     { _pBottom :: !(Maybe (Textual Int32))
-    , _pLeft   :: !(Maybe (Textual Int32))
-    , _pRight  :: !(Maybe (Textual Int32))
-    , _pTop    :: !(Maybe (Textual Int32))
+    , _pLeft :: !(Maybe (Textual Int32))
+    , _pRight :: !(Maybe (Textual Int32))
+    , _pTop :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12327,24 +12327,24 @@ instance ToJSON Padding where
 -- /See:/ 'chartSpec' smart constructor.
 data ChartSpec =
   ChartSpec'
-    { _csTitleTextPosition       :: !(Maybe TextPosition)
-    , _csFontName                :: !(Maybe Text)
-    , _csSubtitleTextPosition    :: !(Maybe TextPosition)
-    , _csBackgRoundColor         :: !(Maybe Color)
-    , _csCandlestickChart        :: !(Maybe CandlestickChartSpec)
-    , _csWaterfallChart          :: !(Maybe WaterfallChartSpec)
-    , _csTitleTextFormat         :: !(Maybe TextFormat)
-    , _csSubtitle                :: !(Maybe Text)
-    , _csAltText                 :: !(Maybe Text)
-    , _csHistogramChart          :: !(Maybe HistogramChartSpec)
-    , _csBubbleChart             :: !(Maybe BubbleChartSpec)
-    , _csMaximized               :: !(Maybe Bool)
-    , _csSubtitleTextFormat      :: !(Maybe TextFormat)
-    , _csTitle                   :: !(Maybe Text)
-    , _csPieChart                :: !(Maybe PieChartSpec)
-    , _csOrgChart                :: !(Maybe OrgChartSpec)
-    , _csTreemapChart            :: !(Maybe TreemapChartSpec)
-    , _csBasicChart              :: !(Maybe BasicChartSpec)
+    { _csTitleTextPosition :: !(Maybe TextPosition)
+    , _csFontName :: !(Maybe Text)
+    , _csSubtitleTextPosition :: !(Maybe TextPosition)
+    , _csBackgRoundColor :: !(Maybe Color)
+    , _csCandlestickChart :: !(Maybe CandlestickChartSpec)
+    , _csWaterfallChart :: !(Maybe WaterfallChartSpec)
+    , _csTitleTextFormat :: !(Maybe TextFormat)
+    , _csSubtitle :: !(Maybe Text)
+    , _csAltText :: !(Maybe Text)
+    , _csHistogramChart :: !(Maybe HistogramChartSpec)
+    , _csBubbleChart :: !(Maybe BubbleChartSpec)
+    , _csMaximized :: !(Maybe Bool)
+    , _csSubtitleTextFormat :: !(Maybe TextFormat)
+    , _csTitle :: !(Maybe Text)
+    , _csPieChart :: !(Maybe PieChartSpec)
+    , _csOrgChart :: !(Maybe OrgChartSpec)
+    , _csTreemapChart :: !(Maybe TreemapChartSpec)
+    , _csBasicChart :: !(Maybe BasicChartSpec)
     , _csHiddenDimensionStrategy :: !(Maybe ChartSpecHiddenDimensionStrategy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12583,9 +12583,9 @@ instance ToJSON ChartSpec where
 -- /See:/ 'dimensionProperties' smart constructor.
 data DimensionProperties =
   DimensionProperties'
-    { _dpHiddenByFilter    :: !(Maybe Bool)
-    , _dpPixelSize         :: !(Maybe (Textual Int32))
-    , _dpHiddenByUser      :: !(Maybe Bool)
+    { _dpHiddenByFilter :: !(Maybe Bool)
+    , _dpPixelSize :: !(Maybe (Textual Int32))
+    , _dpHiddenByUser :: !(Maybe Bool)
     , _dpDeveloperMetadata :: !(Maybe [DeveloperMetadata])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12663,7 +12663,7 @@ instance ToJSON DimensionProperties where
 data UpdateBandingRequest =
   UpdateBandingRequest'
     { _ubrBandedRange :: !(Maybe BandedRange)
-    , _ubrFields      :: !(Maybe GFieldMask)
+    , _ubrFields :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12715,7 +12715,7 @@ instance ToJSON UpdateBandingRequest where
 data BatchGetValuesResponse =
   BatchGetValuesResponse'
     { _bgvrSpreadsheetId :: !(Maybe Text)
-    , _bgvrValueRanges   :: !(Maybe [ValueRange])
+    , _bgvrValueRanges :: !(Maybe [ValueRange])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12895,62 +12895,62 @@ instance ToJSON UpdateDeveloperMetadataResponse where
 -- /See:/ 'request'' smart constructor.
 data Request' =
   Request''
-    { _reqAddFilterView                :: !(Maybe AddFilterViewRequest)
-    , _reqDeleteProtectedRange         :: !(Maybe DeleteProtectedRangeRequest)
-    , _reqUpdateProtectedRange         :: !(Maybe UpdateProtectedRangeRequest)
-    , _reqUpdateCells                  :: !(Maybe UpdateCellsRequest)
-    , _reqCreateDeveloperMetadata      :: !(Maybe CreateDeveloperMetadataRequest)
-    , _reqDuplicateFilterView          :: !(Maybe DuplicateFilterViewRequest)
-    , _reqAddConditionalFormatRule     :: !(Maybe AddConditionalFormatRuleRequest)
-    , _reqRandomizeRange               :: !(Maybe RandomizeRangeRequest)
-    , _reqSortRange                    :: !(Maybe SortRangeRequest)
-    , _reqUpdateNamedRange             :: !(Maybe UpdateNamedRangeRequest)
-    , _reqDeleteNamedRange             :: !(Maybe DeleteNamedRangeRequest)
-    , _reqInsertRange                  :: !(Maybe InsertRangeRequest)
-    , _reqDeleteBanding                :: !(Maybe DeleteBandingRequest)
-    , _reqUpdateBanding                :: !(Maybe UpdateBandingRequest)
-    , _reqClearBasicFilter             :: !(Maybe ClearBasicFilterRequest)
-    , _reqAppendCells                  :: !(Maybe AppendCellsRequest)
-    , _reqPasteData                    :: !(Maybe PasteDataRequest)
+    { _reqAddFilterView :: !(Maybe AddFilterViewRequest)
+    , _reqDeleteProtectedRange :: !(Maybe DeleteProtectedRangeRequest)
+    , _reqUpdateProtectedRange :: !(Maybe UpdateProtectedRangeRequest)
+    , _reqUpdateCells :: !(Maybe UpdateCellsRequest)
+    , _reqCreateDeveloperMetadata :: !(Maybe CreateDeveloperMetadataRequest)
+    , _reqDuplicateFilterView :: !(Maybe DuplicateFilterViewRequest)
+    , _reqAddConditionalFormatRule :: !(Maybe AddConditionalFormatRuleRequest)
+    , _reqRandomizeRange :: !(Maybe RandomizeRangeRequest)
+    , _reqSortRange :: !(Maybe SortRangeRequest)
+    , _reqUpdateNamedRange :: !(Maybe UpdateNamedRangeRequest)
+    , _reqDeleteNamedRange :: !(Maybe DeleteNamedRangeRequest)
+    , _reqInsertRange :: !(Maybe InsertRangeRequest)
+    , _reqDeleteBanding :: !(Maybe DeleteBandingRequest)
+    , _reqUpdateBanding :: !(Maybe UpdateBandingRequest)
+    , _reqClearBasicFilter :: !(Maybe ClearBasicFilterRequest)
+    , _reqAppendCells :: !(Maybe AppendCellsRequest)
+    , _reqPasteData :: !(Maybe PasteDataRequest)
     , _reqUpdateEmbeddedObjectPosition :: !(Maybe UpdateEmbeddedObjectPositionRequest)
-    , _reqDeleteRange                  :: !(Maybe DeleteRangeRequest)
-    , _reqCopyPaste                    :: !(Maybe CopyPasteRequest)
-    , _reqUpdateDimensionGroup         :: !(Maybe UpdateDimensionGroupRequest)
-    , _reqDeleteDimensionGroup         :: !(Maybe DeleteDimensionGroupRequest)
-    , _reqAutoResizeDimensions         :: !(Maybe AutoResizeDimensionsRequest)
-    , _reqAddSheet                     :: !(Maybe AddSheetRequest)
-    , _reqFindReplace                  :: !(Maybe FindReplaceRequest)
-    , _reqDeleteDimension              :: !(Maybe DeleteDimensionRequest)
-    , _reqCutPaste                     :: !(Maybe CutPasteRequest)
-    , _reqMoveDimension                :: !(Maybe MoveDimensionRequest)
-    , _reqRepeatCell                   :: !(Maybe RepeatCellRequest)
-    , _reqAddProtectedRange            :: !(Maybe AddProtectedRangeRequest)
-    , _reqUpdateFilterView             :: !(Maybe UpdateFilterViewRequest)
-    , _reqDeleteFilterView             :: !(Maybe DeleteFilterViewRequest)
-    , _reqInsertDimension              :: !(Maybe InsertDimensionRequest)
-    , _reqUpdateSheetProperties        :: !(Maybe UpdateSheetPropertiesRequest)
-    , _reqDeleteConditionalFormatRule  :: !(Maybe DeleteConditionalFormatRuleRequest)
-    , _reqUpdateConditionalFormatRule  :: !(Maybe UpdateConditionalFormatRuleRequest)
-    , _reqDeleteEmbeddedObject         :: !(Maybe DeleteEmbeddedObjectRequest)
-    , _reqDeleteDeveloperMetadata      :: !(Maybe DeleteDeveloperMetadataRequest)
-    , _reqUpdateDeveloperMetadata      :: !(Maybe UpdateDeveloperMetadataRequest)
-    , _reqMergeCells                   :: !(Maybe MergeCellsRequest)
-    , _reqAddNamedRange                :: !(Maybe AddNamedRangeRequest)
-    , _reqAddChart                     :: !(Maybe AddChartRequest)
-    , _reqAddBanding                   :: !(Maybe AddBandingRequest)
-    , _reqDuplicateSheet               :: !(Maybe DuplicateSheetRequest)
-    , _reqAutoFill                     :: !(Maybe AutoFillRequest)
-    , _reqUpdateDimensionProperties    :: !(Maybe UpdateDimensionPropertiesRequest)
-    , _reqUpdateChartSpec              :: !(Maybe UpdateChartSpecRequest)
-    , _reqSetBasicFilter               :: !(Maybe SetBasicFilterRequest)
-    , _reqTextToColumns                :: !(Maybe TextToColumnsRequest)
-    , _reqAddDimensionGroup            :: !(Maybe AddDimensionGroupRequest)
-    , _reqUpdateSpreadsheetProperties  :: !(Maybe UpdateSpreadsheetPropertiesRequest)
-    , _reqDeleteSheet                  :: !(Maybe DeleteSheetRequest)
-    , _reqUnmergeCells                 :: !(Maybe UnmergeCellsRequest)
-    , _reqUpdateBOrders                :: !(Maybe UpdateBOrdersRequest)
-    , _reqAppendDimension              :: !(Maybe AppendDimensionRequest)
-    , _reqSetDataValidation            :: !(Maybe SetDataValidationRequest)
+    , _reqDeleteRange :: !(Maybe DeleteRangeRequest)
+    , _reqCopyPaste :: !(Maybe CopyPasteRequest)
+    , _reqUpdateDimensionGroup :: !(Maybe UpdateDimensionGroupRequest)
+    , _reqDeleteDimensionGroup :: !(Maybe DeleteDimensionGroupRequest)
+    , _reqAutoResizeDimensions :: !(Maybe AutoResizeDimensionsRequest)
+    , _reqAddSheet :: !(Maybe AddSheetRequest)
+    , _reqFindReplace :: !(Maybe FindReplaceRequest)
+    , _reqDeleteDimension :: !(Maybe DeleteDimensionRequest)
+    , _reqCutPaste :: !(Maybe CutPasteRequest)
+    , _reqMoveDimension :: !(Maybe MoveDimensionRequest)
+    , _reqRepeatCell :: !(Maybe RepeatCellRequest)
+    , _reqAddProtectedRange :: !(Maybe AddProtectedRangeRequest)
+    , _reqUpdateFilterView :: !(Maybe UpdateFilterViewRequest)
+    , _reqDeleteFilterView :: !(Maybe DeleteFilterViewRequest)
+    , _reqInsertDimension :: !(Maybe InsertDimensionRequest)
+    , _reqUpdateSheetProperties :: !(Maybe UpdateSheetPropertiesRequest)
+    , _reqDeleteConditionalFormatRule :: !(Maybe DeleteConditionalFormatRuleRequest)
+    , _reqUpdateConditionalFormatRule :: !(Maybe UpdateConditionalFormatRuleRequest)
+    , _reqDeleteEmbeddedObject :: !(Maybe DeleteEmbeddedObjectRequest)
+    , _reqDeleteDeveloperMetadata :: !(Maybe DeleteDeveloperMetadataRequest)
+    , _reqUpdateDeveloperMetadata :: !(Maybe UpdateDeveloperMetadataRequest)
+    , _reqMergeCells :: !(Maybe MergeCellsRequest)
+    , _reqAddNamedRange :: !(Maybe AddNamedRangeRequest)
+    , _reqAddChart :: !(Maybe AddChartRequest)
+    , _reqAddBanding :: !(Maybe AddBandingRequest)
+    , _reqDuplicateSheet :: !(Maybe DuplicateSheetRequest)
+    , _reqAutoFill :: !(Maybe AutoFillRequest)
+    , _reqUpdateDimensionProperties :: !(Maybe UpdateDimensionPropertiesRequest)
+    , _reqUpdateChartSpec :: !(Maybe UpdateChartSpecRequest)
+    , _reqSetBasicFilter :: !(Maybe SetBasicFilterRequest)
+    , _reqTextToColumns :: !(Maybe TextToColumnsRequest)
+    , _reqAddDimensionGroup :: !(Maybe AddDimensionGroupRequest)
+    , _reqUpdateSpreadsheetProperties :: !(Maybe UpdateSpreadsheetPropertiesRequest)
+    , _reqDeleteSheet :: !(Maybe DeleteSheetRequest)
+    , _reqUnmergeCells :: !(Maybe UnmergeCellsRequest)
+    , _reqUpdateBOrders :: !(Maybe UpdateBOrdersRequest)
+    , _reqAppendDimension :: !(Maybe AppendDimensionRequest)
+    , _reqSetDataValidation :: !(Maybe SetDataValidationRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13609,7 +13609,7 @@ instance ToJSON Request' where
 data LineStyle =
   LineStyle'
     { _lsWidth :: !(Maybe (Textual Int32))
-    , _lsType  :: !(Maybe LineStyleType)
+    , _lsType :: !(Maybe LineStyleType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13692,10 +13692,10 @@ instance ToJSON DeleteConditionalFormatRuleResponse
 -- /See:/ 'updateConditionalFormatRuleResponse' smart constructor.
 data UpdateConditionalFormatRuleResponse =
   UpdateConditionalFormatRuleResponse'
-    { _uNewRule  :: !(Maybe ConditionalFormatRule)
+    { _uNewRule :: !(Maybe ConditionalFormatRule)
     , _uNewIndex :: !(Maybe (Textual Int32))
     , _uOldIndex :: !(Maybe (Textual Int32))
-    , _uOldRule  :: !(Maybe ConditionalFormatRule)
+    , _uOldRule :: !(Maybe ConditionalFormatRule)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.VerificationCodes.Generate
     , vcgUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.verificationCodes.generate@ method which the
 -- 'VerificationCodesGenerate' request conforms to.

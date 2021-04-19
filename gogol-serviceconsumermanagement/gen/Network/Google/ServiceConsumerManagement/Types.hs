@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -705,9 +705,9 @@ module Network.Google.ServiceConsumerManagement.Types
     , aTag
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types.Product
-import           Network.Google.ServiceConsumerManagement.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types.Product
+import Network.Google.ServiceConsumerManagement.Types.Sum
 
 -- | Default request referring to version 'v1' of the Service Consumer Management API. This contains the host and root path used as a starting point for constructing service requests.
 serviceConsumerManagementService :: ServiceConfig

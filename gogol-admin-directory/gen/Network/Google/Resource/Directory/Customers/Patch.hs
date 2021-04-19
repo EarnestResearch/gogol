@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Customers.Patch
     , cpPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.customers.patch@ method which the
 -- 'CustomersPatch' request conforms to.
@@ -57,7 +57,7 @@ type CustomersPatchResource =
 data CustomersPatch =
   CustomersPatch'
     { _cpCustomerKey :: !Text
-    , _cpPayload     :: !Customer
+    , _cpPayload :: !Customer
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

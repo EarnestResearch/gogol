@@ -37,8 +37,8 @@ module Network.Google.Resource.Compute.Licenses.Get
     , lgLicense
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.get@ method which the
 -- 'LicensesGet' request conforms to.

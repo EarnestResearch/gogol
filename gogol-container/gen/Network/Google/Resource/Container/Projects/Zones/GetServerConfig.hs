@@ -43,8 +43,8 @@ module Network.Google.Resource.Container.Projects.Zones.GetServerConfig
     , pzgscCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.getServerconfig@ method which the
 -- 'ProjectsZonesGetServerConfig' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsZonesGetServerConfigResource =
 -- /See:/ 'projectsZonesGetServerConfig' smart constructor.
 data ProjectsZonesGetServerConfig =
   ProjectsZonesGetServerConfig'
-    { _pzgscXgafv          :: !(Maybe Xgafv)
+    { _pzgscXgafv :: !(Maybe Xgafv)
     , _pzgscUploadProtocol :: !(Maybe Text)
-    , _pzgscAccessToken    :: !(Maybe Text)
-    , _pzgscUploadType     :: !(Maybe Text)
-    , _pzgscZone           :: !Text
-    , _pzgscName           :: !(Maybe Text)
-    , _pzgscProjectId      :: !Text
-    , _pzgscCallback       :: !(Maybe Text)
+    , _pzgscAccessToken :: !(Maybe Text)
+    , _pzgscUploadType :: !(Maybe Text)
+    , _pzgscZone :: !Text
+    , _pzgscName :: !(Maybe Text)
+    , _pzgscProjectId :: !Text
+    , _pzgscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

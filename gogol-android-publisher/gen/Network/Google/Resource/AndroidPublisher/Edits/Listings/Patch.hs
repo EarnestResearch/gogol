@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Listings.Patch
     , elpEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.listings.patch@ method which the
 -- 'EditsListingsPatch' request conforms to.
@@ -64,9 +64,9 @@ type EditsListingsPatchResource =
 data EditsListingsPatch =
   EditsListingsPatch'
     { _elpPackageName :: !Text
-    , _elpPayload     :: !Listing
-    , _elpLanguage    :: !Text
-    , _elpEditId      :: !Text
+    , _elpPayload :: !Listing
+    , _elpLanguage :: !Text
+    , _elpEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

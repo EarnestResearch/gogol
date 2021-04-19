@@ -17,18 +17,18 @@
 --
 module Network.Google.CloudErrorReporting.Types.Product where
 
-import           Network.Google.CloudErrorReporting.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types.Sum
+import Network.Google.Prelude
 
 -- | An error event which is returned by the Error Reporting system.
 --
 -- /See:/ 'errorEvent' smart constructor.
 data ErrorEvent =
   ErrorEvent'
-    { _eeContext        :: !(Maybe ErrorContext)
-    , _eeEventTime      :: !(Maybe DateTime')
+    { _eeContext :: !(Maybe ErrorContext)
+    , _eeEventTime :: !(Maybe DateTime')
     , _eeServiceContext :: !(Maybe ServiceContext)
-    , _eeMessage        :: !(Maybe Text)
+    , _eeMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -105,10 +105,10 @@ instance ToJSON ErrorEvent where
 -- /See:/ 'errorContext' smart constructor.
 data ErrorContext =
   ErrorContext'
-    { _ecHTTPRequest      :: !(Maybe HTTPRequestContext)
-    , _ecUser             :: !(Maybe Text)
+    { _ecHTTPRequest :: !(Maybe HTTPRequestContext)
+    , _ecUser :: !(Maybe Text)
     , _ecSourceReferences :: !(Maybe [SourceReference])
-    , _ecReportLocation   :: !(Maybe SourceLocation)
+    , _ecReportLocation :: !(Maybe SourceLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -192,8 +192,8 @@ instance ToJSON ErrorContext where
 data ErrorGroup =
   ErrorGroup'
     { _egTrackingIssues :: !(Maybe [TrackingIssue])
-    , _egName           :: !(Maybe Text)
-    , _egGroupId        :: !(Maybe Text)
+    , _egName :: !(Maybe Text)
+    , _egGroupId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -278,10 +278,10 @@ instance ToJSON DeleteEventsResponse where
 -- /See:/ 'reportedErrorEvent' smart constructor.
 data ReportedErrorEvent =
   ReportedErrorEvent'
-    { _reeContext        :: !(Maybe ErrorContext)
-    , _reeEventTime      :: !(Maybe DateTime')
+    { _reeContext :: !(Maybe ErrorContext)
+    , _reeEventTime :: !(Maybe DateTime')
     , _reeServiceContext :: !(Maybe ServiceContext)
-    , _reeMessage        :: !(Maybe Text)
+    , _reeMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -375,12 +375,12 @@ instance ToJSON ReportedErrorEvent where
 -- /See:/ 'hTTPRequestContext' smart constructor.
 data HTTPRequestContext =
   HTTPRequestContext'
-    { _httprcRemoteIP           :: !(Maybe Text)
-    , _httprcURL                :: !(Maybe Text)
-    , _httprcReferrer           :: !(Maybe Text)
-    , _httprcMethod             :: !(Maybe Text)
+    { _httprcRemoteIP :: !(Maybe Text)
+    , _httprcURL :: !(Maybe Text)
+    , _httprcReferrer :: !(Maybe Text)
+    , _httprcMethod :: !(Maybe Text)
     , _httprcResponseStatusCode :: !(Maybe (Textual Int32))
-    , _httprcUserAgent          :: !(Maybe Text)
+    , _httprcUserAgent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -512,9 +512,9 @@ instance ToJSON TrackingIssue where
 -- /See:/ 'listEventsResponse' smart constructor.
 data ListEventsResponse =
   ListEventsResponse'
-    { _lerNextPageToken  :: !(Maybe Text)
+    { _lerNextPageToken :: !(Maybe Text)
     , _lerTimeRangeBegin :: !(Maybe DateTime')
-    , _lerErrorEvents    :: !(Maybe [ErrorEvent])
+    , _lerErrorEvents :: !(Maybe [ErrorEvent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -584,15 +584,15 @@ instance ToJSON ListEventsResponse where
 -- /See:/ 'errorGroupStats' smart constructor.
 data ErrorGroupStats =
   ErrorGroupStats'
-    { _egsAffectedServices    :: !(Maybe [ServiceContext])
-    , _egsGroup               :: !(Maybe ErrorGroup)
-    , _egsFirstSeenTime       :: !(Maybe DateTime')
-    , _egsAffectedUsersCount  :: !(Maybe (Textual Int64))
-    , _egsCount               :: !(Maybe (Textual Int64))
-    , _egsTimedCounts         :: !(Maybe [TimedCount])
+    { _egsAffectedServices :: !(Maybe [ServiceContext])
+    , _egsGroup :: !(Maybe ErrorGroup)
+    , _egsFirstSeenTime :: !(Maybe DateTime')
+    , _egsAffectedUsersCount :: !(Maybe (Textual Int64))
+    , _egsCount :: !(Maybe (Textual Int64))
+    , _egsTimedCounts :: !(Maybe [TimedCount])
     , _egsNumAffectedServices :: !(Maybe (Textual Int32))
-    , _egsLastSeenTime        :: !(Maybe DateTime')
-    , _egsRepresentative      :: !(Maybe ErrorEvent)
+    , _egsLastSeenTime :: !(Maybe DateTime')
+    , _egsRepresentative :: !(Maybe ErrorEvent)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -751,8 +751,8 @@ instance ToJSON ErrorGroupStats where
 -- /See:/ 'listGroupStatsResponse' smart constructor.
 data ListGroupStatsResponse =
   ListGroupStatsResponse'
-    { _lgsrNextPageToken   :: !(Maybe Text)
-    , _lgsrTimeRangeBegin  :: !(Maybe DateTime')
+    { _lgsrNextPageToken :: !(Maybe Text)
+    , _lgsrTimeRangeBegin :: !(Maybe DateTime')
     , _lgsrErrorGroupStats :: !(Maybe [ErrorGroupStats])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -826,8 +826,8 @@ instance ToJSON ListGroupStatsResponse where
 data ServiceContext =
   ServiceContext'
     { _scResourceType :: !(Maybe Text)
-    , _scService      :: !(Maybe Text)
-    , _scVersion      :: !(Maybe Text)
+    , _scService :: !(Maybe Text)
+    , _scVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -898,8 +898,8 @@ instance ToJSON ServiceContext where
 data TimedCount =
   TimedCount'
     { _tcStartTime :: !(Maybe DateTime')
-    , _tcCount     :: !(Maybe (Textual Int64))
-    , _tcEndTime   :: !(Maybe DateTime')
+    , _tcCount :: !(Maybe (Textual Int64))
+    , _tcEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -962,8 +962,8 @@ instance ToJSON TimedCount where
 -- /See:/ 'sourceLocation' smart constructor.
 data SourceLocation =
   SourceLocation'
-    { _slLineNumber   :: !(Maybe (Textual Int32))
-    , _slFilePath     :: !(Maybe Text)
+    { _slLineNumber :: !(Maybe (Textual Int32))
+    , _slFilePath :: !(Maybe Text)
     , _slFunctionName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -45,8 +45,8 @@ module Network.Google.Resource.Vault.Matters.Holds.Update
     , mhuCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.update@ method which the
 -- 'MattersHoldsUpdate' request conforms to.
@@ -71,14 +71,14 @@ type MattersHoldsUpdateResource =
 -- /See:/ 'mattersHoldsUpdate' smart constructor.
 data MattersHoldsUpdate =
   MattersHoldsUpdate'
-    { _mhuXgafv          :: !(Maybe Xgafv)
+    { _mhuXgafv :: !(Maybe Xgafv)
     , _mhuUploadProtocol :: !(Maybe Text)
-    , _mhuHoldId         :: !Text
-    , _mhuAccessToken    :: !(Maybe Text)
-    , _mhuUploadType     :: !(Maybe Text)
-    , _mhuPayload        :: !Hold
-    , _mhuMatterId       :: !Text
-    , _mhuCallback       :: !(Maybe Text)
+    , _mhuHoldId :: !Text
+    , _mhuAccessToken :: !(Maybe Text)
+    , _mhuUploadType :: !(Maybe Text)
+    , _mhuPayload :: !Hold
+    , _mhuMatterId :: !Text
+    , _mhuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

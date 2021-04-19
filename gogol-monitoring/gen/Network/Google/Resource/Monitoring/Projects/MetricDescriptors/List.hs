@@ -45,8 +45,8 @@ module Network.Google.Resource.Monitoring.Projects.MetricDescriptors.List
     , pmdlCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.metricDescriptors.list@ method which the
 -- 'ProjectsMetricDescriptorsList' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsMetricDescriptorsListResource =
 -- /See:/ 'projectsMetricDescriptorsList' smart constructor.
 data ProjectsMetricDescriptorsList =
   ProjectsMetricDescriptorsList'
-    { _pmdlXgafv          :: !(Maybe Xgafv)
+    { _pmdlXgafv :: !(Maybe Xgafv)
     , _pmdlUploadProtocol :: !(Maybe Text)
-    , _pmdlAccessToken    :: !(Maybe Text)
-    , _pmdlUploadType     :: !(Maybe Text)
-    , _pmdlName           :: !Text
-    , _pmdlFilter         :: !(Maybe Text)
-    , _pmdlPageToken      :: !(Maybe Text)
-    , _pmdlPageSize       :: !(Maybe (Textual Int32))
-    , _pmdlCallback       :: !(Maybe Text)
+    , _pmdlAccessToken :: !(Maybe Text)
+    , _pmdlUploadType :: !(Maybe Text)
+    , _pmdlName :: !Text
+    , _pmdlFilter :: !(Maybe Text)
+    , _pmdlPageToken :: !(Maybe Text)
+    , _pmdlPageSize :: !(Maybe (Textual Int32))
+    , _pmdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

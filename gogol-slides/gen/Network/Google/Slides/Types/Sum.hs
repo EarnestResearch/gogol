@@ -16,7 +16,7 @@
 --
 module Network.Google.Slides.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The text direction of this paragraph. If unset, the value defaults to
 -- LEFT_TO_RIGHT since text direction is not inherited.

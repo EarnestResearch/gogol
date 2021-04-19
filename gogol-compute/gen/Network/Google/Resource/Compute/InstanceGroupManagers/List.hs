@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.InstanceGroupManagers.List
     , igmlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroupManagers.list@ method which the
 -- 'InstanceGroupManagersList' request conforms to.
@@ -68,11 +68,11 @@ type InstanceGroupManagersListResource =
 -- /See:/ 'instanceGroupManagersList' smart constructor.
 data InstanceGroupManagersList =
   InstanceGroupManagersList'
-    { _igmlOrderBy    :: !(Maybe Text)
-    , _igmlProject    :: !Text
-    , _igmlZone       :: !Text
-    , _igmlFilter     :: !(Maybe Text)
-    , _igmlPageToken  :: !(Maybe Text)
+    { _igmlOrderBy :: !(Maybe Text)
+    , _igmlProject :: !Text
+    , _igmlZone :: !Text
+    , _igmlFilter :: !(Maybe Text)
+    , _igmlPageToken :: !(Maybe Text)
     , _igmlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

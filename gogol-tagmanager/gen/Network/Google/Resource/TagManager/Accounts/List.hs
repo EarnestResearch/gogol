@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.List
     , alPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.list@ method which the
 -- 'AccountsList' request conforms to.

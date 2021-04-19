@@ -46,8 +46,8 @@ module Network.Google.Resource.Speech.Speech.Longrunningrecognize
     , slCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Speech.Types
 
 -- | A resource alias for @speech.speech.longrunningrecognize@ method which the
 -- 'SpeechLongrunningrecognize' request conforms to.
@@ -73,12 +73,12 @@ type SpeechLongrunningrecognizeResource =
 -- /See:/ 'speechLongrunningrecognize' smart constructor.
 data SpeechLongrunningrecognize =
   SpeechLongrunningrecognize'
-    { _slXgafv          :: !(Maybe Xgafv)
+    { _slXgafv :: !(Maybe Xgafv)
     , _slUploadProtocol :: !(Maybe Text)
-    , _slAccessToken    :: !(Maybe Text)
-    , _slUploadType     :: !(Maybe Text)
-    , _slPayload        :: !LongRunningRecognizeRequest
-    , _slCallback       :: !(Maybe Text)
+    , _slAccessToken :: !(Maybe Text)
+    , _slUploadType :: !(Maybe Text)
+    , _slPayload :: !LongRunningRecognizeRequest
+    , _slCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

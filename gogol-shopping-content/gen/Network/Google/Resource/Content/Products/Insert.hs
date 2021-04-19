@@ -37,20 +37,22 @@ module Network.Google.Resource.Content.Products.Insert
     -- * Request Lenses
     , piiMerchantId
     , piiPayload
+    , piiDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.products.insert@ method which the
 -- 'ProductsInsert' request conforms to.
 type ProductsInsertResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "products" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] Product :> Post '[JSON] Product
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] Product :> Post '[JSON] Product
 
 -- | Uploads a product to your Merchant Center account. If an item with the
 -- same channel, contentLanguage, offerId, and targetCountry already
@@ -60,7 +62,8 @@ type ProductsInsertResource =
 data ProductsInsert =
   ProductsInsert'
     { _piiMerchantId :: !(Textual Word64)
-    , _piiPayload    :: !Product
+    , _piiPayload :: !Product
+    , _piiDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,13 +75,18 @@ data ProductsInsert =
 -- * 'piiMerchantId'
 --
 -- * 'piiPayload'
+--
+-- * 'piiDryRun'
 productsInsert
     :: Word64 -- ^ 'piiMerchantId'
     -> Product -- ^ 'piiPayload'
     -> ProductsInsert
 productsInsert pPiiMerchantId_ pPiiPayload_ =
   ProductsInsert'
-    {_piiMerchantId = _Coerce # pPiiMerchantId_, _piiPayload = pPiiPayload_}
+    { _piiMerchantId = _Coerce # pPiiMerchantId_
+    , _piiPayload = pPiiPayload_
+    , _piiDryRun = Nothing
+    }
 
 
 -- | The ID of the account that contains the product. This account cannot be
@@ -94,12 +102,20 @@ piiPayload :: Lens' ProductsInsert Product
 piiPayload
   = lens _piiPayload (\ s a -> s{_piiPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+piiDryRun :: Lens' ProductsInsert (Maybe Bool)
+piiDryRun
+  = lens _piiDryRun (\ s a -> s{_piiDryRun = a})
+
 instance GoogleRequest ProductsInsert where
         type Rs ProductsInsert = Product
         type Scopes ProductsInsert =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsInsert'{..}
-          = go _piiMerchantId (Just AltJSON) _piiPayload
+          = go _piiMerchantId _piiDryRun (Just AltJSON)
+              _piiPayload
               shoppingContentService
           where go
                   = buildClient (Proxy :: Proxy ProductsInsertResource)

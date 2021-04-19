@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Reviews.List
     , rlMaxResults
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.reviews.list@ method which the
 -- 'ReviewsList' request conforms to.
@@ -63,11 +63,11 @@ type ReviewsListResource =
 -- /See:/ 'reviewsList' smart constructor.
 data ReviewsList =
   ReviewsList'
-    { _rlPackageName         :: !Text
-    , _rlToken               :: !(Maybe Text)
+    { _rlPackageName :: !Text
+    , _rlToken :: !(Maybe Text)
     , _rlTranslationLanguage :: !(Maybe Text)
-    , _rlStartIndex          :: !(Maybe (Textual Word32))
-    , _rlMaxResults          :: !(Maybe (Textual Word32))
+    , _rlStartIndex :: !(Maybe (Textual Word32))
+    , _rlMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.Logging.Folders.Sinks.Delete
     , fsdCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.sinks.delete@ method which the
 -- 'FoldersSinksDelete' request conforms to.
@@ -63,12 +63,12 @@ type FoldersSinksDeleteResource =
 -- /See:/ 'foldersSinksDelete' smart constructor.
 data FoldersSinksDelete =
   FoldersSinksDelete'
-    { _fsdXgafv          :: !(Maybe Xgafv)
+    { _fsdXgafv :: !(Maybe Xgafv)
     , _fsdUploadProtocol :: !(Maybe Text)
-    , _fsdAccessToken    :: !(Maybe Text)
-    , _fsdUploadType     :: !(Maybe Text)
-    , _fsdSinkName       :: !Text
-    , _fsdCallback       :: !(Maybe Text)
+    , _fsdAccessToken :: !(Maybe Text)
+    , _fsdUploadType :: !(Maybe Text)
+    , _fsdSinkName :: !Text
+    , _fsdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

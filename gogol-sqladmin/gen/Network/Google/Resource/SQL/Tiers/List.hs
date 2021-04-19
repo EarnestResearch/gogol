@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Tiers.List
     , tlProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.tiers.list@ method which the
 -- 'TiersList' request conforms to.

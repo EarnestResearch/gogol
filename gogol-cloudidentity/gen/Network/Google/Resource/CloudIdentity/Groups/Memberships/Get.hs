@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Memberships.Get
     , gmgCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.memberships.get@ method which the
 -- 'GroupsMembershipsGet' request conforms to.
@@ -61,12 +61,12 @@ type GroupsMembershipsGetResource =
 -- /See:/ 'groupsMembershipsGet' smart constructor.
 data GroupsMembershipsGet =
   GroupsMembershipsGet'
-    { _gmgXgafv          :: !(Maybe Xgafv)
+    { _gmgXgafv :: !(Maybe Xgafv)
     , _gmgUploadProtocol :: !(Maybe Text)
-    , _gmgAccessToken    :: !(Maybe Text)
-    , _gmgUploadType     :: !(Maybe Text)
-    , _gmgName           :: !Text
-    , _gmgCallback       :: !(Maybe Text)
+    , _gmgAccessToken :: !(Maybe Text)
+    , _gmgUploadType :: !(Maybe Text)
+    , _gmgName :: !Text
+    , _gmgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

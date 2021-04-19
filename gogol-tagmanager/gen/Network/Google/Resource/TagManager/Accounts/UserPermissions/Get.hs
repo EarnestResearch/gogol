@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.UserPermissions.Get
     , aupgPath
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.user_permissions.get@ method which the
 -- 'AccountsUserPermissionsGet' request conforms to.

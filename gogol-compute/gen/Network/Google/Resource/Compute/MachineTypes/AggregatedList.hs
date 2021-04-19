@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.MachineTypes.AggregatedList
     , mtalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.machineTypes.aggregatedList@ method which the
 -- 'MachineTypesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type MachineTypesAggregatedListResource =
 -- /See:/ 'machineTypesAggregatedList' smart constructor.
 data MachineTypesAggregatedList =
   MachineTypesAggregatedList'
-    { _mtalOrderBy    :: !(Maybe Text)
-    , _mtalProject    :: !Text
-    , _mtalFilter     :: !(Maybe Text)
-    , _mtalPageToken  :: !(Maybe Text)
+    { _mtalOrderBy :: !(Maybe Text)
+    , _mtalProject :: !Text
+    , _mtalFilter :: !(Maybe Text)
+    , _mtalPageToken :: !(Maybe Text)
     , _mtalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

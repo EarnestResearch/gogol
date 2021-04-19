@@ -45,8 +45,8 @@ module Network.Google.Resource.Storage.Objects.WatchAll
     , owaMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.watchAll@ method which the
 -- 'ObjectsWatchAll' request conforms to.
@@ -74,16 +74,16 @@ type ObjectsWatchAllResource =
 -- /See:/ 'objectsWatchAll' smart constructor.
 data ObjectsWatchAll =
   ObjectsWatchAll'
-    { _owaPrefix                   :: !(Maybe Text)
-    , _owaBucket                   :: !Text
-    , _owaPayload                  :: !Channel
-    , _owaVersions                 :: !(Maybe Bool)
-    , _owaUserProject              :: !(Maybe Text)
+    { _owaPrefix :: !(Maybe Text)
+    , _owaBucket :: !Text
+    , _owaPayload :: !Channel
+    , _owaVersions :: !(Maybe Bool)
+    , _owaUserProject :: !(Maybe Text)
     , _owaIncludeTrailingDelimiter :: !(Maybe Bool)
-    , _owaProjection               :: !(Maybe ObjectsWatchAllProjection)
-    , _owaPageToken                :: !(Maybe Text)
-    , _owaDelimiter                :: !(Maybe Text)
-    , _owaMaxResults               :: !(Textual Word32)
+    , _owaProjection :: !(Maybe ObjectsWatchAllProjection)
+    , _owaPageToken :: !(Maybe Text)
+    , _owaDelimiter :: !(Maybe Text)
+    , _owaMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

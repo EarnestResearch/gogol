@@ -49,8 +49,8 @@ module Network.Google.Resource.Testing.Projects.TestMatrices.Create
     , pCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Testing.Types
+import Network.Google.Prelude
+import Network.Google.Testing.Types
 
 -- | A resource alias for @testing.projects.testMatrices.create@ method which the
 -- 'ProjectsTestMatricesCreate' request conforms to.
@@ -79,14 +79,14 @@ type ProjectsTestMatricesCreateResource =
 -- /See:/ 'projectsTestMatricesCreate' smart constructor.
 data ProjectsTestMatricesCreate =
   ProjectsTestMatricesCreate'
-    { _pXgafv          :: !(Maybe Xgafv)
-    , _pRequestId      :: !(Maybe Text)
+    { _pXgafv :: !(Maybe Xgafv)
+    , _pRequestId :: !(Maybe Text)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pPayload        :: !TestMatrix
-    , _pProjectId      :: !Text
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pPayload :: !TestMatrix
+    , _pProjectId :: !Text
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

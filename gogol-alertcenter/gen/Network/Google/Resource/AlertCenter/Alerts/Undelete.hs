@@ -47,8 +47,8 @@ module Network.Google.Resource.AlertCenter.Alerts.Undelete
     , auCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.alerts.undelete@ method which the
 -- 'AlertsUndelete' request conforms to.
@@ -75,13 +75,13 @@ type AlertsUndeleteResource =
 -- /See:/ 'alertsUndelete' smart constructor.
 data AlertsUndelete =
   AlertsUndelete'
-    { _auXgafv          :: !(Maybe Xgafv)
+    { _auXgafv :: !(Maybe Xgafv)
     , _auUploadProtocol :: !(Maybe Text)
-    , _auAccessToken    :: !(Maybe Text)
-    , _auAlertId        :: !Text
-    , _auUploadType     :: !(Maybe Text)
-    , _auPayload        :: !UndeleteAlertRequest
-    , _auCallback       :: !(Maybe Text)
+    , _auAccessToken :: !(Maybe Text)
+    , _auAlertId :: !Text
+    , _auUploadType :: !(Maybe Text)
+    , _auPayload :: !UndeleteAlertRequest
+    , _auCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

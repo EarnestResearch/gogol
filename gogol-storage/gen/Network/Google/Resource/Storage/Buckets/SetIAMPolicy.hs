@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Buckets.SetIAMPolicy
     , bsipUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.setIamPolicy@ method which the
 -- 'BucketsSetIAMPolicy' request conforms to.
@@ -58,8 +58,8 @@ type BucketsSetIAMPolicyResource =
 -- /See:/ 'bucketsSetIAMPolicy' smart constructor.
 data BucketsSetIAMPolicy =
   BucketsSetIAMPolicy'
-    { _bsipBucket      :: !Text
-    , _bsipPayload     :: !Policy
+    { _bsipBucket :: !Text
+    , _bsipPayload :: !Policy
     , _bsipUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

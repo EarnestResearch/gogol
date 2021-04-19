@@ -41,8 +41,8 @@ module Network.Google.Resource.DeploymentManager.Resources.List
     , rlDeployment
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.resources.list@ method which the
 -- 'ResourcesList' request conforms to.
@@ -67,10 +67,10 @@ type ResourcesListResource =
 -- /See:/ 'resourcesList' smart constructor.
 data ResourcesList =
   ResourcesList'
-    { _rlOrderBy    :: !(Maybe Text)
-    , _rlProject    :: !Text
-    , _rlFilter     :: !(Maybe Text)
-    , _rlPageToken  :: !(Maybe Text)
+    { _rlOrderBy :: !(Maybe Text)
+    , _rlProject :: !Text
+    , _rlFilter :: !(Maybe Text)
+    , _rlPageToken :: !(Maybe Text)
     , _rlMaxResults :: !(Textual Word32)
     , _rlDeployment :: !Text
     }

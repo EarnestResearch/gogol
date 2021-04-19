@@ -17,19 +17,19 @@
 --
 module Network.Google.Run.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Run.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Run.Types.Sum
 
 -- | A resource that represents Google Cloud Platform location.
 --
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

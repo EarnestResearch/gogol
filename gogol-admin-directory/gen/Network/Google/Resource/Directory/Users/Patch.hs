@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.Patch
     , upUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.patch@ method which the
 -- 'UsersPatch' request conforms to.

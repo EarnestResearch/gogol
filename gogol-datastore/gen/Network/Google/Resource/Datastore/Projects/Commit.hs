@@ -43,8 +43,8 @@ module Network.Google.Resource.Datastore.Projects.Commit
     , pcCallback
     ) where
 
-import           Network.Google.Datastore.Types
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datastore.projects.commit@ method which the
 -- 'ProjectsCommit' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsCommitResource =
 -- /See:/ 'projectsCommit' smart constructor.
 data ProjectsCommit =
   ProjectsCommit'
-    { _pcXgafv          :: !(Maybe Xgafv)
+    { _pcXgafv :: !(Maybe Xgafv)
     , _pcUploadProtocol :: !(Maybe Text)
-    , _pcAccessToken    :: !(Maybe Text)
-    , _pcUploadType     :: !(Maybe Text)
-    , _pcPayload        :: !CommitRequest
-    , _pcProjectId      :: !Text
-    , _pcCallback       :: !(Maybe Text)
+    , _pcAccessToken :: !(Maybe Text)
+    , _pcUploadType :: !(Maybe Text)
+    , _pcPayload :: !CommitRequest
+    , _pcProjectId :: !Text
+    , _pcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Blogger.Posts.Update
     , puPublish
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.update@ method which the
 -- 'PostsUpdate' request conforms to.
@@ -68,14 +68,14 @@ type PostsUpdateResource =
 -- /See:/ 'postsUpdate' smart constructor.
 data PostsUpdate =
   PostsUpdate'
-    { _puFetchBody   :: !Bool
+    { _puFetchBody :: !Bool
     , _puFetchImages :: !(Maybe Bool)
-    , _puBlogId      :: !Text
-    , _puPayload     :: !Post'
+    , _puBlogId :: !Text
+    , _puPayload :: !Post'
     , _puMaxComments :: !(Maybe (Textual Word32))
-    , _puRevert      :: !(Maybe Bool)
-    , _puPostId      :: !Text
-    , _puPublish     :: !(Maybe Bool)
+    , _puRevert :: !(Maybe Bool)
+    , _puPostId :: !Text
+    , _puPublish :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

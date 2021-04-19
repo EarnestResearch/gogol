@@ -43,8 +43,8 @@ module Network.Google.Resource.Speech.Operations.Get
     , ogCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Speech.Types
 
 -- | A resource alias for @speech.operations.get@ method which the
 -- 'OperationsGet' request conforms to.
@@ -66,12 +66,12 @@ type OperationsGetResource =
 -- /See:/ 'operationsGet' smart constructor.
 data OperationsGet =
   OperationsGet'
-    { _ogXgafv          :: !(Maybe Xgafv)
+    { _ogXgafv :: !(Maybe Xgafv)
     , _ogUploadProtocol :: !(Maybe Text)
-    , _ogAccessToken    :: !(Maybe Text)
-    , _ogUploadType     :: !(Maybe Text)
-    , _ogName           :: !Text
-    , _ogCallback       :: !(Maybe Text)
+    , _ogAccessToken :: !(Maybe Text)
+    , _ogUploadType :: !(Maybe Text)
+    , _ogName :: !Text
+    , _ogCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

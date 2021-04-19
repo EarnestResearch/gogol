@@ -38,8 +38,8 @@ module Network.Google.Resource.Books.Bookshelves.Get
     , bgSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.bookshelves.get@ method which the
 -- 'BookshelvesGet' request conforms to.
@@ -59,7 +59,7 @@ type BookshelvesGetResource =
 data BookshelvesGet =
   BookshelvesGet'
     { _bgUserId :: !Text
-    , _bgShelf  :: !Text
+    , _bgShelf :: !Text
     , _bgSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.WebApps.Insert
     , waiPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.webapps.insert@ method which the
 -- 'WebAppsInsert' request conforms to.
@@ -57,7 +57,7 @@ type WebAppsInsertResource =
 data WebAppsInsert =
   WebAppsInsert'
     { _waiEnterpriseId :: !Text
-    , _waiPayload      :: !WebApp
+    , _waiPayload :: !WebApp
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

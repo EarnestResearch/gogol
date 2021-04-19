@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.NodeGroups.GetIAMPolicy
     , nggipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeGroups.getIamPolicy@ method which the
 -- 'NodeGroupsGetIAMPolicy' request conforms to.
@@ -62,8 +62,8 @@ type NodeGroupsGetIAMPolicyResource =
 -- /See:/ 'nodeGroupsGetIAMPolicy' smart constructor.
 data NodeGroupsGetIAMPolicy =
   NodeGroupsGetIAMPolicy'
-    { _nggipProject  :: !Text
-    , _nggipZone     :: !Text
+    { _nggipProject :: !Text
+    , _nggipZone :: !Text
     , _nggipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

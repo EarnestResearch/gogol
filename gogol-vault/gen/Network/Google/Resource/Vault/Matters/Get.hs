@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Get
     , mgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.get@ method which the
 -- 'MattersGet' request conforms to.
@@ -64,13 +64,13 @@ type MattersGetResource =
 -- /See:/ 'mattersGet' smart constructor.
 data MattersGet =
   MattersGet'
-    { _mgXgafv          :: !(Maybe Xgafv)
+    { _mgXgafv :: !(Maybe Xgafv)
     , _mgUploadProtocol :: !(Maybe Text)
-    , _mgAccessToken    :: !(Maybe Text)
-    , _mgUploadType     :: !(Maybe Text)
-    , _mgMatterId       :: !Text
-    , _mgView           :: !(Maybe Text)
-    , _mgCallback       :: !(Maybe Text)
+    , _mgAccessToken :: !(Maybe Text)
+    , _mgUploadType :: !(Maybe Text)
+    , _mgMatterId :: !Text
+    , _mgView :: !(Maybe Text)
+    , _mgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

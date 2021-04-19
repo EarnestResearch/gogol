@@ -16,7 +16,7 @@
 --
 module Network.Google.MachineLearning.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. The type of the parameter.
 data GoogleCloudMlV1__ParameterSpecType

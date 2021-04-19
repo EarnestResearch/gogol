@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.Delete
     , paidCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.delete@ method which the
 -- 'ProjectsAgentIntentsDelete' request conforms to.
@@ -64,12 +64,12 @@ type ProjectsAgentIntentsDeleteResource =
 -- /See:/ 'projectsAgentIntentsDelete' smart constructor.
 data ProjectsAgentIntentsDelete =
   ProjectsAgentIntentsDelete'
-    { _paidXgafv          :: !(Maybe Xgafv)
+    { _paidXgafv :: !(Maybe Xgafv)
     , _paidUploadProtocol :: !(Maybe Text)
-    , _paidAccessToken    :: !(Maybe Text)
-    , _paidUploadType     :: !(Maybe Text)
-    , _paidName           :: !Text
-    , _paidCallback       :: !(Maybe Text)
+    , _paidAccessToken :: !(Maybe Text)
+    , _paidUploadType :: !(Maybe Text)
+    , _paidName :: !Text
+    , _paidCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

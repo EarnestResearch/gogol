@@ -47,8 +47,8 @@ module Network.Google.Resource.ServiceNetworking.Services.SearchRange
     , ssrCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceNetworking.Types
+import Network.Google.Prelude
+import Network.Google.ServiceNetworking.Types
 
 -- | A resource alias for @servicenetworking.services.searchRange@ method which the
 -- 'ServicesSearchRange' request conforms to.
@@ -74,13 +74,13 @@ type ServicesSearchRangeResource =
 -- /See:/ 'servicesSearchRange' smart constructor.
 data ServicesSearchRange =
   ServicesSearchRange'
-    { _ssrParent         :: !Text
-    , _ssrXgafv          :: !(Maybe Xgafv)
+    { _ssrParent :: !Text
+    , _ssrXgafv :: !(Maybe Xgafv)
     , _ssrUploadProtocol :: !(Maybe Text)
-    , _ssrAccessToken    :: !(Maybe Text)
-    , _ssrUploadType     :: !(Maybe Text)
-    , _ssrPayload        :: !SearchRangeRequest
-    , _ssrCallback       :: !(Maybe Text)
+    , _ssrAccessToken :: !(Maybe Text)
+    , _ssrUploadType :: !(Maybe Text)
+    , _ssrPayload :: !SearchRangeRequest
+    , _ssrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

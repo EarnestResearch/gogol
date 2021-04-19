@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -2850,9 +2850,9 @@ module Network.Google.DFAReporting.Types
     , lteExpression
     ) where
 
-import           Network.Google.DFAReporting.Types.Product
-import           Network.Google.DFAReporting.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types.Product
+import Network.Google.DFAReporting.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v3.3' of the DCM/DFA Reporting And Trafficking API. This contains the host and root path used as a starting point for constructing service requests.
 dFAReportingService :: ServiceConfig

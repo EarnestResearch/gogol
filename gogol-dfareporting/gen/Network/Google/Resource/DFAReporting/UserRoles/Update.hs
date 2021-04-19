@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Update
     , uruPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.update@ method which the
 -- 'UserRolesUpdate' request conforms to.
@@ -57,7 +57,7 @@ type UserRolesUpdateResource =
 data UserRolesUpdate =
   UserRolesUpdate'
     { _uruProFileId :: !(Textual Int64)
-    , _uruPayload   :: !UserRole
+    , _uruPayload :: !UserRole
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

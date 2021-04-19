@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.BuiltIn
     , acwbivlPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.built_in_variables.list@ method which the
 -- 'AccountsContainersWorkspacesBuiltInVariablesList' request conforms to.
@@ -57,7 +57,7 @@ type AccountsContainersWorkspacesBuiltInVariablesListResource
 -- /See:/ 'accountsContainersWorkspacesBuiltInVariablesList' smart constructor.
 data AccountsContainersWorkspacesBuiltInVariablesList =
   AccountsContainersWorkspacesBuiltInVariablesList'
-    { _acwbivlParent    :: !Text
+    { _acwbivlParent :: !Text
     , _acwbivlPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

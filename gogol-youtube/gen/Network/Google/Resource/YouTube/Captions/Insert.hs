@@ -40,8 +40,8 @@ module Network.Google.Resource.YouTube.Captions.Insert
     , ciSync
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.captions.insert@ method which the
 -- 'CaptionsInsert' request conforms to.
@@ -74,11 +74,11 @@ type CaptionsInsertResource =
 -- /See:/ 'captionsInsert' smart constructor.
 data CaptionsInsert =
   CaptionsInsert'
-    { _ciOnBehalfOf             :: !(Maybe Text)
-    , _ciPart                   :: !Text
-    , _ciPayload                :: !Caption
+    { _ciOnBehalfOf :: !(Maybe Text)
+    , _ciPart :: !Text
+    , _ciPayload :: !Caption
     , _ciOnBehalfOfContentOwner :: !(Maybe Text)
-    , _ciSync                   :: !(Maybe Bool)
+    , _ciSync :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

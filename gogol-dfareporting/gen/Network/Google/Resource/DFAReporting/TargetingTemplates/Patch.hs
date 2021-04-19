@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Patch
     , ttpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.patch@ method which the
 -- 'TargetingTemplatesPatch' request conforms to.
@@ -62,8 +62,8 @@ type TargetingTemplatesPatchResource =
 data TargetingTemplatesPatch =
   TargetingTemplatesPatch'
     { _ttpProFileId :: !(Textual Int64)
-    , _ttpPayload   :: !TargetingTemplate
-    , _ttpId        :: !(Textual Int64)
+    , _ttpPayload :: !TargetingTemplate
+    , _ttpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

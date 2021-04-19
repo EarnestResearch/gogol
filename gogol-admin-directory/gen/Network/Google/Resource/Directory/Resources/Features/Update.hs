@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Resources.Features.Update
     , rfuFeatureKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.update@ method which the
 -- 'ResourcesFeaturesUpdate' request conforms to.
@@ -60,8 +60,8 @@ type ResourcesFeaturesUpdateResource =
 -- /See:/ 'resourcesFeaturesUpdate' smart constructor.
 data ResourcesFeaturesUpdate =
   ResourcesFeaturesUpdate'
-    { _rfuPayload    :: !Feature
-    , _rfuCustomer   :: !Text
+    { _rfuPayload :: !Feature
+    , _rfuCustomer :: !Text
     , _rfuFeatureKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

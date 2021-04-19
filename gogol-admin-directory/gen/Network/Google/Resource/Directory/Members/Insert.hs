@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Members.Insert
     , miPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.insert@ method which the
 -- 'MembersInsert' request conforms to.
@@ -58,7 +58,7 @@ type MembersInsertResource =
 data MembersInsert =
   MembersInsert'
     { _miGroupKey :: !Text
-    , _miPayload  :: !Member
+    , _miPayload :: !Member
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

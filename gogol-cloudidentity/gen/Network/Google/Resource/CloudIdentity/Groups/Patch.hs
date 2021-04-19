@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Patch
     , gpCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.patch@ method which the
 -- 'GroupsPatch' request conforms to.
@@ -65,14 +65,14 @@ type GroupsPatchResource =
 -- /See:/ 'groupsPatch' smart constructor.
 data GroupsPatch =
   GroupsPatch'
-    { _gpXgafv          :: !(Maybe Xgafv)
+    { _gpXgafv :: !(Maybe Xgafv)
     , _gpUploadProtocol :: !(Maybe Text)
-    , _gpUpdateMask     :: !(Maybe GFieldMask)
-    , _gpAccessToken    :: !(Maybe Text)
-    , _gpUploadType     :: !(Maybe Text)
-    , _gpPayload        :: !Group
-    , _gpName           :: !Text
-    , _gpCallback       :: !(Maybe Text)
+    , _gpUpdateMask :: !(Maybe GFieldMask)
+    , _gpAccessToken :: !(Maybe Text)
+    , _gpUploadType :: !(Maybe Text)
+    , _gpPayload :: !Group
+    , _gpName :: !Text
+    , _gpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

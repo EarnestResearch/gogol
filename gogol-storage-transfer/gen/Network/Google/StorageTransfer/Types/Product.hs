@@ -17,8 +17,8 @@
 --
 module Network.Google.StorageTransfer.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types.Sum
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types.Sum
 
 -- | A summary of errors by error code, plus a count and sample error log
 -- entries.
@@ -26,8 +26,8 @@ import           Network.Google.StorageTransfer.Types.Sum
 -- /See:/ 'errorSummary' smart constructor.
 data ErrorSummary =
   ErrorSummary'
-    { _esErrorCount      :: !(Maybe (Textual Int64))
-    , _esErrorCode       :: !(Maybe ErrorSummaryErrorCode)
+    { _esErrorCount :: !(Maybe (Textual Int64))
+    , _esErrorCode :: !(Maybe ErrorSummaryErrorCode)
     , _esErrorLogEntries :: !(Maybe [ErrorLogEntry])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -128,7 +128,7 @@ instance ToJSON ErrorSummary where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -190,7 +190,7 @@ instance ToJSON Status where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -243,9 +243,9 @@ instance ToJSON ListOperationsResponse where
 -- /See:/ 'schedule' smart constructor.
 data Schedule =
   Schedule'
-    { _sScheduleEndDate   :: !(Maybe Date)
+    { _sScheduleEndDate :: !(Maybe Date)
     , _sScheduleStartDate :: !(Maybe Date)
-    , _sStartTimeOfDay    :: !(Maybe TimeOfDay')
+    , _sStartTimeOfDay :: !(Maybe TimeOfDay')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -321,9 +321,9 @@ instance ToJSON Schedule where
 data ObjectConditions =
   ObjectConditions'
     { _ocMinTimeElapsedSinceLastModification :: !(Maybe GDuration)
-    , _ocIncludePrefixes                     :: !(Maybe [Text])
+    , _ocIncludePrefixes :: !(Maybe [Text])
     , _ocMaxTimeElapsedSinceLastModification :: !(Maybe GDuration)
-    , _ocExcludePrefixes                     :: !(Maybe [Text])
+    , _ocExcludePrefixes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -445,10 +445,10 @@ instance ToJSON ObjectConditions where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -665,8 +665,8 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'date' smart constructor.
 data Date =
   Date'
-    { _dDay   :: !(Maybe (Textual Int32))
-    , _dYear  :: !(Maybe (Textual Int32))
+    { _dDay :: !(Maybe (Textual Int32))
+    , _dYear :: !(Maybe (Textual Int32))
     , _dMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -727,8 +727,8 @@ instance ToJSON Date where
 -- /See:/ 'updateTransferJobRequest' smart constructor.
 data UpdateTransferJobRequest =
   UpdateTransferJobRequest'
-    { _utjrTransferJob                :: !(Maybe TransferJob)
-    , _utjrProjectId                  :: !(Maybe Text)
+    { _utjrTransferJob :: !(Maybe TransferJob)
+    , _utjrProjectId :: !(Maybe Text)
     , _utjrUpdateTransferJobFieldMask :: !(Maybe GFieldMask)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -803,21 +803,21 @@ instance ToJSON UpdateTransferJobRequest where
 -- /See:/ 'transferCounters' smart constructor.
 data TransferCounters =
   TransferCounters'
-    { _tcBytesFoundOnlyFromSink         :: !(Maybe (Textual Int64))
-    , _tcBytesDeletedFromSink           :: !(Maybe (Textual Int64))
-    , _tcObjectsDeletedFromSource       :: !(Maybe (Textual Int64))
-    , _tcObjectsFoundFromSource         :: !(Maybe (Textual Int64))
-    , _tcBytesFailedToDeleteFromSink    :: !(Maybe (Textual Int64))
-    , _tcBytesFromSourceFailed          :: !(Maybe (Textual Int64))
-    , _tcBytesCopiedToSink              :: !(Maybe (Textual Int64))
-    , _tcBytesFoundFromSource           :: !(Maybe (Textual Int64))
-    , _tcBytesDeletedFromSource         :: !(Maybe (Textual Int64))
-    , _tcObjectsDeletedFromSink         :: !(Maybe (Textual Int64))
-    , _tcObjectsFoundOnlyFromSink       :: !(Maybe (Textual Int64))
-    , _tcBytesFromSourceSkippedBySync   :: !(Maybe (Textual Int64))
-    , _tcObjectsCopiedToSink            :: !(Maybe (Textual Int64))
-    , _tcObjectsFromSourceFailed        :: !(Maybe (Textual Int64))
-    , _tcObjectsFailedToDeleteFromSink  :: !(Maybe (Textual Int64))
+    { _tcBytesFoundOnlyFromSink :: !(Maybe (Textual Int64))
+    , _tcBytesDeletedFromSink :: !(Maybe (Textual Int64))
+    , _tcObjectsDeletedFromSource :: !(Maybe (Textual Int64))
+    , _tcObjectsFoundFromSource :: !(Maybe (Textual Int64))
+    , _tcBytesFailedToDeleteFromSink :: !(Maybe (Textual Int64))
+    , _tcBytesFromSourceFailed :: !(Maybe (Textual Int64))
+    , _tcBytesCopiedToSink :: !(Maybe (Textual Int64))
+    , _tcBytesFoundFromSource :: !(Maybe (Textual Int64))
+    , _tcBytesDeletedFromSource :: !(Maybe (Textual Int64))
+    , _tcObjectsDeletedFromSink :: !(Maybe (Textual Int64))
+    , _tcObjectsFoundOnlyFromSink :: !(Maybe (Textual Int64))
+    , _tcBytesFromSourceSkippedBySync :: !(Maybe (Textual Int64))
+    , _tcObjectsCopiedToSink :: !(Maybe (Textual Int64))
+    , _tcObjectsFromSourceFailed :: !(Maybe (Textual Int64))
+    , _tcObjectsFailedToDeleteFromSink :: !(Maybe (Textual Int64))
     , _tcObjectsFromSourceSkippedBySync :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1065,14 +1065,14 @@ instance ToJSON TransferCounters where
 -- /See:/ 'transferJob' smart constructor.
 data TransferJob =
   TransferJob'
-    { _tjCreationTime         :: !(Maybe DateTime')
-    , _tjStatus               :: !(Maybe TransferJobStatus)
-    , _tjSchedule             :: !(Maybe Schedule)
-    , _tjDeletionTime         :: !(Maybe DateTime')
-    , _tjName                 :: !(Maybe Text)
-    , _tjProjectId            :: !(Maybe Text)
-    , _tjTransferSpec         :: !(Maybe TransferSpec)
-    , _tjDescription          :: !(Maybe Text)
+    { _tjCreationTime :: !(Maybe DateTime')
+    , _tjStatus :: !(Maybe TransferJobStatus)
+    , _tjSchedule :: !(Maybe Schedule)
+    , _tjDeletionTime :: !(Maybe DateTime')
+    , _tjName :: !(Maybe Text)
+    , _tjProjectId :: !(Maybe Text)
+    , _tjTransferSpec :: !(Maybe TransferSpec)
+    , _tjDescription :: !(Maybe Text)
     , _tjLastModificationTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1250,7 +1250,7 @@ instance ToJSON GcsData where
 -- /See:/ 'awsS3Data' smart constructor.
 data AwsS3Data =
   AwsS3Data'
-    { _asdBucketName   :: !(Maybe Text)
+    { _asdBucketName :: !(Maybe Text)
     , _asdAwsAccessKey :: !(Maybe AwsAccessKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1369,8 +1369,8 @@ instance ToJSON HTTPData where
 -- /See:/ 'timeOfDay' smart constructor.
 data TimeOfDay' =
   TimeOfDay''
-    { _todNanos   :: !(Maybe (Textual Int32))
-    , _todHours   :: !(Maybe (Textual Int32))
+    { _todNanos :: !(Maybe (Textual Int32))
+    , _todHours :: !(Maybe (Textual Int32))
     , _todMinutes :: !(Maybe (Textual Int32))
     , _todSeconds :: !(Maybe (Textual Int32))
     }
@@ -1449,7 +1449,7 @@ instance ToJSON TimeOfDay' where
 -- /See:/ 'errorLogEntry' smart constructor.
 data ErrorLogEntry =
   ErrorLogEntry'
-    { _eleURL          :: !(Maybe Text)
+    { _eleURL :: !(Maybe Text)
     , _eleErrorDetails :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1536,8 +1536,8 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'transferOptions' smart constructor.
 data TransferOptions =
   TransferOptions'
-    { _toDeleteObjectsUniqueInSink             :: !(Maybe Bool)
-    , _toDeleteObjectsFromSourceAfterTransfer  :: !(Maybe Bool)
+    { _toDeleteObjectsUniqueInSink :: !(Maybe Bool)
+    , _toDeleteObjectsFromSourceAfterTransfer :: !(Maybe Bool)
     , _toOverwriteObjectsAlreadyExistingInSink :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1611,14 +1611,14 @@ instance ToJSON TransferOptions where
 -- /See:/ 'transferOperation' smart constructor.
 data TransferOperation =
   TransferOperation'
-    { _toStatus          :: !(Maybe TransferOperationStatus)
-    , _toCounters        :: !(Maybe TransferCounters)
-    , _toStartTime       :: !(Maybe DateTime')
+    { _toStatus :: !(Maybe TransferOperationStatus)
+    , _toCounters :: !(Maybe TransferCounters)
+    , _toStartTime :: !(Maybe DateTime')
     , _toTransferJobName :: !(Maybe Text)
-    , _toName            :: !(Maybe Text)
-    , _toEndTime         :: !(Maybe DateTime')
-    , _toProjectId       :: !(Maybe Text)
-    , _toTransferSpec    :: !(Maybe TransferSpec)
+    , _toName :: !(Maybe Text)
+    , _toEndTime :: !(Maybe DateTime')
+    , _toProjectId :: !(Maybe Text)
+    , _toTransferSpec :: !(Maybe TransferSpec)
     , _toErrorBreakdowns :: !(Maybe [ErrorSummary])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1745,12 +1745,12 @@ instance ToJSON TransferOperation where
 -- /See:/ 'transferSpec' smart constructor.
 data TransferSpec =
   TransferSpec'
-    { _tsGcsDataSource    :: !(Maybe GcsData)
+    { _tsGcsDataSource :: !(Maybe GcsData)
     , _tsObjectConditions :: !(Maybe ObjectConditions)
-    , _tsHTTPDataSource   :: !(Maybe HTTPData)
-    , _tsAwsS3DataSource  :: !(Maybe AwsS3Data)
-    , _tsGcsDataSink      :: !(Maybe GcsData)
-    , _tsTransferOptions  :: !(Maybe TransferOptions)
+    , _tsHTTPDataSource :: !(Maybe HTTPData)
+    , _tsAwsS3DataSource :: !(Maybe AwsS3Data)
+    , _tsGcsDataSink :: !(Maybe GcsData)
+    , _tsTransferOptions :: !(Maybe TransferOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1853,7 +1853,7 @@ instance ToJSON TransferSpec where
 data ListTransferJobsResponse =
   ListTransferJobsResponse'
     { _ltjrNextPageToken :: !(Maybe Text)
-    , _ltjrTransferJobs  :: !(Maybe [TransferJob])
+    , _ltjrTransferJobs :: !(Maybe [TransferJob])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1975,7 +1975,7 @@ instance ToJSON ResumeTransferOperationRequest where
 data AwsAccessKey =
   AwsAccessKey'
     { _aakSecretAccessKey :: !(Maybe Text)
-    , _aakAccessKeyId     :: !(Maybe Text)
+    , _aakAccessKeyId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -47,8 +47,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.TestIAMPe
     , plitipCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.testIamPermissions@ method which the
 -- 'ProjectsLocationsInstancesTestIAMPermissions' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsLocationsInstancesTestIAMPermissionsResource
 -- /See:/ 'projectsLocationsInstancesTestIAMPermissions' smart constructor.
 data ProjectsLocationsInstancesTestIAMPermissions =
   ProjectsLocationsInstancesTestIAMPermissions'
-    { _plitipXgafv          :: !(Maybe Xgafv)
+    { _plitipXgafv :: !(Maybe Xgafv)
     , _plitipUploadProtocol :: !(Maybe Text)
-    , _plitipAccessToken    :: !(Maybe Text)
-    , _plitipUploadType     :: !(Maybe Text)
-    , _plitipPayload        :: !TestIAMPermissionsRequest
-    , _plitipResource       :: !Text
-    , _plitipCallback       :: !(Maybe Text)
+    , _plitipAccessToken :: !(Maybe Text)
+    , _plitipUploadType :: !(Maybe Text)
+    , _plitipPayload :: !TestIAMPermissionsRequest
+    , _plitipResource :: !Text
+    , _plitipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

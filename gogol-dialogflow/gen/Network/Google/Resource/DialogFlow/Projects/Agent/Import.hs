@@ -45,8 +45,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Import
     , paiCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.import@ method which the
 -- 'ProjectsAgentImport' request conforms to.
@@ -72,13 +72,13 @@ type ProjectsAgentImportResource =
 -- /See:/ 'projectsAgentImport' smart constructor.
 data ProjectsAgentImport =
   ProjectsAgentImport'
-    { _paiParent         :: !Text
-    , _paiXgafv          :: !(Maybe Xgafv)
+    { _paiParent :: !Text
+    , _paiXgafv :: !(Maybe Xgafv)
     , _paiUploadProtocol :: !(Maybe Text)
-    , _paiAccessToken    :: !(Maybe Text)
-    , _paiUploadType     :: !(Maybe Text)
-    , _paiPayload        :: !GoogleCloudDialogflowV2ImportAgentRequest
-    , _paiCallback       :: !(Maybe Text)
+    , _paiAccessToken :: !(Maybe Text)
+    , _paiUploadType :: !(Maybe Text)
+    , _paiPayload :: !GoogleCloudDialogflowV2ImportAgentRequest
+    , _paiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

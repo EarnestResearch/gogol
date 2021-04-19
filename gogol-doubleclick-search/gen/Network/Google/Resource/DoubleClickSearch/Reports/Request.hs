@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickSearch.Reports.Request
     , rrPayload
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.reports.request@ method which the
 -- 'ReportsRequest' request conforms to.

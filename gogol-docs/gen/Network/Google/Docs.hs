@@ -1224,11 +1224,11 @@ module Network.Google.Docs
     , smcText
     ) where
 
-import           Network.Google.Docs.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Docs.Documents.BatchUpdate
-import           Network.Google.Resource.Docs.Documents.Create
-import           Network.Google.Resource.Docs.Documents.Get
+import Network.Google.Prelude
+import Network.Google.Docs.Types
+import Network.Google.Resource.Docs.Documents.BatchUpdate
+import Network.Google.Resource.Docs.Documents.Create
+import Network.Google.Resource.Docs.Documents.Get
 
 {- $resources
 TODO

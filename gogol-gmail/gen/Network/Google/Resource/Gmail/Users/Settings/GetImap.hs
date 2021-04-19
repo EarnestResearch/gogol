@@ -36,8 +36,8 @@ module Network.Google.Resource.Gmail.Users.Settings.GetImap
     , usgiUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.getImap@ method which the
 -- 'UsersSettingsGetImap' request conforms to.

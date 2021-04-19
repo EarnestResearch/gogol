@@ -45,8 +45,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.Create
     , ussacUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.create@ method which the
 -- 'UsersSettingsSendAsCreate' request conforms to.
@@ -74,7 +74,7 @@ type UsersSettingsSendAsCreateResource =
 data UsersSettingsSendAsCreate =
   UsersSettingsSendAsCreate'
     { _ussacPayload :: !SendAs
-    , _ussacUserId  :: !Text
+    , _ussacUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.GlobalAddresses.List
     , galMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.globalAddresses.list@ method which the
 -- 'GlobalAddressesList' request conforms to.
@@ -63,10 +63,10 @@ type GlobalAddressesListResource =
 -- /See:/ 'globalAddressesList' smart constructor.
 data GlobalAddressesList =
   GlobalAddressesList'
-    { _galOrderBy    :: !(Maybe Text)
-    , _galProject    :: !Text
-    , _galFilter     :: !(Maybe Text)
-    , _galPageToken  :: !(Maybe Text)
+    { _galOrderBy :: !(Maybe Text)
+    , _galProject :: !Text
+    , _galFilter :: !(Maybe Text)
+    , _galPageToken :: !(Maybe Text)
     , _galMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

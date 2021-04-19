@@ -41,8 +41,8 @@ module Network.Google.Resource.RemoteBuildExecution.GetCapabilities
     , gcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.getCapabilities@ method which the
 -- 'GetCapabilities' request conforms to.
@@ -64,12 +64,12 @@ type GetCapabilitiesResource =
 -- /See:/ 'getCapabilities' smart constructor.
 data GetCapabilities =
   GetCapabilities'
-    { _gcXgafv          :: !(Maybe Xgafv)
+    { _gcXgafv :: !(Maybe Xgafv)
     , _gcUploadProtocol :: !(Maybe Text)
-    , _gcAccessToken    :: !(Maybe Text)
-    , _gcUploadType     :: !(Maybe Text)
-    , _gcInstanceName   :: !Text
-    , _gcCallback       :: !(Maybe Text)
+    , _gcAccessToken :: !(Maybe Text)
+    , _gcUploadType :: !(Maybe Text)
+    , _gcInstanceName :: !Text
+    , _gcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

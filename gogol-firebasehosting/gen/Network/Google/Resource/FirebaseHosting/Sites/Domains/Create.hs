@@ -42,8 +42,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Domains.Create
     , sdcCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.domains.create@ method which the
 -- 'SitesDomainsCreate' request conforms to.
@@ -64,13 +64,13 @@ type SitesDomainsCreateResource =
 -- /See:/ 'sitesDomainsCreate' smart constructor.
 data SitesDomainsCreate =
   SitesDomainsCreate'
-    { _sdcParent         :: !Text
-    , _sdcXgafv          :: !(Maybe Xgafv)
+    { _sdcParent :: !Text
+    , _sdcXgafv :: !(Maybe Xgafv)
     , _sdcUploadProtocol :: !(Maybe Text)
-    , _sdcAccessToken    :: !(Maybe Text)
-    , _sdcUploadType     :: !(Maybe Text)
-    , _sdcPayload        :: !Domain
-    , _sdcCallback       :: !(Maybe Text)
+    , _sdcAccessToken :: !(Maybe Text)
+    , _sdcUploadType :: !(Maybe Text)
+    , _sdcPayload :: !Domain
+    , _sdcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

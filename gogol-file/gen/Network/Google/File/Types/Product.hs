@@ -17,8 +17,8 @@
 --
 module Network.Google.File.Types.Product where
 
-import           Network.Google.File.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.File.Types.Sum
+import Network.Google.Prelude
 
 -- | Resource labels to represent user provided metadata.
 --
@@ -95,7 +95,7 @@ instance ToJSON InstanceLabels where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -196,9 +196,9 @@ instance ToJSON OperationSchema where
 -- /See:/ 'googleCloudSaasacceleratorManagementProvidersV1RolloutMetadata' smart constructor.
 data GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata =
   GoogleCloudSaasacceleratorManagementProvidersV1RolloutMetadata'
-    { _gcsmpvrmRolloutName  :: !(Maybe Text)
+    { _gcsmpvrmRolloutName :: !(Maybe Text)
     , _gcsmpvrmNotification :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1NotificationMetadata)
-    , _gcsmpvrmReleaseName  :: !(Maybe Text)
+    , _gcsmpvrmReleaseName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -269,7 +269,7 @@ instance ToJSON
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -321,7 +321,7 @@ instance ToJSON ListLocationsResponse where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -397,11 +397,11 @@ instance ToJSON CancelOperationRequest where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -484,10 +484,10 @@ instance ToJSON Location where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -630,17 +630,17 @@ instance ToJSON Empty where
 -- /See:/ 'googleCloudSaasacceleratorManagementProvidersV1Instance' smart constructor.
 data GoogleCloudSaasacceleratorManagementProvidersV1Instance =
   GoogleCloudSaasacceleratorManagementProvidersV1Instance'
-    { _gcsmpviTenantProjectId        :: !(Maybe Text)
-    , _gcsmpviState                  :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceState)
-    , _gcsmpviSoftwareVersions       :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceSoftwareVersions)
-    , _gcsmpviProvisionedResources   :: !(Maybe [GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource])
-    , _gcsmpviUpdateTime             :: !(Maybe DateTime')
-    , _gcsmpviName                   :: !(Maybe Text)
-    , _gcsmpviLabels                 :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceLabels)
-    , _gcsmpviSloMetadata            :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata)
-    , _gcsmpviProducerMetadata       :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceProducerMetadata)
-    , _gcsmpviRolloutMetadata        :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceRolloutMetadata)
-    , _gcsmpviCreateTime             :: !(Maybe DateTime')
+    { _gcsmpviTenantProjectId :: !(Maybe Text)
+    , _gcsmpviState :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceState)
+    , _gcsmpviSoftwareVersions :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceSoftwareVersions)
+    , _gcsmpviProvisionedResources :: !(Maybe [GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource])
+    , _gcsmpviUpdateTime :: !(Maybe DateTime')
+    , _gcsmpviName :: !(Maybe Text)
+    , _gcsmpviLabels :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceLabels)
+    , _gcsmpviSloMetadata :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata)
+    , _gcsmpviProducerMetadata :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceProducerMetadata)
+    , _gcsmpviRolloutMetadata :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceRolloutMetadata)
+    , _gcsmpviCreateTime :: !(Maybe DateTime')
     , _gcsmpviMaintenancePolicyNames :: !(Maybe GoogleCloudSaasacceleratorManagementProvidersV1InstanceMaintenancePolicyNames)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -913,9 +913,9 @@ instance ToJSON
 -- /See:/ 'googleCloudSaasacceleratorManagementProvidersV1NotificationMetadata' smart constructor.
 data GoogleCloudSaasacceleratorManagementProvidersV1NotificationMetadata =
   GoogleCloudSaasacceleratorManagementProvidersV1NotificationMetadata'
-    { _gcsmpvnmTargetRelease      :: !(Maybe Text)
-    , _gcsmpvnmScheduledEndTime   :: !(Maybe DateTime')
-    , _gcsmpvnmRescheduled        :: !(Maybe Bool)
+    { _gcsmpvnmTargetRelease :: !(Maybe Text)
+    , _gcsmpvnmScheduledEndTime :: !(Maybe DateTime')
+    , _gcsmpvnmRescheduled :: !(Maybe Bool)
     , _gcsmpvnmScheduledStartTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1004,7 +1004,7 @@ instance ToJSON
 -- /See:/ 'fileShareConfig' smart constructor.
 data FileShareConfig =
   FileShareConfig'
-    { _fscName       :: !(Maybe Text)
+    { _fscName :: !(Maybe Text)
     , _fscCapacityGb :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1054,10 +1054,10 @@ instance ToJSON FileShareConfig where
 -- /See:/ 'networkConfig' smart constructor.
 data NetworkConfig =
   NetworkConfig'
-    { _ncModes           :: !(Maybe [Text])
-    , _ncNetwork         :: !(Maybe Text)
+    { _ncModes :: !(Maybe [Text])
+    , _ncNetwork :: !(Maybe Text)
     , _ncReservedIPRange :: !(Maybe Text)
-    , _ncIPAddresses     :: !(Maybe [Text])
+    , _ncIPAddresses :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1144,7 +1144,7 @@ instance ToJSON NetworkConfig where
 data GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata =
   GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata'
     { _gcsmpvsmExclusions :: !(Maybe [GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion])
-    , _gcsmpvsmTier       :: !(Maybe Text)
+    , _gcsmpvsmTier :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1306,10 +1306,10 @@ instance ToJSON
 -- /See:/ 'googleCloudSaasacceleratorManagementProvidersV1SloExclusion' smart constructor.
 data GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion =
   GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion'
-    { _gcsmpvseExclusionDuration  :: !(Maybe GDuration)
+    { _gcsmpvseExclusionDuration :: !(Maybe GDuration)
     , _gcsmpvseExclusionStartTime :: !(Maybe DateTime')
-    , _gcsmpvseReason             :: !(Maybe Text)
-    , _gcsmpvseSloName            :: !(Maybe Text)
+    , _gcsmpvseReason :: !(Maybe Text)
+    , _gcsmpvseSloName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1479,13 +1479,13 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omAPIVersion      :: !(Maybe Text)
-    , _omEndTime         :: !(Maybe DateTime')
-    , _omStatusDetail    :: !(Maybe Text)
-    , _omVerb            :: !(Maybe Text)
+    { _omAPIVersion :: !(Maybe Text)
+    , _omEndTime :: !(Maybe DateTime')
+    , _omStatusDetail :: !(Maybe Text)
+    , _omVerb :: !(Maybe Text)
     , _omCancelRequested :: !(Maybe Bool)
-    , _omTarget          :: !(Maybe Text)
-    , _omCreateTime      :: !(Maybe DateTime')
+    , _omTarget :: !(Maybe Text)
+    , _omCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1592,7 +1592,7 @@ instance ToJSON OperationMetadata where
 data GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource =
   GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource'
     { _gcsmpvprResourceType :: !(Maybe Text)
-    , _gcsmpvprResourceURL  :: !(Maybe Text)
+    , _gcsmpvprResourceURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1655,8 +1655,8 @@ instance ToJSON
 data ListInstancesResponse =
   ListInstancesResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirUnreachable   :: !(Maybe [Text])
-    , _lirInstances     :: !(Maybe [Instance])
+    , _lirUnreachable :: !(Maybe [Text])
+    , _lirInstances :: !(Maybe [Instance])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1868,16 +1868,16 @@ instance ToJSON
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iEtag          :: !(Maybe Text)
-    , _iState         :: !(Maybe InstanceState)
-    , _iNetworks      :: !(Maybe [NetworkConfig])
-    , _iFileShares    :: !(Maybe [FileShareConfig])
-    , _iName          :: !(Maybe Text)
+    { _iEtag :: !(Maybe Text)
+    , _iState :: !(Maybe InstanceState)
+    , _iNetworks :: !(Maybe [NetworkConfig])
+    , _iFileShares :: !(Maybe [FileShareConfig])
+    , _iName :: !(Maybe Text)
     , _iStatusMessage :: !(Maybe Text)
-    , _iTier          :: !(Maybe InstanceTier)
-    , _iLabels        :: !(Maybe InstanceLabels)
-    , _iDescription   :: !(Maybe Text)
-    , _iCreateTime    :: !(Maybe DateTime')
+    , _iTier :: !(Maybe InstanceTier)
+    , _iLabels :: !(Maybe InstanceLabels)
+    , _iDescription :: !(Maybe Text)
+    , _iCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

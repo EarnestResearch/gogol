@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.InstanceTemplates.List
     , itlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceTemplates.list@ method which the
 -- 'InstanceTemplatesList' request conforms to.
@@ -66,10 +66,10 @@ type InstanceTemplatesListResource =
 -- /See:/ 'instanceTemplatesList' smart constructor.
 data InstanceTemplatesList =
   InstanceTemplatesList'
-    { _itlOrderBy    :: !(Maybe Text)
-    , _itlProject    :: !Text
-    , _itlFilter     :: !(Maybe Text)
-    , _itlPageToken  :: !(Maybe Text)
+    { _itlOrderBy :: !(Maybe Text)
+    , _itlProject :: !Text
+    , _itlFilter :: !(Maybe Text)
+    , _itlPageToken :: !(Maybe Text)
     , _itlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

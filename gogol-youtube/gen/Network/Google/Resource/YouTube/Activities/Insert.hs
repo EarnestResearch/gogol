@@ -43,8 +43,8 @@ module Network.Google.Resource.YouTube.Activities.Insert
     , aiPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.activities.insert@ method which the
 -- 'ActivitiesInsert' request conforms to.
@@ -67,7 +67,7 @@ type ActivitiesInsertResource =
 -- /See:/ 'activitiesInsert' smart constructor.
 data ActivitiesInsert =
   ActivitiesInsert'
-    { _aiPart    :: !Text
+    { _aiPart :: !Text
     , _aiPayload :: !Activity
     }
   deriving (Eq, Show, Data, Typeable, Generic)

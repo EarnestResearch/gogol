@@ -46,8 +46,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Sinks.Create
     , bascCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.sinks.create@ method which the
 -- 'BillingAccountsSinksCreate' request conforms to.
@@ -72,14 +72,14 @@ type BillingAccountsSinksCreateResource =
 -- /See:/ 'billingAccountsSinksCreate' smart constructor.
 data BillingAccountsSinksCreate =
   BillingAccountsSinksCreate'
-    { _bascParent               :: !Text
-    , _bascXgafv                :: !(Maybe Xgafv)
+    { _bascParent :: !Text
+    , _bascXgafv :: !(Maybe Xgafv)
     , _bascUniqueWriterIdentity :: !(Maybe Bool)
-    , _bascUploadProtocol       :: !(Maybe Text)
-    , _bascAccessToken          :: !(Maybe Text)
-    , _bascUploadType           :: !(Maybe Text)
-    , _bascPayload              :: !LogSink
-    , _bascCallback             :: !(Maybe Text)
+    , _bascUploadProtocol :: !(Maybe Text)
+    , _bascAccessToken :: !(Maybe Text)
+    , _bascUploadType :: !(Maybe Text)
+    , _bascPayload :: !LogSink
+    , _bascCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -99,14 +99,14 @@ module Network.Google.OSLogin
     , Xgafv (..)
     ) where
 
-import           Network.Google.OSLogin.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.OSLogin.Users.GetLoginProFile
-import           Network.Google.Resource.OSLogin.Users.ImportSSHPublicKey
-import           Network.Google.Resource.OSLogin.Users.Projects.Delete
-import           Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Delete
-import           Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Get
-import           Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Patch
+import Network.Google.Prelude
+import Network.Google.OSLogin.Types
+import Network.Google.Resource.OSLogin.Users.GetLoginProFile
+import Network.Google.Resource.OSLogin.Users.ImportSSHPublicKey
+import Network.Google.Resource.OSLogin.Users.Projects.Delete
+import Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Delete
+import Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Get
+import Network.Google.Resource.OSLogin.Users.SSHPublicKeys.Patch
 
 {- $resources
 TODO

@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Settings.SendAs.SmimeInfo.SetDefault
     , ussasisdId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.sendAs.smimeInfo.setDefault@ method which the
 -- 'UsersSettingsSendAsSmimeInfoSetDefault' request conforms to.
@@ -61,9 +61,9 @@ type UsersSettingsSendAsSmimeInfoSetDefaultResource =
 -- /See:/ 'usersSettingsSendAsSmimeInfoSetDefault' smart constructor.
 data UsersSettingsSendAsSmimeInfoSetDefault =
   UsersSettingsSendAsSmimeInfoSetDefault'
-    { _ussasisdUserId      :: !Text
+    { _ussasisdUserId :: !Text
     , _ussasisdSendAsEmail :: !Text
-    , _ussasisdId          :: !Text
+    , _ussasisdId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

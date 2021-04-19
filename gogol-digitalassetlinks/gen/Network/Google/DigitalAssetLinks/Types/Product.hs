@@ -17,8 +17,8 @@
 --
 module Network.Google.DigitalAssetLinks.Types.Product where
 
-import           Network.Google.DigitalAssetLinks.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DigitalAssetLinks.Types.Sum
+import Network.Google.Prelude
 
 -- | Describes an android app asset.
 --
@@ -93,8 +93,8 @@ instance ToJSON AndroidAppAsset where
 data Statement =
   Statement'
     { _sRelation :: !(Maybe Text)
-    , _sSource   :: !(Maybe Asset)
-    , _sTarget   :: !(Maybe Asset)
+    , _sSource :: !(Maybe Asset)
+    , _sTarget :: !(Maybe Asset)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -161,7 +161,7 @@ instance ToJSON Statement where
 data Asset =
   Asset'
     { _aAndroidApp :: !(Maybe AndroidAppAsset)
-    , _aWeb        :: !(Maybe WebAsset)
+    , _aWeb :: !(Maybe WebAsset)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -206,9 +206,9 @@ instance ToJSON Asset where
 data ListResponse =
   ListResponse'
     { _lrDebugString :: !(Maybe Text)
-    , _lrMaxAge      :: !(Maybe GDuration)
-    , _lrErrorCode   :: !(Maybe [Text])
-    , _lrStatements  :: !(Maybe [Statement])
+    , _lrMaxAge :: !(Maybe GDuration)
+    , _lrErrorCode :: !(Maybe [Text])
+    , _lrStatements :: !(Maybe [Statement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -292,9 +292,9 @@ instance ToJSON ListResponse where
 data CheckResponse =
   CheckResponse'
     { _crDebugString :: !(Maybe Text)
-    , _crMaxAge      :: !(Maybe GDuration)
-    , _crErrorCode   :: !(Maybe [Text])
-    , _crLinked      :: !(Maybe Bool)
+    , _crMaxAge :: !(Maybe GDuration)
+    , _crErrorCode :: !(Maybe [Text])
+    , _crLinked :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

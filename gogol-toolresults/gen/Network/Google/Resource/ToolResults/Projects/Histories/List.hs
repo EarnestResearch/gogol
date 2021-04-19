@@ -44,8 +44,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.List
     , phlPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.list@ method which the
 -- 'ProjectsHistoriesList' request conforms to.
@@ -72,9 +72,9 @@ type ProjectsHistoriesListResource =
 data ProjectsHistoriesList =
   ProjectsHistoriesList'
     { _phlFilterByName :: !(Maybe Text)
-    , _phlPageToken    :: !(Maybe Text)
-    , _phlProjectId    :: !Text
-    , _phlPageSize     :: !(Maybe (Textual Int32))
+    , _phlPageToken :: !(Maybe Text)
+    , _phlProjectId :: !Text
+    , _phlPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

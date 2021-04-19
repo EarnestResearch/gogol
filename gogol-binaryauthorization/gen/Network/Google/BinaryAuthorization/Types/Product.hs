@@ -17,8 +17,8 @@
 --
 module Network.Google.BinaryAuthorization.Types.Product where
 
-import           Network.Google.BinaryAuthorization.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types.Sum
+import Network.Google.Prelude
 
 -- | A public key in the PkixPublicKey format (see
 -- https:\/\/tools.ietf.org\/html\/rfc5280#section-4.1.2.7 for details).
@@ -28,7 +28,7 @@ import           Network.Google.Prelude
 -- /See:/ 'pkixPublicKey' smart constructor.
 data PkixPublicKey =
   PkixPublicKey'
-    { _ppkPublicKeyPem       :: !(Maybe Text)
+    { _ppkPublicKeyPem :: !(Maybe Text)
     , _ppkSignatureAlgorithm :: !(Maybe PkixPublicKeySignatureAlgorithm)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -86,9 +86,9 @@ instance ToJSON PkixPublicKey where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -166,8 +166,8 @@ instance ToJSON Expr where
 data UserOwnedDrydockNote =
   UserOwnedDrydockNote'
     { _uodnDelegationServiceAccountEmail :: !(Maybe Text)
-    , _uodnPublicKeys                    :: !(Maybe [AttestorPublicKey])
-    , _uodnNoteReference                 :: !(Maybe Text)
+    , _uodnPublicKeys :: !(Maybe [AttestorPublicKey])
+    , _uodnNoteReference :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -314,7 +314,7 @@ instance ToJSON SetIAMPolicyRequest where
 data ListAttestorsResponse =
   ListAttestorsResponse'
     { _larNextPageToken :: !(Maybe Text)
-    , _larAttestors     :: !(Maybe [Attestor])
+    , _larAttestors :: !(Maybe [Attestor])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -413,8 +413,8 @@ instance ToJSON AdmissionWhiteListPattern where
 -- /See:/ 'admissionRule' smart constructor.
 data AdmissionRule =
   AdmissionRule'
-    { _arEnforcementMode       :: !(Maybe AdmissionRuleEnforcementMode)
-    , _arEvaluationMode        :: !(Maybe AdmissionRuleEvaluationMode)
+    { _arEnforcementMode :: !(Maybe AdmissionRuleEnforcementMode)
+    , _arEvaluationMode :: !(Maybe AdmissionRuleEvaluationMode)
     , _arRequireAttestationsBy :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -549,8 +549,8 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'iamPolicy' smart constructor.
 data IAMPolicy =
   IAMPolicy'
-    { _ipEtag     :: !(Maybe Bytes)
-    , _ipVersion  :: !(Maybe (Textual Int32))
+    { _ipEtag :: !(Maybe Bytes)
+    , _ipVersion :: !(Maybe (Textual Int32))
     , _ipBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -621,10 +621,10 @@ instance ToJSON IAMPolicy where
 -- /See:/ 'attestorPublicKey' smart constructor.
 data AttestorPublicKey =
   AttestorPublicKey'
-    { _apkPkixPublicKey            :: !(Maybe PkixPublicKey)
+    { _apkPkixPublicKey :: !(Maybe PkixPublicKey)
     , _apkAsciiArmoredPgpPublicKey :: !(Maybe Text)
-    , _apkId                       :: !(Maybe Text)
-    , _apkComment                  :: !(Maybe Text)
+    , _apkId :: !(Maybe Text)
+    , _apkComment :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -755,13 +755,13 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pDefaultAdmissionRule       :: !(Maybe AdmissionRule)
+    { _pDefaultAdmissionRule :: !(Maybe AdmissionRule)
     , _pAdmissionWhiteListPatterns :: !(Maybe [AdmissionWhiteListPattern])
-    , _pClusterAdmissionRules      :: !(Maybe PolicyClusterAdmissionRules)
-    , _pUpdateTime                 :: !(Maybe DateTime')
-    , _pName                       :: !(Maybe Text)
+    , _pClusterAdmissionRules :: !(Maybe PolicyClusterAdmissionRules)
+    , _pUpdateTime :: !(Maybe DateTime')
+    , _pName :: !(Maybe Text)
     , _pGlobalPolicyEvaluationMode :: !(Maybe PolicyGlobalPolicyEvaluationMode)
-    , _pDescription                :: !(Maybe Text)
+    , _pDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -930,9 +930,9 @@ instance ToJSON PolicyClusterAdmissionRules where
 data Attestor =
   Attestor'
     { _aUserOwnedDrydockNote :: !(Maybe UserOwnedDrydockNote)
-    , _aUpdateTime           :: !(Maybe DateTime')
-    , _aName                 :: !(Maybe Text)
-    , _aDescription          :: !(Maybe Text)
+    , _aUpdateTime :: !(Maybe DateTime')
+    , _aName :: !(Maybe Text)
+    , _aDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1007,8 +1007,8 @@ instance ToJSON Attestor where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

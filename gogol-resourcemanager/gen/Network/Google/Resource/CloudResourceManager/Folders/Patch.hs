@@ -54,8 +54,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Patch
     , fpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.patch@ method which the
 -- 'FoldersPatch' request conforms to.
@@ -87,14 +87,14 @@ type FoldersPatchResource =
 -- /See:/ 'foldersPatch' smart constructor.
 data FoldersPatch =
   FoldersPatch'
-    { _fpXgafv          :: !(Maybe Xgafv)
+    { _fpXgafv :: !(Maybe Xgafv)
     , _fpUploadProtocol :: !(Maybe Text)
-    , _fpUpdateMask     :: !(Maybe GFieldMask)
-    , _fpAccessToken    :: !(Maybe Text)
-    , _fpUploadType     :: !(Maybe Text)
-    , _fpPayload        :: !Folder
-    , _fpName           :: !Text
-    , _fpCallback       :: !(Maybe Text)
+    , _fpUpdateMask :: !(Maybe GFieldMask)
+    , _fpAccessToken :: !(Maybe Text)
+    , _fpUploadType :: !(Maybe Text)
+    , _fpPayload :: !Folder
+    , _fpName :: !Text
+    , _fpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

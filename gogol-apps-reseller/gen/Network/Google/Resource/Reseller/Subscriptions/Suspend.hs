@@ -37,8 +37,8 @@ module Network.Google.Resource.Reseller.Subscriptions.Suspend
     , ssSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.suspend@ method which the
 -- 'SubscriptionsSuspend' request conforms to.
@@ -58,7 +58,7 @@ type SubscriptionsSuspendResource =
 -- /See:/ 'subscriptionsSuspend' smart constructor.
 data SubscriptionsSuspend =
   SubscriptionsSuspend'
-    { _ssCustomerId     :: !Text
+    { _ssCustomerId :: !Text
     , _ssSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Pushtokens.Remove
     , prPayload
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.pushtokens.remove@ method which the
 -- 'PushtokensRemove' request conforms to.

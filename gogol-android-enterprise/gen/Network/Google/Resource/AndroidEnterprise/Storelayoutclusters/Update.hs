@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutclusters.Update
     , suuClusterId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutclusters.update@ method which the
 -- 'StorelayoutclustersUpdate' request conforms to.
@@ -64,9 +64,9 @@ type StorelayoutclustersUpdateResource =
 data StorelayoutclustersUpdate =
   StorelayoutclustersUpdate'
     { _suuEnterpriseId :: !Text
-    , _suuPageId       :: !Text
-    , _suuPayload      :: !StoreCluster
-    , _suuClusterId    :: !Text
+    , _suuPageId :: !Text
+    , _suuPayload :: !StoreCluster
+    , _suuClusterId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

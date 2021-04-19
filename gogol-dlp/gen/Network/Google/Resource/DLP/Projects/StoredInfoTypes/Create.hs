@@ -44,8 +44,8 @@ module Network.Google.Resource.DLP.Projects.StoredInfoTypes.Create
     , psitcCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.storedInfoTypes.create@ method which the
 -- 'ProjectsStoredInfoTypesCreate' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsStoredInfoTypesCreateResource =
 -- /See:/ 'projectsStoredInfoTypesCreate' smart constructor.
 data ProjectsStoredInfoTypesCreate =
   ProjectsStoredInfoTypesCreate'
-    { _psitcParent         :: !Text
-    , _psitcXgafv          :: !(Maybe Xgafv)
+    { _psitcParent :: !Text
+    , _psitcXgafv :: !(Maybe Xgafv)
     , _psitcUploadProtocol :: !(Maybe Text)
-    , _psitcAccessToken    :: !(Maybe Text)
-    , _psitcUploadType     :: !(Maybe Text)
-    , _psitcPayload        :: !GooglePrivacyDlpV2CreateStoredInfoTypeRequest
-    , _psitcCallback       :: !(Maybe Text)
+    , _psitcAccessToken :: !(Maybe Text)
+    , _psitcUploadType :: !(Maybe Text)
+    , _psitcPayload :: !GooglePrivacyDlpV2CreateStoredInfoTypeRequest
+    , _psitcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

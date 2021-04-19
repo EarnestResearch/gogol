@@ -16,7 +16,7 @@
 --
 module Network.Google.Directory.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Event on which subscription is intended (if subscribing)
 data UsersListEvent

@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Folders.Exclusions.Create
     , fecCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.folders.exclusions.create@ method which the
 -- 'FoldersExclusionsCreate' request conforms to.
@@ -69,13 +69,13 @@ type FoldersExclusionsCreateResource =
 -- /See:/ 'foldersExclusionsCreate' smart constructor.
 data FoldersExclusionsCreate =
   FoldersExclusionsCreate'
-    { _fecParent         :: !Text
-    , _fecXgafv          :: !(Maybe Xgafv)
+    { _fecParent :: !Text
+    , _fecXgafv :: !(Maybe Xgafv)
     , _fecUploadProtocol :: !(Maybe Text)
-    , _fecAccessToken    :: !(Maybe Text)
-    , _fecUploadType     :: !(Maybe Text)
-    , _fecPayload        :: !LogExclusion
-    , _fecCallback       :: !(Maybe Text)
+    , _fecAccessToken :: !(Maybe Text)
+    , _fecUploadType :: !(Maybe Text)
+    , _fecPayload :: !LogExclusion
+    , _fecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

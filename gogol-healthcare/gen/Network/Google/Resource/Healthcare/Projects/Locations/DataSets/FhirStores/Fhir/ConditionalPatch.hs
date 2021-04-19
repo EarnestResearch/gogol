@@ -58,8 +58,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfcpCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.conditionalPatch@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirConditionalPatch' request conforms to.
@@ -97,14 +97,14 @@ type ProjectsLocationsDataSetsFhirStoresFhirConditionalPatchResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirConditionalPatch' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirConditionalPatch =
   ProjectsLocationsDataSetsFhirStoresFhirConditionalPatch'
-    { _pldsfsfcpParent         :: !Text
-    , _pldsfsfcpXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfcpParent :: !Text
+    , _pldsfsfcpXgafv :: !(Maybe Xgafv)
     , _pldsfsfcpUploadProtocol :: !(Maybe Text)
-    , _pldsfsfcpAccessToken    :: !(Maybe Text)
-    , _pldsfsfcpUploadType     :: !(Maybe Text)
-    , _pldsfsfcpPayload        :: !HTTPBody
-    , _pldsfsfcpType           :: !Text
-    , _pldsfsfcpCallback       :: !(Maybe Text)
+    , _pldsfsfcpAccessToken :: !(Maybe Text)
+    , _pldsfsfcpUploadType :: !(Maybe Text)
+    , _pldsfsfcpPayload :: !HTTPBody
+    , _pldsfsfcpType :: !Text
+    , _pldsfsfcpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

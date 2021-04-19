@@ -44,8 +44,8 @@ module Network.Google.Resource.Logging.Organizations.Exclusions.Create
     , oecCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.organizations.exclusions.create@ method which the
 -- 'OrganizationsExclusionsCreate' request conforms to.
@@ -69,13 +69,13 @@ type OrganizationsExclusionsCreateResource =
 -- /See:/ 'organizationsExclusionsCreate' smart constructor.
 data OrganizationsExclusionsCreate =
   OrganizationsExclusionsCreate'
-    { _oecParent         :: !Text
-    , _oecXgafv          :: !(Maybe Xgafv)
+    { _oecParent :: !Text
+    , _oecXgafv :: !(Maybe Xgafv)
     , _oecUploadProtocol :: !(Maybe Text)
-    , _oecAccessToken    :: !(Maybe Text)
-    , _oecUploadType     :: !(Maybe Text)
-    , _oecPayload        :: !LogExclusion
-    , _oecCallback       :: !(Maybe Text)
+    , _oecAccessToken :: !(Maybe Text)
+    , _oecUploadType :: !(Maybe Text)
+    , _oecPayload :: !LogExclusion
+    , _oecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

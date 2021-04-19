@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Entitlements.List
     , elUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.entitlements.list@ method which the
 -- 'EntitlementsList' request conforms to.
@@ -59,7 +59,7 @@ type EntitlementsListResource =
 data EntitlementsList =
   EntitlementsList'
     { _elEnterpriseId :: !Text
-    , _elUserId       :: !Text
+    , _elUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Ads.Insert
     , aiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.ads.insert@ method which the
 -- 'AdsInsert' request conforms to.
@@ -57,7 +57,7 @@ type AdsInsertResource =
 data AdsInsert =
   AdsInsert'
     { _aiProFileId :: !(Textual Int64)
-    , _aiPayload   :: !Ad
+    , _aiPayload :: !Ad
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Patch
     , pscpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.patch@ method which the
 -- 'ProjectsScanConfigsPatch' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsScanConfigsPatchResource =
 -- /See:/ 'projectsScanConfigsPatch' smart constructor.
 data ProjectsScanConfigsPatch =
   ProjectsScanConfigsPatch'
-    { _pscpXgafv          :: !(Maybe Xgafv)
+    { _pscpXgafv :: !(Maybe Xgafv)
     , _pscpUploadProtocol :: !(Maybe Text)
-    , _pscpUpdateMask     :: !(Maybe GFieldMask)
-    , _pscpAccessToken    :: !(Maybe Text)
-    , _pscpUploadType     :: !(Maybe Text)
-    , _pscpPayload        :: !ScanConfig
-    , _pscpName           :: !Text
-    , _pscpCallback       :: !(Maybe Text)
+    , _pscpUpdateMask :: !(Maybe GFieldMask)
+    , _pscpAccessToken :: !(Maybe Text)
+    , _pscpUploadType :: !(Maybe Text)
+    , _pscpPayload :: !ScanConfig
+    , _pscpName :: !Text
+    , _pscpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

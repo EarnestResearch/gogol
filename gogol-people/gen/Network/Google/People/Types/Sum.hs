@@ -16,7 +16,7 @@
 --
 module Network.Google.People.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The source type.
 data SourceType
@@ -29,7 +29,8 @@ data SourceType
     | ProFile
       -- ^ @PROFILE@
       -- [Google profile](https:\/\/profiles.google.com). You can view the
-      -- profile at https:\/\/profiles.google.com\/id where id is the source id.
+      -- profile at https:\/\/profiles.google.com\/@id@ where @id@ is the source
+      -- id.
     | DomainProFile
       -- ^ @DOMAIN_PROFILE@
       -- [G Suite domain
@@ -37,7 +38,8 @@ data SourceType
     | Contact
       -- ^ @CONTACT@
       -- [Google contact](https:\/\/contacts.google.com). You can view the
-      -- contact at https:\/\/contact.google.com\/id where id is the source id.
+      -- contact at https:\/\/contact.google.com\/@id@ where @id@ is the source
+      -- id.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable SourceType

@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Schemas.Insert
     , siCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.insert@ method which the
 -- 'SchemasInsert' request conforms to.
@@ -57,7 +57,7 @@ type SchemasInsertResource =
 -- /See:/ 'schemasInsert' smart constructor.
 data SchemasInsert =
   SchemasInsert'
-    { _siPayload    :: !Schema
+    { _siPayload :: !Schema
     , _siCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

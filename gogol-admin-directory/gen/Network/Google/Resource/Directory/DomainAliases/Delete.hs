@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.DomainAliases.Delete
     , dadCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.domainAliases.delete@ method which the
 -- 'DomainAliasesDelete' request conforms to.
@@ -58,7 +58,7 @@ type DomainAliasesDeleteResource =
 data DomainAliasesDelete =
   DomainAliasesDelete'
     { _dadDomainAliasName :: !Text
-    , _dadCustomer        :: !Text
+    , _dadCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

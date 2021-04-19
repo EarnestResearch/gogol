@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Settings.Datasources.Update
     , sduCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.datasources.update@ method which the
 -- 'SettingsDatasourcesUpdate' request conforms to.
@@ -65,13 +65,13 @@ type SettingsDatasourcesUpdateResource =
 -- /See:/ 'settingsDatasourcesUpdate' smart constructor.
 data SettingsDatasourcesUpdate =
   SettingsDatasourcesUpdate'
-    { _sduXgafv          :: !(Maybe Xgafv)
+    { _sduXgafv :: !(Maybe Xgafv)
     , _sduUploadProtocol :: !(Maybe Text)
-    , _sduAccessToken    :: !(Maybe Text)
-    , _sduUploadType     :: !(Maybe Text)
-    , _sduPayload        :: !UpdateDataSourceRequest
-    , _sduName           :: !Text
-    , _sduCallback       :: !(Maybe Text)
+    , _sduAccessToken :: !(Maybe Text)
+    , _sduUploadType :: !(Maybe Text)
+    , _sduPayload :: !UpdateDataSourceRequest
+    , _sduName :: !Text
+    , _sduCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

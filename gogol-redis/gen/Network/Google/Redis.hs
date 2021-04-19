@@ -214,20 +214,20 @@ module Network.Google.Redis
     , iCurrentLocationId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Redis.Types
-import           Network.Google.Resource.Redis.Projects.Locations.Get
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.Create
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.Delete
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.Failover
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.Get
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.List
-import           Network.Google.Resource.Redis.Projects.Locations.Instances.Patch
-import           Network.Google.Resource.Redis.Projects.Locations.List
-import           Network.Google.Resource.Redis.Projects.Locations.Operations.Cancel
-import           Network.Google.Resource.Redis.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.Redis.Projects.Locations.Operations.Get
-import           Network.Google.Resource.Redis.Projects.Locations.Operations.List
+import Network.Google.Prelude
+import Network.Google.Redis.Types
+import Network.Google.Resource.Redis.Projects.Locations.Get
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Create
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Delete
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Failover
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Get
+import Network.Google.Resource.Redis.Projects.Locations.Instances.List
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Patch
+import Network.Google.Resource.Redis.Projects.Locations.List
+import Network.Google.Resource.Redis.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.Redis.Projects.Locations.Operations.Delete
+import Network.Google.Resource.Redis.Projects.Locations.Operations.Get
+import Network.Google.Resource.Redis.Projects.Locations.Operations.List
 
 {- $resources
 TODO

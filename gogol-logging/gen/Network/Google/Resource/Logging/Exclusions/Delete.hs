@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.Exclusions.Delete
     , edCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.exclusions.delete@ method which the
 -- 'ExclusionsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ExclusionsDeleteResource =
 -- /See:/ 'exclusionsDelete' smart constructor.
 data ExclusionsDelete =
   ExclusionsDelete'
-    { _edXgafv          :: !(Maybe Xgafv)
+    { _edXgafv :: !(Maybe Xgafv)
     , _edUploadProtocol :: !(Maybe Text)
-    , _edAccessToken    :: !(Maybe Text)
-    , _edUploadType     :: !(Maybe Text)
-    , _edName           :: !Text
-    , _edCallback       :: !(Maybe Text)
+    , _edAccessToken :: !(Maybe Text)
+    , _edUploadType :: !(Maybe Text)
+    , _edName :: !Text
+    , _edCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

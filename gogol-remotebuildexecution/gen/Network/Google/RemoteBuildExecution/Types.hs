@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -682,9 +682,9 @@ module Network.Google.RemoteBuildExecution.Types
     , bbrevbrbrResponses
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types.Product
-import           Network.Google.RemoteBuildExecution.Types.Sum
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types.Product
+import Network.Google.RemoteBuildExecution.Types.Sum
 
 -- | Default request referring to version 'v2' of the Remote Build Execution API. This contains the host and root path used as a starting point for constructing service requests.
 remoteBuildExecutionService :: ServiceConfig

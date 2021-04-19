@@ -45,8 +45,8 @@ module Network.Google.Resource.DLP.Organizations.StoredInfoTypes.Patch
     , ositpCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.storedInfoTypes.patch@ method which the
 -- 'OrganizationsStoredInfoTypesPatch' request conforms to.
@@ -71,13 +71,13 @@ type OrganizationsStoredInfoTypesPatchResource =
 -- /See:/ 'organizationsStoredInfoTypesPatch' smart constructor.
 data OrganizationsStoredInfoTypesPatch =
   OrganizationsStoredInfoTypesPatch'
-    { _ositpXgafv          :: !(Maybe Xgafv)
+    { _ositpXgafv :: !(Maybe Xgafv)
     , _ositpUploadProtocol :: !(Maybe Text)
-    , _ositpAccessToken    :: !(Maybe Text)
-    , _ositpUploadType     :: !(Maybe Text)
-    , _ositpPayload        :: !GooglePrivacyDlpV2UpdateStoredInfoTypeRequest
-    , _ositpName           :: !Text
-    , _ositpCallback       :: !(Maybe Text)
+    , _ositpAccessToken :: !(Maybe Text)
+    , _ositpUploadType :: !(Maybe Text)
+    , _ositpPayload :: !GooglePrivacyDlpV2UpdateStoredInfoTypeRequest
+    , _ositpName :: !Text
+    , _ositpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Memberships.Lookup
     , gmlCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.memberships.lookup@ method which the
 -- 'GroupsMembershipsLookup' request conforms to.
@@ -71,14 +71,14 @@ type GroupsMembershipsLookupResource =
 -- /See:/ 'groupsMembershipsLookup' smart constructor.
 data GroupsMembershipsLookup =
   GroupsMembershipsLookup'
-    { _gmlParent             :: !Text
-    , _gmlXgafv              :: !(Maybe Xgafv)
-    , _gmlUploadProtocol     :: !(Maybe Text)
-    , _gmlAccessToken        :: !(Maybe Text)
-    , _gmlUploadType         :: !(Maybe Text)
-    , _gmlMemberKeyId        :: !(Maybe Text)
+    { _gmlParent :: !Text
+    , _gmlXgafv :: !(Maybe Xgafv)
+    , _gmlUploadProtocol :: !(Maybe Text)
+    , _gmlAccessToken :: !(Maybe Text)
+    , _gmlUploadType :: !(Maybe Text)
+    , _gmlMemberKeyId :: !(Maybe Text)
     , _gmlMemberKeyNamespace :: !(Maybe Text)
-    , _gmlCallback           :: !(Maybe Text)
+    , _gmlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

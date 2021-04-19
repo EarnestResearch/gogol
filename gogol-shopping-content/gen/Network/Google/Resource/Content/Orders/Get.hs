@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.Orders.Get
     , ogOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.get@ method which the
 -- 'OrdersGet' request conforms to.
 type OrdersGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -56,7 +56,7 @@ type OrdersGetResource =
 data OrdersGet =
   OrdersGet'
     { _ogMerchantId :: !(Textual Word64)
-    , _ogOrderId    :: !Text
+    , _ogOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Keys.Create
     , psakcCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.keys.create@ method which the
 -- 'ProjectsServiceAccountsKeysCreate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsServiceAccountsKeysCreateResource =
 -- /See:/ 'projectsServiceAccountsKeysCreate' smart constructor.
 data ProjectsServiceAccountsKeysCreate =
   ProjectsServiceAccountsKeysCreate'
-    { _psakcXgafv          :: !(Maybe Xgafv)
+    { _psakcXgafv :: !(Maybe Xgafv)
     , _psakcUploadProtocol :: !(Maybe Text)
-    , _psakcAccessToken    :: !(Maybe Text)
-    , _psakcUploadType     :: !(Maybe Text)
-    , _psakcPayload        :: !CreateServiceAccountKeyRequest
-    , _psakcName           :: !Text
-    , _psakcCallback       :: !(Maybe Text)
+    , _psakcAccessToken :: !(Maybe Text)
+    , _psakcUploadType :: !(Maybe Text)
+    , _psakcPayload :: !CreateServiceAccountKeyRequest
+    , _psakcName :: !Text
+    , _psakcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

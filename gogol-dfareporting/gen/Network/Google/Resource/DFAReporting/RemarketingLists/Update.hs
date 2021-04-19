@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.RemarketingLists.Update
     , rluPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.remarketingLists.update@ method which the
 -- 'RemarketingListsUpdate' request conforms to.
@@ -58,7 +58,7 @@ type RemarketingListsUpdateResource =
 data RemarketingListsUpdate =
   RemarketingListsUpdate'
     { _rluProFileId :: !(Textual Int64)
-    , _rluPayload   :: !RemarketingList
+    , _rluPayload :: !RemarketingList
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

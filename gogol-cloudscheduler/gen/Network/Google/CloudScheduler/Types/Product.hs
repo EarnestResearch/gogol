@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudScheduler.Types.Product where
 
-import           Network.Google.CloudScheduler.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudScheduler.Types.Sum
+import Network.Google.Prelude
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.Prelude
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -145,7 +145,7 @@ instance ToJSON PauseJobRequest where
 data ListLocationsResponse =
   ListLocationsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLocations     :: !(Maybe [Location])
+    , _llrLocations :: !(Maybe [Location])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -278,10 +278,10 @@ instance ToJSON AppEngineHTTPTargetHeaders where
 -- /See:/ 'retryConfig' smart constructor.
 data RetryConfig =
   RetryConfig'
-    { _rcMaxDoublings       :: !(Maybe (Textual Int32))
-    , _rcMaxRetryDuration   :: !(Maybe GDuration)
+    { _rcMaxDoublings :: !(Maybe (Textual Int32))
+    , _rcMaxRetryDuration :: !(Maybe GDuration)
     , _rcMinBackoffDuration :: !(Maybe GDuration)
-    , _rcRetryCount         :: !(Maybe (Textual Int32))
+    , _rcRetryCount :: !(Maybe (Textual Int32))
     , _rcMaxBackoffDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -394,11 +394,11 @@ instance ToJSON RetryConfig where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lName        :: !(Maybe Text)
-    , _lMetadata    :: !(Maybe LocationMetadata)
+    { _lName :: !(Maybe Text)
+    , _lMetadata :: !(Maybe LocationMetadata)
     , _lDisplayName :: !(Maybe Text)
-    , _lLabels      :: !(Maybe LocationLabels)
-    , _lLocationId  :: !(Maybe Text)
+    , _lLabels :: !(Maybe LocationLabels)
+    , _lLocationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -595,10 +595,10 @@ instance ToJSON HTTPTargetHeaders where
 -- /See:/ 'pubsubMessage' smart constructor.
 data PubsubMessage =
   PubsubMessage'
-    { _pmData        :: !(Maybe Bytes)
+    { _pmData :: !(Maybe Bytes)
     , _pmPublishTime :: !(Maybe DateTime')
-    , _pmAttributes  :: !(Maybe PubsubMessageAttributes)
-    , _pmMessageId   :: !(Maybe Text)
+    , _pmAttributes :: !(Maybe PubsubMessageAttributes)
+    , _pmMessageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -720,10 +720,10 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'appEngineHTTPTarget' smart constructor.
 data AppEngineHTTPTarget =
   AppEngineHTTPTarget'
-    { _aehttptHTTPMethod       :: !(Maybe AppEngineHTTPTargetHTTPMethod)
-    , _aehttptRelativeURI      :: !(Maybe Text)
-    , _aehttptBody             :: !(Maybe Bytes)
-    , _aehttptHeaders          :: !(Maybe AppEngineHTTPTargetHeaders)
+    { _aehttptHTTPMethod :: !(Maybe AppEngineHTTPTargetHTTPMethod)
+    , _aehttptRelativeURI :: !(Maybe Text)
+    , _aehttptBody :: !(Maybe Bytes)
+    , _aehttptHeaders :: !(Maybe AppEngineHTTPTargetHeaders)
     , _aehttptAppEngineRouting :: !(Maybe AppEngineRouting)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -841,9 +841,9 @@ instance ToJSON AppEngineHTTPTarget where
 data HTTPTarget =
   HTTPTarget'
     { _httptHTTPMethod :: !(Maybe HTTPTargetHTTPMethod)
-    , _httptBody       :: !(Maybe Bytes)
-    , _httptURI        :: !(Maybe Text)
-    , _httptHeaders    :: !(Maybe HTTPTargetHeaders)
+    , _httptBody :: !(Maybe Bytes)
+    , _httptURI :: !(Maybe Text)
+    , _httptHeaders :: !(Maybe HTTPTargetHeaders)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -953,19 +953,19 @@ instance ToJSON RunJobRequest where
 -- /See:/ 'job' smart constructor.
 data Job =
   Job'
-    { _jStatus              :: !(Maybe Status)
-    , _jState               :: !(Maybe JobState)
-    , _jLastAttemptTime     :: !(Maybe DateTime')
-    , _jRetryConfig         :: !(Maybe RetryConfig)
-    , _jSchedule            :: !(Maybe Text)
-    , _jScheduleTime        :: !(Maybe DateTime')
+    { _jStatus :: !(Maybe Status)
+    , _jState :: !(Maybe JobState)
+    , _jLastAttemptTime :: !(Maybe DateTime')
+    , _jRetryConfig :: !(Maybe RetryConfig)
+    , _jSchedule :: !(Maybe Text)
+    , _jScheduleTime :: !(Maybe DateTime')
     , _jAppEngineHTTPTarget :: !(Maybe AppEngineHTTPTarget)
-    , _jHTTPTarget          :: !(Maybe HTTPTarget)
-    , _jName                :: !(Maybe Text)
-    , _jPubsubTarget        :: !(Maybe PubsubTarget)
-    , _jUserUpdateTime      :: !(Maybe DateTime')
-    , _jTimeZone            :: !(Maybe Text)
-    , _jDescription         :: !(Maybe Text)
+    , _jHTTPTarget :: !(Maybe HTTPTarget)
+    , _jName :: !(Maybe Text)
+    , _jPubsubTarget :: !(Maybe PubsubTarget)
+    , _jUserUpdateTime :: !(Maybe DateTime')
+    , _jTimeZone :: !(Maybe Text)
+    , _jDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1201,8 +1201,8 @@ instance ToJSON PubsubMessageAttributes where
 -- /See:/ 'pubsubTarget' smart constructor.
 data PubsubTarget =
   PubsubTarget'
-    { _ptData       :: !(Maybe Bytes)
-    , _ptTopicName  :: !(Maybe Text)
+    { _ptData :: !(Maybe Bytes)
+    , _ptTopicName :: !(Maybe Text)
     , _ptAttributes :: !(Maybe PubsubTargetAttributes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1269,7 +1269,7 @@ instance ToJSON PubsubTarget where
 data ListJobsResponse =
   ListJobsResponse'
     { _ljrNextPageToken :: !(Maybe Text)
-    , _ljrJobs          :: !(Maybe [Job])
+    , _ljrJobs :: !(Maybe [Job])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1404,9 +1404,9 @@ instance ToJSON LocationMetadata where
 -- /See:/ 'appEngineRouting' smart constructor.
 data AppEngineRouting =
   AppEngineRouting'
-    { _aerService  :: !(Maybe Text)
-    , _aerVersion  :: !(Maybe Text)
-    , _aerHost     :: !(Maybe Text)
+    { _aerService :: !(Maybe Text)
+    , _aerVersion :: !(Maybe Text)
+    , _aerHost :: !(Maybe Text)
     , _aerInstance :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

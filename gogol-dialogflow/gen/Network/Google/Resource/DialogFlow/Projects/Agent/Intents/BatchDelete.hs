@@ -42,8 +42,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.BatchDelete
     , paibdCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.batchDelete@ method which the
 -- 'ProjectsAgentIntentsBatchDelete' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsAgentIntentsBatchDeleteResource =
 -- /See:/ 'projectsAgentIntentsBatchDelete' smart constructor.
 data ProjectsAgentIntentsBatchDelete =
   ProjectsAgentIntentsBatchDelete'
-    { _paibdParent         :: !Text
-    , _paibdXgafv          :: !(Maybe Xgafv)
+    { _paibdParent :: !Text
+    , _paibdXgafv :: !(Maybe Xgafv)
     , _paibdUploadProtocol :: !(Maybe Text)
-    , _paibdAccessToken    :: !(Maybe Text)
-    , _paibdUploadType     :: !(Maybe Text)
-    , _paibdPayload        :: !GoogleCloudDialogflowV2BatchDeleteIntentsRequest
-    , _paibdCallback       :: !(Maybe Text)
+    , _paibdAccessToken :: !(Maybe Text)
+    , _paibdUploadType :: !(Maybe Text)
+    , _paibdPayload :: !GoogleCloudDialogflowV2BatchDeleteIntentsRequest
+    , _paibdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Delegates.Get
     , usdgDelegateEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.delegates.get@ method which the
 -- 'UsersSettingsDelegatesGet' request conforms to.
@@ -63,7 +63,7 @@ type UsersSettingsDelegatesGetResource =
 -- /See:/ 'usersSettingsDelegatesGet' smart constructor.
 data UsersSettingsDelegatesGet =
   UsersSettingsDelegatesGet'
-    { _usdgUserId        :: !Text
+    { _usdgUserId :: !Text
     , _usdgDelegateEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.NodePools.R
     , plcnprCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.nodePools.rollback@ method which the
 -- 'ProjectsLocationsClustersNodePoolsRollback' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsClustersNodePoolsRollbackResource
 -- /See:/ 'projectsLocationsClustersNodePoolsRollback' smart constructor.
 data ProjectsLocationsClustersNodePoolsRollback =
   ProjectsLocationsClustersNodePoolsRollback'
-    { _plcnprXgafv          :: !(Maybe Xgafv)
+    { _plcnprXgafv :: !(Maybe Xgafv)
     , _plcnprUploadProtocol :: !(Maybe Text)
-    , _plcnprAccessToken    :: !(Maybe Text)
-    , _plcnprUploadType     :: !(Maybe Text)
-    , _plcnprPayload        :: !RollbackNodePoolUpgradeRequest
-    , _plcnprName           :: !Text
-    , _plcnprCallback       :: !(Maybe Text)
+    , _plcnprAccessToken :: !(Maybe Text)
+    , _plcnprUploadType :: !(Maybe Text)
+    , _plcnprPayload :: !RollbackNodePoolUpgradeRequest
+    , _plcnprName :: !Text
+    , _plcnprCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

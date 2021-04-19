@@ -44,8 +44,8 @@ module Network.Google.Resource.ContainerAnalysis.Projects.Notes.List
     , pnlCallback
     ) where
 
-import           Network.Google.ContainerAnalysis.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @containeranalysis.projects.notes.list@ method which the
 -- 'ProjectsNotesList' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsNotesListResource =
 -- /See:/ 'projectsNotesList' smart constructor.
 data ProjectsNotesList =
   ProjectsNotesList'
-    { _pnlParent         :: !Text
-    , _pnlXgafv          :: !(Maybe Xgafv)
+    { _pnlParent :: !Text
+    , _pnlXgafv :: !(Maybe Xgafv)
     , _pnlUploadProtocol :: !(Maybe Text)
-    , _pnlAccessToken    :: !(Maybe Text)
-    , _pnlUploadType     :: !(Maybe Text)
-    , _pnlFilter         :: !(Maybe Text)
-    , _pnlPageToken      :: !(Maybe Text)
-    , _pnlPageSize       :: !(Maybe (Textual Int32))
-    , _pnlCallback       :: !(Maybe Text)
+    , _pnlAccessToken :: !(Maybe Text)
+    , _pnlUploadType :: !(Maybe Text)
+    , _pnlFilter :: !(Maybe Text)
+    , _pnlPageToken :: !(Maybe Text)
+    , _pnlPageSize :: !(Maybe (Textual Int32))
+    , _pnlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,15 +17,15 @@
 --
 module Network.Google.IAMCredentials.Types.Product where
 
-import           Network.Google.IAMCredentials.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.IAMCredentials.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'generateIdTokenRequest' smart constructor.
 data GenerateIdTokenRequest =
   GenerateIdTokenRequest'
-    { _gitrAudience     :: !(Maybe Text)
-    , _gitrDelegates    :: !(Maybe [Text])
+    { _gitrAudience :: !(Maybe Text)
+    , _gitrDelegates :: !(Maybe [Text])
     , _gitrIncludeEmail :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -101,7 +101,7 @@ instance ToJSON GenerateIdTokenRequest where
 data GenerateAccessTokenResponse =
   GenerateAccessTokenResponse'
     { _gatrAccessToken :: !(Maybe Text)
-    , _gatrExpireTime  :: !(Maybe DateTime')
+    , _gatrExpireTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -151,7 +151,7 @@ instance ToJSON GenerateAccessTokenResponse where
 -- /See:/ 'signJwtResponse' smart constructor.
 data SignJwtResponse =
   SignJwtResponse'
-    { _sjrKeyId     :: !(Maybe Text)
+    { _sjrKeyId :: !(Maybe Text)
     , _sjrSignedJwt :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -198,7 +198,7 @@ instance ToJSON SignJwtResponse where
 data SignBlobRequest =
   SignBlobRequest'
     { _sbrDelegates :: !(Maybe [Text])
-    , _sbrPayload   :: !(Maybe Bytes)
+    , _sbrPayload :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -256,7 +256,7 @@ instance ToJSON SignBlobRequest where
 -- /See:/ 'generateIdentityBindingAccessTokenRequest' smart constructor.
 data GenerateIdentityBindingAccessTokenRequest =
   GenerateIdentityBindingAccessTokenRequest'
-    { _gibatrJwt   :: !(Maybe Text)
+    { _gibatrJwt :: !(Maybe Text)
     , _gibatrScope :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -342,8 +342,8 @@ instance ToJSON
 data GenerateAccessTokenRequest =
   GenerateAccessTokenRequest'
     { _gatrDelegates :: !(Maybe [Text])
-    , _gatrLifetime  :: !(Maybe GDuration)
-    , _gatrScope     :: !(Maybe [Text])
+    , _gatrLifetime :: !(Maybe GDuration)
+    , _gatrScope :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -421,7 +421,7 @@ instance ToJSON GenerateAccessTokenRequest where
 data GenerateIdentityBindingAccessTokenResponse =
   GenerateIdentityBindingAccessTokenResponse'
     { _gibatrAccessToken :: !(Maybe Text)
-    , _gibatrExpireTime  :: !(Maybe DateTime')
+    , _gibatrExpireTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -478,7 +478,7 @@ instance ToJSON
 data SignJwtRequest =
   SignJwtRequest'
     { _sjrDelegates :: !(Maybe [Text])
-    , _sjrPayload   :: !(Maybe Text)
+    , _sjrPayload :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -535,7 +535,7 @@ instance ToJSON SignJwtRequest where
 -- /See:/ 'signBlobResponse' smart constructor.
 data SignBlobResponse =
   SignBlobResponse'
-    { _sbrKeyId      :: !(Maybe Text)
+    { _sbrKeyId :: !(Maybe Text)
     , _sbrSignedBlob :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

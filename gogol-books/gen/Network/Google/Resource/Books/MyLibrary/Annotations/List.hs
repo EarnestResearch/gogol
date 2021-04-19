@@ -45,8 +45,8 @@ module Network.Google.Resource.Books.MyLibrary.Annotations.List
     , mlalMaxResults
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.annotations.list@ method which the
 -- 'MyLibraryAnnotationsList' request conforms to.
@@ -74,15 +74,15 @@ type MyLibraryAnnotationsListResource =
 data MyLibraryAnnotationsList =
   MyLibraryAnnotationsList'
     { _mlalContentVersion :: !(Maybe Text)
-    , _mlalShowDeleted    :: !(Maybe Bool)
-    , _mlalUpdatedMax     :: !(Maybe Text)
-    , _mlalUpdatedMin     :: !(Maybe Text)
-    , _mlalLayerIds       :: !(Maybe [Text])
-    , _mlalVolumeId       :: !(Maybe Text)
-    , _mlalSource         :: !(Maybe Text)
-    , _mlalPageToken      :: !(Maybe Text)
-    , _mlalLayerId        :: !(Maybe Text)
-    , _mlalMaxResults     :: !(Maybe (Textual Word32))
+    , _mlalShowDeleted :: !(Maybe Bool)
+    , _mlalUpdatedMax :: !(Maybe Text)
+    , _mlalUpdatedMin :: !(Maybe Text)
+    , _mlalLayerIds :: !(Maybe [Text])
+    , _mlalVolumeId :: !(Maybe Text)
+    , _mlalSource :: !(Maybe Text)
+    , _mlalPageToken :: !(Maybe Text)
+    , _mlalLayerId :: !(Maybe Text)
+    , _mlalMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

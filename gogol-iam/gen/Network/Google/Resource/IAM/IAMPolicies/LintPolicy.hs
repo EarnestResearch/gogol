@@ -57,8 +57,8 @@ module Network.Google.Resource.IAM.IAMPolicies.LintPolicy
     , iplpCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.iamPolicies.lintPolicy@ method which the
 -- 'IAMPoliciesLintPolicy' request conforms to.
@@ -95,12 +95,12 @@ type IAMPoliciesLintPolicyResource =
 -- /See:/ 'iamPoliciesLintPolicy' smart constructor.
 data IAMPoliciesLintPolicy =
   IAMPoliciesLintPolicy'
-    { _iplpXgafv          :: !(Maybe Xgafv)
+    { _iplpXgafv :: !(Maybe Xgafv)
     , _iplpUploadProtocol :: !(Maybe Text)
-    , _iplpAccessToken    :: !(Maybe Text)
-    , _iplpUploadType     :: !(Maybe Text)
-    , _iplpPayload        :: !LintPolicyRequest
-    , _iplpCallback       :: !(Maybe Text)
+    , _iplpAccessToken :: !(Maybe Text)
+    , _iplpUploadType :: !(Maybe Text)
+    , _iplpPayload :: !LintPolicyRequest
+    , _iplpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

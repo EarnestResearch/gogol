@@ -42,8 +42,8 @@ module Network.Google.Resource.ServiceConsumerManagement.Services.TenancyUnits.C
     , stucCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceConsumerManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceConsumerManagement.Types
 
 -- | A resource alias for @serviceconsumermanagement.services.tenancyUnits.create@ method which the
 -- 'ServicesTenancyUnitsCreate' request conforms to.
@@ -65,13 +65,13 @@ type ServicesTenancyUnitsCreateResource =
 -- /See:/ 'servicesTenancyUnitsCreate' smart constructor.
 data ServicesTenancyUnitsCreate =
   ServicesTenancyUnitsCreate'
-    { _stucParent         :: !Text
-    , _stucXgafv          :: !(Maybe Xgafv)
+    { _stucParent :: !Text
+    , _stucXgafv :: !(Maybe Xgafv)
     , _stucUploadProtocol :: !(Maybe Text)
-    , _stucAccessToken    :: !(Maybe Text)
-    , _stucUploadType     :: !(Maybe Text)
-    , _stucPayload        :: !CreateTenancyUnitRequest
-    , _stucCallback       :: !(Maybe Text)
+    , _stucAccessToken :: !(Maybe Text)
+    , _stucUploadType :: !(Maybe Text)
+    , _stucPayload :: !CreateTenancyUnitRequest
+    , _stucCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

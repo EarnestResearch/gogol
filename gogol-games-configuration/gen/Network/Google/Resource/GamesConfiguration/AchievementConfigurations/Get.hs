@@ -37,8 +37,8 @@ module Network.Google.Resource.GamesConfiguration.AchievementConfigurations.Get
     , acgAchievementId
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.achievementConfigurations.get@ method which the
 -- 'AchievementConfigurationsGet' request conforms to.

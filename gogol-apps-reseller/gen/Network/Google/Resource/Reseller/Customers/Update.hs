@@ -37,8 +37,8 @@ module Network.Google.Resource.Reseller.Customers.Update
     , cuCustomerId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.customers.update@ method which the
 -- 'CustomersUpdate' request conforms to.
@@ -56,7 +56,7 @@ type CustomersUpdateResource =
 -- /See:/ 'customersUpdate' smart constructor.
 data CustomersUpdate =
   CustomersUpdate'
-    { _cuPayload    :: !Customer
+    { _cuPayload :: !Customer
     , _cuCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

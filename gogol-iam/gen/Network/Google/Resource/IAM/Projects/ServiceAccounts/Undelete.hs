@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Undelete
     , psauCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.undelete@ method which the
 -- 'ProjectsServiceAccountsUndelete' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsServiceAccountsUndeleteResource =
 -- /See:/ 'projectsServiceAccountsUndelete' smart constructor.
 data ProjectsServiceAccountsUndelete =
   ProjectsServiceAccountsUndelete'
-    { _psauXgafv          :: !(Maybe Xgafv)
+    { _psauXgafv :: !(Maybe Xgafv)
     , _psauUploadProtocol :: !(Maybe Text)
-    , _psauAccessToken    :: !(Maybe Text)
-    , _psauUploadType     :: !(Maybe Text)
-    , _psauPayload        :: !UndeleteServiceAccountRequest
-    , _psauName           :: !Text
-    , _psauCallback       :: !(Maybe Text)
+    , _psauAccessToken :: !(Maybe Text)
+    , _psauUploadType :: !(Maybe Text)
+    , _psauPayload :: !UndeleteServiceAccountRequest
+    , _psauName :: !Text
+    , _psauCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

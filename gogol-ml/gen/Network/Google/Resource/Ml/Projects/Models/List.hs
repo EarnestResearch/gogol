@@ -47,8 +47,8 @@ module Network.Google.Resource.Ml.Projects.Models.List
     , pmlCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.models.list@ method which the
 -- 'ProjectsModelsList' request conforms to.
@@ -75,15 +75,15 @@ type ProjectsModelsListResource =
 -- /See:/ 'projectsModelsList' smart constructor.
 data ProjectsModelsList =
   ProjectsModelsList'
-    { _pmlParent         :: !Text
-    , _pmlXgafv          :: !(Maybe Xgafv)
+    { _pmlParent :: !Text
+    , _pmlXgafv :: !(Maybe Xgafv)
     , _pmlUploadProtocol :: !(Maybe Text)
-    , _pmlAccessToken    :: !(Maybe Text)
-    , _pmlUploadType     :: !(Maybe Text)
-    , _pmlFilter         :: !(Maybe Text)
-    , _pmlPageToken      :: !(Maybe Text)
-    , _pmlPageSize       :: !(Maybe (Textual Int32))
-    , _pmlCallback       :: !(Maybe Text)
+    , _pmlAccessToken :: !(Maybe Text)
+    , _pmlUploadType :: !(Maybe Text)
+    , _pmlFilter :: !(Maybe Text)
+    , _pmlPageToken :: !(Maybe Text)
+    , _pmlPageSize :: !(Maybe (Textual Int32))
+    , _pmlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

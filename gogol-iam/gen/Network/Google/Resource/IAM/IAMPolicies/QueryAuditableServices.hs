@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.IAMPolicies.QueryAuditableServices
     , ipqasCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.iamPolicies.queryAuditableServices@ method which the
 -- 'IAMPoliciesQueryAuditableServices' request conforms to.
@@ -65,12 +65,12 @@ type IAMPoliciesQueryAuditableServicesResource =
 -- /See:/ 'iamPoliciesQueryAuditableServices' smart constructor.
 data IAMPoliciesQueryAuditableServices =
   IAMPoliciesQueryAuditableServices'
-    { _ipqasXgafv          :: !(Maybe Xgafv)
+    { _ipqasXgafv :: !(Maybe Xgafv)
     , _ipqasUploadProtocol :: !(Maybe Text)
-    , _ipqasAccessToken    :: !(Maybe Text)
-    , _ipqasUploadType     :: !(Maybe Text)
-    , _ipqasPayload        :: !QueryAuditableServicesRequest
-    , _ipqasCallback       :: !(Maybe Text)
+    , _ipqasAccessToken :: !(Maybe Text)
+    , _ipqasUploadType :: !(Maybe Text)
+    , _ipqasPayload :: !QueryAuditableServicesRequest
+    , _ipqasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

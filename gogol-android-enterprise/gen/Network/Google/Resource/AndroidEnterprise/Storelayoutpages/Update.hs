@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutpages.Update
     , suPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutpages.update@ method which the
 -- 'StorelayoutpagesUpdate' request conforms to.
@@ -60,8 +60,8 @@ type StorelayoutpagesUpdateResource =
 data StorelayoutpagesUpdate =
   StorelayoutpagesUpdate'
     { _suEnterpriseId :: !Text
-    , _suPageId       :: !Text
-    , _suPayload      :: !StorePage
+    , _suPageId :: !Text
+    , _suPayload :: !StorePage
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

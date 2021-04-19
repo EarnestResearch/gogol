@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Notifications.Insert
     , niUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.notifications.insert@ method which the
 -- 'NotificationsInsert' request conforms to.
@@ -59,8 +59,8 @@ type NotificationsInsertResource =
 -- /See:/ 'notificationsInsert' smart constructor.
 data NotificationsInsert =
   NotificationsInsert'
-    { _niBucket      :: !Text
-    , _niPayload     :: !Notification
+    { _niBucket :: !Text
+    , _niPayload :: !Notification
     , _niUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

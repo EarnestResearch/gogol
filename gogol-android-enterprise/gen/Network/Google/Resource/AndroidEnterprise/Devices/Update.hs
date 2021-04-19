@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.Devices.Update
     , duDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.devices.update@ method which the
 -- 'DevicesUpdate' request conforms to.
@@ -63,11 +63,11 @@ type DevicesUpdateResource =
 -- /See:/ 'devicesUpdate' smart constructor.
 data DevicesUpdate =
   DevicesUpdate'
-    { _duUpdateMask   :: !(Maybe Text)
+    { _duUpdateMask :: !(Maybe Text)
     , _duEnterpriseId :: !Text
-    , _duPayload      :: !Device
-    , _duUserId       :: !Text
-    , _duDeviceId     :: !Text
+    , _duPayload :: !Device
+    , _duUserId :: !Text
+    , _duDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

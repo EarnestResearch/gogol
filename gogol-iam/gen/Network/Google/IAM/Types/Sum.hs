@@ -16,7 +16,7 @@
 --
 module Network.Google.IAM.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The output format of the private key. The default value is
 -- \`TYPE_GOOGLE_CREDENTIALS_FILE\`, which is the Google Credentials File

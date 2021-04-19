@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Routers.Update
     , ruRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.update@ method which the
 -- 'RoutersUpdate' request conforms to.
@@ -66,10 +66,10 @@ type RoutersUpdateResource =
 data RoutersUpdate =
   RoutersUpdate'
     { _ruRequestId :: !(Maybe Text)
-    , _ruProject   :: !Text
-    , _ruRouter    :: !Text
-    , _ruPayload   :: !Router
-    , _ruRegion    :: !Text
+    , _ruProject :: !Text
+    , _ruRouter :: !Text
+    , _ruPayload :: !Router
+    , _ruRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

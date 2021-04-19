@@ -37,8 +37,8 @@ module Network.Google.Resource.Tasks.Tasks.Get
     , tgTask
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasks.get@ method which the
 -- 'TasksGet' request conforms to.
@@ -57,7 +57,7 @@ type TasksGetResource =
 data TasksGet =
   TasksGet'
     { _tgTaskList :: !Text
-    , _tgTask     :: !Text
+    , _tgTask :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Fitness.Users.DataSet.Aggregate
     , udsaUserId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataset.aggregate@ method which the
 -- 'UsersDataSetAggregate' request conforms to.
@@ -64,7 +64,7 @@ type UsersDataSetAggregateResource =
 data UsersDataSetAggregate =
   UsersDataSetAggregate'
     { _udsaPayload :: !AggregateRequest
-    , _udsaUserId  :: !Text
+    , _udsaUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

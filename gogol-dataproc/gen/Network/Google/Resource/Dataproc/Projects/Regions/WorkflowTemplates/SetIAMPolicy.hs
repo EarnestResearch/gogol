@@ -43,8 +43,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.WorkflowTemplates.SetIA
     , prwtsipCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.workflowTemplates.setIamPolicy@ method which the
 -- 'ProjectsRegionsWorkflowTemplatesSetIAMPolicy' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsRegionsWorkflowTemplatesSetIAMPolicyResource
 -- /See:/ 'projectsRegionsWorkflowTemplatesSetIAMPolicy' smart constructor.
 data ProjectsRegionsWorkflowTemplatesSetIAMPolicy =
   ProjectsRegionsWorkflowTemplatesSetIAMPolicy'
-    { _prwtsipXgafv          :: !(Maybe Xgafv)
+    { _prwtsipXgafv :: !(Maybe Xgafv)
     , _prwtsipUploadProtocol :: !(Maybe Text)
-    , _prwtsipAccessToken    :: !(Maybe Text)
-    , _prwtsipUploadType     :: !(Maybe Text)
-    , _prwtsipPayload        :: !SetIAMPolicyRequest
-    , _prwtsipResource       :: !Text
-    , _prwtsipCallback       :: !(Maybe Text)
+    , _prwtsipAccessToken :: !(Maybe Text)
+    , _prwtsipUploadType :: !(Maybe Text)
+    , _prwtsipPayload :: !SetIAMPolicyRequest
+    , _prwtsipResource :: !Text
+    , _prwtsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

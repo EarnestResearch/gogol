@@ -42,8 +42,8 @@ module Network.Google.Resource.ServiceManagement.Services.Rollouts.Get
     , srgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.rollouts.get@ method which the
 -- 'ServicesRolloutsGet' request conforms to.
@@ -65,13 +65,13 @@ type ServicesRolloutsGetResource =
 -- /See:/ 'servicesRolloutsGet' smart constructor.
 data ServicesRolloutsGet =
   ServicesRolloutsGet'
-    { _srgXgafv          :: !(Maybe Xgafv)
+    { _srgXgafv :: !(Maybe Xgafv)
     , _srgUploadProtocol :: !(Maybe Text)
-    , _srgAccessToken    :: !(Maybe Text)
-    , _srgUploadType     :: !(Maybe Text)
-    , _srgServiceName    :: !Text
-    , _srgRolloutId      :: !Text
-    , _srgCallback       :: !(Maybe Text)
+    , _srgAccessToken :: !(Maybe Text)
+    , _srgUploadType :: !(Maybe Text)
+    , _srgServiceName :: !Text
+    , _srgRolloutId :: !Text
+    , _srgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

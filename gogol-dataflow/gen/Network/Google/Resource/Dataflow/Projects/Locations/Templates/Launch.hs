@@ -47,8 +47,8 @@ module Network.Google.Resource.Dataflow.Projects.Locations.Templates.Launch
     , pltlDynamicTemplateGcsPath
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.locations.templates.launch@ method which the
 -- 'ProjectsLocationsTemplatesLaunch' request conforms to.
@@ -77,18 +77,18 @@ type ProjectsLocationsTemplatesLaunchResource =
 -- /See:/ 'projectsLocationsTemplatesLaunch' smart constructor.
 data ProjectsLocationsTemplatesLaunch =
   ProjectsLocationsTemplatesLaunch'
-    { _pltlXgafv                          :: !(Maybe Xgafv)
-    , _pltlValidateOnly                   :: !(Maybe Bool)
-    , _pltlUploadProtocol                 :: !(Maybe Text)
-    , _pltlLocation                       :: !Text
-    , _pltlAccessToken                    :: !(Maybe Text)
-    , _pltlUploadType                     :: !(Maybe Text)
-    , _pltlPayload                        :: !LaunchTemplateParameters
+    { _pltlXgafv :: !(Maybe Xgafv)
+    , _pltlValidateOnly :: !(Maybe Bool)
+    , _pltlUploadProtocol :: !(Maybe Text)
+    , _pltlLocation :: !Text
+    , _pltlAccessToken :: !(Maybe Text)
+    , _pltlUploadType :: !(Maybe Text)
+    , _pltlPayload :: !LaunchTemplateParameters
     , _pltlDynamicTemplateStagingLocation :: !(Maybe Text)
-    , _pltlGcsPath                        :: !(Maybe Text)
-    , _pltlProjectId                      :: !Text
-    , _pltlCallback                       :: !(Maybe Text)
-    , _pltlDynamicTemplateGcsPath         :: !(Maybe Text)
+    , _pltlGcsPath :: !(Maybe Text)
+    , _pltlProjectId :: !Text
+    , _pltlCallback :: !(Maybe Text)
+    , _pltlDynamicTemplateGcsPath :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Achievements.Reveal
     , arAchievementId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.achievements.reveal@ method which the
 -- 'AchievementsReveal' request conforms to.

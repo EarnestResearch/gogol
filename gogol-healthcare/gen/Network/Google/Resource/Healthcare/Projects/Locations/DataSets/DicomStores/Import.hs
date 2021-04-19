@@ -46,8 +46,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdsiCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.import@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresImport' request conforms to.
@@ -73,13 +73,13 @@ type ProjectsLocationsDataSetsDicomStoresImportResource
 -- /See:/ 'projectsLocationsDataSetsDicomStoresImport' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresImport =
   ProjectsLocationsDataSetsDicomStoresImport'
-    { _pldsdsiXgafv          :: !(Maybe Xgafv)
+    { _pldsdsiXgafv :: !(Maybe Xgafv)
     , _pldsdsiUploadProtocol :: !(Maybe Text)
-    , _pldsdsiAccessToken    :: !(Maybe Text)
-    , _pldsdsiUploadType     :: !(Maybe Text)
-    , _pldsdsiPayload        :: !ImportDicomDataRequest
-    , _pldsdsiName           :: !Text
-    , _pldsdsiCallback       :: !(Maybe Text)
+    , _pldsdsiAccessToken :: !(Maybe Text)
+    , _pldsdsiUploadType :: !(Maybe Text)
+    , _pldsdsiPayload :: !ImportDicomDataRequest
+    , _pldsdsiName :: !Text
+    , _pldsdsiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

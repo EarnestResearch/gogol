@@ -47,8 +47,8 @@ module Network.Google.Resource.Directory.Users.List
     , ulMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.list@ method which the
 -- 'UsersList' request conforms to.
@@ -77,18 +77,18 @@ type UsersListResource =
 -- /See:/ 'usersList' smart constructor.
 data UsersList =
   UsersList'
-    { _ulEvent           :: !(Maybe UsersListEvent)
-    , _ulOrderBy         :: !(Maybe UsersListOrderBy)
-    , _ulViewType        :: !UsersListViewType
+    { _ulEvent :: !(Maybe UsersListEvent)
+    , _ulOrderBy :: !(Maybe UsersListOrderBy)
+    , _ulViewType :: !UsersListViewType
     , _ulCustomFieldMask :: !(Maybe Text)
-    , _ulDomain          :: !(Maybe Text)
-    , _ulShowDeleted     :: !(Maybe Text)
-    , _ulSortOrder       :: !(Maybe UsersListSortOrder)
-    , _ulCustomer        :: !(Maybe Text)
-    , _ulQuery           :: !(Maybe Text)
-    , _ulProjection      :: !UsersListProjection
-    , _ulPageToken       :: !(Maybe Text)
-    , _ulMaxResults      :: !(Maybe (Textual Int32))
+    , _ulDomain :: !(Maybe Text)
+    , _ulShowDeleted :: !(Maybe Text)
+    , _ulSortOrder :: !(Maybe UsersListSortOrder)
+    , _ulCustomer :: !(Maybe Text)
+    , _ulQuery :: !(Maybe Text)
+    , _ulProjection :: !UsersListProjection
+    , _ulPageToken :: !(Maybe Text)
+    , _ulMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdsssirrDicomWebPath
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.studies.series.instances.retrieveRendered@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesRetrieveRendered' request conforms to.
@@ -71,13 +71,13 @@ type ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesRetrieveRenderedR
 -- /See:/ 'projectsLocationsDataSetsDicomStoresStudiesSeriesInstancesRetrieveRendered' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesRetrieveRendered =
   ProjectsLocationsDataSetsDicomStoresStudiesSeriesInstancesRetrieveRendered'
-    { _pldsdsssirrParent         :: !Text
-    , _pldsdsssirrXgafv          :: !(Maybe Xgafv)
+    { _pldsdsssirrParent :: !Text
+    , _pldsdsssirrXgafv :: !(Maybe Xgafv)
     , _pldsdsssirrUploadProtocol :: !(Maybe Text)
-    , _pldsdsssirrAccessToken    :: !(Maybe Text)
-    , _pldsdsssirrUploadType     :: !(Maybe Text)
-    , _pldsdsssirrCallback       :: !(Maybe Text)
-    , _pldsdsssirrDicomWebPath   :: !Text
+    , _pldsdsssirrAccessToken :: !(Maybe Text)
+    , _pldsdsssirrUploadType :: !(Maybe Text)
+    , _pldsdsssirrCallback :: !(Maybe Text)
+    , _pldsdsssirrDicomWebPath :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

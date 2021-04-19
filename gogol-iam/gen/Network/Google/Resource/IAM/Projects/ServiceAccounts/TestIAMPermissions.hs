@@ -43,8 +43,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.TestIAMPermissions
     , psatipCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.testIamPermissions@ method which the
 -- 'ProjectsServiceAccountsTestIAMPermissions' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsServiceAccountsTestIAMPermissionsResource
 -- /See:/ 'projectsServiceAccountsTestIAMPermissions' smart constructor.
 data ProjectsServiceAccountsTestIAMPermissions =
   ProjectsServiceAccountsTestIAMPermissions'
-    { _psatipXgafv          :: !(Maybe Xgafv)
+    { _psatipXgafv :: !(Maybe Xgafv)
     , _psatipUploadProtocol :: !(Maybe Text)
-    , _psatipAccessToken    :: !(Maybe Text)
-    , _psatipUploadType     :: !(Maybe Text)
-    , _psatipPayload        :: !TestIAMPermissionsRequest
-    , _psatipResource       :: !Text
-    , _psatipCallback       :: !(Maybe Text)
+    , _psatipAccessToken :: !(Maybe Text)
+    , _psatipUploadType :: !(Maybe Text)
+    , _psatipPayload :: !TestIAMPermissionsRequest
+    , _psatipResource :: !Text
+    , _psatipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

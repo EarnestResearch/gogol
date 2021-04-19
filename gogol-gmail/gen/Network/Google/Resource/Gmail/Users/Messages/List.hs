@@ -41,8 +41,8 @@ module Network.Google.Resource.Gmail.Users.Messages.List
     , umlMaxResults
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.list@ method which the
 -- 'UsersMessagesList' request conforms to.
@@ -65,12 +65,12 @@ type UsersMessagesListResource =
 -- /See:/ 'usersMessagesList' smart constructor.
 data UsersMessagesList =
   UsersMessagesList'
-    { _umlQ                :: !(Maybe Text)
-    , _umlUserId           :: !Text
+    { _umlQ :: !(Maybe Text)
+    , _umlUserId :: !Text
     , _umlIncludeSpamTrash :: !Bool
-    , _umlLabelIds         :: !(Maybe [Text])
-    , _umlPageToken        :: !(Maybe Text)
-    , _umlMaxResults       :: !(Textual Word32)
+    , _umlLabelIds :: !(Maybe [Text])
+    , _umlPageToken :: !(Maybe Text)
+    , _umlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

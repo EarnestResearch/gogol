@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.List
     , faglMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.list@ method which the
 -- 'FloodlightActivityGroupsList' request conforms to.
@@ -84,15 +84,15 @@ type FloodlightActivityGroupsListResource =
 data FloodlightActivityGroupsList =
   FloodlightActivityGroupsList'
     { _faglFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _faglAdvertiserId              :: !(Maybe (Textual Int64))
-    , _faglSearchString              :: !(Maybe Text)
-    , _faglIds                       :: !(Maybe [Textual Int64])
-    , _faglProFileId                 :: !(Textual Int64)
-    , _faglSortOrder                 :: !FloodlightActivityGroupsListSortOrder
-    , _faglPageToken                 :: !(Maybe Text)
-    , _faglSortField                 :: !FloodlightActivityGroupsListSortField
-    , _faglType                      :: !(Maybe FloodlightActivityGroupsListType)
-    , _faglMaxResults                :: !(Textual Int32)
+    , _faglAdvertiserId :: !(Maybe (Textual Int64))
+    , _faglSearchString :: !(Maybe Text)
+    , _faglIds :: !(Maybe [Textual Int64])
+    , _faglProFileId :: !(Textual Int64)
+    , _faglSortOrder :: !FloodlightActivityGroupsListSortOrder
+    , _faglPageToken :: !(Maybe Text)
+    , _faglSortField :: !FloodlightActivityGroupsListSortField
+    , _faglType :: !(Maybe FloodlightActivityGroupsListType)
+    , _faglMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

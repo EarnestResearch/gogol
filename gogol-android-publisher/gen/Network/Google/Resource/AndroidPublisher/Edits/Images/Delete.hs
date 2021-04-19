@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Images.Delete
     , eidEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.images.delete@ method which the
 -- 'EditsImagesDelete' request conforms to.
@@ -64,10 +64,10 @@ type EditsImagesDeleteResource =
 data EditsImagesDelete =
   EditsImagesDelete'
     { _eidPackageName :: !Text
-    , _eidImageType   :: !EditsImagesDeleteImageType
-    , _eidImageId     :: !Text
-    , _eidLanguage    :: !Text
-    , _eidEditId      :: !Text
+    , _eidImageType :: !EditsImagesDeleteImageType
+    , _eidImageId :: !Text
+    , _eidLanguage :: !Text
+    , _eidEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

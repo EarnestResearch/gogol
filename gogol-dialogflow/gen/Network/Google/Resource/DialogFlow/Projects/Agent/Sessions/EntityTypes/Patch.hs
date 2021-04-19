@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.EntityTypes.Pa
     , paSetpCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.entityTypes.patch@ method which the
 -- 'ProjectsAgentSessionsEntityTypesPatch' request conforms to.
@@ -69,14 +69,14 @@ type ProjectsAgentSessionsEntityTypesPatchResource =
 -- /See:/ 'projectsAgentSessionsEntityTypesPatch' smart constructor.
 data ProjectsAgentSessionsEntityTypesPatch =
   ProjectsAgentSessionsEntityTypesPatch'
-    { _paSetpXgafv          :: !(Maybe Xgafv)
+    { _paSetpXgafv :: !(Maybe Xgafv)
     , _paSetpUploadProtocol :: !(Maybe Text)
-    , _paSetpUpdateMask     :: !(Maybe GFieldMask)
-    , _paSetpAccessToken    :: !(Maybe Text)
-    , _paSetpUploadType     :: !(Maybe Text)
-    , _paSetpPayload        :: !GoogleCloudDialogflowV2SessionEntityType
-    , _paSetpName           :: !Text
-    , _paSetpCallback       :: !(Maybe Text)
+    , _paSetpUpdateMask :: !(Maybe GFieldMask)
+    , _paSetpAccessToken :: !(Maybe Text)
+    , _paSetpUploadType :: !(Maybe Text)
+    , _paSetpPayload :: !GoogleCloudDialogflowV2SessionEntityType
+    , _paSetpName :: !Text
+    , _paSetpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

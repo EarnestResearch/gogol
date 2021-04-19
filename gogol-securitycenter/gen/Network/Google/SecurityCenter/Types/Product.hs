@@ -17,8 +17,8 @@
 --
 module Network.Google.SecurityCenter.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types.Sum
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
@@ -60,7 +60,7 @@ import           Network.Google.SecurityCenter.Types.Sum
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -121,9 +121,9 @@ instance ToJSON Status where
 -- /See:/ 'listFindingsResponse' smart constructor.
 data ListFindingsResponse =
   ListFindingsResponse'
-    { _lfrReadTime            :: !(Maybe DateTime')
-    , _lfrNextPageToken       :: !(Maybe Text)
-    , _lfrTotalSize           :: !(Maybe (Textual Int32))
+    { _lfrReadTime :: !(Maybe DateTime')
+    , _lfrNextPageToken :: !(Maybe Text)
+    , _lfrTotalSize :: !(Maybe (Textual Int32))
     , _lfrListFindingsResults :: !(Maybe [ListFindingsResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -218,7 +218,7 @@ instance ToJSON ListFindingsResponse where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -273,9 +273,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -352,7 +352,7 @@ instance ToJSON Expr where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -428,9 +428,9 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'groupFindingsResponse' smart constructor.
 data GroupFindingsResponse =
   GroupFindingsResponse'
-    { _gfrReadTime       :: !(Maybe DateTime')
-    , _gfrNextPageToken  :: !(Maybe Text)
-    , _gfrTotalSize      :: !(Maybe (Textual Int32))
+    { _gfrReadTime :: !(Maybe DateTime')
+    , _gfrNextPageToken :: !(Maybe Text)
+    , _gfrTotalSize :: !(Maybe (Textual Int32))
     , _gfrGroupByResults :: !(Maybe [GroupResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -534,10 +534,10 @@ instance ToJSON RunAssetDiscoveryRequest where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -632,16 +632,16 @@ instance ToJSON Operation where
 -- /See:/ 'finding' smart constructor.
 data Finding =
   Finding'
-    { _fParent           :: !(Maybe Text)
+    { _fParent :: !(Maybe Text)
     , _fSourceProperties :: !(Maybe FindingSourceProperties)
-    , _fState            :: !(Maybe FindingState)
-    , _fResourceName     :: !(Maybe Text)
-    , _fSecurityMarks    :: !(Maybe SecurityMarks)
-    , _fCategory         :: !(Maybe Text)
-    , _fExternalURI      :: !(Maybe Text)
-    , _fEventTime        :: !(Maybe DateTime')
-    , _fName             :: !(Maybe Text)
-    , _fCreateTime       :: !(Maybe DateTime')
+    , _fState :: !(Maybe FindingState)
+    , _fResourceName :: !(Maybe Text)
+    , _fSecurityMarks :: !(Maybe SecurityMarks)
+    , _fCategory :: !(Maybe Text)
+    , _fExternalURI :: !(Maybe Text)
+    , _fEventTime :: !(Maybe DateTime')
+    , _fName :: !(Maybe Text)
+    , _fCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -816,7 +816,7 @@ instance ToJSON Empty where
 -- /See:/ 'listFindingsResult' smart constructor.
 data ListFindingsResult =
   ListFindingsResult'
-    { _lfrFinding     :: !(Maybe Finding)
+    { _lfrFinding :: !(Maybe Finding)
     , _lfrStateChange :: !(Maybe ListFindingsResultStateChange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -865,11 +865,11 @@ instance ToJSON ListFindingsResult where
 -- /See:/ 'groupAssetsRequest' smart constructor.
 data GroupAssetsRequest =
   GroupAssetsRequest'
-    { _garGroupBy         :: !(Maybe Text)
-    , _garReadTime        :: !(Maybe DateTime')
-    , _garFilter          :: !(Maybe Text)
-    , _garPageToken       :: !(Maybe Text)
-    , _garPageSize        :: !(Maybe (Textual Int32))
+    { _garGroupBy :: !(Maybe Text)
+    , _garReadTime :: !(Maybe DateTime')
+    , _garFilter :: !(Maybe Text)
+    , _garPageToken :: !(Maybe Text)
+    , _garPageSize :: !(Maybe (Textual Int32))
     , _garCompareDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1019,11 +1019,11 @@ instance ToJSON GroupAssetsRequest where
 -- /See:/ 'groupFindingsRequest' smart constructor.
 data GroupFindingsRequest =
   GroupFindingsRequest'
-    { _gGroupBy         :: !(Maybe Text)
-    , _gReadTime        :: !(Maybe DateTime')
-    , _gFilter          :: !(Maybe Text)
-    , _gPageToken       :: !(Maybe Text)
-    , _gPageSize        :: !(Maybe (Textual Int32))
+    { _gGroupBy :: !(Maybe Text)
+    , _gReadTime :: !(Maybe DateTime')
+    , _gFilter :: !(Maybe Text)
+    , _gPageToken :: !(Maybe Text)
+    , _gPageSize :: !(Maybe (Textual Int32))
     , _gCompareDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1163,7 +1163,7 @@ instance ToJSON GroupFindingsRequest where
 data AssetDiscoveryConfig =
   AssetDiscoveryConfig'
     { _adcInclusionMode :: !(Maybe AssetDiscoveryConfigInclusionMode)
-    , _adcProjectIds    :: !(Maybe [Text])
+    , _adcProjectIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1219,13 +1219,13 @@ instance ToJSON AssetDiscoveryConfig where
 -- /See:/ 'asset' smart constructor.
 data Asset =
   Asset'
-    { _aSecurityMarks            :: !(Maybe SecurityMarks)
-    , _aResourceProperties       :: !(Maybe AssetResourceProperties)
-    , _aUpdateTime               :: !(Maybe DateTime')
+    { _aSecurityMarks :: !(Maybe SecurityMarks)
+    , _aResourceProperties :: !(Maybe AssetResourceProperties)
+    , _aUpdateTime :: !(Maybe DateTime')
     , _aSecurityCenterProperties :: !(Maybe SecurityCenterProperties)
-    , _aName                     :: !(Maybe Text)
-    , _aIAMPolicy                :: !(Maybe IAMPolicy)
-    , _aCreateTime               :: !(Maybe DateTime')
+    , _aName :: !(Maybe Text)
+    , _aIAMPolicy :: !(Maybe IAMPolicy)
+    , _aCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1342,7 +1342,7 @@ instance ToJSON Asset where
 -- /See:/ 'securityMarks' smart constructor.
 data SecurityMarks =
   SecurityMarks'
-    { _smName  :: !(Maybe Text)
+    { _smName :: !(Maybe Text)
     , _smMarks :: !(Maybe SecurityMarksMarks)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1469,7 +1469,7 @@ data OrganizationSettings =
   OrganizationSettings'
     { _osAssetDiscoveryConfig :: !(Maybe AssetDiscoveryConfig)
     , _osEnableAssetDiscovery :: !(Maybe Bool)
-    , _osName                 :: !(Maybe Text)
+    , _osName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1539,7 +1539,7 @@ instance ToJSON OrganizationSettings where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1632,7 +1632,7 @@ instance ToJSON FindingSourceProperties where
 -- /See:/ 'setFindingStateRequest' smart constructor.
 data SetFindingStateRequest =
   SetFindingStateRequest'
-    { _sfsrState     :: !(Maybe SetFindingStateRequestState)
+    { _sfsrState :: !(Maybe SetFindingStateRequestState)
     , _sfsrStartTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1683,11 +1683,11 @@ instance ToJSON SetFindingStateRequest where
 -- /See:/ 'securityCenterProperties' smart constructor.
 data SecurityCenterProperties =
   SecurityCenterProperties'
-    { _scpResourceType    :: !(Maybe Text)
-    , _scpResourceName    :: !(Maybe Text)
-    , _scpResourceParent  :: !(Maybe Text)
+    { _scpResourceType :: !(Maybe Text)
+    , _scpResourceName :: !(Maybe Text)
+    , _scpResourceParent :: !(Maybe Text)
     , _scpResourceProject :: !(Maybe Text)
-    , _scpResourceOwners  :: !(Maybe [Text])
+    , _scpResourceOwners :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1780,9 +1780,9 @@ instance ToJSON SecurityCenterProperties where
 -- /See:/ 'groupAssetsResponse' smart constructor.
 data GroupAssetsResponse =
   GroupAssetsResponse'
-    { _groReadTime       :: !(Maybe DateTime')
-    , _groNextPageToken  :: !(Maybe Text)
-    , _groTotalSize      :: !(Maybe (Textual Int32))
+    { _groReadTime :: !(Maybe DateTime')
+    , _groNextPageToken :: !(Maybe Text)
+    , _groTotalSize :: !(Maybe (Textual Int32))
     , _groGroupByResults :: !(Maybe [GroupResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1863,7 +1863,7 @@ instance ToJSON GroupAssetsResponse where
 data ListSourcesResponse =
   ListSourcesResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSources       :: !(Maybe [Source])
+    , _lsrSources :: !(Maybe [Source])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1951,7 +1951,7 @@ instance ToJSON GroupResultProperties where
 -- /See:/ 'googleCloudSecuritycenterV1RunAssetDiscoveryResponse' smart constructor.
 data GoogleCloudSecuritycenterV1RunAssetDiscoveryResponse =
   GoogleCloudSecuritycenterV1RunAssetDiscoveryResponse'
-    { _gcsvradrState    :: !(Maybe GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState)
+    { _gcsvradrState :: !(Maybe GoogleCloudSecuritycenterV1RunAssetDiscoveryResponseState)
     , _gcsvradrDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2009,10 +2009,10 @@ instance ToJSON
 -- /See:/ 'listAssetsResponse' smart constructor.
 data ListAssetsResponse =
   ListAssetsResponse'
-    { _larReadTime          :: !(Maybe DateTime')
-    , _larNextPageToken     :: !(Maybe Text)
+    { _larReadTime :: !(Maybe DateTime')
+    , _larNextPageToken :: !(Maybe Text)
     , _larListAssetsResults :: !(Maybe [ListAssetsResult])
-    , _larTotalSize         :: !(Maybe (Textual Int32))
+    , _larTotalSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2175,7 +2175,7 @@ instance ToJSON IAMPolicy where
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sName        :: !(Maybe Text)
+    { _sName :: !(Maybe Text)
     , _sDisplayName :: !(Maybe Text)
     , _sDescription :: !(Maybe Text)
     }
@@ -2288,7 +2288,7 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'listAssetsResult' smart constructor.
 data ListAssetsResult =
   ListAssetsResult'
-    { _larAsset       :: !(Maybe Asset)
+    { _larAsset :: !(Maybe Asset)
     , _larStateChange :: !(Maybe ListAssetsResultStateChange)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2353,9 +2353,9 @@ instance ToJSON ListAssetsResult where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2483,7 +2483,7 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2536,7 +2536,7 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'groupResult' smart constructor.
 data GroupResult =
   GroupResult'
-    { _grCount      :: !(Maybe (Textual Int64))
+    { _grCount :: !(Maybe (Textual Int64))
     , _grProperties :: !(Maybe GroupResultProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2667,7 +2667,7 @@ instance ToJSON SecurityMarksMarks where
 -- /See:/ 'googleCloudSecuritycenterV1beta1RunAssetDiscoveryResponse' smart constructor.
 data GoogleCloudSecuritycenterV1beta1RunAssetDiscoveryResponse =
   GoogleCloudSecuritycenterV1beta1RunAssetDiscoveryResponse'
-    { _gState    :: !(Maybe GoogleCloudSecuritycenterV1beta1RunAssetDiscoveryResponseState)
+    { _gState :: !(Maybe GoogleCloudSecuritycenterV1beta1RunAssetDiscoveryResponseState)
     , _gDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2722,8 +2722,8 @@ instance ToJSON
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

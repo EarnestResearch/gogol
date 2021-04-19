@@ -41,8 +41,8 @@ module Network.Google.Resource.AdExperienceReport.ViolatingSites.List
     , vslCallback
     ) where
 
-import           Network.Google.AdExperienceReport.Types
-import           Network.Google.Prelude
+import Network.Google.AdExperienceReport.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adexperiencereport.violatingSites.list@ method which the
 -- 'ViolatingSitesList' request conforms to.
@@ -63,11 +63,11 @@ type ViolatingSitesListResource =
 -- /See:/ 'violatingSitesList' smart constructor.
 data ViolatingSitesList =
   ViolatingSitesList'
-    { _vslXgafv          :: !(Maybe Xgafv)
+    { _vslXgafv :: !(Maybe Xgafv)
     , _vslUploadProtocol :: !(Maybe Text)
-    , _vslAccessToken    :: !(Maybe Text)
-    , _vslUploadType     :: !(Maybe Text)
-    , _vslCallback       :: !(Maybe Text)
+    , _vslAccessToken :: !(Maybe Text)
+    , _vslUploadType :: !(Maybe Text)
+    , _vslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

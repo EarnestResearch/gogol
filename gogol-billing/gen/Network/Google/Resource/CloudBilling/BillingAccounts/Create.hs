@@ -49,8 +49,8 @@ module Network.Google.Resource.CloudBilling.BillingAccounts.Create
     , bacCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.billingAccounts.create@ method which the
 -- 'BillingAccountsCreate' request conforms to.
@@ -79,12 +79,12 @@ type BillingAccountsCreateResource =
 -- /See:/ 'billingAccountsCreate' smart constructor.
 data BillingAccountsCreate =
   BillingAccountsCreate'
-    { _bacXgafv          :: !(Maybe Xgafv)
+    { _bacXgafv :: !(Maybe Xgafv)
     , _bacUploadProtocol :: !(Maybe Text)
-    , _bacAccessToken    :: !(Maybe Text)
-    , _bacUploadType     :: !(Maybe Text)
-    , _bacPayload        :: !BillingAccount
-    , _bacCallback       :: !(Maybe Text)
+    , _bacAccessToken :: !(Maybe Text)
+    , _bacUploadType :: !(Maybe Text)
+    , _bacPayload :: !BillingAccount
+    , _bacCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

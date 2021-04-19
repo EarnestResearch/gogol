@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.BuiltIn
     , acwbivrType
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.built_in_variables.revert@ method which the
 -- 'AccountsContainersWorkspacesBuiltInVariablesRevert' request conforms to.

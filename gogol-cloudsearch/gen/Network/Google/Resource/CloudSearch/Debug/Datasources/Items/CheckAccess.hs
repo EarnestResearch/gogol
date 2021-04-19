@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Debug.Datasources.Items.CheckAccess
     , ddicaCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.debug.datasources.items.checkAccess@ method which the
 -- 'DebugDatasourcesItemsCheckAccess' request conforms to.
@@ -67,14 +67,14 @@ type DebugDatasourcesItemsCheckAccessResource =
 -- /See:/ 'debugDatasourcesItemsCheckAccess' smart constructor.
 data DebugDatasourcesItemsCheckAccess =
   DebugDatasourcesItemsCheckAccess'
-    { _ddicaXgafv                       :: !(Maybe Xgafv)
-    , _ddicaUploadProtocol              :: !(Maybe Text)
-    , _ddicaAccessToken                 :: !(Maybe Text)
-    , _ddicaUploadType                  :: !(Maybe Text)
-    , _ddicaPayload                     :: !Principal
-    , _ddicaName                        :: !Text
+    { _ddicaXgafv :: !(Maybe Xgafv)
+    , _ddicaUploadProtocol :: !(Maybe Text)
+    , _ddicaAccessToken :: !(Maybe Text)
+    , _ddicaUploadType :: !(Maybe Text)
+    , _ddicaPayload :: !Principal
+    , _ddicaName :: !Text
     , _ddicaDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _ddicaCallback                    :: !(Maybe Text)
+    , _ddicaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

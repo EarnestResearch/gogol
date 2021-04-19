@@ -35,29 +35,32 @@ module Network.Google.Resource.Content.Accounts.Custombatch
 
     -- * Request Lenses
     , accPayload
+    , accDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.custombatch@ method which the
 -- 'AccountsCustombatch' request conforms to.
 type AccountsCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "accounts" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] AccountsCustomBatchRequest :>
-                 Post '[JSON] AccountsCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] AccountsCustomBatchRequest :>
+                   Post '[JSON] AccountsCustomBatchResponse
 
 -- | Retrieves, inserts, updates, and deletes multiple Merchant Center
 -- (sub-)accounts in a single request.
 --
 -- /See:/ 'accountsCustombatch' smart constructor.
-newtype AccountsCustombatch =
+data AccountsCustombatch =
   AccountsCustombatch'
-    { _accPayload :: AccountsCustomBatchRequest
+    { _accPayload :: !AccountsCustomBatchRequest
+    , _accDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,11 +70,13 @@ newtype AccountsCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'accPayload'
+--
+-- * 'accDryRun'
 accountsCustombatch
     :: AccountsCustomBatchRequest -- ^ 'accPayload'
     -> AccountsCustombatch
 accountsCustombatch pAccPayload_ =
-  AccountsCustombatch' {_accPayload = pAccPayload_}
+  AccountsCustombatch' {_accPayload = pAccPayload_, _accDryRun = Nothing}
 
 
 -- | Multipart request metadata.
@@ -79,13 +84,20 @@ accPayload :: Lens' AccountsCustombatch AccountsCustomBatchRequest
 accPayload
   = lens _accPayload (\ s a -> s{_accPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+accDryRun :: Lens' AccountsCustombatch (Maybe Bool)
+accDryRun
+  = lens _accDryRun (\ s a -> s{_accDryRun = a})
+
 instance GoogleRequest AccountsCustombatch where
         type Rs AccountsCustombatch =
              AccountsCustomBatchResponse
         type Scopes AccountsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountsCustombatch'{..}
-          = go (Just AltJSON) _accPayload
+          = go _accDryRun (Just AltJSON) _accPayload
               shoppingContentService
           where go
                   = buildClient

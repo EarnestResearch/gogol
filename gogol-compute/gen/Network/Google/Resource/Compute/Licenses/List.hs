@@ -45,8 +45,8 @@ module Network.Google.Resource.Compute.Licenses.List
     , llMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.list@ method which the
 -- 'LicensesList' request conforms to.
@@ -74,10 +74,10 @@ type LicensesListResource =
 -- /See:/ 'licensesList' smart constructor.
 data LicensesList =
   LicensesList'
-    { _llOrderBy    :: !(Maybe Text)
-    , _llProject    :: !Text
-    , _llFilter     :: !(Maybe Text)
-    , _llPageToken  :: !(Maybe Text)
+    { _llOrderBy :: !(Maybe Text)
+    , _llProject :: !Text
+    , _llFilter :: !(Maybe Text)
+    , _llPageToken :: !(Maybe Text)
     , _llMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

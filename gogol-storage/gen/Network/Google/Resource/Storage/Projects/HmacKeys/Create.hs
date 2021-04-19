@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Create
     , phkcProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.hmacKeys.create@ method which the
 -- 'ProjectsHmacKeysCreate' request conforms to.
@@ -57,7 +57,7 @@ type ProjectsHmacKeysCreateResource =
 data ProjectsHmacKeysCreate =
   ProjectsHmacKeysCreate'
     { _phkcServiceAccountEmail :: !Text
-    , _phkcProjectId           :: !Text
+    , _phkcProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

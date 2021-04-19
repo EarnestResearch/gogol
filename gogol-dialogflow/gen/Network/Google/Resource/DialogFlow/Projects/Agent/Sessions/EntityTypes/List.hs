@@ -43,8 +43,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.EntityTypes.Li
     , paSetlCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.entityTypes.list@ method which the
 -- 'ProjectsAgentSessionsEntityTypesList' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsAgentSessionsEntityTypesListResource =
 -- /See:/ 'projectsAgentSessionsEntityTypesList' smart constructor.
 data ProjectsAgentSessionsEntityTypesList =
   ProjectsAgentSessionsEntityTypesList'
-    { _paSetlParent         :: !Text
-    , _paSetlXgafv          :: !(Maybe Xgafv)
+    { _paSetlParent :: !Text
+    , _paSetlXgafv :: !(Maybe Xgafv)
     , _paSetlUploadProtocol :: !(Maybe Text)
-    , _paSetlAccessToken    :: !(Maybe Text)
-    , _paSetlUploadType     :: !(Maybe Text)
-    , _paSetlPageToken      :: !(Maybe Text)
-    , _paSetlPageSize       :: !(Maybe (Textual Int32))
-    , _paSetlCallback       :: !(Maybe Text)
+    , _paSetlAccessToken :: !(Maybe Text)
+    , _paSetlUploadType :: !(Maybe Text)
+    , _paSetlPageToken :: !(Maybe Text)
+    , _paSetlPageSize :: !(Maybe (Textual Int32))
+    , _paSetlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.AppEngine.Apps.Locations.List
     , allCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.locations.list@ method which the
 -- 'AppsLocationsList' request conforms to.
@@ -70,15 +70,15 @@ type AppsLocationsListResource =
 -- /See:/ 'appsLocationsList' smart constructor.
 data AppsLocationsList =
   AppsLocationsList'
-    { _allXgafv          :: !(Maybe Xgafv)
+    { _allXgafv :: !(Maybe Xgafv)
     , _allUploadProtocol :: !(Maybe Text)
-    , _allAccessToken    :: !(Maybe Text)
-    , _allUploadType     :: !(Maybe Text)
-    , _allAppsId         :: !Text
-    , _allFilter         :: !(Maybe Text)
-    , _allPageToken      :: !(Maybe Text)
-    , _allPageSize       :: !(Maybe (Textual Int32))
-    , _allCallback       :: !(Maybe Text)
+    , _allAccessToken :: !(Maybe Text)
+    , _allUploadType :: !(Maybe Text)
+    , _allAppsId :: !Text
+    , _allFilter :: !(Maybe Text)
+    , _allPageToken :: !(Maybe Text)
+    , _allPageSize :: !(Maybe (Textual Int32))
+    , _allCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

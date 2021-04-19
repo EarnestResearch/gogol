@@ -16,7 +16,7 @@
 --
 module Network.Google.Dataproc.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. A state message specifying the overall job state.
 data JobStatusState

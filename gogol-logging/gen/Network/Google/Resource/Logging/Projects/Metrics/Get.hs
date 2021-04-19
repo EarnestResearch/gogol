@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.Projects.Metrics.Get
     , pmgCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.metrics.get@ method which the
 -- 'ProjectsMetricsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsMetricsGetResource =
 -- /See:/ 'projectsMetricsGet' smart constructor.
 data ProjectsMetricsGet =
   ProjectsMetricsGet'
-    { _pmgXgafv          :: !(Maybe Xgafv)
+    { _pmgXgafv :: !(Maybe Xgafv)
     , _pmgUploadProtocol :: !(Maybe Text)
-    , _pmgAccessToken    :: !(Maybe Text)
-    , _pmgMetricName     :: !Text
-    , _pmgUploadType     :: !(Maybe Text)
-    , _pmgCallback       :: !(Maybe Text)
+    , _pmgAccessToken :: !(Maybe Text)
+    , _pmgMetricName :: !Text
+    , _pmgUploadType :: !(Maybe Text)
+    , _pmgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

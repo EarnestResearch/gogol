@@ -41,8 +41,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Get
     , psagCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.get@ method which the
 -- 'ProjectsServiceAccountsGet' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsServiceAccountsGetResource =
 -- /See:/ 'projectsServiceAccountsGet' smart constructor.
 data ProjectsServiceAccountsGet =
   ProjectsServiceAccountsGet'
-    { _psagXgafv          :: !(Maybe Xgafv)
+    { _psagXgafv :: !(Maybe Xgafv)
     , _psagUploadProtocol :: !(Maybe Text)
-    , _psagAccessToken    :: !(Maybe Text)
-    , _psagUploadType     :: !(Maybe Text)
-    , _psagName           :: !Text
-    , _psagCallback       :: !(Maybe Text)
+    , _psagAccessToken :: !(Maybe Text)
+    , _psagUploadType :: !(Maybe Text)
+    , _psagName :: !Text
+    , _psagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

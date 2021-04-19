@@ -44,8 +44,8 @@ module Network.Google.Resource.ServiceManagement.Services.Undelete
     , suCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.undelete@ method which the
 -- 'ServicesUndelete' request conforms to.
@@ -68,12 +68,12 @@ type ServicesUndeleteResource =
 -- /See:/ 'servicesUndelete' smart constructor.
 data ServicesUndelete =
   ServicesUndelete'
-    { _suXgafv          :: !(Maybe Xgafv)
+    { _suXgafv :: !(Maybe Xgafv)
     , _suUploadProtocol :: !(Maybe Text)
-    , _suAccessToken    :: !(Maybe Text)
-    , _suUploadType     :: !(Maybe Text)
-    , _suServiceName    :: !Text
-    , _suCallback       :: !(Maybe Text)
+    , _suAccessToken :: !(Maybe Text)
+    , _suUploadType :: !(Maybe Text)
+    , _suServiceName :: !Text
+    , _suCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

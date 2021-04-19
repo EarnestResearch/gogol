@@ -44,8 +44,8 @@ module Network.Google.Resource.Storage.Buckets.Patch
     , bpProjection
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.patch@ method which the
 -- 'BucketsPatch' request conforms to.
@@ -73,14 +73,14 @@ type BucketsPatchResource =
 -- /See:/ 'bucketsPatch' smart constructor.
 data BucketsPatch =
   BucketsPatch'
-    { _bpIfMetagenerationMatch      :: !(Maybe (Textual Int64))
-    , _bpPredefinedACL              :: !(Maybe BucketsPatchPredefinedACL)
-    , _bpBucket                     :: !Text
-    , _bpPayload                    :: !Bucket
+    { _bpIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _bpPredefinedACL :: !(Maybe BucketsPatchPredefinedACL)
+    , _bpBucket :: !Text
+    , _bpPayload :: !Bucket
     , _bpPredefinedDefaultObjectACL :: !(Maybe BucketsPatchPredefinedDefaultObjectACL)
-    , _bpUserProject                :: !(Maybe Text)
-    , _bpIfMetagenerationNotMatch   :: !(Maybe (Textual Int64))
-    , _bpProjection                 :: !(Maybe BucketsPatchProjection)
+    , _bpUserProject :: !(Maybe Text)
+    , _bpIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
+    , _bpProjection :: !(Maybe BucketsPatchProjection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

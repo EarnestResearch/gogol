@@ -17,8 +17,8 @@
 --
 module Network.Google.AppsLicensing.Types.Product where
 
-import           Network.Google.AppsLicensing.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AppsLicensing.Types.Sum
+import Network.Google.Prelude
 
 -- | Template for LicenseAssignment Insert request
 --
@@ -60,10 +60,10 @@ instance ToJSON LicenseAssignmentInsert where
 -- /See:/ 'licenseAssignmentList' smart constructor.
 data LicenseAssignmentList =
   LicenseAssignmentList'
-    { _lalEtag          :: !(Maybe Text)
+    { _lalEtag :: !(Maybe Text)
     , _lalNextPageToken :: !(Maybe Text)
-    , _lalKind          :: !Text
-    , _lalItems         :: !(Maybe [LicenseAssignment])
+    , _lalKind :: !Text
+    , _lalItems :: !(Maybe [LicenseAssignment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -136,13 +136,13 @@ instance ToJSON LicenseAssignmentList where
 data LicenseAssignment =
   LicenseAssignment'
     { _laProductName :: !(Maybe Text)
-    , _laEtags       :: !(Maybe Text)
-    , _laSKUName     :: !(Maybe Text)
-    , _laKind        :: !Text
-    , _laSKUId       :: !(Maybe Text)
-    , _laUserId      :: !(Maybe Text)
-    , _laSelfLink    :: !(Maybe Text)
-    , _laProductId   :: !(Maybe Text)
+    , _laEtags :: !(Maybe Text)
+    , _laSKUName :: !(Maybe Text)
+    , _laKind :: !Text
+    , _laSKUId :: !(Maybe Text)
+    , _laUserId :: !(Maybe Text)
+    , _laSelfLink :: !(Maybe Text)
+    , _laProductId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

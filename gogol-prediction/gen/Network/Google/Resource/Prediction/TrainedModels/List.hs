@@ -38,8 +38,8 @@ module Network.Google.Resource.Prediction.TrainedModels.List
     , tmlMaxResults
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.trainedmodels.list@ method which the
 -- 'TrainedModelsList' request conforms to.
@@ -59,8 +59,8 @@ type TrainedModelsListResource =
 -- /See:/ 'trainedModelsList' smart constructor.
 data TrainedModelsList =
   TrainedModelsList'
-    { _tmlProject    :: !Text
-    , _tmlPageToken  :: !(Maybe Text)
+    { _tmlProject :: !Text
+    , _tmlPageToken :: !(Maybe Text)
     , _tmlMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

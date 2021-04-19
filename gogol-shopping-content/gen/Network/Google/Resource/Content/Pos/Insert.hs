@@ -36,31 +36,34 @@ module Network.Google.Resource.Content.Pos.Insert
     , ppMerchantId
     , ppTargetMerchantId
     , ppPayload
+    , ppDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.insert@ method which the
 -- 'PosInsert' request conforms to.
 type PosInsertResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "pos" :>
              Capture "targetMerchantId" (Textual Word64) :>
                "store" :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] PosStore :> Post '[JSON] PosStore
+                 QueryParam "dryRun" Bool :>
+                   QueryParam "alt" AltJSON :>
+                     ReqBody '[JSON] PosStore :> Post '[JSON] PosStore
 
 -- | Creates a store for the given merchant.
 --
 -- /See:/ 'posInsert' smart constructor.
 data PosInsert =
   PosInsert'
-    { _ppMerchantId       :: !(Textual Word64)
+    { _ppMerchantId :: !(Textual Word64)
     , _ppTargetMerchantId :: !(Textual Word64)
-    , _ppPayload          :: !PosStore
+    , _ppPayload :: !PosStore
+    , _ppDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -74,6 +77,8 @@ data PosInsert =
 -- * 'ppTargetMerchantId'
 --
 -- * 'ppPayload'
+--
+-- * 'ppDryRun'
 posInsert
     :: Word64 -- ^ 'ppMerchantId'
     -> Word64 -- ^ 'ppTargetMerchantId'
@@ -84,6 +89,7 @@ posInsert pPpMerchantId_ pPpTargetMerchantId_ pPpPayload_ =
     { _ppMerchantId = _Coerce # pPpMerchantId_
     , _ppTargetMerchantId = _Coerce # pPpTargetMerchantId_
     , _ppPayload = pPpPayload_
+    , _ppDryRun = Nothing
     }
 
 
@@ -105,12 +111,19 @@ ppPayload :: Lens' PosInsert PosStore
 ppPayload
   = lens _ppPayload (\ s a -> s{_ppPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+ppDryRun :: Lens' PosInsert (Maybe Bool)
+ppDryRun = lens _ppDryRun (\ s a -> s{_ppDryRun = a})
+
 instance GoogleRequest PosInsert where
         type Rs PosInsert = PosStore
         type Scopes PosInsert =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosInsert'{..}
-          = go _ppMerchantId _ppTargetMerchantId (Just AltJSON)
+          = go _ppMerchantId _ppTargetMerchantId _ppDryRun
+              (Just AltJSON)
               _ppPayload
               shoppingContentService
           where go

@@ -38,8 +38,8 @@ module Network.Google.Resource.Blogger.BlogUserInfos.Get
     , buigMaxPosts
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.blogUserInfos.get@ method which the
 -- 'BlogUserInfosGet' request conforms to.
@@ -58,8 +58,8 @@ type BlogUserInfosGetResource =
 -- /See:/ 'blogUserInfosGet' smart constructor.
 data BlogUserInfosGet =
   BlogUserInfosGet'
-    { _buigBlogId   :: !Text
-    , _buigUserId   :: !Text
+    { _buigBlogId :: !Text
+    , _buigUserId :: !Text
     , _buigMaxPosts :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.Users.Get
     , ugUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.get@ method which the
 -- 'UsersGet' request conforms to.
@@ -60,10 +60,10 @@ type UsersGetResource =
 -- /See:/ 'usersGet' smart constructor.
 data UsersGet =
   UsersGet'
-    { _ugViewType        :: !UsersGetViewType
+    { _ugViewType :: !UsersGetViewType
     , _ugCustomFieldMask :: !(Maybe Text)
-    , _ugProjection      :: !UsersGetProjection
-    , _ugUserKey         :: !Text
+    , _ugProjection :: !UsersGetProjection
+    , _ugUserKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

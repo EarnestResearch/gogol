@@ -48,8 +48,8 @@ module Network.Google.Resource.DLP.Projects.Image.Redact
     , pirCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.image.redact@ method which the
 -- 'ProjectsImageRedact' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsImageRedactResource =
 -- /See:/ 'projectsImageRedact' smart constructor.
 data ProjectsImageRedact =
   ProjectsImageRedact'
-    { _pirParent         :: !Text
-    , _pirXgafv          :: !(Maybe Xgafv)
+    { _pirParent :: !Text
+    , _pirXgafv :: !(Maybe Xgafv)
     , _pirUploadProtocol :: !(Maybe Text)
-    , _pirAccessToken    :: !(Maybe Text)
-    , _pirUploadType     :: !(Maybe Text)
-    , _pirPayload        :: !GooglePrivacyDlpV2RedactImageRequest
-    , _pirCallback       :: !(Maybe Text)
+    , _pirAccessToken :: !(Maybe Text)
+    , _pirUploadType :: !(Maybe Text)
+    , _pirPayload :: !GooglePrivacyDlpV2RedactImageRequest
+    , _pirCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

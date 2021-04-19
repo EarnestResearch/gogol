@@ -16,7 +16,7 @@
 --
 module Network.Google.Sheets.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The stacked type for charts that support vertical stacking. Applies to
 -- Area, Bar, Column, Combo, and Stepped Area charts.

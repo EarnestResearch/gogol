@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.ConnectionTypes.Get
     , ctgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.connectionTypes.get@ method which the
 -- 'ConnectionTypesGet' request conforms to.
@@ -58,7 +58,7 @@ type ConnectionTypesGetResource =
 data ConnectionTypesGet =
   ConnectionTypesGet'
     { _ctgProFileId :: !(Textual Int64)
-    , _ctgId        :: !(Textual Int64)
+    , _ctgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

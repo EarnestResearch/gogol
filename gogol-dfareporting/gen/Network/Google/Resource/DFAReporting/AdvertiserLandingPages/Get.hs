@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Get
     , alpgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.get@ method which the
 -- 'AdvertiserLandingPagesGet' request conforms to.
@@ -57,7 +57,7 @@ type AdvertiserLandingPagesGetResource =
 data AdvertiserLandingPagesGet =
   AdvertiserLandingPagesGet'
     { _alpgProFileId :: !(Textual Int64)
-    , _alpgId        :: !(Textual Int64)
+    , _alpgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

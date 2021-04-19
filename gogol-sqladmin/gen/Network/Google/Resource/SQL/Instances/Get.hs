@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Instances.Get
     , igInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.get@ method which the
 -- 'InstancesGet' request conforms to.
@@ -57,7 +57,7 @@ type InstancesGetResource =
 -- /See:/ 'instancesGet' smart constructor.
 data InstancesGet =
   InstancesGet'
-    { _igProject  :: !Text
+    { _igProject :: !Text
     , _igInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

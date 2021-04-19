@@ -47,8 +47,8 @@ module Network.Google.Resource.Testing.Projects.TestMatrices.Cancel
     , ptmcCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Testing.Types
+import Network.Google.Prelude
+import Network.Google.Testing.Types
 
 -- | A resource alias for @testing.projects.testMatrices.cancel@ method which the
 -- 'ProjectsTestMatricesCancel' request conforms to.
@@ -76,13 +76,13 @@ type ProjectsTestMatricesCancelResource =
 -- /See:/ 'projectsTestMatricesCancel' smart constructor.
 data ProjectsTestMatricesCancel =
   ProjectsTestMatricesCancel'
-    { _ptmcXgafv          :: !(Maybe Xgafv)
+    { _ptmcXgafv :: !(Maybe Xgafv)
     , _ptmcUploadProtocol :: !(Maybe Text)
-    , _ptmcTestMatrixId   :: !Text
-    , _ptmcAccessToken    :: !(Maybe Text)
-    , _ptmcUploadType     :: !(Maybe Text)
-    , _ptmcProjectId      :: !Text
-    , _ptmcCallback       :: !(Maybe Text)
+    , _ptmcTestMatrixId :: !Text
+    , _ptmcAccessToken :: !(Maybe Text)
+    , _ptmcUploadType :: !(Maybe Text)
+    , _ptmcProjectId :: !Text
+    , _ptmcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

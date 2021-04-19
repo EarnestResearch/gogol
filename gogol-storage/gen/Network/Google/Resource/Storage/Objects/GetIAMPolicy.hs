@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.Objects.GetIAMPolicy
     , ogipGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.getIamPolicy@ method which the
 -- 'ObjectsGetIAMPolicy' request conforms to.
@@ -61,10 +61,10 @@ type ObjectsGetIAMPolicyResource =
 -- /See:/ 'objectsGetIAMPolicy' smart constructor.
 data ObjectsGetIAMPolicy =
   ObjectsGetIAMPolicy'
-    { _ogipBucket      :: !Text
+    { _ogipBucket :: !Text
     , _ogipUserProject :: !(Maybe Text)
-    , _ogipObject      :: !Text
-    , _ogipGeneration  :: !(Maybe (Textual Int64))
+    , _ogipObject :: !Text
+    , _ogipGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.PubSub.Projects.Subscriptions.Delete
     , psdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.subscriptions.delete@ method which the
 -- 'ProjectsSubscriptionsDelete' request conforms to.
@@ -71,12 +71,12 @@ type ProjectsSubscriptionsDeleteResource =
 -- /See:/ 'projectsSubscriptionsDelete' smart constructor.
 data ProjectsSubscriptionsDelete =
   ProjectsSubscriptionsDelete'
-    { _psdXgafv          :: !(Maybe Xgafv)
+    { _psdXgafv :: !(Maybe Xgafv)
     , _psdUploadProtocol :: !(Maybe Text)
-    , _psdAccessToken    :: !(Maybe Text)
-    , _psdUploadType     :: !(Maybe Text)
-    , _psdSubscription   :: !Text
-    , _psdCallback       :: !(Maybe Text)
+    , _psdAccessToken :: !(Maybe Text)
+    , _psdUploadType :: !(Maybe Text)
+    , _psdSubscription :: !Text
+    , _psdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

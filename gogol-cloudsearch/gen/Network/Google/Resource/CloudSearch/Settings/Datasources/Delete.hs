@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Settings.Datasources.Delete
     , sddCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.datasources.delete@ method which the
 -- 'SettingsDatasourcesDelete' request conforms to.
@@ -64,13 +64,13 @@ type SettingsDatasourcesDeleteResource =
 -- /See:/ 'settingsDatasourcesDelete' smart constructor.
 data SettingsDatasourcesDelete =
   SettingsDatasourcesDelete'
-    { _sddXgafv                       :: !(Maybe Xgafv)
-    , _sddUploadProtocol              :: !(Maybe Text)
-    , _sddAccessToken                 :: !(Maybe Text)
-    , _sddUploadType                  :: !(Maybe Text)
-    , _sddName                        :: !Text
+    { _sddXgafv :: !(Maybe Xgafv)
+    , _sddUploadProtocol :: !(Maybe Text)
+    , _sddAccessToken :: !(Maybe Text)
+    , _sddUploadType :: !(Maybe Text)
+    , _sddName :: !Text
     , _sddDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _sddCallback                    :: !(Maybe Text)
+    , _sddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

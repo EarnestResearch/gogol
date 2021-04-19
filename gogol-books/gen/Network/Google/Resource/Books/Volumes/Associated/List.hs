@@ -40,8 +40,8 @@ module Network.Google.Resource.Books.Volumes.Associated.List
     , valAssociation
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.volumes.associated.list@ method which the
 -- 'VolumesAssociatedList' request conforms to.
@@ -65,11 +65,11 @@ type VolumesAssociatedListResource =
 -- /See:/ 'volumesAssociatedList' smart constructor.
 data VolumesAssociatedList =
   VolumesAssociatedList'
-    { _valLocale                   :: !(Maybe Text)
+    { _valLocale :: !(Maybe Text)
     , _valMaxAllowedMaturityRating :: !(Maybe VolumesAssociatedListMaxAllowedMaturityRating)
-    , _valVolumeId                 :: !Text
-    , _valSource                   :: !(Maybe Text)
-    , _valAssociation              :: !(Maybe VolumesAssociatedListAssociation)
+    , _valVolumeId :: !Text
+    , _valSource :: !(Maybe Text)
+    , _valAssociation :: !(Maybe VolumesAssociatedListAssociation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

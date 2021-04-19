@@ -45,8 +45,8 @@ module Network.Google.Resource.IAM.Organizations.Roles.List
     , orlCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.organizations.roles.list@ method which the
 -- 'OrganizationsRolesList' request conforms to.
@@ -71,16 +71,16 @@ type OrganizationsRolesListResource =
 -- /See:/ 'organizationsRolesList' smart constructor.
 data OrganizationsRolesList =
   OrganizationsRolesList'
-    { _orlParent         :: !Text
-    , _orlXgafv          :: !(Maybe Xgafv)
+    { _orlParent :: !Text
+    , _orlXgafv :: !(Maybe Xgafv)
     , _orlUploadProtocol :: !(Maybe Text)
-    , _orlAccessToken    :: !(Maybe Text)
-    , _orlUploadType     :: !(Maybe Text)
-    , _orlShowDeleted    :: !(Maybe Bool)
-    , _orlView           :: !(Maybe Text)
-    , _orlPageToken      :: !(Maybe Text)
-    , _orlPageSize       :: !(Maybe (Textual Int32))
-    , _orlCallback       :: !(Maybe Text)
+    , _orlAccessToken :: !(Maybe Text)
+    , _orlUploadType :: !(Maybe Text)
+    , _orlShowDeleted :: !(Maybe Bool)
+    , _orlView :: !(Maybe Text)
+    , _orlPageToken :: !(Maybe Text)
+    , _orlPageSize :: !(Maybe (Textual Int32))
+    , _orlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

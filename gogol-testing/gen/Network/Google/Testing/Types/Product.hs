@@ -17,8 +17,8 @@
 --
 module Network.Google.Testing.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Testing.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Testing.Types.Sum
 
 -- | Additional details about the progress of the running test.
 --
@@ -26,7 +26,7 @@ import           Network.Google.Testing.Types.Sum
 data TestDetails =
   TestDetails'
     { _tdProgressMessages :: !(Maybe [Text])
-    , _tdErrorMessage     :: !(Maybe Text)
+    , _tdErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -83,8 +83,8 @@ instance ToJSON TestDetails where
 -- /See:/ 'intentFilter' smart constructor.
 data IntentFilter =
   IntentFilter'
-    { _ifActionNames   :: !(Maybe [Text])
-    , _ifMimeType      :: !(Maybe Text)
+    { _ifActionNames :: !(Maybe [Text])
+    , _ifMimeType :: !(Maybe Text)
     , _ifCategoryNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -192,15 +192,15 @@ instance ToJSON IosTestSetup where
 -- /See:/ 'testExecution' smart constructor.
 data TestExecution =
   TestExecution'
-    { _teTestDetails       :: !(Maybe TestDetails)
-    , _teState             :: !(Maybe TestExecutionState)
-    , _teEnvironment       :: !(Maybe Environment)
+    { _teTestDetails :: !(Maybe TestDetails)
+    , _teState :: !(Maybe TestExecutionState)
+    , _teEnvironment :: !(Maybe Environment)
     , _teTestSpecification :: !(Maybe TestSpecification)
-    , _teMatrixId          :: !(Maybe Text)
-    , _teId                :: !(Maybe Text)
-    , _teProjectId         :: !(Maybe Text)
-    , _teToolResultsStep   :: !(Maybe ToolResultsStep)
-    , _teTimestamp         :: !(Maybe DateTime')
+    , _teMatrixId :: !(Maybe Text)
+    , _teId :: !(Maybe Text)
+    , _teProjectId :: !(Maybe Text)
+    , _teToolResultsStep :: !(Maybe ToolResultsStep)
+    , _teTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -323,11 +323,11 @@ instance ToJSON TestExecution where
 -- /See:/ 'iosVersion' smart constructor.
 data IosVersion =
   IosVersion'
-    { _ivMinorVersion             :: !(Maybe (Textual Int32))
-    , _ivMajorVersion             :: !(Maybe (Textual Int32))
+    { _ivMinorVersion :: !(Maybe (Textual Int32))
+    , _ivMajorVersion :: !(Maybe (Textual Int32))
     , _ivSupportedXcodeVersionIds :: !(Maybe [Text])
-    , _ivId                       :: !(Maybe Text)
-    , _ivTags                     :: !(Maybe [Text])
+    , _ivId :: !(Maybe Text)
+    , _ivTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -458,8 +458,8 @@ instance ToJSON IosDeviceList where
 data RoboDirective =
   RoboDirective'
     { _rdResourceName :: !(Maybe Text)
-    , _rdInputText    :: !(Maybe Text)
-    , _rdActionType   :: !(Maybe RoboDirectiveActionType)
+    , _rdInputText :: !(Maybe Text)
+    , _rdActionType :: !(Maybe RoboDirectiveActionType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -523,7 +523,7 @@ instance ToJSON RoboDirective where
 data AndroidRuntimeConfiguration =
   AndroidRuntimeConfiguration'
     { _arcOrientations :: !(Maybe [Orientation])
-    , _arcLocales      :: !(Maybe [Locale])
+    , _arcLocales :: !(Maybe [Locale])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -578,7 +578,7 @@ instance ToJSON AndroidRuntimeConfiguration where
 data XcodeVersion =
   XcodeVersion'
     { _xvVersion :: !(Maybe Text)
-    , _xvTags    :: !(Maybe [Text])
+    , _xvTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -627,7 +627,7 @@ instance ToJSON XcodeVersion where
 data Distribution =
   Distribution'
     { _dMeasurementTime :: !(Maybe DateTime')
-    , _dMarketShare     :: !(Maybe (Textual Double))
+    , _dMarketShare :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -678,12 +678,12 @@ instance ToJSON Distribution where
 -- /See:/ 'iosModel' smart constructor.
 data IosModel =
   IosModel'
-    { _imFormFactor          :: !(Maybe IosModelFormFactor)
-    , _imName                :: !(Maybe Text)
+    { _imFormFactor :: !(Maybe IosModelFormFactor)
+    , _imName :: !(Maybe Text)
     , _imSupportedVersionIds :: !(Maybe [Text])
-    , _imId                  :: !(Maybe Text)
-    , _imDeviceCapabilities  :: !(Maybe [Text])
-    , _imTags                :: !(Maybe [Text])
+    , _imId :: !(Maybe Text)
+    , _imDeviceCapabilities :: !(Maybe [Text])
+    , _imTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -784,7 +784,7 @@ instance ToJSON IosModel where
 data APK =
   APK'
     { _aPackageName :: !(Maybe Text)
-    , _aLocation    :: !(Maybe FileReference)
+    , _aLocation :: !(Maybe FileReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -871,10 +871,10 @@ instance ToJSON NetworkConfigurationCatalog where
 -- /See:/ 'iosDevice' smart constructor.
 data IosDevice =
   IosDevice'
-    { _idLocale       :: !(Maybe Text)
-    , _idIosModelId   :: !(Maybe Text)
+    { _idLocale :: !(Maybe Text)
+    , _idIosModelId :: !(Maybe Text)
     , _idIosVersionId :: !(Maybe Text)
-    , _idOrientation  :: !(Maybe Text)
+    , _idOrientation :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -989,15 +989,15 @@ instance ToJSON GetAPKDetailsResponse where
 -- /See:/ 'androidRoboTest' smart constructor.
 data AndroidRoboTest =
   AndroidRoboTest'
-    { _artRoboDirectives     :: !(Maybe [RoboDirective])
-    , _artRoboScript         :: !(Maybe FileReference)
-    , _artStartingIntents    :: !(Maybe [RoboStartingIntent])
+    { _artRoboDirectives :: !(Maybe [RoboDirective])
+    , _artRoboScript :: !(Maybe FileReference)
+    , _artStartingIntents :: !(Maybe [RoboStartingIntent])
     , _artAppInitialActivity :: !(Maybe Text)
-    , _artMaxSteps           :: !(Maybe (Textual Int32))
-    , _artAppPackageId       :: !(Maybe Text)
-    , _artAppBundle          :: !(Maybe AppBundle)
-    , _artAppAPK             :: !(Maybe FileReference)
-    , _artMaxDepth           :: !(Maybe (Textual Int32))
+    , _artMaxSteps :: !(Maybe (Textual Int32))
+    , _artAppPackageId :: !(Maybe Text)
+    , _artAppBundle :: !(Maybe AppBundle)
+    , _artAppAPK :: !(Maybe FileReference)
+    , _artMaxDepth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1173,7 +1173,7 @@ instance ToJSON FileReference where
 -- /See:/ 'environment' smart constructor.
 data Environment =
   Environment'
-    { _eIosDevice     :: !(Maybe IosDevice)
+    { _eIosDevice :: !(Maybe IosDevice)
     , _eAndroidDevice :: !(Maybe AndroidDevice)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1269,10 +1269,10 @@ instance ToJSON ToolResultsHistory where
 -- /See:/ 'testEnvironmentCatalog' smart constructor.
 data TestEnvironmentCatalog =
   TestEnvironmentCatalog'
-    { _tecSoftwareCatalog             :: !(Maybe ProvidedSoftwareCatalog)
+    { _tecSoftwareCatalog :: !(Maybe ProvidedSoftwareCatalog)
     , _tecNetworkConfigurationCatalog :: !(Maybe NetworkConfigurationCatalog)
-    , _tecAndroidDeviceCatalog        :: !(Maybe AndroidDeviceCatalog)
-    , _tecIosDeviceCatalog            :: !(Maybe IosDeviceCatalog)
+    , _tecAndroidDeviceCatalog :: !(Maybe AndroidDeviceCatalog)
+    , _tecIosDeviceCatalog :: !(Maybe IosDeviceCatalog)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1349,10 +1349,10 @@ instance ToJSON TestEnvironmentCatalog where
 -- /See:/ 'locale' smart constructor.
 data Locale =
   Locale'
-    { _lName   :: !(Maybe Text)
-    , _lId     :: !(Maybe Text)
+    { _lName :: !(Maybe Text)
+    , _lId :: !(Maybe Text)
     , _lRegion :: !(Maybe Text)
-    , _lTags   :: !(Maybe [Text])
+    , _lTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1414,8 +1414,8 @@ instance ToJSON Locale where
 -- /See:/ 'androidDeviceCatalog' smart constructor.
 data AndroidDeviceCatalog =
   AndroidDeviceCatalog'
-    { _adcVersions             :: !(Maybe [AndroidVersion])
-    , _adcModels               :: !(Maybe [AndroidModel])
+    { _adcVersions :: !(Maybe [AndroidVersion])
+    , _adcModels :: !(Maybe [AndroidModel])
     , _adcRuntimeConfiguration :: !(Maybe AndroidRuntimeConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1483,15 +1483,15 @@ instance ToJSON AndroidDeviceCatalog where
 -- /See:/ 'testSpecification' smart constructor.
 data TestSpecification =
   TestSpecification'
-    { _tsIosTestSetup               :: !(Maybe IosTestSetup)
-    , _tsTestTimeout                :: !(Maybe GDuration)
-    , _tsAndroidRoboTest            :: !(Maybe AndroidRoboTest)
-    , _tsDisableVideoRecording      :: !(Maybe Bool)
+    { _tsIosTestSetup :: !(Maybe IosTestSetup)
+    , _tsTestTimeout :: !(Maybe GDuration)
+    , _tsAndroidRoboTest :: !(Maybe AndroidRoboTest)
+    , _tsDisableVideoRecording :: !(Maybe Bool)
     , _tsAndroidInstrumentationTest :: !(Maybe AndroidInstrumentationTest)
-    , _tsIosXcTest                  :: !(Maybe IosXcTest)
-    , _tsDisablePerformanceMetrics  :: !(Maybe Bool)
-    , _tsTestSetup                  :: !(Maybe TestSetup)
-    , _tsAndroidTestLoop            :: !(Maybe AndroidTestLoop)
+    , _tsIosXcTest :: !(Maybe IosXcTest)
+    , _tsDisablePerformanceMetrics :: !(Maybe Bool)
+    , _tsTestSetup :: !(Maybe TestSetup)
+    , _tsAndroidTestLoop :: !(Maybe AndroidTestLoop)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1666,11 +1666,11 @@ instance ToJSON ProvidedSoftwareCatalog where
 -- /See:/ 'trafficRule' smart constructor.
 data TrafficRule =
   TrafficRule'
-    { _trPacketLossRatio        :: !(Maybe (Textual Double))
+    { _trPacketLossRatio :: !(Maybe (Textual Double))
     , _trPacketDuplicationRatio :: !(Maybe (Textual Double))
-    , _trBandwidth              :: !(Maybe (Textual Double))
-    , _trBurst                  :: !(Maybe (Textual Double))
-    , _trDelay                  :: !(Maybe GDuration)
+    , _trBandwidth :: !(Maybe (Textual Double))
+    , _trBurst :: !(Maybe (Textual Double))
+    , _trDelay :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1759,9 +1759,9 @@ instance ToJSON TrafficRule where
 -- /See:/ 'iosDeviceCatalog' smart constructor.
 data IosDeviceCatalog =
   IosDeviceCatalog'
-    { _idcXcodeVersions        :: !(Maybe [XcodeVersion])
-    , _idcVersions             :: !(Maybe [IosVersion])
-    , _idcModels               :: !(Maybe [IosModel])
+    { _idcXcodeVersions :: !(Maybe [XcodeVersion])
+    , _idcVersions :: !(Maybe [IosVersion])
+    , _idcModels :: !(Maybe [IosModel])
     , _idcRuntimeConfiguration :: !(Maybe IosRuntimeConfiguration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1904,9 +1904,9 @@ instance ToJSON Account where
 -- /See:/ 'startActivityIntent' smart constructor.
 data StartActivityIntent =
   StartActivityIntent'
-    { _saiURI        :: !(Maybe Text)
+    { _saiURI :: !(Maybe Text)
     , _saiCategories :: !(Maybe [Text])
-    , _saiAction     :: !(Maybe Text)
+    , _saiAction :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1966,8 +1966,8 @@ instance ToJSON StartActivityIntent where
 data RoboStartingIntent =
   RoboStartingIntent'
     { _rsiLauncherActivity :: !(Maybe LauncherActivityIntent)
-    , _rsiStartActivity    :: !(Maybe StartActivityIntent)
-    , _rsiTimeout          :: !(Maybe GDuration)
+    , _rsiStartActivity :: !(Maybe StartActivityIntent)
+    , _rsiTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2036,8 +2036,8 @@ instance ToJSON RoboStartingIntent where
 -- /See:/ 'date' smart constructor.
 data Date =
   Date'
-    { _dDay   :: !(Maybe (Textual Int32))
-    , _dYear  :: !(Maybe (Textual Int32))
+    { _dDay :: !(Maybe (Textual Int32))
+    , _dYear :: !(Maybe (Textual Int32))
     , _dMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2099,7 +2099,7 @@ instance ToJSON Date where
 data RegularFile =
   RegularFile'
     { _rfDevicePath :: !(Maybe Text)
-    , _rfContent    :: !(Maybe FileReference)
+    , _rfContent :: !(Maybe FileReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2162,20 +2162,20 @@ instance ToJSON RegularFile where
 -- /See:/ 'androidModel' smart constructor.
 data AndroidModel =
   AndroidModel'
-    { _amSupportedAbis        :: !(Maybe [Text])
-    , _amManufacturer         :: !(Maybe Text)
-    , _amCodename             :: !(Maybe Text)
+    { _amSupportedAbis :: !(Maybe [Text])
+    , _amManufacturer :: !(Maybe Text)
+    , _amCodename :: !(Maybe Text)
     , _amLowFpsVideoRecording :: !(Maybe Bool)
-    , _amFormFactor           :: !(Maybe AndroidModelFormFactor)
-    , _amBrand                :: !(Maybe Text)
-    , _amScreenX              :: !(Maybe (Textual Int32))
-    , _amScreenDensity        :: !(Maybe (Textual Int32))
-    , _amName                 :: !(Maybe Text)
-    , _amSupportedVersionIds  :: !(Maybe [Text])
-    , _amScreenY              :: !(Maybe (Textual Int32))
-    , _amId                   :: !(Maybe Text)
-    , _amForm                 :: !(Maybe AndroidModelForm)
-    , _amTags                 :: !(Maybe [Text])
+    , _amFormFactor :: !(Maybe AndroidModelFormFactor)
+    , _amBrand :: !(Maybe Text)
+    , _amScreenX :: !(Maybe (Textual Int32))
+    , _amScreenDensity :: !(Maybe (Textual Int32))
+    , _amName :: !(Maybe Text)
+    , _amSupportedVersionIds :: !(Maybe [Text])
+    , _amScreenY :: !(Maybe (Textual Int32))
+    , _amId :: !(Maybe Text)
+    , _amForm :: !(Maybe AndroidModelForm)
+    , _amTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2366,7 +2366,7 @@ instance ToJSON AndroidModel where
 -- /See:/ 'clientInfo' smart constructor.
 data ClientInfo =
   ClientInfo'
-    { _ciName              :: !(Maybe Text)
+    { _ciName :: !(Maybe Text)
     , _ciClientInfoDetails :: !(Maybe [ClientInfoDetail])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2418,11 +2418,11 @@ instance ToJSON ClientInfo where
 data APKManifest =
   APKManifest'
     { _apkmApplicationLabel :: !(Maybe Text)
-    , _apkmMinSdkVersion    :: !(Maybe (Textual Int32))
+    , _apkmMinSdkVersion :: !(Maybe (Textual Int32))
     , _apkmTargetSdkVersion :: !(Maybe (Textual Int32))
-    , _apkmPackageName      :: !(Maybe Text)
-    , _apkmIntentFilters    :: !(Maybe [IntentFilter])
-    , _apkmMaxSdkVersion    :: !(Maybe (Textual Int32))
+    , _apkmPackageName :: !(Maybe Text)
+    , _apkmIntentFilters :: !(Maybe [IntentFilter])
+    , _apkmMaxSdkVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2571,14 +2571,14 @@ instance ToJSON AppBundle where
 -- /See:/ 'androidInstrumentationTest' smart constructor.
 data AndroidInstrumentationTest =
   AndroidInstrumentationTest'
-    { _aitTestTargets        :: !(Maybe [Text])
-    , _aitTestRunnerClass    :: !(Maybe Text)
-    , _aitAppPackageId       :: !(Maybe Text)
-    , _aitTestAPK            :: !(Maybe FileReference)
+    { _aitTestTargets :: !(Maybe [Text])
+    , _aitTestRunnerClass :: !(Maybe Text)
+    , _aitAppPackageId :: !(Maybe Text)
+    , _aitTestAPK :: !(Maybe FileReference)
     , _aitOrchestratorOption :: !(Maybe AndroidInstrumentationTestOrchestratorOption)
-    , _aitAppBundle          :: !(Maybe AppBundle)
-    , _aitAppAPK             :: !(Maybe FileReference)
-    , _aitTestPackageId      :: !(Maybe Text)
+    , _aitAppBundle :: !(Maybe AppBundle)
+    , _aitAppAPK :: !(Maybe FileReference)
+    , _aitTestPackageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2710,17 +2710,17 @@ instance ToJSON AndroidInstrumentationTest where
 -- /See:/ 'testMatrix' smart constructor.
 data TestMatrix =
   TestMatrix'
-    { _tmState                :: !(Maybe TestMatrixState)
-    , _tmTestMatrixId         :: !(Maybe Text)
-    , _tmTestSpecification    :: !(Maybe TestSpecification)
-    , _tmFlakyTestAttempts    :: !(Maybe (Textual Int32))
-    , _tmClientInfo           :: !(Maybe ClientInfo)
-    , _tmTestExecutions       :: !(Maybe [TestExecution])
-    , _tmResultStorage        :: !(Maybe ResultStorage)
+    { _tmState :: !(Maybe TestMatrixState)
+    , _tmTestMatrixId :: !(Maybe Text)
+    , _tmTestSpecification :: !(Maybe TestSpecification)
+    , _tmFlakyTestAttempts :: !(Maybe (Textual Int32))
+    , _tmClientInfo :: !(Maybe ClientInfo)
+    , _tmTestExecutions :: !(Maybe [TestExecution])
+    , _tmResultStorage :: !(Maybe ResultStorage)
     , _tmInvalidMatrixDetails :: !(Maybe TestMatrixInvalidMatrixDetails)
-    , _tmProjectId            :: !(Maybe Text)
-    , _tmEnvironmentMatrix    :: !(Maybe EnvironmentMatrix)
-    , _tmTimestamp            :: !(Maybe DateTime')
+    , _tmProjectId :: !(Maybe Text)
+    , _tmEnvironmentMatrix :: !(Maybe EnvironmentMatrix)
+    , _tmTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2916,8 +2916,8 @@ instance ToJSON CancelTestMatrixResponse where
 data ToolResultsExecution =
   ToolResultsExecution'
     { _treExecutionId :: !(Maybe Text)
-    , _treHistoryId   :: !(Maybe Text)
-    , _treProjectId   :: !(Maybe Text)
+    , _treHistoryId :: !(Maybe Text)
+    , _treProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2983,10 +2983,10 @@ instance ToJSON ToolResultsExecution where
 -- /See:/ 'iosXcTest' smart constructor.
 data IosXcTest =
   IosXcTest'
-    { _ixtXctestrun    :: !(Maybe FileReference)
+    { _ixtXctestrun :: !(Maybe FileReference)
     , _ixtXcodeVersion :: !(Maybe Text)
-    , _ixtAppBundleId  :: !(Maybe Text)
-    , _ixtTestsZip     :: !(Maybe FileReference)
+    , _ixtAppBundleId :: !(Maybe Text)
+    , _ixtTestsZip :: !(Maybe FileReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3065,9 +3065,9 @@ instance ToJSON IosXcTest where
 -- /See:/ 'resultStorage' smart constructor.
 data ResultStorage =
   ResultStorage'
-    { _rsToolResultsHistory   :: !(Maybe ToolResultsHistory)
+    { _rsToolResultsHistory :: !(Maybe ToolResultsHistory)
     , _rsToolResultsExecution :: !(Maybe ToolResultsExecution)
-    , _rsGoogleCloudStorage   :: !(Maybe GoogleCloudStorage)
+    , _rsGoogleCloudStorage :: !(Maybe GoogleCloudStorage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3138,10 +3138,10 @@ instance ToJSON ResultStorage where
 -- /See:/ 'androidMatrix' smart constructor.
 data AndroidMatrix =
   AndroidMatrix'
-    { _amAndroidModelIds   :: !(Maybe [Text])
+    { _amAndroidModelIds :: !(Maybe [Text])
     , _amAndroidVersionIds :: !(Maybe [Text])
-    , _amOrientations      :: !(Maybe [Text])
-    , _amLocales           :: !(Maybe [Text])
+    , _amOrientations :: !(Maybe [Text])
+    , _amLocales :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3229,9 +3229,9 @@ instance ToJSON AndroidMatrix where
 data ToolResultsStep =
   ToolResultsStep'
     { _trsExecutionId :: !(Maybe Text)
-    , _trsStepId      :: !(Maybe Text)
-    , _trsHistoryId   :: !(Maybe Text)
-    , _trsProjectId   :: !(Maybe Text)
+    , _trsStepId :: !(Maybe Text)
+    , _trsHistoryId :: !(Maybe Text)
+    , _trsProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3362,9 +3362,9 @@ instance ToJSON APKDetail where
 data AndroidDevice =
   AndroidDevice'
     { _adAndroidVersionId :: !(Maybe Text)
-    , _adLocale           :: !(Maybe Text)
-    , _adAndroidModelId   :: !(Maybe Text)
-    , _adOrientation      :: !(Maybe Text)
+    , _adLocale :: !(Maybe Text)
+    , _adAndroidModelId :: !(Maybe Text)
+    , _adOrientation :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3441,7 +3441,7 @@ instance ToJSON AndroidDevice where
 data EnvironmentVariable =
   EnvironmentVariable'
     { _evValue :: !(Maybe Text)
-    , _evKey   :: !(Maybe Text)
+    , _evKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3486,7 +3486,7 @@ instance ToJSON EnvironmentVariable where
 data Orientation =
   Orientation'
     { _oName :: !(Maybe Text)
-    , _oId   :: !(Maybe Text)
+    , _oId :: !(Maybe Text)
     , _oTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3540,8 +3540,8 @@ instance ToJSON Orientation where
 -- /See:/ 'environmentMatrix' smart constructor.
 data EnvironmentMatrix =
   EnvironmentMatrix'
-    { _emIosDeviceList     :: !(Maybe IosDeviceList)
-    , _emAndroidMatrix     :: !(Maybe AndroidMatrix)
+    { _emIosDeviceList :: !(Maybe IosDeviceList)
+    , _emAndroidMatrix :: !(Maybe AndroidMatrix)
     , _emAndroidDeviceList :: !(Maybe AndroidDeviceList)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3607,7 +3607,7 @@ instance ToJSON EnvironmentMatrix where
 data DeviceFile =
   DeviceFile'
     { _dfRegularFile :: !(Maybe RegularFile)
-    , _dfObbFile     :: !(Maybe ObbFile)
+    , _dfObbFile :: !(Maybe ObbFile)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3657,7 +3657,7 @@ instance ToJSON DeviceFile where
 data ClientInfoDetail =
   ClientInfoDetail'
     { _cidValue :: !(Maybe Text)
-    , _cidKey   :: !(Maybe Text)
+    , _cidKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3700,8 +3700,8 @@ instance ToJSON ClientInfoDetail where
 data NetworkConfiguration =
   NetworkConfiguration'
     { _ncDownRule :: !(Maybe TrafficRule)
-    , _ncId       :: !(Maybe Text)
-    , _ncUpRule   :: !(Maybe TrafficRule)
+    , _ncId :: !(Maybe Text)
+    , _ncUpRule :: !(Maybe TrafficRule)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3756,7 +3756,7 @@ instance ToJSON NetworkConfiguration where
 data IosRuntimeConfiguration =
   IosRuntimeConfiguration'
     { _ircOrientations :: !(Maybe [Orientation])
-    , _ircLocales      :: !(Maybe [Locale])
+    , _ircLocales :: !(Maybe [Locale])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3845,13 +3845,13 @@ instance ToJSON GoogleCloudStorage where
 -- /See:/ 'androidVersion' smart constructor.
 data AndroidVersion =
   AndroidVersion'
-    { _avCodeName      :: !(Maybe Text)
-    , _avDistribution  :: !(Maybe Distribution)
-    , _avAPILevel      :: !(Maybe (Textual Int32))
+    { _avCodeName :: !(Maybe Text)
+    , _avDistribution :: !(Maybe Distribution)
+    , _avAPILevel :: !(Maybe (Textual Int32))
     , _avVersionString :: !(Maybe Text)
-    , _avId            :: !(Maybe Text)
-    , _avReleaseDate   :: !(Maybe Date)
-    , _avTags          :: !(Maybe [Text])
+    , _avId :: !(Maybe Text)
+    , _avReleaseDate :: !(Maybe Date)
+    , _avTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3960,7 +3960,7 @@ instance ToJSON AndroidVersion where
 -- /See:/ 'obbFile' smart constructor.
 data ObbFile =
   ObbFile'
-    { _ofObb         :: !(Maybe FileReference)
+    { _ofObb :: !(Maybe FileReference)
     , _ofObbFileName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4010,11 +4010,11 @@ instance ToJSON ObbFile where
 -- /See:/ 'androidTestLoop' smart constructor.
 data AndroidTestLoop =
   AndroidTestLoop'
-    { _atlScenarios      :: !(Maybe [Textual Int32])
+    { _atlScenarios :: !(Maybe [Textual Int32])
     , _atlScenarioLabels :: !(Maybe [Text])
-    , _atlAppPackageId   :: !(Maybe Text)
-    , _atlAppBundle      :: !(Maybe AppBundle)
-    , _atlAppAPK         :: !(Maybe FileReference)
+    , _atlAppPackageId :: !(Maybe Text)
+    , _atlAppBundle :: !(Maybe AppBundle)
+    , _atlAppAPK :: !(Maybe FileReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4151,12 +4151,12 @@ instance ToJSON AndroidDeviceList where
 -- /See:/ 'testSetup' smart constructor.
 data TestSetup =
   TestSetup'
-    { _tsAccount              :: !(Maybe Account)
-    , _tsNetworkProFile       :: !(Maybe Text)
+    { _tsAccount :: !(Maybe Account)
+    , _tsNetworkProFile :: !(Maybe Text)
     , _tsEnvironmentVariables :: !(Maybe [EnvironmentVariable])
-    , _tsAdditionalAPKs       :: !(Maybe [APK])
-    , _tsFilesToPush          :: !(Maybe [DeviceFile])
-    , _tsDirectoriesToPull    :: !(Maybe [Text])
+    , _tsAdditionalAPKs :: !(Maybe [APK])
+    , _tsFilesToPush :: !(Maybe [DeviceFile])
+    , _tsDirectoriesToPull :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

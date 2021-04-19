@@ -42,8 +42,8 @@ module Network.Google.Resource.Reseller.Subscriptions.List
     , slMaxResults
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.list@ method which the
 -- 'SubscriptionsList' request conforms to.
@@ -67,10 +67,10 @@ type SubscriptionsListResource =
 data SubscriptionsList =
   SubscriptionsList'
     { _slCustomerNamePrefix :: !(Maybe Text)
-    , _slCustomerId         :: !(Maybe Text)
-    , _slCustomerAuthToken  :: !(Maybe Text)
-    , _slPageToken          :: !(Maybe Text)
-    , _slMaxResults         :: !(Maybe (Textual Word32))
+    , _slCustomerId :: !(Maybe Text)
+    , _slCustomerAuthToken :: !(Maybe Text)
+    , _slPageToken :: !(Maybe Text)
+    , _slMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.TestIAMPermissions
     , dtipResource
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.testIamPermissions@ method which the
 -- 'DeploymentsTestIAMPermissions' request conforms to.
@@ -61,8 +61,8 @@ type DeploymentsTestIAMPermissionsResource =
 -- /See:/ 'deploymentsTestIAMPermissions' smart constructor.
 data DeploymentsTestIAMPermissions =
   DeploymentsTestIAMPermissions'
-    { _dtipProject  :: !Text
-    , _dtipPayload  :: !TestPermissionsRequest
+    { _dtipProject :: !Text
+    , _dtipPayload :: !TestPermissionsRequest
     , _dtipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

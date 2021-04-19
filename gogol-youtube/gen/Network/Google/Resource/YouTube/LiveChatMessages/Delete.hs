@@ -36,8 +36,8 @@ module Network.Google.Resource.YouTube.LiveChatMessages.Delete
     , lId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveChatMessages.delete@ method which the
 -- 'LiveChatMessagesDelete' request conforms to.

@@ -85,11 +85,11 @@ module Network.Google.IAP
     , bCondition
     ) where
 
-import           Network.Google.IAP.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.IAP.GetIAMPolicy
-import           Network.Google.Resource.IAP.SetIAMPolicy
-import           Network.Google.Resource.IAP.TestIAMPermissions
+import Network.Google.Prelude
+import Network.Google.IAP.Types
+import Network.Google.Resource.IAP.GetIAMPolicy
+import Network.Google.Resource.IAP.SetIAMPolicy
+import Network.Google.Resource.IAP.TestIAMPermissions
 
 {- $resources
 TODO

@@ -41,8 +41,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Clusters.Get
     , picgCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.clusters.get@ method which the
 -- 'ProjectsInstancesClustersGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsInstancesClustersGetResource =
 -- /See:/ 'projectsInstancesClustersGet' smart constructor.
 data ProjectsInstancesClustersGet =
   ProjectsInstancesClustersGet'
-    { _picgXgafv          :: !(Maybe Xgafv)
+    { _picgXgafv :: !(Maybe Xgafv)
     , _picgUploadProtocol :: !(Maybe Text)
-    , _picgAccessToken    :: !(Maybe Text)
-    , _picgUploadType     :: !(Maybe Text)
-    , _picgName           :: !Text
-    , _picgCallback       :: !(Maybe Text)
+    , _picgAccessToken :: !(Maybe Text)
+    , _picgUploadType :: !(Maybe Text)
+    , _picgName :: !Text
+    , _picgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

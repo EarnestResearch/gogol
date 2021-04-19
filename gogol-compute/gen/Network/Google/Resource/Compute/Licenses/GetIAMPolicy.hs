@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Licenses.GetIAMPolicy
     , lgipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.getIamPolicy@ method which the
 -- 'LicensesGetIAMPolicy' request conforms to.
@@ -60,7 +60,7 @@ type LicensesGetIAMPolicyResource =
 -- /See:/ 'licensesGetIAMPolicy' smart constructor.
 data LicensesGetIAMPolicy =
   LicensesGetIAMPolicy'
-    { _lgipProject  :: !Text
+    { _lgipProject :: !Text
     , _lgipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

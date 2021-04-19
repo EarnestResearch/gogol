@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Organizations.Exclusions.Patch
     , oepCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.organizations.exclusions.patch@ method which the
 -- 'OrganizationsExclusionsPatch' request conforms to.
@@ -66,14 +66,14 @@ type OrganizationsExclusionsPatchResource =
 -- /See:/ 'organizationsExclusionsPatch' smart constructor.
 data OrganizationsExclusionsPatch =
   OrganizationsExclusionsPatch'
-    { _oepXgafv          :: !(Maybe Xgafv)
+    { _oepXgafv :: !(Maybe Xgafv)
     , _oepUploadProtocol :: !(Maybe Text)
-    , _oepUpdateMask     :: !(Maybe GFieldMask)
-    , _oepAccessToken    :: !(Maybe Text)
-    , _oepUploadType     :: !(Maybe Text)
-    , _oepPayload        :: !LogExclusion
-    , _oepName           :: !Text
-    , _oepCallback       :: !(Maybe Text)
+    , _oepUpdateMask :: !(Maybe GFieldMask)
+    , _oepAccessToken :: !(Maybe Text)
+    , _oepUploadType :: !(Maybe Text)
+    , _oepPayload :: !LogExclusion
+    , _oepName :: !Text
+    , _oepCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.SetMaintenanceP
     , pzcsmpCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.setMaintenancePolicy@ method which the
 -- 'ProjectsZonesClustersSetMaintenancePolicy' request conforms to.
@@ -73,15 +73,15 @@ type ProjectsZonesClustersSetMaintenancePolicyResource
 -- /See:/ 'projectsZonesClustersSetMaintenancePolicy' smart constructor.
 data ProjectsZonesClustersSetMaintenancePolicy =
   ProjectsZonesClustersSetMaintenancePolicy'
-    { _pzcsmpXgafv          :: !(Maybe Xgafv)
+    { _pzcsmpXgafv :: !(Maybe Xgafv)
     , _pzcsmpUploadProtocol :: !(Maybe Text)
-    , _pzcsmpAccessToken    :: !(Maybe Text)
-    , _pzcsmpUploadType     :: !(Maybe Text)
-    , _pzcsmpZone           :: !Text
-    , _pzcsmpPayload        :: !SetMaintenancePolicyRequest
-    , _pzcsmpClusterId      :: !Text
-    , _pzcsmpProjectId      :: !Text
-    , _pzcsmpCallback       :: !(Maybe Text)
+    , _pzcsmpAccessToken :: !(Maybe Text)
+    , _pzcsmpUploadType :: !(Maybe Text)
+    , _pzcsmpZone :: !Text
+    , _pzcsmpPayload :: !SetMaintenancePolicyRequest
+    , _pzcsmpClusterId :: !Text
+    , _pzcsmpProjectId :: !Text
+    , _pzcsmpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

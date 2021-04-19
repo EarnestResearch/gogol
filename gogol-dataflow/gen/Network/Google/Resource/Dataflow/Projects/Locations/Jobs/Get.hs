@@ -49,8 +49,8 @@ module Network.Google.Resource.Dataflow.Projects.Locations.Jobs.Get
     , pljgCallback
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.locations.jobs.get@ method which the
 -- 'ProjectsLocationsJobsGet' request conforms to.
@@ -80,15 +80,15 @@ type ProjectsLocationsJobsGetResource =
 -- /See:/ 'projectsLocationsJobsGet' smart constructor.
 data ProjectsLocationsJobsGet =
   ProjectsLocationsJobsGet'
-    { _pljgXgafv          :: !(Maybe Xgafv)
-    , _pljgJobId          :: !Text
+    { _pljgXgafv :: !(Maybe Xgafv)
+    , _pljgJobId :: !Text
     , _pljgUploadProtocol :: !(Maybe Text)
-    , _pljgLocation       :: !Text
-    , _pljgAccessToken    :: !(Maybe Text)
-    , _pljgUploadType     :: !(Maybe Text)
-    , _pljgView           :: !(Maybe Text)
-    , _pljgProjectId      :: !Text
-    , _pljgCallback       :: !(Maybe Text)
+    , _pljgLocation :: !Text
+    , _pljgAccessToken :: !(Maybe Text)
+    , _pljgUploadType :: !(Maybe Text)
+    , _pljgView :: !(Maybe Text)
+    , _pljgProjectId :: !Text
+    , _pljgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

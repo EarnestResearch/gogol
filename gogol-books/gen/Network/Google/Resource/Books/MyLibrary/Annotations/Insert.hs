@@ -40,8 +40,8 @@ module Network.Google.Resource.Books.MyLibrary.Annotations.Insert
     , mlaiSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.annotations.insert@ method which the
 -- 'MyLibraryAnnotationsInsert' request conforms to.
@@ -62,11 +62,11 @@ type MyLibraryAnnotationsInsertResource =
 -- /See:/ 'myLibraryAnnotationsInsert' smart constructor.
 data MyLibraryAnnotationsInsert =
   MyLibraryAnnotationsInsert'
-    { _mlaiCountry                   :: !(Maybe Text)
-    , _mlaiPayload                   :: !Annotation
+    { _mlaiCountry :: !(Maybe Text)
+    , _mlaiPayload :: !Annotation
     , _mlaiShowOnlySummaryInResponse :: !(Maybe Bool)
-    , _mlaiAnnotationId              :: !(Maybe Text)
-    , _mlaiSource                    :: !(Maybe Text)
+    , _mlaiAnnotationId :: !(Maybe Text)
+    , _mlaiSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

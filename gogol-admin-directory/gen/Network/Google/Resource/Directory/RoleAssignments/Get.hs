@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.RoleAssignments.Get
     , ragRoleAssignmentId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roleAssignments.get@ method which the
 -- 'RoleAssignmentsGet' request conforms to.
@@ -58,7 +58,7 @@ type RoleAssignmentsGetResource =
 -- /See:/ 'roleAssignmentsGet' smart constructor.
 data RoleAssignmentsGet =
   RoleAssignmentsGet'
-    { _ragCustomer         :: !Text
+    { _ragCustomer :: !Text
     , _ragRoleAssignmentId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

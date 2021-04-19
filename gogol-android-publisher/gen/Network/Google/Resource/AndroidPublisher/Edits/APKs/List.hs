@@ -35,8 +35,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.APKs.List
     , eapklEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.apks.list@ method which the
 -- 'EditsAPKsList' request conforms to.
@@ -56,7 +56,7 @@ type EditsAPKsListResource =
 data EditsAPKsList =
   EditsAPKsList'
     { _eapklPackageName :: !Text
-    , _eapklEditId      :: !Text
+    , _eapklEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

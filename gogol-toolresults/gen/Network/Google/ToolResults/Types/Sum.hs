@@ -16,7 +16,7 @@
 --
 module Network.Google.ToolResults.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Severity of issue. Required.
 data TestIssueSeverity

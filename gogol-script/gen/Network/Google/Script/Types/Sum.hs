@@ -16,7 +16,7 @@
 --
 module Network.Google.Script.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The executions type.
 data GoogleAppsScriptTypeProcessProcessType

@@ -34,19 +34,19 @@ module Network.Google.Resource.Content.Orderinvoices.Createchargeinvoice
     , OrderinvoicesCreatechargeinvoice
 
     -- * Request Lenses
-    , oMerchantId
-    , oPayload
-    , oOrderId
+    , occMerchantId
+    , occPayload
+    , occOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orderinvoices.createchargeinvoice@ method which the
 -- 'OrderinvoicesCreatechargeinvoice' request conforms to.
 type OrderinvoicesCreatechargeinvoiceResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orderinvoices" :>
              Capture "orderId" Text :>
@@ -63,9 +63,9 @@ type OrderinvoicesCreatechargeinvoiceResource =
 -- /See:/ 'orderinvoicesCreatechargeinvoice' smart constructor.
 data OrderinvoicesCreatechargeinvoice =
   OrderinvoicesCreatechargeinvoice'
-    { _oMerchantId :: !(Textual Word64)
-    , _oPayload    :: !OrderinvoicesCreateChargeInvoiceRequest
-    , _oOrderId    :: !Text
+    { _occMerchantId :: !(Textual Word64)
+    , _occPayload :: !OrderinvoicesCreateChargeInvoiceRequest
+    , _occOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -74,38 +74,41 @@ data OrderinvoicesCreatechargeinvoice =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'oMerchantId'
+-- * 'occMerchantId'
 --
--- * 'oPayload'
+-- * 'occPayload'
 --
--- * 'oOrderId'
+-- * 'occOrderId'
 orderinvoicesCreatechargeinvoice
-    :: Word64 -- ^ 'oMerchantId'
-    -> OrderinvoicesCreateChargeInvoiceRequest -- ^ 'oPayload'
-    -> Text -- ^ 'oOrderId'
+    :: Word64 -- ^ 'occMerchantId'
+    -> OrderinvoicesCreateChargeInvoiceRequest -- ^ 'occPayload'
+    -> Text -- ^ 'occOrderId'
     -> OrderinvoicesCreatechargeinvoice
-orderinvoicesCreatechargeinvoice pOMerchantId_ pOPayload_ pOOrderId_ =
+orderinvoicesCreatechargeinvoice pOccMerchantId_ pOccPayload_ pOccOrderId_ =
   OrderinvoicesCreatechargeinvoice'
-    { _oMerchantId = _Coerce # pOMerchantId_
-    , _oPayload = pOPayload_
-    , _oOrderId = pOOrderId_
+    { _occMerchantId = _Coerce # pOccMerchantId_
+    , _occPayload = pOccPayload_
+    , _occOrderId = pOccOrderId_
     }
 
 
 -- | The ID of the account that manages the order. This cannot be a
 -- multi-client account.
-oMerchantId :: Lens' OrderinvoicesCreatechargeinvoice Word64
-oMerchantId
-  = lens _oMerchantId (\ s a -> s{_oMerchantId = a}) .
-      _Coerce
+occMerchantId :: Lens' OrderinvoicesCreatechargeinvoice Word64
+occMerchantId
+  = lens _occMerchantId
+      (\ s a -> s{_occMerchantId = a})
+      . _Coerce
 
 -- | Multipart request metadata.
-oPayload :: Lens' OrderinvoicesCreatechargeinvoice OrderinvoicesCreateChargeInvoiceRequest
-oPayload = lens _oPayload (\ s a -> s{_oPayload = a})
+occPayload :: Lens' OrderinvoicesCreatechargeinvoice OrderinvoicesCreateChargeInvoiceRequest
+occPayload
+  = lens _occPayload (\ s a -> s{_occPayload = a})
 
 -- | The ID of the order.
-oOrderId :: Lens' OrderinvoicesCreatechargeinvoice Text
-oOrderId = lens _oOrderId (\ s a -> s{_oOrderId = a})
+occOrderId :: Lens' OrderinvoicesCreatechargeinvoice Text
+occOrderId
+  = lens _occOrderId (\ s a -> s{_occOrderId = a})
 
 instance GoogleRequest
            OrderinvoicesCreatechargeinvoice
@@ -115,7 +118,8 @@ instance GoogleRequest
         type Scopes OrderinvoicesCreatechargeinvoice =
              '["https://www.googleapis.com/auth/content"]
         requestClient OrderinvoicesCreatechargeinvoice'{..}
-          = go _oMerchantId _oOrderId (Just AltJSON) _oPayload
+          = go _occMerchantId _occOrderId (Just AltJSON)
+              _occPayload
               shoppingContentService
           where go
                   = buildClient

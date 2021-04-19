@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.SetIAMPolicy
     , csipCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalogProducer.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalogProducer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalogproducer.catalogs.setIamPolicy@ method which the
 -- 'CatalogsSetIAMPolicy' request conforms to.
@@ -64,13 +64,13 @@ type CatalogsSetIAMPolicyResource =
 -- /See:/ 'catalogsSetIAMPolicy' smart constructor.
 data CatalogsSetIAMPolicy =
   CatalogsSetIAMPolicy'
-    { _csipXgafv          :: !(Maybe Xgafv)
+    { _csipXgafv :: !(Maybe Xgafv)
     , _csipUploadProtocol :: !(Maybe Text)
-    , _csipAccessToken    :: !(Maybe Text)
-    , _csipUploadType     :: !(Maybe Text)
-    , _csipPayload        :: !GoogleIAMV1SetIAMPolicyRequest
-    , _csipResource       :: !Text
-    , _csipCallback       :: !(Maybe Text)
+    , _csipAccessToken :: !(Maybe Text)
+    , _csipUploadType :: !(Maybe Text)
+    , _csipPayload :: !GoogleIAMV1SetIAMPolicyRequest
+    , _csipResource :: !Text
+    , _csipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

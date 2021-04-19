@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.Get
     , plkrgCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.get@ method which the
 -- 'ProjectsLocationsKeyRingsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsLocationsKeyRingsGetResource =
 -- /See:/ 'projectsLocationsKeyRingsGet' smart constructor.
 data ProjectsLocationsKeyRingsGet =
   ProjectsLocationsKeyRingsGet'
-    { _plkrgXgafv          :: !(Maybe Xgafv)
+    { _plkrgXgafv :: !(Maybe Xgafv)
     , _plkrgUploadProtocol :: !(Maybe Text)
-    , _plkrgAccessToken    :: !(Maybe Text)
-    , _plkrgUploadType     :: !(Maybe Text)
-    , _plkrgName           :: !Text
-    , _plkrgCallback       :: !(Maybe Text)
+    , _plkrgAccessToken :: !(Maybe Text)
+    , _plkrgUploadType :: !(Maybe Text)
+    , _plkrgName :: !Text
+    , _plkrgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

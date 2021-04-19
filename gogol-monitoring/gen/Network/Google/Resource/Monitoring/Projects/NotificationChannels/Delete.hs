@@ -42,8 +42,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Delete
     , pncdCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannels.delete@ method which the
 -- 'ProjectsNotificationChannelsDelete' request conforms to.
@@ -63,13 +63,13 @@ type ProjectsNotificationChannelsDeleteResource =
 -- /See:/ 'projectsNotificationChannelsDelete' smart constructor.
 data ProjectsNotificationChannelsDelete =
   ProjectsNotificationChannelsDelete'
-    { _pncdXgafv          :: !(Maybe Xgafv)
+    { _pncdXgafv :: !(Maybe Xgafv)
     , _pncdUploadProtocol :: !(Maybe Text)
-    , _pncdForce          :: !(Maybe Bool)
-    , _pncdAccessToken    :: !(Maybe Text)
-    , _pncdUploadType     :: !(Maybe Text)
-    , _pncdName           :: !Text
-    , _pncdCallback       :: !(Maybe Text)
+    , _pncdForce :: !(Maybe Bool)
+    , _pncdAccessToken :: !(Maybe Text)
+    , _pncdUploadType :: !(Maybe Text)
+    , _pncdName :: !Text
+    , _pncdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

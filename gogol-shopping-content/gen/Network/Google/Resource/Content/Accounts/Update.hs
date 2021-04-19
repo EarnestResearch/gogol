@@ -36,21 +36,23 @@ module Network.Google.Resource.Content.Accounts.Update
     , auuMerchantId
     , auuPayload
     , auuAccountId
+    , auuDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounts.update@ method which the
 -- 'AccountsUpdate' request conforms to.
 type AccountsUpdateResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accounts" :>
              Capture "accountId" (Textual Word64) :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] Account :> Put '[JSON] Account
+               QueryParam "dryRun" Bool :>
+                 QueryParam "alt" AltJSON :>
+                   ReqBody '[JSON] Account :> Put '[JSON] Account
 
 -- | Updates a Merchant Center account.
 --
@@ -58,8 +60,9 @@ type AccountsUpdateResource =
 data AccountsUpdate =
   AccountsUpdate'
     { _auuMerchantId :: !(Textual Word64)
-    , _auuPayload    :: !Account
-    , _auuAccountId  :: !(Textual Word64)
+    , _auuPayload :: !Account
+    , _auuAccountId :: !(Textual Word64)
+    , _auuDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -73,6 +76,8 @@ data AccountsUpdate =
 -- * 'auuPayload'
 --
 -- * 'auuAccountId'
+--
+-- * 'auuDryRun'
 accountsUpdate
     :: Word64 -- ^ 'auuMerchantId'
     -> Account -- ^ 'auuPayload'
@@ -83,6 +88,7 @@ accountsUpdate pAuuMerchantId_ pAuuPayload_ pAuuAccountId_ =
     { _auuMerchantId = _Coerce # pAuuMerchantId_
     , _auuPayload = pAuuPayload_
     , _auuAccountId = _Coerce # pAuuAccountId_
+    , _auuDryRun = Nothing
     }
 
 
@@ -106,12 +112,20 @@ auuAccountId
   = lens _auuAccountId (\ s a -> s{_auuAccountId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+auuDryRun :: Lens' AccountsUpdate (Maybe Bool)
+auuDryRun
+  = lens _auuDryRun (\ s a -> s{_auuDryRun = a})
+
 instance GoogleRequest AccountsUpdate where
         type Rs AccountsUpdate = Account
         type Scopes AccountsUpdate =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountsUpdate'{..}
-          = go _auuMerchantId _auuAccountId (Just AltJSON)
+          = go _auuMerchantId _auuAccountId _auuDryRun
+              (Just AltJSON)
               _auuPayload
               shoppingContentService
           where go

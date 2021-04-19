@@ -48,8 +48,8 @@ module Network.Google.Resource.Language.Translations.List
     , tlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @language.translations.list@ method which the
 -- 'TranslationsList' request conforms to.
@@ -78,19 +78,19 @@ type TranslationsListResource =
 -- /See:/ 'translationsList' smart constructor.
 data TranslationsList =
   TranslationsList'
-    { _tlXgafv          :: !(Maybe Xgafv)
+    { _tlXgafv :: !(Maybe Xgafv)
     , _tlUploadProtocol :: !(Maybe Text)
-    , _tlPp             :: !Bool
-    , _tlAccessToken    :: !(Maybe Text)
-    , _tlFormat         :: !(Maybe TranslationsListFormat)
-    , _tlUploadType     :: !(Maybe Text)
-    , _tlQ              :: ![Text]
-    , _tlBearerToken    :: !(Maybe Text)
-    , _tlModel          :: !(Maybe Text)
-    , _tlSource         :: !(Maybe Text)
-    , _tlCid            :: !(Maybe [Text])
-    , _tlTarget         :: !Text
-    , _tlCallback       :: !(Maybe Text)
+    , _tlPp :: !Bool
+    , _tlAccessToken :: !(Maybe Text)
+    , _tlFormat :: !(Maybe TranslationsListFormat)
+    , _tlUploadType :: !(Maybe Text)
+    , _tlQ :: ![Text]
+    , _tlBearerToken :: !(Maybe Text)
+    , _tlModel :: !(Maybe Text)
+    , _tlSource :: !(Maybe Text)
+    , _tlCid :: !(Maybe [Text])
+    , _tlTarget :: !Text
+    , _tlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

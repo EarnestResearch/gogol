@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Accounts.Patch
     , appId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accounts.patch@ method which the
 -- 'AccountsPatch' request conforms to.
@@ -59,8 +59,8 @@ type AccountsPatchResource =
 data AccountsPatch =
   AccountsPatch'
     { _appProFileId :: !(Textual Int64)
-    , _appPayload   :: !Account
-    , _appId        :: !(Textual Int64)
+    , _appPayload :: !Account
+    , _appId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

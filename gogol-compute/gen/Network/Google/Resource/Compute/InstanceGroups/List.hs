@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.InstanceGroups.List
     , iglMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroups.list@ method which the
 -- 'InstanceGroupsList' request conforms to.
@@ -68,11 +68,11 @@ type InstanceGroupsListResource =
 -- /See:/ 'instanceGroupsList' smart constructor.
 data InstanceGroupsList =
   InstanceGroupsList'
-    { _iglOrderBy    :: !(Maybe Text)
-    , _iglProject    :: !Text
-    , _iglZone       :: !Text
-    , _iglFilter     :: !(Maybe Text)
-    , _iglPageToken  :: !(Maybe Text)
+    { _iglOrderBy :: !(Maybe Text)
+    , _iglProject :: !Text
+    , _iglZone :: !Text
+    , _iglFilter :: !(Maybe Text)
+    , _iglPageToken :: !(Maybe Text)
     , _iglMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

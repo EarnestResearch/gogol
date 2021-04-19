@@ -43,8 +43,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Clusters.Create
     , piccCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.clusters.create@ method which the
 -- 'ProjectsInstancesClustersCreate' request conforms to.
@@ -66,14 +66,14 @@ type ProjectsInstancesClustersCreateResource =
 -- /See:/ 'projectsInstancesClustersCreate' smart constructor.
 data ProjectsInstancesClustersCreate =
   ProjectsInstancesClustersCreate'
-    { _piccParent         :: !Text
-    , _piccXgafv          :: !(Maybe Xgafv)
+    { _piccParent :: !Text
+    , _piccXgafv :: !(Maybe Xgafv)
     , _piccUploadProtocol :: !(Maybe Text)
-    , _piccAccessToken    :: !(Maybe Text)
-    , _piccUploadType     :: !(Maybe Text)
-    , _piccPayload        :: !Cluster
-    , _piccClusterId      :: !(Maybe Text)
-    , _piccCallback       :: !(Maybe Text)
+    , _piccAccessToken :: !(Maybe Text)
+    , _piccUploadType :: !(Maybe Text)
+    , _piccPayload :: !Cluster
+    , _piccClusterId :: !(Maybe Text)
+    , _piccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.Reseller.Subscriptions.Activate
     , saSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.activate@ method which the
 -- 'SubscriptionsActivate' request conforms to.
@@ -58,7 +58,7 @@ type SubscriptionsActivateResource =
 -- /See:/ 'subscriptionsActivate' smart constructor.
 data SubscriptionsActivate =
   SubscriptionsActivate'
-    { _saCustomerId     :: !Text
+    { _saCustomerId :: !Text
     , _saSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

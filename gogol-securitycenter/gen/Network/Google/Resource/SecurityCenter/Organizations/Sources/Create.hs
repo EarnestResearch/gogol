@@ -42,8 +42,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Create
     , oscCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.create@ method which the
 -- 'OrganizationsSourcesCreate' request conforms to.
@@ -64,13 +64,13 @@ type OrganizationsSourcesCreateResource =
 -- /See:/ 'organizationsSourcesCreate' smart constructor.
 data OrganizationsSourcesCreate =
   OrganizationsSourcesCreate'
-    { _oscParent         :: !Text
-    , _oscXgafv          :: !(Maybe Xgafv)
+    { _oscParent :: !Text
+    , _oscXgafv :: !(Maybe Xgafv)
     , _oscUploadProtocol :: !(Maybe Text)
-    , _oscAccessToken    :: !(Maybe Text)
-    , _oscUploadType     :: !(Maybe Text)
-    , _oscPayload        :: !Source
-    , _oscCallback       :: !(Maybe Text)
+    , _oscAccessToken :: !(Maybe Text)
+    , _oscUploadType :: !(Maybe Text)
+    , _oscPayload :: !Source
+    , _oscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

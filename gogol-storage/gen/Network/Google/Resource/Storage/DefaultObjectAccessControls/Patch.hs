@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.Patch
     , doacpEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.patch@ method which the
 -- 'DefaultObjectAccessControlsPatch' request conforms to.
@@ -61,10 +61,10 @@ type DefaultObjectAccessControlsPatchResource =
 -- /See:/ 'defaultObjectAccessControlsPatch' smart constructor.
 data DefaultObjectAccessControlsPatch =
   DefaultObjectAccessControlsPatch'
-    { _doacpBucket      :: !Text
-    , _doacpPayload     :: !ObjectAccessControl
+    { _doacpBucket :: !Text
+    , _doacpPayload :: !ObjectAccessControl
     , _doacpUserProject :: !(Maybe Text)
-    , _doacpEntity      :: !Text
+    , _doacpEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

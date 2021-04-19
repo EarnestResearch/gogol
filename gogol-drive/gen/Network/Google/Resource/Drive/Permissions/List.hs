@@ -41,8 +41,8 @@ module Network.Google.Resource.Drive.Permissions.List
     , plSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.permissions.list@ method which the
 -- 'PermissionsList' request conforms to.
@@ -65,12 +65,12 @@ type PermissionsListResource =
 -- /See:/ 'permissionsList' smart constructor.
 data PermissionsList =
   PermissionsList'
-    { _plSupportsAllDrives    :: !Bool
-    , _plPageToken            :: !(Maybe Text)
+    { _plSupportsAllDrives :: !Bool
+    , _plPageToken :: !(Maybe Text)
     , _plUseDomainAdminAccess :: !Bool
-    , _plFileId               :: !Text
-    , _plPageSize             :: !(Maybe (Textual Int32))
-    , _plSupportsTeamDrives   :: !Bool
+    , _plFileId :: !Text
+    , _plPageSize :: !(Maybe (Textual Int32))
+    , _plSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.Testing.TestEnvironmentCatalog.Get
     , tecgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Testing.Types
+import Network.Google.Prelude
+import Network.Google.Testing.Types
 
 -- | A resource alias for @testing.testEnvironmentCatalog.get@ method which the
 -- 'TestEnvironmentCatalogGet' request conforms to.
@@ -71,13 +71,13 @@ type TestEnvironmentCatalogGetResource =
 -- /See:/ 'testEnvironmentCatalogGet' smart constructor.
 data TestEnvironmentCatalogGet =
   TestEnvironmentCatalogGet'
-    { _tecgXgafv           :: !(Maybe Xgafv)
-    , _tecgUploadProtocol  :: !(Maybe Text)
-    , _tecgAccessToken     :: !(Maybe Text)
-    , _tecgUploadType      :: !(Maybe Text)
+    { _tecgXgafv :: !(Maybe Xgafv)
+    , _tecgUploadProtocol :: !(Maybe Text)
+    , _tecgAccessToken :: !(Maybe Text)
+    , _tecgUploadType :: !(Maybe Text)
     , _tecgEnvironmentType :: !Text
-    , _tecgProjectId       :: !(Maybe Text)
-    , _tecgCallback        :: !(Maybe Text)
+    , _tecgProjectId :: !(Maybe Text)
+    , _tecgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

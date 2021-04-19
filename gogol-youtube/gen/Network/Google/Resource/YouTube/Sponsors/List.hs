@@ -39,8 +39,8 @@ module Network.Google.Resource.YouTube.Sponsors.List
     , sMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.sponsors.list@ method which the
 -- 'SponsorsList' request conforms to.
@@ -60,9 +60,9 @@ type SponsorsListResource =
 -- /See:/ 'sponsorsList' smart constructor.
 data SponsorsList =
   SponsorsList'
-    { _sPart       :: !Text
-    , _sFilter     :: !SponsorsListFilter
-    , _sPageToken  :: !(Maybe Text)
+    { _sPart :: !Text
+    , _sFilter :: !SponsorsListFilter
+    , _sPageToken :: !(Maybe Text)
     , _sMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -85,7 +85,7 @@ sponsorsList
 sponsorsList pSPart_ =
   SponsorsList'
     { _sPart = pSPart_
-    , _sFilter = SLFNewest
+    , _sFilter = SLFPollNewest
     , _sPageToken = Nothing
     , _sMaxResults = 5
     }

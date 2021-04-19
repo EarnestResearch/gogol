@@ -53,8 +53,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Exe
     , pidsebdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.sessions.executeBatchDml@ method which the
 -- 'ProjectsInstancesDatabasesSessionsExecuteBatchDml' request conforms to.
@@ -87,13 +87,13 @@ type ProjectsInstancesDatabasesSessionsExecuteBatchDmlResource
 -- /See:/ 'projectsInstancesDatabasesSessionsExecuteBatchDml' smart constructor.
 data ProjectsInstancesDatabasesSessionsExecuteBatchDml =
   ProjectsInstancesDatabasesSessionsExecuteBatchDml'
-    { _pidsebdXgafv          :: !(Maybe Xgafv)
+    { _pidsebdXgafv :: !(Maybe Xgafv)
     , _pidsebdUploadProtocol :: !(Maybe Text)
-    , _pidsebdAccessToken    :: !(Maybe Text)
-    , _pidsebdUploadType     :: !(Maybe Text)
-    , _pidsebdPayload        :: !ExecuteBatchDmlRequest
-    , _pidsebdSession        :: !Text
-    , _pidsebdCallback       :: !(Maybe Text)
+    , _pidsebdAccessToken :: !(Maybe Text)
+    , _pidsebdUploadType :: !(Maybe Text)
+    , _pidsebdPayload :: !ExecuteBatchDmlRequest
+    , _pidsebdSession :: !Text
+    , _pidsebdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

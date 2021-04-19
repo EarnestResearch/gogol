@@ -46,8 +46,8 @@ module Network.Google.Resource.People.People.GetBatchGet
     , pgbgCallback
     ) where
 
-import           Network.Google.People.Types
-import           Network.Google.Prelude
+import Network.Google.People.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @people.people.getBatchGet@ method which the
 -- 'PeopleGetBatchGet' request conforms to.
@@ -73,14 +73,14 @@ type PeopleGetBatchGetResource =
 -- /See:/ 'peopleGetBatchGet' smart constructor.
 data PeopleGetBatchGet =
   PeopleGetBatchGet'
-    { _pgbgXgafv                   :: !(Maybe Xgafv)
-    , _pgbgUploadProtocol          :: !(Maybe Text)
+    { _pgbgXgafv :: !(Maybe Xgafv)
+    , _pgbgUploadProtocol :: !(Maybe Text)
     , _pgbgRequestMaskIncludeField :: !(Maybe GFieldMask)
-    , _pgbgAccessToken             :: !(Maybe Text)
-    , _pgbgUploadType              :: !(Maybe Text)
-    , _pgbgPersonFields            :: !(Maybe GFieldMask)
-    , _pgbgResourceNames           :: !(Maybe [Text])
-    , _pgbgCallback                :: !(Maybe Text)
+    , _pgbgAccessToken :: !(Maybe Text)
+    , _pgbgUploadType :: !(Maybe Text)
+    , _pgbgPersonFields :: !(Maybe GFieldMask)
+    , _pgbgResourceNames :: !(Maybe [Text])
+    , _pgbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -165,9 +165,9 @@ pgbgPersonFields
 
 -- | The resource names of the people to provide information about. - To get
 -- information about the authenticated user, specify \`people\/me\`. - To
--- get information about a google account, specify \`people\/\`account_id.
--- - To get information about a contact, specify the resource name that
--- identifies the contact as returned by
+-- get information about a google account, specify
+-- \`people\/\`'account_id'. - To get information about a contact, specify
+-- the resource name that identifies the contact as returned by
 -- [\`people.connections.list\`](\/people\/api\/rest\/v1\/people.connections\/list).
 -- You can include up to 50 resource names in one request.
 pgbgResourceNames :: Lens' PeopleGetBatchGet [Text]

@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.Delete
     , doacdEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.delete@ method which the
 -- 'DefaultObjectAccessControlsDelete' request conforms to.
@@ -60,9 +60,9 @@ type DefaultObjectAccessControlsDeleteResource =
 -- /See:/ 'defaultObjectAccessControlsDelete' smart constructor.
 data DefaultObjectAccessControlsDelete =
   DefaultObjectAccessControlsDelete'
-    { _doacdBucket      :: !Text
+    { _doacdBucket :: !Text
     , _doacdUserProject :: !(Maybe Text)
-    , _doacdEntity      :: !Text
+    , _doacdEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

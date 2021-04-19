@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Operations.Delete
     , oodCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.operations.delete@ method which the
 -- 'OrganizationsOperationsDelete' request conforms to.
@@ -67,12 +67,12 @@ type OrganizationsOperationsDeleteResource =
 -- /See:/ 'organizationsOperationsDelete' smart constructor.
 data OrganizationsOperationsDelete =
   OrganizationsOperationsDelete'
-    { _oodXgafv          :: !(Maybe Xgafv)
+    { _oodXgafv :: !(Maybe Xgafv)
     , _oodUploadProtocol :: !(Maybe Text)
-    , _oodAccessToken    :: !(Maybe Text)
-    , _oodUploadType     :: !(Maybe Text)
-    , _oodName           :: !Text
-    , _oodCallback       :: !(Maybe Text)
+    , _oodAccessToken :: !(Maybe Text)
+    , _oodUploadType :: !(Maybe Text)
+    , _oodName :: !Text
+    , _oodCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.YouTube.Videos.Rate
     , vrId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videos.rate@ method which the
 -- 'VideosRate' request conforms to.
@@ -57,7 +57,7 @@ type VideosRateResource =
 data VideosRate =
   VideosRate'
     { _vrRating :: !VideosRateRating
-    , _vrId     :: !Text
+    , _vrId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

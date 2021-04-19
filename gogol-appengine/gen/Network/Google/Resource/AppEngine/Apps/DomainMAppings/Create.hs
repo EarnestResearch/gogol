@@ -45,8 +45,8 @@ module Network.Google.Resource.AppEngine.Apps.DomainMAppings.Create
     , admacCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.domainMappings.create@ method which the
 -- 'AppsDomainMAppingsCreate' request conforms to.
@@ -72,14 +72,14 @@ type AppsDomainMAppingsCreateResource =
 -- /See:/ 'appsDomainMAppingsCreate' smart constructor.
 data AppsDomainMAppingsCreate =
   AppsDomainMAppingsCreate'
-    { _admacXgafv            :: !(Maybe Xgafv)
-    , _admacUploadProtocol   :: !(Maybe Text)
-    , _admacAccessToken      :: !(Maybe Text)
-    , _admacUploadType       :: !(Maybe Text)
-    , _admacPayload          :: !DomainMApping
+    { _admacXgafv :: !(Maybe Xgafv)
+    , _admacUploadProtocol :: !(Maybe Text)
+    , _admacAccessToken :: !(Maybe Text)
+    , _admacUploadType :: !(Maybe Text)
+    , _admacPayload :: !DomainMApping
     , _admacOverrideStrategy :: !(Maybe Text)
-    , _admacAppsId           :: !Text
-    , _admacCallback         :: !(Maybe Text)
+    , _admacAppsId :: !Text
+    , _admacCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

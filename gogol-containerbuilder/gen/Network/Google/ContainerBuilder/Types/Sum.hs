@@ -16,7 +16,7 @@
 --
 module Network.Google.ContainerBuilder.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. Status of the build step. At this time, build step status
 -- is only updated on build completion; step status is not updated in

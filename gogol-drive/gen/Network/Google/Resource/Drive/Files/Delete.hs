@@ -41,8 +41,8 @@ module Network.Google.Resource.Drive.Files.Delete
     , fdSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.delete@ method which the
 -- 'FilesDelete' request conforms to.
@@ -63,8 +63,8 @@ type FilesDeleteResource =
 -- /See:/ 'filesDelete' smart constructor.
 data FilesDelete =
   FilesDelete'
-    { _fdSupportsAllDrives  :: !Bool
-    , _fdFileId             :: !Text
+    { _fdSupportsAllDrives :: !Bool
+    , _fdFileId :: !Text
     , _fdSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)

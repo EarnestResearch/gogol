@@ -214,15 +214,15 @@ module Network.Google.Speech
     , sdcEnableSpeakerDiarization
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Speech.Operations.Get
-import           Network.Google.Resource.Speech.Operations.List
-import           Network.Google.Resource.Speech.Projects.Locations.Operations.Get
-import           Network.Google.Resource.Speech.Projects.Locations.Operations.List
-import           Network.Google.Resource.Speech.Projects.Operations.ManualRecognitionTasks.Get
-import           Network.Google.Resource.Speech.Speech.Longrunningrecognize
-import           Network.Google.Resource.Speech.Speech.Recognize
-import           Network.Google.Speech.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Speech.Operations.Get
+import Network.Google.Resource.Speech.Operations.List
+import Network.Google.Resource.Speech.Projects.Locations.Operations.Get
+import Network.Google.Resource.Speech.Projects.Locations.Operations.List
+import Network.Google.Resource.Speech.Projects.Operations.ManualRecognitionTasks.Get
+import Network.Google.Resource.Speech.Speech.Longrunningrecognize
+import Network.Google.Resource.Speech.Speech.Recognize
+import Network.Google.Speech.Types
 
 {- $resources
 TODO

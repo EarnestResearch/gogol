@@ -45,8 +45,8 @@ module Network.Google.Resource.DLP.Organizations.InspectTemplates.List
     , oitlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.inspectTemplates.list@ method which the
 -- 'OrganizationsInspectTemplatesList' request conforms to.
@@ -72,15 +72,15 @@ type OrganizationsInspectTemplatesListResource =
 -- /See:/ 'organizationsInspectTemplatesList' smart constructor.
 data OrganizationsInspectTemplatesList =
   OrganizationsInspectTemplatesList'
-    { _oitlParent         :: !Text
-    , _oitlXgafv          :: !(Maybe Xgafv)
+    { _oitlParent :: !Text
+    , _oitlXgafv :: !(Maybe Xgafv)
     , _oitlUploadProtocol :: !(Maybe Text)
-    , _oitlOrderBy        :: !(Maybe Text)
-    , _oitlAccessToken    :: !(Maybe Text)
-    , _oitlUploadType     :: !(Maybe Text)
-    , _oitlPageToken      :: !(Maybe Text)
-    , _oitlPageSize       :: !(Maybe (Textual Int32))
-    , _oitlCallback       :: !(Maybe Text)
+    , _oitlOrderBy :: !(Maybe Text)
+    , _oitlAccessToken :: !(Maybe Text)
+    , _oitlUploadType :: !(Maybe Text)
+    , _oitlPageToken :: !(Maybe Text)
+    , _oitlPageSize :: !(Maybe (Textual Int32))
+    , _oitlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

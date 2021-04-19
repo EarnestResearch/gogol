@@ -275,19 +275,19 @@ module Network.Google.File
     , iCreateTime
     ) where
 
-import           Network.Google.File.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.File.Projects.Locations.Get
-import           Network.Google.Resource.File.Projects.Locations.Instances.Create
-import           Network.Google.Resource.File.Projects.Locations.Instances.Delete
-import           Network.Google.Resource.File.Projects.Locations.Instances.Get
-import           Network.Google.Resource.File.Projects.Locations.Instances.List
-import           Network.Google.Resource.File.Projects.Locations.Instances.Patch
-import           Network.Google.Resource.File.Projects.Locations.List
-import           Network.Google.Resource.File.Projects.Locations.Operations.Cancel
-import           Network.Google.Resource.File.Projects.Locations.Operations.Delete
-import           Network.Google.Resource.File.Projects.Locations.Operations.Get
-import           Network.Google.Resource.File.Projects.Locations.Operations.List
+import Network.Google.Prelude
+import Network.Google.File.Types
+import Network.Google.Resource.File.Projects.Locations.Get
+import Network.Google.Resource.File.Projects.Locations.Instances.Create
+import Network.Google.Resource.File.Projects.Locations.Instances.Delete
+import Network.Google.Resource.File.Projects.Locations.Instances.Get
+import Network.Google.Resource.File.Projects.Locations.Instances.List
+import Network.Google.Resource.File.Projects.Locations.Instances.Patch
+import Network.Google.Resource.File.Projects.Locations.List
+import Network.Google.Resource.File.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.File.Projects.Locations.Operations.Delete
+import Network.Google.Resource.File.Projects.Locations.Operations.Get
+import Network.Google.Resource.File.Projects.Locations.Operations.List
 
 {- $resources
 TODO

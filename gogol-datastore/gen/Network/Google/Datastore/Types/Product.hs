@@ -17,8 +17,8 @@
 --
 module Network.Google.Datastore.Types.Product where
 
-import           Network.Google.Datastore.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Datastore.Types.Sum
+import Network.Google.Prelude
 
 -- | An object representing a latitude\/longitude pair. This is expressed as
 -- a pair of doubles representing degrees latitude and degrees longitude.
@@ -29,7 +29,7 @@ import           Network.Google.Prelude
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
   LatLng'
-    { _llLatitude  :: !(Maybe (Textual Double))
+    { _llLatitude :: !(Maybe (Textual Double))
     , _llLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -81,7 +81,7 @@ instance ToJSON LatLng where
 data TransactionOptions =
   TransactionOptions'
     { _toReadWrite :: !(Maybe ReadWrite)
-    , _toReadOnly  :: !(Maybe ReadOnly)
+    , _toReadOnly :: !(Maybe ReadOnly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -163,7 +163,7 @@ instance ToJSON TransactionOptions where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -396,7 +396,7 @@ instance ToJSON RollbackRequest where
 -- /See:/ 'reserveIdsRequest' smart constructor.
 data ReserveIdsRequest =
   ReserveIdsRequest'
-    { _rirKeys       :: !(Maybe [Key])
+    { _rirKeys :: !(Maybe [Key])
     , _rirDatabaseId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -458,7 +458,7 @@ instance ToJSON ReserveIdsRequest where
 data PartitionId =
   PartitionId'
     { _piNamespaceId :: !(Maybe Text)
-    , _piProjectId   :: !(Maybe Text)
+    , _piProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -506,7 +506,7 @@ instance ToJSON PartitionId where
 data GoogleDatastoreAdminV1ListIndexesResponse =
   GoogleDatastoreAdminV1ListIndexesResponse'
     { _gdavlirNextPageToken :: !(Maybe Text)
-    , _gdavlirIndexes       :: !(Maybe [GoogleDatastoreAdminV1Index])
+    , _gdavlirIndexes :: !(Maybe [GoogleDatastoreAdminV1Index])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -564,13 +564,13 @@ instance ToJSON
 -- /See:/ 'queryResultBatch' smart constructor.
 data QueryResultBatch =
   QueryResultBatch'
-    { _qrbSkippedResults   :: !(Maybe (Textual Int32))
-    , _qrbSkippedCursor    :: !(Maybe Bytes)
+    { _qrbSkippedResults :: !(Maybe (Textual Int32))
+    , _qrbSkippedCursor :: !(Maybe Bytes)
     , _qrbEntityResultType :: !(Maybe QueryResultBatchEntityResultType)
-    , _qrbSnapshotVersion  :: !(Maybe (Textual Int64))
-    , _qrbEntityResults    :: !(Maybe [EntityResult])
-    , _qrbMoreResults      :: !(Maybe QueryResultBatchMoreResults)
-    , _qrbEndCursor        :: !(Maybe Bytes)
+    , _qrbSnapshotVersion :: !(Maybe (Textual Int64))
+    , _qrbEntityResults :: !(Maybe [EntityResult])
+    , _qrbMoreResults :: !(Maybe QueryResultBatchMoreResults)
+    , _qrbEndCursor :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -814,8 +814,8 @@ instance ToJSON BeginTransactionRequest where
 data RunQueryRequest =
   RunQueryRequest'
     { _rqrPartitionId :: !(Maybe PartitionId)
-    , _rqrGqlQuery    :: !(Maybe GqlQuery)
-    , _rqrQuery       :: !(Maybe Query)
+    , _rqrGqlQuery :: !(Maybe GqlQuery)
+    , _rqrQuery :: !(Maybe Query)
     , _rqrReadOptions :: !(Maybe ReadOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -926,11 +926,11 @@ instance ToJSON AllocateIdsRequest where
 -- /See:/ 'googleDatastoreAdminV1ExportEntitiesMetadata' smart constructor.
 data GoogleDatastoreAdminV1ExportEntitiesMetadata =
   GoogleDatastoreAdminV1ExportEntitiesMetadata'
-    { _gdaveemProgressBytes    :: !(Maybe GoogleDatastoreAdminV1Progress)
-    , _gdaveemOutputURLPrefix  :: !(Maybe Text)
+    { _gdaveemProgressBytes :: !(Maybe GoogleDatastoreAdminV1Progress)
+    , _gdaveemOutputURLPrefix :: !(Maybe Text)
     , _gdaveemProgressEntities :: !(Maybe GoogleDatastoreAdminV1Progress)
-    , _gdaveemEntityFilter     :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
-    , _gdaveemCommon           :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
+    , _gdaveemEntityFilter :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
+    , _gdaveemCommon :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1025,10 +1025,10 @@ instance ToJSON
 -- /See:/ 'googleDatastoreAdminV1beta1CommonMetadata' smart constructor.
 data GoogleDatastoreAdminV1beta1CommonMetadata =
   GoogleDatastoreAdminV1beta1CommonMetadata'
-    { _gdavcmState         :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadataState)
-    , _gdavcmStartTime     :: !(Maybe DateTime')
-    , _gdavcmEndTime       :: !(Maybe DateTime')
-    , _gdavcmLabels        :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadataLabels)
+    { _gdavcmState :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadataState)
+    , _gdavcmStartTime :: !(Maybe DateTime')
+    , _gdavcmEndTime :: !(Maybe DateTime')
+    , _gdavcmLabels :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadataLabels)
     , _gdavcmOperationType :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadataOperationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1146,7 +1146,7 @@ instance ToJSON Empty where
 -- /See:/ 'compositeFilter' smart constructor.
 data CompositeFilter =
   CompositeFilter'
-    { _cfOp      :: !(Maybe CompositeFilterOp)
+    { _cfOp :: !(Maybe CompositeFilterOp)
     , _cfFilters :: !(Maybe [Filter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1194,8 +1194,8 @@ instance ToJSON CompositeFilter where
 data GoogleDatastoreAdminV1IndexOperationMetadata =
   GoogleDatastoreAdminV1IndexOperationMetadata'
     { _gdaviomProgressEntities :: !(Maybe GoogleDatastoreAdminV1Progress)
-    , _gdaviomCommon           :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
-    , _gdaviomIndexId          :: !(Maybe Text)
+    , _gdaviomCommon :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
+    , _gdaviomIndexId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1265,11 +1265,11 @@ instance ToJSON
 -- /See:/ 'googleDatastoreAdminV1beta1ImportEntitiesMetadata' smart constructor.
 data GoogleDatastoreAdminV1beta1ImportEntitiesMetadata =
   GoogleDatastoreAdminV1beta1ImportEntitiesMetadata'
-    { _gdaviemProgressBytes    :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
+    { _gdaviemProgressBytes :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
     , _gdaviemProgressEntities :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
-    , _gdaviemEntityFilter     :: !(Maybe GoogleDatastoreAdminV1beta1EntityFilter)
-    , _gdaviemInputURL         :: !(Maybe Text)
-    , _gdaviemCommon           :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadata)
+    , _gdaviemEntityFilter :: !(Maybe GoogleDatastoreAdminV1beta1EntityFilter)
+    , _gdaviemInputURL :: !(Maybe Text)
+    , _gdaviemCommon :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1460,8 +1460,8 @@ instance ToJSON BeginTransactionResponse where
 data MutationResult =
   MutationResult'
     { _mrConflictDetected :: !(Maybe Bool)
-    , _mrKey              :: !(Maybe Key)
-    , _mrVersion          :: !(Maybe (Textual Int64))
+    , _mrKey :: !(Maybe Key)
+    , _mrVersion :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1564,9 +1564,9 @@ instance ToJSON AllocateIdsResponse where
 data GqlQuery =
   GqlQuery'
     { _gqPositionalBindings :: !(Maybe [GqlQueryParameter])
-    , _gqNamedBindings      :: !(Maybe GqlQueryNamedBindings)
-    , _gqQueryString        :: !(Maybe Text)
-    , _gqAllowLiterals      :: !(Maybe Bool)
+    , _gqNamedBindings :: !(Maybe GqlQueryNamedBindings)
+    , _gqQueryString :: !(Maybe Text)
+    , _gqAllowLiterals :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1742,19 +1742,19 @@ instance ToJSON
 -- /See:/ 'value' smart constructor.
 data Value =
   Value'
-    { _vKeyValue           :: !(Maybe Key)
-    , _vGeoPointValue      :: !(Maybe LatLng)
-    , _vIntegerValue       :: !(Maybe (Textual Int64))
-    , _vTimestampValue     :: !(Maybe DateTime')
-    , _vEntityValue        :: !(Maybe Entity)
+    { _vKeyValue :: !(Maybe Key)
+    , _vGeoPointValue :: !(Maybe LatLng)
+    , _vIntegerValue :: !(Maybe (Textual Int64))
+    , _vTimestampValue :: !(Maybe DateTime')
+    , _vEntityValue :: !(Maybe Entity)
     , _vExcludeFromIndexes :: !(Maybe Bool)
-    , _vDoubleValue        :: !(Maybe (Textual Double))
-    , _vStringValue        :: !(Maybe Text)
-    , _vBooleanValue       :: !(Maybe Bool)
-    , _vMeaning            :: !(Maybe (Textual Int32))
-    , _vArrayValue         :: !(Maybe ArrayValue)
-    , _vNullValue          :: !(Maybe ValueNullValue)
-    , _vBlobValue          :: !(Maybe Bytes)
+    , _vDoubleValue :: !(Maybe (Textual Double))
+    , _vStringValue :: !(Maybe Text)
+    , _vBooleanValue :: !(Maybe Bool)
+    , _vMeaning :: !(Maybe (Textual Int32))
+    , _vArrayValue :: !(Maybe ArrayValue)
+    , _vNullValue :: !(Maybe ValueNullValue)
+    , _vBlobValue :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2014,7 +2014,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'lookupRequest' smart constructor.
 data LookupRequest =
   LookupRequest'
-    { _lrKeys        :: !(Maybe [Key])
+    { _lrKeys :: !(Maybe [Key])
     , _lrReadOptions :: !(Maybe ReadOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2063,10 +2063,10 @@ instance ToJSON LookupRequest where
 -- /See:/ 'googleDatastoreAdminV1CommonMetadata' smart constructor.
 data GoogleDatastoreAdminV1CommonMetadata =
   GoogleDatastoreAdminV1CommonMetadata'
-    { _gState         :: !(Maybe GoogleDatastoreAdminV1CommonMetadataState)
-    , _gStartTime     :: !(Maybe DateTime')
-    , _gEndTime       :: !(Maybe DateTime')
-    , _gLabels        :: !(Maybe GoogleDatastoreAdminV1CommonMetadataLabels)
+    { _gState :: !(Maybe GoogleDatastoreAdminV1CommonMetadataState)
+    , _gStartTime :: !(Maybe DateTime')
+    , _gEndTime :: !(Maybe DateTime')
+    , _gLabels :: !(Maybe GoogleDatastoreAdminV1CommonMetadataLabels)
     , _gOperationType :: !(Maybe GoogleDatastoreAdminV1CommonMetadataOperationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2154,8 +2154,8 @@ instance ToJSON GoogleDatastoreAdminV1CommonMetadata
 data GoogleDatastoreAdminV1ExportEntitiesRequest =
   GoogleDatastoreAdminV1ExportEntitiesRequest'
     { _gdaveerOutputURLPrefix :: !(Maybe Text)
-    , _gdaveerEntityFilter    :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
-    , _gdaveerLabels          :: !(Maybe GoogleDatastoreAdminV1ExportEntitiesRequestLabels)
+    , _gdaveerEntityFilter :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
+    , _gdaveerLabels :: !(Maybe GoogleDatastoreAdminV1ExportEntitiesRequestLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2239,10 +2239,10 @@ instance ToJSON
 data Mutation =
   Mutation'
     { _mBaseVersion :: !(Maybe (Textual Int64))
-    , _mInsert      :: !(Maybe Entity)
-    , _mUpsert      :: !(Maybe Entity)
-    , _mDelete      :: !(Maybe Key)
-    , _mUpdate      :: !(Maybe Entity)
+    , _mInsert :: !(Maybe Entity)
+    , _mUpsert :: !(Maybe Entity)
+    , _mDelete :: !(Maybe Key)
+    , _mUpdate :: !(Maybe Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2452,7 +2452,7 @@ instance ToJSON PropertyReference where
 data Key =
   Key'
     { _kPartitionId :: !(Maybe PartitionId)
-    , _kPath        :: !(Maybe [PathElement])
+    , _kPath :: !(Maybe [PathElement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2513,8 +2513,8 @@ instance ToJSON Key where
 data GoogleDatastoreAdminV1ImportEntitiesRequest =
   GoogleDatastoreAdminV1ImportEntitiesRequest'
     { _gdavierEntityFilter :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
-    , _gdavierInputURL     :: !(Maybe Text)
-    , _gdavierLabels       :: !(Maybe GoogleDatastoreAdminV1ImportEntitiesRequestLabels)
+    , _gdavierInputURL :: !(Maybe Text)
+    , _gdavierLabels :: !(Maybe GoogleDatastoreAdminV1ImportEntitiesRequestLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2597,8 +2597,8 @@ instance ToJSON
 data PropertyFilter =
   PropertyFilter'
     { _pfProperty :: !(Maybe PropertyReference)
-    , _pfOp       :: !(Maybe PropertyFilterOp)
-    , _pfValue    :: !(Maybe Value)
+    , _pfOp :: !(Maybe PropertyFilterOp)
+    , _pfValue :: !(Maybe Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2652,14 +2652,14 @@ instance ToJSON PropertyFilter where
 data Query =
   Query'
     { _qStartCursor :: !(Maybe Bytes)
-    , _qOffSet      :: !(Maybe (Textual Int32))
-    , _qKind        :: !(Maybe [KindExpression])
-    , _qDistinctOn  :: !(Maybe [PropertyReference])
-    , _qEndCursor   :: !(Maybe Bytes)
-    , _qLimit       :: !(Maybe (Textual Int32))
-    , _qProjection  :: !(Maybe [Projection])
-    , _qFilter      :: !(Maybe Filter)
-    , _qOrder       :: !(Maybe [PropertyOrder])
+    , _qOffSet :: !(Maybe (Textual Int32))
+    , _qKind :: !(Maybe [KindExpression])
+    , _qDistinctOn :: !(Maybe [PropertyReference])
+    , _qEndCursor :: !(Maybe Bytes)
+    , _qLimit :: !(Maybe (Textual Int32))
+    , _qProjection :: !(Maybe [Projection])
+    , _qFilter :: !(Maybe Filter)
+    , _qOrder :: !(Maybe [PropertyOrder])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2835,9 +2835,9 @@ instance ToJSON ArrayValue where
 -- /See:/ 'entityResult' smart constructor.
 data EntityResult =
   EntityResult'
-    { _erCursor  :: !(Maybe Bytes)
+    { _erCursor :: !(Maybe Bytes)
     , _erVersion :: !(Maybe (Textual Int64))
-    , _erEntity  :: !(Maybe Entity)
+    , _erEntity :: !(Maybe Entity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2899,7 +2899,7 @@ instance ToJSON EntityResult where
 -- /See:/ 'commitResponse' smart constructor.
 data CommitResponse =
   CommitResponse'
-    { _crIndexUpdates    :: !(Maybe (Textual Int32))
+    { _crIndexUpdates :: !(Maybe (Textual Int32))
     , _crMutationResults :: !(Maybe [MutationResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3038,7 +3038,7 @@ instance ToJSON GoogleLongrunningOperationResponse
 data ReadOptions =
   ReadOptions'
     { _roReadConsistency :: !(Maybe ReadOptionsReadConsistency)
-    , _roTransaction     :: !(Maybe Bytes)
+    , _roTransaction :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3099,7 +3099,7 @@ instance ToJSON ReadOptions where
 data GoogleDatastoreAdminV1EntityFilter =
   GoogleDatastoreAdminV1EntityFilter'
     { _gdavefNamespaceIds :: !(Maybe [Text])
-    , _gdavefKinds        :: !(Maybe [Text])
+    , _gdavefKinds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3240,7 +3240,7 @@ instance ToJSON ReserveIdsResponse where
 data Filter =
   Filter'
     { _fCompositeFilter :: !(Maybe CompositeFilter)
-    , _fPropertyFilter  :: !(Maybe PropertyFilter)
+    , _fPropertyFilter :: !(Maybe PropertyFilter)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3289,11 +3289,11 @@ instance ToJSON Filter where
 -- /See:/ 'googleDatastoreAdminV1Index' smart constructor.
 data GoogleDatastoreAdminV1Index =
   GoogleDatastoreAdminV1Index'
-    { _gdaviState      :: !(Maybe GoogleDatastoreAdminV1IndexState)
-    , _gdaviKind       :: !(Maybe Text)
-    , _gdaviProjectId  :: !(Maybe Text)
-    , _gdaviIndexId    :: !(Maybe Text)
-    , _gdaviAncestor   :: !(Maybe GoogleDatastoreAdminV1IndexAncestor)
+    { _gdaviState :: !(Maybe GoogleDatastoreAdminV1IndexState)
+    , _gdaviKind :: !(Maybe Text)
+    , _gdaviProjectId :: !(Maybe Text)
+    , _gdaviIndexId :: !(Maybe Text)
+    , _gdaviAncestor :: !(Maybe GoogleDatastoreAdminV1IndexAncestor)
     , _gdaviProperties :: !(Maybe [GoogleDatastoreAdminV1IndexedProperty])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3435,8 +3435,8 @@ instance ToJSON
 -- /See:/ 'commitRequest' smart constructor.
 data CommitRequest =
   CommitRequest'
-    { _crMutations   :: !(Maybe [Mutation])
-    , _crMode        :: !(Maybe CommitRequestMode)
+    { _crMutations :: !(Maybe [Mutation])
+    , _crMode :: !(Maybe CommitRequestMode)
     , _crTransaction :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3506,7 +3506,7 @@ instance ToJSON CommitRequest where
 data GoogleLongrunningListOperationsResponse =
   GoogleLongrunningListOperationsResponse'
     { _gllorNextPageToken :: !(Maybe Text)
-    , _gllorOperations    :: !(Maybe [GoogleLongrunningOperation])
+    , _gllorOperations :: !(Maybe [GoogleLongrunningOperation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3564,11 +3564,11 @@ instance ToJSON
 -- /See:/ 'googleDatastoreAdminV1ImportEntitiesMetadata' smart constructor.
 data GoogleDatastoreAdminV1ImportEntitiesMetadata =
   GoogleDatastoreAdminV1ImportEntitiesMetadata'
-    { _gProgressBytes    :: !(Maybe GoogleDatastoreAdminV1Progress)
+    { _gProgressBytes :: !(Maybe GoogleDatastoreAdminV1Progress)
     , _gProgressEntities :: !(Maybe GoogleDatastoreAdminV1Progress)
-    , _gEntityFilter     :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
-    , _gInputURL         :: !(Maybe Text)
-    , _gCommon           :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
+    , _gEntityFilter :: !(Maybe GoogleDatastoreAdminV1EntityFilter)
+    , _gInputURL :: !(Maybe Text)
+    , _gCommon :: !(Maybe GoogleDatastoreAdminV1CommonMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3718,7 +3718,7 @@ data PathElement =
   PathElement'
     { _peKind :: !(Maybe Text)
     , _peName :: !(Maybe Text)
-    , _peId   :: !(Maybe (Textual Int64))
+    , _peId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3778,7 +3778,7 @@ instance ToJSON PathElement where
 -- /See:/ 'entity' smart constructor.
 data Entity =
   Entity'
-    { _eKey        :: !(Maybe Key)
+    { _eKey :: !(Maybe Key)
     , _eProperties :: !(Maybe EntityProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3838,7 +3838,7 @@ instance ToJSON Entity where
 data GoogleDatastoreAdminV1beta1EntityFilter =
   GoogleDatastoreAdminV1beta1EntityFilter'
     { _gNamespaceIds :: !(Maybe [Text])
-    , _gKinds        :: !(Maybe [Text])
+    , _gKinds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3923,7 +3923,7 @@ instance ToJSON ReadOnly where
 data GoogleDatastoreAdminV1IndexedProperty =
   GoogleDatastoreAdminV1IndexedProperty'
     { _gdavipDirection :: !(Maybe GoogleDatastoreAdminV1IndexedPropertyDirection)
-    , _gdavipName      :: !(Maybe Text)
+    , _gdavipName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3977,8 +3977,8 @@ instance ToJSON GoogleDatastoreAdminV1IndexedProperty
 data LookupResponse =
   LookupResponse'
     { _lrDeferred :: !(Maybe [Key])
-    , _lrFound    :: !(Maybe [EntityResult])
-    , _lrMissing  :: !(Maybe [EntityResult])
+    , _lrFound :: !(Maybe [EntityResult])
+    , _lrMissing :: !(Maybe [EntityResult])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4048,10 +4048,10 @@ instance ToJSON LookupResponse where
 -- /See:/ 'googleLongrunningOperation' smart constructor.
 data GoogleLongrunningOperation =
   GoogleLongrunningOperation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe Status)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe Status)
     , _gloResponse :: !(Maybe GoogleLongrunningOperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunningOperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4143,7 +4143,7 @@ instance ToJSON GoogleLongrunningOperation where
 -- /See:/ 'propertyOrder' smart constructor.
 data PropertyOrder =
   PropertyOrder'
-    { _poProperty  :: !(Maybe PropertyReference)
+    { _poProperty :: !(Maybe PropertyReference)
     , _poDirection :: !(Maybe PropertyOrderDirection)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4190,11 +4190,11 @@ instance ToJSON PropertyOrder where
 -- /See:/ 'googleDatastoreAdminV1beta1ExportEntitiesMetadata' smart constructor.
 data GoogleDatastoreAdminV1beta1ExportEntitiesMetadata =
   GoogleDatastoreAdminV1beta1ExportEntitiesMetadata'
-    { _gooProgressBytes    :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
-    , _gooOutputURLPrefix  :: !(Maybe Text)
+    { _gooProgressBytes :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
+    , _gooOutputURLPrefix :: !(Maybe Text)
     , _gooProgressEntities :: !(Maybe GoogleDatastoreAdminV1beta1Progress)
-    , _gooEntityFilter     :: !(Maybe GoogleDatastoreAdminV1beta1EntityFilter)
-    , _gooCommon           :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadata)
+    , _gooEntityFilter :: !(Maybe GoogleDatastoreAdminV1beta1EntityFilter)
+    , _gooCommon :: !(Maybe GoogleDatastoreAdminV1beta1CommonMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4290,7 +4290,7 @@ instance ToJSON
 data GqlQueryParameter =
   GqlQueryParameter'
     { _gqpCursor :: !(Maybe Bytes)
-    , _gqpValue  :: !(Maybe Value)
+    , _gqpValue :: !(Maybe Value)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

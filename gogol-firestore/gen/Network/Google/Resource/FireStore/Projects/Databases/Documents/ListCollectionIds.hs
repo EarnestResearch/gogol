@@ -42,8 +42,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.Documents.ListCollec
     , pddlciCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.documents.listCollectionIds@ method which the
 -- 'ProjectsDatabasesDocumentsListCollectionIds' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsDatabasesDocumentsListCollectionIdsResource
 -- /See:/ 'projectsDatabasesDocumentsListCollectionIds' smart constructor.
 data ProjectsDatabasesDocumentsListCollectionIds =
   ProjectsDatabasesDocumentsListCollectionIds'
-    { _pddlciParent         :: !Text
-    , _pddlciXgafv          :: !(Maybe Xgafv)
+    { _pddlciParent :: !Text
+    , _pddlciXgafv :: !(Maybe Xgafv)
     , _pddlciUploadProtocol :: !(Maybe Text)
-    , _pddlciAccessToken    :: !(Maybe Text)
-    , _pddlciUploadType     :: !(Maybe Text)
-    , _pddlciPayload        :: !ListCollectionIdsRequest
-    , _pddlciCallback       :: !(Maybe Text)
+    , _pddlciAccessToken :: !(Maybe Text)
+    , _pddlciUploadType :: !(Maybe Text)
+    , _pddlciPayload :: !ListCollectionIdsRequest
+    , _pddlciCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

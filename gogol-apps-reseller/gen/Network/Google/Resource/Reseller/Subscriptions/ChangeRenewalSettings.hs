@@ -39,8 +39,8 @@ module Network.Google.Resource.Reseller.Subscriptions.ChangeRenewalSettings
     , scrsSubscriptionId
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.subscriptions.changeRenewalSettings@ method which the
 -- 'SubscriptionsChangeRenewalSettings' request conforms to.
@@ -63,8 +63,8 @@ type SubscriptionsChangeRenewalSettingsResource =
 -- /See:/ 'subscriptionsChangeRenewalSettings' smart constructor.
 data SubscriptionsChangeRenewalSettings =
   SubscriptionsChangeRenewalSettings'
-    { _scrsPayload        :: !RenewalSettings
-    , _scrsCustomerId     :: !Text
+    { _scrsPayload :: !RenewalSettings
+    , _scrsCustomerId :: !Text
     , _scrsSubscriptionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

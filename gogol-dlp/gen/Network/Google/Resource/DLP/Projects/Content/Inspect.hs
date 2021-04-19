@@ -48,8 +48,8 @@ module Network.Google.Resource.DLP.Projects.Content.Inspect
     , pciCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.content.inspect@ method which the
 -- 'ProjectsContentInspect' request conforms to.
@@ -79,13 +79,13 @@ type ProjectsContentInspectResource =
 -- /See:/ 'projectsContentInspect' smart constructor.
 data ProjectsContentInspect =
   ProjectsContentInspect'
-    { _pciParent         :: !Text
-    , _pciXgafv          :: !(Maybe Xgafv)
+    { _pciParent :: !Text
+    , _pciXgafv :: !(Maybe Xgafv)
     , _pciUploadProtocol :: !(Maybe Text)
-    , _pciAccessToken    :: !(Maybe Text)
-    , _pciUploadType     :: !(Maybe Text)
-    , _pciPayload        :: !GooglePrivacyDlpV2InspectContentRequest
-    , _pciCallback       :: !(Maybe Text)
+    , _pciAccessToken :: !(Maybe Text)
+    , _pciUploadType :: !(Maybe Text)
+    , _pciPayload :: !GooglePrivacyDlpV2InspectContentRequest
+    , _pciCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

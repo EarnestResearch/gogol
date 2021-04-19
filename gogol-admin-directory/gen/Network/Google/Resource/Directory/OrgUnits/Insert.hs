@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.OrgUnits.Insert
     , ouiCustomerId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.orgunits.insert@ method which the
 -- 'OrgUnitsInsert' request conforms to.
@@ -57,7 +57,7 @@ type OrgUnitsInsertResource =
 -- /See:/ 'orgUnitsInsert' smart constructor.
 data OrgUnitsInsert =
   OrgUnitsInsert'
-    { _ouiPayload    :: !OrgUnit
+    { _ouiPayload :: !OrgUnit
     , _ouiCustomerId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesConfiguration.AchievementConfigurations.List
     , aclMaxResults
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.achievementConfigurations.list@ method which the
 -- 'AchievementConfigurationsList' request conforms to.
@@ -60,8 +60,8 @@ type AchievementConfigurationsListResource =
 data AchievementConfigurationsList =
   AchievementConfigurationsList'
     { _aclApplicationId :: !Text
-    , _aclPageToken     :: !(Maybe Text)
-    , _aclMaxResults    :: !(Maybe (Textual Int32))
+    , _aclPageToken :: !(Maybe Text)
+    , _aclMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

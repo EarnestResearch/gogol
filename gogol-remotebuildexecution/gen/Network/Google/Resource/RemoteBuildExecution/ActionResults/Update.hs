@@ -53,8 +53,8 @@ module Network.Google.Resource.RemoteBuildExecution.ActionResults.Update
     , aruCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.actionResults.update@ method which the
 -- 'ActionResultsUpdate' request conforms to.
@@ -92,16 +92,16 @@ type ActionResultsUpdateResource =
 -- /See:/ 'actionResultsUpdate' smart constructor.
 data ActionResultsUpdate =
   ActionResultsUpdate'
-    { _aruSizeBytes                  :: !(Textual Int64)
-    , _aruXgafv                      :: !(Maybe Xgafv)
-    , _aruHash                       :: !Text
-    , _aruUploadProtocol             :: !(Maybe Text)
-    , _aruAccessToken                :: !(Maybe Text)
-    , _aruUploadType                 :: !(Maybe Text)
-    , _aruPayload                    :: !BuildBazelRemoteExecutionV2ActionResult
+    { _aruSizeBytes :: !(Textual Int64)
+    , _aruXgafv :: !(Maybe Xgafv)
+    , _aruHash :: !Text
+    , _aruUploadProtocol :: !(Maybe Text)
+    , _aruAccessToken :: !(Maybe Text)
+    , _aruUploadType :: !(Maybe Text)
+    , _aruPayload :: !BuildBazelRemoteExecutionV2ActionResult
     , _aruResultsCachePolicyPriority :: !(Maybe (Textual Int32))
-    , _aruInstanceName               :: !Text
-    , _aruCallback                   :: !(Maybe Text)
+    , _aruInstanceName :: !Text
+    , _aruCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.CloudIOT.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | **Beta Feature** The logging verbosity for device activity. If
 -- unspecified, DeviceRegistry.log_level will be used.

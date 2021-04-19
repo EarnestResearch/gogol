@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Instances.Delete
     , idInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.delete@ method which the
 -- 'InstancesDelete' request conforms to.
@@ -56,7 +56,7 @@ type InstancesDeleteResource =
 -- /See:/ 'instancesDelete' smart constructor.
 data InstancesDelete =
   InstancesDelete'
-    { _idProject  :: !Text
+    { _idProject :: !Text
     , _idInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

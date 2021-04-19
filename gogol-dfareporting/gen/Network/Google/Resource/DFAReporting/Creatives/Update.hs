@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Creatives.Update
     , crePayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creatives.update@ method which the
 -- 'CreativesUpdate' request conforms to.
@@ -57,7 +57,7 @@ type CreativesUpdateResource =
 data CreativesUpdate =
   CreativesUpdate'
     { _creProFileId :: !(Textual Int64)
-    , _crePayload   :: !Creative
+    , _crePayload :: !Creative
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

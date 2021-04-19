@@ -42,8 +42,8 @@ module Network.Google.Resource.Logging.MonitoredResourceDescriptors.List
     , mrdlCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.monitoredResourceDescriptors.list@ method which the
 -- 'MonitoredResourceDescriptorsList' request conforms to.
@@ -65,13 +65,13 @@ type MonitoredResourceDescriptorsListResource =
 -- /See:/ 'monitoredResourceDescriptorsList' smart constructor.
 data MonitoredResourceDescriptorsList =
   MonitoredResourceDescriptorsList'
-    { _mrdlXgafv          :: !(Maybe Xgafv)
+    { _mrdlXgafv :: !(Maybe Xgafv)
     , _mrdlUploadProtocol :: !(Maybe Text)
-    , _mrdlAccessToken    :: !(Maybe Text)
-    , _mrdlUploadType     :: !(Maybe Text)
-    , _mrdlPageToken      :: !(Maybe Text)
-    , _mrdlPageSize       :: !(Maybe (Textual Int32))
-    , _mrdlCallback       :: !(Maybe Text)
+    , _mrdlAccessToken :: !(Maybe Text)
+    , _mrdlUploadType :: !(Maybe Text)
+    , _mrdlPageToken :: !(Maybe Text)
+    , _mrdlPageSize :: !(Maybe (Textual Int32))
+    , _mrdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

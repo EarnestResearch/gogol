@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Update
     , sauPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.update@ method which the
 -- 'SubAccountsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type SubAccountsUpdateResource =
 data SubAccountsUpdate =
   SubAccountsUpdate'
     { _sauProFileId :: !(Textual Int64)
-    , _sauPayload   :: !SubAccount
+    , _sauPayload :: !SubAccount
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

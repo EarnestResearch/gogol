@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.SecurityPolicies.Patch
     , sSecurityPolicy
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.securityPolicies.patch@ method which the
 -- 'SecurityPoliciesPatch' request conforms to.
@@ -62,9 +62,9 @@ type SecurityPoliciesPatchResource =
 -- /See:/ 'securityPoliciesPatch' smart constructor.
 data SecurityPoliciesPatch =
   SecurityPoliciesPatch'
-    { _sRequestId      :: !(Maybe Text)
-    , _sProject        :: !Text
-    , _sPayload        :: !SecurityPolicy
+    { _sRequestId :: !(Maybe Text)
+    , _sProject :: !Text
+    , _sPayload :: !SecurityPolicy
     , _sSecurityPolicy :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

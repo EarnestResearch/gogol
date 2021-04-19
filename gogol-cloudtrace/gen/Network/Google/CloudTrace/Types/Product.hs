@@ -17,8 +17,8 @@
 --
 module Network.Google.CloudTrace.Types.Product where
 
-import           Network.Google.CloudTrace.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudTrace.Types.Sum
+import Network.Google.Prelude
 
 -- | A span represents a single operation within a trace. Spans can be nested
 -- to form a trace tree. Often, a trace contains a root span that describes
@@ -30,19 +30,19 @@ import           Network.Google.Prelude
 -- /See:/ 'span' smart constructor.
 data Span =
   Span'
-    { _sStatus                  :: !(Maybe Status)
-    , _sStartTime               :: !(Maybe DateTime')
-    , _sChildSpanCount          :: !(Maybe (Textual Int32))
+    { _sStatus :: !(Maybe Status)
+    , _sStartTime :: !(Maybe DateTime')
+    , _sChildSpanCount :: !(Maybe (Textual Int32))
     , _sSameProcessAsParentSpan :: !(Maybe Bool)
-    , _sName                    :: !(Maybe Text)
-    , _sStackTrace              :: !(Maybe StackTrace)
-    , _sAttributes              :: !(Maybe Attributes)
-    , _sEndTime                 :: !(Maybe DateTime')
-    , _sTimeEvents              :: !(Maybe TimeEvents)
-    , _sDisplayName             :: !(Maybe TruncatableString)
-    , _sParentSpanId            :: !(Maybe Text)
-    , _sLinks                   :: !(Maybe Links)
-    , _sSpanId                  :: !(Maybe Text)
+    , _sName :: !(Maybe Text)
+    , _sStackTrace :: !(Maybe StackTrace)
+    , _sAttributes :: !(Maybe Attributes)
+    , _sEndTime :: !(Maybe DateTime')
+    , _sTimeEvents :: !(Maybe TimeEvents)
+    , _sDisplayName :: !(Maybe TruncatableString)
+    , _sParentSpanId :: !(Maybe Text)
+    , _sLinks :: !(Maybe Links)
+    , _sSpanId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -226,7 +226,7 @@ instance ToJSON Span where
 -- /See:/ 'truncatableString' smart constructor.
 data TruncatableString =
   TruncatableString'
-    { _tsValue              :: !(Maybe Text)
+    { _tsValue :: !(Maybe Text)
     , _tsTruncatedByteCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -316,7 +316,7 @@ instance ToJSON TruncatableString where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -417,7 +417,7 @@ instance ToJSON AttributesAttributeMap where
 -- /See:/ 'annotation' smart constructor.
 data Annotation =
   Annotation'
-    { _aAttributes  :: !(Maybe Attributes)
+    { _aAttributes :: !(Maybe Attributes)
     , _aDescription :: !(Maybe TruncatableString)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -466,8 +466,8 @@ instance ToJSON Annotation where
 -- /See:/ 'attributeValue' smart constructor.
 data AttributeValue =
   AttributeValue'
-    { _avBoolValue   :: !(Maybe Bool)
-    , _avIntValue    :: !(Maybe (Textual Int64))
+    { _avBoolValue :: !(Maybe Bool)
+    , _avIntValue :: !(Maybe (Textual Int64))
     , _avStringValue :: !(Maybe TruncatableString)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -527,10 +527,10 @@ instance ToJSON AttributeValue where
 -- /See:/ 'messageEvent' smart constructor.
 data MessageEvent =
   MessageEvent'
-    { _meId                    :: !(Maybe (Textual Int64))
+    { _meId :: !(Maybe (Textual Int64))
     , _meUncompressedSizeBytes :: !(Maybe (Textual Int64))
-    , _meType                  :: !(Maybe MessageEventType)
-    , _meCompressedSizeBytes   :: !(Maybe (Textual Int64))
+    , _meType :: !(Maybe MessageEventType)
+    , _meCompressedSizeBytes :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -638,10 +638,10 @@ instance ToJSON Empty where
 -- /See:/ 'link' smart constructor.
 data Link =
   Link'
-    { _lTraceId    :: !(Maybe Text)
+    { _lTraceId :: !(Maybe Text)
     , _lAttributes :: !(Maybe Attributes)
-    , _lType       :: !(Maybe LinkType)
-    , _lSpanId     :: !(Maybe Text)
+    , _lType :: !(Maybe LinkType)
+    , _lSpanId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -744,7 +744,7 @@ instance ToJSON StatusDetailsItem where
 data StackTrace =
   StackTrace'
     { _stStackTraceHashId :: !(Maybe (Textual Int64))
-    , _stStackFrames      :: !(Maybe StackFrames)
+    , _stStackFrames :: !(Maybe StackFrames)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -839,7 +839,7 @@ instance ToJSON BatchWriteSpansRequest where
 data Attributes =
   Attributes'
     { _aDroppedAttributesCount :: !(Maybe (Textual Int32))
-    , _aAttributeMap           :: !(Maybe AttributesAttributeMap)
+    , _aAttributeMap :: !(Maybe AttributesAttributeMap)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -898,7 +898,7 @@ instance ToJSON Attributes where
 data Module =
   Module'
     { _mBuildId :: !(Maybe TruncatableString)
-    , _mModule  :: !(Maybe TruncatableString)
+    , _mModule :: !(Maybe TruncatableString)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -946,8 +946,8 @@ instance ToJSON Module where
 data TimeEvents =
   TimeEvents'
     { _teDroppedMessageEventsCount :: !(Maybe (Textual Int32))
-    , _teDroppedAnnotationsCount   :: !(Maybe (Textual Int32))
-    , _teTimeEvent                 :: !(Maybe [TimeEvent])
+    , _teDroppedAnnotationsCount :: !(Maybe (Textual Int32))
+    , _teTimeEvent :: !(Maybe [TimeEvent])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1019,7 +1019,7 @@ instance ToJSON TimeEvents where
 data StackFrames =
   StackFrames'
     { _sfDroppedFramesCount :: !(Maybe (Textual Int32))
-    , _sfFrame              :: !(Maybe [StackFrame])
+    , _sfFrame :: !(Maybe [StackFrame])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1070,13 +1070,13 @@ instance ToJSON StackFrames where
 -- /See:/ 'stackFrame' smart constructor.
 data StackFrame =
   StackFrame'
-    { _sfLoadModule           :: !(Maybe Module)
+    { _sfLoadModule :: !(Maybe Module)
     , _sfOriginalFunctionName :: !(Maybe TruncatableString)
-    , _sfLineNumber           :: !(Maybe (Textual Int64))
-    , _sfSourceVersion        :: !(Maybe TruncatableString)
-    , _sfFunctionName         :: !(Maybe TruncatableString)
-    , _sfColumnNumber         :: !(Maybe (Textual Int64))
-    , _sfFileName             :: !(Maybe TruncatableString)
+    , _sfLineNumber :: !(Maybe (Textual Int64))
+    , _sfSourceVersion :: !(Maybe TruncatableString)
+    , _sfFunctionName :: !(Maybe TruncatableString)
+    , _sfColumnNumber :: !(Maybe (Textual Int64))
+    , _sfFileName :: !(Maybe TruncatableString)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1191,7 +1191,7 @@ instance ToJSON StackFrame where
 data Links =
   Links'
     { _lDroppedLinksCount :: !(Maybe (Textual Int32))
-    , _lLink              :: !(Maybe [Link])
+    , _lLink :: !(Maybe [Link])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1243,8 +1243,8 @@ instance ToJSON Links where
 data TimeEvent =
   TimeEvent'
     { _teMessageEvent :: !(Maybe MessageEvent)
-    , _teAnnotation   :: !(Maybe Annotation)
-    , _teTime         :: !(Maybe DateTime')
+    , _teAnnotation :: !(Maybe Annotation)
+    , _teTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

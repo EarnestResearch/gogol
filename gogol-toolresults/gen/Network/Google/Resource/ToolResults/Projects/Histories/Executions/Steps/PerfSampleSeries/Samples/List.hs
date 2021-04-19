@@ -50,8 +50,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespssslPageSize
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.perfSampleSeries.samples.list@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesList' request conforms to.
@@ -88,13 +88,13 @@ type ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesListResource
 -- /See:/ 'projectsHistoriesExecutionsStepsPerfSampleSeriesSamplesList' smart constructor.
 data ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesList =
   ProjectsHistoriesExecutionsStepsPerfSampleSeriesSamplesList'
-    { _phespssslExecutionId    :: !Text
-    , _phespssslStepId         :: !Text
-    , _phespssslHistoryId      :: !Text
-    , _phespssslPageToken      :: !(Maybe Text)
-    , _phespssslProjectId      :: !Text
+    { _phespssslExecutionId :: !Text
+    , _phespssslStepId :: !Text
+    , _phespssslHistoryId :: !Text
+    , _phespssslPageToken :: !(Maybe Text)
+    , _phespssslProjectId :: !Text
     , _phespssslSampleSeriesId :: !Text
-    , _phespssslPageSize       :: !(Maybe (Textual Int32))
+    , _phespssslPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

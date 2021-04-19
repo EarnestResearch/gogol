@@ -44,8 +44,8 @@ module Network.Google.Resource.RemoteBuildExecution.ActionResults.Get
     , argCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
 
 -- | A resource alias for @remotebuildexecution.actionResults.get@ method which the
 -- 'ActionResultsGet' request conforms to.
@@ -69,14 +69,14 @@ type ActionResultsGetResource =
 -- /See:/ 'actionResultsGet' smart constructor.
 data ActionResultsGet =
   ActionResultsGet'
-    { _argSizeBytes      :: !(Textual Int64)
-    , _argXgafv          :: !(Maybe Xgafv)
-    , _argHash           :: !Text
+    { _argSizeBytes :: !(Textual Int64)
+    , _argXgafv :: !(Maybe Xgafv)
+    , _argHash :: !Text
     , _argUploadProtocol :: !(Maybe Text)
-    , _argAccessToken    :: !(Maybe Text)
-    , _argUploadType     :: !(Maybe Text)
-    , _argInstanceName   :: !Text
-    , _argCallback       :: !(Maybe Text)
+    , _argAccessToken :: !(Maybe Text)
+    , _argUploadType :: !(Maybe Text)
+    , _argInstanceName :: !Text
+    , _argCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

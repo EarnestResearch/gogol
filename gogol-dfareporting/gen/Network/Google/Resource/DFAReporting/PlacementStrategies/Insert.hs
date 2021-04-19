@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.PlacementStrategies.Insert
     , psiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementStrategies.insert@ method which the
 -- 'PlacementStrategiesInsert' request conforms to.
@@ -58,7 +58,7 @@ type PlacementStrategiesInsertResource =
 data PlacementStrategiesInsert =
   PlacementStrategiesInsert'
     { _psiProFileId :: !(Textual Int64)
-    , _psiPayload   :: !PlacementStrategy
+    , _psiPayload :: !PlacementStrategy
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

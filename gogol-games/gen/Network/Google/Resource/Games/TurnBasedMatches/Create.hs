@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Create
     , tbmcLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.create@ method which the
 -- 'TurnBasedMatchesCreate' request conforms to.
@@ -57,7 +57,7 @@ type TurnBasedMatchesCreateResource =
 -- /See:/ 'turnBasedMatchesCreate' smart constructor.
 data TurnBasedMatchesCreate =
   TurnBasedMatchesCreate'
-    { _tbmcPayload  :: !TurnBasedMatchCreateRequest
+    { _tbmcPayload :: !TurnBasedMatchCreateRequest
     , _tbmcLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

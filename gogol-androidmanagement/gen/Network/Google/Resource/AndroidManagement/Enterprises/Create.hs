@@ -45,8 +45,8 @@ module Network.Google.Resource.AndroidManagement.Enterprises.Create
     , ecCallback
     ) where
 
-import           Network.Google.AndroidManagement.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidmanagement.enterprises.create@ method which the
 -- 'EnterprisesCreate' request conforms to.
@@ -70,15 +70,15 @@ type EnterprisesCreateResource =
 -- /See:/ 'enterprisesCreate' smart constructor.
 data EnterprisesCreate =
   EnterprisesCreate'
-    { _ecXgafv           :: !(Maybe Xgafv)
-    , _ecSignupURLName   :: !(Maybe Text)
-    , _ecUploadProtocol  :: !(Maybe Text)
-    , _ecAccessToken     :: !(Maybe Text)
-    , _ecUploadType      :: !(Maybe Text)
-    , _ecPayload         :: !Enterprise
-    , _ecProjectId       :: !(Maybe Text)
+    { _ecXgafv :: !(Maybe Xgafv)
+    , _ecSignupURLName :: !(Maybe Text)
+    , _ecUploadProtocol :: !(Maybe Text)
+    , _ecAccessToken :: !(Maybe Text)
+    , _ecUploadType :: !(Maybe Text)
+    , _ecPayload :: !Enterprise
+    , _ecProjectId :: !(Maybe Text)
     , _ecEnterpriseToken :: !(Maybe Text)
-    , _ecCallback        :: !(Maybe Text)
+    , _ecCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.DiskTypes.AggregatedList
     , dtalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.diskTypes.aggregatedList@ method which the
 -- 'DiskTypesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type DiskTypesAggregatedListResource =
 -- /See:/ 'diskTypesAggregatedList' smart constructor.
 data DiskTypesAggregatedList =
   DiskTypesAggregatedList'
-    { _dtalOrderBy    :: !(Maybe Text)
-    , _dtalProject    :: !Text
-    , _dtalFilter     :: !(Maybe Text)
-    , _dtalPageToken  :: !(Maybe Text)
+    { _dtalOrderBy :: !(Maybe Text)
+    , _dtalProject :: !Text
+    , _dtalFilter :: !(Maybe Text)
+    , _dtalPageToken :: !(Maybe Text)
     , _dtalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.RegionOperations.List
     , rolMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionOperations.list@ method which the
 -- 'RegionOperationsList' request conforms to.
@@ -67,11 +67,11 @@ type RegionOperationsListResource =
 -- /See:/ 'regionOperationsList' smart constructor.
 data RegionOperationsList =
   RegionOperationsList'
-    { _rolOrderBy    :: !(Maybe Text)
-    , _rolProject    :: !Text
-    , _rolFilter     :: !(Maybe Text)
-    , _rolRegion     :: !Text
-    , _rolPageToken  :: !(Maybe Text)
+    { _rolOrderBy :: !(Maybe Text)
+    , _rolProject :: !Text
+    , _rolFilter :: !(Maybe Text)
+    , _rolRegion :: !Text
+    , _rolPageToken :: !(Maybe Text)
     , _rolMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

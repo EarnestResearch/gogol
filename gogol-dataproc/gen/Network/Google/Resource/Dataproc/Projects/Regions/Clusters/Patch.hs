@@ -47,8 +47,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.Patch
     , prcpCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.clusters.patch@ method which the
 -- 'ProjectsRegionsClustersPatch' request conforms to.
@@ -79,18 +79,18 @@ type ProjectsRegionsClustersPatchResource =
 -- /See:/ 'projectsRegionsClustersPatch' smart constructor.
 data ProjectsRegionsClustersPatch =
   ProjectsRegionsClustersPatch'
-    { _prcpXgafv                       :: !(Maybe Xgafv)
-    , _prcpRequestId                   :: !(Maybe Text)
-    , _prcpUploadProtocol              :: !(Maybe Text)
-    , _prcpUpdateMask                  :: !(Maybe GFieldMask)
-    , _prcpAccessToken                 :: !(Maybe Text)
-    , _prcpUploadType                  :: !(Maybe Text)
-    , _prcpPayload                     :: !Cluster
+    { _prcpXgafv :: !(Maybe Xgafv)
+    , _prcpRequestId :: !(Maybe Text)
+    , _prcpUploadProtocol :: !(Maybe Text)
+    , _prcpUpdateMask :: !(Maybe GFieldMask)
+    , _prcpAccessToken :: !(Maybe Text)
+    , _prcpUploadType :: !(Maybe Text)
+    , _prcpPayload :: !Cluster
     , _prcpGracefulDecommissionTimeout :: !(Maybe GDuration)
-    , _prcpClusterName                 :: !Text
-    , _prcpRegion                      :: !Text
-    , _prcpProjectId                   :: !Text
-    , _prcpCallback                    :: !(Maybe Text)
+    , _prcpClusterName :: !Text
+    , _prcpRegion :: !Text
+    , _prcpProjectId :: !Text
+    , _prcpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -180,17 +180,17 @@ prcpUploadProtocol
 -- body would be set as follows: { \"config\":{ \"secondaryWorkerConfig\":{
 -- \"numInstances\":\"5\" } } } __Note:__ Currently, only the following
 -- fields can be updated:
--- > +-----------------------------------+-----------------------------------+
--- > | __Mask__                          | __Purpose__                       |
--- > +-----------------------------------+-----------------------------------+
--- > | __/labels/__                      | Update labels                     |
--- > +-----------------------------------+-----------------------------------+
--- > | __/config.worker_config.num_insta | Resize primary worker group       |
--- > | nces/__                           |                                   |
--- > +-----------------------------------+-----------------------------------+
--- > | __/config.secondary_worker_config | Resize secondary worker group     |
--- > | .num_instances/__                 |                                   |
--- > +-----------------------------------+-----------------------------------+
+-- > +-------------------------------------+-------------------------------+
+-- > | __Mask__                            | __Purpose__                   |
+-- > +-------------------------------------+-------------------------------+
+-- > | __/labels/__                        | Update labels                 |
+-- > +-------------------------------------+-------------------------------+
+-- > | __/co                               | Resize primary worker group   |
+-- > | nfig.worker_config.num_instances/__ |                               |
+-- > +-------------------------------------+-------------------------------+
+-- > | __/config.secon                     | Resize secondary worker group |
+-- > | dary_worker_config.num_instances/__ |                               |
+-- > +-------------------------------------+-------------------------------+
 prcpUpdateMask :: Lens' ProjectsRegionsClustersPatch (Maybe GFieldMask)
 prcpUpdateMask
   = lens _prcpUpdateMask

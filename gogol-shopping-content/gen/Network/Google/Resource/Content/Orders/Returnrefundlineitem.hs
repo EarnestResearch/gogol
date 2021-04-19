@@ -39,14 +39,14 @@ module Network.Google.Resource.Content.Orders.Returnrefundlineitem
     , orOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.returnrefundlineitem@ method which the
 -- 'OrdersReturnrefundlineitem' request conforms to.
 type OrdersReturnrefundlineitemResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -62,8 +62,8 @@ type OrdersReturnrefundlineitemResource =
 data OrdersReturnrefundlineitem =
   OrdersReturnrefundlineitem'
     { _orMerchantId :: !(Textual Word64)
-    , _orPayload    :: !OrdersReturnRefundLineItemRequest
-    , _orOrderId    :: !Text
+    , _orPayload :: !OrdersReturnRefundLineItemRequest
+    , _orOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

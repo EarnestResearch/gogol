@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Permissions.QueryTestablePermissions
     , pqtpCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.permissions.queryTestablePermissions@ method which the
 -- 'PermissionsQueryTestablePermissions' request conforms to.
@@ -65,12 +65,12 @@ type PermissionsQueryTestablePermissionsResource =
 -- /See:/ 'permissionsQueryTestablePermissions' smart constructor.
 data PermissionsQueryTestablePermissions =
   PermissionsQueryTestablePermissions'
-    { _pqtpXgafv          :: !(Maybe Xgafv)
+    { _pqtpXgafv :: !(Maybe Xgafv)
     , _pqtpUploadProtocol :: !(Maybe Text)
-    , _pqtpAccessToken    :: !(Maybe Text)
-    , _pqtpUploadType     :: !(Maybe Text)
-    , _pqtpPayload        :: !QueryTestablePermissionsRequest
-    , _pqtpCallback       :: !(Maybe Text)
+    , _pqtpAccessToken :: !(Maybe Text)
+    , _pqtpUploadType :: !(Maybe Text)
+    , _pqtpPayload :: !QueryTestablePermissionsRequest
+    , _pqtpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

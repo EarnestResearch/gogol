@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.Organizations.Exclusions.Delete
     , oedCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.organizations.exclusions.delete@ method which the
 -- 'OrganizationsExclusionsDelete' request conforms to.
@@ -61,12 +61,12 @@ type OrganizationsExclusionsDeleteResource =
 -- /See:/ 'organizationsExclusionsDelete' smart constructor.
 data OrganizationsExclusionsDelete =
   OrganizationsExclusionsDelete'
-    { _oedXgafv          :: !(Maybe Xgafv)
+    { _oedXgafv :: !(Maybe Xgafv)
     , _oedUploadProtocol :: !(Maybe Text)
-    , _oedAccessToken    :: !(Maybe Text)
-    , _oedUploadType     :: !(Maybe Text)
-    , _oedName           :: !Text
-    , _oedCallback       :: !(Maybe Text)
+    , _oedAccessToken :: !(Maybe Text)
+    , _oedUploadType :: !(Maybe Text)
+    , _oedName :: !Text
+    , _oedCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

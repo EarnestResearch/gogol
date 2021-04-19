@@ -52,8 +52,8 @@ module Network.Google.Resource.ServiceControl.Services.Report
     , srCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceControl.Types
+import Network.Google.Prelude
+import Network.Google.ServiceControl.Types
 
 -- | A resource alias for @servicecontrol.services.report@ method which the
 -- 'ServicesReport' request conforms to.
@@ -85,13 +85,13 @@ type ServicesReportResource =
 -- /See:/ 'servicesReport' smart constructor.
 data ServicesReport =
   ServicesReport'
-    { _srXgafv          :: !(Maybe Xgafv)
+    { _srXgafv :: !(Maybe Xgafv)
     , _srUploadProtocol :: !(Maybe Text)
-    , _srAccessToken    :: !(Maybe Text)
-    , _srUploadType     :: !(Maybe Text)
-    , _srPayload        :: !ReportRequest
-    , _srServiceName    :: !Text
-    , _srCallback       :: !(Maybe Text)
+    , _srAccessToken :: !(Maybe Text)
+    , _srUploadType :: !(Maybe Text)
+    , _srPayload :: !ReportRequest
+    , _srServiceName :: !Text
+    , _srCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

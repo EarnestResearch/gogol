@@ -393,22 +393,22 @@ module Network.Google.ContainerBuilder
     , biDigest
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Cloudbuild.Operations.Cancel
-import           Network.Google.Resource.Cloudbuild.Operations.Get
-import           Network.Google.Resource.Cloudbuild.Operations.List
-import           Network.Google.Resource.Cloudbuild.Projects.Builds.Cancel
-import           Network.Google.Resource.Cloudbuild.Projects.Builds.Create
-import           Network.Google.Resource.Cloudbuild.Projects.Builds.Get
-import           Network.Google.Resource.Cloudbuild.Projects.Builds.List
-import           Network.Google.Resource.Cloudbuild.Projects.Builds.Retry
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.Create
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.Delete
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.Get
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.List
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.Patch
-import           Network.Google.Resource.Cloudbuild.Projects.Triggers.Run
+import Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Resource.Cloudbuild.Operations.Cancel
+import Network.Google.Resource.Cloudbuild.Operations.Get
+import Network.Google.Resource.Cloudbuild.Operations.List
+import Network.Google.Resource.Cloudbuild.Projects.Builds.Cancel
+import Network.Google.Resource.Cloudbuild.Projects.Builds.Create
+import Network.Google.Resource.Cloudbuild.Projects.Builds.Get
+import Network.Google.Resource.Cloudbuild.Projects.Builds.List
+import Network.Google.Resource.Cloudbuild.Projects.Builds.Retry
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Create
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Delete
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Get
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.List
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Patch
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Run
 
 {- $resources
 TODO

@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Members.Delete
     , mdGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.delete@ method which the
 -- 'MembersDelete' request conforms to.
@@ -58,7 +58,7 @@ type MembersDeleteResource =
 data MembersDelete =
   MembersDelete'
     { _mdMemberKey :: !Text
-    , _mdGroupKey  :: !Text
+    , _mdGroupKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

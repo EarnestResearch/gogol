@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.VersionHeaders.Lis
     , aIncludeDeleted
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.version_headers.list@ method which the
 -- 'AccountsContainersVersionHeadersList' request conforms to.
@@ -58,8 +58,8 @@ type AccountsContainersVersionHeadersListResource =
 -- /See:/ 'accountsContainersVersionHeadersList' smart constructor.
 data AccountsContainersVersionHeadersList =
   AccountsContainersVersionHeadersList'
-    { _aParent         :: !Text
-    , _aPageToken      :: !(Maybe Text)
+    { _aParent :: !Text
+    , _aPageToken :: !(Maybe Text)
     , _aIncludeDeleted :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.GetQuery
     , qgqQueryId
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.getquery@ method which the
 -- 'QueriesGetQuery' request conforms to.

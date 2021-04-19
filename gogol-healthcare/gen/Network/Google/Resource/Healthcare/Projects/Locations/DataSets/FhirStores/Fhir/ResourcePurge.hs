@@ -44,8 +44,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfrpCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.Resource-purge@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirResourcePurge' request conforms to.
@@ -69,12 +69,12 @@ type ProjectsLocationsDataSetsFhirStoresFhirResourcePurgeResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirResourcePurge' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirResourcePurge =
   ProjectsLocationsDataSetsFhirStoresFhirResourcePurge'
-    { _pldsfsfrpXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfrpXgafv :: !(Maybe Xgafv)
     , _pldsfsfrpUploadProtocol :: !(Maybe Text)
-    , _pldsfsfrpAccessToken    :: !(Maybe Text)
-    , _pldsfsfrpUploadType     :: !(Maybe Text)
-    , _pldsfsfrpName           :: !Text
-    , _pldsfsfrpCallback       :: !(Maybe Text)
+    , _pldsfsfrpAccessToken :: !(Maybe Text)
+    , _pldsfsfrpUploadType :: !(Maybe Text)
+    , _pldsfsfrpName :: !Text
+    , _pldsfsfrpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

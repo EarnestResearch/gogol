@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.LiaSettings.RequestgmbAccess
     , lsraAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.liasettings.requestgmbaccess@ method which the
 -- 'LiaSettingsRequestgmbAccess' request conforms to.
 type LiaSettingsRequestgmbAccessResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "liasettings" :>
              Capture "accountId" (Textual Word64) :>
@@ -59,9 +59,9 @@ type LiaSettingsRequestgmbAccessResource =
 -- /See:/ 'liaSettingsRequestgmbAccess' smart constructor.
 data LiaSettingsRequestgmbAccess =
   LiaSettingsRequestgmbAccess'
-    { _lsraGmbEmail   :: !Text
+    { _lsraGmbEmail :: !Text
     , _lsraMerchantId :: !(Textual Word64)
-    , _lsraAccountId  :: !(Textual Word64)
+    , _lsraAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

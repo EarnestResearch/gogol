@@ -38,8 +38,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Trigger
     , acwtuPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.triggers.update@ method which the
 -- 'AccountsContainersWorkspacesTriggersUpdate' request conforms to.
@@ -57,9 +57,9 @@ type AccountsContainersWorkspacesTriggersUpdateResource
 -- /See:/ 'accountsContainersWorkspacesTriggersUpdate' smart constructor.
 data AccountsContainersWorkspacesTriggersUpdate =
   AccountsContainersWorkspacesTriggersUpdate'
-    { _acwtuPath        :: !Text
+    { _acwtuPath :: !Text
     , _acwtuFingerprint :: !(Maybe Text)
-    , _acwtuPayload     :: !Trigger
+    , _acwtuPayload :: !Trigger
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -51,8 +51,8 @@ module Network.Google.Resource.Classroom.Courses.List
     , clCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.courses.list@ method which the
 -- 'CoursesList' request conforms to.
@@ -83,16 +83,16 @@ type CoursesListResource =
 -- /See:/ 'coursesList' smart constructor.
 data CoursesList =
   CoursesList'
-    { _clStudentId      :: !(Maybe Text)
-    , _clXgafv          :: !(Maybe Xgafv)
+    { _clStudentId :: !(Maybe Text)
+    , _clXgafv :: !(Maybe Xgafv)
     , _clUploadProtocol :: !(Maybe Text)
-    , _clAccessToken    :: !(Maybe Text)
-    , _clUploadType     :: !(Maybe Text)
-    , _clTeacherId      :: !(Maybe Text)
-    , _clPageToken      :: !(Maybe Text)
-    , _clPageSize       :: !(Maybe (Textual Int32))
-    , _clCourseStates   :: !(Maybe [Text])
-    , _clCallback       :: !(Maybe Text)
+    , _clAccessToken :: !(Maybe Text)
+    , _clUploadType :: !(Maybe Text)
+    , _clTeacherId :: !(Maybe Text)
+    , _clPageToken :: !(Maybe Text)
+    , _clPageSize :: !(Maybe (Textual Int32))
+    , _clCourseStates :: !(Maybe [Text])
+    , _clCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

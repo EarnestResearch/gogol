@@ -44,8 +44,8 @@ module Network.Google.Resource.Vault.Matters.Update
     , matCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.update@ method which the
 -- 'MattersUpdate' request conforms to.
@@ -68,13 +68,13 @@ type MattersUpdateResource =
 -- /See:/ 'mattersUpdate' smart constructor.
 data MattersUpdate =
   MattersUpdate'
-    { _matXgafv          :: !(Maybe Xgafv)
+    { _matXgafv :: !(Maybe Xgafv)
     , _matUploadProtocol :: !(Maybe Text)
-    , _matAccessToken    :: !(Maybe Text)
-    , _matUploadType     :: !(Maybe Text)
-    , _matPayload        :: !Matter
-    , _matMatterId       :: !Text
-    , _matCallback       :: !(Maybe Text)
+    , _matAccessToken :: !(Maybe Text)
+    , _matUploadType :: !(Maybe Text)
+    , _matPayload :: !Matter
+    , _matMatterId :: !Text
+    , _matCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

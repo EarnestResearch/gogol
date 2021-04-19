@@ -45,8 +45,8 @@ module Network.Google.Resource.Vault.Matters.Holds.List
     , mhlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.list@ method which the
 -- 'MattersHoldsList' request conforms to.
@@ -72,15 +72,15 @@ type MattersHoldsListResource =
 -- /See:/ 'mattersHoldsList' smart constructor.
 data MattersHoldsList =
   MattersHoldsList'
-    { _mhlXgafv          :: !(Maybe Xgafv)
+    { _mhlXgafv :: !(Maybe Xgafv)
     , _mhlUploadProtocol :: !(Maybe Text)
-    , _mhlAccessToken    :: !(Maybe Text)
-    , _mhlUploadType     :: !(Maybe Text)
-    , _mhlMatterId       :: !Text
-    , _mhlView           :: !(Maybe Text)
-    , _mhlPageToken      :: !(Maybe Text)
-    , _mhlPageSize       :: !(Maybe (Textual Int32))
-    , _mhlCallback       :: !(Maybe Text)
+    , _mhlAccessToken :: !(Maybe Text)
+    , _mhlUploadType :: !(Maybe Text)
+    , _mhlMatterId :: !Text
+    , _mhlView :: !(Maybe Text)
+    , _mhlPageToken :: !(Maybe Text)
+    , _mhlPageSize :: !(Maybe (Textual Int32))
+    , _mhlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

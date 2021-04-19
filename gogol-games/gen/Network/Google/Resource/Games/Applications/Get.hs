@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.Applications.Get
     , agLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.applications.get@ method which the
 -- 'ApplicationsGet' request conforms to.
@@ -63,8 +63,8 @@ type ApplicationsGetResource =
 data ApplicationsGet =
   ApplicationsGet'
     { _agApplicationId :: !Text
-    , _agPlatformType  :: !(Maybe ApplicationsGetPlatformType)
-    , _agLanguage      :: !(Maybe Text)
+    , _agPlatformType :: !(Maybe ApplicationsGetPlatformType)
+    , _agLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

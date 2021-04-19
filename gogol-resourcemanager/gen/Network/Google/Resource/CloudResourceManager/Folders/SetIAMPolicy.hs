@@ -46,8 +46,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.SetIAMPolicy
     , fsipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.setIamPolicy@ method which the
 -- 'FoldersSetIAMPolicy' request conforms to.
@@ -72,13 +72,13 @@ type FoldersSetIAMPolicyResource =
 -- /See:/ 'foldersSetIAMPolicy' smart constructor.
 data FoldersSetIAMPolicy =
   FoldersSetIAMPolicy'
-    { _fsipXgafv          :: !(Maybe Xgafv)
+    { _fsipXgafv :: !(Maybe Xgafv)
     , _fsipUploadProtocol :: !(Maybe Text)
-    , _fsipAccessToken    :: !(Maybe Text)
-    , _fsipUploadType     :: !(Maybe Text)
-    , _fsipPayload        :: !SetIAMPolicyRequest
-    , _fsipResource       :: !Text
-    , _fsipCallback       :: !(Maybe Text)
+    , _fsipAccessToken :: !(Maybe Text)
+    , _fsipUploadType :: !(Maybe Text)
+    , _fsipPayload :: !SetIAMPolicyRequest
+    , _fsipResource :: !Text
+    , _fsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

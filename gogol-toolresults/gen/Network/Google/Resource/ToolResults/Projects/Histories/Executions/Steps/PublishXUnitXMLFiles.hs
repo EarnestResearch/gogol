@@ -45,8 +45,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespxuxfProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.publishXunitXmlFiles@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPublishXUnitXMLFiles' request conforms to.
@@ -77,10 +77,10 @@ type ProjectsHistoriesExecutionsStepsPublishXUnitXMLFilesResource
 data ProjectsHistoriesExecutionsStepsPublishXUnitXMLFiles =
   ProjectsHistoriesExecutionsStepsPublishXUnitXMLFiles'
     { _phespxuxfExecutionId :: !Text
-    , _phespxuxfStepId      :: !Text
-    , _phespxuxfPayload     :: !PublishXUnitXMLFilesRequest
-    , _phespxuxfHistoryId   :: !Text
-    , _phespxuxfProjectId   :: !Text
+    , _phespxuxfStepId :: !Text
+    , _phespxuxfPayload :: !PublishXUnitXMLFilesRequest
+    , _phespxuxfHistoryId :: !Text
+    , _phespxuxfProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

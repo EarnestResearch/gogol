@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Groups.Delete
     , gdGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.delete@ method which the
 -- 'GroupsDelete' request conforms to.

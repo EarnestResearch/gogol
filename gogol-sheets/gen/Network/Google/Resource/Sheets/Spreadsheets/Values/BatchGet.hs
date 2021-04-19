@@ -46,8 +46,8 @@ module Network.Google.Resource.Sheets.Spreadsheets.Values.BatchGet
     , svbgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Sheets.Types
+import Network.Google.Prelude
+import Network.Google.Sheets.Types
 
 -- | A resource alias for @sheets.spreadsheets.values.batchGet@ method which the
 -- 'SpreadsheetsValuesBatchGet' request conforms to.
@@ -74,16 +74,16 @@ type SpreadsheetsValuesBatchGetResource =
 -- /See:/ 'spreadsheetsValuesBatchGet' smart constructor.
 data SpreadsheetsValuesBatchGet =
   SpreadsheetsValuesBatchGet'
-    { _svbgXgafv                :: !(Maybe Xgafv)
-    , _svbgValueRenderOption    :: !(Maybe Text)
-    , _svbgUploadProtocol       :: !(Maybe Text)
-    , _svbgAccessToken          :: !(Maybe Text)
-    , _svbgSpreadsheetId        :: !Text
-    , _svbgUploadType           :: !(Maybe Text)
-    , _svbgRanges               :: !(Maybe [Text])
+    { _svbgXgafv :: !(Maybe Xgafv)
+    , _svbgValueRenderOption :: !(Maybe Text)
+    , _svbgUploadProtocol :: !(Maybe Text)
+    , _svbgAccessToken :: !(Maybe Text)
+    , _svbgSpreadsheetId :: !Text
+    , _svbgUploadType :: !(Maybe Text)
+    , _svbgRanges :: !(Maybe [Text])
     , _svbgDateTimeRenderOption :: !(Maybe Text)
-    , _svbgMajorDimension       :: !(Maybe Text)
-    , _svbgCallback             :: !(Maybe Text)
+    , _svbgMajorDimension :: !(Maybe Text)
+    , _svbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

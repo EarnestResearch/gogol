@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.Leave
     , tbmlMatchId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.leave@ method which the
 -- 'TurnBasedMatchesLeave' request conforms to.
@@ -60,7 +60,7 @@ type TurnBasedMatchesLeaveResource =
 data TurnBasedMatchesLeave =
   TurnBasedMatchesLeave'
     { _tbmlLanguage :: !(Maybe Text)
-    , _tbmlMatchId  :: !Text
+    , _tbmlMatchId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

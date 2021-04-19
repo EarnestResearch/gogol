@@ -36,8 +36,8 @@ module Network.Google.Resource.Reseller.Resellernotify.Unregister
     , ruServiceAccountEmailAddress
     ) where
 
-import           Network.Google.AppsReseller.Types
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @reseller.resellernotify.unregister@ method which the
 -- 'ResellernotifyUnregister' request conforms to.

@@ -16,7 +16,7 @@
 --
 module Network.Google.Genomics.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The Google standard error code that best describes this failure.
 data FailedEventCode

@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Logs.Delete
     , baldCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.logs.delete@ method which the
 -- 'BillingAccountsLogsDelete' request conforms to.
@@ -65,12 +65,12 @@ type BillingAccountsLogsDeleteResource =
 -- /See:/ 'billingAccountsLogsDelete' smart constructor.
 data BillingAccountsLogsDelete =
   BillingAccountsLogsDelete'
-    { _baldXgafv          :: !(Maybe Xgafv)
+    { _baldXgafv :: !(Maybe Xgafv)
     , _baldUploadProtocol :: !(Maybe Text)
-    , _baldAccessToken    :: !(Maybe Text)
-    , _baldUploadType     :: !(Maybe Text)
-    , _baldLogName        :: !Text
-    , _baldCallback       :: !(Maybe Text)
+    , _baldAccessToken :: !(Maybe Text)
+    , _baldUploadType :: !(Maybe Text)
+    , _baldLogName :: !Text
+    , _baldCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

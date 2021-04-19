@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.Instances.List
     , ilMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.list@ method which the
 -- 'InstancesList' request conforms to.
@@ -63,9 +63,9 @@ type InstancesListResource =
 -- /See:/ 'instancesList' smart constructor.
 data InstancesList =
   InstancesList'
-    { _ilProject    :: !Text
-    , _ilFilter     :: !(Maybe Text)
-    , _ilPageToken  :: !(Maybe Text)
+    { _ilProject :: !Text
+    , _ilFilter :: !(Maybe Text)
+    , _ilPageToken :: !(Maybe Text)
     , _ilMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStore
     , pldsdssfssDicomWebPath
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.dicomStores.searchForStudies@ method which the
 -- 'ProjectsLocationsDataSetsDicomStoresSearchForStudies' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsDataSetsDicomStoresSearchForStudiesResource
 -- /See:/ 'projectsLocationsDataSetsDicomStoresSearchForStudies' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresSearchForStudies =
   ProjectsLocationsDataSetsDicomStoresSearchForStudies'
-    { _pldsdssfssParent         :: !Text
-    , _pldsdssfssXgafv          :: !(Maybe Xgafv)
+    { _pldsdssfssParent :: !Text
+    , _pldsdssfssXgafv :: !(Maybe Xgafv)
     , _pldsdssfssUploadProtocol :: !(Maybe Text)
-    , _pldsdssfssAccessToken    :: !(Maybe Text)
-    , _pldsdssfssUploadType     :: !(Maybe Text)
-    , _pldsdssfssCallback       :: !(Maybe Text)
-    , _pldsdssfssDicomWebPath   :: !Text
+    , _pldsdssfssAccessToken :: !(Maybe Text)
+    , _pldsdssfssUploadType :: !(Maybe Text)
+    , _pldsdssfssCallback :: !(Maybe Text)
+    , _pldsdssfssDicomWebPath :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

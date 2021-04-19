@@ -41,8 +41,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Delete
     , pCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.delete@ method which the
 -- 'ProjectsServiceAccountsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsServiceAccountsDeleteResource =
 -- /See:/ 'projectsServiceAccountsDelete' smart constructor.
 data ProjectsServiceAccountsDelete =
   ProjectsServiceAccountsDelete'
-    { _pXgafv          :: !(Maybe Xgafv)
+    { _pXgafv :: !(Maybe Xgafv)
     , _pUploadProtocol :: !(Maybe Text)
-    , _pAccessToken    :: !(Maybe Text)
-    , _pUploadType     :: !(Maybe Text)
-    , _pName           :: !Text
-    , _pCallback       :: !(Maybe Text)
+    , _pAccessToken :: !(Maybe Text)
+    , _pUploadType :: !(Maybe Text)
+    , _pName :: !Text
+    , _pCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudSearch.Settings.SearchApplications.Get
     , ssagCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.searchapplications.get@ method which the
 -- 'SettingsSearchApplicationsGet' request conforms to.
@@ -65,13 +65,13 @@ type SettingsSearchApplicationsGetResource =
 -- /See:/ 'settingsSearchApplicationsGet' smart constructor.
 data SettingsSearchApplicationsGet =
   SettingsSearchApplicationsGet'
-    { _ssagXgafv                       :: !(Maybe Xgafv)
-    , _ssagUploadProtocol              :: !(Maybe Text)
-    , _ssagAccessToken                 :: !(Maybe Text)
-    , _ssagUploadType                  :: !(Maybe Text)
-    , _ssagName                        :: !Text
+    { _ssagXgafv :: !(Maybe Xgafv)
+    , _ssagUploadProtocol :: !(Maybe Text)
+    , _ssagAccessToken :: !(Maybe Text)
+    , _ssagUploadType :: !(Maybe Text)
+    , _ssagName :: !Text
     , _ssagDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _ssagCallback                    :: !(Maybe Text)
+    , _ssagCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

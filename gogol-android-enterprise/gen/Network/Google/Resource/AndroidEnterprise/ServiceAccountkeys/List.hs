@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.ServiceAccountkeys.List
     , salEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.serviceaccountkeys.list@ method which the
 -- 'ServiceAccountkeysList' request conforms to.

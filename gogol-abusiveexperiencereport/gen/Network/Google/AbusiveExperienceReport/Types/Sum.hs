@@ -16,7 +16,7 @@
 --
 module Network.Google.AbusiveExperienceReport.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | The status of the site reviewed for the abusive experiences.
 data SiteSummaryResponseAbusiveStatus

@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Dev
     , plrgdgCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.devices.get@ method which the
 -- 'ProjectsLocationsRegistriesGroupsDevicesGet' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsLocationsRegistriesGroupsDevicesGetResource
 -- /See:/ 'projectsLocationsRegistriesGroupsDevicesGet' smart constructor.
 data ProjectsLocationsRegistriesGroupsDevicesGet =
   ProjectsLocationsRegistriesGroupsDevicesGet'
-    { _plrgdgXgafv          :: !(Maybe Xgafv)
+    { _plrgdgXgafv :: !(Maybe Xgafv)
     , _plrgdgUploadProtocol :: !(Maybe Text)
-    , _plrgdgAccessToken    :: !(Maybe Text)
-    , _plrgdgUploadType     :: !(Maybe Text)
-    , _plrgdgFieldMask      :: !(Maybe GFieldMask)
-    , _plrgdgName           :: !Text
-    , _plrgdgCallback       :: !(Maybe Text)
+    , _plrgdgAccessToken :: !(Maybe Text)
+    , _plrgdgUploadType :: !(Maybe Text)
+    , _plrgdgFieldMask :: !(Maybe GFieldMask)
+    , _plrgdgName :: !Text
+    , _plrgdgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

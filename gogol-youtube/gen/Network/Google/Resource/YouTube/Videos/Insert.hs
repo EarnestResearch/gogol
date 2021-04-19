@@ -42,8 +42,8 @@ module Network.Google.Resource.YouTube.Videos.Insert
     , viAutoLevels
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.videos.insert@ method which the
 -- 'VideosInsert' request conforms to.
@@ -80,13 +80,13 @@ type VideosInsertResource =
 -- /See:/ 'videosInsert' smart constructor.
 data VideosInsert =
   VideosInsert'
-    { _viPart                          :: !Text
-    , _viStabilize                     :: !(Maybe Bool)
-    , _viPayload                       :: !Video
-    , _viOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _viPart :: !Text
+    , _viStabilize :: !(Maybe Bool)
+    , _viPayload :: !Video
+    , _viOnBehalfOfContentOwner :: !(Maybe Text)
     , _viOnBehalfOfContentOwnerChannel :: !(Maybe Text)
-    , _viNotifySubscribers             :: !Bool
-    , _viAutoLevels                    :: !(Maybe Bool)
+    , _viNotifySubscribers :: !Bool
+    , _viAutoLevels :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

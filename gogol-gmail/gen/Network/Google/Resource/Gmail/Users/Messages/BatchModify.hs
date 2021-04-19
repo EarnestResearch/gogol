@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Messages.BatchModify
     , umbmUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.batchModify@ method which the
 -- 'UsersMessagesBatchModify' request conforms to.
@@ -59,7 +59,7 @@ type UsersMessagesBatchModifyResource =
 data UsersMessagesBatchModify =
   UsersMessagesBatchModify'
     { _umbmPayload :: !BatchModifyMessagesRequest
-    , _umbmUserId  :: !Text
+    , _umbmUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

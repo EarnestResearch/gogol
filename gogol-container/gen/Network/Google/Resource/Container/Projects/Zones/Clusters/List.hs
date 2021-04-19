@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.List
     , proCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.list@ method which the
 -- 'ProjectsZonesClustersList' request conforms to.
@@ -71,14 +71,14 @@ type ProjectsZonesClustersListResource =
 -- /See:/ 'projectsZonesClustersList' smart constructor.
 data ProjectsZonesClustersList =
   ProjectsZonesClustersList'
-    { _proParent         :: !(Maybe Text)
-    , _proXgafv          :: !(Maybe Xgafv)
+    { _proParent :: !(Maybe Text)
+    , _proXgafv :: !(Maybe Xgafv)
     , _proUploadProtocol :: !(Maybe Text)
-    , _proAccessToken    :: !(Maybe Text)
-    , _proUploadType     :: !(Maybe Text)
-    , _proZone           :: !Text
-    , _proProjectId      :: !Text
-    , _proCallback       :: !(Maybe Text)
+    , _proAccessToken :: !(Maybe Text)
+    , _proUploadType :: !(Maybe Text)
+    , _proZone :: !Text
+    , _proProjectId :: !Text
+    , _proCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

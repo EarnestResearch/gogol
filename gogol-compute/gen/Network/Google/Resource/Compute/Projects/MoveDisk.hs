@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Projects.MoveDisk
     , pmdPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.projects.moveDisk@ method which the
 -- 'ProjectsMoveDisk' request conforms to.
@@ -60,8 +60,8 @@ type ProjectsMoveDiskResource =
 data ProjectsMoveDisk =
   ProjectsMoveDisk'
     { _pmdRequestId :: !(Maybe Text)
-    , _pmdProject   :: !Text
-    , _pmdPayload   :: !DiskMoveRequest
+    , _pmdProject :: !Text
+    , _pmdPayload :: !DiskMoveRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

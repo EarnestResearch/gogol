@@ -41,8 +41,8 @@ module Network.Google.Resource.Games.Scores.List
     , sllMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.scores.list@ method which the
 -- 'ScoresList' request conforms to.
@@ -65,12 +65,12 @@ type ScoresListResource =
 -- /See:/ 'scoresList' smart constructor.
 data ScoresList =
   ScoresList'
-    { _sllCollection    :: !ScoresListCollection
-    , _sllTimeSpan      :: !ScoresListTimeSpan
+    { _sllCollection :: !ScoresListCollection
+    , _sllTimeSpan :: !ScoresListTimeSpan
     , _sllLeaderboardId :: !Text
-    , _sllLanguage      :: !(Maybe Text)
-    , _sllPageToken     :: !(Maybe Text)
-    , _sllMaxResults    :: !(Maybe (Textual Int32))
+    , _sllLanguage :: !(Maybe Text)
+    , _sllPageToken :: !(Maybe Text)
+    , _sllMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

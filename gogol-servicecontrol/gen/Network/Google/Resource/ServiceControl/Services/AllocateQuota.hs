@@ -50,8 +50,8 @@ module Network.Google.Resource.ServiceControl.Services.AllocateQuota
     , saqCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceControl.Types
+import Network.Google.Prelude
+import Network.Google.ServiceControl.Types
 
 -- | A resource alias for @servicecontrol.services.allocateQuota@ method which the
 -- 'ServicesAllocateQuota' request conforms to.
@@ -81,13 +81,13 @@ type ServicesAllocateQuotaResource =
 -- /See:/ 'servicesAllocateQuota' smart constructor.
 data ServicesAllocateQuota =
   ServicesAllocateQuota'
-    { _saqXgafv          :: !(Maybe Xgafv)
+    { _saqXgafv :: !(Maybe Xgafv)
     , _saqUploadProtocol :: !(Maybe Text)
-    , _saqAccessToken    :: !(Maybe Text)
-    , _saqUploadType     :: !(Maybe Text)
-    , _saqPayload        :: !AllocateQuotaRequest
-    , _saqServiceName    :: !Text
-    , _saqCallback       :: !(Maybe Text)
+    , _saqAccessToken :: !(Maybe Text)
+    , _saqUploadType :: !(Maybe Text)
+    , _saqPayload :: !AllocateQuotaRequest
+    , _saqServiceName :: !Text
+    , _saqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

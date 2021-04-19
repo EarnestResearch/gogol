@@ -44,8 +44,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfslCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.list@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresList' request conforms to.
@@ -70,15 +70,15 @@ type ProjectsLocationsDataSetsFhirStoresListResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresList' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresList =
   ProjectsLocationsDataSetsFhirStoresList'
-    { _pldsfslParent         :: !Text
-    , _pldsfslXgafv          :: !(Maybe Xgafv)
+    { _pldsfslParent :: !Text
+    , _pldsfslXgafv :: !(Maybe Xgafv)
     , _pldsfslUploadProtocol :: !(Maybe Text)
-    , _pldsfslAccessToken    :: !(Maybe Text)
-    , _pldsfslUploadType     :: !(Maybe Text)
-    , _pldsfslFilter         :: !(Maybe Text)
-    , _pldsfslPageToken      :: !(Maybe Text)
-    , _pldsfslPageSize       :: !(Maybe (Textual Int32))
-    , _pldsfslCallback       :: !(Maybe Text)
+    , _pldsfslAccessToken :: !(Maybe Text)
+    , _pldsfslUploadType :: !(Maybe Text)
+    , _pldsfslFilter :: !(Maybe Text)
+    , _pldsfslPageToken :: !(Maybe Text)
+    , _pldsfslPageSize :: !(Maybe (Textual Int32))
+    , _pldsfslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

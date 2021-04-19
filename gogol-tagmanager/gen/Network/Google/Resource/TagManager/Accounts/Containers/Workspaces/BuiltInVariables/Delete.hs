@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.BuiltIn
     , acwbivdType
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.built_in_variables.delete@ method which the
 -- 'AccountsContainersWorkspacesBuiltInVariablesDelete' request conforms to.

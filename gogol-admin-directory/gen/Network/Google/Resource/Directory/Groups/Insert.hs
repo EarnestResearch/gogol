@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Groups.Insert
     , giPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.insert@ method which the
 -- 'GroupsInsert' request conforms to.

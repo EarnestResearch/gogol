@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Insert
     , camPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.insert@ method which the
 -- 'CampaignsInsert' request conforms to.
@@ -57,7 +57,7 @@ type CampaignsInsertResource =
 data CampaignsInsert =
   CampaignsInsert'
     { _camProFileId :: !(Textual Int64)
-    , _camPayload   :: !Campaign
+    , _camPayload :: !Campaign
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

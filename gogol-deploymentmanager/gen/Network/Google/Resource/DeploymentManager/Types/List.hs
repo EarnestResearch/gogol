@@ -40,8 +40,8 @@ module Network.Google.Resource.DeploymentManager.Types.List
     , tlMaxResults
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.types.list@ method which the
 -- 'TypesList' request conforms to.
@@ -64,10 +64,10 @@ type TypesListResource =
 -- /See:/ 'typesList' smart constructor.
 data TypesList =
   TypesList'
-    { _tlOrderBy    :: !(Maybe Text)
-    , _tlProject    :: !Text
-    , _tlFilter     :: !(Maybe Text)
-    , _tlPageToken  :: !(Maybe Text)
+    { _tlOrderBy :: !(Maybe Text)
+    , _tlProject :: !Text
+    , _tlFilter :: !(Maybe Text)
+    , _tlPageToken :: !(Maybe Text)
     , _tlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

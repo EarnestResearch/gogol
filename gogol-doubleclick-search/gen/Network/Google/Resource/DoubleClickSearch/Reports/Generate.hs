@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickSearch.Reports.Generate
     , rgPayload
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.reports.generate@ method which the
 -- 'ReportsGenerate' request conforms to.

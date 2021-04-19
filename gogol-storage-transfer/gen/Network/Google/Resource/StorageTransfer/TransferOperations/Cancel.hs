@@ -42,8 +42,8 @@ module Network.Google.Resource.StorageTransfer.TransferOperations.Cancel
     , tocCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferOperations.cancel@ method which the
 -- 'TransferOperationsCancel' request conforms to.
@@ -63,12 +63,12 @@ type TransferOperationsCancelResource =
 -- /See:/ 'transferOperationsCancel' smart constructor.
 data TransferOperationsCancel =
   TransferOperationsCancel'
-    { _tocXgafv          :: !(Maybe Xgafv)
+    { _tocXgafv :: !(Maybe Xgafv)
     , _tocUploadProtocol :: !(Maybe Text)
-    , _tocAccessToken    :: !(Maybe Text)
-    , _tocUploadType     :: !(Maybe Text)
-    , _tocName           :: !Text
-    , _tocCallback       :: !(Maybe Text)
+    , _tocAccessToken :: !(Maybe Text)
+    , _tocUploadType :: !(Maybe Text)
+    , _tocName :: !Text
+    , _tocCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

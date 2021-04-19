@@ -58,8 +58,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , proCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.create@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirCreate' request conforms to.
@@ -97,14 +97,14 @@ type ProjectsLocationsDataSetsFhirStoresFhirCreateResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirCreate' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirCreate =
   ProjectsLocationsDataSetsFhirStoresFhirCreate'
-    { _proParent         :: !Text
-    , _proXgafv          :: !(Maybe Xgafv)
+    { _proParent :: !Text
+    , _proXgafv :: !(Maybe Xgafv)
     , _proUploadProtocol :: !(Maybe Text)
-    , _proAccessToken    :: !(Maybe Text)
-    , _proUploadType     :: !(Maybe Text)
-    , _proPayload        :: !HTTPBody
-    , _proType           :: !Text
-    , _proCallback       :: !(Maybe Text)
+    , _proAccessToken :: !(Maybe Text)
+    , _proUploadType :: !(Maybe Text)
+    , _proPayload :: !HTTPBody
+    , _proType :: !Text
+    , _proCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

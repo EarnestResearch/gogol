@@ -17,15 +17,15 @@
 --
 module Network.Google.Storage.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Storage.Types.Sum
 
 -- | The owner of the object. This will always be the uploader of the object.
 --
 -- /See:/ 'objectOwner' smart constructor.
 data ObjectOwner =
   ObjectOwner'
-    { _ooEntity   :: !(Maybe Text)
+    { _ooEntity :: !(Maybe Text)
     , _ooEntityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -107,10 +107,10 @@ instance ToJSON BucketVersioning where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eKind        :: !Text
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eKind :: !Text
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -206,8 +206,8 @@ instance ToJSON Expr where
 data BucketRetentionPolicy =
   BucketRetentionPolicy'
     { _brpRetentionPeriod :: !(Maybe (Textual Int64))
-    , _brpEffectiveTime   :: !(Maybe DateTime')
-    , _brpIsLocked        :: !(Maybe Bool)
+    , _brpEffectiveTime :: !(Maybe DateTime')
+    , _brpIsLocked :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -276,8 +276,8 @@ instance ToJSON BucketRetentionPolicy where
 data Buckets =
   Buckets'
     { _bNextPageToken :: !(Maybe Text)
-    , _bKind          :: !Text
-    , _bItems         :: !(Maybe [Bucket])
+    , _bKind :: !Text
+    , _bItems :: !(Maybe [Bucket])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -337,16 +337,16 @@ instance ToJSON Buckets where
 -- /See:/ 'hmacKeyMetadata' smart constructor.
 data HmacKeyMetadata =
   HmacKeyMetadata'
-    { _hkmEtag                :: !(Maybe Text)
-    , _hkmState               :: !(Maybe Text)
-    , _hkmKind                :: !Text
-    , _hkmSelfLink            :: !(Maybe Text)
-    , _hkmTimeCreated         :: !(Maybe Text)
-    , _hkmId                  :: !(Maybe Text)
-    , _hkmUpdated             :: !(Maybe Text)
+    { _hkmEtag :: !(Maybe Text)
+    , _hkmState :: !(Maybe Text)
+    , _hkmKind :: !Text
+    , _hkmSelfLink :: !(Maybe Text)
+    , _hkmTimeCreated :: !(Maybe Text)
+    , _hkmId :: !(Maybe Text)
+    , _hkmUpdated :: !(Maybe Text)
     , _hkmServiceAccountEmail :: !(Maybe Text)
-    , _hkmProjectId           :: !(Maybe Text)
-    , _hkmAccessId            :: !(Maybe Text)
+    , _hkmProjectId :: !(Maybe Text)
+    , _hkmAccessId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -512,14 +512,14 @@ instance ToJSON BucketBilling where
 -- /See:/ 'notification' smart constructor.
 data Notification =
   Notification'
-    { _nEtag             :: !(Maybe Text)
+    { _nEtag :: !(Maybe Text)
     , _nObjectNamePrefix :: !(Maybe Text)
-    , _nPayloadFormat    :: !Text
-    , _nEventTypes       :: !(Maybe [Text])
-    , _nKind             :: !Text
-    , _nTopic            :: !(Maybe Text)
-    , _nSelfLink         :: !(Maybe Text)
-    , _nId               :: !(Maybe Text)
+    , _nPayloadFormat :: !Text
+    , _nEventTypes :: !(Maybe [Text])
+    , _nKind :: !Text
+    , _nTopic :: !(Maybe Text)
+    , _nSelfLink :: !(Maybe Text)
+    , _nId :: !(Maybe Text)
     , _nCustomAttributes :: !(Maybe NotificationCustom_attributes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -646,7 +646,7 @@ instance ToJSON Notification where
 -- /See:/ 'bucketLogging' smart constructor.
 data BucketLogging =
   BucketLogging'
-    { _blLogBucket       :: !(Maybe Text)
+    { _blLogBucket :: !(Maybe Text)
     , _blLogObjectPrefix :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -732,12 +732,12 @@ instance ToJSON ObjectMetadata where
 -- /See:/ 'bucketLifecycleRuleItemCondition' smart constructor.
 data BucketLifecycleRuleItemCondition =
   BucketLifecycleRuleItemCondition'
-    { _blricAge                 :: !(Maybe (Textual Int32))
-    , _blricIsLive              :: !(Maybe Bool)
-    , _blricNumNewerVersions    :: !(Maybe (Textual Int32))
+    { _blricAge :: !(Maybe (Textual Int32))
+    , _blricIsLive :: !(Maybe Bool)
+    , _blricNumNewerVersions :: !(Maybe (Textual Int32))
     , _blricMatchesStorageClass :: !(Maybe [Text])
-    , _blricMatchesPattern      :: !(Maybe Text)
-    , _blricCreatedBefore       :: !(Maybe Date')
+    , _blricMatchesPattern :: !(Maybe Text)
+    , _blricCreatedBefore :: !(Maybe Date')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -928,15 +928,15 @@ instance ToJSON BucketLabels where
 data Channel =
   Channel'
     { _cResourceURI :: !(Maybe Text)
-    , _cResourceId  :: !(Maybe Text)
-    , _cKind        :: !Text
-    , _cExpiration  :: !(Maybe (Textual Int64))
-    , _cToken       :: !(Maybe Text)
-    , _cAddress     :: !(Maybe Text)
-    , _cPayload     :: !(Maybe Bool)
-    , _cParams      :: !(Maybe ChannelParams)
-    , _cId          :: !(Maybe Text)
-    , _cType        :: !(Maybe Text)
+    , _cResourceId :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cExpiration :: !(Maybe (Textual Int64))
+    , _cToken :: !(Maybe Text)
+    , _cAddress :: !(Maybe Text)
+    , _cPayload :: !(Maybe Bool)
+    , _cParams :: !(Maybe ChannelParams)
+    , _cId :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1062,7 +1062,7 @@ instance ToJSON Channel where
 -- /See:/ 'bucketLifecycleRuleItem' smart constructor.
 data BucketLifecycleRuleItem =
   BucketLifecycleRuleItem'
-    { _blriAction    :: !(Maybe BucketLifecycleRuleItemAction)
+    { _blriAction :: !(Maybe BucketLifecycleRuleItemAction)
     , _blriCondition :: !(Maybe BucketLifecycleRuleItemCondition)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1110,10 +1110,10 @@ instance ToJSON BucketLifecycleRuleItem where
 -- /See:/ 'bucketCORSItem' smart constructor.
 data BucketCORSItem =
   BucketCORSItem'
-    { _bciMaxAgeSeconds  :: !(Maybe (Textual Int32))
-    , _bciOrigin         :: !(Maybe [Text])
+    { _bciMaxAgeSeconds :: !(Maybe (Textual Int32))
+    , _bciOrigin :: !(Maybe [Text])
     , _bciResponseHeader :: !(Maybe [Text])
-    , _bciMethod         :: !(Maybe [Text])
+    , _bciMethod :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1199,7 +1199,7 @@ instance ToJSON BucketCORSItem where
 data ObjectAccessControlProjectTeam =
   ObjectAccessControlProjectTeam'
     { _oacptProjectNumber :: !(Maybe Text)
-    , _oacptTeam          :: !(Maybe Text)
+    , _oacptTeam :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1250,7 +1250,7 @@ instance ToJSON ObjectAccessControlProjectTeam where
 -- /See:/ 'objectCustomerEncryption' smart constructor.
 data ObjectCustomerEncryption =
   ObjectCustomerEncryption'
-    { _oceKeySha256           :: !(Maybe Text)
+    { _oceKeySha256 :: !(Maybe Text)
     , _oceEncryptionAlgorithm :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1302,30 +1302,30 @@ instance ToJSON ObjectCustomerEncryption where
 -- /See:/ 'bucket' smart constructor.
 data Bucket =
   Bucket'
-    { _bucEtag                  :: !(Maybe Text)
-    , _bucLocation              :: !(Maybe Text)
-    , _bucIAMConfiguration      :: !(Maybe BucketIAMConfiguration)
-    , _bucKind                  :: !Text
-    , _bucWebsite               :: !(Maybe BucketWebsite)
-    , _bucProjectNumber         :: !(Maybe (Textual Word64))
-    , _bucLifecycle             :: !(Maybe BucketLifecycle)
-    , _bucOwner                 :: !(Maybe BucketOwner)
-    , _bucRetentionPolicy       :: !(Maybe BucketRetentionPolicy)
-    , _bucSelfLink              :: !(Maybe Text)
-    , _bucName                  :: !(Maybe Text)
-    , _bucEncryption            :: !(Maybe BucketEncryption)
-    , _bucStorageClass          :: !(Maybe Text)
-    , _bucVersioning            :: !(Maybe BucketVersioning)
-    , _bucCORS                  :: !(Maybe [BucketCORSItem])
-    , _bucTimeCreated           :: !(Maybe DateTime')
-    , _bucId                    :: !(Maybe Text)
-    , _bucLabels                :: !(Maybe BucketLabels)
-    , _bucUpdated               :: !(Maybe DateTime')
-    , _bucDefaultObjectACL      :: !(Maybe [ObjectAccessControl])
-    , _bucBilling               :: !(Maybe BucketBilling)
-    , _bucMetageneration        :: !(Maybe (Textual Int64))
-    , _bucLogging               :: !(Maybe BucketLogging)
-    , _bucACL                   :: !(Maybe [BucketAccessControl])
+    { _bucEtag :: !(Maybe Text)
+    , _bucLocation :: !(Maybe Text)
+    , _bucIAMConfiguration :: !(Maybe BucketIAMConfiguration)
+    , _bucKind :: !Text
+    , _bucWebsite :: !(Maybe BucketWebsite)
+    , _bucProjectNumber :: !(Maybe (Textual Word64))
+    , _bucLifecycle :: !(Maybe BucketLifecycle)
+    , _bucOwner :: !(Maybe BucketOwner)
+    , _bucRetentionPolicy :: !(Maybe BucketRetentionPolicy)
+    , _bucSelfLink :: !(Maybe Text)
+    , _bucName :: !(Maybe Text)
+    , _bucEncryption :: !(Maybe BucketEncryption)
+    , _bucStorageClass :: !(Maybe Text)
+    , _bucVersioning :: !(Maybe BucketVersioning)
+    , _bucCORS :: !(Maybe [BucketCORSItem])
+    , _bucTimeCreated :: !(Maybe DateTime')
+    , _bucId :: !(Maybe Text)
+    , _bucLabels :: !(Maybe BucketLabels)
+    , _bucUpdated :: !(Maybe DateTime')
+    , _bucDefaultObjectACL :: !(Maybe [ObjectAccessControl])
+    , _bucBilling :: !(Maybe BucketBilling)
+    , _bucMetageneration :: !(Maybe (Textual Int64))
+    , _bucLogging :: !(Maybe BucketLogging)
+    , _bucACL :: !(Maybe [BucketAccessControl])
     , _bucDefaultEventBasedHold :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1653,9 +1653,9 @@ instance ToJSON Bucket where
 data Objects =
   Objects'
     { _oNextPageToken :: !(Maybe Text)
-    , _oKind          :: !Text
-    , _oItems         :: !(Maybe [Object])
-    , _oPrefixes      :: !(Maybe [Text])
+    , _oKind :: !Text
+    , _oItems :: !(Maybe [Object])
+    , _oPrefixes :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1732,8 +1732,8 @@ instance ToJSON Objects where
 data HmacKeysMetadata =
   HmacKeysMetadata'
     { _hNextPageToken :: !(Maybe Text)
-    , _hKind          :: !Text
-    , _hItems         :: !(Maybe [HmacKeyMetadata])
+    , _hKind :: !Text
+    , _hItems :: !(Maybe [HmacKeyMetadata])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1796,7 +1796,7 @@ instance ToJSON HmacKeysMetadata where
 -- /See:/ 'bucketAccessControls' smart constructor.
 data BucketAccessControls =
   BucketAccessControls'
-    { _bacKind  :: !Text
+    { _bacKind :: !Text
     , _bacItems :: !(Maybe [BucketAccessControl])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1887,8 +1887,8 @@ instance ToJSON BucketEncryption where
 -- /See:/ 'composeRequest' smart constructor.
 data ComposeRequest =
   ComposeRequest'
-    { _crDestination   :: !(Maybe Object)
-    , _crKind          :: !Text
+    { _crDestination :: !(Maybe Object)
+    , _crKind :: !Text
     , _crSourceObjects :: !(Maybe [ComposeRequestSourceObjectsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1954,7 +1954,7 @@ instance ToJSON ComposeRequest where
 -- /See:/ 'serviceAccount' smart constructor.
 data ServiceAccount =
   ServiceAccount'
-    { _saKind         :: !Text
+    { _saKind :: !Text
     , _saEmailAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2005,7 +2005,7 @@ instance ToJSON ServiceAccount where
 -- /See:/ 'bucketOwner' smart constructor.
 data BucketOwner =
   BucketOwner'
-    { _boEntity   :: !(Maybe Text)
+    { _boEntity :: !(Maybe Text)
     , _boEntityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2050,9 +2050,9 @@ instance ToJSON BucketOwner where
 -- /See:/ 'composeRequestSourceObjectsItem' smart constructor.
 data ComposeRequestSourceObjectsItem =
   ComposeRequestSourceObjectsItem'
-    { _crsoiName                :: !(Maybe Text)
+    { _crsoiName :: !(Maybe Text)
     , _crsoiObjectPreconditions :: !(Maybe ComposeRequestSourceObjectsItemObjectPreconditions)
-    , _crsoiGeneration          :: !(Maybe (Textual Int64))
+    , _crsoiGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2153,8 +2153,8 @@ instance ToJSON ChannelParams where
 -- /See:/ 'policyBindingsItem' smart constructor.
 data PolicyBindingsItem =
   PolicyBindingsItem'
-    { _pbiMembers   :: !(Maybe [Text])
-    , _pbiRole      :: !(Maybe Text)
+    { _pbiMembers :: !(Maybe [Text])
+    , _pbiRole :: !(Maybe Text)
     , _pbiCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2253,37 +2253,37 @@ instance ToJSON PolicyBindingsItem where
 -- /See:/ 'object'' smart constructor.
 data Object =
   Object'
-    { _objTemporaryHold           :: !(Maybe Bool)
-    , _objEtag                    :: !(Maybe Text)
+    { _objTemporaryHold :: !(Maybe Bool)
+    , _objEtag :: !(Maybe Text)
     , _objTimeStorageClassUpdated :: !(Maybe DateTime')
     , _objRetentionExpirationTime :: !(Maybe DateTime')
-    , _objSize                    :: !(Maybe (Textual Word64))
-    , _objKind                    :: !Text
-    , _objTimeDeleted             :: !(Maybe DateTime')
-    , _objCrc32c                  :: !(Maybe Text)
-    , _objCustomerEncryption      :: !(Maybe ObjectCustomerEncryption)
-    , _objBucket                  :: !(Maybe Text)
-    , _objOwner                   :: !(Maybe ObjectOwner)
-    , _objSelfLink                :: !(Maybe Text)
-    , _objMediaLink               :: !(Maybe Text)
-    , _objComponentCount          :: !(Maybe (Textual Int32))
-    , _objName                    :: !(Maybe Text)
-    , _objStorageClass            :: !(Maybe Text)
-    , _objContentEncoding         :: !(Maybe Text)
-    , _objEventBasedHold          :: !(Maybe Bool)
-    , _objMetadata                :: !(Maybe ObjectMetadata)
-    , _objTimeCreated             :: !(Maybe DateTime')
-    , _objId                      :: !(Maybe Text)
-    , _objKmsKeyName              :: !(Maybe Text)
-    , _objUpdated                 :: !(Maybe DateTime')
-    , _objContentLanguage         :: !(Maybe Text)
-    , _objCacheControl            :: !(Maybe Text)
-    , _objMetageneration          :: !(Maybe (Textual Int64))
-    , _objGeneration              :: !(Maybe (Textual Int64))
-    , _objACL                     :: !(Maybe [ObjectAccessControl])
-    , _objContentDisPosition      :: !(Maybe Text)
-    , _objMD5Hash                 :: !(Maybe Text)
-    , _objContentType             :: !(Maybe Text)
+    , _objSize :: !(Maybe (Textual Word64))
+    , _objKind :: !Text
+    , _objTimeDeleted :: !(Maybe DateTime')
+    , _objCrc32c :: !(Maybe Text)
+    , _objCustomerEncryption :: !(Maybe ObjectCustomerEncryption)
+    , _objBucket :: !(Maybe Text)
+    , _objOwner :: !(Maybe ObjectOwner)
+    , _objSelfLink :: !(Maybe Text)
+    , _objMediaLink :: !(Maybe Text)
+    , _objComponentCount :: !(Maybe (Textual Int32))
+    , _objName :: !(Maybe Text)
+    , _objStorageClass :: !(Maybe Text)
+    , _objContentEncoding :: !(Maybe Text)
+    , _objEventBasedHold :: !(Maybe Bool)
+    , _objMetadata :: !(Maybe ObjectMetadata)
+    , _objTimeCreated :: !(Maybe DateTime')
+    , _objId :: !(Maybe Text)
+    , _objKmsKeyName :: !(Maybe Text)
+    , _objUpdated :: !(Maybe DateTime')
+    , _objContentLanguage :: !(Maybe Text)
+    , _objCacheControl :: !(Maybe Text)
+    , _objMetageneration :: !(Maybe (Textual Int64))
+    , _objGeneration :: !(Maybe (Textual Int64))
+    , _objACL :: !(Maybe [ObjectAccessControl])
+    , _objContentDisPosition :: !(Maybe Text)
+    , _objMD5Hash :: !(Maybe Text)
+    , _objContentType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2735,7 +2735,7 @@ instance ToJSON
 data BucketAccessControlProjectTeam =
   BucketAccessControlProjectTeam'
     { _bacptProjectNumber :: !(Maybe Text)
-    , _bacptTeam          :: !(Maybe Text)
+    , _bacptTeam :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2785,7 +2785,7 @@ instance ToJSON BucketAccessControlProjectTeam where
 -- /See:/ 'objectAccessControls' smart constructor.
 data ObjectAccessControls =
   ObjectAccessControls'
-    { _oacKind  :: !Text
+    { _oacKind :: !Text
     , _oacItems :: !(Maybe [ObjectAccessControl])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2840,7 +2840,7 @@ instance ToJSON ObjectAccessControls where
 data BucketWebsite =
   BucketWebsite'
     { _bwMainPageSuffix :: !(Maybe Text)
-    , _bwNotFoundPage   :: !(Maybe Text)
+    , _bwNotFoundPage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2894,17 +2894,17 @@ instance ToJSON BucketWebsite where
 -- /See:/ 'bucketAccessControl' smart constructor.
 data BucketAccessControl =
   BucketAccessControl'
-    { _bacaEmail       :: !(Maybe Text)
-    , _bacaEtag        :: !(Maybe Text)
-    , _bacaKind        :: !Text
-    , _bacaDomain      :: !(Maybe Text)
-    , _bacaBucket      :: !(Maybe Text)
-    , _bacaRole        :: !(Maybe Text)
-    , _bacaSelfLink    :: !(Maybe Text)
-    , _bacaId          :: !(Maybe Text)
+    { _bacaEmail :: !(Maybe Text)
+    , _bacaEtag :: !(Maybe Text)
+    , _bacaKind :: !Text
+    , _bacaDomain :: !(Maybe Text)
+    , _bacaBucket :: !(Maybe Text)
+    , _bacaRole :: !(Maybe Text)
+    , _bacaSelfLink :: !(Maybe Text)
+    , _bacaId :: !(Maybe Text)
     , _bacaProjectTeam :: !(Maybe BucketAccessControlProjectTeam)
-    , _bacaEntity      :: !(Maybe Text)
-    , _bacaEntityId    :: !(Maybe Text)
+    , _bacaEntity :: !(Maybe Text)
+    , _bacaEntityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3049,7 +3049,7 @@ instance ToJSON BucketAccessControl where
 data BucketLifecycleRuleItemAction =
   BucketLifecycleRuleItemAction'
     { _blriaStorageClass :: !(Maybe Text)
-    , _blriaType         :: !(Maybe Text)
+    , _blriaType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3100,7 +3100,7 @@ instance ToJSON BucketLifecycleRuleItemAction where
 -- /See:/ 'testIAMPermissionsResponse' smart constructor.
 data TestIAMPermissionsResponse =
   TestIAMPermissionsResponse'
-    { _tiprKind        :: !Text
+    { _tiprKind :: !Text
     , _tiprPermissions :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3169,8 +3169,8 @@ instance ToJSON TestIAMPermissionsResponse where
 -- /See:/ 'hmacKey' smart constructor.
 data HmacKey =
   HmacKey'
-    { _hkKind     :: !Text
-    , _hkSecret   :: !(Maybe Text)
+    { _hkKind :: !Text
+    , _hkSecret :: !(Maybe Text)
     , _hkMetadata :: !(Maybe JSONValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3227,10 +3227,10 @@ instance ToJSON HmacKey where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag       :: !(Maybe Bytes)
+    { _pEtag :: !(Maybe Bytes)
     , _pResourceId :: !(Maybe Text)
-    , _pKind       :: !Text
-    , _pBindings   :: !(Maybe [PolicyBindingsItem])
+    , _pKind :: !Text
+    , _pBindings :: !(Maybe [PolicyBindingsItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3350,19 +3350,19 @@ instance ToJSON BucketIAMConfiguration where
 -- /See:/ 'objectAccessControl' smart constructor.
 data ObjectAccessControl =
   ObjectAccessControl'
-    { _oacaEmail       :: !(Maybe Text)
-    , _oacaEtag        :: !(Maybe Text)
-    , _oacaKind        :: !Text
-    , _oacaDomain      :: !(Maybe Text)
-    , _oacaBucket      :: !(Maybe Text)
-    , _oacaRole        :: !(Maybe Text)
-    , _oacaSelfLink    :: !(Maybe Text)
-    , _oacaObject      :: !(Maybe Text)
-    , _oacaId          :: !(Maybe Text)
+    { _oacaEmail :: !(Maybe Text)
+    , _oacaEtag :: !(Maybe Text)
+    , _oacaKind :: !Text
+    , _oacaDomain :: !(Maybe Text)
+    , _oacaBucket :: !(Maybe Text)
+    , _oacaRole :: !(Maybe Text)
+    , _oacaSelfLink :: !(Maybe Text)
+    , _oacaObject :: !(Maybe Text)
+    , _oacaId :: !(Maybe Text)
     , _oacaProjectTeam :: !(Maybe ObjectAccessControlProjectTeam)
-    , _oacaEntity      :: !(Maybe Text)
-    , _oacaGeneration  :: !(Maybe (Textual Int64))
-    , _oacaEntityId    :: !(Maybe Text)
+    , _oacaEntity :: !(Maybe Text)
+    , _oacaGeneration :: !(Maybe (Textual Int64))
+    , _oacaEntityId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3527,7 +3527,7 @@ instance ToJSON ObjectAccessControl where
 -- /See:/ 'notifications' smart constructor.
 data Notifications =
   Notifications'
-    { _notKind  :: !Text
+    { _notKind :: !Text
     , _notItems :: !(Maybe [Notification])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3617,7 +3617,7 @@ instance ToJSON NotificationCustom_attributes where
 data BucketIAMConfigurationBucketPolicyOnly =
   BucketIAMConfigurationBucketPolicyOnly'
     { _bicbpoLockedTime :: !(Maybe DateTime')
-    , _bicbpoEnabled    :: !(Maybe Bool)
+    , _bicbpoEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3675,12 +3675,12 @@ instance ToJSON
 -- /See:/ 'rewriteResponse' smart constructor.
 data RewriteResponse =
   RewriteResponse'
-    { _rrKind                :: !Text
-    , _rrDone                :: !(Maybe Bool)
-    , _rrResource            :: !(Maybe Object)
-    , _rrObjectSize          :: !(Maybe (Textual Int64))
+    { _rrKind :: !Text
+    , _rrDone :: !(Maybe Bool)
+    , _rrResource :: !(Maybe Object)
+    , _rrObjectSize :: !(Maybe (Textual Int64))
     , _rrTotalBytesRewritten :: !(Maybe (Textual Int64))
-    , _rrRewriteToken        :: !(Maybe Text)
+    , _rrRewriteToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

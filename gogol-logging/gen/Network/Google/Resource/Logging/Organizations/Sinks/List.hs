@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Organizations.Sinks.List
     , oslCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.organizations.sinks.list@ method which the
 -- 'OrganizationsSinksList' request conforms to.
@@ -67,14 +67,14 @@ type OrganizationsSinksListResource =
 -- /See:/ 'organizationsSinksList' smart constructor.
 data OrganizationsSinksList =
   OrganizationsSinksList'
-    { _oslParent         :: !Text
-    , _oslXgafv          :: !(Maybe Xgafv)
+    { _oslParent :: !Text
+    , _oslXgafv :: !(Maybe Xgafv)
     , _oslUploadProtocol :: !(Maybe Text)
-    , _oslAccessToken    :: !(Maybe Text)
-    , _oslUploadType     :: !(Maybe Text)
-    , _oslPageToken      :: !(Maybe Text)
-    , _oslPageSize       :: !(Maybe (Textual Int32))
-    , _oslCallback       :: !(Maybe Text)
+    , _oslAccessToken :: !(Maybe Text)
+    , _oslUploadType :: !(Maybe Text)
+    , _oslPageToken :: !(Maybe Text)
+    , _oslPageSize :: !(Maybe (Textual Int32))
+    , _oslCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

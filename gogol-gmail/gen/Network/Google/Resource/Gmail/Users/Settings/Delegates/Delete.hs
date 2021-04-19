@@ -41,8 +41,8 @@ module Network.Google.Resource.Gmail.Users.Settings.Delegates.Delete
     , usddDelegateEmail
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.delegates.delete@ method which the
 -- 'UsersSettingsDelegatesDelete' request conforms to.
@@ -65,7 +65,7 @@ type UsersSettingsDelegatesDeleteResource =
 -- /See:/ 'usersSettingsDelegatesDelete' smart constructor.
 data UsersSettingsDelegatesDelete =
   UsersSettingsDelegatesDelete'
-    { _usddUserId        :: !Text
+    { _usddUserId :: !Text
     , _usddDelegateEmail :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

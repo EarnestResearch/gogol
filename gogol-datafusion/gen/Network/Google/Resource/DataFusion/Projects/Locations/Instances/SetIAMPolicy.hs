@@ -43,8 +43,8 @@ module Network.Google.Resource.DataFusion.Projects.Locations.Instances.SetIAMPol
     , plisipCallback
     ) where
 
-import           Network.Google.DataFusion.Types
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @datafusion.projects.locations.instances.setIamPolicy@ method which the
 -- 'ProjectsLocationsInstancesSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsLocationsInstancesSetIAMPolicyResource =
 -- /See:/ 'projectsLocationsInstancesSetIAMPolicy' smart constructor.
 data ProjectsLocationsInstancesSetIAMPolicy =
   ProjectsLocationsInstancesSetIAMPolicy'
-    { _plisipXgafv          :: !(Maybe Xgafv)
+    { _plisipXgafv :: !(Maybe Xgafv)
     , _plisipUploadProtocol :: !(Maybe Text)
-    , _plisipAccessToken    :: !(Maybe Text)
-    , _plisipUploadType     :: !(Maybe Text)
-    , _plisipPayload        :: !SetIAMPolicyRequest
-    , _plisipResource       :: !Text
-    , _plisipCallback       :: !(Maybe Text)
+    , _plisipAccessToken :: !(Maybe Text)
+    , _plisipUploadType :: !(Maybe Text)
+    , _plisipPayload :: !SetIAMPolicyRequest
+    , _plisipResource :: !Text
+    , _plisipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

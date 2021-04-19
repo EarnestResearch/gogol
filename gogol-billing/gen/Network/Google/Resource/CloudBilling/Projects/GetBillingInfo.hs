@@ -44,8 +44,8 @@ module Network.Google.Resource.CloudBilling.Projects.GetBillingInfo
     , pgbiCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.projects.getBillingInfo@ method which the
 -- 'ProjectsGetBillingInfo' request conforms to.
@@ -69,12 +69,12 @@ type ProjectsGetBillingInfoResource =
 -- /See:/ 'projectsGetBillingInfo' smart constructor.
 data ProjectsGetBillingInfo =
   ProjectsGetBillingInfo'
-    { _pgbiXgafv          :: !(Maybe Xgafv)
+    { _pgbiXgafv :: !(Maybe Xgafv)
     , _pgbiUploadProtocol :: !(Maybe Text)
-    , _pgbiAccessToken    :: !(Maybe Text)
-    , _pgbiUploadType     :: !(Maybe Text)
-    , _pgbiName           :: !Text
-    , _pgbiCallback       :: !(Maybe Text)
+    , _pgbiAccessToken :: !(Maybe Text)
+    , _pgbiUploadType :: !(Maybe Text)
+    , _pgbiName :: !Text
+    , _pgbiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

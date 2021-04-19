@@ -37,8 +37,8 @@ module Network.Google.Resource.SQL.Instances.StartReplica
     , insInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.startReplica@ method which the
 -- 'InstancesStartReplica' request conforms to.
@@ -57,7 +57,7 @@ type InstancesStartReplicaResource =
 -- /See:/ 'instancesStartReplica' smart constructor.
 data InstancesStartReplica =
   InstancesStartReplica'
-    { _insProject  :: !Text
+    { _insProject :: !Text
     , _insInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

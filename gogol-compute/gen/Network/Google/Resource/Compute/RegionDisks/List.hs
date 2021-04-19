@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.RegionDisks.List
     , rdlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionDisks.list@ method which the
 -- 'RegionDisksList' request conforms to.
@@ -67,11 +67,11 @@ type RegionDisksListResource =
 -- /See:/ 'regionDisksList' smart constructor.
 data RegionDisksList =
   RegionDisksList'
-    { _rdlOrderBy    :: !(Maybe Text)
-    , _rdlProject    :: !Text
-    , _rdlFilter     :: !(Maybe Text)
-    , _rdlRegion     :: !Text
-    , _rdlPageToken  :: !(Maybe Text)
+    { _rdlOrderBy :: !(Maybe Text)
+    , _rdlProject :: !Text
+    , _rdlFilter :: !(Maybe Text)
+    , _rdlRegion :: !Text
+    , _rdlPageToken :: !(Maybe Text)
     , _rdlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

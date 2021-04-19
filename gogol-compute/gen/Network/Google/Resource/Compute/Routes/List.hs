@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.Routes.List
     , rllMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routes.list@ method which the
 -- 'RoutesList' request conforms to.
@@ -65,10 +65,10 @@ type RoutesListResource =
 -- /See:/ 'routesList' smart constructor.
 data RoutesList =
   RoutesList'
-    { _rllOrderBy    :: !(Maybe Text)
-    , _rllProject    :: !Text
-    , _rllFilter     :: !(Maybe Text)
-    , _rllPageToken  :: !(Maybe Text)
+    { _rllOrderBy :: !(Maybe Text)
+    , _rllProject :: !Text
+    , _rllFilter :: !(Maybe Text)
+    , _rllPageToken :: !(Maybe Text)
     , _rllMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Bundles.Upload
     , ebuEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.bundles.upload@ method which the
 -- 'EditsBundlesUpload' request conforms to.
@@ -82,9 +82,9 @@ type EditsBundlesUploadResource =
 -- /See:/ 'editsBundlesUpload' smart constructor.
 data EditsBundlesUpload =
   EditsBundlesUpload'
-    { _ebuPackageName                  :: !Text
+    { _ebuPackageName :: !Text
     , _ebuAckBundleInstallationWarning :: !(Maybe Bool)
-    , _ebuEditId                       :: !Text
+    , _ebuEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

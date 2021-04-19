@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -293,9 +293,9 @@ module Network.Google.DataFusion.Types
     , iCreateTime
     ) where
 
-import           Network.Google.DataFusion.Types.Product
-import           Network.Google.DataFusion.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.DataFusion.Types.Product
+import Network.Google.DataFusion.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1beta1' of the Cloud Data Fusion API. This contains the host and root path used as a starting point for constructing service requests.
 dataFusionService :: ServiceConfig

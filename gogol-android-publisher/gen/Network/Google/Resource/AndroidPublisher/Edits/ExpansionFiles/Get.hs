@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.ExpansionFiles.Get
     , eefgEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.expansionfiles.get@ method which the
 -- 'EditsExpansionFilesGet' request conforms to.
@@ -64,10 +64,10 @@ type EditsExpansionFilesGetResource =
 -- /See:/ 'editsExpansionFilesGet' smart constructor.
 data EditsExpansionFilesGet =
   EditsExpansionFilesGet'
-    { _eefgPackageName       :: !Text
-    , _eefgAPKVersionCode    :: !(Textual Int32)
+    { _eefgPackageName :: !Text
+    , _eefgAPKVersionCode :: !(Textual Int32)
     , _eefgExpansionFileType :: !EditsExpansionFilesGetExpansionFileType
-    , _eefgEditId            :: !Text
+    , _eefgEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

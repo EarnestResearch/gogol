@@ -35,29 +35,32 @@ module Network.Google.Resource.Content.Accounttax.Custombatch
 
     -- * Request Lenses
     , aaPayload
+    , aaDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounttax.custombatch@ method which the
 -- 'AccounttaxCustombatch' request conforms to.
 type AccounttaxCustombatchResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          "accounttax" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] AccounttaxCustomBatchRequest :>
-                 Post '[JSON] AccounttaxCustomBatchResponse
+             QueryParam "dryRun" Bool :>
+               QueryParam "alt" AltJSON :>
+                 ReqBody '[JSON] AccounttaxCustomBatchRequest :>
+                   Post '[JSON] AccounttaxCustomBatchResponse
 
 -- | Retrieves and updates tax settings of multiple accounts in a single
 -- request.
 --
 -- /See:/ 'accounttaxCustombatch' smart constructor.
-newtype AccounttaxCustombatch =
+data AccounttaxCustombatch =
   AccounttaxCustombatch'
-    { _aaPayload :: AccounttaxCustomBatchRequest
+    { _aaPayload :: !AccounttaxCustomBatchRequest
+    , _aaDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,11 +70,13 @@ newtype AccounttaxCustombatch =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'aaPayload'
+--
+-- * 'aaDryRun'
 accounttaxCustombatch
     :: AccounttaxCustomBatchRequest -- ^ 'aaPayload'
     -> AccounttaxCustombatch
 accounttaxCustombatch pAaPayload_ =
-  AccounttaxCustombatch' {_aaPayload = pAaPayload_}
+  AccounttaxCustombatch' {_aaPayload = pAaPayload_, _aaDryRun = Nothing}
 
 
 -- | Multipart request metadata.
@@ -79,13 +84,20 @@ aaPayload :: Lens' AccounttaxCustombatch AccounttaxCustomBatchRequest
 aaPayload
   = lens _aaPayload (\ s a -> s{_aaPayload = a})
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+aaDryRun :: Lens' AccounttaxCustombatch (Maybe Bool)
+aaDryRun = lens _aaDryRun (\ s a -> s{_aaDryRun = a})
+
 instance GoogleRequest AccounttaxCustombatch where
         type Rs AccounttaxCustombatch =
              AccounttaxCustomBatchResponse
         type Scopes AccounttaxCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccounttaxCustombatch'{..}
-          = go (Just AltJSON) _aaPayload shoppingContentService
+          = go _aaDryRun (Just AltJSON) _aaPayload
+              shoppingContentService
           where go
                   = buildClient
                       (Proxy :: Proxy AccounttaxCustombatchResource)

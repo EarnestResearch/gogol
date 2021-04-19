@@ -42,8 +42,8 @@ module Network.Google.Resource.Books.PromoOffer.Dismiss
     , podAndroidId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.promooffer.dismiss@ method which the
 -- 'PromoOfferDismiss' request conforms to.
@@ -67,12 +67,12 @@ type PromoOfferDismissResource =
 data PromoOfferDismiss =
   PromoOfferDismiss'
     { _podManufacturer :: !(Maybe Text)
-    , _podSerial       :: !(Maybe Text)
-    , _podDevice       :: !(Maybe Text)
-    , _podModel        :: !(Maybe Text)
-    , _podOfferId      :: !(Maybe Text)
-    , _podProduct      :: !(Maybe Text)
-    , _podAndroidId    :: !(Maybe Text)
+    , _podSerial :: !(Maybe Text)
+    , _podDevice :: !(Maybe Text)
+    , _podModel :: !(Maybe Text)
+    , _podOfferId :: !(Maybe Text)
+    , _podProduct :: !(Maybe Text)
+    , _podAndroidId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

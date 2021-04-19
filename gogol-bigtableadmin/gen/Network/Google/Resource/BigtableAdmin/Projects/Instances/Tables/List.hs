@@ -44,8 +44,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.List
     , pitlCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.tables.list@ method which the
 -- 'ProjectsInstancesTablesList' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsInstancesTablesListResource =
 -- /See:/ 'projectsInstancesTablesList' smart constructor.
 data ProjectsInstancesTablesList =
   ProjectsInstancesTablesList'
-    { _pitlParent         :: !Text
-    , _pitlXgafv          :: !(Maybe Xgafv)
+    { _pitlParent :: !Text
+    , _pitlXgafv :: !(Maybe Xgafv)
     , _pitlUploadProtocol :: !(Maybe Text)
-    , _pitlAccessToken    :: !(Maybe Text)
-    , _pitlUploadType     :: !(Maybe Text)
-    , _pitlView           :: !(Maybe Text)
-    , _pitlPageToken      :: !(Maybe Text)
-    , _pitlPageSize       :: !(Maybe (Textual Int32))
-    , _pitlCallback       :: !(Maybe Text)
+    , _pitlAccessToken :: !(Maybe Text)
+    , _pitlUploadType :: !(Maybe Text)
+    , _pitlView :: !(Maybe Text)
+    , _pitlPageToken :: !(Maybe Text)
+    , _pitlPageSize :: !(Maybe (Textual Int32))
+    , _pitlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

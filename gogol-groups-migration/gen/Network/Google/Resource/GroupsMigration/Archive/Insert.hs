@@ -36,8 +36,8 @@ module Network.Google.Resource.GroupsMigration.Archive.Insert
     , aiGroupId
     ) where
 
-import           Network.Google.GroupsMigration.Types
-import           Network.Google.Prelude
+import Network.Google.GroupsMigration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @groupsmigration.archive.insert@ method which the
 -- 'ArchiveInsert' request conforms to.

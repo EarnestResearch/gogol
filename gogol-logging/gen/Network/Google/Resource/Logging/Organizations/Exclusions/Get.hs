@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.Organizations.Exclusions.Get
     , oegCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.organizations.exclusions.get@ method which the
 -- 'OrganizationsExclusionsGet' request conforms to.
@@ -61,12 +61,12 @@ type OrganizationsExclusionsGetResource =
 -- /See:/ 'organizationsExclusionsGet' smart constructor.
 data OrganizationsExclusionsGet =
   OrganizationsExclusionsGet'
-    { _oegXgafv          :: !(Maybe Xgafv)
+    { _oegXgafv :: !(Maybe Xgafv)
     , _oegUploadProtocol :: !(Maybe Text)
-    , _oegAccessToken    :: !(Maybe Text)
-    , _oegUploadType     :: !(Maybe Text)
-    , _oegName           :: !Text
-    , _oegCallback       :: !(Maybe Text)
+    , _oegAccessToken :: !(Maybe Text)
+    , _oegUploadType :: !(Maybe Text)
+    , _oegName :: !Text
+    , _oegCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

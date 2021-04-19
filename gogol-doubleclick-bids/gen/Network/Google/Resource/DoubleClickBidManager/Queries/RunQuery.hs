@@ -37,8 +37,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.RunQuery
     , qrqPayload
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.runquery@ method which the
 -- 'QueriesRunQuery' request conforms to.

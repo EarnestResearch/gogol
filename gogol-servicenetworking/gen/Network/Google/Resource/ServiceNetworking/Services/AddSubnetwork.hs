@@ -51,8 +51,8 @@ module Network.Google.Resource.ServiceNetworking.Services.AddSubnetwork
     , sasCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceNetworking.Types
+import Network.Google.Prelude
+import Network.Google.ServiceNetworking.Types
 
 -- | A resource alias for @servicenetworking.services.addSubnetwork@ method which the
 -- 'ServicesAddSubnetwork' request conforms to.
@@ -82,13 +82,13 @@ type ServicesAddSubnetworkResource =
 -- /See:/ 'servicesAddSubnetwork' smart constructor.
 data ServicesAddSubnetwork =
   ServicesAddSubnetwork'
-    { _sasParent         :: !Text
-    , _sasXgafv          :: !(Maybe Xgafv)
+    { _sasParent :: !Text
+    , _sasXgafv :: !(Maybe Xgafv)
     , _sasUploadProtocol :: !(Maybe Text)
-    , _sasAccessToken    :: !(Maybe Text)
-    , _sasUploadType     :: !(Maybe Text)
-    , _sasPayload        :: !AddSubnetworkRequest
-    , _sasCallback       :: !(Maybe Text)
+    , _sasAccessToken :: !(Maybe Text)
+    , _sasUploadType :: !(Maybe Text)
+    , _sasPayload :: !AddSubnetworkRequest
+    , _sasCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

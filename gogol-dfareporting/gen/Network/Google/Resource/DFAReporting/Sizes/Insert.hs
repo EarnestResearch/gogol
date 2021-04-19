@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Sizes.Insert
     , siPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sizes.insert@ method which the
 -- 'SizesInsert' request conforms to.
@@ -57,7 +57,7 @@ type SizesInsertResource =
 data SizesInsert =
   SizesInsert'
     { _siProFileId :: !(Textual Int64)
-    , _siPayload   :: !Size
+    , _siPayload :: !Size
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

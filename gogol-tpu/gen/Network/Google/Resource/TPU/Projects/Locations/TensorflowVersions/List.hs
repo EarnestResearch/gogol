@@ -45,8 +45,8 @@ module Network.Google.Resource.TPU.Projects.Locations.TensorflowVersions.List
     , pltvlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TPU.Types
+import Network.Google.Prelude
+import Network.Google.TPU.Types
 
 -- | A resource alias for @tpu.projects.locations.tensorflowVersions.list@ method which the
 -- 'ProjectsLocationsTensorflowVersionsList' request conforms to.
@@ -72,16 +72,16 @@ type ProjectsLocationsTensorflowVersionsListResource
 -- /See:/ 'projectsLocationsTensorflowVersionsList' smart constructor.
 data ProjectsLocationsTensorflowVersionsList =
   ProjectsLocationsTensorflowVersionsList'
-    { _pltvlParent         :: !Text
-    , _pltvlXgafv          :: !(Maybe Xgafv)
+    { _pltvlParent :: !Text
+    , _pltvlXgafv :: !(Maybe Xgafv)
     , _pltvlUploadProtocol :: !(Maybe Text)
-    , _pltvlOrderBy        :: !(Maybe Text)
-    , _pltvlAccessToken    :: !(Maybe Text)
-    , _pltvlUploadType     :: !(Maybe Text)
-    , _pltvlFilter         :: !(Maybe Text)
-    , _pltvlPageToken      :: !(Maybe Text)
-    , _pltvlPageSize       :: !(Maybe (Textual Int32))
-    , _pltvlCallback       :: !(Maybe Text)
+    , _pltvlOrderBy :: !(Maybe Text)
+    , _pltvlAccessToken :: !(Maybe Text)
+    , _pltvlUploadType :: !(Maybe Text)
+    , _pltvlFilter :: !(Maybe Text)
+    , _pltvlPageToken :: !(Maybe Text)
+    , _pltvlPageSize :: !(Maybe (Textual Int32))
+    , _pltvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

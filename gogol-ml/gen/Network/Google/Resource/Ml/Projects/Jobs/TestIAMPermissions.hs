@@ -47,8 +47,8 @@ module Network.Google.Resource.Ml.Projects.Jobs.TestIAMPermissions
     , pjtipCallback
     ) where
 
-import           Network.Google.MachineLearning.Types
-import           Network.Google.Prelude
+import Network.Google.MachineLearning.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @ml.projects.jobs.testIamPermissions@ method which the
 -- 'ProjectsJobsTestIAMPermissions' request conforms to.
@@ -76,13 +76,13 @@ type ProjectsJobsTestIAMPermissionsResource =
 -- /See:/ 'projectsJobsTestIAMPermissions' smart constructor.
 data ProjectsJobsTestIAMPermissions =
   ProjectsJobsTestIAMPermissions'
-    { _pjtipXgafv          :: !(Maybe Xgafv)
+    { _pjtipXgafv :: !(Maybe Xgafv)
     , _pjtipUploadProtocol :: !(Maybe Text)
-    , _pjtipAccessToken    :: !(Maybe Text)
-    , _pjtipUploadType     :: !(Maybe Text)
-    , _pjtipPayload        :: !GoogleIAMV1__TestIAMPermissionsRequest
-    , _pjtipResource       :: !Text
-    , _pjtipCallback       :: !(Maybe Text)
+    , _pjtipAccessToken :: !(Maybe Text)
+    , _pjtipUploadType :: !(Maybe Text)
+    , _pjtipPayload :: !GoogleIAMV1__TestIAMPermissionsRequest
+    , _pjtipResource :: !Text
+    , _pjtipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

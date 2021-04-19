@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.CreativeAssets.Insert
     , caiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeAssets.insert@ method which the
 -- 'CreativeAssetsInsert' request conforms to.
@@ -74,8 +74,8 @@ type CreativeAssetsInsertResource =
 data CreativeAssetsInsert =
   CreativeAssetsInsert'
     { _caiAdvertiserId :: !(Textual Int64)
-    , _caiProFileId    :: !(Textual Int64)
-    , _caiPayload      :: !CreativeAssetMetadata
+    , _caiProFileId :: !(Textual Int64)
+    , _caiPayload :: !CreativeAssetMetadata
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

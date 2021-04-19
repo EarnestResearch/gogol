@@ -49,8 +49,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.PullNotificationSet
     , epnsRequestMode
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.pullNotificationSet@ method which the
 -- 'EnterprisesPullNotificationSet' request conforms to.

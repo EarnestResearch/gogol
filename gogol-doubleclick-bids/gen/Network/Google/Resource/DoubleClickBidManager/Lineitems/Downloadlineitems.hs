@@ -37,8 +37,8 @@ module Network.Google.Resource.DoubleClickBidManager.Lineitems.Downloadlineitems
     , ldPayload
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.lineitems.downloadlineitems@ method which the
 -- 'LineitemsDownloadlineitems' request conforms to.

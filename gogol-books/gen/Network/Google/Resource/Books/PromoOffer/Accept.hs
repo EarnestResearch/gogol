@@ -43,8 +43,8 @@ module Network.Google.Resource.Books.PromoOffer.Accept
     , poaAndroidId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.promooffer.accept@ method which the
 -- 'PromoOfferAccept' request conforms to.
@@ -69,13 +69,13 @@ type PromoOfferAcceptResource =
 data PromoOfferAccept =
   PromoOfferAccept'
     { _poaManufacturer :: !(Maybe Text)
-    , _poaSerial       :: !(Maybe Text)
-    , _poaDevice       :: !(Maybe Text)
-    , _poaModel        :: !(Maybe Text)
-    , _poaVolumeId     :: !(Maybe Text)
-    , _poaOfferId      :: !(Maybe Text)
-    , _poaProduct      :: !(Maybe Text)
-    , _poaAndroidId    :: !(Maybe Text)
+    , _poaSerial :: !(Maybe Text)
+    , _poaDevice :: !(Maybe Text)
+    , _poaModel :: !(Maybe Text)
+    , _poaVolumeId :: !(Maybe Text)
+    , _poaOfferId :: !(Maybe Text)
+    , _poaProduct :: !(Maybe Text)
+    , _poaAndroidId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

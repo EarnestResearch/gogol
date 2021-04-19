@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -84,9 +84,9 @@ module Network.Google.Translate.Types
     , tlrTranslations
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types.Product
-import           Network.Google.Translate.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Translate.Types.Product
+import Network.Google.Translate.Types.Sum
 
 -- | Default request referring to version 'v2' of the Google Cloud Translation API. This contains the host and root path used as a starting point for constructing service requests.
 translateService :: ServiceConfig

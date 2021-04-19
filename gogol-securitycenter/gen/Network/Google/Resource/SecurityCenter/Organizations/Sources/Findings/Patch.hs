@@ -44,8 +44,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Pat
     , osfpCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.patch@ method which the
 -- 'OrganizationsSourcesFindingsPatch' request conforms to.
@@ -67,14 +67,14 @@ type OrganizationsSourcesFindingsPatchResource =
 -- /See:/ 'organizationsSourcesFindingsPatch' smart constructor.
 data OrganizationsSourcesFindingsPatch =
   OrganizationsSourcesFindingsPatch'
-    { _osfpXgafv          :: !(Maybe Xgafv)
+    { _osfpXgafv :: !(Maybe Xgafv)
     , _osfpUploadProtocol :: !(Maybe Text)
-    , _osfpUpdateMask     :: !(Maybe GFieldMask)
-    , _osfpAccessToken    :: !(Maybe Text)
-    , _osfpUploadType     :: !(Maybe Text)
-    , _osfpPayload        :: !Finding
-    , _osfpName           :: !Text
-    , _osfpCallback       :: !(Maybe Text)
+    , _osfpUpdateMask :: !(Maybe GFieldMask)
+    , _osfpAccessToken :: !(Maybe Text)
+    , _osfpUploadType :: !(Maybe Text)
+    , _osfpPayload :: !Finding
+    , _osfpName :: !Text
+    , _osfpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

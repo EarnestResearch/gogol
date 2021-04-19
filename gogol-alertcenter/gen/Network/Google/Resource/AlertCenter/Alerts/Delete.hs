@@ -46,8 +46,8 @@ module Network.Google.Resource.AlertCenter.Alerts.Delete
     , adCallback
     ) where
 
-import           Network.Google.AlertCenter.Types
-import           Network.Google.Prelude
+import Network.Google.AlertCenter.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @alertcenter.alerts.delete@ method which the
 -- 'AlertsDelete' request conforms to.
@@ -72,13 +72,13 @@ type AlertsDeleteResource =
 -- /See:/ 'alertsDelete' smart constructor.
 data AlertsDelete =
   AlertsDelete'
-    { _adXgafv          :: !(Maybe Xgafv)
+    { _adXgafv :: !(Maybe Xgafv)
     , _adUploadProtocol :: !(Maybe Text)
-    , _adAccessToken    :: !(Maybe Text)
-    , _adAlertId        :: !Text
-    , _adUploadType     :: !(Maybe Text)
-    , _adCustomerId     :: !(Maybe Text)
-    , _adCallback       :: !(Maybe Text)
+    , _adAccessToken :: !(Maybe Text)
+    , _adAlertId :: !Text
+    , _adUploadType :: !(Maybe Text)
+    , _adCustomerId :: !(Maybe Text)
+    , _adCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

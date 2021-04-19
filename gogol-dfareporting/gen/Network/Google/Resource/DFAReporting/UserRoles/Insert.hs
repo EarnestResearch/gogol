@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.UserRoles.Insert
     , uriPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRoles.insert@ method which the
 -- 'UserRolesInsert' request conforms to.
@@ -57,7 +57,7 @@ type UserRolesInsertResource =
 data UserRolesInsert =
   UserRolesInsert'
     { _uriProFileId :: !(Textual Int64)
-    , _uriPayload   :: !UserRole
+    , _uriPayload :: !UserRole
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

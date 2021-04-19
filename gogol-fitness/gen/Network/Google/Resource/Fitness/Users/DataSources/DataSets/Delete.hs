@@ -46,8 +46,8 @@ module Network.Google.Resource.Fitness.Users.DataSources.DataSets.Delete
     , udsdsdCurrentTimeMillis
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.dataSources.datasets.delete@ method which the
 -- 'UsersDataSourcesDataSetsDelete' request conforms to.
@@ -75,11 +75,11 @@ type UsersDataSourcesDataSetsDeleteResource =
 -- /See:/ 'usersDataSourcesDataSetsDelete' smart constructor.
 data UsersDataSourcesDataSetsDelete =
   UsersDataSourcesDataSetsDelete'
-    { _udsdsdDataSourceId       :: !Text
-    , _udsdsdUserId             :: !Text
-    , _udsdsdDataSetId          :: !Text
+    { _udsdsdDataSourceId :: !Text
+    , _udsdsdUserId :: !Text
+    , _udsdsdDataSetId :: !Text
     , _udsdsdModifiedTimeMillis :: !(Maybe (Textual Int64))
-    , _udsdsdCurrentTimeMillis  :: !(Maybe (Textual Int64))
+    , _udsdsdCurrentTimeMillis :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.SSLCertificates.List
     , sclMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.sslCertificates.list@ method which the
 -- 'SSLCertificatesList' request conforms to.
@@ -66,10 +66,10 @@ type SSLCertificatesListResource =
 -- /See:/ 'sslCertificatesList' smart constructor.
 data SSLCertificatesList =
   SSLCertificatesList'
-    { _sclOrderBy    :: !(Maybe Text)
-    , _sclProject    :: !Text
-    , _sclFilter     :: !(Maybe Text)
-    , _sclPageToken  :: !(Maybe Text)
+    { _sclOrderBy :: !(Maybe Text)
+    , _sclProject :: !Text
+    , _sclFilter :: !(Maybe Text)
+    , _sclPageToken :: !(Maybe Text)
     , _sclMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

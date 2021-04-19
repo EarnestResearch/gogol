@@ -351,24 +351,24 @@ module Network.Google.Script
     , udrDeploymentConfig
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Script.Processes.List
-import           Network.Google.Resource.Script.Processes.ListScriptProcesses
-import           Network.Google.Resource.Script.Projects.Create
-import           Network.Google.Resource.Script.Projects.Deployments.Create
-import           Network.Google.Resource.Script.Projects.Deployments.Delete
-import           Network.Google.Resource.Script.Projects.Deployments.Get
-import           Network.Google.Resource.Script.Projects.Deployments.List
-import           Network.Google.Resource.Script.Projects.Deployments.Update
-import           Network.Google.Resource.Script.Projects.Get
-import           Network.Google.Resource.Script.Projects.GetContent
-import           Network.Google.Resource.Script.Projects.GetMetrics
-import           Network.Google.Resource.Script.Projects.UpdateContent
-import           Network.Google.Resource.Script.Projects.Versions.Create
-import           Network.Google.Resource.Script.Projects.Versions.Get
-import           Network.Google.Resource.Script.Projects.Versions.List
-import           Network.Google.Resource.Script.Scripts.Run
-import           Network.Google.Script.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Script.Processes.List
+import Network.Google.Resource.Script.Processes.ListScriptProcesses
+import Network.Google.Resource.Script.Projects.Create
+import Network.Google.Resource.Script.Projects.Deployments.Create
+import Network.Google.Resource.Script.Projects.Deployments.Delete
+import Network.Google.Resource.Script.Projects.Deployments.Get
+import Network.Google.Resource.Script.Projects.Deployments.List
+import Network.Google.Resource.Script.Projects.Deployments.Update
+import Network.Google.Resource.Script.Projects.Get
+import Network.Google.Resource.Script.Projects.GetContent
+import Network.Google.Resource.Script.Projects.GetMetrics
+import Network.Google.Resource.Script.Projects.UpdateContent
+import Network.Google.Resource.Script.Projects.Versions.Create
+import Network.Google.Resource.Script.Projects.Versions.Get
+import Network.Google.Resource.Script.Projects.Versions.List
+import Network.Google.Resource.Script.Scripts.Run
+import Network.Google.Script.Types
 
 {- $resources
 TODO

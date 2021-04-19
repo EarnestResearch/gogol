@@ -17,15 +17,15 @@
 --
 module Network.Google.CustomSearch.Types.Product where
 
-import           Network.Google.CustomSearch.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CustomSearch.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'promotionImage' smart constructor.
 data PromotionImage =
   PromotionImage'
     { _piHeight :: !(Maybe (Textual Int32))
-    , _piWidth  :: !(Maybe (Textual Int32))
+    , _piWidth :: !(Maybe (Textual Int32))
     , _piSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -80,7 +80,7 @@ instance ToJSON PromotionImage where
 data Context =
   Context'
     { _cFacets :: !(Maybe [[ContextFacetsItemItem]])
-    , _cTitle  :: !(Maybe Text)
+    , _cTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -193,7 +193,7 @@ instance ToJSON ResultPagemapAdditionalItem where
 -- /See:/ 'searchURL' smart constructor.
 data SearchURL =
   SearchURL'
-    { _suType     :: !Text
+    { _suType :: !Text
     , _suTemplate :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -243,7 +243,7 @@ instance ToJSON SearchURL where
 -- /See:/ 'searchSpelling' smart constructor.
 data SearchSpelling =
   SearchSpelling'
-    { _ssCorrectedQuery     :: !(Maybe Text)
+    { _ssCorrectedQuery :: !(Maybe Text)
     , _ssHTMLCorrectedQuery :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -291,13 +291,13 @@ instance ToJSON SearchSpelling where
 -- /See:/ 'resultImage' smart constructor.
 data ResultImage =
   ResultImage'
-    { _riThumbnailLink   :: !(Maybe Text)
-    , _riHeight          :: !(Maybe (Textual Int32))
-    , _riByteSize        :: !(Maybe (Textual Int32))
-    , _riContextLink     :: !(Maybe Text)
+    { _riThumbnailLink :: !(Maybe Text)
+    , _riHeight :: !(Maybe (Textual Int32))
+    , _riByteSize :: !(Maybe (Textual Int32))
+    , _riContextLink :: !(Maybe Text)
     , _riThumbnailHeight :: !(Maybe (Textual Int32))
-    , _riWidth           :: !(Maybe (Textual Int32))
-    , _riThumbnailWidth  :: !(Maybe (Textual Int32))
+    , _riWidth :: !(Maybe (Textual Int32))
+    , _riThumbnailWidth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -432,21 +432,21 @@ instance ToJSON ResultPagemap where
 -- /See:/ 'result' smart constructor.
 data Result =
   Result'
-    { _rMime             :: !(Maybe Text)
-    , _rImage            :: !(Maybe ResultImage)
-    , _rPagemap          :: !(Maybe ResultPagemap)
-    , _rDisplayLink      :: !(Maybe Text)
-    , _rFileFormat       :: !(Maybe Text)
-    , _rSnippet          :: !(Maybe Text)
-    , _rKind             :: !Text
-    , _rLink             :: !(Maybe Text)
-    , _rHTMLSnippet      :: !(Maybe Text)
+    { _rMime :: !(Maybe Text)
+    , _rImage :: !(Maybe ResultImage)
+    , _rPagemap :: !(Maybe ResultPagemap)
+    , _rDisplayLink :: !(Maybe Text)
+    , _rFileFormat :: !(Maybe Text)
+    , _rSnippet :: !(Maybe Text)
+    , _rKind :: !Text
+    , _rLink :: !(Maybe Text)
+    , _rHTMLSnippet :: !(Maybe Text)
     , _rHTMLFormattedURL :: !(Maybe Text)
-    , _rCacheId          :: !(Maybe Text)
-    , _rFormattedURL     :: !(Maybe Text)
-    , _rHTMLTitle        :: !(Maybe Text)
-    , _rLabels           :: !(Maybe [ResultLabelsItem])
-    , _rTitle            :: !(Maybe Text)
+    , _rCacheId :: !(Maybe Text)
+    , _rFormattedURL :: !(Maybe Text)
+    , _rHTMLTitle :: !(Maybe Text)
+    , _rLabels :: !(Maybe [ResultLabelsItem])
+    , _rTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -603,7 +603,7 @@ instance ToJSON Result where
 -- /See:/ 'resultLabelsItem' smart constructor.
 data ResultLabelsItem =
   ResultLabelsItem'
-    { _rliName        :: !(Maybe Text)
+    { _rliName :: !(Maybe Text)
     , _rliDisplayName :: !(Maybe Text)
     , _rliLabelWithOp :: !(Maybe Text)
     }
@@ -659,9 +659,9 @@ instance ToJSON ResultLabelsItem where
 -- /See:/ 'searchSearchInformation' smart constructor.
 data SearchSearchInformation =
   SearchSearchInformation'
-    { _ssiSearchTime            :: !(Maybe (Textual Double))
-    , _ssiFormattedSearchTime   :: !(Maybe Text)
-    , _ssiTotalResults          :: !(Maybe (Textual Int64))
+    { _ssiSearchTime :: !(Maybe (Textual Double))
+    , _ssiFormattedSearchTime :: !(Maybe Text)
+    , _ssiTotalResults :: !(Maybe (Textual Int64))
     , _ssiFormattedTotalResults :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -736,42 +736,42 @@ instance ToJSON SearchSearchInformation where
 -- /See:/ 'query' smart constructor.
 data Query =
   Query'
-    { _qImgDominantColor       :: !(Maybe Text)
-    , _qOutputEncoding         :: !(Maybe Text)
-    , _qSiteSearchFilter       :: !(Maybe Text)
-    , _qInputEncoding          :: !(Maybe Text)
-    , _qOrTerms                :: !(Maybe Text)
-    , _qSearchTerms            :: !(Maybe Text)
-    , _qStartPage              :: !(Maybe (Textual Int32))
-    , _qRights                 :: !(Maybe Text)
-    , _qCount                  :: !(Maybe (Textual Int32))
-    , _qExcludeTerms           :: !(Maybe Text)
-    , _qFileType               :: !(Maybe Text)
-    , _qSearchType             :: !(Maybe Text)
-    , _qGoogleHost             :: !(Maybe Text)
+    { _qImgDominantColor :: !(Maybe Text)
+    , _qOutputEncoding :: !(Maybe Text)
+    , _qSiteSearchFilter :: !(Maybe Text)
+    , _qInputEncoding :: !(Maybe Text)
+    , _qOrTerms :: !(Maybe Text)
+    , _qSearchTerms :: !(Maybe Text)
+    , _qStartPage :: !(Maybe (Textual Int32))
+    , _qRights :: !(Maybe Text)
+    , _qCount :: !(Maybe (Textual Int32))
+    , _qExcludeTerms :: !(Maybe Text)
+    , _qFileType :: !(Maybe Text)
+    , _qSearchType :: !(Maybe Text)
+    , _qGoogleHost :: !(Maybe Text)
     , _qDisableCnTwTranslation :: !(Maybe Text)
-    , _qRelatedSite            :: !(Maybe Text)
-    , _qHl                     :: !(Maybe Text)
-    , _qSort                   :: !(Maybe Text)
-    , _qLanguage               :: !(Maybe Text)
-    , _qSiteSearch             :: !(Maybe Text)
-    , _qFilter                 :: !(Maybe Text)
-    , _qTotalResults           :: !(Maybe (Textual Int64))
-    , _qDateRestrict           :: !(Maybe Text)
-    , _qTitle                  :: !(Maybe Text)
-    , _qLinkSite               :: !(Maybe Text)
-    , _qLowRange               :: !(Maybe Text)
-    , _qImgType                :: !(Maybe Text)
-    , _qGl                     :: !(Maybe Text)
-    , _qCx                     :: !(Maybe Text)
-    , _qImgColorType           :: !(Maybe Text)
-    , _qImgSize                :: !(Maybe Text)
-    , _qExactTerms             :: !(Maybe Text)
-    , _qStartIndex             :: !(Maybe (Textual Int32))
-    , _qCr                     :: !(Maybe Text)
-    , _qSafe                   :: !(Maybe Text)
-    , _qHq                     :: !(Maybe Text)
-    , _qHighRange              :: !(Maybe Text)
+    , _qRelatedSite :: !(Maybe Text)
+    , _qHl :: !(Maybe Text)
+    , _qSort :: !(Maybe Text)
+    , _qLanguage :: !(Maybe Text)
+    , _qSiteSearch :: !(Maybe Text)
+    , _qFilter :: !(Maybe Text)
+    , _qTotalResults :: !(Maybe (Textual Int64))
+    , _qDateRestrict :: !(Maybe Text)
+    , _qTitle :: !(Maybe Text)
+    , _qLinkSite :: !(Maybe Text)
+    , _qLowRange :: !(Maybe Text)
+    , _qImgType :: !(Maybe Text)
+    , _qGl :: !(Maybe Text)
+    , _qCx :: !(Maybe Text)
+    , _qImgColorType :: !(Maybe Text)
+    , _qImgSize :: !(Maybe Text)
+    , _qExactTerms :: !(Maybe Text)
+    , _qStartIndex :: !(Maybe (Textual Int32))
+    , _qCr :: !(Maybe Text)
+    , _qSafe :: !(Maybe Text)
+    , _qHq :: !(Maybe Text)
+    , _qHighRange :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1122,10 +1122,10 @@ instance ToJSON Query where
 -- /See:/ 'promotionBodyLinesItem' smart constructor.
 data PromotionBodyLinesItem =
   PromotionBodyLinesItem'
-    { _pbliLink      :: !(Maybe Text)
-    , _pbliURL       :: !(Maybe Text)
+    { _pbliLink :: !(Maybe Text)
+    , _pbliURL :: !(Maybe Text)
     , _pbliHTMLTitle :: !(Maybe Text)
-    , _pbliTitle     :: !(Maybe Text)
+    , _pbliTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1188,12 +1188,12 @@ instance ToJSON PromotionBodyLinesItem where
 -- /See:/ 'promotion' smart constructor.
 data Promotion =
   Promotion'
-    { _pImage       :: !(Maybe PromotionImage)
+    { _pImage :: !(Maybe PromotionImage)
     , _pDisplayLink :: !(Maybe Text)
-    , _pBodyLines   :: !(Maybe [PromotionBodyLinesItem])
-    , _pLink        :: !(Maybe Text)
-    , _pHTMLTitle   :: !(Maybe Text)
-    , _pTitle       :: !(Maybe Text)
+    , _pBodyLines :: !(Maybe [PromotionBodyLinesItem])
+    , _pLink :: !(Maybe Text)
+    , _pHTMLTitle :: !(Maybe Text)
+    , _pTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1275,14 +1275,14 @@ instance ToJSON Promotion where
 -- /See:/ 'search' smart constructor.
 data Search =
   Search'
-    { _sQueries           :: !(Maybe SearchQueries)
-    , _sContext           :: !(Maybe Context)
-    , _sKind              :: !Text
-    , _sURL               :: !(Maybe SearchURL)
-    , _sItems             :: !(Maybe [Result])
+    { _sQueries :: !(Maybe SearchQueries)
+    , _sContext :: !(Maybe Context)
+    , _sKind :: !Text
+    , _sURL :: !(Maybe SearchURL)
+    , _sItems :: !(Maybe [Result])
     , _sSearchInformation :: !(Maybe SearchSearchInformation)
-    , _sPromotions        :: !(Maybe [Promotion])
-    , _sSpelling          :: !(Maybe SearchSpelling)
+    , _sPromotions :: !(Maybe [Promotion])
+    , _sSpelling :: !(Maybe SearchSpelling)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1382,9 +1382,9 @@ instance ToJSON Search where
 -- /See:/ 'contextFacetsItemItem' smart constructor.
 data ContextFacetsItemItem =
   ContextFacetsItemItem'
-    { _cfiiAnchor      :: !(Maybe Text)
+    { _cfiiAnchor :: !(Maybe Text)
     , _cfiiLabelWithOp :: !(Maybe Text)
-    , _cfiiLabel       :: !(Maybe Text)
+    , _cfiiLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

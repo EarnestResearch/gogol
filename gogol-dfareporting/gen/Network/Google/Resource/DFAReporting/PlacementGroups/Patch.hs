@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.PlacementGroups.Patch
     , pgpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.placementGroups.patch@ method which the
 -- 'PlacementGroupsPatch' request conforms to.
@@ -62,8 +62,8 @@ type PlacementGroupsPatchResource =
 data PlacementGroupsPatch =
   PlacementGroupsPatch'
     { _pgpProFileId :: !(Textual Int64)
-    , _pgpPayload   :: !PlacementGroup
-    , _pgpId        :: !(Textual Int64)
+    , _pgpPayload :: !PlacementGroup
+    , _pgpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

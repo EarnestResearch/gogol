@@ -47,8 +47,8 @@ module Network.Google.Resource.Compute.InstanceGroupManagers.ListManagedInstance
     , igmlmiMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroupManagers.listManagedInstances@ method which the
 -- 'InstanceGroupManagersListManagedInstances' request conforms to.
@@ -81,13 +81,13 @@ type InstanceGroupManagersListManagedInstancesResource
 -- /See:/ 'instanceGroupManagersListManagedInstances' smart constructor.
 data InstanceGroupManagersListManagedInstances =
   InstanceGroupManagersListManagedInstances'
-    { _igmlmiProject              :: !Text
+    { _igmlmiProject :: !Text
     , _igmlmiInstanceGroupManager :: !Text
-    , _igmlmiZone                 :: !Text
-    , _igmlmiOrderBy              :: !(Maybe Text)
-    , _igmlmiFilter               :: !(Maybe Text)
-    , _igmlmiPageToken            :: !(Maybe Text)
-    , _igmlmiMaxResults           :: !(Textual Word32)
+    , _igmlmiZone :: !Text
+    , _igmlmiOrderBy :: !(Maybe Text)
+    , _igmlmiFilter :: !(Maybe Text)
+    , _igmlmiPageToken :: !(Maybe Text)
+    , _igmlmiMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

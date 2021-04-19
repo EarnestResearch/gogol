@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessApproval.Organizations.ApprovalRequests.Lis
     , oarlCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.organizations.approvalRequests.list@ method which the
 -- 'OrganizationsApprovalRequestsList' request conforms to.
@@ -73,15 +73,15 @@ type OrganizationsApprovalRequestsListResource =
 -- /See:/ 'organizationsApprovalRequestsList' smart constructor.
 data OrganizationsApprovalRequestsList =
   OrganizationsApprovalRequestsList'
-    { _oarlParent         :: !Text
-    , _oarlXgafv          :: !(Maybe Xgafv)
+    { _oarlParent :: !Text
+    , _oarlXgafv :: !(Maybe Xgafv)
     , _oarlUploadProtocol :: !(Maybe Text)
-    , _oarlAccessToken    :: !(Maybe Text)
-    , _oarlUploadType     :: !(Maybe Text)
-    , _oarlFilter         :: !(Maybe Text)
-    , _oarlPageToken      :: !(Maybe Text)
-    , _oarlPageSize       :: !(Maybe (Textual Int32))
-    , _oarlCallback       :: !(Maybe Text)
+    , _oarlAccessToken :: !(Maybe Text)
+    , _oarlUploadType :: !(Maybe Text)
+    , _oarlFilter :: !(Maybe Text)
+    , _oarlPageToken :: !(Maybe Text)
+    , _oarlPageSize :: !(Maybe (Textual Int32))
+    , _oarlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

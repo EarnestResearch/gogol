@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.Roles.Create
     , prcCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.roles.create@ method which the
 -- 'ProjectsRolesCreate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsRolesCreateResource =
 -- /See:/ 'projectsRolesCreate' smart constructor.
 data ProjectsRolesCreate =
   ProjectsRolesCreate'
-    { _prcParent         :: !Text
-    , _prcXgafv          :: !(Maybe Xgafv)
+    { _prcParent :: !Text
+    , _prcXgafv :: !(Maybe Xgafv)
     , _prcUploadProtocol :: !(Maybe Text)
-    , _prcAccessToken    :: !(Maybe Text)
-    , _prcUploadType     :: !(Maybe Text)
-    , _prcPayload        :: !CreateRoleRequest
-    , _prcCallback       :: !(Maybe Text)
+    , _prcAccessToken :: !(Maybe Text)
+    , _prcUploadType :: !(Maybe Text)
+    , _prcPayload :: !CreateRoleRequest
+    , _prcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

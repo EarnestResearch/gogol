@@ -37,8 +37,8 @@ module Network.Google.Resource.GamesConfiguration.ImageConfigurations.Upload
     , icuImageType
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.imageConfigurations.upload@ method which the
 -- 'ImageConfigurationsUpload' request conforms to.
@@ -73,7 +73,7 @@ type ImageConfigurationsUploadResource =
 data ImageConfigurationsUpload =
   ImageConfigurationsUpload'
     { _icuResourceId :: !Text
-    , _icuImageType  :: !ImageConfigurationsUploadImageType
+    , _icuImageType :: !ImageConfigurationsUploadImageType
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

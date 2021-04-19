@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Zones.Clusters.StartIPRotation
     , pzcsirCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.zones.clusters.startIpRotation@ method which the
 -- 'ProjectsZonesClustersStartIPRotation' request conforms to.
@@ -71,15 +71,15 @@ type ProjectsZonesClustersStartIPRotationResource =
 -- /See:/ 'projectsZonesClustersStartIPRotation' smart constructor.
 data ProjectsZonesClustersStartIPRotation =
   ProjectsZonesClustersStartIPRotation'
-    { _pzcsirXgafv          :: !(Maybe Xgafv)
+    { _pzcsirXgafv :: !(Maybe Xgafv)
     , _pzcsirUploadProtocol :: !(Maybe Text)
-    , _pzcsirAccessToken    :: !(Maybe Text)
-    , _pzcsirUploadType     :: !(Maybe Text)
-    , _pzcsirZone           :: !Text
-    , _pzcsirPayload        :: !StartIPRotationRequest
-    , _pzcsirClusterId      :: !Text
-    , _pzcsirProjectId      :: !Text
-    , _pzcsirCallback       :: !(Maybe Text)
+    , _pzcsirAccessToken :: !(Maybe Text)
+    , _pzcsirUploadType :: !(Maybe Text)
+    , _pzcsirZone :: !Text
+    , _pzcsirPayload :: !StartIPRotationRequest
+    , _pzcsirClusterId :: !Text
+    , _pzcsirProjectId :: !Text
+    , _pzcsirCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

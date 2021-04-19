@@ -48,8 +48,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Versions.Patch
     , svpCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.versions.patch@ method which the
 -- 'SitesVersionsPatch' request conforms to.
@@ -75,14 +75,14 @@ type SitesVersionsPatchResource =
 -- /See:/ 'sitesVersionsPatch' smart constructor.
 data SitesVersionsPatch =
   SitesVersionsPatch'
-    { _svpXgafv          :: !(Maybe Xgafv)
+    { _svpXgafv :: !(Maybe Xgafv)
     , _svpUploadProtocol :: !(Maybe Text)
-    , _svpUpdateMask     :: !(Maybe GFieldMask)
-    , _svpAccessToken    :: !(Maybe Text)
-    , _svpUploadType     :: !(Maybe Text)
-    , _svpPayload        :: !Version
-    , _svpName           :: !Text
-    , _svpCallback       :: !(Maybe Text)
+    , _svpUpdateMask :: !(Maybe GFieldMask)
+    , _svpAccessToken :: !(Maybe Text)
+    , _svpUploadType :: !(Maybe Text)
+    , _svpPayload :: !Version
+    , _svpName :: !Text
+    , _svpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

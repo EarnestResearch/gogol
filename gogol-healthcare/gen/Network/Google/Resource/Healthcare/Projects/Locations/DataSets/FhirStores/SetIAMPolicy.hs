@@ -43,8 +43,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfssipCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.setIamPolicy@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresSetIAMPolicy' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsDataSetsFhirStoresSetIAMPolicyResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresSetIAMPolicy' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresSetIAMPolicy =
   ProjectsLocationsDataSetsFhirStoresSetIAMPolicy'
-    { _pldsfssipXgafv          :: !(Maybe Xgafv)
+    { _pldsfssipXgafv :: !(Maybe Xgafv)
     , _pldsfssipUploadProtocol :: !(Maybe Text)
-    , _pldsfssipAccessToken    :: !(Maybe Text)
-    , _pldsfssipUploadType     :: !(Maybe Text)
-    , _pldsfssipPayload        :: !SetIAMPolicyRequest
-    , _pldsfssipResource       :: !Text
-    , _pldsfssipCallback       :: !(Maybe Text)
+    , _pldsfssipAccessToken :: !(Maybe Text)
+    , _pldsfssipUploadType :: !(Maybe Text)
+    , _pldsfssipPayload :: !SetIAMPolicyRequest
+    , _pldsfssipResource :: !Text
+    , _pldsfssipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

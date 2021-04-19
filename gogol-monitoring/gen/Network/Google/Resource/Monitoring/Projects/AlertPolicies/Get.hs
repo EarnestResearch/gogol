@@ -41,8 +41,8 @@ module Network.Google.Resource.Monitoring.Projects.AlertPolicies.Get
     , papgCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.alertPolicies.get@ method which the
 -- 'ProjectsAlertPoliciesGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsAlertPoliciesGetResource =
 -- /See:/ 'projectsAlertPoliciesGet' smart constructor.
 data ProjectsAlertPoliciesGet =
   ProjectsAlertPoliciesGet'
-    { _papgXgafv          :: !(Maybe Xgafv)
+    { _papgXgafv :: !(Maybe Xgafv)
     , _papgUploadProtocol :: !(Maybe Text)
-    , _papgAccessToken    :: !(Maybe Text)
-    , _papgUploadType     :: !(Maybe Text)
-    , _papgName           :: !Text
-    , _papgCallback       :: !(Maybe Text)
+    , _papgAccessToken :: !(Maybe Text)
+    , _papgUploadType :: !(Maybe Text)
+    , _papgName :: !Text
+    , _papgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

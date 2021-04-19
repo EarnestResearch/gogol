@@ -45,8 +45,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.GenerateApprovalURL
     , pgauProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.generateApprovalUrl@ method which the
 -- 'ProductsGenerateApprovalURL' request conforms to.
@@ -76,7 +76,7 @@ data ProductsGenerateApprovalURL =
   ProductsGenerateApprovalURL'
     { _pgauLanguageCode :: !(Maybe Text)
     , _pgauEnterpriseId :: !Text
-    , _pgauProductId    :: !Text
+    , _pgauProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

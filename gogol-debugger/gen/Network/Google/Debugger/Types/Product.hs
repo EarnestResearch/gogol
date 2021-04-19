@@ -17,8 +17,8 @@
 --
 module Network.Google.Debugger.Types.Product where
 
-import           Network.Google.Debugger.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types.Sum
+import Network.Google.Prelude
 
 -- | Response for registering a debuggee.
 --
@@ -68,9 +68,9 @@ instance ToJSON RegisterDebuggeeResponse where
 data SourceContext =
   SourceContext'
     { _scCloudWorkspace :: !(Maybe CloudWorkspaceSourceContext)
-    , _scCloudRepo      :: !(Maybe CloudRepoSourceContext)
-    , _scGerrit         :: !(Maybe GerritSourceContext)
-    , _scGit            :: !(Maybe GitSourceContext)
+    , _scCloudRepo :: !(Maybe CloudRepoSourceContext)
+    , _scGerrit :: !(Maybe GerritSourceContext)
+    , _scGit :: !(Maybe GitSourceContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -227,10 +227,10 @@ instance ToJSON UpdateActiveBreakpointResponse where
 data GerritSourceContext =
   GerritSourceContext'
     { _gscGerritProject :: !(Maybe Text)
-    , _gscAliasName     :: !(Maybe Text)
-    , _gscRevisionId    :: !(Maybe Text)
-    , _gscHostURI       :: !(Maybe Text)
-    , _gscAliasContext  :: !(Maybe AliasContext)
+    , _gscAliasName :: !(Maybe Text)
+    , _gscRevisionId :: !(Maybe Text)
+    , _gscHostURI :: !(Maybe Text)
+    , _gscAliasContext :: !(Maybe AliasContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -315,7 +315,7 @@ instance ToJSON GerritSourceContext where
 -- /See:/ 'repoId' smart constructor.
 data RepoId =
   RepoId'
-    { _riUid           :: !(Maybe Text)
+    { _riUid :: !(Maybe Text)
     , _riProjectRepoId :: !(Maybe ProjectRepoId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -400,7 +400,7 @@ instance ToJSON ExtendedSourceContextLabels where
 -- /See:/ 'projectRepoId' smart constructor.
 data ProjectRepoId =
   ProjectRepoId'
-    { _priRepoName  :: !(Maybe Text)
+    { _priRepoName :: !(Maybe Text)
     , _priProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -447,7 +447,7 @@ instance ToJSON ProjectRepoId where
 -- /See:/ 'formatMessage' smart constructor.
 data FormatMessage =
   FormatMessage'
-    { _fmFormat     :: !(Maybe Text)
+    { _fmFormat :: !(Maybe Text)
     , _fmParameters :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -499,22 +499,22 @@ instance ToJSON FormatMessage where
 -- /See:/ 'breakpoint' smart constructor.
 data Breakpoint =
   Breakpoint'
-    { _bStatus               :: !(Maybe StatusMessage)
-    , _bLogLevel             :: !(Maybe BreakpointLogLevel)
-    , _bLocation             :: !(Maybe SourceLocation)
-    , _bAction               :: !(Maybe BreakpointAction)
-    , _bFinalTime            :: !(Maybe DateTime')
-    , _bExpressions          :: !(Maybe [Text])
-    , _bLogMessageFormat     :: !(Maybe Text)
-    , _bId                   :: !(Maybe Text)
-    , _bLabels               :: !(Maybe BreakpointLabels)
-    , _bUserEmail            :: !(Maybe Text)
-    , _bVariableTable        :: !(Maybe [Variable])
-    , _bStackFrames          :: !(Maybe [StackFrame])
-    , _bCondition            :: !(Maybe Text)
+    { _bStatus :: !(Maybe StatusMessage)
+    , _bLogLevel :: !(Maybe BreakpointLogLevel)
+    , _bLocation :: !(Maybe SourceLocation)
+    , _bAction :: !(Maybe BreakpointAction)
+    , _bFinalTime :: !(Maybe DateTime')
+    , _bExpressions :: !(Maybe [Text])
+    , _bLogMessageFormat :: !(Maybe Text)
+    , _bId :: !(Maybe Text)
+    , _bLabels :: !(Maybe BreakpointLabels)
+    , _bUserEmail :: !(Maybe Text)
+    , _bVariableTable :: !(Maybe [Variable])
+    , _bStackFrames :: !(Maybe [StackFrame])
+    , _bCondition :: !(Maybe Text)
     , _bEvaluatedExpressions :: !(Maybe [Variable])
-    , _bCreateTime           :: !(Maybe DateTime')
-    , _bIsFinalState         :: !(Maybe Bool)
+    , _bCreateTime :: !(Maybe DateTime')
+    , _bIsFinalState :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -863,12 +863,12 @@ instance ToJSON GetBreakpointResponse where
 -- /See:/ 'variable' smart constructor.
 data Variable =
   Variable'
-    { _vStatus        :: !(Maybe StatusMessage)
+    { _vStatus :: !(Maybe StatusMessage)
     , _vVarTableIndex :: !(Maybe (Textual Int32))
-    , _vMembers       :: !(Maybe [Variable])
-    , _vValue         :: !(Maybe Text)
-    , _vName          :: !(Maybe Text)
-    , _vType          :: !(Maybe Text)
+    , _vMembers :: !(Maybe [Variable])
+    , _vValue :: !(Maybe Text)
+    , _vName :: !(Maybe Text)
+    , _vType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -975,7 +975,7 @@ instance ToJSON Variable where
 data ListBreakpointsResponse =
   ListBreakpointsResponse'
     { _lbrNextWaitToken :: !(Maybe Text)
-    , _lbrBreakpoints   :: !(Maybe [Breakpoint])
+    , _lbrBreakpoints :: !(Maybe [Breakpoint])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1119,8 +1119,8 @@ instance ToJSON UpdateActiveBreakpointRequest where
 -- /See:/ 'statusMessage' smart constructor.
 data StatusMessage =
   StatusMessage'
-    { _smRefersTo    :: !(Maybe StatusMessageRefersTo)
-    , _smIsError     :: !(Maybe Bool)
+    { _smRefersTo :: !(Maybe StatusMessageRefersTo)
+    , _smIsError :: !(Maybe Bool)
     , _smDescription :: !(Maybe FormatMessage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1180,8 +1180,8 @@ instance ToJSON StatusMessage where
 data ListActiveBreakpointsResponse =
   ListActiveBreakpointsResponse'
     { _labrNextWaitToken :: !(Maybe Text)
-    , _labrBreakpoints   :: !(Maybe [Breakpoint])
-    , _labrWaitExpired   :: !(Maybe Bool)
+    , _labrBreakpoints :: !(Maybe [Breakpoint])
+    , _labrWaitExpired :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1253,7 +1253,7 @@ instance ToJSON ListActiveBreakpointsResponse where
 data ExtendedSourceContext =
   ExtendedSourceContext'
     { _escContext :: !(Maybe SourceContext)
-    , _escLabels  :: !(Maybe ExtendedSourceContextLabels)
+    , _escLabels :: !(Maybe ExtendedSourceContextLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1301,7 +1301,7 @@ instance ToJSON ExtendedSourceContext where
 -- /See:/ 'gitSourceContext' smart constructor.
 data GitSourceContext =
   GitSourceContext'
-    { _gURL        :: !(Maybe Text)
+    { _gURL :: !(Maybe Text)
     , _gRevisionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1347,8 +1347,8 @@ instance ToJSON GitSourceContext where
 -- /See:/ 'sourceLocation' smart constructor.
 data SourceLocation =
   SourceLocation'
-    { _slPath   :: !(Maybe Text)
-    , _slLine   :: !(Maybe (Textual Int32))
+    { _slPath :: !(Maybe Text)
+    , _slLine :: !(Maybe (Textual Int32))
     , _slColumn :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1407,10 +1407,10 @@ instance ToJSON SourceLocation where
 -- /See:/ 'stackFrame' smart constructor.
 data StackFrame =
   StackFrame'
-    { _sfFunction  :: !(Maybe Text)
-    , _sfLocation  :: !(Maybe SourceLocation)
+    { _sfFunction :: !(Maybe Text)
+    , _sfLocation :: !(Maybe SourceLocation)
     , _sfArguments :: !(Maybe [Variable])
-    , _sfLocals    :: !(Maybe [Variable])
+    , _sfLocals :: !(Maybe [Variable])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1487,9 +1487,9 @@ instance ToJSON StackFrame where
 -- /See:/ 'cloudRepoSourceContext' smart constructor.
 data CloudRepoSourceContext =
   CloudRepoSourceContext'
-    { _crscRepoId       :: !(Maybe RepoId)
-    , _crscAliasName    :: !(Maybe Text)
-    , _crscRevisionId   :: !(Maybe Text)
+    { _crscRepoId :: !(Maybe RepoId)
+    , _crscAliasName :: !(Maybe Text)
+    , _crscRevisionId :: !(Maybe Text)
     , _crscAliasContext :: !(Maybe AliasContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1603,17 +1603,17 @@ instance ToJSON DebuggeeLabels where
 -- /See:/ 'debuggee' smart constructor.
 data Debuggee =
   Debuggee'
-    { _dStatus            :: !(Maybe StatusMessage)
-    , _dUniquifier        :: !(Maybe Text)
-    , _dProject           :: !(Maybe Text)
+    { _dStatus :: !(Maybe StatusMessage)
+    , _dUniquifier :: !(Maybe Text)
+    , _dProject :: !(Maybe Text)
     , _dExtSourceContexts :: !(Maybe [ExtendedSourceContext])
-    , _dAgentVersion      :: !(Maybe Text)
-    , _dIsDisabled        :: !(Maybe Bool)
-    , _dId                :: !(Maybe Text)
-    , _dLabels            :: !(Maybe DebuggeeLabels)
-    , _dDescription       :: !(Maybe Text)
-    , _dIsInactive        :: !(Maybe Bool)
-    , _dSourceContexts    :: !(Maybe [SourceContext])
+    , _dAgentVersion :: !(Maybe Text)
+    , _dIsDisabled :: !(Maybe Bool)
+    , _dId :: !(Maybe Text)
+    , _dLabels :: !(Maybe DebuggeeLabels)
+    , _dDescription :: !(Maybe Text)
+    , _dIsInactive :: !(Maybe Bool)
+    , _dSourceContexts :: !(Maybe [SourceContext])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1774,7 +1774,7 @@ instance ToJSON Debuggee where
 data CloudWorkspaceSourceContext =
   CloudWorkspaceSourceContext'
     { _cwscWorkspaceId :: !(Maybe CloudWorkspaceId)
-    , _cwscSnapshotId  :: !(Maybe Text)
+    , _cwscSnapshotId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1908,7 +1908,7 @@ instance ToJSON AliasContext where
 data CloudWorkspaceId =
   CloudWorkspaceId'
     { _cwiRepoId :: !(Maybe RepoId)
-    , _cwiName   :: !(Maybe Text)
+    , _cwiName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

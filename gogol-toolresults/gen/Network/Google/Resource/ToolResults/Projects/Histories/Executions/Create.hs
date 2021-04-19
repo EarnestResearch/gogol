@@ -43,8 +43,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Create
     , phecProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.create@ method which the
 -- 'ProjectsHistoriesExecutionsCreate' request conforms to.
@@ -70,7 +70,7 @@ type ProjectsHistoriesExecutionsCreateResource =
 data ProjectsHistoriesExecutionsCreate =
   ProjectsHistoriesExecutionsCreate'
     { _phecRequestId :: !(Maybe Text)
-    , _phecPayload   :: !Execution
+    , _phecPayload :: !Execution
     , _phecHistoryId :: !Text
     , _phecProjectId :: !Text
     }

@@ -53,8 +53,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfpCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.patch@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirPatch' request conforms to.
@@ -86,13 +86,13 @@ type ProjectsLocationsDataSetsFhirStoresFhirPatchResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirPatch' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirPatch =
   ProjectsLocationsDataSetsFhirStoresFhirPatch'
-    { _pldsfsfpXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfpXgafv :: !(Maybe Xgafv)
     , _pldsfsfpUploadProtocol :: !(Maybe Text)
-    , _pldsfsfpAccessToken    :: !(Maybe Text)
-    , _pldsfsfpUploadType     :: !(Maybe Text)
-    , _pldsfsfpPayload        :: !HTTPBody
-    , _pldsfsfpName           :: !Text
-    , _pldsfsfpCallback       :: !(Maybe Text)
+    , _pldsfsfpAccessToken :: !(Maybe Text)
+    , _pldsfsfpUploadType :: !(Maybe Text)
+    , _pldsfsfpPayload :: !HTTPBody
+    , _pldsfsfpName :: !Text
+    , _pldsfsfpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

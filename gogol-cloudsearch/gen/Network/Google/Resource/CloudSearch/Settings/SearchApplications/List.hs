@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Settings.SearchApplications.List
     , ssalCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.settings.searchapplications.list@ method which the
 -- 'SettingsSearchApplicationsList' request conforms to.
@@ -68,14 +68,14 @@ type SettingsSearchApplicationsListResource =
 -- /See:/ 'settingsSearchApplicationsList' smart constructor.
 data SettingsSearchApplicationsList =
   SettingsSearchApplicationsList'
-    { _ssalXgafv                       :: !(Maybe Xgafv)
-    , _ssalUploadProtocol              :: !(Maybe Text)
-    , _ssalAccessToken                 :: !(Maybe Text)
-    , _ssalUploadType                  :: !(Maybe Text)
+    { _ssalXgafv :: !(Maybe Xgafv)
+    , _ssalUploadProtocol :: !(Maybe Text)
+    , _ssalAccessToken :: !(Maybe Text)
+    , _ssalUploadType :: !(Maybe Text)
     , _ssalDebugOptionsEnableDebugging :: !(Maybe Bool)
-    , _ssalPageToken                   :: !(Maybe Text)
-    , _ssalPageSize                    :: !(Maybe (Textual Int32))
-    , _ssalCallback                    :: !(Maybe Text)
+    , _ssalPageToken :: !(Maybe Text)
+    , _ssalPageSize :: !(Maybe (Textual Int32))
+    , _ssalCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

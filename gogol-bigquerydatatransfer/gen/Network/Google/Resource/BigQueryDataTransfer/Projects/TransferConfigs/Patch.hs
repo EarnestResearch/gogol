@@ -46,8 +46,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Pat
     , ptcpCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.transferConfigs.patch@ method which the
 -- 'ProjectsTransferConfigsPatch' request conforms to.
@@ -72,16 +72,16 @@ type ProjectsTransferConfigsPatchResource =
 -- /See:/ 'projectsTransferConfigsPatch' smart constructor.
 data ProjectsTransferConfigsPatch =
   ProjectsTransferConfigsPatch'
-    { _ptcpXgafv             :: !(Maybe Xgafv)
-    , _ptcpUploadProtocol    :: !(Maybe Text)
-    , _ptcpUpdateMask        :: !(Maybe GFieldMask)
-    , _ptcpAccessToken       :: !(Maybe Text)
-    , _ptcpUploadType        :: !(Maybe Text)
+    { _ptcpXgafv :: !(Maybe Xgafv)
+    , _ptcpUploadProtocol :: !(Maybe Text)
+    , _ptcpUpdateMask :: !(Maybe GFieldMask)
+    , _ptcpAccessToken :: !(Maybe Text)
+    , _ptcpUploadType :: !(Maybe Text)
     , _ptcpAuthorizationCode :: !(Maybe Text)
-    , _ptcpPayload           :: !TransferConfig
-    , _ptcpVersionInfo       :: !(Maybe Text)
-    , _ptcpName              :: !Text
-    , _ptcpCallback          :: !(Maybe Text)
+    , _ptcpPayload :: !TransferConfig
+    , _ptcpVersionInfo :: !(Maybe Text)
+    , _ptcpName :: !Text
+    , _ptcpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

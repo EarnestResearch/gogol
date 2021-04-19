@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Quests.Accept
     , qaQuestId
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.quests.accept@ method which the
 -- 'QuestsAccept' request conforms to.
@@ -59,7 +59,7 @@ type QuestsAcceptResource =
 data QuestsAccept =
   QuestsAccept'
     { _qaLanguage :: !(Maybe Text)
-    , _qaQuestId  :: !Text
+    , _qaQuestId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

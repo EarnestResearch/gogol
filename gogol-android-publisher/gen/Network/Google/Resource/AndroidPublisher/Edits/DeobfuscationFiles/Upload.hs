@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.DeobfuscationFiles.Upload
     , edfuEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.deobfuscationfiles.upload@ method which the
 -- 'EditsDeobfuscationFilesUpload' request conforms to.
@@ -86,9 +86,9 @@ type EditsDeobfuscationFilesUploadResource =
 data EditsDeobfuscationFilesUpload =
   EditsDeobfuscationFilesUpload'
     { _edfuDeobfuscationFileType :: !EditsDeobfuscationFilesUploadDeobfuscationFileType
-    , _edfuPackageName           :: !Text
-    , _edfuAPKVersionCode        :: !(Textual Int32)
-    , _edfuEditId                :: !Text
+    , _edfuPackageName :: !Text
+    , _edfuAPKVersionCode :: !(Textual Int32)
+    , _edfuEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -47,8 +47,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores
     , pldsfsfdCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.fhir.delete@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresFhirDelete' request conforms to.
@@ -74,12 +74,12 @@ type ProjectsLocationsDataSetsFhirStoresFhirDeleteResource
 -- /See:/ 'projectsLocationsDataSetsFhirStoresFhirDelete' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresFhirDelete =
   ProjectsLocationsDataSetsFhirStoresFhirDelete'
-    { _pldsfsfdXgafv          :: !(Maybe Xgafv)
+    { _pldsfsfdXgafv :: !(Maybe Xgafv)
     , _pldsfsfdUploadProtocol :: !(Maybe Text)
-    , _pldsfsfdAccessToken    :: !(Maybe Text)
-    , _pldsfsfdUploadType     :: !(Maybe Text)
-    , _pldsfsfdName           :: !Text
-    , _pldsfsfdCallback       :: !(Maybe Text)
+    , _pldsfsfdAccessToken :: !(Maybe Text)
+    , _pldsfsfdUploadType :: !(Maybe Text)
+    , _pldsfsfdName :: !Text
+    , _pldsfsfdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

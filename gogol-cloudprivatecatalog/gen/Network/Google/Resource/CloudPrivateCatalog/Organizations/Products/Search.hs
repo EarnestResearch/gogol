@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudPrivateCatalog.Organizations.Products.Search
     , opsCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalog.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalog.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalog.organizations.products.search@ method which the
 -- 'OrganizationsProductsSearch' request conforms to.
@@ -72,15 +72,15 @@ type OrganizationsProductsSearchResource =
 -- /See:/ 'organizationsProductsSearch' smart constructor.
 data OrganizationsProductsSearch =
   OrganizationsProductsSearch'
-    { _opsXgafv          :: !(Maybe Xgafv)
+    { _opsXgafv :: !(Maybe Xgafv)
     , _opsUploadProtocol :: !(Maybe Text)
-    , _opsAccessToken    :: !(Maybe Text)
-    , _opsUploadType     :: !(Maybe Text)
-    , _opsResource       :: !Text
-    , _opsQuery          :: !(Maybe Text)
-    , _opsPageToken      :: !(Maybe Text)
-    , _opsPageSize       :: !(Maybe (Textual Int32))
-    , _opsCallback       :: !(Maybe Text)
+    , _opsAccessToken :: !(Maybe Text)
+    , _opsUploadType :: !(Maybe Text)
+    , _opsResource :: !Text
+    , _opsQuery :: !(Maybe Text)
+    , _opsPageToken :: !(Maybe Text)
+    , _opsPageSize :: !(Maybe (Textual Int32))
+    , _opsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

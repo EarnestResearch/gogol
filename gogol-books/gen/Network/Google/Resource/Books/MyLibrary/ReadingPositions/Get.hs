@@ -38,8 +38,8 @@ module Network.Google.Resource.Books.MyLibrary.ReadingPositions.Get
     , mlrpgSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.mylibrary.readingpositions.get@ method which the
 -- 'MyLibraryReadingPositionsGet' request conforms to.
@@ -60,8 +60,8 @@ type MyLibraryReadingPositionsGetResource =
 data MyLibraryReadingPositionsGet =
   MyLibraryReadingPositionsGet'
     { _mlrpgContentVersion :: !(Maybe Text)
-    , _mlrpgVolumeId       :: !Text
-    , _mlrpgSource         :: !(Maybe Text)
+    , _mlrpgVolumeId :: !Text
+    , _mlrpgSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

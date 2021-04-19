@@ -43,8 +43,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.Create
     , pjcCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.create@ method which the
 -- 'ProjectsJobsCreate' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsJobsCreateResource =
 -- /See:/ 'projectsJobsCreate' smart constructor.
 data ProjectsJobsCreate =
   ProjectsJobsCreate'
-    { _pjcParent         :: !Text
-    , _pjcXgafv          :: !(Maybe Xgafv)
+    { _pjcParent :: !Text
+    , _pjcXgafv :: !(Maybe Xgafv)
     , _pjcUploadProtocol :: !(Maybe Text)
-    , _pjcAccessToken    :: !(Maybe Text)
-    , _pjcUploadType     :: !(Maybe Text)
-    , _pjcPayload        :: !CreateJobRequest
-    , _pjcCallback       :: !(Maybe Text)
+    , _pjcAccessToken :: !(Maybe Text)
+    , _pjcUploadType :: !(Maybe Text)
+    , _pjcPayload :: !CreateJobRequest
+    , _pjcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

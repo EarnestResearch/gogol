@@ -43,8 +43,8 @@ module Network.Google.Resource.Language.Translations.Translate
     , ttCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types
+import Network.Google.Prelude
+import Network.Google.Translate.Types
 
 -- | A resource alias for @language.translations.translate@ method which the
 -- 'TranslationsTranslate' request conforms to.
@@ -68,14 +68,14 @@ type TranslationsTranslateResource =
 -- /See:/ 'translationsTranslate' smart constructor.
 data TranslationsTranslate =
   TranslationsTranslate'
-    { _ttXgafv          :: !(Maybe Xgafv)
+    { _ttXgafv :: !(Maybe Xgafv)
     , _ttUploadProtocol :: !(Maybe Text)
-    , _ttPp             :: !Bool
-    , _ttAccessToken    :: !(Maybe Text)
-    , _ttUploadType     :: !(Maybe Text)
-    , _ttPayload        :: !TranslateTextRequest
-    , _ttBearerToken    :: !(Maybe Text)
-    , _ttCallback       :: !(Maybe Text)
+    , _ttPp :: !Bool
+    , _ttAccessToken :: !(Maybe Text)
+    , _ttUploadType :: !(Maybe Text)
+    , _ttPayload :: !TranslateTextRequest
+    , _ttBearerToken :: !(Maybe Text)
+    , _ttCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

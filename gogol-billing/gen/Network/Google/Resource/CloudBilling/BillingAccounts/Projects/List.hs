@@ -46,8 +46,8 @@ module Network.Google.Resource.CloudBilling.BillingAccounts.Projects.List
     , baplCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.billingAccounts.projects.list@ method which the
 -- 'BillingAccountsProjectsList' request conforms to.
@@ -73,14 +73,14 @@ type BillingAccountsProjectsListResource =
 -- /See:/ 'billingAccountsProjectsList' smart constructor.
 data BillingAccountsProjectsList =
   BillingAccountsProjectsList'
-    { _baplXgafv          :: !(Maybe Xgafv)
+    { _baplXgafv :: !(Maybe Xgafv)
     , _baplUploadProtocol :: !(Maybe Text)
-    , _baplAccessToken    :: !(Maybe Text)
-    , _baplUploadType     :: !(Maybe Text)
-    , _baplName           :: !Text
-    , _baplPageToken      :: !(Maybe Text)
-    , _baplPageSize       :: !(Maybe (Textual Int32))
-    , _baplCallback       :: !(Maybe Text)
+    , _baplAccessToken :: !(Maybe Text)
+    , _baplUploadType :: !(Maybe Text)
+    , _baplName :: !Text
+    , _baplPageToken :: !(Maybe Text)
+    , _baplPageSize :: !(Maybe (Textual Int32))
+    , _baplCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

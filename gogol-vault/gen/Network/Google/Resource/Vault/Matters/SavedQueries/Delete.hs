@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.SavedQueries.Delete
     , msqdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.savedQueries.delete@ method which the
 -- 'MattersSavedQueriesDelete' request conforms to.
@@ -65,13 +65,13 @@ type MattersSavedQueriesDeleteResource =
 -- /See:/ 'mattersSavedQueriesDelete' smart constructor.
 data MattersSavedQueriesDelete =
   MattersSavedQueriesDelete'
-    { _msqdXgafv          :: !(Maybe Xgafv)
-    , _msqdSavedQueryId   :: !Text
+    { _msqdXgafv :: !(Maybe Xgafv)
+    , _msqdSavedQueryId :: !Text
     , _msqdUploadProtocol :: !(Maybe Text)
-    , _msqdAccessToken    :: !(Maybe Text)
-    , _msqdUploadType     :: !(Maybe Text)
-    , _msqdMatterId       :: !Text
-    , _msqdCallback       :: !(Maybe Text)
+    , _msqdAccessToken :: !(Maybe Text)
+    , _msqdUploadType :: !(Maybe Text)
+    , _msqdMatterId :: !Text
+    , _msqdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

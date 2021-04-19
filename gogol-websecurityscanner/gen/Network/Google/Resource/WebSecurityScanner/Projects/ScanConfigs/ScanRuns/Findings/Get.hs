@@ -41,8 +41,8 @@ module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.
     , pscsrfgCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.WebSecurityScanner.Types
+import Network.Google.Prelude
+import Network.Google.WebSecurityScanner.Types
 
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.scanRuns.findings.get@ method which the
 -- 'ProjectsScanConfigsScanRunsFindingsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsScanConfigsScanRunsFindingsGetResource =
 -- /See:/ 'projectsScanConfigsScanRunsFindingsGet' smart constructor.
 data ProjectsScanConfigsScanRunsFindingsGet =
   ProjectsScanConfigsScanRunsFindingsGet'
-    { _pscsrfgXgafv          :: !(Maybe Xgafv)
+    { _pscsrfgXgafv :: !(Maybe Xgafv)
     , _pscsrfgUploadProtocol :: !(Maybe Text)
-    , _pscsrfgAccessToken    :: !(Maybe Text)
-    , _pscsrfgUploadType     :: !(Maybe Text)
-    , _pscsrfgName           :: !Text
-    , _pscsrfgCallback       :: !(Maybe Text)
+    , _pscsrfgAccessToken :: !(Maybe Text)
+    , _pscsrfgUploadType :: !(Maybe Text)
+    , _pscsrfgName :: !Text
+    , _pscsrfgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

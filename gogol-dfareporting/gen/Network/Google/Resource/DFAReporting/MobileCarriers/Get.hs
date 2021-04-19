@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.MobileCarriers.Get
     , mcgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.mobileCarriers.get@ method which the
 -- 'MobileCarriersGet' request conforms to.
@@ -57,7 +57,7 @@ type MobileCarriersGetResource =
 data MobileCarriersGet =
   MobileCarriersGet'
     { _mcgProFileId :: !(Textual Int64)
-    , _mcgId        :: !(Textual Int64)
+    , _mcgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

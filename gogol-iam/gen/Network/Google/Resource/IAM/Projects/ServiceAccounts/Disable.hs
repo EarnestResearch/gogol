@@ -42,8 +42,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Disable
     , psadCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.disable@ method which the
 -- 'ProjectsServiceAccountsDisable' request conforms to.
@@ -64,13 +64,13 @@ type ProjectsServiceAccountsDisableResource =
 -- /See:/ 'projectsServiceAccountsDisable' smart constructor.
 data ProjectsServiceAccountsDisable =
   ProjectsServiceAccountsDisable'
-    { _psadXgafv          :: !(Maybe Xgafv)
+    { _psadXgafv :: !(Maybe Xgafv)
     , _psadUploadProtocol :: !(Maybe Text)
-    , _psadAccessToken    :: !(Maybe Text)
-    , _psadUploadType     :: !(Maybe Text)
-    , _psadPayload        :: !DisableServiceAccountRequest
-    , _psadName           :: !Text
-    , _psadCallback       :: !(Maybe Text)
+    , _psadAccessToken :: !(Maybe Text)
+    , _psadUploadType :: !(Maybe Text)
+    , _psadPayload :: !DisableServiceAccountRequest
+    , _psadName :: !Text
+    , _psadCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

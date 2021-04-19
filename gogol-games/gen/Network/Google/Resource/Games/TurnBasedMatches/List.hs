@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.TurnBasedMatches.List
     , tMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.turnBasedMatches.list@ method which the
 -- 'TurnBasedMatchesList' request conforms to.
@@ -63,10 +63,10 @@ type TurnBasedMatchesListResource =
 data TurnBasedMatchesList =
   TurnBasedMatchesList'
     { _tMaxCompletedMatches :: !(Maybe (Textual Int32))
-    , _tIncludeMatchData    :: !(Maybe Bool)
-    , _tLanguage            :: !(Maybe Text)
-    , _tPageToken           :: !(Maybe Text)
-    , _tMaxResults          :: !(Maybe (Textual Int32))
+    , _tIncludeMatchData :: !(Maybe Bool)
+    , _tLanguage :: !(Maybe Text)
+    , _tPageToken :: !(Maybe Text)
+    , _tMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

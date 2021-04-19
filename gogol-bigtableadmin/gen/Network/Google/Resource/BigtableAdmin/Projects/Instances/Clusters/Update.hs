@@ -42,8 +42,8 @@ module Network.Google.Resource.BigtableAdmin.Projects.Instances.Clusters.Update
     , picuCallback
     ) where
 
-import           Network.Google.BigtableAdmin.Types
-import           Network.Google.Prelude
+import Network.Google.BigtableAdmin.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigtableadmin.projects.instances.clusters.update@ method which the
 -- 'ProjectsInstancesClustersUpdate' request conforms to.
@@ -63,13 +63,13 @@ type ProjectsInstancesClustersUpdateResource =
 -- /See:/ 'projectsInstancesClustersUpdate' smart constructor.
 data ProjectsInstancesClustersUpdate =
   ProjectsInstancesClustersUpdate'
-    { _picuXgafv          :: !(Maybe Xgafv)
+    { _picuXgafv :: !(Maybe Xgafv)
     , _picuUploadProtocol :: !(Maybe Text)
-    , _picuAccessToken    :: !(Maybe Text)
-    , _picuUploadType     :: !(Maybe Text)
-    , _picuPayload        :: !Cluster
-    , _picuName           :: !Text
-    , _picuCallback       :: !(Maybe Text)
+    , _picuAccessToken :: !(Maybe Text)
+    , _picuUploadType :: !(Maybe Text)
+    , _picuPayload :: !Cluster
+    , _picuName :: !Text
+    , _picuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

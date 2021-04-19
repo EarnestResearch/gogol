@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Listings.List
     , ellEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.listings.list@ method which the
 -- 'EditsListingsList' request conforms to.
@@ -59,7 +59,7 @@ type EditsListingsListResource =
 data EditsListingsList =
   EditsListingsList'
     { _ellPackageName :: !Text
-    , _ellEditId      :: !Text
+    , _ellEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

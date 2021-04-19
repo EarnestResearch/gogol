@@ -41,8 +41,8 @@ module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Run
     , ptcrgCallback
     ) where
 
-import           Network.Google.BigQueryDataTransfer.Types
-import           Network.Google.Prelude
+import Network.Google.BigQueryDataTransfer.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @bigquerydatatransfer.projects.transferConfigs.runs.get@ method which the
 -- 'ProjectsTransferConfigsRunsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsTransferConfigsRunsGetResource =
 -- /See:/ 'projectsTransferConfigsRunsGet' smart constructor.
 data ProjectsTransferConfigsRunsGet =
   ProjectsTransferConfigsRunsGet'
-    { _ptcrgXgafv          :: !(Maybe Xgafv)
+    { _ptcrgXgafv :: !(Maybe Xgafv)
     , _ptcrgUploadProtocol :: !(Maybe Text)
-    , _ptcrgAccessToken    :: !(Maybe Text)
-    , _ptcrgUploadType     :: !(Maybe Text)
-    , _ptcrgName           :: !Text
-    , _ptcrgCallback       :: !(Maybe Text)
+    , _ptcrgAccessToken :: !(Maybe Text)
+    , _ptcrgUploadType :: !(Maybe Text)
+    , _ptcrgName :: !Text
+    , _ptcrgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.AdvertiserLandingPages.Patch
     , alppId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.advertiserLandingPages.patch@ method which the
 -- 'AdvertiserLandingPagesPatch' request conforms to.
@@ -60,8 +60,8 @@ type AdvertiserLandingPagesPatchResource =
 data AdvertiserLandingPagesPatch =
   AdvertiserLandingPagesPatch'
     { _alppProFileId :: !(Textual Int64)
-    , _alppPayload   :: !LandingPage
-    , _alppId        :: !(Textual Int64)
+    , _alppPayload :: !LandingPage
+    , _alppId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

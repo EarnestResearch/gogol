@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.RoleAssignments.Insert
     , raiCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roleAssignments.insert@ method which the
 -- 'RoleAssignmentsInsert' request conforms to.
@@ -58,7 +58,7 @@ type RoleAssignmentsInsertResource =
 -- /See:/ 'roleAssignmentsInsert' smart constructor.
 data RoleAssignmentsInsert =
   RoleAssignmentsInsert'
-    { _raiPayload  :: !RoleAssignment
+    { _raiPayload :: !RoleAssignment
     , _raiCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

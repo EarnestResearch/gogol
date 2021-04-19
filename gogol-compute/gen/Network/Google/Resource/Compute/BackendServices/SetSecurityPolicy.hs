@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.BackendServices.SetSecurityPolicy
     , bssspBackendService
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendServices.setSecurityPolicy@ method which the
 -- 'BackendServicesSetSecurityPolicy' request conforms to.
@@ -63,9 +63,9 @@ type BackendServicesSetSecurityPolicyResource =
 -- /See:/ 'backendServicesSetSecurityPolicy' smart constructor.
 data BackendServicesSetSecurityPolicy =
   BackendServicesSetSecurityPolicy'
-    { _bssspRequestId      :: !(Maybe Text)
-    , _bssspProject        :: !Text
-    , _bssspPayload        :: !SecurityPolicyReference
+    { _bssspRequestId :: !(Maybe Text)
+    , _bssspProject :: !Text
+    , _bssspPayload :: !SecurityPolicyReference
     , _bssspBackendService :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Patch
     , ospCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.patch@ method which the
 -- 'OrganizationsSourcesPatch' request conforms to.
@@ -65,14 +65,14 @@ type OrganizationsSourcesPatchResource =
 -- /See:/ 'organizationsSourcesPatch' smart constructor.
 data OrganizationsSourcesPatch =
   OrganizationsSourcesPatch'
-    { _ospXgafv          :: !(Maybe Xgafv)
+    { _ospXgafv :: !(Maybe Xgafv)
     , _ospUploadProtocol :: !(Maybe Text)
-    , _ospUpdateMask     :: !(Maybe GFieldMask)
-    , _ospAccessToken    :: !(Maybe Text)
-    , _ospUploadType     :: !(Maybe Text)
-    , _ospPayload        :: !Source
-    , _ospName           :: !Text
-    , _ospCallback       :: !(Maybe Text)
+    , _ospUpdateMask :: !(Maybe GFieldMask)
+    , _ospAccessToken :: !(Maybe Text)
+    , _ospUploadType :: !(Maybe Text)
+    , _ospPayload :: !Source
+    , _ospName :: !Text
+    , _ospCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

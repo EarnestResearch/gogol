@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Settings.UpdateVacation
     , usuvUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.updateVacation@ method which the
 -- 'UsersSettingsUpdateVacation' request conforms to.
@@ -59,7 +59,7 @@ type UsersSettingsUpdateVacationResource =
 data UsersSettingsUpdateVacation =
   UsersSettingsUpdateVacation'
     { _usuvPayload :: !VacationSettings
-    , _usuvUserId  :: !Text
+    , _usuvUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

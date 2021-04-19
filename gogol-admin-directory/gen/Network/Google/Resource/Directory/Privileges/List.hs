@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Privileges.List
     , plCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.privileges.list@ method which the
 -- 'PrivilegesList' request conforms to.

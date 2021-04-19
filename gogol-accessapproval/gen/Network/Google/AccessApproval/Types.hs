@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -85,9 +85,9 @@ module Network.Google.AccessApproval.Types
     , arDetail
     ) where
 
-import           Network.Google.AccessApproval.Types.Product
-import           Network.Google.AccessApproval.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types.Product
+import Network.Google.AccessApproval.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1beta1' of the Access Approval API. This contains the host and root path used as a starting point for constructing service requests.
 accessApprovalService :: ServiceConfig

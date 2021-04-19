@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Installs.Update
     , iuDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.installs.update@ method which the
 -- 'InstallsUpdate' request conforms to.
@@ -69,10 +69,10 @@ type InstallsUpdateResource =
 data InstallsUpdate =
   InstallsUpdate'
     { _iuEnterpriseId :: !Text
-    , _iuPayload      :: !Install
-    , _iuUserId       :: !Text
-    , _iuInstallId    :: !Text
-    , _iuDeviceId     :: !Text
+    , _iuPayload :: !Install
+    , _iuUserId :: !Text
+    , _iuInstallId :: !Text
+    , _iuDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

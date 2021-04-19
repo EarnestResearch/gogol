@@ -54,8 +54,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Move
     , fmCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.move@ method which the
 -- 'FoldersMove' request conforms to.
@@ -88,13 +88,13 @@ type FoldersMoveResource =
 -- /See:/ 'foldersMove' smart constructor.
 data FoldersMove =
   FoldersMove'
-    { _fmXgafv          :: !(Maybe Xgafv)
+    { _fmXgafv :: !(Maybe Xgafv)
     , _fmUploadProtocol :: !(Maybe Text)
-    , _fmAccessToken    :: !(Maybe Text)
-    , _fmUploadType     :: !(Maybe Text)
-    , _fmPayload        :: !MoveFolderRequest
-    , _fmName           :: !Text
-    , _fmCallback       :: !(Maybe Text)
+    , _fmAccessToken :: !(Maybe Text)
+    , _fmUploadType :: !(Maybe Text)
+    , _fmPayload :: !MoveFolderRequest
+    , _fmName :: !Text
+    , _fmCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

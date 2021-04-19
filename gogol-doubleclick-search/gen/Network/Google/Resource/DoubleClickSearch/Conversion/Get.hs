@@ -47,8 +47,8 @@ module Network.Google.Resource.DoubleClickSearch.Conversion.Get
     , cgRowCount
     ) where
 
-import           Network.Google.DoubleClickSearch.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclicksearch.conversion.get@ method which the
 -- 'ConversionGet' request conforms to.
@@ -79,17 +79,17 @@ type ConversionGetResource =
 -- /See:/ 'conversionGet' smart constructor.
 data ConversionGet =
   ConversionGet'
-    { _cgAdGroupId       :: !(Maybe (Textual Int64))
+    { _cgAdGroupId :: !(Maybe (Textual Int64))
     , _cgEngineAccountId :: !(Textual Int64)
-    , _cgAgencyId        :: !(Textual Int64)
-    , _cgAdvertiserId    :: !(Textual Int64)
-    , _cgEndDate         :: !(Textual Int32)
-    , _cgCampaignId      :: !(Maybe (Textual Int64))
-    , _cgCriterionId     :: !(Maybe (Textual Int64))
-    , _cgStartDate       :: !(Textual Int32)
-    , _cgStartRow        :: !(Textual Word32)
-    , _cgAdId            :: !(Maybe (Textual Int64))
-    , _cgRowCount        :: !(Textual Int32)
+    , _cgAgencyId :: !(Textual Int64)
+    , _cgAdvertiserId :: !(Textual Int64)
+    , _cgEndDate :: !(Textual Int32)
+    , _cgCampaignId :: !(Maybe (Textual Int64))
+    , _cgCriterionId :: !(Maybe (Textual Int64))
+    , _cgStartDate :: !(Textual Int32)
+    , _cgStartRow :: !(Textual Word32)
+    , _cgAdId :: !(Maybe (Textual Int64))
+    , _cgRowCount :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

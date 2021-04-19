@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudPrivateCatalog.Projects.Versions.Search
     , pvsCallback
     ) where
 
-import           Network.Google.CloudPrivateCatalog.Types
-import           Network.Google.Prelude
+import Network.Google.CloudPrivateCatalog.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudprivatecatalog.projects.versions.search@ method which the
 -- 'ProjectsVersionsSearch' request conforms to.
@@ -72,15 +72,15 @@ type ProjectsVersionsSearchResource =
 -- /See:/ 'projectsVersionsSearch' smart constructor.
 data ProjectsVersionsSearch =
   ProjectsVersionsSearch'
-    { _pvsXgafv          :: !(Maybe Xgafv)
+    { _pvsXgafv :: !(Maybe Xgafv)
     , _pvsUploadProtocol :: !(Maybe Text)
-    , _pvsAccessToken    :: !(Maybe Text)
-    , _pvsUploadType     :: !(Maybe Text)
-    , _pvsResource       :: !Text
-    , _pvsQuery          :: !(Maybe Text)
-    , _pvsPageToken      :: !(Maybe Text)
-    , _pvsPageSize       :: !(Maybe (Textual Int32))
-    , _pvsCallback       :: !(Maybe Text)
+    , _pvsAccessToken :: !(Maybe Text)
+    , _pvsUploadType :: !(Maybe Text)
+    , _pvsResource :: !Text
+    , _pvsQuery :: !(Maybe Text)
+    , _pvsPageToken :: !(Maybe Text)
+    , _pvsPageSize :: !(Maybe (Textual Int32))
+    , _pvsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.BillingAccounts.Exclusions.Delete
     , baedCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.billingAccounts.exclusions.delete@ method which the
 -- 'BillingAccountsExclusionsDelete' request conforms to.
@@ -61,12 +61,12 @@ type BillingAccountsExclusionsDeleteResource =
 -- /See:/ 'billingAccountsExclusionsDelete' smart constructor.
 data BillingAccountsExclusionsDelete =
   BillingAccountsExclusionsDelete'
-    { _baedXgafv          :: !(Maybe Xgafv)
+    { _baedXgafv :: !(Maybe Xgafv)
     , _baedUploadProtocol :: !(Maybe Text)
-    , _baedAccessToken    :: !(Maybe Text)
-    , _baedUploadType     :: !(Maybe Text)
-    , _baedName           :: !Text
-    , _baedCallback       :: !(Maybe Text)
+    , _baedAccessToken :: !(Maybe Text)
+    , _baedUploadType :: !(Maybe Text)
+    , _baedName :: !Text
+    , _baedCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

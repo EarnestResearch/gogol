@@ -43,8 +43,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Triggers.List
     , ptlCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.triggers.list@ method which the
 -- 'ProjectsTriggersList' request conforms to.
@@ -68,14 +68,14 @@ type ProjectsTriggersListResource =
 -- /See:/ 'projectsTriggersList' smart constructor.
 data ProjectsTriggersList =
   ProjectsTriggersList'
-    { _ptlXgafv          :: !(Maybe Xgafv)
+    { _ptlXgafv :: !(Maybe Xgafv)
     , _ptlUploadProtocol :: !(Maybe Text)
-    , _ptlAccessToken    :: !(Maybe Text)
-    , _ptlUploadType     :: !(Maybe Text)
-    , _ptlPageToken      :: !(Maybe Text)
-    , _ptlProjectId      :: !Text
-    , _ptlPageSize       :: !(Maybe (Textual Int32))
-    , _ptlCallback       :: !(Maybe Text)
+    , _ptlAccessToken :: !(Maybe Text)
+    , _ptlUploadType :: !(Maybe Text)
+    , _ptlPageToken :: !(Maybe Text)
+    , _ptlProjectId :: !Text
+    , _ptlPageSize :: !(Maybe (Textual Int32))
+    , _ptlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

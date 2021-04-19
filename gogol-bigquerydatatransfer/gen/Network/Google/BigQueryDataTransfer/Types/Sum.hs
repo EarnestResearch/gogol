@@ -16,7 +16,7 @@
 --
 module Network.Google.BigQueryDataTransfer.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Parameter type.
 data DataSourceParameterType

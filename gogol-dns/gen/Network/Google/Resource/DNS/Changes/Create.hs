@@ -39,8 +39,8 @@ module Network.Google.Resource.DNS.Changes.Create
     , ccClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.changes.create@ method which the
 -- 'ChangesCreate' request conforms to.
@@ -61,9 +61,9 @@ type ChangesCreateResource =
 -- /See:/ 'changesCreate' smart constructor.
 data ChangesCreate =
   ChangesCreate'
-    { _ccProject           :: !Text
-    , _ccPayload           :: !Change
-    , _ccManagedZone       :: !Text
+    { _ccProject :: !Text
+    , _ccPayload :: !Change
+    , _ccManagedZone :: !Text
     , _ccClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

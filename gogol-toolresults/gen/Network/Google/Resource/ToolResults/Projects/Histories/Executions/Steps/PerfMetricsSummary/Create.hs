@@ -42,8 +42,8 @@ module Network.Google.Resource.ToolResults.Projects.Histories.Executions.Steps.P
     , phespmscProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types
 
 -- | A resource alias for @toolresults.projects.histories.executions.steps.perfMetricsSummary.create@ method which the
 -- 'ProjectsHistoriesExecutionsStepsPerfMetricsSummaryCreate' request conforms to.
@@ -72,10 +72,10 @@ type ProjectsHistoriesExecutionsStepsPerfMetricsSummaryCreateResource
 data ProjectsHistoriesExecutionsStepsPerfMetricsSummaryCreate =
   ProjectsHistoriesExecutionsStepsPerfMetricsSummaryCreate'
     { _phespmscExecutionId :: !Text
-    , _phespmscStepId      :: !Text
-    , _phespmscPayload     :: !PerfMetricsSummary
-    , _phespmscHistoryId   :: !Text
-    , _phespmscProjectId   :: !Text
+    , _phespmscStepId :: !Text
+    , _phespmscPayload :: !PerfMetricsSummary
+    , _phespmscHistoryId :: !Text
+    , _phespmscProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

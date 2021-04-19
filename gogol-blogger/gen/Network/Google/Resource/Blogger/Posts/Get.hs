@@ -41,8 +41,8 @@ module Network.Google.Resource.Blogger.Posts.Get
     , pggPostId
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.posts.get@ method which the
 -- 'PostsGet' request conforms to.
@@ -64,12 +64,12 @@ type PostsGetResource =
 -- /See:/ 'postsGet' smart constructor.
 data PostsGet =
   PostsGet'
-    { _pggFetchBody   :: !Bool
+    { _pggFetchBody :: !Bool
     , _pggFetchImages :: !(Maybe Bool)
-    , _pggBlogId      :: !Text
+    , _pggBlogId :: !Text
     , _pggMaxComments :: !(Maybe (Textual Word32))
-    , _pggView        :: !(Maybe PostsGetView)
-    , _pggPostId      :: !Text
+    , _pggView :: !(Maybe PostsGetView)
+    , _pggPostId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

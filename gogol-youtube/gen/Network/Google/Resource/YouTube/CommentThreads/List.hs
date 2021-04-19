@@ -46,8 +46,8 @@ module Network.Google.Resource.YouTube.CommentThreads.List
     , ctlMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.commentThreads.list@ method which the
 -- 'CommentThreadsList' request conforms to.
@@ -78,17 +78,17 @@ type CommentThreadsListResource =
 -- /See:/ 'commentThreadsList' smart constructor.
 data CommentThreadsList =
   CommentThreadsList'
-    { _ctlPart                         :: !Text
-    , _ctlModerationStatus             :: !CommentThreadsListModerationStatus
-    , _ctlSearchTerms                  :: !(Maybe Text)
-    , _ctlChannelId                    :: !(Maybe Text)
+    { _ctlPart :: !Text
+    , _ctlModerationStatus :: !CommentThreadsListModerationStatus
+    , _ctlSearchTerms :: !(Maybe Text)
+    , _ctlChannelId :: !(Maybe Text)
     , _ctlAllThreadsRelatedToChannelId :: !(Maybe Text)
-    , _ctlVideoId                      :: !(Maybe Text)
-    , _ctlId                           :: !(Maybe Text)
-    , _ctlPageToken                    :: !(Maybe Text)
-    , _ctlOrder                        :: !CommentThreadsListOrder
-    , _ctlTextFormat                   :: !CommentThreadsListTextFormat
-    , _ctlMaxResults                   :: !(Textual Word32)
+    , _ctlVideoId :: !(Maybe Text)
+    , _ctlId :: !(Maybe Text)
+    , _ctlPageToken :: !(Maybe Text)
+    , _ctlOrder :: !CommentThreadsListOrder
+    , _ctlTextFormat :: !CommentThreadsListTextFormat
+    , _ctlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.List
     , doaclIfMetagenerationNotMatch
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.defaultObjectAccessControls.list@ method which the
 -- 'DefaultObjectAccessControlsList' request conforms to.
@@ -62,9 +62,9 @@ type DefaultObjectAccessControlsListResource =
 -- /See:/ 'defaultObjectAccessControlsList' smart constructor.
 data DefaultObjectAccessControlsList =
   DefaultObjectAccessControlsList'
-    { _doaclIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _doaclBucket                   :: !Text
-    , _doaclUserProject              :: !(Maybe Text)
+    { _doaclIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _doaclBucket :: !Text
+    , _doaclUserProject :: !(Maybe Text)
     , _doaclIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

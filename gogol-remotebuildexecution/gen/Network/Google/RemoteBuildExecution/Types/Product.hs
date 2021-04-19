@@ -17,8 +17,8 @@
 --
 module Network.Google.RemoteBuildExecution.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types.Sum
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types.Sum
 
 -- | A content digest. A digest for a given blob consists of the size of the
 -- blob and its hash. The hash algorithm to use is defined by the server,
@@ -51,7 +51,7 @@ import           Network.Google.RemoteBuildExecution.Types.Sum
 data BuildBazelRemoteExecutionV2Digest =
   BuildBazelRemoteExecutionV2Digest'
     { _bbrevdSizeBytes :: !(Maybe (Textual Int64))
-    , _bbrevdHash      :: !(Maybe Text)
+    , _bbrevdHash :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -139,7 +139,7 @@ instance ToJSON BuildBazelRemoteExecutionV2Digest
 data GoogleRpcStatus =
   GoogleRpcStatus'
     { _grsDetails :: !(Maybe [GoogleRpcStatusDetailsItem])
-    , _grsCode    :: !(Maybe (Textual Int32))
+    , _grsCode :: !(Maybe (Textual Int32))
     , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -250,8 +250,8 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testOutputDirectory' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testOutputDirectory =
   GoogleDevtoolsRemoteexecutionV1testOutputDirectory'
-    { _gdrvodPath       :: !(Maybe Text)
-    , _gdrvodDigest     :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    { _gdrvodPath :: !(Maybe Text)
+    , _gdrvodDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     , _gdrvodTreeDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -326,7 +326,7 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2OutputSymlink' smart constructor.
 data BuildBazelRemoteExecutionV2OutputSymlink =
   BuildBazelRemoteExecutionV2OutputSymlink'
-    { _bbrevosPath   :: !(Maybe Text)
+    { _bbrevosPath :: !(Maybe Text)
     , _bbrevosTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -391,7 +391,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testTree =
   GoogleDevtoolsRemoteexecutionV1testTree'
     { _gdrvtChildren :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testDirectory])
-    , _gdrvtRoot     :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDirectory)
+    , _gdrvtRoot :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDirectory)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -451,10 +451,10 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2FileMetadata' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2FileMetadata =
   GoogleDevtoolsRemoteworkersV1test2FileMetadata'
-    { _gdrvfmContents     :: !(Maybe Bytes)
-    , _gdrvfmPath         :: !(Maybe Text)
+    { _gdrvfmContents :: !(Maybe Bytes)
+    , _gdrvfmPath :: !(Maybe Text)
     , _gdrvfmIsExecutable :: !(Maybe Bool)
-    , _gdrvfmDigest       :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
+    , _gdrvfmDigest :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -593,7 +593,7 @@ instance ToJSON GoogleLongrunningOperationMetadata
 data GoogleDevtoolsRemoteworkersV1test2Digest =
   GoogleDevtoolsRemoteworkersV1test2Digest'
     { _gdrvdSizeBytes :: !(Maybe (Textual Int64))
-    , _gdrvdHash      :: !(Maybe Text)
+    , _gdrvdHash :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -652,11 +652,11 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2ServerCapabilities' smart constructor.
 data BuildBazelRemoteExecutionV2ServerCapabilities =
   BuildBazelRemoteExecutionV2ServerCapabilities'
-    { _bbrevscHighAPIVersion        :: !(Maybe BuildBazelSemverSemVer)
+    { _bbrevscHighAPIVersion :: !(Maybe BuildBazelSemverSemVer)
     , _bbrevscExecutionCapabilities :: !(Maybe BuildBazelRemoteExecutionV2ExecutionCapabilities)
-    , _bbrevscCacheCapabilities     :: !(Maybe BuildBazelRemoteExecutionV2CacheCapabilities)
-    , _bbrevscDeprecatedAPIVersion  :: !(Maybe BuildBazelSemverSemVer)
-    , _bbrevscLowAPIVersion         :: !(Maybe BuildBazelSemverSemVer)
+    , _bbrevscCacheCapabilities :: !(Maybe BuildBazelRemoteExecutionV2CacheCapabilities)
+    , _bbrevscDeprecatedAPIVersion :: !(Maybe BuildBazelSemverSemVer)
+    , _bbrevscLowAPIVersion :: !(Maybe BuildBazelSemverSemVer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -764,10 +764,10 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2Action' smart constructor.
 data BuildBazelRemoteExecutionV2Action =
   BuildBazelRemoteExecutionV2Action'
-    { _bbrevaDoNotCache      :: !(Maybe Bool)
-    , _bbrevaCommandDigest   :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    { _bbrevaDoNotCache :: !(Maybe Bool)
+    , _bbrevaCommandDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     , _bbrevaInputRootDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
-    , _bbrevaTimeout         :: !(Maybe GDuration)
+    , _bbrevaTimeout :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -863,7 +863,7 @@ instance ToJSON BuildBazelRemoteExecutionV2Action
 -- /See:/ 'buildBazelRemoteExecutionV2OutputDirectory' smart constructor.
 data BuildBazelRemoteExecutionV2OutputDirectory =
   BuildBazelRemoteExecutionV2OutputDirectory'
-    { _bbrevodPath       :: !(Maybe Text)
+    { _bbrevodPath :: !(Maybe Text)
     , _bbrevodTreeDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -949,7 +949,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testDigest =
   GoogleDevtoolsRemoteexecutionV1testDigest'
     { _gSizeBytes :: !(Maybe (Textual Int64))
-    , _gHash      :: !(Maybe Text)
+    , _gHash :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1005,7 +1005,7 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2Tree =
   BuildBazelRemoteExecutionV2Tree'
     { _bbrevtChildren :: !(Maybe [BuildBazelRemoteExecutionV2Directory])
-    , _bbrevtRoot     :: !(Maybe BuildBazelRemoteExecutionV2Directory)
+    , _bbrevtRoot :: !(Maybe BuildBazelRemoteExecutionV2Directory)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1061,12 +1061,12 @@ instance ToJSON BuildBazelRemoteExecutionV2Tree where
 data GoogleDevtoolsRemoteexecutionV1testActionResult =
   GoogleDevtoolsRemoteexecutionV1testActionResult'
     { _gdrvarOutputDirectories :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testOutputDirectory])
-    , _gdrvarOutputFiles       :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testOutputFile])
-    , _gdrvarStderrRaw         :: !(Maybe Bytes)
-    , _gdrvarExitCode          :: !(Maybe (Textual Int32))
-    , _gdrvarStdoutDigest      :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
-    , _gdrvarStderrDigest      :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
-    , _gdrvarStdoutRaw         :: !(Maybe Bytes)
+    , _gdrvarOutputFiles :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testOutputFile])
+    , _gdrvarStderrRaw :: !(Maybe Bytes)
+    , _gdrvarExitCode :: !(Maybe (Textual Int32))
+    , _gdrvarStdoutDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrvarStderrDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrvarStdoutRaw :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1285,9 +1285,9 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2OutputFile' smart constructor.
 data BuildBazelRemoteExecutionV2OutputFile =
   BuildBazelRemoteExecutionV2OutputFile'
-    { _bbrevofPath         :: !(Maybe Text)
+    { _bbrevofPath :: !(Maybe Text)
     , _bbrevofIsExecutable :: !(Maybe Bool)
-    , _bbrevofDigest       :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbrevofDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1354,9 +1354,9 @@ instance ToJSON BuildBazelRemoteExecutionV2OutputFile
 -- /See:/ 'googleDevtoolsRemotebuildexecutionAdminV1alphaCreateInstanceRequest' smart constructor.
 data GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateInstanceRequest =
   GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateInstanceRequest'
-    { _gdravcirParent     :: !(Maybe Text)
+    { _gdravcirParent :: !(Maybe Text)
     , _gdravcirInstanceId :: !(Maybe Text)
-    , _gdravcirInstance   :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance)
+    , _gdravcirInstance :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1453,8 +1453,8 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2Directory =
   BuildBazelRemoteExecutionV2Directory'
     { _bbrevdDirectories :: !(Maybe [BuildBazelRemoteExecutionV2DirectoryNode])
-    , _bbrevdSymlinks    :: !(Maybe [BuildBazelRemoteExecutionV2SymlinkNode])
-    , _bbrevdFiles       :: !(Maybe [BuildBazelRemoteExecutionV2FileNode])
+    , _bbrevdSymlinks :: !(Maybe [BuildBazelRemoteExecutionV2SymlinkNode])
+    , _bbrevdFiles :: !(Maybe [BuildBazelRemoteExecutionV2FileNode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1527,7 +1527,7 @@ instance ToJSON BuildBazelRemoteExecutionV2Directory
 -- /See:/ 'buildBazelRemoteExecutionV2DirectoryNode' smart constructor.
 data BuildBazelRemoteExecutionV2DirectoryNode =
   BuildBazelRemoteExecutionV2DirectoryNode'
-    { _bbrevdnName   :: !(Maybe Text)
+    { _bbrevdnName :: !(Maybe Text)
     , _bbrevdnDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1583,8 +1583,8 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandTaskTimeouts' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts =
   GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts'
-    { _gdrvcttIdle      :: !(Maybe GDuration)
-    , _gdrvcttShutdown  :: !(Maybe GDuration)
+    { _gdrvcttIdle :: !(Maybe GDuration)
+    , _gdrvcttShutdown :: !(Maybe GDuration)
     , _gdrvcttExecution :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1671,9 +1671,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemotebuildexecutionAdminV1alphaInstance' smart constructor.
 data GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance =
   GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstance'
-    { _gdraviState          :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstanceState)
-    , _gdraviLocation       :: !(Maybe Text)
-    , _gdraviName           :: !(Maybe Text)
+    { _gdraviState :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaInstanceState)
+    , _gdraviLocation :: !(Maybe Text)
+    , _gdraviName :: !(Maybe Text)
     , _gdraviLoggingEnabled :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1757,7 +1757,7 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testToolDetails' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testToolDetails =
   GoogleDevtoolsRemoteexecutionV1testToolDetails'
-    { _gdrvtdToolName    :: !(Maybe Text)
+    { _gdrvtdToolName :: !(Maybe Text)
     , _gdrvtdToolVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1815,8 +1815,8 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2ExecutionCapabilities =
   BuildBazelRemoteExecutionV2ExecutionCapabilities'
     { _bbrevecExecutionPriorityCapabilities :: !(Maybe BuildBazelRemoteExecutionV2PriorityCapabilities)
-    , _bbrevecExecEnabled                   :: !(Maybe Bool)
-    , _bbrevecDigestFunction                :: !(Maybe BuildBazelRemoteExecutionV2ExecutionCapabilitiesDigestFunction)
+    , _bbrevecExecEnabled :: !(Maybe Bool)
+    , _bbrevecDigestFunction :: !(Maybe BuildBazelRemoteExecutionV2ExecutionCapabilitiesDigestFunction)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2002,10 +2002,10 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testOutputFile' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testOutputFile =
   GoogleDevtoolsRemoteexecutionV1testOutputFile'
-    { _gdrvofPath         :: !(Maybe Text)
-    , _gdrvofContent      :: !(Maybe Bytes)
+    { _gdrvofPath :: !(Maybe Text)
+    , _gdrvofContent :: !(Maybe Bytes)
     , _gdrvofIsExecutable :: !(Maybe Bool)
-    , _gdrvofDigest       :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrvofDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2092,9 +2092,9 @@ instance ToJSON
 data GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool =
   GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool'
     { _gdravwpWorkerConfig :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig)
-    , _gdravwpState        :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPoolState)
-    , _gdravwpWorkerCount  :: !(Maybe (Textual Int64))
-    , _gdravwpName         :: !(Maybe Text)
+    , _gdravwpState :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPoolState)
+    , _gdravwpWorkerCount :: !(Maybe (Textual Int64))
+    , _gdravwpName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2179,7 +2179,7 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2SymlinkNode' smart constructor.
 data BuildBazelRemoteExecutionV2SymlinkNode =
   BuildBazelRemoteExecutionV2SymlinkNode'
-    { _bbrevsnName   :: !(Maybe Text)
+    { _bbrevsnName :: !(Maybe Text)
     , _bbrevsnTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2276,7 +2276,7 @@ instance ToJSON GoogleRpcStatusDetailsItem where
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testDirectoryNode' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testDirectoryNode =
   GoogleDevtoolsRemoteexecutionV1testDirectoryNode'
-    { _gdrvdnName   :: !(Maybe Text)
+    { _gdrvdnName :: !(Maybe Text)
     , _gdrvdnDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2333,7 +2333,7 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2DirectoryMetadata' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata =
   GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata'
-    { _gdrvdmPath   :: !(Maybe Text)
+    { _gdrvdmPath :: !(Maybe Text)
     , _gdrvdmDigest :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2411,7 +2411,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testDirectory =
   GoogleDevtoolsRemoteexecutionV1testDirectory'
     { _gdrvdDirectories :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testDirectoryNode])
-    , _gdrvdFiles       :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testFileNode])
+    , _gdrvdFiles :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testFileNode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2471,16 +2471,16 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2ActionResult' smart constructor.
 data BuildBazelRemoteExecutionV2ActionResult =
   BuildBazelRemoteExecutionV2ActionResult'
-    { _bbrevarExecutionMetadata       :: !(Maybe BuildBazelRemoteExecutionV2ExecutedActionMetadata)
+    { _bbrevarExecutionMetadata :: !(Maybe BuildBazelRemoteExecutionV2ExecutedActionMetadata)
     , _bbrevarOutputDirectorySymlinks :: !(Maybe [BuildBazelRemoteExecutionV2OutputSymlink])
-    , _bbrevarOutputFileSymlinks      :: !(Maybe [BuildBazelRemoteExecutionV2OutputSymlink])
-    , _bbrevarOutputDirectories       :: !(Maybe [BuildBazelRemoteExecutionV2OutputDirectory])
-    , _bbrevarOutputFiles             :: !(Maybe [BuildBazelRemoteExecutionV2OutputFile])
-    , _bbrevarStderrRaw               :: !(Maybe Bytes)
-    , _bbrevarExitCode                :: !(Maybe (Textual Int32))
-    , _bbrevarStdoutDigest            :: !(Maybe BuildBazelRemoteExecutionV2Digest)
-    , _bbrevarStderrDigest            :: !(Maybe BuildBazelRemoteExecutionV2Digest)
-    , _bbrevarStdoutRaw               :: !(Maybe Bytes)
+    , _bbrevarOutputFileSymlinks :: !(Maybe [BuildBazelRemoteExecutionV2OutputSymlink])
+    , _bbrevarOutputDirectories :: !(Maybe [BuildBazelRemoteExecutionV2OutputDirectory])
+    , _bbrevarOutputFiles :: !(Maybe [BuildBazelRemoteExecutionV2OutputFile])
+    , _bbrevarStderrRaw :: !(Maybe Bytes)
+    , _bbrevarExitCode :: !(Maybe (Textual Int32))
+    , _bbrevarStdoutDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbrevarStderrDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbrevarStdoutRaw :: !(Maybe Bytes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2749,7 +2749,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteworkersV1test2CommandTaskInputsEnvironmentVariable =
   GoogleDevtoolsRemoteworkersV1test2CommandTaskInputsEnvironmentVariable'
     { _gdrvctievValue :: !(Maybe Text)
-    , _gdrvctievName  :: !(Maybe Text)
+    , _gdrvctievName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2806,9 +2806,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testExecuteResponse' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testExecuteResponse =
   GoogleDevtoolsRemoteexecutionV1testExecuteResponse'
-    { _gdrverStatus       :: !(Maybe GoogleRpcStatus)
-    , _gdrverServerLogs   :: !(Maybe GoogleDevtoolsRemoteexecutionV1testExecuteResponseServerLogs)
-    , _gdrverResult       :: !(Maybe GoogleDevtoolsRemoteexecutionV1testActionResult)
+    { _gdrverStatus :: !(Maybe GoogleRpcStatus)
+    , _gdrverServerLogs :: !(Maybe GoogleDevtoolsRemoteexecutionV1testExecuteResponseServerLogs)
+    , _gdrverResult :: !(Maybe GoogleDevtoolsRemoteexecutionV1testActionResult)
     , _gdrverCachedResult :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2902,9 +2902,9 @@ instance ToJSON
 -- /See:/ 'buildBazelSemverSemVer' smart constructor.
 data BuildBazelSemverSemVer =
   BuildBazelSemverSemVer'
-    { _bbssvMinor      :: !(Maybe (Textual Int32))
-    , _bbssvMajor      :: !(Maybe (Textual Int32))
-    , _bbssvPatch      :: !(Maybe (Textual Int32))
+    { _bbssvMinor :: !(Maybe (Textual Int32))
+    , _bbssvMajor :: !(Maybe (Textual Int32))
+    , _bbssvPatch :: !(Maybe (Textual Int32))
     , _bbssvPrerelease :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3045,7 +3045,7 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2LogFile =
   BuildBazelRemoteExecutionV2LogFile'
     { _bbrevlfHumanReadable :: !(Maybe Bool)
-    , _bbrevlfDigest        :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbrevlfDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3101,8 +3101,8 @@ instance ToJSON BuildBazelRemoteExecutionV2LogFile
 -- /See:/ 'googleDevtoolsRemotebuildexecutionAdminV1alphaCreateWorkerPoolRequest' smart constructor.
 data GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateWorkerPoolRequest =
   GoogleDevtoolsRemotebuildexecutionAdminV1alphaCreateWorkerPoolRequest'
-    { _gdravcwprParent     :: !(Maybe Text)
-    , _gdravcwprPoolId     :: !(Maybe Text)
+    { _gdravcwprParent :: !(Maybe Text)
+    , _gdravcwprPoolId :: !(Maybe Text)
     , _gdravcwprWorkerPool :: !(Maybe GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerPool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3180,7 +3180,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testCommandEnvironmentVariable =
   GoogleDevtoolsRemoteexecutionV1testCommandEnvironmentVariable'
     { _gdrvcevValue :: !(Maybe Text)
-    , _gdrvcevName  :: !(Maybe Text)
+    , _gdrvcevName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3286,7 +3286,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteworkersV1test2Directory =
   GoogleDevtoolsRemoteworkersV1test2Directory'
     { _gDirectories :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2DirectoryMetadata])
-    , _gFiles       :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2FileMetadata])
+    , _gFiles :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2FileMetadata])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3350,9 +3350,9 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testRequestMetadata =
   GoogleDevtoolsRemoteexecutionV1testRequestMetadata'
     { _gdrvrmCorrelatedInvocationsId :: !(Maybe Text)
-    , _gdrvrmToolInvocationId        :: !(Maybe Text)
-    , _gdrvrmActionId                :: !(Maybe Text)
-    , _gdrvrmToolDetails             :: !(Maybe GoogleDevtoolsRemoteexecutionV1testToolDetails)
+    , _gdrvrmToolInvocationId :: !(Maybe Text)
+    , _gdrvrmActionId :: !(Maybe Text)
+    , _gdrvrmToolDetails :: !(Maybe GoogleDevtoolsRemoteexecutionV1testToolDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3587,7 +3587,7 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2BatchUpdateBlobsRequestRequest' smart constructor.
 data BuildBazelRemoteExecutionV2BatchUpdateBlobsRequestRequest =
   BuildBazelRemoteExecutionV2BatchUpdateBlobsRequestRequest'
-    { _bbrevbubrrData   :: !(Maybe Bytes)
+    { _bbrevbubrrData :: !(Maybe Bytes)
     , _bbrevbubrrDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3694,9 +3694,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandResult' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandResult =
   GoogleDevtoolsRemoteworkersV1test2CommandResult'
-    { _gdrvcrStatus   :: !(Maybe GoogleRpcStatus)
+    { _gdrvcrStatus :: !(Maybe GoogleRpcStatus)
     , _gdrvcrOverhead :: !(Maybe GDuration)
-    , _gdrvcrOutputs  :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
+    , _gdrvcrOutputs :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
     , _gdrvcrExitCode :: !(Maybe (Textual Int32))
     , _gdrvcrMetadata :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2CommandResultMetadataItem])
     , _gdrvcrDuration :: !(Maybe GDuration)
@@ -3821,9 +3821,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testFileNode' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testFileNode =
   GoogleDevtoolsRemoteexecutionV1testFileNode'
-    { _gdrvfnName         :: !(Maybe Text)
+    { _gdrvfnName :: !(Maybe Text)
     , _gdrvfnIsExecutable :: !(Maybe Bool)
-    , _gdrvfnDigest       :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrvfnDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3900,7 +3900,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteworkersV1test2AdminTemp =
   GoogleDevtoolsRemoteworkersV1test2AdminTemp'
     { _gdrvatCommand :: !(Maybe GoogleDevtoolsRemoteworkersV1test2AdminTempCommand)
-    , _gdrvatArg     :: !(Maybe Text)
+    , _gdrvatArg :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3956,13 +3956,13 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemotebuildbotCommandDurations' smart constructor.
 data GoogleDevtoolsRemotebuildbotCommandDurations =
   GoogleDevtoolsRemotebuildbotCommandDurations'
-    { _gdrcdStdout      :: !(Maybe GDuration)
-    , _gdrcdDockerPrep  :: !(Maybe GDuration)
-    , _gdrcdDownload    :: !(Maybe GDuration)
-    , _gdrcdOverall     :: !(Maybe GDuration)
-    , _gdrcdExecution   :: !(Maybe GDuration)
+    { _gdrcdStdout :: !(Maybe GDuration)
+    , _gdrcdDockerPrep :: !(Maybe GDuration)
+    , _gdrcdDownload :: !(Maybe GDuration)
+    , _gdrcdOverall :: !(Maybe GDuration)
+    , _gdrcdExecution :: !(Maybe GDuration)
     , _gdrcdIsoPrepDone :: !(Maybe DateTime')
-    , _gdrcdUpload      :: !(Maybe GDuration)
+    , _gdrcdUpload :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4094,7 +4094,7 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2PlatformProperty =
   BuildBazelRemoteExecutionV2PlatformProperty'
     { _bbrevppValue :: !(Maybe Text)
-    , _bbrevppName  :: !(Maybe Text)
+    , _bbrevppName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4180,7 +4180,7 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandOutputs' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandOutputs =
   GoogleDevtoolsRemoteworkersV1test2CommandOutputs'
-    { _gdrvcoOutputs  :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
+    { _gdrvcoOutputs :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
     , _gdrvcoExitCode :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4246,15 +4246,15 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2ExecutedActionMetadata =
   BuildBazelRemoteExecutionV2ExecutedActionMetadata'
     { _bbreveamOutputUploadCompletedTimestamp :: !(Maybe DateTime')
-    , _bbreveamOutputUploadStartTimestamp     :: !(Maybe DateTime')
-    , _bbreveamWorkerCompletedTimestamp       :: !(Maybe DateTime')
-    , _bbreveamWorkerStartTimestamp           :: !(Maybe DateTime')
-    , _bbreveamExecutionStartTimestamp        :: !(Maybe DateTime')
-    , _bbreveamInputFetchStartTimestamp       :: !(Maybe DateTime')
-    , _bbreveamQueuedTimestamp                :: !(Maybe DateTime')
-    , _bbreveamWorker                         :: !(Maybe Text)
-    , _bbreveamExecutionCompletedTimestamp    :: !(Maybe DateTime')
-    , _bbreveamInputFetchCompletedTimestamp   :: !(Maybe DateTime')
+    , _bbreveamOutputUploadStartTimestamp :: !(Maybe DateTime')
+    , _bbreveamWorkerCompletedTimestamp :: !(Maybe DateTime')
+    , _bbreveamWorkerStartTimestamp :: !(Maybe DateTime')
+    , _bbreveamExecutionStartTimestamp :: !(Maybe DateTime')
+    , _bbreveamInputFetchStartTimestamp :: !(Maybe DateTime')
+    , _bbreveamQueuedTimestamp :: !(Maybe DateTime')
+    , _bbreveamWorker :: !(Maybe Text)
+    , _bbreveamExecutionCompletedTimestamp :: !(Maybe DateTime')
+    , _bbreveamInputFetchCompletedTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4423,7 +4423,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteworkersV1test2Blob =
   GoogleDevtoolsRemoteworkersV1test2Blob'
     { _gdrvbContents :: !(Maybe Bytes)
-    , _gdrvbDigest   :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
+    , _gdrvbDigest :: !(Maybe GoogleDevtoolsRemoteworkersV1test2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4576,7 +4576,7 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2GetTreeResponse' smart constructor.
 data BuildBazelRemoteExecutionV2GetTreeResponse =
   BuildBazelRemoteExecutionV2GetTreeResponse'
-    { _bbrevgtrDirectories   :: !(Maybe [BuildBazelRemoteExecutionV2Directory])
+    { _bbrevgtrDirectories :: !(Maybe [BuildBazelRemoteExecutionV2Directory])
     , _bbrevgtrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4738,7 +4738,7 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2BatchReadBlobsResponseResponse =
   BuildBazelRemoteExecutionV2BatchReadBlobsResponseResponse'
     { _bbrevbrbrrStatus :: !(Maybe GoogleRpcStatus)
-    , _bbrevbrbrrData   :: !(Maybe Bytes)
+    , _bbrevbrbrrData :: !(Maybe Bytes)
     , _bbrevbrbrrDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4810,10 +4810,10 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2ExecuteRequest' smart constructor.
 data BuildBazelRemoteExecutionV2ExecuteRequest =
   BuildBazelRemoteExecutionV2ExecuteRequest'
-    { _bbreverExecutionPolicy    :: !(Maybe BuildBazelRemoteExecutionV2ExecutionPolicy)
-    , _bbreverSkipCacheLookup    :: !(Maybe Bool)
+    { _bbreverExecutionPolicy :: !(Maybe BuildBazelRemoteExecutionV2ExecutionPolicy)
+    , _bbreverSkipCacheLookup :: !(Maybe Bool)
     , _bbreverResultsCachePolicy :: !(Maybe BuildBazelRemoteExecutionV2ResultsCachePolicy)
-    , _bbreverActionDigest       :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbreverActionDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5047,9 +5047,9 @@ instance ToJSON GoogleLongrunningOperationResponse
 -- /See:/ 'buildBazelRemoteExecutionV2FileNode' smart constructor.
 data BuildBazelRemoteExecutionV2FileNode =
   BuildBazelRemoteExecutionV2FileNode'
-    { _bbrevfnName         :: !(Maybe Text)
+    { _bbrevfnName :: !(Maybe Text)
     , _bbrevfnIsExecutable :: !(Maybe Bool)
-    , _bbrevfnDigest       :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbrevfnDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5161,9 +5161,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandTask' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandTask =
   GoogleDevtoolsRemoteworkersV1test2CommandTask'
-    { _gdrvctInputs          :: !(Maybe GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs)
+    { _gdrvctInputs :: !(Maybe GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs)
     , _gdrvctExpectedOutputs :: !(Maybe GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs)
-    , _gdrvctTimeouts        :: !(Maybe GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts)
+    , _gdrvctTimeouts :: !(Maybe GoogleDevtoolsRemoteworkersV1test2CommandTaskTimeouts)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5235,7 +5235,7 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testCommand' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testCommand =
   GoogleDevtoolsRemoteexecutionV1testCommand'
-    { _gdrvcArguments            :: !(Maybe [Text])
+    { _gdrvcArguments :: !(Maybe [Text])
     , _gdrvcEnvironmentVariables :: !(Maybe [GoogleDevtoolsRemoteexecutionV1testCommandEnvironmentVariable])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5308,10 +5308,10 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteexecutionV1testExecuteOperationMetadata' smart constructor.
 data GoogleDevtoolsRemoteexecutionV1testExecuteOperationMetadata =
   GoogleDevtoolsRemoteexecutionV1testExecuteOperationMetadata'
-    { _gdrveomStage            :: !(Maybe GoogleDevtoolsRemoteexecutionV1testExecuteOperationMetadataStage)
+    { _gdrveomStage :: !(Maybe GoogleDevtoolsRemoteexecutionV1testExecuteOperationMetadataStage)
     , _gdrveomStderrStreamName :: !(Maybe Text)
     , _gdrveomStdoutStreamName :: !(Maybe Text)
-    , _gdrveomActionDigest     :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrveomActionDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5393,10 +5393,10 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig' smart constructor.
 data GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig =
   GoogleDevtoolsRemotebuildexecutionAdminV1alphaWorkerConfig'
-    { _gdravwcDiskSizeGb     :: !(Maybe (Textual Int64))
-    , _gdravwcReserved       :: !(Maybe Bool)
-    , _gdravwcMachineType    :: !(Maybe Text)
-    , _gdravwcDiskType       :: !(Maybe Text)
+    { _gdravwcDiskSizeGb :: !(Maybe (Textual Int64))
+    , _gdravwcReserved :: !(Maybe Bool)
+    , _gdravwcMachineType :: !(Maybe Text)
+    , _gdravwcDiskType :: !(Maybe Text)
     , _gdravwcMinCPUPlatform :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5500,11 +5500,11 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2ExecuteResponse' smart constructor.
 data BuildBazelRemoteExecutionV2ExecuteResponse =
   BuildBazelRemoteExecutionV2ExecuteResponse'
-    { _bbreverStatus       :: !(Maybe GoogleRpcStatus)
-    , _bbreverServerLogs   :: !(Maybe BuildBazelRemoteExecutionV2ExecuteResponseServerLogs)
-    , _bbreverResult       :: !(Maybe BuildBazelRemoteExecutionV2ActionResult)
+    { _bbreverStatus :: !(Maybe GoogleRpcStatus)
+    , _bbreverServerLogs :: !(Maybe BuildBazelRemoteExecutionV2ExecuteResponseServerLogs)
+    , _bbreverResult :: !(Maybe BuildBazelRemoteExecutionV2ActionResult)
     , _bbreverCachedResult :: !(Maybe Bool)
-    , _bbreverMessage      :: !(Maybe Text)
+    , _bbreverMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5656,11 +5656,11 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandTaskInputs' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs =
   GoogleDevtoolsRemoteworkersV1test2CommandTaskInputs'
-    { _gdrvctiWorkingDirectory     :: !(Maybe Text)
-    , _gdrvctiArguments            :: !(Maybe [Text])
-    , _gdrvctiFiles                :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2Digest])
+    { _gdrvctiWorkingDirectory :: !(Maybe Text)
+    , _gdrvctiArguments :: !(Maybe [Text])
+    , _gdrvctiFiles :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2Digest])
     , _gdrvctiEnvironmentVariables :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2CommandTaskInputsEnvironmentVariable])
-    , _gdrvctiInlineBlobs          :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2Blob])
+    , _gdrvctiInlineBlobs :: !(Maybe [GoogleDevtoolsRemoteworkersV1test2Blob])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5784,7 +5784,7 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2CommandEnvironmentVariable =
   BuildBazelRemoteExecutionV2CommandEnvironmentVariable'
     { _bbrevcevValue :: !(Maybe Text)
-    , _bbrevcevName  :: !(Maybe Text)
+    , _bbrevcevName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5982,7 +5982,7 @@ instance ToJSON
 data GoogleDevtoolsRemoteexecutionV1testLogFile =
   GoogleDevtoolsRemoteexecutionV1testLogFile'
     { _gdrvlfHumanReadable :: !(Maybe Bool)
-    , _gdrvlfDigest        :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
+    , _gdrvlfDigest :: !(Maybe GoogleDevtoolsRemoteexecutionV1testDigest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6047,9 +6047,9 @@ instance ToJSON
 data BuildBazelRemoteExecutionV2RequestMetadata =
   BuildBazelRemoteExecutionV2RequestMetadata'
     { _bbrevrmCorrelatedInvocationsId :: !(Maybe Text)
-    , _bbrevrmToolInvocationId        :: !(Maybe Text)
-    , _bbrevrmActionId                :: !(Maybe Text)
-    , _bbrevrmToolDetails             :: !(Maybe BuildBazelRemoteExecutionV2ToolDetails)
+    , _bbrevrmToolInvocationId :: !(Maybe Text)
+    , _bbrevrmActionId :: !(Maybe Text)
+    , _bbrevrmToolDetails :: !(Maybe BuildBazelRemoteExecutionV2ToolDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6186,10 +6186,10 @@ instance ToJSON BuildBazelRemoteExecutionV2Platform
 -- /See:/ 'buildBazelRemoteExecutionV2ExecuteOperationMetadata' smart constructor.
 data BuildBazelRemoteExecutionV2ExecuteOperationMetadata =
   BuildBazelRemoteExecutionV2ExecuteOperationMetadata'
-    { _bbreveomStage            :: !(Maybe BuildBazelRemoteExecutionV2ExecuteOperationMetadataStage)
+    { _bbreveomStage :: !(Maybe BuildBazelRemoteExecutionV2ExecuteOperationMetadataStage)
     , _bbreveomStderrStreamName :: !(Maybe Text)
     , _bbreveomStdoutStreamName :: !(Maybe Text)
-    , _bbreveomActionDigest     :: !(Maybe BuildBazelRemoteExecutionV2Digest)
+    , _bbreveomActionDigest :: !(Maybe BuildBazelRemoteExecutionV2Digest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6323,11 +6323,11 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2Command' smart constructor.
 data BuildBazelRemoteExecutionV2Command =
   BuildBazelRemoteExecutionV2Command'
-    { _bbrevcPlatform             :: !(Maybe BuildBazelRemoteExecutionV2Platform)
-    , _bbrevcOutputDirectories    :: !(Maybe [Text])
-    , _bbrevcWorkingDirectory     :: !(Maybe Text)
-    , _bbrevcArguments            :: !(Maybe [Text])
-    , _bbrevcOutputFiles          :: !(Maybe [Text])
+    { _bbrevcPlatform :: !(Maybe BuildBazelRemoteExecutionV2Platform)
+    , _bbrevcOutputDirectories :: !(Maybe [Text])
+    , _bbrevcWorkingDirectory :: !(Maybe Text)
+    , _bbrevcArguments :: !(Maybe [Text])
+    , _bbrevcOutputFiles :: !(Maybe [Text])
     , _bbrevcEnvironmentVariables :: !(Maybe [BuildBazelRemoteExecutionV2CommandEnvironmentVariable])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6482,7 +6482,7 @@ instance ToJSON BuildBazelRemoteExecutionV2Command
 -- /See:/ 'buildBazelRemoteExecutionV2ToolDetails' smart constructor.
 data BuildBazelRemoteExecutionV2ToolDetails =
   BuildBazelRemoteExecutionV2ToolDetails'
-    { _bbrevtdToolName    :: !(Maybe Text)
+    { _bbrevtdToolName :: !(Maybe Text)
     , _bbrevtdToolVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6537,11 +6537,11 @@ instance ToJSON
 -- /See:/ 'buildBazelRemoteExecutionV2CacheCapabilities' smart constructor.
 data BuildBazelRemoteExecutionV2CacheCapabilities =
   BuildBazelRemoteExecutionV2CacheCapabilities'
-    { _bbrevccSymlinkAbsolutePathStrategy   :: !(Maybe BuildBazelRemoteExecutionV2CacheCapabilitiesSymlinkAbsolutePathStrategy)
-    , _bbrevccMaxBatchTotalSizeBytes        :: !(Maybe (Textual Int64))
-    , _bbrevccDigestFunction                :: !(Maybe [Text])
+    { _bbrevccSymlinkAbsolutePathStrategy :: !(Maybe BuildBazelRemoteExecutionV2CacheCapabilitiesSymlinkAbsolutePathStrategy)
+    , _bbrevccMaxBatchTotalSizeBytes :: !(Maybe (Textual Int64))
+    , _bbrevccDigestFunction :: !(Maybe [Text])
     , _bbrevccActionCacheUpdateCapabilities :: !(Maybe BuildBazelRemoteExecutionV2ActionCacheUpdateCapabilities)
-    , _bbrevccCachePriorityCapabilities     :: !(Maybe BuildBazelRemoteExecutionV2PriorityCapabilities)
+    , _bbrevccCachePriorityCapabilities :: !(Maybe BuildBazelRemoteExecutionV2PriorityCapabilities)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6647,9 +6647,9 @@ instance ToJSON
 data GoogleDevtoolsRemotebuildbotCommandEvents =
   GoogleDevtoolsRemotebuildbotCommandEvents'
     { _gdrceDockerCacheHit :: !(Maybe Bool)
-    , _gdrceNumErrors      :: !(Maybe (Textual Word64))
+    , _gdrceNumErrors :: !(Maybe (Textual Word64))
     , _gdrceInputCacheMiss :: !(Maybe (Textual Double))
-    , _gdrceNumWarnings    :: !(Maybe (Textual Word64))
+    , _gdrceNumWarnings :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6732,9 +6732,9 @@ instance ToJSON
 -- /See:/ 'googleDevtoolsRemoteworkersV1test2CommandTaskOutputs' smart constructor.
 data GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs =
   GoogleDevtoolsRemoteworkersV1test2CommandTaskOutputs'
-    { _gdrvctoDirectories       :: !(Maybe [Text])
+    { _gdrvctoDirectories :: !(Maybe [Text])
     , _gdrvctoStderrDestination :: !(Maybe Text)
-    , _gdrvctoFiles             :: !(Maybe [Text])
+    , _gdrvctoFiles :: !(Maybe [Text])
     , _gdrvctoStdoutDestination :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6833,10 +6833,10 @@ instance ToJSON
 -- /See:/ 'googleLongrunningOperation' smart constructor.
 data GoogleLongrunningOperation =
   GoogleLongrunningOperation'
-    { _gloDone     :: !(Maybe Bool)
-    , _gloError    :: !(Maybe GoogleRpcStatus)
+    { _gloDone :: !(Maybe Bool)
+    , _gloError :: !(Maybe GoogleRpcStatus)
     , _gloResponse :: !(Maybe GoogleLongrunningOperationResponse)
-    , _gloName     :: !(Maybe Text)
+    , _gloName :: !(Maybe Text)
     , _gloMetadata :: !(Maybe GoogleLongrunningOperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

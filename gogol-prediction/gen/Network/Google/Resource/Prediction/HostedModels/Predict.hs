@@ -38,8 +38,8 @@ module Network.Google.Resource.Prediction.HostedModels.Predict
     , hmpHostedModelName
     ) where
 
-import           Network.Google.Prediction.Types
-import           Network.Google.Prelude
+import Network.Google.Prediction.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @prediction.hostedmodels.predict@ method which the
 -- 'HostedModelsPredict' request conforms to.
@@ -59,8 +59,8 @@ type HostedModelsPredictResource =
 -- /See:/ 'hostedModelsPredict' smart constructor.
 data HostedModelsPredict =
   HostedModelsPredict'
-    { _hmpProject         :: !Text
-    , _hmpPayload         :: !Input
+    { _hmpProject :: !Text
+    , _hmpPayload :: !Input
     , _hmpHostedModelName :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

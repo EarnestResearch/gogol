@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Get
     , phkgAccessId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.hmacKeys.get@ method which the
 -- 'ProjectsHmacKeysGet' request conforms to.
@@ -58,7 +58,7 @@ type ProjectsHmacKeysGetResource =
 data ProjectsHmacKeysGet =
   ProjectsHmacKeysGet'
     { _phkgProjectId :: !Text
-    , _phkgAccessId  :: !Text
+    , _phkgAccessId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

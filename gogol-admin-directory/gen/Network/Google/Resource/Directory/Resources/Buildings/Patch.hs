@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.Resources.Buildings.Patch
     , rbpCoordinatesSource
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.buildings.patch@ method which the
 -- 'ResourcesBuildingsPatch' request conforms to.
@@ -64,9 +64,9 @@ type ResourcesBuildingsPatchResource =
 -- /See:/ 'resourcesBuildingsPatch' smart constructor.
 data ResourcesBuildingsPatch =
   ResourcesBuildingsPatch'
-    { _rbpBuildingId        :: !Text
-    , _rbpPayload           :: !Building
-    , _rbpCustomer          :: !Text
+    { _rbpBuildingId :: !Text
+    , _rbpPayload :: !Building
+    , _rbpCustomer :: !Text
     , _rbpCoordinatesSource :: !ResourcesBuildingsPatchCoordinatesSource
     }
   deriving (Eq, Show, Data, Typeable, Generic)

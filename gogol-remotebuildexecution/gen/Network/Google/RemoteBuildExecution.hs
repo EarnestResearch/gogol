@@ -718,17 +718,17 @@ module Network.Google.RemoteBuildExecution
     , bbrevbrbrResponses
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.RemoteBuildExecution.Types
-import           Network.Google.Resource.RemoteBuildExecution.ActionResults.Get
-import           Network.Google.Resource.RemoteBuildExecution.ActionResults.Update
-import           Network.Google.Resource.RemoteBuildExecution.Actions.Execute
-import           Network.Google.Resource.RemoteBuildExecution.Blobs.BatchRead
-import           Network.Google.Resource.RemoteBuildExecution.Blobs.BatchUpdate
-import           Network.Google.Resource.RemoteBuildExecution.Blobs.FindMissing
-import           Network.Google.Resource.RemoteBuildExecution.Blobs.GetTree
-import           Network.Google.Resource.RemoteBuildExecution.GetCapabilities
-import           Network.Google.Resource.RemoteBuildExecution.Operations.WaitExecution
+import Network.Google.Prelude
+import Network.Google.RemoteBuildExecution.Types
+import Network.Google.Resource.RemoteBuildExecution.ActionResults.Get
+import Network.Google.Resource.RemoteBuildExecution.ActionResults.Update
+import Network.Google.Resource.RemoteBuildExecution.Actions.Execute
+import Network.Google.Resource.RemoteBuildExecution.Blobs.BatchRead
+import Network.Google.Resource.RemoteBuildExecution.Blobs.BatchUpdate
+import Network.Google.Resource.RemoteBuildExecution.Blobs.FindMissing
+import Network.Google.Resource.RemoteBuildExecution.Blobs.GetTree
+import Network.Google.Resource.RemoteBuildExecution.GetCapabilities
+import Network.Google.Resource.RemoteBuildExecution.Operations.WaitExecution
 
 {- $resources
 TODO

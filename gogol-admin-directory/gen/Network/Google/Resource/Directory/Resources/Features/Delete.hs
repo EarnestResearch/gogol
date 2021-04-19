@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Resources.Features.Delete
     , rfdFeatureKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.features.delete@ method which the
 -- 'ResourcesFeaturesDelete' request conforms to.
@@ -58,7 +58,7 @@ type ResourcesFeaturesDeleteResource =
 -- /See:/ 'resourcesFeaturesDelete' smart constructor.
 data ResourcesFeaturesDelete =
   ResourcesFeaturesDelete'
-    { _rfdCustomer   :: !Text
+    { _rfdCustomer :: !Text
     , _rfdFeatureKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

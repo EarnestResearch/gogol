@@ -41,8 +41,8 @@ module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Get
     , puccgCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.uptimeCheckConfigs.get@ method which the
 -- 'ProjectsUptimeCheckConfigsGet' request conforms to.
@@ -62,12 +62,12 @@ type ProjectsUptimeCheckConfigsGetResource =
 -- /See:/ 'projectsUptimeCheckConfigsGet' smart constructor.
 data ProjectsUptimeCheckConfigsGet =
   ProjectsUptimeCheckConfigsGet'
-    { _puccgXgafv          :: !(Maybe Xgafv)
+    { _puccgXgafv :: !(Maybe Xgafv)
     , _puccgUploadProtocol :: !(Maybe Text)
-    , _puccgAccessToken    :: !(Maybe Text)
-    , _puccgUploadType     :: !(Maybe Text)
-    , _puccgName           :: !Text
-    , _puccgCallback       :: !(Maybe Text)
+    , _puccgAccessToken :: !(Maybe Text)
+    , _puccgUploadType :: !(Maybe Text)
+    , _puccgName :: !Text
+    , _puccgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

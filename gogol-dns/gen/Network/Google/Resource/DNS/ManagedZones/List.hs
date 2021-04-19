@@ -39,8 +39,8 @@ module Network.Google.Resource.DNS.ManagedZones.List
     , mzlMaxResults
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.managedZones.list@ method which the
 -- 'ManagedZonesList' request conforms to.
@@ -61,9 +61,9 @@ type ManagedZonesListResource =
 -- /See:/ 'managedZonesList' smart constructor.
 data ManagedZonesList =
   ManagedZonesList'
-    { _mzlProject    :: !Text
-    , _mzlPageToken  :: !(Maybe Text)
-    , _mzlDNSName    :: !(Maybe Text)
+    { _mzlProject :: !Text
+    , _mzlPageToken :: !(Maybe Text)
+    , _mzlDNSName :: !(Maybe Text)
     , _mzlMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.AdSense.Accounts.Alerts.List
     , aalAccountId
     ) where
 
-import           Network.Google.AdSense.Types
-import           Network.Google.Prelude
+import Network.Google.AdSense.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @adsense.accounts.alerts.list@ method which the
 -- 'AccountsAlertsList' request conforms to.
@@ -56,7 +56,7 @@ type AccountsAlertsListResource =
 -- /See:/ 'accountsAlertsList' smart constructor.
 data AccountsAlertsList =
   AccountsAlertsList'
-    { _aalLocale    :: !(Maybe Text)
+    { _aalLocale :: !(Maybe Text)
     , _aalAccountId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

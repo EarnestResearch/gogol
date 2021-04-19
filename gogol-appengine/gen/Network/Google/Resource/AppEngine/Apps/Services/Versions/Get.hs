@@ -45,8 +45,8 @@ module Network.Google.Resource.AppEngine.Apps.Services.Versions.Get
     , asvgCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.services.versions.get@ method which the
 -- 'AppsServicesVersionsGet' request conforms to.
@@ -72,15 +72,15 @@ type AppsServicesVersionsGetResource =
 -- /See:/ 'appsServicesVersionsGet' smart constructor.
 data AppsServicesVersionsGet =
   AppsServicesVersionsGet'
-    { _asvgXgafv          :: !(Maybe Xgafv)
+    { _asvgXgafv :: !(Maybe Xgafv)
     , _asvgUploadProtocol :: !(Maybe Text)
-    , _asvgAccessToken    :: !(Maybe Text)
-    , _asvgUploadType     :: !(Maybe Text)
-    , _asvgVersionsId     :: !Text
-    , _asvgAppsId         :: !Text
-    , _asvgView           :: !(Maybe Text)
-    , _asvgServicesId     :: !Text
-    , _asvgCallback       :: !(Maybe Text)
+    , _asvgAccessToken :: !(Maybe Text)
+    , _asvgUploadType :: !(Maybe Text)
+    , _asvgVersionsId :: !Text
+    , _asvgAppsId :: !Text
+    , _asvgView :: !(Maybe Text)
+    , _asvgServicesId :: !Text
+    , _asvgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

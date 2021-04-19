@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Users.Aliases.List
     , ualUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.aliases.list@ method which the
 -- 'UsersAliasesList' request conforms to.
@@ -57,7 +57,7 @@ type UsersAliasesListResource =
 -- /See:/ 'usersAliasesList' smart constructor.
 data UsersAliasesList =
   UsersAliasesList'
-    { _ualEvent   :: !(Maybe UsersAliasesListEvent)
+    { _ualEvent :: !(Maybe UsersAliasesListEvent)
     , _ualUserKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

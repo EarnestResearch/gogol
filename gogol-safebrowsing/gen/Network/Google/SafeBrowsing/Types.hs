@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -258,9 +258,9 @@ module Network.Google.SafeBrowsing.Types
     , ftlurMinimumWaitDuration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types.Product
-import           Network.Google.SafeBrowsing.Types.Sum
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types.Product
+import Network.Google.SafeBrowsing.Types.Sum
 
 -- | Default request referring to version 'v4' of the Safe Browsing API. This contains the host and root path used as a starting point for constructing service requests.
 safeBrowsingService :: ServiceConfig

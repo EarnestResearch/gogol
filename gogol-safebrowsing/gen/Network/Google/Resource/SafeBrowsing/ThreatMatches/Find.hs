@@ -41,8 +41,8 @@ module Network.Google.Resource.SafeBrowsing.ThreatMatches.Find
     , tmfCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SafeBrowsing.Types
+import Network.Google.Prelude
+import Network.Google.SafeBrowsing.Types
 
 -- | A resource alias for @safebrowsing.threatMatches.find@ method which the
 -- 'ThreatMatchesFind' request conforms to.
@@ -63,12 +63,12 @@ type ThreatMatchesFindResource =
 -- /See:/ 'threatMatchesFind' smart constructor.
 data ThreatMatchesFind =
   ThreatMatchesFind'
-    { _tmfXgafv          :: !(Maybe Xgafv)
+    { _tmfXgafv :: !(Maybe Xgafv)
     , _tmfUploadProtocol :: !(Maybe Text)
-    , _tmfAccessToken    :: !(Maybe Text)
-    , _tmfUploadType     :: !(Maybe Text)
-    , _tmfPayload        :: !FindThreatMatchesRequest
-    , _tmfCallback       :: !(Maybe Text)
+    , _tmfAccessToken :: !(Maybe Text)
+    , _tmfUploadType :: !(Maybe Text)
+    , _tmfPayload :: !FindThreatMatchesRequest
+    , _tmfCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

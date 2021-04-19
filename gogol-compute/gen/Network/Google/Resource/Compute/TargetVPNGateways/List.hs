@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.TargetVPNGateways.List
     , tvglMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetVpnGateways.list@ method which the
 -- 'TargetVPNGatewaysList' request conforms to.
@@ -68,11 +68,11 @@ type TargetVPNGatewaysListResource =
 -- /See:/ 'targetVPNGatewaysList' smart constructor.
 data TargetVPNGatewaysList =
   TargetVPNGatewaysList'
-    { _tvglOrderBy    :: !(Maybe Text)
-    , _tvglProject    :: !Text
-    , _tvglFilter     :: !(Maybe Text)
-    , _tvglRegion     :: !Text
-    , _tvglPageToken  :: !(Maybe Text)
+    { _tvglOrderBy :: !(Maybe Text)
+    , _tvglProject :: !Text
+    , _tvglFilter :: !(Maybe Text)
+    , _tvglRegion :: !Text
+    , _tvglPageToken :: !(Maybe Text)
     , _tvglMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

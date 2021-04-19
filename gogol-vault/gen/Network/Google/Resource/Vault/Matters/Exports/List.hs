@@ -43,8 +43,8 @@ module Network.Google.Resource.Vault.Matters.Exports.List
     , melCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.exports.list@ method which the
 -- 'MattersExportsList' request conforms to.
@@ -68,14 +68,14 @@ type MattersExportsListResource =
 -- /See:/ 'mattersExportsList' smart constructor.
 data MattersExportsList =
   MattersExportsList'
-    { _melXgafv          :: !(Maybe Xgafv)
+    { _melXgafv :: !(Maybe Xgafv)
     , _melUploadProtocol :: !(Maybe Text)
-    , _melAccessToken    :: !(Maybe Text)
-    , _melUploadType     :: !(Maybe Text)
-    , _melMatterId       :: !Text
-    , _melPageToken      :: !(Maybe Text)
-    , _melPageSize       :: !(Maybe (Textual Int32))
-    , _melCallback       :: !(Maybe Text)
+    , _melAccessToken :: !(Maybe Text)
+    , _melUploadType :: !(Maybe Text)
+    , _melMatterId :: !Text
+    , _melPageToken :: !(Maybe Text)
+    , _melPageSize :: !(Maybe (Textual Int32))
+    , _melCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

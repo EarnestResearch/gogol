@@ -40,8 +40,8 @@ module Network.Google.Resource.Drive.Files.Watch
     , fwSupportsTeamDrives
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.watch@ method which the
 -- 'FilesWatch' request conforms to.
@@ -73,10 +73,10 @@ type FilesWatchResource =
 -- /See:/ 'filesWatch' smart constructor.
 data FilesWatch =
   FilesWatch'
-    { _fwPayload            :: !Channel
-    , _fwSupportsAllDrives  :: !Bool
-    , _fwAcknowledgeAbuse   :: !Bool
-    , _fwFileId             :: !Text
+    { _fwPayload :: !Channel
+    , _fwSupportsAllDrives :: !Bool
+    , _fwAcknowledgeAbuse :: !Bool
+    , _fwFileId :: !Text
     , _fwSupportsTeamDrives :: !Bool
     }
   deriving (Eq, Show, Data, Typeable, Generic)

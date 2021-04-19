@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Routers.Delete
     , rouoRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.delete@ method which the
 -- 'RoutersDelete' request conforms to.
@@ -62,9 +62,9 @@ type RoutersDeleteResource =
 data RoutersDelete =
   RoutersDelete'
     { _rouoRequestId :: !(Maybe Text)
-    , _rouoProject   :: !Text
-    , _rouoRouter    :: !Text
-    , _rouoRegion    :: !Text
+    , _rouoProject :: !Text
+    , _rouoRouter :: !Text
+    , _rouoRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

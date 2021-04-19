@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.Instances.UpdateNetworkInterface
     , iuniInstance
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instances.updateNetworkInterface@ method which the
 -- 'InstancesUpdateNetworkInterface' request conforms to.
@@ -69,12 +69,12 @@ type InstancesUpdateNetworkInterfaceResource =
 -- /See:/ 'instancesUpdateNetworkInterface' smart constructor.
 data InstancesUpdateNetworkInterface =
   InstancesUpdateNetworkInterface'
-    { _iuniRequestId        :: !(Maybe Text)
-    , _iuniProject          :: !Text
+    { _iuniRequestId :: !(Maybe Text)
+    , _iuniProject :: !Text
     , _iuniNetworkInterface :: !Text
-    , _iuniZone             :: !Text
-    , _iuniPayload          :: !NetworkInterface
-    , _iuniInstance         :: !Text
+    , _iuniZone :: !Text
+    , _iuniPayload :: !NetworkInterface
+    , _iuniInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

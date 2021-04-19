@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Get
     , acvgContainerVersionId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.get@ method which the
 -- 'AccountsContainersVersionsGet' request conforms to.
@@ -55,7 +55,7 @@ type AccountsContainersVersionsGetResource =
 -- /See:/ 'accountsContainersVersionsGet' smart constructor.
 data AccountsContainersVersionsGet =
   AccountsContainersVersionsGet'
-    { _acvgPath               :: !Text
+    { _acvgPath :: !Text
     , _acvgContainerVersionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

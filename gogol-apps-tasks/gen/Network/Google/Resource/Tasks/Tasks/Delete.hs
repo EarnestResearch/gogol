@@ -37,8 +37,8 @@ module Network.Google.Resource.Tasks.Tasks.Delete
     , tdTask
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasks.delete@ method which the
 -- 'TasksDelete' request conforms to.
@@ -57,7 +57,7 @@ type TasksDeleteResource =
 data TasksDelete =
   TasksDelete'
     { _tdTaskList :: !Text
-    , _tdTask     :: !Text
+    , _tdTask :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

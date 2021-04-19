@@ -46,8 +46,8 @@ module Network.Google.Resource.Compute.RegionInstanceGroups.ListInstances
     , rigliMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionInstanceGroups.listInstances@ method which the
 -- 'RegionInstanceGroupsListInstances'' request conforms to.
@@ -80,14 +80,14 @@ type RegionInstanceGroupsListInstancesResource =
 -- /See:/ 'regionInstanceGroupsListInstances'' smart constructor.
 data RegionInstanceGroupsListInstances' =
   RegionInstanceGroupsListInstances''
-    { _rigliOrderBy       :: !(Maybe Text)
-    , _rigliProject       :: !Text
-    , _rigliPayload       :: !RegionInstanceGroupsListInstancesRequest
-    , _rigliFilter        :: !(Maybe Text)
-    , _rigliRegion        :: !Text
-    , _rigliPageToken     :: !(Maybe Text)
+    { _rigliOrderBy :: !(Maybe Text)
+    , _rigliProject :: !Text
+    , _rigliPayload :: !RegionInstanceGroupsListInstancesRequest
+    , _rigliFilter :: !(Maybe Text)
+    , _rigliRegion :: !Text
+    , _rigliPageToken :: !(Maybe Text)
     , _rigliInstanceGroup :: !Text
-    , _rigliMaxResults    :: !(Textual Word32)
+    , _rigliMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

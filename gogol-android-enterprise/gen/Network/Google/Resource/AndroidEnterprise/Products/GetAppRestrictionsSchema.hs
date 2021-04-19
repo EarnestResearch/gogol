@@ -43,8 +43,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.GetAppRestrictionsSche
     , pgarsProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.getAppRestrictionsSchema@ method which the
 -- 'ProductsGetAppRestrictionsSchema' request conforms to.
@@ -71,8 +71,8 @@ type ProductsGetAppRestrictionsSchemaResource =
 data ProductsGetAppRestrictionsSchema =
   ProductsGetAppRestrictionsSchema'
     { _pgarsEnterpriseId :: !Text
-    , _pgarsLanguage     :: !(Maybe Text)
-    , _pgarsProductId    :: !Text
+    , _pgarsLanguage :: !(Maybe Text)
+    , _pgarsProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.YouTube.Subscriptions.Delete
     , sdId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.subscriptions.delete@ method which the
 -- 'SubscriptionsDelete' request conforms to.

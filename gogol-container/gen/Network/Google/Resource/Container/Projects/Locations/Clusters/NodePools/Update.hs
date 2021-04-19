@@ -42,8 +42,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.NodePools.U
     , plcnpuCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.nodePools.update@ method which the
 -- 'ProjectsLocationsClustersNodePoolsUpdate' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsLocationsClustersNodePoolsUpdateResource
 -- /See:/ 'projectsLocationsClustersNodePoolsUpdate' smart constructor.
 data ProjectsLocationsClustersNodePoolsUpdate =
   ProjectsLocationsClustersNodePoolsUpdate'
-    { _plcnpuXgafv          :: !(Maybe Xgafv)
+    { _plcnpuXgafv :: !(Maybe Xgafv)
     , _plcnpuUploadProtocol :: !(Maybe Text)
-    , _plcnpuAccessToken    :: !(Maybe Text)
-    , _plcnpuUploadType     :: !(Maybe Text)
-    , _plcnpuPayload        :: !UpdateNodePoolRequest
-    , _plcnpuName           :: !Text
-    , _plcnpuCallback       :: !(Maybe Text)
+    , _plcnpuAccessToken :: !(Maybe Text)
+    , _plcnpuUploadType :: !(Maybe Text)
+    , _plcnpuPayload :: !UpdateNodePoolRequest
+    , _plcnpuName :: !Text
+    , _plcnpuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

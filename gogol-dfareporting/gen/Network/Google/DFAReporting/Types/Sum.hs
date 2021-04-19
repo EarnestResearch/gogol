@@ -16,7 +16,7 @@
 --
 module Network.Google.DFAReporting.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Order of sorted results.
 data PlacementsListSortOrder

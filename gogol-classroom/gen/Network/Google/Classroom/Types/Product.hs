@@ -17,8 +17,8 @@
 --
 module Network.Google.Classroom.Types.Product where
 
-import           Network.Google.Classroom.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types.Sum
+import Network.Google.Prelude
 
 -- | Response when listing course aliases.
 --
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 data ListCourseAliasesResponse =
   ListCourseAliasesResponse'
     { _lcarNextPageToken :: !(Maybe Text)
-    , _lcarAliases       :: !(Maybe [CourseAlias])
+    , _lcarAliases :: !(Maybe [CourseAlias])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -79,28 +79,28 @@ instance ToJSON ListCourseAliasesResponse where
 -- /See:/ 'courseWork' smart constructor.
 data CourseWork =
   CourseWork'
-    { _cwCreationTime               :: !(Maybe DateTime')
-    , _cwScheduledTime              :: !(Maybe DateTime')
-    , _cwState                      :: !(Maybe CourseWorkState)
-    , _cwAssigneeMode               :: !(Maybe CourseWorkAssigneeMode)
-    , _cwMaterials                  :: !(Maybe [Material])
-    , _cwCourseId                   :: !(Maybe Text)
-    , _cwIndividualStudentsOptions  :: !(Maybe IndividualStudentsOptions)
-    , _cwMaxPoints                  :: !(Maybe (Textual Double))
-    , _cwWorkType                   :: !(Maybe CourseWorkWorkType)
-    , _cwDueTime                    :: !(Maybe TimeOfDay')
-    , _cwAssociatedWithDeveloper    :: !(Maybe Bool)
-    , _cwUpdateTime                 :: !(Maybe DateTime')
-    , _cwTopicId                    :: !(Maybe Text)
-    , _cwMultipleChoiceQuestion     :: !(Maybe MultipleChoiceQuestion)
-    , _cwId                         :: !(Maybe Text)
+    { _cwCreationTime :: !(Maybe DateTime')
+    , _cwScheduledTime :: !(Maybe DateTime')
+    , _cwState :: !(Maybe CourseWorkState)
+    , _cwAssigneeMode :: !(Maybe CourseWorkAssigneeMode)
+    , _cwMaterials :: !(Maybe [Material])
+    , _cwCourseId :: !(Maybe Text)
+    , _cwIndividualStudentsOptions :: !(Maybe IndividualStudentsOptions)
+    , _cwMaxPoints :: !(Maybe (Textual Double))
+    , _cwWorkType :: !(Maybe CourseWorkWorkType)
+    , _cwDueTime :: !(Maybe TimeOfDay')
+    , _cwAssociatedWithDeveloper :: !(Maybe Bool)
+    , _cwUpdateTime :: !(Maybe DateTime')
+    , _cwTopicId :: !(Maybe Text)
+    , _cwMultipleChoiceQuestion :: !(Maybe MultipleChoiceQuestion)
+    , _cwId :: !(Maybe Text)
     , _cwSubmissionModificationMode :: !(Maybe CourseWorkSubmissionModificationMode)
-    , _cwDueDate                    :: !(Maybe Date)
-    , _cwCreatorUserId              :: !(Maybe Text)
-    , _cwTitle                      :: !(Maybe Text)
-    , _cwAlternateLink              :: !(Maybe Text)
-    , _cwAssignment                 :: !(Maybe Assignment)
-    , _cwDescription                :: !(Maybe Text)
+    , _cwDueDate :: !(Maybe Date)
+    , _cwCreatorUserId :: !(Maybe Text)
+    , _cwTitle :: !(Maybe Text)
+    , _cwAlternateLink :: !(Maybe Text)
+    , _cwAssignment :: !(Maybe Assignment)
+    , _cwDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -391,10 +391,10 @@ instance ToJSON CourseWork where
 -- /See:/ 'gradeHistory' smart constructor.
 data GradeHistory =
   GradeHistory'
-    { _ghGradeTimestamp  :: !(Maybe DateTime')
-    , _ghMaxPoints       :: !(Maybe (Textual Double))
-    , _ghPointsEarned    :: !(Maybe (Textual Double))
-    , _ghActorUserId     :: !(Maybe Text)
+    { _ghGradeTimestamp :: !(Maybe DateTime')
+    , _ghMaxPoints :: !(Maybe (Textual Double))
+    , _ghPointsEarned :: !(Maybe (Textual Double))
+    , _ghActorUserId :: !(Maybe Text)
     , _ghGradeChangeType :: !(Maybe GradeHistoryGradeChangeType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -520,7 +520,7 @@ instance ToJSON CourseWorkChangesInfo where
 -- /See:/ 'modifyCourseWorkAssigneesRequest' smart constructor.
 data ModifyCourseWorkAssigneesRequest =
   ModifyCourseWorkAssigneesRequest'
-    { _mcwarAssigneeMode                    :: !(Maybe ModifyCourseWorkAssigneesRequestAssigneeMode)
+    { _mcwarAssigneeMode :: !(Maybe ModifyCourseWorkAssigneesRequestAssigneeMode)
     , _mcwarModifyIndividualStudentsOptions :: !(Maybe ModifyIndividualStudentsOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -580,9 +580,9 @@ instance ToJSON ModifyCourseWorkAssigneesRequest
 -- /See:/ 'driveFile' smart constructor.
 data DriveFile =
   DriveFile'
-    { _dfThumbnailURL  :: !(Maybe Text)
-    , _dfId            :: !(Maybe Text)
-    , _dfTitle         :: !(Maybe Text)
+    { _dfThumbnailURL :: !(Maybe Text)
+    , _dfId :: !(Maybe Text)
+    , _dfTitle :: !(Maybe Text)
     , _dfAlternateLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -653,10 +653,10 @@ instance ToJSON DriveFile where
 -- /See:/ 'guardianInvitation' smart constructor.
 data GuardianInvitation =
   GuardianInvitation'
-    { _giCreationTime        :: !(Maybe DateTime')
-    , _giStudentId           :: !(Maybe Text)
-    , _giState               :: !(Maybe GuardianInvitationState)
-    , _giInvitationId        :: !(Maybe Text)
+    { _giCreationTime :: !(Maybe DateTime')
+    , _giStudentId :: !(Maybe Text)
+    , _giState :: !(Maybe GuardianInvitationState)
+    , _giInvitationId :: !(Maybe Text)
     , _giInvitedEmailAddress :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -743,8 +743,8 @@ instance ToJSON GuardianInvitation where
 -- /See:/ 'feed' smart constructor.
 data Feed =
   Feed'
-    { _fCourseWorkChangesInfo   :: !(Maybe CourseWorkChangesInfo)
-    , _fFeedType                :: !(Maybe FeedFeedType)
+    { _fCourseWorkChangesInfo :: !(Maybe CourseWorkChangesInfo)
+    , _fFeedType :: !(Maybe FeedFeedType)
     , _fCourseRosterChangesInfo :: !(Maybe CourseRosterChangesInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -814,7 +814,7 @@ instance ToJSON Feed where
 -- /See:/ 'modifyAnnouncementAssigneesRequest' smart constructor.
 data ModifyAnnouncementAssigneesRequest =
   ModifyAnnouncementAssigneesRequest'
-    { _maarAssigneeMode                    :: !(Maybe ModifyAnnouncementAssigneesRequestAssigneeMode)
+    { _maarAssigneeMode :: !(Maybe ModifyAnnouncementAssigneesRequestAssigneeMode)
     , _maarModifyIndividualStudentsOptions :: !(Maybe ModifyIndividualStudentsOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -922,7 +922,7 @@ instance ToJSON ReclaimStudentSubmissionRequest where
 -- /See:/ 'listCourseWorkResponse' smart constructor.
 data ListCourseWorkResponse =
   ListCourseWorkResponse'
-    { _lcwrCourseWork    :: !(Maybe [CourseWork])
+    { _lcwrCourseWork :: !(Maybe [CourseWork])
     , _lcwrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1038,7 +1038,7 @@ instance ToJSON GlobalPermission where
 data ListTopicResponse =
   ListTopicResponse'
     { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTopic         :: !(Maybe [Topic])
+    , _ltrTopic :: !(Maybe [Topic])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1091,8 +1091,8 @@ instance ToJSON ListTopicResponse where
 data Link =
   Link'
     { _lThumbnailURL :: !(Maybe Text)
-    , _lURL          :: !(Maybe Text)
-    , _lTitle        :: !(Maybe Text)
+    , _lURL :: !(Maybe Text)
+    , _lTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1332,7 +1332,7 @@ instance ToJSON ListAnnouncementsResponse where
 -- /See:/ 'listStudentSubmissionsResponse' smart constructor.
 data ListStudentSubmissionsResponse =
   ListStudentSubmissionsResponse'
-    { _lssrNextPageToken      :: !(Maybe Text)
+    { _lssrNextPageToken :: !(Maybe Text)
     , _lssrStudentSubmissions :: !(Maybe [StudentSubmission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1390,10 +1390,10 @@ instance ToJSON ListStudentSubmissionsResponse where
 -- /See:/ 'material' smart constructor.
 data Material =
   Material'
-    { _mDriveFile    :: !(Maybe SharedDriveFile)
-    , _mLink         :: !(Maybe Link)
+    { _mDriveFile :: !(Maybe SharedDriveFile)
+    , _mLink :: !(Maybe Link)
     , _mYouTubeVideo :: !(Maybe YouTubeVideo)
-    , _mForm         :: !(Maybe Form)
+    , _mForm :: !(Maybe Form)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1499,7 +1499,7 @@ instance ToJSON MultipleChoiceSubmission where
 data ListInvitationsResponse =
   ListInvitationsResponse'
     { _lirNextPageToken :: !(Maybe Text)
-    , _lirInvitations   :: !(Maybe [Invitation])
+    , _lirInvitations :: !(Maybe [Invitation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1554,10 +1554,10 @@ instance ToJSON ListInvitationsResponse where
 -- /See:/ 'guardian' smart constructor.
 data Guardian =
   Guardian'
-    { _gStudentId           :: !(Maybe Text)
-    , _gGuardianId          :: !(Maybe Text)
+    { _gStudentId :: !(Maybe Text)
+    , _gGuardianId :: !(Maybe Text)
     , _gInvitedEmailAddress :: !(Maybe Text)
-    , _gGuardianProFile     :: !(Maybe UserProFile)
+    , _gGuardianProFile :: !(Maybe UserProFile)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1630,10 +1630,10 @@ instance ToJSON Guardian where
 -- /See:/ 'courseMaterial' smart constructor.
 data CourseMaterial =
   CourseMaterial'
-    { _cmDriveFile    :: !(Maybe DriveFile)
-    , _cmLink         :: !(Maybe Link)
+    { _cmDriveFile :: !(Maybe DriveFile)
+    , _cmLink :: !(Maybe Link)
     , _cmYouTubeVideo :: !(Maybe YouTubeVideo)
-    , _cmForm         :: !(Maybe Form)
+    , _cmForm :: !(Maybe Form)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1737,9 +1737,9 @@ instance ToJSON ShortAnswerSubmission where
 data Invitation =
   Invitation'
     { _iCourseId :: !(Maybe Text)
-    , _iUserId   :: !(Maybe Text)
-    , _iRole     :: !(Maybe InvitationRole)
-    , _iId       :: !(Maybe Text)
+    , _iUserId :: !(Maybe Text)
+    , _iRole :: !(Maybe InvitationRole)
+    , _iId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1806,10 +1806,10 @@ instance ToJSON Invitation where
 -- /See:/ 'attachment' smart constructor.
 data Attachment =
   Attachment'
-    { _aDriveFile    :: !(Maybe DriveFile)
-    , _aLink         :: !(Maybe Link)
+    { _aDriveFile :: !(Maybe DriveFile)
+    , _aLink :: !(Maybe Link)
     , _aYouTubeVideo :: !(Maybe YouTubeVideo)
-    , _aForm         :: !(Maybe Form)
+    , _aForm :: !(Maybe Form)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1878,10 +1878,10 @@ instance ToJSON Attachment where
 -- /See:/ 'topic' smart constructor.
 data Topic =
   Topic'
-    { _tCourseId   :: !(Maybe Text)
+    { _tCourseId :: !(Maybe Text)
     , _tUpdateTime :: !(Maybe DateTime')
-    , _tTopicId    :: !(Maybe Text)
-    , _tName       :: !(Maybe Text)
+    , _tTopicId :: !(Maybe Text)
+    , _tName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1954,18 +1954,18 @@ instance ToJSON Topic where
 -- /See:/ 'announcement' smart constructor.
 data Announcement =
   Announcement'
-    { _aCreationTime              :: !(Maybe DateTime')
-    , _aScheduledTime             :: !(Maybe DateTime')
-    , _aState                     :: !(Maybe AnnouncementState)
-    , _aAssigneeMode              :: !(Maybe AnnouncementAssigneeMode)
-    , _aText                      :: !(Maybe Text)
-    , _aMaterials                 :: !(Maybe [Material])
-    , _aCourseId                  :: !(Maybe Text)
+    { _aCreationTime :: !(Maybe DateTime')
+    , _aScheduledTime :: !(Maybe DateTime')
+    , _aState :: !(Maybe AnnouncementState)
+    , _aAssigneeMode :: !(Maybe AnnouncementAssigneeMode)
+    , _aText :: !(Maybe Text)
+    , _aMaterials :: !(Maybe [Material])
+    , _aCourseId :: !(Maybe Text)
     , _aIndividualStudentsOptions :: !(Maybe IndividualStudentsOptions)
-    , _aUpdateTime                :: !(Maybe DateTime')
-    , _aId                        :: !(Maybe Text)
-    , _aCreatorUserId             :: !(Maybe Text)
-    , _aAlternateLink             :: !(Maybe Text)
+    , _aUpdateTime :: !(Maybe DateTime')
+    , _aId :: !(Maybe Text)
+    , _aCreatorUserId :: !(Maybe Text)
+    , _aAlternateLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2136,23 +2136,23 @@ instance ToJSON Announcement where
 -- /See:/ 'studentSubmission' smart constructor.
 data StudentSubmission =
   StudentSubmission'
-    { _ssCreationTime             :: !(Maybe DateTime')
-    , _ssLate                     :: !(Maybe Bool)
-    , _ssState                    :: !(Maybe StudentSubmissionState)
-    , _ssCourseId                 :: !(Maybe Text)
+    { _ssCreationTime :: !(Maybe DateTime')
+    , _ssLate :: !(Maybe Bool)
+    , _ssState :: !(Maybe StudentSubmissionState)
+    , _ssCourseId :: !(Maybe Text)
     , _ssMultipleChoiceSubmission :: !(Maybe MultipleChoiceSubmission)
-    , _ssAssignmentSubmission     :: !(Maybe AssignmentSubmission)
-    , _ssShortAnswerSubmission    :: !(Maybe ShortAnswerSubmission)
-    , _ssAssociatedWithDeveloper  :: !(Maybe Bool)
-    , _ssUserId                   :: !(Maybe Text)
-    , _ssUpdateTime               :: !(Maybe DateTime')
-    , _ssCourseWorkType           :: !(Maybe StudentSubmissionCourseWorkType)
-    , _ssSubmissionHistory        :: !(Maybe [SubmissionHistory])
-    , _ssAssignedGrade            :: !(Maybe (Textual Double))
-    , _ssId                       :: !(Maybe Text)
-    , _ssDraftGrade               :: !(Maybe (Textual Double))
-    , _ssAlternateLink            :: !(Maybe Text)
-    , _ssCourseWorkId             :: !(Maybe Text)
+    , _ssAssignmentSubmission :: !(Maybe AssignmentSubmission)
+    , _ssShortAnswerSubmission :: !(Maybe ShortAnswerSubmission)
+    , _ssAssociatedWithDeveloper :: !(Maybe Bool)
+    , _ssUserId :: !(Maybe Text)
+    , _ssUpdateTime :: !(Maybe DateTime')
+    , _ssCourseWorkType :: !(Maybe StudentSubmissionCourseWorkType)
+    , _ssSubmissionHistory :: !(Maybe [SubmissionHistory])
+    , _ssAssignedGrade :: !(Maybe (Textual Double))
+    , _ssId :: !(Maybe Text)
+    , _ssDraftGrade :: !(Maybe (Textual Double))
+    , _ssAlternateLink :: !(Maybe Text)
+    , _ssCourseWorkId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2381,7 +2381,7 @@ instance ToJSON StudentSubmission where
 data ListGuardiansResponse =
   ListGuardiansResponse'
     { _lgrNextPageToken :: !(Maybe Text)
-    , _lgrGuardians     :: !(Maybe [Guardian])
+    , _lgrGuardians :: !(Maybe [Guardian])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2441,8 +2441,8 @@ instance ToJSON ListGuardiansResponse where
 -- /See:/ 'date' smart constructor.
 data Date =
   Date'
-    { _dDay   :: !(Maybe (Textual Int32))
-    , _dYear  :: !(Maybe (Textual Int32))
+    { _dDay :: !(Maybe (Textual Int32))
+    , _dYear :: !(Maybe (Textual Int32))
     , _dMonth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2503,9 +2503,9 @@ instance ToJSON Date where
 -- /See:/ 'youTubeVideo' smart constructor.
 data YouTubeVideo =
   YouTubeVideo'
-    { _ytvThumbnailURL  :: !(Maybe Text)
-    , _ytvId            :: !(Maybe Text)
-    , _ytvTitle         :: !(Maybe Text)
+    { _ytvThumbnailURL :: !(Maybe Text)
+    , _ytvId :: !(Maybe Text)
+    , _ytvTitle :: !(Maybe Text)
     , _ytvAlternateLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2576,8 +2576,8 @@ instance ToJSON YouTubeVideo where
 data Teacher =
   Teacher'
     { _teaCourseId :: !(Maybe Text)
-    , _teaProFile  :: !(Maybe UserProFile)
-    , _teaUserId   :: !(Maybe Text)
+    , _teaProFile :: !(Maybe UserProFile)
+    , _teaUserId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2639,7 +2639,7 @@ instance ToJSON Teacher where
 data CourseMaterialSet =
   CourseMaterialSet'
     { _cmsMaterials :: !(Maybe [CourseMaterial])
-    , _cmsTitle     :: !(Maybe Text)
+    , _cmsTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2687,8 +2687,8 @@ instance ToJSON CourseMaterialSet where
 -- /See:/ 'name' smart constructor.
 data Name =
   Name'
-    { _nGivenName  :: !(Maybe Text)
-    , _nFullName   :: !(Maybe Text)
+    { _nGivenName :: !(Maybe Text)
+    , _nFullName :: !(Maybe Text)
     , _nFamilyName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2747,7 +2747,7 @@ instance ToJSON Name where
 data ListCoursesResponse =
   ListCoursesResponse'
     { _lcrNextPageToken :: !(Maybe Text)
-    , _lcrCourses       :: !(Maybe [Course])
+    , _lcrCourses :: !(Maybe [Course])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2823,12 +2823,12 @@ instance ToJSON TurnInStudentSubmissionRequest where
 -- /See:/ 'userProFile' smart constructor.
 data UserProFile =
   UserProFile'
-    { _upfPhotoURL        :: !(Maybe Text)
+    { _upfPhotoURL :: !(Maybe Text)
     , _upfVerifiedTeacher :: !(Maybe Bool)
-    , _upfName            :: !(Maybe Name)
-    , _upfEmailAddress    :: !(Maybe Text)
-    , _upfId              :: !(Maybe Text)
-    , _upfPermissions     :: !(Maybe [GlobalPermission])
+    , _upfName :: !(Maybe Name)
+    , _upfEmailAddress :: !(Maybe Text)
+    , _upfId :: !(Maybe Text)
+    , _upfPermissions :: !(Maybe [GlobalPermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2924,8 +2924,8 @@ instance ToJSON UserProFile where
 -- /See:/ 'driveFolder' smart constructor.
 data DriveFolder =
   DriveFolder'
-    { _dId            :: !(Maybe Text)
-    , _dTitle         :: !(Maybe Text)
+    { _dId :: !(Maybe Text)
+    , _dTitle :: !(Maybe Text)
     , _dAlternateLink :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3031,8 +3031,8 @@ instance ToJSON SubmissionHistory where
 -- /See:/ 'stateHistory' smart constructor.
 data StateHistory =
   StateHistory'
-    { _shState          :: !(Maybe StateHistoryState)
-    , _shActorUserId    :: !(Maybe Text)
+    { _shState :: !(Maybe StateHistoryState)
+    , _shActorUserId :: !(Maybe Text)
     , _shStateTimestamp :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3130,24 +3130,24 @@ instance ToJSON MultipleChoiceQuestion where
 -- /See:/ 'course' smart constructor.
 data Course =
   Course'
-    { _couCreationTime       :: !(Maybe DateTime')
-    , _couRoom               :: !(Maybe Text)
+    { _couCreationTime :: !(Maybe DateTime')
+    , _couRoom :: !(Maybe Text)
     , _couCourseMaterialSets :: !(Maybe [CourseMaterialSet])
-    , _couCalendarId         :: !(Maybe Text)
-    , _couTeacherGroupEmail  :: !(Maybe Text)
-    , _couTeacherFolder      :: !(Maybe DriveFolder)
-    , _couCourseState        :: !(Maybe CourseCourseState)
-    , _couGuardiansEnabled   :: !(Maybe Bool)
-    , _couEnrollmentCode     :: !(Maybe Text)
-    , _couUpdateTime         :: !(Maybe DateTime')
-    , _couOwnerId            :: !(Maybe Text)
-    , _couName               :: !(Maybe Text)
-    , _couId                 :: !(Maybe Text)
-    , _couAlternateLink      :: !(Maybe Text)
-    , _couCourseGroupEmail   :: !(Maybe Text)
-    , _couDescription        :: !(Maybe Text)
+    , _couCalendarId :: !(Maybe Text)
+    , _couTeacherGroupEmail :: !(Maybe Text)
+    , _couTeacherFolder :: !(Maybe DriveFolder)
+    , _couCourseState :: !(Maybe CourseCourseState)
+    , _couGuardiansEnabled :: !(Maybe Bool)
+    , _couEnrollmentCode :: !(Maybe Text)
+    , _couUpdateTime :: !(Maybe DateTime')
+    , _couOwnerId :: !(Maybe Text)
+    , _couName :: !(Maybe Text)
+    , _couId :: !(Maybe Text)
+    , _couAlternateLink :: !(Maybe Text)
+    , _couCourseGroupEmail :: !(Maybe Text)
+    , _couDescription :: !(Maybe Text)
     , _couDescriptionHeading :: !(Maybe Text)
-    , _couSection            :: !(Maybe Text)
+    , _couSection :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3406,8 +3406,8 @@ instance ToJSON Course where
 -- /See:/ 'timeOfDay' smart constructor.
 data TimeOfDay' =
   TimeOfDay''
-    { _todNanos   :: !(Maybe (Textual Int32))
-    , _todHours   :: !(Maybe (Textual Int32))
+    { _todNanos :: !(Maybe (Textual Int32))
+    , _todHours :: !(Maybe (Textual Int32))
     , _todMinutes :: !(Maybe (Textual Int32))
     , _todSeconds :: !(Maybe (Textual Int32))
     }
@@ -3486,7 +3486,7 @@ instance ToJSON TimeOfDay' where
 -- /See:/ 'listGuardianInvitationsResponse' smart constructor.
 data ListGuardianInvitationsResponse =
   ListGuardianInvitationsResponse'
-    { _lgirNextPageToken       :: !(Maybe Text)
+    { _lgirNextPageToken :: !(Maybe Text)
     , _lgirGuardianInvitations :: !(Maybe [GuardianInvitation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3582,7 +3582,7 @@ instance ToJSON Assignment where
 data ListStudentsResponse =
   ListStudentsResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrStudents      :: !(Maybe [Student])
+    , _lsrStudents :: !(Maybe [Student])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3768,7 +3768,7 @@ instance ToJSON CourseRosterChangesInfo where
 -- /See:/ 'modifyIndividualStudentsOptions' smart constructor.
 data ModifyIndividualStudentsOptions =
   ModifyIndividualStudentsOptions'
-    { _misoAddStudentIds    :: !(Maybe [Text])
+    { _misoAddStudentIds :: !(Maybe [Text])
     , _misoRemoveStudentIds :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3867,9 +3867,9 @@ instance ToJSON CloudPubsubTopic where
 data Form =
   Form'
     { _fThumbnailURL :: !(Maybe Text)
-    , _fFormURL      :: !(Maybe Text)
-    , _fTitle        :: !(Maybe Text)
-    , _fResponseURL  :: !(Maybe Text)
+    , _fFormURL :: !(Maybe Text)
+    , _fTitle :: !(Maybe Text)
+    , _fResponseURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3941,7 +3941,7 @@ instance ToJSON Form where
 data ListTeachersResponse =
   ListTeachersResponse'
     { _lNextPageToken :: !(Maybe Text)
-    , _lTeachers      :: !(Maybe [Teacher])
+    , _lTeachers :: !(Maybe [Teacher])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3993,10 +3993,10 @@ instance ToJSON ListTeachersResponse where
 -- /See:/ 'student' smart constructor.
 data Student =
   Student'
-    { _sCourseId          :: !(Maybe Text)
-    , _sProFile           :: !(Maybe UserProFile)
+    { _sCourseId :: !(Maybe Text)
+    , _sProFile :: !(Maybe UserProFile)
     , _sStudentWorkFolder :: !(Maybe DriveFolder)
-    , _sUserId            :: !(Maybe Text)
+    , _sUserId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4071,9 +4071,9 @@ instance ToJSON Student where
 -- /See:/ 'registration' smart constructor.
 data Registration =
   Registration'
-    { _rRegistrationId   :: !(Maybe Text)
-    , _rExpiryTime       :: !(Maybe DateTime')
-    , _rFeed             :: !(Maybe Feed)
+    { _rRegistrationId :: !(Maybe Text)
+    , _rExpiryTime :: !(Maybe DateTime')
+    , _rFeed :: !(Maybe Feed)
     , _rCloudPubsubTopic :: !(Maybe CloudPubsubTopic)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

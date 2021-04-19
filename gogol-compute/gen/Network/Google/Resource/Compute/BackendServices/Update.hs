@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.BackendServices.Update
     , bsuBackendService
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.backendServices.update@ method which the
 -- 'BackendServicesUpdate' request conforms to.
@@ -68,9 +68,9 @@ type BackendServicesUpdateResource =
 -- /See:/ 'backendServicesUpdate' smart constructor.
 data BackendServicesUpdate =
   BackendServicesUpdate'
-    { _bsuRequestId      :: !(Maybe Text)
-    , _bsuProject        :: !Text
-    , _bsuPayload        :: !BackendService
+    { _bsuRequestId :: !(Maybe Text)
+    , _bsuProject :: !Text
+    , _bsuPayload :: !BackendService
     , _bsuBackendService :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -17,8 +17,8 @@
 --
 module Network.Google.AppsReseller.Types.Product where
 
-import           Network.Google.AppsReseller.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AppsReseller.Types.Sum
+import Network.Google.Prelude
 
 -- | The G Suite annual commitment and flexible payment plans can be in a
 -- 30-day free trial. For more information, see the API concepts.
@@ -26,7 +26,7 @@ import           Network.Google.Prelude
 -- /See:/ 'subscriptionTrialSettings' smart constructor.
 data SubscriptionTrialSettings =
   SubscriptionTrialSettings'
-    { _stsIsInTrial    :: !(Maybe Bool)
+    { _stsIsInTrial :: !(Maybe Bool)
     , _stsTrialEndTime :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -115,7 +115,7 @@ instance ToJSON ResellernotifyResource where
 -- /See:/ 'resellernotifyGetwatchdetailsResponse' smart constructor.
 data ResellernotifyGetwatchdetailsResponse =
   ResellernotifyGetwatchdetailsResponse'
-    { _rgrTopicName                    :: !(Maybe Text)
+    { _rgrTopicName :: !(Maybe Text)
     , _rgrServiceAccountEmailAddresses :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -173,15 +173,15 @@ instance ToJSON ResellernotifyGetwatchdetailsResponse
 data Address =
   Address'
     { _aOrganizationName :: !(Maybe Text)
-    , _aKind             :: !Text
-    , _aPostalCode       :: !(Maybe Text)
-    , _aAddressLine1     :: !(Maybe Text)
-    , _aLocality         :: !(Maybe Text)
-    , _aContactName      :: !(Maybe Text)
-    , _aAddressLine2     :: !(Maybe Text)
-    , _aCountryCode      :: !(Maybe Text)
-    , _aRegion           :: !(Maybe Text)
-    , _aAddressLine3     :: !(Maybe Text)
+    , _aKind :: !Text
+    , _aPostalCode :: !(Maybe Text)
+    , _aAddressLine1 :: !(Maybe Text)
+    , _aLocality :: !(Maybe Text)
+    , _aContactName :: !(Maybe Text)
+    , _aAddressLine2 :: !(Maybe Text)
+    , _aCountryCode :: !(Maybe Text)
+    , _aRegion :: !(Maybe Text)
+    , _aAddressLine3 :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -319,13 +319,13 @@ instance ToJSON Address where
 data Customer =
   Customer'
     { _cCustomerDomainVerified :: !(Maybe Bool)
-    , _cResourceUiURL          :: !(Maybe Text)
-    , _cKind                   :: !Text
-    , _cCustomerId             :: !(Maybe Text)
-    , _cAlternateEmail         :: !(Maybe Text)
-    , _cCustomerDomain         :: !(Maybe Text)
-    , _cPhoneNumber            :: !(Maybe Text)
-    , _cPostalAddress          :: !(Maybe Address)
+    , _cResourceUiURL :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cCustomerId :: !(Maybe Text)
+    , _cAlternateEmail :: !(Maybe Text)
+    , _cCustomerDomain :: !(Maybe Text)
+    , _cPhoneNumber :: !(Maybe Text)
+    , _cPostalAddress :: !(Maybe Address)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -456,11 +456,11 @@ instance ToJSON Customer where
 -- /See:/ 'changePlanRequest' smart constructor.
 data ChangePlanRequest =
   ChangePlanRequest'
-    { _cprKind            :: !Text
-    , _cprDealCode        :: !(Maybe Text)
-    , _cprPlanName        :: !(Maybe Text)
+    { _cprKind :: !Text
+    , _cprDealCode :: !(Maybe Text)
+    , _cprPlanName :: !(Maybe Text)
     , _cprPurchaseOrderId :: !(Maybe Text)
-    , _cprSeats           :: !(Maybe Seats)
+    , _cprSeats :: !(Maybe Seats)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -561,7 +561,7 @@ instance ToJSON ChangePlanRequest where
 data SubscriptionPlanCommitmentInterval =
   SubscriptionPlanCommitmentInterval'
     { _spciStartTime :: !(Maybe (Textual Int64))
-    , _spciEndTime   :: !(Maybe (Textual Int64))
+    , _spciEndTime :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -620,8 +620,8 @@ instance ToJSON SubscriptionPlanCommitmentInterval
 data SubscriptionPlan =
   SubscriptionPlan'
     { _spCommitmentInterval :: !(Maybe SubscriptionPlanCommitmentInterval)
-    , _spIsCommitmentPlan   :: !(Maybe Bool)
-    , _spPlanName           :: !(Maybe Text)
+    , _spIsCommitmentPlan :: !(Maybe Bool)
+    , _spPlanName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -701,7 +701,7 @@ instance ToJSON SubscriptionPlan where
 data Subscriptions =
   Subscriptions'
     { _sNextPageToken :: !(Maybe Text)
-    , _sKind          :: !Text
+    , _sKind :: !Text
     , _sSubscriptions :: !(Maybe [Subscription])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -768,10 +768,10 @@ instance ToJSON Subscriptions where
 -- /See:/ 'seats' smart constructor.
 data Seats =
   Seats'
-    { _seaNumberOfSeats         :: !(Maybe (Textual Int32))
-    , _seaMaximumNumberOfSeats  :: !(Maybe (Textual Int32))
+    { _seaNumberOfSeats :: !(Maybe (Textual Int32))
+    , _seaMaximumNumberOfSeats :: !(Maybe (Textual Int32))
     , _seaLicensedNumberOfSeats :: !(Maybe (Textual Int32))
-    , _seaKind                  :: !Text
+    , _seaKind :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -865,7 +865,7 @@ instance ToJSON Seats where
 -- /See:/ 'renewalSettings' smart constructor.
 data RenewalSettings =
   RenewalSettings'
-    { _rsKind        :: !Text
+    { _rsKind :: !Text
     , _rsRenewalType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -918,24 +918,24 @@ instance ToJSON RenewalSettings where
 -- /See:/ 'subscription' smart constructor.
 data Subscription =
   Subscription'
-    { _subCreationTime      :: !(Maybe (Textual Int64))
-    , _subBillingMethod     :: !(Maybe Text)
-    , _subStatus            :: !(Maybe Text)
-    , _subTrialSettings     :: !(Maybe SubscriptionTrialSettings)
-    , _subSKUName           :: !(Maybe Text)
-    , _subResourceUiURL     :: !(Maybe Text)
-    , _subKind              :: !Text
-    , _subSKUId             :: !(Maybe Text)
-    , _subPlan              :: !(Maybe SubscriptionPlan)
-    , _subDealCode          :: !(Maybe Text)
-    , _subCustomerId        :: !(Maybe Text)
-    , _subCustomerDomain    :: !(Maybe Text)
+    { _subCreationTime :: !(Maybe (Textual Int64))
+    , _subBillingMethod :: !(Maybe Text)
+    , _subStatus :: !(Maybe Text)
+    , _subTrialSettings :: !(Maybe SubscriptionTrialSettings)
+    , _subSKUName :: !(Maybe Text)
+    , _subResourceUiURL :: !(Maybe Text)
+    , _subKind :: !Text
+    , _subSKUId :: !(Maybe Text)
+    , _subPlan :: !(Maybe SubscriptionPlan)
+    , _subDealCode :: !(Maybe Text)
+    , _subCustomerId :: !(Maybe Text)
+    , _subCustomerDomain :: !(Maybe Text)
     , _subSuspensionReasons :: !(Maybe [Text])
-    , _subTransferInfo      :: !(Maybe SubscriptionTransferInfo)
-    , _subPurchaseOrderId   :: !(Maybe Text)
-    , _subSeats             :: !(Maybe Seats)
-    , _subRenewalSettings   :: !(Maybe RenewalSettings)
-    , _subSubscriptionId    :: !(Maybe Text)
+    , _subTransferInfo :: !(Maybe SubscriptionTransferInfo)
+    , _subPurchaseOrderId :: !(Maybe Text)
+    , _subSeats :: !(Maybe Seats)
+    , _subRenewalSettings :: !(Maybe RenewalSettings)
+    , _subSubscriptionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1196,7 +1196,7 @@ instance ToJSON Subscription where
 data SubscriptionTransferInfo =
   SubscriptionTransferInfo'
     { _stiTransferabilityExpirationTime :: !(Maybe (Textual Int64))
-    , _stiMinimumTransferableSeats      :: !(Maybe (Textual Int32))
+    , _stiMinimumTransferableSeats :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

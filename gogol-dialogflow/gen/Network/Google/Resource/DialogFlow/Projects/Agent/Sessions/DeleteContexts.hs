@@ -41,8 +41,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Sessions.DeleteContexts
     , pasdcCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.sessions.deleteContexts@ method which the
 -- 'ProjectsAgentSessionsDeleteContexts' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsAgentSessionsDeleteContextsResource =
 -- /See:/ 'projectsAgentSessionsDeleteContexts' smart constructor.
 data ProjectsAgentSessionsDeleteContexts =
   ProjectsAgentSessionsDeleteContexts'
-    { _pasdcParent         :: !Text
-    , _pasdcXgafv          :: !(Maybe Xgafv)
+    { _pasdcParent :: !Text
+    , _pasdcXgafv :: !(Maybe Xgafv)
     , _pasdcUploadProtocol :: !(Maybe Text)
-    , _pasdcAccessToken    :: !(Maybe Text)
-    , _pasdcUploadType     :: !(Maybe Text)
-    , _pasdcCallback       :: !(Maybe Text)
+    , _pasdcAccessToken :: !(Maybe Text)
+    , _pasdcUploadType :: !(Maybe Text)
+    , _pasdcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Groups.Get
     , ggGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.groups.get@ method which the
 -- 'GroupsGet' request conforms to.

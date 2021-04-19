@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.ManagedConfigurationsforUser.Ge
     , mcugManagedConfigurationForUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.managedconfigurationsforuser.get@ method which the
 -- 'ManagedConfigurationsforUserGet' request conforms to.
@@ -62,8 +62,8 @@ type ManagedConfigurationsforUserGetResource =
 -- /See:/ 'managedConfigurationsforUserGet' smart constructor.
 data ManagedConfigurationsforUserGet =
   ManagedConfigurationsforUserGet'
-    { _mcugEnterpriseId                  :: !Text
-    , _mcugUserId                        :: !Text
+    { _mcugEnterpriseId :: !Text
+    , _mcugUserId :: !Text
     , _mcugManagedConfigurationForUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

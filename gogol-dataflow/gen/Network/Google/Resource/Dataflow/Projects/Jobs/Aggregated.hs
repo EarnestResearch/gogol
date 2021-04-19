@@ -46,8 +46,8 @@ module Network.Google.Resource.Dataflow.Projects.Jobs.Aggregated
     , pjaCallback
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.jobs.aggregated@ method which the
 -- 'ProjectsJobsAggregated' request conforms to.
@@ -74,17 +74,17 @@ type ProjectsJobsAggregatedResource =
 -- /See:/ 'projectsJobsAggregated' smart constructor.
 data ProjectsJobsAggregated =
   ProjectsJobsAggregated'
-    { _pjaXgafv          :: !(Maybe Xgafv)
+    { _pjaXgafv :: !(Maybe Xgafv)
     , _pjaUploadProtocol :: !(Maybe Text)
-    , _pjaLocation       :: !(Maybe Text)
-    , _pjaAccessToken    :: !(Maybe Text)
-    , _pjaUploadType     :: !(Maybe Text)
-    , _pjaView           :: !(Maybe Text)
-    , _pjaFilter         :: !(Maybe Text)
-    , _pjaPageToken      :: !(Maybe Text)
-    , _pjaProjectId      :: !Text
-    , _pjaPageSize       :: !(Maybe (Textual Int32))
-    , _pjaCallback       :: !(Maybe Text)
+    , _pjaLocation :: !(Maybe Text)
+    , _pjaAccessToken :: !(Maybe Text)
+    , _pjaUploadType :: !(Maybe Text)
+    , _pjaView :: !(Maybe Text)
+    , _pjaFilter :: !(Maybe Text)
+    , _pjaPageToken :: !(Maybe Text)
+    , _pjaProjectId :: !Text
+    , _pjaPageSize :: !(Maybe (Textual Int32))
+    , _pjaCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

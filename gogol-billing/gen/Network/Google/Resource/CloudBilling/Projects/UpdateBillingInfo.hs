@@ -67,8 +67,8 @@ module Network.Google.Resource.CloudBilling.Projects.UpdateBillingInfo
     , pubiCallback
     ) where
 
-import           Network.Google.Billing.Types
-import           Network.Google.Prelude
+import Network.Google.Billing.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbilling.projects.updateBillingInfo@ method which the
 -- 'ProjectsUpdateBillingInfo' request conforms to.
@@ -115,13 +115,13 @@ type ProjectsUpdateBillingInfoResource =
 -- /See:/ 'projectsUpdateBillingInfo' smart constructor.
 data ProjectsUpdateBillingInfo =
   ProjectsUpdateBillingInfo'
-    { _pubiXgafv          :: !(Maybe Xgafv)
+    { _pubiXgafv :: !(Maybe Xgafv)
     , _pubiUploadProtocol :: !(Maybe Text)
-    , _pubiAccessToken    :: !(Maybe Text)
-    , _pubiUploadType     :: !(Maybe Text)
-    , _pubiPayload        :: !ProjectBillingInfo
-    , _pubiName           :: !Text
-    , _pubiCallback       :: !(Maybe Text)
+    , _pubiAccessToken :: !(Maybe Text)
+    , _pubiUploadType :: !(Maybe Text)
+    , _pubiPayload :: !ProjectBillingInfo
+    , _pubiName :: !Text
+    , _pubiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

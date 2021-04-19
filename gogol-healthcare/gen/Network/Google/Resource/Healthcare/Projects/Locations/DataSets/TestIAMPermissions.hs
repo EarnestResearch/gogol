@@ -47,8 +47,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.TestIAMPer
     , pldstipCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.testIamPermissions@ method which the
 -- 'ProjectsLocationsDataSetsTestIAMPermissions' request conforms to.
@@ -75,13 +75,13 @@ type ProjectsLocationsDataSetsTestIAMPermissionsResource
 -- /See:/ 'projectsLocationsDataSetsTestIAMPermissions' smart constructor.
 data ProjectsLocationsDataSetsTestIAMPermissions =
   ProjectsLocationsDataSetsTestIAMPermissions'
-    { _pldstipXgafv          :: !(Maybe Xgafv)
+    { _pldstipXgafv :: !(Maybe Xgafv)
     , _pldstipUploadProtocol :: !(Maybe Text)
-    , _pldstipAccessToken    :: !(Maybe Text)
-    , _pldstipUploadType     :: !(Maybe Text)
-    , _pldstipPayload        :: !TestIAMPermissionsRequest
-    , _pldstipResource       :: !Text
-    , _pldstipCallback       :: !(Maybe Text)
+    , _pldstipAccessToken :: !(Maybe Text)
+    , _pldstipUploadType :: !(Maybe Text)
+    , _pldstipPayload :: !TestIAMPermissionsRequest
+    , _pldstipResource :: !Text
+    , _pldstipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

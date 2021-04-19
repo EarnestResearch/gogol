@@ -39,8 +39,8 @@ module Network.Google.Resource.Directory.Notifications.List
     , nlMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.notifications.list@ method which the
 -- 'NotificationsList' request conforms to.
@@ -61,9 +61,9 @@ type NotificationsListResource =
 -- /See:/ 'notificationsList' smart constructor.
 data NotificationsList =
   NotificationsList'
-    { _nlCustomer   :: !Text
-    , _nlLanguage   :: !(Maybe Text)
-    , _nlPageToken  :: !(Maybe Text)
+    { _nlCustomer :: !Text
+    , _nlLanguage :: !(Maybe Text)
+    , _nlPageToken :: !(Maybe Text)
     , _nlMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.StorageTransfer.TransferJobs.List
     , tjlCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StorageTransfer.Types
+import Network.Google.Prelude
+import Network.Google.StorageTransfer.Types
 
 -- | A resource alias for @storagetransfer.transferJobs.list@ method which the
 -- 'TransferJobsList' request conforms to.
@@ -67,14 +67,14 @@ type TransferJobsListResource =
 -- /See:/ 'transferJobsList' smart constructor.
 data TransferJobsList =
   TransferJobsList'
-    { _tjlXgafv          :: !(Maybe Xgafv)
+    { _tjlXgafv :: !(Maybe Xgafv)
     , _tjlUploadProtocol :: !(Maybe Text)
-    , _tjlAccessToken    :: !(Maybe Text)
-    , _tjlUploadType     :: !(Maybe Text)
-    , _tjlFilter         :: !(Maybe Text)
-    , _tjlPageToken      :: !(Maybe Text)
-    , _tjlPageSize       :: !(Maybe (Textual Int32))
-    , _tjlCallback       :: !(Maybe Text)
+    , _tjlAccessToken :: !(Maybe Text)
+    , _tjlUploadType :: !(Maybe Text)
+    , _tjlFilter :: !(Maybe Text)
+    , _tjlPageToken :: !(Maybe Text)
+    , _tjlPageSize :: !(Maybe (Textual Int32))
+    , _tjlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

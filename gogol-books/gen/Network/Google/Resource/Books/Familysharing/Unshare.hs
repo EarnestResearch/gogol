@@ -39,8 +39,8 @@ module Network.Google.Resource.Books.Familysharing.Unshare
     , fuDocId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.familysharing.unshare@ method which the
 -- 'FamilysharingUnshare' request conforms to.
@@ -61,8 +61,8 @@ type FamilysharingUnshareResource =
 data FamilysharingUnshare =
   FamilysharingUnshare'
     { _fuVolumeId :: !(Maybe Text)
-    , _fuSource   :: !(Maybe Text)
-    , _fuDocId    :: !(Maybe Text)
+    , _fuSource :: !(Maybe Text)
+    , _fuDocId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

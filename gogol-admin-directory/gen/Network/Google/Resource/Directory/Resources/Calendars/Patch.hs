@@ -41,8 +41,8 @@ module Network.Google.Resource.Directory.Resources.Calendars.Patch
     , rcpCalendarResourceId
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.resources.calendars.patch@ method which the
 -- 'ResourcesCalendarsPatch' request conforms to.
@@ -67,8 +67,8 @@ type ResourcesCalendarsPatchResource =
 -- /See:/ 'resourcesCalendarsPatch' smart constructor.
 data ResourcesCalendarsPatch =
   ResourcesCalendarsPatch'
-    { _rcpPayload            :: !CalendarResource
-    , _rcpCustomer           :: !Text
+    { _rcpPayload :: !CalendarResource
+    , _rcpCustomer :: !Text
     , _rcpCalendarResourceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.UserRolePermissions.List
     , urplProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRolePermissions.list@ method which the
 -- 'UserRolePermissionsList' request conforms to.
@@ -57,7 +57,7 @@ type UserRolePermissionsListResource =
 -- /See:/ 'userRolePermissionsList' smart constructor.
 data UserRolePermissionsList =
   UserRolePermissionsList'
-    { _urplIds       :: !(Maybe [Textual Int64])
+    { _urplIds :: !(Maybe [Textual Int64])
     , _urplProFileId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

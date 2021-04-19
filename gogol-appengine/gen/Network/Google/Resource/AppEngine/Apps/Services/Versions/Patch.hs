@@ -74,8 +74,8 @@ module Network.Google.Resource.AppEngine.Apps.Services.Versions.Patch
     , asvpCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.services.versions.patch@ method which the
 -- 'AppsServicesVersionsPatch' request conforms to.
@@ -131,16 +131,16 @@ type AppsServicesVersionsPatchResource =
 -- /See:/ 'appsServicesVersionsPatch' smart constructor.
 data AppsServicesVersionsPatch =
   AppsServicesVersionsPatch'
-    { _asvpXgafv          :: !(Maybe Xgafv)
+    { _asvpXgafv :: !(Maybe Xgafv)
     , _asvpUploadProtocol :: !(Maybe Text)
-    , _asvpUpdateMask     :: !(Maybe GFieldMask)
-    , _asvpAccessToken    :: !(Maybe Text)
-    , _asvpUploadType     :: !(Maybe Text)
-    , _asvpPayload        :: !Version
-    , _asvpVersionsId     :: !Text
-    , _asvpAppsId         :: !Text
-    , _asvpServicesId     :: !Text
-    , _asvpCallback       :: !(Maybe Text)
+    , _asvpUpdateMask :: !(Maybe GFieldMask)
+    , _asvpAccessToken :: !(Maybe Text)
+    , _asvpUploadType :: !(Maybe Text)
+    , _asvpPayload :: !Version
+    , _asvpVersionsId :: !Text
+    , _asvpAppsId :: !Text
+    , _asvpServicesId :: !Text
+    , _asvpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

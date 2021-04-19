@@ -43,8 +43,8 @@ module Network.Google.Resource.Chat.Spaces.Messages.Update
     , smuCallback
     ) where
 
-import           Network.Google.Chat.Types
-import           Network.Google.Prelude
+import Network.Google.Chat.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @chat.spaces.messages.update@ method which the
 -- 'SpacesMessagesUpdate' request conforms to.
@@ -65,14 +65,14 @@ type SpacesMessagesUpdateResource =
 -- /See:/ 'spacesMessagesUpdate' smart constructor.
 data SpacesMessagesUpdate =
   SpacesMessagesUpdate'
-    { _smuXgafv          :: !(Maybe Xgafv)
+    { _smuXgafv :: !(Maybe Xgafv)
     , _smuUploadProtocol :: !(Maybe Text)
-    , _smuUpdateMask     :: !(Maybe GFieldMask)
-    , _smuAccessToken    :: !(Maybe Text)
-    , _smuUploadType     :: !(Maybe Text)
-    , _smuPayload        :: !Message
-    , _smuName           :: !Text
-    , _smuCallback       :: !(Maybe Text)
+    , _smuUpdateMask :: !(Maybe GFieldMask)
+    , _smuAccessToken :: !(Maybe Text)
+    , _smuUploadType :: !(Maybe Text)
+    , _smuPayload :: !Message
+    , _smuName :: !Text
+    , _smuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.DeploymentManager.Deployments.List
     , dlMaxResults
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.deployments.list@ method which the
 -- 'DeploymentsList' request conforms to.
@@ -64,10 +64,10 @@ type DeploymentsListResource =
 -- /See:/ 'deploymentsList' smart constructor.
 data DeploymentsList =
   DeploymentsList'
-    { _dlOrderBy    :: !(Maybe Text)
-    , _dlProject    :: !Text
-    , _dlFilter     :: !(Maybe Text)
-    , _dlPageToken  :: !(Maybe Text)
+    { _dlOrderBy :: !(Maybe Text)
+    , _dlProject :: !Text
+    , _dlFilter :: !(Maybe Text)
+    , _dlPageToken :: !(Maybe Text)
     , _dlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

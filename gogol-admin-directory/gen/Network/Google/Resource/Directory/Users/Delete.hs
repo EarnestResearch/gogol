@@ -36,8 +36,8 @@ module Network.Google.Resource.Directory.Users.Delete
     , udUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.delete@ method which the
 -- 'UsersDelete' request conforms to.

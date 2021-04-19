@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.TargetSSLProxies.List
     , tsplMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetSslProxies.list@ method which the
 -- 'TargetSSLProxiesList' request conforms to.
@@ -66,10 +66,10 @@ type TargetSSLProxiesListResource =
 -- /See:/ 'targetSSLProxiesList' smart constructor.
 data TargetSSLProxiesList =
   TargetSSLProxiesList'
-    { _tsplOrderBy    :: !(Maybe Text)
-    , _tsplProject    :: !Text
-    , _tsplFilter     :: !(Maybe Text)
-    , _tsplPageToken  :: !(Maybe Text)
+    { _tsplOrderBy :: !(Maybe Text)
+    , _tsplProject :: !Text
+    , _tsplFilter :: !(Maybe Text)
+    , _tsplPageToken :: !(Maybe Text)
     , _tsplMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

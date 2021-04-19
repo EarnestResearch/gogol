@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.Routers.Patch
     , rpRegion
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routers.patch@ method which the
 -- 'RoutersPatch' request conforms to.
@@ -68,10 +68,10 @@ type RoutersPatchResource =
 data RoutersPatch =
   RoutersPatch'
     { _rpRequestId :: !(Maybe Text)
-    , _rpProject   :: !Text
-    , _rpRouter    :: !Text
-    , _rpPayload   :: !Router
-    , _rpRegion    :: !Text
+    , _rpProject :: !Text
+    , _rpRouter :: !Text
+    , _rpPayload :: !Router
+    , _rpRegion :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

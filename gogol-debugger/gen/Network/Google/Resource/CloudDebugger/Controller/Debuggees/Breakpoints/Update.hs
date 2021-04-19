@@ -49,8 +49,8 @@ module Network.Google.Resource.CloudDebugger.Controller.Debuggees.Breakpoints.Up
     , cdbuCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.controller.debuggees.breakpoints.update@ method which the
 -- 'ControllerDebuggeesBreakpointsUpdate' request conforms to.
@@ -81,14 +81,14 @@ type ControllerDebuggeesBreakpointsUpdateResource =
 -- /See:/ 'controllerDebuggeesBreakpointsUpdate' smart constructor.
 data ControllerDebuggeesBreakpointsUpdate =
   ControllerDebuggeesBreakpointsUpdate'
-    { _cdbuXgafv          :: !(Maybe Xgafv)
+    { _cdbuXgafv :: !(Maybe Xgafv)
     , _cdbuUploadProtocol :: !(Maybe Text)
-    , _cdbuAccessToken    :: !(Maybe Text)
-    , _cdbuUploadType     :: !(Maybe Text)
-    , _cdbuPayload        :: !UpdateActiveBreakpointRequest
-    , _cdbuId             :: !Text
-    , _cdbuDebuggeeId     :: !Text
-    , _cdbuCallback       :: !(Maybe Text)
+    , _cdbuAccessToken :: !(Maybe Text)
+    , _cdbuUploadType :: !(Maybe Text)
+    , _cdbuPayload :: !UpdateActiveBreakpointRequest
+    , _cdbuId :: !Text
+    , _cdbuDebuggeeId :: !Text
+    , _cdbuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.DLP.Organizations.StoredInfoTypes.Delete
     , ositdCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.organizations.storedInfoTypes.delete@ method which the
 -- 'OrganizationsStoredInfoTypesDelete' request conforms to.
@@ -66,12 +66,12 @@ type OrganizationsStoredInfoTypesDeleteResource =
 -- /See:/ 'organizationsStoredInfoTypesDelete' smart constructor.
 data OrganizationsStoredInfoTypesDelete =
   OrganizationsStoredInfoTypesDelete'
-    { _ositdXgafv          :: !(Maybe Xgafv)
+    { _ositdXgafv :: !(Maybe Xgafv)
     , _ositdUploadProtocol :: !(Maybe Text)
-    , _ositdAccessToken    :: !(Maybe Text)
-    , _ositdUploadType     :: !(Maybe Text)
-    , _ositdName           :: !Text
-    , _ositdCallback       :: !(Maybe Text)
+    , _ositdAccessToken :: !(Maybe Text)
+    , _ositdUploadType :: !(Maybe Text)
+    , _ositdName :: !Text
+    , _ositdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

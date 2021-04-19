@@ -46,8 +46,8 @@ module Network.Google.Resource.AccessContextManager.AccessPolicies.ServicePerime
     , apsppCallback
     ) where
 
-import           Network.Google.AccessContextManager.Types
-import           Network.Google.Prelude
+import Network.Google.AccessContextManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accesscontextmanager.accessPolicies.servicePerimeters.patch@ method which the
 -- 'AccessPoliciesServicePerimetersPatch' request conforms to.
@@ -72,14 +72,14 @@ type AccessPoliciesServicePerimetersPatchResource =
 -- /See:/ 'accessPoliciesServicePerimetersPatch' smart constructor.
 data AccessPoliciesServicePerimetersPatch =
   AccessPoliciesServicePerimetersPatch'
-    { _apsppXgafv          :: !(Maybe Xgafv)
+    { _apsppXgafv :: !(Maybe Xgafv)
     , _apsppUploadProtocol :: !(Maybe Text)
-    , _apsppUpdateMask     :: !(Maybe GFieldMask)
-    , _apsppAccessToken    :: !(Maybe Text)
-    , _apsppUploadType     :: !(Maybe Text)
-    , _apsppPayload        :: !ServicePerimeter
-    , _apsppName           :: !Text
-    , _apsppCallback       :: !(Maybe Text)
+    , _apsppUpdateMask :: !(Maybe GFieldMask)
+    , _apsppAccessToken :: !(Maybe Text)
+    , _apsppUploadType :: !(Maybe Text)
+    , _apsppPayload :: !ServicePerimeter
+    , _apsppName :: !Text
+    , _apsppCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

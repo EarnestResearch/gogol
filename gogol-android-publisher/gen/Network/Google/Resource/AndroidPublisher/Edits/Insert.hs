@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Insert
     , eiPayload
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.insert@ method which the
 -- 'EditsInsert' request conforms to.
@@ -57,7 +57,7 @@ type EditsInsertResource =
 data EditsInsert =
   EditsInsert'
     { _eiPackageName :: !Text
-    , _eiPayload     :: !AppEdit
+    , _eiPayload :: !AppEdit
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.Vision.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Vision.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Vision.Types.Sum
 
 -- | Set of detected objects with bounding boxes.
 --
@@ -26,10 +26,10 @@ import           Network.Google.Vision.Types.Sum
 data GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation =
   GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation'
     { _gcvvloaLanguageCode :: !(Maybe Text)
-    , _gcvvloaScore        :: !(Maybe (Textual Double))
+    , _gcvvloaScore :: !(Maybe (Textual Double))
     , _gcvvloaBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvvloaName         :: !(Maybe Text)
-    , _gcvvloaMid          :: !(Maybe Text)
+    , _gcvvloaName :: !(Maybe Text)
+    , _gcvvloaMid :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -125,7 +125,7 @@ instance ToJSON
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
   LatLng'
-    { _llLatitude  :: !(Maybe (Textual Double))
+    { _llLatitude :: !(Maybe (Textual Double))
     , _llLongitude :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -175,7 +175,7 @@ instance ToJSON LatLng where
 data GoogleCloudVisionV1p1beta1OutputConfig =
   GoogleCloudVisionV1p1beta1OutputConfig'
     { _gcvvocGcsDestination :: !(Maybe GoogleCloudVisionV1p1beta1GcsDestination)
-    , _gcvvocBatchSize      :: !(Maybe (Textual Int32))
+    , _gcvvocBatchSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -238,7 +238,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1ProductKeyValue =
   GoogleCloudVisionV1p3beta1ProductKeyValue'
     { _gcvvpkvValue :: !(Maybe Text)
-    , _gcvvpkvKey   :: !(Maybe Text)
+    , _gcvvpkvKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -344,7 +344,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1ImageAnnotationContext' smart constructor.
 data GoogleCloudVisionV1p3beta1ImageAnnotationContext =
   GoogleCloudVisionV1p3beta1ImageAnnotationContext'
-    { _gcvviacURI        :: !(Maybe Text)
+    { _gcvviacURI :: !(Maybe Text)
     , _gcvviacPageNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -403,8 +403,8 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1Property =
   GoogleCloudVisionV1p3beta1Property'
     { _gcvvpUint64Value :: !(Maybe (Textual Word64))
-    , _gcvvpValue       :: !(Maybe Text)
-    , _gcvvpName        :: !(Maybe Text)
+    , _gcvvpValue :: !(Maybe Text)
+    , _gcvvpName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -466,7 +466,7 @@ instance ToJSON GoogleCloudVisionV1p3beta1Property
 data GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage =
   GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage'
     { _gcvvtadlLanguageCode :: !(Maybe Text)
-    , _gcvvtadlConfidence   :: !(Maybe (Textual Double))
+    , _gcvvtadlConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -526,7 +526,7 @@ instance ToJSON
 data KeyValue =
   KeyValue'
     { _kvValue :: !(Maybe Text)
-    , _kvKey   :: !(Maybe Text)
+    , _kvKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -570,20 +570,20 @@ instance ToJSON KeyValue where
 -- /See:/ 'googleCloudVisionV1p2beta1AnnotateImageResponse' smart constructor.
 data GoogleCloudVisionV1p2beta1AnnotateImageResponse =
   GoogleCloudVisionV1p2beta1AnnotateImageResponse'
-    { _gcvvairLogoAnnotations            :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
-    , _gcvvairProductSearchResults       :: !(Maybe GoogleCloudVisionV1p2beta1ProductSearchResults)
-    , _gcvvairContext                    :: !(Maybe GoogleCloudVisionV1p2beta1ImageAnnotationContext)
-    , _gcvvairLabelAnnotations           :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
-    , _gcvvairFaceAnnotations            :: !(Maybe [GoogleCloudVisionV1p2beta1FaceAnnotation])
-    , _gcvvairError                      :: !(Maybe Status)
-    , _gcvvairWebDetection               :: !(Maybe GoogleCloudVisionV1p2beta1WebDetection)
-    , _gcvvairSafeSearchAnnotation       :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotation)
-    , _gcvvairLandmarkAnnotations        :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
+    { _gcvvairLogoAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
+    , _gcvvairProductSearchResults :: !(Maybe GoogleCloudVisionV1p2beta1ProductSearchResults)
+    , _gcvvairContext :: !(Maybe GoogleCloudVisionV1p2beta1ImageAnnotationContext)
+    , _gcvvairLabelAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
+    , _gcvvairFaceAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1FaceAnnotation])
+    , _gcvvairError :: !(Maybe Status)
+    , _gcvvairWebDetection :: !(Maybe GoogleCloudVisionV1p2beta1WebDetection)
+    , _gcvvairSafeSearchAnnotation :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotation)
+    , _gcvvairLandmarkAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
     , _gcvvairLocalizedObjectAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation])
-    , _gcvvairTextAnnotations            :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
-    , _gcvvairCropHintsAnnotation        :: !(Maybe GoogleCloudVisionV1p2beta1CropHintsAnnotation)
-    , _gcvvairFullTextAnnotation         :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotation)
-    , _gcvvairImagePropertiesAnnotation  :: !(Maybe GoogleCloudVisionV1p2beta1ImageProperties)
+    , _gcvvairTextAnnotations :: !(Maybe [GoogleCloudVisionV1p2beta1EntityAnnotation])
+    , _gcvvairCropHintsAnnotation :: !(Maybe GoogleCloudVisionV1p2beta1CropHintsAnnotation)
+    , _gcvvairFullTextAnnotation :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotation)
+    , _gcvvairImagePropertiesAnnotation :: !(Maybe GoogleCloudVisionV1p2beta1ImageProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -801,7 +801,7 @@ instance ToJSON
 data ImportProductSetsResponse =
   ImportProductSetsResponse'
     { _ipsrReferenceImages :: !(Maybe [ReferenceImage])
-    , _ipsrStatuses        :: !(Maybe [Status])
+    , _ipsrStatuses :: !(Maybe [Status])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -858,10 +858,10 @@ instance ToJSON ImportProductSetsResponse where
 -- /See:/ 'googleCloudVisionV1p2beta1Symbol' smart constructor.
 data GoogleCloudVisionV1p2beta1Symbol =
   GoogleCloudVisionV1p2beta1Symbol'
-    { _gcvvsProperty    :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+    { _gcvvsProperty :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
     , _gcvvsBoundingBox :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvsText        :: !(Maybe Text)
-    , _gcvvsConfidence  :: !(Maybe (Textual Double))
+    , _gcvvsText :: !(Maybe Text)
+    , _gcvvsConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -944,10 +944,10 @@ instance ToJSON GoogleCloudVisionV1p2beta1Symbol
 -- /See:/ 'googleCloudVisionV1p2beta1Paragraph' smart constructor.
 data GoogleCloudVisionV1p2beta1Paragraph =
   GoogleCloudVisionV1p2beta1Paragraph'
-    { _gcvvpProperty    :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+    { _gcvvpProperty :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
     , _gcvvpBoundingBox :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvpConfidence  :: !(Maybe (Textual Double))
-    , _gcvvpWords       :: !(Maybe [GoogleCloudVisionV1p2beta1Word])
+    , _gcvvpConfidence :: !(Maybe (Textual Double))
+    , _gcvvpWords :: !(Maybe [GoogleCloudVisionV1p2beta1Word])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1067,7 +1067,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1Paragraph
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1128,21 +1128,21 @@ instance ToJSON Status where
 -- /See:/ 'googleCloudVisionV1p2beta1FaceAnnotation' smart constructor.
 data GoogleCloudVisionV1p2beta1FaceAnnotation =
   GoogleCloudVisionV1p2beta1FaceAnnotation'
-    { _gcvvfaTiltAngle              :: !(Maybe (Textual Double))
-    , _gcvvfaBlurredLikelihood      :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationBlurredLikelihood)
-    , _gcvvfaBoundingPoly           :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvfaSurpriseLikelihood     :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationSurpriseLikelihood)
-    , _gcvvfaLandmarkingConfidence  :: !(Maybe (Textual Double))
-    , _gcvvfaPanAngle               :: !(Maybe (Textual Double))
-    , _gcvvfaRollAngle              :: !(Maybe (Textual Double))
+    { _gcvvfaTiltAngle :: !(Maybe (Textual Double))
+    , _gcvvfaBlurredLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationBlurredLikelihood)
+    , _gcvvfaBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
+    , _gcvvfaSurpriseLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationSurpriseLikelihood)
+    , _gcvvfaLandmarkingConfidence :: !(Maybe (Textual Double))
+    , _gcvvfaPanAngle :: !(Maybe (Textual Double))
+    , _gcvvfaRollAngle :: !(Maybe (Textual Double))
     , _gcvvfaUnderExposedLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationUnderExposedLikelihood)
-    , _gcvvfaFdBoundingPoly         :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvfaAngerLikelihood        :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationAngerLikelihood)
-    , _gcvvfaDetectionConfidence    :: !(Maybe (Textual Double))
-    , _gcvvfaHeadwearLikelihood     :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationHeadwearLikelihood)
-    , _gcvvfaSorrowLikelihood       :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationSorrowLikelihood)
-    , _gcvvfaJoyLikelihood          :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationJoyLikelihood)
-    , _gcvvfaLandmarks              :: !(Maybe [GoogleCloudVisionV1p2beta1FaceAnnotationLandmark])
+    , _gcvvfaFdBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
+    , _gcvvfaAngerLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationAngerLikelihood)
+    , _gcvvfaDetectionConfidence :: !(Maybe (Textual Double))
+    , _gcvvfaHeadwearLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationHeadwearLikelihood)
+    , _gcvvfaSorrowLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationSorrowLikelihood)
+    , _gcvvfaJoyLikelihood :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationJoyLikelihood)
+    , _gcvvfaLandmarks :: !(Maybe [GoogleCloudVisionV1p2beta1FaceAnnotationLandmark])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1410,8 +1410,8 @@ instance ToJSON OperationSchema where
 -- /See:/ 'googleCloudVisionV1p1beta1CropHint' smart constructor.
 data GoogleCloudVisionV1p1beta1CropHint =
   GoogleCloudVisionV1p1beta1CropHint'
-    { _gcvvchBoundingPoly       :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvvchConfidence         :: !(Maybe (Textual Double))
+    { _gcvvchBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
+    , _gcvvchConfidence :: !(Maybe (Textual Double))
     , _gcvvchImportanceFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1528,8 +1528,8 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1ProductSearchResults =
   GoogleCloudVisionV1p3beta1ProductSearchResults'
     { _gcvvpsrProductGroupedResults :: !(Maybe [GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult])
-    , _gcvvpsrResults               :: !(Maybe [GoogleCloudVisionV1p3beta1ProductSearchResultsResult])
-    , _gcvvpsrIndexTime             :: !(Maybe DateTime')
+    , _gcvvpsrResults :: !(Maybe [GoogleCloudVisionV1p3beta1ProductSearchResultsResult])
+    , _gcvvpsrIndexTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1610,7 +1610,7 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1OutputConfig =
   GoogleCloudVisionV1p2beta1OutputConfig'
     { _gGcsDestination :: !(Maybe GoogleCloudVisionV1p2beta1GcsDestination)
-    , _gBatchSize      :: !(Maybe (Textual Int32))
+    , _gBatchSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1672,7 +1672,7 @@ instance ToJSON
 data GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage =
   GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage'
     { _gLanguageCode :: !(Maybe Text)
-    , _gConfidence   :: !(Maybe (Textual Double))
+    , _gConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1730,10 +1730,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1Symbol' smart constructor.
 data GoogleCloudVisionV1p1beta1Symbol =
   GoogleCloudVisionV1p1beta1Symbol'
-    { _gooProperty    :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+    { _gooProperty :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
     , _gooBoundingBox :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gooText        :: !(Maybe Text)
-    , _gooConfidence  :: !(Maybe (Textual Double))
+    , _gooText :: !(Maybe Text)
+    , _gooConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1815,7 +1815,7 @@ instance ToJSON GoogleCloudVisionV1p1beta1Symbol
 -- /See:/ 'imageAnnotationContext' smart constructor.
 data ImageAnnotationContext =
   ImageAnnotationContext'
-    { _iacURI        :: !(Maybe Text)
+    { _iacURI :: !(Maybe Text)
     , _iacPageNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1866,8 +1866,8 @@ instance ToJSON ImageAnnotationContext where
 -- /See:/ 'googleCloudVisionV1p2beta1CropHint' smart constructor.
 data GoogleCloudVisionV1p2beta1CropHint =
   GoogleCloudVisionV1p2beta1CropHint'
-    { _gcvvchcBoundingPoly       :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvchcConfidence         :: !(Maybe (Textual Double))
+    { _gcvvchcBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
+    , _gcvvchcConfidence :: !(Maybe (Textual Double))
     , _gcvvchcImportanceFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1939,8 +1939,8 @@ instance ToJSON GoogleCloudVisionV1p2beta1CropHint
 data Property =
   Property'
     { _pUint64Value :: !(Maybe (Textual Word64))
-    , _pValue       :: !(Maybe Text)
-    , _pName        :: !(Maybe Text)
+    , _pValue :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1994,21 +1994,21 @@ instance ToJSON Property where
 -- /See:/ 'googleCloudVisionV1p1beta1FaceAnnotation' smart constructor.
 data GoogleCloudVisionV1p1beta1FaceAnnotation =
   GoogleCloudVisionV1p1beta1FaceAnnotation'
-    { _gTiltAngle              :: !(Maybe (Textual Double))
-    , _gBlurredLikelihood      :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationBlurredLikelihood)
-    , _gBoundingPoly           :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gSurpriseLikelihood     :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationSurpriseLikelihood)
-    , _gLandmarkingConfidence  :: !(Maybe (Textual Double))
-    , _gPanAngle               :: !(Maybe (Textual Double))
-    , _gRollAngle              :: !(Maybe (Textual Double))
+    { _gTiltAngle :: !(Maybe (Textual Double))
+    , _gBlurredLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationBlurredLikelihood)
+    , _gBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
+    , _gSurpriseLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationSurpriseLikelihood)
+    , _gLandmarkingConfidence :: !(Maybe (Textual Double))
+    , _gPanAngle :: !(Maybe (Textual Double))
+    , _gRollAngle :: !(Maybe (Textual Double))
     , _gUnderExposedLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationUnderExposedLikelihood)
-    , _gFdBoundingPoly         :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gAngerLikelihood        :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationAngerLikelihood)
-    , _gDetectionConfidence    :: !(Maybe (Textual Double))
-    , _gHeadwearLikelihood     :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationHeadwearLikelihood)
-    , _gSorrowLikelihood       :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationSorrowLikelihood)
-    , _gJoyLikelihood          :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationJoyLikelihood)
-    , _gLandmarks              :: !(Maybe [GoogleCloudVisionV1p1beta1FaceAnnotationLandmark])
+    , _gFdBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
+    , _gAngerLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationAngerLikelihood)
+    , _gDetectionConfidence :: !(Maybe (Textual Double))
+    , _gHeadwearLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationHeadwearLikelihood)
+    , _gSorrowLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationSorrowLikelihood)
+    , _gJoyLikelihood :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationJoyLikelihood)
+    , _gLandmarks :: !(Maybe [GoogleCloudVisionV1p1beta1FaceAnnotationLandmark])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2229,7 +2229,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1InputConfig =
   GoogleCloudVisionV1p3beta1InputConfig'
     { _gcvvicGcsSource :: !(Maybe GoogleCloudVisionV1p3beta1GcsSource)
-    , _gcvvicMimeType  :: !(Maybe Text)
+    , _gcvvicMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2283,11 +2283,11 @@ instance ToJSON GoogleCloudVisionV1p3beta1InputConfig
 -- /See:/ 'googleCloudVisionV1p3beta1WebDetectionWebPage' smart constructor.
 data GoogleCloudVisionV1p3beta1WebDetectionWebPage =
   GoogleCloudVisionV1p3beta1WebDetectionWebPage'
-    { _gcvvwdwpScore                 :: !(Maybe (Textual Double))
-    , _gcvvwdwpURL                   :: !(Maybe Text)
-    , _gcvvwdwpPageTitle             :: !(Maybe Text)
+    { _gcvvwdwpScore :: !(Maybe (Textual Double))
+    , _gcvvwdwpURL :: !(Maybe Text)
+    , _gcvvwdwpPageTitle :: !(Maybe Text)
     , _gcvvwdwpPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
-    , _gcvvwdwpFullMatchingImages    :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
+    , _gcvvwdwpFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2388,8 +2388,8 @@ instance ToJSON
 data ProductSearchResults =
   ProductSearchResults'
     { _psrProductGroupedResults :: !(Maybe [GroupedResult])
-    , _psrResults               :: !(Maybe [Result])
-    , _psrIndexTime             :: !(Maybe DateTime')
+    , _psrResults :: !(Maybe [Result])
+    , _psrIndexTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2461,7 +2461,7 @@ instance ToJSON ProductSearchResults where
 -- /See:/ 'landmark' smart constructor.
 data Landmark =
   Landmark'
-    { _lType     :: !(Maybe LandmarkType)
+    { _lType :: !(Maybe LandmarkType)
     , _lPosition :: !(Maybe Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2508,10 +2508,10 @@ instance ToJSON Landmark where
 -- /See:/ 'googleCloudVisionV1p2beta1SafeSearchAnnotation' smart constructor.
 data GoogleCloudVisionV1p2beta1SafeSearchAnnotation =
   GoogleCloudVisionV1p2beta1SafeSearchAnnotation'
-    { _gcvvssaSpoof    :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationSpoof)
-    , _gcvvssaRacy     :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationRacy)
-    , _gcvvssaAdult    :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationAdult)
-    , _gcvvssaMedical  :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationMedical)
+    { _gcvvssaSpoof :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationSpoof)
+    , _gcvvssaRacy :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationRacy)
+    , _gcvvssaAdult :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationAdult)
+    , _gcvvssaMedical :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationMedical)
     , _gcvvssaViolence :: !(Maybe GoogleCloudVisionV1p2beta1SafeSearchAnnotationViolence)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2606,7 +2606,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1OperationMetadata' smart constructor.
 data GoogleCloudVisionV1p2beta1OperationMetadata =
   GoogleCloudVisionV1p2beta1OperationMetadata'
-    { _gcvvomState      :: !(Maybe GoogleCloudVisionV1p2beta1OperationMetadataState)
+    { _gcvvomState :: !(Maybe GoogleCloudVisionV1p2beta1OperationMetadataState)
     , _gcvvomUpdateTime :: !(Maybe DateTime')
     , _gcvvomCreateTime :: !(Maybe DateTime')
     }
@@ -2727,8 +2727,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1ColorInfo' smart constructor.
 data GoogleCloudVisionV1p1beta1ColorInfo =
   GoogleCloudVisionV1p1beta1ColorInfo'
-    { _gcvvciColor         :: !(Maybe Color)
-    , _gcvvciScore         :: !(Maybe (Textual Double))
+    { _gcvvciColor :: !(Maybe Color)
+    , _gcvvciScore :: !(Maybe (Textual Double))
     , _gcvvciPixelFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2830,7 +2830,7 @@ instance ToJSON GcsSource where
 data GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak =
   GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak'
     { _gcvvtadbIsPrefix :: !(Maybe Bool)
-    , _gcvvtadbType     :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreakType)
+    , _gcvvtadbType :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreakType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2933,7 +2933,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1WebDetectionWebLabel =
   GoogleCloudVisionV1p3beta1WebDetectionWebLabel'
     { _gcvvwdwlLanguageCode :: !(Maybe Text)
-    , _gcvvwdwlLabel        :: !(Maybe Text)
+    , _gcvvwdwlLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2991,11 +2991,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1ImageContext' smart constructor.
 data GoogleCloudVisionV1p2beta1ImageContext =
   GoogleCloudVisionV1p2beta1ImageContext'
-    { _gcvvicCropHintsParams     :: !(Maybe GoogleCloudVisionV1p2beta1CropHintsParams)
-    , _gcvvicWebDetectionParams  :: !(Maybe GoogleCloudVisionV1p2beta1WebDetectionParams)
+    { _gcvvicCropHintsParams :: !(Maybe GoogleCloudVisionV1p2beta1CropHintsParams)
+    , _gcvvicWebDetectionParams :: !(Maybe GoogleCloudVisionV1p2beta1WebDetectionParams)
     , _gcvvicProductSearchParams :: !(Maybe GoogleCloudVisionV1p2beta1ProductSearchParams)
-    , _gcvvicLanguageHints       :: !(Maybe [Text])
-    , _gcvvicLatLongRect         :: !(Maybe GoogleCloudVisionV1p2beta1LatLongRect)
+    , _gcvvicLanguageHints :: !(Maybe [Text])
+    , _gcvvicLatLongRect :: !(Maybe GoogleCloudVisionV1p2beta1LatLongRect)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3098,7 +3098,7 @@ instance ToJSON
 data TextProperty =
   TextProperty'
     { _tpDetectedLanguages :: !(Maybe [DetectedLanguage])
-    , _tpDetectedBreak     :: !(Maybe DetectedBreak)
+    , _tpDetectedBreak :: !(Maybe DetectedBreak)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3156,7 +3156,7 @@ instance ToJSON TextProperty where
 -- /See:/ 'textAnnotation' smart constructor.
 data TextAnnotation =
   TextAnnotation'
-    { _taText  :: !(Maybe Text)
+    { _taText :: !(Maybe Text)
     , _taPages :: !(Maybe [Page])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3202,8 +3202,8 @@ instance ToJSON TextAnnotation where
 -- /See:/ 'googleCloudVisionV1p3beta1ProductSearchResultsResult' smart constructor.
 data GoogleCloudVisionV1p3beta1ProductSearchResultsResult =
   GoogleCloudVisionV1p3beta1ProductSearchResultsResult'
-    { _gcvvpsrrImage   :: !(Maybe Text)
-    , _gcvvpsrrScore   :: !(Maybe (Textual Double))
+    { _gcvvpsrrImage :: !(Maybe Text)
+    , _gcvvpsrrScore :: !(Maybe (Textual Double))
     , _gcvvpsrrProduct :: !(Maybe GoogleCloudVisionV1p3beta1Product)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3277,10 +3277,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1Paragraph' smart constructor.
 data GoogleCloudVisionV1p3beta1Paragraph =
   GoogleCloudVisionV1p3beta1Paragraph'
-    { _gcvvpcProperty    :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
+    { _gcvvpcProperty :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
     , _gcvvpcBoundingBox :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvpcConfidence  :: !(Maybe (Textual Double))
-    , _gcvvpcWords       :: !(Maybe [GoogleCloudVisionV1p3beta1Word])
+    , _gcvvpcConfidence :: !(Maybe (Textual Double))
+    , _gcvvpcWords :: !(Maybe [GoogleCloudVisionV1p3beta1Word])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3365,8 +3365,8 @@ instance ToJSON GoogleCloudVisionV1p3beta1Paragraph
 -- /See:/ 'googleCloudVisionV1p1beta1WebDetectionWebEntity' smart constructor.
 data GoogleCloudVisionV1p1beta1WebDetectionWebEntity =
   GoogleCloudVisionV1p1beta1WebDetectionWebEntity'
-    { _gcvvwdweScore       :: !(Maybe (Textual Double))
-    , _gcvvwdweEntityId    :: !(Maybe Text)
+    { _gcvvwdweScore :: !(Maybe (Textual Double))
+    , _gcvvwdweEntityId :: !(Maybe Text)
     , _gcvvwdweDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3439,7 +3439,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1AnnotateFileResponse' smart constructor.
 data GoogleCloudVisionV1p2beta1AnnotateFileResponse =
   GoogleCloudVisionV1p2beta1AnnotateFileResponse'
-    { _gcvvafrResponses   :: !(Maybe [GoogleCloudVisionV1p2beta1AnnotateImageResponse])
+    { _gcvvafrResponses :: !(Maybe [GoogleCloudVisionV1p2beta1AnnotateImageResponse])
     , _gcvvafrInputConfig :: !(Maybe GoogleCloudVisionV1p2beta1InputConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3499,10 +3499,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1Word' smart constructor.
 data GoogleCloudVisionV1p3beta1Word =
   GoogleCloudVisionV1p3beta1Word'
-    { _gcvvwProperty    :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
+    { _gcvvwProperty :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
     , _gcvvwBoundingBox :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvwSymbols     :: !(Maybe [GoogleCloudVisionV1p3beta1Symbol])
-    , _gcvvwConfidence  :: !(Maybe (Textual Double))
+    , _gcvvwSymbols :: !(Maybe [GoogleCloudVisionV1p3beta1Symbol])
+    , _gcvvwConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3588,10 +3588,10 @@ instance ToJSON GoogleCloudVisionV1p3beta1Word where
 data LocalizedObjectAnnotation =
   LocalizedObjectAnnotation'
     { _loaLanguageCode :: !(Maybe Text)
-    , _loaScore        :: !(Maybe (Textual Double))
+    , _loaScore :: !(Maybe (Textual Double))
     , _loaBoundingPoly :: !(Maybe BoundingPoly)
-    , _loaName         :: !(Maybe Text)
-    , _loaMid          :: !(Maybe Text)
+    , _loaName :: !(Maybe Text)
+    , _loaMid :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3673,12 +3673,12 @@ instance ToJSON LocalizedObjectAnnotation where
 -- /See:/ 'googleCloudVisionV1p2beta1WebDetection' smart constructor.
 data GoogleCloudVisionV1p2beta1WebDetection =
   GoogleCloudVisionV1p2beta1WebDetection'
-    { _gcvvwdVisuallySimilarImages   :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
-    , _gcvvwdBestGuessLabels         :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebLabel])
+    { _gcvvwdVisuallySimilarImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
+    , _gcvvwdBestGuessLabels :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebLabel])
     , _gcvvwdPagesWithMatchingImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebPage])
-    , _gcvvwdPartialMatchingImages   :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
-    , _gcvvwdFullMatchingImages      :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
-    , _gcvvwdWebEntities             :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebEntity])
+    , _gcvvwdPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
+    , _gcvvwdFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
+    , _gcvvwdWebEntities :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3800,10 +3800,10 @@ instance ToJSON
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3938,10 +3938,10 @@ instance ToJSON Operation where
 -- /See:/ 'color' smart constructor.
 data Color =
   Color'
-    { _cRed   :: !(Maybe (Textual Double))
+    { _cRed :: !(Maybe (Textual Double))
     , _cAlpha :: !(Maybe (Textual Double))
     , _cGreen :: !(Maybe (Textual Double))
-    , _cBlue  :: !(Maybe (Textual Double))
+    , _cBlue :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4017,7 +4017,7 @@ instance ToJSON Color where
 data GoogleCloudVisionV1p2beta1ProductKeyValue =
   GoogleCloudVisionV1p2beta1ProductKeyValue'
     { _gValue :: !(Maybe Text)
-    , _gKey   :: !(Maybe Text)
+    , _gKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4069,7 +4069,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1FaceAnnotationLandmark' smart constructor.
 data GoogleCloudVisionV1p1beta1FaceAnnotationLandmark =
   GoogleCloudVisionV1p1beta1FaceAnnotationLandmark'
-    { _gcvvfalType     :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationLandmarkType)
+    { _gcvvfalType :: !(Maybe GoogleCloudVisionV1p1beta1FaceAnnotationLandmarkType)
     , _gcvvfalPosition :: !(Maybe GoogleCloudVisionV1p1beta1Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4173,15 +4173,15 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1EntityAnnotation' smart constructor.
 data GoogleCloudVisionV1p1beta1EntityAnnotation =
   GoogleCloudVisionV1p1beta1EntityAnnotation'
-    { _gcvveaScore        :: !(Maybe (Textual Double))
-    , _gcvveaTopicality   :: !(Maybe (Textual Double))
-    , _gcvveaLocale       :: !(Maybe Text)
+    { _gcvveaScore :: !(Maybe (Textual Double))
+    , _gcvveaTopicality :: !(Maybe (Textual Double))
+    , _gcvveaLocale :: !(Maybe Text)
     , _gcvveaBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvveaConfidence   :: !(Maybe (Textual Double))
-    , _gcvveaMid          :: !(Maybe Text)
-    , _gcvveaLocations    :: !(Maybe [GoogleCloudVisionV1p1beta1LocationInfo])
-    , _gcvveaDescription  :: !(Maybe Text)
-    , _gcvveaProperties   :: !(Maybe [GoogleCloudVisionV1p1beta1Property])
+    , _gcvveaConfidence :: !(Maybe (Textual Double))
+    , _gcvveaMid :: !(Maybe Text)
+    , _gcvveaLocations :: !(Maybe [GoogleCloudVisionV1p1beta1LocationInfo])
+    , _gcvveaDescription :: !(Maybe Text)
+    , _gcvveaProperties :: !(Maybe [GoogleCloudVisionV1p1beta1Property])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4335,20 +4335,20 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1AnnotateImageResponse' smart constructor.
 data GoogleCloudVisionV1p3beta1AnnotateImageResponse =
   GoogleCloudVisionV1p3beta1AnnotateImageResponse'
-    { _gLogoAnnotations            :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
-    , _gProductSearchResults       :: !(Maybe GoogleCloudVisionV1p3beta1ProductSearchResults)
-    , _gContext                    :: !(Maybe GoogleCloudVisionV1p3beta1ImageAnnotationContext)
-    , _gLabelAnnotations           :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
-    , _gFaceAnnotations            :: !(Maybe [GoogleCloudVisionV1p3beta1FaceAnnotation])
-    , _gError                      :: !(Maybe Status)
-    , _gWebDetection               :: !(Maybe GoogleCloudVisionV1p3beta1WebDetection)
-    , _gSafeSearchAnnotation       :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotation)
-    , _gLandmarkAnnotations        :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
+    { _gLogoAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
+    , _gProductSearchResults :: !(Maybe GoogleCloudVisionV1p3beta1ProductSearchResults)
+    , _gContext :: !(Maybe GoogleCloudVisionV1p3beta1ImageAnnotationContext)
+    , _gLabelAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
+    , _gFaceAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1FaceAnnotation])
+    , _gError :: !(Maybe Status)
+    , _gWebDetection :: !(Maybe GoogleCloudVisionV1p3beta1WebDetection)
+    , _gSafeSearchAnnotation :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotation)
+    , _gLandmarkAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
     , _gLocalizedObjectAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation])
-    , _gTextAnnotations            :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
-    , _gCropHintsAnnotation        :: !(Maybe GoogleCloudVisionV1p3beta1CropHintsAnnotation)
-    , _gFullTextAnnotation         :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotation)
-    , _gImagePropertiesAnnotation  :: !(Maybe GoogleCloudVisionV1p3beta1ImageProperties)
+    , _gTextAnnotations :: !(Maybe [GoogleCloudVisionV1p3beta1EntityAnnotation])
+    , _gCropHintsAnnotation :: !(Maybe GoogleCloudVisionV1p3beta1CropHintsAnnotation)
+    , _gFullTextAnnotation :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotation)
+    , _gImagePropertiesAnnotation :: !(Maybe GoogleCloudVisionV1p3beta1ImageProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4603,7 +4603,7 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1ImageSource =
   GoogleCloudVisionV1p2beta1ImageSource'
     { _gcvvisGcsImageURI :: !(Maybe Text)
-    , _gcvvisImageURI    :: !(Maybe Text)
+    , _gcvvisImageURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4671,10 +4671,10 @@ instance ToJSON GoogleCloudVisionV1p2beta1ImageSource
 -- /See:/ 'googleCloudVisionV1p3beta1Page' smart constructor.
 data GoogleCloudVisionV1p3beta1Page =
   GoogleCloudVisionV1p3beta1Page'
-    { _ggProperty   :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
-    , _ggHeight     :: !(Maybe (Textual Int32))
-    , _ggBlocks     :: !(Maybe [GoogleCloudVisionV1p3beta1Block])
-    , _ggWidth      :: !(Maybe (Textual Int32))
+    { _ggProperty :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
+    , _ggHeight :: !(Maybe (Textual Int32))
+    , _ggBlocks :: !(Maybe [GoogleCloudVisionV1p3beta1Block])
+    , _ggWidth :: !(Maybe (Textual Int32))
     , _ggConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4763,11 +4763,11 @@ instance ToJSON GoogleCloudVisionV1p3beta1Page where
 -- /See:/ 'googleCloudVisionV1p1beta1Block' smart constructor.
 data GoogleCloudVisionV1p1beta1Block =
   GoogleCloudVisionV1p1beta1Block'
-    { _gcvvbProperty    :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+    { _gcvvbProperty :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
     , _gcvvbBoundingBox :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvvbParagraphs  :: !(Maybe [GoogleCloudVisionV1p1beta1Paragraph])
-    , _gcvvbConfidence  :: !(Maybe (Textual Double))
-    , _gcvvbBlockType   :: !(Maybe GoogleCloudVisionV1p1beta1BlockBlockType)
+    , _gcvvbParagraphs :: !(Maybe [GoogleCloudVisionV1p1beta1Paragraph])
+    , _gcvvbConfidence :: !(Maybe (Textual Double))
+    , _gcvvbBlockType :: !(Maybe GoogleCloudVisionV1p1beta1BlockBlockType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4915,11 +4915,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1Product' smart constructor.
 data GoogleCloudVisionV1p3beta1Product =
   GoogleCloudVisionV1p3beta1Product'
-    { _gName            :: !(Maybe Text)
-    , _gDisplayName     :: !(Maybe Text)
+    { _gName :: !(Maybe Text)
+    , _gDisplayName :: !(Maybe Text)
     , _gProductCategory :: !(Maybe Text)
-    , _gProductLabels   :: !(Maybe [GoogleCloudVisionV1p3beta1ProductKeyValue])
-    , _gDescription     :: !(Maybe Text)
+    , _gProductLabels :: !(Maybe [GoogleCloudVisionV1p3beta1ProductKeyValue])
+    , _gDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5016,7 +5016,7 @@ instance ToJSON GoogleCloudVisionV1p3beta1Product
 data BoundingPoly =
   BoundingPoly'
     { _bpNormalizedVertices :: !(Maybe [NormalizedVertex])
-    , _bpVertices           :: !(Maybe [Vertex])
+    , _bpVertices :: !(Maybe [Vertex])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5322,7 +5322,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1WebDetectionWebImage =
   GoogleCloudVisionV1p3beta1WebDetectionWebImage'
     { _gcvvwdwiScore :: !(Maybe (Textual Double))
-    , _gcvvwdwiURL   :: !(Maybe Text)
+    , _gcvvwdwiURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5430,8 +5430,8 @@ instance ToJSON GoogleCloudVisionV1p3beta1Vertex
 -- /See:/ 'webEntity' smart constructor.
 data WebEntity =
   WebEntity'
-    { _weScore       :: !(Maybe (Textual Double))
-    , _weEntityId    :: !(Maybe Text)
+    { _weScore :: !(Maybe (Textual Double))
+    , _weEntityId :: !(Maybe Text)
     , _weDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5671,7 +5671,7 @@ instance ToJSON GcsDestination where
 data GoogleCloudVisionV1p3beta1BoundingPoly =
   GoogleCloudVisionV1p3beta1BoundingPoly'
     { _gcvvbpNormalizedVertices :: !(Maybe [GoogleCloudVisionV1p3beta1NormalizedVertex])
-    , _gcvvbpVertices           :: !(Maybe [GoogleCloudVisionV1p3beta1Vertex])
+    , _gcvvbpVertices :: !(Maybe [GoogleCloudVisionV1p3beta1Vertex])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5847,7 +5847,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1Position
 data GoogleCloudVisionV1p3beta1TextAnnotationTextProperty =
   GoogleCloudVisionV1p3beta1TextAnnotationTextProperty'
     { _gcvvtatpDetectedLanguages :: !(Maybe [GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage])
-    , _gcvvtatpDetectedBreak     :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak)
+    , _gcvvtatpDetectedBreak :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5976,10 +5976,10 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'page' smart constructor.
 data Page =
   Page'
-    { _pProperty   :: !(Maybe TextProperty)
-    , _pHeight     :: !(Maybe (Textual Int32))
-    , _pBlocks     :: !(Maybe [Block])
-    , _pWidth      :: !(Maybe (Textual Int32))
+    { _pProperty :: !(Maybe TextProperty)
+    , _pHeight :: !(Maybe (Textual Int32))
+    , _pBlocks :: !(Maybe [Block])
+    , _pWidth :: !(Maybe (Textual Int32))
     , _pConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6066,8 +6066,8 @@ instance ToJSON Page where
 -- /See:/ 'colorInfo' smart constructor.
 data ColorInfo =
   ColorInfo'
-    { _ciColor         :: !(Maybe Color)
-    , _ciScore         :: !(Maybe (Textual Double))
+    { _ciColor :: !(Maybe Color)
+    , _ciScore :: !(Maybe (Textual Double))
     , _ciPixelFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6128,7 +6128,7 @@ instance ToJSON ColorInfo where
 -- /See:/ 'googleCloudVisionV1p3beta1OperationMetadata' smart constructor.
 data GoogleCloudVisionV1p3beta1OperationMetadata =
   GoogleCloudVisionV1p3beta1OperationMetadata'
-    { _gState      :: !(Maybe GoogleCloudVisionV1p3beta1OperationMetadataState)
+    { _gState :: !(Maybe GoogleCloudVisionV1p3beta1OperationMetadataState)
     , _gUpdateTime :: !(Maybe DateTime')
     , _gCreateTime :: !(Maybe DateTime')
     }
@@ -6196,8 +6196,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1Feature' smart constructor.
 data GoogleCloudVisionV1p2beta1Feature =
   GoogleCloudVisionV1p2beta1Feature'
-    { _gcvvfModel      :: !(Maybe Text)
-    , _gcvvfType       :: !(Maybe GoogleCloudVisionV1p2beta1FeatureType)
+    { _gcvvfModel :: !(Maybe Text)
+    , _gcvvfType :: !(Maybe GoogleCloudVisionV1p2beta1FeatureType)
     , _gcvvfMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6262,7 +6262,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1Feature
 data WebLabel =
   WebLabel'
     { _wlLanguageCode :: !(Maybe Text)
-    , _wlLabel        :: !(Maybe Text)
+    , _wlLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6311,7 +6311,7 @@ instance ToJSON WebLabel where
 data GoogleCloudVisionV1p1beta1ProductKeyValue =
   GoogleCloudVisionV1p1beta1ProductKeyValue'
     { _gooValue :: !(Maybe Text)
-    , _gooKey   :: !(Maybe Text)
+    , _gooKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6364,7 +6364,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1ImageAnnotationContext' smart constructor.
 data GoogleCloudVisionV1p1beta1ImageAnnotationContext =
   GoogleCloudVisionV1p1beta1ImageAnnotationContext'
-    { _gURI        :: !(Maybe Text)
+    { _gURI :: !(Maybe Text)
     , _gPageNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6420,10 +6420,10 @@ instance ToJSON
 -- /See:/ 'paragraph' smart constructor.
 data Paragraph =
   Paragraph'
-    { _parProperty    :: !(Maybe TextProperty)
+    { _parProperty :: !(Maybe TextProperty)
     , _parBoundingBox :: !(Maybe BoundingPoly)
-    , _parConfidence  :: !(Maybe (Textual Double))
-    , _parWords       :: !(Maybe [Word])
+    , _parConfidence :: !(Maybe (Textual Double))
+    , _parWords :: !(Maybe [Word])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6505,10 +6505,10 @@ instance ToJSON Paragraph where
 -- /See:/ 'symbol' smart constructor.
 data Symbol =
   Symbol'
-    { _sProperty    :: !(Maybe TextProperty)
+    { _sProperty :: !(Maybe TextProperty)
     , _sBoundingBox :: !(Maybe BoundingPoly)
-    , _sText        :: !(Maybe Text)
-    , _sConfidence  :: !(Maybe (Textual Double))
+    , _sText :: !(Maybe Text)
+    , _sConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6585,20 +6585,20 @@ instance ToJSON Symbol where
 -- /See:/ 'annotateImageResponse' smart constructor.
 data AnnotateImageResponse =
   AnnotateImageResponse'
-    { _airLogoAnnotations            :: !(Maybe [EntityAnnotation])
-    , _airProductSearchResults       :: !(Maybe ProductSearchResults)
-    , _airContext                    :: !(Maybe ImageAnnotationContext)
-    , _airLabelAnnotations           :: !(Maybe [EntityAnnotation])
-    , _airFaceAnnotations            :: !(Maybe [FaceAnnotation])
-    , _airError                      :: !(Maybe Status)
-    , _airWebDetection               :: !(Maybe WebDetection)
-    , _airSafeSearchAnnotation       :: !(Maybe SafeSearchAnnotation)
-    , _airLandmarkAnnotations        :: !(Maybe [EntityAnnotation])
+    { _airLogoAnnotations :: !(Maybe [EntityAnnotation])
+    , _airProductSearchResults :: !(Maybe ProductSearchResults)
+    , _airContext :: !(Maybe ImageAnnotationContext)
+    , _airLabelAnnotations :: !(Maybe [EntityAnnotation])
+    , _airFaceAnnotations :: !(Maybe [FaceAnnotation])
+    , _airError :: !(Maybe Status)
+    , _airWebDetection :: !(Maybe WebDetection)
+    , _airSafeSearchAnnotation :: !(Maybe SafeSearchAnnotation)
+    , _airLandmarkAnnotations :: !(Maybe [EntityAnnotation])
     , _airLocalizedObjectAnnotations :: !(Maybe [LocalizedObjectAnnotation])
-    , _airTextAnnotations            :: !(Maybe [EntityAnnotation])
-    , _airCropHintsAnnotation        :: !(Maybe CropHintsAnnotation)
-    , _airFullTextAnnotation         :: !(Maybe TextAnnotation)
-    , _airImagePropertiesAnnotation  :: !(Maybe ImageProperties)
+    , _airTextAnnotations :: !(Maybe [EntityAnnotation])
+    , _airCropHintsAnnotation :: !(Maybe CropHintsAnnotation)
+    , _airFullTextAnnotation :: !(Maybe TextAnnotation)
+    , _airImagePropertiesAnnotation :: !(Maybe ImageProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6805,7 +6805,7 @@ instance ToJSON AnnotateImageResponse where
 data GoogleCloudVisionV1p3beta1OutputConfig =
   GoogleCloudVisionV1p3beta1OutputConfig'
     { _gooGcsDestination :: !(Maybe GoogleCloudVisionV1p3beta1GcsDestination)
-    , _gooBatchSize      :: !(Maybe (Textual Int32))
+    , _gooBatchSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6905,10 +6905,10 @@ instance ToJSON ImageProperties where
 data GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation =
   GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation'
     { _gooLanguageCode :: !(Maybe Text)
-    , _gooScore        :: !(Maybe (Textual Double))
+    , _gooScore :: !(Maybe (Textual Double))
     , _gooBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gooName         :: !(Maybe Text)
-    , _gooMid          :: !(Maybe Text)
+    , _gooName :: !(Maybe Text)
+    , _gooMid :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6997,8 +6997,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1WebDetectionWebEntity' smart constructor.
 data GoogleCloudVisionV1p2beta1WebDetectionWebEntity =
   GoogleCloudVisionV1p2beta1WebDetectionWebEntity'
-    { _gcvvwdwecScore       :: !(Maybe (Textual Double))
-    , _gcvvwdwecEntityId    :: !(Maybe Text)
+    { _gcvvwdwecScore :: !(Maybe (Textual Double))
+    , _gcvvwdwecEntityId :: !(Maybe Text)
     , _gcvvwdwecDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7114,8 +7114,8 @@ instance ToJSON AsyncBatchAnnotateFilesResponse where
 -- /See:/ 'googleCloudVisionV1p3beta1CropHint' smart constructor.
 data GoogleCloudVisionV1p3beta1CropHint =
   GoogleCloudVisionV1p3beta1CropHint'
-    { _goooBoundingPoly       :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _goooConfidence         :: !(Maybe (Textual Double))
+    { _goooBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
+    , _goooConfidence :: !(Maybe (Textual Double))
     , _goooImportanceFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7186,21 +7186,21 @@ instance ToJSON GoogleCloudVisionV1p3beta1CropHint
 -- /See:/ 'faceAnnotation' smart constructor.
 data FaceAnnotation =
   FaceAnnotation'
-    { _faTiltAngle              :: !(Maybe (Textual Double))
-    , _faBlurredLikelihood      :: !(Maybe FaceAnnotationBlurredLikelihood)
-    , _faBoundingPoly           :: !(Maybe BoundingPoly)
-    , _faSurpriseLikelihood     :: !(Maybe FaceAnnotationSurpriseLikelihood)
-    , _faLandmarkingConfidence  :: !(Maybe (Textual Double))
-    , _faPanAngle               :: !(Maybe (Textual Double))
-    , _faRollAngle              :: !(Maybe (Textual Double))
+    { _faTiltAngle :: !(Maybe (Textual Double))
+    , _faBlurredLikelihood :: !(Maybe FaceAnnotationBlurredLikelihood)
+    , _faBoundingPoly :: !(Maybe BoundingPoly)
+    , _faSurpriseLikelihood :: !(Maybe FaceAnnotationSurpriseLikelihood)
+    , _faLandmarkingConfidence :: !(Maybe (Textual Double))
+    , _faPanAngle :: !(Maybe (Textual Double))
+    , _faRollAngle :: !(Maybe (Textual Double))
     , _faUnderExposedLikelihood :: !(Maybe FaceAnnotationUnderExposedLikelihood)
-    , _faFdBoundingPoly         :: !(Maybe BoundingPoly)
-    , _faAngerLikelihood        :: !(Maybe FaceAnnotationAngerLikelihood)
-    , _faDetectionConfidence    :: !(Maybe (Textual Double))
-    , _faHeadwearLikelihood     :: !(Maybe FaceAnnotationHeadwearLikelihood)
-    , _faSorrowLikelihood       :: !(Maybe FaceAnnotationSorrowLikelihood)
-    , _faJoyLikelihood          :: !(Maybe FaceAnnotationJoyLikelihood)
-    , _faLandmarks              :: !(Maybe [Landmark])
+    , _faFdBoundingPoly :: !(Maybe BoundingPoly)
+    , _faAngerLikelihood :: !(Maybe FaceAnnotationAngerLikelihood)
+    , _faDetectionConfidence :: !(Maybe (Textual Double))
+    , _faHeadwearLikelihood :: !(Maybe FaceAnnotationHeadwearLikelihood)
+    , _faSorrowLikelihood :: !(Maybe FaceAnnotationSorrowLikelihood)
+    , _faJoyLikelihood :: !(Maybe FaceAnnotationJoyLikelihood)
+    , _faLandmarks :: !(Maybe [Landmark])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7417,8 +7417,8 @@ instance ToJSON FaceAnnotation where
 data GoogleCloudVisionV1p1beta1Property =
   GoogleCloudVisionV1p1beta1Property'
     { _gcvvpcUint64Value :: !(Maybe (Textual Word64))
-    , _gcvvpcValue       :: !(Maybe Text)
-    , _gcvvpcName        :: !(Maybe Text)
+    , _gcvvpcValue :: !(Maybe Text)
+    , _gcvvpcName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7483,8 +7483,8 @@ instance ToJSON GoogleCloudVisionV1p1beta1Property
 data GoogleCloudVisionV1p1beta1ProductSearchResults =
   GoogleCloudVisionV1p1beta1ProductSearchResults'
     { _gProductGroupedResults :: !(Maybe [GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult])
-    , _gResults               :: !(Maybe [GoogleCloudVisionV1p1beta1ProductSearchResultsResult])
-    , _gIndexTime             :: !(Maybe DateTime')
+    , _gResults :: !(Maybe [GoogleCloudVisionV1p1beta1ProductSearchResultsResult])
+    , _gIndexTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7617,7 +7617,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1LatLongRect
 data DetectedBreak =
   DetectedBreak'
     { _dbIsPrefix :: !(Maybe Bool)
-    , _dbType     :: !(Maybe DetectedBreakType)
+    , _dbType :: !(Maybe DetectedBreakType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7662,8 +7662,8 @@ instance ToJSON DetectedBreak where
 -- /See:/ 'result' smart constructor.
 data Result =
   Result'
-    { _rImage   :: !(Maybe Text)
-    , _rScore   :: !(Maybe (Textual Double))
+    { _rImage :: !(Maybe Text)
+    , _rScore :: !(Maybe (Textual Double))
     , _rProduct :: !(Maybe Product)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7720,7 +7720,7 @@ instance ToJSON Result where
 -- /See:/ 'googleCloudVisionV1p1beta1ProductSearchResultsGroupedResult' smart constructor.
 data GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult =
   GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult'
-    { _gcvvpsrgrResults      :: !(Maybe [GoogleCloudVisionV1p1beta1ProductSearchResultsResult])
+    { _gcvvpsrgrResults :: !(Maybe [GoogleCloudVisionV1p1beta1ProductSearchResultsResult])
     , _gcvvpsrgrBoundingPoly :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7783,10 +7783,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1SafeSearchAnnotation' smart constructor.
 data GoogleCloudVisionV1p1beta1SafeSearchAnnotation =
   GoogleCloudVisionV1p1beta1SafeSearchAnnotation'
-    { _gSpoof    :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationSpoof)
-    , _gRacy     :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationRacy)
-    , _gAdult    :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationAdult)
-    , _gMedical  :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationMedical)
+    { _gSpoof :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationSpoof)
+    , _gRacy :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationRacy)
+    , _gAdult :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationAdult)
+    , _gMedical :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationMedical)
     , _gViolence :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotationViolence)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7874,11 +7874,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1Product' smart constructor.
 data GoogleCloudVisionV1p2beta1Product =
   GoogleCloudVisionV1p2beta1Product'
-    { _ggName            :: !(Maybe Text)
-    , _ggDisplayName     :: !(Maybe Text)
+    { _ggName :: !(Maybe Text)
+    , _ggDisplayName :: !(Maybe Text)
     , _ggProductCategory :: !(Maybe Text)
-    , _ggProductLabels   :: !(Maybe [GoogleCloudVisionV1p2beta1ProductKeyValue])
-    , _ggDescription     :: !(Maybe Text)
+    , _ggProductLabels :: !(Maybe [GoogleCloudVisionV1p2beta1ProductKeyValue])
+    , _ggDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7976,11 +7976,11 @@ instance ToJSON GoogleCloudVisionV1p2beta1Product
 -- /See:/ 'block' smart constructor.
 data Block =
   Block'
-    { _bProperty    :: !(Maybe TextProperty)
+    { _bProperty :: !(Maybe TextProperty)
     , _bBoundingBox :: !(Maybe BoundingPoly)
-    , _bParagraphs  :: !(Maybe [Paragraph])
-    , _bConfidence  :: !(Maybe (Textual Double))
-    , _bBlockType   :: !(Maybe BlockBlockType)
+    , _bParagraphs :: !(Maybe [Paragraph])
+    , _bConfidence :: !(Maybe (Textual Double))
+    , _bBlockType :: !(Maybe BlockBlockType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8070,8 +8070,8 @@ instance ToJSON Block where
 -- /See:/ 'googleCloudVisionV1p2beta1AsyncAnnotateFileRequest' smart constructor.
 data GoogleCloudVisionV1p2beta1AsyncAnnotateFileRequest =
   GoogleCloudVisionV1p2beta1AsyncAnnotateFileRequest'
-    { _gInputConfig  :: !(Maybe GoogleCloudVisionV1p2beta1InputConfig)
-    , _gFeatures     :: !(Maybe [GoogleCloudVisionV1p2beta1Feature])
+    { _gInputConfig :: !(Maybe GoogleCloudVisionV1p2beta1InputConfig)
+    , _gFeatures :: !(Maybe [GoogleCloudVisionV1p2beta1Feature])
     , _gOutputConfig :: !(Maybe GoogleCloudVisionV1p2beta1OutputConfig)
     , _gImageContext :: !(Maybe GoogleCloudVisionV1p2beta1ImageContext)
     }
@@ -8205,7 +8205,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1TextAnnotation' smart constructor.
 data GoogleCloudVisionV1p3beta1TextAnnotation =
   GoogleCloudVisionV1p3beta1TextAnnotation'
-    { _gcvvtaText  :: !(Maybe Text)
+    { _gcvvtaText :: !(Maybe Text)
     , _gcvvtaPages :: !(Maybe [GoogleCloudVisionV1p3beta1Page])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8302,7 +8302,7 @@ instance ToJSON AsyncAnnotateFileResponse where
 data InputConfig =
   InputConfig'
     { _icGcsSource :: !(Maybe GcsSource)
-    , _icMimeType  :: !(Maybe Text)
+    , _icMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8349,15 +8349,15 @@ instance ToJSON InputConfig where
 -- /See:/ 'entityAnnotation' smart constructor.
 data EntityAnnotation =
   EntityAnnotation'
-    { _eaScore        :: !(Maybe (Textual Double))
-    , _eaTopicality   :: !(Maybe (Textual Double))
-    , _eaLocale       :: !(Maybe Text)
+    { _eaScore :: !(Maybe (Textual Double))
+    , _eaTopicality :: !(Maybe (Textual Double))
+    , _eaLocale :: !(Maybe Text)
     , _eaBoundingPoly :: !(Maybe BoundingPoly)
-    , _eaConfidence   :: !(Maybe (Textual Double))
-    , _eaMid          :: !(Maybe Text)
-    , _eaLocations    :: !(Maybe [LocationInfo])
-    , _eaDescription  :: !(Maybe Text)
-    , _eaProperties   :: !(Maybe [Property])
+    , _eaConfidence :: !(Maybe (Textual Double))
+    , _eaMid :: !(Maybe Text)
+    , _eaLocations :: !(Maybe [LocationInfo])
+    , _eaDescription :: !(Maybe Text)
+    , _eaProperties :: !(Maybe [Property])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8500,8 +8500,8 @@ instance ToJSON EntityAnnotation where
 -- /See:/ 'referenceImage' smart constructor.
 data ReferenceImage =
   ReferenceImage'
-    { _riURI           :: !(Maybe Text)
-    , _riName          :: !(Maybe Text)
+    { _riURI :: !(Maybe Text)
+    , _riName :: !(Maybe Text)
     , _riBoundingPolys :: !(Maybe [BoundingPoly])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8570,8 +8570,8 @@ instance ToJSON ReferenceImage where
 -- /See:/ 'batchOperationMetadata' smart constructor.
 data BatchOperationMetadata =
   BatchOperationMetadata'
-    { _bomState      :: !(Maybe BatchOperationMetadataState)
-    , _bomEndTime    :: !(Maybe DateTime')
+    { _bomState :: !(Maybe BatchOperationMetadataState)
+    , _bomEndTime :: !(Maybe DateTime')
     , _bomSubmitTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8632,12 +8632,12 @@ instance ToJSON BatchOperationMetadata where
 -- /See:/ 'googleCloudVisionV1p3beta1WebDetection' smart constructor.
 data GoogleCloudVisionV1p3beta1WebDetection =
   GoogleCloudVisionV1p3beta1WebDetection'
-    { _gVisuallySimilarImages   :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
-    , _gBestGuessLabels         :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebLabel])
+    { _gVisuallySimilarImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
+    , _gBestGuessLabels :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebLabel])
     , _gPagesWithMatchingImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebPage])
-    , _gPartialMatchingImages   :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
-    , _gFullMatchingImages      :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
-    , _gWebEntities             :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebEntity])
+    , _gPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
+    , _gFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebImage])
+    , _gWebEntities :: !(Maybe [GoogleCloudVisionV1p3beta1WebDetectionWebEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8757,7 +8757,7 @@ instance ToJSON
 data DetectedLanguage =
   DetectedLanguage'
     { _dlLanguageCode :: !(Maybe Text)
-    , _dlConfidence   :: !(Maybe (Textual Double))
+    , _dlConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -8809,7 +8809,7 @@ instance ToJSON DetectedLanguage where
 -- /See:/ 'googleCloudVisionV1p3beta1AnnotateFileResponse' smart constructor.
 data GoogleCloudVisionV1p3beta1AnnotateFileResponse =
   GoogleCloudVisionV1p3beta1AnnotateFileResponse'
-    { _gooResponses   :: !(Maybe [GoogleCloudVisionV1p3beta1AnnotateImageResponse])
+    { _gooResponses :: !(Maybe [GoogleCloudVisionV1p3beta1AnnotateImageResponse])
     , _gooInputConfig :: !(Maybe GoogleCloudVisionV1p3beta1InputConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8868,8 +8868,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1ProductSearchResultsResult' smart constructor.
 data GoogleCloudVisionV1p2beta1ProductSearchResultsResult =
   GoogleCloudVisionV1p2beta1ProductSearchResultsResult'
-    { _gImage   :: !(Maybe Text)
-    , _gScore   :: !(Maybe (Textual Double))
+    { _gImage :: !(Maybe Text)
+    , _gScore :: !(Maybe (Textual Double))
     , _gProduct :: !(Maybe GoogleCloudVisionV1p2beta1Product)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8934,10 +8934,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1Word' smart constructor.
 data GoogleCloudVisionV1p2beta1Word =
   GoogleCloudVisionV1p2beta1Word'
-    { _gcvvwcProperty    :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+    { _gcvvwcProperty :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
     , _gcvvwcBoundingBox :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvwcSymbols     :: !(Maybe [GoogleCloudVisionV1p2beta1Symbol])
-    , _gcvvwcConfidence  :: !(Maybe (Textual Double))
+    , _gcvvwcSymbols :: !(Maybe [GoogleCloudVisionV1p2beta1Symbol])
+    , _gcvvwcConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9023,10 +9023,10 @@ instance ToJSON GoogleCloudVisionV1p2beta1Word where
 -- /See:/ 'googleCloudVisionV1p1beta1Word' smart constructor.
 data GoogleCloudVisionV1p1beta1Word =
   GoogleCloudVisionV1p1beta1Word'
-    { _gcvvw1Property    :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+    { _gcvvw1Property :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
     , _gcvvw1BoundingBox :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvvw1Symbols     :: !(Maybe [GoogleCloudVisionV1p1beta1Symbol])
-    , _gcvvw1Confidence  :: !(Maybe (Textual Double))
+    , _gcvvw1Symbols :: !(Maybe [GoogleCloudVisionV1p1beta1Symbol])
+    , _gcvvw1Confidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9112,8 +9112,8 @@ instance ToJSON GoogleCloudVisionV1p1beta1Word where
 -- /See:/ 'googleCloudVisionV1p1beta1ProductSearchResultsResult' smart constructor.
 data GoogleCloudVisionV1p1beta1ProductSearchResultsResult =
   GoogleCloudVisionV1p1beta1ProductSearchResultsResult'
-    { _gcvvpsrrcImage   :: !(Maybe Text)
-    , _gcvvpsrrcScore   :: !(Maybe (Textual Double))
+    { _gcvvpsrrcImage :: !(Maybe Text)
+    , _gcvvpsrrcScore :: !(Maybe (Textual Double))
     , _gcvvpsrrcProduct :: !(Maybe GoogleCloudVisionV1p1beta1Product)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9190,7 +9190,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1ImportProductSetsResponse =
   GoogleCloudVisionV1p3beta1ImportProductSetsResponse'
     { _gcvvipsrReferenceImages :: !(Maybe [GoogleCloudVisionV1p3beta1ReferenceImage])
-    , _gcvvipsrStatuses        :: !(Maybe [Status])
+    , _gcvvipsrStatuses :: !(Maybe [Status])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9350,8 +9350,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1WebDetectionWebEntity' smart constructor.
 data GoogleCloudVisionV1p3beta1WebDetectionWebEntity =
   GoogleCloudVisionV1p3beta1WebDetectionWebEntity'
-    { _goooScore       :: !(Maybe (Textual Double))
-    , _goooEntityId    :: !(Maybe Text)
+    { _goooScore :: !(Maybe (Textual Double))
+    , _goooEntityId :: !(Maybe Text)
     , _goooDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9418,20 +9418,20 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1AnnotateImageResponse' smart constructor.
 data GoogleCloudVisionV1p1beta1AnnotateImageResponse =
   GoogleCloudVisionV1p1beta1AnnotateImageResponse'
-    { _gooLogoAnnotations            :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
-    , _gooProductSearchResults       :: !(Maybe GoogleCloudVisionV1p1beta1ProductSearchResults)
-    , _gooContext                    :: !(Maybe GoogleCloudVisionV1p1beta1ImageAnnotationContext)
-    , _gooLabelAnnotations           :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
-    , _gooFaceAnnotations            :: !(Maybe [GoogleCloudVisionV1p1beta1FaceAnnotation])
-    , _gooError                      :: !(Maybe Status)
-    , _gooWebDetection               :: !(Maybe GoogleCloudVisionV1p1beta1WebDetection)
-    , _gooSafeSearchAnnotation       :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotation)
-    , _gooLandmarkAnnotations        :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
+    { _gooLogoAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
+    , _gooProductSearchResults :: !(Maybe GoogleCloudVisionV1p1beta1ProductSearchResults)
+    , _gooContext :: !(Maybe GoogleCloudVisionV1p1beta1ImageAnnotationContext)
+    , _gooLabelAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
+    , _gooFaceAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1FaceAnnotation])
+    , _gooError :: !(Maybe Status)
+    , _gooWebDetection :: !(Maybe GoogleCloudVisionV1p1beta1WebDetection)
+    , _gooSafeSearchAnnotation :: !(Maybe GoogleCloudVisionV1p1beta1SafeSearchAnnotation)
+    , _gooLandmarkAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
     , _gooLocalizedObjectAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation])
-    , _gooTextAnnotations            :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
-    , _gooCropHintsAnnotation        :: !(Maybe GoogleCloudVisionV1p1beta1CropHintsAnnotation)
-    , _gooFullTextAnnotation         :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotation)
-    , _gooImagePropertiesAnnotation  :: !(Maybe GoogleCloudVisionV1p1beta1ImageProperties)
+    , _gooTextAnnotations :: !(Maybe [GoogleCloudVisionV1p1beta1EntityAnnotation])
+    , _gooCropHintsAnnotation :: !(Maybe GoogleCloudVisionV1p1beta1CropHintsAnnotation)
+    , _gooFullTextAnnotation :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotation)
+    , _gooImagePropertiesAnnotation :: !(Maybe GoogleCloudVisionV1p1beta1ImageProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9643,7 +9643,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1FaceAnnotationLandmark' smart constructor.
 data GoogleCloudVisionV1p3beta1FaceAnnotationLandmark =
   GoogleCloudVisionV1p3beta1FaceAnnotationLandmark'
-    { _gType     :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationLandmarkType)
+    { _gType :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationLandmarkType)
     , _gPosition :: !(Maybe GoogleCloudVisionV1p3beta1Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9700,8 +9700,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1BatchOperationMetadata' smart constructor.
 data GoogleCloudVisionV1p3beta1BatchOperationMetadata =
   GoogleCloudVisionV1p3beta1BatchOperationMetadata'
-    { _gcvvbomState      :: !(Maybe GoogleCloudVisionV1p3beta1BatchOperationMetadataState)
-    , _gcvvbomEndTime    :: !(Maybe DateTime')
+    { _gcvvbomState :: !(Maybe GoogleCloudVisionV1p3beta1BatchOperationMetadataState)
+    , _gcvvbomEndTime :: !(Maybe DateTime')
     , _gcvvbomSubmitTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9774,7 +9774,7 @@ instance ToJSON
 data WebImage =
   WebImage'
     { _wiScore :: !(Maybe (Textual Double))
-    , _wiURL   :: !(Maybe Text)
+    , _wiURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9818,10 +9818,10 @@ instance ToJSON WebImage where
 -- /See:/ 'googleCloudVisionV1p1beta1Paragraph' smart constructor.
 data GoogleCloudVisionV1p1beta1Paragraph =
   GoogleCloudVisionV1p1beta1Paragraph'
-    { _gcvvp1Property    :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+    { _gcvvp1Property :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
     , _gcvvp1BoundingBox :: !(Maybe GoogleCloudVisionV1p1beta1BoundingPoly)
-    , _gcvvp1Confidence  :: !(Maybe (Textual Double))
-    , _gcvvp1Words       :: !(Maybe [GoogleCloudVisionV1p1beta1Word])
+    , _gcvvp1Confidence :: !(Maybe (Textual Double))
+    , _gcvvp1Words :: !(Maybe [GoogleCloudVisionV1p1beta1Word])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9906,12 +9906,12 @@ instance ToJSON GoogleCloudVisionV1p1beta1Paragraph
 -- /See:/ 'webDetection' smart constructor.
 data WebDetection =
   WebDetection'
-    { _wdVisuallySimilarImages   :: !(Maybe [WebImage])
-    , _wdBestGuessLabels         :: !(Maybe [WebLabel])
+    { _wdVisuallySimilarImages :: !(Maybe [WebImage])
+    , _wdBestGuessLabels :: !(Maybe [WebLabel])
     , _wdPagesWithMatchingImages :: !(Maybe [WebPage])
-    , _wdPartialMatchingImages   :: !(Maybe [WebImage])
-    , _wdFullMatchingImages      :: !(Maybe [WebImage])
-    , _wdWebEntities             :: !(Maybe [WebEntity])
+    , _wdPartialMatchingImages :: !(Maybe [WebImage])
+    , _wdFullMatchingImages :: !(Maybe [WebImage])
+    , _wdWebEntities :: !(Maybe [WebEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10028,7 +10028,7 @@ instance ToJSON WebDetection where
 -- /See:/ 'annotateFileResponse' smart constructor.
 data AnnotateFileResponse =
   AnnotateFileResponse'
-    { _afrResponses   :: !(Maybe [AnnotateImageResponse])
+    { _afrResponses :: !(Maybe [AnnotateImageResponse])
     , _afrInputConfig :: !(Maybe InputConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10080,15 +10080,15 @@ instance ToJSON AnnotateFileResponse where
 -- /See:/ 'googleCloudVisionV1p3beta1EntityAnnotation' smart constructor.
 data GoogleCloudVisionV1p3beta1EntityAnnotation =
   GoogleCloudVisionV1p3beta1EntityAnnotation'
-    { _gcvveacScore        :: !(Maybe (Textual Double))
-    , _gcvveacTopicality   :: !(Maybe (Textual Double))
-    , _gcvveacLocale       :: !(Maybe Text)
+    { _gcvveacScore :: !(Maybe (Textual Double))
+    , _gcvveacTopicality :: !(Maybe (Textual Double))
+    , _gcvveacLocale :: !(Maybe Text)
     , _gcvveacBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvveacConfidence   :: !(Maybe (Textual Double))
-    , _gcvveacMid          :: !(Maybe Text)
-    , _gcvveacLocations    :: !(Maybe [GoogleCloudVisionV1p3beta1LocationInfo])
-    , _gcvveacDescription  :: !(Maybe Text)
-    , _gcvveacProperties   :: !(Maybe [GoogleCloudVisionV1p3beta1Property])
+    , _gcvveacConfidence :: !(Maybe (Textual Double))
+    , _gcvveacMid :: !(Maybe Text)
+    , _gcvveacLocations :: !(Maybe [GoogleCloudVisionV1p3beta1LocationInfo])
+    , _gcvveacDescription :: !(Maybe Text)
+    , _gcvveacProperties :: !(Maybe [GoogleCloudVisionV1p3beta1Property])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10244,7 +10244,7 @@ instance ToJSON
 -- /See:/ 'groupedResult' smart constructor.
 data GroupedResult =
   GroupedResult'
-    { _grResults      :: !(Maybe [Result])
+    { _grResults :: !(Maybe [Result])
     , _grBoundingPoly :: !(Maybe BoundingPoly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10296,8 +10296,8 @@ instance ToJSON GroupedResult where
 -- /See:/ 'googleCloudVisionV1p3beta1ReferenceImage' smart constructor.
 data GoogleCloudVisionV1p3beta1ReferenceImage =
   GoogleCloudVisionV1p3beta1ReferenceImage'
-    { _gcvvriURI           :: !(Maybe Text)
-    , _gcvvriName          :: !(Maybe Text)
+    { _gcvvriURI :: !(Maybe Text)
+    , _gcvvriName :: !(Maybe Text)
     , _gcvvriBoundingPolys :: !(Maybe [GoogleCloudVisionV1p3beta1BoundingPoly])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10375,10 +10375,10 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation =
   GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation'
     { _gcvvloacLanguageCode :: !(Maybe Text)
-    , _gcvvloacScore        :: !(Maybe (Textual Double))
+    , _gcvvloacScore :: !(Maybe (Textual Double))
     , _gcvvloacBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvloacName         :: !(Maybe Text)
-    , _gcvvloacMid          :: !(Maybe Text)
+    , _gcvvloacName :: !(Maybe Text)
+    , _gcvvloacMid :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10471,11 +10471,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1Block' smart constructor.
 data GoogleCloudVisionV1p3beta1Block =
   GoogleCloudVisionV1p3beta1Block'
-    { _gcvvbcProperty    :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
+    { _gcvvbcProperty :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
     , _gcvvbcBoundingBox :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvbcParagraphs  :: !(Maybe [GoogleCloudVisionV1p3beta1Paragraph])
-    , _gcvvbcConfidence  :: !(Maybe (Textual Double))
-    , _gcvvbcBlockType   :: !(Maybe GoogleCloudVisionV1p3beta1BlockBlockType)
+    , _gcvvbcParagraphs :: !(Maybe [GoogleCloudVisionV1p3beta1Paragraph])
+    , _gcvvbcConfidence :: !(Maybe (Textual Double))
+    , _gcvvbcBlockType :: !(Maybe GoogleCloudVisionV1p3beta1BlockBlockType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10671,7 +10671,7 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1TextAnnotationTextProperty =
   GoogleCloudVisionV1p2beta1TextAnnotationTextProperty'
     { _gDetectedLanguages :: !(Maybe [GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage])
-    , _gDetectedBreak     :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak)
+    , _gDetectedBreak :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10732,7 +10732,7 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1BoundingPoly =
   GoogleCloudVisionV1p2beta1BoundingPoly'
     { _gNormalizedVertices :: !(Maybe [GoogleCloudVisionV1p2beta1NormalizedVertex])
-    , _gVertices           :: !(Maybe [GoogleCloudVisionV1p2beta1Vertex])
+    , _gVertices :: !(Maybe [GoogleCloudVisionV1p2beta1Vertex])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10945,11 +10945,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1Product' smart constructor.
 data GoogleCloudVisionV1p1beta1Product =
   GoogleCloudVisionV1p1beta1Product'
-    { _gcvvp1Name            :: !(Maybe Text)
-    , _gcvvp1DisplayName     :: !(Maybe Text)
+    { _gcvvp1Name :: !(Maybe Text)
+    , _gcvvp1DisplayName :: !(Maybe Text)
     , _gcvvp1ProductCategory :: !(Maybe Text)
-    , _gcvvp1ProductLabels   :: !(Maybe [GoogleCloudVisionV1p1beta1ProductKeyValue])
-    , _gcvvp1Description     :: !(Maybe Text)
+    , _gcvvp1ProductLabels :: !(Maybe [GoogleCloudVisionV1p1beta1ProductKeyValue])
+    , _gcvvp1Description :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11106,7 +11106,7 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1WebDetectionWebImage =
   GoogleCloudVisionV1p2beta1WebDetectionWebImage'
     { _gcvvwdwicScore :: !(Maybe (Textual Double))
-    , _gcvvwdwicURL   :: !(Maybe Text)
+    , _gcvvwdwicURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11162,11 +11162,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1Page' smart constructor.
 data GoogleCloudVisionV1p1beta1Page =
   GoogleCloudVisionV1p1beta1Page'
-    { _g2Property   :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
-    , _g2Height     :: !(Maybe (Textual Int32))
-    , _g2Blocks     :: !(Maybe [GoogleCloudVisionV1p1beta1Block])
-    , _g2Width      :: !(Maybe (Textual Int32))
-    , _g2Confidence :: !(Maybe (Textual Double))
+    { _g1Property :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+    , _g1Height :: !(Maybe (Textual Int32))
+    , _g1Blocks :: !(Maybe [GoogleCloudVisionV1p1beta1Block])
+    , _g1Width :: !(Maybe (Textual Int32))
+    , _g1Confidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11175,57 +11175,57 @@ data GoogleCloudVisionV1p1beta1Page =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'g2Property'
+-- * 'g1Property'
 --
--- * 'g2Height'
+-- * 'g1Height'
 --
--- * 'g2Blocks'
+-- * 'g1Blocks'
 --
--- * 'g2Width'
+-- * 'g1Width'
 --
--- * 'g2Confidence'
+-- * 'g1Confidence'
 googleCloudVisionV1p1beta1Page
     :: GoogleCloudVisionV1p1beta1Page
 googleCloudVisionV1p1beta1Page =
   GoogleCloudVisionV1p1beta1Page'
-    { _g2Property = Nothing
-    , _g2Height = Nothing
-    , _g2Blocks = Nothing
-    , _g2Width = Nothing
-    , _g2Confidence = Nothing
+    { _g1Property = Nothing
+    , _g1Height = Nothing
+    , _g1Blocks = Nothing
+    , _g1Width = Nothing
+    , _g1Confidence = Nothing
     }
 
 
 -- | Additional information detected on the page.
-g2Property :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
-g2Property
-  = lens _g2Property (\ s a -> s{_g2Property = a})
+g1Property :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe GoogleCloudVisionV1p1beta1TextAnnotationTextProperty)
+g1Property
+  = lens _g1Property (\ s a -> s{_g1Property = a})
 
 -- | Page height. For PDFs the unit is points. For images (including TIFFs)
 -- the unit is pixels.
-g2Height :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Int32)
-g2Height
-  = lens _g2Height (\ s a -> s{_g2Height = a}) .
+g1Height :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Int32)
+g1Height
+  = lens _g1Height (\ s a -> s{_g1Height = a}) .
       mapping _Coerce
 
 -- | List of blocks of text, images etc on this page.
-g2Blocks :: Lens' GoogleCloudVisionV1p1beta1Page [GoogleCloudVisionV1p1beta1Block]
-g2Blocks
-  = lens _g2Blocks (\ s a -> s{_g2Blocks = a}) .
+g1Blocks :: Lens' GoogleCloudVisionV1p1beta1Page [GoogleCloudVisionV1p1beta1Block]
+g1Blocks
+  = lens _g1Blocks (\ s a -> s{_g1Blocks = a}) .
       _Default
       . _Coerce
 
 -- | Page width. For PDFs the unit is points. For images (including TIFFs)
 -- the unit is pixels.
-g2Width :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Int32)
-g2Width
-  = lens _g2Width (\ s a -> s{_g2Width = a}) .
+g1Width :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Int32)
+g1Width
+  = lens _g1Width (\ s a -> s{_g1Width = a}) .
       mapping _Coerce
 
 -- | Confidence of the OCR results on the page. Range [0, 1].
-g2Confidence :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Double)
-g2Confidence
-  = lens _g2Confidence (\ s a -> s{_g2Confidence = a})
+g1Confidence :: Lens' GoogleCloudVisionV1p1beta1Page (Maybe Double)
+g1Confidence
+  = lens _g1Confidence (\ s a -> s{_g1Confidence = a})
       . mapping _Coerce
 
 instance FromJSON GoogleCloudVisionV1p1beta1Page
@@ -11243,11 +11243,11 @@ instance ToJSON GoogleCloudVisionV1p1beta1Page where
         toJSON GoogleCloudVisionV1p1beta1Page'{..}
           = object
               (catMaybes
-                 [("property" .=) <$> _g2Property,
-                  ("height" .=) <$> _g2Height,
-                  ("blocks" .=) <$> _g2Blocks,
-                  ("width" .=) <$> _g2Width,
-                  ("confidence" .=) <$> _g2Confidence])
+                 [("property" .=) <$> _g1Property,
+                  ("height" .=) <$> _g1Height,
+                  ("blocks" .=) <$> _g1Blocks,
+                  ("width" .=) <$> _g1Width,
+                  ("confidence" .=) <$> _g1Confidence])
 
 -- | Information about the products similar to a single product in a query
 -- image.
@@ -11255,7 +11255,7 @@ instance ToJSON GoogleCloudVisionV1p1beta1Page where
 -- /See:/ 'googleCloudVisionV1p2beta1ProductSearchResultsGroupedResult' smart constructor.
 data GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult =
   GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult'
-    { _gcvvpsrgrcResults      :: !(Maybe [GoogleCloudVisionV1p2beta1ProductSearchResultsResult])
+    { _gcvvpsrgrcResults :: !(Maybe [GoogleCloudVisionV1p2beta1ProductSearchResultsResult])
     , _gcvvpsrgrcBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11316,10 +11316,10 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1Symbol' smart constructor.
 data GoogleCloudVisionV1p3beta1Symbol =
   GoogleCloudVisionV1p3beta1Symbol'
-    { _gcvvscProperty    :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
+    { _gcvvscProperty :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationTextProperty)
     , _gcvvscBoundingBox :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvscText        :: !(Maybe Text)
-    , _gcvvscConfidence  :: !(Maybe (Textual Double))
+    , _gcvvscText :: !(Maybe Text)
+    , _gcvvscConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11403,8 +11403,8 @@ instance ToJSON GoogleCloudVisionV1p3beta1Symbol
 -- /See:/ 'cropHint' smart constructor.
 data CropHint =
   CropHint'
-    { _chBoundingPoly       :: !(Maybe BoundingPoly)
-    , _chConfidence         :: !(Maybe (Textual Double))
+    { _chBoundingPoly :: !(Maybe BoundingPoly)
+    , _chConfidence :: !(Maybe (Textual Double))
     , _chImportanceFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11472,7 +11472,7 @@ instance ToJSON CropHint where
 data GoogleCloudVisionV1p2beta1Image =
   GoogleCloudVisionV1p2beta1Image'
     { _gcvviContent :: !(Maybe Bytes)
-    , _gcvviSource  :: !(Maybe GoogleCloudVisionV1p2beta1ImageSource)
+    , _gcvviSource :: !(Maybe GoogleCloudVisionV1p2beta1ImageSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11528,7 +11528,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1Image where
 data GoogleCloudVisionV1p1beta1InputConfig =
   GoogleCloudVisionV1p1beta1InputConfig'
     { _gGcsSource :: !(Maybe GoogleCloudVisionV1p1beta1GcsSource)
-    , _gMimeType  :: !(Maybe Text)
+    , _gMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11581,7 +11581,7 @@ instance ToJSON GoogleCloudVisionV1p1beta1InputConfig
 -- /See:/ 'googleCloudVisionV1p2beta1ImageAnnotationContext' smart constructor.
 data GoogleCloudVisionV1p2beta1ImageAnnotationContext =
   GoogleCloudVisionV1p2beta1ImageAnnotationContext'
-    { _gcvviaccURI        :: !(Maybe Text)
+    { _gcvviaccURI :: !(Maybe Text)
     , _gcvviaccPageNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11640,8 +11640,8 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1ProductSearchResults =
   GoogleCloudVisionV1p2beta1ProductSearchResults'
     { _gcvvpsrsProductGroupedResults :: !(Maybe [GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult])
-    , _gcvvpsrsResults               :: !(Maybe [GoogleCloudVisionV1p2beta1ProductSearchResultsResult])
-    , _gcvvpsrsIndexTime             :: !(Maybe DateTime')
+    , _gcvvpsrsResults :: !(Maybe [GoogleCloudVisionV1p2beta1ProductSearchResultsResult])
+    , _gcvvpsrsIndexTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11722,8 +11722,8 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1Property =
   GoogleCloudVisionV1p2beta1Property'
     { _goooUint64Value :: !(Maybe (Textual Word64))
-    , _goooValue       :: !(Maybe Text)
-    , _goooName        :: !(Maybe Text)
+    , _goooValue :: !(Maybe Text)
+    , _goooName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -11783,21 +11783,21 @@ instance ToJSON GoogleCloudVisionV1p2beta1Property
 -- /See:/ 'googleCloudVisionV1p3beta1FaceAnnotation' smart constructor.
 data GoogleCloudVisionV1p3beta1FaceAnnotation =
   GoogleCloudVisionV1p3beta1FaceAnnotation'
-    { _gcvvfacTiltAngle              :: !(Maybe (Textual Double))
-    , _gcvvfacBlurredLikelihood      :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationBlurredLikelihood)
-    , _gcvvfacBoundingPoly           :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvfacSurpriseLikelihood     :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationSurpriseLikelihood)
-    , _gcvvfacLandmarkingConfidence  :: !(Maybe (Textual Double))
-    , _gcvvfacPanAngle               :: !(Maybe (Textual Double))
-    , _gcvvfacRollAngle              :: !(Maybe (Textual Double))
+    { _gcvvfacTiltAngle :: !(Maybe (Textual Double))
+    , _gcvvfacBlurredLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationBlurredLikelihood)
+    , _gcvvfacBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
+    , _gcvvfacSurpriseLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationSurpriseLikelihood)
+    , _gcvvfacLandmarkingConfidence :: !(Maybe (Textual Double))
+    , _gcvvfacPanAngle :: !(Maybe (Textual Double))
+    , _gcvvfacRollAngle :: !(Maybe (Textual Double))
     , _gcvvfacUnderExposedLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationUnderExposedLikelihood)
-    , _gcvvfacFdBoundingPoly         :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
-    , _gcvvfacAngerLikelihood        :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationAngerLikelihood)
-    , _gcvvfacDetectionConfidence    :: !(Maybe (Textual Double))
-    , _gcvvfacHeadwearLikelihood     :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationHeadwearLikelihood)
-    , _gcvvfacSorrowLikelihood       :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationSorrowLikelihood)
-    , _gcvvfacJoyLikelihood          :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationJoyLikelihood)
-    , _gcvvfacLandmarks              :: !(Maybe [GoogleCloudVisionV1p3beta1FaceAnnotationLandmark])
+    , _gcvvfacFdBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
+    , _gcvvfacAngerLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationAngerLikelihood)
+    , _gcvvfacDetectionConfidence :: !(Maybe (Textual Double))
+    , _gcvvfacHeadwearLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationHeadwearLikelihood)
+    , _gcvvfacSorrowLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationSorrowLikelihood)
+    , _gcvvfacJoyLikelihood :: !(Maybe GoogleCloudVisionV1p3beta1FaceAnnotationJoyLikelihood)
+    , _gcvvfacLandmarks :: !(Maybe [GoogleCloudVisionV1p3beta1FaceAnnotationLandmark])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12026,7 +12026,7 @@ instance ToJSON
 data GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage =
   GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage'
     { _gcvvtadlcLanguageCode :: !(Maybe Text)
-    , _gcvvtadlcConfidence   :: !(Maybe (Textual Double))
+    , _gcvvtadlcConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12085,11 +12085,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1WebDetectionWebPage' smart constructor.
 data GoogleCloudVisionV1p1beta1WebDetectionWebPage =
   GoogleCloudVisionV1p1beta1WebDetectionWebPage'
-    { _gcvvwdwpcScore                 :: !(Maybe (Textual Double))
-    , _gcvvwdwpcURL                   :: !(Maybe Text)
-    , _gcvvwdwpcPageTitle             :: !(Maybe Text)
+    { _gcvvwdwpcScore :: !(Maybe (Textual Double))
+    , _gcvvwdwpcURL :: !(Maybe Text)
+    , _gcvvwdwpcPageTitle :: !(Maybe Text)
     , _gcvvwdwpcPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
-    , _gcvvwdwpcFullMatchingImages    :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
+    , _gcvvwdwpcFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12190,7 +12190,7 @@ instance ToJSON
 data OutputConfig =
   OutputConfig'
     { _ocGcsDestination :: !(Maybe GcsDestination)
-    , _ocBatchSize      :: !(Maybe (Textual Int32))
+    , _ocBatchSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12247,7 +12247,7 @@ instance ToJSON OutputConfig where
 data GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak =
   GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak'
     { _gooIsPrefix :: !(Maybe Bool)
-    , _gooType     :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreakType)
+    , _gooType :: !(Maybe GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreakType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12306,7 +12306,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1TextAnnotation' smart constructor.
 data GoogleCloudVisionV1p2beta1TextAnnotation =
   GoogleCloudVisionV1p2beta1TextAnnotation'
-    { _gText  :: !(Maybe Text)
+    { _gText :: !(Maybe Text)
     , _gPages :: !(Maybe [GoogleCloudVisionV1p2beta1Page])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12361,10 +12361,10 @@ instance ToJSON
 -- /See:/ 'safeSearchAnnotation' smart constructor.
 data SafeSearchAnnotation =
   SafeSearchAnnotation'
-    { _ssaSpoof    :: !(Maybe SafeSearchAnnotationSpoof)
-    , _ssaRacy     :: !(Maybe SafeSearchAnnotationRacy)
-    , _ssaAdult    :: !(Maybe SafeSearchAnnotationAdult)
-    , _ssaMedical  :: !(Maybe SafeSearchAnnotationMedical)
+    { _ssaSpoof :: !(Maybe SafeSearchAnnotationSpoof)
+    , _ssaRacy :: !(Maybe SafeSearchAnnotationRacy)
+    , _ssaAdult :: !(Maybe SafeSearchAnnotationAdult)
+    , _ssaMedical :: !(Maybe SafeSearchAnnotationMedical)
     , _ssaViolence :: !(Maybe SafeSearchAnnotationViolence)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12448,7 +12448,7 @@ instance ToJSON SafeSearchAnnotation where
 data GoogleCloudVisionV1p1beta1WebDetectionWebLabel =
   GoogleCloudVisionV1p1beta1WebDetectionWebLabel'
     { _gcvvwdwlcLanguageCode :: !(Maybe Text)
-    , _gcvvwdwlcLabel        :: !(Maybe Text)
+    , _gcvvwdwlcLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12552,8 +12552,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1ColorInfo' smart constructor.
 data GoogleCloudVisionV1p3beta1ColorInfo =
   GoogleCloudVisionV1p3beta1ColorInfo'
-    { _gcvvcicColor         :: !(Maybe Color)
-    , _gcvvcicScore         :: !(Maybe (Textual Double))
+    { _gcvvcicColor :: !(Maybe Color)
+    , _gcvvcicScore :: !(Maybe (Textual Double))
     , _gcvvcicPixelFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12759,7 +12759,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1GcsSource
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omState      :: !(Maybe OperationMetadataState)
+    { _omState :: !(Maybe OperationMetadataState)
     , _omUpdateTime :: !(Maybe DateTime')
     , _omCreateTime :: !(Maybe DateTime')
     }
@@ -12819,11 +12819,11 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'product' smart constructor.
 data Product =
   Product'
-    { _proName            :: !(Maybe Text)
-    , _proDisplayName     :: !(Maybe Text)
+    { _proName :: !(Maybe Text)
+    , _proDisplayName :: !(Maybe Text)
     , _proProductCategory :: !(Maybe Text)
-    , _proProductLabels   :: !(Maybe [KeyValue])
-    , _proDescription     :: !(Maybe Text)
+    , _proProductLabels :: !(Maybe [KeyValue])
+    , _proDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -12919,11 +12919,11 @@ instance ToJSON Product where
 -- /See:/ 'googleCloudVisionV1p2beta1Block' smart constructor.
 data GoogleCloudVisionV1p2beta1Block =
   GoogleCloudVisionV1p2beta1Block'
-    { _gcvvb1Property    :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+    { _gcvvb1Property :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
     , _gcvvb1BoundingBox :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvb1Paragraphs  :: !(Maybe [GoogleCloudVisionV1p2beta1Paragraph])
-    , _gcvvb1Confidence  :: !(Maybe (Textual Double))
-    , _gcvvb1BlockType   :: !(Maybe GoogleCloudVisionV1p2beta1BlockBlockType)
+    , _gcvvb1Paragraphs :: !(Maybe [GoogleCloudVisionV1p2beta1Paragraph])
+    , _gcvvb1Confidence :: !(Maybe (Textual Double))
+    , _gcvvb1BlockType :: !(Maybe GoogleCloudVisionV1p2beta1BlockBlockType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13021,10 +13021,10 @@ instance ToJSON GoogleCloudVisionV1p2beta1Block where
 -- /See:/ 'googleCloudVisionV1p3beta1SafeSearchAnnotation' smart constructor.
 data GoogleCloudVisionV1p3beta1SafeSearchAnnotation =
   GoogleCloudVisionV1p3beta1SafeSearchAnnotation'
-    { _gooSpoof    :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationSpoof)
-    , _gooRacy     :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationRacy)
-    , _gooAdult    :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationAdult)
-    , _gooMedical  :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationMedical)
+    { _gooSpoof :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationSpoof)
+    , _gooRacy :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationRacy)
+    , _gooAdult :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationAdult)
+    , _gooMedical :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationMedical)
     , _gooViolence :: !(Maybe GoogleCloudVisionV1p3beta1SafeSearchAnnotationViolence)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13119,7 +13119,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1TextAnnotation' smart constructor.
 data GoogleCloudVisionV1p1beta1TextAnnotation =
   GoogleCloudVisionV1p1beta1TextAnnotation'
-    { _gcvvtacText  :: !(Maybe Text)
+    { _gcvvtacText :: !(Maybe Text)
     , _gcvvtacPages :: !(Maybe [GoogleCloudVisionV1p1beta1Page])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13176,9 +13176,9 @@ instance ToJSON
 data GoogleCloudVisionV1p2beta1ProductSearchParams =
   GoogleCloudVisionV1p2beta1ProductSearchParams'
     { _gcvvpspProductCategories :: !(Maybe [Text])
-    , _gcvvpspBoundingPoly      :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvpspProductSet        :: !(Maybe Text)
-    , _gcvvpspFilter            :: !(Maybe Text)
+    , _gcvvpspBoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
+    , _gcvvpspProductSet :: !(Maybe Text)
+    , _gcvvpspFilter :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13272,11 +13272,11 @@ instance ToJSON
 -- /See:/ 'webPage' smart constructor.
 data WebPage =
   WebPage'
-    { _wpScore                 :: !(Maybe (Textual Double))
-    , _wpURL                   :: !(Maybe Text)
-    , _wpPageTitle             :: !(Maybe Text)
+    { _wpScore :: !(Maybe (Textual Double))
+    , _wpURL :: !(Maybe Text)
+    , _wpPageTitle :: !(Maybe Text)
     , _wpPartialMatchingImages :: !(Maybe [WebImage])
-    , _wpFullMatchingImages    :: !(Maybe [WebImage])
+    , _wpFullMatchingImages :: !(Maybe [WebImage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13404,7 +13404,7 @@ instance ToJSON DominantColorsAnnotation where
 data GoogleCloudVisionV1p2beta1WebDetectionWebLabel =
   GoogleCloudVisionV1p2beta1WebDetectionWebLabel'
     { _ggLanguageCode :: !(Maybe Text)
-    , _ggLabel        :: !(Maybe Text)
+    , _ggLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13461,7 +13461,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p3beta1ProductSearchResultsGroupedResult' smart constructor.
 data GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult =
   GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult'
-    { _ggResults      :: !(Maybe [GoogleCloudVisionV1p3beta1ProductSearchResultsResult])
+    { _ggResults :: !(Maybe [GoogleCloudVisionV1p3beta1ProductSearchResultsResult])
     , _ggBoundingPoly :: !(Maybe GoogleCloudVisionV1p3beta1BoundingPoly)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13568,15 +13568,15 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1EntityAnnotation' smart constructor.
 data GoogleCloudVisionV1p2beta1EntityAnnotation =
   GoogleCloudVisionV1p2beta1EntityAnnotation'
-    { _gcvvea1Score        :: !(Maybe (Textual Double))
-    , _gcvvea1Topicality   :: !(Maybe (Textual Double))
-    , _gcvvea1Locale       :: !(Maybe Text)
+    { _gcvvea1Score :: !(Maybe (Textual Double))
+    , _gcvvea1Topicality :: !(Maybe (Textual Double))
+    , _gcvvea1Locale :: !(Maybe Text)
     , _gcvvea1BoundingPoly :: !(Maybe GoogleCloudVisionV1p2beta1BoundingPoly)
-    , _gcvvea1Confidence   :: !(Maybe (Textual Double))
-    , _gcvvea1Mid          :: !(Maybe Text)
-    , _gcvvea1Locations    :: !(Maybe [GoogleCloudVisionV1p2beta1LocationInfo])
-    , _gcvvea1Description  :: !(Maybe Text)
-    , _gcvvea1Properties   :: !(Maybe [GoogleCloudVisionV1p2beta1Property])
+    , _gcvvea1Confidence :: !(Maybe (Textual Double))
+    , _gcvvea1Mid :: !(Maybe Text)
+    , _gcvvea1Locations :: !(Maybe [GoogleCloudVisionV1p2beta1LocationInfo])
+    , _gcvvea1Description :: !(Maybe Text)
+    , _gcvvea1Properties :: !(Maybe [GoogleCloudVisionV1p2beta1Property])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13780,11 +13780,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1WebDetectionWebPage' smart constructor.
 data GoogleCloudVisionV1p2beta1WebDetectionWebPage =
   GoogleCloudVisionV1p2beta1WebDetectionWebPage'
-    { _ggScore                 :: !(Maybe (Textual Double))
-    , _ggURL                   :: !(Maybe Text)
-    , _ggPageTitle             :: !(Maybe Text)
+    { _ggScore :: !(Maybe (Textual Double))
+    , _ggURL :: !(Maybe Text)
+    , _ggPageTitle :: !(Maybe Text)
     , _ggPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
-    , _ggFullMatchingImages    :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
+    , _ggFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p2beta1WebDetectionWebImage])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -13922,10 +13922,10 @@ instance ToJSON OperationResponse where
 -- /See:/ 'word' smart constructor.
 data Word =
   Word'
-    { _wProperty    :: !(Maybe TextProperty)
+    { _wProperty :: !(Maybe TextProperty)
     , _wBoundingBox :: !(Maybe BoundingPoly)
-    , _wSymbols     :: !(Maybe [Symbol])
-    , _wConfidence  :: !(Maybe (Textual Double))
+    , _wSymbols :: !(Maybe [Symbol])
+    , _wConfidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14007,7 +14007,7 @@ instance ToJSON Word where
 data GoogleCloudVisionV1p2beta1InputConfig =
   GoogleCloudVisionV1p2beta1InputConfig'
     { _gooGcsSource :: !(Maybe GoogleCloudVisionV1p2beta1GcsSource)
-    , _gooMimeType  :: !(Maybe Text)
+    , _gooMimeType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14059,12 +14059,12 @@ instance ToJSON GoogleCloudVisionV1p2beta1InputConfig
 -- /See:/ 'googleCloudVisionV1p1beta1WebDetection' smart constructor.
 data GoogleCloudVisionV1p1beta1WebDetection =
   GoogleCloudVisionV1p1beta1WebDetection'
-    { _gooVisuallySimilarImages   :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
-    , _gooBestGuessLabels         :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebLabel])
+    { _gooVisuallySimilarImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
+    , _gooBestGuessLabels :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebLabel])
     , _gooPagesWithMatchingImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebPage])
-    , _gooPartialMatchingImages   :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
-    , _gooFullMatchingImages      :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
-    , _gooWebEntities             :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebEntity])
+    , _gooPartialMatchingImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
+    , _gooFullMatchingImages :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebImage])
+    , _gooWebEntities :: !(Maybe [GoogleCloudVisionV1p1beta1WebDetectionWebEntity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14184,7 +14184,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1FaceAnnotationLandmark' smart constructor.
 data GoogleCloudVisionV1p2beta1FaceAnnotationLandmark =
   GoogleCloudVisionV1p2beta1FaceAnnotationLandmark'
-    { _gcvvfalcType     :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationLandmarkType)
+    { _gcvvfalcType :: !(Maybe GoogleCloudVisionV1p2beta1FaceAnnotationLandmarkType)
     , _gcvvfalcPosition :: !(Maybe GoogleCloudVisionV1p2beta1Position)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14242,8 +14242,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1AnnotateImageRequest' smart constructor.
 data GoogleCloudVisionV1p2beta1AnnotateImageRequest =
   GoogleCloudVisionV1p2beta1AnnotateImageRequest'
-    { _gcvvairImage        :: !(Maybe GoogleCloudVisionV1p2beta1Image)
-    , _gcvvairFeatures     :: !(Maybe [GoogleCloudVisionV1p2beta1Feature])
+    { _gcvvairImage :: !(Maybe GoogleCloudVisionV1p2beta1Image)
+    , _gcvvairFeatures :: !(Maybe [GoogleCloudVisionV1p2beta1Feature])
     , _gcvvairImageContext :: !(Maybe GoogleCloudVisionV1p2beta1ImageContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14315,7 +14315,7 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p1beta1AnnotateFileResponse' smart constructor.
 data GoogleCloudVisionV1p1beta1AnnotateFileResponse =
   GoogleCloudVisionV1p1beta1AnnotateFileResponse'
-    { _gcvvafrcResponses   :: !(Maybe [GoogleCloudVisionV1p1beta1AnnotateImageResponse])
+    { _gcvvafrcResponses :: !(Maybe [GoogleCloudVisionV1p1beta1AnnotateImageResponse])
     , _gcvvafrcInputConfig :: !(Maybe GoogleCloudVisionV1p1beta1InputConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14375,11 +14375,11 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1Page' smart constructor.
 data GoogleCloudVisionV1p2beta1Page =
   GoogleCloudVisionV1p2beta1Page'
-    { _goo3Property   :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
-    , _goo3Height     :: !(Maybe (Textual Int32))
-    , _goo3Blocks     :: !(Maybe [GoogleCloudVisionV1p2beta1Block])
-    , _goo3Width      :: !(Maybe (Textual Int32))
-    , _goo3Confidence :: !(Maybe (Textual Double))
+    { _goo1Property :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+    , _goo1Height :: !(Maybe (Textual Int32))
+    , _goo1Blocks :: !(Maybe [GoogleCloudVisionV1p2beta1Block])
+    , _goo1Width :: !(Maybe (Textual Int32))
+    , _goo1Confidence :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14388,58 +14388,58 @@ data GoogleCloudVisionV1p2beta1Page =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'goo3Property'
+-- * 'goo1Property'
 --
--- * 'goo3Height'
+-- * 'goo1Height'
 --
--- * 'goo3Blocks'
+-- * 'goo1Blocks'
 --
--- * 'goo3Width'
+-- * 'goo1Width'
 --
--- * 'goo3Confidence'
+-- * 'goo1Confidence'
 googleCloudVisionV1p2beta1Page
     :: GoogleCloudVisionV1p2beta1Page
 googleCloudVisionV1p2beta1Page =
   GoogleCloudVisionV1p2beta1Page'
-    { _goo3Property = Nothing
-    , _goo3Height = Nothing
-    , _goo3Blocks = Nothing
-    , _goo3Width = Nothing
-    , _goo3Confidence = Nothing
+    { _goo1Property = Nothing
+    , _goo1Height = Nothing
+    , _goo1Blocks = Nothing
+    , _goo1Width = Nothing
+    , _goo1Confidence = Nothing
     }
 
 
 -- | Additional information detected on the page.
-goo3Property :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
-goo3Property
-  = lens _goo3Property (\ s a -> s{_goo3Property = a})
+goo1Property :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe GoogleCloudVisionV1p2beta1TextAnnotationTextProperty)
+goo1Property
+  = lens _goo1Property (\ s a -> s{_goo1Property = a})
 
 -- | Page height. For PDFs the unit is points. For images (including TIFFs)
 -- the unit is pixels.
-goo3Height :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Int32)
-goo3Height
-  = lens _goo3Height (\ s a -> s{_goo3Height = a}) .
+goo1Height :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Int32)
+goo1Height
+  = lens _goo1Height (\ s a -> s{_goo1Height = a}) .
       mapping _Coerce
 
 -- | List of blocks of text, images etc on this page.
-goo3Blocks :: Lens' GoogleCloudVisionV1p2beta1Page [GoogleCloudVisionV1p2beta1Block]
-goo3Blocks
-  = lens _goo3Blocks (\ s a -> s{_goo3Blocks = a}) .
+goo1Blocks :: Lens' GoogleCloudVisionV1p2beta1Page [GoogleCloudVisionV1p2beta1Block]
+goo1Blocks
+  = lens _goo1Blocks (\ s a -> s{_goo1Blocks = a}) .
       _Default
       . _Coerce
 
 -- | Page width. For PDFs the unit is points. For images (including TIFFs)
 -- the unit is pixels.
-goo3Width :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Int32)
-goo3Width
-  = lens _goo3Width (\ s a -> s{_goo3Width = a}) .
+goo1Width :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Int32)
+goo1Width
+  = lens _goo1Width (\ s a -> s{_goo1Width = a}) .
       mapping _Coerce
 
 -- | Confidence of the OCR results on the page. Range [0, 1].
-goo3Confidence :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Double)
-goo3Confidence
-  = lens _goo3Confidence
-      (\ s a -> s{_goo3Confidence = a})
+goo1Confidence :: Lens' GoogleCloudVisionV1p2beta1Page (Maybe Double)
+goo1Confidence
+  = lens _goo1Confidence
+      (\ s a -> s{_goo1Confidence = a})
       . mapping _Coerce
 
 instance FromJSON GoogleCloudVisionV1p2beta1Page
@@ -14457,11 +14457,11 @@ instance ToJSON GoogleCloudVisionV1p2beta1Page where
         toJSON GoogleCloudVisionV1p2beta1Page'{..}
           = object
               (catMaybes
-                 [("property" .=) <$> _goo3Property,
-                  ("height" .=) <$> _goo3Height,
-                  ("blocks" .=) <$> _goo3Blocks,
-                  ("width" .=) <$> _goo3Width,
-                  ("confidence" .=) <$> _goo3Confidence])
+                 [("property" .=) <$> _goo1Property,
+                  ("height" .=) <$> _goo1Height,
+                  ("blocks" .=) <$> _goo1Blocks,
+                  ("width" .=) <$> _goo1Width,
+                  ("confidence" .=) <$> _goo1Confidence])
 
 -- | Detected start or end of a structural component.
 --
@@ -14469,7 +14469,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1Page where
 data GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak =
   GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak'
     { _gcvvtadbcIsPrefix :: !(Maybe Bool)
-    , _gcvvtadbcType     :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreakType)
+    , _gcvvtadbcType :: !(Maybe GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreakType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14575,7 +14575,7 @@ instance ToJSON
 data GoogleCloudVisionV1p1beta1TextAnnotationTextProperty =
   GoogleCloudVisionV1p1beta1TextAnnotationTextProperty'
     { _gooDetectedLanguages :: !(Maybe [GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage])
-    , _gooDetectedBreak     :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak)
+    , _gooDetectedBreak :: !(Maybe GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14774,8 +14774,8 @@ instance ToJSON
 -- /See:/ 'googleCloudVisionV1p2beta1ColorInfo' smart constructor.
 data GoogleCloudVisionV1p2beta1ColorInfo =
   GoogleCloudVisionV1p2beta1ColorInfo'
-    { _gcvvci1Color         :: !(Maybe Color)
-    , _gcvvci1Score         :: !(Maybe (Textual Double))
+    { _gcvvci1Color :: !(Maybe Color)
+    , _gcvvci1Score :: !(Maybe (Textual Double))
     , _gcvvci1PixelFraction :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14843,7 +14843,7 @@ instance ToJSON GoogleCloudVisionV1p2beta1ColorInfo
 data GoogleCloudVisionV1p1beta1BoundingPoly =
   GoogleCloudVisionV1p1beta1BoundingPoly'
     { _gooNormalizedVertices :: !(Maybe [GoogleCloudVisionV1p1beta1NormalizedVertex])
-    , _gooVertices           :: !(Maybe [GoogleCloudVisionV1p1beta1Vertex])
+    , _gooVertices :: !(Maybe [GoogleCloudVisionV1p1beta1Vertex])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -14903,7 +14903,7 @@ instance ToJSON
 data GoogleCloudVisionV1p1beta1WebDetectionWebImage =
   GoogleCloudVisionV1p1beta1WebDetectionWebImage'
     { _gcvvwdwi1Score :: !(Maybe (Textual Double))
-    , _gcvvwdwi1URL   :: !(Maybe Text)
+    , _gcvvwdwi1URL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15138,7 +15138,7 @@ instance ToJSON NormalizedVertex where
 -- /See:/ 'googleCloudVisionV1p1beta1OperationMetadata' smart constructor.
 data GoogleCloudVisionV1p1beta1OperationMetadata =
   GoogleCloudVisionV1p1beta1OperationMetadata'
-    { _gooState      :: !(Maybe GoogleCloudVisionV1p1beta1OperationMetadataState)
+    { _gooState :: !(Maybe GoogleCloudVisionV1p1beta1OperationMetadataState)
     , _gooUpdateTime :: !(Maybe DateTime')
     , _gooCreateTime :: !(Maybe DateTime')
     }

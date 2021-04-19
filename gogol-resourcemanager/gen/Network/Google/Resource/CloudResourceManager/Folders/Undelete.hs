@@ -48,8 +48,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.Undelete
     , fuCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.undelete@ method which the
 -- 'FoldersUndelete' request conforms to.
@@ -76,13 +76,13 @@ type FoldersUndeleteResource =
 -- /See:/ 'foldersUndelete' smart constructor.
 data FoldersUndelete =
   FoldersUndelete'
-    { _fuXgafv          :: !(Maybe Xgafv)
+    { _fuXgafv :: !(Maybe Xgafv)
     , _fuUploadProtocol :: !(Maybe Text)
-    , _fuAccessToken    :: !(Maybe Text)
-    , _fuUploadType     :: !(Maybe Text)
-    , _fuPayload        :: !UndeleteFolderRequest
-    , _fuName           :: !Text
-    , _fuCallback       :: !(Maybe Text)
+    , _fuAccessToken :: !(Maybe Text)
+    , _fuUploadType :: !(Maybe Text)
+    , _fuPayload :: !UndeleteFolderRequest
+    , _fuName :: !Text
+    , _fuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.SQL.Instances.DemoteMaster
     , idmInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.instances.demoteMaster@ method which the
 -- 'InstancesDemoteMaster' request conforms to.
@@ -62,8 +62,8 @@ type InstancesDemoteMasterResource =
 -- /See:/ 'instancesDemoteMaster' smart constructor.
 data InstancesDemoteMaster =
   InstancesDemoteMaster'
-    { _idmProject  :: !Text
-    , _idmPayload  :: !InstancesDemoteMasterRequest
+    { _idmProject :: !Text
+    , _idmPayload :: !InstancesDemoteMasterRequest
     , _idmInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

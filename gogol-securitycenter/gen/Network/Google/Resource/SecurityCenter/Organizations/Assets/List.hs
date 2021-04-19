@@ -48,8 +48,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Assets.List
     , oalCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.assets.list@ method which the
 -- 'OrganizationsAssetsList' request conforms to.
@@ -77,19 +77,19 @@ type OrganizationsAssetsListResource =
 -- /See:/ 'organizationsAssetsList' smart constructor.
 data OrganizationsAssetsList =
   OrganizationsAssetsList'
-    { _oalParent          :: !Text
-    , _oalXgafv           :: !(Maybe Xgafv)
-    , _oalReadTime        :: !(Maybe DateTime')
-    , _oalUploadProtocol  :: !(Maybe Text)
-    , _oalOrderBy         :: !(Maybe Text)
-    , _oalAccessToken     :: !(Maybe Text)
-    , _oalUploadType      :: !(Maybe Text)
-    , _oalFieldMask       :: !(Maybe GFieldMask)
-    , _oalFilter          :: !(Maybe Text)
-    , _oalPageToken       :: !(Maybe Text)
-    , _oalPageSize        :: !(Maybe (Textual Int32))
+    { _oalParent :: !Text
+    , _oalXgafv :: !(Maybe Xgafv)
+    , _oalReadTime :: !(Maybe DateTime')
+    , _oalUploadProtocol :: !(Maybe Text)
+    , _oalOrderBy :: !(Maybe Text)
+    , _oalAccessToken :: !(Maybe Text)
+    , _oalUploadType :: !(Maybe Text)
+    , _oalFieldMask :: !(Maybe GFieldMask)
+    , _oalFilter :: !(Maybe Text)
+    , _oalPageToken :: !(Maybe Text)
+    , _oalPageSize :: !(Maybe (Textual Int32))
     , _oalCompareDuration :: !(Maybe GDuration)
-    , _oalCallback        :: !(Maybe Text)
+    , _oalCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

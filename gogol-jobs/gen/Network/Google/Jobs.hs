@@ -647,24 +647,24 @@ module Network.Google.Jobs
     , trEndTime
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.Jobs.Projects.ClientEvents.Create
-import           Network.Google.Resource.Jobs.Projects.Companies.Create
-import           Network.Google.Resource.Jobs.Projects.Companies.Delete
-import           Network.Google.Resource.Jobs.Projects.Companies.Get
-import           Network.Google.Resource.Jobs.Projects.Companies.List
-import           Network.Google.Resource.Jobs.Projects.Companies.Patch
-import           Network.Google.Resource.Jobs.Projects.Complete
-import           Network.Google.Resource.Jobs.Projects.Jobs.BatchDelete
-import           Network.Google.Resource.Jobs.Projects.Jobs.Create
-import           Network.Google.Resource.Jobs.Projects.Jobs.Delete
-import           Network.Google.Resource.Jobs.Projects.Jobs.Get
-import           Network.Google.Resource.Jobs.Projects.Jobs.List
-import           Network.Google.Resource.Jobs.Projects.Jobs.Patch
-import           Network.Google.Resource.Jobs.Projects.Jobs.Search
-import           Network.Google.Resource.Jobs.Projects.Jobs.SearchForAlert
-import           Network.Google.Resource.Jobs.Projects.Operations.Get
+import Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Resource.Jobs.Projects.ClientEvents.Create
+import Network.Google.Resource.Jobs.Projects.Companies.Create
+import Network.Google.Resource.Jobs.Projects.Companies.Delete
+import Network.Google.Resource.Jobs.Projects.Companies.Get
+import Network.Google.Resource.Jobs.Projects.Companies.List
+import Network.Google.Resource.Jobs.Projects.Companies.Patch
+import Network.Google.Resource.Jobs.Projects.Complete
+import Network.Google.Resource.Jobs.Projects.Jobs.BatchDelete
+import Network.Google.Resource.Jobs.Projects.Jobs.Create
+import Network.Google.Resource.Jobs.Projects.Jobs.Delete
+import Network.Google.Resource.Jobs.Projects.Jobs.Get
+import Network.Google.Resource.Jobs.Projects.Jobs.List
+import Network.Google.Resource.Jobs.Projects.Jobs.Patch
+import Network.Google.Resource.Jobs.Projects.Jobs.Search
+import Network.Google.Resource.Jobs.Projects.Jobs.SearchForAlert
+import Network.Google.Resource.Jobs.Projects.Operations.Get
 
 {- $resources
 TODO

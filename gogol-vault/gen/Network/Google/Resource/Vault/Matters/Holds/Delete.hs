@@ -42,8 +42,8 @@ module Network.Google.Resource.Vault.Matters.Holds.Delete
     , mhdCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.delete@ method which the
 -- 'MattersHoldsDelete' request conforms to.
@@ -65,13 +65,13 @@ type MattersHoldsDeleteResource =
 -- /See:/ 'mattersHoldsDelete' smart constructor.
 data MattersHoldsDelete =
   MattersHoldsDelete'
-    { _mhdXgafv          :: !(Maybe Xgafv)
+    { _mhdXgafv :: !(Maybe Xgafv)
     , _mhdUploadProtocol :: !(Maybe Text)
-    , _mhdHoldId         :: !Text
-    , _mhdAccessToken    :: !(Maybe Text)
-    , _mhdUploadType     :: !(Maybe Text)
-    , _mhdMatterId       :: !Text
-    , _mhdCallback       :: !(Maybe Text)
+    , _mhdHoldId :: !Text
+    , _mhdAccessToken :: !(Maybe Text)
+    , _mhdUploadType :: !(Maybe Text)
+    , _mhdMatterId :: !Text
+    , _mhdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Reports.UserUsageReport.Get
     , uurgOrgUnitId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
+import Network.Google.Prelude
+import Network.Google.Reports.Types
 
 -- | A resource alias for @reports.userUsageReport.get@ method which the
 -- 'UserUsageReportGet' request conforms to.
@@ -73,14 +73,14 @@ type UserUsageReportGetResource =
 -- /See:/ 'userUsageReportGet' smart constructor.
 data UserUsageReportGet =
   UserUsageReportGet'
-    { _uurgFilters    :: !(Maybe Text)
+    { _uurgFilters :: !(Maybe Text)
     , _uurgCustomerId :: !(Maybe Text)
-    , _uurgDate       :: !Text
+    , _uurgDate :: !Text
     , _uurgParameters :: !(Maybe Text)
-    , _uurgPageToken  :: !(Maybe Text)
-    , _uurgUserKey    :: !Text
+    , _uurgPageToken :: !(Maybe Text)
+    , _uurgUserKey :: !Text
     , _uurgMaxResults :: !(Maybe (Textual Word32))
-    , _uurgOrgUnitId  :: !Text
+    , _uurgOrgUnitId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

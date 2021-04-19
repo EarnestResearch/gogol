@@ -38,8 +38,8 @@ module Network.Google.Resource.Games.Rooms.Create
     , rcLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.rooms.create@ method which the
 -- 'RoomsCreate' request conforms to.
@@ -59,7 +59,7 @@ type RoomsCreateResource =
 -- /See:/ 'roomsCreate' smart constructor.
 data RoomsCreate =
   RoomsCreate'
-    { _rcPayload  :: !RoomCreateRequest
+    { _rcPayload :: !RoomCreateRequest
     , _rcLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

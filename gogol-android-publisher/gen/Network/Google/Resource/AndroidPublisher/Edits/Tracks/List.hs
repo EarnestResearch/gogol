@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Tracks.List
     , etlEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.tracks.list@ method which the
 -- 'EditsTracksList' request conforms to.
@@ -59,7 +59,7 @@ type EditsTracksListResource =
 data EditsTracksList =
   EditsTracksList'
     { _etlPackageName :: !Text
-    , _etlEditId      :: !Text
+    , _etlEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

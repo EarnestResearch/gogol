@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Routes.Delete
     , rdRoute
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.routes.delete@ method which the
 -- 'RoutesDelete' request conforms to.
@@ -60,8 +60,8 @@ type RoutesDeleteResource =
 data RoutesDelete =
   RoutesDelete'
     { _rdRequestId :: !(Maybe Text)
-    , _rdProject   :: !Text
-    , _rdRoute     :: !Text
+    , _rdProject :: !Text
+    , _rdRoute :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

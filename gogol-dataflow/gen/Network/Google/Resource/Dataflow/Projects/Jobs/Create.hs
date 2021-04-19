@@ -49,8 +49,8 @@ module Network.Google.Resource.Dataflow.Projects.Jobs.Create
     , pjcCallback
     ) where
 
-import           Network.Google.Dataflow.Types
-import           Network.Google.Prelude
+import Network.Google.Dataflow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataflow.projects.jobs.create@ method which the
 -- 'ProjectsJobsCreate' request conforms to.
@@ -79,16 +79,16 @@ type ProjectsJobsCreateResource =
 -- /See:/ 'projectsJobsCreate' smart constructor.
 data ProjectsJobsCreate =
   ProjectsJobsCreate'
-    { _pjcXgafv          :: !(Maybe Xgafv)
+    { _pjcXgafv :: !(Maybe Xgafv)
     , _pjcUploadProtocol :: !(Maybe Text)
-    , _pjcLocation       :: !(Maybe Text)
-    , _pjcAccessToken    :: !(Maybe Text)
-    , _pjcUploadType     :: !(Maybe Text)
-    , _pjcPayload        :: !Job
-    , _pjcView           :: !(Maybe Text)
-    , _pjcProjectId      :: !Text
-    , _pjcReplaceJobId   :: !(Maybe Text)
-    , _pjcCallback       :: !(Maybe Text)
+    , _pjcLocation :: !(Maybe Text)
+    , _pjcAccessToken :: !(Maybe Text)
+    , _pjcUploadType :: !(Maybe Text)
+    , _pjcPayload :: !Job
+    , _pjcView :: !(Maybe Text)
+    , _pjcProjectId :: !Text
+    , _pjcReplaceJobId :: !(Maybe Text)
+    , _pjcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

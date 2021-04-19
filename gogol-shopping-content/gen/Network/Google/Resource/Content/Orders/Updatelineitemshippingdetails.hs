@@ -38,14 +38,14 @@ module Network.Google.Resource.Content.Orders.Updatelineitemshippingdetails
     , ousOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.updatelineitemshippingdetails@ method which the
 -- 'OrdersUpdatelineitemshippingdetails' request conforms to.
 type OrdersUpdatelineitemshippingdetailsResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -63,8 +63,8 @@ type OrdersUpdatelineitemshippingdetailsResource =
 data OrdersUpdatelineitemshippingdetails =
   OrdersUpdatelineitemshippingdetails'
     { _ousMerchantId :: !(Textual Word64)
-    , _ousPayload    :: !OrdersUpdateLineItemShippingDetailsRequest
-    , _ousOrderId    :: !Text
+    , _ousPayload :: !OrdersUpdateLineItemShippingDetailsRequest
+    , _ousOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

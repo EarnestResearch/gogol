@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Create
     , gcCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.create@ method which the
 -- 'GroupsCreate' request conforms to.
@@ -62,12 +62,12 @@ type GroupsCreateResource =
 -- /See:/ 'groupsCreate' smart constructor.
 data GroupsCreate =
   GroupsCreate'
-    { _gcXgafv          :: !(Maybe Xgafv)
+    { _gcXgafv :: !(Maybe Xgafv)
     , _gcUploadProtocol :: !(Maybe Text)
-    , _gcAccessToken    :: !(Maybe Text)
-    , _gcUploadType     :: !(Maybe Text)
-    , _gcPayload        :: !Group
-    , _gcCallback       :: !(Maybe Text)
+    , _gcAccessToken :: !(Maybe Text)
+    , _gcUploadType :: !(Maybe Text)
+    , _gcPayload :: !Group
+    , _gcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

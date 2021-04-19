@@ -44,8 +44,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.List
     , cfvlMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.list@ method which the
 -- 'CreativeFieldValuesList' request conforms to.
@@ -77,13 +77,13 @@ type CreativeFieldValuesListResource =
 data CreativeFieldValuesList =
   CreativeFieldValuesList'
     { _cfvlCreativeFieldId :: !(Textual Int64)
-    , _cfvlSearchString    :: !(Maybe Text)
-    , _cfvlIds             :: !(Maybe [Textual Int64])
-    , _cfvlProFileId       :: !(Textual Int64)
-    , _cfvlSortOrder       :: !CreativeFieldValuesListSortOrder
-    , _cfvlPageToken       :: !(Maybe Text)
-    , _cfvlSortField       :: !CreativeFieldValuesListSortField
-    , _cfvlMaxResults      :: !(Textual Int32)
+    , _cfvlSearchString :: !(Maybe Text)
+    , _cfvlIds :: !(Maybe [Textual Int64])
+    , _cfvlProFileId :: !(Textual Int64)
+    , _cfvlSortOrder :: !CreativeFieldValuesListSortOrder
+    , _cfvlPageToken :: !(Maybe Text)
+    , _cfvlSortField :: !CreativeFieldValuesListSortField
+    , _cfvlMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

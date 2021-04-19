@@ -50,8 +50,8 @@ module Network.Google.Resource.ServiceUsage.Services.List
     , slCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceUsage.Types
+import Network.Google.Prelude
+import Network.Google.ServiceUsage.Types
 
 -- | A resource alias for @serviceusage.services.list@ method which the
 -- 'ServicesList' request conforms to.
@@ -81,15 +81,15 @@ type ServicesListResource =
 -- /See:/ 'servicesList' smart constructor.
 data ServicesList =
   ServicesList'
-    { _slParent         :: !Text
-    , _slXgafv          :: !(Maybe Xgafv)
+    { _slParent :: !Text
+    , _slXgafv :: !(Maybe Xgafv)
     , _slUploadProtocol :: !(Maybe Text)
-    , _slAccessToken    :: !(Maybe Text)
-    , _slUploadType     :: !(Maybe Text)
-    , _slFilter         :: !(Maybe Text)
-    , _slPageToken      :: !(Maybe Text)
-    , _slPageSize       :: !(Maybe (Textual Int32))
-    , _slCallback       :: !(Maybe Text)
+    , _slAccessToken :: !(Maybe Text)
+    , _slUploadType :: !(Maybe Text)
+    , _slFilter :: !(Maybe Text)
+    , _slPageToken :: !(Maybe Text)
+    , _slPageSize :: !(Maybe (Textual Int32))
+    , _slCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

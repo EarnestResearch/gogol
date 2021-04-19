@@ -46,8 +46,8 @@ module Network.Google.Resource.DFAReporting.EventTags.List
     , etlSortField
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.list@ method which the
 -- 'EventTagsList' request conforms to.
@@ -79,16 +79,16 @@ type EventTagsListResource =
 data EventTagsList =
   EventTagsList'
     { _etlDefinitionsOnly :: !(Maybe Bool)
-    , _etlEventTagTypes   :: !(Maybe [EventTagsListEventTagTypes])
-    , _etlEnabled         :: !(Maybe Bool)
-    , _etlAdvertiserId    :: !(Maybe (Textual Int64))
-    , _etlSearchString    :: !(Maybe Text)
-    , _etlCampaignId      :: !(Maybe (Textual Int64))
-    , _etlIds             :: !(Maybe [Textual Int64])
-    , _etlProFileId       :: !(Textual Int64)
-    , _etlSortOrder       :: !EventTagsListSortOrder
-    , _etlAdId            :: !(Maybe (Textual Int64))
-    , _etlSortField       :: !EventTagsListSortField
+    , _etlEventTagTypes :: !(Maybe [EventTagsListEventTagTypes])
+    , _etlEnabled :: !(Maybe Bool)
+    , _etlAdvertiserId :: !(Maybe (Textual Int64))
+    , _etlSearchString :: !(Maybe Text)
+    , _etlCampaignId :: !(Maybe (Textual Int64))
+    , _etlIds :: !(Maybe [Textual Int64])
+    , _etlProFileId :: !(Textual Int64)
+    , _etlSortOrder :: !EventTagsListSortOrder
+    , _etlAdId :: !(Maybe (Textual Int64))
+    , _etlSortField :: !EventTagsListSortField
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

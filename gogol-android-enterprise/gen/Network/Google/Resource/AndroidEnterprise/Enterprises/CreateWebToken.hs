@@ -40,8 +40,8 @@ module Network.Google.Resource.AndroidEnterprise.Enterprises.CreateWebToken
     , ecwtPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.enterprises.createWebToken@ method which the
 -- 'EnterprisesCreateWebToken' request conforms to.
@@ -64,7 +64,7 @@ type EnterprisesCreateWebTokenResource =
 data EnterprisesCreateWebToken =
   EnterprisesCreateWebToken'
     { _ecwtEnterpriseId :: !Text
-    , _ecwtPayload      :: !AdministratorWebTokenSpec
+    , _ecwtPayload :: !AdministratorWebTokenSpec
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

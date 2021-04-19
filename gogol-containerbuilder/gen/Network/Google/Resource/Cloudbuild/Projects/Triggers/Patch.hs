@@ -44,8 +44,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Triggers.Patch
     , ptpCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.triggers.patch@ method which the
 -- 'ProjectsTriggersPatch' request conforms to.
@@ -70,14 +70,14 @@ type ProjectsTriggersPatchResource =
 -- /See:/ 'projectsTriggersPatch' smart constructor.
 data ProjectsTriggersPatch =
   ProjectsTriggersPatch'
-    { _ptpXgafv          :: !(Maybe Xgafv)
+    { _ptpXgafv :: !(Maybe Xgafv)
     , _ptpUploadProtocol :: !(Maybe Text)
-    , _ptpTriggerId      :: !Text
-    , _ptpAccessToken    :: !(Maybe Text)
-    , _ptpUploadType     :: !(Maybe Text)
-    , _ptpPayload        :: !BuildTrigger
-    , _ptpProjectId      :: !Text
-    , _ptpCallback       :: !(Maybe Text)
+    , _ptpTriggerId :: !Text
+    , _ptpAccessToken :: !(Maybe Text)
+    , _ptpUploadType :: !(Maybe Text)
+    , _ptpPayload :: !BuildTrigger
+    , _ptpProjectId :: !Text
+    , _ptpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -17,8 +17,8 @@
 --
 module Network.Google.Script.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Script.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Script.Types.Sum
 
 -- | A set of functions. No duplicates are permitted.
 --
@@ -112,7 +112,7 @@ instance ToJSON
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -178,9 +178,9 @@ instance ToJSON Status where
 -- /See:/ 'metrics' smart constructor.
 data Metrics =
   Metrics'
-    { _mActiveUsers      :: !(Maybe [MetricsValue])
+    { _mActiveUsers :: !(Maybe [MetricsValue])
     , _mFailedExecutions :: !(Maybe [MetricsValue])
-    , _mTotalExecutions  :: !(Maybe [MetricsValue])
+    , _mTotalExecutions :: !(Maybe [MetricsValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -252,13 +252,13 @@ instance ToJSON Metrics where
 -- /See:/ 'googleAppsScriptTypeProcess' smart constructor.
 data GoogleAppsScriptTypeProcess =
   GoogleAppsScriptTypeProcess'
-    { _gastpProcessStatus   :: !(Maybe GoogleAppsScriptTypeProcessProcessStatus)
-    , _gastpStartTime       :: !(Maybe DateTime')
-    , _gastpProjectName     :: !(Maybe Text)
-    , _gastpFunctionName    :: !(Maybe Text)
+    { _gastpProcessStatus :: !(Maybe GoogleAppsScriptTypeProcessProcessStatus)
+    , _gastpStartTime :: !(Maybe DateTime')
+    , _gastpProjectName :: !(Maybe Text)
+    , _gastpFunctionName :: !(Maybe Text)
     , _gastpUserAccessLevel :: !(Maybe GoogleAppsScriptTypeProcessUserAccessLevel)
-    , _gastpProcessType     :: !(Maybe GoogleAppsScriptTypeProcessProcessType)
-    , _gastpDuration        :: !(Maybe GDuration)
+    , _gastpProcessType :: !(Maybe GoogleAppsScriptTypeProcessProcessType)
+    , _gastpDuration :: !(Maybe GDuration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -367,13 +367,13 @@ instance ToJSON GoogleAppsScriptTypeProcess where
 -- /See:/ 'project' smart constructor.
 data Project =
   Project'
-    { _pCreator        :: !(Maybe GoogleAppsScriptTypeUser)
+    { _pCreator :: !(Maybe GoogleAppsScriptTypeUser)
     , _pLastModifyUser :: !(Maybe GoogleAppsScriptTypeUser)
-    , _pUpdateTime     :: !(Maybe DateTime')
-    , _pScriptId       :: !(Maybe Text)
-    , _pTitle          :: !(Maybe Text)
-    , _pParentId       :: !(Maybe Text)
-    , _pCreateTime     :: !(Maybe DateTime')
+    , _pUpdateTime :: !(Maybe DateTime')
+    , _pScriptId :: !(Maybe Text)
+    , _pTitle :: !(Maybe Text)
+    , _pParentId :: !(Maybe Text)
+    , _pCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -497,8 +497,8 @@ instance ToJSON Project where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -560,7 +560,7 @@ instance ToJSON Operation where
 data ListUserProcessesResponse =
   ListUserProcessesResponse'
     { _luprNextPageToken :: !(Maybe Text)
-    , _luprProcesses     :: !(Maybe [GoogleAppsScriptTypeProcess])
+    , _luprProcesses :: !(Maybe [GoogleAppsScriptTypeProcess])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -639,10 +639,10 @@ instance ToJSON Empty where
 -- /See:/ 'googleAppsScriptTypeUser' smart constructor.
 data GoogleAppsScriptTypeUser =
   GoogleAppsScriptTypeUser'
-    { _gastuEmail    :: !(Maybe Text)
+    { _gastuEmail :: !(Maybe Text)
     , _gastuPhotoURL :: !(Maybe Text)
-    , _gastuDomain   :: !(Maybe Text)
-    , _gastuName     :: !(Maybe Text)
+    , _gastuDomain :: !(Maybe Text)
+    , _gastuName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -713,10 +713,10 @@ instance ToJSON GoogleAppsScriptTypeUser where
 -- /See:/ 'entryPoint' smart constructor.
 data EntryPoint =
   EntryPoint'
-    { _epExecutionAPI   :: !(Maybe GoogleAppsScriptTypeExecutionAPIEntryPoint)
-    , _epAddOn          :: !(Maybe GoogleAppsScriptTypeAddOnEntryPoint)
+    { _epExecutionAPI :: !(Maybe GoogleAppsScriptTypeExecutionAPIEntryPoint)
+    , _epAddOn :: !(Maybe GoogleAppsScriptTypeAddOnEntryPoint)
     , _epEntryPointType :: !(Maybe EntryPointEntryPointType)
-    , _epWebApp         :: !(Maybe GoogleAppsScriptTypeWebAppEntryPoint)
+    , _epWebApp :: !(Maybe GoogleAppsScriptTypeWebAppEntryPoint)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -787,7 +787,7 @@ instance ToJSON EntryPoint where
 data ListVersionsResponse =
   ListVersionsResponse'
     { _lvrNextPageToken :: !(Maybe Text)
-    , _lvrVersions      :: !(Maybe [Version])
+    , _lvrVersions :: !(Maybe [Version])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -841,10 +841,10 @@ instance ToJSON ListVersionsResponse where
 -- /See:/ 'executionRequest' smart constructor.
 data ExecutionRequest =
   ExecutionRequest'
-    { _erFunction     :: !(Maybe Text)
+    { _erFunction :: !(Maybe Text)
     , _erSessionState :: !(Maybe Text)
-    , _erDevMode      :: !(Maybe Bool)
-    , _erParameters   :: !(Maybe [JSONValue])
+    , _erDevMode :: !(Maybe Bool)
+    , _erParameters :: !(Maybe [JSONValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -938,7 +938,7 @@ instance ToJSON ExecutionRequest where
 data ListScriptProcessesResponse =
   ListScriptProcessesResponse'
     { _lsprNextPageToken :: !(Maybe Text)
-    , _lsprProcesses     :: !(Maybe [GoogleAppsScriptTypeProcess])
+    , _lsprProcesses :: !(Maybe [GoogleAppsScriptTypeProcess])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1027,7 +1027,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'scriptStackTraceElement' smart constructor.
 data ScriptStackTraceElement =
   ScriptStackTraceElement'
-    { _ssteFunction   :: !(Maybe Text)
+    { _ssteFunction :: !(Maybe Text)
     , _ssteLineNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1078,7 +1078,7 @@ instance ToJSON ScriptStackTraceElement where
 data Content =
   Content'
     { _cScriptId :: !(Maybe Text)
-    , _cFiles    :: !(Maybe [File])
+    , _cFiles :: !(Maybe [File])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1128,8 +1128,8 @@ instance ToJSON Content where
 data MetricsValue =
   MetricsValue'
     { _mvStartTime :: !(Maybe DateTime')
-    , _mvValue     :: !(Maybe (Textual Word64))
-    , _mvEndTime   :: !(Maybe DateTime')
+    , _mvValue :: !(Maybe (Textual Word64))
+    , _mvEndTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1190,11 +1190,11 @@ instance ToJSON MetricsValue where
 data GoogleAppsScriptTypeAddOnEntryPoint =
   GoogleAppsScriptTypeAddOnEntryPoint'
     { _gastaoepPostInstallTipURL :: !(Maybe Text)
-    , _gastaoepAddOnType         :: !(Maybe GoogleAppsScriptTypeAddOnEntryPointAddOnType)
-    , _gastaoepReportIssueURL    :: !(Maybe Text)
-    , _gastaoepHelpURL           :: !(Maybe Text)
-    , _gastaoepTitle             :: !(Maybe Text)
-    , _gastaoepDescription       :: !(Maybe Text)
+    , _gastaoepAddOnType :: !(Maybe GoogleAppsScriptTypeAddOnEntryPointAddOnType)
+    , _gastaoepReportIssueURL :: !(Maybe Text)
+    , _gastaoepHelpURL :: !(Maybe Text)
+    , _gastaoepTitle :: !(Maybe Text)
+    , _gastaoepDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1293,7 +1293,7 @@ instance ToJSON GoogleAppsScriptTypeAddOnEntryPoint
 -- /See:/ 'googleAppsScriptTypeWebAppConfig' smart constructor.
 data GoogleAppsScriptTypeWebAppConfig =
   GoogleAppsScriptTypeWebAppConfig'
-    { _gastwacAccess    :: !(Maybe GoogleAppsScriptTypeWebAppConfigAccess)
+    { _gastwacAccess :: !(Maybe GoogleAppsScriptTypeWebAppConfigAccess)
     , _gastwacExecuteAs :: !(Maybe GoogleAppsScriptTypeWebAppConfigExecuteAs)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1350,9 +1350,9 @@ instance ToJSON GoogleAppsScriptTypeWebAppConfig
 data Version =
   Version'
     { _vVersionNumber :: !(Maybe (Textual Int32))
-    , _vScriptId      :: !(Maybe Text)
-    , _vDescription   :: !(Maybe Text)
-    , _vCreateTime    :: !(Maybe DateTime')
+    , _vScriptId :: !(Maybe Text)
+    , _vDescription :: !(Maybe Text)
+    , _vCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1432,8 +1432,8 @@ instance ToJSON Version where
 data ExecutionError =
   ExecutionError'
     { _eeScriptStackTraceElements :: !(Maybe [ScriptStackTraceElement])
-    , _eeErrorType                :: !(Maybe Text)
-    , _eeErrorMessage             :: !(Maybe Text)
+    , _eeErrorType :: !(Maybe Text)
+    , _eeErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1503,7 +1503,7 @@ instance ToJSON ExecutionError where
 data GoogleAppsScriptTypeWebAppEntryPoint =
   GoogleAppsScriptTypeWebAppEntryPoint'
     { _gastwaepEntryPointConfig :: !(Maybe GoogleAppsScriptTypeWebAppConfig)
-    , _gastwaepURL              :: !(Maybe Text)
+    , _gastwaepURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1556,7 +1556,7 @@ instance ToJSON GoogleAppsScriptTypeWebAppEntryPoint
 -- /See:/ 'createProjectRequest' smart constructor.
 data CreateProjectRequest =
   CreateProjectRequest'
-    { _cprTitle    :: !(Maybe Text)
+    { _cprTitle :: !(Maybe Text)
     , _cprParentId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1606,10 +1606,10 @@ instance ToJSON CreateProjectRequest where
 -- /See:/ 'deploymentConfig' smart constructor.
 data DeploymentConfig =
   DeploymentConfig'
-    { _dcVersionNumber    :: !(Maybe (Textual Int32))
-    , _dcScriptId         :: !(Maybe Text)
+    { _dcVersionNumber :: !(Maybe (Textual Int32))
+    , _dcScriptId :: !(Maybe Text)
     , _dcManifestFileName :: !(Maybe Text)
-    , _dcDescription      :: !(Maybe Text)
+    , _dcDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1685,7 +1685,7 @@ instance ToJSON DeploymentConfig where
 data ListDeploymentsResponse =
   ListDeploymentsResponse'
     { _ldrNextPageToken :: !(Maybe Text)
-    , _ldrDeployments   :: !(Maybe [Deployment])
+    , _ldrDeployments :: !(Maybe [Deployment])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1778,13 +1778,13 @@ instance ToJSON GoogleAppsScriptTypeFunction where
 -- /See:/ 'file' smart constructor.
 data File =
   File'
-    { _fFunctionSet    :: !(Maybe GoogleAppsScriptTypeFunctionSet)
+    { _fFunctionSet :: !(Maybe GoogleAppsScriptTypeFunctionSet)
     , _fLastModifyUser :: !(Maybe GoogleAppsScriptTypeUser)
-    , _fUpdateTime     :: !(Maybe DateTime')
-    , _fName           :: !(Maybe Text)
-    , _fSource         :: !(Maybe Text)
-    , _fType           :: !(Maybe FileType)
-    , _fCreateTime     :: !(Maybe DateTime')
+    , _fUpdateTime :: !(Maybe DateTime')
+    , _fName :: !(Maybe Text)
+    , _fSource :: !(Maybe Text)
+    , _fType :: !(Maybe FileType)
+    , _fCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2012,9 +2012,9 @@ instance ToJSON ExecutionResponse where
 -- /See:/ 'deployment' smart constructor.
 data Deployment =
   Deployment'
-    { _dDeploymentId     :: !(Maybe Text)
-    , _dUpdateTime       :: !(Maybe DateTime')
-    , _dEntryPoints      :: !(Maybe [EntryPoint])
+    { _dDeploymentId :: !(Maybe Text)
+    , _dUpdateTime :: !(Maybe DateTime')
+    , _dEntryPoints :: !(Maybe [EntryPoint])
     , _dDeploymentConfig :: !(Maybe DeploymentConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

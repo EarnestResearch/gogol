@@ -46,8 +46,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Jobs.Cancel
     , prjcCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.jobs.cancel@ method which the
 -- 'ProjectsRegionsJobsCancel' request conforms to.
@@ -75,15 +75,15 @@ type ProjectsRegionsJobsCancelResource =
 -- /See:/ 'projectsRegionsJobsCancel' smart constructor.
 data ProjectsRegionsJobsCancel =
   ProjectsRegionsJobsCancel'
-    { _prjcXgafv          :: !(Maybe Xgafv)
-    , _prjcJobId          :: !Text
+    { _prjcXgafv :: !(Maybe Xgafv)
+    , _prjcJobId :: !Text
     , _prjcUploadProtocol :: !(Maybe Text)
-    , _prjcAccessToken    :: !(Maybe Text)
-    , _prjcUploadType     :: !(Maybe Text)
-    , _prjcPayload        :: !CancelJobRequest
-    , _prjcRegion         :: !Text
-    , _prjcProjectId      :: !Text
-    , _prjcCallback       :: !(Maybe Text)
+    , _prjcAccessToken :: !(Maybe Text)
+    , _prjcUploadType :: !(Maybe Text)
+    , _prjcPayload :: !CancelJobRequest
+    , _prjcRegion :: !Text
+    , _prjcProjectId :: !Text
+    , _prjcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

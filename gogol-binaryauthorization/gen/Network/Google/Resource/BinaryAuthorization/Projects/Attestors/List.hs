@@ -43,8 +43,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.List
     , palCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.list@ method which the
 -- 'ProjectsAttestorsList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsAttestorsListResource =
 -- /See:/ 'projectsAttestorsList' smart constructor.
 data ProjectsAttestorsList =
   ProjectsAttestorsList'
-    { _palParent         :: !Text
-    , _palXgafv          :: !(Maybe Xgafv)
+    { _palParent :: !Text
+    , _palXgafv :: !(Maybe Xgafv)
     , _palUploadProtocol :: !(Maybe Text)
-    , _palAccessToken    :: !(Maybe Text)
-    , _palUploadType     :: !(Maybe Text)
-    , _palPageToken      :: !(Maybe Text)
-    , _palPageSize       :: !(Maybe (Textual Int32))
-    , _palCallback       :: !(Maybe Text)
+    , _palAccessToken :: !(Maybe Text)
+    , _palUploadType :: !(Maybe Text)
+    , _palPageToken :: !(Maybe Text)
+    , _palPageSize :: !(Maybe (Textual Int32))
+    , _palCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

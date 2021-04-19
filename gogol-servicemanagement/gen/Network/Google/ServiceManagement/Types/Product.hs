@@ -17,8 +17,8 @@
 --
 module Network.Google.ServiceManagement.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types.Sum
 
 -- | Response message for UndeleteService method.
 --
@@ -62,9 +62,9 @@ instance ToJSON UndeleteServiceResponse where
 -- /See:/ 'systemParameter' smart constructor.
 data SystemParameter =
   SystemParameter'
-    { _spHTTPHeader        :: !(Maybe Text)
+    { _spHTTPHeader :: !(Maybe Text)
     , _spURLQueryParameter :: !(Maybe Text)
-    , _spName              :: !(Maybe Text)
+    , _spName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -162,8 +162,8 @@ instance ToJSON Advice where
 data ConfigFile =
   ConfigFile'
     { _cfFileContents :: !(Maybe Bytes)
-    , _cfFilePath     :: !(Maybe Text)
-    , _cfFileType     :: !(Maybe ConfigFileFileType)
+    , _cfFilePath :: !(Maybe Text)
+    , _cfFileType :: !(Maybe ConfigFileFileType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -229,10 +229,10 @@ instance ToJSON ConfigFile where
 -- /See:/ 'monitoredResourceDescriptor' smart constructor.
 data MonitoredResourceDescriptor =
   MonitoredResourceDescriptor'
-    { _mrdName        :: !(Maybe Text)
+    { _mrdName :: !(Maybe Text)
     , _mrdDisplayName :: !(Maybe Text)
-    , _mrdLabels      :: !(Maybe [LabelDescriptor])
-    , _mrdType        :: !(Maybe Text)
+    , _mrdLabels :: !(Maybe [LabelDescriptor])
+    , _mrdType :: !(Maybe Text)
     , _mrdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -329,9 +329,9 @@ instance ToJSON MonitoredResourceDescriptor where
 -- /See:/ 'documentationRule' smart constructor.
 data DocumentationRule =
   DocumentationRule'
-    { _drSelector               :: !(Maybe Text)
+    { _drSelector :: !(Maybe Text)
     , _drDeprecationDescription :: !(Maybe Text)
-    , _drDescription            :: !(Maybe Text)
+    , _drDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -437,7 +437,7 @@ instance ToJSON DocumentationRule where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -537,9 +537,9 @@ instance ToJSON OperationSchema where
 -- /See:/ 'generateConfigReportResponse' smart constructor.
 data GenerateConfigReportResponse =
   GenerateConfigReportResponse'
-    { _gcrrDiagnostics   :: !(Maybe [Diagnostic])
-    , _gcrrServiceName   :: !(Maybe Text)
-    , _gcrrId            :: !(Maybe Text)
+    { _gcrrDiagnostics :: !(Maybe [Diagnostic])
+    , _gcrrServiceName :: !(Maybe Text)
+    , _gcrrId :: !(Maybe Text)
     , _gcrrChangeReports :: !(Maybe [ChangeReport])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -620,7 +620,7 @@ instance ToJSON GenerateConfigReportResponse where
 -- /See:/ 'billingDestination' smart constructor.
 data BillingDestination =
   BillingDestination'
-    { _bdMetrics           :: !(Maybe [Text])
+    { _bdMetrics :: !(Maybe [Text])
     , _bdMonitoredResource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -690,7 +690,7 @@ instance ToJSON BillingDestination where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -808,7 +808,7 @@ instance ToJSON DeleteServiceStrategy where
 data AuthRequirement =
   AuthRequirement'
     { _arProviderId :: !(Maybe Text)
-    , _arAudiences  :: !(Maybe Text)
+    , _arAudiences :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -866,7 +866,7 @@ instance ToJSON AuthRequirement where
 data ListServicesResponse =
   ListServicesResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrServices      :: !(Maybe [ManagedService])
+    , _lsrServices :: !(Maybe [ManagedService])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -920,9 +920,9 @@ instance ToJSON ListServicesResponse where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1050,7 +1050,7 @@ instance ToJSON Context where
 data LoggingDestination =
   LoggingDestination'
     { _ldMonitoredResource :: !(Maybe Text)
-    , _ldLogs              :: !(Maybe [Text])
+    , _ldLogs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1106,15 +1106,15 @@ instance ToJSON LoggingDestination where
 -- /See:/ 'metricDescriptor' smart constructor.
 data MetricDescriptor =
   MetricDescriptor'
-    { _mdMetricKind  :: !(Maybe MetricDescriptorMetricKind)
-    , _mdName        :: !(Maybe Text)
-    , _mdMetadata    :: !(Maybe MetricDescriptorMetadata)
+    { _mdMetricKind :: !(Maybe MetricDescriptorMetricKind)
+    , _mdName :: !(Maybe Text)
+    , _mdMetadata :: !(Maybe MetricDescriptorMetadata)
     , _mdDisplayName :: !(Maybe Text)
-    , _mdLabels      :: !(Maybe [LabelDescriptor])
-    , _mdType        :: !(Maybe Text)
-    , _mdValueType   :: !(Maybe MetricDescriptorValueType)
+    , _mdLabels :: !(Maybe [LabelDescriptor])
+    , _mdType :: !(Maybe Text)
+    , _mdValueType :: !(Maybe MetricDescriptorValueType)
     , _mdDescription :: !(Maybe Text)
-    , _mdUnit        :: !(Maybe Text)
+    , _mdUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1279,7 +1279,7 @@ instance ToJSON MetricDescriptor where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1355,13 +1355,13 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'backendRule' smart constructor.
 data BackendRule =
   BackendRule'
-    { _brJwtAudience       :: !(Maybe Text)
-    , _brSelector          :: !(Maybe Text)
-    , _brMinDeadline       :: !(Maybe (Textual Double))
-    , _brAddress           :: !(Maybe Text)
+    { _brJwtAudience :: !(Maybe Text)
+    , _brSelector :: !(Maybe Text)
+    , _brMinDeadline :: !(Maybe (Textual Double))
+    , _brAddress :: !(Maybe Text)
     , _brOperationDeadline :: !(Maybe (Textual Double))
-    , _brDeadline          :: !(Maybe (Textual Double))
-    , _brPathTranslation   :: !(Maybe BackendRulePathTranslation)
+    , _brDeadline :: !(Maybe (Textual Double))
+    , _brPathTranslation :: !(Maybe BackendRulePathTranslation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1564,16 +1564,16 @@ instance ToJSON SourceContext where
 -- /See:/ 'field' smart constructor.
 data Field =
   Field'
-    { _fKind         :: !(Maybe FieldKind)
-    , _fOneofIndex   :: !(Maybe (Textual Int32))
-    , _fName         :: !(Maybe Text)
-    , _fJSONName     :: !(Maybe Text)
-    , _fCardinality  :: !(Maybe FieldCardinality)
-    , _fOptions      :: !(Maybe [Option])
-    , _fPacked       :: !(Maybe Bool)
+    { _fKind :: !(Maybe FieldKind)
+    , _fOneofIndex :: !(Maybe (Textual Int32))
+    , _fName :: !(Maybe Text)
+    , _fJSONName :: !(Maybe Text)
+    , _fCardinality :: !(Maybe FieldCardinality)
+    , _fOptions :: !(Maybe [Option])
+    , _fPacked :: !(Maybe Bool)
     , _fDefaultValue :: !(Maybe Text)
-    , _fNumber       :: !(Maybe (Textual Int32))
-    , _fTypeURL      :: !(Maybe Text)
+    , _fNumber :: !(Maybe (Textual Int32))
+    , _fTypeURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1708,7 +1708,7 @@ instance ToJSON Field where
 -- /See:/ 'metricRule' smart constructor.
 data MetricRule =
   MetricRule'
-    { _mrSelector    :: !(Maybe Text)
+    { _mrSelector :: !(Maybe Text)
     , _mrMetricCosts :: !(Maybe MetricRuleMetricCosts)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1820,34 +1820,34 @@ instance ToJSON TrafficPercentStrategy where
 -- /See:/ 'service' smart constructor.
 data Service =
   Service'
-    { _sControl            :: !(Maybe Control)
-    , _sMetrics            :: !(Maybe [MetricDescriptor])
-    , _sContext            :: !(Maybe Context)
-    , _sAuthentication     :: !(Maybe Authentication)
-    , _sAPIs               :: !(Maybe [API])
-    , _sTypes              :: !(Maybe [Type])
-    , _sSystemTypes        :: !(Maybe [Type])
-    , _sExperimental       :: !(Maybe Experimental)
+    { _sControl :: !(Maybe Control)
+    , _sMetrics :: !(Maybe [MetricDescriptor])
+    , _sContext :: !(Maybe Context)
+    , _sAuthentication :: !(Maybe Authentication)
+    , _sAPIs :: !(Maybe [API])
+    , _sTypes :: !(Maybe [Type])
+    , _sSystemTypes :: !(Maybe [Type])
+    , _sExperimental :: !(Maybe Experimental)
     , _sMonitoredResources :: !(Maybe [MonitoredResourceDescriptor])
-    , _sBackend            :: !(Maybe Backend)
-    , _sMonitoring         :: !(Maybe Monitoring)
-    , _sName               :: !(Maybe Text)
-    , _sSystemParameters   :: !(Maybe SystemParameters)
-    , _sLogs               :: !(Maybe [LogDescriptor])
-    , _sDocumentation      :: !(Maybe Documentation)
-    , _sId                 :: !(Maybe Text)
-    , _sUsage              :: !(Maybe Usage)
-    , _sEndpoints          :: !(Maybe [Endpoint])
-    , _sEnums              :: !(Maybe [Enum'])
-    , _sConfigVersion      :: !(Maybe (Textual Word32))
-    , _sHTTP               :: !(Maybe HTTP)
-    , _sTitle              :: !(Maybe Text)
-    , _sProducerProjectId  :: !(Maybe Text)
-    , _sSourceInfo         :: !(Maybe SourceInfo)
-    , _sBilling            :: !(Maybe Billing)
-    , _sCustomError        :: !(Maybe CustomError)
-    , _sLogging            :: !(Maybe Logging)
-    , _sQuota              :: !(Maybe Quota)
+    , _sBackend :: !(Maybe Backend)
+    , _sMonitoring :: !(Maybe Monitoring)
+    , _sName :: !(Maybe Text)
+    , _sSystemParameters :: !(Maybe SystemParameters)
+    , _sLogs :: !(Maybe [LogDescriptor])
+    , _sDocumentation :: !(Maybe Documentation)
+    , _sId :: !(Maybe Text)
+    , _sUsage :: !(Maybe Usage)
+    , _sEndpoints :: !(Maybe [Endpoint])
+    , _sEnums :: !(Maybe [Enum'])
+    , _sConfigVersion :: !(Maybe (Textual Word32))
+    , _sHTTP :: !(Maybe HTTP)
+    , _sTitle :: !(Maybe Text)
+    , _sProducerProjectId :: !(Maybe Text)
+    , _sSourceInfo :: !(Maybe SourceInfo)
+    , _sBilling :: !(Maybe Billing)
+    , _sCustomError :: !(Maybe CustomError)
+    , _sLogging :: !(Maybe Logging)
+    , _sQuota :: !(Maybe Quota)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2191,10 +2191,10 @@ instance ToJSON Service where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationSchema)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2326,7 +2326,7 @@ instance ToJSON EnableServiceRequest where
 data ListServiceConfigsResponse =
   ListServiceConfigsResponse'
     { _lscrServiceConfigs :: !(Maybe [Service])
-    , _lscrNextPageToken  :: !(Maybe Text)
+    , _lscrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2380,7 +2380,7 @@ instance ToJSON ListServiceConfigsResponse where
 data CustomErrorRule =
   CustomErrorRule'
     { _cerIsErrorType :: !(Maybe Bool)
-    , _cerSelector    :: !(Maybe Text)
+    , _cerSelector :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2556,9 +2556,9 @@ instance ToJSON OptionValue where
 -- /See:/ 'enumValue' smart constructor.
 data EnumValue =
   EnumValue'
-    { _evName    :: !(Maybe Text)
+    { _evName :: !(Maybe Text)
     , _evOptions :: !(Maybe [Option])
-    , _evNumber  :: !(Maybe (Textual Int32))
+    , _evNumber :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2622,7 +2622,7 @@ instance ToJSON EnumValue where
 -- /See:/ 'authentication' smart constructor.
 data Authentication =
   Authentication'
-    { _aRules     :: !(Maybe [AuthenticationRule])
+    { _aRules :: !(Maybe [AuthenticationRule])
     , _aProviders :: !(Maybe [AuthProvider])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2808,9 +2808,9 @@ instance ToJSON CustomHTTPPattern where
 -- /See:/ 'usageRule' smart constructor.
 data UsageRule =
   UsageRule'
-    { _urSelector               :: !(Maybe Text)
+    { _urSelector :: !(Maybe Text)
     , _urAllowUnregisteredCalls :: !(Maybe Bool)
-    , _urSkipServiceControl     :: !(Maybe Bool)
+    , _urSkipServiceControl :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2916,8 +2916,8 @@ instance ToJSON StatusDetailsItem where
 data Page =
   Page'
     { _pSubpages :: !(Maybe [Page])
-    , _pContent  :: !(Maybe Text)
-    , _pName     :: !(Maybe Text)
+    , _pContent :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3039,10 +3039,10 @@ instance ToJSON GenerateConfigReportRequestOldConfig
 -- /See:/ 'authenticationRule' smart constructor.
 data AuthenticationRule =
   AuthenticationRule'
-    { _arRequirements           :: !(Maybe [AuthRequirement])
-    , _arSelector               :: !(Maybe Text)
+    { _arRequirements :: !(Maybe [AuthRequirement])
+    , _arSelector :: !(Maybe Text)
     , _arAllowWithoutCredential :: !(Maybe Bool)
-    , _arOAuth                  :: !(Maybe OAuthRequirements)
+    , _arOAuth :: !(Maybe OAuthRequirements)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3119,7 +3119,7 @@ instance ToJSON AuthenticationRule where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3335,7 +3335,7 @@ instance ToJSON Experimental where
 data ListServiceRolloutsResponse =
   ListServiceRolloutsResponse'
     { _lsrrNextPageToken :: !(Maybe Text)
-    , _lsrrRollouts      :: !(Maybe [Rollout])
+    , _lsrrRollouts :: !(Maybe [Rollout])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3390,11 +3390,11 @@ instance ToJSON ListServiceRolloutsResponse where
 -- /See:/ 'configChange' smart constructor.
 data ConfigChange =
   ConfigChange'
-    { _ccOldValue   :: !(Maybe Text)
-    , _ccNewValue   :: !(Maybe Text)
-    , _ccAdvices    :: !(Maybe [Advice])
+    { _ccOldValue :: !(Maybe Text)
+    , _ccNewValue :: !(Maybe Text)
+    , _ccAdvices :: !(Maybe [Advice])
     , _ccChangeType :: !(Maybe ConfigChangeChangeType)
-    , _ccElement    :: !(Maybe Text)
+    , _ccElement :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3614,9 +3614,9 @@ instance ToJSON Monitoring where
 -- /See:/ 'logDescriptor' smart constructor.
 data LogDescriptor =
   LogDescriptor'
-    { _ldName        :: !(Maybe Text)
+    { _ldName :: !(Maybe Text)
     , _ldDisplayName :: !(Maybe Text)
-    , _ldLabels      :: !(Maybe [LabelDescriptor])
+    , _ldLabels :: !(Maybe [LabelDescriptor])
     , _ldDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3697,13 +3697,13 @@ instance ToJSON LogDescriptor where
 -- /See:/ 'method' smart constructor.
 data Method =
   Method'
-    { _metRequestStreaming  :: !(Maybe Bool)
-    , _metResponseTypeURL   :: !(Maybe Text)
-    , _metName              :: !(Maybe Text)
+    { _metRequestStreaming :: !(Maybe Bool)
+    , _metResponseTypeURL :: !(Maybe Text)
+    , _metName :: !(Maybe Text)
     , _metResponseStreaming :: !(Maybe Bool)
-    , _metRequestTypeURL    :: !(Maybe Text)
-    , _metOptions           :: !(Maybe [Option])
-    , _metSyntax            :: !(Maybe MethodSyntax)
+    , _metRequestTypeURL :: !(Maybe Text)
+    , _metOptions :: !(Maybe [Option])
+    , _metSyntax :: !(Maybe MethodSyntax)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3810,8 +3810,8 @@ instance ToJSON Method where
 data Diagnostic =
   Diagnostic'
     { _dLocation :: !(Maybe Text)
-    , _dKind     :: !(Maybe DiagnosticKind)
-    , _dMessage  :: !(Maybe Text)
+    , _dKind :: !(Maybe DiagnosticKind)
+    , _dMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3916,7 +3916,7 @@ instance ToJSON SystemParameters where
 data ConfigSource =
   ConfigSource'
     { _csFiles :: !(Maybe [ConfigFile])
-    , _csId    :: !(Maybe Text)
+    , _csId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4020,11 +4020,11 @@ instance ToJSON ConfigSource where
 -- /See:/ 'documentation' smart constructor.
 data Documentation =
   Documentation'
-    { _dSummary              :: !(Maybe Text)
+    { _dSummary :: !(Maybe Text)
     , _dDocumentationRootURL :: !(Maybe Text)
-    , _dRules                :: !(Maybe [DocumentationRule])
-    , _dPages                :: !(Maybe [Page])
-    , _dOverview             :: !(Maybe Text)
+    , _dRules :: !(Maybe [DocumentationRule])
+    , _dPages :: !(Maybe [Page])
+    , _dOverview :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4123,7 +4123,7 @@ instance ToJSON Documentation where
 -- /See:/ 'step' smart constructor.
 data Step =
   Step'
-    { _sStatus      :: !(Maybe StepStatus)
+    { _sStatus :: !(Maybe StepStatus)
     , _sDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4169,8 +4169,8 @@ instance ToJSON Step where
 data MetricDescriptorMetadata =
   MetricDescriptorMetadata'
     { _mdmSamplePeriod :: !(Maybe GDuration)
-    , _mdmIngestDelay  :: !(Maybe GDuration)
-    , _mdmLaunchStage  :: !(Maybe MetricDescriptorMetadataLaunchStage)
+    , _mdmIngestDelay :: !(Maybe GDuration)
+    , _mdmLaunchStage :: !(Maybe MetricDescriptorMetadataLaunchStage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4285,7 +4285,7 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'systemParameterRule' smart constructor.
 data SystemParameterRule =
   SystemParameterRule'
-    { _sprSelector   :: !(Maybe Text)
+    { _sprSelector :: !(Maybe Text)
     , _sprParameters :: !(Maybe [SystemParameter])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4341,8 +4341,8 @@ instance ToJSON SystemParameterRule where
 -- /See:/ 'labelDescriptor' smart constructor.
 data LabelDescriptor =
   LabelDescriptor'
-    { _lKey         :: !(Maybe Text)
-    , _lValueType   :: !(Maybe LabelDescriptorValueType)
+    { _lKey :: !(Maybe Text)
+    , _lValueType :: !(Maybe LabelDescriptorValueType)
     , _lDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4399,8 +4399,8 @@ instance ToJSON LabelDescriptor where
 -- /See:/ 'usage' smart constructor.
 data Usage =
   Usage'
-    { _uRequirements                :: !(Maybe [Text])
-    , _uRules                       :: !(Maybe [UsageRule])
+    { _uRequirements :: !(Maybe [Text])
+    , _uRules :: !(Maybe [UsageRule])
     , _uProducerNotificationChannel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4568,7 +4568,7 @@ instance ToJSON GenerateConfigReportRequestNewConfig
 -- /See:/ 'hTTP' smart constructor.
 data HTTP =
   HTTP'
-    { _hRules                        :: !(Maybe [HTTPRule])
+    { _hRules :: !(Maybe [HTTPRule])
     , _hFullyDecodeReservedExpansion :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4681,9 +4681,9 @@ instance ToJSON DisableServiceRequest where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4769,11 +4769,11 @@ instance ToJSON Policy where
 data Type =
   Type'
     { _tSourceContext :: !(Maybe SourceContext)
-    , _tOneofs        :: !(Maybe [Text])
-    , _tName          :: !(Maybe Text)
-    , _tOptions       :: !(Maybe [Option])
-    , _tFields        :: !(Maybe [Field])
-    , _tSyntax        :: !(Maybe TypeSyntax)
+    , _tOneofs :: !(Maybe [Text])
+    , _tName :: !(Maybe Text)
+    , _tOptions :: !(Maybe [Option])
+    , _tFields :: !(Maybe [Field])
+    , _tSyntax :: !(Maybe TypeSyntax)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4875,12 +4875,12 @@ instance ToJSON Type where
 data API =
   API'
     { _aSourceContext :: !(Maybe SourceContext)
-    , _aMixins        :: !(Maybe [Mixin])
-    , _aMethods       :: !(Maybe [Method])
-    , _aName          :: !(Maybe Text)
-    , _aVersion       :: !(Maybe Text)
-    , _aOptions       :: !(Maybe [Option])
-    , _aSyntax        :: !(Maybe APISyntax)
+    , _aMixins :: !(Maybe [Mixin])
+    , _aMethods :: !(Maybe [Method])
+    , _aName :: !(Maybe Text)
+    , _aVersion :: !(Maybe Text)
+    , _aOptions :: !(Maybe [Option])
+    , _aSyntax :: !(Maybe APISyntax)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5000,7 +5000,7 @@ instance ToJSON API where
 -- /See:/ 'monitoringDestination' smart constructor.
 data MonitoringDestination =
   MonitoringDestination'
-    { _mdMetrics           :: !(Maybe [Text])
+    { _mdMetrics :: !(Maybe [Text])
     , _mdMonitoredResource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5055,7 +5055,7 @@ instance ToJSON MonitoringDestination where
 -- /See:/ 'managedService' smart constructor.
 data ManagedService =
   ManagedService'
-    { _msServiceName       :: !(Maybe Text)
+    { _msServiceName :: !(Maybe Text)
     , _msProducerProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5107,10 +5107,10 @@ instance ToJSON ManagedService where
 -- /See:/ 'operationMetadata' smart constructor.
 data OperationMetadata =
   OperationMetadata'
-    { _omStartTime          :: !(Maybe DateTime')
-    , _omSteps              :: !(Maybe [Step])
+    { _omStartTime :: !(Maybe DateTime')
+    , _omSteps :: !(Maybe [Step])
     , _omProgressPercentage :: !(Maybe (Textual Int32))
-    , _omResourceNames      :: !(Maybe [Text])
+    , _omResourceNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5197,11 +5197,11 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'endpoint' smart constructor.
 data Endpoint =
   Endpoint'
-    { _eAliases   :: !(Maybe [Text])
+    { _eAliases :: !(Maybe [Text])
     , _eAllowCORS :: !(Maybe Bool)
-    , _eName      :: !(Maybe Text)
-    , _eFeatures  :: !(Maybe [Text])
-    , _eTarget    :: !(Maybe Text)
+    , _eName :: !(Maybe Text)
+    , _eFeatures :: !(Maybe [Text])
+    , _eTarget :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5406,16 +5406,16 @@ instance ToJSON CustomError where
 -- /See:/ 'quotaLimit' smart constructor.
 data QuotaLimit =
   QuotaLimit'
-    { _qlValues       :: !(Maybe QuotaLimitValues)
-    , _qlFreeTier     :: !(Maybe (Textual Int64))
-    , _qlMetric       :: !(Maybe Text)
-    , _qlName         :: !(Maybe Text)
-    , _qlDisplayName  :: !(Maybe Text)
-    , _qlDuration     :: !(Maybe Text)
+    { _qlValues :: !(Maybe QuotaLimitValues)
+    , _qlFreeTier :: !(Maybe (Textual Int64))
+    , _qlMetric :: !(Maybe Text)
+    , _qlName :: !(Maybe Text)
+    , _qlDisplayName :: !(Maybe Text)
+    , _qlDuration :: !(Maybe Text)
     , _qlDefaultLimit :: !(Maybe (Textual Int64))
-    , _qlDescription  :: !(Maybe Text)
-    , _qlUnit         :: !(Maybe Text)
-    , _qlMaxLimit     :: !(Maybe (Textual Int64))
+    , _qlDescription :: !(Maybe Text)
+    , _qlUnit :: !(Maybe Text)
+    , _qlMaxLimit :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5588,7 +5588,7 @@ instance ToJSON QuotaLimit where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5643,7 +5643,7 @@ instance ToJSON AuditLogConfig where
 data Option =
   Option'
     { _optValue :: !(Maybe OptionValue)
-    , _optName  :: !(Maybe Text)
+    , _optName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5825,13 +5825,13 @@ instance ToJSON QuotaLimitValues where
 -- /See:/ 'rollout' smart constructor.
 data Rollout =
   Rollout'
-    { _rStatus                 :: !(Maybe RolloutStatus)
-    , _rDeleteServiceStrategy  :: !(Maybe DeleteServiceStrategy)
+    { _rStatus :: !(Maybe RolloutStatus)
+    , _rDeleteServiceStrategy :: !(Maybe DeleteServiceStrategy)
     , _rTrafficPercentStrategy :: !(Maybe TrafficPercentStrategy)
-    , _rCreatedBy              :: !(Maybe Text)
-    , _rServiceName            :: !(Maybe Text)
-    , _rRolloutId              :: !(Maybe Text)
-    , _rCreateTime             :: !(Maybe DateTime')
+    , _rCreatedBy :: !(Maybe Text)
+    , _rServiceName :: !(Maybe Text)
+    , _rRolloutId :: !(Maybe Text)
+    , _rCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5945,10 +5945,10 @@ instance ToJSON Rollout where
 data Enum' =
   Enum''
     { _enuSourceContext :: !(Maybe SourceContext)
-    , _enuEnumvalue     :: !(Maybe [EnumValue])
-    , _enuName          :: !(Maybe Text)
-    , _enuOptions       :: !(Maybe [Option])
-    , _enuSyntax        :: !(Maybe EnumSyntax)
+    , _enuEnumvalue :: !(Maybe [EnumValue])
+    , _enuName :: !(Maybe Text)
+    , _enuOptions :: !(Maybe [Option])
+    , _enuSyntax :: !(Maybe EnumSyntax)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6257,7 +6257,7 @@ instance ToJSON SourceInfoSourceFilesItem where
 -- /See:/ 'quota' smart constructor.
 data Quota =
   Quota'
-    { _qLimits      :: !(Maybe [QuotaLimit])
+    { _qLimits :: !(Maybe [QuotaLimit])
     , _qMetricRules :: !(Maybe [MetricRule])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6458,16 +6458,16 @@ instance ToJSON Quota where
 -- /See:/ 'hTTPRule' smart constructor.
 data HTTPRule =
   HTTPRule'
-    { _httprSelector           :: !(Maybe Text)
-    , _httprPost               :: !(Maybe Text)
-    , _httprBody               :: !(Maybe Text)
-    , _httprCustom             :: !(Maybe CustomHTTPPattern)
-    , _httprResponseBody       :: !(Maybe Text)
-    , _httprPatch              :: !(Maybe Text)
-    , _httprGet                :: !(Maybe Text)
+    { _httprSelector :: !(Maybe Text)
+    , _httprPost :: !(Maybe Text)
+    , _httprBody :: !(Maybe Text)
+    , _httprCustom :: !(Maybe CustomHTTPPattern)
+    , _httprResponseBody :: !(Maybe Text)
+    , _httprPatch :: !(Maybe Text)
+    , _httprGet :: !(Maybe Text)
     , _httprAdditionalBindings :: !(Maybe [HTTPRule])
-    , _httprDelete             :: !(Maybe Text)
-    , _httprPut                :: !(Maybe Text)
+    , _httprDelete :: !(Maybe Text)
+    , _httprPut :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6660,11 +6660,11 @@ instance ToJSON OperationResponse where
 -- /See:/ 'authProvider' smart constructor.
 data AuthProvider =
   AuthProvider'
-    { _apJWKsURI          :: !(Maybe Text)
-    , _apAudiences        :: !(Maybe Text)
-    , _apId               :: !(Maybe Text)
+    { _apJWKsURI :: !(Maybe Text)
+    , _apAudiences :: !(Maybe Text)
+    , _apId :: !(Maybe Text)
     , _apAuthorizationURL :: !(Maybe Text)
-    , _apIssuer           :: !(Maybe Text)
+    , _apIssuer :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6765,8 +6765,8 @@ instance ToJSON AuthProvider where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6841,10 +6841,10 @@ instance ToJSON Binding where
 -- /See:/ 'contextRule' smart constructor.
 data ContextRule =
   ContextRule'
-    { _crSelector                  :: !(Maybe Text)
-    , _crRequested                 :: !(Maybe [Text])
-    , _crAllowedRequestExtensions  :: !(Maybe [Text])
-    , _crProvided                  :: !(Maybe [Text])
+    { _crSelector :: !(Maybe Text)
+    , _crRequested :: !(Maybe [Text])
+    , _crAllowedRequestExtensions :: !(Maybe [Text])
+    , _crProvided :: !(Maybe [Text])
     , _crAllowedResponseExtensions :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)

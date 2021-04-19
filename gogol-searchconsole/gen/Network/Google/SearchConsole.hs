@@ -86,9 +86,9 @@ module Network.Google.SearchConsole
     , mfiRule
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.SearchConsole.URLTestingTools.MobileFriendlyTest.Run
-import           Network.Google.SearchConsole.Types
+import Network.Google.Prelude
+import Network.Google.Resource.SearchConsole.URLTestingTools.MobileFriendlyTest.Run
+import Network.Google.SearchConsole.Types
 
 {- $resources
 TODO

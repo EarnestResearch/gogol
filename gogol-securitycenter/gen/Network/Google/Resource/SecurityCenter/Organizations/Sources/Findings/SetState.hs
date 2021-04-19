@@ -42,8 +42,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Set
     , osfssCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.setState@ method which the
 -- 'OrganizationsSourcesFindingsSetState' request conforms to.
@@ -64,13 +64,13 @@ type OrganizationsSourcesFindingsSetStateResource =
 -- /See:/ 'organizationsSourcesFindingsSetState' smart constructor.
 data OrganizationsSourcesFindingsSetState =
   OrganizationsSourcesFindingsSetState'
-    { _osfssXgafv          :: !(Maybe Xgafv)
+    { _osfssXgafv :: !(Maybe Xgafv)
     , _osfssUploadProtocol :: !(Maybe Text)
-    , _osfssAccessToken    :: !(Maybe Text)
-    , _osfssUploadType     :: !(Maybe Text)
-    , _osfssPayload        :: !SetFindingStateRequest
-    , _osfssName           :: !Text
-    , _osfssCallback       :: !(Maybe Text)
+    , _osfssAccessToken :: !(Maybe Text)
+    , _osfssUploadType :: !(Maybe Text)
+    , _osfssPayload :: !SetFindingStateRequest
+    , _osfssName :: !Text
+    , _osfssCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

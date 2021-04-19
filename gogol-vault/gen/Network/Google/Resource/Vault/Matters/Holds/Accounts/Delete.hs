@@ -44,8 +44,8 @@ module Network.Google.Resource.Vault.Matters.Holds.Accounts.Delete
     , mhadCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.holds.accounts.delete@ method which the
 -- 'MattersHoldsAccountsDelete' request conforms to.
@@ -70,14 +70,14 @@ type MattersHoldsAccountsDeleteResource =
 -- /See:/ 'mattersHoldsAccountsDelete' smart constructor.
 data MattersHoldsAccountsDelete =
   MattersHoldsAccountsDelete'
-    { _mhadXgafv          :: !(Maybe Xgafv)
+    { _mhadXgafv :: !(Maybe Xgafv)
     , _mhadUploadProtocol :: !(Maybe Text)
-    , _mhadHoldId         :: !Text
-    , _mhadAccessToken    :: !(Maybe Text)
-    , _mhadUploadType     :: !(Maybe Text)
-    , _mhadMatterId       :: !Text
-    , _mhadAccountId      :: !Text
-    , _mhadCallback       :: !(Maybe Text)
+    , _mhadHoldId :: !Text
+    , _mhadAccessToken :: !(Maybe Text)
+    , _mhadUploadType :: !(Maybe Text)
+    , _mhadMatterId :: !Text
+    , _mhadAccountId :: !Text
+    , _mhadCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

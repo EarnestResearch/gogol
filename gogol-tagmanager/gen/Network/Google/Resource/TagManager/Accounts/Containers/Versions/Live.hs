@@ -36,8 +36,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Versions.Live
     , acvlParent
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.versions.live@ method which the
 -- 'AccountsContainersVersionsLive' request conforms to.

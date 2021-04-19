@@ -17,8 +17,8 @@
 --
 module Network.Google.Logging.Types.Product where
 
-import           Network.Google.Logging.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Logging.Types.Sum
+import Network.Google.Prelude
 
 -- | An object that describes the schema of a MonitoredResource object using
 -- a type name and a set of labels. For example, the monitored resource
@@ -31,10 +31,10 @@ import           Network.Google.Prelude
 -- /See:/ 'monitoredResourceDescriptor' smart constructor.
 data MonitoredResourceDescriptor =
   MonitoredResourceDescriptor'
-    { _mrdName        :: !(Maybe Text)
+    { _mrdName :: !(Maybe Text)
     , _mrdDisplayName :: !(Maybe Text)
-    , _mrdLabels      :: !(Maybe [LabelDescriptor])
-    , _mrdType        :: !(Maybe Text)
+    , _mrdLabels :: !(Maybe [LabelDescriptor])
+    , _mrdType :: !(Maybe Text)
     , _mrdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -131,7 +131,7 @@ instance ToJSON MonitoredResourceDescriptor where
 data ListLogEntriesResponse =
   ListLogEntriesResponse'
     { _llerNextPageToken :: !(Maybe Text)
-    , _llerEntries       :: !(Maybe [LogEntry])
+    , _llerEntries :: !(Maybe [LogEntry])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -194,15 +194,15 @@ instance ToJSON ListLogEntriesResponse where
 -- /See:/ 'metricDescriptor' smart constructor.
 data MetricDescriptor =
   MetricDescriptor'
-    { _mdMetricKind  :: !(Maybe MetricDescriptorMetricKind)
-    , _mdName        :: !(Maybe Text)
-    , _mdMetadata    :: !(Maybe MetricDescriptorMetadata)
+    { _mdMetricKind :: !(Maybe MetricDescriptorMetricKind)
+    , _mdName :: !(Maybe Text)
+    , _mdMetadata :: !(Maybe MetricDescriptorMetadata)
     , _mdDisplayName :: !(Maybe Text)
-    , _mdLabels      :: !(Maybe [LabelDescriptor])
-    , _mdType        :: !(Maybe Text)
-    , _mdValueType   :: !(Maybe MetricDescriptorValueType)
+    , _mdLabels :: !(Maybe [LabelDescriptor])
+    , _mdType :: !(Maybe Text)
+    , _mdValueType :: !(Maybe MetricDescriptorValueType)
     , _mdDescription :: !(Maybe Text)
-    , _mdUnit        :: !(Maybe Text)
+    , _mdUnit :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -403,7 +403,7 @@ instance ToJSON MonitoredResourceLabels where
 -- /See:/ 'monitoredResourceMetadata' smart constructor.
 data MonitoredResourceMetadata =
   MonitoredResourceMetadata'
-    { _mrmUserLabels   :: !(Maybe MonitoredResourceMetadataUserLabels)
+    { _mrmUserLabels :: !(Maybe MonitoredResourceMetadataUserLabels)
     , _mrmSystemLabels :: !(Maybe MonitoredResourceMetadataSystemLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -459,7 +459,7 @@ instance ToJSON MonitoredResourceMetadata where
 -- /See:/ 'listLogMetricsResponse' smart constructor.
 data ListLogMetricsResponse =
   ListLogMetricsResponse'
-    { _llmrMetrics       :: !(Maybe [LogMetric])
+    { _llmrMetrics :: !(Maybe [LogMetric])
     , _llmrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -513,12 +513,12 @@ instance ToJSON ListLogMetricsResponse where
 -- /See:/ 'writeLogEntriesRequest' smart constructor.
 data WriteLogEntriesRequest =
   WriteLogEntriesRequest'
-    { _wlerEntries        :: !(Maybe [LogEntry])
+    { _wlerEntries :: !(Maybe [LogEntry])
     , _wlerPartialSuccess :: !(Maybe Bool)
-    , _wlerResource       :: !(Maybe MonitoredResource)
-    , _wlerLabels         :: !(Maybe WriteLogEntriesRequestLabels)
-    , _wlerLogName        :: !(Maybe Text)
-    , _wlerDryRun         :: !(Maybe Bool)
+    , _wlerResource :: !(Maybe MonitoredResource)
+    , _wlerLabels :: !(Maybe WriteLogEntriesRequestLabels)
+    , _wlerLogName :: !(Maybe Text)
+    , _wlerDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -761,7 +761,7 @@ instance ToJSON LogEntryLabels where
 -- /See:/ 'listSinksResponse' smart constructor.
 data ListSinksResponse =
   ListSinksResponse'
-    { _lsrSinks         :: !(Maybe [LogSink])
+    { _lsrSinks :: !(Maybe [LogSink])
     , _lsrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -816,39 +816,39 @@ instance ToJSON ListSinksResponse where
 -- /See:/ 'requestLog' smart constructor.
 data RequestLog =
   RequestLog'
-    { _rlTraceId           :: !(Maybe Text)
-    , _rlInstanceId        :: !(Maybe Text)
-    , _rlStatus            :: !(Maybe (Textual Int32))
-    , _rlRequestId         :: !(Maybe Text)
-    , _rlInstanceIndex     :: !(Maybe (Textual Int32))
-    , _rlModuleId          :: !(Maybe Text)
-    , _rlVersionId         :: !(Maybe Text)
-    , _rlHTTPVersion       :: !(Maybe Text)
-    , _rlTaskName          :: !(Maybe Text)
-    , _rlPendingTime       :: !(Maybe GDuration)
+    { _rlTraceId :: !(Maybe Text)
+    , _rlInstanceId :: !(Maybe Text)
+    , _rlStatus :: !(Maybe (Textual Int32))
+    , _rlRequestId :: !(Maybe Text)
+    , _rlInstanceIndex :: !(Maybe (Textual Int32))
+    , _rlModuleId :: !(Maybe Text)
+    , _rlVersionId :: !(Maybe Text)
+    , _rlHTTPVersion :: !(Maybe Text)
+    , _rlTaskName :: !(Maybe Text)
+    , _rlPendingTime :: !(Maybe GDuration)
     , _rlWasLoadingRequest :: !(Maybe Bool)
-    , _rlFirst             :: !(Maybe Bool)
-    , _rlStartTime         :: !(Maybe DateTime')
-    , _rlLatency           :: !(Maybe GDuration)
-    , _rlURLMapEntry       :: !(Maybe Text)
-    , _rlCost              :: !(Maybe (Textual Double))
-    , _rlReferrer          :: !(Maybe Text)
-    , _rlLine              :: !(Maybe [LogLine])
-    , _rlIP                :: !(Maybe Text)
-    , _rlAppId             :: !(Maybe Text)
-    , _rlMethod            :: !(Maybe Text)
-    , _rlResource          :: !(Maybe Text)
-    , _rlEndTime           :: !(Maybe DateTime')
-    , _rlFinished          :: !(Maybe Bool)
-    , _rlMegaCycles        :: !(Maybe (Textual Int64))
-    , _rlUserAgent         :: !(Maybe Text)
-    , _rlNickname          :: !(Maybe Text)
-    , _rlHost              :: !(Maybe Text)
-    , _rlTraceSampled      :: !(Maybe Bool)
-    , _rlTaskQueueName     :: !(Maybe Text)
-    , _rlResponseSize      :: !(Maybe (Textual Int64))
-    , _rlSourceReference   :: !(Maybe [SourceReference])
-    , _rlAppEngineRelease  :: !(Maybe Text)
+    , _rlFirst :: !(Maybe Bool)
+    , _rlStartTime :: !(Maybe DateTime')
+    , _rlLatency :: !(Maybe GDuration)
+    , _rlURLMapEntry :: !(Maybe Text)
+    , _rlCost :: !(Maybe (Textual Double))
+    , _rlReferrer :: !(Maybe Text)
+    , _rlLine :: !(Maybe [LogLine])
+    , _rlIP :: !(Maybe Text)
+    , _rlAppId :: !(Maybe Text)
+    , _rlMethod :: !(Maybe Text)
+    , _rlResource :: !(Maybe Text)
+    , _rlEndTime :: !(Maybe DateTime')
+    , _rlFinished :: !(Maybe Bool)
+    , _rlMegaCycles :: !(Maybe (Textual Int64))
+    , _rlUserAgent :: !(Maybe Text)
+    , _rlNickname :: !(Maybe Text)
+    , _rlHost :: !(Maybe Text)
+    , _rlTraceSampled :: !(Maybe Bool)
+    , _rlTaskQueueName :: !(Maybe Text)
+    , _rlResponseSize :: !(Maybe (Textual Int64))
+    , _rlSourceReference :: !(Maybe [SourceReference])
+    , _rlAppEngineRelease :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1284,8 +1284,8 @@ instance ToJSON LogEntryProtoPayload where
 data LogEntrySourceLocation =
   LogEntrySourceLocation'
     { _leslFunction :: !(Maybe Text)
-    , _leslLine     :: !(Maybe (Textual Int64))
-    , _leslFile     :: !(Maybe Text)
+    , _leslLine :: !(Maybe (Textual Int64))
+    , _leslFile :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1354,12 +1354,12 @@ instance ToJSON LogEntrySourceLocation where
 -- /See:/ 'logExclusion' smart constructor.
 data LogExclusion =
   LogExclusion'
-    { _leDisabled    :: !(Maybe Bool)
-    , _leUpdateTime  :: !(Maybe DateTime')
-    , _leName        :: !(Maybe Text)
-    , _leFilter      :: !(Maybe Text)
+    { _leDisabled :: !(Maybe Bool)
+    , _leUpdateTime :: !(Maybe DateTime')
+    , _leName :: !(Maybe Text)
+    , _leFilter :: !(Maybe Text)
     , _leDescription :: !(Maybe Text)
-    , _leCreateTime  :: !(Maybe DateTime')
+    , _leCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1486,14 +1486,14 @@ instance ToJSON WriteLogEntriesResponse where
 -- /See:/ 'logSink' smart constructor.
 data LogSink =
   LogSink'
-    { _lsDestination         :: !(Maybe Text)
-    , _lsIncludeChildren     :: !(Maybe Bool)
+    { _lsDestination :: !(Maybe Text)
+    , _lsIncludeChildren :: !(Maybe Bool)
     , _lsOutputVersionFormat :: !(Maybe LogSinkOutputVersionFormat)
-    , _lsWriterIdentity      :: !(Maybe Text)
-    , _lsUpdateTime          :: !(Maybe DateTime')
-    , _lsName                :: !(Maybe Text)
-    , _lsFilter              :: !(Maybe Text)
-    , _lsCreateTime          :: !(Maybe DateTime')
+    , _lsWriterIdentity :: !(Maybe Text)
+    , _lsUpdateTime :: !(Maybe DateTime')
+    , _lsName :: !(Maybe Text)
+    , _lsFilter :: !(Maybe Text)
+    , _lsCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1683,7 +1683,7 @@ instance ToJSON MonitoredResourceMetadataUserLabels
 data ListExclusionsResponse =
   ListExclusionsResponse'
     { _lerNextPageToken :: !(Maybe Text)
-    , _lerExclusions    :: !(Maybe [LogExclusion])
+    , _lerExclusions :: !(Maybe [LogExclusion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1739,7 +1739,7 @@ instance ToJSON ListExclusionsResponse where
 data ListLogsResponse =
   ListLogsResponse'
     { _llrNextPageToken :: !(Maybe Text)
-    , _llrLogNames      :: !(Maybe [Text])
+    , _llrLogNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1793,7 +1793,7 @@ instance ToJSON ListLogsResponse where
 -- /See:/ 'listMonitoredResourceDescriptorsResponse' smart constructor.
 data ListMonitoredResourceDescriptorsResponse =
   ListMonitoredResourceDescriptorsResponse'
-    { _lmrdrNextPageToken       :: !(Maybe Text)
+    { _lmrdrNextPageToken :: !(Maybe Text)
     , _lmrdrResourceDescriptors :: !(Maybe [MonitoredResourceDescriptor])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1897,21 +1897,21 @@ instance ToJSON Explicit where
 -- /See:/ 'hTTPRequest' smart constructor.
 data HTTPRequest =
   HTTPRequest'
-    { _httprStatus                         :: !(Maybe (Textual Int32))
-    , _httprRequestURL                     :: !(Maybe Text)
-    , _httprCacheFillBytes                 :: !(Maybe (Textual Int64))
-    , _httprRemoteIP                       :: !(Maybe Text)
-    , _httprLatency                        :: !(Maybe GDuration)
-    , _httprProtocol                       :: !(Maybe Text)
-    , _httprServerIP                       :: !(Maybe Text)
-    , _httprRequestSize                    :: !(Maybe (Textual Int64))
+    { _httprStatus :: !(Maybe (Textual Int32))
+    , _httprRequestURL :: !(Maybe Text)
+    , _httprCacheFillBytes :: !(Maybe (Textual Int64))
+    , _httprRemoteIP :: !(Maybe Text)
+    , _httprLatency :: !(Maybe GDuration)
+    , _httprProtocol :: !(Maybe Text)
+    , _httprServerIP :: !(Maybe Text)
+    , _httprRequestSize :: !(Maybe (Textual Int64))
     , _httprCacheValidatedWithOriginServer :: !(Maybe Bool)
-    , _httprUserAgent                      :: !(Maybe Text)
-    , _httprCacheLookup                    :: !(Maybe Bool)
-    , _httprResponseSize                   :: !(Maybe (Textual Int64))
-    , _httprRequestMethod                  :: !(Maybe Text)
-    , _httprCacheHit                       :: !(Maybe Bool)
-    , _httprReferer                        :: !(Maybe Text)
+    , _httprUserAgent :: !(Maybe Text)
+    , _httprCacheLookup :: !(Maybe Bool)
+    , _httprResponseSize :: !(Maybe (Textual Int64))
+    , _httprRequestMethod :: !(Maybe Text)
+    , _httprCacheHit :: !(Maybe Bool)
+    , _httprReferer :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2130,8 +2130,8 @@ instance ToJSON HTTPRequest where
 -- /See:/ 'exponential' smart constructor.
 data Exponential =
   Exponential'
-    { _eGrowthFactor     :: !(Maybe (Textual Double))
-    , _eScale            :: !(Maybe (Textual Double))
+    { _eGrowthFactor :: !(Maybe (Textual Double))
+    , _eScale :: !(Maybe (Textual Double))
     , _eNumFiniteBuckets :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2246,7 +2246,7 @@ instance ToJSON WriteLogEntriesRequestLabels where
 data MonitoredResource =
   MonitoredResource'
     { _mrLabels :: !(Maybe MonitoredResourceLabels)
-    , _mrType   :: !(Maybe Text)
+    , _mrType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2294,9 +2294,9 @@ instance ToJSON MonitoredResource where
 -- /See:/ 'logLine' smart constructor.
 data LogLine =
   LogLine'
-    { _llTime           :: !(Maybe DateTime')
-    , _llSeverity       :: !(Maybe LogLineSeverity)
-    , _llLogMessage     :: !(Maybe Text)
+    { _llTime :: !(Maybe DateTime')
+    , _llSeverity :: !(Maybe LogLineSeverity)
+    , _llLogMessage :: !(Maybe Text)
     , _llSourceLocation :: !(Maybe SourceLocation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2370,8 +2370,8 @@ instance ToJSON LogLine where
 data MetricDescriptorMetadata =
   MetricDescriptorMetadata'
     { _mdmSamplePeriod :: !(Maybe GDuration)
-    , _mdmIngestDelay  :: !(Maybe GDuration)
-    , _mdmLaunchStage  :: !(Maybe MetricDescriptorMetadataLaunchStage)
+    , _mdmIngestDelay :: !(Maybe GDuration)
+    , _mdmLaunchStage :: !(Maybe MetricDescriptorMetadataLaunchStage)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2489,8 +2489,8 @@ instance ToJSON MonitoredResourceMetadataSystemLabels
 -- /See:/ 'labelDescriptor' smart constructor.
 data LabelDescriptor =
   LabelDescriptor'
-    { _ldKey         :: !(Maybe Text)
-    , _ldValueType   :: !(Maybe LabelDescriptorValueType)
+    { _ldKey :: !(Maybe Text)
+    , _ldValueType :: !(Maybe LabelDescriptorValueType)
     , _ldDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2553,8 +2553,8 @@ instance ToJSON LabelDescriptor where
 -- /See:/ 'linear' smart constructor.
 data Linear =
   Linear'
-    { _lOffSet           :: !(Maybe (Textual Double))
-    , _lWidth            :: !(Maybe (Textual Double))
+    { _lOffSet :: !(Maybe (Textual Double))
+    , _lWidth :: !(Maybe (Textual Double))
     , _lNumFiniteBuckets :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2615,11 +2615,11 @@ instance ToJSON Linear where
 -- /See:/ 'listLogEntriesRequest' smart constructor.
 data ListLogEntriesRequest =
   ListLogEntriesRequest'
-    { _llerOrderBy       :: !(Maybe Text)
-    , _llerProjectIds    :: !(Maybe [Text])
-    , _llerFilter        :: !(Maybe Text)
-    , _llerPageToken     :: !(Maybe Text)
-    , _llerPageSize      :: !(Maybe (Textual Int32))
+    { _llerOrderBy :: !(Maybe Text)
+    , _llerProjectIds :: !(Maybe [Text])
+    , _llerFilter :: !(Maybe Text)
+    , _llerPageToken :: !(Maybe Text)
+    , _llerPageSize :: !(Maybe (Textual Int32))
     , _llerResourceNames :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2740,10 +2740,10 @@ instance ToJSON ListLogEntriesRequest where
 -- /See:/ 'logEntryOperation' smart constructor.
 data LogEntryOperation =
   LogEntryOperation'
-    { _leoFirst    :: !(Maybe Bool)
+    { _leoFirst :: !(Maybe Bool)
     , _leoProducer :: !(Maybe Text)
-    , _leoLast     :: !(Maybe Bool)
-    , _leoId       :: !(Maybe Text)
+    , _leoLast :: !(Maybe Bool)
+    , _leoId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2821,15 +2821,15 @@ instance ToJSON LogEntryOperation where
 data LogMetric =
   LogMetric'
     { _lmMetricDescriptor :: !(Maybe MetricDescriptor)
-    , _lmUpdateTime       :: !(Maybe DateTime')
-    , _lmName             :: !(Maybe Text)
-    , _lmVersion          :: !(Maybe LogMetricVersion)
-    , _lmLabelExtractors  :: !(Maybe LogMetricLabelExtractors)
-    , _lmFilter           :: !(Maybe Text)
-    , _lmValueExtractor   :: !(Maybe Text)
-    , _lmBucketOptions    :: !(Maybe BucketOptions)
-    , _lmDescription      :: !(Maybe Text)
-    , _lmCreateTime       :: !(Maybe DateTime')
+    , _lmUpdateTime :: !(Maybe DateTime')
+    , _lmName :: !(Maybe Text)
+    , _lmVersion :: !(Maybe LogMetricVersion)
+    , _lmLabelExtractors :: !(Maybe LogMetricLabelExtractors)
+    , _lmFilter :: !(Maybe Text)
+    , _lmValueExtractor :: !(Maybe Text)
+    , _lmBucketOptions :: !(Maybe BucketOptions)
+    , _lmDescription :: !(Maybe Text)
+    , _lmCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3020,23 +3020,23 @@ instance ToJSON LogMetric where
 -- /See:/ 'logEntry' smart constructor.
 data LogEntry =
   LogEntry'
-    { _leOperation        :: !(Maybe LogEntryOperation)
-    , _leSeverity         :: !(Maybe LogEntrySeverity)
-    , _leTextPayload      :: !(Maybe Text)
-    , _leJSONPayload      :: !(Maybe LogEntryJSONPayload)
-    , _leHTTPRequest      :: !(Maybe HTTPRequest)
-    , _leResource         :: !(Maybe MonitoredResource)
-    , _leInsertId         :: !(Maybe Text)
-    , _leMetadata         :: !(Maybe MonitoredResourceMetadata)
+    { _leOperation :: !(Maybe LogEntryOperation)
+    , _leSeverity :: !(Maybe LogEntrySeverity)
+    , _leTextPayload :: !(Maybe Text)
+    , _leJSONPayload :: !(Maybe LogEntryJSONPayload)
+    , _leHTTPRequest :: !(Maybe HTTPRequest)
+    , _leResource :: !(Maybe MonitoredResource)
+    , _leInsertId :: !(Maybe Text)
+    , _leMetadata :: !(Maybe MonitoredResourceMetadata)
     , _leReceiveTimestamp :: !(Maybe DateTime')
-    , _leLabels           :: !(Maybe LogEntryLabels)
-    , _leProtoPayload     :: !(Maybe LogEntryProtoPayload)
-    , _leSourceLocation   :: !(Maybe LogEntrySourceLocation)
-    , _leTraceSampled     :: !(Maybe Bool)
-    , _leLogName          :: !(Maybe Text)
-    , _leTimestamp        :: !(Maybe DateTime')
-    , _leTrace            :: !(Maybe Text)
-    , _leSpanId           :: !(Maybe Text)
+    , _leLabels :: !(Maybe LogEntryLabels)
+    , _leProtoPayload :: !(Maybe LogEntryProtoPayload)
+    , _leSourceLocation :: !(Maybe LogEntrySourceLocation)
+    , _leTraceSampled :: !(Maybe Bool)
+    , _leLogName :: !(Maybe Text)
+    , _leTimestamp :: !(Maybe DateTime')
+    , _leTrace :: !(Maybe Text)
+    , _leSpanId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3301,9 +3301,9 @@ instance ToJSON LogEntry where
 -- /See:/ 'sourceLocation' smart constructor.
 data SourceLocation =
   SourceLocation'
-    { _slLine         :: !(Maybe (Textual Int64))
+    { _slLine :: !(Maybe (Textual Int64))
     , _slFunctionName :: !(Maybe Text)
-    , _slFile         :: !(Maybe Text)
+    , _slFile :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3381,8 +3381,8 @@ instance ToJSON SourceLocation where
 data BucketOptions =
   BucketOptions'
     { _boExponentialBuckets :: !(Maybe Exponential)
-    , _boLinearBuckets      :: !(Maybe Linear)
-    , _boExplicitBuckets    :: !(Maybe Explicit)
+    , _boLinearBuckets :: !(Maybe Linear)
+    , _boExplicitBuckets :: !(Maybe Explicit)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -43,8 +43,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Operations.SetIAMPolicy
     , prosipCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.operations.setIamPolicy@ method which the
 -- 'ProjectsRegionsOperationsSetIAMPolicy' request conforms to.
@@ -66,13 +66,13 @@ type ProjectsRegionsOperationsSetIAMPolicyResource =
 -- /See:/ 'projectsRegionsOperationsSetIAMPolicy' smart constructor.
 data ProjectsRegionsOperationsSetIAMPolicy =
   ProjectsRegionsOperationsSetIAMPolicy'
-    { _prosipXgafv          :: !(Maybe Xgafv)
+    { _prosipXgafv :: !(Maybe Xgafv)
     , _prosipUploadProtocol :: !(Maybe Text)
-    , _prosipAccessToken    :: !(Maybe Text)
-    , _prosipUploadType     :: !(Maybe Text)
-    , _prosipPayload        :: !SetIAMPolicyRequest
-    , _prosipResource       :: !Text
-    , _prosipCallback       :: !(Maybe Text)
+    , _prosipAccessToken :: !(Maybe Text)
+    , _prosipUploadType :: !(Maybe Text)
+    , _prosipPayload :: !SetIAMPolicyRequest
+    , _prosipResource :: !Text
+    , _prosipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

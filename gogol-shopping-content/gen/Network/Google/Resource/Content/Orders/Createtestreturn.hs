@@ -33,19 +33,19 @@ module Network.Google.Resource.Content.Orders.Createtestreturn
     , OrdersCreatetestreturn
 
     -- * Request Lenses
-    , occMerchantId
-    , occPayload
-    , occOrderId
+    , ordrMerchantId
+    , ordrPayload
+    , ordrOrderId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.orders.createtestreturn@ method which the
 -- 'OrdersCreatetestreturn' request conforms to.
 type OrdersCreatetestreturnResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orders" :>
              Capture "orderId" Text :>
@@ -59,9 +59,9 @@ type OrdersCreatetestreturnResource =
 -- /See:/ 'ordersCreatetestreturn' smart constructor.
 data OrdersCreatetestreturn =
   OrdersCreatetestreturn'
-    { _occMerchantId :: !(Textual Word64)
-    , _occPayload    :: !OrdersCreateTestReturnRequest
-    , _occOrderId    :: !Text
+    { _ordrMerchantId :: !(Textual Word64)
+    , _ordrPayload :: !OrdersCreateTestReturnRequest
+    , _ordrOrderId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -70,41 +70,41 @@ data OrdersCreatetestreturn =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'occMerchantId'
+-- * 'ordrMerchantId'
 --
--- * 'occPayload'
+-- * 'ordrPayload'
 --
--- * 'occOrderId'
+-- * 'ordrOrderId'
 ordersCreatetestreturn
-    :: Word64 -- ^ 'occMerchantId'
-    -> OrdersCreateTestReturnRequest -- ^ 'occPayload'
-    -> Text -- ^ 'occOrderId'
+    :: Word64 -- ^ 'ordrMerchantId'
+    -> OrdersCreateTestReturnRequest -- ^ 'ordrPayload'
+    -> Text -- ^ 'ordrOrderId'
     -> OrdersCreatetestreturn
-ordersCreatetestreturn pOccMerchantId_ pOccPayload_ pOccOrderId_ =
+ordersCreatetestreturn pOrdrMerchantId_ pOrdrPayload_ pOrdrOrderId_ =
   OrdersCreatetestreturn'
-    { _occMerchantId = _Coerce # pOccMerchantId_
-    , _occPayload = pOccPayload_
-    , _occOrderId = pOccOrderId_
+    { _ordrMerchantId = _Coerce # pOrdrMerchantId_
+    , _ordrPayload = pOrdrPayload_
+    , _ordrOrderId = pOrdrOrderId_
     }
 
 
 -- | The ID of the account that manages the order. This cannot be a
 -- multi-client account.
-occMerchantId :: Lens' OrdersCreatetestreturn Word64
-occMerchantId
-  = lens _occMerchantId
-      (\ s a -> s{_occMerchantId = a})
+ordrMerchantId :: Lens' OrdersCreatetestreturn Word64
+ordrMerchantId
+  = lens _ordrMerchantId
+      (\ s a -> s{_ordrMerchantId = a})
       . _Coerce
 
 -- | Multipart request metadata.
-occPayload :: Lens' OrdersCreatetestreturn OrdersCreateTestReturnRequest
-occPayload
-  = lens _occPayload (\ s a -> s{_occPayload = a})
+ordrPayload :: Lens' OrdersCreatetestreturn OrdersCreateTestReturnRequest
+ordrPayload
+  = lens _ordrPayload (\ s a -> s{_ordrPayload = a})
 
 -- | The ID of the order.
-occOrderId :: Lens' OrdersCreatetestreturn Text
-occOrderId
-  = lens _occOrderId (\ s a -> s{_occOrderId = a})
+ordrOrderId :: Lens' OrdersCreatetestreturn Text
+ordrOrderId
+  = lens _ordrOrderId (\ s a -> s{_ordrOrderId = a})
 
 instance GoogleRequest OrdersCreatetestreturn where
         type Rs OrdersCreatetestreturn =
@@ -112,8 +112,8 @@ instance GoogleRequest OrdersCreatetestreturn where
         type Scopes OrdersCreatetestreturn =
              '["https://www.googleapis.com/auth/content"]
         requestClient OrdersCreatetestreturn'{..}
-          = go _occMerchantId _occOrderId (Just AltJSON)
-              _occPayload
+          = go _ordrMerchantId _ordrOrderId (Just AltJSON)
+              _ordrPayload
               shoppingContentService
           where go
                   = buildClient

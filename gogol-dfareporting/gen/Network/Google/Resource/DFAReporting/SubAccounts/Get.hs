@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.SubAccounts.Get
     , sagId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.subaccounts.get@ method which the
 -- 'SubAccountsGet' request conforms to.
@@ -57,7 +57,7 @@ type SubAccountsGetResource =
 data SubAccountsGet =
   SubAccountsGet'
     { _sagProFileId :: !(Textual Int64)
-    , _sagId        :: !(Textual Int64)
+    , _sagId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

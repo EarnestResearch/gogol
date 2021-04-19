@@ -16,7 +16,7 @@
 --
 module Network.Google.Testing.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Output only. Indicates the current progress of the test matrix (e.g.,
 -- FINISHED).

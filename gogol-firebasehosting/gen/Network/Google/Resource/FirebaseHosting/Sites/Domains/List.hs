@@ -43,8 +43,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Domains.List
     , sdlCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.domains.list@ method which the
 -- 'SitesDomainsList' request conforms to.
@@ -67,14 +67,14 @@ type SitesDomainsListResource =
 -- /See:/ 'sitesDomainsList' smart constructor.
 data SitesDomainsList =
   SitesDomainsList'
-    { _sdlParent         :: !Text
-    , _sdlXgafv          :: !(Maybe Xgafv)
+    { _sdlParent :: !Text
+    , _sdlXgafv :: !(Maybe Xgafv)
     , _sdlUploadProtocol :: !(Maybe Text)
-    , _sdlAccessToken    :: !(Maybe Text)
-    , _sdlUploadType     :: !(Maybe Text)
-    , _sdlPageToken      :: !(Maybe Text)
-    , _sdlPageSize       :: !(Maybe (Textual Int32))
-    , _sdlCallback       :: !(Maybe Text)
+    , _sdlAccessToken :: !(Maybe Text)
+    , _sdlUploadType :: !(Maybe Text)
+    , _sdlPageToken :: !(Maybe Text)
+    , _sdlPageSize :: !(Maybe (Textual Int32))
+    , _sdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

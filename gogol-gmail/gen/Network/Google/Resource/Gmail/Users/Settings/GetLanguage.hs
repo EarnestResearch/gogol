@@ -36,8 +36,8 @@ module Network.Google.Resource.Gmail.Users.Settings.GetLanguage
     , usglUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.getLanguage@ method which the
 -- 'UsersSettingsGetLanguage' request conforms to.

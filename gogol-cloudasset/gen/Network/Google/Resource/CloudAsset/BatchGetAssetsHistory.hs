@@ -50,8 +50,8 @@ module Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
     , bgahCallback
     ) where
 
-import           Network.Google.CloudAsset.Types
-import           Network.Google.Prelude
+import Network.Google.CloudAsset.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudasset.batchGetAssetsHistory@ method which the
 -- 'BatchGetAssetsHistory' request conforms to.
@@ -80,16 +80,16 @@ type BatchGetAssetsHistoryResource =
 -- /See:/ 'batchGetAssetsHistory' smart constructor.
 data BatchGetAssetsHistory =
   BatchGetAssetsHistory'
-    { _bgahParent                  :: !Text
-    , _bgahXgafv                   :: !(Maybe Xgafv)
-    , _bgahReadTimeWindowEndTime   :: !(Maybe DateTime')
-    , _bgahUploadProtocol          :: !(Maybe Text)
-    , _bgahAccessToken             :: !(Maybe Text)
-    , _bgahUploadType              :: !(Maybe Text)
-    , _bgahAssetNames              :: !(Maybe [Text])
+    { _bgahParent :: !Text
+    , _bgahXgafv :: !(Maybe Xgafv)
+    , _bgahReadTimeWindowEndTime :: !(Maybe DateTime')
+    , _bgahUploadProtocol :: !(Maybe Text)
+    , _bgahAccessToken :: !(Maybe Text)
+    , _bgahUploadType :: !(Maybe Text)
+    , _bgahAssetNames :: !(Maybe [Text])
     , _bgahReadTimeWindowStartTime :: !(Maybe DateTime')
-    , _bgahContentType             :: !(Maybe Text)
-    , _bgahCallback                :: !(Maybe Text)
+    , _bgahContentType :: !(Maybe Text)
+    , _bgahCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

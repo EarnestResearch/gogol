@@ -44,8 +44,8 @@ module Network.Google.Resource.Calendar.Events.Update
     , euEventId
     ) where
 
-import           Network.Google.AppsCalendar.Types
-import           Network.Google.Prelude
+import Network.Google.AppsCalendar.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @calendar.events.update@ method which the
 -- 'EventsUpdate' request conforms to.
@@ -71,14 +71,14 @@ type EventsUpdateResource =
 data EventsUpdate =
   EventsUpdate'
     { _euConferenceDataVersion :: !(Maybe (Textual Int32))
-    , _euCalendarId            :: !Text
-    , _euPayload               :: !Event
-    , _euMaxAttendees          :: !(Maybe (Textual Int32))
-    , _euSendNotifications     :: !(Maybe Bool)
-    , _euSupportsAttachments   :: !(Maybe Bool)
-    , _euSendUpdates           :: !(Maybe EventsUpdateSendUpdates)
-    , _euAlwaysIncludeEmail    :: !(Maybe Bool)
-    , _euEventId               :: !Text
+    , _euCalendarId :: !Text
+    , _euPayload :: !Event
+    , _euMaxAttendees :: !(Maybe (Textual Int32))
+    , _euSendNotifications :: !(Maybe Bool)
+    , _euSupportsAttachments :: !(Maybe Bool)
+    , _euSendUpdates :: !(Maybe EventsUpdateSendUpdates)
+    , _euAlwaysIncludeEmail :: !(Maybe Bool)
+    , _euEventId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.GamesConfiguration.AchievementConfigurations.Upda
     , acuPayload
     ) where
 
-import           Network.Google.GamesConfiguration.Types
-import           Network.Google.Prelude
+import Network.Google.GamesConfiguration.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesConfiguration.achievementConfigurations.update@ method which the
 -- 'AchievementConfigurationsUpdate' request conforms to.
@@ -57,7 +57,7 @@ type AchievementConfigurationsUpdateResource =
 data AchievementConfigurationsUpdate =
   AchievementConfigurationsUpdate'
     { _acuAchievementId :: !Text
-    , _acuPayload       :: !AchievementConfiguration
+    , _acuPayload :: !AchievementConfiguration
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Reports.EntityUsageReports.Get
     , eurgMaxResults
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
+import Network.Google.Prelude
+import Network.Google.Reports.Types
 
 -- | A resource alias for @reports.entityUsageReports.get@ method which the
 -- 'EntityUsageReportsGet' request conforms to.
@@ -73,12 +73,12 @@ type EntityUsageReportsGetResource =
 data EntityUsageReportsGet =
   EntityUsageReportsGet'
     { _eurgEntityType :: !Text
-    , _eurgFilters    :: !(Maybe Text)
+    , _eurgFilters :: !(Maybe Text)
     , _eurgCustomerId :: !(Maybe Text)
-    , _eurgDate       :: !Text
-    , _eurgEntityKey  :: !Text
+    , _eurgDate :: !Text
+    , _eurgEntityKey :: !Text
     , _eurgParameters :: !(Maybe Text)
-    , _eurgPageToken  :: !(Maybe Text)
+    , _eurgPageToken :: !(Maybe Text)
     , _eurgMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

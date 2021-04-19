@@ -38,8 +38,8 @@ module Network.Google.Resource.Storage.Projects.ServiceAccount.Get
     , psagProjectId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.projects.serviceAccount.get@ method which the
 -- 'ProjectsServiceAccountGet' request conforms to.
@@ -60,7 +60,7 @@ type ProjectsServiceAccountGetResource =
 data ProjectsServiceAccountGet =
   ProjectsServiceAccountGet'
     { _psagUserProject :: !(Maybe Text)
-    , _psagProjectId   :: !Text
+    , _psagProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

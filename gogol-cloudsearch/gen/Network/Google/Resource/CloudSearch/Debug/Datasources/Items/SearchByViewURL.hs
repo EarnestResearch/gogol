@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Debug.Datasources.Items.SearchByViewU
     , ddisbvuCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.debug.datasources.items.searchByViewUrl@ method which the
 -- 'DebugDatasourcesItemsSearchByViewURL' request conforms to.
@@ -68,13 +68,13 @@ type DebugDatasourcesItemsSearchByViewURLResource =
 -- /See:/ 'debugDatasourcesItemsSearchByViewURL' smart constructor.
 data DebugDatasourcesItemsSearchByViewURL =
   DebugDatasourcesItemsSearchByViewURL'
-    { _ddisbvuXgafv          :: !(Maybe Xgafv)
+    { _ddisbvuXgafv :: !(Maybe Xgafv)
     , _ddisbvuUploadProtocol :: !(Maybe Text)
-    , _ddisbvuAccessToken    :: !(Maybe Text)
-    , _ddisbvuUploadType     :: !(Maybe Text)
-    , _ddisbvuPayload        :: !SearchItemsByViewURLRequest
-    , _ddisbvuName           :: !Text
-    , _ddisbvuCallback       :: !(Maybe Text)
+    , _ddisbvuAccessToken :: !(Maybe Text)
+    , _ddisbvuUploadType :: !(Maybe Text)
+    , _ddisbvuPayload :: !SearchItemsByViewURLRequest
+    , _ddisbvuName :: !Text
+    , _ddisbvuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

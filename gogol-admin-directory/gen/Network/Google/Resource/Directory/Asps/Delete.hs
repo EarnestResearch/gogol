@@ -37,8 +37,8 @@ module Network.Google.Resource.Directory.Asps.Delete
     , adUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.asps.delete@ method which the
 -- 'AspsDelete' request conforms to.
@@ -57,7 +57,7 @@ type AspsDeleteResource =
 -- /See:/ 'aspsDelete' smart constructor.
 data AspsDelete =
   AspsDelete'
-    { _adCodeId  :: !(Textual Int32)
+    { _adCodeId :: !(Textual Int32)
     , _adUserKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

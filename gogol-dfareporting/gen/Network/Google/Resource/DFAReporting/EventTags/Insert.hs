@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.EventTags.Insert
     , etiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.eventTags.insert@ method which the
 -- 'EventTagsInsert' request conforms to.
@@ -57,7 +57,7 @@ type EventTagsInsertResource =
 data EventTagsInsert =
   EventTagsInsert'
     { _etiProFileId :: !(Textual Int64)
-    , _etiPayload   :: !EventTag
+    , _etiPayload :: !EventTag
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

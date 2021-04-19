@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Modify
     , ummId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.modify@ method which the
 -- 'UsersMessagesModify' request conforms to.
@@ -61,8 +61,8 @@ type UsersMessagesModifyResource =
 data UsersMessagesModify =
   UsersMessagesModify'
     { _ummPayload :: !ModifyMessageRequest
-    , _ummUserId  :: !Text
-    , _ummId      :: !Text
+    , _ummUserId :: !Text
+    , _ummId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidPublisher.Purchases.Products.Get
     , ppgProductId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.purchases.products.get@ method which the
 -- 'PurchasesProductsGet' request conforms to.
@@ -62,8 +62,8 @@ type PurchasesProductsGetResource =
 data PurchasesProductsGet =
   PurchasesProductsGet'
     { _ppgPackageName :: !Text
-    , _ppgToken       :: !Text
-    , _ppgProductId   :: !Text
+    , _ppgToken :: !Text
+    , _ppgProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.ForwardingRules.AggregatedList
     , fralMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.forwardingRules.aggregatedList@ method which the
 -- 'ForwardingRulesAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type ForwardingRulesAggregatedListResource =
 -- /See:/ 'forwardingRulesAggregatedList' smart constructor.
 data ForwardingRulesAggregatedList =
   ForwardingRulesAggregatedList'
-    { _fralOrderBy    :: !(Maybe Text)
-    , _fralProject    :: !Text
-    , _fralFilter     :: !(Maybe Text)
-    , _fralPageToken  :: !(Maybe Text)
+    { _fralOrderBy :: !(Maybe Text)
+    , _fralProject :: !Text
+    , _fralFilter :: !(Maybe Text)
+    , _fralPageToken :: !(Maybe Text)
     , _fralMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -39,8 +39,8 @@ module Network.Google.Resource.DNS.ManagedZones.Patch
     , mzpClientOperationId
     ) where
 
-import           Network.Google.DNS.Types
-import           Network.Google.Prelude
+import Network.Google.DNS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dns.managedZones.patch@ method which the
 -- 'ManagedZonesPatch' request conforms to.
@@ -61,9 +61,9 @@ type ManagedZonesPatchResource =
 -- /See:/ 'managedZonesPatch' smart constructor.
 data ManagedZonesPatch =
   ManagedZonesPatch'
-    { _mzpProject           :: !Text
-    , _mzpPayload           :: !ManagedZone
-    , _mzpManagedZone       :: !Text
+    { _mzpProject :: !Text
+    , _mzpPayload :: !ManagedZone
+    , _mzpManagedZone :: !Text
     , _mzpClientOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

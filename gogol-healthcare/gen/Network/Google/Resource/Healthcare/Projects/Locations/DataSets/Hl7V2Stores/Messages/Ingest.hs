@@ -46,8 +46,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsmiCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.messages.ingest@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesIngest' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesIngestResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesIngest' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesIngest =
   ProjectsLocationsDataSetsHl7V2StoresMessagesIngest'
-    { _pldshvsmiParent         :: !Text
-    , _pldshvsmiXgafv          :: !(Maybe Xgafv)
+    { _pldshvsmiParent :: !Text
+    , _pldshvsmiXgafv :: !(Maybe Xgafv)
     , _pldshvsmiUploadProtocol :: !(Maybe Text)
-    , _pldshvsmiAccessToken    :: !(Maybe Text)
-    , _pldshvsmiUploadType     :: !(Maybe Text)
-    , _pldshvsmiPayload        :: !IngestMessageRequest
-    , _pldshvsmiCallback       :: !(Maybe Text)
+    , _pldshvsmiAccessToken :: !(Maybe Text)
+    , _pldshvsmiUploadType :: !(Maybe Text)
+    , _pldshvsmiPayload :: !IngestMessageRequest
+    , _pldshvsmiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.Assets.RunDiscovery
     , oardCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.assets.runDiscovery@ method which the
 -- 'OrganizationsAssetsRunDiscovery' request conforms to.
@@ -71,13 +71,13 @@ type OrganizationsAssetsRunDiscoveryResource =
 -- /See:/ 'organizationsAssetsRunDiscovery' smart constructor.
 data OrganizationsAssetsRunDiscovery =
   OrganizationsAssetsRunDiscovery'
-    { _oardParent         :: !Text
-    , _oardXgafv          :: !(Maybe Xgafv)
+    { _oardParent :: !Text
+    , _oardXgafv :: !(Maybe Xgafv)
     , _oardUploadProtocol :: !(Maybe Text)
-    , _oardAccessToken    :: !(Maybe Text)
-    , _oardUploadType     :: !(Maybe Text)
-    , _oardPayload        :: !RunAssetDiscoveryRequest
-    , _oardCallback       :: !(Maybe Text)
+    , _oardAccessToken :: !(Maybe Text)
+    , _oardUploadType :: !(Maybe Text)
+    , _oardPayload :: !RunAssetDiscoveryRequest
+    , _oardCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

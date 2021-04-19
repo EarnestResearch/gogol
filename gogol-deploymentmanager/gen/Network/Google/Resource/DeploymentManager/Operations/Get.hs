@@ -37,8 +37,8 @@ module Network.Google.Resource.DeploymentManager.Operations.Get
     , ogOperation
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.operations.get@ method which the
 -- 'OperationsGet' request conforms to.
@@ -57,7 +57,7 @@ type OperationsGetResource =
 -- /See:/ 'operationsGet' smart constructor.
 data OperationsGet =
   OperationsGet'
-    { _ogProject   :: !Text
+    { _ogProject :: !Text
     , _ogOperation :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

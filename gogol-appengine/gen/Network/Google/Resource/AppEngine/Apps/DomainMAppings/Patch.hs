@@ -47,8 +47,8 @@ module Network.Google.Resource.AppEngine.Apps.DomainMAppings.Patch
     , admapCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.domainMappings.patch@ method which the
 -- 'AppsDomainMAppingsPatch' request conforms to.
@@ -76,15 +76,15 @@ type AppsDomainMAppingsPatchResource =
 -- /See:/ 'appsDomainMAppingsPatch' smart constructor.
 data AppsDomainMAppingsPatch =
   AppsDomainMAppingsPatch'
-    { _admapXgafv            :: !(Maybe Xgafv)
-    , _admapUploadProtocol   :: !(Maybe Text)
-    , _admapUpdateMask       :: !(Maybe GFieldMask)
-    , _admapAccessToken      :: !(Maybe Text)
-    , _admapUploadType       :: !(Maybe Text)
-    , _admapPayload          :: !DomainMApping
-    , _admapAppsId           :: !Text
+    { _admapXgafv :: !(Maybe Xgafv)
+    , _admapUploadProtocol :: !(Maybe Text)
+    , _admapUpdateMask :: !(Maybe GFieldMask)
+    , _admapAccessToken :: !(Maybe Text)
+    , _admapUploadType :: !(Maybe Text)
+    , _admapPayload :: !DomainMApping
+    , _admapAppsId :: !Text
     , _admapDomainMAppingsId :: !Text
-    , _admapCallback         :: !(Maybe Text)
+    , _admapCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

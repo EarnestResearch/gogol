@@ -40,8 +40,8 @@ module Network.Google.Resource.Games.Snapshots.List
     , slMaxResults
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.snapshots.list@ method which the
 -- 'SnapshotsList' request conforms to.
@@ -63,9 +63,9 @@ type SnapshotsListResource =
 -- /See:/ 'snapshotsList' smart constructor.
 data SnapshotsList =
   SnapshotsList'
-    { _slLanguage   :: !(Maybe Text)
-    , _slPageToken  :: !(Maybe Text)
-    , _slPlayerId   :: !Text
+    { _slLanguage :: !(Maybe Text)
+    , _slPageToken :: !(Maybe Text)
+    , _slPlayerId :: !Text
     , _slMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)

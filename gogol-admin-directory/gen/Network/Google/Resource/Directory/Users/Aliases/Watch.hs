@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Users.Aliases.Watch
     , uawUserKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.aliases.watch@ method which the
 -- 'UsersAliasesWatch' request conforms to.
@@ -60,7 +60,7 @@ type UsersAliasesWatchResource =
 -- /See:/ 'usersAliasesWatch' smart constructor.
 data UsersAliasesWatch =
   UsersAliasesWatch'
-    { _uawEvent   :: !(Maybe UsersAliasesWatchEvent)
+    { _uawEvent :: !(Maybe UsersAliasesWatchEvent)
     , _uawPayload :: !Channel
     , _uawUserKey :: !Text
     }

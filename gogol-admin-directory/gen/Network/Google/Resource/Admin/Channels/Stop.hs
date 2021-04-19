@@ -36,8 +36,8 @@ module Network.Google.Resource.Admin.Channels.Stop
     , csPayload
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @admin.channels.stop@ method which the
 -- 'ChannelsStop' request conforms to.

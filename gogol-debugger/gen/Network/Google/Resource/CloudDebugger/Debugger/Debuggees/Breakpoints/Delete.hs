@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.Dele
     , ddbdCallback
     ) where
 
-import           Network.Google.Debugger.Types
-import           Network.Google.Prelude
+import Network.Google.Debugger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouddebugger.debugger.debuggees.breakpoints.delete@ method which the
 -- 'DebuggerDebuggeesBreakpointsDelete' request conforms to.
@@ -68,14 +68,14 @@ type DebuggerDebuggeesBreakpointsDeleteResource =
 -- /See:/ 'debuggerDebuggeesBreakpointsDelete' smart constructor.
 data DebuggerDebuggeesBreakpointsDelete =
   DebuggerDebuggeesBreakpointsDelete'
-    { _ddbdXgafv          :: !(Maybe Xgafv)
+    { _ddbdXgafv :: !(Maybe Xgafv)
     , _ddbdUploadProtocol :: !(Maybe Text)
-    , _ddbdAccessToken    :: !(Maybe Text)
-    , _ddbdUploadType     :: !(Maybe Text)
-    , _ddbdBreakpointId   :: !Text
-    , _ddbdDebuggeeId     :: !Text
-    , _ddbdClientVersion  :: !(Maybe Text)
-    , _ddbdCallback       :: !(Maybe Text)
+    , _ddbdAccessToken :: !(Maybe Text)
+    , _ddbdUploadType :: !(Maybe Text)
+    , _ddbdBreakpointId :: !Text
+    , _ddbdDebuggeeId :: !Text
+    , _ddbdClientVersion :: !(Maybe Text)
+    , _ddbdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

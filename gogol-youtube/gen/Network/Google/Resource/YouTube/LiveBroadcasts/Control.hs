@@ -43,8 +43,8 @@ module Network.Google.Resource.YouTube.LiveBroadcasts.Control
     , lbcOffSetTimeMs
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.liveBroadcasts.control@ method which the
 -- 'LiveBroadcastsControl' request conforms to.
@@ -69,13 +69,13 @@ type LiveBroadcastsControlResource =
 -- /See:/ 'liveBroadcastsControl' smart constructor.
 data LiveBroadcastsControl =
   LiveBroadcastsControl'
-    { _lbcPart                          :: !Text
-    , _lbcOnBehalfOfContentOwner        :: !(Maybe Text)
+    { _lbcPart :: !Text
+    , _lbcOnBehalfOfContentOwner :: !(Maybe Text)
     , _lbcOnBehalfOfContentOwnerChannel :: !(Maybe Text)
-    , _lbcId                            :: !Text
-    , _lbcDisplaySlate                  :: !(Maybe Bool)
-    , _lbcWalltime                      :: !(Maybe DateTime')
-    , _lbcOffSetTimeMs                  :: !(Maybe (Textual Word64))
+    , _lbcId :: !Text
+    , _lbcDisplaySlate :: !(Maybe Bool)
+    , _lbcWalltime :: !(Maybe DateTime')
+    , _lbcOffSetTimeMs :: !(Maybe (Textual Word64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

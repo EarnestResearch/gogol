@@ -37,8 +37,8 @@ module Network.Google.Resource.Games.Leaderboards.Get
     , lgLanguage
     ) where
 
-import           Network.Google.Games.Types
-import           Network.Google.Prelude
+import Network.Google.Games.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @games.leaderboards.get@ method which the
 -- 'LeaderboardsGet' request conforms to.
@@ -56,7 +56,7 @@ type LeaderboardsGetResource =
 data LeaderboardsGet =
   LeaderboardsGet'
     { _lgLeaderboardId :: !Text
-    , _lgLanguage      :: !(Maybe Text)
+    , _lgLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

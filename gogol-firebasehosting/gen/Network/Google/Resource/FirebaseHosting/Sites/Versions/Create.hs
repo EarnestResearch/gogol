@@ -44,8 +44,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Versions.Create
     , svcCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.versions.create@ method which the
 -- 'SitesVersionsCreate' request conforms to.
@@ -68,15 +68,15 @@ type SitesVersionsCreateResource =
 -- /See:/ 'sitesVersionsCreate' smart constructor.
 data SitesVersionsCreate =
   SitesVersionsCreate'
-    { _svcSizeBytes      :: !(Maybe (Textual Int64))
-    , _svcParent         :: !Text
-    , _svcXgafv          :: !(Maybe Xgafv)
-    , _svcVersionId      :: !(Maybe Text)
+    { _svcSizeBytes :: !(Maybe (Textual Int64))
+    , _svcParent :: !Text
+    , _svcXgafv :: !(Maybe Xgafv)
+    , _svcVersionId :: !(Maybe Text)
     , _svcUploadProtocol :: !(Maybe Text)
-    , _svcAccessToken    :: !(Maybe Text)
-    , _svcUploadType     :: !(Maybe Text)
-    , _svcPayload        :: !Version
-    , _svcCallback       :: !(Maybe Text)
+    , _svcAccessToken :: !(Maybe Text)
+    , _svcUploadType :: !(Maybe Text)
+    , _svcPayload :: !Version
+    , _svcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

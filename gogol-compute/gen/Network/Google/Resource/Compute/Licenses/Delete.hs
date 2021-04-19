@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Licenses.Delete
     , ldLicense
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.delete@ method which the
 -- 'LicensesDelete' request conforms to.
@@ -60,8 +60,8 @@ type LicensesDeleteResource =
 data LicensesDelete =
   LicensesDelete'
     { _ldRequestId :: !(Maybe Text)
-    , _ldProject   :: !Text
-    , _ldLicense   :: !Text
+    , _ldProject :: !Text
+    , _ldLicense :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

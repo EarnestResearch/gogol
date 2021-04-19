@@ -16,7 +16,7 @@
 --
 module Network.Google.Dataflow.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Counter aggregation kind.
 data NameAndKindKind

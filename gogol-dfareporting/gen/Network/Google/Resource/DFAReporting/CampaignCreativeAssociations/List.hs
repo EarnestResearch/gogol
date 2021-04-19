@@ -41,8 +41,8 @@ module Network.Google.Resource.DFAReporting.CampaignCreativeAssociations.List
     , ccalMaxResults
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaignCreativeAssociations.list@ method which the
 -- 'CampaignCreativeAssociationsList' request conforms to.
@@ -69,9 +69,9 @@ type CampaignCreativeAssociationsListResource =
 data CampaignCreativeAssociationsList =
   CampaignCreativeAssociationsList'
     { _ccalCampaignId :: !(Textual Int64)
-    , _ccalProFileId  :: !(Textual Int64)
-    , _ccalSortOrder  :: !CampaignCreativeAssociationsListSortOrder
-    , _ccalPageToken  :: !(Maybe Text)
+    , _ccalProFileId :: !(Textual Int64)
+    , _ccalSortOrder :: !CampaignCreativeAssociationsListSortOrder
+    , _ccalPageToken :: !(Maybe Text)
     , _ccalMaxResults :: !(Textual Int32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

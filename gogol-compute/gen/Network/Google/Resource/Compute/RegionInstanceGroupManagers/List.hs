@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.RegionInstanceGroupManagers.List
     , rigmlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionInstanceGroupManagers.list@ method which the
 -- 'RegionInstanceGroupManagersList' request conforms to.
@@ -68,11 +68,11 @@ type RegionInstanceGroupManagersListResource =
 -- /See:/ 'regionInstanceGroupManagersList' smart constructor.
 data RegionInstanceGroupManagersList =
   RegionInstanceGroupManagersList'
-    { _rigmlOrderBy    :: !(Maybe Text)
-    , _rigmlProject    :: !Text
-    , _rigmlFilter     :: !(Maybe Text)
-    , _rigmlRegion     :: !Text
-    , _rigmlPageToken  :: !(Maybe Text)
+    { _rigmlOrderBy :: !(Maybe Text)
+    , _rigmlProject :: !Text
+    , _rigmlFilter :: !(Maybe Text)
+    , _rigmlRegion :: !Text
+    , _rigmlPageToken :: !(Maybe Text)
     , _rigmlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

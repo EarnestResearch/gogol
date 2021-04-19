@@ -46,8 +46,8 @@ module Network.Google.Resource.YouTube.ChannelBanners.Insert
     , cbiOnBehalfOfContentOwner
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.channelBanners.insert@ method which the
 -- 'ChannelBannersInsert' request conforms to.
@@ -87,8 +87,8 @@ type ChannelBannersInsertResource =
 -- /See:/ 'channelBannersInsert' smart constructor.
 data ChannelBannersInsert =
   ChannelBannersInsert'
-    { _cbiChannelId              :: !(Maybe Text)
-    , _cbiPayload                :: !ChannelBannerResource
+    { _cbiChannelId :: !(Maybe Text)
+    , _cbiPayload :: !ChannelBannerResource
     , _cbiOnBehalfOfContentOwner :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

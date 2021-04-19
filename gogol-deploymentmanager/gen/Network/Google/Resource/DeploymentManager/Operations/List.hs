@@ -40,8 +40,8 @@ module Network.Google.Resource.DeploymentManager.Operations.List
     , olMaxResults
     ) where
 
-import           Network.Google.DeploymentManager.Types
-import           Network.Google.Prelude
+import Network.Google.DeploymentManager.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @deploymentmanager.operations.list@ method which the
 -- 'OperationsList' request conforms to.
@@ -64,10 +64,10 @@ type OperationsListResource =
 -- /See:/ 'operationsList' smart constructor.
 data OperationsList =
   OperationsList'
-    { _olOrderBy    :: !(Maybe Text)
-    , _olProject    :: !Text
-    , _olFilter     :: !(Maybe Text)
-    , _olPageToken  :: !(Maybe Text)
+    { _olOrderBy :: !(Maybe Text)
+    , _olProject :: !Text
+    , _olFilter :: !(Maybe Text)
+    , _olPageToken :: !(Maybe Text)
     , _olMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

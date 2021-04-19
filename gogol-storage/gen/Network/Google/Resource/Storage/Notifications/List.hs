@@ -37,8 +37,8 @@ module Network.Google.Resource.Storage.Notifications.List
     , nlUserProject
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.notifications.list@ method which the
 -- 'NotificationsList' request conforms to.
@@ -56,7 +56,7 @@ type NotificationsListResource =
 -- /See:/ 'notificationsList' smart constructor.
 data NotificationsList =
   NotificationsList'
-    { _nlBucket      :: !Text
+    { _nlBucket :: !Text
     , _nlUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

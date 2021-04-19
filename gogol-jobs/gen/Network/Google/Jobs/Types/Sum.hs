@@ -16,7 +16,7 @@
 --
 module Network.Google.Jobs.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Required. Type of filter.
 data CompensationFilterType

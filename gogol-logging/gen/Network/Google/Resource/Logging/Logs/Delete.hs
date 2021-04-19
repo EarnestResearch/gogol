@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Logs.Delete
     , ldCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.logs.delete@ method which the
 -- 'LogsDelete' request conforms to.
@@ -65,12 +65,12 @@ type LogsDeleteResource =
 -- /See:/ 'logsDelete' smart constructor.
 data LogsDelete =
   LogsDelete'
-    { _ldXgafv          :: !(Maybe Xgafv)
+    { _ldXgafv :: !(Maybe Xgafv)
     , _ldUploadProtocol :: !(Maybe Text)
-    , _ldAccessToken    :: !(Maybe Text)
-    , _ldUploadType     :: !(Maybe Text)
-    , _ldLogName        :: !Text
-    , _ldCallback       :: !(Maybe Text)
+    , _ldAccessToken :: !(Maybe Text)
+    , _ldUploadType :: !(Maybe Text)
+    , _ldLogName :: !Text
+    , _ldCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

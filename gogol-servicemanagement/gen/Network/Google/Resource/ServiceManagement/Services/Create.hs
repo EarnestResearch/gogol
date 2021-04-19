@@ -42,8 +42,8 @@ module Network.Google.Resource.ServiceManagement.Services.Create
     , scCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ServiceManagement.Types
+import Network.Google.Prelude
+import Network.Google.ServiceManagement.Types
 
 -- | A resource alias for @servicemanagement.services.create@ method which the
 -- 'ServicesCreate' request conforms to.
@@ -65,12 +65,12 @@ type ServicesCreateResource =
 -- /See:/ 'servicesCreate' smart constructor.
 data ServicesCreate =
   ServicesCreate'
-    { _scXgafv          :: !(Maybe Xgafv)
+    { _scXgafv :: !(Maybe Xgafv)
     , _scUploadProtocol :: !(Maybe Text)
-    , _scAccessToken    :: !(Maybe Text)
-    , _scUploadType     :: !(Maybe Text)
-    , _scPayload        :: !ManagedService
-    , _scCallback       :: !(Maybe Text)
+    , _scAccessToken :: !(Maybe Text)
+    , _scUploadType :: !(Maybe Text)
+    , _scPayload :: !ManagedService
+    , _scCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

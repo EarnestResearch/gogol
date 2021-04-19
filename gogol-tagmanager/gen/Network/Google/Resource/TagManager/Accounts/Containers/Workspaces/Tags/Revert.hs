@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Re
     , acwtrcFingerprint
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.tags.revert@ method which the
 -- 'AccountsContainersWorkspacesTagsRevert' request conforms to.
@@ -55,7 +55,7 @@ type AccountsContainersWorkspacesTagsRevertResource =
 -- /See:/ 'accountsContainersWorkspacesTagsRevert' smart constructor.
 data AccountsContainersWorkspacesTagsRevert =
   AccountsContainersWorkspacesTagsRevert'
-    { _acwtrcPath        :: !Text
+    { _acwtrcPath :: !Text
     , _acwtrcFingerprint :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -16,7 +16,7 @@
 --
 module Network.Google.StorageTransfer.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Status of the transfer operation.
 data TransferOperationStatus

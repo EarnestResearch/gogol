@@ -43,8 +43,8 @@ module Network.Google.Resource.Logging.Exclusions.List
     , eCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.exclusions.list@ method which the
 -- 'ExclusionsList' request conforms to.
@@ -67,14 +67,14 @@ type ExclusionsListResource =
 -- /See:/ 'exclusionsList' smart constructor.
 data ExclusionsList =
   ExclusionsList'
-    { _eParent         :: !Text
-    , _eXgafv          :: !(Maybe Xgafv)
+    { _eParent :: !Text
+    , _eXgafv :: !(Maybe Xgafv)
     , _eUploadProtocol :: !(Maybe Text)
-    , _eAccessToken    :: !(Maybe Text)
-    , _eUploadType     :: !(Maybe Text)
-    , _ePageToken      :: !(Maybe Text)
-    , _ePageSize       :: !(Maybe (Textual Int32))
-    , _eCallback       :: !(Maybe Text)
+    , _eAccessToken :: !(Maybe Text)
+    , _eUploadType :: !(Maybe Text)
+    , _ePageToken :: !(Maybe Text)
+    , _ePageSize :: !(Maybe (Textual Int32))
+    , _eCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

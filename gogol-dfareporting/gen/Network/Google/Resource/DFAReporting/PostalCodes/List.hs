@@ -36,8 +36,8 @@ module Network.Google.Resource.DFAReporting.PostalCodes.List
     , pclProFileId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.postalCodes.list@ method which the
 -- 'PostalCodesList' request conforms to.

@@ -39,8 +39,8 @@ module Network.Google.Resource.AndroidEnterprise.Installs.Get
     , igDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.installs.get@ method which the
 -- 'InstallsGet' request conforms to.
@@ -63,9 +63,9 @@ type InstallsGetResource =
 data InstallsGet =
   InstallsGet'
     { _igEnterpriseId :: !Text
-    , _igUserId       :: !Text
-    , _igInstallId    :: !Text
-    , _igDeviceId     :: !Text
+    , _igUserId :: !Text
+    , _igInstallId :: !Text
+    , _igDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -16,7 +16,7 @@
 --
 module Network.Google.FireStore.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | Indicates that this field supports ordering by the specified order or
 -- comparing using =, \<, \<=, >, >=.

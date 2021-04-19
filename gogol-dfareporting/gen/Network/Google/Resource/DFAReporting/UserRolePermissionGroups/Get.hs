@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.UserRolePermissionGroups.Get
     , urpggId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.userRolePermissionGroups.get@ method which the
 -- 'UserRolePermissionGroupsGet' request conforms to.
@@ -58,7 +58,7 @@ type UserRolePermissionGroupsGetResource =
 data UserRolePermissionGroupsGet =
   UserRolePermissionGroupsGet'
     { _urpggProFileId :: !(Textual Int64)
-    , _urpggId        :: !(Textual Int64)
+    , _urpggId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

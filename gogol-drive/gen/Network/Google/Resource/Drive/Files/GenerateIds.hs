@@ -37,8 +37,8 @@ module Network.Google.Resource.Drive.Files.GenerateIds
     , fgiCount
     ) where
 
-import           Network.Google.Drive.Types
-import           Network.Google.Prelude
+import Network.Google.Drive.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @drive.files.generateIds@ method which the
 -- 'FilesGenerateIds' request conforms to.

@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Upload
     , indCallback
     ) where
 
-import           Network.Google.CloudSearch.Types
-import           Network.Google.Prelude
+import Network.Google.CloudSearch.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudsearch.indexing.datasources.items.upload@ method which the
 -- 'IndexingDatasourcesItemsUpload' request conforms to.
@@ -67,13 +67,13 @@ type IndexingDatasourcesItemsUploadResource =
 -- /See:/ 'indexingDatasourcesItemsUpload' smart constructor.
 data IndexingDatasourcesItemsUpload =
   IndexingDatasourcesItemsUpload'
-    { _indXgafv          :: !(Maybe Xgafv)
+    { _indXgafv :: !(Maybe Xgafv)
     , _indUploadProtocol :: !(Maybe Text)
-    , _indAccessToken    :: !(Maybe Text)
-    , _indUploadType     :: !(Maybe Text)
-    , _indPayload        :: !StartUploadItemRequest
-    , _indName           :: !Text
-    , _indCallback       :: !(Maybe Text)
+    , _indAccessToken :: !(Maybe Text)
+    , _indUploadType :: !(Maybe Text)
+    , _indPayload :: !StartUploadItemRequest
+    , _indName :: !Text
+    , _indCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

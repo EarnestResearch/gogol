@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Grouplicenses.List
     , glEnterpriseId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.grouplicenses.list@ method which the
 -- 'GrouplicensesList' request conforms to.

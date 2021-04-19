@@ -40,8 +40,8 @@ module Network.Google.Resource.Gmail.Users.Settings.UpdateAutoForwarding
     , usuafUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.settings.updateAutoForwarding@ method which the
 -- 'UsersSettingsUpdateAutoForwarding' request conforms to.
@@ -65,7 +65,7 @@ type UsersSettingsUpdateAutoForwardingResource =
 data UsersSettingsUpdateAutoForwarding =
   UsersSettingsUpdateAutoForwarding'
     { _usuafPayload :: !AutoForwarding
-    , _usuafUserId  :: !Text
+    , _usuafUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

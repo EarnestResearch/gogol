@@ -44,8 +44,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.Releases.Create
     , srcCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.releases.create@ method which the
 -- 'SitesReleasesCreate' request conforms to.
@@ -68,14 +68,14 @@ type SitesReleasesCreateResource =
 -- /See:/ 'sitesReleasesCreate' smart constructor.
 data SitesReleasesCreate =
   SitesReleasesCreate'
-    { _srcParent         :: !Text
-    , _srcXgafv          :: !(Maybe Xgafv)
+    { _srcParent :: !Text
+    , _srcXgafv :: !(Maybe Xgafv)
     , _srcUploadProtocol :: !(Maybe Text)
-    , _srcVersionName    :: !(Maybe Text)
-    , _srcAccessToken    :: !(Maybe Text)
-    , _srcUploadType     :: !(Maybe Text)
-    , _srcPayload        :: !Release
-    , _srcCallback       :: !(Maybe Text)
+    , _srcVersionName :: !(Maybe Text)
+    , _srcAccessToken :: !(Maybe Text)
+    , _srcUploadType :: !(Maybe Text)
+    , _srcPayload :: !Release
+    , _srcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -132,8 +132,9 @@ srcUploadProtocol
       (\ s a -> s{_srcUploadProtocol = a})
 
 -- | The unique identifier for a version, in the format:
--- '\/sites\/site-name\/versions\/versionID' The site-name in this version
--- identifier must match the site-name in the \`parent\` parameter.
+-- '\/sites\/site-name\/versions\/versionID' The 'site-name' in this
+-- version identifier must match the 'site-name' in the \`parent\`
+-- parameter.
 -- This query parameter must be empty if the \`type\` field in the request
 -- body is \`SITE_DISABLE\`.
 srcVersionName :: Lens' SitesReleasesCreate (Maybe Text)

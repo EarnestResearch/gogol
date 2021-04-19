@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Products.UnApprove
     , puaProductId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.products.unapprove@ method which the
 -- 'ProductsUnApprove' request conforms to.
@@ -60,7 +60,7 @@ type ProductsUnApproveResource =
 data ProductsUnApprove =
   ProductsUnApprove'
     { _puaEnterpriseId :: !Text
-    , _puaProductId    :: !Text
+    , _puaProductId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidPublisher.Edits.Listings.Deleteall
     , eldlEditId
     ) where
 
-import           Network.Google.AndroidPublisher.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidPublisher.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidpublisher.edits.listings.deleteall@ method which the
 -- 'EditsListingsDeleteall' request conforms to.
@@ -58,7 +58,7 @@ type EditsListingsDeleteallResource =
 data EditsListingsDeleteall =
   EditsListingsDeleteall'
     { _eldlPackageName :: !Text
-    , _eldlEditId      :: !Text
+    , _eldlEditId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

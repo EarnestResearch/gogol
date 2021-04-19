@@ -48,8 +48,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Com
     , pidscCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.sessions.commit@ method which the
 -- 'ProjectsInstancesDatabasesSessionsCommit' request conforms to.
@@ -77,13 +77,13 @@ type ProjectsInstancesDatabasesSessionsCommitResource
 -- /See:/ 'projectsInstancesDatabasesSessionsCommit' smart constructor.
 data ProjectsInstancesDatabasesSessionsCommit =
   ProjectsInstancesDatabasesSessionsCommit'
-    { _pidscXgafv          :: !(Maybe Xgafv)
+    { _pidscXgafv :: !(Maybe Xgafv)
     , _pidscUploadProtocol :: !(Maybe Text)
-    , _pidscAccessToken    :: !(Maybe Text)
-    , _pidscUploadType     :: !(Maybe Text)
-    , _pidscPayload        :: !CommitRequest
-    , _pidscSession        :: !Text
-    , _pidscCallback       :: !(Maybe Text)
+    , _pidscAccessToken :: !(Maybe Text)
+    , _pidscUploadType :: !(Maybe Text)
+    , _pidscPayload :: !CommitRequest
+    , _pidscSession :: !Text
+    , _pidscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

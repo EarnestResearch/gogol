@@ -44,8 +44,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.Get
     , plcgCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.get@ method which the
 -- 'ProjectsLocationsClustersGet' request conforms to.
@@ -67,15 +67,15 @@ type ProjectsLocationsClustersGetResource =
 -- /See:/ 'projectsLocationsClustersGet' smart constructor.
 data ProjectsLocationsClustersGet =
   ProjectsLocationsClustersGet'
-    { _plcgXgafv          :: !(Maybe Xgafv)
+    { _plcgXgafv :: !(Maybe Xgafv)
     , _plcgUploadProtocol :: !(Maybe Text)
-    , _plcgAccessToken    :: !(Maybe Text)
-    , _plcgUploadType     :: !(Maybe Text)
-    , _plcgZone           :: !(Maybe Text)
-    , _plcgName           :: !Text
-    , _plcgClusterId      :: !(Maybe Text)
-    , _plcgProjectId      :: !(Maybe Text)
-    , _plcgCallback       :: !(Maybe Text)
+    , _plcgAccessToken :: !(Maybe Text)
+    , _plcgUploadType :: !(Maybe Text)
+    , _plcgZone :: !(Maybe Text)
+    , _plcgName :: !Text
+    , _plcgClusterId :: !(Maybe Text)
+    , _plcgProjectId :: !(Maybe Text)
+    , _plcgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

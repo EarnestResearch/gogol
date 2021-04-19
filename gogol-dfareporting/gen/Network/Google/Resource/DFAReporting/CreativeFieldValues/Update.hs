@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.CreativeFieldValues.Update
     , cfvuPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.creativeFieldValues.update@ method which the
 -- 'CreativeFieldValuesUpdate' request conforms to.
@@ -61,8 +61,8 @@ type CreativeFieldValuesUpdateResource =
 data CreativeFieldValuesUpdate =
   CreativeFieldValuesUpdate'
     { _cfvuCreativeFieldId :: !(Textual Int64)
-    , _cfvuProFileId       :: !(Textual Int64)
-    , _cfvuPayload         :: !CreativeFieldValue
+    , _cfvuProFileId :: !(Textual Int64)
+    , _cfvuPayload :: !CreativeFieldValue
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

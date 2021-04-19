@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Roles.Update
     , ruCustomer
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.roles.update@ method which the
 -- 'RolesUpdate' request conforms to.
@@ -59,8 +59,8 @@ type RolesUpdateResource =
 -- /See:/ 'rolesUpdate' smart constructor.
 data RolesUpdate =
   RolesUpdate'
-    { _ruPayload  :: !Role
-    , _ruRoleId   :: !Text
+    { _ruPayload :: !Role
+    , _ruRoleId :: !Text
     , _ruCustomer :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

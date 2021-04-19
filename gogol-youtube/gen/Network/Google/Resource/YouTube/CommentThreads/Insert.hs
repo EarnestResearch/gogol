@@ -38,8 +38,8 @@ module Network.Google.Resource.YouTube.CommentThreads.Insert
     , ctiPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.commentThreads.insert@ method which the
 -- 'CommentThreadsInsert' request conforms to.
@@ -58,7 +58,7 @@ type CommentThreadsInsertResource =
 -- /See:/ 'commentThreadsInsert' smart constructor.
 data CommentThreadsInsert =
   CommentThreadsInsert'
-    { _ctiPart    :: !Text
+    { _ctiPart :: !Text
     , _ctiPayload :: !CommentThread
     }
   deriving (Eq, Show, Data, Typeable, Generic)

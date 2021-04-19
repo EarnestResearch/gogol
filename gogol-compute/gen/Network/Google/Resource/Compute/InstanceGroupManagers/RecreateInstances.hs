@@ -49,8 +49,8 @@ module Network.Google.Resource.Compute.InstanceGroupManagers.RecreateInstances
     , igmriPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroupManagers.recreateInstances@ method which the
 -- 'InstanceGroupManagersRecreateInstances' request conforms to.
@@ -84,11 +84,11 @@ type InstanceGroupManagersRecreateInstancesResource =
 -- /See:/ 'instanceGroupManagersRecreateInstances' smart constructor.
 data InstanceGroupManagersRecreateInstances =
   InstanceGroupManagersRecreateInstances'
-    { _igmriRequestId            :: !(Maybe Text)
-    , _igmriProject              :: !Text
+    { _igmriRequestId :: !(Maybe Text)
+    , _igmriProject :: !Text
     , _igmriInstanceGroupManager :: !Text
-    , _igmriZone                 :: !Text
-    , _igmriPayload              :: !InstanceGroupManagersRecreateInstancesRequest
+    , _igmriZone :: !Text
+    , _igmriPayload :: !InstanceGroupManagersRecreateInstancesRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

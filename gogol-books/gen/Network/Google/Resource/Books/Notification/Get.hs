@@ -38,8 +38,8 @@ module Network.Google.Resource.Books.Notification.Get
     , ngSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.notification.get@ method which the
 -- 'NotificationGet' request conforms to.
@@ -58,9 +58,9 @@ type NotificationGetResource =
 -- /See:/ 'notificationGet' smart constructor.
 data NotificationGet =
   NotificationGet'
-    { _ngLocale         :: !(Maybe Text)
+    { _ngLocale :: !(Maybe Text)
     , _ngNotificationId :: !Text
-    , _ngSource         :: !(Maybe Text)
+    , _ngSource :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -44,8 +44,8 @@ module Network.Google.Resource.Cloudbuild.Projects.Builds.Get
     , pbgCallback
     ) where
 
-import           Network.Google.ContainerBuilder.Types
-import           Network.Google.Prelude
+import Network.Google.ContainerBuilder.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudbuild.projects.builds.get@ method which the
 -- 'ProjectsBuildsGet' request conforms to.
@@ -69,13 +69,13 @@ type ProjectsBuildsGetResource =
 -- /See:/ 'projectsBuildsGet' smart constructor.
 data ProjectsBuildsGet =
   ProjectsBuildsGet'
-    { _pbgXgafv          :: !(Maybe Xgafv)
+    { _pbgXgafv :: !(Maybe Xgafv)
     , _pbgUploadProtocol :: !(Maybe Text)
-    , _pbgAccessToken    :: !(Maybe Text)
-    , _pbgUploadType     :: !(Maybe Text)
-    , _pbgId             :: !Text
-    , _pbgProjectId      :: !Text
-    , _pbgCallback       :: !(Maybe Text)
+    , _pbgAccessToken :: !(Maybe Text)
+    , _pbgUploadType :: !(Maybe Text)
+    , _pbgId :: !Text
+    , _pbgProjectId :: !Text
+    , _pbgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

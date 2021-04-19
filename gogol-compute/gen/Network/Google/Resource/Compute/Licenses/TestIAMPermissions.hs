@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Licenses.TestIAMPermissions
     , ltipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.testIamPermissions@ method which the
 -- 'LicensesTestIAMPermissions' request conforms to.
@@ -61,8 +61,8 @@ type LicensesTestIAMPermissionsResource =
 -- /See:/ 'licensesTestIAMPermissions' smart constructor.
 data LicensesTestIAMPermissions =
   LicensesTestIAMPermissions'
-    { _ltipProject  :: !Text
-    , _ltipPayload  :: !TestPermissionsRequest
+    { _ltipProject :: !Text
+    , _ltipPayload :: !TestPermissionsRequest
     , _ltipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

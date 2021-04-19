@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.ZoneOperations.List
     , zolMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.zoneOperations.list@ method which the
 -- 'ZoneOperationsList' request conforms to.
@@ -67,11 +67,11 @@ type ZoneOperationsListResource =
 -- /See:/ 'zoneOperationsList' smart constructor.
 data ZoneOperationsList =
   ZoneOperationsList'
-    { _zolOrderBy    :: !(Maybe Text)
-    , _zolProject    :: !Text
-    , _zolZone       :: !Text
-    , _zolFilter     :: !(Maybe Text)
-    , _zolPageToken  :: !(Maybe Text)
+    { _zolOrderBy :: !(Maybe Text)
+    , _zolProject :: !Text
+    , _zolZone :: !Text
+    , _zolFilter :: !(Maybe Text)
+    , _zolPageToken :: !(Maybe Text)
     , _zolMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

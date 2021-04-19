@@ -41,8 +41,8 @@ module Network.Google.Resource.CloudErrorReporting.Projects.DeleteEvents
     , pdeCallback
     ) where
 
-import           Network.Google.CloudErrorReporting.Types
-import           Network.Google.Prelude
+import Network.Google.CloudErrorReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @clouderrorreporting.projects.deleteEvents@ method which the
 -- 'ProjectsDeleteEvents' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsDeleteEventsResource =
 -- /See:/ 'projectsDeleteEvents' smart constructor.
 data ProjectsDeleteEvents =
   ProjectsDeleteEvents'
-    { _pdeXgafv          :: !(Maybe Xgafv)
+    { _pdeXgafv :: !(Maybe Xgafv)
     , _pdeUploadProtocol :: !(Maybe Text)
-    , _pdeAccessToken    :: !(Maybe Text)
-    , _pdeUploadType     :: !(Maybe Text)
-    , _pdeProjectName    :: !Text
-    , _pdeCallback       :: !(Maybe Text)
+    , _pdeAccessToken :: !(Maybe Text)
+    , _pdeUploadType :: !(Maybe Text)
+    , _pdeProjectName :: !Text
+    , _pdeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

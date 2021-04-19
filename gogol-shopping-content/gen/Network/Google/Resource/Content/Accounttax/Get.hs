@@ -37,14 +37,14 @@ module Network.Google.Resource.Content.Accounttax.Get
     , aggAccountId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.accounttax.get@ method which the
 -- 'AccounttaxGet' request conforms to.
 type AccounttaxGetResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "accounttax" :>
              Capture "accountId" (Textual Word64) :>
@@ -56,7 +56,7 @@ type AccounttaxGetResource =
 data AccounttaxGet =
   AccounttaxGet'
     { _aggMerchantId :: !(Textual Word64)
-    , _aggAccountId  :: !(Textual Word64)
+    , _aggAccountId :: !(Textual Word64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

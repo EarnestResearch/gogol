@@ -17,8 +17,8 @@
 --
 module Network.Google.ToolResults.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ToolResults.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ToolResults.Types.Sum
 
 -- | A response containing the thumbnails in a step.
 --
@@ -26,7 +26,7 @@ import           Network.Google.ToolResults.Types.Sum
 data ListStepThumbnailsResponse =
   ListStepThumbnailsResponse'
     { _lstrNextPageToken :: !(Maybe Text)
-    , _lstrThumbnails    :: !(Maybe [Image])
+    , _lstrThumbnails :: !(Maybe [Image])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -87,9 +87,9 @@ instance ToJSON ListStepThumbnailsResponse where
 data Screen =
   Screen'
     { _sFileReference :: !(Maybe Text)
-    , _sLocale        :: !(Maybe Text)
-    , _sModel         :: !(Maybe Text)
-    , _sVersion       :: !(Maybe Text)
+    , _sLocale :: !(Maybe Text)
+    , _sModel :: !(Maybe Text)
+    , _sVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -156,9 +156,9 @@ instance ToJSON Screen where
 -- /See:/ 'thumbnail' smart constructor.
 data Thumbnail =
   Thumbnail'
-    { _tData        :: !(Maybe Bytes)
-    , _tHeightPx    :: !(Maybe (Textual Int32))
-    , _tWidthPx     :: !(Maybe (Textual Int32))
+    { _tData :: !(Maybe Bytes)
+    , _tHeightPx :: !(Maybe (Textual Int32))
+    , _tWidthPx :: !(Maybe (Textual Int32))
     , _tContentType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -269,7 +269,7 @@ instance ToJSON Thumbnail where
 data Status =
   Status'
     { _sDetails :: !(Maybe [Any])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -331,8 +331,8 @@ instance ToJSON Status where
 data ToolOutputReference =
   ToolOutputReference'
     { _torCreationTime :: !(Maybe Timestamp)
-    , _torTestCase     :: !(Maybe TestCaseReference)
-    , _torOutput       :: !(Maybe FileReference)
+    , _torTestCase :: !(Maybe TestCaseReference)
+    , _torOutput :: !(Maybe FileReference)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -394,11 +394,11 @@ instance ToJSON ToolOutputReference where
 -- /See:/ 'perfSampleSeries' smart constructor.
 data PerfSampleSeries =
   PerfSampleSeries'
-    { _pssExecutionId           :: !(Maybe Text)
-    , _pssStepId                :: !(Maybe Text)
-    , _pssHistoryId             :: !(Maybe Text)
-    , _pssProjectId             :: !(Maybe Text)
-    , _pssSampleSeriesId        :: !(Maybe Text)
+    { _pssExecutionId :: !(Maybe Text)
+    , _pssStepId :: !(Maybe Text)
+    , _pssHistoryId :: !(Maybe Text)
+    , _pssProjectId :: !(Maybe Text)
+    , _pssSampleSeriesId :: !(Maybe Text)
     , _pssBasicPerfSampleSeries :: !(Maybe BasicPerfSampleSeries)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -496,7 +496,7 @@ data AndroidAppInfo =
     { _aaiVersionCode :: !(Maybe Text)
     , _aaiVersionName :: !(Maybe Text)
     , _aaiPackageName :: !(Maybe Text)
-    , _aaiName        :: !(Maybe Text)
+    , _aaiName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -568,7 +568,7 @@ instance ToJSON AndroidAppInfo where
 -- /See:/ 'perfSample' smart constructor.
 data PerfSample =
   PerfSample'
-    { _psValue      :: !(Maybe (Textual Double))
+    { _psValue :: !(Maybe (Textual Double))
     , _psSampleTime :: !(Maybe Timestamp)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -616,11 +616,11 @@ instance ToJSON PerfSample where
 -- /See:/ 'testIssue' smart constructor.
 data TestIssue =
   TestIssue'
-    { _tiCategory     :: !(Maybe TestIssueCategory)
-    , _tiSeverity     :: !(Maybe TestIssueSeverity)
-    , _tiStackTrace   :: !(Maybe StackTrace)
-    , _tiWarning      :: !(Maybe Any)
-    , _tiType         :: !(Maybe TestIssueType)
+    { _tiCategory :: !(Maybe TestIssueCategory)
+    , _tiSeverity :: !(Maybe TestIssueSeverity)
+    , _tiStackTrace :: !(Maybe StackTrace)
+    , _tiWarning :: !(Maybe Any)
+    , _tiType :: !(Maybe TestIssueType)
     , _tiErrorMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -711,7 +711,7 @@ instance ToJSON TestIssue where
 -- /See:/ 'memoryInfo' smart constructor.
 data MemoryInfo =
   MemoryInfo'
-    { _miMemoryCapInKibibyte   :: !(Maybe (Textual Int64))
+    { _miMemoryCapInKibibyte :: !(Maybe (Textual Int64))
     , _miMemoryTotalInKibibyte :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -767,10 +767,10 @@ instance ToJSON MemoryInfo where
 -- /See:/ 'image' smart constructor.
 data Image =
   Image'
-    { _iThumbnail   :: !(Maybe Thumbnail)
-    , _iStepId      :: !(Maybe Text)
+    { _iThumbnail :: !(Maybe Thumbnail)
+    , _iStepId :: !(Maybe Text)
     , _iSourceImage :: !(Maybe ToolOutputReference)
-    , _iError       :: !(Maybe Status)
+    , _iError :: !(Maybe Status)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -839,7 +839,7 @@ instance ToJSON Image where
 data InconclusiveDetail =
   InconclusiveDetail'
     { _idInfrastructureFailure :: !(Maybe Bool)
-    , _idAbortedByUser         :: !(Maybe Bool)
+    , _idAbortedByUser :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -895,14 +895,14 @@ instance ToJSON InconclusiveDetail where
 -- /See:/ 'testCase' smart constructor.
 data TestCase =
   TestCase'
-    { _tcStatus            :: !(Maybe TestCaseStatus)
-    , _tcStartTime         :: !(Maybe Timestamp)
+    { _tcStatus :: !(Maybe TestCaseStatus)
+    , _tcStartTime :: !(Maybe Timestamp)
     , _tcTestCaseReference :: !(Maybe TestCaseReference)
-    , _tcToolOutputs       :: !(Maybe [ToolOutputReference])
-    , _tcStackTraces       :: !(Maybe [StackTrace])
-    , _tcTestCaseId        :: !(Maybe Text)
-    , _tcEndTime           :: !(Maybe Timestamp)
-    , _tcSkippedMessage    :: !(Maybe Text)
+    , _tcToolOutputs :: !(Maybe [ToolOutputReference])
+    , _tcStackTraces :: !(Maybe [StackTrace])
+    , _tcTestCaseId :: !(Maybe Text)
+    , _tcEndTime :: !(Maybe Timestamp)
+    , _tcSkippedMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1022,7 +1022,7 @@ instance ToJSON TestCase where
 data GraphicsStatsBucket =
   GraphicsStatsBucket'
     { _gsbRenderMillis :: !(Maybe (Textual Int64))
-    , _gsbFrameCount   :: !(Maybe (Textual Int64))
+    , _gsbFrameCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1078,8 +1078,8 @@ instance ToJSON GraphicsStatsBucket where
 -- /See:/ 'history' smart constructor.
 data History =
   History'
-    { _hName        :: !(Maybe Text)
-    , _hHistoryId   :: !(Maybe Text)
+    { _hName :: !(Maybe Text)
+    , _hHistoryId :: !(Maybe Text)
     , _hDisplayName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1223,7 +1223,7 @@ instance ToJSON ListPerfSampleSeriesResponse where
 -- /See:/ 'listPerfSamplesResponse' smart constructor.
 data ListPerfSamplesResponse =
   ListPerfSamplesResponse'
-    { _lpsrPerfSamples   :: !(Maybe [PerfSample])
+    { _lpsrPerfSamples :: !(Maybe [PerfSample])
     , _lpsrNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1278,9 +1278,9 @@ instance ToJSON ListPerfSamplesResponse where
 -- /See:/ 'androidTest' smart constructor.
 data AndroidTest =
   AndroidTest'
-    { _atAndroidAppInfo             :: !(Maybe AndroidAppInfo)
-    , _atTestTimeout                :: !(Maybe Duration)
-    , _atAndroidRoboTest            :: !(Maybe AndroidRoboTest)
+    { _atAndroidAppInfo :: !(Maybe AndroidAppInfo)
+    , _atTestTimeout :: !(Maybe Duration)
+    , _atAndroidRoboTest :: !(Maybe AndroidRoboTest)
     , _atAndroidInstrumentationTest :: !(Maybe AndroidInstrumentationTest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1359,10 +1359,10 @@ instance ToJSON AndroidTest where
 data AndroidRoboTest =
   AndroidRoboTest'
     { _artBootstrapRunnerClass :: !(Maybe Text)
-    , _artAppInitialActivity   :: !(Maybe Text)
-    , _artMaxSteps             :: !(Maybe (Textual Int32))
-    , _artBootstrapPackageId   :: !(Maybe Text)
-    , _artMaxDepth             :: !(Maybe (Textual Int32))
+    , _artAppInitialActivity :: !(Maybe Text)
+    , _artMaxSteps :: !(Maybe (Textual Int32))
+    , _artBootstrapPackageId :: !(Maybe Text)
+    , _artMaxDepth :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1490,7 +1490,7 @@ instance ToJSON FileReference where
 data CPUInfo =
   CPUInfo'
     { _ciNumberOfCores :: !(Maybe (Textual Int32))
-    , _ciCPUProcessor  :: !(Maybe Text)
+    , _ciCPUProcessor :: !(Maybe Text)
     , _ciCPUSpeedInGhz :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1557,7 +1557,7 @@ instance ToJSON CPUInfo where
 data ListExecutionsResponse =
   ListExecutionsResponse'
     { _lerNextPageToken :: !(Maybe Text)
-    , _lerExecutions    :: !(Maybe [Execution])
+    , _lerExecutions :: !(Maybe [Execution])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1612,7 +1612,7 @@ instance ToJSON ListExecutionsResponse where
 data ListStepsResponse =
   ListStepsResponse'
     { _lsrNextPageToken :: !(Maybe Text)
-    , _lsrSteps         :: !(Maybe [Step])
+    , _lsrSteps :: !(Maybe [Step])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1665,7 +1665,7 @@ instance ToJSON ListStepsResponse where
 -- /See:/ 'projectSettings' smart constructor.
 data ProjectSettings =
   ProjectSettings'
-    { _psName          :: !(Maybe Text)
+    { _psName :: !(Maybe Text)
     , _psDefaultBucket :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1757,7 +1757,7 @@ instance ToJSON ToolExecutionStep where
 data StepLabelsEntry =
   StepLabelsEntry'
     { _sleValue :: !(Maybe Text)
-    , _sleKey   :: !(Maybe Text)
+    , _sleKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1802,10 +1802,10 @@ instance ToJSON StepLabelsEntry where
 -- /See:/ 'testExecutionStep' smart constructor.
 data TestExecutionStep =
   TestExecutionStep'
-    { _tTestIssues         :: !(Maybe [TestIssue])
-    , _tToolExecution      :: !(Maybe ToolExecution)
+    { _tTestIssues :: !(Maybe [TestIssue])
+    , _tToolExecution :: !(Maybe ToolExecution)
     , _tTestSuiteOverviews :: !(Maybe [TestSuiteOverview])
-    , _tTestTiming         :: !(Maybe TestTiming)
+    , _tTestTiming :: !(Maybe TestTiming)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1896,8 +1896,8 @@ instance ToJSON TestExecutionStep where
 data TestCaseReference =
   TestCaseReference'
     { _tcrTestSuiteName :: !(Maybe Text)
-    , _tcrName          :: !(Maybe Text)
-    , _tcrClassName     :: !(Maybe Text)
+    , _tcrName :: !(Maybe Text)
+    , _tcrClassName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1953,11 +1953,11 @@ instance ToJSON TestCaseReference where
 -- /See:/ 'failureDetail' smart constructor.
 data FailureDetail =
   FailureDetail'
-    { _fdCrashed          :: !(Maybe Bool)
-    , _fdNotInstalled     :: !(Maybe Bool)
-    , _fdTimedOut         :: !(Maybe Bool)
+    { _fdCrashed :: !(Maybe Bool)
+    , _fdNotInstalled :: !(Maybe Bool)
+    , _fdTimedOut :: !(Maybe Bool)
     , _fdOtherNATiveCrash :: !(Maybe Bool)
-    , _fdUnableToCrawl    :: !(Maybe Bool)
+    , _fdUnableToCrawl :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2043,7 +2043,7 @@ instance ToJSON FailureDetail where
 data PerfEnvironment =
   PerfEnvironment'
     { _peMemoryInfo :: !(Maybe MemoryInfo)
-    , _peCPUInfo    :: !(Maybe CPUInfo)
+    , _peCPUInfo :: !(Maybe CPUInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2130,7 +2130,7 @@ instance ToJSON ListScreenshotClustersResponse where
 data AppStartTime =
   AppStartTime'
     { _astInitialDisplayTime :: !(Maybe Duration)
-    , _astFullyDrawnTime     :: !(Maybe Duration)
+    , _astFullyDrawnTime :: !(Maybe Duration)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2189,18 +2189,18 @@ instance ToJSON AppStartTime where
 -- /See:/ 'graphicsStats' smart constructor.
 data GraphicsStats =
   GraphicsStats'
-    { _gsSlowDrawCount         :: !(Maybe (Textual Int64))
-    , _gsTotalFrames           :: !(Maybe (Textual Int64))
+    { _gsSlowDrawCount :: !(Maybe (Textual Int64))
+    , _gsTotalFrames :: !(Maybe (Textual Int64))
     , _gsSlowBitmapUploadCount :: !(Maybe (Textual Int64))
-    , _gsMissedVsyncCount      :: !(Maybe (Textual Int64))
-    , _gsP95Millis             :: !(Maybe (Textual Int64))
-    , _gsBuckets               :: !(Maybe [GraphicsStatsBucket])
-    , _gsP90Millis             :: !(Maybe (Textual Int64))
-    , _gsP50Millis             :: !(Maybe (Textual Int64))
+    , _gsMissedVsyncCount :: !(Maybe (Textual Int64))
+    , _gsP95Millis :: !(Maybe (Textual Int64))
+    , _gsBuckets :: !(Maybe [GraphicsStatsBucket])
+    , _gsP90Millis :: !(Maybe (Textual Int64))
+    , _gsP50Millis :: !(Maybe (Textual Int64))
     , _gsHighInputLatencyCount :: !(Maybe (Textual Int64))
-    , _gsP99Millis             :: !(Maybe (Textual Int64))
-    , _gsSlowUiThreadCount     :: !(Maybe (Textual Int64))
-    , _gsJankyFrames           :: !(Maybe (Textual Int64))
+    , _gsP99Millis :: !(Maybe (Textual Int64))
+    , _gsSlowUiThreadCount :: !(Maybe (Textual Int64))
+    , _gsJankyFrames :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2452,13 +2452,13 @@ instance ToJSON BatchCreatePerfSamplesResponse where
 -- /See:/ 'execution' smart constructor.
 data Execution =
   Execution'
-    { _eCreationTime          :: !(Maybe Timestamp)
-    , _eExecutionId           :: !(Maybe Text)
-    , _eState                 :: !(Maybe ExecutionState)
-    , _eCompletionTime        :: !(Maybe Timestamp)
+    { _eCreationTime :: !(Maybe Timestamp)
+    , _eExecutionId :: !(Maybe Text)
+    , _eState :: !(Maybe ExecutionState)
+    , _eCompletionTime :: !(Maybe Timestamp)
     , _eTestExecutionMatrixId :: !(Maybe Text)
-    , _eOutcome               :: !(Maybe Outcome)
-    , _eSpecification         :: !(Maybe Specification)
+    , _eOutcome :: !(Maybe Outcome)
+    , _eSpecification :: !(Maybe Specification)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2580,11 +2580,11 @@ instance ToJSON Execution where
 -- /See:/ 'outcome' smart constructor.
 data Outcome =
   Outcome'
-    { _oSummary            :: !(Maybe OutcomeSummary)
+    { _oSummary :: !(Maybe OutcomeSummary)
     , _oInconclusiveDetail :: !(Maybe InconclusiveDetail)
-    , _oFailureDetail      :: !(Maybe FailureDetail)
-    , _oSuccessDetail      :: !(Maybe SuccessDetail)
-    , _oSkippedDetail      :: !(Maybe SkippedDetail)
+    , _oFailureDetail :: !(Maybe FailureDetail)
+    , _oSuccessDetail :: !(Maybe SuccessDetail)
+    , _oSkippedDetail :: !(Maybe SkippedDetail)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2683,21 +2683,21 @@ instance ToJSON Outcome where
 -- /See:/ 'step' smart constructor.
 data Step =
   Step'
-    { _sCreationTime        :: !(Maybe Timestamp)
-    , _sRunDuration         :: !(Maybe Duration)
-    , _sState               :: !(Maybe StepState)
-    , _sStepId              :: !(Maybe Text)
-    , _sToolExecutionStep   :: !(Maybe ToolExecutionStep)
-    , _sDimensionValue      :: !(Maybe [StepDimensionValueEntry])
-    , _sHasImages           :: !(Maybe Bool)
-    , _sTestExecutionStep   :: !(Maybe TestExecutionStep)
-    , _sCompletionTime      :: !(Maybe Timestamp)
-    , _sName                :: !(Maybe Text)
-    , _sOutcome             :: !(Maybe Outcome)
-    , _sLabels              :: !(Maybe [StepLabelsEntry])
-    , _sMultiStep           :: !(Maybe MultiStep)
+    { _sCreationTime :: !(Maybe Timestamp)
+    , _sRunDuration :: !(Maybe Duration)
+    , _sState :: !(Maybe StepState)
+    , _sStepId :: !(Maybe Text)
+    , _sToolExecutionStep :: !(Maybe ToolExecutionStep)
+    , _sDimensionValue :: !(Maybe [StepDimensionValueEntry])
+    , _sHasImages :: !(Maybe Bool)
+    , _sTestExecutionStep :: !(Maybe TestExecutionStep)
+    , _sCompletionTime :: !(Maybe Timestamp)
+    , _sName :: !(Maybe Text)
+    , _sOutcome :: !(Maybe Outcome)
+    , _sLabels :: !(Maybe [StepLabelsEntry])
+    , _sMultiStep :: !(Maybe MultiStep)
     , _sDeviceUsageDuration :: !(Maybe Duration)
-    , _sDescription         :: !(Maybe Text)
+    , _sDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2992,9 +2992,9 @@ instance ToJSON SuccessDetail where
 data ToolExecution =
   ToolExecution'
     { _teCommandLineArguments :: !(Maybe [Text])
-    , _teToolOutputs          :: !(Maybe [ToolOutputReference])
-    , _teToolLogs             :: !(Maybe [FileReference])
-    , _teExitCode             :: !(Maybe ToolExitCode)
+    , _teToolOutputs :: !(Maybe [ToolOutputReference])
+    , _teToolLogs :: !(Maybe [FileReference])
+    , _teExitCode :: !(Maybe ToolExitCode)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3133,14 +3133,14 @@ instance ToJSON PublishXUnitXMLFilesRequest where
 -- /See:/ 'perfMetricsSummary' smart constructor.
 data PerfMetricsSummary =
   PerfMetricsSummary'
-    { _pmsExecutionId     :: !(Maybe Text)
-    , _pmsStepId          :: !(Maybe Text)
-    , _pmsPerfMetrics     :: !(Maybe [PerfMetricsSummaryPerfMetricsItem])
+    { _pmsExecutionId :: !(Maybe Text)
+    , _pmsStepId :: !(Maybe Text)
+    , _pmsPerfMetrics :: !(Maybe [PerfMetricsSummaryPerfMetricsItem])
     , _pmsPerfEnvironment :: !(Maybe PerfEnvironment)
-    , _pmsGraphicsStats   :: !(Maybe GraphicsStats)
-    , _pmsAppStartTime    :: !(Maybe AppStartTime)
-    , _pmsHistoryId       :: !(Maybe Text)
-    , _pmsProjectId       :: !(Maybe Text)
+    , _pmsGraphicsStats :: !(Maybe GraphicsStats)
+    , _pmsAppStartTime :: !(Maybe AppStartTime)
+    , _pmsHistoryId :: !(Maybe Text)
+    , _pmsProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3259,7 +3259,7 @@ instance ToJSON PerfMetricsSummary where
 data ListHistoriesResponse =
   ListHistoriesResponse'
     { _lhrNextPageToken :: !(Maybe Text)
-    , _lhrHistories     :: !(Maybe [History])
+    , _lhrHistories :: !(Maybe [History])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3354,10 +3354,10 @@ instance ToJSON ToolExitCode where
 -- /See:/ 'androidInstrumentationTest' smart constructor.
 data AndroidInstrumentationTest =
   AndroidInstrumentationTest'
-    { _aitTestTargets     :: !(Maybe [Text])
+    { _aitTestTargets :: !(Maybe [Text])
     , _aitUseOrchestrator :: !(Maybe Bool)
     , _aitTestRunnerClass :: !(Maybe Text)
-    , _aitTestPackageId   :: !(Maybe Text)
+    , _aitTestPackageId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3439,7 +3439,7 @@ instance ToJSON AndroidInstrumentationTest where
 data StepDimensionValueEntry =
   StepDimensionValueEntry'
     { _sdveValue :: !(Maybe Text)
-    , _sdveKey   :: !(Maybe Text)
+    , _sdveKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3519,7 +3519,7 @@ instance ToJSON Specification where
 data ListTestCasesResponse =
   ListTestCasesResponse'
     { _ltcrNextPageToken :: !(Maybe Text)
-    , _ltcrTestCases     :: !(Maybe [TestCase])
+    , _ltcrTestCases :: !(Maybe [TestCase])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3572,10 +3572,10 @@ instance ToJSON ListTestCasesResponse where
 -- /See:/ 'individualOutcome' smart constructor.
 data IndividualOutcome =
   IndividualOutcome'
-    { _ioRunDuration     :: !(Maybe Duration)
-    , _ioStepId          :: !(Maybe Text)
+    { _ioRunDuration :: !(Maybe Duration)
+    , _ioStepId :: !(Maybe Text)
     , _ioMultistepNumber :: !(Maybe (Textual Int32))
-    , _ioOutcomeSummary  :: !(Maybe IndividualOutcomeOutcomeSummary)
+    , _ioOutcomeSummary :: !(Maybe IndividualOutcomeOutcomeSummary)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3651,11 +3651,11 @@ instance ToJSON IndividualOutcome where
 data TestSuiteOverview =
   TestSuiteOverview'
     { _tsoSkippedCount :: !(Maybe (Textual Int32))
-    , _tsoErrorCount   :: !(Maybe (Textual Int32))
-    , _tsoXMLSource    :: !(Maybe FileReference)
-    , _tsoName         :: !(Maybe Text)
+    , _tsoErrorCount :: !(Maybe (Textual Int32))
+    , _tsoXMLSource :: !(Maybe FileReference)
+    , _tsoName :: !(Maybe Text)
     , _tsoFailureCount :: !(Maybe (Textual Int32))
-    , _tsoTotalCount   :: !(Maybe (Textual Int32))
+    , _tsoTotalCount :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3765,8 +3765,8 @@ instance ToJSON TestSuiteOverview where
 data MultiStep =
   MultiStep'
     { _msMultistepNumber :: !(Maybe (Textual Int32))
-    , _msPrimaryStepId   :: !(Maybe Text)
-    , _msPrimaryStep     :: !(Maybe PrimaryStep)
+    , _msPrimaryStepId :: !(Maybe Text)
+    , _msPrimaryStep :: !(Maybe PrimaryStep)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3857,7 +3857,7 @@ instance ToJSON MultiStep where
 -- /See:/ 'duration' smart constructor.
 data Duration =
   Duration'
-    { _dNanos   :: !(Maybe (Textual Int32))
+    { _dNanos :: !(Maybe (Textual Int32))
     , _dSeconds :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3964,7 +3964,7 @@ instance ToJSON Duration where
 -- /See:/ 'timestamp' smart constructor.
 data Timestamp =
   Timestamp'
-    { _tNanos   :: !(Maybe (Textual Int32))
+    { _tNanos :: !(Maybe (Textual Int32))
     , _tSeconds :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4043,7 +4043,7 @@ instance ToJSON Timestamp where
 -- /See:/ 'any' smart constructor.
 data Any =
   Any'
-    { _aValue   :: !(Maybe Bytes)
+    { _aValue :: !(Maybe Bytes)
     , _aTypeURL :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4148,8 +4148,8 @@ instance ToJSON TestTiming where
 data ScreenshotCluster =
   ScreenshotCluster'
     { _scClusterId :: !(Maybe Text)
-    , _scScreens   :: !(Maybe [Screen])
-    , _scActivity  :: !(Maybe Text)
+    , _scScreens :: !(Maybe [Screen])
+    , _scActivity :: !(Maybe Text)
     , _scKeyScreen :: !(Maybe Screen)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4226,8 +4226,8 @@ instance ToJSON ScreenshotCluster where
 -- /See:/ 'basicPerfSampleSeries' smart constructor.
 data BasicPerfSampleSeries =
   BasicPerfSampleSeries'
-    { _bpssPerfUnit          :: !(Maybe BasicPerfSampleSeriesPerfUnit)
-    , _bpssPerfMetricType    :: !(Maybe BasicPerfSampleSeriesPerfMetricType)
+    { _bpssPerfUnit :: !(Maybe BasicPerfSampleSeriesPerfUnit)
+    , _bpssPerfMetricType :: !(Maybe BasicPerfSampleSeriesPerfMetricType)
     , _bpssSampleSeriesLabel :: !(Maybe BasicPerfSampleSeriesSampleSeriesLabel)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4288,7 +4288,7 @@ instance ToJSON BasicPerfSampleSeries where
 -- /See:/ 'primaryStep' smart constructor.
 data PrimaryStep =
   PrimaryStep'
-    { _psRollUp            :: !(Maybe PrimaryStepRollUp)
+    { _psRollUp :: !(Maybe PrimaryStepRollUp)
     , _psIndividualOutcome :: !(Maybe [IndividualOutcome])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4339,8 +4339,8 @@ instance ToJSON PrimaryStep where
 data SkippedDetail =
   SkippedDetail'
     { _sdIncompatibleArchitecture :: !(Maybe Bool)
-    , _sdIncompatibleAppVersion   :: !(Maybe Bool)
-    , _sdIncompatibleDevice       :: !(Maybe Bool)
+    , _sdIncompatibleAppVersion :: !(Maybe Bool)
+    , _sdIncompatibleDevice :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

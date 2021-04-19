@@ -40,8 +40,8 @@ module Network.Google.Resource.SQL.BackupRuns.List
     , brlInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.backupRuns.list@ method which the
 -- 'BackupRunsList' request conforms to.
@@ -64,10 +64,10 @@ type BackupRunsListResource =
 -- /See:/ 'backupRunsList' smart constructor.
 data BackupRunsList =
   BackupRunsList'
-    { _brlProject    :: !Text
-    , _brlPageToken  :: !(Maybe Text)
+    { _brlProject :: !Text
+    , _brlPageToken :: !(Maybe Text)
     , _brlMaxResults :: !(Maybe (Textual Int32))
-    , _brlInstance   :: !Text
+    , _brlInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

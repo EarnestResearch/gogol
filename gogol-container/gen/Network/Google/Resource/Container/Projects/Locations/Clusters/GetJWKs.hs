@@ -43,8 +43,8 @@ module Network.Google.Resource.Container.Projects.Locations.Clusters.GetJWKs
     , plcgjCallback
     ) where
 
-import           Network.Google.Container.Types
-import           Network.Google.Prelude
+import Network.Google.Container.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @container.projects.locations.clusters.getJwks@ method which the
 -- 'ProjectsLocationsClustersGetJWKs' request conforms to.
@@ -67,12 +67,12 @@ type ProjectsLocationsClustersGetJWKsResource =
 -- /See:/ 'projectsLocationsClustersGetJWKs' smart constructor.
 data ProjectsLocationsClustersGetJWKs =
   ProjectsLocationsClustersGetJWKs'
-    { _plcgjParent         :: !Text
-    , _plcgjXgafv          :: !(Maybe Xgafv)
+    { _plcgjParent :: !Text
+    , _plcgjXgafv :: !(Maybe Xgafv)
     , _plcgjUploadProtocol :: !(Maybe Text)
-    , _plcgjAccessToken    :: !(Maybe Text)
-    , _plcgjUploadType     :: !(Maybe Text)
-    , _plcgjCallback       :: !(Maybe Text)
+    , _plcgjAccessToken :: !(Maybe Text)
+    , _plcgjUploadType :: !(Maybe Text)
+    , _plcgjCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

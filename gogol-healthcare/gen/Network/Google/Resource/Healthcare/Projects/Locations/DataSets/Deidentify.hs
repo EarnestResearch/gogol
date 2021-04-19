@@ -45,8 +45,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Deidentify
     , pldsdCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.deidentify@ method which the
 -- 'ProjectsLocationsDataSetsDeidentify' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsLocationsDataSetsDeidentifyResource =
 -- /See:/ 'projectsLocationsDataSetsDeidentify' smart constructor.
 data ProjectsLocationsDataSetsDeidentify =
   ProjectsLocationsDataSetsDeidentify'
-    { _pldsdXgafv          :: !(Maybe Xgafv)
-    , _pldsdSourceDataSet  :: !Text
+    { _pldsdXgafv :: !(Maybe Xgafv)
+    , _pldsdSourceDataSet :: !Text
     , _pldsdUploadProtocol :: !(Maybe Text)
-    , _pldsdAccessToken    :: !(Maybe Text)
-    , _pldsdUploadType     :: !(Maybe Text)
-    , _pldsdPayload        :: !DeidentifyDataSetRequest
-    , _pldsdCallback       :: !(Maybe Text)
+    , _pldsdAccessToken :: !(Maybe Text)
+    , _pldsdUploadType :: !(Maybe Text)
+    , _pldsdPayload :: !DeidentifyDataSetRequest
+    , _pldsdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

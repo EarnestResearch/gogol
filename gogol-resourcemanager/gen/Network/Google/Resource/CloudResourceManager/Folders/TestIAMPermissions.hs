@@ -45,8 +45,8 @@ module Network.Google.Resource.CloudResourceManager.Folders.TestIAMPermissions
     , ftipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types
 
 -- | A resource alias for @cloudresourcemanager.folders.testIamPermissions@ method which the
 -- 'FoldersTestIAMPermissions' request conforms to.
@@ -70,13 +70,13 @@ type FoldersTestIAMPermissionsResource =
 -- /See:/ 'foldersTestIAMPermissions' smart constructor.
 data FoldersTestIAMPermissions =
   FoldersTestIAMPermissions'
-    { _ftipXgafv          :: !(Maybe Xgafv)
+    { _ftipXgafv :: !(Maybe Xgafv)
     , _ftipUploadProtocol :: !(Maybe Text)
-    , _ftipAccessToken    :: !(Maybe Text)
-    , _ftipUploadType     :: !(Maybe Text)
-    , _ftipPayload        :: !TestIAMPermissionsRequest
-    , _ftipResource       :: !Text
-    , _ftipCallback       :: !(Maybe Text)
+    , _ftipAccessToken :: !(Maybe Text)
+    , _ftipUploadType :: !(Maybe Text)
+    , _ftipPayload :: !TestIAMPermissionsRequest
+    , _ftipResource :: !Text
+    , _ftipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

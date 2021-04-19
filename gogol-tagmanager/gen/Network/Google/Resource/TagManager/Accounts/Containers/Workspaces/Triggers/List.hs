@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Trigger
     , acwtlcPageToken
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.triggers.list@ method which the
 -- 'AccountsContainersWorkspacesTriggersList' request conforms to.
@@ -57,7 +57,7 @@ type AccountsContainersWorkspacesTriggersListResource
 -- /See:/ 'accountsContainersWorkspacesTriggersList' smart constructor.
 data AccountsContainersWorkspacesTriggersList =
   AccountsContainersWorkspacesTriggersList'
-    { _acwtlcParent    :: !Text
+    { _acwtlcParent :: !Text
     , _acwtlcPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

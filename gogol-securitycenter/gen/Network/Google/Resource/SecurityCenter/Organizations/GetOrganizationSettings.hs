@@ -41,8 +41,8 @@ module Network.Google.Resource.SecurityCenter.Organizations.GetOrganizationSetti
     , ogosCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SecurityCenter.Types
+import Network.Google.Prelude
+import Network.Google.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.getOrganizationSettings@ method which the
 -- 'OrganizationsGetOrganizationSettings' request conforms to.
@@ -62,12 +62,12 @@ type OrganizationsGetOrganizationSettingsResource =
 -- /See:/ 'organizationsGetOrganizationSettings' smart constructor.
 data OrganizationsGetOrganizationSettings =
   OrganizationsGetOrganizationSettings'
-    { _ogosXgafv          :: !(Maybe Xgafv)
+    { _ogosXgafv :: !(Maybe Xgafv)
     , _ogosUploadProtocol :: !(Maybe Text)
-    , _ogosAccessToken    :: !(Maybe Text)
-    , _ogosUploadType     :: !(Maybe Text)
-    , _ogosName           :: !Text
-    , _ogosCallback       :: !(Maybe Text)
+    , _ogosAccessToken :: !(Maybe Text)
+    , _ogosUploadType :: !(Maybe Text)
+    , _ogosName :: !Text
+    , _ogosCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

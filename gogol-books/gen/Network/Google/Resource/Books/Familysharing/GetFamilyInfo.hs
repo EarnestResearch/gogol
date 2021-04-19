@@ -36,8 +36,8 @@ module Network.Google.Resource.Books.Familysharing.GetFamilyInfo
     , fgfiSource
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.familysharing.getFamilyInfo@ method which the
 -- 'FamilysharingGetFamilyInfo' request conforms to.

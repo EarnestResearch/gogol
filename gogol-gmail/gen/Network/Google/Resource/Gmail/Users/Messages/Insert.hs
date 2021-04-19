@@ -41,8 +41,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Insert
     , uInternalDateSource
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.insert@ method which the
 -- 'UsersMessagesInsert' request conforms to.
@@ -81,9 +81,9 @@ type UsersMessagesInsertResource =
 -- /See:/ 'usersMessagesInsert' smart constructor.
 data UsersMessagesInsert =
   UsersMessagesInsert'
-    { _uPayload            :: !Message
-    , _uUserId             :: !Text
-    , _uDeleted            :: !Bool
+    { _uPayload :: !Message
+    , _uUserId :: !Text
+    , _uDeleted :: !Bool
     , _uInternalDateSource :: !UsersMessagesInsertInternalDateSource
     }
   deriving (Eq, Show, Data, Typeable, Generic)

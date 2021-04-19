@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.RegionInstanceGroups.List
     , riglMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionInstanceGroups.list@ method which the
 -- 'RegionInstanceGroupsList' request conforms to.
@@ -68,11 +68,11 @@ type RegionInstanceGroupsListResource =
 -- /See:/ 'regionInstanceGroupsList' smart constructor.
 data RegionInstanceGroupsList =
   RegionInstanceGroupsList'
-    { _riglOrderBy    :: !(Maybe Text)
-    , _riglProject    :: !Text
-    , _riglFilter     :: !(Maybe Text)
-    , _riglRegion     :: !Text
-    , _riglPageToken  :: !(Maybe Text)
+    { _riglOrderBy :: !(Maybe Text)
+    , _riglProject :: !Text
+    , _riglFilter :: !(Maybe Text)
+    , _riglRegion :: !Text
+    , _riglPageToken :: !(Maybe Text)
     , _riglMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

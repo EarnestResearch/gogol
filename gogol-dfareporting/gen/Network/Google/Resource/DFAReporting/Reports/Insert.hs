@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Reports.Insert
     , riPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.reports.insert@ method which the
 -- 'ReportsInsert' request conforms to.
@@ -57,7 +57,7 @@ type ReportsInsertResource =
 data ReportsInsert =
   ReportsInsert'
     { _riProFileId :: !(Textual Int64)
-    , _riPayload   :: !Report
+    , _riPayload :: !Report
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

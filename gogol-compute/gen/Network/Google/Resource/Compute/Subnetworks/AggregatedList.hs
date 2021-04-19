@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.Subnetworks.AggregatedList
     , salMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.subnetworks.aggregatedList@ method which the
 -- 'SubnetworksAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type SubnetworksAggregatedListResource =
 -- /See:/ 'subnetworksAggregatedList' smart constructor.
 data SubnetworksAggregatedList =
   SubnetworksAggregatedList'
-    { _salOrderBy    :: !(Maybe Text)
-    , _salProject    :: !Text
-    , _salFilter     :: !(Maybe Text)
-    , _salPageToken  :: !(Maybe Text)
+    { _salOrderBy :: !(Maybe Text)
+    , _salProject :: !Text
+    , _salFilter :: !(Maybe Text)
+    , _salPageToken :: !(Maybe Text)
     , _salMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

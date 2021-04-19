@@ -44,8 +44,8 @@ module Network.Google.Resource.DialogFlow.Projects.Agent.Intents.Create
     , paicCallback
     ) where
 
-import           Network.Google.DialogFlow.Types
-import           Network.Google.Prelude
+import Network.Google.DialogFlow.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dialogflow.projects.agent.intents.create@ method which the
 -- 'ProjectsAgentIntentsCreate' request conforms to.
@@ -69,15 +69,15 @@ type ProjectsAgentIntentsCreateResource =
 -- /See:/ 'projectsAgentIntentsCreate' smart constructor.
 data ProjectsAgentIntentsCreate =
   ProjectsAgentIntentsCreate'
-    { _paicParent         :: !Text
-    , _paicXgafv          :: !(Maybe Xgafv)
-    , _paicLanguageCode   :: !(Maybe Text)
+    { _paicParent :: !Text
+    , _paicXgafv :: !(Maybe Xgafv)
+    , _paicLanguageCode :: !(Maybe Text)
     , _paicUploadProtocol :: !(Maybe Text)
-    , _paicAccessToken    :: !(Maybe Text)
-    , _paicUploadType     :: !(Maybe Text)
-    , _paicPayload        :: !GoogleCloudDialogflowV2Intent
-    , _paicIntentView     :: !(Maybe Text)
-    , _paicCallback       :: !(Maybe Text)
+    , _paicAccessToken :: !(Maybe Text)
+    , _paicUploadType :: !(Maybe Text)
+    , _paicPayload :: !GoogleCloudDialogflowV2Intent
+    , _paicIntentView :: !(Maybe Text)
+    , _paicCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -45,8 +45,8 @@ module Network.Google.Resource.Monitoring.Projects.NotificationChannelDescriptor
     , pncdlCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.notificationChannelDescriptors.list@ method which the
 -- 'ProjectsNotificationChannelDescriptorsList' request conforms to.
@@ -73,14 +73,14 @@ type ProjectsNotificationChannelDescriptorsListResource
 -- /See:/ 'projectsNotificationChannelDescriptorsList' smart constructor.
 data ProjectsNotificationChannelDescriptorsList =
   ProjectsNotificationChannelDescriptorsList'
-    { _pncdlXgafv          :: !(Maybe Xgafv)
+    { _pncdlXgafv :: !(Maybe Xgafv)
     , _pncdlUploadProtocol :: !(Maybe Text)
-    , _pncdlAccessToken    :: !(Maybe Text)
-    , _pncdlUploadType     :: !(Maybe Text)
-    , _pncdlName           :: !Text
-    , _pncdlPageToken      :: !(Maybe Text)
-    , _pncdlPageSize       :: !(Maybe (Textual Int32))
-    , _pncdlCallback       :: !(Maybe Text)
+    , _pncdlAccessToken :: !(Maybe Text)
+    , _pncdlUploadType :: !(Maybe Text)
+    , _pncdlName :: !Text
+    , _pncdlPageToken :: !(Maybe Text)
+    , _pncdlPageSize :: !(Maybe (Textual Int32))
+    , _pncdlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

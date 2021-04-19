@@ -57,8 +57,8 @@ module Network.Google.Resource.Classroom.UserProFiles.GuardianInvitations.Patch
     , upfgipCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.userProfiles.guardianInvitations.patch@ method which the
 -- 'UserProFilesGuardianInvitationsPatch' request conforms to.
@@ -96,15 +96,15 @@ type UserProFilesGuardianInvitationsPatchResource =
 -- /See:/ 'userProFilesGuardianInvitationsPatch' smart constructor.
 data UserProFilesGuardianInvitationsPatch =
   UserProFilesGuardianInvitationsPatch'
-    { _upfgipStudentId      :: !Text
-    , _upfgipXgafv          :: !(Maybe Xgafv)
+    { _upfgipStudentId :: !Text
+    , _upfgipXgafv :: !(Maybe Xgafv)
     , _upfgipUploadProtocol :: !(Maybe Text)
-    , _upfgipUpdateMask     :: !(Maybe GFieldMask)
-    , _upfgipAccessToken    :: !(Maybe Text)
-    , _upfgipUploadType     :: !(Maybe Text)
-    , _upfgipPayload        :: !GuardianInvitation
-    , _upfgipInvitationId   :: !Text
-    , _upfgipCallback       :: !(Maybe Text)
+    , _upfgipUpdateMask :: !(Maybe GFieldMask)
+    , _upfgipAccessToken :: !(Maybe Text)
+    , _upfgipUploadType :: !(Maybe Text)
+    , _upfgipPayload :: !GuardianInvitation
+    , _upfgipInvitationId :: !Text
+    , _upfgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

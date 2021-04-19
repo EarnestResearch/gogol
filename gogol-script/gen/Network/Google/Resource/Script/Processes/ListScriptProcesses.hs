@@ -51,8 +51,8 @@ module Network.Google.Resource.Script.Processes.ListScriptProcesses
     , plspCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Script.Types
+import Network.Google.Prelude
+import Network.Google.Script.Types
 
 -- | A resource alias for @script.processes.listScriptProcesses@ method which the
 -- 'ProcessesListScriptProcesses' request conforms to.
@@ -87,21 +87,21 @@ type ProcessesListScriptProcessesResource =
 -- /See:/ 'processesListScriptProcesses' smart constructor.
 data ProcessesListScriptProcesses =
   ProcessesListScriptProcesses'
-    { _plspXgafv                               :: !(Maybe Xgafv)
-    , _plspScriptProcessFilterFunctionName     :: !(Maybe Text)
-    , _plspUploadProtocol                      :: !(Maybe Text)
+    { _plspXgafv :: !(Maybe Xgafv)
+    , _plspScriptProcessFilterFunctionName :: !(Maybe Text)
+    , _plspUploadProtocol :: !(Maybe Text)
     , _plspScriptProcessFilterUserAccessLevels :: !(Maybe [Text])
-    , _plspScriptProcessFilterStatuses         :: !(Maybe [Text])
-    , _plspScriptProcessFilterEndTime          :: !(Maybe DateTime')
-    , _plspAccessToken                         :: !(Maybe Text)
-    , _plspUploadType                          :: !(Maybe Text)
-    , _plspScriptProcessFilterDeploymentId     :: !(Maybe Text)
-    , _plspScriptProcessFilterStartTime        :: !(Maybe DateTime')
-    , _plspScriptId                            :: !(Maybe Text)
-    , _plspPageToken                           :: !(Maybe Text)
-    , _plspPageSize                            :: !(Maybe (Textual Int32))
-    , _plspScriptProcessFilterTypes            :: !(Maybe [Text])
-    , _plspCallback                            :: !(Maybe Text)
+    , _plspScriptProcessFilterStatuses :: !(Maybe [Text])
+    , _plspScriptProcessFilterEndTime :: !(Maybe DateTime')
+    , _plspAccessToken :: !(Maybe Text)
+    , _plspUploadType :: !(Maybe Text)
+    , _plspScriptProcessFilterDeploymentId :: !(Maybe Text)
+    , _plspScriptProcessFilterStartTime :: !(Maybe DateTime')
+    , _plspScriptId :: !(Maybe Text)
+    , _plspPageToken :: !(Maybe Text)
+    , _plspPageSize :: !(Maybe (Textual Int32))
+    , _plspScriptProcessFilterTypes :: !(Maybe [Text])
+    , _plspCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

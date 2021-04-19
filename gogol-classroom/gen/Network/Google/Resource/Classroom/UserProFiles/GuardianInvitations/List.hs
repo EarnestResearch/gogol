@@ -57,8 +57,8 @@ module Network.Google.Resource.Classroom.UserProFiles.GuardianInvitations.List
     , upfgilCallback
     ) where
 
-import           Network.Google.Classroom.Types
-import           Network.Google.Prelude
+import Network.Google.Classroom.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @classroom.userProfiles.guardianInvitations.list@ method which the
 -- 'UserProFilesGuardianInvitationsList' request conforms to.
@@ -96,16 +96,16 @@ type UserProFilesGuardianInvitationsListResource =
 -- /See:/ 'userProFilesGuardianInvitationsList' smart constructor.
 data UserProFilesGuardianInvitationsList =
   UserProFilesGuardianInvitationsList'
-    { _upfgilStudentId           :: !Text
-    , _upfgilStates              :: !(Maybe [Text])
-    , _upfgilXgafv               :: !(Maybe Xgafv)
-    , _upfgilUploadProtocol      :: !(Maybe Text)
-    , _upfgilAccessToken         :: !(Maybe Text)
-    , _upfgilUploadType          :: !(Maybe Text)
+    { _upfgilStudentId :: !Text
+    , _upfgilStates :: !(Maybe [Text])
+    , _upfgilXgafv :: !(Maybe Xgafv)
+    , _upfgilUploadProtocol :: !(Maybe Text)
+    , _upfgilAccessToken :: !(Maybe Text)
+    , _upfgilUploadType :: !(Maybe Text)
     , _upfgilInvitedEmailAddress :: !(Maybe Text)
-    , _upfgilPageToken           :: !(Maybe Text)
-    , _upfgilPageSize            :: !(Maybe (Textual Int32))
-    , _upfgilCallback            :: !(Maybe Text)
+    , _upfgilPageToken :: !(Maybe Text)
+    , _upfgilPageSize :: !(Maybe (Textual Int32))
+    , _upfgilCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

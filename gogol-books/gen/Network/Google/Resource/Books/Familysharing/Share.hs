@@ -39,8 +39,8 @@ module Network.Google.Resource.Books.Familysharing.Share
     , fsDocId
     ) where
 
-import           Network.Google.Books.Types
-import           Network.Google.Prelude
+import Network.Google.Books.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @books.familysharing.share@ method which the
 -- 'FamilysharingShare' request conforms to.
@@ -61,8 +61,8 @@ type FamilysharingShareResource =
 data FamilysharingShare =
   FamilysharingShare'
     { _fsVolumeId :: !(Maybe Text)
-    , _fsSource   :: !(Maybe Text)
-    , _fsDocId    :: !(Maybe Text)
+    , _fsSource :: !(Maybe Text)
+    , _fsDocId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

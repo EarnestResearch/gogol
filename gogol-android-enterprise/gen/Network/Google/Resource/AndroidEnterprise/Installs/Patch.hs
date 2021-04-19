@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Installs.Patch
     , ipDeviceId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.installs.patch@ method which the
 -- 'InstallsPatch' request conforms to.
@@ -69,10 +69,10 @@ type InstallsPatchResource =
 data InstallsPatch =
   InstallsPatch'
     { _ipEnterpriseId :: !Text
-    , _ipPayload      :: !Install
-    , _ipUserId       :: !Text
-    , _ipInstallId    :: !Text
-    , _ipDeviceId     :: !Text
+    , _ipPayload :: !Install
+    , _ipUserId :: !Text
+    , _ipInstallId :: !Text
+    , _ipDeviceId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

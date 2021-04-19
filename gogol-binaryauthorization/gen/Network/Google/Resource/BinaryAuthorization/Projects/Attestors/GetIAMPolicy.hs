@@ -42,8 +42,8 @@ module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.GetIAMPoli
     , pagipCallback
     ) where
 
-import           Network.Google.BinaryAuthorization.Types
-import           Network.Google.Prelude
+import Network.Google.BinaryAuthorization.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @binaryauthorization.projects.attestors.getIamPolicy@ method which the
 -- 'ProjectsAttestorsGetIAMPolicy' request conforms to.
@@ -63,12 +63,12 @@ type ProjectsAttestorsGetIAMPolicyResource =
 -- /See:/ 'projectsAttestorsGetIAMPolicy' smart constructor.
 data ProjectsAttestorsGetIAMPolicy =
   ProjectsAttestorsGetIAMPolicy'
-    { _pagipXgafv          :: !(Maybe Xgafv)
+    { _pagipXgafv :: !(Maybe Xgafv)
     , _pagipUploadProtocol :: !(Maybe Text)
-    , _pagipAccessToken    :: !(Maybe Text)
-    , _pagipUploadType     :: !(Maybe Text)
-    , _pagipResource       :: !Text
-    , _pagipCallback       :: !(Maybe Text)
+    , _pagipAccessToken :: !(Maybe Text)
+    , _pagipUploadType :: !(Maybe Text)
+    , _pagipResource :: !Text
+    , _pagipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

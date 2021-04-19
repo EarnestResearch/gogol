@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.InstanceGroupManagers.SetInstanceTemplate
     , igmsitPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.instanceGroupManagers.setInstanceTemplate@ method which the
 -- 'InstanceGroupManagersSetInstanceTemplate' request conforms to.
@@ -71,11 +71,11 @@ type InstanceGroupManagersSetInstanceTemplateResource
 -- /See:/ 'instanceGroupManagersSetInstanceTemplate' smart constructor.
 data InstanceGroupManagersSetInstanceTemplate =
   InstanceGroupManagersSetInstanceTemplate'
-    { _igmsitRequestId            :: !(Maybe Text)
-    , _igmsitProject              :: !Text
+    { _igmsitRequestId :: !(Maybe Text)
+    , _igmsitProject :: !Text
     , _igmsitInstanceGroupManager :: !Text
-    , _igmsitZone                 :: !Text
-    , _igmsitPayload              :: !InstanceGroupManagersSetInstanceTemplateRequest
+    , _igmsitZone :: !Text
+    , _igmsitPayload :: !InstanceGroupManagersSetInstanceTemplateRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

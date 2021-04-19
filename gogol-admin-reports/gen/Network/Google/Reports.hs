@@ -178,14 +178,14 @@ module Network.Google.Reports
     , aaKey
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Reports.Types
-import           Network.Google.Resource.Admin.Channels.Stop
-import           Network.Google.Resource.Reports.Activities.List
-import           Network.Google.Resource.Reports.Activities.Watch
-import           Network.Google.Resource.Reports.CustomerUsageReports.Get
-import           Network.Google.Resource.Reports.EntityUsageReports.Get
-import           Network.Google.Resource.Reports.UserUsageReport.Get
+import Network.Google.Prelude
+import Network.Google.Reports.Types
+import Network.Google.Resource.Admin.Channels.Stop
+import Network.Google.Resource.Reports.Activities.List
+import Network.Google.Resource.Reports.Activities.Watch
+import Network.Google.Resource.Reports.CustomerUsageReports.Get
+import Network.Google.Resource.Reports.EntityUsageReports.Get
+import Network.Google.Resource.Reports.UserUsageReport.Get
 
 {- $resources
 TODO

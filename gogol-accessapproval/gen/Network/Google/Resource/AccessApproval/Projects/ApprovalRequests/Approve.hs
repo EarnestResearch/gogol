@@ -44,8 +44,8 @@ module Network.Google.Resource.AccessApproval.Projects.ApprovalRequests.Approve
     , paraCallback
     ) where
 
-import           Network.Google.AccessApproval.Types
-import           Network.Google.Prelude
+import Network.Google.AccessApproval.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @accessapproval.projects.approvalRequests.approve@ method which the
 -- 'ProjectsApprovalRequestsApprove' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsApprovalRequestsApproveResource =
 -- /See:/ 'projectsApprovalRequestsApprove' smart constructor.
 data ProjectsApprovalRequestsApprove =
   ProjectsApprovalRequestsApprove'
-    { _paraXgafv          :: !(Maybe Xgafv)
+    { _paraXgafv :: !(Maybe Xgafv)
     , _paraUploadProtocol :: !(Maybe Text)
-    , _paraAccessToken    :: !(Maybe Text)
-    , _paraUploadType     :: !(Maybe Text)
-    , _paraPayload        :: !ApproveApprovalRequestMessage
-    , _paraName           :: !Text
-    , _paraCallback       :: !(Maybe Text)
+    , _paraAccessToken :: !(Maybe Text)
+    , _paraUploadType :: !(Maybe Text)
+    , _paraPayload :: !ApproveApprovalRequestMessage
+    , _paraName :: !Text
+    , _paraCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

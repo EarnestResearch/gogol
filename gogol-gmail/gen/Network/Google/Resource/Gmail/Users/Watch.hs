@@ -37,8 +37,8 @@ module Network.Google.Resource.Gmail.Users.Watch
     , uwUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.watch@ method which the
 -- 'UsersWatch' request conforms to.
@@ -58,7 +58,7 @@ type UsersWatchResource =
 data UsersWatch =
   UsersWatch'
     { _uwPayload :: !WatchRequest
-    , _uwUserId  :: !Text
+    , _uwUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

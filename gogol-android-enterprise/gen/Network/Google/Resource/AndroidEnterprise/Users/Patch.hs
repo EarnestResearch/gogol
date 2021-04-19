@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.Patch
     , upUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.patch@ method which the
 -- 'UsersPatch' request conforms to.
@@ -67,8 +67,8 @@ type UsersPatchResource =
 data UsersPatch =
   UsersPatch'
     { _upEnterpriseId :: !Text
-    , _upPayload      :: !User
-    , _upUserId       :: !Text
+    , _upPayload :: !User
+    , _upUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -46,8 +46,8 @@ module Network.Google.Resource.DLP.Projects.DeidentifyTemplates.List
     , pdtlCallback
     ) where
 
-import           Network.Google.DLP.Types
-import           Network.Google.Prelude
+import Network.Google.DLP.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dlp.projects.deidentifyTemplates.list@ method which the
 -- 'ProjectsDeidentifyTemplatesList' request conforms to.
@@ -74,15 +74,15 @@ type ProjectsDeidentifyTemplatesListResource =
 -- /See:/ 'projectsDeidentifyTemplatesList' smart constructor.
 data ProjectsDeidentifyTemplatesList =
   ProjectsDeidentifyTemplatesList'
-    { _pdtlParent         :: !Text
-    , _pdtlXgafv          :: !(Maybe Xgafv)
+    { _pdtlParent :: !Text
+    , _pdtlXgafv :: !(Maybe Xgafv)
     , _pdtlUploadProtocol :: !(Maybe Text)
-    , _pdtlOrderBy        :: !(Maybe Text)
-    , _pdtlAccessToken    :: !(Maybe Text)
-    , _pdtlUploadType     :: !(Maybe Text)
-    , _pdtlPageToken      :: !(Maybe Text)
-    , _pdtlPageSize       :: !(Maybe (Textual Int32))
-    , _pdtlCallback       :: !(Maybe Text)
+    , _pdtlOrderBy :: !(Maybe Text)
+    , _pdtlAccessToken :: !(Maybe Text)
+    , _pdtlUploadType :: !(Maybe Text)
+    , _pdtlPageToken :: !(Maybe Text)
+    , _pdtlPageSize :: !(Maybe (Textual Int32))
+    , _pdtlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

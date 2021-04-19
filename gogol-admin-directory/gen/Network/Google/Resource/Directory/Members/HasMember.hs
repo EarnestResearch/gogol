@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Members.HasMember
     , mhmGroupKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.members.hasMember@ method which the
 -- 'MembersHasMember'' request conforms to.
@@ -61,7 +61,7 @@ type MembersHasMemberResource =
 data MembersHasMember' =
   MembersHasMember''
     { _mhmMemberKey :: !Text
-    , _mhmGroupKey  :: !Text
+    , _mhmGroupKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

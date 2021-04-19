@@ -43,8 +43,8 @@ module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Delete
     , puccdCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.uptimeCheckConfigs.delete@ method which the
 -- 'ProjectsUptimeCheckConfigsDelete' request conforms to.
@@ -65,12 +65,12 @@ type ProjectsUptimeCheckConfigsDeleteResource =
 -- /See:/ 'projectsUptimeCheckConfigsDelete' smart constructor.
 data ProjectsUptimeCheckConfigsDelete =
   ProjectsUptimeCheckConfigsDelete'
-    { _puccdXgafv          :: !(Maybe Xgafv)
+    { _puccdXgafv :: !(Maybe Xgafv)
     , _puccdUploadProtocol :: !(Maybe Text)
-    , _puccdAccessToken    :: !(Maybe Text)
-    , _puccdUploadType     :: !(Maybe Text)
-    , _puccdName           :: !Text
-    , _puccdCallback       :: !(Maybe Text)
+    , _puccdAccessToken :: !(Maybe Text)
+    , _puccdUploadType :: !(Maybe Text)
+    , _puccdName :: !Text
+    , _puccdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

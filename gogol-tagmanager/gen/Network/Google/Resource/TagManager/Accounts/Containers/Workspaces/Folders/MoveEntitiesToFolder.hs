@@ -40,8 +40,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Folders
     , acwfmetfTagId
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.workspaces.folders.move_entities_to_folder@ method which the
 -- 'AccountsContainersWorkspacesFoldersMoveEntitiesToFolder' request conforms to.
@@ -61,11 +61,11 @@ type AccountsContainersWorkspacesFoldersMoveEntitiesToFolderResource
 -- /See:/ 'accountsContainersWorkspacesFoldersMoveEntitiesToFolder' smart constructor.
 data AccountsContainersWorkspacesFoldersMoveEntitiesToFolder =
   AccountsContainersWorkspacesFoldersMoveEntitiesToFolder'
-    { _acwfmetfPath       :: !Text
-    , _acwfmetfTriggerId  :: !(Maybe [Text])
+    { _acwfmetfPath :: !Text
+    , _acwfmetfTriggerId :: !(Maybe [Text])
     , _acwfmetfVariableId :: !(Maybe [Text])
-    , _acwfmetfPayload    :: !Folder
-    , _acwfmetfTagId      :: !(Maybe [Text])
+    , _acwfmetfPayload :: !Folder
+    , _acwfmetfTagId :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

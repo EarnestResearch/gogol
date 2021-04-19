@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudTrace.Projects.Traces.Spans.CreateSpan
     , ptscsCallback
     ) where
 
-import           Network.Google.CloudTrace.Types
-import           Network.Google.Prelude
+import Network.Google.CloudTrace.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudtrace.projects.traces.spans.createSpan@ method which the
 -- 'ProjectsTracesSpansCreateSpan' request conforms to.
@@ -63,13 +63,13 @@ type ProjectsTracesSpansCreateSpanResource =
 -- /See:/ 'projectsTracesSpansCreateSpan' smart constructor.
 data ProjectsTracesSpansCreateSpan =
   ProjectsTracesSpansCreateSpan'
-    { _ptscsXgafv          :: !(Maybe Xgafv)
+    { _ptscsXgafv :: !(Maybe Xgafv)
     , _ptscsUploadProtocol :: !(Maybe Text)
-    , _ptscsAccessToken    :: !(Maybe Text)
-    , _ptscsUploadType     :: !(Maybe Text)
-    , _ptscsPayload        :: !Span
-    , _ptscsName           :: !Text
-    , _ptscsCallback       :: !(Maybe Text)
+    , _ptscsAccessToken :: !(Maybe Text)
+    , _ptscsUploadType :: !(Maybe Text)
+    , _ptscsPayload :: !Span
+    , _ptscsName :: !Text
+    , _ptscsCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

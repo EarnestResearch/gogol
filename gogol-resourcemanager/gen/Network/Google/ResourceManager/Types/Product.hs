@@ -17,8 +17,8 @@
 --
 module Network.Google.ResourceManager.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.ResourceManager.Types.Sum
+import Network.Google.Prelude
+import Network.Google.ResourceManager.Types.Sum
 
 -- | The ListFolders response message.
 --
@@ -26,7 +26,7 @@ import           Network.Google.ResourceManager.Types.Sum
 data ListFoldersResponse =
   ListFoldersResponse'
     { _lfrNextPageToken :: !(Maybe Text)
-    , _lfrFolders       :: !(Maybe [Folder])
+    , _lfrFolders :: !(Maybe [Folder])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -114,7 +114,7 @@ instance ToJSON ListFoldersResponse where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -191,7 +191,7 @@ instance ToJSON Status where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -246,9 +246,9 @@ instance ToJSON AuditConfig where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -347,9 +347,9 @@ instance ToJSON GetIAMPolicyRequest where
 -- /See:/ 'searchFoldersRequest' smart constructor.
 data SearchFoldersRequest =
   SearchFoldersRequest'
-    { _sfrQuery     :: !(Maybe Text)
+    { _sfrQuery :: !(Maybe Text)
     , _sfrPageToken :: !(Maybe Text)
-    , _sfrPageSize  :: !(Maybe (Textual Int32))
+    , _sfrPageSize :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -447,10 +447,10 @@ instance ToJSON UndeleteFolderRequest where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -542,7 +542,7 @@ instance ToJSON Operation where
 data SearchFoldersResponse =
   SearchFoldersResponse'
     { _sfrNextPageToken :: !(Maybe Text)
-    , _sfrFolders       :: !(Maybe [Folder])
+    , _sfrFolders :: !(Maybe [Folder])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -598,8 +598,8 @@ instance ToJSON SearchFoldersResponse where
 -- /See:/ 'projectCreationStatus' smart constructor.
 data ProjectCreationStatus =
   ProjectCreationStatus'
-    { _pcsGettable   :: !(Maybe Bool)
-    , _pcsReady      :: !(Maybe Bool)
+    { _pcsGettable :: !(Maybe Bool)
+    , _pcsReady :: !(Maybe Bool)
     , _pcsCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -734,11 +734,11 @@ instance ToJSON FolderOperationError where
 -- /See:/ 'folder' smart constructor.
 data Folder =
   Folder'
-    { _fParent         :: !(Maybe Text)
-    , _fName           :: !(Maybe Text)
-    , _fDisplayName    :: !(Maybe Text)
+    { _fParent :: !(Maybe Text)
+    , _fName :: !(Maybe Text)
+    , _fDisplayName :: !(Maybe Text)
     , _fLifecycleState :: !(Maybe FolderLifecycleState)
-    , _fCreateTime     :: !(Maybe DateTime')
+    , _fCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -827,7 +827,7 @@ instance ToJSON Folder where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -985,9 +985,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1112,9 +1112,9 @@ instance ToJSON OperationMetadata where
 data FolderOperation =
   FolderOperation'
     { _foDestinationParent :: !(Maybe Text)
-    , _foDisplayName       :: !(Maybe Text)
-    , _foOperationType     :: !(Maybe FolderOperationOperationType)
-    , _foSourceParent      :: !(Maybe Text)
+    , _foDisplayName :: !(Maybe Text)
+    , _foOperationType :: !(Maybe FolderOperationOperationType)
+    , _foSourceParent :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1194,7 +1194,7 @@ instance ToJSON FolderOperation where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1330,8 +1330,8 @@ instance ToJSON MoveFolderRequest where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.WorkflowTemplates.List
     , prwtlCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.workflowTemplates.list@ method which the
 -- 'ProjectsRegionsWorkflowTemplatesList' request conforms to.
@@ -67,14 +67,14 @@ type ProjectsRegionsWorkflowTemplatesListResource =
 -- /See:/ 'projectsRegionsWorkflowTemplatesList' smart constructor.
 data ProjectsRegionsWorkflowTemplatesList =
   ProjectsRegionsWorkflowTemplatesList'
-    { _prwtlParent         :: !Text
-    , _prwtlXgafv          :: !(Maybe Xgafv)
+    { _prwtlParent :: !Text
+    , _prwtlXgafv :: !(Maybe Xgafv)
     , _prwtlUploadProtocol :: !(Maybe Text)
-    , _prwtlAccessToken    :: !(Maybe Text)
-    , _prwtlUploadType     :: !(Maybe Text)
-    , _prwtlPageToken      :: !(Maybe Text)
-    , _prwtlPageSize       :: !(Maybe (Textual Int32))
-    , _prwtlCallback       :: !(Maybe Text)
+    , _prwtlAccessToken :: !(Maybe Text)
+    , _prwtlUploadType :: !(Maybe Text)
+    , _prwtlPageToken :: !(Maybe Text)
+    , _prwtlPageSize :: !(Maybe (Textual Int32))
+    , _prwtlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

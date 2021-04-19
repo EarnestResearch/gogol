@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.TargetingTemplates.Insert
     , ttiPayload
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.targetingTemplates.insert@ method which the
 -- 'TargetingTemplatesInsert' request conforms to.
@@ -58,7 +58,7 @@ type TargetingTemplatesInsertResource =
 data TargetingTemplatesInsert =
   TargetingTemplatesInsert'
     { _ttiProFileId :: !(Textual Int64)
-    , _ttiPayload   :: !TargetingTemplate
+    , _ttiPayload :: !TargetingTemplate
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

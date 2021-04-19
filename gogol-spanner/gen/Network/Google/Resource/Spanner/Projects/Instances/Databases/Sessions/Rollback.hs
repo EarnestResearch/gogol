@@ -47,8 +47,8 @@ module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Rol
     , proCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Spanner.Types
+import Network.Google.Prelude
+import Network.Google.Spanner.Types
 
 -- | A resource alias for @spanner.projects.instances.databases.sessions.rollback@ method which the
 -- 'ProjectsInstancesDatabasesSessionsRollback' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsInstancesDatabasesSessionsRollbackResource
 -- /See:/ 'projectsInstancesDatabasesSessionsRollback' smart constructor.
 data ProjectsInstancesDatabasesSessionsRollback =
   ProjectsInstancesDatabasesSessionsRollback'
-    { _proXgafv          :: !(Maybe Xgafv)
+    { _proXgafv :: !(Maybe Xgafv)
     , _proUploadProtocol :: !(Maybe Text)
-    , _proAccessToken    :: !(Maybe Text)
-    , _proUploadType     :: !(Maybe Text)
-    , _proPayload        :: !RollbackRequest
-    , _proSession        :: !Text
-    , _proCallback       :: !(Maybe Text)
+    , _proAccessToken :: !(Maybe Text)
+    , _proUploadType :: !(Maybe Text)
+    , _proPayload :: !RollbackRequest
+    , _proSession :: !Text
+    , _proCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

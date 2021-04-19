@@ -44,8 +44,8 @@ module Network.Google.Resource.FirebaseRules.Projects.Releases.Patch
     , prpCallback
     ) where
 
-import           Network.Google.FirebaseRules.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseRules.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebaserules.projects.releases.patch@ method which the
 -- 'ProjectsReleasesPatch' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsReleasesPatchResource =
 -- /See:/ 'projectsReleasesPatch' smart constructor.
 data ProjectsReleasesPatch =
   ProjectsReleasesPatch'
-    { _prpXgafv          :: !(Maybe Xgafv)
+    { _prpXgafv :: !(Maybe Xgafv)
     , _prpUploadProtocol :: !(Maybe Text)
-    , _prpAccessToken    :: !(Maybe Text)
-    , _prpUploadType     :: !(Maybe Text)
-    , _prpPayload        :: !UpdateReleaseRequest
-    , _prpName           :: !Text
-    , _prpCallback       :: !(Maybe Text)
+    , _prpAccessToken :: !(Maybe Text)
+    , _prpUploadType :: !(Maybe Text)
+    , _prpPayload :: !UpdateReleaseRequest
+    , _prpName :: !Text
+    , _prpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

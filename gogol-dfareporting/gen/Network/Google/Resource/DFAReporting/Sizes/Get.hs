@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.Sizes.Get
     , sgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.sizes.get@ method which the
 -- 'SizesGet' request conforms to.
@@ -57,7 +57,7 @@ type SizesGetResource =
 data SizesGet =
   SizesGet'
     { _sgProFileId :: !(Textual Int64)
-    , _sgId        :: !(Textual Int64)
+    , _sgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

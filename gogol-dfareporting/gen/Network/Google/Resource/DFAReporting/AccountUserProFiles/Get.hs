@@ -37,8 +37,8 @@ module Network.Google.Resource.DFAReporting.AccountUserProFiles.Get
     , aupfgId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.accountUserProfiles.get@ method which the
 -- 'AccountUserProFilesGet' request conforms to.
@@ -58,7 +58,7 @@ type AccountUserProFilesGetResource =
 data AccountUserProFilesGet =
   AccountUserProFilesGet'
     { _aupfgProFileId :: !(Textual Int64)
-    , _aupfgId        :: !(Textual Int64)
+    , _aupfgId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

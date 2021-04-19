@@ -43,8 +43,8 @@ module Network.Google.Resource.Vault.Matters.Create
     , mCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Vault.Types
+import Network.Google.Prelude
+import Network.Google.Vault.Types
 
 -- | A resource alias for @vault.matters.create@ method which the
 -- 'MattersCreate' request conforms to.
@@ -66,12 +66,12 @@ type MattersCreateResource =
 -- /See:/ 'mattersCreate' smart constructor.
 data MattersCreate =
   MattersCreate'
-    { _mXgafv          :: !(Maybe Xgafv)
+    { _mXgafv :: !(Maybe Xgafv)
     , _mUploadProtocol :: !(Maybe Text)
-    , _mAccessToken    :: !(Maybe Text)
-    , _mUploadType     :: !(Maybe Text)
-    , _mPayload        :: !Matter
-    , _mCallback       :: !(Maybe Text)
+    , _mAccessToken :: !(Maybe Text)
+    , _mUploadType :: !(Maybe Text)
+    , _mPayload :: !Matter
+    , _mCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -64,9 +64,9 @@ module Network.Google.CloudProFiler.Types
     , dTarget
     ) where
 
-import           Network.Google.CloudProFiler.Types.Product
-import           Network.Google.CloudProFiler.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.CloudProFiler.Types.Product
+import Network.Google.CloudProFiler.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v2' of the Stackdriver Profiler API. This contains the host and root path used as a starting point for constructing service requests.
 cloudProfilerService :: ServiceConfig

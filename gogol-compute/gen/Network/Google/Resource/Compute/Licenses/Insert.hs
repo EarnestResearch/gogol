@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Licenses.Insert
     , liPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenses.insert@ method which the
 -- 'LicensesInsert' request conforms to.
@@ -60,8 +60,8 @@ type LicensesInsertResource =
 data LicensesInsert =
   LicensesInsert'
     { _liRequestId :: !(Maybe Text)
-    , _liProject   :: !Text
-    , _liPayload   :: !License
+    , _liProject :: !Text
+    , _liPayload :: !License
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

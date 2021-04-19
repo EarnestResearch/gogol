@@ -52,8 +52,8 @@ module Network.Google.Resource.StreetViewPublish.Photo.Update
     , puCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photo.update@ method which the
 -- 'PhotoUpdate' request conforms to.
@@ -84,14 +84,14 @@ type PhotoUpdateResource =
 -- /See:/ 'photoUpdate' smart constructor.
 data PhotoUpdate =
   PhotoUpdate'
-    { _puXgafv          :: !(Maybe Xgafv)
+    { _puXgafv :: !(Maybe Xgafv)
     , _puUploadProtocol :: !(Maybe Text)
-    , _puUpdateMask     :: !(Maybe GFieldMask)
-    , _puAccessToken    :: !(Maybe Text)
-    , _puUploadType     :: !(Maybe Text)
-    , _puPayload        :: !Photo
-    , _puId             :: !Text
-    , _puCallback       :: !(Maybe Text)
+    , _puUpdateMask :: !(Maybe GFieldMask)
+    , _puAccessToken :: !(Maybe Text)
+    , _puUploadType :: !(Maybe Text)
+    , _puPayload :: !Photo
+    , _puId :: !Text
+    , _puCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

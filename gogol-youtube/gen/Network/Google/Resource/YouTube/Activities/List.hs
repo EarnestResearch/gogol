@@ -48,8 +48,8 @@ module Network.Google.Resource.YouTube.Activities.List
     , alPublishedBefore
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.YouTube.Types
+import Network.Google.Prelude
+import Network.Google.YouTube.Types
 
 -- | A resource alias for @youtube.activities.list@ method which the
 -- 'ActivitiesList' request conforms to.
@@ -78,14 +78,14 @@ type ActivitiesListResource =
 -- /See:/ 'activitiesList' smart constructor.
 data ActivitiesList =
   ActivitiesList'
-    { _alPublishedAfter  :: !(Maybe DateTime')
-    , _alPart            :: !Text
-    , _alHome            :: !(Maybe Bool)
-    , _alMine            :: !(Maybe Bool)
-    , _alRegionCode      :: !(Maybe Text)
-    , _alChannelId       :: !(Maybe Text)
-    , _alPageToken       :: !(Maybe Text)
-    , _alMaxResults      :: !(Textual Word32)
+    { _alPublishedAfter :: !(Maybe DateTime')
+    , _alPart :: !Text
+    , _alHome :: !(Maybe Bool)
+    , _alMine :: !(Maybe Bool)
+    , _alRegionCode :: !(Maybe Text)
+    , _alChannelId :: !(Maybe Text)
+    , _alPageToken :: !(Maybe Text)
+    , _alMaxResults :: !(Textual Word32)
     , _alPublishedBefore :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)

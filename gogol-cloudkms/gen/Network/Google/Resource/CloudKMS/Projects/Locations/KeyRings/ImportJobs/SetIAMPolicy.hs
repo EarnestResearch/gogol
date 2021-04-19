@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.ImportJobs.S
     , plkrijsipCallback
     ) where
 
-import           Network.Google.CloudKMS.Types
-import           Network.Google.Prelude
+import Network.Google.CloudKMS.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudkms.projects.locations.keyRings.importJobs.setIamPolicy@ method which the
 -- 'ProjectsLocationsKeyRingsImportJobsSetIAMPolicy' request conforms to.
@@ -67,13 +67,13 @@ type ProjectsLocationsKeyRingsImportJobsSetIAMPolicyResource
 -- /See:/ 'projectsLocationsKeyRingsImportJobsSetIAMPolicy' smart constructor.
 data ProjectsLocationsKeyRingsImportJobsSetIAMPolicy =
   ProjectsLocationsKeyRingsImportJobsSetIAMPolicy'
-    { _plkrijsipXgafv          :: !(Maybe Xgafv)
+    { _plkrijsipXgafv :: !(Maybe Xgafv)
     , _plkrijsipUploadProtocol :: !(Maybe Text)
-    , _plkrijsipAccessToken    :: !(Maybe Text)
-    , _plkrijsipUploadType     :: !(Maybe Text)
-    , _plkrijsipPayload        :: !SetIAMPolicyRequest
-    , _plkrijsipResource       :: !Text
-    , _plkrijsipCallback       :: !(Maybe Text)
+    , _plkrijsipAccessToken :: !(Maybe Text)
+    , _plkrijsipUploadType :: !(Maybe Text)
+    , _plkrijsipPayload :: !SetIAMPolicyRequest
+    , _plkrijsipResource :: !Text
+    , _plkrijsipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

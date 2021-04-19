@@ -46,8 +46,8 @@ module Network.Google.Resource.Storage.Objects.Patch
     , opGeneration
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.objects.patch@ method which the
 -- 'ObjectsPatch' request conforms to.
@@ -77,17 +77,17 @@ type ObjectsPatchResource =
 -- /See:/ 'objectsPatch' smart constructor.
 data ObjectsPatch =
   ObjectsPatch'
-    { _opIfMetagenerationMatch    :: !(Maybe (Textual Int64))
-    , _opIfGenerationNotMatch     :: !(Maybe (Textual Int64))
-    , _opIfGenerationMatch        :: !(Maybe (Textual Int64))
-    , _opPredefinedACL            :: !(Maybe ObjectsPatchPredefinedACL)
-    , _opBucket                   :: !Text
-    , _opPayload                  :: !Object
-    , _opUserProject              :: !(Maybe Text)
+    { _opIfMetagenerationMatch :: !(Maybe (Textual Int64))
+    , _opIfGenerationNotMatch :: !(Maybe (Textual Int64))
+    , _opIfGenerationMatch :: !(Maybe (Textual Int64))
+    , _opPredefinedACL :: !(Maybe ObjectsPatchPredefinedACL)
+    , _opBucket :: !Text
+    , _opPayload :: !Object
+    , _opUserProject :: !(Maybe Text)
     , _opIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
-    , _opObject                   :: !Text
-    , _opProjection               :: !(Maybe ObjectsPatchProjection)
-    , _opGeneration               :: !(Maybe (Textual Int64))
+    , _opObject :: !Text
+    , _opProjection :: !(Maybe ObjectsPatchProjection)
+    , _opGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

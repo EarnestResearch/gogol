@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.BucketAccessControls.Update
     , bacuEntity
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.bucketAccessControls.update@ method which the
 -- 'BucketAccessControlsUpdate' request conforms to.
@@ -61,10 +61,10 @@ type BucketAccessControlsUpdateResource =
 -- /See:/ 'bucketAccessControlsUpdate' smart constructor.
 data BucketAccessControlsUpdate =
   BucketAccessControlsUpdate'
-    { _bacuBucket      :: !Text
-    , _bacuPayload     :: !BucketAccessControl
+    { _bacuBucket :: !Text
+    , _bacuPayload :: !BucketAccessControl
     , _bacuUserProject :: !(Maybe Text)
-    , _bacuEntity      :: !Text
+    , _bacuEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

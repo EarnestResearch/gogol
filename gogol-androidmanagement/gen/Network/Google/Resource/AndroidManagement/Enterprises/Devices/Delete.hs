@@ -42,8 +42,8 @@ module Network.Google.Resource.AndroidManagement.Enterprises.Devices.Delete
     , eddCallback
     ) where
 
-import           Network.Google.AndroidManagement.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidmanagement.enterprises.devices.delete@ method which the
 -- 'EnterprisesDevicesDelete' request conforms to.
@@ -63,13 +63,13 @@ type EnterprisesDevicesDeleteResource =
 -- /See:/ 'enterprisesDevicesDelete' smart constructor.
 data EnterprisesDevicesDelete =
   EnterprisesDevicesDelete'
-    { _eddXgafv          :: !(Maybe Xgafv)
-    , _eddWipeDataFlags  :: !(Maybe [Text])
+    { _eddXgafv :: !(Maybe Xgafv)
+    , _eddWipeDataFlags :: !(Maybe [Text])
     , _eddUploadProtocol :: !(Maybe Text)
-    , _eddAccessToken    :: !(Maybe Text)
-    , _eddUploadType     :: !(Maybe Text)
-    , _eddName           :: !Text
-    , _eddCallback       :: !(Maybe Text)
+    , _eddAccessToken :: !(Maybe Text)
+    , _eddUploadType :: !(Maybe Text)
+    , _eddName :: !Text
+    , _eddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

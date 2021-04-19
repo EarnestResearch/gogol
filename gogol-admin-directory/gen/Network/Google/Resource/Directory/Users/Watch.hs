@@ -48,8 +48,8 @@ module Network.Google.Resource.Directory.Users.Watch
     , uwMaxResults
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.users.watch@ method which the
 -- 'UsersWatch' request conforms to.
@@ -80,19 +80,19 @@ type UsersWatchResource =
 -- /See:/ 'usersWatch' smart constructor.
 data UsersWatch =
   UsersWatch'
-    { _uwEvent           :: !(Maybe UsersWatchEvent)
-    , _uwOrderBy         :: !(Maybe UsersWatchOrderBy)
-    , _uwViewType        :: !UsersWatchViewType
+    { _uwEvent :: !(Maybe UsersWatchEvent)
+    , _uwOrderBy :: !(Maybe UsersWatchOrderBy)
+    , _uwViewType :: !UsersWatchViewType
     , _uwCustomFieldMask :: !(Maybe Text)
-    , _uwDomain          :: !(Maybe Text)
-    , _uwShowDeleted     :: !(Maybe Text)
-    , _uwPayload         :: !Channel
-    , _uwSortOrder       :: !(Maybe UsersWatchSortOrder)
-    , _uwCustomer        :: !(Maybe Text)
-    , _uwQuery           :: !(Maybe Text)
-    , _uwProjection      :: !UsersWatchProjection
-    , _uwPageToken       :: !(Maybe Text)
-    , _uwMaxResults      :: !(Maybe (Textual Int32))
+    , _uwDomain :: !(Maybe Text)
+    , _uwShowDeleted :: !(Maybe Text)
+    , _uwPayload :: !Channel
+    , _uwSortOrder :: !(Maybe UsersWatchSortOrder)
+    , _uwCustomer :: !(Maybe Text)
+    , _uwQuery :: !(Maybe Text)
+    , _uwProjection :: !UsersWatchProjection
+    , _uwPageToken :: !(Maybe Text)
+    , _uwMaxResults :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

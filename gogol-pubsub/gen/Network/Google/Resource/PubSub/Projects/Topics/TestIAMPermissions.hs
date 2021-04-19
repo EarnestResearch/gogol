@@ -47,8 +47,8 @@ module Network.Google.Resource.PubSub.Projects.Topics.TestIAMPermissions
     , pttipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.topics.testIamPermissions@ method which the
 -- 'ProjectsTopicsTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsTopicsTestIAMPermissionsResource =
 -- /See:/ 'projectsTopicsTestIAMPermissions' smart constructor.
 data ProjectsTopicsTestIAMPermissions =
   ProjectsTopicsTestIAMPermissions'
-    { _pttipXgafv          :: !(Maybe Xgafv)
+    { _pttipXgafv :: !(Maybe Xgafv)
     , _pttipUploadProtocol :: !(Maybe Text)
-    , _pttipAccessToken    :: !(Maybe Text)
-    , _pttipUploadType     :: !(Maybe Text)
-    , _pttipPayload        :: !TestIAMPermissionsRequest
-    , _pttipResource       :: !Text
-    , _pttipCallback       :: !(Maybe Text)
+    , _pttipAccessToken :: !(Maybe Text)
+    , _pttipUploadType :: !(Maybe Text)
+    , _pttipPayload :: !TestIAMPermissionsRequest
+    , _pttipResource :: !Text
+    , _pttipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

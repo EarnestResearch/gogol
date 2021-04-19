@@ -43,8 +43,8 @@ module Network.Google.Resource.CloudIOT.Projects.Locations.Registries.Groups.Dev
     , plrgdcvlCallback
     ) where
 
-import           Network.Google.CloudIOT.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIOT.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudiot.projects.locations.registries.groups.devices.configVersions.list@ method which the
 -- 'ProjectsLocationsRegistriesGroupsDevicesConfigVersionsList' request conforms to.
@@ -68,13 +68,13 @@ type ProjectsLocationsRegistriesGroupsDevicesConfigVersionsListResource
 -- /See:/ 'projectsLocationsRegistriesGroupsDevicesConfigVersionsList' smart constructor.
 data ProjectsLocationsRegistriesGroupsDevicesConfigVersionsList =
   ProjectsLocationsRegistriesGroupsDevicesConfigVersionsList'
-    { _plrgdcvlXgafv          :: !(Maybe Xgafv)
+    { _plrgdcvlXgafv :: !(Maybe Xgafv)
     , _plrgdcvlUploadProtocol :: !(Maybe Text)
-    , _plrgdcvlAccessToken    :: !(Maybe Text)
-    , _plrgdcvlUploadType     :: !(Maybe Text)
-    , _plrgdcvlNumVersions    :: !(Maybe (Textual Int32))
-    , _plrgdcvlName           :: !Text
-    , _plrgdcvlCallback       :: !(Maybe Text)
+    , _plrgdcvlAccessToken :: !(Maybe Text)
+    , _plrgdcvlUploadType :: !(Maybe Text)
+    , _plrgdcvlNumVersions :: !(Maybe (Textual Int32))
+    , _plrgdcvlName :: !Text
+    , _plrgdcvlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.FloodlightActivityGroups.Patch
     , fagpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.floodlightActivityGroups.patch@ method which the
 -- 'FloodlightActivityGroupsPatch' request conforms to.
@@ -62,8 +62,8 @@ type FloodlightActivityGroupsPatchResource =
 data FloodlightActivityGroupsPatch =
   FloodlightActivityGroupsPatch'
     { _fagpProFileId :: !(Textual Int64)
-    , _fagpPayload   :: !FloodlightActivityGroup
-    , _fagpId        :: !(Textual Int64)
+    , _fagpPayload :: !FloodlightActivityGroup
+    , _fagpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

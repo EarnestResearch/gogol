@@ -38,8 +38,8 @@ module Network.Google.Resource.AndroidEnterprise.Storelayoutclusters.Insert
     , sPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.storelayoutclusters.insert@ method which the
 -- 'StorelayoutclustersInsert' request conforms to.
@@ -62,8 +62,8 @@ type StorelayoutclustersInsertResource =
 data StorelayoutclustersInsert =
   StorelayoutclustersInsert'
     { _sEnterpriseId :: !Text
-    , _sPageId       :: !Text
-    , _sPayload      :: !StoreCluster
+    , _sPageId :: !Text
+    , _sPayload :: !StoreCluster
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

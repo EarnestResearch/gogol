@@ -38,8 +38,8 @@ module Network.Google.Resource.SQL.BackupRuns.Get
     , brgInstance
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.SQLAdmin.Types
+import Network.Google.Prelude
+import Network.Google.SQLAdmin.Types
 
 -- | A resource alias for @sql.backupRuns.get@ method which the
 -- 'BackupRunsGet' request conforms to.
@@ -59,8 +59,8 @@ type BackupRunsGetResource =
 -- /See:/ 'backupRunsGet' smart constructor.
 data BackupRunsGet =
   BackupRunsGet'
-    { _brgProject  :: !Text
-    , _brgId       :: !(Textual Int64)
+    { _brgProject :: !Text
+    , _brgId :: !(Textual Int64)
     , _brgInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

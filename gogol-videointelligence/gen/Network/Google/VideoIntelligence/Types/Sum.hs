@@ -16,7 +16,7 @@
 --
 module Network.Google.VideoIntelligence.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | What labels should be detected with LABEL_DETECTION, in addition to
 -- video-level labels or segment-level labels. If unspecified, defaults to

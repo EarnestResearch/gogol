@@ -36,31 +36,34 @@ module Network.Google.Resource.Content.Pos.Delete
     , pdMerchantId
     , pdStoreCode
     , pdTargetMerchantId
+    , pdDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.pos.delete@ method which the
 -- 'PosDelete' request conforms to.
 type PosDeleteResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "pos" :>
              Capture "targetMerchantId" (Textual Word64) :>
                "store" :>
                  Capture "storeCode" Text :>
-                   QueryParam "alt" AltJSON :> Delete '[JSON] ()
+                   QueryParam "dryRun" Bool :>
+                     QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a store for the given merchant.
 --
 -- /See:/ 'posDelete' smart constructor.
 data PosDelete =
   PosDelete'
-    { _pdMerchantId       :: !(Textual Word64)
-    , _pdStoreCode        :: !Text
+    { _pdMerchantId :: !(Textual Word64)
+    , _pdStoreCode :: !Text
     , _pdTargetMerchantId :: !(Textual Word64)
+    , _pdDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -74,6 +77,8 @@ data PosDelete =
 -- * 'pdStoreCode'
 --
 -- * 'pdTargetMerchantId'
+--
+-- * 'pdDryRun'
 posDelete
     :: Word64 -- ^ 'pdMerchantId'
     -> Text -- ^ 'pdStoreCode'
@@ -84,6 +89,7 @@ posDelete pPdMerchantId_ pPdStoreCode_ pPdTargetMerchantId_ =
     { _pdMerchantId = _Coerce # pPdMerchantId_
     , _pdStoreCode = pPdStoreCode_
     , _pdTargetMerchantId = _Coerce # pPdTargetMerchantId_
+    , _pdDryRun = Nothing
     }
 
 
@@ -105,12 +111,19 @@ pdTargetMerchantId
       (\ s a -> s{_pdTargetMerchantId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+pdDryRun :: Lens' PosDelete (Maybe Bool)
+pdDryRun = lens _pdDryRun (\ s a -> s{_pdDryRun = a})
+
 instance GoogleRequest PosDelete where
         type Rs PosDelete = ()
         type Scopes PosDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosDelete'{..}
           = go _pdMerchantId _pdTargetMerchantId _pdStoreCode
+              _pdDryRun
               (Just AltJSON)
               shoppingContentService
           where go

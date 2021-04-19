@@ -37,8 +37,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.GetAvailableProductSet
     , ugapsUserId
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.getAvailableProductSet@ method which the
 -- 'UsersGetAvailableProductSet' request conforms to.
@@ -58,7 +58,7 @@ type UsersGetAvailableProductSetResource =
 data UsersGetAvailableProductSet =
   UsersGetAvailableProductSet'
     { _ugapsEnterpriseId :: !Text
-    , _ugapsUserId       :: !Text
+    , _ugapsUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

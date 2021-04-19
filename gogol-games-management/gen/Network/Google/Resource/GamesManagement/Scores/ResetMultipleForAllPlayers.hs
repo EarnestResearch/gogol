@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Scores.ResetMultipleForAllPlayers
     , srmfapPayload
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.scores.resetMultipleForAllPlayers@ method which the
 -- 'ScoresResetMultipleForAllPlayers' request conforms to.

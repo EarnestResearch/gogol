@@ -16,7 +16,7 @@
 --
 module Network.Google.Compute.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | [Output Only] A warning code, if applicable. For example, Compute Engine
 -- returns NO_RESULTS_ON_PAGE if there are no results in the response.

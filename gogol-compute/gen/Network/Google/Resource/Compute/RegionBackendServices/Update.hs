@@ -43,8 +43,8 @@ module Network.Google.Resource.Compute.RegionBackendServices.Update
     , rbsuBackendService
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.regionBackendServices.update@ method which the
 -- 'RegionBackendServicesUpdate' request conforms to.
@@ -70,10 +70,10 @@ type RegionBackendServicesUpdateResource =
 -- /See:/ 'regionBackendServicesUpdate' smart constructor.
 data RegionBackendServicesUpdate =
   RegionBackendServicesUpdate'
-    { _rbsuRequestId      :: !(Maybe Text)
-    , _rbsuProject        :: !Text
-    , _rbsuPayload        :: !BackendService
-    , _rbsuRegion         :: !Text
+    { _rbsuRequestId :: !(Maybe Text)
+    , _rbsuProject :: !Text
+    , _rbsuPayload :: !BackendService
+    , _rbsuRegion :: !Text
     , _rbsuBackendService :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

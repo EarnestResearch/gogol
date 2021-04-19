@@ -41,9 +41,9 @@ module Network.Google.PlayCustomApp
     , caTitle
     ) where
 
-import           Network.Google.PlayCustomApp.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.PlayCustomApp.Accounts.CustomApps.Create
+import Network.Google.Prelude
+import Network.Google.PlayCustomApp.Types
+import Network.Google.Resource.PlayCustomApp.Accounts.CustomApps.Create
 
 {- $resources
 TODO

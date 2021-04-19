@@ -17,8 +17,8 @@
 --
 module Network.Google.Translate.Types.Product where
 
-import           Network.Google.Prelude
-import           Network.Google.Translate.Types.Sum
+import Network.Google.Prelude
+import Network.Google.Translate.Types.Sum
 
 -- | The request message for language detection.
 --
@@ -62,8 +62,8 @@ instance ToJSON DetectLanguageRequest where
 data TranslationsResource =
   TranslationsResource'
     { _trDetectedSourceLanguage :: !(Maybe Text)
-    , _trModel                  :: !(Maybe Text)
-    , _trTranslatedText         :: !(Maybe Text)
+    , _trModel :: !(Maybe Text)
+    , _trTranslatedText :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -131,8 +131,8 @@ instance ToJSON TranslationsResource where
 data TranslateTextRequest =
   TranslateTextRequest'
     { _ttrFormat :: !(Maybe Text)
-    , _ttrQ      :: !(Maybe [Text])
-    , _ttrModel  :: !(Maybe Text)
+    , _ttrQ :: !(Maybe [Text])
+    , _ttrModel :: !(Maybe Text)
     , _ttrSource :: !(Maybe Text)
     , _ttrTarget :: !(Maybe Text)
     }
@@ -340,7 +340,7 @@ data DetectionsResourceItem =
   DetectionsResourceItem'
     { _driConfidence :: !(Maybe (Textual Double))
     , _driIsReliable :: !(Maybe Bool)
-    , _driLanguage   :: !(Maybe Text)
+    , _driLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -399,7 +399,7 @@ instance ToJSON DetectionsResourceItem where
 -- /See:/ 'languagesResource' smart constructor.
 data LanguagesResource =
   LanguagesResource'
-    { _lrName     :: !(Maybe Text)
+    { _lrName :: !(Maybe Text)
     , _lrLanguage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

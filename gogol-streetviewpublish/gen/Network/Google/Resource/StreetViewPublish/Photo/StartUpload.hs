@@ -53,8 +53,8 @@ module Network.Google.Resource.StreetViewPublish.Photo.StartUpload
     , psuCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.StreetViewPublish.Types
+import Network.Google.Prelude
+import Network.Google.StreetViewPublish.Types
 
 -- | A resource alias for @streetviewpublish.photo.startUpload@ method which the
 -- 'PhotoStartUpload' request conforms to.
@@ -86,12 +86,12 @@ type PhotoStartUploadResource =
 -- /See:/ 'photoStartUpload' smart constructor.
 data PhotoStartUpload =
   PhotoStartUpload'
-    { _psuXgafv          :: !(Maybe Xgafv)
+    { _psuXgafv :: !(Maybe Xgafv)
     , _psuUploadProtocol :: !(Maybe Text)
-    , _psuAccessToken    :: !(Maybe Text)
-    , _psuUploadType     :: !(Maybe Text)
-    , _psuPayload        :: !Empty
-    , _psuCallback       :: !(Maybe Text)
+    , _psuAccessToken :: !(Maybe Text)
+    , _psuUploadType :: !(Maybe Text)
+    , _psuPayload :: !Empty
+    , _psuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

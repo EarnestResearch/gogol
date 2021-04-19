@@ -45,8 +45,8 @@ module Network.Google.Resource.IAM.Projects.ServiceAccounts.Patch
     , psapCallback
     ) where
 
-import           Network.Google.IAM.Types
-import           Network.Google.Prelude
+import Network.Google.IAM.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @iam.projects.serviceAccounts.patch@ method which the
 -- 'ProjectsServiceAccountsPatch' request conforms to.
@@ -70,13 +70,13 @@ type ProjectsServiceAccountsPatchResource =
 -- /See:/ 'projectsServiceAccountsPatch' smart constructor.
 data ProjectsServiceAccountsPatch =
   ProjectsServiceAccountsPatch'
-    { _psapXgafv          :: !(Maybe Xgafv)
+    { _psapXgafv :: !(Maybe Xgafv)
     , _psapUploadProtocol :: !(Maybe Text)
-    , _psapAccessToken    :: !(Maybe Text)
-    , _psapUploadType     :: !(Maybe Text)
-    , _psapPayload        :: !PatchServiceAccountRequest
-    , _psapName           :: !Text
-    , _psapCallback       :: !(Maybe Text)
+    , _psapAccessToken :: !(Maybe Text)
+    , _psapUploadType :: !(Maybe Text)
+    , _psapPayload :: !PatchServiceAccountRequest
+    , _psapName :: !Text
+    , _psapCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

@@ -38,8 +38,8 @@ module Network.Google.Resource.GamesManagement.Scores.Reset
     , srLeaderboardId
     ) where
 
-import           Network.Google.GamesManagement.Types
-import           Network.Google.Prelude
+import Network.Google.GamesManagement.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gamesManagement.scores.reset@ method which the
 -- 'ScoresReset' request conforms to.

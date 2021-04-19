@@ -42,8 +42,8 @@ module Network.Google.Resource.CloudIdentity.Groups.Memberships.Create
     , gmcCallback
     ) where
 
-import           Network.Google.CloudIdentity.Types
-import           Network.Google.Prelude
+import Network.Google.CloudIdentity.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @cloudidentity.groups.memberships.create@ method which the
 -- 'GroupsMembershipsCreate' request conforms to.
@@ -64,13 +64,13 @@ type GroupsMembershipsCreateResource =
 -- /See:/ 'groupsMembershipsCreate' smart constructor.
 data GroupsMembershipsCreate =
   GroupsMembershipsCreate'
-    { _gmcParent         :: !Text
-    , _gmcXgafv          :: !(Maybe Xgafv)
+    { _gmcParent :: !Text
+    , _gmcXgafv :: !(Maybe Xgafv)
     , _gmcUploadProtocol :: !(Maybe Text)
-    , _gmcAccessToken    :: !(Maybe Text)
-    , _gmcUploadType     :: !(Maybe Text)
-    , _gmcPayload        :: !Membership
-    , _gmcCallback       :: !(Maybe Text)
+    , _gmcAccessToken :: !(Maybe Text)
+    , _gmcUploadType :: !(Maybe Text)
+    , _gmcPayload :: !Membership
+    , _gmcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

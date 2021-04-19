@@ -16,7 +16,7 @@
 --
 module Network.Google.BigtableAdmin.Types.Sum where
 
-import           Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes)
 
 -- | (\`CreationOnly\`) The type of storage used by this cluster to serve its
 -- parent instance\'s tables, unless explicitly overridden.

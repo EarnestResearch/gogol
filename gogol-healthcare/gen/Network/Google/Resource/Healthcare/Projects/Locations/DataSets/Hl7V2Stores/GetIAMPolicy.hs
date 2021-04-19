@@ -42,8 +42,8 @@ module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Store
     , pldshvsgipCallback
     ) where
 
-import           Network.Google.Healthcare.Types
-import           Network.Google.Prelude
+import Network.Google.Healthcare.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @healthcare.projects.locations.datasets.hl7V2Stores.getIamPolicy@ method which the
 -- 'ProjectsLocationsDataSetsHl7V2StoresGetIAMPolicy' request conforms to.
@@ -64,12 +64,12 @@ type ProjectsLocationsDataSetsHl7V2StoresGetIAMPolicyResource
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresGetIAMPolicy' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresGetIAMPolicy =
   ProjectsLocationsDataSetsHl7V2StoresGetIAMPolicy'
-    { _pldshvsgipXgafv          :: !(Maybe Xgafv)
+    { _pldshvsgipXgafv :: !(Maybe Xgafv)
     , _pldshvsgipUploadProtocol :: !(Maybe Text)
-    , _pldshvsgipAccessToken    :: !(Maybe Text)
-    , _pldshvsgipUploadType     :: !(Maybe Text)
-    , _pldshvsgipResource       :: !Text
-    , _pldshvsgipCallback       :: !(Maybe Text)
+    , _pldshvsgipAccessToken :: !(Maybe Text)
+    , _pldshvsgipUploadType :: !(Maybe Text)
+    , _pldshvsgipResource :: !Text
+    , _pldshvsgipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

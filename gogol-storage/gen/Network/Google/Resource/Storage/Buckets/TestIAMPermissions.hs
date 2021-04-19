@@ -39,8 +39,8 @@ module Network.Google.Resource.Storage.Buckets.TestIAMPermissions
     , btipPermissions
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Storage.Types
+import Network.Google.Prelude
+import Network.Google.Storage.Types
 
 -- | A resource alias for @storage.buckets.testIamPermissions@ method which the
 -- 'BucketsTestIAMPermissions' request conforms to.
@@ -62,7 +62,7 @@ type BucketsTestIAMPermissionsResource =
 -- /See:/ 'bucketsTestIAMPermissions' smart constructor.
 data BucketsTestIAMPermissions =
   BucketsTestIAMPermissions'
-    { _btipBucket      :: !Text
+    { _btipBucket :: !Text
     , _btipUserProject :: !(Maybe Text)
     , _btipPermissions :: ![Text]
     }

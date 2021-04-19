@@ -38,8 +38,8 @@ module Network.Google.Resource.Gmail.Users.Messages.Send
     , umsUserId
     ) where
 
-import           Network.Google.Gmail.Types
-import           Network.Google.Prelude
+import Network.Google.Gmail.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @gmail.users.messages.send@ method which the
 -- 'UsersMessagesSend' request conforms to.
@@ -72,7 +72,7 @@ type UsersMessagesSendResource =
 data UsersMessagesSend =
   UsersMessagesSend'
     { _umsPayload :: !Message
-    , _umsUserId  :: !Text
+    , _umsUserId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

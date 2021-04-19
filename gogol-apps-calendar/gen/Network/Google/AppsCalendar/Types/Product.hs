@@ -17,32 +17,32 @@
 --
 module Network.Google.AppsCalendar.Types.Product where
 
-import           Network.Google.AppsCalendar.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.AppsCalendar.Types.Sum
+import Network.Google.Prelude
 
 --
 -- /See:/ 'calendarListEntry' smart constructor.
 data CalendarListEntry =
   CalendarListEntry'
-    { _cleSummary              :: !(Maybe Text)
+    { _cleSummary :: !(Maybe Text)
     , _cleConferenceProperties :: !(Maybe ConferenceProperties)
-    , _cleEtag                 :: !(Maybe Text)
-    , _cleLocation             :: !(Maybe Text)
-    , _cleKind                 :: !Text
+    , _cleEtag :: !(Maybe Text)
+    , _cleLocation :: !(Maybe Text)
+    , _cleKind :: !Text
     , _cleNotificationSettings :: !(Maybe CalendarListEntryNotificationSettings)
-    , _cleBackgRoundColor      :: !(Maybe Text)
-    , _cleForegRoundColor      :: !(Maybe Text)
-    , _cleDefaultReminders     :: !(Maybe [EventReminder])
-    , _cleSelected             :: !Bool
-    , _clePrimary              :: !Bool
-    , _cleHidden               :: !Bool
-    , _cleId                   :: !(Maybe Text)
-    , _cleDeleted              :: !Bool
-    , _cleAccessRole           :: !(Maybe Text)
-    , _cleSummaryOverride      :: !(Maybe Text)
-    , _cleColorId              :: !(Maybe Text)
-    , _cleTimeZone             :: !(Maybe Text)
-    , _cleDescription          :: !(Maybe Text)
+    , _cleBackgRoundColor :: !(Maybe Text)
+    , _cleForegRoundColor :: !(Maybe Text)
+    , _cleDefaultReminders :: !(Maybe [EventReminder])
+    , _cleSelected :: !Bool
+    , _clePrimary :: !Bool
+    , _cleHidden :: !Bool
+    , _cleId :: !(Maybe Text)
+    , _cleDeleted :: !Bool
+    , _cleAccessRole :: !(Maybe Text)
+    , _cleSummaryOverride :: !(Maybe Text)
+    , _cleColorId :: !(Maybe Text)
+    , _cleTimeZone :: !(Maybe Text)
+    , _cleDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -332,44 +332,44 @@ instance ToJSON ConferenceParameters where
 -- /See:/ 'event' smart constructor.
 data Event =
   Event'
-    { _eSummary                 :: !(Maybe Text)
-    , _eOriginalStartTime       :: !(Maybe EventDateTime)
-    , _eCreator                 :: !(Maybe EventCreator)
-    , _eStatus                  :: !(Maybe Text)
-    , _eGuestsCanModify         :: !Bool
-    , _eEtag                    :: !(Maybe Text)
-    , _eAttachments             :: !(Maybe [EventAttachment])
-    , _eLocked                  :: !Bool
-    , _eLocation                :: !(Maybe Text)
-    , _eAttendees               :: !(Maybe [EventAttendee])
-    , _eReminders               :: !(Maybe EventReminders)
-    , _eKind                    :: !Text
-    , _eCreated                 :: !(Maybe DateTime')
-    , _eTransparency            :: !Text
-    , _eRecurringEventId        :: !(Maybe Text)
-    , _eStart                   :: !(Maybe EventDateTime)
-    , _ePrivateCopy             :: !Bool
-    , _eEndTimeUnspecified      :: !Bool
-    , _eConferenceData          :: !(Maybe ConferenceData)
-    , _eExtendedProperties      :: !(Maybe EventExtendedProperties)
-    , _eVisibility              :: !Text
-    , _eGuestsCanInviteOthers   :: !Bool
-    , _eRecurrence              :: !(Maybe [Text])
-    , _eGadget                  :: !(Maybe EventGadget)
-    , _eSequence                :: !(Maybe (Textual Int32))
-    , _eICalUId                 :: !(Maybe Text)
-    , _eEnd                     :: !(Maybe EventDateTime)
-    , _eAttendeesOmitted        :: !Bool
-    , _eSource                  :: !(Maybe EventSource)
-    , _eId                      :: !(Maybe Text)
-    , _eHTMLLink                :: !(Maybe Text)
-    , _eUpdated                 :: !(Maybe DateTime')
-    , _eColorId                 :: !(Maybe Text)
-    , _eAnyoneCanAddSelf        :: !Bool
+    { _eSummary :: !(Maybe Text)
+    , _eOriginalStartTime :: !(Maybe EventDateTime)
+    , _eCreator :: !(Maybe EventCreator)
+    , _eStatus :: !(Maybe Text)
+    , _eGuestsCanModify :: !Bool
+    , _eEtag :: !(Maybe Text)
+    , _eAttachments :: !(Maybe [EventAttachment])
+    , _eLocked :: !Bool
+    , _eLocation :: !(Maybe Text)
+    , _eAttendees :: !(Maybe [EventAttendee])
+    , _eReminders :: !(Maybe EventReminders)
+    , _eKind :: !Text
+    , _eCreated :: !(Maybe DateTime')
+    , _eTransparency :: !Text
+    , _eRecurringEventId :: !(Maybe Text)
+    , _eStart :: !(Maybe EventDateTime)
+    , _ePrivateCopy :: !Bool
+    , _eEndTimeUnspecified :: !Bool
+    , _eConferenceData :: !(Maybe ConferenceData)
+    , _eExtendedProperties :: !(Maybe EventExtendedProperties)
+    , _eVisibility :: !Text
+    , _eGuestsCanInviteOthers :: !Bool
+    , _eRecurrence :: !(Maybe [Text])
+    , _eGadget :: !(Maybe EventGadget)
+    , _eSequence :: !(Maybe (Textual Int32))
+    , _eICalUId :: !(Maybe Text)
+    , _eEnd :: !(Maybe EventDateTime)
+    , _eAttendeesOmitted :: !Bool
+    , _eSource :: !(Maybe EventSource)
+    , _eId :: !(Maybe Text)
+    , _eHTMLLink :: !(Maybe Text)
+    , _eUpdated :: !(Maybe DateTime')
+    , _eColorId :: !(Maybe Text)
+    , _eAnyoneCanAddSelf :: !Bool
     , _eGuestsCanSeeOtherGuests :: !Bool
-    , _eHangoutLink             :: !(Maybe Text)
-    , _eDescription             :: !(Maybe Text)
-    , _eOrganizer               :: !(Maybe EventOrganizer)
+    , _eHangoutLink :: !(Maybe Text)
+    , _eDescription :: !(Maybe Text)
+    , _eOrganizer :: !(Maybe EventOrganizer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -971,8 +971,8 @@ instance ToJSON ConferenceProperties where
 data ConferenceSolution =
   ConferenceSolution'
     { _csIconURI :: !(Maybe Text)
-    , _csKey     :: !(Maybe ConferenceSolutionKey)
-    , _csName    :: !(Maybe Text)
+    , _csKey :: !(Maybe ConferenceSolutionKey)
+    , _csName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1028,7 +1028,7 @@ instance ToJSON ConferenceSolution where
 data ACLRuleScope =
   ACLRuleScope'
     { _arsValue :: !(Maybe Text)
-    , _arsType  :: !(Maybe Text)
+    , _arsType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1113,10 +1113,10 @@ instance ToJSON ColorsEvent where
 -- /See:/ 'settings' smart constructor.
 data Settings =
   Settings'
-    { _sEtag          :: !(Maybe Text)
+    { _sEtag :: !(Maybe Text)
     , _sNextPageToken :: !(Maybe Text)
-    , _sKind          :: !Text
-    , _sItems         :: !(Maybe [Setting])
+    , _sKind :: !Text
+    , _sItems :: !(Maybe [Setting])
     , _sNextSyncToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1231,11 +1231,11 @@ instance ToJSON FreeBusyRequestItem where
 -- /See:/ 'eventAttachment' smart constructor.
 data EventAttachment =
   EventAttachment'
-    { _eaFileURL  :: !(Maybe Text)
+    { _eaFileURL :: !(Maybe Text)
     , _eaIconLink :: !(Maybe Text)
     , _eaMimeType :: !(Maybe Text)
-    , _eaTitle    :: !(Maybe Text)
-    , _eaFileId   :: !(Maybe Text)
+    , _eaTitle :: !(Maybe Text)
+    , _eaFileId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1315,16 +1315,16 @@ instance ToJSON EventAttachment where
 -- /See:/ 'entryPoint' smart constructor.
 data EntryPoint =
   EntryPoint'
-    { _epPasscode           :: !(Maybe Text)
-    , _epRegionCode         :: !(Maybe Text)
-    , _epURI                :: !(Maybe Text)
-    , _epMeetingCode        :: !(Maybe Text)
-    , _epPassword           :: !(Maybe Text)
-    , _epPin                :: !(Maybe Text)
+    { _epPasscode :: !(Maybe Text)
+    , _epRegionCode :: !(Maybe Text)
+    , _epURI :: !(Maybe Text)
+    , _epMeetingCode :: !(Maybe Text)
+    , _epPassword :: !(Maybe Text)
+    , _epPin :: !(Maybe Text)
     , _epEntryPointFeatures :: !(Maybe [Text])
-    , _epEntryPointType     :: !(Maybe Text)
-    , _epLabel              :: !(Maybe Text)
-    , _epAccessCode         :: !(Maybe Text)
+    , _epEntryPointType :: !(Maybe Text)
+    , _epLabel :: !(Maybe Text)
+    , _epAccessCode :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1496,7 +1496,7 @@ instance ToJSON EntryPoint where
 data TimePeriod =
   TimePeriod'
     { _tpStart :: !(Maybe DateTime')
-    , _tpEnd   :: !(Maybe DateTime')
+    , _tpEnd :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1580,10 +1580,10 @@ instance ToJSON ConferenceSolutionKey where
 -- /See:/ 'eventCreator' smart constructor.
 data EventCreator =
   EventCreator'
-    { _ecEmail       :: !(Maybe Text)
-    , _ecSelf        :: !Bool
+    { _ecEmail :: !(Maybe Text)
+    , _ecSelf :: !Bool
     , _ecDisplayName :: !(Maybe Text)
-    , _ecId          :: !(Maybe Text)
+    , _ecId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1750,15 +1750,15 @@ instance ToJSON ColorDefinition where
 data Channel =
   Channel'
     { _cResourceURI :: !(Maybe Text)
-    , _cResourceId  :: !(Maybe Text)
-    , _cKind        :: !Text
-    , _cExpiration  :: !(Maybe (Textual Int64))
-    , _cToken       :: !(Maybe Text)
-    , _cAddress     :: !(Maybe Text)
-    , _cPayload     :: !(Maybe Bool)
-    , _cParams      :: !(Maybe ChannelParams)
-    , _cId          :: !(Maybe Text)
-    , _cType        :: !(Maybe Text)
+    , _cResourceId :: !(Maybe Text)
+    , _cKind :: !Text
+    , _cExpiration :: !(Maybe (Textual Int64))
+    , _cToken :: !(Maybe Text)
+    , _cAddress :: !(Maybe Text)
+    , _cPayload :: !(Maybe Bool)
+    , _cParams :: !(Maybe ChannelParams)
+    , _cId :: !(Maybe Text)
+    , _cType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1924,7 +1924,7 @@ instance ToJSON ConferenceRequestStatus where
 -- /See:/ 'freeBusyCalendar' smart constructor.
 data FreeBusyCalendar =
   FreeBusyCalendar'
-    { _fbcBusy   :: !(Maybe [TimePeriod])
+    { _fbcBusy :: !(Maybe [TimePeriod])
     , _fbcErrors :: !(Maybe [Error'])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1975,13 +1975,13 @@ instance ToJSON FreeBusyCalendar where
 -- /See:/ 'conferenceData' smart constructor.
 data ConferenceData =
   ConferenceData'
-    { _cdSignature          :: !(Maybe Text)
+    { _cdSignature :: !(Maybe Text)
     , _cdConferenceSolution :: !(Maybe ConferenceSolution)
-    , _cdCreateRequest      :: !(Maybe CreateConferenceRequest)
-    , _cdConferenceId       :: !(Maybe Text)
-    , _cdParameters         :: !(Maybe ConferenceParameters)
-    , _cdNotes              :: !(Maybe Text)
-    , _cdEntryPoints        :: !(Maybe [EntryPoint])
+    , _cdCreateRequest :: !(Maybe CreateConferenceRequest)
+    , _cdConferenceId :: !(Maybe Text)
+    , _cdParameters :: !(Maybe ConferenceParameters)
+    , _cdNotes :: !(Maybe Text)
+    , _cdEntryPoints :: !(Maybe [EntryPoint])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2104,10 +2104,10 @@ instance ToJSON ConferenceData where
 -- /See:/ 'setting' smart constructor.
 data Setting =
   Setting'
-    { _setEtag  :: !(Maybe Text)
-    , _setKind  :: !Text
+    { _setEtag :: !(Maybe Text)
+    , _setKind :: !Text
     , _setValue :: !(Maybe Text)
-    , _setId    :: !(Maybe Text)
+    , _setId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2212,7 +2212,7 @@ instance ToJSON FreeBusyResponseGroups where
 -- /See:/ 'eventReminders' smart constructor.
 data EventReminders =
   EventReminders'
-    { _erOverrides  :: !(Maybe [EventReminder])
+    { _erOverrides :: !(Maybe [EventReminder])
     , _erUseDefault :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2347,7 +2347,7 @@ instance ToJSON
 data CalendarNotification =
   CalendarNotification'
     { _cnMethod :: !(Maybe Text)
-    , _cnType   :: !(Maybe Text)
+    , _cnType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2481,17 +2481,17 @@ instance ToJSON ChannelParams where
 -- /See:/ 'events' smart constructor.
 data Events =
   Events'
-    { _eveSummary          :: !(Maybe Text)
-    , _eveEtag             :: !(Maybe Text)
-    , _eveNextPageToken    :: !(Maybe Text)
-    , _eveKind             :: !Text
-    , _eveItems            :: !(Maybe [Event])
+    { _eveSummary :: !(Maybe Text)
+    , _eveEtag :: !(Maybe Text)
+    , _eveNextPageToken :: !(Maybe Text)
+    , _eveKind :: !Text
+    , _eveItems :: !(Maybe [Event])
     , _eveDefaultReminders :: !(Maybe [EventReminder])
-    , _eveUpdated          :: !(Maybe DateTime')
-    , _eveAccessRole       :: !(Maybe Text)
-    , _eveTimeZone         :: !(Maybe Text)
-    , _eveNextSyncToken    :: !(Maybe Text)
-    , _eveDescription      :: !(Maybe Text)
+    , _eveUpdated :: !(Maybe DateTime')
+    , _eveAccessRole :: !(Maybe Text)
+    , _eveTimeZone :: !(Maybe Text)
+    , _eveNextSyncToken :: !(Maybe Text)
+    , _eveDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2653,16 +2653,16 @@ instance ToJSON Events where
 -- /See:/ 'eventAttendee' smart constructor.
 data EventAttendee =
   EventAttendee'
-    { _eaEmail            :: !(Maybe Text)
-    , _eaResponseStatus   :: !(Maybe Text)
-    , _eaSelf             :: !Bool
-    , _eaResource         :: !Bool
+    { _eaEmail :: !(Maybe Text)
+    , _eaResponseStatus :: !(Maybe Text)
+    , _eaSelf :: !Bool
+    , _eaResource :: !Bool
     , _eaAdditionalGuests :: !(Textual Int32)
-    , _eaDisplayName      :: !(Maybe Text)
-    , _eaId               :: !(Maybe Text)
-    , _eaComment          :: !(Maybe Text)
-    , _eaOptional         :: !Bool
-    , _eaOrganizer        :: !(Maybe Bool)
+    , _eaDisplayName :: !(Maybe Text)
+    , _eaId :: !(Maybe Text)
+    , _eaComment :: !(Maybe Text)
+    , _eaOptional :: !Bool
+    , _eaOrganizer :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2802,14 +2802,14 @@ instance ToJSON EventAttendee where
 -- /See:/ 'calendar' smart constructor.
 data Calendar =
   Calendar'
-    { _calSummary              :: !(Maybe Text)
+    { _calSummary :: !(Maybe Text)
     , _calConferenceProperties :: !(Maybe ConferenceProperties)
-    , _calEtag                 :: !(Maybe Text)
-    , _calLocation             :: !(Maybe Text)
-    , _calKind                 :: !Text
-    , _calId                   :: !(Maybe Text)
-    , _calTimeZone             :: !(Maybe Text)
-    , _calDescription          :: !(Maybe Text)
+    , _calEtag :: !(Maybe Text)
+    , _calLocation :: !(Maybe Text)
+    , _calKind :: !Text
+    , _calId :: !(Maybe Text)
+    , _calTimeZone :: !(Maybe Text)
+    , _calDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2920,11 +2920,11 @@ instance ToJSON Calendar where
 -- /See:/ 'freeBusyResponse' smart constructor.
 data FreeBusyResponse =
   FreeBusyResponse'
-    { _fbrGroups    :: !(Maybe FreeBusyResponseGroups)
-    , _fbrTimeMin   :: !(Maybe DateTime')
-    , _fbrKind      :: !Text
+    { _fbrGroups :: !(Maybe FreeBusyResponseGroups)
+    , _fbrTimeMin :: !(Maybe DateTime')
+    , _fbrKind :: !Text
     , _fbrCalendars :: !(Maybe FreeBusyResponseCalendars)
-    , _fbrTimeMax   :: !(Maybe DateTime')
+    , _fbrTimeMax :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3004,7 +3004,7 @@ instance ToJSON FreeBusyResponse where
 -- /See:/ 'eventReminder' smart constructor.
 data EventReminder =
   EventReminder'
-    { _erMethod  :: !(Maybe Text)
+    { _erMethod :: !(Maybe Text)
     , _erMinutes :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3061,7 +3061,7 @@ instance ToJSON EventReminder where
 data EventExtendedProperties =
   EventExtendedProperties'
     { _eepPrivate :: !(Maybe EventExtendedPropertiesPrivate)
-    , _eepShared  :: !(Maybe EventExtendedPropertiesShared)
+    , _eepShared :: !(Maybe EventExtendedPropertiesShared)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3109,7 +3109,7 @@ instance ToJSON EventExtendedProperties where
 -- /See:/ 'eventDateTime' smart constructor.
 data EventDateTime =
   EventDateTime'
-    { _edtDate     :: !(Maybe Date')
+    { _edtDate :: !(Maybe Date')
     , _edtTimeZone :: !(Maybe Text)
     , _edtDateTime :: !(Maybe DateTime')
     }
@@ -3179,10 +3179,10 @@ instance ToJSON EventDateTime where
 -- /See:/ 'eventOrganizer' smart constructor.
 data EventOrganizer =
   EventOrganizer'
-    { _eoEmail       :: !(Maybe Text)
-    , _eoSelf        :: !Bool
+    { _eoEmail :: !(Maybe Text)
+    , _eoSelf :: !Bool
     , _eoDisplayName :: !(Maybe Text)
-    , _eoId          :: !(Maybe Text)
+    , _eoId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3251,10 +3251,10 @@ instance ToJSON EventOrganizer where
 -- /See:/ 'calendarList' smart constructor.
 data CalendarList =
   CalendarList'
-    { _clEtag          :: !(Maybe Text)
+    { _clEtag :: !(Maybe Text)
     , _clNextPageToken :: !(Maybe Text)
-    , _clKind          :: !Text
-    , _clItems         :: !(Maybe [CalendarListEntry])
+    , _clKind :: !Text
+    , _clItems :: !(Maybe [CalendarListEntry])
     , _clNextSyncToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3338,14 +3338,14 @@ instance ToJSON CalendarList where
 -- /See:/ 'eventGadget' smart constructor.
 data EventGadget =
   EventGadget'
-    { _egHeight      :: !(Maybe (Textual Int32))
-    , _egDisplay     :: !(Maybe Text)
+    { _egHeight :: !(Maybe (Textual Int32))
+    , _egDisplay :: !(Maybe Text)
     , _egPreferences :: !(Maybe EventGadgetPreferences)
-    , _egLink        :: !(Maybe Text)
-    , _egIconLink    :: !(Maybe Text)
-    , _egWidth       :: !(Maybe (Textual Int32))
-    , _egTitle       :: !(Maybe Text)
-    , _egType        :: !(Maybe Text)
+    , _egLink :: !(Maybe Text)
+    , _egIconLink :: !(Maybe Text)
+    , _egWidth :: !(Maybe (Textual Int32))
+    , _egTitle :: !(Maybe Text)
+    , _egType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3495,11 +3495,11 @@ instance ToJSON EventGadgetPreferences where
 data FreeBusyRequest =
   FreeBusyRequest'
     { _fCalendarExpansionMax :: !(Maybe (Textual Int32))
-    , _fTimeMin              :: !(Maybe DateTime')
-    , _fItems                :: !(Maybe [FreeBusyRequestItem])
-    , _fGroupExpansionMax    :: !(Maybe (Textual Int32))
-    , _fTimeZone             :: !Text
-    , _fTimeMax              :: !(Maybe DateTime')
+    , _fTimeMin :: !(Maybe DateTime')
+    , _fItems :: !(Maybe [FreeBusyRequestItem])
+    , _fGroupExpansionMax :: !(Maybe (Textual Int32))
+    , _fTimeZone :: !Text
+    , _fTimeMax :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3599,11 +3599,11 @@ instance ToJSON FreeBusyRequest where
 -- /See:/ 'aclRule' smart constructor.
 data ACLRule =
   ACLRule'
-    { _arEtag  :: !(Maybe Text)
-    , _arKind  :: !Text
-    , _arRole  :: !(Maybe Text)
+    { _arEtag :: !(Maybe Text)
+    , _arKind :: !Text
+    , _arRole :: !(Maybe Text)
     , _arScope :: !(Maybe ACLRuleScope)
-    , _arId    :: !(Maybe Text)
+    , _arId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3684,8 +3684,8 @@ instance ToJSON ACLRule where
 -- /See:/ 'createConferenceRequest' smart constructor.
 data CreateConferenceRequest =
   CreateConferenceRequest'
-    { _ccrStatus                :: !(Maybe ConferenceRequestStatus)
-    , _ccrRequestId             :: !(Maybe Text)
+    { _ccrStatus :: !(Maybe ConferenceRequestStatus)
+    , _ccrRequestId :: !(Maybe Text)
     , _ccrConferenceSolutionKey :: !(Maybe ConferenceSolutionKey)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3827,10 +3827,10 @@ instance ToJSON FreeBusyResponseCalendars where
 -- /See:/ 'acl' smart constructor.
 data ACL =
   ACL'
-    { _aEtag          :: !(Maybe Text)
+    { _aEtag :: !(Maybe Text)
     , _aNextPageToken :: !(Maybe Text)
-    , _aKind          :: !Text
-    , _aItems         :: !(Maybe [ACLRule])
+    , _aKind :: !Text
+    , _aItems :: !(Maybe [ACLRule])
     , _aNextSyncToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3913,10 +3913,10 @@ instance ToJSON ACL where
 -- /See:/ 'colors' smart constructor.
 data Colors =
   Colors'
-    { _colEvent    :: !(Maybe ColorsEvent)
-    , _colKind     :: !Text
+    { _colEvent :: !(Maybe ColorsEvent)
+    , _colKind :: !Text
     , _colCalendar :: !(Maybe ColorsCalendar)
-    , _colUpdated  :: !(Maybe DateTime')
+    , _colUpdated :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3991,7 +3991,7 @@ instance ToJSON Colors where
 data FreeBusyGroup =
   FreeBusyGroup'
     { _fbgCalendars :: !(Maybe [Text])
-    , _fbgErrors    :: !(Maybe [Error'])
+    , _fbgErrors :: !(Maybe [Error'])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4083,7 +4083,7 @@ instance ToJSON ConferenceParametersAddOnParameters
 -- /See:/ 'eventSource' smart constructor.
 data EventSource =
   EventSource'
-    { _esURL   :: !(Maybe Text)
+    { _esURL :: !(Maybe Text)
     , _esTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

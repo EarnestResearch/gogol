@@ -41,8 +41,8 @@ module Network.Google.Resource.Logging.Projects.Metrics.Delete
     , pmdCallback
     ) where
 
-import           Network.Google.Logging.Types
-import           Network.Google.Prelude
+import Network.Google.Logging.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @logging.projects.metrics.delete@ method which the
 -- 'ProjectsMetricsDelete' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsMetricsDeleteResource =
 -- /See:/ 'projectsMetricsDelete' smart constructor.
 data ProjectsMetricsDelete =
   ProjectsMetricsDelete'
-    { _pmdXgafv          :: !(Maybe Xgafv)
+    { _pmdXgafv :: !(Maybe Xgafv)
     , _pmdUploadProtocol :: !(Maybe Text)
-    , _pmdAccessToken    :: !(Maybe Text)
-    , _pmdMetricName     :: !Text
-    , _pmdUploadType     :: !(Maybe Text)
-    , _pmdCallback       :: !(Maybe Text)
+    , _pmdAccessToken :: !(Maybe Text)
+    , _pmdMetricName :: !Text
+    , _pmdUploadType :: !(Maybe Text)
+    , _pmdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

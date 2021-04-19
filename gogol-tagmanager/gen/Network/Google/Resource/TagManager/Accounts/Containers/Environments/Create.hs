@@ -37,8 +37,8 @@ module Network.Google.Resource.TagManager.Accounts.Containers.Environments.Creat
     , acecPayload
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.TagManager.Types
+import Network.Google.Prelude
+import Network.Google.TagManager.Types
 
 -- | A resource alias for @tagmanager.accounts.containers.environments.create@ method which the
 -- 'AccountsContainersEnvironmentsCreate' request conforms to.
@@ -56,7 +56,7 @@ type AccountsContainersEnvironmentsCreateResource =
 -- /See:/ 'accountsContainersEnvironmentsCreate' smart constructor.
 data AccountsContainersEnvironmentsCreate =
   AccountsContainersEnvironmentsCreate'
-    { _acecParent  :: !Text
+    { _acecParent :: !Text
     , _acecPayload :: !Environment
     }
   deriving (Eq, Show, Data, Typeable, Generic)

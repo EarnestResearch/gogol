@@ -42,8 +42,8 @@ module Network.Google.Resource.Jobs.Projects.Jobs.BatchDelete
     , pjbdCallback
     ) where
 
-import           Network.Google.Jobs.Types
-import           Network.Google.Prelude
+import Network.Google.Jobs.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @jobs.projects.jobs.batchDelete@ method which the
 -- 'ProjectsJobsBatchDelete' request conforms to.
@@ -65,13 +65,13 @@ type ProjectsJobsBatchDeleteResource =
 -- /See:/ 'projectsJobsBatchDelete' smart constructor.
 data ProjectsJobsBatchDelete =
   ProjectsJobsBatchDelete'
-    { _pjbdParent         :: !Text
-    , _pjbdXgafv          :: !(Maybe Xgafv)
+    { _pjbdParent :: !Text
+    , _pjbdXgafv :: !(Maybe Xgafv)
     , _pjbdUploadProtocol :: !(Maybe Text)
-    , _pjbdAccessToken    :: !(Maybe Text)
-    , _pjbdUploadType     :: !(Maybe Text)
-    , _pjbdPayload        :: !BatchDeleteJobsRequest
-    , _pjbdCallback       :: !(Maybe Text)
+    , _pjbdAccessToken :: !(Maybe Text)
+    , _pjbdUploadType :: !(Maybe Text)
+    , _pjbdPayload :: !BatchDeleteJobsRequest
+    , _pjbdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

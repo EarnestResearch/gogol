@@ -36,8 +36,8 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.DeleteQuery
     , qdqQueryId
     ) where
 
-import           Network.Google.DoubleClickBids.Types
-import           Network.Google.Prelude
+import Network.Google.DoubleClickBids.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @doubleclickbidmanager.queries.deletequery@ method which the
 -- 'QueriesDeleteQuery' request conforms to.

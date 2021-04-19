@@ -40,8 +40,8 @@ module Network.Google.Resource.Compute.InterconnectAttachments.AggregatedList
     , iaalMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.interconnectAttachments.aggregatedList@ method which the
 -- 'InterconnectAttachmentsAggregatedList' request conforms to.
@@ -64,10 +64,10 @@ type InterconnectAttachmentsAggregatedListResource =
 -- /See:/ 'interconnectAttachmentsAggregatedList' smart constructor.
 data InterconnectAttachmentsAggregatedList =
   InterconnectAttachmentsAggregatedList'
-    { _iaalOrderBy    :: !(Maybe Text)
-    , _iaalProject    :: !Text
-    , _iaalFilter     :: !(Maybe Text)
-    , _iaalPageToken  :: !(Maybe Text)
+    { _iaalOrderBy :: !(Maybe Text)
+    , _iaalProject :: !Text
+    , _iaalFilter :: !(Maybe Text)
+    , _iaalPageToken :: !(Maybe Text)
     , _iaalMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

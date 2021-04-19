@@ -17,15 +17,15 @@
 --
 module Network.Google.Dataproc.Types.Product where
 
-import           Network.Google.Dataproc.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types.Sum
+import Network.Google.Prelude
 
 -- | Encapsulates the full scoping used to reference a job.
 --
 -- /See:/ 'jobReference' smart constructor.
 data JobReference =
   JobReference'
-    { _jrJobId     :: !(Maybe Text)
+    { _jrJobId :: !(Maybe Text)
     , _jrProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -109,7 +109,7 @@ instance ToJSON JobReference where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -248,14 +248,14 @@ instance ToJSON DiagnoseClusterResults where
 -- /See:/ 'instanceGroupConfig' smart constructor.
 data InstanceGroupConfig =
   InstanceGroupConfig'
-    { _igcNumInstances       :: !(Maybe (Textual Int32))
-    , _igcDiskConfig         :: !(Maybe DiskConfig)
-    , _igcIsPreemptible      :: !(Maybe Bool)
-    , _igcImageURI           :: !(Maybe Text)
-    , _igcAccelerators       :: !(Maybe [AcceleratorConfig])
-    , _igcInstanceNames      :: !(Maybe [Text])
+    { _igcNumInstances :: !(Maybe (Textual Int32))
+    , _igcDiskConfig :: !(Maybe DiskConfig)
+    , _igcIsPreemptible :: !(Maybe Bool)
+    , _igcImageURI :: !(Maybe Text)
+    , _igcAccelerators :: !(Maybe [AcceleratorConfig])
+    , _igcInstanceNames :: !(Maybe [Text])
     , _igcManagedGroupConfig :: !(Maybe ManagedGroupConfig)
-    , _igcMachineTypeURI     :: !(Maybe Text)
+    , _igcMachineTypeURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -392,14 +392,14 @@ instance ToJSON InstanceGroupConfig where
 -- /See:/ 'sparkJob' smart constructor.
 data SparkJob =
   SparkJob'
-    { _sjArgs           :: !(Maybe [Text])
+    { _sjArgs :: !(Maybe [Text])
     , _sjMainJarFileURI :: !(Maybe Text)
-    , _sjJarFileURIs    :: !(Maybe [Text])
-    , _sjFileURIs       :: !(Maybe [Text])
-    , _sjArchiveURIs    :: !(Maybe [Text])
-    , _sjMainClass      :: !(Maybe Text)
-    , _sjLoggingConfig  :: !(Maybe LoggingConfig)
-    , _sjProperties     :: !(Maybe SparkJobProperties)
+    , _sjJarFileURIs :: !(Maybe [Text])
+    , _sjFileURIs :: !(Maybe [Text])
+    , _sjArchiveURIs :: !(Maybe [Text])
+    , _sjMainClass :: !(Maybe Text)
+    , _sjLoggingConfig :: !(Maybe LoggingConfig)
+    , _sjProperties :: !(Maybe SparkJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -609,8 +609,8 @@ instance ToJSON WorkflowGraph where
 -- /See:/ 'clusterOperation' smart constructor.
 data ClusterOperation =
   ClusterOperation'
-    { _coDone        :: !(Maybe Bool)
-    , _coError       :: !(Maybe Text)
+    { _coDone :: !(Maybe Bool)
+    , _coError :: !(Maybe Text)
     , _coOperationId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -666,7 +666,7 @@ instance ToJSON ClusterOperation where
 -- /See:/ 'clusterSelector' smart constructor.
 data ClusterSelector =
   ClusterSelector'
-    { _csZone          :: !(Maybe Text)
+    { _csZone :: !(Maybe Text)
     , _csClusterLabels :: !(Maybe ClusterSelectorClusterLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -759,8 +759,8 @@ instance ToJSON JobScheduling where
 -- /See:/ 'diskConfig' smart constructor.
 data DiskConfig =
   DiskConfig'
-    { _dcNumLocalSsds   :: !(Maybe (Textual Int32))
-    , _dcBootDiskType   :: !(Maybe Text)
+    { _dcNumLocalSsds :: !(Maybe (Textual Int32))
+    , _dcBootDiskType :: !(Maybe Text)
     , _dcBootDiskSizeGb :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -874,9 +874,9 @@ instance ToJSON ClusterOperationMetadataLabels where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -953,7 +953,7 @@ instance ToJSON Expr where
 data ListOperationsResponse =
   ListOperationsResponse'
     { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations    :: !(Maybe [Operation])
+    , _lorOperations :: !(Maybe [Operation])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1069,7 +1069,7 @@ instance ToJSON GetIAMPolicyRequest where
 data WorkflowTemplatePlacement =
   WorkflowTemplatePlacement'
     { _wtpClusterSelector :: !(Maybe ClusterSelector)
-    , _wtpManagedCluster  :: !(Maybe ManagedCluster)
+    , _wtpManagedCluster :: !(Maybe ManagedCluster)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1122,13 +1122,13 @@ instance ToJSON WorkflowTemplatePlacement where
 -- /See:/ 'cluster' smart constructor.
 data Cluster =
   Cluster'
-    { _cStatus        :: !(Maybe ClusterStatus)
-    , _cMetrics       :: !(Maybe ClusterMetrics)
-    , _cClusterUuid   :: !(Maybe Text)
-    , _cConfig        :: !(Maybe ClusterConfig)
-    , _cClusterName   :: !(Maybe Text)
-    , _cLabels        :: !(Maybe ClusterLabels)
-    , _cProjectId     :: !(Maybe Text)
+    { _cStatus :: !(Maybe ClusterStatus)
+    , _cMetrics :: !(Maybe ClusterMetrics)
+    , _cClusterUuid :: !(Maybe Text)
+    , _cConfig :: !(Maybe ClusterConfig)
+    , _cClusterName :: !(Maybe Text)
+    , _cLabels :: !(Maybe ClusterLabels)
+    , _cProjectId :: !(Maybe Text)
     , _cStatusHistory :: !(Maybe [ClusterStatus])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1290,7 +1290,7 @@ instance ToJSON ManagedClusterLabels where
 -- /See:/ 'parameterValidation' smart constructor.
 data ParameterValidation =
   ParameterValidation'
-    { _pvRegex  :: !(Maybe RegexValidation)
+    { _pvRegex :: !(Maybe RegexValidation)
     , _pvValues :: !(Maybe ValueValidation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1376,7 +1376,7 @@ instance ToJSON JobLabels where
 data SubmitJobRequest =
   SubmitJobRequest'
     { _sjrRequestId :: !(Maybe Text)
-    , _sjrJob       :: !(Maybe Job)
+    , _sjrJob :: !(Maybe Job)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1481,10 +1481,10 @@ instance ToJSON ClusterMetrics where
 -- /See:/ 'operation' smart constructor.
 data Operation =
   Operation'
-    { _oDone     :: !(Maybe Bool)
-    , _oError    :: !(Maybe Status)
+    { _oDone :: !(Maybe Bool)
+    , _oError :: !(Maybe Status)
     , _oResponse :: !(Maybe OperationResponse)
-    , _oName     :: !(Maybe Text)
+    , _oName :: !(Maybe Text)
     , _oMetadata :: !(Maybe OperationMetadata)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1600,12 +1600,12 @@ instance ToJSON Empty where
 -- /See:/ 'hiveJob' smart constructor.
 data HiveJob =
   HiveJob'
-    { _hjQueryFileURI      :: !(Maybe Text)
-    , _hjJarFileURIs       :: !(Maybe [Text])
-    , _hjScriptVariables   :: !(Maybe HiveJobScriptVariables)
-    , _hjQueryList         :: !(Maybe QueryList)
+    { _hjQueryFileURI :: !(Maybe Text)
+    , _hjJarFileURIs :: !(Maybe [Text])
+    , _hjScriptVariables :: !(Maybe HiveJobScriptVariables)
+    , _hjQueryList :: !(Maybe QueryList)
     , _hjContinueOnFailure :: !(Maybe Bool)
-    , _hjProperties        :: !(Maybe HiveJobProperties)
+    , _hjProperties :: !(Maybe HiveJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1866,13 +1866,13 @@ instance ToJSON PigJobProperties where
 -- /See:/ 'clusterConfig' smart constructor.
 data ClusterConfig =
   ClusterConfig'
-    { _ccWorkerConfig          :: !(Maybe InstanceGroupConfig)
+    { _ccWorkerConfig :: !(Maybe InstanceGroupConfig)
     , _ccInitializationActions :: !(Maybe [NodeInitializationAction])
-    , _ccMasterConfig          :: !(Maybe InstanceGroupConfig)
-    , _ccGceClusterConfig      :: !(Maybe GceClusterConfig)
-    , _ccConfigBucket          :: !(Maybe Text)
-    , _ccEncryptionConfig      :: !(Maybe EncryptionConfig)
-    , _ccSoftwareConfig        :: !(Maybe SoftwareConfig)
+    , _ccMasterConfig :: !(Maybe InstanceGroupConfig)
+    , _ccGceClusterConfig :: !(Maybe GceClusterConfig)
+    , _ccConfigBucket :: !(Maybe Text)
+    , _ccEncryptionConfig :: !(Maybe EncryptionConfig)
+    , _ccSoftwareConfig :: !(Maybe SoftwareConfig)
     , _ccSecondaryWorkerConfig :: !(Maybe InstanceGroupConfig)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2013,8 +2013,8 @@ instance ToJSON ClusterConfig where
 -- /See:/ 'instantiateWorkflowTemplateRequest' smart constructor.
 data InstantiateWorkflowTemplateRequest =
   InstantiateWorkflowTemplateRequest'
-    { _iwtrRequestId  :: !(Maybe Text)
-    , _iwtrVersion    :: !(Maybe (Textual Int32))
+    { _iwtrRequestId :: !(Maybe Text)
+    , _iwtrVersion :: !(Maybe (Textual Int32))
     , _iwtrParameters :: !(Maybe InstantiateWorkflowTemplateRequestParameters)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2128,15 +2128,15 @@ instance ToJSON HadoopJobProperties where
 -- /See:/ 'workflowTemplate' smart constructor.
 data WorkflowTemplate =
   WorkflowTemplate'
-    { _wtJobs       :: !(Maybe [OrderedJob])
+    { _wtJobs :: !(Maybe [OrderedJob])
     , _wtUpdateTime :: !(Maybe DateTime')
-    , _wtName       :: !(Maybe Text)
-    , _wtVersion    :: !(Maybe (Textual Int32))
+    , _wtName :: !(Maybe Text)
+    , _wtVersion :: !(Maybe (Textual Int32))
     , _wtParameters :: !(Maybe [TemplateParameter])
-    , _wtId         :: !(Maybe Text)
-    , _wtLabels     :: !(Maybe WorkflowTemplateLabels)
+    , _wtId :: !(Maybe Text)
+    , _wtLabels :: !(Maybe WorkflowTemplateLabels)
     , _wtCreateTime :: !(Maybe DateTime')
-    , _wtPlacement  :: !(Maybe WorkflowTemplatePlacement)
+    , _wtPlacement :: !(Maybe WorkflowTemplatePlacement)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2277,10 +2277,10 @@ instance ToJSON WorkflowTemplate where
 -- /See:/ 'clusterOperationStatus' smart constructor.
 data ClusterOperationStatus =
   ClusterOperationStatus'
-    { _cosState          :: !(Maybe ClusterOperationStatusState)
-    , _cosInnerState     :: !(Maybe Text)
+    { _cosState :: !(Maybe ClusterOperationStatusState)
+    , _cosInnerState :: !(Maybe Text)
     , _cosStateStartTime :: !(Maybe DateTime')
-    , _cosDetails        :: !(Maybe Text)
+    , _cosDetails :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2470,7 +2470,7 @@ instance ToJSON WorkflowTemplateLabels where
 data NodeInitializationAction =
   NodeInitializationAction'
     { _niaExecutionTimeout :: !(Maybe GDuration)
-    , _niaExecutableFile   :: !(Maybe Text)
+    , _niaExecutableFile :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2692,10 +2692,10 @@ instance ToJSON SetIAMPolicyRequest where
 -- /See:/ 'templateParameter' smart constructor.
 data TemplateParameter =
   TemplateParameter'
-    { _tpName        :: !(Maybe Text)
-    , _tpValidation  :: !(Maybe ParameterValidation)
+    { _tpName :: !(Maybe Text)
+    , _tpValidation :: !(Maybe ParameterValidation)
     , _tpDescription :: !(Maybe Text)
-    , _tpFields      :: !(Maybe [Text])
+    , _tpFields :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2800,14 +2800,14 @@ instance ToJSON TemplateParameter where
 -- /See:/ 'gceClusterConfig' smart constructor.
 data GceClusterConfig =
   GceClusterConfig'
-    { _gccSubnetworkURI        :: !(Maybe Text)
-    , _gccInternalIPOnly       :: !(Maybe Bool)
-    , _gccNetworkURI           :: !(Maybe Text)
-    , _gccZoneURI              :: !(Maybe Text)
-    , _gccServiceAccount       :: !(Maybe Text)
-    , _gccMetadata             :: !(Maybe GceClusterConfigMetadata)
+    { _gccSubnetworkURI :: !(Maybe Text)
+    , _gccInternalIPOnly :: !(Maybe Bool)
+    , _gccNetworkURI :: !(Maybe Text)
+    , _gccZoneURI :: !(Maybe Text)
+    , _gccServiceAccount :: !(Maybe Text)
+    , _gccMetadata :: !(Maybe GceClusterConfigMetadata)
     , _gccServiceAccountScopes :: !(Maybe [Text])
-    , _gccTags                 :: !(Maybe [Text])
+    , _gccTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2966,7 +2966,7 @@ instance ToJSON GceClusterConfig where
 data ListWorkflowTemplatesResponse =
   ListWorkflowTemplatesResponse'
     { _lwtrNextPageToken :: !(Maybe Text)
-    , _lwtrTemplates     :: !(Maybe [WorkflowTemplate])
+    , _lwtrTemplates :: !(Maybe [WorkflowTemplate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3135,9 +3135,9 @@ instance ToJSON WorkflowMetadataParameters where
 -- /See:/ 'managedCluster' smart constructor.
 data ManagedCluster =
   ManagedCluster'
-    { _mcConfig      :: !(Maybe ClusterConfig)
+    { _mcConfig :: !(Maybe ClusterConfig)
     , _mcClusterName :: !(Maybe Text)
-    , _mcLabels      :: !(Maybe ManagedClusterLabels)
+    , _mcLabels :: !(Maybe ManagedClusterLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3242,22 +3242,22 @@ instance ToJSON ClusterLabels where
 -- /See:/ 'job' smart constructor.
 data Job =
   Job'
-    { _jSparkJob                :: !(Maybe SparkJob)
-    , _jStatus                  :: !(Maybe JobStatus)
-    , _jDriverControlFilesURI   :: !(Maybe Text)
-    , _jHiveJob                 :: !(Maybe HiveJob)
-    , _jReference               :: !(Maybe JobReference)
-    , _jSparkSQLJob             :: !(Maybe SparkSQLJob)
-    , _jHadoopJob               :: !(Maybe HadoopJob)
-    , _jJobUuid                 :: !(Maybe Text)
-    , _jYarnApplications        :: !(Maybe [YarnApplication])
-    , _jLabels                  :: !(Maybe JobLabels)
-    , _jPysparkJob              :: !(Maybe PySparkJob)
+    { _jSparkJob :: !(Maybe SparkJob)
+    , _jStatus :: !(Maybe JobStatus)
+    , _jDriverControlFilesURI :: !(Maybe Text)
+    , _jHiveJob :: !(Maybe HiveJob)
+    , _jReference :: !(Maybe JobReference)
+    , _jSparkSQLJob :: !(Maybe SparkSQLJob)
+    , _jHadoopJob :: !(Maybe HadoopJob)
+    , _jJobUuid :: !(Maybe Text)
+    , _jYarnApplications :: !(Maybe [YarnApplication])
+    , _jLabels :: !(Maybe JobLabels)
+    , _jPysparkJob :: !(Maybe PySparkJob)
     , _jDriverOutputResourceURI :: !(Maybe Text)
-    , _jScheduling              :: !(Maybe JobScheduling)
-    , _jStatusHistory           :: !(Maybe [JobStatus])
-    , _jPlacement               :: !(Maybe JobPlacement)
-    , _jPigJob                  :: !(Maybe PigJob)
+    , _jScheduling :: !(Maybe JobScheduling)
+    , _jStatusHistory :: !(Maybe [JobStatus])
+    , _jPlacement :: !(Maybe JobPlacement)
+    , _jPigJob :: !(Maybe PigJob)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3495,14 +3495,14 @@ instance ToJSON DiagnoseClusterRequest where
 -- /See:/ 'hadoopJob' smart constructor.
 data HadoopJob =
   HadoopJob'
-    { _hArgs           :: !(Maybe [Text])
+    { _hArgs :: !(Maybe [Text])
     , _hMainJarFileURI :: !(Maybe Text)
-    , _hJarFileURIs    :: !(Maybe [Text])
-    , _hFileURIs       :: !(Maybe [Text])
-    , _hArchiveURIs    :: !(Maybe [Text])
-    , _hMainClass      :: !(Maybe Text)
-    , _hLoggingConfig  :: !(Maybe LoggingConfig)
-    , _hProperties     :: !(Maybe HadoopJobProperties)
+    , _hJarFileURIs :: !(Maybe [Text])
+    , _hFileURIs :: !(Maybe [Text])
+    , _hArchiveURIs :: !(Maybe [Text])
+    , _hMainClass :: !(Maybe Text)
+    , _hLoggingConfig :: !(Maybe LoggingConfig)
+    , _hProperties :: !(Maybe HadoopJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3681,14 +3681,14 @@ instance ToJSON
 -- /See:/ 'clusterOperationMetadata' smart constructor.
 data ClusterOperationMetadata =
   ClusterOperationMetadata'
-    { _comStatus        :: !(Maybe ClusterOperationStatus)
-    , _comClusterUuid   :: !(Maybe Text)
-    , _comWarnings      :: !(Maybe [Text])
-    , _comClusterName   :: !(Maybe Text)
-    , _comLabels        :: !(Maybe ClusterOperationMetadataLabels)
+    { _comStatus :: !(Maybe ClusterOperationStatus)
+    , _comClusterUuid :: !(Maybe Text)
+    , _comWarnings :: !(Maybe [Text])
+    , _comClusterName :: !(Maybe Text)
+    , _comLabels :: !(Maybe ClusterOperationMetadataLabels)
     , _comOperationType :: !(Maybe Text)
     , _comStatusHistory :: !(Maybe [ClusterOperationStatus])
-    , _comDescription   :: !(Maybe Text)
+    , _comDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3852,12 +3852,12 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'sparkSQLJob' smart constructor.
 data SparkSQLJob =
   SparkSQLJob'
-    { _ssqljQueryFileURI    :: !(Maybe Text)
-    , _ssqljJarFileURIs     :: !(Maybe [Text])
+    { _ssqljQueryFileURI :: !(Maybe Text)
+    , _ssqljJarFileURIs :: !(Maybe [Text])
     , _ssqljScriptVariables :: !(Maybe SparkSQLJobScriptVariables)
-    , _ssqljQueryList       :: !(Maybe QueryList)
-    , _ssqljLoggingConfig   :: !(Maybe LoggingConfig)
-    , _ssqljProperties      :: !(Maybe SparkSQLJobProperties)
+    , _ssqljQueryList :: !(Maybe QueryList)
+    , _ssqljLoggingConfig :: !(Maybe LoggingConfig)
+    , _ssqljProperties :: !(Maybe SparkSQLJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3960,8 +3960,8 @@ instance ToJSON SparkSQLJob where
 data SoftwareConfig =
   SoftwareConfig'
     { _scOptionalComponents :: !(Maybe [Text])
-    , _scImageVersion       :: !(Maybe Text)
-    , _scProperties         :: !(Maybe SoftwareConfigProperties)
+    , _scImageVersion :: !(Maybe Text)
+    , _scProperties :: !(Maybe SoftwareConfigProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4036,7 +4036,7 @@ instance ToJSON SoftwareConfig where
 data ListJobsResponse =
   ListJobsResponse'
     { _ljrNextPageToken :: !(Maybe Text)
-    , _ljrJobs          :: !(Maybe [Job])
+    , _ljrJobs :: !(Maybe [Job])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4089,7 +4089,7 @@ instance ToJSON ListJobsResponse where
 -- /See:/ 'acceleratorConfig' smart constructor.
 data AcceleratorConfig =
   AcceleratorConfig'
-    { _acAcceleratorCount   :: !(Maybe (Textual Int32))
+    { _acAcceleratorCount :: !(Maybe (Textual Int32))
     , _acAcceleratorTypeURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4228,14 +4228,14 @@ instance ToJSON EncryptionConfig where
 -- /See:/ 'pySparkJob' smart constructor.
 data PySparkJob =
   PySparkJob'
-    { _psjPythonFileURIs    :: !(Maybe [Text])
+    { _psjPythonFileURIs :: !(Maybe [Text])
     , _psjMainPythonFileURI :: !(Maybe Text)
-    , _psjArgs              :: !(Maybe [Text])
-    , _psjJarFileURIs       :: !(Maybe [Text])
-    , _psjFileURIs          :: !(Maybe [Text])
-    , _psjArchiveURIs       :: !(Maybe [Text])
-    , _psjLoggingConfig     :: !(Maybe LoggingConfig)
-    , _psjProperties        :: !(Maybe PySparkJobProperties)
+    , _psjArgs :: !(Maybe [Text])
+    , _psjJarFileURIs :: !(Maybe [Text])
+    , _psjFileURIs :: !(Maybe [Text])
+    , _psjArchiveURIs :: !(Maybe [Text])
+    , _psjLoggingConfig :: !(Maybe LoggingConfig)
+    , _psjProperties :: !(Maybe PySparkJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4371,7 +4371,7 @@ instance ToJSON PySparkJob where
 -- /See:/ 'managedGroupConfig' smart constructor.
 data ManagedGroupConfig =
   ManagedGroupConfig'
-    { _mgcInstanceTemplateName     :: !(Maybe Text)
+    { _mgcInstanceTemplateName :: !(Maybe Text)
     , _mgcInstanceGroupManagerName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4470,7 +4470,7 @@ instance ToJSON TestIAMPermissionsResponse where
 data ListClustersResponse =
   ListClustersResponse'
     { _lcrNextPageToken :: !(Maybe Text)
-    , _lcrClusters      :: !(Maybe [Cluster])
+    , _lcrClusters :: !(Maybe [Cluster])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4575,8 +4575,8 @@ instance ToJSON ValueValidation where
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pEtag     :: !(Maybe Bytes)
-    , _pVersion  :: !(Maybe (Textual Int32))
+    { _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4645,16 +4645,16 @@ instance ToJSON Policy where
 -- /See:/ 'orderedJob' smart constructor.
 data OrderedJob =
   OrderedJob'
-    { _ojSparkJob            :: !(Maybe SparkJob)
-    , _ojStepId              :: !(Maybe Text)
+    { _ojSparkJob :: !(Maybe SparkJob)
+    , _ojStepId :: !(Maybe Text)
     , _ojPrerequisiteStepIds :: !(Maybe [Text])
-    , _ojHiveJob             :: !(Maybe HiveJob)
-    , _ojSparkSQLJob         :: !(Maybe SparkSQLJob)
-    , _ojHadoopJob           :: !(Maybe HadoopJob)
-    , _ojLabels              :: !(Maybe OrderedJobLabels)
-    , _ojPysparkJob          :: !(Maybe PySparkJob)
-    , _ojScheduling          :: !(Maybe JobScheduling)
-    , _ojPigJob              :: !(Maybe PigJob)
+    , _ojHiveJob :: !(Maybe HiveJob)
+    , _ojSparkSQLJob :: !(Maybe SparkSQLJob)
+    , _ojHadoopJob :: !(Maybe HadoopJob)
+    , _ojLabels :: !(Maybe OrderedJobLabels)
+    , _ojPysparkJob :: !(Maybe PySparkJob)
+    , _ojScheduling :: !(Maybe JobScheduling)
+    , _ojPigJob :: !(Maybe PigJob)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4900,10 +4900,10 @@ instance ToJSON OperationMetadata where
 -- /See:/ 'jobStatus' smart constructor.
 data JobStatus =
   JobStatus'
-    { _jsState          :: !(Maybe JobStatusState)
-    , _jsSubState       :: !(Maybe JobStatusSubState)
+    { _jsState :: !(Maybe JobStatusState)
+    , _jsSubState :: !(Maybe JobStatusSubState)
     , _jsStateStartTime :: !(Maybe DateTime')
-    , _jsDetails        :: !(Maybe Text)
+    , _jsDetails :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5051,11 +5051,11 @@ instance ToJSON ClusterMetricsHdfsMetrics where
 -- /See:/ 'workflowNode' smart constructor.
 data WorkflowNode =
   WorkflowNode'
-    { _wnState               :: !(Maybe WorkflowNodeState)
-    , _wnStepId              :: !(Maybe Text)
-    , _wnJobId               :: !(Maybe Text)
+    { _wnState :: !(Maybe WorkflowNodeState)
+    , _wnStepId :: !(Maybe Text)
+    , _wnJobId :: !(Maybe Text)
     , _wnPrerequisiteStepIds :: !(Maybe [Text])
-    , _wnError               :: !(Maybe Text)
+    , _wnError :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5135,17 +5135,17 @@ instance ToJSON WorkflowNode where
 -- /See:/ 'workflowMetadata' smart constructor.
 data WorkflowMetadata =
   WorkflowMetadata'
-    { _wmGraph         :: !(Maybe WorkflowGraph)
-    , _wmState         :: !(Maybe WorkflowMetadataState)
-    , _wmClusterUuid   :: !(Maybe Text)
-    , _wmStartTime     :: !(Maybe DateTime')
+    { _wmGraph :: !(Maybe WorkflowGraph)
+    , _wmState :: !(Maybe WorkflowMetadataState)
+    , _wmClusterUuid :: !(Maybe Text)
+    , _wmStartTime :: !(Maybe DateTime')
     , _wmDeleteCluster :: !(Maybe ClusterOperation)
     , _wmCreateCluster :: !(Maybe ClusterOperation)
-    , _wmVersion       :: !(Maybe (Textual Int32))
-    , _wmEndTime       :: !(Maybe DateTime')
-    , _wmParameters    :: !(Maybe WorkflowMetadataParameters)
-    , _wmClusterName   :: !(Maybe Text)
-    , _wmTemplate      :: !(Maybe Text)
+    , _wmVersion :: !(Maybe (Textual Int32))
+    , _wmEndTime :: !(Maybe DateTime')
+    , _wmParameters :: !(Maybe WorkflowMetadataParameters)
+    , _wmClusterName :: !(Maybe Text)
+    , _wmTemplate :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5373,10 +5373,10 @@ instance ToJSON LoggingConfigDriverLogLevels where
 -- /See:/ 'clusterStatus' smart constructor.
 data ClusterStatus =
   ClusterStatus'
-    { _csState          :: !(Maybe ClusterStatusState)
-    , _csSubState       :: !(Maybe ClusterStatusSubState)
+    { _csState :: !(Maybe ClusterStatusState)
+    , _csSubState :: !(Maybe ClusterStatusSubState)
     , _csStateStartTime :: !(Maybe DateTime')
-    , _csDetail         :: !(Maybe Text)
+    , _csDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5451,9 +5451,9 @@ instance ToJSON ClusterStatus where
 data YarnApplication =
   YarnApplication'
     { _yaTrackingURL :: !(Maybe Text)
-    , _yaState       :: !(Maybe YarnApplicationState)
-    , _yaProgress    :: !(Maybe (Textual Double))
-    , _yaName        :: !(Maybe Text)
+    , _yaState :: !(Maybe YarnApplicationState)
+    , _yaProgress :: !(Maybe (Textual Double))
+    , _yaName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5527,13 +5527,13 @@ instance ToJSON YarnApplication where
 -- /See:/ 'pigJob' smart constructor.
 data PigJob =
   PigJob'
-    { _pjQueryFileURI      :: !(Maybe Text)
-    , _pjJarFileURIs       :: !(Maybe [Text])
-    , _pjScriptVariables   :: !(Maybe PigJobScriptVariables)
-    , _pjQueryList         :: !(Maybe QueryList)
+    { _pjQueryFileURI :: !(Maybe Text)
+    , _pjJarFileURIs :: !(Maybe [Text])
+    , _pjScriptVariables :: !(Maybe PigJobScriptVariables)
+    , _pjQueryList :: !(Maybe QueryList)
     , _pjContinueOnFailure :: !(Maybe Bool)
-    , _pjLoggingConfig     :: !(Maybe LoggingConfig)
-    , _pjProperties        :: !(Maybe PigJobProperties)
+    , _pjLoggingConfig :: !(Maybe LoggingConfig)
+    , _pjProperties :: !(Maybe PigJobProperties)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5688,8 +5688,8 @@ instance ToJSON LoggingConfig where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -1190,13 +1190,13 @@ module Network.Google.Slides
     , smcText
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.Slides.Presentations.BatchUpdate
-import           Network.Google.Resource.Slides.Presentations.Create
-import           Network.Google.Resource.Slides.Presentations.Get
-import           Network.Google.Resource.Slides.Presentations.Pages.Get
-import           Network.Google.Resource.Slides.Presentations.Pages.GetThumbnail
-import           Network.Google.Slides.Types
+import Network.Google.Prelude
+import Network.Google.Resource.Slides.Presentations.BatchUpdate
+import Network.Google.Resource.Slides.Presentations.Create
+import Network.Google.Resource.Slides.Presentations.Get
+import Network.Google.Resource.Slides.Presentations.Pages.Get
+import Network.Google.Resource.Slides.Presentations.Pages.GetThumbnail
+import Network.Google.Slides.Types
 
 {- $resources
 TODO

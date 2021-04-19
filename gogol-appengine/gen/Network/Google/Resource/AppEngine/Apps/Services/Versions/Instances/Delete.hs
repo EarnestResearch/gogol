@@ -44,8 +44,8 @@ module Network.Google.Resource.AppEngine.Apps.Services.Versions.Instances.Delete
     , aCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.services.versions.instances.delete@ method which the
 -- 'AppsServicesVersionsInstancesDelete' request conforms to.
@@ -72,15 +72,15 @@ type AppsServicesVersionsInstancesDeleteResource =
 -- /See:/ 'appsServicesVersionsInstancesDelete' smart constructor.
 data AppsServicesVersionsInstancesDelete =
   AppsServicesVersionsInstancesDelete'
-    { _aXgafv          :: !(Maybe Xgafv)
-    , _aInstancesId    :: !Text
+    { _aXgafv :: !(Maybe Xgafv)
+    , _aInstancesId :: !Text
     , _aUploadProtocol :: !(Maybe Text)
-    , _aAccessToken    :: !(Maybe Text)
-    , _aUploadType     :: !(Maybe Text)
-    , _aVersionsId     :: !Text
-    , _aAppsId         :: !Text
-    , _aServicesId     :: !Text
-    , _aCallback       :: !(Maybe Text)
+    , _aAccessToken :: !(Maybe Text)
+    , _aUploadType :: !(Maybe Text)
+    , _aVersionsId :: !Text
+    , _aAppsId :: !Text
+    , _aServicesId :: !Text
+    , _aCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

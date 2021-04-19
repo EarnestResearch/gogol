@@ -53,8 +53,8 @@ module Network.Google.Resource.Calendar.Events.List
     , elTimeMax
     ) where
 
-import           Network.Google.AppsCalendar.Types
-import           Network.Google.Prelude
+import Network.Google.AppsCalendar.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @calendar.events.list@ method which the
 -- 'EventsList' request conforms to.
@@ -94,24 +94,24 @@ type EventsListResource =
 -- /See:/ 'eventsList' smart constructor.
 data EventsList =
   EventsList'
-    { _elSyncToken               :: !(Maybe Text)
-    , _elCalendarId              :: !Text
-    , _elTimeMin                 :: !(Maybe DateTime')
-    , _elOrderBy                 :: !(Maybe EventsListOrderBy)
-    , _elSingleEvents            :: !(Maybe Bool)
+    { _elSyncToken :: !(Maybe Text)
+    , _elCalendarId :: !Text
+    , _elTimeMin :: !(Maybe DateTime')
+    , _elOrderBy :: !(Maybe EventsListOrderBy)
+    , _elSingleEvents :: !(Maybe Bool)
     , _elPrivateExtendedProperty :: !(Maybe [Text])
-    , _elShowDeleted             :: !(Maybe Bool)
-    , _elQ                       :: !(Maybe Text)
-    , _elSharedExtendedProperty  :: !(Maybe [Text])
-    , _elMaxAttendees            :: !(Maybe (Textual Int32))
-    , _elICalUId                 :: !(Maybe Text)
-    , _elUpdatedMin              :: !(Maybe DateTime')
-    , _elPageToken               :: !(Maybe Text)
-    , _elTimeZone                :: !(Maybe Text)
-    , _elShowHiddenInvitations   :: !(Maybe Bool)
-    , _elMaxResults              :: !(Textual Int32)
-    , _elAlwaysIncludeEmail      :: !(Maybe Bool)
-    , _elTimeMax                 :: !(Maybe DateTime')
+    , _elShowDeleted :: !(Maybe Bool)
+    , _elQ :: !(Maybe Text)
+    , _elSharedExtendedProperty :: !(Maybe [Text])
+    , _elMaxAttendees :: !(Maybe (Textual Int32))
+    , _elICalUId :: !(Maybe Text)
+    , _elUpdatedMin :: !(Maybe DateTime')
+    , _elPageToken :: !(Maybe Text)
+    , _elTimeZone :: !(Maybe Text)
+    , _elShowHiddenInvitations :: !(Maybe Bool)
+    , _elMaxResults :: !(Textual Int32)
+    , _elAlwaysIncludeEmail :: !(Maybe Bool)
+    , _elTimeMax :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

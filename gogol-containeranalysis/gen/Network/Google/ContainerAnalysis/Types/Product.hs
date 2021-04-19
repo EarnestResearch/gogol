@@ -17,8 +17,8 @@
 --
 module Network.Google.ContainerAnalysis.Types.Product where
 
-import           Network.Google.ContainerAnalysis.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.ContainerAnalysis.Types.Sum
+import Network.Google.Prelude
 
 -- | This represents how a particular software package may be installed on a
 -- system.
@@ -27,7 +27,7 @@ import           Network.Google.Prelude
 data Installation =
   Installation'
     { _iLocation :: !(Maybe [Location])
-    , _iName     :: !(Maybe Text)
+    , _iName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -94,7 +94,7 @@ instance ToJSON Installation where
 -- /See:/ 'signature' smart constructor.
 data Signature =
   Signature'
-    { _sSignature   :: !(Maybe Bytes)
+    { _sSignature :: !(Maybe Bytes)
     , _sPublicKeyId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -158,10 +158,10 @@ instance ToJSON Signature where
 -- /See:/ 'vulnerability' smart constructor.
 data Vulnerability =
   Vulnerability'
-    { _vCvssScore      :: !(Maybe (Textual Double))
-    , _vCvssV3         :: !(Maybe CVSSv3)
-    , _vSeverity       :: !(Maybe VulnerabilitySeverity)
-    , _vDetails        :: !(Maybe [Detail])
+    { _vCvssScore :: !(Maybe (Textual Double))
+    , _vCvssV3 :: !(Maybe CVSSv3)
+    , _vSeverity :: !(Maybe VulnerabilitySeverity)
+    , _vDetails :: !(Maybe [Detail])
     , _vWindowsDetails :: !(Maybe [WindowsDetail])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -287,7 +287,7 @@ instance ToJSON Vulnerability where
 data Status =
   Status'
     { _sDetails :: !(Maybe [StatusDetailsItem])
-    , _sCode    :: !(Maybe (Textual Int32))
+    , _sCode :: !(Maybe (Textual Int32))
     , _sMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -391,19 +391,19 @@ instance ToJSON VulnerabilityOccurrencesSummary where
 -- /See:/ 'buildProvenance' smart constructor.
 data BuildProvenance =
   BuildProvenance'
-    { _bpCreator          :: !(Maybe Text)
+    { _bpCreator :: !(Maybe Text)
     , _bpSourceProvenance :: !(Maybe Source)
-    , _bpCommands         :: !(Maybe [Command])
-    , _bpTriggerId        :: !(Maybe Text)
-    , _bpStartTime        :: !(Maybe DateTime')
-    , _bpBuilderVersion   :: !(Maybe Text)
-    , _bpEndTime          :: !(Maybe DateTime')
-    , _bpId               :: !(Maybe Text)
-    , _bpProjectId        :: !(Maybe Text)
-    , _bpBuiltArtifacts   :: !(Maybe [Artifact])
-    , _bpBuildOptions     :: !(Maybe BuildProvenanceBuildOptions)
-    , _bpCreateTime       :: !(Maybe DateTime')
-    , _bpLogsURI          :: !(Maybe Text)
+    , _bpCommands :: !(Maybe [Command])
+    , _bpTriggerId :: !(Maybe Text)
+    , _bpStartTime :: !(Maybe DateTime')
+    , _bpBuilderVersion :: !(Maybe Text)
+    , _bpEndTime :: !(Maybe DateTime')
+    , _bpId :: !(Maybe Text)
+    , _bpProjectId :: !(Maybe Text)
+    , _bpBuiltArtifacts :: !(Maybe [Artifact])
+    , _bpBuildOptions :: !(Maybe BuildProvenanceBuildOptions)
+    , _bpCreateTime :: !(Maybe DateTime')
+    , _bpLogsURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -592,7 +592,7 @@ instance ToJSON BuildProvenance where
 -- /See:/ 'auditConfig' smart constructor.
 data AuditConfig =
   AuditConfig'
-    { _acService         :: !(Maybe Text)
+    { _acService :: !(Maybe Text)
     , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -645,20 +645,20 @@ instance ToJSON AuditConfig where
 -- /See:/ 'occurrence' smart constructor.
 data Occurrence =
   Occurrence'
-    { _oInstallation  :: !(Maybe GrafeasV1beta1PackageDetails)
+    { _oInstallation :: !(Maybe GrafeasV1beta1PackageDetails)
     , _oVulnerability :: !(Maybe GrafeasV1beta1VulnerabilityDetails)
-    , _oDerivedImage  :: !(Maybe GrafeasV1beta1ImageDetails)
-    , _oKind          :: !(Maybe OccurrenceKind)
-    , _oBuild         :: !(Maybe GrafeasV1beta1BuildDetails)
-    , _oAttestation   :: !(Maybe Details)
-    , _oUpdateTime    :: !(Maybe DateTime')
-    , _oName          :: !(Maybe Text)
-    , _oNoteName      :: !(Maybe Text)
-    , _oRemediation   :: !(Maybe Text)
-    , _oResource      :: !(Maybe Resource)
-    , _oDiscovered    :: !(Maybe GrafeasV1beta1DiscoveryDetails)
-    , _oCreateTime    :: !(Maybe DateTime')
-    , _oDeployment    :: !(Maybe GrafeasV1beta1DeploymentDetails)
+    , _oDerivedImage :: !(Maybe GrafeasV1beta1ImageDetails)
+    , _oKind :: !(Maybe OccurrenceKind)
+    , _oBuild :: !(Maybe GrafeasV1beta1BuildDetails)
+    , _oAttestation :: !(Maybe Details)
+    , _oUpdateTime :: !(Maybe DateTime')
+    , _oName :: !(Maybe Text)
+    , _oNoteName :: !(Maybe Text)
+    , _oRemediation :: !(Maybe Text)
+    , _oResource :: !(Maybe Resource)
+    , _oDiscovered :: !(Maybe GrafeasV1beta1DiscoveryDetails)
+    , _oCreateTime :: !(Maybe DateTime')
+    , _oDeployment :: !(Maybe GrafeasV1beta1DeploymentDetails)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -834,14 +834,14 @@ instance ToJSON Occurrence where
 -- /See:/ 'grafeasV1beta1VulnerabilityDetails' smart constructor.
 data GrafeasV1beta1VulnerabilityDetails =
   GrafeasV1beta1VulnerabilityDetails'
-    { _gvvdLongDescription   :: !(Maybe Text)
-    , _gvvdRelatedURLs       :: !(Maybe [RelatedURL])
-    , _gvvdCvssScore         :: !(Maybe (Textual Double))
-    , _gvvdPackageIssue      :: !(Maybe [PackageIssue])
-    , _gvvdSeverity          :: !(Maybe GrafeasV1beta1VulnerabilityDetailsSeverity)
+    { _gvvdLongDescription :: !(Maybe Text)
+    , _gvvdRelatedURLs :: !(Maybe [RelatedURL])
+    , _gvvdCvssScore :: !(Maybe (Textual Double))
+    , _gvvdPackageIssue :: !(Maybe [PackageIssue])
+    , _gvvdSeverity :: !(Maybe GrafeasV1beta1VulnerabilityDetailsSeverity)
     , _gvvdEffectiveSeverity :: !(Maybe GrafeasV1beta1VulnerabilityDetailsEffectiveSeverity)
-    , _gvvdShortDescription  :: !(Maybe Text)
-    , _gvvdType              :: !(Maybe Text)
+    , _gvvdShortDescription :: !(Maybe Text)
+    , _gvvdType :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1012,9 +1012,9 @@ instance ToJSON SourceFileHashes where
 -- /See:/ 'expr' smart constructor.
 data Expr =
   Expr'
-    { _eLocation    :: !(Maybe Text)
-    , _eExpression  :: !(Maybe Text)
-    , _eTitle       :: !(Maybe Text)
+    { _eLocation :: !(Maybe Text)
+    , _eExpression :: !(Maybe Text)
+    , _eTitle :: !(Maybe Text)
     , _eDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1090,12 +1090,12 @@ instance ToJSON Expr where
 -- /See:/ 'command' smart constructor.
 data Command =
   Command'
-    { _cDir     :: !(Maybe Text)
-    , _cArgs    :: !(Maybe [Text])
-    , _cEnv     :: !(Maybe [Text])
+    { _cDir :: !(Maybe Text)
+    , _cArgs :: !(Maybe [Text])
+    , _cEnv :: !(Maybe [Text])
     , _cWaitFor :: !(Maybe [Text])
-    , _cName    :: !(Maybe Text)
-    , _cId      :: !(Maybe Text)
+    , _cName :: !(Maybe Text)
+    , _cId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1186,7 +1186,7 @@ instance ToJSON Command where
 -- /See:/ 'knowledgeBase' smart constructor.
 data KnowledgeBase =
   KnowledgeBase'
-    { _kbURL  :: !(Maybe Text)
+    { _kbURL :: !(Maybe Text)
     , _kbName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1293,7 +1293,7 @@ instance ToJSON Discovery where
 data Hash =
   Hash'
     { _hValue :: !(Maybe Bytes)
-    , _hType  :: !(Maybe HashType)
+    , _hType :: !(Maybe HashType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1424,9 +1424,9 @@ instance ToJSON BatchCreateNotesRequest where
 data SourceContext =
   SourceContext'
     { _scCloudRepo :: !(Maybe CloudRepoSourceContext)
-    , _scGerrit    :: !(Maybe GerritSourceContext)
-    , _scGit       :: !(Maybe GitSourceContext)
-    , _scLabels    :: !(Maybe SourceContextLabels)
+    , _scGerrit :: !(Maybe GerritSourceContext)
+    , _scGit :: !(Maybe GitSourceContext)
+    , _scLabels :: !(Maybe SourceContextLabels)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1493,11 +1493,11 @@ instance ToJSON SourceContext where
 -- /See:/ 'distribution' smart constructor.
 data Distribution =
   Distribution'
-    { _dURL           :: !(Maybe Text)
-    , _dMaintainer    :: !(Maybe Text)
-    , _dArchitecture  :: !(Maybe DistributionArchitecture)
-    , _dCpeURI        :: !(Maybe Text)
-    , _dDescription   :: !(Maybe Text)
+    { _dURL :: !(Maybe Text)
+    , _dMaintainer :: !(Maybe Text)
+    , _dArchitecture :: !(Maybe DistributionArchitecture)
+    , _dCpeURI :: !(Maybe Text)
+    , _dDescription :: !(Maybe Text)
     , _dLatestVersion :: !(Maybe Version)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1633,7 +1633,7 @@ instance ToJSON BatchCreateOccurrencesRequest where
 -- /See:/ 'listOccurrencesResponse' smart constructor.
 data ListOccurrencesResponse =
   ListOccurrencesResponse'
-    { _lorOccurrences   :: !(Maybe [Occurrence])
+    { _lorOccurrences :: !(Maybe [Occurrence])
     , _lorNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1691,9 +1691,9 @@ instance ToJSON ListOccurrencesResponse where
 -- /See:/ 'location' smart constructor.
 data Location =
   Location'
-    { _lPath    :: !(Maybe Text)
+    { _lPath :: !(Maybe Text)
     , _lVersion :: !(Maybe Version)
-    , _lCpeURI  :: !(Maybe Text)
+    , _lCpeURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1773,9 +1773,9 @@ instance ToJSON Empty where
 data GerritSourceContext =
   GerritSourceContext'
     { _gscGerritProject :: !(Maybe Text)
-    , _gscRevisionId    :: !(Maybe Text)
-    , _gscHostURI       :: !(Maybe Text)
-    , _gscAliasContext  :: !(Maybe AliasContext)
+    , _gscRevisionId :: !(Maybe Text)
+    , _gscHostURI :: !(Maybe Text)
+    , _gscAliasContext :: !(Maybe AliasContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1850,7 +1850,7 @@ instance ToJSON GerritSourceContext where
 -- /See:/ 'repoId' smart constructor.
 data RepoId =
   RepoId'
-    { _riUid           :: !(Maybe Text)
+    { _riUid :: !(Maybe Text)
     , _riProjectRepoId :: !(Maybe ProjectRepoId)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1897,7 +1897,7 @@ instance ToJSON RepoId where
 -- /See:/ 'listNoteOccurrencesResponse' smart constructor.
 data ListNoteOccurrencesResponse =
   ListNoteOccurrencesResponse'
-    { _lnorOccurrences   :: !(Maybe [Occurrence])
+    { _lnorOccurrences :: !(Maybe [Occurrence])
     , _lnorNextPageToken :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1951,22 +1951,22 @@ instance ToJSON ListNoteOccurrencesResponse where
 -- /See:/ 'note' smart constructor.
 data Note =
   Note'
-    { _nVulnerability        :: !(Maybe Vulnerability)
-    , _nLongDescription      :: !(Maybe Text)
+    { _nVulnerability :: !(Maybe Vulnerability)
+    , _nLongDescription :: !(Maybe Text)
     , _nAttestationAuthority :: !(Maybe Authority)
-    , _nDiscovery            :: !(Maybe Discovery)
-    , _nKind                 :: !(Maybe NoteKind)
-    , _nRelatedNoteNames     :: !(Maybe [Text])
-    , _nBuild                :: !(Maybe Build)
-    , _nDeployable           :: !(Maybe Deployable)
-    , _nRelatedURL           :: !(Maybe [RelatedURL])
-    , _nUpdateTime           :: !(Maybe DateTime')
-    , _nShortDescription     :: !(Maybe Text)
-    , _nName                 :: !(Maybe Text)
-    , _nBaseImage            :: !(Maybe Basis)
-    , _nPackage              :: !(Maybe Package)
-    , _nExpirationTime       :: !(Maybe DateTime')
-    , _nCreateTime           :: !(Maybe DateTime')
+    , _nDiscovery :: !(Maybe Discovery)
+    , _nKind :: !(Maybe NoteKind)
+    , _nRelatedNoteNames :: !(Maybe [Text])
+    , _nBuild :: !(Maybe Build)
+    , _nDeployable :: !(Maybe Deployable)
+    , _nRelatedURL :: !(Maybe [RelatedURL])
+    , _nUpdateTime :: !(Maybe DateTime')
+    , _nShortDescription :: !(Maybe Text)
+    , _nName :: !(Maybe Text)
+    , _nBaseImage :: !(Maybe Basis)
+    , _nPackage :: !(Maybe Package)
+    , _nExpirationTime :: !(Maybe DateTime')
+    , _nCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2171,17 +2171,17 @@ instance ToJSON Note where
 -- /See:/ 'cVSSv3' smart constructor.
 data CVSSv3 =
   CVSSv3'
-    { _cvssAttackComplexity      :: !(Maybe CVSSv3AttackComplexity)
-    , _cvssIntegrityImpact       :: !(Maybe CVSSv3IntegrityImpact)
-    , _cvssPrivilegesRequired    :: !(Maybe CVSSv3PrivilegesRequired)
-    , _cvssUserInteraction       :: !(Maybe CVSSv3UserInteraction)
-    , _cvssAttackVector          :: !(Maybe CVSSv3AttackVector)
+    { _cvssAttackComplexity :: !(Maybe CVSSv3AttackComplexity)
+    , _cvssIntegrityImpact :: !(Maybe CVSSv3IntegrityImpact)
+    , _cvssPrivilegesRequired :: !(Maybe CVSSv3PrivilegesRequired)
+    , _cvssUserInteraction :: !(Maybe CVSSv3UserInteraction)
+    , _cvssAttackVector :: !(Maybe CVSSv3AttackVector)
     , _cvssConfidentialityImpact :: !(Maybe CVSSv3ConfidentialityImpact)
-    , _cvssScope                 :: !(Maybe CVSSv3Scope)
-    , _cvssImpactScore           :: !(Maybe (Textual Double))
-    , _cvssBaseScore             :: !(Maybe (Textual Double))
-    , _cvssAvailabilityImpact    :: !(Maybe CVSSv3AvailabilityImpact)
-    , _cvssExploitabilityScore   :: !(Maybe (Textual Double))
+    , _cvssScope :: !(Maybe CVSSv3Scope)
+    , _cvssImpactScore :: !(Maybe (Textual Double))
+    , _cvssBaseScore :: !(Maybe (Textual Double))
+    , _cvssAvailabilityImpact :: !(Maybe CVSSv3AvailabilityImpact)
+    , _cvssExploitabilityScore :: !(Maybe (Textual Double))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2369,7 +2369,7 @@ instance ToJSON BatchCreateNotesResponse where
 -- /See:/ 'projectRepoId' smart constructor.
 data ProjectRepoId =
   ProjectRepoId'
-    { _priRepoName  :: !(Maybe Text)
+    { _priRepoName :: !(Maybe Text)
     , _priProjectId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2522,8 +2522,8 @@ instance ToJSON Hint where
 data PackageIssue =
   PackageIssue'
     { _piAffectedLocation :: !(Maybe VulnerabilityLocation)
-    , _piFixedLocation    :: !(Maybe VulnerabilityLocation)
-    , _piSeverityName     :: !(Maybe Text)
+    , _piFixedLocation :: !(Maybe VulnerabilityLocation)
+    , _piSeverityName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2624,7 +2624,7 @@ instance ToJSON StatusDetailsItem where
 -- /See:/ 'build' smart constructor.
 data Build =
   Build'
-    { _bSignature      :: !(Maybe BuildSignature)
+    { _bSignature :: !(Maybe BuildSignature)
     , _bBuilderVersion :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2681,7 +2681,7 @@ instance ToJSON Build where
 data Attestation =
   Attestation'
     { _aGenericSignedAttestation :: !(Maybe GenericSignedAttestation)
-    , _aPgpSignedAttestation     :: !(Maybe PgpSignedAttestation)
+    , _aPgpSignedAttestation :: !(Maybe PgpSignedAttestation)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2734,8 +2734,8 @@ instance ToJSON Attestation where
 data Artifact =
   Artifact'
     { _aChecksum :: !(Maybe Text)
-    , _aNames    :: !(Maybe [Text])
-    , _aId       :: !(Maybe Text)
+    , _aNames :: !(Maybe [Text])
+    , _aId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2796,7 +2796,7 @@ instance ToJSON Artifact where
 data SetIAMPolicyRequest =
   SetIAMPolicyRequest'
     { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy     :: !(Maybe Policy)
+    , _siprPolicy :: !(Maybe Policy)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2968,7 +2968,7 @@ data VulnerabilityLocation =
   VulnerabilityLocation'
     { _vlVersion :: !(Maybe Version)
     , _vlPackage :: !(Maybe Text)
-    , _vlCpeURI  :: !(Maybe Text)
+    , _vlCpeURI :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3026,10 +3026,10 @@ instance ToJSON VulnerabilityLocation where
 -- /See:/ 'fixableTotalByDigest' smart constructor.
 data FixableTotalByDigest =
   FixableTotalByDigest'
-    { _ftbdSeverity     :: !(Maybe FixableTotalByDigestSeverity)
+    { _ftbdSeverity :: !(Maybe FixableTotalByDigestSeverity)
     , _ftbdFixableCount :: !(Maybe (Textual Int64))
-    , _ftbdResource     :: !(Maybe Resource)
-    , _ftbdTotalCount   :: !(Maybe (Textual Int64))
+    , _ftbdResource :: !(Maybe Resource)
+    , _ftbdTotalCount :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3104,7 +3104,7 @@ instance ToJSON FixableTotalByDigest where
 -- /See:/ 'relatedURL' smart constructor.
 data RelatedURL =
   RelatedURL'
-    { _ruURL   :: !(Maybe Text)
+    { _ruURL :: !(Maybe Text)
     , _ruLabel :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3264,7 +3264,7 @@ instance ToJSON SourceContextLabels where
 data ListScanConfigsResponse =
   ListScanConfigsResponse'
     { _lscrNextPageToken :: !(Maybe Text)
-    , _lscrScanConfigs   :: !(Maybe [ScanConfig])
+    , _lscrScanConfigs :: !(Maybe [ScanConfig])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3319,10 +3319,10 @@ instance ToJSON ListScanConfigsResponse where
 -- /See:/ 'version' smart constructor.
 data Version =
   Version'
-    { _vKind     :: !(Maybe VersionKind)
-    , _vName     :: !(Maybe Text)
+    { _vKind :: !(Maybe VersionKind)
+    , _vName :: !(Maybe Text)
     , _vRevision :: !(Maybe Text)
-    , _vEpoch    :: !(Maybe (Textual Int32))
+    , _vEpoch :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3432,8 +3432,8 @@ instance ToJSON FileHashes where
 data Resource =
   Resource'
     { _rContentHash :: !(Maybe Hash)
-    , _rURI         :: !(Maybe Text)
-    , _rName        :: !(Maybe Text)
+    , _rURI :: !(Maybe Text)
+    , _rName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3529,7 +3529,7 @@ instance ToJSON GrafeasV1beta1DeploymentDetails where
 -- /See:/ 'googleDevtoolsContaineranalysisV1alpha1OperationMetadata' smart constructor.
 data GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata =
   GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata'
-    { _gdcvomEndTime    :: !(Maybe DateTime')
+    { _gdcvomEndTime :: !(Maybe DateTime')
     , _gdcvomCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3627,7 +3627,7 @@ instance ToJSON Details where
 data Package =
   Package'
     { _pDistribution :: !(Maybe [Distribution])
-    , _pName         :: !(Maybe Text)
+    , _pName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3676,7 +3676,7 @@ instance ToJSON Package where
 data ListNotesResponse =
   ListNotesResponse'
     { _lnrNextPageToken :: !(Maybe Text)
-    , _lnrNotes         :: !(Maybe [Note])
+    , _lnrNotes :: !(Maybe [Note])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3730,8 +3730,8 @@ instance ToJSON ListNotesResponse where
 data BuildSignature =
   BuildSignature'
     { _bsSignature :: !(Maybe Bytes)
-    , _bsKeyType   :: !(Maybe BuildSignatureKeyType)
-    , _bsKeyId     :: !(Maybe Text)
+    , _bsKeyType :: !(Maybe BuildSignatureKeyType)
+    , _bsKeyId :: !(Maybe Text)
     , _bsPublicKey :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3861,10 +3861,10 @@ instance ToJSON TestIAMPermissionsRequest where
 -- /See:/ 'discovered' smart constructor.
 data Discovered =
   Discovered'
-    { _dLastAnalysisTime    :: !(Maybe DateTime')
+    { _dLastAnalysisTime :: !(Maybe DateTime')
     , _dAnalysisStatusError :: !(Maybe Status)
-    , _dAnalysisStatus      :: !(Maybe DiscoveredAnalysisStatus)
-    , _dContinuousAnalysis  :: !(Maybe DiscoveredContinuousAnalysis)
+    , _dAnalysisStatus :: !(Maybe DiscoveredAnalysisStatus)
+    , _dContinuousAnalysis :: !(Maybe DiscoveredContinuousAnalysis)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3946,9 +3946,9 @@ instance ToJSON Discovered where
 data Derived =
   Derived'
     { _dBaseResourceURL :: !(Maybe Text)
-    , _dFingerprint     :: !(Maybe Fingerprint)
-    , _dDistance        :: !(Maybe (Textual Int32))
-    , _dLayerInfo       :: !(Maybe [Layer])
+    , _dFingerprint :: !(Maybe Fingerprint)
+    , _dDistance :: !(Maybe (Textual Int32))
+    , _dLayerInfo :: !(Maybe [Layer])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4027,7 +4027,7 @@ instance ToJSON Derived where
 data GrafeasV1beta1BuildDetails =
   GrafeasV1beta1BuildDetails'
     { _gvbdProvenanceBytes :: !(Maybe Text)
-    , _gvbdProvenance      :: !(Maybe BuildProvenance)
+    , _gvbdProvenance :: !(Maybe BuildProvenance)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4085,10 +4085,10 @@ instance ToJSON GrafeasV1beta1BuildDetails where
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
-    { _sContext                  :: !(Maybe SourceContext)
-    , _sAdditionalContexts       :: !(Maybe [SourceContext])
+    { _sContext :: !(Maybe SourceContext)
+    , _sAdditionalContexts :: !(Maybe [SourceContext])
     , _sArtifactStorageSourceURI :: !(Maybe Text)
-    , _sFileHashes               :: !(Maybe SourceFileHashes)
+    , _sFileHashes :: !(Maybe SourceFileHashes)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4175,11 +4175,11 @@ instance ToJSON Source where
 -- /See:/ 'scanConfig' smart constructor.
 data ScanConfig =
   ScanConfig'
-    { _scEnabled     :: !(Maybe Bool)
-    , _scUpdateTime  :: !(Maybe DateTime')
-    , _scName        :: !(Maybe Text)
+    { _scEnabled :: !(Maybe Bool)
+    , _scUpdateTime :: !(Maybe DateTime')
+    , _scName :: !(Maybe Text)
     , _scDescription :: !(Maybe Text)
-    , _scCreateTime  :: !(Maybe DateTime')
+    , _scCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4268,8 +4268,8 @@ instance ToJSON ScanConfig where
 data GenericSignedAttestation =
   GenericSignedAttestation'
     { _gsaSerializedPayload :: !(Maybe Bytes)
-    , _gsaSignatures        :: !(Maybe [Signature])
-    , _gsaContentType       :: !(Maybe GenericSignedAttestationContentType)
+    , _gsaSignatures :: !(Maybe [Signature])
+    , _gsaContentType :: !(Maybe GenericSignedAttestationContentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4346,7 +4346,7 @@ instance ToJSON GenericSignedAttestation where
 -- /See:/ 'gitSourceContext' smart constructor.
 data GitSourceContext =
   GitSourceContext'
-    { _gURL        :: !(Maybe Text)
+    { _gURL :: !(Maybe Text)
     , _gRevisionId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4452,9 +4452,9 @@ instance ToJSON TestIAMPermissionsResponse where
 data Policy =
   Policy'
     { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag         :: !(Maybe Bytes)
-    , _pVersion      :: !(Maybe (Textual Int32))
-    , _pBindings     :: !(Maybe [Binding])
+    , _pEtag :: !(Maybe Bytes)
+    , _pVersion :: !(Maybe (Textual Int32))
+    , _pBindings :: !(Maybe [Binding])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4588,8 +4588,8 @@ instance ToJSON Layer where
 -- /See:/ 'cloudRepoSourceContext' smart constructor.
 data CloudRepoSourceContext =
   CloudRepoSourceContext'
-    { _crscRepoId       :: !(Maybe RepoId)
-    , _crscRevisionId   :: !(Maybe Text)
+    { _crscRepoId :: !(Maybe RepoId)
+    , _crscRevisionId :: !(Maybe Text)
     , _crscAliasContext :: !(Maybe AliasContext)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4656,7 +4656,7 @@ instance ToJSON CloudRepoSourceContext where
 -- /See:/ 'auditLogConfig' smart constructor.
 data AuditLogConfig =
   AuditLogConfig'
-    { _alcLogType         :: !(Maybe AuditLogConfigLogType)
+    { _alcLogType :: !(Maybe AuditLogConfigLogType)
     , _alcExemptedMembers :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4711,8 +4711,8 @@ instance ToJSON AuditLogConfig where
 -- /See:/ 'pgpSignedAttestation' smart constructor.
 data PgpSignedAttestation =
   PgpSignedAttestation'
-    { _psaSignature   :: !(Maybe Text)
-    , _psaPgpKeyId    :: !(Maybe Text)
+    { _psaSignature :: !(Maybe Text)
+    , _psaPgpKeyId :: !(Maybe Text)
     , _psaContentType :: !(Maybe PgpSignedAttestationContentType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4793,9 +4793,9 @@ instance ToJSON PgpSignedAttestation where
 -- /See:/ 'windowsDetail' smart constructor.
 data WindowsDetail =
   WindowsDetail'
-    { _wdName        :: !(Maybe Text)
-    , _wdFixingKbs   :: !(Maybe [KnowledgeBase])
-    , _wdCpeURI      :: !(Maybe Text)
+    { _wdName :: !(Maybe Text)
+    , _wdFixingKbs :: !(Maybe [KnowledgeBase])
+    , _wdCpeURI :: !(Maybe Text)
     , _wdDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4954,8 +4954,8 @@ instance ToJSON AliasContext where
 -- /See:/ 'binding' smart constructor.
 data Binding =
   Binding'
-    { _bMembers   :: !(Maybe [Text])
-    , _bRole      :: !(Maybe Text)
+    { _bMembers :: !(Maybe [Text])
+    , _bRole :: !(Maybe Text)
     , _bCondition :: !(Maybe Expr)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5032,14 +5032,14 @@ instance ToJSON Binding where
 data Detail =
   Detail'
     { _detMinAffectedVersion :: !(Maybe Version)
-    , _detPackageType        :: !(Maybe Text)
-    , _detIsObsolete         :: !(Maybe Bool)
-    , _detFixedLocation      :: !(Maybe VulnerabilityLocation)
-    , _detSeverityName       :: !(Maybe Text)
+    , _detPackageType :: !(Maybe Text)
+    , _detIsObsolete :: !(Maybe Bool)
+    , _detFixedLocation :: !(Maybe VulnerabilityLocation)
+    , _detSeverityName :: !(Maybe Text)
     , _detMaxAffectedVersion :: !(Maybe Version)
-    , _detPackage            :: !(Maybe Text)
-    , _detCpeURI             :: !(Maybe Text)
-    , _detDescription        :: !(Maybe Text)
+    , _detPackage :: !(Maybe Text)
+    , _detCpeURI :: !(Maybe Text)
+    , _detDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5254,13 +5254,13 @@ instance ToJSON GrafeasV1beta1PackageDetails where
 -- /See:/ 'deployment' smart constructor.
 data Deployment =
   Deployment'
-    { _depResourceURI  :: !(Maybe [Text])
-    , _depPlatform     :: !(Maybe DeploymentPlatform)
-    , _depConfig       :: !(Maybe Text)
+    { _depResourceURI :: !(Maybe [Text])
+    , _depPlatform :: !(Maybe DeploymentPlatform)
+    , _depConfig :: !(Maybe Text)
     , _depUndeployTime :: !(Maybe DateTime')
-    , _depDeployTime   :: !(Maybe DateTime')
-    , _depAddress      :: !(Maybe Text)
-    , _depUserEmail    :: !(Maybe Text)
+    , _depDeployTime :: !(Maybe DateTime')
+    , _depAddress :: !(Maybe Text)
+    , _depUserEmail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

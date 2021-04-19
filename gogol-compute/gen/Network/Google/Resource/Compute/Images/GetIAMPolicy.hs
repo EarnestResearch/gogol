@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.Images.GetIAMPolicy
     , igipResource
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.images.getIamPolicy@ method which the
 -- 'ImagesGetIAMPolicy' request conforms to.
@@ -60,7 +60,7 @@ type ImagesGetIAMPolicyResource =
 -- /See:/ 'imagesGetIAMPolicy' smart constructor.
 data ImagesGetIAMPolicy =
   ImagesGetIAMPolicy'
-    { _igipProject  :: !Text
+    { _igipProject :: !Text
     , _igipResource :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

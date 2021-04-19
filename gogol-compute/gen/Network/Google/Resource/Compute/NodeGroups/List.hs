@@ -42,8 +42,8 @@ module Network.Google.Resource.Compute.NodeGroups.List
     , nglMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.nodeGroups.list@ method which the
 -- 'NodeGroupsList' request conforms to.
@@ -67,11 +67,11 @@ type NodeGroupsListResource =
 -- /See:/ 'nodeGroupsList' smart constructor.
 data NodeGroupsList =
   NodeGroupsList'
-    { _nglOrderBy    :: !(Maybe Text)
-    , _nglProject    :: !Text
-    , _nglZone       :: !Text
-    , _nglFilter     :: !(Maybe Text)
-    , _nglPageToken  :: !(Maybe Text)
+    { _nglOrderBy :: !(Maybe Text)
+    , _nglProject :: !Text
+    , _nglZone :: !Text
+    , _nglFilter :: !(Maybe Text)
+    , _nglPageToken :: !(Maybe Text)
     , _nglMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

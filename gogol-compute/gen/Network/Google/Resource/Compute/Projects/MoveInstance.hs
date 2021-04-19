@@ -39,8 +39,8 @@ module Network.Google.Resource.Compute.Projects.MoveInstance
     , pmiPayload
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.projects.moveInstance@ method which the
 -- 'ProjectsMoveInstance' request conforms to.
@@ -62,8 +62,8 @@ type ProjectsMoveInstanceResource =
 data ProjectsMoveInstance =
   ProjectsMoveInstance'
     { _pmiRequestId :: !(Maybe Text)
-    , _pmiProject   :: !Text
-    , _pmiPayload   :: !InstanceMoveRequest
+    , _pmiProject :: !Text
+    , _pmiPayload :: !InstanceMoveRequest
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

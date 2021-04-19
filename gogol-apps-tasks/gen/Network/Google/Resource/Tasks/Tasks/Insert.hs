@@ -39,8 +39,8 @@ module Network.Google.Resource.Tasks.Tasks.Insert
     , tiPrevious
     ) where
 
-import           Network.Google.AppsTasks.Types
-import           Network.Google.Prelude
+import Network.Google.AppsTasks.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @tasks.tasks.insert@ method which the
 -- 'TasksInsert' request conforms to.
@@ -60,8 +60,8 @@ type TasksInsertResource =
 -- /See:/ 'tasksInsert' smart constructor.
 data TasksInsert =
   TasksInsert'
-    { _tiParent   :: !(Maybe Text)
-    , _tiPayload  :: !Task
+    { _tiParent :: !(Maybe Text)
+    , _tiPayload :: !Task
     , _tiTaskList :: !Text
     , _tiPrevious :: !(Maybe Text)
     }

@@ -44,8 +44,8 @@ module Network.Google.Resource.Calendar.Events.Patch
     , epEventId
     ) where
 
-import           Network.Google.AppsCalendar.Types
-import           Network.Google.Prelude
+import Network.Google.AppsCalendar.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @calendar.events.patch@ method which the
 -- 'EventsPatch' request conforms to.
@@ -71,14 +71,14 @@ type EventsPatchResource =
 data EventsPatch =
   EventsPatch'
     { _epConferenceDataVersion :: !(Maybe (Textual Int32))
-    , _epCalendarId            :: !Text
-    , _epPayload               :: !Event
-    , _epMaxAttendees          :: !(Maybe (Textual Int32))
-    , _epSendNotifications     :: !(Maybe Bool)
-    , _epSupportsAttachments   :: !(Maybe Bool)
-    , _epSendUpdates           :: !(Maybe EventsPatchSendUpdates)
-    , _epAlwaysIncludeEmail    :: !(Maybe Bool)
-    , _epEventId               :: !Text
+    , _epCalendarId :: !Text
+    , _epPayload :: !Event
+    , _epMaxAttendees :: !(Maybe (Textual Int32))
+    , _epSendNotifications :: !(Maybe Bool)
+    , _epSupportsAttachments :: !(Maybe Bool)
+    , _epSendUpdates :: !(Maybe EventsPatchSendUpdates)
+    , _epAlwaysIncludeEmail :: !(Maybe Bool)
+    , _epEventId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

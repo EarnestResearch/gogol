@@ -38,8 +38,8 @@ module Network.Google.Resource.DFAReporting.Campaigns.Patch
     , cpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.campaigns.patch@ method which the
 -- 'CampaignsPatch' request conforms to.
@@ -59,8 +59,8 @@ type CampaignsPatchResource =
 data CampaignsPatch =
   CampaignsPatch'
     { _cpProFileId :: !(Textual Int64)
-    , _cpPayload   :: !Campaign
-    , _cpId        :: !(Textual Int64)
+    , _cpPayload :: !Campaign
+    , _cpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

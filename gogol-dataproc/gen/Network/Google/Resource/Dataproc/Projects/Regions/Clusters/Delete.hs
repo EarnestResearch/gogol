@@ -45,8 +45,8 @@ module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.Delete
     , prcdCallback
     ) where
 
-import           Network.Google.Dataproc.Types
-import           Network.Google.Prelude
+import Network.Google.Dataproc.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dataproc.projects.regions.clusters.delete@ method which the
 -- 'ProjectsRegionsClustersDelete' request conforms to.
@@ -73,16 +73,16 @@ type ProjectsRegionsClustersDeleteResource =
 -- /See:/ 'projectsRegionsClustersDelete' smart constructor.
 data ProjectsRegionsClustersDelete =
   ProjectsRegionsClustersDelete'
-    { _prcdXgafv          :: !(Maybe Xgafv)
-    , _prcdRequestId      :: !(Maybe Text)
-    , _prcdClusterUuid    :: !(Maybe Text)
+    { _prcdXgafv :: !(Maybe Xgafv)
+    , _prcdRequestId :: !(Maybe Text)
+    , _prcdClusterUuid :: !(Maybe Text)
     , _prcdUploadProtocol :: !(Maybe Text)
-    , _prcdAccessToken    :: !(Maybe Text)
-    , _prcdUploadType     :: !(Maybe Text)
-    , _prcdClusterName    :: !Text
-    , _prcdRegion         :: !Text
-    , _prcdProjectId      :: !Text
-    , _prcdCallback       :: !(Maybe Text)
+    , _prcdAccessToken :: !(Maybe Text)
+    , _prcdUploadType :: !(Maybe Text)
+    , _prcdClusterName :: !Text
+    , _prcdRegion :: !Text
+    , _prcdProjectId :: !Text
+    , _prcdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

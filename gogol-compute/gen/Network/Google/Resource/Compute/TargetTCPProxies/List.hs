@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.TargetTCPProxies.List
     , ttplMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.targetTcpProxies.list@ method which the
 -- 'TargetTCPProxiesList' request conforms to.
@@ -66,10 +66,10 @@ type TargetTCPProxiesListResource =
 -- /See:/ 'targetTCPProxiesList' smart constructor.
 data TargetTCPProxiesList =
   TargetTCPProxiesList'
-    { _ttplOrderBy    :: !(Maybe Text)
-    , _ttplProject    :: !Text
-    , _ttplFilter     :: !(Maybe Text)
-    , _ttplPageToken  :: !(Maybe Text)
+    { _ttplOrderBy :: !(Maybe Text)
+    , _ttplProject :: !Text
+    , _ttplFilter :: !(Maybe Text)
+    , _ttplPageToken :: !(Maybe Text)
     , _ttplMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

@@ -43,8 +43,8 @@ module Network.Google.Resource.FirebaseHosting.Sites.UpdateConfig
     , sucCallback
     ) where
 
-import           Network.Google.FirebaseHosting.Types
-import           Network.Google.Prelude
+import Network.Google.FirebaseHosting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firebasehosting.sites.updateConfig@ method which the
 -- 'SitesUpdateConfig' request conforms to.
@@ -66,14 +66,14 @@ type SitesUpdateConfigResource =
 -- /See:/ 'sitesUpdateConfig' smart constructor.
 data SitesUpdateConfig =
   SitesUpdateConfig'
-    { _sucXgafv          :: !(Maybe Xgafv)
+    { _sucXgafv :: !(Maybe Xgafv)
     , _sucUploadProtocol :: !(Maybe Text)
-    , _sucUpdateMask     :: !(Maybe GFieldMask)
-    , _sucAccessToken    :: !(Maybe Text)
-    , _sucUploadType     :: !(Maybe Text)
-    , _sucPayload        :: !SiteConfig
-    , _sucName           :: !Text
-    , _sucCallback       :: !(Maybe Text)
+    , _sucUpdateMask :: !(Maybe GFieldMask)
+    , _sucAccessToken :: !(Maybe Text)
+    , _sucUploadType :: !(Maybe Text)
+    , _sucPayload :: !SiteConfig
+    , _sucName :: !Text
+    , _sucCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

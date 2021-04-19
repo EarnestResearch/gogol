@@ -41,8 +41,8 @@ module Network.Google.Resource.Compute.URLMaps.List
     , umlMaxResults
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.urlMaps.list@ method which the
 -- 'URLMapsList' request conforms to.
@@ -65,10 +65,10 @@ type URLMapsListResource =
 -- /See:/ 'urlMapsList' smart constructor.
 data URLMapsList =
   URLMapsList'
-    { _umlOrderBy    :: !(Maybe Text)
-    , _umlProject    :: !Text
-    , _umlFilter     :: !(Maybe Text)
-    , _umlPageToken  :: !(Maybe Text)
+    { _umlOrderBy :: !(Maybe Text)
+    , _umlProject :: !Text
+    , _umlFilter :: !(Maybe Text)
+    , _umlPageToken :: !(Maybe Text)
     , _umlMaxResults :: !(Textual Word32)
     }
   deriving (Eq, Show, Data, Typeable, Generic)

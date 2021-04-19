@@ -42,8 +42,8 @@ module Network.Google.Resource.Blogger.Comments.ListByBlog
     , clbbMaxResults
     ) where
 
-import           Network.Google.Blogger.Types
-import           Network.Google.Prelude
+import Network.Google.Blogger.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @blogger.comments.listByBlog@ method which the
 -- 'CommentsListByBlog' request conforms to.
@@ -66,13 +66,13 @@ type CommentsListByBlogResource =
 -- /See:/ 'commentsListByBlog' smart constructor.
 data CommentsListByBlog =
   CommentsListByBlog'
-    { _clbbStatus      :: !(Maybe [CommentsListByBlogStatus])
-    , _clbbEndDate     :: !(Maybe DateTime')
-    , _clbbBlogId      :: !Text
-    , _clbbStartDate   :: !(Maybe DateTime')
+    { _clbbStatus :: !(Maybe [CommentsListByBlogStatus])
+    , _clbbEndDate :: !(Maybe DateTime')
+    , _clbbBlogId :: !Text
+    , _clbbStartDate :: !(Maybe DateTime')
     , _clbbFetchBodies :: !(Maybe Bool)
-    , _clbbPageToken   :: !(Maybe Text)
-    , _clbbMaxResults  :: !(Maybe (Textual Word32))
+    , _clbbPageToken :: !(Maybe Text)
+    , _clbbMaxResults :: !(Maybe (Textual Word32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

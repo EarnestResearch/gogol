@@ -39,8 +39,8 @@ module Network.Google.Resource.DFAReporting.ContentCategories.Patch
     , ccpId
     ) where
 
-import           Network.Google.DFAReporting.Types
-import           Network.Google.Prelude
+import Network.Google.DFAReporting.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @dfareporting.contentCategories.patch@ method which the
 -- 'ContentCategoriesPatch' request conforms to.
@@ -62,8 +62,8 @@ type ContentCategoriesPatchResource =
 data ContentCategoriesPatch =
   ContentCategoriesPatch'
     { _ccpProFileId :: !(Textual Int64)
-    , _ccpPayload   :: !ContentCategory
-    , _ccpId        :: !(Textual Int64)
+    , _ccpPayload :: !ContentCategory
+    , _ccpId :: !(Textual Int64)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

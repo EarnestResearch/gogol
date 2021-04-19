@@ -38,8 +38,8 @@ module Network.Google.Resource.Compute.LicenseCodes.Get
     , lcgLicenseCode
     ) where
 
-import           Network.Google.Compute.Types
-import           Network.Google.Prelude
+import Network.Google.Compute.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @compute.licenseCodes.get@ method which the
 -- 'LicenseCodesGet' request conforms to.
@@ -59,7 +59,7 @@ type LicenseCodesGetResource =
 -- /See:/ 'licenseCodesGet' smart constructor.
 data LicenseCodesGet =
   LicenseCodesGet'
-    { _lcgProject     :: !Text
+    { _lcgProject :: !Text
     , _lcgLicenseCode :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)

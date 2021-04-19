@@ -38,8 +38,8 @@ module Network.Google.Resource.Directory.Schemas.Patch
     , spSchemaKey
     ) where
 
-import           Network.Google.Directory.Types
-import           Network.Google.Prelude
+import Network.Google.Directory.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @directory.schemas.patch@ method which the
 -- 'SchemasPatch' request conforms to.
@@ -59,9 +59,9 @@ type SchemasPatchResource =
 -- /See:/ 'schemasPatch' smart constructor.
 data SchemasPatch =
   SchemasPatch'
-    { _spPayload    :: !Schema
+    { _spPayload :: !Schema
     , _spCustomerId :: !Text
-    , _spSchemaKey  :: !Text
+    , _spSchemaKey :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

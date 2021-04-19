@@ -47,8 +47,8 @@ module Network.Google.Resource.PubSub.Projects.Snapshots.TestIAMPermissions
     , pstipCallback
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.PubSub.Types
+import Network.Google.Prelude
+import Network.Google.PubSub.Types
 
 -- | A resource alias for @pubsub.projects.snapshots.testIamPermissions@ method which the
 -- 'ProjectsSnapshotsTestIAMPermissions' request conforms to.
@@ -74,13 +74,13 @@ type ProjectsSnapshotsTestIAMPermissionsResource =
 -- /See:/ 'projectsSnapshotsTestIAMPermissions' smart constructor.
 data ProjectsSnapshotsTestIAMPermissions =
   ProjectsSnapshotsTestIAMPermissions'
-    { _pstipXgafv          :: !(Maybe Xgafv)
+    { _pstipXgafv :: !(Maybe Xgafv)
     , _pstipUploadProtocol :: !(Maybe Text)
-    , _pstipAccessToken    :: !(Maybe Text)
-    , _pstipUploadType     :: !(Maybe Text)
-    , _pstipPayload        :: !TestIAMPermissionsRequest
-    , _pstipResource       :: !Text
-    , _pstipCallback       :: !(Maybe Text)
+    , _pstipAccessToken :: !(Maybe Text)
+    , _pstipUploadType :: !(Maybe Text)
+    , _pstipPayload :: !TestIAMPermissionsRequest
+    , _pstipResource :: !Text
+    , _pstipCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

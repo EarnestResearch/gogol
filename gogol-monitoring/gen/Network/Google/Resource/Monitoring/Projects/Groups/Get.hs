@@ -41,8 +41,8 @@ module Network.Google.Resource.Monitoring.Projects.Groups.Get
     , pggCallback
     ) where
 
-import           Network.Google.Monitoring.Types
-import           Network.Google.Prelude
+import Network.Google.Monitoring.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @monitoring.projects.groups.get@ method which the
 -- 'ProjectsGroupsGet' request conforms to.
@@ -61,12 +61,12 @@ type ProjectsGroupsGetResource =
 -- /See:/ 'projectsGroupsGet' smart constructor.
 data ProjectsGroupsGet =
   ProjectsGroupsGet'
-    { _pggXgafv          :: !(Maybe Xgafv)
+    { _pggXgafv :: !(Maybe Xgafv)
     , _pggUploadProtocol :: !(Maybe Text)
-    , _pggAccessToken    :: !(Maybe Text)
-    , _pggUploadType     :: !(Maybe Text)
-    , _pggName           :: !Text
-    , _pggCallback       :: !(Maybe Text)
+    , _pggAccessToken :: !(Maybe Text)
+    , _pggUploadType :: !(Maybe Text)
+    , _pggName :: !Text
+    , _pggCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

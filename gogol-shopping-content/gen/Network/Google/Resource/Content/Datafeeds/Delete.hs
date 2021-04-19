@@ -35,20 +35,22 @@ module Network.Google.Resource.Content.Datafeeds.Delete
     -- * Request Lenses
     , ddMerchantId
     , ddDatafeedId
+    , ddDryRun
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.ShoppingContent.Types
+import Network.Google.Prelude
+import Network.Google.ShoppingContent.Types
 
 -- | A resource alias for @content.datafeeds.delete@ method which the
 -- 'DatafeedsDelete' request conforms to.
 type DatafeedsDeleteResource =
      "content" :>
-       "v2.1" :>
+       "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>
-               QueryParam "alt" AltJSON :> Delete '[JSON] ()
+               QueryParam "dryRun" Bool :>
+                 QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a datafeed configuration from your Merchant Center account.
 --
@@ -57,6 +59,7 @@ data DatafeedsDelete =
   DatafeedsDelete'
     { _ddMerchantId :: !(Textual Word64)
     , _ddDatafeedId :: !(Textual Word64)
+    , _ddDryRun :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -68,6 +71,8 @@ data DatafeedsDelete =
 -- * 'ddMerchantId'
 --
 -- * 'ddDatafeedId'
+--
+-- * 'ddDryRun'
 datafeedsDelete
     :: Word64 -- ^ 'ddMerchantId'
     -> Word64 -- ^ 'ddDatafeedId'
@@ -76,6 +81,7 @@ datafeedsDelete pDdMerchantId_ pDdDatafeedId_ =
   DatafeedsDelete'
     { _ddMerchantId = _Coerce # pDdMerchantId_
     , _ddDatafeedId = _Coerce # pDdDatafeedId_
+    , _ddDryRun = Nothing
     }
 
 
@@ -92,12 +98,19 @@ ddDatafeedId
   = lens _ddDatafeedId (\ s a -> s{_ddDatafeedId = a})
       . _Coerce
 
+-- | Flag to simulate a request like in a live environment. If set to true,
+-- dry-run mode checks the validity of the request and returns errors (if
+-- any).
+ddDryRun :: Lens' DatafeedsDelete (Maybe Bool)
+ddDryRun = lens _ddDryRun (\ s a -> s{_ddDryRun = a})
+
 instance GoogleRequest DatafeedsDelete where
         type Rs DatafeedsDelete = ()
         type Scopes DatafeedsDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsDelete'{..}
-          = go _ddMerchantId _ddDatafeedId (Just AltJSON)
+          = go _ddMerchantId _ddDatafeedId _ddDryRun
+              (Just AltJSON)
               shoppingContentService
           where go
                   = buildClient

@@ -41,8 +41,8 @@ module Network.Google.Resource.AndroidEnterprise.Users.Insert
     , uiPayload
     ) where
 
-import           Network.Google.AndroidEnterprise.Types
-import           Network.Google.Prelude
+import Network.Google.AndroidEnterprise.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @androidenterprise.users.insert@ method which the
 -- 'UsersInsert' request conforms to.
@@ -65,7 +65,7 @@ type UsersInsertResource =
 data UsersInsert =
   UsersInsert'
     { _uiEnterpriseId :: !Text
-    , _uiPayload      :: !User
+    , _uiPayload :: !User
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

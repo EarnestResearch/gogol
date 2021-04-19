@@ -228,20 +228,20 @@ module Network.Google.ResourceManager
     , bCondition
     ) where
 
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudResourceManager.Folders.Create
-import           Network.Google.Resource.CloudResourceManager.Folders.Delete
-import           Network.Google.Resource.CloudResourceManager.Folders.Get
-import           Network.Google.Resource.CloudResourceManager.Folders.GetIAMPolicy
-import           Network.Google.Resource.CloudResourceManager.Folders.List
-import           Network.Google.Resource.CloudResourceManager.Folders.Move
-import           Network.Google.Resource.CloudResourceManager.Folders.Patch
-import           Network.Google.Resource.CloudResourceManager.Folders.Search
-import           Network.Google.Resource.CloudResourceManager.Folders.SetIAMPolicy
-import           Network.Google.Resource.CloudResourceManager.Folders.TestIAMPermissions
-import           Network.Google.Resource.CloudResourceManager.Folders.Undelete
-import           Network.Google.Resource.CloudResourceManager.Operations.Get
-import           Network.Google.ResourceManager.Types
+import Network.Google.Prelude
+import Network.Google.Resource.CloudResourceManager.Folders.Create
+import Network.Google.Resource.CloudResourceManager.Folders.Delete
+import Network.Google.Resource.CloudResourceManager.Folders.Get
+import Network.Google.Resource.CloudResourceManager.Folders.GetIAMPolicy
+import Network.Google.Resource.CloudResourceManager.Folders.List
+import Network.Google.Resource.CloudResourceManager.Folders.Move
+import Network.Google.Resource.CloudResourceManager.Folders.Patch
+import Network.Google.Resource.CloudResourceManager.Folders.Search
+import Network.Google.Resource.CloudResourceManager.Folders.SetIAMPolicy
+import Network.Google.Resource.CloudResourceManager.Folders.TestIAMPermissions
+import Network.Google.Resource.CloudResourceManager.Folders.Undelete
+import Network.Google.Resource.CloudResourceManager.Operations.Get
+import Network.Google.ResourceManager.Types
 
 {- $resources
 TODO

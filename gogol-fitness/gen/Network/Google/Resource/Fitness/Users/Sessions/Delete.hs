@@ -38,8 +38,8 @@ module Network.Google.Resource.Fitness.Users.Sessions.Delete
     , usdSessionId
     ) where
 
-import           Network.Google.Fitness.Types
-import           Network.Google.Prelude
+import Network.Google.Fitness.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @fitness.users.sessions.delete@ method which the
 -- 'UsersSessionsDelete' request conforms to.
@@ -58,9 +58,9 @@ type UsersSessionsDeleteResource =
 -- /See:/ 'usersSessionsDelete' smart constructor.
 data UsersSessionsDelete =
   UsersSessionsDelete'
-    { _usdUserId            :: !Text
+    { _usdUserId :: !Text
     , _usdCurrentTimeMillis :: !(Maybe (Textual Int64))
-    , _usdSessionId         :: !Text
+    , _usdSessionId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

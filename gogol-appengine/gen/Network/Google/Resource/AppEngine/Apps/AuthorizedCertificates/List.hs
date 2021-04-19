@@ -44,8 +44,8 @@ module Network.Google.Resource.AppEngine.Apps.AuthorizedCertificates.List
     , aaclCallback
     ) where
 
-import           Network.Google.AppEngine.Types
-import           Network.Google.Prelude
+import Network.Google.AppEngine.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @appengine.apps.authorizedCertificates.list@ method which the
 -- 'AppsAuthorizedCertificatesList' request conforms to.
@@ -70,15 +70,15 @@ type AppsAuthorizedCertificatesListResource =
 -- /See:/ 'appsAuthorizedCertificatesList' smart constructor.
 data AppsAuthorizedCertificatesList =
   AppsAuthorizedCertificatesList'
-    { _aaclXgafv          :: !(Maybe Xgafv)
+    { _aaclXgafv :: !(Maybe Xgafv)
     , _aaclUploadProtocol :: !(Maybe Text)
-    , _aaclAccessToken    :: !(Maybe Text)
-    , _aaclUploadType     :: !(Maybe Text)
-    , _aaclAppsId         :: !Text
-    , _aaclView           :: !(Maybe Text)
-    , _aaclPageToken      :: !(Maybe Text)
-    , _aaclPageSize       :: !(Maybe (Textual Int32))
-    , _aaclCallback       :: !(Maybe Text)
+    , _aaclAccessToken :: !(Maybe Text)
+    , _aaclUploadType :: !(Maybe Text)
+    , _aaclAppsId :: !Text
+    , _aaclView :: !(Maybe Text)
+    , _aaclPageToken :: !(Maybe Text)
+    , _aaclPageSize :: !(Maybe (Textual Int32))
+    , _aaclCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 

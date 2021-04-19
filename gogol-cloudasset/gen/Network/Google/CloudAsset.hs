@@ -177,11 +177,11 @@ module Network.Google.CloudAsset
     , bCondition
     ) where
 
-import           Network.Google.CloudAsset.Types
-import           Network.Google.Prelude
-import           Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
-import           Network.Google.Resource.CloudAsset.ExportAssets
-import           Network.Google.Resource.CloudAsset.Operations.Get
+import Network.Google.Prelude
+import Network.Google.CloudAsset.Types
+import Network.Google.Resource.CloudAsset.BatchGetAssetsHistory
+import Network.Google.Resource.CloudAsset.ExportAssets
+import Network.Google.Resource.CloudAsset.Operations.Get
 
 {- $resources
 TODO
