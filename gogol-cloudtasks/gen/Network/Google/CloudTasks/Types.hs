@@ -29,6 +29,12 @@ module Network.Google.CloudTasks.Types
     , rlMaxDispatchesPerSecond
     , rlMaxBurstSize
 
+    -- * OAuthToken
+    , OAuthToken
+    , oAuthToken
+    , oatScope
+    , oatServiceAccountEmail
+
     -- * Status
     , Status
     , status
@@ -53,6 +59,13 @@ module Network.Google.CloudTasks.Types
     -- * GetIAMPolicyRequest
     , GetIAMPolicyRequest
     , getIAMPolicyRequest
+    , giprOptions
+
+    -- * OidcToken
+    , OidcToken
+    , oidcToken
+    , otAudience
+    , otServiceAccountEmail
 
     -- * RetryConfig
     , RetryConfig
@@ -67,6 +80,11 @@ module Network.Google.CloudTasks.Types
     , RunTaskRequest
     , runTaskRequest
     , rtrResponseView
+
+    -- * HTTPRequestHeaders
+    , HTTPRequestHeaders
+    , hTTPRequestHeaders
+    , httprhAddtional
 
     -- * Location
     , Location
@@ -87,6 +105,9 @@ module Network.Google.CloudTasks.Types
     , ctrResponseView
     , ctrTask
 
+    -- * ProjectsLocationsQueuesTasksListResponseView
+    , ProjectsLocationsQueuesTasksListResponseView (..)
+
     -- * TaskView
     , TaskView (..)
 
@@ -104,6 +125,11 @@ module Network.Google.CloudTasks.Types
     -- * QueueState
     , QueueState (..)
 
+    -- * GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
+
     -- * CreateTaskRequestResponseView
     , CreateTaskRequestResponseView (..)
 
@@ -119,11 +145,30 @@ module Network.Google.CloudTasks.Types
     , qAppEngineRoutingOverride
     , qState
     , qRetryConfig
+    , qStackdriverLoggingConfig
     , qName
     , qPurgeTime
 
     -- * AppEngineHTTPRequestHTTPMethod
     , AppEngineHTTPRequestHTTPMethod (..)
+
+    -- * HTTPRequest
+    , HTTPRequest
+    , hTTPRequest
+    , httprOAuthToken
+    , httprHTTPMethod
+    , httprOidcToken
+    , httprBody
+    , httprURL
+    , httprHeaders
+
+    -- * StackdriverLoggingConfig
+    , StackdriverLoggingConfig
+    , stackdriverLoggingConfig
+    , slcSamplingRatio
+
+    -- * ProjectsLocationsQueuesTasksGetResponseView
+    , ProjectsLocationsQueuesTasksGetResponseView (..)
 
     -- * ListTasksResponse
     , ListTasksResponse
@@ -166,6 +211,7 @@ module Network.Google.CloudTasks.Types
     , tLastAttempt
     , tDispatchDeadline
     , tScheduleTime
+    , tHTTPRequest
     , tName
     , tFirstAttempt
     , tView
@@ -206,6 +252,9 @@ module Network.Google.CloudTasks.Types
     , aerVersion
     , aerHost
     , aerInstance
+
+    -- * HTTPRequestHTTPMethod
+    , HTTPRequestHTTPMethod (..)
 
     -- * AppEngineHTTPRequest
     , AppEngineHTTPRequest

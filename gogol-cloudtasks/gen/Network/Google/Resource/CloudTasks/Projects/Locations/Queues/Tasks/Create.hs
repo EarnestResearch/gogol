@@ -21,8 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates a task and adds it to a queue. Tasks cannot be updated after
--- creation; there is no UpdateTask command. * For App Engine queues, the
--- maximum task size is 100KB.
+-- creation; there is no UpdateTask command. * The maximum task size is
+-- 100KB.
 --
 -- /See:/ <https://cloud.google.com/tasks/ Cloud Tasks API Reference> for @cloudtasks.projects.locations.queues.tasks.create@.
 module Network.Google.Resource.CloudTasks.Projects.Locations.Queues.Tasks.Create
@@ -63,8 +63,8 @@ type ProjectsLocationsQueuesTasksCreateResource =
                          Post '[JSON] Task
 
 -- | Creates a task and adds it to a queue. Tasks cannot be updated after
--- creation; there is no UpdateTask command. * For App Engine queues, the
--- maximum task size is 100KB.
+-- creation; there is no UpdateTask command. * The maximum task size is
+-- 100KB.
 --
 -- /See:/ 'projectsLocationsQueuesTasksCreate' smart constructor.
 data ProjectsLocationsQueuesTasksCreate =

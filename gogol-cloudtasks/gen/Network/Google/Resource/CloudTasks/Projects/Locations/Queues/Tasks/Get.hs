@@ -54,7 +54,9 @@ type ProjectsLocationsQueuesTasksGetResource =
            QueryParam "upload_protocol" Text :>
              QueryParam "access_token" Text :>
                QueryParam "uploadType" Text :>
-                 QueryParam "responseView" Text :>
+                 QueryParam "responseView"
+                   ProjectsLocationsQueuesTasksGetResponseView
+                   :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :> Get '[JSON] Task
 
@@ -67,7 +69,7 @@ data ProjectsLocationsQueuesTasksGet =
     , _plqtgUploadProtocol :: !(Maybe Text)
     , _plqtgAccessToken :: !(Maybe Text)
     , _plqtgUploadType :: !(Maybe Text)
-    , _plqtgResponseView :: !(Maybe Text)
+    , _plqtgResponseView :: !(Maybe ProjectsLocationsQueuesTasksGetResponseView)
     , _plqtgName :: !Text
     , _plqtgCallback :: !(Maybe Text)
     }
@@ -136,7 +138,7 @@ plqtgUploadType
 -- sensitivity of data that it contains. Authorization for FULL requires
 -- \`cloudtasks.tasks.fullView\` [Google
 -- IAM](https:\/\/cloud.google.com\/iam\/) permission on the Task resource.
-plqtgResponseView :: Lens' ProjectsLocationsQueuesTasksGet (Maybe Text)
+plqtgResponseView :: Lens' ProjectsLocationsQueuesTasksGet (Maybe ProjectsLocationsQueuesTasksGetResponseView)
 plqtgResponseView
   = lens _plqtgResponseView
       (\ s a -> s{_plqtgResponseView = a})
