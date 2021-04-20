@@ -34,6 +34,8 @@ you would create the configuration `./annex/dataproc.json` with the following co
 
 Then, the `Makefile` is used:
 
+**NOTE: Modern GNU Make is required**
+
 ```
 make clean
 make
