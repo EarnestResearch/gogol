@@ -62,7 +62,7 @@ type AppsServicesVersionsGetResource =
                      QueryParam "upload_protocol" Text :>
                        QueryParam "access_token" Text :>
                          QueryParam "uploadType" Text :>
-                           QueryParam "view" Text :>
+                           QueryParam "view" AppsServicesVersionsGetView :>
                              QueryParam "callback" Text :>
                                QueryParam "alt" AltJSON :> Get '[JSON] Version
 
@@ -78,7 +78,7 @@ data AppsServicesVersionsGet =
     , _asvgUploadType :: !(Maybe Text)
     , _asvgVersionsId :: !Text
     , _asvgAppsId :: !Text
-    , _asvgView :: !(Maybe Text)
+    , _asvgView :: !(Maybe AppsServicesVersionsGetView)
     , _asvgServicesId :: !Text
     , _asvgCallback :: !(Maybe Text)
     }
@@ -161,7 +161,7 @@ asvgAppsId
   = lens _asvgAppsId (\ s a -> s{_asvgAppsId = a})
 
 -- | Controls the set of fields returned in the Get response.
-asvgView :: Lens' AppsServicesVersionsGet (Maybe Text)
+asvgView :: Lens' AppsServicesVersionsGet (Maybe AppsServicesVersionsGetView)
 asvgView = lens _asvgView (\ s a -> s{_asvgView = a})
 
 -- | Part of \`name\`. See documentation of \`appsId\`.

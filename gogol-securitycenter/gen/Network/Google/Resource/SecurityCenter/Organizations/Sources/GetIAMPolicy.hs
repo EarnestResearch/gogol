@@ -22,7 +22,7 @@
 --
 -- Gets the access control policy on the specified Source.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.sources.getIamPolicy@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.getIamPolicy@.
 module Network.Google.Resource.SecurityCenter.Organizations.Sources.GetIAMPolicy
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.sources.getIamPolicy@ method which the
 -- 'OrganizationsSourcesGetIAMPolicy' request conforms to.
 type OrganizationsSourcesGetIAMPolicyResource =
-     "v1" :>
+     "v1p1beta1" :>
        CaptureMode "resource" "getIamPolicy" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

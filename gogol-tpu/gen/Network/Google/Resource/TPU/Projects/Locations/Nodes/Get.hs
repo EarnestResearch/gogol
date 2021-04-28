@@ -123,7 +123,7 @@ plngUploadType
   = lens _plngUploadType
       (\ s a -> s{_plngUploadType = a})
 
--- | The resource name.
+-- | Required. The resource name.
 plngName :: Lens' ProjectsLocationsNodesGet Text
 plngName = lens _plngName (\ s a -> s{_plngName = a})
 

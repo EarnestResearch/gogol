@@ -128,8 +128,9 @@ ositdUploadType
   = lens _ositdUploadType
       (\ s a -> s{_ositdUploadType = a})
 
--- | Resource name of the organization and storedInfoType to be deleted, for
--- example \`organizations\/433245324\/storedInfoTypes\/432452342\` or
+-- | Required. Resource name of the organization and storedInfoType to be
+-- deleted, for example
+-- \`organizations\/433245324\/storedInfoTypes\/432452342\` or
 -- projects\/project-id\/storedInfoTypes\/432452342.
 ositdName :: Lens' OrganizationsStoredInfoTypesDelete Text
 ositdName

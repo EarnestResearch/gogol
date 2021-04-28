@@ -21,9 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Fetches the item whose viewUrl exactly matches that of the URL provided
--- in the request.
+-- in the request. **Note:** This API requires an admin account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.searchByViewUrl@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.searchByViewUrl@.
 module Network.Google.Resource.CloudSearch.Debug.Datasources.Items.SearchByViewURL
     (
     -- * REST Resource
@@ -63,7 +63,7 @@ type DebugDatasourcesItemsSearchByViewURLResource =
                            Post '[JSON] SearchItemsByViewURLResponse
 
 -- | Fetches the item whose viewUrl exactly matches that of the URL provided
--- in the request.
+-- in the request. **Note:** This API requires an admin account to execute.
 --
 -- /See:/ 'debugDatasourcesItemsSearchByViewURL' smart constructor.
 data DebugDatasourcesItemsSearchByViewURL =

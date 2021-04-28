@@ -43,6 +43,7 @@ module Network.Google.Resource.Storage.Objects.Update
     , ouIfMetagenerationNotMatch
     , ouObject
     , ouProjection
+    , ouProvisionalUserProject
     , ouGeneration
     ) where
 
@@ -67,9 +68,11 @@ type ObjectsUpdateResource =
                            QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                              :>
                              QueryParam "projection" ObjectsUpdateProjection :>
-                               QueryParam "generation" (Textual Int64) :>
-                                 QueryParam "alt" AltJSON :>
-                                   ReqBody '[JSON] Object :> Put '[JSON] Object
+                               QueryParam "provisionalUserProject" Text :>
+                                 QueryParam "generation" (Textual Int64) :>
+                                   QueryParam "alt" AltJSON :>
+                                     ReqBody '[JSON] Object :>
+                                       Put '[JSON] Object
 
 -- | Updates an object\'s metadata.
 --
@@ -86,6 +89,7 @@ data ObjectsUpdate =
     , _ouIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     , _ouObject :: !Text
     , _ouProjection :: !(Maybe ObjectsUpdateProjection)
+    , _ouProvisionalUserProject :: !(Maybe Text)
     , _ouGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -115,6 +119,8 @@ data ObjectsUpdate =
 --
 -- * 'ouProjection'
 --
+-- * 'ouProvisionalUserProject'
+--
 -- * 'ouGeneration'
 objectsUpdate
     :: Text -- ^ 'ouBucket'
@@ -133,6 +139,7 @@ objectsUpdate pOuBucket_ pOuPayload_ pOuObject_ =
     , _ouIfMetagenerationNotMatch = Nothing
     , _ouObject = pOuObject_
     , _ouProjection = Nothing
+    , _ouProvisionalUserProject = Nothing
     , _ouGeneration = Nothing
     }
 
@@ -204,6 +211,13 @@ ouProjection :: Lens' ObjectsUpdate (Maybe ObjectsUpdateProjection)
 ouProjection
   = lens _ouProjection (\ s a -> s{_ouProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+ouProvisionalUserProject :: Lens' ObjectsUpdate (Maybe Text)
+ouProvisionalUserProject
+  = lens _ouProvisionalUserProject
+      (\ s a -> s{_ouProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of this object (as opposed to
 -- the latest version, the default).
 ouGeneration :: Lens' ObjectsUpdate (Maybe Int64)
@@ -224,6 +238,7 @@ instance GoogleRequest ObjectsUpdate where
               _ouUserProject
               _ouIfMetagenerationNotMatch
               _ouProjection
+              _ouProvisionalUserProject
               _ouGeneration
               (Just AltJSON)
               _ouPayload

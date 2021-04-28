@@ -23,7 +23,7 @@
 -- Deletes the SSL certificate. For First Generation instances, the
 -- certificate remains valid until the instance is restarted.
 --
--- /See:/ <https://cloud.google.com/sql/docs/reference/latest Cloud SQL Admin API Reference> for @sql.sslCerts.delete@.
+-- /See:/ <https://developers.google.com/cloud-sql/ Cloud SQL Admin API Reference> for @sql.sslCerts.delete@.
 module Network.Google.Resource.SQL.SSLCerts.Delete
     (
     -- * REST Resource
@@ -34,8 +34,13 @@ module Network.Google.Resource.SQL.SSLCerts.Delete
     , SSLCertsDelete
 
     -- * Request Lenses
+    , scdXgafv
+    , scdUploadProtocol
     , scdProject
+    , scdAccessToken
+    , scdUploadType
     , scdSha1Fingerprint
+    , scdCallback
     , scdInstance
     ) where
 
@@ -53,7 +58,13 @@ type SSLCertsDeleteResource =
                Capture "instance" Text :>
                  "sslCerts" :>
                    Capture "sha1Fingerprint" Text :>
-                     QueryParam "alt" AltJSON :> Delete '[JSON] Operation
+                     QueryParam "$.xgafv" Xgafv :>
+                       QueryParam "upload_protocol" Text :>
+                         QueryParam "access_token" Text :>
+                           QueryParam "uploadType" Text :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :>
+                                 Delete '[JSON] Operation
 
 -- | Deletes the SSL certificate. For First Generation instances, the
 -- certificate remains valid until the instance is restarted.
@@ -61,8 +72,13 @@ type SSLCertsDeleteResource =
 -- /See:/ 'sslCertsDelete' smart constructor.
 data SSLCertsDelete =
   SSLCertsDelete'
-    { _scdProject :: !Text
+    { _scdXgafv :: !(Maybe Xgafv)
+    , _scdUploadProtocol :: !(Maybe Text)
+    , _scdProject :: !Text
+    , _scdAccessToken :: !(Maybe Text)
+    , _scdUploadType :: !(Maybe Text)
     , _scdSha1Fingerprint :: !Text
+    , _scdCallback :: !(Maybe Text)
     , _scdInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -72,9 +88,19 @@ data SSLCertsDelete =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'scdXgafv'
+--
+-- * 'scdUploadProtocol'
+--
 -- * 'scdProject'
 --
+-- * 'scdAccessToken'
+--
+-- * 'scdUploadType'
+--
 -- * 'scdSha1Fingerprint'
+--
+-- * 'scdCallback'
 --
 -- * 'scdInstance'
 sslCertsDelete
@@ -84,22 +110,54 @@ sslCertsDelete
     -> SSLCertsDelete
 sslCertsDelete pScdProject_ pScdSha1Fingerprint_ pScdInstance_ =
   SSLCertsDelete'
-    { _scdProject = pScdProject_
+    { _scdXgafv = Nothing
+    , _scdUploadProtocol = Nothing
+    , _scdProject = pScdProject_
+    , _scdAccessToken = Nothing
+    , _scdUploadType = Nothing
     , _scdSha1Fingerprint = pScdSha1Fingerprint_
+    , _scdCallback = Nothing
     , _scdInstance = pScdInstance_
     }
 
+
+-- | V1 error format.
+scdXgafv :: Lens' SSLCertsDelete (Maybe Xgafv)
+scdXgafv = lens _scdXgafv (\ s a -> s{_scdXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+scdUploadProtocol :: Lens' SSLCertsDelete (Maybe Text)
+scdUploadProtocol
+  = lens _scdUploadProtocol
+      (\ s a -> s{_scdUploadProtocol = a})
 
 -- | Project ID of the project that contains the instance.
 scdProject :: Lens' SSLCertsDelete Text
 scdProject
   = lens _scdProject (\ s a -> s{_scdProject = a})
 
+-- | OAuth access token.
+scdAccessToken :: Lens' SSLCertsDelete (Maybe Text)
+scdAccessToken
+  = lens _scdAccessToken
+      (\ s a -> s{_scdAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+scdUploadType :: Lens' SSLCertsDelete (Maybe Text)
+scdUploadType
+  = lens _scdUploadType
+      (\ s a -> s{_scdUploadType = a})
+
 -- | Sha1 FingerPrint.
 scdSha1Fingerprint :: Lens' SSLCertsDelete Text
 scdSha1Fingerprint
   = lens _scdSha1Fingerprint
       (\ s a -> s{_scdSha1Fingerprint = a})
+
+-- | JSONP
+scdCallback :: Lens' SSLCertsDelete (Maybe Text)
+scdCallback
+  = lens _scdCallback (\ s a -> s{_scdCallback = a})
 
 -- | Cloud SQL instance ID. This does not include the project ID.
 scdInstance :: Lens' SSLCertsDelete Text
@@ -113,6 +171,11 @@ instance GoogleRequest SSLCertsDelete where
                "https://www.googleapis.com/auth/sqlservice.admin"]
         requestClient SSLCertsDelete'{..}
           = go _scdProject _scdInstance _scdSha1Fingerprint
+              _scdXgafv
+              _scdUploadProtocol
+              _scdAccessToken
+              _scdUploadType
+              _scdCallback
               (Just AltJSON)
               sQLAdminService
           where go

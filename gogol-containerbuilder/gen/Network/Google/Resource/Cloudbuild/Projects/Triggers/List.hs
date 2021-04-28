@@ -142,7 +142,7 @@ ptlPageToken :: Lens' ProjectsTriggersList (Maybe Text)
 ptlPageToken
   = lens _ptlPageToken (\ s a -> s{_ptlPageToken = a})
 
--- | ID of the project for which to list BuildTriggers.
+-- | Required. ID of the project for which to list BuildTriggers.
 ptlProjectId :: Lens' ProjectsTriggersList Text
 ptlProjectId
   = lens _ptlProjectId (\ s a -> s{_ptlProjectId = a})

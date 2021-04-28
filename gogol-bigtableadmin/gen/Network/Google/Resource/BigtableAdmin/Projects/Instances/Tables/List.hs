@@ -57,7 +57,7 @@ type ProjectsInstancesTablesListResource =
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParam "view" Text :>
+                   QueryParam "view" ProjectsInstancesTablesListView :>
                      QueryParam "pageToken" Text :>
                        QueryParam "pageSize" (Textual Int32) :>
                          QueryParam "callback" Text :>
@@ -74,7 +74,7 @@ data ProjectsInstancesTablesList =
     , _pitlUploadProtocol :: !(Maybe Text)
     , _pitlAccessToken :: !(Maybe Text)
     , _pitlUploadType :: !(Maybe Text)
-    , _pitlView :: !(Maybe Text)
+    , _pitlView :: !(Maybe ProjectsInstancesTablesListView)
     , _pitlPageToken :: !(Maybe Text)
     , _pitlPageSize :: !(Maybe (Textual Int32))
     , _pitlCallback :: !(Maybe Text)
@@ -120,8 +120,9 @@ projectsInstancesTablesList pPitlParent_ =
     }
 
 
--- | The unique name of the instance for which tables should be listed.
--- Values are of the form \`projects\/\/instances\/\`.
+-- | Required. The unique name of the instance for which tables should be
+-- listed. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\`.
 pitlParent :: Lens' ProjectsInstancesTablesList Text
 pitlParent
   = lens _pitlParent (\ s a -> s{_pitlParent = a})
@@ -149,9 +150,9 @@ pitlUploadType
   = lens _pitlUploadType
       (\ s a -> s{_pitlUploadType = a})
 
--- | The view to be applied to the returned tables\' fields. Defaults to
--- \`NAME_ONLY\` if unspecified; no others are currently supported.
-pitlView :: Lens' ProjectsInstancesTablesList (Maybe Text)
+-- | The view to be applied to the returned tables\' fields. Only NAME_ONLY
+-- view (default) and REPLICATION_VIEW are supported.
+pitlView :: Lens' ProjectsInstancesTablesList (Maybe ProjectsInstancesTablesListView)
 pitlView = lens _pitlView (\ s a -> s{_pitlView = a})
 
 -- | The value of \`next_page_token\` returned by a previous call.

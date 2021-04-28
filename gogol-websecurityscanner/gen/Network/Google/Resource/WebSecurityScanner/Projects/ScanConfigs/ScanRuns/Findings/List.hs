@@ -22,7 +22,7 @@
 --
 -- List Findings under a given ScanRun.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.findings.list@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.findings.list@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Findings.List
     (
     -- * REST Resource
@@ -51,7 +51,7 @@ import Network.Google.WebSecurityScanner.Types
 -- 'ProjectsScanConfigsScanRunsFindingsList' request conforms to.
 type ProjectsScanConfigsScanRunsFindingsListResource
      =
-     "v1beta" :>
+     "v1" :>
        Capture "parent" Text :>
          "findings" :>
            QueryParam "$.xgafv" Xgafv :>

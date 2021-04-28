@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes a datasource.
+-- Deletes a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.datasources.delete@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.datasources.delete@.
 module Network.Google.Resource.CloudSearch.Settings.Datasources.Delete
     (
     -- * REST Resource
@@ -59,7 +60,8 @@ type SettingsDatasourcesDeleteResource =
                      QueryParam "callback" Text :>
                        QueryParam "alt" AltJSON :> Delete '[JSON] Operation
 
--- | Deletes a datasource.
+-- | Deletes a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
 -- /See:/ 'settingsDatasourcesDelete' smart constructor.
 data SettingsDatasourcesDelete =

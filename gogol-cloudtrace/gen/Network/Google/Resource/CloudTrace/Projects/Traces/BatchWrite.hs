@@ -23,7 +23,7 @@
 -- Sends new spans to new or existing traces. You cannot update existing
 -- spans.
 --
--- /See:/ <https://cloud.google.com/trace Stackdriver Trace API Reference> for @cloudtrace.projects.traces.batchWrite@.
+-- /See:/ <https://cloud.google.com/trace Cloud Trace API Reference> for @cloudtrace.projects.traces.batchWrite@.
 module Network.Google.Resource.CloudTrace.Projects.Traces.BatchWrite
     (
     -- * REST Resource

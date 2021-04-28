@@ -22,7 +22,7 @@
 --
 -- List CrawledUrls under a given ScanRun.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.crawledUrls.list@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.crawledUrls.list@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.CrawledURLs.List
     (
     -- * REST Resource
@@ -50,7 +50,7 @@ import Network.Google.WebSecurityScanner.Types
 -- 'ProjectsScanConfigsScanRunsCrawledURLsList' request conforms to.
 type ProjectsScanConfigsScanRunsCrawledURLsListResource
      =
-     "v1beta" :>
+     "v1" :>
        Capture "parent" Text :>
          "crawledUrls" :>
            QueryParam "$.xgafv" Xgafv :>

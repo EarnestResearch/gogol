@@ -140,7 +140,7 @@ plcnpsmPayload
 
 -- | The name (project, location, cluster, node pool id) of the node pool to
 -- set management properties. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\`.
 plcnpsmName :: Lens' ProjectsLocationsClustersNodePoolsSetManagement Text
 plcnpsmName
   = lens _plcnpsmName (\ s a -> s{_plcnpsmName = a})

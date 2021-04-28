@@ -128,7 +128,7 @@ plkrckckvgpkUploadType
   = lens _plkrckckvgpkUploadType
       (\ s a -> s{_plkrckckvgpkUploadType = a})
 
--- | The name of the CryptoKeyVersion public key to get.
+-- | Required. The name of the CryptoKeyVersion public key to get.
 plkrckckvgpkName :: Lens' ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsGetPublicKey Text
 plkrckckvgpkName
   = lens _plkrckckvgpkName

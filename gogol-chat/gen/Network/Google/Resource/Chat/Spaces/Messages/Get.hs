@@ -22,7 +22,7 @@
 --
 -- Returns a message.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.messages.get@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.messages.get@.
 module Network.Google.Resource.Chat.Spaces.Messages.Get
     (
     -- * REST Resource

@@ -125,8 +125,8 @@ plrdpUploadProtocol
   = lens _plrdpUploadProtocol
       (\ s a -> s{_plrdpUploadProtocol = a})
 
--- | Only updates the \`device\` fields indicated by this mask. The field
--- mask must not be empty, and it must not contain fields that are
+-- | Required. Only updates the \`device\` fields indicated by this mask. The
+-- field mask must not be empty, and it must not contain fields that are
 -- immutable or only set by the server. Mutable top-level fields:
 -- \`credentials\`, \`blocked\`, and \`metadata\`
 plrdpUpdateMask :: Lens' ProjectsLocationsRegistriesDevicesPatch (Maybe GFieldMask)

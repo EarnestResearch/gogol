@@ -118,7 +118,7 @@ usersImportSSHPublicKey pUispkParent_ pUispkPayload_ =
     }
 
 
--- | The unique ID for the user in format \`users\/{user}\`.
+-- | Required. The unique ID for the user in format \`users\/{user}\`.
 uispkParent :: Lens' UsersImportSSHPublicKey Text
 uispkParent
   = lens _uispkParent (\ s a -> s{_uispkParent = a})

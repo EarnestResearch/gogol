@@ -20,7 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates a cluster within an instance.
+-- Updates a cluster within an instance. UpdateCluster is deprecated.
+-- Please use PartialUpdateCluster instead.
 --
 -- /See:/ <https://cloud.google.com/bigtable/ Cloud Bigtable Admin API Reference> for @bigtableadmin.projects.instances.clusters.update@.
 module Network.Google.Resource.BigtableAdmin.Projects.Instances.Clusters.Update
@@ -58,7 +59,8 @@ type ProjectsInstancesClustersUpdateResource =
                    QueryParam "alt" AltJSON :>
                      ReqBody '[JSON] Cluster :> Put '[JSON] Operation
 
--- | Updates a cluster within an instance.
+-- | Updates a cluster within an instance. UpdateCluster is deprecated.
+-- Please use PartialUpdateCluster instead.
 --
 -- /See:/ 'projectsInstancesClustersUpdate' smart constructor.
 data ProjectsInstancesClustersUpdate =
@@ -135,8 +137,8 @@ picuPayload :: Lens' ProjectsInstancesClustersUpdate Cluster
 picuPayload
   = lens _picuPayload (\ s a -> s{_picuPayload = a})
 
--- | (\`OutputOnly\`) The unique name of the cluster. Values are of the form
--- \`projects\/\/instances\/\/clusters\/a-z*\`.
+-- | The unique name of the cluster. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/clusters\/a-z*\`.
 picuName :: Lens' ProjectsInstancesClustersUpdate Text
 picuName = lens _picuName (\ s a -> s{_picuName = a})
 

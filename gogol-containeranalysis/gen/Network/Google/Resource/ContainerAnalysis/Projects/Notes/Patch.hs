@@ -146,7 +146,7 @@ pnpPayload :: Lens' ProjectsNotesPatch Note
 pnpPayload
   = lens _pnpPayload (\ s a -> s{_pnpPayload = a})
 
--- | The name of the note in the form of
+-- | Required. The name of the note in the form of
 -- \`projects\/[PROVIDER_ID]\/notes\/[NOTE_ID]\`.
 pnpName :: Lens' ProjectsNotesPatch Text
 pnpName = lens _pnpName (\ s a -> s{_pnpName = a})

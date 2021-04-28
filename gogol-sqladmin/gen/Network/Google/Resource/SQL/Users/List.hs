@@ -22,7 +22,7 @@
 --
 -- Lists users in the specified Cloud SQL instance.
 --
--- /See:/ <https://cloud.google.com/sql/docs/reference/latest Cloud SQL Admin API Reference> for @sql.users.list@.
+-- /See:/ <https://developers.google.com/cloud-sql/ Cloud SQL Admin API Reference> for @sql.users.list@.
 module Network.Google.Resource.SQL.Users.List
     (
     -- * REST Resource
@@ -33,7 +33,12 @@ module Network.Google.Resource.SQL.Users.List
     , UsersList
 
     -- * Request Lenses
+    , ulXgafv
+    , ulUploadProtocol
     , ulProject
+    , ulAccessToken
+    , ulUploadType
+    , ulCallback
     , ulInstance
     ) where
 
@@ -50,15 +55,25 @@ type UsersListResource =
              "instances" :>
                Capture "instance" Text :>
                  "users" :>
-                   QueryParam "alt" AltJSON :>
-                     Get '[JSON] UsersListResponse
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "callback" Text :>
+                             QueryParam "alt" AltJSON :>
+                               Get '[JSON] UsersListResponse
 
 -- | Lists users in the specified Cloud SQL instance.
 --
 -- /See:/ 'usersList' smart constructor.
 data UsersList =
   UsersList'
-    { _ulProject :: !Text
+    { _ulXgafv :: !(Maybe Xgafv)
+    , _ulUploadProtocol :: !(Maybe Text)
+    , _ulProject :: !Text
+    , _ulAccessToken :: !(Maybe Text)
+    , _ulUploadType :: !(Maybe Text)
+    , _ulCallback :: !(Maybe Text)
     , _ulInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -68,7 +83,17 @@ data UsersList =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'ulXgafv'
+--
+-- * 'ulUploadProtocol'
+--
 -- * 'ulProject'
+--
+-- * 'ulAccessToken'
+--
+-- * 'ulUploadType'
+--
+-- * 'ulCallback'
 --
 -- * 'ulInstance'
 usersList
@@ -76,13 +101,47 @@ usersList
     -> Text -- ^ 'ulInstance'
     -> UsersList
 usersList pUlProject_ pUlInstance_ =
-  UsersList' {_ulProject = pUlProject_, _ulInstance = pUlInstance_}
+  UsersList'
+    { _ulXgafv = Nothing
+    , _ulUploadProtocol = Nothing
+    , _ulProject = pUlProject_
+    , _ulAccessToken = Nothing
+    , _ulUploadType = Nothing
+    , _ulCallback = Nothing
+    , _ulInstance = pUlInstance_
+    }
 
+
+-- | V1 error format.
+ulXgafv :: Lens' UsersList (Maybe Xgafv)
+ulXgafv = lens _ulXgafv (\ s a -> s{_ulXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+ulUploadProtocol :: Lens' UsersList (Maybe Text)
+ulUploadProtocol
+  = lens _ulUploadProtocol
+      (\ s a -> s{_ulUploadProtocol = a})
 
 -- | Project ID of the project that contains the instance.
 ulProject :: Lens' UsersList Text
 ulProject
   = lens _ulProject (\ s a -> s{_ulProject = a})
+
+-- | OAuth access token.
+ulAccessToken :: Lens' UsersList (Maybe Text)
+ulAccessToken
+  = lens _ulAccessToken
+      (\ s a -> s{_ulAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+ulUploadType :: Lens' UsersList (Maybe Text)
+ulUploadType
+  = lens _ulUploadType (\ s a -> s{_ulUploadType = a})
+
+-- | JSONP
+ulCallback :: Lens' UsersList (Maybe Text)
+ulCallback
+  = lens _ulCallback (\ s a -> s{_ulCallback = a})
 
 -- | Database instance ID. This does not include the project ID.
 ulInstance :: Lens' UsersList Text
@@ -95,7 +154,12 @@ instance GoogleRequest UsersList where
              '["https://www.googleapis.com/auth/cloud-platform",
                "https://www.googleapis.com/auth/sqlservice.admin"]
         requestClient UsersList'{..}
-          = go _ulProject _ulInstance (Just AltJSON)
+          = go _ulProject _ulInstance _ulXgafv
+              _ulUploadProtocol
+              _ulAccessToken
+              _ulUploadType
+              _ulCallback
+              (Just AltJSON)
               sQLAdminService
           where go
                   = buildClient (Proxy :: Proxy UsersListResource)

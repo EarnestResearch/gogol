@@ -144,9 +144,9 @@ pitmcfPayload
   = lens _pitmcfPayload
       (\ s a -> s{_pitmcfPayload = a})
 
--- | The unique name of the table whose families should be modified. Values
--- are of the form \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the table whose families should be
+-- modified. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitmcfName :: Lens' ProjectsInstancesTablesModifyColumnFamilies Text
 pitmcfName
   = lens _pitmcfName (\ s a -> s{_pitmcfName = a})

@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a ServiceAccount and returns it.
+-- Creates a ServiceAccount.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.create@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.Create
@@ -60,7 +60,7 @@ type ProjectsServiceAccountsCreateResource =
                        ReqBody '[JSON] CreateServiceAccountRequest :>
                          Post '[JSON] ServiceAccount
 
--- | Creates a ServiceAccount and returns it.
+-- | Creates a ServiceAccount.
 --
 -- /See:/ 'projectsServiceAccountsCreate' smart constructor.
 data ProjectsServiceAccountsCreate =

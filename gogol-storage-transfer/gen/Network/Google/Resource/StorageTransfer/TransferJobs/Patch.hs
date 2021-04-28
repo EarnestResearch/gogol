@@ -21,8 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Updates a transfer job. Updating a job\'s transfer spec does not affect
--- transfer operations that are running already. Updating the scheduling of
--- a job is not allowed.
+-- transfer operations that are running already. **Note:** The job\'s
+-- status field can be modified using this RPC (for example, to set a
+-- job\'s status to DELETED, DISABLED, or ENABLED).
 --
 -- /See:/ <https://cloud.google.com/storage-transfer/docs Storage Transfer API Reference> for @storagetransfer.transferJobs.patch@.
 module Network.Google.Resource.StorageTransfer.TransferJobs.Patch
@@ -62,8 +63,9 @@ type TransferJobsPatchResource =
                        Patch '[JSON] TransferJob
 
 -- | Updates a transfer job. Updating a job\'s transfer spec does not affect
--- transfer operations that are running already. Updating the scheduling of
--- a job is not allowed.
+-- transfer operations that are running already. **Note:** The job\'s
+-- status field can be modified using this RPC (for example, to set a
+-- job\'s status to DELETED, DISABLED, or ENABLED).
 --
 -- /See:/ 'transferJobsPatch' smart constructor.
 data TransferJobsPatch =
@@ -128,7 +130,7 @@ tjpAccessToken
   = lens _tjpAccessToken
       (\ s a -> s{_tjpAccessToken = a})
 
--- | The name of job to update. Required.
+-- | Required. The name of job to update.
 tjpJobName :: Lens' TransferJobsPatch Text
 tjpJobName
   = lens _tjpJobName (\ s a -> s{_tjpJobName = a})

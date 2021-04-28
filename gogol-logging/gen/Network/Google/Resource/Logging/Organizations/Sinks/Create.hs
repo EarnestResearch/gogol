@@ -25,7 +25,7 @@
 -- sink\'s writer_identity is not permitted to write to the destination. A
 -- sink can export log entries only from the resource owning the sink.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.organizations.sinks.create@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.organizations.sinks.create@.
 module Network.Google.Resource.Logging.Organizations.Sinks.Create
     (
     -- * REST Resource

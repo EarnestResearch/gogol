@@ -55,7 +55,7 @@ type MattersGetResource =
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParam "view" Text :>
+                   QueryParam "view" MattersGetView :>
                      QueryParam "callback" Text :>
                        QueryParam "alt" AltJSON :> Get '[JSON] Matter
 
@@ -69,7 +69,7 @@ data MattersGet =
     , _mgAccessToken :: !(Maybe Text)
     , _mgUploadType :: !(Maybe Text)
     , _mgMatterId :: !Text
-    , _mgView :: !(Maybe Text)
+    , _mgView :: !(Maybe MattersGetView)
     , _mgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -134,7 +134,7 @@ mgMatterId
   = lens _mgMatterId (\ s a -> s{_mgMatterId = a})
 
 -- | Specifies which parts of the Matter to return in the response.
-mgView :: Lens' MattersGet (Maybe Text)
+mgView :: Lens' MattersGet (Maybe MattersGetView)
 mgView = lens _mgView (\ s a -> s{_mgView = a})
 
 -- | JSONP

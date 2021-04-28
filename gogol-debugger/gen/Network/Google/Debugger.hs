@@ -16,7 +16,7 @@
 -- Examines the call stack and variables of a running application without
 -- stopping or slowing it down.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference>
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference>
 module Network.Google.Debugger
     (
     -- * Service Configuration
@@ -60,6 +60,7 @@ module Network.Google.Debugger
     -- ** RegisterDebuggeeResponse
     , RegisterDebuggeeResponse
     , registerDebuggeeResponse
+    , rdrAgentId
     , rdrDebuggee
 
     -- ** SourceContext
@@ -119,6 +120,7 @@ module Network.Google.Debugger
     , Breakpoint
     , breakpoint
     , bStatus
+    , bState
     , bLogLevel
     , bLocation
     , bAction
@@ -129,11 +131,15 @@ module Network.Google.Debugger
     , bLabels
     , bUserEmail
     , bVariableTable
+    , bCanaryExpireTime
     , bStackFrames
     , bCondition
     , bEvaluatedExpressions
     , bCreateTime
     , bIsFinalState
+
+    -- ** DebuggerDebuggeesBreakpointsSetCanaryOption
+    , DebuggerDebuggeesBreakpointsSetCanaryOption (..)
 
     -- ** BreakpointLabels
     , BreakpointLabels
@@ -171,6 +177,9 @@ module Network.Google.Debugger
     , ListDebuggeesResponse
     , listDebuggeesResponse
     , ldrDebuggees
+
+    -- ** BreakpointState
+    , BreakpointState (..)
 
     -- ** UpdateActiveBreakpointRequest
     , UpdateActiveBreakpointRequest
@@ -237,6 +246,12 @@ module Network.Google.Debugger
     , debuggeeLabels
     , dlAddtional
 
+    -- ** DebuggeeCanaryMode
+    , DebuggeeCanaryMode (..)
+
+    -- ** DebuggerDebuggeesBreakpointsListActionValue
+    , DebuggerDebuggeesBreakpointsListActionValue (..)
+
     -- ** Debuggee
     , Debuggee
     , debuggee
@@ -248,6 +263,7 @@ module Network.Google.Debugger
     , dIsDisabled
     , dId
     , dLabels
+    , dCanaryMode
     , dDescription
     , dIsInactive
     , dSourceContexts
@@ -294,7 +310,7 @@ import Network.Google.Resource.CloudDebugger.Debugger.Debuggees.List
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Stackdriver Debugger API service.
+-- | Represents the entirety of the methods and resources available for the Cloud Debugger API service.
 type DebuggerAPI =
      ControllerDebuggeesBreakpointsListResource :<|>
        ControllerDebuggeesBreakpointsUpdateResource

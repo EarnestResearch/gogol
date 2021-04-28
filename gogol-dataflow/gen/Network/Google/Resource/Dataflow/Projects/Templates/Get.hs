@@ -60,7 +60,7 @@ type ProjectsTemplatesGetResource =
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
                        QueryParam "gcsPath" Text :>
-                         QueryParam "view" Text :>
+                         QueryParam "view" ProjectsTemplatesGetView :>
                            QueryParam "callback" Text :>
                              QueryParam "alt" AltJSON :>
                                Get '[JSON] GetTemplateResponse
@@ -76,7 +76,7 @@ data ProjectsTemplatesGet =
     , _ptgAccessToken :: !(Maybe Text)
     , _ptgUploadType :: !(Maybe Text)
     , _ptgGcsPath :: !(Maybe Text)
-    , _ptgView :: !(Maybe Text)
+    , _ptgView :: !(Maybe ProjectsTemplatesGetView)
     , _ptgProjectId :: !Text
     , _ptgCallback :: !(Maybe Text)
     }
@@ -157,7 +157,7 @@ ptgGcsPath
   = lens _ptgGcsPath (\ s a -> s{_ptgGcsPath = a})
 
 -- | The view to retrieve. Defaults to METADATA_ONLY.
-ptgView :: Lens' ProjectsTemplatesGet (Maybe Text)
+ptgView :: Lens' ProjectsTemplatesGet (Maybe ProjectsTemplatesGetView)
 ptgView = lens _ptgView (\ s a -> s{_ptgView = a})
 
 -- | Required. The ID of the Cloud Platform project that the job belongs to.

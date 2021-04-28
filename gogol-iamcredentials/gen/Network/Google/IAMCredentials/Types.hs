@@ -50,24 +50,12 @@ module Network.Google.IAMCredentials.Types
     -- * Xgafv
     , Xgafv (..)
 
-    -- * GenerateIdentityBindingAccessTokenRequest
-    , GenerateIdentityBindingAccessTokenRequest
-    , generateIdentityBindingAccessTokenRequest
-    , gibatrJwt
-    , gibatrScope
-
     -- * GenerateAccessTokenRequest
     , GenerateAccessTokenRequest
     , generateAccessTokenRequest
     , gatrDelegates
     , gatrLifetime
     , gatrScope
-
-    -- * GenerateIdentityBindingAccessTokenResponse
-    , GenerateIdentityBindingAccessTokenResponse
-    , generateIdentityBindingAccessTokenResponse
-    , gibatrAccessToken
-    , gibatrExpireTime
 
     -- * SignJwtRequest
     , SignJwtRequest
@@ -97,6 +85,6 @@ iAMCredentialsService
   = defaultService (ServiceId "iamcredentials:v1")
       "iamcredentials.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

@@ -63,11 +63,17 @@ type SpreadsheetsValuesUpdateResource =
                  QueryParam "upload_protocol" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "valueInputOption" Text :>
+                       QueryParam "valueInputOption"
+                         SpreadsheetsValuesUpdateValueInputOption
+                         :>
                          QueryParam "includeValuesInResponse" Bool :>
-                           QueryParam "responseDateTimeRenderOption" Text :>
+                           QueryParam "responseDateTimeRenderOption"
+                             SpreadsheetsValuesUpdateResponseDateTimeRenderOption
+                             :>
                              QueryParam "callback" Text :>
-                               QueryParam "responseValueRenderOption" Text :>
+                               QueryParam "responseValueRenderOption"
+                                 SpreadsheetsValuesUpdateResponseValueRenderOption
+                                 :>
                                  QueryParam "alt" AltJSON :>
                                    ReqBody '[JSON] ValueRange :>
                                      Put '[JSON] UpdateValuesResponse
@@ -83,13 +89,13 @@ data SpreadsheetsValuesUpdate =
     , _svuAccessToken :: !(Maybe Text)
     , _svuSpreadsheetId :: !Text
     , _svuUploadType :: !(Maybe Text)
-    , _svuValueInputOption :: !(Maybe Text)
+    , _svuValueInputOption :: !(Maybe SpreadsheetsValuesUpdateValueInputOption)
     , _svuPayload :: !ValueRange
     , _svuRange :: !Text
     , _svuIncludeValuesInResponse :: !(Maybe Bool)
-    , _svuResponseDateTimeRenderOption :: !(Maybe Text)
+    , _svuResponseDateTimeRenderOption :: !(Maybe SpreadsheetsValuesUpdateResponseDateTimeRenderOption)
     , _svuCallback :: !(Maybe Text)
-    , _svuResponseValueRenderOption :: !(Maybe Text)
+    , _svuResponseValueRenderOption :: !(Maybe SpreadsheetsValuesUpdateResponseValueRenderOption)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -172,7 +178,7 @@ svuUploadType
       (\ s a -> s{_svuUploadType = a})
 
 -- | How the input data should be interpreted.
-svuValueInputOption :: Lens' SpreadsheetsValuesUpdate (Maybe Text)
+svuValueInputOption :: Lens' SpreadsheetsValuesUpdate (Maybe SpreadsheetsValuesUpdateValueInputOption)
 svuValueInputOption
   = lens _svuValueInputOption
       (\ s a -> s{_svuValueInputOption = a})
@@ -188,8 +194,8 @@ svuRange = lens _svuRange (\ s a -> s{_svuRange = a})
 
 -- | Determines if the update response should include the values of the cells
 -- that were updated. By default, responses do not include the updated
--- values. If the range to write was larger than than the range actually
--- written, the response will include all values in the requested range
+-- values. If the range to write was larger than the range actually
+-- written, the response includes all values in the requested range
 -- (excluding trailing empty rows and columns).
 svuIncludeValuesInResponse :: Lens' SpreadsheetsValuesUpdate (Maybe Bool)
 svuIncludeValuesInResponse
@@ -200,7 +206,7 @@ svuIncludeValuesInResponse
 -- rendered. This is ignored if response_value_render_option is
 -- FORMATTED_VALUE. The default dateTime render option is
 -- DateTimeRenderOption.SERIAL_NUMBER.
-svuResponseDateTimeRenderOption :: Lens' SpreadsheetsValuesUpdate (Maybe Text)
+svuResponseDateTimeRenderOption :: Lens' SpreadsheetsValuesUpdate (Maybe SpreadsheetsValuesUpdateResponseDateTimeRenderOption)
 svuResponseDateTimeRenderOption
   = lens _svuResponseDateTimeRenderOption
       (\ s a -> s{_svuResponseDateTimeRenderOption = a})
@@ -212,7 +218,7 @@ svuCallback
 
 -- | Determines how values in the response should be rendered. The default
 -- render option is ValueRenderOption.FORMATTED_VALUE.
-svuResponseValueRenderOption :: Lens' SpreadsheetsValuesUpdate (Maybe Text)
+svuResponseValueRenderOption :: Lens' SpreadsheetsValuesUpdate (Maybe SpreadsheetsValuesUpdateResponseValueRenderOption)
 svuResponseValueRenderOption
   = lens _svuResponseValueRenderOption
       (\ s a -> s{_svuResponseValueRenderOption = a})

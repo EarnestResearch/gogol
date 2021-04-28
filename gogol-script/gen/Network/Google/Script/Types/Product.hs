@@ -140,11 +140,9 @@ sDetails
       _Default
       . _Coerce
 
--- | The status code. For this API, this value either:
---
--- -   10, indicating a \`SCRIPT_TIMEOUT\` error,
--- -   3, indicating an \`INVALID_ARGUMENT\` error, or
--- -   1, indicating a \`CANCELLED\` execution.
+-- | The status code. For this API, this value either: - 10, indicating a
+-- \`SCRIPT_TIMEOUT\` error, - 3, indicating an \`INVALID_ARGUMENT\` error,
+-- or - 1, indicating a \`CANCELLED\` execution.
 sCode :: Lens' Status (Maybe Int32)
 sCode
   = lens _sCode (\ s a -> s{_sCode = a}) .
@@ -171,6 +169,43 @@ instance ToJSON Status where
                  [("details" .=) <$> _sDetails,
                   ("code" .=) <$> _sCode,
                   ("message" .=) <$> _sMessage])
+
+-- | The result of an execution.
+--
+-- /See:/ 'scriptExecutionResult' smart constructor.
+newtype ScriptExecutionResult =
+  ScriptExecutionResult'
+    { _serReturnValue :: Maybe Value
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ScriptExecutionResult' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'serReturnValue'
+scriptExecutionResult
+    :: ScriptExecutionResult
+scriptExecutionResult = ScriptExecutionResult' {_serReturnValue = Nothing}
+
+
+-- | The returned value of the execution.
+serReturnValue :: Lens' ScriptExecutionResult (Maybe Value)
+serReturnValue
+  = lens _serReturnValue
+      (\ s a -> s{_serReturnValue = a})
+
+instance FromJSON ScriptExecutionResult where
+        parseJSON
+          = withObject "ScriptExecutionResult"
+              (\ o ->
+                 ScriptExecutionResult' <$> (o .:? "returnValue"))
+
+instance ToJSON ScriptExecutionResult where
+        toJSON ScriptExecutionResult'{..}
+          = object
+              (catMaybes [("returnValue" .=) <$> _serReturnValue])
 
 -- | Resource containing usage stats for a given script, based on the
 -- supplied filter and mask present in the request.
@@ -362,6 +397,40 @@ instance ToJSON GoogleAppsScriptTypeProcess where
                   ("processType" .=) <$> _gastpProcessType,
                   ("duration" .=) <$> _gastpDuration])
 
+-- | \`Struct\` represents a structured data value, consisting of fields
+-- which map to dynamically typed values.
+--
+-- /See:/ 'struct' smart constructor.
+newtype Struct =
+  Struct'
+    { _sFields :: Maybe StructFields
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Struct' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sFields'
+struct
+    :: Struct
+struct = Struct' {_sFields = Nothing}
+
+
+-- | Unordered map of dynamically typed values.
+sFields :: Lens' Struct (Maybe StructFields)
+sFields = lens _sFields (\ s a -> s{_sFields = a})
+
+instance FromJSON Struct where
+        parseJSON
+          = withObject "Struct"
+              (\ o -> Struct' <$> (o .:? "fields"))
+
+instance ToJSON Struct where
+        toJSON Struct'{..}
+          = object (catMaybes [("fields" .=) <$> _sFields])
+
 -- | The script project resource.
 --
 -- /See:/ 'project' smart constructor.
@@ -476,23 +545,20 @@ instance ToJSON Project where
 -- executing. The maximum execution runtime is listed in the [Apps Script
 -- quotas
 -- guide](\/apps-script\/guides\/services\/quotas#current_limitations).
---
--- After execution has started, it can have one of four outcomes:
---
--- -   If the script function returns successfully, the response field
---     contains an ExecutionResponse object with the function\'s return
---     value in the object\'s \`result\` field.
--- -   If the script function (or Apps Script itself) throws an exception,
---     the error field contains a Status object. The \`Status\` object\'s
---     \`details\` field contains an array with a single ExecutionError
---     object that provides information about the nature of the error.
--- -   If the execution has not yet completed, the done field is \`false\`
---     and the neither the \`response\` nor \`error\` fields are present.
--- -   If the \`run\` call itself fails (for example, because of a
---     malformed request or an authorization error), the method returns an
---     HTTP response code in the 4XX range with a different format for the
---     response body. Client libraries automatically convert a 4XX response
---     into an exception class.
+-- After execution has started, it can have one of four outcomes: - If the
+-- script function returns successfully, the response field contains an
+-- ExecutionResponse object with the function\'s return value in the
+-- object\'s \`result\` field. - If the script function (or Apps Script
+-- itself) throws an exception, the error field contains a Status object.
+-- The \`Status\` object\'s \`details\` field contains an array with a
+-- single ExecutionError object that provides information about the nature
+-- of the error. - If the execution has not yet completed, the done field
+-- is \`false\` and the neither the \`response\` nor \`error\` fields are
+-- present. - If the \`run\` call itself fails (for example, because of a
+-- malformed request or an authorization error), the method returns an HTTP
+-- response code in the 4XX range with a different format for the response
+-- body. Client libraries automatically convert a 4XX response into an
+-- exception class.
 --
 -- /See:/ 'operation' smart constructor.
 data Operation =
@@ -708,6 +774,41 @@ instance ToJSON GoogleAppsScriptTypeUser where
                   ("domain" .=) <$> _gastuDomain,
                   ("name" .=) <$> _gastuName])
 
+-- | The response for executing or debugging a function in an Apps Script
+-- project.
+--
+-- /See:/ 'executeStreamResponse' smart constructor.
+newtype ExecuteStreamResponse =
+  ExecuteStreamResponse'
+    { _esrResult :: Maybe ScriptExecutionResult
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ExecuteStreamResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'esrResult'
+executeStreamResponse
+    :: ExecuteStreamResponse
+executeStreamResponse = ExecuteStreamResponse' {_esrResult = Nothing}
+
+
+-- | The result of the execution.
+esrResult :: Lens' ExecuteStreamResponse (Maybe ScriptExecutionResult)
+esrResult
+  = lens _esrResult (\ s a -> s{_esrResult = a})
+
+instance FromJSON ExecuteStreamResponse where
+        parseJSON
+          = withObject "ExecuteStreamResponse"
+              (\ o -> ExecuteStreamResponse' <$> (o .:? "result"))
+
+instance ToJSON ExecuteStreamResponse where
+        toJSON ExecuteStreamResponse'{..}
+          = object (catMaybes [("result" .=) <$> _esrResult])
+
 -- | A configuration that defines how a deployment is accessed externally.
 --
 -- /See:/ 'entryPoint' smart constructor.
@@ -878,7 +979,7 @@ erFunction :: Lens' ExecutionRequest (Maybe Text)
 erFunction
   = lens _erFunction (\ s a -> s{_erFunction = a})
 
--- | __Deprecated__. For use with Android add-ons only. An ID that represents
+-- | *Deprecated*. For use with Android add-ons only. An ID that represents
 -- the user\'s current session in the Android app for Google Docs or
 -- Sheets, included as extra data in the
 -- [Intent](https:\/\/developer.android.com\/guide\/components\/intents-filters.html)
@@ -987,6 +1088,138 @@ instance ToJSON ListScriptProcessesResponse where
                  [("nextPageToken" .=) <$> _lsprNextPageToken,
                   ("processes" .=) <$> _lsprProcesses])
 
+-- | \`Value\` represents a dynamically typed value which is the outcome of
+-- an executed script.
+--
+-- /See:/ 'value' smart constructor.
+data Value =
+  Value'
+    { _vBytesValue :: !(Maybe Bytes)
+    , _vProtoValue :: !(Maybe ValueProtoValue)
+    , _vBoolValue :: !(Maybe Bool)
+    , _vNumberValue :: !(Maybe (Textual Double))
+    , _vStringValue :: !(Maybe Text)
+    , _vListValue :: !(Maybe ListValue)
+    , _vStructValue :: !(Maybe Struct)
+    , _vDateValue :: !(Maybe (Textual Int64))
+    , _vNullValue :: !(Maybe ValueNullValue)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Value' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vBytesValue'
+--
+-- * 'vProtoValue'
+--
+-- * 'vBoolValue'
+--
+-- * 'vNumberValue'
+--
+-- * 'vStringValue'
+--
+-- * 'vListValue'
+--
+-- * 'vStructValue'
+--
+-- * 'vDateValue'
+--
+-- * 'vNullValue'
+value
+    :: Value
+value =
+  Value'
+    { _vBytesValue = Nothing
+    , _vProtoValue = Nothing
+    , _vBoolValue = Nothing
+    , _vNumberValue = Nothing
+    , _vStringValue = Nothing
+    , _vListValue = Nothing
+    , _vStructValue = Nothing
+    , _vDateValue = Nothing
+    , _vNullValue = Nothing
+    }
+
+
+-- | Represents raw byte values.
+vBytesValue :: Lens' Value (Maybe ByteString)
+vBytesValue
+  = lens _vBytesValue (\ s a -> s{_vBytesValue = a}) .
+      mapping _Bytes
+
+-- | Represents a structured proto value.
+vProtoValue :: Lens' Value (Maybe ValueProtoValue)
+vProtoValue
+  = lens _vProtoValue (\ s a -> s{_vProtoValue = a})
+
+-- | Represents a boolean value.
+vBoolValue :: Lens' Value (Maybe Bool)
+vBoolValue
+  = lens _vBoolValue (\ s a -> s{_vBoolValue = a})
+
+-- | Represents a double value.
+vNumberValue :: Lens' Value (Maybe Double)
+vNumberValue
+  = lens _vNumberValue (\ s a -> s{_vNumberValue = a})
+      . mapping _Coerce
+
+-- | Represents a string value.
+vStringValue :: Lens' Value (Maybe Text)
+vStringValue
+  = lens _vStringValue (\ s a -> s{_vStringValue = a})
+
+-- | Represents a repeated \`Value\`.
+vListValue :: Lens' Value (Maybe ListValue)
+vListValue
+  = lens _vListValue (\ s a -> s{_vListValue = a})
+
+-- | Represents a structured value.
+vStructValue :: Lens' Value (Maybe Struct)
+vStructValue
+  = lens _vStructValue (\ s a -> s{_vStructValue = a})
+
+-- | Represents a date in ms since the epoch.
+vDateValue :: Lens' Value (Maybe Int64)
+vDateValue
+  = lens _vDateValue (\ s a -> s{_vDateValue = a}) .
+      mapping _Coerce
+
+-- | Represents a null value.
+vNullValue :: Lens' Value (Maybe ValueNullValue)
+vNullValue
+  = lens _vNullValue (\ s a -> s{_vNullValue = a})
+
+instance FromJSON Value where
+        parseJSON
+          = withObject "Value"
+              (\ o ->
+                 Value' <$>
+                   (o .:? "bytesValue") <*> (o .:? "protoValue") <*>
+                     (o .:? "boolValue")
+                     <*> (o .:? "numberValue")
+                     <*> (o .:? "stringValue")
+                     <*> (o .:? "listValue")
+                     <*> (o .:? "structValue")
+                     <*> (o .:? "dateValue")
+                     <*> (o .:? "nullValue"))
+
+instance ToJSON Value where
+        toJSON Value'{..}
+          = object
+              (catMaybes
+                 [("bytesValue" .=) <$> _vBytesValue,
+                  ("protoValue" .=) <$> _vProtoValue,
+                  ("boolValue" .=) <$> _vBoolValue,
+                  ("numberValue" .=) <$> _vNumberValue,
+                  ("stringValue" .=) <$> _vStringValue,
+                  ("listValue" .=) <$> _vListValue,
+                  ("structValue" .=) <$> _vStructValue,
+                  ("dateValue" .=) <$> _vDateValue,
+                  ("nullValue" .=) <$> _vNullValue])
+
 --
 -- /See:/ 'statusDetailsItem' smart constructor.
 newtype StatusDetailsItem =
@@ -1071,6 +1304,77 @@ instance ToJSON ScriptStackTraceElement where
               (catMaybes
                  [("function" .=) <$> _ssteFunction,
                   ("lineNumber" .=) <$> _ssteLineNumber])
+
+-- | Unordered map of dynamically typed values.
+--
+-- /See:/ 'structFields' smart constructor.
+newtype StructFields =
+  StructFields'
+    { _sfAddtional :: HashMap Text Value
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'StructFields' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sfAddtional'
+structFields
+    :: HashMap Text Value -- ^ 'sfAddtional'
+    -> StructFields
+structFields pSfAddtional_ =
+  StructFields' {_sfAddtional = _Coerce # pSfAddtional_}
+
+
+sfAddtional :: Lens' StructFields (HashMap Text Value)
+sfAddtional
+  = lens _sfAddtional (\ s a -> s{_sfAddtional = a}) .
+      _Coerce
+
+instance FromJSON StructFields where
+        parseJSON
+          = withObject "StructFields"
+              (\ o -> StructFields' <$> (parseJSONObject o))
+
+instance ToJSON StructFields where
+        toJSON = toJSON . _sfAddtional
+
+-- | \`ListValue\` is a wrapper around a repeated field of values.
+--
+-- /See:/ 'listValue' smart constructor.
+newtype ListValue =
+  ListValue'
+    { _lvValues :: Maybe [Value]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ListValue' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'lvValues'
+listValue
+    :: ListValue
+listValue = ListValue' {_lvValues = Nothing}
+
+
+-- | Repeated field of dynamically typed values.
+lvValues :: Lens' ListValue [Value]
+lvValues
+  = lens _lvValues (\ s a -> s{_lvValues = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON ListValue where
+        parseJSON
+          = withObject "ListValue"
+              (\ o -> ListValue' <$> (o .:? "values" .!= mempty))
+
+instance ToJSON ListValue where
+        toJSON ListValue'{..}
+          = object (catMaybes [("values" .=) <$> _lvValues])
 
 -- | The Content resource.
 --
@@ -1551,7 +1855,7 @@ instance ToJSON GoogleAppsScriptTypeWebAppEntryPoint
                     _gastwaepEntryPointConfig,
                   ("url" .=) <$> _gastwaepURL])
 
--- | Request to create a script project.
+-- | Request to create a script project. Request to create a script project.
 --
 -- /See:/ 'createProjectRequest' smart constructor.
 data CreateProjectRequest =
@@ -1769,6 +2073,42 @@ instance FromJSON GoogleAppsScriptTypeFunction where
 instance ToJSON GoogleAppsScriptTypeFunction where
         toJSON GoogleAppsScriptTypeFunction'{..}
           = object (catMaybes [("name" .=) <$> _gastfName])
+
+-- | Represents a structured proto value.
+--
+-- /See:/ 'valueProtoValue' smart constructor.
+newtype ValueProtoValue =
+  ValueProtoValue'
+    { _vpvAddtional :: HashMap Text JSONValue
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ValueProtoValue' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vpvAddtional'
+valueProtoValue
+    :: HashMap Text JSONValue -- ^ 'vpvAddtional'
+    -> ValueProtoValue
+valueProtoValue pVpvAddtional_ =
+  ValueProtoValue' {_vpvAddtional = _Coerce # pVpvAddtional_}
+
+
+-- | Properties of the object. Contains field \'type with type URL.
+vpvAddtional :: Lens' ValueProtoValue (HashMap Text JSONValue)
+vpvAddtional
+  = lens _vpvAddtional (\ s a -> s{_vpvAddtional = a})
+      . _Coerce
+
+instance FromJSON ValueProtoValue where
+        parseJSON
+          = withObject "ValueProtoValue"
+              (\ o -> ValueProtoValue' <$> (parseJSONObject o))
+
+instance ToJSON ValueProtoValue where
+        toJSON = toJSON . _vpvAddtional
 
 -- | An individual file within a script project. A file is a third-party
 -- source code created by one or more developers. It can be a server-side

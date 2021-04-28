@@ -65,7 +65,7 @@ type ProjectsLocationsJobsCreateResource =
                    QueryParam "upload_protocol" Text :>
                      QueryParam "access_token" Text :>
                        QueryParam "uploadType" Text :>
-                         QueryParam "view" Text :>
+                         QueryParam "view" ProjectsLocationsJobsCreateView :>
                            QueryParam "replaceJobId" Text :>
                              QueryParam "callback" Text :>
                                QueryParam "alt" AltJSON :>
@@ -86,7 +86,7 @@ data ProjectsLocationsJobsCreate =
     , _pljcAccessToken :: !(Maybe Text)
     , _pljcUploadType :: !(Maybe Text)
     , _pljcPayload :: !Job
-    , _pljcView :: !(Maybe Text)
+    , _pljcView :: !(Maybe ProjectsLocationsJobsCreateView)
     , _pljcProjectId :: !Text
     , _pljcReplaceJobId :: !(Maybe Text)
     , _pljcCallback :: !(Maybe Text)
@@ -173,7 +173,7 @@ pljcPayload
   = lens _pljcPayload (\ s a -> s{_pljcPayload = a})
 
 -- | The level of information requested in response.
-pljcView :: Lens' ProjectsLocationsJobsCreate (Maybe Text)
+pljcView :: Lens' ProjectsLocationsJobsCreate (Maybe ProjectsLocationsJobsCreateView)
 pljcView = lens _pljcView (\ s a -> s{_pljcView = a})
 
 -- | The ID of the Cloud Platform project that the job belongs to.

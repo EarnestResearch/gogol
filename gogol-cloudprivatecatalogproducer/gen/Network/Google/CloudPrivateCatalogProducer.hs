@@ -16,7 +16,7 @@
 -- Enables cloud users to manage and share enterprise catalogs intheir
 -- organizations.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference>
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference>
 module Network.Google.CloudPrivateCatalogProducer
     (
     -- * Service Configuration

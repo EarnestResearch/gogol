@@ -127,7 +127,7 @@ sbrUploadType
   = lens _sbrUploadType
       (\ s a -> s{_sbrUploadType = a})
 
--- | The name of the book to return.
+-- | Required. The name of the book to return.
 sbrName :: Lens' ShelvesBooksReturn Text
 sbrName = lens _sbrName (\ s a -> s{_sbrName = a})
 

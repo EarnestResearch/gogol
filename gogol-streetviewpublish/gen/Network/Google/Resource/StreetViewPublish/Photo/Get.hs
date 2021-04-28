@@ -62,7 +62,7 @@ type PhotoGetResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "view" Text :>
+                     QueryParam "view" PhotoGetView :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :> Get '[JSON] Photo
 
@@ -81,7 +81,7 @@ data PhotoGet =
     , _pgUploadProtocol :: !(Maybe Text)
     , _pgAccessToken :: !(Maybe Text)
     , _pgUploadType :: !(Maybe Text)
-    , _pgView :: !(Maybe Text)
+    , _pgView :: !(Maybe PhotoGetView)
     , _pgPhotoId :: !Text
     , _pgCallback :: !(Maybe Text)
     }
@@ -154,9 +154,9 @@ pgUploadType :: Lens' PhotoGet (Maybe Text)
 pgUploadType
   = lens _pgUploadType (\ s a -> s{_pgUploadType = a})
 
--- | Specifies if a download URL for the photo bytes should be returned in
--- the Photo response.
-pgView :: Lens' PhotoGet (Maybe Text)
+-- | Required. Specifies if a download URL for the photo bytes should be
+-- returned in the Photo response.
+pgView :: Lens' PhotoGet (Maybe PhotoGetView)
 pgView = lens _pgView (\ s a -> s{_pgView = a})
 
 -- | Required. ID of the Photo.

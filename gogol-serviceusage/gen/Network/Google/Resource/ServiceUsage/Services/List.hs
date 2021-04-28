@@ -26,7 +26,11 @@
 -- \`servicemanagement.services.bind\` permission, and all services that
 -- have already been enabled on the project. The list can be filtered to
 -- only include services in a specific state, for example to only include
--- services enabled on the project.
+-- services enabled on the project. WARNING: If you need to query enabled
+-- services frequently or across an organization, you should use [Cloud
+-- Asset Inventory
+-- API](https:\/\/cloud.google.com\/asset-inventory\/docs\/apis), which
+-- provides higher throughput and richer filtering capability.
 --
 -- /See:/ <https://cloud.google.com/service-usage/ Service Usage API Reference> for @serviceusage.services.list@.
 module Network.Google.Resource.ServiceUsage.Services.List
@@ -76,7 +80,11 @@ type ServicesListResource =
 -- \`servicemanagement.services.bind\` permission, and all services that
 -- have already been enabled on the project. The list can be filtered to
 -- only include services in a specific state, for example to only include
--- services enabled on the project.
+-- services enabled on the project. WARNING: If you need to query enabled
+-- services frequently or across an organization, you should use [Cloud
+-- Asset Inventory
+-- API](https:\/\/cloud.google.com\/asset-inventory\/docs\/apis), which
+-- provides higher throughput and richer filtering capability.
 --
 -- /See:/ 'servicesList' smart constructor.
 data ServicesList =
@@ -133,7 +141,7 @@ servicesList pSlParent_ =
 
 
 -- | Parent to search for services on. An example name would be:
--- \`projects\/123\` where \`123\` is the project number (not project ID).
+-- \`projects\/123\` where \`123\` is the project number.
 slParent :: Lens' ServicesList Text
 slParent = lens _slParent (\ s a -> s{_slParent = a})
 

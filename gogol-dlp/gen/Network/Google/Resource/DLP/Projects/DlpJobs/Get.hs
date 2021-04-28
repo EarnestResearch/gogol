@@ -130,7 +130,7 @@ pdjgUploadType
   = lens _pdjgUploadType
       (\ s a -> s{_pdjgUploadType = a})
 
--- | The name of the DlpJob resource.
+-- | Required. The name of the DlpJob resource.
 pdjgName :: Lens' ProjectsDlpJobsGet Text
 pdjgName = lens _pdjgName (\ s a -> s{_pdjgName = a})
 

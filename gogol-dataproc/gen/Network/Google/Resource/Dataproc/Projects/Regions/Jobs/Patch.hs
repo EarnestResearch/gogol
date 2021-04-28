@@ -146,11 +146,11 @@ prjpUploadProtocol
   = lens _prjpUploadProtocol
       (\ s a -> s{_prjpUploadProtocol = a})
 
--- | Required. Specifies the path, relative to 'Job', of the field to update.
--- For example, to update the labels of a Job the 'update_mask' parameter
--- would be specified as 'labels', and the PATCH request body would specify
--- the new value. __Note:__ Currently, 'labels' is the only field that can
--- be updated.
+-- | Required. Specifies the path, relative to Job, of the field to update.
+-- For example, to update the labels of a Job the update_mask parameter
+-- would be specified as labels, and the PATCH request body would specify
+-- the new value. *Note:* Currently, labels is the only field that can be
+-- updated.
 prjpUpdateMask :: Lens' ProjectsRegionsJobsPatch (Maybe GFieldMask)
 prjpUpdateMask
   = lens _prjpUpdateMask
@@ -173,7 +173,7 @@ prjpPayload :: Lens' ProjectsRegionsJobsPatch Job
 prjpPayload
   = lens _prjpPayload (\ s a -> s{_prjpPayload = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prjpRegion :: Lens' ProjectsRegionsJobsPatch Text
 prjpRegion
   = lens _prjpRegion (\ s a -> s{_prjpRegion = a})

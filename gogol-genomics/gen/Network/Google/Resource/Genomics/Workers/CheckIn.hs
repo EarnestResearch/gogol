@@ -138,7 +138,8 @@ wciPayload :: Lens' WorkersCheckIn CheckInRequest
 wciPayload
   = lens _wciPayload (\ s a -> s{_wciPayload = a})
 
--- | The worker id, assigned when it was created.
+-- | The VM identity token for authenticating the VM instance.
+-- https:\/\/cloud.google.com\/compute\/docs\/instances\/verifying-instance-identity
 wciId :: Lens' WorkersCheckIn Text
 wciId = lens _wciId (\ s a -> s{_wciId = a})
 

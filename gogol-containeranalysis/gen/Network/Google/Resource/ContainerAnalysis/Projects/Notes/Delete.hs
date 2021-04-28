@@ -122,7 +122,7 @@ pndUploadType
   = lens _pndUploadType
       (\ s a -> s{_pndUploadType = a})
 
--- | The name of the note in the form of
+-- | Required. The name of the note in the form of
 -- \`projects\/[PROVIDER_ID]\/notes\/[NOTE_ID]\`.
 pndName :: Lens' ProjectsNotesDelete Text
 pndName = lens _pndName (\ s a -> s{_pndName = a})

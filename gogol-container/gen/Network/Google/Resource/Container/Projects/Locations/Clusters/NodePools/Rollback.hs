@@ -142,7 +142,7 @@ plcnprPayload
 
 -- | The name (project, location, cluster, node pool id) of the node poll to
 -- rollback upgrade. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\`.
 plcnprName :: Lens' ProjectsLocationsClustersNodePoolsRollback Text
 plcnprName
   = lens _plcnprName (\ s a -> s{_plcnprName = a})

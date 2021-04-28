@@ -22,13 +22,13 @@
 --
 -- Creates a Redis instance based on the specified tier and memory size. By
 -- default, the instance is accessible from the project\'s [default
--- network](\/compute\/docs\/networks-and-firewalls#networks). The creation
--- is executed asynchronously and callers may check the returned operation
--- to track its progress. Once the operation is completed the Redis
--- instance will be fully functional. Completed longrunning.Operation will
--- contain the new instance object in the response field. The returned
--- operation is automatically deleted after a few hours, so there is no
--- need to call DeleteOperation.
+-- network](https:\/\/cloud.google.com\/vpc\/docs\/vpc). The creation is
+-- executed asynchronously and callers may check the returned operation to
+-- track its progress. Once the operation is completed the Redis instance
+-- will be fully functional. Completed longrunning.Operation will contain
+-- the new instance object in the response field. The returned operation is
+-- automatically deleted after a few hours, so there is no need to call
+-- DeleteOperation.
 --
 -- /See:/ <https://cloud.google.com/memorystore/docs/redis/ Google Cloud Memorystore for Redis API Reference> for @redis.projects.locations.instances.create@.
 module Network.Google.Resource.Redis.Projects.Locations.Instances.Create
@@ -71,13 +71,13 @@ type ProjectsLocationsInstancesCreateResource =
 
 -- | Creates a Redis instance based on the specified tier and memory size. By
 -- default, the instance is accessible from the project\'s [default
--- network](\/compute\/docs\/networks-and-firewalls#networks). The creation
--- is executed asynchronously and callers may check the returned operation
--- to track its progress. Once the operation is completed the Redis
--- instance will be fully functional. Completed longrunning.Operation will
--- contain the new instance object in the response field. The returned
--- operation is automatically deleted after a few hours, so there is no
--- need to call DeleteOperation.
+-- network](https:\/\/cloud.google.com\/vpc\/docs\/vpc). The creation is
+-- executed asynchronously and callers may check the returned operation to
+-- track its progress. Once the operation is completed the Redis instance
+-- will be fully functional. Completed longrunning.Operation will contain
+-- the new instance object in the response field. The returned operation is
+-- automatically deleted after a few hours, so there is no need to call
+-- DeleteOperation.
 --
 -- /See:/ 'projectsLocationsInstancesCreate' smart constructor.
 data ProjectsLocationsInstancesCreate =
@@ -132,7 +132,7 @@ projectsLocationsInstancesCreate pPlicParent_ pPlicPayload_ =
 
 -- | Required. The resource name of the instance location using the form:
 -- \`projects\/{project_id}\/locations\/{location_id}\` where
--- \`location_id\` refers to a GCP region
+-- \`location_id\` refers to a GCP region.
 plicParent :: Lens' ProjectsLocationsInstancesCreate Text
 plicParent
   = lens _plicParent (\ s a -> s{_plicParent = a})

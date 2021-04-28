@@ -144,6 +144,9 @@ module Network.Google.AnalyticsReporting
     , dName
     , dHistogramBuckets
 
+    -- ** SearchUserActivityRequestActivityTypesItem
+    , SearchUserActivityRequestActivityTypesItem (..)
+
     -- ** DateRangeValues
     , DateRangeValues
     , dateRangeValues

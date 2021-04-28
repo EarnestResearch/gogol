@@ -147,7 +147,7 @@ sdPayload
 -- | Name of the consumer and service to disable the service on. The enable
 -- and disable methods currently only support projects. An example name
 -- would be: \`projects\/123\/services\/serviceusage.googleapis.com\` where
--- \`123\` is the project number (not project ID).
+-- \`123\` is the project number.
 sdName :: Lens' ServicesDisable Text
 sdName = lens _sdName (\ s a -> s{_sdName = a})
 

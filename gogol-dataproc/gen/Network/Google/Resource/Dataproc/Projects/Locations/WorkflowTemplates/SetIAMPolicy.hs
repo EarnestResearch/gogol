@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and
+-- PERMISSION_DENIED errors.
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.locations.workflowTemplates.setIamPolicy@.
 module Network.Google.Resource.Dataproc.Projects.Locations.WorkflowTemplates.SetIAMPolicy
@@ -62,7 +63,8 @@ type ProjectsLocationsWorkflowTemplatesSetIAMPolicyResource
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and
+-- PERMISSION_DENIED errors.
 --
 -- /See:/ 'projectsLocationsWorkflowTemplatesSetIAMPolicy' smart constructor.
 data ProjectsLocationsWorkflowTemplatesSetIAMPolicy =

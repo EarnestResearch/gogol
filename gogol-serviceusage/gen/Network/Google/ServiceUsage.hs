@@ -48,6 +48,9 @@ module Network.Google.ServiceUsage
     -- ** serviceusage.services.batchEnable
     , module Network.Google.Resource.ServiceUsage.Services.BatchEnable
 
+    -- ** serviceusage.services.batchGet
+    , module Network.Google.Resource.ServiceUsage.Services.BatchGet
+
     -- ** serviceusage.services.disable
     , module Network.Google.Resource.ServiceUsage.Services.Disable
 
@@ -61,6 +64,13 @@ module Network.Google.ServiceUsage
     , module Network.Google.Resource.ServiceUsage.Services.List
 
     -- * Types
+
+    -- ** JwtLocation
+    , JwtLocation
+    , jwtLocation
+    , jlValuePrefix
+    , jlHeader
+    , jlQuery
 
     -- ** MetricDescriptorValueType
     , MetricDescriptorValueType (..)
@@ -80,6 +90,7 @@ module Network.Google.ServiceUsage
     , mrdLabels
     , mrdType
     , mrdDescription
+    , mrdLaunchStage
 
     -- ** BackendRulePathTranslation
     , BackendRulePathTranslation (..)
@@ -94,7 +105,6 @@ module Network.Google.ServiceUsage
     , gasAPIs
     , gasTypes
     , gasSystemTypes
-    , gasExperimental
     , gasMonitoredResources
     , gasBackend
     , gasMonitoring
@@ -115,6 +125,9 @@ module Network.Google.ServiceUsage
     , gasCustomError
     , gasLogging
     , gasQuota
+
+    -- ** GoogleAPIServiceusageV1beta1GetServiceIdentityResponseState
+    , GoogleAPIServiceusageV1beta1GetServiceIdentityResponseState (..)
 
     -- ** DocumentationRule
     , DocumentationRule
@@ -161,6 +174,11 @@ module Network.Google.ServiceUsage
     , lsrNextPageToken
     , lsrServices
 
+    -- ** ImportConsumerOverridesResponse
+    , ImportConsumerOverridesResponse
+    , importConsumerOverridesResponse
+    , icorOverrides
+
     -- ** Context
     , Context
     , context
@@ -175,6 +193,7 @@ module Network.Google.ServiceUsage
     -- ** MetricDescriptor
     , MetricDescriptor
     , metricDescriptor
+    , mdMonitoredResourceTypes
     , mdMetricKind
     , mdName
     , mdMetadata
@@ -184,6 +203,7 @@ module Network.Google.ServiceUsage
     , mdValueType
     , mdDescription
     , mdUnit
+    , mdLaunchStage
 
     -- ** ListOperationsResponse
     , ListOperationsResponse
@@ -202,6 +222,8 @@ module Network.Google.ServiceUsage
     , brSelector
     , brMinDeadline
     , brAddress
+    , brProtocol
+    , brDisableAuth
     , brOperationDeadline
     , brDeadline
     , brPathTranslation
@@ -259,11 +281,23 @@ module Network.Google.ServiceUsage
     , EnableServiceRequest
     , enableServiceRequest
 
+    -- ** DeleteAdminQuotaPolicyMetadata
+    , DeleteAdminQuotaPolicyMetadata
+    , deleteAdminQuotaPolicyMetadata
+
+    -- ** UpdateAdminQuotaPolicyMetadata
+    , UpdateAdminQuotaPolicyMetadata
+    , updateAdminQuotaPolicyMetadata
+
     -- ** CustomErrorRule
     , CustomErrorRule
     , customErrorRule
     , cerIsErrorType
     , cerSelector
+
+    -- ** CreateAdminQuotaPolicyMetadata
+    , CreateAdminQuotaPolicyMetadata
+    , createAdminQuotaPolicyMetadata
 
     -- ** OptionValue
     , OptionValue
@@ -289,6 +323,10 @@ module Network.Google.ServiceUsage
     , aRules
     , aProviders
 
+    -- ** GetServiceIdentityMetadata
+    , GetServiceIdentityMetadata
+    , getServiceIdentityMetadata
+
     -- ** MetricDescriptorMetadataLaunchStage
     , MetricDescriptorMetadataLaunchStage (..)
 
@@ -296,6 +334,12 @@ module Network.Google.ServiceUsage
     , BatchCreateAdminOverridesResponse
     , batchCreateAdminOverridesResponse
     , bcaorOverrides
+
+    -- ** ServiceIdentity
+    , ServiceIdentity
+    , serviceIdentity
+    , siEmail
+    , siUniqueId
 
     -- ** Mixin
     , Mixin
@@ -328,6 +372,12 @@ module Network.Google.ServiceUsage
     , pContent
     , pName
 
+    -- ** GoogleAPIServiceusageV1beta1ServiceIdentity
+    , GoogleAPIServiceusageV1beta1ServiceIdentity
+    , googleAPIServiceusageV1beta1ServiceIdentity
+    , gasvsiEmail
+    , gasvsiUniqueId
+
     -- ** AuthenticationRule
     , AuthenticationRule
     , authenticationRule
@@ -335,6 +385,12 @@ module Network.Google.ServiceUsage
     , arSelector
     , arAllowWithoutCredential
     , arOAuth
+
+    -- ** GetServiceIdentityResponse
+    , GetServiceIdentityResponse
+    , getServiceIdentityResponse
+    , gsirState
+    , gsirIdentity
 
     -- ** LabelDescriptorValueType
     , LabelDescriptorValueType (..)
@@ -344,13 +400,23 @@ module Network.Google.ServiceUsage
     , metricRuleMetricCosts
     , mrmcAddtional
 
-    -- ** AuthorizationConfig
-    , AuthorizationConfig
-    , authorizationConfig
-    , acProvider
+    -- ** AdminQuotaPolicy
+    , AdminQuotaPolicy
+    , adminQuotaPolicy
+    , aqpMetric
+    , aqpName
+    , aqpContainer
+    , aqpDimensions
+    , aqpPolicyValue
+    , aqpUnit
 
     -- ** APISyntax
     , APISyntax (..)
+
+    -- ** ImportAdminQuotaPoliciesResponse
+    , ImportAdminQuotaPoliciesResponse
+    , importAdminQuotaPoliciesResponse
+    , iaqprPolicies
 
     -- ** TypeSyntax
     , TypeSyntax (..)
@@ -365,11 +431,6 @@ module Network.Google.ServiceUsage
     , enableFailure
     , efServiceId
     , efErrorMessage
-
-    -- ** Experimental
-    , Experimental
-    , experimental
-    , eAuthorization
 
     -- ** Backend
     , Backend
@@ -401,6 +462,15 @@ module Network.Google.ServiceUsage
     , metOptions
     , metSyntax
 
+    -- ** ImportAdminQuotaPoliciesMetadata
+    , ImportAdminQuotaPoliciesMetadata
+    , importAdminQuotaPoliciesMetadata
+
+    -- ** BatchGetServicesResponse
+    , BatchGetServicesResponse
+    , batchGetServicesResponse
+    , bgsrServices
+
     -- ** SystemParameters
     , SystemParameters
     , systemParameters
@@ -414,9 +484,12 @@ module Network.Google.ServiceUsage
     -- ** QuotaOverride
     , QuotaOverride
     , quotaOverride
+    , qoAdminOverrideAncestor
+    , qoMetric
     , qoOverrideValue
     , qoName
     , qoDimensions
+    , qoUnit
 
     -- ** BatchCreateConsumerOverridesResponse
     , BatchCreateConsumerOverridesResponse
@@ -430,6 +503,7 @@ module Network.Google.ServiceUsage
     , dDocumentationRootURL
     , dRules
     , dPages
+    , dServiceRootURL
     , dOverview
 
     -- ** Xgafv
@@ -447,6 +521,11 @@ module Network.Google.ServiceUsage
     , mdmIngestDelay
     , mdmLaunchStage
 
+    -- ** AdminQuotaPolicyDimensions
+    , AdminQuotaPolicyDimensions
+    , adminQuotaPolicyDimensions
+    , aqpdAddtional
+
     -- ** SystemParameterRule
     , SystemParameterRule
     , systemParameterRule
@@ -460,6 +539,9 @@ module Network.Google.ServiceUsage
     , lValueType
     , lDescription
 
+    -- ** MonitoredResourceDescriptorLaunchStage
+    , MonitoredResourceDescriptorLaunchStage (..)
+
     -- ** Usage
     , Usage
     , usage
@@ -470,6 +552,10 @@ module Network.Google.ServiceUsage
     -- ** FieldCardinality
     , FieldCardinality (..)
 
+    -- ** ImportAdminOverridesMetadata
+    , ImportAdminOverridesMetadata
+    , importAdminOverridesMetadata
+
     -- ** HTTP
     , HTTP
     , hTTP
@@ -479,6 +565,7 @@ module Network.Google.ServiceUsage
     -- ** DisableServiceRequest
     , DisableServiceRequest
     , disableServiceRequest
+    , dsrCheckIfServiceHasUsage
     , dsrDisableDependentServices
 
     -- ** Type
@@ -516,10 +603,8 @@ module Network.Google.ServiceUsage
     -- ** Endpoint
     , Endpoint
     , endpoint
-    , eAliases
     , eAllowCORS
     , eName
-    , eFeatures
     , eTarget
 
     -- ** OAuthRequirements
@@ -561,6 +646,9 @@ module Network.Google.ServiceUsage
     , billing
     , bConsumerDestinations
 
+    -- ** DisableServiceRequestCheckIfServiceHasUsage
+    , DisableServiceRequestCheckIfServiceHasUsage (..)
+
     -- ** SourceInfo
     , SourceInfo
     , sourceInfo
@@ -578,6 +666,12 @@ module Network.Google.ServiceUsage
     , gasvsState
     , gasvsConfig
     , gasvsName
+
+    -- ** GoogleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , GoogleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , googleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , gasvgsirState
+    , gasvgsirIdentity
 
     -- ** Enum'
     , Enum'
@@ -627,19 +721,35 @@ module Network.Google.ServiceUsage
     , operationResponse
     , orAddtional
 
+    -- ** MetricDescriptorLaunchStage
+    , MetricDescriptorLaunchStage (..)
+
     -- ** GoogleAPIServiceusageV1OperationMetadata
     , GoogleAPIServiceusageV1OperationMetadata
     , googleAPIServiceusageV1OperationMetadata
     , gasvomResourceNames
+
+    -- ** ImportAdminOverridesResponse
+    , ImportAdminOverridesResponse
+    , importAdminOverridesResponse
+    , iaorOverrides
+
+    -- ** ImportConsumerOverridesMetadata
+    , ImportConsumerOverridesMetadata
+    , importConsumerOverridesMetadata
 
     -- ** AuthProvider
     , AuthProvider
     , authProvider
     , apJWKsURI
     , apAudiences
+    , apJwtLocations
     , apId
     , apAuthorizationURL
     , apIssuer
+
+    -- ** GetServiceIdentityResponseState
+    , GetServiceIdentityResponseState (..)
 
     -- ** ContextRule
     , ContextRule
@@ -655,6 +765,8 @@ module Network.Google.ServiceUsage
     , googleAPIServiceusageV1ServiceConfig
     , gasvscAuthentication
     , gasvscAPIs
+    , gasvscMonitoredResources
+    , gasvscMonitoring
     , gasvscName
     , gasvscDocumentation
     , gasvscUsage
@@ -669,6 +781,7 @@ import Network.Google.Resource.ServiceUsage.Operations.Delete
 import Network.Google.Resource.ServiceUsage.Operations.Get
 import Network.Google.Resource.ServiceUsage.Operations.List
 import Network.Google.Resource.ServiceUsage.Services.BatchEnable
+import Network.Google.Resource.ServiceUsage.Services.BatchGet
 import Network.Google.Resource.ServiceUsage.Services.Disable
 import Network.Google.Resource.ServiceUsage.Services.Enable
 import Network.Google.Resource.ServiceUsage.Services.Get
@@ -689,3 +802,4 @@ type ServiceUsageAPI =
        :<|> ServicesGetResource
        :<|> ServicesEnableResource
        :<|> ServicesDisableResource
+       :<|> ServicesBatchGetResource

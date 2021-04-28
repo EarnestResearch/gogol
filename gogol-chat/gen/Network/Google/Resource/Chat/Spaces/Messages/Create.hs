@@ -22,7 +22,7 @@
 --
 -- Creates a message.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.messages.create@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.messages.create@.
 module Network.Google.Resource.Chat.Spaces.Messages.Create
     (
     -- * REST Resource

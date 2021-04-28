@@ -13,7 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Groups Migration Api.
+-- The Groups Migration API allows domain administrators to archive emails
+-- into Google groups.
 --
 -- /See:/ <https://developers.google.com/google-apps/groups-migration/ Groups Migration API Reference>
 module Network.Google.GroupsMigration
@@ -39,6 +40,9 @@ module Network.Google.GroupsMigration
     , groups
     , gKind
     , gResponseCode
+
+    -- ** Xgafv
+    , Xgafv (..)
     ) where
 
 import Network.Google.Prelude

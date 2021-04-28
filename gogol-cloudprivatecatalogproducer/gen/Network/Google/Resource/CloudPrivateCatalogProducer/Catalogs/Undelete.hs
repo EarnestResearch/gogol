@@ -22,7 +22,7 @@
 --
 -- Undeletes a deleted Catalog and all resources under it.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.undelete@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.undelete@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Undelete
     (
     -- * REST Resource

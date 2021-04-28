@@ -26,7 +26,7 @@ import Network.Google.Prelude
 data ListReportsResponse =
   ListReportsResponse'
     { _lrrReports :: !(Maybe [Report])
-    , _lrrKind :: !Text
+    , _lrrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -41,10 +41,7 @@ data ListReportsResponse =
 listReportsResponse
     :: ListReportsResponse
 listReportsResponse =
-  ListReportsResponse'
-    { _lrrReports = Nothing
-    , _lrrKind = "doubleclickbidmanager#listReportsResponse"
-    }
+  ListReportsResponse' {_lrrReports = Nothing, _lrrKind = Nothing}
 
 
 -- | Retrieved reports.
@@ -56,7 +53,7 @@ lrrReports
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"doubleclickbidmanager#listReportsResponse\".
-lrrKind :: Lens' ListReportsResponse Text
+lrrKind :: Lens' ListReportsResponse (Maybe Text)
 lrrKind = lens _lrrKind (\ s a -> s{_lrrKind = a})
 
 instance FromJSON ListReportsResponse where
@@ -64,16 +61,14 @@ instance FromJSON ListReportsResponse where
           = withObject "ListReportsResponse"
               (\ o ->
                  ListReportsResponse' <$>
-                   (o .:? "reports" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "doubleclickbidmanager#listReportsResponse"))
+                   (o .:? "reports" .!= mempty) <*> (o .:? "kind"))
 
 instance ToJSON ListReportsResponse where
         toJSON ListReportsResponse'{..}
           = object
               (catMaybes
                  [("reports" .=) <$> _lrrReports,
-                  Just ("kind" .= _lrrKind)])
+                  ("kind" .=) <$> _lrrKind])
 
 -- | Query metadata.
 --
@@ -514,7 +509,7 @@ instance ToJSON DownloadLineItemsRequest where
                   ("filterIds" .=) <$> _dlirFilterIds])
 
 -- | Request to fetch stored inventory sources, campaigns, insertion orders,
--- line items, TrueView ad groups and ads.
+-- line items, YouTube ad groups and ads.
 --
 -- /See:/ 'downloadRequest' smart constructor.
 data DownloadRequest =
@@ -566,7 +561,7 @@ drFilterType
   = lens _drFilterType (\ s a -> s{_drFilterType = a})
 
 -- | SDF Version (column names, types, order) in which the entities will be
--- returned. Default to 3.1.
+-- returned. Default to 5.
 drVersion :: Lens' DownloadRequest (Maybe Text)
 drVersion
   = lens _drVersion (\ s a -> s{_drVersion = a})
@@ -604,7 +599,7 @@ instance ToJSON DownloadRequest where
 data ListQueriesResponse =
   ListQueriesResponse'
     { _lqrQueries :: !(Maybe [Query])
-    , _lqrKind :: !Text
+    , _lqrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -619,10 +614,7 @@ data ListQueriesResponse =
 listQueriesResponse
     :: ListQueriesResponse
 listQueriesResponse =
-  ListQueriesResponse'
-    { _lqrQueries = Nothing
-    , _lqrKind = "doubleclickbidmanager#listQueriesResponse"
-    }
+  ListQueriesResponse' {_lqrQueries = Nothing, _lqrKind = Nothing}
 
 
 -- | Retrieved queries.
@@ -634,7 +626,7 @@ lqrQueries
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"doubleclickbidmanager#listQueriesResponse\".
-lqrKind :: Lens' ListQueriesResponse Text
+lqrKind :: Lens' ListQueriesResponse (Maybe Text)
 lqrKind = lens _lqrKind (\ s a -> s{_lqrKind = a})
 
 instance FromJSON ListQueriesResponse where
@@ -642,16 +634,14 @@ instance FromJSON ListQueriesResponse where
           = withObject "ListQueriesResponse"
               (\ o ->
                  ListQueriesResponse' <$>
-                   (o .:? "queries" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "doubleclickbidmanager#listQueriesResponse"))
+                   (o .:? "queries" .!= mempty) <*> (o .:? "kind"))
 
 instance ToJSON ListQueriesResponse where
         toJSON ListQueriesResponse'{..}
           = object
               (catMaybes
                  [("queries" .=) <$> _lqrQueries,
-                  Just ("kind" .= _lqrKind)])
+                  ("kind" .=) <$> _lqrKind])
 
 -- | Upload line items response.
 --
@@ -1323,7 +1313,7 @@ data Query =
     { _qQueryId :: !(Maybe (Textual Int64))
     , _qReportDataEndTimeMs :: !(Maybe (Textual Int64))
     , _qSchedule :: !(Maybe QuerySchedule)
-    , _qKind :: !Text
+    , _qKind :: !(Maybe Text)
     , _qParams :: !(Maybe Parameters)
     , _qMetadata :: !(Maybe QueryMetadata)
     , _qReportDataStartTimeMs :: !(Maybe (Textual Int64))
@@ -1358,7 +1348,7 @@ query =
     { _qQueryId = Nothing
     , _qReportDataEndTimeMs = Nothing
     , _qSchedule = Nothing
-    , _qKind = "doubleclickbidmanager#query"
+    , _qKind = Nothing
     , _qParams = Nothing
     , _qMetadata = Nothing
     , _qReportDataStartTimeMs = Nothing
@@ -1388,7 +1378,7 @@ qSchedule
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"doubleclickbidmanager#query\".
-qKind :: Lens' Query Text
+qKind :: Lens' Query (Maybe Text)
 qKind = lens _qKind (\ s a -> s{_qKind = a})
 
 -- | Query parameters.
@@ -1423,7 +1413,7 @@ instance FromJSON Query where
                  Query' <$>
                    (o .:? "queryId") <*> (o .:? "reportDataEndTimeMs")
                      <*> (o .:? "schedule")
-                     <*> (o .:? "kind" .!= "doubleclickbidmanager#query")
+                     <*> (o .:? "kind")
                      <*> (o .:? "params")
                      <*> (o .:? "metadata")
                      <*> (o .:? "reportDataStartTimeMs")
@@ -1436,7 +1426,7 @@ instance ToJSON Query where
                  [("queryId" .=) <$> _qQueryId,
                   ("reportDataEndTimeMs" .=) <$> _qReportDataEndTimeMs,
                   ("schedule" .=) <$> _qSchedule,
-                  Just ("kind" .= _qKind), ("params" .=) <$> _qParams,
+                  ("kind" .=) <$> _qKind, ("params" .=) <$> _qParams,
                   ("metadata" .=) <$> _qMetadata,
                   ("reportDataStartTimeMs" .=) <$>
                     _qReportDataStartTimeMs,

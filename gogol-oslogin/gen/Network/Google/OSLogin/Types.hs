@@ -46,12 +46,14 @@ module Network.Google.OSLogin.Types
     , ImportSSHPublicKeyResponse
     , importSSHPublicKeyResponse
     , ispkrLoginProFile
+    , ispkrDetails
 
     -- * SSHPublicKey
     , SSHPublicKey
     , sshPublicKey
     , spkFingerprint
     , spkKey
+    , spkName
     , spkExpirationTimeUsec
 
     -- * PosixAccount
@@ -63,6 +65,7 @@ module Network.Google.OSLogin.Types
     , paShell
     , paPrimary
     , paAccountId
+    , paName
     , paGid
     , paOperatingSystemType
     , paSystemId
@@ -86,6 +89,6 @@ oSLoginService
 computeScope :: Proxy '["https://www.googleapis.com/auth/compute"]
 computeScope = Proxy
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

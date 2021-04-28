@@ -20,7 +20,9 @@ module Network.Google.Billing.Types
       billingService
 
     -- * OAuth Scopes
+    , cloudBillingReadOnlyScope
     , cloudPlatformScope
+    , cloudBillingScope
 
     -- * AuditConfig
     , AuditConfig
@@ -41,6 +43,12 @@ module Network.Google.Billing.Types
     , eExpression
     , eTitle
     , eDescription
+
+    -- * GeoTaxonomy
+    , GeoTaxonomy
+    , geoTaxonomy
+    , gtRegions
+    , gtType
 
     -- * BillingAccount
     , BillingAccount
@@ -111,6 +119,9 @@ module Network.Google.Billing.Types
     -- * AuditLogConfigLogType
     , AuditLogConfigLogType (..)
 
+    -- * GeoTaxonomyType
+    , GeoTaxonomyType (..)
+
     -- * PricingExpression
     , PricingExpression
     , pricingExpression
@@ -140,6 +151,7 @@ module Network.Google.Billing.Types
     -- * SKU
     , SKU
     , sKU
+    , skukGeoTaxonomy
     , skukCategory
     , skukSKUId
     , skukServiceProviderName
@@ -203,6 +215,14 @@ billingService
   = defaultService (ServiceId "cloudbilling:v1")
       "cloudbilling.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | View your Google Cloud Platform billing accounts
+cloudBillingReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/cloud-billing.readonly"]
+cloudBillingReadOnlyScope = Proxy
+
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
+
+-- | View and manage your Google Cloud Platform billing accounts
+cloudBillingScope :: Proxy '["https://www.googleapis.com/auth/cloud-billing"]
+cloudBillingScope = Proxy

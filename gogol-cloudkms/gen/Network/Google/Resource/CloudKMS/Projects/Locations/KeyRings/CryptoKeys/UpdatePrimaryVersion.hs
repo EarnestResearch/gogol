@@ -141,7 +141,7 @@ plkrckupvPayload
   = lens _plkrckupvPayload
       (\ s a -> s{_plkrckupvPayload = a})
 
--- | The resource name of the CryptoKey to update.
+-- | Required. The resource name of the CryptoKey to update.
 plkrckupvName :: Lens' ProjectsLocationsKeyRingsCryptoKeysUpdatePrimaryVersion Text
 plkrckupvName
   = lens _plkrckupvName

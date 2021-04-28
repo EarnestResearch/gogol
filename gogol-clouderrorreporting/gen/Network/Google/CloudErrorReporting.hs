@@ -17,7 +17,7 @@
 -- reports new errors, and provides access to error groups and their
 -- associated errors.
 --
--- /See:/ <https://cloud.google.com/error-reporting/ Stackdriver Error Reporting API Reference>
+-- /See:/ <https://cloud.google.com/error-reporting/ Error Reporting API Reference>
 module Network.Google.CloudErrorReporting
     (
     -- * Service Configuration
@@ -51,6 +51,9 @@ module Network.Google.CloudErrorReporting
 
     -- * Types
 
+    -- ** ProjectsEventsListTimeRangePeriod
+    , ProjectsEventsListTimeRangePeriod (..)
+
     -- ** ErrorEvent
     , ErrorEvent
     , errorEvent
@@ -73,10 +76,14 @@ module Network.Google.CloudErrorReporting
     , egTrackingIssues
     , egName
     , egGroupId
+    , egResolutionStatus
 
     -- ** DeleteEventsResponse
     , DeleteEventsResponse
     , deleteEventsResponse
+
+    -- ** ProjectsGroupStatsListAlignment
+    , ProjectsGroupStatsListAlignment (..)
 
     -- ** ReportedErrorEvent
     , ReportedErrorEvent
@@ -121,6 +128,9 @@ module Network.Google.CloudErrorReporting
     , egsLastSeenTime
     , egsRepresentative
 
+    -- ** ProjectsGroupStatsListOrder
+    , ProjectsGroupStatsListOrder (..)
+
     -- ** ListGroupStatsResponse
     , ListGroupStatsResponse
     , listGroupStatsResponse
@@ -144,6 +154,12 @@ module Network.Google.CloudErrorReporting
     , tcStartTime
     , tcCount
     , tcEndTime
+
+    -- ** ProjectsGroupStatsListTimeRangePeriod
+    , ProjectsGroupStatsListTimeRangePeriod (..)
+
+    -- ** ErrorGroupResolutionStatus
+    , ErrorGroupResolutionStatus (..)
 
     -- ** SourceLocation
     , SourceLocation
@@ -176,7 +192,7 @@ import Network.Google.Resource.CloudErrorReporting.Projects.Groups.Update
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Stackdriver Error Reporting API service.
+-- | Represents the entirety of the methods and resources available for the Error Reporting API service.
 type CloudErrorReportingAPI =
      ProjectsGroupsGetResource :<|>
        ProjectsGroupsUpdateResource

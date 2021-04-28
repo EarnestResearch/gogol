@@ -138,7 +138,7 @@ pUploadType
 pPayload :: Lens' ProjectsLocationsFunctionsCall CallFunctionRequest
 pPayload = lens _pPayload (\ s a -> s{_pPayload = a})
 
--- | The name of the function to be called.
+-- | Required. The name of the function to be called.
 pName :: Lens' ProjectsLocationsFunctionsCall Text
 pName = lens _pName (\ s a -> s{_pName = a})
 

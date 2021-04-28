@@ -20,7 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Drops (aka deletes) a Cloud Spanner database.
+-- Drops (aka deletes) a Cloud Spanner database. Completed backups for the
+-- database will be retained according to their \`expire_time\`.
 --
 -- /See:/ <https://cloud.google.com/spanner/ Cloud Spanner API Reference> for @spanner.projects.instances.databases.dropDatabase@.
 module Network.Google.Resource.Spanner.Projects.Instances.Databases.DropDatabase
@@ -56,7 +57,8 @@ type ProjectsInstancesDatabasesDropDatabaseResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Empty
 
--- | Drops (aka deletes) a Cloud Spanner database.
+-- | Drops (aka deletes) a Cloud Spanner database. Completed backups for the
+-- database will be retained according to their \`expire_time\`.
 --
 -- /See:/ 'projectsInstancesDatabasesDropDatabase' smart constructor.
 data ProjectsInstancesDatabasesDropDatabase =

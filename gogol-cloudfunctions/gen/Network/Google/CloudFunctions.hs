@@ -90,15 +90,6 @@ module Network.Google.CloudFunctions
     -- ** OperationMetadataV1Type
     , OperationMetadataV1Type (..)
 
-    -- ** OperationMetadataV1Beta2
-    , OperationMetadataV1Beta2
-    , operationMetadataV1Beta2
-    , omvbVersionId
-    , omvbUpdateTime
-    , omvbType
-    , omvbTarget
-    , omvbRequest
-
     -- ** Expr
     , Expr
     , expr
@@ -146,6 +137,14 @@ module Network.Google.CloudFunctions
     , generateDownloadURLRequest
     , gdurVersionId
 
+    -- ** CloudFunctionBuildEnvironmentVariables
+    , CloudFunctionBuildEnvironmentVariables
+    , cloudFunctionBuildEnvironmentVariables
+    , cfbevAddtional
+
+    -- ** CloudFunctionVPCConnectorEgressSettings
+    , CloudFunctionVPCConnectorEgressSettings (..)
+
     -- ** Retry
     , Retry
     , retry
@@ -170,6 +169,7 @@ module Network.Google.CloudFunctions
     -- ** HTTPSTrigger
     , HTTPSTrigger
     , httpsTrigger
+    , htSecurityLevel
     , htURL
 
     -- ** StatusDetailsItem
@@ -211,16 +211,16 @@ module Network.Google.CloudFunctions
     , OperationMetadataV1
     , operationMetadataV1
     , omvVersionId
+    , omvBuildId
+    , omvBuildName
     , omvUpdateTime
     , omvType
+    , omvSourceToken
     , omvTarget
     , omvRequest
 
     -- ** CloudFunctionStatus
     , CloudFunctionStatus (..)
-
-    -- ** OperationMetadataV1Beta2Type
-    , OperationMetadataV1Beta2Type (..)
 
     -- ** GenerateDownloadURLResponse
     , GenerateDownloadURLResponse
@@ -260,6 +260,7 @@ module Network.Google.CloudFunctions
     , ListFunctionsResponse
     , listFunctionsResponse
     , lfrNextPageToken
+    , lfrUnreachable
     , lfrFunctions
 
     -- ** LocationMetadata
@@ -278,34 +279,38 @@ module Network.Google.CloudFunctions
     , alcLogType
     , alcExemptedMembers
 
+    -- ** HTTPSTriggerSecurityLevel
+    , HTTPSTriggerSecurityLevel (..)
+
     -- ** CloudFunction
     , CloudFunction
     , cloudFunction
     , cfRuntime
+    , cfBuildWorkerPool
     , cfStatus
     , cfSourceArchiveURL
     , cfVersionId
     , cfSourceUploadURL
     , cfEntryPoint
+    , cfBuildId
     , cfHTTPSTrigger
     , cfNetwork
     , cfMaxInstances
+    , cfVPCConnectorEgressSettings
     , cfEventTrigger
     , cfUpdateTime
     , cfName
     , cfSourceRepository
     , cfAvailableMemoryMb
+    , cfIngressSettings
     , cfLabels
     , cfServiceAccountEmail
     , cfEnvironmentVariables
     , cfTimeout
+    , cfSourceToken
+    , cfBuildEnvironmentVariables
     , cfVPCConnector
     , cfDescription
-
-    -- ** OperationMetadataV1Beta2Request
-    , OperationMetadataV1Beta2Request
-    , operationMetadataV1Beta2Request
-    , omvbrAddtional
 
     -- ** CloudFunctionLabels
     , CloudFunctionLabels
@@ -328,6 +333,9 @@ module Network.Google.CloudFunctions
     , bMembers
     , bRole
     , bCondition
+
+    -- ** CloudFunctionIngressSettings
+    , CloudFunctionIngressSettings (..)
     ) where
 
 import Network.Google.Prelude

@@ -35,6 +35,10 @@ module Network.Google.AppsLicensing.Types
     , lalKind
     , lalItems
 
+    -- * Empty
+    , Empty
+    , empty
+
     -- * LicenseAssignment
     , LicenseAssignment
     , licenseAssignment
@@ -46,6 +50,9 @@ module Network.Google.AppsLicensing.Types
     , laUserId
     , laSelfLink
     , laProductId
+
+    -- * Xgafv
+    , Xgafv (..)
     ) where
 
 import Network.Google.AppsLicensing.Types.Product
@@ -56,7 +63,7 @@ import Network.Google.Prelude
 appsLicensingService :: ServiceConfig
 appsLicensingService
   = defaultService (ServiceId "licensing:v1")
-      "www.googleapis.com"
+      "licensing.googleapis.com"
 
 -- | View and manage G Suite licenses for your domain
 appsLicensingScope :: Proxy '["https://www.googleapis.com/auth/apps.licensing"]

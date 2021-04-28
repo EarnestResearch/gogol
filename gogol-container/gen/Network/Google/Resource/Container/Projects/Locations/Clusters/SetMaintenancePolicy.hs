@@ -140,7 +140,7 @@ plcsmpPayload
 
 -- | The name (project, location, cluster id) of the cluster to set
 -- maintenance policy. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcsmpName :: Lens' ProjectsLocationsClustersSetMaintenancePolicy Text
 plcsmpName
   = lens _plcsmpName (\ s a -> s{_plcsmpName = a})

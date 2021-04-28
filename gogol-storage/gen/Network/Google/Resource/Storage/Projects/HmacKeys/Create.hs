@@ -33,6 +33,7 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Create
     , ProjectsHmacKeysCreate
 
     -- * Request Lenses
+    , phkcUserProject
     , phkcServiceAccountEmail
     , phkcProjectId
     ) where
@@ -49,14 +50,16 @@ type ProjectsHmacKeysCreateResource =
            Capture "projectId" Text :>
              "hmacKeys" :>
                QueryParam "serviceAccountEmail" Text :>
-                 QueryParam "alt" AltJSON :> Post '[JSON] HmacKey
+                 QueryParam "userProject" Text :>
+                   QueryParam "alt" AltJSON :> Post '[JSON] HmacKey
 
 -- | Creates a new HMAC key for the specified service account.
 --
 -- /See:/ 'projectsHmacKeysCreate' smart constructor.
 data ProjectsHmacKeysCreate =
   ProjectsHmacKeysCreate'
-    { _phkcServiceAccountEmail :: !Text
+    { _phkcUserProject :: !(Maybe Text)
+    , _phkcServiceAccountEmail :: !Text
     , _phkcProjectId :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -65,6 +68,8 @@ data ProjectsHmacKeysCreate =
 -- | Creates a value of 'ProjectsHmacKeysCreate' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'phkcUserProject'
 --
 -- * 'phkcServiceAccountEmail'
 --
@@ -75,10 +80,17 @@ projectsHmacKeysCreate
     -> ProjectsHmacKeysCreate
 projectsHmacKeysCreate pPhkcServiceAccountEmail_ pPhkcProjectId_ =
   ProjectsHmacKeysCreate'
-    { _phkcServiceAccountEmail = pPhkcServiceAccountEmail_
+    { _phkcUserProject = Nothing
+    , _phkcServiceAccountEmail = pPhkcServiceAccountEmail_
     , _phkcProjectId = pPhkcProjectId_
     }
 
+
+-- | The project to be billed for this request.
+phkcUserProject :: Lens' ProjectsHmacKeysCreate (Maybe Text)
+phkcUserProject
+  = lens _phkcUserProject
+      (\ s a -> s{_phkcUserProject = a})
 
 -- | Email address of the service account.
 phkcServiceAccountEmail :: Lens' ProjectsHmacKeysCreate Text
@@ -99,6 +111,7 @@ instance GoogleRequest ProjectsHmacKeysCreate where
                "https://www.googleapis.com/auth/devstorage.full_control"]
         requestClient ProjectsHmacKeysCreate'{..}
           = go _phkcProjectId (Just _phkcServiceAccountEmail)
+              _phkcUserProject
               (Just AltJSON)
               storageService
           where go

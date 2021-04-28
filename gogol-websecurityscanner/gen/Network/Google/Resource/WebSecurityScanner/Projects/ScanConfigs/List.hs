@@ -22,7 +22,7 @@
 --
 -- Lists ScanConfigs under a given project.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.list@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.list@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.List
     (
     -- * REST Resource
@@ -49,7 +49,7 @@ import Network.Google.WebSecurityScanner.Types
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.list@ method which the
 -- 'ProjectsScanConfigsList' request conforms to.
 type ProjectsScanConfigsListResource =
-     "v1beta" :>
+     "v1" :>
        Capture "parent" Text :>
          "scanConfigs" :>
            QueryParam "$.xgafv" Xgafv :>

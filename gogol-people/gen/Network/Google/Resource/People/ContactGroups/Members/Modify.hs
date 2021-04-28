@@ -126,7 +126,7 @@ cgmmUploadProtocol
   = lens _cgmmUploadProtocol
       (\ s a -> s{_cgmmUploadProtocol = a})
 
--- | The resource name of the contact group to modify.
+-- | Required. The resource name of the contact group to modify.
 cgmmResourceName :: Lens' ContactGroupsMembersModify Text
 cgmmResourceName
   = lens _cgmmResourceName

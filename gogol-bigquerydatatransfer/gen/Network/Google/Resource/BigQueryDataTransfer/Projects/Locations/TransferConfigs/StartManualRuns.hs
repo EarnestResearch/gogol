@@ -25,7 +25,7 @@
 -- the run_time is between start_time (inclusive) and end_time (exclusive),
 -- or for a specific run_time.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.startManualRuns@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.startManualRuns@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferConfigs.StartManualRuns
     (
     -- * REST Resource
@@ -116,7 +116,8 @@ projectsLocationsTransferConfigsStartManualRuns pPltcsmrParent_ pPltcsmrPayload_
 
 
 -- | Transfer configuration name in the form:
--- \`projects\/{project_id}\/transferConfigs\/{config_id}\`.
+-- \`projects\/{project_id}\/transferConfigs\/{config_id}\` or
+-- \`projects\/{project_id}\/locations\/{location_id}\/transferConfigs\/{config_id}\`.
 pltcsmrParent :: Lens' ProjectsLocationsTransferConfigsStartManualRuns Text
 pltcsmrParent
   = lens _pltcsmrParent

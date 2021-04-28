@@ -140,8 +140,8 @@ pspsPayload :: Lens' ProjectsSubscriptionsPull PullRequest
 pspsPayload
   = lens _pspsPayload (\ s a -> s{_pspsPayload = a})
 
--- | The subscription from which messages should be pulled. Format is
--- \`projects\/{project}\/subscriptions\/{sub}\`.
+-- | Required. The subscription from which messages should be pulled. Format
+-- is \`projects\/{project}\/subscriptions\/{sub}\`.
 pspsSubscription :: Lens' ProjectsSubscriptionsPull Text
 pspsSubscription
   = lens _pspsSubscription

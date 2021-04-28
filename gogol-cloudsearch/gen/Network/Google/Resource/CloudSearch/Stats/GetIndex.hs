@@ -22,9 +22,10 @@
 --
 -- Gets indexed item statistics aggreggated across all data sources. This
 -- API only returns statistics for previous dates; it doesn\'t return
--- statistics for the current day.
+-- statistics for the current day. **Note:** This API requires a standard
+-- end user account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.stats.getIndex@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.stats.getIndex@.
 module Network.Google.Resource.CloudSearch.Stats.GetIndex
     (
     -- * REST Resource
@@ -73,7 +74,8 @@ type StatsGetIndexResource =
 
 -- | Gets indexed item statistics aggreggated across all data sources. This
 -- API only returns statistics for previous dates; it doesn\'t return
--- statistics for the current day.
+-- statistics for the current day. **Note:** This API requires a standard
+-- end user account to execute.
 --
 -- /See:/ 'statsGetIndex' smart constructor.
 data StatsGetIndex =

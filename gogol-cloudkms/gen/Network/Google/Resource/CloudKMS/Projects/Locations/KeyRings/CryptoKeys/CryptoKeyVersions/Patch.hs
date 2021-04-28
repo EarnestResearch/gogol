@@ -131,7 +131,7 @@ plkrckckvpUploadProtocol
   = lens _plkrckckvpUploadProtocol
       (\ s a -> s{_plkrckckvpUploadProtocol = a})
 
--- | Required list of fields to be updated in this request.
+-- | Required. List of fields to be updated in this request.
 plkrckckvpUpdateMask :: Lens' ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsPatch (Maybe GFieldMask)
 plkrckckvpUpdateMask
   = lens _plkrckckvpUpdateMask

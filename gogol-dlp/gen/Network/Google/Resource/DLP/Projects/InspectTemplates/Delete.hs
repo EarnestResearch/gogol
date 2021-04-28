@@ -126,8 +126,9 @@ pitdUploadType
   = lens _pitdUploadType
       (\ s a -> s{_pitdUploadType = a})
 
--- | Resource name of the organization and inspectTemplate to be deleted, for
--- example \`organizations\/433245324\/inspectTemplates\/432452342\` or
+-- | Required. Resource name of the organization and inspectTemplate to be
+-- deleted, for example
+-- \`organizations\/433245324\/inspectTemplates\/432452342\` or
 -- projects\/project-id\/inspectTemplates\/432452342.
 pitdName :: Lens' ProjectsInspectTemplatesDelete Text
 pitdName = lens _pitdName (\ s a -> s{_pitdName = a})

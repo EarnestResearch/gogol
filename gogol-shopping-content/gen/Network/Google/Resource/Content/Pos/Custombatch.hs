@@ -22,7 +22,7 @@
 --
 -- Batches multiple POS-related calls in a single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.pos.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.pos.custombatch@.
 module Network.Google.Resource.Content.Pos.Custombatch
     (
     -- * REST Resource
@@ -33,8 +33,13 @@ module Network.Google.Resource.Content.Pos.Custombatch
     , PosCustombatch
 
     -- * Request Lenses
-    , pPayload
-    , pDryRun
+    , posXgafv
+    , posUploadProtocol
+    , posAccessToken
+    , posUploadType
+    , posPayload
+    , posDryRun
+    , posCallback
     ) where
 
 import Network.Google.Prelude
@@ -47,18 +52,28 @@ type PosCustombatchResource =
        "v2" :>
          "pos" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] PosCustomBatchRequest :>
-                   Post '[JSON] PosCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] PosCustomBatchRequest :>
+                             Post '[JSON] PosCustomBatchResponse
 
 -- | Batches multiple POS-related calls in a single request.
 --
 -- /See:/ 'posCustombatch' smart constructor.
 data PosCustombatch =
   PosCustombatch'
-    { _pPayload :: !PosCustomBatchRequest
-    , _pDryRun :: !(Maybe Bool)
+    { _posXgafv :: !(Maybe Xgafv)
+    , _posUploadProtocol :: !(Maybe Text)
+    , _posAccessToken :: !(Maybe Text)
+    , _posUploadType :: !(Maybe Text)
+    , _posPayload :: !PosCustomBatchRequest
+    , _posDryRun :: !(Maybe Bool)
+    , _posCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,32 +82,84 @@ data PosCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'pPayload'
+-- * 'posXgafv'
 --
--- * 'pDryRun'
+-- * 'posUploadProtocol'
+--
+-- * 'posAccessToken'
+--
+-- * 'posUploadType'
+--
+-- * 'posPayload'
+--
+-- * 'posDryRun'
+--
+-- * 'posCallback'
 posCustombatch
-    :: PosCustomBatchRequest -- ^ 'pPayload'
+    :: PosCustomBatchRequest -- ^ 'posPayload'
     -> PosCustombatch
-posCustombatch pPPayload_ =
-  PosCustombatch' {_pPayload = pPPayload_, _pDryRun = Nothing}
+posCustombatch pPosPayload_ =
+  PosCustombatch'
+    { _posXgafv = Nothing
+    , _posUploadProtocol = Nothing
+    , _posAccessToken = Nothing
+    , _posUploadType = Nothing
+    , _posPayload = pPosPayload_
+    , _posDryRun = Nothing
+    , _posCallback = Nothing
+    }
 
+
+-- | V1 error format.
+posXgafv :: Lens' PosCustombatch (Maybe Xgafv)
+posXgafv = lens _posXgafv (\ s a -> s{_posXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+posUploadProtocol :: Lens' PosCustombatch (Maybe Text)
+posUploadProtocol
+  = lens _posUploadProtocol
+      (\ s a -> s{_posUploadProtocol = a})
+
+-- | OAuth access token.
+posAccessToken :: Lens' PosCustombatch (Maybe Text)
+posAccessToken
+  = lens _posAccessToken
+      (\ s a -> s{_posAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+posUploadType :: Lens' PosCustombatch (Maybe Text)
+posUploadType
+  = lens _posUploadType
+      (\ s a -> s{_posUploadType = a})
 
 -- | Multipart request metadata.
-pPayload :: Lens' PosCustombatch PosCustomBatchRequest
-pPayload = lens _pPayload (\ s a -> s{_pPayload = a})
+posPayload :: Lens' PosCustombatch PosCustomBatchRequest
+posPayload
+  = lens _posPayload (\ s a -> s{_posPayload = a})
 
 -- | Flag to simulate a request like in a live environment. If set to true,
 -- dry-run mode checks the validity of the request and returns errors (if
 -- any).
-pDryRun :: Lens' PosCustombatch (Maybe Bool)
-pDryRun = lens _pDryRun (\ s a -> s{_pDryRun = a})
+posDryRun :: Lens' PosCustombatch (Maybe Bool)
+posDryRun
+  = lens _posDryRun (\ s a -> s{_posDryRun = a})
+
+-- | JSONP
+posCallback :: Lens' PosCustombatch (Maybe Text)
+posCallback
+  = lens _posCallback (\ s a -> s{_posCallback = a})
 
 instance GoogleRequest PosCustombatch where
         type Rs PosCustombatch = PosCustomBatchResponse
         type Scopes PosCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosCustombatch'{..}
-          = go _pDryRun (Just AltJSON) _pPayload
+          = go _posXgafv _posUploadProtocol _posAccessToken
+              _posUploadType
+              _posDryRun
+              _posCallback
+              (Just AltJSON)
+              _posPayload
               shoppingContentService
           where go
                   = buildClient (Proxy :: Proxy PosCustombatchResource)

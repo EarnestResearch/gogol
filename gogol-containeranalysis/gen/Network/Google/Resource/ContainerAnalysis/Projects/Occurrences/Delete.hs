@@ -126,7 +126,7 @@ podUploadType
   = lens _podUploadType
       (\ s a -> s{_podUploadType = a})
 
--- | The name of the occurrence in the form of
+-- | Required. The name of the occurrence in the form of
 -- \`projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]\`.
 podName :: Lens' ProjectsOccurrencesDelete Text
 podName = lens _podName (\ s a -> s{_podName = a})

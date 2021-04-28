@@ -147,13 +147,14 @@ pzcgUploadType
       (\ s a -> s{_pzcgUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 pzcgZone :: Lens' ProjectsZonesClustersGet Text
 pzcgZone = lens _pzcgZone (\ s a -> s{_pzcgZone = a})
 
 -- | The name (project, location, cluster) of the cluster to retrieve.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 pzcgName :: Lens' ProjectsZonesClustersGet (Maybe Text)
 pzcgName = lens _pzcgName (\ s a -> s{_pzcgName = a})
 

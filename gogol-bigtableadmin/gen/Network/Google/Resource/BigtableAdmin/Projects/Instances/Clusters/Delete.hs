@@ -123,8 +123,9 @@ picdUploadType
   = lens _picdUploadType
       (\ s a -> s{_picdUploadType = a})
 
--- | The unique name of the cluster to be deleted. Values are of the form
--- \`projects\/\/instances\/\/clusters\/\`.
+-- | Required. The unique name of the cluster to be deleted. Values are of
+-- the form
+-- \`projects\/{project}\/instances\/{instance}\/clusters\/{cluster}\`.
 picdName :: Lens' ProjectsInstancesClustersDelete Text
 picdName = lens _picdName (\ s a -> s{_picdName = a})
 

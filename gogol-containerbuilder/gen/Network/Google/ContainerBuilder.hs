@@ -35,9 +35,6 @@ module Network.Google.ContainerBuilder
     -- ** cloudbuild.operations.get
     , module Network.Google.Resource.Cloudbuild.Operations.Get
 
-    -- ** cloudbuild.operations.list
-    , module Network.Google.Resource.Cloudbuild.Operations.List
-
     -- ** cloudbuild.projects.builds.cancel
     , module Network.Google.Resource.Cloudbuild.Projects.Builds.Cancel
 
@@ -52,6 +49,27 @@ module Network.Google.ContainerBuilder
 
     -- ** cloudbuild.projects.builds.retry
     , module Network.Google.Resource.Cloudbuild.Projects.Builds.Retry
+
+    -- ** cloudbuild.projects.locations.builds.cancel
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Cancel
+
+    -- ** cloudbuild.projects.locations.builds.create
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Create
+
+    -- ** cloudbuild.projects.locations.builds.get
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Get
+
+    -- ** cloudbuild.projects.locations.builds.list
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.List
+
+    -- ** cloudbuild.projects.locations.builds.retry
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Retry
+
+    -- ** cloudbuild.projects.locations.operations.cancel
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Operations.Cancel
+
+    -- ** cloudbuild.projects.locations.operations.get
+    , module Network.Google.Resource.Cloudbuild.Projects.Locations.Operations.Get
 
     -- ** cloudbuild.projects.triggers.create
     , module Network.Google.Resource.Cloudbuild.Projects.Triggers.Create
@@ -70,6 +88,9 @@ module Network.Google.ContainerBuilder
 
     -- ** cloudbuild.projects.triggers.run
     , module Network.Google.Resource.Cloudbuild.Projects.Triggers.Run
+
+    -- ** cloudbuild.projects.triggers.webhook
+    , module Network.Google.Resource.Cloudbuild.Projects.Triggers.Webhook
 
     -- * Types
 
@@ -94,6 +115,7 @@ module Network.Google.ContainerBuilder
     , SourceProvenance
     , sourceProvenance
     , spResolvedRepoSource
+    , spResolvedStorageSourceManifest
     , spResolvedStorageSource
     , spFileHashes
 
@@ -114,17 +136,20 @@ module Network.Google.ContainerBuilder
     , PullRequestFilter
     , pullRequestFilter
     , prfCommentControl
+    , prfInvertRegex
     , prfBranch
 
     -- ** RetryBuildRequest
     , RetryBuildRequest
     , retryBuildRequest
+    , rbrName
+    , rbrId
+    , rbrProjectId
 
-    -- ** ListOperationsResponse
-    , ListOperationsResponse
-    , listOperationsResponse
-    , lorNextPageToken
-    , lorOperations
+    -- ** HTTPBodyExtensionsItem
+    , HTTPBodyExtensionsItem
+    , hTTPBodyExtensionsItem
+    , httpbeiAddtional
 
     -- ** CancelOperationRequest
     , CancelOperationRequest
@@ -154,12 +179,20 @@ module Network.Google.ContainerBuilder
     -- ** RepoSource
     , RepoSource
     , repoSource
+    , rsSubstitutions
+    , rsInvertRegex
     , rsRepoName
     , rsDir
     , rsCommitSha
     , rsBranchName
     , rsTagName
     , rsProjectId
+
+    -- ** Secrets
+    , Secrets
+    , secrets
+    , sInline
+    , sSecretManager
 
     -- ** Operation
     , Operation
@@ -179,6 +212,15 @@ module Network.Google.ContainerBuilder
     , secretSecretEnv
     , sseAddtional
 
+    -- ** Notification
+    , Notification
+    , notification
+    , nStructDelivery
+    , nSmtpDelivery
+    , nHTTPDelivery
+    , nSlackDelivery
+    , nFilter
+
     -- ** Artifacts
     , Artifacts
     , artifacts
@@ -187,10 +229,6 @@ module Network.Google.ContainerBuilder
 
     -- ** BuildStepStatus
     , BuildStepStatus (..)
-
-    -- ** CheckSuiteFilter
-    , CheckSuiteFilter
-    , checkSuiteFilter
 
     -- ** ArtifactObjects
     , ArtifactObjects
@@ -205,7 +243,6 @@ module Network.Google.ContainerBuilder
     , ghecOwner
     , ghecPullRequest
     , ghecName
-    , ghecCheckSuite
     , ghecPush
     , ghecInstallationId
 
@@ -218,14 +255,40 @@ module Network.Google.ContainerBuilder
     , vPath
     , vName
 
+    -- ** NotifierSecretRef
+    , NotifierSecretRef
+    , notifierSecretRef
+    , nsrSecretRef
+
+    -- ** ReceiveTriggerWebhookResponse
+    , ReceiveTriggerWebhookResponse
+    , receiveTriggerWebhookResponse
+
+    -- ** StorageSourceManifest
+    , StorageSourceManifest
+    , storageSourceManifest
+    , ssmBucket
+    , ssmObject
+    , ssmGeneration
+
+    -- ** SecretManagerSecret
+    , SecretManagerSecret
+    , secretManagerSecret
+    , smsVersionName
+    , smsEnv
+
     -- ** StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
     , sdiAddtional
 
+    -- ** PubsubConfigState
+    , PubsubConfigState (..)
+
     -- ** Build
     , Build
     , build
+    , bAvailableSecrets
     , bImages
     , bStatus
     , bSourceProvenance
@@ -237,9 +300,12 @@ module Network.Google.ContainerBuilder
     , bArtifacts
     , bLogsBucket
     , bSteps
+    , bServiceAccount
+    , bName
     , bStatusDetail
     , bSource
     , bId
+    , bQueueTtl
     , bOptions
     , bProjectId
     , bTiming
@@ -249,10 +315,25 @@ module Network.Google.ContainerBuilder
     , bCreateTime
     , bTags
 
+    -- ** InlineSecretEnvMap
+    , InlineSecretEnvMap
+    , inlineSecretEnvMap
+    , isemAddtional
+
     -- ** SourceProvenanceFileHashes
     , SourceProvenanceFileHashes
     , sourceProvenanceFileHashes
     , spfhAddtional
+
+    -- ** SMTPDelivery
+    , SMTPDelivery
+    , sMTPDelivery
+    , smtpdSenderAddress
+    , smtpdFromAddress
+    , smtpdRecipientAddresses
+    , smtpdPassword
+    , smtpdServer
+    , smtpdPort
 
     -- ** Secret
     , Secret
@@ -263,12 +344,24 @@ module Network.Google.ContainerBuilder
     -- ** PushFilter
     , PushFilter
     , pushFilter
+    , pfInvertRegex
     , pfTag
     , pfBranch
 
     -- ** CancelBuildRequest
     , CancelBuildRequest
     , cancelBuildRequest
+    , cbrName
+    , cbrId
+    , cbrProjectId
+
+    -- ** PubsubConfig
+    , PubsubConfig
+    , pubsubConfig
+    , pcState
+    , pcTopic
+    , pcServiceAccountEmail
+    , pcSubscription
 
     -- ** TimeSpan
     , TimeSpan
@@ -283,11 +376,22 @@ module Network.Google.ContainerBuilder
     , ssObject
     , ssGeneration
 
+    -- ** HTTPDelivery
+    , HTTPDelivery
+    , hTTPDelivery
+    , httpdURI
+
     -- ** ListBuildTriggersResponse
     , ListBuildTriggersResponse
     , listBuildTriggersResponse
     , lbtrNextPageToken
     , lbtrTriggers
+
+    -- ** InlineSecret
+    , InlineSecret
+    , inlineSecret
+    , isEnvMap
+    , isKmsKeyName
 
     -- ** ArtifactResult
     , ArtifactResult
@@ -308,6 +412,11 @@ module Network.Google.ContainerBuilder
     , buildSubstitutions
     , bsAddtional
 
+    -- ** SlackDelivery
+    , SlackDelivery
+    , slackDelivery
+    , sdWebhookURI
+
     -- ** Xgafv
     , Xgafv (..)
 
@@ -320,17 +429,34 @@ module Network.Google.ContainerBuilder
     -- ** HashType
     , HashType (..)
 
+    -- ** NotifierSecret
+    , NotifierSecret
+    , notifierSecret
+    , nsValue
+    , nsName
+
     -- ** BuildOptionsLogStreamingOption
     , BuildOptionsLogStreamingOption (..)
+
+    -- ** BuildOptionsSourceProvenanceHashItem
+    , BuildOptionsSourceProvenanceHashItem (..)
 
     -- ** Source
     , Source
     , source
     , sRepoSource
+    , sStorageSourceManifest
     , sStorageSource
 
     -- ** BuildOptionsLogging
     , BuildOptionsLogging (..)
+
+    -- ** HTTPBody
+    , HTTPBody
+    , hTTPBody
+    , httpbExtensions
+    , httpbData
+    , httpbContentType
 
     -- ** OperationMetadata
     , OperationMetadata
@@ -344,6 +470,14 @@ module Network.Google.ContainerBuilder
     , BuildTiming
     , buildTiming
     , btAddtional
+
+    -- ** NotifierConfig
+    , NotifierConfig
+    , notifierConfig
+    , ncAPIVersion
+    , ncKind
+    , ncSpec
+    , ncMetadata
 
     -- ** BuildOperationMetadata
     , BuildOperationMetadata
@@ -364,6 +498,12 @@ module Network.Google.ContainerBuilder
     , boLogStreamingOption
     , boLogging
     , boSourceProvenanceHash
+    , boDynamicSubstitutions
+
+    -- ** NotificationStructDelivery
+    , NotificationStructDelivery
+    , notificationStructDelivery
+    , nsdAddtional
 
     -- ** OperationResponse
     , OperationResponse
@@ -379,11 +519,27 @@ module Network.Google.ContainerBuilder
     , btTriggerTemplate
     , btBuild
     , btIgnoredFiles
+    , btPubsubConfig
+    , btName
     , btId
     , btGithub
+    , btFilter
     , btDescription
     , btFilename
     , btCreateTime
+    , btTags
+
+    -- ** NotifierMetadata
+    , NotifierMetadata
+    , notifierMetadata
+    , nmNotifier
+    , nmName
+
+    -- ** NotifierSpec
+    , NotifierSpec
+    , notifierSpec
+    , nsSecrets
+    , nsNotification
 
     -- ** BuiltImage
     , BuiltImage
@@ -391,24 +547,36 @@ module Network.Google.ContainerBuilder
     , biPushTiming
     , biName
     , biDigest
+
+    -- ** RepoSourceSubstitutions
+    , RepoSourceSubstitutions
+    , repoSourceSubstitutions
+    , rssAddtional
     ) where
 
 import Network.Google.Prelude
 import Network.Google.ContainerBuilder.Types
 import Network.Google.Resource.Cloudbuild.Operations.Cancel
 import Network.Google.Resource.Cloudbuild.Operations.Get
-import Network.Google.Resource.Cloudbuild.Operations.List
 import Network.Google.Resource.Cloudbuild.Projects.Builds.Cancel
 import Network.Google.Resource.Cloudbuild.Projects.Builds.Create
 import Network.Google.Resource.Cloudbuild.Projects.Builds.Get
 import Network.Google.Resource.Cloudbuild.Projects.Builds.List
 import Network.Google.Resource.Cloudbuild.Projects.Builds.Retry
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Cancel
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Create
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Get
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.List
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Builds.Retry
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Operations.Cancel
+import Network.Google.Resource.Cloudbuild.Projects.Locations.Operations.Get
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.Create
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.Delete
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.Get
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.List
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.Patch
 import Network.Google.Resource.Cloudbuild.Projects.Triggers.Run
+import Network.Google.Resource.Cloudbuild.Projects.Triggers.Webhook
 
 {- $resources
 TODO
@@ -416,8 +584,7 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the Cloud Build API service.
 type ContainerBuilderAPI =
-     OperationsListResource :<|> OperationsGetResource
-       :<|> OperationsCancelResource
+     OperationsGetResource :<|> OperationsCancelResource
        :<|> ProjectsBuildsListResource
        :<|> ProjectsBuildsRetryResource
        :<|> ProjectsBuildsGetResource
@@ -428,4 +595,12 @@ type ContainerBuilderAPI =
        :<|> ProjectsTriggersGetResource
        :<|> ProjectsTriggersRunResource
        :<|> ProjectsTriggersCreateResource
+       :<|> ProjectsTriggersWebhookResource
        :<|> ProjectsTriggersDeleteResource
+       :<|> ProjectsLocationsBuildsListResource
+       :<|> ProjectsLocationsBuildsRetryResource
+       :<|> ProjectsLocationsBuildsGetResource
+       :<|> ProjectsLocationsBuildsCreateResource
+       :<|> ProjectsLocationsBuildsCancelResource
+       :<|> ProjectsLocationsOperationsGetResource
+       :<|> ProjectsLocationsOperationsCancelResource

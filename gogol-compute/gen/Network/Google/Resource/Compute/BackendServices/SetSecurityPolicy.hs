@@ -20,7 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the security policy for the specified backend service.
+-- Sets the Google Cloud Armor security policy for the specified backend
+-- service. For more information, see Google Cloud Armor Overview
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.backendServices.setSecurityPolicy@.
 module Network.Google.Resource.Compute.BackendServices.SetSecurityPolicy
@@ -58,7 +59,8 @@ type BackendServicesSetSecurityPolicyResource =
                          ReqBody '[JSON] SecurityPolicyReference :>
                            Post '[JSON] Operation
 
--- | Sets the security policy for the specified backend service.
+-- | Sets the Google Cloud Armor security policy for the specified backend
+-- service. For more information, see Google Cloud Armor Overview
 --
 -- /See:/ 'backendServicesSetSecurityPolicy' smart constructor.
 data BackendServicesSetSecurityPolicy =

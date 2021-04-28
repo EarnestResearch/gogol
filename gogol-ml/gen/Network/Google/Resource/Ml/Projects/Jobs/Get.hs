@@ -22,7 +22,7 @@
 --
 -- Describes a job.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.jobs.get@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.jobs.get@.
 module Network.Google.Resource.Ml.Projects.Jobs.Get
     (
     -- * REST Resource
@@ -135,7 +135,8 @@ pjgCallback
 instance GoogleRequest ProjectsJobsGet where
         type Rs ProjectsJobsGet = GoogleCloudMlV1__Job
         type Scopes ProjectsJobsGet =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsJobsGet'{..}
           = go _pjgName _pjgXgafv _pjgUploadProtocol
               _pjgAccessToken

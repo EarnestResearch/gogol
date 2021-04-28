@@ -186,7 +186,8 @@ clePrimary
   = lens _clePrimary (\ s a -> s{_clePrimary = a})
 
 -- | Whether the calendar has been hidden from the list. Optional. The
--- default is False.
+-- attribute is only returned when the calendar is hidden, in which case
+-- the value is true.
 cleHidden :: Lens' CalendarListEntry Bool
 cleHidden
   = lens _cleHidden (\ s a -> s{_cleHidden = a})
@@ -356,6 +357,7 @@ data Event =
     , _eGuestsCanInviteOthers :: !Bool
     , _eRecurrence :: !(Maybe [Text])
     , _eGadget :: !(Maybe EventGadget)
+    , _eEventType :: !Text
     , _eSequence :: !(Maybe (Textual Int32))
     , _eICalUId :: !(Maybe Text)
     , _eEnd :: !(Maybe EventDateTime)
@@ -426,6 +428,8 @@ data Event =
 --
 -- * 'eGadget'
 --
+-- * 'eEventType'
+--
 -- * 'eSequence'
 --
 -- * 'eICalUId'
@@ -481,6 +485,7 @@ event =
     , _eGuestsCanInviteOthers = True
     , _eRecurrence = Nothing
     , _eGadget = Nothing
+    , _eEventType = "default"
     , _eSequence = Nothing
     , _eICalUId = Nothing
     , _eEnd = Nothing
@@ -577,7 +582,9 @@ eLocation
   = lens _eLocation (\ s a -> s{_eLocation = a})
 
 -- | The attendees of the event. See the Events with attendees guide for more
--- information on scheduling events with other calendar users.
+-- information on scheduling events with other calendar users. Service
+-- accounts need to use domain-wide delegation of authority to populate the
+-- attendee list.
 eAttendees :: Lens' Event [EventAttendee]
 eAttendees
   = lens _eAttendees (\ s a -> s{_eAttendees = a}) .
@@ -622,9 +629,9 @@ eRecurringEventId
 eStart :: Lens' Event (Maybe EventDateTime)
 eStart = lens _eStart (\ s a -> s{_eStart = a})
 
--- | Whether this is a private event copy where changes are not shared with
--- other copies on other calendars. Optional. Immutable. The default is
--- False.
+-- | If set to True, Event propagation is disabled. Note that it is not the
+-- same thing as Private event properties. Optional. Immutable. The default
+-- is False.
 ePrivateCopy :: Lens' Event Bool
 ePrivateCopy
   = lens _ePrivateCopy (\ s a -> s{_ePrivateCopy = a})
@@ -637,7 +644,7 @@ eEndTimeUnspecified
   = lens _eEndTimeUnspecified
       (\ s a -> s{_eEndTimeUnspecified = a})
 
--- | The conference-related information, such as details of a Hangouts Meet
+-- | The conference-related information, such as details of a Google Meet
 -- conference. To create new conference details use the createRequest
 -- field. To persist your changes, remember to set the
 -- conferenceDataVersion request parameter to 1 for all event modification
@@ -682,9 +689,17 @@ eRecurrence
       _Default
       . _Coerce
 
--- | A gadget that extends this event.
+-- | A gadget that extends this event. Gadgets are deprecated; this structure
+-- is instead only used for returning birthday calendar metadata.
 eGadget :: Lens' Event (Maybe EventGadget)
 eGadget = lens _eGadget (\ s a -> s{_eGadget = a})
+
+-- | Specific type of the event. Read-only. Possible values are: -
+-- \"default\" - A regular event or not further specified. -
+-- \"outOfOffice\" - An out-of-office event.
+eEventType :: Lens' Event Text
+eEventType
+  = lens _eEventType (\ s a -> s{_eEventType = a})
 
 -- | Sequence number as per iCalendar.
 eSequence :: Lens' Event (Maybe Int32)
@@ -776,7 +791,7 @@ eHangoutLink :: Lens' Event (Maybe Text)
 eHangoutLink
   = lens _eHangoutLink (\ s a -> s{_eHangoutLink = a})
 
--- | Description of the event. Optional.
+-- | Description of the event. Can contain HTML. Optional.
 eDescription :: Lens' Event (Maybe Text)
 eDescription
   = lens _eDescription (\ s a -> s{_eDescription = a})
@@ -817,6 +832,7 @@ instance FromJSON Event where
                      <*> (o .:? "guestsCanInviteOthers" .!= True)
                      <*> (o .:? "recurrence" .!= mempty)
                      <*> (o .:? "gadget")
+                     <*> (o .:? "eventType" .!= "default")
                      <*> (o .:? "sequence")
                      <*> (o .:? "iCalUID")
                      <*> (o .:? "end")
@@ -861,6 +877,7 @@ instance ToJSON Event where
                     ("guestsCanInviteOthers" .= _eGuestsCanInviteOthers),
                   ("recurrence" .=) <$> _eRecurrence,
                   ("gadget" .=) <$> _eGadget,
+                  Just ("eventType" .= _eEventType),
                   ("sequence" .=) <$> _eSequence,
                   ("iCalUID" .=) <$> _eICalUId, ("end" .=) <$> _eEnd,
                   Just ("attendeesOmitted" .= _eAttendeesOmitted),
@@ -1022,7 +1039,7 @@ instance ToJSON ConferenceSolution where
                  [("iconUri" .=) <$> _csIconURI,
                   ("key" .=) <$> _csKey, ("name" .=) <$> _csName])
 
--- | The scope of the rule.
+-- | The extent to which calendar access is granted by this ACL rule.
 --
 -- /See:/ 'aclRuleScope' smart constructor.
 data ACLRuleScope =
@@ -1561,8 +1578,9 @@ conferenceSolutionKey = ConferenceSolutionKey' {_cskType = Nothing}
 -- However, it should disallow modifications. The possible values are: -
 -- \"eventHangout\" for Hangouts for consumers
 -- (http:\/\/hangouts.google.com) - \"eventNamedHangout\" for classic
--- Hangouts for G Suite users (http:\/\/hangouts.google.com) -
--- \"hangoutsMeet\" for Hangouts Meet (http:\/\/meet.google.com)
+-- Hangouts for Google Workspace users (http:\/\/hangouts.google.com) -
+-- \"hangoutsMeet\" for Google Meet (http:\/\/meet.google.com) - \"addOn\"
+-- for 3P conference providers
 cskType :: Lens' ConferenceSolutionKey (Maybe Text)
 cskType = lens _cskType (\ s a -> s{_cskType = a})
 
@@ -1815,7 +1833,7 @@ cResourceId
   = lens _cResourceId (\ s a -> s{_cResourceId = a})
 
 -- | Identifies this as a notification channel used to watch for changes to a
--- resource. Value: the fixed string \"api#channel\".
+-- resource, which is \"api#channel\".
 cKind :: Lens' Channel Text
 cKind = lens _cKind (\ s a -> s{_cKind = a})
 
@@ -1847,7 +1865,9 @@ cParams = lens _cParams (\ s a -> s{_cParams = a})
 cId :: Lens' Channel (Maybe Text)
 cId = lens _cId (\ s a -> s{_cId = a})
 
--- | The type of delivery mechanism used for this channel.
+-- | The type of delivery mechanism used for this channel. Valid values are
+-- \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http
+-- requests are used to deliver messages.
 cType :: Lens' Channel (Maybe Text)
 cType = lens _cType (\ s a -> s{_cType = a})
 
@@ -2017,7 +2037,7 @@ conferenceData =
     }
 
 
--- | The signature of the conference data. Genereated on server side. Must be
+-- | The signature of the conference data. Generated on server side. Must be
 -- preserved while copying the conference data between events, otherwise
 -- the conference data will not be copied. Unset for a conference with a
 -- failed create request. Optional for a conference with a pending create
@@ -2026,7 +2046,7 @@ cdSignature :: Lens' ConferenceData (Maybe Text)
 cdSignature
   = lens _cdSignature (\ s a -> s{_cdSignature = a})
 
--- | The conference solution, such as Hangouts or Hangouts Meet. Unset for a
+-- | The conference solution, such as Hangouts or Google Meet. Unset for a
 -- conference with a failed create request. Either conferenceSolution and
 -- at least one entryPoint, or createRequest is required.
 cdConferenceSolution :: Lens' ConferenceData (Maybe ConferenceSolution)
@@ -2047,7 +2067,8 @@ cdCreateRequest
 -- conferences, should not be displayed to users. Values for solution
 -- types: - \"eventHangout\": unset. - \"eventNamedHangout\": the name of
 -- the Hangout. - \"hangoutsMeet\": the 10-letter meeting code, for example
--- \"aaa-bbbb-ccc\". Optional.
+-- \"aaa-bbbb-ccc\". - \"addOn\": defined by 3P conference provider.
+-- Optional.
 cdConferenceId :: Lens' ConferenceData (Maybe Text)
 cdConferenceId
   = lens _cdConferenceId
@@ -2365,14 +2386,9 @@ calendarNotification =
   CalendarNotification' {_cnMethod = Nothing, _cnType = Nothing}
 
 
--- | The method used to deliver the notification. Possible values are: -
--- \"email\" - Notifications are sent via email. - \"sms\" - Deprecated.
--- Once this feature is shutdown, the API will no longer return
--- notifications using this method. Any newly added SMS notifications will
--- be ignored. See Google Calendar SMS notifications to be removed for more
--- information. Notifications are sent via SMS. This value is read-only and
--- is ignored on inserts and updates. SMS notifications are only available
--- for G Suite customers. Required when adding a notification.
+-- | The method used to deliver the notification. The possible value is: -
+-- \"email\" - Notifications are sent via email. Required when adding a
+-- notification.
 cnMethod :: Lens' CalendarNotification (Maybe Text)
 cnMethod = lens _cnMethod (\ s a -> s{_cnMethod = a})
 
@@ -3023,13 +3039,8 @@ eventReminder = EventReminder' {_erMethod = Nothing, _erMinutes = Nothing}
 
 
 -- | The method used by this reminder. Possible values are: - \"email\" -
--- Reminders are sent via email. - \"sms\" - Deprecated. Once this feature
--- is shutdown, the API will no longer return reminders using this method.
--- Any newly added SMS reminders will be ignored. See Google Calendar SMS
--- notifications to be removed for more information. Reminders are sent via
--- SMS. These are only available for G Suite customers. Requests to set SMS
--- reminders for other account types are ignored. - \"popup\" - Reminders
--- are sent via a UI popup. Required when adding a reminder.
+-- Reminders are sent via email. - \"popup\" - Reminders are sent via a UI
+-- popup. Required when adding a reminder.
 erMethod :: Lens' EventReminder (Maybe Text)
 erMethod = lens _erMethod (\ s a -> s{_erMethod = a})
 
@@ -3333,7 +3344,8 @@ instance ToJSON CalendarList where
                   Just ("kind" .= _clKind), ("items" .=) <$> _clItems,
                   ("nextSyncToken" .=) <$> _clNextSyncToken])
 
--- | A gadget that extends this event.
+-- | A gadget that extends this event. Gadgets are deprecated; this structure
+-- is instead only used for returning birthday calendar metadata.
 --
 -- /See:/ 'eventGadget' smart constructor.
 data EventGadget =
@@ -3385,14 +3397,14 @@ eventGadget =
 
 
 -- | The gadget\'s height in pixels. The height must be an integer greater
--- than 0. Optional.
+-- than 0. Optional. Deprecated.
 egHeight :: Lens' EventGadget (Maybe Int32)
 egHeight
   = lens _egHeight (\ s a -> s{_egHeight = a}) .
       mapping _Coerce
 
--- | The gadget\'s display mode. Optional. Possible values are: - \"icon\" -
--- The gadget displays next to the event\'s title in the calendar view. -
+-- | The gadget\'s display mode. Deprecated. Possible values are: - \"icon\"
+-- - The gadget displays next to the event\'s title in the calendar view. -
 -- \"chip\" - The gadget displays when the event is clicked.
 egDisplay :: Lens' EventGadget (Maybe Text)
 egDisplay
@@ -3404,27 +3416,27 @@ egPreferences
   = lens _egPreferences
       (\ s a -> s{_egPreferences = a})
 
--- | The gadget\'s URL. The URL scheme must be HTTPS.
+-- | The gadget\'s URL. The URL scheme must be HTTPS. Deprecated.
 egLink :: Lens' EventGadget (Maybe Text)
 egLink = lens _egLink (\ s a -> s{_egLink = a})
 
--- | The gadget\'s icon URL. The URL scheme must be HTTPS.
+-- | The gadget\'s icon URL. The URL scheme must be HTTPS. Deprecated.
 egIconLink :: Lens' EventGadget (Maybe Text)
 egIconLink
   = lens _egIconLink (\ s a -> s{_egIconLink = a})
 
 -- | The gadget\'s width in pixels. The width must be an integer greater than
--- 0. Optional.
+-- 0. Optional. Deprecated.
 egWidth :: Lens' EventGadget (Maybe Int32)
 egWidth
   = lens _egWidth (\ s a -> s{_egWidth = a}) .
       mapping _Coerce
 
--- | The gadget\'s title.
+-- | The gadget\'s title. Deprecated.
 egTitle :: Lens' EventGadget (Maybe Text)
 egTitle = lens _egTitle (\ s a -> s{_egTitle = a})
 
--- | The gadget\'s type.
+-- | The gadget\'s type. Deprecated.
 egType :: Lens' EventGadget (Maybe Text)
 egType = lens _egType (\ s a -> s{_egType = a})
 
@@ -3653,11 +3665,11 @@ arKind = lens _arKind (\ s a -> s{_arKind = a})
 arRole :: Lens' ACLRule (Maybe Text)
 arRole = lens _arRole (\ s a -> s{_arRole = a})
 
--- | The scope of the rule.
+-- | The extent to which calendar access is granted by this ACL rule.
 arScope :: Lens' ACLRule (Maybe ACLRuleScope)
 arScope = lens _arScope (\ s a -> s{_arScope = a})
 
--- | Identifier of the ACL rule.
+-- | Identifier of the Access Control List (ACL) rule. See Sharing calendars.
 arId :: Lens' ACLRule (Maybe Text)
 arId = lens _arId (\ s a -> s{_arId = a})
 
@@ -3722,7 +3734,7 @@ ccrRequestId :: Lens' CreateConferenceRequest (Maybe Text)
 ccrRequestId
   = lens _ccrRequestId (\ s a -> s{_ccrRequestId = a})
 
--- | The conference solution, such as Hangouts or Hangouts Meet.
+-- | The conference solution, such as Hangouts or Google Meet.
 ccrConferenceSolutionKey :: Lens' CreateConferenceRequest (Maybe ConferenceSolutionKey)
 ccrConferenceSolutionKey
   = lens _ccrConferenceSolutionKey

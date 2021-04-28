@@ -108,8 +108,8 @@ projectsOccurrencesCreate pPocParent_ pPocPayload_ =
     }
 
 
--- | The name of the project in the form of \`projects\/[PROJECT_ID]\`, under
--- which the occurrence is to be created.
+-- | Required. The name of the project in the form of
+-- \`projects\/[PROJECT_ID]\`, under which the occurrence is to be created.
 pocParent :: Lens' ProjectsOccurrencesCreate Text
 pocParent
   = lens _pocParent (\ s a -> s{_pocParent = a})

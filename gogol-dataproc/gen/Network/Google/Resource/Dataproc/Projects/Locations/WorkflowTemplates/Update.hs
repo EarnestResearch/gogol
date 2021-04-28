@@ -139,9 +139,14 @@ plwtuPayload :: Lens' ProjectsLocationsWorkflowTemplatesUpdate WorkflowTemplate
 plwtuPayload
   = lens _plwtuPayload (\ s a -> s{_plwtuPayload = a})
 
--- | Output only. The \"resource name\" of the template, as described in
--- https:\/\/cloud.google.com\/apis\/design\/resource_names of the form
+-- | Output only. The resource name of the workflow template, as described in
+-- https:\/\/cloud.google.com\/apis\/design\/resource_names. For
+-- projects.regions.workflowTemplates, the resource name of the template
+-- has the following format:
 -- projects\/{project_id}\/regions\/{region}\/workflowTemplates\/{template_id}
+-- For projects.locations.workflowTemplates, the resource name of the
+-- template has the following format:
+-- projects\/{project_id}\/locations\/{location}\/workflowTemplates\/{template_id}
 plwtuName :: Lens' ProjectsLocationsWorkflowTemplatesUpdate Text
 plwtuName
   = lens _plwtuName (\ s a -> s{_plwtuName = a})

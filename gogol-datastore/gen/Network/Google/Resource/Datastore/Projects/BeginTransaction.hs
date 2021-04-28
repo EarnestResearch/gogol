@@ -136,7 +136,7 @@ pbtPayload :: Lens' ProjectsBeginTransaction BeginTransactionRequest
 pbtPayload
   = lens _pbtPayload (\ s a -> s{_pbtPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 pbtProjectId :: Lens' ProjectsBeginTransaction Text
 pbtProjectId
   = lens _pbtProjectId (\ s a -> s{_pbtProjectId = a})

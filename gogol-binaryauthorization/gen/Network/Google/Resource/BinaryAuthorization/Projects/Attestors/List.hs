@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.attestors.list@ method which the
 -- 'ProjectsAttestorsList' request conforms to.
 type ProjectsAttestorsListResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "attestors" :>
            QueryParam "$.xgafv" Xgafv :>

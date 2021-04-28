@@ -163,10 +163,11 @@ ccwpUploadProtocol
 -- are specified. If a field supports empty values, it can be cleared by
 -- specifying it in the update mask and not in the CourseWork object. If a
 -- field that does not support empty values is included in the update mask
--- and not set in the CourseWork object, an \`INVALID_ARGUMENT\` error will
--- be returned. The following fields may be specified by teachers: *
--- \`title\` * \`description\` * \`state\` * \`due_date\` * \`due_time\` *
--- \`max_points\` * \`scheduled_time\` * \`submission_modification_mode\`
+-- and not set in the CourseWork object, an \`INVALID_ARGUMENT\` error is
+-- returned. The following fields may be specified by teachers: * \`title\`
+-- * \`description\` * \`state\` * \`due_date\` * \`due_time\` *
+-- \`max_points\` * \`scheduled_time\` * \`submission_modification_mode\` *
+-- \`topic_id\`
 ccwpUpdateMask :: Lens' CoursesCourseWorkPatch (Maybe GFieldMask)
 ccwpUpdateMask
   = lens _ccwpUpdateMask

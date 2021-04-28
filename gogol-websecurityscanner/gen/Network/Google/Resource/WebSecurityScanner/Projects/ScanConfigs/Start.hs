@@ -22,7 +22,7 @@
 --
 -- Start a ScanRun according to the given ScanConfig.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.start@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.start@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Start
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.WebSecurityScanner.Types
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.start@ method which the
 -- 'ProjectsScanConfigsStart' request conforms to.
 type ProjectsScanConfigsStartResource =
-     "v1beta" :>
+     "v1" :>
        CaptureMode "name" "start" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

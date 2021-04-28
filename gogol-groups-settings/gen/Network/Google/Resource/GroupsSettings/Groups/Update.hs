@@ -81,7 +81,7 @@ guPayload :: Lens' GroupsUpdate Groups
 guPayload
   = lens _guPayload (\ s a -> s{_guPayload = a})
 
--- | The resource ID
+-- | The group\'s email address.
 guGroupUniqueId :: Lens' GroupsUpdate Text
 guGroupUniqueId
   = lens _guGroupUniqueId

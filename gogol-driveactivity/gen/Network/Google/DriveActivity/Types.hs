@@ -318,6 +318,7 @@ module Network.Google.DriveActivity.Types
     -- * Assignment
     , Assignment
     , assignment
+    , aAssignedUser
     , aSubtype
 
     -- * SettingsChange

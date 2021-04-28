@@ -37,6 +37,7 @@ module Network.Google.Resource.Storage.DefaultObjectAccessControls.List
     , doaclBucket
     , doaclUserProject
     , doaclIfMetagenerationNotMatch
+    , doaclProvisionalUserProject
     ) where
 
 import Network.Google.Prelude
@@ -54,8 +55,9 @@ type DefaultObjectAccessControlsListResource =
                  QueryParam "userProject" Text :>
                    QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                      :>
-                     QueryParam "alt" AltJSON :>
-                       Get '[JSON] ObjectAccessControls
+                     QueryParam "provisionalUserProject" Text :>
+                       QueryParam "alt" AltJSON :>
+                         Get '[JSON] ObjectAccessControls
 
 -- | Retrieves default object ACL entries on the specified bucket.
 --
@@ -66,6 +68,7 @@ data DefaultObjectAccessControlsList =
     , _doaclBucket :: !Text
     , _doaclUserProject :: !(Maybe Text)
     , _doaclIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
+    , _doaclProvisionalUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -81,6 +84,8 @@ data DefaultObjectAccessControlsList =
 -- * 'doaclUserProject'
 --
 -- * 'doaclIfMetagenerationNotMatch'
+--
+-- * 'doaclProvisionalUserProject'
 defaultObjectAccessControlsList
     :: Text -- ^ 'doaclBucket'
     -> DefaultObjectAccessControlsList
@@ -90,6 +95,7 @@ defaultObjectAccessControlsList pDoaclBucket_ =
     , _doaclBucket = pDoaclBucket_
     , _doaclUserProject = Nothing
     , _doaclIfMetagenerationNotMatch = Nothing
+    , _doaclProvisionalUserProject = Nothing
     }
 
 
@@ -121,6 +127,13 @@ doaclIfMetagenerationNotMatch
       (\ s a -> s{_doaclIfMetagenerationNotMatch = a})
       . mapping _Coerce
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+doaclProvisionalUserProject :: Lens' DefaultObjectAccessControlsList (Maybe Text)
+doaclProvisionalUserProject
+  = lens _doaclProvisionalUserProject
+      (\ s a -> s{_doaclProvisionalUserProject = a})
+
 instance GoogleRequest
            DefaultObjectAccessControlsList
          where
@@ -133,6 +146,7 @@ instance GoogleRequest
           = go _doaclBucket _doaclIfMetagenerationMatch
               _doaclUserProject
               _doaclIfMetagenerationNotMatch
+              _doaclProvisionalUserProject
               (Just AltJSON)
               storageService
           where go

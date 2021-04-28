@@ -22,7 +22,7 @@
 --
 -- Lists the alerts.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.list@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.list@.
 module Network.Google.Resource.AlertCenter.Alerts.List
     (
     -- * REST Resource
@@ -64,7 +64,8 @@ type AlertsListResource =
                          QueryParam "pageSize" (Textual Int32) :>
                            QueryParam "callback" Text :>
                              QueryParam "alt" AltJSON :>
-                               Get '[JSON] ListAlertsResponse
+                               Get '[JSON]
+                                 GoogleAppsAlertcenterV1beta1ListAlertsResponse
 
 -- | Lists the alerts.
 --
@@ -155,9 +156,9 @@ alUploadType :: Lens' AlertsList (Maybe Text)
 alUploadType
   = lens _alUploadType (\ s a -> s{_alUploadType = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alerts are associated with. Inferred from the caller
--- identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alerts are associated with. Inferred from
+-- the caller identity if not provided.
 alCustomerId :: Lens' AlertsList (Maybe Text)
 alCustomerId
   = lens _alCustomerId (\ s a -> s{_alCustomerId = a})
@@ -190,7 +191,8 @@ alCallback
   = lens _alCallback (\ s a -> s{_alCallback = a})
 
 instance GoogleRequest AlertsList where
-        type Rs AlertsList = ListAlertsResponse
+        type Rs AlertsList =
+             GoogleAppsAlertcenterV1beta1ListAlertsResponse
         type Scopes AlertsList =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsList'{..}

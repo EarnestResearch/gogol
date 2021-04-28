@@ -137,8 +137,8 @@ gsagUploadType
   = lens _gsagUploadType
       (\ s a -> s{_gsagUploadType = a})
 
--- | The ID of the Google Cloud Platform Console project that the Google
--- service account is associated with. Required.
+-- | Required. The ID of the Google Cloud Platform Console project that the
+-- Google service account is associated with.
 gsagProjectId :: Lens' GoogleServiceAccountsGet Text
 gsagProjectId
   = lens _gsagProjectId

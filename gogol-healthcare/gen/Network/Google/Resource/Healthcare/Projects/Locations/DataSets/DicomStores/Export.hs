@@ -21,7 +21,10 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Exports data to the specified destination by copying it from the DICOM
--- store. The metadata field type is OperationMetadata.
+-- store. Errors are also logged to Cloud Logging. For more information,
+-- see [Viewing error logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging).
+-- The metadata field type is OperationMetadata.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.export@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Export
@@ -50,7 +53,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresExport' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresExportResource
      =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "export" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -62,7 +65,10 @@ type ProjectsLocationsDataSetsDicomStoresExportResource
                        Post '[JSON] Operation
 
 -- | Exports data to the specified destination by copying it from the DICOM
--- store. The metadata field type is OperationMetadata.
+-- store. Errors are also logged to Cloud Logging. For more information,
+-- see [Viewing error logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging).
+-- The metadata field type is OperationMetadata.
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresExport' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresExport =
@@ -140,9 +146,9 @@ pldsdsePayload
   = lens _pldsdsePayload
       (\ s a -> s{_pldsdsePayload = a})
 
--- | The DICOM store resource name from which the data should be exported
--- (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`).
+-- | The DICOM store resource name from which to export the data. For
+-- example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 pldsdseName :: Lens' ProjectsLocationsDataSetsDicomStoresExport Text
 pldsdseName
   = lens _pldsdseName (\ s a -> s{_pldsdseName = a})

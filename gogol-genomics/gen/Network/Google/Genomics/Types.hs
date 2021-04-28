@@ -28,6 +28,9 @@ module Network.Google.Genomics.Types
     , containerStartedEventPortMAppings
     , csepmaAddtional
 
+    -- * ActionFlagsItem
+    , ActionFlagsItem (..)
+
     -- * Event
     , Event
     , event
@@ -92,6 +95,7 @@ module Network.Google.Genomics.Types
     -- * CheckInResponse
     , CheckInResponse
     , checkInResponse
+    , cirFeatures
     , cirDeadline
     , cirMetadata
 
@@ -99,6 +103,7 @@ module Network.Google.Genomics.Types
     , WorkerAssignedEvent
     , workerAssignedEvent
     , waeZone
+    , waeMachineType
     , waeInstance
 
     -- * OperationMetadataLabels
@@ -155,7 +160,16 @@ module Network.Google.Genomics.Types
     , cirEvent
     , cirWorkerStatus
     , cirResult
+    , cirEvents
     , cirDeadlineExpired
+    , cirSosReport
+
+    -- * PersistentDisk
+    , PersistentDisk
+    , persistentDisk
+    , pdSourceImage
+    , pdSizeGb
+    , pdType
 
     -- * ContainerKilledEvent
     , ContainerKilledEvent
@@ -167,10 +181,29 @@ module Network.Google.Genomics.Types
     , pullStoppedEvent
     , pseImageURI
 
+    -- * Volume
+    , Volume
+    , volume
+    , vPersistentDisk
+    , vVolume
+    , vExistingDisk
+    , vNfsMount
+
     -- * ActionLabels
     , ActionLabels
     , actionLabels
     , alAddtional
+
+    -- * TimestampedEventData
+    , TimestampedEventData
+    , timestampedEventData
+    , tedAddtional
+
+    -- * TimestampedEvent
+    , TimestampedEvent
+    , timestampedEvent
+    , teData
+    , teTimestamp
 
     -- * StatusDetailsItem
     , StatusDetailsItem
@@ -189,6 +222,11 @@ module Network.Google.Genomics.Types
     , eventDetails
     , edAddtional
 
+    -- * ExistingDisk
+    , ExistingDisk
+    , existingDisk
+    , edDisk
+
     -- * Action
     , Action
     , action
@@ -202,6 +240,7 @@ module Network.Google.Genomics.Types
     , aImageURI
     , aName
     , aLabels
+    , aEncryptedEnvironment
     , aTimeout
     , aPidNamespace
 
@@ -248,12 +287,15 @@ module Network.Google.Genomics.Types
     -- * VirtualMachine
     , VirtualMachine
     , virtualMachine
+    , vmDockerCacheImages
     , vmNetwork
     , vmCPUPlatform
     , vmServiceAccount
     , vmAccelerators
     , vmMachineType
+    , vmEnableStackdriverMonitoring
     , vmLabels
+    , vmVolumes
     , vmBootDiskSizeGb
     , vmDisks
     , vmBootImage
@@ -305,6 +347,7 @@ module Network.Google.Genomics.Types
     , RunPipelineRequest
     , runPipelineRequest
     , rprPipeline
+    , rprPubSubTopic
     , rprLabels
 
     -- * Pipeline
@@ -313,6 +356,7 @@ module Network.Google.Genomics.Types
     , pActions
     , pEnvironment
     , pResources
+    , pEncryptedEnvironment
     , pTimeout
 
     -- * Metadata
@@ -324,6 +368,11 @@ module Network.Google.Genomics.Types
     , mPipeline
     , mLabels
     , mCreateTime
+
+    -- * CheckInResponseFeatures
+    , CheckInResponseFeatures
+    , checkInResponseFeatures
+    , cirfAddtional
 
     -- * Mount
     , Mount
@@ -367,6 +416,11 @@ module Network.Google.Genomics.Types
     , ceMachineType
     , ceInstanceName
 
+    -- * NFSMount
+    , NFSMount
+    , nFSMount
+    , nfsmTarget
+
     -- * OperationResponse
     , OperationResponse
     , operationResponse
@@ -399,6 +453,6 @@ genomicsService
 genomicsScope :: Proxy '["https://www.googleapis.com/auth/genomics"]
 genomicsScope = Proxy
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

@@ -150,8 +150,9 @@ pzcsmpUploadType
   = lens _pzcsmpUploadType
       (\ s a -> s{_pzcsmpUploadType = a})
 
--- | The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
+-- | Required. The name of the Google Compute Engine
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides.
 pzcsmpZone :: Lens' ProjectsZonesClustersSetMaintenancePolicy Text
 pzcsmpZone
   = lens _pzcsmpZone (\ s a -> s{_pzcsmpZone = a})
@@ -162,13 +163,13 @@ pzcsmpPayload
   = lens _pzcsmpPayload
       (\ s a -> s{_pzcsmpPayload = a})
 
--- | The name of the cluster to update.
+-- | Required. The name of the cluster to update.
 pzcsmpClusterId :: Lens' ProjectsZonesClustersSetMaintenancePolicy Text
 pzcsmpClusterId
   = lens _pzcsmpClusterId
       (\ s a -> s{_pzcsmpClusterId = a})
 
--- | The Google Developers Console [project ID or project
+-- | Required. The Google Developers Console [project ID or project
 -- number](https:\/\/support.google.com\/cloud\/answer\/6158840).
 pzcsmpProjectId :: Lens' ProjectsZonesClustersSetMaintenancePolicy Text
 pzcsmpProjectId

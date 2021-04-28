@@ -22,7 +22,7 @@
 --
 -- Returns customer-level settings.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.getSettings@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.getSettings@.
 module Network.Google.Resource.AlertCenter.GetSettings
     (
     -- * REST Resource
@@ -55,7 +55,8 @@ type GetSettingsResource =
                QueryParam "uploadType" Text :>
                  QueryParam "customerId" Text :>
                    QueryParam "callback" Text :>
-                     QueryParam "alt" AltJSON :> Get '[JSON] Settings
+                     QueryParam "alt" AltJSON :>
+                       Get '[JSON] GoogleAppsAlertcenterV1beta1Settings
 
 -- | Returns customer-level settings.
 --
@@ -121,9 +122,9 @@ gsUploadType :: Lens' GetSettings (Maybe Text)
 gsUploadType
   = lens _gsUploadType (\ s a -> s{_gsUploadType = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert settings are associated with. Inferred from the
--- caller identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert settings are associated with. Inferred
+-- from the caller identity if not provided.
 gsCustomerId :: Lens' GetSettings (Maybe Text)
 gsCustomerId
   = lens _gsCustomerId (\ s a -> s{_gsCustomerId = a})
@@ -134,7 +135,8 @@ gsCallback
   = lens _gsCallback (\ s a -> s{_gsCallback = a})
 
 instance GoogleRequest GetSettings where
-        type Rs GetSettings = Settings
+        type Rs GetSettings =
+             GoogleAppsAlertcenterV1beta1Settings
         type Scopes GetSettings =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient GetSettings'{..}

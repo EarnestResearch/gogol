@@ -20,7 +20,8 @@ module Network.Google.DataTransfer.Types.Product where
 import Network.Google.DataTransfer.Types.Sum
 import Network.Google.Prelude
 
--- | The JSON template for an Application resource.
+-- | Applications resources represent applications installed on the domain
+-- that support transferring ownership of user data.
 --
 -- /See:/ 'application' smart constructor.
 data Application =
@@ -61,7 +62,7 @@ application =
 
 -- | The list of all possible transfer parameters for this application. These
 -- parameters can be used to select the data of the user in this
--- application to be transfered.
+-- application to be transferred.
 aTransferParams :: Lens' Application [ApplicationTransferParam]
 aTransferParams
   = lens _aTransferParams
@@ -131,7 +132,7 @@ applicationTransferParam =
   ApplicationTransferParam' {_atpValue = Nothing, _atpKey = Nothing}
 
 
--- | The value of the coressponding transfer parameter. eg: \'PRIVATE\' or
+-- | The value of the corresponding transfer parameter. eg: \'PRIVATE\' or
 -- \'SHARED\'
 atpValue :: Lens' ApplicationTransferParam [Text]
 atpValue
@@ -233,7 +234,8 @@ instance ToJSON ApplicationsListResponse where
                   Just ("kind" .= _alrKind),
                   ("applications" .=) <$> _alrApplications])
 
--- | The JSON template for a DataTransfer resource.
+-- | A Transfer resource represents the transfer of the ownership of user
+-- data between users.
 --
 -- /See:/ 'dataTransfer' smart constructor.
 data DataTransfer =
@@ -288,7 +290,7 @@ dataTransfer =
 dtEtag :: Lens' DataTransfer (Maybe Text)
 dtEtag = lens _dtEtag (\ s a -> s{_dtEtag = a})
 
--- | ID of the user whose data is being transfered.
+-- | ID of the user whose data is being transferred.
 dtOldOwnerUserId :: Lens' DataTransfer (Maybe Text)
 dtOldOwnerUserId
   = lens _dtOldOwnerUserId
@@ -298,7 +300,7 @@ dtOldOwnerUserId
 dtKind :: Lens' DataTransfer Text
 dtKind = lens _dtKind (\ s a -> s{_dtKind = a})
 
--- | ID of the user to whom the data is being transfered.
+-- | ID of the user to whom the data is being transferred.
 dtNewOwnerUserId :: Lens' DataTransfer (Maybe Text)
 dtNewOwnerUserId
   = lens _dtNewOwnerUserId
@@ -469,7 +471,7 @@ applicationDataTransfer =
 
 
 -- | The transfer parameters for the application. These parameters are used
--- to select the data which will get transfered in context of this
+-- to select the data which will get transferred in context of this
 -- application.
 adtApplicationTransferParams :: Lens' ApplicationDataTransfer [ApplicationTransferParam]
 adtApplicationTransferParams

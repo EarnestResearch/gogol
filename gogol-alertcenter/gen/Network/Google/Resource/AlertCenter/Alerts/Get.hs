@@ -23,7 +23,7 @@
 -- Gets the specified alert. Attempting to get a nonexistent alert returns
 -- \`NOT_FOUND\` error.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.get@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.get@.
 module Network.Google.Resource.AlertCenter.Alerts.Get
     (
     -- * REST Resource
@@ -58,7 +58,8 @@ type AlertsGetResource =
                  QueryParam "uploadType" Text :>
                    QueryParam "customerId" Text :>
                      QueryParam "callback" Text :>
-                       QueryParam "alt" AltJSON :> Get '[JSON] Alert
+                       QueryParam "alt" AltJSON :>
+                         Get '[JSON] GoogleAppsAlertcenterV1beta1Alert
 
 -- | Gets the specified alert. Attempting to get a nonexistent alert returns
 -- \`NOT_FOUND\` error.
@@ -135,9 +136,9 @@ agUploadType :: Lens' AlertsGet (Maybe Text)
 agUploadType
   = lens _agUploadType (\ s a -> s{_agUploadType = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert is associated with. Inferred from the caller
--- identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert is associated with. Inferred from the
+-- caller identity if not provided.
 agCustomerId :: Lens' AlertsGet (Maybe Text)
 agCustomerId
   = lens _agCustomerId (\ s a -> s{_agCustomerId = a})
@@ -148,7 +149,7 @@ agCallback
   = lens _agCallback (\ s a -> s{_agCallback = a})
 
 instance GoogleRequest AlertsGet where
-        type Rs AlertsGet = Alert
+        type Rs AlertsGet = GoogleAppsAlertcenterV1beta1Alert
         type Scopes AlertsGet =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsGet'{..}

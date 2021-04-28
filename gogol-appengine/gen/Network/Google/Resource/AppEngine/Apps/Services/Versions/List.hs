@@ -61,7 +61,7 @@ type AppsServicesVersionsListResource =
                    QueryParam "upload_protocol" Text :>
                      QueryParam "access_token" Text :>
                        QueryParam "uploadType" Text :>
-                         QueryParam "view" Text :>
+                         QueryParam "view" AppsServicesVersionsListView :>
                            QueryParam "pageToken" Text :>
                              QueryParam "pageSize" (Textual Int32) :>
                                QueryParam "callback" Text :>
@@ -78,7 +78,7 @@ data AppsServicesVersionsList =
     , _asvlAccessToken :: !(Maybe Text)
     , _asvlUploadType :: !(Maybe Text)
     , _asvlAppsId :: !Text
-    , _asvlView :: !(Maybe Text)
+    , _asvlView :: !(Maybe AppsServicesVersionsListView)
     , _asvlPageToken :: !(Maybe Text)
     , _asvlServicesId :: !Text
     , _asvlPageSize :: !(Maybe (Textual Int32))
@@ -159,7 +159,7 @@ asvlAppsId
   = lens _asvlAppsId (\ s a -> s{_asvlAppsId = a})
 
 -- | Controls the set of fields returned in the List response.
-asvlView :: Lens' AppsServicesVersionsList (Maybe Text)
+asvlView :: Lens' AppsServicesVersionsList (Maybe AppsServicesVersionsListView)
 asvlView = lens _asvlView (\ s a -> s{_asvlView = a})
 
 -- | Continuation token for fetching the next page of results.

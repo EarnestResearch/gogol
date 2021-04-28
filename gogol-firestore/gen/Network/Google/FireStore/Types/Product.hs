@@ -111,11 +111,10 @@ instance ToJSON WriteRequest where
                   ("writes" .=) <$> _wrWrites,
                   ("streamId" .=) <$> _wrStreamId])
 
--- | An object representing a latitude\/longitude pair. This is expressed as
--- a pair of doubles representing degrees latitude and degrees longitude.
--- Unless specified otherwise, this must conform to the
--- <http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf WGS84 standard>.
--- Values must be within normalized ranges.
+-- | An object that represents a latitude\/longitude pair. This is expressed
+-- as a pair of doubles to represent degrees latitude and degrees
+-- longitude. Unless specified otherwise, this must conform to the WGS84
+-- standard. Values must be within normalized ranges.
 --
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
@@ -256,7 +255,7 @@ gfavfIndexConfig
   = lens _gfavfIndexConfig
       (\ s a -> s{_gfavfIndexConfig = a})
 
--- | A field name of the form
+-- | Required. A field name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\/fields\/{field_path}\`
 -- A field path may be a simple field name, e.g. \`address\` or a path to
 -- fields within map_value , e.g. \`address.city\`, or a special field
@@ -343,39 +342,11 @@ instance ToJSON TransactionOptions where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -589,7 +560,7 @@ rollbackRequest
 rollbackRequest = RollbackRequest' {_rrTransaction = Nothing}
 
 
--- | The transaction to roll back.
+-- | Required. The transaction to roll back.
 rrTransaction :: Lens' RollbackRequest (Maybe ByteString)
 rrTransaction
   = lens _rrTransaction
@@ -744,11 +715,7 @@ tcTargetChangeType
       (\ s a -> s{_tcTargetChangeType = a})
 
 -- | The target IDs of targets that have changed. If empty, the change
--- applies to all targets. For \`target_change_type=ADD\`, the order of the
--- target IDs matches the order of the requests to add the targets. This
--- allows clients to unambiguously associate server-assigned target IDs
--- with added targets. For other states, the order of the target IDs is not
--- defined.
+-- applies to all targets. The order of the target IDs is not defined.
 tcTargetIds :: Lens' TargetChange [Int32]
 tcTargetIds
   = lens _tcTargetIds (\ s a -> s{_tcTargetIds = a}) .
@@ -1003,6 +970,62 @@ instance ToJSON
                   ("endTime" .=) <$> _gfavidmEndTime,
                   ("operationState" .=) <$> _gfavidmOperationState])
 
+-- | The response from Firestore.BatchWrite.
+--
+-- /See:/ 'batchWriteResponse' smart constructor.
+data BatchWriteResponse =
+  BatchWriteResponse'
+    { _bwrStatus :: !(Maybe [Status])
+    , _bwrWriteResults :: !(Maybe [WriteResult])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'BatchWriteResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bwrStatus'
+--
+-- * 'bwrWriteResults'
+batchWriteResponse
+    :: BatchWriteResponse
+batchWriteResponse =
+  BatchWriteResponse' {_bwrStatus = Nothing, _bwrWriteResults = Nothing}
+
+
+-- | The status of applying the writes. This i-th write status corresponds to
+-- the i-th write in the request.
+bwrStatus :: Lens' BatchWriteResponse [Status]
+bwrStatus
+  = lens _bwrStatus (\ s a -> s{_bwrStatus = a}) .
+      _Default
+      . _Coerce
+
+-- | The result of applying the writes. This i-th write result corresponds to
+-- the i-th write in the request.
+bwrWriteResults :: Lens' BatchWriteResponse [WriteResult]
+bwrWriteResults
+  = lens _bwrWriteResults
+      (\ s a -> s{_bwrWriteResults = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON BatchWriteResponse where
+        parseJSON
+          = withObject "BatchWriteResponse"
+              (\ o ->
+                 BatchWriteResponse' <$>
+                   (o .:? "status" .!= mempty) <*>
+                     (o .:? "writeResults" .!= mempty))
+
+instance ToJSON BatchWriteResponse where
+        toJSON BatchWriteResponse'{..}
+          = object
+              (catMaybes
+                 [("status" .=) <$> _bwrStatus,
+                  ("writeResults" .=) <$> _bwrWriteResults])
+
 -- | The request for Firestore.BeginTransaction.
 --
 -- /See:/ 'beginTransactionRequest' smart constructor.
@@ -1074,7 +1097,7 @@ runQueryRequest =
 
 
 -- | Reads documents as they were at the given time. This may not be older
--- than 60 seconds.
+-- than 270 seconds.
 rqrReadTime :: Lens' RunQueryRequest (Maybe UTCTime)
 rqrReadTime
   = lens _rqrReadTime (\ s a -> s{_rqrReadTime = a}) .
@@ -1310,7 +1333,7 @@ gfavifArrayConfig
       (\ s a -> s{_gfavifArrayConfig = a})
 
 -- | Indicates that this field supports ordering by the specified order or
--- comparing using =, \<, \<=, >, >=.
+-- comparing using =, !=, \<, \<=, >, >=.
 gfavifOrder :: Lens' GoogleFirestoreAdminV1IndexField (Maybe GoogleFirestoreAdminV1IndexFieldOrder)
 gfavifOrder
   = lens _gfavifOrder (\ s a -> s{_gfavifOrder = a})
@@ -1341,6 +1364,7 @@ data Write =
     { _wTransform :: !(Maybe DocumentTransform)
     , _wUpdateMask :: !(Maybe DocumentMask)
     , _wCurrentDocument :: !(Maybe Precondition)
+    , _wUpdateTransforms :: !(Maybe [FieldTransform])
     , _wDelete :: !(Maybe Text)
     , _wUpdate :: !(Maybe Document)
     }
@@ -1357,6 +1381,8 @@ data Write =
 --
 -- * 'wCurrentDocument'
 --
+-- * 'wUpdateTransforms'
+--
 -- * 'wDelete'
 --
 -- * 'wUpdate'
@@ -1367,14 +1393,13 @@ write =
     { _wTransform = Nothing
     , _wUpdateMask = Nothing
     , _wCurrentDocument = Nothing
+    , _wUpdateTransforms = Nothing
     , _wDelete = Nothing
     , _wUpdate = Nothing
     }
 
 
--- | Applies a transformation to a document. At most one \`transform\` per
--- document is allowed in a given request. An \`update\` cannot follow a
--- \`transform\` on the same document in a given request.
+-- | Applies a transformation to a document.
 wTransform :: Lens' Write (Maybe DocumentTransform)
 wTransform
   = lens _wTransform (\ s a -> s{_wTransform = a})
@@ -1398,6 +1423,17 @@ wCurrentDocument
   = lens _wCurrentDocument
       (\ s a -> s{_wCurrentDocument = a})
 
+-- | The transforms to perform after update. This field can be set only when
+-- the operation is \`update\`. If present, this write is equivalent to
+-- performing \`update\` and \`transform\` to the same document atomically
+-- and in order.
+wUpdateTransforms :: Lens' Write [FieldTransform]
+wUpdateTransforms
+  = lens _wUpdateTransforms
+      (\ s a -> s{_wUpdateTransforms = a})
+      . _Default
+      . _Coerce
+
 -- | A document name to delete. In the format:
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\/{document_path}\`.
 wDelete :: Lens' Write (Maybe Text)
@@ -1414,6 +1450,7 @@ instance FromJSON Write where
                  Write' <$>
                    (o .:? "transform") <*> (o .:? "updateMask") <*>
                      (o .:? "currentDocument")
+                     <*> (o .:? "updateTransforms" .!= mempty)
                      <*> (o .:? "delete")
                      <*> (o .:? "update"))
 
@@ -1424,6 +1461,7 @@ instance ToJSON Write where
                  [("transform" .=) <$> _wTransform,
                   ("updateMask" .=) <$> _wUpdateMask,
                   ("currentDocument" .=) <$> _wCurrentDocument,
+                  ("updateTransforms" .=) <$> _wUpdateTransforms,
                   ("delete" .=) <$> _wDelete,
                   ("update" .=) <$> _wUpdate])
 
@@ -1959,6 +1997,58 @@ instance ToJSON RunQueryResponse where
                   ("transaction" .=) <$> _rTransaction,
                   ("document" .=) <$> _rDocument])
 
+-- | The request for Firestore.BatchWrite.
+--
+-- /See:/ 'batchWriteRequest' smart constructor.
+data BatchWriteRequest =
+  BatchWriteRequest'
+    { _bwrLabels :: !(Maybe BatchWriteRequestLabels)
+    , _bwrWrites :: !(Maybe [Write])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'BatchWriteRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bwrLabels'
+--
+-- * 'bwrWrites'
+batchWriteRequest
+    :: BatchWriteRequest
+batchWriteRequest =
+  BatchWriteRequest' {_bwrLabels = Nothing, _bwrWrites = Nothing}
+
+
+-- | Labels associated with this batch write.
+bwrLabels :: Lens' BatchWriteRequest (Maybe BatchWriteRequestLabels)
+bwrLabels
+  = lens _bwrLabels (\ s a -> s{_bwrLabels = a})
+
+-- | The writes to apply. Method does not apply writes atomically and does
+-- not guarantee ordering. Each write succeeds or fails independently. You
+-- cannot write to the same document more than once per request.
+bwrWrites :: Lens' BatchWriteRequest [Write]
+bwrWrites
+  = lens _bwrWrites (\ s a -> s{_bwrWrites = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON BatchWriteRequest where
+        parseJSON
+          = withObject "BatchWriteRequest"
+              (\ o ->
+                 BatchWriteRequest' <$>
+                   (o .:? "labels") <*> (o .:? "writes" .!= mempty))
+
+instance ToJSON BatchWriteRequest where
+        toJSON BatchWriteRequest'{..}
+          = object
+              (catMaybes
+                 [("labels" .=) <$> _bwrLabels,
+                  ("writes" .=) <$> _bwrWrites])
+
 -- | Metadata for google.longrunning.Operation results from
 -- FirestoreAdmin.ExportDocuments.
 --
@@ -2398,6 +2488,71 @@ instance ToJSON Value where
                   ("arrayValue" .=) <$> _vArrayValue,
                   ("referenceValue" .=) <$> _vReferenceValue,
                   ("nullValue" .=) <$> _vNullValue])
+
+-- | The response for Firestore.PartitionQuery.
+--
+-- /See:/ 'partitionQueryResponse' smart constructor.
+data PartitionQueryResponse =
+  PartitionQueryResponse'
+    { _pqrNextPageToken :: !(Maybe Text)
+    , _pqrPartitions :: !(Maybe [Cursor])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PartitionQueryResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pqrNextPageToken'
+--
+-- * 'pqrPartitions'
+partitionQueryResponse
+    :: PartitionQueryResponse
+partitionQueryResponse =
+  PartitionQueryResponse'
+    {_pqrNextPageToken = Nothing, _pqrPartitions = Nothing}
+
+
+-- | A page token that may be used to request an additional set of results,
+-- up to the number specified by \`partition_count\` in the PartitionQuery
+-- request. If blank, there are no more results.
+pqrNextPageToken :: Lens' PartitionQueryResponse (Maybe Text)
+pqrNextPageToken
+  = lens _pqrNextPageToken
+      (\ s a -> s{_pqrNextPageToken = a})
+
+-- | Partition results. Each partition is a split point that can be used by
+-- RunQuery as a starting or end point for the query results. The RunQuery
+-- requests must be made with the same query supplied to this
+-- PartitionQuery request. The partition cursors will be ordered according
+-- to same ordering as the results of the query supplied to PartitionQuery.
+-- For example, if a PartitionQuery request returns partition cursors A and
+-- B, running the following three queries will return the entire result set
+-- of the original query: * query, end_at A * query, start_at A, end_at B *
+-- query, start_at B An empty result may indicate that the query has too
+-- few results to be partitioned.
+pqrPartitions :: Lens' PartitionQueryResponse [Cursor]
+pqrPartitions
+  = lens _pqrPartitions
+      (\ s a -> s{_pqrPartitions = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON PartitionQueryResponse where
+        parseJSON
+          = withObject "PartitionQueryResponse"
+              (\ o ->
+                 PartitionQueryResponse' <$>
+                   (o .:? "nextPageToken") <*>
+                     (o .:? "partitions" .!= mempty))
+
+instance ToJSON PartitionQueryResponse where
+        toJSON PartitionQueryResponse'{..}
+          = object
+              (catMaybes
+                 [("nextPageToken" .=) <$> _pqrNextPageToken,
+                  ("partitions" .=) <$> _pqrPartitions])
 
 --
 -- /See:/ 'statusDetailsItem' smart constructor.
@@ -3341,7 +3496,7 @@ batchGetDocumentsRequest =
 
 
 -- | Reads documents as they were at the given time. This may not be older
--- than 60 seconds.
+-- than 270 seconds.
 bReadTime :: Lens' BatchGetDocumentsRequest (Maybe UTCTime)
 bReadTime
   = lens _bReadTime (\ s a -> s{_bReadTime = a}) .
@@ -3553,7 +3708,8 @@ commitResponse =
   CommitResponse' {_crCommitTime = Nothing, _crWriteResults = Nothing}
 
 
--- | The time at which the commit occurred.
+-- | The time at which the commit occurred. Any read with an equal or greater
+-- \`read_time\` is guaranteed to see the effects of the commit.
 crCommitTime :: Lens' CommitResponse (Maybe UTCTime)
 crCommitTime
   = lens _crCommitTime (\ s a -> s{_crCommitTime = a})
@@ -3874,6 +4030,43 @@ instance ToJSON
           = object
               (catMaybes
                  [("outputUriPrefix" .=) <$> _gOutputURIPrefix])
+
+-- | Labels associated with this batch write.
+--
+-- /See:/ 'batchWriteRequestLabels' smart constructor.
+newtype BatchWriteRequestLabels =
+  BatchWriteRequestLabels'
+    { _bwrlAddtional :: HashMap Text Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'BatchWriteRequestLabels' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bwrlAddtional'
+batchWriteRequestLabels
+    :: HashMap Text Text -- ^ 'bwrlAddtional'
+    -> BatchWriteRequestLabels
+batchWriteRequestLabels pBwrlAddtional_ =
+  BatchWriteRequestLabels' {_bwrlAddtional = _Coerce # pBwrlAddtional_}
+
+
+bwrlAddtional :: Lens' BatchWriteRequestLabels (HashMap Text Text)
+bwrlAddtional
+  = lens _bwrlAddtional
+      (\ s a -> s{_bwrlAddtional = a})
+      . _Coerce
+
+instance FromJSON BatchWriteRequestLabels where
+        parseJSON
+          = withObject "BatchWriteRequestLabels"
+              (\ o ->
+                 BatchWriteRequestLabels' <$> (parseJSONObject o))
+
+instance ToJSON BatchWriteRequestLabels where
+        toJSON = toJSON . _bwrlAddtional
 
 -- | The projection of document\'s fields to return.
 --
@@ -4474,7 +4667,8 @@ wStreamToken
   = lens _wStreamToken (\ s a -> s{_wStreamToken = a})
       . mapping _Bytes
 
--- | The time at which the commit occurred.
+-- | The time at which the commit occurred. Any read with an equal or greater
+-- \`read_time\` is guaranteed to see the effects of the write.
 wCommitTime :: Lens' WriteResponse (Maybe UTCTime)
 wCommitTime
   = lens _wCommitTime (\ s a -> s{_wCommitTime = a}) .
@@ -4947,11 +5141,8 @@ target =
     }
 
 
--- | A client provided target ID. If not set, the server will assign an ID
--- for the target. Used for resuming a target without changing IDs. The IDs
--- can either be client-assigned or be server-assigned in a previous
--- stream. All targets with client provided IDs must be added before adding
--- a target that needs a server-assigned id.
+-- | The target ID that identifies the target on the stream. Must be a
+-- positive number and non-zero.
 tTargetId :: Lens' Target (Maybe Int32)
 tTargetId
   = lens _tTargetId (\ s a -> s{_tTargetId = a}) .
@@ -5105,7 +5296,8 @@ gloResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 gloName :: Lens' GoogleLongrunningOperation (Maybe Text)
 gloName = lens _gloName (\ s a -> s{_gloName = a})
 
@@ -5136,6 +5328,103 @@ instance ToJSON GoogleLongrunningOperation where
                   ("response" .=) <$> _gloResponse,
                   ("name" .=) <$> _gloName,
                   ("metadata" .=) <$> _gloMetadata])
+
+-- | The request for Firestore.PartitionQuery.
+--
+-- /See:/ 'partitionQueryRequest' smart constructor.
+data PartitionQueryRequest =
+  PartitionQueryRequest'
+    { _pqrStructuredQuery :: !(Maybe StructuredQuery)
+    , _pqrPageToken :: !(Maybe Text)
+    , _pqrPageSize :: !(Maybe (Textual Int32))
+    , _pqrPartitionCount :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PartitionQueryRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pqrStructuredQuery'
+--
+-- * 'pqrPageToken'
+--
+-- * 'pqrPageSize'
+--
+-- * 'pqrPartitionCount'
+partitionQueryRequest
+    :: PartitionQueryRequest
+partitionQueryRequest =
+  PartitionQueryRequest'
+    { _pqrStructuredQuery = Nothing
+    , _pqrPageToken = Nothing
+    , _pqrPageSize = Nothing
+    , _pqrPartitionCount = Nothing
+    }
+
+
+-- | A structured query. Query must specify collection with all descendants
+-- and be ordered by name ascending. Other filters, order bys, limits,
+-- offsets, and start\/end cursors are not supported.
+pqrStructuredQuery :: Lens' PartitionQueryRequest (Maybe StructuredQuery)
+pqrStructuredQuery
+  = lens _pqrStructuredQuery
+      (\ s a -> s{_pqrStructuredQuery = a})
+
+-- | The \`next_page_token\` value returned from a previous call to
+-- PartitionQuery that may be used to get an additional set of results.
+-- There are no ordering guarantees between sets of results. Thus, using
+-- multiple sets of results will require merging the different result sets.
+-- For example, two subsequent calls using a page_token may return: *
+-- cursor B, cursor M, cursor Q * cursor A, cursor U, cursor W To obtain a
+-- complete result set ordered with respect to the results of the query
+-- supplied to PartitionQuery, the results sets should be merged: cursor A,
+-- cursor B, cursor M, cursor Q, cursor U, cursor W
+pqrPageToken :: Lens' PartitionQueryRequest (Maybe Text)
+pqrPageToken
+  = lens _pqrPageToken (\ s a -> s{_pqrPageToken = a})
+
+-- | The maximum number of partitions to return in this call, subject to
+-- \`partition_count\`. For example, if \`partition_count\` = 10 and
+-- \`page_size\` = 8, the first call to PartitionQuery will return up to 8
+-- partitions and a \`next_page_token\` if more results exist. A second
+-- call to PartitionQuery will return up to 2 partitions, to complete the
+-- total of 10 specified in \`partition_count\`.
+pqrPageSize :: Lens' PartitionQueryRequest (Maybe Int32)
+pqrPageSize
+  = lens _pqrPageSize (\ s a -> s{_pqrPageSize = a}) .
+      mapping _Coerce
+
+-- | The desired maximum number of partition points. The partitions may be
+-- returned across multiple pages of results. The number must be positive.
+-- The actual number of partitions returned may be fewer. For example, this
+-- may be set to one fewer than the number of parallel queries to be run,
+-- or in running a data pipeline job, one fewer than the number of workers
+-- or compute instances available.
+pqrPartitionCount :: Lens' PartitionQueryRequest (Maybe Int64)
+pqrPartitionCount
+  = lens _pqrPartitionCount
+      (\ s a -> s{_pqrPartitionCount = a})
+      . mapping _Coerce
+
+instance FromJSON PartitionQueryRequest where
+        parseJSON
+          = withObject "PartitionQueryRequest"
+              (\ o ->
+                 PartitionQueryRequest' <$>
+                   (o .:? "structuredQuery") <*> (o .:? "pageToken") <*>
+                     (o .:? "pageSize")
+                     <*> (o .:? "partitionCount"))
+
+instance ToJSON PartitionQueryRequest where
+        toJSON PartitionQueryRequest'{..}
+          = object
+              (catMaybes
+                 [("structuredQuery" .=) <$> _pqrStructuredQuery,
+                  ("pageToken" .=) <$> _pqrPageToken,
+                  ("pageSize" .=) <$> _pqrPageSize,
+                  ("partitionCount" .=) <$> _pqrPartitionCount])
 
 -- | A filter with a single operand.
 --

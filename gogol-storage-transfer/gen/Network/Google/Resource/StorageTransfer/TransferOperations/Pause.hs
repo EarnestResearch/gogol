@@ -135,7 +135,7 @@ topPayload :: Lens' TransferOperationsPause PauseTransferOperationRequest
 topPayload
   = lens _topPayload (\ s a -> s{_topPayload = a})
 
--- | The name of the transfer operation. Required.
+-- | Required. The name of the transfer operation.
 topName :: Lens' TransferOperationsPause Text
 topName = lens _topName (\ s a -> s{_topName = a})
 

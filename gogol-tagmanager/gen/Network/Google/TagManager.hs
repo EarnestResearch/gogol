@@ -13,9 +13,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Accesses Tag Manager accounts and containers.
+-- This API allows clients to access and modify container and tag
+-- configuration.
 --
--- /See:/ <https://developers.google.com/tag-manager/api/v2/ Tag Manager API Reference>
+-- /See:/ <https://developers.google.com/tag-manager Tag Manager API Reference>
 module Network.Google.TagManager
     (
     -- * Service Configuration
@@ -176,6 +177,24 @@ module Network.Google.TagManager
     -- ** tagmanager.accounts.containers.workspaces.tags.update
     , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Update
 
+    -- ** tagmanager.accounts.containers.workspaces.templates.create
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Create
+
+    -- ** tagmanager.accounts.containers.workspaces.templates.delete
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Delete
+
+    -- ** tagmanager.accounts.containers.workspaces.templates.get
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Get
+
+    -- ** tagmanager.accounts.containers.workspaces.templates.list
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.List
+
+    -- ** tagmanager.accounts.containers.workspaces.templates.revert
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Revert
+
+    -- ** tagmanager.accounts.containers.workspaces.templates.update
+    , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Update
+
     -- ** tagmanager.accounts.containers.workspaces.triggers.create
     , module Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Triggers.Create
 
@@ -316,6 +335,7 @@ module Network.Google.TagManager
     -- ** ContainerVersionHeader
     , ContainerVersionHeader
     , containerVersionHeader
+    , cvhNumClients
     , cvhNumTags
     , cvhNumMacros
     , cvhContainerId
@@ -336,11 +356,17 @@ module Network.Google.TagManager
     , ttStopTeardownOnFailure
     , ttTagName
 
+    -- ** ListTemplatesResponse
+    , ListTemplatesResponse
+    , listTemplatesResponse
+    , ltrNextPageToken
+    , ltrTemplate
+
     -- ** ListTriggersResponse
     , ListTriggersResponse
     , listTriggersResponse
-    , ltrNextPageToken
-    , ltrTrigger
+    , lNextPageToken
+    , lTrigger
 
     -- ** Tag
     , Tag
@@ -354,6 +380,7 @@ module Network.Google.TagManager
     , tTeardownTag
     , tPath
     , tFingerprint
+    , tMonitoringMetadata
     , tTagFiringOption
     , tAccountId
     , tTagId
@@ -365,6 +392,7 @@ module Network.Google.TagManager
     , tWorkspaceId
     , tType
     , tScheduleStartMs
+    , tMonitoringMetadataTagNameKey
     , tNotes
     , tPaused
     , tFiringRuleId
@@ -467,6 +495,16 @@ module Network.Google.TagManager
     , larNextPageToken
     , larAccount
 
+    -- ** GalleryReference
+    , GalleryReference
+    , galleryReference
+    , grSignature
+    , grRepository
+    , grOwner
+    , grVersion
+    , grHost
+    , grIsModified
+
     -- ** MergeConflict
     , MergeConflict
     , mergeConflict
@@ -534,6 +572,11 @@ module Network.Google.TagManager
 
     -- ** AccountAccessPermission
     , AccountAccessPermission (..)
+
+    -- ** RevertTemplateResponse
+    , RevertTemplateResponse
+    , revertTemplateResponse
+    , rtrTemplate
 
     -- ** SyncWorkspaceResponse
     , SyncWorkspaceResponse
@@ -617,6 +660,9 @@ module Network.Google.TagManager
     -- ** VariableFormatValueCaseConversionType
     , VariableFormatValueCaseConversionType (..)
 
+    -- ** Xgafv
+    , Xgafv (..)
+
     -- ** ContainerVersion
     , ContainerVersion
     , containerVersion
@@ -637,6 +683,7 @@ module Network.Google.TagManager
     , cvTrigger
     , cvCustomTemplate
     , cvDescription
+    , cvClient
 
     -- ** EnvironmentType
     , EnvironmentType (..)
@@ -692,8 +739,8 @@ module Network.Google.TagManager
     -- ** ListTagsResponse
     , ListTagsResponse
     , listTagsResponse
-    , lNextPageToken
-    , lTag
+    , lisNextPageToken
+    , lisTag
 
     -- ** ListEnabledBuiltInVariablesResponse
     , ListEnabledBuiltInVariablesResponse
@@ -708,6 +755,7 @@ module Network.Google.TagManager
     , ctPath
     , ctTemplateId
     , ctFingerprint
+    , ctGalleryReference
     , ctAccountId
     , ctName
     , ctTagManagerURL
@@ -747,18 +795,13 @@ module Network.Google.TagManager
     , eVariable
     , eChangeStatus
     , eTrigger
+    , eClient
 
     -- ** ContainerAccess
     , ContainerAccess
     , containerAccess
     , caContainerId
     , caPermission
-
-    -- ** Timestamp
-    , Timestamp
-    , timestamp
-    , tNanos
-    , tSeconds
 
     -- ** VariableFormatValue
     , VariableFormatValue
@@ -776,6 +819,23 @@ module Network.Google.TagManager
 
     -- ** AccountsContainersWorkspacesBuilt_in_variablesRevertType
     , AccountsContainersWorkspacesBuilt_in_variablesRevertType (..)
+
+    -- ** Client
+    , Client
+    , client
+    , cliClientId
+    , cliParentFolderId
+    , cliContainerId
+    , cliPriority
+    , cliPath
+    , cliFingerprint
+    , cliAccountId
+    , cliName
+    , cliTagManagerURL
+    , cliWorkspaceId
+    , cliType
+    , cliNotes
+    , cliParameter
 
     -- ** Parameter
     , Parameter
@@ -835,6 +895,12 @@ import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Ge
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.List
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Revert
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Tags.Update
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Create
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Delete
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Get
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.List
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Revert
+import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Templates.Update
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Triggers.Create
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Triggers.Delete
 import Network.Google.Resource.TagManager.Accounts.Containers.Workspaces.Triggers.Get
@@ -922,6 +988,17 @@ type TagManagerAPI =
        AccountsContainersWorkspacesFoldersDeleteResource
        :<|>
        AccountsContainersWorkspacesFoldersUpdateResource
+       :<|>
+       AccountsContainersWorkspacesTemplatesListResource
+       :<|> AccountsContainersWorkspacesTemplatesGetResource
+       :<|>
+       AccountsContainersWorkspacesTemplatesCreateResource
+       :<|>
+       AccountsContainersWorkspacesTemplatesRevertResource
+       :<|>
+       AccountsContainersWorkspacesTemplatesDeleteResource
+       :<|>
+       AccountsContainersWorkspacesTemplatesUpdateResource
        :<|> AccountsContainersWorkspacesTriggersListResource
        :<|> AccountsContainersWorkspacesTriggersGetResource
        :<|>

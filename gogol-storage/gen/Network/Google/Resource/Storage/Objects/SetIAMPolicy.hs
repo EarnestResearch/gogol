@@ -37,6 +37,7 @@ module Network.Google.Resource.Storage.Objects.SetIAMPolicy
     , osipPayload
     , osipUserProject
     , osipObject
+    , osipProvisionalUserProject
     , osipGeneration
     ) where
 
@@ -54,9 +55,10 @@ type ObjectsSetIAMPolicyResource =
                Capture "object" Text :>
                  "iam" :>
                    QueryParam "userProject" Text :>
-                     QueryParam "generation" (Textual Int64) :>
-                       QueryParam "alt" AltJSON :>
-                         ReqBody '[JSON] Policy :> Put '[JSON] Policy
+                     QueryParam "provisionalUserProject" Text :>
+                       QueryParam "generation" (Textual Int64) :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] Policy :> Put '[JSON] Policy
 
 -- | Updates an IAM policy for the specified object.
 --
@@ -67,6 +69,7 @@ data ObjectsSetIAMPolicy =
     , _osipPayload :: !Policy
     , _osipUserProject :: !(Maybe Text)
     , _osipObject :: !Text
+    , _osipProvisionalUserProject :: !(Maybe Text)
     , _osipGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -84,6 +87,8 @@ data ObjectsSetIAMPolicy =
 --
 -- * 'osipObject'
 --
+-- * 'osipProvisionalUserProject'
+--
 -- * 'osipGeneration'
 objectsSetIAMPolicy
     :: Text -- ^ 'osipBucket'
@@ -96,6 +101,7 @@ objectsSetIAMPolicy pOsipBucket_ pOsipPayload_ pOsipObject_ =
     , _osipPayload = pOsipPayload_
     , _osipUserProject = Nothing
     , _osipObject = pOsipObject_
+    , _osipProvisionalUserProject = Nothing
     , _osipGeneration = Nothing
     }
 
@@ -123,6 +129,13 @@ osipObject :: Lens' ObjectsSetIAMPolicy Text
 osipObject
   = lens _osipObject (\ s a -> s{_osipObject = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+osipProvisionalUserProject :: Lens' ObjectsSetIAMPolicy (Maybe Text)
+osipProvisionalUserProject
+  = lens _osipProvisionalUserProject
+      (\ s a -> s{_osipProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of this object (as opposed to
 -- the latest version, the default).
 osipGeneration :: Lens' ObjectsSetIAMPolicy (Maybe Int64)
@@ -139,6 +152,7 @@ instance GoogleRequest ObjectsSetIAMPolicy where
                "https://www.googleapis.com/auth/devstorage.read_write"]
         requestClient ObjectsSetIAMPolicy'{..}
           = go _osipBucket _osipObject _osipUserProject
+              _osipProvisionalUserProject
               _osipGeneration
               (Just AltJSON)
               _osipPayload

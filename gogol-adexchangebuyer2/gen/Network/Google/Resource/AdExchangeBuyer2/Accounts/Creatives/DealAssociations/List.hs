@@ -167,17 +167,12 @@ acdalAccountId
       (\ s a -> s{_acdalAccountId = a})
 
 -- | An optional query string to filter deal associations. If no filter is
--- specified, all associations will be returned. Supported queries are:
---
--- -   accountId=/account_id_string/
--- -   creativeId=/creative_id_string/
--- -   dealsId=/deals_id_string/
--- -   dealsStatus:{approved, conditionally_approved, disapproved,
---     not_checked}
--- -   openAuctionStatus:{approved, conditionally_approved, disapproved,
---     not_checked}
---
--- Example: \'dealsId=12345 AND dealsStatus:disapproved\'
+-- specified, all associations will be returned. Supported queries are: -
+-- accountId=*account_id_string* - creativeId=*creative_id_string* -
+-- dealsId=*deals_id_string* - dealsStatus:{approved,
+-- conditionally_approved, disapproved, not_checked} -
+-- openAuctionStatus:{approved, conditionally_approved, disapproved,
+-- not_checked} Example: \'dealsId=12345 AND dealsStatus:disapproved\'
 acdalQuery :: Lens' AccountsCreativesDealAssociationsList (Maybe Text)
 acdalQuery
   = lens _acdalQuery (\ s a -> s{_acdalQuery = a})

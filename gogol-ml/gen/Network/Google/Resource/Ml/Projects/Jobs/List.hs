@@ -23,7 +23,7 @@
 -- Lists the jobs in the project. If there are no jobs that match the
 -- request parameters, the list request returns an empty response body: {}.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.jobs.list@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.jobs.list@.
 module Network.Google.Resource.Ml.Projects.Jobs.List
     (
     -- * REST Resource
@@ -151,16 +151,11 @@ pjlUploadType
 
 -- | Optional. Specifies the subset of jobs to retrieve. You can filter on
 -- the value of one or more attributes of the job object. For example,
--- retrieve jobs with a job identifier that starts with \'census\':
---
--- 'gcloud ml-engine jobs list --filter=\'jobId:census*\''
---
--- List all failed jobs with names that start with \'rnn\':
---
--- 'gcloud ml-engine jobs list --filter=\'jobId:rnn* AND state:FAILED\''
---
--- For more examples, see the guide to
--- </ml-engine/docs/tensorflow/monitor-training monitoring jobs>.
+-- retrieve jobs with a job identifier that starts with \'census\': gcloud
+-- ai-platform jobs list --filter=\'jobId:census*\' List all failed jobs
+-- with names that start with \'rnn\': gcloud ai-platform jobs list
+-- --filter=\'jobId:rnn* AND state:FAILED\' For more examples, see the
+-- guide to monitoring jobs.
 pjlFilter :: Lens' ProjectsJobsList (Maybe Text)
 pjlFilter
   = lens _pjlFilter (\ s a -> s{_pjlFilter = a})
@@ -190,7 +185,8 @@ instance GoogleRequest ProjectsJobsList where
         type Rs ProjectsJobsList =
              GoogleCloudMlV1__ListJobsResponse
         type Scopes ProjectsJobsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsJobsList'{..}
           = go _pjlParent _pjlXgafv _pjlUploadProtocol
               _pjlAccessToken

@@ -139,7 +139,7 @@ sclUploadType
   = lens _sclUploadType
       (\ s a -> s{_sclUploadType = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 sclServiceName :: Lens' ServicesConfigsList Text

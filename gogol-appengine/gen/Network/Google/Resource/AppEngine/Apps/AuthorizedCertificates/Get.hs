@@ -58,7 +58,8 @@ type AppsAuthorizedCertificatesGetResource =
                  QueryParam "upload_protocol" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "view" Text :>
+                       QueryParam "view" AppsAuthorizedCertificatesGetView
+                         :>
                          QueryParam "callback" Text :>
                            QueryParam "alt" AltJSON :>
                              Get '[JSON] AuthorizedCertificate
@@ -74,7 +75,7 @@ data AppsAuthorizedCertificatesGet =
     , _aacgAccessToken :: !(Maybe Text)
     , _aacgUploadType :: !(Maybe Text)
     , _aacgAppsId :: !Text
-    , _aacgView :: !(Maybe Text)
+    , _aacgView :: !(Maybe AppsAuthorizedCertificatesGetView)
     , _aacgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -152,7 +153,7 @@ aacgAppsId
   = lens _aacgAppsId (\ s a -> s{_aacgAppsId = a})
 
 -- | Controls the set of fields returned in the GET response.
-aacgView :: Lens' AppsAuthorizedCertificatesGet (Maybe Text)
+aacgView :: Lens' AppsAuthorizedCertificatesGet (Maybe AppsAuthorizedCertificatesGetView)
 aacgView = lens _aacgView (\ s a -> s{_aacgView = a})
 
 -- | JSONP

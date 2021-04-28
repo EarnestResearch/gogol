@@ -138,7 +138,7 @@ priPayload :: Lens' ProjectsReserveIds ReserveIdsRequest
 priPayload
   = lens _priPayload (\ s a -> s{_priPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 priProjectId :: Lens' ProjectsReserveIds Text
 priProjectId
   = lens _priProjectId (\ s a -> s{_priProjectId = a})

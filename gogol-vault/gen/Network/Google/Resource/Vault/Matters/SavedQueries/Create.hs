@@ -137,7 +137,7 @@ msqcPayload :: Lens' MattersSavedQueriesCreate SavedQuery
 msqcPayload
   = lens _msqcPayload (\ s a -> s{_msqcPayload = a})
 
--- | The matter id of the parent matter for which the saved query is to be
+-- | The matter ID of the parent matter for which the saved query is to be
 -- created.
 msqcMatterId :: Lens' MattersSavedQueriesCreate Text
 msqcMatterId

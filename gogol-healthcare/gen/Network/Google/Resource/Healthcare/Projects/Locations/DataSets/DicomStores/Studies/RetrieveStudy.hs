@@ -21,7 +21,13 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- RetrieveStudy returns all instances within the given study. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.5.1.
+-- [RetrieveTransaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.4).
+-- For details on the implementation of RetrieveStudy, see [DICOM
+-- study\/series\/instances](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#dicom_studyseriesinstances)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call RetrieveStudy, see [Retrieving DICOM
+-- data](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#retrieving_dicom_data).
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.studies.retrieveStudy@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Studies.RetrieveStudy
@@ -50,7 +56,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudy' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudyResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "dicomWeb" :>
            Capture "dicomWebPath" Text :>
@@ -62,7 +68,13 @@ type ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudyResource
                        QueryParam "alt" AltJSON :> Get '[JSON] HTTPBody
 
 -- | RetrieveStudy returns all instances within the given study. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.5.1.
+-- [RetrieveTransaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.4).
+-- For details on the implementation of RetrieveStudy, see [DICOM
+-- study\/series\/instances](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#dicom_studyseriesinstances)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call RetrieveStudy, see [Retrieving DICOM
+-- data](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#retrieving_dicom_data).
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresStudiesRetrieveStudy' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudy =
@@ -111,8 +123,8 @@ projectsLocationsDataSetsDicomStoresStudiesRetrieveStudy pPldsdssrsParent_ pPlds
     }
 
 
--- | The name of the DICOM store that is being accessed (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`).
+-- | The name of the DICOM store that is being accessed. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 pldsdssrsParent :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudy Text
 pldsdssrsParent
   = lens _pldsdssrsParent
@@ -148,8 +160,8 @@ pldsdssrsCallback
   = lens _pldsdssrsCallback
       (\ s a -> s{_pldsdssrsCallback = a})
 
--- | The path of the DICOMweb request, as specified in the STOW-RS, WADO-RS,
--- or QIDO-RS standard (e.g., \`studies\/{study_id}\`).
+-- | The path of the RetrieveStudy DICOMweb request. For example,
+-- \`studies\/{study_uid}\`.
 pldsdssrsDicomWebPath :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesRetrieveStudy Text
 pldsdssrsDicomWebPath
   = lens _pldsdssrsDicomWebPath

@@ -24,7 +24,7 @@
 -- belonging to that resource can be excluded. You can have up to 10
 -- exclusions in a resource.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.billingAccounts.exclusions.create@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.billingAccounts.exclusions.create@.
 module Network.Google.Resource.Logging.BillingAccounts.Exclusions.Create
     (
     -- * REST Resource

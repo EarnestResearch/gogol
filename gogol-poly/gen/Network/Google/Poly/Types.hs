@@ -46,6 +46,9 @@ module Network.Google.Poly.Types
     , llarTotalSize
     , llarAssets
 
+    -- * UsersAssetsListVisibility
+    , UsersAssetsListVisibility (..)
+
     -- * RemixInfo
     , RemixInfo
     , remixInfo
@@ -151,6 +154,9 @@ module Network.Google.Poly.Types
     , fURL
     , fRelativePath
     , fContentType
+
+    -- * AssetsListMaxComplexity
+    , AssetsListMaxComplexity (..)
 
     -- * UserAsset
     , UserAsset

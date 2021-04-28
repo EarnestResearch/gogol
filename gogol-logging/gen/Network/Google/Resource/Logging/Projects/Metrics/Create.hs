@@ -22,7 +22,7 @@
 --
 -- Creates a logs-based metric.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.projects.metrics.create@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.projects.metrics.create@.
 module Network.Google.Resource.Logging.Projects.Metrics.Create
     (
     -- * REST Resource
@@ -108,9 +108,9 @@ projectsMetricsCreate pPmcParent_ pPmcPayload_ =
     }
 
 
--- | The resource name of the project in which to create the metric:
--- \"projects\/[PROJECT_ID]\" The new metric must be provided in the
--- request.
+-- | Required. The resource name of the project in which to create the
+-- metric: \"projects\/[PROJECT_ID]\" The new metric must be provided in
+-- the request.
 pmcParent :: Lens' ProjectsMetricsCreate Text
 pmcParent
   = lens _pmcParent (\ s a -> s{_pmcParent = a})

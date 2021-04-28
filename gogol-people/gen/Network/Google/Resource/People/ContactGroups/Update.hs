@@ -121,7 +121,7 @@ cguUploadProtocol
       (\ s a -> s{_cguUploadProtocol = a})
 
 -- | The resource name for the contact group, assigned by the server. An
--- ASCII string, in the form of \`contactGroups\/\`'contact_group_id'.
+-- ASCII string, in the form of \`contactGroups\/{contact_group_id}\`.
 cguResourceName :: Lens' ContactGroupsUpdate Text
 cguResourceName
   = lens _cguResourceName

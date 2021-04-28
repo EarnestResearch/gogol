@@ -114,7 +114,7 @@ projectsLocationsRegistriesList pPlrlParent_ =
     }
 
 
--- | The project and cloud region path. For example,
+-- | Required. The project and cloud region path. For example,
 -- \`projects\/example-project\/locations\/us-central1\`.
 plrlParent :: Lens' ProjectsLocationsRegistriesList Text
 plrlParent

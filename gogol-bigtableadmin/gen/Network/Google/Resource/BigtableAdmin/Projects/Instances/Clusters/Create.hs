@@ -114,8 +114,9 @@ projectsInstancesClustersCreate pPiccParent_ pPiccPayload_ =
     }
 
 
--- | The unique name of the instance in which to create the new cluster.
--- Values are of the form \`projects\/\/instances\/\`.
+-- | Required. The unique name of the instance in which to create the new
+-- cluster. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\`.
 piccParent :: Lens' ProjectsInstancesClustersCreate Text
 piccParent
   = lens _piccParent (\ s a -> s{_piccParent = a})
@@ -148,8 +149,8 @@ piccPayload :: Lens' ProjectsInstancesClustersCreate Cluster
 piccPayload
   = lens _piccPayload (\ s a -> s{_piccPayload = a})
 
--- | The ID to be used when referring to the new cluster within its instance,
--- e.g., just \`mycluster\` rather than
+-- | Required. The ID to be used when referring to the new cluster within its
+-- instance, e.g., just \`mycluster\` rather than
 -- \`projects\/myproject\/instances\/myinstance\/clusters\/mycluster\`.
 piccClusterId :: Lens' ProjectsInstancesClustersCreate (Maybe Text)
 piccClusterId

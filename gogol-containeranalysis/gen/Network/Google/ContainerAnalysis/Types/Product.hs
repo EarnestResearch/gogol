@@ -20,6 +20,88 @@ module Network.Google.ContainerAnalysis.Types.Product where
 import Network.Google.ContainerAnalysis.Types.Sum
 import Network.Google.Prelude
 
+-- | This defines the format used to record keys used in the software supply
+-- chain. An in-toto link is attested using one or more keys defined in the
+-- in-toto layout. An example of this is: { \"key_id\":
+-- \"776a00e29f3559e0141b3b096f696abc6cfb0c657ab40f441132b345b0...\",
+-- \"key_type\": \"rsa\", \"public_key_value\": \"-----BEGIN PUBLIC
+-- KEY-----\\nMIIBojANBgkqhkiG9w0B...\", \"key_scheme\":
+-- \"rsassa-pss-sha256\" } The format for in-toto\'s key definition can be
+-- found in section 4.2 of the in-toto specification.
+--
+-- /See:/ 'signingKey' smart constructor.
+data SigningKey =
+  SigningKey'
+    { _skKeyType :: !(Maybe Text)
+    , _skKeyId :: !(Maybe Text)
+    , _skKeyScheme :: !(Maybe Text)
+    , _skPublicKeyValue :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SigningKey' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'skKeyType'
+--
+-- * 'skKeyId'
+--
+-- * 'skKeyScheme'
+--
+-- * 'skPublicKeyValue'
+signingKey
+    :: SigningKey
+signingKey =
+  SigningKey'
+    { _skKeyType = Nothing
+    , _skKeyId = Nothing
+    , _skKeyScheme = Nothing
+    , _skPublicKeyValue = Nothing
+    }
+
+
+-- | This field identifies the specific signing method. Eg: \"rsa\",
+-- \"ed25519\", and \"ecdsa\".
+skKeyType :: Lens' SigningKey (Maybe Text)
+skKeyType
+  = lens _skKeyType (\ s a -> s{_skKeyType = a})
+
+-- | key_id is an identifier for the signing key.
+skKeyId :: Lens' SigningKey (Maybe Text)
+skKeyId = lens _skKeyId (\ s a -> s{_skKeyId = a})
+
+-- | This field contains the corresponding signature scheme. Eg:
+-- \"rsassa-pss-sha256\".
+skKeyScheme :: Lens' SigningKey (Maybe Text)
+skKeyScheme
+  = lens _skKeyScheme (\ s a -> s{_skKeyScheme = a})
+
+-- | This field contains the actual public key.
+skPublicKeyValue :: Lens' SigningKey (Maybe Text)
+skPublicKeyValue
+  = lens _skPublicKeyValue
+      (\ s a -> s{_skPublicKeyValue = a})
+
+instance FromJSON SigningKey where
+        parseJSON
+          = withObject "SigningKey"
+              (\ o ->
+                 SigningKey' <$>
+                   (o .:? "keyType") <*> (o .:? "keyId") <*>
+                     (o .:? "keyScheme")
+                     <*> (o .:? "publicKeyValue"))
+
+instance ToJSON SigningKey where
+        toJSON SigningKey'{..}
+          = object
+              (catMaybes
+                 [("keyType" .=) <$> _skKeyType,
+                  ("keyId" .=) <$> _skKeyId,
+                  ("keyScheme" .=) <$> _skKeyScheme,
+                  ("publicKeyValue" .=) <$> _skPublicKeyValue])
+
 -- | This represents how a particular software package may be installed on a
 -- system.
 --
@@ -124,7 +206,7 @@ sSignature
       mapping _Bytes
 
 -- | The identifier for the public key that verifies this signature. * The
--- \`public_key_id\` is required. * The \`public_key_id\` MUST be an
+-- \`public_key_id\` is required. * The \`public_key_id\` SHOULD be an
 -- RFC3986 conformant URI. * When possible, the \`public_key_id\` SHOULD be
 -- an immutable reference, such as a cryptographic digest. Examples of
 -- valid \`public_key_id\`s: OpenPGP V4 public key fingerprint: *
@@ -161,6 +243,7 @@ data Vulnerability =
     { _vCvssScore :: !(Maybe (Textual Double))
     , _vCvssV3 :: !(Maybe CVSSv3)
     , _vSeverity :: !(Maybe VulnerabilitySeverity)
+    , _vSourceUpdateTime :: !(Maybe DateTime')
     , _vDetails :: !(Maybe [Detail])
     , _vWindowsDetails :: !(Maybe [WindowsDetail])
     }
@@ -177,6 +260,8 @@ data Vulnerability =
 --
 -- * 'vSeverity'
 --
+-- * 'vSourceUpdateTime'
+--
 -- * 'vDetails'
 --
 -- * 'vWindowsDetails'
@@ -187,6 +272,7 @@ vulnerability =
     { _vCvssScore = Nothing
     , _vCvssV3 = Nothing
     , _vSeverity = Nothing
+    , _vSourceUpdateTime = Nothing
     , _vDetails = Nothing
     , _vWindowsDetails = Nothing
     }
@@ -206,6 +292,15 @@ vCvssV3 = lens _vCvssV3 (\ s a -> s{_vCvssV3 = a})
 vSeverity :: Lens' Vulnerability (Maybe VulnerabilitySeverity)
 vSeverity
   = lens _vSeverity (\ s a -> s{_vSeverity = a})
+
+-- | The time this information was last changed at the source. This is an
+-- upstream timestamp from the underlying information source - e.g. Ubuntu
+-- security tracker.
+vSourceUpdateTime :: Lens' Vulnerability (Maybe UTCTime)
+vSourceUpdateTime
+  = lens _vSourceUpdateTime
+      (\ s a -> s{_vSourceUpdateTime = a})
+      . mapping _DateTime
 
 -- | All information about the package to specifically identify this
 -- vulnerability. One entry per (version range and cpe_uri) the package
@@ -234,6 +329,7 @@ instance FromJSON Vulnerability where
                  Vulnerability' <$>
                    (o .:? "cvssScore") <*> (o .:? "cvssV3") <*>
                      (o .:? "severity")
+                     <*> (o .:? "sourceUpdateTime")
                      <*> (o .:? "details" .!= mempty)
                      <*> (o .:? "windowsDetails" .!= mempty))
 
@@ -244,44 +340,17 @@ instance ToJSON Vulnerability where
                  [("cvssScore" .=) <$> _vCvssScore,
                   ("cvssV3" .=) <$> _vCvssV3,
                   ("severity" .=) <$> _vSeverity,
+                  ("sourceUpdateTime" .=) <$> _vSourceUpdateTime,
                   ("details" .=) <$> _vDetails,
                   ("windowsDetails" .=) <$> _vWindowsDetails])
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -571,75 +640,6 @@ instance ToJSON BuildProvenance where
                   ("createTime" .=) <$> _bpCreateTime,
                   ("logsUri" .=) <$> _bpLogsURI])
 
--- | Specifies the audit configuration for a service. The configuration
--- determines which permission types are logged, and what identities, if
--- any, are exempted from logging. An AuditConfig must have one or more
--- AuditLogConfigs. If there are AuditConfigs for both \`allServices\` and
--- a specific service, the union of the two AuditConfigs is used for that
--- service: the log_types specified in each AuditConfig are enabled, and
--- the exempted_members in each AuditLogConfig are exempted. Example Policy
--- with multiple AuditConfigs: { \"audit_configs\": [ { \"service\":
--- \"allServices\" \"audit_log_configs\": [ { \"log_type\": \"DATA_READ\",
--- \"exempted_members\": [ \"user:foo\'gmail.com\" ] }, { \"log_type\":
--- \"DATA_WRITE\", }, { \"log_type\": \"ADMIN_READ\", } ] }, { \"service\":
--- \"fooservice.googleapis.com\" \"audit_log_configs\": [ { \"log_type\":
--- \"DATA_READ\", }, { \"log_type\": \"DATA_WRITE\", \"exempted_members\":
--- [ \"user:bar\'gmail.com\" ] } ] } ] } For fooservice, this policy
--- enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also exempts
--- foo\'gmail.com from DATA_READ logging, and bar\'gmail.com from
--- DATA_WRITE logging.
---
--- /See:/ 'auditConfig' smart constructor.
-data AuditConfig =
-  AuditConfig'
-    { _acService :: !(Maybe Text)
-    , _acAuditLogConfigs :: !(Maybe [AuditLogConfig])
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'AuditConfig' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'acService'
---
--- * 'acAuditLogConfigs'
-auditConfig
-    :: AuditConfig
-auditConfig = AuditConfig' {_acService = Nothing, _acAuditLogConfigs = Nothing}
-
-
--- | Specifies a service that will be enabled for audit logging. For example,
--- \`storage.googleapis.com\`, \`cloudsql.googleapis.com\`. \`allServices\`
--- is a special value that covers all services.
-acService :: Lens' AuditConfig (Maybe Text)
-acService
-  = lens _acService (\ s a -> s{_acService = a})
-
--- | The configuration for logging of each type of permission.
-acAuditLogConfigs :: Lens' AuditConfig [AuditLogConfig]
-acAuditLogConfigs
-  = lens _acAuditLogConfigs
-      (\ s a -> s{_acAuditLogConfigs = a})
-      . _Default
-      . _Coerce
-
-instance FromJSON AuditConfig where
-        parseJSON
-          = withObject "AuditConfig"
-              (\ o ->
-                 AuditConfig' <$>
-                   (o .:? "service") <*>
-                     (o .:? "auditLogConfigs" .!= mempty))
-
-instance ToJSON AuditConfig where
-        toJSON AuditConfig'{..}
-          = object
-              (catMaybes
-                 [("service" .=) <$> _acService,
-                  ("auditLogConfigs" .=) <$> _acAuditLogConfigs])
-
 -- | An instance of an analysis type that has been found on a resource.
 --
 -- /See:/ 'occurrence' smart constructor.
@@ -655,6 +655,7 @@ data Occurrence =
     , _oName :: !(Maybe Text)
     , _oNoteName :: !(Maybe Text)
     , _oRemediation :: !(Maybe Text)
+    , _oIntoto :: !(Maybe GrafeasV1beta1IntotoDetails)
     , _oResource :: !(Maybe Resource)
     , _oDiscovered :: !(Maybe GrafeasV1beta1DiscoveryDetails)
     , _oCreateTime :: !(Maybe DateTime')
@@ -687,6 +688,8 @@ data Occurrence =
 --
 -- * 'oRemediation'
 --
+-- * 'oIntoto'
+--
 -- * 'oResource'
 --
 -- * 'oDiscovered'
@@ -708,6 +711,7 @@ occurrence =
     , _oName = Nothing
     , _oNoteName = Nothing
     , _oRemediation = Nothing
+    , _oIntoto = Nothing
     , _oResource = Nothing
     , _oDiscovered = Nothing
     , _oCreateTime = Nothing
@@ -771,6 +775,10 @@ oRemediation :: Lens' Occurrence (Maybe Text)
 oRemediation
   = lens _oRemediation (\ s a -> s{_oRemediation = a})
 
+-- | Describes a specific in-toto link.
+oIntoto :: Lens' Occurrence (Maybe GrafeasV1beta1IntotoDetails)
+oIntoto = lens _oIntoto (\ s a -> s{_oIntoto = a})
+
 -- | Required. Immutable. The resource for which the occurrence applies.
 oResource :: Lens' Occurrence (Maybe Resource)
 oResource
@@ -806,6 +814,7 @@ instance FromJSON Occurrence where
                      <*> (o .:? "name")
                      <*> (o .:? "noteName")
                      <*> (o .:? "remediation")
+                     <*> (o .:? "intoto")
                      <*> (o .:? "resource")
                      <*> (o .:? "discovered")
                      <*> (o .:? "createTime")
@@ -824,6 +833,7 @@ instance ToJSON Occurrence where
                   ("name" .=) <$> _oName,
                   ("noteName" .=) <$> _oNoteName,
                   ("remediation" .=) <$> _oRemediation,
+                  ("intoto" .=) <$> _oIntoto,
                   ("resource" .=) <$> _oResource,
                   ("discovered" .=) <$> _oDiscovered,
                   ("createTime" .=) <$> _oCreateTime,
@@ -1005,9 +1015,23 @@ instance FromJSON SourceFileHashes where
 instance ToJSON SourceFileHashes where
         toJSON = toJSON . _sfhAddtional
 
--- | Represents an expression text. Example: title: \"User account presence\"
--- description: \"Determines whether the request has a user account\"
--- expression: \"size(request.user) > 0\"
+-- | Represents a textual expression in the Common Expression Language (CEL)
+-- syntax. CEL is a C-like expression language. The syntax and semantics of
+-- CEL are documented at https:\/\/github.com\/google\/cel-spec. Example
+-- (Comparison): title: \"Summary size limit\" description: \"Determines if
+-- a summary is less than 100 chars\" expression: \"document.summary.size()
+-- \< 100\" Example (Equality): title: \"Requestor is owner\" description:
+-- \"Determines if requestor is the document owner\" expression:
+-- \"document.owner == request.auth.claims.email\" Example (Logic): title:
+-- \"Public documents\" description: \"Determine whether the document
+-- should be publicly visible\" expression: \"document.type != \'private\'
+-- && document.type != \'internal\'\" Example (Data Manipulation): title:
+-- \"Notification string\" description: \"Create a notification string with
+-- a timestamp.\" expression: \"\'New message received at \' +
+-- string(document.create_time)\" The exact variables and functions that
+-- may be referenced within an expression are determined by the service
+-- that evaluates it. See the service documentation for additional
+-- information.
 --
 -- /See:/ 'expr' smart constructor.
 data Expr =
@@ -1042,26 +1066,25 @@ expr =
     }
 
 
--- | An optional string indicating the location of the expression for error
+-- | Optional. String indicating the location of the expression for error
 -- reporting, e.g. a file name and a position in the file.
 eLocation :: Lens' Expr (Maybe Text)
 eLocation
   = lens _eLocation (\ s a -> s{_eLocation = a})
 
 -- | Textual representation of an expression in Common Expression Language
--- syntax. The application context of the containing message determines
--- which well-known feature set of CEL is supported.
+-- syntax.
 eExpression :: Lens' Expr (Maybe Text)
 eExpression
   = lens _eExpression (\ s a -> s{_eExpression = a})
 
--- | An optional title for the expression, i.e. a short string describing its
+-- | Optional. Title for the expression, i.e. a short string describing its
 -- purpose. This can be used e.g. in UIs which allow to enter the
 -- expression.
 eTitle :: Lens' Expr (Maybe Text)
 eTitle = lens _eTitle (\ s a -> s{_eTitle = a})
 
--- | An optional description of the expression. This is a longer text which
+-- | Optional. Description of the expression. This is a longer text which
 -- describes the expression, e.g. when hovered over it in a UI.
 eDescription :: Lens' Expr (Maybe Text)
 eDescription
@@ -1228,25 +1251,38 @@ instance ToJSON KnowledgeBase where
 -- | Request message for \`GetIamPolicy\` method.
 --
 -- /See:/ 'getIAMPolicyRequest' smart constructor.
-data GetIAMPolicyRequest =
+newtype GetIAMPolicyRequest =
   GetIAMPolicyRequest'
+    { _giprOptions :: Maybe GetPolicyOptions
+    }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
 -- | Creates a value of 'GetIAMPolicyRequest' with the minimum fields required to make a request.
 --
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'giprOptions'
 getIAMPolicyRequest
     :: GetIAMPolicyRequest
-getIAMPolicyRequest = GetIAMPolicyRequest'
+getIAMPolicyRequest = GetIAMPolicyRequest' {_giprOptions = Nothing}
 
+
+-- | OPTIONAL: A \`GetPolicyOptions\` object for specifying options to
+-- \`GetIamPolicy\`.
+giprOptions :: Lens' GetIAMPolicyRequest (Maybe GetPolicyOptions)
+giprOptions
+  = lens _giprOptions (\ s a -> s{_giprOptions = a})
 
 instance FromJSON GetIAMPolicyRequest where
         parseJSON
           = withObject "GetIAMPolicyRequest"
-              (\ o -> pure GetIAMPolicyRequest')
+              (\ o -> GetIAMPolicyRequest' <$> (o .:? "options"))
 
 instance ToJSON GetIAMPolicyRequest where
-        toJSON = const emptyObject
+        toJSON GetIAMPolicyRequest'{..}
+          = object
+              (catMaybes [("options" .=) <$> _giprOptions])
 
 -- | A note that indicates a type of analysis a provider would perform. This
 -- note exists in a provider\'s project. A \`Discovery\` occurrence is
@@ -1382,6 +1418,51 @@ instance ToJSON Basis where
                  [("fingerprint" .=) <$> _bFingerprint,
                   ("resourceUrl" .=) <$> _bResourceURL])
 
+-- | A signature object consists of the KeyID used and the signature itself.
+--
+-- /See:/ 'grafeasV1beta1IntotoSignature' smart constructor.
+data GrafeasV1beta1IntotoSignature =
+  GrafeasV1beta1IntotoSignature'
+    { _gvisKeyid :: !(Maybe Text)
+    , _gvisSig :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GrafeasV1beta1IntotoSignature' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gvisKeyid'
+--
+-- * 'gvisSig'
+grafeasV1beta1IntotoSignature
+    :: GrafeasV1beta1IntotoSignature
+grafeasV1beta1IntotoSignature =
+  GrafeasV1beta1IntotoSignature' {_gvisKeyid = Nothing, _gvisSig = Nothing}
+
+
+gvisKeyid :: Lens' GrafeasV1beta1IntotoSignature (Maybe Text)
+gvisKeyid
+  = lens _gvisKeyid (\ s a -> s{_gvisKeyid = a})
+
+gvisSig :: Lens' GrafeasV1beta1IntotoSignature (Maybe Text)
+gvisSig = lens _gvisSig (\ s a -> s{_gvisSig = a})
+
+instance FromJSON GrafeasV1beta1IntotoSignature where
+        parseJSON
+          = withObject "GrafeasV1beta1IntotoSignature"
+              (\ o ->
+                 GrafeasV1beta1IntotoSignature' <$>
+                   (o .:? "keyid") <*> (o .:? "sig"))
+
+instance ToJSON GrafeasV1beta1IntotoSignature where
+        toJSON GrafeasV1beta1IntotoSignature'{..}
+          = object
+              (catMaybes
+                 [("keyid" .=) <$> _gvisKeyid,
+                  ("sig" .=) <$> _gvisSig])
+
 -- | Request to create notes in batch.
 --
 -- /See:/ 'batchCreateNotesRequest' smart constructor.
@@ -1402,7 +1483,8 @@ batchCreateNotesRequest
 batchCreateNotesRequest = BatchCreateNotesRequest' {_bcnrNotes = Nothing}
 
 
--- | The notes to create. Max allowed length is 1000.
+-- | Required. The notes to create, the key is expected to be the note ID.
+-- Max allowed length is 1000.
 bcnrNotes :: Lens' BatchCreateNotesRequest (Maybe BatchCreateNotesRequestNotes)
 bcnrNotes
   = lens _bcnrNotes (\ s a -> s{_bcnrNotes = a})
@@ -1415,6 +1497,38 @@ instance FromJSON BatchCreateNotesRequest where
 instance ToJSON BatchCreateNotesRequest where
         toJSON BatchCreateNotesRequest'{..}
           = object (catMaybes [("notes" .=) <$> _bcnrNotes])
+
+-- | Defines a hash object for use in Materials and Products.
+--
+-- /See:/ 'artifactHashes' smart constructor.
+newtype ArtifactHashes =
+  ArtifactHashes'
+    { _ahSha256 :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ArtifactHashes' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ahSha256'
+artifactHashes
+    :: ArtifactHashes
+artifactHashes = ArtifactHashes' {_ahSha256 = Nothing}
+
+
+ahSha256 :: Lens' ArtifactHashes (Maybe Text)
+ahSha256 = lens _ahSha256 (\ s a -> s{_ahSha256 = a})
+
+instance FromJSON ArtifactHashes where
+        parseJSON
+          = withObject "ArtifactHashes"
+              (\ o -> ArtifactHashes' <$> (o .:? "sha256"))
+
+instance ToJSON ArtifactHashes where
+        toJSON ArtifactHashes'{..}
+          = object (catMaybes [("sha256" .=) <$> _ahSha256])
 
 -- | A SourceContext is a reference to a tree of files. A SourceContext
 -- together with a path point to a unique revision of a single file or
@@ -1608,7 +1722,7 @@ batchCreateOccurrencesRequest =
   BatchCreateOccurrencesRequest' {_bcorOccurrences = Nothing}
 
 
--- | The occurrences to create. Max allowed length is 1000.
+-- | Required. The occurrences to create. Max allowed length is 1000.
 bcorOccurrences :: Lens' BatchCreateOccurrencesRequest [Occurrence]
 bcorOccurrences
   = lens _bcorOccurrences
@@ -1892,6 +2006,42 @@ instance ToJSON RepoId where
                  [("uid" .=) <$> _riUid,
                   ("projectRepoId" .=) <$> _riProjectRepoId])
 
+-- | Defines an object for the environment field in in-toto links. The
+-- suggested fields are \"variables\", \"filesystem\", and \"workdir\".
+--
+-- /See:/ 'environment' smart constructor.
+newtype Environment =
+  Environment'
+    { _eCustomValues :: Maybe EnvironmentCustomValues
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Environment' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'eCustomValues'
+environment
+    :: Environment
+environment = Environment' {_eCustomValues = Nothing}
+
+
+eCustomValues :: Lens' Environment (Maybe EnvironmentCustomValues)
+eCustomValues
+  = lens _eCustomValues
+      (\ s a -> s{_eCustomValues = a})
+
+instance FromJSON Environment where
+        parseJSON
+          = withObject "Environment"
+              (\ o -> Environment' <$> (o .:? "customValues"))
+
+instance ToJSON Environment where
+        toJSON Environment'{..}
+          = object
+              (catMaybes [("customValues" .=) <$> _eCustomValues])
+
 -- | Response for listing occurrences for a note.
 --
 -- /See:/ 'listNoteOccurrencesResponse' smart constructor.
@@ -1963,6 +2113,7 @@ data Note =
     , _nUpdateTime :: !(Maybe DateTime')
     , _nShortDescription :: !(Maybe Text)
     , _nName :: !(Maybe Text)
+    , _nIntoto :: !(Maybe InToto)
     , _nBaseImage :: !(Maybe Basis)
     , _nPackage :: !(Maybe Package)
     , _nExpirationTime :: !(Maybe DateTime')
@@ -1999,6 +2150,8 @@ data Note =
 --
 -- * 'nName'
 --
+-- * 'nIntoto'
+--
 -- * 'nBaseImage'
 --
 -- * 'nPackage'
@@ -2022,6 +2175,7 @@ note =
     , _nUpdateTime = Nothing
     , _nShortDescription = Nothing
     , _nName = Nothing
+    , _nIntoto = Nothing
     , _nBaseImage = Nothing
     , _nPackage = Nothing
     , _nExpirationTime = Nothing
@@ -2099,6 +2253,10 @@ nShortDescription
 nName :: Lens' Note (Maybe Text)
 nName = lens _nName (\ s a -> s{_nName = a})
 
+-- | A note describing an in-toto link.
+nIntoto :: Lens' Note (Maybe InToto)
+nIntoto = lens _nIntoto (\ s a -> s{_nIntoto = a})
+
 -- | A note describing a base image.
 nBaseImage :: Lens' Note (Maybe Basis)
 nBaseImage
@@ -2138,6 +2296,7 @@ instance FromJSON Note where
                      <*> (o .:? "updateTime")
                      <*> (o .:? "shortDescription")
                      <*> (o .:? "name")
+                     <*> (o .:? "intoto")
                      <*> (o .:? "baseImage")
                      <*> (o .:? "package")
                      <*> (o .:? "expirationTime")
@@ -2159,7 +2318,7 @@ instance ToJSON Note where
                   ("relatedUrl" .=) <$> _nRelatedURL,
                   ("updateTime" .=) <$> _nUpdateTime,
                   ("shortDescription" .=) <$> _nShortDescription,
-                  ("name" .=) <$> _nName,
+                  ("name" .=) <$> _nName, ("intoto" .=) <$> _nIntoto,
                   ("baseImage" .=) <$> _nBaseImage,
                   ("package" .=) <$> _nPackage,
                   ("expirationTime" .=) <$> _nExpirationTime,
@@ -2326,6 +2485,113 @@ instance ToJSON CVSSv3 where
                   ("exploitabilityScore" .=) <$>
                     _cvssExploitabilityScore])
 
+-- | This corresponds to an in-toto link.
+--
+-- /See:/ 'link' smart constructor.
+data Link =
+  Link'
+    { _lCommand :: !(Maybe [Text])
+    , _lEnvironment :: !(Maybe Environment)
+    , _lMaterials :: !(Maybe [GrafeasV1beta1IntotoArtifact])
+    , _lProducts :: !(Maybe [GrafeasV1beta1IntotoArtifact])
+    , _lByProducts :: !(Maybe ByProducts)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Link' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'lCommand'
+--
+-- * 'lEnvironment'
+--
+-- * 'lMaterials'
+--
+-- * 'lProducts'
+--
+-- * 'lByProducts'
+link
+    :: Link
+link =
+  Link'
+    { _lCommand = Nothing
+    , _lEnvironment = Nothing
+    , _lMaterials = Nothing
+    , _lProducts = Nothing
+    , _lByProducts = Nothing
+    }
+
+
+-- | This field contains the full command executed for the step. This can
+-- also be empty if links are generated for operations that aren\'t
+-- directly mapped to a specific command. Each term in the command is an
+-- independent string in the list. An example of a command in the in-toto
+-- metadata field is: \"command\": [\"git\", \"clone\",
+-- \"https:\/\/github.com\/in-toto\/demo-project.git\"]
+lCommand :: Lens' Link [Text]
+lCommand
+  = lens _lCommand (\ s a -> s{_lCommand = a}) .
+      _Default
+      . _Coerce
+
+-- | This is a field that can be used to capture information about the
+-- environment. It is suggested for this field to contain information that
+-- details environment variables, filesystem information, and the present
+-- working directory. The recommended structure of this field is:
+-- \"environment\": { \"custom_values\": { \"variables\": \"\",
+-- \"filesystem\": \"\", \"workdir\": \"\", \"\": \"...\" } }
+lEnvironment :: Lens' Link (Maybe Environment)
+lEnvironment
+  = lens _lEnvironment (\ s a -> s{_lEnvironment = a})
+
+-- | Materials are the supply chain artifacts that go into the step and are
+-- used for the operation performed. The key of the map is the path of the
+-- artifact and the structure contains the recorded hash information. An
+-- example is: \"materials\": [ { \"resource_uri\": \"foo\/bar\",
+-- \"hashes\": { \"sha256\": \"ebebf...\", : } } ]
+lMaterials :: Lens' Link [GrafeasV1beta1IntotoArtifact]
+lMaterials
+  = lens _lMaterials (\ s a -> s{_lMaterials = a}) .
+      _Default
+      . _Coerce
+
+-- | Products are the supply chain artifacts generated as a result of the
+-- step. The structure is identical to that of materials.
+lProducts :: Lens' Link [GrafeasV1beta1IntotoArtifact]
+lProducts
+  = lens _lProducts (\ s a -> s{_lProducts = a}) .
+      _Default
+      . _Coerce
+
+-- | ByProducts are data generated as part of a software supply chain step,
+-- but are not the actual result of the step.
+lByProducts :: Lens' Link (Maybe ByProducts)
+lByProducts
+  = lens _lByProducts (\ s a -> s{_lByProducts = a})
+
+instance FromJSON Link where
+        parseJSON
+          = withObject "Link"
+              (\ o ->
+                 Link' <$>
+                   (o .:? "command" .!= mempty) <*>
+                     (o .:? "environment")
+                     <*> (o .:? "materials" .!= mempty)
+                     <*> (o .:? "products" .!= mempty)
+                     <*> (o .:? "byproducts"))
+
+instance ToJSON Link where
+        toJSON Link'{..}
+          = object
+              (catMaybes
+                 [("command" .=) <$> _lCommand,
+                  ("environment" .=) <$> _lEnvironment,
+                  ("materials" .=) <$> _lMaterials,
+                  ("products" .=) <$> _lProducts,
+                  ("byproducts" .=) <$> _lByProducts])
+
 -- | Response for creating notes in batch.
 --
 -- /See:/ 'batchCreateNotesResponse' smart constructor.
@@ -2470,6 +2736,44 @@ instance ToJSON Fingerprint where
                  [("v2Name" .=) <$> _fV2Name,
                   ("v2Blob" .=) <$> _fV2Blob,
                   ("v1Name" .=) <$> _fV1Name])
+
+-- | Defines an object to declare an in-toto artifact rule
+--
+-- /See:/ 'artifactRule' smart constructor.
+newtype ArtifactRule =
+  ArtifactRule'
+    { _arArtifactRule :: Maybe [Text]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ArtifactRule' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'arArtifactRule'
+artifactRule
+    :: ArtifactRule
+artifactRule = ArtifactRule' {_arArtifactRule = Nothing}
+
+
+arArtifactRule :: Lens' ArtifactRule [Text]
+arArtifactRule
+  = lens _arArtifactRule
+      (\ s a -> s{_arArtifactRule = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON ArtifactRule where
+        parseJSON
+          = withObject "ArtifactRule"
+              (\ o ->
+                 ArtifactRule' <$> (o .:? "artifactRule" .!= mempty))
+
+instance ToJSON ArtifactRule where
+        toJSON ArtifactRule'{..}
+          = object
+              (catMaybes [("artifactRule" .=) <$> _arArtifactRule])
 
 -- | This submessage provides human-readable hints about the purpose of the
 -- authority. Because the name of a note acts as its resource reference, it
@@ -2728,6 +3032,53 @@ instance ToJSON Attestation where
                   ("pgpSignedAttestation" .=) <$>
                     _aPgpSignedAttestation])
 
+-- | Encapsulates settings provided to GetIamPolicy.
+--
+-- /See:/ 'getPolicyOptions' smart constructor.
+newtype GetPolicyOptions =
+  GetPolicyOptions'
+    { _gpoRequestedPolicyVersion :: Maybe (Textual Int32)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetPolicyOptions' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gpoRequestedPolicyVersion'
+getPolicyOptions
+    :: GetPolicyOptions
+getPolicyOptions = GetPolicyOptions' {_gpoRequestedPolicyVersion = Nothing}
+
+
+-- | Optional. The policy format version to be returned. Valid values are 0,
+-- 1, and 3. Requests specifying an invalid value will be rejected.
+-- Requests for policies with any conditional bindings must specify version
+-- 3. Policies without any conditional bindings may specify any valid value
+-- or leave the field unset. To learn which resources support conditions in
+-- their IAM policies, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
+gpoRequestedPolicyVersion :: Lens' GetPolicyOptions (Maybe Int32)
+gpoRequestedPolicyVersion
+  = lens _gpoRequestedPolicyVersion
+      (\ s a -> s{_gpoRequestedPolicyVersion = a})
+      . mapping _Coerce
+
+instance FromJSON GetPolicyOptions where
+        parseJSON
+          = withObject "GetPolicyOptions"
+              (\ o ->
+                 GetPolicyOptions' <$>
+                   (o .:? "requestedPolicyVersion"))
+
+instance ToJSON GetPolicyOptions where
+        toJSON GetPolicyOptions'{..}
+          = object
+              (catMaybes
+                 [("requestedPolicyVersion" .=) <$>
+                    _gpoRequestedPolicyVersion])
+
 -- | Artifact describes a build product.
 --
 -- /See:/ 'artifact' smart constructor.
@@ -2793,10 +3144,9 @@ instance ToJSON Artifact where
 -- | Request message for \`SetIamPolicy\` method.
 --
 -- /See:/ 'setIAMPolicyRequest' smart constructor.
-data SetIAMPolicyRequest =
+newtype SetIAMPolicyRequest =
   SetIAMPolicyRequest'
-    { _siprUpdateMask :: !(Maybe GFieldMask)
-    , _siprPolicy :: !(Maybe Policy)
+    { _siprPolicy :: Maybe Policy
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2805,23 +3155,11 @@ data SetIAMPolicyRequest =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'siprUpdateMask'
---
 -- * 'siprPolicy'
 setIAMPolicyRequest
     :: SetIAMPolicyRequest
-setIAMPolicyRequest =
-  SetIAMPolicyRequest' {_siprUpdateMask = Nothing, _siprPolicy = Nothing}
+setIAMPolicyRequest = SetIAMPolicyRequest' {_siprPolicy = Nothing}
 
-
--- | OPTIONAL: A FieldMask specifying which fields of the policy to modify.
--- Only the fields in the mask will be modified. If no mask is provided,
--- the following default mask is used: paths: \"bindings, etag\" This field
--- is only used by Cloud IAM.
-siprUpdateMask :: Lens' SetIAMPolicyRequest (Maybe GFieldMask)
-siprUpdateMask
-  = lens _siprUpdateMask
-      (\ s a -> s{_siprUpdateMask = a})
 
 -- | REQUIRED: The complete policy to be applied to the \`resource\`. The
 -- size of the policy is limited to a few 10s of KB. An empty policy is a
@@ -2834,16 +3172,11 @@ siprPolicy
 instance FromJSON SetIAMPolicyRequest where
         parseJSON
           = withObject "SetIAMPolicyRequest"
-              (\ o ->
-                 SetIAMPolicyRequest' <$>
-                   (o .:? "updateMask") <*> (o .:? "policy"))
+              (\ o -> SetIAMPolicyRequest' <$> (o .:? "policy"))
 
 instance ToJSON SetIAMPolicyRequest where
         toJSON SetIAMPolicyRequest'{..}
-          = object
-              (catMaybes
-                 [("updateMask" .=) <$> _siprUpdateMask,
-                  ("policy" .=) <$> _siprPolicy])
+          = object (catMaybes [("policy" .=) <$> _siprPolicy])
 
 -- | Special options applied to this build. This is a catch-all field where
 -- build providers can enter any desired additional details.
@@ -3142,6 +3475,58 @@ instance ToJSON RelatedURL where
               (catMaybes
                  [("url" .=) <$> _ruURL, ("label" .=) <$> _ruLabel])
 
+-- | This corresponds to a signed in-toto link - it is made up of one or more
+-- signatures and the in-toto link itself. This is used for occurrences of
+-- a Grafeas in-toto note.
+--
+-- /See:/ 'grafeasV1beta1IntotoDetails' smart constructor.
+data GrafeasV1beta1IntotoDetails =
+  GrafeasV1beta1IntotoDetails'
+    { _gvidSigned :: !(Maybe Link)
+    , _gvidSignatures :: !(Maybe [GrafeasV1beta1IntotoSignature])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GrafeasV1beta1IntotoDetails' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gvidSigned'
+--
+-- * 'gvidSignatures'
+grafeasV1beta1IntotoDetails
+    :: GrafeasV1beta1IntotoDetails
+grafeasV1beta1IntotoDetails =
+  GrafeasV1beta1IntotoDetails'
+    {_gvidSigned = Nothing, _gvidSignatures = Nothing}
+
+
+gvidSigned :: Lens' GrafeasV1beta1IntotoDetails (Maybe Link)
+gvidSigned
+  = lens _gvidSigned (\ s a -> s{_gvidSigned = a})
+
+gvidSignatures :: Lens' GrafeasV1beta1IntotoDetails [GrafeasV1beta1IntotoSignature]
+gvidSignatures
+  = lens _gvidSignatures
+      (\ s a -> s{_gvidSignatures = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON GrafeasV1beta1IntotoDetails where
+        parseJSON
+          = withObject "GrafeasV1beta1IntotoDetails"
+              (\ o ->
+                 GrafeasV1beta1IntotoDetails' <$>
+                   (o .:? "signed") <*> (o .:? "signatures" .!= mempty))
+
+instance ToJSON GrafeasV1beta1IntotoDetails where
+        toJSON GrafeasV1beta1IntotoDetails'{..}
+          = object
+              (catMaybes
+                 [("signed" .=) <$> _gvidSigned,
+                  ("signatures" .=) <$> _gvidSignatures])
+
 -- | Details of an image occurrence.
 --
 -- /See:/ 'grafeasV1beta1ImageDetails' smart constructor.
@@ -3314,12 +3699,127 @@ instance ToJSON ListScanConfigsResponse where
                  [("nextPageToken" .=) <$> _lscrNextPageToken,
                   ("scanConfigs" .=) <$> _lscrScanConfigs])
 
+-- | This contains the fields corresponding to the definition of a software
+-- supply chain step in an in-toto layout. This information goes into a
+-- Grafeas note.
+--
+-- /See:/ 'inToto' smart constructor.
+data InToto =
+  InToto'
+    { _itStepName :: !(Maybe Text)
+    , _itExpectedProducts :: !(Maybe [ArtifactRule])
+    , _itExpectedCommand :: !(Maybe [Text])
+    , _itThreshold :: !(Maybe (Textual Int64))
+    , _itSigningKeys :: !(Maybe [SigningKey])
+    , _itExpectedMaterials :: !(Maybe [ArtifactRule])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InToto' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'itStepName'
+--
+-- * 'itExpectedProducts'
+--
+-- * 'itExpectedCommand'
+--
+-- * 'itThreshold'
+--
+-- * 'itSigningKeys'
+--
+-- * 'itExpectedMaterials'
+inToto
+    :: InToto
+inToto =
+  InToto'
+    { _itStepName = Nothing
+    , _itExpectedProducts = Nothing
+    , _itExpectedCommand = Nothing
+    , _itThreshold = Nothing
+    , _itSigningKeys = Nothing
+    , _itExpectedMaterials = Nothing
+    }
+
+
+-- | This field identifies the name of the step in the supply chain.
+itStepName :: Lens' InToto (Maybe Text)
+itStepName
+  = lens _itStepName (\ s a -> s{_itStepName = a})
+
+itExpectedProducts :: Lens' InToto [ArtifactRule]
+itExpectedProducts
+  = lens _itExpectedProducts
+      (\ s a -> s{_itExpectedProducts = a})
+      . _Default
+      . _Coerce
+
+-- | This field contains the expected command used to perform the step.
+itExpectedCommand :: Lens' InToto [Text]
+itExpectedCommand
+  = lens _itExpectedCommand
+      (\ s a -> s{_itExpectedCommand = a})
+      . _Default
+      . _Coerce
+
+-- | This field contains a value that indicates the minimum number of keys
+-- that need to be used to sign the step\'s in-toto link.
+itThreshold :: Lens' InToto (Maybe Int64)
+itThreshold
+  = lens _itThreshold (\ s a -> s{_itThreshold = a}) .
+      mapping _Coerce
+
+-- | This field contains the public keys that can be used to verify the
+-- signatures on the step metadata.
+itSigningKeys :: Lens' InToto [SigningKey]
+itSigningKeys
+  = lens _itSigningKeys
+      (\ s a -> s{_itSigningKeys = a})
+      . _Default
+      . _Coerce
+
+-- | The following fields contain in-toto artifact rules identifying the
+-- artifacts that enter this supply chain step, and exit the supply chain
+-- step, i.e. materials and products of the step.
+itExpectedMaterials :: Lens' InToto [ArtifactRule]
+itExpectedMaterials
+  = lens _itExpectedMaterials
+      (\ s a -> s{_itExpectedMaterials = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON InToto where
+        parseJSON
+          = withObject "InToto"
+              (\ o ->
+                 InToto' <$>
+                   (o .:? "stepName") <*>
+                     (o .:? "expectedProducts" .!= mempty)
+                     <*> (o .:? "expectedCommand" .!= mempty)
+                     <*> (o .:? "threshold")
+                     <*> (o .:? "signingKeys" .!= mempty)
+                     <*> (o .:? "expectedMaterials" .!= mempty))
+
+instance ToJSON InToto where
+        toJSON InToto'{..}
+          = object
+              (catMaybes
+                 [("stepName" .=) <$> _itStepName,
+                  ("expectedProducts" .=) <$> _itExpectedProducts,
+                  ("expectedCommand" .=) <$> _itExpectedCommand,
+                  ("threshold" .=) <$> _itThreshold,
+                  ("signingKeys" .=) <$> _itSigningKeys,
+                  ("expectedMaterials" .=) <$> _itExpectedMaterials])
+
 -- | Version contains structured information about the version of a package.
 --
 -- /See:/ 'version' smart constructor.
 data Version =
   Version'
-    { _vKind :: !(Maybe VersionKind)
+    { _vInclusive :: !(Maybe Bool)
+    , _vKind :: !(Maybe VersionKind)
     , _vName :: !(Maybe Text)
     , _vRevision :: !(Maybe Text)
     , _vEpoch :: !(Maybe (Textual Int32))
@@ -3330,6 +3830,8 @@ data Version =
 -- | Creates a value of 'Version' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vInclusive'
 --
 -- * 'vKind'
 --
@@ -3342,12 +3844,23 @@ version
     :: Version
 version =
   Version'
-    { _vKind = Nothing
+    { _vInclusive = Nothing
+    , _vKind = Nothing
     , _vName = Nothing
     , _vRevision = Nothing
     , _vEpoch = Nothing
     }
 
+
+-- | Whether this version is specifying part of an inclusive range. Grafeas
+-- does not have the capability to specify version ranges; instead we have
+-- fields that specify start version and end versions. At times this is
+-- insufficient - we also need to specify whether the version is included
+-- in the range or is excluded from the range. This boolean is expected to
+-- be set to true when the version is included in a range.
+vInclusive :: Lens' Version (Maybe Bool)
+vInclusive
+  = lens _vInclusive (\ s a -> s{_vInclusive = a})
 
 -- | Required. Distinguishes between sentinel MIN\/MAX versions and normal
 -- versions.
@@ -3375,15 +3888,17 @@ instance FromJSON Version where
           = withObject "Version"
               (\ o ->
                  Version' <$>
-                   (o .:? "kind") <*> (o .:? "name") <*>
-                     (o .:? "revision")
+                   (o .:? "inclusive") <*> (o .:? "kind") <*>
+                     (o .:? "name")
+                     <*> (o .:? "revision")
                      <*> (o .:? "epoch"))
 
 instance ToJSON Version where
         toJSON Version'{..}
           = object
               (catMaybes
-                 [("kind" .=) <$> _vKind, ("name" .=) <$> _vName,
+                 [("inclusive" .=) <$> _vInclusive,
+                  ("kind" .=) <$> _vKind, ("name" .=) <$> _vName,
                   ("revision" .=) <$> _vRevision,
                   ("epoch" .=) <$> _vEpoch])
 
@@ -3453,7 +3968,8 @@ resource =
   Resource' {_rContentHash = Nothing, _rURI = Nothing, _rName = Nothing}
 
 
--- | The hash of the resource content. For example, the Docker digest.
+-- | Deprecated, do not use. Use uri instead. The hash of the resource
+-- content. For example, the Docker digest.
 rContentHash :: Lens' Resource (Maybe Hash)
 rContentHash
   = lens _rContentHash (\ s a -> s{_rContentHash = a})
@@ -3463,8 +3979,8 @@ rContentHash
 rURI :: Lens' Resource (Maybe Text)
 rURI = lens _rURI (\ s a -> s{_rURI = a})
 
--- | The name of the resource. For example, the name of a Docker image -
--- \"Debian\".
+-- | Deprecated, do not use. Use uri instead. The name of the resource. For
+-- example, the name of a Docker image - \"Debian\".
 rName :: Lens' Resource (Maybe Text)
 rName = lens _rName (\ s a -> s{_rName = a})
 
@@ -4340,6 +4856,53 @@ instance ToJSON GenericSignedAttestation where
                   ("signatures" .=) <$> _gsaSignatures,
                   ("contentType" .=) <$> _gsaContentType])
 
+--
+-- /See:/ 'grafeasV1beta1IntotoArtifact' smart constructor.
+data GrafeasV1beta1IntotoArtifact =
+  GrafeasV1beta1IntotoArtifact'
+    { _gviaResourceURI :: !(Maybe Text)
+    , _gviaHashes :: !(Maybe ArtifactHashes)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GrafeasV1beta1IntotoArtifact' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gviaResourceURI'
+--
+-- * 'gviaHashes'
+grafeasV1beta1IntotoArtifact
+    :: GrafeasV1beta1IntotoArtifact
+grafeasV1beta1IntotoArtifact =
+  GrafeasV1beta1IntotoArtifact'
+    {_gviaResourceURI = Nothing, _gviaHashes = Nothing}
+
+
+gviaResourceURI :: Lens' GrafeasV1beta1IntotoArtifact (Maybe Text)
+gviaResourceURI
+  = lens _gviaResourceURI
+      (\ s a -> s{_gviaResourceURI = a})
+
+gviaHashes :: Lens' GrafeasV1beta1IntotoArtifact (Maybe ArtifactHashes)
+gviaHashes
+  = lens _gviaHashes (\ s a -> s{_gviaHashes = a})
+
+instance FromJSON GrafeasV1beta1IntotoArtifact where
+        parseJSON
+          = withObject "GrafeasV1beta1IntotoArtifact"
+              (\ o ->
+                 GrafeasV1beta1IntotoArtifact' <$>
+                   (o .:? "resourceUri") <*> (o .:? "hashes"))
+
+instance ToJSON GrafeasV1beta1IntotoArtifact where
+        toJSON GrafeasV1beta1IntotoArtifact'{..}
+          = object
+              (catMaybes
+                 [("resourceUri" .=) <$> _gviaResourceURI,
+                  ("hashes" .=) <$> _gviaHashes])
+
 -- | A GitSourceContext denotes a particular revision in a third party Git
 -- repository (e.g., GitHub).
 --
@@ -4430,29 +4993,81 @@ instance ToJSON TestIAMPermissionsResponse where
               (catMaybes
                  [("permissions" .=) <$> _tiamprPermissions])
 
--- | Defines an Identity and Access Management (IAM) policy. It is used to
--- specify access control policies for Cloud Platform resources. A
--- \`Policy\` consists of a list of \`bindings\`. A \`binding\` binds a
--- list of \`members\` to a \`role\`, where the members can be user
--- accounts, Google groups, Google domains, and service accounts. A
--- \`role\` is a named list of permissions defined by IAM. **JSON Example**
--- { \"bindings\": [ { \"role\": \"roles\/owner\", \"members\": [
+--
+-- /See:/ 'byProductsCustomValues' smart constructor.
+newtype ByProductsCustomValues =
+  ByProductsCustomValues'
+    { _bpcvAddtional :: HashMap Text Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ByProductsCustomValues' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bpcvAddtional'
+byProductsCustomValues
+    :: HashMap Text Text -- ^ 'bpcvAddtional'
+    -> ByProductsCustomValues
+byProductsCustomValues pBpcvAddtional_ =
+  ByProductsCustomValues' {_bpcvAddtional = _Coerce # pBpcvAddtional_}
+
+
+bpcvAddtional :: Lens' ByProductsCustomValues (HashMap Text Text)
+bpcvAddtional
+  = lens _bpcvAddtional
+      (\ s a -> s{_bpcvAddtional = a})
+      . _Coerce
+
+instance FromJSON ByProductsCustomValues where
+        parseJSON
+          = withObject "ByProductsCustomValues"
+              (\ o ->
+                 ByProductsCustomValues' <$> (parseJSONObject o))
+
+instance ToJSON ByProductsCustomValues where
+        toJSON = toJSON . _bpcvAddtional
+
+-- | An Identity and Access Management (IAM) policy, which specifies access
+-- controls for Google Cloud resources. A \`Policy\` is a collection of
+-- \`bindings\`. A \`binding\` binds one or more \`members\` to a single
+-- \`role\`. Members can be user accounts, service accounts, Google groups,
+-- and domains (such as G Suite). A \`role\` is a named list of
+-- permissions; each \`role\` can be an IAM predefined role or a
+-- user-created custom role. For some types of Google Cloud resources, a
+-- \`binding\` can also specify a \`condition\`, which is a logical
+-- expression that allows access to a resource only if the expression
+-- evaluates to \`true\`. A condition can add constraints based on
+-- attributes of the request, the resource, or both. To learn which
+-- resources support conditions in their IAM policies, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
+-- **JSON example:** { \"bindings\": [ { \"role\":
+-- \"roles\/resourcemanager.organizationAdmin\", \"members\": [
 -- \"user:mike\'example.com\", \"group:admins\'example.com\",
 -- \"domain:google.com\",
--- \"serviceAccount:my-other-app\'appspot.gserviceaccount.com\" ] }, {
--- \"role\": \"roles\/viewer\", \"members\": [\"user:sean\'example.com\"] }
--- ] } **YAML Example** bindings: - members: - user:mike\'example.com -
--- group:admins\'example.com - domain:google.com -
--- serviceAccount:my-other-app\'appspot.gserviceaccount.com role:
--- roles\/owner - members: - user:sean\'example.com role: roles\/viewer For
--- a description of IAM and its features, see the [IAM developer\'s
--- guide](https:\/\/cloud.google.com\/iam\/docs).
+-- \"serviceAccount:my-project-id\'appspot.gserviceaccount.com\" ] }, {
+-- \"role\": \"roles\/resourcemanager.organizationViewer\", \"members\": [
+-- \"user:eve\'example.com\" ], \"condition\": { \"title\": \"expirable
+-- access\", \"description\": \"Does not grant access after Sep 2020\",
+-- \"expression\": \"request.time \<
+-- timestamp(\'2020-10-01T00:00:00.000Z\')\", } } ], \"etag\":
+-- \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: -
+-- members: - user:mike\'example.com - group:admins\'example.com -
+-- domain:google.com -
+-- serviceAccount:my-project-id\'appspot.gserviceaccount.com role:
+-- roles\/resourcemanager.organizationAdmin - members: -
+-- user:eve\'example.com role: roles\/resourcemanager.organizationViewer
+-- condition: title: expirable access description: Does not grant access
+-- after Sep 2020 expression: request.time \<
+-- timestamp(\'2020-10-01T00:00:00.000Z\') - etag: BwWWja0YfJA= - version:
+-- 3 For a description of IAM and its features, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/docs\/).
 --
 -- /See:/ 'policy' smart constructor.
 data Policy =
   Policy'
-    { _pAuditConfigs :: !(Maybe [AuditConfig])
-    , _pEtag :: !(Maybe Bytes)
+    { _pEtag :: !(Maybe Bytes)
     , _pVersion :: !(Maybe (Textual Int32))
     , _pBindings :: !(Maybe [Binding])
     }
@@ -4463,8 +5078,6 @@ data Policy =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'pAuditConfigs'
---
 -- * 'pEtag'
 --
 -- * 'pVersion'
@@ -4472,22 +5085,8 @@ data Policy =
 -- * 'pBindings'
 policy
     :: Policy
-policy =
-  Policy'
-    { _pAuditConfigs = Nothing
-    , _pEtag = Nothing
-    , _pVersion = Nothing
-    , _pBindings = Nothing
-    }
+policy = Policy' {_pEtag = Nothing, _pVersion = Nothing, _pBindings = Nothing}
 
-
--- | Specifies cloud audit logging configuration for this policy.
-pAuditConfigs :: Lens' Policy [AuditConfig]
-pAuditConfigs
-  = lens _pAuditConfigs
-      (\ s a -> s{_pAuditConfigs = a})
-      . _Default
-      . _Coerce
 
 -- | \`etag\` is used for optimistic concurrency control as a way to help
 -- prevent simultaneous updates of a policy from overwriting each other. It
@@ -4496,21 +5095,40 @@ pAuditConfigs
 -- conditions: An \`etag\` is returned in the response to \`getIamPolicy\`,
 -- and systems are expected to put that etag in the request to
 -- \`setIamPolicy\` to ensure that their change will be applied to the same
--- version of the policy. If no \`etag\` is provided in the call to
--- \`setIamPolicy\`, then the existing policy is overwritten blindly.
+-- version of the policy. **Important:** If you use IAM Conditions, you
+-- must include the \`etag\` field whenever you call \`setIamPolicy\`. If
+-- you omit this field, then IAM allows you to overwrite a version \`3\`
+-- policy with a version \`1\` policy, and all of the conditions in the
+-- version \`3\` policy are lost.
 pEtag :: Lens' Policy (Maybe ByteString)
 pEtag
   = lens _pEtag (\ s a -> s{_pEtag = a}) .
       mapping _Bytes
 
--- | Deprecated.
+-- | Specifies the format of the policy. Valid values are \`0\`, \`1\`, and
+-- \`3\`. Requests that specify an invalid value are rejected. Any
+-- operation that affects conditional role bindings must specify version
+-- \`3\`. This requirement applies to the following operations: * Getting a
+-- policy that includes a conditional role binding * Adding a conditional
+-- role binding to a policy * Changing a conditional role binding in a
+-- policy * Removing any role binding, with or without a condition, from a
+-- policy that includes conditions **Important:** If you use IAM
+-- Conditions, you must include the \`etag\` field whenever you call
+-- \`setIamPolicy\`. If you omit this field, then IAM allows you to
+-- overwrite a version \`3\` policy with a version \`1\` policy, and all of
+-- the conditions in the version \`3\` policy are lost. If a policy does
+-- not include any conditions, operations on that policy may specify any
+-- valid version or leave the field unset. To learn which resources support
+-- conditions in their IAM policies, see the [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
 pVersion :: Lens' Policy (Maybe Int32)
 pVersion
   = lens _pVersion (\ s a -> s{_pVersion = a}) .
       mapping _Coerce
 
--- | Associates a list of \`members\` to a \`role\`. \`bindings\` with no
--- members will result in an error.
+-- | Associates a list of \`members\` to a \`role\`. Optionally, may specify
+-- a \`condition\` that determines how and when the \`bindings\` are
+-- applied. Each of the \`bindings\` must contain at least one member.
 pBindings :: Lens' Policy [Binding]
 pBindings
   = lens _pBindings (\ s a -> s{_pBindings = a}) .
@@ -4522,16 +5140,15 @@ instance FromJSON Policy where
           = withObject "Policy"
               (\ o ->
                  Policy' <$>
-                   (o .:? "auditConfigs" .!= mempty) <*> (o .:? "etag")
-                     <*> (o .:? "version")
-                     <*> (o .:? "bindings" .!= mempty))
+                   (o .:? "etag") <*> (o .:? "version") <*>
+                     (o .:? "bindings" .!= mempty))
 
 instance ToJSON Policy where
         toJSON Policy'{..}
           = object
               (catMaybes
-                 [("auditConfigs" .=) <$> _pAuditConfigs,
-                  ("etag" .=) <$> _pEtag, ("version" .=) <$> _pVersion,
+                 [("etag" .=) <$> _pEtag,
+                  ("version" .=) <$> _pVersion,
                   ("bindings" .=) <$> _pBindings])
 
 -- | Layer holds metadata specific to a layer of a Docker image.
@@ -4647,63 +5264,6 @@ instance ToJSON CloudRepoSourceContext where
                   ("revisionId" .=) <$> _crscRevisionId,
                   ("aliasContext" .=) <$> _crscAliasContext])
 
--- | Provides the configuration for logging a type of permissions. Example: {
--- \"audit_log_configs\": [ { \"log_type\": \"DATA_READ\",
--- \"exempted_members\": [ \"user:foo\'gmail.com\" ] }, { \"log_type\":
--- \"DATA_WRITE\", } ] } This enables \'DATA_READ\' and \'DATA_WRITE\'
--- logging, while exempting foo\'gmail.com from DATA_READ logging.
---
--- /See:/ 'auditLogConfig' smart constructor.
-data AuditLogConfig =
-  AuditLogConfig'
-    { _alcLogType :: !(Maybe AuditLogConfigLogType)
-    , _alcExemptedMembers :: !(Maybe [Text])
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'AuditLogConfig' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'alcLogType'
---
--- * 'alcExemptedMembers'
-auditLogConfig
-    :: AuditLogConfig
-auditLogConfig =
-  AuditLogConfig' {_alcLogType = Nothing, _alcExemptedMembers = Nothing}
-
-
--- | The log type that this config enables.
-alcLogType :: Lens' AuditLogConfig (Maybe AuditLogConfigLogType)
-alcLogType
-  = lens _alcLogType (\ s a -> s{_alcLogType = a})
-
--- | Specifies the identities that do not cause logging for this type of
--- permission. Follows the same format of Binding.members.
-alcExemptedMembers :: Lens' AuditLogConfig [Text]
-alcExemptedMembers
-  = lens _alcExemptedMembers
-      (\ s a -> s{_alcExemptedMembers = a})
-      . _Default
-      . _Coerce
-
-instance FromJSON AuditLogConfig where
-        parseJSON
-          = withObject "AuditLogConfig"
-              (\ o ->
-                 AuditLogConfig' <$>
-                   (o .:? "logType") <*>
-                     (o .:? "exemptedMembers" .!= mempty))
-
-instance ToJSON AuditLogConfig where
-        toJSON AuditLogConfig'{..}
-          = object
-              (catMaybes
-                 [("logType" .=) <$> _alcLogType,
-                  ("exemptedMembers" .=) <$> _alcExemptedMembers])
-
 -- | An attestation wrapper with a PGP-compatible signature. This message
 -- only supports \`ATTACHED\` signatures, where the payload that is signed
 -- is included alongside the signature itself in the same file.
@@ -4789,6 +5349,42 @@ instance ToJSON PgpSignedAttestation where
                   ("pgpKeyId" .=) <$> _psaPgpKeyId,
                   ("contentType" .=) <$> _psaContentType])
 
+-- | Defines an object for the byproducts field in in-toto links. The
+-- suggested fields are \"stderr\", \"stdout\", and \"return-value\".
+--
+-- /See:/ 'byProducts' smart constructor.
+newtype ByProducts =
+  ByProducts'
+    { _bpCustomValues :: Maybe ByProductsCustomValues
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ByProducts' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bpCustomValues'
+byProducts
+    :: ByProducts
+byProducts = ByProducts' {_bpCustomValues = Nothing}
+
+
+bpCustomValues :: Lens' ByProducts (Maybe ByProductsCustomValues)
+bpCustomValues
+  = lens _bpCustomValues
+      (\ s a -> s{_bpCustomValues = a})
+
+instance FromJSON ByProducts where
+        parseJSON
+          = withObject "ByProducts"
+              (\ o -> ByProducts' <$> (o .:? "customValues"))
+
+instance ToJSON ByProducts where
+        toJSON ByProducts'{..}
+          = object
+              (catMaybes [("customValues" .=) <$> _bpCustomValues])
+
 --
 -- /See:/ 'windowsDetail' smart constructor.
 data WindowsDetail =
@@ -4868,7 +5464,43 @@ instance ToJSON WindowsDetail where
                   ("cpeUri" .=) <$> _wdCpeURI,
                   ("description" .=) <$> _wdDescription])
 
--- | The notes to create. Max allowed length is 1000.
+--
+-- /See:/ 'environmentCustomValues' smart constructor.
+newtype EnvironmentCustomValues =
+  EnvironmentCustomValues'
+    { _ecvAddtional :: HashMap Text Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'EnvironmentCustomValues' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ecvAddtional'
+environmentCustomValues
+    :: HashMap Text Text -- ^ 'ecvAddtional'
+    -> EnvironmentCustomValues
+environmentCustomValues pEcvAddtional_ =
+  EnvironmentCustomValues' {_ecvAddtional = _Coerce # pEcvAddtional_}
+
+
+ecvAddtional :: Lens' EnvironmentCustomValues (HashMap Text Text)
+ecvAddtional
+  = lens _ecvAddtional (\ s a -> s{_ecvAddtional = a})
+      . _Coerce
+
+instance FromJSON EnvironmentCustomValues where
+        parseJSON
+          = withObject "EnvironmentCustomValues"
+              (\ o ->
+                 EnvironmentCustomValues' <$> (parseJSONObject o))
+
+instance ToJSON EnvironmentCustomValues where
+        toJSON = toJSON . _ecvAddtional
+
+-- | Required. The notes to create, the key is expected to be the note ID.
+-- Max allowed length is 1000.
 --
 -- /See:/ 'batchCreateNotesRequestNotes' smart constructor.
 newtype BatchCreateNotesRequestNotes =
@@ -4983,13 +5615,30 @@ binding =
 -- identifier that represents anyone who is authenticated with a Google
 -- account or a service account. * \`user:{emailid}\`: An email address
 -- that represents a specific Google account. For example,
--- \`alice\'gmail.com\` . * \`serviceAccount:{emailid}\`: An email address
--- that represents a service account. For example,
+-- \`alice\'example.com\` . * \`serviceAccount:{emailid}\`: An email
+-- address that represents a service account. For example,
 -- \`my-other-app\'appspot.gserviceaccount.com\`. * \`group:{emailid}\`: An
 -- email address that represents a Google group. For example,
--- \`admins\'example.com\`. * \`domain:{domain}\`: The G Suite domain
--- (primary) that represents all the users of that domain. For example,
--- \`google.com\` or \`example.com\`.
+-- \`admins\'example.com\`. * \`deleted:user:{emailid}?uid={uniqueid}\`: An
+-- email address (plus unique identifier) representing a user that has been
+-- recently deleted. For example,
+-- \`alice\'example.com?uid=123456789012345678901\`. If the user is
+-- recovered, this value reverts to \`user:{emailid}\` and the recovered
+-- user retains the role in the binding. *
+-- \`deleted:serviceAccount:{emailid}?uid={uniqueid}\`: An email address
+-- (plus unique identifier) representing a service account that has been
+-- recently deleted. For example,
+-- \`my-other-app\'appspot.gserviceaccount.com?uid=123456789012345678901\`.
+-- If the service account is undeleted, this value reverts to
+-- \`serviceAccount:{emailid}\` and the undeleted service account retains
+-- the role in the binding. * \`deleted:group:{emailid}?uid={uniqueid}\`:
+-- An email address (plus unique identifier) representing a Google group
+-- that has been recently deleted. For example,
+-- \`admins\'example.com?uid=123456789012345678901\`. If the group is
+-- recovered, this value reverts to \`group:{emailid}\` and the recovered
+-- group retains the role in the binding. * \`domain:{domain}\`: The G
+-- Suite domain (primary) that represents all the users of that domain. For
+-- example, \`google.com\` or \`example.com\`.
 bMembers :: Lens' Binding [Text]
 bMembers
   = lens _bMembers (\ s a -> s{_bMembers = a}) .
@@ -5001,9 +5650,14 @@ bMembers
 bRole :: Lens' Binding (Maybe Text)
 bRole = lens _bRole (\ s a -> s{_bRole = a})
 
--- | The condition that is associated with this binding. NOTE: An unsatisfied
--- condition will not allow user access via current binding. Different
--- bindings, including their conditions, are examined independently.
+-- | The condition that is associated with this binding. If the condition
+-- evaluates to \`true\`, then this binding applies to the current request.
+-- If the condition evaluates to \`false\`, then this binding does not
+-- apply to the current request. However, a different role binding might
+-- grant the same role to one or more of the members in this binding. To
+-- learn which resources support conditions in their IAM policies, see the
+-- [IAM
+-- documentation](https:\/\/cloud.google.com\/iam\/help\/conditions\/resource-policies).
 bCondition :: Lens' Binding (Maybe Expr)
 bCondition
   = lens _bCondition (\ s a -> s{_bCondition = a})
@@ -5031,13 +5685,16 @@ instance ToJSON Binding where
 -- /See:/ 'detail' smart constructor.
 data Detail =
   Detail'
-    { _detMinAffectedVersion :: !(Maybe Version)
+    { _detVendor :: !(Maybe Text)
+    , _detMinAffectedVersion :: !(Maybe Version)
     , _detPackageType :: !(Maybe Text)
     , _detIsObsolete :: !(Maybe Bool)
     , _detFixedLocation :: !(Maybe VulnerabilityLocation)
+    , _detSourceUpdateTime :: !(Maybe DateTime')
     , _detSeverityName :: !(Maybe Text)
     , _detMaxAffectedVersion :: !(Maybe Version)
     , _detPackage :: !(Maybe Text)
+    , _detSource :: !(Maybe Text)
     , _detCpeURI :: !(Maybe Text)
     , _detDescription :: !(Maybe Text)
     }
@@ -5048,6 +5705,8 @@ data Detail =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'detVendor'
+--
 -- * 'detMinAffectedVersion'
 --
 -- * 'detPackageType'
@@ -5056,11 +5715,15 @@ data Detail =
 --
 -- * 'detFixedLocation'
 --
+-- * 'detSourceUpdateTime'
+--
 -- * 'detSeverityName'
 --
 -- * 'detMaxAffectedVersion'
 --
 -- * 'detPackage'
+--
+-- * 'detSource'
 --
 -- * 'detCpeURI'
 --
@@ -5069,17 +5732,25 @@ detail
     :: Detail
 detail =
   Detail'
-    { _detMinAffectedVersion = Nothing
+    { _detVendor = Nothing
+    , _detMinAffectedVersion = Nothing
     , _detPackageType = Nothing
     , _detIsObsolete = Nothing
     , _detFixedLocation = Nothing
+    , _detSourceUpdateTime = Nothing
     , _detSeverityName = Nothing
     , _detMaxAffectedVersion = Nothing
     , _detPackage = Nothing
+    , _detSource = Nothing
     , _detCpeURI = Nothing
     , _detDescription = Nothing
     }
 
+
+-- | The name of the vendor of the product.
+detVendor :: Lens' Detail (Maybe Text)
+detVendor
+  = lens _detVendor (\ s a -> s{_detVendor = a})
 
 -- | The min version of the package in which the vulnerability exists.
 detMinAffectedVersion :: Lens' Detail (Maybe Version)
@@ -5107,6 +5778,15 @@ detFixedLocation
   = lens _detFixedLocation
       (\ s a -> s{_detFixedLocation = a})
 
+-- | The time this information was last changed at the source. This is an
+-- upstream timestamp from the underlying information source - e.g. Ubuntu
+-- security tracker.
+detSourceUpdateTime :: Lens' Detail (Maybe UTCTime)
+detSourceUpdateTime
+  = lens _detSourceUpdateTime
+      (\ s a -> s{_detSourceUpdateTime = a})
+      . mapping _DateTime
+
 -- | The severity (eg: distro assigned severity) for this vulnerability.
 detSeverityName :: Lens' Detail (Maybe Text)
 detSeverityName
@@ -5123,6 +5803,11 @@ detMaxAffectedVersion
 detPackage :: Lens' Detail (Maybe Text)
 detPackage
   = lens _detPackage (\ s a -> s{_detPackage = a})
+
+-- | The source from which the information in this Detail was obtained.
+detSource :: Lens' Detail (Maybe Text)
+detSource
+  = lens _detSource (\ s a -> s{_detSource = a})
 
 -- | Required. The CPE URI in [cpe
 -- format](https:\/\/cpe.mitre.org\/specification\/) in which the
@@ -5143,13 +5828,15 @@ instance FromJSON Detail where
           = withObject "Detail"
               (\ o ->
                  Detail' <$>
-                   (o .:? "minAffectedVersion") <*>
+                   (o .:? "vendor") <*> (o .:? "minAffectedVersion") <*>
                      (o .:? "packageType")
                      <*> (o .:? "isObsolete")
                      <*> (o .:? "fixedLocation")
+                     <*> (o .:? "sourceUpdateTime")
                      <*> (o .:? "severityName")
                      <*> (o .:? "maxAffectedVersion")
                      <*> (o .:? "package")
+                     <*> (o .:? "source")
                      <*> (o .:? "cpeUri")
                      <*> (o .:? "description"))
 
@@ -5157,14 +5844,16 @@ instance ToJSON Detail where
         toJSON Detail'{..}
           = object
               (catMaybes
-                 [("minAffectedVersion" .=) <$>
-                    _detMinAffectedVersion,
+                 [("vendor" .=) <$> _detVendor,
+                  ("minAffectedVersion" .=) <$> _detMinAffectedVersion,
                   ("packageType" .=) <$> _detPackageType,
                   ("isObsolete" .=) <$> _detIsObsolete,
                   ("fixedLocation" .=) <$> _detFixedLocation,
+                  ("sourceUpdateTime" .=) <$> _detSourceUpdateTime,
                   ("severityName" .=) <$> _detSeverityName,
                   ("maxAffectedVersion" .=) <$> _detMaxAffectedVersion,
                   ("package" .=) <$> _detPackage,
+                  ("source" .=) <$> _detSource,
                   ("cpeUri" .=) <$> _detCpeURI,
                   ("description" .=) <$> _detDescription])
 

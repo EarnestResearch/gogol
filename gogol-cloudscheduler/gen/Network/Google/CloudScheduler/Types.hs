@@ -22,6 +22,12 @@ module Network.Google.CloudScheduler.Types
     -- * OAuth Scopes
     , cloudPlatformScope
 
+    -- * OAuthToken
+    , OAuthToken
+    , oAuthToken
+    , oatScope
+    , oatServiceAccountEmail
+
     -- * Status
     , Status
     , status
@@ -42,6 +48,12 @@ module Network.Google.CloudScheduler.Types
     -- * ResumeJobRequest
     , ResumeJobRequest
     , resumeJobRequest
+
+    -- * OidcToken
+    , OidcToken
+    , oidcToken
+    , otAudience
+    , otServiceAccountEmail
 
     -- * AppEngineHTTPTargetHeaders
     , AppEngineHTTPTargetHeaders
@@ -87,6 +99,7 @@ module Network.Google.CloudScheduler.Types
     , pmPublishTime
     , pmAttributes
     , pmMessageId
+    , pmOrderingKey
 
     -- * JobState
     , JobState (..)
@@ -108,7 +121,9 @@ module Network.Google.CloudScheduler.Types
     -- * HTTPTarget
     , HTTPTarget
     , hTTPTarget
+    , httptOAuthToken
     , httptHTTPMethod
+    , httptOidcToken
     , httptBody
     , httptURI
     , httptHeaders
@@ -121,6 +136,7 @@ module Network.Google.CloudScheduler.Types
     , Job
     , job
     , jStatus
+    , jAttemptDeadline
     , jState
     , jLastAttemptTime
     , jRetryConfig

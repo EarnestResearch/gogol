@@ -118,7 +118,7 @@ ngdnRequestId
   = lens _ngdnRequestId
       (\ s a -> s{_ngdnRequestId = a})
 
--- | Name of the NodeGroup resource to delete.
+-- | Name of the NodeGroup resource whose nodes will be deleted.
 ngdnNodeGroup :: Lens' NodeGroupsDeleteNodes Text
 ngdnNodeGroup
   = lens _ngdnNodeGroup

@@ -31,8 +31,19 @@ module Network.Google.ServiceNetworking.Types
     , gcsvsName
     , gcsvsIPCIdRRange
 
+    -- * JwtLocation
+    , JwtLocation
+    , jwtLocation
+    , jlValuePrefix
+    , jlHeader
+    , jlQuery
+
     -- * MetricDescriptorValueType
     , MetricDescriptorValueType (..)
+
+    -- * RemoveDNSZoneMetadata
+    , RemoveDNSZoneMetadata
+    , removeDNSZoneMetadata
 
     -- * SystemParameter
     , SystemParameter
@@ -49,9 +60,21 @@ module Network.Google.ServiceNetworking.Types
     , mrdLabels
     , mrdType
     , mrdDescription
+    , mrdLaunchStage
+
+    -- * SecondaryIPRange
+    , SecondaryIPRange
+    , secondaryIPRange
+    , sirRangeName
+    , sirIPCIdRRange
 
     -- * BackendRulePathTranslation
     , BackendRulePathTranslation (..)
+
+    -- * EnableVPCServiceControlsRequest
+    , EnableVPCServiceControlsRequest
+    , enableVPCServiceControlsRequest
+    , evscrConsumerNetwork
 
     -- * ListConnectionsResponse
     , ListConnectionsResponse
@@ -72,6 +95,34 @@ module Network.Google.ServiceNetworking.Types
     , sCode
     , sMessage
 
+    -- * ConsumerConfig
+    , ConsumerConfig
+    , consumerConfig
+    , ccProducerExportCustomRoutes
+    , ccConsumerImportSubnetRoutesWithPublicIP
+    , ccReservedRanges
+    , ccConsumerExportCustomRoutes
+    , ccVPCScReferenceArchitectureEnabled
+    , ccProducerNetwork
+    , ccProducerImportCustomRoutes
+    , ccProducerExportSubnetRoutesWithPublicIP
+    , ccConsumerImportCustomRoutes
+    , ccProducerImportSubnetRoutesWithPublicIP
+    , ccConsumerExportSubnetRoutesWithPublicIP
+
+    -- * AddDNSZoneRequest
+    , AddDNSZoneRequest
+    , addDNSZoneRequest
+    , adzrDNSSuffix
+    , adzrName
+    , adzrConsumerNetwork
+
+    -- * AddRolesRequest
+    , AddRolesRequest
+    , addRolesRequest
+    , arrPolicyBinding
+    , arrConsumerNetwork
+
     -- * BillingDestination
     , BillingDestination
     , billingDestination
@@ -82,6 +133,18 @@ module Network.Google.ServiceNetworking.Types
     , Control
     , control
     , cEnvironment
+
+    -- * PeeredDNSDomainMetadata
+    , PeeredDNSDomainMetadata
+    , peeredDNSDomainMetadata
+
+    -- * RangeReservation
+    , RangeReservation
+    , rangeReservation
+    , rrIPPrefixLength
+    , rrSecondaryRangeIPPrefixLengths
+    , rrRequestedRanges
+    , rrSubnetworkCandidates
 
     -- * AuthRequirement
     , AuthRequirement
@@ -103,6 +166,7 @@ module Network.Google.ServiceNetworking.Types
     -- * MetricDescriptor
     , MetricDescriptor
     , metricDescriptor
+    , mdMonitoredResourceTypes
     , mdMetricKind
     , mdName
     , mdMetadata
@@ -112,12 +176,19 @@ module Network.Google.ServiceNetworking.Types
     , mdValueType
     , mdDescription
     , mdUnit
+    , mdLaunchStage
 
     -- * ListOperationsResponse
     , ListOperationsResponse
     , listOperationsResponse
     , lorNextPageToken
     , lorOperations
+
+    -- * DNSZone
+    , DNSZone
+    , dnsZone
+    , dzDNSSuffix
+    , dzName
 
     -- * CancelOperationRequest
     , CancelOperationRequest
@@ -130,9 +201,15 @@ module Network.Google.ServiceNetworking.Types
     , brSelector
     , brMinDeadline
     , brAddress
+    , brProtocol
+    , brDisableAuth
     , brOperationDeadline
     , brDeadline
     , brPathTranslation
+
+    -- * UpdateDNSRecordSetMetadata
+    , UpdateDNSRecordSetMetadata
+    , updateDNSRecordSetMetadata
 
     -- * SourceContext
     , SourceContext
@@ -175,7 +252,6 @@ module Network.Google.ServiceNetworking.Types
     , sAPIs
     , sTypes
     , sSystemTypes
-    , sExperimental
     , sMonitoredResources
     , sBackend
     , sMonitoring
@@ -210,11 +286,28 @@ module Network.Google.ServiceNetworking.Types
     , Empty
     , empty
 
+    -- * RemoveDNSRecordSetMetadata
+    , RemoveDNSRecordSetMetadata
+    , removeDNSRecordSetMetadata
+
     -- * CustomErrorRule
     , CustomErrorRule
     , customErrorRule
     , cerIsErrorType
     , cerSelector
+
+    -- * ListPeeredDNSDomainsResponse
+    , ListPeeredDNSDomainsResponse
+    , listPeeredDNSDomainsResponse
+    , lpddrPeeredDNSDomains
+
+    -- * GoogleCloudServicenetworkingV1betaConnection
+    , GoogleCloudServicenetworkingV1betaConnection
+    , googleCloudServicenetworkingV1betaConnection
+    , gcsvcPeering
+    , gcsvcReservedPeeringRanges
+    , gcsvcService
+    , gcsvcNetwork
 
     -- * OptionValue
     , OptionValue
@@ -237,6 +330,10 @@ module Network.Google.ServiceNetworking.Types
     -- * MetricDescriptorMetadataLaunchStage
     , MetricDescriptorMetadataLaunchStage (..)
 
+    -- * AddRolesMetadata
+    , AddRolesMetadata
+    , addRolesMetadata
+
     -- * Mixin
     , Mixin
     , mixin
@@ -248,6 +345,11 @@ module Network.Google.ServiceNetworking.Types
     , customHTTPPattern
     , chttppPath
     , chttppKind
+
+    -- * ConsumerProject
+    , ConsumerProject
+    , consumerProject
+    , cpProjectNum
 
     -- * UsageRule
     , UsageRule
@@ -268,6 +370,17 @@ module Network.Google.ServiceNetworking.Types
     , pContent
     , pName
 
+    -- * GoogleCloudServicenetworkingV1ConsumerConfigReservedRange
+    , GoogleCloudServicenetworkingV1ConsumerConfigReservedRange
+    , googleCloudServicenetworkingV1ConsumerConfigReservedRange
+    , gcsvccrrIPPrefixLength
+    , gcsvccrrAddress
+    , gcsvccrrName
+
+    -- * AddDNSZoneMetadata
+    , AddDNSZoneMetadata
+    , addDNSZoneMetadata
+
     -- * AuthenticationRule
     , AuthenticationRule
     , authenticationRule
@@ -284,6 +397,14 @@ module Network.Google.ServiceNetworking.Types
     , cService
     , cNetwork
 
+    -- * UpdateDNSRecordSetRequest
+    , UpdateDNSRecordSetRequest
+    , updateDNSRecordSetRequest
+    , udrsrZone
+    , udrsrNewDNSRecordSet
+    , udrsrExistingDNSRecordSet
+    , udrsrConsumerNetwork
+
     -- * LabelDescriptorValueType
     , LabelDescriptorValueType (..)
 
@@ -292,10 +413,38 @@ module Network.Google.ServiceNetworking.Types
     , metricRuleMetricCosts
     , mrmcAddtional
 
-    -- * AuthorizationConfig
-    , AuthorizationConfig
-    , authorizationConfig
-    , acProvider
+    -- * Route
+    , Route
+    , route
+    , rNextHopGateway
+    , rNetwork
+    , rDestRange
+    , rName
+
+    -- * DisableVPCServiceControlsRequest
+    , DisableVPCServiceControlsRequest
+    , disableVPCServiceControlsRequest
+    , dvscrConsumerNetwork
+
+    -- * RemoveDNSRecordSetRequest
+    , RemoveDNSRecordSetRequest
+    , removeDNSRecordSetRequest
+    , rdrsrZone
+    , rdrsrConsumerNetwork
+    , rdrsrDNSRecordSet
+
+    -- * PolicyBinding
+    , PolicyBinding
+    , policyBinding
+    , pbRole
+    , pbMember
+
+    -- * ValidateConsumerConfigResponse
+    , ValidateConsumerConfigResponse
+    , validateConsumerConfigResponse
+    , vccrExistingSubnetworkCandidates
+    , vccrValidationError
+    , vccrIsValid
 
     -- * APISyntax
     , APISyntax (..)
@@ -303,15 +452,15 @@ module Network.Google.ServiceNetworking.Types
     -- * TypeSyntax
     , TypeSyntax (..)
 
-    -- * Experimental
-    , Experimental
-    , experimental
-    , eAuthorization
-
     -- * Backend
     , Backend
     , backend
     , bRules
+
+    -- * UpdateConsumerConfigRequest
+    , UpdateConsumerConfigRequest
+    , updateConsumerConfigRequest
+    , uccrConsumerConfig
 
     -- * Monitoring
     , Monitoring
@@ -341,13 +490,21 @@ module Network.Google.ServiceNetworking.Types
     -- * Range
     , Range
     , range
-    , rNetwork
-    , rIPCIdRRange
+    , ranNetwork
+    , ranIPCIdRRange
 
     -- * SystemParameters
     , SystemParameters
     , systemParameters
     , spRules
+
+    -- * DeleteConnectionMetadata
+    , DeleteConnectionMetadata
+    , deleteConnectionMetadata
+
+    -- * RemoveDNSZoneResponse
+    , RemoveDNSZoneResponse
+    , removeDNSZoneResponse
 
     -- * Documentation
     , Documentation
@@ -356,10 +513,15 @@ module Network.Google.ServiceNetworking.Types
     , dDocumentationRootURL
     , dRules
     , dPages
+    , dServiceRootURL
     , dOverview
 
     -- * Xgafv
     , Xgafv (..)
+
+    -- * AddDNSRecordSetMetadata
+    , AddDNSRecordSetMetadata
+    , addDNSRecordSetMetadata
 
     -- * MetricDescriptorMetadata
     , MetricDescriptorMetadata
@@ -368,19 +530,32 @@ module Network.Google.ServiceNetworking.Types
     , mdmIngestDelay
     , mdmLaunchStage
 
+    -- * PeeredDNSDomain
+    , PeeredDNSDomain
+    , peeredDNSDomain
+    , pddDNSSuffix
+    , pddName
+
     -- * Subnetwork
     , Subnetwork
     , subnetwork
     , subOutsideAllocation
     , subNetwork
     , subName
+    , subSecondaryIPRanges
     , subIPCIdRRange
+    , subRegion
+
+    -- * ValidateConsumerConfigResponseValidationError
+    , ValidateConsumerConfigResponseValidationError (..)
 
     -- * AddSubnetworkRequest
     , AddSubnetworkRequest
     , addSubnetworkRequest
     , asrIPPrefixLength
     , asrRequestedAddress
+    , asrRequestedRanges
+    , asrSecondaryIPRangeSpecs
     , asrSubnetwork
     , asrRegion
     , asrSubnetworkUsers
@@ -401,12 +576,32 @@ module Network.Google.ServiceNetworking.Types
     , lValueType
     , lDescription
 
+    -- * AddRolesResponse
+    , AddRolesResponse
+    , addRolesResponse
+    , aPolicyBinding
+
+    -- * MonitoredResourceDescriptorLaunchStage
+    , MonitoredResourceDescriptorLaunchStage (..)
+
     -- * Usage
     , Usage
     , usage
     , uRequirements
     , uRules
     , uProducerNotificationChannel
+
+    -- * AddDNSZoneResponse
+    , AddDNSZoneResponse
+    , addDNSZoneResponse
+    , adzrConsumerPeeringZone
+    , adzrProducerPrivateZone
+
+    -- * RemoveDNSZoneRequest
+    , RemoveDNSZoneRequest
+    , removeDNSZoneRequest
+    , rdzrName
+    , rdzrConsumerNetwork
 
     -- * FieldCardinality
     , FieldCardinality (..)
@@ -458,10 +653,8 @@ module Network.Google.ServiceNetworking.Types
     -- * Endpoint
     , Endpoint
     , endpoint
-    , eAliases
     , eAllowCORS
     , eName
-    , eFeatures
     , eTarget
 
     -- * OAuthRequirements
@@ -492,6 +685,10 @@ module Network.Google.ServiceNetworking.Types
     , qlUnit
     , qlMaxLimit
 
+    -- * RemoveDNSRecordSetResponse
+    , RemoveDNSRecordSetResponse
+    , removeDNSRecordSetResponse
+
     -- * Option
     , Option
     , option
@@ -513,6 +710,14 @@ module Network.Google.ServiceNetworking.Types
     , quotaLimitValues
     , qlvAddtional
 
+    -- * ValidateConsumerConfigRequest
+    , ValidateConsumerConfigRequest
+    , validateConsumerConfigRequest
+    , vccrRangeReservation
+    , vccrConsumerProject
+    , vccrValidateNetwork
+    , vccrConsumerNetwork
+
     -- * Enum'
     , Enum'
     , enum
@@ -531,6 +736,11 @@ module Network.Google.ServiceNetworking.Types
     -- * MethodSyntax
     , MethodSyntax (..)
 
+    -- * DeleteConnectionRequest
+    , DeleteConnectionRequest
+    , deleteConnectionRequest
+    , dcrConsumerNetwork
+
     -- * SourceInfoSourceFilesItem
     , SourceInfoSourceFilesItem
     , sourceInfoSourceFilesItem
@@ -541,6 +751,10 @@ module Network.Google.ServiceNetworking.Types
     , quota
     , qLimits
     , qMetricRules
+
+    -- * DeletePeeredDNSDomainMetadata
+    , DeletePeeredDNSDomainMetadata
+    , deletePeeredDNSDomainMetadata
 
     -- * HTTPRule
     , HTTPRule
@@ -556,16 +770,39 @@ module Network.Google.ServiceNetworking.Types
     , httprDelete
     , httprPut
 
+    -- * DNSRecordSet
+    , DNSRecordSet
+    , dnsRecordSet
+    , drsTtl
+    , drsData
+    , drsDomain
+    , drsType
+
     -- * OperationResponse
     , OperationResponse
     , operationResponse
     , orAddtional
+
+    -- * AddDNSRecordSetRequest
+    , AddDNSRecordSetRequest
+    , addDNSRecordSetRequest
+    , adrsrZone
+    , adrsrConsumerNetwork
+    , adrsrDNSRecordSet
+
+    -- * MetricDescriptorLaunchStage
+    , MetricDescriptorLaunchStage (..)
+
+    -- * ConsumerConfigMetadata
+    , ConsumerConfigMetadata
+    , consumerConfigMetadata
 
     -- * AuthProvider
     , AuthProvider
     , authProvider
     , apJWKsURI
     , apAudiences
+    , apJwtLocations
     , apId
     , apAuthorizationURL
     , apIssuer
@@ -578,6 +815,13 @@ module Network.Google.ServiceNetworking.Types
     , crAllowedRequestExtensions
     , crProvided
     , crAllowedResponseExtensions
+
+    -- * SecondaryIPRangeSpec
+    , SecondaryIPRangeSpec
+    , secondaryIPRangeSpec
+    , sirsIPPrefixLength
+    , sirsRangeName
+    , sirsRequestedAddress
     ) where
 
 import Network.Google.Prelude
@@ -590,7 +834,7 @@ serviceNetworkingService
   = defaultService (ServiceId "servicenetworking:v1")
       "servicenetworking.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

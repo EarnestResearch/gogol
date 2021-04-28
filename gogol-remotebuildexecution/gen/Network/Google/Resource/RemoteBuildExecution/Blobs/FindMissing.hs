@@ -22,8 +22,9 @@
 --
 -- Determine if blobs are present in the CAS. Clients can use this API
 -- before uploading blobs to determine which ones are already present in
--- the CAS and do not need to be uploaded again. There are no
--- method-specific errors.
+-- the CAS and do not need to be uploaded again. Servers SHOULD increase
+-- the lifetimes of the referenced blobs if necessary and applicable. There
+-- are no method-specific errors.
 --
 -- /See:/ <https://cloud.google.com/remote-build-execution/docs/ Remote Build Execution API Reference> for @remotebuildexecution.blobs.findMissing@.
 module Network.Google.Resource.RemoteBuildExecution.Blobs.FindMissing
@@ -68,8 +69,9 @@ type BlobsFindMissingResource =
 
 -- | Determine if blobs are present in the CAS. Clients can use this API
 -- before uploading blobs to determine which ones are already present in
--- the CAS and do not need to be uploaded again. There are no
--- method-specific errors.
+-- the CAS and do not need to be uploaded again. Servers SHOULD increase
+-- the lifetimes of the referenced blobs if necessary and applicable. There
+-- are no method-specific errors.
 --
 -- /See:/ 'blobsFindMissing' smart constructor.
 data BlobsFindMissing =

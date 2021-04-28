@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes the schema of a data source.
+-- Deletes the schema of a data source. **Note:** This API requires an
+-- admin or service account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.deleteSchema@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.deleteSchema@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.DeleteSchema
     (
     -- * REST Resource
@@ -60,7 +61,8 @@ type IndexingDatasourcesDeleteSchemaResource =
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :> Delete '[JSON] Operation
 
--- | Deletes the schema of a data source.
+-- | Deletes the schema of a data source. **Note:** This API requires an
+-- admin or service account to execute.
 --
 -- /See:/ 'indexingDatasourcesDeleteSchema' smart constructor.
 data IndexingDatasourcesDeleteSchema =

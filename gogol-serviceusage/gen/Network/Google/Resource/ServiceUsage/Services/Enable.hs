@@ -139,7 +139,7 @@ sePayload
 -- projects. Enabling a service requires that the service is public or is
 -- shared with the user enabling the service. An example name would be:
 -- \`projects\/123\/services\/serviceusage.googleapis.com\` where \`123\`
--- is the project number (not project ID).
+-- is the project number.
 seName :: Lens' ServicesEnable Text
 seName = lens _seName (\ s a -> s{_seName = a})
 

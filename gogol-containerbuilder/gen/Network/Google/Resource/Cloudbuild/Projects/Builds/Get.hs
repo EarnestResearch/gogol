@@ -39,6 +39,7 @@ module Network.Google.Resource.Cloudbuild.Projects.Builds.Get
     , pbgUploadProtocol
     , pbgAccessToken
     , pbgUploadType
+    , pbgName
     , pbgId
     , pbgProjectId
     , pbgCallback
@@ -59,8 +60,9 @@ type ProjectsBuildsGetResource =
                  QueryParam "upload_protocol" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "callback" Text :>
-                         QueryParam "alt" AltJSON :> Get '[JSON] Build
+                       QueryParam "name" Text :>
+                         QueryParam "callback" Text :>
+                           QueryParam "alt" AltJSON :> Get '[JSON] Build
 
 -- | Returns information about a previously requested build. The \`Build\`
 -- that is returned includes its status (such as \`SUCCESS\`, \`FAILURE\`,
@@ -73,6 +75,7 @@ data ProjectsBuildsGet =
     , _pbgUploadProtocol :: !(Maybe Text)
     , _pbgAccessToken :: !(Maybe Text)
     , _pbgUploadType :: !(Maybe Text)
+    , _pbgName :: !(Maybe Text)
     , _pbgId :: !Text
     , _pbgProjectId :: !Text
     , _pbgCallback :: !(Maybe Text)
@@ -92,6 +95,8 @@ data ProjectsBuildsGet =
 --
 -- * 'pbgUploadType'
 --
+-- * 'pbgName'
+--
 -- * 'pbgId'
 --
 -- * 'pbgProjectId'
@@ -107,6 +112,7 @@ projectsBuildsGet pPbgId_ pPbgProjectId_ =
     , _pbgUploadProtocol = Nothing
     , _pbgAccessToken = Nothing
     , _pbgUploadType = Nothing
+    , _pbgName = Nothing
     , _pbgId = pPbgId_
     , _pbgProjectId = pPbgProjectId_
     , _pbgCallback = Nothing
@@ -135,11 +141,16 @@ pbgUploadType
   = lens _pbgUploadType
       (\ s a -> s{_pbgUploadType = a})
 
--- | ID of the build.
+-- | The name of the \`Build\` to retrieve. Format:
+-- \`projects\/{project}\/locations\/{location}\/builds\/{build}\`
+pbgName :: Lens' ProjectsBuildsGet (Maybe Text)
+pbgName = lens _pbgName (\ s a -> s{_pbgName = a})
+
+-- | Required. ID of the build.
 pbgId :: Lens' ProjectsBuildsGet Text
 pbgId = lens _pbgId (\ s a -> s{_pbgId = a})
 
--- | ID of the project.
+-- | Required. ID of the project.
 pbgProjectId :: Lens' ProjectsBuildsGet Text
 pbgProjectId
   = lens _pbgProjectId (\ s a -> s{_pbgProjectId = a})
@@ -158,6 +169,7 @@ instance GoogleRequest ProjectsBuildsGet where
               _pbgUploadProtocol
               _pbgAccessToken
               _pbgUploadType
+              _pbgName
               _pbgCallback
               (Just AltJSON)
               containerBuilderService

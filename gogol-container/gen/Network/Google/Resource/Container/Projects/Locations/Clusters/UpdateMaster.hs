@@ -137,7 +137,7 @@ plcumPayload
   = lens _plcumPayload (\ s a -> s{_plcumPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to update.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcumName :: Lens' ProjectsLocationsClustersUpdateMaster Text
 plcumName
   = lens _plcumName (\ s a -> s{_plcumName = a})

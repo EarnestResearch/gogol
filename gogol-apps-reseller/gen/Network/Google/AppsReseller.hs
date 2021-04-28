@@ -13,9 +13,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates and manages your customers and their subscriptions.
+-- Perform common functions that are available on the Channel Services
+-- console at scale, like placing orders and viewing customer information
 --
--- /See:/ <https://developers.google.com/google-apps/reseller/ Enterprise Apps Reseller API Reference>
+-- /See:/ <https://developers.google.com/google-apps/reseller/ Google Workspace Reseller API Reference>
 module Network.Google.AppsReseller
     (
     -- * Service Configuration
@@ -141,6 +142,9 @@ module Network.Google.AppsReseller
     , spciStartTime
     , spciEndTime
 
+    -- ** Xgafv
+    , Xgafv (..)
+
     -- ** SubscriptionsDeleteDeletionType
     , SubscriptionsDeleteDeletionType (..)
 
@@ -197,6 +201,7 @@ module Network.Google.AppsReseller
     -- ** SubscriptionTransferInfo
     , SubscriptionTransferInfo
     , subscriptionTransferInfo
+    , stiCurrentLegacySKUId
     , stiTransferabilityExpirationTime
     , stiMinimumTransferableSeats
     ) where
@@ -225,7 +230,7 @@ import Network.Google.Resource.Reseller.Subscriptions.Suspend
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Enterprise Apps Reseller API service.
+-- | Represents the entirety of the methods and resources available for the Google Workspace Reseller API service.
 type AppsResellerAPI =
      CustomersInsertResource :<|> CustomersPatchResource
        :<|> CustomersGetResource

@@ -135,7 +135,7 @@ torPayload :: Lens' TransferOperationsResume ResumeTransferOperationRequest
 torPayload
   = lens _torPayload (\ s a -> s{_torPayload = a})
 
--- | The name of the transfer operation. Required.
+-- | Required. The name of the transfer operation.
 torName :: Lens' TransferOperationsResume Text
 torName = lens _torName (\ s a -> s{_torName = a})
 

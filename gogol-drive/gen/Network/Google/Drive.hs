@@ -185,6 +185,12 @@ module Network.Google.Drive
     , flKind
     , flFiles
 
+    -- ** FileShortcutDetails
+    , FileShortcutDetails
+    , fileShortcutDetails
+    , fsdTargetId
+    , fsdTargetMimeType
+
     -- ** Drive
     , Drive
     , drive
@@ -295,6 +301,7 @@ module Network.Google.Drive
     , fcCanComment
     , fcCanMoveChildrenWithinDrive
     , fcCanMoveChildrenWithinTeamDrive
+    , fcCanModifyContent
     , fcCanDelete
     , fcCanMoveItemIntoTeamDrive
     , fcCanDownload
@@ -303,11 +310,13 @@ module Network.Google.Drive
     , fcCanTrashChildren
     , fcCanMoveItemOutOfDrive
     , fcCanAddChildren
+    , fcCanAddMyDriveParent
     , fcCanRemoveChildren
     , fcCanMoveTeamDriveItem
     , fcCanMoveItemWithinTeamDrive
     , fcCanReadTeamDrive
     , fcCanReadDrive
+    , fcCanAddFolderFromAnotherDrive
     , fcCanChangeCopyRequiresWriterPermission
     , fcCanMoveChildrenOutOfDrive
     , fcCanListChildren
@@ -317,6 +326,8 @@ module Network.Google.Drive
     , fcCanReadRevisions
     , fcCanDeleteChildren
     , fcCanMoveItemOutOfTeamDrive
+    , fcCanRemoveMyDriveParent
+    , fcCanModifyContentRestriction
     , fcCanCopy
     , fcCanMoveItemWithinDrive
     , fcCanShare
@@ -500,6 +511,15 @@ module Network.Google.Drive
     , fimmlAltitude
     , fimmlLongitude
 
+    -- ** ContentRestriction
+    , ContentRestriction
+    , contentRestriction
+    , crRestrictingUser
+    , crRestrictionTime
+    , crReason
+    , crType
+    , crReadOnly
+
     -- ** StartPageToken
     , StartPageToken
     , startPageToken
@@ -554,6 +574,7 @@ module Network.Google.Drive
     , revSize
     , revOriginalFilename
     , revKind
+    , revPublishedLink
     , revPublished
     , revLastModifyingUser
     , revPublishAuto
@@ -575,6 +596,7 @@ module Network.Google.Drive
     , pEmailAddress
     , pAllowFileDiscovery
     , pDisplayName
+    , pView
     , pId
     , pDeleted
     , pType
@@ -599,6 +621,7 @@ module Network.Google.Drive
     , fModifiedByMeTime
     , fFileExtension
     , fViewedByMe
+    , fShortcutDetails
     , fOwners
     , fViewedByMeTime
     , fModifiedByMe
@@ -613,6 +636,7 @@ module Network.Google.Drive
     , fIconLink
     , fHasThumbnail
     , fThumbnailVersion
+    , fContentRestrictions
     , fImageMediaMetadata
     , fExplicitlyTrashed
     , fShared

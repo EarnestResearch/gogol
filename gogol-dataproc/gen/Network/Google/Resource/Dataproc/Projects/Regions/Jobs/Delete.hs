@@ -147,7 +147,7 @@ prjdUploadType
   = lens _prjdUploadType
       (\ s a -> s{_prjdUploadType = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prjdRegion :: Lens' ProjectsRegionsJobsDelete Text
 prjdRegion
   = lens _prjdRegion (\ s a -> s{_prjdRegion = a})

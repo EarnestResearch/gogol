@@ -23,7 +23,7 @@
 -- Deletes a data transfer configuration, including any associated transfer
 -- runs and logs.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.delete@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.delete@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferConfigs.Delete
     (
     -- * REST Resource
@@ -125,8 +125,9 @@ pltcdUploadType
   = lens _pltcdUploadType
       (\ s a -> s{_pltcdUploadType = a})
 
--- | The field will contain name of the resource requested, for example:
--- \`projects\/{project_id}\/transferConfigs\/{config_id}\`
+-- | Required. The field will contain name of the resource requested, for
+-- example: \`projects\/{project_id}\/transferConfigs\/{config_id}\` or
+-- \`projects\/{project_id}\/locations\/{location_id}\/transferConfigs\/{config_id}\`
 pltcdName :: Lens' ProjectsLocationsTransferConfigsDelete Text
 pltcdName
   = lens _pltcdName (\ s a -> s{_pltcdName = a})

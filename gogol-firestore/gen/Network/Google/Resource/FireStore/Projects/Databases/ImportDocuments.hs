@@ -147,7 +147,7 @@ pdidPayload :: Lens' ProjectsDatabasesImportDocuments GoogleFirestoreAdminV1Impo
 pdidPayload
   = lens _pdidPayload (\ s a -> s{_pdidPayload = a})
 
--- | Database to import into. Should be of the form:
+-- | Required. Database to import into. Should be of the form:
 -- \`projects\/{project_id}\/databases\/{database_id}\`.
 pdidName :: Lens' ProjectsDatabasesImportDocuments Text
 pdidName = lens _pdidName (\ s a -> s{_pdidName = a})

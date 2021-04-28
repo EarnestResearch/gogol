@@ -20,11 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Stackdriver Monitoring Agent only: Creates a new time series.
--- This method is only for use by the Stackdriver Monitoring Agent. Use
+-- Stackdriver Monitoring Agent only: Creates a new time series.This method
+-- is only for use by the Stackdriver Monitoring Agent. Use
 -- projects.timeSeries.create instead.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.collectdTimeSeries.create@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.collectdTimeSeries.create@.
 module Network.Google.Resource.Monitoring.Projects.CollectdTimeSeries.Create
     (
     -- * REST Resource
@@ -62,8 +62,8 @@ type ProjectsCollectdTimeSeriesCreateResource =
                        ReqBody '[JSON] CreateCollectdTimeSeriesRequest :>
                          Post '[JSON] CreateCollectdTimeSeriesResponse
 
--- | Stackdriver Monitoring Agent only: Creates a new time series.
--- This method is only for use by the Stackdriver Monitoring Agent. Use
+-- | Stackdriver Monitoring Agent only: Creates a new time series.This method
+-- is only for use by the Stackdriver Monitoring Agent. Use
 -- projects.timeSeries.create instead.
 --
 -- /See:/ 'projectsCollectdTimeSeriesCreate' smart constructor.
@@ -141,8 +141,10 @@ pctscPayload :: Lens' ProjectsCollectdTimeSeriesCreate CreateCollectdTimeSeriesR
 pctscPayload
   = lens _pctscPayload (\ s a -> s{_pctscPayload = a})
 
--- | The project in which to create the time series. The format is
--- \"projects\/PROJECT_ID_OR_NUMBER\".
+-- | The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) in which
+-- to create the time series. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]
 pctscName :: Lens' ProjectsCollectdTimeSeriesCreate Text
 pctscName
   = lens _pctscName (\ s a -> s{_pctscName = a})

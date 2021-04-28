@@ -20,7 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets an instance\'s scheduling options.
+-- Sets an instance\'s scheduling options. You can only call this method on
+-- a stopped instance, that is, a VM instance that is in a \`TERMINATED\`
+-- state. See Instance Life Cycle for more information on the possible
+-- instance states.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.instances.setScheduling@.
 module Network.Google.Resource.Compute.Instances.SetScheduling
@@ -59,7 +62,10 @@ type InstancesSetSchedulingResource =
                          QueryParam "alt" AltJSON :>
                            ReqBody '[JSON] Scheduling :> Post '[JSON] Operation
 
--- | Sets an instance\'s scheduling options.
+-- | Sets an instance\'s scheduling options. You can only call this method on
+-- a stopped instance, that is, a VM instance that is in a \`TERMINATED\`
+-- state. See Instance Life Cycle for more information on the possible
+-- instance states.
 --
 -- /See:/ 'instancesSetScheduling' smart constructor.
 data InstancesSetScheduling =

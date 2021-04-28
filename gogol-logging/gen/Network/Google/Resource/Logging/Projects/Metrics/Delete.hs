@@ -22,7 +22,7 @@
 --
 -- Deletes a logs-based metric.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.projects.metrics.delete@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.projects.metrics.delete@.
 module Network.Google.Resource.Logging.Projects.Metrics.Delete
     (
     -- * REST Resource
@@ -116,7 +116,7 @@ pmdAccessToken
   = lens _pmdAccessToken
       (\ s a -> s{_pmdAccessToken = a})
 
--- | The resource name of the metric to delete:
+-- | Required. The resource name of the metric to delete:
 -- \"projects\/[PROJECT_ID]\/metrics\/[METRIC_ID]\"
 pmdMetricName :: Lens' ProjectsMetricsDelete Text
 pmdMetricName

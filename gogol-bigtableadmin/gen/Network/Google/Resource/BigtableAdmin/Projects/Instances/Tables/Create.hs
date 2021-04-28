@@ -111,8 +111,8 @@ projectsInstancesTablesCreate pPitcParent_ pPitcPayload_ =
     }
 
 
--- | The unique name of the instance in which to create the table. Values are
--- of the form \`projects\/\/instances\/\`.
+-- | Required. The unique name of the instance in which to create the table.
+-- Values are of the form \`projects\/{project}\/instances\/{instance}\`.
 pitcParent :: Lens' ProjectsInstancesTablesCreate Text
 pitcParent
   = lens _pitcParent (\ s a -> s{_pitcParent = a})

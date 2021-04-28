@@ -33,6 +33,7 @@ module Network.Google.Analytics.Types
     , userDeletionRequest
     , udrWebPropertyId
     , udrKind
+    , udrPropertyId
     , udrId
     , udrFirebaseProjectId
     , udrDeletionRequestTime
@@ -1153,7 +1154,7 @@ import Network.Google.Prelude
 analyticsService :: ServiceConfig
 analyticsService
   = defaultService (ServiceId "analytics:v3")
-      "www.googleapis.com"
+      "analytics.googleapis.com"
 
 -- | Manage Google Analytics Account users by email address
 analyticsManageUsersScope :: Proxy '["https://www.googleapis.com/auth/analytics.manage.users"]

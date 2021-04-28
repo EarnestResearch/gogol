@@ -22,7 +22,7 @@
 --
 -- Deletes the given Association.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.delete@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.delete@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Associations.Delete
     (
     -- * REST Resource

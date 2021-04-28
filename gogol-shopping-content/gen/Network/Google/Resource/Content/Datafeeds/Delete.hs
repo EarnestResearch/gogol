@@ -22,7 +22,7 @@
 --
 -- Deletes a datafeed configuration from your Merchant Center account.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.datafeeds.delete@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.datafeeds.delete@.
 module Network.Google.Resource.Content.Datafeeds.Delete
     (
     -- * REST Resource
@@ -33,9 +33,14 @@ module Network.Google.Resource.Content.Datafeeds.Delete
     , DatafeedsDelete
 
     -- * Request Lenses
+    , ddXgafv
     , ddMerchantId
+    , ddUploadProtocol
+    , ddAccessToken
+    , ddUploadType
     , ddDatafeedId
     , ddDryRun
+    , ddCallback
     ) where
 
 import Network.Google.Prelude
@@ -49,17 +54,27 @@ type DatafeedsDeleteResource =
          Capture "merchantId" (Textual Word64) :>
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>
-               QueryParam "dryRun" Bool :>
-                 QueryParam "alt" AltJSON :> Delete '[JSON] ()
+               QueryParam "$.xgafv" Xgafv :>
+                 QueryParam "upload_protocol" Text :>
+                   QueryParam "access_token" Text :>
+                     QueryParam "uploadType" Text :>
+                       QueryParam "dryRun" Bool :>
+                         QueryParam "callback" Text :>
+                           QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a datafeed configuration from your Merchant Center account.
 --
 -- /See:/ 'datafeedsDelete' smart constructor.
 data DatafeedsDelete =
   DatafeedsDelete'
-    { _ddMerchantId :: !(Textual Word64)
+    { _ddXgafv :: !(Maybe Xgafv)
+    , _ddMerchantId :: !(Textual Word64)
+    , _ddUploadProtocol :: !(Maybe Text)
+    , _ddAccessToken :: !(Maybe Text)
+    , _ddUploadType :: !(Maybe Text)
     , _ddDatafeedId :: !(Textual Word64)
     , _ddDryRun :: !(Maybe Bool)
+    , _ddCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -68,22 +83,41 @@ data DatafeedsDelete =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'ddXgafv'
+--
 -- * 'ddMerchantId'
+--
+-- * 'ddUploadProtocol'
+--
+-- * 'ddAccessToken'
+--
+-- * 'ddUploadType'
 --
 -- * 'ddDatafeedId'
 --
 -- * 'ddDryRun'
+--
+-- * 'ddCallback'
 datafeedsDelete
     :: Word64 -- ^ 'ddMerchantId'
     -> Word64 -- ^ 'ddDatafeedId'
     -> DatafeedsDelete
 datafeedsDelete pDdMerchantId_ pDdDatafeedId_ =
   DatafeedsDelete'
-    { _ddMerchantId = _Coerce # pDdMerchantId_
+    { _ddXgafv = Nothing
+    , _ddMerchantId = _Coerce # pDdMerchantId_
+    , _ddUploadProtocol = Nothing
+    , _ddAccessToken = Nothing
+    , _ddUploadType = Nothing
     , _ddDatafeedId = _Coerce # pDdDatafeedId_
     , _ddDryRun = Nothing
+    , _ddCallback = Nothing
     }
 
+
+-- | V1 error format.
+ddXgafv :: Lens' DatafeedsDelete (Maybe Xgafv)
+ddXgafv = lens _ddXgafv (\ s a -> s{_ddXgafv = a})
 
 -- | The ID of the account that manages the datafeed. This account cannot be
 -- a multi-client account.
@@ -91,6 +125,23 @@ ddMerchantId :: Lens' DatafeedsDelete Word64
 ddMerchantId
   = lens _ddMerchantId (\ s a -> s{_ddMerchantId = a})
       . _Coerce
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+ddUploadProtocol :: Lens' DatafeedsDelete (Maybe Text)
+ddUploadProtocol
+  = lens _ddUploadProtocol
+      (\ s a -> s{_ddUploadProtocol = a})
+
+-- | OAuth access token.
+ddAccessToken :: Lens' DatafeedsDelete (Maybe Text)
+ddAccessToken
+  = lens _ddAccessToken
+      (\ s a -> s{_ddAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+ddUploadType :: Lens' DatafeedsDelete (Maybe Text)
+ddUploadType
+  = lens _ddUploadType (\ s a -> s{_ddUploadType = a})
 
 -- | The ID of the datafeed.
 ddDatafeedId :: Lens' DatafeedsDelete Word64
@@ -104,12 +155,22 @@ ddDatafeedId
 ddDryRun :: Lens' DatafeedsDelete (Maybe Bool)
 ddDryRun = lens _ddDryRun (\ s a -> s{_ddDryRun = a})
 
+-- | JSONP
+ddCallback :: Lens' DatafeedsDelete (Maybe Text)
+ddCallback
+  = lens _ddCallback (\ s a -> s{_ddCallback = a})
+
 instance GoogleRequest DatafeedsDelete where
         type Rs DatafeedsDelete = ()
         type Scopes DatafeedsDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsDelete'{..}
-          = go _ddMerchantId _ddDatafeedId _ddDryRun
+          = go _ddMerchantId _ddDatafeedId _ddXgafv
+              _ddUploadProtocol
+              _ddAccessToken
+              _ddUploadType
+              _ddDryRun
+              _ddCallback
               (Just AltJSON)
               shoppingContentService
           where go

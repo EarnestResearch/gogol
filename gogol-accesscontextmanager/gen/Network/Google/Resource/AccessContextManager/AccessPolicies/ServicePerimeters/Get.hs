@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Get an Service Perimeter by resource name.
+-- Get a Service Perimeter by resource name.
 --
 -- /See:/ <https://cloud.google.com/access-context-manager/docs/reference/rest/ Access Context Manager API Reference> for @accesscontextmanager.accessPolicies.servicePerimeters.get@.
 module Network.Google.Resource.AccessContextManager.AccessPolicies.ServicePerimeters.Get
@@ -57,7 +57,7 @@ type AccessPoliciesServicePerimetersGetResource =
                    QueryParam "alt" AltJSON :>
                      Get '[JSON] ServicePerimeter
 
--- | Get an Service Perimeter by resource name.
+-- | Get a Service Perimeter by resource name.
 --
 -- /See:/ 'accessPoliciesServicePerimetersGet' smart constructor.
 data AccessPoliciesServicePerimetersGet =

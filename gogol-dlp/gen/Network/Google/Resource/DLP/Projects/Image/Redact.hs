@@ -121,7 +121,16 @@ projectsImageRedact pPirParent_ pPirPayload_ =
     }
 
 
--- | The parent resource name, for example projects\/my-project-id.
+-- | Parent resource name. The format of this value varies depending on
+-- whether you have [specified a processing
+-- location](https:\/\/cloud.google.com\/dlp\/docs\/specifying-location): +
+-- Projects scope, location specified:
+-- \`projects\/\`PROJECT_ID\`\/locations\/\`LOCATION_ID + Projects scope,
+-- no location specified (defaults to global): \`projects\/\`PROJECT_ID The
+-- following example \`parent\` string specifies a parent project with the
+-- identifier \`example-project\`, and specifies the \`europe-west3\`
+-- location for processing data:
+-- parent=projects\/example-project\/locations\/europe-west3
 pirParent :: Lens' ProjectsImageRedact Text
 pirParent
   = lens _pirParent (\ s a -> s{_pirParent = a})

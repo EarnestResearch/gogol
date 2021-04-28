@@ -81,6 +81,7 @@ module Network.Google.AppsCalendar.Types
     , eGuestsCanInviteOthers
     , eRecurrence
     , eGadget
+    , eEventType
     , eSequence
     , eICalUId
     , eEnd
@@ -492,7 +493,7 @@ appsCalendarService
 calendarScope :: Proxy '["https://www.googleapis.com/auth/calendar"]
 calendarScope = Proxy
 
--- | View your calendars
+-- | See and download any calendar you can access using your Google Calendar
 calendarReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/calendar.readonly"]
 calendarReadOnlyScope = Proxy
 

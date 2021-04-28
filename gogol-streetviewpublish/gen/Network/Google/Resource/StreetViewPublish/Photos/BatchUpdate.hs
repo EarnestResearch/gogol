@@ -30,9 +30,9 @@
 -- that can occur per photo. Only the fields specified in updateMask field
 -- are used. If \`updateMask\` is not present, the update applies to all
 -- fields. The number of UpdatePhotoRequest messages in a
--- BatchUpdatePhotosRequest must not exceed 20.
--- __Note:__ To update Pose.altitude, Pose.latLngPair has to be filled as
--- well. Otherwise, the request will fail.
+-- BatchUpdatePhotosRequest must not exceed 20. *Note:* To update
+-- Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the
+-- request will fail.
 --
 -- /See:/ <https://developers.google.com/streetview/publish/ Street View Publish API Reference> for @streetviewpublish.photos.batchUpdate@.
 module Network.Google.Resource.StreetViewPublish.Photos.BatchUpdate
@@ -80,9 +80,9 @@ type PhotosBatchUpdateResource =
 -- that can occur per photo. Only the fields specified in updateMask field
 -- are used. If \`updateMask\` is not present, the update applies to all
 -- fields. The number of UpdatePhotoRequest messages in a
--- BatchUpdatePhotosRequest must not exceed 20.
--- __Note:__ To update Pose.altitude, Pose.latLngPair has to be filled as
--- well. Otherwise, the request will fail.
+-- BatchUpdatePhotosRequest must not exceed 20. *Note:* To update
+-- Pose.altitude, Pose.latLngPair has to be filled as well. Otherwise, the
+-- request will fail.
 --
 -- /See:/ 'photosBatchUpdate' smart constructor.
 data PhotosBatchUpdate =

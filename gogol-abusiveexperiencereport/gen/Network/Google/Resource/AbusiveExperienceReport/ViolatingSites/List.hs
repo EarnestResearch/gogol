@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists sites with Abusive Experience Report statuses of \"Failing\".
+-- Lists sites that are failing in the Abusive Experience Report.
 --
 -- /See:/ <https://developers.google.com/abusive-experience-report/ Abusive Experience Report API Reference> for @abusiveexperiencereport.violatingSites.list@.
 module Network.Google.Resource.AbusiveExperienceReport.ViolatingSites.List
@@ -56,7 +56,7 @@ type ViolatingSitesListResource =
                    QueryParam "alt" AltJSON :>
                      Get '[JSON] ViolatingSitesResponse
 
--- | Lists sites with Abusive Experience Report statuses of \"Failing\".
+-- | Lists sites that are failing in the Abusive Experience Report.
 --
 -- /See:/ 'violatingSitesList' smart constructor.
 data ViolatingSitesList =
@@ -124,8 +124,7 @@ vslCallback
 
 instance GoogleRequest ViolatingSitesList where
         type Rs ViolatingSitesList = ViolatingSitesResponse
-        type Scopes ViolatingSitesList =
-             '["https://www.googleapis.com/auth/xapi.zoo"]
+        type Scopes ViolatingSitesList = '[]
         requestClient ViolatingSitesList'{..}
           = go _vslXgafv _vslUploadProtocol _vslAccessToken
               _vslUploadType

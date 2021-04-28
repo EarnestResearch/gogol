@@ -114,8 +114,8 @@ projectsNotesCreate pPncParent_ pPncPayload_ =
     }
 
 
--- | The name of the project in the form of \`projects\/[PROJECT_ID]\`, under
--- which the note is to be created.
+-- | Required. The name of the project in the form of
+-- \`projects\/[PROJECT_ID]\`, under which the note is to be created.
 pncParent :: Lens' ProjectsNotesCreate Text
 pncParent
   = lens _pncParent (\ s a -> s{_pncParent = a})
@@ -147,7 +147,7 @@ pncPayload :: Lens' ProjectsNotesCreate Note
 pncPayload
   = lens _pncPayload (\ s a -> s{_pncPayload = a})
 
--- | The ID to use for this note.
+-- | Required. The ID to use for this note.
 pncNoteId :: Lens' ProjectsNotesCreate (Maybe Text)
 pncNoteId
   = lens _pncNoteId (\ s a -> s{_pncNoteId = a})

@@ -27,7 +27,7 @@
 -- Attempting to undelete an alert which has not been marked for deletion
 -- has no effect.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.undelete@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.undelete@.
 module Network.Google.Resource.AlertCenter.Alerts.Undelete
     (
     -- * REST Resource
@@ -62,8 +62,9 @@ type AlertsUndeleteResource =
                  QueryParam "uploadType" Text :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :>
-                       ReqBody '[JSON] UndeleteAlertRequest :>
-                         Post '[JSON] Alert
+                       ReqBody '[JSON]
+                         GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+                         :> Post '[JSON] GoogleAppsAlertcenterV1beta1Alert
 
 -- | Restores, or \"undeletes\", an alert that was marked for deletion within
 -- the past 30 days. Attempting to undelete an alert which was marked for
@@ -80,7 +81,7 @@ data AlertsUndelete =
     , _auAccessToken :: !(Maybe Text)
     , _auAlertId :: !Text
     , _auUploadType :: !(Maybe Text)
-    , _auPayload :: !UndeleteAlertRequest
+    , _auPayload :: !GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
     , _auCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -105,7 +106,7 @@ data AlertsUndelete =
 -- * 'auCallback'
 alertsUndelete
     :: Text -- ^ 'auAlertId'
-    -> UndeleteAlertRequest -- ^ 'auPayload'
+    -> GoogleAppsAlertcenterV1beta1UndeleteAlertRequest -- ^ 'auPayload'
     -> AlertsUndelete
 alertsUndelete pAuAlertId_ pAuPayload_ =
   AlertsUndelete'
@@ -146,7 +147,7 @@ auUploadType
   = lens _auUploadType (\ s a -> s{_auUploadType = a})
 
 -- | Multipart request metadata.
-auPayload :: Lens' AlertsUndelete UndeleteAlertRequest
+auPayload :: Lens' AlertsUndelete GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
 auPayload
   = lens _auPayload (\ s a -> s{_auPayload = a})
 
@@ -156,7 +157,8 @@ auCallback
   = lens _auCallback (\ s a -> s{_auCallback = a})
 
 instance GoogleRequest AlertsUndelete where
-        type Rs AlertsUndelete = Alert
+        type Rs AlertsUndelete =
+             GoogleAppsAlertcenterV1beta1Alert
         type Scopes AlertsUndelete =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsUndelete'{..}

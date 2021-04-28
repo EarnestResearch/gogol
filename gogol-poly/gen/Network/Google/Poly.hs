@@ -13,9 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- The Poly API provides read access to assets hosted on
--- <https://poly.google.com poly.google.com> to all, and upload access to
--- <https://poly.google.com poly.google.com> for whitelisted accounts.
+-- The Poly API provides read access to assets hosted on poly.google.com to
+-- all, and upload access to poly.google.com for whitelisted accounts.
 --
 -- /See:/ <https://developers.google.com/poly/ Poly API Reference>
 module Network.Google.Poly
@@ -68,6 +67,9 @@ module Network.Google.Poly
     , llarNextPageToken
     , llarTotalSize
     , llarAssets
+
+    -- ** UsersAssetsListVisibility
+    , UsersAssetsListVisibility (..)
 
     -- ** RemixInfo
     , RemixInfo
@@ -174,6 +176,9 @@ module Network.Google.Poly
     , fURL
     , fRelativePath
     , fContentType
+
+    -- ** AssetsListMaxComplexity
+    , AssetsListMaxComplexity (..)
 
     -- ** UserAsset
     , UserAsset

@@ -23,7 +23,9 @@ module Network.Google.Billing
       billingService
 
     -- * OAuth Scopes
+    , cloudBillingReadOnlyScope
     , cloudPlatformScope
+    , cloudBillingScope
 
     -- * API Declaration
     , BillingAPI
@@ -87,6 +89,12 @@ module Network.Google.Billing
     , eExpression
     , eTitle
     , eDescription
+
+    -- ** GeoTaxonomy
+    , GeoTaxonomy
+    , geoTaxonomy
+    , gtRegions
+    , gtType
 
     -- ** BillingAccount
     , BillingAccount
@@ -157,6 +165,9 @@ module Network.Google.Billing
     -- ** AuditLogConfigLogType
     , AuditLogConfigLogType (..)
 
+    -- ** GeoTaxonomyType
+    , GeoTaxonomyType (..)
+
     -- ** PricingExpression
     , PricingExpression
     , pricingExpression
@@ -186,6 +197,7 @@ module Network.Google.Billing
     -- ** SKU
     , SKU
     , sKU
+    , skukGeoTaxonomy
     , skukCategory
     , skukSKUId
     , skukServiceProviderName

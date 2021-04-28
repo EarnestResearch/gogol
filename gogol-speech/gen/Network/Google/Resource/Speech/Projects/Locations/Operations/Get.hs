@@ -49,7 +49,7 @@ import Network.Google.Speech.Types
 -- | A resource alias for @speech.projects.locations.operations.get@ method which the
 -- 'ProjectsLocationsOperationsGet' request conforms to.
 type ProjectsLocationsOperationsGetResource =
-     "v1p1beta1" :>
+     "v2beta1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

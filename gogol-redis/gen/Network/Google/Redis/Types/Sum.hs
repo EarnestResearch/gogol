@@ -24,11 +24,13 @@ import Network.Google.Prelude hiding (Bytes)
 data FailoverInstanceRequestDataProtectionMode
     = DataProtectionModeUnspecified
       -- ^ @DATA_PROTECTION_MODE_UNSPECIFIED@
+      -- Defaults to LIMITED_DATA_LOSS if a data protection mode is not
+      -- specified.
     | LimitedDataLoss
       -- ^ @LIMITED_DATA_LOSS@
       -- Instance failover will be protected with data loss control. More
       -- specifically, the failover will only be performed if the current
-      -- replication offset diff between master and replica is under a certain
+      -- replication offset diff between primary and replica is under a certain
       -- threshold.
     | ForceDataLoss
       -- ^ @FORCE_DATA_LOSS@
@@ -54,6 +56,41 @@ instance FromJSON FailoverInstanceRequestDataProtectionMode where
     parseJSON = parseJSONText "FailoverInstanceRequestDataProtectionMode"
 
 instance ToJSON FailoverInstanceRequestDataProtectionMode where
+    toJSON = toJSONText
+
+-- | Optional. The TLS mode of the Redis instance. If not provided, TLS is
+-- disabled for the instance.
+data InstanceTransitEncryptionMode
+    = TransitEncryptionModeUnspecified
+      -- ^ @TRANSIT_ENCRYPTION_MODE_UNSPECIFIED@
+      -- Not set.
+    | ServerAuthentication
+      -- ^ @SERVER_AUTHENTICATION@
+      -- Client to Server traffic encryption enabled with server authentication.
+    | Disabled
+      -- ^ @DISABLED@
+      -- TLS is disabled for the instance.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable InstanceTransitEncryptionMode
+
+instance FromHttpApiData InstanceTransitEncryptionMode where
+    parseQueryParam = \case
+        "TRANSIT_ENCRYPTION_MODE_UNSPECIFIED" -> Right TransitEncryptionModeUnspecified
+        "SERVER_AUTHENTICATION" -> Right ServerAuthentication
+        "DISABLED" -> Right Disabled
+        x -> Left ("Unable to parse InstanceTransitEncryptionMode from: " <> x)
+
+instance ToHttpApiData InstanceTransitEncryptionMode where
+    toQueryParam = \case
+        TransitEncryptionModeUnspecified -> "TRANSIT_ENCRYPTION_MODE_UNSPECIFIED"
+        ServerAuthentication -> "SERVER_AUTHENTICATION"
+        Disabled -> "DISABLED"
+
+instance FromJSON InstanceTransitEncryptionMode where
+    parseJSON = parseJSONText "InstanceTransitEncryptionMode"
+
+instance ToJSON InstanceTransitEncryptionMode where
     toJSON = toJSONText
 
 -- | Required. The service tier of the instance.
@@ -88,6 +125,43 @@ instance FromJSON InstanceTier where
     parseJSON = parseJSONText "InstanceTier"
 
 instance ToJSON InstanceTier where
+    toJSON = toJSONText
+
+-- | Optional. The network connect mode of the Redis instance. If not
+-- provided, the connect mode defaults to DIRECT_PEERING.
+data InstanceConnectMode
+    = ConnectModeUnspecified
+      -- ^ @CONNECT_MODE_UNSPECIFIED@
+      -- Not set.
+    | DirectPeering
+      -- ^ @DIRECT_PEERING@
+      -- Connect via direct peering to the Memorystore for Redis hosted service.
+    | PrivateServiceAccess
+      -- ^ @PRIVATE_SERVICE_ACCESS@
+      -- Connect your Memorystore for Redis instance using Private Service
+      -- Access. Private services access provides an IP address range for
+      -- multiple Google Cloud services, including Memorystore.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable InstanceConnectMode
+
+instance FromHttpApiData InstanceConnectMode where
+    parseQueryParam = \case
+        "CONNECT_MODE_UNSPECIFIED" -> Right ConnectModeUnspecified
+        "DIRECT_PEERING" -> Right DirectPeering
+        "PRIVATE_SERVICE_ACCESS" -> Right PrivateServiceAccess
+        x -> Left ("Unable to parse InstanceConnectMode from: " <> x)
+
+instance ToHttpApiData InstanceConnectMode where
+    toQueryParam = \case
+        ConnectModeUnspecified -> "CONNECT_MODE_UNSPECIFIED"
+        DirectPeering -> "DIRECT_PEERING"
+        PrivateServiceAccess -> "PRIVATE_SERVICE_ACCESS"
+
+instance FromJSON InstanceConnectMode where
+    parseJSON = parseJSONText "InstanceConnectMode"
+
+instance ToJSON InstanceConnectMode where
     toJSON = toJSONText
 
 -- | V1 error format.
@@ -144,6 +218,9 @@ data InstanceState
     | Maintenance
       -- ^ @MAINTENANCE@
       -- Maintenance is being performed on this Redis instance.
+    | Importing
+      -- ^ @IMPORTING@
+      -- Redis instance is importing data (availability may be affected).
     | FailingOver
       -- ^ @FAILING_OVER@
       -- Redis instance is failing over (availability may be affected).
@@ -160,6 +237,7 @@ instance FromHttpApiData InstanceState where
         "DELETING" -> Right Deleting
         "REPAIRING" -> Right Repairing
         "MAINTENANCE" -> Right Maintenance
+        "IMPORTING" -> Right Importing
         "FAILING_OVER" -> Right FailingOver
         x -> Left ("Unable to parse InstanceState from: " <> x)
 
@@ -172,6 +250,7 @@ instance ToHttpApiData InstanceState where
         Deleting -> "DELETING"
         Repairing -> "REPAIRING"
         Maintenance -> "MAINTENANCE"
+        Importing -> "IMPORTING"
         FailingOver -> "FAILING_OVER"
 
 instance FromJSON InstanceState where

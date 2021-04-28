@@ -122,7 +122,7 @@ pngUploadType
   = lens _pngUploadType
       (\ s a -> s{_pngUploadType = a})
 
--- | The name of the note in the form of
+-- | Required. The name of the note in the form of
 -- \`projects\/[PROVIDER_ID]\/notes\/[NOTE_ID]\`.
 pngName :: Lens' ProjectsNotesGet Text
 pngName = lens _pngName (\ s a -> s{_pngName = a})

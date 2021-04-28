@@ -13,7 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- API for viewing and managing your reports in DoubleClick Bid Manager.
+-- DoubleClick Bid Manager API allows users to manage and create campaigns
+-- and reports.
 --
 -- /See:/ <https://developers.google.com/bid-manager/ DoubleClick Bid Manager API Reference>
 module Network.Google.DoubleClickBids
@@ -245,6 +246,9 @@ module Network.Google.DoubleClickBids
     , pFilters
     , pGroupBys
     , pType
+
+    -- ** Xgafv
+    , Xgafv (..)
 
     -- ** FilterPairType
     , FilterPairType (..)

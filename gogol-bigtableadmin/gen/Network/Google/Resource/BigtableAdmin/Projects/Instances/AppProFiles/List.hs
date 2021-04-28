@@ -114,8 +114,9 @@ projectsInstancesAppProFilesList pPiapflParent_ =
     }
 
 
--- | The unique name of the instance for which a list of app profiles is
--- requested. Values are of the form \`projects\/\/instances\/\`. Use \` =
+-- | Required. The unique name of the instance for which a list of app
+-- profiles is requested. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\`. Use \`{instance} =
 -- \'-\'\` to list AppProfiles for all Instances in a project, e.g.,
 -- \`projects\/myproject\/instances\/-\`.
 piapflParent :: Lens' ProjectsInstancesAppProFilesList Text
@@ -151,7 +152,13 @@ piapflPageToken
   = lens _piapflPageToken
       (\ s a -> s{_piapflPageToken = a})
 
--- | Maximum number of results per page. CURRENTLY UNIMPLEMENTED AND IGNORED.
+-- | Maximum number of results per page. A page_size of zero lets the server
+-- choose the number of items to return. A page_size which is strictly
+-- positive will return at most that many items. A negative page_size will
+-- cause an error. Following the first request, subsequent paginated calls
+-- are not required to pass a page_size. If a page_size is set in
+-- subsequent calls, it must match the page_size given in the first
+-- request.
 piapflPageSize :: Lens' ProjectsInstancesAppProFilesList (Maybe Int32)
 piapflPageSize
   = lens _piapflPageSize

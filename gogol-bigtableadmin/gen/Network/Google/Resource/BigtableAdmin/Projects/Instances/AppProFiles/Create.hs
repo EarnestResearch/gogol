@@ -120,8 +120,9 @@ projectsInstancesAppProFilesCreate pPiapfcParent_ pPiapfcPayload_ =
     }
 
 
--- | The unique name of the instance in which to create the new app profile.
--- Values are of the form \`projects\/\/instances\/\`.
+-- | Required. The unique name of the instance in which to create the new app
+-- profile. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\`.
 piapfcParent :: Lens' ProjectsInstancesAppProFilesCreate Text
 piapfcParent
   = lens _piapfcParent (\ s a -> s{_piapfcParent = a})
@@ -131,8 +132,8 @@ piapfcXgafv :: Lens' ProjectsInstancesAppProFilesCreate (Maybe Xgafv)
 piapfcXgafv
   = lens _piapfcXgafv (\ s a -> s{_piapfcXgafv = a})
 
--- | The ID to be used when referring to the new app profile within its
--- instance, e.g., just \`myprofile\` rather than
+-- | Required. The ID to be used when referring to the new app profile within
+-- its instance, e.g., just \`myprofile\` rather than
 -- \`projects\/myproject\/instances\/myinstance\/appProfiles\/myprofile\`.
 piapfcAppProFileId :: Lens' ProjectsInstancesAppProFilesCreate (Maybe Text)
 piapfcAppProFileId

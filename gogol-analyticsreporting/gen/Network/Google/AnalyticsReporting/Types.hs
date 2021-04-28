@@ -129,6 +129,9 @@ module Network.Google.AnalyticsReporting.Types
     , dName
     , dHistogramBuckets
 
+    -- * SearchUserActivityRequestActivityTypesItem
+    , SearchUserActivityRequestActivityTypesItem (..)
+
     -- * DateRangeValues
     , DateRangeValues
     , dateRangeValues
@@ -476,6 +479,6 @@ analyticsReportingService
 analyticsScope :: Proxy '["https://www.googleapis.com/auth/analytics"]
 analyticsScope = Proxy
 
--- | View your Google Analytics data
+-- | See and download your Google Analytics data
 analyticsReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/analytics.readonly"]
 analyticsReadOnlyScope = Proxy

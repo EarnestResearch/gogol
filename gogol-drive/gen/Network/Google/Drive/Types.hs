@@ -37,6 +37,12 @@ module Network.Google.Drive.Types
     , flKind
     , flFiles
 
+    -- * FileShortcutDetails
+    , FileShortcutDetails
+    , fileShortcutDetails
+    , fsdTargetId
+    , fsdTargetMimeType
+
     -- * Drive
     , Drive
     , drive
@@ -147,6 +153,7 @@ module Network.Google.Drive.Types
     , fcCanComment
     , fcCanMoveChildrenWithinDrive
     , fcCanMoveChildrenWithinTeamDrive
+    , fcCanModifyContent
     , fcCanDelete
     , fcCanMoveItemIntoTeamDrive
     , fcCanDownload
@@ -155,11 +162,13 @@ module Network.Google.Drive.Types
     , fcCanTrashChildren
     , fcCanMoveItemOutOfDrive
     , fcCanAddChildren
+    , fcCanAddMyDriveParent
     , fcCanRemoveChildren
     , fcCanMoveTeamDriveItem
     , fcCanMoveItemWithinTeamDrive
     , fcCanReadTeamDrive
     , fcCanReadDrive
+    , fcCanAddFolderFromAnotherDrive
     , fcCanChangeCopyRequiresWriterPermission
     , fcCanMoveChildrenOutOfDrive
     , fcCanListChildren
@@ -169,6 +178,8 @@ module Network.Google.Drive.Types
     , fcCanReadRevisions
     , fcCanDeleteChildren
     , fcCanMoveItemOutOfTeamDrive
+    , fcCanRemoveMyDriveParent
+    , fcCanModifyContentRestriction
     , fcCanCopy
     , fcCanMoveItemWithinDrive
     , fcCanShare
@@ -352,6 +363,15 @@ module Network.Google.Drive.Types
     , fimmlAltitude
     , fimmlLongitude
 
+    -- * ContentRestriction
+    , ContentRestriction
+    , contentRestriction
+    , crRestrictingUser
+    , crRestrictionTime
+    , crReason
+    , crType
+    , crReadOnly
+
     -- * StartPageToken
     , StartPageToken
     , startPageToken
@@ -406,6 +426,7 @@ module Network.Google.Drive.Types
     , revSize
     , revOriginalFilename
     , revKind
+    , revPublishedLink
     , revPublished
     , revLastModifyingUser
     , revPublishAuto
@@ -427,6 +448,7 @@ module Network.Google.Drive.Types
     , pEmailAddress
     , pAllowFileDiscovery
     , pDisplayName
+    , pView
     , pId
     , pDeleted
     , pType
@@ -451,6 +473,7 @@ module Network.Google.Drive.Types
     , fModifiedByMeTime
     , fFileExtension
     , fViewedByMe
+    , fShortcutDetails
     , fOwners
     , fViewedByMeTime
     , fModifiedByMe
@@ -465,6 +488,7 @@ module Network.Google.Drive.Types
     , fIconLink
     , fHasThumbnail
     , fThumbnailVersion
+    , fContentRestrictions
     , fImageMediaMetadata
     , fExplicitlyTrashed
     , fShared
@@ -566,7 +590,7 @@ driveService
   = defaultService (ServiceId "drive:v3")
       "www.googleapis.com"
 
--- | View metadata for files in your Google Drive
+-- | See information about your Google Drive files
 driveMetadataReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/drive.metadata.readonly"]
 driveMetadataReadOnlyScope = Proxy
 
@@ -574,7 +598,7 @@ driveMetadataReadOnlyScope = Proxy
 drivePhotosReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/drive.photos.readonly"]
 drivePhotosReadOnlyScope = Proxy
 
--- | View and manage its own configuration data in your Google Drive
+-- | See, create, and delete its own configuration data in your Google Drive
 driveAppDataScope :: Proxy '["https://www.googleapis.com/auth/drive.appdata"]
 driveAppDataScope = Proxy
 
@@ -586,8 +610,8 @@ driveReadOnlyScope = Proxy
 driveScope :: Proxy '["https://www.googleapis.com/auth/drive"]
 driveScope = Proxy
 
--- | View and manage Google Drive files and folders that you have opened or
--- created with this app
+-- | See, edit, create, and delete only the specific Google Drive files you
+-- use with this app
 driveFileScope :: Proxy '["https://www.googleapis.com/auth/drive.file"]
 driveFileScope = Proxy
 

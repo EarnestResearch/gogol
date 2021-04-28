@@ -21,7 +21,7 @@
 -- that all submitted comments are automatically deleted after scores are
 -- returned.
 --
--- /See:/ <https://conversationai.github.io/ Perspective Comment Analyzer API Reference>
+-- /See:/ <https://github.com/conversationai/perspectiveapi/blob/master/README.md Perspective Comment Analyzer API Reference>
 module Network.Google.CommentAnalyzer
     (
     -- * Service Configuration

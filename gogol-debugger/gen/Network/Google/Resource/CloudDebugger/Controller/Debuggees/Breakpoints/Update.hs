@@ -28,7 +28,7 @@
 -- may only make changes such as canonicalizing a value or snapping the
 -- location to the correct line of code.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.controller.debuggees.breakpoints.update@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.controller.debuggees.breakpoints.update@.
 module Network.Google.Resource.CloudDebugger.Controller.Debuggees.Breakpoints.Update
     (
     -- * REST Resource
@@ -162,7 +162,7 @@ cdbuPayload
 cdbuId :: Lens' ControllerDebuggeesBreakpointsUpdate Text
 cdbuId = lens _cdbuId (\ s a -> s{_cdbuId = a})
 
--- | Identifies the debuggee being debugged.
+-- | Required. Identifies the debuggee being debugged.
 cdbuDebuggeeId :: Lens' ControllerDebuggeesBreakpointsUpdate Text
 cdbuDebuggeeId
   = lens _cdbuDebuggeeId

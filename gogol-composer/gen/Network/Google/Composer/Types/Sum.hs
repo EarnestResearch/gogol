@@ -32,6 +32,9 @@ data OperationMetadataOperationType
     | Update
       -- ^ @UPDATE@
       -- A resource update operation.
+    | Check
+      -- ^ @CHECK@
+      -- A resource check operation.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable OperationMetadataOperationType
@@ -42,6 +45,7 @@ instance FromHttpApiData OperationMetadataOperationType where
         "CREATE" -> Right Create
         "DELETE" -> Right Delete'
         "UPDATE" -> Right Update
+        "CHECK" -> Right Check
         x -> Left ("Unable to parse OperationMetadataOperationType from: " <> x)
 
 instance ToHttpApiData OperationMetadataOperationType where
@@ -50,6 +54,7 @@ instance ToHttpApiData OperationMetadataOperationType where
         Create -> "CREATE"
         Delete' -> "DELETE"
         Update -> "UPDATE"
+        Check -> "CHECK"
 
 instance FromJSON OperationMetadataOperationType where
     parseJSON = parseJSONText "OperationMetadataOperationType"

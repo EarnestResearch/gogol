@@ -50,7 +50,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsHl7V2StoresPatch' request conforms to.
 type ProjectsLocationsDataSetsHl7V2StoresPatchResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -153,7 +153,7 @@ pldshvspPayload
   = lens _pldshvspPayload
       (\ s a -> s{_pldshvspPayload = a})
 
--- | Output only. Resource name of the HL7v2 store, of the form
+-- | Resource name of the HL7v2 store, of the form
 -- \`projects\/{project_id}\/datasets\/{dataset_id}\/hl7V2Stores\/{hl7v2_store_id}\`.
 pldshvspName :: Lens' ProjectsLocationsDataSetsHl7V2StoresPatch Text
 pldshvspName

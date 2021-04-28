@@ -15,7 +15,7 @@
 --
 -- Scans your Compute and App Engine apps for common web vulnerabilities.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference>
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference>
 module Network.Google.WebSecurityScanner
     (
     -- * Service Configuration
@@ -76,6 +76,11 @@ module Network.Google.WebSecurityScanner
     , ftsFindingCount
     , ftsFindingType
 
+    -- ** IapTestServiceAccountInfo
+    , IapTestServiceAccountInfo
+    , iapTestServiceAccountInfo
+    , itsaiTargetAudienceClientId
+
     -- ** ListFindingsResponse
     , ListFindingsResponse
     , listFindingsResponse
@@ -110,6 +115,7 @@ module Network.Google.WebSecurityScanner
     , fTrackingId
     , fBody
     , fXss
+    , fSeverity
     , fVulnerableParameters
     , fOutdatedLibrary
     , fFuzzedURL
@@ -144,6 +150,8 @@ module Network.Google.WebSecurityScanner
     -- ** Xss
     , Xss
     , xss
+    , xStoredXssSeedingURL
+    , xAttackVector
     , xStackTraces
     , xErrorMessage
 
@@ -151,6 +159,7 @@ module Network.Google.WebSecurityScanner
     , Authentication
     , authentication
     , aGoogleAccount
+    , aIapCredential
     , aCustomAccount
 
     -- ** ListCrawledURLsResponse
@@ -159,10 +168,18 @@ module Network.Google.WebSecurityScanner
     , lcurNextPageToken
     , lcurCrawledURLs
 
+    -- ** IapCredential
+    , IapCredential
+    , iapCredential
+    , icIapTestServiceAccountInfo
+
     -- ** VulnerableParameters
     , VulnerableParameters
     , vulnerableParameters
     , vpParameterNames
+
+    -- ** XssAttackVector
+    , XssAttackVector (..)
 
     -- ** CrawledURL
     , CrawledURL
@@ -223,15 +240,17 @@ module Network.Google.WebSecurityScanner
     -- ** ScanConfig
     , ScanConfig
     , scanConfig
-    , scLatestRun
+    , scIgnoreHTTPStatusErrors
     , scSchedule
-    , scTargetPlatforms
     , scStartingURLs
     , scAuthentication
+    , scStaticIPScan
     , scMaxQps
     , scName
+    , scManagedScan
     , scExportToSecurityCommandCenter
     , scDisplayName
+    , scRiskLevel
     , scUserAgent
     , scBlackListPatterns
 
@@ -246,6 +265,9 @@ module Network.Google.WebSecurityScanner
 
     -- ** ScanRunResultState
     , ScanRunResultState (..)
+
+    -- ** ScanConfigRiskLevel
+    , ScanConfigRiskLevel (..)
 
     -- ** VulnerableHeaders
     , VulnerableHeaders
@@ -282,6 +304,9 @@ module Network.Google.WebSecurityScanner
     , srEndTime
     , srExecutionState
     , srErrorTrace
+
+    -- ** FindingSeverity
+    , FindingSeverity (..)
     ) where
 
 import Network.Google.Prelude

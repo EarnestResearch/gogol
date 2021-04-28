@@ -25,7 +25,7 @@
 -- updated sink might also have a new writer_identity; see the
 -- unique_writer_identity field.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.folders.sinks.update@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.folders.sinks.update@.
 module Network.Google.Resource.Logging.Folders.Sinks.Update
     (
     -- * REST Resource

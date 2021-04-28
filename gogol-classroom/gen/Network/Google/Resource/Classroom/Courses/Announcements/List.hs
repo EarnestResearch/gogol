@@ -64,7 +64,9 @@ type CoursesAnnouncementsListResource =
              QueryParam "$.xgafv" Xgafv :>
                QueryParam "upload_protocol" Text :>
                  QueryParam "orderBy" Text :>
-                   QueryParams "announcementStates" Text :>
+                   QueryParams "announcementStates"
+                     CoursesAnnouncementsListAnnouncementStates
+                     :>
                      QueryParam "access_token" Text :>
                        QueryParam "uploadType" Text :>
                          QueryParam "pageToken" Text :>
@@ -87,7 +89,7 @@ data CoursesAnnouncementsList =
     { _calXgafv :: !(Maybe Xgafv)
     , _calUploadProtocol :: !(Maybe Text)
     , _calOrderBy :: !(Maybe Text)
-    , _calAnnouncementStates :: !(Maybe [Text])
+    , _calAnnouncementStates :: !(Maybe [CoursesAnnouncementsListAnnouncementStates])
     , _calCourseId :: !Text
     , _calAccessToken :: !(Maybe Text)
     , _calUploadType :: !(Maybe Text)
@@ -160,7 +162,7 @@ calOrderBy
 
 -- | Restriction on the \`state\` of announcements returned. If this argument
 -- is left unspecified, the default value is \`PUBLISHED\`.
-calAnnouncementStates :: Lens' CoursesAnnouncementsList [Text]
+calAnnouncementStates :: Lens' CoursesAnnouncementsList [CoursesAnnouncementsListAnnouncementStates]
 calAnnouncementStates
   = lens _calAnnouncementStates
       (\ s a -> s{_calAnnouncementStates = a})

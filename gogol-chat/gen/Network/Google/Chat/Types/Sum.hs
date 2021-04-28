@@ -309,14 +309,45 @@ instance FromJSON UserMentionMetadataType where
 instance ToJSON UserMentionMetadataType where
     toJSON = toJSONText
 
--- | Output only. The type of a space.
+-- | The source of the attachment.
+data AttachmentSource
+    = SourceUnspecified
+      -- ^ @SOURCE_UNSPECIFIED@
+    | DriveFile
+      -- ^ @DRIVE_FILE@
+    | UploadedContent
+      -- ^ @UPLOADED_CONTENT@
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable AttachmentSource
+
+instance FromHttpApiData AttachmentSource where
+    parseQueryParam = \case
+        "SOURCE_UNSPECIFIED" -> Right SourceUnspecified
+        "DRIVE_FILE" -> Right DriveFile
+        "UPLOADED_CONTENT" -> Right UploadedContent
+        x -> Left ("Unable to parse AttachmentSource from: " <> x)
+
+instance ToHttpApiData AttachmentSource where
+    toQueryParam = \case
+        SourceUnspecified -> "SOURCE_UNSPECIFIED"
+        DriveFile -> "DRIVE_FILE"
+        UploadedContent -> "UPLOADED_CONTENT"
+
+instance FromJSON AttachmentSource where
+    parseJSON = parseJSONText "AttachmentSource"
+
+instance ToJSON AttachmentSource where
+    toJSON = toJSONText
+
+-- | Output only. The type of a space. This is deprecated. Use
+-- \`single_user_bot_dm\` instead.
 data SpaceType
     = STTypeUnspecified
       -- ^ @TYPE_UNSPECIFIED@
     | STRoom
       -- ^ @ROOM@
-      -- A chat space where memberships are free to change. Messages in rooms are
-      -- threaded.
+      -- Multi-user spaces such as rooms and DMs between humans.
     | STDM
       -- ^ @DM@
       -- 1:1 Direct Message between a human and a bot, where all messages are
@@ -352,6 +383,9 @@ data AnnotationType
     | UserMention
       -- ^ @USER_MENTION@
       -- A user is mentioned.
+    | SlashCommand
+      -- ^ @SLASH_COMMAND@
+      -- A slash command is invoked.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable AnnotationType
@@ -360,17 +394,53 @@ instance FromHttpApiData AnnotationType where
     parseQueryParam = \case
         "ANNOTATION_TYPE_UNSPECIFIED" -> Right AnnotationTypeUnspecified
         "USER_MENTION" -> Right UserMention
+        "SLASH_COMMAND" -> Right SlashCommand
         x -> Left ("Unable to parse AnnotationType from: " <> x)
 
 instance ToHttpApiData AnnotationType where
     toQueryParam = \case
         AnnotationTypeUnspecified -> "ANNOTATION_TYPE_UNSPECIFIED"
         UserMention -> "USER_MENTION"
+        SlashCommand -> "SLASH_COMMAND"
 
 instance FromJSON AnnotationType where
     parseJSON = parseJSONText "AnnotationType"
 
 instance ToJSON AnnotationType where
+    toJSON = toJSONText
+
+-- | The type of slash command.
+data SlashCommandMetadataType
+    = SCMTTypeUnspecified
+      -- ^ @TYPE_UNSPECIFIED@
+      -- Default value for the enum. DO NOT USE.
+    | SCMTAdd
+      -- ^ @ADD@
+      -- Add bot to space.
+    | SCMTInvoke
+      -- ^ @INVOKE@
+      -- Invoke slash command in space.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable SlashCommandMetadataType
+
+instance FromHttpApiData SlashCommandMetadataType where
+    parseQueryParam = \case
+        "TYPE_UNSPECIFIED" -> Right SCMTTypeUnspecified
+        "ADD" -> Right SCMTAdd
+        "INVOKE" -> Right SCMTInvoke
+        x -> Left ("Unable to parse SlashCommandMetadataType from: " <> x)
+
+instance ToHttpApiData SlashCommandMetadataType where
+    toQueryParam = \case
+        SCMTTypeUnspecified -> "TYPE_UNSPECIFIED"
+        SCMTAdd -> "ADD"
+        SCMTInvoke -> "INVOKE"
+
+instance FromJSON SlashCommandMetadataType where
+    parseJSON = parseJSONText "SlashCommandMetadataType"
+
+instance ToJSON SlashCommandMetadataType where
     toJSON = toJSONText
 
 -- | The icon specified by an enum that indices to an icon provided by Chat

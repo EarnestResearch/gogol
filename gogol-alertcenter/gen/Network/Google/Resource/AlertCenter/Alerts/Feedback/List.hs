@@ -23,7 +23,7 @@
 -- Lists all the feedback for an alert. Attempting to list feedbacks for a
 -- non-existent alert returns \`NOT_FOUND\` error.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.feedback.list@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.feedback.list@.
 module Network.Google.Resource.AlertCenter.Alerts.Feedback.List
     (
     -- * REST Resource
@@ -62,7 +62,8 @@ type AlertsFeedbackListResource =
                        QueryParam "filter" Text :>
                          QueryParam "callback" Text :>
                            QueryParam "alt" AltJSON :>
-                             Get '[JSON] ListAlertFeedbackResponse
+                             Get '[JSON]
+                               GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
 
 -- | Lists all the feedback for an alert. Attempting to list feedbacks for a
 -- non-existent alert returns \`NOT_FOUND\` error.
@@ -145,9 +146,9 @@ aflUploadType
   = lens _aflUploadType
       (\ s a -> s{_aflUploadType = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert feedback are associated with. Inferred from the
--- caller identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert feedback are associated with. Inferred
+-- from the caller identity if not provided.
 aflCustomerId :: Lens' AlertsFeedbackList (Maybe Text)
 aflCustomerId
   = lens _aflCustomerId
@@ -169,7 +170,7 @@ aflCallback
 
 instance GoogleRequest AlertsFeedbackList where
         type Rs AlertsFeedbackList =
-             ListAlertFeedbackResponse
+             GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
         type Scopes AlertsFeedbackList =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsFeedbackList'{..}

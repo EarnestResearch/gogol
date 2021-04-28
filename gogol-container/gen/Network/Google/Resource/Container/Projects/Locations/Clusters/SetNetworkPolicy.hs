@@ -140,7 +140,7 @@ plcsnpPayload
 
 -- | The name (project, location, cluster id) of the cluster to set
 -- networking policy. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcsnpName :: Lens' ProjectsLocationsClustersSetNetworkPolicy Text
 plcsnpName
   = lens _plcsnpName (\ s a -> s{_plcsnpName = a})

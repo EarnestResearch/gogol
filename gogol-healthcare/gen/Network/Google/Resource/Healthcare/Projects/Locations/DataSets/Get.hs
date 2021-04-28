@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.get@ method which the
 -- 'ProjectsLocationsDataSetsGet' request conforms to.
 type ProjectsLocationsDataSetsGetResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -123,8 +123,8 @@ pldsgUploadType
   = lens _pldsgUploadType
       (\ s a -> s{_pldsgUploadType = a})
 
--- | The name of the dataset to read (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`).
+-- | The name of the dataset to read. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`.
 pldsgName :: Lens' ProjectsLocationsDataSetsGet Text
 pldsgName
   = lens _pldsgName (\ s a -> s{_pldsgName = a})

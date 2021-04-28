@@ -22,7 +22,7 @@
 --
 -- Lists order returns in your Merchant Center account.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.orderreturns.list@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.orderreturns.list@.
 module Network.Google.Resource.Content.Orderreturns.List
     (
     -- * REST Resource
@@ -33,12 +33,17 @@ module Network.Google.Resource.Content.Orderreturns.List
     , OrderreturnsList
 
     -- * Request Lenses
-    , ol1MerchantId
-    , ol1OrderBy
-    , ol1CreatedEndDate
-    , ol1CreatedStartDate
-    , ol1PageToken
-    , ol1MaxResults
+    , ordrXgafv
+    , ordrMerchantId
+    , ordrUploadProtocol
+    , ordrOrderBy
+    , ordrAccessToken
+    , ordrCreatedEndDate
+    , ordrUploadType
+    , ordrCreatedStartDate
+    , ordrPageToken
+    , ordrMaxResults
+    , ordrCallback
     ) where
 
 import Network.Google.Prelude
@@ -51,25 +56,35 @@ type OrderreturnsListResource =
        "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "orderreturns" :>
-             QueryParam "orderBy" OrderreturnsListOrderBy :>
-               QueryParam "createdEndDate" Text :>
-                 QueryParam "createdStartDate" Text :>
-                   QueryParam "pageToken" Text :>
-                     QueryParam "maxResults" (Textual Word32) :>
-                       QueryParam "alt" AltJSON :>
-                         Get '[JSON] OrderreturnsListResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "orderBy" OrderreturnsListOrderBy :>
+                   QueryParam "access_token" Text :>
+                     QueryParam "createdEndDate" Text :>
+                       QueryParam "uploadType" Text :>
+                         QueryParam "createdStartDate" Text :>
+                           QueryParam "pageToken" Text :>
+                             QueryParam "maxResults" (Textual Word32) :>
+                               QueryParam "callback" Text :>
+                                 QueryParam "alt" AltJSON :>
+                                   Get '[JSON] OrderreturnsListResponse
 
 -- | Lists order returns in your Merchant Center account.
 --
 -- /See:/ 'orderreturnsList' smart constructor.
 data OrderreturnsList =
   OrderreturnsList'
-    { _ol1MerchantId :: !(Textual Word64)
-    , _ol1OrderBy :: !(Maybe OrderreturnsListOrderBy)
-    , _ol1CreatedEndDate :: !(Maybe Text)
-    , _ol1CreatedStartDate :: !(Maybe Text)
-    , _ol1PageToken :: !(Maybe Text)
-    , _ol1MaxResults :: !(Maybe (Textual Word32))
+    { _ordrXgafv :: !(Maybe Xgafv)
+    , _ordrMerchantId :: !(Textual Word64)
+    , _ordrUploadProtocol :: !(Maybe Text)
+    , _ordrOrderBy :: !(Maybe OrderreturnsListOrderBy)
+    , _ordrAccessToken :: !(Maybe Text)
+    , _ordrCreatedEndDate :: !(Maybe Text)
+    , _ordrUploadType :: !(Maybe Text)
+    , _ordrCreatedStartDate :: !(Maybe Text)
+    , _ordrPageToken :: !(Maybe Text)
+    , _ordrMaxResults :: !(Maybe (Textual Word32))
+    , _ordrCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -78,81 +93,130 @@ data OrderreturnsList =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'ol1MerchantId'
+-- * 'ordrXgafv'
 --
--- * 'ol1OrderBy'
+-- * 'ordrMerchantId'
 --
--- * 'ol1CreatedEndDate'
+-- * 'ordrUploadProtocol'
 --
--- * 'ol1CreatedStartDate'
+-- * 'ordrOrderBy'
 --
--- * 'ol1PageToken'
+-- * 'ordrAccessToken'
 --
--- * 'ol1MaxResults'
+-- * 'ordrCreatedEndDate'
+--
+-- * 'ordrUploadType'
+--
+-- * 'ordrCreatedStartDate'
+--
+-- * 'ordrPageToken'
+--
+-- * 'ordrMaxResults'
+--
+-- * 'ordrCallback'
 orderreturnsList
-    :: Word64 -- ^ 'ol1MerchantId'
+    :: Word64 -- ^ 'ordrMerchantId'
     -> OrderreturnsList
-orderreturnsList pOl1MerchantId_ =
+orderreturnsList pOrdrMerchantId_ =
   OrderreturnsList'
-    { _ol1MerchantId = _Coerce # pOl1MerchantId_
-    , _ol1OrderBy = Nothing
-    , _ol1CreatedEndDate = Nothing
-    , _ol1CreatedStartDate = Nothing
-    , _ol1PageToken = Nothing
-    , _ol1MaxResults = Nothing
+    { _ordrXgafv = Nothing
+    , _ordrMerchantId = _Coerce # pOrdrMerchantId_
+    , _ordrUploadProtocol = Nothing
+    , _ordrOrderBy = Nothing
+    , _ordrAccessToken = Nothing
+    , _ordrCreatedEndDate = Nothing
+    , _ordrUploadType = Nothing
+    , _ordrCreatedStartDate = Nothing
+    , _ordrPageToken = Nothing
+    , _ordrMaxResults = Nothing
+    , _ordrCallback = Nothing
     }
 
 
+-- | V1 error format.
+ordrXgafv :: Lens' OrderreturnsList (Maybe Xgafv)
+ordrXgafv
+  = lens _ordrXgafv (\ s a -> s{_ordrXgafv = a})
+
 -- | The ID of the account that manages the order. This cannot be a
 -- multi-client account.
-ol1MerchantId :: Lens' OrderreturnsList Word64
-ol1MerchantId
-  = lens _ol1MerchantId
-      (\ s a -> s{_ol1MerchantId = a})
+ordrMerchantId :: Lens' OrderreturnsList Word64
+ordrMerchantId
+  = lens _ordrMerchantId
+      (\ s a -> s{_ordrMerchantId = a})
       . _Coerce
 
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+ordrUploadProtocol :: Lens' OrderreturnsList (Maybe Text)
+ordrUploadProtocol
+  = lens _ordrUploadProtocol
+      (\ s a -> s{_ordrUploadProtocol = a})
+
 -- | Return the results in the specified order.
-ol1OrderBy :: Lens' OrderreturnsList (Maybe OrderreturnsListOrderBy)
-ol1OrderBy
-  = lens _ol1OrderBy (\ s a -> s{_ol1OrderBy = a})
+ordrOrderBy :: Lens' OrderreturnsList (Maybe OrderreturnsListOrderBy)
+ordrOrderBy
+  = lens _ordrOrderBy (\ s a -> s{_ordrOrderBy = a})
+
+-- | OAuth access token.
+ordrAccessToken :: Lens' OrderreturnsList (Maybe Text)
+ordrAccessToken
+  = lens _ordrAccessToken
+      (\ s a -> s{_ordrAccessToken = a})
 
 -- | Obtains order returns created before this date (inclusively), in ISO
 -- 8601 format.
-ol1CreatedEndDate :: Lens' OrderreturnsList (Maybe Text)
-ol1CreatedEndDate
-  = lens _ol1CreatedEndDate
-      (\ s a -> s{_ol1CreatedEndDate = a})
+ordrCreatedEndDate :: Lens' OrderreturnsList (Maybe Text)
+ordrCreatedEndDate
+  = lens _ordrCreatedEndDate
+      (\ s a -> s{_ordrCreatedEndDate = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+ordrUploadType :: Lens' OrderreturnsList (Maybe Text)
+ordrUploadType
+  = lens _ordrUploadType
+      (\ s a -> s{_ordrUploadType = a})
 
 -- | Obtains order returns created after this date (inclusively), in ISO 8601
 -- format.
-ol1CreatedStartDate :: Lens' OrderreturnsList (Maybe Text)
-ol1CreatedStartDate
-  = lens _ol1CreatedStartDate
-      (\ s a -> s{_ol1CreatedStartDate = a})
+ordrCreatedStartDate :: Lens' OrderreturnsList (Maybe Text)
+ordrCreatedStartDate
+  = lens _ordrCreatedStartDate
+      (\ s a -> s{_ordrCreatedStartDate = a})
 
 -- | The token returned by the previous request.
-ol1PageToken :: Lens' OrderreturnsList (Maybe Text)
-ol1PageToken
-  = lens _ol1PageToken (\ s a -> s{_ol1PageToken = a})
+ordrPageToken :: Lens' OrderreturnsList (Maybe Text)
+ordrPageToken
+  = lens _ordrPageToken
+      (\ s a -> s{_ordrPageToken = a})
 
 -- | The maximum number of order returns to return in the response, used for
 -- paging. The default value is 25 returns per page, and the maximum
 -- allowed value is 250 returns per page.
-ol1MaxResults :: Lens' OrderreturnsList (Maybe Word32)
-ol1MaxResults
-  = lens _ol1MaxResults
-      (\ s a -> s{_ol1MaxResults = a})
+ordrMaxResults :: Lens' OrderreturnsList (Maybe Word32)
+ordrMaxResults
+  = lens _ordrMaxResults
+      (\ s a -> s{_ordrMaxResults = a})
       . mapping _Coerce
+
+-- | JSONP
+ordrCallback :: Lens' OrderreturnsList (Maybe Text)
+ordrCallback
+  = lens _ordrCallback (\ s a -> s{_ordrCallback = a})
 
 instance GoogleRequest OrderreturnsList where
         type Rs OrderreturnsList = OrderreturnsListResponse
         type Scopes OrderreturnsList =
              '["https://www.googleapis.com/auth/content"]
         requestClient OrderreturnsList'{..}
-          = go _ol1MerchantId _ol1OrderBy _ol1CreatedEndDate
-              _ol1CreatedStartDate
-              _ol1PageToken
-              _ol1MaxResults
+          = go _ordrMerchantId _ordrXgafv _ordrUploadProtocol
+              _ordrOrderBy
+              _ordrAccessToken
+              _ordrCreatedEndDate
+              _ordrUploadType
+              _ordrCreatedStartDate
+              _ordrPageToken
+              _ordrMaxResults
+              _ordrCallback
               (Just AltJSON)
               shoppingContentService
           where go

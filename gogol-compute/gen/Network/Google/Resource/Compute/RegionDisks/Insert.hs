@@ -116,7 +116,7 @@ rdiRequestId :: Lens' RegionDisksInsert (Maybe Text)
 rdiRequestId
   = lens _rdiRequestId (\ s a -> s{_rdiRequestId = a})
 
--- | Optional. Source image to restore onto a disk.
+-- | Source image to restore onto a disk. This field is optional.
 rdiSourceImage :: Lens' RegionDisksInsert (Maybe Text)
 rdiSourceImage
   = lens _rdiSourceImage

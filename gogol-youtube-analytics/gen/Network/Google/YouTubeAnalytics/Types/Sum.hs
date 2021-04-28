@@ -55,6 +55,10 @@ data ErrorProtoLocationType
     | Other
       -- ^ @OTHER@
       -- other location type which can safely be shared externally.
+    | Parameter
+      -- ^ @PARAMETER@
+      -- Location is request paramater. This maps to the {\@link PARAMETERS} in
+      -- {\@link MessageLocation}.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable ErrorProtoLocationType
@@ -63,12 +67,14 @@ instance FromHttpApiData ErrorProtoLocationType where
     parseQueryParam = \case
         "PATH" -> Right Path
         "OTHER" -> Right Other
+        "PARAMETER" -> Right Parameter
         x -> Left ("Unable to parse ErrorProtoLocationType from: " <> x)
 
 instance ToHttpApiData ErrorProtoLocationType where
     toQueryParam = \case
         Path -> "PATH"
         Other -> "OTHER"
+        Parameter -> "PARAMETER"
 
 instance FromJSON ErrorProtoLocationType where
     parseJSON = parseJSONText "ErrorProtoLocationType"

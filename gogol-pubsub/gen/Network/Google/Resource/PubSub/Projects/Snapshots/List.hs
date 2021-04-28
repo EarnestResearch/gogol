@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists the existing snapshots. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- Lists the existing snapshots. Snapshots are used in [Seek](
+-- https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview) operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
 -- to the state captured by a snapshot.
@@ -66,8 +66,8 @@ type ProjectsSnapshotsListResource =
                          QueryParam "alt" AltJSON :>
                            Get '[JSON] ListSnapshotsResponse
 
--- | Lists the existing snapshots. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- | Lists the existing snapshots. Snapshots are used in [Seek](
+-- https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview) operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
 -- to the state captured by a snapshot.
@@ -133,7 +133,7 @@ pslsUploadProtocol
   = lens _pslsUploadProtocol
       (\ s a -> s{_pslsUploadProtocol = a})
 
--- | The name of the project in which to list snapshots. Format is
+-- | Required. The name of the project in which to list snapshots. Format is
 -- \`projects\/{project-id}\`.
 pslsProject :: Lens' ProjectsSnapshotsList Text
 pslsProject

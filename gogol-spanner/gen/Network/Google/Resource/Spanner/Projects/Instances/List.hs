@@ -37,6 +37,7 @@ module Network.Google.Resource.Spanner.Projects.Instances.List
     , pilXgafv
     , pilUploadProtocol
     , pilAccessToken
+    , pilInstanceDeadline
     , pilUploadType
     , pilFilter
     , pilPageToken
@@ -56,13 +57,14 @@ type ProjectsInstancesListResource =
            QueryParam "$.xgafv" Xgafv :>
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
-                 QueryParam "uploadType" Text :>
-                   QueryParam "filter" Text :>
-                     QueryParam "pageToken" Text :>
-                       QueryParam "pageSize" (Textual Int32) :>
-                         QueryParam "callback" Text :>
-                           QueryParam "alt" AltJSON :>
-                             Get '[JSON] ListInstancesResponse
+                 QueryParam "instanceDeadline" DateTime' :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "filter" Text :>
+                       QueryParam "pageToken" Text :>
+                         QueryParam "pageSize" (Textual Int32) :>
+                           QueryParam "callback" Text :>
+                             QueryParam "alt" AltJSON :>
+                               Get '[JSON] ListInstancesResponse
 
 -- | Lists all instances in the given project.
 --
@@ -73,6 +75,7 @@ data ProjectsInstancesList =
     , _pilXgafv :: !(Maybe Xgafv)
     , _pilUploadProtocol :: !(Maybe Text)
     , _pilAccessToken :: !(Maybe Text)
+    , _pilInstanceDeadline :: !(Maybe DateTime')
     , _pilUploadType :: !(Maybe Text)
     , _pilFilter :: !(Maybe Text)
     , _pilPageToken :: !(Maybe Text)
@@ -94,6 +97,8 @@ data ProjectsInstancesList =
 --
 -- * 'pilAccessToken'
 --
+-- * 'pilInstanceDeadline'
+--
 -- * 'pilUploadType'
 --
 -- * 'pilFilter'
@@ -112,6 +117,7 @@ projectsInstancesList pPilParent_ =
     , _pilXgafv = Nothing
     , _pilUploadProtocol = Nothing
     , _pilAccessToken = Nothing
+    , _pilInstanceDeadline = Nothing
     , _pilUploadType = Nothing
     , _pilFilter = Nothing
     , _pilPageToken = Nothing
@@ -141,6 +147,15 @@ pilAccessToken :: Lens' ProjectsInstancesList (Maybe Text)
 pilAccessToken
   = lens _pilAccessToken
       (\ s a -> s{_pilAccessToken = a})
+
+-- | Deadline used while retrieving metadata for instances. Instances whose
+-- metadata cannot be retrieved within this deadline will be added to
+-- unreachable in ListInstancesResponse.
+pilInstanceDeadline :: Lens' ProjectsInstancesList (Maybe UTCTime)
+pilInstanceDeadline
+  = lens _pilInstanceDeadline
+      (\ s a -> s{_pilInstanceDeadline = a})
+      . mapping _DateTime
 
 -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
 pilUploadType :: Lens' ProjectsInstancesList (Maybe Text)
@@ -189,6 +204,7 @@ instance GoogleRequest ProjectsInstancesList where
         requestClient ProjectsInstancesList'{..}
           = go _pilParent _pilXgafv _pilUploadProtocol
               _pilAccessToken
+              _pilInstanceDeadline
               _pilUploadType
               _pilFilter
               _pilPageToken

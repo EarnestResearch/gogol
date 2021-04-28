@@ -21,9 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates a regional BackendService resource in the specified project
--- using the data included in the request. There are several restrictions
--- and guidelines to keep in mind when creating a regional backend service.
--- Read Restrictions and Guidelines for more information.
+-- using the data included in the request. For more information, see
+-- Backend services overview.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.regionBackendServices.insert@.
 module Network.Google.Resource.Compute.RegionBackendServices.Insert
@@ -61,9 +60,8 @@ type RegionBackendServicesInsertResource =
                          Post '[JSON] Operation
 
 -- | Creates a regional BackendService resource in the specified project
--- using the data included in the request. There are several restrictions
--- and guidelines to keep in mind when creating a regional backend service.
--- Read Restrictions and Guidelines for more information.
+-- using the data included in the request. For more information, see
+-- Backend services overview.
 --
 -- /See:/ 'regionBackendServicesInsert' smart constructor.
 data RegionBackendServicesInsert =

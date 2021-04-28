@@ -61,7 +61,9 @@ type AccountsFinalizedProposalsListResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "filterSyntax" Text :>
+                     QueryParam "filterSyntax"
+                       AccountsFinalizedProposalsListFilterSyntax
+                       :>
                        QueryParam "filter" Text :>
                          QueryParam "pageToken" Text :>
                            QueryParam "pageSize" (Textual Int32) :>
@@ -80,7 +82,7 @@ data AccountsFinalizedProposalsList =
     , _afplUploadProtocol :: !(Maybe Text)
     , _afplAccessToken :: !(Maybe Text)
     , _afplUploadType :: !(Maybe Text)
-    , _afplFilterSyntax :: !(Maybe Text)
+    , _afplFilterSyntax :: !(Maybe AccountsFinalizedProposalsListFilterSyntax)
     , _afplAccountId :: !Text
     , _afplFilter :: !(Maybe Text)
     , _afplPageToken :: !(Maybe Text)
@@ -156,7 +158,7 @@ afplUploadType
 
 -- | Syntax the filter is written in. Current implementation defaults to PQL
 -- but in the future it will be LIST_FILTER.
-afplFilterSyntax :: Lens' AccountsFinalizedProposalsList (Maybe Text)
+afplFilterSyntax :: Lens' AccountsFinalizedProposalsList (Maybe AccountsFinalizedProposalsListFilterSyntax)
 afplFilterSyntax
   = lens _afplFilterSyntax
       (\ s a -> s{_afplFilterSyntax = a})

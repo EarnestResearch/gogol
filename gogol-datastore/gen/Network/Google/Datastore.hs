@@ -46,6 +46,12 @@ module Network.Google.Datastore
     -- ** datastore.projects.import
     , module Network.Google.Resource.Datastore.Projects.Import
 
+    -- ** datastore.projects.indexes.create
+    , module Network.Google.Resource.Datastore.Projects.Indexes.Create
+
+    -- ** datastore.projects.indexes.delete
+    , module Network.Google.Resource.Datastore.Projects.Indexes.Delete
+
     -- ** datastore.projects.indexes.get
     , module Network.Google.Resource.Datastore.Projects.Indexes.Get
 
@@ -590,6 +596,8 @@ import Network.Google.Resource.Datastore.Projects.BeginTransaction
 import Network.Google.Resource.Datastore.Projects.Commit
 import Network.Google.Resource.Datastore.Projects.Export
 import Network.Google.Resource.Datastore.Projects.Import
+import Network.Google.Resource.Datastore.Projects.Indexes.Create
+import Network.Google.Resource.Datastore.Projects.Indexes.Delete
 import Network.Google.Resource.Datastore.Projects.Indexes.Get
 import Network.Google.Resource.Datastore.Projects.Indexes.List
 import Network.Google.Resource.Datastore.Projects.Lookup
@@ -609,6 +617,8 @@ TODO
 type DatastoreAPI =
      ProjectsIndexesListResource :<|>
        ProjectsIndexesGetResource
+       :<|> ProjectsIndexesCreateResource
+       :<|> ProjectsIndexesDeleteResource
        :<|> ProjectsOperationsListResource
        :<|> ProjectsOperationsGetResource
        :<|> ProjectsOperationsCancelResource

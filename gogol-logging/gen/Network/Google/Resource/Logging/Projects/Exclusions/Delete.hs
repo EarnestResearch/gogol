@@ -22,7 +22,7 @@
 --
 -- Deletes an exclusion.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.projects.exclusions.delete@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.projects.exclusions.delete@.
 module Network.Google.Resource.Logging.Projects.Exclusions.Delete
     (
     -- * REST Resource

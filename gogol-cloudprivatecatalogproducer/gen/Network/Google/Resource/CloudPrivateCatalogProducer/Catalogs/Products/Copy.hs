@@ -22,7 +22,7 @@
 --
 -- Copies a Product under another Catalog.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.copy@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.copy@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Copy
     (
     -- * REST Resource

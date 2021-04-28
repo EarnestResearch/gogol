@@ -22,10 +22,14 @@ module Network.Google.PlayCustomApp.Types
     -- * OAuth Scopes
     , androidPublisherScope
 
+    -- * Xgafv
+    , Xgafv (..)
+
     -- * CustomApp
     , CustomApp
     , customApp
     , caLanguageCode
+    , caPackageName
     , caTitle
     ) where
 
@@ -37,7 +41,7 @@ import Network.Google.Prelude
 playCustomAppService :: ServiceConfig
 playCustomAppService
   = defaultService (ServiceId "playcustomapp:v1")
-      "www.googleapis.com"
+      "playcustomapp.googleapis.com"
 
 -- | View and manage your Google Play Developer account
 androidPublisherScope :: Proxy '["https://www.googleapis.com/auth/androidpublisher"]

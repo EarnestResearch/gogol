@@ -120,8 +120,8 @@ projectsScanConfigsList pPsclParent_ =
     }
 
 
--- | The name of the project to list scan configurations for in the form of
--- \`projects\/[PROJECT_ID]\`.
+-- | Required. The name of the project to list scan configurations for in the
+-- form of \`projects\/[PROJECT_ID]\`.
 psclParent :: Lens' ProjectsScanConfigsList Text
 psclParent
   = lens _psclParent (\ s a -> s{_psclParent = a})
@@ -149,7 +149,7 @@ psclUploadType
   = lens _psclUploadType
       (\ s a -> s{_psclUploadType = a})
 
--- | The filter expression.
+-- | Required. The filter expression.
 psclFilter :: Lens' ProjectsScanConfigsList (Maybe Text)
 psclFilter
   = lens _psclFilter (\ s a -> s{_psclFilter = a})

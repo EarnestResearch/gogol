@@ -25,8 +25,11 @@
 -- Operation will complete when entire workflow is finished.The running
 -- workflow can be aborted via operations.cancel. This will cause any
 -- inflight jobs to be cancelled and workflow-owned clusters to be
--- deleted.The Operation.metadata will be WorkflowMetadata.On successful
--- completion, Operation.response will be Empty.
+-- deleted.The Operation.metadata will be WorkflowMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rpc\/google.cloud.dataproc.v1#workflowmetadata).
+-- Also see Using WorkflowMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/concepts\/workflows\/debugging#using_workflowmetadata).On
+-- successful completion, Operation.response will be Empty.
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.regions.workflowTemplates.instantiate@.
 module Network.Google.Resource.Dataproc.Projects.Regions.WorkflowTemplates.Instantiate
@@ -71,8 +74,11 @@ type ProjectsRegionsWorkflowTemplatesInstantiateResource
 -- Operation will complete when entire workflow is finished.The running
 -- workflow can be aborted via operations.cancel. This will cause any
 -- inflight jobs to be cancelled and workflow-owned clusters to be
--- deleted.The Operation.metadata will be WorkflowMetadata.On successful
--- completion, Operation.response will be Empty.
+-- deleted.The Operation.metadata will be WorkflowMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rpc\/google.cloud.dataproc.v1#workflowmetadata).
+-- Also see Using WorkflowMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/concepts\/workflows\/debugging#using_workflowmetadata).On
+-- successful completion, Operation.response will be Empty.
 --
 -- /See:/ 'projectsRegionsWorkflowTemplatesInstantiate' smart constructor.
 data ProjectsRegionsWorkflowTemplatesInstantiate =
@@ -149,9 +155,14 @@ prwtiPayload :: Lens' ProjectsRegionsWorkflowTemplatesInstantiate InstantiateWor
 prwtiPayload
   = lens _prwtiPayload (\ s a -> s{_prwtiPayload = a})
 
--- | Required. The \"resource name\" of the workflow template, as described
--- in https:\/\/cloud.google.com\/apis\/design\/resource_names of the form
+-- | Required. The resource name of the workflow template, as described in
+-- https:\/\/cloud.google.com\/apis\/design\/resource_names. For
+-- projects.regions.workflowTemplates.instantiate, the resource name of the
+-- template has the following format:
 -- projects\/{project_id}\/regions\/{region}\/workflowTemplates\/{template_id}
+-- For projects.locations.workflowTemplates.instantiate, the resource name
+-- of the template has the following format:
+-- projects\/{project_id}\/locations\/{location}\/workflowTemplates\/{template_id}
 prwtiName :: Lens' ProjectsRegionsWorkflowTemplatesInstantiate Text
 prwtiName
   = lens _prwtiName (\ s a -> s{_prwtiName = a})

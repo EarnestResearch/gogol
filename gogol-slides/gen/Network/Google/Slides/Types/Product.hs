@@ -20,6 +20,86 @@ module Network.Google.Slides.Types.Product where
 import Network.Google.Prelude
 import Network.Google.Slides.Types.Sum
 
+-- | The autofit properties of a Shape.
+--
+-- /See:/ 'autofit' smart constructor.
+data Autofit =
+  Autofit'
+    { _aFontScale :: !(Maybe (Textual Double))
+    , _aLineSpacingReduction :: !(Maybe (Textual Double))
+    , _aAutofitType :: !(Maybe AutofitAutofitType)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Autofit' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'aFontScale'
+--
+-- * 'aLineSpacingReduction'
+--
+-- * 'aAutofitType'
+autofit
+    :: Autofit
+autofit =
+  Autofit'
+    { _aFontScale = Nothing
+    , _aLineSpacingReduction = Nothing
+    , _aAutofitType = Nothing
+    }
+
+
+-- | The font scale applied to the shape. For shapes with autofit_type NONE
+-- or SHAPE_AUTOFIT, this value is the default value of 1. For
+-- TEXT_AUTOFIT, this value multiplied by the font_size gives the font size
+-- that is rendered in the editor. This property is read-only.
+aFontScale :: Lens' Autofit (Maybe Double)
+aFontScale
+  = lens _aFontScale (\ s a -> s{_aFontScale = a}) .
+      mapping _Coerce
+
+-- | The line spacing reduction applied to the shape. For shapes with
+-- autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of
+-- 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives
+-- the line spacing that is rendered in the editor. This property is
+-- read-only.
+aLineSpacingReduction :: Lens' Autofit (Maybe Double)
+aLineSpacingReduction
+  = lens _aLineSpacingReduction
+      (\ s a -> s{_aLineSpacingReduction = a})
+      . mapping _Coerce
+
+-- | The autofit type of the shape. If the autofit type is
+-- AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent
+-- placeholder if it exists. The field is automatically set to NONE if a
+-- request is made that might affect text fitting within its bounding text
+-- box. In this case the font_scale is applied to the font_size and the
+-- line_spacing_reduction is applied to the line_spacing. Both properties
+-- are also reset to default values.
+aAutofitType :: Lens' Autofit (Maybe AutofitAutofitType)
+aAutofitType
+  = lens _aAutofitType (\ s a -> s{_aAutofitType = a})
+
+instance FromJSON Autofit where
+        parseJSON
+          = withObject "Autofit"
+              (\ o ->
+                 Autofit' <$>
+                   (o .:? "fontScale") <*>
+                     (o .:? "lineSpacingReduction")
+                     <*> (o .:? "autofitType"))
+
+instance ToJSON Autofit where
+        toJSON Autofit'{..}
+          = object
+              (catMaybes
+                 [("fontScale" .=) <$> _aFontScale,
+                  ("lineSpacingReduction" .=) <$>
+                    _aLineSpacingReduction,
+                  ("autofitType" .=) <$> _aAutofitType])
+
 -- | A TextElement kind that represents the beginning of a new paragraph.
 --
 -- /See:/ 'paragraphMarker' smart constructor.
@@ -828,12 +908,12 @@ rirImageObjectId
   = lens _rirImageObjectId
       (\ s a -> s{_rirImageObjectId = a})
 
--- | The URL of the new image. The image is fetched once at insertion time
--- and a copy is stored for display inside the presentation. Images must be
--- less than 50MB in size, cannot exceed 25 megapixels, and must be in one
--- of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in
--- length. The URL itself is saved with the image, and exposed via the
--- Image.source_url field.
+-- | The image URL. The image is fetched once at insertion time and a copy is
+-- stored for display inside the presentation. Images must be less than
+-- 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG,
+-- JPEG, or GIF format. The provided URL can be at most 2 kB in length. The
+-- URL itself is saved with the image, and exposed via the Image.source_url
+-- field.
 rirURL :: Lens' ReplaceImageRequest (Maybe Text)
 rirURL = lens _rirURL (\ s a -> s{_rirURL = a})
 
@@ -3629,8 +3709,8 @@ preSlides
 -- a \`SLIDE_IMAGE\` placeholder shape contains the slide thumbnail, and a
 -- \`BODY\` placeholder shape contains the speaker notes. - The notes
 -- master page properties define the common page properties inherited by
--- all notes pages. - Any other shapes on the notes master will appear on
--- all notes pages. The notes master is read-only.
+-- all notes pages. - Any other shapes on the notes master appear on all
+-- notes pages. The notes master is read-only.
 preNotesMaster :: Lens' Presentation (Maybe Page)
 preNotesMaster
   = lens _preNotesMaster
@@ -3642,8 +3722,8 @@ preNotesMaster
 -- default text styles and shape properties of all placeholder shapes on
 -- pages that use that master. - The master page properties define the
 -- common page properties inherited by its layouts. - Any other shapes on
--- the master slide will appear on all slides using that master, regardless
--- of their layout.
+-- the master slide appear on all slides using that master, regardless of
+-- their layout.
 preMasters :: Lens' Presentation [Page]
 preMasters
   = lens _preMasters (\ s a -> s{_preMasters = a}) .
@@ -6040,7 +6120,12 @@ ppPageBackgRoundFill
 
 -- | The color scheme of the page. If unset, the color scheme is inherited
 -- from a parent page. If the page has no parent, the color scheme uses a
--- default Slides color scheme. This field is read-only.
+-- default Slides color scheme, matching the defaults in the Slides editor.
+-- Only the concrete colors of the first 12 ThemeColorTypes are editable.
+-- In addition, only the color scheme on \`Master\` pages can be updated.
+-- To update the field, a color scheme containing mappings from all the
+-- first 12 ThemeColorTypes to their concrete colors must be provided.
+-- Colors for the remaining ThemeColorTypes will be ignored.
 ppColorScheme :: Lens' PageProperties (Maybe ColorScheme)
 ppColorScheme
   = lens _ppColorScheme
@@ -6505,8 +6590,8 @@ raswirImageURL
   = lens _raswirImageURL
       (\ s a -> s{_raswirImageURL = a})
 
--- | The replace method. __Deprecated__: use \`image_replace_method\`
--- instead. If you specify both a \`replace_method\` and an
+-- | The replace method. *Deprecated*: use \`image_replace_method\` instead.
+-- If you specify both a \`replace_method\` and an
 -- \`image_replace_method\`, the \`image_replace_method\` takes precedence.
 raswirReplaceMethod :: Lens' ReplaceAllShapesWithImageRequest (Maybe ReplaceAllShapesWithImageRequestReplaceMethod)
 raswirReplaceMethod
@@ -6665,7 +6750,7 @@ peShape :: Lens' PageElement (Maybe Shape)
 peShape = lens _peShape (\ s a -> s{_peShape = a})
 
 -- | The title of the page element. Combined with description to display alt
--- text.
+-- text. The field is not supported for Group elements.
 peTitle :: Lens' PageElement (Maybe Text)
 peTitle = lens _peTitle (\ s a -> s{_peTitle = a})
 
@@ -6674,7 +6759,7 @@ peTable :: Lens' PageElement (Maybe Table)
 peTable = lens _peTable (\ s a -> s{_peTable = a})
 
 -- | The description of the page element. Combined with title to display alt
--- text.
+-- text. The field is not supported for Group elements.
 peDescription :: Lens' PageElement (Maybe Text)
 peDescription
   = lens _peDescription
@@ -7778,7 +7863,7 @@ clrlObjectId :: Lens' CreateLineRequest (Maybe Text)
 clrlObjectId
   = lens _clrlObjectId (\ s a -> s{_clrlObjectId = a})
 
--- | The category of the line to be created. __Deprecated__: use \`category\`
+-- | The category of the line to be created. *Deprecated*: use \`category\`
 -- instead. The exact line type created is determined based on the category
 -- and how it\'s routed to connect to other page elements. If you specify
 -- both a \`category\` and a \`line_category\`, the \`category\` takes
@@ -8180,12 +8265,14 @@ instance ToJSON UpdateLineCategoryRequest where
 -- determined by the placeholder field, then these properties may be
 -- inherited from a parent placeholder shape. Determining the rendered
 -- value of the property depends on the corresponding property_state field
--- value.
+-- value. Any text autofit settings on the shape are automatically
+-- deactivated by requests that can impact how text fits in the shape.
 --
 -- /See:/ 'shapeProperties' smart constructor.
 data ShapeProperties =
   ShapeProperties'
-    { _spLink :: !(Maybe Link)
+    { _spAutofit :: !(Maybe Autofit)
+    , _spLink :: !(Maybe Link)
     , _spShadow :: !(Maybe Shadow)
     , _spOutline :: !(Maybe Outline)
     , _spContentAlignment :: !(Maybe ShapePropertiesContentAlignment)
@@ -8197,6 +8284,8 @@ data ShapeProperties =
 -- | Creates a value of 'ShapeProperties' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'spAutofit'
 --
 -- * 'spLink'
 --
@@ -8211,13 +8300,20 @@ shapeProperties
     :: ShapeProperties
 shapeProperties =
   ShapeProperties'
-    { _spLink = Nothing
+    { _spAutofit = Nothing
+    , _spLink = Nothing
     , _spShadow = Nothing
     , _spOutline = Nothing
     , _spContentAlignment = Nothing
     , _spShapeBackgRoundFill = Nothing
     }
 
+
+-- | The autofit properties of the shape. This property is only set for
+-- shapes that allow text.
+spAutofit :: Lens' ShapeProperties (Maybe Autofit)
+spAutofit
+  = lens _spAutofit (\ s a -> s{_spAutofit = a})
 
 -- | The hyperlink destination of the shape. If unset, there is no link.
 -- Links are not inherited from parent placeholders.
@@ -8262,8 +8358,9 @@ instance FromJSON ShapeProperties where
           = withObject "ShapeProperties"
               (\ o ->
                  ShapeProperties' <$>
-                   (o .:? "link") <*> (o .:? "shadow") <*>
-                     (o .:? "outline")
+                   (o .:? "autofit") <*> (o .:? "link") <*>
+                     (o .:? "shadow")
+                     <*> (o .:? "outline")
                      <*> (o .:? "contentAlignment")
                      <*> (o .:? "shapeBackgroundFill"))
 
@@ -8271,8 +8368,8 @@ instance ToJSON ShapeProperties where
         toJSON ShapeProperties'{..}
           = object
               (catMaybes
-                 [("link" .=) <$> _spLink,
-                  ("shadow" .=) <$> _spShadow,
+                 [("autofit" .=) <$> _spAutofit,
+                  ("link" .=) <$> _spLink, ("shadow" .=) <$> _spShadow,
                   ("outline" .=) <$> _spOutline,
                   ("contentAlignment" .=) <$> _spContentAlignment,
                   ("shapeBackgroundFill" .=) <$>

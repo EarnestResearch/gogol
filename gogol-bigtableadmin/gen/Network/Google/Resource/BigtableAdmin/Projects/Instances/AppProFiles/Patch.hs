@@ -130,8 +130,8 @@ piapfpUploadProtocol
   = lens _piapfpUploadProtocol
       (\ s a -> s{_piapfpUploadProtocol = a})
 
--- | The subset of app profile fields which should be replaced. If unset, all
--- fields will be replaced.
+-- | Required. The subset of app profile fields which should be replaced. If
+-- unset, all fields will be replaced.
 piapfpUpdateMask :: Lens' ProjectsInstancesAppProFilesPatch (Maybe GFieldMask)
 piapfpUpdateMask
   = lens _piapfpUpdateMask
@@ -161,8 +161,8 @@ piapfpIgnoreWarnings
   = lens _piapfpIgnoreWarnings
       (\ s a -> s{_piapfpIgnoreWarnings = a})
 
--- | (\`OutputOnly\`) The unique name of the app profile. Values are of the
--- form \`projects\/\/instances\/\/appProfiles\/_a-zA-Z0-9*\`.
+-- | The unique name of the app profile. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/appProfiles\/_a-zA-Z0-9*\`.
 piapfpName :: Lens' ProjectsInstancesAppProFilesPatch Text
 piapfpName
   = lens _piapfpName (\ s a -> s{_piapfpName = a})

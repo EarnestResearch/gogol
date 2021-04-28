@@ -26,7 +26,7 @@
 -- creates a new Icon instance, associates the newly created Icon with the
 -- given Product and deletes the old icon.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.icons.upload@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.icons.upload@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Icons.Upload
     (
     -- * REST Resource

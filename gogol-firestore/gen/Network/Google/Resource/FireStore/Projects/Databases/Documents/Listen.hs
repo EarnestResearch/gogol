@@ -120,7 +120,7 @@ pddlUploadProtocol
   = lens _pddlUploadProtocol
       (\ s a -> s{_pddlUploadProtocol = a})
 
--- | The database name. In the format:
+-- | Required. The database name. In the format:
 -- \`projects\/{project_id}\/databases\/{database_id}\`.
 pddlDatabase :: Lens' ProjectsDatabasesDocumentsListen Text
 pddlDatabase

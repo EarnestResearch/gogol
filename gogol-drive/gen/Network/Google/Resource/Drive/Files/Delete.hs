@@ -37,6 +37,7 @@ module Network.Google.Resource.Drive.Files.Delete
 
     -- * Request Lenses
     , fdSupportsAllDrives
+    , fdEnforceSingleParent
     , fdFileId
     , fdSupportsTeamDrives
     ) where
@@ -52,8 +53,9 @@ type FilesDeleteResource =
          "files" :>
            Capture "fileId" Text :>
              QueryParam "supportsAllDrives" Bool :>
-               QueryParam "supportsTeamDrives" Bool :>
-                 QueryParam "alt" AltJSON :> Delete '[JSON] ()
+               QueryParam "enforceSingleParent" Bool :>
+                 QueryParam "supportsTeamDrives" Bool :>
+                   QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Permanently deletes a file owned by the user without moving it to the
 -- trash. If the file belongs to a shared drive the user must be an
@@ -64,6 +66,7 @@ type FilesDeleteResource =
 data FilesDelete =
   FilesDelete'
     { _fdSupportsAllDrives :: !Bool
+    , _fdEnforceSingleParent :: !Bool
     , _fdFileId :: !Text
     , _fdSupportsTeamDrives :: !Bool
     }
@@ -76,6 +79,8 @@ data FilesDelete =
 --
 -- * 'fdSupportsAllDrives'
 --
+-- * 'fdEnforceSingleParent'
+--
 -- * 'fdFileId'
 --
 -- * 'fdSupportsTeamDrives'
@@ -85,6 +90,7 @@ filesDelete
 filesDelete pFdFileId_ =
   FilesDelete'
     { _fdSupportsAllDrives = False
+    , _fdEnforceSingleParent = False
     , _fdFileId = pFdFileId_
     , _fdSupportsTeamDrives = False
     }
@@ -96,6 +102,14 @@ fdSupportsAllDrives :: Lens' FilesDelete Bool
 fdSupportsAllDrives
   = lens _fdSupportsAllDrives
       (\ s a -> s{_fdSupportsAllDrives = a})
+
+-- | Deprecated. If an item is not in a shared drive and its last parent is
+-- deleted but the item itself is not, the item will be placed under its
+-- owner\'s root.
+fdEnforceSingleParent :: Lens' FilesDelete Bool
+fdEnforceSingleParent
+  = lens _fdEnforceSingleParent
+      (\ s a -> s{_fdEnforceSingleParent = a})
 
 -- | The ID of the file.
 fdFileId :: Lens' FilesDelete Text
@@ -115,6 +129,7 @@ instance GoogleRequest FilesDelete where
                "https://www.googleapis.com/auth/drive.file"]
         requestClient FilesDelete'{..}
           = go _fdFileId (Just _fdSupportsAllDrives)
+              (Just _fdEnforceSingleParent)
               (Just _fdSupportsTeamDrives)
               (Just AltJSON)
               driveService

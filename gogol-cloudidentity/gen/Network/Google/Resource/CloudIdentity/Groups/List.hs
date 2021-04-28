@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- List groups within a customer or a domain.
+-- Lists the \`Group\`s under a customer or namespace.
 --
 -- /See:/ <https://cloud.google.com/identity/ Cloud Identity API Reference> for @cloudidentity.groups.list@.
 module Network.Google.Resource.CloudIdentity.Groups.List
@@ -57,14 +57,14 @@ type GroupsListResource =
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParam "view" Text :>
+                   QueryParam "view" GroupsListView :>
                      QueryParam "pageToken" Text :>
                        QueryParam "pageSize" (Textual Int32) :>
                          QueryParam "callback" Text :>
                            QueryParam "alt" AltJSON :>
                              Get '[JSON] ListGroupsResponse
 
--- | List groups within a customer or a domain.
+-- | Lists the \`Group\`s under a customer or namespace.
 --
 -- /See:/ 'groupsList' smart constructor.
 data GroupsList =
@@ -74,7 +74,7 @@ data GroupsList =
     , _gllUploadProtocol :: !(Maybe Text)
     , _gllAccessToken :: !(Maybe Text)
     , _gllUploadType :: !(Maybe Text)
-    , _gllView :: !(Maybe Text)
+    , _gllView :: !(Maybe GroupsListView)
     , _gllPageToken :: !(Maybe Text)
     , _gllPageSize :: !(Maybe (Textual Int32))
     , _gllCallback :: !(Maybe Text)
@@ -119,8 +119,10 @@ groupsList =
     }
 
 
--- | \`Required\`. May be made Optional in the future. Customer ID to list
--- all groups from.
+-- | Required. The parent resource under which to list all \`Group\`s. Must
+-- be of the form \`identitysources\/{identity_source_id}\` for external-
+-- identity-mapped groups or \`customers\/{customer_id}\` for Google
+-- Groups.
 gllParent :: Lens' GroupsList (Maybe Text)
 gllParent
   = lens _gllParent (\ s a -> s{_gllParent = a})
@@ -147,17 +149,24 @@ gllUploadType
   = lens _gllUploadType
       (\ s a -> s{_gllUploadType = a})
 
--- | Group resource view to be returned. Defaults to [View.BASIC]().
-gllView :: Lens' GroupsList (Maybe Text)
+-- | The level of detail to be returned. If unspecified, defaults to
+-- \`View.BASIC\`.
+gllView :: Lens' GroupsList (Maybe GroupsListView)
 gllView = lens _gllView (\ s a -> s{_gllView = a})
 
--- | The next_page_token value returned from a previous list request, if any.
+-- | The \`next_page_token\` value returned from a previous list request, if
+-- any.
 gllPageToken :: Lens' GroupsList (Maybe Text)
 gllPageToken
   = lens _gllPageToken (\ s a -> s{_gllPageToken = a})
 
--- | The default page size is 200 (max 1000) for the BASIC view, and 50 (max
--- 500) for the FULL view.
+-- | The maximum number of results to return. Note that the number of results
+-- returned may be less than this value even if there are more available
+-- results. To fetch all results, clients must continue calling this method
+-- repeatedly until the response no longer contains a \`next_page_token\`.
+-- If unspecified, defaults to 200 for \`View.BASIC\` and to 50 for
+-- \`View.FULL\`. Must not be greater than 1000 for \`View.BASIC\` or 500
+-- for \`View.FULL\`.
 gllPageSize :: Lens' GroupsList (Maybe Int32)
 gllPageSize
   = lens _gllPageSize (\ s a -> s{_gllPageSize = a}) .
@@ -172,7 +181,8 @@ instance GoogleRequest GroupsList where
         type Rs GroupsList = ListGroupsResponse
         type Scopes GroupsList =
              '["https://www.googleapis.com/auth/cloud-identity.groups",
-               "https://www.googleapis.com/auth/cloud-identity.groups.readonly"]
+               "https://www.googleapis.com/auth/cloud-identity.groups.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient GroupsList'{..}
           = go _gllParent _gllXgafv _gllUploadProtocol
               _gllAccessToken

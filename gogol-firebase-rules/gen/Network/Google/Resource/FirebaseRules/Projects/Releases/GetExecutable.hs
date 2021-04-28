@@ -54,7 +54,9 @@ type ProjectsReleasesGetExecutableResource =
            QueryParam "upload_protocol" Text :>
              QueryParam "access_token" Text :>
                QueryParam "uploadType" Text :>
-                 QueryParam "executableVersion" Text :>
+                 QueryParam "executableVersion"
+                   ProjectsReleasesGetExecutableExecutableVersion
+                   :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :>
                        Get '[JSON] GetReleaseExecutableResponse
@@ -69,7 +71,7 @@ data ProjectsReleasesGetExecutable =
     , _prgeAccessToken :: !(Maybe Text)
     , _prgeUploadType :: !(Maybe Text)
     , _prgeName :: !Text
-    , _prgeExecutableVersion :: !(Maybe Text)
+    , _prgeExecutableVersion :: !(Maybe ProjectsReleasesGetExecutableExecutableVersion)
     , _prgeCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -137,7 +139,7 @@ prgeName = lens _prgeName (\ s a -> s{_prgeName = a})
 
 -- | The requested runtime executable version. Defaults to
 -- FIREBASE_RULES_EXECUTABLE_V1.
-prgeExecutableVersion :: Lens' ProjectsReleasesGetExecutable (Maybe Text)
+prgeExecutableVersion :: Lens' ProjectsReleasesGetExecutable (Maybe ProjectsReleasesGetExecutableExecutableVersion)
 prgeExecutableVersion
   = lens _prgeExecutableVersion
       (\ s a -> s{_prgeExecutableVersion = a})

@@ -122,8 +122,8 @@ pidUploadType
   = lens _pidUploadType
       (\ s a -> s{_pidUploadType = a})
 
--- | The unique name of the instance to be deleted. Values are of the form
--- \`projects\/\/instances\/\`.
+-- | Required. The unique name of the instance to be deleted. Values are of
+-- the form \`projects\/{project}\/instances\/{instance}\`.
 pidName :: Lens' ProjectsInstancesDelete Text
 pidName = lens _pidName (\ s a -> s{_pidName = a})
 

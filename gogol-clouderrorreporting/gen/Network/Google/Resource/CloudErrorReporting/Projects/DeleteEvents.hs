@@ -22,7 +22,7 @@
 --
 -- Deletes all error events of a given project.
 --
--- /See:/ <https://cloud.google.com/error-reporting/ Stackdriver Error Reporting API Reference> for @clouderrorreporting.projects.deleteEvents@.
+-- /See:/ <https://cloud.google.com/error-reporting/ Error Reporting API Reference> for @clouderrorreporting.projects.deleteEvents@.
 module Network.Google.Resource.CloudErrorReporting.Projects.DeleteEvents
     (
     -- * REST Resource
@@ -124,8 +124,9 @@ pdeUploadType
   = lens _pdeUploadType
       (\ s a -> s{_pdeUploadType = a})
 
--- | [Required] The resource name of the Google Cloud Platform project.
--- Written as \`projects\/\` plus the [Google Cloud Platform project
+-- | Required. The resource name of the Google Cloud Platform project.
+-- Written as \`projects\/{projectID}\`, where \`{projectID}\` is the
+-- [Google Cloud Platform project
 -- ID](https:\/\/support.google.com\/cloud\/answer\/6158840). Example:
 -- \`projects\/my-project-123\`.
 pdeProjectName :: Lens' ProjectsDeleteEvents Text

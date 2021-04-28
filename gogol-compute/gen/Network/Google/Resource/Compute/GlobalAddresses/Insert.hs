@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates an address resource in the specified project using the data
+-- Creates an address resource in the specified project by using the data
 -- included in the request.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.globalAddresses.insert@.
@@ -55,7 +55,7 @@ type GlobalAddressesInsertResource =
                    QueryParam "alt" AltJSON :>
                      ReqBody '[JSON] Address :> Post '[JSON] Operation
 
--- | Creates an address resource in the specified project using the data
+-- | Creates an address resource in the specified project by using the data
 -- included in the request.
 --
 -- /See:/ 'globalAddressesInsert' smart constructor.

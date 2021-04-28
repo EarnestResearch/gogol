@@ -116,9 +116,8 @@ analyzeCommentResponse =
     }
 
 
--- | Contains the language as detected from the text content. If no language
--- was specified in the request, the first (the most likely) language is
--- used to select an appropriate model. Sorted in order of likelihood.
+-- | Contains the languages detected from the text content, sorted in order
+-- of likelihood.
 acrDetectedLanguages :: Lens' AnalyzeCommentResponse [Text]
 acrDetectedLanguages
   = lens _acrDetectedLanguages
@@ -132,9 +131,11 @@ acrClientToken
   = lens _acrClientToken
       (\ s a -> s{_acrClientToken = a})
 
--- | The language(s) requested by the client, as specified in the request. If
--- the request did not specify any language, this will be empty and the
--- detected_languages field will be populated.
+-- | The language(s) used by CommentAnalyzer service to choose which Model to
+-- use when analyzing the comment. Might better be called
+-- \"effective_languages\". The logic used to make the choice is as
+-- follows: if !Request.languages.empty() effective_languages =
+-- Request.languages else effective_languages = detected_languages[0]
 acrLanguages :: Lens' AnalyzeCommentResponse [Text]
 acrLanguages
   = lens _acrLanguages (\ s a -> s{_acrLanguages = a})
@@ -647,13 +648,9 @@ sClientToken :: Lens' SuggestCommentScoreRequest (Maybe Text)
 sClientToken
   = lens _sClientToken (\ s a -> s{_sClientToken = a})
 
--- | The language(s) of the comment and context (if none are specified, the
--- language is automatically detected). If multiple languages are
--- specified, the text is checked in all of them that are supported. Both
--- ISO and BCP-47 language codes are accepted. Current Language
--- Restrictions: * Only English text (\"en\") is supported. If none of the
--- languages specified by the caller are supported, an \`UNIMPLEMENTED\`
--- error is returned.
+-- | The language(s) of the comment and context. If none are specified, we
+-- attempt to automatically detect the language. Both ISO and BCP-47
+-- language codes are accepted.
 sLanguages :: Lens' SuggestCommentScoreRequest [Text]
 sLanguages
   = lens _sLanguages (\ s a -> s{_sLanguages = a}) .
@@ -723,7 +720,7 @@ instance ToJSON SuggestCommentScoreRequest where
                   ("comment" .=) <$> _sComment,
                   ("communityId" .=) <$> _sCommUnityId])
 
--- | The comment analysis request message.
+-- | The comment analysis request message. LINT.IfChange
 --
 -- /See:/ 'analyzeCommentRequest' smart constructor.
 data AnalyzeCommentRequest =
@@ -801,13 +798,13 @@ aDoNotStore :: Lens' AnalyzeCommentRequest (Maybe Bool)
 aDoNotStore
   = lens _aDoNotStore (\ s a -> s{_aDoNotStore = a})
 
--- | The language(s) of the comment and context (if none are specified, the
--- language is automatically detected). If multiple languages are
--- specified, the text is checked in all of them that are supported. Both
--- ISO and BCP-47 language codes are accepted. Current Language
--- Restrictions: * Only English text (\"en\") is supported. If none of the
--- languages specified by the caller are supported, an \`UNIMPLEMENTED\`
--- error is returned.
+-- | The language(s) of the comment and context. If none are specified, we
+-- attempt to automatically detect the language. Specifying multiple
+-- languages means the text contains multiple lanugages. Both ISO and
+-- BCP-47 language codes are accepted. The server returns an error if no
+-- language was specified and language detection fails. The server also
+-- returns an error if the languages (either specified by the caller, or
+-- auto-detected) are not *all* supported by the service.
 aLanguages :: Lens' AnalyzeCommentRequest [Text]
 aLanguages
   = lens _aLanguages (\ s a -> s{_aLanguages = a}) .
@@ -816,14 +813,12 @@ aLanguages
 
 -- | Specification of requested attributes. The AttributeParameters serve as
 -- configuration for each associated attribute. The map keys are attribute
--- names. The following attributes are available: \"ATTACK_ON_AUTHOR\" -
--- Attack on author of original article or post. \"ATTACK_ON_COMMENTER\" -
--- Attack on fellow commenter. \"ATTACK_ON_PUBLISHER\" - Attack on
--- publisher of article\/post. \"INCOHERENT\" - Difficult to understand,
--- nonsensical. \"INFLAMMATORY\" - Intending to provoke or inflame.
--- \"OBSCENE\" - Obscene, such as cursing. \"OFF_TOPIC\" - Not related to
--- the original topic. \"SPAM\" - Commercial\/advertising spam content.
--- \"UNSUBSTANTIAL\" - Trivial.
+-- names. The available attributes may be different on each RFE
+-- installation, and can be seen by calling ListAttributes (see above). For
+-- the prod installation, known as Perspective API, at
+-- blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see
+-- go\/checker-models (internal) and
+-- https:\/\/github.com\/conversationai\/perspectiveapi\/blob\/master\/2-api\/models.md#all-attribute-types.
 aRequestedAttributes :: Lens' AnalyzeCommentRequest (Maybe AnalyzeCommentRequestRequestedAttributes)
 aRequestedAttributes
   = lens _aRequestedAttributes
@@ -936,14 +931,12 @@ instance ToJSON
 
 -- | Specification of requested attributes. The AttributeParameters serve as
 -- configuration for each associated attribute. The map keys are attribute
--- names. The following attributes are available: \"ATTACK_ON_AUTHOR\" -
--- Attack on author of original article or post. \"ATTACK_ON_COMMENTER\" -
--- Attack on fellow commenter. \"ATTACK_ON_PUBLISHER\" - Attack on
--- publisher of article\/post. \"INCOHERENT\" - Difficult to understand,
--- nonsensical. \"INFLAMMATORY\" - Intending to provoke or inflame.
--- \"OBSCENE\" - Obscene, such as cursing. \"OFF_TOPIC\" - Not related to
--- the original topic. \"SPAM\" - Commercial\/advertising spam content.
--- \"UNSUBSTANTIAL\" - Trivial.
+-- names. The available attributes may be different on each RFE
+-- installation, and can be seen by calling ListAttributes (see above). For
+-- the prod installation, known as Perspective API, at
+-- blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see
+-- go\/checker-models (internal) and
+-- https:\/\/github.com\/conversationai\/perspectiveapi\/blob\/master\/2-api\/models.md#all-attribute-types.
 --
 -- /See:/ 'analyzeCommentRequestRequestedAttributes' smart constructor.
 newtype AnalyzeCommentRequestRequestedAttributes =

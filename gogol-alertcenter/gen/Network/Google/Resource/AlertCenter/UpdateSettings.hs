@@ -22,7 +22,7 @@
 --
 -- Updates the customer-level settings.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.updateSettings@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.updateSettings@.
 module Network.Google.Resource.AlertCenter.UpdateSettings
     (
     -- * REST Resource
@@ -57,7 +57,8 @@ type UpdateSettingsResource =
                  QueryParam "customerId" Text :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :>
-                       ReqBody '[JSON] Settings :> Patch '[JSON] Settings
+                       ReqBody '[JSON] GoogleAppsAlertcenterV1beta1Settings
+                         :> Patch '[JSON] GoogleAppsAlertcenterV1beta1Settings
 
 -- | Updates the customer-level settings.
 --
@@ -68,7 +69,7 @@ data UpdateSettings =
     , _usUploadProtocol :: !(Maybe Text)
     , _usAccessToken :: !(Maybe Text)
     , _usUploadType :: !(Maybe Text)
-    , _usPayload :: !Settings
+    , _usPayload :: !GoogleAppsAlertcenterV1beta1Settings
     , _usCustomerId :: !(Maybe Text)
     , _usCallback :: !(Maybe Text)
     }
@@ -93,7 +94,7 @@ data UpdateSettings =
 --
 -- * 'usCallback'
 updateSettings
-    :: Settings -- ^ 'usPayload'
+    :: GoogleAppsAlertcenterV1beta1Settings -- ^ 'usPayload'
     -> UpdateSettings
 updateSettings pUsPayload_ =
   UpdateSettings'
@@ -129,13 +130,13 @@ usUploadType
   = lens _usUploadType (\ s a -> s{_usUploadType = a})
 
 -- | Multipart request metadata.
-usPayload :: Lens' UpdateSettings Settings
+usPayload :: Lens' UpdateSettings GoogleAppsAlertcenterV1beta1Settings
 usPayload
   = lens _usPayload (\ s a -> s{_usPayload = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert settings are associated with. Inferred from the
--- caller identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert settings are associated with. Inferred
+-- from the caller identity if not provided.
 usCustomerId :: Lens' UpdateSettings (Maybe Text)
 usCustomerId
   = lens _usCustomerId (\ s a -> s{_usCustomerId = a})
@@ -146,7 +147,8 @@ usCallback
   = lens _usCallback (\ s a -> s{_usCallback = a})
 
 instance GoogleRequest UpdateSettings where
-        type Rs UpdateSettings = Settings
+        type Rs UpdateSettings =
+             GoogleAppsAlertcenterV1beta1Settings
         type Scopes UpdateSettings =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient UpdateSettings'{..}

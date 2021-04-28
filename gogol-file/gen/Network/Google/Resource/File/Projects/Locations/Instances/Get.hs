@@ -123,7 +123,7 @@ pligUploadType
   = lens _pligUploadType
       (\ s a -> s{_pligUploadType = a})
 
--- | The instance resource name, in the format
+-- | Required. The instance resource name, in the format
 -- projects\/{project_id}\/locations\/{location}\/instances\/{instance_id}.
 pligName :: Lens' ProjectsLocationsInstancesGet Text
 pligName = lens _pligName (\ s a -> s{_pligName = a})

@@ -223,7 +223,7 @@ cwCourseId
 -- | Identifiers of students with access to the coursework. This field is set
 -- only if \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`. If the
 -- \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`, then only students
--- specified in this field will be assigned the coursework.
+-- specified in this field are assigned the coursework.
 cwIndividualStudentsOptions :: Lens' CourseWork (Maybe IndividualStudentsOptions)
 cwIndividualStudentsOptions
   = lens _cwIndividualStudentsOptions
@@ -250,8 +250,8 @@ cwDueTime
   = lens _cwDueTime (\ s a -> s{_cwDueTime = a})
 
 -- | Whether this course work item is associated with the Developer Console
--- project making the request. See google.classroom.Work.CreateCourseWork
--- for more details. Read-only.
+-- project making the request. See CreateCourseWork for more details.
+-- Read-only.
 cwAssociatedWithDeveloper :: Lens' CourseWork (Maybe Bool)
 cwAssociatedWithDeveloper
   = lens _cwAssociatedWithDeveloper
@@ -514,6 +514,213 @@ instance ToJSON CourseWorkChangesInfo where
         toJSON CourseWorkChangesInfo'{..}
           = object
               (catMaybes [("courseId" .=) <$> _cwciCourseId])
+
+-- | Course work material created by a teacher for students of the course
+--
+-- /See:/ 'courseWorkMaterial' smart constructor.
+data CourseWorkMaterial =
+  CourseWorkMaterial'
+    { _cwmCreationTime :: !(Maybe DateTime')
+    , _cwmScheduledTime :: !(Maybe DateTime')
+    , _cwmState :: !(Maybe CourseWorkMaterialState)
+    , _cwmAssigneeMode :: !(Maybe CourseWorkMaterialAssigneeMode)
+    , _cwmMaterials :: !(Maybe [Material])
+    , _cwmCourseId :: !(Maybe Text)
+    , _cwmIndividualStudentsOptions :: !(Maybe IndividualStudentsOptions)
+    , _cwmUpdateTime :: !(Maybe DateTime')
+    , _cwmTopicId :: !(Maybe Text)
+    , _cwmId :: !(Maybe Text)
+    , _cwmCreatorUserId :: !(Maybe Text)
+    , _cwmTitle :: !(Maybe Text)
+    , _cwmAlternateLink :: !(Maybe Text)
+    , _cwmDescription :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CourseWorkMaterial' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cwmCreationTime'
+--
+-- * 'cwmScheduledTime'
+--
+-- * 'cwmState'
+--
+-- * 'cwmAssigneeMode'
+--
+-- * 'cwmMaterials'
+--
+-- * 'cwmCourseId'
+--
+-- * 'cwmIndividualStudentsOptions'
+--
+-- * 'cwmUpdateTime'
+--
+-- * 'cwmTopicId'
+--
+-- * 'cwmId'
+--
+-- * 'cwmCreatorUserId'
+--
+-- * 'cwmTitle'
+--
+-- * 'cwmAlternateLink'
+--
+-- * 'cwmDescription'
+courseWorkMaterial
+    :: CourseWorkMaterial
+courseWorkMaterial =
+  CourseWorkMaterial'
+    { _cwmCreationTime = Nothing
+    , _cwmScheduledTime = Nothing
+    , _cwmState = Nothing
+    , _cwmAssigneeMode = Nothing
+    , _cwmMaterials = Nothing
+    , _cwmCourseId = Nothing
+    , _cwmIndividualStudentsOptions = Nothing
+    , _cwmUpdateTime = Nothing
+    , _cwmTopicId = Nothing
+    , _cwmId = Nothing
+    , _cwmCreatorUserId = Nothing
+    , _cwmTitle = Nothing
+    , _cwmAlternateLink = Nothing
+    , _cwmDescription = Nothing
+    }
+
+
+-- | Timestamp when this course work material was created. Read-only.
+cwmCreationTime :: Lens' CourseWorkMaterial (Maybe UTCTime)
+cwmCreationTime
+  = lens _cwmCreationTime
+      (\ s a -> s{_cwmCreationTime = a})
+      . mapping _DateTime
+
+-- | Optional timestamp when this course work material is scheduled to be
+-- published.
+cwmScheduledTime :: Lens' CourseWorkMaterial (Maybe UTCTime)
+cwmScheduledTime
+  = lens _cwmScheduledTime
+      (\ s a -> s{_cwmScheduledTime = a})
+      . mapping _DateTime
+
+-- | Status of this course work material. If unspecified, the default state
+-- is \`DRAFT\`.
+cwmState :: Lens' CourseWorkMaterial (Maybe CourseWorkMaterialState)
+cwmState = lens _cwmState (\ s a -> s{_cwmState = a})
+
+-- | Assignee mode of the course work material. If unspecified, the default
+-- value is \`ALL_STUDENTS\`.
+cwmAssigneeMode :: Lens' CourseWorkMaterial (Maybe CourseWorkMaterialAssigneeMode)
+cwmAssigneeMode
+  = lens _cwmAssigneeMode
+      (\ s a -> s{_cwmAssigneeMode = a})
+
+-- | Additional materials. A course work material must have no more than 20
+-- material items.
+cwmMaterials :: Lens' CourseWorkMaterial [Material]
+cwmMaterials
+  = lens _cwmMaterials (\ s a -> s{_cwmMaterials = a})
+      . _Default
+      . _Coerce
+
+-- | Identifier of the course. Read-only.
+cwmCourseId :: Lens' CourseWorkMaterial (Maybe Text)
+cwmCourseId
+  = lens _cwmCourseId (\ s a -> s{_cwmCourseId = a})
+
+-- | Identifiers of students with access to the course work material. This
+-- field is set only if \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`. If the
+-- \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`, then only students
+-- specified in this field can see the course work material.
+cwmIndividualStudentsOptions :: Lens' CourseWorkMaterial (Maybe IndividualStudentsOptions)
+cwmIndividualStudentsOptions
+  = lens _cwmIndividualStudentsOptions
+      (\ s a -> s{_cwmIndividualStudentsOptions = a})
+
+-- | Timestamp of the most recent change to this course work material.
+-- Read-only.
+cwmUpdateTime :: Lens' CourseWorkMaterial (Maybe UTCTime)
+cwmUpdateTime
+  = lens _cwmUpdateTime
+      (\ s a -> s{_cwmUpdateTime = a})
+      . mapping _DateTime
+
+-- | Identifier for the topic that this course work material is associated
+-- with. Must match an existing topic in the course.
+cwmTopicId :: Lens' CourseWorkMaterial (Maybe Text)
+cwmTopicId
+  = lens _cwmTopicId (\ s a -> s{_cwmTopicId = a})
+
+-- | Classroom-assigned identifier of this course work material, unique per
+-- course. Read-only.
+cwmId :: Lens' CourseWorkMaterial (Maybe Text)
+cwmId = lens _cwmId (\ s a -> s{_cwmId = a})
+
+-- | Identifier for the user that created the course work material.
+-- Read-only.
+cwmCreatorUserId :: Lens' CourseWorkMaterial (Maybe Text)
+cwmCreatorUserId
+  = lens _cwmCreatorUserId
+      (\ s a -> s{_cwmCreatorUserId = a})
+
+-- | Title of this course work material. The title must be a valid UTF-8
+-- string containing between 1 and 3000 characters.
+cwmTitle :: Lens' CourseWorkMaterial (Maybe Text)
+cwmTitle = lens _cwmTitle (\ s a -> s{_cwmTitle = a})
+
+-- | Absolute link to this course work material in the Classroom web UI. This
+-- is only populated if \`state\` is \`PUBLISHED\`. Read-only.
+cwmAlternateLink :: Lens' CourseWorkMaterial (Maybe Text)
+cwmAlternateLink
+  = lens _cwmAlternateLink
+      (\ s a -> s{_cwmAlternateLink = a})
+
+-- | Optional description of this course work material. The text must be a
+-- valid UTF-8 string containing no more than 30,000 characters.
+cwmDescription :: Lens' CourseWorkMaterial (Maybe Text)
+cwmDescription
+  = lens _cwmDescription
+      (\ s a -> s{_cwmDescription = a})
+
+instance FromJSON CourseWorkMaterial where
+        parseJSON
+          = withObject "CourseWorkMaterial"
+              (\ o ->
+                 CourseWorkMaterial' <$>
+                   (o .:? "creationTime") <*> (o .:? "scheduledTime")
+                     <*> (o .:? "state")
+                     <*> (o .:? "assigneeMode")
+                     <*> (o .:? "materials" .!= mempty)
+                     <*> (o .:? "courseId")
+                     <*> (o .:? "individualStudentsOptions")
+                     <*> (o .:? "updateTime")
+                     <*> (o .:? "topicId")
+                     <*> (o .:? "id")
+                     <*> (o .:? "creatorUserId")
+                     <*> (o .:? "title")
+                     <*> (o .:? "alternateLink")
+                     <*> (o .:? "description"))
+
+instance ToJSON CourseWorkMaterial where
+        toJSON CourseWorkMaterial'{..}
+          = object
+              (catMaybes
+                 [("creationTime" .=) <$> _cwmCreationTime,
+                  ("scheduledTime" .=) <$> _cwmScheduledTime,
+                  ("state" .=) <$> _cwmState,
+                  ("assigneeMode" .=) <$> _cwmAssigneeMode,
+                  ("materials" .=) <$> _cwmMaterials,
+                  ("courseId" .=) <$> _cwmCourseId,
+                  ("individualStudentsOptions" .=) <$>
+                    _cwmIndividualStudentsOptions,
+                  ("updateTime" .=) <$> _cwmUpdateTime,
+                  ("topicId" .=) <$> _cwmTopicId, ("id" .=) <$> _cwmId,
+                  ("creatorUserId" .=) <$> _cwmCreatorUserId,
+                  ("title" .=) <$> _cwmTitle,
+                  ("alternateLink" .=) <$> _cwmAlternateLink,
+                  ("description" .=) <$> _cwmDescription])
 
 -- | Request to modify assignee mode and options of a coursework.
 --
@@ -836,7 +1043,7 @@ modifyAnnouncementAssigneesRequest =
     }
 
 
--- | Mode of the announcement describing whether it will be accessible by all
+-- | Mode of the announcement describing whether it is accessible by all
 -- students or specified individual students.
 maarAssigneeMode :: Lens' ModifyAnnouncementAssigneesRequest (Maybe ModifyAnnouncementAssigneesRequestAssigneeMode)
 maarAssigneeMode
@@ -1209,7 +1416,7 @@ assignmentSubmission = AssignmentSubmission' {_asAttachments = Nothing}
 -- student has not accessed the assignment in Classroom. Some attachment
 -- metadata is only populated if the requesting user has permission to
 -- access it. Identifier and alternate_link fields are always available,
--- but others (e.g. title) may not be.
+-- but others (for example, title) may not be.
 asAttachments :: Lens' AssignmentSubmission [Attachment]
 asAttachments
   = lens _asAttachments
@@ -1425,8 +1632,8 @@ mDriveFile :: Lens' Material (Maybe SharedDriveFile)
 mDriveFile
   = lens _mDriveFile (\ s a -> s{_mDriveFile = a})
 
--- | Link material. On creation, will be upgraded to a more appropriate type
--- if possible, and this will be reflected in the response.
+-- | Link material. On creation, this is upgraded to a more appropriate type
+-- if possible, and this is reflected in the response.
 mLink :: Lens' Material (Maybe Link)
 mLink = lens _mLink (\ s a -> s{_mLink = a})
 
@@ -1924,10 +2131,10 @@ tTopicId :: Lens' Topic (Maybe Text)
 tTopicId = lens _tTopicId (\ s a -> s{_tTopicId = a})
 
 -- | The name of the topic, generated by the user. Leading and trailing
--- whitespaces, if any, will be trimmed. Also, multiple consecutive
--- whitespaces will be collapsed into one inside the name. The result must
--- be a non-empty string. Topic names are case sensitive, and must be no
--- longer than 100 characters.
+-- whitespaces, if any, are trimmed. Also, multiple consecutive whitespaces
+-- are collapsed into one inside the name. The result must be a non-empty
+-- string. Topic names are case sensitive, and must be no longer than 100
+-- characters.
 tName :: Lens' Topic (Maybe Text)
 tName = lens _tName (\ s a -> s{_tName = a})
 
@@ -2063,7 +2270,7 @@ aCourseId
 -- | Identifiers of students with access to the announcement. This field is
 -- set only if \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`. If the
 -- \`assigneeMode\` is \`INDIVIDUAL_STUDENTS\`, then only students
--- specified in this field will be able to see the announcement.
+-- specified in this field can see the announcement.
 aIndividualStudentsOptions :: Lens' Announcement (Maybe IndividualStudentsOptions)
 aIndividualStudentsOptions
   = lens _aIndividualStudentsOptions
@@ -2246,7 +2453,7 @@ ssMultipleChoiceSubmission
       (\ s a -> s{_ssMultipleChoiceSubmission = a})
 
 -- | Submission content when course_work_type is ASSIGNMENT. Students can
--- modify this content using google.classroom.Work.ModifyAttachments.
+-- modify this content using ModifyAttachments.
 ssAssignmentSubmission :: Lens' StudentSubmission (Maybe AssignmentSubmission)
 ssAssignmentSubmission
   = lens _ssAssignmentSubmission
@@ -2259,8 +2466,8 @@ ssShortAnswerSubmission
       (\ s a -> s{_ssShortAnswerSubmission = a})
 
 -- | Whether this student submission is associated with the Developer Console
--- project making the request. See google.classroom.Work.CreateCourseWork
--- for more details. Read-only.
+-- project making the request. See CreateCourseWork for more details.
+-- Read-only.
 ssAssociatedWithDeveloper :: Lens' StudentSubmission (Maybe Bool)
 ssAssociatedWithDeveloper
   = lens _ssAssociatedWithDeveloper
@@ -2293,7 +2500,7 @@ ssSubmissionHistory
       . _Coerce
 
 -- | Optional grade. If unset, no grade was set. This value must be
--- non-negative. Decimal (i.e. non-integer) values are allowed, but will be
+-- non-negative. Decimal (that is, non-integer) values are allowed, but are
 -- rounded to two decimal places. This may be modified only by course
 -- teachers.
 ssAssignedGrade :: Lens' StudentSubmission (Maybe Double)
@@ -2308,7 +2515,7 @@ ssId :: Lens' StudentSubmission (Maybe Text)
 ssId = lens _ssId (\ s a -> s{_ssId = a})
 
 -- | Optional pending grade. If unset, no grade was set. This value must be
--- non-negative. Decimal (i.e. non-integer) values are allowed, but will be
+-- non-negative. Decimal (that is, non-integer) values are allowed, but are
 -- rounded to two decimal places. This is only visible to and modifiable by
 -- course teachers.
 ssDraftGrade :: Lens' StudentSubmission (Maybe Double)
@@ -2429,14 +2636,15 @@ instance ToJSON ListGuardiansResponse where
                  [("nextPageToken" .=) <$> _lgrNextPageToken,
                   ("guardians" .=) <$> _lgrGuardians])
 
--- | Represents a whole or partial calendar date, e.g. a birthday. The time
--- of day and time zone are either specified elsewhere or are not
--- significant. The date is relative to the Proleptic Gregorian Calendar.
--- This can represent: * A full date, with non-zero year, month and day
--- values * A month and day value, with a zero year, e.g. an anniversary *
--- A year on its own, with zero month and day values * A year and month
--- value, with a zero day, e.g. a credit card expiration date Related types
--- are google.type.TimeOfDay and \`google.protobuf.Timestamp\`.
+-- | Represents a whole or partial calendar date, such as a birthday. The
+-- time of day and time zone are either specified elsewhere or are
+-- insignificant. The date is relative to the Gregorian Calendar. This can
+-- represent one of the following: * A full date, with non-zero year,
+-- month, and day values * A month and day value, with a zero year, such as
+-- an anniversary * A year on its own, with zero month and day values * A
+-- year and month value, with a zero day, such as a credit card expiration
+-- date Related types are google.type.TimeOfDay and
+-- \`google.protobuf.Timestamp\`.
 --
 -- /See:/ 'date' smart constructor.
 data Date =
@@ -2462,22 +2670,22 @@ date
 date = Date' {_dDay = Nothing, _dYear = Nothing, _dMonth = Nothing}
 
 
--- | Day of month. Must be from 1 to 31 and valid for the year and month, or
--- 0 if specifying a year by itself or a year and month where the day is
--- not significant.
+-- | Day of a month. Must be from 1 to 31 and valid for the year and month,
+-- or 0 to specify a year by itself or a year and month where the day
+-- isn\'t significant.
 dDay :: Lens' Date (Maybe Int32)
 dDay
   = lens _dDay (\ s a -> s{_dDay = a}) .
       mapping _Coerce
 
--- | Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+-- | Year of the date. Must be from 1 to 9999, or 0 to specify a date without
 -- a year.
 dYear :: Lens' Date (Maybe Int32)
 dYear
   = lens _dYear (\ s a -> s{_dYear = a}) .
       mapping _Coerce
 
--- | Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+-- | Month of a year. Must be from 1 to 12, or 0 to specify a year without a
 -- month and day.
 dMonth :: Lens' Date (Maybe Int32)
 dMonth
@@ -2868,7 +3076,7 @@ upfPhotoURL
 
 -- | Represents whether a G Suite for Education user\'s domain administrator
 -- has explicitly verified them as being a teacher. If the user is not a
--- member of a G Suite for Education domain, than this field will always be
+-- member of a G Suite for Education domain, than this field is always
 -- false. Read-only
 upfVerifiedTeacher :: Lens' UserProFile (Maybe Bool)
 upfVerifiedTeacher
@@ -3058,7 +3266,7 @@ stateHistory =
 shState :: Lens' StateHistory (Maybe StateHistoryState)
 shState = lens _shState (\ s a -> s{_shState = a})
 
--- | The teacher or student who made the change
+-- | The teacher or student who made the change.
 shActorUserId :: Lens' StateHistory (Maybe Text)
 shActorUserId
   = lens _shActorUserId
@@ -3788,7 +3996,7 @@ modifyIndividualStudentsOptions =
     {_misoAddStudentIds = Nothing, _misoRemoveStudentIds = Nothing}
 
 
--- | Ids of students to be added as having access to this
+-- | IDs of students to be added as having access to this
 -- coursework\/announcement.
 misoAddStudentIds :: Lens' ModifyIndividualStudentsOptions [Text]
 misoAddStudentIds
@@ -3797,7 +4005,7 @@ misoAddStudentIds
       . _Default
       . _Coerce
 
--- | Ids of students to be removed from having access to this
+-- | IDs of students to be removed from having access to this
 -- coursework\/announcement.
 misoRemoveStudentIds :: Lens' ModifyIndividualStudentsOptions [Text]
 misoRemoveStudentIds
@@ -3987,6 +4195,63 @@ instance ToJSON ListTeachersResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _lNextPageToken,
                   ("teachers" .=) <$> _lTeachers])
+
+-- | Response when listing course work material.
+--
+-- /See:/ 'listCourseWorkMaterialResponse' smart constructor.
+data ListCourseWorkMaterialResponse =
+  ListCourseWorkMaterialResponse'
+    { _lcwmrCourseWorkMaterial :: !(Maybe [CourseWorkMaterial])
+    , _lcwmrNextPageToken :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ListCourseWorkMaterialResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'lcwmrCourseWorkMaterial'
+--
+-- * 'lcwmrNextPageToken'
+listCourseWorkMaterialResponse
+    :: ListCourseWorkMaterialResponse
+listCourseWorkMaterialResponse =
+  ListCourseWorkMaterialResponse'
+    {_lcwmrCourseWorkMaterial = Nothing, _lcwmrNextPageToken = Nothing}
+
+
+-- | Course work material items that match the request.
+lcwmrCourseWorkMaterial :: Lens' ListCourseWorkMaterialResponse [CourseWorkMaterial]
+lcwmrCourseWorkMaterial
+  = lens _lcwmrCourseWorkMaterial
+      (\ s a -> s{_lcwmrCourseWorkMaterial = a})
+      . _Default
+      . _Coerce
+
+-- | Token identifying the next page of results to return. If empty, no
+-- further results are available.
+lcwmrNextPageToken :: Lens' ListCourseWorkMaterialResponse (Maybe Text)
+lcwmrNextPageToken
+  = lens _lcwmrNextPageToken
+      (\ s a -> s{_lcwmrNextPageToken = a})
+
+instance FromJSON ListCourseWorkMaterialResponse
+         where
+        parseJSON
+          = withObject "ListCourseWorkMaterialResponse"
+              (\ o ->
+                 ListCourseWorkMaterialResponse' <$>
+                   (o .:? "courseWorkMaterial" .!= mempty) <*>
+                     (o .:? "nextPageToken"))
+
+instance ToJSON ListCourseWorkMaterialResponse where
+        toJSON ListCourseWorkMaterialResponse'{..}
+          = object
+              (catMaybes
+                 [("courseWorkMaterial" .=) <$>
+                    _lcwmrCourseWorkMaterial,
+                  ("nextPageToken" .=) <$> _lcwmrNextPageToken])
 
 -- | Student in a course.
 --

@@ -137,7 +137,7 @@ plcsaPayload
   = lens _plcsaPayload (\ s a -> s{_plcsaPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to set addons.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcsaName :: Lens' ProjectsLocationsClustersSetAddons Text
 plcsaName
   = lens _plcsaName (\ s a -> s{_plcsaName = a})

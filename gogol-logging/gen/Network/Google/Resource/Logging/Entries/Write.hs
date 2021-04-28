@@ -27,7 +27,7 @@
 -- different resources (projects, organizations, billing accounts or
 -- folders)
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.entries.write@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.entries.write@.
 module Network.Google.Resource.Logging.Entries.Write
     (
     -- * REST Resource

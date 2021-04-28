@@ -25,7 +25,7 @@
 -- organization. If it is called too frequently the caller will receive a
 -- TOO_MANY_REQUESTS error.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.assets.runDiscovery@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.assets.runDiscovery@.
 module Network.Google.Resource.SecurityCenter.Organizations.Assets.RunDiscovery
     (
     -- * REST Resource
@@ -51,7 +51,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.assets.runDiscovery@ method which the
 -- 'OrganizationsAssetsRunDiscovery' request conforms to.
 type OrganizationsAssetsRunDiscoveryResource =
-     "v1" :>
+     "v1p1beta1" :>
        Capture "parent" Text :>
          "assets:runDiscovery" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -115,8 +115,8 @@ organizationsAssetsRunDiscovery pOardParent_ pOardPayload_ =
     }
 
 
--- | Name of the organization to run asset discovery for. Its format is
--- \"organizations\/[organization_id]\".
+-- | Required. Name of the organization to run asset discovery for. Its
+-- format is \"organizations\/[organization_id]\".
 oardParent :: Lens' OrganizationsAssetsRunDiscovery Text
 oardParent
   = lens _oardParent (\ s a -> s{_oardParent = a})

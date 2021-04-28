@@ -114,7 +114,7 @@ msqgXgafv :: Lens' MattersSavedQueriesGet (Maybe Xgafv)
 msqgXgafv
   = lens _msqgXgafv (\ s a -> s{_msqgXgafv = a})
 
--- | Id of the saved query to be retrieved.
+-- | ID of the saved query to be retrieved.
 msqgSavedQueryId :: Lens' MattersSavedQueriesGet Text
 msqgSavedQueryId
   = lens _msqgSavedQueryId
@@ -138,7 +138,7 @@ msqgUploadType
   = lens _msqgUploadType
       (\ s a -> s{_msqgUploadType = a})
 
--- | The matter id of the parent matter for which the saved query is to be
+-- | The matter ID of the parent matter for which the saved query is to be
 -- retrieved.
 msqgMatterId :: Lens' MattersSavedQueriesGet Text
 msqgMatterId

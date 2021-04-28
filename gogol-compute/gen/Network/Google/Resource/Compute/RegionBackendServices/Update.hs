@@ -21,9 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Updates the specified regional BackendService resource with the data
--- included in the request. There are several restrictions and guidelines
--- to keep in mind when updating a backend service. Read Restrictions and
--- Guidelines for more information.
+-- included in the request. For more information, see Backend services
+-- overview.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.regionBackendServices.update@.
 module Network.Google.Resource.Compute.RegionBackendServices.Update
@@ -63,9 +62,8 @@ type RegionBackendServicesUpdateResource =
                            Put '[JSON] Operation
 
 -- | Updates the specified regional BackendService resource with the data
--- included in the request. There are several restrictions and guidelines
--- to keep in mind when updating a backend service. Read Restrictions and
--- Guidelines for more information.
+-- included in the request. For more information, see Backend services
+-- overview.
 --
 -- /See:/ 'regionBackendServicesUpdate' smart constructor.
 data RegionBackendServicesUpdate =

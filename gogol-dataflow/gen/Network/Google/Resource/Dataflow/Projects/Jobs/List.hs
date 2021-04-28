@@ -21,7 +21,7 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- List the jobs of a project. To list the jobs of a project in a region,
--- we recommend using \`projects.locations.jobs.get\` with a [regional
+-- we recommend using \`projects.locations.jobs.list\` with a [regional
 -- endpoint]
 -- (https:\/\/cloud.google.com\/dataflow\/docs\/concepts\/regional-endpoints).
 -- To list the all jobs across all regions, use
@@ -68,8 +68,8 @@ type ProjectsJobsListResource =
                  QueryParam "location" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "view" Text :>
-                         QueryParam "filter" Text :>
+                       QueryParam "view" ProjectsJobsListView :>
+                         QueryParam "filter" ProjectsJobsListFilter :>
                            QueryParam "pageToken" Text :>
                              QueryParam "pageSize" (Textual Int32) :>
                                QueryParam "callback" Text :>
@@ -77,7 +77,7 @@ type ProjectsJobsListResource =
                                    Get '[JSON] ListJobsResponse
 
 -- | List the jobs of a project. To list the jobs of a project in a region,
--- we recommend using \`projects.locations.jobs.get\` with a [regional
+-- we recommend using \`projects.locations.jobs.list\` with a [regional
 -- endpoint]
 -- (https:\/\/cloud.google.com\/dataflow\/docs\/concepts\/regional-endpoints).
 -- To list the all jobs across all regions, use
@@ -93,8 +93,8 @@ data ProjectsJobsList =
     , _pjlLocation :: !(Maybe Text)
     , _pjlAccessToken :: !(Maybe Text)
     , _pjlUploadType :: !(Maybe Text)
-    , _pjlView :: !(Maybe Text)
-    , _pjlFilter :: !(Maybe Text)
+    , _pjlView :: !(Maybe ProjectsJobsListView)
+    , _pjlFilter :: !(Maybe ProjectsJobsListFilter)
     , _pjlPageToken :: !(Maybe Text)
     , _pjlProjectId :: !Text
     , _pjlPageSize :: !(Maybe (Textual Int32))
@@ -176,13 +176,13 @@ pjlUploadType
   = lens _pjlUploadType
       (\ s a -> s{_pjlUploadType = a})
 
--- | Level of information requested in response. Default is
--- \`JOB_VIEW_SUMMARY\`.
-pjlView :: Lens' ProjectsJobsList (Maybe Text)
+-- | Deprecated. ListJobs always returns summaries now. Use GetJob for other
+-- JobViews.
+pjlView :: Lens' ProjectsJobsList (Maybe ProjectsJobsListView)
 pjlView = lens _pjlView (\ s a -> s{_pjlView = a})
 
 -- | The kind of filter to use.
-pjlFilter :: Lens' ProjectsJobsList (Maybe Text)
+pjlFilter :: Lens' ProjectsJobsList (Maybe ProjectsJobsListFilter)
 pjlFilter
   = lens _pjlFilter (\ s a -> s{_pjlFilter = a})
 

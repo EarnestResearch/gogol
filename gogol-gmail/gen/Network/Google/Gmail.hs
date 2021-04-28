@@ -13,7 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Access Gmail mailboxes including sending user email.
+-- The Gmail API lets you view and manage Gmail mailbox data like threads,
+-- messages, and labels.
 --
 -- /See:/ <https://developers.google.com/gmail/api/ Gmail API Reference>
 module Network.Google.Gmail
@@ -23,12 +24,16 @@ module Network.Google.Gmail
 
     -- * OAuth Scopes
     , gmailSettingsBasicScope
+    , gmailAddonsCurrentMessageActionScope
+    , gmailAddonsCurrentMessageMetadataScope
     , mailGoogleComScope
     , gmailModifyScope
     , gmailMetadataScope
     , gmailLabelsScope
     , gmailSettingsSharingScope
     , gmailSendScope
+    , gmailAddonsCurrentMessageReadOnlyScope
+    , gmailAddonsCurrentActionComposeScope
     , gmailInsertScope
     , gmailComposeScope
     , gmailReadOnlyScope
@@ -468,6 +473,9 @@ module Network.Google.Gmail
     , watchResponse
     , wrExpiration
     , wrHistoryId
+
+    -- ** Xgafv
+    , Xgafv (..)
 
     -- ** DelegateVerificationStatus
     , DelegateVerificationStatus (..)

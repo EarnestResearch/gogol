@@ -23,7 +23,7 @@
 -- Updates a specific job resource. Currently the only supported fields to
 -- update are \`labels\`.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.jobs.patch@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.jobs.patch@.
 module Network.Google.Resource.Ml.Projects.Jobs.Patch
     (
     -- * REST Resource

@@ -123,7 +123,7 @@ plidUploadType
   = lens _plidUploadType
       (\ s a -> s{_plidUploadType = a})
 
--- | The instance resource name, in the format
+-- | Required. The instance resource name, in the format
 -- projects\/{project_id}\/locations\/{location}\/instances\/{instance_id}
 plidName :: Lens' ProjectsLocationsInstancesDelete Text
 plidName = lens _plidName (\ s a -> s{_plidName = a})

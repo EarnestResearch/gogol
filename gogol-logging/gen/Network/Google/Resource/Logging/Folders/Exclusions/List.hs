@@ -22,7 +22,7 @@
 --
 -- Lists all the exclusions in a parent resource.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.folders.exclusions.list@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.folders.exclusions.list@.
 module Network.Google.Resource.Logging.Folders.Exclusions.List
     (
     -- * REST Resource

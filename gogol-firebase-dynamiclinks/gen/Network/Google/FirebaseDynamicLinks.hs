@@ -146,6 +146,9 @@ module Network.Google.FirebaseDynamicLinks
     -- ** SuffixOption
     , SuffixOption (..)
 
+    -- ** ManagedShortLinkFlaggedAttributeItem
+    , ManagedShortLinkFlaggedAttributeItem (..)
+
     -- ** DynamicLinkEventStatEvent
     , DynamicLinkEventStatEvent (..)
 

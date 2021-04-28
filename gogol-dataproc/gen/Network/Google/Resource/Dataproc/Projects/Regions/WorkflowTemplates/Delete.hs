@@ -129,9 +129,14 @@ prwtdUploadType
   = lens _prwtdUploadType
       (\ s a -> s{_prwtdUploadType = a})
 
--- | Required. The \"resource name\" of the workflow template, as described
--- in https:\/\/cloud.google.com\/apis\/design\/resource_names of the form
+-- | Required. The resource name of the workflow template, as described in
+-- https:\/\/cloud.google.com\/apis\/design\/resource_names. For
+-- projects.regions.workflowTemplates.delete, the resource name of the
+-- template has the following format:
 -- projects\/{project_id}\/regions\/{region}\/workflowTemplates\/{template_id}
+-- For projects.locations.workflowTemplates.instantiate, the resource name
+-- of the template has the following format:
+-- projects\/{project_id}\/locations\/{location}\/workflowTemplates\/{template_id}
 prwtdName :: Lens' ProjectsRegionsWorkflowTemplatesDelete Text
 prwtdName
   = lens _prwtdName (\ s a -> s{_prwtdName = a})

@@ -167,7 +167,7 @@ upfgipUploadProtocol
       (\ s a -> s{_upfgipUploadProtocol = a})
 
 -- | Mask that identifies which fields on the course to update. This field is
--- required to do an update. The update will fail if invalid fields are
+-- required to do an update. The update fails if invalid fields are
 -- specified. The following fields are valid: * \`state\` When set in a
 -- query parameter, this field should be specified as \`updateMask=,,...\`
 upfgipUpdateMask :: Lens' UserProFilesGuardianInvitationsPatch (Maybe GFieldMask)

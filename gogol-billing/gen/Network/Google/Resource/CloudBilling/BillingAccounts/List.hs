@@ -173,7 +173,9 @@ instance GoogleRequest BillingAccountsList where
         type Rs BillingAccountsList =
              ListBillingAccountsResponse
         type Scopes BillingAccountsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-billing.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient BillingAccountsList'{..}
           = go _balXgafv _balUploadProtocol _balAccessToken
               _balUploadType

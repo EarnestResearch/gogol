@@ -137,7 +137,7 @@ pcPayload :: Lens' ProjectsCommit CommitRequest
 pcPayload
   = lens _pcPayload (\ s a -> s{_pcPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 pcProjectId :: Lens' ProjectsCommit Text
 pcProjectId
   = lens _pcProjectId (\ s a -> s{_pcProjectId = a})

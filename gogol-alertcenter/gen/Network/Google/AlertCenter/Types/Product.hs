@@ -20,778 +20,1184 @@ module Network.Google.AlertCenter.Types.Product where
 import Network.Google.AlertCenter.Types.Sum
 import Network.Google.Prelude
 
--- | Response message for an alert listing request.
---
--- /See:/ 'listAlertsResponse' smart constructor.
-data ListAlertsResponse =
-  ListAlertsResponse'
-    { _larNextPageToken :: !(Maybe Text)
-    , _larAlerts :: !(Maybe [Alert])
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'ListAlertsResponse' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'larNextPageToken'
---
--- * 'larAlerts'
-listAlertsResponse
-    :: ListAlertsResponse
-listAlertsResponse =
-  ListAlertsResponse' {_larNextPageToken = Nothing, _larAlerts = Nothing}
-
-
--- | The token for the next page. If not empty, indicates that there may be
--- more alerts that match the listing request; this value can be used in a
--- subsequent ListAlertsRequest to get alerts continuing from last result
--- of the current list call.
-larNextPageToken :: Lens' ListAlertsResponse (Maybe Text)
-larNextPageToken
-  = lens _larNextPageToken
-      (\ s a -> s{_larNextPageToken = a})
-
--- | The list of alerts.
-larAlerts :: Lens' ListAlertsResponse [Alert]
-larAlerts
-  = lens _larAlerts (\ s a -> s{_larAlerts = a}) .
-      _Default
-      . _Coerce
-
-instance FromJSON ListAlertsResponse where
-        parseJSON
-          = withObject "ListAlertsResponse"
-              (\ o ->
-                 ListAlertsResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "alerts" .!= mempty))
-
-instance ToJSON ListAlertsResponse where
-        toJSON ListAlertsResponse'{..}
-          = object
-              (catMaybes
-                 [("nextPageToken" .=) <$> _larNextPageToken,
-                  ("alerts" .=) <$> _larAlerts])
-
--- | A representation of a single data row in a CSV file.
---
--- /See:/ 'csvRow' smart constructor.
-newtype CSVRow =
-  CSVRow'
-    { _crEntries :: Maybe [Text]
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'CSVRow' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'crEntries'
-csvRow
-    :: CSVRow
-csvRow = CSVRow' {_crEntries = Nothing}
-
-
--- | The data entries in a CSV file row, as a string array rather than a
--- single comma-separated string.
-crEntries :: Lens' CSVRow [Text]
-crEntries
-  = lens _crEntries (\ s a -> s{_crEntries = a}) .
-      _Default
-      . _Coerce
-
-instance FromJSON CSVRow where
-        parseJSON
-          = withObject "CSVRow"
-              (\ o -> CSVRow' <$> (o .:? "entries" .!= mempty))
-
-instance ToJSON CSVRow where
-        toJSON CSVRow'{..}
-          = object (catMaybes [("entries" .=) <$> _crEntries])
-
--- | A customer feedback about an alert.
---
--- /See:/ 'alertFeedback' smart constructor.
-data AlertFeedback =
-  AlertFeedback'
-    { _afFeedbackId :: !(Maybe Text)
-    , _afEmail :: !(Maybe Text)
-    , _afAlertId :: !(Maybe Text)
-    , _afCustomerId :: !(Maybe Text)
-    , _afType :: !(Maybe AlertFeedbackType)
-    , _afCreateTime :: !(Maybe DateTime')
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'AlertFeedback' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'afFeedbackId'
---
--- * 'afEmail'
---
--- * 'afAlertId'
---
--- * 'afCustomerId'
---
--- * 'afType'
---
--- * 'afCreateTime'
-alertFeedback
-    :: AlertFeedback
-alertFeedback =
-  AlertFeedback'
-    { _afFeedbackId = Nothing
-    , _afEmail = Nothing
-    , _afAlertId = Nothing
-    , _afCustomerId = Nothing
-    , _afType = Nothing
-    , _afCreateTime = Nothing
-    }
-
-
--- | Output only. The unique identifier for the feedback.
-afFeedbackId :: Lens' AlertFeedback (Maybe Text)
-afFeedbackId
-  = lens _afFeedbackId (\ s a -> s{_afFeedbackId = a})
-
--- | Output only. The email of the user that provided the feedback.
-afEmail :: Lens' AlertFeedback (Maybe Text)
-afEmail = lens _afEmail (\ s a -> s{_afEmail = a})
-
--- | Output only. The alert identifier.
-afAlertId :: Lens' AlertFeedback (Maybe Text)
-afAlertId
-  = lens _afAlertId (\ s a -> s{_afAlertId = a})
-
--- | Output only. The unique identifier of the Google account of the
--- customer.
-afCustomerId :: Lens' AlertFeedback (Maybe Text)
-afCustomerId
-  = lens _afCustomerId (\ s a -> s{_afCustomerId = a})
-
--- | Required. The type of the feedback.
-afType :: Lens' AlertFeedback (Maybe AlertFeedbackType)
-afType = lens _afType (\ s a -> s{_afType = a})
-
--- | Output only. The time this feedback was created.
-afCreateTime :: Lens' AlertFeedback (Maybe UTCTime)
-afCreateTime
-  = lens _afCreateTime (\ s a -> s{_afCreateTime = a})
-      . mapping _DateTime
-
-instance FromJSON AlertFeedback where
-        parseJSON
-          = withObject "AlertFeedback"
-              (\ o ->
-                 AlertFeedback' <$>
-                   (o .:? "feedbackId") <*> (o .:? "email") <*>
-                     (o .:? "alertId")
-                     <*> (o .:? "customerId")
-                     <*> (o .:? "type")
-                     <*> (o .:? "createTime"))
-
-instance ToJSON AlertFeedback where
-        toJSON AlertFeedback'{..}
-          = object
-              (catMaybes
-                 [("feedbackId" .=) <$> _afFeedbackId,
-                  ("email" .=) <$> _afEmail,
-                  ("alertId" .=) <$> _afAlertId,
-                  ("customerId" .=) <$> _afCustomerId,
-                  ("type" .=) <$> _afType,
-                  ("createTime" .=) <$> _afCreateTime])
-
--- | A mobile device compromised alert. Derived from audit logs.
---
--- /See:/ 'deviceCompromised' smart constructor.
-data DeviceCompromised =
-  DeviceCompromised'
-    { _dcEmail :: !(Maybe Text)
-    , _dcEvents :: !(Maybe [DeviceCompromisedSecurityDetail])
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'DeviceCompromised' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'dcEmail'
---
--- * 'dcEvents'
-deviceCompromised
-    :: DeviceCompromised
-deviceCompromised = DeviceCompromised' {_dcEmail = Nothing, _dcEvents = Nothing}
-
-
--- | The email of the user this alert was created for.
-dcEmail :: Lens' DeviceCompromised (Maybe Text)
-dcEmail = lens _dcEmail (\ s a -> s{_dcEmail = a})
-
--- | Required. The list of security events.
-dcEvents :: Lens' DeviceCompromised [DeviceCompromisedSecurityDetail]
-dcEvents
-  = lens _dcEvents (\ s a -> s{_dcEvents = a}) .
-      _Default
-      . _Coerce
-
-instance FromJSON DeviceCompromised where
-        parseJSON
-          = withObject "DeviceCompromised"
-              (\ o ->
-                 DeviceCompromised' <$>
-                   (o .:? "email") <*> (o .:? "events" .!= mempty))
-
-instance ToJSON DeviceCompromised where
-        toJSON DeviceCompromised'{..}
-          = object
-              (catMaybes
-                 [("email" .=) <$> _dcEmail,
-                  ("events" .=) <$> _dcEvents])
-
--- | A state-sponsored attack alert. Derived from audit logs.
---
--- /See:/ 'stateSponsoredAttack' smart constructor.
-newtype StateSponsoredAttack =
-  StateSponsoredAttack'
-    { _ssaEmail :: Maybe Text
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'StateSponsoredAttack' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'ssaEmail'
-stateSponsoredAttack
-    :: StateSponsoredAttack
-stateSponsoredAttack = StateSponsoredAttack' {_ssaEmail = Nothing}
-
-
--- | The email of the user this incident was created for.
-ssaEmail :: Lens' StateSponsoredAttack (Maybe Text)
-ssaEmail = lens _ssaEmail (\ s a -> s{_ssaEmail = a})
-
-instance FromJSON StateSponsoredAttack where
-        parseJSON
-          = withObject "StateSponsoredAttack"
-              (\ o -> StateSponsoredAttack' <$> (o .:? "email"))
-
-instance ToJSON StateSponsoredAttack where
-        toJSON StateSponsoredAttack'{..}
-          = object (catMaybes [("email" .=) <$> _ssaEmail])
-
 -- | Alert for setting the domain or IP that malicious email comes from as
 -- whitelisted domain or IP in Gmail advanced settings.
 --
--- /See:/ 'badWhiteList' smart constructor.
-data BadWhiteList =
-  BadWhiteList'
-    { _bwlSourceIP :: !(Maybe Text)
-    , _bwlDomainId :: !(Maybe DomainId)
-    , _bwlMessages :: !(Maybe [GmailMessageInfo])
-    , _bwlMaliciousEntity :: !(Maybe MaliciousEntity)
+-- /See:/ 'googleAppsAlertcenterTypeBadWhiteList' smart constructor.
+data GoogleAppsAlertcenterTypeBadWhiteList =
+  GoogleAppsAlertcenterTypeBadWhiteList'
+    { _gaatbwlSourceIP :: !(Maybe Text)
+    , _gaatbwlDomainId :: !(Maybe GoogleAppsAlertcenterTypeDomainId)
+    , _gaatbwlMessages :: !(Maybe [GoogleAppsAlertcenterTypeGmailMessageInfo])
+    , _gaatbwlMaliciousEntity :: !(Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'BadWhiteList' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeBadWhiteList' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'bwlSourceIP'
+-- * 'gaatbwlSourceIP'
 --
--- * 'bwlDomainId'
+-- * 'gaatbwlDomainId'
 --
--- * 'bwlMessages'
+-- * 'gaatbwlMessages'
 --
--- * 'bwlMaliciousEntity'
-badWhiteList
-    :: BadWhiteList
-badWhiteList =
-  BadWhiteList'
-    { _bwlSourceIP = Nothing
-    , _bwlDomainId = Nothing
-    , _bwlMessages = Nothing
-    , _bwlMaliciousEntity = Nothing
+-- * 'gaatbwlMaliciousEntity'
+googleAppsAlertcenterTypeBadWhiteList
+    :: GoogleAppsAlertcenterTypeBadWhiteList
+googleAppsAlertcenterTypeBadWhiteList =
+  GoogleAppsAlertcenterTypeBadWhiteList'
+    { _gaatbwlSourceIP = Nothing
+    , _gaatbwlDomainId = Nothing
+    , _gaatbwlMessages = Nothing
+    , _gaatbwlMaliciousEntity = Nothing
     }
 
 
 -- | The source IP address of the malicious email, for example,
 -- \`127.0.0.1\`.
-bwlSourceIP :: Lens' BadWhiteList (Maybe Text)
-bwlSourceIP
-  = lens _bwlSourceIP (\ s a -> s{_bwlSourceIP = a})
+gaatbwlSourceIP :: Lens' GoogleAppsAlertcenterTypeBadWhiteList (Maybe Text)
+gaatbwlSourceIP
+  = lens _gaatbwlSourceIP
+      (\ s a -> s{_gaatbwlSourceIP = a})
 
 -- | The domain ID.
-bwlDomainId :: Lens' BadWhiteList (Maybe DomainId)
-bwlDomainId
-  = lens _bwlDomainId (\ s a -> s{_bwlDomainId = a})
+gaatbwlDomainId :: Lens' GoogleAppsAlertcenterTypeBadWhiteList (Maybe GoogleAppsAlertcenterTypeDomainId)
+gaatbwlDomainId
+  = lens _gaatbwlDomainId
+      (\ s a -> s{_gaatbwlDomainId = a})
 
 -- | The list of messages contained by this alert.
-bwlMessages :: Lens' BadWhiteList [GmailMessageInfo]
-bwlMessages
-  = lens _bwlMessages (\ s a -> s{_bwlMessages = a}) .
-      _Default
+gaatbwlMessages :: Lens' GoogleAppsAlertcenterTypeBadWhiteList [GoogleAppsAlertcenterTypeGmailMessageInfo]
+gaatbwlMessages
+  = lens _gaatbwlMessages
+      (\ s a -> s{_gaatbwlMessages = a})
+      . _Default
       . _Coerce
 
 -- | The entity whose actions triggered a Gmail phishing alert.
-bwlMaliciousEntity :: Lens' BadWhiteList (Maybe MaliciousEntity)
-bwlMaliciousEntity
-  = lens _bwlMaliciousEntity
-      (\ s a -> s{_bwlMaliciousEntity = a})
+gaatbwlMaliciousEntity :: Lens' GoogleAppsAlertcenterTypeBadWhiteList (Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
+gaatbwlMaliciousEntity
+  = lens _gaatbwlMaliciousEntity
+      (\ s a -> s{_gaatbwlMaliciousEntity = a})
 
-instance FromJSON BadWhiteList where
+instance FromJSON
+           GoogleAppsAlertcenterTypeBadWhiteList
+         where
         parseJSON
-          = withObject "BadWhiteList"
+          = withObject "GoogleAppsAlertcenterTypeBadWhiteList"
               (\ o ->
-                 BadWhiteList' <$>
+                 GoogleAppsAlertcenterTypeBadWhiteList' <$>
                    (o .:? "sourceIp") <*> (o .:? "domainId") <*>
                      (o .:? "messages" .!= mempty)
                      <*> (o .:? "maliciousEntity"))
 
-instance ToJSON BadWhiteList where
-        toJSON BadWhiteList'{..}
+instance ToJSON GoogleAppsAlertcenterTypeBadWhiteList
+         where
+        toJSON GoogleAppsAlertcenterTypeBadWhiteList'{..}
           = object
               (catMaybes
-                 [("sourceIp" .=) <$> _bwlSourceIP,
-                  ("domainId" .=) <$> _bwlDomainId,
-                  ("messages" .=) <$> _bwlMessages,
-                  ("maliciousEntity" .=) <$> _bwlMaliciousEntity])
+                 [("sourceIp" .=) <$> _gaatbwlSourceIP,
+                  ("domainId" .=) <$> _gaatbwlDomainId,
+                  ("messages" .=) <$> _gaatbwlMessages,
+                  ("maliciousEntity" .=) <$> _gaatbwlMaliciousEntity])
 
--- | Detailed information of a single MDM suspicious activity event.
+-- | The \`Status\` type defines a logical error model that is suitable for
+-- different programming environments, including REST APIs and RPC APIs. It
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
+-- contains three pieces of data: error code, error message, and error
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
--- /See:/ 'suspiciousActivitySecurityDetail' smart constructor.
-data SuspiciousActivitySecurityDetail =
-  SuspiciousActivitySecurityDetail'
-    { _sasdDeviceProperty :: !(Maybe Text)
-    , _sasdResourceId :: !(Maybe Text)
-    , _sasdIosVendorId :: !(Maybe Text)
-    , _sasdOldValue :: !(Maybe Text)
-    , _sasdNewValue :: !(Maybe Text)
-    , _sasdDeviceModel :: !(Maybe Text)
-    , _sasdDeviceId :: !(Maybe Text)
-    , _sasdDeviceType :: !(Maybe Text)
-    , _sasdSerialNumber :: !(Maybe Text)
+-- /See:/ 'googleRpcStatus' smart constructor.
+data GoogleRpcStatus =
+  GoogleRpcStatus'
+    { _grsDetails :: !(Maybe [GoogleRpcStatusDetailsItem])
+    , _grsCode :: !(Maybe (Textual Int32))
+    , _grsMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'SuspiciousActivitySecurityDetail' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleRpcStatus' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'sasdDeviceProperty'
+-- * 'grsDetails'
 --
--- * 'sasdResourceId'
+-- * 'grsCode'
 --
--- * 'sasdIosVendorId'
---
--- * 'sasdOldValue'
---
--- * 'sasdNewValue'
---
--- * 'sasdDeviceModel'
---
--- * 'sasdDeviceId'
---
--- * 'sasdDeviceType'
---
--- * 'sasdSerialNumber'
-suspiciousActivitySecurityDetail
-    :: SuspiciousActivitySecurityDetail
-suspiciousActivitySecurityDetail =
-  SuspiciousActivitySecurityDetail'
-    { _sasdDeviceProperty = Nothing
-    , _sasdResourceId = Nothing
-    , _sasdIosVendorId = Nothing
-    , _sasdOldValue = Nothing
-    , _sasdNewValue = Nothing
-    , _sasdDeviceModel = Nothing
-    , _sasdDeviceId = Nothing
-    , _sasdDeviceType = Nothing
-    , _sasdSerialNumber = Nothing
-    }
+-- * 'grsMessage'
+googleRpcStatus
+    :: GoogleRpcStatus
+googleRpcStatus =
+  GoogleRpcStatus'
+    {_grsDetails = Nothing, _grsCode = Nothing, _grsMessage = Nothing}
 
 
--- | The device property which was changed.
-sasdDeviceProperty :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdDeviceProperty
-  = lens _sasdDeviceProperty
-      (\ s a -> s{_sasdDeviceProperty = a})
+-- | A list of messages that carry the error details. There is a common set
+-- of message types for APIs to use.
+grsDetails :: Lens' GoogleRpcStatus [GoogleRpcStatusDetailsItem]
+grsDetails
+  = lens _grsDetails (\ s a -> s{_grsDetails = a}) .
+      _Default
+      . _Coerce
 
--- | The device resource ID.
-sasdResourceId :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdResourceId
-  = lens _sasdResourceId
-      (\ s a -> s{_sasdResourceId = a})
+-- | The status code, which should be an enum value of google.rpc.Code.
+grsCode :: Lens' GoogleRpcStatus (Maybe Int32)
+grsCode
+  = lens _grsCode (\ s a -> s{_grsCode = a}) .
+      mapping _Coerce
 
--- | Required for iOS, empty for others.
-sasdIosVendorId :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdIosVendorId
-  = lens _sasdIosVendorId
-      (\ s a -> s{_sasdIosVendorId = a})
+-- | A developer-facing error message, which should be in English. Any
+-- user-facing error message should be localized and sent in the
+-- google.rpc.Status.details field, or localized by the client.
+grsMessage :: Lens' GoogleRpcStatus (Maybe Text)
+grsMessage
+  = lens _grsMessage (\ s a -> s{_grsMessage = a})
 
--- | The old value of the device property before the change.
-sasdOldValue :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdOldValue
-  = lens _sasdOldValue (\ s a -> s{_sasdOldValue = a})
-
--- | The new value of the device property after the change.
-sasdNewValue :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdNewValue
-  = lens _sasdNewValue (\ s a -> s{_sasdNewValue = a})
-
--- | The model of the device.
-sasdDeviceModel :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdDeviceModel
-  = lens _sasdDeviceModel
-      (\ s a -> s{_sasdDeviceModel = a})
-
--- | Required. The device ID.
-sasdDeviceId :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdDeviceId
-  = lens _sasdDeviceId (\ s a -> s{_sasdDeviceId = a})
-
--- | The type of the device.
-sasdDeviceType :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdDeviceType
-  = lens _sasdDeviceType
-      (\ s a -> s{_sasdDeviceType = a})
-
--- | The serial number of the device.
-sasdSerialNumber :: Lens' SuspiciousActivitySecurityDetail (Maybe Text)
-sasdSerialNumber
-  = lens _sasdSerialNumber
-      (\ s a -> s{_sasdSerialNumber = a})
-
-instance FromJSON SuspiciousActivitySecurityDetail
-         where
+instance FromJSON GoogleRpcStatus where
         parseJSON
-          = withObject "SuspiciousActivitySecurityDetail"
+          = withObject "GoogleRpcStatus"
               (\ o ->
-                 SuspiciousActivitySecurityDetail' <$>
-                   (o .:? "deviceProperty") <*> (o .:? "resourceId") <*>
-                     (o .:? "iosVendorId")
-                     <*> (o .:? "oldValue")
-                     <*> (o .:? "newValue")
-                     <*> (o .:? "deviceModel")
-                     <*> (o .:? "deviceId")
-                     <*> (o .:? "deviceType")
-                     <*> (o .:? "serialNumber"))
+                 GoogleRpcStatus' <$>
+                   (o .:? "details" .!= mempty) <*> (o .:? "code") <*>
+                     (o .:? "message"))
 
-instance ToJSON SuspiciousActivitySecurityDetail
-         where
-        toJSON SuspiciousActivitySecurityDetail'{..}
+instance ToJSON GoogleRpcStatus where
+        toJSON GoogleRpcStatus'{..}
           = object
               (catMaybes
-                 [("deviceProperty" .=) <$> _sasdDeviceProperty,
-                  ("resourceId" .=) <$> _sasdResourceId,
-                  ("iosVendorId" .=) <$> _sasdIosVendorId,
-                  ("oldValue" .=) <$> _sasdOldValue,
-                  ("newValue" .=) <$> _sasdNewValue,
-                  ("deviceModel" .=) <$> _sasdDeviceModel,
-                  ("deviceId" .=) <$> _sasdDeviceId,
-                  ("deviceType" .=) <$> _sasdDeviceType,
-                  ("serialNumber" .=) <$> _sasdSerialNumber])
+                 [("details" .=) <$> _grsDetails,
+                  ("code" .=) <$> _grsCode,
+                  ("message" .=) <$> _grsMessage])
 
--- | A generic empty message that you can re-use to avoid defining duplicated
--- empty messages in your APIs. A typical example is to use it as the
--- request or the response type of an API method. For instance: service Foo
--- { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The
--- JSON representation for \`Empty\` is empty JSON object \`{}\`.
+-- | Optional. The data associated with this alert, for example
+-- google.apps.alertcenter.type.DeviceCompromised.
 --
--- /See:/ 'empty' smart constructor.
-data Empty =
-  Empty'
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'Empty' with the minimum fields required to make a request.
---
-empty
-    :: Empty
-empty = Empty'
-
-
-instance FromJSON Empty where
-        parseJSON = withObject "Empty" (\ o -> pure Empty')
-
-instance ToJSON Empty where
-        toJSON = const emptyObject
-
--- | A request to undelete a specific alert that was marked for deletion.
---
--- /See:/ 'undeleteAlertRequest' smart constructor.
-newtype UndeleteAlertRequest =
-  UndeleteAlertRequest'
-    { _uarCustomerId :: Maybe Text
+-- /See:/ 'googleAppsAlertcenterV1beta1AlertData' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1AlertData =
+  GoogleAppsAlertcenterV1beta1AlertData'
+    { _gaavadAddtional :: HashMap Text JSONValue
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'UndeleteAlertRequest' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1AlertData' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'uarCustomerId'
-undeleteAlertRequest
-    :: UndeleteAlertRequest
-undeleteAlertRequest = UndeleteAlertRequest' {_uarCustomerId = Nothing}
+-- * 'gaavadAddtional'
+googleAppsAlertcenterV1beta1AlertData
+    :: HashMap Text JSONValue -- ^ 'gaavadAddtional'
+    -> GoogleAppsAlertcenterV1beta1AlertData
+googleAppsAlertcenterV1beta1AlertData pGaavadAddtional_ =
+  GoogleAppsAlertcenterV1beta1AlertData'
+    {_gaavadAddtional = _Coerce # pGaavadAddtional_}
 
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert is associated with. Inferred from the caller
--- identity if not provided.
-uarCustomerId :: Lens' UndeleteAlertRequest (Maybe Text)
-uarCustomerId
-  = lens _uarCustomerId
-      (\ s a -> s{_uarCustomerId = a})
+-- | Properties of the object. Contains field \'type with type URL.
+gaavadAddtional :: Lens' GoogleAppsAlertcenterV1beta1AlertData (HashMap Text JSONValue)
+gaavadAddtional
+  = lens _gaavadAddtional
+      (\ s a -> s{_gaavadAddtional = a})
+      . _Coerce
 
-instance FromJSON UndeleteAlertRequest where
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1AlertData
+         where
         parseJSON
-          = withObject "UndeleteAlertRequest"
+          = withObject "GoogleAppsAlertcenterV1beta1AlertData"
               (\ o ->
-                 UndeleteAlertRequest' <$> (o .:? "customerId"))
+                 GoogleAppsAlertcenterV1beta1AlertData' <$>
+                   (parseJSONObject o))
 
-instance ToJSON UndeleteAlertRequest where
-        toJSON UndeleteAlertRequest'{..}
-          = object
-              (catMaybes [("customerId" .=) <$> _uarCustomerId])
+instance ToJSON GoogleAppsAlertcenterV1beta1AlertData
+         where
+        toJSON = toJSON . _gaavadAddtional
 
--- | Customer-level settings.
+-- | A mobile device compromised alert. Derived from audit logs.
 --
--- /See:/ 'settings' smart constructor.
-newtype Settings =
-  Settings'
-    { _sNotifications :: Maybe [Notification]
+-- /See:/ 'googleAppsAlertcenterTypeDeviceCompromised' smart constructor.
+data GoogleAppsAlertcenterTypeDeviceCompromised =
+  GoogleAppsAlertcenterTypeDeviceCompromised'
+    { _gaatdcEmail :: !(Maybe Text)
+    , _gaatdcEvents :: !(Maybe [GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'Settings' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeDeviceCompromised' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'sNotifications'
-settings
-    :: Settings
-settings = Settings' {_sNotifications = Nothing}
+-- * 'gaatdcEmail'
+--
+-- * 'gaatdcEvents'
+googleAppsAlertcenterTypeDeviceCompromised
+    :: GoogleAppsAlertcenterTypeDeviceCompromised
+googleAppsAlertcenterTypeDeviceCompromised =
+  GoogleAppsAlertcenterTypeDeviceCompromised'
+    {_gaatdcEmail = Nothing, _gaatdcEvents = Nothing}
 
 
--- | The list of notifications.
-sNotifications :: Lens' Settings [Notification]
-sNotifications
-  = lens _sNotifications
-      (\ s a -> s{_sNotifications = a})
+-- | The email of the user this alert was created for.
+gaatdcEmail :: Lens' GoogleAppsAlertcenterTypeDeviceCompromised (Maybe Text)
+gaatdcEmail
+  = lens _gaatdcEmail (\ s a -> s{_gaatdcEmail = a})
+
+-- | Required. The list of security events.
+gaatdcEvents :: Lens' GoogleAppsAlertcenterTypeDeviceCompromised [GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail]
+gaatdcEvents
+  = lens _gaatdcEvents (\ s a -> s{_gaatdcEvents = a})
       . _Default
       . _Coerce
 
-instance FromJSON Settings where
+instance FromJSON
+           GoogleAppsAlertcenterTypeDeviceCompromised
+         where
         parseJSON
-          = withObject "Settings"
+          = withObject
+              "GoogleAppsAlertcenterTypeDeviceCompromised"
               (\ o ->
-                 Settings' <$> (o .:? "notifications" .!= mempty))
+                 GoogleAppsAlertcenterTypeDeviceCompromised' <$>
+                   (o .:? "email") <*> (o .:? "events" .!= mempty))
 
-instance ToJSON Settings where
-        toJSON Settings'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeDeviceCompromised
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeDeviceCompromised'{..}
           = object
               (catMaybes
-                 [("notifications" .=) <$> _sNotifications])
+                 [("email" .=) <$> _gaatdcEmail,
+                  ("events" .=) <$> _gaatdcEvents])
 
--- | Settings for callback notifications. For more details see [G Suite Alert
--- Notification](\/admin-sdk\/alertcenter\/guides\/notifications).
+-- | A state-sponsored attack alert. Derived from audit logs.
 --
--- /See:/ 'notification' smart constructor.
-newtype Notification =
-  Notification'
-    { _nCloudPubsubTopic :: Maybe CloudPubsubTopic
+-- /See:/ 'googleAppsAlertcenterTypeStateSponsoredAttack' smart constructor.
+newtype GoogleAppsAlertcenterTypeStateSponsoredAttack =
+  GoogleAppsAlertcenterTypeStateSponsoredAttack'
+    { _gaatssaEmail :: Maybe Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'Notification' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeStateSponsoredAttack' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'nCloudPubsubTopic'
-notification
-    :: Notification
-notification = Notification' {_nCloudPubsubTopic = Nothing}
+-- * 'gaatssaEmail'
+googleAppsAlertcenterTypeStateSponsoredAttack
+    :: GoogleAppsAlertcenterTypeStateSponsoredAttack
+googleAppsAlertcenterTypeStateSponsoredAttack =
+  GoogleAppsAlertcenterTypeStateSponsoredAttack' {_gaatssaEmail = Nothing}
 
 
--- | A Google Cloud Pub\/sub topic destination.
-nCloudPubsubTopic :: Lens' Notification (Maybe CloudPubsubTopic)
-nCloudPubsubTopic
-  = lens _nCloudPubsubTopic
-      (\ s a -> s{_nCloudPubsubTopic = a})
+-- | The email of the user this incident was created for.
+gaatssaEmail :: Lens' GoogleAppsAlertcenterTypeStateSponsoredAttack (Maybe Text)
+gaatssaEmail
+  = lens _gaatssaEmail (\ s a -> s{_gaatssaEmail = a})
 
-instance FromJSON Notification where
+instance FromJSON
+           GoogleAppsAlertcenterTypeStateSponsoredAttack
+         where
         parseJSON
-          = withObject "Notification"
-              (\ o -> Notification' <$> (o .:? "cloudPubsubTopic"))
+          = withObject
+              "GoogleAppsAlertcenterTypeStateSponsoredAttack"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeStateSponsoredAttack' <$>
+                   (o .:? "email"))
 
-instance ToJSON Notification where
-        toJSON Notification'{..}
-          = object
-              (catMaybes
-                 [("cloudPubsubTopic" .=) <$> _nCloudPubsubTopic])
+instance ToJSON
+           GoogleAppsAlertcenterTypeStateSponsoredAttack
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeStateSponsoredAttack'{..}
+          = object (catMaybes [("email" .=) <$> _gaatssaEmail])
 
--- | Alerts from G Suite Security Center rules service configured by admin.
+-- | An alert affecting a customer.
 --
--- /See:/ 'activityRule' smart constructor.
-data ActivityRule =
-  ActivityRule'
-    { _arSupersededAlerts :: !(Maybe [Text])
-    , _arActionNames :: !(Maybe [Text])
-    , _arSupersedingAlert :: !(Maybe Text)
-    , _arTriggerSource :: !(Maybe Text)
-    , _arWindowSize :: !(Maybe GDuration)
-    , _arUpdateTime :: !(Maybe DateTime')
-    , _arName :: !(Maybe Text)
-    , _arThreshold :: !(Maybe Text)
-    , _arQuery :: !(Maybe Text)
-    , _arDisplayName :: !(Maybe Text)
-    , _arDescription :: !(Maybe Text)
-    , _arCreateTime :: !(Maybe DateTime')
+-- /See:/ 'googleAppsAlertcenterV1beta1Alert' smart constructor.
+data GoogleAppsAlertcenterV1beta1Alert =
+  GoogleAppsAlertcenterV1beta1Alert'
+    { _gaavaEtag :: !(Maybe Text)
+    , _gaavaStartTime :: !(Maybe DateTime')
+    , _gaavaData :: !(Maybe GoogleAppsAlertcenterV1beta1AlertData)
+    , _gaavaAlertId :: !(Maybe Text)
+    , _gaavaSecurityInvestigationToolLink :: !(Maybe Text)
+    , _gaavaCustomerId :: !(Maybe Text)
+    , _gaavaUpdateTime :: !(Maybe DateTime')
+    , _gaavaEndTime :: !(Maybe DateTime')
+    , _gaavaMetadata :: !(Maybe GoogleAppsAlertcenterV1beta1AlertMetadata)
+    , _gaavaSource :: !(Maybe Text)
+    , _gaavaDeleted :: !(Maybe Bool)
+    , _gaavaType :: !(Maybe Text)
+    , _gaavaCreateTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'ActivityRule' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1Alert' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'arSupersededAlerts'
+-- * 'gaavaEtag'
 --
--- * 'arActionNames'
+-- * 'gaavaStartTime'
 --
--- * 'arSupersedingAlert'
+-- * 'gaavaData'
 --
--- * 'arTriggerSource'
+-- * 'gaavaAlertId'
 --
--- * 'arWindowSize'
+-- * 'gaavaSecurityInvestigationToolLink'
 --
--- * 'arUpdateTime'
+-- * 'gaavaCustomerId'
 --
--- * 'arName'
+-- * 'gaavaUpdateTime'
 --
--- * 'arThreshold'
+-- * 'gaavaEndTime'
 --
--- * 'arQuery'
+-- * 'gaavaMetadata'
 --
--- * 'arDisplayName'
+-- * 'gaavaSource'
 --
--- * 'arDescription'
+-- * 'gaavaDeleted'
 --
--- * 'arCreateTime'
-activityRule
-    :: ActivityRule
-activityRule =
-  ActivityRule'
-    { _arSupersededAlerts = Nothing
-    , _arActionNames = Nothing
-    , _arSupersedingAlert = Nothing
-    , _arTriggerSource = Nothing
-    , _arWindowSize = Nothing
-    , _arUpdateTime = Nothing
-    , _arName = Nothing
-    , _arThreshold = Nothing
-    , _arQuery = Nothing
-    , _arDisplayName = Nothing
-    , _arDescription = Nothing
-    , _arCreateTime = Nothing
+-- * 'gaavaType'
+--
+-- * 'gaavaCreateTime'
+googleAppsAlertcenterV1beta1Alert
+    :: GoogleAppsAlertcenterV1beta1Alert
+googleAppsAlertcenterV1beta1Alert =
+  GoogleAppsAlertcenterV1beta1Alert'
+    { _gaavaEtag = Nothing
+    , _gaavaStartTime = Nothing
+    , _gaavaData = Nothing
+    , _gaavaAlertId = Nothing
+    , _gaavaSecurityInvestigationToolLink = Nothing
+    , _gaavaCustomerId = Nothing
+    , _gaavaUpdateTime = Nothing
+    , _gaavaEndTime = Nothing
+    , _gaavaMetadata = Nothing
+    , _gaavaSource = Nothing
+    , _gaavaDeleted = Nothing
+    , _gaavaType = Nothing
+    , _gaavaCreateTime = Nothing
     }
 
 
--- | List of alert ids superseded by this alert. It is used to indicate that
+-- | Optional. \`etag\` is used for optimistic concurrency control as a way
+-- to help prevent simultaneous updates of an alert from overwriting each
+-- other. It is strongly suggested that systems make use of the \`etag\` in
+-- the read-modify-write cycle to perform alert updates in order to avoid
+-- race conditions: An \`etag\` is returned in the response which contains
+-- alerts, and systems are expected to put that etag in the request to
+-- update alert to ensure that their change will be applied to the same
+-- version of the alert. If no \`etag\` is provided in the call to update
+-- alert, then the existing alert is overwritten blindly.
+gaavaEtag :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaEtag
+  = lens _gaavaEtag (\ s a -> s{_gaavaEtag = a})
+
+-- | Required. The time the event that caused this alert was started or
+-- detected.
+gaavaStartTime :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe UTCTime)
+gaavaStartTime
+  = lens _gaavaStartTime
+      (\ s a -> s{_gaavaStartTime = a})
+      . mapping _DateTime
+
+-- | Optional. The data associated with this alert, for example
+-- google.apps.alertcenter.type.DeviceCompromised.
+gaavaData :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe GoogleAppsAlertcenterV1beta1AlertData)
+gaavaData
+  = lens _gaavaData (\ s a -> s{_gaavaData = a})
+
+-- | Output only. The unique identifier for the alert.
+gaavaAlertId :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaAlertId
+  = lens _gaavaAlertId (\ s a -> s{_gaavaAlertId = a})
+
+-- | Output only. An optional [Security Investigation
+-- Tool](https:\/\/support.google.com\/a\/answer\/7575955) query for this
+-- alert.
+gaavaSecurityInvestigationToolLink :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaSecurityInvestigationToolLink
+  = lens _gaavaSecurityInvestigationToolLink
+      (\ s a -> s{_gaavaSecurityInvestigationToolLink = a})
+
+-- | Output only. The unique identifier of the Google account of the
+-- customer.
+gaavaCustomerId :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaCustomerId
+  = lens _gaavaCustomerId
+      (\ s a -> s{_gaavaCustomerId = a})
+
+-- | Output only. The time this alert was last updated.
+gaavaUpdateTime :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe UTCTime)
+gaavaUpdateTime
+  = lens _gaavaUpdateTime
+      (\ s a -> s{_gaavaUpdateTime = a})
+      . mapping _DateTime
+
+-- | Optional. The time the event that caused this alert ceased being active.
+-- If provided, the end time must not be earlier than the start time. If
+-- not provided, it indicates an ongoing alert.
+gaavaEndTime :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe UTCTime)
+gaavaEndTime
+  = lens _gaavaEndTime (\ s a -> s{_gaavaEndTime = a})
+      . mapping _DateTime
+
+-- | Output only. The metadata associated with this alert.
+gaavaMetadata :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe GoogleAppsAlertcenterV1beta1AlertMetadata)
+gaavaMetadata
+  = lens _gaavaMetadata
+      (\ s a -> s{_gaavaMetadata = a})
+
+-- | Required. A unique identifier for the system that reported the alert.
+-- This is output only after alert is created. Supported sources are any of
+-- the following: * Google Operations * Mobile device management * Gmail
+-- phishing * Domain wide takeout * State sponsored attack * Google
+-- identity
+gaavaSource :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaSource
+  = lens _gaavaSource (\ s a -> s{_gaavaSource = a})
+
+-- | Output only. \`True\` if this alert is marked for deletion.
+gaavaDeleted :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Bool)
+gaavaDeleted
+  = lens _gaavaDeleted (\ s a -> s{_gaavaDeleted = a})
+
+-- | Required. The type of the alert. This is output only after alert is
+-- created. For a list of available alert types see [Google Workspace Alert
+-- types](\/admin-sdk\/alertcenter\/reference\/alert-types).
+gaavaType :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe Text)
+gaavaType
+  = lens _gaavaType (\ s a -> s{_gaavaType = a})
+
+-- | Output only. The time this alert was created.
+gaavaCreateTime :: Lens' GoogleAppsAlertcenterV1beta1Alert (Maybe UTCTime)
+gaavaCreateTime
+  = lens _gaavaCreateTime
+      (\ s a -> s{_gaavaCreateTime = a})
+      . mapping _DateTime
+
+instance FromJSON GoogleAppsAlertcenterV1beta1Alert
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterV1beta1Alert"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1Alert' <$>
+                   (o .:? "etag") <*> (o .:? "startTime") <*>
+                     (o .:? "data")
+                     <*> (o .:? "alertId")
+                     <*> (o .:? "securityInvestigationToolLink")
+                     <*> (o .:? "customerId")
+                     <*> (o .:? "updateTime")
+                     <*> (o .:? "endTime")
+                     <*> (o .:? "metadata")
+                     <*> (o .:? "source")
+                     <*> (o .:? "deleted")
+                     <*> (o .:? "type")
+                     <*> (o .:? "createTime"))
+
+instance ToJSON GoogleAppsAlertcenterV1beta1Alert
+         where
+        toJSON GoogleAppsAlertcenterV1beta1Alert'{..}
+          = object
+              (catMaybes
+                 [("etag" .=) <$> _gaavaEtag,
+                  ("startTime" .=) <$> _gaavaStartTime,
+                  ("data" .=) <$> _gaavaData,
+                  ("alertId" .=) <$> _gaavaAlertId,
+                  ("securityInvestigationToolLink" .=) <$>
+                    _gaavaSecurityInvestigationToolLink,
+                  ("customerId" .=) <$> _gaavaCustomerId,
+                  ("updateTime" .=) <$> _gaavaUpdateTime,
+                  ("endTime" .=) <$> _gaavaEndTime,
+                  ("metadata" .=) <$> _gaavaMetadata,
+                  ("source" .=) <$> _gaavaSource,
+                  ("deleted" .=) <$> _gaavaDeleted,
+                  ("type" .=) <$> _gaavaType,
+                  ("createTime" .=) <$> _gaavaCreateTime])
+
+-- | Proto that contains rule information.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoRuleInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo'
+    { _gaatrviriResourceName :: !(Maybe Text)
+    , _gaatrviriDisplayName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatrviriResourceName'
+--
+-- * 'gaatrviriDisplayName'
+googleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+googleAppsAlertcenterTypeRuleViolationInfoRuleInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo'
+    {_gaatrviriResourceName = Nothing, _gaatrviriDisplayName = Nothing}
+
+
+-- | Resource name that uniquely identifies the rule.
+gaatrviriResourceName :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo (Maybe Text)
+gaatrviriResourceName
+  = lens _gaatrviriResourceName
+      (\ s a -> s{_gaatrviriResourceName = a})
+
+-- | User provided name of the rule.
+gaatrviriDisplayName :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo (Maybe Text)
+gaatrviriDisplayName
+  = lens _gaatrviriDisplayName
+      (\ s a -> s{_gaatrviriDisplayName = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo'
+                   <$> (o .:? "resourceName") <*> (o .:? "displayName"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo'{..}
+          = object
+              (catMaybes
+                 [("resourceName" .=) <$> _gaatrviriResourceName,
+                  ("displayName" .=) <$> _gaatrviriDisplayName])
+
+-- | Metadata related to the action.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoActionInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo' with the minimum fields required to make a request.
+--
+googleAppsAlertcenterTypeRuleViolationInfoActionInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo
+googleAppsAlertcenterTypeRuleViolationInfoActionInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo'
+
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo"
+              (\ o ->
+                 pure
+                   GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo')
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo
+         where
+        toJSON = const emptyObject
+
+-- | Attachment with application-specific information about an alert.
+--
+-- /See:/ 'googleAppsAlertcenterTypeAttachment' smart constructor.
+newtype GoogleAppsAlertcenterTypeAttachment =
+  GoogleAppsAlertcenterTypeAttachment'
+    { _gaataCSV :: Maybe GoogleAppsAlertcenterTypeAttachmentCSV
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAttachment' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaataCSV'
+googleAppsAlertcenterTypeAttachment
+    :: GoogleAppsAlertcenterTypeAttachment
+googleAppsAlertcenterTypeAttachment =
+  GoogleAppsAlertcenterTypeAttachment' {_gaataCSV = Nothing}
+
+
+-- | A CSV file attachment.
+gaataCSV :: Lens' GoogleAppsAlertcenterTypeAttachment (Maybe GoogleAppsAlertcenterTypeAttachmentCSV)
+gaataCSV = lens _gaataCSV (\ s a -> s{_gaataCSV = a})
+
+instance FromJSON GoogleAppsAlertcenterTypeAttachment
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterTypeAttachment"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeAttachment' <$>
+                   (o .:? "csv"))
+
+instance ToJSON GoogleAppsAlertcenterTypeAttachment
+         where
+        toJSON GoogleAppsAlertcenterTypeAttachment'{..}
+          = object (catMaybes [("csv" .=) <$> _gaataCSV])
+
+-- | A user.
+--
+-- /See:/ 'googleAppsAlertcenterTypeUser' smart constructor.
+data GoogleAppsAlertcenterTypeUser =
+  GoogleAppsAlertcenterTypeUser'
+    { _gaatuEmailAddress :: !(Maybe Text)
+    , _gaatuDisplayName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeUser' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatuEmailAddress'
+--
+-- * 'gaatuDisplayName'
+googleAppsAlertcenterTypeUser
+    :: GoogleAppsAlertcenterTypeUser
+googleAppsAlertcenterTypeUser =
+  GoogleAppsAlertcenterTypeUser'
+    {_gaatuEmailAddress = Nothing, _gaatuDisplayName = Nothing}
+
+
+-- | Email address of the user.
+gaatuEmailAddress :: Lens' GoogleAppsAlertcenterTypeUser (Maybe Text)
+gaatuEmailAddress
+  = lens _gaatuEmailAddress
+      (\ s a -> s{_gaatuEmailAddress = a})
+
+-- | Display name of the user.
+gaatuDisplayName :: Lens' GoogleAppsAlertcenterTypeUser (Maybe Text)
+gaatuDisplayName
+  = lens _gaatuDisplayName
+      (\ s a -> s{_gaatuDisplayName = a})
+
+instance FromJSON GoogleAppsAlertcenterTypeUser where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterTypeUser"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeUser' <$>
+                   (o .:? "emailAddress") <*> (o .:? "displayName"))
+
+instance ToJSON GoogleAppsAlertcenterTypeUser where
+        toJSON GoogleAppsAlertcenterTypeUser'{..}
+          = object
+              (catMaybes
+                 [("emailAddress" .=) <$> _gaatuEmailAddress,
+                  ("displayName" .=) <$> _gaatuDisplayName])
+
+-- | A representation of a single data row in a CSV file.
+--
+-- /See:/ 'googleAppsAlertcenterTypeAttachmentCSVCSVRow' smart constructor.
+newtype GoogleAppsAlertcenterTypeAttachmentCSVCSVRow =
+  GoogleAppsAlertcenterTypeAttachmentCSVCSVRow'
+    { _gaataccrEntries :: Maybe [Text]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAttachmentCSVCSVRow' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaataccrEntries'
+googleAppsAlertcenterTypeAttachmentCSVCSVRow
+    :: GoogleAppsAlertcenterTypeAttachmentCSVCSVRow
+googleAppsAlertcenterTypeAttachmentCSVCSVRow =
+  GoogleAppsAlertcenterTypeAttachmentCSVCSVRow' {_gaataccrEntries = Nothing}
+
+
+-- | The data entries in a CSV file row, as a string array rather than a
+-- single comma-separated string.
+gaataccrEntries :: Lens' GoogleAppsAlertcenterTypeAttachmentCSVCSVRow [Text]
+gaataccrEntries
+  = lens _gaataccrEntries
+      (\ s a -> s{_gaataccrEntries = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeAttachmentCSVCSVRow
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeAttachmentCSVCSVRow"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeAttachmentCSVCSVRow' <$>
+                   (o .:? "entries" .!= mempty))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeAttachmentCSVCSVRow
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeAttachmentCSVCSVRow'{..}
+          = object
+              (catMaybes [("entries" .=) <$> _gaataccrEntries])
+
+-- | Alerts for user account warning events.
+--
+-- /See:/ 'googleAppsAlertcenterTypeAccountWarning' smart constructor.
+data GoogleAppsAlertcenterTypeAccountWarning =
+  GoogleAppsAlertcenterTypeAccountWarning'
+    { _gaatawEmail :: !(Maybe Text)
+    , _gaatawLoginDetails :: !(Maybe GoogleAppsAlertcenterTypeAccountWarningLoginDetails)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAccountWarning' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatawEmail'
+--
+-- * 'gaatawLoginDetails'
+googleAppsAlertcenterTypeAccountWarning
+    :: GoogleAppsAlertcenterTypeAccountWarning
+googleAppsAlertcenterTypeAccountWarning =
+  GoogleAppsAlertcenterTypeAccountWarning'
+    {_gaatawEmail = Nothing, _gaatawLoginDetails = Nothing}
+
+
+-- | Required. The email of the user that this event belongs to.
+gaatawEmail :: Lens' GoogleAppsAlertcenterTypeAccountWarning (Maybe Text)
+gaatawEmail
+  = lens _gaatawEmail (\ s a -> s{_gaatawEmail = a})
+
+-- | Optional. Details of the login action associated with the warning event.
+-- This is only available for: * Suspicious login * Suspicious login (less
+-- secure app) * Suspicious programmatic login * User suspended (suspicious
+-- activity)
+gaatawLoginDetails :: Lens' GoogleAppsAlertcenterTypeAccountWarning (Maybe GoogleAppsAlertcenterTypeAccountWarningLoginDetails)
+gaatawLoginDetails
+  = lens _gaatawLoginDetails
+      (\ s a -> s{_gaatawLoginDetails = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeAccountWarning
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeAccountWarning"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeAccountWarning' <$>
+                   (o .:? "email") <*> (o .:? "loginDetails"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeAccountWarning
+         where
+        toJSON GoogleAppsAlertcenterTypeAccountWarning'{..}
+          = object
+              (catMaybes
+                 [("email" .=) <$> _gaatawEmail,
+                  ("loginDetails" .=) <$> _gaatawLoginDetails])
+
+-- | Details of a message in phishing spike alert.
+--
+-- /See:/ 'googleAppsAlertcenterTypeGmailMessageInfo' smart constructor.
+data GoogleAppsAlertcenterTypeGmailMessageInfo =
+  GoogleAppsAlertcenterTypeGmailMessageInfo'
+    { _gaatgmiMD5HashSubject :: !(Maybe Text)
+    , _gaatgmiSubjectText :: !(Maybe Text)
+    , _gaatgmiDate :: !(Maybe DateTime')
+    , _gaatgmiMD5HashMessageBody :: !(Maybe Text)
+    , _gaatgmiAttachmentsSha256Hash :: !(Maybe [Text])
+    , _gaatgmiRecipient :: !(Maybe Text)
+    , _gaatgmiMessageBodySnippet :: !(Maybe Text)
+    , _gaatgmiMessageId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeGmailMessageInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatgmiMD5HashSubject'
+--
+-- * 'gaatgmiSubjectText'
+--
+-- * 'gaatgmiDate'
+--
+-- * 'gaatgmiMD5HashMessageBody'
+--
+-- * 'gaatgmiAttachmentsSha256Hash'
+--
+-- * 'gaatgmiRecipient'
+--
+-- * 'gaatgmiMessageBodySnippet'
+--
+-- * 'gaatgmiMessageId'
+googleAppsAlertcenterTypeGmailMessageInfo
+    :: GoogleAppsAlertcenterTypeGmailMessageInfo
+googleAppsAlertcenterTypeGmailMessageInfo =
+  GoogleAppsAlertcenterTypeGmailMessageInfo'
+    { _gaatgmiMD5HashSubject = Nothing
+    , _gaatgmiSubjectText = Nothing
+    , _gaatgmiDate = Nothing
+    , _gaatgmiMD5HashMessageBody = Nothing
+    , _gaatgmiAttachmentsSha256Hash = Nothing
+    , _gaatgmiRecipient = Nothing
+    , _gaatgmiMessageBodySnippet = Nothing
+    , _gaatgmiMessageId = Nothing
+    }
+
+
+-- | The MD5 Hash of email\'s subject (only available for reported emails).
+gaatgmiMD5HashSubject :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiMD5HashSubject
+  = lens _gaatgmiMD5HashSubject
+      (\ s a -> s{_gaatgmiMD5HashSubject = a})
+
+-- | The email subject text (only available for reported emails).
+gaatgmiSubjectText :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiSubjectText
+  = lens _gaatgmiSubjectText
+      (\ s a -> s{_gaatgmiSubjectText = a})
+
+-- | The date the malicious email was sent.
+gaatgmiDate :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe UTCTime)
+gaatgmiDate
+  = lens _gaatgmiDate (\ s a -> s{_gaatgmiDate = a}) .
+      mapping _DateTime
+
+-- | The hash of the message body text.
+gaatgmiMD5HashMessageBody :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiMD5HashMessageBody
+  = lens _gaatgmiMD5HashMessageBody
+      (\ s a -> s{_gaatgmiMD5HashMessageBody = a})
+
+-- | The \`SHA256\` hash of email\'s attachment and all MIME parts.
+gaatgmiAttachmentsSha256Hash :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo [Text]
+gaatgmiAttachmentsSha256Hash
+  = lens _gaatgmiAttachmentsSha256Hash
+      (\ s a -> s{_gaatgmiAttachmentsSha256Hash = a})
+      . _Default
+      . _Coerce
+
+-- | The recipient of this email.
+gaatgmiRecipient :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiRecipient
+  = lens _gaatgmiRecipient
+      (\ s a -> s{_gaatgmiRecipient = a})
+
+-- | The snippet of the message body text (only available for reported
+-- emails).
+gaatgmiMessageBodySnippet :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiMessageBodySnippet
+  = lens _gaatgmiMessageBodySnippet
+      (\ s a -> s{_gaatgmiMessageBodySnippet = a})
+
+-- | The message ID.
+gaatgmiMessageId :: Lens' GoogleAppsAlertcenterTypeGmailMessageInfo (Maybe Text)
+gaatgmiMessageId
+  = lens _gaatgmiMessageId
+      (\ s a -> s{_gaatgmiMessageId = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeGmailMessageInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeGmailMessageInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeGmailMessageInfo' <$>
+                   (o .:? "md5HashSubject") <*> (o .:? "subjectText")
+                     <*> (o .:? "date")
+                     <*> (o .:? "md5HashMessageBody")
+                     <*> (o .:? "attachmentsSha256Hash" .!= mempty)
+                     <*> (o .:? "recipient")
+                     <*> (o .:? "messageBodySnippet")
+                     <*> (o .:? "messageId"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeGmailMessageInfo
+         where
+        toJSON GoogleAppsAlertcenterTypeGmailMessageInfo'{..}
+          = object
+              (catMaybes
+                 [("md5HashSubject" .=) <$> _gaatgmiMD5HashSubject,
+                  ("subjectText" .=) <$> _gaatgmiSubjectText,
+                  ("date" .=) <$> _gaatgmiDate,
+                  ("md5HashMessageBody" .=) <$>
+                    _gaatgmiMD5HashMessageBody,
+                  ("attachmentsSha256Hash" .=) <$>
+                    _gaatgmiAttachmentsSha256Hash,
+                  ("recipient" .=) <$> _gaatgmiRecipient,
+                  ("messageBodySnippet" .=) <$>
+                    _gaatgmiMessageBodySnippet,
+                  ("messageId" .=) <$> _gaatgmiMessageId])
+
+-- | Proto for all phishing alerts with common payload. Supported types are
+-- any of the following: * User reported phishing * User reported spam
+-- spike * Suspicious message reported * Phishing reclassification *
+-- Malware reclassification * Gmail potential employee spoofing
+--
+-- /See:/ 'googleAppsAlertcenterTypeMailPhishing' smart constructor.
+data GoogleAppsAlertcenterTypeMailPhishing =
+  GoogleAppsAlertcenterTypeMailPhishing'
+    { _gaatmpSystemActionType :: !(Maybe GoogleAppsAlertcenterTypeMailPhishingSystemActionType)
+    , _gaatmpIsInternal :: !(Maybe Bool)
+    , _gaatmpDomainId :: !(Maybe GoogleAppsAlertcenterTypeDomainId)
+    , _gaatmpMessages :: !(Maybe [GoogleAppsAlertcenterTypeGmailMessageInfo])
+    , _gaatmpMaliciousEntity :: !(Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeMailPhishing' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatmpSystemActionType'
+--
+-- * 'gaatmpIsInternal'
+--
+-- * 'gaatmpDomainId'
+--
+-- * 'gaatmpMessages'
+--
+-- * 'gaatmpMaliciousEntity'
+googleAppsAlertcenterTypeMailPhishing
+    :: GoogleAppsAlertcenterTypeMailPhishing
+googleAppsAlertcenterTypeMailPhishing =
+  GoogleAppsAlertcenterTypeMailPhishing'
+    { _gaatmpSystemActionType = Nothing
+    , _gaatmpIsInternal = Nothing
+    , _gaatmpDomainId = Nothing
+    , _gaatmpMessages = Nothing
+    , _gaatmpMaliciousEntity = Nothing
+    }
+
+
+-- | System actions on the messages.
+gaatmpSystemActionType :: Lens' GoogleAppsAlertcenterTypeMailPhishing (Maybe GoogleAppsAlertcenterTypeMailPhishingSystemActionType)
+gaatmpSystemActionType
+  = lens _gaatmpSystemActionType
+      (\ s a -> s{_gaatmpSystemActionType = a})
+
+-- | If \`true\`, the email originated from within the organization.
+gaatmpIsInternal :: Lens' GoogleAppsAlertcenterTypeMailPhishing (Maybe Bool)
+gaatmpIsInternal
+  = lens _gaatmpIsInternal
+      (\ s a -> s{_gaatmpIsInternal = a})
+
+-- | The domain ID.
+gaatmpDomainId :: Lens' GoogleAppsAlertcenterTypeMailPhishing (Maybe GoogleAppsAlertcenterTypeDomainId)
+gaatmpDomainId
+  = lens _gaatmpDomainId
+      (\ s a -> s{_gaatmpDomainId = a})
+
+-- | The list of messages contained by this alert.
+gaatmpMessages :: Lens' GoogleAppsAlertcenterTypeMailPhishing [GoogleAppsAlertcenterTypeGmailMessageInfo]
+gaatmpMessages
+  = lens _gaatmpMessages
+      (\ s a -> s{_gaatmpMessages = a})
+      . _Default
+      . _Coerce
+
+-- | The entity whose actions triggered a Gmail phishing alert.
+gaatmpMaliciousEntity :: Lens' GoogleAppsAlertcenterTypeMailPhishing (Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
+gaatmpMaliciousEntity
+  = lens _gaatmpMaliciousEntity
+      (\ s a -> s{_gaatmpMaliciousEntity = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeMailPhishing
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterTypeMailPhishing"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeMailPhishing' <$>
+                   (o .:? "systemActionType") <*> (o .:? "isInternal")
+                     <*> (o .:? "domainId")
+                     <*> (o .:? "messages" .!= mempty)
+                     <*> (o .:? "maliciousEntity"))
+
+instance ToJSON GoogleAppsAlertcenterTypeMailPhishing
+         where
+        toJSON GoogleAppsAlertcenterTypeMailPhishing'{..}
+          = object
+              (catMaybes
+                 [("systemActionType" .=) <$> _gaatmpSystemActionType,
+                  ("isInternal" .=) <$> _gaatmpIsInternal,
+                  ("domainId" .=) <$> _gaatmpDomainId,
+                  ("messages" .=) <$> _gaatmpMessages,
+                  ("maliciousEntity" .=) <$> _gaatmpMaliciousEntity])
+
+-- | Alerts from Google Workspace Security Center rules service configured by
+-- an admin.
+--
+-- /See:/ 'googleAppsAlertcenterTypeActivityRule' smart constructor.
+data GoogleAppsAlertcenterTypeActivityRule =
+  GoogleAppsAlertcenterTypeActivityRule'
+    { _gaatarSupersededAlerts :: !(Maybe [Text])
+    , _gaatarActionNames :: !(Maybe [Text])
+    , _gaatarSupersedingAlert :: !(Maybe Text)
+    , _gaatarTriggerSource :: !(Maybe Text)
+    , _gaatarWindowSize :: !(Maybe GDuration)
+    , _gaatarUpdateTime :: !(Maybe DateTime')
+    , _gaatarName :: !(Maybe Text)
+    , _gaatarThreshold :: !(Maybe Text)
+    , _gaatarQuery :: !(Maybe Text)
+    , _gaatarDisplayName :: !(Maybe Text)
+    , _gaatarDescription :: !(Maybe Text)
+    , _gaatarCreateTime :: !(Maybe DateTime')
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeActivityRule' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatarSupersededAlerts'
+--
+-- * 'gaatarActionNames'
+--
+-- * 'gaatarSupersedingAlert'
+--
+-- * 'gaatarTriggerSource'
+--
+-- * 'gaatarWindowSize'
+--
+-- * 'gaatarUpdateTime'
+--
+-- * 'gaatarName'
+--
+-- * 'gaatarThreshold'
+--
+-- * 'gaatarQuery'
+--
+-- * 'gaatarDisplayName'
+--
+-- * 'gaatarDescription'
+--
+-- * 'gaatarCreateTime'
+googleAppsAlertcenterTypeActivityRule
+    :: GoogleAppsAlertcenterTypeActivityRule
+googleAppsAlertcenterTypeActivityRule =
+  GoogleAppsAlertcenterTypeActivityRule'
+    { _gaatarSupersededAlerts = Nothing
+    , _gaatarActionNames = Nothing
+    , _gaatarSupersedingAlert = Nothing
+    , _gaatarTriggerSource = Nothing
+    , _gaatarWindowSize = Nothing
+    , _gaatarUpdateTime = Nothing
+    , _gaatarName = Nothing
+    , _gaatarThreshold = Nothing
+    , _gaatarQuery = Nothing
+    , _gaatarDisplayName = Nothing
+    , _gaatarDescription = Nothing
+    , _gaatarCreateTime = Nothing
+    }
+
+
+-- | List of alert IDs superseded by this alert. It is used to indicate that
 -- this alert is essentially extension of superseded alerts and we found
 -- the relationship after creating these alerts.
-arSupersededAlerts :: Lens' ActivityRule [Text]
-arSupersededAlerts
-  = lens _arSupersededAlerts
-      (\ s a -> s{_arSupersededAlerts = a})
+gaatarSupersededAlerts :: Lens' GoogleAppsAlertcenterTypeActivityRule [Text]
+gaatarSupersededAlerts
+  = lens _gaatarSupersededAlerts
+      (\ s a -> s{_gaatarSupersededAlerts = a})
       . _Default
       . _Coerce
 
 -- | List of action names associated with the rule threshold.
-arActionNames :: Lens' ActivityRule [Text]
-arActionNames
-  = lens _arActionNames
-      (\ s a -> s{_arActionNames = a})
+gaatarActionNames :: Lens' GoogleAppsAlertcenterTypeActivityRule [Text]
+gaatarActionNames
+  = lens _gaatarActionNames
+      (\ s a -> s{_gaatarActionNames = a})
       . _Default
       . _Coerce
 
--- | Alert id superseding this alert. It is used to indicate that superseding
+-- | Alert ID superseding this alert. It is used to indicate that superseding
 -- alert is essentially extension of this alert and we found the
 -- relationship after creating both alerts.
-arSupersedingAlert :: Lens' ActivityRule (Maybe Text)
-arSupersedingAlert
-  = lens _arSupersedingAlert
-      (\ s a -> s{_arSupersedingAlert = a})
+gaatarSupersedingAlert :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarSupersedingAlert
+  = lens _gaatarSupersedingAlert
+      (\ s a -> s{_gaatarSupersedingAlert = a})
 
 -- | The trigger sources for this rule. * GMAIL_EVENTS * DEVICE_EVENTS *
 -- USER_EVENTS
-arTriggerSource :: Lens' ActivityRule (Maybe Text)
-arTriggerSource
-  = lens _arTriggerSource
-      (\ s a -> s{_arTriggerSource = a})
+gaatarTriggerSource :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarTriggerSource
+  = lens _gaatarTriggerSource
+      (\ s a -> s{_gaatarTriggerSource = a})
 
 -- | Rule window size. Possible values are 1 hour or 24 hours.
-arWindowSize :: Lens' ActivityRule (Maybe Scientific)
-arWindowSize
-  = lens _arWindowSize (\ s a -> s{_arWindowSize = a})
+gaatarWindowSize :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Scientific)
+gaatarWindowSize
+  = lens _gaatarWindowSize
+      (\ s a -> s{_gaatarWindowSize = a})
       . mapping _GDuration
 
 -- | The timestamp of the last update to the rule.
-arUpdateTime :: Lens' ActivityRule (Maybe UTCTime)
-arUpdateTime
-  = lens _arUpdateTime (\ s a -> s{_arUpdateTime = a})
+gaatarUpdateTime :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe UTCTime)
+gaatarUpdateTime
+  = lens _gaatarUpdateTime
+      (\ s a -> s{_gaatarUpdateTime = a})
       . mapping _DateTime
 
 -- | Rule name.
-arName :: Lens' ActivityRule (Maybe Text)
-arName = lens _arName (\ s a -> s{_arName = a})
+gaatarName :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarName
+  = lens _gaatarName (\ s a -> s{_gaatarName = a})
 
 -- | Alert threshold is for example “COUNT > 5”.
-arThreshold :: Lens' ActivityRule (Maybe Text)
-arThreshold
-  = lens _arThreshold (\ s a -> s{_arThreshold = a})
+gaatarThreshold :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarThreshold
+  = lens _gaatarThreshold
+      (\ s a -> s{_gaatarThreshold = a})
 
 -- | Query that is used to get the data from the associated source.
-arQuery :: Lens' ActivityRule (Maybe Text)
-arQuery = lens _arQuery (\ s a -> s{_arQuery = a})
+gaatarQuery :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarQuery
+  = lens _gaatarQuery (\ s a -> s{_gaatarQuery = a})
 
 -- | Alert display name.
-arDisplayName :: Lens' ActivityRule (Maybe Text)
-arDisplayName
-  = lens _arDisplayName
-      (\ s a -> s{_arDisplayName = a})
+gaatarDisplayName :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarDisplayName
+  = lens _gaatarDisplayName
+      (\ s a -> s{_gaatarDisplayName = a})
 
 -- | Description of the rule.
-arDescription :: Lens' ActivityRule (Maybe Text)
-arDescription
-  = lens _arDescription
-      (\ s a -> s{_arDescription = a})
+gaatarDescription :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe Text)
+gaatarDescription
+  = lens _gaatarDescription
+      (\ s a -> s{_gaatarDescription = a})
 
 -- | Rule create timestamp.
-arCreateTime :: Lens' ActivityRule (Maybe UTCTime)
-arCreateTime
-  = lens _arCreateTime (\ s a -> s{_arCreateTime = a})
+gaatarCreateTime :: Lens' GoogleAppsAlertcenterTypeActivityRule (Maybe UTCTime)
+gaatarCreateTime
+  = lens _gaatarCreateTime
+      (\ s a -> s{_gaatarCreateTime = a})
       . mapping _DateTime
 
-instance FromJSON ActivityRule where
+instance FromJSON
+           GoogleAppsAlertcenterTypeActivityRule
+         where
         parseJSON
-          = withObject "ActivityRule"
+          = withObject "GoogleAppsAlertcenterTypeActivityRule"
               (\ o ->
-                 ActivityRule' <$>
+                 GoogleAppsAlertcenterTypeActivityRule' <$>
                    (o .:? "supersededAlerts" .!= mempty) <*>
                      (o .:? "actionNames" .!= mempty)
                      <*> (o .:? "supersedingAlert")
@@ -805,958 +1211,2096 @@ instance FromJSON ActivityRule where
                      <*> (o .:? "description")
                      <*> (o .:? "createTime"))
 
-instance ToJSON ActivityRule where
-        toJSON ActivityRule'{..}
+instance ToJSON GoogleAppsAlertcenterTypeActivityRule
+         where
+        toJSON GoogleAppsAlertcenterTypeActivityRule'{..}
           = object
               (catMaybes
-                 [("supersededAlerts" .=) <$> _arSupersededAlerts,
-                  ("actionNames" .=) <$> _arActionNames,
-                  ("supersedingAlert" .=) <$> _arSupersedingAlert,
-                  ("triggerSource" .=) <$> _arTriggerSource,
-                  ("windowSize" .=) <$> _arWindowSize,
-                  ("updateTime" .=) <$> _arUpdateTime,
-                  ("name" .=) <$> _arName,
-                  ("threshold" .=) <$> _arThreshold,
-                  ("query" .=) <$> _arQuery,
-                  ("displayName" .=) <$> _arDisplayName,
-                  ("description" .=) <$> _arDescription,
-                  ("createTime" .=) <$> _arCreateTime])
+                 [("supersededAlerts" .=) <$> _gaatarSupersededAlerts,
+                  ("actionNames" .=) <$> _gaatarActionNames,
+                  ("supersedingAlert" .=) <$> _gaatarSupersedingAlert,
+                  ("triggerSource" .=) <$> _gaatarTriggerSource,
+                  ("windowSize" .=) <$> _gaatarWindowSize,
+                  ("updateTime" .=) <$> _gaatarUpdateTime,
+                  ("name" .=) <$> _gaatarName,
+                  ("threshold" .=) <$> _gaatarThreshold,
+                  ("query" .=) <$> _gaatarQuery,
+                  ("displayName" .=) <$> _gaatarDisplayName,
+                  ("description" .=) <$> _gaatarDescription,
+                  ("createTime" .=) <$> _gaatarCreateTime])
 
--- | Alerts for user account warning events.
+-- | The status details for each failed alert_id.
 --
--- /See:/ 'accountWarning' smart constructor.
-data AccountWarning =
-  AccountWarning'
-    { _awEmail :: !(Maybe Text)
-    , _awLoginDetails :: !(Maybe LoginDetails)
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus'
+    { _gaavbdarfasAddtional :: HashMap Text GoogleRpcStatus
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'AccountWarning' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'awEmail'
---
--- * 'awLoginDetails'
-accountWarning
-    :: AccountWarning
-accountWarning = AccountWarning' {_awEmail = Nothing, _awLoginDetails = Nothing}
+-- * 'gaavbdarfasAddtional'
+googleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+    :: HashMap Text GoogleRpcStatus -- ^ 'gaavbdarfasAddtional'
+    -> GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+googleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus pGaavbdarfasAddtional_ =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus'
+    {_gaavbdarfasAddtional = _Coerce # pGaavbdarfasAddtional_}
 
 
--- | Required. The email of the user that this event belongs to.
-awEmail :: Lens' AccountWarning (Maybe Text)
-awEmail = lens _awEmail (\ s a -> s{_awEmail = a})
-
--- | Optional. Details of the login action associated with the warning event.
--- This is only available for: * Suspicious login * Suspicious login (less
--- secure app) * Suspicious programmatic login * User suspended (suspicious
--- activity)
-awLoginDetails :: Lens' AccountWarning (Maybe LoginDetails)
-awLoginDetails
-  = lens _awLoginDetails
-      (\ s a -> s{_awLoginDetails = a})
-
-instance FromJSON AccountWarning where
-        parseJSON
-          = withObject "AccountWarning"
-              (\ o ->
-                 AccountWarning' <$>
-                   (o .:? "email") <*> (o .:? "loginDetails"))
-
-instance ToJSON AccountWarning where
-        toJSON AccountWarning'{..}
-          = object
-              (catMaybes
-                 [("email" .=) <$> _awEmail,
-                  ("loginDetails" .=) <$> _awLoginDetails])
-
--- | Proto for all phishing alerts with common payload. Supported types are
--- any of the following: * User reported phishing * User reported spam
--- spike * Suspicious message reported * Phishing reclassification *
--- Malware reclassification
---
--- /See:/ 'mailPhishing' smart constructor.
-data MailPhishing =
-  MailPhishing'
-    { _mpIsInternal :: !(Maybe Bool)
-    , _mpDomainId :: !(Maybe DomainId)
-    , _mpMessages :: !(Maybe [GmailMessageInfo])
-    , _mpMaliciousEntity :: !(Maybe MaliciousEntity)
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'MailPhishing' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'mpIsInternal'
---
--- * 'mpDomainId'
---
--- * 'mpMessages'
---
--- * 'mpMaliciousEntity'
-mailPhishing
-    :: MailPhishing
-mailPhishing =
-  MailPhishing'
-    { _mpIsInternal = Nothing
-    , _mpDomainId = Nothing
-    , _mpMessages = Nothing
-    , _mpMaliciousEntity = Nothing
-    }
-
-
--- | If \`true\`, the email originated from within the organization.
-mpIsInternal :: Lens' MailPhishing (Maybe Bool)
-mpIsInternal
-  = lens _mpIsInternal (\ s a -> s{_mpIsInternal = a})
-
--- | The domain ID.
-mpDomainId :: Lens' MailPhishing (Maybe DomainId)
-mpDomainId
-  = lens _mpDomainId (\ s a -> s{_mpDomainId = a})
-
--- | The list of messages contained by this alert.
-mpMessages :: Lens' MailPhishing [GmailMessageInfo]
-mpMessages
-  = lens _mpMessages (\ s a -> s{_mpMessages = a}) .
-      _Default
+gaavbdarfasAddtional :: Lens' GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus (HashMap Text GoogleRpcStatus)
+gaavbdarfasAddtional
+  = lens _gaavbdarfasAddtional
+      (\ s a -> s{_gaavbdarfasAddtional = a})
       . _Coerce
 
--- | The entity whose actions triggered a Gmail phishing alert.
-mpMaliciousEntity :: Lens' MailPhishing (Maybe MaliciousEntity)
-mpMaliciousEntity
-  = lens _mpMaliciousEntity
-      (\ s a -> s{_mpMaliciousEntity = a})
-
-instance FromJSON MailPhishing where
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+         where
         parseJSON
-          = withObject "MailPhishing"
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus"
               (\ o ->
-                 MailPhishing' <$>
-                   (o .:? "isInternal") <*> (o .:? "domainId") <*>
-                     (o .:? "messages" .!= mempty)
-                     <*> (o .:? "maliciousEntity"))
+                 GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus'
+                   <$> (parseJSONObject o))
 
-instance ToJSON MailPhishing where
-        toJSON MailPhishing'{..}
-          = object
-              (catMaybes
-                 [("isInternal" .=) <$> _mpIsInternal,
-                  ("domainId" .=) <$> _mpDomainId,
-                  ("messages" .=) <$> _mpMessages,
-                  ("maliciousEntity" .=) <$> _mpMaliciousEntity])
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+         where
+        toJSON = toJSON . _gaavbdarfasAddtional
 
--- | Details of a message in phishing spike alert.
+-- | A generic empty message that you can re-use to avoid defining duplicated
+-- empty messages in your APIs. A typical example is to use it as the
+-- request or the response type of an API method. For instance: service Foo
+-- { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The
+-- JSON representation for \`Empty\` is empty JSON object \`{}\`.
 --
--- /See:/ 'gmailMessageInfo' smart constructor.
-data GmailMessageInfo =
-  GmailMessageInfo'
-    { _gmiMD5HashSubject :: !(Maybe Text)
-    , _gmiSubjectText :: !(Maybe Text)
-    , _gmiDate :: !(Maybe DateTime')
-    , _gmiMD5HashMessageBody :: !(Maybe Text)
-    , _gmiAttachmentsSha256Hash :: !(Maybe [Text])
-    , _gmiRecipient :: !(Maybe Text)
-    , _gmiMessageBodySnippet :: !(Maybe Text)
-    , _gmiMessageId :: !(Maybe Text)
+-- /See:/ 'googleProtobufEmpty' smart constructor.
+data GoogleProtobufEmpty =
+  GoogleProtobufEmpty'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleProtobufEmpty' with the minimum fields required to make a request.
+--
+googleProtobufEmpty
+    :: GoogleProtobufEmpty
+googleProtobufEmpty = GoogleProtobufEmpty'
+
+
+instance FromJSON GoogleProtobufEmpty where
+        parseJSON
+          = withObject "GoogleProtobufEmpty"
+              (\ o -> pure GoogleProtobufEmpty')
+
+instance ToJSON GoogleProtobufEmpty where
+        toJSON = const emptyObject
+
+-- | The status details for each failed alert_id.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus'
+    { _gaavbuarfasAddtional :: HashMap Text GoogleRpcStatus
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GmailMessageInfo' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'gmiMD5HashSubject'
---
--- * 'gmiSubjectText'
---
--- * 'gmiDate'
---
--- * 'gmiMD5HashMessageBody'
---
--- * 'gmiAttachmentsSha256Hash'
---
--- * 'gmiRecipient'
---
--- * 'gmiMessageBodySnippet'
---
--- * 'gmiMessageId'
-gmailMessageInfo
-    :: GmailMessageInfo
-gmailMessageInfo =
-  GmailMessageInfo'
-    { _gmiMD5HashSubject = Nothing
-    , _gmiSubjectText = Nothing
-    , _gmiDate = Nothing
-    , _gmiMD5HashMessageBody = Nothing
-    , _gmiAttachmentsSha256Hash = Nothing
-    , _gmiRecipient = Nothing
-    , _gmiMessageBodySnippet = Nothing
-    , _gmiMessageId = Nothing
-    }
+-- * 'gaavbuarfasAddtional'
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+    :: HashMap Text GoogleRpcStatus -- ^ 'gaavbuarfasAddtional'
+    -> GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus pGaavbuarfasAddtional_ =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus'
+    {_gaavbuarfasAddtional = _Coerce # pGaavbuarfasAddtional_}
 
 
--- | The MD5 Hash of email\'s subject (only available for reported emails).
-gmiMD5HashSubject :: Lens' GmailMessageInfo (Maybe Text)
-gmiMD5HashSubject
-  = lens _gmiMD5HashSubject
-      (\ s a -> s{_gmiMD5HashSubject = a})
-
--- | The email subject text (only available for reported emails).
-gmiSubjectText :: Lens' GmailMessageInfo (Maybe Text)
-gmiSubjectText
-  = lens _gmiSubjectText
-      (\ s a -> s{_gmiSubjectText = a})
-
--- | The date the malicious email was sent.
-gmiDate :: Lens' GmailMessageInfo (Maybe UTCTime)
-gmiDate
-  = lens _gmiDate (\ s a -> s{_gmiDate = a}) .
-      mapping _DateTime
-
--- | The hash of the message body text.
-gmiMD5HashMessageBody :: Lens' GmailMessageInfo (Maybe Text)
-gmiMD5HashMessageBody
-  = lens _gmiMD5HashMessageBody
-      (\ s a -> s{_gmiMD5HashMessageBody = a})
-
--- | The \`SHA256\` hash of email\'s attachment and all MIME parts.
-gmiAttachmentsSha256Hash :: Lens' GmailMessageInfo [Text]
-gmiAttachmentsSha256Hash
-  = lens _gmiAttachmentsSha256Hash
-      (\ s a -> s{_gmiAttachmentsSha256Hash = a})
-      . _Default
+gaavbuarfasAddtional :: Lens' GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus (HashMap Text GoogleRpcStatus)
+gaavbuarfasAddtional
+  = lens _gaavbuarfasAddtional
+      (\ s a -> s{_gaavbuarfasAddtional = a})
       . _Coerce
 
--- | The recipient of this email.
-gmiRecipient :: Lens' GmailMessageInfo (Maybe Text)
-gmiRecipient
-  = lens _gmiRecipient (\ s a -> s{_gmiRecipient = a})
-
--- | The snippet of the message body text (only available for reported
--- emails).
-gmiMessageBodySnippet :: Lens' GmailMessageInfo (Maybe Text)
-gmiMessageBodySnippet
-  = lens _gmiMessageBodySnippet
-      (\ s a -> s{_gmiMessageBodySnippet = a})
-
--- | The message ID.
-gmiMessageId :: Lens' GmailMessageInfo (Maybe Text)
-gmiMessageId
-  = lens _gmiMessageId (\ s a -> s{_gmiMessageId = a})
-
-instance FromJSON GmailMessageInfo where
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+         where
         parseJSON
-          = withObject "GmailMessageInfo"
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus"
               (\ o ->
-                 GmailMessageInfo' <$>
-                   (o .:? "md5HashSubject") <*> (o .:? "subjectText")
-                     <*> (o .:? "date")
-                     <*> (o .:? "md5HashMessageBody")
-                     <*> (o .:? "attachmentsSha256Hash" .!= mempty)
-                     <*> (o .:? "recipient")
-                     <*> (o .:? "messageBodySnippet")
-                     <*> (o .:? "messageId"))
+                 GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus'
+                   <$> (parseJSONObject o))
 
-instance ToJSON GmailMessageInfo where
-        toJSON GmailMessageInfo'{..}
-          = object
-              (catMaybes
-                 [("md5HashSubject" .=) <$> _gmiMD5HashSubject,
-                  ("subjectText" .=) <$> _gmiSubjectText,
-                  ("date" .=) <$> _gmiDate,
-                  ("md5HashMessageBody" .=) <$> _gmiMD5HashMessageBody,
-                  ("attachmentsSha256Hash" .=) <$>
-                    _gmiAttachmentsSha256Hash,
-                  ("recipient" .=) <$> _gmiRecipient,
-                  ("messageBodySnippet" .=) <$> _gmiMessageBodySnippet,
-                  ("messageId" .=) <$> _gmiMessageId])
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+         where
+        toJSON = toJSON . _gaavbuarfasAddtional
 
--- | Optional. The data associated with this alert, for example
--- google.apps.alertcenter.type.DeviceCompromised.
+-- | Proto that contains resource information.
 --
--- /See:/ 'alertData' smart constructor.
-newtype AlertData =
-  AlertData'
-    { _adAddtional :: HashMap Text JSONValue
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoResourceInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo'
+    { _gaatrviriDocumentId :: !(Maybe Text)
+    , _gaatrviriResourceTitle :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'AlertData' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'adAddtional'
-alertData
-    :: HashMap Text JSONValue -- ^ 'adAddtional'
-    -> AlertData
-alertData pAdAddtional_ = AlertData' {_adAddtional = _Coerce # pAdAddtional_}
+-- * 'gaatrviriDocumentId'
+--
+-- * 'gaatrviriResourceTitle'
+googleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+googleAppsAlertcenterTypeRuleViolationInfoResourceInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo'
+    {_gaatrviriDocumentId = Nothing, _gaatrviriResourceTitle = Nothing}
+
+
+-- | Drive file ID.
+gaatrviriDocumentId :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo (Maybe Text)
+gaatrviriDocumentId
+  = lens _gaatrviriDocumentId
+      (\ s a -> s{_gaatrviriDocumentId = a})
+
+-- | Title of the resource, for example email subject, or document title.
+gaatrviriResourceTitle :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo (Maybe Text)
+gaatrviriResourceTitle
+  = lens _gaatrviriResourceTitle
+      (\ s a -> s{_gaatrviriResourceTitle = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo'
+                   <$> (o .:? "documentId") <*> (o .:? "resourceTitle"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo'{..}
+          = object
+              (catMaybes
+                 [("documentId" .=) <$> _gaatrviriDocumentId,
+                  ("resourceTitle" .=) <$> _gaatrviriResourceTitle])
+
+--
+-- /See:/ 'googleRpcStatusDetailsItem' smart constructor.
+newtype GoogleRpcStatusDetailsItem =
+  GoogleRpcStatusDetailsItem'
+    { _grsdiAddtional :: HashMap Text JSONValue
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleRpcStatusDetailsItem' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'grsdiAddtional'
+googleRpcStatusDetailsItem
+    :: HashMap Text JSONValue -- ^ 'grsdiAddtional'
+    -> GoogleRpcStatusDetailsItem
+googleRpcStatusDetailsItem pGrsdiAddtional_ =
+  GoogleRpcStatusDetailsItem' {_grsdiAddtional = _Coerce # pGrsdiAddtional_}
 
 
 -- | Properties of the object. Contains field \'type with type URL.
-adAddtional :: Lens' AlertData (HashMap Text JSONValue)
-adAddtional
-  = lens _adAddtional (\ s a -> s{_adAddtional = a}) .
-      _Coerce
+grsdiAddtional :: Lens' GoogleRpcStatusDetailsItem (HashMap Text JSONValue)
+grsdiAddtional
+  = lens _grsdiAddtional
+      (\ s a -> s{_grsdiAddtional = a})
+      . _Coerce
 
-instance FromJSON AlertData where
+instance FromJSON GoogleRpcStatusDetailsItem where
         parseJSON
-          = withObject "AlertData"
-              (\ o -> AlertData' <$> (parseJSONObject o))
+          = withObject "GoogleRpcStatusDetailsItem"
+              (\ o ->
+                 GoogleRpcStatusDetailsItem' <$> (parseJSONObject o))
 
-instance ToJSON AlertData where
-        toJSON = toJSON . _adAddtional
+instance ToJSON GoogleRpcStatusDetailsItem where
+        toJSON = toJSON . _grsdiAddtional
 
--- | Alert for a spike in user reported phishing.
--- __Warning__: This type has been deprecated. Use
--- [MailPhishing](\/admin-sdk\/alertcenter\/reference\/rest\/v1beta1\/MailPhishing)
--- instead.
+-- | Response message for an alert listing request.
 --
--- /See:/ 'phishingSpike' smart constructor.
-data PhishingSpike =
-  PhishingSpike'
-    { _psIsInternal :: !(Maybe Bool)
-    , _psDomainId :: !(Maybe DomainId)
-    , _psMessages :: !(Maybe [GmailMessageInfo])
-    , _psMaliciousEntity :: !(Maybe MaliciousEntity)
+-- /See:/ 'googleAppsAlertcenterV1beta1ListAlertsResponse' smart constructor.
+data GoogleAppsAlertcenterV1beta1ListAlertsResponse =
+  GoogleAppsAlertcenterV1beta1ListAlertsResponse'
+    { _gaavlarNextPageToken :: !(Maybe Text)
+    , _gaavlarAlerts :: !(Maybe [GoogleAppsAlertcenterV1beta1Alert])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'PhishingSpike' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1ListAlertsResponse' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'psIsInternal'
+-- * 'gaavlarNextPageToken'
 --
--- * 'psDomainId'
---
--- * 'psMessages'
---
--- * 'psMaliciousEntity'
-phishingSpike
-    :: PhishingSpike
-phishingSpike =
-  PhishingSpike'
-    { _psIsInternal = Nothing
-    , _psDomainId = Nothing
-    , _psMessages = Nothing
-    , _psMaliciousEntity = Nothing
-    }
+-- * 'gaavlarAlerts'
+googleAppsAlertcenterV1beta1ListAlertsResponse
+    :: GoogleAppsAlertcenterV1beta1ListAlertsResponse
+googleAppsAlertcenterV1beta1ListAlertsResponse =
+  GoogleAppsAlertcenterV1beta1ListAlertsResponse'
+    {_gaavlarNextPageToken = Nothing, _gaavlarAlerts = Nothing}
 
 
--- | If \`true\`, the email originated from within the organization.
-psIsInternal :: Lens' PhishingSpike (Maybe Bool)
-psIsInternal
-  = lens _psIsInternal (\ s a -> s{_psIsInternal = a})
+-- | The token for the next page. If not empty, indicates that there may be
+-- more alerts that match the listing request; this value can be used in a
+-- subsequent ListAlertsRequest to get alerts continuing from last result
+-- of the current list call.
+gaavlarNextPageToken :: Lens' GoogleAppsAlertcenterV1beta1ListAlertsResponse (Maybe Text)
+gaavlarNextPageToken
+  = lens _gaavlarNextPageToken
+      (\ s a -> s{_gaavlarNextPageToken = a})
 
--- | The domain ID.
-psDomainId :: Lens' PhishingSpike (Maybe DomainId)
-psDomainId
-  = lens _psDomainId (\ s a -> s{_psDomainId = a})
-
--- | The list of messages contained by this alert.
-psMessages :: Lens' PhishingSpike [GmailMessageInfo]
-psMessages
-  = lens _psMessages (\ s a -> s{_psMessages = a}) .
-      _Default
+-- | The list of alerts.
+gaavlarAlerts :: Lens' GoogleAppsAlertcenterV1beta1ListAlertsResponse [GoogleAppsAlertcenterV1beta1Alert]
+gaavlarAlerts
+  = lens _gaavlarAlerts
+      (\ s a -> s{_gaavlarAlerts = a})
+      . _Default
       . _Coerce
 
--- | The entity whose actions triggered a Gmail phishing alert.
-psMaliciousEntity :: Lens' PhishingSpike (Maybe MaliciousEntity)
-psMaliciousEntity
-  = lens _psMaliciousEntity
-      (\ s a -> s{_psMaliciousEntity = a})
-
-instance FromJSON PhishingSpike where
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1ListAlertsResponse
+         where
         parseJSON
-          = withObject "PhishingSpike"
+          = withObject
+              "GoogleAppsAlertcenterV1beta1ListAlertsResponse"
               (\ o ->
-                 PhishingSpike' <$>
-                   (o .:? "isInternal") <*> (o .:? "domainId") <*>
-                     (o .:? "messages" .!= mempty)
-                     <*> (o .:? "maliciousEntity"))
+                 GoogleAppsAlertcenterV1beta1ListAlertsResponse' <$>
+                   (o .:? "nextPageToken") <*>
+                     (o .:? "alerts" .!= mempty))
 
-instance ToJSON PhishingSpike where
-        toJSON PhishingSpike'{..}
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1ListAlertsResponse
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1ListAlertsResponse'{..}
           = object
               (catMaybes
-                 [("isInternal" .=) <$> _psIsInternal,
-                  ("domainId" .=) <$> _psDomainId,
-                  ("messages" .=) <$> _psMessages,
-                  ("maliciousEntity" .=) <$> _psMaliciousEntity])
+                 [("nextPageToken" .=) <$> _gaavlarNextPageToken,
+                  ("alerts" .=) <$> _gaavlarAlerts])
+
+-- | Detector defined by administrators.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo'
+    { _gaatrvimiuddiResourceName :: !(Maybe Text)
+    , _gaatrvimiuddiDisplayName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatrvimiuddiResourceName'
+--
+-- * 'gaatrvimiuddiDisplayName'
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo'
+    {_gaatrvimiuddiResourceName = Nothing, _gaatrvimiuddiDisplayName = Nothing}
+
+
+-- | Resource name that uniquely identifies the detector.
+gaatrvimiuddiResourceName :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo (Maybe Text)
+gaatrvimiuddiResourceName
+  = lens _gaatrvimiuddiResourceName
+      (\ s a -> s{_gaatrvimiuddiResourceName = a})
+
+-- | Display name of the detector.
+gaatrvimiuddiDisplayName :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo (Maybe Text)
+gaatrvimiuddiDisplayName
+  = lens _gaatrvimiuddiDisplayName
+      (\ s a -> s{_gaatrvimiuddiDisplayName = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo'
+                   <$> (o .:? "resourceName") <*> (o .:? "displayName"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo'{..}
+          = object
+              (catMaybes
+                 [("resourceName" .=) <$> _gaatrvimiuddiResourceName,
+                  ("displayName" .=) <$> _gaatrvimiuddiDisplayName])
+
+-- | Alerts that get triggered on violations of Data Loss Prevention (DLP)
+-- rules.
+--
+-- /See:/ 'googleAppsAlertcenterTypeDlpRuleViolation' smart constructor.
+newtype GoogleAppsAlertcenterTypeDlpRuleViolation =
+  GoogleAppsAlertcenterTypeDlpRuleViolation'
+    { _gaatdrvRuleViolationInfo :: Maybe GoogleAppsAlertcenterTypeRuleViolationInfo
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeDlpRuleViolation' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatdrvRuleViolationInfo'
+googleAppsAlertcenterTypeDlpRuleViolation
+    :: GoogleAppsAlertcenterTypeDlpRuleViolation
+googleAppsAlertcenterTypeDlpRuleViolation =
+  GoogleAppsAlertcenterTypeDlpRuleViolation'
+    {_gaatdrvRuleViolationInfo = Nothing}
+
+
+-- | Details about the violated DLP rule. Admins can use the predefined
+-- detectors provided by Google Cloud DLP https:\/\/cloud.google.com\/dlp\/
+-- when setting up a DLP rule. Matched Cloud DLP detectors in this
+-- violation if any will be captured in the MatchInfo.predefined_detector.
+gaatdrvRuleViolationInfo :: Lens' GoogleAppsAlertcenterTypeDlpRuleViolation (Maybe GoogleAppsAlertcenterTypeRuleViolationInfo)
+gaatdrvRuleViolationInfo
+  = lens _gaatdrvRuleViolationInfo
+      (\ s a -> s{_gaatdrvRuleViolationInfo = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeDlpRuleViolation
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeDlpRuleViolation"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeDlpRuleViolation' <$>
+                   (o .:? "ruleViolationInfo"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeDlpRuleViolation
+         where
+        toJSON GoogleAppsAlertcenterTypeDlpRuleViolation'{..}
+          = object
+              (catMaybes
+                 [("ruleViolationInfo" .=) <$>
+                    _gaatdrvRuleViolationInfo])
+
+-- | A reference to a Cloud Pubsub topic. To register for notifications, the
+-- owner of the topic must grant
+-- \`alerts-api-push-notifications\'system.gserviceaccount.com\` the
+-- \`projects.topics.publish\` permission.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic' smart constructor.
+data GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic =
+  GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic'
+    { _gaavsncptTopicName :: !(Maybe Text)
+    , _gaavsncptPayloadFormat :: !(Maybe GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopicPayloadFormat)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavsncptTopicName'
+--
+-- * 'gaavsncptPayloadFormat'
+googleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+    :: GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+googleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic =
+  GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic'
+    {_gaavsncptTopicName = Nothing, _gaavsncptPayloadFormat = Nothing}
+
+
+-- | The \`name\` field of a Cloud Pubsub [Topic]
+-- (https:\/\/cloud.google.com\/pubsub\/docs\/reference\/rest\/v1\/projects.topics#Topic).
+gaavsncptTopicName :: Lens' GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic (Maybe Text)
+gaavsncptTopicName
+  = lens _gaavsncptTopicName
+      (\ s a -> s{_gaavsncptTopicName = a})
+
+-- | Optional. The format of the payload that would be sent. If not specified
+-- the format will be JSON.
+gaavsncptPayloadFormat :: Lens' GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic (Maybe GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopicPayloadFormat)
+gaavsncptPayloadFormat
+  = lens _gaavsncptPayloadFormat
+      (\ s a -> s{_gaavsncptPayloadFormat = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic'
+                   <$> (o .:? "topicName") <*> (o .:? "payloadFormat"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic'{..}
+          = object
+              (catMaybes
+                 [("topicName" .=) <$> _gaavsncptTopicName,
+                  ("payloadFormat" .=) <$> _gaavsncptPayloadFormat])
 
 -- | A representation of a CSV file attachment, as a list of column headers
 -- and a list of data rows.
 --
--- /See:/ 'csv' smart constructor.
-data CSV =
-  CSV'
-    { _cDataRows :: !(Maybe [CSVRow])
-    , _cHeaders :: !(Maybe [Text])
+-- /See:/ 'googleAppsAlertcenterTypeAttachmentCSV' smart constructor.
+data GoogleAppsAlertcenterTypeAttachmentCSV =
+  GoogleAppsAlertcenterTypeAttachmentCSV'
+    { _gaatacDataRows :: !(Maybe [GoogleAppsAlertcenterTypeAttachmentCSVCSVRow])
+    , _gaatacHeaders :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'CSV' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAttachmentCSV' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'cDataRows'
+-- * 'gaatacDataRows'
 --
--- * 'cHeaders'
-csv
-    :: CSV
-csv = CSV' {_cDataRows = Nothing, _cHeaders = Nothing}
+-- * 'gaatacHeaders'
+googleAppsAlertcenterTypeAttachmentCSV
+    :: GoogleAppsAlertcenterTypeAttachmentCSV
+googleAppsAlertcenterTypeAttachmentCSV =
+  GoogleAppsAlertcenterTypeAttachmentCSV'
+    {_gaatacDataRows = Nothing, _gaatacHeaders = Nothing}
 
 
 -- | The list of data rows in a CSV file, as string arrays rather than as a
 -- single comma-separated string.
-cDataRows :: Lens' CSV [CSVRow]
-cDataRows
-  = lens _cDataRows (\ s a -> s{_cDataRows = a}) .
-      _Default
-      . _Coerce
-
--- | The list of headers for data columns in a CSV file.
-cHeaders :: Lens' CSV [Text]
-cHeaders
-  = lens _cHeaders (\ s a -> s{_cHeaders = a}) .
-      _Default
-      . _Coerce
-
-instance FromJSON CSV where
-        parseJSON
-          = withObject "CSV"
-              (\ o ->
-                 CSV' <$>
-                   (o .:? "dataRows" .!= mempty) <*>
-                     (o .:? "headers" .!= mempty))
-
-instance ToJSON CSV where
-        toJSON CSV'{..}
-          = object
-              (catMaybes
-                 [("dataRows" .=) <$> _cDataRows,
-                  ("headers" .=) <$> _cHeaders])
-
--- | An alert affecting a customer.
---
--- /See:/ 'alert' smart constructor.
-data Alert =
-  Alert'
-    { _aStartTime :: !(Maybe DateTime')
-    , _aData :: !(Maybe AlertData)
-    , _aAlertId :: !(Maybe Text)
-    , _aSecurityInvestigationToolLink :: !(Maybe Text)
-    , _aCustomerId :: !(Maybe Text)
-    , _aUpdateTime :: !(Maybe DateTime')
-    , _aEndTime :: !(Maybe DateTime')
-    , _aSource :: !(Maybe Text)
-    , _aDeleted :: !(Maybe Bool)
-    , _aType :: !(Maybe Text)
-    , _aCreateTime :: !(Maybe DateTime')
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'Alert' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'aStartTime'
---
--- * 'aData'
---
--- * 'aAlertId'
---
--- * 'aSecurityInvestigationToolLink'
---
--- * 'aCustomerId'
---
--- * 'aUpdateTime'
---
--- * 'aEndTime'
---
--- * 'aSource'
---
--- * 'aDeleted'
---
--- * 'aType'
---
--- * 'aCreateTime'
-alert
-    :: Alert
-alert =
-  Alert'
-    { _aStartTime = Nothing
-    , _aData = Nothing
-    , _aAlertId = Nothing
-    , _aSecurityInvestigationToolLink = Nothing
-    , _aCustomerId = Nothing
-    , _aUpdateTime = Nothing
-    , _aEndTime = Nothing
-    , _aSource = Nothing
-    , _aDeleted = Nothing
-    , _aType = Nothing
-    , _aCreateTime = Nothing
-    }
-
-
--- | Required. The time the event that caused this alert was started or
--- detected.
-aStartTime :: Lens' Alert (Maybe UTCTime)
-aStartTime
-  = lens _aStartTime (\ s a -> s{_aStartTime = a}) .
-      mapping _DateTime
-
--- | Optional. The data associated with this alert, for example
--- google.apps.alertcenter.type.DeviceCompromised.
-aData :: Lens' Alert (Maybe AlertData)
-aData = lens _aData (\ s a -> s{_aData = a})
-
--- | Output only. The unique identifier for the alert.
-aAlertId :: Lens' Alert (Maybe Text)
-aAlertId = lens _aAlertId (\ s a -> s{_aAlertId = a})
-
--- | Output only. An optional [Security Investigation
--- Tool](https:\/\/support.google.com\/a\/answer\/7575955) query for this
--- alert.
-aSecurityInvestigationToolLink :: Lens' Alert (Maybe Text)
-aSecurityInvestigationToolLink
-  = lens _aSecurityInvestigationToolLink
-      (\ s a -> s{_aSecurityInvestigationToolLink = a})
-
--- | Output only. The unique identifier of the Google account of the
--- customer.
-aCustomerId :: Lens' Alert (Maybe Text)
-aCustomerId
-  = lens _aCustomerId (\ s a -> s{_aCustomerId = a})
-
--- | Output only. The time this alert was last updated.
-aUpdateTime :: Lens' Alert (Maybe UTCTime)
-aUpdateTime
-  = lens _aUpdateTime (\ s a -> s{_aUpdateTime = a}) .
-      mapping _DateTime
-
--- | Optional. The time the event that caused this alert ceased being active.
--- If provided, the end time must not be earlier than the start time. If
--- not provided, it indicates an ongoing alert.
-aEndTime :: Lens' Alert (Maybe UTCTime)
-aEndTime
-  = lens _aEndTime (\ s a -> s{_aEndTime = a}) .
-      mapping _DateTime
-
--- | Required. A unique identifier for the system that reported the alert.
--- This is output only after alert is created. Supported sources are any of
--- the following: * Google Operations * Mobile device management * Gmail
--- phishing * Domain wide takeout * Government attack warning * Google
--- identity
-aSource :: Lens' Alert (Maybe Text)
-aSource = lens _aSource (\ s a -> s{_aSource = a})
-
--- | Output only. \`True\` if this alert is marked for deletion.
-aDeleted :: Lens' Alert (Maybe Bool)
-aDeleted = lens _aDeleted (\ s a -> s{_aDeleted = a})
-
--- | Required. The type of the alert. This is output only after alert is
--- created. For a list of available alert types see [G Suite Alert
--- types](\/admin-sdk\/alertcenter\/reference\/alert-types).
-aType :: Lens' Alert (Maybe Text)
-aType = lens _aType (\ s a -> s{_aType = a})
-
--- | Output only. The time this alert was created.
-aCreateTime :: Lens' Alert (Maybe UTCTime)
-aCreateTime
-  = lens _aCreateTime (\ s a -> s{_aCreateTime = a}) .
-      mapping _DateTime
-
-instance FromJSON Alert where
-        parseJSON
-          = withObject "Alert"
-              (\ o ->
-                 Alert' <$>
-                   (o .:? "startTime") <*> (o .:? "data") <*>
-                     (o .:? "alertId")
-                     <*> (o .:? "securityInvestigationToolLink")
-                     <*> (o .:? "customerId")
-                     <*> (o .:? "updateTime")
-                     <*> (o .:? "endTime")
-                     <*> (o .:? "source")
-                     <*> (o .:? "deleted")
-                     <*> (o .:? "type")
-                     <*> (o .:? "createTime"))
-
-instance ToJSON Alert where
-        toJSON Alert'{..}
-          = object
-              (catMaybes
-                 [("startTime" .=) <$> _aStartTime,
-                  ("data" .=) <$> _aData, ("alertId" .=) <$> _aAlertId,
-                  ("securityInvestigationToolLink" .=) <$>
-                    _aSecurityInvestigationToolLink,
-                  ("customerId" .=) <$> _aCustomerId,
-                  ("updateTime" .=) <$> _aUpdateTime,
-                  ("endTime" .=) <$> _aEndTime,
-                  ("source" .=) <$> _aSource,
-                  ("deleted" .=) <$> _aDeleted, ("type" .=) <$> _aType,
-                  ("createTime" .=) <$> _aCreateTime])
-
--- | Attachment with application-specific information about an alert.
---
--- /See:/ 'attachment' smart constructor.
-newtype Attachment =
-  Attachment'
-    { _aCSV :: Maybe CSV
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'Attachment' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'aCSV'
-attachment
-    :: Attachment
-attachment = Attachment' {_aCSV = Nothing}
-
-
--- | A CSV file attachment.
-aCSV :: Lens' Attachment (Maybe CSV)
-aCSV = lens _aCSV (\ s a -> s{_aCSV = a})
-
-instance FromJSON Attachment where
-        parseJSON
-          = withObject "Attachment"
-              (\ o -> Attachment' <$> (o .:? "csv"))
-
-instance ToJSON Attachment where
-        toJSON Attachment'{..}
-          = object (catMaybes [("csv" .=) <$> _aCSV])
-
--- | An incident reported by Google Operations for a G Suite application.
---
--- /See:/ 'googleOperations' smart constructor.
-data GoogleOperations =
-  GoogleOperations'
-    { _goAttachmentData :: !(Maybe Attachment)
-    , _goAffectedUserEmails :: !(Maybe [Text])
-    , _goTitle :: !(Maybe Text)
-    , _goDescription :: !(Maybe Text)
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GoogleOperations' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'goAttachmentData'
---
--- * 'goAffectedUserEmails'
---
--- * 'goTitle'
---
--- * 'goDescription'
-googleOperations
-    :: GoogleOperations
-googleOperations =
-  GoogleOperations'
-    { _goAttachmentData = Nothing
-    , _goAffectedUserEmails = Nothing
-    , _goTitle = Nothing
-    , _goDescription = Nothing
-    }
-
-
--- | Optional. Application-specific data for an incident, provided when the G
--- Suite application which reported the incident cannot be completely
--- restored to a valid state.
-goAttachmentData :: Lens' GoogleOperations (Maybe Attachment)
-goAttachmentData
-  = lens _goAttachmentData
-      (\ s a -> s{_goAttachmentData = a})
-
--- | The list of emails which correspond to the users directly affected by
--- the incident.
-goAffectedUserEmails :: Lens' GoogleOperations [Text]
-goAffectedUserEmails
-  = lens _goAffectedUserEmails
-      (\ s a -> s{_goAffectedUserEmails = a})
+gaatacDataRows :: Lens' GoogleAppsAlertcenterTypeAttachmentCSV [GoogleAppsAlertcenterTypeAttachmentCSVCSVRow]
+gaatacDataRows
+  = lens _gaatacDataRows
+      (\ s a -> s{_gaatacDataRows = a})
       . _Default
       . _Coerce
 
--- | A one-line incident description.
-goTitle :: Lens' GoogleOperations (Maybe Text)
-goTitle = lens _goTitle (\ s a -> s{_goTitle = a})
+-- | The list of headers for data columns in a CSV file.
+gaatacHeaders :: Lens' GoogleAppsAlertcenterTypeAttachmentCSV [Text]
+gaatacHeaders
+  = lens _gaatacHeaders
+      (\ s a -> s{_gaatacHeaders = a})
+      . _Default
+      . _Coerce
 
--- | A detailed, freeform incident description.
-goDescription :: Lens' GoogleOperations (Maybe Text)
-goDescription
-  = lens _goDescription
-      (\ s a -> s{_goDescription = a})
-
-instance FromJSON GoogleOperations where
+instance FromJSON
+           GoogleAppsAlertcenterTypeAttachmentCSV
+         where
         parseJSON
-          = withObject "GoogleOperations"
+          = withObject "GoogleAppsAlertcenterTypeAttachmentCSV"
               (\ o ->
-                 GoogleOperations' <$>
-                   (o .:? "attachmentData") <*>
-                     (o .:? "affectedUserEmails" .!= mempty)
-                     <*> (o .:? "title")
-                     <*> (o .:? "description"))
+                 GoogleAppsAlertcenterTypeAttachmentCSV' <$>
+                   (o .:? "dataRows" .!= mempty) <*>
+                     (o .:? "headers" .!= mempty))
 
-instance ToJSON GoogleOperations where
-        toJSON GoogleOperations'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeAttachmentCSV
+         where
+        toJSON GoogleAppsAlertcenterTypeAttachmentCSV'{..}
           = object
               (catMaybes
-                 [("attachmentData" .=) <$> _goAttachmentData,
-                  ("affectedUserEmails" .=) <$> _goAffectedUserEmails,
-                  ("title" .=) <$> _goTitle,
-                  ("description" .=) <$> _goDescription])
+                 [("dataRows" .=) <$> _gaatacDataRows,
+                  ("headers" .=) <$> _gaatacHeaders])
 
--- | A mobile suspicious activity alert. Derived from audit logs.
+-- | Response to batch delete operation on alerts.
 --
--- /See:/ 'suspiciousActivity' smart constructor.
-data SuspiciousActivity =
-  SuspiciousActivity'
-    { _saEmail :: !(Maybe Text)
-    , _saEvents :: !(Maybe [SuspiciousActivitySecurityDetail])
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchDeleteAlertsResponse' smart constructor.
+data GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse'
+    { _gaavbdarSuccessAlertIds :: !(Maybe [Text])
+    , _gaavbdarFailedAlertStatus :: !(Maybe GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'SuspiciousActivity' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'saEmail'
+-- * 'gaavbdarSuccessAlertIds'
 --
--- * 'saEvents'
-suspiciousActivity
-    :: SuspiciousActivity
-suspiciousActivity =
-  SuspiciousActivity' {_saEmail = Nothing, _saEvents = Nothing}
+-- * 'gaavbdarFailedAlertStatus'
+googleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+    :: GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+googleAppsAlertcenterV1beta1BatchDeleteAlertsResponse =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse'
+    {_gaavbdarSuccessAlertIds = Nothing, _gaavbdarFailedAlertStatus = Nothing}
+
+
+-- | The successful list of alert IDs.
+gaavbdarSuccessAlertIds :: Lens' GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse [Text]
+gaavbdarSuccessAlertIds
+  = lens _gaavbdarSuccessAlertIds
+      (\ s a -> s{_gaavbdarSuccessAlertIds = a})
+      . _Default
+      . _Coerce
+
+-- | The status details for each failed alert_id.
+gaavbdarFailedAlertStatus :: Lens' GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse (Maybe GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus)
+gaavbdarFailedAlertStatus
+  = lens _gaavbdarFailedAlertStatus
+      (\ s a -> s{_gaavbdarFailedAlertStatus = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse'
+                   <$>
+                   (o .:? "successAlertIds" .!= mempty) <*>
+                     (o .:? "failedAlertStatus"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse'{..}
+          = object
+              (catMaybes
+                 [("successAlertIds" .=) <$> _gaavbdarSuccessAlertIds,
+                  ("failedAlertStatus" .=) <$>
+                    _gaavbdarFailedAlertStatus])
+
+-- | Requests for one application that needs default SQL setup.
+--
+-- /See:/ 'googleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo' smart constructor.
+data GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo =
+  GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo'
+    { _gaatamsqlsnriNumberOfRequests :: !(Maybe (Textual Int64))
+    , _gaatamsqlsnriAppDeveloperEmail :: !(Maybe [Text])
+    , _gaatamsqlsnriAppKey :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatamsqlsnriNumberOfRequests'
+--
+-- * 'gaatamsqlsnriAppDeveloperEmail'
+--
+-- * 'gaatamsqlsnriAppKey'
+googleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+    :: GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+googleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo =
+  GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo'
+    { _gaatamsqlsnriNumberOfRequests = Nothing
+    , _gaatamsqlsnriAppDeveloperEmail = Nothing
+    , _gaatamsqlsnriAppKey = Nothing
+    }
+
+
+-- | Required. Number of requests sent for this application to set up default
+-- SQL instance.
+gaatamsqlsnriNumberOfRequests :: Lens' GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo (Maybe Int64)
+gaatamsqlsnriNumberOfRequests
+  = lens _gaatamsqlsnriNumberOfRequests
+      (\ s a -> s{_gaatamsqlsnriNumberOfRequests = a})
+      . mapping _Coerce
+
+-- | List of app developers who triggered notifications for above
+-- application.
+gaatamsqlsnriAppDeveloperEmail :: Lens' GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo [Text]
+gaatamsqlsnriAppDeveloperEmail
+  = lens _gaatamsqlsnriAppDeveloperEmail
+      (\ s a -> s{_gaatamsqlsnriAppDeveloperEmail = a})
+      . _Default
+      . _Coerce
+
+-- | Required. The application that requires the SQL setup.
+gaatamsqlsnriAppKey :: Lens' GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo (Maybe Text)
+gaatamsqlsnriAppKey
+  = lens _gaatamsqlsnriAppKey
+      (\ s a -> s{_gaatamsqlsnriAppKey = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo'
+                   <$>
+                   (o .:? "numberOfRequests") <*>
+                     (o .:? "appDeveloperEmail" .!= mempty)
+                     <*> (o .:? "appKey"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo'{..}
+          = object
+              (catMaybes
+                 [("numberOfRequests" .=) <$>
+                    _gaatamsqlsnriNumberOfRequests,
+                  ("appDeveloperEmail" .=) <$>
+                    _gaatamsqlsnriAppDeveloperEmail,
+                  ("appKey" .=) <$> _gaatamsqlsnriAppKey])
+
+-- | A mobile suspicious activity alert. Derived from audit logs.
+--
+-- /See:/ 'googleAppsAlertcenterTypeSuspiciousActivity' smart constructor.
+data GoogleAppsAlertcenterTypeSuspiciousActivity =
+  GoogleAppsAlertcenterTypeSuspiciousActivity'
+    { _gaatsaEmail :: !(Maybe Text)
+    , _gaatsaEvents :: !(Maybe [GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeSuspiciousActivity' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatsaEmail'
+--
+-- * 'gaatsaEvents'
+googleAppsAlertcenterTypeSuspiciousActivity
+    :: GoogleAppsAlertcenterTypeSuspiciousActivity
+googleAppsAlertcenterTypeSuspiciousActivity =
+  GoogleAppsAlertcenterTypeSuspiciousActivity'
+    {_gaatsaEmail = Nothing, _gaatsaEvents = Nothing}
 
 
 -- | The email of the user this alert was created for.
-saEmail :: Lens' SuspiciousActivity (Maybe Text)
-saEmail = lens _saEmail (\ s a -> s{_saEmail = a})
+gaatsaEmail :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivity (Maybe Text)
+gaatsaEmail
+  = lens _gaatsaEmail (\ s a -> s{_gaatsaEmail = a})
 
 -- | Required. The list of security events.
-saEvents :: Lens' SuspiciousActivity [SuspiciousActivitySecurityDetail]
-saEvents
-  = lens _saEvents (\ s a -> s{_saEvents = a}) .
-      _Default
+gaatsaEvents :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivity [GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail]
+gaatsaEvents
+  = lens _gaatsaEvents (\ s a -> s{_gaatsaEvents = a})
+      . _Default
       . _Coerce
 
-instance FromJSON SuspiciousActivity where
+instance FromJSON
+           GoogleAppsAlertcenterTypeSuspiciousActivity
+         where
         parseJSON
-          = withObject "SuspiciousActivity"
+          = withObject
+              "GoogleAppsAlertcenterTypeSuspiciousActivity"
               (\ o ->
-                 SuspiciousActivity' <$>
+                 GoogleAppsAlertcenterTypeSuspiciousActivity' <$>
                    (o .:? "email") <*> (o .:? "events" .!= mempty))
 
-instance ToJSON SuspiciousActivity where
-        toJSON SuspiciousActivity'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeSuspiciousActivity
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeSuspiciousActivity'{..}
           = object
               (catMaybes
-                 [("email" .=) <$> _saEmail,
-                  ("events" .=) <$> _saEvents])
+                 [("email" .=) <$> _gaatsaEmail,
+                  ("events" .=) <$> _gaatsaEvents])
+
+-- | The details of the login action.
+--
+-- /See:/ 'googleAppsAlertcenterTypeAccountWarningLoginDetails' smart constructor.
+data GoogleAppsAlertcenterTypeAccountWarningLoginDetails =
+  GoogleAppsAlertcenterTypeAccountWarningLoginDetails'
+    { _gaatawldIPAddress :: !(Maybe Text)
+    , _gaatawldLoginTime :: !(Maybe DateTime')
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAccountWarningLoginDetails' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatawldIPAddress'
+--
+-- * 'gaatawldLoginTime'
+googleAppsAlertcenterTypeAccountWarningLoginDetails
+    :: GoogleAppsAlertcenterTypeAccountWarningLoginDetails
+googleAppsAlertcenterTypeAccountWarningLoginDetails =
+  GoogleAppsAlertcenterTypeAccountWarningLoginDetails'
+    {_gaatawldIPAddress = Nothing, _gaatawldLoginTime = Nothing}
+
+
+-- | Optional. The human-readable IP address (for example, \`11.22.33.44\`)
+-- that is associated with the warning event.
+gaatawldIPAddress :: Lens' GoogleAppsAlertcenterTypeAccountWarningLoginDetails (Maybe Text)
+gaatawldIPAddress
+  = lens _gaatawldIPAddress
+      (\ s a -> s{_gaatawldIPAddress = a})
+
+-- | Optional. The successful login time that is associated with the warning
+-- event. This isn\'t present for blocked login attempts.
+gaatawldLoginTime :: Lens' GoogleAppsAlertcenterTypeAccountWarningLoginDetails (Maybe UTCTime)
+gaatawldLoginTime
+  = lens _gaatawldLoginTime
+      (\ s a -> s{_gaatawldLoginTime = a})
+      . mapping _DateTime
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeAccountWarningLoginDetails
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeAccountWarningLoginDetails"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeAccountWarningLoginDetails'
+                   <$> (o .:? "ipAddress") <*> (o .:? "loginTime"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeAccountWarningLoginDetails
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeAccountWarningLoginDetails'{..}
+          = object
+              (catMaybes
+                 [("ipAddress" .=) <$> _gaatawldIPAddress,
+                  ("loginTime" .=) <$> _gaatawldLoginTime])
+
+-- | Response message for an alert feedback listing request.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1ListAlertFeedbackResponse' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse =
+  GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse'
+    { _gaavlafrFeedback :: Maybe [GoogleAppsAlertcenterV1beta1AlertFeedback]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavlafrFeedback'
+googleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+    :: GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+googleAppsAlertcenterV1beta1ListAlertFeedbackResponse =
+  GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse'
+    {_gaavlafrFeedback = Nothing}
+
+
+-- | The list of alert feedback. Feedback entries for each alert are ordered
+-- by creation time descending.
+gaavlafrFeedback :: Lens' GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse [GoogleAppsAlertcenterV1beta1AlertFeedback]
+gaavlafrFeedback
+  = lens _gaavlafrFeedback
+      (\ s a -> s{_gaavlafrFeedback = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse'
+                   <$> (o .:? "feedback" .!= mempty))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse'{..}
+          = object
+              (catMaybes [("feedback" .=) <$> _gaavlafrFeedback])
+
+-- | Common alert information about violated rules that are configured by
+-- Google Workspace administrators.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfo'
+    { _gaatrviTriggeredActionTypes :: !(Maybe [GoogleAppsAlertcenterTypeRuleViolationInfoTriggeredActionTypesItem])
+    , _gaatrviSuppressedActionTypes :: !(Maybe [GoogleAppsAlertcenterTypeRuleViolationInfoSuppressedActionTypesItem])
+    , _gaatrviTriggeringUserEmail :: !(Maybe Text)
+    , _gaatrviResourceInfo :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo)
+    , _gaatrviMatchInfo :: !(Maybe [GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo])
+    , _gaatrviDataSource :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoDataSource)
+    , _gaatrviTrigger :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoTrigger)
+    , _gaatrviRecipients :: !(Maybe [Text])
+    , _gaatrviRuleInfo :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo)
+    , _gaatrviTriggeredActionInfo :: !(Maybe [GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatrviTriggeredActionTypes'
+--
+-- * 'gaatrviSuppressedActionTypes'
+--
+-- * 'gaatrviTriggeringUserEmail'
+--
+-- * 'gaatrviResourceInfo'
+--
+-- * 'gaatrviMatchInfo'
+--
+-- * 'gaatrviDataSource'
+--
+-- * 'gaatrviTrigger'
+--
+-- * 'gaatrviRecipients'
+--
+-- * 'gaatrviRuleInfo'
+--
+-- * 'gaatrviTriggeredActionInfo'
+googleAppsAlertcenterTypeRuleViolationInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfo
+googleAppsAlertcenterTypeRuleViolationInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfo'
+    { _gaatrviTriggeredActionTypes = Nothing
+    , _gaatrviSuppressedActionTypes = Nothing
+    , _gaatrviTriggeringUserEmail = Nothing
+    , _gaatrviResourceInfo = Nothing
+    , _gaatrviMatchInfo = Nothing
+    , _gaatrviDataSource = Nothing
+    , _gaatrviTrigger = Nothing
+    , _gaatrviRecipients = Nothing
+    , _gaatrviRuleInfo = Nothing
+    , _gaatrviTriggeredActionInfo = Nothing
+    }
+
+
+-- | Actions applied as a consequence of the rule being triggered.
+gaatrviTriggeredActionTypes :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo [GoogleAppsAlertcenterTypeRuleViolationInfoTriggeredActionTypesItem]
+gaatrviTriggeredActionTypes
+  = lens _gaatrviTriggeredActionTypes
+      (\ s a -> s{_gaatrviTriggeredActionTypes = a})
+      . _Default
+      . _Coerce
+
+-- | Actions suppressed due to other actions with higher priority.
+gaatrviSuppressedActionTypes :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo [GoogleAppsAlertcenterTypeRuleViolationInfoSuppressedActionTypesItem]
+gaatrviSuppressedActionTypes
+  = lens _gaatrviSuppressedActionTypes
+      (\ s a -> s{_gaatrviSuppressedActionTypes = a})
+      . _Default
+      . _Coerce
+
+-- | Email of the user who caused the violation. Value could be empty if not
+-- applicable, for example, a violation found by drive continuous scan.
+gaatrviTriggeringUserEmail :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo (Maybe Text)
+gaatrviTriggeringUserEmail
+  = lens _gaatrviTriggeringUserEmail
+      (\ s a -> s{_gaatrviTriggeringUserEmail = a})
+
+-- | Details of the resource which violated the rule.
+gaatrviResourceInfo :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo)
+gaatrviResourceInfo
+  = lens _gaatrviResourceInfo
+      (\ s a -> s{_gaatrviResourceInfo = a})
+
+-- | List of matches that were found in the resource content.
+gaatrviMatchInfo :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo [GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo]
+gaatrviMatchInfo
+  = lens _gaatrviMatchInfo
+      (\ s a -> s{_gaatrviMatchInfo = a})
+      . _Default
+      . _Coerce
+
+-- | Source of the data.
+gaatrviDataSource :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoDataSource)
+gaatrviDataSource
+  = lens _gaatrviDataSource
+      (\ s a -> s{_gaatrviDataSource = a})
+
+-- | Trigger of the rule.
+gaatrviTrigger :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoTrigger)
+gaatrviTrigger
+  = lens _gaatrviTrigger
+      (\ s a -> s{_gaatrviTrigger = a})
+
+-- | Resource recipients. For Drive, they are grantees that the Drive file
+-- was shared with at the time of rule triggering. Valid values include
+-- user emails, group emails, domains, or \'anyone\' if the file was
+-- publicly accessible. If the file was private the recipients list will be
+-- empty. For Gmail, they are emails of the users or groups that the Gmail
+-- message was sent to.
+gaatrviRecipients :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo [Text]
+gaatrviRecipients
+  = lens _gaatrviRecipients
+      (\ s a -> s{_gaatrviRecipients = a})
+      . _Default
+      . _Coerce
+
+-- | Details of the violated rule.
+gaatrviRuleInfo :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo)
+gaatrviRuleInfo
+  = lens _gaatrviRuleInfo
+      (\ s a -> s{_gaatrviRuleInfo = a})
+
+-- | Metadata related to the triggered actions.
+gaatrviTriggeredActionInfo :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfo [GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo]
+gaatrviTriggeredActionInfo
+  = lens _gaatrviTriggeredActionInfo
+      (\ s a -> s{_gaatrviTriggeredActionInfo = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfo' <$>
+                   (o .:? "triggeredActionTypes" .!= mempty) <*>
+                     (o .:? "suppressedActionTypes" .!= mempty)
+                     <*> (o .:? "triggeringUserEmail")
+                     <*> (o .:? "resourceInfo")
+                     <*> (o .:? "matchInfo" .!= mempty)
+                     <*> (o .:? "dataSource")
+                     <*> (o .:? "trigger")
+                     <*> (o .:? "recipients" .!= mempty)
+                     <*> (o .:? "ruleInfo")
+                     <*> (o .:? "triggeredActionInfo" .!= mempty))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfo'{..}
+          = object
+              (catMaybes
+                 [("triggeredActionTypes" .=) <$>
+                    _gaatrviTriggeredActionTypes,
+                  ("suppressedActionTypes" .=) <$>
+                    _gaatrviSuppressedActionTypes,
+                  ("triggeringUserEmail" .=) <$>
+                    _gaatrviTriggeringUserEmail,
+                  ("resourceInfo" .=) <$> _gaatrviResourceInfo,
+                  ("matchInfo" .=) <$> _gaatrviMatchInfo,
+                  ("dataSource" .=) <$> _gaatrviDataSource,
+                  ("trigger" .=) <$> _gaatrviTrigger,
+                  ("recipients" .=) <$> _gaatrviRecipients,
+                  ("ruleInfo" .=) <$> _gaatrviRuleInfo,
+                  ("triggeredActionInfo" .=) <$>
+                    _gaatrviTriggeredActionInfo])
+
+-- | Entity whose actions triggered a Gmail phishing alert.
+--
+-- /See:/ 'googleAppsAlertcenterTypeMaliciousEntity' smart constructor.
+data GoogleAppsAlertcenterTypeMaliciousEntity =
+  GoogleAppsAlertcenterTypeMaliciousEntity'
+    { _gaatmeFromHeader :: !(Maybe Text)
+    , _gaatmeDisplayName :: !(Maybe Text)
+    , _gaatmeEntity :: !(Maybe GoogleAppsAlertcenterTypeUser)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeMaliciousEntity' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatmeFromHeader'
+--
+-- * 'gaatmeDisplayName'
+--
+-- * 'gaatmeEntity'
+googleAppsAlertcenterTypeMaliciousEntity
+    :: GoogleAppsAlertcenterTypeMaliciousEntity
+googleAppsAlertcenterTypeMaliciousEntity =
+  GoogleAppsAlertcenterTypeMaliciousEntity'
+    { _gaatmeFromHeader = Nothing
+    , _gaatmeDisplayName = Nothing
+    , _gaatmeEntity = Nothing
+    }
+
+
+-- | The sender email address.
+gaatmeFromHeader :: Lens' GoogleAppsAlertcenterTypeMaliciousEntity (Maybe Text)
+gaatmeFromHeader
+  = lens _gaatmeFromHeader
+      (\ s a -> s{_gaatmeFromHeader = a})
+
+-- | The header from display name.
+gaatmeDisplayName :: Lens' GoogleAppsAlertcenterTypeMaliciousEntity (Maybe Text)
+gaatmeDisplayName
+  = lens _gaatmeDisplayName
+      (\ s a -> s{_gaatmeDisplayName = a})
+
+-- | The actor who triggered a gmail phishing alert.
+gaatmeEntity :: Lens' GoogleAppsAlertcenterTypeMaliciousEntity (Maybe GoogleAppsAlertcenterTypeUser)
+gaatmeEntity
+  = lens _gaatmeEntity (\ s a -> s{_gaatmeEntity = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeMaliciousEntity
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeMaliciousEntity"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeMaliciousEntity' <$>
+                   (o .:? "fromHeader") <*> (o .:? "displayName") <*>
+                     (o .:? "entity"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeMaliciousEntity
+         where
+        toJSON GoogleAppsAlertcenterTypeMaliciousEntity'{..}
+          = object
+              (catMaybes
+                 [("fromHeader" .=) <$> _gaatmeFromHeader,
+                  ("displayName" .=) <$> _gaatmeDisplayName,
+                  ("entity" .=) <$> _gaatmeEntity])
+
+-- | Customer-level settings.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1Settings' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1Settings =
+  GoogleAppsAlertcenterV1beta1Settings'
+    { _gaavsNotifications :: Maybe [GoogleAppsAlertcenterV1beta1SettingsNotification]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1Settings' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavsNotifications'
+googleAppsAlertcenterV1beta1Settings
+    :: GoogleAppsAlertcenterV1beta1Settings
+googleAppsAlertcenterV1beta1Settings =
+  GoogleAppsAlertcenterV1beta1Settings' {_gaavsNotifications = Nothing}
+
+
+-- | The list of notifications.
+gaavsNotifications :: Lens' GoogleAppsAlertcenterV1beta1Settings [GoogleAppsAlertcenterV1beta1SettingsNotification]
+gaavsNotifications
+  = lens _gaavsNotifications
+      (\ s a -> s{_gaavsNotifications = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1Settings
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterV1beta1Settings"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1Settings' <$>
+                   (o .:? "notifications" .!= mempty))
+
+instance ToJSON GoogleAppsAlertcenterV1beta1Settings
+         where
+        toJSON GoogleAppsAlertcenterV1beta1Settings'{..}
+          = object
+              (catMaybes
+                 [("notifications" .=) <$> _gaavsNotifications])
+
+-- | A request to undelete a specific alert that was marked for deletion.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1UndeleteAlertRequest' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1UndeleteAlertRequest =
+  GoogleAppsAlertcenterV1beta1UndeleteAlertRequest'
+    { _gaavuarCustomerId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1UndeleteAlertRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavuarCustomerId'
+googleAppsAlertcenterV1beta1UndeleteAlertRequest
+    :: GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+googleAppsAlertcenterV1beta1UndeleteAlertRequest =
+  GoogleAppsAlertcenterV1beta1UndeleteAlertRequest'
+    {_gaavuarCustomerId = Nothing}
+
+
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert is associated with. Inferred from the
+-- caller identity if not provided.
+gaavuarCustomerId :: Lens' GoogleAppsAlertcenterV1beta1UndeleteAlertRequest (Maybe Text)
+gaavuarCustomerId
+  = lens _gaavuarCustomerId
+      (\ s a -> s{_gaavuarCustomerId = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1UndeleteAlertRequest"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1UndeleteAlertRequest' <$>
+                   (o .:? "customerId"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1UndeleteAlertRequest'{..}
+          = object
+              (catMaybes
+                 [("customerId" .=) <$> _gaavuarCustomerId])
+
+-- | Proto that contains match information from the condition part of the
+-- rule.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoMatchInfo' smart constructor.
+data GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo'
+    { _gaatrvimiPredefinedDetector :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo)
+    , _gaatrvimiUserDefinedDetector :: !(Maybe GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatrvimiPredefinedDetector'
+--
+-- * 'gaatrvimiUserDefinedDetector'
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo'
+    { _gaatrvimiPredefinedDetector = Nothing
+    , _gaatrvimiUserDefinedDetector = Nothing
+    }
+
+
+-- | For matched detector predefined by Google.
+gaatrvimiPredefinedDetector :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo)
+gaatrvimiPredefinedDetector
+  = lens _gaatrvimiPredefinedDetector
+      (\ s a -> s{_gaatrvimiPredefinedDetector = a})
+
+-- | For matched detector defined by administrators.
+gaatrvimiUserDefinedDetector :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo (Maybe GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo)
+gaatrvimiUserDefinedDetector
+  = lens _gaatrvimiUserDefinedDetector
+      (\ s a -> s{_gaatrvimiUserDefinedDetector = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo'
+                   <$>
+                   (o .:? "predefinedDetector") <*>
+                     (o .:? "userDefinedDetector"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo'{..}
+          = object
+              (catMaybes
+                 [("predefinedDetector" .=) <$>
+                    _gaatrvimiPredefinedDetector,
+                  ("userDefinedDetector" .=) <$>
+                    _gaatrvimiUserDefinedDetector])
+
+-- | Settings for callback notifications. For more details see [Google
+-- Workspace Alert
+-- Notification](\/admin-sdk\/alertcenter\/guides\/notifications).
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1SettingsNotification' smart constructor.
+newtype GoogleAppsAlertcenterV1beta1SettingsNotification =
+  GoogleAppsAlertcenterV1beta1SettingsNotification'
+    { _gaavsnCloudPubsubTopic :: Maybe GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1SettingsNotification' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavsnCloudPubsubTopic'
+googleAppsAlertcenterV1beta1SettingsNotification
+    :: GoogleAppsAlertcenterV1beta1SettingsNotification
+googleAppsAlertcenterV1beta1SettingsNotification =
+  GoogleAppsAlertcenterV1beta1SettingsNotification'
+    {_gaavsnCloudPubsubTopic = Nothing}
+
+
+-- | A Google Cloud Pub\/sub topic destination.
+gaavsnCloudPubsubTopic :: Lens' GoogleAppsAlertcenterV1beta1SettingsNotification (Maybe GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic)
+gaavsnCloudPubsubTopic
+  = lens _gaavsnCloudPubsubTopic
+      (\ s a -> s{_gaavsnCloudPubsubTopic = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1SettingsNotification
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1SettingsNotification"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1SettingsNotification' <$>
+                   (o .:? "cloudPubsubTopic"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1SettingsNotification
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1SettingsNotification'{..}
+          = object
+              (catMaybes
+                 [("cloudPubsubTopic" .=) <$>
+                    _gaavsnCloudPubsubTopic])
+
+-- | Response to batch undelete operation on alerts.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse' smart constructor.
+data GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse'
+    { _gaavbuarSuccessAlertIds :: !(Maybe [Text])
+    , _gaavbuarFailedAlertStatus :: !(Maybe GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavbuarSuccessAlertIds'
+--
+-- * 'gaavbuarFailedAlertStatus'
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+    :: GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse'
+    {_gaavbuarSuccessAlertIds = Nothing, _gaavbuarFailedAlertStatus = Nothing}
+
+
+-- | The successful list of alert IDs.
+gaavbuarSuccessAlertIds :: Lens' GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse [Text]
+gaavbuarSuccessAlertIds
+  = lens _gaavbuarSuccessAlertIds
+      (\ s a -> s{_gaavbuarSuccessAlertIds = a})
+      . _Default
+      . _Coerce
+
+-- | The status details for each failed alert_id.
+gaavbuarFailedAlertStatus :: Lens' GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse (Maybe GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus)
+gaavbuarFailedAlertStatus
+  = lens _gaavbuarFailedAlertStatus
+      (\ s a -> s{_gaavbuarFailedAlertStatus = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse'
+                   <$>
+                   (o .:? "successAlertIds" .!= mempty) <*>
+                     (o .:? "failedAlertStatus"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse'{..}
+          = object
+              (catMaybes
+                 [("successAlertIds" .=) <$> _gaavbuarSuccessAlertIds,
+                  ("failedAlertStatus" .=) <$>
+                    _gaavbuarFailedAlertStatus])
+
+-- | A customer feedback about an alert.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1AlertFeedback' smart constructor.
+data GoogleAppsAlertcenterV1beta1AlertFeedback =
+  GoogleAppsAlertcenterV1beta1AlertFeedback'
+    { _gaavafFeedbackId :: !(Maybe Text)
+    , _gaavafEmail :: !(Maybe Text)
+    , _gaavafAlertId :: !(Maybe Text)
+    , _gaavafCustomerId :: !(Maybe Text)
+    , _gaavafType :: !(Maybe GoogleAppsAlertcenterV1beta1AlertFeedbackType)
+    , _gaavafCreateTime :: !(Maybe DateTime')
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1AlertFeedback' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavafFeedbackId'
+--
+-- * 'gaavafEmail'
+--
+-- * 'gaavafAlertId'
+--
+-- * 'gaavafCustomerId'
+--
+-- * 'gaavafType'
+--
+-- * 'gaavafCreateTime'
+googleAppsAlertcenterV1beta1AlertFeedback
+    :: GoogleAppsAlertcenterV1beta1AlertFeedback
+googleAppsAlertcenterV1beta1AlertFeedback =
+  GoogleAppsAlertcenterV1beta1AlertFeedback'
+    { _gaavafFeedbackId = Nothing
+    , _gaavafEmail = Nothing
+    , _gaavafAlertId = Nothing
+    , _gaavafCustomerId = Nothing
+    , _gaavafType = Nothing
+    , _gaavafCreateTime = Nothing
+    }
+
+
+-- | Output only. The unique identifier for the feedback.
+gaavafFeedbackId :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe Text)
+gaavafFeedbackId
+  = lens _gaavafFeedbackId
+      (\ s a -> s{_gaavafFeedbackId = a})
+
+-- | Output only. The email of the user that provided the feedback.
+gaavafEmail :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe Text)
+gaavafEmail
+  = lens _gaavafEmail (\ s a -> s{_gaavafEmail = a})
+
+-- | Output only. The alert identifier.
+gaavafAlertId :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe Text)
+gaavafAlertId
+  = lens _gaavafAlertId
+      (\ s a -> s{_gaavafAlertId = a})
+
+-- | Output only. The unique identifier of the Google account of the
+-- customer.
+gaavafCustomerId :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe Text)
+gaavafCustomerId
+  = lens _gaavafCustomerId
+      (\ s a -> s{_gaavafCustomerId = a})
+
+-- | Required. The type of the feedback.
+gaavafType :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe GoogleAppsAlertcenterV1beta1AlertFeedbackType)
+gaavafType
+  = lens _gaavafType (\ s a -> s{_gaavafType = a})
+
+-- | Output only. The time this feedback was created.
+gaavafCreateTime :: Lens' GoogleAppsAlertcenterV1beta1AlertFeedback (Maybe UTCTime)
+gaavafCreateTime
+  = lens _gaavafCreateTime
+      (\ s a -> s{_gaavafCreateTime = a})
+      . mapping _DateTime
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1AlertFeedback
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1AlertFeedback"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1AlertFeedback' <$>
+                   (o .:? "feedbackId") <*> (o .:? "email") <*>
+                     (o .:? "alertId")
+                     <*> (o .:? "customerId")
+                     <*> (o .:? "type")
+                     <*> (o .:? "createTime"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1AlertFeedback
+         where
+        toJSON GoogleAppsAlertcenterV1beta1AlertFeedback'{..}
+          = object
+              (catMaybes
+                 [("feedbackId" .=) <$> _gaavafFeedbackId,
+                  ("email" .=) <$> _gaavafEmail,
+                  ("alertId" .=) <$> _gaavafAlertId,
+                  ("customerId" .=) <$> _gaavafCustomerId,
+                  ("type" .=) <$> _gaavafType,
+                  ("createTime" .=) <$> _gaavafCreateTime])
+
+-- | Alert for a spike in user reported phishing. *Warning*: This type has
+-- been deprecated. Use
+-- [MailPhishing](\/admin-sdk\/alertcenter\/reference\/rest\/v1beta1\/MailPhishing)
+-- instead.
+--
+-- /See:/ 'googleAppsAlertcenterTypePhishingSpike' smart constructor.
+data GoogleAppsAlertcenterTypePhishingSpike =
+  GoogleAppsAlertcenterTypePhishingSpike'
+    { _gaatpsIsInternal :: !(Maybe Bool)
+    , _gaatpsDomainId :: !(Maybe GoogleAppsAlertcenterTypeDomainId)
+    , _gaatpsMessages :: !(Maybe [GoogleAppsAlertcenterTypeGmailMessageInfo])
+    , _gaatpsMaliciousEntity :: !(Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypePhishingSpike' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatpsIsInternal'
+--
+-- * 'gaatpsDomainId'
+--
+-- * 'gaatpsMessages'
+--
+-- * 'gaatpsMaliciousEntity'
+googleAppsAlertcenterTypePhishingSpike
+    :: GoogleAppsAlertcenterTypePhishingSpike
+googleAppsAlertcenterTypePhishingSpike =
+  GoogleAppsAlertcenterTypePhishingSpike'
+    { _gaatpsIsInternal = Nothing
+    , _gaatpsDomainId = Nothing
+    , _gaatpsMessages = Nothing
+    , _gaatpsMaliciousEntity = Nothing
+    }
+
+
+-- | If \`true\`, the email originated from within the organization.
+gaatpsIsInternal :: Lens' GoogleAppsAlertcenterTypePhishingSpike (Maybe Bool)
+gaatpsIsInternal
+  = lens _gaatpsIsInternal
+      (\ s a -> s{_gaatpsIsInternal = a})
+
+-- | The domain ID.
+gaatpsDomainId :: Lens' GoogleAppsAlertcenterTypePhishingSpike (Maybe GoogleAppsAlertcenterTypeDomainId)
+gaatpsDomainId
+  = lens _gaatpsDomainId
+      (\ s a -> s{_gaatpsDomainId = a})
+
+-- | The list of messages contained by this alert.
+gaatpsMessages :: Lens' GoogleAppsAlertcenterTypePhishingSpike [GoogleAppsAlertcenterTypeGmailMessageInfo]
+gaatpsMessages
+  = lens _gaatpsMessages
+      (\ s a -> s{_gaatpsMessages = a})
+      . _Default
+      . _Coerce
+
+-- | The entity whose actions triggered a Gmail phishing alert.
+gaatpsMaliciousEntity :: Lens' GoogleAppsAlertcenterTypePhishingSpike (Maybe GoogleAppsAlertcenterTypeMaliciousEntity)
+gaatpsMaliciousEntity
+  = lens _gaatpsMaliciousEntity
+      (\ s a -> s{_gaatpsMaliciousEntity = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypePhishingSpike
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterTypePhishingSpike"
+              (\ o ->
+                 GoogleAppsAlertcenterTypePhishingSpike' <$>
+                   (o .:? "isInternal") <*> (o .:? "domainId") <*>
+                     (o .:? "messages" .!= mempty)
+                     <*> (o .:? "maliciousEntity"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypePhishingSpike
+         where
+        toJSON GoogleAppsAlertcenterTypePhishingSpike'{..}
+          = object
+              (catMaybes
+                 [("isInternal" .=) <$> _gaatpsIsInternal,
+                  ("domainId" .=) <$> _gaatpsDomainId,
+                  ("messages" .=) <$> _gaatpsMessages,
+                  ("maliciousEntity" .=) <$> _gaatpsMaliciousEntity])
+
+-- | A request to perform batch undelete on alerts.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest' smart constructor.
+data GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest'
+    { _gaavbuarAlertId :: !(Maybe [Text])
+    , _gaavbuarCustomerId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavbuarAlertId'
+--
+-- * 'gaavbuarCustomerId'
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+    :: GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+googleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest =
+  GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest'
+    {_gaavbuarAlertId = Nothing, _gaavbuarCustomerId = Nothing}
+
+
+-- | Required. list of alert IDs.
+gaavbuarAlertId :: Lens' GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest [Text]
+gaavbuarAlertId
+  = lens _gaavbuarAlertId
+      (\ s a -> s{_gaavbuarAlertId = a})
+      . _Default
+      . _Coerce
+
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alerts are associated with.
+gaavbuarCustomerId :: Lens' GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest (Maybe Text)
+gaavbuarCustomerId
+  = lens _gaavbuarCustomerId
+      (\ s a -> s{_gaavbuarCustomerId = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest'
+                   <$>
+                   (o .:? "alertId" .!= mempty) <*>
+                     (o .:? "customerId"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest'{..}
+          = object
+              (catMaybes
+                 [("alertId" .=) <$> _gaavbuarAlertId,
+                  ("customerId" .=) <$> _gaavbuarCustomerId])
+
+-- | Detector provided by Google.
+--
+-- /See:/ 'googleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo' smart constructor.
+newtype GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo'
+    { _gaatrvimipdiDetectorName :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatrvimipdiDetectorName'
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+    :: GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+googleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo =
+  GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo'
+    {_gaatrvimipdiDetectorName = Nothing}
+
+
+-- | Name that uniquely identifies the detector.
+gaatrvimipdiDetectorName :: Lens' GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo (Maybe Text)
+gaatrvimipdiDetectorName
+  = lens _gaatrvimipdiDetectorName
+      (\ s a -> s{_gaatrvimipdiDetectorName = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo'
+                   <$> (o .:? "detectorName"))
+
+instance ToJSON
+           GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo'{..}
+          = object
+              (catMaybes
+                 [("detectorName" .=) <$> _gaatrvimipdiDetectorName])
+
+-- | A request to perform batch delete on alerts.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1BatchDeleteAlertsRequest' smart constructor.
+data GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest'
+    { _gaavbdarAlertId :: !(Maybe [Text])
+    , _gaavbdarCustomerId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavbdarAlertId'
+--
+-- * 'gaavbdarCustomerId'
+googleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+    :: GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+googleAppsAlertcenterV1beta1BatchDeleteAlertsRequest =
+  GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest'
+    {_gaavbdarAlertId = Nothing, _gaavbdarCustomerId = Nothing}
+
+
+-- | Required. list of alert IDs.
+gaavbdarAlertId :: Lens' GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest [Text]
+gaavbdarAlertId
+  = lens _gaavbdarAlertId
+      (\ s a -> s{_gaavbdarAlertId = a})
+      . _Default
+      . _Coerce
+
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alerts are associated with.
+gaavbdarCustomerId :: Lens' GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest (Maybe Text)
+gaavbdarCustomerId
+  = lens _gaavbdarCustomerId
+      (\ s a -> s{_gaavbdarCustomerId = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest'
+                   <$>
+                   (o .:? "alertId" .!= mempty) <*>
+                     (o .:? "customerId"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+         where
+        toJSON
+          GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest'{..}
+          = object
+              (catMaybes
+                 [("alertId" .=) <$> _gaavbdarAlertId,
+                  ("customerId" .=) <$> _gaavbdarCustomerId])
+
+-- | Domain ID of Gmail phishing alerts.
+--
+-- /See:/ 'googleAppsAlertcenterTypeDomainId' smart constructor.
+newtype GoogleAppsAlertcenterTypeDomainId =
+  GoogleAppsAlertcenterTypeDomainId'
+    { _gaatdiCustomerPrimaryDomain :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterTypeDomainId' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaatdiCustomerPrimaryDomain'
+googleAppsAlertcenterTypeDomainId
+    :: GoogleAppsAlertcenterTypeDomainId
+googleAppsAlertcenterTypeDomainId =
+  GoogleAppsAlertcenterTypeDomainId' {_gaatdiCustomerPrimaryDomain = Nothing}
+
+
+-- | The primary domain for the customer.
+gaatdiCustomerPrimaryDomain :: Lens' GoogleAppsAlertcenterTypeDomainId (Maybe Text)
+gaatdiCustomerPrimaryDomain
+  = lens _gaatdiCustomerPrimaryDomain
+      (\ s a -> s{_gaatdiCustomerPrimaryDomain = a})
+
+instance FromJSON GoogleAppsAlertcenterTypeDomainId
+         where
+        parseJSON
+          = withObject "GoogleAppsAlertcenterTypeDomainId"
+              (\ o ->
+                 GoogleAppsAlertcenterTypeDomainId' <$>
+                   (o .:? "customerPrimaryDomain"))
+
+instance ToJSON GoogleAppsAlertcenterTypeDomainId
+         where
+        toJSON GoogleAppsAlertcenterTypeDomainId'{..}
+          = object
+              (catMaybes
+                 [("customerPrimaryDomain" .=) <$>
+                    _gaatdiCustomerPrimaryDomain])
 
 -- | A takeout operation for the entire domain was initiated by an admin.
 -- Derived from audit logs.
 --
--- /See:/ 'domainWideTakeoutInitiated' smart constructor.
-data DomainWideTakeoutInitiated =
-  DomainWideTakeoutInitiated'
-    { _dwtiEmail :: !(Maybe Text)
-    , _dwtiTakeoutRequestId :: !(Maybe Text)
+-- /See:/ 'googleAppsAlertcenterTypeDomainWideTakeoutInitiated' smart constructor.
+data GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated =
+  GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated'
+    { _gaatdwtiEmail :: !(Maybe Text)
+    , _gaatdwtiTakeoutRequestId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'DomainWideTakeoutInitiated' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'dwtiEmail'
+-- * 'gaatdwtiEmail'
 --
--- * 'dwtiTakeoutRequestId'
-domainWideTakeoutInitiated
-    :: DomainWideTakeoutInitiated
-domainWideTakeoutInitiated =
-  DomainWideTakeoutInitiated'
-    {_dwtiEmail = Nothing, _dwtiTakeoutRequestId = Nothing}
+-- * 'gaatdwtiTakeoutRequestId'
+googleAppsAlertcenterTypeDomainWideTakeoutInitiated
+    :: GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated
+googleAppsAlertcenterTypeDomainWideTakeoutInitiated =
+  GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated'
+    {_gaatdwtiEmail = Nothing, _gaatdwtiTakeoutRequestId = Nothing}
 
 
 -- | The email of the admin who initiated the takeout.
-dwtiEmail :: Lens' DomainWideTakeoutInitiated (Maybe Text)
-dwtiEmail
-  = lens _dwtiEmail (\ s a -> s{_dwtiEmail = a})
+gaatdwtiEmail :: Lens' GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated (Maybe Text)
+gaatdwtiEmail
+  = lens _gaatdwtiEmail
+      (\ s a -> s{_gaatdwtiEmail = a})
 
 -- | The takeout request ID.
-dwtiTakeoutRequestId :: Lens' DomainWideTakeoutInitiated (Maybe Text)
-dwtiTakeoutRequestId
-  = lens _dwtiTakeoutRequestId
-      (\ s a -> s{_dwtiTakeoutRequestId = a})
+gaatdwtiTakeoutRequestId :: Lens' GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated (Maybe Text)
+gaatdwtiTakeoutRequestId
+  = lens _gaatdwtiTakeoutRequestId
+      (\ s a -> s{_gaatdwtiTakeoutRequestId = a})
 
-instance FromJSON DomainWideTakeoutInitiated where
+instance FromJSON
+           GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated
+         where
         parseJSON
-          = withObject "DomainWideTakeoutInitiated"
+          = withObject
+              "GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated"
               (\ o ->
-                 DomainWideTakeoutInitiated' <$>
-                   (o .:? "email") <*> (o .:? "takeoutRequestId"))
+                 GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated'
+                   <$> (o .:? "email") <*> (o .:? "takeoutRequestId"))
 
-instance ToJSON DomainWideTakeoutInitiated where
-        toJSON DomainWideTakeoutInitiated'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated'{..}
           = object
               (catMaybes
-                 [("email" .=) <$> _dwtiEmail,
-                  ("takeoutRequestId" .=) <$> _dwtiTakeoutRequestId])
+                 [("email" .=) <$> _gaatdwtiEmail,
+                  ("takeoutRequestId" .=) <$>
+                    _gaatdwtiTakeoutRequestId])
 
--- | Domain ID of Gmail phishing alerts.
+-- | Alerts from App Maker to notify admins to set up default SQL instance.
 --
--- /See:/ 'domainId' smart constructor.
-newtype DomainId =
-  DomainId'
-    { _diCustomerPrimaryDomain :: Maybe Text
+-- /See:/ 'googleAppsAlertcenterTypeAppMakerSQLSetupNotification' smart constructor.
+newtype GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification =
+  GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification'
+    { _gaatamsqlsnRequestInfo :: Maybe [GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'DomainId' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'diCustomerPrimaryDomain'
-domainId
-    :: DomainId
-domainId = DomainId' {_diCustomerPrimaryDomain = Nothing}
+-- * 'gaatamsqlsnRequestInfo'
+googleAppsAlertcenterTypeAppMakerSQLSetupNotification
+    :: GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification
+googleAppsAlertcenterTypeAppMakerSQLSetupNotification =
+  GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification'
+    {_gaatamsqlsnRequestInfo = Nothing}
 
 
--- | The primary domain for the customer.
-diCustomerPrimaryDomain :: Lens' DomainId (Maybe Text)
-diCustomerPrimaryDomain
-  = lens _diCustomerPrimaryDomain
-      (\ s a -> s{_diCustomerPrimaryDomain = a})
+-- | List of applications with requests for default SQL set up.
+gaatamsqlsnRequestInfo :: Lens' GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification [GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo]
+gaatamsqlsnRequestInfo
+  = lens _gaatamsqlsnRequestInfo
+      (\ s a -> s{_gaatamsqlsnRequestInfo = a})
+      . _Default
+      . _Coerce
 
-instance FromJSON DomainId where
+instance FromJSON
+           GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification
+         where
         parseJSON
-          = withObject "DomainId"
+          = withObject
+              "GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification"
               (\ o ->
-                 DomainId' <$> (o .:? "customerPrimaryDomain"))
+                 GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification'
+                   <$> (o .:? "requestInfo" .!= mempty))
 
-instance ToJSON DomainId where
-        toJSON DomainId'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification'{..}
           = object
               (catMaybes
-                 [("customerPrimaryDomain" .=) <$>
-                    _diCustomerPrimaryDomain])
+                 [("requestInfo" .=) <$> _gaatamsqlsnRequestInfo])
+
+-- | An alert metadata.
+--
+-- /See:/ 'googleAppsAlertcenterV1beta1AlertMetadata' smart constructor.
+data GoogleAppsAlertcenterV1beta1AlertMetadata =
+  GoogleAppsAlertcenterV1beta1AlertMetadata'
+    { _gaavamStatus :: !(Maybe Text)
+    , _gaavamEtag :: !(Maybe Text)
+    , _gaavamSeverity :: !(Maybe Text)
+    , _gaavamAlertId :: !(Maybe Text)
+    , _gaavamAssignee :: !(Maybe Text)
+    , _gaavamCustomerId :: !(Maybe Text)
+    , _gaavamUpdateTime :: !(Maybe DateTime')
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppsAlertcenterV1beta1AlertMetadata' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaavamStatus'
+--
+-- * 'gaavamEtag'
+--
+-- * 'gaavamSeverity'
+--
+-- * 'gaavamAlertId'
+--
+-- * 'gaavamAssignee'
+--
+-- * 'gaavamCustomerId'
+--
+-- * 'gaavamUpdateTime'
+googleAppsAlertcenterV1beta1AlertMetadata
+    :: GoogleAppsAlertcenterV1beta1AlertMetadata
+googleAppsAlertcenterV1beta1AlertMetadata =
+  GoogleAppsAlertcenterV1beta1AlertMetadata'
+    { _gaavamStatus = Nothing
+    , _gaavamEtag = Nothing
+    , _gaavamSeverity = Nothing
+    , _gaavamAlertId = Nothing
+    , _gaavamAssignee = Nothing
+    , _gaavamCustomerId = Nothing
+    , _gaavamUpdateTime = Nothing
+    }
+
+
+-- | The current status of the alert. The supported values are the following:
+-- * NOT_STARTED * IN_PROGRESS * CLOSED
+gaavamStatus :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamStatus
+  = lens _gaavamStatus (\ s a -> s{_gaavamStatus = a})
+
+-- | Optional. \`etag\` is used for optimistic concurrency control as a way
+-- to help prevent simultaneous updates of an alert metadata from
+-- overwriting each other. It is strongly suggested that systems make use
+-- of the \`etag\` in the read-modify-write cycle to perform metatdata
+-- updates in order to avoid race conditions: An \`etag\` is returned in
+-- the response which contains alert metadata, and systems are expected to
+-- put that etag in the request to update alert metadata to ensure that
+-- their change will be applied to the same version of the alert metadata.
+-- If no \`etag\` is provided in the call to update alert metadata, then
+-- the existing alert metadata is overwritten blindly.
+gaavamEtag :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamEtag
+  = lens _gaavamEtag (\ s a -> s{_gaavamEtag = a})
+
+-- | The severity value of the alert. Alert Center will set this field at
+-- alert creation time, default\'s to an empty string when it could not be
+-- determined. The supported values for update actions on this field are
+-- the following: * HIGH * MEDIUM * LOW
+gaavamSeverity :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamSeverity
+  = lens _gaavamSeverity
+      (\ s a -> s{_gaavamSeverity = a})
+
+-- | Output only. The alert identifier.
+gaavamAlertId :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamAlertId
+  = lens _gaavamAlertId
+      (\ s a -> s{_gaavamAlertId = a})
+
+-- | The email address of the user assigned to the alert.
+gaavamAssignee :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamAssignee
+  = lens _gaavamAssignee
+      (\ s a -> s{_gaavamAssignee = a})
+
+-- | Output only. The unique identifier of the Google account of the
+-- customer.
+gaavamCustomerId :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe Text)
+gaavamCustomerId
+  = lens _gaavamCustomerId
+      (\ s a -> s{_gaavamCustomerId = a})
+
+-- | Output only. The time this metadata was last updated.
+gaavamUpdateTime :: Lens' GoogleAppsAlertcenterV1beta1AlertMetadata (Maybe UTCTime)
+gaavamUpdateTime
+  = lens _gaavamUpdateTime
+      (\ s a -> s{_gaavamUpdateTime = a})
+      . mapping _DateTime
+
+instance FromJSON
+           GoogleAppsAlertcenterV1beta1AlertMetadata
+         where
+        parseJSON
+          = withObject
+              "GoogleAppsAlertcenterV1beta1AlertMetadata"
+              (\ o ->
+                 GoogleAppsAlertcenterV1beta1AlertMetadata' <$>
+                   (o .:? "status") <*> (o .:? "etag") <*>
+                     (o .:? "severity")
+                     <*> (o .:? "alertId")
+                     <*> (o .:? "assignee")
+                     <*> (o .:? "customerId")
+                     <*> (o .:? "updateTime"))
+
+instance ToJSON
+           GoogleAppsAlertcenterV1beta1AlertMetadata
+         where
+        toJSON GoogleAppsAlertcenterV1beta1AlertMetadata'{..}
+          = object
+              (catMaybes
+                 [("status" .=) <$> _gaavamStatus,
+                  ("etag" .=) <$> _gaavamEtag,
+                  ("severity" .=) <$> _gaavamSeverity,
+                  ("alertId" .=) <$> _gaavamAlertId,
+                  ("assignee" .=) <$> _gaavamAssignee,
+                  ("customerId" .=) <$> _gaavamCustomerId,
+                  ("updateTime" .=) <$> _gaavamUpdateTime])
 
 -- | Detailed information of a single MDM device compromised event.
 --
--- /See:/ 'deviceCompromisedSecurityDetail' smart constructor.
-data DeviceCompromisedSecurityDetail =
-  DeviceCompromisedSecurityDetail'
-    { _dcsdResourceId :: !(Maybe Text)
-    , _dcsdDeviceCompromisedState :: !(Maybe Text)
-    , _dcsdIosVendorId :: !(Maybe Text)
-    , _dcsdDeviceModel :: !(Maybe Text)
-    , _dcsdDeviceId :: !(Maybe Text)
-    , _dcsdDeviceType :: !(Maybe Text)
-    , _dcsdSerialNumber :: !(Maybe Text)
+-- /See:/ 'googleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail' smart constructor.
+data GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail =
+  GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail'
+    { _gaatdcdcsdResourceId :: !(Maybe Text)
+    , _gaatdcdcsdDeviceCompromisedState :: !(Maybe Text)
+    , _gaatdcdcsdIosVendorId :: !(Maybe Text)
+    , _gaatdcdcsdDeviceModel :: !(Maybe Text)
+    , _gaatdcdcsdDeviceId :: !(Maybe Text)
+    , _gaatdcdcsdDeviceType :: !(Maybe Text)
+    , _gaatdcdcsdSerialNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'DeviceCompromisedSecurityDetail' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'dcsdResourceId'
+-- * 'gaatdcdcsdResourceId'
 --
--- * 'dcsdDeviceCompromisedState'
+-- * 'gaatdcdcsdDeviceCompromisedState'
 --
--- * 'dcsdIosVendorId'
+-- * 'gaatdcdcsdIosVendorId'
 --
--- * 'dcsdDeviceModel'
+-- * 'gaatdcdcsdDeviceModel'
 --
--- * 'dcsdDeviceId'
+-- * 'gaatdcdcsdDeviceId'
 --
--- * 'dcsdDeviceType'
+-- * 'gaatdcdcsdDeviceType'
 --
--- * 'dcsdSerialNumber'
-deviceCompromisedSecurityDetail
-    :: DeviceCompromisedSecurityDetail
-deviceCompromisedSecurityDetail =
-  DeviceCompromisedSecurityDetail'
-    { _dcsdResourceId = Nothing
-    , _dcsdDeviceCompromisedState = Nothing
-    , _dcsdIosVendorId = Nothing
-    , _dcsdDeviceModel = Nothing
-    , _dcsdDeviceId = Nothing
-    , _dcsdDeviceType = Nothing
-    , _dcsdSerialNumber = Nothing
+-- * 'gaatdcdcsdSerialNumber'
+googleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+    :: GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+googleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail =
+  GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail'
+    { _gaatdcdcsdResourceId = Nothing
+    , _gaatdcdcsdDeviceCompromisedState = Nothing
+    , _gaatdcdcsdIosVendorId = Nothing
+    , _gaatdcdcsdDeviceModel = Nothing
+    , _gaatdcdcsdDeviceId = Nothing
+    , _gaatdcdcsdDeviceType = Nothing
+    , _gaatdcdcsdSerialNumber = Nothing
     }
 
 
 -- | The device resource ID.
-dcsdResourceId :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdResourceId
-  = lens _dcsdResourceId
-      (\ s a -> s{_dcsdResourceId = a})
+gaatdcdcsdResourceId :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdResourceId
+  = lens _gaatdcdcsdResourceId
+      (\ s a -> s{_gaatdcdcsdResourceId = a})
 
 -- | The device compromised state. Possible values are \"\`Compromised\`\" or
 -- \"\`Not Compromised\`\".
-dcsdDeviceCompromisedState :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdDeviceCompromisedState
-  = lens _dcsdDeviceCompromisedState
-      (\ s a -> s{_dcsdDeviceCompromisedState = a})
+gaatdcdcsdDeviceCompromisedState :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdDeviceCompromisedState
+  = lens _gaatdcdcsdDeviceCompromisedState
+      (\ s a -> s{_gaatdcdcsdDeviceCompromisedState = a})
 
 -- | Required for iOS, empty for others.
-dcsdIosVendorId :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdIosVendorId
-  = lens _dcsdIosVendorId
-      (\ s a -> s{_dcsdIosVendorId = a})
+gaatdcdcsdIosVendorId :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdIosVendorId
+  = lens _gaatdcdcsdIosVendorId
+      (\ s a -> s{_gaatdcdcsdIosVendorId = a})
 
 -- | The model of the device.
-dcsdDeviceModel :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdDeviceModel
-  = lens _dcsdDeviceModel
-      (\ s a -> s{_dcsdDeviceModel = a})
+gaatdcdcsdDeviceModel :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdDeviceModel
+  = lens _gaatdcdcsdDeviceModel
+      (\ s a -> s{_gaatdcdcsdDeviceModel = a})
 
 -- | Required. The device ID.
-dcsdDeviceId :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdDeviceId
-  = lens _dcsdDeviceId (\ s a -> s{_dcsdDeviceId = a})
+gaatdcdcsdDeviceId :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdDeviceId
+  = lens _gaatdcdcsdDeviceId
+      (\ s a -> s{_gaatdcdcsdDeviceId = a})
 
 -- | The type of the device.
-dcsdDeviceType :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdDeviceType
-  = lens _dcsdDeviceType
-      (\ s a -> s{_dcsdDeviceType = a})
+gaatdcdcsdDeviceType :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdDeviceType
+  = lens _gaatdcdcsdDeviceType
+      (\ s a -> s{_gaatdcdcsdDeviceType = a})
 
 -- | The serial number of the device.
-dcsdSerialNumber :: Lens' DeviceCompromisedSecurityDetail (Maybe Text)
-dcsdSerialNumber
-  = lens _dcsdSerialNumber
-      (\ s a -> s{_dcsdSerialNumber = a})
+gaatdcdcsdSerialNumber :: Lens' GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail (Maybe Text)
+gaatdcdcsdSerialNumber
+  = lens _gaatdcdcsdSerialNumber
+      (\ s a -> s{_gaatdcdcsdSerialNumber = a})
 
-instance FromJSON DeviceCompromisedSecurityDetail
+instance FromJSON
+           GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
          where
         parseJSON
-          = withObject "DeviceCompromisedSecurityDetail"
+          = withObject
+              "GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail"
               (\ o ->
-                 DeviceCompromisedSecurityDetail' <$>
+                 GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail'
+                   <$>
                    (o .:? "resourceId") <*>
                      (o .:? "deviceCompromisedState")
                      <*> (o .:? "iosVendorId")
@@ -1765,194 +3309,263 @@ instance FromJSON DeviceCompromisedSecurityDetail
                      <*> (o .:? "deviceType")
                      <*> (o .:? "serialNumber"))
 
-instance ToJSON DeviceCompromisedSecurityDetail where
-        toJSON DeviceCompromisedSecurityDetail'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail'{..}
           = object
               (catMaybes
-                 [("resourceId" .=) <$> _dcsdResourceId,
+                 [("resourceId" .=) <$> _gaatdcdcsdResourceId,
                   ("deviceCompromisedState" .=) <$>
-                    _dcsdDeviceCompromisedState,
-                  ("iosVendorId" .=) <$> _dcsdIosVendorId,
-                  ("deviceModel" .=) <$> _dcsdDeviceModel,
-                  ("deviceId" .=) <$> _dcsdDeviceId,
-                  ("deviceType" .=) <$> _dcsdDeviceType,
-                  ("serialNumber" .=) <$> _dcsdSerialNumber])
+                    _gaatdcdcsdDeviceCompromisedState,
+                  ("iosVendorId" .=) <$> _gaatdcdcsdIosVendorId,
+                  ("deviceModel" .=) <$> _gaatdcdcsdDeviceModel,
+                  ("deviceId" .=) <$> _gaatdcdcsdDeviceId,
+                  ("deviceType" .=) <$> _gaatdcdcsdDeviceType,
+                  ("serialNumber" .=) <$> _gaatdcdcsdSerialNumber])
 
--- | A reference to a Cloud Pubsub topic. To register for notifications, the
--- owner of the topic must grant
--- \`alerts-api-push-notifications\'system.gserviceaccount.com\` the
--- \`projects.topics.publish\` permission.
+-- | Detailed information of a single MDM suspicious activity event.
 --
--- /See:/ 'cloudPubsubTopic' smart constructor.
-data CloudPubsubTopic =
-  CloudPubsubTopic'
-    { _cptTopicName :: !(Maybe Text)
-    , _cptPayloadFormat :: !(Maybe CloudPubsubTopicPayloadFormat)
+-- /See:/ 'googleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail' smart constructor.
+data GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail =
+  GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail'
+    { _gaatsasasdDeviceProperty :: !(Maybe Text)
+    , _gaatsasasdResourceId :: !(Maybe Text)
+    , _gaatsasasdIosVendorId :: !(Maybe Text)
+    , _gaatsasasdOldValue :: !(Maybe Text)
+    , _gaatsasasdNewValue :: !(Maybe Text)
+    , _gaatsasasdDeviceModel :: !(Maybe Text)
+    , _gaatsasasdDeviceId :: !(Maybe Text)
+    , _gaatsasasdDeviceType :: !(Maybe Text)
+    , _gaatsasasdSerialNumber :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'CloudPubsubTopic' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'cptTopicName'
+-- * 'gaatsasasdDeviceProperty'
 --
--- * 'cptPayloadFormat'
-cloudPubsubTopic
-    :: CloudPubsubTopic
-cloudPubsubTopic =
-  CloudPubsubTopic' {_cptTopicName = Nothing, _cptPayloadFormat = Nothing}
+-- * 'gaatsasasdResourceId'
+--
+-- * 'gaatsasasdIosVendorId'
+--
+-- * 'gaatsasasdOldValue'
+--
+-- * 'gaatsasasdNewValue'
+--
+-- * 'gaatsasasdDeviceModel'
+--
+-- * 'gaatsasasdDeviceId'
+--
+-- * 'gaatsasasdDeviceType'
+--
+-- * 'gaatsasasdSerialNumber'
+googleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+    :: GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+googleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail =
+  GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail'
+    { _gaatsasasdDeviceProperty = Nothing
+    , _gaatsasasdResourceId = Nothing
+    , _gaatsasasdIosVendorId = Nothing
+    , _gaatsasasdOldValue = Nothing
+    , _gaatsasasdNewValue = Nothing
+    , _gaatsasasdDeviceModel = Nothing
+    , _gaatsasasdDeviceId = Nothing
+    , _gaatsasasdDeviceType = Nothing
+    , _gaatsasasdSerialNumber = Nothing
+    }
 
 
--- | The \`name\` field of a Cloud Pubsub [Topic]
--- (https:\/\/cloud.google.com\/pubsub\/docs\/reference\/rest\/v1\/projects.topics#Topic).
-cptTopicName :: Lens' CloudPubsubTopic (Maybe Text)
-cptTopicName
-  = lens _cptTopicName (\ s a -> s{_cptTopicName = a})
+-- | The device property which was changed.
+gaatsasasdDeviceProperty :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdDeviceProperty
+  = lens _gaatsasasdDeviceProperty
+      (\ s a -> s{_gaatsasasdDeviceProperty = a})
 
--- | Optional. The format of the payload that would be sent. If not specified
--- the format will be JSON.
-cptPayloadFormat :: Lens' CloudPubsubTopic (Maybe CloudPubsubTopicPayloadFormat)
-cptPayloadFormat
-  = lens _cptPayloadFormat
-      (\ s a -> s{_cptPayloadFormat = a})
+-- | The device resource ID.
+gaatsasasdResourceId :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdResourceId
+  = lens _gaatsasasdResourceId
+      (\ s a -> s{_gaatsasasdResourceId = a})
 
-instance FromJSON CloudPubsubTopic where
+-- | Required for iOS, empty for others.
+gaatsasasdIosVendorId :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdIosVendorId
+  = lens _gaatsasasdIosVendorId
+      (\ s a -> s{_gaatsasasdIosVendorId = a})
+
+-- | The old value of the device property before the change.
+gaatsasasdOldValue :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdOldValue
+  = lens _gaatsasasdOldValue
+      (\ s a -> s{_gaatsasasdOldValue = a})
+
+-- | The new value of the device property after the change.
+gaatsasasdNewValue :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdNewValue
+  = lens _gaatsasasdNewValue
+      (\ s a -> s{_gaatsasasdNewValue = a})
+
+-- | The model of the device.
+gaatsasasdDeviceModel :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdDeviceModel
+  = lens _gaatsasasdDeviceModel
+      (\ s a -> s{_gaatsasasdDeviceModel = a})
+
+-- | Required. The device ID.
+gaatsasasdDeviceId :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdDeviceId
+  = lens _gaatsasasdDeviceId
+      (\ s a -> s{_gaatsasasdDeviceId = a})
+
+-- | The type of the device.
+gaatsasasdDeviceType :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdDeviceType
+  = lens _gaatsasasdDeviceType
+      (\ s a -> s{_gaatsasasdDeviceType = a})
+
+-- | The serial number of the device.
+gaatsasasdSerialNumber :: Lens' GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail (Maybe Text)
+gaatsasasdSerialNumber
+  = lens _gaatsasasdSerialNumber
+      (\ s a -> s{_gaatsasasdSerialNumber = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+         where
         parseJSON
-          = withObject "CloudPubsubTopic"
+          = withObject
+              "GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail"
               (\ o ->
-                 CloudPubsubTopic' <$>
-                   (o .:? "topicName") <*> (o .:? "payloadFormat"))
+                 GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail'
+                   <$>
+                   (o .:? "deviceProperty") <*> (o .:? "resourceId") <*>
+                     (o .:? "iosVendorId")
+                     <*> (o .:? "oldValue")
+                     <*> (o .:? "newValue")
+                     <*> (o .:? "deviceModel")
+                     <*> (o .:? "deviceId")
+                     <*> (o .:? "deviceType")
+                     <*> (o .:? "serialNumber"))
 
-instance ToJSON CloudPubsubTopic where
-        toJSON CloudPubsubTopic'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+         where
+        toJSON
+          GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail'{..}
           = object
               (catMaybes
-                 [("topicName" .=) <$> _cptTopicName,
-                  ("payloadFormat" .=) <$> _cptPayloadFormat])
+                 [("deviceProperty" .=) <$> _gaatsasasdDeviceProperty,
+                  ("resourceId" .=) <$> _gaatsasasdResourceId,
+                  ("iosVendorId" .=) <$> _gaatsasasdIosVendorId,
+                  ("oldValue" .=) <$> _gaatsasasdOldValue,
+                  ("newValue" .=) <$> _gaatsasasdNewValue,
+                  ("deviceModel" .=) <$> _gaatsasasdDeviceModel,
+                  ("deviceId" .=) <$> _gaatsasasdDeviceId,
+                  ("deviceType" .=) <$> _gaatsasasdDeviceType,
+                  ("serialNumber" .=) <$> _gaatsasasdSerialNumber])
 
--- | Response message for an alert feedback listing request.
+-- | An incident reported by Google Operations for a Google Workspace
+-- application.
 --
--- /See:/ 'listAlertFeedbackResponse' smart constructor.
-newtype ListAlertFeedbackResponse =
-  ListAlertFeedbackResponse'
-    { _lafrFeedback :: Maybe [AlertFeedback]
+-- /See:/ 'googleAppsAlertcenterTypeGoogleOperations' smart constructor.
+data GoogleAppsAlertcenterTypeGoogleOperations =
+  GoogleAppsAlertcenterTypeGoogleOperations'
+    { _gaatgoAttachmentData :: !(Maybe GoogleAppsAlertcenterTypeAttachment)
+    , _gaatgoAffectedUserEmails :: !(Maybe [Text])
+    , _gaatgoHeader :: !(Maybe Text)
+    , _gaatgoTitle :: !(Maybe Text)
+    , _gaatgoDescription :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'ListAlertFeedbackResponse' with the minimum fields required to make a request.
+-- | Creates a value of 'GoogleAppsAlertcenterTypeGoogleOperations' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'lafrFeedback'
-listAlertFeedbackResponse
-    :: ListAlertFeedbackResponse
-listAlertFeedbackResponse = ListAlertFeedbackResponse' {_lafrFeedback = Nothing}
+-- * 'gaatgoAttachmentData'
+--
+-- * 'gaatgoAffectedUserEmails'
+--
+-- * 'gaatgoHeader'
+--
+-- * 'gaatgoTitle'
+--
+-- * 'gaatgoDescription'
+googleAppsAlertcenterTypeGoogleOperations
+    :: GoogleAppsAlertcenterTypeGoogleOperations
+googleAppsAlertcenterTypeGoogleOperations =
+  GoogleAppsAlertcenterTypeGoogleOperations'
+    { _gaatgoAttachmentData = Nothing
+    , _gaatgoAffectedUserEmails = Nothing
+    , _gaatgoHeader = Nothing
+    , _gaatgoTitle = Nothing
+    , _gaatgoDescription = Nothing
+    }
 
 
--- | The list of alert feedback. Feedback entries for each alert are ordered
--- by creation time descending.
-lafrFeedback :: Lens' ListAlertFeedbackResponse [AlertFeedback]
-lafrFeedback
-  = lens _lafrFeedback (\ s a -> s{_lafrFeedback = a})
+-- | Optional. Application-specific data for an incident, provided when the
+-- Google Workspace application which reported the incident cannot be
+-- completely restored to a valid state.
+gaatgoAttachmentData :: Lens' GoogleAppsAlertcenterTypeGoogleOperations (Maybe GoogleAppsAlertcenterTypeAttachment)
+gaatgoAttachmentData
+  = lens _gaatgoAttachmentData
+      (\ s a -> s{_gaatgoAttachmentData = a})
+
+-- | The list of emails which correspond to the users directly affected by
+-- the incident.
+gaatgoAffectedUserEmails :: Lens' GoogleAppsAlertcenterTypeGoogleOperations [Text]
+gaatgoAffectedUserEmails
+  = lens _gaatgoAffectedUserEmails
+      (\ s a -> s{_gaatgoAffectedUserEmails = a})
       . _Default
       . _Coerce
 
-instance FromJSON ListAlertFeedbackResponse where
+-- | A header to display above the incident message. Typically used to attach
+-- a localized notice on the timeline for followup comms translations.
+gaatgoHeader :: Lens' GoogleAppsAlertcenterTypeGoogleOperations (Maybe Text)
+gaatgoHeader
+  = lens _gaatgoHeader (\ s a -> s{_gaatgoHeader = a})
+
+-- | A one-line incident description.
+gaatgoTitle :: Lens' GoogleAppsAlertcenterTypeGoogleOperations (Maybe Text)
+gaatgoTitle
+  = lens _gaatgoTitle (\ s a -> s{_gaatgoTitle = a})
+
+-- | A detailed, freeform incident description.
+gaatgoDescription :: Lens' GoogleAppsAlertcenterTypeGoogleOperations (Maybe Text)
+gaatgoDescription
+  = lens _gaatgoDescription
+      (\ s a -> s{_gaatgoDescription = a})
+
+instance FromJSON
+           GoogleAppsAlertcenterTypeGoogleOperations
+         where
         parseJSON
-          = withObject "ListAlertFeedbackResponse"
+          = withObject
+              "GoogleAppsAlertcenterTypeGoogleOperations"
               (\ o ->
-                 ListAlertFeedbackResponse' <$>
-                   (o .:? "feedback" .!= mempty))
+                 GoogleAppsAlertcenterTypeGoogleOperations' <$>
+                   (o .:? "attachmentData") <*>
+                     (o .:? "affectedUserEmails" .!= mempty)
+                     <*> (o .:? "header")
+                     <*> (o .:? "title")
+                     <*> (o .:? "description"))
 
-instance ToJSON ListAlertFeedbackResponse where
-        toJSON ListAlertFeedbackResponse'{..}
-          = object
-              (catMaybes [("feedback" .=) <$> _lafrFeedback])
-
--- | The details of the login action.
---
--- /See:/ 'loginDetails' smart constructor.
-data LoginDetails =
-  LoginDetails'
-    { _ldIPAddress :: !(Maybe Text)
-    , _ldLoginTime :: !(Maybe DateTime')
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'LoginDetails' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'ldIPAddress'
---
--- * 'ldLoginTime'
-loginDetails
-    :: LoginDetails
-loginDetails = LoginDetails' {_ldIPAddress = Nothing, _ldLoginTime = Nothing}
-
-
--- | Optional. The human-readable IP address (for example, \`11.22.33.44\`)
--- that is associated with the warning event.
-ldIPAddress :: Lens' LoginDetails (Maybe Text)
-ldIPAddress
-  = lens _ldIPAddress (\ s a -> s{_ldIPAddress = a})
-
--- | Optional. The successful login time that is associated with the warning
--- event. This will not be present for blocked login attempts.
-ldLoginTime :: Lens' LoginDetails (Maybe UTCTime)
-ldLoginTime
-  = lens _ldLoginTime (\ s a -> s{_ldLoginTime = a}) .
-      mapping _DateTime
-
-instance FromJSON LoginDetails where
-        parseJSON
-          = withObject "LoginDetails"
-              (\ o ->
-                 LoginDetails' <$>
-                   (o .:? "ipAddress") <*> (o .:? "loginTime"))
-
-instance ToJSON LoginDetails where
-        toJSON LoginDetails'{..}
+instance ToJSON
+           GoogleAppsAlertcenterTypeGoogleOperations
+         where
+        toJSON GoogleAppsAlertcenterTypeGoogleOperations'{..}
           = object
               (catMaybes
-                 [("ipAddress" .=) <$> _ldIPAddress,
-                  ("loginTime" .=) <$> _ldLoginTime])
-
--- | Entity whose actions triggered a Gmail phishing alert.
---
--- /See:/ 'maliciousEntity' smart constructor.
-newtype MaliciousEntity =
-  MaliciousEntity'
-    { _meFromHeader :: Maybe Text
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'MaliciousEntity' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'meFromHeader'
-maliciousEntity
-    :: MaliciousEntity
-maliciousEntity = MaliciousEntity' {_meFromHeader = Nothing}
-
-
--- | The sender email address.
-meFromHeader :: Lens' MaliciousEntity (Maybe Text)
-meFromHeader
-  = lens _meFromHeader (\ s a -> s{_meFromHeader = a})
-
-instance FromJSON MaliciousEntity where
-        parseJSON
-          = withObject "MaliciousEntity"
-              (\ o -> MaliciousEntity' <$> (o .:? "fromHeader"))
-
-instance ToJSON MaliciousEntity where
-        toJSON MaliciousEntity'{..}
-          = object
-              (catMaybes [("fromHeader" .=) <$> _meFromHeader])
+                 [("attachmentData" .=) <$> _gaatgoAttachmentData,
+                  ("affectedUserEmails" .=) <$>
+                    _gaatgoAffectedUserEmails,
+                  ("header" .=) <$> _gaatgoHeader,
+                  ("title" .=) <$> _gaatgoTitle,
+                  ("description" .=) <$> _gaatgoDescription])

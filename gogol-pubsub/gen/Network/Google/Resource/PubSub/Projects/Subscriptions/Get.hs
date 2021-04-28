@@ -122,7 +122,7 @@ psgUploadType
   = lens _psgUploadType
       (\ s a -> s{_psgUploadType = a})
 
--- | The name of the subscription to get. Format is
+-- | Required. The name of the subscription to get. Format is
 -- \`projects\/{project}\/subscriptions\/{sub}\`.
 psgSubscription :: Lens' ProjectsSubscriptionsGet Text
 psgSubscription

@@ -20,40 +20,9 @@ module Network.Google.CloudSearch.Types.Product where
 import Network.Google.CloudSearch.Types.Sum
 import Network.Google.Prelude
 
--- | Gmail Folder restricts (i.e. in Drafts\/Sent\/Chats\/User Generated
--- Labels).
---
--- /See:/ 'gmailFolderRestrict' smart constructor.
-newtype GmailFolderRestrict =
-  GmailFolderRestrict'
-    { _gfrType :: Maybe GmailFolderRestrictType
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GmailFolderRestrict' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gfrType'
-gmailFolderRestrict
-    :: GmailFolderRestrict
-gmailFolderRestrict = GmailFolderRestrict' {_gfrType = Nothing}
-
-
-gfrType :: Lens' GmailFolderRestrict (Maybe GmailFolderRestrictType)
-gfrType = lens _gfrType (\ s a -> s{_gfrType = a})
-
-instance FromJSON GmailFolderRestrict where
-        parseJSON
-          = withObject "GmailFolderRestrict"
-              (\ o -> GmailFolderRestrict' <$> (o .:? "type"))
-
-instance ToJSON GmailFolderRestrict where
-        toJSON GmailFolderRestrict'{..}
-          = object (catMaybes [("type" .=) <$> _gfrType])
-
--- | Content of an item to be indexed and surfaced by Cloud Search.
+-- | Content of an item to be indexed and surfaced by Cloud Search. Only
+-- UTF-8 encoded strings are allowed as inlineContent. If the content is
+-- uploaded and not binary, it must be UTF-8 encoded.
 --
 -- /See:/ 'itemContent' smart constructor.
 data ItemContent =
@@ -130,6 +99,88 @@ instance ToJSON ItemContent where
                   ("contentFormat" .=) <$> _icContentFormat,
                   ("contentDataRef" .=) <$> _icContentDataRef,
                   ("inlineContent" .=) <$> _icInlineContent])
+
+--
+-- /See:/ 'customerUserStats' smart constructor.
+data CustomerUserStats =
+  CustomerUserStats'
+    { _cusThirtyDaysActiveUsersCount :: !(Maybe (Textual Int64))
+    , _cusDate :: !(Maybe Date)
+    , _cusOneDayActiveUsersCount :: !(Maybe (Textual Int64))
+    , _cusSevenDaysActiveUsersCount :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomerUserStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cusThirtyDaysActiveUsersCount'
+--
+-- * 'cusDate'
+--
+-- * 'cusOneDayActiveUsersCount'
+--
+-- * 'cusSevenDaysActiveUsersCount'
+customerUserStats
+    :: CustomerUserStats
+customerUserStats =
+  CustomerUserStats'
+    { _cusThirtyDaysActiveUsersCount = Nothing
+    , _cusDate = Nothing
+    , _cusOneDayActiveUsersCount = Nothing
+    , _cusSevenDaysActiveUsersCount = Nothing
+    }
+
+
+-- | The count of unique active users in the past thirty days
+cusThirtyDaysActiveUsersCount :: Lens' CustomerUserStats (Maybe Int64)
+cusThirtyDaysActiveUsersCount
+  = lens _cusThirtyDaysActiveUsersCount
+      (\ s a -> s{_cusThirtyDaysActiveUsersCount = a})
+      . mapping _Coerce
+
+-- | Date for which session stats were calculated. Stats calculated on the
+-- next day close to midnight are returned.
+cusDate :: Lens' CustomerUserStats (Maybe Date)
+cusDate = lens _cusDate (\ s a -> s{_cusDate = a})
+
+-- | The count of unique active users in the past one day
+cusOneDayActiveUsersCount :: Lens' CustomerUserStats (Maybe Int64)
+cusOneDayActiveUsersCount
+  = lens _cusOneDayActiveUsersCount
+      (\ s a -> s{_cusOneDayActiveUsersCount = a})
+      . mapping _Coerce
+
+-- | The count of unique active users in the past seven days
+cusSevenDaysActiveUsersCount :: Lens' CustomerUserStats (Maybe Int64)
+cusSevenDaysActiveUsersCount
+  = lens _cusSevenDaysActiveUsersCount
+      (\ s a -> s{_cusSevenDaysActiveUsersCount = a})
+      . mapping _Coerce
+
+instance FromJSON CustomerUserStats where
+        parseJSON
+          = withObject "CustomerUserStats"
+              (\ o ->
+                 CustomerUserStats' <$>
+                   (o .:? "thirtyDaysActiveUsersCount") <*>
+                     (o .:? "date")
+                     <*> (o .:? "oneDayActiveUsersCount")
+                     <*> (o .:? "sevenDaysActiveUsersCount"))
+
+instance ToJSON CustomerUserStats where
+        toJSON CustomerUserStats'{..}
+          = object
+              (catMaybes
+                 [("thirtyDaysActiveUsersCount" .=) <$>
+                    _cusThirtyDaysActiveUsersCount,
+                  ("date" .=) <$> _cusDate,
+                  ("oneDayActiveUsersCount" .=) <$>
+                    _cusOneDayActiveUsersCount,
+                  ("sevenDaysActiveUsersCount" .=) <$>
+                    _cusSevenDaysActiveUsersCount])
 
 -- | A person\'s photo.
 --
@@ -241,6 +292,7 @@ data SearchApplication =
     , _saName :: !(Maybe Text)
     , _saSourceConfig :: !(Maybe [SourceConfig])
     , _saDisplayName :: !(Maybe Text)
+    , _saEnableAuditLog :: !(Maybe Bool)
     , _saDefaultSortOptions :: !(Maybe SortOptions)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -264,6 +316,8 @@ data SearchApplication =
 --
 -- * 'saDisplayName'
 --
+-- * 'saEnableAuditLog'
+--
 -- * 'saDefaultSortOptions'
 searchApplication
     :: SearchApplication
@@ -276,6 +330,7 @@ searchApplication =
     , _saName = Nothing
     , _saSourceConfig = Nothing
     , _saDisplayName = Nothing
+    , _saEnableAuditLog = Nothing
     , _saDefaultSortOptions = Nothing
     }
 
@@ -289,8 +344,8 @@ saDataSourceRestrictions
       . _Default
       . _Coerce
 
--- | IDs of the Long Running Operations (LROs) currently running for this
--- schema. Output only field.
+-- | Output only. IDs of the Long Running Operations (LROs) currently running
+-- for this schema. Output only field.
 saOperationIds :: Lens' SearchApplication [Text]
 saOperationIds
   = lens _saOperationIds
@@ -313,8 +368,8 @@ saScoringConfig
   = lens _saScoringConfig
       (\ s a -> s{_saScoringConfig = a})
 
--- | Name of the Search Application.
--- Format: searchapplications\/{application_id}.
+-- | Name of the Search Application. Format:
+-- searchapplications\/{application_id}.
 saName :: Lens' SearchApplication (Maybe Text)
 saName = lens _saName (\ s a -> s{_saName = a})
 
@@ -332,6 +387,13 @@ saDisplayName :: Lens' SearchApplication (Maybe Text)
 saDisplayName
   = lens _saDisplayName
       (\ s a -> s{_saDisplayName = a})
+
+-- | Indicates whether audit logging is on\/off for requests made for the
+-- search application in query APIs.
+saEnableAuditLog :: Lens' SearchApplication (Maybe Bool)
+saEnableAuditLog
+  = lens _saEnableAuditLog
+      (\ s a -> s{_saEnableAuditLog = a})
 
 -- | The default options for sorting the search results
 saDefaultSortOptions :: Lens' SearchApplication (Maybe SortOptions)
@@ -351,6 +413,7 @@ instance FromJSON SearchApplication where
                      <*> (o .:? "name")
                      <*> (o .:? "sourceConfig" .!= mempty)
                      <*> (o .:? "displayName")
+                     <*> (o .:? "enableAuditLog")
                      <*> (o .:? "defaultSortOptions"))
 
 instance ToJSON SearchApplication where
@@ -366,6 +429,7 @@ instance ToJSON SearchApplication where
                   ("name" .=) <$> _saName,
                   ("sourceConfig" .=) <$> _saSourceConfig,
                   ("displayName" .=) <$> _saDisplayName,
+                  ("enableAuditLog" .=) <$> _saEnableAuditLog,
                   ("defaultSortOptions" .=) <$> _saDefaultSortOptions])
 
 -- | Used to provide a search operator for boolean properties. This is
@@ -392,13 +456,12 @@ booleanOperatorOptions = BooleanOperatorOptions' {_booOperatorName = Nothing}
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the boolean property. For example, if operatorName is *closed* and the
--- property\'s name is *isClosed*, then queries like *closed:\<value>* will
--- show results only where the value of the property named *isClosed*
--- matches *\<value>*. By contrast, a search that uses the same *\<value>*
--- without an operator will return all items where *\<value>* matches the
--- value of any String properties or text within the content field for the
--- item. The operator name can only contain lowercase letters (a-z). The
--- maximum length is 32 characters.
+-- property\'s name is *isClosed*, then queries like *closed:* show results
+-- only where the value of the property named *isClosed* matches **. By
+-- contrast, a search that uses the same ** without an operator returns all
+-- items where ** matches the value of any String properties or text within
+-- the content field for the item. The operator name can only contain
+-- lowercase letters (a-z). The maximum length is 32 characters.
 booOperatorName :: Lens' BooleanOperatorOptions (Maybe Text)
 booOperatorName
   = lens _booOperatorName
@@ -418,39 +481,11 @@ instance ToJSON BooleanOperatorOptions where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -600,38 +635,6 @@ instance ToJSON EnumPropertyOptions where
                   ("orderedRanking" .=) <$> _epoOrderedRanking,
                   ("operatorOptions" .=) <$> _epoOperatorOptions])
 
--- | Gmail Action restricts (i.e. read\/replied\/snoozed).
---
--- /See:/ 'gmailActionRestrict' smart constructor.
-newtype GmailActionRestrict =
-  GmailActionRestrict'
-    { _garType :: Maybe GmailActionRestrictType
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GmailActionRestrict' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'garType'
-gmailActionRestrict
-    :: GmailActionRestrict
-gmailActionRestrict = GmailActionRestrict' {_garType = Nothing}
-
-
-garType :: Lens' GmailActionRestrict (Maybe GmailActionRestrictType)
-garType = lens _garType (\ s a -> s{_garType = a})
-
-instance FromJSON GmailActionRestrict where
-        parseJSON
-          = withObject "GmailActionRestrict"
-              (\ o -> GmailActionRestrict' <$> (o .:? "type"))
-
-instance ToJSON GmailActionRestrict where
-        toJSON GmailActionRestrict'{..}
-          = object (catMaybes [("type" .=) <$> _garType])
-
 --
 -- /See:/ 'unreserveItemsRequest' smart constructor.
 data UnreserveItemsRequest =
@@ -672,8 +675,8 @@ uirDebugOptions
   = lens _uirDebugOptions
       (\ s a -> s{_uirDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 uirConnectorName :: Lens' UnreserveItemsRequest (Maybe Text)
 uirConnectorName
   = lens _uirConnectorName
@@ -732,12 +735,12 @@ dateOperatorOptions =
 -- the date property. For example, suppose an issue tracking schema object
 -- has a property named *closeDate* that specifies an operator with an
 -- operatorName of *closedon*. For searches on that data, queries like
--- *closedon:\<value>* will show results only where the value of the
--- *closeDate* property matches *\<value>*. By contrast, a search that uses
--- the same *\<value>* without an operator will return all items where
--- *\<value>* matches the value of any String properties or text within the
--- content field for the indexed datasource. The operator name can only
--- contain lowercase letters (a-z). The maximum length is 32 characters.
+-- *closedon:* show results only where the value of the *closeDate*
+-- property matches **. By contrast, a search that uses the same ** without
+-- an operator returns all items where ** matches the value of any String
+-- properties or text within the content field for the indexed datasource.
+-- The operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 dooOperatorName :: Lens' DateOperatorOptions (Maybe Text)
 dooOperatorName
   = lens _dooOperatorName
@@ -746,10 +749,10 @@ dooOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the date property using the less-than operator. For example, if
 -- lessThanOperatorName is *closedbefore* and the property\'s name is
--- *closeDate*, then queries like *closedbefore:\<value>* will show results
--- only where the value of the property named *closeDate* is earlier than
--- *\<value>*. The operator name can only contain lowercase letters (a-z).
--- The maximum length is 32 characters.
+-- *closeDate*, then queries like *closedbefore:* show results only where
+-- the value of the property named *closeDate* is earlier than **. The
+-- operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 dooLessThanOperatorName :: Lens' DateOperatorOptions (Maybe Text)
 dooLessThanOperatorName
   = lens _dooLessThanOperatorName
@@ -758,10 +761,10 @@ dooLessThanOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the date property using the greater-than operator. For example, if
 -- greaterThanOperatorName is *closedafter* and the property\'s name is
--- *closeDate*, then queries like *closedafter:\<value>* will show results
--- only where the value of the property named *closeDate* is later than
--- *\<value>*. The operator name can only contain lowercase letters (a-z).
--- The maximum length is 32 characters.
+-- *closeDate*, then queries like *closedafter:* show results only where
+-- the value of the property named *closeDate* is later than **. The
+-- operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 dooGreaterThanOperatorName :: Lens' DateOperatorOptions (Maybe Text)
 dooGreaterThanOperatorName
   = lens _dooGreaterThanOperatorName
@@ -850,23 +853,23 @@ objectDisplayOptions =
     {_odoMetalines = Nothing, _odoObjectDisplayLabel = Nothing}
 
 
--- | Defines the properties that will be displayed in the metalines of the
--- search results. The property values will be displayed in the order given
--- here. If a property holds multiple values, all of the values will be
--- diplayed before the next properties. For this reason, it is a good
--- practice to specify singular properties before repeated properties in
--- this list. All of the properties must set is_returnable to true. The
--- maximum number of metalines is 3.
+-- | Defines the properties that are displayed in the metalines of the search
+-- results. The property values are displayed in the order given here. If a
+-- property holds multiple values, all of the values are displayed before
+-- the next properties. For this reason, it is a good practice to specify
+-- singular properties before repeated properties in this list. All of the
+-- properties must set is_returnable to true. The maximum number of
+-- metalines is 3.
 odoMetalines :: Lens' ObjectDisplayOptions [Metaline]
 odoMetalines
   = lens _odoMetalines (\ s a -> s{_odoMetalines = a})
       . _Default
       . _Coerce
 
--- | The user friendly label to display in the search result to inidicate the
--- type of the item. This is OPTIONAL; if not given, an object label will
--- not be displayed on the context line of the search results. The maximum
--- length is 32 characters.
+-- | The user friendly label to display in the search result to indicate the
+-- type of the item. This is OPTIONAL; if not provided, an object label
+-- isn\'t displayed on the context line of the search results. The maximum
+-- length is 64 characters.
 odoObjectDisplayLabel :: Lens' ObjectDisplayOptions (Maybe Text)
 odoObjectDisplayLabel
   = lens _odoObjectDisplayLabel
@@ -924,6 +927,57 @@ instance ToJSON QueryItem where
         toJSON QueryItem'{..}
           = object
               (catMaybes [("isSynthetic" .=) <$> _qiIsSynthetic])
+
+--
+-- /See:/ 'customerQueryStats' smart constructor.
+data CustomerQueryStats =
+  CustomerQueryStats'
+    { _cqsQueryCountByStatus :: !(Maybe [QueryCountByStatus])
+    , _cqsDate :: !(Maybe Date)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomerQueryStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cqsQueryCountByStatus'
+--
+-- * 'cqsDate'
+customerQueryStats
+    :: CustomerQueryStats
+customerQueryStats =
+  CustomerQueryStats' {_cqsQueryCountByStatus = Nothing, _cqsDate = Nothing}
+
+
+cqsQueryCountByStatus :: Lens' CustomerQueryStats [QueryCountByStatus]
+cqsQueryCountByStatus
+  = lens _cqsQueryCountByStatus
+      (\ s a -> s{_cqsQueryCountByStatus = a})
+      . _Default
+      . _Coerce
+
+-- | Date for which query stats were calculated. Stats calculated on the next
+-- day close to midnight are returned.
+cqsDate :: Lens' CustomerQueryStats (Maybe Date)
+cqsDate = lens _cqsDate (\ s a -> s{_cqsDate = a})
+
+instance FromJSON CustomerQueryStats where
+        parseJSON
+          = withObject "CustomerQueryStats"
+              (\ o ->
+                 CustomerQueryStats' <$>
+                   (o .:? "queryCountByStatus" .!= mempty) <*>
+                     (o .:? "date"))
+
+instance ToJSON CustomerQueryStats where
+        toJSON CustomerQueryStats'{..}
+          = object
+              (catMaybes
+                 [("queryCountByStatus" .=) <$>
+                    _cqsQueryCountByStatus,
+                  ("date" .=) <$> _cqsDate])
 
 --
 -- /See:/ 'listUnmAppedIdentitiesResponse' smart constructor.
@@ -1021,8 +1075,8 @@ dqirDebugOptions
   = lens _dqirDebugOptions
       (\ s a -> s{_dqirDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 dqirConnectorName :: Lens' DeleteQueueItemsRequest (Maybe Text)
 dqirConnectorName
   = lens _dqirConnectorName
@@ -1288,6 +1342,60 @@ instance ToJSON QuerySource where
                   ("source" .=) <$> _qsSource,
                   ("operators" .=) <$> _qsOperators])
 
+-- | The response message for Operations.ListOperations.
+--
+-- /See:/ 'listOperationsResponse' smart constructor.
+data ListOperationsResponse =
+  ListOperationsResponse'
+    { _lorNextPageToken :: !(Maybe Text)
+    , _lorOperations :: !(Maybe [Operation])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ListOperationsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'lorNextPageToken'
+--
+-- * 'lorOperations'
+listOperationsResponse
+    :: ListOperationsResponse
+listOperationsResponse =
+  ListOperationsResponse'
+    {_lorNextPageToken = Nothing, _lorOperations = Nothing}
+
+
+-- | The standard List next-page token.
+lorNextPageToken :: Lens' ListOperationsResponse (Maybe Text)
+lorNextPageToken
+  = lens _lorNextPageToken
+      (\ s a -> s{_lorNextPageToken = a})
+
+-- | A list of operations that matches the specified filter in the request.
+lorOperations :: Lens' ListOperationsResponse [Operation]
+lorOperations
+  = lens _lorOperations
+      (\ s a -> s{_lorOperations = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON ListOperationsResponse where
+        parseJSON
+          = withObject "ListOperationsResponse"
+              (\ o ->
+                 ListOperationsResponse' <$>
+                   (o .:? "nextPageToken") <*>
+                     (o .:? "operations" .!= mempty))
+
+instance ToJSON ListOperationsResponse where
+        toJSON ListOperationsResponse'{..}
+          = object
+              (catMaybes
+                 [("nextPageToken" .=) <$> _lorNextPageToken,
+                  ("operations" .=) <$> _lorOperations])
+
 -- | Response of the suggest API.
 --
 -- /See:/ 'suggestResponse' smart constructor.
@@ -1328,6 +1436,47 @@ instance ToJSON SuggestResponse where
           = object
               (catMaybes
                  [("suggestResults" .=) <$> _srSuggestResults])
+
+--
+-- /See:/ 'getSearchApplicationQueryStatsResponse' smart constructor.
+newtype GetSearchApplicationQueryStatsResponse =
+  GetSearchApplicationQueryStatsResponse'
+    { _gsaqsrStats :: Maybe [SearchApplicationQueryStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetSearchApplicationQueryStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gsaqsrStats'
+getSearchApplicationQueryStatsResponse
+    :: GetSearchApplicationQueryStatsResponse
+getSearchApplicationQueryStatsResponse =
+  GetSearchApplicationQueryStatsResponse' {_gsaqsrStats = Nothing}
+
+
+gsaqsrStats :: Lens' GetSearchApplicationQueryStatsResponse [SearchApplicationQueryStats]
+gsaqsrStats
+  = lens _gsaqsrStats (\ s a -> s{_gsaqsrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON
+           GetSearchApplicationQueryStatsResponse
+         where
+        parseJSON
+          = withObject "GetSearchApplicationQueryStatsResponse"
+              (\ o ->
+                 GetSearchApplicationQueryStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON
+           GetSearchApplicationQueryStatsResponse
+         where
+        toJSON GetSearchApplicationQueryStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gsaqsrStats])
 
 -- | Errors when the connector is communicating to the source repository.
 --
@@ -1450,12 +1599,14 @@ instance ToJSON HTMLPropertyOptions where
 -- /See:/ 'propertyDefinition' smart constructor.
 data PropertyDefinition =
   PropertyDefinition'
-    { _pdEnumPropertyOptions :: !(Maybe EnumPropertyOptions)
+    { _pdIsSuggestable :: !(Maybe Bool)
+    , _pdEnumPropertyOptions :: !(Maybe EnumPropertyOptions)
     , _pdHTMLPropertyOptions :: !(Maybe HTMLPropertyOptions)
     , _pdObjectPropertyOptions :: !(Maybe ObjectPropertyOptions)
     , _pdIsReturnable :: !(Maybe Bool)
     , _pdTimestampPropertyOptions :: !(Maybe TimestampPropertyOptions)
     , _pdIntegerPropertyOptions :: !(Maybe IntegerPropertyOptions)
+    , _pdIsWildcardSearchable :: !(Maybe Bool)
     , _pdName :: !(Maybe Text)
     , _pdIsRepeatable :: !(Maybe Bool)
     , _pdDoublePropertyOptions :: !(Maybe DoublePropertyOptions)
@@ -1473,6 +1624,8 @@ data PropertyDefinition =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'pdIsSuggestable'
+--
 -- * 'pdEnumPropertyOptions'
 --
 -- * 'pdHTMLPropertyOptions'
@@ -1484,6 +1637,8 @@ data PropertyDefinition =
 -- * 'pdTimestampPropertyOptions'
 --
 -- * 'pdIntegerPropertyOptions'
+--
+-- * 'pdIsWildcardSearchable'
 --
 -- * 'pdName'
 --
@@ -1506,12 +1661,14 @@ propertyDefinition
     :: PropertyDefinition
 propertyDefinition =
   PropertyDefinition'
-    { _pdEnumPropertyOptions = Nothing
+    { _pdIsSuggestable = Nothing
+    , _pdEnumPropertyOptions = Nothing
     , _pdHTMLPropertyOptions = Nothing
     , _pdObjectPropertyOptions = Nothing
     , _pdIsReturnable = Nothing
     , _pdTimestampPropertyOptions = Nothing
     , _pdIntegerPropertyOptions = Nothing
+    , _pdIsWildcardSearchable = Nothing
     , _pdName = Nothing
     , _pdIsRepeatable = Nothing
     , _pdDoublePropertyOptions = Nothing
@@ -1523,6 +1680,13 @@ propertyDefinition =
     , _pdDatePropertyOptions = Nothing
     }
 
+
+-- | Indicates that the property can be used for generating query
+-- suggestions.
+pdIsSuggestable :: Lens' PropertyDefinition (Maybe Bool)
+pdIsSuggestable
+  = lens _pdIsSuggestable
+      (\ s a -> s{_pdIsSuggestable = a})
 
 pdEnumPropertyOptions :: Lens' PropertyDefinition (Maybe EnumPropertyOptions)
 pdEnumPropertyOptions
@@ -1561,6 +1725,15 @@ pdIntegerPropertyOptions
   = lens _pdIntegerPropertyOptions
       (\ s a -> s{_pdIntegerPropertyOptions = a})
 
+-- | Indicates that users can perform wildcard search for this property. Only
+-- supported for Text properties. IsReturnable must be true to set this
+-- option. In a given datasource maximum of 5 properties can be marked as
+-- is_wildcard_searchable.
+pdIsWildcardSearchable :: Lens' PropertyDefinition (Maybe Bool)
+pdIsWildcardSearchable
+  = lens _pdIsWildcardSearchable
+      (\ s a -> s{_pdIsWildcardSearchable = a})
+
 -- | The name of the property. Item indexing requests sent to the Indexing
 -- API should set the property name equal to this value. For example, if
 -- name is *subject_line*, then indexing requests for document items with
@@ -1576,8 +1749,8 @@ pdName = lens _pdName (\ s a -> s{_pdName = a})
 -- | Indicates that multiple values are allowed for the property. For
 -- example, a document only has one description but can have multiple
 -- comments. Cannot be true for properties whose type is a boolean. If set
--- to false, properties that contain more than one value will cause the
--- indexing request for that item to be rejected.
+-- to false, properties that contain more than one value cause the indexing
+-- request for that item to be rejected.
 pdIsRepeatable :: Lens' PropertyDefinition (Maybe Bool)
 pdIsRepeatable
   = lens _pdIsRepeatable
@@ -1633,12 +1806,14 @@ instance FromJSON PropertyDefinition where
           = withObject "PropertyDefinition"
               (\ o ->
                  PropertyDefinition' <$>
-                   (o .:? "enumPropertyOptions") <*>
-                     (o .:? "htmlPropertyOptions")
+                   (o .:? "isSuggestable") <*>
+                     (o .:? "enumPropertyOptions")
+                     <*> (o .:? "htmlPropertyOptions")
                      <*> (o .:? "objectPropertyOptions")
                      <*> (o .:? "isReturnable")
                      <*> (o .:? "timestampPropertyOptions")
                      <*> (o .:? "integerPropertyOptions")
+                     <*> (o .:? "isWildcardSearchable")
                      <*> (o .:? "name")
                      <*> (o .:? "isRepeatable")
                      <*> (o .:? "doublePropertyOptions")
@@ -1653,7 +1828,8 @@ instance ToJSON PropertyDefinition where
         toJSON PropertyDefinition'{..}
           = object
               (catMaybes
-                 [("enumPropertyOptions" .=) <$>
+                 [("isSuggestable" .=) <$> _pdIsSuggestable,
+                  ("enumPropertyOptions" .=) <$>
                     _pdEnumPropertyOptions,
                   ("htmlPropertyOptions" .=) <$>
                     _pdHTMLPropertyOptions,
@@ -1664,6 +1840,8 @@ instance ToJSON PropertyDefinition where
                     _pdTimestampPropertyOptions,
                   ("integerPropertyOptions" .=) <$>
                     _pdIntegerPropertyOptions,
+                  ("isWildcardSearchable" .=) <$>
+                    _pdIsWildcardSearchable,
                   ("name" .=) <$> _pdName,
                   ("isRepeatable" .=) <$> _pdIsRepeatable,
                   ("doublePropertyOptions" .=) <$>
@@ -2246,7 +2424,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -2339,8 +2518,7 @@ pPhotos
       . _Coerce
 
 -- | The resource name of the person to provide information about. See
--- <https://developers.google.com/people/api/rest/v1/people/get People.get>
--- from Google People API.
+-- People.get from Google People API.
 pName :: Lens' Person (Maybe Text)
 pName = lens _pName (\ s a -> s{_pName = a})
 
@@ -2573,26 +2751,25 @@ textOperatorOptions =
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the text property. For example, if operatorName is *subject* and the
--- property\'s name is *subjectLine*, then queries like *subject:\<value>*
--- will show results only where the value of the property named
--- *subjectLine* matches *\<value>*. By contrast, a search that uses the
--- same *\<value>* without an operator will return all items where
--- *\<value>* matches the value of any text properties or text within the
--- content field for the item. The operator name can only contain lowercase
--- letters (a-z). The maximum length is 32 characters.
+-- property\'s name is *subjectLine*, then queries like *subject:* show
+-- results only where the value of the property named *subjectLine* matches
+-- **. By contrast, a search that uses the same ** without an operator
+-- returns all items where ** matches the value of any text properties or
+-- text within the content field for the item. The operator name can only
+-- contain lowercase letters (a-z). The maximum length is 32 characters.
 tooOperatorName :: Lens' TextOperatorOptions (Maybe Text)
 tooOperatorName
   = lens _tooOperatorName
       (\ s a -> s{_tooOperatorName = a})
 
--- | If true, the text value will be tokenized as one atomic value in
--- operator searches and facet matches. For example, if the operator name
--- is \"genre\" and the value is \"science-fiction\" the query restrictions
--- \"genre:science\" and \"genre:fiction\" will not match the item;
--- \"genre:science-fiction\" will. Value matching is case-sensitive and
--- does not remove special characters. If false, the text will be
--- tokenized. For example, if the value is \"science-fiction\" the queries
--- \"genre:science\" and \"genre:fiction\" will match the item.
+-- | If true, the text value is tokenized as one atomic value in operator
+-- searches and facet matches. For example, if the operator name is
+-- \"genre\" and the value is \"science-fiction\" the query restrictions
+-- \"genre:science\" and \"genre:fiction\" doesn\'t match the item;
+-- \"genre:science-fiction\" does. Value matching is case-sensitive and
+-- does not remove special characters. If false, the text is tokenized. For
+-- example, if the value is \"science-fiction\" the queries
+-- \"genre:science\" and \"genre:fiction\" matches the item.
 tooExactMatchWithOperator :: Lens' TextOperatorOptions (Maybe Bool)
 tooExactMatchWithOperator
   = lens _tooExactMatchWithOperator
@@ -2617,9 +2794,10 @@ instance ToJSON TextOperatorOptions where
 -- | Options to interpret user query.
 --
 -- /See:/ 'queryInterpretationOptions' smart constructor.
-newtype QueryInterpretationOptions =
+data QueryInterpretationOptions =
   QueryInterpretationOptions'
-    { _qioDisableNlInterpretation :: Maybe Bool
+    { _qioDisableNlInterpretation :: !(Maybe Bool)
+    , _qioEnableVerbatimMode :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2629,10 +2807,13 @@ newtype QueryInterpretationOptions =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'qioDisableNlInterpretation'
+--
+-- * 'qioEnableVerbatimMode'
 queryInterpretationOptions
     :: QueryInterpretationOptions
 queryInterpretationOptions =
-  QueryInterpretationOptions' {_qioDisableNlInterpretation = Nothing}
+  QueryInterpretationOptions'
+    {_qioDisableNlInterpretation = Nothing, _qioEnableVerbatimMode = Nothing}
 
 
 -- | Flag to disable natural language (NL) interpretation of queries. Default
@@ -2643,19 +2824,31 @@ qioDisableNlInterpretation
   = lens _qioDisableNlInterpretation
       (\ s a -> s{_qioDisableNlInterpretation = a})
 
+-- | Enable this flag to turn off all internal optimizations like natural
+-- language (NL) interpretation of queries, supplemental result retrieval,
+-- and usage of synonyms including custom ones. Nl interpretation will be
+-- disabled if either one of the two flags is true.
+qioEnableVerbatimMode :: Lens' QueryInterpretationOptions (Maybe Bool)
+qioEnableVerbatimMode
+  = lens _qioEnableVerbatimMode
+      (\ s a -> s{_qioEnableVerbatimMode = a})
+
 instance FromJSON QueryInterpretationOptions where
         parseJSON
           = withObject "QueryInterpretationOptions"
               (\ o ->
                  QueryInterpretationOptions' <$>
-                   (o .:? "disableNlInterpretation"))
+                   (o .:? "disableNlInterpretation") <*>
+                     (o .:? "enableVerbatimMode"))
 
 instance ToJSON QueryInterpretationOptions where
         toJSON QueryInterpretationOptions'{..}
           = object
               (catMaybes
                  [("disableNlInterpretation" .=) <$>
-                    _qioDisableNlInterpretation])
+                    _qioDisableNlInterpretation,
+                  ("enableVerbatimMode" .=) <$>
+                    _qioEnableVerbatimMode])
 
 --
 -- /See:/ 'resetSearchApplicationRequest' smart constructor.
@@ -2709,6 +2902,7 @@ data ItemMetadata =
     , _imMimeType :: !(Maybe Text)
     , _imUpdateTime :: !(Maybe DateTime')
     , _imKeywords :: !(Maybe [Text])
+    , _imContextAttributes :: !(Maybe [ContextAttribute])
     , _imTitle :: !(Maybe Text)
     , _imContentLanguage :: !(Maybe Text)
     , _imSearchQualityMetadata :: !(Maybe SearchQualityMetadata)
@@ -2737,6 +2931,8 @@ data ItemMetadata =
 --
 -- * 'imKeywords'
 --
+-- * 'imContextAttributes'
+--
 -- * 'imTitle'
 --
 -- * 'imContentLanguage'
@@ -2756,6 +2952,7 @@ itemMetadata =
     , _imMimeType = Nothing
     , _imUpdateTime = Nothing
     , _imKeywords = Nothing
+    , _imContextAttributes = Nothing
     , _imTitle = Nothing
     , _imContentLanguage = Nothing
     , _imSearchQualityMetadata = Nothing
@@ -2764,7 +2961,9 @@ itemMetadata =
 
 
 -- | Link to the source repository serving the data. Search results apply
--- this link to the title. The maximum length is 2048 characters.
+-- this link to the title. Whitespace or special characters may cause Cloud
+-- Search result links to trigger a redirect notice; to avoid this, encode
+-- the URL. The maximum length is 2048 characters.
 imSourceRepositoryURL :: Lens' ItemMetadata (Maybe Text)
 imSourceRepositoryURL
   = lens _imSourceRepositoryURL
@@ -2826,6 +3025,16 @@ imKeywords
       _Default
       . _Coerce
 
+-- | A set of named attributes associated with the item. This can be used for
+-- influencing the ranking of the item based on the context in the request.
+-- The maximum number of elements is 10.
+imContextAttributes :: Lens' ItemMetadata [ContextAttribute]
+imContextAttributes
+  = lens _imContextAttributes
+      (\ s a -> s{_imContextAttributes = a})
+      . _Default
+      . _Coerce
+
 -- | The title of the item. If given, this will be the displayed title of the
 -- Search result. The maximum length is 2048 characters.
 imTitle :: Lens' ItemMetadata (Maybe Text)
@@ -2864,6 +3073,7 @@ instance FromJSON ItemMetadata where
                      <*> (o .:? "mimeType")
                      <*> (o .:? "updateTime")
                      <*> (o .:? "keywords" .!= mempty)
+                     <*> (o .:? "contextAttributes" .!= mempty)
                      <*> (o .:? "title")
                      <*> (o .:? "contentLanguage")
                      <*> (o .:? "searchQualityMetadata")
@@ -2882,6 +3092,7 @@ instance ToJSON ItemMetadata where
                   ("mimeType" .=) <$> _imMimeType,
                   ("updateTime" .=) <$> _imUpdateTime,
                   ("keywords" .=) <$> _imKeywords,
+                  ("contextAttributes" .=) <$> _imContextAttributes,
                   ("title" .=) <$> _imTitle,
                   ("contentLanguage" .=) <$> _imContentLanguage,
                   ("searchQualityMetadata" .=) <$>
@@ -3092,7 +3303,7 @@ instance ToJSON
                   ("itemNames" .=) <$> _linfuairItemNames])
 
 -- | Access control list information for the item. For more information see
--- https:\/\/developers.google.com\/cloud-search\/docs\/guides\/index-your-data#acls
+-- [Map ACLs](\/cloud-search\/docs\/guides\/acls).
 --
 -- /See:/ 'itemACL' smart constructor.
 data ItemACL =
@@ -3369,8 +3580,8 @@ metaline
 metaline = Metaline' {_mProperties = Nothing}
 
 
--- | The list of displayed properties for the metaline. The maxiumum number
--- of properties is 5.
+-- | The list of displayed properties for the metaline. The maximum number of
+-- properties is 5.
 mProperties :: Lens' Metaline [DisplayedProperty]
 mProperties
   = lens _mProperties (\ s a -> s{_mProperties = a}) .
@@ -3387,6 +3598,57 @@ instance ToJSON Metaline where
         toJSON Metaline'{..}
           = object
               (catMaybes [("properties" .=) <$> _mProperties])
+
+--
+-- /See:/ 'searchApplicationSessionStats' smart constructor.
+data SearchApplicationSessionStats =
+  SearchApplicationSessionStats'
+    { _sassSearchSessionsCount :: !(Maybe (Textual Int64))
+    , _sassDate :: !(Maybe Date)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SearchApplicationSessionStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sassSearchSessionsCount'
+--
+-- * 'sassDate'
+searchApplicationSessionStats
+    :: SearchApplicationSessionStats
+searchApplicationSessionStats =
+  SearchApplicationSessionStats'
+    {_sassSearchSessionsCount = Nothing, _sassDate = Nothing}
+
+
+-- | The count of search sessions on the day
+sassSearchSessionsCount :: Lens' SearchApplicationSessionStats (Maybe Int64)
+sassSearchSessionsCount
+  = lens _sassSearchSessionsCount
+      (\ s a -> s{_sassSearchSessionsCount = a})
+      . mapping _Coerce
+
+-- | Date for which session stats were calculated. Stats calculated on the
+-- next day close to midnight are returned.
+sassDate :: Lens' SearchApplicationSessionStats (Maybe Date)
+sassDate = lens _sassDate (\ s a -> s{_sassDate = a})
+
+instance FromJSON SearchApplicationSessionStats where
+        parseJSON
+          = withObject "SearchApplicationSessionStats"
+              (\ o ->
+                 SearchApplicationSessionStats' <$>
+                   (o .:? "searchSessionsCount") <*> (o .:? "date"))
+
+instance ToJSON SearchApplicationSessionStats where
+        toJSON SearchApplicationSessionStats'{..}
+          = object
+              (catMaybes
+                 [("searchSessionsCount" .=) <$>
+                    _sassSearchSessionsCount,
+                  ("date" .=) <$> _sassDate])
 
 -- | A bucket in a facet is the basic unit of operation. A bucket can
 -- comprise either a single value OR a contiguous range of values,
@@ -3428,10 +3690,12 @@ fbCount
   = lens _fbCount (\ s a -> s{_fbCount = a}) .
       mapping _Coerce
 
--- | Percent of results that match the bucket value. This value is between
--- (0-100]. Percentages are returned for all searches, but are an estimate.
--- Because percentages are always returned, you should render percentages
--- instead of counts.
+-- | Percent of results that match the bucket value. The returned value is
+-- between (0-100], and is rounded down to an integer if fractional. If the
+-- value is not explicitly returned, it represents a percentage value that
+-- rounds to 0. Percentages are returned for all searches, but are an
+-- estimate. Because percentages are always returned, you should render
+-- percentages instead of counts.
 fbPercentage :: Lens' FacetBucket (Maybe Int32)
 fbPercentage
   = lens _fbPercentage (\ s a -> s{_fbPercentage = a})
@@ -3488,6 +3752,89 @@ instance FromJSON StatusDetailsItem where
 instance ToJSON StatusDetailsItem where
         toJSON = toJSON . _sdiAddtional
 
+-- | Represents the settings for Cloud audit logging
+--
+-- /See:/ 'auditLoggingSettings' smart constructor.
+data AuditLoggingSettings =
+  AuditLoggingSettings'
+    { _alsProject :: !(Maybe Text)
+    , _alsLogDataReadActions :: !(Maybe Bool)
+    , _alsLogDataWriteActions :: !(Maybe Bool)
+    , _alsLogAdminReadActions :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'AuditLoggingSettings' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'alsProject'
+--
+-- * 'alsLogDataReadActions'
+--
+-- * 'alsLogDataWriteActions'
+--
+-- * 'alsLogAdminReadActions'
+auditLoggingSettings
+    :: AuditLoggingSettings
+auditLoggingSettings =
+  AuditLoggingSettings'
+    { _alsProject = Nothing
+    , _alsLogDataReadActions = Nothing
+    , _alsLogDataWriteActions = Nothing
+    , _alsLogAdminReadActions = Nothing
+    }
+
+
+-- | The resource name of the GCP Project to store audit logs. Cloud audit
+-- logging will be enabled after project_name has been updated through
+-- CustomerService. Format: projects\/{project_id}
+alsProject :: Lens' AuditLoggingSettings (Maybe Text)
+alsProject
+  = lens _alsProject (\ s a -> s{_alsProject = a})
+
+-- | Indicates whether audit logging is on\/off for data access read APIs
+-- i.e. ListItems, GetItem etc.
+alsLogDataReadActions :: Lens' AuditLoggingSettings (Maybe Bool)
+alsLogDataReadActions
+  = lens _alsLogDataReadActions
+      (\ s a -> s{_alsLogDataReadActions = a})
+
+-- | Indicates whether audit logging is on\/off for data access write APIs
+-- i.e. IndexItem etc.
+alsLogDataWriteActions :: Lens' AuditLoggingSettings (Maybe Bool)
+alsLogDataWriteActions
+  = lens _alsLogDataWriteActions
+      (\ s a -> s{_alsLogDataWriteActions = a})
+
+-- | Indicates whether audit logging is on\/off for admin activity read APIs
+-- i.e. Get\/List DataSources, Get\/List SearchApplications etc.
+alsLogAdminReadActions :: Lens' AuditLoggingSettings (Maybe Bool)
+alsLogAdminReadActions
+  = lens _alsLogAdminReadActions
+      (\ s a -> s{_alsLogAdminReadActions = a})
+
+instance FromJSON AuditLoggingSettings where
+        parseJSON
+          = withObject "AuditLoggingSettings"
+              (\ o ->
+                 AuditLoggingSettings' <$>
+                   (o .:? "project") <*> (o .:? "logDataReadActions")
+                     <*> (o .:? "logDataWriteActions")
+                     <*> (o .:? "logAdminReadActions"))
+
+instance ToJSON AuditLoggingSettings where
+        toJSON AuditLoggingSettings'{..}
+          = object
+              (catMaybes
+                 [("project" .=) <$> _alsProject,
+                  ("logDataReadActions" .=) <$> _alsLogDataReadActions,
+                  ("logDataWriteActions" .=) <$>
+                    _alsLogDataWriteActions,
+                  ("logAdminReadActions" .=) <$>
+                    _alsLogAdminReadActions])
+
 -- | Used to provide a search operator for timestamp properties. This is
 -- optional. Search operators let users restrict the query to specific
 -- fields relevant to the type of item being searched.
@@ -3523,12 +3870,11 @@ timestampOperatorOptions =
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the timestamp property. For example, if operatorName is *closedon* and
--- the property\'s name is *closeDate*, then queries like
--- *closedon:\<value>* will show results only where the value of the
--- property named *closeDate* matches *\<value>*. By contrast, a search
--- that uses the same *\<value>* without an operator will return all items
--- where *\<value>* matches the value of any String properties or text
--- within the content field for the item. The operator name can only
+-- the property\'s name is *closeDate*, then queries like *closedon:* show
+-- results only where the value of the property named *closeDate* matches
+-- **. By contrast, a search that uses the same ** without an operator
+-- returns all items where ** matches the value of any String properties or
+-- text within the content field for the item. The operator name can only
 -- contain lowercase letters (a-z). The maximum length is 32 characters.
 tOperatorName :: Lens' TimestampOperatorOptions (Maybe Text)
 tOperatorName
@@ -3538,10 +3884,10 @@ tOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the timestamp property using the less-than operator. For example, if
 -- lessThanOperatorName is *closedbefore* and the property\'s name is
--- *closeDate*, then queries like *closedbefore:\<value>* will show results
--- only where the value of the property named *closeDate* is earlier than
--- *\<value>*. The operator name can only contain lowercase letters (a-z).
--- The maximum length is 32 characters.
+-- *closeDate*, then queries like *closedbefore:* show results only where
+-- the value of the property named *closeDate* is earlier than **. The
+-- operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 tLessThanOperatorName :: Lens' TimestampOperatorOptions (Maybe Text)
 tLessThanOperatorName
   = lens _tLessThanOperatorName
@@ -3550,10 +3896,10 @@ tLessThanOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the timestamp property using the greater-than operator. For example, if
 -- greaterThanOperatorName is *closedafter* and the property\'s name is
--- *closeDate*, then queries like *closedafter:\<value>* will show results
--- only where the value of the property named *closeDate* is later than
--- *\<value>*. The operator name can only contain lowercase letters (a-z).
--- The maximum length is 32 characters.
+-- *closeDate*, then queries like *closedafter:* show results only where
+-- the value of the property named *closeDate* is later than **. The
+-- operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 tGreaterThanOperatorName :: Lens' TimestampOperatorOptions (Maybe Text)
 tGreaterThanOperatorName
   = lens _tGreaterThanOperatorName
@@ -3577,6 +3923,48 @@ instance ToJSON TimestampOperatorOptions where
                     _tLessThanOperatorName,
                   ("greaterThanOperatorName" .=) <$>
                     _tGreaterThanOperatorName])
+
+--
+-- /See:/ 'getSearchApplicationSessionStatsResponse' smart constructor.
+newtype GetSearchApplicationSessionStatsResponse =
+  GetSearchApplicationSessionStatsResponse'
+    { _gsassrStats :: Maybe [SearchApplicationSessionStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetSearchApplicationSessionStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gsassrStats'
+getSearchApplicationSessionStatsResponse
+    :: GetSearchApplicationSessionStatsResponse
+getSearchApplicationSessionStatsResponse =
+  GetSearchApplicationSessionStatsResponse' {_gsassrStats = Nothing}
+
+
+gsassrStats :: Lens' GetSearchApplicationSessionStatsResponse [SearchApplicationSessionStats]
+gsassrStats
+  = lens _gsassrStats (\ s a -> s{_gsassrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON
+           GetSearchApplicationSessionStatsResponse
+         where
+        parseJSON
+          = withObject
+              "GetSearchApplicationSessionStatsResponse"
+              (\ o ->
+                 GetSearchApplicationSessionStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON
+           GetSearchApplicationSessionStatsResponse
+         where
+        toJSON GetSearchApplicationSessionStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gsassrStats])
 
 -- | Used to provide a search operator for integer properties. This is
 -- optional. Search operators let users restrict the query to specific
@@ -3613,13 +4001,12 @@ integerOperatorOptions =
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the integer property. For example, if operatorName is *priority* and the
--- property\'s name is *priorityVal*, then queries like *priority:\<value>*
--- will show results only where the value of the property named
--- *priorityVal* matches *\<value>*. By contrast, a search that uses the
--- same *\<value>* without an operator will return all items where
--- *\<value>* matches the value of any String properties or text within the
--- content field for the item. The operator name can only contain lowercase
--- letters (a-z). The maximum length is 32 characters.
+-- property\'s name is *priorityVal*, then queries like *priority:* show
+-- results only where the value of the property named *priorityVal* matches
+-- **. By contrast, a search that uses the same ** without an operator
+-- returns all items where ** matches the value of any String properties or
+-- text within the content field for the item. The operator name can only
+-- contain lowercase letters (a-z). The maximum length is 32 characters.
 iooOperatorName :: Lens' IntegerOperatorOptions (Maybe Text)
 iooOperatorName
   = lens _iooOperatorName
@@ -3628,10 +4015,10 @@ iooOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the integer property using the less-than operator. For example, if
 -- lessThanOperatorName is *prioritybelow* and the property\'s name is
--- *priorityVal*, then queries like *prioritybelow:\<value>* will show
--- results only where the value of the property named *priorityVal* is less
--- than *\<value>*. The operator name can only contain lowercase letters
--- (a-z). The maximum length is 32 characters.
+-- *priorityVal*, then queries like *prioritybelow:* show results only
+-- where the value of the property named *priorityVal* is less than **. The
+-- operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 iooLessThanOperatorName :: Lens' IntegerOperatorOptions (Maybe Text)
 iooLessThanOperatorName
   = lens _iooLessThanOperatorName
@@ -3640,10 +4027,10 @@ iooLessThanOperatorName
 -- | Indicates the operator name required in the query in order to isolate
 -- the integer property using the greater-than operator. For example, if
 -- greaterThanOperatorName is *priorityabove* and the property\'s name is
--- *priorityVal*, then queries like *priorityabove:\<value>* will show
--- results only where the value of the property named *priorityVal* is
--- greater than *\<value>*. The operator name can only contain lowercase
--- letters (a-z). The maximum length is 32 characters.
+-- *priorityVal*, then queries like *priorityabove:* show results only
+-- where the value of the property named *priorityVal* is greater than **.
+-- The operator name can only contain lowercase letters (a-z). The maximum
+-- length is 32 characters.
 iooGreaterThanOperatorName :: Lens' IntegerOperatorOptions (Maybe Text)
 iooGreaterThanOperatorName
   = lens _iooGreaterThanOperatorName
@@ -3785,6 +4172,55 @@ instance ToJSON ResultDebugInfo where
               (catMaybes
                  [("formattedDebugInfo" .=) <$>
                     _rdiFormattedDebugInfo])
+
+--
+-- /See:/ 'queryCountByStatus' smart constructor.
+data QueryCountByStatus =
+  QueryCountByStatus'
+    { _qcbsCount :: !(Maybe (Textual Int64))
+    , _qcbsStatusCode :: !(Maybe (Textual Int32))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'QueryCountByStatus' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'qcbsCount'
+--
+-- * 'qcbsStatusCode'
+queryCountByStatus
+    :: QueryCountByStatus
+queryCountByStatus =
+  QueryCountByStatus' {_qcbsCount = Nothing, _qcbsStatusCode = Nothing}
+
+
+qcbsCount :: Lens' QueryCountByStatus (Maybe Int64)
+qcbsCount
+  = lens _qcbsCount (\ s a -> s{_qcbsCount = a}) .
+      mapping _Coerce
+
+-- | This represents the http status code.
+qcbsStatusCode :: Lens' QueryCountByStatus (Maybe Int32)
+qcbsStatusCode
+  = lens _qcbsStatusCode
+      (\ s a -> s{_qcbsStatusCode = a})
+      . mapping _Coerce
+
+instance FromJSON QueryCountByStatus where
+        parseJSON
+          = withObject "QueryCountByStatus"
+              (\ o ->
+                 QueryCountByStatus' <$>
+                   (o .:? "count") <*> (o .:? "statusCode"))
+
+instance ToJSON QueryCountByStatus where
+        toJSON QueryCountByStatus'{..}
+          = object
+              (catMaybes
+                 [("count" .=) <$> _qcbsCount,
+                  ("statusCode" .=) <$> _qcbsStatusCode])
 
 --
 -- /See:/ 'itemCountByStatus' smart constructor.
@@ -3961,7 +4397,7 @@ foFreshnessDuration
 -- definitions and it must be a timestamp type or date type. Otherwise, the
 -- Indexing API uses updateTime as the freshness indicator. The maximum
 -- length is 256 characters. When a property is used to calculate
--- fresheness, the value defaults to 2 years from the current time.
+-- freshness, the value defaults to 2 years from the current time.
 foFreshnessProperty :: Lens' FreshnessOptions (Maybe Text)
 foFreshnessProperty
   = lens _foFreshnessProperty
@@ -4221,6 +4657,46 @@ instance ToJSON Schema where
                  [("objectDefinitions" .=) <$> _sObjectDefinitions,
                   ("operationIds" .=) <$> _sOperationIds])
 
+--
+-- /See:/ 'getSearchApplicationUserStatsResponse' smart constructor.
+newtype GetSearchApplicationUserStatsResponse =
+  GetSearchApplicationUserStatsResponse'
+    { _gsausrStats :: Maybe [SearchApplicationUserStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetSearchApplicationUserStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gsausrStats'
+getSearchApplicationUserStatsResponse
+    :: GetSearchApplicationUserStatsResponse
+getSearchApplicationUserStatsResponse =
+  GetSearchApplicationUserStatsResponse' {_gsausrStats = Nothing}
+
+
+gsausrStats :: Lens' GetSearchApplicationUserStatsResponse [SearchApplicationUserStats]
+gsausrStats
+  = lens _gsausrStats (\ s a -> s{_gsausrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON
+           GetSearchApplicationUserStatsResponse
+         where
+        parseJSON
+          = withObject "GetSearchApplicationUserStatsResponse"
+              (\ o ->
+                 GetSearchApplicationUserStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON GetSearchApplicationUserStatsResponse
+         where
+        toJSON GetSearchApplicationUserStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gsausrStats])
+
 -- | The time span search restrict (e.g. \"after:2017-09-11
 -- before:2017-09-12\").
 --
@@ -4343,7 +4819,8 @@ updateSchemaRequest =
     }
 
 
--- | If true, the request will be validated without side effects.
+-- | If true, the schema will be checked for validity, but will not be
+-- registered with the data source, even if valid.
 usrValidateOnly :: Lens' UpdateSchemaRequest (Maybe Bool)
 usrValidateOnly
   = lens _usrValidateOnly
@@ -4439,10 +4916,10 @@ instance ToJSON Date where
                   ("month" .=) <$> _dMonth])
 
 -- | A reference to a top-level property within the object that should be
--- displayed in search results. The values of the chosen properties will be
--- displayed in the search results along with the dislpay label for that
+-- displayed in search results. The values of the chosen properties is
+-- displayed in the search results along with the display label for that
 -- property if one is specified. If a display label is not specified, only
--- the values will be shown.
+-- the values is shown.
 --
 -- /See:/ 'displayedProperty' smart constructor.
 newtype DisplayedProperty =
@@ -4464,7 +4941,7 @@ displayedProperty = DisplayedProperty' {_dpPropertyName = Nothing}
 
 -- | The name of the top-level property as defined in a property definition
 -- for the object. If the name is not a defined property in the schema, an
--- error will be given when attempting to update the schema.
+-- error is given when attempting to update the schema.
 dpPropertyName :: Lens' DisplayedProperty (Maybe Text)
 dpPropertyName
   = lens _dpPropertyName
@@ -4782,6 +5259,88 @@ instance ToJSON DateValues where
         toJSON DateValues'{..}
           = object (catMaybes [("values" .=) <$> _dValues])
 
+--
+-- /See:/ 'searchApplicationUserStats' smart constructor.
+data SearchApplicationUserStats =
+  SearchApplicationUserStats'
+    { _sausThirtyDaysActiveUsersCount :: !(Maybe (Textual Int64))
+    , _sausDate :: !(Maybe Date)
+    , _sausOneDayActiveUsersCount :: !(Maybe (Textual Int64))
+    , _sausSevenDaysActiveUsersCount :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SearchApplicationUserStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sausThirtyDaysActiveUsersCount'
+--
+-- * 'sausDate'
+--
+-- * 'sausOneDayActiveUsersCount'
+--
+-- * 'sausSevenDaysActiveUsersCount'
+searchApplicationUserStats
+    :: SearchApplicationUserStats
+searchApplicationUserStats =
+  SearchApplicationUserStats'
+    { _sausThirtyDaysActiveUsersCount = Nothing
+    , _sausDate = Nothing
+    , _sausOneDayActiveUsersCount = Nothing
+    , _sausSevenDaysActiveUsersCount = Nothing
+    }
+
+
+-- | The count of unique active users in the past thirty days
+sausThirtyDaysActiveUsersCount :: Lens' SearchApplicationUserStats (Maybe Int64)
+sausThirtyDaysActiveUsersCount
+  = lens _sausThirtyDaysActiveUsersCount
+      (\ s a -> s{_sausThirtyDaysActiveUsersCount = a})
+      . mapping _Coerce
+
+-- | Date for which session stats were calculated. Stats calculated on the
+-- next day close to midnight are returned.
+sausDate :: Lens' SearchApplicationUserStats (Maybe Date)
+sausDate = lens _sausDate (\ s a -> s{_sausDate = a})
+
+-- | The count of unique active users in the past one day
+sausOneDayActiveUsersCount :: Lens' SearchApplicationUserStats (Maybe Int64)
+sausOneDayActiveUsersCount
+  = lens _sausOneDayActiveUsersCount
+      (\ s a -> s{_sausOneDayActiveUsersCount = a})
+      . mapping _Coerce
+
+-- | The count of unique active users in the past seven days
+sausSevenDaysActiveUsersCount :: Lens' SearchApplicationUserStats (Maybe Int64)
+sausSevenDaysActiveUsersCount
+  = lens _sausSevenDaysActiveUsersCount
+      (\ s a -> s{_sausSevenDaysActiveUsersCount = a})
+      . mapping _Coerce
+
+instance FromJSON SearchApplicationUserStats where
+        parseJSON
+          = withObject "SearchApplicationUserStats"
+              (\ o ->
+                 SearchApplicationUserStats' <$>
+                   (o .:? "thirtyDaysActiveUsersCount") <*>
+                     (o .:? "date")
+                     <*> (o .:? "oneDayActiveUsersCount")
+                     <*> (o .:? "sevenDaysActiveUsersCount"))
+
+instance ToJSON SearchApplicationUserStats where
+        toJSON SearchApplicationUserStats'{..}
+          = object
+              (catMaybes
+                 [("thirtyDaysActiveUsersCount" .=) <$>
+                    _sausThirtyDaysActiveUsersCount,
+                  ("date" .=) <$> _sausDate,
+                  ("oneDayActiveUsersCount" .=) <$>
+                    _sausOneDayActiveUsersCount,
+                  ("sevenDaysActiveUsersCount" .=) <$>
+                    _sausSevenDaysActiveUsersCount])
+
 -- | A typed name-value pair for structured data. The type of the value
 -- should be the same as the registered type for the \`name\` property in
 -- the object definition of \`objectType\`.
@@ -5067,6 +5626,7 @@ data SearchRequest =
     , _srStart :: !(Maybe (Textual Int32))
     , _srQuery :: !(Maybe Text)
     , _srFacetOptions :: !(Maybe [FacetOptions])
+    , _srContextAttributes :: !(Maybe [ContextAttribute])
     , _srPageSize :: !(Maybe (Textual Int32))
     , _srRequestOptions :: !(Maybe RequestOptions)
     }
@@ -5089,6 +5649,8 @@ data SearchRequest =
 --
 -- * 'srFacetOptions'
 --
+-- * 'srContextAttributes'
+--
 -- * 'srPageSize'
 --
 -- * 'srRequestOptions'
@@ -5102,6 +5664,7 @@ searchRequest =
     , _srStart = Nothing
     , _srQuery = Nothing
     , _srFacetOptions = Nothing
+    , _srContextAttributes = Nothing
     , _srPageSize = Nothing
     , _srRequestOptions = Nothing
     }
@@ -5136,7 +5699,7 @@ srStart
 
 -- | The raw query string. See supported search operators in the [Cloud
 -- search Cheat
--- Sheet](https:\/\/gsuite.google.com\/learning-center\/products\/cloudsearch\/cheat-sheet\/)
+-- Sheet](https:\/\/support.google.com\/a\/users\/answer\/9299929)
 srQuery :: Lens' SearchRequest (Maybe Text)
 srQuery = lens _srQuery (\ s a -> s{_srQuery = a})
 
@@ -5147,8 +5710,18 @@ srFacetOptions
       . _Default
       . _Coerce
 
+-- | Context attributes for the request which will be used to adjust ranking
+-- of search results. The maximum number of elements is 10.
+srContextAttributes :: Lens' SearchRequest [ContextAttribute]
+srContextAttributes
+  = lens _srContextAttributes
+      (\ s a -> s{_srContextAttributes = a})
+      . _Default
+      . _Coerce
+
 -- | Maximum number of search results to return in one page. Valid values are
--- between 1 and 100, inclusive. Default value is 10.
+-- between 1 and 100, inclusive. Default value is 10. Minimum value is 50
+-- when results beyond 2000 are requested.
 srPageSize :: Lens' SearchRequest (Maybe Int32)
 srPageSize
   = lens _srPageSize (\ s a -> s{_srPageSize = a}) .
@@ -5171,6 +5744,7 @@ instance FromJSON SearchRequest where
                      <*> (o .:? "start")
                      <*> (o .:? "query")
                      <*> (o .:? "facetOptions" .!= mempty)
+                     <*> (o .:? "contextAttributes" .!= mempty)
                      <*> (o .:? "pageSize")
                      <*> (o .:? "requestOptions"))
 
@@ -5185,6 +5759,7 @@ instance ToJSON SearchRequest where
                     _srQueryInterpretationOptions,
                   ("start" .=) <$> _srStart, ("query" .=) <$> _srQuery,
                   ("facetOptions" .=) <$> _srFacetOptions,
+                  ("contextAttributes" .=) <$> _srContextAttributes,
                   ("pageSize" .=) <$> _srPageSize,
                   ("requestOptions" .=) <$> _srRequestOptions])
 
@@ -5209,7 +5784,7 @@ name = Name' {_nDisplayName = Nothing}
 
 
 -- | The read-only display name formatted according to the locale specified
--- by the viewer\'s account or the 'Accept-Language' HTTP header.
+-- by the viewer\'s account or the Accept-Language HTTP header.
 nDisplayName :: Lens' Name (Maybe Text)
 nDisplayName
   = lens _nDisplayName (\ s a -> s{_nDisplayName = a})
@@ -5303,6 +5878,58 @@ instance ToJSON SourceResultCount where
                   ("resultCountEstimate" .=) <$>
                     _srcResultCountEstimate,
                   ("source" .=) <$> _srcSource])
+
+--
+-- /See:/ 'searchApplicationQueryStats' smart constructor.
+data SearchApplicationQueryStats =
+  SearchApplicationQueryStats'
+    { _saqsQueryCountByStatus :: !(Maybe [QueryCountByStatus])
+    , _saqsDate :: !(Maybe Date)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SearchApplicationQueryStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'saqsQueryCountByStatus'
+--
+-- * 'saqsDate'
+searchApplicationQueryStats
+    :: SearchApplicationQueryStats
+searchApplicationQueryStats =
+  SearchApplicationQueryStats'
+    {_saqsQueryCountByStatus = Nothing, _saqsDate = Nothing}
+
+
+saqsQueryCountByStatus :: Lens' SearchApplicationQueryStats [QueryCountByStatus]
+saqsQueryCountByStatus
+  = lens _saqsQueryCountByStatus
+      (\ s a -> s{_saqsQueryCountByStatus = a})
+      . _Default
+      . _Coerce
+
+-- | Date for which query stats were calculated. Stats calculated on the next
+-- day close to midnight are returned.
+saqsDate :: Lens' SearchApplicationQueryStats (Maybe Date)
+saqsDate = lens _saqsDate (\ s a -> s{_saqsDate = a})
+
+instance FromJSON SearchApplicationQueryStats where
+        parseJSON
+          = withObject "SearchApplicationQueryStats"
+              (\ o ->
+                 SearchApplicationQueryStats' <$>
+                   (o .:? "queryCountByStatus" .!= mempty) <*>
+                     (o .:? "date"))
+
+instance ToJSON SearchApplicationQueryStats where
+        toJSON SearchApplicationQueryStats'{..}
+          = object
+              (catMaybes
+                 [("queryCountByStatus" .=) <$>
+                    _saqsQueryCountByStatus,
+                  ("date" .=) <$> _saqsDate])
 
 -- | Configurations for a source while processing a Search or Suggest
 -- request.
@@ -5507,8 +6134,8 @@ suirDebugOptions
   = lens _suirDebugOptions
       (\ s a -> s{_suirDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 suirConnectorName :: Lens' StartUploadItemRequest (Maybe Text)
 suirConnectorName
   = lens _suirConnectorName
@@ -5563,38 +6190,6 @@ instance ToJSON UploadItemRef where
         toJSON UploadItemRef'{..}
           = object (catMaybes [("name" .=) <$> _uirName])
 
--- | Gmail Time restricts (i.e. received today, this week).
---
--- /See:/ 'gmailTimeRestrict' smart constructor.
-newtype GmailTimeRestrict =
-  GmailTimeRestrict'
-    { _gtrType :: Maybe GmailTimeRestrictType
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GmailTimeRestrict' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'gtrType'
-gmailTimeRestrict
-    :: GmailTimeRestrict
-gmailTimeRestrict = GmailTimeRestrict' {_gtrType = Nothing}
-
-
-gtrType :: Lens' GmailTimeRestrict (Maybe GmailTimeRestrictType)
-gtrType = lens _gtrType (\ s a -> s{_gtrType = a})
-
-instance FromJSON GmailTimeRestrict where
-        parseJSON
-          = withObject "GmailTimeRestrict"
-              (\ o -> GmailTimeRestrict' <$> (o .:? "type"))
-
-instance ToJSON GmailTimeRestrict where
-        toJSON GmailTimeRestrict'{..}
-          = object (catMaybes [("type" .=) <$> _gtrType])
-
 --
 -- /See:/ 'pushItemRequest' smart constructor.
 data PushItemRequest =
@@ -5631,8 +6226,8 @@ pirDebugOptions
   = lens _pirDebugOptions
       (\ s a -> s{_pirDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 pirConnectorName :: Lens' PushItemRequest (Maybe Text)
 pirConnectorName
   = lens _pirConnectorName
@@ -5657,6 +6252,43 @@ instance ToJSON PushItemRequest where
                  [("debugOptions" .=) <$> _pirDebugOptions,
                   ("connectorName" .=) <$> _pirConnectorName,
                   ("item" .=) <$> _pirItem])
+
+--
+-- /See:/ 'getCustomerQueryStatsResponse' smart constructor.
+newtype GetCustomerQueryStatsResponse =
+  GetCustomerQueryStatsResponse'
+    { _gcqsrStats :: Maybe [CustomerQueryStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetCustomerQueryStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gcqsrStats'
+getCustomerQueryStatsResponse
+    :: GetCustomerQueryStatsResponse
+getCustomerQueryStatsResponse =
+  GetCustomerQueryStatsResponse' {_gcqsrStats = Nothing}
+
+
+gcqsrStats :: Lens' GetCustomerQueryStatsResponse [CustomerQueryStats]
+gcqsrStats
+  = lens _gcqsrStats (\ s a -> s{_gcqsrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON GetCustomerQueryStatsResponse where
+        parseJSON
+          = withObject "GetCustomerQueryStatsResponse"
+              (\ o ->
+                 GetCustomerQueryStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON GetCustomerQueryStatsResponse where
+        toJSON GetCustomerQueryStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gcqsrStats])
 
 -- | Options for double properties.
 --
@@ -5704,6 +6336,7 @@ data QueryOperator =
   QueryOperator'
     { _qoIsSuggestable :: !(Maybe Bool)
     , _qoIsReturnable :: !(Maybe Bool)
+    , _qoObjectType :: !(Maybe Text)
     , _qoIsRepeatable :: !(Maybe Bool)
     , _qoOperatorName :: !(Maybe Text)
     , _qoIsSortable :: !(Maybe Bool)
@@ -5724,6 +6357,8 @@ data QueryOperator =
 -- * 'qoIsSuggestable'
 --
 -- * 'qoIsReturnable'
+--
+-- * 'qoObjectType'
 --
 -- * 'qoIsRepeatable'
 --
@@ -5748,6 +6383,7 @@ queryOperator =
   QueryOperator'
     { _qoIsSuggestable = Nothing
     , _qoIsReturnable = Nothing
+    , _qoObjectType = Nothing
     , _qoIsRepeatable = Nothing
     , _qoOperatorName = Nothing
     , _qoIsSortable = Nothing
@@ -5772,6 +6408,12 @@ qoIsReturnable :: Lens' QueryOperator (Maybe Bool)
 qoIsReturnable
   = lens _qoIsReturnable
       (\ s a -> s{_qoIsReturnable = a})
+
+-- | Name of the object corresponding to the operator. This field is only
+-- filled for schema-specific operators, and is unset for common operators.
+qoObjectType :: Lens' QueryOperator (Maybe Text)
+qoObjectType
+  = lens _qoObjectType (\ s a -> s{_qoObjectType = a})
 
 -- | Indicates if multiple values can be set for this property.
 qoIsRepeatable :: Lens' QueryOperator (Maybe Bool)
@@ -5835,6 +6477,7 @@ instance FromJSON QueryOperator where
               (\ o ->
                  QueryOperator' <$>
                    (o .:? "isSuggestable") <*> (o .:? "isReturnable")
+                     <*> (o .:? "objectType")
                      <*> (o .:? "isRepeatable")
                      <*> (o .:? "operatorName")
                      <*> (o .:? "isSortable")
@@ -5851,6 +6494,7 @@ instance ToJSON QueryOperator where
               (catMaybes
                  [("isSuggestable" .=) <$> _qoIsSuggestable,
                   ("isReturnable" .=) <$> _qoIsReturnable,
+                  ("objectType" .=) <$> _qoObjectType,
                   ("isRepeatable" .=) <$> _qoIsRepeatable,
                   ("operatorName" .=) <$> _qoOperatorName,
                   ("isSortable" .=) <$> _qoIsSortable,
@@ -5882,15 +6526,9 @@ pollItemsResponse
 pollItemsResponse = PollItemsResponse' {_pirItems = Nothing}
 
 
--- | Set of items from the queue available for connector to process.
--- These items have the following subset of fields populated:
--- version
--- metadata.hash
--- structured_data.hash
--- content.hash
--- payload
--- status
--- queue
+-- | Set of items from the queue available for connector to process. These
+-- items have the following subset of fields populated: version
+-- metadata.hash structured_data.hash content.hash payload status queue
 pirItems :: Lens' PollItemsResponse [Item]
 pirItems
   = lens _pirItems (\ s a -> s{_pirItems = a}) .
@@ -6082,10 +6720,8 @@ instance ToJSON DataSourceIndexStats where
 -- /See:/ 'sourceCrowdingConfig' smart constructor.
 data SourceCrowdingConfig =
   SourceCrowdingConfig'
-    { _sccField :: !(Maybe Text)
-    , _sccNumSuggestions :: !(Maybe (Textual Int32))
+    { _sccNumSuggestions :: !(Maybe (Textual Int32))
     , _sccNumResults :: !(Maybe (Textual Int32))
-    , _sccSource :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -6094,31 +6730,14 @@ data SourceCrowdingConfig =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'sccField'
---
 -- * 'sccNumSuggestions'
 --
 -- * 'sccNumResults'
---
--- * 'sccSource'
 sourceCrowdingConfig
     :: SourceCrowdingConfig
 sourceCrowdingConfig =
-  SourceCrowdingConfig'
-    { _sccField = Nothing
-    , _sccNumSuggestions = Nothing
-    , _sccNumResults = Nothing
-    , _sccSource = Nothing
-    }
+  SourceCrowdingConfig' {_sccNumSuggestions = Nothing, _sccNumResults = Nothing}
 
-
--- | Use a field to control results crowding. For example, if you want to
--- control overly similar results from Gmail topics, use \`thread_id\`. For
--- similar pages from Google Sites, you can use \`webspace_id\`. When
--- matching query results contain the same field value in
--- \`GenericMetadata\`, crowding limits are set on those records.
-sccField :: Lens' SourceCrowdingConfig (Maybe Text)
-sccField = lens _sccField (\ s a -> s{_sccField = a})
 
 -- | Maximum number of suggestions allowed from a source. No limits will be
 -- set on results if this value is less than or equal to 0.
@@ -6136,29 +6755,19 @@ sccNumResults
       (\ s a -> s{_sccNumResults = a})
       . mapping _Coerce
 
--- | Control results by content source. This option limits the total number
--- of results from a given source and ignores field-based crowding control.
-sccSource :: Lens' SourceCrowdingConfig (Maybe Bool)
-sccSource
-  = lens _sccSource (\ s a -> s{_sccSource = a})
-
 instance FromJSON SourceCrowdingConfig where
         parseJSON
           = withObject "SourceCrowdingConfig"
               (\ o ->
                  SourceCrowdingConfig' <$>
-                   (o .:? "field") <*> (o .:? "numSuggestions") <*>
-                     (o .:? "numResults")
-                     <*> (o .:? "source"))
+                   (o .:? "numSuggestions") <*> (o .:? "numResults"))
 
 instance ToJSON SourceCrowdingConfig where
         toJSON SourceCrowdingConfig'{..}
           = object
               (catMaybes
-                 [("field" .=) <$> _sccField,
-                  ("numSuggestions" .=) <$> _sccNumSuggestions,
-                  ("numResults" .=) <$> _sccNumResults,
-                  ("source" .=) <$> _sccSource])
+                 [("numSuggestions" .=) <$> _sccNumSuggestions,
+                  ("numResults" .=) <$> _sccNumResults])
 
 -- | Represents an interaction between a user and an item.
 --
@@ -6339,8 +6948,8 @@ iirDebugOptions
   = lens _iirDebugOptions
       (\ s a -> s{_iirDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 iirConnectorName :: Lens' IndexItemRequest (Maybe Text)
 iirConnectorName
   = lens _iirConnectorName
@@ -6717,13 +7326,13 @@ dataSource =
 
 
 -- | A short name or alias for the source. This value will be used to match
--- the \'source\' operator. For example, if the short name is *\<value>*
--- then queries like *source:\<value>* will only return results for this
--- source. The value must be unique across all datasources. The value must
--- only contain alphanumeric characters (a-zA-Z0-9). The value cannot start
--- with \'google\' and cannot be one of the following: mail, gmail, docs,
--- drive, groups, sites, calendar, hangouts, gplus, keep, people, teams.
--- Its maximum length is 32 characters.
+-- the \'source\' operator. For example, if the short name is ** then
+-- queries like *source:* will only return results for this source. The
+-- value must be unique across all datasources. The value must only contain
+-- alphanumeric characters (a-zA-Z0-9). The value cannot start with
+-- \'google\' and cannot be one of the following: mail, gmail, docs, drive,
+-- groups, sites, calendar, hangouts, gplus, keep, people, teams. Its
+-- maximum length is 32 characters.
 dsShortName :: Lens' DataSource (Maybe Text)
 dsShortName
   = lens _dsShortName (\ s a -> s{_dsShortName = a})
@@ -6764,16 +7373,17 @@ dsIndexingServiceAccounts
       . _Default
       . _Coerce
 
--- | If true, Indexing API rejects any modification calls to this datasource
--- such as create, update, and delete. Disabling this does not imply
--- halting process of previously accepted data.
+-- | If true, sets the datasource to read-only mode. In read-only mode, the
+-- Indexing API rejects any requests to index or delete items in this
+-- source. Enabling read-only mode does not stop the processing of
+-- previously accepted data.
 dsDisableModifications :: Lens' DataSource (Maybe Bool)
 dsDisableModifications
   = lens _dsDisableModifications
       (\ s a -> s{_dsDisableModifications = a})
 
--- | Name of the datasource resource. Format: datasources\/{source_id}.
--- The name is ignored when creating a datasource.
+-- | Name of the datasource resource. Format: datasources\/{source_id}. The
+-- name is ignored when creating a datasource.
 dsName :: Lens' DataSource (Maybe Text)
 dsName = lens _dsName (\ s a -> s{_dsName = a})
 
@@ -6849,38 +7459,6 @@ instance ToJSON HTMLValues where
         toJSON HTMLValues'{..}
           = object (catMaybes [("values" .=) <$> _hvValues])
 
--- | Gmail Intelligent restricts (i.e. smartlabels, important).
---
--- /See:/ 'gmailIntelligentRestrict' smart constructor.
-newtype GmailIntelligentRestrict =
-  GmailIntelligentRestrict'
-    { _girType :: Maybe GmailIntelligentRestrictType
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'GmailIntelligentRestrict' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'girType'
-gmailIntelligentRestrict
-    :: GmailIntelligentRestrict
-gmailIntelligentRestrict = GmailIntelligentRestrict' {_girType = Nothing}
-
-
-girType :: Lens' GmailIntelligentRestrict (Maybe GmailIntelligentRestrictType)
-girType = lens _girType (\ s a -> s{_girType = a})
-
-instance FromJSON GmailIntelligentRestrict where
-        parseJSON
-          = withObject "GmailIntelligentRestrict"
-              (\ o -> GmailIntelligentRestrict' <$> (o .:? "type"))
-
-instance ToJSON GmailIntelligentRestrict where
-        toJSON GmailIntelligentRestrict'{..}
-          = object (catMaybes [("type" .=) <$> _girType])
-
 -- | Used to provide a search operator for html properties. This is optional.
 -- Search operators let users restrict the query to specific fields
 -- relevant to the type of item being searched.
@@ -6905,13 +7483,12 @@ htmlOperatorOptions = HTMLOperatorOptions' {_hooOperatorName = Nothing}
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the html property. For example, if operatorName is *subject* and the
--- property\'s name is *subjectLine*, then queries like *subject:\<value>*
--- will show results only where the value of the property named
--- *subjectLine* matches *\<value>*. By contrast, a search that uses the
--- same *\<value>* without an operator will return all items where
--- *\<value>* matches the value of any html properties or text within the
--- content field for the item. The operator name can only contain lowercase
--- letters (a-z). The maximum length is 32 characters.
+-- property\'s name is *subjectLine*, then queries like *subject:* show
+-- results only where the value of the property named *subjectLine* matches
+-- **. By contrast, a search that uses the same ** without an operator
+-- return all items where ** matches the value of any html properties or
+-- text within the content field for the item. The operator name can only
+-- contain lowercase letters (a-z). The maximum length is 32 characters.
 hooOperatorName :: Lens' HTMLOperatorOptions (Maybe Text)
 hooOperatorName
   = lens _hooOperatorName
@@ -7027,10 +7604,10 @@ iName = lens _iName (\ s a -> s{_iName = a})
 
 -- | Required. The indexing system stores the version from the datasource as
 -- a byte string and compares the Item version in the index to the version
--- of the queued Item using lexical ordering.
--- Cloud Search Indexing won\'t index or delete any queued item with a
--- version value that is less than or equal to the version of the currently
--- indexed item. The maximum length for this field is 1024 bytes.
+-- of the queued Item using lexical ordering. Cloud Search Indexing won\'t
+-- index or delete any queued item with a version value that is less than
+-- or equal to the version of the currently indexed item. The maximum
+-- length for this field is 1024 bytes.
 iVersion :: Lens' Item (Maybe ByteString)
 iVersion
   = lens _iVersion (\ s a -> s{_iVersion = a}) .
@@ -7141,15 +7718,15 @@ propertyDisplayOptions
 propertyDisplayOptions = PropertyDisplayOptions' {_pdoDisplayLabel = Nothing}
 
 
--- | The user friendly label for the property that will be used if the
--- property is specified to be displayed in ObjectDisplayOptions. If given,
--- the display label will be shown in front of the property values when the
--- property is part of the object display options. For example, if the
--- property value is \'1\', the value by itself may not be useful context
--- for the user. If the display name given was \'priority\', then the user
--- will see \'priority : 1\' in the search results which provides clear
--- conext to search users. This is OPTIONAL; if not given, only the
--- property values will be displayed. The maximum length is 32 characters.
+-- | The user friendly label for the property that is used if the property is
+-- specified to be displayed in ObjectDisplayOptions. If provided, the
+-- display label is shown in front of the property values when the property
+-- is part of the object display options. For example, if the property
+-- value is \'1\', the value by itself may not be useful context for the
+-- user. If the display name given was \'priority\', then the user sees
+-- \'priority : 1\' in the search results which provides clear context to
+-- search users. This is OPTIONAL; if not given, only the property values
+-- are displayed. The maximum length is 64 characters.
 pdoDisplayLabel :: Lens' PropertyDisplayOptions (Maybe Text)
 pdoDisplayLabel
   = lens _pdoDisplayLabel
@@ -7369,9 +7946,10 @@ suggestRequest =
     }
 
 
--- | The sources to use for suggestions. If not specified, all data sources
--- from the current search application are used. Suggestions are based on
--- Gmail titles. Suggestions from third party sources are not available.
+-- | The sources to use for suggestions. If not specified, the data sources
+-- are taken from the current search application. NOTE: Suggestions are
+-- only supported for the following sources: * Third-party data sources *
+-- PredefinedSource.PERSON * PredefinedSource.GOOGLE_DRIVE
 sDataSourceRestrictions :: Lens' SuggestRequest [DataSourceRestriction]
 sDataSourceRestrictions
   = lens _sDataSourceRestrictions
@@ -7410,13 +7988,12 @@ instance ToJSON SuggestRequest where
                   ("requestOptions" .=) <$> _sRequestOptions])
 
 -- | A generic way of expressing filters in a query, which supports two
--- approaches:
--- **1. Setting a ValueFilter.** The name must match an operator_name
--- defined in the schema for your data source.
--- **2. Setting a CompositeFilter.** The filters are evaluated using the
--- logical operator. The top-level operators can only be either an AND or a
--- NOT. AND can appear only at the top-most level. OR can appear only under
--- a top-level AND.
+-- approaches: **1. Setting a ValueFilter.** The name must match an
+-- operator_name defined in the schema for your data source. **2. Setting a
+-- CompositeFilter.** The filters are evaluated using the logical operator.
+-- The top-level operators can only be either an AND or a NOT. AND can
+-- appear only at the top-most level. OR can appear only under a top-level
+-- AND.
 --
 -- /See:/ 'filter'' smart constructor.
 data Filter =
@@ -7532,13 +8109,49 @@ instance ToJSON ObjectDefinition where
                     _odPropertyDefinitions])
 
 --
+-- /See:/ 'vpcSettings' smart constructor.
+newtype VPCSettings =
+  VPCSettings'
+    { _vsProject :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'VPCSettings' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vsProject'
+vpcSettings
+    :: VPCSettings
+vpcSettings = VPCSettings' {_vsProject = Nothing}
+
+
+-- | The resource name of the GCP Project to be used for VPC SC policy check.
+-- VPC security settings on this project will be honored for Cloud Search
+-- APIs after project_name has been updated through CustomerService.
+-- Format: projects\/{project_id}
+vsProject :: Lens' VPCSettings (Maybe Text)
+vsProject
+  = lens _vsProject (\ s a -> s{_vsProject = a})
+
+instance FromJSON VPCSettings where
+        parseJSON
+          = withObject "VPCSettings"
+              (\ o -> VPCSettings' <$> (o .:? "project"))
+
+instance ToJSON VPCSettings where
+        toJSON VPCSettings'{..}
+          = object (catMaybes [("project" .=) <$> _vsProject])
+
+--
 -- /See:/ 'pollItemsRequest' smart constructor.
 data PollItemsRequest =
   PollItemsRequest'
     { _pQueue :: !(Maybe Text)
     , _pDebugOptions :: !(Maybe DebugOptions)
     , _pConnectorName :: !(Maybe Text)
-    , _pStatusCodes :: !(Maybe [Text])
+    , _pStatusCodes :: !(Maybe [PollItemsRequestStatusCodesItem])
     , _pLimit :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7580,22 +8193,22 @@ pDebugOptions
   = lens _pDebugOptions
       (\ s a -> s{_pDebugOptions = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 pConnectorName :: Lens' PollItemsRequest (Maybe Text)
 pConnectorName
   = lens _pConnectorName
       (\ s a -> s{_pConnectorName = a})
 
 -- | Limit the items polled to the ones with these statuses.
-pStatusCodes :: Lens' PollItemsRequest [Text]
+pStatusCodes :: Lens' PollItemsRequest [PollItemsRequestStatusCodesItem]
 pStatusCodes
   = lens _pStatusCodes (\ s a -> s{_pStatusCodes = a})
       . _Default
       . _Coerce
 
--- | Maximum number of items to return.
--- The maximum and the default value is 1000
+-- | Maximum number of items to return. The maximum value is 100 and the
+-- default value is 20.
 pLimit :: Lens' PollItemsRequest (Maybe Int32)
 pLimit
   = lens _pLimit (\ s a -> s{_pLimit = a}) .
@@ -7626,6 +8239,7 @@ instance ToJSON PollItemsRequest where
 data QueryInterpretation =
   QueryInterpretation'
     { _qiInterpretedQuery :: !(Maybe Text)
+    , _qiReason :: !(Maybe QueryInterpretationReason)
     , _qiInterpretationType :: !(Maybe QueryInterpretationInterpretationType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7637,20 +8251,32 @@ data QueryInterpretation =
 --
 -- * 'qiInterpretedQuery'
 --
+-- * 'qiReason'
+--
 -- * 'qiInterpretationType'
 queryInterpretation
     :: QueryInterpretation
 queryInterpretation =
   QueryInterpretation'
-    {_qiInterpretedQuery = Nothing, _qiInterpretationType = Nothing}
+    { _qiInterpretedQuery = Nothing
+    , _qiReason = Nothing
+    , _qiInterpretationType = Nothing
+    }
 
 
--- | The interpretation of the query used in search. For example, query
--- \"email from john\" will be interpreted as \"from:john source:mail\"
+-- | The interpretation of the query used in search. For example, queries
+-- with natural language intent like \"email from john\" will be
+-- interpreted as \"from:john source:mail\". This field will not be filled
+-- when the reason is NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY.
 qiInterpretedQuery :: Lens' QueryInterpretation (Maybe Text)
 qiInterpretedQuery
   = lens _qiInterpretedQuery
       (\ s a -> s{_qiInterpretedQuery = a})
+
+-- | The reason for interpretation of the query. This field will not be
+-- UNSPECIFIED if the interpretation type is not NONE.
+qiReason :: Lens' QueryInterpretation (Maybe QueryInterpretationReason)
+qiReason = lens _qiReason (\ s a -> s{_qiReason = a})
 
 qiInterpretationType :: Lens' QueryInterpretation (Maybe QueryInterpretationInterpretationType)
 qiInterpretationType
@@ -7662,7 +8288,7 @@ instance FromJSON QueryInterpretation where
           = withObject "QueryInterpretation"
               (\ o ->
                  QueryInterpretation' <$>
-                   (o .:? "interpretedQuery") <*>
+                   (o .:? "interpretedQuery") <*> (o .:? "reason") <*>
                      (o .:? "interpretationType"))
 
 instance ToJSON QueryInterpretation where
@@ -7670,6 +8296,7 @@ instance ToJSON QueryInterpretation where
           = object
               (catMaybes
                  [("interpretedQuery" .=) <$> _qiInterpretedQuery,
+                  ("reason" .=) <$> _qiReason,
                   ("interpretationType" .=) <$> _qiInterpretationType])
 
 --
@@ -7895,8 +8522,8 @@ piPayload
   = lens _piPayload (\ s a -> s{_piPayload = a}) .
       mapping _Bytes
 
--- | Queue to which this item belongs to. The 'default' queue is chosen if
--- this field is not specified. The maximum length is 512 characters.
+-- | Queue to which this item belongs to. The default queue is chosen if this
+-- field is not specified. The maximum length is 512 characters.
 piQueue :: Lens' PushItem (Maybe Text)
 piQueue = lens _piQueue (\ s a -> s{_piQueue = a})
 
@@ -7936,6 +8563,56 @@ instance ToJSON PushItem where
                   ("queue" .=) <$> _piQueue,
                   ("metadataHash" .=) <$> _piMetadataHash,
                   ("type" .=) <$> _piType])
+
+--
+-- /See:/ 'customerSessionStats' smart constructor.
+data CustomerSessionStats =
+  CustomerSessionStats'
+    { _cssSearchSessionsCount :: !(Maybe (Textual Int64))
+    , _cssDate :: !(Maybe Date)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomerSessionStats' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cssSearchSessionsCount'
+--
+-- * 'cssDate'
+customerSessionStats
+    :: CustomerSessionStats
+customerSessionStats =
+  CustomerSessionStats' {_cssSearchSessionsCount = Nothing, _cssDate = Nothing}
+
+
+-- | The count of search sessions on the day
+cssSearchSessionsCount :: Lens' CustomerSessionStats (Maybe Int64)
+cssSearchSessionsCount
+  = lens _cssSearchSessionsCount
+      (\ s a -> s{_cssSearchSessionsCount = a})
+      . mapping _Coerce
+
+-- | Date for which session stats were calculated. Stats calculated on the
+-- next day close to midnight are returned.
+cssDate :: Lens' CustomerSessionStats (Maybe Date)
+cssDate = lens _cssDate (\ s a -> s{_cssDate = a})
+
+instance FromJSON CustomerSessionStats where
+        parseJSON
+          = withObject "CustomerSessionStats"
+              (\ o ->
+                 CustomerSessionStats' <$>
+                   (o .:? "searchSessionsCount") <*> (o .:? "date"))
+
+instance ToJSON CustomerSessionStats where
+        toJSON CustomerSessionStats'{..}
+          = object
+              (catMaybes
+                 [("searchSessionsCount" .=) <$>
+                    _cssSearchSessionsCount,
+                  ("date" .=) <$> _cssDate])
 
 -- | Error message per source response.
 --
@@ -8049,10 +8726,9 @@ vfValue = lens _vfValue (\ s a -> s{_vfValue = a})
 
 -- | The \`operator_name\` applied to the query, such as
 -- *price_greater_than*. The filter can work against both types of filters
--- defined in the schema for your data source:
--- 1. \`operator_name\`, where the query filters results by the property
--- that matches the value.
--- 2. \`greater_than_operator_name\` or \`less_than_operator_name\` in your
+-- defined in the schema for your data source: 1. \`operator_name\`, where
+-- the query filters results by the property that matches the value. 2.
+-- \`greater_than_operator_name\` or \`less_than_operator_name\` in your
 -- schema. The query filters the results for the property values that are
 -- greater than or less than the supplied value in the query.
 vfOperatorName :: Lens' ValueFilter (Maybe Text)
@@ -8078,8 +8754,8 @@ instance ToJSON ValueFilter where
 -- Search operators let users restrict the query to specific fields
 -- relevant to the type of item being searched. For example, if you provide
 -- no operator for a *priority* enum property with possible values *p0* and
--- *p1*, a query that contains the term *p0* will return items that have
--- *p0* as the value of the *priority* property, as well as any items that
+-- *p1*, a query that contains the term *p0* returns items that have *p0*
+-- as the value of the *priority* property, as well as any items that
 -- contain the string *p0* in other fields. If you provide an operator name
 -- for the enum, such as *priority*, then search users can use that
 -- operator to refine results to only items that have *p0* as this
@@ -8105,13 +8781,12 @@ enumOperatorOptions = EnumOperatorOptions' {_eooOperatorName = Nothing}
 
 -- | Indicates the operator name required in the query in order to isolate
 -- the enum property. For example, if operatorName is *priority* and the
--- property\'s name is *priorityVal*, then queries like *priority:\<value>*
--- will show results only where the value of the property named
--- *priorityVal* matches *\<value>*. By contrast, a search that uses the
--- same *\<value>* without an operator will return all items where
--- *\<value>* matches the value of any String properties or text within the
--- content field for the item. The operator name can only contain lowercase
--- letters (a-z). The maximum length is 32 characters.
+-- property\'s name is *priorityVal*, then queries like *priority:* show
+-- results only where the value of the property named *priorityVal* matches
+-- **. By contrast, a search that uses the same ** without an operator
+-- returns all items where ** matches the value of any String properties or
+-- text within the content field for the item. The operator name can only
+-- contain lowercase letters (a-z). The maximum length is 32 characters.
 eooOperatorName :: Lens' EnumOperatorOptions (Maybe Text)
 eooOperatorName
   = lens _eooOperatorName
@@ -8129,38 +8804,59 @@ instance ToJSON EnumOperatorOptions where
               (catMaybes
                  [("operatorName" .=) <$> _eooOperatorName])
 
--- | Gmail Attachment restricts (i.e. has:attachment, has:drive,
--- filename:pdf).
+-- | A named attribute associated with an item which can be used for
+-- influencing the ranking of the item based on the context in the request.
 --
--- /See:/ 'gmailAttachmentRestrict' smart constructor.
-newtype GmailAttachmentRestrict =
-  GmailAttachmentRestrict'
-    { _gType :: Maybe GmailAttachmentRestrictType
+-- /See:/ 'contextAttribute' smart constructor.
+data ContextAttribute =
+  ContextAttribute'
+    { _caValues :: !(Maybe [Text])
+    , _caName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'GmailAttachmentRestrict' with the minimum fields required to make a request.
+-- | Creates a value of 'ContextAttribute' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'gType'
-gmailAttachmentRestrict
-    :: GmailAttachmentRestrict
-gmailAttachmentRestrict = GmailAttachmentRestrict' {_gType = Nothing}
+-- * 'caValues'
+--
+-- * 'caName'
+contextAttribute
+    :: ContextAttribute
+contextAttribute = ContextAttribute' {_caValues = Nothing, _caName = Nothing}
 
 
-gType :: Lens' GmailAttachmentRestrict (Maybe GmailAttachmentRestrictType)
-gType = lens _gType (\ s a -> s{_gType = a})
+-- | Text values of the attribute. The maximum number of elements is 10. The
+-- maximum length of an element in the array is 32 characters. The value
+-- will be normalized (lower-cased) before being matched.
+caValues :: Lens' ContextAttribute [Text]
+caValues
+  = lens _caValues (\ s a -> s{_caValues = a}) .
+      _Default
+      . _Coerce
 
-instance FromJSON GmailAttachmentRestrict where
+-- | The name of the attribute. It should not be empty. The maximum length is
+-- 32 characters. The name must start with a letter and can only contain
+-- letters (A-Z, a-z) or numbers (0-9). The name will be normalized
+-- (lower-cased) before being matched.
+caName :: Lens' ContextAttribute (Maybe Text)
+caName = lens _caName (\ s a -> s{_caName = a})
+
+instance FromJSON ContextAttribute where
         parseJSON
-          = withObject "GmailAttachmentRestrict"
-              (\ o -> GmailAttachmentRestrict' <$> (o .:? "type"))
+          = withObject "ContextAttribute"
+              (\ o ->
+                 ContextAttribute' <$>
+                   (o .:? "values" .!= mempty) <*> (o .:? "name"))
 
-instance ToJSON GmailAttachmentRestrict where
-        toJSON GmailAttachmentRestrict'{..}
-          = object (catMaybes [("type" .=) <$> _gType])
+instance ToJSON ContextAttribute where
+        toJSON ContextAttribute'{..}
+          = object
+              (catMaybes
+                 [("values" .=) <$> _caValues,
+                  ("name" .=) <$> _caName])
 
 -- | Options for date properties.
 --
@@ -8586,6 +9282,44 @@ instance ToJSON IntegerValues where
           = object (catMaybes [("values" .=) <$> _ivValues])
 
 --
+-- /See:/ 'getCustomerSessionStatsResponse' smart constructor.
+newtype GetCustomerSessionStatsResponse =
+  GetCustomerSessionStatsResponse'
+    { _gcssrStats :: Maybe [CustomerSessionStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetCustomerSessionStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gcssrStats'
+getCustomerSessionStatsResponse
+    :: GetCustomerSessionStatsResponse
+getCustomerSessionStatsResponse =
+  GetCustomerSessionStatsResponse' {_gcssrStats = Nothing}
+
+
+gcssrStats :: Lens' GetCustomerSessionStatsResponse [CustomerSessionStats]
+gcssrStats
+  = lens _gcssrStats (\ s a -> s{_gcssrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON GetCustomerSessionStatsResponse
+         where
+        parseJSON
+          = withObject "GetCustomerSessionStatsResponse"
+              (\ o ->
+                 GetCustomerSessionStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON GetCustomerSessionStatsResponse where
+        toJSON GetCustomerSessionStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gcssrStats])
+
+--
 -- /See:/ 'searchItemsByViewURLResponse' smart constructor.
 data SearchItemsByViewURLResponse =
   SearchItemsByViewURLResponse'
@@ -8680,15 +9414,10 @@ instance ToJSON GetCustomerIndexStatsResponse where
 -- /See:/ 'restrictItem' smart constructor.
 data RestrictItem =
   RestrictItem'
-    { _riGmailFolderRestrict :: !(Maybe GmailFolderRestrict)
-    , _riGmailActionRestrict :: !(Maybe GmailActionRestrict)
-    , _riDriveLocationRestrict :: !(Maybe DriveLocationRestrict)
+    { _riDriveLocationRestrict :: !(Maybe DriveLocationRestrict)
     , _riDriveTimeSpanRestrict :: !(Maybe DriveTimeSpanRestrict)
     , _riDriveMimeTypeRestrict :: !(Maybe DriveMimeTypeRestrict)
     , _riDriveFollowUpRestrict :: !(Maybe DriveFollowUpRestrict)
-    , _riGmailTimeRestrict :: !(Maybe GmailTimeRestrict)
-    , _riGmailIntelligentRestrict :: !(Maybe GmailIntelligentRestrict)
-    , _riGmailAttachmentRestrict :: !(Maybe GmailAttachmentRestrict)
     , _riSearchOperator :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -8698,10 +9427,6 @@ data RestrictItem =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'riGmailFolderRestrict'
---
--- * 'riGmailActionRestrict'
---
 -- * 'riDriveLocationRestrict'
 --
 -- * 'riDriveTimeSpanRestrict'
@@ -8710,40 +9435,18 @@ data RestrictItem =
 --
 -- * 'riDriveFollowUpRestrict'
 --
--- * 'riGmailTimeRestrict'
---
--- * 'riGmailIntelligentRestrict'
---
--- * 'riGmailAttachmentRestrict'
---
 -- * 'riSearchOperator'
 restrictItem
     :: RestrictItem
 restrictItem =
   RestrictItem'
-    { _riGmailFolderRestrict = Nothing
-    , _riGmailActionRestrict = Nothing
-    , _riDriveLocationRestrict = Nothing
+    { _riDriveLocationRestrict = Nothing
     , _riDriveTimeSpanRestrict = Nothing
     , _riDriveMimeTypeRestrict = Nothing
     , _riDriveFollowUpRestrict = Nothing
-    , _riGmailTimeRestrict = Nothing
-    , _riGmailIntelligentRestrict = Nothing
-    , _riGmailAttachmentRestrict = Nothing
     , _riSearchOperator = Nothing
     }
 
-
--- | Gmail Types.
-riGmailFolderRestrict :: Lens' RestrictItem (Maybe GmailFolderRestrict)
-riGmailFolderRestrict
-  = lens _riGmailFolderRestrict
-      (\ s a -> s{_riGmailFolderRestrict = a})
-
-riGmailActionRestrict :: Lens' RestrictItem (Maybe GmailActionRestrict)
-riGmailActionRestrict
-  = lens _riGmailActionRestrict
-      (\ s a -> s{_riGmailActionRestrict = a})
 
 riDriveLocationRestrict :: Lens' RestrictItem (Maybe DriveLocationRestrict)
 riDriveLocationRestrict
@@ -8767,21 +9470,6 @@ riDriveFollowUpRestrict
   = lens _riDriveFollowUpRestrict
       (\ s a -> s{_riDriveFollowUpRestrict = a})
 
-riGmailTimeRestrict :: Lens' RestrictItem (Maybe GmailTimeRestrict)
-riGmailTimeRestrict
-  = lens _riGmailTimeRestrict
-      (\ s a -> s{_riGmailTimeRestrict = a})
-
-riGmailIntelligentRestrict :: Lens' RestrictItem (Maybe GmailIntelligentRestrict)
-riGmailIntelligentRestrict
-  = lens _riGmailIntelligentRestrict
-      (\ s a -> s{_riGmailIntelligentRestrict = a})
-
-riGmailAttachmentRestrict :: Lens' RestrictItem (Maybe GmailAttachmentRestrict)
-riGmailAttachmentRestrict
-  = lens _riGmailAttachmentRestrict
-      (\ s a -> s{_riGmailAttachmentRestrict = a})
-
 -- | The search restrict (e.g. \"after:2017-09-11 before:2017-09-12\").
 riSearchOperator :: Lens' RestrictItem (Maybe Text)
 riSearchOperator
@@ -8793,26 +9481,17 @@ instance FromJSON RestrictItem where
           = withObject "RestrictItem"
               (\ o ->
                  RestrictItem' <$>
-                   (o .:? "gmailFolderRestrict") <*>
-                     (o .:? "gmailActionRestrict")
-                     <*> (o .:? "driveLocationRestrict")
-                     <*> (o .:? "driveTimeSpanRestrict")
+                   (o .:? "driveLocationRestrict") <*>
+                     (o .:? "driveTimeSpanRestrict")
                      <*> (o .:? "driveMimeTypeRestrict")
                      <*> (o .:? "driveFollowUpRestrict")
-                     <*> (o .:? "gmailTimeRestrict")
-                     <*> (o .:? "gmailIntelligentRestrict")
-                     <*> (o .:? "gmailAttachmentRestrict")
                      <*> (o .:? "searchOperator"))
 
 instance ToJSON RestrictItem where
         toJSON RestrictItem'{..}
           = object
               (catMaybes
-                 [("gmailFolderRestrict" .=) <$>
-                    _riGmailFolderRestrict,
-                  ("gmailActionRestrict" .=) <$>
-                    _riGmailActionRestrict,
-                  ("driveLocationRestrict" .=) <$>
+                 [("driveLocationRestrict" .=) <$>
                     _riDriveLocationRestrict,
                   ("driveTimeSpanRestrict" .=) <$>
                     _riDriveTimeSpanRestrict,
@@ -8820,12 +9499,62 @@ instance ToJSON RestrictItem where
                     _riDriveMimeTypeRestrict,
                   ("driveFollowUpRestrict" .=) <$>
                     _riDriveFollowUpRestrict,
-                  ("gmailTimeRestrict" .=) <$> _riGmailTimeRestrict,
-                  ("gmailIntelligentRestrict" .=) <$>
-                    _riGmailIntelligentRestrict,
-                  ("gmailAttachmentRestrict" .=) <$>
-                    _riGmailAttachmentRestrict,
                   ("searchOperator" .=) <$> _riSearchOperator])
+
+-- | Represents settings at a customer level.
+--
+-- /See:/ 'customerSettings' smart constructor.
+data CustomerSettings =
+  CustomerSettings'
+    { _csAuditLoggingSettings :: !(Maybe AuditLoggingSettings)
+    , _csVPCSettings :: !(Maybe VPCSettings)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomerSettings' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'csAuditLoggingSettings'
+--
+-- * 'csVPCSettings'
+customerSettings
+    :: CustomerSettings
+customerSettings =
+  CustomerSettings'
+    {_csAuditLoggingSettings = Nothing, _csVPCSettings = Nothing}
+
+
+-- | Audit Logging settings for the customer. If update_mask is empty then
+-- this field will be updated based on UpdateCustomerSettings request.
+csAuditLoggingSettings :: Lens' CustomerSettings (Maybe AuditLoggingSettings)
+csAuditLoggingSettings
+  = lens _csAuditLoggingSettings
+      (\ s a -> s{_csAuditLoggingSettings = a})
+
+-- | VPC SC settings for the customer. If update_mask is empty then this
+-- field will be updated based on UpdateCustomerSettings request.
+csVPCSettings :: Lens' CustomerSettings (Maybe VPCSettings)
+csVPCSettings
+  = lens _csVPCSettings
+      (\ s a -> s{_csVPCSettings = a})
+
+instance FromJSON CustomerSettings where
+        parseJSON
+          = withObject "CustomerSettings"
+              (\ o ->
+                 CustomerSettings' <$>
+                   (o .:? "auditLoggingSettings") <*>
+                     (o .:? "vpcSettings"))
+
+instance ToJSON CustomerSettings where
+        toJSON CustomerSettings'{..}
+          = object
+              (catMaybes
+                 [("auditLoggingSettings" .=) <$>
+                    _csAuditLoggingSettings,
+                  ("vpcSettings" .=) <$> _csVPCSettings])
 
 --
 -- /See:/ 'checkAccessResponse' smart constructor.
@@ -8899,9 +9628,12 @@ requestOptions =
 -- | The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more
 -- information, see
 -- http:\/\/www.unicode.org\/reports\/tr35\/#Unicode_locale_identifier. For
--- translations. When specified, the documents in search results are biased
--- towards the specified language. Suggest API does not use this parameter.
--- It autocompletes only based on characters in the query.
+-- translations. Set this field using the language set in browser or for
+-- the page. In the event that the user\'s language preference is known,
+-- set this field to the known user language. When specified, the documents
+-- in search results are biased towards the specified language. The suggest
+-- API does not use this parameter. Instead, suggest autocompletes only
+-- based on characters in the query.
 roLanguageCode :: Lens' RequestOptions (Maybe Text)
 roLanguageCode
   = lens _roLanguageCode
@@ -8917,12 +9649,15 @@ roDebugOptions
 -- \"Australia\/Sydney\". These IDs are defined by [Unicode Common Locale
 -- Data Repository (CLDR)](http:\/\/cldr.unicode.org\/) project, and
 -- currently available in the file
--- [timezone.xml](http:\/\/unicode.org\/repos\/cldr\/trunk\/common\/bcp47\/timezone.xml)
+-- [timezone.xml](http:\/\/unicode.org\/repos\/cldr\/trunk\/common\/bcp47\/timezone.xml).
+-- This field is used to correctly interpret date and time queries. If this
+-- field is not specified, the default time zone (UTC) is used.
 roTimeZone :: Lens' RequestOptions (Maybe Text)
 roTimeZone
   = lens _roTimeZone (\ s a -> s{_roTimeZone = a})
 
--- | Id of the application created using SearchApplicationsService.
+-- | The ID generated when you create a search application using the [admin
+-- console](https:\/\/support.google.com\/a\/answer\/9043922).
 roSearchApplicationId :: Lens' RequestOptions (Maybe Text)
 roSearchApplicationId
   = lens _roSearchApplicationId
@@ -9014,3 +9749,40 @@ instance ToJSON ItemStatus where
                  [("processingErrors" .=) <$> _isProcessingErrors,
                   ("code" .=) <$> _isCode,
                   ("repositoryErrors" .=) <$> _isRepositoryErrors])
+
+--
+-- /See:/ 'getCustomerUserStatsResponse' smart constructor.
+newtype GetCustomerUserStatsResponse =
+  GetCustomerUserStatsResponse'
+    { _gcusrStats :: Maybe [CustomerUserStats]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GetCustomerUserStatsResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gcusrStats'
+getCustomerUserStatsResponse
+    :: GetCustomerUserStatsResponse
+getCustomerUserStatsResponse =
+  GetCustomerUserStatsResponse' {_gcusrStats = Nothing}
+
+
+gcusrStats :: Lens' GetCustomerUserStatsResponse [CustomerUserStats]
+gcusrStats
+  = lens _gcusrStats (\ s a -> s{_gcusrStats = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON GetCustomerUserStatsResponse where
+        parseJSON
+          = withObject "GetCustomerUserStatsResponse"
+              (\ o ->
+                 GetCustomerUserStatsResponse' <$>
+                   (o .:? "stats" .!= mempty))
+
+instance ToJSON GetCustomerUserStatsResponse where
+        toJSON GetCustomerUserStatsResponse'{..}
+          = object (catMaybes [("stats" .=) <$> _gcusrStats])

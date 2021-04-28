@@ -132,7 +132,7 @@ psdUploadType
   = lens _psdUploadType
       (\ s a -> s{_psdUploadType = a})
 
--- | The subscription to delete. Format is
+-- | Required. The subscription to delete. Format is
 -- \`projects\/{project}\/subscriptions\/{sub}\`.
 psdSubscription :: Lens' ProjectsSubscriptionsDelete Text
 psdSubscription

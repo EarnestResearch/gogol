@@ -46,6 +46,9 @@ data BuildStepStatus
     | Cancelled
       -- ^ @CANCELLED@
       -- Build or step was canceled by a user.
+    | Expired
+      -- ^ @EXPIRED@
+      -- Build was enqueued for longer than the value of \`queue_ttl\`.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable BuildStepStatus
@@ -60,6 +63,7 @@ instance FromHttpApiData BuildStepStatus where
         "INTERNAL_ERROR" -> Right InternalError
         "TIMEOUT" -> Right Timeout
         "CANCELLED" -> Right Cancelled
+        "EXPIRED" -> Right Expired
         x -> Left ("Unable to parse BuildStepStatus from: " <> x)
 
 instance ToHttpApiData BuildStepStatus where
@@ -72,6 +76,7 @@ instance ToHttpApiData BuildStepStatus where
         InternalError -> "INTERNAL_ERROR"
         Timeout -> "TIMEOUT"
         Cancelled -> "CANCELLED"
+        Expired -> "EXPIRED"
 
 instance FromJSON BuildStepStatus where
     parseJSON = parseJSONText "BuildStepStatus"
@@ -79,8 +84,8 @@ instance FromJSON BuildStepStatus where
 instance ToJSON BuildStepStatus where
     toJSON = toJSONText
 
--- | Whether to block builds on a \"\/gcbrun\" comment from a repository
--- owner or collaborator.
+-- | Configure builds to run whether a repository owner or collaborator need
+-- to comment \`\/gcbrun\`.
 data PullRequestFilterCommentControl
     = CommentsDisabled
       -- ^ @COMMENTS_DISABLED@
@@ -89,6 +94,10 @@ data PullRequestFilterCommentControl
       -- ^ @COMMENTS_ENABLED@
       -- Enforce that repository owners or collaborators must comment on Pull
       -- Requests before builds are triggered.
+    | CommentsEnabledForExternalContributorsOnly
+      -- ^ @COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY@
+      -- Enforce that repository owners or collaborators must comment on external
+      -- contributors\' Pull Requests before builds are triggered.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable PullRequestFilterCommentControl
@@ -97,17 +106,64 @@ instance FromHttpApiData PullRequestFilterCommentControl where
     parseQueryParam = \case
         "COMMENTS_DISABLED" -> Right CommentsDisabled
         "COMMENTS_ENABLED" -> Right CommentsEnabled
+        "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY" -> Right CommentsEnabledForExternalContributorsOnly
         x -> Left ("Unable to parse PullRequestFilterCommentControl from: " <> x)
 
 instance ToHttpApiData PullRequestFilterCommentControl where
     toQueryParam = \case
         CommentsDisabled -> "COMMENTS_DISABLED"
         CommentsEnabled -> "COMMENTS_ENABLED"
+        CommentsEnabledForExternalContributorsOnly -> "COMMENTS_ENABLED_FOR_EXTERNAL_CONTRIBUTORS_ONLY"
 
 instance FromJSON PullRequestFilterCommentControl where
     parseJSON = parseJSONText "PullRequestFilterCommentControl"
 
 instance ToJSON PullRequestFilterCommentControl where
+    toJSON = toJSONText
+
+-- | Potential issues with the underlying Pub\/Sub subscription
+-- configuration. Only populated on get requests.
+data PubsubConfigState
+    = StateUnspecified
+      -- ^ @STATE_UNSPECIFIED@
+      -- The subscription configuration has not been checked.
+    | OK
+      -- ^ @OK@
+      -- The Pub\/Sub subscription is properly configured.
+    | SubscriptionDeleted
+      -- ^ @SUBSCRIPTION_DELETED@
+      -- The subscription has been deleted.
+    | TopicDeleted
+      -- ^ @TOPIC_DELETED@
+      -- The topic has been deleted.
+    | SubscriptionMisConfigured
+      -- ^ @SUBSCRIPTION_MISCONFIGURED@
+      -- Some of the subscription\'s field are misconfigured.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable PubsubConfigState
+
+instance FromHttpApiData PubsubConfigState where
+    parseQueryParam = \case
+        "STATE_UNSPECIFIED" -> Right StateUnspecified
+        "OK" -> Right OK
+        "SUBSCRIPTION_DELETED" -> Right SubscriptionDeleted
+        "TOPIC_DELETED" -> Right TopicDeleted
+        "SUBSCRIPTION_MISCONFIGURED" -> Right SubscriptionMisConfigured
+        x -> Left ("Unable to parse PubsubConfigState from: " <> x)
+
+instance ToHttpApiData PubsubConfigState where
+    toQueryParam = \case
+        StateUnspecified -> "STATE_UNSPECIFIED"
+        OK -> "OK"
+        SubscriptionDeleted -> "SUBSCRIPTION_DELETED"
+        TopicDeleted -> "TOPIC_DELETED"
+        SubscriptionMisConfigured -> "SUBSCRIPTION_MISCONFIGURED"
+
+instance FromJSON PubsubConfigState where
+    parseJSON = parseJSONText "PubsubConfigState"
+
+instance ToJSON PubsubConfigState where
     toJSON = toJSONText
 
 -- | Requested verifiability options.
@@ -194,6 +250,9 @@ data BuildStatus
     | BSCancelled
       -- ^ @CANCELLED@
       -- Build or step was canceled by a user.
+    | BSExpired
+      -- ^ @EXPIRED@
+      -- Build was enqueued for longer than the value of \`queue_ttl\`.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable BuildStatus
@@ -208,6 +267,7 @@ instance FromHttpApiData BuildStatus where
         "INTERNAL_ERROR" -> Right BSInternalError
         "TIMEOUT" -> Right BSTimeout
         "CANCELLED" -> Right BSCancelled
+        "EXPIRED" -> Right BSExpired
         x -> Left ("Unable to parse BuildStatus from: " <> x)
 
 instance ToHttpApiData BuildStatus where
@@ -220,6 +280,7 @@ instance ToHttpApiData BuildStatus where
         BSInternalError -> "INTERNAL_ERROR"
         BSTimeout -> "TIMEOUT"
         BSCancelled -> "CANCELLED"
+        BSExpired -> "EXPIRED"
 
 instance FromJSON BuildStatus where
     parseJSON = parseJSONText "BuildStatus"
@@ -228,7 +289,8 @@ instance ToJSON BuildStatus where
     toJSON = toJSONText
 
 -- | Option to specify behavior when there is an error in the substitution
--- checks.
+-- checks. NOTE: this is always set to ALLOW_LOOSE for triggered builds and
+-- cannot be overridden in the build configuration file.
 data BuildOptionsSubstitutionOption
     = MustMatch
       -- ^ @MUST_MATCH@
@@ -327,35 +389,85 @@ instance FromJSON BuildOptionsLogStreamingOption where
 instance ToJSON BuildOptionsLogStreamingOption where
     toJSON = toJSONText
 
--- | Option to specify the logging mode, which determines where the logs are
--- stored.
+data BuildOptionsSourceProvenanceHashItem
+    = BOSPHINone
+      -- ^ @NONE@
+      -- No hash requested.
+    | BOSPHISHA256
+      -- ^ @SHA256@
+      -- Use a sha256 hash.
+    | BOSPHIMD5
+      -- ^ @MD5@
+      -- Use a md5 hash.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable BuildOptionsSourceProvenanceHashItem
+
+instance FromHttpApiData BuildOptionsSourceProvenanceHashItem where
+    parseQueryParam = \case
+        "NONE" -> Right BOSPHINone
+        "SHA256" -> Right BOSPHISHA256
+        "MD5" -> Right BOSPHIMD5
+        x -> Left ("Unable to parse BuildOptionsSourceProvenanceHashItem from: " <> x)
+
+instance ToHttpApiData BuildOptionsSourceProvenanceHashItem where
+    toQueryParam = \case
+        BOSPHINone -> "NONE"
+        BOSPHISHA256 -> "SHA256"
+        BOSPHIMD5 -> "MD5"
+
+instance FromJSON BuildOptionsSourceProvenanceHashItem where
+    parseJSON = parseJSONText "BuildOptionsSourceProvenanceHashItem"
+
+instance ToJSON BuildOptionsSourceProvenanceHashItem where
+    toJSON = toJSONText
+
+-- | Option to specify the logging mode, which determines if and where build
+-- logs are stored.
 data BuildOptionsLogging
-    = LoggingUnspecified
+    = BOLLoggingUnspecified
       -- ^ @LOGGING_UNSPECIFIED@
       -- The service determines the logging mode. The default is \`LEGACY\`. Do
       -- not rely on the default logging behavior as it may change in the future.
-    | Legacy
+    | BOLLegacy
       -- ^ @LEGACY@
-      -- Stackdriver logging and Cloud Storage logging are enabled.
-    | GcsOnly
+      -- Cloud Logging and Cloud Storage logging are enabled.
+    | BOLGcsOnly
       -- ^ @GCS_ONLY@
       -- Only Cloud Storage logging is enabled.
+    | BOLStackdriverOnly
+      -- ^ @STACKDRIVER_ONLY@
+      -- This option is the same as CLOUD_LOGGING_ONLY.
+    | BOLCloudLoggingOnly
+      -- ^ @CLOUD_LOGGING_ONLY@
+      -- Only Cloud Logging is enabled. Note that logs for both the Cloud Console
+      -- UI and Cloud SDK are based on Cloud Storage logs, so neither will
+      -- provide logs if this option is chosen.
+    | BOLNone
+      -- ^ @NONE@
+      -- Turn off all logging. No build logs will be captured.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable BuildOptionsLogging
 
 instance FromHttpApiData BuildOptionsLogging where
     parseQueryParam = \case
-        "LOGGING_UNSPECIFIED" -> Right LoggingUnspecified
-        "LEGACY" -> Right Legacy
-        "GCS_ONLY" -> Right GcsOnly
+        "LOGGING_UNSPECIFIED" -> Right BOLLoggingUnspecified
+        "LEGACY" -> Right BOLLegacy
+        "GCS_ONLY" -> Right BOLGcsOnly
+        "STACKDRIVER_ONLY" -> Right BOLStackdriverOnly
+        "CLOUD_LOGGING_ONLY" -> Right BOLCloudLoggingOnly
+        "NONE" -> Right BOLNone
         x -> Left ("Unable to parse BuildOptionsLogging from: " <> x)
 
 instance ToHttpApiData BuildOptionsLogging where
     toQueryParam = \case
-        LoggingUnspecified -> "LOGGING_UNSPECIFIED"
-        Legacy -> "LEGACY"
-        GcsOnly -> "GCS_ONLY"
+        BOLLoggingUnspecified -> "LOGGING_UNSPECIFIED"
+        BOLLegacy -> "LEGACY"
+        BOLGcsOnly -> "GCS_ONLY"
+        BOLStackdriverOnly -> "STACKDRIVER_ONLY"
+        BOLCloudLoggingOnly -> "CLOUD_LOGGING_ONLY"
+        BOLNone -> "NONE"
 
 instance FromJSON BuildOptionsLogging where
     parseJSON = parseJSONText "BuildOptionsLogging"
@@ -374,6 +486,12 @@ data BuildOptionsMachineType
     | N1Highcpu32
       -- ^ @N1_HIGHCPU_32@
       -- Highcpu machine with 32 CPUs.
+    | E2Highcpu8
+      -- ^ @E2_HIGHCPU_8@
+      -- Highcpu e2 machine with 8 CPUs.
+    | E2Highcpu32
+      -- ^ @E2_HIGHCPU_32@
+      -- Highcpu e2 machine with 32 CPUs.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable BuildOptionsMachineType
@@ -383,6 +501,8 @@ instance FromHttpApiData BuildOptionsMachineType where
         "UNSPECIFIED" -> Right Unspecified
         "N1_HIGHCPU_8" -> Right N1Highcpu8
         "N1_HIGHCPU_32" -> Right N1Highcpu32
+        "E2_HIGHCPU_8" -> Right E2Highcpu8
+        "E2_HIGHCPU_32" -> Right E2Highcpu32
         x -> Left ("Unable to parse BuildOptionsMachineType from: " <> x)
 
 instance ToHttpApiData BuildOptionsMachineType where
@@ -390,6 +510,8 @@ instance ToHttpApiData BuildOptionsMachineType where
         Unspecified -> "UNSPECIFIED"
         N1Highcpu8 -> "N1_HIGHCPU_8"
         N1Highcpu32 -> "N1_HIGHCPU_32"
+        E2Highcpu8 -> "E2_HIGHCPU_8"
+        E2Highcpu32 -> "E2_HIGHCPU_32"
 
 instance FromJSON BuildOptionsMachineType where
     parseJSON = parseJSONText "BuildOptionsMachineType"

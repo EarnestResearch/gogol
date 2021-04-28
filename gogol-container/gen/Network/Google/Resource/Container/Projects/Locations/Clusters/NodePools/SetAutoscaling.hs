@@ -140,7 +140,7 @@ plcnpsaPayload
 
 -- | The name (project, location, cluster, node pool) of the node pool to set
 -- autoscaler settings. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\`.
 plcnpsaName :: Lens' ProjectsLocationsClustersNodePoolsSetAutoscaling Text
 plcnpsaName
   = lens _plcnpsaName (\ s a -> s{_plcnpsaName = a})

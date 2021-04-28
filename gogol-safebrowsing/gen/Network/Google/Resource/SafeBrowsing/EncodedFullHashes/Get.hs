@@ -60,7 +60,8 @@ type EncodedFullHashesGetResource =
                      QueryParam "clientVersion" Text :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :>
-                           Get '[JSON] FindFullHashesResponse
+                           Get '[JSON]
+                             GoogleSecuritySafebrowsingV4FindFullHashesResponse
 
 -- |
 --
@@ -162,7 +163,8 @@ efhgCallback
   = lens _efhgCallback (\ s a -> s{_efhgCallback = a})
 
 instance GoogleRequest EncodedFullHashesGet where
-        type Rs EncodedFullHashesGet = FindFullHashesResponse
+        type Rs EncodedFullHashesGet =
+             GoogleSecuritySafebrowsingV4FindFullHashesResponse
         type Scopes EncodedFullHashesGet = '[]
         requestClient EncodedFullHashesGet'{..}
           = go _efhgEncodedRequest _efhgClientId _efhgXgafv

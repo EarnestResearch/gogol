@@ -123,7 +123,7 @@ plfgUploadType
   = lens _plfgUploadType
       (\ s a -> s{_plfgUploadType = a})
 
--- | The name of the function which details should be obtained.
+-- | Required. The name of the function which details should be obtained.
 plfgName :: Lens' ProjectsLocationsFunctionsGet Text
 plfgName = lens _plfgName (\ s a -> s{_plfgName = a})
 

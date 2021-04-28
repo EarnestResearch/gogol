@@ -123,7 +123,7 @@ projectsAggregatedUsableSubnetworksList pPauslParent_ =
 
 
 -- | The parent project where subnetworks are usable. Specified in the format
--- \'projects\/*\'.
+-- \`projects\/*\`.
 pauslParent :: Lens' ProjectsAggregatedUsableSubnetworksList Text
 pauslParent
   = lens _pauslParent (\ s a -> s{_pauslParent = a})

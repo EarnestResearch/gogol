@@ -38,7 +38,9 @@
 -- automaticScaling.standard_scheduler_settings.target_throughput_utilization
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#StandardSchedulerSettings)basic
 -- scaling or manual scaling in the standard environment: serving_status
--- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)Flexible
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)
+-- manual_scaling.instances
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#manualscaling)Flexible
 -- environment serving_status
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)automatic
 -- scaling in the flexible environment:
@@ -49,7 +51,9 @@
 -- automatic_scaling.cool_down_period_sec
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)
 -- automatic_scaling.cpu_utilization.target_utilization
--- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)manual
+-- scaling in the flexible environment: manual_scaling.instances
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#manualscaling)
 --
 -- /See:/ <https://cloud.google.com/appengine/docs/admin-api/ App Engine Admin API Reference> for @appengine.apps.services.versions.patch@.
 module Network.Google.Resource.AppEngine.Apps.Services.Versions.Patch
@@ -115,7 +119,9 @@ type AppsServicesVersionsPatchResource =
 -- automaticScaling.standard_scheduler_settings.target_throughput_utilization
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#StandardSchedulerSettings)basic
 -- scaling or manual scaling in the standard environment: serving_status
--- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)Flexible
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)
+-- manual_scaling.instances
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#manualscaling)Flexible
 -- environment serving_status
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.serving_status)automatic
 -- scaling in the flexible environment:
@@ -126,7 +132,9 @@ type AppsServicesVersionsPatchResource =
 -- automatic_scaling.cool_down_period_sec
 -- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)
 -- automatic_scaling.cpu_utilization.target_utilization
--- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#Version.FIELDS.automatic_scaling)manual
+-- scaling in the flexible environment: manual_scaling.instances
+-- (https:\/\/cloud.google.com\/appengine\/docs\/admin-api\/reference\/rest\/v1\/apps.services.versions#manualscaling)
 --
 -- /See:/ 'appsServicesVersionsPatch' smart constructor.
 data AppsServicesVersionsPatch =

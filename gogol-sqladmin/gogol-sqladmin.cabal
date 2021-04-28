@@ -14,8 +14,7 @@ cabal-version:         >= 1.10
 extra-source-files:    README.md src/.gitkeep
 
 description:
-    Creates and manages Cloud SQL instances, which provide fully managed
-    MySQL or PostgreSQL databases.
+    API for Cloud SQL database instance management
     .
     /Warning:/ This is an experimental prototype/preview release which is still
     under exploratory development and not intended for public use, caveat emptor!
@@ -68,6 +67,9 @@ library
         , Network.Google.Resource.SQL.Instances.Update
         , Network.Google.Resource.SQL.Operations.Get
         , Network.Google.Resource.SQL.Operations.List
+        , Network.Google.Resource.SQL.Projects.Instances.RescheduleMaintenance
+        , Network.Google.Resource.SQL.Projects.Instances.StartExternalSync
+        , Network.Google.Resource.SQL.Projects.Instances.VerifyExternalSyncSettings
         , Network.Google.Resource.SQL.SSLCerts.CreateEphemeral
         , Network.Google.Resource.SQL.SSLCerts.Delete
         , Network.Google.Resource.SQL.SSLCerts.Get

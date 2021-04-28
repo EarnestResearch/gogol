@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.patch@ method which the
 -- 'ProjectsLocationsDataSetsPatch' request conforms to.
 type ProjectsLocationsDataSetsPatchResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -149,7 +149,7 @@ pldspPayload :: Lens' ProjectsLocationsDataSetsPatch DataSet
 pldspPayload
   = lens _pldspPayload (\ s a -> s{_pldspPayload = a})
 
--- | Output only. Resource name of the dataset, of the form
+-- | Resource name of the dataset, of the form
 -- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`.
 pldspName :: Lens' ProjectsLocationsDataSetsPatch Text
 pldspName

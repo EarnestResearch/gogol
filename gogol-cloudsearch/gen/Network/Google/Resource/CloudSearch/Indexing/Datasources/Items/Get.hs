@@ -20,9 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Gets Item resource by item name.
+-- Gets Item resource by item name. This API requires an admin or service
+-- account to execute. The service account used is the one whitelisted in
+-- the corresponding data source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.get@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.get@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Get
     (
     -- * REST Resource
@@ -61,7 +63,9 @@ type IndexingDatasourcesItemsGetResource =
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :> Get '[JSON] Item
 
--- | Gets Item resource by item name.
+-- | Gets Item resource by item name. This API requires an admin or service
+-- account to execute. The service account used is the one whitelisted in
+-- the corresponding data source.
 --
 -- /See:/ 'indexingDatasourcesItemsGet' smart constructor.
 data IndexingDatasourcesItemsGet =
@@ -136,8 +140,8 @@ idigUploadType
   = lens _idigUploadType
       (\ s a -> s{_idigUploadType = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 idigConnectorName :: Lens' IndexingDatasourcesItemsGet (Maybe Text)
 idigConnectorName
   = lens _idigConnectorName

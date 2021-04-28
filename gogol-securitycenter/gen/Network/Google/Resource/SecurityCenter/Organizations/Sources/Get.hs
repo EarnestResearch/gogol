@@ -22,7 +22,7 @@
 --
 -- Gets a source.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.sources.get@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.get@.
 module Network.Google.Resource.SecurityCenter.Organizations.Sources.Get
     (
     -- * REST Resource
@@ -47,7 +47,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.sources.get@ method which the
 -- 'OrganizationsSourcesGet' request conforms to.
 type OrganizationsSourcesGetResource =
-     "v1" :>
+     "v1p1beta1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -122,7 +122,7 @@ osgUploadType
   = lens _osgUploadType
       (\ s a -> s{_osgUploadType = a})
 
--- | Relative resource name of the source. Its format is
+-- | Required. Relative resource name of the source. Its format is
 -- \"organizations\/[organization_id]\/source\/[source_id]\".
 osgName :: Lens' OrganizationsSourcesGet Text
 osgName = lens _osgName (\ s a -> s{_osgName = a})

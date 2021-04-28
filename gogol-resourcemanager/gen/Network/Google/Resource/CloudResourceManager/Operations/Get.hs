@@ -49,7 +49,7 @@ import Network.Google.ResourceManager.Types
 -- | A resource alias for @cloudresourcemanager.operations.get@ method which the
 -- 'OperationsGet' request conforms to.
 type OperationsGetResource =
-     "v1" :>
+     "v3" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

@@ -59,7 +59,7 @@ import Network.Google.Speech.Types
 -- | A resource alias for @speech.projects.locations.operations.list@ method which the
 -- 'ProjectsLocationsOperationsList' request conforms to.
 type ProjectsLocationsOperationsListResource =
-     "v1p1beta1" :>
+     "v2beta1" :>
        Capture "name" Text :>
          "operations" :>
            QueryParam "$.xgafv" Xgafv :>

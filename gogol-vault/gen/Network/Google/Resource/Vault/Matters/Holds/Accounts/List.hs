@@ -21,9 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Lists HeldAccounts for a hold. This will only list individually
--- specified held accounts. If the hold is on an OU, then use
--- <https://developers.google.com/admin-sdk/ Admin SDK> to enumerate its
--- members.
+-- specified held accounts. If the hold is on an OU, then use Admin SDK to
+-- enumerate its members.
 --
 -- /See:/ <https://developers.google.com/vault G Suite Vault API Reference> for @vault.matters.holds.accounts.list@.
 module Network.Google.Resource.Vault.Matters.Holds.Accounts.List
@@ -66,9 +65,8 @@ type MattersHoldsAccountsListResource =
                              Get '[JSON] ListHeldAccountsResponse
 
 -- | Lists HeldAccounts for a hold. This will only list individually
--- specified held accounts. If the hold is on an OU, then use
--- <https://developers.google.com/admin-sdk/ Admin SDK> to enumerate its
--- members.
+-- specified held accounts. If the hold is on an OU, then use Admin SDK to
+-- enumerate its members.
 --
 -- /See:/ 'mattersHoldsAccountsList' smart constructor.
 data MattersHoldsAccountsList =

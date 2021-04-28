@@ -142,7 +142,7 @@ pUploadType
 pPayload :: Lens' ProjectsImport GoogleDatastoreAdminV1ImportEntitiesRequest
 pPayload = lens _pPayload (\ s a -> s{_pPayload = a})
 
--- | Project ID against which to make the request.
+-- | Required. Project ID against which to make the request.
 pProjectId :: Lens' ProjectsImport Text
 pProjectId
   = lens _pProjectId (\ s a -> s{_pProjectId = a})

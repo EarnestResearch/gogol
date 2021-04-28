@@ -37,6 +37,7 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Patch
     , oacpPayload
     , oacpUserProject
     , oacpObject
+    , oacpProvisionalUserProject
     , oacpEntity
     , oacpGeneration
     ) where
@@ -56,10 +57,11 @@ type ObjectAccessControlsPatchResource =
                  "acl" :>
                    Capture "entity" Text :>
                      QueryParam "userProject" Text :>
-                       QueryParam "generation" (Textual Int64) :>
-                         QueryParam "alt" AltJSON :>
-                           ReqBody '[JSON] ObjectAccessControl :>
-                             Patch '[JSON] ObjectAccessControl
+                       QueryParam "provisionalUserProject" Text :>
+                         QueryParam "generation" (Textual Int64) :>
+                           QueryParam "alt" AltJSON :>
+                             ReqBody '[JSON] ObjectAccessControl :>
+                               Patch '[JSON] ObjectAccessControl
 
 -- | Patches an ACL entry on the specified object.
 --
@@ -70,6 +72,7 @@ data ObjectAccessControlsPatch =
     , _oacpPayload :: !ObjectAccessControl
     , _oacpUserProject :: !(Maybe Text)
     , _oacpObject :: !Text
+    , _oacpProvisionalUserProject :: !(Maybe Text)
     , _oacpEntity :: !Text
     , _oacpGeneration :: !(Maybe (Textual Int64))
     }
@@ -88,6 +91,8 @@ data ObjectAccessControlsPatch =
 --
 -- * 'oacpObject'
 --
+-- * 'oacpProvisionalUserProject'
+--
 -- * 'oacpEntity'
 --
 -- * 'oacpGeneration'
@@ -103,6 +108,7 @@ objectAccessControlsPatch pOacpBucket_ pOacpPayload_ pOacpObject_ pOacpEntity_ =
     , _oacpPayload = pOacpPayload_
     , _oacpUserProject = Nothing
     , _oacpObject = pOacpObject_
+    , _oacpProvisionalUserProject = Nothing
     , _oacpEntity = pOacpEntity_
     , _oacpGeneration = Nothing
     }
@@ -131,6 +137,13 @@ oacpObject :: Lens' ObjectAccessControlsPatch Text
 oacpObject
   = lens _oacpObject (\ s a -> s{_oacpObject = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+oacpProvisionalUserProject :: Lens' ObjectAccessControlsPatch (Maybe Text)
+oacpProvisionalUserProject
+  = lens _oacpProvisionalUserProject
+      (\ s a -> s{_oacpProvisionalUserProject = a})
+
 -- | The entity holding the permission. Can be user-userId,
 -- user-emailAddress, group-groupId, group-emailAddress, allUsers, or
 -- allAuthenticatedUsers.
@@ -156,6 +169,7 @@ instance GoogleRequest ObjectAccessControlsPatch
         requestClient ObjectAccessControlsPatch'{..}
           = go _oacpBucket _oacpObject _oacpEntity
               _oacpUserProject
+              _oacpProvisionalUserProject
               _oacpGeneration
               (Just AltJSON)
               _oacpPayload

@@ -22,7 +22,7 @@
 --
 -- Returns information about the particular transfer run.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.transferConfigs.runs.get@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.transferConfigs.runs.get@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.TransferConfigs.Runs.Get
     (
     -- * REST Resource
@@ -123,8 +123,11 @@ ptcrgUploadType
   = lens _ptcrgUploadType
       (\ s a -> s{_ptcrgUploadType = a})
 
--- | The field will contain name of the resource requested, for example:
+-- | Required. The field will contain name of the resource requested, for
+-- example:
 -- \`projects\/{project_id}\/transferConfigs\/{config_id}\/runs\/{run_id}\`
+-- or
+-- \`projects\/{project_id}\/locations\/{location_id}\/transferConfigs\/{config_id}\/runs\/{run_id}\`
 ptcrgName :: Lens' ProjectsTransferConfigsRunsGet Text
 ptcrgName
   = lens _ptcrgName (\ s a -> s{_ptcrgName = a})

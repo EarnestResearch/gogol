@@ -149,17 +149,21 @@ allAppsId :: Lens' AppsLocationsList Text
 allAppsId
   = lens _allAppsId (\ s a -> s{_allAppsId = a})
 
--- | The standard list filter.
+-- | A filter to narrow down results to a preferred subset. The filtering
+-- language accepts strings like \"displayName=tokyo\", and is documented
+-- in more detail in AIP-160 (https:\/\/google.aip.dev\/160).
 allFilter :: Lens' AppsLocationsList (Maybe Text)
 allFilter
   = lens _allFilter (\ s a -> s{_allFilter = a})
 
--- | The standard list page token.
+-- | A page token received from the next_page_token field in the response.
+-- Send that page token to receive the subsequent page.
 allPageToken :: Lens' AppsLocationsList (Maybe Text)
 allPageToken
   = lens _allPageToken (\ s a -> s{_allPageToken = a})
 
--- | The standard list page size.
+-- | The maximum number of results to return. If not set, the service selects
+-- a default.
 allPageSize :: Lens' AppsLocationsList (Maybe Int32)
 allPageSize
   = lens _allPageSize (\ s a -> s{_allPageSize = a}) .

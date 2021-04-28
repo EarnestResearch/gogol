@@ -26,7 +26,7 @@
 -- in batches (called pages). If there are no versions that match the
 -- request parameters, the list request returns an empty response body: {}.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.versions.list@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.versions.list@.
 module Network.Google.Resource.Ml.Projects.Models.Versions.List
     (
     -- * REST Resource
@@ -188,7 +188,8 @@ instance GoogleRequest ProjectsModelsVersionsList
         type Rs ProjectsModelsVersionsList =
              GoogleCloudMlV1__ListVersionsResponse
         type Scopes ProjectsModelsVersionsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsModelsVersionsList'{..}
           = go _pmvlParent _pmvlXgafv _pmvlUploadProtocol
               _pmvlAccessToken

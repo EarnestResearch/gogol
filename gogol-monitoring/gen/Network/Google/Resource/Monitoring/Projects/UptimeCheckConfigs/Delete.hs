@@ -20,11 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes an uptime check configuration. Note that this method will fail
--- if the uptime check configuration is referenced by an alert policy or
+-- Deletes an Uptime check configuration. Note that this method will fail
+-- if the Uptime check configuration is referenced by an alert policy or
 -- other dependent configs that would be rendered invalid by the deletion.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.delete@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.delete@.
 module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Delete
     (
     -- * REST Resource
@@ -58,8 +58,8 @@ type ProjectsUptimeCheckConfigsDeleteResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Empty
 
--- | Deletes an uptime check configuration. Note that this method will fail
--- if the uptime check configuration is referenced by an alert policy or
+-- | Deletes an Uptime check configuration. Note that this method will fail
+-- if the Uptime check configuration is referenced by an alert policy or
 -- other dependent configs that would be rendered invalid by the deletion.
 --
 -- /See:/ 'projectsUptimeCheckConfigsDelete' smart constructor.
@@ -127,8 +127,8 @@ puccdUploadType
   = lens _puccdUploadType
       (\ s a -> s{_puccdUploadType = a})
 
--- | The uptime check configuration to delete. The format is
--- projects\/[PROJECT_ID]\/uptimeCheckConfigs\/[UPTIME_CHECK_ID].
+-- | Required. The Uptime check configuration to delete. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/uptimeCheckConfigs\/[UPTIME_CHECK_ID]
 puccdName :: Lens' ProjectsUptimeCheckConfigsDelete Text
 puccdName
   = lens _puccdName (\ s a -> s{_puccdName = a})

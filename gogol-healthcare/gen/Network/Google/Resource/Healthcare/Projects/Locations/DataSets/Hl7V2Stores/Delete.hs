@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes the specified HL7v2 store and removes all messages that are
--- contained within it.
+-- Deletes the specified HL7v2 store and removes all messages that it
+-- contains.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.hl7V2Stores.delete@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.Delete
@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsHl7V2StoresDelete' request conforms to.
 type ProjectsLocationsDataSetsHl7V2StoresDeleteResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -58,8 +58,8 @@ type ProjectsLocationsDataSetsHl7V2StoresDeleteResource
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Empty
 
--- | Deletes the specified HL7v2 store and removes all messages that are
--- contained within it.
+-- | Deletes the specified HL7v2 store and removes all messages that it
+-- contains.
 --
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresDelete' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresDelete =

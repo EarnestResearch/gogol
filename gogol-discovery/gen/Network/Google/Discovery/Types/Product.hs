@@ -98,6 +98,7 @@ data RestMethod =
     , _rmParameterOrder :: !(Maybe [Text])
     , _rmMediaUpload :: !(Maybe RestMethodMediaUpload)
     , _rmHTTPMethod :: !(Maybe Text)
+    , _rmFlatPath :: !(Maybe Text)
     , _rmPath :: !(Maybe Text)
     , _rmResponse :: !(Maybe RestMethodResponse)
     , _rmSupportsMediaUpload :: !(Maybe Bool)
@@ -124,6 +125,8 @@ data RestMethod =
 -- * 'rmMediaUpload'
 --
 -- * 'rmHTTPMethod'
+--
+-- * 'rmFlatPath'
 --
 -- * 'rmPath'
 --
@@ -154,6 +157,7 @@ restMethod =
     , _rmParameterOrder = Nothing
     , _rmMediaUpload = Nothing
     , _rmHTTPMethod = Nothing
+    , _rmFlatPath = Nothing
     , _rmPath = Nothing
     , _rmResponse = Nothing
     , _rmSupportsMediaUpload = Nothing
@@ -194,6 +198,12 @@ rmMediaUpload
 rmHTTPMethod :: Lens' RestMethod (Maybe Text)
 rmHTTPMethod
   = lens _rmHTTPMethod (\ s a -> s{_rmHTTPMethod = a})
+
+-- | The URI path of this REST method in (RFC 6570) format without level 2
+-- features ({+var}). Supplementary to the path property.
+rmFlatPath :: Lens' RestMethod (Maybe Text)
+rmFlatPath
+  = lens _rmFlatPath (\ s a -> s{_rmFlatPath = a})
 
 -- | The URI path of this REST method. Should be used in conjunction with the
 -- basePath property at the api-level.
@@ -269,6 +279,7 @@ instance FromJSON RestMethod where
                      (o .:? "parameterOrder" .!= mempty)
                      <*> (o .:? "mediaUpload")
                      <*> (o .:? "httpMethod")
+                     <*> (o .:? "flatPath")
                      <*> (o .:? "path")
                      <*> (o .:? "response")
                      <*> (o .:? "supportsMediaUpload")
@@ -290,6 +301,7 @@ instance ToJSON RestMethod where
                   ("parameterOrder" .=) <$> _rmParameterOrder,
                   ("mediaUpload" .=) <$> _rmMediaUpload,
                   ("httpMethod" .=) <$> _rmHTTPMethod,
+                  ("flatPath" .=) <$> _rmFlatPath,
                   ("path" .=) <$> _rmPath,
                   ("response" .=) <$> _rmResponse,
                   ("supportsMediaUpload" .=) <$>

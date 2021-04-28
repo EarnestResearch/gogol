@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Gets the access control policy for an instance resource. Returns an
--- empty policy if an table exists but does not have a policy set.
+-- Gets the access control policy for a Table resource. Returns an empty
+-- policy if the resource exists but does not have a policy set.
 --
 -- /See:/ <https://cloud.google.com/bigtable/ Cloud Bigtable Admin API Reference> for @bigtableadmin.projects.instances.tables.getIamPolicy@.
 module Network.Google.Resource.BigtableAdmin.Projects.Instances.Tables.GetIAMPolicy
@@ -60,8 +60,8 @@ type ProjectsInstancesTablesGetIAMPolicyResource =
                      ReqBody '[JSON] GetIAMPolicyRequest :>
                        Post '[JSON] Policy
 
--- | Gets the access control policy for an instance resource. Returns an
--- empty policy if an table exists but does not have a policy set.
+-- | Gets the access control policy for a Table resource. Returns an empty
+-- policy if the resource exists but does not have a policy set.
 --
 -- /See:/ 'projectsInstancesTablesGetIAMPolicy' smart constructor.
 data ProjectsInstancesTablesGetIAMPolicy =

@@ -23,7 +23,7 @@
 -- Lists Version resources that the producer has access to, within the
 -- scope of the parent Product.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.list@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.list@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Versions.List
     (
     -- * REST Resource

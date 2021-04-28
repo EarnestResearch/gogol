@@ -36,6 +36,9 @@ module Network.Google.AndroidManagement
     -- ** androidmanagement.enterprises.create
     , module Network.Google.Resource.AndroidManagement.Enterprises.Create
 
+    -- ** androidmanagement.enterprises.delete
+    , module Network.Google.Resource.AndroidManagement.Enterprises.Delete
+
     -- ** androidmanagement.enterprises.devices.delete
     , module Network.Google.Resource.AndroidManagement.Enterprises.Devices.Delete
 
@@ -71,6 +74,9 @@ module Network.Google.AndroidManagement
 
     -- ** androidmanagement.enterprises.get
     , module Network.Google.Resource.AndroidManagement.Enterprises.Get
+
+    -- ** androidmanagement.enterprises.list
+    , module Network.Google.Resource.AndroidManagement.Enterprises.List
 
     -- ** androidmanagement.enterprises.patch
     , module Network.Google.Resource.AndroidManagement.Enterprises.Patch
@@ -110,8 +116,20 @@ module Network.Google.AndroidManagement
 
     -- * Types
 
+    -- ** KioskCustomizationPowerButtonActions
+    , KioskCustomizationPowerButtonActions (..)
+
     -- ** PowerManagementEventEventType
     , PowerManagementEventEventType (..)
+
+    -- ** KioskCustomizationSystemErrorWarnings
+    , KioskCustomizationSystemErrorWarnings (..)
+
+    -- ** AdvancedSecurityOverridesDeveloperSettings
+    , AdvancedSecurityOverridesDeveloperSettings (..)
+
+    -- ** WebTokenEnabledFeaturesItem
+    , WebTokenEnabledFeaturesItem (..)
 
     -- ** Status
     , Status
@@ -122,6 +140,12 @@ module Network.Google.AndroidManagement
 
     -- ** SystemUpdateType
     , SystemUpdateType (..)
+
+    -- ** SystemUpdateInfoUpdateStatus
+    , SystemUpdateInfoUpdateStatus (..)
+
+    -- ** ApplicationPolicyAutoUpdateMode
+    , ApplicationPolicyAutoUpdateMode (..)
 
     -- ** ListPoliciesResponse
     , ListPoliciesResponse
@@ -190,6 +214,19 @@ module Network.Google.AndroidManagement
     -- ** CommandErrorCode
     , CommandErrorCode (..)
 
+    -- ** CommonCriteriaModeInfoCommonCriteriaModeStatus
+    , CommonCriteriaModeInfoCommonCriteriaModeStatus (..)
+
+    -- ** PolicyAndroidDevicePolicyTracksItem
+    , PolicyAndroidDevicePolicyTracksItem (..)
+
+    -- ** PolicyEnforcementRule
+    , PolicyEnforcementRule
+    , policyEnforcementRule
+    , perWipeAction
+    , perSettingName
+    , perBlockAction
+
     -- ** HardwareStatus
     , HardwareStatus
     , hardwareStatus
@@ -204,10 +241,17 @@ module Network.Google.AndroidManagement
     -- ** Application
     , Application
     , application
+    , aAppTracks
     , aManagedProperties
     , aName
     , aPermissions
     , aTitle
+
+    -- ** PersonalApplicationPolicy
+    , PersonalApplicationPolicy
+    , personalApplicationPolicy
+    , papPackageName
+    , papInstallType
 
     -- ** ManagedProperty
     , ManagedProperty
@@ -228,8 +272,14 @@ module Network.Google.AndroidManagement
     , piExcludedHosts
     , piPort
 
+    -- ** KioskCustomizationStatusBar
+    , KioskCustomizationStatusBar (..)
+
     -- ** PermissionGrantPolicy
     , PermissionGrantPolicy (..)
+
+    -- ** ApplicationPolicyDelegatedScopesItem
+    , ApplicationPolicyDelegatedScopesItem (..)
 
     -- ** PersistentPreferredActivity
     , PersistentPreferredActivity
@@ -276,6 +326,12 @@ module Network.Google.AndroidManagement
     , dsEncryptionStatus
     , dsUnknownSourcesEnabled
 
+    -- ** WipeAction
+    , WipeAction
+    , wipeAction
+    , waWipeAfterDays
+    , waPreserveFrp
+
     -- ** PolicyPlayStoreMode
     , PolicyPlayStoreMode (..)
 
@@ -320,12 +376,15 @@ module Network.Google.AndroidManagement
     , devManagementMode
     , devHardwareInfo
     , devPowerManagementEvents
+    , devCommonCriteriaModeInfo
     , devUserName
     , devMemoryEvents
     , devAPILevel
     , devUser
     , devDisabledReason
+    , devSystemProperties
     , devLastPolicyComplianceReportTime
+    , devSecurityPosture
     , devEnrollmentTokenData
     , devName
     , devAppliedPolicyVersion
@@ -335,6 +394,7 @@ module Network.Google.AndroidManagement
     , devLastPolicySyncTime
     , devNetworkInfo
     , devNonComplianceDetails
+    , devOwnership
     , devSoftwareInfo
     , devEnrollmentTime
     , devDisplays
@@ -342,8 +402,48 @@ module Network.Google.AndroidManagement
     -- ** WebAppDisplayMode
     , WebAppDisplayMode (..)
 
+    -- ** ContentProviderEndpoint
+    , ContentProviderEndpoint
+    , contentProviderEndpoint
+    , cpePackageName
+    , cpeSigningCertsSha256
+    , cpeURI
+
+    -- ** AdvancedSecurityOverridesUntrustedAppsPolicy
+    , AdvancedSecurityOverridesUntrustedAppsPolicy (..)
+
     -- ** ApplicationReportApplicationSource
     , ApplicationReportApplicationSource (..)
+
+    -- ** PersonalUsagePolicies
+    , PersonalUsagePolicies
+    , personalUsagePolicies
+    , pupMaxDaysWithWorkOff
+    , pupPersonalPlayStoreMode
+    , pupScreenCaptureDisabled
+    , pupPersonalApplications
+    , pupAccountTypesWithManagementDisabled
+    , pupCameraDisabled
+
+    -- ** EnrollmentTokenAllowPersonalUsage
+    , EnrollmentTokenAllowPersonalUsage (..)
+
+    -- ** EnterpriseEnabledNotificationTypesItem
+    , EnterpriseEnabledNotificationTypesItem (..)
+
+    -- ** PostureDetail
+    , PostureDetail
+    , postureDetail
+    , pdAdvice
+    , pdSecurityRisk
+
+    -- ** PolicyAutoDateAndTimeZone
+    , PolicyAutoDateAndTimeZone (..)
+
+    -- ** CommonCriteriaModeInfo
+    , CommonCriteriaModeInfo
+    , commonCriteriaModeInfo
+    , ccmiCommonCriteriaModeStatus
 
     -- ** StatusDetailsItem
     , StatusDetailsItem
@@ -359,6 +459,12 @@ module Network.Google.AndroidManagement
     -- ** PasswordRequirementsPasswordScope
     , PasswordRequirementsPasswordScope (..)
 
+    -- ** OncCertificateProvider
+    , OncCertificateProvider
+    , oncCertificateProvider
+    , ocpContentProviderEndpoint
+    , ocpCertificateReferences
+
     -- ** ManagedPropertyEntry
     , ManagedPropertyEntry
     , managedPropertyEntry
@@ -368,8 +474,23 @@ module Network.Google.AndroidManagement
     -- ** DeviceSettingsEncryptionStatus
     , DeviceSettingsEncryptionStatus (..)
 
+    -- ** FreezePeriod
+    , FreezePeriod
+    , freezePeriod
+    , fpEndDate
+    , fpStartDate
+
     -- ** PolicyLocationMode
     , PolicyLocationMode (..)
+
+    -- ** TelephonyInfo
+    , TelephonyInfo
+    , telephonyInfo
+    , tiPhoneNumber
+    , tiCarrierName
+
+    -- ** EnterprisesListView
+    , EnterprisesListView (..)
 
     -- ** ChoosePrivateKeyRule
     , ChoosePrivateKeyRule
@@ -383,17 +504,45 @@ module Network.Google.AndroidManagement
     , userFacingMessageLocalizedMessages
     , ufmlmAddtional
 
+    -- ** SigninDetailAllowPersonalUsage
+    , SigninDetailAllowPersonalUsage (..)
+
     -- ** User
     , User
     , user
     , uAccountIdentifier
 
+    -- ** Date
+    , Date
+    , date
+    , dDay
+    , dYear
+    , dMonth
+
+    -- ** SecurityPosture
+    , SecurityPosture
+    , securityPosture
+    , spPostureDetails
+    , spDevicePosture
+
+    -- ** AdvancedSecurityOverridesGooglePlayProtectVerifyApps
+    , AdvancedSecurityOverridesGooglePlayProtectVerifyApps (..)
+
     -- ** SystemUpdate
     , SystemUpdate
     , systemUpdate
+    , suFreezePeriods
     , suEndMinutes
     , suStartMinutes
     , suType
+
+    -- ** BlockActionBlockScope
+    , BlockActionBlockScope (..)
+
+    -- ** DeviceSystemProperties
+    , DeviceSystemProperties
+    , deviceSystemProperties
+    , dspAddtional
 
     -- ** ApplicationReport
     , ApplicationReport
@@ -413,6 +562,17 @@ module Network.Google.AndroidManagement
     -- ** PolicyAppAutoUpdatePolicy
     , PolicyAppAutoUpdatePolicy (..)
 
+    -- ** AdvancedSecurityOverrides
+    , AdvancedSecurityOverrides
+    , advancedSecurityOverrides
+    , asoUntrustedAppsPolicy
+    , asoCommonCriteriaMode
+    , asoDeveloperSettings
+    , asoGooglePlayProtectVerifyApps
+
+    -- ** CommandResetPasswordFlagsItem
+    , CommandResetPasswordFlagsItem (..)
+
     -- ** EnrollmentToken
     , EnrollmentToken
     , enrollmentToken
@@ -421,15 +581,28 @@ module Network.Google.AndroidManagement
     , etQrCode
     , etAdditionalData
     , etUser
+    , etAllowPersonalUsage
     , etName
     , etOneTimeOnly
     , etExpirationTimestamp
     , etDuration
 
+    -- ** ListEnterprisesResponse
+    , ListEnterprisesResponse
+    , listEnterprisesResponse
+    , lerNextPageToken
+    , lerEnterprises
+
     -- ** ApplicationPolicyManagedConfiguration
     , ApplicationPolicyManagedConfiguration
     , applicationPolicyManagedConfiguration
     , apmcAddtional
+
+    -- ** BlockAction
+    , BlockAction
+    , blockAction
+    , baBlockScope
+    , baBlockAfterDays
 
     -- ** PolicyEncryptionPolicy
     , PolicyEncryptionPolicy (..)
@@ -445,10 +618,21 @@ module Network.Google.AndroidManagement
     , srsMemoryInfoEnabled
     , srsNetworkInfoEnabled
     , srsDeviceSettingsEnabled
+    , srsCommonCriteriaModeEnabled
+    , srsSystemPropertiesEnabled
     , srsApplicationReportingSettings
+
+    -- ** KioskCustomizationSystemNavigation
+    , KioskCustomizationSystemNavigation (..)
 
     -- ** CommandType
     , CommandType (..)
+
+    -- ** SystemUpdateInfo
+    , SystemUpdateInfo
+    , systemUpdateInfo
+    , suiUpdateStatus
+    , suiUpdateReceivedTime
 
     -- ** ApplicationPolicyDefaultPermissionPolicy
     , ApplicationPolicyDefaultPermissionPolicy (..)
@@ -461,9 +645,13 @@ module Network.Google.AndroidManagement
     -- ** Xgafv
     , Xgafv (..)
 
+    -- ** AdvancedSecurityOverridesCommonCriteriaMode
+    , AdvancedSecurityOverridesCommonCriteriaMode (..)
+
     -- ** ApplicationPolicy
     , ApplicationPolicy
     , applicationPolicy
+    , apAccessibleTrackIds
     , apDelegatedScopes
     , apPackageName
     , apManagedConfiguration
@@ -471,7 +659,9 @@ module Network.Google.AndroidManagement
     , apDisabled
     , apLockTaskAllowed
     , apPermissionGrants
+    , apConnectedWorkAndPersonalApp
     , apManagedConfigurationTemplate
+    , apAutoUpdateMode
     , apMinimumVersionCode
     , apInstallType
 
@@ -496,6 +686,9 @@ module Network.Google.AndroidManagement
     , mctTemplateId
     , mctConfigurationVariables
 
+    -- ** KioskCustomizationDeviceSettings
+    , KioskCustomizationDeviceSettings (..)
+
     -- ** NonComplianceDetailNonComplianceReason
     , NonComplianceDetailNonComplianceReason (..)
 
@@ -510,6 +703,7 @@ module Network.Google.AndroidManagement
     , eEnterpriseDisplayName
     , eLogo
     , eTermsAndConditions
+    , eContactInfo
     , ePrimaryColor
 
     -- ** MemoryEvent
@@ -530,6 +724,7 @@ module Network.Google.AndroidManagement
     , signinDetail
     , sdSigninURL
     , sdQrCode
+    , sdAllowPersonalUsage
     , sdSigninEnrollmentToken
 
     -- ** SignupURL
@@ -541,13 +736,26 @@ module Network.Google.AndroidManagement
     -- ** PolicyDefaultPermissionPolicy
     , PolicyDefaultPermissionPolicy (..)
 
+    -- ** AppTrackInfo
+    , AppTrackInfo
+    , appTrackInfo
+    , atiTrackAlias
+    , atiTrackId
+
     -- ** NetworkInfo
     , NetworkInfo
     , networkInfo
+    , niTelephonyInfos
     , niNetworkOperatorName
     , niMeid
     , niImei
     , niWifiMACAddress
+
+    -- ** EnterprisesDevicesDeleteWipeDataFlags
+    , EnterprisesDevicesDeleteWipeDataFlags (..)
+
+    -- ** PolicyKeyguardDisabledFeaturesItem
+    , PolicyKeyguardDisabledFeaturesItem (..)
 
     -- ** PowerManagementEvent
     , PowerManagementEvent
@@ -571,13 +779,16 @@ module Network.Google.AndroidManagement
     , pChoosePrivateKeyRules
     , pCredentialsConfigDisabled
     , pRecommendedGlobalProxy
+    , pPermittedAccessibilityServices
     , pKeyguardDisabled
+    , pOncCertificateProviders
     , pSkipFirstUseHintsEnabled
     , pAdjustVolumeDisabled
     , pDefaultPermissionPolicy
     , pUninstallAppsDisabled
     , pSetUserIconDisabled
     , pPermittedInputMethods
+    , pMinimumAPILevel
     , pScreenCaptureDisabled
     , pAddUserDisabled
     , pShareLocationDisabled
@@ -585,6 +796,7 @@ module Network.Google.AndroidManagement
     , pInstallAppsDisabled
     , pCreateWindowsDisabled
     , pNetworkResetDisabled
+    , pPersonalUsagePolicies
     , pBluetoothContactSharingDisabled
     , pPermissionGrants
     , pShortSupportMessage
@@ -599,6 +811,7 @@ module Network.Google.AndroidManagement
     , pInstallUnknownSourcesAllowed
     , pName
     , pPrivateKeySelectionEnabled
+    , pAdvancedSecurityOverrides
     , pOutgoingCallsDisabled
     , pStatusReportingSettings
     , pRemoveUserDisabled
@@ -620,15 +833,18 @@ module Network.Google.AndroidManagement
     , pCellBroadcastsConfigDisabled
     , pDeviceOwnerLockScreenInfo
     , pPlayStoreMode
+    , pKioskCustomization
     , pComplianceRules
     , pTetheringConfigDisabled
     , pAccountTypesWithManagementDisabled
     , pWifiConfigDisabled
     , pPersistentPreferredActivities
     , pPasswordRequirements
+    , pAutoDateAndTimeZone
     , pLongSupportMessage
     , pLocationMode
     , pBluetoothDisabled
+    , pPolicyEnforcementRules
     , pUsbFileTransferDisabled
     , pCameraDisabled
     , pApplications
@@ -652,6 +868,15 @@ module Network.Google.AndroidManagement
     , kasLastUpdateTime
     , kasCreateTime
 
+    -- ** KioskCustomization
+    , KioskCustomization
+    , kioskCustomization
+    , kcSystemNavigation
+    , kcDeviceSettings
+    , kcPowerButtonActions
+    , kcSystemErrorWarnings
+    , kcStatusBar
+
     -- ** OperationMetadata
     , OperationMetadata
     , operationMetadata
@@ -663,7 +888,14 @@ module Network.Google.AndroidManagement
     , wtParentFrameURL
     , wtValue
     , wtName
+    , wtEnabledFeatures
     , wtPermissions
+
+    -- ** PersonalApplicationPolicyInstallType
+    , PersonalApplicationPolicyInstallType (..)
+
+    -- ** PersonalUsagePoliciesPersonalPlayStoreMode
+    , PersonalUsagePoliciesPersonalPlayStoreMode (..)
 
     -- ** KeyedAppStateSeverity
     , KeyedAppStateSeverity (..)
@@ -682,6 +914,9 @@ module Network.Google.AndroidManagement
     , lwarNextPageToken
     , lwarWebApps
 
+    -- ** DeviceOwnership
+    , DeviceOwnership (..)
+
     -- ** PasswordRequirements
     , PasswordRequirements
     , passwordRequirements
@@ -692,6 +927,7 @@ module Network.Google.AndroidManagement
     , prPasswordHistoryLength
     , prPasswordMinimumLetters
     , prPasswordMinimumUpperCase
+    , prRequirePasswordUnlock
     , prPasswordMinimumNumeric
     , prPasswordQuality
     , prPasswordMinimumLength
@@ -711,14 +947,26 @@ module Network.Google.AndroidManagement
     , ncdSettingName
     , ncdCurrentValue
 
+    -- ** PolicyStayOnPluggedModesItem
+    , PolicyStayOnPluggedModesItem (..)
+
     -- ** NonComplianceDetailConditionNonComplianceReason
     , NonComplianceDetailConditionNonComplianceReason (..)
+
+    -- ** ApplicationPolicyConnectedWorkAndPersonalApp
+    , ApplicationPolicyConnectedWorkAndPersonalApp (..)
 
     -- ** ApplicationEvent
     , ApplicationEvent
     , applicationEvent
     , aeEventType
     , aeCreateTime
+
+    -- ** SecurityPostureDevicePosture
+    , SecurityPostureDevicePosture (..)
+
+    -- ** WebTokenPermissionsItem
+    , WebTokenPermissionsItem (..)
 
     -- ** TermsAndConditions
     , TermsAndConditions
@@ -737,6 +985,20 @@ module Network.Google.AndroidManagement
     , ufmLocalizedMessages
     , ufmDefaultMessage
 
+    -- ** ContactInfo
+    , ContactInfo
+    , contactInfo
+    , ciContactEmail
+    , ciDataProtectionOfficerName
+    , ciEuRepresentativeName
+    , ciEuRepresentativeEmail
+    , ciEuRepresentativePhone
+    , ciDataProtectionOfficerEmail
+    , ciDataProtectionOfficerPhone
+
+    -- ** PostureDetailSecurityRisk
+    , PostureDetailSecurityRisk (..)
+
     -- ** SoftwareInfo
     , SoftwareInfo
     , softwareInfo
@@ -745,6 +1007,7 @@ module Network.Google.AndroidManagement
     , siDeviceKernelVersion
     , siAndroidDevicePolicyVersionCode
     , siDeviceBuildSignature
+    , siSystemUpdateInfo
     , siBootLoaderVersion
     , siAndroidBuildTime
     , siPrimaryLanguageCode
@@ -765,6 +1028,9 @@ module Network.Google.AndroidManagement
     , apName
     , apDescription
     , apPermissionId
+
+    -- ** PasswordRequirementsRequirePasswordUnlock
+    , PasswordRequirementsRequirePasswordUnlock (..)
 
     -- ** SetupAction
     , SetupAction
@@ -791,6 +1057,7 @@ import Network.Google.Prelude
 import Network.Google.AndroidManagement.Types
 import Network.Google.Resource.AndroidManagement.Enterprises.Applications.Get
 import Network.Google.Resource.AndroidManagement.Enterprises.Create
+import Network.Google.Resource.AndroidManagement.Enterprises.Delete
 import Network.Google.Resource.AndroidManagement.Enterprises.Devices.Delete
 import Network.Google.Resource.AndroidManagement.Enterprises.Devices.Get
 import Network.Google.Resource.AndroidManagement.Enterprises.Devices.IssueCommand
@@ -803,6 +1070,7 @@ import Network.Google.Resource.AndroidManagement.Enterprises.Devices.Patch
 import Network.Google.Resource.AndroidManagement.Enterprises.EnrollmentTokens.Create
 import Network.Google.Resource.AndroidManagement.Enterprises.EnrollmentTokens.Delete
 import Network.Google.Resource.AndroidManagement.Enterprises.Get
+import Network.Google.Resource.AndroidManagement.Enterprises.List
 import Network.Google.Resource.AndroidManagement.Enterprises.Patch
 import Network.Google.Resource.AndroidManagement.Enterprises.Policies.Delete
 import Network.Google.Resource.AndroidManagement.Enterprises.Policies.Get
@@ -844,7 +1112,9 @@ type AndroidManagementAPI =
        :<|> EnterprisesPoliciesGetResource
        :<|> EnterprisesPoliciesDeleteResource
        :<|> EnterprisesApplicationsGetResource
+       :<|> EnterprisesListResource
        :<|> EnterprisesPatchResource
        :<|> EnterprisesGetResource
        :<|> EnterprisesCreateResource
+       :<|> EnterprisesDeleteResource
        :<|> SignupURLsCreateResource

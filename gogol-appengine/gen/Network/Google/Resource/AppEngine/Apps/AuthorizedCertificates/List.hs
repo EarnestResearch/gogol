@@ -58,7 +58,8 @@ type AppsAuthorizedCertificatesListResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "view" Text :>
+                     QueryParam "view" AppsAuthorizedCertificatesListView
+                       :>
                        QueryParam "pageToken" Text :>
                          QueryParam "pageSize" (Textual Int32) :>
                            QueryParam "callback" Text :>
@@ -75,7 +76,7 @@ data AppsAuthorizedCertificatesList =
     , _aaclAccessToken :: !(Maybe Text)
     , _aaclUploadType :: !(Maybe Text)
     , _aaclAppsId :: !Text
-    , _aaclView :: !(Maybe Text)
+    , _aaclView :: !(Maybe AppsAuthorizedCertificatesListView)
     , _aaclPageToken :: !(Maybe Text)
     , _aaclPageSize :: !(Maybe (Textual Int32))
     , _aaclCallback :: !(Maybe Text)
@@ -151,7 +152,7 @@ aaclAppsId
   = lens _aaclAppsId (\ s a -> s{_aaclAppsId = a})
 
 -- | Controls the set of fields returned in the LIST response.
-aaclView :: Lens' AppsAuthorizedCertificatesList (Maybe Text)
+aaclView :: Lens' AppsAuthorizedCertificatesList (Maybe AppsAuthorizedCertificatesListView)
 aaclView = lens _aaclView (\ s a -> s{_aaclView = a})
 
 -- | Continuation token for fetching the next page of results.

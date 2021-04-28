@@ -123,7 +123,7 @@ pscgUploadType
   = lens _pscgUploadType
       (\ s a -> s{_pscgUploadType = a})
 
--- | The name of the scan configuration in the form of
+-- | Required. The name of the scan configuration in the form of
 -- \`projects\/[PROJECT_ID]\/scanConfigs\/[SCAN_CONFIG_ID]\`.
 pscgName :: Lens' ProjectsScanConfigsGet Text
 pscgName = lens _pscgName (\ s a -> s{_pscgName = a})

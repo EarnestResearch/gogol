@@ -21,9 +21,10 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.setIamPolicy@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.setIamPolicy@.
 module Network.Google.Resource.Ml.Projects.Models.SetIAMPolicy
     (
     -- * REST Resource
@@ -61,7 +62,8 @@ type ProjectsModelsSetIAMPolicyResource =
                        Post '[JSON] GoogleIAMV1__Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ 'projectsModelsSetIAMPolicy' smart constructor.
 data ProjectsModelsSetIAMPolicy =

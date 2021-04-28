@@ -126,8 +126,9 @@ pitgUploadType
   = lens _pitgUploadType
       (\ s a -> s{_pitgUploadType = a})
 
--- | Resource name of the organization and inspectTemplate to be read, for
--- example \`organizations\/433245324\/inspectTemplates\/432452342\` or
+-- | Required. Resource name of the organization and inspectTemplate to be
+-- read, for example
+-- \`organizations\/433245324\/inspectTemplates\/432452342\` or
 -- projects\/project-id\/inspectTemplates\/432452342.
 pitgName :: Lens' ProjectsInspectTemplatesGet Text
 pitgName = lens _pitgName (\ s a -> s{_pitgName = a})

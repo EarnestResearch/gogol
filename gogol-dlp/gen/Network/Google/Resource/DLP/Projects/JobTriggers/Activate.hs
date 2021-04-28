@@ -139,7 +139,7 @@ pjtaPayload :: Lens' ProjectsJobTriggersActivate GooglePrivacyDlpV2ActivateJobTr
 pjtaPayload
   = lens _pjtaPayload (\ s a -> s{_pjtaPayload = a})
 
--- | Resource name of the trigger to activate, for example
+-- | Required. Resource name of the trigger to activate, for example
 -- \`projects\/dlp-test-project\/jobTriggers\/53234423\`.
 pjtaName :: Lens' ProjectsJobTriggersActivate Text
 pjtaName = lens _pjtaName (\ s a -> s{_pjtaName = a})

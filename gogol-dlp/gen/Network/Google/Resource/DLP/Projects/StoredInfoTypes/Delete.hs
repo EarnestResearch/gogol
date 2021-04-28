@@ -128,8 +128,9 @@ psitdUploadType
   = lens _psitdUploadType
       (\ s a -> s{_psitdUploadType = a})
 
--- | Resource name of the organization and storedInfoType to be deleted, for
--- example \`organizations\/433245324\/storedInfoTypes\/432452342\` or
+-- | Required. Resource name of the organization and storedInfoType to be
+-- deleted, for example
+-- \`organizations\/433245324\/storedInfoTypes\/432452342\` or
 -- projects\/project-id\/storedInfoTypes\/432452342.
 psitdName :: Lens' ProjectsStoredInfoTypesDelete Text
 psitdName

@@ -24,7 +24,7 @@
 -- same channel, contentLanguage, offerId, and targetCountry already
 -- exists, this method updates that entry.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.products.insert@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.products.insert@.
 module Network.Google.Resource.Content.Products.Insert
     (
     -- * REST Resource
@@ -35,9 +35,14 @@ module Network.Google.Resource.Content.Products.Insert
     , ProductsInsert
 
     -- * Request Lenses
+    , piiXgafv
     , piiMerchantId
+    , piiUploadProtocol
+    , piiAccessToken
+    , piiUploadType
     , piiPayload
     , piiDryRun
+    , piiCallback
     ) where
 
 import Network.Google.Prelude
@@ -50,9 +55,14 @@ type ProductsInsertResource =
        "v2" :>
          Capture "merchantId" (Textual Word64) :>
            "products" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] Product :> Post '[JSON] Product
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] Product :> Post '[JSON] Product
 
 -- | Uploads a product to your Merchant Center account. If an item with the
 -- same channel, contentLanguage, offerId, and targetCountry already
@@ -61,9 +71,14 @@ type ProductsInsertResource =
 -- /See:/ 'productsInsert' smart constructor.
 data ProductsInsert =
   ProductsInsert'
-    { _piiMerchantId :: !(Textual Word64)
+    { _piiXgafv :: !(Maybe Xgafv)
+    , _piiMerchantId :: !(Textual Word64)
+    , _piiUploadProtocol :: !(Maybe Text)
+    , _piiAccessToken :: !(Maybe Text)
+    , _piiUploadType :: !(Maybe Text)
     , _piiPayload :: !Product
     , _piiDryRun :: !(Maybe Bool)
+    , _piiCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,22 +87,41 @@ data ProductsInsert =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'piiXgafv'
+--
 -- * 'piiMerchantId'
+--
+-- * 'piiUploadProtocol'
+--
+-- * 'piiAccessToken'
+--
+-- * 'piiUploadType'
 --
 -- * 'piiPayload'
 --
 -- * 'piiDryRun'
+--
+-- * 'piiCallback'
 productsInsert
     :: Word64 -- ^ 'piiMerchantId'
     -> Product -- ^ 'piiPayload'
     -> ProductsInsert
 productsInsert pPiiMerchantId_ pPiiPayload_ =
   ProductsInsert'
-    { _piiMerchantId = _Coerce # pPiiMerchantId_
+    { _piiXgafv = Nothing
+    , _piiMerchantId = _Coerce # pPiiMerchantId_
+    , _piiUploadProtocol = Nothing
+    , _piiAccessToken = Nothing
+    , _piiUploadType = Nothing
     , _piiPayload = pPiiPayload_
     , _piiDryRun = Nothing
+    , _piiCallback = Nothing
     }
 
+
+-- | V1 error format.
+piiXgafv :: Lens' ProductsInsert (Maybe Xgafv)
+piiXgafv = lens _piiXgafv (\ s a -> s{_piiXgafv = a})
 
 -- | The ID of the account that contains the product. This account cannot be
 -- a multi-client account.
@@ -96,6 +130,24 @@ piiMerchantId
   = lens _piiMerchantId
       (\ s a -> s{_piiMerchantId = a})
       . _Coerce
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+piiUploadProtocol :: Lens' ProductsInsert (Maybe Text)
+piiUploadProtocol
+  = lens _piiUploadProtocol
+      (\ s a -> s{_piiUploadProtocol = a})
+
+-- | OAuth access token.
+piiAccessToken :: Lens' ProductsInsert (Maybe Text)
+piiAccessToken
+  = lens _piiAccessToken
+      (\ s a -> s{_piiAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+piiUploadType :: Lens' ProductsInsert (Maybe Text)
+piiUploadType
+  = lens _piiUploadType
+      (\ s a -> s{_piiUploadType = a})
 
 -- | Multipart request metadata.
 piiPayload :: Lens' ProductsInsert Product
@@ -109,12 +161,22 @@ piiDryRun :: Lens' ProductsInsert (Maybe Bool)
 piiDryRun
   = lens _piiDryRun (\ s a -> s{_piiDryRun = a})
 
+-- | JSONP
+piiCallback :: Lens' ProductsInsert (Maybe Text)
+piiCallback
+  = lens _piiCallback (\ s a -> s{_piiCallback = a})
+
 instance GoogleRequest ProductsInsert where
         type Rs ProductsInsert = Product
         type Scopes ProductsInsert =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsInsert'{..}
-          = go _piiMerchantId _piiDryRun (Just AltJSON)
+          = go _piiMerchantId _piiXgafv _piiUploadProtocol
+              _piiAccessToken
+              _piiUploadType
+              _piiDryRun
+              _piiCallback
+              (Just AltJSON)
               _piiPayload
               shoppingContentService
           where go

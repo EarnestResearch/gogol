@@ -20,7 +20,12 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- GetCapabilities returns the server capabilities configuration.
+-- GetCapabilities returns the server capabilities configuration of the
+-- remote endpoint. Only the capabilities of the services supported by the
+-- endpoint will be returned: * Execution + CAS + Action Cache endpoints
+-- should return both CacheCapabilities and ExecutionCapabilities. *
+-- Execution only endpoints should return ExecutionCapabilities. * CAS +
+-- Action Cache only endpoints should return CacheCapabilities.
 --
 -- /See:/ <https://cloud.google.com/remote-build-execution/docs/ Remote Build Execution API Reference> for @remotebuildexecution.getCapabilities@.
 module Network.Google.Resource.RemoteBuildExecution.GetCapabilities
@@ -59,7 +64,12 @@ type GetCapabilitiesResource =
                        Get '[JSON]
                          BuildBazelRemoteExecutionV2ServerCapabilities
 
--- | GetCapabilities returns the server capabilities configuration.
+-- | GetCapabilities returns the server capabilities configuration of the
+-- remote endpoint. Only the capabilities of the services supported by the
+-- endpoint will be returned: * Execution + CAS + Action Cache endpoints
+-- should return both CacheCapabilities and ExecutionCapabilities. *
+-- Execution only endpoints should return ExecutionCapabilities. * CAS +
+-- Action Cache only endpoints should return CacheCapabilities.
 --
 -- /See:/ 'getCapabilities' smart constructor.
 data GetCapabilities =

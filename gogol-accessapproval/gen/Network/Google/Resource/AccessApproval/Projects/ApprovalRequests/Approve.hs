@@ -50,7 +50,7 @@ import Network.Google.Prelude
 -- | A resource alias for @accessapproval.projects.approvalRequests.approve@ method which the
 -- 'ProjectsApprovalRequestsApprove' request conforms to.
 type ProjectsApprovalRequestsApproveResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "approve" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

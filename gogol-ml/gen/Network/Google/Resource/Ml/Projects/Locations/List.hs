@@ -22,7 +22,7 @@
 --
 -- List all locations that provides at least one type of CMLE capability.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.locations.list@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.locations.list@.
 module Network.Google.Resource.Ml.Projects.Locations.List
     (
     -- * REST Resource
@@ -168,7 +168,8 @@ instance GoogleRequest ProjectsLocationsList where
         type Rs ProjectsLocationsList =
              GoogleCloudMlV1__ListLocationsResponse
         type Scopes ProjectsLocationsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsLocationsList'{..}
           = go _pllParent _pllXgafv _pllUploadProtocol
               _pllAccessToken

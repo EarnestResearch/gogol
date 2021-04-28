@@ -81,7 +81,7 @@ instance ToJSON VideoOffSet where
 data DeepLink =
   DeepLink'
     { _dlRemarketingListIds :: !(Maybe [Textual Int64])
-    , _dlKind :: !Text
+    , _dlKind :: !(Maybe Text)
     , _dlFallbackURL :: !(Maybe Text)
     , _dlAppURL :: !(Maybe Text)
     , _dlMobileApp :: !(Maybe MobileApp)
@@ -107,7 +107,7 @@ deepLink
 deepLink =
   DeepLink'
     { _dlRemarketingListIds = Nothing
-    , _dlKind = "dfareporting#deepLink"
+    , _dlKind = Nothing
     , _dlFallbackURL = Nothing
     , _dlAppURL = Nothing
     , _dlMobileApp = Nothing
@@ -125,7 +125,7 @@ dlRemarketingListIds
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#deepLink\".
-dlKind :: Lens' DeepLink Text
+dlKind :: Lens' DeepLink (Maybe Text)
 dlKind = lens _dlKind (\ s a -> s{_dlKind = a})
 
 -- | The fallback URL. This URL will be served to users who do not have the
@@ -150,7 +150,7 @@ instance FromJSON DeepLink where
               (\ o ->
                  DeepLink' <$>
                    (o .:? "remarketingListIds" .!= mempty) <*>
-                     (o .:? "kind" .!= "dfareporting#deepLink")
+                     (o .:? "kind")
                      <*> (o .:? "fallbackUrl")
                      <*> (o .:? "appUrl")
                      <*> (o .:? "mobileApp"))
@@ -160,19 +160,71 @@ instance ToJSON DeepLink where
           = object
               (catMaybes
                  [("remarketingListIds" .=) <$> _dlRemarketingListIds,
-                  Just ("kind" .= _dlKind),
+                  ("kind" .=) <$> _dlKind,
                   ("fallbackUrl" .=) <$> _dlFallbackURL,
                   ("appUrl" .=) <$> _dlAppURL,
                   ("mobileApp" .=) <$> _dlMobileApp])
 
--- | Represents the list of File resources.
+-- | Represents a Disjunctive Match Statement resource, which is a
+-- conjunction (and) of disjunctive (or) boolean statements.
+--
+-- /See:/ 'disjunctiveMatchStatement' smart constructor.
+data DisjunctiveMatchStatement =
+  DisjunctiveMatchStatement'
+    { _dmsEventFilters :: !(Maybe [EventFilter])
+    , _dmsKind :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DisjunctiveMatchStatement' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dmsEventFilters'
+--
+-- * 'dmsKind'
+disjunctiveMatchStatement
+    :: DisjunctiveMatchStatement
+disjunctiveMatchStatement =
+  DisjunctiveMatchStatement' {_dmsEventFilters = Nothing, _dmsKind = Nothing}
+
+
+-- | The event filters contained within this disjunctive match statement.
+dmsEventFilters :: Lens' DisjunctiveMatchStatement [EventFilter]
+dmsEventFilters
+  = lens _dmsEventFilters
+      (\ s a -> s{_dmsEventFilters = a})
+      . _Default
+      . _Coerce
+
+-- | The kind of resource this is, in this case
+-- dfareporting#disjunctiveMatchStatement.
+dmsKind :: Lens' DisjunctiveMatchStatement (Maybe Text)
+dmsKind = lens _dmsKind (\ s a -> s{_dmsKind = a})
+
+instance FromJSON DisjunctiveMatchStatement where
+        parseJSON
+          = withObject "DisjunctiveMatchStatement"
+              (\ o ->
+                 DisjunctiveMatchStatement' <$>
+                   (o .:? "eventFilters" .!= mempty) <*> (o .:? "kind"))
+
+instance ToJSON DisjunctiveMatchStatement where
+        toJSON DisjunctiveMatchStatement'{..}
+          = object
+              (catMaybes
+                 [("eventFilters" .=) <$> _dmsEventFilters,
+                  ("kind" .=) <$> _dmsKind])
+
+-- | List of files for a report.
 --
 -- /See:/ 'fileList' smart constructor.
 data FileList =
   FileList'
     { _flEtag :: !(Maybe Text)
     , _flNextPageToken :: !(Maybe Text)
-    , _flKind :: !Text
+    , _flKind :: !(Maybe Text)
     , _flItems :: !(Maybe [File])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -195,12 +247,12 @@ fileList =
   FileList'
     { _flEtag = Nothing
     , _flNextPageToken = Nothing
-    , _flKind = "dfareporting#fileList"
+    , _flKind = Nothing
     , _flItems = Nothing
     }
 
 
--- | The eTag of this response for caching purposes.
+-- | Etag of this resource.
 flEtag :: Lens' FileList (Maybe Text)
 flEtag = lens _flEtag (\ s a -> s{_flEtag = a})
 
@@ -213,8 +265,9 @@ flNextPageToken
   = lens _flNextPageToken
       (\ s a -> s{_flNextPageToken = a})
 
--- | The kind of list this is, in this case dfareporting#fileList.
-flKind :: Lens' FileList Text
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#fileList\".
+flKind :: Lens' FileList (Maybe Text)
 flKind = lens _flKind (\ s a -> s{_flKind = a})
 
 -- | The files returned in this response.
@@ -229,7 +282,7 @@ instance FromJSON FileList where
               (\ o ->
                  FileList' <$>
                    (o .:? "etag") <*> (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#fileList")
+                     (o .:? "kind")
                      <*> (o .:? "items" .!= mempty))
 
 instance ToJSON FileList where
@@ -238,7 +291,108 @@ instance ToJSON FileList where
               (catMaybes
                  [("etag" .=) <$> _flEtag,
                   ("nextPageToken" .=) <$> _flNextPageToken,
-                  Just ("kind" .= _flKind), ("items" .=) <$> _flItems])
+                  ("kind" .=) <$> _flKind, ("items" .=) <$> _flItems])
+
+-- | Represents fields that are compatible to be selected for a report of
+-- type \"PATH\".
+--
+-- /See:/ 'pathReportCompatibleFields' smart constructor.
+data PathReportCompatibleFields =
+  PathReportCompatibleFields'
+    { _prcfMetrics :: !(Maybe [Metric])
+    , _prcfChannelGroupings :: !(Maybe [Dimension])
+    , _prcfKind :: !(Maybe Text)
+    , _prcfPathFilters :: !(Maybe [Dimension])
+    , _prcfDimensions :: !(Maybe [Dimension])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PathReportCompatibleFields' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'prcfMetrics'
+--
+-- * 'prcfChannelGroupings'
+--
+-- * 'prcfKind'
+--
+-- * 'prcfPathFilters'
+--
+-- * 'prcfDimensions'
+pathReportCompatibleFields
+    :: PathReportCompatibleFields
+pathReportCompatibleFields =
+  PathReportCompatibleFields'
+    { _prcfMetrics = Nothing
+    , _prcfChannelGroupings = Nothing
+    , _prcfKind = Nothing
+    , _prcfPathFilters = Nothing
+    , _prcfDimensions = Nothing
+    }
+
+
+-- | Metrics which are compatible to be selected in the \"metricNames\"
+-- section of the report.
+prcfMetrics :: Lens' PathReportCompatibleFields [Metric]
+prcfMetrics
+  = lens _prcfMetrics (\ s a -> s{_prcfMetrics = a}) .
+      _Default
+      . _Coerce
+
+-- | Dimensions which are compatible to be selected in the
+-- \"channelGroupings\" section of the report.
+prcfChannelGroupings :: Lens' PathReportCompatibleFields [Dimension]
+prcfChannelGroupings
+  = lens _prcfChannelGroupings
+      (\ s a -> s{_prcfChannelGroupings = a})
+      . _Default
+      . _Coerce
+
+-- | The kind of resource this is, in this case
+-- dfareporting#pathReportCompatibleFields.
+prcfKind :: Lens' PathReportCompatibleFields (Maybe Text)
+prcfKind = lens _prcfKind (\ s a -> s{_prcfKind = a})
+
+-- | Dimensions which are compatible to be selected in the \"pathFilters\"
+-- section of the report.
+prcfPathFilters :: Lens' PathReportCompatibleFields [Dimension]
+prcfPathFilters
+  = lens _prcfPathFilters
+      (\ s a -> s{_prcfPathFilters = a})
+      . _Default
+      . _Coerce
+
+-- | Dimensions which are compatible to be selected in the \"dimensions\"
+-- section of the report.
+prcfDimensions :: Lens' PathReportCompatibleFields [Dimension]
+prcfDimensions
+  = lens _prcfDimensions
+      (\ s a -> s{_prcfDimensions = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON PathReportCompatibleFields where
+        parseJSON
+          = withObject "PathReportCompatibleFields"
+              (\ o ->
+                 PathReportCompatibleFields' <$>
+                   (o .:? "metrics" .!= mempty) <*>
+                     (o .:? "channelGroupings" .!= mempty)
+                     <*> (o .:? "kind")
+                     <*> (o .:? "pathFilters" .!= mempty)
+                     <*> (o .:? "dimensions" .!= mempty))
+
+instance ToJSON PathReportCompatibleFields where
+        toJSON PathReportCompatibleFields'{..}
+          = object
+              (catMaybes
+                 [("metrics" .=) <$> _prcfMetrics,
+                  ("channelGroupings" .=) <$> _prcfChannelGroupings,
+                  ("kind" .=) <$> _prcfKind,
+                  ("pathFilters" .=) <$> _prcfPathFilters,
+                  ("dimensions" .=) <$> _prcfDimensions])
 
 -- | Creative optimization activity.
 --
@@ -674,7 +828,7 @@ data CampaignsListResponse =
   CampaignsListResponse'
     { _clrNextPageToken :: !(Maybe Text)
     , _clrCampaigns :: !(Maybe [Campaign])
-    , _clrKind :: !Text
+    , _clrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -692,10 +846,7 @@ campaignsListResponse
     :: CampaignsListResponse
 campaignsListResponse =
   CampaignsListResponse'
-    { _clrNextPageToken = Nothing
-    , _clrCampaigns = Nothing
-    , _clrKind = "dfareporting#campaignsListResponse"
-    }
+    {_clrNextPageToken = Nothing, _clrCampaigns = Nothing, _clrKind = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -713,7 +864,7 @@ clrCampaigns
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#campaignsListResponse\".
-clrKind :: Lens' CampaignsListResponse Text
+clrKind :: Lens' CampaignsListResponse (Maybe Text)
 clrKind = lens _clrKind (\ s a -> s{_clrKind = a})
 
 instance FromJSON CampaignsListResponse where
@@ -723,9 +874,7 @@ instance FromJSON CampaignsListResponse where
                  CampaignsListResponse' <$>
                    (o .:? "nextPageToken") <*>
                      (o .:? "campaigns" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#campaignsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON CampaignsListResponse where
         toJSON CampaignsListResponse'{..}
@@ -733,7 +882,7 @@ instance ToJSON CampaignsListResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _clrNextPageToken,
                   ("campaigns" .=) <$> _clrCampaigns,
-                  Just ("kind" .= _clrKind)])
+                  ("kind" .=) <$> _clrKind])
 
 -- | Geographical Targeting.
 --
@@ -865,8 +1014,10 @@ instance ToJSON GeoTargeting where
 -- /See:/ 'videoSettings' smart constructor.
 data VideoSettings =
   VideoSettings'
-    { _vsKind :: !Text
+    { _vsKind :: !(Maybe Text)
     , _vsCompanionSettings :: !(Maybe CompanionSetting)
+    , _vsObaSettings :: !(Maybe ObaIcon)
+    , _vsObaEnabled :: !(Maybe Bool)
     , _vsTranscodeSettings :: !(Maybe TranscodeSetting)
     , _vsOrientation :: !(Maybe VideoSettingsOrientation)
     , _vsSkippableSettings :: !(Maybe SkippableSetting)
@@ -882,6 +1033,10 @@ data VideoSettings =
 --
 -- * 'vsCompanionSettings'
 --
+-- * 'vsObaSettings'
+--
+-- * 'vsObaEnabled'
+--
 -- * 'vsTranscodeSettings'
 --
 -- * 'vsOrientation'
@@ -891,8 +1046,10 @@ videoSettings
     :: VideoSettings
 videoSettings =
   VideoSettings'
-    { _vsKind = "dfareporting#videoSettings"
+    { _vsKind = Nothing
     , _vsCompanionSettings = Nothing
+    , _vsObaSettings = Nothing
+    , _vsObaEnabled = Nothing
     , _vsTranscodeSettings = Nothing
     , _vsOrientation = Nothing
     , _vsSkippableSettings = Nothing
@@ -901,7 +1058,7 @@ videoSettings =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#videoSettings\".
-vsKind :: Lens' VideoSettings Text
+vsKind :: Lens' VideoSettings (Maybe Text)
 vsKind = lens _vsKind (\ s a -> s{_vsKind = a})
 
 -- | Settings for the companion creatives of video creatives served to this
@@ -910,6 +1067,19 @@ vsCompanionSettings :: Lens' VideoSettings (Maybe CompanionSetting)
 vsCompanionSettings
   = lens _vsCompanionSettings
       (\ s a -> s{_vsCompanionSettings = a})
+
+-- | Settings for the OBA icon of video creatives served to this placement.
+-- If this object is provided, the creative-level OBA settings will be
+-- overridden.
+vsObaSettings :: Lens' VideoSettings (Maybe ObaIcon)
+vsObaSettings
+  = lens _vsObaSettings
+      (\ s a -> s{_vsObaSettings = a})
+
+-- | Whether OBA icons are enabled for this placement.
+vsObaEnabled :: Lens' VideoSettings (Maybe Bool)
+vsObaEnabled
+  = lens _vsObaEnabled (\ s a -> s{_vsObaEnabled = a})
 
 -- | Settings for the transcodes of video creatives served to this placement.
 -- If this object is provided, the creative-level transcode settings will
@@ -939,8 +1109,9 @@ instance FromJSON VideoSettings where
           = withObject "VideoSettings"
               (\ o ->
                  VideoSettings' <$>
-                   (o .:? "kind" .!= "dfareporting#videoSettings") <*>
-                     (o .:? "companionSettings")
+                   (o .:? "kind") <*> (o .:? "companionSettings") <*>
+                     (o .:? "obaSettings")
+                     <*> (o .:? "obaEnabled")
                      <*> (o .:? "transcodeSettings")
                      <*> (o .:? "orientation")
                      <*> (o .:? "skippableSettings"))
@@ -949,8 +1120,10 @@ instance ToJSON VideoSettings where
         toJSON VideoSettings'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _vsKind),
+                 [("kind" .=) <$> _vsKind,
                   ("companionSettings" .=) <$> _vsCompanionSettings,
+                  ("obaSettings" .=) <$> _vsObaSettings,
+                  ("obaEnabled" .=) <$> _vsObaEnabled,
                   ("transcodeSettings" .=) <$> _vsTranscodeSettings,
                   ("orientation" .=) <$> _vsOrientation,
                   ("skippableSettings" .=) <$> _vsSkippableSettings])
@@ -963,7 +1136,7 @@ data ReachReportCompatibleFields =
   ReachReportCompatibleFields'
     { _rrcfMetrics :: !(Maybe [Metric])
     , _rrcfReachByFrequencyMetrics :: !(Maybe [Metric])
-    , _rrcfKind :: !Text
+    , _rrcfKind :: !(Maybe Text)
     , _rrcfDimensionFilters :: !(Maybe [Dimension])
     , _rrcfPivotedActivityMetrics :: !(Maybe [Metric])
     , _rrcfDimensions :: !(Maybe [Dimension])
@@ -992,7 +1165,7 @@ reachReportCompatibleFields =
   ReachReportCompatibleFields'
     { _rrcfMetrics = Nothing
     , _rrcfReachByFrequencyMetrics = Nothing
-    , _rrcfKind = "dfareporting#reachReportCompatibleFields"
+    , _rrcfKind = Nothing
     , _rrcfDimensionFilters = Nothing
     , _rrcfPivotedActivityMetrics = Nothing
     , _rrcfDimensions = Nothing
@@ -1018,7 +1191,7 @@ rrcfReachByFrequencyMetrics
 
 -- | The kind of resource this is, in this case
 -- dfareporting#reachReportCompatibleFields.
-rrcfKind :: Lens' ReachReportCompatibleFields Text
+rrcfKind :: Lens' ReachReportCompatibleFields (Maybe Text)
 rrcfKind = lens _rrcfKind (\ s a -> s{_rrcfKind = a})
 
 -- | Dimensions which are compatible to be selected in the
@@ -1055,9 +1228,7 @@ instance FromJSON ReachReportCompatibleFields where
                  ReachReportCompatibleFields' <$>
                    (o .:? "metrics" .!= mempty) <*>
                      (o .:? "reachByFrequencyMetrics" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#reachReportCompatibleFields")
+                     <*> (o .:? "kind")
                      <*> (o .:? "dimensionFilters" .!= mempty)
                      <*> (o .:? "pivotedActivityMetrics" .!= mempty)
                      <*> (o .:? "dimensions" .!= mempty))
@@ -1069,7 +1240,7 @@ instance ToJSON ReachReportCompatibleFields where
                  [("metrics" .=) <$> _rrcfMetrics,
                   ("reachByFrequencyMetrics" .=) <$>
                     _rrcfReachByFrequencyMetrics,
-                  Just ("kind" .= _rrcfKind),
+                  ("kind" .=) <$> _rrcfKind,
                   ("dimensionFilters" .=) <$> _rrcfDimensionFilters,
                   ("pivotedActivityMetrics" .=) <$>
                     _rrcfPivotedActivityMetrics,
@@ -1081,7 +1252,7 @@ instance ToJSON ReachReportCompatibleFields where
 data Browser =
   Browser'
     { _bMinorVersion :: !(Maybe Text)
-    , _bKind :: !Text
+    , _bKind :: !(Maybe Text)
     , _bBrowserVersionId :: !(Maybe (Textual Int64))
     , _bMajorVersion :: !(Maybe Text)
     , _bName :: !(Maybe Text)
@@ -1110,7 +1281,7 @@ browser
 browser =
   Browser'
     { _bMinorVersion = Nothing
-    , _bKind = "dfareporting#browser"
+    , _bKind = Nothing
     , _bBrowserVersionId = Nothing
     , _bMajorVersion = Nothing
     , _bName = Nothing
@@ -1133,7 +1304,7 @@ bMinorVersion
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#browser\".
-bKind :: Lens' Browser Text
+bKind :: Lens' Browser (Maybe Text)
 bKind = lens _bKind (\ s a -> s{_bKind = a})
 
 -- | ID referring to this grouping of browser and version numbers. This is
@@ -1172,9 +1343,8 @@ instance FromJSON Browser where
           = withObject "Browser"
               (\ o ->
                  Browser' <$>
-                   (o .:? "minorVersion") <*>
-                     (o .:? "kind" .!= "dfareporting#browser")
-                     <*> (o .:? "browserVersionId")
+                   (o .:? "minorVersion") <*> (o .:? "kind") <*>
+                     (o .:? "browserVersionId")
                      <*> (o .:? "majorVersion")
                      <*> (o .:? "name")
                      <*> (o .:? "dartId"))
@@ -1184,7 +1354,7 @@ instance ToJSON Browser where
           = object
               (catMaybes
                  [("minorVersion" .=) <$> _bMinorVersion,
-                  Just ("kind" .= _bKind),
+                  ("kind" .=) <$> _bKind,
                   ("browserVersionId" .=) <$> _bBrowserVersionId,
                   ("majorVersion" .=) <$> _bMajorVersion,
                   ("name" .=) <$> _bName, ("dartId" .=) <$> _bDartId])
@@ -1323,6 +1493,131 @@ instance ToJSON DirectorySiteSettings where
                   ("activeViewOptOut" .=) <$> _dssActiveViewOptOut,
                   ("dfpSettings" .=) <$> _dssDfpSettings])
 
+-- | Online Behavioral Advertiser icon.
+--
+-- /See:/ 'obaIcon' smart constructor.
+data ObaIcon =
+  ObaIcon'
+    { _oiSize :: !(Maybe Size)
+    , _oiIconClickThroughURL :: !(Maybe Text)
+    , _oiYPosition :: !(Maybe Text)
+    , _oiIconClickTrackingURL :: !(Maybe Text)
+    , _oiXPosition :: !(Maybe Text)
+    , _oiProgram :: !(Maybe Text)
+    , _oiIconViewTrackingURL :: !(Maybe Text)
+    , _oiResourceURL :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ObaIcon' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'oiSize'
+--
+-- * 'oiIconClickThroughURL'
+--
+-- * 'oiYPosition'
+--
+-- * 'oiIconClickTrackingURL'
+--
+-- * 'oiXPosition'
+--
+-- * 'oiProgram'
+--
+-- * 'oiIconViewTrackingURL'
+--
+-- * 'oiResourceURL'
+obaIcon
+    :: ObaIcon
+obaIcon =
+  ObaIcon'
+    { _oiSize = Nothing
+    , _oiIconClickThroughURL = Nothing
+    , _oiYPosition = Nothing
+    , _oiIconClickTrackingURL = Nothing
+    , _oiXPosition = Nothing
+    , _oiProgram = Nothing
+    , _oiIconViewTrackingURL = Nothing
+    , _oiResourceURL = Nothing
+    }
+
+
+-- | OBA icon size.
+oiSize :: Lens' ObaIcon (Maybe Size)
+oiSize = lens _oiSize (\ s a -> s{_oiSize = a})
+
+-- | URL to redirect to when an OBA icon is clicked.
+oiIconClickThroughURL :: Lens' ObaIcon (Maybe Text)
+oiIconClickThroughURL
+  = lens _oiIconClickThroughURL
+      (\ s a -> s{_oiIconClickThroughURL = a})
+
+-- | OBA icon y coordinate position. Accepted values are top or bottom.
+oiYPosition :: Lens' ObaIcon (Maybe Text)
+oiYPosition
+  = lens _oiYPosition (\ s a -> s{_oiYPosition = a})
+
+-- | URL to track click when an OBA icon is clicked.
+oiIconClickTrackingURL :: Lens' ObaIcon (Maybe Text)
+oiIconClickTrackingURL
+  = lens _oiIconClickTrackingURL
+      (\ s a -> s{_oiIconClickTrackingURL = a})
+
+-- | OBA icon x coordinate position. Accepted values are left or right.
+oiXPosition :: Lens' ObaIcon (Maybe Text)
+oiXPosition
+  = lens _oiXPosition (\ s a -> s{_oiXPosition = a})
+
+-- | Identifies the industry initiative that the icon supports. For example,
+-- AdChoices.
+oiProgram :: Lens' ObaIcon (Maybe Text)
+oiProgram
+  = lens _oiProgram (\ s a -> s{_oiProgram = a})
+
+-- | URL to track view when an OBA icon is clicked.
+oiIconViewTrackingURL :: Lens' ObaIcon (Maybe Text)
+oiIconViewTrackingURL
+  = lens _oiIconViewTrackingURL
+      (\ s a -> s{_oiIconViewTrackingURL = a})
+
+-- | OBA icon resource URL. Campaign Manager only supports image and
+-- JavaScript icons. Learn more
+oiResourceURL :: Lens' ObaIcon (Maybe Text)
+oiResourceURL
+  = lens _oiResourceURL
+      (\ s a -> s{_oiResourceURL = a})
+
+instance FromJSON ObaIcon where
+        parseJSON
+          = withObject "ObaIcon"
+              (\ o ->
+                 ObaIcon' <$>
+                   (o .:? "size") <*> (o .:? "iconClickThroughUrl") <*>
+                     (o .:? "yPosition")
+                     <*> (o .:? "iconClickTrackingUrl")
+                     <*> (o .:? "xPosition")
+                     <*> (o .:? "program")
+                     <*> (o .:? "iconViewTrackingUrl")
+                     <*> (o .:? "resourceUrl"))
+
+instance ToJSON ObaIcon where
+        toJSON ObaIcon'{..}
+          = object
+              (catMaybes
+                 [("size" .=) <$> _oiSize,
+                  ("iconClickThroughUrl" .=) <$>
+                    _oiIconClickThroughURL,
+                  ("yPosition" .=) <$> _oiYPosition,
+                  ("iconClickTrackingUrl" .=) <$>
+                    _oiIconClickTrackingURL,
+                  ("xPosition" .=) <$> _oiXPosition,
+                  ("program" .=) <$> _oiProgram,
+                  ("iconViewTrackingUrl" .=) <$>
+                    _oiIconViewTrackingURL,
+                  ("resourceUrl" .=) <$> _oiResourceURL])
+
 -- | Remarketing List Population Rule.
 --
 -- /See:/ 'listPopulationRule' smart constructor.
@@ -1404,7 +1699,7 @@ instance ToJSON ListPopulationRule where
 -- /See:/ 'sizesListResponse' smart constructor.
 data SizesListResponse =
   SizesListResponse'
-    { _slrKind :: !Text
+    { _slrKind :: !(Maybe Text)
     , _slrSizes :: !(Maybe [Size])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1419,14 +1714,12 @@ data SizesListResponse =
 -- * 'slrSizes'
 sizesListResponse
     :: SizesListResponse
-sizesListResponse =
-  SizesListResponse'
-    {_slrKind = "dfareporting#sizesListResponse", _slrSizes = Nothing}
+sizesListResponse = SizesListResponse' {_slrKind = Nothing, _slrSizes = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#sizesListResponse\".
-slrKind :: Lens' SizesListResponse Text
+slrKind :: Lens' SizesListResponse (Maybe Text)
 slrKind = lens _slrKind (\ s a -> s{_slrKind = a})
 
 -- | Size collection.
@@ -1441,14 +1734,13 @@ instance FromJSON SizesListResponse where
           = withObject "SizesListResponse"
               (\ o ->
                  SizesListResponse' <$>
-                   (o .:? "kind" .!= "dfareporting#sizesListResponse")
-                     <*> (o .:? "sizes" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "sizes" .!= mempty))
 
 instance ToJSON SizesListResponse where
         toJSON SizesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _slrKind),
+                 [("kind" .=) <$> _slrKind,
                   ("sizes" .=) <$> _slrSizes])
 
 -- | Creative Rotation.
@@ -1538,6 +1830,63 @@ instance ToJSON CreativeRotation where
                   ("creativeOptimizationConfigurationId" .=) <$>
                     _crCreativeOptimizationConfigurationId,
                   ("type" .=) <$> _crType])
+
+-- | The error code and description for a custom event that failed to insert.
+--
+-- /See:/ 'customEventError' smart constructor.
+data CustomEventError =
+  CustomEventError'
+    { _ceeKind :: !(Maybe Text)
+    , _ceeCode :: !(Maybe CustomEventErrorCode)
+    , _ceeMessage :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventError' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ceeKind'
+--
+-- * 'ceeCode'
+--
+-- * 'ceeMessage'
+customEventError
+    :: CustomEventError
+customEventError =
+  CustomEventError'
+    {_ceeKind = Nothing, _ceeCode = Nothing, _ceeMessage = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventError\".
+ceeKind :: Lens' CustomEventError (Maybe Text)
+ceeKind = lens _ceeKind (\ s a -> s{_ceeKind = a})
+
+-- | The error code.
+ceeCode :: Lens' CustomEventError (Maybe CustomEventErrorCode)
+ceeCode = lens _ceeCode (\ s a -> s{_ceeCode = a})
+
+-- | A description of the error.
+ceeMessage :: Lens' CustomEventError (Maybe Text)
+ceeMessage
+  = lens _ceeMessage (\ s a -> s{_ceeMessage = a})
+
+instance FromJSON CustomEventError where
+        parseJSON
+          = withObject "CustomEventError"
+              (\ o ->
+                 CustomEventError' <$>
+                   (o .:? "kind") <*> (o .:? "code") <*>
+                     (o .:? "message"))
+
+instance ToJSON CustomEventError where
+        toJSON CustomEventError'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _ceeKind, ("code" .=) <$> _ceeCode,
+                  ("message" .=) <$> _ceeMessage])
 
 -- | Technology Targeting.
 --
@@ -1680,7 +2029,7 @@ data InventoryItem =
     { _iiPlacementStrategyId :: !(Maybe (Textual Int64))
     , _iiEstimatedClickThroughRate :: !(Maybe (Textual Int64))
     , _iiPricing :: !(Maybe Pricing)
-    , _iiKind :: !Text
+    , _iiKind :: !(Maybe Text)
     , _iiAdvertiserId :: !(Maybe (Textual Int64))
     , _iiRfpId :: !(Maybe (Textual Int64))
     , _iiContentCategoryId :: !(Maybe (Textual Int64))
@@ -1751,7 +2100,7 @@ inventoryItem =
     { _iiPlacementStrategyId = Nothing
     , _iiEstimatedClickThroughRate = Nothing
     , _iiPricing = Nothing
-    , _iiKind = "dfareporting#inventoryItem"
+    , _iiKind = Nothing
     , _iiAdvertiserId = Nothing
     , _iiRfpId = Nothing
     , _iiContentCategoryId = Nothing
@@ -1792,7 +2141,7 @@ iiPricing
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#inventoryItem\".
-iiKind :: Lens' InventoryItem Text
+iiKind :: Lens' InventoryItem (Maybe Text)
 iiKind = lens _iiKind (\ s a -> s{_iiKind = a})
 
 -- | Advertiser ID of this inventory item.
@@ -1904,7 +2253,7 @@ instance FromJSON InventoryItem where
                    (o .:? "placementStrategyId") <*>
                      (o .:? "estimatedClickThroughRate")
                      <*> (o .:? "pricing")
-                     <*> (o .:? "kind" .!= "dfareporting#inventoryItem")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "rfpId")
                      <*> (o .:? "contentCategoryId")
@@ -1931,7 +2280,7 @@ instance ToJSON InventoryItem where
                   ("estimatedClickThroughRate" .=) <$>
                     _iiEstimatedClickThroughRate,
                   ("pricing" .=) <$> _iiPricing,
-                  Just ("kind" .= _iiKind),
+                  ("kind" .=) <$> _iiKind,
                   ("advertiserId" .=) <$> _iiAdvertiserId,
                   ("rfpId" .=) <$> _iiRfpId,
                   ("contentCategoryId" .=) <$> _iiContentCategoryId,
@@ -1957,7 +2306,7 @@ instance ToJSON InventoryItem where
 data ProjectsListResponse =
   ProjectsListResponse'
     { _plrNextPageToken :: !(Maybe Text)
-    , _plrKind :: !Text
+    , _plrKind :: !(Maybe Text)
     , _plrProjects :: !(Maybe [Project])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1976,10 +2325,7 @@ projectsListResponse
     :: ProjectsListResponse
 projectsListResponse =
   ProjectsListResponse'
-    { _plrNextPageToken = Nothing
-    , _plrKind = "dfareporting#projectsListResponse"
-    , _plrProjects = Nothing
-    }
+    {_plrNextPageToken = Nothing, _plrKind = Nothing, _plrProjects = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -1990,7 +2336,7 @@ plrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#projectsListResponse\".
-plrKind :: Lens' ProjectsListResponse Text
+plrKind :: Lens' ProjectsListResponse (Maybe Text)
 plrKind = lens _plrKind (\ s a -> s{_plrKind = a})
 
 -- | Project collection.
@@ -2005,17 +2351,15 @@ instance FromJSON ProjectsListResponse where
           = withObject "ProjectsListResponse"
               (\ o ->
                  ProjectsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#projectsListResponse")
-                     <*> (o .:? "projects" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "projects" .!= mempty))
 
 instance ToJSON ProjectsListResponse where
         toJSON ProjectsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _plrNextPageToken,
-                  Just ("kind" .= _plrKind),
+                  ("kind" .=) <$> _plrKind,
                   ("projects" .=) <$> _plrProjects])
 
 -- | Ad List Response
@@ -2024,7 +2368,7 @@ instance ToJSON ProjectsListResponse where
 data AdsListResponse =
   AdsListResponse'
     { _alrNextPageToken :: !(Maybe Text)
-    , _alrKind :: !Text
+    , _alrKind :: !(Maybe Text)
     , _alrAds :: !(Maybe [Ad])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2043,10 +2387,7 @@ adsListResponse
     :: AdsListResponse
 adsListResponse =
   AdsListResponse'
-    { _alrNextPageToken = Nothing
-    , _alrKind = "dfareporting#adsListResponse"
-    , _alrAds = Nothing
-    }
+    {_alrNextPageToken = Nothing, _alrKind = Nothing, _alrAds = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -2057,7 +2398,7 @@ alrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#adsListResponse\".
-alrKind :: Lens' AdsListResponse Text
+alrKind :: Lens' AdsListResponse (Maybe Text)
 alrKind = lens _alrKind (\ s a -> s{_alrKind = a})
 
 -- | Ad collection.
@@ -2071,24 +2412,129 @@ instance FromJSON AdsListResponse where
           = withObject "AdsListResponse"
               (\ o ->
                  AdsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#adsListResponse")
-                     <*> (o .:? "ads" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "ads" .!= mempty))
 
 instance ToJSON AdsListResponse where
         toJSON AdsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _alrNextPageToken,
-                  Just ("kind" .= _alrKind), ("ads" .=) <$> _alrAds])
+                  ("kind" .=) <$> _alrKind, ("ads" .=) <$> _alrAds])
+
+-- | DV360 IDs related to the custom event.
+--
+-- /See:/ 'dV3Ids' smart constructor.
+data DV3Ids =
+  DV3Ids'
+    { _dviDvCreativeId :: !(Maybe (Textual Int64))
+    , _dviDvLineItemId :: !(Maybe (Textual Int64))
+    , _dviKind :: !(Maybe Text)
+    , _dviDvSiteId :: !(Maybe (Textual Int64))
+    , _dviDvInsertionOrderId :: !(Maybe (Textual Int64))
+    , _dviDvCampaignId :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DV3Ids' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dviDvCreativeId'
+--
+-- * 'dviDvLineItemId'
+--
+-- * 'dviKind'
+--
+-- * 'dviDvSiteId'
+--
+-- * 'dviDvInsertionOrderId'
+--
+-- * 'dviDvCampaignId'
+dV3Ids
+    :: DV3Ids
+dV3Ids =
+  DV3Ids'
+    { _dviDvCreativeId = Nothing
+    , _dviDvLineItemId = Nothing
+    , _dviKind = Nothing
+    , _dviDvSiteId = Nothing
+    , _dviDvInsertionOrderId = Nothing
+    , _dviDvCampaignId = Nothing
+    }
+
+
+-- | Creative ID for DV360.
+dviDvCreativeId :: Lens' DV3Ids (Maybe Int64)
+dviDvCreativeId
+  = lens _dviDvCreativeId
+      (\ s a -> s{_dviDvCreativeId = a})
+      . mapping _Coerce
+
+-- | Line Item ID for DV360.
+dviDvLineItemId :: Lens' DV3Ids (Maybe Int64)
+dviDvLineItemId
+  = lens _dviDvLineItemId
+      (\ s a -> s{_dviDvLineItemId = a})
+      . mapping _Coerce
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#dV3Ids\".
+dviKind :: Lens' DV3Ids (Maybe Text)
+dviKind = lens _dviKind (\ s a -> s{_dviKind = a})
+
+-- | Site ID for DV360.
+dviDvSiteId :: Lens' DV3Ids (Maybe Int64)
+dviDvSiteId
+  = lens _dviDvSiteId (\ s a -> s{_dviDvSiteId = a}) .
+      mapping _Coerce
+
+-- | Insertion Order ID for DV360.
+dviDvInsertionOrderId :: Lens' DV3Ids (Maybe Int64)
+dviDvInsertionOrderId
+  = lens _dviDvInsertionOrderId
+      (\ s a -> s{_dviDvInsertionOrderId = a})
+      . mapping _Coerce
+
+-- | Campaign ID for DV360.
+dviDvCampaignId :: Lens' DV3Ids (Maybe Int64)
+dviDvCampaignId
+  = lens _dviDvCampaignId
+      (\ s a -> s{_dviDvCampaignId = a})
+      . mapping _Coerce
+
+instance FromJSON DV3Ids where
+        parseJSON
+          = withObject "DV3Ids"
+              (\ o ->
+                 DV3Ids' <$>
+                   (o .:? "dvCreativeId") <*> (o .:? "dvLineItemId") <*>
+                     (o .:? "kind")
+                     <*> (o .:? "dvSiteId")
+                     <*> (o .:? "dvInsertionOrderId")
+                     <*> (o .:? "dvCampaignId"))
+
+instance ToJSON DV3Ids where
+        toJSON DV3Ids'{..}
+          = object
+              (catMaybes
+                 [("dvCreativeId" .=) <$> _dviDvCreativeId,
+                  ("dvLineItemId" .=) <$> _dviDvLineItemId,
+                  ("kind" .=) <$> _dviKind,
+                  ("dvSiteId" .=) <$> _dviDvSiteId,
+                  ("dvInsertionOrderId" .=) <$> _dviDvInsertionOrderId,
+                  ("dvCampaignId" .=) <$> _dviDvCampaignId])
 
 -- | Video Settings
 --
 -- /See:/ 'siteVideoSettings' smart constructor.
 data SiteVideoSettings =
   SiteVideoSettings'
-    { _svsKind :: !Text
+    { _svsKind :: !(Maybe Text)
     , _svsCompanionSettings :: !(Maybe SiteCompanionSetting)
+    , _svsObaSettings :: !(Maybe ObaIcon)
+    , _svsObaEnabled :: !(Maybe Bool)
     , _svsTranscodeSettings :: !(Maybe SiteTranscodeSetting)
     , _svsOrientation :: !(Maybe SiteVideoSettingsOrientation)
     , _svsSkippableSettings :: !(Maybe SiteSkippableSetting)
@@ -2104,6 +2550,10 @@ data SiteVideoSettings =
 --
 -- * 'svsCompanionSettings'
 --
+-- * 'svsObaSettings'
+--
+-- * 'svsObaEnabled'
+--
 -- * 'svsTranscodeSettings'
 --
 -- * 'svsOrientation'
@@ -2113,8 +2563,10 @@ siteVideoSettings
     :: SiteVideoSettings
 siteVideoSettings =
   SiteVideoSettings'
-    { _svsKind = "dfareporting#siteVideoSettings"
+    { _svsKind = Nothing
     , _svsCompanionSettings = Nothing
+    , _svsObaSettings = Nothing
+    , _svsObaEnabled = Nothing
     , _svsTranscodeSettings = Nothing
     , _svsOrientation = Nothing
     , _svsSkippableSettings = Nothing
@@ -2123,7 +2575,7 @@ siteVideoSettings =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#siteVideoSettings\".
-svsKind :: Lens' SiteVideoSettings Text
+svsKind :: Lens' SiteVideoSettings (Maybe Text)
 svsKind = lens _svsKind (\ s a -> s{_svsKind = a})
 
 -- | Settings for the companion creatives of video creatives served to this
@@ -2132,6 +2584,19 @@ svsCompanionSettings :: Lens' SiteVideoSettings (Maybe SiteCompanionSetting)
 svsCompanionSettings
   = lens _svsCompanionSettings
       (\ s a -> s{_svsCompanionSettings = a})
+
+-- | Settings for the OBA icon of video creatives served to this site. This
+-- will act as default for new placements created under this site.
+svsObaSettings :: Lens' SiteVideoSettings (Maybe ObaIcon)
+svsObaSettings
+  = lens _svsObaSettings
+      (\ s a -> s{_svsObaSettings = a})
+
+-- | Whether OBA icons are enabled for this placement.
+svsObaEnabled :: Lens' SiteVideoSettings (Maybe Bool)
+svsObaEnabled
+  = lens _svsObaEnabled
+      (\ s a -> s{_svsObaEnabled = a})
 
 -- | Settings for the transcodes of video creatives served to this site. This
 -- will act as default for new placements created under this site.
@@ -2159,8 +2624,9 @@ instance FromJSON SiteVideoSettings where
           = withObject "SiteVideoSettings"
               (\ o ->
                  SiteVideoSettings' <$>
-                   (o .:? "kind" .!= "dfareporting#siteVideoSettings")
-                     <*> (o .:? "companionSettings")
+                   (o .:? "kind") <*> (o .:? "companionSettings") <*>
+                     (o .:? "obaSettings")
+                     <*> (o .:? "obaEnabled")
                      <*> (o .:? "transcodeSettings")
                      <*> (o .:? "orientation")
                      <*> (o .:? "skippableSettings"))
@@ -2169,8 +2635,10 @@ instance ToJSON SiteVideoSettings where
         toJSON SiteVideoSettings'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _svsKind),
+                 [("kind" .=) <$> _svsKind,
                   ("companionSettings" .=) <$> _svsCompanionSettings,
+                  ("obaSettings" .=) <$> _svsObaSettings,
+                  ("obaEnabled" .=) <$> _svsObaEnabled,
                   ("transcodeSettings" .=) <$> _svsTranscodeSettings,
                   ("orientation" .=) <$> _svsOrientation,
                   ("skippableSettings" .=) <$> _svsSkippableSettings])
@@ -2369,7 +2837,7 @@ instance ToJSON TagSettings where
 data SubAccountsListResponse =
   SubAccountsListResponse'
     { _salrNextPageToken :: !(Maybe Text)
-    , _salrKind :: !Text
+    , _salrKind :: !(Maybe Text)
     , _salrSubAccounts :: !(Maybe [SubAccount])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2389,7 +2857,7 @@ subAccountsListResponse
 subAccountsListResponse =
   SubAccountsListResponse'
     { _salrNextPageToken = Nothing
-    , _salrKind = "dfareporting#subaccountsListResponse"
+    , _salrKind = Nothing
     , _salrSubAccounts = Nothing
     }
 
@@ -2402,7 +2870,7 @@ salrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#subaccountsListResponse\".
-salrKind :: Lens' SubAccountsListResponse Text
+salrKind :: Lens' SubAccountsListResponse (Maybe Text)
 salrKind = lens _salrKind (\ s a -> s{_salrKind = a})
 
 -- | Subaccount collection.
@@ -2418,17 +2886,15 @@ instance FromJSON SubAccountsListResponse where
           = withObject "SubAccountsListResponse"
               (\ o ->
                  SubAccountsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#subaccountsListResponse")
-                     <*> (o .:? "subaccounts" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "subaccounts" .!= mempty))
 
 instance ToJSON SubAccountsListResponse where
         toJSON SubAccountsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _salrNextPageToken,
-                  Just ("kind" .= _salrKind),
+                  ("kind" .=) <$> _salrKind,
                   ("subaccounts" .=) <$> _salrSubAccounts])
 
 -- | Region List Response
@@ -2436,7 +2902,7 @@ instance ToJSON SubAccountsListResponse where
 -- /See:/ 'regionsListResponse' smart constructor.
 data RegionsListResponse =
   RegionsListResponse'
-    { _rlrKind :: !Text
+    { _rlrKind :: !(Maybe Text)
     , _rlrRegions :: !(Maybe [Region])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2452,13 +2918,12 @@ data RegionsListResponse =
 regionsListResponse
     :: RegionsListResponse
 regionsListResponse =
-  RegionsListResponse'
-    {_rlrKind = "dfareporting#regionsListResponse", _rlrRegions = Nothing}
+  RegionsListResponse' {_rlrKind = Nothing, _rlrRegions = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#regionsListResponse\".
-rlrKind :: Lens' RegionsListResponse Text
+rlrKind :: Lens' RegionsListResponse (Maybe Text)
 rlrKind = lens _rlrKind (\ s a -> s{_rlrKind = a})
 
 -- | Region collection.
@@ -2473,14 +2938,13 @@ instance FromJSON RegionsListResponse where
           = withObject "RegionsListResponse"
               (\ o ->
                  RegionsListResponse' <$>
-                   (o .:? "kind" .!= "dfareporting#regionsListResponse")
-                     <*> (o .:? "regions" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "regions" .!= mempty))
 
 instance ToJSON RegionsListResponse where
         toJSON RegionsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _rlrKind),
+                 [("kind" .=) <$> _rlrKind,
                   ("regions" .=) <$> _rlrRegions])
 
 -- | Dynamic Tag
@@ -2544,7 +3008,7 @@ instance ToJSON FloodlightActivityDynamicTag where
 -- /See:/ 'videoFormat' smart constructor.
 data VideoFormat =
   VideoFormat'
-    { _vfKind :: !Text
+    { _vfKind :: !(Maybe Text)
     , _vfFileType :: !(Maybe VideoFormatFileType)
     , _vfResolution :: !(Maybe Size)
     , _vfTargetBitRate :: !(Maybe (Textual Int32))
@@ -2570,7 +3034,7 @@ videoFormat
     :: VideoFormat
 videoFormat =
   VideoFormat'
-    { _vfKind = "dfareporting#videoFormat"
+    { _vfKind = Nothing
     , _vfFileType = Nothing
     , _vfResolution = Nothing
     , _vfTargetBitRate = Nothing
@@ -2580,7 +3044,7 @@ videoFormat =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#videoFormat\".
-vfKind :: Lens' VideoFormat Text
+vfKind :: Lens' VideoFormat (Maybe Text)
 vfKind = lens _vfKind (\ s a -> s{_vfKind = a})
 
 -- | File type of the video format.
@@ -2611,9 +3075,8 @@ instance FromJSON VideoFormat where
           = withObject "VideoFormat"
               (\ o ->
                  VideoFormat' <$>
-                   (o .:? "kind" .!= "dfareporting#videoFormat") <*>
-                     (o .:? "fileType")
-                     <*> (o .:? "resolution")
+                   (o .:? "kind") <*> (o .:? "fileType") <*>
+                     (o .:? "resolution")
                      <*> (o .:? "targetBitRate")
                      <*> (o .:? "id"))
 
@@ -2621,7 +3084,7 @@ instance ToJSON VideoFormat where
         toJSON VideoFormat'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _vfKind),
+                 [("kind" .=) <$> _vfKind,
                   ("fileType" .=) <$> _vfFileType,
                   ("resolution" .=) <$> _vfResolution,
                   ("targetBitRate" .=) <$> _vfTargetBitRate,
@@ -2636,11 +3099,10 @@ data DirectorySite =
   DirectorySite'
     { _dsSettings :: !(Maybe DirectorySiteSettings)
     , _dsInterstitialTagFormats :: !(Maybe [DirectorySiteInterstitialTagFormatsItem])
-    , _dsKind :: !Text
+    , _dsKind :: !(Maybe Text)
     , _dsURL :: !(Maybe Text)
     , _dsIdDimensionValue :: !(Maybe DimensionValue)
     , _dsInpageTagFormats :: !(Maybe [DirectorySiteInpageTagFormatsItem])
-    , _dsActive :: !(Maybe Bool)
     , _dsName :: !(Maybe Text)
     , _dsId :: !(Maybe (Textual Int64))
     }
@@ -2663,8 +3125,6 @@ data DirectorySite =
 --
 -- * 'dsInpageTagFormats'
 --
--- * 'dsActive'
---
 -- * 'dsName'
 --
 -- * 'dsId'
@@ -2674,11 +3134,10 @@ directorySite =
   DirectorySite'
     { _dsSettings = Nothing
     , _dsInterstitialTagFormats = Nothing
-    , _dsKind = "dfareporting#directorySite"
+    , _dsKind = Nothing
     , _dsURL = Nothing
     , _dsIdDimensionValue = Nothing
     , _dsInpageTagFormats = Nothing
-    , _dsActive = Nothing
     , _dsName = Nothing
     , _dsId = Nothing
     }
@@ -2701,7 +3160,7 @@ dsInterstitialTagFormats
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#directorySite\".
-dsKind :: Lens' DirectorySite Text
+dsKind :: Lens' DirectorySite (Maybe Text)
 dsKind = lens _dsKind (\ s a -> s{_dsKind = a})
 
 -- | URL of this directory site.
@@ -2725,10 +3184,6 @@ dsInpageTagFormats
       . _Default
       . _Coerce
 
--- | Whether this directory site is active.
-dsActive :: Lens' DirectorySite (Maybe Bool)
-dsActive = lens _dsActive (\ s a -> s{_dsActive = a})
-
 -- | Name of this directory site.
 dsName :: Lens' DirectorySite (Maybe Text)
 dsName = lens _dsName (\ s a -> s{_dsName = a})
@@ -2746,11 +3201,10 @@ instance FromJSON DirectorySite where
                  DirectorySite' <$>
                    (o .:? "settings") <*>
                      (o .:? "interstitialTagFormats" .!= mempty)
-                     <*> (o .:? "kind" .!= "dfareporting#directorySite")
+                     <*> (o .:? "kind")
                      <*> (o .:? "url")
                      <*> (o .:? "idDimensionValue")
                      <*> (o .:? "inpageTagFormats" .!= mempty)
-                     <*> (o .:? "active")
                      <*> (o .:? "name")
                      <*> (o .:? "id"))
 
@@ -2761,11 +3215,10 @@ instance ToJSON DirectorySite where
                  [("settings" .=) <$> _dsSettings,
                   ("interstitialTagFormats" .=) <$>
                     _dsInterstitialTagFormats,
-                  Just ("kind" .= _dsKind), ("url" .=) <$> _dsURL,
+                  ("kind" .=) <$> _dsKind, ("url" .=) <$> _dsURL,
                   ("idDimensionValue" .=) <$> _dsIdDimensionValue,
                   ("inpageTagFormats" .=) <$> _dsInpageTagFormats,
-                  ("active" .=) <$> _dsActive, ("name" .=) <$> _dsName,
-                  ("id" .=) <$> _dsId])
+                  ("name" .=) <$> _dsName, ("id" .=) <$> _dsId])
 
 -- | The properties of the report.
 --
@@ -2856,7 +3309,7 @@ data FloodlightActivityGroup =
   FloodlightActivityGroup'
     { _fagTagString :: !(Maybe Text)
     , _fagFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _fagKind :: !Text
+    , _fagKind :: !(Maybe Text)
     , _fagAdvertiserId :: !(Maybe (Textual Int64))
     , _fagAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _fagIdDimensionValue :: !(Maybe DimensionValue)
@@ -2903,7 +3356,7 @@ floodlightActivityGroup =
   FloodlightActivityGroup'
     { _fagTagString = Nothing
     , _fagFloodlightConfigurationId = Nothing
-    , _fagKind = "dfareporting#floodlightActivityGroup"
+    , _fagKind = Nothing
     , _fagAdvertiserId = Nothing
     , _fagAdvertiserIdDimensionValue = Nothing
     , _fagIdDimensionValue = Nothing
@@ -2920,9 +3373,9 @@ floodlightActivityGroup =
 -- use to identify the activity group that the activity belongs to. This is
 -- optional: if empty, a new tag string will be generated for you. This
 -- string must be 1 to 8 characters long, with valid characters being
--- [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among
--- activity groups of the same floodlight configuration. This field is
--- read-only after insertion.
+-- a-z0-9[ _ ]. This tag string must also be unique among activity groups
+-- of the same floodlight configuration. This field is read-only after
+-- insertion.
 fagTagString :: Lens' FloodlightActivityGroup (Maybe Text)
 fagTagString
   = lens _fagTagString (\ s a -> s{_fagTagString = a})
@@ -2937,7 +3390,7 @@ fagFloodlightConfigurationId
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightActivityGroup\".
-fagKind :: Lens' FloodlightActivityGroup Text
+fagKind :: Lens' FloodlightActivityGroup (Maybe Text)
 fagKind = lens _fagKind (\ s a -> s{_fagKind = a})
 
 -- | Advertiser ID of this floodlight activity group. If this field is left
@@ -3011,9 +3464,7 @@ instance FromJSON FloodlightActivityGroup where
                  FloodlightActivityGroup' <$>
                    (o .:? "tagString") <*>
                      (o .:? "floodlightConfigurationId")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightActivityGroup")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "idDimensionValue")
@@ -3032,7 +3483,7 @@ instance ToJSON FloodlightActivityGroup where
                  [("tagString" .=) <$> _fagTagString,
                   ("floodlightConfigurationId" .=) <$>
                     _fagFloodlightConfigurationId,
-                  Just ("kind" .= _fagKind),
+                  ("kind" .=) <$> _fagKind,
                   ("advertiserId" .=) <$> _fagAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _fagAdvertiserIdDimensionValue,
@@ -3052,7 +3503,7 @@ data CrossDimensionReachReportCompatibleFields =
   CrossDimensionReachReportCompatibleFields'
     { _cdrrcfMetrics :: !(Maybe [Metric])
     , _cdrrcfBreakdown :: !(Maybe [Dimension])
-    , _cdrrcfKind :: !Text
+    , _cdrrcfKind :: !(Maybe Text)
     , _cdrrcfDimensionFilters :: !(Maybe [Dimension])
     , _cdrrcfOverlapMetrics :: !(Maybe [Metric])
     }
@@ -3078,7 +3529,7 @@ crossDimensionReachReportCompatibleFields =
   CrossDimensionReachReportCompatibleFields'
     { _cdrrcfMetrics = Nothing
     , _cdrrcfBreakdown = Nothing
-    , _cdrrcfKind = "dfareporting#crossDimensionReachReportCompatibleFields"
+    , _cdrrcfKind = Nothing
     , _cdrrcfDimensionFilters = Nothing
     , _cdrrcfOverlapMetrics = Nothing
     }
@@ -3104,7 +3555,7 @@ cdrrcfBreakdown
 
 -- | The kind of resource this is, in this case
 -- dfareporting#crossDimensionReachReportCompatibleFields.
-cdrrcfKind :: Lens' CrossDimensionReachReportCompatibleFields Text
+cdrrcfKind :: Lens' CrossDimensionReachReportCompatibleFields (Maybe Text)
 cdrrcfKind
   = lens _cdrrcfKind (\ s a -> s{_cdrrcfKind = a})
 
@@ -3136,9 +3587,7 @@ instance FromJSON
                  CrossDimensionReachReportCompatibleFields' <$>
                    (o .:? "metrics" .!= mempty) <*>
                      (o .:? "breakdown" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#crossDimensionReachReportCompatibleFields")
+                     <*> (o .:? "kind")
                      <*> (o .:? "dimensionFilters" .!= mempty)
                      <*> (o .:? "overlapMetrics" .!= mempty))
 
@@ -3150,9 +3599,73 @@ instance ToJSON
               (catMaybes
                  [("metrics" .=) <$> _cdrrcfMetrics,
                   ("breakdown" .=) <$> _cdrrcfBreakdown,
-                  Just ("kind" .= _cdrrcfKind),
+                  ("kind" .=) <$> _cdrrcfKind,
                   ("dimensionFilters" .=) <$> _cdrrcfDimensionFilters,
                   ("overlapMetrics" .=) <$> _cdrrcfOverlapMetrics])
+
+-- | Represents a DfaReporting channel grouping rule.
+--
+-- /See:/ 'channelGroupingRule' smart constructor.
+data ChannelGroupingRule =
+  ChannelGroupingRule'
+    { _cgrKind :: !(Maybe Text)
+    , _cgrName :: !(Maybe Text)
+    , _cgrDisjunctiveMatchStatements :: !(Maybe [DisjunctiveMatchStatement])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ChannelGroupingRule' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cgrKind'
+--
+-- * 'cgrName'
+--
+-- * 'cgrDisjunctiveMatchStatements'
+channelGroupingRule
+    :: ChannelGroupingRule
+channelGroupingRule =
+  ChannelGroupingRule'
+    { _cgrKind = Nothing
+    , _cgrName = Nothing
+    , _cgrDisjunctiveMatchStatements = Nothing
+    }
+
+
+-- | The kind of resource this is, in this case
+-- dfareporting#channelGroupingRule.
+cgrKind :: Lens' ChannelGroupingRule (Maybe Text)
+cgrKind = lens _cgrKind (\ s a -> s{_cgrKind = a})
+
+-- | Rule name.
+cgrName :: Lens' ChannelGroupingRule (Maybe Text)
+cgrName = lens _cgrName (\ s a -> s{_cgrName = a})
+
+-- | The disjunctive match statements contained within this rule.
+cgrDisjunctiveMatchStatements :: Lens' ChannelGroupingRule [DisjunctiveMatchStatement]
+cgrDisjunctiveMatchStatements
+  = lens _cgrDisjunctiveMatchStatements
+      (\ s a -> s{_cgrDisjunctiveMatchStatements = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON ChannelGroupingRule where
+        parseJSON
+          = withObject "ChannelGroupingRule"
+              (\ o ->
+                 ChannelGroupingRule' <$>
+                   (o .:? "kind") <*> (o .:? "name") <*>
+                     (o .:? "disjunctiveMatchStatements" .!= mempty))
+
+instance ToJSON ChannelGroupingRule where
+        toJSON ChannelGroupingRule'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _cgrKind, ("name" .=) <$> _cgrName,
+                  ("disjunctiveMatchStatements" .=) <$>
+                    _cgrDisjunctiveMatchStatements])
 
 -- | FsCommand.
 --
@@ -3333,7 +3846,7 @@ instance ToJSON PlacementAssignment where
 -- /See:/ 'creativeFieldValue' smart constructor.
 data CreativeFieldValue =
   CreativeFieldValue'
-    { _cfvKind :: !Text
+    { _cfvKind :: !(Maybe Text)
     , _cfvValue :: !(Maybe Text)
     , _cfvId :: !(Maybe (Textual Int64))
     }
@@ -3353,15 +3866,12 @@ creativeFieldValue
     :: CreativeFieldValue
 creativeFieldValue =
   CreativeFieldValue'
-    { _cfvKind = "dfareporting#creativeFieldValue"
-    , _cfvValue = Nothing
-    , _cfvId = Nothing
-    }
+    {_cfvKind = Nothing, _cfvValue = Nothing, _cfvId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeFieldValue\".
-cfvKind :: Lens' CreativeFieldValue Text
+cfvKind :: Lens' CreativeFieldValue (Maybe Text)
 cfvKind = lens _cfvKind (\ s a -> s{_cfvKind = a})
 
 -- | Value of this creative field value. It needs to be less than 256
@@ -3381,15 +3891,13 @@ instance FromJSON CreativeFieldValue where
           = withObject "CreativeFieldValue"
               (\ o ->
                  CreativeFieldValue' <$>
-                   (o .:? "kind" .!= "dfareporting#creativeFieldValue")
-                     <*> (o .:? "value")
-                     <*> (o .:? "id"))
+                   (o .:? "kind") <*> (o .:? "value") <*> (o .:? "id"))
 
 instance ToJSON CreativeFieldValue where
         toJSON CreativeFieldValue'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cfvKind),
+                 [("kind" .=) <$> _cfvKind,
                   ("value" .=) <$> _cfvValue, ("id" .=) <$> _cfvId])
 
 -- | Represents a DimensionValuesRequest.
@@ -3397,7 +3905,7 @@ instance ToJSON CreativeFieldValue where
 -- /See:/ 'dimensionValueRequest' smart constructor.
 data DimensionValueRequest =
   DimensionValueRequest'
-    { _dvrKind :: !Text
+    { _dvrKind :: !(Maybe Text)
     , _dvrEndDate :: !(Maybe Date')
     , _dvrFilters :: !(Maybe [DimensionFilter])
     , _dvrStartDate :: !(Maybe Date')
@@ -3423,7 +3931,7 @@ dimensionValueRequest
     :: DimensionValueRequest
 dimensionValueRequest =
   DimensionValueRequest'
-    { _dvrKind = "dfareporting#dimensionValueRequest"
+    { _dvrKind = Nothing
     , _dvrEndDate = Nothing
     , _dvrFilters = Nothing
     , _dvrStartDate = Nothing
@@ -3432,12 +3940,10 @@ dimensionValueRequest =
 
 
 -- | The kind of request this is, in this case
--- dfareporting#dimensionValueRequest.
-dvrKind :: Lens' DimensionValueRequest Text
+-- dfareporting#dimensionValueRequest .
+dvrKind :: Lens' DimensionValueRequest (Maybe Text)
 dvrKind = lens _dvrKind (\ s a -> s{_dvrKind = a})
 
--- | The end date of the date range for which to retrieve dimension values. A
--- string of the format \"yyyy-MM-dd\".
 dvrEndDate :: Lens' DimensionValueRequest (Maybe Day)
 dvrEndDate
   = lens _dvrEndDate (\ s a -> s{_dvrEndDate = a}) .
@@ -3450,8 +3956,6 @@ dvrFilters
       _Default
       . _Coerce
 
--- | The start date of the date range for which to retrieve dimension values.
--- A string of the format \"yyyy-MM-dd\".
 dvrStartDate :: Lens' DimensionValueRequest (Maybe Day)
 dvrStartDate
   = lens _dvrStartDate (\ s a -> s{_dvrStartDate = a})
@@ -3468,10 +3972,8 @@ instance FromJSON DimensionValueRequest where
           = withObject "DimensionValueRequest"
               (\ o ->
                  DimensionValueRequest' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#dimensionValueRequest")
-                     <*> (o .:? "endDate")
-                     <*> (o .:? "filters" .!= mempty)
+                   (o .:? "kind") <*> (o .:? "endDate") <*>
+                     (o .:? "filters" .!= mempty)
                      <*> (o .:? "startDate")
                      <*> (o .:? "dimensionName"))
 
@@ -3479,7 +3981,7 @@ instance ToJSON DimensionValueRequest where
         toJSON DimensionValueRequest'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _dvrKind),
+                 [("kind" .=) <$> _dvrKind,
                   ("endDate" .=) <$> _dvrEndDate,
                   ("filters" .=) <$> _dvrFilters,
                   ("startDate" .=) <$> _dvrStartDate,
@@ -3490,7 +3992,7 @@ instance ToJSON DimensionValueRequest where
 -- /See:/ 'floodlightConfigurationsListResponse' smart constructor.
 data FloodlightConfigurationsListResponse =
   FloodlightConfigurationsListResponse'
-    { _fclrKind :: !Text
+    { _fclrKind :: !(Maybe Text)
     , _fclrFloodlightConfigurations :: !(Maybe [FloodlightConfiguration])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3507,14 +4009,12 @@ floodlightConfigurationsListResponse
     :: FloodlightConfigurationsListResponse
 floodlightConfigurationsListResponse =
   FloodlightConfigurationsListResponse'
-    { _fclrKind = "dfareporting#floodlightConfigurationsListResponse"
-    , _fclrFloodlightConfigurations = Nothing
-    }
+    {_fclrKind = Nothing, _fclrFloodlightConfigurations = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightConfigurationsListResponse\".
-fclrKind :: Lens' FloodlightConfigurationsListResponse Text
+fclrKind :: Lens' FloodlightConfigurationsListResponse (Maybe Text)
 fclrKind = lens _fclrKind (\ s a -> s{_fclrKind = a})
 
 -- | Floodlight configuration collection.
@@ -3532,16 +4032,15 @@ instance FromJSON
           = withObject "FloodlightConfigurationsListResponse"
               (\ o ->
                  FloodlightConfigurationsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#floodlightConfigurationsListResponse")
-                     <*> (o .:? "floodlightConfigurations" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "floodlightConfigurations" .!= mempty))
 
 instance ToJSON FloodlightConfigurationsListResponse
          where
         toJSON FloodlightConfigurationsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _fclrKind),
+                 [("kind" .=) <$> _fclrKind,
                   ("floodlightConfigurations" .=) <$>
                     _fclrFloodlightConfigurations])
 
@@ -3551,7 +4050,7 @@ instance ToJSON FloodlightConfigurationsListResponse
 data FloodlightActivitiesListResponse =
   FloodlightActivitiesListResponse'
     { _falrNextPageToken :: !(Maybe Text)
-    , _falrKind :: !Text
+    , _falrKind :: !(Maybe Text)
     , _falrFloodlightActivities :: !(Maybe [FloodlightActivity])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -3571,7 +4070,7 @@ floodlightActivitiesListResponse
 floodlightActivitiesListResponse =
   FloodlightActivitiesListResponse'
     { _falrNextPageToken = Nothing
-    , _falrKind = "dfareporting#floodlightActivitiesListResponse"
+    , _falrKind = Nothing
     , _falrFloodlightActivities = Nothing
     }
 
@@ -3584,7 +4083,7 @@ falrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightActivitiesListResponse\".
-falrKind :: Lens' FloodlightActivitiesListResponse Text
+falrKind :: Lens' FloodlightActivitiesListResponse (Maybe Text)
 falrKind = lens _falrKind (\ s a -> s{_falrKind = a})
 
 -- | Floodlight activity collection.
@@ -3601,10 +4100,8 @@ instance FromJSON FloodlightActivitiesListResponse
           = withObject "FloodlightActivitiesListResponse"
               (\ o ->
                  FloodlightActivitiesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightActivitiesListResponse")
-                     <*> (o .:? "floodlightActivities" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "floodlightActivities" .!= mempty))
 
 instance ToJSON FloodlightActivitiesListResponse
          where
@@ -3612,7 +4109,7 @@ instance ToJSON FloodlightActivitiesListResponse
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _falrNextPageToken,
-                  Just ("kind" .= _falrKind),
+                  ("kind" .=) <$> _falrKind,
                   ("floodlightActivities" .=) <$>
                     _falrFloodlightActivities])
 
@@ -3677,7 +4174,7 @@ instance ToJSON CreativeFieldAssignment where
 -- /See:/ 'advertiserGroup' smart constructor.
 data AdvertiserGroup =
   AdvertiserGroup'
-    { _agKind :: !Text
+    { _agKind :: !(Maybe Text)
     , _agAccountId :: !(Maybe (Textual Int64))
     , _agName :: !(Maybe Text)
     , _agId :: !(Maybe (Textual Int64))
@@ -3700,7 +4197,7 @@ advertiserGroup
     :: AdvertiserGroup
 advertiserGroup =
   AdvertiserGroup'
-    { _agKind = "dfareporting#advertiserGroup"
+    { _agKind = Nothing
     , _agAccountId = Nothing
     , _agName = Nothing
     , _agId = Nothing
@@ -3709,7 +4206,7 @@ advertiserGroup =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#advertiserGroup\".
-agKind :: Lens' AdvertiserGroup Text
+agKind :: Lens' AdvertiserGroup (Maybe Text)
 agKind = lens _agKind (\ s a -> s{_agKind = a})
 
 -- | Account ID of this advertiser group. This is a read-only field that can
@@ -3736,16 +4233,15 @@ instance FromJSON AdvertiserGroup where
           = withObject "AdvertiserGroup"
               (\ o ->
                  AdvertiserGroup' <$>
-                   (o .:? "kind" .!= "dfareporting#advertiserGroup") <*>
-                     (o .:? "accountId")
-                     <*> (o .:? "name")
+                   (o .:? "kind") <*> (o .:? "accountId") <*>
+                     (o .:? "name")
                      <*> (o .:? "id"))
 
 instance ToJSON AdvertiserGroup where
         toJSON AdvertiserGroup'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _agKind),
+                 [("kind" .=) <$> _agKind,
                   ("accountId" .=) <$> _agAccountId,
                   ("name" .=) <$> _agName, ("id" .=) <$> _agId])
 
@@ -4004,7 +4500,7 @@ instance ToJSON CreativeOptimizationConfiguration
 -- /See:/ 'siteTranscodeSetting' smart constructor.
 data SiteTranscodeSetting =
   SiteTranscodeSetting'
-    { _stsKind :: !Text
+    { _stsKind :: !(Maybe Text)
     , _stsEnabledVideoFormats :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4020,18 +4516,15 @@ data SiteTranscodeSetting =
 siteTranscodeSetting
     :: SiteTranscodeSetting
 siteTranscodeSetting =
-  SiteTranscodeSetting'
-    { _stsKind = "dfareporting#siteTranscodeSetting"
-    , _stsEnabledVideoFormats = Nothing
-    }
+  SiteTranscodeSetting' {_stsKind = Nothing, _stsEnabledVideoFormats = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#siteTranscodeSetting\".
-stsKind :: Lens' SiteTranscodeSetting Text
+stsKind :: Lens' SiteTranscodeSetting (Maybe Text)
 stsKind = lens _stsKind (\ s a -> s{_stsKind = a})
 
--- | Whitelist of video formats to be served to this site template. Set this
+-- | Allowlist of video formats to be served to this site template. Set this
 -- list to null or empty to serve all video formats.
 stsEnabledVideoFormats :: Lens' SiteTranscodeSetting [Int32]
 stsEnabledVideoFormats
@@ -4045,15 +4538,14 @@ instance FromJSON SiteTranscodeSetting where
           = withObject "SiteTranscodeSetting"
               (\ o ->
                  SiteTranscodeSetting' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#siteTranscodeSetting")
-                     <*> (o .:? "enabledVideoFormats" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "enabledVideoFormats" .!= mempty))
 
 instance ToJSON SiteTranscodeSetting where
         toJSON SiteTranscodeSetting'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _stsKind),
+                 [("kind" .=) <$> _stsKind,
                   ("enabledVideoFormats" .=) <$>
                     _stsEnabledVideoFormats])
 
@@ -4246,7 +4738,7 @@ data PlacementStrategiesListResponse =
   PlacementStrategiesListResponse'
     { _pslrPlacementStrategies :: !(Maybe [PlacementStrategy])
     , _pslrNextPageToken :: !(Maybe Text)
-    , _pslrKind :: !Text
+    , _pslrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4266,7 +4758,7 @@ placementStrategiesListResponse =
   PlacementStrategiesListResponse'
     { _pslrPlacementStrategies = Nothing
     , _pslrNextPageToken = Nothing
-    , _pslrKind = "dfareporting#placementStrategiesListResponse"
+    , _pslrKind = Nothing
     }
 
 
@@ -4286,7 +4778,7 @@ pslrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementStrategiesListResponse\".
-pslrKind :: Lens' PlacementStrategiesListResponse Text
+pslrKind :: Lens' PlacementStrategiesListResponse (Maybe Text)
 pslrKind = lens _pslrKind (\ s a -> s{_pslrKind = a})
 
 instance FromJSON PlacementStrategiesListResponse
@@ -4297,9 +4789,7 @@ instance FromJSON PlacementStrategiesListResponse
                  PlacementStrategiesListResponse' <$>
                    (o .:? "placementStrategies" .!= mempty) <*>
                      (o .:? "nextPageToken")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#placementStrategiesListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON PlacementStrategiesListResponse where
         toJSON PlacementStrategiesListResponse'{..}
@@ -4308,7 +4798,7 @@ instance ToJSON PlacementStrategiesListResponse where
                  [("placementStrategies" .=) <$>
                     _pslrPlacementStrategies,
                   ("nextPageToken" .=) <$> _pslrNextPageToken,
-                  Just ("kind" .= _pslrKind)])
+                  ("kind" .=) <$> _pslrKind])
 
 -- | Update Conversions Response.
 --
@@ -4316,7 +4806,7 @@ instance ToJSON PlacementStrategiesListResponse where
 data ConversionsBatchUpdateResponse =
   ConversionsBatchUpdateResponse'
     { _cburStatus :: !(Maybe [ConversionStatus])
-    , _cburKind :: !Text
+    , _cburKind :: !(Maybe Text)
     , _cburHasFailures :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4335,10 +4825,7 @@ conversionsBatchUpdateResponse
     :: ConversionsBatchUpdateResponse
 conversionsBatchUpdateResponse =
   ConversionsBatchUpdateResponse'
-    { _cburStatus = Nothing
-    , _cburKind = "dfareporting#conversionsBatchUpdateResponse"
-    , _cburHasFailures = Nothing
-    }
+    {_cburStatus = Nothing, _cburKind = Nothing, _cburHasFailures = Nothing}
 
 
 -- | The update status of each conversion. Statuses are returned in the same
@@ -4351,7 +4838,7 @@ cburStatus
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionsBatchUpdateResponse\".
-cburKind :: Lens' ConversionsBatchUpdateResponse Text
+cburKind :: Lens' ConversionsBatchUpdateResponse (Maybe Text)
 cburKind = lens _cburKind (\ s a -> s{_cburKind = a})
 
 -- | Indicates that some or all conversions failed to update.
@@ -4366,17 +4853,15 @@ instance FromJSON ConversionsBatchUpdateResponse
           = withObject "ConversionsBatchUpdateResponse"
               (\ o ->
                  ConversionsBatchUpdateResponse' <$>
-                   (o .:? "status" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#conversionsBatchUpdateResponse")
-                     <*> (o .:? "hasFailures"))
+                   (o .:? "status" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "hasFailures"))
 
 instance ToJSON ConversionsBatchUpdateResponse where
         toJSON ConversionsBatchUpdateResponse'{..}
           = object
               (catMaybes
                  [("status" .=) <$> _cburStatus,
-                  Just ("kind" .= _cburKind),
+                  ("kind" .=) <$> _cburKind,
                   ("hasFailures" .=) <$> _cburHasFailures])
 
 -- | Contains properties of a Campaign Manager subaccount.
@@ -4384,7 +4869,7 @@ instance ToJSON ConversionsBatchUpdateResponse where
 -- /See:/ 'subAccount' smart constructor.
 data SubAccount =
   SubAccount'
-    { _saKind :: !Text
+    { _saKind :: !(Maybe Text)
     , _saAvailablePermissionIds :: !(Maybe [Textual Int64])
     , _saAccountId :: !(Maybe (Textual Int64))
     , _saName :: !(Maybe Text)
@@ -4410,7 +4895,7 @@ subAccount
     :: SubAccount
 subAccount =
   SubAccount'
-    { _saKind = "dfareporting#subaccount"
+    { _saKind = Nothing
     , _saAvailablePermissionIds = Nothing
     , _saAccountId = Nothing
     , _saName = Nothing
@@ -4420,7 +4905,7 @@ subAccount =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#subaccount\".
-saKind :: Lens' SubAccount Text
+saKind :: Lens' SubAccount (Maybe Text)
 saKind = lens _saKind (\ s a -> s{_saKind = a})
 
 -- | IDs of the available user role permissions for this subaccount.
@@ -4454,7 +4939,7 @@ instance FromJSON SubAccount where
           = withObject "SubAccount"
               (\ o ->
                  SubAccount' <$>
-                   (o .:? "kind" .!= "dfareporting#subaccount") <*>
+                   (o .:? "kind") <*>
                      (o .:? "availablePermissionIds" .!= mempty)
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
@@ -4464,7 +4949,7 @@ instance ToJSON SubAccount where
         toJSON SubAccount'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _saKind),
+                 [("kind" .=) <$> _saKind,
                   ("availablePermissionIds" .=) <$>
                     _saAvailablePermissionIds,
                   ("accountId" .=) <$> _saAccountId,
@@ -4477,7 +4962,7 @@ data InventoryItemsListResponse =
   InventoryItemsListResponse'
     { _iilrInventoryItems :: !(Maybe [InventoryItem])
     , _iilrNextPageToken :: !(Maybe Text)
-    , _iilrKind :: !Text
+    , _iilrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4497,7 +4982,7 @@ inventoryItemsListResponse =
   InventoryItemsListResponse'
     { _iilrInventoryItems = Nothing
     , _iilrNextPageToken = Nothing
-    , _iilrKind = "dfareporting#inventoryItemsListResponse"
+    , _iilrKind = Nothing
     }
 
 
@@ -4517,7 +5002,7 @@ iilrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#inventoryItemsListResponse\".
-iilrKind :: Lens' InventoryItemsListResponse Text
+iilrKind :: Lens' InventoryItemsListResponse (Maybe Text)
 iilrKind = lens _iilrKind (\ s a -> s{_iilrKind = a})
 
 instance FromJSON InventoryItemsListResponse where
@@ -4527,9 +5012,7 @@ instance FromJSON InventoryItemsListResponse where
                  InventoryItemsListResponse' <$>
                    (o .:? "inventoryItems" .!= mempty) <*>
                      (o .:? "nextPageToken")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#inventoryItemsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON InventoryItemsListResponse where
         toJSON InventoryItemsListResponse'{..}
@@ -4537,7 +5020,7 @@ instance ToJSON InventoryItemsListResponse where
               (catMaybes
                  [("inventoryItems" .=) <$> _iilrInventoryItems,
                   ("nextPageToken" .=) <$> _iilrNextPageToken,
-                  Just ("kind" .= _iilrKind)])
+                  ("kind" .=) <$> _iilrKind])
 
 -- | A Universal Ad ID as per the VAST 4.0 spec. Applicable to the following
 -- creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID.
@@ -4602,7 +5085,7 @@ data Ad =
     , _aDayPartTargeting :: !(Maybe DayPartTargeting)
     , _aSize :: !(Maybe Size)
     , _aStartTime :: !(Maybe DateTime')
-    , _aKind :: !Text
+    , _aKind :: !(Maybe Text)
     , _aClickThroughURLSuffixProperties :: !(Maybe ClickThroughURLSuffixProperties)
     , _aCampaignIdDimensionValue :: !(Maybe DimensionValue)
     , _aAdvertiserId :: !(Maybe (Textual Int64))
@@ -4730,7 +5213,7 @@ ad =
     , _aDayPartTargeting = Nothing
     , _aSize = Nothing
     , _aStartTime = Nothing
-    , _aKind = "dfareporting#ad"
+    , _aKind = Nothing
     , _aClickThroughURLSuffixProperties = Nothing
     , _aCampaignIdDimensionValue = Nothing
     , _aAdvertiserId = Nothing
@@ -4795,7 +5278,7 @@ aGeoTargeting
 -- | Creative rotation for this ad. Applicable when type is
 -- AD_SERVING_DEFAULT_AD, AD_SERVING_STANDARD_AD, or AD_SERVING_TRACKING.
 -- When type is AD_SERVING_DEFAULT_AD, this field should have exactly one
--- creativeAssignment.
+-- creativeAssignment .
 aCreativeRotation :: Lens' Ad (Maybe CreativeRotation)
 aCreativeRotation
   = lens _aCreativeRotation
@@ -4829,9 +5312,6 @@ aDayPartTargeting
 aSize :: Lens' Ad (Maybe Size)
 aSize = lens _aSize (\ s a -> s{_aSize = a})
 
--- | Date and time that this ad should start serving. If creating an ad, this
--- field must be a time in the future. This is a required field on
--- insertion.
 aStartTime :: Lens' Ad (Maybe UTCTime)
 aStartTime
   = lens _aStartTime (\ s a -> s{_aStartTime = a}) .
@@ -4839,7 +5319,7 @@ aStartTime
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#ad\".
-aKind :: Lens' Ad Text
+aKind :: Lens' Ad (Maybe Text)
 aKind = lens _aKind (\ s a -> s{_aKind = a})
 
 -- | Click-through URL suffix properties for this ad. Applies to the URL in
@@ -4937,8 +5417,6 @@ aKeyValueTargetingExpression
   = lens _aKeyValueTargetingExpression
       (\ s a -> s{_aKeyValueTargetingExpression = a})
 
--- | Date and time that this ad should stop serving. Must be later than the
--- start time. This is a required field on insertion.
 aEndTime :: Lens' Ad (Maybe UTCTime)
 aEndTime
   = lens _aEndTime (\ s a -> s{_aEndTime = a}) .
@@ -4981,7 +5459,7 @@ aSubAccountId
       . mapping _Coerce
 
 -- | Type of ad. This is a required field on insertion. Note that default ads
--- (AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative
+-- ( AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative
 -- resource).
 aType :: Lens' Ad (Maybe AdType)
 aType = lens _aType (\ s a -> s{_aType = a})
@@ -5057,7 +5535,7 @@ instance FromJSON Ad where
                      <*> (o .:? "dayPartTargeting")
                      <*> (o .:? "size")
                      <*> (o .:? "startTime")
-                     <*> (o .:? "kind" .!= "dfareporting#ad")
+                     <*> (o .:? "kind")
                      <*> (o .:? "clickThroughUrlSuffixProperties")
                      <*> (o .:? "campaignIdDimensionValue")
                      <*> (o .:? "advertiserId")
@@ -5103,7 +5581,7 @@ instance ToJSON Ad where
                   ("dayPartTargeting" .=) <$> _aDayPartTargeting,
                   ("size" .=) <$> _aSize,
                   ("startTime" .=) <$> _aStartTime,
-                  Just ("kind" .= _aKind),
+                  ("kind" .=) <$> _aKind,
                   ("clickThroughUrlSuffixProperties" .=) <$>
                     _aClickThroughURLSuffixProperties,
                   ("campaignIdDimensionValue" .=) <$>
@@ -5151,7 +5629,7 @@ data Project =
     , _pTargetCpmNanos :: !(Maybe (Textual Int64))
     , _pTargetConversions :: !(Maybe (Textual Int64))
     , _pBudget :: !(Maybe (Textual Int64))
-    , _pKind :: !Text
+    , _pKind :: !(Maybe Text)
     , _pAdvertiserId :: !(Maybe (Textual Int64))
     , _pEndDate :: !(Maybe Date')
     , _pOverview :: !(Maybe Text)
@@ -5228,7 +5706,7 @@ project =
     , _pTargetCpmNanos = Nothing
     , _pTargetConversions = Nothing
     , _pBudget = Nothing
-    , _pKind = "dfareporting#project"
+    , _pKind = Nothing
     , _pAdvertiserId = Nothing
     , _pEndDate = Nothing
     , _pOverview = Nothing
@@ -5286,7 +5764,7 @@ pBudget
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#project\".
-pKind :: Lens' Project Text
+pKind :: Lens' Project (Maybe Text)
 pKind = lens _pKind (\ s a -> s{_pKind = a})
 
 -- | Advertiser ID of this project.
@@ -5296,7 +5774,6 @@ pAdvertiserId
       (\ s a -> s{_pAdvertiserId = a})
       . mapping _Coerce
 
--- | End date of the project.
 pEndDate :: Lens' Project (Maybe Day)
 pEndDate
   = lens _pEndDate (\ s a -> s{_pEndDate = a}) .
@@ -5314,7 +5791,6 @@ pTargetImpressions
       (\ s a -> s{_pTargetImpressions = a})
       . mapping _Coerce
 
--- | Start date of the project.
 pStartDate :: Lens' Project (Maybe Day)
 pStartDate
   = lens _pStartDate (\ s a -> s{_pStartDate = a}) .
@@ -5396,7 +5872,7 @@ instance FromJSON Project where
                      <*> (o .:? "targetCpmNanos")
                      <*> (o .:? "targetConversions")
                      <*> (o .:? "budget")
-                     <*> (o .:? "kind" .!= "dfareporting#project")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "endDate")
                      <*> (o .:? "overview")
@@ -5422,7 +5898,7 @@ instance ToJSON Project where
                   ("clientBillingCode" .=) <$> _pClientBillingCode,
                   ("targetCpmNanos" .=) <$> _pTargetCpmNanos,
                   ("targetConversions" .=) <$> _pTargetConversions,
-                  ("budget" .=) <$> _pBudget, Just ("kind" .= _pKind),
+                  ("budget" .=) <$> _pBudget, ("kind" .=) <$> _pKind,
                   ("advertiserId" .=) <$> _pAdvertiserId,
                   ("endDate" .=) <$> _pEndDate,
                   ("overview" .=) <$> _pOverview,
@@ -5574,7 +6050,7 @@ instance ToJSON ReportFloodlightCriteria where
 data Size =
   Size'
     { _sHeight :: !(Maybe (Textual Int32))
-    , _sKind :: !Text
+    , _sKind :: !(Maybe Text)
     , _sWidth :: !(Maybe (Textual Int32))
     , _sIab :: !(Maybe Bool)
     , _sId :: !(Maybe (Textual Int64))
@@ -5600,7 +6076,7 @@ size
 size =
   Size'
     { _sHeight = Nothing
-    , _sKind = "dfareporting#size"
+    , _sKind = Nothing
     , _sWidth = Nothing
     , _sIab = Nothing
     , _sId = Nothing
@@ -5615,7 +6091,7 @@ sHeight
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#size\".
-sKind :: Lens' Size Text
+sKind :: Lens' Size (Maybe Text)
 sKind = lens _sKind (\ s a -> s{_sKind = a})
 
 -- | Width of this size. Acceptable values are 0 to 32767, inclusive.
@@ -5638,9 +6114,8 @@ instance FromJSON Size where
           = withObject "Size"
               (\ o ->
                  Size' <$>
-                   (o .:? "height") <*>
-                     (o .:? "kind" .!= "dfareporting#size")
-                     <*> (o .:? "width")
+                   (o .:? "height") <*> (o .:? "kind") <*>
+                     (o .:? "width")
                      <*> (o .:? "iab")
                      <*> (o .:? "id"))
 
@@ -5648,7 +6123,7 @@ instance ToJSON Size where
         toJSON Size'{..}
           = object
               (catMaybes
-                 [("height" .=) <$> _sHeight, Just ("kind" .= _sKind),
+                 [("height" .=) <$> _sHeight, ("kind" .=) <$> _sKind,
                   ("width" .=) <$> _sWidth, ("iab" .=) <$> _sIab,
                   ("id" .=) <$> _sId])
 
@@ -5658,7 +6133,7 @@ instance ToJSON Size where
 data ObjectFilter =
   ObjectFilter'
     { _ofStatus :: !(Maybe ObjectFilterStatus)
-    , _ofKind :: !Text
+    , _ofKind :: !(Maybe Text)
     , _ofObjectIds :: !(Maybe [Textual Int64])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5676,11 +6151,7 @@ data ObjectFilter =
 objectFilter
     :: ObjectFilter
 objectFilter =
-  ObjectFilter'
-    { _ofStatus = Nothing
-    , _ofKind = "dfareporting#objectFilter"
-    , _ofObjectIds = Nothing
-    }
+  ObjectFilter' {_ofStatus = Nothing, _ofKind = Nothing, _ofObjectIds = Nothing}
 
 
 -- | Status of the filter. NONE means the user has access to none of the
@@ -5691,7 +6162,7 @@ ofStatus = lens _ofStatus (\ s a -> s{_ofStatus = a})
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#objectFilter\".
-ofKind :: Lens' ObjectFilter Text
+ofKind :: Lens' ObjectFilter (Maybe Text)
 ofKind = lens _ofKind (\ s a -> s{_ofKind = a})
 
 -- | Applicable when status is ASSIGNED. The user has access to objects with
@@ -5707,16 +6178,15 @@ instance FromJSON ObjectFilter where
           = withObject "ObjectFilter"
               (\ o ->
                  ObjectFilter' <$>
-                   (o .:? "status") <*>
-                     (o .:? "kind" .!= "dfareporting#objectFilter")
-                     <*> (o .:? "objectIds" .!= mempty))
+                   (o .:? "status") <*> (o .:? "kind") <*>
+                     (o .:? "objectIds" .!= mempty))
 
 instance ToJSON ObjectFilter where
         toJSON ObjectFilter'{..}
           = object
               (catMaybes
                  [("status" .=) <$> _ofStatus,
-                  Just ("kind" .= _ofKind),
+                  ("kind" .=) <$> _ofKind,
                   ("objectIds" .=) <$> _ofObjectIds])
 
 -- | Skippable Settings
@@ -5726,7 +6196,7 @@ data SkippableSetting =
   SkippableSetting'
     { _ssSkipOffSet :: !(Maybe VideoOffSet)
     , _ssProgressOffSet :: !(Maybe VideoOffSet)
-    , _ssKind :: !Text
+    , _ssKind :: !(Maybe Text)
     , _ssSkippable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -5749,7 +6219,7 @@ skippableSetting =
   SkippableSetting'
     { _ssSkipOffSet = Nothing
     , _ssProgressOffSet = Nothing
-    , _ssKind = "dfareporting#skippableSetting"
+    , _ssKind = Nothing
     , _ssSkippable = Nothing
     }
 
@@ -5769,7 +6239,7 @@ ssProgressOffSet
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#skippableSetting\".
-ssKind :: Lens' SkippableSetting Text
+ssKind :: Lens' SkippableSetting (Maybe Text)
 ssKind = lens _ssKind (\ s a -> s{_ssKind = a})
 
 -- | Whether the user can skip creatives served to this placement.
@@ -5783,7 +6253,7 @@ instance FromJSON SkippableSetting where
               (\ o ->
                  SkippableSetting' <$>
                    (o .:? "skipOffset") <*> (o .:? "progressOffset") <*>
-                     (o .:? "kind" .!= "dfareporting#skippableSetting")
+                     (o .:? "kind")
                      <*> (o .:? "skippable"))
 
 instance ToJSON SkippableSetting where
@@ -5792,7 +6262,7 @@ instance ToJSON SkippableSetting where
               (catMaybes
                  [("skipOffset" .=) <$> _ssSkipOffSet,
                   ("progressOffset" .=) <$> _ssProgressOffSet,
-                  Just ("kind" .= _ssKind),
+                  ("kind" .=) <$> _ssKind,
                   ("skippable" .=) <$> _ssSkippable])
 
 -- | Reporting Configuration
@@ -5842,7 +6312,16 @@ rcExposureToConversionEnabled
 -- \"Asia\/Hong_Kong\" - \"8\" for \"Asia\/Tokyo\" - \"9\" for
 -- \"Australia\/Sydney\" - \"10\" for \"Asia\/Dubai\" - \"11\" for
 -- \"America\/Los_Angeles\" - \"12\" for \"Pacific\/Auckland\" - \"13\" for
--- \"America\/Sao_Paulo\"
+-- \"America\/Sao_Paulo\" - \"16\" for \"America\/Asuncion\" - \"17\" for
+-- \"America\/Chicago\" - \"18\" for \"America\/Denver\" - \"19\" for
+-- \"America\/St_Johns\" - \"20\" for \"Asia\/Dhaka\" - \"21\" for
+-- \"Asia\/Jakarta\" - \"22\" for \"Asia\/Kabul\" - \"23\" for
+-- \"Asia\/Karachi\" - \"24\" for \"Asia\/Calcutta\" - \"25\" for
+-- \"Asia\/Pyongyang\" - \"26\" for \"Asia\/Rangoon\" - \"27\" for
+-- \"Atlantic\/Cape_Verde\" - \"28\" for \"Atlantic\/South_Georgia\" -
+-- \"29\" for \"Australia\/Adelaide\" - \"30\" for \"Australia\/Lord_Howe\"
+-- - \"31\" for \"Europe\/Moscow\" - \"32\" for \"Pacific\/Kiritimati\" -
+-- \"35\" for \"Pacific\/Norfolk\" - \"36\" for \"Pacific\/Tongatapu\"
 rcReportGenerationTimeZoneId :: Lens' ReportsConfiguration (Maybe Int64)
 rcReportGenerationTimeZoneId
   = lens _rcReportGenerationTimeZoneId
@@ -5883,7 +6362,6 @@ data PricingSchedule =
     { _psTestingStartDate :: !(Maybe Date')
     , _psFloodlightActivityId :: !(Maybe (Textual Int64))
     , _psEndDate :: !(Maybe Date')
-    , _psDisregardOverdelivery :: !(Maybe Bool)
     , _psStartDate :: !(Maybe Date')
     , _psCapCostOption :: !(Maybe PricingScheduleCapCostOption)
     , _psPricingType :: !(Maybe PricingSchedulePricingType)
@@ -5903,8 +6381,6 @@ data PricingSchedule =
 --
 -- * 'psEndDate'
 --
--- * 'psDisregardOverdelivery'
---
 -- * 'psStartDate'
 --
 -- * 'psCapCostOption'
@@ -5921,7 +6397,6 @@ pricingSchedule =
     { _psTestingStartDate = Nothing
     , _psFloodlightActivityId = Nothing
     , _psEndDate = Nothing
-    , _psDisregardOverdelivery = Nothing
     , _psStartDate = Nothing
     , _psCapCostOption = Nothing
     , _psPricingType = Nothing
@@ -5930,8 +6405,6 @@ pricingSchedule =
     }
 
 
--- | Testing start date of this placement. The hours, minutes, and seconds of
--- the start date should not be set, as doing so will result in an error.
 psTestingStartDate :: Lens' PricingSchedule (Maybe Day)
 psTestingStartDate
   = lens _psTestingStartDate
@@ -5946,27 +6419,11 @@ psFloodlightActivityId
       (\ s a -> s{_psFloodlightActivityId = a})
       . mapping _Coerce
 
--- | Placement end date. This date must be later than, or the same day as,
--- the placement start date, but not later than the campaign end date. If,
--- for example, you set 6\/25\/2015 as both the start and end dates, the
--- effective placement date is just that day only, 6\/25\/2015. The hours,
--- minutes, and seconds of the end date should not be set, as doing so will
--- result in an error. This field is required on insertion.
 psEndDate :: Lens' PricingSchedule (Maybe Day)
 psEndDate
   = lens _psEndDate (\ s a -> s{_psEndDate = a}) .
       mapping _Date
 
--- | Whether cap costs are ignored by ad serving.
-psDisregardOverdelivery :: Lens' PricingSchedule (Maybe Bool)
-psDisregardOverdelivery
-  = lens _psDisregardOverdelivery
-      (\ s a -> s{_psDisregardOverdelivery = a})
-
--- | Placement start date. This date must be later than, or the same day as,
--- the campaign start date. The hours, minutes, and seconds of the start
--- date should not be set, as doing so will result in an error. This field
--- is required on insertion.
 psStartDate :: Lens' PricingSchedule (Maybe Day)
 psStartDate
   = lens _psStartDate (\ s a -> s{_psStartDate = a}) .
@@ -6006,7 +6463,6 @@ instance FromJSON PricingSchedule where
                    (o .:? "testingStartDate") <*>
                      (o .:? "floodlightActivityId")
                      <*> (o .:? "endDate")
-                     <*> (o .:? "disregardOverdelivery")
                      <*> (o .:? "startDate")
                      <*> (o .:? "capCostOption")
                      <*> (o .:? "pricingType")
@@ -6021,8 +6477,6 @@ instance ToJSON PricingSchedule where
                   ("floodlightActivityId" .=) <$>
                     _psFloodlightActivityId,
                   ("endDate" .=) <$> _psEndDate,
-                  ("disregardOverdelivery" .=) <$>
-                    _psDisregardOverdelivery,
                   ("startDate" .=) <$> _psStartDate,
                   ("capCostOption" .=) <$> _psCapCostOption,
                   ("pricingType" .=) <$> _psPricingType,
@@ -6034,7 +6488,7 @@ instance ToJSON PricingSchedule where
 -- /See:/ 'postalCode' smart constructor.
 data PostalCode =
   PostalCode'
-    { _pcKind :: !Text
+    { _pcKind :: !(Maybe Text)
     , _pcCode :: !(Maybe Text)
     , _pcCountryCode :: !(Maybe Text)
     , _pcId :: !(Maybe Text)
@@ -6060,7 +6514,7 @@ postalCode
     :: PostalCode
 postalCode =
   PostalCode'
-    { _pcKind = "dfareporting#postalCode"
+    { _pcKind = Nothing
     , _pcCode = Nothing
     , _pcCountryCode = Nothing
     , _pcId = Nothing
@@ -6070,7 +6524,7 @@ postalCode =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#postalCode\".
-pcKind :: Lens' PostalCode Text
+pcKind :: Lens' PostalCode (Maybe Text)
 pcKind = lens _pcKind (\ s a -> s{_pcKind = a})
 
 -- | Postal code. This is equivalent to the id field.
@@ -6099,9 +6553,8 @@ instance FromJSON PostalCode where
           = withObject "PostalCode"
               (\ o ->
                  PostalCode' <$>
-                   (o .:? "kind" .!= "dfareporting#postalCode") <*>
-                     (o .:? "code")
-                     <*> (o .:? "countryCode")
+                   (o .:? "kind") <*> (o .:? "code") <*>
+                     (o .:? "countryCode")
                      <*> (o .:? "id")
                      <*> (o .:? "countryDartId"))
 
@@ -6109,7 +6562,7 @@ instance ToJSON PostalCode where
         toJSON PostalCode'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _pcKind), ("code" .=) <$> _pcCode,
+                 [("kind" .=) <$> _pcKind, ("code" .=) <$> _pcCode,
                   ("countryCode" .=) <$> _pcCountryCode,
                   ("id" .=) <$> _pcId,
                   ("countryDartId" .=) <$> _pcCountryDartId])
@@ -6119,7 +6572,7 @@ instance ToJSON PostalCode where
 -- /See:/ 'accountPermissionsListResponse' smart constructor.
 data AccountPermissionsListResponse =
   AccountPermissionsListResponse'
-    { _aplrKind :: !Text
+    { _aplrKind :: !(Maybe Text)
     , _aplrAccountPermissions :: !(Maybe [AccountPermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6136,14 +6589,12 @@ accountPermissionsListResponse
     :: AccountPermissionsListResponse
 accountPermissionsListResponse =
   AccountPermissionsListResponse'
-    { _aplrKind = "dfareporting#accountPermissionsListResponse"
-    , _aplrAccountPermissions = Nothing
-    }
+    {_aplrKind = Nothing, _aplrAccountPermissions = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountPermissionsListResponse\".
-aplrKind :: Lens' AccountPermissionsListResponse Text
+aplrKind :: Lens' AccountPermissionsListResponse (Maybe Text)
 aplrKind = lens _aplrKind (\ s a -> s{_aplrKind = a})
 
 -- | Account permission collection.
@@ -6160,15 +6611,14 @@ instance FromJSON AccountPermissionsListResponse
           = withObject "AccountPermissionsListResponse"
               (\ o ->
                  AccountPermissionsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#accountPermissionsListResponse")
-                     <*> (o .:? "accountPermissions" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "accountPermissions" .!= mempty))
 
 instance ToJSON AccountPermissionsListResponse where
         toJSON AccountPermissionsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _aplrKind),
+                 [("kind" .=) <$> _aplrKind,
                   ("accountPermissions" .=) <$>
                     _aplrAccountPermissions])
 
@@ -6177,7 +6627,7 @@ instance ToJSON AccountPermissionsListResponse where
 -- /See:/ 'country' smart constructor.
 data Country =
   Country'
-    { _cKind :: !Text
+    { _cKind :: !(Maybe Text)
     , _cName :: !(Maybe Text)
     , _cCountryCode :: !(Maybe Text)
     , _cDartId :: !(Maybe (Textual Int64))
@@ -6203,7 +6653,7 @@ country
     :: Country
 country =
   Country'
-    { _cKind = "dfareporting#country"
+    { _cKind = Nothing
     , _cName = Nothing
     , _cCountryCode = Nothing
     , _cDartId = Nothing
@@ -6213,7 +6663,7 @@ country =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#country\".
-cKind :: Lens' Country Text
+cKind :: Lens' Country (Maybe Text)
 cKind = lens _cKind (\ s a -> s{_cKind = a})
 
 -- | Name of this country.
@@ -6242,9 +6692,8 @@ instance FromJSON Country where
           = withObject "Country"
               (\ o ->
                  Country' <$>
-                   (o .:? "kind" .!= "dfareporting#country") <*>
-                     (o .:? "name")
-                     <*> (o .:? "countryCode")
+                   (o .:? "kind") <*> (o .:? "name") <*>
+                     (o .:? "countryCode")
                      <*> (o .:? "dartId")
                      <*> (o .:? "sslEnabled"))
 
@@ -6252,7 +6701,7 @@ instance ToJSON Country where
         toJSON Country'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cKind), ("name" .=) <$> _cName,
+                 [("kind" .=) <$> _cKind, ("name" .=) <$> _cName,
                   ("countryCode" .=) <$> _cCountryCode,
                   ("dartId" .=) <$> _cDartId,
                   ("sslEnabled" .=) <$> _cSSLEnabled])
@@ -6262,7 +6711,7 @@ instance ToJSON Country where
 -- /See:/ 'operatingSystemVersionsListResponse' smart constructor.
 data OperatingSystemVersionsListResponse =
   OperatingSystemVersionsListResponse'
-    { _osvlrKind :: !Text
+    { _osvlrKind :: !(Maybe Text)
     , _osvlrOperatingSystemVersions :: !(Maybe [OperatingSystemVersion])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6279,14 +6728,12 @@ operatingSystemVersionsListResponse
     :: OperatingSystemVersionsListResponse
 operatingSystemVersionsListResponse =
   OperatingSystemVersionsListResponse'
-    { _osvlrKind = "dfareporting#operatingSystemVersionsListResponse"
-    , _osvlrOperatingSystemVersions = Nothing
-    }
+    {_osvlrKind = Nothing, _osvlrOperatingSystemVersions = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#operatingSystemVersionsListResponse\".
-osvlrKind :: Lens' OperatingSystemVersionsListResponse Text
+osvlrKind :: Lens' OperatingSystemVersionsListResponse (Maybe Text)
 osvlrKind
   = lens _osvlrKind (\ s a -> s{_osvlrKind = a})
 
@@ -6304,16 +6751,15 @@ instance FromJSON OperatingSystemVersionsListResponse
           = withObject "OperatingSystemVersionsListResponse"
               (\ o ->
                  OperatingSystemVersionsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#operatingSystemVersionsListResponse")
-                     <*> (o .:? "operatingSystemVersions" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "operatingSystemVersions" .!= mempty))
 
 instance ToJSON OperatingSystemVersionsListResponse
          where
         toJSON OperatingSystemVersionsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _osvlrKind),
+                 [("kind" .=) <$> _osvlrKind,
                   ("operatingSystemVersions" .=) <$>
                     _osvlrOperatingSystemVersions])
 
@@ -6419,13 +6865,11 @@ pricing =
     }
 
 
--- | End date of this inventory item.
 priEndDate :: Lens' Pricing (Maybe Day)
 priEndDate
   = lens _priEndDate (\ s a -> s{_priEndDate = a}) .
       mapping _Date
 
--- | Start date of this inventory item.
 priStartDate :: Lens' Pricing (Maybe Day)
 priStartDate
   = lens _priStartDate (\ s a -> s{_priStartDate = a})
@@ -6558,7 +7002,7 @@ instance ToJSON AudienceSegmentGroup where
 data OperatingSystem =
   OperatingSystem'
     { _osDesktop :: !(Maybe Bool)
-    , _osKind :: !Text
+    , _osKind :: !(Maybe Text)
     , _osName :: !(Maybe Text)
     , _osMobile :: !(Maybe Bool)
     , _osDartId :: !(Maybe (Textual Int64))
@@ -6584,7 +7028,7 @@ operatingSystem
 operatingSystem =
   OperatingSystem'
     { _osDesktop = Nothing
-    , _osKind = "dfareporting#operatingSystem"
+    , _osKind = Nothing
     , _osName = Nothing
     , _osMobile = Nothing
     , _osDartId = Nothing
@@ -6598,7 +7042,7 @@ osDesktop
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#operatingSystem\".
-osKind :: Lens' OperatingSystem Text
+osKind :: Lens' OperatingSystem (Maybe Text)
 osKind = lens _osKind (\ s a -> s{_osKind = a})
 
 -- | Name of this operating system.
@@ -6620,9 +7064,8 @@ instance FromJSON OperatingSystem where
           = withObject "OperatingSystem"
               (\ o ->
                  OperatingSystem' <$>
-                   (o .:? "desktop") <*>
-                     (o .:? "kind" .!= "dfareporting#operatingSystem")
-                     <*> (o .:? "name")
+                   (o .:? "desktop") <*> (o .:? "kind") <*>
+                     (o .:? "name")
                      <*> (o .:? "mobile")
                      <*> (o .:? "dartId"))
 
@@ -6631,7 +7074,7 @@ instance ToJSON OperatingSystem where
           = object
               (catMaybes
                  [("desktop" .=) <$> _osDesktop,
-                  Just ("kind" .= _osKind), ("name" .=) <$> _osName,
+                  ("kind" .=) <$> _osKind, ("name" .=) <$> _osName,
                   ("mobile" .=) <$> _osMobile,
                   ("dartId" .=) <$> _osDartId])
 
@@ -6676,13 +7119,11 @@ fRateOrCost
   = lens _fRateOrCost (\ s a -> s{_fRateOrCost = a}) .
       mapping _Coerce
 
--- | Inventory item flight end date.
 fEndDate :: Lens' Flight (Maybe Day)
 fEndDate
   = lens _fEndDate (\ s a -> s{_fEndDate = a}) .
       mapping _Date
 
--- | Inventory item flight start date.
 fStartDate :: Lens' Flight (Maybe Day)
 fStartDate
   = lens _fStartDate (\ s a -> s{_fStartDate = a}) .
@@ -6717,7 +7158,7 @@ instance ToJSON Flight where
 -- /See:/ 'citiesListResponse' smart constructor.
 data CitiesListResponse =
   CitiesListResponse'
-    { _citKind :: !Text
+    { _citKind :: !(Maybe Text)
     , _citCities :: !(Maybe [City])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6733,13 +7174,12 @@ data CitiesListResponse =
 citiesListResponse
     :: CitiesListResponse
 citiesListResponse =
-  CitiesListResponse'
-    {_citKind = "dfareporting#citiesListResponse", _citCities = Nothing}
+  CitiesListResponse' {_citKind = Nothing, _citCities = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#citiesListResponse\".
-citKind :: Lens' CitiesListResponse Text
+citKind :: Lens' CitiesListResponse (Maybe Text)
 citKind = lens _citKind (\ s a -> s{_citKind = a})
 
 -- | City collection.
@@ -6754,14 +7194,13 @@ instance FromJSON CitiesListResponse where
           = withObject "CitiesListResponse"
               (\ o ->
                  CitiesListResponse' <$>
-                   (o .:? "kind" .!= "dfareporting#citiesListResponse")
-                     <*> (o .:? "cities" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "cities" .!= mempty))
 
 instance ToJSON CitiesListResponse where
         toJSON CitiesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _citKind),
+                 [("kind" .=) <$> _citKind,
                   ("cities" .=) <$> _citCities])
 
 -- | Represents a dimension.
@@ -6769,7 +7208,7 @@ instance ToJSON CitiesListResponse where
 -- /See:/ 'dimension' smart constructor.
 data Dimension =
   Dimension'
-    { _dKind :: !Text
+    { _dKind :: !(Maybe Text)
     , _dName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6784,11 +7223,11 @@ data Dimension =
 -- * 'dName'
 dimension
     :: Dimension
-dimension = Dimension' {_dKind = "dfareporting#dimension", _dName = Nothing}
+dimension = Dimension' {_dKind = Nothing, _dName = Nothing}
 
 
 -- | The kind of resource this is, in this case dfareporting#dimension.
-dKind :: Lens' Dimension Text
+dKind :: Lens' Dimension (Maybe Text)
 dKind = lens _dKind (\ s a -> s{_dKind = a})
 
 -- | The dimension name, e.g. dfa:advertiser
@@ -6799,15 +7238,13 @@ instance FromJSON Dimension where
         parseJSON
           = withObject "Dimension"
               (\ o ->
-                 Dimension' <$>
-                   (o .:? "kind" .!= "dfareporting#dimension") <*>
-                     (o .:? "name"))
+                 Dimension' <$> (o .:? "kind") <*> (o .:? "name"))
 
 instance ToJSON Dimension where
         toJSON Dimension'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _dKind), ("name" .=) <$> _dName])
+                 [("kind" .=) <$> _dKind, ("name" .=) <$> _dName])
 
 -- | The report criteria for a report of type \"REACH\".
 --
@@ -6955,7 +7392,7 @@ instance ToJSON ReportReachCriteria where
 -- /See:/ 'customRichMediaEvents' smart constructor.
 data CustomRichMediaEvents =
   CustomRichMediaEvents'
-    { _crmeKind :: !Text
+    { _crmeKind :: !(Maybe Text)
     , _crmeFilteredEventIds :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -6971,15 +7408,12 @@ data CustomRichMediaEvents =
 customRichMediaEvents
     :: CustomRichMediaEvents
 customRichMediaEvents =
-  CustomRichMediaEvents'
-    { _crmeKind = "dfareporting#customRichMediaEvents"
-    , _crmeFilteredEventIds = Nothing
-    }
+  CustomRichMediaEvents' {_crmeKind = Nothing, _crmeFilteredEventIds = Nothing}
 
 
 -- | The kind of resource this is, in this case
 -- dfareporting#customRichMediaEvents.
-crmeKind :: Lens' CustomRichMediaEvents Text
+crmeKind :: Lens' CustomRichMediaEvents (Maybe Text)
 crmeKind = lens _crmeKind (\ s a -> s{_crmeKind = a})
 
 -- | List of custom rich media event IDs. Dimension values must be all of
@@ -6996,15 +7430,14 @@ instance FromJSON CustomRichMediaEvents where
           = withObject "CustomRichMediaEvents"
               (\ o ->
                  CustomRichMediaEvents' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#customRichMediaEvents")
-                     <*> (o .:? "filteredEventIds" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "filteredEventIds" .!= mempty))
 
 instance ToJSON CustomRichMediaEvents where
         toJSON CustomRichMediaEvents'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _crmeKind),
+                 [("kind" .=) <$> _crmeKind,
                   ("filteredEventIds" .=) <$> _crmeFilteredEventIds])
 
 -- | Language List Response
@@ -7012,7 +7445,7 @@ instance ToJSON CustomRichMediaEvents where
 -- /See:/ 'languagesListResponse' smart constructor.
 data LanguagesListResponse =
   LanguagesListResponse'
-    { _llrKind :: !Text
+    { _llrKind :: !(Maybe Text)
     , _llrLanguages :: !(Maybe [Language])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7028,13 +7461,12 @@ data LanguagesListResponse =
 languagesListResponse
     :: LanguagesListResponse
 languagesListResponse =
-  LanguagesListResponse'
-    {_llrKind = "dfareporting#languagesListResponse", _llrLanguages = Nothing}
+  LanguagesListResponse' {_llrKind = Nothing, _llrLanguages = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#languagesListResponse\".
-llrKind :: Lens' LanguagesListResponse Text
+llrKind :: Lens' LanguagesListResponse (Maybe Text)
 llrKind = lens _llrKind (\ s a -> s{_llrKind = a})
 
 -- | Language collection.
@@ -7049,15 +7481,13 @@ instance FromJSON LanguagesListResponse where
           = withObject "LanguagesListResponse"
               (\ o ->
                  LanguagesListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#languagesListResponse")
-                     <*> (o .:? "languages" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "languages" .!= mempty))
 
 instance ToJSON LanguagesListResponse where
         toJSON LanguagesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _llrKind),
+                 [("kind" .=) <$> _llrKind,
                   ("languages" .=) <$> _llrLanguages])
 
 -- | The attributes, like playtime and percent onscreen, that define the
@@ -7150,13 +7580,137 @@ instance ToJSON CustomViewabilityMetricConfiguration
                   ("audible" .=) <$> _cvmcAudible,
                   ("timeMillis" .=) <$> _cvmcTimeMillis])
 
+-- | The report criteria for a report of type \"PATH\".
+--
+-- /See:/ 'reportPathCriteria' smart constructor.
+data ReportPathCriteria =
+  ReportPathCriteria'
+    { _rpcCustomChannelGrouping :: !(Maybe ChannelGrouping)
+    , _rpcMetricNames :: !(Maybe [Text])
+    , _rpcDateRange :: !(Maybe DateRange)
+    , _rpcPathFilters :: !(Maybe [PathFilter])
+    , _rpcFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rpcDimensions :: !(Maybe [SortedDimension])
+    , _rpcActivityFilters :: !(Maybe [DimensionValue])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ReportPathCriteria' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rpcCustomChannelGrouping'
+--
+-- * 'rpcMetricNames'
+--
+-- * 'rpcDateRange'
+--
+-- * 'rpcPathFilters'
+--
+-- * 'rpcFloodlightConfigId'
+--
+-- * 'rpcDimensions'
+--
+-- * 'rpcActivityFilters'
+reportPathCriteria
+    :: ReportPathCriteria
+reportPathCriteria =
+  ReportPathCriteria'
+    { _rpcCustomChannelGrouping = Nothing
+    , _rpcMetricNames = Nothing
+    , _rpcDateRange = Nothing
+    , _rpcPathFilters = Nothing
+    , _rpcFloodlightConfigId = Nothing
+    , _rpcDimensions = Nothing
+    , _rpcActivityFilters = Nothing
+    }
+
+
+-- | Channel Grouping.
+rpcCustomChannelGrouping :: Lens' ReportPathCriteria (Maybe ChannelGrouping)
+rpcCustomChannelGrouping
+  = lens _rpcCustomChannelGrouping
+      (\ s a -> s{_rpcCustomChannelGrouping = a})
+
+-- | The list of names of metrics the report should include.
+rpcMetricNames :: Lens' ReportPathCriteria [Text]
+rpcMetricNames
+  = lens _rpcMetricNames
+      (\ s a -> s{_rpcMetricNames = a})
+      . _Default
+      . _Coerce
+
+-- | The date range this report should be run for.
+rpcDateRange :: Lens' ReportPathCriteria (Maybe DateRange)
+rpcDateRange
+  = lens _rpcDateRange (\ s a -> s{_rpcDateRange = a})
+
+-- | Path Filters.
+rpcPathFilters :: Lens' ReportPathCriteria [PathFilter]
+rpcPathFilters
+  = lens _rpcPathFilters
+      (\ s a -> s{_rpcPathFilters = a})
+      . _Default
+      . _Coerce
+
+-- | The floodlight ID for which to show data in this report. All advertisers
+-- associated with that ID will automatically be added. The dimension of
+-- the value needs to be \'dfa:floodlightConfigId\'.
+rpcFloodlightConfigId :: Lens' ReportPathCriteria (Maybe DimensionValue)
+rpcFloodlightConfigId
+  = lens _rpcFloodlightConfigId
+      (\ s a -> s{_rpcFloodlightConfigId = a})
+
+-- | The list of dimensions the report should include.
+rpcDimensions :: Lens' ReportPathCriteria [SortedDimension]
+rpcDimensions
+  = lens _rpcDimensions
+      (\ s a -> s{_rpcDimensions = a})
+      . _Default
+      . _Coerce
+
+-- | The list of \'dfa:activity\' values to filter on.
+rpcActivityFilters :: Lens' ReportPathCriteria [DimensionValue]
+rpcActivityFilters
+  = lens _rpcActivityFilters
+      (\ s a -> s{_rpcActivityFilters = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON ReportPathCriteria where
+        parseJSON
+          = withObject "ReportPathCriteria"
+              (\ o ->
+                 ReportPathCriteria' <$>
+                   (o .:? "customChannelGrouping") <*>
+                     (o .:? "metricNames" .!= mempty)
+                     <*> (o .:? "dateRange")
+                     <*> (o .:? "pathFilters" .!= mempty)
+                     <*> (o .:? "floodlightConfigId")
+                     <*> (o .:? "dimensions" .!= mempty)
+                     <*> (o .:? "activityFilters" .!= mempty))
+
+instance ToJSON ReportPathCriteria where
+        toJSON ReportPathCriteria'{..}
+          = object
+              (catMaybes
+                 [("customChannelGrouping" .=) <$>
+                    _rpcCustomChannelGrouping,
+                  ("metricNames" .=) <$> _rpcMetricNames,
+                  ("dateRange" .=) <$> _rpcDateRange,
+                  ("pathFilters" .=) <$> _rpcPathFilters,
+                  ("floodlightConfigId" .=) <$> _rpcFloodlightConfigId,
+                  ("dimensions" .=) <$> _rpcDimensions,
+                  ("activityFilters" .=) <$> _rpcActivityFilters])
+
 -- | Targetable remarketing list response
 --
 -- /See:/ 'targetableRemarketingListsListResponse' smart constructor.
 data TargetableRemarketingListsListResponse =
   TargetableRemarketingListsListResponse'
     { _trllrNextPageToken :: !(Maybe Text)
-    , _trllrKind :: !Text
+    , _trllrKind :: !(Maybe Text)
     , _trllrTargetableRemarketingLists :: !(Maybe [TargetableRemarketingList])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7176,7 +7730,7 @@ targetableRemarketingListsListResponse
 targetableRemarketingListsListResponse =
   TargetableRemarketingListsListResponse'
     { _trllrNextPageToken = Nothing
-    , _trllrKind = "dfareporting#targetableRemarketingListsListResponse"
+    , _trllrKind = Nothing
     , _trllrTargetableRemarketingLists = Nothing
     }
 
@@ -7189,7 +7743,7 @@ trllrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#targetableRemarketingListsListResponse\".
-trllrKind :: Lens' TargetableRemarketingListsListResponse Text
+trllrKind :: Lens' TargetableRemarketingListsListResponse (Maybe Text)
 trllrKind
   = lens _trllrKind (\ s a -> s{_trllrKind = a})
 
@@ -7208,10 +7762,8 @@ instance FromJSON
           = withObject "TargetableRemarketingListsListResponse"
               (\ o ->
                  TargetableRemarketingListsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#targetableRemarketingListsListResponse")
-                     <*> (o .:? "targetableRemarketingLists" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "targetableRemarketingLists" .!= mempty))
 
 instance ToJSON
            TargetableRemarketingListsListResponse
@@ -7220,7 +7772,7 @@ instance ToJSON
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _trllrNextPageToken,
-                  Just ("kind" .= _trllrKind),
+                  ("kind" .=) <$> _trllrKind,
                   ("targetableRemarketingLists" .=) <$>
                     _trllrTargetableRemarketingLists])
 
@@ -7230,7 +7782,7 @@ instance ToJSON
 data ChangeLogsListResponse =
   ChangeLogsListResponse'
     { _cllrNextPageToken :: !(Maybe Text)
-    , _cllrKind :: !Text
+    , _cllrKind :: !(Maybe Text)
     , _cllrChangeLogs :: !(Maybe [ChangeLog])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7250,7 +7802,7 @@ changeLogsListResponse
 changeLogsListResponse =
   ChangeLogsListResponse'
     { _cllrNextPageToken = Nothing
-    , _cllrKind = "dfareporting#changeLogsListResponse"
+    , _cllrKind = Nothing
     , _cllrChangeLogs = Nothing
     }
 
@@ -7263,7 +7815,7 @@ cllrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#changeLogsListResponse\".
-cllrKind :: Lens' ChangeLogsListResponse Text
+cllrKind :: Lens' ChangeLogsListResponse (Maybe Text)
 cllrKind = lens _cllrKind (\ s a -> s{_cllrKind = a})
 
 -- | Change log collection.
@@ -7279,17 +7831,15 @@ instance FromJSON ChangeLogsListResponse where
           = withObject "ChangeLogsListResponse"
               (\ o ->
                  ChangeLogsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#changeLogsListResponse")
-                     <*> (o .:? "changeLogs" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "changeLogs" .!= mempty))
 
 instance ToJSON ChangeLogsListResponse where
         toJSON ChangeLogsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _cllrNextPageToken,
-                  Just ("kind" .= _cllrKind),
+                  ("kind" .=) <$> _cllrKind,
                   ("changeLogs" .=) <$> _cllrChangeLogs])
 
 -- | AccountUserProfiles contains properties of a Campaign Manager user
@@ -7303,7 +7853,7 @@ data AccountUserProFile =
     , _aupfUserRoleFilter :: !(Maybe ObjectFilter)
     , _aupfAdvertiserFilter :: !(Maybe ObjectFilter)
     , _aupfUserRoleId :: !(Maybe (Textual Int64))
-    , _aupfKind :: !Text
+    , _aupfKind :: !(Maybe Text)
     , _aupfLocale :: !(Maybe Text)
     , _aupfSiteFilter :: !(Maybe ObjectFilter)
     , _aupfTraffickerType :: !(Maybe AccountUserProFileTraffickerType)
@@ -7362,7 +7912,7 @@ accountUserProFile =
     , _aupfUserRoleFilter = Nothing
     , _aupfAdvertiserFilter = Nothing
     , _aupfUserRoleId = Nothing
-    , _aupfKind = "dfareporting#accountUserProfile"
+    , _aupfKind = Nothing
     , _aupfLocale = Nothing
     , _aupfSiteFilter = Nothing
     , _aupfTraffickerType = Nothing
@@ -7405,7 +7955,7 @@ aupfUserRoleId
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountUserProfile\".
-aupfKind :: Lens' AccountUserProFile Text
+aupfKind :: Lens' AccountUserProFile (Maybe Text)
 aupfKind = lens _aupfKind (\ s a -> s{_aupfKind = a})
 
 -- | Locale of the user profile. This is a required field. Acceptable values
@@ -7447,7 +7997,7 @@ aupfAccountId
 
 -- | Name of the user profile. This is a required field. Must be less than 64
 -- characters long, must be globally unique, and cannot contain whitespace
--- or any of the following characters: \"&;\"#%,\".
+-- or any of the following characters: \"&;\<>\"#%,\".
 aupfName :: Lens' AccountUserProFile (Maybe Text)
 aupfName = lens _aupfName (\ s a -> s{_aupfName = a})
 
@@ -7491,8 +8041,7 @@ instance FromJSON AccountUserProFile where
                    (o .:? "email") <*> (o .:? "userRoleFilter") <*>
                      (o .:? "advertiserFilter")
                      <*> (o .:? "userRoleId")
-                     <*>
-                     (o .:? "kind" .!= "dfareporting#accountUserProfile")
+                     <*> (o .:? "kind")
                      <*> (o .:? "locale")
                      <*> (o .:? "siteFilter")
                      <*> (o .:? "traffickerType")
@@ -7513,7 +8062,7 @@ instance ToJSON AccountUserProFile where
                   ("userRoleFilter" .=) <$> _aupfUserRoleFilter,
                   ("advertiserFilter" .=) <$> _aupfAdvertiserFilter,
                   ("userRoleId" .=) <$> _aupfUserRoleId,
-                  Just ("kind" .= _aupfKind),
+                  ("kind" .=) <$> _aupfKind,
                   ("locale" .=) <$> _aupfLocale,
                   ("siteFilter" .=) <$> _aupfSiteFilter,
                   ("traffickerType" .=) <$> _aupfTraffickerType,
@@ -7531,7 +8080,7 @@ instance ToJSON AccountUserProFile where
 data DimensionValue =
   DimensionValue'
     { _dvEtag :: !(Maybe Text)
-    , _dvKind :: !Text
+    , _dvKind :: !(Maybe Text)
     , _dvValue :: !(Maybe Text)
     , _dvMatchType :: !(Maybe DimensionValueMatchType)
     , _dvDimensionName :: !(Maybe Text)
@@ -7560,7 +8109,7 @@ dimensionValue
 dimensionValue =
   DimensionValue'
     { _dvEtag = Nothing
-    , _dvKind = "dfareporting#dimensionValue"
+    , _dvKind = Nothing
     , _dvValue = Nothing
     , _dvMatchType = Nothing
     , _dvDimensionName = Nothing
@@ -7573,7 +8122,7 @@ dvEtag :: Lens' DimensionValue (Maybe Text)
 dvEtag = lens _dvEtag (\ s a -> s{_dvEtag = a})
 
 -- | The kind of resource this is, in this case dfareporting#dimensionValue.
-dvKind :: Lens' DimensionValue Text
+dvKind :: Lens' DimensionValue (Maybe Text)
 dvKind = lens _dvKind (\ s a -> s{_dvKind = a})
 
 -- | The value of the dimension.
@@ -7604,9 +8153,7 @@ instance FromJSON DimensionValue where
           = withObject "DimensionValue"
               (\ o ->
                  DimensionValue' <$>
-                   (o .:? "etag") <*>
-                     (o .:? "kind" .!= "dfareporting#dimensionValue")
-                     <*> (o .:? "value")
+                   (o .:? "etag") <*> (o .:? "kind") <*> (o .:? "value")
                      <*> (o .:? "matchType")
                      <*> (o .:? "dimensionName")
                      <*> (o .:? "id"))
@@ -7615,7 +8162,7 @@ instance ToJSON DimensionValue where
         toJSON DimensionValue'{..}
           = object
               (catMaybes
-                 [("etag" .=) <$> _dvEtag, Just ("kind" .= _dvKind),
+                 [("etag" .=) <$> _dvEtag, ("kind" .=) <$> _dvKind,
                   ("value" .=) <$> _dvValue,
                   ("matchType" .=) <$> _dvMatchType,
                   ("dimensionName" .=) <$> _dvDimensionName,
@@ -7626,7 +8173,7 @@ instance ToJSON DimensionValue where
 -- /See:/ 'activities' smart constructor.
 data Activities =
   Activities'
-    { _actKind :: !Text
+    { _actKind :: !(Maybe Text)
     , _actMetricNames :: !(Maybe [Text])
     , _actFilters :: !(Maybe [DimensionValue])
     }
@@ -7646,14 +8193,11 @@ activities
     :: Activities
 activities =
   Activities'
-    { _actKind = "dfareporting#activities"
-    , _actMetricNames = Nothing
-    , _actFilters = Nothing
-    }
+    {_actKind = Nothing, _actMetricNames = Nothing, _actFilters = Nothing}
 
 
 -- | The kind of resource this is, in this case dfareporting#activities.
-actKind :: Lens' Activities Text
+actKind :: Lens' Activities (Maybe Text)
 actKind = lens _actKind (\ s a -> s{_actKind = a})
 
 -- | List of names of floodlight activity metrics.
@@ -7677,15 +8221,14 @@ instance FromJSON Activities where
           = withObject "Activities"
               (\ o ->
                  Activities' <$>
-                   (o .:? "kind" .!= "dfareporting#activities") <*>
-                     (o .:? "metricNames" .!= mempty)
+                   (o .:? "kind") <*> (o .:? "metricNames" .!= mempty)
                      <*> (o .:? "filters" .!= mempty))
 
 instance ToJSON Activities where
         toJSON Activities'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _actKind),
+                 [("kind" .=) <$> _actKind,
                   ("metricNames" .=) <$> _actMetricNames,
                   ("filters" .=) <$> _actFilters])
 
@@ -7695,7 +8238,7 @@ instance ToJSON Activities where
 data UserRolePermissionGroupsListResponse =
   UserRolePermissionGroupsListResponse'
     { _urpglrUserRolePermissionGroups :: !(Maybe [UserRolePermissionGroup])
-    , _urpglrKind :: !Text
+    , _urpglrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7711,9 +8254,7 @@ userRolePermissionGroupsListResponse
     :: UserRolePermissionGroupsListResponse
 userRolePermissionGroupsListResponse =
   UserRolePermissionGroupsListResponse'
-    { _urpglrUserRolePermissionGroups = Nothing
-    , _urpglrKind = "dfareporting#userRolePermissionGroupsListResponse"
-    }
+    {_urpglrUserRolePermissionGroups = Nothing, _urpglrKind = Nothing}
 
 
 -- | User role permission group collection.
@@ -7726,7 +8267,7 @@ urpglrUserRolePermissionGroups
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRolePermissionGroupsListResponse\".
-urpglrKind :: Lens' UserRolePermissionGroupsListResponse Text
+urpglrKind :: Lens' UserRolePermissionGroupsListResponse (Maybe Text)
 urpglrKind
   = lens _urpglrKind (\ s a -> s{_urpglrKind = a})
 
@@ -7738,8 +8279,7 @@ instance FromJSON
               (\ o ->
                  UserRolePermissionGroupsListResponse' <$>
                    (o .:? "userRolePermissionGroups" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#userRolePermissionGroupsListResponse"))
+                     (o .:? "kind"))
 
 instance ToJSON UserRolePermissionGroupsListResponse
          where
@@ -7748,7 +8288,7 @@ instance ToJSON UserRolePermissionGroupsListResponse
               (catMaybes
                  [("userRolePermissionGroups" .=) <$>
                     _urpglrUserRolePermissionGroups,
-                  Just ("kind" .= _urpglrKind)])
+                  ("kind" .=) <$> _urpglrKind])
 
 -- | Placement Tag
 --
@@ -7809,7 +8349,7 @@ data RemarketingListsListResponse =
   RemarketingListsListResponse'
     { _rllrNextPageToken :: !(Maybe Text)
     , _rllrRemarketingLists :: !(Maybe [RemarketingList])
-    , _rllrKind :: !Text
+    , _rllrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -7829,7 +8369,7 @@ remarketingListsListResponse =
   RemarketingListsListResponse'
     { _rllrNextPageToken = Nothing
     , _rllrRemarketingLists = Nothing
-    , _rllrKind = "dfareporting#remarketingListsListResponse"
+    , _rllrKind = Nothing
     }
 
 
@@ -7849,7 +8389,7 @@ rllrRemarketingLists
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#remarketingListsListResponse\".
-rllrKind :: Lens' RemarketingListsListResponse Text
+rllrKind :: Lens' RemarketingListsListResponse (Maybe Text)
 rllrKind = lens _rllrKind (\ s a -> s{_rllrKind = a})
 
 instance FromJSON RemarketingListsListResponse where
@@ -7859,9 +8399,7 @@ instance FromJSON RemarketingListsListResponse where
                  RemarketingListsListResponse' <$>
                    (o .:? "nextPageToken") <*>
                      (o .:? "remarketingLists" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#remarketingListsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON RemarketingListsListResponse where
         toJSON RemarketingListsListResponse'{..}
@@ -7869,7 +8407,7 @@ instance ToJSON RemarketingListsListResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _rllrNextPageToken,
                   ("remarketingLists" .=) <$> _rllrRemarketingLists,
-                  Just ("kind" .= _rllrKind)])
+                  ("kind" .=) <$> _rllrKind])
 
 -- | Contains properties of a dynamic targeting key. Dynamic targeting keys
 -- are unique, user-friendly labels, created at the advertiser level in
@@ -7882,7 +8420,7 @@ instance ToJSON RemarketingListsListResponse where
 data DynamicTargetingKey =
   DynamicTargetingKey'
     { _dtkObjectType :: !(Maybe DynamicTargetingKeyObjectType)
-    , _dtkKind :: !Text
+    , _dtkKind :: !(Maybe Text)
     , _dtkObjectId :: !(Maybe (Textual Int64))
     , _dtkName :: !(Maybe Text)
     }
@@ -7905,7 +8443,7 @@ dynamicTargetingKey
 dynamicTargetingKey =
   DynamicTargetingKey'
     { _dtkObjectType = Nothing
-    , _dtkKind = "dfareporting#dynamicTargetingKey"
+    , _dtkKind = Nothing
     , _dtkObjectId = Nothing
     , _dtkName = Nothing
     }
@@ -7920,7 +8458,7 @@ dtkObjectType
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#dynamicTargetingKey\".
-dtkKind :: Lens' DynamicTargetingKey Text
+dtkKind :: Lens' DynamicTargetingKey (Maybe Text)
 dtkKind = lens _dtkKind (\ s a -> s{_dtkKind = a})
 
 -- | ID of the object of this dynamic targeting key. This is a required
@@ -7941,9 +8479,8 @@ instance FromJSON DynamicTargetingKey where
           = withObject "DynamicTargetingKey"
               (\ o ->
                  DynamicTargetingKey' <$>
-                   (o .:? "objectType") <*>
-                     (o .:? "kind" .!= "dfareporting#dynamicTargetingKey")
-                     <*> (o .:? "objectId")
+                   (o .:? "objectType") <*> (o .:? "kind") <*>
+                     (o .:? "objectId")
                      <*> (o .:? "name"))
 
 instance ToJSON DynamicTargetingKey where
@@ -7951,7 +8488,7 @@ instance ToJSON DynamicTargetingKey where
           = object
               (catMaybes
                  [("objectType" .=) <$> _dtkObjectType,
-                  Just ("kind" .= _dtkKind),
+                  ("kind" .=) <$> _dtkKind,
                   ("objectId" .=) <$> _dtkObjectId,
                   ("name" .=) <$> _dtkName])
 
@@ -7965,6 +8502,7 @@ data Creative =
     , _creRenderingIdDimensionValue :: !(Maybe DimensionValue)
     , _creCustomKeyValues :: !(Maybe [Text])
     , _creSkipOffSet :: !(Maybe VideoOffSet)
+    , _creObaIcon :: !(Maybe ObaIcon)
     , _creRenderingId :: !(Maybe (Textual Int64))
     , _creThirdPartyBackupImageImpressionsURL :: !(Maybe Text)
     , _creFsCommand :: !(Maybe FsCommand)
@@ -7977,7 +8515,7 @@ data Creative =
     , _creThirdPartyURLs :: !(Maybe [ThirdPartyTrackingURL])
     , _creProgressOffSet :: !(Maybe VideoOffSet)
     , _creCounterCustomEvents :: !(Maybe [CreativeCustomEvent])
-    , _creKind :: !Text
+    , _creKind :: !(Maybe Text)
     , _creSSLOverride :: !(Maybe Bool)
     , _creHTMLCode :: !(Maybe Text)
     , _creAdvertiserId :: !(Maybe (Textual Int64))
@@ -8041,6 +8579,8 @@ data Creative =
 -- * 'creCustomKeyValues'
 --
 -- * 'creSkipOffSet'
+--
+-- * 'creObaIcon'
 --
 -- * 'creRenderingId'
 --
@@ -8168,6 +8708,7 @@ creative =
     , _creRenderingIdDimensionValue = Nothing
     , _creCustomKeyValues = Nothing
     , _creSkipOffSet = Nothing
+    , _creObaIcon = Nothing
     , _creRenderingId = Nothing
     , _creThirdPartyBackupImageImpressionsURL = Nothing
     , _creFsCommand = Nothing
@@ -8180,7 +8721,7 @@ creative =
     , _creThirdPartyURLs = Nothing
     , _creProgressOffSet = Nothing
     , _creCounterCustomEvents = Nothing
-    , _creKind = "dfareporting#creative"
+    , _creKind = Nothing
     , _creSSLOverride = Nothing
     , _creHTMLCode = Nothing
     , _creAdvertiserId = Nothing
@@ -8274,6 +8815,12 @@ creSkipOffSet :: Lens' Creative (Maybe VideoOffSet)
 creSkipOffSet
   = lens _creSkipOffSet
       (\ s a -> s{_creSkipOffSet = a})
+
+-- | Online behavioral advertising icon to be added to the creative.
+-- Applicable to the following creative types: all INSTREAM_VIDEO.
+creObaIcon :: Lens' Creative (Maybe ObaIcon)
+creObaIcon
+  = lens _creObaIcon (\ s a -> s{_creObaIcon = a})
 
 -- | ID of current rendering version. This is a read-only field. Applicable
 -- to all creative types.
@@ -8379,7 +8926,7 @@ creCounterCustomEvents
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creative\".
-creKind :: Lens' Creative Text
+creKind :: Lens' Creative (Maybe Text)
 creKind = lens _creKind (\ s a -> s{_creKind = a})
 
 -- | Whether creative should be treated as SSL compliant even if the system
@@ -8657,7 +9204,7 @@ creSubAccountId
       . mapping _Coerce
 
 -- | Type of this creative. This is a required field. Applicable to all
--- creative types. Note: FLASH_INPAGE, HTML5_BANNER, and IMAGE are only
+-- creative types. *Note:* FLASH_INPAGE, HTML5_BANNER, and IMAGE are only
 -- used for existing creatives. New creatives should use DISPLAY as a
 -- replacement for these types.
 creType :: Lens' Creative (Maybe CreativeType)
@@ -8807,6 +9354,7 @@ instance FromJSON Creative where
                      <*> (o .:? "renderingIdDimensionValue")
                      <*> (o .:? "customKeyValues" .!= mempty)
                      <*> (o .:? "skipOffset")
+                     <*> (o .:? "obaIcon")
                      <*> (o .:? "renderingId")
                      <*> (o .:? "thirdPartyBackupImageImpressionsUrl")
                      <*> (o .:? "fsCommand")
@@ -8819,7 +9367,7 @@ instance FromJSON Creative where
                      <*> (o .:? "thirdPartyUrls" .!= mempty)
                      <*> (o .:? "progressOffset")
                      <*> (o .:? "counterCustomEvents" .!= mempty)
-                     <*> (o .:? "kind" .!= "dfareporting#creative")
+                     <*> (o .:? "kind")
                      <*> (o .:? "sslOverride")
                      <*> (o .:? "htmlCode")
                      <*> (o .:? "advertiserId")
@@ -8879,6 +9427,7 @@ instance ToJSON Creative where
                     _creRenderingIdDimensionValue,
                   ("customKeyValues" .=) <$> _creCustomKeyValues,
                   ("skipOffset" .=) <$> _creSkipOffSet,
+                  ("obaIcon" .=) <$> _creObaIcon,
                   ("renderingId" .=) <$> _creRenderingId,
                   ("thirdPartyBackupImageImpressionsUrl" .=) <$>
                     _creThirdPartyBackupImageImpressionsURL,
@@ -8894,7 +9443,7 @@ instance ToJSON Creative where
                   ("progressOffset" .=) <$> _creProgressOffSet,
                   ("counterCustomEvents" .=) <$>
                     _creCounterCustomEvents,
-                  Just ("kind" .= _creKind),
+                  ("kind" .=) <$> _creKind,
                   ("sslOverride" .=) <$> _creSSLOverride,
                   ("htmlCode" .=) <$> _creHTMLCode,
                   ("advertiserId" .=) <$> _creAdvertiserId,
@@ -8957,7 +9506,7 @@ instance ToJSON Creative where
 -- /See:/ 'siteCompanionSetting' smart constructor.
 data SiteCompanionSetting =
   SiteCompanionSetting'
-    { _scsKind :: !Text
+    { _scsKind :: !(Maybe Text)
     , _scsImageOnly :: !(Maybe Bool)
     , _scsCompanionsDisabled :: !(Maybe Bool)
     , _scsEnabledSizes :: !(Maybe [Size])
@@ -8980,7 +9529,7 @@ siteCompanionSetting
     :: SiteCompanionSetting
 siteCompanionSetting =
   SiteCompanionSetting'
-    { _scsKind = "dfareporting#siteCompanionSetting"
+    { _scsKind = Nothing
     , _scsImageOnly = Nothing
     , _scsCompanionsDisabled = Nothing
     , _scsEnabledSizes = Nothing
@@ -8989,7 +9538,7 @@ siteCompanionSetting =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#siteCompanionSetting\".
-scsKind :: Lens' SiteCompanionSetting Text
+scsKind :: Lens' SiteCompanionSetting (Maybe Text)
 scsKind = lens _scsKind (\ s a -> s{_scsKind = a})
 
 -- | Whether to serve only static images as companions.
@@ -9003,7 +9552,7 @@ scsCompanionsDisabled
   = lens _scsCompanionsDisabled
       (\ s a -> s{_scsCompanionsDisabled = a})
 
--- | Whitelist of companion sizes to be served via this site template. Set
+-- | Allowlist of companion sizes to be served via this site template. Set
 -- this list to null or empty to serve all companion sizes.
 scsEnabledSizes :: Lens' SiteCompanionSetting [Size]
 scsEnabledSizes
@@ -9017,17 +9566,15 @@ instance FromJSON SiteCompanionSetting where
           = withObject "SiteCompanionSetting"
               (\ o ->
                  SiteCompanionSetting' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#siteCompanionSetting")
-                     <*> (o .:? "imageOnly")
-                     <*> (o .:? "companionsDisabled")
+                   (o .:? "kind") <*> (o .:? "imageOnly") <*>
+                     (o .:? "companionsDisabled")
                      <*> (o .:? "enabledSizes" .!= mempty))
 
 instance ToJSON SiteCompanionSetting where
         toJSON SiteCompanionSetting'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _scsKind),
+                 [("kind" .=) <$> _scsKind,
                   ("imageOnly" .=) <$> _scsImageOnly,
                   ("companionsDisabled" .=) <$> _scsCompanionsDisabled,
                   ("enabledSizes" .=) <$> _scsEnabledSizes])
@@ -9154,7 +9701,7 @@ data AccountsListResponse =
   AccountsListResponse'
     { _accNextPageToken :: !(Maybe Text)
     , _accAccounts :: !(Maybe [Account])
-    , _accKind :: !Text
+    , _accKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9172,10 +9719,7 @@ accountsListResponse
     :: AccountsListResponse
 accountsListResponse =
   AccountsListResponse'
-    { _accNextPageToken = Nothing
-    , _accAccounts = Nothing
-    , _accKind = "dfareporting#accountsListResponse"
-    }
+    {_accNextPageToken = Nothing, _accAccounts = Nothing, _accKind = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -9193,7 +9737,7 @@ accAccounts
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountsListResponse\".
-accKind :: Lens' AccountsListResponse Text
+accKind :: Lens' AccountsListResponse (Maybe Text)
 accKind = lens _accKind (\ s a -> s{_accKind = a})
 
 instance FromJSON AccountsListResponse where
@@ -9203,9 +9747,7 @@ instance FromJSON AccountsListResponse where
                  AccountsListResponse' <$>
                    (o .:? "nextPageToken") <*>
                      (o .:? "accounts" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#accountsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON AccountsListResponse where
         toJSON AccountsListResponse'{..}
@@ -9213,14 +9755,14 @@ instance ToJSON AccountsListResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _accNextPageToken,
                   ("accounts" .=) <$> _accAccounts,
-                  Just ("kind" .= _accKind)])
+                  ("kind" .=) <$> _accKind])
 
 -- | Represents a date range.
 --
 -- /See:/ 'dateRange' smart constructor.
 data DateRange =
   DateRange'
-    { _drKind :: !Text
+    { _drKind :: !(Maybe Text)
     , _drEndDate :: !(Maybe Date')
     , _drStartDate :: !(Maybe Date')
     , _drRelativeDateRange :: !(Maybe DateRangeRelativeDateRange)
@@ -9243,7 +9785,7 @@ dateRange
     :: DateRange
 dateRange =
   DateRange'
-    { _drKind = "dfareporting#dateRange"
+    { _drKind = Nothing
     , _drEndDate = Nothing
     , _drStartDate = Nothing
     , _drRelativeDateRange = Nothing
@@ -9251,18 +9793,14 @@ dateRange =
 
 
 -- | The kind of resource this is, in this case dfareporting#dateRange.
-drKind :: Lens' DateRange Text
+drKind :: Lens' DateRange (Maybe Text)
 drKind = lens _drKind (\ s a -> s{_drKind = a})
 
--- | The end date of the date range, inclusive. A string of the format:
--- \"yyyy-MM-dd\".
 drEndDate :: Lens' DateRange (Maybe Day)
 drEndDate
   = lens _drEndDate (\ s a -> s{_drEndDate = a}) .
       mapping _Date
 
--- | The start date of the date range, inclusive. A string of the format:
--- \"yyyy-MM-dd\".
 drStartDate :: Lens' DateRange (Maybe Day)
 drStartDate
   = lens _drStartDate (\ s a -> s{_drStartDate = a}) .
@@ -9279,16 +9817,15 @@ instance FromJSON DateRange where
           = withObject "DateRange"
               (\ o ->
                  DateRange' <$>
-                   (o .:? "kind" .!= "dfareporting#dateRange") <*>
-                     (o .:? "endDate")
-                     <*> (o .:? "startDate")
+                   (o .:? "kind") <*> (o .:? "endDate") <*>
+                     (o .:? "startDate")
                      <*> (o .:? "relativeDateRange"))
 
 instance ToJSON DateRange where
         toJSON DateRange'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _drKind),
+                 [("kind" .=) <$> _drKind,
                   ("endDate" .=) <$> _drEndDate,
                   ("startDate" .=) <$> _drStartDate,
                   ("relativeDateRange" .=) <$> _drRelativeDateRange])
@@ -9303,12 +9840,14 @@ data Report =
     , _rOwnerProFileId :: !(Maybe (Textual Int64))
     , _rSchedule :: !(Maybe ReportSchedule)
     , _rPathToConversionCriteria :: !(Maybe ReportPathToConversionCriteria)
-    , _rKind :: !Text
+    , _rKind :: !(Maybe Text)
     , _rFormat :: !(Maybe ReportFormat)
+    , _rPathCriteria :: !(Maybe ReportPathCriteria)
     , _rReachCriteria :: !(Maybe ReportReachCriteria)
     , _rLastModifiedTime :: !(Maybe (Textual Word64))
     , _rAccountId :: !(Maybe (Textual Int64))
     , _rName :: !(Maybe Text)
+    , _rPathAttributionCriteria :: !(Maybe ReportPathAttributionCriteria)
     , _rId :: !(Maybe (Textual Int64))
     , _rCrossDimensionReachCriteria :: !(Maybe ReportCrossDimensionReachCriteria)
     , _rType :: !(Maybe ReportType)
@@ -9338,6 +9877,8 @@ data Report =
 --
 -- * 'rFormat'
 --
+-- * 'rPathCriteria'
+--
 -- * 'rReachCriteria'
 --
 -- * 'rLastModifiedTime'
@@ -9345,6 +9886,8 @@ data Report =
 -- * 'rAccountId'
 --
 -- * 'rName'
+--
+-- * 'rPathAttributionCriteria'
 --
 -- * 'rId'
 --
@@ -9368,12 +9911,14 @@ report =
     , _rOwnerProFileId = Nothing
     , _rSchedule = Nothing
     , _rPathToConversionCriteria = Nothing
-    , _rKind = "dfareporting#report"
+    , _rKind = Nothing
     , _rFormat = Nothing
+    , _rPathCriteria = Nothing
     , _rReachCriteria = Nothing
     , _rLastModifiedTime = Nothing
     , _rAccountId = Nothing
     , _rName = Nothing
+    , _rPathAttributionCriteria = Nothing
     , _rId = Nothing
     , _rCrossDimensionReachCriteria = Nothing
     , _rType = Nothing
@@ -9413,7 +9958,7 @@ rPathToConversionCriteria
       (\ s a -> s{_rPathToConversionCriteria = a})
 
 -- | The kind of resource this is, in this case dfareporting#report.
-rKind :: Lens' Report Text
+rKind :: Lens' Report (Maybe Text)
 rKind = lens _rKind (\ s a -> s{_rKind = a})
 
 -- | The output format of the report. If not specified, default format is
@@ -9422,6 +9967,12 @@ rKind = lens _rKind (\ s a -> s{_rKind = a})
 -- capabilities. \"CSV\" will then be the fallback format.
 rFormat :: Lens' Report (Maybe ReportFormat)
 rFormat = lens _rFormat (\ s a -> s{_rFormat = a})
+
+-- | The report criteria for a report of type \"PATH\".
+rPathCriteria :: Lens' Report (Maybe ReportPathCriteria)
+rPathCriteria
+  = lens _rPathCriteria
+      (\ s a -> s{_rPathCriteria = a})
 
 -- | The report criteria for a report of type \"REACH\".
 rReachCriteria :: Lens' Report (Maybe ReportReachCriteria)
@@ -9446,6 +9997,12 @@ rAccountId
 -- | The name of the report.
 rName :: Lens' Report (Maybe Text)
 rName = lens _rName (\ s a -> s{_rName = a})
+
+-- | The report criteria for a report of type \"PATH_ATTRIBUTION\".
+rPathAttributionCriteria :: Lens' Report (Maybe ReportPathAttributionCriteria)
+rPathAttributionCriteria
+  = lens _rPathAttributionCriteria
+      (\ s a -> s{_rPathAttributionCriteria = a})
 
 -- | The unique ID identifying this report resource.
 rId :: Lens' Report (Maybe Int64)
@@ -9494,12 +10051,14 @@ instance FromJSON Report where
                      (o .:? "ownerProfileId")
                      <*> (o .:? "schedule")
                      <*> (o .:? "pathToConversionCriteria")
-                     <*> (o .:? "kind" .!= "dfareporting#report")
+                     <*> (o .:? "kind")
                      <*> (o .:? "format")
+                     <*> (o .:? "pathCriteria")
                      <*> (o .:? "reachCriteria")
                      <*> (o .:? "lastModifiedTime")
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
+                     <*> (o .:? "pathAttributionCriteria")
                      <*> (o .:? "id")
                      <*> (o .:? "crossDimensionReachCriteria")
                      <*> (o .:? "type")
@@ -9518,11 +10077,15 @@ instance ToJSON Report where
                   ("schedule" .=) <$> _rSchedule,
                   ("pathToConversionCriteria" .=) <$>
                     _rPathToConversionCriteria,
-                  Just ("kind" .= _rKind), ("format" .=) <$> _rFormat,
+                  ("kind" .=) <$> _rKind, ("format" .=) <$> _rFormat,
+                  ("pathCriteria" .=) <$> _rPathCriteria,
                   ("reachCriteria" .=) <$> _rReachCriteria,
                   ("lastModifiedTime" .=) <$> _rLastModifiedTime,
                   ("accountId" .=) <$> _rAccountId,
-                  ("name" .=) <$> _rName, ("id" .=) <$> _rId,
+                  ("name" .=) <$> _rName,
+                  ("pathAttributionCriteria" .=) <$>
+                    _rPathAttributionCriteria,
+                  ("id" .=) <$> _rId,
                   ("crossDimensionReachCriteria" .=) <$>
                     _rCrossDimensionReachCriteria,
                   ("type" .=) <$> _rType,
@@ -9538,7 +10101,7 @@ data SiteSkippableSetting =
   SiteSkippableSetting'
     { _sssSkipOffSet :: !(Maybe VideoOffSet)
     , _sssProgressOffSet :: !(Maybe VideoOffSet)
-    , _sssKind :: !Text
+    , _sssKind :: !(Maybe Text)
     , _sssSkippable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -9561,7 +10124,7 @@ siteSkippableSetting =
   SiteSkippableSetting'
     { _sssSkipOffSet = Nothing
     , _sssProgressOffSet = Nothing
-    , _sssKind = "dfareporting#siteSkippableSetting"
+    , _sssKind = Nothing
     , _sssSkippable = Nothing
     }
 
@@ -9582,7 +10145,7 @@ sssProgressOffSet
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#siteSkippableSetting\".
-sssKind :: Lens' SiteSkippableSetting Text
+sssKind :: Lens' SiteSkippableSetting (Maybe Text)
 sssKind = lens _sssKind (\ s a -> s{_sssKind = a})
 
 -- | Whether the user can skip creatives served to this site. This will act
@@ -9597,8 +10160,7 @@ instance FromJSON SiteSkippableSetting where
               (\ o ->
                  SiteSkippableSetting' <$>
                    (o .:? "skipOffset") <*> (o .:? "progressOffset") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#siteSkippableSetting")
+                     (o .:? "kind")
                      <*> (o .:? "skippable"))
 
 instance ToJSON SiteSkippableSetting where
@@ -9607,7 +10169,7 @@ instance ToJSON SiteSkippableSetting where
               (catMaybes
                  [("skipOffset" .=) <$> _sssSkipOffSet,
                   ("progressOffset" .=) <$> _sssProgressOffSet,
-                  Just ("kind" .= _sssKind),
+                  ("kind" .=) <$> _sssKind,
                   ("skippable" .=) <$> _sssSkippable])
 
 -- | A rule associates an asset with a targeting template for asset-level
@@ -9688,7 +10250,7 @@ data Campaign =
     , _camCreativeOptimizationConfiguration :: !(Maybe CreativeOptimizationConfiguration)
     , _camCreativeGroupIds :: !(Maybe [Textual Int64])
     , _camNielsenOCREnabled :: !(Maybe Bool)
-    , _camKind :: !Text
+    , _camKind :: !(Maybe Text)
     , _camClickThroughURLSuffixProperties :: !(Maybe ClickThroughURLSuffixProperties)
     , _camAdvertiserId :: !(Maybe (Textual Int64))
     , _camEndDate :: !(Maybe Date')
@@ -9783,7 +10345,7 @@ campaign =
     , _camCreativeOptimizationConfiguration = Nothing
     , _camCreativeGroupIds = Nothing
     , _camNielsenOCREnabled = Nothing
-    , _camKind = "dfareporting#campaign"
+    , _camKind = Nothing
     , _camClickThroughURLSuffixProperties = Nothing
     , _camAdvertiserId = Nothing
     , _camEndDate = Nothing
@@ -9839,7 +10401,7 @@ camNielsenOCREnabled
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#campaign\".
-camKind :: Lens' Campaign Text
+camKind :: Lens' Campaign (Maybe Text)
 camKind = lens _camKind (\ s a -> s{_camKind = a})
 
 -- | Click-through URL suffix override properties for this campaign.
@@ -9855,13 +10417,6 @@ camAdvertiserId
       (\ s a -> s{_camAdvertiserId = a})
       . mapping _Coerce
 
--- | Date on which the campaign will stop running. On insert, the end date
--- must be today or a future date. The end date must be later than or be
--- the same as the start date. If, for example, you set 6\/25\/2015 as both
--- the start and end dates, the effective campaign run date is just that
--- day only, 6\/25\/2015. The hours, minutes, and seconds of the end date
--- should not be set, as doing so will result in an error. This is a
--- required field.
 camEndDate :: Lens' Campaign (Maybe Day)
 camEndDate
   = lens _camEndDate (\ s a -> s{_camEndDate = a}) .
@@ -9890,9 +10445,6 @@ camEventTagOverrides
       . _Default
       . _Coerce
 
--- | Date on which the campaign starts running. The start date can be any
--- date. The hours, minutes, and seconds of the start date should not be
--- set, as doing so will result in an error. This is a required field.
 camStartDate :: Lens' Campaign (Maybe Day)
 camStartDate
   = lens _camStartDate (\ s a -> s{_camStartDate = a})
@@ -10020,7 +10572,7 @@ instance FromJSON Campaign where
                      (o .:? "creativeOptimizationConfiguration")
                      <*> (o .:? "creativeGroupIds" .!= mempty)
                      <*> (o .:? "nielsenOcrEnabled")
-                     <*> (o .:? "kind" .!= "dfareporting#campaign")
+                     <*> (o .:? "kind")
                      <*> (o .:? "clickThroughUrlSuffixProperties")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "endDate")
@@ -10057,7 +10609,7 @@ instance ToJSON Campaign where
                     _camCreativeOptimizationConfiguration,
                   ("creativeGroupIds" .=) <$> _camCreativeGroupIds,
                   ("nielsenOcrEnabled" .=) <$> _camNielsenOCREnabled,
-                  Just ("kind" .= _camKind),
+                  ("kind" .=) <$> _camKind,
                   ("clickThroughUrlSuffixProperties" .=) <$>
                     _camClickThroughURLSuffixProperties,
                   ("advertiserId" .=) <$> _camAdvertiserId,
@@ -10087,6 +10639,60 @@ instance ToJSON Campaign where
                   ("traffickerEmails" .=) <$> _camTraffickerEmails,
                   ("defaultClickThroughEventTagProperties" .=) <$>
                     _camDefaultClickThroughEventTagProperties])
+
+-- | Insert Custom Events Request.
+--
+-- /See:/ 'customEventsBatchInsertRequest' smart constructor.
+data CustomEventsBatchInsertRequest =
+  CustomEventsBatchInsertRequest'
+    { _cebirKind :: !(Maybe Text)
+    , _cebirCustomEvents :: !(Maybe [CustomEvent])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventsBatchInsertRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cebirKind'
+--
+-- * 'cebirCustomEvents'
+customEventsBatchInsertRequest
+    :: CustomEventsBatchInsertRequest
+customEventsBatchInsertRequest =
+  CustomEventsBatchInsertRequest'
+    {_cebirKind = Nothing, _cebirCustomEvents = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventsBatchInsertRequest\".
+cebirKind :: Lens' CustomEventsBatchInsertRequest (Maybe Text)
+cebirKind
+  = lens _cebirKind (\ s a -> s{_cebirKind = a})
+
+-- | The set of custom events to insert.
+cebirCustomEvents :: Lens' CustomEventsBatchInsertRequest [CustomEvent]
+cebirCustomEvents
+  = lens _cebirCustomEvents
+      (\ s a -> s{_cebirCustomEvents = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON CustomEventsBatchInsertRequest
+         where
+        parseJSON
+          = withObject "CustomEventsBatchInsertRequest"
+              (\ o ->
+                 CustomEventsBatchInsertRequest' <$>
+                   (o .:? "kind") <*> (o .:? "customEvents" .!= mempty))
+
+instance ToJSON CustomEventsBatchInsertRequest where
+        toJSON CustomEventsBatchInsertRequest'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _cebirKind,
+                  ("customEvents" .=) <$> _cebirCustomEvents])
 
 -- | Third Party Authentication Token
 --
@@ -10231,7 +10837,7 @@ instance ToJSON ClickThroughURL where
 -- /See:/ 'browsersListResponse' smart constructor.
 data BrowsersListResponse =
   BrowsersListResponse'
-    { _blrKind :: !Text
+    { _blrKind :: !(Maybe Text)
     , _blrBrowsers :: !(Maybe [Browser])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10247,13 +10853,12 @@ data BrowsersListResponse =
 browsersListResponse
     :: BrowsersListResponse
 browsersListResponse =
-  BrowsersListResponse'
-    {_blrKind = "dfareporting#browsersListResponse", _blrBrowsers = Nothing}
+  BrowsersListResponse' {_blrKind = Nothing, _blrBrowsers = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#browsersListResponse\".
-blrKind :: Lens' BrowsersListResponse Text
+blrKind :: Lens' BrowsersListResponse (Maybe Text)
 blrKind = lens _blrKind (\ s a -> s{_blrKind = a})
 
 -- | Browser collection.
@@ -10268,15 +10873,13 @@ instance FromJSON BrowsersListResponse where
           = withObject "BrowsersListResponse"
               (\ o ->
                  BrowsersListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#browsersListResponse")
-                     <*> (o .:? "browsers" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "browsers" .!= mempty))
 
 instance ToJSON BrowsersListResponse where
         toJSON BrowsersListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _blrKind),
+                 [("kind" .=) <$> _blrKind,
                   ("browsers" .=) <$> _blrBrowsers])
 
 -- | Site Settings
@@ -10364,7 +10967,7 @@ ssActiveViewOptOut
 -- use for in-stream video creatives assigned to the placement. The
 -- publisher\'s specifications will typically determine this setting. For
 -- VPAID creatives, the adapter format will match the VPAID format (HTML5
--- VPAID creatives use the HTML5 adapter). Note: Flash is no longer
+-- VPAID creatives use the HTML5 adapter). *Note:* Flash is no longer
 -- supported. This field now defaults to HTML5 when the following values
 -- are provided: FLASH, BOTH.
 ssVpaidAdapterChoiceTemplate :: Lens' SiteSettings (Maybe SiteSettingsVpaidAdapterChoiceTemplate)
@@ -10403,7 +11006,7 @@ instance ToJSON SiteSettings where
 data ContentCategoriesListResponse =
   ContentCategoriesListResponse'
     { _cclrNextPageToken :: !(Maybe Text)
-    , _cclrKind :: !Text
+    , _cclrKind :: !(Maybe Text)
     , _cclrContentCategories :: !(Maybe [ContentCategory])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10423,7 +11026,7 @@ contentCategoriesListResponse
 contentCategoriesListResponse =
   ContentCategoriesListResponse'
     { _cclrNextPageToken = Nothing
-    , _cclrKind = "dfareporting#contentCategoriesListResponse"
+    , _cclrKind = Nothing
     , _cclrContentCategories = Nothing
     }
 
@@ -10436,7 +11039,7 @@ cclrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#contentCategoriesListResponse\".
-cclrKind :: Lens' ContentCategoriesListResponse Text
+cclrKind :: Lens' ContentCategoriesListResponse (Maybe Text)
 cclrKind = lens _cclrKind (\ s a -> s{_cclrKind = a})
 
 -- | Content category collection.
@@ -10452,18 +11055,142 @@ instance FromJSON ContentCategoriesListResponse where
           = withObject "ContentCategoriesListResponse"
               (\ o ->
                  ContentCategoriesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#contentCategoriesListResponse")
-                     <*> (o .:? "contentCategories" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "contentCategories" .!= mempty))
 
 instance ToJSON ContentCategoriesListResponse where
         toJSON ContentCategoriesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _cclrNextPageToken,
-                  Just ("kind" .= _cclrKind),
+                  ("kind" .=) <$> _cclrKind,
                   ("contentCategories" .=) <$> _cclrContentCategories])
+
+-- | The report criteria for a report of type \"PATH_ATTRIBUTION\".
+--
+-- /See:/ 'reportPathAttributionCriteria' smart constructor.
+data ReportPathAttributionCriteria =
+  ReportPathAttributionCriteria'
+    { _rpacCustomChannelGrouping :: !(Maybe ChannelGrouping)
+    , _rpacMetricNames :: !(Maybe [Text])
+    , _rpacDateRange :: !(Maybe DateRange)
+    , _rpacPathFilters :: !(Maybe [PathFilter])
+    , _rpacFloodlightConfigId :: !(Maybe DimensionValue)
+    , _rpacDimensions :: !(Maybe [SortedDimension])
+    , _rpacActivityFilters :: !(Maybe [DimensionValue])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ReportPathAttributionCriteria' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rpacCustomChannelGrouping'
+--
+-- * 'rpacMetricNames'
+--
+-- * 'rpacDateRange'
+--
+-- * 'rpacPathFilters'
+--
+-- * 'rpacFloodlightConfigId'
+--
+-- * 'rpacDimensions'
+--
+-- * 'rpacActivityFilters'
+reportPathAttributionCriteria
+    :: ReportPathAttributionCriteria
+reportPathAttributionCriteria =
+  ReportPathAttributionCriteria'
+    { _rpacCustomChannelGrouping = Nothing
+    , _rpacMetricNames = Nothing
+    , _rpacDateRange = Nothing
+    , _rpacPathFilters = Nothing
+    , _rpacFloodlightConfigId = Nothing
+    , _rpacDimensions = Nothing
+    , _rpacActivityFilters = Nothing
+    }
+
+
+-- | Channel Grouping.
+rpacCustomChannelGrouping :: Lens' ReportPathAttributionCriteria (Maybe ChannelGrouping)
+rpacCustomChannelGrouping
+  = lens _rpacCustomChannelGrouping
+      (\ s a -> s{_rpacCustomChannelGrouping = a})
+
+-- | The list of names of metrics the report should include.
+rpacMetricNames :: Lens' ReportPathAttributionCriteria [Text]
+rpacMetricNames
+  = lens _rpacMetricNames
+      (\ s a -> s{_rpacMetricNames = a})
+      . _Default
+      . _Coerce
+
+-- | The date range this report should be run for.
+rpacDateRange :: Lens' ReportPathAttributionCriteria (Maybe DateRange)
+rpacDateRange
+  = lens _rpacDateRange
+      (\ s a -> s{_rpacDateRange = a})
+
+-- | Path Filters.
+rpacPathFilters :: Lens' ReportPathAttributionCriteria [PathFilter]
+rpacPathFilters
+  = lens _rpacPathFilters
+      (\ s a -> s{_rpacPathFilters = a})
+      . _Default
+      . _Coerce
+
+-- | The floodlight ID for which to show data in this report. All advertisers
+-- associated with that ID will automatically be added. The dimension of
+-- the value needs to be \'dfa:floodlightConfigId\'.
+rpacFloodlightConfigId :: Lens' ReportPathAttributionCriteria (Maybe DimensionValue)
+rpacFloodlightConfigId
+  = lens _rpacFloodlightConfigId
+      (\ s a -> s{_rpacFloodlightConfigId = a})
+
+-- | The list of dimensions the report should include.
+rpacDimensions :: Lens' ReportPathAttributionCriteria [SortedDimension]
+rpacDimensions
+  = lens _rpacDimensions
+      (\ s a -> s{_rpacDimensions = a})
+      . _Default
+      . _Coerce
+
+-- | The list of \'dfa:activity\' values to filter on.
+rpacActivityFilters :: Lens' ReportPathAttributionCriteria [DimensionValue]
+rpacActivityFilters
+  = lens _rpacActivityFilters
+      (\ s a -> s{_rpacActivityFilters = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON ReportPathAttributionCriteria where
+        parseJSON
+          = withObject "ReportPathAttributionCriteria"
+              (\ o ->
+                 ReportPathAttributionCriteria' <$>
+                   (o .:? "customChannelGrouping") <*>
+                     (o .:? "metricNames" .!= mempty)
+                     <*> (o .:? "dateRange")
+                     <*> (o .:? "pathFilters" .!= mempty)
+                     <*> (o .:? "floodlightConfigId")
+                     <*> (o .:? "dimensions" .!= mempty)
+                     <*> (o .:? "activityFilters" .!= mempty))
+
+instance ToJSON ReportPathAttributionCriteria where
+        toJSON ReportPathAttributionCriteria'{..}
+          = object
+              (catMaybes
+                 [("customChannelGrouping" .=) <$>
+                    _rpacCustomChannelGrouping,
+                  ("metricNames" .=) <$> _rpacMetricNames,
+                  ("dateRange" .=) <$> _rpacDateRange,
+                  ("pathFilters" .=) <$> _rpacPathFilters,
+                  ("floodlightConfigId" .=) <$>
+                    _rpacFloodlightConfigId,
+                  ("dimensions" .=) <$> _rpacDimensions,
+                  ("activityFilters" .=) <$> _rpacActivityFilters])
 
 -- | Creative List Response
 --
@@ -10471,7 +11198,7 @@ instance ToJSON ContentCategoriesListResponse where
 data CreativesListResponse =
   CreativesListResponse'
     { _clrlNextPageToken :: !(Maybe Text)
-    , _clrlKind :: !Text
+    , _clrlKind :: !(Maybe Text)
     , _clrlCreatives :: !(Maybe [Creative])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10491,7 +11218,7 @@ creativesListResponse
 creativesListResponse =
   CreativesListResponse'
     { _clrlNextPageToken = Nothing
-    , _clrlKind = "dfareporting#creativesListResponse"
+    , _clrlKind = Nothing
     , _clrlCreatives = Nothing
     }
 
@@ -10504,7 +11231,7 @@ clrlNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativesListResponse\".
-clrlKind :: Lens' CreativesListResponse Text
+clrlKind :: Lens' CreativesListResponse (Maybe Text)
 clrlKind = lens _clrlKind (\ s a -> s{_clrlKind = a})
 
 -- | Creative collection.
@@ -10520,17 +11247,15 @@ instance FromJSON CreativesListResponse where
           = withObject "CreativesListResponse"
               (\ o ->
                  CreativesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#creativesListResponse")
-                     <*> (o .:? "creatives" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "creatives" .!= mempty))
 
 instance ToJSON CreativesListResponse where
         toJSON CreativesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _clrlNextPageToken,
-                  Just ("kind" .= _clrlKind),
+                  ("kind" .=) <$> _clrlKind,
                   ("creatives" .=) <$> _clrlCreatives])
 
 -- | Contains properties of a Campaign Manager account.
@@ -10543,7 +11268,7 @@ data Account =
     , _aaCurrencyId :: !(Maybe (Textual Int64))
     , _aaReportsConfiguration :: !(Maybe ReportsConfiguration)
     , _aaNielsenOCREnabled :: !(Maybe Bool)
-    , _aaKind :: !Text
+    , _aaKind :: !(Maybe Text)
     , _aaLocale :: !(Maybe Text)
     , _aaActive :: !(Maybe Bool)
     , _aaAvailablePermissionIds :: !(Maybe [Textual Int64])
@@ -10611,7 +11336,7 @@ account =
     , _aaCurrencyId = Nothing
     , _aaReportsConfiguration = Nothing
     , _aaNielsenOCREnabled = Nothing
-    , _aaKind = "dfareporting#account"
+    , _aaKind = Nothing
     , _aaLocale = Nothing
     , _aaActive = Nothing
     , _aaAvailablePermissionIds = Nothing
@@ -10651,13 +11376,13 @@ aaMaximumImageSize
 -- NOK - \"13\" for FIM - \"14\" for ZAR - \"15\" for IEP - \"16\" for NLG
 -- - \"17\" for EUR - \"18\" for KRW - \"19\" for TWD - \"20\" for SGD -
 -- \"21\" for CNY - \"22\" for HKD - \"23\" for NZD - \"24\" for MYR -
--- \"25\" for BRL - \"26\" for PTE - \"27\" for MXP - \"28\" for CLP -
--- \"29\" for TRY - \"30\" for ARS - \"31\" for PEN - \"32\" for ILS -
--- \"33\" for CHF - \"34\" for VEF - \"35\" for COP - \"36\" for GTQ -
--- \"37\" for PLN - \"39\" for INR - \"40\" for THB - \"41\" for IDR -
--- \"42\" for CZK - \"43\" for RON - \"44\" for HUF - \"45\" for RUB -
--- \"46\" for AED - \"47\" for BGN - \"48\" for HRK - \"49\" for MXN -
--- \"50\" for NGN
+-- \"25\" for BRL - \"26\" for PTE - \"28\" for CLP - \"29\" for TRY -
+-- \"30\" for ARS - \"31\" for PEN - \"32\" for ILS - \"33\" for CHF -
+-- \"34\" for VEF - \"35\" for COP - \"36\" for GTQ - \"37\" for PLN -
+-- \"39\" for INR - \"40\" for THB - \"41\" for IDR - \"42\" for CZK -
+-- \"43\" for RON - \"44\" for HUF - \"45\" for RUB - \"46\" for AED -
+-- \"47\" for BGN - \"48\" for HRK - \"49\" for MXN - \"50\" for NGN -
+-- \"51\" for EGP
 aaCurrencyId :: Lens' Account (Maybe Int64)
 aaCurrencyId
   = lens _aaCurrencyId (\ s a -> s{_aaCurrencyId = a})
@@ -10678,7 +11403,7 @@ aaNielsenOCREnabled
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#account\".
-aaKind :: Lens' Account Text
+aaKind :: Lens' Account (Maybe Text)
 aaKind = lens _aaKind (\ s a -> s{_aaKind = a})
 
 -- | Locale of this account. Acceptable values are: - \"cs\" (Czech) - \"de\"
@@ -10776,7 +11501,7 @@ instance FromJSON Account where
                      <*> (o .:? "currencyId")
                      <*> (o .:? "reportsConfiguration")
                      <*> (o .:? "nielsenOcrEnabled")
-                     <*> (o .:? "kind" .!= "dfareporting#account")
+                     <*> (o .:? "kind")
                      <*> (o .:? "locale")
                      <*> (o .:? "active")
                      <*> (o .:? "availablePermissionIds" .!= mempty)
@@ -10802,8 +11527,7 @@ instance ToJSON Account where
                   ("reportsConfiguration" .=) <$>
                     _aaReportsConfiguration,
                   ("nielsenOcrEnabled" .=) <$> _aaNielsenOCREnabled,
-                  Just ("kind" .= _aaKind),
-                  ("locale" .=) <$> _aaLocale,
+                  ("kind" .=) <$> _aaKind, ("locale" .=) <$> _aaLocale,
                   ("active" .=) <$> _aaActive,
                   ("availablePermissionIds" .=) <$>
                     _aaAvailablePermissionIds,
@@ -10825,7 +11549,7 @@ instance ToJSON Account where
 -- /See:/ 'conversionsBatchInsertRequest' smart constructor.
 data ConversionsBatchInsertRequest =
   ConversionsBatchInsertRequest'
-    { _cbirKind :: !Text
+    { _cbirKind :: !(Maybe Text)
     , _cbirConversions :: !(Maybe [Conversion])
     , _cbirEncryptionInfo :: !(Maybe EncryptionInfo)
     }
@@ -10845,7 +11569,7 @@ conversionsBatchInsertRequest
     :: ConversionsBatchInsertRequest
 conversionsBatchInsertRequest =
   ConversionsBatchInsertRequest'
-    { _cbirKind = "dfareporting#conversionsBatchInsertRequest"
+    { _cbirKind = Nothing
     , _cbirConversions = Nothing
     , _cbirEncryptionInfo = Nothing
     }
@@ -10853,7 +11577,7 @@ conversionsBatchInsertRequest =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionsBatchInsertRequest\".
-cbirKind :: Lens' ConversionsBatchInsertRequest Text
+cbirKind :: Lens' ConversionsBatchInsertRequest (Maybe Text)
 cbirKind = lens _cbirKind (\ s a -> s{_cbirKind = a})
 
 -- | The set of conversions to insert.
@@ -10877,16 +11601,14 @@ instance FromJSON ConversionsBatchInsertRequest where
           = withObject "ConversionsBatchInsertRequest"
               (\ o ->
                  ConversionsBatchInsertRequest' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#conversionsBatchInsertRequest")
-                     <*> (o .:? "conversions" .!= mempty)
+                   (o .:? "kind") <*> (o .:? "conversions" .!= mempty)
                      <*> (o .:? "encryptionInfo"))
 
 instance ToJSON ConversionsBatchInsertRequest where
         toJSON ConversionsBatchInsertRequest'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cbirKind),
+                 [("kind" .=) <$> _cbirKind,
                   ("conversions" .=) <$> _cbirConversions,
                   ("encryptionInfo" .=) <$> _cbirEncryptionInfo])
 
@@ -10897,7 +11619,7 @@ data AccountUserProFilesListResponse =
   AccountUserProFilesListResponse'
     { _aupflrNextPageToken :: !(Maybe Text)
     , _aupflrAccountUserProFiles :: !(Maybe [AccountUserProFile])
-    , _aupflrKind :: !Text
+    , _aupflrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -10917,7 +11639,7 @@ accountUserProFilesListResponse =
   AccountUserProFilesListResponse'
     { _aupflrNextPageToken = Nothing
     , _aupflrAccountUserProFiles = Nothing
-    , _aupflrKind = "dfareporting#accountUserProfilesListResponse"
+    , _aupflrKind = Nothing
     }
 
 
@@ -10937,7 +11659,7 @@ aupflrAccountUserProFiles
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountUserProfilesListResponse\".
-aupflrKind :: Lens' AccountUserProFilesListResponse Text
+aupflrKind :: Lens' AccountUserProFilesListResponse (Maybe Text)
 aupflrKind
   = lens _aupflrKind (\ s a -> s{_aupflrKind = a})
 
@@ -10949,9 +11671,7 @@ instance FromJSON AccountUserProFilesListResponse
                  AccountUserProFilesListResponse' <$>
                    (o .:? "nextPageToken") <*>
                      (o .:? "accountUserProfiles" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#accountUserProfilesListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON AccountUserProFilesListResponse where
         toJSON AccountUserProFilesListResponse'{..}
@@ -10960,7 +11680,7 @@ instance ToJSON AccountUserProFilesListResponse where
                  [("nextPageToken" .=) <$> _aupflrNextPageToken,
                   ("accountUserProfiles" .=) <$>
                     _aupflrAccountUserProFiles,
-                  Just ("kind" .= _aupflrKind)])
+                  ("kind" .=) <$> _aupflrKind])
 
 -- | Organizes placements according to the contents of their associated
 -- webpages.
@@ -10968,7 +11688,7 @@ instance ToJSON AccountUserProFilesListResponse where
 -- /See:/ 'contentCategory' smart constructor.
 data ContentCategory =
   ContentCategory'
-    { _conKind :: !Text
+    { _conKind :: !(Maybe Text)
     , _conAccountId :: !(Maybe (Textual Int64))
     , _conName :: !(Maybe Text)
     , _conId :: !(Maybe (Textual Int64))
@@ -10991,7 +11711,7 @@ contentCategory
     :: ContentCategory
 contentCategory =
   ContentCategory'
-    { _conKind = "dfareporting#contentCategory"
+    { _conKind = Nothing
     , _conAccountId = Nothing
     , _conName = Nothing
     , _conId = Nothing
@@ -11000,7 +11720,7 @@ contentCategory =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#contentCategory\".
-conKind :: Lens' ContentCategory Text
+conKind :: Lens' ContentCategory (Maybe Text)
 conKind = lens _conKind (\ s a -> s{_conKind = a})
 
 -- | Account ID of this content category. This is a read-only field that can
@@ -11027,16 +11747,15 @@ instance FromJSON ContentCategory where
           = withObject "ContentCategory"
               (\ o ->
                  ContentCategory' <$>
-                   (o .:? "kind" .!= "dfareporting#contentCategory") <*>
-                     (o .:? "accountId")
-                     <*> (o .:? "name")
+                   (o .:? "kind") <*> (o .:? "accountId") <*>
+                     (o .:? "name")
                      <*> (o .:? "id"))
 
 instance ToJSON ContentCategory where
         toJSON ContentCategory'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _conKind),
+                 [("kind" .=) <$> _conKind,
                   ("accountId" .=) <$> _conAccountId,
                   ("name" .=) <$> _conName, ("id" .=) <$> _conId])
 
@@ -11047,7 +11766,7 @@ instance ToJSON ContentCategory where
 data ReportCompatibleFields =
   ReportCompatibleFields'
     { _rcfMetrics :: !(Maybe [Metric])
-    , _rcfKind :: !Text
+    , _rcfKind :: !(Maybe Text)
     , _rcfDimensionFilters :: !(Maybe [Dimension])
     , _rcfPivotedActivityMetrics :: !(Maybe [Metric])
     , _rcfDimensions :: !(Maybe [Dimension])
@@ -11073,7 +11792,7 @@ reportCompatibleFields
 reportCompatibleFields =
   ReportCompatibleFields'
     { _rcfMetrics = Nothing
-    , _rcfKind = "dfareporting#reportCompatibleFields"
+    , _rcfKind = Nothing
     , _rcfDimensionFilters = Nothing
     , _rcfPivotedActivityMetrics = Nothing
     , _rcfDimensions = Nothing
@@ -11090,7 +11809,7 @@ rcfMetrics
 
 -- | The kind of resource this is, in this case
 -- dfareporting#reportCompatibleFields.
-rcfKind :: Lens' ReportCompatibleFields Text
+rcfKind :: Lens' ReportCompatibleFields (Maybe Text)
 rcfKind = lens _rcfKind (\ s a -> s{_rcfKind = a})
 
 -- | Dimensions which are compatible to be selected in the
@@ -11125,10 +11844,8 @@ instance FromJSON ReportCompatibleFields where
           = withObject "ReportCompatibleFields"
               (\ o ->
                  ReportCompatibleFields' <$>
-                   (o .:? "metrics" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#reportCompatibleFields")
-                     <*> (o .:? "dimensionFilters" .!= mempty)
+                   (o .:? "metrics" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "dimensionFilters" .!= mempty)
                      <*> (o .:? "pivotedActivityMetrics" .!= mempty)
                      <*> (o .:? "dimensions" .!= mempty))
 
@@ -11137,7 +11854,7 @@ instance ToJSON ReportCompatibleFields where
           = object
               (catMaybes
                  [("metrics" .=) <$> _rcfMetrics,
-                  Just ("kind" .= _rcfKind),
+                  ("kind" .=) <$> _rcfKind,
                   ("dimensionFilters" .=) <$> _rcfDimensionFilters,
                   ("pivotedActivityMetrics" .=) <$>
                     _rcfPivotedActivityMetrics,
@@ -11241,7 +11958,7 @@ data RemarketingList =
     { _rlListSize :: !(Maybe (Textual Int64))
     , _rlListPopulationRule :: !(Maybe ListPopulationRule)
     , _rlLifeSpan :: !(Maybe (Textual Int64))
-    , _rlKind :: !Text
+    , _rlKind :: !(Maybe Text)
     , _rlAdvertiserId :: !(Maybe (Textual Int64))
     , _rlAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _rlActive :: !(Maybe Bool)
@@ -11291,7 +12008,7 @@ remarketingList =
     { _rlListSize = Nothing
     , _rlListPopulationRule = Nothing
     , _rlLifeSpan = Nothing
-    , _rlKind = "dfareporting#remarketingList"
+    , _rlKind = Nothing
     , _rlAdvertiserId = Nothing
     , _rlAdvertiserIdDimensionValue = Nothing
     , _rlActive = Nothing
@@ -11325,7 +12042,7 @@ rlLifeSpan
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#remarketingList\".
-rlKind :: Lens' RemarketingList Text
+rlKind :: Lens' RemarketingList (Maybe Text)
 rlKind = lens _rlKind (\ s a -> s{_rlKind = a})
 
 -- | Dimension value for the advertiser ID that owns this remarketing list.
@@ -11391,7 +12108,7 @@ instance FromJSON RemarketingList where
                  RemarketingList' <$>
                    (o .:? "listSize") <*> (o .:? "listPopulationRule")
                      <*> (o .:? "lifeSpan")
-                     <*> (o .:? "kind" .!= "dfareporting#remarketingList")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "active")
@@ -11409,7 +12126,7 @@ instance ToJSON RemarketingList where
                  [("listSize" .=) <$> _rlListSize,
                   ("listPopulationRule" .=) <$> _rlListPopulationRule,
                   ("lifeSpan" .=) <$> _rlLifeSpan,
-                  Just ("kind" .= _rlKind),
+                  ("kind" .=) <$> _rlKind,
                   ("advertiserId" .=) <$> _rlAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _rlAdvertiserIdDimensionValue,
@@ -11426,7 +12143,7 @@ instance ToJSON RemarketingList where
 -- /See:/ 'dynamicTargetingKeysListResponse' smart constructor.
 data DynamicTargetingKeysListResponse =
   DynamicTargetingKeysListResponse'
-    { _dtklrKind :: !Text
+    { _dtklrKind :: !(Maybe Text)
     , _dtklrDynamicTargetingKeys :: !(Maybe [DynamicTargetingKey])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11443,14 +12160,12 @@ dynamicTargetingKeysListResponse
     :: DynamicTargetingKeysListResponse
 dynamicTargetingKeysListResponse =
   DynamicTargetingKeysListResponse'
-    { _dtklrKind = "dfareporting#dynamicTargetingKeysListResponse"
-    , _dtklrDynamicTargetingKeys = Nothing
-    }
+    {_dtklrKind = Nothing, _dtklrDynamicTargetingKeys = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#dynamicTargetingKeysListResponse\".
-dtklrKind :: Lens' DynamicTargetingKeysListResponse Text
+dtklrKind :: Lens' DynamicTargetingKeysListResponse (Maybe Text)
 dtklrKind
   = lens _dtklrKind (\ s a -> s{_dtklrKind = a})
 
@@ -11468,16 +12183,15 @@ instance FromJSON DynamicTargetingKeysListResponse
           = withObject "DynamicTargetingKeysListResponse"
               (\ o ->
                  DynamicTargetingKeysListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#dynamicTargetingKeysListResponse")
-                     <*> (o .:? "dynamicTargetingKeys" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "dynamicTargetingKeys" .!= mempty))
 
 instance ToJSON DynamicTargetingKeysListResponse
          where
         toJSON DynamicTargetingKeysListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _dtklrKind),
+                 [("kind" .=) <$> _dtklrKind,
                   ("dynamicTargetingKeys" .=) <$>
                     _dtklrDynamicTargetingKeys])
 
@@ -11488,7 +12202,7 @@ data DimensionValueList =
   DimensionValueList'
     { _dvlEtag :: !(Maybe Text)
     , _dvlNextPageToken :: !(Maybe Text)
-    , _dvlKind :: !Text
+    , _dvlKind :: !(Maybe Text)
     , _dvlItems :: !(Maybe [DimensionValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11511,7 +12225,7 @@ dimensionValueList =
   DimensionValueList'
     { _dvlEtag = Nothing
     , _dvlNextPageToken = Nothing
-    , _dvlKind = "dfareporting#dimensionValueList"
+    , _dvlKind = Nothing
     , _dvlItems = Nothing
     }
 
@@ -11530,7 +12244,7 @@ dvlNextPageToken
       (\ s a -> s{_dvlNextPageToken = a})
 
 -- | The kind of list this is, in this case dfareporting#dimensionValueList.
-dvlKind :: Lens' DimensionValueList Text
+dvlKind :: Lens' DimensionValueList (Maybe Text)
 dvlKind = lens _dvlKind (\ s a -> s{_dvlKind = a})
 
 -- | The dimension values returned in this response.
@@ -11546,7 +12260,7 @@ instance FromJSON DimensionValueList where
               (\ o ->
                  DimensionValueList' <$>
                    (o .:? "etag") <*> (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#dimensionValueList")
+                     (o .:? "kind")
                      <*> (o .:? "items" .!= mempty))
 
 instance ToJSON DimensionValueList where
@@ -11555,7 +12269,7 @@ instance ToJSON DimensionValueList where
               (catMaybes
                  [("etag" .=) <$> _dvlEtag,
                   ("nextPageToken" .=) <$> _dvlNextPageToken,
-                  Just ("kind" .= _dvlKind),
+                  ("kind" .=) <$> _dvlKind,
                   ("items" .=) <$> _dvlItems])
 
 -- | Represents fields that are compatible to be selected for a report of
@@ -11565,7 +12279,7 @@ instance ToJSON DimensionValueList where
 data FloodlightReportCompatibleFields =
   FloodlightReportCompatibleFields'
     { _frcfMetrics :: !(Maybe [Metric])
-    , _frcfKind :: !Text
+    , _frcfKind :: !(Maybe Text)
     , _frcfDimensionFilters :: !(Maybe [Dimension])
     , _frcfDimensions :: !(Maybe [Dimension])
     }
@@ -11588,7 +12302,7 @@ floodlightReportCompatibleFields
 floodlightReportCompatibleFields =
   FloodlightReportCompatibleFields'
     { _frcfMetrics = Nothing
-    , _frcfKind = "dfareporting#floodlightReportCompatibleFields"
+    , _frcfKind = Nothing
     , _frcfDimensionFilters = Nothing
     , _frcfDimensions = Nothing
     }
@@ -11604,7 +12318,7 @@ frcfMetrics
 
 -- | The kind of resource this is, in this case
 -- dfareporting#floodlightReportCompatibleFields.
-frcfKind :: Lens' FloodlightReportCompatibleFields Text
+frcfKind :: Lens' FloodlightReportCompatibleFields (Maybe Text)
 frcfKind = lens _frcfKind (\ s a -> s{_frcfKind = a})
 
 -- | Dimensions which are compatible to be selected in the
@@ -11631,10 +12345,8 @@ instance FromJSON FloodlightReportCompatibleFields
           = withObject "FloodlightReportCompatibleFields"
               (\ o ->
                  FloodlightReportCompatibleFields' <$>
-                   (o .:? "metrics" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightReportCompatibleFields")
-                     <*> (o .:? "dimensionFilters" .!= mempty)
+                   (o .:? "metrics" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "dimensionFilters" .!= mempty)
                      <*> (o .:? "dimensions" .!= mempty))
 
 instance ToJSON FloodlightReportCompatibleFields
@@ -11643,7 +12355,7 @@ instance ToJSON FloodlightReportCompatibleFields
           = object
               (catMaybes
                  [("metrics" .=) <$> _frcfMetrics,
-                  Just ("kind" .= _frcfKind),
+                  ("kind" .=) <$> _frcfKind,
                   ("dimensionFilters" .=) <$> _frcfDimensionFilters,
                   ("dimensions" .=) <$> _frcfDimensions])
 
@@ -11652,7 +12364,7 @@ instance ToJSON FloodlightReportCompatibleFields
 -- /See:/ 'userRolePermissionGroup' smart constructor.
 data UserRolePermissionGroup =
   UserRolePermissionGroup'
-    { _urpgKind :: !Text
+    { _urpgKind :: !(Maybe Text)
     , _urpgName :: !(Maybe Text)
     , _urpgId :: !(Maybe (Textual Int64))
     }
@@ -11672,15 +12384,12 @@ userRolePermissionGroup
     :: UserRolePermissionGroup
 userRolePermissionGroup =
   UserRolePermissionGroup'
-    { _urpgKind = "dfareporting#userRolePermissionGroup"
-    , _urpgName = Nothing
-    , _urpgId = Nothing
-    }
+    {_urpgKind = Nothing, _urpgName = Nothing, _urpgId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRolePermissionGroup\".
-urpgKind :: Lens' UserRolePermissionGroup Text
+urpgKind :: Lens' UserRolePermissionGroup (Maybe Text)
 urpgKind = lens _urpgKind (\ s a -> s{_urpgKind = a})
 
 -- | Name of this user role permission group.
@@ -11698,16 +12407,13 @@ instance FromJSON UserRolePermissionGroup where
           = withObject "UserRolePermissionGroup"
               (\ o ->
                  UserRolePermissionGroup' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#userRolePermissionGroup")
-                     <*> (o .:? "name")
-                     <*> (o .:? "id"))
+                   (o .:? "kind") <*> (o .:? "name") <*> (o .:? "id"))
 
 instance ToJSON UserRolePermissionGroup where
         toJSON UserRolePermissionGroup'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _urpgKind),
+                 [("kind" .=) <$> _urpgKind,
                   ("name" .=) <$> _urpgName, ("id" .=) <$> _urpgId])
 
 -- | Tag Settings
@@ -11897,7 +12603,7 @@ rptccrpIncludeUnattributedIPConversions
       (\ s a ->
          s{_rptccrpIncludeUnattributedIPConversions = a})
 
--- | DFA checks to see if an impression interaction occurred within the
+-- | CM360 checks to see if an impression interaction occurred within the
 -- specified period of time before a conversion. By default the value is
 -- pulled from Floodlight or you can manually enter a custom value. Valid
 -- values: 1-90.
@@ -11907,7 +12613,7 @@ rptccrpImpressionsLookbackWindow
       (\ s a -> s{_rptccrpImpressionsLookbackWindow = a})
       . mapping _Coerce
 
--- | DFA checks to see if a click interaction occurred within the specified
+-- | CM360 checks to see if a click interaction occurred within the specified
 -- period of time before a conversion. By default the value is pulled from
 -- Floodlight or you can manually enter a custom value. Valid values: 1-90.
 rptccrpClicksLookbackWindow :: Lens' ReportPathToConversionCriteriaReportProperties (Maybe Int32)
@@ -11982,7 +12688,7 @@ instance ToJSON
 -- /See:/ 'userRolePermissionsListResponse' smart constructor.
 data UserRolePermissionsListResponse =
   UserRolePermissionsListResponse'
-    { _urplrKind :: !Text
+    { _urplrKind :: !(Maybe Text)
     , _urplrUserRolePermissions :: !(Maybe [UserRolePermission])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -11999,14 +12705,12 @@ userRolePermissionsListResponse
     :: UserRolePermissionsListResponse
 userRolePermissionsListResponse =
   UserRolePermissionsListResponse'
-    { _urplrKind = "dfareporting#userRolePermissionsListResponse"
-    , _urplrUserRolePermissions = Nothing
-    }
+    {_urplrKind = Nothing, _urplrUserRolePermissions = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRolePermissionsListResponse\".
-urplrKind :: Lens' UserRolePermissionsListResponse Text
+urplrKind :: Lens' UserRolePermissionsListResponse (Maybe Text)
 urplrKind
   = lens _urplrKind (\ s a -> s{_urplrKind = a})
 
@@ -12024,15 +12728,14 @@ instance FromJSON UserRolePermissionsListResponse
           = withObject "UserRolePermissionsListResponse"
               (\ o ->
                  UserRolePermissionsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#userRolePermissionsListResponse")
-                     <*> (o .:? "userRolePermissions" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "userRolePermissions" .!= mempty))
 
 instance ToJSON UserRolePermissionsListResponse where
         toJSON UserRolePermissionsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _urplrKind),
+                 [("kind" .=) <$> _urplrKind,
                   ("userRolePermissions" .=) <$>
                     _urplrUserRolePermissions])
 
@@ -12042,7 +12745,7 @@ instance ToJSON UserRolePermissionsListResponse where
 data PlacementGroupsListResponse =
   PlacementGroupsListResponse'
     { _pglrNextPageToken :: !(Maybe Text)
-    , _pglrKind :: !Text
+    , _pglrKind :: !(Maybe Text)
     , _pglrPlacementGroups :: !(Maybe [PlacementGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12062,7 +12765,7 @@ placementGroupsListResponse
 placementGroupsListResponse =
   PlacementGroupsListResponse'
     { _pglrNextPageToken = Nothing
-    , _pglrKind = "dfareporting#placementGroupsListResponse"
+    , _pglrKind = Nothing
     , _pglrPlacementGroups = Nothing
     }
 
@@ -12075,7 +12778,7 @@ pglrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementGroupsListResponse\".
-pglrKind :: Lens' PlacementGroupsListResponse Text
+pglrKind :: Lens' PlacementGroupsListResponse (Maybe Text)
 pglrKind = lens _pglrKind (\ s a -> s{_pglrKind = a})
 
 -- | Placement group collection.
@@ -12091,17 +12794,15 @@ instance FromJSON PlacementGroupsListResponse where
           = withObject "PlacementGroupsListResponse"
               (\ o ->
                  PlacementGroupsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#placementGroupsListResponse")
-                     <*> (o .:? "placementGroups" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "placementGroups" .!= mempty))
 
 instance ToJSON PlacementGroupsListResponse where
         toJSON PlacementGroupsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _pglrNextPageToken,
-                  Just ("kind" .= _pglrKind),
+                  ("kind" .=) <$> _pglrKind,
                   ("placementGroups" .=) <$> _pglrPlacementGroups])
 
 -- | Contains information about a mobile carrier that can be targeted by ads.
@@ -12109,7 +12810,7 @@ instance ToJSON PlacementGroupsListResponse where
 -- /See:/ 'mobileCarrier' smart constructor.
 data MobileCarrier =
   MobileCarrier'
-    { _mcKind :: !Text
+    { _mcKind :: !(Maybe Text)
     , _mcName :: !(Maybe Text)
     , _mcCountryCode :: !(Maybe Text)
     , _mcId :: !(Maybe (Textual Int64))
@@ -12135,7 +12836,7 @@ mobileCarrier
     :: MobileCarrier
 mobileCarrier =
   MobileCarrier'
-    { _mcKind = "dfareporting#mobileCarrier"
+    { _mcKind = Nothing
     , _mcName = Nothing
     , _mcCountryCode = Nothing
     , _mcId = Nothing
@@ -12145,7 +12846,7 @@ mobileCarrier =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#mobileCarrier\".
-mcKind :: Lens' MobileCarrier Text
+mcKind :: Lens' MobileCarrier (Maybe Text)
 mcKind = lens _mcKind (\ s a -> s{_mcKind = a})
 
 -- | Name of this mobile carrier.
@@ -12176,9 +12877,8 @@ instance FromJSON MobileCarrier where
           = withObject "MobileCarrier"
               (\ o ->
                  MobileCarrier' <$>
-                   (o .:? "kind" .!= "dfareporting#mobileCarrier") <*>
-                     (o .:? "name")
-                     <*> (o .:? "countryCode")
+                   (o .:? "kind") <*> (o .:? "name") <*>
+                     (o .:? "countryCode")
                      <*> (o .:? "id")
                      <*> (o .:? "countryDartId"))
 
@@ -12186,7 +12886,7 @@ instance ToJSON MobileCarrier where
         toJSON MobileCarrier'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _mcKind), ("name" .=) <$> _mcName,
+                 [("kind" .=) <$> _mcKind, ("name" .=) <$> _mcName,
                   ("countryCode" .=) <$> _mcCountryCode,
                   ("id" .=) <$> _mcId,
                   ("countryDartId" .=) <$> _mcCountryDartId])
@@ -12197,7 +12897,7 @@ instance ToJSON MobileCarrier where
 -- /See:/ 'landingPage' smart constructor.
 data LandingPage =
   LandingPage'
-    { _lpKind :: !Text
+    { _lpKind :: !(Maybe Text)
     , _lpAdvertiserId :: !(Maybe (Textual Int64))
     , _lpURL :: !(Maybe Text)
     , _lpName :: !(Maybe Text)
@@ -12229,7 +12929,7 @@ landingPage
     :: LandingPage
 landingPage =
   LandingPage'
-    { _lpKind = "dfareporting#landingPage"
+    { _lpKind = Nothing
     , _lpAdvertiserId = Nothing
     , _lpURL = Nothing
     , _lpName = Nothing
@@ -12241,7 +12941,7 @@ landingPage =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#landingPage\".
-lpKind :: Lens' LandingPage Text
+lpKind :: Lens' LandingPage (Maybe Text)
 lpKind = lens _lpKind (\ s a -> s{_lpKind = a})
 
 -- | Advertiser ID of this landing page. This is a required field.
@@ -12283,9 +12983,8 @@ instance FromJSON LandingPage where
           = withObject "LandingPage"
               (\ o ->
                  LandingPage' <$>
-                   (o .:? "kind" .!= "dfareporting#landingPage") <*>
-                     (o .:? "advertiserId")
-                     <*> (o .:? "url")
+                   (o .:? "kind") <*> (o .:? "advertiserId") <*>
+                     (o .:? "url")
                      <*> (o .:? "name")
                      <*> (o .:? "deepLinks" .!= mempty)
                      <*> (o .:? "id")
@@ -12295,7 +12994,7 @@ instance ToJSON LandingPage where
         toJSON LandingPage'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _lpKind),
+                 [("kind" .=) <$> _lpKind,
                   ("advertiserId" .=) <$> _lpAdvertiserId,
                   ("url" .=) <$> _lpURL, ("name" .=) <$> _lpName,
                   ("deepLinks" .=) <$> _lpDeepLinks,
@@ -12307,7 +13006,7 @@ instance ToJSON LandingPage where
 -- /See:/ 'connectionTypesListResponse' smart constructor.
 data ConnectionTypesListResponse =
   ConnectionTypesListResponse'
-    { _ctlrKind :: !Text
+    { _ctlrKind :: !(Maybe Text)
     , _ctlrConnectionTypes :: !(Maybe [ConnectionType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12324,14 +13023,12 @@ connectionTypesListResponse
     :: ConnectionTypesListResponse
 connectionTypesListResponse =
   ConnectionTypesListResponse'
-    { _ctlrKind = "dfareporting#connectionTypesListResponse"
-    , _ctlrConnectionTypes = Nothing
-    }
+    {_ctlrKind = Nothing, _ctlrConnectionTypes = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#connectionTypesListResponse\".
-ctlrKind :: Lens' ConnectionTypesListResponse Text
+ctlrKind :: Lens' ConnectionTypesListResponse (Maybe Text)
 ctlrKind = lens _ctlrKind (\ s a -> s{_ctlrKind = a})
 
 -- | Collection of connection types such as broadband and mobile.
@@ -12347,16 +13044,62 @@ instance FromJSON ConnectionTypesListResponse where
           = withObject "ConnectionTypesListResponse"
               (\ o ->
                  ConnectionTypesListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#connectionTypesListResponse")
-                     <*> (o .:? "connectionTypes" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "connectionTypes" .!= mempty))
 
 instance ToJSON ConnectionTypesListResponse where
         toJSON ConnectionTypesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _ctlrKind),
+                 [("kind" .=) <$> _ctlrKind,
                   ("connectionTypes" .=) <$> _ctlrConnectionTypes])
+
+-- | Represents a DfaReporting event filter.
+--
+-- /See:/ 'eventFilter' smart constructor.
+data EventFilter =
+  EventFilter'
+    { _efKind :: !(Maybe Text)
+    , _efDimensionFilter :: !(Maybe PathReportDimensionValue)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'EventFilter' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'efKind'
+--
+-- * 'efDimensionFilter'
+eventFilter
+    :: EventFilter
+eventFilter = EventFilter' {_efKind = Nothing, _efDimensionFilter = Nothing}
+
+
+-- | The kind of resource this is, in this case dfareporting#eventFilter.
+efKind :: Lens' EventFilter (Maybe Text)
+efKind = lens _efKind (\ s a -> s{_efKind = a})
+
+-- | The dimension filter contained within this EventFilter.
+efDimensionFilter :: Lens' EventFilter (Maybe PathReportDimensionValue)
+efDimensionFilter
+  = lens _efDimensionFilter
+      (\ s a -> s{_efDimensionFilter = a})
+
+instance FromJSON EventFilter where
+        parseJSON
+          = withObject "EventFilter"
+              (\ o ->
+                 EventFilter' <$>
+                   (o .:? "kind") <*> (o .:? "dimensionFilter"))
+
+instance ToJSON EventFilter where
+        toJSON EventFilter'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _efKind,
+                  ("dimensionFilter" .=) <$> _efDimensionFilter])
 
 -- | Order List Response
 --
@@ -12364,7 +13107,7 @@ instance ToJSON ConnectionTypesListResponse where
 data OrdersListResponse =
   OrdersListResponse'
     { _olrNextPageToken :: !(Maybe Text)
-    , _olrKind :: !Text
+    , _olrKind :: !(Maybe Text)
     , _olrOrders :: !(Maybe [Order])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12383,10 +13126,7 @@ ordersListResponse
     :: OrdersListResponse
 ordersListResponse =
   OrdersListResponse'
-    { _olrNextPageToken = Nothing
-    , _olrKind = "dfareporting#ordersListResponse"
-    , _olrOrders = Nothing
-    }
+    {_olrNextPageToken = Nothing, _olrKind = Nothing, _olrOrders = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -12397,7 +13137,7 @@ olrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#ordersListResponse\".
-olrKind :: Lens' OrdersListResponse Text
+olrKind :: Lens' OrdersListResponse (Maybe Text)
 olrKind = lens _olrKind (\ s a -> s{_olrKind = a})
 
 -- | Order collection.
@@ -12412,16 +13152,15 @@ instance FromJSON OrdersListResponse where
           = withObject "OrdersListResponse"
               (\ o ->
                  OrdersListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#ordersListResponse")
-                     <*> (o .:? "orders" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "orders" .!= mempty))
 
 instance ToJSON OrdersListResponse where
         toJSON OrdersListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _olrNextPageToken,
-                  Just ("kind" .= _olrKind),
+                  ("kind" .=) <$> _olrKind,
                   ("orders" .=) <$> _olrOrders])
 
 -- | Represents the list of reports.
@@ -12431,7 +13170,7 @@ data ReportList =
   ReportList'
     { _repEtag :: !(Maybe Text)
     , _repNextPageToken :: !(Maybe Text)
-    , _repKind :: !Text
+    , _repKind :: !(Maybe Text)
     , _repItems :: !(Maybe [Report])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12454,7 +13193,7 @@ reportList =
   ReportList'
     { _repEtag = Nothing
     , _repNextPageToken = Nothing
-    , _repKind = "dfareporting#reportList"
+    , _repKind = Nothing
     , _repItems = Nothing
     }
 
@@ -12473,7 +13212,7 @@ repNextPageToken
       (\ s a -> s{_repNextPageToken = a})
 
 -- | The kind of list this is, in this case dfareporting#reportList.
-repKind :: Lens' ReportList Text
+repKind :: Lens' ReportList (Maybe Text)
 repKind = lens _repKind (\ s a -> s{_repKind = a})
 
 -- | The reports returned in this response.
@@ -12489,7 +13228,7 @@ instance FromJSON ReportList where
               (\ o ->
                  ReportList' <$>
                    (o .:? "etag") <*> (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#reportList")
+                     (o .:? "kind")
                      <*> (o .:? "items" .!= mempty))
 
 instance ToJSON ReportList where
@@ -12498,7 +13237,7 @@ instance ToJSON ReportList where
               (catMaybes
                  [("etag" .=) <$> _repEtag,
                   ("nextPageToken" .=) <$> _repNextPageToken,
-                  Just ("kind" .= _repKind),
+                  ("kind" .=) <$> _repKind,
                   ("items" .=) <$> _repItems])
 
 -- | Contains properties of a creative group.
@@ -12506,7 +13245,7 @@ instance ToJSON ReportList where
 -- /See:/ 'creativeGroup' smart constructor.
 data CreativeGroup =
   CreativeGroup'
-    { _cgKind :: !Text
+    { _cgKind :: !(Maybe Text)
     , _cgAdvertiserId :: !(Maybe (Textual Int64))
     , _cgAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _cgGroupNumber :: !(Maybe (Textual Int32))
@@ -12541,7 +13280,7 @@ creativeGroup
     :: CreativeGroup
 creativeGroup =
   CreativeGroup'
-    { _cgKind = "dfareporting#creativeGroup"
+    { _cgKind = Nothing
     , _cgAdvertiserId = Nothing
     , _cgAdvertiserIdDimensionValue = Nothing
     , _cgGroupNumber = Nothing
@@ -12554,7 +13293,7 @@ creativeGroup =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeGroup\".
-cgKind :: Lens' CreativeGroup Text
+cgKind :: Lens' CreativeGroup (Maybe Text)
 cgKind = lens _cgKind (\ s a -> s{_cgKind = a})
 
 -- | Advertiser ID of this creative group. This is a required field on
@@ -12614,9 +13353,8 @@ instance FromJSON CreativeGroup where
           = withObject "CreativeGroup"
               (\ o ->
                  CreativeGroup' <$>
-                   (o .:? "kind" .!= "dfareporting#creativeGroup") <*>
-                     (o .:? "advertiserId")
-                     <*> (o .:? "advertiserIdDimensionValue")
+                   (o .:? "kind") <*> (o .:? "advertiserId") <*>
+                     (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "groupNumber")
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
@@ -12627,7 +13365,7 @@ instance ToJSON CreativeGroup where
         toJSON CreativeGroup'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cgKind),
+                 [("kind" .=) <$> _cgKind,
                   ("advertiserId" .=) <$> _cgAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _cgAdvertiserIdDimensionValue,
@@ -12636,12 +13374,86 @@ instance ToJSON CreativeGroup where
                   ("name" .=) <$> _cgName, ("id" .=) <$> _cgId,
                   ("subaccountId" .=) <$> _cgSubAccountId])
 
+-- | Represents a DfaReporting channel grouping.
+--
+-- /See:/ 'channelGrouping' smart constructor.
+data ChannelGrouping =
+  ChannelGrouping'
+    { _chaRules :: !(Maybe [ChannelGroupingRule])
+    , _chaKind :: !(Maybe Text)
+    , _chaFallbackName :: !(Maybe Text)
+    , _chaName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ChannelGrouping' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'chaRules'
+--
+-- * 'chaKind'
+--
+-- * 'chaFallbackName'
+--
+-- * 'chaName'
+channelGrouping
+    :: ChannelGrouping
+channelGrouping =
+  ChannelGrouping'
+    { _chaRules = Nothing
+    , _chaKind = Nothing
+    , _chaFallbackName = Nothing
+    , _chaName = Nothing
+    }
+
+
+-- | The rules contained within this channel grouping.
+chaRules :: Lens' ChannelGrouping [ChannelGroupingRule]
+chaRules
+  = lens _chaRules (\ s a -> s{_chaRules = a}) .
+      _Default
+      . _Coerce
+
+-- | The kind of resource this is, in this case dfareporting#channelGrouping.
+chaKind :: Lens' ChannelGrouping (Maybe Text)
+chaKind = lens _chaKind (\ s a -> s{_chaKind = a})
+
+-- | ChannelGrouping fallback name.
+chaFallbackName :: Lens' ChannelGrouping (Maybe Text)
+chaFallbackName
+  = lens _chaFallbackName
+      (\ s a -> s{_chaFallbackName = a})
+
+-- | ChannelGrouping name.
+chaName :: Lens' ChannelGrouping (Maybe Text)
+chaName = lens _chaName (\ s a -> s{_chaName = a})
+
+instance FromJSON ChannelGrouping where
+        parseJSON
+          = withObject "ChannelGrouping"
+              (\ o ->
+                 ChannelGrouping' <$>
+                   (o .:? "rules" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "fallbackName")
+                     <*> (o .:? "name"))
+
+instance ToJSON ChannelGrouping where
+        toJSON ChannelGrouping'{..}
+          = object
+              (catMaybes
+                 [("rules" .=) <$> _chaRules,
+                  ("kind" .=) <$> _chaKind,
+                  ("fallbackName" .=) <$> _chaFallbackName,
+                  ("name" .=) <$> _chaName])
+
 -- | Identifies a creative which has been associated with a given campaign.
 --
 -- /See:/ 'campaignCreativeAssociation' smart constructor.
 data CampaignCreativeAssociation =
   CampaignCreativeAssociation'
-    { _ccaKind :: !Text
+    { _ccaKind :: !(Maybe Text)
     , _ccaCreativeId :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -12657,15 +13469,12 @@ data CampaignCreativeAssociation =
 campaignCreativeAssociation
     :: CampaignCreativeAssociation
 campaignCreativeAssociation =
-  CampaignCreativeAssociation'
-    { _ccaKind = "dfareporting#campaignCreativeAssociation"
-    , _ccaCreativeId = Nothing
-    }
+  CampaignCreativeAssociation' {_ccaKind = Nothing, _ccaCreativeId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#campaignCreativeAssociation\".
-ccaKind :: Lens' CampaignCreativeAssociation Text
+ccaKind :: Lens' CampaignCreativeAssociation (Maybe Text)
 ccaKind = lens _ccaKind (\ s a -> s{_ccaKind = a})
 
 -- | ID of the creative associated with the campaign. This is a required
@@ -12681,15 +13490,13 @@ instance FromJSON CampaignCreativeAssociation where
           = withObject "CampaignCreativeAssociation"
               (\ o ->
                  CampaignCreativeAssociation' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#campaignCreativeAssociation")
-                     <*> (o .:? "creativeId"))
+                   (o .:? "kind") <*> (o .:? "creativeId"))
 
 instance ToJSON CampaignCreativeAssociation where
         toJSON CampaignCreativeAssociation'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _ccaKind),
+                 [("kind" .=) <$> _ccaKind,
                   ("creativeId" .=) <$> _ccaCreativeId])
 
 -- | The original conversion that was inserted or updated and whether there
@@ -12698,7 +13505,7 @@ instance ToJSON CampaignCreativeAssociation where
 -- /See:/ 'conversionStatus' smart constructor.
 data ConversionStatus =
   ConversionStatus'
-    { _csKind :: !Text
+    { _csKind :: !(Maybe Text)
     , _csConversion :: !(Maybe Conversion)
     , _csErrors :: !(Maybe [ConversionError])
     }
@@ -12718,15 +13525,12 @@ conversionStatus
     :: ConversionStatus
 conversionStatus =
   ConversionStatus'
-    { _csKind = "dfareporting#conversionStatus"
-    , _csConversion = Nothing
-    , _csErrors = Nothing
-    }
+    {_csKind = Nothing, _csConversion = Nothing, _csErrors = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionStatus\".
-csKind :: Lens' ConversionStatus Text
+csKind :: Lens' ConversionStatus (Maybe Text)
 csKind = lens _csKind (\ s a -> s{_csKind = a})
 
 -- | The original conversion that was inserted or updated.
@@ -12746,17 +13550,80 @@ instance FromJSON ConversionStatus where
           = withObject "ConversionStatus"
               (\ o ->
                  ConversionStatus' <$>
-                   (o .:? "kind" .!= "dfareporting#conversionStatus")
-                     <*> (o .:? "conversion")
-                     <*> (o .:? "errors" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "conversion") <*>
+                     (o .:? "errors" .!= mempty))
 
 instance ToJSON ConversionStatus where
         toJSON ConversionStatus'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _csKind),
+                 [("kind" .=) <$> _csKind,
                   ("conversion" .=) <$> _csConversion,
                   ("errors" .=) <$> _csErrors])
+
+-- | Insert Custom Events Response.
+--
+-- /See:/ 'customEventsBatchInsertResponse' smart constructor.
+data CustomEventsBatchInsertResponse =
+  CustomEventsBatchInsertResponse'
+    { _cusStatus :: !(Maybe [CustomEventStatus])
+    , _cusKind :: !(Maybe Text)
+    , _cusHasFailures :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventsBatchInsertResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cusStatus'
+--
+-- * 'cusKind'
+--
+-- * 'cusHasFailures'
+customEventsBatchInsertResponse
+    :: CustomEventsBatchInsertResponse
+customEventsBatchInsertResponse =
+  CustomEventsBatchInsertResponse'
+    {_cusStatus = Nothing, _cusKind = Nothing, _cusHasFailures = Nothing}
+
+
+-- | The insert status of each custom event. Statuses are returned in the
+-- same order that conversions are inserted.
+cusStatus :: Lens' CustomEventsBatchInsertResponse [CustomEventStatus]
+cusStatus
+  = lens _cusStatus (\ s a -> s{_cusStatus = a}) .
+      _Default
+      . _Coerce
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventsBatchInsertResponse\".
+cusKind :: Lens' CustomEventsBatchInsertResponse (Maybe Text)
+cusKind = lens _cusKind (\ s a -> s{_cusKind = a})
+
+-- | Indicates that some or all custom events failed to insert.
+cusHasFailures :: Lens' CustomEventsBatchInsertResponse (Maybe Bool)
+cusHasFailures
+  = lens _cusHasFailures
+      (\ s a -> s{_cusHasFailures = a})
+
+instance FromJSON CustomEventsBatchInsertResponse
+         where
+        parseJSON
+          = withObject "CustomEventsBatchInsertResponse"
+              (\ o ->
+                 CustomEventsBatchInsertResponse' <$>
+                   (o .:? "status" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "hasFailures"))
+
+instance ToJSON CustomEventsBatchInsertResponse where
+        toJSON CustomEventsBatchInsertResponse'{..}
+          = object
+              (catMaybes
+                 [("status" .=) <$> _cusStatus,
+                  ("kind" .=) <$> _cusKind,
+                  ("hasFailures" .=) <$> _cusHasFailures])
 
 -- | Lookback configuration settings.
 --
@@ -12937,7 +13804,7 @@ instance ToJSON FloodlightActivityPublisherDynamicTag
 data AccountActiveAdSummary =
   AccountActiveAdSummary'
     { _aaasAvailableAds :: !(Maybe (Textual Int64))
-    , _aaasKind :: !Text
+    , _aaasKind :: !(Maybe Text)
     , _aaasAccountId :: !(Maybe (Textual Int64))
     , _aaasActiveAds :: !(Maybe (Textual Int64))
     , _aaasActiveAdsLimitTier :: !(Maybe AccountActiveAdSummaryActiveAdsLimitTier)
@@ -12963,7 +13830,7 @@ accountActiveAdSummary
 accountActiveAdSummary =
   AccountActiveAdSummary'
     { _aaasAvailableAds = Nothing
-    , _aaasKind = "dfareporting#accountActiveAdSummary"
+    , _aaasKind = Nothing
     , _aaasAccountId = Nothing
     , _aaasActiveAds = Nothing
     , _aaasActiveAdsLimitTier = Nothing
@@ -12979,7 +13846,7 @@ aaasAvailableAds
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountActiveAdSummary\".
-aaasKind :: Lens' AccountActiveAdSummary Text
+aaasKind :: Lens' AccountActiveAdSummary (Maybe Text)
 aaasKind = lens _aaasKind (\ s a -> s{_aaasKind = a})
 
 -- | ID of the account.
@@ -13007,10 +13874,8 @@ instance FromJSON AccountActiveAdSummary where
           = withObject "AccountActiveAdSummary"
               (\ o ->
                  AccountActiveAdSummary' <$>
-                   (o .:? "availableAds") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#accountActiveAdSummary")
-                     <*> (o .:? "accountId")
+                   (o .:? "availableAds") <*> (o .:? "kind") <*>
+                     (o .:? "accountId")
                      <*> (o .:? "activeAds")
                      <*> (o .:? "activeAdsLimitTier"))
 
@@ -13019,7 +13884,7 @@ instance ToJSON AccountActiveAdSummary where
           = object
               (catMaybes
                  [("availableAds" .=) <$> _aaasAvailableAds,
-                  Just ("kind" .= _aaasKind),
+                  ("kind" .=) <$> _aaasKind,
                   ("accountId" .=) <$> _aaasAccountId,
                   ("activeAds" .=) <$> _aaasActiveAds,
                   ("activeAdsLimitTier" .=) <$>
@@ -13077,7 +13942,7 @@ instance ToJSON OffSetPosition where
 -- /See:/ 'metric' smart constructor.
 data Metric =
   Metric'
-    { _mKind :: !Text
+    { _mKind :: !(Maybe Text)
     , _mName :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13092,11 +13957,11 @@ data Metric =
 -- * 'mName'
 metric
     :: Metric
-metric = Metric' {_mKind = "dfareporting#metric", _mName = Nothing}
+metric = Metric' {_mKind = Nothing, _mName = Nothing}
 
 
 -- | The kind of resource this is, in this case dfareporting#metric.
-mKind :: Lens' Metric Text
+mKind :: Lens' Metric (Maybe Text)
 mKind = lens _mKind (\ s a -> s{_mKind = a})
 
 -- | The metric name, e.g. dfa:impressions
@@ -13107,15 +13972,13 @@ instance FromJSON Metric where
         parseJSON
           = withObject "Metric"
               (\ o ->
-                 Metric' <$>
-                   (o .:? "kind" .!= "dfareporting#metric") <*>
-                     (o .:? "name"))
+                 Metric' <$> (o .:? "kind") <*> (o .:? "name"))
 
 instance ToJSON Metric where
         toJSON Metric'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _mKind), ("name" .=) <$> _mName])
+                 [("kind" .=) <$> _mKind, ("name" .=) <$> _mName])
 
 -- | Contains properties of a remarketing list\'s sharing information.
 -- Sharing allows other accounts or advertisers to target to your
@@ -13126,7 +13989,7 @@ instance ToJSON Metric where
 data RemarketingListShare =
   RemarketingListShare'
     { _rlsSharedAdvertiserIds :: !(Maybe [Textual Int64])
-    , _rlsKind :: !Text
+    , _rlsKind :: !(Maybe Text)
     , _rlsRemarketingListId :: !(Maybe (Textual Int64))
     , _rlsSharedAccountIds :: !(Maybe [Textual Int64])
     }
@@ -13149,7 +14012,7 @@ remarketingListShare
 remarketingListShare =
   RemarketingListShare'
     { _rlsSharedAdvertiserIds = Nothing
-    , _rlsKind = "dfareporting#remarketingListShare"
+    , _rlsKind = Nothing
     , _rlsRemarketingListId = Nothing
     , _rlsSharedAccountIds = Nothing
     }
@@ -13165,7 +14028,7 @@ rlsSharedAdvertiserIds
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#remarketingListShare\".
-rlsKind :: Lens' RemarketingListShare Text
+rlsKind :: Lens' RemarketingListShare (Maybe Text)
 rlsKind = lens _rlsKind (\ s a -> s{_rlsKind = a})
 
 -- | Remarketing list ID. This is a read-only, auto-generated field.
@@ -13189,8 +14052,7 @@ instance FromJSON RemarketingListShare where
               (\ o ->
                  RemarketingListShare' <$>
                    (o .:? "sharedAdvertiserIds" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#remarketingListShare")
+                     (o .:? "kind")
                      <*> (o .:? "remarketingListId")
                      <*> (o .:? "sharedAccountIds" .!= mempty))
 
@@ -13200,7 +14062,7 @@ instance ToJSON RemarketingListShare where
               (catMaybes
                  [("sharedAdvertiserIds" .=) <$>
                     _rlsSharedAdvertiserIds,
-                  Just ("kind" .= _rlsKind),
+                  ("kind" .=) <$> _rlsKind,
                   ("remarketingListId" .=) <$> _rlsRemarketingListId,
                   ("sharedAccountIds" .=) <$> _rlsSharedAccountIds])
 
@@ -13209,7 +14071,7 @@ instance ToJSON RemarketingListShare where
 -- /See:/ 'eventTagsListResponse' smart constructor.
 data EventTagsListResponse =
   EventTagsListResponse'
-    { _etlrKind :: !Text
+    { _etlrKind :: !(Maybe Text)
     , _etlrEventTags :: !(Maybe [EventTag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13225,13 +14087,12 @@ data EventTagsListResponse =
 eventTagsListResponse
     :: EventTagsListResponse
 eventTagsListResponse =
-  EventTagsListResponse'
-    {_etlrKind = "dfareporting#eventTagsListResponse", _etlrEventTags = Nothing}
+  EventTagsListResponse' {_etlrKind = Nothing, _etlrEventTags = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#eventTagsListResponse\".
-etlrKind :: Lens' EventTagsListResponse Text
+etlrKind :: Lens' EventTagsListResponse (Maybe Text)
 etlrKind = lens _etlrKind (\ s a -> s{_etlrKind = a})
 
 -- | Event tag collection.
@@ -13247,15 +14108,13 @@ instance FromJSON EventTagsListResponse where
           = withObject "EventTagsListResponse"
               (\ o ->
                  EventTagsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#eventTagsListResponse")
-                     <*> (o .:? "eventTags" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "eventTags" .!= mempty))
 
 instance ToJSON EventTagsListResponse where
         toJSON EventTagsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _etlrKind),
+                 [("kind" .=) <$> _etlrKind,
                   ("eventTags" .=) <$> _etlrEventTags])
 
 -- | User Role List Response
@@ -13264,7 +14123,7 @@ instance ToJSON EventTagsListResponse where
 data UserRolesListResponse =
   UserRolesListResponse'
     { _urlrNextPageToken :: !(Maybe Text)
-    , _urlrKind :: !Text
+    , _urlrKind :: !(Maybe Text)
     , _urlrUserRoles :: !(Maybe [UserRole])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -13284,7 +14143,7 @@ userRolesListResponse
 userRolesListResponse =
   UserRolesListResponse'
     { _urlrNextPageToken = Nothing
-    , _urlrKind = "dfareporting#userRolesListResponse"
+    , _urlrKind = Nothing
     , _urlrUserRoles = Nothing
     }
 
@@ -13297,7 +14156,7 @@ urlrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRolesListResponse\".
-urlrKind :: Lens' UserRolesListResponse Text
+urlrKind :: Lens' UserRolesListResponse (Maybe Text)
 urlrKind = lens _urlrKind (\ s a -> s{_urlrKind = a})
 
 -- | User role collection.
@@ -13313,17 +14172,15 @@ instance FromJSON UserRolesListResponse where
           = withObject "UserRolesListResponse"
               (\ o ->
                  UserRolesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#userRolesListResponse")
-                     <*> (o .:? "userRoles" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "userRoles" .!= mempty))
 
 instance ToJSON UserRolesListResponse where
         toJSON UserRolesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _urlrNextPageToken,
-                  Just ("kind" .= _urlrKind),
+                  ("kind" .=) <$> _urlrKind,
                   ("userRoles" .=) <$> _urlrUserRoles])
 
 -- | Represents a response to the queryCompatibleFields method.
@@ -13331,9 +14188,11 @@ instance ToJSON UserRolesListResponse where
 -- /See:/ 'compatibleFields' smart constructor.
 data CompatibleFields =
   CompatibleFields'
-    { _cfReachReportCompatibleFields :: !(Maybe ReachReportCompatibleFields)
+    { _cfPathReportCompatibleFields :: !(Maybe PathReportCompatibleFields)
+    , _cfReachReportCompatibleFields :: !(Maybe ReachReportCompatibleFields)
     , _cfCrossDimensionReachReportCompatibleFields :: !(Maybe CrossDimensionReachReportCompatibleFields)
-    , _cfKind :: !Text
+    , _cfPathAttributionReportCompatibleFields :: !(Maybe PathReportCompatibleFields)
+    , _cfKind :: !(Maybe Text)
     , _cfFloodlightReportCompatibleFields :: !(Maybe FloodlightReportCompatibleFields)
     , _cfReportCompatibleFields :: !(Maybe ReportCompatibleFields)
     , _cfPathToConversionReportCompatibleFields :: !(Maybe PathToConversionReportCompatibleFields)
@@ -13345,9 +14204,13 @@ data CompatibleFields =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'cfPathReportCompatibleFields'
+--
 -- * 'cfReachReportCompatibleFields'
 --
 -- * 'cfCrossDimensionReachReportCompatibleFields'
+--
+-- * 'cfPathAttributionReportCompatibleFields'
 --
 -- * 'cfKind'
 --
@@ -13360,14 +14223,23 @@ compatibleFields
     :: CompatibleFields
 compatibleFields =
   CompatibleFields'
-    { _cfReachReportCompatibleFields = Nothing
+    { _cfPathReportCompatibleFields = Nothing
+    , _cfReachReportCompatibleFields = Nothing
     , _cfCrossDimensionReachReportCompatibleFields = Nothing
-    , _cfKind = "dfareporting#compatibleFields"
+    , _cfPathAttributionReportCompatibleFields = Nothing
+    , _cfKind = Nothing
     , _cfFloodlightReportCompatibleFields = Nothing
     , _cfReportCompatibleFields = Nothing
     , _cfPathToConversionReportCompatibleFields = Nothing
     }
 
+
+-- | Contains items that are compatible to be selected for a report of type
+-- \"PATH\".
+cfPathReportCompatibleFields :: Lens' CompatibleFields (Maybe PathReportCompatibleFields)
+cfPathReportCompatibleFields
+  = lens _cfPathReportCompatibleFields
+      (\ s a -> s{_cfPathReportCompatibleFields = a})
 
 -- | Contains items that are compatible to be selected for a report of type
 -- \"REACH\".
@@ -13384,9 +14256,17 @@ cfCrossDimensionReachReportCompatibleFields
       (\ s a ->
          s{_cfCrossDimensionReachReportCompatibleFields = a})
 
+-- | Contains items that are compatible to be selected for a report of type
+-- \"PATH_ATTRIBUTION\".
+cfPathAttributionReportCompatibleFields :: Lens' CompatibleFields (Maybe PathReportCompatibleFields)
+cfPathAttributionReportCompatibleFields
+  = lens _cfPathAttributionReportCompatibleFields
+      (\ s a ->
+         s{_cfPathAttributionReportCompatibleFields = a})
+
 -- | The kind of resource this is, in this case
 -- dfareporting#compatibleFields.
-cfKind :: Lens' CompatibleFields Text
+cfKind :: Lens' CompatibleFields (Maybe Text)
 cfKind = lens _cfKind (\ s a -> s{_cfKind = a})
 
 -- | Contains items that are compatible to be selected for a report of type
@@ -13416,10 +14296,12 @@ instance FromJSON CompatibleFields where
           = withObject "CompatibleFields"
               (\ o ->
                  CompatibleFields' <$>
-                   (o .:? "reachReportCompatibleFields") <*>
-                     (o .:? "crossDimensionReachReportCompatibleFields")
+                   (o .:? "pathReportCompatibleFields") <*>
+                     (o .:? "reachReportCompatibleFields")
                      <*>
-                     (o .:? "kind" .!= "dfareporting#compatibleFields")
+                     (o .:? "crossDimensionReachReportCompatibleFields")
+                     <*> (o .:? "pathAttributionReportCompatibleFields")
+                     <*> (o .:? "kind")
                      <*> (o .:? "floodlightReportCompatibleFields")
                      <*> (o .:? "reportCompatibleFields")
                      <*> (o .:? "pathToConversionReportCompatibleFields"))
@@ -13428,11 +14310,15 @@ instance ToJSON CompatibleFields where
         toJSON CompatibleFields'{..}
           = object
               (catMaybes
-                 [("reachReportCompatibleFields" .=) <$>
+                 [("pathReportCompatibleFields" .=) <$>
+                    _cfPathReportCompatibleFields,
+                  ("reachReportCompatibleFields" .=) <$>
                     _cfReachReportCompatibleFields,
                   ("crossDimensionReachReportCompatibleFields" .=) <$>
                     _cfCrossDimensionReachReportCompatibleFields,
-                  Just ("kind" .= _cfKind),
+                  ("pathAttributionReportCompatibleFields" .=) <$>
+                    _cfPathAttributionReportCompatibleFields,
+                  ("kind" .=) <$> _cfKind,
                   ("floodlightReportCompatibleFields" .=) <$>
                     _cfFloodlightReportCompatibleFields,
                   ("reportCompatibleFields" .=) <$>
@@ -13506,7 +14392,7 @@ instance ToJSON AudienceSegment where
 -- /See:/ 'conversionsBatchUpdateRequest' smart constructor.
 data ConversionsBatchUpdateRequest =
   ConversionsBatchUpdateRequest'
-    { _cburbKind :: !Text
+    { _cburbKind :: !(Maybe Text)
     , _cburbConversions :: !(Maybe [Conversion])
     , _cburbEncryptionInfo :: !(Maybe EncryptionInfo)
     }
@@ -13526,7 +14412,7 @@ conversionsBatchUpdateRequest
     :: ConversionsBatchUpdateRequest
 conversionsBatchUpdateRequest =
   ConversionsBatchUpdateRequest'
-    { _cburbKind = "dfareporting#conversionsBatchUpdateRequest"
+    { _cburbKind = Nothing
     , _cburbConversions = Nothing
     , _cburbEncryptionInfo = Nothing
     }
@@ -13534,7 +14420,7 @@ conversionsBatchUpdateRequest =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionsBatchUpdateRequest\".
-cburbKind :: Lens' ConversionsBatchUpdateRequest Text
+cburbKind :: Lens' ConversionsBatchUpdateRequest (Maybe Text)
 cburbKind
   = lens _cburbKind (\ s a -> s{_cburbKind = a})
 
@@ -13558,16 +14444,14 @@ instance FromJSON ConversionsBatchUpdateRequest where
           = withObject "ConversionsBatchUpdateRequest"
               (\ o ->
                  ConversionsBatchUpdateRequest' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#conversionsBatchUpdateRequest")
-                     <*> (o .:? "conversions" .!= mempty)
+                   (o .:? "kind") <*> (o .:? "conversions" .!= mempty)
                      <*> (o .:? "encryptionInfo"))
 
 instance ToJSON ConversionsBatchUpdateRequest where
         toJSON ConversionsBatchUpdateRequest'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cburbKind),
+                 [("kind" .=) <$> _cburbKind,
                   ("conversions" .=) <$> _cburbConversions,
                   ("encryptionInfo" .=) <$> _cburbEncryptionInfo])
 
@@ -13671,7 +14555,7 @@ instance ToJSON DfpSettings where
 data PathToConversionReportCompatibleFields =
   PathToConversionReportCompatibleFields'
     { _ptcrcfMetrics :: !(Maybe [Metric])
-    , _ptcrcfKind :: !Text
+    , _ptcrcfKind :: !(Maybe Text)
     , _ptcrcfConversionDimensions :: !(Maybe [Dimension])
     , _ptcrcfCustomFloodlightVariables :: !(Maybe [Dimension])
     , _ptcrcfPerInteractionDimensions :: !(Maybe [Dimension])
@@ -13697,7 +14581,7 @@ pathToConversionReportCompatibleFields
 pathToConversionReportCompatibleFields =
   PathToConversionReportCompatibleFields'
     { _ptcrcfMetrics = Nothing
-    , _ptcrcfKind = "dfareporting#pathToConversionReportCompatibleFields"
+    , _ptcrcfKind = Nothing
     , _ptcrcfConversionDimensions = Nothing
     , _ptcrcfCustomFloodlightVariables = Nothing
     , _ptcrcfPerInteractionDimensions = Nothing
@@ -13715,7 +14599,7 @@ ptcrcfMetrics
 
 -- | The kind of resource this is, in this case
 -- dfareporting#pathToConversionReportCompatibleFields.
-ptcrcfKind :: Lens' PathToConversionReportCompatibleFields Text
+ptcrcfKind :: Lens' PathToConversionReportCompatibleFields (Maybe Text)
 ptcrcfKind
   = lens _ptcrcfKind (\ s a -> s{_ptcrcfKind = a})
 
@@ -13753,10 +14637,8 @@ instance FromJSON
           = withObject "PathToConversionReportCompatibleFields"
               (\ o ->
                  PathToConversionReportCompatibleFields' <$>
-                   (o .:? "metrics" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#pathToConversionReportCompatibleFields")
-                     <*> (o .:? "conversionDimensions" .!= mempty)
+                   (o .:? "metrics" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "conversionDimensions" .!= mempty)
                      <*> (o .:? "customFloodlightVariables" .!= mempty)
                      <*> (o .:? "perInteractionDimensions" .!= mempty))
 
@@ -13767,13 +14649,166 @@ instance ToJSON
           = object
               (catMaybes
                  [("metrics" .=) <$> _ptcrcfMetrics,
-                  Just ("kind" .= _ptcrcfKind),
+                  ("kind" .=) <$> _ptcrcfKind,
                   ("conversionDimensions" .=) <$>
                     _ptcrcfConversionDimensions,
                   ("customFloodlightVariables" .=) <$>
                     _ptcrcfCustomFloodlightVariables,
                   ("perInteractionDimensions" .=) <$>
                     _ptcrcfPerInteractionDimensions])
+
+-- | Experimental feature (no support provided) A custom event represents a
+-- third party impression, a third party click, an annotation on a first
+-- party impression, or an annotation on a first party click.
+--
+-- /See:/ 'customEvent' smart constructor.
+data CustomEvent =
+  CustomEvent'
+    { _ceTimestampMicros :: !(Maybe (Textual Int64))
+    , _ceAnnotateImpressionEvent :: !(Maybe CustomEventImpressionAnnotation)
+    , _ceFloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _ceKind :: !(Maybe Text)
+    , _ceCustomVariables :: !(Maybe [CustomVariable])
+    , _ceEventType :: !(Maybe CustomEventEventType)
+    , _ceAnnotateClickEvent :: !(Maybe CustomEventClickAnnotation)
+    , _ceInsertEvent :: !(Maybe CustomEventInsert)
+    , _ceOrdinal :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEvent' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ceTimestampMicros'
+--
+-- * 'ceAnnotateImpressionEvent'
+--
+-- * 'ceFloodlightConfigurationId'
+--
+-- * 'ceKind'
+--
+-- * 'ceCustomVariables'
+--
+-- * 'ceEventType'
+--
+-- * 'ceAnnotateClickEvent'
+--
+-- * 'ceInsertEvent'
+--
+-- * 'ceOrdinal'
+customEvent
+    :: CustomEvent
+customEvent =
+  CustomEvent'
+    { _ceTimestampMicros = Nothing
+    , _ceAnnotateImpressionEvent = Nothing
+    , _ceFloodlightConfigurationId = Nothing
+    , _ceKind = Nothing
+    , _ceCustomVariables = Nothing
+    , _ceEventType = Nothing
+    , _ceAnnotateClickEvent = Nothing
+    , _ceInsertEvent = Nothing
+    , _ceOrdinal = Nothing
+    }
+
+
+-- | The timestamp of this custom event, in Unix epoch micros. This is a
+-- required field.
+ceTimestampMicros :: Lens' CustomEvent (Maybe Int64)
+ceTimestampMicros
+  = lens _ceTimestampMicros
+      (\ s a -> s{_ceTimestampMicros = a})
+      . mapping _Coerce
+
+-- | Annotate an impression. This field is mutually exclusive with
+-- insertEvent and annotateClickEvent. This or insertEvent and
+-- annotateClickEvent is a required field.
+ceAnnotateImpressionEvent :: Lens' CustomEvent (Maybe CustomEventImpressionAnnotation)
+ceAnnotateImpressionEvent
+  = lens _ceAnnotateImpressionEvent
+      (\ s a -> s{_ceAnnotateImpressionEvent = a})
+
+-- | Floodlight configuration ID of the advertiser the event is linked to.
+-- This is a required field.
+ceFloodlightConfigurationId :: Lens' CustomEvent (Maybe Int64)
+ceFloodlightConfigurationId
+  = lens _ceFloodlightConfigurationId
+      (\ s a -> s{_ceFloodlightConfigurationId = a})
+      . mapping _Coerce
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEvent\".
+ceKind :: Lens' CustomEvent (Maybe Text)
+ceKind = lens _ceKind (\ s a -> s{_ceKind = a})
+
+-- | Custom variables associated with the event.
+ceCustomVariables :: Lens' CustomEvent [CustomVariable]
+ceCustomVariables
+  = lens _ceCustomVariables
+      (\ s a -> s{_ceCustomVariables = a})
+      . _Default
+      . _Coerce
+
+-- | The type of event. If INSERT, the fields in insertEvent need to be
+-- populated. If ANNOTATE, the fields in either annotateClickEvent or
+-- annotateImpressionEvent need to be populated.
+ceEventType :: Lens' CustomEvent (Maybe CustomEventEventType)
+ceEventType
+  = lens _ceEventType (\ s a -> s{_ceEventType = a})
+
+-- | Annotate a click event. This field is mutually exclusive with
+-- insertEvent and annotateImpressionEvent. This or insertEvent and
+-- annotateImpressionEvent is a required field.
+ceAnnotateClickEvent :: Lens' CustomEvent (Maybe CustomEventClickAnnotation)
+ceAnnotateClickEvent
+  = lens _ceAnnotateClickEvent
+      (\ s a -> s{_ceAnnotateClickEvent = a})
+
+-- | Insert custom event. This field is mutually exclusive with
+-- annotateClickEvent and annotateImpressionEvent. This or
+-- annotateClickEvent and annotateImpressionEvent is a required field.
+ceInsertEvent :: Lens' CustomEvent (Maybe CustomEventInsert)
+ceInsertEvent
+  = lens _ceInsertEvent
+      (\ s a -> s{_ceInsertEvent = a})
+
+-- | The ordinal of this custom event. This is a required field.
+ceOrdinal :: Lens' CustomEvent (Maybe Text)
+ceOrdinal
+  = lens _ceOrdinal (\ s a -> s{_ceOrdinal = a})
+
+instance FromJSON CustomEvent where
+        parseJSON
+          = withObject "CustomEvent"
+              (\ o ->
+                 CustomEvent' <$>
+                   (o .:? "timestampMicros") <*>
+                     (o .:? "annotateImpressionEvent")
+                     <*> (o .:? "floodlightConfigurationId")
+                     <*> (o .:? "kind")
+                     <*> (o .:? "customVariables" .!= mempty)
+                     <*> (o .:? "eventType")
+                     <*> (o .:? "annotateClickEvent")
+                     <*> (o .:? "insertEvent")
+                     <*> (o .:? "ordinal"))
+
+instance ToJSON CustomEvent where
+        toJSON CustomEvent'{..}
+          = object
+              (catMaybes
+                 [("timestampMicros" .=) <$> _ceTimestampMicros,
+                  ("annotateImpressionEvent" .=) <$>
+                    _ceAnnotateImpressionEvent,
+                  ("floodlightConfigurationId" .=) <$>
+                    _ceFloodlightConfigurationId,
+                  ("kind" .=) <$> _ceKind,
+                  ("customVariables" .=) <$> _ceCustomVariables,
+                  ("eventType" .=) <$> _ceEventType,
+                  ("annotateClickEvent" .=) <$> _ceAnnotateClickEvent,
+                  ("insertEvent" .=) <$> _ceInsertEvent,
+                  ("ordinal" .=) <$> _ceOrdinal])
 
 -- | Contains information about a city that can be targeted by ads.
 --
@@ -13782,7 +14817,7 @@ data City =
   City'
     { _ccMetroCode :: !(Maybe Text)
     , _ccRegionCode :: !(Maybe Text)
-    , _ccKind :: !Text
+    , _ccKind :: !(Maybe Text)
     , _ccRegionDartId :: !(Maybe (Textual Int64))
     , _ccMetroDmaId :: !(Maybe (Textual Int64))
     , _ccName :: !(Maybe Text)
@@ -13820,7 +14855,7 @@ city =
   City'
     { _ccMetroCode = Nothing
     , _ccRegionCode = Nothing
-    , _ccKind = "dfareporting#city"
+    , _ccKind = Nothing
     , _ccRegionDartId = Nothing
     , _ccMetroDmaId = Nothing
     , _ccName = Nothing
@@ -13842,7 +14877,7 @@ ccRegionCode
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#city\".
-ccKind :: Lens' City Text
+ccKind :: Lens' City (Maybe Text)
 ccKind = lens _ccKind (\ s a -> s{_ccKind = a})
 
 -- | DART ID of the region to which this city belongs.
@@ -13888,7 +14923,7 @@ instance FromJSON City where
               (\ o ->
                  City' <$>
                    (o .:? "metroCode") <*> (o .:? "regionCode") <*>
-                     (o .:? "kind" .!= "dfareporting#city")
+                     (o .:? "kind")
                      <*> (o .:? "regionDartId")
                      <*> (o .:? "metroDmaId")
                      <*> (o .:? "name")
@@ -13902,7 +14937,7 @@ instance ToJSON City where
               (catMaybes
                  [("metroCode" .=) <$> _ccMetroCode,
                   ("regionCode" .=) <$> _ccRegionCode,
-                  Just ("kind" .= _ccKind),
+                  ("kind" .=) <$> _ccKind,
                   ("regionDartId" .=) <$> _ccRegionDartId,
                   ("metroDmaId" .=) <$> _ccMetroDmaId,
                   ("name" .=) <$> _ccName,
@@ -13915,7 +14950,7 @@ instance ToJSON City where
 -- /See:/ 'platformType' smart constructor.
 data PlatformType =
   PlatformType'
-    { _ptKind :: !Text
+    { _ptKind :: !(Maybe Text)
     , _ptName :: !(Maybe Text)
     , _ptId :: !(Maybe (Textual Int64))
     }
@@ -13934,13 +14969,12 @@ data PlatformType =
 platformType
     :: PlatformType
 platformType =
-  PlatformType'
-    {_ptKind = "dfareporting#platformType", _ptName = Nothing, _ptId = Nothing}
+  PlatformType' {_ptKind = Nothing, _ptName = Nothing, _ptId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#platformType\".
-ptKind :: Lens' PlatformType Text
+ptKind :: Lens' PlatformType (Maybe Text)
 ptKind = lens _ptKind (\ s a -> s{_ptKind = a})
 
 -- | Name of this platform type.
@@ -13958,15 +14992,13 @@ instance FromJSON PlatformType where
           = withObject "PlatformType"
               (\ o ->
                  PlatformType' <$>
-                   (o .:? "kind" .!= "dfareporting#platformType") <*>
-                     (o .:? "name")
-                     <*> (o .:? "id"))
+                   (o .:? "kind") <*> (o .:? "name") <*> (o .:? "id"))
 
 instance ToJSON PlatformType where
         toJSON PlatformType'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _ptKind), ("name" .=) <$> _ptName,
+                 [("kind" .=) <$> _ptKind, ("name" .=) <$> _ptName,
                   ("id" .=) <$> _ptId])
 
 -- | Key Value Targeting Expression.
@@ -14066,7 +15098,7 @@ instance ToJSON CompanionClickThroughOverride where
 data AdvertisersListResponse =
   AdvertisersListResponse'
     { _advNextPageToken :: !(Maybe Text)
-    , _advKind :: !Text
+    , _advKind :: !(Maybe Text)
     , _advAdvertisers :: !(Maybe [Advertiser])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14085,10 +15117,7 @@ advertisersListResponse
     :: AdvertisersListResponse
 advertisersListResponse =
   AdvertisersListResponse'
-    { _advNextPageToken = Nothing
-    , _advKind = "dfareporting#advertisersListResponse"
-    , _advAdvertisers = Nothing
-    }
+    {_advNextPageToken = Nothing, _advKind = Nothing, _advAdvertisers = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -14099,7 +15128,7 @@ advNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#advertisersListResponse\".
-advKind :: Lens' AdvertisersListResponse Text
+advKind :: Lens' AdvertisersListResponse (Maybe Text)
 advKind = lens _advKind (\ s a -> s{_advKind = a})
 
 -- | Advertiser collection.
@@ -14115,17 +15144,15 @@ instance FromJSON AdvertisersListResponse where
           = withObject "AdvertisersListResponse"
               (\ o ->
                  AdvertisersListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#advertisersListResponse")
-                     <*> (o .:? "advertisers" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "advertisers" .!= mempty))
 
 instance ToJSON AdvertisersListResponse where
         toJSON AdvertisersListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _advNextPageToken,
-                  Just ("kind" .= _advKind),
+                  ("kind" .=) <$> _advKind,
                   ("advertisers" .=) <$> _advAdvertisers])
 
 -- | Country List Response
@@ -14133,7 +15160,7 @@ instance ToJSON AdvertisersListResponse where
 -- /See:/ 'countriesListResponse' smart constructor.
 data CountriesListResponse =
   CountriesListResponse'
-    { _couKind :: !Text
+    { _couKind :: !(Maybe Text)
     , _couCountries :: !(Maybe [Country])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14149,13 +15176,12 @@ data CountriesListResponse =
 countriesListResponse
     :: CountriesListResponse
 countriesListResponse =
-  CountriesListResponse'
-    {_couKind = "dfareporting#countriesListResponse", _couCountries = Nothing}
+  CountriesListResponse' {_couKind = Nothing, _couCountries = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#countriesListResponse\".
-couKind :: Lens' CountriesListResponse Text
+couKind :: Lens' CountriesListResponse (Maybe Text)
 couKind = lens _couKind (\ s a -> s{_couKind = a})
 
 -- | Country collection.
@@ -14170,15 +15196,13 @@ instance FromJSON CountriesListResponse where
           = withObject "CountriesListResponse"
               (\ o ->
                  CountriesListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#countriesListResponse")
-                     <*> (o .:? "countries" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "countries" .!= mempty))
 
 instance ToJSON CountriesListResponse where
         toJSON CountriesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _couKind),
+                 [("kind" .=) <$> _couKind,
                   ("countries" .=) <$> _couCountries])
 
 -- | Account Permission Group List Response
@@ -14186,7 +15210,7 @@ instance ToJSON CountriesListResponse where
 -- /See:/ 'accountPermissionGroupsListResponse' smart constructor.
 data AccountPermissionGroupsListResponse =
   AccountPermissionGroupsListResponse'
-    { _apglrKind :: !Text
+    { _apglrKind :: !(Maybe Text)
     , _apglrAccountPermissionGroups :: !(Maybe [AccountPermissionGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14203,14 +15227,12 @@ accountPermissionGroupsListResponse
     :: AccountPermissionGroupsListResponse
 accountPermissionGroupsListResponse =
   AccountPermissionGroupsListResponse'
-    { _apglrKind = "dfareporting#accountPermissionGroupsListResponse"
-    , _apglrAccountPermissionGroups = Nothing
-    }
+    {_apglrKind = Nothing, _apglrAccountPermissionGroups = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountPermissionGroupsListResponse\".
-apglrKind :: Lens' AccountPermissionGroupsListResponse Text
+apglrKind :: Lens' AccountPermissionGroupsListResponse (Maybe Text)
 apglrKind
   = lens _apglrKind (\ s a -> s{_apglrKind = a})
 
@@ -14228,16 +15250,15 @@ instance FromJSON AccountPermissionGroupsListResponse
           = withObject "AccountPermissionGroupsListResponse"
               (\ o ->
                  AccountPermissionGroupsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#accountPermissionGroupsListResponse")
-                     <*> (o .:? "accountPermissionGroups" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "accountPermissionGroups" .!= mempty))
 
 instance ToJSON AccountPermissionGroupsListResponse
          where
         toJSON AccountPermissionGroupsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _apglrKind),
+                 [("kind" .=) <$> _apglrKind,
                   ("accountPermissionGroups" .=) <$>
                     _apglrAccountPermissionGroups])
 
@@ -14432,7 +15453,7 @@ instance ToJSON EventTagOverride where
 data OperatingSystemVersion =
   OperatingSystemVersion'
     { _osvMinorVersion :: !(Maybe Text)
-    , _osvKind :: !Text
+    , _osvKind :: !(Maybe Text)
     , _osvOperatingSystem :: !(Maybe OperatingSystem)
     , _osvMajorVersion :: !(Maybe Text)
     , _osvName :: !(Maybe Text)
@@ -14461,7 +15482,7 @@ operatingSystemVersion
 operatingSystemVersion =
   OperatingSystemVersion'
     { _osvMinorVersion = Nothing
-    , _osvKind = "dfareporting#operatingSystemVersion"
+    , _osvKind = Nothing
     , _osvOperatingSystem = Nothing
     , _osvMajorVersion = Nothing
     , _osvName = Nothing
@@ -14478,7 +15499,7 @@ osvMinorVersion
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#operatingSystemVersion\".
-osvKind :: Lens' OperatingSystemVersion Text
+osvKind :: Lens' OperatingSystemVersion (Maybe Text)
 osvKind = lens _osvKind (\ s a -> s{_osvKind = a})
 
 -- | Operating system of this operating system version.
@@ -14508,10 +15529,8 @@ instance FromJSON OperatingSystemVersion where
           = withObject "OperatingSystemVersion"
               (\ o ->
                  OperatingSystemVersion' <$>
-                   (o .:? "minorVersion") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#operatingSystemVersion")
-                     <*> (o .:? "operatingSystem")
+                   (o .:? "minorVersion") <*> (o .:? "kind") <*>
+                     (o .:? "operatingSystem")
                      <*> (o .:? "majorVersion")
                      <*> (o .:? "name")
                      <*> (o .:? "id"))
@@ -14521,7 +15540,7 @@ instance ToJSON OperatingSystemVersion where
           = object
               (catMaybes
                  [("minorVersion" .=) <$> _osvMinorVersion,
-                  Just ("kind" .= _osvKind),
+                  ("kind" .=) <$> _osvKind,
                   ("operatingSystem" .=) <$> _osvOperatingSystem,
                   ("majorVersion" .=) <$> _osvMajorVersion,
                   ("name" .=) <$> _osvName, ("id" .=) <$> _osvId])
@@ -14533,7 +15552,7 @@ instance ToJSON OperatingSystemVersion where
 -- /See:/ 'accountPermission' smart constructor.
 data AccountPermission =
   AccountPermission'
-    { _acccKind :: !Text
+    { _acccKind :: !(Maybe Text)
     , _acccAccountProFiles :: !(Maybe [AccountPermissionAccountProFilesItem])
     , _acccName :: !(Maybe Text)
     , _acccId :: !(Maybe (Textual Int64))
@@ -14562,7 +15581,7 @@ accountPermission
     :: AccountPermission
 accountPermission =
   AccountPermission'
-    { _acccKind = "dfareporting#accountPermission"
+    { _acccKind = Nothing
     , _acccAccountProFiles = Nothing
     , _acccName = Nothing
     , _acccId = Nothing
@@ -14573,7 +15592,7 @@ accountPermission =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountPermission\".
-acccKind :: Lens' AccountPermission Text
+acccKind :: Lens' AccountPermission (Maybe Text)
 acccKind = lens _acccKind (\ s a -> s{_acccKind = a})
 
 -- | Account profiles associated with this account permission. Possible
@@ -14612,8 +15631,8 @@ instance FromJSON AccountPermission where
           = withObject "AccountPermission"
               (\ o ->
                  AccountPermission' <$>
-                   (o .:? "kind" .!= "dfareporting#accountPermission")
-                     <*> (o .:? "accountProfiles" .!= mempty)
+                   (o .:? "kind") <*>
+                     (o .:? "accountProfiles" .!= mempty)
                      <*> (o .:? "name")
                      <*> (o .:? "id")
                      <*> (o .:? "level")
@@ -14623,19 +15642,21 @@ instance ToJSON AccountPermission where
         toJSON AccountPermission'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _acccKind),
+                 [("kind" .=) <$> _acccKind,
                   ("accountProfiles" .=) <$> _acccAccountProFiles,
                   ("name" .=) <$> _acccName, ("id" .=) <$> _acccId,
                   ("level" .=) <$> _acccLevel,
                   ("permissionGroupId" .=) <$> _acccPermissionGroupId])
 
--- | Represents a UserProfile resource.
+-- | A UserProfile resource lets you list all DFA user profiles that are
+-- associated with a Google user account. The profile_id needs to be
+-- specified in other API requests.
 --
 -- /See:/ 'userProFile' smart constructor.
 data UserProFile =
   UserProFile'
     { _upfEtag :: !(Maybe Text)
-    , _upfKind :: !Text
+    , _upfKind :: !(Maybe Text)
     , _upfAccountName :: !(Maybe Text)
     , _upfProFileId :: !(Maybe (Textual Int64))
     , _upfUserName :: !(Maybe Text)
@@ -14670,7 +15691,7 @@ userProFile
 userProFile =
   UserProFile'
     { _upfEtag = Nothing
-    , _upfKind = "dfareporting#userProfile"
+    , _upfKind = Nothing
     , _upfAccountName = Nothing
     , _upfProFileId = Nothing
     , _upfUserName = Nothing
@@ -14680,12 +15701,13 @@ userProFile =
     }
 
 
--- | The eTag of this response for caching purposes.
+-- | Etag of this resource.
 upfEtag :: Lens' UserProFile (Maybe Text)
 upfEtag = lens _upfEtag (\ s a -> s{_upfEtag = a})
 
--- | The kind of resource this is, in this case dfareporting#userProfile.
-upfKind :: Lens' UserProFile Text
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#userProfile\".
+upfKind :: Lens' UserProFile (Maybe Text)
 upfKind = lens _upfKind (\ s a -> s{_upfKind = a})
 
 -- | The account name this profile belongs to.
@@ -14729,9 +15751,8 @@ instance FromJSON UserProFile where
           = withObject "UserProFile"
               (\ o ->
                  UserProFile' <$>
-                   (o .:? "etag") <*>
-                     (o .:? "kind" .!= "dfareporting#userProfile")
-                     <*> (o .:? "accountName")
+                   (o .:? "etag") <*> (o .:? "kind") <*>
+                     (o .:? "accountName")
                      <*> (o .:? "profileId")
                      <*> (o .:? "userName")
                      <*> (o .:? "accountId")
@@ -14742,7 +15763,7 @@ instance ToJSON UserProFile where
         toJSON UserProFile'{..}
           = object
               (catMaybes
-                 [("etag" .=) <$> _upfEtag, Just ("kind" .= _upfKind),
+                 [("etag" .=) <$> _upfEtag, ("kind" .=) <$> _upfKind,
                   ("accountName" .=) <$> _upfAccountName,
                   ("profileId" .=) <$> _upfProFileId,
                   ("userName" .=) <$> _upfUserName,
@@ -14755,7 +15776,7 @@ instance ToJSON UserProFile where
 -- /See:/ 'operatingSystemsListResponse' smart constructor.
 data OperatingSystemsListResponse =
   OperatingSystemsListResponse'
-    { _oslrKind :: !Text
+    { _oslrKind :: !(Maybe Text)
     , _oslrOperatingSystems :: !(Maybe [OperatingSystem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -14772,14 +15793,12 @@ operatingSystemsListResponse
     :: OperatingSystemsListResponse
 operatingSystemsListResponse =
   OperatingSystemsListResponse'
-    { _oslrKind = "dfareporting#operatingSystemsListResponse"
-    , _oslrOperatingSystems = Nothing
-    }
+    {_oslrKind = Nothing, _oslrOperatingSystems = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#operatingSystemsListResponse\".
-oslrKind :: Lens' OperatingSystemsListResponse Text
+oslrKind :: Lens' OperatingSystemsListResponse (Maybe Text)
 oslrKind = lens _oslrKind (\ s a -> s{_oslrKind = a})
 
 -- | Operating system collection.
@@ -14795,15 +15814,14 @@ instance FromJSON OperatingSystemsListResponse where
           = withObject "OperatingSystemsListResponse"
               (\ o ->
                  OperatingSystemsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#operatingSystemsListResponse")
-                     <*> (o .:? "operatingSystems" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "operatingSystems" .!= mempty))
 
 instance ToJSON OperatingSystemsListResponse where
         toJSON OperatingSystemsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _oslrKind),
+                 [("kind" .=) <$> _oslrKind,
                   ("operatingSystems" .=) <$> _oslrOperatingSystems])
 
 -- | The report\'s email delivery settings.
@@ -14898,7 +15916,7 @@ data TargetableRemarketingList =
   TargetableRemarketingList'
     { _trlListSize :: !(Maybe (Textual Int64))
     , _trlLifeSpan :: !(Maybe (Textual Int64))
-    , _trlKind :: !Text
+    , _trlKind :: !(Maybe Text)
     , _trlAdvertiserId :: !(Maybe (Textual Int64))
     , _trlAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _trlActive :: !(Maybe Bool)
@@ -14945,7 +15963,7 @@ targetableRemarketingList =
   TargetableRemarketingList'
     { _trlListSize = Nothing
     , _trlLifeSpan = Nothing
-    , _trlKind = "dfareporting#targetableRemarketingList"
+    , _trlKind = Nothing
     , _trlAdvertiserId = Nothing
     , _trlAdvertiserIdDimensionValue = Nothing
     , _trlActive = Nothing
@@ -14973,7 +15991,7 @@ trlLifeSpan
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#targetableRemarketingList\".
-trlKind :: Lens' TargetableRemarketingList Text
+trlKind :: Lens' TargetableRemarketingList (Maybe Text)
 trlKind = lens _trlKind (\ s a -> s{_trlKind = a})
 
 -- | Dimension value for the advertiser ID that owns this targetable
@@ -15039,8 +16057,7 @@ instance FromJSON TargetableRemarketingList where
               (\ o ->
                  TargetableRemarketingList' <$>
                    (o .:? "listSize") <*> (o .:? "lifeSpan") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#targetableRemarketingList")
+                     (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "active")
@@ -15057,7 +16074,7 @@ instance ToJSON TargetableRemarketingList where
               (catMaybes
                  [("listSize" .=) <$> _trlListSize,
                   ("lifeSpan" .=) <$> _trlLifeSpan,
-                  Just ("kind" .= _trlKind),
+                  ("kind" .=) <$> _trlKind,
                   ("advertiserId" .=) <$> _trlAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _trlAdvertiserIdDimensionValue,
@@ -15074,7 +16091,7 @@ instance ToJSON TargetableRemarketingList where
 -- /See:/ 'postalCodesListResponse' smart constructor.
 data PostalCodesListResponse =
   PostalCodesListResponse'
-    { _pclrKind :: !Text
+    { _pclrKind :: !(Maybe Text)
     , _pclrPostalCodes :: !(Maybe [PostalCode])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15090,15 +16107,12 @@ data PostalCodesListResponse =
 postalCodesListResponse
     :: PostalCodesListResponse
 postalCodesListResponse =
-  PostalCodesListResponse'
-    { _pclrKind = "dfareporting#postalCodesListResponse"
-    , _pclrPostalCodes = Nothing
-    }
+  PostalCodesListResponse' {_pclrKind = Nothing, _pclrPostalCodes = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#postalCodesListResponse\".
-pclrKind :: Lens' PostalCodesListResponse Text
+pclrKind :: Lens' PostalCodesListResponse (Maybe Text)
 pclrKind = lens _pclrKind (\ s a -> s{_pclrKind = a})
 
 -- | Postal code collection.
@@ -15114,15 +16128,13 @@ instance FromJSON PostalCodesListResponse where
           = withObject "PostalCodesListResponse"
               (\ o ->
                  PostalCodesListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#postalCodesListResponse")
-                     <*> (o .:? "postalCodes" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "postalCodes" .!= mempty))
 
 instance ToJSON PostalCodesListResponse where
         toJSON PostalCodesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _pclrKind),
+                 [("kind" .=) <$> _pclrKind,
                   ("postalCodes" .=) <$> _pclrPostalCodes])
 
 -- | Describes a change that a user has made to a resource.
@@ -15130,20 +16142,20 @@ instance ToJSON PostalCodesListResponse where
 -- /See:/ 'changeLog' smart constructor.
 data ChangeLog =
   ChangeLog'
-    { _chaUserProFileId :: !(Maybe (Textual Int64))
-    , _chaObjectType :: !(Maybe Text)
-    , _chaUserProFileName :: !(Maybe Text)
-    , _chaKind :: !Text
-    , _chaObjectId :: !(Maybe (Textual Int64))
-    , _chaAction :: !(Maybe Text)
-    , _chaTransactionId :: !(Maybe (Textual Int64))
-    , _chaOldValue :: !(Maybe Text)
-    , _chaAccountId :: !(Maybe (Textual Int64))
-    , _chaNewValue :: !(Maybe Text)
-    , _chaFieldName :: !(Maybe Text)
-    , _chaId :: !(Maybe (Textual Int64))
-    , _chaSubAccountId :: !(Maybe (Textual Int64))
-    , _chaChangeTime :: !(Maybe DateTime')
+    { _chahUserProFileId :: !(Maybe (Textual Int64))
+    , _chahObjectType :: !(Maybe Text)
+    , _chahUserProFileName :: !(Maybe Text)
+    , _chahKind :: !(Maybe Text)
+    , _chahObjectId :: !(Maybe (Textual Int64))
+    , _chahAction :: !(Maybe Text)
+    , _chahTransactionId :: !(Maybe (Textual Int64))
+    , _chahOldValue :: !(Maybe Text)
+    , _chahAccountId :: !(Maybe (Textual Int64))
+    , _chahNewValue :: !(Maybe Text)
+    , _chahFieldName :: !(Maybe Text)
+    , _chahId :: !(Maybe (Textual Int64))
+    , _chahSubAccountId :: !(Maybe (Textual Int64))
+    , _chahChangeTime :: !(Maybe DateTime')
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15152,138 +16164,139 @@ data ChangeLog =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'chaUserProFileId'
+-- * 'chahUserProFileId'
 --
--- * 'chaObjectType'
+-- * 'chahObjectType'
 --
--- * 'chaUserProFileName'
+-- * 'chahUserProFileName'
 --
--- * 'chaKind'
+-- * 'chahKind'
 --
--- * 'chaObjectId'
+-- * 'chahObjectId'
 --
--- * 'chaAction'
+-- * 'chahAction'
 --
--- * 'chaTransactionId'
+-- * 'chahTransactionId'
 --
--- * 'chaOldValue'
+-- * 'chahOldValue'
 --
--- * 'chaAccountId'
+-- * 'chahAccountId'
 --
--- * 'chaNewValue'
+-- * 'chahNewValue'
 --
--- * 'chaFieldName'
+-- * 'chahFieldName'
 --
--- * 'chaId'
+-- * 'chahId'
 --
--- * 'chaSubAccountId'
+-- * 'chahSubAccountId'
 --
--- * 'chaChangeTime'
+-- * 'chahChangeTime'
 changeLog
     :: ChangeLog
 changeLog =
   ChangeLog'
-    { _chaUserProFileId = Nothing
-    , _chaObjectType = Nothing
-    , _chaUserProFileName = Nothing
-    , _chaKind = "dfareporting#changeLog"
-    , _chaObjectId = Nothing
-    , _chaAction = Nothing
-    , _chaTransactionId = Nothing
-    , _chaOldValue = Nothing
-    , _chaAccountId = Nothing
-    , _chaNewValue = Nothing
-    , _chaFieldName = Nothing
-    , _chaId = Nothing
-    , _chaSubAccountId = Nothing
-    , _chaChangeTime = Nothing
+    { _chahUserProFileId = Nothing
+    , _chahObjectType = Nothing
+    , _chahUserProFileName = Nothing
+    , _chahKind = Nothing
+    , _chahObjectId = Nothing
+    , _chahAction = Nothing
+    , _chahTransactionId = Nothing
+    , _chahOldValue = Nothing
+    , _chahAccountId = Nothing
+    , _chahNewValue = Nothing
+    , _chahFieldName = Nothing
+    , _chahId = Nothing
+    , _chahSubAccountId = Nothing
+    , _chahChangeTime = Nothing
     }
 
 
 -- | ID of the user who modified the object.
-chaUserProFileId :: Lens' ChangeLog (Maybe Int64)
-chaUserProFileId
-  = lens _chaUserProFileId
-      (\ s a -> s{_chaUserProFileId = a})
+chahUserProFileId :: Lens' ChangeLog (Maybe Int64)
+chahUserProFileId
+  = lens _chahUserProFileId
+      (\ s a -> s{_chahUserProFileId = a})
       . mapping _Coerce
 
 -- | Object type of the change log.
-chaObjectType :: Lens' ChangeLog (Maybe Text)
-chaObjectType
-  = lens _chaObjectType
-      (\ s a -> s{_chaObjectType = a})
+chahObjectType :: Lens' ChangeLog (Maybe Text)
+chahObjectType
+  = lens _chahObjectType
+      (\ s a -> s{_chahObjectType = a})
 
 -- | User profile name of the user who modified the object.
-chaUserProFileName :: Lens' ChangeLog (Maybe Text)
-chaUserProFileName
-  = lens _chaUserProFileName
-      (\ s a -> s{_chaUserProFileName = a})
+chahUserProFileName :: Lens' ChangeLog (Maybe Text)
+chahUserProFileName
+  = lens _chahUserProFileName
+      (\ s a -> s{_chahUserProFileName = a})
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#changeLog\".
-chaKind :: Lens' ChangeLog Text
-chaKind = lens _chaKind (\ s a -> s{_chaKind = a})
+chahKind :: Lens' ChangeLog (Maybe Text)
+chahKind = lens _chahKind (\ s a -> s{_chahKind = a})
 
 -- | ID of the object of this change log. The object could be a campaign,
 -- placement, ad, or other type.
-chaObjectId :: Lens' ChangeLog (Maybe Int64)
-chaObjectId
-  = lens _chaObjectId (\ s a -> s{_chaObjectId = a}) .
-      mapping _Coerce
+chahObjectId :: Lens' ChangeLog (Maybe Int64)
+chahObjectId
+  = lens _chahObjectId (\ s a -> s{_chahObjectId = a})
+      . mapping _Coerce
 
 -- | Action which caused the change.
-chaAction :: Lens' ChangeLog (Maybe Text)
-chaAction
-  = lens _chaAction (\ s a -> s{_chaAction = a})
+chahAction :: Lens' ChangeLog (Maybe Text)
+chahAction
+  = lens _chahAction (\ s a -> s{_chahAction = a})
 
 -- | Transaction ID of this change log. When a single API call results in
 -- many changes, each change will have a separate ID in the change log but
 -- will share the same transactionId.
-chaTransactionId :: Lens' ChangeLog (Maybe Int64)
-chaTransactionId
-  = lens _chaTransactionId
-      (\ s a -> s{_chaTransactionId = a})
+chahTransactionId :: Lens' ChangeLog (Maybe Int64)
+chahTransactionId
+  = lens _chahTransactionId
+      (\ s a -> s{_chahTransactionId = a})
       . mapping _Coerce
 
 -- | Old value of the object field.
-chaOldValue :: Lens' ChangeLog (Maybe Text)
-chaOldValue
-  = lens _chaOldValue (\ s a -> s{_chaOldValue = a})
+chahOldValue :: Lens' ChangeLog (Maybe Text)
+chahOldValue
+  = lens _chahOldValue (\ s a -> s{_chahOldValue = a})
 
 -- | Account ID of the modified object.
-chaAccountId :: Lens' ChangeLog (Maybe Int64)
-chaAccountId
-  = lens _chaAccountId (\ s a -> s{_chaAccountId = a})
+chahAccountId :: Lens' ChangeLog (Maybe Int64)
+chahAccountId
+  = lens _chahAccountId
+      (\ s a -> s{_chahAccountId = a})
       . mapping _Coerce
 
 -- | New value of the object field.
-chaNewValue :: Lens' ChangeLog (Maybe Text)
-chaNewValue
-  = lens _chaNewValue (\ s a -> s{_chaNewValue = a})
+chahNewValue :: Lens' ChangeLog (Maybe Text)
+chahNewValue
+  = lens _chahNewValue (\ s a -> s{_chahNewValue = a})
 
 -- | Field name of the object which changed.
-chaFieldName :: Lens' ChangeLog (Maybe Text)
-chaFieldName
-  = lens _chaFieldName (\ s a -> s{_chaFieldName = a})
+chahFieldName :: Lens' ChangeLog (Maybe Text)
+chahFieldName
+  = lens _chahFieldName
+      (\ s a -> s{_chahFieldName = a})
 
 -- | ID of this change log.
-chaId :: Lens' ChangeLog (Maybe Int64)
-chaId
-  = lens _chaId (\ s a -> s{_chaId = a}) .
+chahId :: Lens' ChangeLog (Maybe Int64)
+chahId
+  = lens _chahId (\ s a -> s{_chahId = a}) .
       mapping _Coerce
 
 -- | Subaccount ID of the modified object.
-chaSubAccountId :: Lens' ChangeLog (Maybe Int64)
-chaSubAccountId
-  = lens _chaSubAccountId
-      (\ s a -> s{_chaSubAccountId = a})
+chahSubAccountId :: Lens' ChangeLog (Maybe Int64)
+chahSubAccountId
+  = lens _chahSubAccountId
+      (\ s a -> s{_chahSubAccountId = a})
       . mapping _Coerce
 
--- | Time when the object was modified.
-chaChangeTime :: Lens' ChangeLog (Maybe UTCTime)
-chaChangeTime
-  = lens _chaChangeTime
-      (\ s a -> s{_chaChangeTime = a})
+chahChangeTime :: Lens' ChangeLog (Maybe UTCTime)
+chahChangeTime
+  = lens _chahChangeTime
+      (\ s a -> s{_chahChangeTime = a})
       . mapping _DateTime
 
 instance FromJSON ChangeLog where
@@ -15293,7 +16306,7 @@ instance FromJSON ChangeLog where
                  ChangeLog' <$>
                    (o .:? "userProfileId") <*> (o .:? "objectType") <*>
                      (o .:? "userProfileName")
-                     <*> (o .:? "kind" .!= "dfareporting#changeLog")
+                     <*> (o .:? "kind")
                      <*> (o .:? "objectId")
                      <*> (o .:? "action")
                      <*> (o .:? "transactionId")
@@ -15309,20 +16322,20 @@ instance ToJSON ChangeLog where
         toJSON ChangeLog'{..}
           = object
               (catMaybes
-                 [("userProfileId" .=) <$> _chaUserProFileId,
-                  ("objectType" .=) <$> _chaObjectType,
-                  ("userProfileName" .=) <$> _chaUserProFileName,
-                  Just ("kind" .= _chaKind),
-                  ("objectId" .=) <$> _chaObjectId,
-                  ("action" .=) <$> _chaAction,
-                  ("transactionId" .=) <$> _chaTransactionId,
-                  ("oldValue" .=) <$> _chaOldValue,
-                  ("accountId" .=) <$> _chaAccountId,
-                  ("newValue" .=) <$> _chaNewValue,
-                  ("fieldName" .=) <$> _chaFieldName,
-                  ("id" .=) <$> _chaId,
-                  ("subaccountId" .=) <$> _chaSubAccountId,
-                  ("changeTime" .=) <$> _chaChangeTime])
+                 [("userProfileId" .=) <$> _chahUserProFileId,
+                  ("objectType" .=) <$> _chahObjectType,
+                  ("userProfileName" .=) <$> _chahUserProFileName,
+                  ("kind" .=) <$> _chahKind,
+                  ("objectId" .=) <$> _chahObjectId,
+                  ("action" .=) <$> _chahAction,
+                  ("transactionId" .=) <$> _chahTransactionId,
+                  ("oldValue" .=) <$> _chahOldValue,
+                  ("accountId" .=) <$> _chahAccountId,
+                  ("newValue" .=) <$> _chahNewValue,
+                  ("fieldName" .=) <$> _chahFieldName,
+                  ("id" .=) <$> _chahId,
+                  ("subaccountId" .=) <$> _chahSubAccountId,
+                  ("changeTime" .=) <$> _chahChangeTime])
 
 -- | Contains information about a language that can be targeted by ads.
 --
@@ -15330,7 +16343,7 @@ instance ToJSON ChangeLog where
 data Language =
   Language'
     { _lLanguageCode :: !(Maybe Text)
-    , _lKind :: !Text
+    , _lKind :: !(Maybe Text)
     , _lName :: !(Maybe Text)
     , _lId :: !(Maybe (Textual Int64))
     }
@@ -15353,7 +16366,7 @@ language
 language =
   Language'
     { _lLanguageCode = Nothing
-    , _lKind = "dfareporting#language"
+    , _lKind = Nothing
     , _lName = Nothing
     , _lId = Nothing
     }
@@ -15369,7 +16382,7 @@ lLanguageCode
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#language\".
-lKind :: Lens' Language Text
+lKind :: Lens' Language (Maybe Text)
 lKind = lens _lKind (\ s a -> s{_lKind = a})
 
 -- | Name of this language.
@@ -15387,9 +16400,8 @@ instance FromJSON Language where
           = withObject "Language"
               (\ o ->
                  Language' <$>
-                   (o .:? "languageCode") <*>
-                     (o .:? "kind" .!= "dfareporting#language")
-                     <*> (o .:? "name")
+                   (o .:? "languageCode") <*> (o .:? "kind") <*>
+                     (o .:? "name")
                      <*> (o .:? "id"))
 
 instance ToJSON Language where
@@ -15397,7 +16409,7 @@ instance ToJSON Language where
           = object
               (catMaybes
                  [("languageCode" .=) <$> _lLanguageCode,
-                  Just ("kind" .= _lKind), ("name" .=) <$> _lName,
+                  ("kind" .=) <$> _lKind, ("name" .=) <$> _lName,
                   ("id" .=) <$> _lId])
 
 -- | Contains properties of a placement strategy.
@@ -15405,7 +16417,7 @@ instance ToJSON Language where
 -- /See:/ 'placementStrategy' smart constructor.
 data PlacementStrategy =
   PlacementStrategy'
-    { _psKind :: !Text
+    { _psKind :: !(Maybe Text)
     , _psAccountId :: !(Maybe (Textual Int64))
     , _psName :: !(Maybe Text)
     , _psId :: !(Maybe (Textual Int64))
@@ -15428,7 +16440,7 @@ placementStrategy
     :: PlacementStrategy
 placementStrategy =
   PlacementStrategy'
-    { _psKind = "dfareporting#placementStrategy"
+    { _psKind = Nothing
     , _psAccountId = Nothing
     , _psName = Nothing
     , _psId = Nothing
@@ -15437,7 +16449,7 @@ placementStrategy =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementStrategy\".
-psKind :: Lens' PlacementStrategy Text
+psKind :: Lens' PlacementStrategy (Maybe Text)
 psKind = lens _psKind (\ s a -> s{_psKind = a})
 
 -- | Account ID of this placement strategy.This is a read-only field that can
@@ -15465,16 +16477,15 @@ instance FromJSON PlacementStrategy where
           = withObject "PlacementStrategy"
               (\ o ->
                  PlacementStrategy' <$>
-                   (o .:? "kind" .!= "dfareporting#placementStrategy")
-                     <*> (o .:? "accountId")
-                     <*> (o .:? "name")
+                   (o .:? "kind") <*> (o .:? "accountId") <*>
+                     (o .:? "name")
                      <*> (o .:? "id"))
 
 instance ToJSON PlacementStrategy where
         toJSON PlacementStrategy'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _psKind),
+                 [("kind" .=) <$> _psKind,
                   ("accountId" .=) <$> _psAccountId,
                   ("name" .=) <$> _psName, ("id" .=) <$> _psId])
 
@@ -15484,12 +16495,14 @@ instance ToJSON PlacementStrategy where
 data FloodlightActivity =
   FloodlightActivity'
     { _faCountingMethod :: !(Maybe FloodlightActivityCountingMethod)
+    , _faAttributionEnabled :: !(Maybe Bool)
+    , _faStatus :: !(Maybe FloodlightActivityStatus)
     , _faTagString :: !(Maybe Text)
     , _faSecure :: !(Maybe Bool)
     , _faExpectedURL :: !(Maybe Text)
     , _faFloodlightActivityGroupTagString :: !(Maybe Text)
     , _faFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _faKind :: !Text
+    , _faKind :: !(Maybe Text)
     , _faAdvertiserId :: !(Maybe (Textual Int64))
     , _faAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _faSSLCompliant :: !(Maybe Bool)
@@ -15500,7 +16513,6 @@ data FloodlightActivity =
     , _faName :: !(Maybe Text)
     , _faPublisherTags :: !(Maybe [FloodlightActivityPublisherDynamicTag])
     , _faFloodlightActivityGroupId :: !(Maybe (Textual Int64))
-    , _faHidden :: !(Maybe Bool)
     , _faFloodlightActivityGroupType :: !(Maybe FloodlightActivityFloodlightActivityGroupType)
     , _faDefaultTags :: !(Maybe [FloodlightActivityDynamicTag])
     , _faFloodlightTagType :: !(Maybe FloodlightActivityFloodlightTagType)
@@ -15520,6 +16532,10 @@ data FloodlightActivity =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'faCountingMethod'
+--
+-- * 'faAttributionEnabled'
+--
+-- * 'faStatus'
 --
 -- * 'faTagString'
 --
@@ -15553,8 +16569,6 @@ data FloodlightActivity =
 --
 -- * 'faFloodlightActivityGroupId'
 --
--- * 'faHidden'
---
 -- * 'faFloodlightActivityGroupType'
 --
 -- * 'faDefaultTags'
@@ -15579,12 +16593,14 @@ floodlightActivity
 floodlightActivity =
   FloodlightActivity'
     { _faCountingMethod = Nothing
+    , _faAttributionEnabled = Nothing
+    , _faStatus = Nothing
     , _faTagString = Nothing
     , _faSecure = Nothing
     , _faExpectedURL = Nothing
     , _faFloodlightActivityGroupTagString = Nothing
     , _faFloodlightConfigurationId = Nothing
-    , _faKind = "dfareporting#floodlightActivity"
+    , _faKind = Nothing
     , _faAdvertiserId = Nothing
     , _faAdvertiserIdDimensionValue = Nothing
     , _faSSLCompliant = Nothing
@@ -15595,7 +16611,6 @@ floodlightActivity =
     , _faName = Nothing
     , _faPublisherTags = Nothing
     , _faFloodlightActivityGroupId = Nothing
-    , _faHidden = Nothing
     , _faFloodlightActivityGroupType = Nothing
     , _faDefaultTags = Nothing
     , _faFloodlightTagType = Nothing
@@ -15616,12 +16631,26 @@ faCountingMethod
   = lens _faCountingMethod
       (\ s a -> s{_faCountingMethod = a})
 
+-- | Whether the activity is enabled for attribution.
+faAttributionEnabled :: Lens' FloodlightActivity (Maybe Bool)
+faAttributionEnabled
+  = lens _faAttributionEnabled
+      (\ s a -> s{_faAttributionEnabled = a})
+
+-- | The status of the activity. This can only be set to ACTIVE or
+-- ARCHIVED_AND_DISABLED. The ARCHIVED status is no longer supported and
+-- cannot be set for Floodlight activities. The DISABLED_POLICY status
+-- indicates that a Floodlight activity is violating Google policy. Contact
+-- your account manager for more information.
+faStatus :: Lens' FloodlightActivity (Maybe FloodlightActivityStatus)
+faStatus = lens _faStatus (\ s a -> s{_faStatus = a})
+
 -- | Value of the cat= parameter in the floodlight tag, which the ad servers
 -- use to identify the activity. This is optional: if empty, a new tag
 -- string will be generated for you. This string must be 1 to 8 characters
--- long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag
--- string must also be unique among activities of the same activity group.
--- This field is read-only after insertion.
+-- long, with valid characters being a-z0-9[ _ ]. This tag string must also
+-- be unique among activities of the same activity group. This field is
+-- read-only after insertion.
 faTagString :: Lens' FloodlightActivity (Maybe Text)
 faTagString
   = lens _faTagString (\ s a -> s{_faTagString = a})
@@ -15656,7 +16685,7 @@ faFloodlightConfigurationId
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightActivity\".
-faKind :: Lens' FloodlightActivity Text
+faKind :: Lens' FloodlightActivity (Maybe Text)
 faKind = lens _faKind (\ s a -> s{_faKind = a})
 
 -- | Advertiser ID of this floodlight activity. If this field is left blank,
@@ -15730,10 +16759,6 @@ faFloodlightActivityGroupId
   = lens _faFloodlightActivityGroupId
       (\ s a -> s{_faFloodlightActivityGroupId = a})
       . mapping _Coerce
-
--- | Whether this activity is archived.
-faHidden :: Lens' FloodlightActivity (Maybe Bool)
-faHidden = lens _faHidden (\ s a -> s{_faHidden = a})
 
 -- | Type of the associated floodlight activity group. This is a read-only
 -- field.
@@ -15812,13 +16837,15 @@ instance FromJSON FloodlightActivity where
           = withObject "FloodlightActivity"
               (\ o ->
                  FloodlightActivity' <$>
-                   (o .:? "countingMethod") <*> (o .:? "tagString") <*>
-                     (o .:? "secure")
+                   (o .:? "countingMethod") <*>
+                     (o .:? "attributionEnabled")
+                     <*> (o .:? "status")
+                     <*> (o .:? "tagString")
+                     <*> (o .:? "secure")
                      <*> (o .:? "expectedUrl")
                      <*> (o .:? "floodlightActivityGroupTagString")
                      <*> (o .:? "floodlightConfigurationId")
-                     <*>
-                     (o .:? "kind" .!= "dfareporting#floodlightActivity")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "sslCompliant")
@@ -15829,7 +16856,6 @@ instance FromJSON FloodlightActivity where
                      <*> (o .:? "name")
                      <*> (o .:? "publisherTags" .!= mempty)
                      <*> (o .:? "floodlightActivityGroupId")
-                     <*> (o .:? "hidden")
                      <*> (o .:? "floodlightActivityGroupType")
                      <*> (o .:? "defaultTags" .!= mempty)
                      <*> (o .:? "floodlightTagType")
@@ -15847,6 +16873,8 @@ instance ToJSON FloodlightActivity where
           = object
               (catMaybes
                  [("countingMethod" .=) <$> _faCountingMethod,
+                  ("attributionEnabled" .=) <$> _faAttributionEnabled,
+                  ("status" .=) <$> _faStatus,
                   ("tagString" .=) <$> _faTagString,
                   ("secure" .=) <$> _faSecure,
                   ("expectedUrl" .=) <$> _faExpectedURL,
@@ -15854,7 +16882,7 @@ instance ToJSON FloodlightActivity where
                     _faFloodlightActivityGroupTagString,
                   ("floodlightConfigurationId" .=) <$>
                     _faFloodlightConfigurationId,
-                  Just ("kind" .= _faKind),
+                  ("kind" .=) <$> _faKind,
                   ("advertiserId" .=) <$> _faAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _faAdvertiserIdDimensionValue,
@@ -15867,7 +16895,6 @@ instance ToJSON FloodlightActivity where
                   ("publisherTags" .=) <$> _faPublisherTags,
                   ("floodlightActivityGroupId" .=) <$>
                     _faFloodlightActivityGroupId,
-                  ("hidden" .=) <$> _faHidden,
                   ("floodlightActivityGroupType" .=) <$>
                     _faFloodlightActivityGroupType,
                   ("defaultTags" .=) <$> _faDefaultTags,
@@ -15888,9 +16915,9 @@ instance ToJSON FloodlightActivity where
 -- /See:/ 'customFloodlightVariable' smart constructor.
 data CustomFloodlightVariable =
   CustomFloodlightVariable'
-    { _cusKind :: !Text
-    , _cusValue :: !(Maybe Text)
-    , _cusType :: !(Maybe CustomFloodlightVariableType)
+    { _cfvfKind :: !(Maybe Text)
+    , _cfvfValue :: !(Maybe Text)
+    , _cfvfType :: !(Maybe CustomFloodlightVariableType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -15899,60 +16926,56 @@ data CustomFloodlightVariable =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'cusKind'
+-- * 'cfvfKind'
 --
--- * 'cusValue'
+-- * 'cfvfValue'
 --
--- * 'cusType'
+-- * 'cfvfType'
 customFloodlightVariable
     :: CustomFloodlightVariable
 customFloodlightVariable =
   CustomFloodlightVariable'
-    { _cusKind = "dfareporting#customFloodlightVariable"
-    , _cusValue = Nothing
-    , _cusType = Nothing
-    }
+    {_cfvfKind = Nothing, _cfvfValue = Nothing, _cfvfType = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#customFloodlightVariable\".
-cusKind :: Lens' CustomFloodlightVariable Text
-cusKind = lens _cusKind (\ s a -> s{_cusKind = a})
+cfvfKind :: Lens' CustomFloodlightVariable (Maybe Text)
+cfvfKind = lens _cfvfKind (\ s a -> s{_cfvfKind = a})
 
 -- | The value of the custom floodlight variable. The length of string must
--- not exceed 50 characters.
-cusValue :: Lens' CustomFloodlightVariable (Maybe Text)
-cusValue = lens _cusValue (\ s a -> s{_cusValue = a})
+-- not exceed 100 characters.
+cfvfValue :: Lens' CustomFloodlightVariable (Maybe Text)
+cfvfValue
+  = lens _cfvfValue (\ s a -> s{_cfvfValue = a})
 
 -- | The type of custom floodlight variable to supply a value for. These map
 -- to the \"u[1-20]=\" in the tags.
-cusType :: Lens' CustomFloodlightVariable (Maybe CustomFloodlightVariableType)
-cusType = lens _cusType (\ s a -> s{_cusType = a})
+cfvfType :: Lens' CustomFloodlightVariable (Maybe CustomFloodlightVariableType)
+cfvfType = lens _cfvfType (\ s a -> s{_cfvfType = a})
 
 instance FromJSON CustomFloodlightVariable where
         parseJSON
           = withObject "CustomFloodlightVariable"
               (\ o ->
                  CustomFloodlightVariable' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#customFloodlightVariable")
-                     <*> (o .:? "value")
-                     <*> (o .:? "type"))
+                   (o .:? "kind") <*> (o .:? "value") <*>
+                     (o .:? "type"))
 
 instance ToJSON CustomFloodlightVariable where
         toJSON CustomFloodlightVariable'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cusKind),
-                  ("value" .=) <$> _cusValue,
-                  ("type" .=) <$> _cusType])
+                 [("kind" .=) <$> _cfvfKind,
+                  ("value" .=) <$> _cfvfValue,
+                  ("type" .=) <$> _cfvfType])
 
 -- | Platform Type List Response
 --
 -- /See:/ 'platformTypesListResponse' smart constructor.
 data PlatformTypesListResponse =
   PlatformTypesListResponse'
-    { _ptlrKind :: !Text
+    { _ptlrKind :: !(Maybe Text)
     , _ptlrPlatformTypes :: !(Maybe [PlatformType])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -15968,15 +16991,12 @@ data PlatformTypesListResponse =
 platformTypesListResponse
     :: PlatformTypesListResponse
 platformTypesListResponse =
-  PlatformTypesListResponse'
-    { _ptlrKind = "dfareporting#platformTypesListResponse"
-    , _ptlrPlatformTypes = Nothing
-    }
+  PlatformTypesListResponse' {_ptlrKind = Nothing, _ptlrPlatformTypes = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#platformTypesListResponse\".
-ptlrKind :: Lens' PlatformTypesListResponse Text
+ptlrKind :: Lens' PlatformTypesListResponse (Maybe Text)
 ptlrKind = lens _ptlrKind (\ s a -> s{_ptlrKind = a})
 
 -- | Platform type collection.
@@ -15992,15 +17012,14 @@ instance FromJSON PlatformTypesListResponse where
           = withObject "PlatformTypesListResponse"
               (\ o ->
                  PlatformTypesListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#platformTypesListResponse")
-                     <*> (o .:? "platformTypes" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "platformTypes" .!= mempty))
 
 instance ToJSON PlatformTypesListResponse where
         toJSON PlatformTypesListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _ptlrKind),
+                 [("kind" .=) <$> _ptlrKind,
                   ("platformTypes" .=) <$> _ptlrPlatformTypes])
 
 -- | Modification timestamp.
@@ -16089,13 +17108,71 @@ instance ToJSON TargetWindow where
                  [("customHtml" .=) <$> _twCustomHTML,
                   ("targetWindowOption" .=) <$> _twTargetWindowOption])
 
+-- | Custom variable.
+--
+-- /See:/ 'customVariable' smart constructor.
+data CustomVariable =
+  CustomVariable'
+    { _cvKind :: !(Maybe Text)
+    , _cvValue :: !(Maybe Text)
+    , _cvIndex :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomVariable' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cvKind'
+--
+-- * 'cvValue'
+--
+-- * 'cvIndex'
+customVariable
+    :: CustomVariable
+customVariable =
+  CustomVariable' {_cvKind = Nothing, _cvValue = Nothing, _cvIndex = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customVariable\".
+cvKind :: Lens' CustomVariable (Maybe Text)
+cvKind = lens _cvKind (\ s a -> s{_cvKind = a})
+
+-- | The value of the custom variable. The length of string must not exceed
+-- 50 characters.
+cvValue :: Lens' CustomVariable (Maybe Text)
+cvValue = lens _cvValue (\ s a -> s{_cvValue = a})
+
+-- | The index of the custom variable.
+cvIndex :: Lens' CustomVariable (Maybe Int64)
+cvIndex
+  = lens _cvIndex (\ s a -> s{_cvIndex = a}) .
+      mapping _Coerce
+
+instance FromJSON CustomVariable where
+        parseJSON
+          = withObject "CustomVariable"
+              (\ o ->
+                 CustomVariable' <$>
+                   (o .:? "kind") <*> (o .:? "value") <*>
+                     (o .:? "index"))
+
+instance ToJSON CustomVariable where
+        toJSON CustomVariable'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _cvKind, ("value" .=) <$> _cvValue,
+                  ("index" .=) <$> _cvIndex])
+
 -- | AccountPermissionGroups contains a mapping of permission group IDs to
 -- names. A permission group is a grouping of account permissions.
 --
 -- /See:/ 'accountPermissionGroup' smart constructor.
 data AccountPermissionGroup =
   AccountPermissionGroup'
-    { _apgpKind :: !Text
+    { _apgpKind :: !(Maybe Text)
     , _apgpName :: !(Maybe Text)
     , _apgpId :: !(Maybe (Textual Int64))
     }
@@ -16115,15 +17192,12 @@ accountPermissionGroup
     :: AccountPermissionGroup
 accountPermissionGroup =
   AccountPermissionGroup'
-    { _apgpKind = "dfareporting#accountPermissionGroup"
-    , _apgpName = Nothing
-    , _apgpId = Nothing
-    }
+    {_apgpKind = Nothing, _apgpName = Nothing, _apgpId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#accountPermissionGroup\".
-apgpKind :: Lens' AccountPermissionGroup Text
+apgpKind :: Lens' AccountPermissionGroup (Maybe Text)
 apgpKind = lens _apgpKind (\ s a -> s{_apgpKind = a})
 
 -- | Name of this account permission group.
@@ -16141,16 +17215,13 @@ instance FromJSON AccountPermissionGroup where
           = withObject "AccountPermissionGroup"
               (\ o ->
                  AccountPermissionGroup' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#accountPermissionGroup")
-                     <*> (o .:? "name")
-                     <*> (o .:? "id"))
+                   (o .:? "kind") <*> (o .:? "name") <*> (o .:? "id"))
 
 instance ToJSON AccountPermissionGroup where
         toJSON AccountPermissionGroup'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _apgpKind),
+                 [("kind" .=) <$> _apgpKind,
                   ("name" .=) <$> _apgpName, ("id" .=) <$> _apgpId])
 
 -- | Contains properties of a Campaign Manager advertiser.
@@ -16161,7 +17232,7 @@ data Advertiser =
     { _advdOriginalFloodlightConfigurationId :: !(Maybe (Textual Int64))
     , _advdStatus :: !(Maybe AdvertiserStatus)
     , _advdFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _advdKind :: !Text
+    , _advdKind :: !(Maybe Text)
     , _advdSuspended :: !(Maybe Bool)
     , _advdIdDimensionValue :: !(Maybe DimensionValue)
     , _advdAccountId :: !(Maybe (Textual Int64))
@@ -16217,7 +17288,7 @@ advertiser =
     { _advdOriginalFloodlightConfigurationId = Nothing
     , _advdStatus = Nothing
     , _advdFloodlightConfigurationId = Nothing
-    , _advdKind = "dfareporting#advertiser"
+    , _advdKind = Nothing
     , _advdSuspended = Nothing
     , _advdIdDimensionValue = Nothing
     , _advdAccountId = Nothing
@@ -16267,7 +17338,7 @@ advdFloodlightConfigurationId
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#advertiser\".
-advdKind :: Lens' Advertiser Text
+advdKind :: Lens' Advertiser (Maybe Text)
 advdKind = lens _advdKind (\ s a -> s{_advdKind = a})
 
 -- | Suspension status of this advertiser.
@@ -16356,7 +17427,7 @@ instance FromJSON Advertiser where
                    (o .:? "originalFloodlightConfigurationId") <*>
                      (o .:? "status")
                      <*> (o .:? "floodlightConfigurationId")
-                     <*> (o .:? "kind" .!= "dfareporting#advertiser")
+                     <*> (o .:? "kind")
                      <*> (o .:? "suspended")
                      <*> (o .:? "idDimensionValue")
                      <*> (o .:? "accountId")
@@ -16378,7 +17449,7 @@ instance ToJSON Advertiser where
                   ("status" .=) <$> _advdStatus,
                   ("floodlightConfigurationId" .=) <$>
                     _advdFloodlightConfigurationId,
-                  Just ("kind" .= _advdKind),
+                  ("kind" .=) <$> _advdKind,
                   ("suspended" .=) <$> _advdSuspended,
                   ("idDimensionValue" .=) <$> _advdIdDimensionValue,
                   ("accountId" .=) <$> _advdAccountId,
@@ -16400,7 +17471,7 @@ instance ToJSON Advertiser where
 data UserRole =
   UserRole'
     { _urParentUserRoleId :: !(Maybe (Textual Int64))
-    , _urKind :: !Text
+    , _urKind :: !(Maybe Text)
     , _urDefaultUserRole :: !(Maybe Bool)
     , _urAccountId :: !(Maybe (Textual Int64))
     , _urName :: !(Maybe Text)
@@ -16435,7 +17506,7 @@ userRole
 userRole =
   UserRole'
     { _urParentUserRoleId = Nothing
-    , _urKind = "dfareporting#userRole"
+    , _urKind = Nothing
     , _urDefaultUserRole = Nothing
     , _urAccountId = Nothing
     , _urName = Nothing
@@ -16455,7 +17526,7 @@ urParentUserRoleId
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRole\".
-urKind :: Lens' UserRole Text
+urKind :: Lens' UserRole (Maybe Text)
 urKind = lens _urKind (\ s a -> s{_urKind = a})
 
 -- | Whether this is a default user role. Default user roles are created by
@@ -16509,9 +17580,8 @@ instance FromJSON UserRole where
           = withObject "UserRole"
               (\ o ->
                  UserRole' <$>
-                   (o .:? "parentUserRoleId") <*>
-                     (o .:? "kind" .!= "dfareporting#userRole")
-                     <*> (o .:? "defaultUserRole")
+                   (o .:? "parentUserRoleId") <*> (o .:? "kind") <*>
+                     (o .:? "defaultUserRole")
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
                      <*> (o .:? "id")
@@ -16523,19 +17593,88 @@ instance ToJSON UserRole where
           = object
               (catMaybes
                  [("parentUserRoleId" .=) <$> _urParentUserRoleId,
-                  Just ("kind" .= _urKind),
+                  ("kind" .=) <$> _urKind,
                   ("defaultUserRole" .=) <$> _urDefaultUserRole,
                   ("accountId" .=) <$> _urAccountId,
                   ("name" .=) <$> _urName, ("id" .=) <$> _urId,
                   ("permissions" .=) <$> _urPermissions,
                   ("subaccountId" .=) <$> _urSubAccountId])
 
+-- | Represents a DfaReporting path filter.
+--
+-- /See:/ 'pathFilter' smart constructor.
+data PathFilter =
+  PathFilter'
+    { _pfEventFilters :: !(Maybe [EventFilter])
+    , _pfKind :: !(Maybe Text)
+    , _pfPathMatchPosition :: !(Maybe PathFilterPathMatchPosition)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PathFilter' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pfEventFilters'
+--
+-- * 'pfKind'
+--
+-- * 'pfPathMatchPosition'
+pathFilter
+    :: PathFilter
+pathFilter =
+  PathFilter'
+    { _pfEventFilters = Nothing
+    , _pfKind = Nothing
+    , _pfPathMatchPosition = Nothing
+    }
+
+
+-- | Event filters in path report.
+pfEventFilters :: Lens' PathFilter [EventFilter]
+pfEventFilters
+  = lens _pfEventFilters
+      (\ s a -> s{_pfEventFilters = a})
+      . _Default
+      . _Coerce
+
+-- | The kind of resource this is, in this case dfareporting#pathFilter.
+pfKind :: Lens' PathFilter (Maybe Text)
+pfKind = lens _pfKind (\ s a -> s{_pfKind = a})
+
+-- | Determines how the \'value\' field is matched when filtering. If not
+-- specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, \'*\' is
+-- allowed as a placeholder for variable length character sequences, and it
+-- can be escaped with a backslash. Note, only paid search dimensions
+-- (\'dfa:paidSearch*\') allow a matchType other than EXACT.
+pfPathMatchPosition :: Lens' PathFilter (Maybe PathFilterPathMatchPosition)
+pfPathMatchPosition
+  = lens _pfPathMatchPosition
+      (\ s a -> s{_pfPathMatchPosition = a})
+
+instance FromJSON PathFilter where
+        parseJSON
+          = withObject "PathFilter"
+              (\ o ->
+                 PathFilter' <$>
+                   (o .:? "eventFilters" .!= mempty) <*> (o .:? "kind")
+                     <*> (o .:? "pathMatchPosition"))
+
+instance ToJSON PathFilter where
+        toJSON PathFilter'{..}
+          = object
+              (catMaybes
+                 [("eventFilters" .=) <$> _pfEventFilters,
+                  ("kind" .=) <$> _pfKind,
+                  ("pathMatchPosition" .=) <$> _pfPathMatchPosition])
+
 -- | Video Format List Response
 --
 -- /See:/ 'videoFormatsListResponse' smart constructor.
 data VideoFormatsListResponse =
   VideoFormatsListResponse'
-    { _vflrKind :: !Text
+    { _vflrKind :: !(Maybe Text)
     , _vflrVideoFormats :: !(Maybe [VideoFormat])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16551,15 +17690,12 @@ data VideoFormatsListResponse =
 videoFormatsListResponse
     :: VideoFormatsListResponse
 videoFormatsListResponse =
-  VideoFormatsListResponse'
-    { _vflrKind = "dfareporting#videoFormatsListResponse"
-    , _vflrVideoFormats = Nothing
-    }
+  VideoFormatsListResponse' {_vflrKind = Nothing, _vflrVideoFormats = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#videoFormatsListResponse\".
-vflrKind :: Lens' VideoFormatsListResponse Text
+vflrKind :: Lens' VideoFormatsListResponse (Maybe Text)
 vflrKind = lens _vflrKind (\ s a -> s{_vflrKind = a})
 
 -- | Video format collection.
@@ -16575,15 +17711,13 @@ instance FromJSON VideoFormatsListResponse where
           = withObject "VideoFormatsListResponse"
               (\ o ->
                  VideoFormatsListResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#videoFormatsListResponse")
-                     <*> (o .:? "videoFormats" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "videoFormats" .!= mempty))
 
 instance ToJSON VideoFormatsListResponse where
         toJSON VideoFormatsListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _vflrKind),
+                 [("kind" .=) <$> _vflrKind,
                   ("videoFormats" .=) <$> _vflrVideoFormats])
 
 -- | Directory Site List Response
@@ -16592,7 +17726,7 @@ instance ToJSON VideoFormatsListResponse where
 data DirectorySitesListResponse =
   DirectorySitesListResponse'
     { _dslrNextPageToken :: !(Maybe Text)
-    , _dslrKind :: !Text
+    , _dslrKind :: !(Maybe Text)
     , _dslrDirectorySites :: !(Maybe [DirectorySite])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16612,7 +17746,7 @@ directorySitesListResponse
 directorySitesListResponse =
   DirectorySitesListResponse'
     { _dslrNextPageToken = Nothing
-    , _dslrKind = "dfareporting#directorySitesListResponse"
+    , _dslrKind = Nothing
     , _dslrDirectorySites = Nothing
     }
 
@@ -16625,7 +17759,7 @@ dslrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#directorySitesListResponse\".
-dslrKind :: Lens' DirectorySitesListResponse Text
+dslrKind :: Lens' DirectorySitesListResponse (Maybe Text)
 dslrKind = lens _dslrKind (\ s a -> s{_dslrKind = a})
 
 -- | Directory site collection.
@@ -16641,18 +17775,119 @@ instance FromJSON DirectorySitesListResponse where
           = withObject "DirectorySitesListResponse"
               (\ o ->
                  DirectorySitesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#directorySitesListResponse")
-                     <*> (o .:? "directorySites" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "directorySites" .!= mempty))
 
 instance ToJSON DirectorySitesListResponse where
         toJSON DirectorySitesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _dslrNextPageToken,
-                  Just ("kind" .= _dslrKind),
+                  ("kind" .=) <$> _dslrKind,
                   ("directorySites" .=) <$> _dslrDirectorySites])
+
+-- | Custom event to be inserted.
+--
+-- /See:/ 'customEventInsert' smart constructor.
+data CustomEventInsert =
+  CustomEventInsert'
+    { _ceiMobileDeviceId :: !(Maybe Text)
+    , _ceiKind :: !(Maybe Text)
+    , _ceiInsertEventType :: !(Maybe CustomEventInsertInsertEventType)
+    , _ceiDv3Dimensions :: !(Maybe DV3Ids)
+    , _ceiCmDimensions :: !(Maybe CampaignManagerIds)
+    , _ceiMatchId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventInsert' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ceiMobileDeviceId'
+--
+-- * 'ceiKind'
+--
+-- * 'ceiInsertEventType'
+--
+-- * 'ceiDv3Dimensions'
+--
+-- * 'ceiCmDimensions'
+--
+-- * 'ceiMatchId'
+customEventInsert
+    :: CustomEventInsert
+customEventInsert =
+  CustomEventInsert'
+    { _ceiMobileDeviceId = Nothing
+    , _ceiKind = Nothing
+    , _ceiInsertEventType = Nothing
+    , _ceiDv3Dimensions = Nothing
+    , _ceiCmDimensions = Nothing
+    , _ceiMatchId = Nothing
+    }
+
+
+-- | The mobile device ID. This field is mutually exclusive with matchId, and
+-- at least one of the two fields is required.
+ceiMobileDeviceId :: Lens' CustomEventInsert (Maybe Text)
+ceiMobileDeviceId
+  = lens _ceiMobileDeviceId
+      (\ s a -> s{_ceiMobileDeviceId = a})
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventInsert\".
+ceiKind :: Lens' CustomEventInsert (Maybe Text)
+ceiKind = lens _ceiKind (\ s a -> s{_ceiKind = a})
+
+-- | The type of event to insert.
+ceiInsertEventType :: Lens' CustomEventInsert (Maybe CustomEventInsertInsertEventType)
+ceiInsertEventType
+  = lens _ceiInsertEventType
+      (\ s a -> s{_ceiInsertEventType = a})
+
+-- | DV360 dimensions associated with the event.
+ceiDv3Dimensions :: Lens' CustomEventInsert (Maybe DV3Ids)
+ceiDv3Dimensions
+  = lens _ceiDv3Dimensions
+      (\ s a -> s{_ceiDv3Dimensions = a})
+
+-- | Campaign Manager dimensions associated with the event.
+ceiCmDimensions :: Lens' CustomEventInsert (Maybe CampaignManagerIds)
+ceiCmDimensions
+  = lens _ceiCmDimensions
+      (\ s a -> s{_ceiCmDimensions = a})
+
+-- | The match ID field. A match ID is your own first-party identifier that
+-- has been synced with Google using the match ID feature in Floodlight.
+-- This field is mutually exclusive with mobileDeviceId, and at least one
+-- of the two fields is required.
+ceiMatchId :: Lens' CustomEventInsert (Maybe Text)
+ceiMatchId
+  = lens _ceiMatchId (\ s a -> s{_ceiMatchId = a})
+
+instance FromJSON CustomEventInsert where
+        parseJSON
+          = withObject "CustomEventInsert"
+              (\ o ->
+                 CustomEventInsert' <$>
+                   (o .:? "mobileDeviceId") <*> (o .:? "kind") <*>
+                     (o .:? "insertEventType")
+                     <*> (o .:? "dv3Dimensions")
+                     <*> (o .:? "cmDimensions")
+                     <*> (o .:? "matchId"))
+
+instance ToJSON CustomEventInsert where
+        toJSON CustomEventInsert'{..}
+          = object
+              (catMaybes
+                 [("mobileDeviceId" .=) <$> _ceiMobileDeviceId,
+                  ("kind" .=) <$> _ceiKind,
+                  ("insertEventType" .=) <$> _ceiInsertEventType,
+                  ("dv3Dimensions" .=) <$> _ceiDv3Dimensions,
+                  ("cmDimensions" .=) <$> _ceiCmDimensions,
+                  ("matchId" .=) <$> _ceiMatchId])
 
 -- | The error code and description for a conversion that failed to insert or
 -- update.
@@ -16660,9 +17895,9 @@ instance ToJSON DirectorySitesListResponse where
 -- /See:/ 'conversionError' smart constructor.
 data ConversionError =
   ConversionError'
-    { _ceKind :: !Text
-    , _ceCode :: !(Maybe ConversionErrorCode)
-    , _ceMessage :: !(Maybe Text)
+    { _conoKind :: !(Maybe Text)
+    , _conoCode :: !(Maybe ConversionErrorCode)
+    , _conoMessage :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -16671,50 +17906,47 @@ data ConversionError =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'ceKind'
+-- * 'conoKind'
 --
--- * 'ceCode'
+-- * 'conoCode'
 --
--- * 'ceMessage'
+-- * 'conoMessage'
 conversionError
     :: ConversionError
 conversionError =
   ConversionError'
-    { _ceKind = "dfareporting#conversionError"
-    , _ceCode = Nothing
-    , _ceMessage = Nothing
-    }
+    {_conoKind = Nothing, _conoCode = Nothing, _conoMessage = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionError\".
-ceKind :: Lens' ConversionError Text
-ceKind = lens _ceKind (\ s a -> s{_ceKind = a})
+conoKind :: Lens' ConversionError (Maybe Text)
+conoKind = lens _conoKind (\ s a -> s{_conoKind = a})
 
 -- | The error code.
-ceCode :: Lens' ConversionError (Maybe ConversionErrorCode)
-ceCode = lens _ceCode (\ s a -> s{_ceCode = a})
+conoCode :: Lens' ConversionError (Maybe ConversionErrorCode)
+conoCode = lens _conoCode (\ s a -> s{_conoCode = a})
 
 -- | A description of the error.
-ceMessage :: Lens' ConversionError (Maybe Text)
-ceMessage
-  = lens _ceMessage (\ s a -> s{_ceMessage = a})
+conoMessage :: Lens' ConversionError (Maybe Text)
+conoMessage
+  = lens _conoMessage (\ s a -> s{_conoMessage = a})
 
 instance FromJSON ConversionError where
         parseJSON
           = withObject "ConversionError"
               (\ o ->
                  ConversionError' <$>
-                   (o .:? "kind" .!= "dfareporting#conversionError") <*>
-                     (o .:? "code")
-                     <*> (o .:? "message"))
+                   (o .:? "kind") <*> (o .:? "code") <*>
+                     (o .:? "message"))
 
 instance ToJSON ConversionError where
         toJSON ConversionError'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _ceKind), ("code" .=) <$> _ceCode,
-                  ("message" .=) <$> _ceMessage])
+                 [("kind" .=) <$> _conoKind,
+                  ("code" .=) <$> _conoCode,
+                  ("message" .=) <$> _conoMessage])
 
 -- | Pricing Period
 --
@@ -16755,13 +17987,6 @@ pricingSchedulePricingPeriod =
     }
 
 
--- | Pricing period end date. This date must be later than, or the same day
--- as, the pricing period start date, but not later than the placement end
--- date. The period end date can be the same date as the period start date.
--- If, for example, you set 6\/25\/2015 as both the start and end dates,
--- the effective pricing period date is just that day only, 6\/25\/2015.
--- The hours, minutes, and seconds of the end date should not be set, as
--- doing so will result in an error.
 psppEndDate :: Lens' PricingSchedulePricingPeriod (Maybe Day)
 psppEndDate
   = lens _psppEndDate (\ s a -> s{_psppEndDate = a}) .
@@ -16775,9 +18000,6 @@ psppRateOrCostNanos
       (\ s a -> s{_psppRateOrCostNanos = a})
       . mapping _Coerce
 
--- | Pricing period start date. This date must be later than, or the same day
--- as, the placement start date. The hours, minutes, and seconds of the
--- start date should not be set, as doing so will result in an error.
 psppStartDate :: Lens' PricingSchedulePricingPeriod (Maybe Day)
 psppStartDate
   = lens _psppStartDate
@@ -16823,7 +18045,7 @@ instance ToJSON PricingSchedulePricingPeriod where
 data Region =
   Region'
     { _regRegionCode :: !(Maybe Text)
-    , _regKind :: !Text
+    , _regKind :: !(Maybe Text)
     , _regName :: !(Maybe Text)
     , _regCountryCode :: !(Maybe Text)
     , _regCountryDartId :: !(Maybe (Textual Int64))
@@ -16852,7 +18074,7 @@ region
 region =
   Region'
     { _regRegionCode = Nothing
-    , _regKind = "dfareporting#region"
+    , _regKind = Nothing
     , _regName = Nothing
     , _regCountryCode = Nothing
     , _regCountryDartId = Nothing
@@ -16868,7 +18090,7 @@ regRegionCode
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#region\".
-regKind :: Lens' Region Text
+regKind :: Lens' Region (Maybe Text)
 regKind = lens _regKind (\ s a -> s{_regKind = a})
 
 -- | Name of this region.
@@ -16899,9 +18121,8 @@ instance FromJSON Region where
           = withObject "Region"
               (\ o ->
                  Region' <$>
-                   (o .:? "regionCode") <*>
-                     (o .:? "kind" .!= "dfareporting#region")
-                     <*> (o .:? "name")
+                   (o .:? "regionCode") <*> (o .:? "kind") <*>
+                     (o .:? "name")
                      <*> (o .:? "countryCode")
                      <*> (o .:? "countryDartId")
                      <*> (o .:? "dartId"))
@@ -16911,7 +18132,7 @@ instance ToJSON Region where
           = object
               (catMaybes
                  [("regionCode" .=) <$> _regRegionCode,
-                  Just ("kind" .= _regKind), ("name" .=) <$> _regName,
+                  ("kind" .=) <$> _regKind, ("name" .=) <$> _regName,
                   ("countryCode" .=) <$> _regCountryCode,
                   ("countryDartId" .=) <$> _regCountryDartId,
                   ("dartId" .=) <$> _regDartId])
@@ -16922,7 +18143,7 @@ instance ToJSON Region where
 data AdvertiserGroupsListResponse =
   AdvertiserGroupsListResponse'
     { _aglrNextPageToken :: !(Maybe Text)
-    , _aglrKind :: !Text
+    , _aglrKind :: !(Maybe Text)
     , _aglrAdvertiserGroups :: !(Maybe [AdvertiserGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -16942,7 +18163,7 @@ advertiserGroupsListResponse
 advertiserGroupsListResponse =
   AdvertiserGroupsListResponse'
     { _aglrNextPageToken = Nothing
-    , _aglrKind = "dfareporting#advertiserGroupsListResponse"
+    , _aglrKind = Nothing
     , _aglrAdvertiserGroups = Nothing
     }
 
@@ -16955,7 +18176,7 @@ aglrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#advertiserGroupsListResponse\".
-aglrKind :: Lens' AdvertiserGroupsListResponse Text
+aglrKind :: Lens' AdvertiserGroupsListResponse (Maybe Text)
 aglrKind = lens _aglrKind (\ s a -> s{_aglrKind = a})
 
 -- | Advertiser group collection.
@@ -16971,17 +18192,15 @@ instance FromJSON AdvertiserGroupsListResponse where
           = withObject "AdvertiserGroupsListResponse"
               (\ o ->
                  AdvertiserGroupsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#advertiserGroupsListResponse")
-                     <*> (o .:? "advertiserGroups" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "advertiserGroups" .!= mempty))
 
 instance ToJSON AdvertiserGroupsListResponse where
         toJSON AdvertiserGroupsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _aglrNextPageToken,
-                  Just ("kind" .= _aglrKind),
+                  ("kind" .=) <$> _aglrKind,
                   ("advertiserGroups" .=) <$> _aglrAdvertiserGroups])
 
 -- | Creative Assignment.
@@ -17065,7 +18284,6 @@ caCreativeGroupAssignments
       . _Default
       . _Coerce
 
--- | Date and time that the assigned creative should start serving.
 caStartTime :: Lens' CreativeAssignment (Maybe UTCTime)
 caStartTime
   = lens _caStartTime (\ s a -> s{_caStartTime = a}) .
@@ -17133,8 +18351,6 @@ caSequence
   = lens _caSequence (\ s a -> s{_caSequence = a}) .
       mapping _Coerce
 
--- | Date and time that the assigned creative should stop serving. Must be
--- later than the start time.
 caEndTime :: Lens' CreativeAssignment (Maybe UTCTime)
 caEndTime
   = lens _caEndTime (\ s a -> s{_caEndTime = a}) .
@@ -17202,7 +18418,7 @@ instance ToJSON CreativeAssignment where
 -- /See:/ 'dimensionFilter' smart constructor.
 data DimensionFilter =
   DimensionFilter'
-    { _dfKind :: !Text
+    { _dfKind :: !(Maybe Text)
     , _dfValue :: !(Maybe Text)
     , _dfDimensionName :: !(Maybe Text)
     }
@@ -17222,14 +18438,11 @@ dimensionFilter
     :: DimensionFilter
 dimensionFilter =
   DimensionFilter'
-    { _dfKind = "dfareporting#dimensionFilter"
-    , _dfValue = Nothing
-    , _dfDimensionName = Nothing
-    }
+    {_dfKind = Nothing, _dfValue = Nothing, _dfDimensionName = Nothing}
 
 
 -- | The kind of resource this is, in this case dfareporting#dimensionFilter.
-dfKind :: Lens' DimensionFilter Text
+dfKind :: Lens' DimensionFilter (Maybe Text)
 dfKind = lens _dfKind (\ s a -> s{_dfKind = a})
 
 -- | The value of the dimension to filter.
@@ -17247,16 +18460,108 @@ instance FromJSON DimensionFilter where
           = withObject "DimensionFilter"
               (\ o ->
                  DimensionFilter' <$>
-                   (o .:? "kind" .!= "dfareporting#dimensionFilter") <*>
-                     (o .:? "value")
-                     <*> (o .:? "dimensionName"))
+                   (o .:? "kind") <*> (o .:? "value") <*>
+                     (o .:? "dimensionName"))
 
 instance ToJSON DimensionFilter where
         toJSON DimensionFilter'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _dfKind), ("value" .=) <$> _dfValue,
+                 [("kind" .=) <$> _dfKind, ("value" .=) <$> _dfValue,
                   ("dimensionName" .=) <$> _dfDimensionName])
+
+-- | Represents a PathReportDimensionValue resource.
+--
+-- /See:/ 'pathReportDimensionValue' smart constructor.
+data PathReportDimensionValue =
+  PathReportDimensionValue'
+    { _prdvKind :: !(Maybe Text)
+    , _prdvValues :: !(Maybe [Text])
+    , _prdvMatchType :: !(Maybe PathReportDimensionValueMatchType)
+    , _prdvIds :: !(Maybe [Text])
+    , _prdvDimensionName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PathReportDimensionValue' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'prdvKind'
+--
+-- * 'prdvValues'
+--
+-- * 'prdvMatchType'
+--
+-- * 'prdvIds'
+--
+-- * 'prdvDimensionName'
+pathReportDimensionValue
+    :: PathReportDimensionValue
+pathReportDimensionValue =
+  PathReportDimensionValue'
+    { _prdvKind = Nothing
+    , _prdvValues = Nothing
+    , _prdvMatchType = Nothing
+    , _prdvIds = Nothing
+    , _prdvDimensionName = Nothing
+    }
+
+
+-- | The kind of resource this is, in this case
+-- dfareporting#pathReportDimensionValue.
+prdvKind :: Lens' PathReportDimensionValue (Maybe Text)
+prdvKind = lens _prdvKind (\ s a -> s{_prdvKind = a})
+
+-- | The possible values of the dimension.
+prdvValues :: Lens' PathReportDimensionValue [Text]
+prdvValues
+  = lens _prdvValues (\ s a -> s{_prdvValues = a}) .
+      _Default
+      . _Coerce
+
+-- | Determines how the \'value\' field is matched when filtering. If not
+-- specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, \'*\' is
+-- allowed as a placeholder for variable length character sequences, and it
+-- can be escaped with a backslash. Note, only paid search dimensions
+-- (\'dfa:paidSearch*\') allow a matchType other than EXACT.
+prdvMatchType :: Lens' PathReportDimensionValue (Maybe PathReportDimensionValueMatchType)
+prdvMatchType
+  = lens _prdvMatchType
+      (\ s a -> s{_prdvMatchType = a})
+
+-- | The possible ID\'s associated with the value if available.
+prdvIds :: Lens' PathReportDimensionValue [Text]
+prdvIds
+  = lens _prdvIds (\ s a -> s{_prdvIds = a}) . _Default
+      . _Coerce
+
+-- | The name of the dimension.
+prdvDimensionName :: Lens' PathReportDimensionValue (Maybe Text)
+prdvDimensionName
+  = lens _prdvDimensionName
+      (\ s a -> s{_prdvDimensionName = a})
+
+instance FromJSON PathReportDimensionValue where
+        parseJSON
+          = withObject "PathReportDimensionValue"
+              (\ o ->
+                 PathReportDimensionValue' <$>
+                   (o .:? "kind") <*> (o .:? "values" .!= mempty) <*>
+                     (o .:? "matchType")
+                     <*> (o .:? "ids" .!= mempty)
+                     <*> (o .:? "dimensionName"))
+
+instance ToJSON PathReportDimensionValue where
+        toJSON PathReportDimensionValue'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _prdvKind,
+                  ("values" .=) <$> _prdvValues,
+                  ("matchType" .=) <$> _prdvMatchType,
+                  ("ids" .=) <$> _prdvIds,
+                  ("dimensionName" .=) <$> _prdvDimensionName])
 
 -- | Represents the list of user profiles.
 --
@@ -17264,7 +18569,7 @@ instance ToJSON DimensionFilter where
 data UserProFileList =
   UserProFileList'
     { _upflEtag :: !(Maybe Text)
-    , _upflKind :: !Text
+    , _upflKind :: !(Maybe Text)
     , _upflItems :: !(Maybe [UserProFile])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17283,18 +18588,16 @@ userProFileList
     :: UserProFileList
 userProFileList =
   UserProFileList'
-    { _upflEtag = Nothing
-    , _upflKind = "dfareporting#userProfileList"
-    , _upflItems = Nothing
-    }
+    {_upflEtag = Nothing, _upflKind = Nothing, _upflItems = Nothing}
 
 
--- | The eTag of this response for caching purposes.
+-- | Etag of this resource.
 upflEtag :: Lens' UserProFileList (Maybe Text)
 upflEtag = lens _upflEtag (\ s a -> s{_upflEtag = a})
 
--- | The kind of list this is, in this case dfareporting#userProfileList.
-upflKind :: Lens' UserProFileList Text
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#userProfileList\".
+upflKind :: Lens' UserProFileList (Maybe Text)
 upflKind = lens _upflKind (\ s a -> s{_upflKind = a})
 
 -- | The user profiles returned in this response.
@@ -17309,16 +18612,15 @@ instance FromJSON UserProFileList where
           = withObject "UserProFileList"
               (\ o ->
                  UserProFileList' <$>
-                   (o .:? "etag") <*>
-                     (o .:? "kind" .!= "dfareporting#userProfileList")
-                     <*> (o .:? "items" .!= mempty))
+                   (o .:? "etag") <*> (o .:? "kind") <*>
+                     (o .:? "items" .!= mempty))
 
 instance ToJSON UserProFileList where
         toJSON UserProFileList'{..}
           = object
               (catMaybes
                  [("etag" .=) <$> _upflEtag,
-                  Just ("kind" .= _upflKind),
+                  ("kind" .=) <$> _upflKind,
                   ("items" .=) <$> _upflItems])
 
 -- | Contains properties of a Floodlight configuration.
@@ -17330,7 +18632,7 @@ data FloodlightConfiguration =
     , _fcExposureToConversionEnabled :: !(Maybe Bool)
     , _fcInAppAttributionTrackingEnabled :: !(Maybe Bool)
     , _fcThirdPartyAuthenticationTokens :: !(Maybe [ThirdPartyAuthenticationToken])
-    , _fcKind :: !Text
+    , _fcKind :: !(Maybe Text)
     , _fcAdvertiserId :: !(Maybe (Textual Int64))
     , _fcAnalyticsDataSharingEnabled :: !(Maybe Bool)
     , _fcAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
@@ -17395,7 +18697,7 @@ floodlightConfiguration =
     , _fcExposureToConversionEnabled = Nothing
     , _fcInAppAttributionTrackingEnabled = Nothing
     , _fcThirdPartyAuthenticationTokens = Nothing
-    , _fcKind = "dfareporting#floodlightConfiguration"
+    , _fcKind = Nothing
     , _fcAdvertiserId = Nothing
     , _fcAnalyticsDataSharingEnabled = Nothing
     , _fcAdvertiserIdDimensionValue = Nothing
@@ -17443,7 +18745,7 @@ fcThirdPartyAuthenticationTokens
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightConfiguration\".
-fcKind :: Lens' FloodlightConfiguration Text
+fcKind :: Lens' FloodlightConfiguration (Maybe Text)
 fcKind = lens _fcKind (\ s a -> s{_fcKind = a})
 
 -- | Advertiser ID of the parent advertiser of this floodlight configuration.
@@ -17546,9 +18848,7 @@ instance FromJSON FloodlightConfiguration where
                      <*> (o .:? "inAppAttributionTrackingEnabled")
                      <*>
                      (o .:? "thirdPartyAuthenticationTokens" .!= mempty)
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightConfiguration")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "analyticsDataSharingEnabled")
                      <*> (o .:? "advertiserIdDimensionValue")
@@ -17577,7 +18877,7 @@ instance ToJSON FloodlightConfiguration where
                     _fcInAppAttributionTrackingEnabled,
                   ("thirdPartyAuthenticationTokens" .=) <$>
                     _fcThirdPartyAuthenticationTokens,
-                  Just ("kind" .= _fcKind),
+                  ("kind" .=) <$> _fcKind,
                   ("advertiserId" .=) <$> _fcAdvertiserId,
                   ("analyticsDataSharingEnabled" .=) <$>
                     _fcAnalyticsDataSharingEnabled,
@@ -17603,7 +18903,7 @@ instance ToJSON FloodlightConfiguration where
 -- /See:/ 'companionSetting' smart constructor.
 data CompanionSetting =
   CompanionSetting'
-    { _comKind :: !Text
+    { _comKind :: !(Maybe Text)
     , _comImageOnly :: !(Maybe Bool)
     , _comCompanionsDisabled :: !(Maybe Bool)
     , _comEnabledSizes :: !(Maybe [Size])
@@ -17626,7 +18926,7 @@ companionSetting
     :: CompanionSetting
 companionSetting =
   CompanionSetting'
-    { _comKind = "dfareporting#companionSetting"
+    { _comKind = Nothing
     , _comImageOnly = Nothing
     , _comCompanionsDisabled = Nothing
     , _comEnabledSizes = Nothing
@@ -17635,7 +18935,7 @@ companionSetting =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#companionSetting\".
-comKind :: Lens' CompanionSetting Text
+comKind :: Lens' CompanionSetting (Maybe Text)
 comKind = lens _comKind (\ s a -> s{_comKind = a})
 
 -- | Whether to serve only static images as companions.
@@ -17649,7 +18949,7 @@ comCompanionsDisabled
   = lens _comCompanionsDisabled
       (\ s a -> s{_comCompanionsDisabled = a})
 
--- | Whitelist of companion sizes to be served to this placement. Set this
+-- | Allowlist of companion sizes to be served to this placement. Set this
 -- list to null or empty to serve all companion sizes.
 comEnabledSizes :: Lens' CompanionSetting [Size]
 comEnabledSizes
@@ -17663,16 +18963,15 @@ instance FromJSON CompanionSetting where
           = withObject "CompanionSetting"
               (\ o ->
                  CompanionSetting' <$>
-                   (o .:? "kind" .!= "dfareporting#companionSetting")
-                     <*> (o .:? "imageOnly")
-                     <*> (o .:? "companionsDisabled")
+                   (o .:? "kind") <*> (o .:? "imageOnly") <*>
+                     (o .:? "companionsDisabled")
                      <*> (o .:? "enabledSizes" .!= mempty))
 
 instance ToJSON CompanionSetting where
         toJSON CompanionSetting'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _comKind),
+                 [("kind" .=) <$> _comKind,
                   ("imageOnly" .=) <$> _comImageOnly,
                   ("companionsDisabled" .=) <$> _comCompanionsDisabled,
                   ("enabledSizes" .=) <$> _comEnabledSizes])
@@ -17683,7 +18982,7 @@ instance ToJSON CompanionSetting where
 data FloodlightActivityGroupsListResponse =
   FloodlightActivityGroupsListResponse'
     { _faglrNextPageToken :: !(Maybe Text)
-    , _faglrKind :: !Text
+    , _faglrKind :: !(Maybe Text)
     , _faglrFloodlightActivityGroups :: !(Maybe [FloodlightActivityGroup])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -17703,7 +19002,7 @@ floodlightActivityGroupsListResponse
 floodlightActivityGroupsListResponse =
   FloodlightActivityGroupsListResponse'
     { _faglrNextPageToken = Nothing
-    , _faglrKind = "dfareporting#floodlightActivityGroupsListResponse"
+    , _faglrKind = Nothing
     , _faglrFloodlightActivityGroups = Nothing
     }
 
@@ -17716,7 +19015,7 @@ faglrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightActivityGroupsListResponse\".
-faglrKind :: Lens' FloodlightActivityGroupsListResponse Text
+faglrKind :: Lens' FloodlightActivityGroupsListResponse (Maybe Text)
 faglrKind
   = lens _faglrKind (\ s a -> s{_faglrKind = a})
 
@@ -17735,10 +19034,8 @@ instance FromJSON
           = withObject "FloodlightActivityGroupsListResponse"
               (\ o ->
                  FloodlightActivityGroupsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightActivityGroupsListResponse")
-                     <*> (o .:? "floodlightActivityGroups" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "floodlightActivityGroups" .!= mempty))
 
 instance ToJSON FloodlightActivityGroupsListResponse
          where
@@ -17746,7 +19043,7 @@ instance ToJSON FloodlightActivityGroupsListResponse
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _faglrNextPageToken,
-                  Just ("kind" .= _faglrKind),
+                  ("kind" .=) <$> _faglrKind,
                   ("floodlightActivityGroups" .=) <$>
                     _faglrFloodlightActivityGroups])
 
@@ -17756,22 +19053,24 @@ instance ToJSON FloodlightActivityGroupsListResponse
 -- /See:/ 'conversion' smart constructor.
 data Conversion =
   Conversion'
-    { _conoTreatmentForUnderage :: !(Maybe Bool)
-    , _conoEncryptedUserIdCandidates :: !(Maybe [Text])
-    , _conoTimestampMicros :: !(Maybe (Textual Int64))
-    , _conoLimitAdTracking :: !(Maybe Bool)
-    , _conoEncryptedUserId :: !(Maybe Text)
-    , _conoMobileDeviceId :: !(Maybe Text)
-    , _conoFloodlightConfigurationId :: !(Maybe (Textual Int64))
-    , _conoKind :: !Text
-    , _conoFloodlightActivityId :: !(Maybe (Textual Int64))
-    , _conoNonPersonalizedAd :: !(Maybe Bool)
-    , _conoQuantity :: !(Maybe (Textual Int64))
-    , _conoValue :: !(Maybe (Textual Double))
-    , _conoCustomVariables :: !(Maybe [CustomFloodlightVariable])
-    , _conoChildDirectedTreatment :: !(Maybe Bool)
-    , _conoGclid :: !(Maybe Text)
-    , _conoOrdinal :: !(Maybe Text)
+    { _c1TreatmentForUnderage :: !(Maybe Bool)
+    , _c1EncryptedUserIdCandidates :: !(Maybe [Text])
+    , _c1TimestampMicros :: !(Maybe (Textual Int64))
+    , _c1LimitAdTracking :: !(Maybe Bool)
+    , _c1EncryptedUserId :: !(Maybe Text)
+    , _c1MobileDeviceId :: !(Maybe Text)
+    , _c1FloodlightConfigurationId :: !(Maybe (Textual Int64))
+    , _c1Kind :: !(Maybe Text)
+    , _c1FloodlightActivityId :: !(Maybe (Textual Int64))
+    , _c1NonPersonalizedAd :: !(Maybe Bool)
+    , _c1Quantity :: !(Maybe (Textual Int64))
+    , _c1Value :: !(Maybe (Textual Double))
+    , _c1CustomVariables :: !(Maybe [CustomFloodlightVariable])
+    , _c1ChildDirectedTreatment :: !(Maybe Bool)
+    , _c1Gclid :: !(Maybe Text)
+    , _c1Ordinal :: !(Maybe Text)
+    , _c1Dclid :: !(Maybe Text)
+    , _c1MatchId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -17780,184 +19079,207 @@ data Conversion =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'conoTreatmentForUnderage'
+-- * 'c1TreatmentForUnderage'
 --
--- * 'conoEncryptedUserIdCandidates'
+-- * 'c1EncryptedUserIdCandidates'
 --
--- * 'conoTimestampMicros'
+-- * 'c1TimestampMicros'
 --
--- * 'conoLimitAdTracking'
+-- * 'c1LimitAdTracking'
 --
--- * 'conoEncryptedUserId'
+-- * 'c1EncryptedUserId'
 --
--- * 'conoMobileDeviceId'
+-- * 'c1MobileDeviceId'
 --
--- * 'conoFloodlightConfigurationId'
+-- * 'c1FloodlightConfigurationId'
 --
--- * 'conoKind'
+-- * 'c1Kind'
 --
--- * 'conoFloodlightActivityId'
+-- * 'c1FloodlightActivityId'
 --
--- * 'conoNonPersonalizedAd'
+-- * 'c1NonPersonalizedAd'
 --
--- * 'conoQuantity'
+-- * 'c1Quantity'
 --
--- * 'conoValue'
+-- * 'c1Value'
 --
--- * 'conoCustomVariables'
+-- * 'c1CustomVariables'
 --
--- * 'conoChildDirectedTreatment'
+-- * 'c1ChildDirectedTreatment'
 --
--- * 'conoGclid'
+-- * 'c1Gclid'
 --
--- * 'conoOrdinal'
+-- * 'c1Ordinal'
+--
+-- * 'c1Dclid'
+--
+-- * 'c1MatchId'
 conversion
     :: Conversion
 conversion =
   Conversion'
-    { _conoTreatmentForUnderage = Nothing
-    , _conoEncryptedUserIdCandidates = Nothing
-    , _conoTimestampMicros = Nothing
-    , _conoLimitAdTracking = Nothing
-    , _conoEncryptedUserId = Nothing
-    , _conoMobileDeviceId = Nothing
-    , _conoFloodlightConfigurationId = Nothing
-    , _conoKind = "dfareporting#conversion"
-    , _conoFloodlightActivityId = Nothing
-    , _conoNonPersonalizedAd = Nothing
-    , _conoQuantity = Nothing
-    , _conoValue = Nothing
-    , _conoCustomVariables = Nothing
-    , _conoChildDirectedTreatment = Nothing
-    , _conoGclid = Nothing
-    , _conoOrdinal = Nothing
+    { _c1TreatmentForUnderage = Nothing
+    , _c1EncryptedUserIdCandidates = Nothing
+    , _c1TimestampMicros = Nothing
+    , _c1LimitAdTracking = Nothing
+    , _c1EncryptedUserId = Nothing
+    , _c1MobileDeviceId = Nothing
+    , _c1FloodlightConfigurationId = Nothing
+    , _c1Kind = Nothing
+    , _c1FloodlightActivityId = Nothing
+    , _c1NonPersonalizedAd = Nothing
+    , _c1Quantity = Nothing
+    , _c1Value = Nothing
+    , _c1CustomVariables = Nothing
+    , _c1ChildDirectedTreatment = Nothing
+    , _c1Gclid = Nothing
+    , _c1Ordinal = Nothing
+    , _c1Dclid = Nothing
+    , _c1MatchId = Nothing
     }
 
 
 -- | Whether this particular request may come from a user under the age of 16
 -- (may differ by country), under compliance with the European Union\'s
 -- General Data Protection Regulation (GDPR).
-conoTreatmentForUnderage :: Lens' Conversion (Maybe Bool)
-conoTreatmentForUnderage
-  = lens _conoTreatmentForUnderage
-      (\ s a -> s{_conoTreatmentForUnderage = a})
+c1TreatmentForUnderage :: Lens' Conversion (Maybe Bool)
+c1TreatmentForUnderage
+  = lens _c1TreatmentForUnderage
+      (\ s a -> s{_c1TreatmentForUnderage = a})
 
 -- | A list of the alphanumeric encrypted user IDs. Any user ID with exposure
 -- prior to the conversion timestamp will be used in the inserted
 -- conversion. If no such user ID is found then the conversion will be
--- rejected with NO_COOKIE_MATCH_FOUND error. When set, encryptionInfo
--- should also be specified. This field may only be used when calling
--- batchinsert; it is not supported by batchupdate. This field is mutually
--- exclusive with encryptedUserId, mobileDeviceId and gclid. This or
--- encryptedUserId or mobileDeviceId or gclid is a required field.
-conoEncryptedUserIdCandidates :: Lens' Conversion [Text]
-conoEncryptedUserIdCandidates
-  = lens _conoEncryptedUserIdCandidates
-      (\ s a -> s{_conoEncryptedUserIdCandidates = a})
+-- rejected with INVALID_ARGUMENT error. When set, encryptionInfo should
+-- also be specified. This field may only be used when calling batchinsert;
+-- it is not supported by batchupdate. This field is mutually exclusive
+-- with encryptedUserId, matchId, mobileDeviceId, gclid and dclid. This or
+-- encryptedUserId or matchId or mobileDeviceId or gclid or dclid is a
+-- required field.
+c1EncryptedUserIdCandidates :: Lens' Conversion [Text]
+c1EncryptedUserIdCandidates
+  = lens _c1EncryptedUserIdCandidates
+      (\ s a -> s{_c1EncryptedUserIdCandidates = a})
       . _Default
       . _Coerce
 
 -- | The timestamp of conversion, in Unix epoch micros. This is a required
 -- field.
-conoTimestampMicros :: Lens' Conversion (Maybe Int64)
-conoTimestampMicros
-  = lens _conoTimestampMicros
-      (\ s a -> s{_conoTimestampMicros = a})
+c1TimestampMicros :: Lens' Conversion (Maybe Int64)
+c1TimestampMicros
+  = lens _c1TimestampMicros
+      (\ s a -> s{_c1TimestampMicros = a})
       . mapping _Coerce
 
 -- | Whether Limit Ad Tracking is enabled. When set to true, the conversion
 -- will be used for reporting but not targeting. This will prevent
 -- remarketing.
-conoLimitAdTracking :: Lens' Conversion (Maybe Bool)
-conoLimitAdTracking
-  = lens _conoLimitAdTracking
-      (\ s a -> s{_conoLimitAdTracking = a})
+c1LimitAdTracking :: Lens' Conversion (Maybe Bool)
+c1LimitAdTracking
+  = lens _c1LimitAdTracking
+      (\ s a -> s{_c1LimitAdTracking = a})
 
 -- | The alphanumeric encrypted user ID. When set, encryptionInfo should also
 -- be specified. This field is mutually exclusive with
--- encryptedUserIdCandidates[], mobileDeviceId and gclid. This or
--- encryptedUserIdCandidates[] or mobileDeviceId or gclid is a required
--- field.
-conoEncryptedUserId :: Lens' Conversion (Maybe Text)
-conoEncryptedUserId
-  = lens _conoEncryptedUserId
-      (\ s a -> s{_conoEncryptedUserId = a})
+-- encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid and dclid.
+-- This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or
+-- gclid or dclid is a required field.
+c1EncryptedUserId :: Lens' Conversion (Maybe Text)
+c1EncryptedUserId
+  = lens _c1EncryptedUserId
+      (\ s a -> s{_c1EncryptedUserId = a})
 
 -- | The mobile device ID. This field is mutually exclusive with
--- encryptedUserId, encryptedUserIdCandidates[] and gclid. This or
--- encryptedUserId or encryptedUserIdCandidates[] or gclid is a required
--- field.
-conoMobileDeviceId :: Lens' Conversion (Maybe Text)
-conoMobileDeviceId
-  = lens _conoMobileDeviceId
-      (\ s a -> s{_conoMobileDeviceId = a})
+-- encryptedUserId, encryptedUserIdCandidates[], matchId, gclid and dclid.
+-- This or encryptedUserId or encryptedUserIdCandidates[] or matchId or
+-- gclid or dclid is a required field.
+c1MobileDeviceId :: Lens' Conversion (Maybe Text)
+c1MobileDeviceId
+  = lens _c1MobileDeviceId
+      (\ s a -> s{_c1MobileDeviceId = a})
 
 -- | Floodlight Configuration ID of this conversion. This is a required
 -- field.
-conoFloodlightConfigurationId :: Lens' Conversion (Maybe Int64)
-conoFloodlightConfigurationId
-  = lens _conoFloodlightConfigurationId
-      (\ s a -> s{_conoFloodlightConfigurationId = a})
+c1FloodlightConfigurationId :: Lens' Conversion (Maybe Int64)
+c1FloodlightConfigurationId
+  = lens _c1FloodlightConfigurationId
+      (\ s a -> s{_c1FloodlightConfigurationId = a})
       . mapping _Coerce
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversion\".
-conoKind :: Lens' Conversion Text
-conoKind = lens _conoKind (\ s a -> s{_conoKind = a})
+c1Kind :: Lens' Conversion (Maybe Text)
+c1Kind = lens _c1Kind (\ s a -> s{_c1Kind = a})
 
 -- | Floodlight Activity ID of this conversion. This is a required field.
-conoFloodlightActivityId :: Lens' Conversion (Maybe Int64)
-conoFloodlightActivityId
-  = lens _conoFloodlightActivityId
-      (\ s a -> s{_conoFloodlightActivityId = a})
+c1FloodlightActivityId :: Lens' Conversion (Maybe Int64)
+c1FloodlightActivityId
+  = lens _c1FloodlightActivityId
+      (\ s a -> s{_c1FloodlightActivityId = a})
       . mapping _Coerce
 
 -- | Whether the conversion was for a non personalized ad.
-conoNonPersonalizedAd :: Lens' Conversion (Maybe Bool)
-conoNonPersonalizedAd
-  = lens _conoNonPersonalizedAd
-      (\ s a -> s{_conoNonPersonalizedAd = a})
+c1NonPersonalizedAd :: Lens' Conversion (Maybe Bool)
+c1NonPersonalizedAd
+  = lens _c1NonPersonalizedAd
+      (\ s a -> s{_c1NonPersonalizedAd = a})
 
 -- | The quantity of the conversion.
-conoQuantity :: Lens' Conversion (Maybe Int64)
-conoQuantity
-  = lens _conoQuantity (\ s a -> s{_conoQuantity = a})
-      . mapping _Coerce
+c1Quantity :: Lens' Conversion (Maybe Int64)
+c1Quantity
+  = lens _c1Quantity (\ s a -> s{_c1Quantity = a}) .
+      mapping _Coerce
 
 -- | The value of the conversion.
-conoValue :: Lens' Conversion (Maybe Double)
-conoValue
-  = lens _conoValue (\ s a -> s{_conoValue = a}) .
+c1Value :: Lens' Conversion (Maybe Double)
+c1Value
+  = lens _c1Value (\ s a -> s{_c1Value = a}) .
       mapping _Coerce
 
 -- | Custom floodlight variables.
-conoCustomVariables :: Lens' Conversion [CustomFloodlightVariable]
-conoCustomVariables
-  = lens _conoCustomVariables
-      (\ s a -> s{_conoCustomVariables = a})
+c1CustomVariables :: Lens' Conversion [CustomFloodlightVariable]
+c1CustomVariables
+  = lens _c1CustomVariables
+      (\ s a -> s{_c1CustomVariables = a})
       . _Default
       . _Coerce
 
 -- | Whether this particular request may come from a user under the age of
 -- 13, under COPPA compliance.
-conoChildDirectedTreatment :: Lens' Conversion (Maybe Bool)
-conoChildDirectedTreatment
-  = lens _conoChildDirectedTreatment
-      (\ s a -> s{_conoChildDirectedTreatment = a})
+c1ChildDirectedTreatment :: Lens' Conversion (Maybe Bool)
+c1ChildDirectedTreatment
+  = lens _c1ChildDirectedTreatment
+      (\ s a -> s{_c1ChildDirectedTreatment = a})
 
 -- | The Google click ID. This field is mutually exclusive with
--- encryptedUserId, encryptedUserIdCandidates[] and mobileDeviceId. This or
--- encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId is a
--- required field.
-conoGclid :: Lens' Conversion (Maybe Text)
-conoGclid
-  = lens _conoGclid (\ s a -> s{_conoGclid = a})
+-- encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId
+-- and dclid. This or encryptedUserId or encryptedUserIdCandidates[] or
+-- matchId or mobileDeviceId or dclid is a required field.
+c1Gclid :: Lens' Conversion (Maybe Text)
+c1Gclid = lens _c1Gclid (\ s a -> s{_c1Gclid = a})
 
 -- | The ordinal of the conversion. Use this field to control how conversions
 -- of the same user and day are de-duplicated. This is a required field.
-conoOrdinal :: Lens' Conversion (Maybe Text)
-conoOrdinal
-  = lens _conoOrdinal (\ s a -> s{_conoOrdinal = a})
+c1Ordinal :: Lens' Conversion (Maybe Text)
+c1Ordinal
+  = lens _c1Ordinal (\ s a -> s{_c1Ordinal = a})
+
+-- | The display click ID. This field is mutually exclusive with
+-- encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId
+-- and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or
+-- matchId or mobileDeviceId or gclid is a required field.
+c1Dclid :: Lens' Conversion (Maybe Text)
+c1Dclid = lens _c1Dclid (\ s a -> s{_c1Dclid = a})
+
+-- | The match ID field. A match ID is your own first-party identifier that
+-- has been synced with Google using the match ID feature in Floodlight.
+-- This field is mutually exclusive with encryptedUserId,
+-- encryptedUserIdCandidates[],mobileDeviceId, gclid and dclid. This or
+-- encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId or
+-- gclid or dclid is a required field.
+c1MatchId :: Lens' Conversion (Maybe Text)
+c1MatchId
+  = lens _c1MatchId (\ s a -> s{_c1MatchId = a})
 
 instance FromJSON Conversion where
         parseJSON
@@ -17971,7 +19293,7 @@ instance FromJSON Conversion where
                      <*> (o .:? "encryptedUserId")
                      <*> (o .:? "mobileDeviceId")
                      <*> (o .:? "floodlightConfigurationId")
-                     <*> (o .:? "kind" .!= "dfareporting#conversion")
+                     <*> (o .:? "kind")
                      <*> (o .:? "floodlightActivityId")
                      <*> (o .:? "nonPersonalizedAd")
                      <*> (o .:? "quantity")
@@ -17979,33 +19301,37 @@ instance FromJSON Conversion where
                      <*> (o .:? "customVariables" .!= mempty)
                      <*> (o .:? "childDirectedTreatment")
                      <*> (o .:? "gclid")
-                     <*> (o .:? "ordinal"))
+                     <*> (o .:? "ordinal")
+                     <*> (o .:? "dclid")
+                     <*> (o .:? "matchId"))
 
 instance ToJSON Conversion where
         toJSON Conversion'{..}
           = object
               (catMaybes
                  [("treatmentForUnderage" .=) <$>
-                    _conoTreatmentForUnderage,
+                    _c1TreatmentForUnderage,
                   ("encryptedUserIdCandidates" .=) <$>
-                    _conoEncryptedUserIdCandidates,
-                  ("timestampMicros" .=) <$> _conoTimestampMicros,
-                  ("limitAdTracking" .=) <$> _conoLimitAdTracking,
-                  ("encryptedUserId" .=) <$> _conoEncryptedUserId,
-                  ("mobileDeviceId" .=) <$> _conoMobileDeviceId,
+                    _c1EncryptedUserIdCandidates,
+                  ("timestampMicros" .=) <$> _c1TimestampMicros,
+                  ("limitAdTracking" .=) <$> _c1LimitAdTracking,
+                  ("encryptedUserId" .=) <$> _c1EncryptedUserId,
+                  ("mobileDeviceId" .=) <$> _c1MobileDeviceId,
                   ("floodlightConfigurationId" .=) <$>
-                    _conoFloodlightConfigurationId,
-                  Just ("kind" .= _conoKind),
+                    _c1FloodlightConfigurationId,
+                  ("kind" .=) <$> _c1Kind,
                   ("floodlightActivityId" .=) <$>
-                    _conoFloodlightActivityId,
-                  ("nonPersonalizedAd" .=) <$> _conoNonPersonalizedAd,
-                  ("quantity" .=) <$> _conoQuantity,
-                  ("value" .=) <$> _conoValue,
-                  ("customVariables" .=) <$> _conoCustomVariables,
+                    _c1FloodlightActivityId,
+                  ("nonPersonalizedAd" .=) <$> _c1NonPersonalizedAd,
+                  ("quantity" .=) <$> _c1Quantity,
+                  ("value" .=) <$> _c1Value,
+                  ("customVariables" .=) <$> _c1CustomVariables,
                   ("childDirectedTreatment" .=) <$>
-                    _conoChildDirectedTreatment,
-                  ("gclid" .=) <$> _conoGclid,
-                  ("ordinal" .=) <$> _conoOrdinal])
+                    _c1ChildDirectedTreatment,
+                  ("gclid" .=) <$> _c1Gclid,
+                  ("ordinal" .=) <$> _c1Ordinal,
+                  ("dclid" .=) <$> _c1Dclid,
+                  ("matchId" .=) <$> _c1MatchId])
 
 -- | Creative Field Value List Response
 --
@@ -18013,7 +19339,7 @@ instance ToJSON Conversion where
 data CreativeFieldValuesListResponse =
   CreativeFieldValuesListResponse'
     { _cfvlrNextPageToken :: !(Maybe Text)
-    , _cfvlrKind :: !Text
+    , _cfvlrKind :: !(Maybe Text)
     , _cfvlrCreativeFieldValues :: !(Maybe [CreativeFieldValue])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18033,7 +19359,7 @@ creativeFieldValuesListResponse
 creativeFieldValuesListResponse =
   CreativeFieldValuesListResponse'
     { _cfvlrNextPageToken = Nothing
-    , _cfvlrKind = "dfareporting#creativeFieldValuesListResponse"
+    , _cfvlrKind = Nothing
     , _cfvlrCreativeFieldValues = Nothing
     }
 
@@ -18046,7 +19372,7 @@ cfvlrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeFieldValuesListResponse\".
-cfvlrKind :: Lens' CreativeFieldValuesListResponse Text
+cfvlrKind :: Lens' CreativeFieldValuesListResponse (Maybe Text)
 cfvlrKind
   = lens _cfvlrKind (\ s a -> s{_cfvlrKind = a})
 
@@ -18064,17 +19390,15 @@ instance FromJSON CreativeFieldValuesListResponse
           = withObject "CreativeFieldValuesListResponse"
               (\ o ->
                  CreativeFieldValuesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#creativeFieldValuesListResponse")
-                     <*> (o .:? "creativeFieldValues" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "creativeFieldValues" .!= mempty))
 
 instance ToJSON CreativeFieldValuesListResponse where
         toJSON CreativeFieldValuesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _cfvlrNextPageToken,
-                  Just ("kind" .= _cfvlrKind),
+                  ("kind" .=) <$> _cfvlrKind,
                   ("creativeFieldValues" .=) <$>
                     _cfvlrCreativeFieldValues])
 
@@ -18210,7 +19534,7 @@ data AdvertiserLandingPagesListResponse =
   AdvertiserLandingPagesListResponse'
     { _alplrLandingPages :: !(Maybe [LandingPage])
     , _alplrNextPageToken :: !(Maybe Text)
-    , _alplrKind :: !Text
+    , _alplrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -18230,7 +19554,7 @@ advertiserLandingPagesListResponse =
   AdvertiserLandingPagesListResponse'
     { _alplrLandingPages = Nothing
     , _alplrNextPageToken = Nothing
-    , _alplrKind = "dfareporting#advertiserLandingPagesListResponse"
+    , _alplrKind = Nothing
     }
 
 
@@ -18250,7 +19574,7 @@ alplrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#advertiserLandingPagesListResponse\".
-alplrKind :: Lens' AdvertiserLandingPagesListResponse Text
+alplrKind :: Lens' AdvertiserLandingPagesListResponse (Maybe Text)
 alplrKind
   = lens _alplrKind (\ s a -> s{_alplrKind = a})
 
@@ -18262,9 +19586,7 @@ instance FromJSON AdvertiserLandingPagesListResponse
                  AdvertiserLandingPagesListResponse' <$>
                    (o .:? "landingPages" .!= mempty) <*>
                      (o .:? "nextPageToken")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#advertiserLandingPagesListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON AdvertiserLandingPagesListResponse
          where
@@ -18273,7 +19595,7 @@ instance ToJSON AdvertiserLandingPagesListResponse
               (catMaybes
                  [("landingPages" .=) <$> _alplrLandingPages,
                   ("nextPageToken" .=) <$> _alplrNextPageToken,
-                  Just ("kind" .= _alplrKind)])
+                  ("kind" .=) <$> _alplrKind])
 
 -- | Mobile app List Response
 --
@@ -18281,7 +19603,7 @@ instance ToJSON AdvertiserLandingPagesListResponse
 data MobileAppsListResponse =
   MobileAppsListResponse'
     { _malrNextPageToken :: !(Maybe Text)
-    , _malrKind :: !Text
+    , _malrKind :: !(Maybe Text)
     , _malrMobileApps :: !(Maybe [MobileApp])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18301,7 +19623,7 @@ mobileAppsListResponse
 mobileAppsListResponse =
   MobileAppsListResponse'
     { _malrNextPageToken = Nothing
-    , _malrKind = "dfareporting#mobileAppsListResponse"
+    , _malrKind = Nothing
     , _malrMobileApps = Nothing
     }
 
@@ -18314,7 +19636,7 @@ malrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#mobileAppsListResponse\".
-malrKind :: Lens' MobileAppsListResponse Text
+malrKind :: Lens' MobileAppsListResponse (Maybe Text)
 malrKind = lens _malrKind (\ s a -> s{_malrKind = a})
 
 -- | Mobile apps collection.
@@ -18330,17 +19652,15 @@ instance FromJSON MobileAppsListResponse where
           = withObject "MobileAppsListResponse"
               (\ o ->
                  MobileAppsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#mobileAppsListResponse")
-                     <*> (o .:? "mobileApps" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "mobileApps" .!= mempty))
 
 instance ToJSON MobileAppsListResponse where
         toJSON MobileAppsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _malrNextPageToken,
-                  Just ("kind" .= _malrKind),
+                  ("kind" .=) <$> _malrKind,
                   ("mobileApps" .=) <$> _malrMobileApps])
 
 -- | Represents a sorted dimension.
@@ -18348,7 +19668,7 @@ instance ToJSON MobileAppsListResponse where
 -- /See:/ 'sortedDimension' smart constructor.
 data SortedDimension =
   SortedDimension'
-    { _sdKind :: !Text
+    { _sdKind :: !(Maybe Text)
     , _sdSortOrder :: !(Maybe SortedDimensionSortOrder)
     , _sdName :: !(Maybe Text)
     }
@@ -18368,14 +19688,11 @@ sortedDimension
     :: SortedDimension
 sortedDimension =
   SortedDimension'
-    { _sdKind = "dfareporting#sortedDimension"
-    , _sdSortOrder = Nothing
-    , _sdName = Nothing
-    }
+    {_sdKind = Nothing, _sdSortOrder = Nothing, _sdName = Nothing}
 
 
 -- | The kind of resource this is, in this case dfareporting#sortedDimension.
-sdKind :: Lens' SortedDimension Text
+sdKind :: Lens' SortedDimension (Maybe Text)
 sdKind = lens _sdKind (\ s a -> s{_sdKind = a})
 
 -- | An optional sort order for the dimension column.
@@ -18392,15 +19709,14 @@ instance FromJSON SortedDimension where
           = withObject "SortedDimension"
               (\ o ->
                  SortedDimension' <$>
-                   (o .:? "kind" .!= "dfareporting#sortedDimension") <*>
-                     (o .:? "sortOrder")
-                     <*> (o .:? "name"))
+                   (o .:? "kind") <*> (o .:? "sortOrder") <*>
+                     (o .:? "name"))
 
 instance ToJSON SortedDimension where
         toJSON SortedDimension'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _sdKind),
+                 [("kind" .=) <$> _sdKind,
                   ("sortOrder" .=) <$> _sdSortOrder,
                   ("name" .=) <$> _sdName])
 
@@ -18410,7 +19726,7 @@ instance ToJSON SortedDimension where
 data CreativeFieldsListResponse =
   CreativeFieldsListResponse'
     { _cflrNextPageToken :: !(Maybe Text)
-    , _cflrKind :: !Text
+    , _cflrKind :: !(Maybe Text)
     , _cflrCreativeFields :: !(Maybe [CreativeField])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18430,7 +19746,7 @@ creativeFieldsListResponse
 creativeFieldsListResponse =
   CreativeFieldsListResponse'
     { _cflrNextPageToken = Nothing
-    , _cflrKind = "dfareporting#creativeFieldsListResponse"
+    , _cflrKind = Nothing
     , _cflrCreativeFields = Nothing
     }
 
@@ -18443,7 +19759,7 @@ cflrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeFieldsListResponse\".
-cflrKind :: Lens' CreativeFieldsListResponse Text
+cflrKind :: Lens' CreativeFieldsListResponse (Maybe Text)
 cflrKind = lens _cflrKind (\ s a -> s{_cflrKind = a})
 
 -- | Creative field collection.
@@ -18459,17 +19775,15 @@ instance FromJSON CreativeFieldsListResponse where
           = withObject "CreativeFieldsListResponse"
               (\ o ->
                  CreativeFieldsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#creativeFieldsListResponse")
-                     <*> (o .:? "creativeFields" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "creativeFields" .!= mempty))
 
 instance ToJSON CreativeFieldsListResponse where
         toJSON CreativeFieldsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _cflrNextPageToken,
-                  Just ("kind" .= _cflrKind),
+                  ("kind" .=) <$> _cflrKind,
                   ("creativeFields" .=) <$> _cflrCreativeFields])
 
 -- | Targeting Template List Response
@@ -18478,7 +19792,7 @@ instance ToJSON CreativeFieldsListResponse where
 data TargetingTemplatesListResponse =
   TargetingTemplatesListResponse'
     { _ttlrNextPageToken :: !(Maybe Text)
-    , _ttlrKind :: !Text
+    , _ttlrKind :: !(Maybe Text)
     , _ttlrTargetingTemplates :: !(Maybe [TargetingTemplate])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18498,7 +19812,7 @@ targetingTemplatesListResponse
 targetingTemplatesListResponse =
   TargetingTemplatesListResponse'
     { _ttlrNextPageToken = Nothing
-    , _ttlrKind = "dfareporting#targetingTemplatesListResponse"
+    , _ttlrKind = Nothing
     , _ttlrTargetingTemplates = Nothing
     }
 
@@ -18511,7 +19825,7 @@ ttlrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#targetingTemplatesListResponse\".
-ttlrKind :: Lens' TargetingTemplatesListResponse Text
+ttlrKind :: Lens' TargetingTemplatesListResponse (Maybe Text)
 ttlrKind = lens _ttlrKind (\ s a -> s{_ttlrKind = a})
 
 -- | Targeting template collection.
@@ -18528,26 +19842,87 @@ instance FromJSON TargetingTemplatesListResponse
           = withObject "TargetingTemplatesListResponse"
               (\ o ->
                  TargetingTemplatesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#targetingTemplatesListResponse")
-                     <*> (o .:? "targetingTemplates" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "targetingTemplates" .!= mempty))
 
 instance ToJSON TargetingTemplatesListResponse where
         toJSON TargetingTemplatesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _ttlrNextPageToken,
-                  Just ("kind" .= _ttlrKind),
+                  ("kind" .=) <$> _ttlrKind,
                   ("targetingTemplates" .=) <$>
                     _ttlrTargetingTemplates])
+
+-- | The original custom event that was inserted and whether there were any
+-- errors.
+--
+-- /See:/ 'customEventStatus' smart constructor.
+data CustomEventStatus =
+  CustomEventStatus'
+    { _cesKind :: !(Maybe Text)
+    , _cesCustomEvent :: !(Maybe CustomEvent)
+    , _cesErrors :: !(Maybe [CustomEventError])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventStatus' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cesKind'
+--
+-- * 'cesCustomEvent'
+--
+-- * 'cesErrors'
+customEventStatus
+    :: CustomEventStatus
+customEventStatus =
+  CustomEventStatus'
+    {_cesKind = Nothing, _cesCustomEvent = Nothing, _cesErrors = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventStatus\".
+cesKind :: Lens' CustomEventStatus (Maybe Text)
+cesKind = lens _cesKind (\ s a -> s{_cesKind = a})
+
+-- | The original custom event that was inserted.
+cesCustomEvent :: Lens' CustomEventStatus (Maybe CustomEvent)
+cesCustomEvent
+  = lens _cesCustomEvent
+      (\ s a -> s{_cesCustomEvent = a})
+
+-- | A list of errors related to this custom event.
+cesErrors :: Lens' CustomEventStatus [CustomEventError]
+cesErrors
+  = lens _cesErrors (\ s a -> s{_cesErrors = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON CustomEventStatus where
+        parseJSON
+          = withObject "CustomEventStatus"
+              (\ o ->
+                 CustomEventStatus' <$>
+                   (o .:? "kind") <*> (o .:? "customEvent") <*>
+                     (o .:? "errors" .!= mempty))
+
+instance ToJSON CustomEventStatus where
+        toJSON CustomEventStatus'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _cesKind,
+                  ("customEvent" .=) <$> _cesCustomEvent,
+                  ("errors" .=) <$> _cesErrors])
 
 -- | Placement GenerateTags Response
 --
 -- /See:/ 'placementsGenerateTagsResponse' smart constructor.
 data PlacementsGenerateTagsResponse =
   PlacementsGenerateTagsResponse'
-    { _pgtrKind :: !Text
+    { _pgtrKind :: !(Maybe Text)
     , _pgtrPlacementTags :: !(Maybe [PlacementTag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -18564,14 +19939,12 @@ placementsGenerateTagsResponse
     :: PlacementsGenerateTagsResponse
 placementsGenerateTagsResponse =
   PlacementsGenerateTagsResponse'
-    { _pgtrKind = "dfareporting#placementsGenerateTagsResponse"
-    , _pgtrPlacementTags = Nothing
-    }
+    {_pgtrKind = Nothing, _pgtrPlacementTags = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementsGenerateTagsResponse\".
-pgtrKind :: Lens' PlacementsGenerateTagsResponse Text
+pgtrKind :: Lens' PlacementsGenerateTagsResponse (Maybe Text)
 pgtrKind = lens _pgtrKind (\ s a -> s{_pgtrKind = a})
 
 -- | Set of generated tags for the specified placements.
@@ -18588,15 +19961,14 @@ instance FromJSON PlacementsGenerateTagsResponse
           = withObject "PlacementsGenerateTagsResponse"
               (\ o ->
                  PlacementsGenerateTagsResponse' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#placementsGenerateTagsResponse")
-                     <*> (o .:? "placementTags" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "placementTags" .!= mempty))
 
 instance ToJSON PlacementsGenerateTagsResponse where
         toJSON PlacementsGenerateTagsResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _pgtrKind),
+                 [("kind" .=) <$> _pgtrKind,
                   ("placementTags" .=) <$> _pgtrPlacementTags])
 
 -- | Creative Asset.
@@ -19049,7 +20421,7 @@ caaPositionLeftUnit
 
 -- | Possible alignments for an asset. This is a read-only field. Applicable
 -- to the following creative types:
--- RICH_MEDIA_DISPLAY_MULTI_FLOATING_INTERSTITIAL.
+-- RICH_MEDIA_DISPLAY_MULTI_FLOATING_INTERSTITIAL .
 caaAlignment :: Lens' CreativeAsset (Maybe CreativeAssetAlignment)
 caaAlignment
   = lens _caaAlignment (\ s a -> s{_caaAlignment = a})
@@ -19456,7 +20828,7 @@ instance ToJSON CreativeAssetSelection where
 data PlacementsListResponse =
   PlacementsListResponse'
     { _plaNextPageToken :: !(Maybe Text)
-    , _plaKind :: !Text
+    , _plaKind :: !(Maybe Text)
     , _plaPlacements :: !(Maybe [Placement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19475,10 +20847,7 @@ placementsListResponse
     :: PlacementsListResponse
 placementsListResponse =
   PlacementsListResponse'
-    { _plaNextPageToken = Nothing
-    , _plaKind = "dfareporting#placementsListResponse"
-    , _plaPlacements = Nothing
-    }
+    {_plaNextPageToken = Nothing, _plaKind = Nothing, _plaPlacements = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -19489,7 +20858,7 @@ plaNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementsListResponse\".
-plaKind :: Lens' PlacementsListResponse Text
+plaKind :: Lens' PlacementsListResponse (Maybe Text)
 plaKind = lens _plaKind (\ s a -> s{_plaKind = a})
 
 -- | Placement collection.
@@ -19505,17 +20874,15 @@ instance FromJSON PlacementsListResponse where
           = withObject "PlacementsListResponse"
               (\ o ->
                  PlacementsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#placementsListResponse")
-                     <*> (o .:? "placements" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "placements" .!= mempty))
 
 instance ToJSON PlacementsListResponse where
         toJSON PlacementsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _plaNextPageToken,
-                  Just ("kind" .= _plaKind),
+                  ("kind" .=) <$> _plaKind,
                   ("placements" .=) <$> _plaPlacements])
 
 -- | The report\'s schedule. Can only be set if the report\'s \'dateRange\'
@@ -19587,13 +20954,11 @@ rsRepeats :: Lens' ReportSchedule (Maybe Text)
 rsRepeats
   = lens _rsRepeats (\ s a -> s{_rsRepeats = a})
 
--- | Start date of date range for which scheduled reports should be run.
 rsStartDate :: Lens' ReportSchedule (Maybe Day)
 rsStartDate
   = lens _rsStartDate (\ s a -> s{_rsStartDate = a}) .
       mapping _Date
 
--- | The expiration date when the scheduled report stops running.
 rsExpirationDate :: Lens' ReportSchedule (Maybe Day)
 rsExpirationDate
   = lens _rsExpirationDate
@@ -19801,12 +21166,64 @@ instance ToJSON ReportPathToConversionCriteria where
                   ("perInteractionDimensions" .=) <$>
                     _rptccPerInteractionDimensions])
 
+-- | Annotate an impression.
+--
+-- /See:/ 'customEventImpressionAnnotation' smart constructor.
+data CustomEventImpressionAnnotation =
+  CustomEventImpressionAnnotation'
+    { _ceiaKind :: !(Maybe Text)
+    , _ceiaPathImpressionId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventImpressionAnnotation' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ceiaKind'
+--
+-- * 'ceiaPathImpressionId'
+customEventImpressionAnnotation
+    :: CustomEventImpressionAnnotation
+customEventImpressionAnnotation =
+  CustomEventImpressionAnnotation'
+    {_ceiaKind = Nothing, _ceiaPathImpressionId = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventImpressionAnnotation\".
+ceiaKind :: Lens' CustomEventImpressionAnnotation (Maybe Text)
+ceiaKind = lens _ceiaKind (\ s a -> s{_ceiaKind = a})
+
+-- | The path impression ID. Use this field to annotate the impression
+-- associated with the pathImpressionId.
+ceiaPathImpressionId :: Lens' CustomEventImpressionAnnotation (Maybe Text)
+ceiaPathImpressionId
+  = lens _ceiaPathImpressionId
+      (\ s a -> s{_ceiaPathImpressionId = a})
+
+instance FromJSON CustomEventImpressionAnnotation
+         where
+        parseJSON
+          = withObject "CustomEventImpressionAnnotation"
+              (\ o ->
+                 CustomEventImpressionAnnotation' <$>
+                   (o .:? "kind") <*> (o .:? "pathImpressionId"))
+
+instance ToJSON CustomEventImpressionAnnotation where
+        toJSON CustomEventImpressionAnnotation'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _ceiaKind,
+                  ("pathImpressionId" .=) <$> _ceiaPathImpressionId])
+
 -- | Metro List Response
 --
 -- /See:/ 'metrosListResponse' smart constructor.
 data MetrosListResponse =
   MetrosListResponse'
-    { _mlrKind :: !Text
+    { _mlrKind :: !(Maybe Text)
     , _mlrMetros :: !(Maybe [Metro])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19822,13 +21239,12 @@ data MetrosListResponse =
 metrosListResponse
     :: MetrosListResponse
 metrosListResponse =
-  MetrosListResponse'
-    {_mlrKind = "dfareporting#metrosListResponse", _mlrMetros = Nothing}
+  MetrosListResponse' {_mlrKind = Nothing, _mlrMetros = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#metrosListResponse\".
-mlrKind :: Lens' MetrosListResponse Text
+mlrKind :: Lens' MetrosListResponse (Maybe Text)
 mlrKind = lens _mlrKind (\ s a -> s{_mlrKind = a})
 
 -- | Metro collection.
@@ -19843,14 +21259,13 @@ instance FromJSON MetrosListResponse where
           = withObject "MetrosListResponse"
               (\ o ->
                  MetrosListResponse' <$>
-                   (o .:? "kind" .!= "dfareporting#metrosListResponse")
-                     <*> (o .:? "metros" .!= mempty))
+                   (o .:? "kind") <*> (o .:? "metros" .!= mempty))
 
 instance ToJSON MetrosListResponse where
         toJSON MetrosListResponse'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _mlrKind),
+                 [("kind" .=) <$> _mlrKind,
                   ("metros" .=) <$> _mlrMetros])
 
 -- | Insert Conversions Response.
@@ -19859,7 +21274,7 @@ instance ToJSON MetrosListResponse where
 data ConversionsBatchInsertResponse =
   ConversionsBatchInsertResponse'
     { _cbirbStatus :: !(Maybe [ConversionStatus])
-    , _cbirbKind :: !Text
+    , _cbirbKind :: !(Maybe Text)
     , _cbirbHasFailures :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19878,10 +21293,7 @@ conversionsBatchInsertResponse
     :: ConversionsBatchInsertResponse
 conversionsBatchInsertResponse =
   ConversionsBatchInsertResponse'
-    { _cbirbStatus = Nothing
-    , _cbirbKind = "dfareporting#conversionsBatchInsertResponse"
-    , _cbirbHasFailures = Nothing
-    }
+    {_cbirbStatus = Nothing, _cbirbKind = Nothing, _cbirbHasFailures = Nothing}
 
 
 -- | The insert status of each conversion. Statuses are returned in the same
@@ -19894,7 +21306,7 @@ cbirbStatus
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#conversionsBatchInsertResponse\".
-cbirbKind :: Lens' ConversionsBatchInsertResponse Text
+cbirbKind :: Lens' ConversionsBatchInsertResponse (Maybe Text)
 cbirbKind
   = lens _cbirbKind (\ s a -> s{_cbirbKind = a})
 
@@ -19910,17 +21322,15 @@ instance FromJSON ConversionsBatchInsertResponse
           = withObject "ConversionsBatchInsertResponse"
               (\ o ->
                  ConversionsBatchInsertResponse' <$>
-                   (o .:? "status" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#conversionsBatchInsertResponse")
-                     <*> (o .:? "hasFailures"))
+                   (o .:? "status" .!= mempty) <*> (o .:? "kind") <*>
+                     (o .:? "hasFailures"))
 
 instance ToJSON ConversionsBatchInsertResponse where
         toJSON ConversionsBatchInsertResponse'{..}
           = object
               (catMaybes
                  [("status" .=) <$> _cbirbStatus,
-                  Just ("kind" .= _cbirbKind),
+                  ("kind" .=) <$> _cbirbKind,
                   ("hasFailures" .=) <$> _cbirbHasFailures])
 
 -- | Order document List Response
@@ -19929,7 +21339,7 @@ instance ToJSON ConversionsBatchInsertResponse where
 data OrderDocumentsListResponse =
   OrderDocumentsListResponse'
     { _odlrNextPageToken :: !(Maybe Text)
-    , _odlrKind :: !Text
+    , _odlrKind :: !(Maybe Text)
     , _odlrOrderDocuments :: !(Maybe [OrderDocument])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -19949,7 +21359,7 @@ orderDocumentsListResponse
 orderDocumentsListResponse =
   OrderDocumentsListResponse'
     { _odlrNextPageToken = Nothing
-    , _odlrKind = "dfareporting#orderDocumentsListResponse"
+    , _odlrKind = Nothing
     , _odlrOrderDocuments = Nothing
     }
 
@@ -19962,7 +21372,7 @@ odlrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#orderDocumentsListResponse\".
-odlrKind :: Lens' OrderDocumentsListResponse Text
+odlrKind :: Lens' OrderDocumentsListResponse (Maybe Text)
 odlrKind = lens _odlrKind (\ s a -> s{_odlrKind = a})
 
 -- | Order document collection
@@ -19978,17 +21388,15 @@ instance FromJSON OrderDocumentsListResponse where
           = withObject "OrderDocumentsListResponse"
               (\ o ->
                  OrderDocumentsListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#orderDocumentsListResponse")
-                     <*> (o .:? "orderDocuments" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "orderDocuments" .!= mempty))
 
 instance ToJSON OrderDocumentsListResponse where
         toJSON OrderDocumentsListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _odlrNextPageToken,
-                  Just ("kind" .= _odlrKind),
+                  ("kind" .=) <$> _odlrKind,
                   ("orderDocuments" .=) <$> _odlrOrderDocuments])
 
 -- | Represents a recipient.
@@ -19997,7 +21405,7 @@ instance ToJSON OrderDocumentsListResponse where
 data Recipient =
   Recipient'
     { _recEmail :: !(Maybe Text)
-    , _recKind :: !Text
+    , _recKind :: !(Maybe Text)
     , _recDeliveryType :: !(Maybe RecipientDeliveryType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -20016,10 +21424,7 @@ recipient
     :: Recipient
 recipient =
   Recipient'
-    { _recEmail = Nothing
-    , _recKind = "dfareporting#recipient"
-    , _recDeliveryType = Nothing
-    }
+    {_recEmail = Nothing, _recKind = Nothing, _recDeliveryType = Nothing}
 
 
 -- | The email address of the recipient.
@@ -20027,7 +21432,7 @@ recEmail :: Lens' Recipient (Maybe Text)
 recEmail = lens _recEmail (\ s a -> s{_recEmail = a})
 
 -- | The kind of resource this is, in this case dfareporting#recipient.
-recKind :: Lens' Recipient Text
+recKind :: Lens' Recipient (Maybe Text)
 recKind = lens _recKind (\ s a -> s{_recKind = a})
 
 -- | The delivery type for the recipient.
@@ -20041,17 +21446,119 @@ instance FromJSON Recipient where
           = withObject "Recipient"
               (\ o ->
                  Recipient' <$>
-                   (o .:? "email") <*>
-                     (o .:? "kind" .!= "dfareporting#recipient")
-                     <*> (o .:? "deliveryType"))
+                   (o .:? "email") <*> (o .:? "kind") <*>
+                     (o .:? "deliveryType"))
 
 instance ToJSON Recipient where
         toJSON Recipient'{..}
           = object
               (catMaybes
                  [("email" .=) <$> _recEmail,
-                  Just ("kind" .= _recKind),
+                  ("kind" .=) <$> _recKind,
                   ("deliveryType" .=) <$> _recDeliveryType])
+
+-- | Campaign Manager IDs related to the custom event.
+--
+-- /See:/ 'campaignManagerIds' smart constructor.
+data CampaignManagerIds =
+  CampaignManagerIds'
+    { _cmiPlacementId :: !(Maybe (Textual Int64))
+    , _cmiKind :: !(Maybe Text)
+    , _cmiCampaignId :: !(Maybe (Textual Int64))
+    , _cmiCreativeId :: !(Maybe (Textual Int64))
+    , _cmiAdId :: !(Maybe (Textual Int64))
+    , _cmiSiteId :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CampaignManagerIds' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cmiPlacementId'
+--
+-- * 'cmiKind'
+--
+-- * 'cmiCampaignId'
+--
+-- * 'cmiCreativeId'
+--
+-- * 'cmiAdId'
+--
+-- * 'cmiSiteId'
+campaignManagerIds
+    :: CampaignManagerIds
+campaignManagerIds =
+  CampaignManagerIds'
+    { _cmiPlacementId = Nothing
+    , _cmiKind = Nothing
+    , _cmiCampaignId = Nothing
+    , _cmiCreativeId = Nothing
+    , _cmiAdId = Nothing
+    , _cmiSiteId = Nothing
+    }
+
+
+-- | Placement ID for Campaign Manager.
+cmiPlacementId :: Lens' CampaignManagerIds (Maybe Int64)
+cmiPlacementId
+  = lens _cmiPlacementId
+      (\ s a -> s{_cmiPlacementId = a})
+      . mapping _Coerce
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#campaignManagerIds\".
+cmiKind :: Lens' CampaignManagerIds (Maybe Text)
+cmiKind = lens _cmiKind (\ s a -> s{_cmiKind = a})
+
+-- | Campaign ID for Campaign Manager.
+cmiCampaignId :: Lens' CampaignManagerIds (Maybe Int64)
+cmiCampaignId
+  = lens _cmiCampaignId
+      (\ s a -> s{_cmiCampaignId = a})
+      . mapping _Coerce
+
+-- | Creative ID for Campaign Manager.
+cmiCreativeId :: Lens' CampaignManagerIds (Maybe Int64)
+cmiCreativeId
+  = lens _cmiCreativeId
+      (\ s a -> s{_cmiCreativeId = a})
+      . mapping _Coerce
+
+-- | Ad ID for Campaign Manager.
+cmiAdId :: Lens' CampaignManagerIds (Maybe Int64)
+cmiAdId
+  = lens _cmiAdId (\ s a -> s{_cmiAdId = a}) .
+      mapping _Coerce
+
+-- | Site ID for Campaign Manager.
+cmiSiteId :: Lens' CampaignManagerIds (Maybe Int64)
+cmiSiteId
+  = lens _cmiSiteId (\ s a -> s{_cmiSiteId = a}) .
+      mapping _Coerce
+
+instance FromJSON CampaignManagerIds where
+        parseJSON
+          = withObject "CampaignManagerIds"
+              (\ o ->
+                 CampaignManagerIds' <$>
+                   (o .:? "placementId") <*> (o .:? "kind") <*>
+                     (o .:? "campaignId")
+                     <*> (o .:? "creativeId")
+                     <*> (o .:? "adId")
+                     <*> (o .:? "siteId"))
+
+instance ToJSON CampaignManagerIds where
+        toJSON CampaignManagerIds'{..}
+          = object
+              (catMaybes
+                 [("placementId" .=) <$> _cmiPlacementId,
+                  ("kind" .=) <$> _cmiKind,
+                  ("campaignId" .=) <$> _cmiCampaignId,
+                  ("creativeId" .=) <$> _cmiCreativeId,
+                  ("adId" .=) <$> _cmiAdId,
+                  ("siteId" .=) <$> _cmiSiteId])
 
 -- | Contains properties of a site.
 --
@@ -20059,7 +21566,7 @@ instance ToJSON Recipient where
 data Site =
   Site'
     { _sitiVideoSettings :: !(Maybe SiteVideoSettings)
-    , _sitiKind :: !Text
+    , _sitiKind :: !(Maybe Text)
     , _sitiKeyName :: !(Maybe Text)
     , _sitiSiteContacts :: !(Maybe [SiteContact])
     , _sitiSiteSettings :: !(Maybe SiteSettings)
@@ -20109,7 +21616,7 @@ site
 site =
   Site'
     { _sitiVideoSettings = Nothing
-    , _sitiKind = "dfareporting#site"
+    , _sitiKind = Nothing
     , _sitiKeyName = Nothing
     , _sitiSiteContacts = Nothing
     , _sitiSiteSettings = Nothing
@@ -20134,7 +21641,7 @@ sitiVideoSettings
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#site\".
-sitiKind :: Lens' Site Text
+sitiKind :: Lens' Site (Maybe Text)
 sitiKind = lens _sitiKind (\ s a -> s{_sitiKind = a})
 
 -- | Key name of this site. This is a read-only, auto-generated field.
@@ -20218,9 +21725,8 @@ instance FromJSON Site where
           = withObject "Site"
               (\ o ->
                  Site' <$>
-                   (o .:? "videoSettings") <*>
-                     (o .:? "kind" .!= "dfareporting#site")
-                     <*> (o .:? "keyName")
+                   (o .:? "videoSettings") <*> (o .:? "kind") <*>
+                     (o .:? "keyName")
                      <*> (o .:? "siteContacts" .!= mempty)
                      <*> (o .:? "siteSettings")
                      <*> (o .:? "idDimensionValue")
@@ -20237,7 +21743,7 @@ instance ToJSON Site where
           = object
               (catMaybes
                  [("videoSettings" .=) <$> _sitiVideoSettings,
-                  Just ("kind" .= _sitiKind),
+                  ("kind" .=) <$> _sitiKind,
                   ("keyName" .=) <$> _sitiKeyName,
                   ("siteContacts" .=) <$> _sitiSiteContacts,
                   ("siteSettings" .=) <$> _sitiSiteSettings,
@@ -20495,7 +22001,7 @@ data CampaignCreativeAssociationsListResponse =
   CampaignCreativeAssociationsListResponse'
     { _ccalrCampaignCreativeAssociations :: !(Maybe [CampaignCreativeAssociation])
     , _ccalrNextPageToken :: !(Maybe Text)
-    , _ccalrKind :: !Text
+    , _ccalrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -20515,7 +22021,7 @@ campaignCreativeAssociationsListResponse =
   CampaignCreativeAssociationsListResponse'
     { _ccalrCampaignCreativeAssociations = Nothing
     , _ccalrNextPageToken = Nothing
-    , _ccalrKind = "dfareporting#campaignCreativeAssociationsListResponse"
+    , _ccalrKind = Nothing
     }
 
 
@@ -20535,7 +22041,7 @@ ccalrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#campaignCreativeAssociationsListResponse\".
-ccalrKind :: Lens' CampaignCreativeAssociationsListResponse Text
+ccalrKind :: Lens' CampaignCreativeAssociationsListResponse (Maybe Text)
 ccalrKind
   = lens _ccalrKind (\ s a -> s{_ccalrKind = a})
 
@@ -20549,9 +22055,7 @@ instance FromJSON
                  CampaignCreativeAssociationsListResponse' <$>
                    (o .:? "campaignCreativeAssociations" .!= mempty) <*>
                      (o .:? "nextPageToken")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#campaignCreativeAssociationsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON
            CampaignCreativeAssociationsListResponse
@@ -20562,7 +22066,7 @@ instance ToJSON
                  [("campaignCreativeAssociations" .=) <$>
                     _ccalrCampaignCreativeAssociations,
                   ("nextPageToken" .=) <$> _ccalrNextPageToken,
-                  Just ("kind" .= _ccalrKind)])
+                  ("kind" .=) <$> _ccalrKind])
 
 -- | Describes properties of a Planning order.
 --
@@ -20571,7 +22075,7 @@ data Order =
   Order'
     { _oSellerOrderId :: !(Maybe Text)
     , _oSellerOrganizationName :: !(Maybe Text)
-    , _oKind :: !Text
+    , _oKind :: !(Maybe Text)
     , _oAdvertiserId :: !(Maybe (Textual Int64))
     , _oPlanningTermId :: !(Maybe (Textual Int64))
     , _oAccountId :: !(Maybe (Textual Int64))
@@ -20642,7 +22146,7 @@ order =
   Order'
     { _oSellerOrderId = Nothing
     , _oSellerOrganizationName = Nothing
-    , _oKind = "dfareporting#order"
+    , _oKind = Nothing
     , _oAdvertiserId = Nothing
     , _oPlanningTermId = Nothing
     , _oAccountId = Nothing
@@ -20677,7 +22181,7 @@ oSellerOrganizationName
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#order\".
-oKind :: Lens' Order Text
+oKind :: Lens' Order (Maybe Text)
 oKind = lens _oKind (\ s a -> s{_oKind = a})
 
 -- | Advertiser ID of this order.
@@ -20790,7 +22294,7 @@ instance FromJSON Order where
                  Order' <$>
                    (o .:? "sellerOrderId") <*>
                      (o .:? "sellerOrganizationName")
-                     <*> (o .:? "kind" .!= "dfareporting#order")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "planningTermId")
                      <*> (o .:? "accountId")
@@ -20816,7 +22320,7 @@ instance ToJSON Order where
                  [("sellerOrderId" .=) <$> _oSellerOrderId,
                   ("sellerOrganizationName" .=) <$>
                     _oSellerOrganizationName,
-                  Just ("kind" .= _oKind),
+                  ("kind" .=) <$> _oKind,
                   ("advertiserId" .=) <$> _oAdvertiserId,
                   ("planningTermId" .=) <$> _oPlanningTermId,
                   ("accountId" .=) <$> _oAccountId,
@@ -20948,7 +22452,7 @@ data File =
   File'
     { _filStatus :: !(Maybe FileStatus)
     , _filEtag :: !(Maybe Text)
-    , _filKind :: !Text
+    , _filKind :: !(Maybe Text)
     , _filURLs :: !(Maybe FileURLs)
     , _filReportId :: !(Maybe (Textual Int64))
     , _filDateRange :: !(Maybe DateRange)
@@ -20989,7 +22493,7 @@ file =
   File'
     { _filStatus = Nothing
     , _filEtag = Nothing
-    , _filKind = "dfareporting#file"
+    , _filKind = Nothing
     , _filURLs = Nothing
     , _filReportId = Nothing
     , _filDateRange = Nothing
@@ -21005,12 +22509,13 @@ filStatus :: Lens' File (Maybe FileStatus)
 filStatus
   = lens _filStatus (\ s a -> s{_filStatus = a})
 
--- | The eTag of this response for caching purposes.
+-- | Etag of this resource.
 filEtag :: Lens' File (Maybe Text)
 filEtag = lens _filEtag (\ s a -> s{_filEtag = a})
 
--- | The kind of resource this is, in this case dfareporting#file.
-filKind :: Lens' File Text
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#file\".
+filKind :: Lens' File (Maybe Text)
 filKind = lens _filKind (\ s a -> s{_filKind = a})
 
 -- | The URLs where the completed report file can be downloaded.
@@ -21060,7 +22565,7 @@ instance FromJSON File where
               (\ o ->
                  File' <$>
                    (o .:? "status") <*> (o .:? "etag") <*>
-                     (o .:? "kind" .!= "dfareporting#file")
+                     (o .:? "kind")
                      <*> (o .:? "urls")
                      <*> (o .:? "reportId")
                      <*> (o .:? "dateRange")
@@ -21074,7 +22579,7 @@ instance ToJSON File where
           = object
               (catMaybes
                  [("status" .=) <$> _filStatus,
-                  ("etag" .=) <$> _filEtag, Just ("kind" .= _filKind),
+                  ("etag" .=) <$> _filEtag, ("kind" .=) <$> _filKind,
                   ("urls" .=) <$> _filURLs,
                   ("reportId" .=) <$> _filReportId,
                   ("dateRange" .=) <$> _filDateRange,
@@ -21090,7 +22595,7 @@ data CreativeGroupsListResponse =
   CreativeGroupsListResponse'
     { _cglrCreativeGroups :: !(Maybe [CreativeGroup])
     , _cglrNextPageToken :: !(Maybe Text)
-    , _cglrKind :: !Text
+    , _cglrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21110,7 +22615,7 @@ creativeGroupsListResponse =
   CreativeGroupsListResponse'
     { _cglrCreativeGroups = Nothing
     , _cglrNextPageToken = Nothing
-    , _cglrKind = "dfareporting#creativeGroupsListResponse"
+    , _cglrKind = Nothing
     }
 
 
@@ -21130,7 +22635,7 @@ cglrNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeGroupsListResponse\".
-cglrKind :: Lens' CreativeGroupsListResponse Text
+cglrKind :: Lens' CreativeGroupsListResponse (Maybe Text)
 cglrKind = lens _cglrKind (\ s a -> s{_cglrKind = a})
 
 instance FromJSON CreativeGroupsListResponse where
@@ -21140,9 +22645,7 @@ instance FromJSON CreativeGroupsListResponse where
                  CreativeGroupsListResponse' <$>
                    (o .:? "creativeGroups" .!= mempty) <*>
                      (o .:? "nextPageToken")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#creativeGroupsListResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON CreativeGroupsListResponse where
         toJSON CreativeGroupsListResponse'{..}
@@ -21150,7 +22653,56 @@ instance ToJSON CreativeGroupsListResponse where
               (catMaybes
                  [("creativeGroups" .=) <$> _cglrCreativeGroups,
                   ("nextPageToken" .=) <$> _cglrNextPageToken,
-                  Just ("kind" .= _cglrKind)])
+                  ("kind" .=) <$> _cglrKind])
+
+-- | Annotate a click event.
+--
+-- /See:/ 'customEventClickAnnotation' smart constructor.
+data CustomEventClickAnnotation =
+  CustomEventClickAnnotation'
+    { _cecaKind :: !(Maybe Text)
+    , _cecaGclid :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CustomEventClickAnnotation' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cecaKind'
+--
+-- * 'cecaGclid'
+customEventClickAnnotation
+    :: CustomEventClickAnnotation
+customEventClickAnnotation =
+  CustomEventClickAnnotation' {_cecaKind = Nothing, _cecaGclid = Nothing}
+
+
+-- | Identifies what kind of resource this is. Value: the fixed string
+-- \"dfareporting#customEventClickAnnotation\".
+cecaKind :: Lens' CustomEventClickAnnotation (Maybe Text)
+cecaKind = lens _cecaKind (\ s a -> s{_cecaKind = a})
+
+-- | The Google click ID. Use this field to annotate the click associated
+-- with the gclid.
+cecaGclid :: Lens' CustomEventClickAnnotation (Maybe Text)
+cecaGclid
+  = lens _cecaGclid (\ s a -> s{_cecaGclid = a})
+
+instance FromJSON CustomEventClickAnnotation where
+        parseJSON
+          = withObject "CustomEventClickAnnotation"
+              (\ o ->
+                 CustomEventClickAnnotation' <$>
+                   (o .:? "kind") <*> (o .:? "gclid"))
+
+instance ToJSON CustomEventClickAnnotation where
+        toJSON CustomEventClickAnnotation'{..}
+          = object
+              (catMaybes
+                 [("kind" .=) <$> _cecaKind,
+                  ("gclid" .=) <$> _cecaGclid])
 
 -- | Mobile Carrier List Response
 --
@@ -21158,7 +22710,7 @@ instance ToJSON CreativeGroupsListResponse where
 data MobileCarriersListResponse =
   MobileCarriersListResponse'
     { _mclrMobileCarriers :: !(Maybe [MobileCarrier])
-    , _mclrKind :: !Text
+    , _mclrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -21174,9 +22726,7 @@ mobileCarriersListResponse
     :: MobileCarriersListResponse
 mobileCarriersListResponse =
   MobileCarriersListResponse'
-    { _mclrMobileCarriers = Nothing
-    , _mclrKind = "dfareporting#mobileCarriersListResponse"
-    }
+    {_mclrMobileCarriers = Nothing, _mclrKind = Nothing}
 
 
 -- | Mobile carrier collection.
@@ -21189,7 +22739,7 @@ mclrMobileCarriers
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#mobileCarriersListResponse\".
-mclrKind :: Lens' MobileCarriersListResponse Text
+mclrKind :: Lens' MobileCarriersListResponse (Maybe Text)
 mclrKind = lens _mclrKind (\ s a -> s{_mclrKind = a})
 
 instance FromJSON MobileCarriersListResponse where
@@ -21198,15 +22748,14 @@ instance FromJSON MobileCarriersListResponse where
               (\ o ->
                  MobileCarriersListResponse' <$>
                    (o .:? "mobileCarriers" .!= mempty) <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#mobileCarriersListResponse"))
+                     (o .:? "kind"))
 
 instance ToJSON MobileCarriersListResponse where
         toJSON MobileCarriersListResponse'{..}
           = object
               (catMaybes
                  [("mobileCarriers" .=) <$> _mclrMobileCarriers,
-                  Just ("kind" .= _mclrKind)])
+                  ("kind" .=) <$> _mclrKind])
 
 -- | CreativeAssets contains properties of a creative asset file which will
 -- be uploaded or has already been uploaded. Refer to the creative sample
@@ -21215,12 +22764,16 @@ instance ToJSON MobileCarriersListResponse where
 -- /See:/ 'creativeAssetMetadata' smart constructor.
 data CreativeAssetMetadata =
   CreativeAssetMetadata'
-    { _camaKind :: !Text
+    { _camaRichMedia :: !(Maybe Bool)
+    , _camaCounterCustomEvents :: !(Maybe [CreativeCustomEvent])
+    , _camaKind :: !(Maybe Text)
     , _camaAssetIdentifier :: !(Maybe CreativeAssetId)
     , _camaIdDimensionValue :: !(Maybe DimensionValue)
+    , _camaExitCustomEvents :: !(Maybe [CreativeCustomEvent])
     , _camaClickTags :: !(Maybe [ClickTag])
     , _camaWarnedValidationRules :: !(Maybe [CreativeAssetMetadataWarnedValidationRulesItem])
     , _camaId :: !(Maybe (Textual Int64))
+    , _camaTimerCustomEvents :: !(Maybe [CreativeCustomEvent])
     , _camaDetectedFeatures :: !(Maybe [CreativeAssetMetadataDetectedFeaturesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -21230,11 +22783,17 @@ data CreativeAssetMetadata =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'camaRichMedia'
+--
+-- * 'camaCounterCustomEvents'
+--
 -- * 'camaKind'
 --
 -- * 'camaAssetIdentifier'
 --
 -- * 'camaIdDimensionValue'
+--
+-- * 'camaExitCustomEvents'
 --
 -- * 'camaClickTags'
 --
@@ -21242,24 +22801,46 @@ data CreativeAssetMetadata =
 --
 -- * 'camaId'
 --
+-- * 'camaTimerCustomEvents'
+--
 -- * 'camaDetectedFeatures'
 creativeAssetMetadata
     :: CreativeAssetMetadata
 creativeAssetMetadata =
   CreativeAssetMetadata'
-    { _camaKind = "dfareporting#creativeAssetMetadata"
+    { _camaRichMedia = Nothing
+    , _camaCounterCustomEvents = Nothing
+    , _camaKind = Nothing
     , _camaAssetIdentifier = Nothing
     , _camaIdDimensionValue = Nothing
+    , _camaExitCustomEvents = Nothing
     , _camaClickTags = Nothing
     , _camaWarnedValidationRules = Nothing
     , _camaId = Nothing
+    , _camaTimerCustomEvents = Nothing
     , _camaDetectedFeatures = Nothing
     }
 
 
+-- | True if the uploaded asset is a rich media asset. This is a read-only,
+-- auto-generated field.
+camaRichMedia :: Lens' CreativeAssetMetadata (Maybe Bool)
+camaRichMedia
+  = lens _camaRichMedia
+      (\ s a -> s{_camaRichMedia = a})
+
+-- | List of counter events configured for the asset. This is a read-only,
+-- auto-generated field and only applicable to a rich media asset.
+camaCounterCustomEvents :: Lens' CreativeAssetMetadata [CreativeCustomEvent]
+camaCounterCustomEvents
+  = lens _camaCounterCustomEvents
+      (\ s a -> s{_camaCounterCustomEvents = a})
+      . _Default
+      . _Coerce
+
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeAssetMetadata\".
-camaKind :: Lens' CreativeAssetMetadata Text
+camaKind :: Lens' CreativeAssetMetadata (Maybe Text)
 camaKind = lens _camaKind (\ s a -> s{_camaKind = a})
 
 -- | ID of the creative asset. This is a required field.
@@ -21275,8 +22856,17 @@ camaIdDimensionValue
   = lens _camaIdDimensionValue
       (\ s a -> s{_camaIdDimensionValue = a})
 
--- | List of detected click tags for assets. This is a read-only
--- auto-generated field.
+-- | List of exit events configured for the asset. This is a read-only,
+-- auto-generated field and only applicable to a rich media asset.
+camaExitCustomEvents :: Lens' CreativeAssetMetadata [CreativeCustomEvent]
+camaExitCustomEvents
+  = lens _camaExitCustomEvents
+      (\ s a -> s{_camaExitCustomEvents = a})
+      . _Default
+      . _Coerce
+
+-- | List of detected click tags for assets. This is a read-only,
+-- auto-generated field. This field is empty for a rich media asset.
 camaClickTags :: Lens' CreativeAssetMetadata [ClickTag]
 camaClickTags
   = lens _camaClickTags
@@ -21310,6 +22900,15 @@ camaId
   = lens _camaId (\ s a -> s{_camaId = a}) .
       mapping _Coerce
 
+-- | List of timer events configured for the asset. This is a read-only,
+-- auto-generated field and only applicable to a rich media asset.
+camaTimerCustomEvents :: Lens' CreativeAssetMetadata [CreativeCustomEvent]
+camaTimerCustomEvents
+  = lens _camaTimerCustomEvents
+      (\ s a -> s{_camaTimerCustomEvents = a})
+      . _Default
+      . _Coerce
+
 -- | List of feature dependencies for the creative asset that are detected by
 -- Campaign Manager. Feature dependencies are features that a browser must
 -- be able to support in order to render your HTML5 creative correctly.
@@ -21326,26 +22925,34 @@ instance FromJSON CreativeAssetMetadata where
           = withObject "CreativeAssetMetadata"
               (\ o ->
                  CreativeAssetMetadata' <$>
-                   (o .:? "kind" .!=
-                      "dfareporting#creativeAssetMetadata")
+                   (o .:? "richMedia") <*>
+                     (o .:? "counterCustomEvents" .!= mempty)
+                     <*> (o .:? "kind")
                      <*> (o .:? "assetIdentifier")
                      <*> (o .:? "idDimensionValue")
+                     <*> (o .:? "exitCustomEvents" .!= mempty)
                      <*> (o .:? "clickTags" .!= mempty)
                      <*> (o .:? "warnedValidationRules" .!= mempty)
                      <*> (o .:? "id")
+                     <*> (o .:? "timerCustomEvents" .!= mempty)
                      <*> (o .:? "detectedFeatures" .!= mempty))
 
 instance ToJSON CreativeAssetMetadata where
         toJSON CreativeAssetMetadata'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _camaKind),
+                 [("richMedia" .=) <$> _camaRichMedia,
+                  ("counterCustomEvents" .=) <$>
+                    _camaCounterCustomEvents,
+                  ("kind" .=) <$> _camaKind,
                   ("assetIdentifier" .=) <$> _camaAssetIdentifier,
                   ("idDimensionValue" .=) <$> _camaIdDimensionValue,
+                  ("exitCustomEvents" .=) <$> _camaExitCustomEvents,
                   ("clickTags" .=) <$> _camaClickTags,
                   ("warnedValidationRules" .=) <$>
                     _camaWarnedValidationRules,
                   ("id" .=) <$> _camaId,
+                  ("timerCustomEvents" .=) <$> _camaTimerCustomEvents,
                   ("detectedFeatures" .=) <$> _camaDetectedFeatures])
 
 -- | Omniture Integration Settings.
@@ -21413,7 +23020,7 @@ instance ToJSON OmnitureSettings where
 -- /See:/ 'connectionType' smart constructor.
 data ConnectionType =
   ConnectionType'
-    { _cttKind :: !Text
+    { _cttKind :: !(Maybe Text)
     , _cttName :: !(Maybe Text)
     , _cttId :: !(Maybe (Textual Int64))
     }
@@ -21432,16 +23039,12 @@ data ConnectionType =
 connectionType
     :: ConnectionType
 connectionType =
-  ConnectionType'
-    { _cttKind = "dfareporting#connectionType"
-    , _cttName = Nothing
-    , _cttId = Nothing
-    }
+  ConnectionType' {_cttKind = Nothing, _cttName = Nothing, _cttId = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#connectionType\".
-cttKind :: Lens' ConnectionType Text
+cttKind :: Lens' ConnectionType (Maybe Text)
 cttKind = lens _cttKind (\ s a -> s{_cttKind = a})
 
 -- | Name of this connection type.
@@ -21459,15 +23062,13 @@ instance FromJSON ConnectionType where
           = withObject "ConnectionType"
               (\ o ->
                  ConnectionType' <$>
-                   (o .:? "kind" .!= "dfareporting#connectionType") <*>
-                     (o .:? "name")
-                     <*> (o .:? "id"))
+                   (o .:? "kind") <*> (o .:? "name") <*> (o .:? "id"))
 
 instance ToJSON ConnectionType where
         toJSON ConnectionType'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cttKind), ("name" .=) <$> _cttName,
+                 [("kind" .=) <$> _cttKind, ("name" .=) <$> _cttName,
                   ("id" .=) <$> _cttId])
 
 -- | Contains properties of a package or roadblock.
@@ -21478,7 +23079,7 @@ data PlacementGroup =
     { _plalPlacementStrategyId :: !(Maybe (Textual Int64))
     , _plalSiteIdDimensionValue :: !(Maybe DimensionValue)
     , _plalPricingSchedule :: !(Maybe PricingSchedule)
-    , _plalKind :: !Text
+    , _plalKind :: !(Maybe Text)
     , _plalCampaignIdDimensionValue :: !(Maybe DimensionValue)
     , _plalAdvertiserId :: !(Maybe (Textual Int64))
     , _plalAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
@@ -21567,7 +23168,7 @@ placementGroup =
     { _plalPlacementStrategyId = Nothing
     , _plalSiteIdDimensionValue = Nothing
     , _plalPricingSchedule = Nothing
-    , _plalKind = "dfareporting#placementGroup"
+    , _plalKind = Nothing
     , _plalCampaignIdDimensionValue = Nothing
     , _plalAdvertiserId = Nothing
     , _plalAdvertiserIdDimensionValue = Nothing
@@ -21616,7 +23217,7 @@ plalPricingSchedule
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placementGroup\".
-plalKind :: Lens' PlacementGroup Text
+plalKind :: Lens' PlacementGroup (Maybe Text)
 plalKind = lens _plalKind (\ s a -> s{_plalKind = a})
 
 -- | Dimension value for the ID of the campaign. This is a read-only,
@@ -21791,7 +23392,7 @@ instance FromJSON PlacementGroup where
                    (o .:? "placementStrategyId") <*>
                      (o .:? "siteIdDimensionValue")
                      <*> (o .:? "pricingSchedule")
-                     <*> (o .:? "kind" .!= "dfareporting#placementGroup")
+                     <*> (o .:? "kind")
                      <*> (o .:? "campaignIdDimensionValue")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
@@ -21824,7 +23425,7 @@ instance ToJSON PlacementGroup where
                   ("siteIdDimensionValue" .=) <$>
                     _plalSiteIdDimensionValue,
                   ("pricingSchedule" .=) <$> _plalPricingSchedule,
-                  Just ("kind" .= _plalKind),
+                  ("kind" .=) <$> _plalKind,
                   ("campaignIdDimensionValue" .=) <$>
                     _plalCampaignIdDimensionValue,
                   ("advertiserId" .=) <$> _plalAdvertiserId,
@@ -21862,7 +23463,7 @@ data EventTag =
     { _etStatus :: !(Maybe EventTagStatus)
     , _etExcludeFromAdxRequests :: !(Maybe Bool)
     , _etEnabledByDefault :: !(Maybe Bool)
-    , _etKind :: !Text
+    , _etKind :: !(Maybe Text)
     , _etCampaignIdDimensionValue :: !(Maybe DimensionValue)
     , _etAdvertiserId :: !(Maybe (Textual Int64))
     , _etURL :: !(Maybe Text)
@@ -21927,7 +23528,7 @@ eventTag =
     { _etStatus = Nothing
     , _etExcludeFromAdxRequests = Nothing
     , _etEnabledByDefault = Nothing
-    , _etKind = "dfareporting#eventTag"
+    , _etKind = Nothing
     , _etCampaignIdDimensionValue = Nothing
     , _etAdvertiserId = Nothing
     , _etURL = Nothing
@@ -21968,7 +23569,7 @@ etEnabledByDefault
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#eventTag\".
-etKind :: Lens' EventTag Text
+etKind :: Lens' EventTag (Maybe Text)
 etKind = lens _etKind (\ s a -> s{_etKind = a})
 
 -- | Dimension value for the ID of the campaign. This is a read-only,
@@ -22034,7 +23635,7 @@ etURLEscapeLevels
       . mapping _Coerce
 
 -- | Filter list of site IDs associated with this event tag. The
--- siteFilterType determines whether this is a whitelist or blacklist
+-- siteFilterType determines whether this is a allowlist or blocklist
 -- filter.
 etSiteIds :: Lens' EventTag [Int64]
 etSiteIds
@@ -22076,7 +23677,7 @@ instance FromJSON EventTag where
                  EventTag' <$>
                    (o .:? "status") <*> (o .:? "excludeFromAdxRequests")
                      <*> (o .:? "enabledByDefault")
-                     <*> (o .:? "kind" .!= "dfareporting#eventTag")
+                     <*> (o .:? "kind")
                      <*> (o .:? "campaignIdDimensionValue")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "url")
@@ -22100,7 +23701,7 @@ instance ToJSON EventTag where
                   ("excludeFromAdxRequests" .=) <$>
                     _etExcludeFromAdxRequests,
                   ("enabledByDefault" .=) <$> _etEnabledByDefault,
-                  Just ("kind" .= _etKind),
+                  ("kind" .=) <$> _etKind,
                   ("campaignIdDimensionValue" .=) <$>
                     _etCampaignIdDimensionValue,
                   ("advertiserId" .=) <$> _etAdvertiserId,
@@ -22122,7 +23723,7 @@ instance ToJSON EventTag where
 -- /See:/ 'userRolePermission' smart constructor.
 data UserRolePermission =
   UserRolePermission'
-    { _useKind :: !Text
+    { _useKind :: !(Maybe Text)
     , _useAvailability :: !(Maybe UserRolePermissionAvailability)
     , _useName :: !(Maybe Text)
     , _useId :: !(Maybe (Textual Int64))
@@ -22148,7 +23749,7 @@ userRolePermission
     :: UserRolePermission
 userRolePermission =
   UserRolePermission'
-    { _useKind = "dfareporting#userRolePermission"
+    { _useKind = Nothing
     , _useAvailability = Nothing
     , _useName = Nothing
     , _useId = Nothing
@@ -22158,7 +23759,7 @@ userRolePermission =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#userRolePermission\".
-useKind :: Lens' UserRolePermission Text
+useKind :: Lens' UserRolePermission (Maybe Text)
 useKind = lens _useKind (\ s a -> s{_useKind = a})
 
 -- | Levels of availability for a user role permission.
@@ -22189,9 +23790,8 @@ instance FromJSON UserRolePermission where
           = withObject "UserRolePermission"
               (\ o ->
                  UserRolePermission' <$>
-                   (o .:? "kind" .!= "dfareporting#userRolePermission")
-                     <*> (o .:? "availability")
-                     <*> (o .:? "name")
+                   (o .:? "kind") <*> (o .:? "availability") <*>
+                     (o .:? "name")
                      <*> (o .:? "id")
                      <*> (o .:? "permissionGroupId"))
 
@@ -22199,7 +23799,7 @@ instance ToJSON UserRolePermission where
         toJSON UserRolePermission'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _useKind),
+                 [("kind" .=) <$> _useKind,
                   ("availability" .=) <$> _useAvailability,
                   ("name" .=) <$> _useName, ("id" .=) <$> _useId,
                   ("permissionGroupId" .=) <$> _usePermissionGroupId])
@@ -22304,7 +23904,7 @@ instance ToJSON OrderContact where
 -- /See:/ 'transcodeSetting' smart constructor.
 data TranscodeSetting =
   TranscodeSetting'
-    { _tsKind :: !Text
+    { _tsKind :: !(Maybe Text)
     , _tsEnabledVideoFormats :: !(Maybe [Textual Int32])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -22320,18 +23920,15 @@ data TranscodeSetting =
 transcodeSetting
     :: TranscodeSetting
 transcodeSetting =
-  TranscodeSetting'
-    { _tsKind = "dfareporting#transcodeSetting"
-    , _tsEnabledVideoFormats = Nothing
-    }
+  TranscodeSetting' {_tsKind = Nothing, _tsEnabledVideoFormats = Nothing}
 
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#transcodeSetting\".
-tsKind :: Lens' TranscodeSetting Text
+tsKind :: Lens' TranscodeSetting (Maybe Text)
 tsKind = lens _tsKind (\ s a -> s{_tsKind = a})
 
--- | Whitelist of video formats to be served to this placement. Set this list
+-- | Allowlist of video formats to be served to this placement. Set this list
 -- to null or empty to serve all video formats.
 tsEnabledVideoFormats :: Lens' TranscodeSetting [Int32]
 tsEnabledVideoFormats
@@ -22345,14 +23942,14 @@ instance FromJSON TranscodeSetting where
           = withObject "TranscodeSetting"
               (\ o ->
                  TranscodeSetting' <$>
-                   (o .:? "kind" .!= "dfareporting#transcodeSetting")
-                     <*> (o .:? "enabledVideoFormats" .!= mempty))
+                   (o .:? "kind") <*>
+                     (o .:? "enabledVideoFormats" .!= mempty))
 
 instance ToJSON TranscodeSetting where
         toJSON TranscodeSetting'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _tsKind),
+                 [("kind" .=) <$> _tsKind,
                   ("enabledVideoFormats" .=) <$>
                     _tsEnabledVideoFormats])
 
@@ -22363,7 +23960,7 @@ data FloodlightActivitiesGenerateTagResponse =
   FloodlightActivitiesGenerateTagResponse'
     { _fagtrGlobalSiteTagGlobalSnippet :: !(Maybe Text)
     , _fagtrFloodlightActivityTag :: !(Maybe Text)
-    , _fagtrKind :: !Text
+    , _fagtrKind :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -22383,7 +23980,7 @@ floodlightActivitiesGenerateTagResponse =
   FloodlightActivitiesGenerateTagResponse'
     { _fagtrGlobalSiteTagGlobalSnippet = Nothing
     , _fagtrFloodlightActivityTag = Nothing
-    , _fagtrKind = "dfareporting#floodlightActivitiesGenerateTagResponse"
+    , _fagtrKind = Nothing
     }
 
 
@@ -22405,7 +24002,7 @@ fagtrFloodlightActivityTag
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#floodlightActivitiesGenerateTagResponse\".
-fagtrKind :: Lens' FloodlightActivitiesGenerateTagResponse Text
+fagtrKind :: Lens' FloodlightActivitiesGenerateTagResponse (Maybe Text)
 fagtrKind
   = lens _fagtrKind (\ s a -> s{_fagtrKind = a})
 
@@ -22419,9 +24016,7 @@ instance FromJSON
                  FloodlightActivitiesGenerateTagResponse' <$>
                    (o .:? "globalSiteTagGlobalSnippet") <*>
                      (o .:? "floodlightActivityTag")
-                     <*>
-                     (o .:? "kind" .!=
-                        "dfareporting#floodlightActivitiesGenerateTagResponse"))
+                     <*> (o .:? "kind"))
 
 instance ToJSON
            FloodlightActivitiesGenerateTagResponse
@@ -22433,7 +24028,7 @@ instance ToJSON
                     _fagtrGlobalSiteTagGlobalSnippet,
                   ("floodlightActivityTag" .=) <$>
                     _fagtrFloodlightActivityTag,
-                  Just ("kind" .= _fagtrKind)])
+                  ("kind" .=) <$> _fagtrKind])
 
 -- | Ad Slot
 --
@@ -22616,7 +24211,7 @@ instance ToJSON ThirdPartyTrackingURL where
 data OrderDocument =
   OrderDocument'
     { _odSigned :: !(Maybe Bool)
-    , _odKind :: !Text
+    , _odKind :: !(Maybe Text)
     , _odAdvertiserId :: !(Maybe (Textual Int64))
     , _odLastSentTime :: !(Maybe DateTime')
     , _odAmendedOrderDocumentId :: !(Maybe (Textual Int64))
@@ -22678,7 +24273,7 @@ orderDocument
 orderDocument =
   OrderDocument'
     { _odSigned = Nothing
-    , _odKind = "dfareporting#orderDocument"
+    , _odKind = Nothing
     , _odAdvertiserId = Nothing
     , _odLastSentTime = Nothing
     , _odAmendedOrderDocumentId = Nothing
@@ -22703,7 +24298,7 @@ odSigned = lens _odSigned (\ s a -> s{_odSigned = a})
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#orderDocument\".
-odKind :: Lens' OrderDocument Text
+odKind :: Lens' OrderDocument (Maybe Text)
 odKind = lens _odKind (\ s a -> s{_odKind = a})
 
 -- | Advertiser ID of this order document.
@@ -22713,7 +24308,6 @@ odAdvertiserId
       (\ s a -> s{_odAdvertiserId = a})
       . mapping _Coerce
 
--- | Timestamp of the last email sent with this order document.
 odLastSentTime :: Lens' OrderDocument (Maybe UTCTime)
 odLastSentTime
   = lens _odLastSentTime
@@ -22737,7 +24331,6 @@ odLastSentRecipients
       . _Default
       . _Coerce
 
--- | Effective date of this order document.
 odEffectiveDate :: Lens' OrderDocument (Maybe Day)
 odEffectiveDate
   = lens _odEffectiveDate
@@ -22807,9 +24400,8 @@ instance FromJSON OrderDocument where
           = withObject "OrderDocument"
               (\ o ->
                  OrderDocument' <$>
-                   (o .:? "signed") <*>
-                     (o .:? "kind" .!= "dfareporting#orderDocument")
-                     <*> (o .:? "advertiserId")
+                   (o .:? "signed") <*> (o .:? "kind") <*>
+                     (o .:? "advertiserId")
                      <*> (o .:? "lastSentTime")
                      <*> (o .:? "amendedOrderDocumentId")
                      <*> (o .:? "lastSentRecipients" .!= mempty)
@@ -22830,7 +24422,7 @@ instance ToJSON OrderDocument where
           = object
               (catMaybes
                  [("signed" .=) <$> _odSigned,
-                  Just ("kind" .= _odKind),
+                  ("kind" .=) <$> _odKind,
                   ("advertiserId" .=) <$> _odAdvertiserId,
                   ("lastSentTime" .=) <$> _odLastSentTime,
                   ("amendedOrderDocumentId" .=) <$>
@@ -22855,7 +24447,7 @@ instance ToJSON OrderDocument where
 data Metro =
   Metro'
     { _metMetroCode :: !(Maybe Text)
-    , _metKind :: !Text
+    , _metKind :: !(Maybe Text)
     , _metName :: !(Maybe Text)
     , _metCountryCode :: !(Maybe Text)
     , _metDmaId :: !(Maybe (Textual Int64))
@@ -22887,7 +24479,7 @@ metro
 metro =
   Metro'
     { _metMetroCode = Nothing
-    , _metKind = "dfareporting#metro"
+    , _metKind = Nothing
     , _metName = Nothing
     , _metCountryCode = Nothing
     , _metDmaId = Nothing
@@ -22903,7 +24495,7 @@ metMetroCode
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#metro\".
-metKind :: Lens' Metro Text
+metKind :: Lens' Metro (Maybe Text)
 metKind = lens _metKind (\ s a -> s{_metKind = a})
 
 -- | Name of this metro region.
@@ -22941,9 +24533,8 @@ instance FromJSON Metro where
           = withObject "Metro"
               (\ o ->
                  Metro' <$>
-                   (o .:? "metroCode") <*>
-                     (o .:? "kind" .!= "dfareporting#metro")
-                     <*> (o .:? "name")
+                   (o .:? "metroCode") <*> (o .:? "kind") <*>
+                     (o .:? "name")
                      <*> (o .:? "countryCode")
                      <*> (o .:? "dmaId")
                      <*> (o .:? "countryDartId")
@@ -22954,7 +24545,7 @@ instance ToJSON Metro where
           = object
               (catMaybes
                  [("metroCode" .=) <$> _metMetroCode,
-                  Just ("kind" .= _metKind), ("name" .=) <$> _metName,
+                  ("kind" .=) <$> _metKind, ("name" .=) <$> _metName,
                   ("countryCode" .=) <$> _metCountryCode,
                   ("dmaId" .=) <$> _metDmaId,
                   ("countryDartId" .=) <$> _metCountryDartId,
@@ -22966,7 +24557,7 @@ instance ToJSON Metro where
 -- /See:/ 'mobileApp' smart constructor.
 data MobileApp =
   MobileApp'
-    { _maKind :: !Text
+    { _maKind :: !(Maybe Text)
     , _maId :: !(Maybe Text)
     , _maTitle :: !(Maybe Text)
     , _maPublisherName :: !(Maybe Text)
@@ -22992,7 +24583,7 @@ mobileApp
     :: MobileApp
 mobileApp =
   MobileApp'
-    { _maKind = "dfareporting#mobileApp"
+    { _maKind = Nothing
     , _maId = Nothing
     , _maTitle = Nothing
     , _maPublisherName = Nothing
@@ -23002,7 +24593,7 @@ mobileApp =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#mobileApp\".
-maKind :: Lens' MobileApp Text
+maKind :: Lens' MobileApp (Maybe Text)
 maKind = lens _maKind (\ s a -> s{_maKind = a})
 
 -- | ID of this mobile app.
@@ -23029,9 +24620,7 @@ instance FromJSON MobileApp where
           = withObject "MobileApp"
               (\ o ->
                  MobileApp' <$>
-                   (o .:? "kind" .!= "dfareporting#mobileApp") <*>
-                     (o .:? "id")
-                     <*> (o .:? "title")
+                   (o .:? "kind") <*> (o .:? "id") <*> (o .:? "title")
                      <*> (o .:? "publisherName")
                      <*> (o .:? "directory"))
 
@@ -23039,7 +24628,7 @@ instance ToJSON MobileApp where
         toJSON MobileApp'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _maKind), ("id" .=) <$> _maId,
+                 [("kind" .=) <$> _maKind, ("id" .=) <$> _maId,
                   ("title" .=) <$> _maTitle,
                   ("publisherName" .=) <$> _maPublisherName,
                   ("directory" .=) <$> _maDirectory])
@@ -23056,7 +24645,7 @@ data Placement =
     , _p1SiteIdDimensionValue :: !(Maybe DimensionValue)
     , _p1PricingSchedule :: !(Maybe PricingSchedule)
     , _p1Size :: !(Maybe Size)
-    , _p1Kind :: !Text
+    , _p1Kind :: !(Maybe Text)
     , _p1KeyName :: !(Maybe Text)
     , _p1CampaignIdDimensionValue :: !(Maybe DimensionValue)
     , _p1AdvertiserId :: !(Maybe (Textual Int64))
@@ -23190,7 +24779,7 @@ placement =
     , _p1SiteIdDimensionValue = Nothing
     , _p1PricingSchedule = Nothing
     , _p1Size = Nothing
-    , _p1Kind = "dfareporting#placement"
+    , _p1Kind = Nothing
     , _p1KeyName = Nothing
     , _p1CampaignIdDimensionValue = Nothing
     , _p1AdvertiserId = Nothing
@@ -23287,7 +24876,7 @@ p1Size = lens _p1Size (\ s a -> s{_p1Size = a})
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#placement\".
-p1Kind :: Lens' Placement Text
+p1Kind :: Lens' Placement (Maybe Text)
 p1Kind = lens _p1Kind (\ s a -> s{_p1Kind = a})
 
 -- | Key name of this placement. This is a read-only, auto-generated field.
@@ -23332,7 +24921,7 @@ p1IdDimensionValue
 
 -- | VPAID adapter setting for this placement. Controls which VPAID format
 -- the measurement adapter will use for in-stream video creatives assigned
--- to this placement. Note: Flash is no longer supported. This field now
+-- to this placement. *Note:* Flash is no longer supported. This field now
 -- defaults to HTML5 when the following values are provided: FLASH, BOTH.
 p1VpaidAdapterChoice :: Lens' Placement (Maybe PlacementVpaidAdapterChoice)
 p1VpaidAdapterChoice
@@ -23395,8 +24984,8 @@ p1PaymentSource
   = lens _p1PaymentSource
       (\ s a -> s{_p1PaymentSource = a})
 
--- | Name of this placement.This is a required field and must be less than
--- 256 characters long.
+-- | Name of this placement.This is a required field and must be less than or
+-- equal to 256 characters long.
 p1Name :: Lens' Placement (Maybe Text)
 p1Name = lens _p1Name (\ s a -> s{_p1Name = a})
 
@@ -23537,7 +25126,7 @@ instance FromJSON Placement where
                      <*> (o .:? "siteIdDimensionValue")
                      <*> (o .:? "pricingSchedule")
                      <*> (o .:? "size")
-                     <*> (o .:? "kind" .!= "dfareporting#placement")
+                     <*> (o .:? "kind")
                      <*> (o .:? "keyName")
                      <*> (o .:? "campaignIdDimensionValue")
                      <*> (o .:? "advertiserId")
@@ -23584,7 +25173,7 @@ instance ToJSON Placement where
                   ("siteIdDimensionValue" .=) <$>
                     _p1SiteIdDimensionValue,
                   ("pricingSchedule" .=) <$> _p1PricingSchedule,
-                  ("size" .=) <$> _p1Size, Just ("kind" .= _p1Kind),
+                  ("size" .=) <$> _p1Size, ("kind" .=) <$> _p1Kind,
                   ("keyName" .=) <$> _p1KeyName,
                   ("campaignIdDimensionValue" .=) <$>
                     _p1CampaignIdDimensionValue,
@@ -23632,7 +25221,7 @@ instance ToJSON Placement where
 data EncryptionInfo =
   EncryptionInfo'
     { _eiEncryptionSource :: !(Maybe EncryptionInfoEncryptionSource)
-    , _eiKind :: !Text
+    , _eiKind :: !(Maybe Text)
     , _eiEncryptionEntityType :: !(Maybe EncryptionInfoEncryptionEntityType)
     , _eiEncryptionEntityId :: !(Maybe (Textual Int64))
     }
@@ -23655,7 +25244,7 @@ encryptionInfo
 encryptionInfo =
   EncryptionInfo'
     { _eiEncryptionSource = Nothing
-    , _eiKind = "dfareporting#encryptionInfo"
+    , _eiKind = Nothing
     , _eiEncryptionEntityType = Nothing
     , _eiEncryptionEntityId = Nothing
     }
@@ -23670,7 +25259,7 @@ eiEncryptionSource
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#encryptionInfo\".
-eiKind :: Lens' EncryptionInfo Text
+eiKind :: Lens' EncryptionInfo (Maybe Text)
 eiKind = lens _eiKind (\ s a -> s{_eiKind = a})
 
 -- | The encryption entity type. This should match the encryption
@@ -23693,9 +25282,8 @@ instance FromJSON EncryptionInfo where
           = withObject "EncryptionInfo"
               (\ o ->
                  EncryptionInfo' <$>
-                   (o .:? "encryptionSource") <*>
-                     (o .:? "kind" .!= "dfareporting#encryptionInfo")
-                     <*> (o .:? "encryptionEntityType")
+                   (o .:? "encryptionSource") <*> (o .:? "kind") <*>
+                     (o .:? "encryptionEntityType")
                      <*> (o .:? "encryptionEntityId"))
 
 instance ToJSON EncryptionInfo where
@@ -23703,7 +25291,7 @@ instance ToJSON EncryptionInfo where
           = object
               (catMaybes
                  [("encryptionSource" .=) <$> _eiEncryptionSource,
-                  Just ("kind" .= _eiKind),
+                  ("kind" .=) <$> _eiKind,
                   ("encryptionEntityType" .=) <$>
                     _eiEncryptionEntityType,
                   ("encryptionEntityId" .=) <$> _eiEncryptionEntityId])
@@ -23714,7 +25302,7 @@ instance ToJSON EncryptionInfo where
 data SitesListResponse =
   SitesListResponse'
     { _sitNextPageToken :: !(Maybe Text)
-    , _sitKind :: !Text
+    , _sitKind :: !(Maybe Text)
     , _sitSites :: !(Maybe [Site])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -23733,10 +25321,7 @@ sitesListResponse
     :: SitesListResponse
 sitesListResponse =
   SitesListResponse'
-    { _sitNextPageToken = Nothing
-    , _sitKind = "dfareporting#sitesListResponse"
-    , _sitSites = Nothing
-    }
+    {_sitNextPageToken = Nothing, _sitKind = Nothing, _sitSites = Nothing}
 
 
 -- | Pagination token to be used for the next list operation.
@@ -23747,7 +25332,7 @@ sitNextPageToken
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#sitesListResponse\".
-sitKind :: Lens' SitesListResponse Text
+sitKind :: Lens' SitesListResponse (Maybe Text)
 sitKind = lens _sitKind (\ s a -> s{_sitKind = a})
 
 -- | Site collection.
@@ -23762,16 +25347,15 @@ instance FromJSON SitesListResponse where
           = withObject "SitesListResponse"
               (\ o ->
                  SitesListResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "kind" .!= "dfareporting#sitesListResponse")
-                     <*> (o .:? "sites" .!= mempty))
+                   (o .:? "nextPageToken") <*> (o .:? "kind") <*>
+                     (o .:? "sites" .!= mempty))
 
 instance ToJSON SitesListResponse where
         toJSON SitesListResponse'{..}
           = object
               (catMaybes
                  [("nextPageToken" .=) <$> _sitNextPageToken,
-                  Just ("kind" .= _sitKind),
+                  ("kind" .=) <$> _sitKind,
                   ("sites" .=) <$> _sitSites])
 
 -- | Contains properties of a targeting template. A targeting template
@@ -23784,7 +25368,7 @@ data TargetingTemplate =
     { _ttGeoTargeting :: !(Maybe GeoTargeting)
     , _ttTechnologyTargeting :: !(Maybe TechnologyTargeting)
     , _ttDayPartTargeting :: !(Maybe DayPartTargeting)
-    , _ttKind :: !Text
+    , _ttKind :: !(Maybe Text)
     , _ttAdvertiserId :: !(Maybe (Textual Int64))
     , _ttAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _ttAccountId :: !(Maybe (Textual Int64))
@@ -23834,7 +25418,7 @@ targetingTemplate =
     { _ttGeoTargeting = Nothing
     , _ttTechnologyTargeting = Nothing
     , _ttDayPartTargeting = Nothing
-    , _ttKind = "dfareporting#targetingTemplate"
+    , _ttKind = Nothing
     , _ttAdvertiserId = Nothing
     , _ttAdvertiserIdDimensionValue = Nothing
     , _ttAccountId = Nothing
@@ -23867,7 +25451,7 @@ ttDayPartTargeting
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#targetingTemplate\".
-ttKind :: Lens' TargetingTemplate Text
+ttKind :: Lens' TargetingTemplate (Maybe Text)
 ttKind = lens _ttKind (\ s a -> s{_ttKind = a})
 
 -- | Advertiser ID of this targeting template. This is a required field on
@@ -23938,8 +25522,7 @@ instance FromJSON TargetingTemplate where
                    (o .:? "geoTargeting") <*>
                      (o .:? "technologyTargeting")
                      <*> (o .:? "dayPartTargeting")
-                     <*>
-                     (o .:? "kind" .!= "dfareporting#targetingTemplate")
+                     <*> (o .:? "kind")
                      <*> (o .:? "advertiserId")
                      <*> (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "accountId")
@@ -23958,7 +25541,7 @@ instance ToJSON TargetingTemplate where
                   ("technologyTargeting" .=) <$>
                     _ttTechnologyTargeting,
                   ("dayPartTargeting" .=) <$> _ttDayPartTargeting,
-                  Just ("kind" .= _ttKind),
+                  ("kind" .=) <$> _ttKind,
                   ("advertiserId" .=) <$> _ttAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _ttAdvertiserIdDimensionValue,
@@ -23977,7 +25560,7 @@ instance ToJSON TargetingTemplate where
 -- /See:/ 'creativeField' smart constructor.
 data CreativeField =
   CreativeField'
-    { _cffKind :: !Text
+    { _cffKind :: !(Maybe Text)
     , _cffAdvertiserId :: !(Maybe (Textual Int64))
     , _cffAdvertiserIdDimensionValue :: !(Maybe DimensionValue)
     , _cffAccountId :: !(Maybe (Textual Int64))
@@ -24009,7 +25592,7 @@ creativeField
     :: CreativeField
 creativeField =
   CreativeField'
-    { _cffKind = "dfareporting#creativeField"
+    { _cffKind = Nothing
     , _cffAdvertiserId = Nothing
     , _cffAdvertiserIdDimensionValue = Nothing
     , _cffAccountId = Nothing
@@ -24021,7 +25604,7 @@ creativeField =
 
 -- | Identifies what kind of resource this is. Value: the fixed string
 -- \"dfareporting#creativeField\".
-cffKind :: Lens' CreativeField Text
+cffKind :: Lens' CreativeField (Maybe Text)
 cffKind = lens _cffKind (\ s a -> s{_cffKind = a})
 
 -- | Advertiser ID of this creative field. This is a required field on
@@ -24071,9 +25654,8 @@ instance FromJSON CreativeField where
           = withObject "CreativeField"
               (\ o ->
                  CreativeField' <$>
-                   (o .:? "kind" .!= "dfareporting#creativeField") <*>
-                     (o .:? "advertiserId")
-                     <*> (o .:? "advertiserIdDimensionValue")
+                   (o .:? "kind") <*> (o .:? "advertiserId") <*>
+                     (o .:? "advertiserIdDimensionValue")
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
                      <*> (o .:? "id")
@@ -24083,7 +25665,7 @@ instance ToJSON CreativeField where
         toJSON CreativeField'{..}
           = object
               (catMaybes
-                 [Just ("kind" .= _cffKind),
+                 [("kind" .=) <$> _cffKind,
                   ("advertiserId" .=) <$> _cffAdvertiserId,
                   ("advertiserIdDimensionValue" .=) <$>
                     _cffAdvertiserIdDimensionValue,

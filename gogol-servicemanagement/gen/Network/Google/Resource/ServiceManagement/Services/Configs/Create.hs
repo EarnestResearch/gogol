@@ -146,7 +146,7 @@ sccPayload :: Lens' ServicesConfigsCreate Service
 sccPayload
   = lens _sccPayload (\ s a -> s{_sccPayload = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 sccServiceName :: Lens' ServicesConfigsCreate Text

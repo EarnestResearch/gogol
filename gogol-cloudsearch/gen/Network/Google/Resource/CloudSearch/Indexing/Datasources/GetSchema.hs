@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Gets the schema of a data source.
+-- Gets the schema of a data source. **Note:** This API requires an admin
+-- or service account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.getSchema@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.getSchema@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.GetSchema
     (
     -- * REST Resource
@@ -60,7 +61,8 @@ type IndexingDatasourcesGetSchemaResource =
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :> Get '[JSON] Schema
 
--- | Gets the schema of a data source.
+-- | Gets the schema of a data source. **Note:** This API requires an admin
+-- or service account to execute.
 --
 -- /See:/ 'indexingDatasourcesGetSchema' smart constructor.
 data IndexingDatasourcesGetSchema =

@@ -56,8 +56,11 @@ type ThreatListUpdatesFetchResource =
                QueryParam "uploadType" Text :>
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] FetchThreatListUpdatesRequest :>
-                       Post '[JSON] FetchThreatListUpdatesResponse
+                     ReqBody '[JSON]
+                       GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequest
+                       :>
+                       Post '[JSON]
+                         GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse
 
 -- | Fetches the most recent threat list updates. A client can request
 -- updates for multiple lists at once.
@@ -69,7 +72,7 @@ data ThreatListUpdatesFetch =
     , _tlufUploadProtocol :: !(Maybe Text)
     , _tlufAccessToken :: !(Maybe Text)
     , _tlufUploadType :: !(Maybe Text)
-    , _tlufPayload :: !FetchThreatListUpdatesRequest
+    , _tlufPayload :: !GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequest
     , _tlufCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -91,7 +94,7 @@ data ThreatListUpdatesFetch =
 --
 -- * 'tlufCallback'
 threatListUpdatesFetch
-    :: FetchThreatListUpdatesRequest -- ^ 'tlufPayload'
+    :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequest -- ^ 'tlufPayload'
     -> ThreatListUpdatesFetch
 threatListUpdatesFetch pTlufPayload_ =
   ThreatListUpdatesFetch'
@@ -128,7 +131,7 @@ tlufUploadType
       (\ s a -> s{_tlufUploadType = a})
 
 -- | Multipart request metadata.
-tlufPayload :: Lens' ThreatListUpdatesFetch FetchThreatListUpdatesRequest
+tlufPayload :: Lens' ThreatListUpdatesFetch GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequest
 tlufPayload
   = lens _tlufPayload (\ s a -> s{_tlufPayload = a})
 
@@ -139,7 +142,7 @@ tlufCallback
 
 instance GoogleRequest ThreatListUpdatesFetch where
         type Rs ThreatListUpdatesFetch =
-             FetchThreatListUpdatesResponse
+             GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse
         type Scopes ThreatListUpdatesFetch = '[]
         requestClient ThreatListUpdatesFetch'{..}
           = go _tlufXgafv _tlufUploadProtocol _tlufAccessToken

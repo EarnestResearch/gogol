@@ -150,13 +150,14 @@ plcdUploadType
       (\ s a -> s{_plcdUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 plcdZone :: Lens' ProjectsLocationsClustersDelete (Maybe Text)
 plcdZone = lens _plcdZone (\ s a -> s{_plcdZone = a})
 
 -- | The name (project, location, cluster) of the cluster to delete.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcdName :: Lens' ProjectsLocationsClustersDelete Text
 plcdName = lens _plcdName (\ s a -> s{_plcdName = a})
 

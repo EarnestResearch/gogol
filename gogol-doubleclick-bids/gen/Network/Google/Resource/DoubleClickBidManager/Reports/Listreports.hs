@@ -33,7 +33,12 @@ module Network.Google.Resource.DoubleClickBidManager.Reports.Listreports
     , ReportsListreports
 
     -- * Request Lenses
+    , rlXgafv
     , rlQueryId
+    , rlUploadProtocol
+    , rlAccessToken
+    , rlUploadType
+    , rlCallback
     ) where
 
 import Network.Google.DoubleClickBids.Types
@@ -47,15 +52,25 @@ type ReportsListreportsResource =
          "queries" :>
            Capture "queryId" (Textual Int64) :>
              "reports" :>
-               QueryParam "alt" AltJSON :>
-                 Get '[JSON] ListReportsResponse
+               QueryParam "$.xgafv" Xgafv :>
+                 QueryParam "upload_protocol" Text :>
+                   QueryParam "access_token" Text :>
+                     QueryParam "uploadType" Text :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           Get '[JSON] ListReportsResponse
 
 -- | Retrieves stored reports.
 --
 -- /See:/ 'reportsListreports' smart constructor.
-newtype ReportsListreports =
+data ReportsListreports =
   ReportsListreports'
-    { _rlQueryId :: Textual Int64
+    { _rlXgafv :: !(Maybe Xgafv)
+    , _rlQueryId :: !(Textual Int64)
+    , _rlUploadProtocol :: !(Maybe Text)
+    , _rlAccessToken :: !(Maybe Text)
+    , _rlUploadType :: !(Maybe Text)
+    , _rlCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -64,13 +79,34 @@ newtype ReportsListreports =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'rlXgafv'
+--
 -- * 'rlQueryId'
+--
+-- * 'rlUploadProtocol'
+--
+-- * 'rlAccessToken'
+--
+-- * 'rlUploadType'
+--
+-- * 'rlCallback'
 reportsListreports
     :: Int64 -- ^ 'rlQueryId'
     -> ReportsListreports
 reportsListreports pRlQueryId_ =
-  ReportsListreports' {_rlQueryId = _Coerce # pRlQueryId_}
+  ReportsListreports'
+    { _rlXgafv = Nothing
+    , _rlQueryId = _Coerce # pRlQueryId_
+    , _rlUploadProtocol = Nothing
+    , _rlAccessToken = Nothing
+    , _rlUploadType = Nothing
+    , _rlCallback = Nothing
+    }
 
+
+-- | V1 error format.
+rlXgafv :: Lens' ReportsListreports (Maybe Xgafv)
+rlXgafv = lens _rlXgafv (\ s a -> s{_rlXgafv = a})
 
 -- | Query ID with which the reports are associated.
 rlQueryId :: Lens' ReportsListreports Int64
@@ -78,12 +114,39 @@ rlQueryId
   = lens _rlQueryId (\ s a -> s{_rlQueryId = a}) .
       _Coerce
 
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+rlUploadProtocol :: Lens' ReportsListreports (Maybe Text)
+rlUploadProtocol
+  = lens _rlUploadProtocol
+      (\ s a -> s{_rlUploadProtocol = a})
+
+-- | OAuth access token.
+rlAccessToken :: Lens' ReportsListreports (Maybe Text)
+rlAccessToken
+  = lens _rlAccessToken
+      (\ s a -> s{_rlAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+rlUploadType :: Lens' ReportsListreports (Maybe Text)
+rlUploadType
+  = lens _rlUploadType (\ s a -> s{_rlUploadType = a})
+
+-- | JSONP
+rlCallback :: Lens' ReportsListreports (Maybe Text)
+rlCallback
+  = lens _rlCallback (\ s a -> s{_rlCallback = a})
+
 instance GoogleRequest ReportsListreports where
         type Rs ReportsListreports = ListReportsResponse
         type Scopes ReportsListreports =
              '["https://www.googleapis.com/auth/doubleclickbidmanager"]
         requestClient ReportsListreports'{..}
-          = go _rlQueryId (Just AltJSON) doubleClickBidsService
+          = go _rlQueryId _rlXgafv _rlUploadProtocol
+              _rlAccessToken
+              _rlUploadType
+              _rlCallback
+              (Just AltJSON)
+              doubleClickBidsService
           where go
                   = buildClient
                       (Proxy :: Proxy ReportsListreportsResource)

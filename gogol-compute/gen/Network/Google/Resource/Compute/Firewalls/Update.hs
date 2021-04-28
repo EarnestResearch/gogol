@@ -21,8 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Updates the specified firewall rule with the data included in the
--- request. The PUT method can only update the following fields of firewall
--- rule: allowed, description, sourceRanges, sourceTags, targetTags.
+-- request. Note that all fields will be updated if using PUT, even fields
+-- that are not specified. To update individual fields, please use PATCH
+-- instead.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.firewalls.update@.
 module Network.Google.Resource.Compute.Firewalls.Update
@@ -59,8 +60,9 @@ type FirewallsUpdateResource =
                        ReqBody '[JSON] Firewall :> Put '[JSON] Operation
 
 -- | Updates the specified firewall rule with the data included in the
--- request. The PUT method can only update the following fields of firewall
--- rule: allowed, description, sourceRanges, sourceTags, targetTags.
+-- request. Note that all fields will be updated if using PUT, even fields
+-- that are not specified. To update individual fields, please use PATCH
+-- instead.
 --
 -- /See:/ 'firewallsUpdate' smart constructor.
 data FirewallsUpdate =

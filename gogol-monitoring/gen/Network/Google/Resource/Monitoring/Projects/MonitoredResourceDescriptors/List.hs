@@ -21,9 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Lists monitored resource descriptors that match a filter. This method
--- does not require a Stackdriver account.
+-- does not require a Workspace.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.monitoredResourceDescriptors.list@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.monitoredResourceDescriptors.list@.
 module Network.Google.Resource.Monitoring.Projects.MonitoredResourceDescriptors.List
     (
     -- * REST Resource
@@ -68,7 +68,7 @@ type ProjectsMonitoredResourceDescriptorsListResource
                                ListMonitoredResourceDescriptorsResponse
 
 -- | Lists monitored resource descriptors that match a filter. This method
--- does not require a Stackdriver account.
+-- does not require a Workspace.
 --
 -- /See:/ 'projectsMonitoredResourceDescriptorsList' smart constructor.
 data ProjectsMonitoredResourceDescriptorsList =
@@ -147,17 +147,19 @@ pmrdlUploadType
   = lens _pmrdlUploadType
       (\ s a -> s{_pmrdlUploadType = a})
 
--- | The project on which to execute the request. The format is
--- \"projects\/{project_id_or_number}\".
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) on which
+-- to execute the request. The format is: projects\/[PROJECT_ID_OR_NUMBER]
 pmrdlName :: Lens' ProjectsMonitoredResourceDescriptorsList Text
 pmrdlName
   = lens _pmrdlName (\ s a -> s{_pmrdlName = a})
 
--- | An optional filter describing the descriptors to be returned. The filter
--- can reference the descriptor\'s type and labels. For example, the
--- following filter returns only Google Compute Engine descriptors that
--- have an id label: resource.type = starts_with(\"gce_\") AND
--- resource.label:id
+-- | An optional filter
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3\/filters) describing
+-- the descriptors to be returned. The filter can reference the
+-- descriptor\'s type and labels. For example, the following filter returns
+-- only Google Compute Engine descriptors that have an id label:
+-- resource.type = starts_with(\"gce_\") AND resource.label:id
 pmrdlFilter :: Lens' ProjectsMonitoredResourceDescriptorsList (Maybe Text)
 pmrdlFilter
   = lens _pmrdlFilter (\ s a -> s{_pmrdlFilter = a})

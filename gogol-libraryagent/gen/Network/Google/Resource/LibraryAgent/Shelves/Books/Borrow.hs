@@ -129,7 +129,7 @@ sbbUploadType
   = lens _sbbUploadType
       (\ s a -> s{_sbbUploadType = a})
 
--- | The name of the book to borrow.
+-- | Required. The name of the book to borrow.
 sbbName :: Lens' ShelvesBooksBorrow Text
 sbbName = lens _sbbName (\ s a -> s{_sbbName = a})
 

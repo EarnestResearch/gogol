@@ -20,9 +20,13 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Provides suggestions for autocompleting the query.
+-- Provides suggestions for autocompleting the query. **Note:** This API
+-- requires a standard end user account to execute. A service account
+-- can\'t perform Query API requests directly; to use a service account to
+-- perform queries, set up [G Suite domain-wide delegation of
+-- authority](https:\/\/developers.google.com\/cloud-search\/docs\/guides\/delegation\/).
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.query.suggest@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.query.suggest@.
 module Network.Google.Resource.CloudSearch.Query.Suggest
     (
     -- * REST Resource
@@ -59,7 +63,11 @@ type QuerySuggestResource =
                        ReqBody '[JSON] SuggestRequest :>
                          Post '[JSON] SuggestResponse
 
--- | Provides suggestions for autocompleting the query.
+-- | Provides suggestions for autocompleting the query. **Note:** This API
+-- requires a standard end user account to execute. A service account
+-- can\'t perform Query API requests directly; to use a service account to
+-- perform queries, set up [G Suite domain-wide delegation of
+-- authority](https:\/\/developers.google.com\/cloud-search\/docs\/guides\/delegation\/).
 --
 -- /See:/ 'querySuggest' smart constructor.
 data QuerySuggest =

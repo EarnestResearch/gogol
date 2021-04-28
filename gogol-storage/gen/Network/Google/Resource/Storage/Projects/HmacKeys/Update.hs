@@ -35,6 +35,7 @@ module Network.Google.Resource.Storage.Projects.HmacKeys.Update
 
     -- * Request Lenses
     , phkuPayload
+    , phkuUserProject
     , phkuProjectId
     , phkuAccessId
     ) where
@@ -51,9 +52,10 @@ type ProjectsHmacKeysUpdateResource =
            Capture "projectId" Text :>
              "hmacKeys" :>
                Capture "accessId" Text :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] HmacKeyMetadata :>
-                     Put '[JSON] HmacKeyMetadata
+                 QueryParam "userProject" Text :>
+                   QueryParam "alt" AltJSON :>
+                     ReqBody '[JSON] HmacKeyMetadata :>
+                       Put '[JSON] HmacKeyMetadata
 
 -- | Updates the state of an HMAC key. See the HMAC Key resource descriptor
 -- for valid states.
@@ -62,6 +64,7 @@ type ProjectsHmacKeysUpdateResource =
 data ProjectsHmacKeysUpdate =
   ProjectsHmacKeysUpdate'
     { _phkuPayload :: !HmacKeyMetadata
+    , _phkuUserProject :: !(Maybe Text)
     , _phkuProjectId :: !Text
     , _phkuAccessId :: !Text
     }
@@ -74,6 +77,8 @@ data ProjectsHmacKeysUpdate =
 --
 -- * 'phkuPayload'
 --
+-- * 'phkuUserProject'
+--
 -- * 'phkuProjectId'
 --
 -- * 'phkuAccessId'
@@ -85,6 +90,7 @@ projectsHmacKeysUpdate
 projectsHmacKeysUpdate pPhkuPayload_ pPhkuProjectId_ pPhkuAccessId_ =
   ProjectsHmacKeysUpdate'
     { _phkuPayload = pPhkuPayload_
+    , _phkuUserProject = Nothing
     , _phkuProjectId = pPhkuProjectId_
     , _phkuAccessId = pPhkuAccessId_
     }
@@ -94,6 +100,12 @@ projectsHmacKeysUpdate pPhkuPayload_ pPhkuProjectId_ pPhkuAccessId_ =
 phkuPayload :: Lens' ProjectsHmacKeysUpdate HmacKeyMetadata
 phkuPayload
   = lens _phkuPayload (\ s a -> s{_phkuPayload = a})
+
+-- | The project to be billed for this request.
+phkuUserProject :: Lens' ProjectsHmacKeysUpdate (Maybe Text)
+phkuUserProject
+  = lens _phkuUserProject
+      (\ s a -> s{_phkuUserProject = a})
 
 -- | Project ID owning the service account of the updated key.
 phkuProjectId :: Lens' ProjectsHmacKeysUpdate Text
@@ -112,7 +124,8 @@ instance GoogleRequest ProjectsHmacKeysUpdate where
              '["https://www.googleapis.com/auth/cloud-platform",
                "https://www.googleapis.com/auth/devstorage.full_control"]
         requestClient ProjectsHmacKeysUpdate'{..}
-          = go _phkuProjectId _phkuAccessId (Just AltJSON)
+          = go _phkuProjectId _phkuAccessId _phkuUserProject
+              (Just AltJSON)
               _phkuPayload
               storageService
           where go

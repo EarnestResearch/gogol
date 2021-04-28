@@ -25,7 +25,7 @@
 -- policy by specifying the fields to be updated via updateMask. Returns
 -- the updated alerting policy.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.alertPolicies.patch@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.alertPolicies.patch@.
 module Network.Google.Resource.Monitoring.Projects.AlertPolicies.Patch
     (
     -- * REST Resource
@@ -171,7 +171,8 @@ pAppPayload
   = lens _pAppPayload (\ s a -> s{_pAppPayload = a})
 
 -- | Required if the policy exists. The resource name for this policy. The
--- syntax is: projects\/[PROJECT_ID]\/alertPolicies\/[ALERT_POLICY_ID]
+-- format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/alertPolicies\/[ALERT_POLICY_ID]
 -- [ALERT_POLICY_ID] is assigned by Stackdriver Monitoring when the policy
 -- is created. When calling the alertPolicies.create method, do not include
 -- the name field in the alerting policy passed as part of the request.

@@ -108,7 +108,7 @@ projectsDatabasesDocumentsRunQuery pPddrqParent_ pPddrqPayload_ =
     }
 
 
--- | The parent resource name. In the format:
+-- | Required. The parent resource name. In the format:
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\` or
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\/{document_path}\`.
 -- For example: \`projects\/my-project\/databases\/my-database\/documents\`

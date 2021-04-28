@@ -125,9 +125,9 @@ plrpUploadProtocol
   = lens _plrpUploadProtocol
       (\ s a -> s{_plrpUploadProtocol = a})
 
--- | Only updates the \`device_registry\` fields indicated by this mask. The
--- field mask must not be empty, and it must not contain fields that are
--- immutable or only set by the server. Mutable top-level fields:
+-- | Required. Only updates the \`device_registry\` fields indicated by this
+-- mask. The field mask must not be empty, and it must not contain fields
+-- that are immutable or only set by the server. Mutable top-level fields:
 -- \`event_notification_config\`, \`http_config\`, \`mqtt_config\`, and
 -- \`state_notification_config\`.
 plrpUpdateMask :: Lens' ProjectsLocationsRegistriesPatch (Maybe GFieldMask)

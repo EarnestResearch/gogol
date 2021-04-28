@@ -36,7 +36,9 @@ module Network.Google.Resource.Drive.Permissions.Create
     , pcSendNotificationEmail
     , pcPayload
     , pcEmailMessage
+    , pcMoveToNewOwnersRoot
     , pcSupportsAllDrives
+    , pcEnforceSingleParent
     , pcUseDomainAdminAccess
     , pcTransferOwnership
     , pcFileId
@@ -56,13 +58,15 @@ type PermissionsCreateResource =
              "permissions" :>
                QueryParam "sendNotificationEmail" Bool :>
                  QueryParam "emailMessage" Text :>
-                   QueryParam "supportsAllDrives" Bool :>
-                     QueryParam "useDomainAdminAccess" Bool :>
-                       QueryParam "transferOwnership" Bool :>
-                         QueryParam "supportsTeamDrives" Bool :>
-                           QueryParam "alt" AltJSON :>
-                             ReqBody '[JSON] Permission :>
-                               Post '[JSON] Permission
+                   QueryParam "moveToNewOwnersRoot" Bool :>
+                     QueryParam "supportsAllDrives" Bool :>
+                       QueryParam "enforceSingleParent" Bool :>
+                         QueryParam "useDomainAdminAccess" Bool :>
+                           QueryParam "transferOwnership" Bool :>
+                             QueryParam "supportsTeamDrives" Bool :>
+                               QueryParam "alt" AltJSON :>
+                                 ReqBody '[JSON] Permission :>
+                                   Post '[JSON] Permission
 
 -- | Creates a permission for a file or shared drive.
 --
@@ -72,7 +76,9 @@ data PermissionsCreate =
     { _pcSendNotificationEmail :: !(Maybe Bool)
     , _pcPayload :: !Permission
     , _pcEmailMessage :: !(Maybe Text)
+    , _pcMoveToNewOwnersRoot :: !Bool
     , _pcSupportsAllDrives :: !Bool
+    , _pcEnforceSingleParent :: !Bool
     , _pcUseDomainAdminAccess :: !Bool
     , _pcTransferOwnership :: !Bool
     , _pcFileId :: !Text
@@ -91,7 +97,11 @@ data PermissionsCreate =
 --
 -- * 'pcEmailMessage'
 --
+-- * 'pcMoveToNewOwnersRoot'
+--
 -- * 'pcSupportsAllDrives'
+--
+-- * 'pcEnforceSingleParent'
 --
 -- * 'pcUseDomainAdminAccess'
 --
@@ -109,7 +119,9 @@ permissionsCreate pPcPayload_ pPcFileId_ =
     { _pcSendNotificationEmail = Nothing
     , _pcPayload = pPcPayload_
     , _pcEmailMessage = Nothing
+    , _pcMoveToNewOwnersRoot = False
     , _pcSupportsAllDrives = False
+    , _pcEnforceSingleParent = False
     , _pcUseDomainAdminAccess = False
     , _pcTransferOwnership = False
     , _pcFileId = pPcFileId_
@@ -136,12 +148,28 @@ pcEmailMessage
   = lens _pcEmailMessage
       (\ s a -> s{_pcEmailMessage = a})
 
+-- | This parameter will only take effect if the item is not in a shared
+-- drive and the request is attempting to transfer the ownership of the
+-- item. If set to true, the item will be moved to the new owner\'s My
+-- Drive root folder and all prior parents removed. If set to false,
+-- parents are not changed.
+pcMoveToNewOwnersRoot :: Lens' PermissionsCreate Bool
+pcMoveToNewOwnersRoot
+  = lens _pcMoveToNewOwnersRoot
+      (\ s a -> s{_pcMoveToNewOwnersRoot = a})
+
 -- | Whether the requesting application supports both My Drives and shared
 -- drives.
 pcSupportsAllDrives :: Lens' PermissionsCreate Bool
 pcSupportsAllDrives
   = lens _pcSupportsAllDrives
       (\ s a -> s{_pcSupportsAllDrives = a})
+
+-- | Deprecated. See moveToNewOwnersRoot for details.
+pcEnforceSingleParent :: Lens' PermissionsCreate Bool
+pcEnforceSingleParent
+  = lens _pcEnforceSingleParent
+      (\ s a -> s{_pcEnforceSingleParent = a})
 
 -- | Issue the request as a domain administrator; if set to true, then the
 -- requester will be granted access if the file ID parameter refers to a
@@ -178,7 +206,9 @@ instance GoogleRequest PermissionsCreate where
         requestClient PermissionsCreate'{..}
           = go _pcFileId _pcSendNotificationEmail
               _pcEmailMessage
+              (Just _pcMoveToNewOwnersRoot)
               (Just _pcSupportsAllDrives)
+              (Just _pcEnforceSingleParent)
               (Just _pcUseDomainAdminAccess)
               (Just _pcTransferOwnership)
               (Just _pcSupportsTeamDrives)

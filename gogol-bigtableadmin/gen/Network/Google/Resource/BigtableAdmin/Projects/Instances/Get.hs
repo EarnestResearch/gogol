@@ -122,8 +122,8 @@ pigUploadType
   = lens _pigUploadType
       (\ s a -> s{_pigUploadType = a})
 
--- | The unique name of the requested instance. Values are of the form
--- \`projects\/\/instances\/\`.
+-- | Required. The unique name of the requested instance. Values are of the
+-- form \`projects\/{project}\/instances\/{instance}\`.
 pigName :: Lens' ProjectsInstancesGet Text
 pigName = lens _pigName (\ s a -> s{_pigName = a})
 

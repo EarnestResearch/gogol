@@ -36,6 +36,9 @@ module Network.Google.Vault
     -- ** vault.matters.close
     , module Network.Google.Resource.Vault.Matters.Close
 
+    -- ** vault.matters.count
+    , module Network.Google.Resource.Vault.Matters.Count
+
     -- ** vault.matters.create
     , module Network.Google.Resource.Vault.Matters.Create
 
@@ -114,6 +117,18 @@ module Network.Google.Vault
     -- ** vault.matters.update
     , module Network.Google.Resource.Vault.Matters.Update
 
+    -- ** vault.operations.cancel
+    , module Network.Google.Resource.Vault.Operations.Cancel
+
+    -- ** vault.operations.delete
+    , module Network.Google.Resource.Vault.Operations.Delete
+
+    -- ** vault.operations.get
+    , module Network.Google.Resource.Vault.Operations.Get
+
+    -- ** vault.operations.list
+    , module Network.Google.Resource.Vault.Operations.List
+
     -- * Types
 
     -- ** HeldAccount
@@ -175,11 +190,23 @@ module Network.Google.Vault
     , hangoutsChatExportOptions
     , hceoExportFormat
 
+    -- ** CountArtifactsRequest
+    , CountArtifactsRequest
+    , countArtifactsRequest
+    , carQuery
+    , carView
+
     -- ** UserInfo
     , UserInfo
     , userInfo
     , uiEmail
     , uiDisplayName
+
+    -- ** ListOperationsResponse
+    , ListOperationsResponse
+    , listOperationsResponse
+    , lorNextPageToken
+    , lorOperations
 
     -- ** TeamDriveInfo
     , TeamDriveInfo
@@ -198,7 +225,12 @@ module Network.Google.Vault
     , cqGroupsQuery
     , cqDriveQuery
     , cqHangoutsChatQuery
+    , cqVoiceQuery
     , cqMailQuery
+
+    -- ** CancelOperationRequest
+    , CancelOperationRequest
+    , cancelOperationRequest
 
     -- ** QueryCorpus
     , QueryCorpus (..)
@@ -208,10 +240,28 @@ module Network.Google.Vault
     , orgUnitInfo
     , ouiOrgUnitId
 
+    -- ** AccountCountErrorErrorType
+    , AccountCountErrorErrorType (..)
+
     -- ** RemoveHeldAccountsResponse
     , RemoveHeldAccountsResponse
     , removeHeldAccountsResponse
     , rharStatuses
+
+    -- ** MattersListState
+    , MattersListState (..)
+
+    -- ** Operation
+    , Operation
+    , operation
+    , oDone
+    , oError
+    , oResponse
+    , oName
+    , oMetadata
+
+    -- ** QueryMethod
+    , QueryMethod (..)
 
     -- ** Empty
     , Empty
@@ -253,10 +303,14 @@ module Network.Google.Vault
     , UndeleteMatterRequest
     , undeleteMatterRequest
 
+    -- ** MattersHoldsListView
+    , MattersHoldsListView (..)
+
     -- ** HeldDriveQuery
     , HeldDriveQuery
     , heldDriveQuery
     , hdqIncludeTeamDriveFiles
+    , hdqIncludeSharedDriveFiles
 
     -- ** HangoutsChatOptions
     , HangoutsChatOptions
@@ -266,12 +320,32 @@ module Network.Google.Vault
     -- ** QuerySearchMethod
     , QuerySearchMethod (..)
 
+    -- ** MailCountResult
+    , MailCountResult
+    , mailCountResult
+    , mcrAccountCounts
+    , mcrAccountCountErrors
+    , mcrMatchingAccountsCount
+    , mcrQueriedAccountsCount
+    , mcrNonQueryableAccounts
+
+    -- ** CountArtifactsMetadata
+    , CountArtifactsMetadata
+    , countArtifactsMetadata
+    , camStartTime
+    , camMatterId
+    , camEndTime
+    , camQuery
+
     -- ** AddMatterPermissionsRequest
     , AddMatterPermissionsRequest
     , addMatterPermissionsRequest
     , amprSendEmails
     , amprCcMe
     , amprMatterPermission
+
+    -- ** MattersGetView
+    , MattersGetView (..)
 
     -- ** StatusDetailsItem
     , StatusDetailsItem
@@ -310,6 +384,11 @@ module Network.Google.Vault
     , lerNextPageToken
     , lerExports
 
+    -- ** VoiceOptions
+    , VoiceOptions
+    , voiceOptions
+    , voCoveredData
+
     -- ** HeldOrgUnit
     , HeldOrgUnit
     , heldOrgUnit
@@ -326,6 +405,11 @@ module Network.Google.Vault
     , ReopenMatterRequest
     , reopenMatterRequest
 
+    -- ** HeldVoiceQuery
+    , HeldVoiceQuery
+    , heldVoiceQuery
+    , hvqCoveredData
+
     -- ** RemoveMatterPermissionsRequest
     , RemoveMatterPermissionsRequest
     , removeMatterPermissionsRequest
@@ -335,6 +419,7 @@ module Network.Google.Vault
     , ExportOptions
     , exportOptions
     , eoHangoutsChatOptions
+    , eoVoiceOptions
     , eoDriveOptions
     , eoGroupsOptions
     , eoRegion
@@ -350,6 +435,7 @@ module Network.Google.Vault
     -- ** DriveOptions
     , DriveOptions
     , driveOptions
+    , doIncludeSharedDrives
     , doIncludeTeamDrives
     , doVersionDate
 
@@ -379,8 +465,20 @@ module Network.Google.Vault
     , hQuery
     , hCorpus
 
+    -- ** MattersListView
+    , MattersListView (..)
+
+    -- ** VoiceOptionsCoveredDataItem
+    , VoiceOptionsCoveredDataItem (..)
+
     -- ** GroupsExportOptionsExportFormat
     , GroupsExportOptionsExportFormat (..)
+
+    -- ** MattersHoldsGetView
+    , MattersHoldsGetView (..)
+
+    -- ** CountArtifactsRequestView
+    , CountArtifactsRequestView (..)
 
     -- ** Query
     , Query
@@ -392,16 +490,36 @@ module Network.Google.Vault
     , qTerms
     , qHangoutsChatInfo
     , qHangoutsChatOptions
+    , qVoiceOptions
     , qDriveOptions
+    , qMethod
     , qEndTime
     , qDataScope
     , qCorpus
     , qTimeZone
+    , qSharedDriveInfo
     , qMailOptions
     , qSearchMethod
 
     -- ** Xgafv
     , Xgafv (..)
+
+    -- ** AccountCountError
+    , AccountCountError
+    , accountCountError
+    , aceAccount
+    , aceErrorType
+
+    -- ** AccountCount
+    , AccountCount
+    , accountCount
+    , acCount
+    , acAccount
+
+    -- ** VoiceExportOptions
+    , VoiceExportOptions
+    , voiceExportOptions
+    , veoExportFormat
 
     -- ** MailExportOptionsExportFormat
     , MailExportOptionsExportFormat (..)
@@ -417,6 +535,16 @@ module Network.Google.Vault
     , meoExportFormat
     , meoShowConfidentialModeContent
 
+    -- ** CountArtifactsResponse
+    , CountArtifactsResponse
+    , countArtifactsResponse
+    , carMailCountResult
+    , carGroupsCountResult
+    , carTotalCount
+
+    -- ** VoiceExportOptionsExportFormat
+    , VoiceExportOptionsExportFormat (..)
+
     -- ** ListHoldsResponse
     , ListHoldsResponse
     , listHoldsResponse
@@ -427,6 +555,9 @@ module Network.Google.Vault
     , GroupsExportOptions
     , groupsExportOptions
     , geoExportFormat
+
+    -- ** HeldVoiceQueryCoveredDataItem
+    , HeldVoiceQueryCoveredDataItem (..)
 
     -- ** MatterPermission
     , MatterPermission
@@ -439,12 +570,22 @@ module Network.Google.Vault
     , driveExportOptions
     , deoIncludeAccessInfo
 
+    -- ** OperationMetadata
+    , OperationMetadata
+    , operationMetadata
+    , omAddtional
+
     -- ** HeldGroupsQuery
     , HeldGroupsQuery
     , heldGroupsQuery
     , hgqStartTime
     , hgqTerms
     , hgqEndTime
+
+    -- ** SharedDriveInfo
+    , SharedDriveInfo
+    , sharedDriveInfo
+    , sdiSharedDriveIds
 
     -- ** ReopenMatterResponse
     , ReopenMatterResponse
@@ -459,6 +600,20 @@ module Network.Google.Vault
     , csfBucketName
     , csfMD5Hash
 
+    -- ** OperationResponse
+    , OperationResponse
+    , operationResponse
+    , orAddtional
+
+    -- ** GroupsCountResult
+    , GroupsCountResult
+    , groupsCountResult
+    , gcrAccountCounts
+    , gcrAccountCountErrors
+    , gcrMatchingAccountsCount
+    , gcrQueriedAccountsCount
+    , gcrNonQueryableAccounts
+
     -- ** MailOptions
     , MailOptions
     , mailOptions
@@ -468,6 +623,7 @@ module Network.Google.Vault
 import Network.Google.Prelude
 import Network.Google.Resource.Vault.Matters.AddPermissions
 import Network.Google.Resource.Vault.Matters.Close
+import Network.Google.Resource.Vault.Matters.Count
 import Network.Google.Resource.Vault.Matters.Create
 import Network.Google.Resource.Vault.Matters.Delete
 import Network.Google.Resource.Vault.Matters.Exports.Create
@@ -494,6 +650,10 @@ import Network.Google.Resource.Vault.Matters.SavedQueries.Get
 import Network.Google.Resource.Vault.Matters.SavedQueries.List
 import Network.Google.Resource.Vault.Matters.Undelete
 import Network.Google.Resource.Vault.Matters.Update
+import Network.Google.Resource.Vault.Operations.Cancel
+import Network.Google.Resource.Vault.Operations.Delete
+import Network.Google.Resource.Vault.Operations.Get
+import Network.Google.Resource.Vault.Operations.List
 import Network.Google.Vault.Types
 
 {- $resources
@@ -522,6 +682,7 @@ type VaultAPI =
        :<|> MattersExportsDeleteResource
        :<|> MattersListResource
        :<|> MattersUndeleteResource
+       :<|> MattersCountResource
        :<|> MattersGetResource
        :<|> MattersCloseResource
        :<|> MattersAddPermissionsResource
@@ -530,3 +691,7 @@ type VaultAPI =
        :<|> MattersRemovePermissionsResource
        :<|> MattersDeleteResource
        :<|> MattersUpdateResource
+       :<|> OperationsListResource
+       :<|> OperationsGetResource
+       :<|> OperationsCancelResource
+       :<|> OperationsDeleteResource

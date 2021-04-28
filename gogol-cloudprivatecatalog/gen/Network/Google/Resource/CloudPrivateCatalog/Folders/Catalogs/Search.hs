@@ -23,7 +23,7 @@
 -- Search Catalog resources that consumers have access to, within the scope
 -- of the consumer cloud resource hierarchy context.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog API Reference> for @cloudprivatecatalog.folders.catalogs.search@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog API Reference> for @cloudprivatecatalog.folders.catalogs.search@.
 module Network.Google.Resource.CloudPrivateCatalog.Folders.Catalogs.Search
     (
     -- * REST Resource

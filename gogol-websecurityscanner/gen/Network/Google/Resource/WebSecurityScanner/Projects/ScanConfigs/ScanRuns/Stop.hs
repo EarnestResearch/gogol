@@ -22,7 +22,7 @@
 --
 -- Stops a ScanRun. The stopped ScanRun is returned.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.stop@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.stop@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.Stop
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.WebSecurityScanner.Types
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.scanRuns.stop@ method which the
 -- 'ProjectsScanConfigsScanRunsStop' request conforms to.
 type ProjectsScanConfigsScanRunsStopResource =
-     "v1beta" :>
+     "v1" :>
        CaptureMode "name" "stop" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

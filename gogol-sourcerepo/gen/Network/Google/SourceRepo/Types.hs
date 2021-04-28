@@ -116,6 +116,14 @@ module Network.Google.SourceRepo.Types
     , testIAMPermissionsRequest
     , tiprPermissions
 
+    -- * SyncRepoMetadata
+    , SyncRepoMetadata
+    , syncRepoMetadata
+    , srmStartTime
+    , srmUpdateTime
+    , srmName
+    , srmStatusMessage
+
     -- * RepoPubsubConfigs
     , RepoPubsubConfigs
     , repoPubsubConfigs

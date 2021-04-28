@@ -104,6 +104,14 @@ module Network.Google.ContainerAnalysis
 
     -- * Types
 
+    -- ** SigningKey
+    , SigningKey
+    , signingKey
+    , skKeyType
+    , skKeyId
+    , skKeyScheme
+    , skPublicKeyValue
+
     -- ** LayerDirective
     , LayerDirective (..)
 
@@ -131,6 +139,7 @@ module Network.Google.ContainerAnalysis
     , vCvssScore
     , vCvssV3
     , vSeverity
+    , vSourceUpdateTime
     , vDetails
     , vWindowsDetails
 
@@ -169,12 +178,6 @@ module Network.Google.ContainerAnalysis
     , bpCreateTime
     , bpLogsURI
 
-    -- ** AuditConfig
-    , AuditConfig
-    , auditConfig
-    , acService
-    , acAuditLogConfigs
-
     -- ** Occurrence
     , Occurrence
     , occurrence
@@ -188,6 +191,7 @@ module Network.Google.ContainerAnalysis
     , oName
     , oNoteName
     , oRemediation
+    , oIntoto
     , oResource
     , oDiscovered
     , oCreateTime
@@ -240,6 +244,7 @@ module Network.Google.ContainerAnalysis
     -- ** GetIAMPolicyRequest
     , GetIAMPolicyRequest
     , getIAMPolicyRequest
+    , giprOptions
 
     -- ** Discovery
     , Discovery
@@ -258,10 +263,21 @@ module Network.Google.ContainerAnalysis
     , bFingerprint
     , bResourceURL
 
+    -- ** GrafeasV1beta1IntotoSignature
+    , GrafeasV1beta1IntotoSignature
+    , grafeasV1beta1IntotoSignature
+    , gvisKeyid
+    , gvisSig
+
     -- ** BatchCreateNotesRequest
     , BatchCreateNotesRequest
     , batchCreateNotesRequest
     , bcnrNotes
+
+    -- ** ArtifactHashes
+    , ArtifactHashes
+    , artifactHashes
+    , ahSha256
 
     -- ** SourceContext
     , SourceContext
@@ -323,6 +339,11 @@ module Network.Google.ContainerAnalysis
     -- ** DiscoveredContinuousAnalysis
     , DiscoveredContinuousAnalysis (..)
 
+    -- ** Environment
+    , Environment
+    , environment
+    , eCustomValues
+
     -- ** CVSSv3PrivilegesRequired
     , CVSSv3PrivilegesRequired (..)
 
@@ -350,6 +371,7 @@ module Network.Google.ContainerAnalysis
     , nUpdateTime
     , nShortDescription
     , nName
+    , nIntoto
     , nBaseImage
     , nPackage
     , nExpirationTime
@@ -370,6 +392,15 @@ module Network.Google.ContainerAnalysis
     , cvssAvailabilityImpact
     , cvssExploitabilityScore
 
+    -- ** Link
+    , Link
+    , link
+    , lCommand
+    , lEnvironment
+    , lMaterials
+    , lProducts
+    , lByProducts
+
     -- ** BatchCreateNotesResponse
     , BatchCreateNotesResponse
     , batchCreateNotesResponse
@@ -387,6 +418,11 @@ module Network.Google.ContainerAnalysis
     , fV2Name
     , fV2Blob
     , fV1Name
+
+    -- ** ArtifactRule
+    , ArtifactRule
+    , artifactRule
+    , arArtifactRule
 
     -- ** CVSSv3UserInteraction
     , CVSSv3UserInteraction (..)
@@ -423,6 +459,11 @@ module Network.Google.ContainerAnalysis
     -- ** DeploymentPlatform
     , DeploymentPlatform (..)
 
+    -- ** GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
+
     -- ** Artifact
     , Artifact
     , artifact
@@ -433,7 +474,6 @@ module Network.Google.ContainerAnalysis
     -- ** SetIAMPolicyRequest
     , SetIAMPolicyRequest
     , setIAMPolicyRequest
-    , siprUpdateMask
     , siprPolicy
 
     -- ** GrafeasV1beta1VulnerabilityDetailsEffectiveSeverity
@@ -484,6 +524,12 @@ module Network.Google.ContainerAnalysis
     , ruURL
     , ruLabel
 
+    -- ** GrafeasV1beta1IntotoDetails
+    , GrafeasV1beta1IntotoDetails
+    , grafeasV1beta1IntotoDetails
+    , gvidSigned
+    , gvidSignatures
+
     -- ** GrafeasV1beta1ImageDetails
     , GrafeasV1beta1ImageDetails
     , grafeasV1beta1ImageDetails
@@ -508,15 +554,23 @@ module Network.Google.ContainerAnalysis
     , lscrNextPageToken
     , lscrScanConfigs
 
+    -- ** InToto
+    , InToto
+    , inToto
+    , itStepName
+    , itExpectedProducts
+    , itExpectedCommand
+    , itThreshold
+    , itSigningKeys
+    , itExpectedMaterials
+
     -- ** FixableTotalByDigestSeverity
     , FixableTotalByDigestSeverity (..)
-
-    -- ** AuditLogConfigLogType
-    , AuditLogConfigLogType (..)
 
     -- ** Version
     , Version
     , version
+    , vInclusive
     , vKind
     , vName
     , vRevision
@@ -639,6 +693,12 @@ module Network.Google.ContainerAnalysis
     , gsaSignatures
     , gsaContentType
 
+    -- ** GrafeasV1beta1IntotoArtifact
+    , GrafeasV1beta1IntotoArtifact
+    , grafeasV1beta1IntotoArtifact
+    , gviaResourceURI
+    , gviaHashes
+
     -- ** GitSourceContext
     , GitSourceContext
     , gitSourceContext
@@ -650,10 +710,14 @@ module Network.Google.ContainerAnalysis
     , testIAMPermissionsResponse
     , tiamprPermissions
 
+    -- ** ByProductsCustomValues
+    , ByProductsCustomValues
+    , byProductsCustomValues
+    , bpcvAddtional
+
     -- ** Policy
     , Policy
     , policy
-    , pAuditConfigs
     , pEtag
     , pVersion
     , pBindings
@@ -674,18 +738,17 @@ module Network.Google.ContainerAnalysis
     , crscRevisionId
     , crscAliasContext
 
-    -- ** AuditLogConfig
-    , AuditLogConfig
-    , auditLogConfig
-    , alcLogType
-    , alcExemptedMembers
-
     -- ** PgpSignedAttestation
     , PgpSignedAttestation
     , pgpSignedAttestation
     , psaSignature
     , psaPgpKeyId
     , psaContentType
+
+    -- ** ByProducts
+    , ByProducts
+    , byProducts
+    , bpCustomValues
 
     -- ** CVSSv3AvailabilityImpact
     , CVSSv3AvailabilityImpact (..)
@@ -697,6 +760,11 @@ module Network.Google.ContainerAnalysis
     , wdFixingKbs
     , wdCpeURI
     , wdDescription
+
+    -- ** EnvironmentCustomValues
+    , EnvironmentCustomValues
+    , environmentCustomValues
+    , ecvAddtional
 
     -- ** BatchCreateNotesRequestNotes
     , BatchCreateNotesRequestNotes
@@ -722,13 +790,16 @@ module Network.Google.ContainerAnalysis
     -- ** Detail
     , Detail
     , detail
+    , detVendor
     , detMinAffectedVersion
     , detPackageType
     , detIsObsolete
     , detFixedLocation
+    , detSourceUpdateTime
     , detSeverityName
     , detMaxAffectedVersion
     , detPackage
+    , detSource
     , detCpeURI
     , detDescription
 

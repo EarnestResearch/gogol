@@ -20,9 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a new uptime check configuration.
+-- Creates a new Uptime check configuration.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.create@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.create@.
 module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Create
     (
     -- * REST Resource
@@ -60,7 +60,7 @@ type ProjectsUptimeCheckConfigsCreateResource =
                        ReqBody '[JSON] UptimeCheckConfig :>
                          Post '[JSON] UptimeCheckConfig
 
--- | Creates a new uptime check configuration.
+-- | Creates a new Uptime check configuration.
 --
 -- /See:/ 'projectsUptimeCheckConfigsCreate' smart constructor.
 data ProjectsUptimeCheckConfigsCreate =
@@ -109,8 +109,10 @@ projectsUptimeCheckConfigsCreate pPucccParent_ pPucccPayload_ =
     }
 
 
--- | The project in which to create the uptime check. The format is
--- projects\/[PROJECT_ID].
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) in which
+-- to create the Uptime check. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]
 pucccParent :: Lens' ProjectsUptimeCheckConfigsCreate Text
 pucccParent
   = lens _pucccParent (\ s a -> s{_pucccParent = a})

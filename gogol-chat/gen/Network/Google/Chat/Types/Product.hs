@@ -101,8 +101,10 @@ instance ToJSON Card where
 data Space =
   Space'
     { _sName :: !(Maybe Text)
+    , _sThreaded :: !(Maybe Bool)
     , _sDisplayName :: !(Maybe Text)
     , _sType :: !(Maybe SpaceType)
+    , _sSingleUserBotDm :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -113,12 +115,23 @@ data Space =
 --
 -- * 'sName'
 --
+-- * 'sThreaded'
+--
 -- * 'sDisplayName'
 --
 -- * 'sType'
+--
+-- * 'sSingleUserBotDm'
 space
     :: Space
-space = Space' {_sName = Nothing, _sDisplayName = Nothing, _sType = Nothing}
+space =
+  Space'
+    { _sName = Nothing
+    , _sThreaded = Nothing
+    , _sDisplayName = Nothing
+    , _sType = Nothing
+    , _sSingleUserBotDm = Nothing
+    }
 
 
 -- | Resource name of the space, in the form \"spaces\/*\". Example:
@@ -126,30 +139,48 @@ space = Space' {_sName = Nothing, _sDisplayName = Nothing, _sType = Nothing}
 sName :: Lens' Space (Maybe Text)
 sName = lens _sName (\ s a -> s{_sName = a})
 
--- | Output only. The display name (only if the space is a room).
+-- | Whether the messages are threaded in this space.
+sThreaded :: Lens' Space (Maybe Bool)
+sThreaded
+  = lens _sThreaded (\ s a -> s{_sThreaded = a})
+
+-- | Output only. The display name (only if the space is a room). Please note
+-- that this field might not be populated in direct messages between
+-- humans.
 sDisplayName :: Lens' Space (Maybe Text)
 sDisplayName
   = lens _sDisplayName (\ s a -> s{_sDisplayName = a})
 
--- | Output only. The type of a space.
+-- | Output only. The type of a space. This is deprecated. Use
+-- \`single_user_bot_dm\` instead.
 sType :: Lens' Space (Maybe SpaceType)
 sType = lens _sType (\ s a -> s{_sType = a})
+
+-- | Whether the space is a DM between a bot and a single human.
+sSingleUserBotDm :: Lens' Space (Maybe Bool)
+sSingleUserBotDm
+  = lens _sSingleUserBotDm
+      (\ s a -> s{_sSingleUserBotDm = a})
 
 instance FromJSON Space where
         parseJSON
           = withObject "Space"
               (\ o ->
                  Space' <$>
-                   (o .:? "name") <*> (o .:? "displayName") <*>
-                     (o .:? "type"))
+                   (o .:? "name") <*> (o .:? "threaded") <*>
+                     (o .:? "displayName")
+                     <*> (o .:? "type")
+                     <*> (o .:? "singleUserBotDm"))
 
 instance ToJSON Space where
         toJSON Space'{..}
           = object
               (catMaybes
                  [("name" .=) <$> _sName,
+                  ("threaded" .=) <$> _sThreaded,
                   ("displayName" .=) <$> _sDisplayName,
-                  ("type" .=) <$> _sType])
+                  ("type" .=) <$> _sType,
+                  ("singleUserBotDm" .=) <$> _sSingleUserBotDm])
 
 -- | A UI element contains a key (label) and a value (content). And this
 -- element may also contain some actions such as onclick button.
@@ -369,7 +400,7 @@ onClick
 onClick = OnClick' {_ocAction = Nothing, _ocOpenLink = Nothing}
 
 
--- | A form action will be trigger by this onclick if specified.
+-- | A form action will be triggered by this onclick if specified.
 ocAction :: Lens' OnClick (Maybe FormAction)
 ocAction = lens _ocAction (\ s a -> s{_ocAction = a})
 
@@ -404,6 +435,7 @@ instance ToJSON OnClick where
 data Annotation =
   Annotation'
     { _aLength :: !(Maybe (Textual Int32))
+    , _aSlashCommand :: !(Maybe SlashCommandMetadata)
     , _aType :: !(Maybe AnnotationType)
     , _aUserMention :: !(Maybe UserMentionMetadata)
     , _aStartIndex :: !(Maybe (Textual Int32))
@@ -417,6 +449,8 @@ data Annotation =
 --
 -- * 'aLength'
 --
+-- * 'aSlashCommand'
+--
 -- * 'aType'
 --
 -- * 'aUserMention'
@@ -427,6 +461,7 @@ annotation
 annotation =
   Annotation'
     { _aLength = Nothing
+    , _aSlashCommand = Nothing
     , _aType = Nothing
     , _aUserMention = Nothing
     , _aStartIndex = Nothing
@@ -439,6 +474,12 @@ aLength :: Lens' Annotation (Maybe Int32)
 aLength
   = lens _aLength (\ s a -> s{_aLength = a}) .
       mapping _Coerce
+
+-- | The metadata for a slash command.
+aSlashCommand :: Lens' Annotation (Maybe SlashCommandMetadata)
+aSlashCommand
+  = lens _aSlashCommand
+      (\ s a -> s{_aSlashCommand = a})
 
 -- | The type of this annotation.
 aType :: Lens' Annotation (Maybe AnnotationType)
@@ -461,15 +502,18 @@ instance FromJSON Annotation where
           = withObject "Annotation"
               (\ o ->
                  Annotation' <$>
-                   (o .:? "length") <*> (o .:? "type") <*>
-                     (o .:? "userMention")
+                   (o .:? "length") <*> (o .:? "slashCommand") <*>
+                     (o .:? "type")
+                     <*> (o .:? "userMention")
                      <*> (o .:? "startIndex"))
 
 instance ToJSON Annotation where
         toJSON Annotation'{..}
           = object
               (catMaybes
-                 [("length" .=) <$> _aLength, ("type" .=) <$> _aType,
+                 [("length" .=) <$> _aLength,
+                  ("slashCommand" .=) <$> _aSlashCommand,
+                  ("type" .=) <$> _aType,
                   ("userMention" .=) <$> _aUserMention,
                   ("startIndex" .=) <$> _aStartIndex])
 
@@ -504,7 +548,10 @@ image =
 iOnClick :: Lens' Image (Maybe OnClick)
 iOnClick = lens _iOnClick (\ s a -> s{_iOnClick = a})
 
--- | The aspect ratio of this image (width\/height).
+-- | The aspect ratio of this image (width\/height). This field allows
+-- clients to reserve the right height for the image while waiting for it
+-- to load. It\'s not meant to override the native aspect ratio of the
+-- image. If unset, the server fills it by prefetching the image.
 iAspectRatio :: Lens' Image (Maybe Double)
 iAspectRatio
   = lens _iAspectRatio (\ s a -> s{_iAspectRatio = a})
@@ -578,6 +625,91 @@ instance ToJSON ActionParameter where
               (catMaybes
                  [("value" .=) <$> _apValue, ("key" .=) <$> _apKey])
 
+-- | Annotation metadata for slash commands (\/).
+--
+-- /See:/ 'slashCommandMetadata' smart constructor.
+data SlashCommandMetadata =
+  SlashCommandMetadata'
+    { _scmBot :: !(Maybe User)
+    , _scmCommandId :: !(Maybe (Textual Int64))
+    , _scmCommandName :: !(Maybe Text)
+    , _scmType :: !(Maybe SlashCommandMetadataType)
+    , _scmTriggersDialog :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SlashCommandMetadata' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'scmBot'
+--
+-- * 'scmCommandId'
+--
+-- * 'scmCommandName'
+--
+-- * 'scmType'
+--
+-- * 'scmTriggersDialog'
+slashCommandMetadata
+    :: SlashCommandMetadata
+slashCommandMetadata =
+  SlashCommandMetadata'
+    { _scmBot = Nothing
+    , _scmCommandId = Nothing
+    , _scmCommandName = Nothing
+    , _scmType = Nothing
+    , _scmTriggersDialog = Nothing
+    }
+
+
+-- | The bot whose command was invoked.
+scmBot :: Lens' SlashCommandMetadata (Maybe User)
+scmBot = lens _scmBot (\ s a -> s{_scmBot = a})
+
+-- | The command id of the invoked slash command.
+scmCommandId :: Lens' SlashCommandMetadata (Maybe Int64)
+scmCommandId
+  = lens _scmCommandId (\ s a -> s{_scmCommandId = a})
+      . mapping _Coerce
+
+-- | The name of the invoked slash command.
+scmCommandName :: Lens' SlashCommandMetadata (Maybe Text)
+scmCommandName
+  = lens _scmCommandName
+      (\ s a -> s{_scmCommandName = a})
+
+-- | The type of slash command.
+scmType :: Lens' SlashCommandMetadata (Maybe SlashCommandMetadataType)
+scmType = lens _scmType (\ s a -> s{_scmType = a})
+
+-- | Indicating whether the slash command is for a dialog.
+scmTriggersDialog :: Lens' SlashCommandMetadata (Maybe Bool)
+scmTriggersDialog
+  = lens _scmTriggersDialog
+      (\ s a -> s{_scmTriggersDialog = a})
+
+instance FromJSON SlashCommandMetadata where
+        parseJSON
+          = withObject "SlashCommandMetadata"
+              (\ o ->
+                 SlashCommandMetadata' <$>
+                   (o .:? "bot") <*> (o .:? "commandId") <*>
+                     (o .:? "commandName")
+                     <*> (o .:? "type")
+                     <*> (o .:? "triggersDialog"))
+
+instance ToJSON SlashCommandMetadata where
+        toJSON SlashCommandMetadata'{..}
+          = object
+              (catMaybes
+                 [("bot" .=) <$> _scmBot,
+                  ("commandId" .=) <$> _scmCommandId,
+                  ("commandName" .=) <$> _scmCommandName,
+                  ("type" .=) <$> _scmType,
+                  ("triggersDialog" .=) <$> _scmTriggersDialog])
+
 -- | Represents a membership relation in Hangouts Chat.
 --
 -- /See:/ 'membership' smart constructor.
@@ -617,12 +749,10 @@ membership =
 mState :: Lens' Membership (Maybe MembershipState)
 mState = lens _mState (\ s a -> s{_mState = a})
 
--- | Resource name of the membership, in the form \"spaces\/*\/members\/*\".
--- Example: spaces\/AAAAMpdlehY\/members\/105115627578887013105
 mName :: Lens' Membership (Maybe Text)
 mName = lens _mName (\ s a -> s{_mName = a})
 
--- | Member details.
+-- | A User in Hangout Chat
 mMember :: Lens' Membership (Maybe User)
 mMember = lens _mMember (\ s a -> s{_mMember = a})
 
@@ -675,7 +805,7 @@ instance FromJSON Empty where
 instance ToJSON Empty where
         toJSON = const emptyObject
 
--- | Hangouts Chat events.
+-- | Google Chat events.
 --
 -- /See:/ 'deprecatedEvent' smart constructor.
 data DeprecatedEvent =
@@ -736,7 +866,7 @@ deSpace = lens _deSpace (\ s a -> s{_deSpace = a})
 
 -- | A secret value that bots can use to verify if a request is from Google.
 -- The token is randomly generated by Google, remains static, and can be
--- obtained from the Hangouts Chat API configuration page in the Cloud
+-- obtained from the Google Chat API configuration page in the Cloud
 -- Console. Developers can revoke\/regenerate it if needed from the same
 -- page.
 deToken :: Lens' DeprecatedEvent (Maybe Text)
@@ -760,7 +890,7 @@ deUser :: Lens' DeprecatedEvent (Maybe User)
 deUser = lens _deUser (\ s a -> s{_deUser = a})
 
 -- | The URL the bot should redirect the user to after they have completed an
--- authorization or configuration flow outside of Hangouts Chat. See the
+-- authorization or configuration flow outside of Google Chat. See the
 -- [Authorizing access to 3p services
 -- guide](\/hangouts\/chat\/how-tos\/auth-3p) for more information.
 deConfigCompleteRedirectURL :: Lens' DeprecatedEvent (Maybe Text)
@@ -812,6 +942,45 @@ instance ToJSON DeprecatedEvent where
                   ("type" .=) <$> _deType,
                   ("message" .=) <$> _deMessage,
                   ("threadKey" .=) <$> _deThreadKey])
+
+-- | A reference to the data of an attachment.
+--
+-- /See:/ 'attachmentDataRef' smart constructor.
+newtype AttachmentDataRef =
+  AttachmentDataRef'
+    { _adrResourceName :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'AttachmentDataRef' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'adrResourceName'
+attachmentDataRef
+    :: AttachmentDataRef
+attachmentDataRef = AttachmentDataRef' {_adrResourceName = Nothing}
+
+
+-- | The resource name of the attachment data. This is used with the media
+-- API to download the attachment data.
+adrResourceName :: Lens' AttachmentDataRef (Maybe Text)
+adrResourceName
+  = lens _adrResourceName
+      (\ s a -> s{_adrResourceName = a})
+
+instance FromJSON AttachmentDataRef where
+        parseJSON
+          = withObject "AttachmentDataRef"
+              (\ o ->
+                 AttachmentDataRef' <$> (o .:? "resourceName"))
+
+instance ToJSON AttachmentDataRef where
+        toJSON AttachmentDataRef'{..}
+          = object
+              (catMaybes
+                 [("resourceName" .=) <$> _adrResourceName])
 
 -- | A paragraph of text. Formatted text supported.
 --
@@ -945,13 +1114,139 @@ instance ToJSON ListSpacesResponse where
                  [("nextPageToken" .=) <$> _lsrNextPageToken,
                   ("spaces" .=) <$> _lsrSpaces])
 
--- | A user in Hangouts Chat.
+-- | An attachment in Hangouts Chat.
+--
+-- /See:/ 'attachment' smart constructor.
+data Attachment =
+  Attachment'
+    { _aDownloadURI :: !(Maybe Text)
+    , _aAttachmentDataRef :: !(Maybe AttachmentDataRef)
+    , _aContentName :: !(Maybe Text)
+    , _aName :: !(Maybe Text)
+    , _aThumbnailURI :: !(Maybe Text)
+    , _aSource :: !(Maybe AttachmentSource)
+    , _aDriveDataRef :: !(Maybe DriveDataRef)
+    , _aContentType :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Attachment' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'aDownloadURI'
+--
+-- * 'aAttachmentDataRef'
+--
+-- * 'aContentName'
+--
+-- * 'aName'
+--
+-- * 'aThumbnailURI'
+--
+-- * 'aSource'
+--
+-- * 'aDriveDataRef'
+--
+-- * 'aContentType'
+attachment
+    :: Attachment
+attachment =
+  Attachment'
+    { _aDownloadURI = Nothing
+    , _aAttachmentDataRef = Nothing
+    , _aContentName = Nothing
+    , _aName = Nothing
+    , _aThumbnailURI = Nothing
+    , _aSource = Nothing
+    , _aDriveDataRef = Nothing
+    , _aContentType = Nothing
+    }
+
+
+-- | Output only. The download URL which should be used to allow a human user
+-- to download the attachment. Bots should not use this URL to download
+-- attachment content.
+aDownloadURI :: Lens' Attachment (Maybe Text)
+aDownloadURI
+  = lens _aDownloadURI (\ s a -> s{_aDownloadURI = a})
+
+-- | A reference to the attachment data. This is used with the media API to
+-- download the attachment data.
+aAttachmentDataRef :: Lens' Attachment (Maybe AttachmentDataRef)
+aAttachmentDataRef
+  = lens _aAttachmentDataRef
+      (\ s a -> s{_aAttachmentDataRef = a})
+
+-- | The original file name for the content, not the full path.
+aContentName :: Lens' Attachment (Maybe Text)
+aContentName
+  = lens _aContentName (\ s a -> s{_aContentName = a})
+
+-- | Resource name of the attachment, in the form
+-- \"spaces\/*\/messages\/*\/attachments\/*\".
+aName :: Lens' Attachment (Maybe Text)
+aName = lens _aName (\ s a -> s{_aName = a})
+
+-- | Output only. The thumbnail URL which should be used to preview the
+-- attachment to a human user. Bots should not use this URL to download
+-- attachment content.
+aThumbnailURI :: Lens' Attachment (Maybe Text)
+aThumbnailURI
+  = lens _aThumbnailURI
+      (\ s a -> s{_aThumbnailURI = a})
+
+-- | The source of the attachment.
+aSource :: Lens' Attachment (Maybe AttachmentSource)
+aSource = lens _aSource (\ s a -> s{_aSource = a})
+
+-- | A reference to the drive attachment. This is used with the Drive API.
+aDriveDataRef :: Lens' Attachment (Maybe DriveDataRef)
+aDriveDataRef
+  = lens _aDriveDataRef
+      (\ s a -> s{_aDriveDataRef = a})
+
+-- | The content type (MIME type) of the file.
+aContentType :: Lens' Attachment (Maybe Text)
+aContentType
+  = lens _aContentType (\ s a -> s{_aContentType = a})
+
+instance FromJSON Attachment where
+        parseJSON
+          = withObject "Attachment"
+              (\ o ->
+                 Attachment' <$>
+                   (o .:? "downloadUri") <*> (o .:? "attachmentDataRef")
+                     <*> (o .:? "contentName")
+                     <*> (o .:? "name")
+                     <*> (o .:? "thumbnailUri")
+                     <*> (o .:? "source")
+                     <*> (o .:? "driveDataRef")
+                     <*> (o .:? "contentType"))
+
+instance ToJSON Attachment where
+        toJSON Attachment'{..}
+          = object
+              (catMaybes
+                 [("downloadUri" .=) <$> _aDownloadURI,
+                  ("attachmentDataRef" .=) <$> _aAttachmentDataRef,
+                  ("contentName" .=) <$> _aContentName,
+                  ("name" .=) <$> _aName,
+                  ("thumbnailUri" .=) <$> _aThumbnailURI,
+                  ("source" .=) <$> _aSource,
+                  ("driveDataRef" .=) <$> _aDriveDataRef,
+                  ("contentType" .=) <$> _aContentType])
+
+-- | A user in Google Chat.
 --
 -- /See:/ 'user' smart constructor.
 data User =
   User'
-    { _uName :: !(Maybe Text)
+    { _uIsAnonymous :: !(Maybe Bool)
+    , _uName :: !(Maybe Text)
     , _uDisplayName :: !(Maybe Text)
+    , _uDomainId :: !(Maybe Text)
     , _uType :: !(Maybe UserType)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -961,15 +1256,31 @@ data User =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'uIsAnonymous'
+--
 -- * 'uName'
 --
 -- * 'uDisplayName'
 --
+-- * 'uDomainId'
+--
 -- * 'uType'
 user
     :: User
-user = User' {_uName = Nothing, _uDisplayName = Nothing, _uType = Nothing}
+user =
+  User'
+    { _uIsAnonymous = Nothing
+    , _uName = Nothing
+    , _uDisplayName = Nothing
+    , _uDomainId = Nothing
+    , _uType = Nothing
+    }
 
+
+-- | True when the user is deleted or the user\'s profile is not visible.
+uIsAnonymous :: Lens' User (Maybe Bool)
+uIsAnonymous
+  = lens _uIsAnonymous (\ s a -> s{_uIsAnonymous = a})
 
 -- | Resource name, in the format \"users\/*\".
 uName :: Lens' User (Maybe Text)
@@ -980,6 +1291,11 @@ uDisplayName :: Lens' User (Maybe Text)
 uDisplayName
   = lens _uDisplayName (\ s a -> s{_uDisplayName = a})
 
+-- | Obfuscated domain information.
+uDomainId :: Lens' User (Maybe Text)
+uDomainId
+  = lens _uDomainId (\ s a -> s{_uDomainId = a})
+
 -- | User type.
 uType :: Lens' User (Maybe UserType)
 uType = lens _uType (\ s a -> s{_uType = a})
@@ -989,16 +1305,56 @@ instance FromJSON User where
           = withObject "User"
               (\ o ->
                  User' <$>
-                   (o .:? "name") <*> (o .:? "displayName") <*>
-                     (o .:? "type"))
+                   (o .:? "isAnonymous") <*> (o .:? "name") <*>
+                     (o .:? "displayName")
+                     <*> (o .:? "domainId")
+                     <*> (o .:? "type"))
 
 instance ToJSON User where
         toJSON User'{..}
           = object
               (catMaybes
-                 [("name" .=) <$> _uName,
+                 [("isAnonymous" .=) <$> _uIsAnonymous,
+                  ("name" .=) <$> _uName,
                   ("displayName" .=) <$> _uDisplayName,
+                  ("domainId" .=) <$> _uDomainId,
                   ("type" .=) <$> _uType])
+
+-- | Media resource.
+--
+-- /See:/ 'media' smart constructor.
+newtype Media =
+  Media'
+    { _mResourceName :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Media' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'mResourceName'
+media
+    :: Media
+media = Media' {_mResourceName = Nothing}
+
+
+-- | Name of the media resource.
+mResourceName :: Lens' Media (Maybe Text)
+mResourceName
+  = lens _mResourceName
+      (\ s a -> s{_mResourceName = a})
+
+instance FromJSON Media where
+        parseJSON
+          = withObject "Media"
+              (\ o -> Media' <$> (o .:? "resourceName"))
+
+instance ToJSON Media where
+        toJSON Media'{..}
+          = object
+              (catMaybes [("resourceName" .=) <$> _mResourceName])
 
 -- | A link that opens a new window.
 --
@@ -1032,6 +1388,42 @@ instance FromJSON OpenLink where
 instance ToJSON OpenLink where
         toJSON OpenLink'{..}
           = object (catMaybes [("url" .=) <$> _olURL])
+
+-- | A Slash Command in Chat.
+--
+-- /See:/ 'slashCommand' smart constructor.
+newtype SlashCommand =
+  SlashCommand'
+    { _scCommandId :: Maybe (Textual Int64)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SlashCommand' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'scCommandId'
+slashCommand
+    :: SlashCommand
+slashCommand = SlashCommand' {_scCommandId = Nothing}
+
+
+-- | The id of the slash command invoked.
+scCommandId :: Lens' SlashCommand (Maybe Int64)
+scCommandId
+  = lens _scCommandId (\ s a -> s{_scCommandId = a}) .
+      mapping _Coerce
+
+instance FromJSON SlashCommand where
+        parseJSON
+          = withObject "SlashCommand"
+              (\ o -> SlashCommand' <$> (o .:? "commandId"))
+
+instance ToJSON SlashCommand where
+        toJSON SlashCommand'{..}
+          = object
+              (catMaybes [("commandId" .=) <$> _scCommandId])
 
 -- | A card action is the action associated with the card. For an invoice
 -- card, a typical action would be: delete invoice, email invoice or open
@@ -1127,6 +1519,42 @@ instance ToJSON ActionResponse where
               (catMaybes
                  [("url" .=) <$> _arURL, ("type" .=) <$> _arType])
 
+-- | A reference to the data of a drive attachment.
+--
+-- /See:/ 'driveDataRef' smart constructor.
+newtype DriveDataRef =
+  DriveDataRef'
+    { _ddrDriveFileId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DriveDataRef' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ddrDriveFileId'
+driveDataRef
+    :: DriveDataRef
+driveDataRef = DriveDataRef' {_ddrDriveFileId = Nothing}
+
+
+-- | The id for the drive file, for use with the Drive API.
+ddrDriveFileId :: Lens' DriveDataRef (Maybe Text)
+ddrDriveFileId
+  = lens _ddrDriveFileId
+      (\ s a -> s{_ddrDriveFileId = a})
+
+instance FromJSON DriveDataRef where
+        parseJSON
+          = withObject "DriveDataRef"
+              (\ o -> DriveDataRef' <$> (o .:? "driveFileId"))
+
+instance ToJSON DriveDataRef where
+        toJSON DriveDataRef'{..}
+          = object
+              (catMaybes [("driveFileId" .=) <$> _ddrDriveFileId])
+
 -- | A form action describes the behavior when the form is submitted. For
 -- example, an Apps Script can be invoked to handle the form.
 --
@@ -1152,8 +1580,10 @@ formAction =
   FormAction' {_faActionMethodName = Nothing, _faParameters = Nothing}
 
 
--- | Apps Script function to invoke when the containing element is
--- clicked\/activated.
+-- | The method name is used to identify which part of the form triggered the
+-- form submission. This information is echoed back to the bot as part of
+-- the card click event. The same method name can be used for several
+-- elements that trigger a common behavior if desired.
 faActionMethodName :: Lens' FormAction (Maybe Text)
 faActionMethodName
   = lens _faActionMethodName
@@ -1244,9 +1674,11 @@ data Message =
     , _mesSpace :: !(Maybe Space)
     , _mesText :: !(Maybe Text)
     , _mesSender :: !(Maybe User)
+    , _mesAttachment :: !(Maybe [Attachment])
     , _mesName :: !(Maybe Text)
     , _mesPreviewText :: !(Maybe Text)
     , _mesCards :: !(Maybe [Card])
+    , _mesSlashCommand :: !(Maybe SlashCommand)
     , _mesActionResponse :: !(Maybe ActionResponse)
     , _mesArgumentText :: !(Maybe Text)
     , _mesThread :: !(Maybe Thread)
@@ -1268,11 +1700,15 @@ data Message =
 --
 -- * 'mesSender'
 --
+-- * 'mesAttachment'
+--
 -- * 'mesName'
 --
 -- * 'mesPreviewText'
 --
 -- * 'mesCards'
+--
+-- * 'mesSlashCommand'
 --
 -- * 'mesActionResponse'
 --
@@ -1291,9 +1727,11 @@ message =
     , _mesSpace = Nothing
     , _mesText = Nothing
     , _mesSender = Nothing
+    , _mesAttachment = Nothing
     , _mesName = Nothing
     , _mesPreviewText = Nothing
     , _mesCards = Nothing
+    , _mesSlashCommand = Nothing
     , _mesActionResponse = Nothing
     , _mesArgumentText = Nothing
     , _mesThread = Nothing
@@ -1323,8 +1761,14 @@ mesSender :: Lens' Message (Maybe User)
 mesSender
   = lens _mesSender (\ s a -> s{_mesSender = a})
 
--- | Resource name, in the form \"spaces\/*\/messages\/*\". Example:
--- spaces\/AAAAMpdlehY\/messages\/UMxbHmzDlr4.UMxbHmzDlr4
+-- | User uploaded attachment.
+mesAttachment :: Lens' Message [Attachment]
+mesAttachment
+  = lens _mesAttachment
+      (\ s a -> s{_mesAttachment = a})
+      . _Default
+      . _Coerce
+
 mesName :: Lens' Message (Maybe Text)
 mesName = lens _mesName (\ s a -> s{_mesName = a})
 
@@ -1344,6 +1788,12 @@ mesCards
   = lens _mesCards (\ s a -> s{_mesCards = a}) .
       _Default
       . _Coerce
+
+-- | Slash command information, if applicable.
+mesSlashCommand :: Lens' Message (Maybe SlashCommand)
+mesSlashCommand
+  = lens _mesSlashCommand
+      (\ s a -> s{_mesSlashCommand = a})
 
 -- | Input only. Parameters that a bot can use to configure how its response
 -- is posted.
@@ -1386,9 +1836,11 @@ instance FromJSON Message where
                    (o .:? "annotations" .!= mempty) <*> (o .:? "space")
                      <*> (o .:? "text")
                      <*> (o .:? "sender")
+                     <*> (o .:? "attachment" .!= mempty)
                      <*> (o .:? "name")
                      <*> (o .:? "previewText")
                      <*> (o .:? "cards" .!= mempty)
+                     <*> (o .:? "slashCommand")
                      <*> (o .:? "actionResponse")
                      <*> (o .:? "argumentText")
                      <*> (o .:? "thread")
@@ -1402,9 +1854,11 @@ instance ToJSON Message where
                  [("annotations" .=) <$> _mesAnnotations,
                   ("space" .=) <$> _mesSpace, ("text" .=) <$> _mesText,
                   ("sender" .=) <$> _mesSender,
+                  ("attachment" .=) <$> _mesAttachment,
                   ("name" .=) <$> _mesName,
                   ("previewText" .=) <$> _mesPreviewText,
                   ("cards" .=) <$> _mesCards,
+                  ("slashCommand" .=) <$> _mesSlashCommand,
                   ("actionResponse" .=) <$> _mesActionResponse,
                   ("argumentText" .=) <$> _mesArgumentText,
                   ("thread" .=) <$> _mesThread,

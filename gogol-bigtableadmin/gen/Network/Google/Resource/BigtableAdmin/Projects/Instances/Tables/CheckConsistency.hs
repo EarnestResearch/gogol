@@ -141,9 +141,9 @@ pitccPayload :: Lens' ProjectsInstancesTablesCheckConsistency CheckConsistencyRe
 pitccPayload
   = lens _pitccPayload (\ s a -> s{_pitccPayload = a})
 
--- | The unique name of the Table for which to check replication consistency.
--- Values are of the form \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the Table for which to check replication
+-- consistency. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitccName :: Lens' ProjectsInstancesTablesCheckConsistency Text
 pitccName
   = lens _pitccName (\ s a -> s{_pitccName = a})

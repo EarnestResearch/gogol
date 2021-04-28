@@ -118,13 +118,14 @@ cgdUploadProtocol
   = lens _cgdUploadProtocol
       (\ s a -> s{_cgdUploadProtocol = a})
 
--- | Set to true to also delete the contacts in the specified group.
+-- | Optional. Set to true to also delete the contacts in the specified
+-- group.
 cgdDeleteContacts :: Lens' ContactGroupsDelete (Maybe Bool)
 cgdDeleteContacts
   = lens _cgdDeleteContacts
       (\ s a -> s{_cgdDeleteContacts = a})
 
--- | The resource name of the contact group to delete.
+-- | Required. The resource name of the contact group to delete.
 cgdResourceName :: Lens' ContactGroupsDelete Text
 cgdResourceName
   = lens _cgdResourceName

@@ -118,7 +118,7 @@ projectsZonesOperationsList pPzolZone_ pPzolProjectId_ =
 
 
 -- | The parent (project and location) where the operations will be listed.
--- Specified in the format \'projects\/*\/locations\/*\'. Location \"-\"
+-- Specified in the format \`projects\/*\/locations\/*\`. Location \"-\"
 -- matches all zones and all regions.
 pzolParent :: Lens' ProjectsZonesOperationsList (Maybe Text)
 pzolParent
@@ -148,9 +148,9 @@ pzolUploadType
       (\ s a -> s{_pzolUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) to return operations for, or
--- \`-\` for all zones. This field has been deprecated and replaced by the
--- parent field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) to
+-- return operations for, or \`-\` for all zones. This field has been
+-- deprecated and replaced by the parent field.
 pzolZone :: Lens' ProjectsZonesOperationsList Text
 pzolZone = lens _pzolZone (\ s a -> s{_pzolZone = a})
 

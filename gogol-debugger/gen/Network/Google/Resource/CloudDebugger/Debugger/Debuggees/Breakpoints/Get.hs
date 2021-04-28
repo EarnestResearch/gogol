@@ -22,7 +22,7 @@
 --
 -- Gets breakpoint information.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.get@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.get@.
 module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.Get
     (
     -- * REST Resource
@@ -140,20 +140,20 @@ ddbgUploadType
   = lens _ddbgUploadType
       (\ s a -> s{_ddbgUploadType = a})
 
--- | ID of the breakpoint to get.
+-- | Required. ID of the breakpoint to get.
 ddbgBreakpointId :: Lens' DebuggerDebuggeesBreakpointsGet Text
 ddbgBreakpointId
   = lens _ddbgBreakpointId
       (\ s a -> s{_ddbgBreakpointId = a})
 
--- | ID of the debuggee whose breakpoint to get.
+-- | Required. ID of the debuggee whose breakpoint to get.
 ddbgDebuggeeId :: Lens' DebuggerDebuggeesBreakpointsGet Text
 ddbgDebuggeeId
   = lens _ddbgDebuggeeId
       (\ s a -> s{_ddbgDebuggeeId = a})
 
--- | The client version making the call. Schema: \`domain\/type\/version\`
--- (e.g., \`google.com\/intellij\/v1\`).
+-- | Required. The client version making the call. Schema:
+-- \`domain\/type\/version\` (e.g., \`google.com\/intellij\/v1\`).
 ddbgClientVersion :: Lens' DebuggerDebuggeesBreakpointsGet (Maybe Text)
 ddbgClientVersion
   = lens _ddbgClientVersion

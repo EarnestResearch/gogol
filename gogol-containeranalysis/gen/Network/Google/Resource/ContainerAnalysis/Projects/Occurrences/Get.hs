@@ -122,7 +122,7 @@ pogUploadType
   = lens _pogUploadType
       (\ s a -> s{_pogUploadType = a})
 
--- | The name of the occurrence in the form of
+-- | Required. The name of the occurrence in the form of
 -- \`projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]\`.
 pogName :: Lens' ProjectsOccurrencesGet Text
 pogName = lens _pogName (\ s a -> s{_pogName = a})

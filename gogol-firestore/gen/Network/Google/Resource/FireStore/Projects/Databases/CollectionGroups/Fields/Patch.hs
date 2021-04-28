@@ -169,7 +169,7 @@ pdcgfpPayload
   = lens _pdcgfpPayload
       (\ s a -> s{_pdcgfpPayload = a})
 
--- | A field name of the form
+-- | Required. A field name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\/fields\/{field_path}\`
 -- A field path may be a simple field name, e.g. \`address\` or a path to
 -- fields within map_value , e.g. \`address.city\`, or a special field

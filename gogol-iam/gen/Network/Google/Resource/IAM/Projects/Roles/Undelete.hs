@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Undelete a Role, bringing it back in its previous state.
+-- Undeletes a custom Role.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.roles.undelete@.
 module Network.Google.Resource.IAM.Projects.Roles.Undelete
@@ -59,7 +59,7 @@ type ProjectsRolesUndeleteResource =
                      ReqBody '[JSON] UndeleteRoleRequest :>
                        Post '[JSON] Role
 
--- | Undelete a Role, bringing it back in its previous state.
+-- | Undeletes a custom Role.
 --
 -- /See:/ 'projectsRolesUndelete' smart constructor.
 data ProjectsRolesUndelete =
@@ -135,9 +135,25 @@ pruPayload :: Lens' ProjectsRolesUndelete UndeleteRoleRequest
 pruPayload
   = lens _pruPayload (\ s a -> s{_pruPayload = a})
 
--- | The resource name of the role in one of the following formats:
--- \`organizations\/{ORGANIZATION_ID}\/roles\/{ROLE_NAME}\`
--- \`projects\/{PROJECT_ID}\/roles\/{ROLE_NAME}\`
+-- | The \`name\` parameter\'s value depends on the target resource for the
+-- request, namely
+-- [\`projects\`](\/iam\/reference\/rest\/v1\/projects.roles) or
+-- [\`organizations\`](\/iam\/reference\/rest\/v1\/organizations.roles).
+-- Each resource type\'s \`name\` value format is described below: *
+-- [\`projects.roles.undelete()\`](\/iam\/reference\/rest\/v1\/projects.roles\/undelete):
+-- \`projects\/{PROJECT_ID}\/roles\/{CUSTOM_ROLE_ID}\`. This method
+-- undeletes only [custom roles](\/iam\/docs\/understanding-custom-roles)
+-- that have been created at the project level. Example request URL:
+-- \`https:\/\/iam.googleapis.com\/v1\/projects\/{PROJECT_ID}\/roles\/{CUSTOM_ROLE_ID}\`
+-- *
+-- [\`organizations.roles.undelete()\`](\/iam\/reference\/rest\/v1\/organizations.roles\/undelete):
+-- \`organizations\/{ORGANIZATION_ID}\/roles\/{CUSTOM_ROLE_ID}\`. This
+-- method undeletes only [custom
+-- roles](\/iam\/docs\/understanding-custom-roles) that have been created
+-- at the organization level. Example request URL:
+-- \`https:\/\/iam.googleapis.com\/v1\/organizations\/{ORGANIZATION_ID}\/roles\/{CUSTOM_ROLE_ID}\`
+-- Note: Wildcard (*) values are invalid; you must specify a complete
+-- project ID or organization ID.
 pruName :: Lens' ProjectsRolesUndelete Text
 pruName = lens _pruName (\ s a -> s{_pruName = a})
 

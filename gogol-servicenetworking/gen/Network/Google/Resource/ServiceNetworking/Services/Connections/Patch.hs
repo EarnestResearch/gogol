@@ -20,9 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates the allocated ranges that are assigned to a connection. The
--- response from the \`get\` operation will be of type \`Connection\` if
--- the operation successfully completes.
+-- Updates the allocated ranges that are assigned to a connection.
 --
 -- /See:/ <https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started Service Networking API Reference> for @servicenetworking.services.connections.patch@.
 module Network.Google.Resource.ServiceNetworking.Services.Connections.Patch
@@ -64,9 +62,7 @@ type ServicesConnectionsPatchResource =
                        QueryParam "alt" AltJSON :>
                          ReqBody '[JSON] Connection :> Patch '[JSON] Operation
 
--- | Updates the allocated ranges that are assigned to a connection. The
--- response from the \`get\` operation will be of type \`Connection\` if
--- the operation successfully completes.
+-- | Updates the allocated ranges that are assigned to a connection.
 --
 -- /See:/ 'servicesConnectionsPatch' smart constructor.
 data ServicesConnectionsPatch =

@@ -16,7 +16,7 @@
 -- Enable cloud users to discover enterprise catalogs and products in their
 -- organizations.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog API Reference>
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog API Reference>
 module Network.Google.CloudPrivateCatalog
     (
     -- * Service Configuration

@@ -147,7 +147,7 @@ pnolUploadType
   = lens _pnolUploadType
       (\ s a -> s{_pnolUploadType = a})
 
--- | The name of the note to list occurrences for in the form of
+-- | Required. The name of the note to list occurrences for in the form of
 -- \`projects\/[PROVIDER_ID]\/notes\/[NOTE_ID]\`.
 pnolName :: Lens' ProjectsNotesOccurrencesList Text
 pnolName = lens _pnolName (\ s a -> s{_pnolName = a})

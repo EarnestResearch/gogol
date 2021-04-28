@@ -74,6 +74,9 @@ module Network.Google.CloudProFiler
     -- ** Xgafv
     , Xgafv (..)
 
+    -- ** CreateProFileRequestProFileTypeItem
+    , CreateProFileRequestProFileTypeItem (..)
+
     -- ** Deployment
     , Deployment
     , deployment

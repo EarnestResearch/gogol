@@ -128,7 +128,7 @@ sdUploadType :: Lens' ServicesDelete (Maybe Text)
 sdUploadType
   = lens _sdUploadType (\ s a -> s{_sdUploadType = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 sdServiceName :: Lens' ServicesDelete Text

@@ -20,9 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Invokes a fetch for the datafeed in your Merchant Center account.
+-- Invokes a fetch for the datafeed in your Merchant Center account. If you
+-- need to call this method more than once per day, we recommend you use
+-- the Products service to update your product data.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.datafeeds.fetchnow@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.datafeeds.fetchnow@.
 module Network.Google.Resource.Content.Datafeeds.Fetchnow
     (
     -- * REST Resource
@@ -33,9 +35,14 @@ module Network.Google.Resource.Content.Datafeeds.Fetchnow
     , DatafeedsFetchnow
 
     -- * Request Lenses
+    , dfXgafv
     , dfMerchantId
+    , dfUploadProtocol
+    , dfAccessToken
+    , dfUploadType
     , dfDatafeedId
     , dfDryRun
+    , dfCallback
     ) where
 
 import Network.Google.Prelude
@@ -50,18 +57,30 @@ type DatafeedsFetchnowResource =
            "datafeeds" :>
              Capture "datafeedId" (Textual Word64) :>
                "fetchNow" :>
-                 QueryParam "dryRun" Bool :>
-                   QueryParam "alt" AltJSON :>
-                     Post '[JSON] DatafeedsFetchNowResponse
+                 QueryParam "$.xgafv" Xgafv :>
+                   QueryParam "upload_protocol" Text :>
+                     QueryParam "access_token" Text :>
+                       QueryParam "uploadType" Text :>
+                         QueryParam "dryRun" Bool :>
+                           QueryParam "callback" Text :>
+                             QueryParam "alt" AltJSON :>
+                               Post '[JSON] DatafeedsFetchNowResponse
 
--- | Invokes a fetch for the datafeed in your Merchant Center account.
+-- | Invokes a fetch for the datafeed in your Merchant Center account. If you
+-- need to call this method more than once per day, we recommend you use
+-- the Products service to update your product data.
 --
 -- /See:/ 'datafeedsFetchnow' smart constructor.
 data DatafeedsFetchnow =
   DatafeedsFetchnow'
-    { _dfMerchantId :: !(Textual Word64)
+    { _dfXgafv :: !(Maybe Xgafv)
+    , _dfMerchantId :: !(Textual Word64)
+    , _dfUploadProtocol :: !(Maybe Text)
+    , _dfAccessToken :: !(Maybe Text)
+    , _dfUploadType :: !(Maybe Text)
     , _dfDatafeedId :: !(Textual Word64)
     , _dfDryRun :: !(Maybe Bool)
+    , _dfCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -70,22 +89,41 @@ data DatafeedsFetchnow =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'dfXgafv'
+--
 -- * 'dfMerchantId'
+--
+-- * 'dfUploadProtocol'
+--
+-- * 'dfAccessToken'
+--
+-- * 'dfUploadType'
 --
 -- * 'dfDatafeedId'
 --
 -- * 'dfDryRun'
+--
+-- * 'dfCallback'
 datafeedsFetchnow
     :: Word64 -- ^ 'dfMerchantId'
     -> Word64 -- ^ 'dfDatafeedId'
     -> DatafeedsFetchnow
 datafeedsFetchnow pDfMerchantId_ pDfDatafeedId_ =
   DatafeedsFetchnow'
-    { _dfMerchantId = _Coerce # pDfMerchantId_
+    { _dfXgafv = Nothing
+    , _dfMerchantId = _Coerce # pDfMerchantId_
+    , _dfUploadProtocol = Nothing
+    , _dfAccessToken = Nothing
+    , _dfUploadType = Nothing
     , _dfDatafeedId = _Coerce # pDfDatafeedId_
     , _dfDryRun = Nothing
+    , _dfCallback = Nothing
     }
 
+
+-- | V1 error format.
+dfXgafv :: Lens' DatafeedsFetchnow (Maybe Xgafv)
+dfXgafv = lens _dfXgafv (\ s a -> s{_dfXgafv = a})
 
 -- | The ID of the account that manages the datafeed. This account cannot be
 -- a multi-client account.
@@ -93,6 +131,23 @@ dfMerchantId :: Lens' DatafeedsFetchnow Word64
 dfMerchantId
   = lens _dfMerchantId (\ s a -> s{_dfMerchantId = a})
       . _Coerce
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+dfUploadProtocol :: Lens' DatafeedsFetchnow (Maybe Text)
+dfUploadProtocol
+  = lens _dfUploadProtocol
+      (\ s a -> s{_dfUploadProtocol = a})
+
+-- | OAuth access token.
+dfAccessToken :: Lens' DatafeedsFetchnow (Maybe Text)
+dfAccessToken
+  = lens _dfAccessToken
+      (\ s a -> s{_dfAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+dfUploadType :: Lens' DatafeedsFetchnow (Maybe Text)
+dfUploadType
+  = lens _dfUploadType (\ s a -> s{_dfUploadType = a})
 
 -- | The ID of the datafeed to be fetched.
 dfDatafeedId :: Lens' DatafeedsFetchnow Word64
@@ -106,12 +161,22 @@ dfDatafeedId
 dfDryRun :: Lens' DatafeedsFetchnow (Maybe Bool)
 dfDryRun = lens _dfDryRun (\ s a -> s{_dfDryRun = a})
 
+-- | JSONP
+dfCallback :: Lens' DatafeedsFetchnow (Maybe Text)
+dfCallback
+  = lens _dfCallback (\ s a -> s{_dfCallback = a})
+
 instance GoogleRequest DatafeedsFetchnow where
         type Rs DatafeedsFetchnow = DatafeedsFetchNowResponse
         type Scopes DatafeedsFetchnow =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsFetchnow'{..}
-          = go _dfMerchantId _dfDatafeedId _dfDryRun
+          = go _dfMerchantId _dfDatafeedId _dfXgafv
+              _dfUploadProtocol
+              _dfAccessToken
+              _dfUploadType
+              _dfDryRun
+              _dfCallback
               (Just AltJSON)
               shoppingContentService
           where go

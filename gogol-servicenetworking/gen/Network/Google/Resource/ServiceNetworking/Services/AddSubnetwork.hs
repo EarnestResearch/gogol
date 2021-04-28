@@ -27,9 +27,7 @@
 -- to find a non-conflicting IP address range. The method will reuse a
 -- subnet if subsequent calls contain the same subnet name, region, and
 -- prefix length. This method will make producer\'s tenant project to be a
--- shared VPC service project as needed. The response from the \`get\`
--- operation will be of type \`Subnetwork\` if the operation successfully
--- completes.
+-- shared VPC service project as needed.
 --
 -- /See:/ <https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started Service Networking API Reference> for @servicenetworking.services.addSubnetwork@.
 module Network.Google.Resource.ServiceNetworking.Services.AddSubnetwork
@@ -75,9 +73,7 @@ type ServicesAddSubnetworkResource =
 -- to find a non-conflicting IP address range. The method will reuse a
 -- subnet if subsequent calls contain the same subnet name, region, and
 -- prefix length. This method will make producer\'s tenant project to be a
--- shared VPC service project as needed. The response from the \`get\`
--- operation will be of type \`Subnetwork\` if the operation successfully
--- completes.
+-- shared VPC service project as needed.
 --
 -- /See:/ 'servicesAddSubnetwork' smart constructor.
 data ServicesAddSubnetwork =

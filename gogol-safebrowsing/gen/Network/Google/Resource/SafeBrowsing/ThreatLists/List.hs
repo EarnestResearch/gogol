@@ -54,7 +54,8 @@ type ThreatListsListResource =
                QueryParam "uploadType" Text :>
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :>
-                     Get '[JSON] ListThreatListsResponse
+                     Get '[JSON]
+                       GoogleSecuritySafebrowsingV4ListThreatListsResponse
 
 -- | Lists the Safe Browsing threat lists available for download.
 --
@@ -123,7 +124,8 @@ tllCallback
   = lens _tllCallback (\ s a -> s{_tllCallback = a})
 
 instance GoogleRequest ThreatListsList where
-        type Rs ThreatListsList = ListThreatListsResponse
+        type Rs ThreatListsList =
+             GoogleSecuritySafebrowsingV4ListThreatListsResponse
         type Scopes ThreatListsList = '[]
         requestClient ThreatListsList'{..}
           = go _tllXgafv _tllUploadProtocol _tllAccessToken

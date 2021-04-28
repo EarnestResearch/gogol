@@ -38,17 +38,29 @@ module Network.Google.Redis
     -- ** redis.projects.locations.instances.delete
     , module Network.Google.Resource.Redis.Projects.Locations.Instances.Delete
 
+    -- ** redis.projects.locations.instances.export
+    , module Network.Google.Resource.Redis.Projects.Locations.Instances.Export
+
     -- ** redis.projects.locations.instances.failover
     , module Network.Google.Resource.Redis.Projects.Locations.Instances.Failover
 
     -- ** redis.projects.locations.instances.get
     , module Network.Google.Resource.Redis.Projects.Locations.Instances.Get
 
+    -- ** redis.projects.locations.instances.getAuthString
+    , module Network.Google.Resource.Redis.Projects.Locations.Instances.GetAuthString
+
+    -- ** redis.projects.locations.instances.import
+    , module Network.Google.Resource.Redis.Projects.Locations.Instances.Import
+
     -- ** redis.projects.locations.instances.list
     , module Network.Google.Resource.Redis.Projects.Locations.Instances.List
 
     -- ** redis.projects.locations.instances.patch
     , module Network.Google.Resource.Redis.Projects.Locations.Instances.Patch
+
+    -- ** redis.projects.locations.instances.upgrade
+    , module Network.Google.Resource.Redis.Projects.Locations.Instances.Upgrade
 
     -- ** redis.projects.locations.list
     , module Network.Google.Resource.Redis.Projects.Locations.List
@@ -99,6 +111,14 @@ module Network.Google.Redis
     , lorNextPageToken
     , lorOperations
 
+    -- ** GcsSource
+    , GcsSource
+    , gcsSource
+    , gsURI
+
+    -- ** InstanceTransitEncryptionMode
+    , InstanceTransitEncryptionMode (..)
+
     -- ** Location
     , Location
     , location
@@ -128,6 +148,11 @@ module Network.Google.Redis
     -- ** InstanceTier
     , InstanceTier (..)
 
+    -- ** GcsDestination
+    , GcsDestination
+    , gcsDestination
+    , gdURI
+
     -- ** StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
@@ -154,6 +179,24 @@ module Network.Google.Redis
     , instanceRedisConfigs
     , ircAddtional
 
+    -- ** InputConfig
+    , InputConfig
+    , inputConfig
+    , icGcsSource
+
+    -- ** InstanceConnectMode
+    , InstanceConnectMode (..)
+
+    -- ** ExportInstanceRequest
+    , ExportInstanceRequest
+    , exportInstanceRequest
+    , eirOutputConfig
+
+    -- ** InstanceAuthString
+    , InstanceAuthString
+    , instanceAuthString
+    , iasAuthString
+
     -- ** GoogleCloudRedisV1LocationMetadataAvailableZones
     , GoogleCloudRedisV1LocationMetadataAvailableZones
     , googleCloudRedisV1LocationMetadataAvailableZones
@@ -161,6 +204,21 @@ module Network.Google.Redis
 
     -- ** Xgafv
     , Xgafv (..)
+
+    -- ** OutputConfig
+    , OutputConfig
+    , outputConfig
+    , ocGcsDestination
+
+    -- ** ImportInstanceRequest
+    , ImportInstanceRequest
+    , importInstanceRequest
+    , iirInputConfig
+
+    -- ** UpgradeInstanceRequest
+    , UpgradeInstanceRequest
+    , upgradeInstanceRequest
+    , uirRedisVersion
 
     -- ** LocationLabels
     , LocationLabels
@@ -192,10 +250,23 @@ module Network.Google.Redis
     , operationResponse
     , orAddtional
 
+    -- ** TLSCertificate
+    , TLSCertificate
+    , tlsCertificate
+    , tcCert
+    , tcSerialNumber
+    , tcSha1Fingerprint
+    , tcExpireTime
+    , tcCreateTime
+
     -- ** Instance
     , Instance
     , instance'
+    , iServerCaCerts
+    , iPersistenceIAMIdentity
     , iState
+    , iAuthEnabled
+    , iTransitEncryptionMode
     , iAuthorizedNetwork
     , iMemorySizeGb
     , iName
@@ -205,6 +276,7 @@ module Network.Google.Redis
     , iTier
     , iDisplayName
     , iLabels
+    , iConnectMode
     , iLocationId
     , iHost
     , iRedisConfigs
@@ -219,10 +291,14 @@ import Network.Google.Redis.Types
 import Network.Google.Resource.Redis.Projects.Locations.Get
 import Network.Google.Resource.Redis.Projects.Locations.Instances.Create
 import Network.Google.Resource.Redis.Projects.Locations.Instances.Delete
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Export
 import Network.Google.Resource.Redis.Projects.Locations.Instances.Failover
 import Network.Google.Resource.Redis.Projects.Locations.Instances.Get
+import Network.Google.Resource.Redis.Projects.Locations.Instances.GetAuthString
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Import
 import Network.Google.Resource.Redis.Projects.Locations.Instances.List
 import Network.Google.Resource.Redis.Projects.Locations.Instances.Patch
+import Network.Google.Resource.Redis.Projects.Locations.Instances.Upgrade
 import Network.Google.Resource.Redis.Projects.Locations.List
 import Network.Google.Resource.Redis.Projects.Locations.Operations.Cancel
 import Network.Google.Resource.Redis.Projects.Locations.Operations.Delete
@@ -235,11 +311,15 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the Google Cloud Memorystore for Redis API service.
 type RedisAPI =
-     ProjectsLocationsInstancesListResource :<|>
-       ProjectsLocationsInstancesPatchResource
+     ProjectsLocationsInstancesExportResource :<|>
+       ProjectsLocationsInstancesListResource
+       :<|> ProjectsLocationsInstancesUpgradeResource
+       :<|> ProjectsLocationsInstancesPatchResource
        :<|> ProjectsLocationsInstancesGetResource
        :<|> ProjectsLocationsInstancesCreateResource
        :<|> ProjectsLocationsInstancesFailoverResource
+       :<|> ProjectsLocationsInstancesImportResource
+       :<|> ProjectsLocationsInstancesGetAuthStringResource
        :<|> ProjectsLocationsInstancesDeleteResource
        :<|> ProjectsLocationsOperationsListResource
        :<|> ProjectsLocationsOperationsGetResource

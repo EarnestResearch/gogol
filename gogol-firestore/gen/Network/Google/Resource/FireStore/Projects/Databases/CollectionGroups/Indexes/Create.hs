@@ -114,7 +114,7 @@ projectsDatabasesCollectionGroupsIndexesCreate pPdcgicParent_ pPdcgicPayload_ =
     }
 
 
--- | A parent name of the form
+-- | Required. A parent name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\`
 pdcgicParent :: Lens' ProjectsDatabasesCollectionGroupsIndexesCreate Text
 pdcgicParent

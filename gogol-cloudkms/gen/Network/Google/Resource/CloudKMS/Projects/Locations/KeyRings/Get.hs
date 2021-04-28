@@ -123,7 +123,7 @@ plkrgUploadType
   = lens _plkrgUploadType
       (\ s a -> s{_plkrgUploadType = a})
 
--- | The name of the KeyRing to get.
+-- | Required. The name of the KeyRing to get.
 plkrgName :: Lens' ProjectsLocationsKeyRingsGet Text
 plkrgName
   = lens _plkrgName (\ s a -> s{_plkrgName = a})

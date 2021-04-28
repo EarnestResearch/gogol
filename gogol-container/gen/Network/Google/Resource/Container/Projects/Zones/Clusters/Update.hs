@@ -149,8 +149,9 @@ pzcuUploadType
       (\ s a -> s{_pzcuUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 pzcuZone :: Lens' ProjectsZonesClustersUpdate Text
 pzcuZone = lens _pzcuZone (\ s a -> s{_pzcuZone = a})
 

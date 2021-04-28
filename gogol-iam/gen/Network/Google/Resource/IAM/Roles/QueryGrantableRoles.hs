@@ -20,9 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Queries roles that can be granted on a particular resource. A role is
--- grantable if it can be used as the role in a binding for a policy for
--- that resource.
+-- Lists roles that can be granted on a Google Cloud resource. A role is
+-- grantable if the IAM policy for the resource can contain bindings to the
+-- role.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.roles.queryGrantableRoles@.
 module Network.Google.Resource.IAM.Roles.QueryGrantableRoles
@@ -60,9 +60,9 @@ type RolesQueryGrantableRolesResource =
                      ReqBody '[JSON] QueryGrantableRolesRequest :>
                        Post '[JSON] QueryGrantableRolesResponse
 
--- | Queries roles that can be granted on a particular resource. A role is
--- grantable if it can be used as the role in a binding for a policy for
--- that resource.
+-- | Lists roles that can be granted on a Google Cloud resource. A role is
+-- grantable if the IAM policy for the resource can contain bindings to the
+-- role.
 --
 -- /See:/ 'rolesQueryGrantableRoles' smart constructor.
 data RolesQueryGrantableRoles =

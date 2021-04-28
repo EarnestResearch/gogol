@@ -156,8 +156,9 @@ pzcnpdUploadType
       (\ s a -> s{_pzcnpdUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 pzcnpdZone :: Lens' ProjectsZonesClustersNodePoolsDelete Text
 pzcnpdZone
   = lens _pzcnpdZone (\ s a -> s{_pzcnpdZone = a})
@@ -171,7 +172,7 @@ pzcnpdNodePoolId
 
 -- | The name (project, location, cluster, node pool id) of the node pool to
 -- delete. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\`.
 pzcnpdName :: Lens' ProjectsZonesClustersNodePoolsDelete (Maybe Text)
 pzcnpdName
   = lens _pzcnpdName (\ s a -> s{_pzcnpdName = a})

@@ -36,6 +36,7 @@ module Network.Google.Resource.Storage.BucketAccessControls.Update
     , bacuBucket
     , bacuPayload
     , bacuUserProject
+    , bacuProvisionalUserProject
     , bacuEntity
     ) where
 
@@ -52,9 +53,10 @@ type BucketAccessControlsUpdateResource =
              "acl" :>
                Capture "entity" Text :>
                  QueryParam "userProject" Text :>
-                   QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] BucketAccessControl :>
-                       Put '[JSON] BucketAccessControl
+                   QueryParam "provisionalUserProject" Text :>
+                     QueryParam "alt" AltJSON :>
+                       ReqBody '[JSON] BucketAccessControl :>
+                         Put '[JSON] BucketAccessControl
 
 -- | Updates an ACL entry on the specified bucket.
 --
@@ -64,6 +66,7 @@ data BucketAccessControlsUpdate =
     { _bacuBucket :: !Text
     , _bacuPayload :: !BucketAccessControl
     , _bacuUserProject :: !(Maybe Text)
+    , _bacuProvisionalUserProject :: !(Maybe Text)
     , _bacuEntity :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -79,6 +82,8 @@ data BucketAccessControlsUpdate =
 --
 -- * 'bacuUserProject'
 --
+-- * 'bacuProvisionalUserProject'
+--
 -- * 'bacuEntity'
 bucketAccessControlsUpdate
     :: Text -- ^ 'bacuBucket'
@@ -90,6 +95,7 @@ bucketAccessControlsUpdate pBacuBucket_ pBacuPayload_ pBacuEntity_ =
     { _bacuBucket = pBacuBucket_
     , _bacuPayload = pBacuPayload_
     , _bacuUserProject = Nothing
+    , _bacuProvisionalUserProject = Nothing
     , _bacuEntity = pBacuEntity_
     }
 
@@ -111,6 +117,13 @@ bacuUserProject
   = lens _bacuUserProject
       (\ s a -> s{_bacuUserProject = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+bacuProvisionalUserProject :: Lens' BucketAccessControlsUpdate (Maybe Text)
+bacuProvisionalUserProject
+  = lens _bacuProvisionalUserProject
+      (\ s a -> s{_bacuProvisionalUserProject = a})
+
 -- | The entity holding the permission. Can be user-userId,
 -- user-emailAddress, group-groupId, group-emailAddress, allUsers, or
 -- allAuthenticatedUsers.
@@ -127,6 +140,7 @@ instance GoogleRequest BucketAccessControlsUpdate
                "https://www.googleapis.com/auth/devstorage.full_control"]
         requestClient BucketAccessControlsUpdate'{..}
           = go _bacuBucket _bacuEntity _bacuUserProject
+              _bacuProvisionalUserProject
               (Just AltJSON)
               _bacuPayload
               storageService

@@ -22,7 +22,7 @@
 --
 -- Deletes an existing group.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.groups.delete@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.groups.delete@.
 module Network.Google.Resource.Monitoring.Projects.Groups.Delete
     (
     -- * REST Resource
@@ -128,8 +128,8 @@ pgdUploadType
   = lens _pgdUploadType
       (\ s a -> s{_pgdUploadType = a})
 
--- | The group to delete. The format is
--- \"projects\/{project_id_or_number}\/groups\/{group_id}\".
+-- | Required. The group to delete. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/groups\/[GROUP_ID]
 pgdName :: Lens' ProjectsGroupsDelete Text
 pgdName = lens _pgdName (\ s a -> s{_pgdName = a})
 

@@ -145,7 +145,7 @@ prjgUploadType
   = lens _prjgUploadType
       (\ s a -> s{_prjgUploadType = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prjgRegion :: Lens' ProjectsRegionsJobsGet Text
 prjgRegion
   = lens _prjgRegion (\ s a -> s{_prjgRegion = a})

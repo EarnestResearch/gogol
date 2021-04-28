@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates a datasource.
+-- Updates a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.datasources.update@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.datasources.update@.
 module Network.Google.Resource.CloudSearch.Settings.Datasources.Update
     (
     -- * REST Resource
@@ -60,7 +61,8 @@ type SettingsDatasourcesUpdateResource =
                        ReqBody '[JSON] UpdateDataSourceRequest :>
                          Put '[JSON] Operation
 
--- | Updates a datasource.
+-- | Updates a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
 -- /See:/ 'settingsDatasourcesUpdate' smart constructor.
 data SettingsDatasourcesUpdate =
@@ -136,8 +138,8 @@ sduPayload :: Lens' SettingsDatasourcesUpdate UpdateDataSourceRequest
 sduPayload
   = lens _sduPayload (\ s a -> s{_sduPayload = a})
 
--- | Name of the datasource resource. Format: datasources\/{source_id}.
--- The name is ignored when creating a datasource.
+-- | Name of the datasource resource. Format: datasources\/{source_id}. The
+-- name is ignored when creating a datasource.
 sduName :: Lens' SettingsDatasourcesUpdate Text
 sduName = lens _sduName (\ s a -> s{_sduName = a})
 

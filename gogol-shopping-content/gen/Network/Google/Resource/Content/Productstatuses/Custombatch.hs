@@ -22,7 +22,7 @@
 --
 -- Gets the statuses of multiple products in a single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.productstatuses.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.productstatuses.custombatch@.
 module Network.Google.Resource.Content.Productstatuses.Custombatch
     (
     -- * REST Resource
@@ -33,8 +33,13 @@ module Network.Google.Resource.Content.Productstatuses.Custombatch
     , ProductstatusesCustombatch
 
     -- * Request Lenses
-    , proPayload
-    , proIncludeAttributes
+    , pccXgafv
+    , pccUploadProtocol
+    , pccAccessToken
+    , pccUploadType
+    , pccPayload
+    , pccIncludeAttributes
+    , pccCallback
     ) where
 
 import Network.Google.Prelude
@@ -47,18 +52,28 @@ type ProductstatusesCustombatchResource =
        "v2" :>
          "productstatuses" :>
            "batch" :>
-             QueryParam "includeAttributes" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] ProductstatusesCustomBatchRequest :>
-                   Post '[JSON] ProductstatusesCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "includeAttributes" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] ProductstatusesCustomBatchRequest :>
+                             Post '[JSON] ProductstatusesCustomBatchResponse
 
 -- | Gets the statuses of multiple products in a single request.
 --
 -- /See:/ 'productstatusesCustombatch' smart constructor.
 data ProductstatusesCustombatch =
   ProductstatusesCustombatch'
-    { _proPayload :: !ProductstatusesCustomBatchRequest
-    , _proIncludeAttributes :: !(Maybe Bool)
+    { _pccXgafv :: !(Maybe Xgafv)
+    , _pccUploadProtocol :: !(Maybe Text)
+    , _pccAccessToken :: !(Maybe Text)
+    , _pccUploadType :: !(Maybe Text)
+    , _pccPayload :: !ProductstatusesCustomBatchRequest
+    , _pccIncludeAttributes :: !(Maybe Bool)
+    , _pccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,28 +82,72 @@ data ProductstatusesCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'proPayload'
+-- * 'pccXgafv'
 --
--- * 'proIncludeAttributes'
+-- * 'pccUploadProtocol'
+--
+-- * 'pccAccessToken'
+--
+-- * 'pccUploadType'
+--
+-- * 'pccPayload'
+--
+-- * 'pccIncludeAttributes'
+--
+-- * 'pccCallback'
 productstatusesCustombatch
-    :: ProductstatusesCustomBatchRequest -- ^ 'proPayload'
+    :: ProductstatusesCustomBatchRequest -- ^ 'pccPayload'
     -> ProductstatusesCustombatch
-productstatusesCustombatch pProPayload_ =
+productstatusesCustombatch pPccPayload_ =
   ProductstatusesCustombatch'
-    {_proPayload = pProPayload_, _proIncludeAttributes = Nothing}
+    { _pccXgafv = Nothing
+    , _pccUploadProtocol = Nothing
+    , _pccAccessToken = Nothing
+    , _pccUploadType = Nothing
+    , _pccPayload = pPccPayload_
+    , _pccIncludeAttributes = Nothing
+    , _pccCallback = Nothing
+    }
 
+
+-- | V1 error format.
+pccXgafv :: Lens' ProductstatusesCustombatch (Maybe Xgafv)
+pccXgafv = lens _pccXgafv (\ s a -> s{_pccXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+pccUploadProtocol :: Lens' ProductstatusesCustombatch (Maybe Text)
+pccUploadProtocol
+  = lens _pccUploadProtocol
+      (\ s a -> s{_pccUploadProtocol = a})
+
+-- | OAuth access token.
+pccAccessToken :: Lens' ProductstatusesCustombatch (Maybe Text)
+pccAccessToken
+  = lens _pccAccessToken
+      (\ s a -> s{_pccAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+pccUploadType :: Lens' ProductstatusesCustombatch (Maybe Text)
+pccUploadType
+  = lens _pccUploadType
+      (\ s a -> s{_pccUploadType = a})
 
 -- | Multipart request metadata.
-proPayload :: Lens' ProductstatusesCustombatch ProductstatusesCustomBatchRequest
-proPayload
-  = lens _proPayload (\ s a -> s{_proPayload = a})
+pccPayload :: Lens' ProductstatusesCustombatch ProductstatusesCustomBatchRequest
+pccPayload
+  = lens _pccPayload (\ s a -> s{_pccPayload = a})
 
 -- | Flag to include full product data in the results of this request. The
 -- default value is false.
-proIncludeAttributes :: Lens' ProductstatusesCustombatch (Maybe Bool)
-proIncludeAttributes
-  = lens _proIncludeAttributes
-      (\ s a -> s{_proIncludeAttributes = a})
+pccIncludeAttributes :: Lens' ProductstatusesCustombatch (Maybe Bool)
+pccIncludeAttributes
+  = lens _pccIncludeAttributes
+      (\ s a -> s{_pccIncludeAttributes = a})
+
+-- | JSONP
+pccCallback :: Lens' ProductstatusesCustombatch (Maybe Text)
+pccCallback
+  = lens _pccCallback (\ s a -> s{_pccCallback = a})
 
 instance GoogleRequest ProductstatusesCustombatch
          where
@@ -97,7 +156,12 @@ instance GoogleRequest ProductstatusesCustombatch
         type Scopes ProductstatusesCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductstatusesCustombatch'{..}
-          = go _proIncludeAttributes (Just AltJSON) _proPayload
+          = go _pccXgafv _pccUploadProtocol _pccAccessToken
+              _pccUploadType
+              _pccIncludeAttributes
+              _pccCallback
+              (Just AltJSON)
+              _pccPayload
               shoppingContentService
           where go
                   = buildClient

@@ -23,7 +23,7 @@
 -- Retrieves, inserts, updates, and deletes multiple Merchant Center
 -- (sub-)accounts in a single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.accounts.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.accounts.custombatch@.
 module Network.Google.Resource.Content.Accounts.Custombatch
     (
     -- * REST Resource
@@ -34,8 +34,13 @@ module Network.Google.Resource.Content.Accounts.Custombatch
     , AccountsCustombatch
 
     -- * Request Lenses
+    , accXgafv
+    , accUploadProtocol
+    , accAccessToken
+    , accUploadType
     , accPayload
     , accDryRun
+    , accCallback
     ) where
 
 import Network.Google.Prelude
@@ -48,10 +53,15 @@ type AccountsCustombatchResource =
        "v2" :>
          "accounts" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] AccountsCustomBatchRequest :>
-                   Post '[JSON] AccountsCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] AccountsCustomBatchRequest :>
+                             Post '[JSON] AccountsCustomBatchResponse
 
 -- | Retrieves, inserts, updates, and deletes multiple Merchant Center
 -- (sub-)accounts in a single request.
@@ -59,8 +69,13 @@ type AccountsCustombatchResource =
 -- /See:/ 'accountsCustombatch' smart constructor.
 data AccountsCustombatch =
   AccountsCustombatch'
-    { _accPayload :: !AccountsCustomBatchRequest
+    { _accXgafv :: !(Maybe Xgafv)
+    , _accUploadProtocol :: !(Maybe Text)
+    , _accAccessToken :: !(Maybe Text)
+    , _accUploadType :: !(Maybe Text)
+    , _accPayload :: !AccountsCustomBatchRequest
     , _accDryRun :: !(Maybe Bool)
+    , _accCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -69,15 +84,55 @@ data AccountsCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'accXgafv'
+--
+-- * 'accUploadProtocol'
+--
+-- * 'accAccessToken'
+--
+-- * 'accUploadType'
+--
 -- * 'accPayload'
 --
 -- * 'accDryRun'
+--
+-- * 'accCallback'
 accountsCustombatch
     :: AccountsCustomBatchRequest -- ^ 'accPayload'
     -> AccountsCustombatch
 accountsCustombatch pAccPayload_ =
-  AccountsCustombatch' {_accPayload = pAccPayload_, _accDryRun = Nothing}
+  AccountsCustombatch'
+    { _accXgafv = Nothing
+    , _accUploadProtocol = Nothing
+    , _accAccessToken = Nothing
+    , _accUploadType = Nothing
+    , _accPayload = pAccPayload_
+    , _accDryRun = Nothing
+    , _accCallback = Nothing
+    }
 
+
+-- | V1 error format.
+accXgafv :: Lens' AccountsCustombatch (Maybe Xgafv)
+accXgafv = lens _accXgafv (\ s a -> s{_accXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+accUploadProtocol :: Lens' AccountsCustombatch (Maybe Text)
+accUploadProtocol
+  = lens _accUploadProtocol
+      (\ s a -> s{_accUploadProtocol = a})
+
+-- | OAuth access token.
+accAccessToken :: Lens' AccountsCustombatch (Maybe Text)
+accAccessToken
+  = lens _accAccessToken
+      (\ s a -> s{_accAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+accUploadType :: Lens' AccountsCustombatch (Maybe Text)
+accUploadType
+  = lens _accUploadType
+      (\ s a -> s{_accUploadType = a})
 
 -- | Multipart request metadata.
 accPayload :: Lens' AccountsCustombatch AccountsCustomBatchRequest
@@ -91,13 +146,23 @@ accDryRun :: Lens' AccountsCustombatch (Maybe Bool)
 accDryRun
   = lens _accDryRun (\ s a -> s{_accDryRun = a})
 
+-- | JSONP
+accCallback :: Lens' AccountsCustombatch (Maybe Text)
+accCallback
+  = lens _accCallback (\ s a -> s{_accCallback = a})
+
 instance GoogleRequest AccountsCustombatch where
         type Rs AccountsCustombatch =
              AccountsCustomBatchResponse
         type Scopes AccountsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountsCustombatch'{..}
-          = go _accDryRun (Just AltJSON) _accPayload
+          = go _accXgafv _accUploadProtocol _accAccessToken
+              _accUploadType
+              _accDryRun
+              _accCallback
+              (Just AltJSON)
+              _accPayload
               shoppingContentService
           where go
                   = buildClient

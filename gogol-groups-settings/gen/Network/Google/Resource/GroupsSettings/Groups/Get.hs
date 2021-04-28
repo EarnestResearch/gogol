@@ -69,7 +69,7 @@ groupsGet
 groupsGet pGgGroupUniqueId_ = GroupsGet' {_ggGroupUniqueId = pGgGroupUniqueId_}
 
 
--- | The resource ID
+-- | The group\'s email address.
 ggGroupUniqueId :: Lens' GroupsGet Text
 ggGroupUniqueId
   = lens _ggGroupUniqueId

@@ -13,11 +13,14 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Manages your Stackdriver Monitoring data and configurations. Most
--- projects must be associated with a Stackdriver account, with a few
--- exceptions as noted on the individual method pages.
+-- Manages your Cloud Monitoring data and configurations. Most projects
+-- must be associated with a Workspace, with a few exceptions as noted on
+-- the individual method pages. The table entries below are presented in
+-- alphabetical order, not in order of common use. For explanations of the
+-- concepts found in the table entries, read the Cloud Monitoring
+-- documentation.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference>
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference>
 module Network.Google.Monitoring
     (
     -- * Service Configuration
@@ -33,6 +36,12 @@ module Network.Google.Monitoring
     , MonitoringAPI
 
     -- * Resources
+
+    -- ** monitoring.folders.timeSeries.list
+    , module Network.Google.Resource.Monitoring.Folders.TimeSeries.List
+
+    -- ** monitoring.organizations.timeSeries.list
+    , module Network.Google.Resource.Monitoring.Organizations.TimeSeries.List
 
     -- ** monitoring.projects.alertPolicies.create
     , module Network.Google.Resource.Monitoring.Projects.AlertPolicies.Create
@@ -124,6 +133,9 @@ module Network.Google.Monitoring
     -- ** monitoring.projects.timeSeries.list
     , module Network.Google.Resource.Monitoring.Projects.TimeSeries.List
 
+    -- ** monitoring.projects.timeSeries.query
+    , module Network.Google.Resource.Monitoring.Projects.TimeSeries.Query
+
     -- ** monitoring.projects.uptimeCheckConfigs.create
     , module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Create
 
@@ -139,6 +151,36 @@ module Network.Google.Monitoring
     -- ** monitoring.projects.uptimeCheckConfigs.patch
     , module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Patch
 
+    -- ** monitoring.services.create
+    , module Network.Google.Resource.Monitoring.Services.Create
+
+    -- ** monitoring.services.delete
+    , module Network.Google.Resource.Monitoring.Services.Delete
+
+    -- ** monitoring.services.get
+    , module Network.Google.Resource.Monitoring.Services.Get
+
+    -- ** monitoring.services.list
+    , module Network.Google.Resource.Monitoring.Services.List
+
+    -- ** monitoring.services.patch
+    , module Network.Google.Resource.Monitoring.Services.Patch
+
+    -- ** monitoring.services.serviceLevelObjectives.create
+    , module Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Create
+
+    -- ** monitoring.services.serviceLevelObjectives.delete
+    , module Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Delete
+
+    -- ** monitoring.services.serviceLevelObjectives.get
+    , module Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Get
+
+    -- ** monitoring.services.serviceLevelObjectives.list
+    , module Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.List
+
+    -- ** monitoring.services.serviceLevelObjectives.patch
+    , module Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Patch
+
     -- ** monitoring.uptimeCheckIps.list
     , module Network.Google.Resource.Monitoring.UptimeCheckIPs.List
 
@@ -146,6 +188,9 @@ module Network.Google.Monitoring
 
     -- ** MetricDescriptorValueType
     , MetricDescriptorValueType (..)
+
+    -- ** NotificationChannelDescriptorLaunchStage
+    , NotificationChannelDescriptorLaunchStage (..)
 
     -- ** MonitoredResourceDescriptor
     , MonitoredResourceDescriptor
@@ -155,6 +200,16 @@ module Network.Google.Monitoring
     , mrdLabels
     , mrdType
     , mrdDescription
+    , mrdLaunchStage
+
+    -- ** BasicSli
+    , BasicSli
+    , basicSli
+    , bsLocation
+    , bsLatency
+    , bsAvailability
+    , bsMethod
+    , bsVersion
 
     -- ** CollectdValueDataSourceType
     , CollectdValueDataSourceType (..)
@@ -166,17 +221,32 @@ module Network.Google.Monitoring
     , sCode
     , sMessage
 
+    -- ** ValueDescriptorMetricKind
+    , ValueDescriptorMetricKind (..)
+
+    -- ** ServiceLevelObjective
+    , ServiceLevelObjective
+    , serviceLevelObjective
+    , sloName
+    , sloCalendarPeriod
+    , sloServiceLevelIndicator
+    , sloGoal
+    , sloDisplayName
+    , sloRollingPeriod
+
     -- ** ListNotificationChannelsResponse
     , ListNotificationChannelsResponse
     , listNotificationChannelsResponse
     , lncrNextPageToken
     , lncrNotificationChannels
+    , lncrTotalSize
 
     -- ** ListTimeSeriesResponse
     , ListTimeSeriesResponse
     , listTimeSeriesResponse
     , ltsrNextPageToken
     , ltsrExecutionErrors
+    , ltsrUnit
     , ltsrTimeSeries
 
     -- ** GetNotificationChannelVerificationCodeResponse
@@ -185,11 +255,36 @@ module Network.Google.Monitoring
     , gncvcrCode
     , gncvcrExpireTime
 
+    -- ** Telemetry
+    , Telemetry
+    , telemetry
+    , tResourceName
+
+    -- ** MonitoringQueryLanguageCondition
+    , MonitoringQueryLanguageCondition
+    , monitoringQueryLanguageCondition
+    , mqlcQuery
+    , mqlcTrigger
+    , mqlcDuration
+
+    -- ** ListServicesResponse
+    , ListServicesResponse
+    , listServicesResponse
+    , lsrNextPageToken
+    , lsrServices
+
     -- ** ListNotificationChannelDescriptorsResponse
     , ListNotificationChannelDescriptorsResponse
     , listNotificationChannelDescriptorsResponse
     , lncdrNextPageToken
     , lncdrChannelDescriptors
+
+    -- ** TimeSeriesRatio
+    , TimeSeriesRatio
+    , timeSeriesRatio
+    , tsrTotalServiceFilter
+    , tsrGoodServiceFilter
+    , tsrBadServiceFilter
 
     -- ** UptimeCheckIPRegion
     , UptimeCheckIPRegion (..)
@@ -197,6 +292,7 @@ module Network.Google.Monitoring
     -- ** MetricDescriptor
     , MetricDescriptor
     , metricDescriptor
+    , mdMonitoredResourceTypes
     , mdMetricKind
     , mdName
     , mdMetadata
@@ -206,6 +302,13 @@ module Network.Google.Monitoring
     , mdValueType
     , mdDescription
     , mdUnit
+    , mdLaunchStage
+
+    -- ** GoogleMonitoringV3Range
+    , GoogleMonitoringV3Range
+    , googleMonitoringV3Range
+    , gmvrMax
+    , gmvrMin
 
     -- ** Group
     , Group
@@ -241,6 +344,9 @@ module Network.Google.Monitoring
     , notificationChannelUserLabels
     , nculAddtional
 
+    -- ** ServicesServiceLevelObjectivesGetView
+    , ServicesServiceLevelObjectivesGetView (..)
+
     -- ** SourceContext
     , SourceContext
     , sourceContext
@@ -265,6 +371,9 @@ module Network.Google.Monitoring
 
     -- ** MetricThresholdComparison
     , MetricThresholdComparison (..)
+
+    -- ** ProjectsTimeSeriesListSecondaryAggregationPerSeriesAligner
+    , ProjectsTimeSeriesListSecondaryAggregationPerSeriesAligner (..)
 
     -- ** AggregationPerSeriesAligner
     , AggregationPerSeriesAligner (..)
@@ -291,15 +400,42 @@ module Network.Google.Monitoring
     , exemplarAttachmentsItem
     , eaiAddtional
 
+    -- ** Service
+    , Service
+    , service
+    , sTelemetry
+    , sCustom
+    , sIstioCanonicalService
+    , sName
+    , sAppEngine
+    , sClusterIstio
+    , sDisplayName
+    , sMeshIstio
+    , sCloudEndpoints
+
+    -- ** QueryTimeSeriesRequest
+    , QueryTimeSeriesRequest
+    , queryTimeSeriesRequest
+    , qtsrQuery
+    , qtsrPageToken
+    , qtsrPageSize
+
     -- ** NotificationChannelDescriptor
     , NotificationChannelDescriptor
     , notificationChannelDescriptor
     , ncdName
-    , ncdSupportedTiers
     , ncdDisplayName
     , ncdLabels
     , ncdType
     , ncdDescription
+    , ncdLaunchStage
+
+    -- ** LabelValue
+    , LabelValue
+    , labelValue
+    , lvBoolValue
+    , lvStringValue
+    , lvInt64Value
 
     -- ** Empty
     , Empty
@@ -317,6 +453,27 @@ module Network.Google.Monitoring
     , lmdrMetricDescriptors
     , lmdrNextPageToken
 
+    -- ** WindowsBasedSli
+    , WindowsBasedSli
+    , windowsBasedSli
+    , wbsMetricSumInRange
+    , wbsWindowPeriod
+    , wbsGoodTotalRatioThreshold
+    , wbsGoodBadMetricFilter
+    , wbsMetricMeanInRange
+
+    -- ** FoldersTimeSeriesListSecondaryAggregationCrossSeriesReducer
+    , FoldersTimeSeriesListSecondaryAggregationCrossSeriesReducer (..)
+
+    -- ** HTTPCheckRequestMethod
+    , HTTPCheckRequestMethod (..)
+
+    -- ** Error'
+    , Error'
+    , error'
+    , eStatus
+    , ePointCount
+
     -- ** VerifyNotificationChannelRequest
     , VerifyNotificationChannelRequest
     , verifyNotificationChannelRequest
@@ -326,6 +483,21 @@ module Network.Google.Monitoring
     , OptionValue
     , optionValue
     , ovAddtional
+
+    -- ** DistributionCut
+    , DistributionCut
+    , distributionCut
+    , dcRange
+    , dcDistributionFilter
+
+    -- ** ProjectsTimeSeriesListAggregationPerSeriesAligner
+    , ProjectsTimeSeriesListAggregationPerSeriesAligner (..)
+
+    -- ** MetricRange
+    , MetricRange
+    , metricRange
+    , mrRange
+    , mrTimeSeries
 
     -- ** AggregationCrossSeriesReducer
     , AggregationCrossSeriesReducer (..)
@@ -342,6 +514,10 @@ module Network.Google.Monitoring
     , CreateTimeSeriesRequest
     , createTimeSeriesRequest
     , ctsrTimeSeries
+
+    -- ** Custom
+    , Custom
+    , custom
 
     -- ** DroppedLabelsLabel
     , DroppedLabelsLabel
@@ -370,8 +546,21 @@ module Network.Google.Monitoring
     , statusDetailsItem
     , sdiAddtional
 
+    -- ** ProjectsTimeSeriesListSecondaryAggregationCrossSeriesReducer
+    , ProjectsTimeSeriesListSecondaryAggregationCrossSeriesReducer (..)
+
+    -- ** ValueDescriptorValueType
+    , ValueDescriptorValueType (..)
+
     -- ** NotificationChannelVerificationStatus
     , NotificationChannelVerificationStatus (..)
+
+    -- ** CreateTimeSeriesSummary
+    , CreateTimeSeriesSummary
+    , createTimeSeriesSummary
+    , ctssTotalPointCount
+    , ctssSuccessPointCount
+    , ctssErrors
 
     -- ** MonitoredResourceMetadataUserLabels
     , MonitoredResourceMetadataUserLabels
@@ -391,7 +580,9 @@ module Network.Google.Monitoring
     -- ** NotificationChannel
     , NotificationChannel
     , notificationChannel
+    , ncMutationRecords
     , ncEnabled
+    , ncCreationRecord
     , ncUserLabels
     , ncName
     , ncDisplayName
@@ -399,6 +590,15 @@ module Network.Google.Monitoring
     , ncLabels
     , ncType
     , ncDescription
+
+    -- ** OrganizationsTimeSeriesListAggregationPerSeriesAligner
+    , OrganizationsTimeSeriesListAggregationPerSeriesAligner (..)
+
+    -- ** ListServiceLevelObjectivesResponse
+    , ListServiceLevelObjectivesResponse
+    , listServiceLevelObjectivesResponse
+    , lslorNextPageToken
+    , lslorServiceLevelObjectives
 
     -- ** ListMonitoredResourceDescriptorsResponse
     , ListMonitoredResourceDescriptorsResponse
@@ -424,6 +624,9 @@ module Network.Google.Monitoring
     , collectdPayloadMetadata
     , cpmAddtional
 
+    -- ** ContentMatcherMatcher
+    , ContentMatcherMatcher (..)
+
     -- ** CollectdValue
     , CollectdValue
     , collectdValue
@@ -440,6 +643,24 @@ module Network.Google.Monitoring
 
     -- ** TypeSyntax
     , TypeSyntax (..)
+
+    -- ** FoldersTimeSeriesListSecondaryAggregationPerSeriesAligner
+    , FoldersTimeSeriesListSecondaryAggregationPerSeriesAligner (..)
+
+    -- ** OrganizationsTimeSeriesListView
+    , OrganizationsTimeSeriesListView (..)
+
+    -- ** ProjectsTimeSeriesListAggregationCrossSeriesReducer
+    , ProjectsTimeSeriesListAggregationCrossSeriesReducer (..)
+
+    -- ** PointData
+    , PointData
+    , pointData
+    , pdValues
+    , pdTimeInterval
+
+    -- ** OrganizationsTimeSeriesListSecondaryAggregationPerSeriesAligner
+    , OrganizationsTimeSeriesListSecondaryAggregationPerSeriesAligner (..)
 
     -- ** Aggregation
     , Aggregation
@@ -458,6 +679,7 @@ module Network.Google.Monitoring
     , uccName
     , uccMonitoredResource
     , uccSelectedRegions
+    , uccIsInternal
     , uccDisplayName
     , uccResourceGroup
     , uccTimeout
@@ -469,6 +691,9 @@ module Network.Google.Monitoring
     , point
     , pValue
     , pInterval
+
+    -- ** FoldersTimeSeriesListView
+    , FoldersTimeSeriesListView (..)
 
     -- ** CollectdPayload
     , CollectdPayload
@@ -501,6 +726,9 @@ module Network.Google.Monitoring
     , cpeValueErrors
     , cpeIndex
 
+    -- ** ProjectsTimeSeriesListView
+    , ProjectsTimeSeriesListView (..)
+
     -- ** SendNotificationChannelVerificationCodeRequest
     , SendNotificationChannelVerificationCodeRequest
     , sendNotificationChannelVerificationCodeRequest
@@ -512,6 +740,16 @@ module Network.Google.Monitoring
     , eScale
     , eNumFiniteBuckets
 
+    -- ** PerformanceThreshold
+    , PerformanceThreshold
+    , performanceThreshold
+    , ptBasicSliPerformance
+    , ptPerformance
+    , ptThreshold
+
+    -- ** HTTPCheckContentType
+    , HTTPCheckContentType (..)
+
     -- ** ResourceGroupResourceType
     , ResourceGroupResourceType (..)
 
@@ -520,6 +758,29 @@ module Network.Google.Monitoring
     , range
     , rMax
     , rMin
+
+    -- ** IstioCanonicalService
+    , IstioCanonicalService
+    , istioCanonicalService
+    , icsCanonicalService
+    , icsMeshUid
+    , icsCanonicalServiceNamespace
+
+    -- ** AppEngine
+    , AppEngine
+    , appEngine
+    , aeModuleId
+
+    -- ** QueryTimeSeriesResponse
+    , QueryTimeSeriesResponse
+    , queryTimeSeriesResponse
+    , qtsrNextPageToken
+    , qtsrPartialErrors
+    , qtsrTimeSeriesDescriptor
+    , qtsrTimeSeriesData
+
+    -- ** OrganizationsTimeSeriesListAggregationCrossSeriesReducer
+    , OrganizationsTimeSeriesListAggregationCrossSeriesReducer (..)
 
     -- ** MonitoredResource
     , MonitoredResource
@@ -533,6 +794,14 @@ module Network.Google.Monitoring
     , uciIPAddress
     , uciLocation
     , uciRegion
+
+    -- ** ClusterIstio
+    , ClusterIstio
+    , clusterIstio
+    , ciLocation
+    , ciServiceNamespace
+    , ciServiceName
+    , ciClusterName
 
     -- ** AlertPolicyUserLabels
     , AlertPolicyUserLabels
@@ -548,6 +817,10 @@ module Network.Google.Monitoring
     -- ** Xgafv
     , Xgafv (..)
 
+    -- ** AvailabilityCriteria
+    , AvailabilityCriteria
+    , availabilityCriteria
+
     -- ** Exemplar
     , Exemplar
     , exemplar
@@ -555,12 +828,22 @@ module Network.Google.Monitoring
     , eValue
     , eTimestamp
 
+    -- ** FoldersTimeSeriesListAggregationCrossSeriesReducer
+    , FoldersTimeSeriesListAggregationCrossSeriesReducer (..)
+
     -- ** MetricDescriptorMetadata
     , MetricDescriptorMetadata
     , metricDescriptorMetadata
     , mdmSamplePeriod
     , mdmIngestDelay
     , mdmLaunchStage
+
+    -- ** ServiceLevelIndicator
+    , ServiceLevelIndicator
+    , serviceLevelIndicator
+    , sliBasicSli
+    , sliRequestBased
+    , sliWindowsBased
 
     -- ** TimeInterval
     , TimeInterval
@@ -584,6 +867,7 @@ module Network.Google.Monitoring
     -- ** ContentMatcher
     , ContentMatcher
     , contentMatcher
+    , cmMatcher
     , cmContent
 
     -- ** ListGroupMembersResponse
@@ -610,6 +894,9 @@ module Network.Google.Monitoring
     , lWidth
     , lNumFiniteBuckets
 
+    -- ** MonitoredResourceDescriptorLaunchStage
+    , MonitoredResourceDescriptorLaunchStage (..)
+
     -- ** AlertPolicyCombiner
     , AlertPolicyCombiner (..)
 
@@ -635,6 +922,15 @@ module Network.Google.Monitoring
     , droppedLabels
     , dlLabel
 
+    -- ** TimeSeriesDescriptor
+    , TimeSeriesDescriptor
+    , timeSeriesDescriptor
+    , tsdPointDescriptors
+    , tsdLabelDescriptors
+
+    -- ** OrganizationsTimeSeriesListSecondaryAggregationCrossSeriesReducer
+    , OrganizationsTimeSeriesListSecondaryAggregationCrossSeriesReducer (..)
+
     -- ** FieldCardinality
     , FieldCardinality (..)
 
@@ -643,6 +939,14 @@ module Network.Google.Monitoring
     , trigger
     , tPercent
     , tCount
+
+    -- ** ValueDescriptor
+    , ValueDescriptor
+    , valueDescriptor
+    , vdMetricKind
+    , vdKey
+    , vdValueType
+    , vdUnit
 
     -- ** Type
     , Type
@@ -654,13 +958,29 @@ module Network.Google.Monitoring
     , tFields
     , tSyntax
 
+    -- ** UptimeCheckConfigSelectedRegionsItem
+    , UptimeCheckConfigSelectedRegionsItem (..)
+
     -- ** MetricDescriptorMetricKind
     , MetricDescriptorMetricKind (..)
 
     -- ** CreateCollectdTimeSeriesResponse
     , CreateCollectdTimeSeriesResponse
     , createCollectdTimeSeriesResponse
+    , cctsrSummary
     , cctsrPayloadErrors
+
+    -- ** LatencyCriteria
+    , LatencyCriteria
+    , latencyCriteria
+    , lcThreshold
+
+    -- ** MeshIstio
+    , MeshIstio
+    , meshIstio
+    , miMeshUid
+    , miServiceNamespace
+    , miServiceName
 
     -- ** Option
     , Option
@@ -668,13 +988,29 @@ module Network.Google.Monitoring
     , oValue
     , oName
 
+    -- ** ServiceLevelObjectiveCalendarPeriod
+    , ServiceLevelObjectiveCalendarPeriod (..)
+
+    -- ** FoldersTimeSeriesListAggregationPerSeriesAligner
+    , FoldersTimeSeriesListAggregationPerSeriesAligner (..)
+
     -- ** Condition
     , Condition
     , condition
     , cConditionAbsent
     , cConditionThreshold
     , cName
+    , cConditionMonitoringQueryLanguage
     , cDisplayName
+
+    -- ** TimeSeriesData
+    , TimeSeriesData
+    , timeSeriesData
+    , tsdPointData
+    , tsdLabelValues
+
+    -- ** ServicesServiceLevelObjectivesListView
+    , ServicesServiceLevelObjectivesListView (..)
 
     -- ** BucketOptions
     , BucketOptions
@@ -695,9 +1031,13 @@ module Network.Google.Monitoring
     , hTTPCheck
     , httpcUseSSL
     , httpcPath
+    , httpcBody
     , httpcMaskHeaders
     , httpcHeaders
+    , httpcValidateSSL
+    , httpcRequestMethod
     , httpcAuthInfo
+    , httpcContentType
     , httpcPort
 
     -- ** TimeSeries
@@ -709,6 +1049,10 @@ module Network.Google.Monitoring
     , tsResource
     , tsMetadata
     , tsValueType
+    , tsUnit
+
+    -- ** MetricDescriptorLaunchStage
+    , MetricDescriptorLaunchStage (..)
 
     -- ** AlertPolicy
     , AlertPolicy
@@ -720,14 +1064,27 @@ module Network.Google.Monitoring
     , apUserLabels
     , apName
     , apDocumentation
+    , apValidity
     , apDisplayName
     , apConditions
     , apCombiner
+
+    -- ** RequestBasedSli
+    , RequestBasedSli
+    , requestBasedSli
+    , rbsGoodTotalRatio
+    , rbsDistributionCut
+
+    -- ** CloudEndpoints
+    , CloudEndpoints
+    , cloudEndpoints
+    , ceService
 
     -- ** ListAlertPoliciesResponse
     , ListAlertPoliciesResponse
     , listAlertPoliciesResponse
     , laprNextPageToken
+    , laprTotalSize
     , laprAlertPolicies
 
     -- ** TCPCheck
@@ -755,6 +1112,8 @@ module Network.Google.Monitoring
 
 import Network.Google.Prelude
 import Network.Google.Monitoring.Types
+import Network.Google.Resource.Monitoring.Folders.TimeSeries.List
+import Network.Google.Resource.Monitoring.Organizations.TimeSeries.List
 import Network.Google.Resource.Monitoring.Projects.AlertPolicies.Create
 import Network.Google.Resource.Monitoring.Projects.AlertPolicies.Delete
 import Network.Google.Resource.Monitoring.Projects.AlertPolicies.Get
@@ -785,21 +1144,34 @@ import Network.Google.Resource.Monitoring.Projects.NotificationChannels.SendVeri
 import Network.Google.Resource.Monitoring.Projects.NotificationChannels.Verify
 import Network.Google.Resource.Monitoring.Projects.TimeSeries.Create
 import Network.Google.Resource.Monitoring.Projects.TimeSeries.List
+import Network.Google.Resource.Monitoring.Projects.TimeSeries.Query
 import Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Create
 import Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Delete
 import Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Get
 import Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.List
 import Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.Patch
+import Network.Google.Resource.Monitoring.Services.Create
+import Network.Google.Resource.Monitoring.Services.Delete
+import Network.Google.Resource.Monitoring.Services.Get
+import Network.Google.Resource.Monitoring.Services.List
+import Network.Google.Resource.Monitoring.Services.Patch
+import Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Create
+import Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Delete
+import Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Get
+import Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.List
+import Network.Google.Resource.Monitoring.Services.ServiceLevelObjectives.Patch
 import Network.Google.Resource.Monitoring.UptimeCheckIPs.List
 
 {- $resources
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Stackdriver Monitoring API service.
+-- | Represents the entirety of the methods and resources available for the Cloud Monitoring API service.
 type MonitoringAPI =
-     UptimeCheckIPsListResource :<|>
-       ProjectsMetricDescriptorsListResource
+     FoldersTimeSeriesListResource :<|>
+       UptimeCheckIPsListResource
+       :<|> OrganizationsTimeSeriesListResource
+       :<|> ProjectsMetricDescriptorsListResource
        :<|> ProjectsMetricDescriptorsGetResource
        :<|> ProjectsMetricDescriptorsCreateResource
        :<|> ProjectsMetricDescriptorsDeleteResource
@@ -838,3 +1210,14 @@ type MonitoringAPI =
        ProjectsNotificationChannelDescriptorsGetResource
        :<|> ProjectsTimeSeriesListResource
        :<|> ProjectsTimeSeriesCreateResource
+       :<|> ProjectsTimeSeriesQueryResource
+       :<|> ServicesServiceLevelObjectivesListResource
+       :<|> ServicesServiceLevelObjectivesPatchResource
+       :<|> ServicesServiceLevelObjectivesGetResource
+       :<|> ServicesServiceLevelObjectivesCreateResource
+       :<|> ServicesServiceLevelObjectivesDeleteResource
+       :<|> ServicesListResource
+       :<|> ServicesPatchResource
+       :<|> ServicesGetResource
+       :<|> ServicesCreateResource
+       :<|> ServicesDeleteResource

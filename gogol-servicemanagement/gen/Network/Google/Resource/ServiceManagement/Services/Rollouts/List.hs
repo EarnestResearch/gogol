@@ -145,7 +145,7 @@ srlUploadType
   = lens _srlUploadType
       (\ s a -> s{_srlUploadType = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 srlServiceName :: Lens' ServicesRolloutsList Text
@@ -153,8 +153,8 @@ srlServiceName
   = lens _srlServiceName
       (\ s a -> s{_srlServiceName = a})
 
--- | Use \`filter\` to return subset of rollouts. The following filters are
--- supported: -- To limit the results to only those in
+-- | Required. Use \`filter\` to return subset of rollouts. The following
+-- filters are supported: -- To limit the results to only those in
 -- [status](google.api.servicemanagement.v1.RolloutStatus) \'SUCCESS\', use
 -- filter=\'status=SUCCESS\' -- To limit the results to those in
 -- [status](google.api.servicemanagement.v1.RolloutStatus) \'CANCELLED\' or

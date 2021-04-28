@@ -109,8 +109,9 @@ projectsOccurrencesBatchCreate pPobcParent_ pPobcPayload_ =
     }
 
 
--- | The name of the project in the form of \`projects\/[PROJECT_ID]\`, under
--- which the occurrences are to be created.
+-- | Required. The name of the project in the form of
+-- \`projects\/[PROJECT_ID]\`, under which the occurrences are to be
+-- created.
 pobcParent :: Lens' ProjectsOccurrencesBatchCreate Text
 pobcParent
   = lens _pobcParent (\ s a -> s{_pobcParent = a})

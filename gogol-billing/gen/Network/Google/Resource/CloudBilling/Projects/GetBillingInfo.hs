@@ -131,8 +131,8 @@ pgbiUploadType
   = lens _pgbiUploadType
       (\ s a -> s{_pgbiUploadType = a})
 
--- | The resource name of the project for which billing information is
--- retrieved. For example, \`projects\/tokyo-rain-123\`.
+-- | Required. The resource name of the project for which billing information
+-- is retrieved. For example, \`projects\/tokyo-rain-123\`.
 pgbiName :: Lens' ProjectsGetBillingInfo Text
 pgbiName = lens _pgbiName (\ s a -> s{_pgbiName = a})
 
@@ -144,7 +144,9 @@ pgbiCallback
 instance GoogleRequest ProjectsGetBillingInfo where
         type Rs ProjectsGetBillingInfo = ProjectBillingInfo
         type Scopes ProjectsGetBillingInfo =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-billing.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient ProjectsGetBillingInfo'{..}
           = go _pgbiName _pgbiXgafv _pgbiUploadProtocol
               _pgbiAccessToken

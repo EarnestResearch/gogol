@@ -22,7 +22,7 @@
 --
 -- Retrieves, inserts, and deletes multiple products in a single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.products.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.products.custombatch@.
 module Network.Google.Resource.Content.Products.Custombatch
     (
     -- * REST Resource
@@ -33,8 +33,13 @@ module Network.Google.Resource.Content.Products.Custombatch
     , ProductsCustombatch
 
     -- * Request Lenses
+    , pcXgafv
+    , pcUploadProtocol
+    , pcAccessToken
+    , pcUploadType
     , pcPayload
     , pcDryRun
+    , pcCallback
     ) where
 
 import Network.Google.Prelude
@@ -47,18 +52,28 @@ type ProductsCustombatchResource =
        "v2" :>
          "products" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] ProductsCustomBatchRequest :>
-                   Post '[JSON] ProductsCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] ProductsCustomBatchRequest :>
+                             Post '[JSON] ProductsCustomBatchResponse
 
 -- | Retrieves, inserts, and deletes multiple products in a single request.
 --
 -- /See:/ 'productsCustombatch' smart constructor.
 data ProductsCustombatch =
   ProductsCustombatch'
-    { _pcPayload :: !ProductsCustomBatchRequest
+    { _pcXgafv :: !(Maybe Xgafv)
+    , _pcUploadProtocol :: !(Maybe Text)
+    , _pcAccessToken :: !(Maybe Text)
+    , _pcUploadType :: !(Maybe Text)
+    , _pcPayload :: !ProductsCustomBatchRequest
     , _pcDryRun :: !(Maybe Bool)
+    , _pcCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,15 +82,54 @@ data ProductsCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'pcXgafv'
+--
+-- * 'pcUploadProtocol'
+--
+-- * 'pcAccessToken'
+--
+-- * 'pcUploadType'
+--
 -- * 'pcPayload'
 --
 -- * 'pcDryRun'
+--
+-- * 'pcCallback'
 productsCustombatch
     :: ProductsCustomBatchRequest -- ^ 'pcPayload'
     -> ProductsCustombatch
 productsCustombatch pPcPayload_ =
-  ProductsCustombatch' {_pcPayload = pPcPayload_, _pcDryRun = Nothing}
+  ProductsCustombatch'
+    { _pcXgafv = Nothing
+    , _pcUploadProtocol = Nothing
+    , _pcAccessToken = Nothing
+    , _pcUploadType = Nothing
+    , _pcPayload = pPcPayload_
+    , _pcDryRun = Nothing
+    , _pcCallback = Nothing
+    }
 
+
+-- | V1 error format.
+pcXgafv :: Lens' ProductsCustombatch (Maybe Xgafv)
+pcXgafv = lens _pcXgafv (\ s a -> s{_pcXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+pcUploadProtocol :: Lens' ProductsCustombatch (Maybe Text)
+pcUploadProtocol
+  = lens _pcUploadProtocol
+      (\ s a -> s{_pcUploadProtocol = a})
+
+-- | OAuth access token.
+pcAccessToken :: Lens' ProductsCustombatch (Maybe Text)
+pcAccessToken
+  = lens _pcAccessToken
+      (\ s a -> s{_pcAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+pcUploadType :: Lens' ProductsCustombatch (Maybe Text)
+pcUploadType
+  = lens _pcUploadType (\ s a -> s{_pcUploadType = a})
 
 -- | Multipart request metadata.
 pcPayload :: Lens' ProductsCustombatch ProductsCustomBatchRequest
@@ -88,13 +142,23 @@ pcPayload
 pcDryRun :: Lens' ProductsCustombatch (Maybe Bool)
 pcDryRun = lens _pcDryRun (\ s a -> s{_pcDryRun = a})
 
+-- | JSONP
+pcCallback :: Lens' ProductsCustombatch (Maybe Text)
+pcCallback
+  = lens _pcCallback (\ s a -> s{_pcCallback = a})
+
 instance GoogleRequest ProductsCustombatch where
         type Rs ProductsCustombatch =
              ProductsCustomBatchResponse
         type Scopes ProductsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ProductsCustombatch'{..}
-          = go _pcDryRun (Just AltJSON) _pcPayload
+          = go _pcXgafv _pcUploadProtocol _pcAccessToken
+              _pcUploadType
+              _pcDryRun
+              _pcCallback
+              (Just AltJSON)
+              _pcPayload
               shoppingContentService
           where go
                   = buildClient

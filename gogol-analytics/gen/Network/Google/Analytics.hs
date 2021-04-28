@@ -306,6 +306,7 @@ module Network.Google.Analytics
     , userDeletionRequest
     , udrWebPropertyId
     , udrKind
+    , udrPropertyId
     , udrId
     , udrFirebaseProjectId
     , udrDeletionRequestTime

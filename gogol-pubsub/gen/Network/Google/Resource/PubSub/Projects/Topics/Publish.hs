@@ -138,8 +138,8 @@ ptptPayload :: Lens' ProjectsTopicsPublish PublishRequest
 ptptPayload
   = lens _ptptPayload (\ s a -> s{_ptptPayload = a})
 
--- | The messages in the request will be published on this topic. Format is
--- \`projects\/{project}\/topics\/{topic}\`.
+-- | Required. The messages in the request will be published on this topic.
+-- Format is \`projects\/{project}\/topics\/{topic}\`.
 ptptTopic :: Lens' ProjectsTopicsPublish Text
 ptptTopic
   = lens _ptptTopic (\ s a -> s{_ptptTopic = a})

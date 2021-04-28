@@ -45,7 +45,6 @@ module Network.Google.AdExchangeBuyer.Types
     , cnataHeadline
     , cnataImpressionTrackingURL
     , cnataCallToAction
-    , cnataStore
     , cnataVideoURL
     , cnataPrice
     , cnataAdvertiser
@@ -131,6 +130,11 @@ module Network.Google.AdExchangeBuyer.Types
     , marketplaceDealParty
     , mdpSeller
     , mdpBuyer
+
+    -- * TargetingValueRequestPlatformTargeting
+    , TargetingValueRequestPlatformTargeting
+    , targetingValueRequestPlatformTargeting
+    , tvrptRequestPlatforms
 
     -- * GetOrderNotesResponse
     , GetOrderNotesResponse
@@ -226,6 +230,7 @@ module Network.Google.AdExchangeBuyer.Types
     , cDealsStatus
     , cWidth
     , cClickThroughURL
+    , cAdTechnologyProviders
     , cLanguages
     , cVendorType
     , cAccountId
@@ -376,6 +381,7 @@ module Network.Google.AdExchangeBuyer.Types
     , pcVideoPlayerSizes
     , pcConfigId
     , pcPlacements
+    , pcMaximumQps
     , pcExcludedUserLists
     , pcConfigName
     , pcGeoCriteriaIds
@@ -468,6 +474,12 @@ module Network.Google.AdExchangeBuyer.Types
     , upaprNote
     , upaprProposalRevisionNumber
 
+    -- * MobileApplication
+    , MobileApplication
+    , mobileApplication
+    , maExternalAppId
+    , maAppStore
+
     -- * PretargetingConfigDimensionsItem
     , PretargetingConfigDimensionsItem
     , pretargetingConfigDimensionsItem
@@ -489,9 +501,16 @@ module Network.Google.AdExchangeBuyer.Types
     , ppfWeeklyUniques
     , ppfDimensions
 
+    -- * CreativeAdTechnologyProviders
+    , CreativeAdTechnologyProviders
+    , creativeAdTechnologyProviders
+    , catpHasUnidentifiedProvider
+    , catpDetectedProviderIds
+
     -- * TargetingValue
     , TargetingValue
     , targetingValue
+    , tvRequestPlatformTargetingValue
     , tvDemogAgeCriteriaValue
     , tvCreativeSizeValue
     , tvStringValue
@@ -610,6 +629,7 @@ module Network.Google.AdExchangeBuyer.Types
     -- * PublisherProFileAPIProto
     , PublisherProFileAPIProto
     , publisherProFileAPIProto
+    , ppfapPublisherApps
     , ppfapAudience
     , ppfapState
     , ppfapMediaKitLink
@@ -623,6 +643,7 @@ module Network.Google.AdExchangeBuyer.Types
     , ppfapProFileId
     , ppfapIsParent
     , ppfapSeller
+    , ppfapPublisherAppIds
     , ppfapName
     , ppfapBuyerPitchStatement
     , ppfapPublisherProvidedForecast
@@ -641,6 +662,7 @@ module Network.Google.AdExchangeBuyer.Types
     , mdIsSetupComplete
     , mdWebPropertyCode
     , mdCreationTimeMs
+    , mdMakegoodRequestedReason
     , mdTerms
     , mdLastUpdateTimeMs
     , mdKind

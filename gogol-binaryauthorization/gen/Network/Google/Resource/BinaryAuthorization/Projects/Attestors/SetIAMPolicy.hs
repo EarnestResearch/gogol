@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ <https://cloud.google.com/binary-authorization/ Binary Authorization API Reference> for @binaryauthorization.projects.attestors.setIamPolicy@.
 module Network.Google.Resource.BinaryAuthorization.Projects.Attestors.SetIAMPolicy
@@ -49,7 +50,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.attestors.setIamPolicy@ method which the
 -- 'ProjectsAttestorsSetIAMPolicy' request conforms to.
 type ProjectsAttestorsSetIAMPolicyResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "resource" "setIamPolicy" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -61,7 +62,8 @@ type ProjectsAttestorsSetIAMPolicyResource =
                        Post '[JSON] IAMPolicy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ 'projectsAttestorsSetIAMPolicy' smart constructor.
 data ProjectsAttestorsSetIAMPolicy =

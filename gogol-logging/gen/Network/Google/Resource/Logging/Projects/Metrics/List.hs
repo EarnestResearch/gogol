@@ -22,7 +22,7 @@
 --
 -- Lists logs-based metrics.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.projects.metrics.list@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.projects.metrics.list@.
 module Network.Google.Resource.Logging.Projects.Metrics.List
     (
     -- * REST Resource

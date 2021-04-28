@@ -33,8 +33,13 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.RunQuery
     , QueriesRunQuery
 
     -- * Request Lenses
+    , qrqXgafv
     , qrqQueryId
+    , qrqUploadProtocol
+    , qrqAccessToken
+    , qrqUploadType
     , qrqPayload
+    , qrqCallback
     ) where
 
 import Network.Google.DoubleClickBids.Types
@@ -47,16 +52,26 @@ type QueriesRunQueryResource =
        "v1" :>
          "query" :>
            Capture "queryId" (Textual Int64) :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] RunQueryRequest :> Post '[JSON] ()
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "callback" Text :>
+                       QueryParam "alt" AltJSON :>
+                         ReqBody '[JSON] RunQueryRequest :> Post '[JSON] ()
 
 -- | Runs a stored query to generate a report.
 --
 -- /See:/ 'queriesRunQuery' smart constructor.
 data QueriesRunQuery =
   QueriesRunQuery'
-    { _qrqQueryId :: !(Textual Int64)
+    { _qrqXgafv :: !(Maybe Xgafv)
+    , _qrqQueryId :: !(Textual Int64)
+    , _qrqUploadProtocol :: !(Maybe Text)
+    , _qrqAccessToken :: !(Maybe Text)
+    , _qrqUploadType :: !(Maybe Text)
     , _qrqPayload :: !RunQueryRequest
+    , _qrqCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -65,17 +80,38 @@ data QueriesRunQuery =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'qrqXgafv'
+--
 -- * 'qrqQueryId'
 --
+-- * 'qrqUploadProtocol'
+--
+-- * 'qrqAccessToken'
+--
+-- * 'qrqUploadType'
+--
 -- * 'qrqPayload'
+--
+-- * 'qrqCallback'
 queriesRunQuery
     :: Int64 -- ^ 'qrqQueryId'
     -> RunQueryRequest -- ^ 'qrqPayload'
     -> QueriesRunQuery
 queriesRunQuery pQrqQueryId_ pQrqPayload_ =
   QueriesRunQuery'
-    {_qrqQueryId = _Coerce # pQrqQueryId_, _qrqPayload = pQrqPayload_}
+    { _qrqXgafv = Nothing
+    , _qrqQueryId = _Coerce # pQrqQueryId_
+    , _qrqUploadProtocol = Nothing
+    , _qrqAccessToken = Nothing
+    , _qrqUploadType = Nothing
+    , _qrqPayload = pQrqPayload_
+    , _qrqCallback = Nothing
+    }
 
+
+-- | V1 error format.
+qrqXgafv :: Lens' QueriesRunQuery (Maybe Xgafv)
+qrqXgafv = lens _qrqXgafv (\ s a -> s{_qrqXgafv = a})
 
 -- | Query ID to run.
 qrqQueryId :: Lens' QueriesRunQuery Int64
@@ -83,17 +119,45 @@ qrqQueryId
   = lens _qrqQueryId (\ s a -> s{_qrqQueryId = a}) .
       _Coerce
 
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+qrqUploadProtocol :: Lens' QueriesRunQuery (Maybe Text)
+qrqUploadProtocol
+  = lens _qrqUploadProtocol
+      (\ s a -> s{_qrqUploadProtocol = a})
+
+-- | OAuth access token.
+qrqAccessToken :: Lens' QueriesRunQuery (Maybe Text)
+qrqAccessToken
+  = lens _qrqAccessToken
+      (\ s a -> s{_qrqAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+qrqUploadType :: Lens' QueriesRunQuery (Maybe Text)
+qrqUploadType
+  = lens _qrqUploadType
+      (\ s a -> s{_qrqUploadType = a})
+
 -- | Multipart request metadata.
 qrqPayload :: Lens' QueriesRunQuery RunQueryRequest
 qrqPayload
   = lens _qrqPayload (\ s a -> s{_qrqPayload = a})
+
+-- | JSONP
+qrqCallback :: Lens' QueriesRunQuery (Maybe Text)
+qrqCallback
+  = lens _qrqCallback (\ s a -> s{_qrqCallback = a})
 
 instance GoogleRequest QueriesRunQuery where
         type Rs QueriesRunQuery = ()
         type Scopes QueriesRunQuery =
              '["https://www.googleapis.com/auth/doubleclickbidmanager"]
         requestClient QueriesRunQuery'{..}
-          = go _qrqQueryId (Just AltJSON) _qrqPayload
+          = go _qrqQueryId _qrqXgafv _qrqUploadProtocol
+              _qrqAccessToken
+              _qrqUploadType
+              _qrqCallback
+              (Just AltJSON)
+              _qrqPayload
               doubleClickBidsService
           where go
                   = buildClient

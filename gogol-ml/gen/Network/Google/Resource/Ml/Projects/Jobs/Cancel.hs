@@ -22,7 +22,7 @@
 --
 -- Cancels a running job.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.jobs.cancel@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.jobs.cancel@.
 module Network.Google.Resource.Ml.Projects.Jobs.Cancel
     (
     -- * REST Resource

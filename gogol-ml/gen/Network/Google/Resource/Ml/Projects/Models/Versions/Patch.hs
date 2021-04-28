@@ -21,9 +21,10 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Updates the specified Version resource. Currently the only update-able
--- fields are \`description\` and \`autoScaling.minNodes\`.
+-- fields are \`description\`, \`requestLoggingConfig\`,
+-- \`autoScaling.minNodes\`, and \`manualScaling.nodes\`.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.versions.patch@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.versions.patch@.
 module Network.Google.Resource.Ml.Projects.Models.Versions.Patch
     (
     -- * REST Resource
@@ -63,7 +64,8 @@ type ProjectsModelsVersionsPatchResource =
                          Patch '[JSON] GoogleLongrunning__Operation
 
 -- | Updates the specified Version resource. Currently the only update-able
--- fields are \`description\` and \`autoScaling.minNodes\`.
+-- fields are \`description\`, \`requestLoggingConfig\`,
+-- \`autoScaling.minNodes\`, and \`manualScaling.nodes\`.
 --
 -- /See:/ 'projectsModelsVersionsPatch' smart constructor.
 data ProjectsModelsVersionsPatch =
@@ -131,9 +133,12 @@ pmvpUploadProtocol
 -- update. Must be present and non-empty. For example, to change the
 -- description of a version to \"foo\", the \`update_mask\` parameter would
 -- be specified as \`description\`, and the \`PATCH\` request body would
--- specify the new value, as follows: { \"description\": \"foo\" }
--- Currently the only supported update mask fields are \`description\` and
--- \`autoScaling.minNodes\`.
+-- specify the new value, as follows: \`\`\` { \"description\": \"foo\" }
+-- \`\`\` Currently the only supported update mask fields are
+-- \`description\`, \`requestLoggingConfig\`, \`autoScaling.minNodes\`, and
+-- \`manualScaling.nodes\`. However, you can only update
+-- \`manualScaling.nodes\` if the version uses a [Compute Engine (N1)
+-- machine type](\/ml-engine\/docs\/machine-types-online-prediction).
 pmvpUpdateMask :: Lens' ProjectsModelsVersionsPatch (Maybe GFieldMask)
 pmvpUpdateMask
   = lens _pmvpUpdateMask

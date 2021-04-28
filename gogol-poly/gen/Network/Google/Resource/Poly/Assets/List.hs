@@ -67,7 +67,8 @@ type AssetsListResource =
                        QueryParam "keywords" Text :>
                          QueryParam "pageToken" Text :>
                            QueryParam "curated" Bool :>
-                             QueryParam "maxComplexity" Text :>
+                             QueryParam "maxComplexity" AssetsListMaxComplexity
+                               :>
                                QueryParam "pageSize" (Textual Int32) :>
                                  QueryParam "callback" Text :>
                                    QueryParam "alt" AltJSON :>
@@ -89,7 +90,7 @@ data AssetsList =
     , _alKeywords :: !(Maybe Text)
     , _alPageToken :: !(Maybe Text)
     , _alCurated :: !(Maybe Bool)
-    , _alMaxComplexity :: !(Maybe Text)
+    , _alMaxComplexity :: !(Maybe AssetsListMaxComplexity)
     , _alPageSize :: !(Maybe (Textual Int32))
     , _alCallback :: !(Maybe Text)
     }
@@ -207,7 +208,7 @@ alCurated
 -- | Returns assets that are of the specified complexity or less. Defaults to
 -- COMPLEX. For example, a request for MEDIUM assets also includes SIMPLE
 -- assets.
-alMaxComplexity :: Lens' AssetsList (Maybe Text)
+alMaxComplexity :: Lens' AssetsList (Maybe AssetsListMaxComplexity)
 alMaxComplexity
   = lens _alMaxComplexity
       (\ s a -> s{_alMaxComplexity = a})

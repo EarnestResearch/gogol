@@ -56,6 +56,9 @@ module Network.Google.BigQuery
     -- ** bigquery.jobs.cancel
     , module Network.Google.Resource.BigQuery.Jobs.Cancel
 
+    -- ** bigquery.jobs.delete
+    , module Network.Google.Resource.BigQuery.Jobs.Delete
+
     -- ** bigquery.jobs.get
     , module Network.Google.Resource.BigQuery.Jobs.Get
 
@@ -71,11 +74,50 @@ module Network.Google.BigQuery
     -- ** bigquery.jobs.query
     , module Network.Google.Resource.BigQuery.Jobs.Query
 
+    -- ** bigquery.models.delete
+    , module Network.Google.Resource.BigQuery.Models.Delete
+
+    -- ** bigquery.models.get
+    , module Network.Google.Resource.BigQuery.Models.Get
+
+    -- ** bigquery.models.list
+    , module Network.Google.Resource.BigQuery.Models.List
+
+    -- ** bigquery.models.patch
+    , module Network.Google.Resource.BigQuery.Models.Patch
+
     -- ** bigquery.projects.getServiceAccount
     , module Network.Google.Resource.BigQuery.Projects.GetServiceAccount
 
     -- ** bigquery.projects.list
     , module Network.Google.Resource.BigQuery.Projects.List
+
+    -- ** bigquery.routines.delete
+    , module Network.Google.Resource.BigQuery.Routines.Delete
+
+    -- ** bigquery.routines.get
+    , module Network.Google.Resource.BigQuery.Routines.Get
+
+    -- ** bigquery.routines.insert
+    , module Network.Google.Resource.BigQuery.Routines.Insert
+
+    -- ** bigquery.routines.list
+    , module Network.Google.Resource.BigQuery.Routines.List
+
+    -- ** bigquery.routines.update
+    , module Network.Google.Resource.BigQuery.Routines.Update
+
+    -- ** bigquery.rowAccessPolicies.getIamPolicy
+    , module Network.Google.Resource.BigQuery.RowAccessPolicies.GetIAMPolicy
+
+    -- ** bigquery.rowAccessPolicies.list
+    , module Network.Google.Resource.BigQuery.RowAccessPolicies.List
+
+    -- ** bigquery.rowAccessPolicies.setIamPolicy
+    , module Network.Google.Resource.BigQuery.RowAccessPolicies.SetIAMPolicy
+
+    -- ** bigquery.rowAccessPolicies.testIamPermissions
+    , module Network.Google.Resource.BigQuery.RowAccessPolicies.TestIAMPermissions
 
     -- ** bigquery.tabledata.insertAll
     , module Network.Google.Resource.BigQuery.TableData.InsertAll
@@ -89,6 +131,9 @@ module Network.Google.BigQuery
     -- ** bigquery.tables.get
     , module Network.Google.Resource.BigQuery.Tables.Get
 
+    -- ** bigquery.tables.getIamPolicy
+    , module Network.Google.Resource.BigQuery.Tables.GetIAMPolicy
+
     -- ** bigquery.tables.insert
     , module Network.Google.Resource.BigQuery.Tables.Insert
 
@@ -98,10 +143,26 @@ module Network.Google.BigQuery
     -- ** bigquery.tables.patch
     , module Network.Google.Resource.BigQuery.Tables.Patch
 
+    -- ** bigquery.tables.setIamPolicy
+    , module Network.Google.Resource.BigQuery.Tables.SetIAMPolicy
+
+    -- ** bigquery.tables.testIamPermissions
+    , module Network.Google.Resource.BigQuery.Tables.TestIAMPermissions
+
     -- ** bigquery.tables.update
     , module Network.Google.Resource.BigQuery.Tables.Update
 
     -- * Types
+
+    -- ** ModelReference
+    , ModelReference
+    , modelReference
+    , mrModelId
+    , mrDataSetId
+    , mrProjectId
+
+    -- ** TrainingOptionsDataFrequency
+    , TrainingOptionsDataFrequency (..)
 
     -- ** JobReference
     , JobReference
@@ -109,6 +170,9 @@ module Network.Google.BigQuery
     , jrJobId
     , jrLocation
     , jrProjectId
+
+    -- ** ArimaSingleModelForecastingMetricsSeasonalPeriodsItem
+    , ArimaSingleModelForecastingMetricsSeasonalPeriodsItem (..)
 
     -- ** TableList
     , TableList
@@ -119,6 +183,9 @@ module Network.Google.BigQuery
     , tlKind
     , tlTables
 
+    -- ** ArimaResultSeasonalPeriodsItem
+    , ArimaResultSeasonalPeriodsItem (..)
+
     -- ** DataSetListDataSetsItem
     , DataSetListDataSetsItem
     , dataSetListDataSetsItem
@@ -128,6 +195,13 @@ module Network.Google.BigQuery
     , dsldsiDataSetReference
     , dsldsiId
     , dsldsiLabels
+
+    -- ** ClusterInfo
+    , ClusterInfo
+    , clusterInfo
+    , ciClusterSize
+    , ciClusterRadius
+    , ciCentroidId
 
     -- ** TableDataList
     , TableDataList
@@ -142,10 +216,12 @@ module Network.Google.BigQuery
     , JobConfigurationTableCopy
     , jobConfigurationTableCopy
     , jctcDestinationTable
+    , jctcDestinationExpirationTime
     , jctcWriteDisPosition
     , jctcSourceTables
     , jctcCreateDisPosition
     , jctcSourceTable
+    , jctcOperationType
     , jctcDestinationEncryptionConfiguration
 
     -- ** TableListTablesItem
@@ -153,6 +229,7 @@ module Network.Google.BigQuery
     , tableListTablesItem
     , tltiCreationTime
     , tltiClustering
+    , tltiRangePartitioning
     , tltiTableReference
     , tltiFriendlyName
     , tltiKind
@@ -163,10 +240,21 @@ module Network.Google.BigQuery
     , tltiType
     , tltiExpirationTime
 
+    -- ** TableFieldSchemaPolicyTags
+    , TableFieldSchemaPolicyTags
+    , tableFieldSchemaPolicyTags
+    , tfsptNames
+
     -- ** TableSchema
     , TableSchema
     , tableSchema
     , tsFields
+
+    -- ** AuditConfig
+    , AuditConfig
+    , auditConfig
+    , acService
+    , acAuditLogConfigs
 
     -- ** ProjectList
     , ProjectList
@@ -177,11 +265,54 @@ module Network.Google.BigQuery
     , plKind
     , plProjects
 
+    -- ** ArimaModelInfo
+    , ArimaModelInfo
+    , arimaModelInfo
+    , amiHasStepChanges
+    , amiHasSpikesAndDips
+    , amiSeasonalPeriods
+    , amiNonSeasonalOrder
+    , amiHasDrift
+    , amiArimaCoefficients
+    , amiTimeSeriesIds
+    , amiHasHolidayEffect
+    , amiTimeSeriesId
+    , amiArimaFittingMetrics
+
+    -- ** RowLevelSecurityStatistics
+    , RowLevelSecurityStatistics
+    , rowLevelSecurityStatistics
+    , rlssRowLevelSecurityApplied
+
+    -- ** FeatureValue
+    , FeatureValue
+    , featureValue
+    , fvFeatureColumn
+    , fvNumericalValue
+    , fvCategoricalValue
+
+    -- ** RoutineDeterminismLevel
+    , RoutineDeterminismLevel (..)
+
     -- ** ExplainQueryStep
     , ExplainQueryStep
     , explainQueryStep
     , eqsSubsteps
     , eqsKind
+
+    -- ** Expr
+    , Expr
+    , expr
+    , eLocation
+    , eExpression
+    , eTitle
+    , eDescription
+
+    -- ** StandardSQLField
+    , StandardSQLField
+    , standardSQLField
+    , ssqlfName
+    , ssqlfType
 
     -- ** QueryTimelineSample
     , QueryTimelineSample
@@ -192,12 +323,24 @@ module Network.Google.BigQuery
     , qtsElapsedMs
     , qtsCompletedUnits
 
+    -- ** GetIAMPolicyRequest
+    , GetIAMPolicyRequest
+    , getIAMPolicyRequest
+    , giprOptions
+
     -- ** QueryParameterTypeStructTypesItem
     , QueryParameterTypeStructTypesItem
     , queryParameterTypeStructTypesItem
     , qptstiName
     , qptstiType
     , qptstiDescription
+
+    -- ** Cluster
+    , Cluster
+    , cluster
+    , cFeatureValues
+    , cCount
+    , cCentroidId
 
     -- ** BigtableColumnFamily
     , BigtableColumnFamily
@@ -212,6 +355,9 @@ module Network.Google.BigQuery
     , JobStatistics
     , jobStatistics
     , jsCreationTime
+    , jsRowLevelSecurityStatistics
+    , jsReservationId
+    , jsTransactionInfoTemplate
     , jsStartTime
     , jsCompletionRatio
     , jsNumChildJobs
@@ -221,8 +367,10 @@ module Network.Google.BigQuery
     , jsQuotaDeferments
     , jsEndTime
     , jsQuery
+    , jsScriptStatistics
     , jsExtract
     , jsReservationUsage
+    , jsSessionInfoTemplate
     , jsParentJobId
 
     -- ** JobConfigurationLabels
@@ -236,6 +384,8 @@ module Network.Google.BigQuery
     , dsCreationTime
     , dsDefaultPartitionExpirationMs
     , dsAccess
+    , dsSatisfiesPZS
+    , dsDefaultEncryptionConfiguration
     , dsEtag
     , dsLocation
     , dsFriendlyName
@@ -247,6 +397,11 @@ module Network.Google.BigQuery
     , dsLabels
     , dsDefaultTableExpirationMs
     , dsDescription
+
+    -- ** ModelLabels
+    , ModelLabels
+    , modelLabels
+    , mlAddtional
 
     -- ** RangePartitioningRange
     , RangePartitioningRange
@@ -273,19 +428,38 @@ module Network.Google.BigQuery
     , clustering
     , cFields
 
+    -- ** StandardSQLStructType
+    , StandardSQLStructType
+    , standardSQLStructType
+    , ssqlstFields
+
+    -- ** CategoricalValue
+    , CategoricalValue
+    , categoricalValue
+    , cvCategoryCounts
+
+    -- ** StandardSQLDataType
+    , StandardSQLDataType
+    , standardSQLDataType
+    , ssqldtArrayElementType
+    , ssqldtStructType
+    , ssqldtTypeKind
+
     -- ** ExternalDataConfiguration
     , ExternalDataConfiguration
     , externalDataConfiguration
     , edcBigtableOptions
     , edcIgnoreUnknownValues
-    , edcHivePartitioningMode
+    , edcConnectionId
     , edcCompression
     , edcSourceFormat
     , edcSchema
     , edcMaxBadRecords
     , edcGoogleSheetsOptions
     , edcAutodetect
+    , edcHivePartitioningOptions
     , edcSourceURIs
+    , edcParquetOptions
     , edcCSVOptions
 
     -- ** TableReference
@@ -301,6 +475,21 @@ module Network.Google.BigQuery
     , mdmoModelType
     , mdmoLabels
     , mdmoLossType
+
+    -- ** RowAccessPolicyReference
+    , RowAccessPolicyReference
+    , rowAccessPolicyReference
+    , raprPolicyId
+    , raprDataSetId
+    , raprProjectId
+    , raprTableId
+
+    -- ** ClusteringMetrics
+    , ClusteringMetrics
+    , clusteringMetrics
+    , cmDaviesBouldinIndex
+    , cmMeanSquaredDistance
+    , cmClusters
 
     -- ** RoutineReference
     , RoutineReference
@@ -318,8 +507,12 @@ module Network.Google.BigQuery
     -- ** TableFieldSchema
     , TableFieldSchema
     , tableFieldSchema
+    , tfsMaxLength
+    , tfsScale
     , tfsMode
+    , tfsPrecision
     , tfsCategories
+    , tfsPolicyTags
     , tfsName
     , tfsType
     , tfsDescription
@@ -341,6 +534,75 @@ module Network.Google.BigQuery
     , gqrrJobComplete
     , gqrrCacheHit
 
+    -- ** RegressionMetrics
+    , RegressionMetrics
+    , regressionMetrics
+    , rmMeanAbsoluteError
+    , rmMeanSquaredLogError
+    , rmRSquared
+    , rmMeanSquaredError
+    , rmMedianAbsoluteError
+
+    -- ** TrainingOptionsKmeansInitializationMethod
+    , TrainingOptionsKmeansInitializationMethod (..)
+
+    -- ** ArgumentArgumentKind
+    , ArgumentArgumentKind (..)
+
+    -- ** ArgumentMode
+    , ArgumentMode (..)
+
+    -- ** TrainingOptions
+    , TrainingOptions
+    , trainingOptions
+    , toDataFrequency
+    , toDataSplitColumn
+    , toHiddenUnits
+    , toUserColumn
+    , toMaxTreeDepth
+    , toNumClusters
+    , toCleanSpikesAndDips
+    , toDecomposeTimeSeries
+    , toL2Regularization
+    , toSubSample
+    , toAdjustStepChanges
+    , toInputLabelColumns
+    , toWalsAlpha
+    , toTimeSeriesDataColumn
+    , toKmeansInitializationMethod
+    , toAutoArimaMaxOrder
+    , toMinRelativeProgress
+    , toTimeSeriesIdColumns
+    , toDataSplitEvalFraction
+    , toLearnRate
+    , toHolidayRegion
+    , toBatchSize
+    , toIncludeDrift
+    , toFeedbackType
+    , toAutoArima
+    , toNonSeasonalOrder
+    , toDropout
+    , toHorizon
+    , toPreserveInputStructs
+    , toOptimizationStrategy
+    , toDataSplitMethod
+    , toLearnRateStrategy
+    , toTimeSeriesIdColumn
+    , toMaxIterations
+    , toInitialLearnRate
+    , toNumFactors
+    , toEarlyStop
+    , toLabelClassWeights
+    , toLossType
+    , toDistanceType
+    , toItemColumn
+    , toMinSplitLoss
+    , toTimeSeriesTimestampColumn
+    , toKmeansInitializationColumn
+    , toWarmStart
+    , toModelURI
+    , toL1Regularization
+
     -- ** DataSetList
     , DataSetList
     , dataSetList
@@ -349,17 +611,53 @@ module Network.Google.BigQuery
     , dslKind
     , dslDataSets
 
+    -- ** GlobalExplanation
+    , GlobalExplanation
+    , globalExplanation
+    , geClassLabel
+    , geExplanations
+
+    -- ** SessionInfo
+    , SessionInfo
+    , sessionInfo
+    , siSessionId
+
+    -- ** AggregateClassificationMetrics
+    , AggregateClassificationMetrics
+    , aggregateClassificationMetrics
+    , acmLogLoss
+    , acmRecall
+    , acmPrecision
+    , acmThreshold
+    , acmF1Score
+    , acmAccuracy
+    , acmRocAuc
+
+    -- ** ModelModelType
+    , ModelModelType (..)
+
+    -- ** DataSplitResult
+    , DataSplitResult
+    , dataSplitResult
+    , dsrEvaluationTable
+    , dsrTrainingTable
+
     -- ** QueryRequest
     , QueryRequest
     , queryRequest
+    , qrRequestId
+    , qrConnectionProperties
     , qrLocation
     , qrUseQueryCache
     , qrPreserveNulls
     , qrKind
     , qrQueryParameters
+    , qrMaximumBytesBilled
     , qrQuery
     , qrParameterMode
+    , qrCreateSession
     , qrTimeoutMs
+    , qrLabels
     , qrUseLegacySQL
     , qrDryRun
     , qrMaxResults
@@ -367,6 +665,20 @@ module Network.Google.BigQuery
 
     -- ** JobsListProjection
     , JobsListProjection (..)
+
+    -- ** Explanation
+    , Explanation
+    , explanation
+    , eFeatureName
+    , eAttribution
+
+    -- ** Argument
+    , Argument
+    , argument
+    , aArgumentKind
+    , aMode
+    , aName
+    , aDataType
 
     -- ** BqmlTrainingRunTrainingOptions
     , BqmlTrainingRunTrainingOptions
@@ -388,11 +700,74 @@ module Network.Google.BigQuery
     , qpParameterType
     , qpName
 
+    -- ** CategoryCount
+    , CategoryCount
+    , categoryCount
+    , ccCategory
+    , ccCount
+
+    -- ** IterationResult
+    , IterationResult
+    , iterationResult
+    , irDurationMs
+    , irLearnRate
+    , irArimaResult
+    , irClusterInfos
+    , irEvalLoss
+    , irTrainingLoss
+    , irIndex
+
+    -- ** BinaryClassificationMetrics
+    , BinaryClassificationMetrics
+    , binaryClassificationMetrics
+    , bcmPositiveLabel
+    , bcmAggregateClassificationMetrics
+    , bcmBinaryConfusionMatrixList
+    , bcmNegativeLabel
+
+    -- ** GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
+
     -- ** JobStatistics4
     , JobStatistics4
     , jobStatistics4
     , jsInputBytes
     , jsDestinationURIFileCounts
+
+    -- ** QueryRequestLabels
+    , QueryRequestLabels
+    , queryRequestLabels
+    , qrlAddtional
+
+    -- ** MultiClassClassificationMetrics
+    , MultiClassClassificationMetrics
+    , multiClassClassificationMetrics
+    , mccmAggregateClassificationMetrics
+    , mccmConfusionMatrixList
+
+    -- ** SetIAMPolicyRequest
+    , SetIAMPolicyRequest
+    , setIAMPolicyRequest
+    , siprUpdateMask
+    , siprPolicy
+
+    -- ** BinaryConfusionMatrix
+    , BinaryConfusionMatrix
+    , binaryConfusionMatrix
+    , bcmPositiveClassThreshold
+    , bcmFalsePositives
+    , bcmRecall
+    , bcmPrecision
+    , bcmTrueNegatives
+    , bcmF1Score
+    , bcmFalseNegatives
+    , bcmAccuracy
+    , bcmTruePositives
+
+    -- ** TrainingOptionsHolidayRegion
+    , TrainingOptionsHolidayRegion (..)
 
     -- ** ProjectReference
     , ProjectReference
@@ -421,6 +796,7 @@ module Network.Google.BigQuery
     , eqsReadRatioMax
     , eqsWriteMsMax
     , eqsWaitRatioAvg
+    , eqsSlotMs
     , eqsWaitMsAvg
     , eqsId
     , eqsComputeRatioMax
@@ -431,6 +807,12 @@ module Network.Google.BigQuery
     , eqsStartMs
     , eqsEndMs
     , eqsWaitMsMax
+
+    -- ** SnapshotDefinition
+    , SnapshotDefinition
+    , snapshotDefinition
+    , sdBaseTableReference
+    , sdSnapshotTime
 
     -- ** BigQueryModelTraining
     , BigQueryModelTraining
@@ -451,26 +833,47 @@ module Network.Google.BigQuery
     , jclSchemaInline
     , jclIgnoreUnknownValues
     , jclSchemaUpdateOptions
-    , jclHivePartitioningMode
     , jclCreateDisPosition
     , jclSchemaInlineFormat
     , jclAllowQuotedNewlines
     , jclSourceFormat
+    , jclJSONExtension
     , jclUseAvroLogicalTypes
+    , jclDecimalTargetTypes
     , jclSchema
     , jclTimePartitioning
     , jclQuote
     , jclMaxBadRecords
     , jclAutodetect
+    , jclHivePartitioningOptions
     , jclSourceURIs
     , jclEncoding
     , jclDestinationTableProperties
     , jclDestinationEncryptionConfiguration
+    , jclParquetOptions
     , jclFieldDelimiter
     , jclNullMarker
 
     -- ** JobsListStateFilter
     , JobsListStateFilter (..)
+
+    -- ** RankingMetrics
+    , RankingMetrics
+    , rankingMetrics
+    , rMeanAveragePrecision
+    , rAverageRank
+    , rNormalizedDiscountedCumulativeGain
+    , rMeanSquaredError
+
+    -- ** EvaluationMetrics
+    , EvaluationMetrics
+    , evaluationMetrics
+    , emClusteringMetrics
+    , emRegressionMetrics
+    , emBinaryClassificationMetrics
+    , emMultiClassClassificationMetrics
+    , emRankingMetrics
+    , emArimaForecastingMetrics
 
     -- ** DataSetReference
     , DataSetReference
@@ -481,6 +884,8 @@ module Network.Google.BigQuery
     -- ** MaterializedViewDefinition
     , MaterializedViewDefinition
     , materializedViewDefinition
+    , mvdEnableRefresh
+    , mvdRefreshIntervalMs
     , mvdQuery
     , mvdLastRefreshTime
 
@@ -492,6 +897,9 @@ module Network.Google.BigQuery
     , tdiarRows
     , tdiarTemplateSuffix
     , tdiarSkipInvalidRows
+
+    -- ** TrainingOptionsFeedbackType
+    , TrainingOptionsFeedbackType (..)
 
     -- ** GetServiceAccountResponse
     , GetServiceAccountResponse
@@ -507,6 +915,9 @@ module Network.Google.BigQuery
     , plpiProjectReference
     , plpiId
     , plpiNumericId
+
+    -- ** RoutineLanguage
+    , RoutineLanguage (..)
 
     -- ** BqmlIterationResult
     , BqmlIterationResult
@@ -534,10 +945,35 @@ module Network.Google.BigQuery
     , sOldestEntryTime
     , sEstimatedRows
 
+    -- ** ListRoutinesResponse
+    , ListRoutinesResponse
+    , listRoutinesResponse
+    , lrrNextPageToken
+    , lrrRoutines
+
+    -- ** ArimaModelInfoSeasonalPeriodsItem
+    , ArimaModelInfoSeasonalPeriodsItem (..)
+
     -- ** TableRow
     , TableRow
     , tableRow
     , trF
+
+    -- ** ScriptStackFrame
+    , ScriptStackFrame
+    , scriptStackFrame
+    , ssfText
+    , ssfProcedureId
+    , ssfStartLine
+    , ssfEndLine
+    , ssfStartColumn
+    , ssfEndColumn
+
+    -- ** Entry
+    , Entry
+    , entry
+    , ePredictedLabel
+    , eItemCount
 
     -- ** JobListJobsItem
     , JobListJobsItem
@@ -551,6 +987,25 @@ module Network.Google.BigQuery
     , jljiId
     , jljiStatistics
     , jljiConfiguration
+
+    -- ** ArimaResult
+    , ArimaResult
+    , arimaResult
+    , arArimaModelInfo
+    , arSeasonalPeriods
+
+    -- ** ArimaSingleModelForecastingMetrics
+    , ArimaSingleModelForecastingMetrics
+    , arimaSingleModelForecastingMetrics
+    , asmfmHasStepChanges
+    , asmfmHasSpikesAndDips
+    , asmfmSeasonalPeriods
+    , asmfmNonSeasonalOrder
+    , asmfmHasDrift
+    , asmfmTimeSeriesIds
+    , asmfmHasHolidayEffect
+    , asmfmTimeSeriesId
+    , asmfmArimaFittingMetrics
 
     -- ** TimePartitioning
     , TimePartitioning
@@ -569,6 +1024,25 @@ module Network.Google.BigQuery
     , DataSetLabels
     , dataSetLabels
     , dslAddtional
+
+    -- ** Model
+    , Model
+    , model
+    , mCreationTime
+    , mModelReference
+    , mBestTrialId
+    , mModelType
+    , mEtag
+    , mLocation
+    , mFriendlyName
+    , mLastModifiedTime
+    , mEncryptionConfiguration
+    , mTrainingRuns
+    , mLabels
+    , mLabelColumns
+    , mExpirationTime
+    , mDescription
+    , mFeatureColumns
 
     -- ** JobConfiguration
     , JobConfiguration
@@ -600,11 +1074,19 @@ module Network.Google.BigQuery
     , encryptionConfiguration
     , ecKmsKeyName
 
+    -- ** AuditLogConfigLogType
+    , AuditLogConfigLogType (..)
+
     -- ** TableDataInsertAllResponseInsertErrorsItem
     , TableDataInsertAllResponseInsertErrorsItem
     , tableDataInsertAllResponseInsertErrorsItem
     , tdiarieiErrors
     , tdiarieiIndex
+
+    -- ** DataSetAccessEntryTarget_typesItem
+    , DataSetAccessEntryTarget_typesItem
+    , dataSetAccessEntryTarget_typesItem
+    , dsaetiTargetType
 
     -- ** JobConfigurationExtract
     , JobConfigurationExtract
@@ -613,15 +1095,58 @@ module Network.Google.BigQuery
     , jceSourceTable
     , jcePrintHeader
     , jceCompression
+    , jceUseAvroLogicalTypes
     , jceDestinationURIs
     , jceDestinationURI
+    , jceSourceModel
     , jceFieldDelimiter
+
+    -- ** ScriptStatistics
+    , ScriptStatistics
+    , scriptStatistics
+    , ssStackFrames
+    , ssEvaluationKind
+
+    -- ** DataSetAccessEntry
+    , DataSetAccessEntry
+    , dataSetAccessEntry
+    , dsaeDataSet
+    , dsaeTargetTypes
+
+    -- ** TransactionInfo
+    , TransactionInfo
+    , transactionInfo
+    , tiTransactionId
+
+    -- ** Row
+    , Row
+    , row
+    , rEntries
+    , rActualLabel
+
+    -- ** TrainingOptionsOptimizationStrategy
+    , TrainingOptionsOptimizationStrategy (..)
+
+    -- ** TestIAMPermissionsRequest
+    , TestIAMPermissionsRequest
+    , testIAMPermissionsRequest
+    , tiprPermissions
 
     -- ** ModelDefinition
     , ModelDefinition
     , modelDefinition
     , mdModelOptions
     , mdTrainingRuns
+
+    -- ** ArimaForecastingMetrics
+    , ArimaForecastingMetrics
+    , arimaForecastingMetrics
+    , afmSeasonalPeriods
+    , afmNonSeasonalOrder
+    , afmHasDrift
+    , afmArimaSingleModelForecastingMetrics
+    , afmTimeSeriesId
+    , afmArimaFittingMetrics
 
     -- ** JobCancelResponse
     , JobCancelResponse
@@ -637,6 +1162,7 @@ module Network.Google.BigQuery
     -- ** JobConfigurationQuery
     , JobConfigurationQuery
     , jobConfigurationQuery
+    , jcqConnectionProperties
     , jcqDestinationTable
     , jcqWriteDisPosition
     , jcqPriority
@@ -656,15 +1182,28 @@ module Network.Google.BigQuery
     , jcqQuery
     , jcqFlattenResults
     , jcqParameterMode
+    , jcqCreateSession
     , jcqUseLegacySQL
     , jcqDestinationEncryptionConfiguration
     , jcqDefaultDataSet
+
+    -- ** TrainingOptionsDataSplitMethod
+    , TrainingOptionsDataSplitMethod (..)
 
     -- ** GoogleSheetsOptions
     , GoogleSheetsOptions
     , googleSheetsOptions
     , gsoSkipLeadingRows
     , gsoRange
+
+    -- ** ListModelsResponse
+    , ListModelsResponse
+    , listModelsResponse
+    , lmrNextPageToken
+    , lmrModels
+
+    -- ** StandardSQLDataTypeTypeKind
+    , StandardSQLDataTypeTypeKind (..)
 
     -- ** TableDataInsertAllRequestRowsItem
     , TableDataInsertAllRequestRowsItem
@@ -685,10 +1224,23 @@ module Network.Google.BigQuery
     , jobConfigurationQueryTableDefinitions
     , jcqtdAddtional
 
+    -- ** TrainingOptionsLearnRateStrategy
+    , TrainingOptionsLearnRateStrategy (..)
+
+    -- ** RoutineRoutineType
+    , RoutineRoutineType (..)
+
     -- ** TableCell
     , TableCell
     , tableCell
     , tcV
+
+    -- ** ArimaOrder
+    , ArimaOrder
+    , arimaOrder
+    , aoP
+    , aoQ
+    , aoD
 
     -- ** JobStatistics2ReservationUsageItem
     , JobStatistics2ReservationUsageItem
@@ -703,6 +1255,11 @@ module Network.Google.BigQuery
     , qpvValue
     , qpvArrayValues
 
+    -- ** TestIAMPermissionsResponse
+    , TestIAMPermissionsResponse
+    , testIAMPermissionsResponse
+    , tiamprPermissions
+
     -- ** ViewDefinition
     , ViewDefinition
     , viewDefinition
@@ -716,14 +1273,25 @@ module Network.Google.BigQuery
     , udfrResourceURI
     , udfrInlineCode
 
+    -- ** Policy
+    , Policy
+    , policy
+    , pAuditConfigs
+    , pEtag
+    , pVersion
+    , pBindings
+
     -- ** JobStatistics2
     , JobStatistics2
     , jobStatistics2
     , jModelTrainingExpectedTotalIteration
     , jModelTraining
+    , jDdlTargetDataSet
     , jTotalSlotMs
     , jDdlTargetRoutine
+    , jDdlAffectedRowAccessPolicyCount
     , jDdlTargetTable
+    , jDdlTargetRowAccessPolicy
     , jEstimatedBytesProcessed
     , jModelTrainingCurrentIteration
     , jSchema
@@ -732,6 +1300,7 @@ module Network.Google.BigQuery
     , jTotalBytesProcessedAccuracy
     , jUndeclaredQueryParameters
     , jReferencedTables
+    , jReferencedRoutines
     , jStatementType
     , jReservationUsage
     , jNumDmlAffectedRows
@@ -742,10 +1311,32 @@ module Network.Google.BigQuery
     , jDdlOperationPerformed
     , jTotalPartitionsProcessed
 
+    -- ** ArimaCoefficients
+    , ArimaCoefficients
+    , arimaCoefficients
+    , acInterceptCoefficient
+    , acMovingAverageCoefficients
+    , acAutoRegressiveCoefficients
+
+    -- ** HivePartitioningOptions
+    , HivePartitioningOptions
+    , hivePartitioningOptions
+    , hpoMode
+    , hpoRequirePartitionFilter
+    , hpoSourceURIPrefix
+
+    -- ** LocationMetadata
+    , LocationMetadata
+    , locationMetadata
+    , lmLegacyLocationId
+
     -- ** TableFieldSchemaCategories
     , TableFieldSchemaCategories
     , tableFieldSchemaCategories
     , tfscNames
+
+    -- ** TrainingOptionsLossType
+    , TrainingOptionsLossType (..)
 
     -- ** JobStatus
     , JobStatus
@@ -753,6 +1344,11 @@ module Network.Google.BigQuery
     , jsState
     , jsErrorResult
     , jsErrors
+
+    -- ** TrainingOptionsLabelClassWeights
+    , TrainingOptionsLabelClassWeights
+    , trainingOptionsLabelClassWeights
+    , tolcwAddtional
 
     -- ** TableLabels
     , TableLabels
@@ -766,16 +1362,27 @@ module Network.Google.BigQuery
     , dtpLabels
     , dtpDescription
 
+    -- ** AuditLogConfig
+    , AuditLogConfig
+    , auditLogConfig
+    , alcLogType
+    , alcExemptedMembers
+
     -- ** DataSetAccessItem
     , DataSetAccessItem
     , dataSetAccessItem
+    , dsaiDataSet
     , dsaiGroupByEmail
     , dsaiDomain
     , dsaiSpecialGroup
     , dsaiRole
     , dsaiIAMMember
     , dsaiView
+    , dsaiRoutine
     , dsaiUserByEmail
+
+    -- ** TrainingOptionsDistanceType
+    , TrainingOptionsDistanceType (..)
 
     -- ** BqmlTrainingRun
     , BqmlTrainingRun
@@ -784,6 +1391,11 @@ module Network.Google.BigQuery
     , btrStartTime
     , btrIterationResults
     , btrTrainingOptions
+
+    -- ** StandardSQLTableType
+    , StandardSQLTableType
+    , standardSQLTableType
+    , ssqlttColumns
 
     -- ** TableDataInsertAllResponse
     , TableDataInsertAllResponse
@@ -814,6 +1426,7 @@ module Network.Google.BigQuery
     , tabKind
     , tabLastModifiedTime
     , tabSchema
+    , tabSnapshotDefinition
     , tabStreamingBuffer
     , tabSelfLink
     , tabRequirePartitionFilter
@@ -829,6 +1442,45 @@ module Network.Google.BigQuery
     , tabNumLongTermBytes
     , tabExpirationTime
     , tabDescription
+
+    -- ** ArimaFittingMetrics
+    , ArimaFittingMetrics
+    , arimaFittingMetrics
+    , afmLogLikelihood
+    , afmVariance
+    , afmAic
+
+    -- ** ParquetOptions
+    , ParquetOptions
+    , parquetOptions
+    , poEnableListInference
+    , poEnumAsString
+
+    -- ** Routine
+    , Routine
+    , routine
+    , rCreationTime
+    , rEtag
+    , rDefinitionBody
+    , rRoutineReference
+    , rArguments
+    , rLastModifiedTime
+    , rRoutineType
+    , rDeterminismLevel
+    , rReturnTableType
+    , rLanguage
+    , rReturnType
+    , rImportedLibraries
+    , rDescription
+
+    -- ** RowAccessPolicy
+    , RowAccessPolicy
+    , rowAccessPolicy
+    , rapCreationTime
+    , rapEtag
+    , rapRowAccessPolicyReference
+    , rapLastModifiedTime
+    , rapFilterPredicate
 
     -- ** ErrorProto
     , ErrorProto
@@ -853,6 +1505,12 @@ module Network.Google.BigQuery
     , destinationTablePropertiesLabels
     , dtplAddtional
 
+    -- ** ListRowAccessPoliciesResponse
+    , ListRowAccessPoliciesResponse
+    , listRowAccessPoliciesResponse
+    , lraprNextPageToken
+    , lraprRowAccessPolicies
+
     -- ** JobStatistics3
     , JobStatistics3
     , jobStatistics3
@@ -861,6 +1519,9 @@ module Network.Google.BigQuery
     , jsOutputBytes
     , jsInputFileBytes
     , jsBadRecords
+
+    -- ** ArimaForecastingMetricsSeasonalPeriodsItem
+    , ArimaForecastingMetricsSeasonalPeriodsItem (..)
 
     -- ** QueryResponse
     , QueryResponse
@@ -871,6 +1532,7 @@ module Network.Google.BigQuery
     , qTotalBytesProcessed
     , qRows
     , qPageToken
+    , qSessionInfoTemplate
     , qNumDmlAffectedRows
     , qTotalRows
     , qErrors
@@ -882,6 +1544,29 @@ module Network.Google.BigQuery
     , dataSetListDataSetsItemLabels
     , dsldsilAddtional
 
+    -- ** ConnectionProperty
+    , ConnectionProperty
+    , connectionProperty
+    , cpValue
+    , cpKey
+
+    -- ** TrainingRun
+    , TrainingRun
+    , trainingRun
+    , trResults
+    , trStartTime
+    , trTrainingOptions
+    , trDataSplitResult
+    , trEvaluationMetrics
+    , trGlobalExplanations
+
+    -- ** Binding
+    , Binding
+    , binding
+    , bMembers
+    , bRole
+    , bCondition
+
     -- ** TableListTablesItemView
     , TableListTablesItemView
     , tableListTablesItemView
@@ -891,6 +1576,12 @@ module Network.Google.BigQuery
     , TableListTablesItemLabels
     , tableListTablesItemLabels
     , tltilAddtional
+
+    -- ** ConfusionMatrix
+    , ConfusionMatrix
+    , confusionMatrix
+    , cmConfidenceThreshold
+    , cmRows
     ) where
 
 import Network.Google.Prelude
@@ -902,20 +1593,37 @@ import Network.Google.Resource.BigQuery.DataSets.List
 import Network.Google.Resource.BigQuery.DataSets.Patch
 import Network.Google.Resource.BigQuery.DataSets.Update
 import Network.Google.Resource.BigQuery.Jobs.Cancel
+import Network.Google.Resource.BigQuery.Jobs.Delete
 import Network.Google.Resource.BigQuery.Jobs.Get
 import Network.Google.Resource.BigQuery.Jobs.GetQueryResults
 import Network.Google.Resource.BigQuery.Jobs.Insert
 import Network.Google.Resource.BigQuery.Jobs.List
 import Network.Google.Resource.BigQuery.Jobs.Query
+import Network.Google.Resource.BigQuery.Models.Delete
+import Network.Google.Resource.BigQuery.Models.Get
+import Network.Google.Resource.BigQuery.Models.List
+import Network.Google.Resource.BigQuery.Models.Patch
 import Network.Google.Resource.BigQuery.Projects.GetServiceAccount
 import Network.Google.Resource.BigQuery.Projects.List
+import Network.Google.Resource.BigQuery.Routines.Delete
+import Network.Google.Resource.BigQuery.Routines.Get
+import Network.Google.Resource.BigQuery.Routines.Insert
+import Network.Google.Resource.BigQuery.Routines.List
+import Network.Google.Resource.BigQuery.Routines.Update
+import Network.Google.Resource.BigQuery.RowAccessPolicies.GetIAMPolicy
+import Network.Google.Resource.BigQuery.RowAccessPolicies.List
+import Network.Google.Resource.BigQuery.RowAccessPolicies.SetIAMPolicy
+import Network.Google.Resource.BigQuery.RowAccessPolicies.TestIAMPermissions
 import Network.Google.Resource.BigQuery.TableData.InsertAll
 import Network.Google.Resource.BigQuery.TableData.List
 import Network.Google.Resource.BigQuery.Tables.Delete
 import Network.Google.Resource.BigQuery.Tables.Get
+import Network.Google.Resource.BigQuery.Tables.GetIAMPolicy
 import Network.Google.Resource.BigQuery.Tables.Insert
 import Network.Google.Resource.BigQuery.Tables.List
 import Network.Google.Resource.BigQuery.Tables.Patch
+import Network.Google.Resource.BigQuery.Tables.SetIAMPolicy
+import Network.Google.Resource.BigQuery.Tables.TestIAMPermissions
 import Network.Google.Resource.BigQuery.Tables.Update
 
 {- $resources
@@ -924,17 +1632,34 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the BigQuery API service.
 type BigQueryAPI =
-     JobsInsertResource :<|> JobsListResource :<|>
-       JobsGetResource
+     ModelsListResource :<|> ModelsPatchResource :<|>
+       ModelsGetResource
+       :<|> ModelsDeleteResource
+       :<|> JobsInsertResource
+       :<|> JobsListResource
+       :<|> JobsGetResource
        :<|> JobsQueryResource
        :<|> JobsCancelResource
        :<|> JobsGetQueryResultsResource
+       :<|> JobsDeleteResource
        :<|> TablesInsertResource
        :<|> TablesListResource
+       :<|> TablesGetIAMPolicyResource
        :<|> TablesPatchResource
        :<|> TablesGetResource
+       :<|> TablesSetIAMPolicyResource
+       :<|> TablesTestIAMPermissionsResource
        :<|> TablesDeleteResource
        :<|> TablesUpdateResource
+       :<|> RoutinesInsertResource
+       :<|> RoutinesListResource
+       :<|> RoutinesGetResource
+       :<|> RoutinesDeleteResource
+       :<|> RoutinesUpdateResource
+       :<|> RowAccessPoliciesListResource
+       :<|> RowAccessPoliciesGetIAMPolicyResource
+       :<|> RowAccessPoliciesSetIAMPolicyResource
+       :<|> RowAccessPoliciesTestIAMPermissionsResource
        :<|> TableDataListResource
        :<|> TableDataInsertAllResource
        :<|> ProjectsGetServiceAccountResource

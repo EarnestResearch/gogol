@@ -27,6 +27,7 @@ data UserDeletionRequest =
   UserDeletionRequest'
     { _udrWebPropertyId :: !(Maybe Text)
     , _udrKind :: !Text
+    , _udrPropertyId :: !(Maybe Text)
     , _udrId :: !(Maybe UserDeletionRequestId)
     , _udrFirebaseProjectId :: !(Maybe Text)
     , _udrDeletionRequestTime :: !(Maybe DateTime')
@@ -42,6 +43,8 @@ data UserDeletionRequest =
 --
 -- * 'udrKind'
 --
+-- * 'udrPropertyId'
+--
 -- * 'udrId'
 --
 -- * 'udrFirebaseProjectId'
@@ -53,6 +56,7 @@ userDeletionRequest =
   UserDeletionRequest'
     { _udrWebPropertyId = Nothing
     , _udrKind = "analytics#userDeletionRequest"
+    , _udrPropertyId = Nothing
     , _udrId = Nothing
     , _udrFirebaseProjectId = Nothing
     , _udrDeletionRequestTime = Nothing
@@ -68,6 +72,12 @@ udrWebPropertyId
 -- | Value is \"analytics#userDeletionRequest\".
 udrKind :: Lens' UserDeletionRequest Text
 udrKind = lens _udrKind (\ s a -> s{_udrKind = a})
+
+-- | Property ID
+udrPropertyId :: Lens' UserDeletionRequest (Maybe Text)
+udrPropertyId
+  = lens _udrPropertyId
+      (\ s a -> s{_udrPropertyId = a})
 
 -- | User ID.
 udrId :: Lens' UserDeletionRequest (Maybe UserDeletionRequestId)
@@ -94,6 +104,7 @@ instance FromJSON UserDeletionRequest where
                  UserDeletionRequest' <$>
                    (o .:? "webPropertyId") <*>
                      (o .:? "kind" .!= "analytics#userDeletionRequest")
+                     <*> (o .:? "propertyId")
                      <*> (o .:? "id")
                      <*> (o .:? "firebaseProjectId")
                      <*> (o .:? "deletionRequestTime"))
@@ -103,7 +114,9 @@ instance ToJSON UserDeletionRequest where
           = object
               (catMaybes
                  [("webPropertyId" .=) <$> _udrWebPropertyId,
-                  Just ("kind" .= _udrKind), ("id" .=) <$> _udrId,
+                  Just ("kind" .= _udrKind),
+                  ("propertyId" .=) <$> _udrPropertyId,
+                  ("id" .=) <$> _udrId,
                   ("firebaseProjectId" .=) <$> _udrFirebaseProjectId,
                   ("deletionRequestTime" .=) <$>
                     _udrDeletionRequestTime])
@@ -7586,7 +7599,7 @@ wDataRetentionTtl
 -- | Set to true to reset the retention period of the user identifier with
 -- each new event from that user (thus setting the expiration date to
 -- current time plus retention period). Set to false to delete data
--- associated with the user identifer automatically after the rentention
+-- associated with the user identifier automatically after the rentention
 -- period. This property cannot be set on insert.
 wDataRetentionResetOnNewActivity :: Lens' WebProperty (Maybe Bool)
 wDataRetentionResetOnNewActivity

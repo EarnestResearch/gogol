@@ -139,7 +139,7 @@ plcslaPayload
 
 -- | The name (project, location, cluster id) of the cluster to set legacy
 -- abac. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcslaName :: Lens' ProjectsLocationsClustersSetLegacyAbac Text
 plcslaName
   = lens _plcslaName (\ s a -> s{_plcslaName = a})

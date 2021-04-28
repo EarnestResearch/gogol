@@ -32,6 +32,9 @@ module Network.Google.DigitalAssetLinks.Types
     , sSource
     , sTarget
 
+    -- * CheckResponseErrorCodeItem
+    , CheckResponseErrorCodeItem (..)
+
     -- * Asset
     , Asset
     , asset
@@ -66,6 +69,9 @@ module Network.Google.DigitalAssetLinks.Types
     , CertificateInfo
     , certificateInfo
     , ciSha256Fingerprint
+
+    -- * ListResponseErrorCodeItem
+    , ListResponseErrorCodeItem (..)
     ) where
 
 import Network.Google.DigitalAssetLinks.Types.Product

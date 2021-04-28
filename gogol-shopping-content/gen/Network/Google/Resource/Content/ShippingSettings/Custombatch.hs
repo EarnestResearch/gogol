@@ -23,7 +23,7 @@
 -- Retrieves and updates the shipping settings of multiple accounts in a
 -- single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.shippingsettings.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.shippingsettings.custombatch@.
 module Network.Google.Resource.Content.ShippingSettings.Custombatch
     (
     -- * REST Resource
@@ -34,8 +34,13 @@ module Network.Google.Resource.Content.ShippingSettings.Custombatch
     , ShippingSettingsCustombatch
 
     -- * Request Lenses
+    , sscXgafv
+    , sscUploadProtocol
+    , sscAccessToken
+    , sscUploadType
     , sscPayload
     , sscDryRun
+    , sscCallback
     ) where
 
 import Network.Google.Prelude
@@ -48,10 +53,15 @@ type ShippingSettingsCustombatchResource =
        "v2" :>
          "shippingsettings" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] ShippingSettingsCustomBatchRequest :>
-                   Post '[JSON] ShippingSettingsCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] ShippingSettingsCustomBatchRequest :>
+                             Post '[JSON] ShippingSettingsCustomBatchResponse
 
 -- | Retrieves and updates the shipping settings of multiple accounts in a
 -- single request.
@@ -59,8 +69,13 @@ type ShippingSettingsCustombatchResource =
 -- /See:/ 'shippingSettingsCustombatch' smart constructor.
 data ShippingSettingsCustombatch =
   ShippingSettingsCustombatch'
-    { _sscPayload :: !ShippingSettingsCustomBatchRequest
+    { _sscXgafv :: !(Maybe Xgafv)
+    , _sscUploadProtocol :: !(Maybe Text)
+    , _sscAccessToken :: !(Maybe Text)
+    , _sscUploadType :: !(Maybe Text)
+    , _sscPayload :: !ShippingSettingsCustomBatchRequest
     , _sscDryRun :: !(Maybe Bool)
+    , _sscCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -69,16 +84,55 @@ data ShippingSettingsCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'sscXgafv'
+--
+-- * 'sscUploadProtocol'
+--
+-- * 'sscAccessToken'
+--
+-- * 'sscUploadType'
+--
 -- * 'sscPayload'
 --
 -- * 'sscDryRun'
+--
+-- * 'sscCallback'
 shippingSettingsCustombatch
     :: ShippingSettingsCustomBatchRequest -- ^ 'sscPayload'
     -> ShippingSettingsCustombatch
 shippingSettingsCustombatch pSscPayload_ =
   ShippingSettingsCustombatch'
-    {_sscPayload = pSscPayload_, _sscDryRun = Nothing}
+    { _sscXgafv = Nothing
+    , _sscUploadProtocol = Nothing
+    , _sscAccessToken = Nothing
+    , _sscUploadType = Nothing
+    , _sscPayload = pSscPayload_
+    , _sscDryRun = Nothing
+    , _sscCallback = Nothing
+    }
 
+
+-- | V1 error format.
+sscXgafv :: Lens' ShippingSettingsCustombatch (Maybe Xgafv)
+sscXgafv = lens _sscXgafv (\ s a -> s{_sscXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+sscUploadProtocol :: Lens' ShippingSettingsCustombatch (Maybe Text)
+sscUploadProtocol
+  = lens _sscUploadProtocol
+      (\ s a -> s{_sscUploadProtocol = a})
+
+-- | OAuth access token.
+sscAccessToken :: Lens' ShippingSettingsCustombatch (Maybe Text)
+sscAccessToken
+  = lens _sscAccessToken
+      (\ s a -> s{_sscAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+sscUploadType :: Lens' ShippingSettingsCustombatch (Maybe Text)
+sscUploadType
+  = lens _sscUploadType
+      (\ s a -> s{_sscUploadType = a})
 
 -- | Multipart request metadata.
 sscPayload :: Lens' ShippingSettingsCustombatch ShippingSettingsCustomBatchRequest
@@ -92,6 +146,11 @@ sscDryRun :: Lens' ShippingSettingsCustombatch (Maybe Bool)
 sscDryRun
   = lens _sscDryRun (\ s a -> s{_sscDryRun = a})
 
+-- | JSONP
+sscCallback :: Lens' ShippingSettingsCustombatch (Maybe Text)
+sscCallback
+  = lens _sscCallback (\ s a -> s{_sscCallback = a})
+
 instance GoogleRequest ShippingSettingsCustombatch
          where
         type Rs ShippingSettingsCustombatch =
@@ -99,7 +158,12 @@ instance GoogleRequest ShippingSettingsCustombatch
         type Scopes ShippingSettingsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient ShippingSettingsCustombatch'{..}
-          = go _sscDryRun (Just AltJSON) _sscPayload
+          = go _sscXgafv _sscUploadProtocol _sscAccessToken
+              _sscUploadType
+              _sscDryRun
+              _sscCallback
+              (Just AltJSON)
+              _sscPayload
               shoppingContentService
           where go
                   = buildClient

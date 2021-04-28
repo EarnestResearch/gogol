@@ -59,7 +59,7 @@ type MattersHoldsListResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "view" Text :>
+                     QueryParam "view" MattersHoldsListView :>
                        QueryParam "pageToken" Text :>
                          QueryParam "pageSize" (Textual Int32) :>
                            QueryParam "callback" Text :>
@@ -77,7 +77,7 @@ data MattersHoldsList =
     , _mhlAccessToken :: !(Maybe Text)
     , _mhlUploadType :: !(Maybe Text)
     , _mhlMatterId :: !Text
-    , _mhlView :: !(Maybe Text)
+    , _mhlView :: !(Maybe MattersHoldsListView)
     , _mhlPageToken :: !(Maybe Text)
     , _mhlPageSize :: !(Maybe (Textual Int32))
     , _mhlCallback :: !(Maybe Text)
@@ -151,7 +151,7 @@ mhlMatterId
   = lens _mhlMatterId (\ s a -> s{_mhlMatterId = a})
 
 -- | Specifies which parts of the Hold to return.
-mhlView :: Lens' MattersHoldsList (Maybe Text)
+mhlView :: Lens' MattersHoldsList (Maybe MattersHoldsListView)
 mhlView = lens _mhlView (\ s a -> s{_mhlView = a})
 
 -- | The pagination token as returned in the response. An empty token means

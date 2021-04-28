@@ -20,10 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists the existing valid uptime check configurations for the project,
--- leaving out any invalid configurations.
+-- Lists the existing valid Uptime check configurations for the project
+-- (leaving out any invalid configurations).
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.list@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.uptimeCheckConfigs.list@.
 module Network.Google.Resource.Monitoring.Projects.UptimeCheckConfigs.List
     (
     -- * REST Resource
@@ -63,8 +63,8 @@ type ProjectsUptimeCheckConfigsListResource =
                          QueryParam "alt" AltJSON :>
                            Get '[JSON] ListUptimeCheckConfigsResponse
 
--- | Lists the existing valid uptime check configurations for the project,
--- leaving out any invalid configurations.
+-- | Lists the existing valid Uptime check configurations for the project
+-- (leaving out any invalid configurations).
 --
 -- /See:/ 'projectsUptimeCheckConfigsList' smart constructor.
 data ProjectsUptimeCheckConfigsList =
@@ -116,8 +116,10 @@ projectsUptimeCheckConfigsList pPucclParent_ =
     }
 
 
--- | The project whose uptime check configurations are listed. The format is
--- projects\/[PROJECT_ID].
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) whose
+-- Uptime check configurations are listed. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]
 pucclParent :: Lens' ProjectsUptimeCheckConfigsList Text
 pucclParent
   = lens _pucclParent (\ s a -> s{_pucclParent = a})

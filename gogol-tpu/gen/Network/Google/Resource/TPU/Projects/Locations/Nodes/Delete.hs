@@ -123,7 +123,7 @@ plndUploadType
   = lens _plndUploadType
       (\ s a -> s{_plndUploadType = a})
 
--- | The resource name.
+-- | Required. The resource name.
 plndName :: Lens' ProjectsLocationsNodesDelete Text
 plndName = lens _plndName (\ s a -> s{_plndName = a})
 

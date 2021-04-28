@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Initiates a cache invalidation operation, invalidating the specified
--- path, scoped to the specified UrlMap.
+-- path, scoped to the specified UrlMap. For more information, see
+-- [Invalidating cached content](\/cdn\/docs\/invalidating-cached-content).
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.urlMaps.invalidateCache@.
 module Network.Google.Resource.Compute.URLMaps.InvalidateCache
@@ -60,7 +61,8 @@ type URLMapsInvalidateCacheResource =
                            Post '[JSON] Operation
 
 -- | Initiates a cache invalidation operation, invalidating the specified
--- path, scoped to the specified UrlMap.
+-- path, scoped to the specified UrlMap. For more information, see
+-- [Invalidating cached content](\/cdn\/docs\/invalidating-cached-content).
 --
 -- /See:/ 'urlMapsInvalidateCache' smart constructor.
 data URLMapsInvalidateCache =

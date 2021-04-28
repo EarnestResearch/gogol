@@ -26,6 +26,7 @@ module Network.Google.Debugger.Types
     -- * RegisterDebuggeeResponse
     , RegisterDebuggeeResponse
     , registerDebuggeeResponse
+    , rdrAgentId
     , rdrDebuggee
 
     -- * SourceContext
@@ -85,6 +86,7 @@ module Network.Google.Debugger.Types
     , Breakpoint
     , breakpoint
     , bStatus
+    , bState
     , bLogLevel
     , bLocation
     , bAction
@@ -95,11 +97,15 @@ module Network.Google.Debugger.Types
     , bLabels
     , bUserEmail
     , bVariableTable
+    , bCanaryExpireTime
     , bStackFrames
     , bCondition
     , bEvaluatedExpressions
     , bCreateTime
     , bIsFinalState
+
+    -- * DebuggerDebuggeesBreakpointsSetCanaryOption
+    , DebuggerDebuggeesBreakpointsSetCanaryOption (..)
 
     -- * BreakpointLabels
     , BreakpointLabels
@@ -137,6 +143,9 @@ module Network.Google.Debugger.Types
     , ListDebuggeesResponse
     , listDebuggeesResponse
     , ldrDebuggees
+
+    -- * BreakpointState
+    , BreakpointState (..)
 
     -- * UpdateActiveBreakpointRequest
     , UpdateActiveBreakpointRequest
@@ -203,6 +212,12 @@ module Network.Google.Debugger.Types
     , debuggeeLabels
     , dlAddtional
 
+    -- * DebuggeeCanaryMode
+    , DebuggeeCanaryMode (..)
+
+    -- * DebuggerDebuggeesBreakpointsListActionValue
+    , DebuggerDebuggeesBreakpointsListActionValue (..)
+
     -- * Debuggee
     , Debuggee
     , debuggee
@@ -214,6 +229,7 @@ module Network.Google.Debugger.Types
     , dIsDisabled
     , dId
     , dLabels
+    , dCanaryMode
     , dDescription
     , dIsInactive
     , dSourceContexts
@@ -249,7 +265,7 @@ import Network.Google.Debugger.Types.Product
 import Network.Google.Debugger.Types.Sum
 import Network.Google.Prelude
 
--- | Default request referring to version 'v2' of the Stackdriver Debugger API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v2' of the Cloud Debugger API. This contains the host and root path used as a starting point for constructing service requests.
 debuggerService :: ServiceConfig
 debuggerService
   = defaultService (ServiceId "clouddebugger:v2")
@@ -259,6 +275,6 @@ debuggerService
 cloudDebuggerScope :: Proxy '["https://www.googleapis.com/auth/cloud_debugger"]
 cloudDebuggerScope = Proxy
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

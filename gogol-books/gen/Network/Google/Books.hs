@@ -13,9 +13,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Searches for books and manages your Google Books library.
+-- The Google Books API allows clients to access the Google Books
+-- repository.
 --
--- /See:/ <https://developers.google.com/books/docs/v1/getting_started Books API Reference>
+-- /See:/ <https://code.google.com/apis/books/docs/v1/getting_started.html Books API Reference>
 module Network.Google.Books
     (
     -- * Service Configuration
@@ -199,11 +200,25 @@ module Network.Google.Books
     , aKind
     , aItems
 
+    -- ** SeriesSeriesItemSeriesSubscriptionReleaseInfoCurrentReleaseInfo
+    , SeriesSeriesItemSeriesSubscriptionReleaseInfoCurrentReleaseInfo
+    , seriesSeriesItemSeriesSubscriptionReleaseInfoCurrentReleaseInfo
+    , ssissricriReleaseTime
+    , ssissricriCurrencyCode
+    , ssissricriAmountInMicros
+    , ssissricriReleaseNumber
+
     -- ** VolumesListProjection
     , VolumesListProjection (..)
 
     -- ** MyLibraryBookshelvesVolumesListProjection
     , MyLibraryBookshelvesVolumesListProjection (..)
+
+    -- ** VolumeVolumeInfoReadingModes
+    , VolumeVolumeInfoReadingModes
+    , volumeVolumeInfoReadingModes
+    , vvirmImage
+    , vvirmText
 
     -- ** VolumesListOrderBy
     , VolumesListOrderBy (..)
@@ -236,19 +251,6 @@ module Network.Google.Books
     , rsExtraDescription
     , rsURL
     , rsDescription
-
-    -- ** AnnotationData
-    , AnnotationData
-    , annotationData
-    , annEncodedData
-    , annKind
-    , annData
-    , annSelfLink
-    , annAnnotationType
-    , annVolumeId
-    , annId
-    , annUpdated
-    , annLayerId
 
     -- ** Volumeannotation
     , Volumeannotation
@@ -285,23 +287,23 @@ module Network.Google.Books
     -- ** Annotation
     , Annotation
     , annotation
-    , aaSelectedText
-    , aaLayerSummary
-    , aaHighlightStyle
-    , aaClientVersionRanges
-    , aaPageIds
-    , aaKind
-    , aaData
-    , aaCreated
-    , aaAfterSelectedText
-    , aaSelfLink
-    , aaCurrentVersionRanges
-    , aaVolumeId
-    , aaBeforeSelectedText
-    , aaId
-    , aaDeleted
-    , aaUpdated
-    , aaLayerId
+    , annSelectedText
+    , annLayerSummary
+    , annHighlightStyle
+    , annClientVersionRanges
+    , annPageIds
+    , annKind
+    , annData
+    , annCreated
+    , annAfterSelectedText
+    , annSelfLink
+    , annCurrentVersionRanges
+    , annVolumeId
+    , annBeforeSelectedText
+    , annId
+    , annDeleted
+    , annUpdated
+    , annLayerId
 
     -- ** ReviewAuthor
     , ReviewAuthor
@@ -391,6 +393,14 @@ module Network.Google.Books
     , vvipsContainsEpubBubbles
     , vvipsImageBubbleVersion
 
+    -- ** SeriesSeriesItemSeriesSubscriptionReleaseInfoNextReleaseInfo
+    , SeriesSeriesItemSeriesSubscriptionReleaseInfoNextReleaseInfo
+    , seriesSeriesItemSeriesSubscriptionReleaseInfoNextReleaseInfo
+    , ssissrinriReleaseTime
+    , ssissrinriCurrencyCode
+    , ssissrinriAmountInMicros
+    , ssissrinriReleaseNumber
+
     -- ** MyLibraryBookshelvesRemoveVolumeReason
     , MyLibraryBookshelvesRemoveVolumeReason (..)
 
@@ -451,6 +461,10 @@ module Network.Google.Books
     , bUpdated
     , bTitle
     , bDescription
+
+    -- ** Empty
+    , Empty
+    , empty
 
     -- ** Notification
     , Notification
@@ -558,12 +572,6 @@ module Network.Google.Books
     , vvId
     , vvRecommendedInfo
     , vvVolumeInfo
-
-    -- ** GeolayerDataGeoBoundaryItemItem
-    , GeolayerDataGeoBoundaryItemItem
-    , geolayerDataGeoBoundaryItemItem
-    , gdgbiiLatitude
-    , gdgbiiLongitude
 
     -- ** Series
     , Series
@@ -761,6 +769,19 @@ module Network.Google.Books
     , vsirpAmount
     , vsirpCurrencyCode
 
+    -- ** DictionaryAnnotationData
+    , DictionaryAnnotationData
+    , dictionaryAnnotationData
+    , dadKind
+    , dadData
+    , dadSelfLink
+    , dadAnnotationType
+    , dadEncodedData
+    , dadVolumeId
+    , dadId
+    , dadUpdated
+    , dadLayerId
+
     -- ** VolumeSaleInfoListPrice
     , VolumeSaleInfoListPrice
     , volumeSaleInfoListPrice
@@ -782,12 +803,28 @@ module Network.Google.Books
     , fimAgeGroup
     , fimIsInFamily
 
+    -- ** GeoAnnotationData
+    , GeoAnnotationData
+    , geoAnnotationData
+    , gadKind
+    , gadData
+    , gadSelfLink
+    , gadAnnotationType
+    , gadEncodedData
+    , gadVolumeId
+    , gadId
+    , gadUpdated
+    , gadLayerId
+
     -- ** Volume2
     , Volume2
     , volume2
     , voloNextPageToken
     , voloKind
     , voloItems
+
+    -- ** Xgafv
+    , Xgafv (..)
 
     -- ** Review
     , Review
@@ -809,6 +846,14 @@ module Network.Google.Books
     , vuirpEndUtcSec
     , vuirpStartUtcSec
 
+    -- ** SeriesSeriesItemSeriesSubscriptionReleaseInfo
+    , SeriesSeriesItemSeriesSubscriptionReleaseInfo
+    , seriesSeriesItemSeriesSubscriptionReleaseInfo
+    , ssissriSeriesSubscriptionType
+    , ssissriCancelTime
+    , ssissriCurrentReleaseInfo
+    , ssissriNextReleaseInfo
+
     -- ** VolumeSaleInfo
     , VolumeSaleInfo
     , volumeSaleInfo
@@ -827,11 +872,16 @@ module Network.Google.Books
     -- ** SeriesSeriesItem
     , SeriesSeriesItem
     , seriesSeriesItem
+    , ssiIsComplete
     , ssiSeriesId
     , ssiImageURL
+    , ssiSeriesSubscriptionReleaseInfo
+    , ssiEligibleForSubscription
+    , ssiSeriesFormatType
     , ssiBannerImageURL
     , ssiTitle
     , ssiSeriesType
+    , ssiSubscriptionId
 
     -- ** Metadata
     , Metadata
@@ -851,12 +901,12 @@ module Network.Google.Books
     , vvidWidth
     , vvidThickness
 
-    -- ** RequestAccess
-    , RequestAccess
-    , requestAccess
-    , raConcurrentAccess
-    , raKind
-    , raDownloadAccess
+    -- ** RequestAccessData
+    , RequestAccessData
+    , requestAccessData
+    , radConcurrentAccess
+    , radKind
+    , radDownloadAccess
 
     -- ** FamilyInfo
     , FamilyInfo

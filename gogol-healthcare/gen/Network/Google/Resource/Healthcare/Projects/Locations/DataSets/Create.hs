@@ -52,7 +52,7 @@ import Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.create@ method which the
 -- 'ProjectsLocationsDataSetsCreate' request conforms to.
 type ProjectsLocationsDataSetsCreateResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "datasets" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -120,8 +120,8 @@ projectsLocationsDataSetsCreate pPldscParent_ pPldscPayload_ =
     }
 
 
--- | The name of the project in which the dataset should be created (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\`).
+-- | The name of the project where the server creates the dataset. For
+-- example, \`projects\/{project_id}\/locations\/{location_id}\`.
 pldscParent :: Lens' ProjectsLocationsDataSetsCreate Text
 pldscParent
   = lens _pldscParent (\ s a -> s{_pldscParent = a})

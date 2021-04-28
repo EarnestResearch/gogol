@@ -161,7 +161,8 @@ instance GoogleRequest BillingAccountsSetIAMPolicy
          where
         type Rs BillingAccountsSetIAMPolicy = Policy
         type Scopes BillingAccountsSetIAMPolicy =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient BillingAccountsSetIAMPolicy'{..}
           = go _basipResource _basipXgafv _basipUploadProtocol
               _basipAccessToken

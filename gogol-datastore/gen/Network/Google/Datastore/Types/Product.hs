@@ -20,11 +20,10 @@ module Network.Google.Datastore.Types.Product where
 import Network.Google.Datastore.Types.Sum
 import Network.Google.Prelude
 
--- | An object representing a latitude\/longitude pair. This is expressed as
--- a pair of doubles representing degrees latitude and degrees longitude.
--- Unless specified otherwise, this must conform to the
--- <http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf WGS84 standard>.
--- Values must be within normalized ranges.
+-- | An object that represents a latitude\/longitude pair. This is expressed
+-- as a pair of doubles to represent degrees latitude and degrees
+-- longitude. Unless specified otherwise, this must conform to the WGS84
+-- standard. Values must be within normalized ranges.
 --
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
@@ -125,39 +124,11 @@ instance ToJSON TransactionOptions where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -373,7 +344,7 @@ rollbackRequest
 rollbackRequest = RollbackRequest' {_rrTransaction = Nothing}
 
 
--- | The transaction identifier, returned by a call to
+-- | Required. The transaction identifier, returned by a call to
 -- Datastore.BeginTransaction.
 rrTransaction :: Lens' RollbackRequest (Maybe ByteString)
 rrTransaction
@@ -415,8 +386,8 @@ reserveIdsRequest =
   ReserveIdsRequest' {_rirKeys = Nothing, _rirDatabaseId = Nothing}
 
 
--- | A list of keys with complete key paths whose numeric IDs should not be
--- auto-allocated.
+-- | Required. A list of keys with complete key paths whose numeric IDs
+-- should not be auto-allocated.
 rirKeys :: Lens' ReserveIdsRequest [Key]
 rirKeys
   = lens _rirKeys (\ s a -> s{_rirKeys = a}) . _Default
@@ -904,8 +875,8 @@ allocateIdsRequest
 allocateIdsRequest = AllocateIdsRequest' {_airKeys = Nothing}
 
 
--- | A list of keys with incomplete key paths for which to allocate IDs. No
--- key may be reserved\/read-only.
+-- | Required. A list of keys with incomplete key paths for which to allocate
+-- IDs. No key may be reserved\/read-only.
 airKeys :: Lens' AllocateIdsRequest [Key]
 airKeys
   = lens _airKeys (\ s a -> s{_airKeys = a}) . _Default
@@ -1855,7 +1826,7 @@ vDoubleValue
 
 -- | A UTF-8 encoded string value. When \`exclude_from_indexes\` is false (it
 -- is indexed) , may have at most 1500 bytes. Otherwise, may be set to at
--- least 1,000,000 bytes.
+-- most 1,000,000 bytes.
 vStringValue :: Lens' Value (Maybe Text)
 vStringValue
   = lens _vStringValue (\ s a -> s{_vStringValue = a})
@@ -2032,7 +2003,7 @@ lookupRequest
 lookupRequest = LookupRequest' {_lrKeys = Nothing, _lrReadOptions = Nothing}
 
 
--- | Keys of entities to look up.
+-- | Required. Keys of entities to look up.
 lrKeys :: Lens' LookupRequest [Key]
 lrKeys
   = lens _lrKeys (\ s a -> s{_lrKeys = a}) . _Default .
@@ -2179,9 +2150,9 @@ googleDatastoreAdminV1ExportEntitiesRequest =
     }
 
 
--- | Location for the export metadata and data files. The full resource URL
--- of the external storage location. Currently, only Google Cloud Storage
--- is supported. So output_url_prefix should be of the form:
+-- | Required. Location for the export metadata and data files. The full
+-- resource URL of the external storage location. Currently, only Google
+-- Cloud Storage is supported. So output_url_prefix should be of the form:
 -- \`gs:\/\/BUCKET_NAME[\/NAMESPACE_PATH]\`, where \`BUCKET_NAME\` is the
 -- name of the Cloud Storage bucket and \`NAMESPACE_PATH\` is an optional
 -- Cloud Storage namespace path (this is not a Cloud Datastore namespace).
@@ -2547,8 +2518,9 @@ gdavierEntityFilter
   = lens _gdavierEntityFilter
       (\ s a -> s{_gdavierEntityFilter = a})
 
--- | The full resource URL of the external storage location. Currently, only
--- Google Cloud Storage is supported. So input_url should be of the form:
+-- | Required. The full resource URL of the external storage location.
+-- Currently, only Google Cloud Storage is supported. So input_url should
+-- be of the form:
 -- \`gs:\/\/BUCKET_NAME[\/NAMESPACE_PATH]\/OVERALL_EXPORT_METADATA_FILE\`,
 -- where \`BUCKET_NAME\` is the name of the Cloud Storage bucket,
 -- \`NAMESPACE_PATH\` is an optional Cloud Storage namespace path (this is
@@ -3284,7 +3256,7 @@ instance ToJSON Filter where
                  [("compositeFilter" .=) <$> _fCompositeFilter,
                   ("propertyFilter" .=) <$> _fPropertyFilter])
 
--- | A minimal index definition.
+-- | Datastore composite index definition.
 --
 -- /See:/ 'googleDatastoreAdminV1Index' smart constructor.
 data GoogleDatastoreAdminV1Index =
@@ -3327,36 +3299,36 @@ googleDatastoreAdminV1Index =
     }
 
 
--- | The state of the index. Output only.
+-- | Output only. The state of the index.
 gdaviState :: Lens' GoogleDatastoreAdminV1Index (Maybe GoogleDatastoreAdminV1IndexState)
 gdaviState
   = lens _gdaviState (\ s a -> s{_gdaviState = a})
 
--- | The entity kind to which this index applies. Required.
+-- | Required. The entity kind to which this index applies.
 gdaviKind :: Lens' GoogleDatastoreAdminV1Index (Maybe Text)
 gdaviKind
   = lens _gdaviKind (\ s a -> s{_gdaviKind = a})
 
--- | Project ID. Output only.
+-- | Output only. Project ID.
 gdaviProjectId :: Lens' GoogleDatastoreAdminV1Index (Maybe Text)
 gdaviProjectId
   = lens _gdaviProjectId
       (\ s a -> s{_gdaviProjectId = a})
 
--- | The resource ID of the index. Output only.
+-- | Output only. The resource ID of the index.
 gdaviIndexId :: Lens' GoogleDatastoreAdminV1Index (Maybe Text)
 gdaviIndexId
   = lens _gdaviIndexId (\ s a -> s{_gdaviIndexId = a})
 
--- | The index\'s ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED.
--- Required.
+-- | Required. The index\'s ancestor mode. Must not be
+-- ANCESTOR_MODE_UNSPECIFIED.
 gdaviAncestor :: Lens' GoogleDatastoreAdminV1Index (Maybe GoogleDatastoreAdminV1IndexAncestor)
 gdaviAncestor
   = lens _gdaviAncestor
       (\ s a -> s{_gdaviAncestor = a})
 
--- | An ordered sequence of property names and their index attributes.
--- Required.
+-- | Required. An ordered sequence of property names and their index
+-- attributes.
 gdaviProperties :: Lens' GoogleDatastoreAdminV1Index [GoogleDatastoreAdminV1IndexedProperty]
 gdaviProperties
   = lens _gdaviProperties
@@ -3942,14 +3914,14 @@ googleDatastoreAdminV1IndexedProperty =
     {_gdavipDirection = Nothing, _gdavipName = Nothing}
 
 
--- | The indexed property\'s direction. Must not be DIRECTION_UNSPECIFIED.
--- Required.
+-- | Required. The indexed property\'s direction. Must not be
+-- DIRECTION_UNSPECIFIED.
 gdavipDirection :: Lens' GoogleDatastoreAdminV1IndexedProperty (Maybe GoogleDatastoreAdminV1IndexedPropertyDirection)
 gdavipDirection
   = lens _gdavipDirection
       (\ s a -> s{_gdavipDirection = a})
 
--- | The property name to index. Required.
+-- | Required. The property name to index.
 gdavipName :: Lens' GoogleDatastoreAdminV1IndexedProperty (Maybe Text)
 gdavipName
   = lens _gdavipName (\ s a -> s{_gdavipName = a})
@@ -4106,7 +4078,8 @@ gloResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 gloName :: Lens' GoogleLongrunningOperation (Maybe Text)
 gloName = lens _gloName (\ s a -> s{_gloName = a})
 

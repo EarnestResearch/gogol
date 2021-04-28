@@ -16,7 +16,7 @@
 -- Schedule queries or transfer external data from SaaS applications to
 -- Google BigQuery on a regular basis.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference>
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference>
 module Network.Google.BigQueryDataTransfer
     (
     -- * Service Configuration
@@ -127,6 +127,11 @@ module Network.Google.BigQueryDataTransfer
     -- ** DataSourceParameterType
     , DataSourceParameterType (..)
 
+    -- ** EmailPreferences
+    , EmailPreferences
+    , emailPreferences
+    , epEnableFailureEmail
+
     -- ** Status
     , Status
     , status
@@ -150,7 +155,9 @@ module Network.Google.BigQueryDataTransfer
     , TransferRun
     , transferRun
     , tRunTime
+    , tEmailPreferences
     , tErrorStatus
+    , tNotificationPubsubTopic
     , tState
     , tSchedule
     , tStartTime
@@ -220,6 +227,12 @@ module Network.Google.BigQueryDataTransfer
     -- ** DataSourceTransferType
     , DataSourceTransferType (..)
 
+    -- ** ProjectsLocationsTransferConfigsRunsListStates
+    , ProjectsLocationsTransferConfigsRunsListStates (..)
+
+    -- ** ProjectsLocationsTransferConfigsRunsTransferLogsListMessageTypes
+    , ProjectsLocationsTransferConfigsRunsTransferLogsListMessageTypes (..)
+
     -- ** DataSourceAuthorizationType
     , DataSourceAuthorizationType (..)
 
@@ -227,6 +240,9 @@ module Network.Google.BigQueryDataTransfer
     , TransferRunParams
     , transferRunParams
     , trpAddtional
+
+    -- ** ProjectsLocationsTransferConfigsRunsListRunAttempt
+    , ProjectsLocationsTransferConfigsRunsListRunAttempt (..)
 
     -- ** DataSourceParameter
     , DataSourceParameter
@@ -246,6 +262,7 @@ module Network.Google.BigQueryDataTransfer
     , dspMinValue
     , dspValidationHelpURL
     , dspFields
+    , dspDeprecated
 
     -- ** ScheduleTransferRunsResponse
     , ScheduleTransferRunsResponse
@@ -305,6 +322,12 @@ module Network.Google.BigQueryDataTransfer
     , tmMessageTime
     , tmMessageText
 
+    -- ** ProjectsTransferConfigsRunsTransferLogsListMessageTypes
+    , ProjectsTransferConfigsRunsTransferLogsListMessageTypes (..)
+
+    -- ** ProjectsTransferConfigsRunsListStates
+    , ProjectsTransferConfigsRunsListStates (..)
+
     -- ** LocationLabels
     , LocationLabels
     , locationLabels
@@ -314,6 +337,9 @@ module Network.Google.BigQueryDataTransfer
     , StartManualTransferRunsResponse
     , startManualTransferRunsResponse
     , smtrrRuns
+
+    -- ** ProjectsTransferConfigsRunsListRunAttempt
+    , ProjectsTransferConfigsRunsListRunAttempt (..)
 
     -- ** LocationMetadata
     , LocationMetadata
@@ -335,6 +361,8 @@ module Network.Google.BigQueryDataTransfer
     -- ** TransferConfig
     , TransferConfig
     , transferConfig
+    , tcEmailPreferences
+    , tcNotificationPubsubTopic
     , tcState
     , tcSchedule
     , tcScheduleOptions

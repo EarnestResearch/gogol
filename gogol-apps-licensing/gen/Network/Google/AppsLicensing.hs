@@ -13,9 +13,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Views and manages licenses for your domain.
+-- The Google Enterprise License Manager API\'s allows you to license apps
+-- for all the users of a domain managed by you.
 --
--- /See:/ <https://developers.google.com/google-apps/licensing/ Enterprise License Manager API Reference>
+-- /See:/ <https://developers.google.com/admin-sdk/licensing/ Enterprise License Manager API Reference>
 module Network.Google.AppsLicensing
     (
     -- * Service Configuration
@@ -65,6 +66,10 @@ module Network.Google.AppsLicensing
     , lalKind
     , lalItems
 
+    -- ** Empty
+    , Empty
+    , empty
+
     -- ** LicenseAssignment
     , LicenseAssignment
     , licenseAssignment
@@ -76,6 +81,9 @@ module Network.Google.AppsLicensing
     , laUserId
     , laSelfLink
     , laProductId
+
+    -- ** Xgafv
+    , Xgafv (..)
     ) where
 
 import Network.Google.Prelude

@@ -18,8 +18,7 @@ module Network.Google.Testing.Types.Sum where
 
 import Network.Google.Prelude hiding (Bytes)
 
--- | Output only. Indicates the current progress of the test matrix (e.g.,
--- FINISHED).
+-- | Output only. Indicates the current progress of the test matrix.
 data TestMatrixState
     = TestStateUnspecified
       -- ^ @TEST_STATE_UNSPECIFIED@
@@ -172,8 +171,8 @@ data TestMatrixInvalidMatrixDetails
       -- ignore action includes an input text field)
     | TestLoopIntentFilterNotFound
       -- ^ @TEST_LOOP_INTENT_FILTER_NOT_FOUND@
-      -- There there is no test loop intent filter, or the one that is given is
-      -- not formatted correctly.
+      -- There is no test loop intent filter, or the one that is given is not
+      -- formatted correctly.
     | ScenarioLabelNotDeclared
       -- ^ @SCENARIO_LABEL_NOT_DECLARED@
       -- The request contains a scenario label that was not declared in the
@@ -216,7 +215,13 @@ data TestMatrixInvalidMatrixDetails
       -- The APK is marked as \"testOnly\". Deprecated and not currently used.
     | MalformedIPa
       -- ^ @MALFORMED_IPA@
-      -- The input IPA could not be parsed. Deprecated and not currently used.
+      -- The input IPA could not be parsed.
+    | MissingURLScheme
+      -- ^ @MISSING_URL_SCHEME@
+      -- The application doesn\'t register the game loop URL scheme.
+    | MalformedAppBundle
+      -- ^ @MALFORMED_APP_BUNDLE@
+      -- The iOS application bundle (.app) couldn\'t be processed.
     | NoCodeAPK
       -- ^ @NO_CODE_APK@
       -- APK contains no code. See also
@@ -264,6 +269,8 @@ instance FromHttpApiData TestMatrixInvalidMatrixDetails where
         "PLIST_CANNOT_BE_PARSED" -> Right PListCannotBeParsed
         "TEST_ONLY_APK" -> Right TestOnlyAPK
         "MALFORMED_IPA" -> Right MalformedIPa
+        "MISSING_URL_SCHEME" -> Right MissingURLScheme
+        "MALFORMED_APP_BUNDLE" -> Right MalformedAppBundle
         "NO_CODE_APK" -> Right NoCodeAPK
         "INVALID_INPUT_APK" -> Right InvalidInputAPK
         "INVALID_APK_PREVIEW_SDK" -> Right InvalidAPKPreviewSdk
@@ -301,6 +308,8 @@ instance ToHttpApiData TestMatrixInvalidMatrixDetails where
         PListCannotBeParsed -> "PLIST_CANNOT_BE_PARSED"
         TestOnlyAPK -> "TEST_ONLY_APK"
         MalformedIPa -> "MALFORMED_IPA"
+        MissingURLScheme -> "MISSING_URL_SCHEME"
+        MalformedAppBundle -> "MALFORMED_APP_BUNDLE"
         NoCodeAPK -> "NO_CODE_APK"
         InvalidInputAPK -> "INVALID_INPUT_APK"
         InvalidAPKPreviewSdk -> "INVALID_APK_PREVIEW_SDK"
@@ -440,6 +449,146 @@ instance FromJSON TestExecutionState where
     parseJSON = parseJSONText "TestExecutionState"
 
 instance ToJSON TestExecutionState where
+    toJSON = toJSONText
+
+-- | Required. The type of environment that should be listed.
+data TestEnvironmentCatalogGetEnvironmentType
+    = EnvironmentTypeUnspecified
+      -- ^ @ENVIRONMENT_TYPE_UNSPECIFIED@
+      -- Do not use. For proto versioning only.
+    | Android
+      -- ^ @ANDROID@
+      -- A device running a version of the Android OS.
+    | Ios
+      -- ^ @IOS@
+      -- A device running a version of iOS.
+    | NetworkConfiguration
+      -- ^ @NETWORK_CONFIGURATION@
+      -- A network configuration to use when running a test.
+    | ProvidedSoftware
+      -- ^ @PROVIDED_SOFTWARE@
+      -- The software environment provided by TestExecutionService.
+    | DeviceIPBlocks
+      -- ^ @DEVICE_IP_BLOCKS@
+      -- The IP blocks used by devices in the test environment.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable TestEnvironmentCatalogGetEnvironmentType
+
+instance FromHttpApiData TestEnvironmentCatalogGetEnvironmentType where
+    parseQueryParam = \case
+        "ENVIRONMENT_TYPE_UNSPECIFIED" -> Right EnvironmentTypeUnspecified
+        "ANDROID" -> Right Android
+        "IOS" -> Right Ios
+        "NETWORK_CONFIGURATION" -> Right NetworkConfiguration
+        "PROVIDED_SOFTWARE" -> Right ProvidedSoftware
+        "DEVICE_IP_BLOCKS" -> Right DeviceIPBlocks
+        x -> Left ("Unable to parse TestEnvironmentCatalogGetEnvironmentType from: " <> x)
+
+instance ToHttpApiData TestEnvironmentCatalogGetEnvironmentType where
+    toQueryParam = \case
+        EnvironmentTypeUnspecified -> "ENVIRONMENT_TYPE_UNSPECIFIED"
+        Android -> "ANDROID"
+        Ios -> "IOS"
+        NetworkConfiguration -> "NETWORK_CONFIGURATION"
+        ProvidedSoftware -> "PROVIDED_SOFTWARE"
+        DeviceIPBlocks -> "DEVICE_IP_BLOCKS"
+
+instance FromJSON TestEnvironmentCatalogGetEnvironmentType where
+    parseJSON = parseJSONText "TestEnvironmentCatalogGetEnvironmentType"
+
+instance ToJSON TestEnvironmentCatalogGetEnvironmentType where
+    toJSON = toJSONText
+
+-- | Output Only. The overall outcome of the test. Only set when the test
+-- matrix state is FINISHED.
+data TestMatrixOutcomeSummary
+    = OutcomeSummaryUnspecified
+      -- ^ @OUTCOME_SUMMARY_UNSPECIFIED@
+      -- Do not use. For proto versioning only.
+    | Success
+      -- ^ @SUCCESS@
+      -- The test matrix run was successful, for instance: - All the test cases
+      -- passed. - Robo did not detect a crash of the application under test.
+    | Failure
+      -- ^ @FAILURE@
+      -- A run failed, for instance: - One or more test case failed. - A test
+      -- timed out. - The application under test crashed.
+    | Inconclusive
+      -- ^ @INCONCLUSIVE@
+      -- Something unexpected happened. The run should still be considered
+      -- unsuccessful but this is likely a transient problem and re-running the
+      -- test might be successful.
+    | Skipped
+      -- ^ @SKIPPED@
+      -- All tests were skipped, for instance: - All device configurations were
+      -- incompatible.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable TestMatrixOutcomeSummary
+
+instance FromHttpApiData TestMatrixOutcomeSummary where
+    parseQueryParam = \case
+        "OUTCOME_SUMMARY_UNSPECIFIED" -> Right OutcomeSummaryUnspecified
+        "SUCCESS" -> Right Success
+        "FAILURE" -> Right Failure
+        "INCONCLUSIVE" -> Right Inconclusive
+        "SKIPPED" -> Right Skipped
+        x -> Left ("Unable to parse TestMatrixOutcomeSummary from: " <> x)
+
+instance ToHttpApiData TestMatrixOutcomeSummary where
+    toQueryParam = \case
+        OutcomeSummaryUnspecified -> "OUTCOME_SUMMARY_UNSPECIFIED"
+        Success -> "SUCCESS"
+        Failure -> "FAILURE"
+        Inconclusive -> "INCONCLUSIVE"
+        Skipped -> "SKIPPED"
+
+instance FromJSON TestMatrixOutcomeSummary where
+    parseJSON = parseJSONText "TestMatrixOutcomeSummary"
+
+instance ToJSON TestMatrixOutcomeSummary where
+    toJSON = toJSONText
+
+-- | Whether this block is used by physical or virtual devices
+data DeviceIPBlockForm
+    = DeviceFormUnspecified
+      -- ^ @DEVICE_FORM_UNSPECIFIED@
+      -- Do not use. For proto versioning only.
+    | Virtual
+      -- ^ @VIRTUAL@
+      -- Android virtual device using Compute Engine native virtualization.
+      -- Firebase Test Lab only.
+    | Physical
+      -- ^ @PHYSICAL@
+      -- Actual hardware.
+    | Emulator
+      -- ^ @EMULATOR@
+      -- Android virtual device using emulator in nested virtualization.
+      -- Equivalent to Android Studio.
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable DeviceIPBlockForm
+
+instance FromHttpApiData DeviceIPBlockForm where
+    parseQueryParam = \case
+        "DEVICE_FORM_UNSPECIFIED" -> Right DeviceFormUnspecified
+        "VIRTUAL" -> Right Virtual
+        "PHYSICAL" -> Right Physical
+        "EMULATOR" -> Right Emulator
+        x -> Left ("Unable to parse DeviceIPBlockForm from: " <> x)
+
+instance ToHttpApiData DeviceIPBlockForm where
+    toQueryParam = \case
+        DeviceFormUnspecified -> "DEVICE_FORM_UNSPECIFIED"
+        Virtual -> "VIRTUAL"
+        Physical -> "PHYSICAL"
+        Emulator -> "EMULATOR"
+
+instance FromJSON DeviceIPBlockForm where
+    parseJSON = parseJSONText "DeviceIPBlockForm"
+
+instance ToJSON DeviceIPBlockForm where
     toJSON = toJSONText
 
 -- | The current rolled-up state of the test matrix. If this state is already
@@ -651,31 +800,38 @@ instance ToJSON AndroidModelFormFactor where
 
 -- | Whether this device is virtual or physical.
 data AndroidModelForm
-    = DeviceFormUnspecified
+    = AMFDeviceFormUnspecified
       -- ^ @DEVICE_FORM_UNSPECIFIED@
       -- Do not use. For proto versioning only.
-    | Virtual
+    | AMFVirtual
       -- ^ @VIRTUAL@
-      -- A software stack that simulates the device.
-    | Physical
+      -- Android virtual device using Compute Engine native virtualization.
+      -- Firebase Test Lab only.
+    | AMFPhysical
       -- ^ @PHYSICAL@
       -- Actual hardware.
+    | AMFEmulator
+      -- ^ @EMULATOR@
+      -- Android virtual device using emulator in nested virtualization.
+      -- Equivalent to Android Studio.
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable AndroidModelForm
 
 instance FromHttpApiData AndroidModelForm where
     parseQueryParam = \case
-        "DEVICE_FORM_UNSPECIFIED" -> Right DeviceFormUnspecified
-        "VIRTUAL" -> Right Virtual
-        "PHYSICAL" -> Right Physical
+        "DEVICE_FORM_UNSPECIFIED" -> Right AMFDeviceFormUnspecified
+        "VIRTUAL" -> Right AMFVirtual
+        "PHYSICAL" -> Right AMFPhysical
+        "EMULATOR" -> Right AMFEmulator
         x -> Left ("Unable to parse AndroidModelForm from: " <> x)
 
 instance ToHttpApiData AndroidModelForm where
     toQueryParam = \case
-        DeviceFormUnspecified -> "DEVICE_FORM_UNSPECIFIED"
-        Virtual -> "VIRTUAL"
-        Physical -> "PHYSICAL"
+        AMFDeviceFormUnspecified -> "DEVICE_FORM_UNSPECIFIED"
+        AMFVirtual -> "VIRTUAL"
+        AMFPhysical -> "PHYSICAL"
+        AMFEmulator -> "EMULATOR"
 
 instance FromJSON AndroidModelForm where
     parseJSON = parseJSONText "AndroidModelForm"

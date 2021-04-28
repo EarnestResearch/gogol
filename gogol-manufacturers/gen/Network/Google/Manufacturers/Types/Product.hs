@@ -384,6 +384,7 @@ data Attributes =
     , _aFlavor :: !(Maybe Text)
     , _aPattern :: !(Maybe Text)
     , _aSizeSystem :: !(Maybe Text)
+    , _aProductHighlight :: !(Maybe [Text])
     , _aMaterial :: !(Maybe Text)
     , _aFormat :: !(Maybe Text)
     , _aProductType :: !(Maybe [Text])
@@ -400,6 +401,7 @@ data Attributes =
     , _aGender :: !(Maybe Text)
     , _aSuggestedRetailPrice :: !(Maybe Price)
     , _aItemGroupId :: !(Maybe Text)
+    , _aRichProductContent :: !(Maybe [Text])
     , _aTargetClientId :: !(Maybe Text)
     , _aSizeType :: !(Maybe Text)
     , _aReleaseDate :: !(Maybe Text)
@@ -438,6 +440,8 @@ data Attributes =
 --
 -- * 'aSizeSystem'
 --
+-- * 'aProductHighlight'
+--
 -- * 'aMaterial'
 --
 -- * 'aFormat'
@@ -470,6 +474,8 @@ data Attributes =
 --
 -- * 'aItemGroupId'
 --
+-- * 'aRichProductContent'
+--
 -- * 'aTargetClientId'
 --
 -- * 'aSizeType'
@@ -500,6 +506,7 @@ attributes =
     , _aFlavor = Nothing
     , _aPattern = Nothing
     , _aSizeSystem = Nothing
+    , _aProductHighlight = Nothing
     , _aMaterial = Nothing
     , _aFormat = Nothing
     , _aProductType = Nothing
@@ -516,6 +523,7 @@ attributes =
     , _aGender = Nothing
     , _aSuggestedRetailPrice = Nothing
     , _aItemGroupId = Nothing
+    , _aRichProductContent = Nothing
     , _aTargetClientId = Nothing
     , _aSizeType = Nothing
     , _aReleaseDate = Nothing
@@ -594,6 +602,15 @@ aPattern = lens _aPattern (\ s a -> s{_aPattern = a})
 aSizeSystem :: Lens' Attributes (Maybe Text)
 aSizeSystem
   = lens _aSizeSystem (\ s a -> s{_aSizeSystem = a})
+
+-- | The product highlights. For more information, see
+-- https:\/\/support.google.com\/manufacturers\/answer\/10066942
+aProductHighlight :: Lens' Attributes [Text]
+aProductHighlight
+  = lens _aProductHighlight
+      (\ s a -> s{_aProductHighlight = a})
+      . _Default
+      . _Coerce
 
 -- | The material of the product. For more information, see
 -- https:\/\/support.google.com\/manufacturers\/answer\/6124116#material.
@@ -702,6 +719,15 @@ aItemGroupId :: Lens' Attributes (Maybe Text)
 aItemGroupId
   = lens _aItemGroupId (\ s a -> s{_aItemGroupId = a})
 
+-- | Rich product content. For more information, see
+-- https:\/\/support.google.com\/manufacturers\/answer\/9389865
+aRichProductContent :: Lens' Attributes [Text]
+aRichProductContent
+  = lens _aRichProductContent
+      (\ s a -> s{_aRichProductContent = a})
+      . _Default
+      . _Coerce
+
 -- | The target client id. Should only be used in the accounts of the data
 -- partners.
 aTargetClientId :: Lens' Attributes (Maybe Text)
@@ -764,6 +790,7 @@ instance FromJSON Attributes where
                      <*> (o .:? "flavor")
                      <*> (o .:? "pattern")
                      <*> (o .:? "sizeSystem")
+                     <*> (o .:? "productHighlight" .!= mempty)
                      <*> (o .:? "material")
                      <*> (o .:? "format")
                      <*> (o .:? "productType" .!= mempty)
@@ -780,6 +807,7 @@ instance FromJSON Attributes where
                      <*> (o .:? "gender")
                      <*> (o .:? "suggestedRetailPrice")
                      <*> (o .:? "itemGroupId")
+                     <*> (o .:? "richProductContent" .!= mempty)
                      <*> (o .:? "targetClientId")
                      <*> (o .:? "sizeType")
                      <*> (o .:? "releaseDate")
@@ -803,6 +831,7 @@ instance ToJSON Attributes where
                   ("flavor" .=) <$> _aFlavor,
                   ("pattern" .=) <$> _aPattern,
                   ("sizeSystem" .=) <$> _aSizeSystem,
+                  ("productHighlight" .=) <$> _aProductHighlight,
                   ("material" .=) <$> _aMaterial,
                   ("format" .=) <$> _aFormat,
                   ("productType" .=) <$> _aProductType,
@@ -820,6 +849,7 @@ instance ToJSON Attributes where
                   ("suggestedRetailPrice" .=) <$>
                     _aSuggestedRetailPrice,
                   ("itemGroupId" .=) <$> _aItemGroupId,
+                  ("richProductContent" .=) <$> _aRichProductContent,
                   ("targetClientId" .=) <$> _aTargetClientId,
                   ("sizeType" .=) <$> _aSizeType,
                   ("releaseDate" .=) <$> _aReleaseDate,

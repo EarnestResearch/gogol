@@ -125,7 +125,7 @@ sgUploadType
 -- | Name of the consumer and service to get the \`ConsumerState\` for. An
 -- example name would be:
 -- \`projects\/123\/services\/serviceusage.googleapis.com\` where \`123\`
--- is the project number (not project ID).
+-- is the project number.
 sgName :: Lens' ServicesGet Text
 sgName = lens _sgName (\ s a -> s{_sgName = a})
 

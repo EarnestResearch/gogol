@@ -176,11 +176,11 @@ pbrPayload :: Lens' ProjectsBuildsRetry RetryBuildRequest
 pbrPayload
   = lens _pbrPayload (\ s a -> s{_pbrPayload = a})
 
--- | Build ID of the original build.
+-- | Required. Build ID of the original build.
 pbrId :: Lens' ProjectsBuildsRetry Text
 pbrId = lens _pbrId (\ s a -> s{_pbrId = a})
 
--- | ID of the project.
+-- | Required. ID of the project.
 pbrProjectId :: Lens' ProjectsBuildsRetry Text
 pbrProjectId
   = lens _pbrProjectId (\ s a -> s{_pbrProjectId = a})

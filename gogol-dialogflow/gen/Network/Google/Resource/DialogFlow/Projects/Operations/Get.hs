@@ -24,7 +24,7 @@
 -- method to poll the operation result at intervals as recommended by the
 -- API service.
 --
--- /See:/ <https://cloud.google.com/dialogflow-enterprise/ Dialogflow API Reference> for @dialogflow.projects.operations.get@.
+-- /See:/ <https://cloud.google.com/dialogflow/ Dialogflow API Reference> for @dialogflow.projects.operations.get@.
 module Network.Google.Resource.DialogFlow.Projects.Operations.Get
     (
     -- * REST Resource
@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @dialogflow.projects.operations.get@ method which the
 -- 'ProjectsOperationsGet' request conforms to.
 type ProjectsOperationsGetResource =
-     "v2" :>
+     "v3" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

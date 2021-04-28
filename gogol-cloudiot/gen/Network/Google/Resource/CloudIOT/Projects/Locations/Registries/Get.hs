@@ -124,7 +124,7 @@ plrgUploadType
   = lens _plrgUploadType
       (\ s a -> s{_plrgUploadType = a})
 
--- | The name of the device registry. For example,
+-- | Required. The name of the device registry. For example,
 -- \`projects\/example-project\/locations\/us-central1\/registries\/my-registry\`.
 plrgName :: Lens' ProjectsLocationsRegistriesGet Text
 plrgName = lens _plrgName (\ s a -> s{_plrgName = a})

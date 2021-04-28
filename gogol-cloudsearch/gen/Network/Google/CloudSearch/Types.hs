@@ -30,16 +30,14 @@ module Network.Google.CloudSearch.Types
     , cloudSearchStatsScope
     , cloudSearchSettingsScope
 
+    -- * QueryInterpretationReason
+    , QueryInterpretationReason (..)
+
     -- * DriveMimeTypeRestrictType
     , DriveMimeTypeRestrictType (..)
 
     -- * DriveFollowUpRestrictType
     , DriveFollowUpRestrictType (..)
-
-    -- * GmailFolderRestrict
-    , GmailFolderRestrict
-    , gmailFolderRestrict
-    , gfrType
 
     -- * ItemContent
     , ItemContent
@@ -48,6 +46,14 @@ module Network.Google.CloudSearch.Types
     , icContentFormat
     , icContentDataRef
     , icInlineContent
+
+    -- * CustomerUserStats
+    , CustomerUserStats
+    , customerUserStats
+    , cusThirtyDaysActiveUsersCount
+    , cusDate
+    , cusOneDayActiveUsersCount
+    , cusSevenDaysActiveUsersCount
 
     -- * Photo
     , Photo
@@ -71,6 +77,7 @@ module Network.Google.CloudSearch.Types
     , saName
     , saSourceConfig
     , saDisplayName
+    , saEnableAuditLog
     , saDefaultSortOptions
 
     -- * BooleanOperatorOptions
@@ -94,11 +101,6 @@ module Network.Google.CloudSearch.Types
 
     -- * ItemStatusCode
     , ItemStatusCode (..)
-
-    -- * GmailActionRestrict
-    , GmailActionRestrict
-    , gmailActionRestrict
-    , garType
 
     -- * UnreserveItemsRequest
     , UnreserveItemsRequest
@@ -129,6 +131,12 @@ module Network.Google.CloudSearch.Types
     , QueryItem
     , queryItem
     , qiIsSynthetic
+
+    -- * CustomerQueryStats
+    , CustomerQueryStats
+    , customerQueryStats
+    , cqsQueryCountByStatus
+    , cqsDate
 
     -- * ListUnmAppedIdentitiesResponse
     , ListUnmAppedIdentitiesResponse
@@ -171,13 +179,21 @@ module Network.Google.CloudSearch.Types
     , qsSource
     , qsOperators
 
-    -- * GmailTimeRestrictType
-    , GmailTimeRestrictType (..)
+    -- * ListOperationsResponse
+    , ListOperationsResponse
+    , listOperationsResponse
+    , lorNextPageToken
+    , lorOperations
 
     -- * SuggestResponse
     , SuggestResponse
     , suggestResponse
     , srSuggestResults
+
+    -- * GetSearchApplicationQueryStatsResponse
+    , GetSearchApplicationQueryStatsResponse
+    , getSearchApplicationQueryStatsResponse
+    , gsaqsrStats
 
     -- * RepositoryError
     , RepositoryError
@@ -198,12 +214,14 @@ module Network.Google.CloudSearch.Types
     -- * PropertyDefinition
     , PropertyDefinition
     , propertyDefinition
+    , pdIsSuggestable
     , pdEnumPropertyOptions
     , pdHTMLPropertyOptions
     , pdObjectPropertyOptions
     , pdIsReturnable
     , pdTimestampPropertyOptions
     , pdIntegerPropertyOptions
+    , pdIsWildcardSearchable
     , pdName
     , pdIsRepeatable
     , pdDoublePropertyOptions
@@ -275,9 +293,6 @@ module Network.Google.CloudSearch.Types
     , doubleOperatorOptions
     , dOperatorName
 
-    -- * GmailIntelligentRestrictType
-    , GmailIntelligentRestrictType (..)
-
     -- * Operation
     , Operation
     , operation
@@ -331,6 +346,7 @@ module Network.Google.CloudSearch.Types
     , QueryInterpretationOptions
     , queryInterpretationOptions
     , qioDisableNlInterpretation
+    , qioEnableVerbatimMode
 
     -- * ResetSearchApplicationRequest
     , ResetSearchApplicationRequest
@@ -351,6 +367,7 @@ module Network.Google.CloudSearch.Types
     , imMimeType
     , imUpdateTime
     , imKeywords
+    , imContextAttributes
     , imTitle
     , imContentLanguage
     , imSearchQualityMetadata
@@ -414,13 +431,16 @@ module Network.Google.CloudSearch.Types
     -- * SourceScoringConfigSourceImportance
     , SourceScoringConfigSourceImportance (..)
 
-    -- * GmailAttachmentRestrictType
-    , GmailAttachmentRestrictType (..)
-
     -- * Metaline
     , Metaline
     , metaline
     , mProperties
+
+    -- * SearchApplicationSessionStats
+    , SearchApplicationSessionStats
+    , searchApplicationSessionStats
+    , sassSearchSessionsCount
+    , sassDate
 
     -- * FacetBucket
     , FacetBucket
@@ -434,6 +454,14 @@ module Network.Google.CloudSearch.Types
     , statusDetailsItem
     , sdiAddtional
 
+    -- * AuditLoggingSettings
+    , AuditLoggingSettings
+    , auditLoggingSettings
+    , alsProject
+    , alsLogDataReadActions
+    , alsLogDataWriteActions
+    , alsLogAdminReadActions
+
     -- * RetrievalImportanceImportance
     , RetrievalImportanceImportance (..)
 
@@ -446,6 +474,11 @@ module Network.Google.CloudSearch.Types
 
     -- * ProcessingErrorCode
     , ProcessingErrorCode (..)
+
+    -- * GetSearchApplicationSessionStatsResponse
+    , GetSearchApplicationSessionStatsResponse
+    , getSearchApplicationSessionStatsResponse
+    , gsassrStats
 
     -- * IntegerOperatorOptions
     , IntegerOperatorOptions
@@ -471,6 +504,12 @@ module Network.Google.CloudSearch.Types
     , ResultDebugInfo
     , resultDebugInfo
     , rdiFormattedDebugInfo
+
+    -- * QueryCountByStatus
+    , QueryCountByStatus
+    , queryCountByStatus
+    , qcbsCount
+    , qcbsStatusCode
 
     -- * ItemCountByStatus
     , ItemCountByStatus
@@ -519,6 +558,11 @@ module Network.Google.CloudSearch.Types
     , sObjectDefinitions
     , sOperationIds
 
+    -- * GetSearchApplicationUserStatsResponse
+    , GetSearchApplicationUserStatsResponse
+    , getSearchApplicationUserStatsResponse
+    , gsausrStats
+
     -- * DriveTimeSpanRestrict
     , DriveTimeSpanRestrict
     , driveTimeSpanRestrict
@@ -545,13 +589,13 @@ module Network.Google.CloudSearch.Types
     , dYear
     , dMonth
 
+    -- * IndexingDatasourcesItemsDeleteMode
+    , IndexingDatasourcesItemsDeleteMode (..)
+
     -- * DisplayedProperty
     , DisplayedProperty
     , displayedProperty
     , dpPropertyName
-
-    -- * GmailActionRestrictType
-    , GmailActionRestrictType (..)
 
     -- * FacetResult
     , FacetResult
@@ -592,8 +636,13 @@ module Network.Google.CloudSearch.Types
     , dateValues
     , dValues
 
-    -- * GmailFolderRestrictType
-    , GmailFolderRestrictType (..)
+    -- * SearchApplicationUserStats
+    , SearchApplicationUserStats
+    , searchApplicationUserStats
+    , sausThirtyDaysActiveUsersCount
+    , sausDate
+    , sausOneDayActiveUsersCount
+    , sausSevenDaysActiveUsersCount
 
     -- * NamedProperty
     , NamedProperty
@@ -608,6 +657,9 @@ module Network.Google.CloudSearch.Types
     , npEnumValues
     , npTimestampValues
     , npIntegerValues
+
+    -- * DebugIdentitysourcesUnmAppedidsListResolutionStatusCode
+    , DebugIdentitysourcesUnmAppedidsListResolutionStatusCode (..)
 
     -- * MatchRange
     , MatchRange
@@ -635,6 +687,7 @@ module Network.Google.CloudSearch.Types
     , srStart
     , srQuery
     , srFacetOptions
+    , srContextAttributes
     , srPageSize
     , srRequestOptions
 
@@ -650,6 +703,15 @@ module Network.Google.CloudSearch.Types
     , srcResultCountExact
     , srcResultCountEstimate
     , srcSource
+
+    -- * PollItemsRequestStatusCodesItem
+    , PollItemsRequestStatusCodesItem (..)
+
+    -- * SearchApplicationQueryStats
+    , SearchApplicationQueryStats
+    , searchApplicationQueryStats
+    , saqsQueryCountByStatus
+    , saqsDate
 
     -- * SourceConfig
     , SourceConfig
@@ -684,17 +746,17 @@ module Network.Google.CloudSearch.Types
     , uploadItemRef
     , uirName
 
-    -- * GmailTimeRestrict
-    , GmailTimeRestrict
-    , gmailTimeRestrict
-    , gtrType
-
     -- * PushItemRequest
     , PushItemRequest
     , pushItemRequest
     , pirDebugOptions
     , pirConnectorName
     , pirItem
+
+    -- * GetCustomerQueryStatsResponse
+    , GetCustomerQueryStatsResponse
+    , getCustomerQueryStatsResponse
+    , gcqsrStats
 
     -- * DoublePropertyOptions
     , DoublePropertyOptions
@@ -706,6 +768,7 @@ module Network.Google.CloudSearch.Types
     , queryOperator
     , qoIsSuggestable
     , qoIsReturnable
+    , qoObjectType
     , qoIsRepeatable
     , qoOperatorName
     , qoIsSortable
@@ -748,10 +811,8 @@ module Network.Google.CloudSearch.Types
     -- * SourceCrowdingConfig
     , SourceCrowdingConfig
     , sourceCrowdingConfig
-    , sccField
     , sccNumSuggestions
     , sccNumResults
-    , sccSource
 
     -- * Interaction
     , Interaction
@@ -829,11 +890,6 @@ module Network.Google.CloudSearch.Types
     , htmlValues
     , hvValues
 
-    -- * GmailIntelligentRestrict
-    , GmailIntelligentRestrict
-    , gmailIntelligentRestrict
-    , girType
-
     -- * HTMLOperatorOptions
     , HTMLOperatorOptions
     , htmlOperatorOptions
@@ -909,6 +965,11 @@ module Network.Google.CloudSearch.Types
     -- * ItemCountByStatusStatusCode
     , ItemCountByStatusStatusCode (..)
 
+    -- * VPCSettings
+    , VPCSettings
+    , vpcSettings
+    , vsProject
+
     -- * PollItemsRequest
     , PollItemsRequest
     , pollItemsRequest
@@ -922,6 +983,7 @@ module Network.Google.CloudSearch.Types
     , QueryInterpretation
     , queryInterpretation
     , qiInterpretedQuery
+    , qiReason
     , qiInterpretationType
 
     -- * UnmAppedIdentity
@@ -952,6 +1014,12 @@ module Network.Google.CloudSearch.Types
     , piMetadataHash
     , piType
 
+    -- * CustomerSessionStats
+    , CustomerSessionStats
+    , customerSessionStats
+    , cssSearchSessionsCount
+    , cssDate
+
     -- * ErrorMessage
     , ErrorMessage
     , errorMessage
@@ -974,10 +1042,11 @@ module Network.Google.CloudSearch.Types
     , enumOperatorOptions
     , eooOperatorName
 
-    -- * GmailAttachmentRestrict
-    , GmailAttachmentRestrict
-    , gmailAttachmentRestrict
-    , gType
+    -- * ContextAttribute
+    , ContextAttribute
+    , contextAttribute
+    , caValues
+    , caName
 
     -- * DatePropertyOptions
     , DatePropertyOptions
@@ -1035,6 +1104,11 @@ module Network.Google.CloudSearch.Types
     , integerValues
     , ivValues
 
+    -- * GetCustomerSessionStatsResponse
+    , GetCustomerSessionStatsResponse
+    , getCustomerSessionStatsResponse
+    , gcssrStats
+
     -- * SearchItemsByViewURLResponse
     , SearchItemsByViewURLResponse
     , searchItemsByViewURLResponse
@@ -1052,15 +1126,10 @@ module Network.Google.CloudSearch.Types
     -- * RestrictItem
     , RestrictItem
     , restrictItem
-    , riGmailFolderRestrict
-    , riGmailActionRestrict
     , riDriveLocationRestrict
     , riDriveTimeSpanRestrict
     , riDriveMimeTypeRestrict
     , riDriveFollowUpRestrict
-    , riGmailTimeRestrict
-    , riGmailIntelligentRestrict
-    , riGmailAttachmentRestrict
     , riSearchOperator
 
     -- * DriveTimeSpanRestrictType
@@ -1068,6 +1137,12 @@ module Network.Google.CloudSearch.Types
 
     -- * IndexItemRequestMode
     , IndexItemRequestMode (..)
+
+    -- * CustomerSettings
+    , CustomerSettings
+    , customerSettings
+    , csAuditLoggingSettings
+    , csVPCSettings
 
     -- * ItemACLACLInheritanceType
     , ItemACLACLInheritanceType (..)
@@ -1091,6 +1166,11 @@ module Network.Google.CloudSearch.Types
     , isProcessingErrors
     , isCode
     , isRepositoryErrors
+
+    -- * GetCustomerUserStatsResponse
+    , GetCustomerUserStatsResponse
+    , getCustomerUserStatsResponse
+    , gcusrStats
     ) where
 
 import Network.Google.CloudSearch.Types.Product
@@ -1103,17 +1183,15 @@ cloudSearchService
   = defaultService (ServiceId "cloudsearch:v1")
       "cloudsearch.googleapis.com"
 
--- | New Service:
--- https:\/\/www.googleapis.com\/auth\/cloud_search.settings.query
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchSettingsQueryScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.settings.query"]
 cloudSearchSettingsQueryScope = Proxy
 
--- | New Service:
--- https:\/\/www.googleapis.com\/auth\/cloud_search.stats.indexing
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchStatsIndexingScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.stats.indexing"]
 cloudSearchStatsIndexingScope = Proxy
 
--- | New Service: https:\/\/www.googleapis.com\/auth\/cloud_search.indexing
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchIndexingScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.indexing"]
 cloudSearchIndexingScope = Proxy
 
@@ -1121,8 +1199,7 @@ cloudSearchIndexingScope = Proxy
 cloudSearchScope :: Proxy '["https://www.googleapis.com/auth/cloud_search"]
 cloudSearchScope = Proxy
 
--- | New Service:
--- https:\/\/www.googleapis.com\/auth\/cloud_search.settings.indexing
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchSettingsIndexingScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.settings.indexing"]
 cloudSearchSettingsIndexingScope = Proxy
 
@@ -1130,14 +1207,14 @@ cloudSearchSettingsIndexingScope = Proxy
 cloudSearchQueryScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.query"]
 cloudSearchQueryScope = Proxy
 
--- | New Service: https:\/\/www.googleapis.com\/auth\/cloud_search.debug
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchDebugScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.debug"]
 cloudSearchDebugScope = Proxy
 
--- | New Service: https:\/\/www.googleapis.com\/auth\/cloud_search.stats
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchStatsScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.stats"]
 cloudSearchStatsScope = Proxy
 
--- | New Service: https:\/\/www.googleapis.com\/auth\/cloud_search.settings
+-- | Index and serve your organization\'s data with Cloud Search
 cloudSearchSettingsScope :: Proxy '["https://www.googleapis.com/auth/cloud_search.settings"]
 cloudSearchSettingsScope = Proxy

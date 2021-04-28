@@ -20,9 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Returns the list of IPs that checkers run from
+-- Returns the list of IP addresses that checkers run from
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.uptimeCheckIps.list@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.uptimeCheckIps.list@.
 module Network.Google.Resource.Monitoring.UptimeCheckIPs.List
     (
     -- * REST Resource
@@ -60,7 +60,7 @@ type UptimeCheckIPsListResource =
                        QueryParam "alt" AltJSON :>
                          Get '[JSON] ListUptimeCheckIPsResponse
 
--- | Returns the list of IPs that checkers run from
+-- | Returns the list of IP addresses that checkers run from
 --
 -- /See:/ 'uptimeCheckIPsList' smart constructor.
 data UptimeCheckIPsList =

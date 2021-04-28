@@ -23,7 +23,7 @@
 -- Updates price and availability of a product in your Merchant Center
 -- account.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.inventory.set@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.inventory.set@.
 module Network.Google.Resource.Content.Inventory.Set
     (
     -- * REST Resource
@@ -34,11 +34,16 @@ module Network.Google.Resource.Content.Inventory.Set
     , InventorySet
 
     -- * Request Lenses
+    , isXgafv
     , isMerchantId
     , isStoreCode
+    , isUploadProtocol
+    , isAccessToken
+    , isUploadType
     , isPayload
     , isProductId
     , isDryRun
+    , isCallback
     ) where
 
 import Network.Google.Prelude
@@ -54,10 +59,15 @@ type InventorySetResource =
              Capture "storeCode" Text :>
                "products" :>
                  Capture "productId" Text :>
-                   QueryParam "dryRun" Bool :>
-                     QueryParam "alt" AltJSON :>
-                       ReqBody '[JSON] InventorySetRequest :>
-                         Post '[JSON] InventorySetResponse
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "dryRun" Bool :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :>
+                                 ReqBody '[JSON] InventorySetRequest :>
+                                   Post '[JSON] InventorySetResponse
 
 -- | Updates price and availability of a product in your Merchant Center
 -- account.
@@ -65,11 +75,16 @@ type InventorySetResource =
 -- /See:/ 'inventorySet' smart constructor.
 data InventorySet =
   InventorySet'
-    { _isMerchantId :: !(Textual Word64)
+    { _isXgafv :: !(Maybe Xgafv)
+    , _isMerchantId :: !(Textual Word64)
     , _isStoreCode :: !Text
+    , _isUploadProtocol :: !(Maybe Text)
+    , _isAccessToken :: !(Maybe Text)
+    , _isUploadType :: !(Maybe Text)
     , _isPayload :: !InventorySetRequest
     , _isProductId :: !Text
     , _isDryRun :: !(Maybe Bool)
+    , _isCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -78,15 +93,25 @@ data InventorySet =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'isXgafv'
+--
 -- * 'isMerchantId'
 --
 -- * 'isStoreCode'
+--
+-- * 'isUploadProtocol'
+--
+-- * 'isAccessToken'
+--
+-- * 'isUploadType'
 --
 -- * 'isPayload'
 --
 -- * 'isProductId'
 --
 -- * 'isDryRun'
+--
+-- * 'isCallback'
 inventorySet
     :: Word64 -- ^ 'isMerchantId'
     -> Text -- ^ 'isStoreCode'
@@ -95,13 +120,22 @@ inventorySet
     -> InventorySet
 inventorySet pIsMerchantId_ pIsStoreCode_ pIsPayload_ pIsProductId_ =
   InventorySet'
-    { _isMerchantId = _Coerce # pIsMerchantId_
+    { _isXgafv = Nothing
+    , _isMerchantId = _Coerce # pIsMerchantId_
     , _isStoreCode = pIsStoreCode_
+    , _isUploadProtocol = Nothing
+    , _isAccessToken = Nothing
+    , _isUploadType = Nothing
     , _isPayload = pIsPayload_
     , _isProductId = pIsProductId_
     , _isDryRun = Nothing
+    , _isCallback = Nothing
     }
 
+
+-- | V1 error format.
+isXgafv :: Lens' InventorySet (Maybe Xgafv)
+isXgafv = lens _isXgafv (\ s a -> s{_isXgafv = a})
 
 -- | The ID of the account that contains the product. This account cannot be
 -- a multi-client account.
@@ -111,10 +145,27 @@ isMerchantId
       . _Coerce
 
 -- | The code of the store for which to update price and availability. Use
--- online to update price and availability of an online product.
+-- \`online\` to update price and availability of an online product.
 isStoreCode :: Lens' InventorySet Text
 isStoreCode
   = lens _isStoreCode (\ s a -> s{_isStoreCode = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+isUploadProtocol :: Lens' InventorySet (Maybe Text)
+isUploadProtocol
+  = lens _isUploadProtocol
+      (\ s a -> s{_isUploadProtocol = a})
+
+-- | OAuth access token.
+isAccessToken :: Lens' InventorySet (Maybe Text)
+isAccessToken
+  = lens _isAccessToken
+      (\ s a -> s{_isAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+isUploadType :: Lens' InventorySet (Maybe Text)
+isUploadType
+  = lens _isUploadType (\ s a -> s{_isUploadType = a})
 
 -- | Multipart request metadata.
 isPayload :: Lens' InventorySet InventorySetRequest
@@ -132,13 +183,22 @@ isProductId
 isDryRun :: Lens' InventorySet (Maybe Bool)
 isDryRun = lens _isDryRun (\ s a -> s{_isDryRun = a})
 
+-- | JSONP
+isCallback :: Lens' InventorySet (Maybe Text)
+isCallback
+  = lens _isCallback (\ s a -> s{_isCallback = a})
+
 instance GoogleRequest InventorySet where
         type Rs InventorySet = InventorySetResponse
         type Scopes InventorySet =
              '["https://www.googleapis.com/auth/content"]
         requestClient InventorySet'{..}
-          = go _isMerchantId _isStoreCode _isProductId
+          = go _isMerchantId _isStoreCode _isProductId _isXgafv
+              _isUploadProtocol
+              _isAccessToken
+              _isUploadType
               _isDryRun
+              _isCallback
               (Just AltJSON)
               _isPayload
               shoppingContentService

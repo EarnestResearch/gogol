@@ -40,6 +40,7 @@ module Network.Google.Resource.Drive.Changes.List
     , clSpaces
     , clIncludeItemsFromAllDrives
     , clSupportsAllDrives
+    , clIncludePermissionsForView
     , clPageToken
     , clPageSize
     , clIncludeRemoved
@@ -64,12 +65,13 @@ type ChangesListResource =
                      QueryParam "spaces" Text :>
                        QueryParam "includeItemsFromAllDrives" Bool :>
                          QueryParam "supportsAllDrives" Bool :>
-                           QueryParam "pageSize" (Textual Int32) :>
-                             QueryParam "includeRemoved" Bool :>
-                               QueryParam "supportsTeamDrives" Bool :>
-                                 QueryParam "driveId" Text :>
-                                   QueryParam "alt" AltJSON :>
-                                     Get '[JSON] ChangeList
+                           QueryParam "includePermissionsForView" Text :>
+                             QueryParam "pageSize" (Textual Int32) :>
+                               QueryParam "includeRemoved" Bool :>
+                                 QueryParam "supportsTeamDrives" Bool :>
+                                   QueryParam "driveId" Text :>
+                                     QueryParam "alt" AltJSON :>
+                                       Get '[JSON] ChangeList
 
 -- | Lists the changes for a user or shared drive.
 --
@@ -83,6 +85,7 @@ data ChangesList =
     , _clSpaces :: !Text
     , _clIncludeItemsFromAllDrives :: !Bool
     , _clSupportsAllDrives :: !Bool
+    , _clIncludePermissionsForView :: !(Maybe Text)
     , _clPageToken :: !Text
     , _clPageSize :: !(Textual Int32)
     , _clIncludeRemoved :: !Bool
@@ -110,6 +113,8 @@ data ChangesList =
 --
 -- * 'clSupportsAllDrives'
 --
+-- * 'clIncludePermissionsForView'
+--
 -- * 'clPageToken'
 --
 -- * 'clPageSize'
@@ -131,6 +136,7 @@ changesList pClPageToken_ =
     , _clSpaces = "drive"
     , _clIncludeItemsFromAllDrives = False
     , _clSupportsAllDrives = False
+    , _clIncludePermissionsForView = Nothing
     , _clPageToken = pClPageToken_
     , _clPageSize = 100
     , _clIncludeRemoved = True
@@ -187,6 +193,13 @@ clSupportsAllDrives
   = lens _clSupportsAllDrives
       (\ s a -> s{_clSupportsAllDrives = a})
 
+-- | Specifies which additional view\'s permissions to include in the
+-- response. Only \'published\' is supported.
+clIncludePermissionsForView :: Lens' ChangesList (Maybe Text)
+clIncludePermissionsForView
+  = lens _clIncludePermissionsForView
+      (\ s a -> s{_clIncludePermissionsForView = a})
+
 -- | The token for continuing a previous list request on the next page. This
 -- should be set to the value of \'nextPageToken\' from the previous
 -- response or to the response from the getStartPageToken method.
@@ -213,7 +226,7 @@ clSupportsTeamDrives
   = lens _clSupportsTeamDrives
       (\ s a -> s{_clSupportsTeamDrives = a})
 
--- | The shared drive from which changes will be returned. If specified the
+-- | The shared drive from which changes are returned. If specified the
 -- change IDs will be reflective of the shared drive; use the combined
 -- drive ID and change ID as an identifier.
 clDriveId :: Lens' ChangesList (Maybe Text)
@@ -239,6 +252,7 @@ instance GoogleRequest ChangesList where
               (Just _clSpaces)
               (Just _clIncludeItemsFromAllDrives)
               (Just _clSupportsAllDrives)
+              _clIncludePermissionsForView
               (Just _clPageSize)
               (Just _clIncludeRemoved)
               (Just _clSupportsTeamDrives)

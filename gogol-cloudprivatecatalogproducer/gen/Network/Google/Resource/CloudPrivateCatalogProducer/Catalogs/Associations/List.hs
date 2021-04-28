@@ -22,7 +22,7 @@
 --
 -- Lists all Association resources under a catalog.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.list@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.list@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Associations.List
     (
     -- * REST Resource

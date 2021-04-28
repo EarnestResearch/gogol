@@ -109,8 +109,8 @@ projectsLocationsRegistriesDevicesCreate pPlrdcParent_ pPlrdcPayload_ =
     }
 
 
--- | The name of the device registry where this device should be created. For
--- example,
+-- | Required. The name of the device registry where this device should be
+-- created. For example,
 -- \`projects\/example-project\/locations\/us-central1\/registries\/my-registry\`.
 plrdcParent :: Lens' ProjectsLocationsRegistriesDevicesCreate Text
 plrdcParent

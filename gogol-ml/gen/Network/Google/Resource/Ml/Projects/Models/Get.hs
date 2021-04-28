@@ -24,7 +24,7 @@
 -- set), and the default version (if at least one version of the model has
 -- been deployed).
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.get@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.get@.
 module Network.Google.Resource.Ml.Projects.Models.Get
     (
     -- * REST Resource
@@ -139,7 +139,8 @@ pmgCallback
 instance GoogleRequest ProjectsModelsGet where
         type Rs ProjectsModelsGet = GoogleCloudMlV1__Model
         type Scopes ProjectsModelsGet =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsModelsGet'{..}
           = go _pmgName _pmgXgafv _pmgUploadProtocol
               _pmgAccessToken

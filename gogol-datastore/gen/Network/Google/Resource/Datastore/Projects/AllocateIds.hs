@@ -138,7 +138,7 @@ paiPayload :: Lens' ProjectsAllocateIds AllocateIdsRequest
 paiPayload
   = lens _paiPayload (\ s a -> s{_paiPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 paiProjectId :: Lens' ProjectsAllocateIds Text
 paiProjectId
   = lens _paiProjectId (\ s a -> s{_paiProjectId = a})

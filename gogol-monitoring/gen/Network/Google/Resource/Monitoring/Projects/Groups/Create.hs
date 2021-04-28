@@ -22,7 +22,7 @@
 --
 -- Creates a new group.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.groups.create@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.groups.create@.
 module Network.Google.Resource.Monitoring.Projects.Groups.Create
     (
     -- * REST Resource
@@ -147,8 +147,9 @@ pgcPayload :: Lens' ProjectsGroupsCreate Group
 pgcPayload
   = lens _pgcPayload (\ s a -> s{_pgcPayload = a})
 
--- | The project in which to create the group. The format is
--- \"projects\/{project_id_or_number}\".
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) in which
+-- to create the group. The format is: projects\/[PROJECT_ID_OR_NUMBER]
 pgcName :: Lens' ProjectsGroupsCreate Text
 pgcName = lens _pgcName (\ s a -> s{_pgcName = a})
 

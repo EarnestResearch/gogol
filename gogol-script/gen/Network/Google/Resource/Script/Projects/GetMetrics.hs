@@ -58,7 +58,9 @@ type ProjectsGetMetricsResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "metricsGranularity" Text :>
+                     QueryParam "metricsGranularity"
+                       ProjectsGetMetricsMetricsGranularity
+                       :>
                        QueryParam "metricsFilter.deploymentId" Text :>
                          QueryParam "callback" Text :>
                            QueryParam "alt" AltJSON :> Get '[JSON] Metrics
@@ -73,7 +75,7 @@ data ProjectsGetMetrics =
     , _pgmUploadProtocol :: !(Maybe Text)
     , _pgmAccessToken :: !(Maybe Text)
     , _pgmUploadType :: !(Maybe Text)
-    , _pgmMetricsGranularity :: !(Maybe Text)
+    , _pgmMetricsGranularity :: !(Maybe ProjectsGetMetricsMetricsGranularity)
     , _pgmScriptId :: !Text
     , _pgmMetricsFilterDeploymentId :: !(Maybe Text)
     , _pgmCallback :: !(Maybe Text)
@@ -139,7 +141,7 @@ pgmUploadType
       (\ s a -> s{_pgmUploadType = a})
 
 -- | Required field indicating what granularity of metrics are returned.
-pgmMetricsGranularity :: Lens' ProjectsGetMetrics (Maybe Text)
+pgmMetricsGranularity :: Lens' ProjectsGetMetrics (Maybe ProjectsGetMetricsMetricsGranularity)
 pgmMetricsGranularity
   = lens _pgmMetricsGranularity
       (\ s a -> s{_pgmMetricsGranularity = a})

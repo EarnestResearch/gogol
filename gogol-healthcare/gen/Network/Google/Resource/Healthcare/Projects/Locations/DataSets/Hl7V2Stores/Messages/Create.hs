@@ -20,12 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a message and sends a notification to the Cloud Pub\/Sub topic.
--- If configured, the MLLP adapter listens to messages created by this
--- method and sends those back to the hospital. A successful response
--- indicates the message has been persisted to storage and a Cloud Pub\/Sub
--- notification has been sent. Sending to the hospital by the MLLP adapter
--- happens asynchronously.
+-- Parses and stores an HL7v2 message. This method triggers an asynchronous
+-- notification to any Pub\/Sub topic configured in
+-- Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the
+-- message. If an MLLP adapter is configured to listen to a Pub\/Sub topic,
+-- the adapter transmits the message when a notification is received.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.hl7V2Stores.messages.create@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.Messages.Create
@@ -54,7 +53,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesCreate' request conforms to.
 type ProjectsLocationsDataSetsHl7V2StoresMessagesCreateResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "messages" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -66,12 +65,11 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesCreateResource
                        ReqBody '[JSON] CreateMessageRequest :>
                          Post '[JSON] Message
 
--- | Creates a message and sends a notification to the Cloud Pub\/Sub topic.
--- If configured, the MLLP adapter listens to messages created by this
--- method and sends those back to the hospital. A successful response
--- indicates the message has been persisted to storage and a Cloud Pub\/Sub
--- notification has been sent. Sending to the hospital by the MLLP adapter
--- happens asynchronously.
+-- | Parses and stores an HL7v2 message. This method triggers an asynchronous
+-- notification to any Pub\/Sub topic configured in
+-- Hl7V2Store.Hl7V2NotificationConfig, if the filtering matches the
+-- message. If an MLLP adapter is configured to listen to a Pub\/Sub topic,
+-- the adapter transmits the message when a notification is received.
 --
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesCreate' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesCreate =

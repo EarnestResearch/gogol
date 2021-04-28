@@ -128,8 +128,9 @@ ositgUploadType
   = lens _ositgUploadType
       (\ s a -> s{_ositgUploadType = a})
 
--- | Resource name of the organization and storedInfoType to be read, for
--- example \`organizations\/433245324\/storedInfoTypes\/432452342\` or
+-- | Required. Resource name of the organization and storedInfoType to be
+-- read, for example
+-- \`organizations\/433245324\/storedInfoTypes\/432452342\` or
 -- projects\/project-id\/storedInfoTypes\/432452342.
 ositgName :: Lens' OrganizationsStoredInfoTypesGet Text
 ositgName

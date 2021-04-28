@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Returns a filters to which the user has access.
+-- Returns filters to which the user has access.
 --
 -- /See:/ <https://developers.google.com/analytics/ Google Analytics API Reference> for @analytics.management.filters.get@.
 module Network.Google.Resource.Analytics.Management.Filters.Get
@@ -52,7 +52,7 @@ type ManagementFiltersGetResource =
                  Capture "filterId" Text :>
                    QueryParam "alt" AltJSON :> Get '[JSON] Filter
 
--- | Returns a filters to which the user has access.
+-- | Returns filters to which the user has access.
 --
 -- /See:/ 'managementFiltersGet' smart constructor.
 data ManagementFiltersGet =

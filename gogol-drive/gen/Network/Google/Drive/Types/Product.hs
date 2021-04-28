@@ -105,6 +105,58 @@ instance ToJSON FileList where
                   ("incompleteSearch" .=) <$> _flIncompleteSearch,
                   Just ("kind" .= _flKind), ("files" .=) <$> _flFiles])
 
+-- | Shortcut file details. Only populated for shortcut files, which have the
+-- mimeType field set to application\/vnd.google-apps.shortcut.
+--
+-- /See:/ 'fileShortcutDetails' smart constructor.
+data FileShortcutDetails =
+  FileShortcutDetails'
+    { _fsdTargetId :: !(Maybe Text)
+    , _fsdTargetMimeType :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'FileShortcutDetails' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'fsdTargetId'
+--
+-- * 'fsdTargetMimeType'
+fileShortcutDetails
+    :: FileShortcutDetails
+fileShortcutDetails =
+  FileShortcutDetails' {_fsdTargetId = Nothing, _fsdTargetMimeType = Nothing}
+
+
+-- | The ID of the file that this shortcut points to.
+fsdTargetId :: Lens' FileShortcutDetails (Maybe Text)
+fsdTargetId
+  = lens _fsdTargetId (\ s a -> s{_fsdTargetId = a})
+
+-- | The MIME type of the file that this shortcut points to. The value of
+-- this field is a snapshot of the target\'s MIME type, captured when the
+-- shortcut is created.
+fsdTargetMimeType :: Lens' FileShortcutDetails (Maybe Text)
+fsdTargetMimeType
+  = lens _fsdTargetMimeType
+      (\ s a -> s{_fsdTargetMimeType = a})
+
+instance FromJSON FileShortcutDetails where
+        parseJSON
+          = withObject "FileShortcutDetails"
+              (\ o ->
+                 FileShortcutDetails' <$>
+                   (o .:? "targetId") <*> (o .:? "targetMimeType"))
+
+instance ToJSON FileShortcutDetails where
+        toJSON FileShortcutDetails'{..}
+          = object
+              (catMaybes
+                 [("targetId" .=) <$> _fsdTargetId,
+                  ("targetMimeType" .=) <$> _fsdTargetMimeType])
+
 -- | Representation of a shared drive.
 --
 -- /See:/ 'drive' smart constructor.
@@ -598,7 +650,7 @@ ppdiRole :: Lens' PermissionPermissionDetailsItem (Maybe Text)
 ppdiRole = lens _ppdiRole (\ s a -> s{_ppdiRole = a})
 
 -- | The ID of the item from which this permission is inherited. This is an
--- output-only field and is only populated for members of the shared drive.
+-- output-only field.
 ppdiInheritedFrom :: Lens' PermissionPermissionDetailsItem (Maybe Text)
 ppdiInheritedFrom
   = lens _ppdiInheritedFrom
@@ -1110,7 +1162,8 @@ rAction = lens _rAction (\ s a -> s{_rAction = a})
 rContent :: Lens' Reply (Maybe Text)
 rContent = lens _rContent (\ s a -> s{_rContent = a})
 
--- | The user who created the reply.
+-- | The author of the reply. The author\'s email address and permission ID
+-- will not be populated.
 rAuthor :: Lens' Reply (Maybe User)
 rAuthor = lens _rAuthor (\ s a -> s{_rAuthor = a})
 
@@ -1193,6 +1246,7 @@ data FileCapabilities =
     , _fcCanComment :: !(Maybe Bool)
     , _fcCanMoveChildrenWithinDrive :: !(Maybe Bool)
     , _fcCanMoveChildrenWithinTeamDrive :: !(Maybe Bool)
+    , _fcCanModifyContent :: !(Maybe Bool)
     , _fcCanDelete :: !(Maybe Bool)
     , _fcCanMoveItemIntoTeamDrive :: !(Maybe Bool)
     , _fcCanDownload :: !(Maybe Bool)
@@ -1201,11 +1255,13 @@ data FileCapabilities =
     , _fcCanTrashChildren :: !(Maybe Bool)
     , _fcCanMoveItemOutOfDrive :: !(Maybe Bool)
     , _fcCanAddChildren :: !(Maybe Bool)
+    , _fcCanAddMyDriveParent :: !(Maybe Bool)
     , _fcCanRemoveChildren :: !(Maybe Bool)
     , _fcCanMoveTeamDriveItem :: !(Maybe Bool)
     , _fcCanMoveItemWithinTeamDrive :: !(Maybe Bool)
     , _fcCanReadTeamDrive :: !(Maybe Bool)
     , _fcCanReadDrive :: !(Maybe Bool)
+    , _fcCanAddFolderFromAnotherDrive :: !(Maybe Bool)
     , _fcCanChangeCopyRequiresWriterPermission :: !(Maybe Bool)
     , _fcCanMoveChildrenOutOfDrive :: !(Maybe Bool)
     , _fcCanListChildren :: !(Maybe Bool)
@@ -1215,6 +1271,8 @@ data FileCapabilities =
     , _fcCanReadRevisions :: !(Maybe Bool)
     , _fcCanDeleteChildren :: !(Maybe Bool)
     , _fcCanMoveItemOutOfTeamDrive :: !(Maybe Bool)
+    , _fcCanRemoveMyDriveParent :: !(Maybe Bool)
+    , _fcCanModifyContentRestriction :: !(Maybe Bool)
     , _fcCanCopy :: !(Maybe Bool)
     , _fcCanMoveItemWithinDrive :: !(Maybe Bool)
     , _fcCanShare :: !(Maybe Bool)
@@ -1234,6 +1292,8 @@ data FileCapabilities =
 --
 -- * 'fcCanMoveChildrenWithinTeamDrive'
 --
+-- * 'fcCanModifyContent'
+--
 -- * 'fcCanDelete'
 --
 -- * 'fcCanMoveItemIntoTeamDrive'
@@ -1250,6 +1310,8 @@ data FileCapabilities =
 --
 -- * 'fcCanAddChildren'
 --
+-- * 'fcCanAddMyDriveParent'
+--
 -- * 'fcCanRemoveChildren'
 --
 -- * 'fcCanMoveTeamDriveItem'
@@ -1259,6 +1321,8 @@ data FileCapabilities =
 -- * 'fcCanReadTeamDrive'
 --
 -- * 'fcCanReadDrive'
+--
+-- * 'fcCanAddFolderFromAnotherDrive'
 --
 -- * 'fcCanChangeCopyRequiresWriterPermission'
 --
@@ -1278,6 +1342,10 @@ data FileCapabilities =
 --
 -- * 'fcCanMoveItemOutOfTeamDrive'
 --
+-- * 'fcCanRemoveMyDriveParent'
+--
+-- * 'fcCanModifyContentRestriction'
+--
 -- * 'fcCanCopy'
 --
 -- * 'fcCanMoveItemWithinDrive'
@@ -1291,6 +1359,7 @@ fileCapabilities =
     , _fcCanComment = Nothing
     , _fcCanMoveChildrenWithinDrive = Nothing
     , _fcCanMoveChildrenWithinTeamDrive = Nothing
+    , _fcCanModifyContent = Nothing
     , _fcCanDelete = Nothing
     , _fcCanMoveItemIntoTeamDrive = Nothing
     , _fcCanDownload = Nothing
@@ -1299,11 +1368,13 @@ fileCapabilities =
     , _fcCanTrashChildren = Nothing
     , _fcCanMoveItemOutOfDrive = Nothing
     , _fcCanAddChildren = Nothing
+    , _fcCanAddMyDriveParent = Nothing
     , _fcCanRemoveChildren = Nothing
     , _fcCanMoveTeamDriveItem = Nothing
     , _fcCanMoveItemWithinTeamDrive = Nothing
     , _fcCanReadTeamDrive = Nothing
     , _fcCanReadDrive = Nothing
+    , _fcCanAddFolderFromAnotherDrive = Nothing
     , _fcCanChangeCopyRequiresWriterPermission = Nothing
     , _fcCanMoveChildrenOutOfDrive = Nothing
     , _fcCanListChildren = Nothing
@@ -1313,6 +1384,8 @@ fileCapabilities =
     , _fcCanReadRevisions = Nothing
     , _fcCanDeleteChildren = Nothing
     , _fcCanMoveItemOutOfTeamDrive = Nothing
+    , _fcCanRemoveMyDriveParent = Nothing
+    , _fcCanModifyContentRestriction = Nothing
     , _fcCanCopy = Nothing
     , _fcCanMoveItemWithinDrive = Nothing
     , _fcCanShare = Nothing
@@ -1329,9 +1402,10 @@ fcCanComment :: Lens' FileCapabilities (Maybe Bool)
 fcCanComment
   = lens _fcCanComment (\ s a -> s{_fcCanComment = a})
 
--- | Whether the current user can move children of this folder within the
--- shared drive. This is false when the item is not a folder. Only
--- populated for items in shared drives.
+-- | Whether the current user can move children of this folder within this
+-- drive. This is false when the item is not a folder. Note that a request
+-- to move the child may still fail depending on the current user\'s access
+-- to the child and to the destination folder.
 fcCanMoveChildrenWithinDrive :: Lens' FileCapabilities (Maybe Bool)
 fcCanMoveChildrenWithinDrive
   = lens _fcCanMoveChildrenWithinDrive
@@ -1342,6 +1416,12 @@ fcCanMoveChildrenWithinTeamDrive :: Lens' FileCapabilities (Maybe Bool)
 fcCanMoveChildrenWithinTeamDrive
   = lens _fcCanMoveChildrenWithinTeamDrive
       (\ s a -> s{_fcCanMoveChildrenWithinTeamDrive = a})
+
+-- | Whether the current user can modify the content of this file.
+fcCanModifyContent :: Lens' FileCapabilities (Maybe Bool)
+fcCanModifyContent
+  = lens _fcCanModifyContent
+      (\ s a -> s{_fcCanModifyContent = a})
 
 -- | Whether the current user can delete this file.
 fcCanDelete :: Lens' FileCapabilities (Maybe Bool)
@@ -1393,6 +1473,14 @@ fcCanAddChildren
   = lens _fcCanAddChildren
       (\ s a -> s{_fcCanAddChildren = a})
 
+-- | Whether the current user can add a parent for the item without removing
+-- an existing parent in the same request. Not populated for shared drive
+-- files.
+fcCanAddMyDriveParent :: Lens' FileCapabilities (Maybe Bool)
+fcCanAddMyDriveParent
+  = lens _fcCanAddMyDriveParent
+      (\ s a -> s{_fcCanAddMyDriveParent = a})
+
 -- | Whether the current user can remove children from this folder. This is
 -- always false when the item is not a folder. For a folder in a shared
 -- drive, use canDeleteChildren or canTrashChildren instead.
@@ -1427,6 +1515,14 @@ fcCanReadDrive
   = lens _fcCanReadDrive
       (\ s a -> s{_fcCanReadDrive = a})
 
+-- | Whether the current user can add a folder from another drive (different
+-- shared drive or My Drive) to this folder. This is false when the item is
+-- not a folder. Only populated for items in shared drives.
+fcCanAddFolderFromAnotherDrive :: Lens' FileCapabilities (Maybe Bool)
+fcCanAddFolderFromAnotherDrive
+  = lens _fcCanAddFolderFromAnotherDrive
+      (\ s a -> s{_fcCanAddFolderFromAnotherDrive = a})
+
 -- | Whether the current user can change the copyRequiresWriterPermission
 -- restriction of this file.
 fcCanChangeCopyRequiresWriterPermission :: Lens' FileCapabilities (Maybe Bool)
@@ -1456,7 +1552,9 @@ fcCanMoveChildrenOutOfTeamDrive
   = lens _fcCanMoveChildrenOutOfTeamDrive
       (\ s a -> s{_fcCanMoveChildrenOutOfTeamDrive = a})
 
--- | Whether the current user can edit this file.
+-- | Whether the current user can edit this file. Other factors may limit the
+-- type of changes a user can make to a file. For example, see
+-- canChangeCopyRequiresWriterPermission or canModifyContent.
 fcCanEdit :: Lens' FileCapabilities (Maybe Bool)
 fcCanEdit
   = lens _fcCanEdit (\ s a -> s{_fcCanEdit = a})
@@ -1489,6 +1587,21 @@ fcCanMoveItemOutOfTeamDrive
   = lens _fcCanMoveItemOutOfTeamDrive
       (\ s a -> s{_fcCanMoveItemOutOfTeamDrive = a})
 
+-- | Whether the current user can remove a parent from the item without
+-- adding another parent in the same request. Not populated for shared
+-- drive files.
+fcCanRemoveMyDriveParent :: Lens' FileCapabilities (Maybe Bool)
+fcCanRemoveMyDriveParent
+  = lens _fcCanRemoveMyDriveParent
+      (\ s a -> s{_fcCanRemoveMyDriveParent = a})
+
+-- | Whether the current user can modify restrictions on content of this
+-- file.
+fcCanModifyContentRestriction :: Lens' FileCapabilities (Maybe Bool)
+fcCanModifyContentRestriction
+  = lens _fcCanModifyContentRestriction
+      (\ s a -> s{_fcCanModifyContentRestriction = a})
+
 -- | Whether the current user can copy this file. For an item in a shared
 -- drive, whether the current user can copy non-folder descendants of this
 -- item, or this item itself if it is not a folder.
@@ -1496,10 +1609,9 @@ fcCanCopy :: Lens' FileCapabilities (Maybe Bool)
 fcCanCopy
   = lens _fcCanCopy (\ s a -> s{_fcCanCopy = a})
 
--- | Whether the current user can move this item within this shared drive.
--- Note that a request to change the parent of the item may still fail
--- depending on the new parent that is being added. Only populated for
--- items in shared drives.
+-- | Whether the current user can move this item within this drive. Note that
+-- a request to change the parent of the item may still fail depending on
+-- the new parent that is being added and the parent that is being removed.
 fcCanMoveItemWithinDrive :: Lens' FileCapabilities (Maybe Bool)
 fcCanMoveItemWithinDrive
   = lens _fcCanMoveItemWithinDrive
@@ -1518,6 +1630,7 @@ instance FromJSON FileCapabilities where
                    (o .:? "canRename") <*> (o .:? "canComment") <*>
                      (o .:? "canMoveChildrenWithinDrive")
                      <*> (o .:? "canMoveChildrenWithinTeamDrive")
+                     <*> (o .:? "canModifyContent")
                      <*> (o .:? "canDelete")
                      <*> (o .:? "canMoveItemIntoTeamDrive")
                      <*> (o .:? "canDownload")
@@ -1526,11 +1639,13 @@ instance FromJSON FileCapabilities where
                      <*> (o .:? "canTrashChildren")
                      <*> (o .:? "canMoveItemOutOfDrive")
                      <*> (o .:? "canAddChildren")
+                     <*> (o .:? "canAddMyDriveParent")
                      <*> (o .:? "canRemoveChildren")
                      <*> (o .:? "canMoveTeamDriveItem")
                      <*> (o .:? "canMoveItemWithinTeamDrive")
                      <*> (o .:? "canReadTeamDrive")
                      <*> (o .:? "canReadDrive")
+                     <*> (o .:? "canAddFolderFromAnotherDrive")
                      <*> (o .:? "canChangeCopyRequiresWriterPermission")
                      <*> (o .:? "canMoveChildrenOutOfDrive")
                      <*> (o .:? "canListChildren")
@@ -1540,6 +1655,8 @@ instance FromJSON FileCapabilities where
                      <*> (o .:? "canReadRevisions")
                      <*> (o .:? "canDeleteChildren")
                      <*> (o .:? "canMoveItemOutOfTeamDrive")
+                     <*> (o .:? "canRemoveMyDriveParent")
+                     <*> (o .:? "canModifyContentRestriction")
                      <*> (o .:? "canCopy")
                      <*> (o .:? "canMoveItemWithinDrive")
                      <*> (o .:? "canShare"))
@@ -1554,6 +1671,7 @@ instance ToJSON FileCapabilities where
                     _fcCanMoveChildrenWithinDrive,
                   ("canMoveChildrenWithinTeamDrive" .=) <$>
                     _fcCanMoveChildrenWithinTeamDrive,
+                  ("canModifyContent" .=) <$> _fcCanModifyContent,
                   ("canDelete" .=) <$> _fcCanDelete,
                   ("canMoveItemIntoTeamDrive" .=) <$>
                     _fcCanMoveItemIntoTeamDrive,
@@ -1564,6 +1682,8 @@ instance ToJSON FileCapabilities where
                   ("canMoveItemOutOfDrive" .=) <$>
                     _fcCanMoveItemOutOfDrive,
                   ("canAddChildren" .=) <$> _fcCanAddChildren,
+                  ("canAddMyDriveParent" .=) <$>
+                    _fcCanAddMyDriveParent,
                   ("canRemoveChildren" .=) <$> _fcCanRemoveChildren,
                   ("canMoveTeamDriveItem" .=) <$>
                     _fcCanMoveTeamDriveItem,
@@ -1571,6 +1691,8 @@ instance ToJSON FileCapabilities where
                     _fcCanMoveItemWithinTeamDrive,
                   ("canReadTeamDrive" .=) <$> _fcCanReadTeamDrive,
                   ("canReadDrive" .=) <$> _fcCanReadDrive,
+                  ("canAddFolderFromAnotherDrive" .=) <$>
+                    _fcCanAddFolderFromAnotherDrive,
                   ("canChangeCopyRequiresWriterPermission" .=) <$>
                     _fcCanChangeCopyRequiresWriterPermission,
                   ("canMoveChildrenOutOfDrive" .=) <$>
@@ -1585,6 +1707,10 @@ instance ToJSON FileCapabilities where
                   ("canDeleteChildren" .=) <$> _fcCanDeleteChildren,
                   ("canMoveItemOutOfTeamDrive" .=) <$>
                     _fcCanMoveItemOutOfTeamDrive,
+                  ("canRemoveMyDriveParent" .=) <$>
+                    _fcCanRemoveMyDriveParent,
+                  ("canModifyContentRestriction" .=) <$>
+                    _fcCanModifyContentRestriction,
                   ("canCopy" .=) <$> _fcCanCopy,
                   ("canMoveItemWithinDrive" .=) <$>
                     _fcCanMoveItemWithinDrive,
@@ -1944,7 +2070,7 @@ cResourceId
   = lens _cResourceId (\ s a -> s{_cResourceId = a})
 
 -- | Identifies this as a notification channel used to watch for changes to a
--- resource. Value: the fixed string \"api#channel\".
+-- resource, which is \"api#channel\".
 cKind :: Lens' Channel Text
 cKind = lens _cKind (\ s a -> s{_cKind = a})
 
@@ -1976,7 +2102,9 @@ cParams = lens _cParams (\ s a -> s{_cParams = a})
 cId :: Lens' Channel (Maybe Text)
 cId = lens _cId (\ s a -> s{_cId = a})
 
--- | The type of delivery mechanism used for this channel.
+-- | The type of delivery mechanism used for this channel. Valid values are
+-- \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http
+-- requests are used to deliver messages.
 cType :: Lens' Channel (Maybe Text)
 cType = lens _cType (\ s a -> s{_cType = a})
 
@@ -2039,19 +2167,19 @@ aboutTeamDriveThemesItem =
     }
 
 
--- | The color of this Team Drive theme as an RGB hex string.
+-- | Deprecated - use driveThemes\/colorRgb instead.
 atdtiColorRgb :: Lens' AboutTeamDriveThemesItem (Maybe Text)
 atdtiColorRgb
   = lens _atdtiColorRgb
       (\ s a -> s{_atdtiColorRgb = a})
 
--- | A link to this Team Drive theme\'s background image.
+-- | Deprecated - use driveThemes\/backgroundImageLink instead.
 atdtiBackgRoundImageLink :: Lens' AboutTeamDriveThemesItem (Maybe Text)
 atdtiBackgRoundImageLink
   = lens _atdtiBackgRoundImageLink
       (\ s a -> s{_atdtiBackgRoundImageLink = a})
 
--- | The ID of the theme.
+-- | Deprecated - use driveThemes\/id instead.
 atdtiId :: Lens' AboutTeamDriveThemesItem (Maybe Text)
 atdtiId = lens _atdtiId (\ s a -> s{_atdtiId = a})
 
@@ -2319,7 +2447,10 @@ instance ToJSON FileVideoMediaMetadata where
 
 -- | A collection of arbitrary key-value pairs which are private to the
 -- requesting app. Entries with null values are cleared in update and copy
--- requests.
+-- requests. These properties can only be retrieved using an authenticated
+-- request. An authenticated request uses an access token obtained with a
+-- OAuth 2 client ID. You cannot use an API key to retrieve private
+-- properties.
 --
 -- /See:/ 'fileAppProperties' smart constructor.
 newtype FileAppProperties =
@@ -2507,7 +2638,7 @@ instance ToJSON Change where
                   ("changeType" .=) <$> _chaChangeType,
                   ("driveId" .=) <$> _chaDriveId])
 
--- | Representation of a Team Drive.
+-- | Deprecated: use the drive collection instead.
 --
 -- /See:/ 'teamDrive' smart constructor.
 data TeamDrive =
@@ -2878,7 +3009,7 @@ instance ToJSON ChangeList where
                   ("changes" .=) <$> _clChanges,
                   Just ("kind" .= _clKind)])
 
--- | Links for exporting Google Docs to specific formats.
+-- | Links for exporting Docs Editors files to specific formats.
 --
 -- /See:/ 'revisionExportLinks' smart constructor.
 newtype RevisionExportLinks =
@@ -3332,6 +3463,97 @@ instance ToJSON FileImageMediaMetadataLocation where
                   ("altitude" .=) <$> _fimmlAltitude,
                   ("longitude" .=) <$> _fimmlLongitude])
 
+-- | A restriction for accessing the content of the file.
+--
+-- /See:/ 'contentRestriction' smart constructor.
+data ContentRestriction =
+  ContentRestriction'
+    { _crRestrictingUser :: !(Maybe User)
+    , _crRestrictionTime :: !(Maybe DateTime')
+    , _crReason :: !(Maybe Text)
+    , _crType :: !(Maybe Text)
+    , _crReadOnly :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ContentRestriction' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'crRestrictingUser'
+--
+-- * 'crRestrictionTime'
+--
+-- * 'crReason'
+--
+-- * 'crType'
+--
+-- * 'crReadOnly'
+contentRestriction
+    :: ContentRestriction
+contentRestriction =
+  ContentRestriction'
+    { _crRestrictingUser = Nothing
+    , _crRestrictionTime = Nothing
+    , _crReason = Nothing
+    , _crType = Nothing
+    , _crReadOnly = Nothing
+    }
+
+
+-- | The user who set the content restriction. Only populated if readOnly is
+-- true.
+crRestrictingUser :: Lens' ContentRestriction (Maybe User)
+crRestrictingUser
+  = lens _crRestrictingUser
+      (\ s a -> s{_crRestrictingUser = a})
+
+-- | The time at which the content restriction was set (formatted RFC 3339
+-- timestamp). Only populated if readOnly is true.
+crRestrictionTime :: Lens' ContentRestriction (Maybe UTCTime)
+crRestrictionTime
+  = lens _crRestrictionTime
+      (\ s a -> s{_crRestrictionTime = a})
+      . mapping _DateTime
+
+-- | Reason for why the content of the file is restricted. This is only
+-- mutable on requests that also set readOnly=true.
+crReason :: Lens' ContentRestriction (Maybe Text)
+crReason = lens _crReason (\ s a -> s{_crReason = a})
+
+-- | The type of the content restriction. Currently the only possible value
+-- is globalContentRestriction.
+crType :: Lens' ContentRestriction (Maybe Text)
+crType = lens _crType (\ s a -> s{_crType = a})
+
+-- | Whether the content of the file is read-only. If a file is read-only, a
+-- new revision of the file may not be added, comments may not be added or
+-- modified, and the title of the file may not be modified.
+crReadOnly :: Lens' ContentRestriction (Maybe Bool)
+crReadOnly
+  = lens _crReadOnly (\ s a -> s{_crReadOnly = a})
+
+instance FromJSON ContentRestriction where
+        parseJSON
+          = withObject "ContentRestriction"
+              (\ o ->
+                 ContentRestriction' <$>
+                   (o .:? "restrictingUser") <*>
+                     (o .:? "restrictionTime")
+                     <*> (o .:? "reason")
+                     <*> (o .:? "type")
+                     <*> (o .:? "readOnly"))
+
+instance ToJSON ContentRestriction where
+        toJSON ContentRestriction'{..}
+          = object
+              (catMaybes
+                 [("restrictingUser" .=) <$> _crRestrictingUser,
+                  ("restrictionTime" .=) <$> _crRestrictionTime,
+                  ("reason" .=) <$> _crReason, ("type" .=) <$> _crType,
+                  ("readOnly" .=) <$> _crReadOnly])
+
 --
 -- /See:/ 'startPageToken' smart constructor.
 data StartPageToken =
@@ -3485,8 +3707,8 @@ fileImageMediaMetadata =
     }
 
 
--- | The rotation in clockwise degrees from the image\'s original
--- orientation.
+-- | The number of clockwise 90 degree rotations applied from the image\'s
+-- original orientation.
 fimmRotation :: Lens' FileImageMediaMetadata (Maybe Int32)
 fimmRotation
   = lens _fimmRotation (\ s a -> s{_fimmRotation = a})
@@ -3770,9 +3992,8 @@ comQuotedFileContent
   = lens _comQuotedFileContent
       (\ s a -> s{_comQuotedFileContent = a})
 
--- | A region of the document represented as a JSON string. See anchor
--- documentation for details on how to define and interpret anchor
--- properties.
+-- | A region of the document represented as a JSON string. For details on
+-- defining anchor properties, refer to Add comments and replies.
 comAnchor :: Lens' Comment (Maybe Text)
 comAnchor
   = lens _comAnchor (\ s a -> s{_comAnchor = a})
@@ -3790,7 +4011,8 @@ comReplies
       _Default
       . _Coerce
 
--- | The user who created the comment.
+-- | The author of the comment. The author\'s email address and permission ID
+-- will not be populated.
 comAuthor :: Lens' Comment (Maybe User)
 comAuthor
   = lens _comAuthor (\ s a -> s{_comAuthor = a})
@@ -3846,6 +4068,7 @@ data Revision =
     , _revSize :: !(Maybe (Textual Int64))
     , _revOriginalFilename :: !(Maybe Text)
     , _revKind :: !Text
+    , _revPublishedLink :: !(Maybe Text)
     , _revPublished :: !(Maybe Bool)
     , _revLastModifyingUser :: !(Maybe User)
     , _revPublishAuto :: !(Maybe Bool)
@@ -3870,6 +4093,8 @@ data Revision =
 -- * 'revOriginalFilename'
 --
 -- * 'revKind'
+--
+-- * 'revPublishedLink'
 --
 -- * 'revPublished'
 --
@@ -3896,6 +4121,7 @@ revision =
     , _revSize = Nothing
     , _revOriginalFilename = Nothing
     , _revKind = "drive#revision"
+    , _revPublishedLink = Nothing
     , _revPublished = Nothing
     , _revLastModifyingUser = Nothing
     , _revPublishAuto = Nothing
@@ -3934,8 +4160,15 @@ revOriginalFilename
 revKind :: Lens' Revision Text
 revKind = lens _revKind (\ s a -> s{_revKind = a})
 
--- | Whether this revision is published. This is only applicable to Google
--- Docs.
+-- | A link to the published revision. This is only populated for Google
+-- Sites files.
+revPublishedLink :: Lens' Revision (Maybe Text)
+revPublishedLink
+  = lens _revPublishedLink
+      (\ s a -> s{_revPublishedLink = a})
+
+-- | Whether this revision is published. This is only applicable to Docs
+-- Editors files.
 revPublished :: Lens' Revision (Maybe Bool)
 revPublished
   = lens _revPublished (\ s a -> s{_revPublished = a})
@@ -3947,7 +4180,7 @@ revLastModifyingUser
       (\ s a -> s{_revLastModifyingUser = a})
 
 -- | Whether subsequent revisions will be automatically republished. This is
--- only applicable to Google Docs.
+-- only applicable to Docs Editors files.
 revPublishAuto :: Lens' Revision (Maybe Bool)
 revPublishAuto
   = lens _revPublishAuto
@@ -3975,14 +4208,14 @@ revMimeType :: Lens' Revision (Maybe Text)
 revMimeType
   = lens _revMimeType (\ s a -> s{_revMimeType = a})
 
--- | Links for exporting Google Docs to specific formats.
+-- | Links for exporting Docs Editors files to specific formats.
 revExportLinks :: Lens' Revision (Maybe RevisionExportLinks)
 revExportLinks
   = lens _revExportLinks
       (\ s a -> s{_revExportLinks = a})
 
 -- | Whether this revision is published outside the domain. This is only
--- applicable to Google Docs.
+-- applicable to Docs Editors files.
 revPublishedOutsideDomain :: Lens' Revision (Maybe Bool)
 revPublishedOutsideDomain
   = lens _revPublishedOutsideDomain
@@ -4000,6 +4233,7 @@ instance FromJSON Revision where
                    (o .:? "modifiedTime") <*> (o .:? "size") <*>
                      (o .:? "originalFilename")
                      <*> (o .:? "kind" .!= "drive#revision")
+                     <*> (o .:? "publishedLink")
                      <*> (o .:? "published")
                      <*> (o .:? "lastModifyingUser")
                      <*> (o .:? "publishAuto")
@@ -4018,6 +4252,7 @@ instance ToJSON Revision where
                   ("size" .=) <$> _revSize,
                   ("originalFilename" .=) <$> _revOriginalFilename,
                   Just ("kind" .= _revKind),
+                  ("publishedLink" .=) <$> _revPublishedLink,
                   ("published" .=) <$> _revPublished,
                   ("lastModifyingUser" .=) <$> _revLastModifyingUser,
                   ("publishAuto" .=) <$> _revPublishAuto,
@@ -4043,6 +4278,7 @@ data Permission =
     , _pEmailAddress :: !(Maybe Text)
     , _pAllowFileDiscovery :: !(Maybe Bool)
     , _pDisplayName :: !(Maybe Text)
+    , _pView :: !(Maybe Text)
     , _pId :: !(Maybe Text)
     , _pDeleted :: !(Maybe Bool)
     , _pType :: !(Maybe Text)
@@ -4072,6 +4308,8 @@ data Permission =
 --
 -- * 'pDisplayName'
 --
+-- * 'pView'
+--
 -- * 'pId'
 --
 -- * 'pDeleted'
@@ -4093,6 +4331,7 @@ permission =
     , _pEmailAddress = Nothing
     , _pAllowFileDiscovery = Nothing
     , _pDisplayName = Nothing
+    , _pView = Nothing
     , _pId = Nothing
     , _pDeleted = Nothing
     , _pType = Nothing
@@ -4142,13 +4381,24 @@ pAllowFileDiscovery
   = lens _pAllowFileDiscovery
       (\ s a -> s{_pAllowFileDiscovery = a})
 
--- | A displayable name for users, groups or domains.
+-- | The \"pretty\" name of the value of the permission. The following is a
+-- list of examples for each type of permission: - user - User\'s full
+-- name, as defined for their Google account, such as \"Joe Smith.\" -
+-- group - Name of the Google Group, such as \"The Company
+-- Administrators.\" - domain - String domain name, such as
+-- \"thecompany.com.\" - anyone - No displayName is present.
 pDisplayName :: Lens' Permission (Maybe Text)
 pDisplayName
   = lens _pDisplayName (\ s a -> s{_pDisplayName = a})
 
+-- | Indicates the view for this permission. Only populated for permissions
+-- that belong to a view. published is the only supported value.
+pView :: Lens' Permission (Maybe Text)
+pView = lens _pView (\ s a -> s{_pView = a})
+
 -- | The ID of this permission. This is a unique identifier for the grantee,
--- and is published in User resources as permissionId.
+-- and is published in User resources as permissionId. IDs should be
+-- treated as opaque values.
 pId :: Lens' Permission (Maybe Text)
 pId = lens _pId (\ s a -> s{_pId = a})
 
@@ -4158,7 +4408,10 @@ pDeleted :: Lens' Permission (Maybe Bool)
 pDeleted = lens _pDeleted (\ s a -> s{_pDeleted = a})
 
 -- | The type of the grantee. Valid values are: - user - group - domain -
--- anyone
+-- anyone When creating a permission, if type is user or group, you must
+-- provide an emailAddress for the user or group. When type is domain, you
+-- must provide a domain. There isn\'t extra information required for a
+-- anyone type.
 pType :: Lens' Permission (Maybe Text)
 pType = lens _pType (\ s a -> s{_pType = a})
 
@@ -4195,6 +4448,7 @@ instance FromJSON Permission where
                      <*> (o .:? "emailAddress")
                      <*> (o .:? "allowFileDiscovery")
                      <*> (o .:? "displayName")
+                     <*> (o .:? "view")
                      <*> (o .:? "id")
                      <*> (o .:? "deleted")
                      <*> (o .:? "type")
@@ -4213,8 +4467,8 @@ instance ToJSON Permission where
                   ("emailAddress" .=) <$> _pEmailAddress,
                   ("allowFileDiscovery" .=) <$> _pAllowFileDiscovery,
                   ("displayName" .=) <$> _pDisplayName,
-                  ("id" .=) <$> _pId, ("deleted" .=) <$> _pDeleted,
-                  ("type" .=) <$> _pType,
+                  ("view" .=) <$> _pView, ("id" .=) <$> _pId,
+                  ("deleted" .=) <$> _pDeleted, ("type" .=) <$> _pType,
                   ("expirationTime" .=) <$> _pExpirationTime,
                   ("permissionDetails" .=) <$> _pPermissionDetails])
 
@@ -4319,6 +4573,7 @@ data File =
     , _fModifiedByMeTime :: !(Maybe DateTime')
     , _fFileExtension :: !(Maybe Text)
     , _fViewedByMe :: !(Maybe Bool)
+    , _fShortcutDetails :: !(Maybe FileShortcutDetails)
     , _fOwners :: !(Maybe [User])
     , _fViewedByMeTime :: !(Maybe DateTime')
     , _fModifiedByMe :: !(Maybe Bool)
@@ -4333,6 +4588,7 @@ data File =
     , _fIconLink :: !(Maybe Text)
     , _fHasThumbnail :: !(Maybe Bool)
     , _fThumbnailVersion :: !(Maybe (Textual Int64))
+    , _fContentRestrictions :: !(Maybe [ContentRestriction])
     , _fImageMediaMetadata :: !(Maybe FileImageMediaMetadata)
     , _fExplicitlyTrashed :: !(Maybe Bool)
     , _fShared :: !(Maybe Bool)
@@ -4389,6 +4645,8 @@ data File =
 --
 -- * 'fViewedByMe'
 --
+-- * 'fShortcutDetails'
+--
 -- * 'fOwners'
 --
 -- * 'fViewedByMeTime'
@@ -4416,6 +4674,8 @@ data File =
 -- * 'fHasThumbnail'
 --
 -- * 'fThumbnailVersion'
+--
+-- * 'fContentRestrictions'
 --
 -- * 'fImageMediaMetadata'
 --
@@ -4495,6 +4755,7 @@ file =
     , _fModifiedByMeTime = Nothing
     , _fFileExtension = Nothing
     , _fViewedByMe = Nothing
+    , _fShortcutDetails = Nothing
     , _fOwners = Nothing
     , _fViewedByMeTime = Nothing
     , _fModifiedByMe = Nothing
@@ -4509,6 +4770,7 @@ file =
     , _fIconLink = Nothing
     , _fHasThumbnail = Nothing
     , _fThumbnailVersion = Nothing
+    , _fContentRestrictions = Nothing
     , _fImageMediaMetadata = Nothing
     , _fExplicitlyTrashed = Nothing
     , _fShared = Nothing
@@ -4554,7 +4816,9 @@ fOwnedByMe
 
 -- | A short-lived link to the file\'s thumbnail, if available. Typically
 -- lasts on the order of hours. Only populated when the requesting app can
--- access the file\'s content.
+-- access the file\'s content. If the file isn\'t shared publicly, the URL
+-- returned in Files.thumbnailLink must be fetched using a credentialed
+-- request.
 fThumbnailLink :: Lens' File (Maybe Text)
 fThumbnailLink
   = lens _fThumbnailLink
@@ -4598,6 +4862,13 @@ fViewedByMe :: Lens' File (Maybe Bool)
 fViewedByMe
   = lens _fViewedByMe (\ s a -> s{_fViewedByMe = a})
 
+-- | Shortcut file details. Only populated for shortcut files, which have the
+-- mimeType field set to application\/vnd.google-apps.shortcut.
+fShortcutDetails :: Lens' File (Maybe FileShortcutDetails)
+fShortcutDetails
+  = lens _fShortcutDetails
+      (\ s a -> s{_fShortcutDetails = a})
+
 -- | The owners of the file. Currently, only certain legacy files may have
 -- more than one owner. Not populated for items in shared drives.
 fOwners :: Lens' File [User]
@@ -4618,16 +4889,19 @@ fModifiedByMe
   = lens _fModifiedByMe
       (\ s a -> s{_fModifiedByMe = a})
 
--- | The size of the file\'s content in bytes. This is only applicable to
--- files with binary content in Google Drive.
+-- | The size of the file\'s content in bytes. This is applicable to binary
+-- files in Google Drive and Google Docs files.
 fSize :: Lens' File (Maybe Int64)
 fSize
   = lens _fSize (\ s a -> s{_fSize = a}) .
       mapping _Coerce
 
 -- | Whether the file has been trashed, either explicitly or from a trashed
--- parent folder. Only the owner may trash a file, and other users cannot
--- see files in the owner\'s trash.
+-- parent folder. Only the owner may trash a file. The trashed item is
+-- excluded from all files.list responses returned for any user who does
+-- not own the file. However, all users with access to the file can see the
+-- trashed item metadata in an API response. All users with access can
+-- copy, download, export, and share the file.
 fTrashed :: Lens' File (Maybe Bool)
 fTrashed = lens _fTrashed (\ s a -> s{_fTrashed = a})
 
@@ -4688,6 +4962,15 @@ fThumbnailVersion
   = lens _fThumbnailVersion
       (\ s a -> s{_fThumbnailVersion = a})
       . mapping _Coerce
+
+-- | Restrictions for accessing the content of the file. Only populated if
+-- such a restriction exists.
+fContentRestrictions :: Lens' File [ContentRestriction]
+fContentRestrictions
+  = lens _fContentRestrictions
+      (\ s a -> s{_fContentRestrictions = a})
+      . _Default
+      . _Coerce
 
 -- | Additional metadata about image media, if available.
 fImageMediaMetadata :: Lens' File (Maybe FileImageMediaMetadata)
@@ -4757,7 +5040,7 @@ fCopyRequiresWriterPermission
 fName :: Lens' File (Maybe Text)
 fName = lens _fName (\ s a -> s{_fName = a})
 
--- | Links for exporting Google Docs to specific formats.
+-- | Links for exporting Docs Editors files to specific formats.
 fExportLinks :: Lens' File (Maybe FileExportLinks)
 fExportLinks
   = lens _fExportLinks (\ s a -> s{_fExportLinks = a})
@@ -4793,8 +5076,8 @@ fVersion
   = lens _fVersion (\ s a -> s{_fVersion = a}) .
       mapping _Coerce
 
--- | Whether any users are granted file access directly on this file. This
--- field is only populated for shared drive files.
+-- | Whether there are permissions directly on this file. This field is only
+-- populated for items in shared drives.
 fHasAugmentedPermissions :: Lens' File (Maybe Bool)
 fHasAugmentedPermissions
   = lens _fHasAugmentedPermissions
@@ -4845,7 +5128,10 @@ fQuotaBytesUsed
 
 -- | A collection of arbitrary key-value pairs which are private to the
 -- requesting app. Entries with null values are cleared in update and copy
--- requests.
+-- requests. These properties can only be retrieved using an authenticated
+-- request. An authenticated request uses an access token obtained with a
+-- OAuth 2 client ID. You cannot use an API key to retrieve private
+-- properties.
 fAppProperties :: Lens' File (Maybe FileAppProperties)
 fAppProperties
   = lens _fAppProperties
@@ -4932,6 +5218,7 @@ instance FromJSON File where
                      <*> (o .:? "modifiedByMeTime")
                      <*> (o .:? "fileExtension")
                      <*> (o .:? "viewedByMe")
+                     <*> (o .:? "shortcutDetails")
                      <*> (o .:? "owners" .!= mempty)
                      <*> (o .:? "viewedByMeTime")
                      <*> (o .:? "modifiedByMe")
@@ -4946,6 +5233,7 @@ instance FromJSON File where
                      <*> (o .:? "iconLink")
                      <*> (o .:? "hasThumbnail")
                      <*> (o .:? "thumbnailVersion")
+                     <*> (o .:? "contentRestrictions" .!= mempty)
                      <*> (o .:? "imageMediaMetadata")
                      <*> (o .:? "explicitlyTrashed")
                      <*> (o .:? "shared")
@@ -4992,6 +5280,7 @@ instance ToJSON File where
                   ("modifiedByMeTime" .=) <$> _fModifiedByMeTime,
                   ("fileExtension" .=) <$> _fFileExtension,
                   ("viewedByMe" .=) <$> _fViewedByMe,
+                  ("shortcutDetails" .=) <$> _fShortcutDetails,
                   ("owners" .=) <$> _fOwners,
                   ("viewedByMeTime" .=) <$> _fViewedByMeTime,
                   ("modifiedByMe" .=) <$> _fModifiedByMe,
@@ -5005,6 +5294,7 @@ instance ToJSON File where
                   ("iconLink" .=) <$> _fIconLink,
                   ("hasThumbnail" .=) <$> _fHasThumbnail,
                   ("thumbnailVersion" .=) <$> _fThumbnailVersion,
+                  ("contentRestrictions" .=) <$> _fContentRestrictions,
                   ("imageMediaMetadata" .=) <$> _fImageMediaMetadata,
                   ("explicitlyTrashed" .=) <$> _fExplicitlyTrashed,
                   ("shared" .=) <$> _fShared,
@@ -5139,29 +5429,24 @@ permissionTeamDrivePermissionDetailsItem =
     }
 
 
--- | Whether this permission is inherited. This field is always populated.
--- This is an output-only field.
+-- | Deprecated - use permissionDetails\/inherited instead.
 ptdpdiInherited :: Lens' PermissionTeamDrivePermissionDetailsItem (Maybe Bool)
 ptdpdiInherited
   = lens _ptdpdiInherited
       (\ s a -> s{_ptdpdiInherited = a})
 
--- | The Team Drive permission type for this user. While new values may be
--- added in future, the following are currently possible: - file - member
+-- | Deprecated - use permissionDetails\/permissionType instead.
 ptdpdiTeamDrivePermissionType :: Lens' PermissionTeamDrivePermissionDetailsItem (Maybe Text)
 ptdpdiTeamDrivePermissionType
   = lens _ptdpdiTeamDrivePermissionType
       (\ s a -> s{_ptdpdiTeamDrivePermissionType = a})
 
--- | The primary role for this user. While new values may be added in the
--- future, the following are currently possible: - organizer -
--- fileOrganizer - writer - commenter - reader
+-- | Deprecated - use permissionDetails\/role instead.
 ptdpdiRole :: Lens' PermissionTeamDrivePermissionDetailsItem (Maybe Text)
 ptdpdiRole
   = lens _ptdpdiRole (\ s a -> s{_ptdpdiRole = a})
 
--- | The ID of the item from which this permission is inherited. This is an
--- output-only field and is only populated for members of the Team Drive.
+-- | Deprecated - use permissionDetails\/inheritedFrom instead.
 ptdpdiInheritedFrom :: Lens' PermissionTeamDrivePermissionDetailsItem (Maybe Text)
 ptdpdiInheritedFrom
   = lens _ptdpdiInheritedFrom
@@ -5321,7 +5606,7 @@ instance ToJSON GeneratedIds where
                  [("space" .=) <$> _giSpace, Just ("kind" .= _giKind),
                   ("ids" .=) <$> _giIds])
 
--- | Links for exporting Google Docs to specific formats.
+-- | Links for exporting Docs Editors files to specific formats.
 --
 -- /See:/ 'fileExportLinks' smart constructor.
 newtype FileExportLinks =

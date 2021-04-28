@@ -143,8 +143,9 @@ psitpPayload :: Lens' ProjectsStoredInfoTypesPatch GooglePrivacyDlpV2UpdateStore
 psitpPayload
   = lens _psitpPayload (\ s a -> s{_psitpPayload = a})
 
--- | Resource name of organization and storedInfoType to be updated, for
--- example \`organizations\/433245324\/storedInfoTypes\/432452342\` or
+-- | Required. Resource name of organization and storedInfoType to be
+-- updated, for example
+-- \`organizations\/433245324\/storedInfoTypes\/432452342\` or
 -- projects\/project-id\/storedInfoTypes\/432452342.
 psitpName :: Lens' ProjectsStoredInfoTypesPatch Text
 psitpName

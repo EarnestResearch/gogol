@@ -20,7 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Update the message.
+-- Update the message. The contents of the message in Message.data and data
+-- extracted from the contents such as Message.create_time cannot be
+-- altered. Only the Message.labels field is allowed to be updated. The
+-- labels in the request are merged with the existing set of labels.
+-- Existing labels with the same keys are updated.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.hl7V2Stores.messages.patch@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Hl7V2Stores.Messages.Patch
@@ -50,7 +54,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsHl7V2StoresMessagesPatch' request conforms to.
 type ProjectsLocationsDataSetsHl7V2StoresMessagesPatchResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -61,7 +65,11 @@ type ProjectsLocationsDataSetsHl7V2StoresMessagesPatchResource
                      QueryParam "alt" AltJSON :>
                        ReqBody '[JSON] Message :> Patch '[JSON] Message
 
--- | Update the message.
+-- | Update the message. The contents of the message in Message.data and data
+-- extracted from the contents such as Message.create_time cannot be
+-- altered. Only the Message.labels field is allowed to be updated. The
+-- labels in the request are merged with the existing set of labels.
+-- Existing labels with the same keys are updated.
 --
 -- /See:/ 'projectsLocationsDataSetsHl7V2StoresMessagesPatch' smart constructor.
 data ProjectsLocationsDataSetsHl7V2StoresMessagesPatch =
@@ -129,9 +137,6 @@ pldshvsmpUploadProtocol
 -- | The update mask applies to the resource. For the \`FieldMask\`
 -- definition, see
 -- https:\/\/developers.google.com\/protocol-buffers\/docs\/reference\/google.protobuf#fieldmask
--- Only the \`labels\` field is allowed to be updated. The labels in the
--- request will be merged with the existing set of labels. Existing labels
--- with the same keys will be updated.
 pldshvsmpUpdateMask :: Lens' ProjectsLocationsDataSetsHl7V2StoresMessagesPatch (Maybe GFieldMask)
 pldshvsmpUpdateMask
   = lens _pldshvsmpUpdateMask

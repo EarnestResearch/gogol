@@ -430,7 +430,7 @@ hId
   = lens _hId (\ s a -> s{_hId = a}) . mapping _Coerce
 
 -- | List of messages changed in this history record. The fields for specific
--- change types, such as messagesAdded may duplicate messages in this
+-- change types, such as \`messagesAdded\` may duplicate messages in this
 -- field. We recommend using the specific change-type fields instead of
 -- this.
 hMessages :: Lens' History [Message]
@@ -481,7 +481,8 @@ listDelegatesResponse
 listDelegatesResponse = ListDelegatesResponse' {_ldrDelegates = Nothing}
 
 
--- | List of the user\'s delegates (with any verification status).
+-- | List of the user\'s delegates (with any verification status). If an
+-- account doesn\'t have delegates, this field doesn\'t appear.
 ldrDelegates :: Lens' ListDelegatesResponse [Delegate]
 ldrDelegates
   = lens _ldrDelegates (\ s a -> s{_ldrDelegates = a})
@@ -524,15 +525,22 @@ labelColor = LabelColor' {_lcBackgRoundColor = Nothing, _lcTextColor = Nothing}
 
 -- | The background color represented as hex string #RRGGBB (ex #000000).
 -- This field is required in order to set the color of a label. Only the
--- following predefined set of color values are allowed: #000000, #434343,
--- #666666, #999999, #cccccc, #efefef, #f3f3f3, #ffffff, #fb4c2f, #ffad47,
--- #fad165, #16a766, #43d692, #4a86e8, #a479e2, #f691b3, #f6c5be, #ffe6c7,
--- #fef1d1, #b9e4d0, #c6f3de, #c9daf8, #e4d7f5, #fcdee8, #efa093, #ffd6a2,
--- #fce8b3, #89d3b2, #a0eac9, #a4c2f4, #d0bcf1, #fbc8d9, #e66550, #ffbc6b,
--- #fcda83, #44b984, #68dfa9, #6d9eeb, #b694e8, #f7a7c0, #cc3a21, #eaa041,
--- #f2c960, #149e60, #3dc789, #3c78d8, #8e63ce, #e07798, #ac2b16, #cf8933,
--- #d5ae49, #0b804b, #2a9c68, #285bac, #653e9b, #b65775, #822111, #a46a21,
--- #aa8831, #076239, #1a764d, #1c4587, #41236d, #83334c
+-- following predefined set of color values are allowed: \\#000000,
+-- #434343, #666666, #999999, #cccccc, #efefef, #f3f3f3, #ffffff,
+-- \\#fb4c2f, #ffad47, #fad165, #16a766, #43d692, #4a86e8, #a479e2,
+-- #f691b3, \\#f6c5be, #ffe6c7, #fef1d1, #b9e4d0, #c6f3de, #c9daf8,
+-- #e4d7f5, #fcdee8, \\#efa093, #ffd6a2, #fce8b3, #89d3b2, #a0eac9,
+-- #a4c2f4, #d0bcf1, #fbc8d9, \\#e66550, #ffbc6b, #fcda83, #44b984,
+-- #68dfa9, #6d9eeb, #b694e8, #f7a7c0, \\#cc3a21, #eaa041, #f2c960,
+-- #149e60, #3dc789, #3c78d8, #8e63ce, #e07798, \\#ac2b16, #cf8933,
+-- #d5ae49, #0b804b, #2a9c68, #285bac, #653e9b, #b65775, \\#822111,
+-- #a46a21, #aa8831, #076239, #1a764d, #1c4587, #41236d, #83334c \\#464646,
+-- #e7e7e7, #0d3472, #b6cff5, #0d3b44, #98d7e4, #3d188e, #e3d7ff,
+-- \\#711a36, #fbd3e0, #8a1c0a, #f2b2a8, #7a2e0b, #ffc8af, #7a4706,
+-- #ffdeb5, \\#594c05, #fbe983, #684e07, #fdedc1, #0b4f30, #b3efd3,
+-- #04502e, #a2dcc1, \\#c2c2c2, #4986e7, #2da2bb, #b99aff, #994a64,
+-- #f691b2, #ff7537, #ffad46, \\#662e37, #ebdbde, #cca6ac, #094228,
+-- #42d692, #16a765
 lcBackgRoundColor :: Lens' LabelColor (Maybe Text)
 lcBackgRoundColor
   = lens _lcBackgRoundColor
@@ -540,15 +548,21 @@ lcBackgRoundColor
 
 -- | The text color of the label, represented as hex string. This field is
 -- required in order to set the color of a label. Only the following
--- predefined set of color values are allowed: #000000, #434343, #666666,
--- #999999, #cccccc, #efefef, #f3f3f3, #ffffff, #fb4c2f, #ffad47, #fad165,
--- #16a766, #43d692, #4a86e8, #a479e2, #f691b3, #f6c5be, #ffe6c7, #fef1d1,
--- #b9e4d0, #c6f3de, #c9daf8, #e4d7f5, #fcdee8, #efa093, #ffd6a2, #fce8b3,
--- #89d3b2, #a0eac9, #a4c2f4, #d0bcf1, #fbc8d9, #e66550, #ffbc6b, #fcda83,
--- #44b984, #68dfa9, #6d9eeb, #b694e8, #f7a7c0, #cc3a21, #eaa041, #f2c960,
--- #149e60, #3dc789, #3c78d8, #8e63ce, #e07798, #ac2b16, #cf8933, #d5ae49,
--- #0b804b, #2a9c68, #285bac, #653e9b, #b65775, #822111, #a46a21, #aa8831,
--- #076239, #1a764d, #1c4587, #41236d, #83334c
+-- predefined set of color values are allowed: \\#000000, #434343, #666666,
+-- #999999, #cccccc, #efefef, #f3f3f3, #ffffff, \\#fb4c2f, #ffad47,
+-- #fad165, #16a766, #43d692, #4a86e8, #a479e2, #f691b3, \\#f6c5be,
+-- #ffe6c7, #fef1d1, #b9e4d0, #c6f3de, #c9daf8, #e4d7f5, #fcdee8,
+-- \\#efa093, #ffd6a2, #fce8b3, #89d3b2, #a0eac9, #a4c2f4, #d0bcf1,
+-- #fbc8d9, \\#e66550, #ffbc6b, #fcda83, #44b984, #68dfa9, #6d9eeb,
+-- #b694e8, #f7a7c0, \\#cc3a21, #eaa041, #f2c960, #149e60, #3dc789,
+-- #3c78d8, #8e63ce, #e07798, \\#ac2b16, #cf8933, #d5ae49, #0b804b,
+-- #2a9c68, #285bac, #653e9b, #b65775, \\#822111, #a46a21, #aa8831,
+-- #076239, #1a764d, #1c4587, #41236d, #83334c \\#464646, #e7e7e7, #0d3472,
+-- #b6cff5, #0d3b44, #98d7e4, #3d188e, #e3d7ff, \\#711a36, #fbd3e0,
+-- #8a1c0a, #f2b2a8, #7a2e0b, #ffc8af, #7a4706, #ffdeb5, \\#594c05,
+-- #fbe983, #684e07, #fdedc1, #0b4f30, #b3efd3, #04502e, #a2dcc1,
+-- \\#c2c2c2, #4986e7, #2da2bb, #b99aff, #994a64, #f691b2, #ff7537,
+-- #ffad46, \\#662e37, #ebdbde, #cca6ac, #094228, #42d692, #16a765
 lcTextColor :: Lens' LabelColor (Maybe Text)
 lcTextColor
   = lens _lcTextColor (\ s a -> s{_lcTextColor = a})
@@ -661,13 +675,13 @@ fcFrom = lens _fcFrom (\ s a -> s{_fcFrom = a})
 
 -- | Only return messages matching the specified query. Supports the same
 -- query format as the Gmail search box. For example,
--- \"from:someuser\'example.com rfc822msgid: is:unread\".
+-- \`\"from:someuser\'example.com rfc822msgid: is:unread\"\`.
 fcQuery :: Lens' FilterCriteria (Maybe Text)
 fcQuery = lens _fcQuery (\ s a -> s{_fcQuery = a})
 
 -- | Only return messages not matching the specified query. Supports the same
 -- query format as the Gmail search box. For example,
--- \"from:someuser\'example.com rfc822msgid: is:unread\".
+-- \`\"from:someuser\'example.com rfc822msgid: is:unread\"\`.
 fcNegatedQuery :: Lens' FilterCriteria (Maybe Text)
 fcNegatedQuery
   = lens _fcNegatedQuery
@@ -807,12 +821,12 @@ messagePartHeader
 messagePartHeader = MessagePartHeader' {_mphValue = Nothing, _mphName = Nothing}
 
 
--- | The value of the header after the : separator. For example,
--- someuser\'example.com.
+-- | The value of the header after the \`:\` separator. For example,
+-- \`someuser\'example.com\`.
 mphValue :: Lens' MessagePartHeader (Maybe Text)
 mphValue = lens _mphValue (\ s a -> s{_mphValue = a})
 
--- | The name of the header before the : separator. For example, To.
+-- | The name of the header before the \`:\` separator. For example, \`To\`.
 mphName :: Lens' MessagePartHeader (Maybe Text)
 mphName = lens _mphName (\ s a -> s{_mphName = a})
 
@@ -866,8 +880,8 @@ lhrNextPageToken
   = lens _lhrNextPageToken
       (\ s a -> s{_lhrNextPageToken = a})
 
--- | List of history records. Any messages contained in the response will
--- typically only have id and threadId fields populated.
+-- | List of history records. Any \`messages\` contained in the response will
+-- typically only have \`id\` and \`threadId\` fields populated.
 lhrHistory :: Lens' ListHistoryResponse [History]
 lhrHistory
   = lens _lhrHistory (\ s a -> s{_lhrHistory = a}) .
@@ -956,7 +970,8 @@ sendAs =
 
 
 -- | An optional HTML signature that is included in messages composed with
--- this alias in the Gmail web UI.
+-- this alias in the Gmail web UI. This signature is added to new emails
+-- only.
 saSignature :: Lens' SendAs (Maybe Text)
 saSignature
   = lens _saSignature (\ s a -> s{_saSignature = a})
@@ -1021,9 +1036,10 @@ saIsPrimary
 -- | Whether this address is selected as the default \"From:\" address in
 -- situations such as composing a new message or sending a vacation
 -- auto-reply. Every Gmail account has exactly one default send-as address,
--- so the only legal value that clients may write to this field is true.
--- Changing this from false to true for an address will result in this
--- field becoming false for the other previous default address.
+-- so the only legal value that clients may write to this field is
+-- \`true\`. Changing this from \`false\` to \`true\` for an address will
+-- result in this field becoming \`false\` for the other previous default
+-- address.
 saIsDefault :: Lens' SendAs (Maybe Bool)
 saIsDefault
   = lens _saIsDefault (\ s a -> s{_saIsDefault = a})
@@ -1100,8 +1116,8 @@ ltrResultSizeEstimate
       . mapping _Coerce
 
 -- | List of threads. Note that each thread resource does not contain a list
--- of messages. The list of messages for a given thread can be fetched
--- using the threads.get method.
+-- of \`messages\`. The list of \`messages\` for a given thread can be
+-- fetched using the threads.get method.
 ltrThreads :: Lens' ListThreadsResponse [Thread]
 ltrThreads
   = lens _ltrThreads (\ s a -> s{_ltrThreads = a}) .
@@ -1169,9 +1185,9 @@ messagePart =
 
 
 -- | The child MIME message parts of this part. This only applies to
--- container MIME message parts, for example multipart\/*. For non-
--- container MIME message part types, such as text\/plain, this field is
--- empty. For more information, see RFC 1521.
+-- container MIME message parts, for example \`multipart\/*\`. For non-
+-- container MIME message part types, such as \`text\/plain\`, this field
+-- is empty. For more information, see RFC 1521.
 mpParts :: Lens' MessagePart [MessagePart]
 mpParts
   = lens _mpParts (\ s a -> s{_mpParts = a}) . _Default
@@ -1189,7 +1205,7 @@ mpMimeType
 
 -- | List of headers on this message part. For the top-level message part,
 -- representing the entire message payload, it will contain the standard
--- RFC 2822 email headers such as To, From, and Subject.
+-- RFC 2822 email headers such as \`To\`, \`From\`, and \`Subject\`.
 mpHeaders :: Lens' MessagePart [MessagePartHeader]
 mpHeaders
   = lens _mpHeaders (\ s a -> s{_mpHeaders = a}) .
@@ -1294,7 +1310,9 @@ listLabelsResponse
 listLabelsResponse = ListLabelsResponse' {_llrLabels = Nothing}
 
 
--- | List of labels.
+-- | List of labels. Note that each label resource only contains an \`id\`,
+-- \`name\`, \`messageListVisibility\`, \`labelListVisibility\`, and
+-- \`type\`. The labels.get method can fetch additional label details.
 llrLabels :: Lens' ListLabelsResponse [Label]
 llrLabels
   = lens _llrLabels (\ s a -> s{_llrLabels = a}) .
@@ -1369,7 +1387,9 @@ vsEnableAutoReply
   = lens _vsEnableAutoReply
       (\ s a -> s{_vsEnableAutoReply = a})
 
--- | Response body in plain text format.
+-- | Response body in plain text format. If both \`response_body_plain_text\`
+-- and \`response_body_html\` are specified, \`response_body_html\` will be
+-- used.
 vsResponseBodyPlainText :: Lens' VacationSettings (Maybe Text)
 vsResponseBodyPlainText
   = lens _vsResponseBodyPlainText
@@ -1385,15 +1405,17 @@ vsRestrictToDomain
 
 -- | An optional start time for sending auto-replies (epoch ms). When this is
 -- specified, Gmail will automatically reply only to messages that it
--- receives after the start time. If both startTime and endTime are
--- specified, startTime must precede endTime.
+-- receives after the start time. If both \`startTime\` and \`endTime\` are
+-- specified, \`startTime\` must precede \`endTime\`.
 vsStartTime :: Lens' VacationSettings (Maybe Int64)
 vsStartTime
   = lens _vsStartTime (\ s a -> s{_vsStartTime = a}) .
       mapping _Coerce
 
 -- | Response body in HTML format. Gmail will sanitize the HTML before
--- storing it.
+-- storing it. If both \`response_body_plain_text\` and
+-- \`response_body_html\` are specified, \`response_body_html\` will be
+-- used.
 vsResponseBodyHTML :: Lens' VacationSettings (Maybe Text)
 vsResponseBodyHTML
   = lens _vsResponseBodyHTML
@@ -1416,8 +1438,8 @@ vsResponseSubject
 
 -- | An optional end time for sending auto-replies (epoch ms). When this is
 -- specified, Gmail will automatically reply only to messages that it
--- receives before the end time. If both startTime and endTime are
--- specified, startTime must precede endTime.
+-- receives before the end time. If both \`startTime\` and \`endTime\` are
+-- specified, \`startTime\` must precede \`endTime\`.
 vsEndTime :: Lens' VacationSettings (Maybe Int64)
 vsEndTime
   = lens _vsEndTime (\ s a -> s{_vsEndTime = a}) .
@@ -1527,7 +1549,7 @@ mpbData
       mapping _Bytes
 
 -- | When present, contains the ID of an external attachment that can be
--- retrieved in a separate messages.attachments.get request. When not
+-- retrieved in a separate \`messages.attachments.get\` request. When not
 -- present, the entire content of the message part body is contained in the
 -- data field.
 mpbAttachmentId :: Lens' MessagePartBody (Maybe Text)
@@ -1655,7 +1677,9 @@ ldrResultSizeEstimate
       (\ s a -> s{_ldrResultSizeEstimate = a})
       . mapping _Coerce
 
--- | List of drafts.
+-- | List of drafts. Note that the \`Message\` property in each \`Draft\`
+-- resource only contains an \`id\` and a \`threadId\`. The messages.get
+-- method can fetch additional message details.
 ldrDrafts :: Lens' ListDraftsResponse [Draft]
 ldrDrafts
   = lens _ldrDrafts (\ s a -> s{_ldrDrafts = a}) .
@@ -1738,14 +1762,14 @@ languageSettings = LanguageSettings' {_lsDisplayLanguage = Nothing}
 
 
 -- | The language to display Gmail in, formatted as an RFC 3066 Language Tag
--- (for example en-GB, fr or ja for British English, French, or Japanese
--- respectively). The set of languages supported by Gmail evolves over
--- time, so please refer to the \"Language\" dropdown in the Gmail settings
--- for all available options, as described in the language settings help
--- article. A table of sample values is also provided in the Managing
--- Language Settings guide Not all Gmail clients can display the same set
--- of languages. In the case that a user\'s display language is not
--- available for use on a particular client, said client automatically
+-- (for example \`en-GB\`, \`fr\` or \`ja\` for British English, French, or
+-- Japanese respectively). The set of languages supported by Gmail evolves
+-- over time, so please refer to the \"Language\" dropdown in the Gmail
+-- settings for all available options, as described in the language
+-- settings help article. A table of sample values is also provided in the
+-- Managing Language Settings guide Not all Gmail clients can display the
+-- same set of languages. In the case that a user\'s display language is
+-- not available for use on a particular client, said client automatically
 -- chooses to display in the closest supported variant (or a reasonable
 -- default).
 lsDisplayLanguage :: Lens' LanguageSettings (Maybe Text)
@@ -1789,7 +1813,7 @@ watchResponse = WatchResponse' {_wrExpiration = Nothing, _wrHistoryId = Nothing}
 
 
 -- | When Gmail will stop sending notifications for mailbox updates (epoch
--- millis). Call watch again before this time to renew the watch.
+-- millis). Call \`watch\` again before this time to renew the watch.
 wrExpiration :: Lens' WatchResponse (Maybe Int64)
 wrExpiration
   = lens _wrExpiration (\ s a -> s{_wrExpiration = a})
@@ -2375,8 +2399,8 @@ message =
 
 
 -- | The entire email message in an RFC 2822 formatted and base64url encoded
--- string. Returned in messages.get and drafts.get responses when the
--- format=RAW parameter is supplied.
+-- string. Returned in \`messages.get\` and \`drafts.get\` responses when
+-- the \`format=RAW\` parameter is supplied.
 mRaw :: Lens' Message (Maybe ByteString)
 mRaw
   = lens _mRaw (\ s a -> s{_mRaw = a}) . mapping _Bytes
@@ -2414,11 +2438,12 @@ mLabelIds
       . _Coerce
 
 -- | The ID of the thread the message belongs to. To add a message or draft
--- to a thread, the following criteria must be met: - The requested
--- threadId must be specified on the Message or Draft.Message you supply
--- with your request. - The References and In-Reply-To headers must be set
--- in compliance with the RFC 2822 standard. - The Subject headers must
--- match.
+-- to a thread, the following criteria must be met: 1. The requested
+-- \`threadId\` must be specified on the \`Message\` or \`Draft.Message\`
+-- you supply with your request. 2. The \`References\` and \`In-Reply-To\`
+-- headers must be set in compliance with the [RFC
+-- 2822](https:\/\/tools.ietf.org\/html\/rfc2822) standard. 3. The
+-- \`Subject\` headers must match.
 mThreadId :: Lens' Message (Maybe Text)
 mThreadId
   = lens _mThreadId (\ s a -> s{_mThreadId = a})
@@ -2426,8 +2451,8 @@ mThreadId
 -- | The internal message creation timestamp (epoch ms), which determines
 -- ordering in the inbox. For normal SMTP-received email, this represents
 -- the time the message was originally accepted by Google, which is more
--- reliable than the Date header. However, for API-migrated mail, it can be
--- configured by client to be based on the Date header.
+-- reliable than the \`Date\` header. However, for API-migrated mail, it
+-- can be configured by client to be based on the \`Date\` header.
 mInternalDate :: Lens' Message (Maybe Int64)
 mInternalDate
   = lens _mInternalDate
@@ -2717,8 +2742,8 @@ lThreadsUnread
       (\ s a -> s{_lThreadsUnread = a})
       . mapping _Coerce
 
--- | The visibility of the label in the message list in the Gmail web
--- interface.
+-- | The visibility of messages with this label in the message list in the
+-- Gmail web interface.
 lMessageListVisibility :: Lens' Label (Maybe LabelMessageListVisibility)
 lMessageListVisibility
   = lens _lMessageListVisibility
@@ -2732,7 +2757,7 @@ lMessagesTotal
       . mapping _Coerce
 
 -- | The color to assign to the label. Color is only available for labels
--- that have their type set to user.
+-- that have their \`type\` set to \`user\`.
 lColor :: Lens' Label (Maybe LabelColor)
 lColor = lens _lColor (\ s a -> s{_lColor = a})
 
@@ -2770,9 +2795,9 @@ lId = lens _lId (\ s a -> s{_lId = a})
 -- message or thread. System labels are internally created and cannot be
 -- added, modified, or deleted. System labels may be able to be applied to
 -- or removed from messages and threads under some circumstances but this
--- is not guaranteed. For example, users can apply and remove the INBOX and
--- UNREAD labels from messages and threads, but cannot apply or remove the
--- DRAFTS or SENT labels from messages or threads.
+-- is not guaranteed. For example, users can apply and remove the \`INBOX\`
+-- and \`UNREAD\` labels from messages and threads, but cannot apply or
+-- remove the \`DRAFTS\` or \`SENT\` labels from messages or threads.
 lType :: Lens' Label (Maybe LabelType)
 lType = lens _lType (\ s a -> s{_lType = a})
 
@@ -2964,9 +2989,9 @@ lmrResultSizeEstimate
       (\ s a -> s{_lmrResultSizeEstimate = a})
       . mapping _Coerce
 
--- | List of messages. Note that each message resource contains only an id
--- and a threadId. Additional message details can be fetched using the
--- messages.get method.
+-- | List of messages. Note that each message resource contains only an
+-- \`id\` and a \`threadId\`. Additional message details can be fetched
+-- using the messages.get method.
 lmrMessages :: Lens' ListMessagesResponse [Message]
 lmrMessages
   = lens _lmrMessages (\ s a -> s{_lmrMessages = a}) .

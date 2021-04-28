@@ -109,38 +109,11 @@ instance ToJSON NetworkUtilization where
 
 -- | The Status type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by gRPC (https:\/\/github.com\/grpc). The error model is
--- designed to be: Simple to use and understand for most users Flexible
--- enough to meet unexpected needsOverviewThe Status message contains three
--- pieces of data: error code, error message, and error details. The error
--- code should be an enum value of google.rpc.Code, but it may accept
--- additional error codes if needed. The error message should be a
--- developer-facing English message that helps developers understand and
--- resolve the error. If a localized user-facing error message is needed,
--- put the localized message in the error details or localize it in the
--- client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package google.rpc that can be used for common error conditions.Language
--- mappingThe Status message is the logical representation of the error
--- model, but it is not necessarily the actual wire format. When the Status
--- message is exposed in different client libraries and different wire
--- protocols, it can be mapped differently. For example, it will likely be
--- mapped to some exceptions in Java, but more likely mapped to some error
--- codes in C.Other usesThe error model and the Status message can be used
--- in a variety of environments, either with or without APIs, to provide a
--- consistent developer experience across different environments.Example
--- uses of this error model include: Partial errors. If a service needs to
--- return partial errors to the client, it may embed the Status in the
--- normal response to indicate the partial errors. Workflow errors. A
--- typical workflow has multiple steps. Each step may have a Status message
--- for error reporting. Batch operations. If a client uses batch request
--- and batch response, the Status message should be used directly inside
--- batch response, one for each error sub-response. Asynchronous
--- operations. If an API call embeds asynchronous operation results in its
--- response, the status of those operations should be represented directly
--- using the Status message. Logging. If some API errors are stored in
--- logs, the message Status could be used directly after any stripping
--- needed for security\/privacy reasons.
+-- is used by gRPC (https:\/\/github.com\/grpc). Each Status message
+-- contains three pieces of data: error code, error message, and error
+-- details.You can find out more about this error model and how to work
+-- with it in the API Design Guide
+-- (https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -1316,6 +1289,7 @@ data Application =
     , _aGcrDomain :: !(Maybe Text)
     , _aFeatureSettings :: !(Maybe FeatureSettings)
     , _aName :: !(Maybe Text)
+    , _aDatabaseType :: !(Maybe ApplicationDatabaseType)
     , _aDispatchRules :: !(Maybe [URLDispatchRule])
     , _aDefaultBucket :: !(Maybe Text)
     , _aId :: !(Maybe Text)
@@ -1345,6 +1319,8 @@ data Application =
 --
 -- * 'aName'
 --
+-- * 'aDatabaseType'
+--
 -- * 'aDispatchRules'
 --
 -- * 'aDefaultBucket'
@@ -1366,6 +1342,7 @@ application =
     , _aGcrDomain = Nothing
     , _aFeatureSettings = Nothing
     , _aName = Nothing
+    , _aDatabaseType = Nothing
     , _aDispatchRules = Nothing
     , _aDefaultBucket = Nothing
     , _aId = Nothing
@@ -1422,6 +1399,13 @@ aFeatureSettings
 aName :: Lens' Application (Maybe Text)
 aName = lens _aName (\ s a -> s{_aName = a})
 
+-- | The type of the Cloud Firestore or Cloud Datastore database associated
+-- with this application.
+aDatabaseType :: Lens' Application (Maybe ApplicationDatabaseType)
+aDatabaseType
+  = lens _aDatabaseType
+      (\ s a -> s{_aDatabaseType = a})
+
 -- | HTTP path dispatch rules for requests to the application that do not
 -- explicitly target a service or version. Rules are order-dependent. Up to
 -- 20 dispatch rules can be supported.
@@ -1473,6 +1457,7 @@ instance FromJSON Application where
                      <*> (o .:? "gcrDomain")
                      <*> (o .:? "featureSettings")
                      <*> (o .:? "name")
+                     <*> (o .:? "databaseType")
                      <*> (o .:? "dispatchRules" .!= mempty)
                      <*> (o .:? "defaultBucket")
                      <*> (o .:? "id")
@@ -1492,6 +1477,7 @@ instance ToJSON Application where
                   ("gcrDomain" .=) <$> _aGcrDomain,
                   ("featureSettings" .=) <$> _aFeatureSettings,
                   ("name" .=) <$> _aName,
+                  ("databaseType" .=) <$> _aDatabaseType,
                   ("dispatchRules" .=) <$> _aDispatchRules,
                   ("defaultBucket" .=) <$> _aDefaultBucket,
                   ("id" .=) <$> _aId,
@@ -1548,6 +1534,7 @@ data Service =
     { _sSplit :: !(Maybe TrafficSplit)
     , _sName :: !(Maybe Text)
     , _sId :: !(Maybe Text)
+    , _sNetworkSettings :: !(Maybe NetworkSettings)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -1561,9 +1548,17 @@ data Service =
 -- * 'sName'
 --
 -- * 'sId'
+--
+-- * 'sNetworkSettings'
 service
     :: Service
-service = Service' {_sSplit = Nothing, _sName = Nothing, _sId = Nothing}
+service =
+  Service'
+    { _sSplit = Nothing
+    , _sName = Nothing
+    , _sId = Nothing
+    , _sNetworkSettings = Nothing
+    }
 
 
 -- | Mapping that defines fractional HTTP traffic diversion to different
@@ -1581,19 +1576,27 @@ sName = lens _sName (\ s a -> s{_sName = a})
 sId :: Lens' Service (Maybe Text)
 sId = lens _sId (\ s a -> s{_sId = a})
 
+-- | Ingress settings for this service. Will apply to all versions.
+sNetworkSettings :: Lens' Service (Maybe NetworkSettings)
+sNetworkSettings
+  = lens _sNetworkSettings
+      (\ s a -> s{_sNetworkSettings = a})
+
 instance FromJSON Service where
         parseJSON
           = withObject "Service"
               (\ o ->
                  Service' <$>
-                   (o .:? "split") <*> (o .:? "name") <*> (o .:? "id"))
+                   (o .:? "split") <*> (o .:? "name") <*> (o .:? "id")
+                     <*> (o .:? "networkSettings"))
 
 instance ToJSON Service where
         toJSON Service'{..}
           = object
               (catMaybes
                  [("split" .=) <$> _sSplit, ("name" .=) <$> _sName,
-                  ("id" .=) <$> _sId])
+                  ("id" .=) <$> _sId,
+                  ("networkSettings" .=) <$> _sNetworkSettings])
 
 -- | Cloud Endpoints (https:\/\/cloud.google.com\/endpoints) configuration.
 -- The Endpoints API Service provides tooling for serving Open API and gRPC
@@ -1840,7 +1843,7 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- name should have the format of operations\/some\/unique\/name.
+-- name should be a resource name ending with operations\/{unique_id}.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -1904,8 +1907,7 @@ ziFilesCount
 
 -- | URL of the zip file to deploy from. Must be a URL to a resource in
 -- Google Cloud Storage in the form
--- \'http(s):\/\/storage.googleapis.com\/\/
--- \'.
+-- \'http(s):\/\/storage.googleapis.com\/\/\'.
 ziSourceURL :: Lens' ZipInfo (Maybe Text)
 ziSourceURL
   = lens _ziSourceURL (\ s a -> s{_ziSourceURL = a})
@@ -2413,8 +2415,7 @@ fiMimeType
 
 -- | URL source to use to fetch this file. Must be a URL to a resource in
 -- Google Cloud Storage in the form
--- \'http(s):\/\/storage.googleapis.com\/\/
--- \'.
+-- \'http(s):\/\/storage.googleapis.com\/\/\'.
 fiSourceURL :: Lens' FileInfo (Maybe Text)
 fiSourceURL
   = lens _fiSourceURL (\ s a -> s{_fiSourceURL = a})
@@ -3181,6 +3182,7 @@ data Resources =
   Resources'
     { _rMemoryGb :: !(Maybe (Textual Double))
     , _rDiskGb :: !(Maybe (Textual Double))
+    , _rKmsKeyReference :: !(Maybe Text)
     , _rVolumes :: !(Maybe [Volume])
     , _rCPU :: !(Maybe (Textual Double))
     }
@@ -3195,6 +3197,8 @@ data Resources =
 --
 -- * 'rDiskGb'
 --
+-- * 'rKmsKeyReference'
+--
 -- * 'rVolumes'
 --
 -- * 'rCPU'
@@ -3204,6 +3208,7 @@ resources =
   Resources'
     { _rMemoryGb = Nothing
     , _rDiskGb = Nothing
+    , _rKmsKeyReference = Nothing
     , _rVolumes = Nothing
     , _rCPU = Nothing
     }
@@ -3220,6 +3225,13 @@ rDiskGb :: Lens' Resources (Maybe Double)
 rDiskGb
   = lens _rDiskGb (\ s a -> s{_rDiskGb = a}) .
       mapping _Coerce
+
+-- | The name of the encryption key that is stored in Google Cloud KMS. Only
+-- should be used by Cloud Composer to encrypt the vm disk
+rKmsKeyReference :: Lens' Resources (Maybe Text)
+rKmsKeyReference
+  = lens _rKmsKeyReference
+      (\ s a -> s{_rKmsKeyReference = a})
 
 -- | User specified volumes.
 rVolumes :: Lens' Resources [Volume]
@@ -3240,7 +3252,8 @@ instance FromJSON Resources where
               (\ o ->
                  Resources' <$>
                    (o .:? "memoryGb") <*> (o .:? "diskGb") <*>
-                     (o .:? "volumes" .!= mempty)
+                     (o .:? "kmsKeyReference")
+                     <*> (o .:? "volumes" .!= mempty)
                      <*> (o .:? "cpu"))
 
 instance ToJSON Resources where
@@ -3249,6 +3262,7 @@ instance ToJSON Resources where
               (catMaybes
                  [("memoryGb" .=) <$> _rMemoryGb,
                   ("diskGb" .=) <$> _rDiskGb,
+                  ("kmsKeyReference" .=) <$> _rKmsKeyReference,
                   ("volumes" .=) <$> _rVolumes, ("cpu" .=) <$> _rCPU])
 
 -- | The feature specific settings to be used in the application. These
@@ -3338,11 +3352,8 @@ certificateRawData =
 
 -- | Unencrypted PEM encoded RSA private key. This field is set once on
 -- certificate creation and then encrypted. The key size must be 2048 bits
--- or fewer. Must include the header and footer. Example:
---
--- >  -----BEGIN RSA PRIVATE KEY-----  -----END RSA PRIVATE KEY----- 
---
--- \'InputOnly
+-- or fewer. Must include the header and footer. Example: -----BEGIN RSA
+-- PRIVATE KEY----- -----END RSA PRIVATE KEY----- \'InputOnly
 crdPrivateKey :: Lens' CertificateRawData (Maybe Text)
 crdPrivateKey
   = lens _crdPrivateKey
@@ -3350,8 +3361,7 @@ crdPrivateKey
 
 -- | PEM encoded x.509 public key certificate. This field is set once on
 -- certificate creation. Must include the header and footer. Example:
---
--- >  -----BEGIN CERTIFICATE-----  -----END CERTIFICATE-----
+-- -----BEGIN CERTIFICATE----- -----END CERTIFICATE-----
 crdPublicCertificate :: Lens' CertificateRawData (Maybe Text)
 crdPublicCertificate
   = lens _crdPublicCertificate
@@ -3585,6 +3595,44 @@ instance ToJSON CPUUtilization where
                  [("aggregationWindowLength" .=) <$>
                     _cuAggregationWindowLength,
                   ("targetUtilization" .=) <$> _cuTargetUtilization])
+
+-- | Environment variables available to the build environment.Only returned
+-- in GET requests if view=FULL is set.
+--
+-- /See:/ 'versionBuildEnvVariables' smart constructor.
+newtype VersionBuildEnvVariables =
+  VersionBuildEnvVariables'
+    { _vbevAddtional :: HashMap Text Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'VersionBuildEnvVariables' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vbevAddtional'
+versionBuildEnvVariables
+    :: HashMap Text Text -- ^ 'vbevAddtional'
+    -> VersionBuildEnvVariables
+versionBuildEnvVariables pVbevAddtional_ =
+  VersionBuildEnvVariables' {_vbevAddtional = _Coerce # pVbevAddtional_}
+
+
+vbevAddtional :: Lens' VersionBuildEnvVariables (HashMap Text Text)
+vbevAddtional
+  = lens _vbevAddtional
+      (\ s a -> s{_vbevAddtional = a})
+      . _Coerce
+
+instance FromJSON VersionBuildEnvVariables where
+        parseJSON
+          = withObject "VersionBuildEnvVariables"
+              (\ o ->
+                 VersionBuildEnvVariables' <$> (parseJSONObject o))
+
+instance ToJSON VersionBuildEnvVariables where
+        toJSON = toJSON . _vbevAddtional
 
 -- | Metadata for the given google.longrunning.Operation during a
 -- google.appengine.v1.CreateVersionRequest.
@@ -3973,10 +4021,11 @@ data Version =
     , _verCreatedBy :: !(Maybe Text)
     , _verVM :: !(Maybe Bool)
     , _verHandlers :: !(Maybe [URLMap])
-    , _verInboundServices :: !(Maybe [Text])
+    , _verInboundServices :: !(Maybe [VersionInboundServicesItem])
     , _verReadinessCheck :: !(Maybe ReadinessCheck)
     , _verNetwork :: !(Maybe Network)
     , _verResources :: !(Maybe Resources)
+    , _verServiceAccount :: !(Maybe Text)
     , _verName :: !(Maybe Text)
     , _verThreadsafe :: !(Maybe Bool)
     , _verBetaSettings :: !(Maybe VersionBetaSettings)
@@ -3986,6 +4035,7 @@ data Version =
     , _verId :: !(Maybe Text)
     , _verEnvVariables :: !(Maybe VersionEnvVariables)
     , _verLivenessCheck :: !(Maybe LivenessCheck)
+    , _verBuildEnvVariables :: !(Maybe VersionBuildEnvVariables)
     , _verRuntimeAPIVersion :: !(Maybe Text)
     , _verServingStatus :: !(Maybe VersionServingStatus)
     , _verDiskUsageBytes :: !(Maybe (Textual Int64))
@@ -4043,6 +4093,8 @@ data Version =
 --
 -- * 'verResources'
 --
+-- * 'verServiceAccount'
+--
 -- * 'verName'
 --
 -- * 'verThreadsafe'
@@ -4060,6 +4112,8 @@ data Version =
 -- * 'verEnvVariables'
 --
 -- * 'verLivenessCheck'
+--
+-- * 'verBuildEnvVariables'
 --
 -- * 'verRuntimeAPIVersion'
 --
@@ -4099,6 +4153,7 @@ version =
     , _verReadinessCheck = Nothing
     , _verNetwork = Nothing
     , _verResources = Nothing
+    , _verServiceAccount = Nothing
     , _verName = Nothing
     , _verThreadsafe = Nothing
     , _verBetaSettings = Nothing
@@ -4108,6 +4163,7 @@ version =
     , _verId = Nothing
     , _verEnvVariables = Nothing
     , _verLivenessCheck = Nothing
+    , _verBuildEnvVariables = Nothing
     , _verRuntimeAPIVersion = Nothing
     , _verServingStatus = Nothing
     , _verDiskUsageBytes = Nothing
@@ -4206,7 +4262,8 @@ verDefaultExpiration
       . mapping _GDuration
 
 -- | Automatic scaling is based on request rate, response latencies, and
--- other application metrics.
+-- other application metrics. Instances are dynamically created and
+-- destroyed as needed in order to handle traffic.
 verAutomaticScaling :: Lens' Version (Maybe AutomaticScaling)
 verAutomaticScaling
   = lens _verAutomaticScaling
@@ -4242,7 +4299,7 @@ verHandlers
 
 -- | Before an application can receive email or XMPP messages, the
 -- application must be configured to enable the service.
-verInboundServices :: Lens' Version [Text]
+verInboundServices :: Lens' Version [VersionInboundServicesItem]
 verInboundServices
   = lens _verInboundServices
       (\ s a -> s{_verInboundServices = a})
@@ -4268,6 +4325,14 @@ verNetwork
 verResources :: Lens' Version (Maybe Resources)
 verResources
   = lens _verResources (\ s a -> s{_verResources = a})
+
+-- | The identity that the deployed version will run as. Admin API will use
+-- the App Engine Appspot service account as default if this field is
+-- neither provided in app.yaml file nor through CLI flag.
+verServiceAccount :: Lens' Version (Maybe Text)
+verServiceAccount
+  = lens _verServiceAccount
+      (\ s a -> s{_verServiceAccount = a})
 
 -- | Full path to the Version resource in the API. Example:
 -- apps\/myapp\/services\/default\/versions\/v1.\'OutputOnly
@@ -4298,6 +4363,7 @@ verBasicScaling
 
 -- | A service with manual scaling runs continuously, allowing you to perform
 -- complex initialization and rely on the state of its memory over time.
+-- Manually scaled versions are sometimes referred to as \"backends\".
 verManualScaling :: Lens' Version (Maybe ManualScaling)
 verManualScaling
   = lens _verManualScaling
@@ -4330,6 +4396,13 @@ verLivenessCheck :: Lens' Version (Maybe LivenessCheck)
 verLivenessCheck
   = lens _verLivenessCheck
       (\ s a -> s{_verLivenessCheck = a})
+
+-- | Environment variables available to the build environment.Only returned
+-- in GET requests if view=FULL is set.
+verBuildEnvVariables :: Lens' Version (Maybe VersionBuildEnvVariables)
+verBuildEnvVariables
+  = lens _verBuildEnvVariables
+      (\ s a -> s{_verBuildEnvVariables = a})
 
 -- | The version of the API in the given runtime environment. Please see the
 -- app.yaml reference for valid values at
@@ -4409,6 +4482,7 @@ instance FromJSON Version where
                      <*> (o .:? "readinessCheck")
                      <*> (o .:? "network")
                      <*> (o .:? "resources")
+                     <*> (o .:? "serviceAccount")
                      <*> (o .:? "name")
                      <*> (o .:? "threadsafe")
                      <*> (o .:? "betaSettings")
@@ -4418,6 +4492,7 @@ instance FromJSON Version where
                      <*> (o .:? "id")
                      <*> (o .:? "envVariables")
                      <*> (o .:? "livenessCheck")
+                     <*> (o .:? "buildEnvVariables")
                      <*> (o .:? "runtimeApiVersion")
                      <*> (o .:? "servingStatus")
                      <*> (o .:? "diskUsageBytes")
@@ -4452,6 +4527,7 @@ instance ToJSON Version where
                   ("readinessCheck" .=) <$> _verReadinessCheck,
                   ("network" .=) <$> _verNetwork,
                   ("resources" .=) <$> _verResources,
+                  ("serviceAccount" .=) <$> _verServiceAccount,
                   ("name" .=) <$> _verName,
                   ("threadsafe" .=) <$> _verThreadsafe,
                   ("betaSettings" .=) <$> _verBetaSettings,
@@ -4461,6 +4537,7 @@ instance ToJSON Version where
                   ("id" .=) <$> _verId,
                   ("envVariables" .=) <$> _verEnvVariables,
                   ("livenessCheck" .=) <$> _verLivenessCheck,
+                  ("buildEnvVariables" .=) <$> _verBuildEnvVariables,
                   ("runtimeApiVersion" .=) <$> _verRuntimeAPIVersion,
                   ("servingStatus" .=) <$> _verServingStatus,
                   ("diskUsageBytes" .=) <$> _verDiskUsageBytes,
@@ -4884,12 +4961,11 @@ frAction = lens _frAction (\ s a -> s{_frAction = a})
 -- rule applies to. You can use the wildcard character \"*\" to match all
 -- IPs equivalent to \"0\/0\" and \"::\/0\" together. Examples: 192.168.1.1
 -- or 192.168.0.0\/16 or 2001:db8::\/32 or
--- 2001:0db8:0000:0042:0000:8a2e:0370:7334.
---
--- Truncation will be silently performed on addresses which are not
--- properly truncated. For example, 1.2.3.4\/24 is accepted as the same
--- address as 1.2.3.0\/24. Similarly, for IPv6, 2001:db8::1\/32 is accepted
--- as the same address as 2001:db8::\/32.
+-- 2001:0db8:0000:0042:0000:8a2e:0370:7334. Truncation will be silently
+-- performed on addresses which are not properly truncated. For example,
+-- 1.2.3.4\/24 is accepted as the same address as 1.2.3.0\/24. Similarly,
+-- for IPv6, 2001:db8::1\/32 is accepted as the same address as
+-- 2001:db8::\/32.
 frSourceRange :: Lens' FirewallRule (Maybe Text)
 frSourceRange
   = lens _frSourceRange
@@ -4926,6 +5002,7 @@ instance ToJSON FirewallRule where
 data LocationMetadata =
   LocationMetadata'
     { _lmStandardEnvironmentAvailable :: !(Maybe Bool)
+    , _lmSearchAPIAvailable :: !(Maybe Bool)
     , _lmFlexibleEnvironmentAvailable :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4937,12 +5014,15 @@ data LocationMetadata =
 --
 -- * 'lmStandardEnvironmentAvailable'
 --
+-- * 'lmSearchAPIAvailable'
+--
 -- * 'lmFlexibleEnvironmentAvailable'
 locationMetadata
     :: LocationMetadata
 locationMetadata =
   LocationMetadata'
     { _lmStandardEnvironmentAvailable = Nothing
+    , _lmSearchAPIAvailable = Nothing
     , _lmFlexibleEnvironmentAvailable = Nothing
     }
 
@@ -4953,6 +5033,14 @@ lmStandardEnvironmentAvailable :: Lens' LocationMetadata (Maybe Bool)
 lmStandardEnvironmentAvailable
   = lens _lmStandardEnvironmentAvailable
       (\ s a -> s{_lmStandardEnvironmentAvailable = a})
+
+-- | Output only. Search API
+-- (https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search)
+-- is available in the given location.
+lmSearchAPIAvailable :: Lens' LocationMetadata (Maybe Bool)
+lmSearchAPIAvailable
+  = lens _lmSearchAPIAvailable
+      (\ s a -> s{_lmSearchAPIAvailable = a})
 
 -- | App Engine flexible environment is available in the given
 -- location.\'OutputOnly
@@ -4967,7 +5055,8 @@ instance FromJSON LocationMetadata where
               (\ o ->
                  LocationMetadata' <$>
                    (o .:? "standardEnvironmentAvailable") <*>
-                     (o .:? "flexibleEnvironmentAvailable"))
+                     (o .:? "searchApiAvailable")
+                     <*> (o .:? "flexibleEnvironmentAvailable"))
 
 instance ToJSON LocationMetadata where
         toJSON LocationMetadata'{..}
@@ -4975,6 +5064,7 @@ instance ToJSON LocationMetadata where
               (catMaybes
                  [("standardEnvironmentAvailable" .=) <$>
                     _lmStandardEnvironmentAvailable,
+                  ("searchApiAvailable" .=) <$> _lmSearchAPIAvailable,
                   ("flexibleEnvironmentAvailable" .=) <$>
                     _lmFlexibleEnvironmentAvailable])
 
@@ -5016,6 +5106,82 @@ instance FromJSON OperationMetadata where
 
 instance ToJSON OperationMetadata where
         toJSON = toJSON . _omAddtional
+
+-- | Metadata for the given google.cloud.location.Location.
+--
+-- /See:/ 'googleAppEngineV1betaLocationMetadata' smart constructor.
+data GoogleAppEngineV1betaLocationMetadata =
+  GoogleAppEngineV1betaLocationMetadata'
+    { _gaevlmStandardEnvironmentAvailable :: !(Maybe Bool)
+    , _gaevlmSearchAPIAvailable :: !(Maybe Bool)
+    , _gaevlmFlexibleEnvironmentAvailable :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GoogleAppEngineV1betaLocationMetadata' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gaevlmStandardEnvironmentAvailable'
+--
+-- * 'gaevlmSearchAPIAvailable'
+--
+-- * 'gaevlmFlexibleEnvironmentAvailable'
+googleAppEngineV1betaLocationMetadata
+    :: GoogleAppEngineV1betaLocationMetadata
+googleAppEngineV1betaLocationMetadata =
+  GoogleAppEngineV1betaLocationMetadata'
+    { _gaevlmStandardEnvironmentAvailable = Nothing
+    , _gaevlmSearchAPIAvailable = Nothing
+    , _gaevlmFlexibleEnvironmentAvailable = Nothing
+    }
+
+
+-- | App Engine standard environment is available in the given
+-- location.\'OutputOnly
+gaevlmStandardEnvironmentAvailable :: Lens' GoogleAppEngineV1betaLocationMetadata (Maybe Bool)
+gaevlmStandardEnvironmentAvailable
+  = lens _gaevlmStandardEnvironmentAvailable
+      (\ s a -> s{_gaevlmStandardEnvironmentAvailable = a})
+
+-- | Output only. Search API
+-- (https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search)
+-- is available in the given location.
+gaevlmSearchAPIAvailable :: Lens' GoogleAppEngineV1betaLocationMetadata (Maybe Bool)
+gaevlmSearchAPIAvailable
+  = lens _gaevlmSearchAPIAvailable
+      (\ s a -> s{_gaevlmSearchAPIAvailable = a})
+
+-- | App Engine flexible environment is available in the given
+-- location.\'OutputOnly
+gaevlmFlexibleEnvironmentAvailable :: Lens' GoogleAppEngineV1betaLocationMetadata (Maybe Bool)
+gaevlmFlexibleEnvironmentAvailable
+  = lens _gaevlmFlexibleEnvironmentAvailable
+      (\ s a -> s{_gaevlmFlexibleEnvironmentAvailable = a})
+
+instance FromJSON
+           GoogleAppEngineV1betaLocationMetadata
+         where
+        parseJSON
+          = withObject "GoogleAppEngineV1betaLocationMetadata"
+              (\ o ->
+                 GoogleAppEngineV1betaLocationMetadata' <$>
+                   (o .:? "standardEnvironmentAvailable") <*>
+                     (o .:? "searchApiAvailable")
+                     <*> (o .:? "flexibleEnvironmentAvailable"))
+
+instance ToJSON GoogleAppEngineV1betaLocationMetadata
+         where
+        toJSON GoogleAppEngineV1betaLocationMetadata'{..}
+          = object
+              (catMaybes
+                 [("standardEnvironmentAvailable" .=) <$>
+                    _gaevlmStandardEnvironmentAvailable,
+                  ("searchApiAvailable" .=) <$>
+                    _gaevlmSearchAPIAvailable,
+                  ("flexibleEnvironmentAvailable" .=) <$>
+                    _gaevlmFlexibleEnvironmentAvailable])
 
 -- | Response message for Instances.ListInstances.
 --
@@ -5312,6 +5478,46 @@ instance ToJSON LivenessCheck where
                   ("host" .=) <$> _lcHost,
                   ("initialDelay" .=) <$> _lcInitialDelay,
                   ("timeout" .=) <$> _lcTimeout])
+
+-- | A NetworkSettings resource is a container for ingress settings for a
+-- version or service.
+--
+-- /See:/ 'networkSettings' smart constructor.
+newtype NetworkSettings =
+  NetworkSettings'
+    { _nsIngressTrafficAllowed :: Maybe NetworkSettingsIngressTrafficAllowed
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NetworkSettings' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nsIngressTrafficAllowed'
+networkSettings
+    :: NetworkSettings
+networkSettings = NetworkSettings' {_nsIngressTrafficAllowed = Nothing}
+
+
+-- | The ingress settings for version or service.
+nsIngressTrafficAllowed :: Lens' NetworkSettings (Maybe NetworkSettingsIngressTrafficAllowed)
+nsIngressTrafficAllowed
+  = lens _nsIngressTrafficAllowed
+      (\ s a -> s{_nsIngressTrafficAllowed = a})
+
+instance FromJSON NetworkSettings where
+        parseJSON
+          = withObject "NetworkSettings"
+              (\ o ->
+                 NetworkSettings' <$> (o .:? "ingressTrafficAllowed"))
+
+instance ToJSON NetworkSettings where
+        toJSON NetworkSettings'{..}
+          = object
+              (catMaybes
+                 [("ingressTrafficAllowed" .=) <$>
+                    _nsIngressTrafficAllowed])
 
 -- | Target scaling by request utilization. Only applicable in the App Engine
 -- flexible environment.
@@ -5669,6 +5875,7 @@ data Instance =
     , _iVMIP :: !(Maybe Text)
     , _iStartTime :: !(Maybe DateTime')
     , _iVMId :: !(Maybe Text)
+    , _iVMLiveness :: !(Maybe InstanceVMLiveness)
     , _iAvailability :: !(Maybe InstanceAvailability)
     , _iVMName :: !(Maybe Text)
     , _iName :: !(Maybe Text)
@@ -5699,6 +5906,8 @@ data Instance =
 --
 -- * 'iVMId'
 --
+-- * 'iVMLiveness'
+--
 -- * 'iAvailability'
 --
 -- * 'iVMName'
@@ -5728,6 +5937,7 @@ instance' =
     , _iVMIP = Nothing
     , _iStartTime = Nothing
     , _iVMId = Nothing
+    , _iVMLiveness = Nothing
     , _iAvailability = Nothing
     , _iVMName = Nothing
     , _iName = Nothing
@@ -5741,94 +5951,100 @@ instance' =
     }
 
 
--- | Total memory in use (bytes).\'OutputOnly
+-- | Output only. Total memory in use (bytes).
 iMemoryUsage :: Lens' Instance (Maybe Int64)
 iMemoryUsage
   = lens _iMemoryUsage (\ s a -> s{_iMemoryUsage = a})
       . mapping _Coerce
 
--- | Status of the virtual machine where this instance lives. Only applicable
--- for instances in App Engine flexible environment.\'OutputOnly
+-- | Output only. Status of the virtual machine where this instance lives.
+-- Only applicable for instances in App Engine flexible environment.
 iVMStatus :: Lens' Instance (Maybe Text)
 iVMStatus
   = lens _iVMStatus (\ s a -> s{_iVMStatus = a})
 
--- | Zone where the virtual machine is located. Only applicable for instances
--- in App Engine flexible environment.\'OutputOnly
+-- | Output only. Zone where the virtual machine is located. Only applicable
+-- for instances in App Engine flexible environment.
 iVMZoneName :: Lens' Instance (Maybe Text)
 iVMZoneName
   = lens _iVMZoneName (\ s a -> s{_iVMZoneName = a})
 
--- | The IP address of this instance. Only applicable for instances in App
--- Engine flexible environment.\'OutputOnly
+-- | Output only. The IP address of this instance. Only applicable for
+-- instances in App Engine flexible environment.
 iVMIP :: Lens' Instance (Maybe Text)
 iVMIP = lens _iVMIP (\ s a -> s{_iVMIP = a})
 
--- | Time that this instance was started.\'OutputOnly
+-- | Output only. Time that this instance was started.\'OutputOnly
 iStartTime :: Lens' Instance (Maybe UTCTime)
 iStartTime
   = lens _iStartTime (\ s a -> s{_iStartTime = a}) .
       mapping _DateTime
 
--- | Virtual machine ID of this instance. Only applicable for instances in
--- App Engine flexible environment.\'OutputOnly
+-- | Output only. Virtual machine ID of this instance. Only applicable for
+-- instances in App Engine flexible environment.
 iVMId :: Lens' Instance (Maybe Text)
 iVMId = lens _iVMId (\ s a -> s{_iVMId = a})
 
--- | Availability of the instance.\'OutputOnly
+-- | Output only. The liveness health check of this instance. Only applicable
+-- for instances in App Engine flexible environment.
+iVMLiveness :: Lens' Instance (Maybe InstanceVMLiveness)
+iVMLiveness
+  = lens _iVMLiveness (\ s a -> s{_iVMLiveness = a})
+
+-- | Output only. Availability of the instance.
 iAvailability :: Lens' Instance (Maybe InstanceAvailability)
 iAvailability
   = lens _iAvailability
       (\ s a -> s{_iAvailability = a})
 
--- | Name of the virtual machine where this instance lives. Only applicable
--- for instances in App Engine flexible environment.\'OutputOnly
+-- | Output only. Name of the virtual machine where this instance lives. Only
+-- applicable for instances in App Engine flexible environment.
 iVMName :: Lens' Instance (Maybe Text)
 iVMName = lens _iVMName (\ s a -> s{_iVMName = a})
 
--- | Full path to the Instance resource in the API. Example:
--- apps\/myapp\/services\/default\/versions\/v1\/instances\/instance-1.\'OutputOnly
+-- | Output only. Full path to the Instance resource in the API. Example:
+-- apps\/myapp\/services\/default\/versions\/v1\/instances\/instance-1.
 iName :: Lens' Instance (Maybe Text)
 iName = lens _iName (\ s a -> s{_iName = a})
 
--- | Whether this instance is in debug mode. Only applicable for instances in
--- App Engine flexible environment.\'OutputOnly
+-- | Output only. Whether this instance is in debug mode. Only applicable for
+-- instances in App Engine flexible environment.
 iVMDebugEnabled :: Lens' Instance (Maybe Bool)
 iVMDebugEnabled
   = lens _iVMDebugEnabled
       (\ s a -> s{_iVMDebugEnabled = a})
 
--- | Number of requests since this instance was started.\'OutputOnly
+-- | Output only. Number of requests since this instance was started.
 iRequests :: Lens' Instance (Maybe Int32)
 iRequests
   = lens _iRequests (\ s a -> s{_iRequests = a}) .
       mapping _Coerce
 
--- | Average queries per second (QPS) over the last minute.\'OutputOnly
+-- | Output only. Average queries per second (QPS) over the last minute.
 iQps :: Lens' Instance (Maybe Double)
 iQps
   = lens _iQps (\ s a -> s{_iQps = a}) .
       mapping _Coerce
 
--- | Relative name of the instance within the version. Example:
--- instance-1.\'OutputOnly
+-- | Output only. Relative name of the instance within the version. Example:
+-- instance-1.
 iId :: Lens' Instance (Maybe Text)
 iId = lens _iId (\ s a -> s{_iId = a})
 
--- | Number of errors since this instance was started.\'OutputOnly
+-- | Output only. Number of errors since this instance was started.
 iErrors :: Lens' Instance (Maybe Int32)
 iErrors
   = lens _iErrors (\ s a -> s{_iErrors = a}) .
       mapping _Coerce
 
--- | Average latency (ms) over the last minute.\'OutputOnly
+-- | Output only. Average latency (ms) over the last minute.
 iAverageLatency :: Lens' Instance (Maybe Int32)
 iAverageLatency
   = lens _iAverageLatency
       (\ s a -> s{_iAverageLatency = a})
       . mapping _Coerce
 
--- | App Engine release this instance is running on.\'OutputOnly
+-- | Output only. App Engine release this instance is running on.
 iAppEngineRelease :: Lens' Instance (Maybe Text)
 iAppEngineRelease
   = lens _iAppEngineRelease
@@ -5844,6 +6060,7 @@ instance FromJSON Instance where
                      <*> (o .:? "vmIp")
                      <*> (o .:? "startTime")
                      <*> (o .:? "vmId")
+                     <*> (o .:? "vmLiveness")
                      <*> (o .:? "availability")
                      <*> (o .:? "vmName")
                      <*> (o .:? "name")
@@ -5865,6 +6082,7 @@ instance ToJSON Instance where
                   ("vmIp" .=) <$> _iVMIP,
                   ("startTime" .=) <$> _iStartTime,
                   ("vmId" .=) <$> _iVMId,
+                  ("vmLiveness" .=) <$> _iVMLiveness,
                   ("availability" .=) <$> _iAvailability,
                   ("vmName" .=) <$> _iVMName, ("name" .=) <$> _iName,
                   ("vmDebugEnabled" .=) <$> _iVMDebugEnabled,

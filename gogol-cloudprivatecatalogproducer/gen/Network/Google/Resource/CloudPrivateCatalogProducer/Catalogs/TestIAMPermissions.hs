@@ -22,7 +22,7 @@
 --
 -- Tests the IAM permissions for the specified Catalog.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.testIamPermissions@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.testIamPermissions@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.TestIAMPermissions
     (
     -- * REST Resource

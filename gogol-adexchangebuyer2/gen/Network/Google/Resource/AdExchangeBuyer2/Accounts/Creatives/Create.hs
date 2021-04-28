@@ -57,7 +57,9 @@ type AccountsCreativesCreateResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "duplicateIdMode" Text :>
+                     QueryParam "duplicateIdMode"
+                       AccountsCreativesCreateDuplicateIdMode
+                       :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :>
                            ReqBody '[JSON] Creative :> Post '[JSON] Creative
@@ -73,7 +75,7 @@ data AccountsCreativesCreate =
     , _acccUploadType :: !(Maybe Text)
     , _acccPayload :: !Creative
     , _acccAccountId :: !Text
-    , _acccDuplicateIdMode :: !(Maybe Text)
+    , _acccDuplicateIdMode :: !(Maybe AccountsCreativesCreateDuplicateIdMode)
     , _acccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -152,7 +154,7 @@ acccAccountId
 
 -- | Indicates if multiple creatives can share an ID or not. Default is
 -- NO_DUPLICATES (one ID per creative).
-acccDuplicateIdMode :: Lens' AccountsCreativesCreate (Maybe Text)
+acccDuplicateIdMode :: Lens' AccountsCreativesCreate (Maybe AccountsCreativesCreateDuplicateIdMode)
 acccDuplicateIdMode
   = lens _acccDuplicateIdMode
       (\ s a -> s{_acccDuplicateIdMode = a})

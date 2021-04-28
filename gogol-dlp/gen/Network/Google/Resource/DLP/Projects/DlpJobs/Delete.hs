@@ -132,7 +132,7 @@ pdjdUploadType
   = lens _pdjdUploadType
       (\ s a -> s{_pdjdUploadType = a})
 
--- | The name of the DlpJob resource to be deleted.
+-- | Required. The name of the DlpJob resource to be deleted.
 pdjdName :: Lens' ProjectsDlpJobsDelete Text
 pdjdName = lens _pdjdName (\ s a -> s{_pdjdName = a})
 

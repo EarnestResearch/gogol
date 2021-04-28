@@ -21,9 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Gets a single metric descriptor. This method does not require a
--- Stackdriver account.
+-- Workspace.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.metricDescriptors.get@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.metricDescriptors.get@.
 module Network.Google.Resource.Monitoring.Projects.MetricDescriptors.Get
     (
     -- * REST Resource
@@ -59,7 +59,7 @@ type ProjectsMetricDescriptorsGetResource =
                      Get '[JSON] MetricDescriptor
 
 -- | Gets a single metric descriptor. This method does not require a
--- Stackdriver account.
+-- Workspace.
 --
 -- /See:/ 'projectsMetricDescriptorsGet' smart constructor.
 data ProjectsMetricDescriptorsGet =
@@ -126,9 +126,10 @@ pmdgUploadType
   = lens _pmdgUploadType
       (\ s a -> s{_pmdgUploadType = a})
 
--- | The metric descriptor on which to execute the request. The format is
--- \"projects\/{project_id_or_number}\/metricDescriptors\/{metric_id}\". An
--- example value of {metric_id} is
+-- | Required. The metric descriptor on which to execute the request. The
+-- format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/metricDescriptors\/[METRIC_ID] An
+-- example value of [METRIC_ID] is
 -- \"compute.googleapis.com\/instance\/disk\/read_bytes_count\".
 pmdgName :: Lens' ProjectsMetricDescriptorsGet Text
 pmdgName = lens _pmdgName (\ s a -> s{_pmdgName = a})

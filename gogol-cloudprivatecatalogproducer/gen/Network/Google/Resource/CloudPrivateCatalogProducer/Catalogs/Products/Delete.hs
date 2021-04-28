@@ -22,7 +22,7 @@
 --
 -- Hard deletes a Product.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.delete@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.delete@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Delete
     (
     -- * REST Resource

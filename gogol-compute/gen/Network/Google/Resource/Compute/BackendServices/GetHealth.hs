@@ -21,6 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Gets the most recent health check results for this BackendService.
+-- Example request body: { \"group\":
+-- \"\/zones\/us-east1-b\/instanceGroups\/lb-backend-example\" }
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.backendServices.getHealth@.
 module Network.Google.Resource.Compute.BackendServices.GetHealth
@@ -57,6 +59,8 @@ type BackendServicesGetHealthResource =
                          Post '[JSON] BackendServiceGroupHealth
 
 -- | Gets the most recent health check results for this BackendService.
+-- Example request body: { \"group\":
+-- \"\/zones\/us-east1-b\/instanceGroups\/lb-backend-example\" }
 --
 -- /See:/ 'backendServicesGetHealth' smart constructor.
 data BackendServicesGetHealth =

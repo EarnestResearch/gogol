@@ -24,7 +24,9 @@
 -- number does not match the server\'s revision number an \`ABORTED\` error
 -- message will be returned. This call updates the proposal_state from
 -- \`PROPOSED\` to \`BUYER_ACCEPTED\`, or from \`SELLER_ACCEPTED\` to
--- \`FINALIZED\`.
+-- \`FINALIZED\`. Upon calling this endpoint, the buyer implicitly agrees
+-- to the terms and conditions optionally set within the proposal by the
+-- publisher.
 --
 -- /See:/ <https://developers.google.com/authorized-buyers/apis/reference/rest/ Ad Exchange Buyer API II Reference> for @adexchangebuyer2.accounts.proposals.accept@.
 module Network.Google.Resource.AdExchangeBuyer2.Accounts.Proposals.Accept
@@ -71,7 +73,9 @@ type AccountsProposalsAcceptResource =
 -- number does not match the server\'s revision number an \`ABORTED\` error
 -- message will be returned. This call updates the proposal_state from
 -- \`PROPOSED\` to \`BUYER_ACCEPTED\`, or from \`SELLER_ACCEPTED\` to
--- \`FINALIZED\`.
+-- \`FINALIZED\`. Upon calling this endpoint, the buyer implicitly agrees
+-- to the terms and conditions optionally set within the proposal by the
+-- publisher.
 --
 -- /See:/ 'accountsProposalsAccept' smart constructor.
 data AccountsProposalsAccept =

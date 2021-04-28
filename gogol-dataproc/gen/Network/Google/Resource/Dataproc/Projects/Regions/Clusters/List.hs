@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists all regions\/{region}\/clusters in a project.
+-- Lists all regions\/{region}\/clusters in a project alphabetically.
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.regions.clusters.list@.
 module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.List
@@ -68,7 +68,7 @@ type ProjectsRegionsClustersListResource =
                                  QueryParam "alt" AltJSON :>
                                    Get '[JSON] ListClustersResponse
 
--- | Lists all regions\/{region}\/clusters in a project.
+-- | Lists all regions\/{region}\/clusters in a project alphabetically.
 --
 -- /See:/ 'projectsRegionsClustersList' smart constructor.
 data ProjectsRegionsClustersList =
@@ -168,7 +168,7 @@ prclFilter :: Lens' ProjectsRegionsClustersList (Maybe Text)
 prclFilter
   = lens _prclFilter (\ s a -> s{_prclFilter = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prclRegion :: Lens' ProjectsRegionsClustersList Text
 prclRegion
   = lens _prclRegion (\ s a -> s{_prclRegion = a})

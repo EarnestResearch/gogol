@@ -58,7 +58,7 @@ type MattersHoldsGetResource =
                  QueryParam "upload_protocol" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "view" Text :>
+                       QueryParam "view" MattersHoldsGetView :>
                          QueryParam "callback" Text :>
                            QueryParam "alt" AltJSON :> Get '[JSON] Hold
 
@@ -73,7 +73,7 @@ data MattersHoldsGet =
     , _mhgAccessToken :: !(Maybe Text)
     , _mhgUploadType :: !(Maybe Text)
     , _mhgMatterId :: !Text
-    , _mhgView :: !(Maybe Text)
+    , _mhgView :: !(Maybe MattersHoldsGetView)
     , _mhgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -148,7 +148,7 @@ mhgMatterId
   = lens _mhgMatterId (\ s a -> s{_mhgMatterId = a})
 
 -- | Specifies which parts of the Hold to return.
-mhgView :: Lens' MattersHoldsGet (Maybe Text)
+mhgView :: Lens' MattersHoldsGet (Maybe MattersHoldsGetView)
 mhgView = lens _mhgView (\ s a -> s{_mhgView = a})
 
 -- | JSONP

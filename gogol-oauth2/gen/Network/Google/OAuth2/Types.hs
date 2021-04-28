@@ -22,39 +22,11 @@ module Network.Google.OAuth2.Types
     -- * OAuth Scopes
     , userInfoProFileScope
     , userInfoEmailScope
-    , plusMeScope
+    , openidScope
 
-    -- * TokenInfo
-    , TokenInfo
-    , tokenInfo
-    , tiAudience
-    , tiEmail
-    , tiExpiresIn
-    , tiAccessType
-    , tiScope
-    , tiVerifiedEmail
-    , tiUserId
-    , tiTokenHandle
-    , tiIssuedTo
-
-    -- * JWK
-    , JWK
-    , jwk
-    , jKeys
-
-    -- * JWKKeysItem
-    , JWKKeysItem
-    , jwkKeysItem
-    , jkiAlg
-    , jkiUse
-    , jkiKid
-    , jkiN
-    , jkiE
-    , jkiKty
-
-    -- * UserInfoplus
-    , UserInfoplus
-    , userInfoplus
+    -- * UserInfo
+    , UserInfo
+    , userInfo
     , uiHd
     , uiEmail
     , uiLink
@@ -66,6 +38,17 @@ module Network.Google.OAuth2.Types
     , uiName
     , uiVerifiedEmail
     , uiId
+
+    -- * TokenInfo
+    , TokenInfo
+    , tokenInfo
+    , tiAudience
+    , tiEmail
+    , tiExpiresIn
+    , tiScope
+    , tiVerifiedEmail
+    , tiUserId
+    , tiIssuedTo
     ) where
 
 import Network.Google.OAuth2.Types.Product
@@ -88,5 +71,5 @@ userInfoEmailScope :: Proxy '["https://www.googleapis.com/auth/userinfo.email"]
 userInfoEmailScope = Proxy
 
 -- | Associate you with your personal info on Google
-plusMeScope :: Proxy '["https://www.googleapis.com/auth/plus.me"]
-plusMeScope = Proxy
+openidScope :: Proxy '["openid"]
+openidScope = Proxy

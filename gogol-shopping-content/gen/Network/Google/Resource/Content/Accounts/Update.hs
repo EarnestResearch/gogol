@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates a Merchant Center account.
+-- Updates a Merchant Center account. Any fields that are not provided are
+-- deleted from the resource.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.accounts.update@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.accounts.update@.
 module Network.Google.Resource.Content.Accounts.Update
     (
     -- * REST Resource
@@ -33,10 +34,15 @@ module Network.Google.Resource.Content.Accounts.Update
     , AccountsUpdate
 
     -- * Request Lenses
+    , auuXgafv
     , auuMerchantId
+    , auuUploadProtocol
+    , auuAccessToken
+    , auuUploadType
     , auuPayload
     , auuAccountId
     , auuDryRun
+    , auuCallback
     ) where
 
 import Network.Google.Prelude
@@ -50,19 +56,30 @@ type AccountsUpdateResource =
          Capture "merchantId" (Textual Word64) :>
            "accounts" :>
              Capture "accountId" (Textual Word64) :>
-               QueryParam "dryRun" Bool :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] Account :> Put '[JSON] Account
+               QueryParam "$.xgafv" Xgafv :>
+                 QueryParam "upload_protocol" Text :>
+                   QueryParam "access_token" Text :>
+                     QueryParam "uploadType" Text :>
+                       QueryParam "dryRun" Bool :>
+                         QueryParam "callback" Text :>
+                           QueryParam "alt" AltJSON :>
+                             ReqBody '[JSON] Account :> Put '[JSON] Account
 
--- | Updates a Merchant Center account.
+-- | Updates a Merchant Center account. Any fields that are not provided are
+-- deleted from the resource.
 --
 -- /See:/ 'accountsUpdate' smart constructor.
 data AccountsUpdate =
   AccountsUpdate'
-    { _auuMerchantId :: !(Textual Word64)
+    { _auuXgafv :: !(Maybe Xgafv)
+    , _auuMerchantId :: !(Textual Word64)
+    , _auuUploadProtocol :: !(Maybe Text)
+    , _auuAccessToken :: !(Maybe Text)
+    , _auuUploadType :: !(Maybe Text)
     , _auuPayload :: !Account
     , _auuAccountId :: !(Textual Word64)
     , _auuDryRun :: !(Maybe Bool)
+    , _auuCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -71,13 +88,23 @@ data AccountsUpdate =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'auuXgafv'
+--
 -- * 'auuMerchantId'
+--
+-- * 'auuUploadProtocol'
+--
+-- * 'auuAccessToken'
+--
+-- * 'auuUploadType'
 --
 -- * 'auuPayload'
 --
 -- * 'auuAccountId'
 --
 -- * 'auuDryRun'
+--
+-- * 'auuCallback'
 accountsUpdate
     :: Word64 -- ^ 'auuMerchantId'
     -> Account -- ^ 'auuPayload'
@@ -85,21 +112,48 @@ accountsUpdate
     -> AccountsUpdate
 accountsUpdate pAuuMerchantId_ pAuuPayload_ pAuuAccountId_ =
   AccountsUpdate'
-    { _auuMerchantId = _Coerce # pAuuMerchantId_
+    { _auuXgafv = Nothing
+    , _auuMerchantId = _Coerce # pAuuMerchantId_
+    , _auuUploadProtocol = Nothing
+    , _auuAccessToken = Nothing
+    , _auuUploadType = Nothing
     , _auuPayload = pAuuPayload_
     , _auuAccountId = _Coerce # pAuuAccountId_
     , _auuDryRun = Nothing
+    , _auuCallback = Nothing
     }
 
 
+-- | V1 error format.
+auuXgafv :: Lens' AccountsUpdate (Maybe Xgafv)
+auuXgafv = lens _auuXgafv (\ s a -> s{_auuXgafv = a})
+
 -- | The ID of the managing account. If this parameter is not the same as
 -- accountId, then this account must be a multi-client account and
--- accountId must be the ID of a sub-account of this account.
+-- \`accountId\` must be the ID of a sub-account of this account.
 auuMerchantId :: Lens' AccountsUpdate Word64
 auuMerchantId
   = lens _auuMerchantId
       (\ s a -> s{_auuMerchantId = a})
       . _Coerce
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+auuUploadProtocol :: Lens' AccountsUpdate (Maybe Text)
+auuUploadProtocol
+  = lens _auuUploadProtocol
+      (\ s a -> s{_auuUploadProtocol = a})
+
+-- | OAuth access token.
+auuAccessToken :: Lens' AccountsUpdate (Maybe Text)
+auuAccessToken
+  = lens _auuAccessToken
+      (\ s a -> s{_auuAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+auuUploadType :: Lens' AccountsUpdate (Maybe Text)
+auuUploadType
+  = lens _auuUploadType
+      (\ s a -> s{_auuUploadType = a})
 
 -- | Multipart request metadata.
 auuPayload :: Lens' AccountsUpdate Account
@@ -119,12 +173,22 @@ auuDryRun :: Lens' AccountsUpdate (Maybe Bool)
 auuDryRun
   = lens _auuDryRun (\ s a -> s{_auuDryRun = a})
 
+-- | JSONP
+auuCallback :: Lens' AccountsUpdate (Maybe Text)
+auuCallback
+  = lens _auuCallback (\ s a -> s{_auuCallback = a})
+
 instance GoogleRequest AccountsUpdate where
         type Rs AccountsUpdate = Account
         type Scopes AccountsUpdate =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccountsUpdate'{..}
-          = go _auuMerchantId _auuAccountId _auuDryRun
+          = go _auuMerchantId _auuAccountId _auuXgafv
+              _auuUploadProtocol
+              _auuAccessToken
+              _auuUploadType
+              _auuDryRun
+              _auuCallback
               (Just AltJSON)
               _auuPayload
               shoppingContentService

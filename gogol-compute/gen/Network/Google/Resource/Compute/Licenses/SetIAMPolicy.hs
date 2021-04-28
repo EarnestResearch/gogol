@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Caution This resource is intended for use only by
+-- third-party partners who are creating Cloud Marketplace images.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.licenses.setIamPolicy@.
 module Network.Google.Resource.Compute.Licenses.SetIAMPolicy
@@ -58,7 +59,8 @@ type LicensesSetIAMPolicyResource =
                          Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Caution This resource is intended for use only by
+-- third-party partners who are creating Cloud Marketplace images.
 --
 -- /See:/ 'licensesSetIAMPolicy' smart constructor.
 data LicensesSetIAMPolicy =

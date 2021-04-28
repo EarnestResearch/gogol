@@ -117,7 +117,7 @@ projectsLocationsClustersList pPlclParent_ =
 
 
 -- | The parent (project and location) where the clusters will be listed.
--- Specified in the format \'projects\/*\/locations\/*\'. Location \"-\"
+-- Specified in the format \`projects\/*\/locations\/*\`. Location \"-\"
 -- matches all zones and all regions.
 plclParent :: Lens' ProjectsLocationsClustersList Text
 plclParent
@@ -147,9 +147,9 @@ plclUploadType
       (\ s a -> s{_plclUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides,
--- or \"-\" for all zones. This field has been deprecated and replaced by
--- the parent field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides, or \"-\" for all zones. This field has been
+-- deprecated and replaced by the parent field.
 plclZone :: Lens' ProjectsLocationsClustersList (Maybe Text)
 plclZone = lens _plclZone (\ s a -> s{_plclZone = a})
 

@@ -146,7 +146,7 @@ prjsPayload :: Lens' ProjectsRegionsJobsSubmit SubmitJobRequest
 prjsPayload
   = lens _prjsPayload (\ s a -> s{_prjsPayload = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prjsRegion :: Lens' ProjectsRegionsJobsSubmit Text
 prjsRegion
   = lens _prjsRegion (\ s a -> s{_prjsRegion = a})

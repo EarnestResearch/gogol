@@ -22,7 +22,14 @@
 --
 -- RetrieveSeriesMetadata returns instance associated with the given study
 -- and series, presented as metadata with the bulk data removed. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.5.6.
+-- [RetrieveTransaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.4).
+-- For details on the implementation of RetrieveSeriesMetadata, see
+-- [Metadata
+-- resources](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#metadata_resources)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call RetrieveSeriesMetadata, see [Retrieving
+-- metadata](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#retrieving_metadata).
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.studies.series.retrieveMetadata@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.Studies.Series.RetrieveMetadata
@@ -51,7 +58,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadataResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "dicomWeb" :>
            Capture "dicomWebPath" Text :>
@@ -64,7 +71,14 @@ type ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadataResource
 
 -- | RetrieveSeriesMetadata returns instance associated with the given study
 -- and series, presented as metadata with the bulk data removed. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.5.6.
+-- [RetrieveTransaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.4).
+-- For details on the implementation of RetrieveSeriesMetadata, see
+-- [Metadata
+-- resources](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#metadata_resources)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call RetrieveSeriesMetadata, see [Retrieving
+-- metadata](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#retrieving_metadata).
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata =
@@ -113,8 +127,8 @@ projectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata pPldsdsssrmPar
     }
 
 
--- | The name of the DICOM store that is being accessed (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`).
+-- | The name of the DICOM store that is being accessed. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 pldsdsssrmParent :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata Text
 pldsdsssrmParent
   = lens _pldsdsssrmParent
@@ -150,9 +164,8 @@ pldsdsssrmCallback
   = lens _pldsdsssrmCallback
       (\ s a -> s{_pldsdsssrmCallback = a})
 
--- | The path of the DICOMweb request, as specified in the STOW-RS, WADO-RS,
--- or QIDO-RS standard (e.g.,
--- \`studies\/{study_id}\/series\/{series_id}\/metadata\`.
+-- | The path of the RetrieveSeriesMetadata DICOMweb request. For example,
+-- \`studies\/{study_uid}\/series\/{series_uid}\/metadata\`.
 pldsdsssrmDicomWebPath :: Lens' ProjectsLocationsDataSetsDicomStoresStudiesSeriesRetrieveMetadata Text
 pldsdsssrmDicomWebPath
   = lens _pldsdsssrmDicomWebPath

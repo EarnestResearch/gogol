@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Returns permissions that a caller has on the specified Folder. The
--- \`resource\` field should be the Folder\'s resource name, e.g.
+-- Returns permissions that a caller has on the specified folder. The
+-- \`resource\` field should be the folder\'s resource name, for example:
 -- \"folders\/1234\". There are no permissions required for making this API
 -- call.
 --
@@ -51,7 +51,7 @@ import Network.Google.ResourceManager.Types
 -- | A resource alias for @cloudresourcemanager.folders.testIamPermissions@ method which the
 -- 'FoldersTestIAMPermissions' request conforms to.
 type FoldersTestIAMPermissionsResource =
-     "v2" :>
+     "v3" :>
        CaptureMode "resource" "testIamPermissions" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -62,8 +62,8 @@ type FoldersTestIAMPermissionsResource =
                      ReqBody '[JSON] TestIAMPermissionsRequest :>
                        Post '[JSON] TestIAMPermissionsResponse
 
--- | Returns permissions that a caller has on the specified Folder. The
--- \`resource\` field should be the Folder\'s resource name, e.g.
+-- | Returns permissions that a caller has on the specified folder. The
+-- \`resource\` field should be the folder\'s resource name, for example:
 -- \"folders\/1234\". There are no permissions required for making this API
 -- call.
 --

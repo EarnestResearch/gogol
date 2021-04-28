@@ -141,7 +141,7 @@ pjtpPayload :: Lens' ProjectsJobTriggersPatch GooglePrivacyDlpV2UpdateJobTrigger
 pjtpPayload
   = lens _pjtpPayload (\ s a -> s{_pjtpPayload = a})
 
--- | Resource name of the project and the triggeredJob, for example
+-- | Required. Resource name of the project and the triggeredJob, for example
 -- \`projects\/dlp-test-project\/jobTriggers\/53234423\`.
 pjtpName :: Lens' ProjectsJobTriggersPatch Text
 pjtpName = lens _pjtpName (\ s a -> s{_pjtpName = a})

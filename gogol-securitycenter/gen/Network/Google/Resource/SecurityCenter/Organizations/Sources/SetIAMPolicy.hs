@@ -22,7 +22,7 @@
 --
 -- Sets the access control policy on the specified Source.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.sources.setIamPolicy@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.setIamPolicy@.
 module Network.Google.Resource.SecurityCenter.Organizations.Sources.SetIAMPolicy
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.sources.setIamPolicy@ method which the
 -- 'OrganizationsSourcesSetIAMPolicy' request conforms to.
 type OrganizationsSourcesSetIAMPolicyResource =
-     "v1" :>
+     "v1p1beta1" :>
        CaptureMode "resource" "setIamPolicy" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

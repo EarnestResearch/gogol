@@ -21,9 +21,11 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates new feedback for an alert. Attempting to create a feedback for a
--- non-existent alert returns \`NOT_FOUND\` error.
+-- non-existent alert returns \`NOT_FOUND\` error. Attempting to create a
+-- feedback for an alert that is marked for deletion returns
+-- \`FAILED_PRECONDITION\' error.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.feedback.create@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.feedback.create@.
 module Network.Google.Resource.AlertCenter.Alerts.Feedback.Create
     (
     -- * REST Resource
@@ -61,11 +63,16 @@ type AlertsFeedbackCreateResource =
                      QueryParam "customerId" Text :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :>
-                           ReqBody '[JSON] AlertFeedback :>
-                             Post '[JSON] AlertFeedback
+                           ReqBody '[JSON]
+                             GoogleAppsAlertcenterV1beta1AlertFeedback
+                             :>
+                             Post '[JSON]
+                               GoogleAppsAlertcenterV1beta1AlertFeedback
 
 -- | Creates new feedback for an alert. Attempting to create a feedback for a
--- non-existent alert returns \`NOT_FOUND\` error.
+-- non-existent alert returns \`NOT_FOUND\` error. Attempting to create a
+-- feedback for an alert that is marked for deletion returns
+-- \`FAILED_PRECONDITION\' error.
 --
 -- /See:/ 'alertsFeedbackCreate' smart constructor.
 data AlertsFeedbackCreate =
@@ -75,7 +82,7 @@ data AlertsFeedbackCreate =
     , _afcAccessToken :: !(Maybe Text)
     , _afcAlertId :: !Text
     , _afcUploadType :: !(Maybe Text)
-    , _afcPayload :: !AlertFeedback
+    , _afcPayload :: !GoogleAppsAlertcenterV1beta1AlertFeedback
     , _afcCustomerId :: !(Maybe Text)
     , _afcCallback :: !(Maybe Text)
     }
@@ -103,7 +110,7 @@ data AlertsFeedbackCreate =
 -- * 'afcCallback'
 alertsFeedbackCreate
     :: Text -- ^ 'afcAlertId'
-    -> AlertFeedback -- ^ 'afcPayload'
+    -> GoogleAppsAlertcenterV1beta1AlertFeedback -- ^ 'afcPayload'
     -> AlertsFeedbackCreate
 alertsFeedbackCreate pAfcAlertId_ pAfcPayload_ =
   AlertsFeedbackCreate'
@@ -146,13 +153,13 @@ afcUploadType
       (\ s a -> s{_afcUploadType = a})
 
 -- | Multipart request metadata.
-afcPayload :: Lens' AlertsFeedbackCreate AlertFeedback
+afcPayload :: Lens' AlertsFeedbackCreate GoogleAppsAlertcenterV1beta1AlertFeedback
 afcPayload
   = lens _afcPayload (\ s a -> s{_afcPayload = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert is associated with. Inferred from the caller
--- identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert is associated with. Inferred from the
+-- caller identity if not provided.
 afcCustomerId :: Lens' AlertsFeedbackCreate (Maybe Text)
 afcCustomerId
   = lens _afcCustomerId
@@ -164,7 +171,8 @@ afcCallback
   = lens _afcCallback (\ s a -> s{_afcCallback = a})
 
 instance GoogleRequest AlertsFeedbackCreate where
-        type Rs AlertsFeedbackCreate = AlertFeedback
+        type Rs AlertsFeedbackCreate =
+             GoogleAppsAlertcenterV1beta1AlertFeedback
         type Scopes AlertsFeedbackCreate =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsFeedbackCreate'{..}

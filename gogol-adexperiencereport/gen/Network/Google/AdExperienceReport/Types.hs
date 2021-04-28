@@ -19,9 +19,6 @@ module Network.Google.AdExperienceReport.Types
     -- * Service Configuration
       adExperienceReportService
 
-    -- * OAuth Scopes
-    , xapiZooScope
-
     -- * SiteSummaryResponse
     , SiteSummaryResponse
     , siteSummaryResponse
@@ -36,6 +33,9 @@ module Network.Google.AdExperienceReport.Types
     , ViolatingSitesResponse
     , violatingSitesResponse
     , vsrViolatingSites
+
+    -- * PlatformSummaryRegionItem
+    , PlatformSummaryRegionItem (..)
 
     -- * Xgafv
     , Xgafv (..)
@@ -64,7 +64,3 @@ adExperienceReportService :: ServiceConfig
 adExperienceReportService
   = defaultService (ServiceId "adexperiencereport:v1")
       "adexperiencereport.googleapis.com"
-
--- | Test scope for access to the Zoo service
-xapiZooScope :: Proxy '["https://www.googleapis.com/auth/xapi.zoo"]
-xapiZooScope = Proxy

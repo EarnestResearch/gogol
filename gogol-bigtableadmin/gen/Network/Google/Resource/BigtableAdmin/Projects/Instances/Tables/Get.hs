@@ -54,7 +54,7 @@ type ProjectsInstancesTablesGetResource =
            QueryParam "upload_protocol" Text :>
              QueryParam "access_token" Text :>
                QueryParam "uploadType" Text :>
-                 QueryParam "view" Text :>
+                 QueryParam "view" ProjectsInstancesTablesGetView :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :> Get '[JSON] Table
 
@@ -68,7 +68,7 @@ data ProjectsInstancesTablesGet =
     , _pitgAccessToken :: !(Maybe Text)
     , _pitgUploadType :: !(Maybe Text)
     , _pitgName :: !Text
-    , _pitgView :: !(Maybe Text)
+    , _pitgView :: !(Maybe ProjectsInstancesTablesGetView)
     , _pitgCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -129,15 +129,14 @@ pitgUploadType
   = lens _pitgUploadType
       (\ s a -> s{_pitgUploadType = a})
 
--- | The unique name of the requested table. Values are of the form
--- \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the requested table. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitgName :: Lens' ProjectsInstancesTablesGet Text
 pitgName = lens _pitgName (\ s a -> s{_pitgName = a})
 
 -- | The view to be applied to the returned table\'s fields. Defaults to
 -- \`SCHEMA_VIEW\` if unspecified.
-pitgView :: Lens' ProjectsInstancesTablesGet (Maybe Text)
+pitgView :: Lens' ProjectsInstancesTablesGet (Maybe ProjectsInstancesTablesGetView)
 pitgView = lens _pitgView (\ s a -> s{_pitgView = a})
 
 -- | JSONP

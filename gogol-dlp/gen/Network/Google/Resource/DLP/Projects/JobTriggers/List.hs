@@ -43,6 +43,7 @@ module Network.Google.Resource.DLP.Projects.JobTriggers.List
     , pjtlUploadType
     , pjtlFilter
     , pjtlPageToken
+    , pjtlLocationId
     , pjtlPageSize
     , pjtlCallback
     ) where
@@ -63,11 +64,12 @@ type ProjectsJobTriggersListResource =
                    QueryParam "uploadType" Text :>
                      QueryParam "filter" Text :>
                        QueryParam "pageToken" Text :>
-                         QueryParam "pageSize" (Textual Int32) :>
-                           QueryParam "callback" Text :>
-                             QueryParam "alt" AltJSON :>
-                               Get '[JSON]
-                                 GooglePrivacyDlpV2ListJobTriggersResponse
+                         QueryParam "locationId" Text :>
+                           QueryParam "pageSize" (Textual Int32) :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :>
+                                 Get '[JSON]
+                                   GooglePrivacyDlpV2ListJobTriggersResponse
 
 -- | Lists job triggers. See
 -- https:\/\/cloud.google.com\/dlp\/docs\/creating-job-triggers to learn
@@ -84,6 +86,7 @@ data ProjectsJobTriggersList =
     , _pjtlUploadType :: !(Maybe Text)
     , _pjtlFilter :: !(Maybe Text)
     , _pjtlPageToken :: !(Maybe Text)
+    , _pjtlLocationId :: !(Maybe Text)
     , _pjtlPageSize :: !(Maybe (Textual Int32))
     , _pjtlCallback :: !(Maybe Text)
     }
@@ -110,6 +113,8 @@ data ProjectsJobTriggersList =
 --
 -- * 'pjtlPageToken'
 --
+-- * 'pjtlLocationId'
+--
 -- * 'pjtlPageSize'
 --
 -- * 'pjtlCallback'
@@ -126,12 +131,22 @@ projectsJobTriggersList pPjtlParent_ =
     , _pjtlUploadType = Nothing
     , _pjtlFilter = Nothing
     , _pjtlPageToken = Nothing
+    , _pjtlLocationId = Nothing
     , _pjtlPageSize = Nothing
     , _pjtlCallback = Nothing
     }
 
 
--- | The parent resource name, for example \`projects\/my-project-id\`.
+-- | Required. Parent resource name. The format of this value varies
+-- depending on whether you have [specified a processing
+-- location](https:\/\/cloud.google.com\/dlp\/docs\/specifying-location): +
+-- Projects scope, location specified:
+-- \`projects\/\`PROJECT_ID\`\/locations\/\`LOCATION_ID + Projects scope,
+-- no location specified (defaults to global): \`projects\/\`PROJECT_ID The
+-- following example \`parent\` string specifies a parent project with the
+-- identifier \`example-project\`, and specifies the \`europe-west3\`
+-- location for processing data:
+-- parent=projects\/example-project\/locations\/europe-west3
 pjtlParent :: Lens' ProjectsJobTriggersList Text
 pjtlParent
   = lens _pjtlParent (\ s a -> s{_pjtlParent = a})
@@ -147,9 +162,9 @@ pjtlUploadProtocol
   = lens _pjtlUploadProtocol
       (\ s a -> s{_pjtlUploadProtocol = a})
 
--- | Optional comma separated list of triggeredJob fields to order by,
--- followed by \`asc\` or \`desc\` postfix. This list is case-insensitive,
--- default sorting order is ascending, redundant space characters are
+-- | Comma separated list of triggeredJob fields to order by, followed by
+-- \`asc\` or \`desc\` postfix. This list is case-insensitive, default
+-- sorting order is ascending, redundant space characters are
 -- insignificant. Example: \`name asc,update_time, create_time desc\`
 -- Supported fields are: - \`create_time\`: corresponds to time the
 -- JobTrigger was created. - \`update_time\`: corresponds to time the
@@ -173,11 +188,11 @@ pjtlUploadType
   = lens _pjtlUploadType
       (\ s a -> s{_pjtlUploadType = a})
 
--- | Optional. Allows filtering. Supported syntax: * Filter expressions are
--- made up of one or more restrictions. * Restrictions can be combined by
--- \`AND\` or \`OR\` logical operators. A sequence of restrictions
--- implicitly uses \`AND\`. * A restriction has the form of \` \`. *
--- Supported fields\/values for inspect jobs: - \`status\` -
+-- | Allows filtering. Supported syntax: * Filter expressions are made up of
+-- one or more restrictions. * Restrictions can be combined by \`AND\` or
+-- \`OR\` logical operators. A sequence of restrictions implicitly uses
+-- \`AND\`. * A restriction has the form of \`{field} {operator} {value}\`.
+-- * Supported fields\/values for inspect triggers: - \`status\` -
 -- HEALTHY|PAUSED|CANCELLED - \`inspected_storage\` -
 -- DATASTORE|CLOUD_STORAGE|BIGQUERY - \'last_run_time\` - RFC 3339
 -- formatted timestamp, surrounded by quotation marks. Nanoseconds are
@@ -193,7 +208,7 @@ pjtlFilter :: Lens' ProjectsJobTriggersList (Maybe Text)
 pjtlFilter
   = lens _pjtlFilter (\ s a -> s{_pjtlFilter = a})
 
--- | Optional page token to continue retrieval. Comes from previous call to
+-- | Page token to continue retrieval. Comes from previous call to
 -- ListJobTriggers. \`order_by\` field must not change for subsequent
 -- calls.
 pjtlPageToken :: Lens' ProjectsJobTriggersList (Maybe Text)
@@ -201,7 +216,13 @@ pjtlPageToken
   = lens _pjtlPageToken
       (\ s a -> s{_pjtlPageToken = a})
 
--- | Optional size of the page, can be limited by a server.
+-- | Deprecated. This field has no effect.
+pjtlLocationId :: Lens' ProjectsJobTriggersList (Maybe Text)
+pjtlLocationId
+  = lens _pjtlLocationId
+      (\ s a -> s{_pjtlLocationId = a})
+
+-- | Size of the page, can be limited by a server.
 pjtlPageSize :: Lens' ProjectsJobTriggersList (Maybe Int32)
 pjtlPageSize
   = lens _pjtlPageSize (\ s a -> s{_pjtlPageSize = a})
@@ -224,6 +245,7 @@ instance GoogleRequest ProjectsJobTriggersList where
               _pjtlUploadType
               _pjtlFilter
               _pjtlPageToken
+              _pjtlLocationId
               _pjtlPageSize
               _pjtlCallback
               (Just AltJSON)

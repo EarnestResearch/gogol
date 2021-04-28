@@ -69,9 +69,13 @@ type CoursesCourseWorkStudentSubmissionsListResource
            "courseWork" :>
              Capture "courseWorkId" Text :>
                "studentSubmissions" :>
-                 QueryParams "states" Text :>
+                 QueryParams "states"
+                   CoursesCourseWorkStudentSubmissionsListStates
+                   :>
                    QueryParam "$.xgafv" Xgafv :>
-                     QueryParam "late" Text :>
+                     QueryParam "late"
+                       CoursesCourseWorkStudentSubmissionsListLate
+                       :>
                        QueryParam "upload_protocol" Text :>
                          QueryParam "access_token" Text :>
                            QueryParam "uploadType" Text :>
@@ -97,9 +101,9 @@ type CoursesCourseWorkStudentSubmissionsListResource
 -- /See:/ 'coursesCourseWorkStudentSubmissionsList' smart constructor.
 data CoursesCourseWorkStudentSubmissionsList =
   CoursesCourseWorkStudentSubmissionsList'
-    { _ccwsslStates :: !(Maybe [Text])
+    { _ccwsslStates :: !(Maybe [CoursesCourseWorkStudentSubmissionsListStates])
     , _ccwsslXgafv :: !(Maybe Xgafv)
-    , _ccwsslLate :: !(Maybe Text)
+    , _ccwsslLate :: !(Maybe CoursesCourseWorkStudentSubmissionsListLate)
     , _ccwsslUploadProtocol :: !(Maybe Text)
     , _ccwsslCourseId :: !Text
     , _ccwsslAccessToken :: !(Maybe Text)
@@ -163,7 +167,7 @@ coursesCourseWorkStudentSubmissionsList pCcwsslCourseId_ pCcwsslCourseWorkId_ =
 
 -- | Requested submission states. If specified, returned student submissions
 -- match one of the specified submission states.
-ccwsslStates :: Lens' CoursesCourseWorkStudentSubmissionsList [Text]
+ccwsslStates :: Lens' CoursesCourseWorkStudentSubmissionsList [CoursesCourseWorkStudentSubmissionsListStates]
 ccwsslStates
   = lens _ccwsslStates (\ s a -> s{_ccwsslStates = a})
       . _Default
@@ -177,7 +181,7 @@ ccwsslXgafv
 -- | Requested lateness value. If specified, returned student submissions are
 -- restricted by the requested value. If unspecified, submissions are
 -- returned regardless of \`late\` value.
-ccwsslLate :: Lens' CoursesCourseWorkStudentSubmissionsList (Maybe Text)
+ccwsslLate :: Lens' CoursesCourseWorkStudentSubmissionsList (Maybe CoursesCourseWorkStudentSubmissionsListLate)
 ccwsslLate
   = lens _ccwsslLate (\ s a -> s{_ccwsslLate = a})
 

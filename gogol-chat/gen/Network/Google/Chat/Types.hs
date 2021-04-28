@@ -31,8 +31,10 @@ module Network.Google.Chat.Types
     , Space
     , space
     , sName
+    , sThreaded
     , sDisplayName
     , sType
+    , sSingleUserBotDm
 
     -- * KeyValue
     , KeyValue
@@ -64,6 +66,7 @@ module Network.Google.Chat.Types
     , Annotation
     , annotation
     , aLength
+    , aSlashCommand
     , aType
     , aUserMention
     , aStartIndex
@@ -83,6 +86,15 @@ module Network.Google.Chat.Types
     , actionParameter
     , apValue
     , apKey
+
+    -- * SlashCommandMetadata
+    , SlashCommandMetadata
+    , slashCommandMetadata
+    , scmBot
+    , scmCommandId
+    , scmCommandName
+    , scmType
+    , scmTriggersDialog
 
     -- * Membership
     , Membership
@@ -115,6 +127,11 @@ module Network.Google.Chat.Types
     -- * MembershipState
     , MembershipState (..)
 
+    -- * AttachmentDataRef
+    , AttachmentDataRef
+    , attachmentDataRef
+    , adrResourceName
+
     -- * CardHeaderImageStyle
     , CardHeaderImageStyle (..)
 
@@ -138,12 +155,34 @@ module Network.Google.Chat.Types
     , lsrNextPageToken
     , lsrSpaces
 
+    -- * Attachment
+    , Attachment
+    , attachment
+    , aDownloadURI
+    , aAttachmentDataRef
+    , aContentName
+    , aName
+    , aThumbnailURI
+    , aSource
+    , aDriveDataRef
+    , aContentType
+
     -- * User
     , User
     , user
+    , uIsAnonymous
     , uName
     , uDisplayName
+    , uDomainId
     , uType
+
+    -- * Media
+    , Media
+    , media
+    , mResourceName
+
+    -- * AttachmentSource
+    , AttachmentSource (..)
 
     -- * SpaceType
     , SpaceType (..)
@@ -155,6 +194,14 @@ module Network.Google.Chat.Types
 
     -- * AnnotationType
     , AnnotationType (..)
+
+    -- * SlashCommandMetadataType
+    , SlashCommandMetadataType (..)
+
+    -- * SlashCommand
+    , SlashCommand
+    , slashCommand
+    , scCommandId
 
     -- * ImageButtonIcon
     , ImageButtonIcon (..)
@@ -177,6 +224,11 @@ module Network.Google.Chat.Types
     , arURL
     , arType
 
+    -- * DriveDataRef
+    , DriveDataRef
+    , driveDataRef
+    , ddrDriveFileId
+
     -- * FormAction
     , FormAction
     , formAction
@@ -196,9 +248,11 @@ module Network.Google.Chat.Types
     , mesSpace
     , mesText
     , mesSender
+    , mesAttachment
     , mesName
     , mesPreviewText
     , mesCards
+    , mesSlashCommand
     , mesActionResponse
     , mesArgumentText
     , mesThread
@@ -252,7 +306,7 @@ import Network.Google.Chat.Types.Product
 import Network.Google.Chat.Types.Sum
 import Network.Google.Prelude
 
--- | Default request referring to version 'v1' of the Hangouts Chat API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version 'v1' of the Google Chat API. This contains the host and root path used as a starting point for constructing service requests.
 chatService :: ServiceConfig
 chatService
   = defaultService (ServiceId "chat:v1")

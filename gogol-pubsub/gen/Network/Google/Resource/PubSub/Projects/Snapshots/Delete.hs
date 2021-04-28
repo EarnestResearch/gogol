@@ -20,16 +20,15 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Removes an existing snapshot. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- Removes an existing snapshot. Snapshots are used in [Seek]
+-- (https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview) operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
--- to the state captured by a snapshot.
--- When the snapshot is deleted, all messages retained in the snapshot are
--- immediately dropped. After a snapshot is deleted, a new one may be
--- created with the same name, but the new one has no association with the
--- old snapshot or its subscription, unless the same subscription is
--- specified.
+-- to the state captured by a snapshot. When the snapshot is deleted, all
+-- messages retained in the snapshot are immediately dropped. After a
+-- snapshot is deleted, a new one may be created with the same name, but
+-- the new one has no association with the old snapshot or its
+-- subscription, unless the same subscription is specified.
 --
 -- /See:/ <https://cloud.google.com/pubsub/docs Cloud Pub/Sub API Reference> for @pubsub.projects.snapshots.delete@.
 module Network.Google.Resource.PubSub.Projects.Snapshots.Delete
@@ -65,16 +64,15 @@ type ProjectsSnapshotsDeleteResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Empty
 
--- | Removes an existing snapshot. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- | Removes an existing snapshot. Snapshots are used in [Seek]
+-- (https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview) operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
--- to the state captured by a snapshot.
--- When the snapshot is deleted, all messages retained in the snapshot are
--- immediately dropped. After a snapshot is deleted, a new one may be
--- created with the same name, but the new one has no association with the
--- old snapshot or its subscription, unless the same subscription is
--- specified.
+-- to the state captured by a snapshot. When the snapshot is deleted, all
+-- messages retained in the snapshot are immediately dropped. After a
+-- snapshot is deleted, a new one may be created with the same name, but
+-- the new one has no association with the old snapshot or its
+-- subscription, unless the same subscription is specified.
 --
 -- /See:/ 'projectsSnapshotsDelete' smart constructor.
 data ProjectsSnapshotsDelete =
@@ -122,7 +120,7 @@ projectsSnapshotsDelete pProSnapshot_ =
 proXgafv :: Lens' ProjectsSnapshotsDelete (Maybe Xgafv)
 proXgafv = lens _proXgafv (\ s a -> s{_proXgafv = a})
 
--- | The name of the snapshot to delete. Format is
+-- | Required. The name of the snapshot to delete. Format is
 -- \`projects\/{project}\/snapshots\/{snap}\`.
 proSnapshot :: Lens' ProjectsSnapshotsDelete Text
 proSnapshot

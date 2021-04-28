@@ -138,7 +138,7 @@ uglpfUploadType
   = lens _uglpfUploadType
       (\ s a -> s{_uglpfUploadType = a})
 
--- | The unique ID for the user in format \`users\/{user}\`.
+-- | Required. The unique ID for the user in format \`users\/{user}\`.
 uglpfName :: Lens' UsersGetLoginProFile Text
 uglpfName
   = lens _uglpfName (\ s a -> s{_uglpfName = a})

@@ -108,8 +108,8 @@ projectsInstancesList pPilParent_ =
     }
 
 
--- | The unique name of the project for which a list of instances is
--- requested. Values are of the form \`projects\/\`.
+-- | Required. The unique name of the project for which a list of instances
+-- is requested. Values are of the form \`projects\/{project}\`.
 pilParent :: Lens' ProjectsInstancesList Text
 pilParent
   = lens _pilParent (\ s a -> s{_pilParent = a})

@@ -143,7 +143,7 @@ plkrckckvrPayload
   = lens _plkrckckvrPayload
       (\ s a -> s{_plkrckckvrPayload = a})
 
--- | The resource name of the CryptoKeyVersion to restore.
+-- | Required. The resource name of the CryptoKeyVersion to restore.
 plkrckckvrName :: Lens' ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsRestore Text
 plkrckckvrName
   = lens _plkrckckvrName

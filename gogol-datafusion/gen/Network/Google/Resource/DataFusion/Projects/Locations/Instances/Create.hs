@@ -50,7 +50,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.instances.create@ method which the
 -- 'ProjectsLocationsInstancesCreate' request conforms to.
 type ProjectsLocationsInstancesCreateResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "instances" :>
            QueryParam "instanceId" Text :>

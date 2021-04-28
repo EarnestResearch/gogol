@@ -48,6 +48,9 @@ module Network.Google.DigitalAssetLinks
     , sSource
     , sTarget
 
+    -- ** CheckResponseErrorCodeItem
+    , CheckResponseErrorCodeItem (..)
+
     -- ** Asset
     , Asset
     , asset
@@ -82,6 +85,9 @@ module Network.Google.DigitalAssetLinks
     , CertificateInfo
     , certificateInfo
     , ciSha256Fingerprint
+
+    -- ** ListResponseErrorCodeItem
+    , ListResponseErrorCodeItem (..)
     ) where
 
 import Network.Google.Prelude

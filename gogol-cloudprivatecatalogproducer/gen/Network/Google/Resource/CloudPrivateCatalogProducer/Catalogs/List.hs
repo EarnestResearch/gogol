@@ -23,7 +23,7 @@
 -- Lists Catalog resources that the producer has access to, within the
 -- scope of the parent resource.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.list@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.list@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.List
     (
     -- * REST Resource

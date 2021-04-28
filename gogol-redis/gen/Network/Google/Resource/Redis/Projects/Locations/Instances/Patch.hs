@@ -162,8 +162,8 @@ plipPayload
 -- Note: Redis instances are managed and addressed at regional level so
 -- location_id here refers to a GCP region; however, users may choose which
 -- specific zone (or collection of zones for cross-zone instances) an
--- instance should be provisioned in. Refer to [location_id] and
--- [alternative_location_id] fields for more details.
+-- instance should be provisioned in. Refer to location_id and
+-- alternative_location_id fields for more details.
 plipName :: Lens' ProjectsLocationsInstancesPatch Text
 plipName = lens _plipName (\ s a -> s{_plipName = a})
 
