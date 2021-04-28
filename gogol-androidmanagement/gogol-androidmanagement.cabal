@@ -70,5 +70,5 @@ library
         , Network.Google.AndroidManagement.Types.Sum
 
     build-depends:
-          gogol-core == .*
+          gogol-core == 0.5.0.*
         , base       >= 4.7 && < 5
