@@ -16,7 +16,7 @@
 --
 module Network.Google.AndroidManagement.Types.Sum where
 
-import Network.Google.Prelude hiding (Bytes)
+import Network.Google.Prelude hiding (Bytes, Secure)
 
 -- | Sets the behavior of a device in kiosk mode when a user presses and
 -- holds (long-presses) the Power button.
