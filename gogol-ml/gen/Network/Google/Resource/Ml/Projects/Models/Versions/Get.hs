@@ -21,12 +21,10 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Gets information about a model version. Models can have multiple
--- versions. You can call
--- [projects.models.versions.list](\/ml-engine\/reference\/rest\/v1\/projects.models.versions\/list)
--- to get the same information that this method returns for all of the
--- versions of a model.
+-- versions. You can call projects.models.versions.list to get the same
+-- information that this method returns for all of the versions of a model.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.versions.get@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.versions.get@.
 module Network.Google.Resource.Ml.Projects.Models.Versions.Get
     (
     -- * REST Resource
@@ -62,10 +60,8 @@ type ProjectsModelsVersionsGetResource =
                      Get '[JSON] GoogleCloudMlV1__Version
 
 -- | Gets information about a model version. Models can have multiple
--- versions. You can call
--- [projects.models.versions.list](\/ml-engine\/reference\/rest\/v1\/projects.models.versions\/list)
--- to get the same information that this method returns for all of the
--- versions of a model.
+-- versions. You can call projects.models.versions.list to get the same
+-- information that this method returns for all of the versions of a model.
 --
 -- /See:/ 'projectsModelsVersionsGet' smart constructor.
 data ProjectsModelsVersionsGet =

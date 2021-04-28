@@ -123,9 +123,9 @@ uspkdUploadType
   = lens _uspkdUploadType
       (\ s a -> s{_uspkdUploadType = a})
 
--- | The fingerprint of the public key to update. Public keys are identified
--- by their SHA-256 fingerprint. The fingerprint of the public key is in
--- format \`users\/{user}\/sshPublicKeys\/{fingerprint}\`.
+-- | Required. The fingerprint of the public key to update. Public keys are
+-- identified by their SHA-256 fingerprint. The fingerprint of the public
+-- key is in format \`users\/{user}\/sshPublicKeys\/{fingerprint}\`.
 uspkdName :: Lens' UsersSSHPublicKeysDelete Text
 uspkdName
   = lens _uspkdName (\ s a -> s{_uspkdName = a})

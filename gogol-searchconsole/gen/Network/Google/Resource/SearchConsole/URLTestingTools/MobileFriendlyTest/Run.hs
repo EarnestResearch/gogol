@@ -22,7 +22,7 @@
 --
 -- Runs Mobile-Friendly Test for a given URL.
 --
--- /See:/ <https://developers.google.com/webmaster-tools/search-console-api/ Google Search Console URL Testing Tools API Reference> for @searchconsole.urlTestingTools.mobileFriendlyTest.run@.
+-- /See:/ <https://developers.google.com/webmaster-tools/search-console-api/ Google Search Console API Reference> for @searchconsole.urlTestingTools.mobileFriendlyTest.run@.
 module Network.Google.Resource.SearchConsole.URLTestingTools.MobileFriendlyTest.Run
     (
     -- * REST Resource

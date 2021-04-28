@@ -144,11 +144,11 @@ pbcPayload :: Lens' ProjectsBuildsCancel CancelBuildRequest
 pbcPayload
   = lens _pbcPayload (\ s a -> s{_pbcPayload = a})
 
--- | ID of the build.
+-- | Required. ID of the build.
 pbcId :: Lens' ProjectsBuildsCancel Text
 pbcId = lens _pbcId (\ s a -> s{_pbcId = a})
 
--- | ID of the project.
+-- | Required. ID of the project.
 pbcProjectId :: Lens' ProjectsBuildsCancel Text
 pbcProjectId
   = lens _pbcProjectId (\ s a -> s{_pbcProjectId = a})

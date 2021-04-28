@@ -128,7 +128,7 @@ suUploadType :: Lens' ServicesUndelete (Maybe Text)
 suUploadType
   = lens _suUploadType (\ s a -> s{_suUploadType = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 suServiceName :: Lens' ServicesUndelete Text

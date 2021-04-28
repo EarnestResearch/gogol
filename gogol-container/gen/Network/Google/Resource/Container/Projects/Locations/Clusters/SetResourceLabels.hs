@@ -139,7 +139,7 @@ plcsrlPayload
       (\ s a -> s{_plcsrlPayload = a})
 
 -- | The name (project, location, cluster id) of the cluster to set labels.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcsrlName :: Lens' ProjectsLocationsClustersSetResourceLabels Text
 plcsrlName
   = lens _plcsrlName (\ s a -> s{_plcsrlName = a})

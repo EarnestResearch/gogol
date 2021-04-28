@@ -27,13 +27,24 @@ module Network.Google.FirebaseRules.Types
     -- * SourcePosition
     , SourcePosition
     , sourcePosition
+    , spCurrentOffSet
     , spLine
+    , spEndOffSet
     , spColumn
     , spFileName
+
+    -- * ExpressionReport
+    , ExpressionReport
+    , expressionReport
+    , erSourcePosition
+    , erValues
+    , erChildren
 
     -- * TestCase
     , TestCase
     , testCase
+    , tcExpressionReportLevel
+    , tcPathEncoding
     , tcResource
     , tcExpectation
     , tcFunctionMocks
@@ -55,6 +66,12 @@ module Network.Google.FirebaseRules.Types
     , fmArgs
     , fmFunction
     , fmResult
+
+    -- * ProjectsReleasesGetExecutableExecutableVersion
+    , ProjectsReleasesGetExecutableExecutableVersion (..)
+
+    -- * TestCaseExpressionReportLevel
+    , TestCaseExpressionReportLevel (..)
 
     -- * TestResultState
     , TestResultState (..)
@@ -101,6 +118,7 @@ module Network.Google.FirebaseRules.Types
     , Ruleset
     , ruleset
     , rulName
+    , rulMetadata
     , rulSource
     , rulCreateTime
 
@@ -114,10 +132,14 @@ module Network.Google.FirebaseRules.Types
     , grerExecutableVersion
     , grerLanguage
 
+    -- * TestCasePathEncoding
+    , TestCasePathEncoding (..)
+
     -- * TestResult
     , TestResult
     , testResult
     , trState
+    , trExpressionReports
     , trFunctionCalls
     , trVisitedExpressions
     , trErrorPosition
@@ -129,6 +151,11 @@ module Network.Google.FirebaseRules.Types
     -- * IssueSeverity
     , IssueSeverity (..)
 
+    -- * Metadata
+    , Metadata
+    , metadata
+    , mServices
+
     -- * Source
     , Source
     , source
@@ -136,6 +163,12 @@ module Network.Google.FirebaseRules.Types
 
     -- * TestCaseExpectation
     , TestCaseExpectation (..)
+
+    -- * ValueCount
+    , ValueCount
+    , valueCount
+    , vcValue
+    , vcCount
 
     -- * TestSuite
     , TestSuite

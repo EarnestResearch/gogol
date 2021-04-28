@@ -158,7 +158,6 @@ data CreativeNATiveAd =
     , _cnataHeadline :: !(Maybe Text)
     , _cnataImpressionTrackingURL :: !(Maybe [Text])
     , _cnataCallToAction :: !(Maybe Text)
-    , _cnataStore :: !(Maybe Text)
     , _cnataVideoURL :: !(Maybe Text)
     , _cnataPrice :: !(Maybe Text)
     , _cnataAdvertiser :: !(Maybe Text)
@@ -188,8 +187,6 @@ data CreativeNATiveAd =
 --
 -- * 'cnataCallToAction'
 --
--- * 'cnataStore'
---
 -- * 'cnataVideoURL'
 --
 -- * 'cnataPrice'
@@ -211,7 +208,6 @@ creativeNATiveAd =
     , _cnataHeadline = Nothing
     , _cnataImpressionTrackingURL = Nothing
     , _cnataCallToAction = Nothing
-    , _cnataStore = Nothing
     , _cnataVideoURL = Nothing
     , _cnataPrice = Nothing
     , _cnataAdvertiser = Nothing
@@ -267,11 +263,6 @@ cnataCallToAction
   = lens _cnataCallToAction
       (\ s a -> s{_cnataCallToAction = a})
 
--- | The URL to the app store to purchase\/download the promoted app.
-cnataStore :: Lens' CreativeNATiveAd (Maybe Text)
-cnataStore
-  = lens _cnataStore (\ s a -> s{_cnataStore = a})
-
 -- | The URL of the XML VAST for a native ad. Note this is a separate field
 -- from resource.video_url.
 cnataVideoURL :: Lens' CreativeNATiveAd (Maybe Text)
@@ -313,7 +304,6 @@ instance FromJSON CreativeNATiveAd where
                      <*> (o .:? "headline")
                      <*> (o .:? "impressionTrackingUrl" .!= mempty)
                      <*> (o .:? "callToAction")
-                     <*> (o .:? "store")
                      <*> (o .:? "videoURL")
                      <*> (o .:? "price")
                      <*> (o .:? "advertiser")
@@ -333,7 +323,6 @@ instance ToJSON CreativeNATiveAd where
                   ("impressionTrackingUrl" .=) <$>
                     _cnataImpressionTrackingURL,
                   ("callToAction" .=) <$> _cnataCallToAction,
-                  ("store" .=) <$> _cnataStore,
                   ("videoURL" .=) <$> _cnataVideoURL,
                   ("price" .=) <$> _cnataPrice,
                   ("advertiser" .=) <$> _cnataAdvertiser,
@@ -1078,6 +1067,50 @@ instance ToJSON MarketplaceDealParty where
                   ("buyer" .=) <$> _mdpBuyer])
 
 --
+-- /See:/ 'targetingValueRequestPlatformTargeting' smart constructor.
+newtype TargetingValueRequestPlatformTargeting =
+  TargetingValueRequestPlatformTargeting'
+    { _tvrptRequestPlatforms :: Maybe [Text]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'TargetingValueRequestPlatformTargeting' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'tvrptRequestPlatforms'
+targetingValueRequestPlatformTargeting
+    :: TargetingValueRequestPlatformTargeting
+targetingValueRequestPlatformTargeting =
+  TargetingValueRequestPlatformTargeting' {_tvrptRequestPlatforms = Nothing}
+
+
+tvrptRequestPlatforms :: Lens' TargetingValueRequestPlatformTargeting [Text]
+tvrptRequestPlatforms
+  = lens _tvrptRequestPlatforms
+      (\ s a -> s{_tvrptRequestPlatforms = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON
+           TargetingValueRequestPlatformTargeting
+         where
+        parseJSON
+          = withObject "TargetingValueRequestPlatformTargeting"
+              (\ o ->
+                 TargetingValueRequestPlatformTargeting' <$>
+                   (o .:? "requestPlatforms" .!= mempty))
+
+instance ToJSON
+           TargetingValueRequestPlatformTargeting
+         where
+        toJSON TargetingValueRequestPlatformTargeting'{..}
+          = object
+              (catMaybes
+                 [("requestPlatforms" .=) <$> _tvrptRequestPlatforms])
+
+--
 -- /See:/ 'getOrderNotesResponse' smart constructor.
 newtype GetOrderNotesResponse =
   GetOrderNotesResponse'
@@ -1755,6 +1788,7 @@ data Creative =
     , _cDealsStatus :: !(Maybe Text)
     , _cWidth :: !(Maybe (Textual Int32))
     , _cClickThroughURL :: !(Maybe [Text])
+    , _cAdTechnologyProviders :: !(Maybe CreativeAdTechnologyProviders)
     , _cLanguages :: !(Maybe [Text])
     , _cVendorType :: !(Maybe [Textual Int32])
     , _cAccountId :: !(Maybe (Textual Int32))
@@ -1810,6 +1844,8 @@ data Creative =
 --
 -- * 'cClickThroughURL'
 --
+-- * 'cAdTechnologyProviders'
+--
 -- * 'cLanguages'
 --
 -- * 'cVendorType'
@@ -1856,6 +1892,7 @@ creative =
     , _cDealsStatus = Nothing
     , _cWidth = Nothing
     , _cClickThroughURL = Nothing
+    , _cAdTechnologyProviders = Nothing
     , _cLanguages = Nothing
     , _cVendorType = Nothing
     , _cAccountId = Nothing
@@ -1900,8 +1937,8 @@ cBuyerCreativeId
   = lens _cBuyerCreativeId
       (\ s a -> s{_cBuyerCreativeId = a})
 
--- | The name of the company being advertised in the creative. The value
--- provided must exist in the advertisers.txt file.
+-- | The name of the company being advertised in the creative. A list of
+-- advertisers is provided in the advertisers.txt file.
 cAdvertiserName :: Lens' Creative (Maybe Text)
 cAdvertiserName
   = lens _cAdvertiserName
@@ -1997,6 +2034,11 @@ cClickThroughURL
       (\ s a -> s{_cClickThroughURL = a})
       . _Default
       . _Coerce
+
+cAdTechnologyProviders :: Lens' Creative (Maybe CreativeAdTechnologyProviders)
+cAdTechnologyProviders
+  = lens _cAdTechnologyProviders
+      (\ s a -> s{_cAdTechnologyProviders = a})
 
 -- | Detected languages for this creative. Read-only. This field should not
 -- be set in requests.
@@ -2134,6 +2176,7 @@ instance FromJSON Creative where
                      <*> (o .:? "dealsStatus")
                      <*> (o .:? "width")
                      <*> (o .:? "clickThroughUrl" .!= mempty)
+                     <*> (o .:? "adTechnologyProviders")
                      <*> (o .:? "languages" .!= mempty)
                      <*> (o .:? "vendorType" .!= mempty)
                      <*> (o .:? "accountId")
@@ -2171,6 +2214,8 @@ instance ToJSON Creative where
                   ("dealsStatus" .=) <$> _cDealsStatus,
                   ("width" .=) <$> _cWidth,
                   ("clickThroughUrl" .=) <$> _cClickThroughURL,
+                  ("adTechnologyProviders" .=) <$>
+                    _cAdTechnologyProviders,
                   ("languages" .=) <$> _cLanguages,
                   ("vendorType" .=) <$> _cVendorType,
                   ("accountId" .=) <$> _cAccountId,
@@ -3346,6 +3391,7 @@ data PretargetingConfig =
     , _pcVideoPlayerSizes :: !(Maybe [PretargetingConfigVideoPlayerSizesItem])
     , _pcConfigId :: !(Maybe (Textual Int64))
     , _pcPlacements :: !(Maybe [PretargetingConfigPlacementsItem])
+    , _pcMaximumQps :: !(Maybe (Textual Int64))
     , _pcExcludedUserLists :: !(Maybe [Textual Int64])
     , _pcConfigName :: !(Maybe Text)
     , _pcGeoCriteriaIds :: !(Maybe [Textual Int64])
@@ -3396,6 +3442,8 @@ data PretargetingConfig =
 --
 -- * 'pcPlacements'
 --
+-- * 'pcMaximumQps'
+--
 -- * 'pcExcludedUserLists'
 --
 -- * 'pcConfigName'
@@ -3435,6 +3483,7 @@ pretargetingConfig =
     , _pcVideoPlayerSizes = Nothing
     , _pcConfigId = Nothing
     , _pcPlacements = Nothing
+    , _pcMaximumQps = Nothing
     , _pcExcludedUserLists = Nothing
     , _pcConfigName = Nothing
     , _pcGeoCriteriaIds = Nothing
@@ -3581,6 +3630,15 @@ pcPlacements
       . _Default
       . _Coerce
 
+-- | The maximum QPS allocated to this pretargeting configuration, used for
+-- pretargeting-level QPS limits. By default, this is not set, which
+-- indicates that there is no QPS limit at the configuration level (a
+-- global or account-level limit may still be imposed).
+pcMaximumQps :: Lens' PretargetingConfig (Maybe Int64)
+pcMaximumQps
+  = lens _pcMaximumQps (\ s a -> s{_pcMaximumQps = a})
+      . mapping _Coerce
+
 -- | Requests containing any of these users list ids will not match.
 pcExcludedUserLists :: Lens' PretargetingConfig [Int64]
 pcExcludedUserLists
@@ -3682,6 +3740,7 @@ instance FromJSON PretargetingConfig where
                      <*> (o .:? "videoPlayerSizes" .!= mempty)
                      <*> (o .:? "configId")
                      <*> (o .:? "placements" .!= mempty)
+                     <*> (o .:? "maximumQps")
                      <*> (o .:? "excludedUserLists" .!= mempty)
                      <*> (o .:? "configName")
                      <*> (o .:? "geoCriteriaIds" .!= mempty)
@@ -3718,6 +3777,7 @@ instance ToJSON PretargetingConfig where
                   ("videoPlayerSizes" .=) <$> _pcVideoPlayerSizes,
                   ("configId" .=) <$> _pcConfigId,
                   ("placements" .=) <$> _pcPlacements,
+                  ("maximumQps" .=) <$> _pcMaximumQps,
                   ("excludedUserLists" .=) <$> _pcExcludedUserLists,
                   ("configName" .=) <$> _pcConfigName,
                   ("geoCriteriaIds" .=) <$> _pcGeoCriteriaIds,
@@ -4565,6 +4625,52 @@ instance ToJSON UpdatePrivateAuctionProposalRequest
                     _upaprProposalRevisionNumber])
 
 --
+-- /See:/ 'mobileApplication' smart constructor.
+data MobileApplication =
+  MobileApplication'
+    { _maExternalAppId :: !(Maybe Text)
+    , _maAppStore :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'MobileApplication' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'maExternalAppId'
+--
+-- * 'maAppStore'
+mobileApplication
+    :: MobileApplication
+mobileApplication =
+  MobileApplication' {_maExternalAppId = Nothing, _maAppStore = Nothing}
+
+
+maExternalAppId :: Lens' MobileApplication (Maybe Text)
+maExternalAppId
+  = lens _maExternalAppId
+      (\ s a -> s{_maExternalAppId = a})
+
+maAppStore :: Lens' MobileApplication (Maybe Text)
+maAppStore
+  = lens _maAppStore (\ s a -> s{_maAppStore = a})
+
+instance FromJSON MobileApplication where
+        parseJSON
+          = withObject "MobileApplication"
+              (\ o ->
+                 MobileApplication' <$>
+                   (o .:? "externalAppId") <*> (o .:? "appStore"))
+
+instance ToJSON MobileApplication where
+        toJSON MobileApplication'{..}
+          = object
+              (catMaybes
+                 [("externalAppId" .=) <$> _maExternalAppId,
+                  ("appStore" .=) <$> _maAppStore])
+
+--
 -- /See:/ 'pretargetingConfigDimensionsItem' smart constructor.
 data PretargetingConfigDimensionsItem =
   PretargetingConfigDimensionsItem'
@@ -4775,10 +4881,81 @@ instance ToJSON PublisherProvidedForecast where
                   ("dimensions" .=) <$> _ppfDimensions])
 
 --
+-- /See:/ 'creativeAdTechnologyProviders' smart constructor.
+data CreativeAdTechnologyProviders =
+  CreativeAdTechnologyProviders'
+    { _catpHasUnidentifiedProvider :: !(Maybe Bool)
+    , _catpDetectedProviderIds :: !(Maybe [Textual Int64])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreativeAdTechnologyProviders' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'catpHasUnidentifiedProvider'
+--
+-- * 'catpDetectedProviderIds'
+creativeAdTechnologyProviders
+    :: CreativeAdTechnologyProviders
+creativeAdTechnologyProviders =
+  CreativeAdTechnologyProviders'
+    {_catpHasUnidentifiedProvider = Nothing, _catpDetectedProviderIds = Nothing}
+
+
+-- | Whether the creative contains an unidentified ad technology provider. If
+-- true, a bid submitted for a European Economic Area (EEA) user with this
+-- creative is not compliant with the GDPR policies as mentioned in the
+-- \"Third-party Ad Technology Vendors\" section of Authorized Buyers
+-- Program Guidelines.
+catpHasUnidentifiedProvider :: Lens' CreativeAdTechnologyProviders (Maybe Bool)
+catpHasUnidentifiedProvider
+  = lens _catpHasUnidentifiedProvider
+      (\ s a -> s{_catpHasUnidentifiedProvider = a})
+
+-- | The detected ad technology provider IDs for this creative. See
+-- https:\/\/storage.googleapis.com\/adx-rtb-dictionaries\/providers.csv
+-- for mapping of provider ID to provided name, a privacy policy URL, and a
+-- list of domains which can be attributed to the provider. If this
+-- creative contains provider IDs that are outside of those listed in the
+-- \`BidRequest.adslot.consented_providers_settings.consented_providers\`
+-- field on the Authorized Buyers Real-Time Bidding protocol or the
+-- \`BidRequest.user.ext.consented_providers_settings.consented_providers\`
+-- field on the OpenRTB protocol, a bid submitted for a European Economic
+-- Area (EEA) user with this creative is not compliant with the GDPR
+-- policies as mentioned in the \"Third-party Ad Technology Vendors\"
+-- section of Authorized Buyers Program Guidelines.
+catpDetectedProviderIds :: Lens' CreativeAdTechnologyProviders [Int64]
+catpDetectedProviderIds
+  = lens _catpDetectedProviderIds
+      (\ s a -> s{_catpDetectedProviderIds = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON CreativeAdTechnologyProviders where
+        parseJSON
+          = withObject "CreativeAdTechnologyProviders"
+              (\ o ->
+                 CreativeAdTechnologyProviders' <$>
+                   (o .:? "hasUnidentifiedProvider") <*>
+                     (o .:? "detectedProviderIds" .!= mempty))
+
+instance ToJSON CreativeAdTechnologyProviders where
+        toJSON CreativeAdTechnologyProviders'{..}
+          = object
+              (catMaybes
+                 [("hasUnidentifiedProvider" .=) <$>
+                    _catpHasUnidentifiedProvider,
+                  ("detectedProviderIds" .=) <$>
+                    _catpDetectedProviderIds])
+
+--
 -- /See:/ 'targetingValue' smart constructor.
 data TargetingValue =
   TargetingValue'
-    { _tvDemogAgeCriteriaValue :: !(Maybe TargetingValueDemogAgeCriteria)
+    { _tvRequestPlatformTargetingValue :: !(Maybe TargetingValueRequestPlatformTargeting)
+    , _tvDemogAgeCriteriaValue :: !(Maybe TargetingValueDemogAgeCriteria)
     , _tvCreativeSizeValue :: !(Maybe TargetingValueCreativeSize)
     , _tvStringValue :: !(Maybe Text)
     , _tvLongValue :: !(Maybe (Textual Int64))
@@ -4791,6 +4968,8 @@ data TargetingValue =
 -- | Creates a value of 'TargetingValue' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'tvRequestPlatformTargetingValue'
 --
 -- * 'tvDemogAgeCriteriaValue'
 --
@@ -4807,7 +4986,8 @@ targetingValue
     :: TargetingValue
 targetingValue =
   TargetingValue'
-    { _tvDemogAgeCriteriaValue = Nothing
+    { _tvRequestPlatformTargetingValue = Nothing
+    , _tvDemogAgeCriteriaValue = Nothing
     , _tvCreativeSizeValue = Nothing
     , _tvStringValue = Nothing
     , _tvLongValue = Nothing
@@ -4815,6 +4995,11 @@ targetingValue =
     , _tvDemogGenderCriteriaValue = Nothing
     }
 
+
+tvRequestPlatformTargetingValue :: Lens' TargetingValue (Maybe TargetingValueRequestPlatformTargeting)
+tvRequestPlatformTargetingValue
+  = lens _tvRequestPlatformTargetingValue
+      (\ s a -> s{_tvRequestPlatformTargetingValue = a})
 
 tvDemogAgeCriteriaValue :: Lens' TargetingValue (Maybe TargetingValueDemogAgeCriteria)
 tvDemogAgeCriteriaValue
@@ -4856,8 +5041,9 @@ instance FromJSON TargetingValue where
           = withObject "TargetingValue"
               (\ o ->
                  TargetingValue' <$>
-                   (o .:? "demogAgeCriteriaValue") <*>
-                     (o .:? "creativeSizeValue")
+                   (o .:? "requestPlatformTargetingValue") <*>
+                     (o .:? "demogAgeCriteriaValue")
+                     <*> (o .:? "creativeSizeValue")
                      <*> (o .:? "stringValue")
                      <*> (o .:? "longValue")
                      <*> (o .:? "dayPartTargetingValue")
@@ -4867,7 +5053,9 @@ instance ToJSON TargetingValue where
         toJSON TargetingValue'{..}
           = object
               (catMaybes
-                 [("demogAgeCriteriaValue" .=) <$>
+                 [("requestPlatformTargetingValue" .=) <$>
+                    _tvRequestPlatformTargetingValue,
+                  ("demogAgeCriteriaValue" .=) <$>
                     _tvDemogAgeCriteriaValue,
                   ("creativeSizeValue" .=) <$> _tvCreativeSizeValue,
                   ("stringValue" .=) <$> _tvStringValue,
@@ -5990,7 +6178,8 @@ instance ToJSON PretargetingConfigPlacementsItem
 -- /See:/ 'publisherProFileAPIProto' smart constructor.
 data PublisherProFileAPIProto =
   PublisherProFileAPIProto'
-    { _ppfapAudience :: !(Maybe Text)
+    { _ppfapPublisherApps :: !(Maybe [MobileApplication])
+    , _ppfapAudience :: !(Maybe Text)
     , _ppfapState :: !(Maybe Text)
     , _ppfapMediaKitLink :: !(Maybe Text)
     , _ppfapDirectContact :: !(Maybe Text)
@@ -6003,6 +6192,7 @@ data PublisherProFileAPIProto =
     , _ppfapProFileId :: !(Maybe (Textual Int32))
     , _ppfapIsParent :: !(Maybe Bool)
     , _ppfapSeller :: !(Maybe Seller)
+    , _ppfapPublisherAppIds :: !(Maybe [Textual Int64])
     , _ppfapName :: !(Maybe Text)
     , _ppfapBuyerPitchStatement :: !(Maybe Text)
     , _ppfapPublisherProvidedForecast :: !(Maybe PublisherProvidedForecast)
@@ -6019,6 +6209,8 @@ data PublisherProFileAPIProto =
 -- | Creates a value of 'PublisherProFileAPIProto' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ppfapPublisherApps'
 --
 -- * 'ppfapAudience'
 --
@@ -6046,6 +6238,8 @@ data PublisherProFileAPIProto =
 --
 -- * 'ppfapSeller'
 --
+-- * 'ppfapPublisherAppIds'
+--
 -- * 'ppfapName'
 --
 -- * 'ppfapBuyerPitchStatement'
@@ -6067,7 +6261,8 @@ publisherProFileAPIProto
     :: PublisherProFileAPIProto
 publisherProFileAPIProto =
   PublisherProFileAPIProto'
-    { _ppfapAudience = Nothing
+    { _ppfapPublisherApps = Nothing
+    , _ppfapAudience = Nothing
     , _ppfapState = Nothing
     , _ppfapMediaKitLink = Nothing
     , _ppfapDirectContact = Nothing
@@ -6080,6 +6275,7 @@ publisherProFileAPIProto =
     , _ppfapProFileId = Nothing
     , _ppfapIsParent = Nothing
     , _ppfapSeller = Nothing
+    , _ppfapPublisherAppIds = Nothing
     , _ppfapName = Nothing
     , _ppfapBuyerPitchStatement = Nothing
     , _ppfapPublisherProvidedForecast = Nothing
@@ -6091,6 +6287,15 @@ publisherProFileAPIProto =
     , _ppfapProgrammaticContact = Nothing
     }
 
+
+-- | The list of apps represented in this pubisher profile. Empty if this is
+-- a parent profile.
+ppfapPublisherApps :: Lens' PublisherProFileAPIProto [MobileApplication]
+ppfapPublisherApps
+  = lens _ppfapPublisherApps
+      (\ s a -> s{_ppfapPublisherApps = a})
+      . _Default
+      . _Coerce
 
 -- | Publisher provided info on its audience.
 ppfapAudience :: Lens' PublisherProFileAPIProto (Maybe Text)
@@ -6170,6 +6375,15 @@ ppfapSeller :: Lens' PublisherProFileAPIProto (Maybe Seller)
 ppfapSeller
   = lens _ppfapSeller (\ s a -> s{_ppfapSeller = a})
 
+-- | The list of app IDs represented in this pubisher profile. Empty if this
+-- is a parent profile. Deprecated in favor of publisher_app.
+ppfapPublisherAppIds :: Lens' PublisherProFileAPIProto [Int64]
+ppfapPublisherAppIds
+  = lens _ppfapPublisherAppIds
+      (\ s a -> s{_ppfapPublisherAppIds = a})
+      . _Default
+      . _Coerce
+
 ppfapName :: Lens' PublisherProFileAPIProto (Maybe Text)
 ppfapName
   = lens _ppfapName (\ s a -> s{_ppfapName = a})
@@ -6232,8 +6446,10 @@ instance FromJSON PublisherProFileAPIProto where
           = withObject "PublisherProFileAPIProto"
               (\ o ->
                  PublisherProFileAPIProto' <$>
-                   (o .:? "audience") <*> (o .:? "state") <*>
-                     (o .:? "mediaKitLink")
+                   (o .:? "publisherApps" .!= mempty) <*>
+                     (o .:? "audience")
+                     <*> (o .:? "state")
+                     <*> (o .:? "mediaKitLink")
                      <*> (o .:? "directContact")
                      <*> (o .:? "samplePageLink")
                      <*> (o .:? "logoUrl")
@@ -6246,6 +6462,7 @@ instance FromJSON PublisherProFileAPIProto where
                      <*> (o .:? "profileId")
                      <*> (o .:? "isParent")
                      <*> (o .:? "seller")
+                     <*> (o .:? "publisherAppIds" .!= mempty)
                      <*> (o .:? "name")
                      <*> (o .:? "buyerPitchStatement")
                      <*> (o .:? "publisherProvidedForecast")
@@ -6260,7 +6477,8 @@ instance ToJSON PublisherProFileAPIProto where
         toJSON PublisherProFileAPIProto'{..}
           = object
               (catMaybes
-                 [("audience" .=) <$> _ppfapAudience,
+                 [("publisherApps" .=) <$> _ppfapPublisherApps,
+                  ("audience" .=) <$> _ppfapAudience,
                   ("state" .=) <$> _ppfapState,
                   ("mediaKitLink" .=) <$> _ppfapMediaKitLink,
                   ("directContact" .=) <$> _ppfapDirectContact,
@@ -6273,6 +6491,7 @@ instance ToJSON PublisherProFileAPIProto where
                   ("profileId" .=) <$> _ppfapProFileId,
                   ("isParent" .=) <$> _ppfapIsParent,
                   ("seller" .=) <$> _ppfapSeller,
+                  ("publisherAppIds" .=) <$> _ppfapPublisherAppIds,
                   ("name" .=) <$> _ppfapName,
                   ("buyerPitchStatement" .=) <$>
                     _ppfapBuyerPitchStatement,
@@ -6298,6 +6517,7 @@ data MarketplaceDeal =
     , _mdIsSetupComplete :: !(Maybe Bool)
     , _mdWebPropertyCode :: !(Maybe Text)
     , _mdCreationTimeMs :: !(Maybe (Textual Int64))
+    , _mdMakegoodRequestedReason :: !(Maybe Text)
     , _mdTerms :: !(Maybe DealTerms)
     , _mdLastUpdateTimeMs :: !(Maybe (Textual Int64))
     , _mdKind :: !Text
@@ -6335,6 +6555,8 @@ data MarketplaceDeal =
 -- * 'mdWebPropertyCode'
 --
 -- * 'mdCreationTimeMs'
+--
+-- * 'mdMakegoodRequestedReason'
 --
 -- * 'mdTerms'
 --
@@ -6384,6 +6606,7 @@ marketplaceDeal =
     , _mdIsSetupComplete = Nothing
     , _mdWebPropertyCode = Nothing
     , _mdCreationTimeMs = Nothing
+    , _mdMakegoodRequestedReason = Nothing
     , _mdTerms = Nothing
     , _mdLastUpdateTimeMs = Nothing
     , _mdKind = "adexchangebuyer#marketplaceDeal"
@@ -6438,6 +6661,11 @@ mdCreationTimeMs
   = lens _mdCreationTimeMs
       (\ s a -> s{_mdCreationTimeMs = a})
       . mapping _Coerce
+
+mdMakegoodRequestedReason :: Lens' MarketplaceDeal (Maybe Text)
+mdMakegoodRequestedReason
+  = lens _mdMakegoodRequestedReason
+      (\ s a -> s{_mdMakegoodRequestedReason = a})
 
 -- | The negotiable terms of the deal. (updatable)
 mdTerms :: Lens' MarketplaceDeal (Maybe DealTerms)
@@ -6580,6 +6808,7 @@ instance FromJSON MarketplaceDeal where
                      <*> (o .:? "isSetupComplete")
                      <*> (o .:? "webPropertyCode")
                      <*> (o .:? "creationTimeMs")
+                     <*> (o .:? "makegoodRequestedReason")
                      <*> (o .:? "terms")
                      <*> (o .:? "lastUpdateTimeMs")
                      <*>
@@ -6611,6 +6840,8 @@ instance ToJSON MarketplaceDeal where
                   ("isSetupComplete" .=) <$> _mdIsSetupComplete,
                   ("webPropertyCode" .=) <$> _mdWebPropertyCode,
                   ("creationTimeMs" .=) <$> _mdCreationTimeMs,
+                  ("makegoodRequestedReason" .=) <$>
+                    _mdMakegoodRequestedReason,
                   ("terms" .=) <$> _mdTerms,
                   ("lastUpdateTimeMs" .=) <$> _mdLastUpdateTimeMs,
                   Just ("kind" .= _mdKind),
@@ -6874,7 +7105,7 @@ dtRubiconNonGuaranteedTerms
   = lens _dtRubiconNonGuaranteedTerms
       (\ s a -> s{_dtRubiconNonGuaranteedTerms = a})
 
--- | Visibilty of the URL in bid requests.
+-- | Visibility of the URL in bid requests.
 dtBrandingType :: Lens' DealTerms (Maybe Text)
 dtBrandingType
   = lens _dtBrandingType

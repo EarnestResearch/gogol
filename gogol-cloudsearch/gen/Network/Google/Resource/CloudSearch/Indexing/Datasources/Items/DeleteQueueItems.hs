@@ -21,9 +21,11 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Deletes all items in a queue. This method is useful for deleting stale
--- items.
+-- items. This API requires an admin or service account to execute. The
+-- service account used is the one whitelisted in the corresponding data
+-- source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.deleteQueueItems@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.deleteQueueItems@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.DeleteQueueItems
     (
     -- * REST Resource
@@ -64,7 +66,9 @@ type IndexingDatasourcesItemsDeleteQueueItemsResource
                            Post '[JSON] Operation
 
 -- | Deletes all items in a queue. This method is useful for deleting stale
--- items.
+-- items. This API requires an admin or service account to execute. The
+-- service account used is the one whitelisted in the corresponding data
+-- source.
 --
 -- /See:/ 'indexingDatasourcesItemsDeleteQueueItems' smart constructor.
 data IndexingDatasourcesItemsDeleteQueueItems =

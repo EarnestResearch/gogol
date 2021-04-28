@@ -21,8 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Accesses a SecretVersion. This call returns the secret data.
--- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the
--- \`latest\` SecretVersion.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 --
 -- /See:/ <https://cloud.google.com/secret-manager/ Secret Manager API Reference> for @secretmanager.projects.secrets.versions.access@.
 module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Access
@@ -60,8 +60,8 @@ type ProjectsSecretsVersionsAccessResource =
                      Get '[JSON] AccessSecretVersionResponse
 
 -- | Accesses a SecretVersion. This call returns the secret data.
--- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the
--- \`latest\` SecretVersion.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 --
 -- /See:/ 'projectsSecretsVersionsAccess' smart constructor.
 data ProjectsSecretsVersionsAccess =
@@ -130,6 +130,8 @@ psvaUploadType
 
 -- | Required. The resource name of the SecretVersion in the format
 -- \`projects\/*\/secrets\/*\/versions\/*\`.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 psvaName :: Lens' ProjectsSecretsVersionsAccess Text
 psvaName = lens _psvaName (\ s a -> s{_psvaName = a})
 

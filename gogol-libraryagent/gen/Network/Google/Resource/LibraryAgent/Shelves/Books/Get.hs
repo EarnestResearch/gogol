@@ -123,7 +123,7 @@ sbgUploadType
   = lens _sbgUploadType
       (\ s a -> s{_sbgUploadType = a})
 
--- | The name of the book to retrieve.
+-- | Required. The name of the book to retrieve.
 sbgName :: Lens' ShelvesBooksGet Text
 sbgName = lens _sbgName (\ s a -> s{_sbgName = a})
 

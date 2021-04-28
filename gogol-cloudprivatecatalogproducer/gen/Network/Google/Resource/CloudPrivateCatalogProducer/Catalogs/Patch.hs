@@ -22,7 +22,7 @@
 --
 -- Updates a specific Catalog resource.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.patch@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.patch@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Patch
     (
     -- * REST Resource

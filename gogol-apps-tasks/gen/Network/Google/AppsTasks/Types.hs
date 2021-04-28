@@ -56,6 +56,9 @@ module Network.Google.AppsTasks.Types
     , tasUpdated
     , tasTitle
 
+    -- * Xgafv
+    , Xgafv (..)
+
     -- * Task
     , Task
     , task
@@ -84,7 +87,7 @@ import Network.Google.Prelude
 appsTasksService :: ServiceConfig
 appsTasksService
   = defaultService (ServiceId "tasks:v1")
-      "www.googleapis.com"
+      "tasks.googleapis.com"
 
 -- | View your tasks
 tasksReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/tasks.readonly"]

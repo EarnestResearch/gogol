@@ -126,7 +126,7 @@ projectsLocationsAcceleratorTypesList pPlatlParent_ =
     }
 
 
--- | The parent resource name.
+-- | Required. The parent resource name.
 platlParent :: Lens' ProjectsLocationsAcceleratorTypesList Text
 platlParent
   = lens _platlParent (\ s a -> s{_platlParent = a})

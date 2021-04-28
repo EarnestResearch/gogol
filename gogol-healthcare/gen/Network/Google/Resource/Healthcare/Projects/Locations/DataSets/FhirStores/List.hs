@@ -51,7 +51,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsFhirStoresList' request conforms to.
 type ProjectsLocationsDataSetsFhirStoresListResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "fhirStores" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -150,9 +150,30 @@ pldsfslUploadType
   = lens _pldsfslUploadType
       (\ s a -> s{_pldsfslUploadType = a})
 
--- | Restricts stores returned to those matching a filter. Syntax:
--- https:\/\/cloud.google.com\/appengine\/docs\/standard\/python\/search\/query_strings
--- Only filtering on labels is supported, for example \`labels.key=value\`.
+-- | Restricts stores returned to those matching a filter. The following
+-- syntax is available: * A string field value can be written as text
+-- inside quotation marks, for example \`\"query text\"\`. The only valid
+-- relational operation for text fields is equality (\`=\`), where text is
+-- searched within the field, rather than having the field be equal to the
+-- text. For example, \`\"Comment = great\"\` returns messages with
+-- \`great\` in the comment field. * A number field value can be written as
+-- an integer, a decimal, or an exponential. The valid relational operators
+-- for number fields are the equality operator (\`=\`), along with the less
+-- than\/greater than operators (\`\<\`, \`\<=\`, \`>\`, \`>=\`). Note that
+-- there is no inequality (\`!=\`) operator. You can prepend the \`NOT\`
+-- operator to an expression to negate it. * A date field value must be
+-- written in \`yyyy-mm-dd\` form. Fields with date and time use the
+-- RFC3339 time format. Leading zeros are required for one-digit months and
+-- days. The valid relational operators for date fields are the equality
+-- operator (\`=\`) , along with the less than\/greater than operators
+-- (\`\<\`, \`\<=\`, \`>\`, \`>=\`). Note that there is no inequality
+-- (\`!=\`) operator. You can prepend the \`NOT\` operator to an expression
+-- to negate it. * Multiple field query expressions can be combined in one
+-- query by adding \`AND\` or \`OR\` operators between the expressions. If
+-- a boolean operator appears within a quoted string, it is not treated as
+-- special, it\'s just another part of the character string to be matched.
+-- You can prepend the \`NOT\` operator to an expression to negate it. Only
+-- filtering on labels is supported, for example \`labels.key=value\`.
 pldsfslFilter :: Lens' ProjectsLocationsDataSetsFhirStoresList (Maybe Text)
 pldsfslFilter
   = lens _pldsfslFilter
@@ -166,7 +187,7 @@ pldsfslPageToken
       (\ s a -> s{_pldsfslPageToken = a})
 
 -- | Limit on the number of FHIR stores to return in a single response. If
--- zero the default page size of 100 is used.
+-- not specified, 100 is used. May not be larger than 1000.
 pldsfslPageSize :: Lens' ProjectsLocationsDataSetsFhirStoresList (Maybe Int32)
 pldsfslPageSize
   = lens _pldsfslPageSize

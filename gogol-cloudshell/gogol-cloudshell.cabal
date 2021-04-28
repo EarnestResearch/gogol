@@ -40,11 +40,16 @@ library
         , Network.Google.Resource.CloudShell.Operations.Delete
         , Network.Google.Resource.CloudShell.Operations.Get
         , Network.Google.Resource.CloudShell.Operations.List
+        , Network.Google.Resource.CloudShell.Users.Environments.AddPublicKey
+        , Network.Google.Resource.CloudShell.Users.Environments.Authorize
+        , Network.Google.Resource.CloudShell.Users.Environments.Get
+        , Network.Google.Resource.CloudShell.Users.Environments.RemovePublicKey
+        , Network.Google.Resource.CloudShell.Users.Environments.Start
 
     other-modules:
           Network.Google.CloudShell.Types.Product
         , Network.Google.CloudShell.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

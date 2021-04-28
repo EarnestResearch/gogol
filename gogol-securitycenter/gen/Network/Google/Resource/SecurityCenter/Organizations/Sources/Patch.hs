@@ -22,7 +22,7 @@
 --
 -- Updates a source.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.sources.patch@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.patch@.
 module Network.Google.Resource.SecurityCenter.Organizations.Sources.Patch
     (
     -- * REST Resource
@@ -49,7 +49,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.sources.patch@ method which the
 -- 'OrganizationsSourcesPatch' request conforms to.
 type OrganizationsSourcesPatchResource =
-     "v1" :>
+     "v1p1beta1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -149,7 +149,7 @@ ospPayload
 
 -- | The relative resource name of this source. See:
 -- https:\/\/cloud.google.com\/apis\/design\/resource_names#relative_resource_name
--- Example: \"organizations\/123\/sources\/456\"
+-- Example: \"organizations\/{organization_id}\/sources\/{source_id}\"
 ospName :: Lens' OrganizationsSourcesPatch Text
 ospName = lens _ospName (\ s a -> s{_ospName = a})
 

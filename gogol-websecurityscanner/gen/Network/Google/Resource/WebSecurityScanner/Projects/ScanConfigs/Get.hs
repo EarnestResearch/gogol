@@ -22,7 +22,7 @@
 --
 -- Gets a ScanConfig.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.get@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.get@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Get
     (
     -- * REST Resource
@@ -47,7 +47,7 @@ import Network.Google.WebSecurityScanner.Types
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.get@ method which the
 -- 'ProjectsScanConfigsGet' request conforms to.
 type ProjectsScanConfigsGetResource =
-     "v1beta" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

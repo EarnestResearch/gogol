@@ -21,7 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Return a specified license code. License codes are mirrored across all
--- projects that have permissions to read the License Code.
+-- projects that have permissions to read the License Code. Caution This
+-- resource is intended for use only by third-party partners who are
+-- creating Cloud Marketplace images.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.licenseCodes.get@.
 module Network.Google.Resource.Compute.LicenseCodes.Get
@@ -54,7 +56,9 @@ type LicenseCodesGetResource =
                    QueryParam "alt" AltJSON :> Get '[JSON] LicenseCode
 
 -- | Return a specified license code. License codes are mirrored across all
--- projects that have permissions to read the License Code.
+-- projects that have permissions to read the License Code. Caution This
+-- resource is intended for use only by third-party partners who are
+-- creating Cloud Marketplace images.
 --
 -- /See:/ 'licenseCodesGet' smart constructor.
 data LicenseCodesGet =

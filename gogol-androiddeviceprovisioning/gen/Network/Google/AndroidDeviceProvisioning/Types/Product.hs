@@ -20,7 +20,7 @@ module Network.Google.AndroidDeviceProvisioning.Types.Product where
 import Network.Google.AndroidDeviceProvisioning.Types.Sum
 import Network.Google.Prelude
 
--- | Identifies metdata updates to one device.
+-- | Identifies metadata updates to one device.
 --
 -- /See:/ 'updateMetadataArguments' smart constructor.
 data UpdateMetadataArguments =
@@ -51,13 +51,13 @@ updateMetadataArguments =
     }
 
 
--- | Device identifier.
+-- | Required. Device identifier.
 umaDeviceIdentifier :: Lens' UpdateMetadataArguments (Maybe DeviceIdentifier)
 umaDeviceIdentifier
   = lens _umaDeviceIdentifier
       (\ s a -> s{_umaDeviceIdentifier = a})
 
--- | Device ID of the device.
+-- | Required. Device ID of the device.
 umaDeviceId :: Lens' UpdateMetadataArguments (Maybe Int64)
 umaDeviceId
   = lens _umaDeviceId (\ s a -> s{_umaDeviceId = a}) .
@@ -87,39 +87,11 @@ instance ToJSON UpdateMetadataArguments where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -216,7 +188,7 @@ partnerClaim =
     }
 
 
--- | Required. Device identifier of the device.
+-- | Required. Required. Device identifier of the device.
 pcDeviceIdentifier :: Lens' PartnerClaim (Maybe DeviceIdentifier)
 pcDeviceIdentifier
   = lens _pcDeviceIdentifier
@@ -325,7 +297,7 @@ findDevicesByDeviceIdentifierRequest =
     }
 
 
--- | Required. The device identifier to search for.
+-- | Required. Required. The device identifier to search for.
 fdbdirDeviceIdentifier :: Lens' FindDevicesByDeviceIdentifierRequest (Maybe DeviceIdentifier)
 fdbdirDeviceIdentifier
   = lens _fdbdirDeviceIdentifier
@@ -506,7 +478,7 @@ partnerUnclaim =
     }
 
 
--- | Device identifier of the device.
+-- | Required. Device identifier of the device.
 puDeviceIdentifier :: Lens' PartnerUnclaim (Maybe DeviceIdentifier)
 puDeviceIdentifier
   = lens _puDeviceIdentifier
@@ -518,22 +490,22 @@ puSectionType
   = lens _puSectionType
       (\ s a -> s{_puSectionType = a})
 
--- | The expiration time of the vacation unlock.
+-- | Optional. The expiration time of the vacation unlock.
 puVacationModeExpireTime :: Lens' PartnerUnclaim (Maybe UTCTime)
 puVacationModeExpireTime
   = lens _puVacationModeExpireTime
       (\ s a -> s{_puVacationModeExpireTime = a})
       . mapping _DateTime
 
--- | The duration of the vacation unlock starting from when the request is
--- processed. (1 day is treated as 24 hours)
+-- | Optional. The duration of the vacation unlock starting from when the
+-- request is processed. (1 day is treated as 24 hours)
 puVacationModeDays :: Lens' PartnerUnclaim (Maybe Int32)
 puVacationModeDays
   = lens _puVacationModeDays
       (\ s a -> s{_puVacationModeDays = a})
       . mapping _Coerce
 
--- | Device ID of the device.
+-- | Required. Device ID of the device.
 puDeviceId :: Lens' PartnerUnclaim (Maybe Int64)
 puDeviceId
   = lens _puDeviceId (\ s a -> s{_puDeviceId = a}) .
@@ -832,7 +804,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -1047,7 +1020,8 @@ device =
 
 
 -- | The hardware IDs that identify a manufactured device. To learn more,
--- read [Identifiers](\/zero-touch\/guides\/identifiers).
+-- read
+-- [Identifiers](https:\/\/developers.google.com\/zero-touch\/guides\/identifiers).
 devDeviceIdentifier :: Lens' Device (Maybe DeviceIdentifier)
 devDeviceIdentifier
   = lens _devDeviceIdentifier
@@ -1077,7 +1051,8 @@ devDeviceId
       mapping _Coerce
 
 -- | The metadata attached to the device. Structured as key-value pairs. To
--- learn more, read [Device metadata](\/zero-touch\/guides\/metadata).
+-- learn more, read [Device
+-- metadata](https:\/\/developers.google.com\/zero-touch\/guides\/metadata).
 devDeviceMetadata :: Lens' Device (Maybe DeviceMetadata)
 devDeviceMetadata
   = lens _devDeviceMetadata
@@ -1147,7 +1122,7 @@ claimDeviceRequest =
     }
 
 
--- | Required. The device identifier of the device to claim.
+-- | Required. Required. The device identifier of the device to claim.
 cdrDeviceIdentifier :: Lens' ClaimDeviceRequest (Maybe DeviceIdentifier)
 cdrDeviceIdentifier
   = lens _cdrDeviceIdentifier
@@ -1196,7 +1171,8 @@ instance ToJSON ClaimDeviceRequest where
 -- IMEI number, belonging to the manufactured device. Methods that operate
 -- on devices take a \`DeviceReference\` as a parameter type because it\'s
 -- more flexible for the caller. To learn more about device identifiers,
--- read [Identifiers](\/zero-touch\/guides\/identifiers).
+-- read
+-- [Identifiers](https:\/\/developers.google.com\/zero-touch\/guides\/identifiers).
 --
 -- /See:/ 'deviceReference' smart constructor.
 data DeviceReference =
@@ -1287,7 +1263,7 @@ instance ToJSON CustomerRemoveConfigurationRequest
 
 -- | Encapsulates hardware and product IDs to identify a manufactured device.
 -- To understand requirements on identifier sets, read
--- [Identifiers](\/zero-touch\/guides\/identifiers).
+-- [Identifiers](https:\/\/developers.google.com\/zero-touch\/guides\/identifiers).
 --
 -- /See:/ 'deviceIdentifier' smart constructor.
 data DeviceIdentifier =
@@ -1670,10 +1646,11 @@ cCompanyName :: Lens' Company (Maybe Text)
 cCompanyName
   = lens _cCompanyName (\ s a -> s{_cCompanyName = a})
 
--- | Input only. Email address of customer\'s users in the owner role. At
--- least one \`owner_email\` is required. Each email address must be
--- associated with a Google Account. Owners share the same access as admins
--- but can also add, delete, and edit your organization\'s portal users.
+-- | Required. Input only. Email address of customer\'s users in the owner
+-- role. At least one \`owner_email\` is required. Each email address must
+-- be associated with a Google Account. Owners share the same access as
+-- admins but can also add, delete, and edit your organization\'s portal
+-- users.
 cOwnerEmails :: Lens' Company [Text]
 cOwnerEmails
   = lens _cOwnerEmails (\ s a -> s{_cOwnerEmails = a})
@@ -1695,8 +1672,8 @@ cTermsStatus
 cName :: Lens' Company (Maybe Text)
 cName = lens _cName (\ s a -> s{_cName = a})
 
--- | Input only. Optional. Email address of customer\'s users in the admin
--- role. Each email address must be associated with a Google Account.
+-- | Optional. Email address of customer\'s users in the admin role. Each
+-- email address must be associated with a Google Account.
 cAdminEmails :: Lens' Company [Text]
 cAdminEmails
   = lens _cAdminEmails (\ s a -> s{_cAdminEmails = a})
@@ -1901,7 +1878,7 @@ updateDeviceMetadataRequest =
   UpdateDeviceMetadataRequest' {_udmrDeviceMetadata = Nothing}
 
 
--- | Required. The metdata to attach to the device.
+-- | Required. The metadata to attach to the device.
 udmrDeviceMetadata :: Lens' UpdateDeviceMetadataRequest (Maybe DeviceMetadata)
 udmrDeviceMetadata
   = lens _udmrDeviceMetadata
@@ -1921,7 +1898,8 @@ instance ToJSON UpdateDeviceMetadataRequest where
                  [("deviceMetadata" .=) <$> _udmrDeviceMetadata])
 
 -- | Metadata entries that can be attached to a \`Device\`. To learn more,
--- read [Device metadata](\/zero-touch\/guides\/metadata).
+-- read [Device
+-- metadata](https:\/\/developers.google.com\/zero-touch\/guides\/metadata).
 --
 -- /See:/ 'deviceMetadata' smart constructor.
 newtype DeviceMetadata =
@@ -2147,7 +2125,7 @@ unclaimDeviceRequest =
     }
 
 
--- | The device identifier you used when you claimed this device.
+-- | Required. The device identifier you used when you claimed this device.
 udrDeviceIdentifier :: Lens' UnclaimDeviceRequest (Maybe DeviceIdentifier)
 udrDeviceIdentifier
   = lens _udrDeviceIdentifier
@@ -2174,7 +2152,7 @@ udrVacationModeDays
       (\ s a -> s{_udrVacationModeDays = a})
       . mapping _Coerce
 
--- | The device ID returned by \`ClaimDevice\`.
+-- | Required. The device ID returned by \`ClaimDevice\`.
 udrDeviceId :: Lens' UnclaimDeviceRequest (Maybe Int64)
 udrDeviceId
   = lens _udrDeviceId (\ s a -> s{_udrDeviceId = a}) .

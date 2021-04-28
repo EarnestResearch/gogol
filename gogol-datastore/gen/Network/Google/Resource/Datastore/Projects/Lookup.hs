@@ -135,7 +135,7 @@ plPayload :: Lens' ProjectsLookup LookupRequest
 plPayload
   = lens _plPayload (\ s a -> s{_plPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 plProjectId :: Lens' ProjectsLookup Text
 plProjectId
   = lens _plProjectId (\ s a -> s{_plProjectId = a})

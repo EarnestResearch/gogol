@@ -120,7 +120,7 @@ projectsNotesList pPnlParent_ =
     }
 
 
--- | The name of the project to list notes for in the form of
+-- | Required. The name of the project to list notes for in the form of
 -- \`projects\/[PROJECT_ID]\`.
 pnlParent :: Lens' ProjectsNotesList Text
 pnlParent

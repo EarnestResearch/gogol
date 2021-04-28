@@ -128,7 +128,7 @@ servicesTenancyUnitsList pStulParent_ =
     }
 
 
--- | Managed service and service consumer. Required.
+-- | Required. Managed service and service consumer. Required.
 -- services\/{service}\/{collection id}\/{resource id} {collection id} is
 -- the cloud resource collection type representing the service consumer,
 -- for example \'projects\', or \'organizations\'. {resource id} is the
@@ -161,20 +161,20 @@ stulUploadType
   = lens _stulUploadType
       (\ s a -> s{_stulUploadType = a})
 
--- | Filter expression over tenancy resources field. Optional.
+-- | Optional. Filter expression over tenancy resources field. Optional.
 stulFilter :: Lens' ServicesTenancyUnitsList (Maybe Text)
 stulFilter
   = lens _stulFilter (\ s a -> s{_stulFilter = a})
 
--- | The continuation token, which is used to page through large result sets.
--- To get the next page of results, set this parameter to the value of
--- \`nextPageToken\` from the previous response.
+-- | Optional. The continuation token, which is used to page through large
+-- result sets. To get the next page of results, set this parameter to the
+-- value of \`nextPageToken\` from the previous response.
 stulPageToken :: Lens' ServicesTenancyUnitsList (Maybe Text)
 stulPageToken
   = lens _stulPageToken
       (\ s a -> s{_stulPageToken = a})
 
--- | The maximum number of results returned by this request.
+-- | Optional. The maximum number of results returned by this request.
 stulPageSize :: Lens' ServicesTenancyUnitsList (Maybe Int32)
 stulPageSize
   = lens _stulPageSize (\ s a -> s{_stulPageSize = a})

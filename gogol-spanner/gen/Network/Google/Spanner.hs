@@ -38,8 +38,50 @@ module Network.Google.Spanner
     -- ** spanner.projects.instanceConfigs.list
     , module Network.Google.Resource.Spanner.Projects.InstanceConfigs.List
 
+    -- ** spanner.projects.instances.backupOperations.list
+    , module Network.Google.Resource.Spanner.Projects.Instances.BackupOperations.List
+
+    -- ** spanner.projects.instances.backups.create
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Create
+
+    -- ** spanner.projects.instances.backups.delete
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Delete
+
+    -- ** spanner.projects.instances.backups.get
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Get
+
+    -- ** spanner.projects.instances.backups.getIamPolicy
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.GetIAMPolicy
+
+    -- ** spanner.projects.instances.backups.list
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.List
+
+    -- ** spanner.projects.instances.backups.operations.cancel
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Cancel
+
+    -- ** spanner.projects.instances.backups.operations.delete
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Delete
+
+    -- ** spanner.projects.instances.backups.operations.get
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Get
+
+    -- ** spanner.projects.instances.backups.operations.list
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.List
+
+    -- ** spanner.projects.instances.backups.patch
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.Patch
+
+    -- ** spanner.projects.instances.backups.setIamPolicy
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.SetIAMPolicy
+
+    -- ** spanner.projects.instances.backups.testIamPermissions
+    , module Network.Google.Resource.Spanner.Projects.Instances.Backups.TestIAMPermissions
+
     -- ** spanner.projects.instances.create
     , module Network.Google.Resource.Spanner.Projects.Instances.Create
+
+    -- ** spanner.projects.instances.databaseOperations.list
+    , module Network.Google.Resource.Spanner.Projects.Instances.DatabaseOperations.List
 
     -- ** spanner.projects.instances.databases.create
     , module Network.Google.Resource.Spanner.Projects.Instances.Databases.Create
@@ -70,6 +112,12 @@ module Network.Google.Spanner
 
     -- ** spanner.projects.instances.databases.operations.list
     , module Network.Google.Resource.Spanner.Projects.Instances.Databases.Operations.List
+
+    -- ** spanner.projects.instances.databases.restore
+    , module Network.Google.Resource.Spanner.Projects.Instances.Databases.Restore
+
+    -- ** spanner.projects.instances.databases.sessions.batchCreate
+    , module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.BatchCreate
 
     -- ** spanner.projects.instances.databases.sessions.beginTransaction
     , module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.BeginTransaction
@@ -162,6 +210,13 @@ module Network.Google.Spanner
     , executeSQLRequestParams
     , esqlrpAddtional
 
+    -- ** RestoreDatabaseRequest
+    , RestoreDatabaseRequest
+    , restoreDatabaseRequest
+    , rdrBackup
+    , rdrEncryptionConfig
+    , rdrDatabaseId
+
     -- ** InstanceLabels
     , InstanceLabels
     , instanceLabels
@@ -178,6 +233,12 @@ module Network.Google.Spanner
     , toReadWrite
     , toPartitionedDml
     , toReadOnly
+
+    -- ** ListBackupsResponse
+    , ListBackupsResponse
+    , listBackupsResponse
+    , lbrNextPageToken
+    , lbrBackups
 
     -- ** GetDatabaseDdlResponse
     , GetDatabaseDdlResponse
@@ -196,6 +257,12 @@ module Network.Google.Spanner
     , createInstanceRequest
     , cirInstanceId
     , cirInstance
+
+    -- ** BatchCreateSessionsRequest
+    , BatchCreateSessionsRequest
+    , batchCreateSessionsRequest
+    , bcsrSessionCount
+    , bcsrSessionTemplate
 
     -- ** ReadWrite
     , ReadWrite
@@ -229,6 +296,7 @@ module Network.Google.Spanner
     -- ** GetIAMPolicyRequest
     , GetIAMPolicyRequest
     , getIAMPolicyRequest
+    , giprOptions
 
     -- ** ChildLink
     , ChildLink
@@ -241,6 +309,13 @@ module Network.Google.Spanner
     , BeginTransactionRequest
     , beginTransactionRequest
     , btrOptions
+    , btrRequestOptions
+
+    -- ** ListDatabaseOperationsResponse
+    , ListDatabaseOperationsResponse
+    , listDatabaseOperationsResponse
+    , ldorNextPageToken
+    , ldorOperations
 
     -- ** PartitionOptions
     , PartitionOptions
@@ -261,6 +336,12 @@ module Network.Google.Spanner
     , field
     , fName
     , fType
+
+    -- ** QueryOptions
+    , QueryOptions
+    , queryOptions
+    , qoOptimizerStatisticsPackage
+    , qoOptimizerVersion
 
     -- ** TypeCode
     , TypeCode (..)
@@ -310,6 +391,8 @@ module Network.Google.Spanner
     , UpdateDatabaseDdlMetadata
     , updateDatabaseDdlMetadata
     , uddmCommitTimestamps
+    , uddmThrottled
+    , uddmProgress
     , uddmDatabase
     , uddmStatements
 
@@ -321,7 +404,28 @@ module Network.Google.Spanner
     , Database
     , database
     , dState
+    , dEarliestVersionTime
     , dName
+    , dEncryptionConfig
+    , dVersionRetentionPeriod
+    , dRestoreInfo
+    , dEncryptionInfo
+    , dCreateTime
+
+    -- ** CommitStats
+    , CommitStats
+    , commitStats
+    , csMutationCount
+
+    -- ** OperationProgress
+    , OperationProgress
+    , operationProgress
+    , opStartTime
+    , opProgressPercent
+    , opEndTime
+
+    -- ** RestoreInfoSourceType
+    , RestoreInfoSourceType (..)
 
     -- ** PlanNode
     , PlanNode
@@ -363,9 +467,33 @@ module Network.Google.Spanner
     , planNodeMetadata
     , pnmAddtional
 
+    -- ** EncryptionInfoEncryptionType
+    , EncryptionInfoEncryptionType (..)
+
+    -- ** ReplicaInfoType
+    , ReplicaInfoType (..)
+
+    -- ** GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
+
     -- ** PartitionedDml
     , PartitionedDml
     , partitionedDml
+
+    -- ** Backup
+    , Backup
+    , backup
+    , bSizeBytes
+    , bState
+    , bDatabase
+    , bName
+    , bVersionTime
+    , bReferencingDatabases
+    , bExpireTime
+    , bEncryptionInfo
+    , bCreateTime
 
     -- ** SetIAMPolicyRequest
     , SetIAMPolicyRequest
@@ -428,11 +556,26 @@ module Network.Google.Spanner
     , ebdrSeqno
     , ebdrTransaction
     , ebdrStatements
+    , ebdrRequestOptions
+
+    -- ** RestoreDatabaseEncryptionConfigEncryptionType
+    , RestoreDatabaseEncryptionConfigEncryptionType (..)
 
     -- ** StructType
     , StructType
     , structType
     , stFields
+
+    -- ** CreateBackupMetadata
+    , CreateBackupMetadata
+    , createBackupMetadata
+    , cbmProgress
+    , cbmDatabase
+    , cbmCancelTime
+    , cbmName
+
+    -- ** ProjectsInstancesBackupsCreateEncryptionConfigEncryptionType
+    , ProjectsInstancesBackupsCreateEncryptionConfigEncryptionType (..)
 
     -- ** DatabaseState
     , DatabaseState (..)
@@ -444,6 +587,7 @@ module Network.Google.Spanner
     , CommitResponse
     , commitResponse
     , crCommitTimestamp
+    , crCommitStats
 
     -- ** Partition
     , Partition
@@ -455,10 +599,24 @@ module Network.Google.Spanner
     , testIAMPermissionsRequest
     , tiprPermissions
 
+    -- ** OptimizeRestoredDatabaseMetadata
+    , OptimizeRestoredDatabaseMetadata
+    , optimizeRestoredDatabaseMetadata
+    , ordmProgress
+    , ordmName
+
     -- ** PartitionQueryRequestParamTypes
     , PartitionQueryRequestParamTypes
     , partitionQueryRequestParamTypes
     , pqrptAddtional
+
+    -- ** RestoreDatabaseMetadataSourceType
+    , RestoreDatabaseMetadataSourceType (..)
+
+    -- ** EncryptionConfig
+    , EncryptionConfig
+    , encryptionConfig
+    , ecKmsKeyName
 
     -- ** UpdateInstanceMetadata
     , UpdateInstanceMetadata
@@ -478,6 +636,16 @@ module Network.Google.Spanner
     , testIAMPermissionsResponse
     , tiamprPermissions
 
+    -- ** RestoreDatabaseMetadata
+    , RestoreDatabaseMetadata
+    , restoreDatabaseMetadata
+    , rdmSourceType
+    , rdmProgress
+    , rdmCancelTime
+    , rdmName
+    , rdmBackupInfo
+    , rdmOptimizeDatabaseOperationName
+
     -- ** PartialResultSet
     , PartialResultSet
     , partialResultSet
@@ -486,6 +654,20 @@ module Network.Google.Spanner
     , prsStats
     , prsMetadata
     , prsChunkedValue
+
+    -- ** RestoreDatabaseEncryptionConfig
+    , RestoreDatabaseEncryptionConfig
+    , restoreDatabaseEncryptionConfig
+    , rdecEncryptionType
+    , rdecKmsKeyName
+
+    -- ** BackupInfo
+    , BackupInfo
+    , backupInfo
+    , biBackup
+    , biVersionTime
+    , biSourceDatabase
+    , biCreateTime
 
     -- ** Policy
     , Policy
@@ -498,12 +680,14 @@ module Network.Google.Spanner
     , CreateDatabaseRequest
     , createDatabaseRequest
     , cdrExtraStatements
+    , cdrEncryptionConfig
     , cdrCreateStatement
 
     -- ** ExecuteSQLRequest
     , ExecuteSQLRequest
     , executeSQLRequest
     , esqlrParamTypes
+    , esqlrQueryOptions
     , esqlrResumeToken
     , esqlrSeqno
     , esqlrParams
@@ -511,13 +695,16 @@ module Network.Google.Spanner
     , esqlrSQL
     , esqlrPartitionToken
     , esqlrQueryMode
+    , esqlrRequestOptions
 
     -- ** CommitRequest
     , CommitRequest
     , commitRequest
+    , crReturnCommitStats
     , crMutations
     , crTransactionId
     , crSingleUseTransaction
+    , crRequestOptions
 
     -- ** Type
     , Type
@@ -552,6 +739,7 @@ module Network.Google.Spanner
     , instanceConfig
     , icName
     , icDisplayName
+    , icReplicas
 
     -- ** ResultSet
     , ResultSet
@@ -569,6 +757,7 @@ module Network.Google.Spanner
     , ListInstancesResponse
     , listInstancesResponse
     , lirNextPageToken
+    , lirUnreachable
     , lirInstances
 
     -- ** ReadRequest
@@ -582,6 +771,17 @@ module Network.Google.Spanner
     , rrIndex
     , rrTable
     , rrPartitionToken
+    , rrRequestOptions
+
+    -- ** RequestOptionsPriority
+    , RequestOptionsPriority (..)
+
+    -- ** ReplicaInfo
+    , ReplicaInfo
+    , replicaInfo
+    , riDefaultLeaderLocation
+    , riLocation
+    , riType
 
     -- ** InstanceState
     , InstanceState (..)
@@ -593,6 +793,17 @@ module Network.Google.Spanner
     , sName
     , sLabels
     , sCreateTime
+
+    -- ** BatchCreateSessionsResponse
+    , BatchCreateSessionsResponse
+    , batchCreateSessionsResponse
+    , bcsrSession
+
+    -- ** RestoreInfo
+    , RestoreInfo
+    , restoreInfo
+    , riSourceType
+    , riBackupInfo
 
     -- ** OperationResponse
     , OperationResponse
@@ -627,6 +838,15 @@ module Network.Google.Spanner
     , uirFieldMask
     , uirInstance
 
+    -- ** ListBackupOperationsResponse
+    , ListBackupOperationsResponse
+    , listBackupOperationsResponse
+    , lborNextPageToken
+    , lborOperations
+
+    -- ** BackupState
+    , BackupState (..)
+
     -- ** ResultSetStatsQueryStats
     , ResultSetStatsQueryStats
     , resultSetStatsQueryStats
@@ -649,6 +869,20 @@ module Network.Google.Spanner
     , listInstanceConfigsResponse
     , licrNextPageToken
     , licrInstanceConfigs
+
+    -- ** RequestOptions
+    , RequestOptions
+    , requestOptions
+    , roPriority
+    , roRequestTag
+    , roTransactionTag
+
+    -- ** EncryptionInfo
+    , EncryptionInfo
+    , encryptionInfo
+    , eiEncryptionType
+    , eiKmsKeyVersion
+    , eiEncryptionStatus
 
     -- ** Binding
     , Binding
@@ -683,6 +917,7 @@ module Network.Google.Spanner
     , iState
     , iConfig
     , iNodeCount
+    , iEndpointURIs
     , iName
     , iDisplayName
     , iLabels
@@ -691,7 +926,21 @@ module Network.Google.Spanner
 import Network.Google.Prelude
 import Network.Google.Resource.Spanner.Projects.InstanceConfigs.Get
 import Network.Google.Resource.Spanner.Projects.InstanceConfigs.List
+import Network.Google.Resource.Spanner.Projects.Instances.BackupOperations.List
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Create
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Delete
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Get
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.GetIAMPolicy
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.List
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Cancel
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Delete
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.Get
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Operations.List
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.Patch
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.SetIAMPolicy
+import Network.Google.Resource.Spanner.Projects.Instances.Backups.TestIAMPermissions
 import Network.Google.Resource.Spanner.Projects.Instances.Create
+import Network.Google.Resource.Spanner.Projects.Instances.DatabaseOperations.List
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Create
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.DropDatabase
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Get
@@ -702,6 +951,8 @@ import Network.Google.Resource.Spanner.Projects.Instances.Databases.Operations.C
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Operations.Delete
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Operations.Get
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Operations.List
+import Network.Google.Resource.Spanner.Projects.Instances.Databases.Restore
+import Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.BatchCreate
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.BeginTransaction
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Commit
 import Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.Create
@@ -738,8 +989,23 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the Cloud Spanner API service.
 type SpannerAPI =
-     ProjectsInstancesOperationsListResource :<|>
-       ProjectsInstancesOperationsGetResource
+     ProjectsInstancesBackupsOperationsListResource :<|>
+       ProjectsInstancesBackupsOperationsGetResource
+       :<|> ProjectsInstancesBackupsOperationsCancelResource
+       :<|> ProjectsInstancesBackupsOperationsDeleteResource
+       :<|> ProjectsInstancesBackupsListResource
+       :<|> ProjectsInstancesBackupsGetIAMPolicyResource
+       :<|> ProjectsInstancesBackupsPatchResource
+       :<|> ProjectsInstancesBackupsGetResource
+       :<|> ProjectsInstancesBackupsCreateResource
+       :<|> ProjectsInstancesBackupsSetIAMPolicyResource
+       :<|>
+       ProjectsInstancesBackupsTestIAMPermissionsResource
+       :<|> ProjectsInstancesBackupsDeleteResource
+       :<|> ProjectsInstancesDatabaseOperationsListResource
+       :<|> ProjectsInstancesBackupOperationsListResource
+       :<|> ProjectsInstancesOperationsListResource
+       :<|> ProjectsInstancesOperationsGetResource
        :<|> ProjectsInstancesOperationsCancelResource
        :<|> ProjectsInstancesOperationsDeleteResource
        :<|> ProjectsInstancesDatabasesSessionsListResource
@@ -754,6 +1020,8 @@ type SpannerAPI =
        :<|>
        ProjectsInstancesDatabasesSessionsRollbackResource
        :<|> ProjectsInstancesDatabasesSessionsCreateResource
+       :<|>
+       ProjectsInstancesDatabasesSessionsBatchCreateResource
        :<|>
        ProjectsInstancesDatabasesSessionsPartitionReadResource
        :<|>
@@ -773,6 +1041,7 @@ type SpannerAPI =
        :<|> ProjectsInstancesDatabasesDropDatabaseResource
        :<|> ProjectsInstancesDatabasesListResource
        :<|> ProjectsInstancesDatabasesUpdateDdlResource
+       :<|> ProjectsInstancesDatabasesRestoreResource
        :<|> ProjectsInstancesDatabasesGetIAMPolicyResource
        :<|> ProjectsInstancesDatabasesGetResource
        :<|> ProjectsInstancesDatabasesCreateResource

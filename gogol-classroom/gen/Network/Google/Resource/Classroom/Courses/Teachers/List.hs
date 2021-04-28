@@ -158,8 +158,8 @@ ctltPageToken
   = lens _ctltPageToken
       (\ s a -> s{_ctltPageToken = a})
 
--- | Maximum number of items to return. Zero means no maximum. The server may
--- return fewer than the specified number of results.
+-- | Maximum number of items to return. The default is 30 if unspecified or
+-- \`0\`. The server may return fewer than the specified number of results.
 ctltPageSize :: Lens' CoursesTeachersList (Maybe Int32)
 ctltPageSize
   = lens _ctltPageSize (\ s a -> s{_ctltPageSize = a})

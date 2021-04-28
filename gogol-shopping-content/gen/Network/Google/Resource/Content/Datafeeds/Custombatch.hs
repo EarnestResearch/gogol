@@ -23,7 +23,7 @@
 -- Deletes, fetches, gets, inserts and updates multiple datafeeds in a
 -- single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.datafeeds.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.datafeeds.custombatch@.
 module Network.Google.Resource.Content.Datafeeds.Custombatch
     (
     -- * REST Resource
@@ -34,8 +34,13 @@ module Network.Google.Resource.Content.Datafeeds.Custombatch
     , DatafeedsCustombatch
 
     -- * Request Lenses
+    , dXgafv
+    , dUploadProtocol
+    , dAccessToken
+    , dUploadType
     , dPayload
     , dDryRun
+    , dCallback
     ) where
 
 import Network.Google.Prelude
@@ -48,10 +53,15 @@ type DatafeedsCustombatchResource =
        "v2" :>
          "datafeeds" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] DatafeedsCustomBatchRequest :>
-                   Post '[JSON] DatafeedsCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] DatafeedsCustomBatchRequest :>
+                             Post '[JSON] DatafeedsCustomBatchResponse
 
 -- | Deletes, fetches, gets, inserts and updates multiple datafeeds in a
 -- single request.
@@ -59,8 +69,13 @@ type DatafeedsCustombatchResource =
 -- /See:/ 'datafeedsCustombatch' smart constructor.
 data DatafeedsCustombatch =
   DatafeedsCustombatch'
-    { _dPayload :: !DatafeedsCustomBatchRequest
+    { _dXgafv :: !(Maybe Xgafv)
+    , _dUploadProtocol :: !(Maybe Text)
+    , _dAccessToken :: !(Maybe Text)
+    , _dUploadType :: !(Maybe Text)
+    , _dPayload :: !DatafeedsCustomBatchRequest
     , _dDryRun :: !(Maybe Bool)
+    , _dCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -69,15 +84,53 @@ data DatafeedsCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'dXgafv'
+--
+-- * 'dUploadProtocol'
+--
+-- * 'dAccessToken'
+--
+-- * 'dUploadType'
+--
 -- * 'dPayload'
 --
 -- * 'dDryRun'
+--
+-- * 'dCallback'
 datafeedsCustombatch
     :: DatafeedsCustomBatchRequest -- ^ 'dPayload'
     -> DatafeedsCustombatch
 datafeedsCustombatch pDPayload_ =
-  DatafeedsCustombatch' {_dPayload = pDPayload_, _dDryRun = Nothing}
+  DatafeedsCustombatch'
+    { _dXgafv = Nothing
+    , _dUploadProtocol = Nothing
+    , _dAccessToken = Nothing
+    , _dUploadType = Nothing
+    , _dPayload = pDPayload_
+    , _dDryRun = Nothing
+    , _dCallback = Nothing
+    }
 
+
+-- | V1 error format.
+dXgafv :: Lens' DatafeedsCustombatch (Maybe Xgafv)
+dXgafv = lens _dXgafv (\ s a -> s{_dXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+dUploadProtocol :: Lens' DatafeedsCustombatch (Maybe Text)
+dUploadProtocol
+  = lens _dUploadProtocol
+      (\ s a -> s{_dUploadProtocol = a})
+
+-- | OAuth access token.
+dAccessToken :: Lens' DatafeedsCustombatch (Maybe Text)
+dAccessToken
+  = lens _dAccessToken (\ s a -> s{_dAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+dUploadType :: Lens' DatafeedsCustombatch (Maybe Text)
+dUploadType
+  = lens _dUploadType (\ s a -> s{_dUploadType = a})
 
 -- | Multipart request metadata.
 dPayload :: Lens' DatafeedsCustombatch DatafeedsCustomBatchRequest
@@ -89,13 +142,23 @@ dPayload = lens _dPayload (\ s a -> s{_dPayload = a})
 dDryRun :: Lens' DatafeedsCustombatch (Maybe Bool)
 dDryRun = lens _dDryRun (\ s a -> s{_dDryRun = a})
 
+-- | JSONP
+dCallback :: Lens' DatafeedsCustombatch (Maybe Text)
+dCallback
+  = lens _dCallback (\ s a -> s{_dCallback = a})
+
 instance GoogleRequest DatafeedsCustombatch where
         type Rs DatafeedsCustombatch =
              DatafeedsCustomBatchResponse
         type Scopes DatafeedsCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient DatafeedsCustombatch'{..}
-          = go _dDryRun (Just AltJSON) _dPayload
+          = go _dXgafv _dUploadProtocol _dAccessToken
+              _dUploadType
+              _dDryRun
+              _dCallback
+              (Just AltJSON)
+              _dPayload
               shoppingContentService
           where go
                   = buildClient

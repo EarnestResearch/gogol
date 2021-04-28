@@ -26,7 +26,7 @@
 -- marked for deletion. Attempting to mark a nonexistent alert for deletion
 -- results in a \`NOT_FOUND\` error.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference> for @alertcenter.alerts.delete@.
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference> for @alertcenter.alerts.delete@.
 module Network.Google.Resource.AlertCenter.Alerts.Delete
     (
     -- * REST Resource
@@ -61,7 +61,8 @@ type AlertsDeleteResource =
                  QueryParam "uploadType" Text :>
                    QueryParam "customerId" Text :>
                      QueryParam "callback" Text :>
-                       QueryParam "alt" AltJSON :> Delete '[JSON] Empty
+                       QueryParam "alt" AltJSON :>
+                         Delete '[JSON] GoogleProtobufEmpty
 
 -- | Marks the specified alert for deletion. An alert that has been marked
 -- for deletion is removed from Alert Center after 30 days. Marking an
@@ -141,9 +142,9 @@ adUploadType :: Lens' AlertsDelete (Maybe Text)
 adUploadType
   = lens _adUploadType (\ s a -> s{_adUploadType = a})
 
--- | Optional. The unique identifier of the G Suite organization account of
--- the customer the alert is associated with. Inferred from the caller
--- identity if not provided.
+-- | Optional. The unique identifier of the Google Workspace organization
+-- account of the customer the alert is associated with. Inferred from the
+-- caller identity if not provided.
 adCustomerId :: Lens' AlertsDelete (Maybe Text)
 adCustomerId
   = lens _adCustomerId (\ s a -> s{_adCustomerId = a})
@@ -154,7 +155,7 @@ adCallback
   = lens _adCallback (\ s a -> s{_adCallback = a})
 
 instance GoogleRequest AlertsDelete where
-        type Rs AlertsDelete = Empty
+        type Rs AlertsDelete = GoogleProtobufEmpty
         type Scopes AlertsDelete =
              '["https://www.googleapis.com/auth/apps.alerts"]
         requestClient AlertsDelete'{..}

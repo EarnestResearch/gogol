@@ -127,7 +127,7 @@ projectsLocationsTensorflowVersionsList pPltvlParent_ =
     }
 
 
--- | The parent resource name.
+-- | Required. The parent resource name.
 pltvlParent :: Lens' ProjectsLocationsTensorflowVersionsList Text
 pltvlParent
   = lens _pltvlParent (\ s a -> s{_pltvlParent = a})

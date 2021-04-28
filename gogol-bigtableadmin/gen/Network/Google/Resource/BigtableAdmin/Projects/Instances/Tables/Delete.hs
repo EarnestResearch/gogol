@@ -123,9 +123,8 @@ pitdUploadType
   = lens _pitdUploadType
       (\ s a -> s{_pitdUploadType = a})
 
--- | The unique name of the table to be deleted. Values are of the form
--- \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the table to be deleted. Values are of the
+-- form \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitdName :: Lens' ProjectsInstancesTablesDelete Text
 pitdName = lens _pitdName (\ s a -> s{_pitdName = a})
 

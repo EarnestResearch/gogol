@@ -124,8 +124,8 @@ plfcUploadProtocol
   = lens _plfcUploadProtocol
       (\ s a -> s{_plfcUploadProtocol = a})
 
--- | The project and location in which the function should be created,
--- specified in the format \`projects\/*\/locations\/*\`
+-- | Required. The project and location in which the function should be
+-- created, specified in the format \`projects\/*\/locations\/*\`
 plfcLocation :: Lens' ProjectsLocationsFunctionsCreate Text
 plfcLocation
   = lens _plfcLocation (\ s a -> s{_plfcLocation = a})

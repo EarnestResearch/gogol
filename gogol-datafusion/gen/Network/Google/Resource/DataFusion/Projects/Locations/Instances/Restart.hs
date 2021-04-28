@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.instances.restart@ method which the
 -- 'ProjectsLocationsInstancesRestart' request conforms to.
 type ProjectsLocationsInstancesRestartResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "restart" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

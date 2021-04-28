@@ -19,9 +19,6 @@ module Network.Google.AbusiveExperienceReport.Types
     -- * Service Configuration
       abusiveExperienceReportService
 
-    -- * OAuth Scopes
-    , xapiZooScope
-
     -- * SiteSummaryResponse
     , SiteSummaryResponse
     , siteSummaryResponse
@@ -58,7 +55,3 @@ abusiveExperienceReportService
   = defaultService
       (ServiceId "abusiveexperiencereport:v1")
       "abusiveexperiencereport.googleapis.com"
-
--- | Test scope for access to the Zoo service
-xapiZooScope :: Proxy '["https://www.googleapis.com/auth/xapi.zoo"]
-xapiZooScope = Proxy

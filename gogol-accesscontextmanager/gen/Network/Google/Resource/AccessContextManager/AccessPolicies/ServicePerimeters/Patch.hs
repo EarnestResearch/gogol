@@ -20,10 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Update an Service Perimeter. The longrunning operation from this RPC
--- will have a successful status once the changes to the Service Perimeter
--- have propagated to long-lasting storage. Service Perimeter containing
--- errors will result in an error response for the first error encountered.
+-- Update a Service Perimeter. The longrunning operation from this RPC will
+-- have a successful status once the changes to the Service Perimeter have
+-- propagated to long-lasting storage. Service Perimeter containing errors
+-- will result in an error response for the first error encountered.
 --
 -- /See:/ <https://cloud.google.com/access-context-manager/docs/reference/rest/ Access Context Manager API Reference> for @accesscontextmanager.accessPolicies.servicePerimeters.patch@.
 module Network.Google.Resource.AccessContextManager.AccessPolicies.ServicePerimeters.Patch
@@ -64,10 +64,10 @@ type AccessPoliciesServicePerimetersPatchResource =
                        ReqBody '[JSON] ServicePerimeter :>
                          Patch '[JSON] Operation
 
--- | Update an Service Perimeter. The longrunning operation from this RPC
--- will have a successful status once the changes to the Service Perimeter
--- have propagated to long-lasting storage. Service Perimeter containing
--- errors will result in an error response for the first error encountered.
+-- | Update a Service Perimeter. The longrunning operation from this RPC will
+-- have a successful status once the changes to the Service Perimeter have
+-- propagated to long-lasting storage. Service Perimeter containing errors
+-- will result in an error response for the first error encountered.
 --
 -- /See:/ 'accessPoliciesServicePerimetersPatch' smart constructor.
 data AccessPoliciesServicePerimetersPatch =

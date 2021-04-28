@@ -145,8 +145,8 @@ psaPayload :: Lens' ProjectsSubscriptionsAcknowledge AcknowledgeRequest
 psaPayload
   = lens _psaPayload (\ s a -> s{_psaPayload = a})
 
--- | The subscription whose message is being acknowledged. Format is
--- \`projects\/{project}\/subscriptions\/{sub}\`.
+-- | Required. The subscription whose message is being acknowledged. Format
+-- is \`projects\/{project}\/subscriptions\/{sub}\`.
 psaSubscription :: Lens' ProjectsSubscriptionsAcknowledge Text
 psaSubscription
   = lens _psaSubscription

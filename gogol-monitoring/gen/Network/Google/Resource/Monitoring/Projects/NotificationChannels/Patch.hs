@@ -23,7 +23,7 @@
 -- Updates a notification channel. Fields not specified in the field mask
 -- remain unchanged.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.notificationChannels.patch@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.notificationChannels.patch@.
 module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Patch
     (
     -- * REST Resource
@@ -150,8 +150,8 @@ pncpPayload :: Lens' ProjectsNotificationChannelsPatch NotificationChannel
 pncpPayload
   = lens _pncpPayload (\ s a -> s{_pncpPayload = a})
 
--- | The full REST resource name for this channel. The syntax is:
--- projects\/[PROJECT_ID]\/notificationChannels\/[CHANNEL_ID] The
+-- | The full REST resource name for this channel. The format is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/notificationChannels\/[CHANNEL_ID] The
 -- [CHANNEL_ID] is automatically assigned by the server on creation.
 pncpName :: Lens' ProjectsNotificationChannelsPatch Text
 pncpName = lens _pncpName (\ s a -> s{_pncpName = a})

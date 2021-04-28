@@ -25,7 +25,7 @@
 -- and not guaranteed to remain unused. It will validate previously
 -- provided allocated ranges, find non-conflicting sub-range of requested
 -- size (expressed in number of leading bits of ipv4 network mask, as in
--- CIDR range notation). Operation
+-- CIDR range notation).
 --
 -- /See:/ <https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started Service Networking API Reference> for @servicenetworking.services.searchRange@.
 module Network.Google.Resource.ServiceNetworking.Services.SearchRange
@@ -69,7 +69,7 @@ type ServicesSearchRangeResource =
 -- and not guaranteed to remain unused. It will validate previously
 -- provided allocated ranges, find non-conflicting sub-range of requested
 -- size (expressed in number of leading bits of ipv4 network mask, as in
--- CIDR range notation). Operation
+-- CIDR range notation).
 --
 -- /See:/ 'servicesSearchRange' smart constructor.
 data ServicesSearchRange =

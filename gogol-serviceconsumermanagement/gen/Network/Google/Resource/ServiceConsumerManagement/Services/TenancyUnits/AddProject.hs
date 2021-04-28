@@ -21,7 +21,7 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Add a new tenant project to the tenancy unit. There can be a maximum of
--- 512 tenant projects in a tenancy unit. If there are previously failed
+-- 1024 tenant projects in a tenancy unit. If there are previously failed
 -- \`AddTenantProject\` calls, you might need to call
 -- \`RemoveTenantProject\` first to resolve them before you can make
 -- another call to \`AddTenantProject\` with the same tag. Operation.
@@ -64,7 +64,7 @@ type ServicesTenancyUnitsAddProjectResource =
                        Post '[JSON] Operation
 
 -- | Add a new tenant project to the tenancy unit. There can be a maximum of
--- 512 tenant projects in a tenancy unit. If there are previously failed
+-- 1024 tenant projects in a tenancy unit. If there are previously failed
 -- \`AddTenantProject\` calls, you might need to call
 -- \`RemoveTenantProject\` first to resolve them before you can make
 -- another call to \`AddTenantProject\` with the same tag. Operation.
@@ -116,7 +116,7 @@ servicesTenancyUnitsAddProject pSParent_ pSPayload_ =
     }
 
 
--- | Name of the tenancy unit. Such as
+-- | Required. Name of the tenancy unit. Such as
 -- \'services\/service.googleapis.com\/projects\/12345\/tenancyUnits\/abcd\'.
 sParent :: Lens' ServicesTenancyUnitsAddProject Text
 sParent = lens _sParent (\ s a -> s{_sParent = a})

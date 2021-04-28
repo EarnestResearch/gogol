@@ -40,6 +40,7 @@ library
         , Network.Google.Resource.ServiceUsage.Operations.Get
         , Network.Google.Resource.ServiceUsage.Operations.List
         , Network.Google.Resource.ServiceUsage.Services.BatchEnable
+        , Network.Google.Resource.ServiceUsage.Services.BatchGet
         , Network.Google.Resource.ServiceUsage.Services.Disable
         , Network.Google.Resource.ServiceUsage.Services.Enable
         , Network.Google.Resource.ServiceUsage.Services.Get
@@ -52,5 +53,5 @@ library
         , Network.Google.ServiceUsage.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

@@ -133,6 +133,12 @@ module Network.Google.FireStore.Types
     , gfavidmEndTime
     , gfavidmOperationState
 
+    -- * BatchWriteResponse
+    , BatchWriteResponse
+    , batchWriteResponse
+    , bwrStatus
+    , bwrWriteResults
+
     -- * BeginTransactionRequest
     , BeginTransactionRequest
     , beginTransactionRequest
@@ -173,6 +179,7 @@ module Network.Google.FireStore.Types
     , wTransform
     , wUpdateMask
     , wCurrentDocument
+    , wUpdateTransforms
     , wDelete
     , wUpdate
 
@@ -234,6 +241,12 @@ module Network.Google.FireStore.Types
     , rTransaction
     , rDocument
 
+    -- * BatchWriteRequest
+    , BatchWriteRequest
+    , batchWriteRequest
+    , bwrLabels
+    , bwrWrites
+
     -- * GoogleFirestoreAdminV1IndexQueryScope
     , GoogleFirestoreAdminV1IndexQueryScope (..)
 
@@ -285,6 +298,12 @@ module Network.Google.FireStore.Types
 
     -- * ValueNullValue
     , ValueNullValue (..)
+
+    -- * PartitionQueryResponse
+    , PartitionQueryResponse
+    , partitionQueryResponse
+    , pqrNextPageToken
+    , pqrPartitions
 
     -- * StatusDetailsItem
     , StatusDetailsItem
@@ -457,6 +476,11 @@ module Network.Google.FireStore.Types
     -- * FieldFilterOp
     , FieldFilterOp (..)
 
+    -- * BatchWriteRequestLabels
+    , BatchWriteRequestLabels
+    , batchWriteRequestLabels
+    , bwrlAddtional
+
     -- * Projection
     , Projection
     , projection
@@ -606,6 +630,14 @@ module Network.Google.FireStore.Types
     -- * GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState
     , GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState (..)
 
+    -- * PartitionQueryRequest
+    , PartitionQueryRequest
+    , partitionQueryRequest
+    , pqrStructuredQuery
+    , pqrPageToken
+    , pqrPageSize
+    , pqrPartitionCount
+
     -- * UnaryFilter
     , UnaryFilter
     , unaryFilter
@@ -623,7 +655,7 @@ fireStoreService
   = defaultService (ServiceId "firestore:v1")
       "firestore.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

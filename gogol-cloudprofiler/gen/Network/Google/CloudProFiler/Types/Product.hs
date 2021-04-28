@@ -180,7 +180,7 @@ instance ToJSON ProFile where
 -- /See:/ 'createProFileRequest' smart constructor.
 data CreateProFileRequest =
   CreateProFileRequest'
-    { _cpfrProFileType :: !(Maybe [Text])
+    { _cpfrProFileType :: !(Maybe [CreateProFileRequestProFileTypeItem])
     , _cpfrDeployment :: !(Maybe Deployment)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -200,7 +200,7 @@ createProFileRequest =
 
 
 -- | One or more profile types that the agent is capable of providing.
-cpfrProFileType :: Lens' CreateProFileRequest [Text]
+cpfrProFileType :: Lens' CreateProFileRequest [CreateProFileRequestProFileTypeItem]
 cpfrProFileType
   = lens _cpfrProFileType
       (\ s a -> s{_cpfrProFileType = a})

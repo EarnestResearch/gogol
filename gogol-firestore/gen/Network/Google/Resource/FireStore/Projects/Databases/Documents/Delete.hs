@@ -150,7 +150,7 @@ pdddCurrentDocumentUpdateTime
       (\ s a -> s{_pdddCurrentDocumentUpdateTime = a})
       . mapping _DateTime
 
--- | The resource name of the Document to delete. In the format:
+-- | Required. The resource name of the Document to delete. In the format:
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\/{document_path}\`.
 pdddName :: Lens' ProjectsDatabasesDocumentsDelete Text
 pdddName = lens _pdddName (\ s a -> s{_pdddName = a})

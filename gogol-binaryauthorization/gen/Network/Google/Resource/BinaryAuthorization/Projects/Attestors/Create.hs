@@ -51,7 +51,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.attestors.create@ method which the
 -- 'ProjectsAttestorsCreate' request conforms to.
 type ProjectsAttestorsCreateResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "attestors" :>
            QueryParam "$.xgafv" Xgafv :>

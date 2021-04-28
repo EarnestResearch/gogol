@@ -60,7 +60,8 @@ type EncodedUpdatesGetResource =
                      QueryParam "clientVersion" Text :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :>
-                           Get '[JSON] FetchThreatListUpdatesResponse
+                           Get '[JSON]
+                             GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse
 
 -- |
 --
@@ -162,7 +163,7 @@ eugCallback
 
 instance GoogleRequest EncodedUpdatesGet where
         type Rs EncodedUpdatesGet =
-             FetchThreatListUpdatesResponse
+             GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponse
         type Scopes EncodedUpdatesGet = '[]
         requestClient EncodedUpdatesGet'{..}
           = go _eugEncodedRequest _eugClientId _eugXgafv

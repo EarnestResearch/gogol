@@ -125,8 +125,8 @@ sgUploadType :: Lens' ServicesGet (Maybe Text)
 sgUploadType
   = lens _sgUploadType (\ s a -> s{_sgUploadType = a})
 
--- | The name of the service. See the \`ServiceManager\` overview for naming
--- requirements. For example: \`example.googleapis.com\`.
+-- | Required. The name of the service. See the \`ServiceManager\` overview
+-- for naming requirements. For example: \`example.googleapis.com\`.
 sgServiceName :: Lens' ServicesGet Text
 sgServiceName
   = lens _sgServiceName

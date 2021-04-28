@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Gets indexed item statistics for a single data source.
+-- Gets indexed item statistics for a single data source. **Note:** This
+-- API requires a standard end user account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.stats.index.datasources.get@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.stats.index.datasources.get@.
 module Network.Google.Resource.CloudSearch.Stats.Index.Datasources.Get
     (
     -- * REST Resource
@@ -71,7 +72,8 @@ type StatsIndexDatasourcesGetResource =
                                    QueryParam "alt" AltJSON :>
                                      Get '[JSON] GetDataSourceIndexStatsResponse
 
--- | Gets indexed item statistics for a single data source.
+-- | Gets indexed item statistics for a single data source. **Note:** This
+-- API requires a standard end user account to execute.
 --
 -- /See:/ 'statsIndexDatasourcesGet' smart constructor.
 data StatsIndexDatasourcesGet =

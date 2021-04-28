@@ -21,9 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates a new metric descriptor. User-created metric descriptors define
--- custom metrics.
+-- custom metrics (https:\/\/cloud.google.com\/monitoring\/custom-metrics).
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.metricDescriptors.create@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.metricDescriptors.create@.
 module Network.Google.Resource.Monitoring.Projects.MetricDescriptors.Create
     (
     -- * REST Resource
@@ -62,7 +62,7 @@ type ProjectsMetricDescriptorsCreateResource =
                          Post '[JSON] MetricDescriptor
 
 -- | Creates a new metric descriptor. User-created metric descriptors define
--- custom metrics.
+-- custom metrics (https:\/\/cloud.google.com\/monitoring\/custom-metrics).
 --
 -- /See:/ 'projectsMetricDescriptorsCreate' smart constructor.
 data ProjectsMetricDescriptorsCreate =
@@ -139,8 +139,9 @@ pmdcPayload :: Lens' ProjectsMetricDescriptorsCreate MetricDescriptor
 pmdcPayload
   = lens _pmdcPayload (\ s a -> s{_pmdcPayload = a})
 
--- | The project on which to execute the request. The format is
--- \"projects\/{project_id_or_number}\".
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) on which
+-- to execute the request. The format is: 4 projects\/PROJECT_ID_OR_NUMBER
 pmdcName :: Lens' ProjectsMetricDescriptorsCreate Text
 pmdcName = lens _pmdcName (\ s a -> s{_pmdcName = a})
 

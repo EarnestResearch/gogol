@@ -42,10 +42,6 @@ library
         , Network.Google.Resource.Webmasters.Sites.Delete
         , Network.Google.Resource.Webmasters.Sites.Get
         , Network.Google.Resource.Webmasters.Sites.List
-        , Network.Google.Resource.Webmasters.URLCrawlErrorsSamples.Get
-        , Network.Google.Resource.Webmasters.URLCrawlErrorsSamples.List
-        , Network.Google.Resource.Webmasters.URLCrawlErrorsSamples.MarkAsFixed
-        , Network.Google.Resource.Webmasters.URLCrawlErrorscounts.Query
         , Network.Google.WebmasterTools
         , Network.Google.WebmasterTools.Types
 
@@ -54,5 +50,5 @@ library
         , Network.Google.WebmasterTools.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

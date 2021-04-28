@@ -146,7 +146,7 @@ prcgClusterName
   = lens _prcgClusterName
       (\ s a -> s{_prcgClusterName = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prcgRegion :: Lens' ProjectsRegionsClustersGet Text
 prcgRegion
   = lens _prcgRegion (\ s a -> s{_prcgRegion = a})

@@ -22,7 +22,7 @@
 --
 -- Gets the description of an exclusion.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.exclusions.get@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.exclusions.get@.
 module Network.Google.Resource.Logging.Exclusions.Get
     (
     -- * REST Resource

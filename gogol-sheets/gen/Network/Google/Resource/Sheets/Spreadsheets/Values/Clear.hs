@@ -156,7 +156,7 @@ svcPayload :: Lens' SpreadsheetsValuesClear ClearValuesRequest
 svcPayload
   = lens _svcPayload (\ s a -> s{_svcPayload = a})
 
--- | The A1 notation of the values to clear.
+-- | The A1 notation or R1C1 notation of the values to clear.
 svcRange :: Lens' SpreadsheetsValuesClear Text
 svcRange = lens _svcRange (\ s a -> s{_svcRange = a})
 

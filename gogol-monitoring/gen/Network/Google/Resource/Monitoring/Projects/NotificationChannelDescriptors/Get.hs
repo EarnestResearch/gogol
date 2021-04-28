@@ -23,7 +23,7 @@
 -- Gets a single channel descriptor. The descriptor indicates which fields
 -- are expected \/ permitted for a notification channel of the given type.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.notificationChannelDescriptors.get@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.notificationChannelDescriptors.get@.
 module Network.Google.Resource.Monitoring.Projects.NotificationChannelDescriptors.Get
     (
     -- * REST Resource
@@ -127,8 +127,9 @@ pncdgUploadType
   = lens _pncdgUploadType
       (\ s a -> s{_pncdgUploadType = a})
 
--- | The channel type for which to execute the request. The format is
--- projects\/[PROJECT_ID]\/notificationChannelDescriptors\/{channel_type}.
+-- | Required. The channel type for which to execute the request. The format
+-- is:
+-- projects\/[PROJECT_ID_OR_NUMBER]\/notificationChannelDescriptors\/[CHANNEL_TYPE]
 pncdgName :: Lens' ProjectsNotificationChannelDescriptorsGet Text
 pncdgName
   = lens _pncdgName (\ s a -> s{_pncdgName = a})

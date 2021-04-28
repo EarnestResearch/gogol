@@ -154,7 +154,7 @@ srcPayload :: Lens' ServicesRolloutsCreate Rollout
 srcPayload
   = lens _srcPayload (\ s a -> s{_srcPayload = a})
 
--- | The name of the service. See the
+-- | Required. The name of the service. See the
 -- [overview](\/service-management\/overview) for naming requirements. For
 -- example: \`example.googleapis.com\`.
 srcServiceName :: Lens' ServicesRolloutsCreate Text

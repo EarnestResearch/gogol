@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a datasource.
+-- Creates a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.datasources.create@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.datasources.create@.
 module Network.Google.Resource.CloudSearch.Settings.Datasources.Create
     (
     -- * REST Resource
@@ -58,7 +59,8 @@ type SettingsDatasourcesCreateResource =
                      QueryParam "alt" AltJSON :>
                        ReqBody '[JSON] DataSource :> Post '[JSON] Operation
 
--- | Creates a datasource.
+-- | Creates a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
 -- /See:/ 'settingsDatasourcesCreate' smart constructor.
 data SettingsDatasourcesCreate =

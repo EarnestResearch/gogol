@@ -115,7 +115,7 @@ projectsLocationsOperationsList pPlolParent_ =
 
 
 -- | The parent (project and location) where the operations will be listed.
--- Specified in the format \'projects\/*\/locations\/*\'. Location \"-\"
+-- Specified in the format \`projects\/*\/locations\/*\`. Location \"-\"
 -- matches all zones and all regions.
 plolParent :: Lens' ProjectsLocationsOperationsList Text
 plolParent
@@ -145,9 +145,9 @@ plolUploadType
       (\ s a -> s{_plolUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) to return operations for, or
--- \`-\` for all zones. This field has been deprecated and replaced by the
--- parent field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) to
+-- return operations for, or \`-\` for all zones. This field has been
+-- deprecated and replaced by the parent field.
 plolZone :: Lens' ProjectsLocationsOperationsList (Maybe Text)
 plolZone = lens _plolZone (\ s a -> s{_plolZone = a})
 

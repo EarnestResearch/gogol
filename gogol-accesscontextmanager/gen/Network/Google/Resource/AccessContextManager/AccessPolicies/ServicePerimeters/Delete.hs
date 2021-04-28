@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Delete an Service Perimeter by resource name. The longrunning operation
+-- Delete a Service Perimeter by resource name. The longrunning operation
 -- from this RPC will have a successful status once the Service Perimeter
 -- has been removed from long-lasting storage.
 --
@@ -58,7 +58,7 @@ type AccessPoliciesServicePerimetersDeleteResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Operation
 
--- | Delete an Service Perimeter by resource name. The longrunning operation
+-- | Delete a Service Perimeter by resource name. The longrunning operation
 -- from this RPC will have a successful status once the Service Perimeter
 -- has been removed from long-lasting storage.
 --

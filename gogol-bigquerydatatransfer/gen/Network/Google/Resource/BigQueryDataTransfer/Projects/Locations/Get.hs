@@ -22,7 +22,7 @@
 --
 -- Gets information about a location.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.get@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.get@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.Get
     (
     -- * REST Resource

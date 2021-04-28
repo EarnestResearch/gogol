@@ -39,6 +39,7 @@ module Network.Google.Resource.People.ContactGroups.BatchGet
     , cgbgUploadProtocol
     , cgbgAccessToken
     , cgbgUploadType
+    , cgbgGroupFields
     , cgbgResourceNames
     , cgbgCallback
     ) where
@@ -56,10 +57,11 @@ type ContactGroupsBatchGetResource =
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParams "resourceNames" Text :>
-                     QueryParam "callback" Text :>
-                       QueryParam "alt" AltJSON :>
-                         Get '[JSON] BatchGetContactGroupsResponse
+                   QueryParam "groupFields" GFieldMask :>
+                     QueryParams "resourceNames" Text :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           Get '[JSON] BatchGetContactGroupsResponse
 
 -- | Get a list of contact groups owned by the authenticated user by
 -- specifying a list of contact group resource names.
@@ -72,6 +74,7 @@ data ContactGroupsBatchGet =
     , _cgbgUploadProtocol :: !(Maybe Text)
     , _cgbgAccessToken :: !(Maybe Text)
     , _cgbgUploadType :: !(Maybe Text)
+    , _cgbgGroupFields :: !(Maybe GFieldMask)
     , _cgbgResourceNames :: !(Maybe [Text])
     , _cgbgCallback :: !(Maybe Text)
     }
@@ -92,6 +95,8 @@ data ContactGroupsBatchGet =
 --
 -- * 'cgbgUploadType'
 --
+-- * 'cgbgGroupFields'
+--
 -- * 'cgbgResourceNames'
 --
 -- * 'cgbgCallback'
@@ -104,6 +109,7 @@ contactGroupsBatchGet =
     , _cgbgUploadProtocol = Nothing
     , _cgbgAccessToken = Nothing
     , _cgbgUploadType = Nothing
+    , _cgbgGroupFields = Nothing
     , _cgbgResourceNames = Nothing
     , _cgbgCallback = Nothing
     }
@@ -114,7 +120,8 @@ cgbgXgafv :: Lens' ContactGroupsBatchGet (Maybe Xgafv)
 cgbgXgafv
   = lens _cgbgXgafv (\ s a -> s{_cgbgXgafv = a})
 
--- | Specifies the maximum number of members to return for each group.
+-- | Optional. Specifies the maximum number of members to return for each
+-- group. Defaults to 0 if not set, which will return zero members.
 cgbgMaxMembers :: Lens' ContactGroupsBatchGet (Maybe Int32)
 cgbgMaxMembers
   = lens _cgbgMaxMembers
@@ -139,7 +146,16 @@ cgbgUploadType
   = lens _cgbgUploadType
       (\ s a -> s{_cgbgUploadType = a})
 
--- | The resource names of the contact groups to get.
+-- | Optional. A field mask to restrict which fields on the group are
+-- returned. Defaults to \`metadata\`, \`groupType\`, \`memberCount\`, and
+-- \`name\` if not set or set to empty. Valid fields are: * clientData *
+-- groupType * memberCount * metadata * name
+cgbgGroupFields :: Lens' ContactGroupsBatchGet (Maybe GFieldMask)
+cgbgGroupFields
+  = lens _cgbgGroupFields
+      (\ s a -> s{_cgbgGroupFields = a})
+
+-- | Required. The resource names of the contact groups to get.
 cgbgResourceNames :: Lens' ContactGroupsBatchGet [Text]
 cgbgResourceNames
   = lens _cgbgResourceNames
@@ -162,6 +178,7 @@ instance GoogleRequest ContactGroupsBatchGet where
           = go _cgbgXgafv _cgbgMaxMembers _cgbgUploadProtocol
               _cgbgAccessToken
               _cgbgUploadType
+              _cgbgGroupFields
               (_cgbgResourceNames ^. _Default)
               _cgbgCallback
               (Just AltJSON)

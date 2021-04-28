@@ -21,9 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Lists metric descriptors that match a filter. This method does not
--- require a Stackdriver account.
+-- require a Workspace.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.metricDescriptors.list@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.metricDescriptors.list@.
 module Network.Google.Resource.Monitoring.Projects.MetricDescriptors.List
     (
     -- * REST Resource
@@ -66,7 +66,7 @@ type ProjectsMetricDescriptorsListResource =
                              Get '[JSON] ListMetricDescriptorsResponse
 
 -- | Lists metric descriptors that match a filter. This method does not
--- require a Stackdriver account.
+-- require a Workspace.
 --
 -- /See:/ 'projectsMetricDescriptorsList' smart constructor.
 data ProjectsMetricDescriptorsList =
@@ -145,15 +145,19 @@ pmdlUploadType
   = lens _pmdlUploadType
       (\ s a -> s{_pmdlUploadType = a})
 
--- | The project on which to execute the request. The format is
--- \"projects\/{project_id_or_number}\".
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) on which
+-- to execute the request. The format is: projects\/[PROJECT_ID_OR_NUMBER]
 pmdlName :: Lens' ProjectsMetricDescriptorsList Text
 pmdlName = lens _pmdlName (\ s a -> s{_pmdlName = a})
 
 -- | If this field is empty, all custom and system-defined metric descriptors
--- are returned. Otherwise, the filter specifies which metric descriptors
--- are to be returned. For example, the following filter matches all custom
--- metrics: metric.type = starts_with(\"custom.googleapis.com\/\")
+-- are returned. Otherwise, the filter
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3\/filters) specifies
+-- which metric descriptors are to be returned. For example, the following
+-- filter matches all custom metrics
+-- (https:\/\/cloud.google.com\/monitoring\/custom-metrics): metric.type =
+-- starts_with(\"custom.googleapis.com\/\")
 pmdlFilter :: Lens' ProjectsMetricDescriptorsList (Maybe Text)
 pmdlFilter
   = lens _pmdlFilter (\ s a -> s{_pmdlFilter = a})

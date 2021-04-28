@@ -29,7 +29,7 @@
 -- \`debuggee_id\` format. Agents must handle \`debuggee_id\` value
 -- changing upon re-registration.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.controller.debuggees.register@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.controller.debuggees.register@.
 module Network.Google.Resource.CloudDebugger.Controller.Debuggees.Register
     (
     -- * REST Resource

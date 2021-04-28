@@ -27,7 +27,9 @@ import Network.Google.Prelude
 -- /See:/ 'sourcePosition' smart constructor.
 data SourcePosition =
   SourcePosition'
-    { _spLine :: !(Maybe (Textual Int32))
+    { _spCurrentOffSet :: !(Maybe (Textual Int32))
+    , _spLine :: !(Maybe (Textual Int32))
+    , _spEndOffSet :: !(Maybe (Textual Int32))
     , _spColumn :: !(Maybe (Textual Int32))
     , _spFileName :: !(Maybe Text)
     }
@@ -38,7 +40,11 @@ data SourcePosition =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'spCurrentOffSet'
+--
 -- * 'spLine'
+--
+-- * 'spEndOffSet'
 --
 -- * 'spColumn'
 --
@@ -47,13 +53,31 @@ sourcePosition
     :: SourcePosition
 sourcePosition =
   SourcePosition'
-    {_spLine = Nothing, _spColumn = Nothing, _spFileName = Nothing}
+    { _spCurrentOffSet = Nothing
+    , _spLine = Nothing
+    , _spEndOffSet = Nothing
+    , _spColumn = Nothing
+    , _spFileName = Nothing
+    }
 
+
+-- | Start position relative to the beginning of the file.
+spCurrentOffSet :: Lens' SourcePosition (Maybe Int32)
+spCurrentOffSet
+  = lens _spCurrentOffSet
+      (\ s a -> s{_spCurrentOffSet = a})
+      . mapping _Coerce
 
 -- | Line number of the source fragment. 1-based.
 spLine :: Lens' SourcePosition (Maybe Int32)
 spLine
   = lens _spLine (\ s a -> s{_spLine = a}) .
+      mapping _Coerce
+
+-- | End position relative to the beginning of the file.
+spEndOffSet :: Lens' SourcePosition (Maybe Int32)
+spEndOffSet
+  = lens _spEndOffSet (\ s a -> s{_spEndOffSet = a}) .
       mapping _Coerce
 
 -- | First column on the source line associated with the source fragment.
@@ -72,16 +96,86 @@ instance FromJSON SourcePosition where
           = withObject "SourcePosition"
               (\ o ->
                  SourcePosition' <$>
-                   (o .:? "line") <*> (o .:? "column") <*>
-                     (o .:? "fileName"))
+                   (o .:? "currentOffset") <*> (o .:? "line") <*>
+                     (o .:? "endOffset")
+                     <*> (o .:? "column")
+                     <*> (o .:? "fileName"))
 
 instance ToJSON SourcePosition where
         toJSON SourcePosition'{..}
           = object
               (catMaybes
-                 [("line" .=) <$> _spLine,
+                 [("currentOffset" .=) <$> _spCurrentOffSet,
+                  ("line" .=) <$> _spLine,
+                  ("endOffset" .=) <$> _spEndOffSet,
                   ("column" .=) <$> _spColumn,
                   ("fileName" .=) <$> _spFileName])
+
+-- | Describes where in a file an expression is found and what it was
+-- evaluated to over the course of its use.
+--
+-- /See:/ 'expressionReport' smart constructor.
+data ExpressionReport =
+  ExpressionReport'
+    { _erSourcePosition :: !(Maybe SourcePosition)
+    , _erValues :: !(Maybe [ValueCount])
+    , _erChildren :: !(Maybe [ExpressionReport])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ExpressionReport' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'erSourcePosition'
+--
+-- * 'erValues'
+--
+-- * 'erChildren'
+expressionReport
+    :: ExpressionReport
+expressionReport =
+  ExpressionReport'
+    {_erSourcePosition = Nothing, _erValues = Nothing, _erChildren = Nothing}
+
+
+-- | Position of expression in original rules source.
+erSourcePosition :: Lens' ExpressionReport (Maybe SourcePosition)
+erSourcePosition
+  = lens _erSourcePosition
+      (\ s a -> s{_erSourcePosition = a})
+
+-- | Values that this expression evaluated to when encountered.
+erValues :: Lens' ExpressionReport [ValueCount]
+erValues
+  = lens _erValues (\ s a -> s{_erValues = a}) .
+      _Default
+      . _Coerce
+
+-- | Subexpressions
+erChildren :: Lens' ExpressionReport [ExpressionReport]
+erChildren
+  = lens _erChildren (\ s a -> s{_erChildren = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON ExpressionReport where
+        parseJSON
+          = withObject "ExpressionReport"
+              (\ o ->
+                 ExpressionReport' <$>
+                   (o .:? "sourcePosition") <*>
+                     (o .:? "values" .!= mempty)
+                     <*> (o .:? "children" .!= mempty))
+
+instance ToJSON ExpressionReport where
+        toJSON ExpressionReport'{..}
+          = object
+              (catMaybes
+                 [("sourcePosition" .=) <$> _erSourcePosition,
+                  ("values" .=) <$> _erValues,
+                  ("children" .=) <$> _erChildren])
 
 -- | \`TestCase\` messages provide the request context and an expectation as
 -- to whether the given context will be allowed or denied. Test cases may
@@ -94,7 +188,9 @@ instance ToJSON SourcePosition where
 -- /See:/ 'testCase' smart constructor.
 data TestCase =
   TestCase'
-    { _tcResource :: !(Maybe JSONValue)
+    { _tcExpressionReportLevel :: !(Maybe TestCaseExpressionReportLevel)
+    , _tcPathEncoding :: !(Maybe TestCasePathEncoding)
+    , _tcResource :: !(Maybe JSONValue)
     , _tcExpectation :: !(Maybe TestCaseExpectation)
     , _tcFunctionMocks :: !(Maybe [FunctionMock])
     , _tcRequest :: !(Maybe JSONValue)
@@ -105,6 +201,10 @@ data TestCase =
 -- | Creates a value of 'TestCase' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'tcExpressionReportLevel'
+--
+-- * 'tcPathEncoding'
 --
 -- * 'tcResource'
 --
@@ -117,12 +217,26 @@ testCase
     :: TestCase
 testCase =
   TestCase'
-    { _tcResource = Nothing
+    { _tcExpressionReportLevel = Nothing
+    , _tcPathEncoding = Nothing
+    , _tcResource = Nothing
     , _tcExpectation = Nothing
     , _tcFunctionMocks = Nothing
     , _tcRequest = Nothing
     }
 
+
+-- | Specifies what should be included in the response.
+tcExpressionReportLevel :: Lens' TestCase (Maybe TestCaseExpressionReportLevel)
+tcExpressionReportLevel
+  = lens _tcExpressionReportLevel
+      (\ s a -> s{_tcExpressionReportLevel = a})
+
+-- | Specifies whether paths (such as request.path) are encoded and how.
+tcPathEncoding :: Lens' TestCase (Maybe TestCasePathEncoding)
+tcPathEncoding
+  = lens _tcPathEncoding
+      (\ s a -> s{_tcPathEncoding = a})
 
 -- | Optional resource value as it appears in persistent storage before the
 -- request is fulfilled. The resource type depends on the \`request.path\`
@@ -165,15 +279,21 @@ instance FromJSON TestCase where
           = withObject "TestCase"
               (\ o ->
                  TestCase' <$>
-                   (o .:? "resource") <*> (o .:? "expectation") <*>
-                     (o .:? "functionMocks" .!= mempty)
+                   (o .:? "expressionReportLevel") <*>
+                     (o .:? "pathEncoding")
+                     <*> (o .:? "resource")
+                     <*> (o .:? "expectation")
+                     <*> (o .:? "functionMocks" .!= mempty)
                      <*> (o .:? "request"))
 
 instance ToJSON TestCase where
         toJSON TestCase'{..}
           = object
               (catMaybes
-                 [("resource" .=) <$> _tcResource,
+                 [("expressionReportLevel" .=) <$>
+                    _tcExpressionReportLevel,
+                  ("pathEncoding" .=) <$> _tcPathEncoding,
+                  ("resource" .=) <$> _tcResource,
                   ("expectation" .=) <$> _tcExpectation,
                   ("functionMocks" .=) <$> _tcFunctionMocks,
                   ("request" .=) <$> _tcRequest])
@@ -672,6 +792,7 @@ instance ToJSON Arg where
 data Ruleset =
   Ruleset'
     { _rulName :: !(Maybe Text)
+    , _rulMetadata :: !(Maybe Metadata)
     , _rulSource :: !(Maybe Source)
     , _rulCreateTime :: !(Maybe DateTime')
     }
@@ -684,13 +805,20 @@ data Ruleset =
 --
 -- * 'rulName'
 --
+-- * 'rulMetadata'
+--
 -- * 'rulSource'
 --
 -- * 'rulCreateTime'
 ruleset
     :: Ruleset
 ruleset =
-  Ruleset' {_rulName = Nothing, _rulSource = Nothing, _rulCreateTime = Nothing}
+  Ruleset'
+    { _rulName = Nothing
+    , _rulMetadata = Nothing
+    , _rulSource = Nothing
+    , _rulCreateTime = Nothing
+    }
 
 
 -- | Name of the \`Ruleset\`. The ruleset_id is auto generated by the
@@ -698,6 +826,11 @@ ruleset =
 -- Output only.
 rulName :: Lens' Ruleset (Maybe Text)
 rulName = lens _rulName (\ s a -> s{_rulName = a})
+
+-- | The metadata for this ruleset. Output only.
+rulMetadata :: Lens' Ruleset (Maybe Metadata)
+rulMetadata
+  = lens _rulMetadata (\ s a -> s{_rulMetadata = a})
 
 -- | \`Source\` for the \`Ruleset\`.
 rulSource :: Lens' Ruleset (Maybe Source)
@@ -716,14 +849,16 @@ instance FromJSON Ruleset where
           = withObject "Ruleset"
               (\ o ->
                  Ruleset' <$>
-                   (o .:? "name") <*> (o .:? "source") <*>
-                     (o .:? "createTime"))
+                   (o .:? "name") <*> (o .:? "metadata") <*>
+                     (o .:? "source")
+                     <*> (o .:? "createTime"))
 
 instance ToJSON Ruleset where
         toJSON Ruleset'{..}
           = object
               (catMaybes
                  [("name" .=) <$> _rulName,
+                  ("metadata" .=) <$> _rulMetadata,
                   ("source" .=) <$> _rulSource,
                   ("createTime" .=) <$> _rulCreateTime])
 
@@ -838,6 +973,7 @@ instance ToJSON GetReleaseExecutableResponse where
 data TestResult =
   TestResult'
     { _trState :: !(Maybe TestResultState)
+    , _trExpressionReports :: !(Maybe [ExpressionReport])
     , _trFunctionCalls :: !(Maybe [FunctionCall])
     , _trVisitedExpressions :: !(Maybe [VisitedExpression])
     , _trErrorPosition :: !(Maybe SourcePosition)
@@ -852,6 +988,8 @@ data TestResult =
 --
 -- * 'trState'
 --
+-- * 'trExpressionReports'
+--
 -- * 'trFunctionCalls'
 --
 -- * 'trVisitedExpressions'
@@ -864,6 +1002,7 @@ testResult
 testResult =
   TestResult'
     { _trState = Nothing
+    , _trExpressionReports = Nothing
     , _trFunctionCalls = Nothing
     , _trVisitedExpressions = Nothing
     , _trErrorPosition = Nothing
@@ -874,6 +1013,18 @@ testResult =
 -- | State of the test.
 trState :: Lens' TestResult (Maybe TestResultState)
 trState = lens _trState (\ s a -> s{_trState = a})
+
+-- | The mapping from expression in the ruleset AST to the values they were
+-- evaluated to. Partially-nested to mirror AST structure. Note that this
+-- field is actually tracking expressions and not permission statements in
+-- contrast to the \"visited_expressions\" field above. Literal expressions
+-- are omitted.
+trExpressionReports :: Lens' TestResult [ExpressionReport]
+trExpressionReports
+  = lens _trExpressionReports
+      (\ s a -> s{_trExpressionReports = a})
+      . _Default
+      . _Coerce
 
 -- | The set of function calls made to service-defined methods. Function
 -- calls are included in the order in which they are encountered during
@@ -927,7 +1078,8 @@ instance FromJSON TestResult where
               (\ o ->
                  TestResult' <$>
                    (o .:? "state") <*>
-                     (o .:? "functionCalls" .!= mempty)
+                     (o .:? "expressionReports" .!= mempty)
+                     <*> (o .:? "functionCalls" .!= mempty)
                      <*> (o .:? "visitedExpressions" .!= mempty)
                      <*> (o .:? "errorPosition")
                      <*> (o .:? "debugMessages" .!= mempty))
@@ -937,10 +1089,48 @@ instance ToJSON TestResult where
           = object
               (catMaybes
                  [("state" .=) <$> _trState,
+                  ("expressionReports" .=) <$> _trExpressionReports,
                   ("functionCalls" .=) <$> _trFunctionCalls,
                   ("visitedExpressions" .=) <$> _trVisitedExpressions,
                   ("errorPosition" .=) <$> _trErrorPosition,
                   ("debugMessages" .=) <$> _trDebugMessages])
+
+-- | Metadata for a Ruleset.
+--
+-- /See:/ 'metadata' smart constructor.
+newtype Metadata =
+  Metadata'
+    { _mServices :: Maybe [Text]
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Metadata' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'mServices'
+metadata
+    :: Metadata
+metadata = Metadata' {_mServices = Nothing}
+
+
+-- | Services that this ruleset has declarations for (e.g.,
+-- \"cloud.firestore\"). There may be 0+ of these.
+mServices :: Lens' Metadata [Text]
+mServices
+  = lens _mServices (\ s a -> s{_mServices = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON Metadata where
+        parseJSON
+          = withObject "Metadata"
+              (\ o -> Metadata' <$> (o .:? "services" .!= mempty))
+
+instance ToJSON Metadata where
+        toJSON Metadata'{..}
+          = object (catMaybes [("services" .=) <$> _mServices])
 
 -- | \`Source\` is one or more \`File\` messages comprising a logical set of
 -- rules.
@@ -977,6 +1167,53 @@ instance FromJSON Source where
 instance ToJSON Source where
         toJSON Source'{..}
           = object (catMaybes [("files" .=) <$> _sFiles])
+
+-- | Tuple for how many times an Expression was evaluated to a particular
+-- ExpressionValue.
+--
+-- /See:/ 'valueCount' smart constructor.
+data ValueCount =
+  ValueCount'
+    { _vcValue :: !(Maybe JSONValue)
+    , _vcCount :: !(Maybe (Textual Int32))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ValueCount' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'vcValue'
+--
+-- * 'vcCount'
+valueCount
+    :: ValueCount
+valueCount = ValueCount' {_vcValue = Nothing, _vcCount = Nothing}
+
+
+-- | The return value of the expression
+vcValue :: Lens' ValueCount (Maybe JSONValue)
+vcValue = lens _vcValue (\ s a -> s{_vcValue = a})
+
+-- | The amount of times that expression returned.
+vcCount :: Lens' ValueCount (Maybe Int32)
+vcCount
+  = lens _vcCount (\ s a -> s{_vcCount = a}) .
+      mapping _Coerce
+
+instance FromJSON ValueCount where
+        parseJSON
+          = withObject "ValueCount"
+              (\ o ->
+                 ValueCount' <$> (o .:? "value") <*> (o .:? "count"))
+
+instance ToJSON ValueCount where
+        toJSON ValueCount'{..}
+          = object
+              (catMaybes
+                 [("value" .=) <$> _vcValue,
+                  ("count" .=) <$> _vcCount])
 
 -- | \`TestSuite\` is a collection of \`TestCase\` instances that validate
 -- the logical correctness of a \`Ruleset\`. The \`TestSuite\` may be

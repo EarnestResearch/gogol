@@ -159,8 +159,8 @@ pllPageToken :: Lens' ProjectsLocationsList (Maybe Text)
 pllPageToken
   = lens _pllPageToken (\ s a -> s{_pllPageToken = a})
 
--- | The maximum number of results to return. If not set, the service will
--- select a default.
+-- | The maximum number of results to return. If not set, the service selects
+-- a default.
 pllPageSize :: Lens' ProjectsLocationsList (Maybe Int32)
 pllPageSize
   = lens _pllPageSize (\ s a -> s{_pllPageSize = a}) .

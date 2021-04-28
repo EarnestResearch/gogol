@@ -22,7 +22,7 @@
 --
 -- Deletes the breakpoint from the debuggee.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.delete@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.delete@.
 module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.Delete
     (
     -- * REST Resource
@@ -139,20 +139,20 @@ ddbdUploadType
   = lens _ddbdUploadType
       (\ s a -> s{_ddbdUploadType = a})
 
--- | ID of the breakpoint to delete.
+-- | Required. ID of the breakpoint to delete.
 ddbdBreakpointId :: Lens' DebuggerDebuggeesBreakpointsDelete Text
 ddbdBreakpointId
   = lens _ddbdBreakpointId
       (\ s a -> s{_ddbdBreakpointId = a})
 
--- | ID of the debuggee whose breakpoint to delete.
+-- | Required. ID of the debuggee whose breakpoint to delete.
 ddbdDebuggeeId :: Lens' DebuggerDebuggeesBreakpointsDelete Text
 ddbdDebuggeeId
   = lens _ddbdDebuggeeId
       (\ s a -> s{_ddbdDebuggeeId = a})
 
--- | The client version making the call. Schema: \`domain\/type\/version\`
--- (e.g., \`google.com\/intellij\/v1\`).
+-- | Required. The client version making the call. Schema:
+-- \`domain\/type\/version\` (e.g., \`google.com\/intellij\/v1\`).
 ddbdClientVersion :: Lens' DebuggerDebuggeesBreakpointsDelete (Maybe Text)
 ddbdClientVersion
   = lens _ddbdClientVersion

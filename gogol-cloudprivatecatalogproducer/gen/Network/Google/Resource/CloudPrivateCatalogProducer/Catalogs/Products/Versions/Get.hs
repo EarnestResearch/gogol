@@ -22,7 +22,7 @@
 --
 -- Returns the requested Version resource.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.get@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.get@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Versions.Get
     (
     -- * REST Resource

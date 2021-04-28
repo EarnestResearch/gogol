@@ -50,6 +50,7 @@ module Network.Google.Resource.Storage.Objects.Rewrite
     , orIfMetagenerationNotMatch
     , orIfSourceGenerationNotMatch
     , orProjection
+    , orProvisionalUserProject
     , orSourceGeneration
     , orDestinationKmsKeyName
     , orRewriteToken
@@ -109,24 +110,30 @@ type ObjectsRewriteResource =
                                                  QueryParam "projection"
                                                    ObjectsRewriteProjection
                                                    :>
-                                                   QueryParam "sourceGeneration"
-                                                     (Textual Int64)
+                                                   QueryParam
+                                                     "provisionalUserProject"
+                                                     Text
                                                      :>
                                                      QueryParam
-                                                       "destinationKmsKeyName"
-                                                       Text
+                                                       "sourceGeneration"
+                                                       (Textual Int64)
                                                        :>
-                                                       QueryParam "rewriteToken"
+                                                       QueryParam
+                                                         "destinationKmsKeyName"
                                                          Text
                                                          :>
-                                                         QueryParam "alt"
-                                                           AltJSON
+                                                         QueryParam
+                                                           "rewriteToken"
+                                                           Text
                                                            :>
-                                                           ReqBody '[JSON]
-                                                             Object
+                                                           QueryParam "alt"
+                                                             AltJSON
                                                              :>
-                                                             Post '[JSON]
-                                                               RewriteResponse
+                                                             ReqBody '[JSON]
+                                                               Object
+                                                               :>
+                                                               Post '[JSON]
+                                                                 RewriteResponse
 
 -- | Rewrites a source object to a destination object. Optionally overrides
 -- metadata.
@@ -150,6 +157,7 @@ data ObjectsRewrite =
     , _orIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     , _orIfSourceGenerationNotMatch :: !(Maybe (Textual Int64))
     , _orProjection :: !(Maybe ObjectsRewriteProjection)
+    , _orProvisionalUserProject :: !(Maybe Text)
     , _orSourceGeneration :: !(Maybe (Textual Int64))
     , _orDestinationKmsKeyName :: !(Maybe Text)
     , _orRewriteToken :: !(Maybe Text)
@@ -194,6 +202,8 @@ data ObjectsRewrite =
 --
 -- * 'orProjection'
 --
+-- * 'orProvisionalUserProject'
+--
 -- * 'orSourceGeneration'
 --
 -- * 'orDestinationKmsKeyName'
@@ -226,6 +236,7 @@ objectsRewrite pOrSourceObject_ pOrSourceBucket_ pOrPayload_ pOrDestinationBucke
     , _orIfMetagenerationNotMatch = Nothing
     , _orIfSourceGenerationNotMatch = Nothing
     , _orProjection = Nothing
+    , _orProvisionalUserProject = Nothing
     , _orSourceGeneration = Nothing
     , _orDestinationKmsKeyName = Nothing
     , _orRewriteToken = Nothing
@@ -357,6 +368,13 @@ orProjection :: Lens' ObjectsRewrite (Maybe ObjectsRewriteProjection)
 orProjection
   = lens _orProjection (\ s a -> s{_orProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+orProvisionalUserProject :: Lens' ObjectsRewrite (Maybe Text)
+orProvisionalUserProject
+  = lens _orProvisionalUserProject
+      (\ s a -> s{_orProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of the source object (as opposed
 -- to the latest version, the default).
 orSourceGeneration :: Lens' ObjectsRewrite (Maybe Int64)
@@ -415,6 +433,7 @@ instance GoogleRequest ObjectsRewrite where
               _orIfMetagenerationNotMatch
               _orIfSourceGenerationNotMatch
               _orProjection
+              _orProvisionalUserProject
               _orSourceGeneration
               _orDestinationKmsKeyName
               _orRewriteToken

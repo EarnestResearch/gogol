@@ -22,7 +22,7 @@
 --
 -- Lists sinks.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.folders.sinks.list@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.folders.sinks.list@.
 module Network.Google.Resource.Logging.Folders.Sinks.List
     (
     -- * REST Resource

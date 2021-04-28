@@ -140,7 +140,7 @@ plcnpuPayload
 
 -- | The name (project, location, cluster, node pool) of the node pool to
 -- update. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\/nodePools\/*\`.
 plcnpuName :: Lens' ProjectsLocationsClustersNodePoolsUpdate Text
 plcnpuName
   = lens _plcnpuName (\ s a -> s{_plcnpuName = a})

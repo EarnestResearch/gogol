@@ -117,7 +117,8 @@ pidgdUploadProtocol
   = lens _pidgdUploadProtocol
       (\ s a -> s{_pidgdUploadProtocol = a})
 
--- | Required. The database whose schema we wish to get.
+-- | Required. The database whose schema we wish to get. Values are of the
+-- form \`projects\/\/instances\/\/databases\/\`
 pidgdDatabase :: Lens' ProjectsInstancesDatabasesGetDdl Text
 pidgdDatabase
   = lens _pidgdDatabase

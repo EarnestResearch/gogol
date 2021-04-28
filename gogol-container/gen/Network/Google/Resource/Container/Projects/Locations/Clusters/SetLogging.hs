@@ -137,7 +137,7 @@ plcslPayload
   = lens _plcslPayload (\ s a -> s{_plcslPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to set logging.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcslName :: Lens' ProjectsLocationsClustersSetLogging Text
 plcslName
   = lens _plcslName (\ s a -> s{_plcslName = a})

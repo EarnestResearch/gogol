@@ -138,7 +138,7 @@ pljgmXgafv :: Lens' ProjectsLocationsJobsGetMetrics (Maybe Xgafv)
 pljgmXgafv
   = lens _pljgmXgafv (\ s a -> s{_pljgmXgafv = a})
 
--- | The job to get messages for.
+-- | The job to get metrics for.
 pljgmJobId :: Lens' ProjectsLocationsJobsGetMetrics Text
 pljgmJobId
   = lens _pljgmJobId (\ s a -> s{_pljgmJobId = a})

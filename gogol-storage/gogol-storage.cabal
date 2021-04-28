@@ -97,5 +97,5 @@ library
         , Network.Google.Storage.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

@@ -128,7 +128,7 @@ pjtgUploadType
   = lens _pjtgUploadType
       (\ s a -> s{_pjtgUploadType = a})
 
--- | Resource name of the project and the triggeredJob, for example
+-- | Required. Resource name of the project and the triggeredJob, for example
 -- \`projects\/dlp-test-project\/jobTriggers\/53234423\`.
 pjtgName :: Lens' ProjectsJobTriggersGet Text
 pjtgName = lens _pjtgName (\ s a -> s{_pjtgName = a})

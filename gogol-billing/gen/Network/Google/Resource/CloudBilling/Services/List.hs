@@ -149,7 +149,9 @@ slCallback
 instance GoogleRequest ServicesList where
         type Rs ServicesList = ListServicesResponse
         type Scopes ServicesList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-billing.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient ServicesList'{..}
           = go _slXgafv _slUploadProtocol _slAccessToken
               _slUploadType

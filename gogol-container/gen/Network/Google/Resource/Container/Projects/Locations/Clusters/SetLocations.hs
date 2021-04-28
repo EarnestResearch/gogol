@@ -20,7 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the locations for a specific cluster.
+-- Sets the locations for a specific cluster. Deprecated. Use
+-- [projects.locations.clusters.update](https:\/\/cloud.google.com\/kubernetes-engine\/docs\/reference\/rest\/v1\/projects.locations.clusters\/update)
+-- instead.
 --
 -- /See:/ <https://cloud.google.com/container-engine/ Kubernetes Engine API Reference> for @container.projects.locations.clusters.setLocations@.
 module Network.Google.Resource.Container.Projects.Locations.Clusters.SetLocations
@@ -59,7 +61,9 @@ type ProjectsLocationsClustersSetLocationsResource =
                      ReqBody '[JSON] SetLocationsRequest :>
                        Post '[JSON] Operation
 
--- | Sets the locations for a specific cluster.
+-- | Sets the locations for a specific cluster. Deprecated. Use
+-- [projects.locations.clusters.update](https:\/\/cloud.google.com\/kubernetes-engine\/docs\/reference\/rest\/v1\/projects.locations.clusters\/update)
+-- instead.
 --
 -- /See:/ 'projectsLocationsClustersSetLocations' smart constructor.
 data ProjectsLocationsClustersSetLocations =
@@ -138,7 +142,7 @@ plcslsPayload
       (\ s a -> s{_plcslsPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to set locations.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcslsName :: Lens' ProjectsLocationsClustersSetLocations Text
 plcslsName
   = lens _plcslsName (\ s a -> s{_plcslsName = a})

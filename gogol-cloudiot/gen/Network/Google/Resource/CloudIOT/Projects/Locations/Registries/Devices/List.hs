@@ -71,7 +71,9 @@ type ProjectsLocationsRegistriesDevicesListResource =
                        QueryParam "uploadType" Text :>
                          QueryParams "deviceIds" Text :>
                            QueryParam "fieldMask" GFieldMask :>
-                             QueryParam "gatewayListOptions.gatewayType" Text :>
+                             QueryParam "gatewayListOptions.gatewayType"
+                               ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
+                               :>
                                QueryParam "pageToken" Text :>
                                  QueryParam "pageSize" (Textual Int32) :>
                                    QueryParam "callback" Text :>
@@ -93,7 +95,7 @@ data ProjectsLocationsRegistriesDevicesList =
     , _plrdlUploadType :: !(Maybe Text)
     , _plrdlDeviceIds :: !(Maybe [Text])
     , _plrdlFieldMask :: !(Maybe GFieldMask)
-    , _plrdlGatewayListOptionsGatewayType :: !(Maybe Text)
+    , _plrdlGatewayListOptionsGatewayType :: !(Maybe ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType)
     , _plrdlPageToken :: !(Maybe Text)
     , _plrdlPageSize :: !(Maybe (Textual Int32))
     , _plrdlCallback :: !(Maybe Text)
@@ -154,7 +156,7 @@ projectsLocationsRegistriesDevicesList pPlrdlParent_ =
     }
 
 
--- | The device registry path. Required. For example,
+-- | Required. The device registry path. Required. For example,
 -- \`projects\/my-project\/locations\/us-central1\/registries\/my-registry\`.
 plrdlParent :: Lens' ProjectsLocationsRegistriesDevicesList Text
 plrdlParent
@@ -224,7 +226,8 @@ plrdlDeviceIds
 
 -- | The fields of the \`Device\` resource to be returned in the response.
 -- The fields \`id\` and \`num_id\` are always returned, along with any
--- other fields specified.
+-- other fields specified in snake_case format, for example:
+-- \`last_heartbeat_time\`.
 plrdlFieldMask :: Lens' ProjectsLocationsRegistriesDevicesList (Maybe GFieldMask)
 plrdlFieldMask
   = lens _plrdlFieldMask
@@ -233,7 +236,7 @@ plrdlFieldMask
 -- | If \`GATEWAY\` is specified, only gateways are returned. If
 -- \`NON_GATEWAY\` is specified, only non-gateway devices are returned. If
 -- \`GATEWAY_TYPE_UNSPECIFIED\` is specified, all devices are returned.
-plrdlGatewayListOptionsGatewayType :: Lens' ProjectsLocationsRegistriesDevicesList (Maybe Text)
+plrdlGatewayListOptionsGatewayType :: Lens' ProjectsLocationsRegistriesDevicesList (Maybe ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType)
 plrdlGatewayListOptionsGatewayType
   = lens _plrdlGatewayListOptionsGatewayType
       (\ s a -> s{_plrdlGatewayListOptionsGatewayType = a})

@@ -23,7 +23,7 @@
 -- Lists supported data sources and returns their settings, which can be
 -- used for UI rendering.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.dataSources.list@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.dataSources.list@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.DataSources.List
     (
     -- * REST Resource
@@ -116,8 +116,9 @@ projectsLocationsDataSourcesList pPldslParent_ =
     }
 
 
--- | The BigQuery project id for which data sources should be returned. Must
--- be in the form: \`projects\/{project_id}\`
+-- | Required. The BigQuery project id for which data sources should be
+-- returned. Must be in the form: \`projects\/{project_id}\` or
+-- \`projects\/{project_id}\/locations\/{location_id}
 pldslParent :: Lens' ProjectsLocationsDataSourcesList Text
 pldslParent
   = lens _pldslParent (\ s a -> s{_pldslParent = a})

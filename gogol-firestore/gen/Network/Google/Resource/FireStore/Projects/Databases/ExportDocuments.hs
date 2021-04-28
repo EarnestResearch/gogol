@@ -27,7 +27,9 @@
 -- managed via the Operation resource that is created. The output of an
 -- export may only be used once the associated operation is done. If an
 -- export operation is cancelled before completion it may leave partial
--- data behind in Google Cloud Storage.
+-- data behind in Google Cloud Storage. For more details on export behavior
+-- and output format, refer to:
+-- https:\/\/cloud.google.com\/firestore\/docs\/manage-data\/export-import
 --
 -- /See:/ <https://cloud.google.com/firestore Cloud Firestore API Reference> for @firestore.projects.databases.exportDocuments@.
 module Network.Google.Resource.FireStore.Projects.Databases.ExportDocuments
@@ -74,7 +76,9 @@ type ProjectsDatabasesExportDocumentsResource =
 -- managed via the Operation resource that is created. The output of an
 -- export may only be used once the associated operation is done. If an
 -- export operation is cancelled before completion it may leave partial
--- data behind in Google Cloud Storage.
+-- data behind in Google Cloud Storage. For more details on export behavior
+-- and output format, refer to:
+-- https:\/\/cloud.google.com\/firestore\/docs\/manage-data\/export-import
 --
 -- /See:/ 'projectsDatabasesExportDocuments' smart constructor.
 data ProjectsDatabasesExportDocuments =
@@ -151,7 +155,7 @@ pdedPayload :: Lens' ProjectsDatabasesExportDocuments GoogleFirestoreAdminV1Expo
 pdedPayload
   = lens _pdedPayload (\ s a -> s{_pdedPayload = a})
 
--- | Database to export. Should be of the form:
+-- | Required. Database to export. Should be of the form:
 -- \`projects\/{project_id}\/databases\/{database_id}\`.
 pdedName :: Lens' ProjectsDatabasesExportDocuments Text
 pdedName = lens _pdedName (\ s a -> s{_pdedName = a})

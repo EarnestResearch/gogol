@@ -22,8 +22,8 @@
 --
 -- Provides information about a list of specific people by specifying a
 -- list of requested resource names. Use \`people\/me\` to indicate the
--- authenticated user.
--- The request throws a 400 error if \'personFields\' is not specified.
+-- authenticated user. The request returns a 400 error if \'personFields\'
+-- is not specified.
 --
 -- /See:/ <https://developers.google.com/people/ People API Reference> for @people.people.getBatchGet@.
 module Network.Google.Resource.People.People.GetBatchGet
@@ -41,6 +41,7 @@ module Network.Google.Resource.People.People.GetBatchGet
     , pgbgRequestMaskIncludeField
     , pgbgAccessToken
     , pgbgUploadType
+    , pgbgSources
     , pgbgPersonFields
     , pgbgResourceNames
     , pgbgCallback
@@ -59,16 +60,17 @@ type PeopleGetBatchGetResource =
              QueryParam "requestMask.includeField" GFieldMask :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParam "personFields" GFieldMask :>
-                     QueryParams "resourceNames" Text :>
-                       QueryParam "callback" Text :>
-                         QueryParam "alt" AltJSON :>
-                           Get '[JSON] GetPeopleResponse
+                   QueryParams "sources" PeopleGetBatchGetSources :>
+                     QueryParam "personFields" GFieldMask :>
+                       QueryParams "resourceNames" Text :>
+                         QueryParam "callback" Text :>
+                           QueryParam "alt" AltJSON :>
+                             Get '[JSON] GetPeopleResponse
 
 -- | Provides information about a list of specific people by specifying a
 -- list of requested resource names. Use \`people\/me\` to indicate the
--- authenticated user.
--- The request throws a 400 error if \'personFields\' is not specified.
+-- authenticated user. The request returns a 400 error if \'personFields\'
+-- is not specified.
 --
 -- /See:/ 'peopleGetBatchGet' smart constructor.
 data PeopleGetBatchGet =
@@ -78,6 +80,7 @@ data PeopleGetBatchGet =
     , _pgbgRequestMaskIncludeField :: !(Maybe GFieldMask)
     , _pgbgAccessToken :: !(Maybe Text)
     , _pgbgUploadType :: !(Maybe Text)
+    , _pgbgSources :: !(Maybe [PeopleGetBatchGetSources])
     , _pgbgPersonFields :: !(Maybe GFieldMask)
     , _pgbgResourceNames :: !(Maybe [Text])
     , _pgbgCallback :: !(Maybe Text)
@@ -99,6 +102,8 @@ data PeopleGetBatchGet =
 --
 -- * 'pgbgUploadType'
 --
+-- * 'pgbgSources'
+--
 -- * 'pgbgPersonFields'
 --
 -- * 'pgbgResourceNames'
@@ -113,6 +118,7 @@ peopleGetBatchGet =
     , _pgbgRequestMaskIncludeField = Nothing
     , _pgbgAccessToken = Nothing
     , _pgbgUploadType = Nothing
+    , _pgbgSources = Nothing
     , _pgbgPersonFields = Nothing
     , _pgbgResourceNames = Nothing
     , _pgbgCallback = Nothing
@@ -130,8 +136,8 @@ pgbgUploadProtocol
   = lens _pgbgUploadProtocol
       (\ s a -> s{_pgbgUploadProtocol = a})
 
--- | **Required.** Comma-separated list of person fields to be included in
--- the response. Each path should start with \`person.\`: for example,
+-- | Required. Comma-separated list of person fields to be included in the
+-- response. Each path should start with \`person.\`: for example,
 -- \`person.names\` or \`person.photos\`.
 pgbgRequestMaskIncludeField :: Lens' PeopleGetBatchGet (Maybe GFieldMask)
 pgbgRequestMaskIncludeField
@@ -150,24 +156,34 @@ pgbgUploadType
   = lens _pgbgUploadType
       (\ s a -> s{_pgbgUploadType = a})
 
--- | **Required.** A field mask to restrict which fields on each person are
+-- | Optional. A mask of what source types to return. Defaults to
+-- READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not set.
+pgbgSources :: Lens' PeopleGetBatchGet [PeopleGetBatchGetSources]
+pgbgSources
+  = lens _pgbgSources (\ s a -> s{_pgbgSources = a}) .
+      _Default
+      . _Coerce
+
+-- | Required. A field mask to restrict which fields on each person are
 -- returned. Multiple fields can be specified by separating them with
 -- commas. Valid values are: * addresses * ageRanges * biographies *
--- birthdays * braggingRights * coverPhotos * emailAddresses * events *
--- genders * imClients * interests * locales * memberships * metadata *
--- names * nicknames * occupations * organizations * phoneNumbers * photos
--- * relations * relationshipInterests * relationshipStatuses * residences
--- * sipAddresses * skills * taglines * urls * userDefined
+-- birthdays * calendarUrls * clientData * coverPhotos * emailAddresses *
+-- events * externalIds * genders * imClients * interests * locales *
+-- locations * memberships * metadata * miscKeywords * names * nicknames *
+-- occupations * organizations * phoneNumbers * photos * relations *
+-- sipAddresses * skills * urls * userDefined
 pgbgPersonFields :: Lens' PeopleGetBatchGet (Maybe GFieldMask)
 pgbgPersonFields
   = lens _pgbgPersonFields
       (\ s a -> s{_pgbgPersonFields = a})
 
--- | The resource names of the people to provide information about. - To get
--- information about the authenticated user, specify \`people\/me\`. - To
--- get information about a google account, specify
--- \`people\/\`'account_id'. - To get information about a contact, specify
--- the resource name that identifies the contact as returned by
+-- | Required. The resource names of the people to provide information about.
+-- It\'s repeatable. The URL query parameter should be
+-- resourceNames=&resourceNames=&... - To get information about the
+-- authenticated user, specify \`people\/me\`. - To get information about a
+-- google account, specify \`people\/{account_id}\`. - To get information
+-- about a contact, specify the resource name that identifies the contact
+-- as returned by
 -- [\`people.connections.list\`](\/people\/api\/rest\/v1\/people.connections\/list).
 -- You can include up to 50 resource names in one request.
 pgbgResourceNames :: Lens' PeopleGetBatchGet [Text]
@@ -187,9 +203,12 @@ instance GoogleRequest PeopleGetBatchGet where
         type Scopes PeopleGetBatchGet =
              '["https://www.googleapis.com/auth/contacts",
                "https://www.googleapis.com/auth/contacts.readonly",
+               "https://www.googleapis.com/auth/directory.readonly",
                "https://www.googleapis.com/auth/user.addresses.read",
                "https://www.googleapis.com/auth/user.birthday.read",
                "https://www.googleapis.com/auth/user.emails.read",
+               "https://www.googleapis.com/auth/user.gender.read",
+               "https://www.googleapis.com/auth/user.organization.read",
                "https://www.googleapis.com/auth/user.phonenumbers.read",
                "https://www.googleapis.com/auth/userinfo.email",
                "https://www.googleapis.com/auth/userinfo.profile"]
@@ -198,6 +217,7 @@ instance GoogleRequest PeopleGetBatchGet where
               _pgbgRequestMaskIncludeField
               _pgbgAccessToken
               _pgbgUploadType
+              (_pgbgSources ^. _Default)
               _pgbgPersonFields
               (_pgbgResourceNames ^. _Default)
               _pgbgCallback

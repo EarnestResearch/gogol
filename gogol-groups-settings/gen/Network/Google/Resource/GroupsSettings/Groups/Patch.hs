@@ -81,7 +81,7 @@ gpPayload :: Lens' GroupsPatch Groups
 gpPayload
   = lens _gpPayload (\ s a -> s{_gpPayload = a})
 
--- | The resource ID
+-- | The group\'s email address.
 gpGroupUniqueId :: Lens' GroupsPatch Text
 gpGroupUniqueId
   = lens _gpGroupUniqueId

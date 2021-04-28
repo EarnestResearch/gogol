@@ -22,9 +22,6 @@ module Network.Google.AdExperienceReport
     -- * Service Configuration
       adExperienceReportService
 
-    -- * OAuth Scopes
-    , xapiZooScope
-
     -- * API Declaration
     , AdExperienceReportAPI
 
@@ -52,6 +49,9 @@ module Network.Google.AdExperienceReport
     , ViolatingSitesResponse
     , violatingSitesResponse
     , vsrViolatingSites
+
+    -- ** PlatformSummaryRegionItem
+    , PlatformSummaryRegionItem (..)
 
     -- ** Xgafv
     , Xgafv (..)

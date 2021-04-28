@@ -95,6 +95,9 @@ module Network.Google.StreetViewPublish
     , sCode
     , sMessage
 
+    -- ** PhotoGetView
+    , PhotoGetView (..)
+
     -- ** PhotoResponse
     , PhotoResponse
     , photoResponse
@@ -113,6 +116,9 @@ module Network.Google.StreetViewPublish
     -- ** Empty
     , Empty
     , empty
+
+    -- ** PhotosListView
+    , PhotosListView (..)
 
     -- ** StatusDetailsItem
     , StatusDetailsItem
@@ -158,6 +164,9 @@ module Network.Google.StreetViewPublish
 
     -- ** Xgafv
     , Xgafv (..)
+
+    -- ** PhotosBatchGetView
+    , PhotosBatchGetView (..)
 
     -- ** OperationMetadata
     , OperationMetadata

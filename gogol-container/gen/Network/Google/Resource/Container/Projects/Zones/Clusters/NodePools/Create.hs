@@ -150,8 +150,9 @@ pzcnpcUploadType
       (\ s a -> s{_pzcnpcUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the parent field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the parent field.
 pzcnpcZone :: Lens' ProjectsZonesClustersNodePoolsCreate Text
 pzcnpcZone
   = lens _pzcnpcZone (\ s a -> s{_pzcnpcZone = a})

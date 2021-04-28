@@ -25,7 +25,7 @@
 -- match the request parameters, the list request returns an empty response
 -- body: {}.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.list@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.list@.
 module Network.Google.Resource.Ml.Projects.Models.List
     (
     -- * REST Resource
@@ -183,7 +183,8 @@ instance GoogleRequest ProjectsModelsList where
         type Rs ProjectsModelsList =
              GoogleCloudMlV1__ListModelsResponse
         type Scopes ProjectsModelsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-platform",
+               "https://www.googleapis.com/auth/cloud-platform.read-only"]
         requestClient ProjectsModelsList'{..}
           = go _pmlParent _pmlXgafv _pmlUploadProtocol
               _pmlAccessToken

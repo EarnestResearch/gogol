@@ -61,8 +61,8 @@ type ProjectsJobsAggregatedResource =
                  QueryParam "location" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
-                       QueryParam "view" Text :>
-                         QueryParam "filter" Text :>
+                       QueryParam "view" ProjectsJobsAggregatedView :>
+                         QueryParam "filter" ProjectsJobsAggregatedFilter :>
                            QueryParam "pageToken" Text :>
                              QueryParam "pageSize" (Textual Int32) :>
                                QueryParam "callback" Text :>
@@ -79,8 +79,8 @@ data ProjectsJobsAggregated =
     , _pjaLocation :: !(Maybe Text)
     , _pjaAccessToken :: !(Maybe Text)
     , _pjaUploadType :: !(Maybe Text)
-    , _pjaView :: !(Maybe Text)
-    , _pjaFilter :: !(Maybe Text)
+    , _pjaView :: !(Maybe ProjectsJobsAggregatedView)
+    , _pjaFilter :: !(Maybe ProjectsJobsAggregatedFilter)
     , _pjaPageToken :: !(Maybe Text)
     , _pjaProjectId :: !Text
     , _pjaPageSize :: !(Maybe (Textual Int32))
@@ -162,13 +162,13 @@ pjaUploadType
   = lens _pjaUploadType
       (\ s a -> s{_pjaUploadType = a})
 
--- | Level of information requested in response. Default is
--- \`JOB_VIEW_SUMMARY\`.
-pjaView :: Lens' ProjectsJobsAggregated (Maybe Text)
+-- | Deprecated. ListJobs always returns summaries now. Use GetJob for other
+-- JobViews.
+pjaView :: Lens' ProjectsJobsAggregated (Maybe ProjectsJobsAggregatedView)
 pjaView = lens _pjaView (\ s a -> s{_pjaView = a})
 
 -- | The kind of filter to use.
-pjaFilter :: Lens' ProjectsJobsAggregated (Maybe Text)
+pjaFilter :: Lens' ProjectsJobsAggregated (Maybe ProjectsJobsAggregatedFilter)
 pjaFilter
   = lens _pjaFilter (\ s a -> s{_pjaFilter = a})
 

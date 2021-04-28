@@ -65,7 +65,9 @@ type CoursesCourseWorkListResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "orderBy" Text :>
                    QueryParam "access_token" Text :>
-                     QueryParams "courseWorkStates" Text :>
+                     QueryParams "courseWorkStates"
+                       CoursesCourseWorkListCourseWorkStates
+                       :>
                        QueryParam "uploadType" Text :>
                          QueryParam "pageToken" Text :>
                            QueryParam "pageSize" (Textual Int32) :>
@@ -89,7 +91,7 @@ data CoursesCourseWorkList =
     , _ccwlOrderBy :: !(Maybe Text)
     , _ccwlCourseId :: !Text
     , _ccwlAccessToken :: !(Maybe Text)
-    , _ccwlCourseWorkStates :: !(Maybe [Text])
+    , _ccwlCourseWorkStates :: !(Maybe [CoursesCourseWorkListCourseWorkStates])
     , _ccwlUploadType :: !(Maybe Text)
     , _ccwlPageToken :: !(Maybe Text)
     , _ccwlPageSize :: !(Maybe (Textual Int32))
@@ -175,7 +177,7 @@ ccwlAccessToken
 -- | Restriction on the work status to return. Only courseWork that matches
 -- is returned. If unspecified, items with a work status of \`PUBLISHED\`
 -- is returned.
-ccwlCourseWorkStates :: Lens' CoursesCourseWorkList [Text]
+ccwlCourseWorkStates :: Lens' CoursesCourseWorkList [CoursesCourseWorkListCourseWorkStates]
 ccwlCourseWorkStates
   = lens _ccwlCourseWorkStates
       (\ s a -> s{_ccwlCourseWorkStates = a})

@@ -32,6 +32,7 @@ module Network.Google.Classroom
     , classroomCourseworkMeScope
     , classroomAnnouncementsReadOnlyScope
     , classroomGuardianlinksStudentsScope
+    , classroomCourseworkmaterialsScope
     , classroomStudentSubmissionsStudentsReadOnlyScope
     , classroomGuardianlinksMeReadOnlyScope
     , classroomRostersScope
@@ -41,6 +42,7 @@ module Network.Google.Classroom
     , classroomAnnouncementsScope
     , classroomCourseworkMeReadOnlyScope
     , classroomStudentSubmissionsMeReadOnlyScope
+    , classroomCourseworkmaterialsReadOnlyScope
     , classroomGuardianlinksStudentsReadOnlyScope
 
     -- * API Declaration
@@ -113,6 +115,21 @@ module Network.Google.Classroom
 
     -- ** classroom.courses.courseWork.studentSubmissions.turnIn
     , module Network.Google.Resource.Classroom.Courses.CourseWork.StudentSubmissions.TurnIn
+
+    -- ** classroom.courses.courseWorkMaterials.create
+    , module Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Create
+
+    -- ** classroom.courses.courseWorkMaterials.delete
+    , module Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Delete
+
+    -- ** classroom.courses.courseWorkMaterials.get
+    , module Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Get
+
+    -- ** classroom.courses.courseWorkMaterials.list
+    , module Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.List
+
+    -- ** classroom.courses.courseWorkMaterials.patch
+    , module Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Patch
 
     -- ** classroom.courses.create
     , module Network.Google.Resource.Classroom.Courses.Create
@@ -267,6 +284,24 @@ module Network.Google.Classroom
     , courseWorkChangesInfo
     , cwciCourseId
 
+    -- ** CourseWorkMaterial
+    , CourseWorkMaterial
+    , courseWorkMaterial
+    , cwmCreationTime
+    , cwmScheduledTime
+    , cwmState
+    , cwmAssigneeMode
+    , cwmMaterials
+    , cwmCourseId
+    , cwmIndividualStudentsOptions
+    , cwmUpdateTime
+    , cwmTopicId
+    , cwmId
+    , cwmCreatorUserId
+    , cwmTitle
+    , cwmAlternateLink
+    , cwmDescription
+
     -- ** ModifyCourseWorkAssigneesRequest
     , ModifyCourseWorkAssigneesRequest
     , modifyCourseWorkAssigneesRequest
@@ -329,6 +364,12 @@ module Network.Google.Classroom
     -- ** Empty
     , Empty
     , empty
+
+    -- ** CourseWorkMaterialAssigneeMode
+    , CourseWorkMaterialAssigneeMode (..)
+
+    -- ** CoursesListCourseStates
+    , CoursesListCourseStates (..)
 
     -- ** ModifyCourseWorkAssigneesRequestAssigneeMode
     , ModifyCourseWorkAssigneesRequestAssigneeMode (..)
@@ -435,6 +476,12 @@ module Network.Google.Classroom
     , ShortAnswerSubmission
     , shortAnswerSubmission
     , sasAnswer
+
+    -- ** CoursesCourseWorkStudentSubmissionsListLate
+    , CoursesCourseWorkStudentSubmissionsListLate (..)
+
+    -- ** CoursesCourseWorkStudentSubmissionsListStates
+    , CoursesCourseWorkStudentSubmissionsListStates (..)
 
     -- ** AnnouncementState
     , AnnouncementState (..)
@@ -617,6 +664,9 @@ module Network.Google.Classroom
     -- ** StudentSubmissionCourseWorkType
     , StudentSubmissionCourseWorkType (..)
 
+    -- ** CourseWorkMaterialState
+    , CourseWorkMaterialState (..)
+
     -- ** TimeOfDay'
     , TimeOfDay'
     , timeOfDay
@@ -628,11 +678,17 @@ module Network.Google.Classroom
     -- ** FeedFeedType
     , FeedFeedType (..)
 
+    -- ** CoursesCourseWorkListCourseWorkStates
+    , CoursesCourseWorkListCourseWorkStates (..)
+
     -- ** ListGuardianInvitationsResponse
     , ListGuardianInvitationsResponse
     , listGuardianInvitationsResponse
     , lgirNextPageToken
     , lgirGuardianInvitations
+
+    -- ** CoursesAnnouncementsListAnnouncementStates
+    , CoursesAnnouncementsListAnnouncementStates (..)
 
     -- ** Assignment
     , Assignment
@@ -650,6 +706,9 @@ module Network.Google.Classroom
     , sharedDriveFile
     , sdfDriveFile
     , sdfShareMode
+
+    -- ** CoursesCourseWorkMaterialsListCourseWorkMaterialStates
+    , CoursesCourseWorkMaterialsListCourseWorkMaterialStates (..)
 
     -- ** CourseAlias
     , CourseAlias
@@ -691,6 +750,15 @@ module Network.Google.Classroom
     , listTeachersResponse
     , lNextPageToken
     , lTeachers
+
+    -- ** ListCourseWorkMaterialResponse
+    , ListCourseWorkMaterialResponse
+    , listCourseWorkMaterialResponse
+    , lcwmrCourseWorkMaterial
+    , lcwmrNextPageToken
+
+    -- ** UserProFilesGuardianInvitationsListStates
+    , UserProFilesGuardianInvitationsListStates (..)
 
     -- ** Student
     , Student
@@ -736,6 +804,11 @@ import Network.Google.Resource.Classroom.Courses.CourseWork.StudentSubmissions.P
 import Network.Google.Resource.Classroom.Courses.CourseWork.StudentSubmissions.Reclaim
 import Network.Google.Resource.Classroom.Courses.CourseWork.StudentSubmissions.Return
 import Network.Google.Resource.Classroom.Courses.CourseWork.StudentSubmissions.TurnIn
+import Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Create
+import Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Delete
+import Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Get
+import Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.List
+import Network.Google.Resource.Classroom.Courses.CourseWorkMaterials.Patch
 import Network.Google.Resource.Classroom.Courses.Create
 import Network.Google.Resource.Classroom.Courses.Delete
 import Network.Google.Resource.Classroom.Courses.Get
@@ -799,6 +872,11 @@ type ClassroomAPI =
        :<|> CoursesCourseWorkCreateResource
        :<|> CoursesCourseWorkModifyAssigneesResource
        :<|> CoursesCourseWorkDeleteResource
+       :<|> CoursesCourseWorkMaterialsListResource
+       :<|> CoursesCourseWorkMaterialsPatchResource
+       :<|> CoursesCourseWorkMaterialsGetResource
+       :<|> CoursesCourseWorkMaterialsCreateResource
+       :<|> CoursesCourseWorkMaterialsDeleteResource
        :<|> CoursesTeachersListResource
        :<|> CoursesTeachersGetResource
        :<|> CoursesTeachersCreateResource

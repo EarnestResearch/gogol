@@ -56,7 +56,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.operations.cancel@ method which the
 -- 'ProjectsLocationsOperationsCancel' request conforms to.
 type ProjectsLocationsOperationsCancelResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "cancel" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

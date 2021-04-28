@@ -20,7 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the size for a specific node pool.
+-- Sets the size for a specific node pool. The new size will be used for
+-- all replicas, including future replicas created by modifying
+-- NodePool.locations.
 --
 -- /See:/ <https://cloud.google.com/container-engine/ Kubernetes Engine API Reference> for @container.projects.zones.clusters.nodePools.setSize@.
 module Network.Google.Resource.Container.Projects.Zones.Clusters.NodePools.SetSize
@@ -70,7 +72,9 @@ type ProjectsZonesClustersNodePoolsSetSizeResource =
                                      ReqBody '[JSON] SetNodePoolSizeRequest :>
                                        Post '[JSON] Operation
 
--- | Sets the size for a specific node pool.
+-- | Sets the size for a specific node pool. The new size will be used for
+-- all replicas, including future replicas created by modifying
+-- NodePool.locations.
 --
 -- /See:/ 'projectsZonesClustersNodePoolsSetSize' smart constructor.
 data ProjectsZonesClustersNodePoolsSetSize =
@@ -158,8 +162,9 @@ pzcnpssUploadType
       (\ s a -> s{_pzcnpssUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 pzcnpssZone :: Lens' ProjectsZonesClustersNodePoolsSetSize Text
 pzcnpssZone
   = lens _pzcnpssZone (\ s a -> s{_pzcnpssZone = a})

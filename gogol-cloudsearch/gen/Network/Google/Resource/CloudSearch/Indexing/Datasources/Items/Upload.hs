@@ -21,9 +21,12 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates an upload session for uploading item content. For items smaller
--- than 100 KiB, it\'s easier to embed the content inline within update.
+-- than 100 KB, it\'s easier to embed the content inline within an index
+-- request. This API requires an admin or service account to execute. The
+-- service account used is the one whitelisted in the corresponding data
+-- source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.upload@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.upload@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Upload
     (
     -- * REST Resource
@@ -62,7 +65,10 @@ type IndexingDatasourcesItemsUploadResource =
                          Post '[JSON] UploadItemRef
 
 -- | Creates an upload session for uploading item content. For items smaller
--- than 100 KiB, it\'s easier to embed the content inline within update.
+-- than 100 KB, it\'s easier to embed the content inline within an index
+-- request. This API requires an admin or service account to execute. The
+-- service account used is the one whitelisted in the corresponding data
+-- source.
 --
 -- /See:/ 'indexingDatasourcesItemsUpload' smart constructor.
 data IndexingDatasourcesItemsUpload =
@@ -139,7 +145,8 @@ indPayload
   = lens _indPayload (\ s a -> s{_indPayload = a})
 
 -- | Name of the Item to start a resumable upload. Format:
--- datasources\/{source_id}\/items\/{item_id}.
+-- datasources\/{source_id}\/items\/{item_id}. The maximum length is 1536
+-- bytes.
 indName :: Lens' IndexingDatasourcesItemsUpload Text
 indName = lens _indName (\ s a -> s{_indName = a})
 

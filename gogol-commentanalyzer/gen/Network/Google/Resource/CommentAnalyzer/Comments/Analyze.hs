@@ -22,7 +22,7 @@
 --
 -- Analyzes the provided text and returns scores for requested attributes.
 --
--- /See:/ <https://conversationai.github.io/ Perspective Comment Analyzer API Reference> for @commentanalyzer.comments.analyze@.
+-- /See:/ <https://github.com/conversationai/perspectiveapi/blob/master/README.md Perspective Comment Analyzer API Reference> for @commentanalyzer.comments.analyze@.
 module Network.Google.Resource.CommentAnalyzer.Comments.Analyze
     (
     -- * REST Resource

@@ -47,7 +47,7 @@ subscriptionTrialSettings =
 
 
 -- | Determines if a subscription\'s plan is in a 30-day free trial or not: -
--- true — The plan is in trial. - false — The plan is not in trial.
+-- \`true\` — The plan is in trial. - \`false\` — The plan is not in trial.
 stsIsInTrial :: Lens' SubscriptionTrialSettings (Maybe Bool)
 stsIsInTrial
   = lens _stsIsInTrial (\ s a -> s{_stsIsInTrial = a})
@@ -232,24 +232,25 @@ aOrganizationName
   = lens _aOrganizationName
       (\ s a -> s{_aOrganizationName = a})
 
--- | Identifies the resource as a customer address. Value: customers#address
+-- | Identifies the resource as a customer address. Value:
+-- \`customers#address\`
 aKind :: Lens' Address Text
 aKind = lens _aKind (\ s a -> s{_aKind = a})
 
--- | A postalCode example is a postal zip code such as 94043. This property
--- is required when creating a new customer.
+-- | A \`postalCode\` example is a postal zip code such as \`94043\`. This
+-- property is required when creating a new customer.
 aPostalCode :: Lens' Address (Maybe Text)
 aPostalCode
   = lens _aPostalCode (\ s a -> s{_aPostalCode = a})
 
 -- | A customer\'s physical address. An address can be composed of one to
--- three lines. The addressline2 and addressLine3 are optional.
+-- three lines. The \`addressline2\` and \`addressLine3\` are optional.
 aAddressLine1 :: Lens' Address (Maybe Text)
 aAddressLine1
   = lens _aAddressLine1
       (\ s a -> s{_aAddressLine1 = a})
 
--- | An example of a locality value is the city of San Francisco.
+-- | An example of a \`locality\` value is the city of \`San Francisco\`.
 aLocality :: Lens' Address (Maybe Text)
 aLocality
   = lens _aLocality (\ s a -> s{_aLocality = a})
@@ -265,14 +266,14 @@ aAddressLine2
   = lens _aAddressLine2
       (\ s a -> s{_aAddressLine2 = a})
 
--- | For countryCode information, see the ISO 3166 country code elements.
+-- | For \`countryCode\` information, see the ISO 3166 country code elements.
 -- Verify that country is approved for resale of Google products. This
 -- property is required when creating a new customer.
 aCountryCode :: Lens' Address (Maybe Text)
 aCountryCode
   = lens _aCountryCode (\ s a -> s{_aCountryCode = a})
 
--- | An example of a region value is CA for the state of California.
+-- | An example of a \`region\` value is \`CA\` for the state of California.
 aRegion :: Lens' Address (Maybe Text)
 aRegion = lens _aRegion (\ s a -> s{_aRegion = a})
 
@@ -313,7 +314,10 @@ instance ToJSON Address where
                   ("region" .=) <$> _aRegion,
                   ("addressLine3" .=) <$> _aAddressLine3])
 
--- | JSON template for a customer.
+-- | When a Google customer\'s account is registered with a reseller, the
+-- customer\'s subscriptions for Google services are managed by this
+-- reseller. A customer is described by a primary domain name and a
+-- physical address.
 --
 -- /See:/ 'customer' smart constructor.
 data Customer =
@@ -378,7 +382,7 @@ cResourceUiURL
   = lens _cResourceUiURL
       (\ s a -> s{_cResourceUiURL = a})
 
--- | Identifies the resource as a customer. Value: reseller#customer
+-- | Identifies the resource as a customer. Value: \`reseller#customer\`
 cKind :: Lens' Customer Text
 cKind = lens _cKind (\ s a -> s{_cKind = a})
 
@@ -393,15 +397,15 @@ cCustomerId
 -- secondary contact used if something happens to the customer\'s service
 -- such as service outage or a security issue. This property is required
 -- when creating a new customer and should not use the same domain as
--- customerDomain.
+-- \`customerDomain\`.
 cAlternateEmail :: Lens' Customer (Maybe Text)
 cAlternateEmail
   = lens _cAlternateEmail
       (\ s a -> s{_cAlternateEmail = a})
 
--- | The customer\'s primary domain name string. customerDomain is required
--- when creating a new customer. Do not include the www prefix in the
--- domain when adding a customer.
+-- | The customer\'s primary domain name string. \`customerDomain\` is
+-- required when creating a new customer. Do not include the \`www\` prefix
+-- in the domain when adding a customer.
 cCustomerDomain :: Lens' Customer (Maybe Text)
 cCustomerDomain
   = lens _cCustomerDomain
@@ -491,12 +495,12 @@ changePlanRequest =
 
 
 -- | Identifies the resource as a subscription change plan request. Value:
--- subscriptions#changePlanRequest
+-- \`subscriptions#changePlanRequest\`
 cprKind :: Lens' ChangePlanRequest Text
 cprKind = lens _cprKind (\ s a -> s{_cprKind = a})
 
 -- | Google-issued code (100 char max) for discounted pricing on subscription
--- plans. Deal code must be included in changePlan request in order to
+-- plans. Deal code must be included in \`changePlan\` request in order to
 -- receive discounted rate. This property is optional. If a deal code has
 -- already been added to a subscription, this property may be left empty
 -- and the existing discounted rate will still apply (if not empty, only
@@ -507,21 +511,23 @@ cprDealCode :: Lens' ChangePlanRequest (Maybe Text)
 cprDealCode
   = lens _cprDealCode (\ s a -> s{_cprDealCode = a})
 
--- | The planName property is required. This is the name of the
+-- | The \`planName\` property is required. This is the name of the
 -- subscription\'s payment plan. For more information about the Google
 -- payment plans, see API concepts. Possible values are: -
--- ANNUAL_MONTHLY_PAY - The annual commitment plan with monthly payments
--- Caution: ANNUAL_MONTHLY_PAY is returned as ANNUAL in all API responses.
--- - ANNUAL_YEARLY_PAY - The annual commitment plan with yearly payments -
--- FLEXIBLE - The flexible plan - TRIAL - The 30-day free trial plan
+-- \`ANNUAL_MONTHLY_PAY\` - The annual commitment plan with monthly
+-- payments *Caution: *\`ANNUAL_MONTHLY_PAY\` is returned as \`ANNUAL\` in
+-- all API responses. - \`ANNUAL_YEARLY_PAY\` - The annual commitment plan
+-- with yearly payments - \`FLEXIBLE\` - The flexible plan - \`TRIAL\` -
+-- The 30-day free trial plan
 cprPlanName :: Lens' ChangePlanRequest (Maybe Text)
 cprPlanName
   = lens _cprPlanName (\ s a -> s{_cprPlanName = a})
 
 -- | This is an optional property. This purchase order (PO) information is
 -- for resellers to use for their company tracking usage. If a
--- purchaseOrderId value is given it appears in the API responses and shows
--- up in the invoice. The property accepts up to 80 plain text characters.
+-- \`purchaseOrderId\` value is given it appears in the API responses and
+-- shows up in the invoice. The property accepts up to 80 plain text
+-- characters.
 cprPurchaseOrderId :: Lens' ChangePlanRequest (Maybe Text)
 cprPurchaseOrderId
   = lens _cprPurchaseOrderId
@@ -554,8 +560,9 @@ instance ToJSON ChangePlanRequest where
                   ("seats" .=) <$> _cprSeats])
 
 -- | In this version of the API, annual commitment plan\'s interval is one
--- year. Note: When billingMethod value is OFFLINE, the subscription
--- property object plan.commitmentInterval is omitted in all API responses.
+-- year. *Note: *When \`billingMethod\` value is \`OFFLINE\`, the
+-- subscription property object \`plan.commitmentInterval\` is omitted in
+-- all API responses.
 --
 -- /See:/ 'subscriptionPlanCommitmentInterval' smart constructor.
 data SubscriptionPlanCommitmentInterval =
@@ -580,16 +587,16 @@ subscriptionPlanCommitmentInterval =
     {_spciStartTime = Nothing, _spciEndTime = Nothing}
 
 
--- | An annual commitment plan\'s interval\'s startTime in milliseconds using
--- UNIX Epoch format. See an example Epoch converter.
+-- | An annual commitment plan\'s interval\'s \`startTime\` in milliseconds
+-- using UNIX Epoch format. See an example Epoch converter.
 spciStartTime :: Lens' SubscriptionPlanCommitmentInterval (Maybe Int64)
 spciStartTime
   = lens _spciStartTime
       (\ s a -> s{_spciStartTime = a})
       . mapping _Coerce
 
--- | An annual commitment plan\'s interval\'s endTime in milliseconds using
--- the UNIX Epoch format. See an example Epoch converter.
+-- | An annual commitment plan\'s interval\'s \`endTime\` in milliseconds
+-- using the UNIX Epoch format. See an example Epoch converter.
 spciEndTime :: Lens' SubscriptionPlanCommitmentInterval (Maybe Int64)
 spciEndTime
   = lens _spciEndTime (\ s a -> s{_spciEndTime = a}) .
@@ -611,10 +618,10 @@ instance ToJSON SubscriptionPlanCommitmentInterval
                  [("startTime" .=) <$> _spciStartTime,
                   ("endTime" .=) <$> _spciEndTime])
 
--- | The plan property is required. In this version of the API, the G Suite
--- plans are the flexible plan, annual commitment plan, and the 30-day free
--- trial plan. For more information about the API\"s payment plans, see the
--- API concepts.
+-- | The \`plan\` property is required. In this version of the API, the G
+-- Suite plans are the flexible plan, annual commitment plan, and the
+-- 30-day free trial plan. For more information about the API\"s payment
+-- plans, see the API concepts.
 --
 -- /See:/ 'subscriptionPlan' smart constructor.
 data SubscriptionPlan =
@@ -646,34 +653,37 @@ subscriptionPlan =
 
 
 -- | In this version of the API, annual commitment plan\'s interval is one
--- year. Note: When billingMethod value is OFFLINE, the subscription
--- property object plan.commitmentInterval is omitted in all API responses.
+-- year. *Note: *When \`billingMethod\` value is \`OFFLINE\`, the
+-- subscription property object \`plan.commitmentInterval\` is omitted in
+-- all API responses.
 spCommitmentInterval :: Lens' SubscriptionPlan (Maybe SubscriptionPlanCommitmentInterval)
 spCommitmentInterval
   = lens _spCommitmentInterval
       (\ s a -> s{_spCommitmentInterval = a})
 
--- | The isCommitmentPlan property\'s boolean value identifies the plan as an
--- annual commitment plan: - true — The subscription\'s plan is an annual
--- commitment plan. - false — The plan is not an annual commitment plan.
+-- | The \`isCommitmentPlan\` property\'s boolean value identifies the plan
+-- as an annual commitment plan: - \`true\` — The subscription\'s plan is
+-- an annual commitment plan. - \`false\` — The plan is not an annual
+-- commitment plan.
 spIsCommitmentPlan :: Lens' SubscriptionPlan (Maybe Bool)
 spIsCommitmentPlan
   = lens _spIsCommitmentPlan
       (\ s a -> s{_spIsCommitmentPlan = a})
 
--- | The planName property is required. This is the name of the
+-- | The \`planName\` property is required. This is the name of the
 -- subscription\'s plan. For more information about the Google payment
--- plans, see the API concepts. Possible values are: - ANNUAL_MONTHLY_PAY —
--- The annual commitment plan with monthly payments. Caution:
--- ANNUAL_MONTHLY_PAY is returned as ANNUAL in all API responses. -
--- ANNUAL_YEARLY_PAY — The annual commitment plan with yearly payments -
--- FLEXIBLE — The flexible plan - TRIAL — The 30-day free trial plan. A
--- subscription in trial will be suspended after the 30th free day if no
--- payment plan is assigned. Calling changePlan will assign a payment plan
--- to a trial but will not activate the plan. A trial will automatically
--- begin its assigned payment plan after its 30th free day or immediately
--- after calling startPaidService. - FREE — The free plan is exclusive to
--- the Cloud Identity SKU and does not incur any billing.
+-- plans, see the API concepts. Possible values are: -
+-- \`ANNUAL_MONTHLY_PAY\` — The annual commitment plan with monthly
+-- payments. *Caution: *\`ANNUAL_MONTHLY_PAY\` is returned as \`ANNUAL\` in
+-- all API responses. - \`ANNUAL_YEARLY_PAY\` — The annual commitment plan
+-- with yearly payments - \`FLEXIBLE\` — The flexible plan - \`TRIAL\` —
+-- The 30-day free trial plan. A subscription in trial will be suspended
+-- after the 30th free day if no payment plan is assigned. Calling
+-- \`changePlan\` will assign a payment plan to a trial but will not
+-- activate the plan. A trial will automatically begin its assigned payment
+-- plan after its 30th free day or immediately after calling
+-- \`startPaidService\`. - \`FREE\` — The free plan is exclusive to the
+-- Cloud Identity SKU and does not incur any billing.
 spPlanName :: Lens' SubscriptionPlan (Maybe Text)
 spPlanName
   = lens _spPlanName (\ s a -> s{_spPlanName = a})
@@ -695,7 +705,10 @@ instance ToJSON SubscriptionPlan where
                   ("isCommitmentPlan" .=) <$> _spIsCommitmentPlan,
                   ("planName" .=) <$> _spPlanName])
 
--- | JSON template for a subscription list.
+-- | A subscription manages the relationship of a Google customer\'s payment
+-- plan with a product\'s SKU, user licenses, 30-day free trial status, and
+-- renewal options. A primary role of a reseller is to manage the Google
+-- customer\'s subscriptions.
 --
 -- /See:/ 'subscriptions' smart constructor.
 data Subscriptions =
@@ -799,13 +812,13 @@ seats =
 
 
 -- | This is a required property and is exclusive to subscriptions with
--- ANNUAL_MONTHLY_PAY and ANNUAL_YEARLY_PAY plans. This property sets the
--- maximum number of licenses assignable to users on a subscription. The
--- reseller can add more licenses, but once set, the numberOfSeats cannot
--- be reduced until renewal. The reseller is invoiced based on the
--- numberOfSeats value regardless of how many of these user licenses are
--- assigned. Note: G Suite subscriptions automatically assign a license to
--- every user.
+-- \`ANNUAL_MONTHLY_PAY\` and \`ANNUAL_YEARLY_PAY\` plans. This property
+-- sets the maximum number of licenses assignable to users on a
+-- subscription. The reseller can add more licenses, but once set, the
+-- \`numberOfSeats\` cannot be reduced until renewal. The reseller is
+-- invoiced based on the \`numberOfSeats\` value regardless of how many of
+-- these user licenses are assigned. *Note: *G Suite subscriptions
+-- automatically assign a license to every user.
 seaNumberOfSeats :: Lens' Seats (Maybe Int32)
 seaNumberOfSeats
   = lens _seaNumberOfSeats
@@ -813,11 +826,12 @@ seaNumberOfSeats
       . mapping _Coerce
 
 -- | This is a required property and is exclusive to subscriptions with
--- FLEXIBLE or TRIAL plans. This property sets the maximum number of
--- licensed users allowed on a subscription. This quantity can be increased
--- up to the maximum limit defined in the reseller\'s contract. The minimum
--- quantity is the current number of users in the customer account. Note: G
--- Suite subscriptions automatically assign a license to every user.
+-- \`FLEXIBLE\` or \`TRIAL\` plans. This property sets the maximum number
+-- of licensed users allowed on a subscription. This quantity can be
+-- increased up to the maximum limit defined in the reseller\'s contract.
+-- The minimum quantity is the current number of users in the customer
+-- account. *Note: *G Suite subscriptions automatically assign a license to
+-- every user.
 seaMaximumNumberOfSeats :: Lens' Seats (Maybe Int32)
 seaMaximumNumberOfSeats
   = lens _seaMaximumNumberOfSeats
@@ -825,9 +839,10 @@ seaMaximumNumberOfSeats
       . mapping _Coerce
 
 -- | Read-only field containing the current number of users that are assigned
--- a license for the product defined in skuId. This field\'s value is
+-- a license for the product defined in \`skuId\`. This field\'s value is
 -- equivalent to the numerical count of users returned by the Enterprise
--- License Manager API method: listForProductAndSku
+-- License Manager API method:
+-- [\`listForProductAndSku\`](\/admin-sdk\/licensing\/v1\/reference\/licenseAssignments\/listForProductAndSku).
 seaLicensedNumberOfSeats :: Lens' Seats (Maybe Int32)
 seaLicensedNumberOfSeats
   = lens _seaLicensedNumberOfSeats
@@ -835,7 +850,7 @@ seaLicensedNumberOfSeats
       . mapping _Coerce
 
 -- | Identifies the resource as a subscription seat setting. Value:
--- subscriptions#seats
+-- \`subscriptions#seats\`
 seaKind :: Lens' Seats Text
 seaKind = lens _seaKind (\ s a -> s{_seaKind = a})
 
@@ -886,13 +901,13 @@ renewalSettings =
 
 
 -- | Identifies the resource as a subscription renewal setting. Value:
--- subscriptions#renewalSettings
+-- \`subscriptions#renewalSettings\`
 rsKind :: Lens' RenewalSettings Text
 rsKind = lens _rsKind (\ s a -> s{_rsKind = a})
 
 -- | Renewal settings for the annual commitment plan. For more detailed
 -- information, see renewal options in the administrator help center. When
--- renewing a subscription, the renewalType is a required property.
+-- renewing a subscription, the \`renewalType\` is a required property.
 rsRenewalType :: Lens' RenewalSettings (Maybe Text)
 rsRenewalType
   = lens _rsRenewalType
@@ -1004,8 +1019,8 @@ subscription =
     }
 
 
--- | The creationTime property is the date when subscription was created. It
--- is in milliseconds using the Epoch format. See an example Epoch
+-- | The \`creationTime\` property is the date when subscription was created.
+-- It is in milliseconds using the Epoch format. See an example Epoch
 -- converter.
 subCreationTime :: Lens' Subscription (Maybe Int64)
 subCreationTime
@@ -1049,27 +1064,28 @@ subResourceUiURL
   = lens _subResourceUiURL
       (\ s a -> s{_subResourceUiURL = a})
 
--- | Identifies the resource as a Subscription. Value: reseller#subscription
+-- | Identifies the resource as a Subscription. Value:
+-- \`reseller#subscription\`
 subKind :: Lens' Subscription Text
 subKind = lens _subKind (\ s a -> s{_subKind = a})
 
--- | A required property. The skuId is a unique system identifier for a
+-- | A required property. The \`skuId\` is a unique system identifier for a
 -- product\'s SKU assigned to a customer in the subscription. For products
 -- and SKUs available in this version of the API, see Product and SKU IDs.
 subSKUId :: Lens' Subscription (Maybe Text)
 subSKUId = lens _subSKUId (\ s a -> s{_subSKUId = a})
 
--- | The plan property is required. In this version of the API, the G Suite
--- plans are the flexible plan, annual commitment plan, and the 30-day free
--- trial plan. For more information about the API\"s payment plans, see the
--- API concepts.
+-- | The \`plan\` property is required. In this version of the API, the G
+-- Suite plans are the flexible plan, annual commitment plan, and the
+-- 30-day free trial plan. For more information about the API\"s payment
+-- plans, see the API concepts.
 subPlan :: Lens' Subscription (Maybe SubscriptionPlan)
 subPlan = lens _subPlan (\ s a -> s{_subPlan = a})
 
 -- | Google-issued code (100 char max) for discounted pricing on subscription
--- plans. Deal code must be included in insert requests in order to receive
--- discounted rate. This property is optional, regular pricing applies if
--- left empty.
+-- plans. Deal code must be included in \`insert\` requests in order to
+-- receive discounted rate. This property is optional, regular pricing
+-- applies if left empty.
 subDealCode :: Lens' Subscription (Maybe Text)
 subDealCode
   = lens _subDealCode (\ s a -> s{_subDealCode = a})
@@ -1091,14 +1107,15 @@ subCustomerDomain
 -- | Read-only field containing an enumerable of all the current suspension
 -- reasons for a subscription. It is possible for a subscription to have
 -- many concurrent, overlapping suspension reasons. A subscription\'s
--- STATUS is SUSPENDED until all pending suspensions are removed. Possible
--- options include: - PENDING_TOS_ACCEPTANCE - The customer has not logged
--- in and accepted the G Suite Resold Terms of Services. -
--- RENEWAL_WITH_TYPE_CANCEL - The customer\'s commitment ended and their
--- service was cancelled at the end of their term. - RESELLER_INITIATED - A
--- manual suspension invoked by a Reseller. - TRIAL_ENDED - The customer\'s
--- trial expired without a plan selected. - OTHER - The customer is
--- suspended for an internal Google reason (e.g. abuse or otherwise).
+-- \`STATUS\` is \`SUSPENDED\` until all pending suspensions are removed.
+-- Possible options include: - \`PENDING_TOS_ACCEPTANCE\` - The customer
+-- has not logged in and accepted the G Suite Resold Terms of Services. -
+-- \`RENEWAL_WITH_TYPE_CANCEL\` - The customer\'s commitment ended and
+-- their service was cancelled at the end of their term. -
+-- \`RESELLER_INITIATED\` - A manual suspension invoked by a Reseller. -
+-- \`TRIAL_ENDED\` - The customer\'s trial expired without a plan selected.
+-- - \`OTHER\` - The customer is suspended for an internal Google reason
+-- (e.g. abuse or otherwise).
 subSuspensionReasons :: Lens' Subscription [Text]
 subSuspensionReasons
   = lens _subSuspensionReasons
@@ -1115,8 +1132,9 @@ subTransferInfo
 
 -- | This is an optional property. This purchase order (PO) information is
 -- for resellers to use for their company tracking usage. If a
--- purchaseOrderId value is given it appears in the API responses and shows
--- up in the invoice. The property accepts up to 80 plain text characters.
+-- \`purchaseOrderId\` value is given it appears in the API responses and
+-- shows up in the invoice. The property accepts up to 80 plain text
+-- characters.
 subPurchaseOrderId :: Lens' Subscription (Maybe Text)
 subPurchaseOrderId
   = lens _subPurchaseOrderId
@@ -1134,11 +1152,11 @@ subRenewalSettings
   = lens _subRenewalSettings
       (\ s a -> s{_subRenewalSettings = a})
 
--- | The subscriptionId is the subscription identifier and is unique for each
--- customer. This is a required property. Since a subscriptionId changes
--- when a subscription is updated, we recommend not using this ID as a key
--- for persistent data. Use the subscriptionId as described in retrieve all
--- reseller subscriptions.
+-- | The \`subscriptionId\` is the subscription identifier and is unique for
+-- each customer. This is a required property. Since a \`subscriptionId\`
+-- changes when a subscription is updated, we recommend not using this ID
+-- as a key for persistent data. Use the \`subscriptionId\` as described in
+-- retrieve all reseller subscriptions.
 subSubscriptionId :: Lens' Subscription (Maybe Text)
 subSubscriptionId
   = lens _subSubscriptionId
@@ -1195,7 +1213,8 @@ instance ToJSON Subscription where
 -- /See:/ 'subscriptionTransferInfo' smart constructor.
 data SubscriptionTransferInfo =
   SubscriptionTransferInfo'
-    { _stiTransferabilityExpirationTime :: !(Maybe (Textual Int64))
+    { _stiCurrentLegacySKUId :: !(Maybe Text)
+    , _stiTransferabilityExpirationTime :: !(Maybe (Textual Int64))
     , _stiMinimumTransferableSeats :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1205,6 +1224,8 @@ data SubscriptionTransferInfo =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'stiCurrentLegacySKUId'
+--
 -- * 'stiTransferabilityExpirationTime'
 --
 -- * 'stiMinimumTransferableSeats'
@@ -1212,10 +1233,19 @@ subscriptionTransferInfo
     :: SubscriptionTransferInfo
 subscriptionTransferInfo =
   SubscriptionTransferInfo'
-    { _stiTransferabilityExpirationTime = Nothing
+    { _stiCurrentLegacySKUId = Nothing
+    , _stiTransferabilityExpirationTime = Nothing
     , _stiMinimumTransferableSeats = Nothing
     }
 
+
+-- | Sku id of the current resold subscription. This is populated only when
+-- customer has subscription with legacy sku and the subscription resource
+-- is populated with recommeded sku for transfer in.
+stiCurrentLegacySKUId :: Lens' SubscriptionTransferInfo (Maybe Text)
+stiCurrentLegacySKUId
+  = lens _stiCurrentLegacySKUId
+      (\ s a -> s{_stiCurrentLegacySKUId = a})
 
 -- | The time when transfer token or intent to transfer will expire. The time
 -- is in milliseconds using UNIX Epoch format.
@@ -1240,14 +1270,17 @@ instance FromJSON SubscriptionTransferInfo where
           = withObject "SubscriptionTransferInfo"
               (\ o ->
                  SubscriptionTransferInfo' <$>
-                   (o .:? "transferabilityExpirationTime") <*>
-                     (o .:? "minimumTransferableSeats"))
+                   (o .:? "currentLegacySkuId") <*>
+                     (o .:? "transferabilityExpirationTime")
+                     <*> (o .:? "minimumTransferableSeats"))
 
 instance ToJSON SubscriptionTransferInfo where
         toJSON SubscriptionTransferInfo'{..}
           = object
               (catMaybes
-                 [("transferabilityExpirationTime" .=) <$>
+                 [("currentLegacySkuId" .=) <$>
+                    _stiCurrentLegacySKUId,
+                  ("transferabilityExpirationTime" .=) <$>
                     _stiTransferabilityExpirationTime,
                   ("minimumTransferableSeats" .=) <$>
                     _stiMinimumTransferableSeats])

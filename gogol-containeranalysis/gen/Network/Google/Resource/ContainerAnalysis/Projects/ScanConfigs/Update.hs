@@ -135,7 +135,7 @@ pscuPayload :: Lens' ProjectsScanConfigsUpdate ScanConfig
 pscuPayload
   = lens _pscuPayload (\ s a -> s{_pscuPayload = a})
 
--- | The name of the scan configuration in the form of
+-- | Required. The name of the scan configuration in the form of
 -- \`projects\/[PROJECT_ID]\/scanConfigs\/[SCAN_CONFIG_ID]\`.
 pscuName :: Lens' ProjectsScanConfigsUpdate Text
 pscuName = lens _pscuName (\ s a -> s{_pscuName = a})

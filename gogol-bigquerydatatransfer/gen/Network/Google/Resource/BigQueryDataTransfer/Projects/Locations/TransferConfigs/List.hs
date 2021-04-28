@@ -22,7 +22,7 @@
 --
 -- Returns information about all data transfers in the project.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.list@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.list@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferConfigs.List
     (
     -- * REST Resource
@@ -120,8 +120,9 @@ projectsLocationsTransferConfigsList pPltclParent_ =
     }
 
 
--- | The BigQuery project id for which data sources should be returned:
--- \`projects\/{project_id}\`.
+-- | Required. The BigQuery project id for which data sources should be
+-- returned: \`projects\/{project_id}\` or
+-- \`projects\/{project_id}\/locations\/{location_id}\`
 pltclParent :: Lens' ProjectsLocationsTransferConfigsList Text
 pltclParent
   = lens _pltclParent (\ s a -> s{_pltclParent = a})

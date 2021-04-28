@@ -32,6 +32,12 @@ module Network.Google.Resource.DoubleClickBidManager.Queries.Listqueries
     , queriesListqueries
     , QueriesListqueries
 
+    -- * Request Lenses
+    , qlXgafv
+    , qlUploadProtocol
+    , qlAccessToken
+    , qlUploadType
+    , qlCallback
     ) where
 
 import Network.Google.DoubleClickBids.Types
@@ -43,30 +49,89 @@ type QueriesListqueriesResource =
      "doubleclickbidmanager" :>
        "v1" :>
          "queries" :>
-           QueryParam "alt" AltJSON :>
-             Get '[JSON] ListQueriesResponse
+           QueryParam "$.xgafv" Xgafv :>
+             QueryParam "upload_protocol" Text :>
+               QueryParam "access_token" Text :>
+                 QueryParam "uploadType" Text :>
+                   QueryParam "callback" Text :>
+                     QueryParam "alt" AltJSON :>
+                       Get '[JSON] ListQueriesResponse
 
 -- | Retrieves stored queries.
 --
 -- /See:/ 'queriesListqueries' smart constructor.
 data QueriesListqueries =
   QueriesListqueries'
+    { _qlXgafv :: !(Maybe Xgafv)
+    , _qlUploadProtocol :: !(Maybe Text)
+    , _qlAccessToken :: !(Maybe Text)
+    , _qlUploadType :: !(Maybe Text)
+    , _qlCallback :: !(Maybe Text)
+    }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
 -- | Creates a value of 'QueriesListqueries' with the minimum fields required to make a request.
 --
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'qlXgafv'
+--
+-- * 'qlUploadProtocol'
+--
+-- * 'qlAccessToken'
+--
+-- * 'qlUploadType'
+--
+-- * 'qlCallback'
 queriesListqueries
     :: QueriesListqueries
-queriesListqueries = QueriesListqueries'
+queriesListqueries =
+  QueriesListqueries'
+    { _qlXgafv = Nothing
+    , _qlUploadProtocol = Nothing
+    , _qlAccessToken = Nothing
+    , _qlUploadType = Nothing
+    , _qlCallback = Nothing
+    }
 
+
+-- | V1 error format.
+qlXgafv :: Lens' QueriesListqueries (Maybe Xgafv)
+qlXgafv = lens _qlXgafv (\ s a -> s{_qlXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+qlUploadProtocol :: Lens' QueriesListqueries (Maybe Text)
+qlUploadProtocol
+  = lens _qlUploadProtocol
+      (\ s a -> s{_qlUploadProtocol = a})
+
+-- | OAuth access token.
+qlAccessToken :: Lens' QueriesListqueries (Maybe Text)
+qlAccessToken
+  = lens _qlAccessToken
+      (\ s a -> s{_qlAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+qlUploadType :: Lens' QueriesListqueries (Maybe Text)
+qlUploadType
+  = lens _qlUploadType (\ s a -> s{_qlUploadType = a})
+
+-- | JSONP
+qlCallback :: Lens' QueriesListqueries (Maybe Text)
+qlCallback
+  = lens _qlCallback (\ s a -> s{_qlCallback = a})
 
 instance GoogleRequest QueriesListqueries where
         type Rs QueriesListqueries = ListQueriesResponse
         type Scopes QueriesListqueries =
              '["https://www.googleapis.com/auth/doubleclickbidmanager"]
-        requestClient QueriesListqueries'{}
-          = go (Just AltJSON) doubleClickBidsService
+        requestClient QueriesListqueries'{..}
+          = go _qlXgafv _qlUploadProtocol _qlAccessToken
+              _qlUploadType
+              _qlCallback
+              (Just AltJSON)
+              doubleClickBidsService
           where go
                   = buildClient
                       (Proxy :: Proxy QueriesListqueriesResource)

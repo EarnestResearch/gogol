@@ -109,7 +109,7 @@ projectsDatabasesDocumentsListCollectionIds pPddlciParent_ pPddlciPayload_ =
     }
 
 
--- | The parent document. In the format:
+-- | Required. The parent document. In the format:
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\/{document_path}\`.
 -- For example:
 -- \`projects\/my-project\/databases\/my-database\/documents\/chatrooms\/my-chatroom\`

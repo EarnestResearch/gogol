@@ -122,7 +122,7 @@ projectsLocationsClustersNodePoolsList pPlcnplParent_ =
 
 -- | The parent (project, location, cluster id) where the node pools will be
 -- listed. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcnplParent :: Lens' ProjectsLocationsClustersNodePoolsList Text
 plcnplParent
   = lens _plcnplParent (\ s a -> s{_plcnplParent = a})
@@ -151,8 +151,9 @@ plcnplUploadType
       (\ s a -> s{_plcnplUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the parent field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the parent field.
 plcnplZone :: Lens' ProjectsLocationsClustersNodePoolsList (Maybe Text)
 plcnplZone
   = lens _plcnplZone (\ s a -> s{_plcnplZone = a})

@@ -135,7 +135,7 @@ prPayload :: Lens' ProjectsRollback RollbackRequest
 prPayload
   = lens _prPayload (\ s a -> s{_prPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 prProjectId :: Lens' ProjectsRollback Text
 prProjectId
   = lens _prProjectId (\ s a -> s{_prProjectId = a})

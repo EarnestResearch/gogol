@@ -158,7 +158,7 @@ bapPayload :: Lens' BillingAccountsPatch BillingAccount
 bapPayload
   = lens _bapPayload (\ s a -> s{_bapPayload = a})
 
--- | The name of the billing account resource to be updated.
+-- | Required. The name of the billing account resource to be updated.
 bapName :: Lens' BillingAccountsPatch Text
 bapName = lens _bapName (\ s a -> s{_bapName = a})
 
@@ -170,7 +170,8 @@ bapCallback
 instance GoogleRequest BillingAccountsPatch where
         type Rs BillingAccountsPatch = BillingAccount
         type Scopes BillingAccountsPatch =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient BillingAccountsPatch'{..}
           = go _bapName _bapXgafv _bapUploadProtocol
               _bapUpdateMask

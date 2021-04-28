@@ -59,7 +59,9 @@ type AppsDomainMAppingsCreateResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "overrideStrategy" Text :>
+                     QueryParam "overrideStrategy"
+                       AppsDomainMAppingsCreateOverrideStrategy
+                       :>
                        QueryParam "callback" Text :>
                          QueryParam "alt" AltJSON :>
                            ReqBody '[JSON] DomainMApping :>
@@ -77,7 +79,7 @@ data AppsDomainMAppingsCreate =
     , _admacAccessToken :: !(Maybe Text)
     , _admacUploadType :: !(Maybe Text)
     , _admacPayload :: !DomainMApping
-    , _admacOverrideStrategy :: !(Maybe Text)
+    , _admacOverrideStrategy :: !(Maybe AppsDomainMAppingsCreateOverrideStrategy)
     , _admacAppsId :: !Text
     , _admacCallback :: !(Maybe Text)
     }
@@ -150,7 +152,7 @@ admacPayload
 
 -- | Whether the domain creation should override any existing mappings for
 -- this domain. By default, overrides are rejected.
-admacOverrideStrategy :: Lens' AppsDomainMAppingsCreate (Maybe Text)
+admacOverrideStrategy :: Lens' AppsDomainMAppingsCreate (Maybe AppsDomainMAppingsCreateOverrideStrategy)
 admacOverrideStrategy
   = lens _admacOverrideStrategy
       (\ s a -> s{_admacOverrideStrategy = a})

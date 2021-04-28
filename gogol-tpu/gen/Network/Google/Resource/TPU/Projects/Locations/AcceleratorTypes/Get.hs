@@ -124,7 +124,7 @@ platgUploadType
   = lens _platgUploadType
       (\ s a -> s{_platgUploadType = a})
 
--- | The resource name.
+-- | Required. The resource name.
 platgName :: Lens' ProjectsLocationsAcceleratorTypesGet Text
 platgName
   = lens _platgName (\ s a -> s{_platgName = a})

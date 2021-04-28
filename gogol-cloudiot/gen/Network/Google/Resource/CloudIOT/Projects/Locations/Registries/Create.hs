@@ -109,8 +109,9 @@ projectsLocationsRegistriesCreate pPlrcParent_ pPlrcPayload_ =
     }
 
 
--- | The project and cloud region where this device registry must be created.
--- For example, \`projects\/example-project\/locations\/us-central1\`.
+-- | Required. The project and cloud region where this device registry must
+-- be created. For example,
+-- \`projects\/example-project\/locations\/us-central1\`.
 plrcParent :: Lens' ProjectsLocationsRegistriesCreate Text
 plrcParent
   = lens _plrcParent (\ s a -> s{_plrcParent = a})

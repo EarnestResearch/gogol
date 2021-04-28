@@ -20,11 +20,13 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes all the log entries in a log. The log reappears if it receives
--- new entries. Log entries written shortly before the delete operation
--- might not be deleted.
+-- Deletes all the log entries in a log for the _Default Log Bucket. The
+-- log reappears if it receives new entries. Log entries written shortly
+-- before the delete operation might not be deleted. Entries received after
+-- the delete operation with a timestamp before the operation will be
+-- deleted.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.logs.delete@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.logs.delete@.
 module Network.Google.Resource.Logging.Logs.Delete
     (
     -- * REST Resource
@@ -58,9 +60,11 @@ type LogsDeleteResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Empty
 
--- | Deletes all the log entries in a log. The log reappears if it receives
--- new entries. Log entries written shortly before the delete operation
--- might not be deleted.
+-- | Deletes all the log entries in a log for the _Default Log Bucket. The
+-- log reappears if it receives new entries. Log entries written shortly
+-- before the delete operation might not be deleted. Entries received after
+-- the delete operation with a timestamp before the operation will be
+-- deleted.
 --
 -- /See:/ 'logsDelete' smart constructor.
 data LogsDelete =
@@ -126,13 +130,12 @@ ldUploadType
   = lens _ldUploadType (\ s a -> s{_ldUploadType = a})
 
 -- | Required. The resource name of the log to delete:
--- \"projects\/[PROJECT_ID]\/logs\/[LOG_ID]\"
--- \"organizations\/[ORGANIZATION_ID]\/logs\/[LOG_ID]\"
--- \"billingAccounts\/[BILLING_ACCOUNT_ID]\/logs\/[LOG_ID]\"
--- \"folders\/[FOLDER_ID]\/logs\/[LOG_ID]\" [LOG_ID] must be URL-encoded.
--- For example, \"projects\/my-project-id\/logs\/syslog\",
--- \"organizations\/1234567890\/logs\/cloudresourcemanager.googleapis.com%2Factivity\".
--- For more information about log names, see LogEntry.
+-- projects\/[PROJECT_ID]\/logs\/[LOG_ID]
+-- organizations\/[ORGANIZATION_ID]\/logs\/[LOG_ID]
+-- billingAccounts\/[BILLING_ACCOUNT_ID]\/logs\/[LOG_ID]
+-- folders\/[FOLDER_ID]\/logs\/[LOG_ID][LOG_ID] must be URL-encoded. For
+-- example, \"projects\/my-project-id\/logs\/syslog\".For more information
+-- about log names, see LogEntry.
 ldLogName :: Lens' LogsDelete Text
 ldLogName
   = lens _ldLogName (\ s a -> s{_ldLogName = a})

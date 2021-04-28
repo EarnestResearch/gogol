@@ -36,6 +36,7 @@ module Network.Google.Discovery.Types
     , rmParameterOrder
     , rmMediaUpload
     , rmHTTPMethod
+    , rmFlatPath
     , rmPath
     , rmResponse
     , rmSupportsMediaUpload

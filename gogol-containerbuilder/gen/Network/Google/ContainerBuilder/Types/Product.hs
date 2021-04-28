@@ -241,6 +241,7 @@ instance ToJSON BuildStep where
 data SourceProvenance =
   SourceProvenance'
     { _spResolvedRepoSource :: !(Maybe RepoSource)
+    , _spResolvedStorageSourceManifest :: !(Maybe StorageSourceManifest)
     , _spResolvedStorageSource :: !(Maybe StorageSource)
     , _spFileHashes :: !(Maybe SourceProvenanceFileHashes)
     }
@@ -253,6 +254,8 @@ data SourceProvenance =
 --
 -- * 'spResolvedRepoSource'
 --
+-- * 'spResolvedStorageSourceManifest'
+--
 -- * 'spResolvedStorageSource'
 --
 -- * 'spFileHashes'
@@ -261,6 +264,7 @@ sourceProvenance
 sourceProvenance =
   SourceProvenance'
     { _spResolvedRepoSource = Nothing
+    , _spResolvedStorageSourceManifest = Nothing
     , _spResolvedStorageSource = Nothing
     , _spFileHashes = Nothing
     }
@@ -272,6 +276,13 @@ spResolvedRepoSource :: Lens' SourceProvenance (Maybe RepoSource)
 spResolvedRepoSource
   = lens _spResolvedRepoSource
       (\ s a -> s{_spResolvedRepoSource = a})
+
+-- | A copy of the build\'s \`source.storage_source_manifest\`, if exists,
+-- with any revisions resolved. This feature is in Preview.
+spResolvedStorageSourceManifest :: Lens' SourceProvenance (Maybe StorageSourceManifest)
+spResolvedStorageSourceManifest
+  = lens _spResolvedStorageSourceManifest
+      (\ s a -> s{_spResolvedStorageSourceManifest = a})
 
 -- | A copy of the build\'s \`source.storage_source\`, if exists, with any
 -- generations resolved.
@@ -298,7 +309,8 @@ instance FromJSON SourceProvenance where
               (\ o ->
                  SourceProvenance' <$>
                    (o .:? "resolvedRepoSource") <*>
-                     (o .:? "resolvedStorageSource")
+                     (o .:? "resolvedStorageSourceManifest")
+                     <*> (o .:? "resolvedStorageSource")
                      <*> (o .:? "fileHashes"))
 
 instance ToJSON SourceProvenance where
@@ -306,6 +318,8 @@ instance ToJSON SourceProvenance where
           = object
               (catMaybes
                  [("resolvedRepoSource" .=) <$> _spResolvedRepoSource,
+                  ("resolvedStorageSourceManifest" .=) <$>
+                    _spResolvedStorageSourceManifest,
                   ("resolvedStorageSource" .=) <$>
                     _spResolvedStorageSource,
                   ("fileHashes" .=) <$> _spFileHashes])
@@ -334,7 +348,8 @@ listBuildsResponse =
   ListBuildsResponse' {_lbrNextPageToken = Nothing, _lbrBuilds = Nothing}
 
 
--- | Token to receive the next page of results.
+-- | Token to receive the next page of results. This will be absent if the
+-- end of the response list has been reached.
 lbrNextPageToken :: Lens' ListBuildsResponse (Maybe Text)
 lbrNextPageToken
   = lens _lbrNextPageToken
@@ -364,39 +379,11 @@ instance ToJSON ListBuildsResponse where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -465,6 +452,7 @@ instance ToJSON Status where
 data PullRequestFilter =
   PullRequestFilter'
     { _prfCommentControl :: !(Maybe PullRequestFilterCommentControl)
+    , _prfInvertRegex :: !(Maybe Bool)
     , _prfBranch :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -476,19 +464,31 @@ data PullRequestFilter =
 --
 -- * 'prfCommentControl'
 --
+-- * 'prfInvertRegex'
+--
 -- * 'prfBranch'
 pullRequestFilter
     :: PullRequestFilter
 pullRequestFilter =
-  PullRequestFilter' {_prfCommentControl = Nothing, _prfBranch = Nothing}
+  PullRequestFilter'
+    { _prfCommentControl = Nothing
+    , _prfInvertRegex = Nothing
+    , _prfBranch = Nothing
+    }
 
 
--- | Whether to block builds on a \"\/gcbrun\" comment from a repository
--- owner or collaborator.
+-- | Configure builds to run whether a repository owner or collaborator need
+-- to comment \`\/gcbrun\`.
 prfCommentControl :: Lens' PullRequestFilter (Maybe PullRequestFilterCommentControl)
 prfCommentControl
   = lens _prfCommentControl
       (\ s a -> s{_prfCommentControl = a})
+
+-- | If true, branches that do NOT match the git_ref will trigger a build.
+prfInvertRegex :: Lens' PullRequestFilter (Maybe Bool)
+prfInvertRegex
+  = lens _prfInvertRegex
+      (\ s a -> s{_prfInvertRegex = a})
 
 -- | Regex of branches to match. The syntax of the regular expressions
 -- accepted is the syntax accepted by RE2 and described at
@@ -502,13 +502,15 @@ instance FromJSON PullRequestFilter where
           = withObject "PullRequestFilter"
               (\ o ->
                  PullRequestFilter' <$>
-                   (o .:? "commentControl") <*> (o .:? "branch"))
+                   (o .:? "commentControl") <*> (o .:? "invertRegex")
+                     <*> (o .:? "branch"))
 
 instance ToJSON PullRequestFilter where
         toJSON PullRequestFilter'{..}
           = object
               (catMaybes
                  [("commentControl" .=) <$> _prfCommentControl,
+                  ("invertRegex" .=) <$> _prfInvertRegex,
                   ("branch" .=) <$> _prfBranch])
 
 -- | Specifies a build to retry.
@@ -516,77 +518,94 @@ instance ToJSON PullRequestFilter where
 -- /See:/ 'retryBuildRequest' smart constructor.
 data RetryBuildRequest =
   RetryBuildRequest'
+    { _rbrName :: !(Maybe Text)
+    , _rbrId :: !(Maybe Text)
+    , _rbrProjectId :: !(Maybe Text)
+    }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
 -- | Creates a value of 'RetryBuildRequest' with the minimum fields required to make a request.
 --
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rbrName'
+--
+-- * 'rbrId'
+--
+-- * 'rbrProjectId'
 retryBuildRequest
     :: RetryBuildRequest
-retryBuildRequest = RetryBuildRequest'
+retryBuildRequest =
+  RetryBuildRequest'
+    {_rbrName = Nothing, _rbrId = Nothing, _rbrProjectId = Nothing}
 
+
+-- | The name of the \`Build\` to retry. Format:
+-- \`projects\/{project}\/locations\/{location}\/builds\/{build}\`
+rbrName :: Lens' RetryBuildRequest (Maybe Text)
+rbrName = lens _rbrName (\ s a -> s{_rbrName = a})
+
+-- | Required. Build ID of the original build.
+rbrId :: Lens' RetryBuildRequest (Maybe Text)
+rbrId = lens _rbrId (\ s a -> s{_rbrId = a})
+
+-- | Required. ID of the project.
+rbrProjectId :: Lens' RetryBuildRequest (Maybe Text)
+rbrProjectId
+  = lens _rbrProjectId (\ s a -> s{_rbrProjectId = a})
 
 instance FromJSON RetryBuildRequest where
         parseJSON
           = withObject "RetryBuildRequest"
-              (\ o -> pure RetryBuildRequest')
+              (\ o ->
+                 RetryBuildRequest' <$>
+                   (o .:? "name") <*> (o .:? "id") <*>
+                     (o .:? "projectId"))
 
 instance ToJSON RetryBuildRequest where
-        toJSON = const emptyObject
+        toJSON RetryBuildRequest'{..}
+          = object
+              (catMaybes
+                 [("name" .=) <$> _rbrName, ("id" .=) <$> _rbrId,
+                  ("projectId" .=) <$> _rbrProjectId])
 
--- | The response message for Operations.ListOperations.
 --
--- /See:/ 'listOperationsResponse' smart constructor.
-data ListOperationsResponse =
-  ListOperationsResponse'
-    { _lorNextPageToken :: !(Maybe Text)
-    , _lorOperations :: !(Maybe [Operation])
+-- /See:/ 'hTTPBodyExtensionsItem' smart constructor.
+newtype HTTPBodyExtensionsItem =
+  HTTPBodyExtensionsItem'
+    { _httpbeiAddtional :: HashMap Text JSONValue
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
--- | Creates a value of 'ListOperationsResponse' with the minimum fields required to make a request.
+-- | Creates a value of 'HTTPBodyExtensionsItem' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'lorNextPageToken'
---
--- * 'lorOperations'
-listOperationsResponse
-    :: ListOperationsResponse
-listOperationsResponse =
-  ListOperationsResponse'
-    {_lorNextPageToken = Nothing, _lorOperations = Nothing}
+-- * 'httpbeiAddtional'
+hTTPBodyExtensionsItem
+    :: HashMap Text JSONValue -- ^ 'httpbeiAddtional'
+    -> HTTPBodyExtensionsItem
+hTTPBodyExtensionsItem pHttpbeiAddtional_ =
+  HTTPBodyExtensionsItem' {_httpbeiAddtional = _Coerce # pHttpbeiAddtional_}
 
 
--- | The standard List next-page token.
-lorNextPageToken :: Lens' ListOperationsResponse (Maybe Text)
-lorNextPageToken
-  = lens _lorNextPageToken
-      (\ s a -> s{_lorNextPageToken = a})
-
--- | A list of operations that matches the specified filter in the request.
-lorOperations :: Lens' ListOperationsResponse [Operation]
-lorOperations
-  = lens _lorOperations
-      (\ s a -> s{_lorOperations = a})
-      . _Default
+-- | Properties of the object. Contains field \'type with type URL.
+httpbeiAddtional :: Lens' HTTPBodyExtensionsItem (HashMap Text JSONValue)
+httpbeiAddtional
+  = lens _httpbeiAddtional
+      (\ s a -> s{_httpbeiAddtional = a})
       . _Coerce
 
-instance FromJSON ListOperationsResponse where
+instance FromJSON HTTPBodyExtensionsItem where
         parseJSON
-          = withObject "ListOperationsResponse"
+          = withObject "HTTPBodyExtensionsItem"
               (\ o ->
-                 ListOperationsResponse' <$>
-                   (o .:? "nextPageToken") <*>
-                     (o .:? "operations" .!= mempty))
+                 HTTPBodyExtensionsItem' <$> (parseJSONObject o))
 
-instance ToJSON ListOperationsResponse where
-        toJSON ListOperationsResponse'{..}
-          = object
-              (catMaybes
-                 [("nextPageToken" .=) <$> _lorNextPageToken,
-                  ("operations" .=) <$> _lorOperations])
+instance ToJSON HTTPBodyExtensionsItem where
+        toJSON = toJSON . _httpbeiAddtional
 
 -- | The request message for Operations.CancelOperation.
 --
@@ -769,7 +788,8 @@ instance ToJSON Results where
                   ("numArtifacts" .=) <$> _rNumArtifacts,
                   ("artifactTiming" .=) <$> _rArtifactTiming])
 
--- | Substitutions data for Build resource.
+-- | Substitutions for Build resource. The keys must match the following
+-- regular expression: \`^_[A-Z0-9_]+$\`.
 --
 -- /See:/ 'buildTriggerSubstitutions' smart constructor.
 newtype BuildTriggerSubstitutions =
@@ -810,7 +830,9 @@ instance ToJSON BuildTriggerSubstitutions where
 -- /See:/ 'repoSource' smart constructor.
 data RepoSource =
   RepoSource'
-    { _rsRepoName :: !(Maybe Text)
+    { _rsSubstitutions :: !(Maybe RepoSourceSubstitutions)
+    , _rsInvertRegex :: !(Maybe Bool)
+    , _rsRepoName :: !(Maybe Text)
     , _rsDir :: !(Maybe Text)
     , _rsCommitSha :: !(Maybe Text)
     , _rsBranchName :: !(Maybe Text)
@@ -823,6 +845,10 @@ data RepoSource =
 -- | Creates a value of 'RepoSource' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rsSubstitutions'
+--
+-- * 'rsInvertRegex'
 --
 -- * 'rsRepoName'
 --
@@ -839,7 +865,9 @@ repoSource
     :: RepoSource
 repoSource =
   RepoSource'
-    { _rsRepoName = Nothing
+    { _rsSubstitutions = Nothing
+    , _rsInvertRegex = Nothing
+    , _rsRepoName = Nothing
     , _rsDir = Nothing
     , _rsCommitSha = Nothing
     , _rsBranchName = Nothing
@@ -848,8 +876,21 @@ repoSource =
     }
 
 
--- | Name of the Cloud Source Repository. If omitted, the name \"default\" is
--- assumed.
+-- | Substitutions to use in a triggered build. Should only be used with
+-- RunBuildTrigger
+rsSubstitutions :: Lens' RepoSource (Maybe RepoSourceSubstitutions)
+rsSubstitutions
+  = lens _rsSubstitutions
+      (\ s a -> s{_rsSubstitutions = a})
+
+-- | Only trigger a build if the revision regex does NOT match the revision
+-- regex.
+rsInvertRegex :: Lens' RepoSource (Maybe Bool)
+rsInvertRegex
+  = lens _rsInvertRegex
+      (\ s a -> s{_rsInvertRegex = a})
+
+-- | Name of the Cloud Source Repository.
 rsRepoName :: Lens' RepoSource (Maybe Text)
 rsRepoName
   = lens _rsRepoName (\ s a -> s{_rsRepoName = a})
@@ -865,12 +906,16 @@ rsCommitSha :: Lens' RepoSource (Maybe Text)
 rsCommitSha
   = lens _rsCommitSha (\ s a -> s{_rsCommitSha = a})
 
--- | Name of the branch to build.
+-- | Regex matching branches to build. The syntax of the regular expressions
+-- accepted is the syntax accepted by RE2 and described at
+-- https:\/\/github.com\/google\/re2\/wiki\/Syntax
 rsBranchName :: Lens' RepoSource (Maybe Text)
 rsBranchName
   = lens _rsBranchName (\ s a -> s{_rsBranchName = a})
 
--- | Name of the tag to build.
+-- | Regex matching tags to build. The syntax of the regular expressions
+-- accepted is the syntax accepted by RE2 and described at
+-- https:\/\/github.com\/google\/re2\/wiki\/Syntax
 rsTagName :: Lens' RepoSource (Maybe Text)
 rsTagName
   = lens _rsTagName (\ s a -> s{_rsTagName = a})
@@ -886,8 +931,10 @@ instance FromJSON RepoSource where
           = withObject "RepoSource"
               (\ o ->
                  RepoSource' <$>
-                   (o .:? "repoName") <*> (o .:? "dir") <*>
-                     (o .:? "commitSha")
+                   (o .:? "substitutions") <*> (o .:? "invertRegex") <*>
+                     (o .:? "repoName")
+                     <*> (o .:? "dir")
+                     <*> (o .:? "commitSha")
                      <*> (o .:? "branchName")
                      <*> (o .:? "tagName")
                      <*> (o .:? "projectId"))
@@ -896,12 +943,67 @@ instance ToJSON RepoSource where
         toJSON RepoSource'{..}
           = object
               (catMaybes
-                 [("repoName" .=) <$> _rsRepoName,
+                 [("substitutions" .=) <$> _rsSubstitutions,
+                  ("invertRegex" .=) <$> _rsInvertRegex,
+                  ("repoName" .=) <$> _rsRepoName,
                   ("dir" .=) <$> _rsDir,
                   ("commitSha" .=) <$> _rsCommitSha,
                   ("branchName" .=) <$> _rsBranchName,
                   ("tagName" .=) <$> _rsTagName,
                   ("projectId" .=) <$> _rsProjectId])
+
+-- | Secrets and secret environment variables.
+--
+-- /See:/ 'secrets' smart constructor.
+data Secrets =
+  Secrets'
+    { _sInline :: !(Maybe [InlineSecret])
+    , _sSecretManager :: !(Maybe [SecretManagerSecret])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Secrets' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sInline'
+--
+-- * 'sSecretManager'
+secrets
+    :: Secrets
+secrets = Secrets' {_sInline = Nothing, _sSecretManager = Nothing}
+
+
+-- | Secrets encrypted with KMS key and the associated secret environment
+-- variable.
+sInline :: Lens' Secrets [InlineSecret]
+sInline
+  = lens _sInline (\ s a -> s{_sInline = a}) . _Default
+      . _Coerce
+
+-- | Secrets in Secret Manager and associated secret environment variable.
+sSecretManager :: Lens' Secrets [SecretManagerSecret]
+sSecretManager
+  = lens _sSecretManager
+      (\ s a -> s{_sSecretManager = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON Secrets where
+        parseJSON
+          = withObject "Secrets"
+              (\ o ->
+                 Secrets' <$>
+                   (o .:? "inline" .!= mempty) <*>
+                     (o .:? "secretManager" .!= mempty))
+
+instance ToJSON Secrets where
+        toJSON Secrets'{..}
+          = object
+              (catMaybes
+                 [("inline" .=) <$> _sInline,
+                  ("secretManager" .=) <$> _sSecretManager])
 
 -- | This resource represents a long-running operation that is the result of
 -- a network API call.
@@ -967,7 +1069,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -1062,6 +1165,96 @@ instance FromJSON SecretSecretEnv where
 instance ToJSON SecretSecretEnv where
         toJSON = toJSON . _sseAddtional
 
+-- | Notification is the container which holds the data that is relevant to
+-- this particular notification.
+--
+-- /See:/ 'notification' smart constructor.
+data Notification =
+  Notification'
+    { _nStructDelivery :: !(Maybe NotificationStructDelivery)
+    , _nSmtpDelivery :: !(Maybe SMTPDelivery)
+    , _nHTTPDelivery :: !(Maybe HTTPDelivery)
+    , _nSlackDelivery :: !(Maybe SlackDelivery)
+    , _nFilter :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Notification' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nStructDelivery'
+--
+-- * 'nSmtpDelivery'
+--
+-- * 'nHTTPDelivery'
+--
+-- * 'nSlackDelivery'
+--
+-- * 'nFilter'
+notification
+    :: Notification
+notification =
+  Notification'
+    { _nStructDelivery = Nothing
+    , _nSmtpDelivery = Nothing
+    , _nHTTPDelivery = Nothing
+    , _nSlackDelivery = Nothing
+    , _nFilter = Nothing
+    }
+
+
+-- | Escape hatch for users to supply custom delivery configs.
+nStructDelivery :: Lens' Notification (Maybe NotificationStructDelivery)
+nStructDelivery
+  = lens _nStructDelivery
+      (\ s a -> s{_nStructDelivery = a})
+
+-- | Configuration for SMTP (email) delivery.
+nSmtpDelivery :: Lens' Notification (Maybe SMTPDelivery)
+nSmtpDelivery
+  = lens _nSmtpDelivery
+      (\ s a -> s{_nSmtpDelivery = a})
+
+-- | Configuration for HTTP delivery.
+nHTTPDelivery :: Lens' Notification (Maybe HTTPDelivery)
+nHTTPDelivery
+  = lens _nHTTPDelivery
+      (\ s a -> s{_nHTTPDelivery = a})
+
+-- | Configuration for Slack delivery.
+nSlackDelivery :: Lens' Notification (Maybe SlackDelivery)
+nSlackDelivery
+  = lens _nSlackDelivery
+      (\ s a -> s{_nSlackDelivery = a})
+
+-- | The filter string to use for notification filtering. Currently, this is
+-- assumed to be a CEL program. See
+-- https:\/\/opensource.google\/projects\/cel for more.
+nFilter :: Lens' Notification (Maybe Text)
+nFilter = lens _nFilter (\ s a -> s{_nFilter = a})
+
+instance FromJSON Notification where
+        parseJSON
+          = withObject "Notification"
+              (\ o ->
+                 Notification' <$>
+                   (o .:? "structDelivery") <*> (o .:? "smtpDelivery")
+                     <*> (o .:? "httpDelivery")
+                     <*> (o .:? "slackDelivery")
+                     <*> (o .:? "filter"))
+
+instance ToJSON Notification where
+        toJSON Notification'{..}
+          = object
+              (catMaybes
+                 [("structDelivery" .=) <$> _nStructDelivery,
+                  ("smtpDelivery" .=) <$> _nSmtpDelivery,
+                  ("httpDelivery" .=) <$> _nHTTPDelivery,
+                  ("slackDelivery" .=) <$> _nSlackDelivery,
+                  ("filter" .=) <$> _nFilter])
+
 -- | Artifacts produced by a build that should be uploaded upon successful
 -- completion of all build steps.
 --
@@ -1119,30 +1312,6 @@ instance ToJSON Artifacts where
               (catMaybes
                  [("images" .=) <$> _aImages,
                   ("objects" .=) <$> _aObjects])
-
--- | A CheckSuiteFilter is a filter that indicates that we should build on
--- all check suite events.
---
--- /See:/ 'checkSuiteFilter' smart constructor.
-data CheckSuiteFilter =
-  CheckSuiteFilter'
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'CheckSuiteFilter' with the minimum fields required to make a request.
---
-checkSuiteFilter
-    :: CheckSuiteFilter
-checkSuiteFilter = CheckSuiteFilter'
-
-
-instance FromJSON CheckSuiteFilter where
-        parseJSON
-          = withObject "CheckSuiteFilter"
-              (\ o -> pure CheckSuiteFilter')
-
-instance ToJSON CheckSuiteFilter where
-        toJSON = const emptyObject
 
 -- | Files in the workspace to upload to Cloud Storage upon successful
 -- completion of all build steps.
@@ -1218,7 +1387,6 @@ data GitHubEventsConfig =
     { _ghecOwner :: !(Maybe Text)
     , _ghecPullRequest :: !(Maybe PullRequestFilter)
     , _ghecName :: !(Maybe Text)
-    , _ghecCheckSuite :: !(Maybe CheckSuiteFilter)
     , _ghecPush :: !(Maybe PushFilter)
     , _ghecInstallationId :: !(Maybe (Textual Int64))
     }
@@ -1235,8 +1403,6 @@ data GitHubEventsConfig =
 --
 -- * 'ghecName'
 --
--- * 'ghecCheckSuite'
---
 -- * 'ghecPush'
 --
 -- * 'ghecInstallationId'
@@ -1247,13 +1413,14 @@ gitHubEventsConfig =
     { _ghecOwner = Nothing
     , _ghecPullRequest = Nothing
     , _ghecName = Nothing
-    , _ghecCheckSuite = Nothing
     , _ghecPush = Nothing
     , _ghecInstallationId = Nothing
     }
 
 
--- | Owner of the repository.
+-- | Owner of the repository. For example: The owner for
+-- https:\/\/github.com\/googlecloudplatform\/cloud-builders is
+-- \"googlecloudplatform\".
 ghecOwner :: Lens' GitHubEventsConfig (Maybe Text)
 ghecOwner
   = lens _ghecOwner (\ s a -> s{_ghecOwner = a})
@@ -1264,22 +1431,17 @@ ghecPullRequest
   = lens _ghecPullRequest
       (\ s a -> s{_ghecPullRequest = a})
 
--- | Name of the repository.
+-- | Name of the repository. For example: The name for
+-- https:\/\/github.com\/googlecloudplatform\/cloud-builders is
+-- \"cloud-builders\".
 ghecName :: Lens' GitHubEventsConfig (Maybe Text)
 ghecName = lens _ghecName (\ s a -> s{_ghecName = a})
-
--- | Output only. Indicates that a build was generated from a check suite
--- event.
-ghecCheckSuite :: Lens' GitHubEventsConfig (Maybe CheckSuiteFilter)
-ghecCheckSuite
-  = lens _ghecCheckSuite
-      (\ s a -> s{_ghecCheckSuite = a})
 
 -- | filter to match changes in refs like branches, tags.
 ghecPush :: Lens' GitHubEventsConfig (Maybe PushFilter)
 ghecPush = lens _ghecPush (\ s a -> s{_ghecPush = a})
 
--- | The installationID that emmits the GitHub event.
+-- | The installationID that emits the GitHub event.
 ghecInstallationId :: Lens' GitHubEventsConfig (Maybe Int64)
 ghecInstallationId
   = lens _ghecInstallationId
@@ -1293,7 +1455,6 @@ instance FromJSON GitHubEventsConfig where
                  GitHubEventsConfig' <$>
                    (o .:? "owner") <*> (o .:? "pullRequest") <*>
                      (o .:? "name")
-                     <*> (o .:? "checkSuite")
                      <*> (o .:? "push")
                      <*> (o .:? "installationId"))
 
@@ -1303,9 +1464,7 @@ instance ToJSON GitHubEventsConfig where
               (catMaybes
                  [("owner" .=) <$> _ghecOwner,
                   ("pullRequest" .=) <$> _ghecPullRequest,
-                  ("name" .=) <$> _ghecName,
-                  ("checkSuite" .=) <$> _ghecCheckSuite,
-                  ("push" .=) <$> _ghecPush,
+                  ("name" .=) <$> _ghecName, ("push" .=) <$> _ghecPush,
                   ("installationId" .=) <$> _ghecInstallationId])
 
 -- | Volume describes a Docker container volume which is mounted into build
@@ -1356,6 +1515,185 @@ instance ToJSON Volume where
               (catMaybes
                  [("path" .=) <$> _vPath, ("name" .=) <$> _vName])
 
+-- | NotifierSecretRef contains the reference to a secret stored in the
+-- corresponding NotifierSpec.
+--
+-- /See:/ 'notifierSecretRef' smart constructor.
+newtype NotifierSecretRef =
+  NotifierSecretRef'
+    { _nsrSecretRef :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotifierSecretRef' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nsrSecretRef'
+notifierSecretRef
+    :: NotifierSecretRef
+notifierSecretRef = NotifierSecretRef' {_nsrSecretRef = Nothing}
+
+
+-- | The value of \`secret_ref\` should be a \`name\` that is registered in a
+-- \`Secret\` in the \`secrets\` list of the \`Spec\`.
+nsrSecretRef :: Lens' NotifierSecretRef (Maybe Text)
+nsrSecretRef
+  = lens _nsrSecretRef (\ s a -> s{_nsrSecretRef = a})
+
+instance FromJSON NotifierSecretRef where
+        parseJSON
+          = withObject "NotifierSecretRef"
+              (\ o -> NotifierSecretRef' <$> (o .:? "secretRef"))
+
+instance ToJSON NotifierSecretRef where
+        toJSON NotifierSecretRef'{..}
+          = object
+              (catMaybes [("secretRef" .=) <$> _nsrSecretRef])
+
+-- | ReceiveTriggerWebhookResponse [Experimental] is the response object for
+-- the ReceiveTriggerWebhook method.
+--
+-- /See:/ 'receiveTriggerWebhookResponse' smart constructor.
+data ReceiveTriggerWebhookResponse =
+  ReceiveTriggerWebhookResponse'
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ReceiveTriggerWebhookResponse' with the minimum fields required to make a request.
+--
+receiveTriggerWebhookResponse
+    :: ReceiveTriggerWebhookResponse
+receiveTriggerWebhookResponse = ReceiveTriggerWebhookResponse'
+
+
+instance FromJSON ReceiveTriggerWebhookResponse where
+        parseJSON
+          = withObject "ReceiveTriggerWebhookResponse"
+              (\ o -> pure ReceiveTriggerWebhookResponse')
+
+instance ToJSON ReceiveTriggerWebhookResponse where
+        toJSON = const emptyObject
+
+-- | Location of the source manifest in Google Cloud Storage. This feature is
+-- in Preview.
+--
+-- /See:/ 'storageSourceManifest' smart constructor.
+data StorageSourceManifest =
+  StorageSourceManifest'
+    { _ssmBucket :: !(Maybe Text)
+    , _ssmObject :: !(Maybe Text)
+    , _ssmGeneration :: !(Maybe (Textual Int64))
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'StorageSourceManifest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ssmBucket'
+--
+-- * 'ssmObject'
+--
+-- * 'ssmGeneration'
+storageSourceManifest
+    :: StorageSourceManifest
+storageSourceManifest =
+  StorageSourceManifest'
+    {_ssmBucket = Nothing, _ssmObject = Nothing, _ssmGeneration = Nothing}
+
+
+-- | Google Cloud Storage bucket containing the source manifest (see [Bucket
+-- Name
+-- Requirements](https:\/\/cloud.google.com\/storage\/docs\/bucket-naming#requirements)).
+ssmBucket :: Lens' StorageSourceManifest (Maybe Text)
+ssmBucket
+  = lens _ssmBucket (\ s a -> s{_ssmBucket = a})
+
+-- | Google Cloud Storage object containing the source manifest. This object
+-- must be a JSON file.
+ssmObject :: Lens' StorageSourceManifest (Maybe Text)
+ssmObject
+  = lens _ssmObject (\ s a -> s{_ssmObject = a})
+
+-- | Google Cloud Storage generation for the object. If the generation is
+-- omitted, the latest generation will be used.
+ssmGeneration :: Lens' StorageSourceManifest (Maybe Int64)
+ssmGeneration
+  = lens _ssmGeneration
+      (\ s a -> s{_ssmGeneration = a})
+      . mapping _Coerce
+
+instance FromJSON StorageSourceManifest where
+        parseJSON
+          = withObject "StorageSourceManifest"
+              (\ o ->
+                 StorageSourceManifest' <$>
+                   (o .:? "bucket") <*> (o .:? "object") <*>
+                     (o .:? "generation"))
+
+instance ToJSON StorageSourceManifest where
+        toJSON StorageSourceManifest'{..}
+          = object
+              (catMaybes
+                 [("bucket" .=) <$> _ssmBucket,
+                  ("object" .=) <$> _ssmObject,
+                  ("generation" .=) <$> _ssmGeneration])
+
+-- | Pairs a secret environment variable with a SecretVersion in Secret
+-- Manager.
+--
+-- /See:/ 'secretManagerSecret' smart constructor.
+data SecretManagerSecret =
+  SecretManagerSecret'
+    { _smsVersionName :: !(Maybe Text)
+    , _smsEnv :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SecretManagerSecret' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'smsVersionName'
+--
+-- * 'smsEnv'
+secretManagerSecret
+    :: SecretManagerSecret
+secretManagerSecret =
+  SecretManagerSecret' {_smsVersionName = Nothing, _smsEnv = Nothing}
+
+
+-- | Resource name of the SecretVersion. In format:
+-- projects\/*\/secrets\/*\/versions\/*
+smsVersionName :: Lens' SecretManagerSecret (Maybe Text)
+smsVersionName
+  = lens _smsVersionName
+      (\ s a -> s{_smsVersionName = a})
+
+-- | Environment variable name to associate with the secret. Secret
+-- environment variables must be unique across all of a build\'s secrets,
+-- and must be used by at least one build step.
+smsEnv :: Lens' SecretManagerSecret (Maybe Text)
+smsEnv = lens _smsEnv (\ s a -> s{_smsEnv = a})
+
+instance FromJSON SecretManagerSecret where
+        parseJSON
+          = withObject "SecretManagerSecret"
+              (\ o ->
+                 SecretManagerSecret' <$>
+                   (o .:? "versionName") <*> (o .:? "env"))
+
+instance ToJSON SecretManagerSecret where
+        toJSON SecretManagerSecret'{..}
+          = object
+              (catMaybes
+                 [("versionName" .=) <$> _smsVersionName,
+                  ("env" .=) <$> _smsEnv])
+
 --
 -- /See:/ 'statusDetailsItem' smart constructor.
 newtype StatusDetailsItem =
@@ -1396,17 +1734,19 @@ instance ToJSON StatusDetailsItem where
 -- builder image to run on the source), and where to store the built
 -- artifacts. Fields can include the following variables, which will be
 -- expanded when the build is created: - $PROJECT_ID: the project ID of the
--- build. - $BUILD_ID: the autogenerated ID of the build. - $REPO_NAME: the
--- source repository name specified by RepoSource. - $BRANCH_NAME: the
--- branch name specified by RepoSource. - $TAG_NAME: the tag name specified
--- by RepoSource. - $REVISION_ID or $COMMIT_SHA: the commit SHA specified
--- by RepoSource or resolved from the specified branch or tag. -
--- $SHORT_SHA: first 7 characters of $REVISION_ID or $COMMIT_SHA.
+-- build. - $PROJECT_NUMBER: the project number of the build. - $BUILD_ID:
+-- the autogenerated ID of the build. - $REPO_NAME: the source repository
+-- name specified by RepoSource. - $BRANCH_NAME: the branch name specified
+-- by RepoSource. - $TAG_NAME: the tag name specified by RepoSource. -
+-- $REVISION_ID or $COMMIT_SHA: the commit SHA specified by RepoSource or
+-- resolved from the specified branch or tag. - $SHORT_SHA: first 7
+-- characters of $REVISION_ID or $COMMIT_SHA.
 --
 -- /See:/ 'build' smart constructor.
 data Build =
   Build'
-    { _bImages :: !(Maybe [Text])
+    { _bAvailableSecrets :: !(Maybe Secrets)
+    , _bImages :: !(Maybe [Text])
     , _bStatus :: !(Maybe BuildStatus)
     , _bSourceProvenance :: !(Maybe SourceProvenance)
     , _bSubstitutions :: !(Maybe BuildSubstitutions)
@@ -1417,9 +1757,12 @@ data Build =
     , _bArtifacts :: !(Maybe Artifacts)
     , _bLogsBucket :: !(Maybe Text)
     , _bSteps :: !(Maybe [BuildStep])
+    , _bServiceAccount :: !(Maybe Text)
+    , _bName :: !(Maybe Text)
     , _bStatusDetail :: !(Maybe Text)
     , _bSource :: !(Maybe Source)
     , _bId :: !(Maybe Text)
+    , _bQueueTtl :: !(Maybe GDuration)
     , _bOptions :: !(Maybe BuildOptions)
     , _bProjectId :: !(Maybe Text)
     , _bTiming :: !(Maybe BuildTiming)
@@ -1435,6 +1778,8 @@ data Build =
 -- | Creates a value of 'Build' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'bAvailableSecrets'
 --
 -- * 'bImages'
 --
@@ -1458,11 +1803,17 @@ data Build =
 --
 -- * 'bSteps'
 --
+-- * 'bServiceAccount'
+--
+-- * 'bName'
+--
 -- * 'bStatusDetail'
 --
 -- * 'bSource'
 --
 -- * 'bId'
+--
+-- * 'bQueueTtl'
 --
 -- * 'bOptions'
 --
@@ -1483,7 +1834,8 @@ build
     :: Build
 build =
   Build'
-    { _bImages = Nothing
+    { _bAvailableSecrets = Nothing
+    , _bImages = Nothing
     , _bStatus = Nothing
     , _bSourceProvenance = Nothing
     , _bSubstitutions = Nothing
@@ -1494,9 +1846,12 @@ build =
     , _bArtifacts = Nothing
     , _bLogsBucket = Nothing
     , _bSteps = Nothing
+    , _bServiceAccount = Nothing
+    , _bName = Nothing
     , _bStatusDetail = Nothing
     , _bSource = Nothing
     , _bId = Nothing
+    , _bQueueTtl = Nothing
     , _bOptions = Nothing
     , _bProjectId = Nothing
     , _bTiming = Nothing
@@ -1507,6 +1862,12 @@ build =
     , _bTags = Nothing
     }
 
+
+-- | Secrets and secret environment variables.
+bAvailableSecrets :: Lens' Build (Maybe Secrets)
+bAvailableSecrets
+  = lens _bAvailableSecrets
+      (\ s a -> s{_bAvailableSecrets = a})
 
 -- | A list of images to be pushed upon the successful completion of all
 -- build steps. The images are pushed using the builder service account\'s
@@ -1542,7 +1903,11 @@ bLogURL = lens _bLogURL (\ s a -> s{_bLogURL = a})
 bResults :: Lens' Build (Maybe Results)
 bResults = lens _bResults (\ s a -> s{_bResults = a})
 
--- | Secrets to decrypt using Cloud Key Management Service.
+-- | Secrets to decrypt using Cloud Key Management Service. Note: Secret
+-- Manager is the recommended technique for managing sensitive data with
+-- Cloud Build. Use \`available_secrets\` to configure builds to access
+-- secrets from Secret Manager. For instructions, see:
+-- https:\/\/cloud.google.com\/cloud-build\/docs\/securing-builds\/use-secrets
 bSecrets :: Lens' Build [Secret]
 bSecrets
   = lens _bSecrets (\ s a -> s{_bSecrets = a}) .
@@ -1576,6 +1941,21 @@ bSteps
   = lens _bSteps (\ s a -> s{_bSteps = a}) . _Default .
       _Coerce
 
+-- | IAM service account whose credentials will be used at build runtime.
+-- Must be of the format
+-- \`projects\/{PROJECT_ID}\/serviceAccounts\/{ACCOUNT}\`. ACCOUNT can be
+-- email address or uniqueId of the service account.
+bServiceAccount :: Lens' Build (Maybe Text)
+bServiceAccount
+  = lens _bServiceAccount
+      (\ s a -> s{_bServiceAccount = a})
+
+-- | Output only. The \'Build\' name with format:
+-- \`projects\/{project}\/locations\/{location}\/builds\/{build}\`, where
+-- {build} is a unique identifier generated by the service.
+bName :: Lens' Build (Maybe Text)
+bName = lens _bName (\ s a -> s{_bName = a})
+
 -- | Output only. Customer-readable message about the current status.
 bStatusDetail :: Lens' Build (Maybe Text)
 bStatusDetail
@@ -1589,6 +1969,14 @@ bSource = lens _bSource (\ s a -> s{_bSource = a})
 -- | Output only. Unique identifier of the build.
 bId :: Lens' Build (Maybe Text)
 bId = lens _bId (\ s a -> s{_bId = a})
+
+-- | TTL in queue for this build. If provided and the build is enqueued
+-- longer than this value, the build will expire and the build status will
+-- be \`EXPIRED\`. The TTL starts ticking from create_time.
+bQueueTtl :: Lens' Build (Maybe Scientific)
+bQueueTtl
+  = lens _bQueueTtl (\ s a -> s{_bQueueTtl = a}) .
+      mapping _GDuration
 
 -- | Special options for this build.
 bOptions :: Lens' Build (Maybe BuildOptions)
@@ -1615,8 +2003,8 @@ bBuildTriggerId
 
 -- | Amount of time that this build should be allowed to run, to second
 -- granularity. If this amount of time elapses, work on the build will
--- cease and the build status will be \`TIMEOUT\`. Default time is ten
--- minutes.
+-- cease and the build status will be \`TIMEOUT\`. \`timeout\` starts
+-- ticking from \`startTime\`. Default time is ten minutes.
 bTimeout :: Lens' Build (Maybe Scientific)
 bTimeout
   = lens _bTimeout (\ s a -> s{_bTimeout = a}) .
@@ -1647,8 +2035,10 @@ instance FromJSON Build where
           = withObject "Build"
               (\ o ->
                  Build' <$>
-                   (o .:? "images" .!= mempty) <*> (o .:? "status") <*>
-                     (o .:? "sourceProvenance")
+                   (o .:? "availableSecrets") <*>
+                     (o .:? "images" .!= mempty)
+                     <*> (o .:? "status")
+                     <*> (o .:? "sourceProvenance")
                      <*> (o .:? "substitutions")
                      <*> (o .:? "logUrl")
                      <*> (o .:? "results")
@@ -1657,9 +2047,12 @@ instance FromJSON Build where
                      <*> (o .:? "artifacts")
                      <*> (o .:? "logsBucket")
                      <*> (o .:? "steps" .!= mempty)
+                     <*> (o .:? "serviceAccount")
+                     <*> (o .:? "name")
                      <*> (o .:? "statusDetail")
                      <*> (o .:? "source")
                      <*> (o .:? "id")
+                     <*> (o .:? "queueTtl")
                      <*> (o .:? "options")
                      <*> (o .:? "projectId")
                      <*> (o .:? "timing")
@@ -1673,7 +2066,8 @@ instance ToJSON Build where
         toJSON Build'{..}
           = object
               (catMaybes
-                 [("images" .=) <$> _bImages,
+                 [("availableSecrets" .=) <$> _bAvailableSecrets,
+                  ("images" .=) <$> _bImages,
                   ("status" .=) <$> _bStatus,
                   ("sourceProvenance" .=) <$> _bSourceProvenance,
                   ("substitutions" .=) <$> _bSubstitutions,
@@ -1684,8 +2078,11 @@ instance ToJSON Build where
                   ("artifacts" .=) <$> _bArtifacts,
                   ("logsBucket" .=) <$> _bLogsBucket,
                   ("steps" .=) <$> _bSteps,
+                  ("serviceAccount" .=) <$> _bServiceAccount,
+                  ("name" .=) <$> _bName,
                   ("statusDetail" .=) <$> _bStatusDetail,
                   ("source" .=) <$> _bSource, ("id" .=) <$> _bId,
+                  ("queueTtl" .=) <$> _bQueueTtl,
                   ("options" .=) <$> _bOptions,
                   ("projectId" .=) <$> _bProjectId,
                   ("timing" .=) <$> _bTiming,
@@ -1694,6 +2091,46 @@ instance ToJSON Build where
                   ("finishTime" .=) <$> _bFinishTime,
                   ("createTime" .=) <$> _bCreateTime,
                   ("tags" .=) <$> _bTags])
+
+-- | Map of environment variable name to its encrypted value. Secret
+-- environment variables must be unique across all of a build\'s secrets,
+-- and must be used by at least one build step. Values can be at most 64 KB
+-- in size. There can be at most 100 secret values across all of a build\'s
+-- secrets.
+--
+-- /See:/ 'inlineSecretEnvMap' smart constructor.
+newtype InlineSecretEnvMap =
+  InlineSecretEnvMap'
+    { _isemAddtional :: HashMap Text Bytes
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InlineSecretEnvMap' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'isemAddtional'
+inlineSecretEnvMap
+    :: HashMap Text ByteString -- ^ 'isemAddtional'
+    -> InlineSecretEnvMap
+inlineSecretEnvMap pIsemAddtional_ =
+  InlineSecretEnvMap' {_isemAddtional = _Coerce # pIsemAddtional_}
+
+
+isemAddtional :: Lens' InlineSecretEnvMap (HashMap Text ByteString)
+isemAddtional
+  = lens _isemAddtional
+      (\ s a -> s{_isemAddtional = a})
+      . _Coerce
+
+instance FromJSON InlineSecretEnvMap where
+        parseJSON
+          = withObject "InlineSecretEnvMap"
+              (\ o -> InlineSecretEnvMap' <$> (parseJSONObject o))
+
+instance ToJSON InlineSecretEnvMap where
+        toJSON = toJSON . _isemAddtional
 
 -- | Output only. Hash(es) of the build source, which can be used to verify
 -- that the original source integrity was maintained in the build. Note
@@ -1739,8 +2176,116 @@ instance FromJSON SourceProvenanceFileHashes where
 instance ToJSON SourceProvenanceFileHashes where
         toJSON = toJSON . _spfhAddtional
 
+-- | SMTPDelivery is the delivery configuration for an SMTP (email)
+-- notification.
+--
+-- /See:/ 'sMTPDelivery' smart constructor.
+data SMTPDelivery =
+  SMTPDelivery'
+    { _smtpdSenderAddress :: !(Maybe Text)
+    , _smtpdFromAddress :: !(Maybe Text)
+    , _smtpdRecipientAddresses :: !(Maybe [Text])
+    , _smtpdPassword :: !(Maybe NotifierSecretRef)
+    , _smtpdServer :: !(Maybe Text)
+    , _smtpdPort :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SMTPDelivery' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'smtpdSenderAddress'
+--
+-- * 'smtpdFromAddress'
+--
+-- * 'smtpdRecipientAddresses'
+--
+-- * 'smtpdPassword'
+--
+-- * 'smtpdServer'
+--
+-- * 'smtpdPort'
+sMTPDelivery
+    :: SMTPDelivery
+sMTPDelivery =
+  SMTPDelivery'
+    { _smtpdSenderAddress = Nothing
+    , _smtpdFromAddress = Nothing
+    , _smtpdRecipientAddresses = Nothing
+    , _smtpdPassword = Nothing
+    , _smtpdServer = Nothing
+    , _smtpdPort = Nothing
+    }
+
+
+-- | This is the SMTP account\/email that is used to send the message.
+smtpdSenderAddress :: Lens' SMTPDelivery (Maybe Text)
+smtpdSenderAddress
+  = lens _smtpdSenderAddress
+      (\ s a -> s{_smtpdSenderAddress = a})
+
+-- | This is the SMTP account\/email that appears in the \`From:\` of the
+-- email. If empty, it is assumed to be sender.
+smtpdFromAddress :: Lens' SMTPDelivery (Maybe Text)
+smtpdFromAddress
+  = lens _smtpdFromAddress
+      (\ s a -> s{_smtpdFromAddress = a})
+
+-- | This is the list of addresses to which we send the email (i.e. in the
+-- \`To:\` of the email).
+smtpdRecipientAddresses :: Lens' SMTPDelivery [Text]
+smtpdRecipientAddresses
+  = lens _smtpdRecipientAddresses
+      (\ s a -> s{_smtpdRecipientAddresses = a})
+      . _Default
+      . _Coerce
+
+-- | The SMTP sender\'s password.
+smtpdPassword :: Lens' SMTPDelivery (Maybe NotifierSecretRef)
+smtpdPassword
+  = lens _smtpdPassword
+      (\ s a -> s{_smtpdPassword = a})
+
+-- | The address of the SMTP server.
+smtpdServer :: Lens' SMTPDelivery (Maybe Text)
+smtpdServer
+  = lens _smtpdServer (\ s a -> s{_smtpdServer = a})
+
+-- | The SMTP port of the server.
+smtpdPort :: Lens' SMTPDelivery (Maybe Text)
+smtpdPort
+  = lens _smtpdPort (\ s a -> s{_smtpdPort = a})
+
+instance FromJSON SMTPDelivery where
+        parseJSON
+          = withObject "SMTPDelivery"
+              (\ o ->
+                 SMTPDelivery' <$>
+                   (o .:? "senderAddress") <*> (o .:? "fromAddress") <*>
+                     (o .:? "recipientAddresses" .!= mempty)
+                     <*> (o .:? "password")
+                     <*> (o .:? "server")
+                     <*> (o .:? "port"))
+
+instance ToJSON SMTPDelivery where
+        toJSON SMTPDelivery'{..}
+          = object
+              (catMaybes
+                 [("senderAddress" .=) <$> _smtpdSenderAddress,
+                  ("fromAddress" .=) <$> _smtpdFromAddress,
+                  ("recipientAddresses" .=) <$>
+                    _smtpdRecipientAddresses,
+                  ("password" .=) <$> _smtpdPassword,
+                  ("server" .=) <$> _smtpdServer,
+                  ("port" .=) <$> _smtpdPort])
+
 -- | Pairs a set of secret environment variables containing encrypted values
--- with the Cloud KMS key to use to decrypt the value.
+-- with the Cloud KMS key to use to decrypt the value. Note: Use
+-- \`kmsKeyName\` with \`available_secrets\` instead of using
+-- \`kmsKeyName\` with \`secret\`. For instructions see:
+-- https:\/\/cloud.google.com\/cloud-build\/docs\/securing-builds\/use-encrypted-credentials.
 --
 -- /See:/ 'secret' smart constructor.
 data Secret =
@@ -1796,7 +2341,8 @@ instance ToJSON Secret where
 -- /See:/ 'pushFilter' smart constructor.
 data PushFilter =
   PushFilter'
-    { _pfTag :: !(Maybe Text)
+    { _pfInvertRegex :: !(Maybe Bool)
+    , _pfTag :: !(Maybe Text)
     , _pfBranch :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -1806,22 +2352,32 @@ data PushFilter =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'pfInvertRegex'
+--
 -- * 'pfTag'
 --
 -- * 'pfBranch'
 pushFilter
     :: PushFilter
-pushFilter = PushFilter' {_pfTag = Nothing, _pfBranch = Nothing}
+pushFilter =
+  PushFilter' {_pfInvertRegex = Nothing, _pfTag = Nothing, _pfBranch = Nothing}
 
 
--- | Regexes of tags to match. The syntax of the regular expressions accepted
--- is the syntax accepted by RE2 and described at
+-- | When true, only trigger a build if the revision regex does NOT match the
+-- git_ref regex.
+pfInvertRegex :: Lens' PushFilter (Maybe Bool)
+pfInvertRegex
+  = lens _pfInvertRegex
+      (\ s a -> s{_pfInvertRegex = a})
+
+-- | Regexes matching tags to build. The syntax of the regular expressions
+-- accepted is the syntax accepted by RE2 and described at
 -- https:\/\/github.com\/google\/re2\/wiki\/Syntax
 pfTag :: Lens' PushFilter (Maybe Text)
 pfTag = lens _pfTag (\ s a -> s{_pfTag = a})
 
--- | Regexes of branches to match. The syntax of the regular expressions
--- accepted is the syntax accepted by RE2 and described at
+-- | Regexes matching branches to build. The syntax of the regular
+-- expressions accepted is the syntax accepted by RE2 and described at
 -- https:\/\/github.com\/google\/re2\/wiki\/Syntax
 pfBranch :: Lens' PushFilter (Maybe Text)
 pfBranch = lens _pfBranch (\ s a -> s{_pfBranch = a})
@@ -1830,36 +2386,151 @@ instance FromJSON PushFilter where
         parseJSON
           = withObject "PushFilter"
               (\ o ->
-                 PushFilter' <$> (o .:? "tag") <*> (o .:? "branch"))
+                 PushFilter' <$>
+                   (o .:? "invertRegex") <*> (o .:? "tag") <*>
+                     (o .:? "branch"))
 
 instance ToJSON PushFilter where
         toJSON PushFilter'{..}
           = object
               (catMaybes
-                 [("tag" .=) <$> _pfTag, ("branch" .=) <$> _pfBranch])
+                 [("invertRegex" .=) <$> _pfInvertRegex,
+                  ("tag" .=) <$> _pfTag, ("branch" .=) <$> _pfBranch])
 
 -- | Request to cancel an ongoing build.
 --
 -- /See:/ 'cancelBuildRequest' smart constructor.
 data CancelBuildRequest =
   CancelBuildRequest'
+    { _cbrName :: !(Maybe Text)
+    , _cbrId :: !(Maybe Text)
+    , _cbrProjectId :: !(Maybe Text)
+    }
   deriving (Eq, Show, Data, Typeable, Generic)
 
 
 -- | Creates a value of 'CancelBuildRequest' with the minimum fields required to make a request.
 --
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cbrName'
+--
+-- * 'cbrId'
+--
+-- * 'cbrProjectId'
 cancelBuildRequest
     :: CancelBuildRequest
-cancelBuildRequest = CancelBuildRequest'
+cancelBuildRequest =
+  CancelBuildRequest'
+    {_cbrName = Nothing, _cbrId = Nothing, _cbrProjectId = Nothing}
 
+
+-- | The name of the \`Build\` to cancel. Format:
+-- \`projects\/{project}\/locations\/{location}\/builds\/{build}\`
+cbrName :: Lens' CancelBuildRequest (Maybe Text)
+cbrName = lens _cbrName (\ s a -> s{_cbrName = a})
+
+-- | Required. ID of the build.
+cbrId :: Lens' CancelBuildRequest (Maybe Text)
+cbrId = lens _cbrId (\ s a -> s{_cbrId = a})
+
+-- | Required. ID of the project.
+cbrProjectId :: Lens' CancelBuildRequest (Maybe Text)
+cbrProjectId
+  = lens _cbrProjectId (\ s a -> s{_cbrProjectId = a})
 
 instance FromJSON CancelBuildRequest where
         parseJSON
           = withObject "CancelBuildRequest"
-              (\ o -> pure CancelBuildRequest')
+              (\ o ->
+                 CancelBuildRequest' <$>
+                   (o .:? "name") <*> (o .:? "id") <*>
+                     (o .:? "projectId"))
 
 instance ToJSON CancelBuildRequest where
-        toJSON = const emptyObject
+        toJSON CancelBuildRequest'{..}
+          = object
+              (catMaybes
+                 [("name" .=) <$> _cbrName, ("id" .=) <$> _cbrId,
+                  ("projectId" .=) <$> _cbrProjectId])
+
+-- | PubsubConfig describes the configuration of a trigger that creates a
+-- build whenever a Pub\/Sub message is published.
+--
+-- /See:/ 'pubsubConfig' smart constructor.
+data PubsubConfig =
+  PubsubConfig'
+    { _pcState :: !(Maybe PubsubConfigState)
+    , _pcTopic :: !(Maybe Text)
+    , _pcServiceAccountEmail :: !(Maybe Text)
+    , _pcSubscription :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PubsubConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pcState'
+--
+-- * 'pcTopic'
+--
+-- * 'pcServiceAccountEmail'
+--
+-- * 'pcSubscription'
+pubsubConfig
+    :: PubsubConfig
+pubsubConfig =
+  PubsubConfig'
+    { _pcState = Nothing
+    , _pcTopic = Nothing
+    , _pcServiceAccountEmail = Nothing
+    , _pcSubscription = Nothing
+    }
+
+
+-- | Potential issues with the underlying Pub\/Sub subscription
+-- configuration. Only populated on get requests.
+pcState :: Lens' PubsubConfig (Maybe PubsubConfigState)
+pcState = lens _pcState (\ s a -> s{_pcState = a})
+
+-- | The name of the topic from which this subscription is receiving
+-- messages. Format is \`projects\/{project}\/topics\/{topic}\`.
+pcTopic :: Lens' PubsubConfig (Maybe Text)
+pcTopic = lens _pcTopic (\ s a -> s{_pcTopic = a})
+
+-- | Service account that will make the push request.
+pcServiceAccountEmail :: Lens' PubsubConfig (Maybe Text)
+pcServiceAccountEmail
+  = lens _pcServiceAccountEmail
+      (\ s a -> s{_pcServiceAccountEmail = a})
+
+-- | Output only. Name of the subscription. Format is
+-- \`projects\/{project}\/subscriptions\/{subscription}\`.
+pcSubscription :: Lens' PubsubConfig (Maybe Text)
+pcSubscription
+  = lens _pcSubscription
+      (\ s a -> s{_pcSubscription = a})
+
+instance FromJSON PubsubConfig where
+        parseJSON
+          = withObject "PubsubConfig"
+              (\ o ->
+                 PubsubConfig' <$>
+                   (o .:? "state") <*> (o .:? "topic") <*>
+                     (o .:? "serviceAccountEmail")
+                     <*> (o .:? "subscription"))
+
+instance ToJSON PubsubConfig where
+        toJSON PubsubConfig'{..}
+          = object
+              (catMaybes
+                 [("state" .=) <$> _pcState,
+                  ("topic" .=) <$> _pcTopic,
+                  ("serviceAccountEmail" .=) <$>
+                    _pcServiceAccountEmail,
+                  ("subscription" .=) <$> _pcSubscription])
 
 -- | Start and end times for a build execution phase.
 --
@@ -1971,6 +2642,39 @@ instance ToJSON StorageSource where
                   ("object" .=) <$> _ssObject,
                   ("generation" .=) <$> _ssGeneration])
 
+-- | HTTPDelivery is the delivery configuration for an HTTP notification.
+--
+-- /See:/ 'hTTPDelivery' smart constructor.
+newtype HTTPDelivery =
+  HTTPDelivery'
+    { _httpdURI :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'HTTPDelivery' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'httpdURI'
+hTTPDelivery
+    :: HTTPDelivery
+hTTPDelivery = HTTPDelivery' {_httpdURI = Nothing}
+
+
+-- | The URI to which JSON-containing HTTP POST requests should be sent.
+httpdURI :: Lens' HTTPDelivery (Maybe Text)
+httpdURI = lens _httpdURI (\ s a -> s{_httpdURI = a})
+
+instance FromJSON HTTPDelivery where
+        parseJSON
+          = withObject "HTTPDelivery"
+              (\ o -> HTTPDelivery' <$> (o .:? "uri"))
+
+instance ToJSON HTTPDelivery where
+        toJSON HTTPDelivery'{..}
+          = object (catMaybes [("uri" .=) <$> _httpdURI])
+
 -- | Response containing existing \`BuildTriggers\`.
 --
 -- /See:/ 'listBuildTriggersResponse' smart constructor.
@@ -2023,6 +2727,58 @@ instance ToJSON ListBuildTriggersResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _lbtrNextPageToken,
                   ("triggers" .=) <$> _lbtrTriggers])
+
+-- | Pairs a set of secret environment variables mapped to encrypted values
+-- with the Cloud KMS key to use to decrypt the value.
+--
+-- /See:/ 'inlineSecret' smart constructor.
+data InlineSecret =
+  InlineSecret'
+    { _isEnvMap :: !(Maybe InlineSecretEnvMap)
+    , _isKmsKeyName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InlineSecret' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'isEnvMap'
+--
+-- * 'isKmsKeyName'
+inlineSecret
+    :: InlineSecret
+inlineSecret = InlineSecret' {_isEnvMap = Nothing, _isKmsKeyName = Nothing}
+
+
+-- | Map of environment variable name to its encrypted value. Secret
+-- environment variables must be unique across all of a build\'s secrets,
+-- and must be used by at least one build step. Values can be at most 64 KB
+-- in size. There can be at most 100 secret values across all of a build\'s
+-- secrets.
+isEnvMap :: Lens' InlineSecret (Maybe InlineSecretEnvMap)
+isEnvMap = lens _isEnvMap (\ s a -> s{_isEnvMap = a})
+
+-- | Resource name of Cloud KMS crypto key to decrypt the encrypted value. In
+-- format: projects\/*\/locations\/*\/keyRings\/*\/cryptoKeys\/*
+isKmsKeyName :: Lens' InlineSecret (Maybe Text)
+isKmsKeyName
+  = lens _isKmsKeyName (\ s a -> s{_isKmsKeyName = a})
+
+instance FromJSON InlineSecret where
+        parseJSON
+          = withObject "InlineSecret"
+              (\ o ->
+                 InlineSecret' <$>
+                   (o .:? "envMap") <*> (o .:? "kmsKeyName"))
+
+instance ToJSON InlineSecret where
+        toJSON InlineSecret'{..}
+          = object
+              (catMaybes
+                 [("envMap" .=) <$> _isEnvMap,
+                  ("kmsKeyName" .=) <$> _isKmsKeyName])
 
 -- | An artifact that was uploaded during a build. This is a single record in
 -- the artifact manifest JSON file.
@@ -2151,12 +2907,100 @@ instance FromJSON BuildSubstitutions where
 instance ToJSON BuildSubstitutions where
         toJSON = toJSON . _bsAddtional
 
+-- | SlackDelivery is the delivery configuration for delivering Slack
+-- messages via webhooks. See Slack webhook documentation at:
+-- https:\/\/api.slack.com\/messaging\/webhooks.
+--
+-- /See:/ 'slackDelivery' smart constructor.
+newtype SlackDelivery =
+  SlackDelivery'
+    { _sdWebhookURI :: Maybe NotifierSecretRef
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'SlackDelivery' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'sdWebhookURI'
+slackDelivery
+    :: SlackDelivery
+slackDelivery = SlackDelivery' {_sdWebhookURI = Nothing}
+
+
+-- | The secret reference for the Slack webhook URI for sending messages to a
+-- channel.
+sdWebhookURI :: Lens' SlackDelivery (Maybe NotifierSecretRef)
+sdWebhookURI
+  = lens _sdWebhookURI (\ s a -> s{_sdWebhookURI = a})
+
+instance FromJSON SlackDelivery where
+        parseJSON
+          = withObject "SlackDelivery"
+              (\ o -> SlackDelivery' <$> (o .:? "webhookUri"))
+
+instance ToJSON SlackDelivery where
+        toJSON SlackDelivery'{..}
+          = object
+              (catMaybes [("webhookUri" .=) <$> _sdWebhookURI])
+
+-- | NotifierSecret is the container that maps a secret name (reference) to
+-- its Google Cloud Secret Manager resource path.
+--
+-- /See:/ 'notifierSecret' smart constructor.
+data NotifierSecret =
+  NotifierSecret'
+    { _nsValue :: !(Maybe Text)
+    , _nsName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotifierSecret' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nsValue'
+--
+-- * 'nsName'
+notifierSecret
+    :: NotifierSecret
+notifierSecret = NotifierSecret' {_nsValue = Nothing, _nsName = Nothing}
+
+
+-- | Value is interpreted to be a resource path for fetching the actual
+-- (versioned) secret data for this secret. For example, this would be a
+-- Google Cloud Secret Manager secret version resource path like:
+-- \"projects\/my-project\/secrets\/my-secret\/versions\/latest\".
+nsValue :: Lens' NotifierSecret (Maybe Text)
+nsValue = lens _nsValue (\ s a -> s{_nsValue = a})
+
+-- | Name is the local name of the secret, such as the verbatim string
+-- \"my-smtp-password\".
+nsName :: Lens' NotifierSecret (Maybe Text)
+nsName = lens _nsName (\ s a -> s{_nsName = a})
+
+instance FromJSON NotifierSecret where
+        parseJSON
+          = withObject "NotifierSecret"
+              (\ o ->
+                 NotifierSecret' <$>
+                   (o .:? "value") <*> (o .:? "name"))
+
+instance ToJSON NotifierSecret where
+        toJSON NotifierSecret'{..}
+          = object
+              (catMaybes
+                 [("value" .=) <$> _nsValue, ("name" .=) <$> _nsName])
+
 -- | Location of the source in a supported storage service.
 --
 -- /See:/ 'source' smart constructor.
 data Source =
   Source'
     { _sRepoSource :: !(Maybe RepoSource)
+    , _sStorageSourceManifest :: !(Maybe StorageSourceManifest)
     , _sStorageSource :: !(Maybe StorageSource)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2168,10 +3012,17 @@ data Source =
 --
 -- * 'sRepoSource'
 --
+-- * 'sStorageSourceManifest'
+--
 -- * 'sStorageSource'
 source
     :: Source
-source = Source' {_sRepoSource = Nothing, _sStorageSource = Nothing}
+source =
+  Source'
+    { _sRepoSource = Nothing
+    , _sStorageSourceManifest = Nothing
+    , _sStorageSource = Nothing
+    }
 
 
 -- | If provided, get the source from this location in a Cloud Source
@@ -2179,6 +3030,13 @@ source = Source' {_sRepoSource = Nothing, _sStorageSource = Nothing}
 sRepoSource :: Lens' Source (Maybe RepoSource)
 sRepoSource
   = lens _sRepoSource (\ s a -> s{_sRepoSource = a})
+
+-- | If provided, get the source from this manifest in Google Cloud Storage.
+-- This feature is in Preview.
+sStorageSourceManifest :: Lens' Source (Maybe StorageSourceManifest)
+sStorageSourceManifest
+  = lens _sStorageSourceManifest
+      (\ s a -> s{_sStorageSourceManifest = a})
 
 -- | If provided, get the source from this location in Google Cloud Storage.
 sStorageSource :: Lens' Source (Maybe StorageSource)
@@ -2191,14 +3049,104 @@ instance FromJSON Source where
           = withObject "Source"
               (\ o ->
                  Source' <$>
-                   (o .:? "repoSource") <*> (o .:? "storageSource"))
+                   (o .:? "repoSource") <*>
+                     (o .:? "storageSourceManifest")
+                     <*> (o .:? "storageSource"))
 
 instance ToJSON Source where
         toJSON Source'{..}
           = object
               (catMaybes
                  [("repoSource" .=) <$> _sRepoSource,
+                  ("storageSourceManifest" .=) <$>
+                    _sStorageSourceManifest,
                   ("storageSource" .=) <$> _sStorageSource])
+
+-- | Message that represents an arbitrary HTTP body. It should only be used
+-- for payload formats that can\'t be represented as JSON, such as raw
+-- binary or an HTML page. This message can be used both in streaming and
+-- non-streaming API methods in the request as well as the response. It can
+-- be used as a top-level request field, which is convenient if one wants
+-- to extract parameters from either the URL or HTTP template into the
+-- request fields and also want access to the raw HTTP body. Example:
+-- message GetResourceRequest { \/\/ A unique request id. string request_id
+-- = 1; \/\/ The raw HTTP body is bound to this field. google.api.HttpBody
+-- http_body = 2; } service ResourceService { rpc
+-- GetResource(GetResourceRequest) returns (google.api.HttpBody); rpc
+-- UpdateResource(google.api.HttpBody) returns (google.protobuf.Empty); }
+-- Example with streaming methods: service CaldavService { rpc
+-- GetCalendar(stream google.api.HttpBody) returns (stream
+-- google.api.HttpBody); rpc UpdateCalendar(stream google.api.HttpBody)
+-- returns (stream google.api.HttpBody); } Use of this type only changes
+-- how the request and response bodies are handled, all other features will
+-- continue to work unchanged.
+--
+-- /See:/ 'hTTPBody' smart constructor.
+data HTTPBody =
+  HTTPBody'
+    { _httpbExtensions :: !(Maybe [HTTPBodyExtensionsItem])
+    , _httpbData :: !(Maybe Bytes)
+    , _httpbContentType :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'HTTPBody' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'httpbExtensions'
+--
+-- * 'httpbData'
+--
+-- * 'httpbContentType'
+hTTPBody
+    :: HTTPBody
+hTTPBody =
+  HTTPBody'
+    { _httpbExtensions = Nothing
+    , _httpbData = Nothing
+    , _httpbContentType = Nothing
+    }
+
+
+-- | Application specific response metadata. Must be set in the first
+-- response for streaming APIs.
+httpbExtensions :: Lens' HTTPBody [HTTPBodyExtensionsItem]
+httpbExtensions
+  = lens _httpbExtensions
+      (\ s a -> s{_httpbExtensions = a})
+      . _Default
+      . _Coerce
+
+-- | The HTTP request\/response body as raw binary.
+httpbData :: Lens' HTTPBody (Maybe ByteString)
+httpbData
+  = lens _httpbData (\ s a -> s{_httpbData = a}) .
+      mapping _Bytes
+
+-- | The HTTP Content-Type header value specifying the content type of the
+-- body.
+httpbContentType :: Lens' HTTPBody (Maybe Text)
+httpbContentType
+  = lens _httpbContentType
+      (\ s a -> s{_httpbContentType = a})
+
+instance FromJSON HTTPBody where
+        parseJSON
+          = withObject "HTTPBody"
+              (\ o ->
+                 HTTPBody' <$>
+                   (o .:? "extensions" .!= mempty) <*> (o .:? "data")
+                     <*> (o .:? "contentType"))
+
+instance ToJSON HTTPBody where
+        toJSON HTTPBody'{..}
+          = object
+              (catMaybes
+                 [("extensions" .=) <$> _httpbExtensions,
+                  ("data" .=) <$> _httpbData,
+                  ("contentType" .=) <$> _httpbContentType])
 
 -- | Service-specific metadata associated with the operation. It typically
 -- contains progress information and common metadata such as create time.
@@ -2277,6 +3225,76 @@ instance FromJSON BuildTiming where
 instance ToJSON BuildTiming where
         toJSON = toJSON . _btAddtional
 
+-- | NotifierConfig is the top-level configuration message.
+--
+-- /See:/ 'notifierConfig' smart constructor.
+data NotifierConfig =
+  NotifierConfig'
+    { _ncAPIVersion :: !(Maybe Text)
+    , _ncKind :: !(Maybe Text)
+    , _ncSpec :: !(Maybe NotifierSpec)
+    , _ncMetadata :: !(Maybe NotifierMetadata)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotifierConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ncAPIVersion'
+--
+-- * 'ncKind'
+--
+-- * 'ncSpec'
+--
+-- * 'ncMetadata'
+notifierConfig
+    :: NotifierConfig
+notifierConfig =
+  NotifierConfig'
+    { _ncAPIVersion = Nothing
+    , _ncKind = Nothing
+    , _ncSpec = Nothing
+    , _ncMetadata = Nothing
+    }
+
+
+-- | The API version of this configuration format.
+ncAPIVersion :: Lens' NotifierConfig (Maybe Text)
+ncAPIVersion
+  = lens _ncAPIVersion (\ s a -> s{_ncAPIVersion = a})
+
+-- | The type of notifier to use (e.g. SMTPNotifier).
+ncKind :: Lens' NotifierConfig (Maybe Text)
+ncKind = lens _ncKind (\ s a -> s{_ncKind = a})
+
+-- | The actual configuration for this notifier.
+ncSpec :: Lens' NotifierConfig (Maybe NotifierSpec)
+ncSpec = lens _ncSpec (\ s a -> s{_ncSpec = a})
+
+-- | Metadata for referring to\/handling\/deploying this notifier.
+ncMetadata :: Lens' NotifierConfig (Maybe NotifierMetadata)
+ncMetadata
+  = lens _ncMetadata (\ s a -> s{_ncMetadata = a})
+
+instance FromJSON NotifierConfig where
+        parseJSON
+          = withObject "NotifierConfig"
+              (\ o ->
+                 NotifierConfig' <$>
+                   (o .:? "apiVersion") <*> (o .:? "kind") <*>
+                     (o .:? "spec")
+                     <*> (o .:? "metadata"))
+
+instance ToJSON NotifierConfig where
+        toJSON NotifierConfig'{..}
+          = object
+              (catMaybes
+                 [("apiVersion" .=) <$> _ncAPIVersion,
+                  ("kind" .=) <$> _ncKind, ("spec" .=) <$> _ncSpec,
+                  ("metadata" .=) <$> _ncMetadata])
+
 -- | Metadata for build operations.
 --
 -- /See:/ 'buildOperationMetadata' smart constructor.
@@ -2325,7 +3343,8 @@ data BuildOptions =
     , _boVolumes :: !(Maybe [Volume])
     , _boLogStreamingOption :: !(Maybe BuildOptionsLogStreamingOption)
     , _boLogging :: !(Maybe BuildOptionsLogging)
-    , _boSourceProvenanceHash :: !(Maybe [Text])
+    , _boSourceProvenanceHash :: !(Maybe [BuildOptionsSourceProvenanceHashItem])
+    , _boDynamicSubstitutions :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2355,6 +3374,8 @@ data BuildOptions =
 -- * 'boLogging'
 --
 -- * 'boSourceProvenanceHash'
+--
+-- * 'boDynamicSubstitutions'
 buildOptions
     :: BuildOptions
 buildOptions =
@@ -2370,6 +3391,7 @@ buildOptions =
     , _boLogStreamingOption = Nothing
     , _boLogging = Nothing
     , _boSourceProvenanceHash = Nothing
+    , _boDynamicSubstitutions = Nothing
     }
 
 
@@ -2395,7 +3417,8 @@ boEnv
       _Coerce
 
 -- | Option to specify behavior when there is an error in the substitution
--- checks.
+-- checks. NOTE: this is always set to ALLOW_LOOSE for triggered builds and
+-- cannot be overridden in the build configuration file.
 boSubstitutionOption :: Lens' BuildOptions (Maybe BuildOptionsSubstitutionOption)
 boSubstitutionOption
   = lens _boSubstitutionOption
@@ -2407,9 +3430,9 @@ boRequestedVerifyOption
   = lens _boRequestedVerifyOption
       (\ s a -> s{_boRequestedVerifyOption = a})
 
--- | Option to specify a \`WorkerPool\` for the build. User specifies the
--- pool with the format \"[WORKERPOOL_PROJECT_ID]\/[WORKERPOOL_NAME]\".
--- This is an experimental field.
+-- | Option to specify a \`WorkerPool\` for the build. Format:
+-- projects\/{project}\/locations\/{location}\/workerPools\/{workerPool}
+-- This field is in beta and is available only to restricted users.
 boWorkerPool :: Lens' BuildOptions (Maybe Text)
 boWorkerPool
   = lens _boWorkerPool (\ s a -> s{_boWorkerPool = a})
@@ -2449,19 +3472,27 @@ boLogStreamingOption
   = lens _boLogStreamingOption
       (\ s a -> s{_boLogStreamingOption = a})
 
--- | Option to specify the logging mode, which determines where the logs are
--- stored.
+-- | Option to specify the logging mode, which determines if and where build
+-- logs are stored.
 boLogging :: Lens' BuildOptions (Maybe BuildOptionsLogging)
 boLogging
   = lens _boLogging (\ s a -> s{_boLogging = a})
 
 -- | Requested hash for SourceProvenance.
-boSourceProvenanceHash :: Lens' BuildOptions [Text]
+boSourceProvenanceHash :: Lens' BuildOptions [BuildOptionsSourceProvenanceHashItem]
 boSourceProvenanceHash
   = lens _boSourceProvenanceHash
       (\ s a -> s{_boSourceProvenanceHash = a})
       . _Default
       . _Coerce
+
+-- | Option to specify whether or not to apply bash style string operations
+-- to the substitutions. NOTE: this is always enabled for triggered builds
+-- and cannot be overridden in the build configuration file.
+boDynamicSubstitutions :: Lens' BuildOptions (Maybe Bool)
+boDynamicSubstitutions
+  = lens _boDynamicSubstitutions
+      (\ s a -> s{_boDynamicSubstitutions = a})
 
 instance FromJSON BuildOptions where
         parseJSON
@@ -2477,7 +3508,8 @@ instance FromJSON BuildOptions where
                      <*> (o .:? "volumes" .!= mempty)
                      <*> (o .:? "logStreamingOption")
                      <*> (o .:? "logging")
-                     <*> (o .:? "sourceProvenanceHash" .!= mempty))
+                     <*> (o .:? "sourceProvenanceHash" .!= mempty)
+                     <*> (o .:? "dynamicSubstitutions"))
 
 instance ToJSON BuildOptions where
         toJSON BuildOptions'{..}
@@ -2495,7 +3527,46 @@ instance ToJSON BuildOptions where
                   ("logStreamingOption" .=) <$> _boLogStreamingOption,
                   ("logging" .=) <$> _boLogging,
                   ("sourceProvenanceHash" .=) <$>
-                    _boSourceProvenanceHash])
+                    _boSourceProvenanceHash,
+                  ("dynamicSubstitutions" .=) <$>
+                    _boDynamicSubstitutions])
+
+-- | Escape hatch for users to supply custom delivery configs.
+--
+-- /See:/ 'notificationStructDelivery' smart constructor.
+newtype NotificationStructDelivery =
+  NotificationStructDelivery'
+    { _nsdAddtional :: HashMap Text JSONValue
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotificationStructDelivery' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nsdAddtional'
+notificationStructDelivery
+    :: HashMap Text JSONValue -- ^ 'nsdAddtional'
+    -> NotificationStructDelivery
+notificationStructDelivery pNsdAddtional_ =
+  NotificationStructDelivery' {_nsdAddtional = _Coerce # pNsdAddtional_}
+
+
+-- | Properties of the object.
+nsdAddtional :: Lens' NotificationStructDelivery (HashMap Text JSONValue)
+nsdAddtional
+  = lens _nsdAddtional (\ s a -> s{_nsdAddtional = a})
+      . _Coerce
+
+instance FromJSON NotificationStructDelivery where
+        parseJSON
+          = withObject "NotificationStructDelivery"
+              (\ o ->
+                 NotificationStructDelivery' <$> (parseJSONObject o))
+
+instance ToJSON NotificationStructDelivery where
+        toJSON = toJSON . _nsdAddtional
 
 -- | The normal response of the operation in case of success. If the original
 -- method returns no data on success, such as \`Delete\`, the response is
@@ -2552,11 +3623,15 @@ data BuildTrigger =
     , _btTriggerTemplate :: !(Maybe RepoSource)
     , _btBuild :: !(Maybe Build)
     , _btIgnoredFiles :: !(Maybe [Text])
+    , _btPubsubConfig :: !(Maybe PubsubConfig)
+    , _btName :: !(Maybe Text)
     , _btId :: !(Maybe Text)
     , _btGithub :: !(Maybe GitHubEventsConfig)
+    , _btFilter :: !(Maybe Text)
     , _btDescription :: !(Maybe Text)
     , _btFilename :: !(Maybe Text)
     , _btCreateTime :: !(Maybe DateTime')
+    , _btTags :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2577,15 +3652,23 @@ data BuildTrigger =
 --
 -- * 'btIgnoredFiles'
 --
+-- * 'btPubsubConfig'
+--
+-- * 'btName'
+--
 -- * 'btId'
 --
 -- * 'btGithub'
+--
+-- * 'btFilter'
 --
 -- * 'btDescription'
 --
 -- * 'btFilename'
 --
 -- * 'btCreateTime'
+--
+-- * 'btTags'
 buildTrigger
     :: BuildTrigger
 buildTrigger =
@@ -2596,15 +3679,20 @@ buildTrigger =
     , _btTriggerTemplate = Nothing
     , _btBuild = Nothing
     , _btIgnoredFiles = Nothing
+    , _btPubsubConfig = Nothing
+    , _btName = Nothing
     , _btId = Nothing
     , _btGithub = Nothing
+    , _btFilter = Nothing
     , _btDescription = Nothing
     , _btFilename = Nothing
     , _btCreateTime = Nothing
+    , _btTags = Nothing
     }
 
 
--- | Substitutions data for Build resource.
+-- | Substitutions for Build resource. The keys must match the following
+-- regular expression: \`^_[A-Z0-9_]+$\`.
 btSubstitutions :: Lens' BuildTrigger (Maybe BuildTriggerSubstitutions)
 btSubstitutions
   = lens _btSubstitutions
@@ -2623,7 +3711,7 @@ btIncludedFiles
       . _Default
       . _Coerce
 
--- | If true, the trigger will never result in a build.
+-- | If true, the trigger will never automatically execute a build.
 btDisabled :: Lens' BuildTrigger (Maybe Bool)
 btDisabled
   = lens _btDisabled (\ s a -> s{_btDisabled = a})
@@ -2631,7 +3719,7 @@ btDisabled
 -- | Template describing the types of source changes to trigger a build.
 -- Branch and tag names in trigger templates are interpreted as regular
 -- expressions. Any branch or tag change that matches that regular
--- expression will trigger a build.
+-- expression will trigger a build. Mutually exclusive with \`github\`.
 btTriggerTemplate :: Lens' BuildTrigger (Maybe RepoSource)
 btTriggerTemplate
   = lens _btTriggerTemplate
@@ -2642,9 +3730,9 @@ btBuild :: Lens' BuildTrigger (Maybe Build)
 btBuild = lens _btBuild (\ s a -> s{_btBuild = a})
 
 -- | ignored_files and included_files are file glob matches using
--- http:\/\/godoc\/pkg\/path\/filepath#Match extended with support for
--- \"**\". If ignored_files and changed files are both empty, then they are
--- not used to determine whether or not to trigger a build. If
+-- https:\/\/golang.org\/pkg\/path\/filepath\/#Match extended with support
+-- for \"**\". If ignored_files and changed files are both empty, then they
+-- are not used to determine whether or not to trigger a build. If
 -- ignored_files is not empty, then we ignore any files that match any of
 -- the ignored_file globs. If the change has no files that are outside of
 -- the ignored_files globs, then we do not trigger a build.
@@ -2655,14 +3743,33 @@ btIgnoredFiles
       . _Default
       . _Coerce
 
+-- | Optional. PubsubConfig describes the configuration of a trigger that
+-- creates a build whenever a Pub\/Sub message is published.
+btPubsubConfig :: Lens' BuildTrigger (Maybe PubsubConfig)
+btPubsubConfig
+  = lens _btPubsubConfig
+      (\ s a -> s{_btPubsubConfig = a})
+
+-- | User-assigned name of the trigger. Must be unique within the project.
+-- Trigger names must meet the following requirements: + They must contain
+-- only alphanumeric characters and dashes. + They can be 1-64 characters
+-- long. + They must begin and end with an alphanumeric character.
+btName :: Lens' BuildTrigger (Maybe Text)
+btName = lens _btName (\ s a -> s{_btName = a})
+
 -- | Output only. Unique identifier of the trigger.
 btId :: Lens' BuildTrigger (Maybe Text)
 btId = lens _btId (\ s a -> s{_btId = a})
 
 -- | GitHubEventsConfig describes the configuration of a trigger that creates
--- a build whenever a GitHub event is received.
+-- a build whenever a GitHub event is received. Mutually exclusive with
+-- \`trigger_template\`.
 btGithub :: Lens' BuildTrigger (Maybe GitHubEventsConfig)
 btGithub = lens _btGithub (\ s a -> s{_btGithub = a})
+
+-- | Optional. A Common Expression Language string.
+btFilter :: Lens' BuildTrigger (Maybe Text)
+btFilter = lens _btFilter (\ s a -> s{_btFilter = a})
 
 -- | Human-readable description of this trigger.
 btDescription :: Lens' BuildTrigger (Maybe Text)
@@ -2670,8 +3777,8 @@ btDescription
   = lens _btDescription
       (\ s a -> s{_btDescription = a})
 
--- | Path, from the source root, to a file whose contents is used for the
--- template.
+-- | Path, from the source root, to the build configuration file (i.e.
+-- cloudbuild.yaml).
 btFilename :: Lens' BuildTrigger (Maybe Text)
 btFilename
   = lens _btFilename (\ s a -> s{_btFilename = a})
@@ -2681,6 +3788,12 @@ btCreateTime :: Lens' BuildTrigger (Maybe UTCTime)
 btCreateTime
   = lens _btCreateTime (\ s a -> s{_btCreateTime = a})
       . mapping _DateTime
+
+-- | Tags for annotation of a \`BuildTrigger\`
+btTags :: Lens' BuildTrigger [Text]
+btTags
+  = lens _btTags (\ s a -> s{_btTags = a}) . _Default .
+      _Coerce
 
 instance FromJSON BuildTrigger where
         parseJSON
@@ -2693,11 +3806,15 @@ instance FromJSON BuildTrigger where
                      <*> (o .:? "triggerTemplate")
                      <*> (o .:? "build")
                      <*> (o .:? "ignoredFiles" .!= mempty)
+                     <*> (o .:? "pubsubConfig")
+                     <*> (o .:? "name")
                      <*> (o .:? "id")
                      <*> (o .:? "github")
+                     <*> (o .:? "filter")
                      <*> (o .:? "description")
                      <*> (o .:? "filename")
-                     <*> (o .:? "createTime"))
+                     <*> (o .:? "createTime")
+                     <*> (o .:? "tags" .!= mempty))
 
 instance ToJSON BuildTrigger where
         toJSON BuildTrigger'{..}
@@ -2709,10 +3826,115 @@ instance ToJSON BuildTrigger where
                   ("triggerTemplate" .=) <$> _btTriggerTemplate,
                   ("build" .=) <$> _btBuild,
                   ("ignoredFiles" .=) <$> _btIgnoredFiles,
-                  ("id" .=) <$> _btId, ("github" .=) <$> _btGithub,
+                  ("pubsubConfig" .=) <$> _btPubsubConfig,
+                  ("name" .=) <$> _btName, ("id" .=) <$> _btId,
+                  ("github" .=) <$> _btGithub,
+                  ("filter" .=) <$> _btFilter,
                   ("description" .=) <$> _btDescription,
                   ("filename" .=) <$> _btFilename,
-                  ("createTime" .=) <$> _btCreateTime])
+                  ("createTime" .=) <$> _btCreateTime,
+                  ("tags" .=) <$> _btTags])
+
+-- | NotifierMetadata contains the data which can be used to reference or
+-- describe this notifier.
+--
+-- /See:/ 'notifierMetadata' smart constructor.
+data NotifierMetadata =
+  NotifierMetadata'
+    { _nmNotifier :: !(Maybe Text)
+    , _nmName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotifierMetadata' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nmNotifier'
+--
+-- * 'nmName'
+notifierMetadata
+    :: NotifierMetadata
+notifierMetadata = NotifierMetadata' {_nmNotifier = Nothing, _nmName = Nothing}
+
+
+-- | The string representing the name and version of notifier to deploy.
+-- Expected to be of the form of \"\/:\". For example:
+-- \"gcr.io\/my-project\/notifiers\/smtp:1.2.34\".
+nmNotifier :: Lens' NotifierMetadata (Maybe Text)
+nmNotifier
+  = lens _nmNotifier (\ s a -> s{_nmNotifier = a})
+
+-- | The human-readable and user-given name for the notifier. For example:
+-- \"repo-merge-email-notifier\".
+nmName :: Lens' NotifierMetadata (Maybe Text)
+nmName = lens _nmName (\ s a -> s{_nmName = a})
+
+instance FromJSON NotifierMetadata where
+        parseJSON
+          = withObject "NotifierMetadata"
+              (\ o ->
+                 NotifierMetadata' <$>
+                   (o .:? "notifier") <*> (o .:? "name"))
+
+instance ToJSON NotifierMetadata where
+        toJSON NotifierMetadata'{..}
+          = object
+              (catMaybes
+                 [("notifier" .=) <$> _nmNotifier,
+                  ("name" .=) <$> _nmName])
+
+-- | NotifierSpec is the configuration container for notifications.
+--
+-- /See:/ 'notifierSpec' smart constructor.
+data NotifierSpec =
+  NotifierSpec'
+    { _nsSecrets :: !(Maybe [NotifierSecret])
+    , _nsNotification :: !(Maybe Notification)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'NotifierSpec' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'nsSecrets'
+--
+-- * 'nsNotification'
+notifierSpec
+    :: NotifierSpec
+notifierSpec = NotifierSpec' {_nsSecrets = Nothing, _nsNotification = Nothing}
+
+
+-- | Configurations for secret resources used by this particular notifier.
+nsSecrets :: Lens' NotifierSpec [NotifierSecret]
+nsSecrets
+  = lens _nsSecrets (\ s a -> s{_nsSecrets = a}) .
+      _Default
+      . _Coerce
+
+-- | The configuration of this particular notifier.
+nsNotification :: Lens' NotifierSpec (Maybe Notification)
+nsNotification
+  = lens _nsNotification
+      (\ s a -> s{_nsNotification = a})
+
+instance FromJSON NotifierSpec where
+        parseJSON
+          = withObject "NotifierSpec"
+              (\ o ->
+                 NotifierSpec' <$>
+                   (o .:? "secrets" .!= mempty) <*>
+                     (o .:? "notification"))
+
+instance ToJSON NotifierSpec where
+        toJSON NotifierSpec'{..}
+          = object
+              (catMaybes
+                 [("secrets" .=) <$> _nsSecrets,
+                  ("notification" .=) <$> _nsNotification])
 
 -- | An image built by the pipeline.
 --
@@ -2770,3 +3992,40 @@ instance ToJSON BuiltImage where
                  [("pushTiming" .=) <$> _biPushTiming,
                   ("name" .=) <$> _biName,
                   ("digest" .=) <$> _biDigest])
+
+-- | Substitutions to use in a triggered build. Should only be used with
+-- RunBuildTrigger
+--
+-- /See:/ 'repoSourceSubstitutions' smart constructor.
+newtype RepoSourceSubstitutions =
+  RepoSourceSubstitutions'
+    { _rssAddtional :: HashMap Text Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'RepoSourceSubstitutions' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rssAddtional'
+repoSourceSubstitutions
+    :: HashMap Text Text -- ^ 'rssAddtional'
+    -> RepoSourceSubstitutions
+repoSourceSubstitutions pRssAddtional_ =
+  RepoSourceSubstitutions' {_rssAddtional = _Coerce # pRssAddtional_}
+
+
+rssAddtional :: Lens' RepoSourceSubstitutions (HashMap Text Text)
+rssAddtional
+  = lens _rssAddtional (\ s a -> s{_rssAddtional = a})
+      . _Coerce
+
+instance FromJSON RepoSourceSubstitutions where
+        parseJSON
+          = withObject "RepoSourceSubstitutions"
+              (\ o ->
+                 RepoSourceSubstitutions' <$> (parseJSONObject o))
+
+instance ToJSON RepoSourceSubstitutions where
+        toJSON = toJSON . _rssAddtional

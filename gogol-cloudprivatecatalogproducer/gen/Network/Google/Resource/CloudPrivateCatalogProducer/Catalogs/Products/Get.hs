@@ -22,7 +22,7 @@
 --
 -- Returns the requested Product resource.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.get@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.get@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Get
     (
     -- * REST Resource

@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Tests the specified permissions against the IAM access control policy
--- for a ServiceAccount.
+-- Tests whether the caller has the specified permissions on a
+-- ServiceAccount.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.testIamPermissions@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.TestIAMPermissions
@@ -61,8 +61,8 @@ type ProjectsServiceAccountsTestIAMPermissionsResource
                      ReqBody '[JSON] TestIAMPermissionsRequest :>
                        Post '[JSON] TestIAMPermissionsResponse
 
--- | Tests the specified permissions against the IAM access control policy
--- for a ServiceAccount.
+-- | Tests whether the caller has the specified permissions on a
+-- ServiceAccount.
 --
 -- /See:/ 'projectsServiceAccountsTestIAMPermissions' smart constructor.
 data ProjectsServiceAccountsTestIAMPermissions =

@@ -222,7 +222,7 @@ data ManagedShortLink =
     , _mslLink :: !(Maybe Text)
     , _mslVisibility :: !(Maybe ManagedShortLinkVisibility)
     , _mslLinkName :: !(Maybe Text)
-    , _mslFlaggedAttribute :: !(Maybe [Text])
+    , _mslFlaggedAttribute :: !(Maybe [ManagedShortLinkFlaggedAttributeItem])
     , _mslInfo :: !(Maybe DynamicLinkInfo)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -280,7 +280,7 @@ mslLinkName
   = lens _mslLinkName (\ s a -> s{_mslLinkName = a})
 
 -- | Attributes that have been flagged about this short url.
-mslFlaggedAttribute :: Lens' ManagedShortLink [Text]
+mslFlaggedAttribute :: Lens' ManagedShortLink [ManagedShortLinkFlaggedAttributeItem]
 mslFlaggedAttribute
   = lens _mslFlaggedAttribute
       (\ s a -> s{_mslFlaggedAttribute = a})

@@ -125,7 +125,7 @@ studUploadType
   = lens _studUploadType
       (\ s a -> s{_studUploadType = a})
 
--- | Name of the tenancy unit to be deleted.
+-- | Required. Name of the tenancy unit to be deleted.
 studName :: Lens' ServicesTenancyUnitsDelete Text
 studName = lens _studName (\ s a -> s{_studName = a})
 

@@ -21,21 +21,21 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates a snapshot from the requested subscription. Snapshots are used
--- in <https://cloud.google.com/pubsub/docs/replay-overview Seek>
+-- in [Seek](https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview)
 -- operations, which allow you to manage message acknowledgments in bulk.
 -- That is, you can set the acknowledgment state of messages in an existing
--- subscription to the state captured by a snapshot.
--- If the snapshot already exists, returns \`ALREADY_EXISTS\`. If the
--- requested subscription doesn\'t exist, returns \`NOT_FOUND\`. If the
--- backlog in the subscription is too old -- and the resulting snapshot
--- would expire in less than 1 hour -- then \`FAILED_PRECONDITION\` is
--- returned. See also the \`Snapshot.expire_time\` field. If the name is
--- not provided in the request, the server will assign a random name for
--- this snapshot on the same project as the subscription, conforming to the
--- [resource name
--- format](https:\/\/cloud.google.com\/pubsub\/docs\/admin#resource_names).
--- The generated name is populated in the returned Snapshot object. Note
--- that for REST API requests, you must specify a name in the request.
+-- subscription to the state captured by a snapshot. If the snapshot
+-- already exists, returns \`ALREADY_EXISTS\`. If the requested
+-- subscription doesn\'t exist, returns \`NOT_FOUND\`. If the backlog in
+-- the subscription is too old -- and the resulting snapshot would expire
+-- in less than 1 hour -- then \`FAILED_PRECONDITION\` is returned. See
+-- also the \`Snapshot.expire_time\` field. If the name is not provided in
+-- the request, the server will assign a random name for this snapshot on
+-- the same project as the subscription, conforming to the [resource name
+-- format]
+-- (https:\/\/cloud.google.com\/pubsub\/docs\/admin#resource_names). The
+-- generated name is populated in the returned Snapshot object. Note that
+-- for REST API requests, you must specify a name in the request.
 --
 -- /See:/ <https://cloud.google.com/pubsub/docs Cloud Pub/Sub API Reference> for @pubsub.projects.snapshots.create@.
 module Network.Google.Resource.PubSub.Projects.Snapshots.Create
@@ -75,21 +75,21 @@ type ProjectsSnapshotsCreateResource =
                        Put '[JSON] Snapshot
 
 -- | Creates a snapshot from the requested subscription. Snapshots are used
--- in <https://cloud.google.com/pubsub/docs/replay-overview Seek>
+-- in [Seek](https:\/\/cloud.google.com\/pubsub\/docs\/replay-overview)
 -- operations, which allow you to manage message acknowledgments in bulk.
 -- That is, you can set the acknowledgment state of messages in an existing
--- subscription to the state captured by a snapshot.
--- If the snapshot already exists, returns \`ALREADY_EXISTS\`. If the
--- requested subscription doesn\'t exist, returns \`NOT_FOUND\`. If the
--- backlog in the subscription is too old -- and the resulting snapshot
--- would expire in less than 1 hour -- then \`FAILED_PRECONDITION\` is
--- returned. See also the \`Snapshot.expire_time\` field. If the name is
--- not provided in the request, the server will assign a random name for
--- this snapshot on the same project as the subscription, conforming to the
--- [resource name
--- format](https:\/\/cloud.google.com\/pubsub\/docs\/admin#resource_names).
--- The generated name is populated in the returned Snapshot object. Note
--- that for REST API requests, you must specify a name in the request.
+-- subscription to the state captured by a snapshot. If the snapshot
+-- already exists, returns \`ALREADY_EXISTS\`. If the requested
+-- subscription doesn\'t exist, returns \`NOT_FOUND\`. If the backlog in
+-- the subscription is too old -- and the resulting snapshot would expire
+-- in less than 1 hour -- then \`FAILED_PRECONDITION\` is returned. See
+-- also the \`Snapshot.expire_time\` field. If the name is not provided in
+-- the request, the server will assign a random name for this snapshot on
+-- the same project as the subscription, conforming to the [resource name
+-- format]
+-- (https:\/\/cloud.google.com\/pubsub\/docs\/admin#resource_names). The
+-- generated name is populated in the returned Snapshot object. Note that
+-- for REST API requests, you must specify a name in the request.
 --
 -- /See:/ 'projectsSnapshotsCreate' smart constructor.
 data ProjectsSnapshotsCreate =
@@ -162,12 +162,11 @@ pUploadType
 pPayload :: Lens' ProjectsSnapshotsCreate CreateSnapshotRequest
 pPayload = lens _pPayload (\ s a -> s{_pPayload = a})
 
--- | Optional user-provided name for this snapshot. If the name is not
+-- | Required. User-provided name for this snapshot. If the name is not
 -- provided in the request, the server will assign a random name for this
 -- snapshot on the same project as the subscription. Note that for REST API
--- requests, you must specify a name. See the
--- <https://cloud.google.com/pubsub/docs/admin#resource_names resource name rules>.
--- Format is \`projects\/{project}\/snapshots\/{snap}\`.
+-- requests, you must specify a name. See the resource name rules. Format
+-- is \`projects\/{project}\/snapshots\/{snap}\`.
 pName :: Lens' ProjectsSnapshotsCreate Text
 pName = lens _pName (\ s a -> s{_pName = a})
 

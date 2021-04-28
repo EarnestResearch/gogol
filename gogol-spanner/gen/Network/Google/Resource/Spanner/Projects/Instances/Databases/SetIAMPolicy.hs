@@ -20,9 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the access control policy on a database resource. Replaces any
--- existing policy. Authorization requires
--- \`spanner.databases.setIamPolicy\` permission on resource.
+-- Sets the access control policy on a database or backup resource.
+-- Replaces any existing policy. Authorization requires
+-- \`spanner.databases.setIamPolicy\` permission on resource. For backups,
+-- authorization requires \`spanner.backups.setIamPolicy\` permission on
+-- resource.
 --
 -- /See:/ <https://cloud.google.com/spanner/ Cloud Spanner API Reference> for @spanner.projects.instances.databases.setIamPolicy@.
 module Network.Google.Resource.Spanner.Projects.Instances.Databases.SetIAMPolicy
@@ -61,9 +63,11 @@ type ProjectsInstancesDatabasesSetIAMPolicyResource =
                      ReqBody '[JSON] SetIAMPolicyRequest :>
                        Post '[JSON] Policy
 
--- | Sets the access control policy on a database resource. Replaces any
--- existing policy. Authorization requires
--- \`spanner.databases.setIamPolicy\` permission on resource.
+-- | Sets the access control policy on a database or backup resource.
+-- Replaces any existing policy. Authorization requires
+-- \`spanner.databases.setIamPolicy\` permission on resource. For backups,
+-- authorization requires \`spanner.backups.setIamPolicy\` permission on
+-- resource.
 --
 -- /See:/ 'projectsInstancesDatabasesSetIAMPolicy' smart constructor.
 data ProjectsInstancesDatabasesSetIAMPolicy =

@@ -20,9 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Remove organizational unit
+-- Removes an organizational unit.
 --
--- /See:/ <https://developers.google.com/admin-sdk/directory/ Admin Directory API Reference> for @directory.orgunits.delete@.
+-- /See:/ <http://developers.google.com/admin-sdk/ Admin SDK API Reference> for @directory.orgunits.delete@.
 module Network.Google.Resource.Directory.OrgUnits.Delete
     (
     -- * REST Resource
@@ -33,8 +33,14 @@ module Network.Google.Resource.Directory.OrgUnits.Delete
     , OrgUnitsDelete
 
     -- * Request Lenses
+    , oudXgafv
+    , oudUploadProtocol
+    , oudAccessToken
+    , oudUploadType
     , oudOrgUnitPath
     , oudCustomerId
+    , oudAllowPlus
+    , oudCallback
     ) where
 
 import Network.Google.Directory.Types
@@ -49,16 +55,28 @@ type OrgUnitsDeleteResource =
            "customer" :>
              Capture "customerId" Text :>
                "orgunits" :>
-                 Captures "orgUnitPath" Text :>
-                   QueryParam "alt" AltJSON :> Delete '[JSON] ()
+                 Capture "orgUnitPath" Text :>
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "allowPlus" Bool :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
--- | Remove organizational unit
+-- | Removes an organizational unit.
 --
 -- /See:/ 'orgUnitsDelete' smart constructor.
 data OrgUnitsDelete =
   OrgUnitsDelete'
-    { _oudOrgUnitPath :: ![Text]
+    { _oudXgafv :: !(Maybe Xgafv)
+    , _oudUploadProtocol :: !(Maybe Text)
+    , _oudAccessToken :: !(Maybe Text)
+    , _oudUploadType :: !(Maybe Text)
+    , _oudOrgUnitPath :: !Text
     , _oudCustomerId :: !Text
+    , _oudAllowPlus :: !(Maybe Bool)
+    , _oudCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -67,39 +85,98 @@ data OrgUnitsDelete =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'oudXgafv'
+--
+-- * 'oudUploadProtocol'
+--
+-- * 'oudAccessToken'
+--
+-- * 'oudUploadType'
+--
 -- * 'oudOrgUnitPath'
 --
 -- * 'oudCustomerId'
+--
+-- * 'oudAllowPlus'
+--
+-- * 'oudCallback'
 orgUnitsDelete
-    :: [Text] -- ^ 'oudOrgUnitPath'
+    :: Text -- ^ 'oudOrgUnitPath'
     -> Text -- ^ 'oudCustomerId'
     -> OrgUnitsDelete
 orgUnitsDelete pOudOrgUnitPath_ pOudCustomerId_ =
   OrgUnitsDelete'
-    { _oudOrgUnitPath = _Coerce # pOudOrgUnitPath_
+    { _oudXgafv = Nothing
+    , _oudUploadProtocol = Nothing
+    , _oudAccessToken = Nothing
+    , _oudUploadType = Nothing
+    , _oudOrgUnitPath = pOudOrgUnitPath_
     , _oudCustomerId = pOudCustomerId_
+    , _oudAllowPlus = Nothing
+    , _oudCallback = Nothing
     }
 
 
--- | Full path of the organizational unit or its ID
-oudOrgUnitPath :: Lens' OrgUnitsDelete [Text]
+-- | V1 error format.
+oudXgafv :: Lens' OrgUnitsDelete (Maybe Xgafv)
+oudXgafv = lens _oudXgafv (\ s a -> s{_oudXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+oudUploadProtocol :: Lens' OrgUnitsDelete (Maybe Text)
+oudUploadProtocol
+  = lens _oudUploadProtocol
+      (\ s a -> s{_oudUploadProtocol = a})
+
+-- | OAuth access token.
+oudAccessToken :: Lens' OrgUnitsDelete (Maybe Text)
+oudAccessToken
+  = lens _oudAccessToken
+      (\ s a -> s{_oudAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+oudUploadType :: Lens' OrgUnitsDelete (Maybe Text)
+oudUploadType
+  = lens _oudUploadType
+      (\ s a -> s{_oudUploadType = a})
+
+-- | The full path of the organizational unit or its unique ID.
+oudOrgUnitPath :: Lens' OrgUnitsDelete Text
 oudOrgUnitPath
   = lens _oudOrgUnitPath
       (\ s a -> s{_oudOrgUnitPath = a})
-      . _Coerce
 
--- | Immutable ID of the G Suite account
+-- | The unique ID for the customer\'s Google Workspace account. As an
+-- account administrator, you can also use the \`my_customer\` alias to
+-- represent your account\'s \`customerId\`. The \`customerId\` is also
+-- returned as part of the [Users
+-- resource](\/admin-sdk\/directory\/v1\/reference\/users).
 oudCustomerId :: Lens' OrgUnitsDelete Text
 oudCustomerId
   = lens _oudCustomerId
       (\ s a -> s{_oudCustomerId = a})
+
+-- | Parses org unit path without url decode to allow for plus in ou name
+oudAllowPlus :: Lens' OrgUnitsDelete (Maybe Bool)
+oudAllowPlus
+  = lens _oudAllowPlus (\ s a -> s{_oudAllowPlus = a})
+
+-- | JSONP
+oudCallback :: Lens' OrgUnitsDelete (Maybe Text)
+oudCallback
+  = lens _oudCallback (\ s a -> s{_oudCallback = a})
 
 instance GoogleRequest OrgUnitsDelete where
         type Rs OrgUnitsDelete = ()
         type Scopes OrgUnitsDelete =
              '["https://www.googleapis.com/auth/admin.directory.orgunit"]
         requestClient OrgUnitsDelete'{..}
-          = go _oudCustomerId _oudOrgUnitPath (Just AltJSON)
+          = go _oudCustomerId _oudOrgUnitPath _oudXgafv
+              _oudUploadProtocol
+              _oudAccessToken
+              _oudUploadType
+              _oudAllowPlus
+              _oudCallback
+              (Just AltJSON)
               directoryService
           where go
                   = buildClient (Proxy :: Proxy OrgUnitsDeleteResource)

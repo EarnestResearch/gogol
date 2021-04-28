@@ -22,7 +22,7 @@
 --
 -- Returns a membership.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.members.get@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.members.get@.
 module Network.Google.Resource.Chat.Spaces.Members.Get
     (
     -- * REST Resource

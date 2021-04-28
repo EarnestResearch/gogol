@@ -123,8 +123,9 @@ picgUploadType
   = lens _picgUploadType
       (\ s a -> s{_picgUploadType = a})
 
--- | The unique name of the requested cluster. Values are of the form
--- \`projects\/\/instances\/\/clusters\/\`.
+-- | Required. The unique name of the requested cluster. Values are of the
+-- form
+-- \`projects\/{project}\/instances\/{instance}\/clusters\/{cluster}\`.
 picgName :: Lens' ProjectsInstancesClustersGet Text
 picgName = lens _picgName (\ s a -> s{_picgName = a})
 

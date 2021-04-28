@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the access control policy on a table resource. Replaces any
+-- Sets the access control policy on a Table resource. Replaces any
 -- existing policy.
 --
 -- /See:/ <https://cloud.google.com/bigtable/ Cloud Bigtable Admin API Reference> for @bigtableadmin.projects.instances.tables.setIamPolicy@.
@@ -60,7 +60,7 @@ type ProjectsInstancesTablesSetIAMPolicyResource =
                      ReqBody '[JSON] SetIAMPolicyRequest :>
                        Post '[JSON] Policy
 
--- | Sets the access control policy on a table resource. Replaces any
+-- | Sets the access control policy on a Table resource. Replaces any
 -- existing policy.
 --
 -- /See:/ 'projectsInstancesTablesSetIAMPolicy' smart constructor.

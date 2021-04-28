@@ -41,6 +41,7 @@ module Network.Google.Resource.Storage.Objects.Get
     , ogIfMetagenerationNotMatch
     , ogObject
     , ogProjection
+    , ogProvisionalUserProject
     , ogGeneration
     ) where
 
@@ -63,8 +64,9 @@ type ObjectsGetResource =
                          QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                            :>
                            QueryParam "projection" ObjectsGetProjection :>
-                             QueryParam "generation" (Textual Int64) :>
-                               QueryParam "alt" AltJSON :> Get '[JSON] Object
+                             QueryParam "provisionalUserProject" Text :>
+                               QueryParam "generation" (Textual Int64) :>
+                                 QueryParam "alt" AltJSON :> Get '[JSON] Object
        :<|>
        "storage" :>
          "v1" :>
@@ -79,9 +81,10 @@ type ObjectsGetResource =
                            QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                              :>
                              QueryParam "projection" ObjectsGetProjection :>
-                               QueryParam "generation" (Textual Int64) :>
-                                 QueryParam "alt" AltMedia :>
-                                   Get '[OctetStream] Stream
+                               QueryParam "provisionalUserProject" Text :>
+                                 QueryParam "generation" (Textual Int64) :>
+                                   QueryParam "alt" AltMedia :>
+                                     Get '[OctetStream] Stream
 
 -- | Retrieves an object or its metadata.
 --
@@ -96,6 +99,7 @@ data ObjectsGet =
     , _ogIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     , _ogObject :: !Text
     , _ogProjection :: !(Maybe ObjectsGetProjection)
+    , _ogProvisionalUserProject :: !(Maybe Text)
     , _ogGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -121,6 +125,8 @@ data ObjectsGet =
 --
 -- * 'ogProjection'
 --
+-- * 'ogProvisionalUserProject'
+--
 -- * 'ogGeneration'
 objectsGet
     :: Text -- ^ 'ogBucket'
@@ -136,6 +142,7 @@ objectsGet pOgBucket_ pOgObject_ =
     , _ogIfMetagenerationNotMatch = Nothing
     , _ogObject = pOgObject_
     , _ogProjection = Nothing
+    , _ogProvisionalUserProject = Nothing
     , _ogGeneration = Nothing
     }
 
@@ -196,6 +203,13 @@ ogProjection :: Lens' ObjectsGet (Maybe ObjectsGetProjection)
 ogProjection
   = lens _ogProjection (\ s a -> s{_ogProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+ogProvisionalUserProject :: Lens' ObjectsGet (Maybe Text)
+ogProvisionalUserProject
+  = lens _ogProvisionalUserProject
+      (\ s a -> s{_ogProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of this object (as opposed to
 -- the latest version, the default).
 ogGeneration :: Lens' ObjectsGet (Maybe Int64)
@@ -218,6 +232,7 @@ instance GoogleRequest ObjectsGet where
               _ogUserProject
               _ogIfMetagenerationNotMatch
               _ogProjection
+              _ogProvisionalUserProject
               _ogGeneration
               (Just AltJSON)
               storageService
@@ -237,6 +252,7 @@ instance GoogleRequest (MediaDownload ObjectsGet)
               _ogUserProject
               _ogIfMetagenerationNotMatch
               _ogProjection
+              _ogProvisionalUserProject
               _ogGeneration
               (Just AltMedia)
               storageService

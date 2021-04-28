@@ -13,10 +13,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Manages product items, inventory, and Merchant Center accounts for
--- Google Shopping.
+-- Manage your product listings and accounts for Google Shopping
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference>
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference>
 module Network.Google.ShoppingContent
     (
     -- * Service Configuration
@@ -54,9 +53,6 @@ module Network.Google.ShoppingContent
     -- ** content.accounts.list
     , module Network.Google.Resource.Content.Accounts.List
 
-    -- ** content.accounts.patch
-    , module Network.Google.Resource.Content.Accounts.Patch
-
     -- ** content.accounts.update
     , module Network.Google.Resource.Content.Accounts.Update
 
@@ -78,9 +74,6 @@ module Network.Google.ShoppingContent
     -- ** content.accounttax.list
     , module Network.Google.Resource.Content.Accounttax.List
 
-    -- ** content.accounttax.patch
-    , module Network.Google.Resource.Content.Accounttax.Patch
-
     -- ** content.accounttax.update
     , module Network.Google.Resource.Content.Accounttax.Update
 
@@ -101,9 +94,6 @@ module Network.Google.ShoppingContent
 
     -- ** content.datafeeds.list
     , module Network.Google.Resource.Content.Datafeeds.List
-
-    -- ** content.datafeeds.patch
-    , module Network.Google.Resource.Content.Datafeeds.Patch
 
     -- ** content.datafeeds.update
     , module Network.Google.Resource.Content.Datafeeds.Update
@@ -138,9 +128,6 @@ module Network.Google.ShoppingContent
     -- ** content.liasettings.listposdataproviders
     , module Network.Google.Resource.Content.LiaSettings.ListposDataproviders
 
-    -- ** content.liasettings.patch
-    , module Network.Google.Resource.Content.LiaSettings.Patch
-
     -- ** content.liasettings.requestgmbaccess
     , module Network.Google.Resource.Content.LiaSettings.RequestgmbAccess
 
@@ -161,18 +148,6 @@ module Network.Google.ShoppingContent
 
     -- ** content.orderinvoices.createrefundinvoice
     , module Network.Google.Resource.Content.Orderinvoices.Createrefundinvoice
-
-    -- ** content.orderpayments.notifyauthapproved
-    , module Network.Google.Resource.Content.Orderpayments.NotifyauthApproved
-
-    -- ** content.orderpayments.notifyauthdeclined
-    , module Network.Google.Resource.Content.Orderpayments.Notifyauthdeclined
-
-    -- ** content.orderpayments.notifycharge
-    , module Network.Google.Resource.Content.Orderpayments.Notifycharge
-
-    -- ** content.orderpayments.notifyrefund
-    , module Network.Google.Resource.Content.Orderpayments.Notifyrefund
 
     -- ** content.orderreports.listdisbursements
     , module Network.Google.Resource.Content.Orderreports.Listdisbursements
@@ -309,11 +284,11 @@ module Network.Google.ShoppingContent
     -- ** content.shippingsettings.getsupportedholidays
     , module Network.Google.Resource.Content.ShippingSettings.Getsupportedholidays
 
+    -- ** content.shippingsettings.getsupportedpickupservices
+    , module Network.Google.Resource.Content.ShippingSettings.GetsupportedpickupServices
+
     -- ** content.shippingsettings.list
     , module Network.Google.Resource.Content.ShippingSettings.List
-
-    -- ** content.shippingsettings.patch
-    , module Network.Google.Resource.Content.ShippingSettings.Patch
 
     -- ** content.shippingsettings.update
     , module Network.Google.Resource.Content.ShippingSettings.Update
@@ -532,13 +507,6 @@ module Network.Google.ShoppingContent
     , datafeedsCustomBatchRequest
     , dEntries
 
-    -- ** OrderpaymentsNotifyChargeRequest
-    , OrderpaymentsNotifyChargeRequest
-    , orderpaymentsNotifyChargeRequest
-    , oncrInvoiceIds
-    , oncrInvoiceId
-    , oncrChargeState
-
     -- ** OrdersCancelTestOrderByCustomerResponse
     , OrdersCancelTestOrderByCustomerResponse
     , ordersCancelTestOrderByCustomerResponse
@@ -549,12 +517,6 @@ module Network.Google.ShoppingContent
     , liaOnDisplayToOrderSettings
     , lodtosStatus
     , lodtosShippingCostPolicyURL
-
-    -- ** OrderpaymentsNotifyAuthDeclinedResponse
-    , OrderpaymentsNotifyAuthDeclinedResponse
-    , orderpaymentsNotifyAuthDeclinedResponse
-    , onadrKind
-    , onadrExecutionStatus
 
     -- ** AccountAddress
     , AccountAddress
@@ -659,9 +621,6 @@ module Network.Google.ShoppingContent
     , aErrors
     , aBatchId
 
-    -- ** OrdersListOrderBy
-    , OrdersListOrderBy (..)
-
     -- ** GmbAccounts
     , GmbAccounts
     , gmbAccounts
@@ -709,6 +668,7 @@ module Network.Google.ShoppingContent
     , oliAnnotations
     , oliQuantityOrdered
     , oliReturnInfo
+    , oliQuantityReadyForPickup
     , oliQuantityDelivered
     , oliShippingDetails
     , oliQuantityPending
@@ -722,10 +682,17 @@ module Network.Google.ShoppingContent
     , oliProduct
     , oliReturns
 
+    -- ** MinimumOrderValueTable
+    , MinimumOrderValueTable
+    , minimumOrderValueTable
+    , movtStoreCodeSetWithMovs
+
     -- ** Service
     , Service
     , service
     , sDeliveryCountry
+    , sMinimumOrderValueTable
+    , sShipmentType
     , sRateGroups
     , sDeliveryTime
     , sActive
@@ -733,6 +700,7 @@ module Network.Google.ShoppingContent
     , sCurrency
     , sEligibility
     , sMinimumOrderValue
+    , sPickupService
 
     -- ** ProductstatusesCustomBatchResponse
     , ProductstatusesCustomBatchResponse
@@ -893,6 +861,7 @@ module Network.Google.ShoppingContent
     , accAccount
     , accAccountId
     , accMethod
+    , accLabelIds
     , accOverwrite
     , accBatchId
     , accLinkRequest
@@ -908,6 +877,13 @@ module Network.Google.ShoppingContent
     , orderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption
     , ocbrecriroReason
     , ocbrecriroDescription
+
+    -- ** OrderPickupDetails
+    , OrderPickupDetails
+    , orderPickupDetails
+    , opdCollectors
+    , opdAddress
+    , opdLocationId
 
     -- ** LiaSettingsListResponse
     , LiaSettingsListResponse
@@ -1043,6 +1019,13 @@ module Network.Google.ShoppingContent
     , iAmount
     , iMonths
 
+    -- ** PickupServicesPickupService
+    , PickupServicesPickupService
+    , pickupServicesPickupService
+    , pspsCountry
+    , pspsServiceName
+    , pspsCarrierName
+
     -- ** DatafeedFetchSchedule
     , DatafeedFetchSchedule
     , datafeedFetchSchedule
@@ -1110,6 +1093,12 @@ module Network.Google.ShoppingContent
     , accKind
     , accResources
 
+    -- ** OrderPickupDetailsCollector
+    , OrderPickupDetailsCollector
+    , orderPickupDetailsCollector
+    , opdcName
+    , opdcPhoneNumber
+
     -- ** ProductStatusDataQualityIssue
     , ProductStatusDataQualityIssue
     , productStatusDataQualityIssue
@@ -1122,13 +1111,6 @@ module Network.Google.ShoppingContent
     , psdqiValueOnLandingPage
     , psdqiTimestamp
     , psdqiDetail
-
-    -- ** OrderpaymentsNotifyRefundRequest
-    , OrderpaymentsNotifyRefundRequest
-    , orderpaymentsNotifyRefundRequest
-    , onrrInvoiceIds
-    , onrrInvoiceId
-    , onrrRefundState
 
     -- ** AccountBusinessInformation
     , AccountBusinessInformation
@@ -1191,12 +1173,6 @@ module Network.Google.ShoppingContent
     , acbrcEntries
     , acbrcKind
 
-    -- ** OrderpaymentsNotifyAuthApprovedRequest
-    , OrderpaymentsNotifyAuthApprovedRequest
-    , orderpaymentsNotifyAuthApprovedRequest
-    , onaarAuthAmountPretax
-    , onaarAuthAmountTax
-
     -- ** OrdersUpdateLineItemShippingDetailsRequest
     , OrdersUpdateLineItemShippingDetailsRequest
     , ordersUpdateLineItemShippingDetailsRequest
@@ -1243,6 +1219,7 @@ module Network.Google.ShoppingContent
     , orderShipment
     , osCarrier
     , osStatus
+    , osScheduledDeliveryDetails
     , osTrackingId
     , osLineItems
     , osId
@@ -1341,6 +1318,8 @@ module Network.Google.ShoppingContent
     , DeliveryTime
     , deliveryTime
     , dtTransitTimeTable
+    , dtHandlingBusinessDayConfig
+    , dtTransitBusinessDayConfig
     , dtHolidayCutoffs
     , dtMinTransitTimeInDays
     , dtCutoffTime
@@ -1459,12 +1438,6 @@ module Network.Google.ShoppingContent
     , pcbrecErrors
     , pcbrecSale
     , pcbrecBatchId
-
-    -- ** OrderpaymentsNotifyAuthApprovedResponse
-    , OrderpaymentsNotifyAuthApprovedResponse
-    , orderpaymentsNotifyAuthApprovedResponse
-    , onaarKind
-    , onaarExecutionStatus
 
     -- ** CustomGroup
     , CustomGroup
@@ -1671,12 +1644,16 @@ module Network.Google.ShoppingContent
     , dLanguage
     , dBatchId
 
+    -- ** Xgafv
+    , Xgafv (..)
+
     -- ** OrderCustomer
     , OrderCustomer
     , orderCustomer
     , ocFullName
     , ocEmail
     , ocExplicitMarketingPreference
+    , ocInvoiceReceivingEmail
     , ocMarketingRightsInfo
 
     -- ** InventoryCustomBatchResponseEntry
@@ -1830,6 +1807,13 @@ module Network.Google.ShoppingContent
     , olisdShipByDate
     , olisdMethod
     , olisdDeliverByDate
+    , olisdType
+
+    -- ** PickupCarrierService
+    , PickupCarrierService
+    , pickupCarrierService
+    , pcsServiceName
+    , pcsCarrierName
 
     -- ** DatafeedsCustomBatchResponse
     , DatafeedsCustomBatchResponse
@@ -1846,17 +1830,6 @@ module Network.Google.ShoppingContent
     , isProductTotal
     , isAdditionalChargeSummaries
     , isPromotionSummaries
-
-    -- ** OrderpaymentsNotifyChargeResponse
-    , OrderpaymentsNotifyChargeResponse
-    , orderpaymentsNotifyChargeResponse
-    , oncrKind
-    , oncrExecutionStatus
-
-    -- ** OrderpaymentsNotifyAuthDeclinedRequest
-    , OrderpaymentsNotifyAuthDeclinedRequest
-    , orderpaymentsNotifyAuthDeclinedRequest
-    , onadrDeclineReason
 
     -- ** PosListResponse
     , PosListResponse
@@ -1875,6 +1848,11 @@ module Network.Google.ShoppingContent
     , orderLineItemProductFee
     , olipfAmount
     , olipfName
+
+    -- ** BusinessDayConfig
+    , BusinessDayConfig
+    , businessDayConfig
+    , bdcBusinessDays
 
     -- ** OrdersCancelResponse
     , OrdersCancelResponse
@@ -1900,6 +1878,7 @@ module Network.Google.ShoppingContent
     , TestOrder
     , testOrder
     , toKind
+    , toPredefinedPickupDetails
     , toLineItems
     , toShippingOption
     , toPredefinedDeliveryAddress
@@ -1938,6 +1917,7 @@ module Network.Google.ShoppingContent
     , TestOrderLineItemProduct
     , testOrderLineItemProduct
     , tolipImageLink
+    , tolipFees
     , tolipChannel
     , tolipBrand
     , tolipTargetCountry
@@ -2072,6 +2052,7 @@ module Network.Google.ShoppingContent
     , prorCustomGroups
     , prorImageLink
     , prorDisplayAdsValue
+    , prorCanonicalLink
     , prorLoyaltyPoints
     , prorAdditionalImageLinks
     , prorValidatedDestinations
@@ -2210,6 +2191,12 @@ module Network.Google.ShoppingContent
     , toliShippingDetails
     , toliProduct
     , toliUnitTax
+
+    -- ** MinimumOrderValueTableStoreCodeSetWithMov
+    , MinimumOrderValueTableStoreCodeSetWithMov
+    , minimumOrderValueTableStoreCodeSetWithMov
+    , movtscswmValue
+    , movtscswmStoreCodes
 
     -- ** ProductstatusesCustomBatchRequestEntry
     , ProductstatusesCustomBatchRequestEntry
@@ -2356,6 +2343,7 @@ module Network.Google.ShoppingContent
     , ord1PaymentMethod
     , ord1Promotions
     , ord1ChannelType
+    , ord1PickupDetails
     , ord1TaxCollector
     , ord1PaymentStatus
     , ord1ShippingCost
@@ -2394,6 +2382,12 @@ module Network.Google.ShoppingContent
     , acccAccountId
     , acccMethod
     , acccBatchId
+
+    -- ** ShippingSettingsGetSupportedPickupServicesResponse
+    , ShippingSettingsGetSupportedPickupServicesResponse
+    , shippingSettingsGetSupportedPickupServicesResponse
+    , ssgspsrKind
+    , ssgspsrPickupServices
 
     -- ** DatafeedStatusError
     , DatafeedStatusError
@@ -2479,12 +2473,6 @@ module Network.Google.ShoppingContent
     , datafeedstatusesCustomBatchRequest
     , dcbrcEntries
 
-    -- ** OrderpaymentsNotifyRefundResponse
-    , OrderpaymentsNotifyRefundResponse
-    , orderpaymentsNotifyRefundResponse
-    , onrrKind
-    , onrrExecutionStatus
-
     -- ** AccountStatusDataQualityIssue
     , AccountStatusDataQualityIssue
     , accountStatusDataQualityIssue
@@ -2568,6 +2556,12 @@ module Network.Google.ShoppingContent
     , siLineItemInvoices
     , siInvoiceSummary
 
+    -- ** OrderShipmentScheduledDeliveryDetails
+    , OrderShipmentScheduledDeliveryDetails
+    , orderShipmentScheduledDeliveryDetails
+    , ossddScheduledDate
+    , ossddCarrierPhoneNumber
+
     -- ** OrderCancellation
     , OrderCancellation
     , orderCancellation
@@ -2593,7 +2587,6 @@ import Network.Google.Resource.Content.Accounts.Get
 import Network.Google.Resource.Content.Accounts.Insert
 import Network.Google.Resource.Content.Accounts.Link
 import Network.Google.Resource.Content.Accounts.List
-import Network.Google.Resource.Content.Accounts.Patch
 import Network.Google.Resource.Content.Accounts.Update
 import Network.Google.Resource.Content.Accountstatuses.Custombatch
 import Network.Google.Resource.Content.Accountstatuses.Get
@@ -2601,7 +2594,6 @@ import Network.Google.Resource.Content.Accountstatuses.List
 import Network.Google.Resource.Content.Accounttax.Custombatch
 import Network.Google.Resource.Content.Accounttax.Get
 import Network.Google.Resource.Content.Accounttax.List
-import Network.Google.Resource.Content.Accounttax.Patch
 import Network.Google.Resource.Content.Accounttax.Update
 import Network.Google.Resource.Content.Datafeeds.Custombatch
 import Network.Google.Resource.Content.Datafeeds.Delete
@@ -2609,7 +2601,6 @@ import Network.Google.Resource.Content.Datafeeds.Fetchnow
 import Network.Google.Resource.Content.Datafeeds.Get
 import Network.Google.Resource.Content.Datafeeds.Insert
 import Network.Google.Resource.Content.Datafeeds.List
-import Network.Google.Resource.Content.Datafeeds.Patch
 import Network.Google.Resource.Content.Datafeeds.Update
 import Network.Google.Resource.Content.Datafeedstatuses.Custombatch
 import Network.Google.Resource.Content.Datafeedstatuses.Get
@@ -2621,7 +2612,6 @@ import Network.Google.Resource.Content.LiaSettings.Get
 import Network.Google.Resource.Content.LiaSettings.GetAccessiblegmbAccounts
 import Network.Google.Resource.Content.LiaSettings.List
 import Network.Google.Resource.Content.LiaSettings.ListposDataproviders
-import Network.Google.Resource.Content.LiaSettings.Patch
 import Network.Google.Resource.Content.LiaSettings.RequestgmbAccess
 import Network.Google.Resource.Content.LiaSettings.Requestinventoryverification
 import Network.Google.Resource.Content.LiaSettings.Setinventoryverificationcontact
@@ -2629,10 +2619,6 @@ import Network.Google.Resource.Content.LiaSettings.SetposDataprovider
 import Network.Google.Resource.Content.LiaSettings.Update
 import Network.Google.Resource.Content.Orderinvoices.Createchargeinvoice
 import Network.Google.Resource.Content.Orderinvoices.Createrefundinvoice
-import Network.Google.Resource.Content.Orderpayments.NotifyauthApproved
-import Network.Google.Resource.Content.Orderpayments.Notifyauthdeclined
-import Network.Google.Resource.Content.Orderpayments.Notifycharge
-import Network.Google.Resource.Content.Orderpayments.Notifyrefund
 import Network.Google.Resource.Content.Orderreports.Listdisbursements
 import Network.Google.Resource.Content.Orderreports.Listtransactions
 import Network.Google.Resource.Content.Orderreturns.Get
@@ -2678,8 +2664,8 @@ import Network.Google.Resource.Content.ShippingSettings.Custombatch
 import Network.Google.Resource.Content.ShippingSettings.Get
 import Network.Google.Resource.Content.ShippingSettings.Getsupportedcarriers
 import Network.Google.Resource.Content.ShippingSettings.Getsupportedholidays
+import Network.Google.Resource.Content.ShippingSettings.GetsupportedpickupServices
 import Network.Google.Resource.Content.ShippingSettings.List
-import Network.Google.Resource.Content.ShippingSettings.Patch
 import Network.Google.Resource.Content.ShippingSettings.Update
 import Network.Google.ShoppingContent.Types
 
@@ -2689,8 +2675,7 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the Content API for Shopping service.
 type ShoppingContentAPI =
-     AccounttaxListResource :<|> AccounttaxPatchResource
-       :<|> AccounttaxGetResource
+     AccounttaxListResource :<|> AccounttaxGetResource
        :<|> AccounttaxCustombatchResource
        :<|> AccounttaxUpdateResource
        :<|> OrderinvoicesCreatechargeinvoiceResource
@@ -2698,7 +2683,6 @@ type ShoppingContentAPI =
        :<|> AccountsInsertResource
        :<|> AccountsListResource
        :<|> AccountsLinkResource
-       :<|> AccountsPatchResource
        :<|> AccountsGetResource
        :<|> AccountsCustombatchResource
        :<|> AccountsAuthInfoResource
@@ -2715,7 +2699,6 @@ type ShoppingContentAPI =
        :<|> LiaSettingsRequestinventoryverificationResource
        :<|> LiaSettingsListResource
        :<|> LiaSettingsRequestgmbAccessResource
-       :<|> LiaSettingsPatchResource
        :<|> LiaSettingsGetResource
        :<|> LiaSettingsCustombatchResource
        :<|> LiaSettingsGetAccessiblegmbAccountsResource
@@ -2730,18 +2713,15 @@ type ShoppingContentAPI =
        :<|> PosSaleResource
        :<|> PosDeleteResource
        :<|> ShippingSettingsListResource
-       :<|> ShippingSettingsPatchResource
        :<|> ShippingSettingsGetResource
        :<|> ShippingSettingsCustombatchResource
        :<|> ShippingSettingsGetsupportedcarriersResource
+       :<|>
+       ShippingSettingsGetsupportedpickupServicesResource
        :<|> ShippingSettingsGetsupportedholidaysResource
        :<|> ShippingSettingsUpdateResource
        :<|> OrderreturnsListResource
        :<|> OrderreturnsGetResource
-       :<|> OrderpaymentsNotifyrefundResource
-       :<|> OrderpaymentsNotifyauthApprovedResource
-       :<|> OrderpaymentsNotifychargeResource
-       :<|> OrderpaymentsNotifyauthdeclinedResource
        :<|> InventorySetResource
        :<|> InventoryCustombatchResource
        :<|> OrdersGetbymerchantOrderidResource
@@ -2779,7 +2759,6 @@ type ShoppingContentAPI =
        :<|> AccountstatusesCustombatchResource
        :<|> DatafeedsInsertResource
        :<|> DatafeedsListResource
-       :<|> DatafeedsPatchResource
        :<|> DatafeedsGetResource
        :<|> DatafeedsCustombatchResource
        :<|> DatafeedsFetchnowResource

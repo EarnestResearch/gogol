@@ -25,7 +25,7 @@
 -- for the Google Cloud Storage location where you put your model training
 -- code for training the model with Google Cloud Machine Learning.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.getConfig@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.getConfig@.
 module Network.Google.Resource.Ml.Projects.GetConfig
     (
     -- * REST Resource

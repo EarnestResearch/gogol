@@ -100,39 +100,11 @@ instance ToJSON InstanceLabels where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -299,6 +271,39 @@ instance ToJSON ListOperationsResponse where
               (catMaybes
                  [("nextPageToken" .=) <$> _lorNextPageToken,
                   ("operations" .=) <$> _lorOperations])
+
+-- | The Cloud Storage location for the input content
+--
+-- /See:/ 'gcsSource' smart constructor.
+newtype GcsSource =
+  GcsSource'
+    { _gsURI :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GcsSource' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gsURI'
+gcsSource
+    :: GcsSource
+gcsSource = GcsSource' {_gsURI = Nothing}
+
+
+-- | Required. Source data URI. (e.g. \'gs:\/\/my_bucket\/my_object\').
+gsURI :: Lens' GcsSource (Maybe Text)
+gsURI = lens _gsURI (\ s a -> s{_gsURI = a})
+
+instance FromJSON GcsSource where
+        parseJSON
+          = withObject "GcsSource"
+              (\ o -> GcsSource' <$> (o .:? "uri"))
+
+instance ToJSON GcsSource where
+        toJSON GcsSource'{..}
+          = object (catMaybes [("uri" .=) <$> _gsURI])
 
 -- | A resource that represents Google Cloud Platform location.
 --
@@ -477,7 +482,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -537,6 +543,40 @@ instance FromJSON Empty where
 
 instance ToJSON Empty where
         toJSON = const emptyObject
+
+-- | The Cloud Storage location for the output content
+--
+-- /See:/ 'gcsDestination' smart constructor.
+newtype GcsDestination =
+  GcsDestination'
+    { _gdURI :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GcsDestination' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'gdURI'
+gcsDestination
+    :: GcsDestination
+gcsDestination = GcsDestination' {_gdURI = Nothing}
+
+
+-- | Required. Data destination URI (e.g. \'gs:\/\/my_bucket\/my_object\').
+-- Existing files will be overwritten.
+gdURI :: Lens' GcsDestination (Maybe Text)
+gdURI = lens _gdURI (\ s a -> s{_gdURI = a})
+
+instance FromJSON GcsDestination where
+        parseJSON
+          = withObject "GcsDestination"
+              (\ o -> GcsDestination' <$> (o .:? "uri"))
+
+instance ToJSON GcsDestination where
+        toJSON GcsDestination'{..}
+          = object (catMaybes [("uri" .=) <$> _gdURI])
 
 --
 -- /See:/ 'statusDetailsItem' smart constructor.
@@ -738,7 +778,10 @@ instance ToJSON GoogleCloudRedisV1OperationMetadata
 
 -- | Optional. Redis configuration parameters, according to
 -- http:\/\/redis.io\/topics\/config. Currently, the only supported
--- parameters are: * maxmemory-policy * notify-keyspace-events
+-- parameters are: Redis version 3.2 and newer: * maxmemory-policy *
+-- notify-keyspace-events Redis version 4.0 and newer: * activedefrag *
+-- lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and
+-- newer: * stream-node-max-bytes * stream-node-max-entries
 --
 -- /See:/ 'instanceRedisConfigs' smart constructor.
 newtype InstanceRedisConfigs =
@@ -773,6 +816,115 @@ instance FromJSON InstanceRedisConfigs where
 
 instance ToJSON InstanceRedisConfigs where
         toJSON = toJSON . _ircAddtional
+
+-- | The input content
+--
+-- /See:/ 'inputConfig' smart constructor.
+newtype InputConfig =
+  InputConfig'
+    { _icGcsSource :: Maybe GcsSource
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InputConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'icGcsSource'
+inputConfig
+    :: InputConfig
+inputConfig = InputConfig' {_icGcsSource = Nothing}
+
+
+-- | Google Cloud Storage location where input content is located.
+icGcsSource :: Lens' InputConfig (Maybe GcsSource)
+icGcsSource
+  = lens _icGcsSource (\ s a -> s{_icGcsSource = a})
+
+instance FromJSON InputConfig where
+        parseJSON
+          = withObject "InputConfig"
+              (\ o -> InputConfig' <$> (o .:? "gcsSource"))
+
+instance ToJSON InputConfig where
+        toJSON InputConfig'{..}
+          = object
+              (catMaybes [("gcsSource" .=) <$> _icGcsSource])
+
+-- | Request for Export.
+--
+-- /See:/ 'exportInstanceRequest' smart constructor.
+newtype ExportInstanceRequest =
+  ExportInstanceRequest'
+    { _eirOutputConfig :: Maybe OutputConfig
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ExportInstanceRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'eirOutputConfig'
+exportInstanceRequest
+    :: ExportInstanceRequest
+exportInstanceRequest = ExportInstanceRequest' {_eirOutputConfig = Nothing}
+
+
+-- | Required. Specify data to be exported.
+eirOutputConfig :: Lens' ExportInstanceRequest (Maybe OutputConfig)
+eirOutputConfig
+  = lens _eirOutputConfig
+      (\ s a -> s{_eirOutputConfig = a})
+
+instance FromJSON ExportInstanceRequest where
+        parseJSON
+          = withObject "ExportInstanceRequest"
+              (\ o ->
+                 ExportInstanceRequest' <$> (o .:? "outputConfig"))
+
+instance ToJSON ExportInstanceRequest where
+        toJSON ExportInstanceRequest'{..}
+          = object
+              (catMaybes
+                 [("outputConfig" .=) <$> _eirOutputConfig])
+
+-- | Instance AUTH string details.
+--
+-- /See:/ 'instanceAuthString' smart constructor.
+newtype InstanceAuthString =
+  InstanceAuthString'
+    { _iasAuthString :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InstanceAuthString' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'iasAuthString'
+instanceAuthString
+    :: InstanceAuthString
+instanceAuthString = InstanceAuthString' {_iasAuthString = Nothing}
+
+
+-- | AUTH string set on the instance.
+iasAuthString :: Lens' InstanceAuthString (Maybe Text)
+iasAuthString
+  = lens _iasAuthString
+      (\ s a -> s{_iasAuthString = a})
+
+instance FromJSON InstanceAuthString where
+        parseJSON
+          = withObject "InstanceAuthString"
+              (\ o -> InstanceAuthString' <$> (o .:? "authString"))
+
+instance ToJSON InstanceAuthString where
+        toJSON InstanceAuthString'{..}
+          = object
+              (catMaybes [("authString" .=) <$> _iasAuthString])
 
 -- | Output only. The set of available zones in the location. The map is
 -- keyed by the lowercase ID of each zone, as defined by GCE. These keys
@@ -820,6 +972,118 @@ instance ToJSON
            GoogleCloudRedisV1LocationMetadataAvailableZones
          where
         toJSON = toJSON . _gcrvlmazAddtional
+
+-- | The output content
+--
+-- /See:/ 'outputConfig' smart constructor.
+newtype OutputConfig =
+  OutputConfig'
+    { _ocGcsDestination :: Maybe GcsDestination
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'OutputConfig' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ocGcsDestination'
+outputConfig
+    :: OutputConfig
+outputConfig = OutputConfig' {_ocGcsDestination = Nothing}
+
+
+-- | Google Cloud Storage destination for output content.
+ocGcsDestination :: Lens' OutputConfig (Maybe GcsDestination)
+ocGcsDestination
+  = lens _ocGcsDestination
+      (\ s a -> s{_ocGcsDestination = a})
+
+instance FromJSON OutputConfig where
+        parseJSON
+          = withObject "OutputConfig"
+              (\ o -> OutputConfig' <$> (o .:? "gcsDestination"))
+
+instance ToJSON OutputConfig where
+        toJSON OutputConfig'{..}
+          = object
+              (catMaybes
+                 [("gcsDestination" .=) <$> _ocGcsDestination])
+
+-- | Request for Import.
+--
+-- /See:/ 'importInstanceRequest' smart constructor.
+newtype ImportInstanceRequest =
+  ImportInstanceRequest'
+    { _iirInputConfig :: Maybe InputConfig
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ImportInstanceRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'iirInputConfig'
+importInstanceRequest
+    :: ImportInstanceRequest
+importInstanceRequest = ImportInstanceRequest' {_iirInputConfig = Nothing}
+
+
+-- | Required. Specify data to be imported.
+iirInputConfig :: Lens' ImportInstanceRequest (Maybe InputConfig)
+iirInputConfig
+  = lens _iirInputConfig
+      (\ s a -> s{_iirInputConfig = a})
+
+instance FromJSON ImportInstanceRequest where
+        parseJSON
+          = withObject "ImportInstanceRequest"
+              (\ o ->
+                 ImportInstanceRequest' <$> (o .:? "inputConfig"))
+
+instance ToJSON ImportInstanceRequest where
+        toJSON ImportInstanceRequest'{..}
+          = object
+              (catMaybes [("inputConfig" .=) <$> _iirInputConfig])
+
+-- | Request for UpgradeInstance.
+--
+-- /See:/ 'upgradeInstanceRequest' smart constructor.
+newtype UpgradeInstanceRequest =
+  UpgradeInstanceRequest'
+    { _uirRedisVersion :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpgradeInstanceRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'uirRedisVersion'
+upgradeInstanceRequest
+    :: UpgradeInstanceRequest
+upgradeInstanceRequest = UpgradeInstanceRequest' {_uirRedisVersion = Nothing}
+
+
+-- | Required. Specifies the target version of Redis software to upgrade to.
+uirRedisVersion :: Lens' UpgradeInstanceRequest (Maybe Text)
+uirRedisVersion
+  = lens _uirRedisVersion
+      (\ s a -> s{_uirRedisVersion = a})
+
+instance FromJSON UpgradeInstanceRequest where
+        parseJSON
+          = withObject "UpgradeInstanceRequest"
+              (\ o ->
+                 UpgradeInstanceRequest' <$> (o .:? "redisVersion"))
+
+instance ToJSON UpgradeInstanceRequest where
+        toJSON UpgradeInstanceRequest'{..}
+          = object
+              (catMaybes
+                 [("redisVersion" .=) <$> _uirRedisVersion])
 
 -- | Cross-service attributes for the location. For example
 -- {\"cloud.googleapis.com\/region\": \"us-east1\"}
@@ -990,10 +1254,10 @@ lirUnreachable
 -- across all locations. If the \`location_id\` in the parent field of the
 -- request is \"-\", all regions available to the project are queried, and
 -- the results aggregated. If in such an aggregated query a location is
--- unavailable, a dummy Redis entry is included in the response with the
--- \"name\" field set to a value of the form
--- projects\/{project_id}\/locations\/{location_id}\/instances\/- and the
--- \"status\" field set to ERROR and \"status_message\" field set to
+-- unavailable, a placeholder Redis entry is included in the response with
+-- the \`name\` field set to a value of the form
+-- \`projects\/{project_id}\/locations\/{location_id}\/instances\/\`- and
+-- the \`status\` field set to ERROR and \`status_message\` field set to
 -- \"location not available for ListInstances\".
 lirInstances :: Lens' ListInstancesResponse [Instance]
 lirInstances
@@ -1061,12 +1325,107 @@ instance FromJSON OperationResponse where
 instance ToJSON OperationResponse where
         toJSON = toJSON . _orAddtional
 
+-- | TlsCertificate Resource
+--
+-- /See:/ 'tlsCertificate' smart constructor.
+data TLSCertificate =
+  TLSCertificate'
+    { _tcCert :: !(Maybe Text)
+    , _tcSerialNumber :: !(Maybe Text)
+    , _tcSha1Fingerprint :: !(Maybe Text)
+    , _tcExpireTime :: !(Maybe DateTime')
+    , _tcCreateTime :: !(Maybe DateTime')
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'TLSCertificate' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'tcCert'
+--
+-- * 'tcSerialNumber'
+--
+-- * 'tcSha1Fingerprint'
+--
+-- * 'tcExpireTime'
+--
+-- * 'tcCreateTime'
+tlsCertificate
+    :: TLSCertificate
+tlsCertificate =
+  TLSCertificate'
+    { _tcCert = Nothing
+    , _tcSerialNumber = Nothing
+    , _tcSha1Fingerprint = Nothing
+    , _tcExpireTime = Nothing
+    , _tcCreateTime = Nothing
+    }
+
+
+-- | PEM representation.
+tcCert :: Lens' TLSCertificate (Maybe Text)
+tcCert = lens _tcCert (\ s a -> s{_tcCert = a})
+
+-- | Serial number, as extracted from the certificate.
+tcSerialNumber :: Lens' TLSCertificate (Maybe Text)
+tcSerialNumber
+  = lens _tcSerialNumber
+      (\ s a -> s{_tcSerialNumber = a})
+
+-- | Sha1 Fingerprint of the certificate.
+tcSha1Fingerprint :: Lens' TLSCertificate (Maybe Text)
+tcSha1Fingerprint
+  = lens _tcSha1Fingerprint
+      (\ s a -> s{_tcSha1Fingerprint = a})
+
+-- | Output only. The time when the certificate expires in [RFC
+-- 3339](https:\/\/tools.ietf.org\/html\/rfc3339) format, for example
+-- \`2020-05-18T00:00:00.094Z\`.
+tcExpireTime :: Lens' TLSCertificate (Maybe UTCTime)
+tcExpireTime
+  = lens _tcExpireTime (\ s a -> s{_tcExpireTime = a})
+      . mapping _DateTime
+
+-- | Output only. The time when the certificate was created in [RFC
+-- 3339](https:\/\/tools.ietf.org\/html\/rfc3339) format, for example
+-- \`2020-05-18T00:00:00.094Z\`.
+tcCreateTime :: Lens' TLSCertificate (Maybe UTCTime)
+tcCreateTime
+  = lens _tcCreateTime (\ s a -> s{_tcCreateTime = a})
+      . mapping _DateTime
+
+instance FromJSON TLSCertificate where
+        parseJSON
+          = withObject "TLSCertificate"
+              (\ o ->
+                 TLSCertificate' <$>
+                   (o .:? "cert") <*> (o .:? "serialNumber") <*>
+                     (o .:? "sha1Fingerprint")
+                     <*> (o .:? "expireTime")
+                     <*> (o .:? "createTime"))
+
+instance ToJSON TLSCertificate where
+        toJSON TLSCertificate'{..}
+          = object
+              (catMaybes
+                 [("cert" .=) <$> _tcCert,
+                  ("serialNumber" .=) <$> _tcSerialNumber,
+                  ("sha1Fingerprint" .=) <$> _tcSha1Fingerprint,
+                  ("expireTime" .=) <$> _tcExpireTime,
+                  ("createTime" .=) <$> _tcCreateTime])
+
 -- | A Google Cloud Redis instance.
 --
 -- /See:/ 'instance'' smart constructor.
 data Instance =
   Instance'
-    { _iState :: !(Maybe InstanceState)
+    { _iServerCaCerts :: !(Maybe [TLSCertificate])
+    , _iPersistenceIAMIdentity :: !(Maybe Text)
+    , _iState :: !(Maybe InstanceState)
+    , _iAuthEnabled :: !(Maybe Bool)
+    , _iTransitEncryptionMode :: !(Maybe InstanceTransitEncryptionMode)
     , _iAuthorizedNetwork :: !(Maybe Text)
     , _iMemorySizeGb :: !(Maybe (Textual Int32))
     , _iName :: !(Maybe Text)
@@ -1076,6 +1435,7 @@ data Instance =
     , _iTier :: !(Maybe InstanceTier)
     , _iDisplayName :: !(Maybe Text)
     , _iLabels :: !(Maybe InstanceLabels)
+    , _iConnectMode :: !(Maybe InstanceConnectMode)
     , _iLocationId :: !(Maybe Text)
     , _iHost :: !(Maybe Text)
     , _iRedisConfigs :: !(Maybe InstanceRedisConfigs)
@@ -1091,7 +1451,15 @@ data Instance =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'iServerCaCerts'
+--
+-- * 'iPersistenceIAMIdentity'
+--
 -- * 'iState'
+--
+-- * 'iAuthEnabled'
+--
+-- * 'iTransitEncryptionMode'
 --
 -- * 'iAuthorizedNetwork'
 --
@@ -1111,6 +1479,8 @@ data Instance =
 --
 -- * 'iLabels'
 --
+-- * 'iConnectMode'
+--
 -- * 'iLocationId'
 --
 -- * 'iHost'
@@ -1128,7 +1498,11 @@ instance'
     :: Instance
 instance' =
   Instance'
-    { _iState = Nothing
+    { _iServerCaCerts = Nothing
+    , _iPersistenceIAMIdentity = Nothing
+    , _iState = Nothing
+    , _iAuthEnabled = Nothing
+    , _iTransitEncryptionMode = Nothing
     , _iAuthorizedNetwork = Nothing
     , _iMemorySizeGb = Nothing
     , _iName = Nothing
@@ -1138,6 +1512,7 @@ instance' =
     , _iTier = Nothing
     , _iDisplayName = Nothing
     , _iLabels = Nothing
+    , _iConnectMode = Nothing
     , _iLocationId = Nothing
     , _iHost = Nothing
     , _iRedisConfigs = Nothing
@@ -1148,12 +1523,43 @@ instance' =
     }
 
 
+-- | Output only. List of server CA certificates for the instance.
+iServerCaCerts :: Lens' Instance [TLSCertificate]
+iServerCaCerts
+  = lens _iServerCaCerts
+      (\ s a -> s{_iServerCaCerts = a})
+      . _Default
+      . _Coerce
+
+-- | Output only. Cloud IAM identity used by import \/ export operations to
+-- transfer data to\/from Cloud Storage. Format is \"serviceAccount:\". The
+-- value may change over time for a given instance so should be checked
+-- before each import\/export operation.
+iPersistenceIAMIdentity :: Lens' Instance (Maybe Text)
+iPersistenceIAMIdentity
+  = lens _iPersistenceIAMIdentity
+      (\ s a -> s{_iPersistenceIAMIdentity = a})
+
 -- | Output only. The current state of this instance.
 iState :: Lens' Instance (Maybe InstanceState)
 iState = lens _iState (\ s a -> s{_iState = a})
 
+-- | Optional. Indicates whether OSS Redis AUTH is enabled for the instance.
+-- If set to \"true\" AUTH is enabled on the instance. Default value is
+-- \"false\" meaning AUTH is disabled.
+iAuthEnabled :: Lens' Instance (Maybe Bool)
+iAuthEnabled
+  = lens _iAuthEnabled (\ s a -> s{_iAuthEnabled = a})
+
+-- | Optional. The TLS mode of the Redis instance. If not provided, TLS is
+-- disabled for the instance.
+iTransitEncryptionMode :: Lens' Instance (Maybe InstanceTransitEncryptionMode)
+iTransitEncryptionMode
+  = lens _iTransitEncryptionMode
+      (\ s a -> s{_iTransitEncryptionMode = a})
+
 -- | Optional. The full name of the Google Compute Engine
--- [network](\/compute\/docs\/networks-and-firewalls#networks) to which the
+-- [network](https:\/\/cloud.google.com\/vpc\/docs\/vpc) to which the
 -- instance is connected. If left unspecified, the \`default\` network will
 -- be used.
 iAuthorizedNetwork :: Lens' Instance (Maybe Text)
@@ -1174,8 +1580,8 @@ iMemorySizeGb
 -- Note: Redis instances are managed and addressed at regional level so
 -- location_id here refers to a GCP region; however, users may choose which
 -- specific zone (or collection of zones for cross-zone instances) an
--- instance should be provisioned in. Refer to [location_id] and
--- [alternative_location_id] fields for more details.
+-- instance should be provisioned in. Refer to location_id and
+-- alternative_location_id fields for more details.
 iName :: Lens' Instance (Maybe Text)
 iName = lens _iName (\ s a -> s{_iName = a})
 
@@ -1189,17 +1595,19 @@ iStatusMessage
 -- | Optional. Only applicable to STANDARD_HA tier which protects the
 -- instance against zonal failures by provisioning it across two zones. If
 -- provided, it must be a different zone from the one provided in
--- [location_id].
+-- location_id.
 iAlternativeLocationId :: Lens' Instance (Maybe Text)
 iAlternativeLocationId
   = lens _iAlternativeLocationId
       (\ s a -> s{_iAlternativeLocationId = a})
 
--- | Optional. The CIDR range of internal addresses that are reserved for
--- this instance. If not provided, the service will choose an unused \/29
--- block, for example, 10.0.0.0\/29 or 192.168.0.0\/29. Ranges must be
--- unique and non-overlapping with existing subnets in an authorized
--- network.
+-- | Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses
+-- that are reserved for this instance. Range must be unique and
+-- non-overlapping with existing subnets in an authorized network. For
+-- PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges
+-- associated with this private service access connection. If not provided,
+-- the service will choose an unused \/29 block, for example, 10.0.0.0\/29
+-- or 192.168.0.0\/29.
 iReservedIPRange :: Lens' Instance (Maybe Text)
 iReservedIPRange
   = lens _iReservedIPRange
@@ -1218,11 +1626,17 @@ iDisplayName
 iLabels :: Lens' Instance (Maybe InstanceLabels)
 iLabels = lens _iLabels (\ s a -> s{_iLabels = a})
 
+-- | Optional. The network connect mode of the Redis instance. If not
+-- provided, the connect mode defaults to DIRECT_PEERING.
+iConnectMode :: Lens' Instance (Maybe InstanceConnectMode)
+iConnectMode
+  = lens _iConnectMode (\ s a -> s{_iConnectMode = a})
+
 -- | Optional. The zone where the instance will be provisioned. If not
 -- provided, the service will choose a zone for the instance. For
 -- STANDARD_HA tier, instances will be created across two zones for
--- protection against zonal failures. If [alternative_location_id] is also
--- provided, it must be different from [location_id].
+-- protection against zonal failures. If alternative_location_id is also
+-- provided, it must be different from location_id.
 iLocationId :: Lens' Instance (Maybe Text)
 iLocationId
   = lens _iLocationId (\ s a -> s{_iLocationId = a})
@@ -1234,16 +1648,20 @@ iHost = lens _iHost (\ s a -> s{_iHost = a})
 
 -- | Optional. Redis configuration parameters, according to
 -- http:\/\/redis.io\/topics\/config. Currently, the only supported
--- parameters are: * maxmemory-policy * notify-keyspace-events
+-- parameters are: Redis version 3.2 and newer: * maxmemory-policy *
+-- notify-keyspace-events Redis version 4.0 and newer: * activedefrag *
+-- lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and
+-- newer: * stream-node-max-bytes * stream-node-max-entries
 iRedisConfigs :: Lens' Instance (Maybe InstanceRedisConfigs)
 iRedisConfigs
   = lens _iRedisConfigs
       (\ s a -> s{_iRedisConfigs = a})
 
 -- | Optional. The version of Redis software. If not provided, latest
--- supported version will be used. Updating the version will perform an
--- upgrade\/downgrade to the new version. Currently, the supported values
--- are \`REDIS_3_2\` for Redis 3.2.
+-- supported version will be used. Currently, the supported values are: *
+-- \`REDIS_3_2\` for Redis 3.2 compatibility * \`REDIS_4_0\` for Redis 4.0
+-- compatibility (default) * \`REDIS_5_0\` for Redis 5.0 compatibility *
+-- \`REDIS_6_X\` for Redis 6.x compatibility
 iRedisVersion :: Lens' Instance (Maybe Text)
 iRedisVersion
   = lens _iRedisVersion
@@ -1262,9 +1680,9 @@ iPort
       mapping _Coerce
 
 -- | Output only. The current zone where the Redis endpoint is placed. For
--- Basic Tier instances, this will always be the same as the [location_id]
+-- Basic Tier instances, this will always be the same as the location_id
 -- provided by the user at creation time. For Standard Tier instances, this
--- can be either [location_id] or [alternative_location_id] and can change
+-- can be either location_id or alternative_location_id and can change
 -- after a failover event.
 iCurrentLocationId :: Lens' Instance (Maybe Text)
 iCurrentLocationId
@@ -1276,8 +1694,13 @@ instance FromJSON Instance where
           = withObject "Instance"
               (\ o ->
                  Instance' <$>
-                   (o .:? "state") <*> (o .:? "authorizedNetwork") <*>
-                     (o .:? "memorySizeGb")
+                   (o .:? "serverCaCerts" .!= mempty) <*>
+                     (o .:? "persistenceIamIdentity")
+                     <*> (o .:? "state")
+                     <*> (o .:? "authEnabled")
+                     <*> (o .:? "transitEncryptionMode")
+                     <*> (o .:? "authorizedNetwork")
+                     <*> (o .:? "memorySizeGb")
                      <*> (o .:? "name")
                      <*> (o .:? "statusMessage")
                      <*> (o .:? "alternativeLocationId")
@@ -1285,6 +1708,7 @@ instance FromJSON Instance where
                      <*> (o .:? "tier")
                      <*> (o .:? "displayName")
                      <*> (o .:? "labels")
+                     <*> (o .:? "connectMode")
                      <*> (o .:? "locationId")
                      <*> (o .:? "host")
                      <*> (o .:? "redisConfigs")
@@ -1297,7 +1721,13 @@ instance ToJSON Instance where
         toJSON Instance'{..}
           = object
               (catMaybes
-                 [("state" .=) <$> _iState,
+                 [("serverCaCerts" .=) <$> _iServerCaCerts,
+                  ("persistenceIamIdentity" .=) <$>
+                    _iPersistenceIAMIdentity,
+                  ("state" .=) <$> _iState,
+                  ("authEnabled" .=) <$> _iAuthEnabled,
+                  ("transitEncryptionMode" .=) <$>
+                    _iTransitEncryptionMode,
                   ("authorizedNetwork" .=) <$> _iAuthorizedNetwork,
                   ("memorySizeGb" .=) <$> _iMemorySizeGb,
                   ("name" .=) <$> _iName,
@@ -1308,6 +1738,7 @@ instance ToJSON Instance where
                   ("tier" .=) <$> _iTier,
                   ("displayName" .=) <$> _iDisplayName,
                   ("labels" .=) <$> _iLabels,
+                  ("connectMode" .=) <$> _iConnectMode,
                   ("locationId" .=) <$> _iLocationId,
                   ("host" .=) <$> _iHost,
                   ("redisConfigs" .=) <$> _iRedisConfigs,

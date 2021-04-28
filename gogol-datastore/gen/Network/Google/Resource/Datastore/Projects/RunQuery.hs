@@ -136,7 +136,7 @@ prqPayload :: Lens' ProjectsRunQuery RunQueryRequest
 prqPayload
   = lens _prqPayload (\ s a -> s{_prqPayload = a})
 
--- | The ID of the project against which to make the request.
+-- | Required. The ID of the project against which to make the request.
 prqProjectId :: Lens' ProjectsRunQuery Text
 prqProjectId
   = lens _prqProjectId (\ s a -> s{_prqProjectId = a})

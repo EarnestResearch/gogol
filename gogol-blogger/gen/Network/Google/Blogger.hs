@@ -13,9 +13,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- API for access to the data within Blogger.
+-- The Blogger API provides access to posts, comments and pages of a
+-- Blogger blog.
 --
--- /See:/ <https://developers.google.com/blogger/docs/3.0/getting_started Blogger API Reference>
+-- /See:/ <https://developers.google.com/blogger/docs/3.0/getting_started Blogger API v3 Reference>
 module Network.Google.Blogger
     (
     -- * Service Configuration
@@ -131,6 +132,9 @@ module Network.Google.Blogger
 
     -- * Types
 
+    -- ** PostStatus
+    , PostStatus (..)
+
     -- ** PostsListOrderBy
     , PostsListOrderBy (..)
 
@@ -146,6 +150,9 @@ module Network.Google.Blogger
     , puiPostUserInfo
     , puiPost
     , puiKind
+
+    -- ** PageStatus
+    , PageStatus (..)
 
     -- ** CommentsListView
     , CommentsListView (..)
@@ -165,6 +172,7 @@ module Network.Google.Blogger
     , plNextPageToken
     , plKind
     , plItems
+    , plPrevPageToken
 
     -- ** CommentInReplyTo
     , CommentInReplyTo
@@ -175,6 +183,9 @@ module Network.Google.Blogger
     , CommentBlog
     , commentBlog
     , cbId
+
+    -- ** PostReaderComments
+    , PostReaderComments (..)
 
     -- ** Pageviews
     , Pageviews
@@ -359,8 +370,23 @@ module Network.Google.Blogger
     , blItems
     , blBlogUserInfos
 
+    -- ** CommentStatus
+    , CommentStatus (..)
+
     -- ** PagesListView
     , PagesListView (..)
+
+    -- ** PageviewsCountsItemTimeRange
+    , PageviewsCountsItemTimeRange (..)
+
+    -- ** BlogStatus
+    , BlogStatus (..)
+
+    -- ** Xgafv
+    , Xgafv (..)
+
+    -- ** BlogPerUserInfoRole
+    , BlogPerUserInfoRole (..)
 
     -- ** PageBlog
     , PageBlog
@@ -523,7 +549,7 @@ import Network.Google.Resource.Blogger.Users.Get
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Blogger API service.
+-- | Represents the entirety of the methods and resources available for the Blogger API v3 service.
 type BloggerAPI =
      PostUserInfosListResource :<|>
        PostUserInfosGetResource

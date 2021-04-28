@@ -120,7 +120,7 @@ projectsOccurrencesList pPolParent_ =
     }
 
 
--- | The name of the project to list occurrences for in the form of
+-- | Required. The name of the project to list occurrences for in the form of
 -- \`projects\/[PROJECT_ID]\`.
 polParent :: Lens' ProjectsOccurrencesList Text
 polParent

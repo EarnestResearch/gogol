@@ -31,7 +31,7 @@
 -- name binding is the parent resource, without the operations collection
 -- id.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.operations.list@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.operations.list@.
 module Network.Google.Resource.Ml.Projects.Operations.List
     (
     -- * REST Resource

@@ -55,8 +55,11 @@ type FullHashesFindResource =
                QueryParam "uploadType" Text :>
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] FindFullHashesRequest :>
-                       Post '[JSON] FindFullHashesResponse
+                     ReqBody '[JSON]
+                       GoogleSecuritySafebrowsingV4FindFullHashesRequest
+                       :>
+                       Post '[JSON]
+                         GoogleSecuritySafebrowsingV4FindFullHashesResponse
 
 -- | Finds the full hashes that match the requested hash prefixes.
 --
@@ -67,7 +70,7 @@ data FullHashesFind =
     , _fhfUploadProtocol :: !(Maybe Text)
     , _fhfAccessToken :: !(Maybe Text)
     , _fhfUploadType :: !(Maybe Text)
-    , _fhfPayload :: !FindFullHashesRequest
+    , _fhfPayload :: !GoogleSecuritySafebrowsingV4FindFullHashesRequest
     , _fhfCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -89,7 +92,7 @@ data FullHashesFind =
 --
 -- * 'fhfCallback'
 fullHashesFind
-    :: FindFullHashesRequest -- ^ 'fhfPayload'
+    :: GoogleSecuritySafebrowsingV4FindFullHashesRequest -- ^ 'fhfPayload'
     -> FullHashesFind
 fullHashesFind pFhfPayload_ =
   FullHashesFind'
@@ -125,7 +128,7 @@ fhfUploadType
       (\ s a -> s{_fhfUploadType = a})
 
 -- | Multipart request metadata.
-fhfPayload :: Lens' FullHashesFind FindFullHashesRequest
+fhfPayload :: Lens' FullHashesFind GoogleSecuritySafebrowsingV4FindFullHashesRequest
 fhfPayload
   = lens _fhfPayload (\ s a -> s{_fhfPayload = a})
 
@@ -135,7 +138,8 @@ fhfCallback
   = lens _fhfCallback (\ s a -> s{_fhfCallback = a})
 
 instance GoogleRequest FullHashesFind where
-        type Rs FullHashesFind = FindFullHashesResponse
+        type Rs FullHashesFind =
+             GoogleSecuritySafebrowsingV4FindFullHashesResponse
         type Scopes FullHashesFind = '[]
         requestClient FullHashesFind'{..}
           = go _fhfXgafv _fhfUploadProtocol _fhfAccessToken

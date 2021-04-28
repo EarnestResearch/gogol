@@ -150,7 +150,7 @@ pePayload :: Lens' ProjectsExport GoogleDatastoreAdminV1ExportEntitiesRequest
 pePayload
   = lens _pePayload (\ s a -> s{_pePayload = a})
 
--- | Project ID against which to make the request.
+-- | Required. Project ID against which to make the request.
 peProjectId :: Lens' ProjectsExport Text
 peProjectId
   = lens _peProjectId (\ s a -> s{_peProjectId = a})

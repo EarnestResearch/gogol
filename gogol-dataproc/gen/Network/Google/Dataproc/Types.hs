@@ -22,6 +22,12 @@ module Network.Google.Dataproc.Types
     -- * OAuth Scopes
     , cloudPlatformScope
 
+    -- * SecurityConfig
+    , SecurityConfig
+    , securityConfig
+    , scIdentityConfig
+    , scKerberosConfig
+
     -- * JobReference
     , JobReference
     , jobReference
@@ -57,11 +63,19 @@ module Network.Google.Dataproc.Types
     , igcNumInstances
     , igcDiskConfig
     , igcIsPreemptible
+    , igcPreemptibility
     , igcImageURI
     , igcAccelerators
     , igcInstanceNames
     , igcManagedGroupConfig
     , igcMachineTypeURI
+    , igcMinCPUPlatform
+    , igcInstanceReferences
+
+    -- * IdentityConfig
+    , IdentityConfig
+    , identityConfig
+    , icUserServiceAccountMApping
 
     -- * SparkJob
     , SparkJob
@@ -92,15 +106,41 @@ module Network.Google.Dataproc.Types
     , coError
     , coOperationId
 
+    -- * ProjectsRegionsJobsListJobStateMatcher
+    , ProjectsRegionsJobsListJobStateMatcher (..)
+
+    -- * LoggingConfigDriverLogLevelsAdditional
+    , LoggingConfigDriverLogLevelsAdditional (..)
+
     -- * ClusterSelector
     , ClusterSelector
     , clusterSelector
     , csZone
     , csClusterLabels
 
+    -- * KerberosConfig
+    , KerberosConfig
+    , kerberosConfig
+    , kcEnableKerberos
+    , kcCrossRealmTrustAdminServer
+    , kcCrossRealmTrustRealm
+    , kcKeyPasswordURI
+    , kcKeystorePasswordURI
+    , kcKmsKeyURI
+    , kcRealm
+    , kcTgtLifetimeHours
+    , kcTruststorePasswordURI
+    , kcTruststoreURI
+    , kcCrossRealmTrustSharedPasswordURI
+    , kcRootPrincipalPasswordURI
+    , kcKdcDBKeyURI
+    , kcKeystoreURI
+    , kcCrossRealmTrustKdc
+
     -- * JobScheduling
     , JobScheduling
     , jobScheduling
+    , jsMaxFailuresTotal
     , jsMaxFailuresPerHour
 
     -- * DiskConfig
@@ -137,6 +177,7 @@ module Network.Google.Dataproc.Types
     -- * GetIAMPolicyRequest
     , GetIAMPolicyRequest
     , getIAMPolicyRequest
+    , giprOptions
 
     -- * WorkflowTemplatePlacement
     , WorkflowTemplatePlacement
@@ -167,6 +208,16 @@ module Network.Google.Dataproc.Types
     , pvRegex
     , pvValues
 
+    -- * InstanceReference
+    , InstanceReference
+    , instanceReference
+    , irInstanceId
+    , irPublicKey
+    , irInstanceName
+
+    -- * SoftwareConfigOptionalComponentsItem
+    , SoftwareConfigOptionalComponentsItem (..)
+
     -- * JobLabels
     , JobLabels
     , jobLabels
@@ -178,6 +229,21 @@ module Network.Google.Dataproc.Types
     , sjrRequestId
     , sjrJob
 
+    -- * ReservationAffinity
+    , ReservationAffinity
+    , reservationAffinity
+    , raConsumeReservationType
+    , raValues
+    , raKey
+
+    -- * JobMetadata
+    , JobMetadata
+    , jobMetadata
+    , jmStatus
+    , jmJobId
+    , jmStartTime
+    , jmOperationType
+
     -- * ClusterStatusSubState
     , ClusterStatusSubState (..)
 
@@ -186,6 +252,14 @@ module Network.Google.Dataproc.Types
     , clusterMetrics
     , cmYarnMetrics
     , cmHdfsMetrics
+
+    -- * InstanceGroupConfigPreemptibility
+    , InstanceGroupConfigPreemptibility (..)
+
+    -- * NodeGroupAffinity
+    , NodeGroupAffinity
+    , nodeGroupAffinity
+    , ngaNodeGroupURI
 
     -- * Operation
     , Operation
@@ -210,10 +284,21 @@ module Network.Google.Dataproc.Types
     , hjContinueOnFailure
     , hjProperties
 
+    -- * ListAutoscalingPoliciesResponse
+    , ListAutoscalingPoliciesResponse
+    , listAutoscalingPoliciesResponse
+    , laprNextPageToken
+    , laprPolicies
+
     -- * OrderedJobLabels
     , OrderedJobLabels
     , orderedJobLabels
     , ojlAddtional
+
+    -- * AutoscalingConfig
+    , AutoscalingConfig
+    , autoscalingConfig
+    , acPolicyURI
 
     -- * ClusterSelectorClusterLabels
     , ClusterSelectorClusterLabels
@@ -230,17 +315,38 @@ module Network.Google.Dataproc.Types
     , pigJobProperties
     , pjpAddtional
 
+    -- * PrestoJob
+    , PrestoJob
+    , prestoJob
+    , pjQueryFileURI
+    , pjClientTags
+    , pjOutputFormat
+    , pjQueryList
+    , pjContinueOnFailure
+    , pjLoggingConfig
+    , pjProperties
+
     -- * ClusterConfig
     , ClusterConfig
     , clusterConfig
+    , ccSecurityConfig
     , ccWorkerConfig
+    , ccTempBucket
     , ccInitializationActions
+    , ccAutoscalingConfig
     , ccMasterConfig
     , ccGceClusterConfig
+    , ccLifecycleConfig
     , ccConfigBucket
     , ccEncryptionConfig
     , ccSoftwareConfig
+    , ccMetastoreConfig
     , ccSecondaryWorkerConfig
+    , ccGkeClusterConfig
+    , ccEndpointConfig
+
+    -- * GceClusterConfigPrivateIPv6GoogleAccess
+    , GceClusterConfigPrivateIPv6GoogleAccess (..)
 
     -- * InstantiateWorkflowTemplateRequest
     , InstantiateWorkflowTemplateRequest
@@ -254,6 +360,17 @@ module Network.Google.Dataproc.Types
     , hadoopJobProperties
     , hjpAddtional
 
+    -- * StopClusterRequest
+    , StopClusterRequest
+    , stopClusterRequest
+    , scrRequestId
+    , scrClusterUuid
+
+    -- * EndpointConfigHTTPPorts
+    , EndpointConfigHTTPPorts
+    , endpointConfigHTTPPorts
+    , echttppAddtional
+
     -- * WorkflowTemplate
     , WorkflowTemplate
     , workflowTemplate
@@ -265,6 +382,7 @@ module Network.Google.Dataproc.Types
     , wtId
     , wtLabels
     , wtCreateTime
+    , wtDagTimeout
     , wtPlacement
 
     -- * ClusterOperationStatus
@@ -301,6 +419,11 @@ module Network.Google.Dataproc.Types
     , clusterMetricsYarnMetrics
     , cmymAddtional
 
+    -- * GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
+
     -- * RegexValidation
     , RegexValidation
     , regexValidation
@@ -310,12 +433,31 @@ module Network.Google.Dataproc.Types
     , JobPlacement
     , jobPlacement
     , jpClusterUuid
+    , jpClusterLabels
     , jpClusterName
+
+    -- * NamespacedGkeDeploymentTarget
+    , NamespacedGkeDeploymentTarget
+    , namespacedGkeDeploymentTarget
+    , ngdtTargetGkeCluster
+    , ngdtClusterNamespace
 
     -- * SetIAMPolicyRequest
     , SetIAMPolicyRequest
     , setIAMPolicyRequest
     , siprPolicy
+
+    -- * InstanceGroupAutoscalingPolicyConfig
+    , InstanceGroupAutoscalingPolicyConfig
+    , instanceGroupAutoscalingPolicyConfig
+    , igapcWeight
+    , igapcMinInstances
+    , igapcMaxInstances
+
+    -- * ConfidentialInstanceConfig
+    , ConfidentialInstanceConfig
+    , confidentialInstanceConfig
+    , cicEnableConfidentialCompute
 
     -- * TemplateParameter
     , TemplateParameter
@@ -329,16 +471,26 @@ module Network.Google.Dataproc.Types
     , GceClusterConfig
     , gceClusterConfig
     , gccSubnetworkURI
+    , gccReservationAffinity
     , gccInternalIPOnly
+    , gccNodeGroupAffinity
     , gccNetworkURI
     , gccZoneURI
+    , gccConfidentialInstanceConfig
     , gccServiceAccount
     , gccMetadata
     , gccServiceAccountScopes
+    , gccShieldedInstanceConfig
     , gccTags
+    , gccPrivateIPv6GoogleAccess
 
     -- * WorkflowMetadataState
     , WorkflowMetadataState (..)
+
+    -- * JobPlacementClusterLabels
+    , JobPlacementClusterLabels
+    , jobPlacementClusterLabels
+    , jpclAddtional
 
     -- * YarnApplicationState
     , YarnApplicationState (..)
@@ -370,12 +522,26 @@ module Network.Google.Dataproc.Types
     , workflowMetadataParameters
     , wmpAddtional
 
+    -- * LifecycleConfig
+    , LifecycleConfig
+    , lifecycleConfig
+    , lcIdleStartTime
+    , lcIdleDeleteTtl
+    , lcAutoDeleteTtl
+    , lcAutoDeleteTime
+
     -- * ManagedCluster
     , ManagedCluster
     , managedCluster
     , mcConfig
     , mcClusterName
     , mcLabels
+
+    -- * BasicAutoscalingAlgorithm
+    , BasicAutoscalingAlgorithm
+    , basicAutoscalingAlgorithm
+    , baaCooldownPeriod
+    , baaYarnConfig
 
     -- * ClusterLabels
     , ClusterLabels
@@ -389,6 +555,8 @@ module Network.Google.Dataproc.Types
     , jStatus
     , jDriverControlFilesURI
     , jHiveJob
+    , jDone
+    , jPrestoJob
     , jReference
     , jSparkSQLJob
     , jHadoopJob
@@ -398,6 +566,7 @@ module Network.Google.Dataproc.Types
     , jPysparkJob
     , jDriverOutputResourceURI
     , jScheduling
+    , jSparkRJob
     , jStatusHistory
     , jPlacement
     , jPigJob
@@ -405,6 +574,11 @@ module Network.Google.Dataproc.Types
     -- * DiagnoseClusterRequest
     , DiagnoseClusterRequest
     , diagnoseClusterRequest
+
+    -- * SparkRJobProperties
+    , SparkRJobProperties
+    , sparkRJobProperties
+    , srjpAddtional
 
     -- * HadoopJob
     , HadoopJob
@@ -438,6 +612,15 @@ module Network.Google.Dataproc.Types
     , comStatusHistory
     , comDescription
 
+    -- * AutoscalingPolicy
+    , AutoscalingPolicy
+    , autoscalingPolicy
+    , apWorkerConfig
+    , apName
+    , apBasicAlgorithm
+    , apId
+    , apSecondaryWorkerConfig
+
     -- * TestIAMPermissionsRequest
     , TestIAMPermissionsRequest
     , testIAMPermissionsRequest
@@ -466,6 +649,18 @@ module Network.Google.Dataproc.Types
     , ljrNextPageToken
     , ljrJobs
 
+    -- * IdentityConfigUserServiceAccountMApping
+    , IdentityConfigUserServiceAccountMApping
+    , identityConfigUserServiceAccountMApping
+    , icusamaAddtional
+
+    -- * ShieldedInstanceConfig
+    , ShieldedInstanceConfig
+    , shieldedInstanceConfig
+    , sicEnableVtpm
+    , sicEnableIntegrityMonitoring
+    , sicEnableSecureBoot
+
     -- * AcceleratorConfig
     , AcceleratorConfig
     , acceleratorConfig
@@ -493,6 +688,11 @@ module Network.Google.Dataproc.Types
     , psjArchiveURIs
     , psjLoggingConfig
     , psjProperties
+
+    -- * MetastoreConfig
+    , MetastoreConfig
+    , metastoreConfig
+    , mcDataprocMetastoreService
 
     -- * ManagedGroupConfig
     , ManagedGroupConfig
@@ -533,11 +733,13 @@ module Network.Google.Dataproc.Types
     , ojStepId
     , ojPrerequisiteStepIds
     , ojHiveJob
+    , ojPrestoJob
     , ojSparkSQLJob
     , ojHadoopJob
     , ojLabels
     , ojPysparkJob
     , ojScheduling
+    , ojSparkRJob
     , ojPigJob
 
     -- * CancelJobRequest
@@ -561,6 +763,12 @@ module Network.Google.Dataproc.Types
     , jsSubState
     , jsStateStartTime
     , jsDetails
+
+    -- * StartClusterRequest
+    , StartClusterRequest
+    , startClusterRequest
+    , sRequestId
+    , sClusterUuid
 
     -- * PigJobScriptVariables
     , PigJobScriptVariables
@@ -586,6 +794,7 @@ module Network.Google.Dataproc.Types
     , workflowMetadata
     , wmGraph
     , wmState
+    , wmDagStartTime
     , wmClusterUuid
     , wmStartTime
     , wmDeleteCluster
@@ -594,7 +803,15 @@ module Network.Google.Dataproc.Types
     , wmEndTime
     , wmParameters
     , wmClusterName
+    , wmDagEndTime
     , wmTemplate
+    , wmDagTimeout
+
+    -- * InjectCredentialsRequest
+    , InjectCredentialsRequest
+    , injectCredentialsRequest
+    , icrClusterUuid
+    , icrCredentialsCiphertext
 
     -- * OperationResponse
     , OperationResponse
@@ -605,6 +822,15 @@ module Network.Google.Dataproc.Types
     , LoggingConfigDriverLogLevels
     , loggingConfigDriverLogLevels
     , lcdllAddtional
+
+    -- * BasicYarnAutoscalingConfig
+    , BasicYarnAutoscalingConfig
+    , basicYarnAutoscalingConfig
+    , byacScaleDownFactor
+    , byacScaleUpFactor
+    , byacScaleUpMinWorkerFraction
+    , byacScaleDownMinWorkerFraction
+    , byacGracefulDecommissionTimeout
 
     -- * ClusterStatus
     , ClusterStatus
@@ -622,16 +848,40 @@ module Network.Google.Dataproc.Types
     , yaProgress
     , yaName
 
+    -- * SparkRJob
+    , SparkRJob
+    , sparkRJob
+    , srjArgs
+    , srjFileURIs
+    , srjMainRFileURI
+    , srjArchiveURIs
+    , srjLoggingConfig
+    , srjProperties
+
+    -- * ReservationAffinityConsumeReservationType
+    , ReservationAffinityConsumeReservationType (..)
+
+    -- * EndpointConfig
+    , EndpointConfig
+    , endpointConfig
+    , ecEnableHTTPPortAccess
+    , ecHTTPPorts
+
     -- * PigJob
     , PigJob
     , pigJob
-    , pjQueryFileURI
-    , pjJarFileURIs
-    , pjScriptVariables
-    , pjQueryList
-    , pjContinueOnFailure
-    , pjLoggingConfig
-    , pjProperties
+    , pQueryFileURI
+    , pJarFileURIs
+    , pScriptVariables
+    , pQueryList
+    , pContinueOnFailure
+    , pLoggingConfig
+    , pProperties
+
+    -- * PrestoJobProperties
+    , PrestoJobProperties
+    , prestoJobProperties
+    , pAddtional
 
     -- * LoggingConfig
     , LoggingConfig
@@ -644,6 +894,11 @@ module Network.Google.Dataproc.Types
     , bMembers
     , bRole
     , bCondition
+
+    -- * GkeClusterConfig
+    , GkeClusterConfig
+    , gkeClusterConfig
+    , gccNamespacedGkeDeploymentTarget
     ) where
 
 import Network.Google.Dataproc.Types.Product
@@ -656,6 +911,6 @@ dataprocService
   = defaultService (ServiceId "dataproc:v1")
       "dataproc.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

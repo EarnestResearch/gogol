@@ -109,8 +109,8 @@ projectsNotesBatchCreate pPnbcParent_ pPnbcPayload_ =
     }
 
 
--- | The name of the project in the form of \`projects\/[PROJECT_ID]\`, under
--- which the notes are to be created.
+-- | Required. The name of the project in the form of
+-- \`projects\/[PROJECT_ID]\`, under which the notes are to be created.
 pnbcParent :: Lens' ProjectsNotesBatchCreate Text
 pnbcParent
   = lens _pnbcParent (\ s a -> s{_pnbcParent = a})

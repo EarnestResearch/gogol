@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @accessapproval.organizations.getAccessApprovalSettings@ method which the
 -- 'OrganizationsGetAccessApprovalSettings' request conforms to.
 type OrganizationsGetAccessApprovalSettingsResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

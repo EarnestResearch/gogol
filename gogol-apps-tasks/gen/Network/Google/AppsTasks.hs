@@ -13,9 +13,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Manages your tasks and task lists.
+-- The Google Tasks API lets you manage your tasks and task lists.
 --
--- /See:/ <https://developers.google.com/google-apps/tasks/firstapp Tasks API Reference>
+-- /See:/ < Tasks API Reference>
 module Network.Google.AppsTasks
     (
     -- * Service Configuration
@@ -106,6 +106,9 @@ module Network.Google.AppsTasks
     , tasId
     , tasUpdated
     , tasTitle
+
+    -- ** Xgafv
+    , Xgafv (..)
 
     -- ** Task
     , Task

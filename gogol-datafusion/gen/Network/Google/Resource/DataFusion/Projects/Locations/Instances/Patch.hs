@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.instances.patch@ method which the
 -- 'ProjectsLocationsInstancesPatch' request conforms to.
 type ProjectsLocationsInstancesPatchResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -128,8 +128,8 @@ plipUploadProtocol
 -- in an instance resource. The fields specified in the update_mask are
 -- relative to the resource, not the full request. A field will be
 -- overwritten if it is in the mask. If the user does not provide a mask,
--- all the supported fields (labels and options currently) will be
--- overwritten.
+-- all the supported fields (labels, options, and version currently) will
+-- be overwritten.
 plipUpdateMask :: Lens' ProjectsLocationsInstancesPatch (Maybe GFieldMask)
 plipUpdateMask
   = lens _plipUpdateMask

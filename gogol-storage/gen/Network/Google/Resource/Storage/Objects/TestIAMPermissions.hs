@@ -38,6 +38,7 @@ module Network.Google.Resource.Storage.Objects.TestIAMPermissions
     , otipUserProject
     , otipObject
     , otipPermissions
+    , otipProvisionalUserProject
     , otipGeneration
     ) where
 
@@ -57,9 +58,10 @@ type ObjectsTestIAMPermissionsResource =
                    "testPermissions" :>
                      QueryParams "permissions" Text :>
                        QueryParam "userProject" Text :>
-                         QueryParam "generation" (Textual Int64) :>
-                           QueryParam "alt" AltJSON :>
-                             Get '[JSON] TestIAMPermissionsResponse
+                         QueryParam "provisionalUserProject" Text :>
+                           QueryParam "generation" (Textual Int64) :>
+                             QueryParam "alt" AltJSON :>
+                               Get '[JSON] TestIAMPermissionsResponse
 
 -- | Tests a set of permissions on the given object to see which, if any, are
 -- held by the caller.
@@ -71,6 +73,7 @@ data ObjectsTestIAMPermissions =
     , _otipUserProject :: !(Maybe Text)
     , _otipObject :: !Text
     , _otipPermissions :: ![Text]
+    , _otipProvisionalUserProject :: !(Maybe Text)
     , _otipGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -88,6 +91,8 @@ data ObjectsTestIAMPermissions =
 --
 -- * 'otipPermissions'
 --
+-- * 'otipProvisionalUserProject'
+--
 -- * 'otipGeneration'
 objectsTestIAMPermissions
     :: Text -- ^ 'otipBucket'
@@ -100,6 +105,7 @@ objectsTestIAMPermissions pOtipBucket_ pOtipObject_ pOtipPermissions_ =
     , _otipUserProject = Nothing
     , _otipObject = pOtipObject_
     , _otipPermissions = _Coerce # pOtipPermissions_
+    , _otipProvisionalUserProject = Nothing
     , _otipGeneration = Nothing
     }
 
@@ -129,6 +135,13 @@ otipPermissions
       (\ s a -> s{_otipPermissions = a})
       . _Coerce
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+otipProvisionalUserProject :: Lens' ObjectsTestIAMPermissions (Maybe Text)
+otipProvisionalUserProject
+  = lens _otipProvisionalUserProject
+      (\ s a -> s{_otipProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of this object (as opposed to
 -- the latest version, the default).
 otipGeneration :: Lens' ObjectsTestIAMPermissions (Maybe Int64)
@@ -150,6 +163,7 @@ instance GoogleRequest ObjectsTestIAMPermissions
         requestClient ObjectsTestIAMPermissions'{..}
           = go _otipBucket _otipObject _otipPermissions
               _otipUserProject
+              _otipProvisionalUserProject
               _otipGeneration
               (Just AltJSON)
               storageService

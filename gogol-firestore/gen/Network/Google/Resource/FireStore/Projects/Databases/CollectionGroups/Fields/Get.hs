@@ -125,7 +125,7 @@ pdcgfgUploadType
   = lens _pdcgfgUploadType
       (\ s a -> s{_pdcgfgUploadType = a})
 
--- | A name of the form
+-- | Required. A name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\/fields\/{field_id}\`
 pdcgfgName :: Lens' ProjectsDatabasesCollectionGroupsFieldsGet Text
 pdcgfgName

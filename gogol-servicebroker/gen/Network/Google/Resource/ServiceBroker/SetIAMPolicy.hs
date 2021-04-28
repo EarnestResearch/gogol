@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT
+-- and PERMISSION_DENIED
 --
 -- /See:/ <https://cloud.google.com/kubernetes-engine/docs/concepts/add-on/service-broker Service Broker API Reference> for @servicebroker.setIamPolicy@.
 module Network.Google.Resource.ServiceBroker.SetIAMPolicy
@@ -61,7 +62,8 @@ type SetIAMPolicyResource =
                        Post '[JSON] GoogleIAMV1__Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT
+-- and PERMISSION_DENIED
 --
 -- /See:/ 'setIAMPolicy' smart constructor.
 data SetIAMPolicy =

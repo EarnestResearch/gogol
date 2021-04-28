@@ -108,8 +108,9 @@ projectsInstancesClustersList pPiclParent_ =
     }
 
 
--- | The unique name of the instance for which a list of clusters is
--- requested. Values are of the form \`projects\/\/instances\/\`. Use \` =
+-- | Required. The unique name of the instance for which a list of clusters
+-- is requested. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\`. Use \`{instance} =
 -- \'-\'\` to list Clusters for all Instances in a project, e.g.,
 -- \`projects\/myproject\/instances\/-\`.
 piclParent :: Lens' ProjectsInstancesClustersList Text

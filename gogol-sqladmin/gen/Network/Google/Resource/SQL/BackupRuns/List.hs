@@ -23,7 +23,7 @@
 -- Lists all backup runs associated with a given instance and configuration
 -- in the reverse chronological order of the backup initiation time.
 --
--- /See:/ <https://cloud.google.com/sql/docs/reference/latest Cloud SQL Admin API Reference> for @sql.backupRuns.list@.
+-- /See:/ <https://developers.google.com/cloud-sql/ Cloud SQL Admin API Reference> for @sql.backupRuns.list@.
 module Network.Google.Resource.SQL.BackupRuns.List
     (
     -- * REST Resource
@@ -34,9 +34,14 @@ module Network.Google.Resource.SQL.BackupRuns.List
     , BackupRunsList
 
     -- * Request Lenses
+    , brlXgafv
+    , brlUploadProtocol
     , brlProject
+    , brlAccessToken
+    , brlUploadType
     , brlPageToken
     , brlMaxResults
+    , brlCallback
     , brlInstance
     ) where
 
@@ -53,10 +58,15 @@ type BackupRunsListResource =
              "instances" :>
                Capture "instance" Text :>
                  "backupRuns" :>
-                   QueryParam "pageToken" Text :>
-                     QueryParam "maxResults" (Textual Int32) :>
-                       QueryParam "alt" AltJSON :>
-                         Get '[JSON] BackupRunsListResponse
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "pageToken" Text :>
+                             QueryParam "maxResults" (Textual Int32) :>
+                               QueryParam "callback" Text :>
+                                 QueryParam "alt" AltJSON :>
+                                   Get '[JSON] BackupRunsListResponse
 
 -- | Lists all backup runs associated with a given instance and configuration
 -- in the reverse chronological order of the backup initiation time.
@@ -64,9 +74,14 @@ type BackupRunsListResource =
 -- /See:/ 'backupRunsList' smart constructor.
 data BackupRunsList =
   BackupRunsList'
-    { _brlProject :: !Text
+    { _brlXgafv :: !(Maybe Xgafv)
+    , _brlUploadProtocol :: !(Maybe Text)
+    , _brlProject :: !Text
+    , _brlAccessToken :: !(Maybe Text)
+    , _brlUploadType :: !(Maybe Text)
     , _brlPageToken :: !(Maybe Text)
     , _brlMaxResults :: !(Maybe (Textual Int32))
+    , _brlCallback :: !(Maybe Text)
     , _brlInstance :: !Text
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -76,11 +91,21 @@ data BackupRunsList =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'brlXgafv'
+--
+-- * 'brlUploadProtocol'
+--
 -- * 'brlProject'
+--
+-- * 'brlAccessToken'
+--
+-- * 'brlUploadType'
 --
 -- * 'brlPageToken'
 --
 -- * 'brlMaxResults'
+--
+-- * 'brlCallback'
 --
 -- * 'brlInstance'
 backupRunsList
@@ -89,17 +114,44 @@ backupRunsList
     -> BackupRunsList
 backupRunsList pBrlProject_ pBrlInstance_ =
   BackupRunsList'
-    { _brlProject = pBrlProject_
+    { _brlXgafv = Nothing
+    , _brlUploadProtocol = Nothing
+    , _brlProject = pBrlProject_
+    , _brlAccessToken = Nothing
+    , _brlUploadType = Nothing
     , _brlPageToken = Nothing
     , _brlMaxResults = Nothing
+    , _brlCallback = Nothing
     , _brlInstance = pBrlInstance_
     }
 
+
+-- | V1 error format.
+brlXgafv :: Lens' BackupRunsList (Maybe Xgafv)
+brlXgafv = lens _brlXgafv (\ s a -> s{_brlXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+brlUploadProtocol :: Lens' BackupRunsList (Maybe Text)
+brlUploadProtocol
+  = lens _brlUploadProtocol
+      (\ s a -> s{_brlUploadProtocol = a})
 
 -- | Project ID of the project that contains the instance.
 brlProject :: Lens' BackupRunsList Text
 brlProject
   = lens _brlProject (\ s a -> s{_brlProject = a})
+
+-- | OAuth access token.
+brlAccessToken :: Lens' BackupRunsList (Maybe Text)
+brlAccessToken
+  = lens _brlAccessToken
+      (\ s a -> s{_brlAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+brlUploadType :: Lens' BackupRunsList (Maybe Text)
+brlUploadType
+  = lens _brlUploadType
+      (\ s a -> s{_brlUploadType = a})
 
 -- | A previously-returned page token representing part of the larger set of
 -- results to view.
@@ -114,6 +166,11 @@ brlMaxResults
       (\ s a -> s{_brlMaxResults = a})
       . mapping _Coerce
 
+-- | JSONP
+brlCallback :: Lens' BackupRunsList (Maybe Text)
+brlCallback
+  = lens _brlCallback (\ s a -> s{_brlCallback = a})
+
 -- | Cloud SQL instance ID. This does not include the project ID.
 brlInstance :: Lens' BackupRunsList Text
 brlInstance
@@ -125,8 +182,13 @@ instance GoogleRequest BackupRunsList where
              '["https://www.googleapis.com/auth/cloud-platform",
                "https://www.googleapis.com/auth/sqlservice.admin"]
         requestClient BackupRunsList'{..}
-          = go _brlProject _brlInstance _brlPageToken
+          = go _brlProject _brlInstance _brlXgafv
+              _brlUploadProtocol
+              _brlAccessToken
+              _brlUploadType
+              _brlPageToken
               _brlMaxResults
+              _brlCallback
               (Just AltJSON)
               sQLAdminService
           where go

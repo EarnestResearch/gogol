@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @jobs.projects.operations.get@ method which the
 -- 'ProjectsOperationsGet' request conforms to.
 type ProjectsOperationsGetResource =
-     "v3p1beta1" :>
+     "v4" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

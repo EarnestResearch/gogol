@@ -234,13 +234,6 @@ module Network.Google.ShoppingContent.Types
     , datafeedsCustomBatchRequest
     , dEntries
 
-    -- * OrderpaymentsNotifyChargeRequest
-    , OrderpaymentsNotifyChargeRequest
-    , orderpaymentsNotifyChargeRequest
-    , oncrInvoiceIds
-    , oncrInvoiceId
-    , oncrChargeState
-
     -- * OrdersCancelTestOrderByCustomerResponse
     , OrdersCancelTestOrderByCustomerResponse
     , ordersCancelTestOrderByCustomerResponse
@@ -251,12 +244,6 @@ module Network.Google.ShoppingContent.Types
     , liaOnDisplayToOrderSettings
     , lodtosStatus
     , lodtosShippingCostPolicyURL
-
-    -- * OrderpaymentsNotifyAuthDeclinedResponse
-    , OrderpaymentsNotifyAuthDeclinedResponse
-    , orderpaymentsNotifyAuthDeclinedResponse
-    , onadrKind
-    , onadrExecutionStatus
 
     -- * AccountAddress
     , AccountAddress
@@ -361,9 +348,6 @@ module Network.Google.ShoppingContent.Types
     , aErrors
     , aBatchId
 
-    -- * OrdersListOrderBy
-    , OrdersListOrderBy (..)
-
     -- * GmbAccounts
     , GmbAccounts
     , gmbAccounts
@@ -411,6 +395,7 @@ module Network.Google.ShoppingContent.Types
     , oliAnnotations
     , oliQuantityOrdered
     , oliReturnInfo
+    , oliQuantityReadyForPickup
     , oliQuantityDelivered
     , oliShippingDetails
     , oliQuantityPending
@@ -424,10 +409,17 @@ module Network.Google.ShoppingContent.Types
     , oliProduct
     , oliReturns
 
+    -- * MinimumOrderValueTable
+    , MinimumOrderValueTable
+    , minimumOrderValueTable
+    , movtStoreCodeSetWithMovs
+
     -- * Service
     , Service
     , service
     , sDeliveryCountry
+    , sMinimumOrderValueTable
+    , sShipmentType
     , sRateGroups
     , sDeliveryTime
     , sActive
@@ -435,6 +427,7 @@ module Network.Google.ShoppingContent.Types
     , sCurrency
     , sEligibility
     , sMinimumOrderValue
+    , sPickupService
 
     -- * ProductstatusesCustomBatchResponse
     , ProductstatusesCustomBatchResponse
@@ -595,6 +588,7 @@ module Network.Google.ShoppingContent.Types
     , accAccount
     , accAccountId
     , accMethod
+    , accLabelIds
     , accOverwrite
     , accBatchId
     , accLinkRequest
@@ -610,6 +604,13 @@ module Network.Google.ShoppingContent.Types
     , orderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption
     , ocbrecriroReason
     , ocbrecriroDescription
+
+    -- * OrderPickupDetails
+    , OrderPickupDetails
+    , orderPickupDetails
+    , opdCollectors
+    , opdAddress
+    , opdLocationId
 
     -- * LiaSettingsListResponse
     , LiaSettingsListResponse
@@ -745,6 +746,13 @@ module Network.Google.ShoppingContent.Types
     , iAmount
     , iMonths
 
+    -- * PickupServicesPickupService
+    , PickupServicesPickupService
+    , pickupServicesPickupService
+    , pspsCountry
+    , pspsServiceName
+    , pspsCarrierName
+
     -- * DatafeedFetchSchedule
     , DatafeedFetchSchedule
     , datafeedFetchSchedule
@@ -812,6 +820,12 @@ module Network.Google.ShoppingContent.Types
     , accKind
     , accResources
 
+    -- * OrderPickupDetailsCollector
+    , OrderPickupDetailsCollector
+    , orderPickupDetailsCollector
+    , opdcName
+    , opdcPhoneNumber
+
     -- * ProductStatusDataQualityIssue
     , ProductStatusDataQualityIssue
     , productStatusDataQualityIssue
@@ -824,13 +838,6 @@ module Network.Google.ShoppingContent.Types
     , psdqiValueOnLandingPage
     , psdqiTimestamp
     , psdqiDetail
-
-    -- * OrderpaymentsNotifyRefundRequest
-    , OrderpaymentsNotifyRefundRequest
-    , orderpaymentsNotifyRefundRequest
-    , onrrInvoiceIds
-    , onrrInvoiceId
-    , onrrRefundState
 
     -- * AccountBusinessInformation
     , AccountBusinessInformation
@@ -893,12 +900,6 @@ module Network.Google.ShoppingContent.Types
     , acbrcEntries
     , acbrcKind
 
-    -- * OrderpaymentsNotifyAuthApprovedRequest
-    , OrderpaymentsNotifyAuthApprovedRequest
-    , orderpaymentsNotifyAuthApprovedRequest
-    , onaarAuthAmountPretax
-    , onaarAuthAmountTax
-
     -- * OrdersUpdateLineItemShippingDetailsRequest
     , OrdersUpdateLineItemShippingDetailsRequest
     , ordersUpdateLineItemShippingDetailsRequest
@@ -945,6 +946,7 @@ module Network.Google.ShoppingContent.Types
     , orderShipment
     , osCarrier
     , osStatus
+    , osScheduledDeliveryDetails
     , osTrackingId
     , osLineItems
     , osId
@@ -1043,6 +1045,8 @@ module Network.Google.ShoppingContent.Types
     , DeliveryTime
     , deliveryTime
     , dtTransitTimeTable
+    , dtHandlingBusinessDayConfig
+    , dtTransitBusinessDayConfig
     , dtHolidayCutoffs
     , dtMinTransitTimeInDays
     , dtCutoffTime
@@ -1161,12 +1165,6 @@ module Network.Google.ShoppingContent.Types
     , pcbrecErrors
     , pcbrecSale
     , pcbrecBatchId
-
-    -- * OrderpaymentsNotifyAuthApprovedResponse
-    , OrderpaymentsNotifyAuthApprovedResponse
-    , orderpaymentsNotifyAuthApprovedResponse
-    , onaarKind
-    , onaarExecutionStatus
 
     -- * CustomGroup
     , CustomGroup
@@ -1373,12 +1371,16 @@ module Network.Google.ShoppingContent.Types
     , dLanguage
     , dBatchId
 
+    -- * Xgafv
+    , Xgafv (..)
+
     -- * OrderCustomer
     , OrderCustomer
     , orderCustomer
     , ocFullName
     , ocEmail
     , ocExplicitMarketingPreference
+    , ocInvoiceReceivingEmail
     , ocMarketingRightsInfo
 
     -- * InventoryCustomBatchResponseEntry
@@ -1532,6 +1534,13 @@ module Network.Google.ShoppingContent.Types
     , olisdShipByDate
     , olisdMethod
     , olisdDeliverByDate
+    , olisdType
+
+    -- * PickupCarrierService
+    , PickupCarrierService
+    , pickupCarrierService
+    , pcsServiceName
+    , pcsCarrierName
 
     -- * DatafeedsCustomBatchResponse
     , DatafeedsCustomBatchResponse
@@ -1548,17 +1557,6 @@ module Network.Google.ShoppingContent.Types
     , isProductTotal
     , isAdditionalChargeSummaries
     , isPromotionSummaries
-
-    -- * OrderpaymentsNotifyChargeResponse
-    , OrderpaymentsNotifyChargeResponse
-    , orderpaymentsNotifyChargeResponse
-    , oncrKind
-    , oncrExecutionStatus
-
-    -- * OrderpaymentsNotifyAuthDeclinedRequest
-    , OrderpaymentsNotifyAuthDeclinedRequest
-    , orderpaymentsNotifyAuthDeclinedRequest
-    , onadrDeclineReason
 
     -- * PosListResponse
     , PosListResponse
@@ -1577,6 +1575,11 @@ module Network.Google.ShoppingContent.Types
     , orderLineItemProductFee
     , olipfAmount
     , olipfName
+
+    -- * BusinessDayConfig
+    , BusinessDayConfig
+    , businessDayConfig
+    , bdcBusinessDays
 
     -- * OrdersCancelResponse
     , OrdersCancelResponse
@@ -1602,6 +1605,7 @@ module Network.Google.ShoppingContent.Types
     , TestOrder
     , testOrder
     , toKind
+    , toPredefinedPickupDetails
     , toLineItems
     , toShippingOption
     , toPredefinedDeliveryAddress
@@ -1640,6 +1644,7 @@ module Network.Google.ShoppingContent.Types
     , TestOrderLineItemProduct
     , testOrderLineItemProduct
     , tolipImageLink
+    , tolipFees
     , tolipChannel
     , tolipBrand
     , tolipTargetCountry
@@ -1774,6 +1779,7 @@ module Network.Google.ShoppingContent.Types
     , prorCustomGroups
     , prorImageLink
     , prorDisplayAdsValue
+    , prorCanonicalLink
     , prorLoyaltyPoints
     , prorAdditionalImageLinks
     , prorValidatedDestinations
@@ -1912,6 +1918,12 @@ module Network.Google.ShoppingContent.Types
     , toliShippingDetails
     , toliProduct
     , toliUnitTax
+
+    -- * MinimumOrderValueTableStoreCodeSetWithMov
+    , MinimumOrderValueTableStoreCodeSetWithMov
+    , minimumOrderValueTableStoreCodeSetWithMov
+    , movtscswmValue
+    , movtscswmStoreCodes
 
     -- * ProductstatusesCustomBatchRequestEntry
     , ProductstatusesCustomBatchRequestEntry
@@ -2058,6 +2070,7 @@ module Network.Google.ShoppingContent.Types
     , ord1PaymentMethod
     , ord1Promotions
     , ord1ChannelType
+    , ord1PickupDetails
     , ord1TaxCollector
     , ord1PaymentStatus
     , ord1ShippingCost
@@ -2096,6 +2109,12 @@ module Network.Google.ShoppingContent.Types
     , acccAccountId
     , acccMethod
     , acccBatchId
+
+    -- * ShippingSettingsGetSupportedPickupServicesResponse
+    , ShippingSettingsGetSupportedPickupServicesResponse
+    , shippingSettingsGetSupportedPickupServicesResponse
+    , ssgspsrKind
+    , ssgspsrPickupServices
 
     -- * DatafeedStatusError
     , DatafeedStatusError
@@ -2181,12 +2200,6 @@ module Network.Google.ShoppingContent.Types
     , datafeedstatusesCustomBatchRequest
     , dcbrcEntries
 
-    -- * OrderpaymentsNotifyRefundResponse
-    , OrderpaymentsNotifyRefundResponse
-    , orderpaymentsNotifyRefundResponse
-    , onrrKind
-    , onrrExecutionStatus
-
     -- * AccountStatusDataQualityIssue
     , AccountStatusDataQualityIssue
     , accountStatusDataQualityIssue
@@ -2270,6 +2283,12 @@ module Network.Google.ShoppingContent.Types
     , siLineItemInvoices
     , siInvoiceSummary
 
+    -- * OrderShipmentScheduledDeliveryDetails
+    , OrderShipmentScheduledDeliveryDetails
+    , orderShipmentScheduledDeliveryDetails
+    , ossddScheduledDate
+    , ossddCarrierPhoneNumber
+
     -- * OrderCancellation
     , OrderCancellation
     , orderCancellation
@@ -2294,7 +2313,7 @@ import Network.Google.ShoppingContent.Types.Sum
 shoppingContentService :: ServiceConfig
 shoppingContentService
   = defaultService (ServiceId "content:v2")
-      "www.googleapis.com"
+      "shoppingcontent.googleapis.com"
 
 -- | Manage your product listings and accounts for Google Shopping
 contentScope :: Proxy '["https://www.googleapis.com/auth/content"]

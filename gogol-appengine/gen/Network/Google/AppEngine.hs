@@ -150,6 +150,12 @@ module Network.Google.AppEngine
     -- ** ApplicationServingStatus
     , ApplicationServingStatus (..)
 
+    -- ** AppsAuthorizedCertificatesListView
+    , AppsAuthorizedCertificatesListView (..)
+
+    -- ** VersionInboundServicesItem
+    , VersionInboundServicesItem (..)
+
     -- ** URLMapLogin
     , URLMapLogin (..)
 
@@ -181,6 +187,9 @@ module Network.Google.AppEngine
     , authorizedDomain
     , adName
     , adId
+
+    -- ** InstanceVMLiveness
+    , InstanceVMLiveness (..)
 
     -- ** TrafficSplit
     , TrafficSplit
@@ -301,6 +310,7 @@ module Network.Google.AppEngine
     , aGcrDomain
     , aFeatureSettings
     , aName
+    , aDatabaseType
     , aDispatchRules
     , aDefaultBucket
     , aId
@@ -318,6 +328,7 @@ module Network.Google.AppEngine
     , sSplit
     , sName
     , sId
+    , sNetworkSettings
 
     -- ** ErrorHandlerErrorCode
     , ErrorHandlerErrorCode (..)
@@ -408,6 +419,9 @@ module Network.Google.AppEngine
     , createVersionMetadataV1Alpha
     , cvmvaCloudBuildId
 
+    -- ** AppsAuthorizedCertificatesGetView
+    , AppsAuthorizedCertificatesGetView (..)
+
     -- ** FileInfo
     , FileInfo
     , fileInfo
@@ -464,6 +478,9 @@ module Network.Google.AppEngine
     , nInstanceTag
     , nName
 
+    -- ** AppsServicesVersionsGetView
+    , AppsServicesVersionsGetView (..)
+
     -- ** APIConfigHandlerAuthFailAction
     , APIConfigHandlerAuthFailAction (..)
 
@@ -498,6 +515,7 @@ module Network.Google.AppEngine
     , resources
     , rMemoryGb
     , rDiskGb
+    , rKmsKeyReference
     , rVolumes
     , rCPU
 
@@ -512,6 +530,9 @@ module Network.Google.AppEngine
     , certificateRawData
     , crdPrivateKey
     , crdPublicCertificate
+
+    -- ** NetworkSettingsIngressTrafficAllowed
+    , NetworkSettingsIngressTrafficAllowed (..)
 
     -- ** DomainMApping
     , DomainMApping
@@ -540,6 +561,11 @@ module Network.Google.AppEngine
     , cuAggregationWindowLength
     , cuTargetUtilization
 
+    -- ** VersionBuildEnvVariables
+    , VersionBuildEnvVariables
+    , versionBuildEnvVariables
+    , vbevAddtional
+
     -- ** CreateVersionMetadataV1
     , CreateVersionMetadataV1
     , createVersionMetadataV1
@@ -555,6 +581,9 @@ module Network.Google.AppEngine
     , cloudBuildOptions
     , cboCloudBuildTimeout
     , cboAppYamlPath
+
+    -- ** ApplicationDatabaseType
+    , ApplicationDatabaseType (..)
 
     -- ** ManualScaling
     , ManualScaling
@@ -609,6 +638,7 @@ module Network.Google.AppEngine
     , verReadinessCheck
     , verNetwork
     , verResources
+    , verServiceAccount
     , verName
     , verThreadsafe
     , verBetaSettings
@@ -618,6 +648,7 @@ module Network.Google.AppEngine
     , verId
     , verEnvVariables
     , verLivenessCheck
+    , verBuildEnvVariables
     , verRuntimeAPIVersion
     , verServingStatus
     , verDiskUsageBytes
@@ -625,6 +656,9 @@ module Network.Google.AppEngine
     , verLibraries
     , verVersionURL
     , verDeployment
+
+    -- ** AppsServicesVersionsListView
+    , AppsServicesVersionsListView (..)
 
     -- ** Xgafv
     , Xgafv (..)
@@ -684,12 +718,20 @@ module Network.Google.AppEngine
     , LocationMetadata
     , locationMetadata
     , lmStandardEnvironmentAvailable
+    , lmSearchAPIAvailable
     , lmFlexibleEnvironmentAvailable
 
     -- ** OperationMetadata
     , OperationMetadata
     , operationMetadata
     , omAddtional
+
+    -- ** GoogleAppEngineV1betaLocationMetadata
+    , GoogleAppEngineV1betaLocationMetadata
+    , googleAppEngineV1betaLocationMetadata
+    , gaevlmStandardEnvironmentAvailable
+    , gaevlmSearchAPIAvailable
+    , gaevlmFlexibleEnvironmentAvailable
 
     -- ** URLMapAuthFailAction
     , URLMapAuthFailAction (..)
@@ -726,11 +768,19 @@ module Network.Google.AppEngine
     -- ** URLMapRedirectHTTPResponseCode
     , URLMapRedirectHTTPResponseCode (..)
 
+    -- ** NetworkSettings
+    , NetworkSettings
+    , networkSettings
+    , nsIngressTrafficAllowed
+
     -- ** RequestUtilization
     , RequestUtilization
     , requestUtilization
     , ruTargetConcurrentRequests
     , ruTargetRequestCountPerSecond
+
+    -- ** AppsDomainMAppingsCreateOverrideStrategy
+    , AppsDomainMAppingsCreateOverrideStrategy (..)
 
     -- ** FirewallRuleAction
     , FirewallRuleAction (..)
@@ -783,6 +833,7 @@ module Network.Google.AppEngine
     , iVMIP
     , iStartTime
     , iVMId
+    , iVMLiveness
     , iAvailability
     , iVMName
     , iName

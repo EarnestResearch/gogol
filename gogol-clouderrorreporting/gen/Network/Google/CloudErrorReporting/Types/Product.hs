@@ -194,6 +194,7 @@ data ErrorGroup =
     { _egTrackingIssues :: !(Maybe [TrackingIssue])
     , _egName :: !(Maybe Text)
     , _egGroupId :: !(Maybe Text)
+    , _egResolutionStatus :: !(Maybe ErrorGroupResolutionStatus)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -207,11 +208,17 @@ data ErrorGroup =
 -- * 'egName'
 --
 -- * 'egGroupId'
+--
+-- * 'egResolutionStatus'
 errorGroup
     :: ErrorGroup
 errorGroup =
   ErrorGroup'
-    {_egTrackingIssues = Nothing, _egName = Nothing, _egGroupId = Nothing}
+    { _egTrackingIssues = Nothing
+    , _egName = Nothing
+    , _egGroupId = Nothing
+    , _egResolutionStatus = Nothing
+    }
 
 
 -- | Associated tracking issues.
@@ -223,7 +230,7 @@ egTrackingIssues
       . _Coerce
 
 -- | The group resource name. Example:
--- 'projects\/my-project-123\/groups\/my-groupid'
+-- projects\/my-project-123\/groups\/CNSgkpnppqKCUw
 egName :: Lens' ErrorGroup (Maybe Text)
 egName = lens _egName (\ s a -> s{_egName = a})
 
@@ -233,6 +240,13 @@ egGroupId :: Lens' ErrorGroup (Maybe Text)
 egGroupId
   = lens _egGroupId (\ s a -> s{_egGroupId = a})
 
+-- | Error group\'s resolution status. An unspecified resolution status will
+-- be interpreted as OPEN
+egResolutionStatus :: Lens' ErrorGroup (Maybe ErrorGroupResolutionStatus)
+egResolutionStatus
+  = lens _egResolutionStatus
+      (\ s a -> s{_egResolutionStatus = a})
+
 instance FromJSON ErrorGroup where
         parseJSON
           = withObject "ErrorGroup"
@@ -240,7 +254,8 @@ instance FromJSON ErrorGroup where
                  ErrorGroup' <$>
                    (o .:? "trackingIssues" .!= mempty) <*>
                      (o .:? "name")
-                     <*> (o .:? "groupId"))
+                     <*> (o .:? "groupId")
+                     <*> (o .:? "resolutionStatus"))
 
 instance ToJSON ErrorGroup where
         toJSON ErrorGroup'{..}
@@ -248,7 +263,8 @@ instance ToJSON ErrorGroup where
               (catMaybes
                  [("trackingIssues" .=) <$> _egTrackingIssues,
                   ("name" .=) <$> _egName,
-                  ("groupId" .=) <$> _egGroupId])
+                  ("groupId" .=) <$> _egGroupId,
+                  ("resolutionStatus" .=) <$> _egResolutionStatus])
 
 -- | Response message for deleting error events.
 --
@@ -308,25 +324,25 @@ reportedErrorEvent =
     }
 
 
--- | [Optional] A description of the context in which the error occurred.
+-- | Optional. A description of the context in which the error occurred.
 reeContext :: Lens' ReportedErrorEvent (Maybe ErrorContext)
 reeContext
   = lens _reeContext (\ s a -> s{_reeContext = a})
 
--- | [Optional] Time when the event occurred. If not provided, the time when
+-- | Optional. Time when the event occurred. If not provided, the time when
 -- the event was received by the Error Reporting system will be used.
 reeEventTime :: Lens' ReportedErrorEvent (Maybe UTCTime)
 reeEventTime
   = lens _reeEventTime (\ s a -> s{_reeEventTime = a})
       . mapping _DateTime
 
--- | [Required] The service context in which this error has occurred.
+-- | Required. The service context in which this error has occurred.
 reeServiceContext :: Lens' ReportedErrorEvent (Maybe ServiceContext)
 reeServiceContext
   = lens _reeServiceContext
       (\ s a -> s{_reeServiceContext = a})
 
--- | [Required] The error message. If no \`context.reportLocation\` is
+-- | Required. The error message. If no \`context.reportLocation\` is
 -- provided, the message must contain a header (typically consisting of the
 -- exception type name and an error message) and an exception stack trace
 -- in one of the supported programming languages and formats. Supported
@@ -494,7 +510,7 @@ trackingIssue = TrackingIssue' {_tiURL = Nothing}
 
 
 -- | A URL pointing to a related entry in an issue tracking system. Example:
--- https:\/\/github.com\/user\/project\/issues\/4
+-- \`https:\/\/github.com\/user\/project\/issues\/4\`
 tiURL :: Lens' TrackingIssue (Maybe Text)
 tiURL = lens _tiURL (\ s a -> s{_tiURL = a})
 

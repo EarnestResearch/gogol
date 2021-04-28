@@ -114,7 +114,7 @@ projectsLocationsClustersWellKnownGetOpenidConfiguration pPlcwkgocParent_ =
 
 -- | The cluster (project, location, cluster id) to get the discovery
 -- document for. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcwkgocParent :: Lens' ProjectsLocationsClustersWellKnownGetOpenidConfiguration Text
 plcwkgocParent
   = lens _plcwkgocParent
@@ -158,7 +158,7 @@ instance GoogleRequest
              = GetOpenIdConfigResponse
         type Scopes
                ProjectsLocationsClustersWellKnownGetOpenidConfiguration
-             = '["https://www.googleapis.com/auth/cloud-platform"]
+             = '[]
         requestClient
           ProjectsLocationsClustersWellKnownGetOpenidConfiguration'{..}
           = go _plcwkgocParent _plcwkgocXgafv

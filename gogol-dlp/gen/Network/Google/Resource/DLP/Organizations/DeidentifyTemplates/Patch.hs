@@ -141,8 +141,9 @@ odtpPayload :: Lens' OrganizationsDeidentifyTemplatesPatch GooglePrivacyDlpV2Upd
 odtpPayload
   = lens _odtpPayload (\ s a -> s{_odtpPayload = a})
 
--- | Resource name of organization and deidentify template to be updated, for
--- example \`organizations\/433245324\/deidentifyTemplates\/432452342\` or
+-- | Required. Resource name of organization and deidentify template to be
+-- updated, for example
+-- \`organizations\/433245324\/deidentifyTemplates\/432452342\` or
 -- projects\/project-id\/deidentifyTemplates\/432452342.
 odtpName :: Lens' OrganizationsDeidentifyTemplatesPatch Text
 odtpName = lens _odtpName (\ s a -> s{_odtpName = a})

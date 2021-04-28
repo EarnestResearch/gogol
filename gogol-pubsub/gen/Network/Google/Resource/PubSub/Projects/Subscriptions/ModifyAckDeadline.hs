@@ -145,7 +145,7 @@ psmadPayload :: Lens' ProjectsSubscriptionsModifyAckDeadline ModifyAckDeadlineRe
 psmadPayload
   = lens _psmadPayload (\ s a -> s{_psmadPayload = a})
 
--- | The name of the subscription. Format is
+-- | Required. The name of the subscription. Format is
 -- \`projects\/{project}\/subscriptions\/{sub}\`.
 psmadSubscription :: Lens' ProjectsSubscriptionsModifyAckDeadline Text
 psmadSubscription

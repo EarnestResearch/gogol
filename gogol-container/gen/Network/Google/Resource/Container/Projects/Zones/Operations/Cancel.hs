@@ -149,8 +149,9 @@ pzocUploadType
       (\ s a -> s{_pzocUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the operation resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the operation resides. This field has been deprecated and replaced
+-- by the name field.
 pzocZone :: Lens' ProjectsZonesOperationsCancel Text
 pzocZone = lens _pzocZone (\ s a -> s{_pzocZone = a})
 

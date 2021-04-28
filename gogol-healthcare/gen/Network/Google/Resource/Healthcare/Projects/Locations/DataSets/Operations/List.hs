@@ -60,7 +60,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsOperationsList' request conforms to.
 type ProjectsLocationsDataSetsOperationsListResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          "operations" :>
            QueryParam "$.xgafv" Xgafv :>

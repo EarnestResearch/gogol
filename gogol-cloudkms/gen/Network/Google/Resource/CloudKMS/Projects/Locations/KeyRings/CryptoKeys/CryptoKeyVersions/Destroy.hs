@@ -149,7 +149,7 @@ plkrckckvdPayload
   = lens _plkrckckvdPayload
       (\ s a -> s{_plkrckckvdPayload = a})
 
--- | The resource name of the CryptoKeyVersion to destroy.
+-- | Required. The resource name of the CryptoKeyVersion to destroy.
 plkrckckvdName :: Lens' ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersionsDestroy Text
 plkrckckvdName
   = lens _plkrckckvdName

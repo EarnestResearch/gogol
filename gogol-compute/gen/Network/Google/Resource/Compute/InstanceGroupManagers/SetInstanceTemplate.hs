@@ -22,7 +22,8 @@
 --
 -- Specifies the instance template to use when creating new instances in
 -- this group. The templates for existing instances in the group do not
--- change unless you recreate them.
+-- change unless you run recreateInstances, run applyUpdatesToInstances, or
+-- set the group\'s updatePolicy.type to PROACTIVE.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.instanceGroupManagers.setInstanceTemplate@.
 module Network.Google.Resource.Compute.InstanceGroupManagers.SetInstanceTemplate
@@ -66,7 +67,8 @@ type InstanceGroupManagersSetInstanceTemplateResource
 
 -- | Specifies the instance template to use when creating new instances in
 -- this group. The templates for existing instances in the group do not
--- change unless you recreate them.
+-- change unless you run recreateInstances, run applyUpdatesToInstances, or
+-- set the group\'s updatePolicy.type to PROACTIVE.
 --
 -- /See:/ 'instanceGroupManagersSetInstanceTemplate' smart constructor.
 data InstanceGroupManagersSetInstanceTemplate =

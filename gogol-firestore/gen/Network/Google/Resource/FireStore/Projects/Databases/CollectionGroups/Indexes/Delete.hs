@@ -124,7 +124,7 @@ pdcgidUploadType
   = lens _pdcgidUploadType
       (\ s a -> s{_pdcgidUploadType = a})
 
--- | A name of the form
+-- | Required. A name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\/indexes\/{index_id}\`
 pdcgidName :: Lens' ProjectsDatabasesCollectionGroupsIndexesDelete Text
 pdcgidName

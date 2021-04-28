@@ -25,7 +25,7 @@
 -- version. Note: You cannot delete the version that is set as the default
 -- version of the model unless it is the only remaining version.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.versions.delete@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.versions.delete@.
 module Network.Google.Resource.Ml.Projects.Models.Versions.Delete
     (
     -- * REST Resource
@@ -131,8 +131,7 @@ pmvdUploadType
       (\ s a -> s{_pmvdUploadType = a})
 
 -- | Required. The name of the version. You can get the names of all the
--- versions of a model by calling
--- [projects.models.versions.list](\/ml-engine\/reference\/rest\/v1\/projects.models.versions\/list).
+-- versions of a model by calling projects.models.versions.list.
 pmvdName :: Lens' ProjectsModelsVersionsDelete Text
 pmvdName = lens _pmvdName (\ s a -> s{_pmvdName = a})
 

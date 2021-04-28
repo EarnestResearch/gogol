@@ -22,7 +22,7 @@
 --
 -- Updates a message.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.messages.update@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.messages.update@.
 module Network.Google.Resource.Chat.Spaces.Messages.Update
     (
     -- * REST Resource
@@ -123,8 +123,8 @@ smuUploadProtocol
   = lens _smuUploadProtocol
       (\ s a -> s{_smuUploadProtocol = a})
 
--- | Required. The field paths to be updated. Currently supported field
--- paths: \"text\", \"cards\".
+-- | Required. The field paths to be updated, comma separated if there are
+-- multiple. Currently supported field paths: * text * cards
 smuUpdateMask :: Lens' SpacesMessagesUpdate (Maybe GFieldMask)
 smuUpdateMask
   = lens _smuUpdateMask
@@ -147,8 +147,6 @@ smuPayload :: Lens' SpacesMessagesUpdate Message
 smuPayload
   = lens _smuPayload (\ s a -> s{_smuPayload = a})
 
--- | Resource name, in the form \"spaces\/*\/messages\/*\". Example:
--- spaces\/AAAAMpdlehY\/messages\/UMxbHmzDlr4.UMxbHmzDlr4
 smuName :: Lens' SpacesMessagesUpdate Text
 smuName = lens _smuName (\ s a -> s{_smuName = a})
 

@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.attestors.get@ method which the
 -- 'ProjectsAttestorsGet' request conforms to.
 type ProjectsAttestorsGetResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

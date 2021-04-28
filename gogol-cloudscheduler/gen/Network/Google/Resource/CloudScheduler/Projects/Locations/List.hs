@@ -146,17 +146,21 @@ pllUploadType
 pllName :: Lens' ProjectsLocationsList Text
 pllName = lens _pllName (\ s a -> s{_pllName = a})
 
--- | The standard list filter.
+-- | A filter to narrow down results to a preferred subset. The filtering
+-- language accepts strings like \"displayName=tokyo\", and is documented
+-- in more detail in [AIP-160](https:\/\/google.aip.dev\/160).
 pllFilter :: Lens' ProjectsLocationsList (Maybe Text)
 pllFilter
   = lens _pllFilter (\ s a -> s{_pllFilter = a})
 
--- | The standard list page token.
+-- | A page token received from the \`next_page_token\` field in the
+-- response. Send that page token to receive the subsequent page.
 pllPageToken :: Lens' ProjectsLocationsList (Maybe Text)
 pllPageToken
   = lens _pllPageToken (\ s a -> s{_pllPageToken = a})
 
--- | The standard list page size.
+-- | The maximum number of results to return. If not set, the service will
+-- select a default.
 pllPageSize :: Lens' ProjectsLocationsList (Maybe Int32)
 pllPageSize
   = lens _pllPageSize (\ s a -> s{_pllPageSize = a}) .

@@ -22,7 +22,7 @@
 --
 -- Deletes the specified transfer run.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.runs.delete@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.locations.transferConfigs.runs.delete@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.Locations.TransferConfigs.Runs.Delete
     (
     -- * REST Resource
@@ -124,8 +124,11 @@ pltcrdUploadType
   = lens _pltcrdUploadType
       (\ s a -> s{_pltcrdUploadType = a})
 
--- | The field will contain name of the resource requested, for example:
+-- | Required. The field will contain name of the resource requested, for
+-- example:
 -- \`projects\/{project_id}\/transferConfigs\/{config_id}\/runs\/{run_id}\`
+-- or
+-- \`projects\/{project_id}\/locations\/{location_id}\/transferConfigs\/{config_id}\/runs\/{run_id}\`
 pltcrdName :: Lens' ProjectsLocationsTransferConfigsRunsDelete Text
 pltcrdName
   = lens _pltcrdName (\ s a -> s{_pltcrdName = a})

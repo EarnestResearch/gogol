@@ -114,7 +114,7 @@ msqdXgafv :: Lens' MattersSavedQueriesDelete (Maybe Xgafv)
 msqdXgafv
   = lens _msqdXgafv (\ s a -> s{_msqdXgafv = a})
 
--- | Id of the saved query to be deleted.
+-- | ID of the saved query to be deleted.
 msqdSavedQueryId :: Lens' MattersSavedQueriesDelete Text
 msqdSavedQueryId
   = lens _msqdSavedQueryId
@@ -138,7 +138,7 @@ msqdUploadType
   = lens _msqdUploadType
       (\ s a -> s{_msqdUploadType = a})
 
--- | The matter id of the parent matter for which the saved query is to be
+-- | The matter ID of the parent matter for which the saved query is to be
 -- deleted.
 msqdMatterId :: Lens' MattersSavedQueriesDelete Text
 msqdMatterId

@@ -447,7 +447,8 @@ instance ToJSON ListWorkspacesResponse where
 -- /See:/ 'containerVersionHeader' smart constructor.
 data ContainerVersionHeader =
   ContainerVersionHeader'
-    { _cvhNumTags :: !(Maybe Text)
+    { _cvhNumClients :: !(Maybe Text)
+    , _cvhNumTags :: !(Maybe Text)
     , _cvhNumMacros :: !(Maybe Text)
     , _cvhContainerId :: !(Maybe Text)
     , _cvhPath :: !(Maybe Text)
@@ -467,6 +468,8 @@ data ContainerVersionHeader =
 -- | Creates a value of 'ContainerVersionHeader' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cvhNumClients'
 --
 -- * 'cvhNumTags'
 --
@@ -497,7 +500,8 @@ containerVersionHeader
     :: ContainerVersionHeader
 containerVersionHeader =
   ContainerVersionHeader'
-    { _cvhNumTags = Nothing
+    { _cvhNumClients = Nothing
+    , _cvhNumTags = Nothing
     , _cvhNumMacros = Nothing
     , _cvhContainerId = Nothing
     , _cvhPath = Nothing
@@ -512,6 +516,12 @@ containerVersionHeader =
     , _cvhNumCustomTemplates = Nothing
     }
 
+
+-- | Number of clients in the container version.
+cvhNumClients :: Lens' ContainerVersionHeader (Maybe Text)
+cvhNumClients
+  = lens _cvhNumClients
+      (\ s a -> s{_cvhNumClients = a})
 
 -- | Number of tags in the container version.
 cvhNumTags :: Lens' ContainerVersionHeader (Maybe Text)
@@ -586,8 +596,9 @@ instance FromJSON ContainerVersionHeader where
           = withObject "ContainerVersionHeader"
               (\ o ->
                  ContainerVersionHeader' <$>
-                   (o .:? "numTags") <*> (o .:? "numMacros") <*>
-                     (o .:? "containerId")
+                   (o .:? "numClients") <*> (o .:? "numTags") <*>
+                     (o .:? "numMacros")
+                     <*> (o .:? "containerId")
                      <*> (o .:? "path")
                      <*> (o .:? "containerVersionId")
                      <*> (o .:? "accountId")
@@ -603,7 +614,8 @@ instance ToJSON ContainerVersionHeader where
         toJSON ContainerVersionHeader'{..}
           = object
               (catMaybes
-                 [("numTags" .=) <$> _cvhNumTags,
+                 [("numClients" .=) <$> _cvhNumClients,
+                  ("numTags" .=) <$> _cvhNumTags,
                   ("numMacros" .=) <$> _cvhNumMacros,
                   ("containerId" .=) <$> _cvhContainerId,
                   ("path" .=) <$> _cvhPath,
@@ -672,13 +684,64 @@ instance ToJSON TeardownTag where
                     _ttStopTeardownOnFailure,
                   ("tagName" .=) <$> _ttTagName])
 
+--
+-- /See:/ 'listTemplatesResponse' smart constructor.
+data ListTemplatesResponse =
+  ListTemplatesResponse'
+    { _ltrNextPageToken :: !(Maybe Text)
+    , _ltrTemplate :: !(Maybe [CustomTemplate])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ListTemplatesResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ltrNextPageToken'
+--
+-- * 'ltrTemplate'
+listTemplatesResponse
+    :: ListTemplatesResponse
+listTemplatesResponse =
+  ListTemplatesResponse' {_ltrNextPageToken = Nothing, _ltrTemplate = Nothing}
+
+
+-- | Continuation token for fetching the next page of results.
+ltrNextPageToken :: Lens' ListTemplatesResponse (Maybe Text)
+ltrNextPageToken
+  = lens _ltrNextPageToken
+      (\ s a -> s{_ltrNextPageToken = a})
+
+-- | All GTM Custom Templates of a GTM Container.
+ltrTemplate :: Lens' ListTemplatesResponse [CustomTemplate]
+ltrTemplate
+  = lens _ltrTemplate (\ s a -> s{_ltrTemplate = a}) .
+      _Default
+      . _Coerce
+
+instance FromJSON ListTemplatesResponse where
+        parseJSON
+          = withObject "ListTemplatesResponse"
+              (\ o ->
+                 ListTemplatesResponse' <$>
+                   (o .:? "nextPageToken") <*>
+                     (o .:? "template" .!= mempty))
+
+instance ToJSON ListTemplatesResponse where
+        toJSON ListTemplatesResponse'{..}
+          = object
+              (catMaybes
+                 [("nextPageToken" .=) <$> _ltrNextPageToken,
+                  ("template" .=) <$> _ltrTemplate])
+
 -- | List triggers response.
 --
 -- /See:/ 'listTriggersResponse' smart constructor.
 data ListTriggersResponse =
   ListTriggersResponse'
-    { _ltrNextPageToken :: !(Maybe Text)
-    , _ltrTrigger :: !(Maybe [Trigger])
+    { _lNextPageToken :: !(Maybe Text)
+    , _lTrigger :: !(Maybe [Trigger])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -687,25 +750,25 @@ data ListTriggersResponse =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'ltrNextPageToken'
+-- * 'lNextPageToken'
 --
--- * 'ltrTrigger'
+-- * 'lTrigger'
 listTriggersResponse
     :: ListTriggersResponse
 listTriggersResponse =
-  ListTriggersResponse' {_ltrNextPageToken = Nothing, _ltrTrigger = Nothing}
+  ListTriggersResponse' {_lNextPageToken = Nothing, _lTrigger = Nothing}
 
 
 -- | Continuation token for fetching the next page of results.
-ltrNextPageToken :: Lens' ListTriggersResponse (Maybe Text)
-ltrNextPageToken
-  = lens _ltrNextPageToken
-      (\ s a -> s{_ltrNextPageToken = a})
+lNextPageToken :: Lens' ListTriggersResponse (Maybe Text)
+lNextPageToken
+  = lens _lNextPageToken
+      (\ s a -> s{_lNextPageToken = a})
 
 -- | All GTM Triggers of a GTM Container.
-ltrTrigger :: Lens' ListTriggersResponse [Trigger]
-ltrTrigger
-  = lens _ltrTrigger (\ s a -> s{_ltrTrigger = a}) .
+lTrigger :: Lens' ListTriggersResponse [Trigger]
+lTrigger
+  = lens _lTrigger (\ s a -> s{_lTrigger = a}) .
       _Default
       . _Coerce
 
@@ -721,8 +784,8 @@ instance ToJSON ListTriggersResponse where
         toJSON ListTriggersResponse'{..}
           = object
               (catMaybes
-                 [("nextPageToken" .=) <$> _ltrNextPageToken,
-                  ("trigger" .=) <$> _ltrTrigger])
+                 [("nextPageToken" .=) <$> _lNextPageToken,
+                  ("trigger" .=) <$> _lTrigger])
 
 -- | Represents a Google Tag Manager Tag.
 --
@@ -738,6 +801,7 @@ data Tag =
     , _tTeardownTag :: !(Maybe [TeardownTag])
     , _tPath :: !(Maybe Text)
     , _tFingerprint :: !(Maybe Text)
+    , _tMonitoringMetadata :: !(Maybe Parameter)
     , _tTagFiringOption :: !(Maybe TagTagFiringOption)
     , _tAccountId :: !(Maybe Text)
     , _tTagId :: !(Maybe Text)
@@ -749,6 +813,7 @@ data Tag =
     , _tWorkspaceId :: !(Maybe Text)
     , _tType :: !(Maybe Text)
     , _tScheduleStartMs :: !(Maybe (Textual Int64))
+    , _tMonitoringMetadataTagNameKey :: !(Maybe Text)
     , _tNotes :: !(Maybe Text)
     , _tPaused :: !(Maybe Bool)
     , _tFiringRuleId :: !(Maybe [Text])
@@ -779,6 +844,8 @@ data Tag =
 --
 -- * 'tFingerprint'
 --
+-- * 'tMonitoringMetadata'
+--
 -- * 'tTagFiringOption'
 --
 -- * 'tAccountId'
@@ -801,6 +868,8 @@ data Tag =
 --
 -- * 'tScheduleStartMs'
 --
+-- * 'tMonitoringMetadataTagNameKey'
+--
 -- * 'tNotes'
 --
 -- * 'tPaused'
@@ -821,6 +890,7 @@ tag =
     , _tTeardownTag = Nothing
     , _tPath = Nothing
     , _tFingerprint = Nothing
+    , _tMonitoringMetadata = Nothing
     , _tTagFiringOption = Nothing
     , _tAccountId = Nothing
     , _tTagId = Nothing
@@ -832,6 +902,7 @@ tag =
     , _tWorkspaceId = Nothing
     , _tType = Nothing
     , _tScheduleStartMs = Nothing
+    , _tMonitoringMetadataTagNameKey = Nothing
     , _tNotes = Nothing
     , _tPaused = Nothing
     , _tFiringRuleId = Nothing
@@ -840,7 +911,9 @@ tag =
 
 
 -- | Blocking trigger IDs. If any of the listed triggers evaluate to true,
--- the tag will not fire.
+-- the tag will not fire. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tBlockingTriggerId :: Lens' Tag [Text]
 tBlockingTriggerId
   = lens _tBlockingTriggerId
@@ -848,7 +921,9 @@ tBlockingTriggerId
       . _Default
       . _Coerce
 
--- | The end timestamp in milliseconds to schedule a tag.
+-- | The end timestamp in milliseconds to schedule a tag. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tScheduleEndMs :: Lens' Tag (Maybe Int64)
 tScheduleEndMs
   = lens _tScheduleEndMs
@@ -862,7 +937,9 @@ tParentFolderId
       (\ s a -> s{_tParentFolderId = a})
 
 -- | If set to true, this tag will only fire in the live environment (e.g.
--- not in preview or debug mode).
+-- not in preview or debug mode). \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tLiveOnly :: Lens' Tag (Maybe Bool)
 tLiveOnly
   = lens _tLiveOnly (\ s a -> s{_tLiveOnly = a})
@@ -875,7 +952,8 @@ tContainerId
 -- | User defined numeric priority of the tag. Tags are fired asynchronously
 -- in order of priority. Tags with higher numeric value fire first. A
 -- tag\'s priority can be a positive or negative value. The default value
--- is 0.
+-- is 0. \'mutable tagmanager.accounts.containers.workspaces.tags.create
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.update
 tPriority :: Lens' Tag (Maybe Parameter)
 tPriority
   = lens _tPriority (\ s a -> s{_tPriority = a})
@@ -897,6 +975,17 @@ tFingerprint :: Lens' Tag (Maybe Text)
 tFingerprint
   = lens _tFingerprint (\ s a -> s{_tFingerprint = a})
 
+-- | A map of key-value pairs of tag metadata to be included in the event
+-- data for tag monitoring. Notes: - This parameter must be type MAP. -
+-- Each parameter in the map are type TEMPLATE, however cannot contain
+-- variable references. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
+tMonitoringMetadata :: Lens' Tag (Maybe Parameter)
+tMonitoringMetadata
+  = lens _tMonitoringMetadata
+      (\ s a -> s{_tMonitoringMetadata = a})
+
 -- | Option to fire this tag.
 tTagFiringOption :: Lens' Tag (Maybe TagTagFiringOption)
 tTagFiringOption
@@ -912,7 +1001,9 @@ tAccountId
 tTagId :: Lens' Tag (Maybe Text)
 tTagId = lens _tTagId (\ s a -> s{_tTagId = a})
 
--- | Tag display name.
+-- | Tag display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tName :: Lens' Tag (Maybe Text)
 tName = lens _tName (\ s a -> s{_tName = a})
 
@@ -923,7 +1014,9 @@ tTagManagerURL
       (\ s a -> s{_tTagManagerURL = a})
 
 -- | Blocking rule IDs. If any of the listed rules evaluate to true, the tag
--- will not fire.
+-- will not fire. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tBlockingRuleId :: Lens' Tag [Text]
 tBlockingRuleId
   = lens _tBlockingRuleId
@@ -940,6 +1033,8 @@ tSetupTag
 
 -- | Firing trigger IDs. A tag will fire when any of the listed triggers are
 -- true and all of its blockingTriggerIds (if any specified) are false.
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.create
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.update
 tFiringTriggerId :: Lens' Tag [Text]
 tFiringTriggerId
   = lens _tFiringTriggerId
@@ -952,27 +1047,46 @@ tWorkspaceId :: Lens' Tag (Maybe Text)
 tWorkspaceId
   = lens _tWorkspaceId (\ s a -> s{_tWorkspaceId = a})
 
--- | GTM Tag Type.
+-- | GTM Tag Type. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tType :: Lens' Tag (Maybe Text)
 tType = lens _tType (\ s a -> s{_tType = a})
 
--- | The start timestamp in milliseconds to schedule a tag.
+-- | The start timestamp in milliseconds to schedule a tag. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tScheduleStartMs :: Lens' Tag (Maybe Int64)
 tScheduleStartMs
   = lens _tScheduleStartMs
       (\ s a -> s{_tScheduleStartMs = a})
       . mapping _Coerce
 
--- | User notes on how to apply this tag in the container.
+-- | If non-empty, then the tag display name will be included in the
+-- monitoring metadata map using the key specified. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
+tMonitoringMetadataTagNameKey :: Lens' Tag (Maybe Text)
+tMonitoringMetadataTagNameKey
+  = lens _tMonitoringMetadataTagNameKey
+      (\ s a -> s{_tMonitoringMetadataTagNameKey = a})
+
+-- | User notes on how to apply this tag in the container. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tNotes :: Lens' Tag (Maybe Text)
 tNotes = lens _tNotes (\ s a -> s{_tNotes = a})
 
 -- | Indicates whether the tag is paused, which prevents the tag from firing.
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.create
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.update
 tPaused :: Lens' Tag (Maybe Bool)
 tPaused = lens _tPaused (\ s a -> s{_tPaused = a})
 
 -- | Firing rule IDs. A tag will fire when any of the listed rules are true
--- and all of its blockingRuleIds (if any specified) are false.
+-- and all of its blockingRuleIds (if any specified) are false. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tFiringRuleId :: Lens' Tag [Text]
 tFiringRuleId
   = lens _tFiringRuleId
@@ -980,7 +1094,9 @@ tFiringRuleId
       . _Default
       . _Coerce
 
--- | The tag\'s parameters.
+-- | The tag\'s parameters. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 tParameter :: Lens' Tag [Parameter]
 tParameter
   = lens _tParameter (\ s a -> s{_tParameter = a}) .
@@ -1001,6 +1117,7 @@ instance FromJSON Tag where
                      <*> (o .:? "teardownTag" .!= mempty)
                      <*> (o .:? "path")
                      <*> (o .:? "fingerprint")
+                     <*> (o .:? "monitoringMetadata")
                      <*> (o .:? "tagFiringOption")
                      <*> (o .:? "accountId")
                      <*> (o .:? "tagId")
@@ -1012,6 +1129,7 @@ instance FromJSON Tag where
                      <*> (o .:? "workspaceId")
                      <*> (o .:? "type")
                      <*> (o .:? "scheduleStartMs")
+                     <*> (o .:? "monitoringMetadataTagNameKey")
                      <*> (o .:? "notes")
                      <*> (o .:? "paused")
                      <*> (o .:? "firingRuleId" .!= mempty)
@@ -1030,6 +1148,7 @@ instance ToJSON Tag where
                   ("teardownTag" .=) <$> _tTeardownTag,
                   ("path" .=) <$> _tPath,
                   ("fingerprint" .=) <$> _tFingerprint,
+                  ("monitoringMetadata" .=) <$> _tMonitoringMetadata,
                   ("tagFiringOption" .=) <$> _tTagFiringOption,
                   ("accountId" .=) <$> _tAccountId,
                   ("tagId" .=) <$> _tTagId, ("name" .=) <$> _tName,
@@ -1040,6 +1159,8 @@ instance ToJSON Tag where
                   ("workspaceId" .=) <$> _tWorkspaceId,
                   ("type" .=) <$> _tType,
                   ("scheduleStartMs" .=) <$> _tScheduleStartMs,
+                  ("monitoringMetadataTagNameKey" .=) <$>
+                    _tMonitoringMetadataTagNameKey,
                   ("notes" .=) <$> _tNotes, ("paused" .=) <$> _tPaused,
                   ("firingRuleId" .=) <$> _tFiringRuleId,
                   ("parameter" .=) <$> _tParameter])
@@ -1304,7 +1425,9 @@ wAccountId :: Lens' Workspace (Maybe Text)
 wAccountId
   = lens _wAccountId (\ s a -> s{_wAccountId = a})
 
--- | Workspace display name.
+-- | Workspace display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.create \'mutable
+-- tagmanager.accounts.containers.workspaces.update
 wName :: Lens' Workspace (Maybe Text)
 wName = lens _wName (\ s a -> s{_wName = a})
 
@@ -1319,7 +1442,9 @@ wWorkspaceId :: Lens' Workspace (Maybe Text)
 wWorkspaceId
   = lens _wWorkspaceId (\ s a -> s{_wWorkspaceId = a})
 
--- | Workspace description.
+-- | Workspace description. \'mutable
+-- tagmanager.accounts.containers.workspaces.create \'mutable
+-- tagmanager.accounts.containers.workspaces.update
 wDescription :: Lens' Workspace (Maybe Text)
 wDescription
   = lens _wDescription (\ s a -> s{_wDescription = a})
@@ -1366,7 +1491,7 @@ data Environment =
     , _eAccountId :: !(Maybe Text)
     , _eName :: !(Maybe Text)
     , _eTagManagerURL :: !(Maybe Text)
-    , _eAuthorizationTimestamp :: !(Maybe Timestamp)
+    , _eAuthorizationTimestamp :: !(Maybe DateTime')
     , _eEnableDebug :: !(Maybe Bool)
     , _eEnvironmentId :: !(Maybe Text)
     , _eWorkspaceId :: !(Maybe Text)
@@ -1452,7 +1577,9 @@ eContainerVersionId
   = lens _eContainerVersionId
       (\ s a -> s{_eContainerVersionId = a})
 
--- | Default preview page url for the environment.
+-- | Default preview page url for the environment. \'mutable
+-- tagmanager.accounts.containers.environments.create \'mutable
+-- tagmanager.accounts.containers.environments.update
 eURL :: Lens' Environment (Maybe Text)
 eURL = lens _eURL (\ s a -> s{_eURL = a})
 
@@ -1468,7 +1595,9 @@ eAccountId
   = lens _eAccountId (\ s a -> s{_eAccountId = a})
 
 -- | The environment display name. Can be set or changed only on USER type
--- environments.
+-- environments. \'mutable
+-- tagmanager.accounts.containers.environments.create \'mutable
+-- tagmanager.accounts.containers.environments.update
 eName :: Lens' Environment (Maybe Text)
 eName = lens _eName (\ s a -> s{_eName = a})
 
@@ -1479,12 +1608,15 @@ eTagManagerURL
       (\ s a -> s{_eTagManagerURL = a})
 
 -- | The last update time-stamp for the authorization code.
-eAuthorizationTimestamp :: Lens' Environment (Maybe Timestamp)
+eAuthorizationTimestamp :: Lens' Environment (Maybe UTCTime)
 eAuthorizationTimestamp
   = lens _eAuthorizationTimestamp
       (\ s a -> s{_eAuthorizationTimestamp = a})
+      . mapping _DateTime
 
--- | Whether or not to enable debug by default for the environment.
+-- | Whether or not to enable debug by default for the environment. \'mutable
+-- tagmanager.accounts.containers.environments.create \'mutable
+-- tagmanager.accounts.containers.environments.update
 eEnableDebug :: Lens' Environment (Maybe Bool)
 eEnableDebug
   = lens _eEnableDebug (\ s a -> s{_eEnableDebug = a})
@@ -1505,7 +1637,9 @@ eType :: Lens' Environment (Maybe EnvironmentType)
 eType = lens _eType (\ s a -> s{_eType = a})
 
 -- | The environment description. Can be set or changed only on USER type
--- environments.
+-- environments. \'mutable
+-- tagmanager.accounts.containers.environments.create \'mutable
+-- tagmanager.accounts.containers.environments.update
 eDescription :: Lens' Environment (Maybe Text)
 eDescription
   = lens _eDescription (\ s a -> s{_eDescription = a})
@@ -1572,7 +1706,8 @@ accountAccess = AccountAccess' {_aaPermission = Nothing}
 
 
 -- | Whether the user has no access, user access, or admin access to an
--- account.
+-- account. \'mutable tagmanager.accounts.permissions.create \'mutable
+-- tagmanager.accounts.permissions.update
 aaPermission :: Lens' AccountAccess (Maybe AccountAccessPermission)
 aaPermission
   = lens _aaPermission (\ s a -> s{_aaPermission = a})
@@ -1782,6 +1917,102 @@ instance ToJSON ListAccountsResponse where
                  [("nextPageToken" .=) <$> _larNextPageToken,
                   ("account" .=) <$> _larAccount])
 
+-- | Represents the link between a custom template and an entry on the
+-- Community Template Gallery site.
+--
+-- /See:/ 'galleryReference' smart constructor.
+data GalleryReference =
+  GalleryReference'
+    { _grSignature :: !(Maybe Text)
+    , _grRepository :: !(Maybe Text)
+    , _grOwner :: !(Maybe Text)
+    , _grVersion :: !(Maybe Text)
+    , _grHost :: !(Maybe Text)
+    , _grIsModified :: !(Maybe Bool)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'GalleryReference' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'grSignature'
+--
+-- * 'grRepository'
+--
+-- * 'grOwner'
+--
+-- * 'grVersion'
+--
+-- * 'grHost'
+--
+-- * 'grIsModified'
+galleryReference
+    :: GalleryReference
+galleryReference =
+  GalleryReference'
+    { _grSignature = Nothing
+    , _grRepository = Nothing
+    , _grOwner = Nothing
+    , _grVersion = Nothing
+    , _grHost = Nothing
+    , _grIsModified = Nothing
+    }
+
+
+-- | The signature of the community gallery template as computed at import
+-- time. This value is recomputed whenever the template is updated from the
+-- gallery.
+grSignature :: Lens' GalleryReference (Maybe Text)
+grSignature
+  = lens _grSignature (\ s a -> s{_grSignature = a})
+
+-- | The name of the repository for the community gallery template.
+grRepository :: Lens' GalleryReference (Maybe Text)
+grRepository
+  = lens _grRepository (\ s a -> s{_grRepository = a})
+
+-- | The name of the owner for the community gallery template.
+grOwner :: Lens' GalleryReference (Maybe Text)
+grOwner = lens _grOwner (\ s a -> s{_grOwner = a})
+
+-- | The version of the community gallery template.
+grVersion :: Lens' GalleryReference (Maybe Text)
+grVersion
+  = lens _grVersion (\ s a -> s{_grVersion = a})
+
+-- | The name of the host for the community gallery template.
+grHost :: Lens' GalleryReference (Maybe Text)
+grHost = lens _grHost (\ s a -> s{_grHost = a})
+
+-- | If a user has manually edited the community gallery template.
+grIsModified :: Lens' GalleryReference (Maybe Bool)
+grIsModified
+  = lens _grIsModified (\ s a -> s{_grIsModified = a})
+
+instance FromJSON GalleryReference where
+        parseJSON
+          = withObject "GalleryReference"
+              (\ o ->
+                 GalleryReference' <$>
+                   (o .:? "signature") <*> (o .:? "repository") <*>
+                     (o .:? "owner")
+                     <*> (o .:? "version")
+                     <*> (o .:? "host")
+                     <*> (o .:? "isModified"))
+
+instance ToJSON GalleryReference where
+        toJSON GalleryReference'{..}
+          = object
+              (catMaybes
+                 [("signature" .=) <$> _grSignature,
+                  ("repository" .=) <$> _grRepository,
+                  ("owner" .=) <$> _grOwner,
+                  ("version" .=) <$> _grVersion,
+                  ("host" .=) <$> _grHost,
+                  ("isModified" .=) <$> _grIsModified])
+
 -- | Represents a merge conflict.
 --
 -- /See:/ 'mergeConflict' smart constructor.
@@ -1919,7 +2150,9 @@ fAccountId :: Lens' Folder (Maybe Text)
 fAccountId
   = lens _fAccountId (\ s a -> s{_fAccountId = a})
 
--- | Folder display name.
+-- | Folder display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.folders.create \'mutable
+-- tagmanager.accounts.containers.workspaces.folders.update
 fName :: Lens' Folder (Maybe Text)
 fName = lens _fName (\ s a -> s{_fName = a})
 
@@ -1934,7 +2167,9 @@ fWorkspaceId :: Lens' Folder (Maybe Text)
 fWorkspaceId
   = lens _fWorkspaceId (\ s a -> s{_fWorkspaceId = a})
 
--- | User notes on how to apply this folder in the container.
+-- | User notes on how to apply this folder in the container. \'mutable
+-- tagmanager.accounts.containers.workspaces.folders.create \'mutable
+-- tagmanager.accounts.containers.workspaces.folders.update
 fNotes :: Lens' Folder (Maybe Text)
 fNotes = lens _fNotes (\ s a -> s{_fNotes = a})
 
@@ -2109,7 +2344,9 @@ variable =
     }
 
 
--- | The end timestamp in milliseconds to schedule a variable.
+-- | The end timestamp in milliseconds to schedule a variable. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vScheduleEndMs :: Lens' Variable (Maybe Int64)
 vScheduleEndMs
   = lens _vScheduleEndMs
@@ -2150,7 +2387,9 @@ vAccountId
 -- | For mobile containers only: A list of trigger IDs for disabling
 -- conditional variables; the variable is enabled if one of the enabling
 -- trigger is true while all the disabling trigger are false. Treated as an
--- unordered set.
+-- unordered set. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vDisablingTriggerId :: Lens' Variable [Text]
 vDisablingTriggerId
   = lens _vDisablingTriggerId
@@ -2158,7 +2397,9 @@ vDisablingTriggerId
       . _Default
       . _Coerce
 
--- | Variable display name.
+-- | Variable display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vName :: Lens' Variable (Maybe Text)
 vName = lens _vName (\ s a -> s{_vName = a})
 
@@ -2178,25 +2419,33 @@ vWorkspaceId :: Lens' Variable (Maybe Text)
 vWorkspaceId
   = lens _vWorkspaceId (\ s a -> s{_vWorkspaceId = a})
 
--- | GTM Variable Type.
+-- | GTM Variable Type. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vType :: Lens' Variable (Maybe Text)
 vType = lens _vType (\ s a -> s{_vType = a})
 
--- | The start timestamp in milliseconds to schedule a variable.
+-- | The start timestamp in milliseconds to schedule a variable. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vScheduleStartMs :: Lens' Variable (Maybe Int64)
 vScheduleStartMs
   = lens _vScheduleStartMs
       (\ s a -> s{_vScheduleStartMs = a})
       . mapping _Coerce
 
--- | User notes on how to apply this variable in the container.
+-- | User notes on how to apply this variable in the container. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vNotes :: Lens' Variable (Maybe Text)
 vNotes = lens _vNotes (\ s a -> s{_vNotes = a})
 
 -- | For mobile containers only: A list of trigger IDs for enabling
 -- conditional variables; the variable is enabled if one of the enabling
 -- triggers is true while all the disabling triggers are false. Treated as
--- an unordered set.
+-- an unordered set. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vEnablingTriggerId :: Lens' Variable [Text]
 vEnablingTriggerId
   = lens _vEnablingTriggerId
@@ -2204,7 +2453,9 @@ vEnablingTriggerId
       . _Default
       . _Coerce
 
--- | The variable\'s parameters.
+-- | The variable\'s parameters. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update
 vParameter :: Lens' Variable [Parameter]
 vParameter
   = lens _vParameter (\ s a -> s{_vParameter = a}) .
@@ -2418,6 +2669,44 @@ instance ToJSON Zone where
                   ("workspaceId" .=) <$> _zWorkspaceId,
                   ("notes" .=) <$> _zNotes])
 
+-- | The result of reverting a template in a workspace.
+--
+-- /See:/ 'revertTemplateResponse' smart constructor.
+newtype RevertTemplateResponse =
+  RevertTemplateResponse'
+    { _rtrTemplate :: Maybe CustomTemplate
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'RevertTemplateResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rtrTemplate'
+revertTemplateResponse
+    :: RevertTemplateResponse
+revertTemplateResponse = RevertTemplateResponse' {_rtrTemplate = Nothing}
+
+
+-- | Template as it appears in the latest container version since the last
+-- workspace synchronization operation. If no template is present, that
+-- means the template was deleted in the latest container version.
+rtrTemplate :: Lens' RevertTemplateResponse (Maybe CustomTemplate)
+rtrTemplate
+  = lens _rtrTemplate (\ s a -> s{_rtrTemplate = a})
+
+instance FromJSON RevertTemplateResponse where
+        parseJSON
+          = withObject "RevertTemplateResponse"
+              (\ o ->
+                 RevertTemplateResponse' <$> (o .:? "template"))
+
+instance ToJSON RevertTemplateResponse where
+        toJSON RevertTemplateResponse'{..}
+          = object
+              (catMaybes [("template" .=) <$> _rtrTemplate])
+
 -- | A response after synchronizing the workspace to the latest container
 -- version.
 --
@@ -2561,7 +2850,8 @@ aPath = lens _aPath (\ s a -> s{_aPath = a})
 -- flag enables benchmarking by sharing your data in an anonymous form.
 -- Google will remove all identifiable information about your website,
 -- combine the data with hundreds of other anonymous sites and report
--- aggregate trends in the benchmarking service.
+-- aggregate trends in the benchmarking service. \'mutable
+-- tagmanager.accounts.create \'mutable tagmanager.accounts.update
 aShareData :: Lens' Account (Maybe Bool)
 aShareData
   = lens _aShareData (\ s a -> s{_aShareData = a})
@@ -2577,7 +2867,8 @@ aAccountId :: Lens' Account (Maybe Text)
 aAccountId
   = lens _aAccountId (\ s a -> s{_aAccountId = a})
 
--- | Account display name.
+-- | Account display name. \'mutable tagmanager.accounts.create \'mutable
+-- tagmanager.accounts.update
 aName :: Lens' Account (Maybe Text)
 aName = lens _aName (\ s a -> s{_aName = a})
 
@@ -2854,7 +3145,8 @@ cPublicId
   = lens _cPublicId (\ s a -> s{_cPublicId = a})
 
 -- | List of Usage Contexts for the Container. Valid values include: web,
--- android, or ios.
+-- android, or ios. \'mutable tagmanager.accounts.containers.create
+-- \'mutable tagmanager.accounts.containers.update
 cUsageContext :: Lens' Container [ContainerUsageContextItem]
 cUsageContext
   = lens _cUsageContext
@@ -2882,14 +3174,17 @@ cAccountId :: Lens' Container (Maybe Text)
 cAccountId
   = lens _cAccountId (\ s a -> s{_cAccountId = a})
 
--- | List of domain names associated with the Container.
+-- | List of domain names associated with the Container. \'mutable
+-- tagmanager.accounts.containers.create \'mutable
+-- tagmanager.accounts.containers.update
 cDomainName :: Lens' Container [Text]
 cDomainName
   = lens _cDomainName (\ s a -> s{_cDomainName = a}) .
       _Default
       . _Coerce
 
--- | Container display name.
+-- | Container display name. \'mutable tagmanager.accounts.containers.create
+-- \'mutable tagmanager.accounts.containers.update
 cName :: Lens' Container (Maybe Text)
 cName = lens _cName (\ s a -> s{_cName = a})
 
@@ -2899,7 +3194,8 @@ cTagManagerURL
   = lens _cTagManagerURL
       (\ s a -> s{_cTagManagerURL = a})
 
--- | Container Notes.
+-- | Container Notes. \'mutable tagmanager.accounts.containers.create
+-- \'mutable tagmanager.accounts.containers.update
 cNotes :: Lens' Container (Maybe Text)
 cNotes = lens _cNotes (\ s a -> s{_cNotes = a})
 
@@ -3007,6 +3303,9 @@ bivWorkspaceId
       (\ s a -> s{_bivWorkspaceId = a})
 
 -- | Type of built-in variable.
+-- \'required.tagmanager.accounts.containers.workspaces.built_in_variable.update
+-- \'mutable
+-- tagmanager.accounts.containers.workspaces.built_in_variable.update
 bivType :: Lens' BuiltInVariable (Maybe BuiltInVariableType)
 bivType = lens _bivType (\ s a -> s{_bivType = a})
 
@@ -3075,7 +3374,9 @@ userPermission =
 upPath :: Lens' UserPermission (Maybe Text)
 upPath = lens _upPath (\ s a -> s{_upPath = a})
 
--- | GTM Account access permissions.
+-- | GTM Account access permissions. \'mutable
+-- tagmanager.accounts.permissions.create \'mutable
+-- tagmanager.accounts.permissions.update
 upAccountAccess :: Lens' UserPermission (Maybe AccountAccess)
 upAccountAccess
   = lens _upAccountAccess
@@ -3086,13 +3387,15 @@ upAccountId :: Lens' UserPermission (Maybe Text)
 upAccountId
   = lens _upAccountId (\ s a -> s{_upAccountId = a})
 
--- | User\'s email address.
+-- | User\'s email address. \'mutable tagmanager.accounts.permissions.create
 upEmailAddress :: Lens' UserPermission (Maybe Text)
 upEmailAddress
   = lens _upEmailAddress
       (\ s a -> s{_upEmailAddress = a})
 
--- | GTM Container access permissions.
+-- | GTM Container access permissions. \'mutable
+-- tagmanager.accounts.permissions.create \'mutable
+-- tagmanager.accounts.permissions.update
 upContainerAccess :: Lens' UserPermission [ContainerAccess]
 upContainerAccess
   = lens _upContainerAccess
@@ -3142,6 +3445,7 @@ data ContainerVersion =
     , _cvTrigger :: !(Maybe [Trigger])
     , _cvCustomTemplate :: !(Maybe [CustomTemplate])
     , _cvDescription :: !(Maybe Text)
+    , _cvClient :: !(Maybe [Client])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3183,6 +3487,8 @@ data ContainerVersion =
 -- * 'cvCustomTemplate'
 --
 -- * 'cvDescription'
+--
+-- * 'cvClient'
 containerVersion
     :: ContainerVersion
 containerVersion =
@@ -3204,6 +3510,7 @@ containerVersion =
     , _cvTrigger = Nothing
     , _cvCustomTemplate = Nothing
     , _cvDescription = Nothing
+    , _cvClient = Nothing
     }
 
 
@@ -3262,7 +3569,8 @@ cvAccountId :: Lens' ContainerVersion (Maybe Text)
 cvAccountId
   = lens _cvAccountId (\ s a -> s{_cvAccountId = a})
 
--- | Container version display name.
+-- | Container version display name. \'mutable
+-- tagmanager.accounts.containers.versions.update
 cvName :: Lens' ContainerVersion (Maybe Text)
 cvName = lens _cvName (\ s a -> s{_cvName = a})
 
@@ -3306,11 +3614,19 @@ cvCustomTemplate
       . _Default
       . _Coerce
 
--- | Container version description.
+-- | Container version description. \'mutable
+-- tagmanager.accounts.containers.versions.update
 cvDescription :: Lens' ContainerVersion (Maybe Text)
 cvDescription
   = lens _cvDescription
       (\ s a -> s{_cvDescription = a})
+
+-- | The clients in the container that this version was taken from.
+cvClient :: Lens' ContainerVersion [Client]
+cvClient
+  = lens _cvClient (\ s a -> s{_cvClient = a}) .
+      _Default
+      . _Coerce
 
 instance FromJSON ContainerVersion where
         parseJSON
@@ -3332,7 +3648,8 @@ instance FromJSON ContainerVersion where
                      <*> (o .:? "deleted")
                      <*> (o .:? "trigger" .!= mempty)
                      <*> (o .:? "customTemplate" .!= mempty)
-                     <*> (o .:? "description"))
+                     <*> (o .:? "description")
+                     <*> (o .:? "client" .!= mempty))
 
 instance ToJSON ContainerVersion where
         toJSON ContainerVersion'{..}
@@ -3354,7 +3671,8 @@ instance ToJSON ContainerVersion where
                   ("deleted" .=) <$> _cvDeleted,
                   ("trigger" .=) <$> _cvTrigger,
                   ("customTemplate" .=) <$> _cvCustomTemplate,
-                  ("description" .=) <$> _cvDescription])
+                  ("description" .=) <$> _cvDescription,
+                  ("client" .=) <$> _cvClient])
 
 -- | Represents a reference to atag that fires before another tag in order to
 -- set up dependencies.
@@ -3607,21 +3925,27 @@ trigger =
 
 
 -- | A visibility trigger minimum continuous visible time (in milliseconds).
--- Only valid for AMP Visibility trigger.
+-- Only valid for AMP Visibility trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triContinuousTimeMinMilliseconds :: Lens' Trigger (Maybe Parameter)
 triContinuousTimeMinMilliseconds
   = lens _triContinuousTimeMinMilliseconds
       (\ s a -> s{_triContinuousTimeMinMilliseconds = a})
 
 -- | Max time to fire Timer Events (in seconds). Only valid for AMP Timer
--- trigger.
+-- trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triMaxTimerLengthSeconds :: Lens' Trigger (Maybe Parameter)
 triMaxTimerLengthSeconds
   = lens _triMaxTimerLengthSeconds
       (\ s a -> s{_triMaxTimerLengthSeconds = a})
 
 -- | Used in the case of custom event, which is fired iff all Conditions are
--- true.
+-- true. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triCustomEventFilter :: Lens' Trigger [Condition]
 triCustomEventFilter
   = lens _triCustomEventFilter
@@ -3636,7 +3960,9 @@ triParentFolderId
       (\ s a -> s{_triParentFolderId = a})
 
 -- | A visibility trigger maximum percent visibility. Only valid for AMP
--- Visibility trigger.
+-- Visibility trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triVisiblePercentageMax :: Lens' Trigger (Maybe Parameter)
 triVisiblePercentageMax
   = lens _triVisiblePercentageMax
@@ -3653,7 +3979,9 @@ triPath :: Lens' Trigger (Maybe Text)
 triPath = lens _triPath (\ s a -> s{_triPath = a})
 
 -- | A click trigger CSS selector (i.e. \"a\", \"button\" etc.). Only valid
--- for AMP Click trigger.
+-- for AMP Click trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triSelector :: Lens' Trigger (Maybe Parameter)
 triSelector
   = lens _triSelector (\ s a -> s{_triSelector = a})
@@ -3666,6 +3994,8 @@ triTriggerId
 -- | Whether or not we should only fire tags if the form submit or link click
 -- event is not cancelled by some other event handler (e.g. because of
 -- validation). Only valid for Form Submission and Link Click triggers.
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.create
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.update
 triCheckValidation :: Lens' Trigger (Maybe Parameter)
 triCheckValidation
   = lens _triCheckValidation
@@ -3679,13 +4009,17 @@ triFingerprint
       (\ s a -> s{_triFingerprint = a})
 
 -- | A visibility trigger minimum total visible time (in milliseconds). Only
--- valid for AMP Visibility trigger.
+-- valid for AMP Visibility trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triTotalTimeMinMilliseconds :: Lens' Trigger (Maybe Parameter)
 triTotalTimeMinMilliseconds
   = lens _triTotalTimeMinMilliseconds
       (\ s a -> s{_triTotalTimeMinMilliseconds = a})
 
--- | Used in the case of auto event tracking.
+-- | Used in the case of auto event tracking. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triAutoEventFilter :: Lens' Trigger [Condition]
 triAutoEventFilter
   = lens _triAutoEventFilter
@@ -3698,7 +4032,9 @@ triAutoEventFilter
 -- auto-events work together with trigger filtering based on trigger ids.
 -- This value is populated during output generation since the tags implied
 -- by triggers don\'t exist until then. Only valid for Form Submit, Link
--- Click and Timer triggers.
+-- Click and Timer triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triUniqueTriggerId :: Lens' Trigger (Maybe Parameter)
 triUniqueTriggerId
   = lens _triUniqueTriggerId
@@ -3706,21 +4042,27 @@ triUniqueTriggerId
 
 -- | List of integer percentage values for scroll triggers. The trigger will
 -- fire when each percentage is reached when the view is scrolled
--- horizontally. Only valid for AMP scroll triggers.
+-- horizontally. Only valid for AMP scroll triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triHorizontalScrollPercentageList :: Lens' Trigger (Maybe Parameter)
 triHorizontalScrollPercentageList
   = lens _triHorizontalScrollPercentageList
       (\ s a -> s{_triHorizontalScrollPercentageList = a})
 
 -- | Time between Timer Events to fire (in seconds). Only valid for AMP Timer
--- trigger.
+-- trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triIntervalSeconds :: Lens' Trigger (Maybe Parameter)
 triIntervalSeconds
   = lens _triIntervalSeconds
       (\ s a -> s{_triIntervalSeconds = a})
 
 -- | A visibility trigger minimum percent visibility. Only valid for AMP
--- Visibility trigger.
+-- Visibility trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triVisiblePercentageMin :: Lens' Trigger (Maybe Parameter)
 triVisiblePercentageMin
   = lens _triVisiblePercentageMin
@@ -3731,12 +4073,16 @@ triAccountId :: Lens' Trigger (Maybe Text)
 triAccountId
   = lens _triAccountId (\ s a -> s{_triAccountId = a})
 
--- | Trigger display name.
+-- | Trigger display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triName :: Lens' Trigger (Maybe Text)
 triName = lens _triName (\ s a -> s{_triName = a})
 
 -- | Time between triggering recurring Timer Events (in milliseconds). Only
--- valid for Timer triggers.
+-- valid for Timer triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triInterval :: Lens' Trigger (Maybe Parameter)
 triInterval
   = lens _triInterval (\ s a -> s{_triInterval = a})
@@ -3749,7 +4095,9 @@ triTagManagerURL
 
 -- | How long to wait (in milliseconds) for tags to fire when
 -- \'waits_for_tags\' above evaluates to true. Only valid for Form
--- Submission and Link Click triggers.
+-- Submission and Link Click triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triWaitForTagsTimeout :: Lens' Trigger (Maybe Parameter)
 triWaitForTagsTimeout
   = lens _triWaitForTagsTimeout
@@ -3757,19 +4105,25 @@ triWaitForTagsTimeout
 
 -- | Limit of the number of GTM events this Timer Trigger will fire. If no
 -- limit is set, we will continue to fire GTM events until the user leaves
--- the page. Only valid for Timer triggers.
+-- the page. Only valid for Timer triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triLimit :: Lens' Trigger (Maybe Parameter)
 triLimit = lens _triLimit (\ s a -> s{_triLimit = a})
 
 -- | List of integer percentage values for scroll triggers. The trigger will
 -- fire when each percentage is reached when the view is scrolled
--- vertically. Only valid for AMP scroll triggers.
+-- vertically. Only valid for AMP scroll triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triVerticalScrollPercentageList :: Lens' Trigger (Maybe Parameter)
 triVerticalScrollPercentageList
   = lens _triVerticalScrollPercentageList
       (\ s a -> s{_triVerticalScrollPercentageList = a})
 
--- | The trigger will only fire iff all Conditions are true.
+-- | The trigger will only fire iff all Conditions are true. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triFilter :: Lens' Trigger [Condition]
 triFilter
   = lens _triFilter (\ s a -> s{_triFilter = a}) .
@@ -3782,22 +4136,30 @@ triWorkspaceId
   = lens _triWorkspaceId
       (\ s a -> s{_triWorkspaceId = a})
 
--- | Defines the data layer event that causes this trigger.
+-- | Defines the data layer event that causes this trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triType :: Lens' Trigger (Maybe TriggerType)
 triType = lens _triType (\ s a -> s{_triType = a})
 
--- | User notes on how to apply this trigger in the container.
+-- | User notes on how to apply this trigger in the container. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triNotes :: Lens' Trigger (Maybe Text)
 triNotes = lens _triNotes (\ s a -> s{_triNotes = a})
 
 -- | A visibility trigger CSS selector (i.e. \"#id\"). Only valid for AMP
--- Visibility trigger.
+-- Visibility trigger. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triVisibilitySelector :: Lens' Trigger (Maybe Parameter)
 triVisibilitySelector
   = lens _triVisibilitySelector
       (\ s a -> s{_triVisibilitySelector = a})
 
 -- | Name of the GTM event that is fired. Only valid for Timer triggers.
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.create
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.update
 triEventName :: Lens' Trigger (Maybe Parameter)
 triEventName
   = lens _triEventName (\ s a -> s{_triEventName = a})
@@ -3805,13 +4167,17 @@ triEventName
 -- | Whether or not we should delay the form submissions or link opening
 -- until all of the tags have fired (by preventing the default action and
 -- later simulating the default action). Only valid for Form Submission and
--- Link Click triggers.
+-- Link Click triggers. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triWaitForTags :: Lens' Trigger (Maybe Parameter)
 triWaitForTags
   = lens _triWaitForTags
       (\ s a -> s{_triWaitForTags = a})
 
--- | Additional parameters.
+-- | Additional parameters. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 triParameter :: Lens' Trigger [Parameter]
 triParameter
   = lens _triParameter (\ s a -> s{_triParameter = a})
@@ -3904,8 +4270,8 @@ instance ToJSON Trigger where
 -- /See:/ 'listTagsResponse' smart constructor.
 data ListTagsResponse =
   ListTagsResponse'
-    { _lNextPageToken :: !(Maybe Text)
-    , _lTag :: !(Maybe [Tag])
+    { _lisNextPageToken :: !(Maybe Text)
+    , _lisTag :: !(Maybe [Tag])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3914,25 +4280,25 @@ data ListTagsResponse =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'lNextPageToken'
+-- * 'lisNextPageToken'
 --
--- * 'lTag'
+-- * 'lisTag'
 listTagsResponse
     :: ListTagsResponse
 listTagsResponse =
-  ListTagsResponse' {_lNextPageToken = Nothing, _lTag = Nothing}
+  ListTagsResponse' {_lisNextPageToken = Nothing, _lisTag = Nothing}
 
 
 -- | Continuation token for fetching the next page of results.
-lNextPageToken :: Lens' ListTagsResponse (Maybe Text)
-lNextPageToken
-  = lens _lNextPageToken
-      (\ s a -> s{_lNextPageToken = a})
+lisNextPageToken :: Lens' ListTagsResponse (Maybe Text)
+lisNextPageToken
+  = lens _lisNextPageToken
+      (\ s a -> s{_lisNextPageToken = a})
 
 -- | All GTM Tags of a GTM Container.
-lTag :: Lens' ListTagsResponse [Tag]
-lTag
-  = lens _lTag (\ s a -> s{_lTag = a}) . _Default .
+lisTag :: Lens' ListTagsResponse [Tag]
+lisTag
+  = lens _lisTag (\ s a -> s{_lisTag = a}) . _Default .
       _Coerce
 
 instance FromJSON ListTagsResponse where
@@ -3946,8 +4312,8 @@ instance ToJSON ListTagsResponse where
         toJSON ListTagsResponse'{..}
           = object
               (catMaybes
-                 [("nextPageToken" .=) <$> _lNextPageToken,
-                  ("tag" .=) <$> _lTag])
+                 [("nextPageToken" .=) <$> _lisNextPageToken,
+                  ("tag" .=) <$> _lisTag])
 
 -- | A list of enabled built-in variables.
 --
@@ -4014,6 +4380,7 @@ data CustomTemplate =
     , _ctPath :: !(Maybe Text)
     , _ctTemplateId :: !(Maybe Text)
     , _ctFingerprint :: !(Maybe Text)
+    , _ctGalleryReference :: !(Maybe GalleryReference)
     , _ctAccountId :: !(Maybe Text)
     , _ctName :: !(Maybe Text)
     , _ctTagManagerURL :: !(Maybe Text)
@@ -4035,6 +4402,8 @@ data CustomTemplate =
 --
 -- * 'ctFingerprint'
 --
+-- * 'ctGalleryReference'
+--
 -- * 'ctAccountId'
 --
 -- * 'ctName'
@@ -4052,6 +4421,7 @@ customTemplate =
     , _ctPath = Nothing
     , _ctTemplateId = Nothing
     , _ctFingerprint = Nothing
+    , _ctGalleryReference = Nothing
     , _ctAccountId = Nothing
     , _ctName = Nothing
     , _ctTagManagerURL = Nothing
@@ -4081,6 +4451,12 @@ ctFingerprint :: Lens' CustomTemplate (Maybe Text)
 ctFingerprint
   = lens _ctFingerprint
       (\ s a -> s{_ctFingerprint = a})
+
+-- | A reference to the Community Template Gallery entry.
+ctGalleryReference :: Lens' CustomTemplate (Maybe GalleryReference)
+ctGalleryReference
+  = lens _ctGalleryReference
+      (\ s a -> s{_ctGalleryReference = a})
 
 -- | GTM Account ID.
 ctAccountId :: Lens' CustomTemplate (Maybe Text)
@@ -4117,6 +4493,7 @@ instance FromJSON CustomTemplate where
                    (o .:? "containerId") <*> (o .:? "path") <*>
                      (o .:? "templateId")
                      <*> (o .:? "fingerprint")
+                     <*> (o .:? "galleryReference")
                      <*> (o .:? "accountId")
                      <*> (o .:? "name")
                      <*> (o .:? "tagManagerUrl")
@@ -4131,6 +4508,7 @@ instance ToJSON CustomTemplate where
                   ("path" .=) <$> _ctPath,
                   ("templateId" .=) <$> _ctTemplateId,
                   ("fingerprint" .=) <$> _ctFingerprint,
+                  ("galleryReference" .=) <$> _ctGalleryReference,
                   ("accountId" .=) <$> _ctAccountId,
                   ("name" .=) <$> _ctName,
                   ("tagManagerUrl" .=) <$> _ctTagManagerURL,
@@ -4322,7 +4700,9 @@ condition
 condition = Condition' {_cType = Nothing, _cParameter = Nothing}
 
 
--- | The type of operator for this condition.
+-- | The type of operator for this condition. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 cType :: Lens' Condition (Maybe ConditionType)
 cType = lens _cType (\ s a -> s{_cType = a})
 
@@ -4334,7 +4714,9 @@ cType = lens _cType (\ s a -> s{_cType = a})
 -- ignore_case that is set to true. If not specified or set to any other
 -- value, the matching will be case sensitive. - To negate an operator,
 -- include a boolean parameter named negate boolean parameter that is set
--- to true.
+-- to true. \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update
 cParameter :: Lens' Condition [Parameter]
 cParameter
   = lens _cParameter (\ s a -> s{_cParameter = a}) .
@@ -4366,6 +4748,7 @@ data Entity =
     , _eVariable :: !(Maybe Variable)
     , _eChangeStatus :: !(Maybe EntityChangeStatus)
     , _eTrigger :: !(Maybe Trigger)
+    , _eClient :: !(Maybe Client)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -4383,6 +4766,8 @@ data Entity =
 -- * 'eChangeStatus'
 --
 -- * 'eTrigger'
+--
+-- * 'eClient'
 entity
     :: Entity
 entity =
@@ -4392,6 +4777,7 @@ entity =
     , _eVariable = Nothing
     , _eChangeStatus = Nothing
     , _eTrigger = Nothing
+    , _eClient = Nothing
     }
 
 
@@ -4399,7 +4785,7 @@ entity =
 eTag :: Lens' Entity (Maybe Tag)
 eTag = lens _eTag (\ s a -> s{_eTag = a})
 
--- | The Folder being represented by the entity.
+-- | The folder being represented by the entity.
 eFolder :: Lens' Entity (Maybe Folder)
 eFolder = lens _eFolder (\ s a -> s{_eFolder = a})
 
@@ -4418,6 +4804,10 @@ eChangeStatus
 eTrigger :: Lens' Entity (Maybe Trigger)
 eTrigger = lens _eTrigger (\ s a -> s{_eTrigger = a})
 
+-- | The client being represented by the entity.
+eClient :: Lens' Entity (Maybe Client)
+eClient = lens _eClient (\ s a -> s{_eClient = a})
+
 instance FromJSON Entity where
         parseJSON
           = withObject "Entity"
@@ -4426,7 +4816,8 @@ instance FromJSON Entity where
                    (o .:? "tag") <*> (o .:? "folder") <*>
                      (o .:? "variable")
                      <*> (o .:? "changeStatus")
-                     <*> (o .:? "trigger"))
+                     <*> (o .:? "trigger")
+                     <*> (o .:? "client"))
 
 instance ToJSON Entity where
         toJSON Entity'{..}
@@ -4435,7 +4826,8 @@ instance ToJSON Entity where
                  [("tag" .=) <$> _eTag, ("folder" .=) <$> _eFolder,
                   ("variable" .=) <$> _eVariable,
                   ("changeStatus" .=) <$> _eChangeStatus,
-                  ("trigger" .=) <$> _eTrigger])
+                  ("trigger" .=) <$> _eTrigger,
+                  ("client" .=) <$> _eClient])
 
 -- | Defines the Google Tag Manager Container access permissions.
 --
@@ -4461,13 +4853,16 @@ containerAccess =
   ContainerAccess' {_caContainerId = Nothing, _caPermission = Nothing}
 
 
--- | GTM Container ID.
+-- | GTM Container ID. \'mutable tagmanager.accounts.permissions.create
+-- \'mutable tagmanager.accounts.permissions.update
 caContainerId :: Lens' ContainerAccess (Maybe Text)
 caContainerId
   = lens _caContainerId
       (\ s a -> s{_caContainerId = a})
 
--- | List of Container permissions.
+-- | List of Container permissions. \'mutable
+-- tagmanager.accounts.permissions.create \'mutable
+-- tagmanager.accounts.permissions.update
 caPermission :: Lens' ContainerAccess (Maybe ContainerAccessPermission)
 caPermission
   = lens _caPermission (\ s a -> s{_caPermission = a})
@@ -4485,109 +4880,6 @@ instance ToJSON ContainerAccess where
               (catMaybes
                  [("containerId" .=) <$> _caContainerId,
                   ("permission" .=) <$> _caPermission])
-
--- | A Timestamp represents a point in time independent of any time zone or
--- local calendar, encoded as a count of seconds and fractions of seconds
--- at nanosecond resolution. The count is relative to an epoch at UTC
--- midnight on January 1, 1970, in the proleptic Gregorian calendar which
--- extends the Gregorian calendar backwards to year one. All minutes are 60
--- seconds long. Leap seconds are \"smeared\" so that no leap second table
--- is needed for interpretation, using a [24-hour linear
--- smear](https:\/\/developers.google.com\/time\/smear). The range is from
--- 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting
--- to that range, we ensure that we can convert to and from [RFC
--- 3339](https:\/\/www.ietf.org\/rfc\/rfc3339.txt) date strings. # Examples
--- Example 1: Compute Timestamp from POSIX \`time()\`. Timestamp timestamp;
--- timestamp.set_seconds(time(NULL)); timestamp.set_nanos(0); Example 2:
--- Compute Timestamp from POSIX \`gettimeofday()\`. struct timeval tv;
--- gettimeofday(&tv, NULL); Timestamp timestamp;
--- timestamp.set_seconds(tv.tv_sec); timestamp.set_nanos(tv.tv_usec *
--- 1000); Example 3: Compute Timestamp from Win32
--- \`GetSystemTimeAsFileTime()\`. FILETIME ft;
--- GetSystemTimeAsFileTime(&ft); UINT64 ticks =
--- (((UINT64)ft.dwHighDateTime) \<\< 32) | ft.dwLowDateTime; \/\/ A Windows
--- tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z \/\/ is
--- 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z. Timestamp
--- timestamp; timestamp.set_seconds((INT64) ((ticks \/ 10000000) -
--- 11644473600LL)); timestamp.set_nanos((INT32) ((ticks % 10000000) *
--- 100)); Example 4: Compute Timestamp from Java
--- \`System.currentTimeMillis()\`. long millis =
--- System.currentTimeMillis(); Timestamp timestamp =
--- Timestamp.newBuilder().setSeconds(millis \/ 1000) .setNanos((int)
--- ((millis % 1000) * 1000000)).build(); Example 5: Compute Timestamp from
--- current time in Python. timestamp = Timestamp()
--- timestamp.GetCurrentTime() # JSON Mapping In JSON format, the Timestamp
--- type is encoded as a string in the [RFC
--- 3339](https:\/\/www.ietf.org\/rfc\/rfc3339.txt) format. That is, the
--- format is \"{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z\"
--- where {year} is always expressed using four digits while {month}, {day},
--- {hour}, {min}, and {sec} are zero-padded to two digits each. The
--- fractional seconds, which can go up to 9 digits (i.e. up to 1 nanosecond
--- resolution), are optional. The \"Z\" suffix indicates the timezone
--- (\"UTC\"); the timezone is required. A proto3 JSON serializer should
--- always use UTC (as indicated by \"Z\") when printing the Timestamp type
--- and a proto3 JSON parser should be able to accept both UTC and other
--- timezones (as indicated by an offset). For example,
--- \"2017-01-15T01:30:15.01Z\" encodes 15.01 seconds past 01:30 UTC on
--- January 15, 2017. In JavaScript, one can convert a Date object to this
--- format using the standard
--- [toISOString()](https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/JavaScript\/Reference\/Global_Objects\/Date\/toISOString)
--- method. In Python, a standard \`datetime.datetime\` object can be
--- converted to this format using
--- [\`strftime\`](https:\/\/docs.python.org\/2\/library\/time.html#time.strftime)
--- with the time format spec \'%Y-%m-%dT%H:%M:%S.%fZ\'. Likewise, in Java,
--- one can use the Joda Time\'s [\`ISODateTimeFormat.dateTime()\`](
--- http:\/\/www.joda.org\/joda-time\/apidocs\/org\/joda\/time\/format\/ISODateTimeFormat.html#dateTime%2D%2D
--- ) to obtain a formatter capable of generating timestamps in this format.
---
--- /See:/ 'timestamp' smart constructor.
-data Timestamp =
-  Timestamp'
-    { _tNanos :: !(Maybe (Textual Int32))
-    , _tSeconds :: !(Maybe (Textual Int64))
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'Timestamp' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'tNanos'
---
--- * 'tSeconds'
-timestamp
-    :: Timestamp
-timestamp = Timestamp' {_tNanos = Nothing, _tSeconds = Nothing}
-
-
--- | Non-negative fractions of a second at nanosecond resolution. Negative
--- second values with fractions must still have non-negative nanos values
--- that count forward in time. Must be from 0 to 999,999,999 inclusive.
-tNanos :: Lens' Timestamp (Maybe Int32)
-tNanos
-  = lens _tNanos (\ s a -> s{_tNanos = a}) .
-      mapping _Coerce
-
--- | Represents seconds of UTC time since Unix epoch 1970-01-01T00:00:00Z.
--- Must be from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59Z inclusive.
-tSeconds :: Lens' Timestamp (Maybe Int64)
-tSeconds
-  = lens _tSeconds (\ s a -> s{_tSeconds = a}) .
-      mapping _Coerce
-
-instance FromJSON Timestamp where
-        parseJSON
-          = withObject "Timestamp"
-              (\ o ->
-                 Timestamp' <$> (o .:? "nanos") <*> (o .:? "seconds"))
-
-instance ToJSON Timestamp where
-        toJSON Timestamp'{..}
-          = object
-              (catMaybes
-                 [("nanos" .=) <$> _tNanos,
-                  ("seconds" .=) <$> _tSeconds])
 
 --
 -- /See:/ 'variableFormatValue' smart constructor.
@@ -4719,6 +5011,191 @@ instance ToJSON RevertBuiltInVariableResponse where
           = object
               (catMaybes [("enabled" .=) <$> _rbivrEnabled])
 
+--
+-- /See:/ 'client' smart constructor.
+data Client =
+  Client'
+    { _cliClientId :: !(Maybe Text)
+    , _cliParentFolderId :: !(Maybe Text)
+    , _cliContainerId :: !(Maybe Text)
+    , _cliPriority :: !(Maybe (Textual Int32))
+    , _cliPath :: !(Maybe Text)
+    , _cliFingerprint :: !(Maybe Text)
+    , _cliAccountId :: !(Maybe Text)
+    , _cliName :: !(Maybe Text)
+    , _cliTagManagerURL :: !(Maybe Text)
+    , _cliWorkspaceId :: !(Maybe Text)
+    , _cliType :: !(Maybe Text)
+    , _cliNotes :: !(Maybe Text)
+    , _cliParameter :: !(Maybe [Parameter])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Client' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cliClientId'
+--
+-- * 'cliParentFolderId'
+--
+-- * 'cliContainerId'
+--
+-- * 'cliPriority'
+--
+-- * 'cliPath'
+--
+-- * 'cliFingerprint'
+--
+-- * 'cliAccountId'
+--
+-- * 'cliName'
+--
+-- * 'cliTagManagerURL'
+--
+-- * 'cliWorkspaceId'
+--
+-- * 'cliType'
+--
+-- * 'cliNotes'
+--
+-- * 'cliParameter'
+client
+    :: Client
+client =
+  Client'
+    { _cliClientId = Nothing
+    , _cliParentFolderId = Nothing
+    , _cliContainerId = Nothing
+    , _cliPriority = Nothing
+    , _cliPath = Nothing
+    , _cliFingerprint = Nothing
+    , _cliAccountId = Nothing
+    , _cliName = Nothing
+    , _cliTagManagerURL = Nothing
+    , _cliWorkspaceId = Nothing
+    , _cliType = Nothing
+    , _cliNotes = Nothing
+    , _cliParameter = Nothing
+    }
+
+
+-- | The Client ID uniquely identifies the GTM client.
+cliClientId :: Lens' Client (Maybe Text)
+cliClientId
+  = lens _cliClientId (\ s a -> s{_cliClientId = a})
+
+-- | Parent folder id.
+cliParentFolderId :: Lens' Client (Maybe Text)
+cliParentFolderId
+  = lens _cliParentFolderId
+      (\ s a -> s{_cliParentFolderId = a})
+
+-- | GTM Container ID.
+cliContainerId :: Lens' Client (Maybe Text)
+cliContainerId
+  = lens _cliContainerId
+      (\ s a -> s{_cliContainerId = a})
+
+-- | Priority determines relative firing order. \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.create \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.update
+cliPriority :: Lens' Client (Maybe Int32)
+cliPriority
+  = lens _cliPriority (\ s a -> s{_cliPriority = a}) .
+      mapping _Coerce
+
+-- | GTM client\'s API relative path.
+cliPath :: Lens' Client (Maybe Text)
+cliPath = lens _cliPath (\ s a -> s{_cliPath = a})
+
+-- | The fingerprint of the GTM Client as computed at storage time. This
+-- value is recomputed whenever the client is modified.
+cliFingerprint :: Lens' Client (Maybe Text)
+cliFingerprint
+  = lens _cliFingerprint
+      (\ s a -> s{_cliFingerprint = a})
+
+-- | GTM Account ID.
+cliAccountId :: Lens' Client (Maybe Text)
+cliAccountId
+  = lens _cliAccountId (\ s a -> s{_cliAccountId = a})
+
+-- | Client display name. \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.create \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.update
+cliName :: Lens' Client (Maybe Text)
+cliName = lens _cliName (\ s a -> s{_cliName = a})
+
+-- | Auto generated link to the tag manager UI
+cliTagManagerURL :: Lens' Client (Maybe Text)
+cliTagManagerURL
+  = lens _cliTagManagerURL
+      (\ s a -> s{_cliTagManagerURL = a})
+
+-- | GTM Workspace ID.
+cliWorkspaceId :: Lens' Client (Maybe Text)
+cliWorkspaceId
+  = lens _cliWorkspaceId
+      (\ s a -> s{_cliWorkspaceId = a})
+
+-- | Client type. \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.create \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.update
+cliType :: Lens' Client (Maybe Text)
+cliType = lens _cliType (\ s a -> s{_cliType = a})
+
+-- | User notes on how to apply this tag in the container. \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
+cliNotes :: Lens' Client (Maybe Text)
+cliNotes = lens _cliNotes (\ s a -> s{_cliNotes = a})
+
+-- | The client\'s parameters. \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.create \'mutable
+-- tagmanager.accounts.containers.workspaces.clients.update
+cliParameter :: Lens' Client [Parameter]
+cliParameter
+  = lens _cliParameter (\ s a -> s{_cliParameter = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON Client where
+        parseJSON
+          = withObject "Client"
+              (\ o ->
+                 Client' <$>
+                   (o .:? "clientId") <*> (o .:? "parentFolderId") <*>
+                     (o .:? "containerId")
+                     <*> (o .:? "priority")
+                     <*> (o .:? "path")
+                     <*> (o .:? "fingerprint")
+                     <*> (o .:? "accountId")
+                     <*> (o .:? "name")
+                     <*> (o .:? "tagManagerUrl")
+                     <*> (o .:? "workspaceId")
+                     <*> (o .:? "type")
+                     <*> (o .:? "notes")
+                     <*> (o .:? "parameter" .!= mempty))
+
+instance ToJSON Client where
+        toJSON Client'{..}
+          = object
+              (catMaybes
+                 [("clientId" .=) <$> _cliClientId,
+                  ("parentFolderId" .=) <$> _cliParentFolderId,
+                  ("containerId" .=) <$> _cliContainerId,
+                  ("priority" .=) <$> _cliPriority,
+                  ("path" .=) <$> _cliPath,
+                  ("fingerprint" .=) <$> _cliFingerprint,
+                  ("accountId" .=) <$> _cliAccountId,
+                  ("name" .=) <$> _cliName,
+                  ("tagManagerUrl" .=) <$> _cliTagManagerURL,
+                  ("workspaceId" .=) <$> _cliWorkspaceId,
+                  ("type" .=) <$> _cliType, ("notes" .=) <$> _cliNotes,
+                  ("parameter" .=) <$> _cliParameter])
+
 -- | Represents a Google Tag Manager Parameter.
 --
 -- /See:/ 'parameter' smart constructor.
@@ -4758,18 +5235,36 @@ parameter =
     }
 
 
--- | This list parameter\'s parameters (keys will be ignored).
+-- | This list parameter\'s parameters (keys will be ignored). \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 pList :: Lens' Parameter [Parameter]
 pList
   = lens _pList (\ s a -> s{_pList = a}) . _Default .
       _Coerce
 
 -- | A parameter\'s value (may contain variable references such as
--- \"{{myVariable}}\") as appropriate to the specified type.
+-- \"{{myVariable}}\") as appropriate to the specified type. \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 pValue :: Lens' Parameter (Maybe Text)
 pValue = lens _pValue (\ s a -> s{_pValue = a})
 
 -- | This map parameter\'s parameters (must have keys; keys must be unique).
+-- \'mutable tagmanager.accounts.containers.workspaces.variables.create
+-- \'mutable tagmanager.accounts.containers.workspaces.variables.update
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.create
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.update
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.create
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.update
 pMap :: Lens' Parameter [Parameter]
 pMap
   = lens _pMap (\ s a -> s{_pMap = a}) . _Default .
@@ -4777,6 +5272,12 @@ pMap
 
 -- | The named key that uniquely identifies a parameter. Required for
 -- top-level parameters, as well as map values. Ignored for list values.
+-- \'mutable tagmanager.accounts.containers.workspaces.variables.create
+-- \'mutable tagmanager.accounts.containers.workspaces.variables.update
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.create
+-- \'mutable tagmanager.accounts.containers.workspaces.triggers.update
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.create
+-- \'mutable tagmanager.accounts.containers.workspaces.tags.update
 pKey :: Lens' Parameter (Maybe Text)
 pKey = lens _pKey (\ s a -> s{_pKey = a})
 
@@ -4786,7 +5287,15 @@ pKey = lens _pKey (\ s a -> s{_pKey = a})
 -- parameters should be specified - map: A map of parameters should be
 -- specified - template: The value represents any text; this can include
 -- variable references (even variable references that might return
--- non-string types)
+-- non-string types) - trigger_reference: The value represents a trigger,
+-- represented as the trigger id - tag_reference: The value represents a
+-- tag, represented as the tag name \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.create \'mutable
+-- tagmanager.accounts.containers.workspaces.variables.update \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.create \'mutable
+-- tagmanager.accounts.containers.workspaces.triggers.update \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.create \'mutable
+-- tagmanager.accounts.containers.workspaces.tags.update
 pType :: Lens' Parameter (Maybe ParameterType)
 pType = lens _pType (\ s a -> s{_pType = a})
 

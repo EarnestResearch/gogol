@@ -22,7 +22,7 @@
 --
 -- Retrieves or modifies multiple orders in a single request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.orders.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.orders.custombatch@.
 module Network.Google.Resource.Content.Orders.Custombatch
     (
     -- * REST Resource
@@ -33,7 +33,12 @@ module Network.Google.Resource.Content.Orders.Custombatch
     , OrdersCustombatch
 
     -- * Request Lenses
+    , ordXgafv
+    , ordUploadProtocol
+    , ordAccessToken
+    , ordUploadType
     , ordPayload
+    , ordCallback
     ) where
 
 import Network.Google.Prelude
@@ -46,16 +51,26 @@ type OrdersCustombatchResource =
        "v2" :>
          "orders" :>
            "batch" :>
-             QueryParam "alt" AltJSON :>
-               ReqBody '[JSON] OrdersCustomBatchRequest :>
-                 Post '[JSON] OrdersCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "callback" Text :>
+                       QueryParam "alt" AltJSON :>
+                         ReqBody '[JSON] OrdersCustomBatchRequest :>
+                           Post '[JSON] OrdersCustomBatchResponse
 
 -- | Retrieves or modifies multiple orders in a single request.
 --
 -- /See:/ 'ordersCustombatch' smart constructor.
-newtype OrdersCustombatch =
+data OrdersCustombatch =
   OrdersCustombatch'
-    { _ordPayload :: OrdersCustomBatchRequest
+    { _ordXgafv :: !(Maybe Xgafv)
+    , _ordUploadProtocol :: !(Maybe Text)
+    , _ordAccessToken :: !(Maybe Text)
+    , _ordUploadType :: !(Maybe Text)
+    , _ordPayload :: !OrdersCustomBatchRequest
+    , _ordCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -64,24 +79,73 @@ newtype OrdersCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'ordXgafv'
+--
+-- * 'ordUploadProtocol'
+--
+-- * 'ordAccessToken'
+--
+-- * 'ordUploadType'
+--
 -- * 'ordPayload'
+--
+-- * 'ordCallback'
 ordersCustombatch
     :: OrdersCustomBatchRequest -- ^ 'ordPayload'
     -> OrdersCustombatch
-ordersCustombatch pOrdPayload_ = OrdersCustombatch' {_ordPayload = pOrdPayload_}
+ordersCustombatch pOrdPayload_ =
+  OrdersCustombatch'
+    { _ordXgafv = Nothing
+    , _ordUploadProtocol = Nothing
+    , _ordAccessToken = Nothing
+    , _ordUploadType = Nothing
+    , _ordPayload = pOrdPayload_
+    , _ordCallback = Nothing
+    }
 
+
+-- | V1 error format.
+ordXgafv :: Lens' OrdersCustombatch (Maybe Xgafv)
+ordXgafv = lens _ordXgafv (\ s a -> s{_ordXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+ordUploadProtocol :: Lens' OrdersCustombatch (Maybe Text)
+ordUploadProtocol
+  = lens _ordUploadProtocol
+      (\ s a -> s{_ordUploadProtocol = a})
+
+-- | OAuth access token.
+ordAccessToken :: Lens' OrdersCustombatch (Maybe Text)
+ordAccessToken
+  = lens _ordAccessToken
+      (\ s a -> s{_ordAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+ordUploadType :: Lens' OrdersCustombatch (Maybe Text)
+ordUploadType
+  = lens _ordUploadType
+      (\ s a -> s{_ordUploadType = a})
 
 -- | Multipart request metadata.
 ordPayload :: Lens' OrdersCustombatch OrdersCustomBatchRequest
 ordPayload
   = lens _ordPayload (\ s a -> s{_ordPayload = a})
 
+-- | JSONP
+ordCallback :: Lens' OrdersCustombatch (Maybe Text)
+ordCallback
+  = lens _ordCallback (\ s a -> s{_ordCallback = a})
+
 instance GoogleRequest OrdersCustombatch where
         type Rs OrdersCustombatch = OrdersCustomBatchResponse
         type Scopes OrdersCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient OrdersCustombatch'{..}
-          = go (Just AltJSON) _ordPayload
+          = go _ordXgafv _ordUploadProtocol _ordAccessToken
+              _ordUploadType
+              _ordCallback
+              (Just AltJSON)
+              _ordPayload
               shoppingContentService
           where go
                   = buildClient

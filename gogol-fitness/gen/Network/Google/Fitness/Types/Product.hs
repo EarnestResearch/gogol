@@ -79,9 +79,9 @@ dsDataSourceId
       (\ s a -> s{_dsDataSourceId = a})
 
 -- | A partial list of data points contained in the dataset, ordered by
--- largest endTimeNanos first. This list is considered complete when
--- retrieving a small dataset and partial when patching a dataset or
--- retrieving a dataset that is too large to include in a single response.
+-- endTimeNanos. This list is considered complete when retrieving a small
+-- dataset and partial when patching a dataset or retrieving a dataset that
+-- is too large to include in a single response.
 dsPoint :: Lens' DataSet [DataPoint]
 dsPoint
   = lens _dsPoint (\ s a -> s{_dsPoint = a}) . _Default
@@ -125,7 +125,6 @@ instance ToJSON DataSet where
                   ("minStartTimeNs" .=) <$> _dsMinStartTimeNs,
                   ("maxEndTimeNs" .=) <$> _dsMaxEndTimeNs])
 
--- |
 --
 -- /See:/ 'application' smart constructor.
 data Application =
@@ -265,16 +264,21 @@ aggregateBy =
 -- | The data type to aggregate. All data sources providing this data type
 -- will contribute data to the aggregation. The response will contain a
 -- single dataset for this data type name. The dataset will have a data
--- source ID of derived:com.google.:com.google.android.gms:aggregated
+-- source ID of derived::com.google.android.gms:aggregated. If the user has
+-- no data for this data type, an empty data set will be returned. Note:
+-- Data can be aggregated by either the dataTypeName or the dataSourceId,
+-- not both.
 abDataTypeName :: Lens' AggregateBy (Maybe Text)
 abDataTypeName
   = lens _abDataTypeName
       (\ s a -> s{_abDataTypeName = a})
 
--- | A data source ID to aggregate. Mutually exclusive of dataTypeName. Only
--- data from the specified data source ID will be included in the
--- aggregation. The dataset in the response will have the same data source
--- ID.
+-- | A data source ID to aggregate. Only data from the specified data source
+-- ID will be included in the aggregation. If specified, this data source
+-- must exist; the OAuth scopes in the supplied credentials must grant read
+-- access to this data type. The dataset in the response will have the same
+-- data source ID. Note: Data can be aggregated by either the dataTypeName
+-- or the dataSourceId, not both.
 abDataSourceId :: Lens' AggregateBy (Maybe Text)
 abDataSourceId
   = lens _abDataSourceId
@@ -409,9 +413,7 @@ arEndTimeMillis
       (\ s a -> s{_arEndTimeMillis = a})
       . mapping _Coerce
 
--- | DO NOT POPULATE THIS FIELD. As data quality standards are deprecated,
--- filling it in will result in no data sources being returned. It will be
--- removed in a future version entirely.
+-- | DO NOT POPULATE THIS FIELD. It is ignored.
 arFilteredDataQualityStandard :: Lens' AggregateRequest [AggregateRequestFilteredDataQualityStandardItem]
 arFilteredDataQualityStandard
   = lens _arFilteredDataQualityStandard
@@ -440,7 +442,7 @@ arBucketBySession
 
 -- | Specifies that data be aggregated by the type of activity being
 -- performed when the data was recorded. All data that was recorded during
--- a certain activity type (for the given time range) will be aggregated
+-- a certain activity type (.for the given time range) will be aggregated
 -- into the same bucket. Data that was recorded while the user was not
 -- active will not be included in the response. Mutually exclusive of other
 -- bucketing specifications.
@@ -465,7 +467,7 @@ arStartTimeMillis
       (\ s a -> s{_arStartTimeMillis = a})
       . mapping _Coerce
 
--- | Specifies that data be aggregated each activity segment recored for a
+-- | Specifies that data be aggregated each activity segment recorded for a
 -- user. Similar to bucketByActivitySegment, but bucketing is done for each
 -- activity segment rather than all segments of the same type. Mutually
 -- exclusive of other bucketing specifications.
@@ -561,7 +563,8 @@ dManufacturer
 -- | The serial number or other unique ID for the hardware. This field is
 -- obfuscated when read by any REST or Android client that did not create
 -- the data source. Only the data source creator will see the uid field in
--- clear and normal form.
+-- clear and normal form. The obfuscation preserves equality; that is,
+-- given two IDs, if id1 == id2, obfuscated(id1) == obfuscated(id2).
 dUid :: Lens' Device (Maybe Text)
 dUid = lens _dUid (\ s a -> s{_dUid = a})
 
@@ -598,7 +601,7 @@ instance ToJSON Device where
 
 -- | Holder object for the value of a single field in a data point. A field
 -- value has a particular format and is only ever set to one of an integer
--- or a floating point value. LINT.IfChange
+-- or a floating point value.
 --
 -- /See:/ 'value' smart constructor.
 data Value =
@@ -904,17 +907,16 @@ listSessionsResponse =
     }
 
 
--- | The continuation token, which is used to page through large result sets.
--- Provide this value in a subsequent request to return the next page of
--- results.
+-- | The sync token which is used to sync further changes. This will only be
+-- provided if both startTime and endTime are omitted from the request.
 lsrNextPageToken :: Lens' ListSessionsResponse (Maybe Text)
 lsrNextPageToken
   = lens _lsrNextPageToken
       (\ s a -> s{_lsrNextPageToken = a})
 
--- | If includeDeleted is set to true in the request, this list will contain
--- sessions deleted with original end times that are within the startTime
--- and endTime frame.
+-- | If includeDeleted is set to true in the request, and startTime and
+-- endTime are omitted, this will include sessions which were deleted since
+-- the last sync.
 lsrDeletedSession :: Lens' ListSessionsResponse [Session]
 lsrDeletedSession
   = lens _lsrDeletedSession
@@ -922,7 +924,8 @@ lsrDeletedSession
       . _Default
       . _Coerce
 
--- | Flag to indicate server has more data to transfer
+-- | Flag to indicate server has more data to transfer. DO NOT USE THIS
+-- FIELD. It is never populated in responses from the server.
 lsrHasMoreData :: Lens' ListSessionsResponse (Maybe Bool)
 lsrHasMoreData
   = lens _lsrHasMoreData
@@ -1328,9 +1331,11 @@ dsDataStreamName
 -- any of the optional fields that make up the data stream ID are absent,
 -- they will be omitted from the data stream ID. The minimum viable data
 -- stream ID would be: type:dataType.name:developer project number Finally,
--- the developer project number is obfuscated when read by any REST or
--- Android client that did not create the data source. Only the data source
--- creator will see the developer project number in clear and normal form.
+-- the developer project number and device UID are obfuscated when read by
+-- any REST or Android client that did not create the data source. Only the
+-- data source creator will see the developer project number in clear and
+-- normal form. This means a client will see a different set of
+-- data_stream_ids than another client with different credentials.
 dsDataStreamId :: Lens' DataSource (Maybe Text)
 dsDataStreamId
   = lens _dsDataStreamId
@@ -1513,7 +1518,6 @@ instance ToJSON BucketByTime where
                  [("period" .=) <$> _bbtPeriod,
                   ("durationMillis" .=) <$> _bbtDurationMillis])
 
--- |
 --
 -- /See:/ 'dataType' smart constructor.
 data DataType =

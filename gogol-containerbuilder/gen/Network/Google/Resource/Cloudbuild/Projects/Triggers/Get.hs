@@ -119,7 +119,8 @@ ptgUploadProtocol
   = lens _ptgUploadProtocol
       (\ s a -> s{_ptgUploadProtocol = a})
 
--- | ID of the \`BuildTrigger\` to get.
+-- | Required. Identifier (\`id\` or \`name\`) of the \`BuildTrigger\` to
+-- get.
 ptgTriggerId :: Lens' ProjectsTriggersGet Text
 ptgTriggerId
   = lens _ptgTriggerId (\ s a -> s{_ptgTriggerId = a})
@@ -136,7 +137,7 @@ ptgUploadType
   = lens _ptgUploadType
       (\ s a -> s{_ptgUploadType = a})
 
--- | ID of the project that owns the trigger.
+-- | Required. ID of the project that owns the trigger.
 ptgProjectId :: Lens' ProjectsTriggersGet Text
 ptgProjectId
   = lens _ptgProjectId (\ s a -> s{_ptgProjectId = a})

@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists ServiceAccounts for a project.
+-- Lists every ServiceAccount that belongs to a specific project.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.list@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.List
@@ -62,7 +62,7 @@ type ProjectsServiceAccountsListResource =
                          QueryParam "alt" AltJSON :>
                            Get '[JSON] ListServiceAccountsResponse
 
--- | Lists ServiceAccounts for a project.
+-- | Lists every ServiceAccount that belongs to a specific project.
 --
 -- /See:/ 'projectsServiceAccountsList' smart constructor.
 data ProjectsServiceAccountsList =
@@ -151,7 +151,8 @@ psalPageToken
 
 -- | Optional limit on the number of service accounts to include in the
 -- response. Further accounts can subsequently be obtained by including the
--- ListServiceAccountsResponse.next_page_token in a subsequent request.
+-- ListServiceAccountsResponse.next_page_token in a subsequent request. The
+-- default is 20, and the maximum is 100.
 psalPageSize :: Lens' ProjectsServiceAccountsList (Maybe Int32)
 psalPageSize
   = lens _psalPageSize (\ s a -> s{_psalPageSize = a})

@@ -73,7 +73,9 @@ type ProjectsLocationsJobsMessagesListResource =
                            QueryParam "access_token" Text :>
                              QueryParam "uploadType" Text :>
                                QueryParam "endTime" DateTime' :>
-                                 QueryParam "minimumImportance" Text :>
+                                 QueryParam "minimumImportance"
+                                   ProjectsLocationsJobsMessagesListMinimumImportance
+                                   :>
                                    QueryParam "pageToken" Text :>
                                      QueryParam "pageSize" (Textual Int32) :>
                                        QueryParam "callback" Text :>
@@ -98,7 +100,7 @@ data ProjectsLocationsJobsMessagesList =
     , _pljmlAccessToken :: !(Maybe Text)
     , _pljmlUploadType :: !(Maybe Text)
     , _pljmlEndTime :: !(Maybe DateTime')
-    , _pljmlMinimumImportance :: !(Maybe Text)
+    , _pljmlMinimumImportance :: !(Maybe ProjectsLocationsJobsMessagesListMinimumImportance)
     , _pljmlPageToken :: !(Maybe Text)
     , _pljmlProjectId :: !Text
     , _pljmlPageSize :: !(Maybe (Textual Int32))
@@ -211,7 +213,7 @@ pljmlEndTime
       . mapping _DateTime
 
 -- | Filter to only get messages with importance >= level
-pljmlMinimumImportance :: Lens' ProjectsLocationsJobsMessagesList (Maybe Text)
+pljmlMinimumImportance :: Lens' ProjectsLocationsJobsMessagesList (Maybe ProjectsLocationsJobsMessagesListMinimumImportance)
 pljmlMinimumImportance
   = lens _pljmlMinimumImportance
       (\ s a -> s{_pljmlMinimumImportance = a})

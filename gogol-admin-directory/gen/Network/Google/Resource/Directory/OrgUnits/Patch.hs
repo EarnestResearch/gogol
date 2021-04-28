@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Update organizational unit. This method supports patch semantics.
+-- Updates an organizational unit. This method supports [patch
+-- semantics](\/admin-sdk\/directory\/v1\/guides\/performance#patch)
 --
--- /See:/ <https://developers.google.com/admin-sdk/directory/ Admin Directory API Reference> for @directory.orgunits.patch@.
+-- /See:/ <http://developers.google.com/admin-sdk/ Admin SDK API Reference> for @directory.orgunits.patch@.
 module Network.Google.Resource.Directory.OrgUnits.Patch
     (
     -- * REST Resource
@@ -33,9 +34,15 @@ module Network.Google.Resource.Directory.OrgUnits.Patch
     , OrgUnitsPatch
 
     -- * Request Lenses
+    , oupXgafv
+    , oupUploadProtocol
+    , oupAccessToken
+    , oupUploadType
     , oupPayload
     , oupOrgUnitPath
     , oupCustomerId
+    , oupAllowPlus
+    , oupCallback
     ) where
 
 import Network.Google.Directory.Types
@@ -50,18 +57,32 @@ type OrgUnitsPatchResource =
            "customer" :>
              Capture "customerId" Text :>
                "orgunits" :>
-                 Captures "orgUnitPath" Text :>
-                   QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] OrgUnit :> Patch '[JSON] OrgUnit
+                 Capture "orgUnitPath" Text :>
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "allowPlus" Bool :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :>
+                                 ReqBody '[JSON] OrgUnit :>
+                                   Patch '[JSON] OrgUnit
 
--- | Update organizational unit. This method supports patch semantics.
+-- | Updates an organizational unit. This method supports [patch
+-- semantics](\/admin-sdk\/directory\/v1\/guides\/performance#patch)
 --
 -- /See:/ 'orgUnitsPatch' smart constructor.
 data OrgUnitsPatch =
   OrgUnitsPatch'
-    { _oupPayload :: !OrgUnit
-    , _oupOrgUnitPath :: ![Text]
+    { _oupXgafv :: !(Maybe Xgafv)
+    , _oupUploadProtocol :: !(Maybe Text)
+    , _oupAccessToken :: !(Maybe Text)
+    , _oupUploadType :: !(Maybe Text)
+    , _oupPayload :: !OrgUnit
+    , _oupOrgUnitPath :: !Text
     , _oupCustomerId :: !Text
+    , _oupAllowPlus :: !(Maybe Bool)
+    , _oupCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -70,48 +91,107 @@ data OrgUnitsPatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'oupXgafv'
+--
+-- * 'oupUploadProtocol'
+--
+-- * 'oupAccessToken'
+--
+-- * 'oupUploadType'
+--
 -- * 'oupPayload'
 --
 -- * 'oupOrgUnitPath'
 --
 -- * 'oupCustomerId'
+--
+-- * 'oupAllowPlus'
+--
+-- * 'oupCallback'
 orgUnitsPatch
     :: OrgUnit -- ^ 'oupPayload'
-    -> [Text] -- ^ 'oupOrgUnitPath'
+    -> Text -- ^ 'oupOrgUnitPath'
     -> Text -- ^ 'oupCustomerId'
     -> OrgUnitsPatch
 orgUnitsPatch pOupPayload_ pOupOrgUnitPath_ pOupCustomerId_ =
   OrgUnitsPatch'
-    { _oupPayload = pOupPayload_
-    , _oupOrgUnitPath = _Coerce # pOupOrgUnitPath_
+    { _oupXgafv = Nothing
+    , _oupUploadProtocol = Nothing
+    , _oupAccessToken = Nothing
+    , _oupUploadType = Nothing
+    , _oupPayload = pOupPayload_
+    , _oupOrgUnitPath = pOupOrgUnitPath_
     , _oupCustomerId = pOupCustomerId_
+    , _oupAllowPlus = Nothing
+    , _oupCallback = Nothing
     }
 
+
+-- | V1 error format.
+oupXgafv :: Lens' OrgUnitsPatch (Maybe Xgafv)
+oupXgafv = lens _oupXgafv (\ s a -> s{_oupXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+oupUploadProtocol :: Lens' OrgUnitsPatch (Maybe Text)
+oupUploadProtocol
+  = lens _oupUploadProtocol
+      (\ s a -> s{_oupUploadProtocol = a})
+
+-- | OAuth access token.
+oupAccessToken :: Lens' OrgUnitsPatch (Maybe Text)
+oupAccessToken
+  = lens _oupAccessToken
+      (\ s a -> s{_oupAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+oupUploadType :: Lens' OrgUnitsPatch (Maybe Text)
+oupUploadType
+  = lens _oupUploadType
+      (\ s a -> s{_oupUploadType = a})
 
 -- | Multipart request metadata.
 oupPayload :: Lens' OrgUnitsPatch OrgUnit
 oupPayload
   = lens _oupPayload (\ s a -> s{_oupPayload = a})
 
--- | Full path of the organizational unit or its ID
-oupOrgUnitPath :: Lens' OrgUnitsPatch [Text]
+-- | The full path of the organizational unit or its unique ID.
+oupOrgUnitPath :: Lens' OrgUnitsPatch Text
 oupOrgUnitPath
   = lens _oupOrgUnitPath
       (\ s a -> s{_oupOrgUnitPath = a})
-      . _Coerce
 
--- | Immutable ID of the G Suite account
+-- | The unique ID for the customer\'s Google Workspace account. As an
+-- account administrator, you can also use the \`my_customer\` alias to
+-- represent your account\'s \`customerId\`. The \`customerId\` is also
+-- returned as part of the [Users
+-- resource](\/admin-sdk\/directory\/v1\/reference\/users).
 oupCustomerId :: Lens' OrgUnitsPatch Text
 oupCustomerId
   = lens _oupCustomerId
       (\ s a -> s{_oupCustomerId = a})
+
+-- | Parses org unit path without url decode to allow for plus in ou name
+oupAllowPlus :: Lens' OrgUnitsPatch (Maybe Bool)
+oupAllowPlus
+  = lens _oupAllowPlus (\ s a -> s{_oupAllowPlus = a})
+
+-- | JSONP
+oupCallback :: Lens' OrgUnitsPatch (Maybe Text)
+oupCallback
+  = lens _oupCallback (\ s a -> s{_oupCallback = a})
 
 instance GoogleRequest OrgUnitsPatch where
         type Rs OrgUnitsPatch = OrgUnit
         type Scopes OrgUnitsPatch =
              '["https://www.googleapis.com/auth/admin.directory.orgunit"]
         requestClient OrgUnitsPatch'{..}
-          = go _oupCustomerId _oupOrgUnitPath (Just AltJSON)
+          = go _oupCustomerId _oupOrgUnitPath _oupXgafv
+              _oupUploadProtocol
+              _oupAccessToken
+              _oupUploadType
+              _oupAllowPlus
+              _oupCallback
+              (Just AltJSON)
               _oupPayload
               directoryService
           where go

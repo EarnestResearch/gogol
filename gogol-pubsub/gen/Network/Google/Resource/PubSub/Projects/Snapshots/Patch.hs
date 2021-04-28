@@ -20,8 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates an existing snapshot. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- Updates an existing snapshot. Snapshots are used in Seek operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
 -- to the state captured by a snapshot.
@@ -63,8 +62,7 @@ type ProjectsSnapshotsPatchResource =
                      ReqBody '[JSON] UpdateSnapshotRequest :>
                        Patch '[JSON] Snapshot
 
--- | Updates an existing snapshot. Snapshots are used in
--- <https://cloud.google.com/pubsub/docs/replay-overview Seek> operations,
+-- | Updates an existing snapshot. Snapshots are used in Seek operations,
 -- which allow you to manage message acknowledgments in bulk. That is, you
 -- can set the acknowledgment state of messages in an existing subscription
 -- to the state captured by a snapshot.

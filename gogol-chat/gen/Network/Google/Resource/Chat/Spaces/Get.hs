@@ -22,7 +22,7 @@
 --
 -- Returns a space.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.get@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.get@.
 module Network.Google.Resource.Chat.Spaces.Get
     (
     -- * REST Resource

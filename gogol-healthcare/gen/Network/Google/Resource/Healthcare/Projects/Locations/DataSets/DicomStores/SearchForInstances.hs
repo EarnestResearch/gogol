@@ -20,8 +20,15 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- SearchForInstances returns a list of matching instances. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.7
+-- SearchForInstances returns a list of matching instances. See [Search
+-- Transaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.6).
+-- For details on the implementation of SearchForInstances, see [Search
+-- transaction](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#search_transaction)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call SearchForInstances, see [Searching for studies, series,
+-- instances, and
+-- frames](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#searching_for_studies_series_instances_and_frames).
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.searchForInstances@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.SearchForInstances
@@ -50,7 +57,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresSearchForInstances' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresSearchForInstancesResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "parent" Text :>
          "dicomWeb" :>
            Capture "dicomWebPath" Text :>
@@ -61,8 +68,15 @@ type ProjectsLocationsDataSetsDicomStoresSearchForInstancesResource
                      QueryParam "callback" Text :>
                        QueryParam "alt" AltJSON :> Get '[JSON] HTTPBody
 
--- | SearchForInstances returns a list of matching instances. See
--- http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_6.7
+-- | SearchForInstances returns a list of matching instances. See [Search
+-- Transaction]
+-- (http:\/\/dicom.nema.org\/medical\/dicom\/current\/output\/html\/part18.html#sect_10.6).
+-- For details on the implementation of SearchForInstances, see [Search
+-- transaction](https:\/\/cloud.google.com\/healthcare\/docs\/dicom#search_transaction)
+-- in the Cloud Healthcare API conformance statement. For samples that show
+-- how to call SearchForInstances, see [Searching for studies, series,
+-- instances, and
+-- frames](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/dicomweb#searching_for_studies_series_instances_and_frames).
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresSearchForInstances' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresSearchForInstances =
@@ -111,8 +125,8 @@ projectsLocationsDataSetsDicomStoresSearchForInstances pPldsdssfiParent_ pPldsds
     }
 
 
--- | The name of the DICOM store that is being accessed (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`).
+-- | The name of the DICOM store that is being accessed. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 pldsdssfiParent :: Lens' ProjectsLocationsDataSetsDicomStoresSearchForInstances Text
 pldsdssfiParent
   = lens _pldsdssfiParent
@@ -148,8 +162,9 @@ pldsdssfiCallback
   = lens _pldsdssfiCallback
       (\ s a -> s{_pldsdssfiCallback = a})
 
--- | The path of the DICOMweb request, as specified in the STOW-RS, WADO-RS,
--- or QIDO-RS standard (e.g., \`instances\`).
+-- | The path of the SearchForInstancesRequest DICOMweb request. For example,
+-- \`instances\`, \`series\/{series_uid}\/instances\`, or
+-- \`studies\/{study_uid}\/instances\`.
 pldsdssfiDicomWebPath :: Lens' ProjectsLocationsDataSetsDicomStoresSearchForInstances Text
 pldsdssfiDicomWebPath
   = lens _pldsdssfiDicomWebPath

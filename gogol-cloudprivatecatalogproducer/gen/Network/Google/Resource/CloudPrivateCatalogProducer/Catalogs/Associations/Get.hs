@@ -22,7 +22,7 @@
 --
 -- Returns the requested Association resource.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.get@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.associations.get@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Associations.Get
     (
     -- * REST Resource

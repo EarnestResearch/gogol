@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists all search applications.
+-- Lists all search applications. **Note:** This API requires an admin
+-- account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.searchapplications.list@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.searchapplications.list@.
 module Network.Google.Resource.CloudSearch.Settings.SearchApplications.List
     (
     -- * REST Resource
@@ -63,7 +64,8 @@ type SettingsSearchApplicationsListResource =
                            QueryParam "alt" AltJSON :>
                              Get '[JSON] ListSearchApplicationsResponse
 
--- | Lists all search applications.
+-- | Lists all search applications. **Note:** This API requires an admin
+-- account to execute.
 --
 -- /See:/ 'settingsSearchApplicationsList' smart constructor.
 data SettingsSearchApplicationsList =

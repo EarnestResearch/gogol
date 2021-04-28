@@ -140,7 +140,7 @@ plccirPayload
 
 -- | The name (project, location, cluster id) of the cluster to complete IP
 -- rotation. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plccirName :: Lens' ProjectsLocationsClustersCompleteIPRotation Text
 plccirName
   = lens _plccirName (\ s a -> s{_plccirName = a})

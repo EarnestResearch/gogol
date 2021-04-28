@@ -42,6 +42,7 @@ module Network.Google.Resource.Storage.Buckets.Patch
     , bpUserProject
     , bpIfMetagenerationNotMatch
     , bpProjection
+    , bpProvisionalUserProject
     ) where
 
 import Network.Google.Prelude
@@ -64,8 +65,9 @@ type BucketsPatchResource =
                      QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                        :>
                        QueryParam "projection" BucketsPatchProjection :>
-                         QueryParam "alt" AltJSON :>
-                           ReqBody '[JSON] Bucket :> Patch '[JSON] Bucket
+                         QueryParam "provisionalUserProject" Text :>
+                           QueryParam "alt" AltJSON :>
+                             ReqBody '[JSON] Bucket :> Patch '[JSON] Bucket
 
 -- | Patches a bucket. Changes to the bucket will be readable immediately
 -- after writing, but configuration changes may take time to propagate.
@@ -81,6 +83,7 @@ data BucketsPatch =
     , _bpUserProject :: !(Maybe Text)
     , _bpIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     , _bpProjection :: !(Maybe BucketsPatchProjection)
+    , _bpProvisionalUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -104,6 +107,8 @@ data BucketsPatch =
 -- * 'bpIfMetagenerationNotMatch'
 --
 -- * 'bpProjection'
+--
+-- * 'bpProvisionalUserProject'
 bucketsPatch
     :: Text -- ^ 'bpBucket'
     -> Bucket -- ^ 'bpPayload'
@@ -118,6 +123,7 @@ bucketsPatch pBpBucket_ pBpPayload_ =
     , _bpUserProject = Nothing
     , _bpIfMetagenerationNotMatch = Nothing
     , _bpProjection = Nothing
+    , _bpProvisionalUserProject = Nothing
     }
 
 
@@ -170,6 +176,13 @@ bpProjection :: Lens' BucketsPatch (Maybe BucketsPatchProjection)
 bpProjection
   = lens _bpProjection (\ s a -> s{_bpProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+bpProvisionalUserProject :: Lens' BucketsPatch (Maybe Text)
+bpProvisionalUserProject
+  = lens _bpProvisionalUserProject
+      (\ s a -> s{_bpProvisionalUserProject = a})
+
 instance GoogleRequest BucketsPatch where
         type Rs BucketsPatch = Bucket
         type Scopes BucketsPatch =
@@ -182,6 +195,7 @@ instance GoogleRequest BucketsPatch where
               _bpUserProject
               _bpIfMetagenerationNotMatch
               _bpProjection
+              _bpProvisionalUserProject
               (Just AltJSON)
               _bpPayload
               storageService

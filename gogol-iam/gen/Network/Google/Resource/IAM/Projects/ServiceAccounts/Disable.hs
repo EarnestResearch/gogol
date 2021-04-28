@@ -20,7 +20,18 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Disables a ServiceAccount. The API is currently in alpha phase.
+-- Disables a ServiceAccount immediately. If an application uses the
+-- service account to authenticate, that application can no longer call
+-- Google APIs or access Google Cloud resources. Existing access tokens for
+-- the service account are rejected, and requests for new access tokens
+-- will fail. To re-enable the service account, use EnableServiceAccount.
+-- After you re-enable the service account, its existing access tokens will
+-- be accepted, and you can request new access tokens. To help avoid
+-- unplanned outages, we recommend that you disable the service account
+-- before you delete it. Use this method to disable the service account,
+-- then wait at least 24 hours and watch for unintended consequences. If
+-- there are no unintended consequences, you can delete the service account
+-- with DeleteServiceAccount.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.disable@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.Disable
@@ -59,7 +70,18 @@ type ProjectsServiceAccountsDisableResource =
                      ReqBody '[JSON] DisableServiceAccountRequest :>
                        Post '[JSON] Empty
 
--- | Disables a ServiceAccount. The API is currently in alpha phase.
+-- | Disables a ServiceAccount immediately. If an application uses the
+-- service account to authenticate, that application can no longer call
+-- Google APIs or access Google Cloud resources. Existing access tokens for
+-- the service account are rejected, and requests for new access tokens
+-- will fail. To re-enable the service account, use EnableServiceAccount.
+-- After you re-enable the service account, its existing access tokens will
+-- be accepted, and you can request new access tokens. To help avoid
+-- unplanned outages, we recommend that you disable the service account
+-- before you delete it. Use this method to disable the service account,
+-- then wait at least 24 hours and watch for unintended consequences. If
+-- there are no unintended consequences, you can delete the service account
+-- with DeleteServiceAccount.
 --
 -- /See:/ 'projectsServiceAccountsDisable' smart constructor.
 data ProjectsServiceAccountsDisable =

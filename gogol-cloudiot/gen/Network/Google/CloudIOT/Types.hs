@@ -30,6 +30,9 @@ module Network.Google.CloudIOT.Types
     , sCode
     , sMessage
 
+    -- * ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType
+    , ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType (..)
+
     -- * UnbindDeviceFromGatewayResponse
     , UnbindDeviceFromGatewayResponse
     , unbindDeviceFromGatewayResponse
@@ -51,6 +54,7 @@ module Network.Google.CloudIOT.Types
     -- * GetIAMPolicyRequest
     , GetIAMPolicyRequest
     , getIAMPolicyRequest
+    , giprOptions
 
     -- * ListDeviceRegistriesResponse
     , ListDeviceRegistriesResponse
@@ -90,6 +94,9 @@ module Network.Google.CloudIOT.Types
     -- * Empty
     , Empty
     , empty
+
+    -- * ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
+    , ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType (..)
 
     -- * StateNotificationConfig
     , StateNotificationConfig
@@ -156,6 +163,11 @@ module Network.Google.CloudIOT.Types
 
     -- * PublicKeyCredentialFormat
     , PublicKeyCredentialFormat (..)
+
+    -- * GetPolicyOptions
+    , GetPolicyOptions
+    , getPolicyOptions
+    , gpoRequestedPolicyVersion
 
     -- * MqttConfig
     , MqttConfig
@@ -295,6 +307,6 @@ cloudIOTService
 cloudIOTScope :: Proxy '["https://www.googleapis.com/auth/cloudiot"]
 cloudIOTScope = Proxy
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy

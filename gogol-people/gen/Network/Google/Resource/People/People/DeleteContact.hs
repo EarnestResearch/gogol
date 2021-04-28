@@ -110,7 +110,7 @@ pdcUploadProtocol
   = lens _pdcUploadProtocol
       (\ s a -> s{_pdcUploadProtocol = a})
 
--- | The resource name of the contact to delete.
+-- | Required. The resource name of the contact to delete.
 pdcResourceName :: Lens' PeopleDeleteContact Text
 pdcResourceName
   = lens _pdcResourceName

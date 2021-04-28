@@ -34,6 +34,7 @@ module Network.Google.Resource.AdSenseHost.AssociationSessions.Start
     , AssociationSessionsStart
 
     -- * Request Lenses
+    , assCallbackURL
     , assWebsiteLocale
     , assUserLocale
     , assWebsiteURL
@@ -54,10 +55,11 @@ type AssociationSessionsStartResource =
                AssociationSessionsStartProductCode
                :>
                QueryParam "websiteUrl" Text :>
-                 QueryParam "websiteLocale" Text :>
-                   QueryParam "userLocale" Text :>
-                     QueryParam "alt" AltJSON :>
-                       Get '[JSON] AssociationSession
+                 QueryParam "callbackUrl" Text :>
+                   QueryParam "websiteLocale" Text :>
+                     QueryParam "userLocale" Text :>
+                       QueryParam "alt" AltJSON :>
+                         Get '[JSON] AssociationSession
 
 -- | Create an association session for initiating an association with an
 -- AdSense user.
@@ -65,7 +67,8 @@ type AssociationSessionsStartResource =
 -- /See:/ 'associationSessionsStart' smart constructor.
 data AssociationSessionsStart =
   AssociationSessionsStart'
-    { _assWebsiteLocale :: !(Maybe Text)
+    { _assCallbackURL :: !(Maybe Text)
+    , _assWebsiteLocale :: !(Maybe Text)
     , _assUserLocale :: !(Maybe Text)
     , _assWebsiteURL :: !Text
     , _assProductCode :: ![AssociationSessionsStartProductCode]
@@ -76,6 +79,8 @@ data AssociationSessionsStart =
 -- | Creates a value of 'AssociationSessionsStart' with the minimum fields required to make a request.
 --
 -- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'assCallbackURL'
 --
 -- * 'assWebsiteLocale'
 --
@@ -90,12 +95,21 @@ associationSessionsStart
     -> AssociationSessionsStart
 associationSessionsStart pAssWebsiteURL_ pAssProductCode_ =
   AssociationSessionsStart'
-    { _assWebsiteLocale = Nothing
+    { _assCallbackURL = Nothing
+    , _assWebsiteLocale = Nothing
     , _assUserLocale = Nothing
     , _assWebsiteURL = pAssWebsiteURL_
     , _assProductCode = _Coerce # pAssProductCode_
     }
 
+
+-- | The URL to redirect the user to once association is completed. It
+-- receives a token parameter that can then be used to retrieve the
+-- associated account.
+assCallbackURL :: Lens' AssociationSessionsStart (Maybe Text)
+assCallbackURL
+  = lens _assCallbackURL
+      (\ s a -> s{_assCallbackURL = a})
 
 -- | The locale of the user\'s hosted website.
 assWebsiteLocale :: Lens' AssociationSessionsStart (Maybe Text)
@@ -128,6 +142,7 @@ instance GoogleRequest AssociationSessionsStart where
              '["https://www.googleapis.com/auth/adsensehost"]
         requestClient AssociationSessionsStart'{..}
           = go _assProductCode (Just _assWebsiteURL)
+              _assCallbackURL
               _assWebsiteLocale
               _assUserLocale
               (Just AltJSON)

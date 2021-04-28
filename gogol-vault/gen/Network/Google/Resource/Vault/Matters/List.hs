@@ -53,11 +53,11 @@ type MattersListResource =
      "v1" :>
        "matters" :>
          QueryParam "$.xgafv" Xgafv :>
-           QueryParam "state" Text :>
+           QueryParam "state" MattersListState :>
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
                  QueryParam "uploadType" Text :>
-                   QueryParam "view" Text :>
+                   QueryParam "view" MattersListView :>
                      QueryParam "pageToken" Text :>
                        QueryParam "pageSize" (Textual Int32) :>
                          QueryParam "callback" Text :>
@@ -70,11 +70,11 @@ type MattersListResource =
 data MattersList =
   MattersList'
     { _mlXgafv :: !(Maybe Xgafv)
-    , _mlState :: !(Maybe Text)
+    , _mlState :: !(Maybe MattersListState)
     , _mlUploadProtocol :: !(Maybe Text)
     , _mlAccessToken :: !(Maybe Text)
     , _mlUploadType :: !(Maybe Text)
-    , _mlView :: !(Maybe Text)
+    , _mlView :: !(Maybe MattersListView)
     , _mlPageToken :: !(Maybe Text)
     , _mlPageSize :: !(Maybe (Textual Int32))
     , _mlCallback :: !(Maybe Text)
@@ -125,7 +125,7 @@ mlXgafv = lens _mlXgafv (\ s a -> s{_mlXgafv = a})
 
 -- | If set, list only matters with that specific state. The default is
 -- listing matters of all states.
-mlState :: Lens' MattersList (Maybe Text)
+mlState :: Lens' MattersList (Maybe MattersListState)
 mlState = lens _mlState (\ s a -> s{_mlState = a})
 
 -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
@@ -146,7 +146,7 @@ mlUploadType
   = lens _mlUploadType (\ s a -> s{_mlUploadType = a})
 
 -- | Specifies which parts of the matter to return in response.
-mlView :: Lens' MattersList (Maybe Text)
+mlView :: Lens' MattersList (Maybe MattersListView)
 mlView = lens _mlView (\ s a -> s{_mlView = a})
 
 -- | The pagination token as returned in the response.

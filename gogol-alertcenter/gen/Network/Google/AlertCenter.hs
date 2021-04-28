@@ -15,7 +15,7 @@
 --
 -- Manages alerts on issues affecting your domain.
 --
--- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ G Suite Alert Center API Reference>
+-- /See:/ <https://developers.google.com/admin-sdk/alertcenter/ Google Workspace Alert Center API Reference>
 module Network.Google.AlertCenter
     (
     -- * Service Configuration
@@ -29,6 +29,12 @@ module Network.Google.AlertCenter
 
     -- * Resources
 
+    -- ** alertcenter.alerts.batchDelete
+    , module Network.Google.Resource.AlertCenter.Alerts.BatchDelete
+
+    -- ** alertcenter.alerts.batchUndelete
+    , module Network.Google.Resource.AlertCenter.Alerts.BatchUndelete
+
     -- ** alertcenter.alerts.delete
     , module Network.Google.Resource.AlertCenter.Alerts.Delete
 
@@ -40,6 +46,9 @@ module Network.Google.AlertCenter
 
     -- ** alertcenter.alerts.get
     , module Network.Google.Resource.AlertCenter.Alerts.Get
+
+    -- ** alertcenter.alerts.getMetadata
+    , module Network.Google.Resource.AlertCenter.Alerts.GetMetadata
 
     -- ** alertcenter.alerts.list
     , module Network.Google.Resource.AlertCenter.Alerts.List
@@ -55,233 +64,384 @@ module Network.Google.AlertCenter
 
     -- * Types
 
-    -- ** ListAlertsResponse
-    , ListAlertsResponse
-    , listAlertsResponse
-    , larNextPageToken
-    , larAlerts
+    -- ** GoogleAppsAlertcenterTypeBadWhiteList
+    , GoogleAppsAlertcenterTypeBadWhiteList
+    , googleAppsAlertcenterTypeBadWhiteList
+    , gaatbwlSourceIP
+    , gaatbwlDomainId
+    , gaatbwlMessages
+    , gaatbwlMaliciousEntity
 
-    -- ** CSVRow
-    , CSVRow
-    , csvRow
-    , crEntries
+    -- ** GoogleRpcStatus
+    , GoogleRpcStatus
+    , googleRpcStatus
+    , grsDetails
+    , grsCode
+    , grsMessage
 
-    -- ** AlertFeedback
-    , AlertFeedback
-    , alertFeedback
-    , afFeedbackId
-    , afEmail
-    , afAlertId
-    , afCustomerId
-    , afType
-    , afCreateTime
+    -- ** GoogleAppsAlertcenterV1beta1AlertData
+    , GoogleAppsAlertcenterV1beta1AlertData
+    , googleAppsAlertcenterV1beta1AlertData
+    , gaavadAddtional
 
-    -- ** DeviceCompromised
-    , DeviceCompromised
-    , deviceCompromised
-    , dcEmail
-    , dcEvents
+    -- ** GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopicPayloadFormat
+    , GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopicPayloadFormat (..)
 
-    -- ** StateSponsoredAttack
-    , StateSponsoredAttack
-    , stateSponsoredAttack
-    , ssaEmail
+    -- ** GoogleAppsAlertcenterTypeDeviceCompromised
+    , GoogleAppsAlertcenterTypeDeviceCompromised
+    , googleAppsAlertcenterTypeDeviceCompromised
+    , gaatdcEmail
+    , gaatdcEvents
 
-    -- ** BadWhiteList
-    , BadWhiteList
-    , badWhiteList
-    , bwlSourceIP
-    , bwlDomainId
-    , bwlMessages
-    , bwlMaliciousEntity
+    -- ** GoogleAppsAlertcenterTypeStateSponsoredAttack
+    , GoogleAppsAlertcenterTypeStateSponsoredAttack
+    , googleAppsAlertcenterTypeStateSponsoredAttack
+    , gaatssaEmail
 
-    -- ** SuspiciousActivitySecurityDetail
-    , SuspiciousActivitySecurityDetail
-    , suspiciousActivitySecurityDetail
-    , sasdDeviceProperty
-    , sasdResourceId
-    , sasdIosVendorId
-    , sasdOldValue
-    , sasdNewValue
-    , sasdDeviceModel
-    , sasdDeviceId
-    , sasdDeviceType
-    , sasdSerialNumber
+    -- ** GoogleAppsAlertcenterV1beta1Alert
+    , GoogleAppsAlertcenterV1beta1Alert
+    , googleAppsAlertcenterV1beta1Alert
+    , gaavaEtag
+    , gaavaStartTime
+    , gaavaData
+    , gaavaAlertId
+    , gaavaSecurityInvestigationToolLink
+    , gaavaCustomerId
+    , gaavaUpdateTime
+    , gaavaEndTime
+    , gaavaMetadata
+    , gaavaSource
+    , gaavaDeleted
+    , gaavaType
+    , gaavaCreateTime
 
-    -- ** Empty
-    , Empty
-    , empty
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoRuleInfo
+    , gaatrviriResourceName
+    , gaatrviriDisplayName
 
-    -- ** UndeleteAlertRequest
-    , UndeleteAlertRequest
-    , undeleteAlertRequest
-    , uarCustomerId
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoActionInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoActionInfo
 
-    -- ** Settings
-    , Settings
-    , settings
-    , sNotifications
+    -- ** GoogleAppsAlertcenterTypeAttachment
+    , GoogleAppsAlertcenterTypeAttachment
+    , googleAppsAlertcenterTypeAttachment
+    , gaataCSV
 
-    -- ** Notification
-    , Notification
-    , notification
-    , nCloudPubsubTopic
+    -- ** GoogleAppsAlertcenterTypeUser
+    , GoogleAppsAlertcenterTypeUser
+    , googleAppsAlertcenterTypeUser
+    , gaatuEmailAddress
+    , gaatuDisplayName
 
-    -- ** ActivityRule
-    , ActivityRule
-    , activityRule
-    , arSupersededAlerts
-    , arActionNames
-    , arSupersedingAlert
-    , arTriggerSource
-    , arWindowSize
-    , arUpdateTime
-    , arName
-    , arThreshold
-    , arQuery
-    , arDisplayName
-    , arDescription
-    , arCreateTime
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoDataSource
+    , GoogleAppsAlertcenterTypeRuleViolationInfoDataSource (..)
 
-    -- ** AccountWarning
-    , AccountWarning
-    , accountWarning
-    , awEmail
-    , awLoginDetails
+    -- ** GoogleAppsAlertcenterTypeAttachmentCSVCSVRow
+    , GoogleAppsAlertcenterTypeAttachmentCSVCSVRow
+    , googleAppsAlertcenterTypeAttachmentCSVCSVRow
+    , gaataccrEntries
 
-    -- ** MailPhishing
-    , MailPhishing
-    , mailPhishing
-    , mpIsInternal
-    , mpDomainId
-    , mpMessages
-    , mpMaliciousEntity
+    -- ** GoogleAppsAlertcenterTypeAccountWarning
+    , GoogleAppsAlertcenterTypeAccountWarning
+    , googleAppsAlertcenterTypeAccountWarning
+    , gaatawEmail
+    , gaatawLoginDetails
 
-    -- ** GmailMessageInfo
-    , GmailMessageInfo
-    , gmailMessageInfo
-    , gmiMD5HashSubject
-    , gmiSubjectText
-    , gmiDate
-    , gmiMD5HashMessageBody
-    , gmiAttachmentsSha256Hash
-    , gmiRecipient
-    , gmiMessageBodySnippet
-    , gmiMessageId
+    -- ** GoogleAppsAlertcenterTypeGmailMessageInfo
+    , GoogleAppsAlertcenterTypeGmailMessageInfo
+    , googleAppsAlertcenterTypeGmailMessageInfo
+    , gaatgmiMD5HashSubject
+    , gaatgmiSubjectText
+    , gaatgmiDate
+    , gaatgmiMD5HashMessageBody
+    , gaatgmiAttachmentsSha256Hash
+    , gaatgmiRecipient
+    , gaatgmiMessageBodySnippet
+    , gaatgmiMessageId
 
-    -- ** AlertData
-    , AlertData
-    , alertData
-    , adAddtional
+    -- ** GoogleAppsAlertcenterTypeMailPhishing
+    , GoogleAppsAlertcenterTypeMailPhishing
+    , googleAppsAlertcenterTypeMailPhishing
+    , gaatmpSystemActionType
+    , gaatmpIsInternal
+    , gaatmpDomainId
+    , gaatmpMessages
+    , gaatmpMaliciousEntity
 
-    -- ** CloudPubsubTopicPayloadFormat
-    , CloudPubsubTopicPayloadFormat (..)
+    -- ** GoogleAppsAlertcenterTypeActivityRule
+    , GoogleAppsAlertcenterTypeActivityRule
+    , googleAppsAlertcenterTypeActivityRule
+    , gaatarSupersededAlerts
+    , gaatarActionNames
+    , gaatarSupersedingAlert
+    , gaatarTriggerSource
+    , gaatarWindowSize
+    , gaatarUpdateTime
+    , gaatarName
+    , gaatarThreshold
+    , gaatarQuery
+    , gaatarDisplayName
+    , gaatarDescription
+    , gaatarCreateTime
 
-    -- ** PhishingSpike
-    , PhishingSpike
-    , phishingSpike
-    , psIsInternal
-    , psDomainId
-    , psMessages
-    , psMaliciousEntity
+    -- ** GoogleAppsAlertcenterV1beta1AlertFeedbackType
+    , GoogleAppsAlertcenterV1beta1AlertFeedbackType (..)
 
-    -- ** CSV
-    , CSV
-    , csv
-    , cDataRows
-    , cHeaders
+    -- ** GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+    , GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+    , googleAppsAlertcenterV1beta1BatchDeleteAlertsResponseFailedAlertStatus
+    , gaavbdarfasAddtional
 
-    -- ** Alert
-    , Alert
-    , alert
-    , aStartTime
-    , aData
-    , aAlertId
-    , aSecurityInvestigationToolLink
-    , aCustomerId
-    , aUpdateTime
-    , aEndTime
-    , aSource
-    , aDeleted
-    , aType
-    , aCreateTime
+    -- ** GoogleProtobufEmpty
+    , GoogleProtobufEmpty
+    , googleProtobufEmpty
 
-    -- ** Attachment
-    , Attachment
-    , attachment
-    , aCSV
+    -- ** GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+    , GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+    , googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponseFailedAlertStatus
+    , gaavbuarfasAddtional
 
-    -- ** GoogleOperations
-    , GoogleOperations
-    , googleOperations
-    , goAttachmentData
-    , goAffectedUserEmails
-    , goTitle
-    , goDescription
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoResourceInfo
+    , gaatrviriDocumentId
+    , gaatrviriResourceTitle
 
-    -- ** AlertFeedbackType
-    , AlertFeedbackType (..)
+    -- ** GoogleRpcStatusDetailsItem
+    , GoogleRpcStatusDetailsItem
+    , googleRpcStatusDetailsItem
+    , grsdiAddtional
 
-    -- ** SuspiciousActivity
-    , SuspiciousActivity
-    , suspiciousActivity
-    , saEmail
-    , saEvents
+    -- ** GoogleAppsAlertcenterV1beta1ListAlertsResponse
+    , GoogleAppsAlertcenterV1beta1ListAlertsResponse
+    , googleAppsAlertcenterV1beta1ListAlertsResponse
+    , gaavlarNextPageToken
+    , gaavlarAlerts
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoMatchInfoUserDefinedDetectorInfo
+    , gaatrvimiuddiResourceName
+    , gaatrvimiuddiDisplayName
+
+    -- ** GoogleAppsAlertcenterTypeDlpRuleViolation
+    , GoogleAppsAlertcenterTypeDlpRuleViolation
+    , googleAppsAlertcenterTypeDlpRuleViolation
+    , gaatdrvRuleViolationInfo
+
+    -- ** GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+    , GoogleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+    , googleAppsAlertcenterV1beta1SettingsNotificationCloudPubsubTopic
+    , gaavsncptTopicName
+    , gaavsncptPayloadFormat
+
+    -- ** GoogleAppsAlertcenterTypeAttachmentCSV
+    , GoogleAppsAlertcenterTypeAttachmentCSV
+    , googleAppsAlertcenterTypeAttachmentCSV
+    , gaatacDataRows
+    , gaatacHeaders
+
+    -- ** GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+    , GoogleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+    , googleAppsAlertcenterV1beta1BatchDeleteAlertsResponse
+    , gaavbdarSuccessAlertIds
+    , gaavbdarFailedAlertStatus
+
+    -- ** GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+    , GoogleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+    , googleAppsAlertcenterTypeAppMakerSQLSetupNotificationRequestInfo
+    , gaatamsqlsnriNumberOfRequests
+    , gaatamsqlsnriAppDeveloperEmail
+    , gaatamsqlsnriAppKey
+
+    -- ** GoogleAppsAlertcenterTypeSuspiciousActivity
+    , GoogleAppsAlertcenterTypeSuspiciousActivity
+    , googleAppsAlertcenterTypeSuspiciousActivity
+    , gaatsaEmail
+    , gaatsaEvents
+
+    -- ** GoogleAppsAlertcenterTypeAccountWarningLoginDetails
+    , GoogleAppsAlertcenterTypeAccountWarningLoginDetails
+    , googleAppsAlertcenterTypeAccountWarningLoginDetails
+    , gaatawldIPAddress
+    , gaatawldLoginTime
+
+    -- ** GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+    , GoogleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+    , googleAppsAlertcenterV1beta1ListAlertFeedbackResponse
+    , gaavlafrFeedback
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfo
+    , googleAppsAlertcenterTypeRuleViolationInfo
+    , gaatrviTriggeredActionTypes
+    , gaatrviSuppressedActionTypes
+    , gaatrviTriggeringUserEmail
+    , gaatrviResourceInfo
+    , gaatrviMatchInfo
+    , gaatrviDataSource
+    , gaatrviTrigger
+    , gaatrviRecipients
+    , gaatrviRuleInfo
+    , gaatrviTriggeredActionInfo
+
+    -- ** GoogleAppsAlertcenterTypeMaliciousEntity
+    , GoogleAppsAlertcenterTypeMaliciousEntity
+    , googleAppsAlertcenterTypeMaliciousEntity
+    , gaatmeFromHeader
+    , gaatmeDisplayName
+    , gaatmeEntity
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoTrigger
+    , GoogleAppsAlertcenterTypeRuleViolationInfoTrigger (..)
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoSuppressedActionTypesItem
+    , GoogleAppsAlertcenterTypeRuleViolationInfoSuppressedActionTypesItem (..)
+
+    -- ** GoogleAppsAlertcenterV1beta1Settings
+    , GoogleAppsAlertcenterV1beta1Settings
+    , googleAppsAlertcenterV1beta1Settings
+    , gaavsNotifications
+
+    -- ** GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+    , GoogleAppsAlertcenterV1beta1UndeleteAlertRequest
+    , googleAppsAlertcenterV1beta1UndeleteAlertRequest
+    , gaavuarCustomerId
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoMatchInfo
+    , gaatrvimiPredefinedDetector
+    , gaatrvimiUserDefinedDetector
 
     -- ** Xgafv
     , Xgafv (..)
 
-    -- ** DomainWideTakeoutInitiated
-    , DomainWideTakeoutInitiated
-    , domainWideTakeoutInitiated
-    , dwtiEmail
-    , dwtiTakeoutRequestId
+    -- ** GoogleAppsAlertcenterV1beta1SettingsNotification
+    , GoogleAppsAlertcenterV1beta1SettingsNotification
+    , googleAppsAlertcenterV1beta1SettingsNotification
+    , gaavsnCloudPubsubTopic
 
-    -- ** DomainId
-    , DomainId
-    , domainId
-    , diCustomerPrimaryDomain
+    -- ** GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+    , GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+    , googleAppsAlertcenterV1beta1BatchUndeleteAlertsResponse
+    , gaavbuarSuccessAlertIds
+    , gaavbuarFailedAlertStatus
 
-    -- ** DeviceCompromisedSecurityDetail
-    , DeviceCompromisedSecurityDetail
-    , deviceCompromisedSecurityDetail
-    , dcsdResourceId
-    , dcsdDeviceCompromisedState
-    , dcsdIosVendorId
-    , dcsdDeviceModel
-    , dcsdDeviceId
-    , dcsdDeviceType
-    , dcsdSerialNumber
+    -- ** GoogleAppsAlertcenterV1beta1AlertFeedback
+    , GoogleAppsAlertcenterV1beta1AlertFeedback
+    , googleAppsAlertcenterV1beta1AlertFeedback
+    , gaavafFeedbackId
+    , gaavafEmail
+    , gaavafAlertId
+    , gaavafCustomerId
+    , gaavafType
+    , gaavafCreateTime
 
-    -- ** CloudPubsubTopic
-    , CloudPubsubTopic
-    , cloudPubsubTopic
-    , cptTopicName
-    , cptPayloadFormat
+    -- ** GoogleAppsAlertcenterTypePhishingSpike
+    , GoogleAppsAlertcenterTypePhishingSpike
+    , googleAppsAlertcenterTypePhishingSpike
+    , gaatpsIsInternal
+    , gaatpsDomainId
+    , gaatpsMessages
+    , gaatpsMaliciousEntity
 
-    -- ** ListAlertFeedbackResponse
-    , ListAlertFeedbackResponse
-    , listAlertFeedbackResponse
-    , lafrFeedback
+    -- ** GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+    , GoogleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+    , googleAppsAlertcenterV1beta1BatchUndeleteAlertsRequest
+    , gaavbuarAlertId
+    , gaavbuarCustomerId
 
-    -- ** LoginDetails
-    , LoginDetails
-    , loginDetails
-    , ldIPAddress
-    , ldLoginTime
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+    , GoogleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+    , googleAppsAlertcenterTypeRuleViolationInfoMatchInfoPredefinedDetectorInfo
+    , gaatrvimipdiDetectorName
 
-    -- ** MaliciousEntity
-    , MaliciousEntity
-    , maliciousEntity
-    , meFromHeader
+    -- ** GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+    , GoogleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+    , googleAppsAlertcenterV1beta1BatchDeleteAlertsRequest
+    , gaavbdarAlertId
+    , gaavbdarCustomerId
+
+    -- ** GoogleAppsAlertcenterTypeDomainId
+    , GoogleAppsAlertcenterTypeDomainId
+    , googleAppsAlertcenterTypeDomainId
+    , gaatdiCustomerPrimaryDomain
+
+    -- ** GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated
+    , GoogleAppsAlertcenterTypeDomainWideTakeoutInitiated
+    , googleAppsAlertcenterTypeDomainWideTakeoutInitiated
+    , gaatdwtiEmail
+    , gaatdwtiTakeoutRequestId
+
+    -- ** GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification
+    , GoogleAppsAlertcenterTypeAppMakerSQLSetupNotification
+    , googleAppsAlertcenterTypeAppMakerSQLSetupNotification
+    , gaatamsqlsnRequestInfo
+
+    -- ** GoogleAppsAlertcenterTypeMailPhishingSystemActionType
+    , GoogleAppsAlertcenterTypeMailPhishingSystemActionType (..)
+
+    -- ** GoogleAppsAlertcenterTypeRuleViolationInfoTriggeredActionTypesItem
+    , GoogleAppsAlertcenterTypeRuleViolationInfoTriggeredActionTypesItem (..)
+
+    -- ** GoogleAppsAlertcenterV1beta1AlertMetadata
+    , GoogleAppsAlertcenterV1beta1AlertMetadata
+    , googleAppsAlertcenterV1beta1AlertMetadata
+    , gaavamStatus
+    , gaavamEtag
+    , gaavamSeverity
+    , gaavamAlertId
+    , gaavamAssignee
+    , gaavamCustomerId
+    , gaavamUpdateTime
+
+    -- ** GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+    , GoogleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+    , googleAppsAlertcenterTypeDeviceCompromisedDeviceCompromisedSecurityDetail
+    , gaatdcdcsdResourceId
+    , gaatdcdcsdDeviceCompromisedState
+    , gaatdcdcsdIosVendorId
+    , gaatdcdcsdDeviceModel
+    , gaatdcdcsdDeviceId
+    , gaatdcdcsdDeviceType
+    , gaatdcdcsdSerialNumber
+
+    -- ** GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+    , GoogleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+    , googleAppsAlertcenterTypeSuspiciousActivitySuspiciousActivitySecurityDetail
+    , gaatsasasdDeviceProperty
+    , gaatsasasdResourceId
+    , gaatsasasdIosVendorId
+    , gaatsasasdOldValue
+    , gaatsasasdNewValue
+    , gaatsasasdDeviceModel
+    , gaatsasasdDeviceId
+    , gaatsasasdDeviceType
+    , gaatsasasdSerialNumber
+
+    -- ** GoogleAppsAlertcenterTypeGoogleOperations
+    , GoogleAppsAlertcenterTypeGoogleOperations
+    , googleAppsAlertcenterTypeGoogleOperations
+    , gaatgoAttachmentData
+    , gaatgoAffectedUserEmails
+    , gaatgoHeader
+    , gaatgoTitle
+    , gaatgoDescription
     ) where
 
 import Network.Google.Prelude
 import Network.Google.AlertCenter.Types
+import Network.Google.Resource.AlertCenter.Alerts.BatchDelete
+import Network.Google.Resource.AlertCenter.Alerts.BatchUndelete
 import Network.Google.Resource.AlertCenter.Alerts.Delete
 import Network.Google.Resource.AlertCenter.Alerts.Feedback.Create
 import Network.Google.Resource.AlertCenter.Alerts.Feedback.List
 import Network.Google.Resource.AlertCenter.Alerts.Get
+import Network.Google.Resource.AlertCenter.Alerts.GetMetadata
 import Network.Google.Resource.AlertCenter.Alerts.List
 import Network.Google.Resource.AlertCenter.Alerts.Undelete
 import Network.Google.Resource.AlertCenter.GetSettings
@@ -291,12 +451,15 @@ import Network.Google.Resource.AlertCenter.UpdateSettings
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the G Suite Alert Center API service.
+-- | Represents the entirety of the methods and resources available for the Google Workspace Alert Center API service.
 type AlertCenterAPI =
      UpdateSettingsResource :<|> GetSettingsResource :<|>
        AlertsFeedbackListResource
        :<|> AlertsFeedbackCreateResource
        :<|> AlertsListResource
        :<|> AlertsUndeleteResource
+       :<|> AlertsGetMetadataResource
        :<|> AlertsGetResource
+       :<|> AlertsBatchDeleteResource
+       :<|> AlertsBatchUndeleteResource
        :<|> AlertsDeleteResource

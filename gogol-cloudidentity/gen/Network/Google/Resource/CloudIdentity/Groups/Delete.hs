@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Deletes a Group.
+-- Deletes a \`Group\`.
 --
 -- /See:/ <https://cloud.google.com/identity/ Cloud Identity API Reference> for @cloudidentity.groups.delete@.
 module Network.Google.Resource.CloudIdentity.Groups.Delete
@@ -56,7 +56,7 @@ type GroupsDeleteResource =
                  QueryParam "callback" Text :>
                    QueryParam "alt" AltJSON :> Delete '[JSON] Operation
 
--- | Deletes a Group.
+-- | Deletes a \`Group\`.
 --
 -- /See:/ 'groupsDelete' smart constructor.
 data GroupsDelete =
@@ -121,10 +121,9 @@ gdUploadType :: Lens' GroupsDelete (Maybe Text)
 gdUploadType
   = lens _gdUploadType (\ s a -> s{_gdUploadType = a})
 
--- | [Resource
+-- | Required. The [resource
 -- name](https:\/\/cloud.google.com\/apis\/design\/resource_names) of the
--- Group in the format: \`groups\/{group_id}\`, where \`group_id\` is the
--- unique ID assigned to the Group.
+-- \`Group\` to retrieve. Must be of the form \`groups\/{group_id}\`.
 gdName :: Lens' GroupsDelete Text
 gdName = lens _gdName (\ s a -> s{_gdName = a})
 
@@ -136,7 +135,8 @@ gdCallback
 instance GoogleRequest GroupsDelete where
         type Rs GroupsDelete = Operation
         type Scopes GroupsDelete =
-             '["https://www.googleapis.com/auth/cloud-identity.groups"]
+             '["https://www.googleapis.com/auth/cloud-identity.groups",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient GroupsDelete'{..}
           = go _gdName _gdXgafv _gdUploadProtocol
               _gdAccessToken

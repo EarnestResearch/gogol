@@ -66,7 +66,7 @@ type ProjectsLocationsJobsGetResource =
                      QueryParam "upload_protocol" Text :>
                        QueryParam "access_token" Text :>
                          QueryParam "uploadType" Text :>
-                           QueryParam "view" Text :>
+                           QueryParam "view" ProjectsLocationsJobsGetView :>
                              QueryParam "callback" Text :>
                                QueryParam "alt" AltJSON :> Get '[JSON] Job
 
@@ -86,7 +86,7 @@ data ProjectsLocationsJobsGet =
     , _pljgLocation :: !Text
     , _pljgAccessToken :: !(Maybe Text)
     , _pljgUploadType :: !(Maybe Text)
-    , _pljgView :: !(Maybe Text)
+    , _pljgView :: !(Maybe ProjectsLocationsJobsGetView)
     , _pljgProjectId :: !Text
     , _pljgCallback :: !(Maybe Text)
     }
@@ -169,7 +169,7 @@ pljgUploadType
       (\ s a -> s{_pljgUploadType = a})
 
 -- | The level of information requested in response.
-pljgView :: Lens' ProjectsLocationsJobsGet (Maybe Text)
+pljgView :: Lens' ProjectsLocationsJobsGet (Maybe ProjectsLocationsJobsGetView)
 pljgView = lens _pljgView (\ s a -> s{_pljgView = a})
 
 -- | The ID of the Cloud Platform project that the job belongs to.

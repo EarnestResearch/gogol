@@ -210,6 +210,9 @@ module Network.Google.DoubleClickBids.Types
     , pGroupBys
     , pType
 
+    -- * Xgafv
+    , Xgafv (..)
+
     -- * FilterPairType
     , FilterPairType (..)
 
@@ -246,7 +249,7 @@ doubleClickBidsService :: ServiceConfig
 doubleClickBidsService
   = defaultService
       (ServiceId "doubleclickbidmanager:v1")
-      "www.googleapis.com"
+      "doubleclickbidmanager.googleapis.com"
 
 -- | View and manage your reports in DoubleClick Bid Manager
 doubleClickBidManagerScope :: Proxy '["https://www.googleapis.com/auth/doubleclickbidmanager"]

@@ -110,7 +110,7 @@ projectsLocationsRegistriesUnbindDeviceFromGateway pPlrudfgParent_ pPlrudfgPaylo
     }
 
 
--- | The name of the registry. For example,
+-- | Required. The name of the registry. For example,
 -- \`projects\/example-project\/locations\/us-central1\/registries\/my-registry\`.
 plrudfgParent :: Lens' ProjectsLocationsRegistriesUnbindDeviceFromGateway Text
 plrudfgParent

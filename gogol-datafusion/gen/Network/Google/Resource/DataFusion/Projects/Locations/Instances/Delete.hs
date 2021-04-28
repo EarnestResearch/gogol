@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.instances.delete@ method which the
 -- 'ProjectsLocationsInstancesDelete' request conforms to.
 type ProjectsLocationsInstancesDeleteResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

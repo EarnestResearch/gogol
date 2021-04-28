@@ -37,6 +37,7 @@ module Network.Google.Resource.Storage.Buckets.List
     , blPrefix
     , blUserProject
     , blProjection
+    , blProvisionalUserProject
     , blPageToken
     , blMaxResults
     ) where
@@ -54,9 +55,10 @@ type BucketsListResource =
              QueryParam "prefix" Text :>
                QueryParam "userProject" Text :>
                  QueryParam "projection" BucketsListProjection :>
-                   QueryParam "pageToken" Text :>
-                     QueryParam "maxResults" (Textual Word32) :>
-                       QueryParam "alt" AltJSON :> Get '[JSON] Buckets
+                   QueryParam "provisionalUserProject" Text :>
+                     QueryParam "pageToken" Text :>
+                       QueryParam "maxResults" (Textual Word32) :>
+                         QueryParam "alt" AltJSON :> Get '[JSON] Buckets
 
 -- | Retrieves a list of buckets for a given project.
 --
@@ -67,6 +69,7 @@ data BucketsList =
     , _blPrefix :: !(Maybe Text)
     , _blUserProject :: !(Maybe Text)
     , _blProjection :: !(Maybe BucketsListProjection)
+    , _blProvisionalUserProject :: !(Maybe Text)
     , _blPageToken :: !(Maybe Text)
     , _blMaxResults :: !(Textual Word32)
     }
@@ -85,6 +88,8 @@ data BucketsList =
 --
 -- * 'blProjection'
 --
+-- * 'blProvisionalUserProject'
+--
 -- * 'blPageToken'
 --
 -- * 'blMaxResults'
@@ -97,6 +102,7 @@ bucketsList pBlProject_ =
     , _blPrefix = Nothing
     , _blUserProject = Nothing
     , _blProjection = Nothing
+    , _blProvisionalUserProject = Nothing
     , _blPageToken = Nothing
     , _blMaxResults = 1000
     }
@@ -122,6 +128,13 @@ blProjection :: Lens' BucketsList (Maybe BucketsListProjection)
 blProjection
   = lens _blProjection (\ s a -> s{_blProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+blProvisionalUserProject :: Lens' BucketsList (Maybe Text)
+blProvisionalUserProject
+  = lens _blProvisionalUserProject
+      (\ s a -> s{_blProvisionalUserProject = a})
+
 -- | A previously-returned page token representing part of the larger set of
 -- results to view.
 blPageToken :: Lens' BucketsList (Maybe Text)
@@ -146,6 +159,7 @@ instance GoogleRequest BucketsList where
         requestClient BucketsList'{..}
           = go (Just _blProject) _blPrefix _blUserProject
               _blProjection
+              _blProvisionalUserProject
               _blPageToken
               (Just _blMaxResults)
               (Just AltJSON)

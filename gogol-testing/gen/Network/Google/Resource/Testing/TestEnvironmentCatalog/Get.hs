@@ -53,7 +53,9 @@ import Network.Google.Testing.Types
 type TestEnvironmentCatalogGetResource =
      "v1" :>
        "testEnvironmentCatalog" :>
-         Capture "environmentType" Text :>
+         Capture "environmentType"
+           TestEnvironmentCatalogGetEnvironmentType
+           :>
            QueryParam "$.xgafv" Xgafv :>
              QueryParam "upload_protocol" Text :>
                QueryParam "access_token" Text :>
@@ -75,7 +77,7 @@ data TestEnvironmentCatalogGet =
     , _tecgUploadProtocol :: !(Maybe Text)
     , _tecgAccessToken :: !(Maybe Text)
     , _tecgUploadType :: !(Maybe Text)
-    , _tecgEnvironmentType :: !Text
+    , _tecgEnvironmentType :: !TestEnvironmentCatalogGetEnvironmentType
     , _tecgProjectId :: !(Maybe Text)
     , _tecgCallback :: !(Maybe Text)
     }
@@ -100,7 +102,7 @@ data TestEnvironmentCatalogGet =
 --
 -- * 'tecgCallback'
 testEnvironmentCatalogGet
-    :: Text -- ^ 'tecgEnvironmentType'
+    :: TestEnvironmentCatalogGetEnvironmentType -- ^ 'tecgEnvironmentType'
     -> TestEnvironmentCatalogGet
 testEnvironmentCatalogGet pTecgEnvironmentType_ =
   TestEnvironmentCatalogGet'
@@ -138,7 +140,7 @@ tecgUploadType
       (\ s a -> s{_tecgUploadType = a})
 
 -- | Required. The type of environment that should be listed.
-tecgEnvironmentType :: Lens' TestEnvironmentCatalogGet Text
+tecgEnvironmentType :: Lens' TestEnvironmentCatalogGet TestEnvironmentCatalogGetEnvironmentType
 tecgEnvironmentType
   = lens _tecgEnvironmentType
       (\ s a -> s{_tecgEnvironmentType = a})

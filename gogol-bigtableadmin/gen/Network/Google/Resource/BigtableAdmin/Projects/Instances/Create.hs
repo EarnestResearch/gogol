@@ -109,8 +109,8 @@ projectsInstancesCreate pPicParent_ pPicPayload_ =
     }
 
 
--- | The unique name of the project in which to create the new instance.
--- Values are of the form \`projects\/\`.
+-- | Required. The unique name of the project in which to create the new
+-- instance. Values are of the form \`projects\/{project}\`.
 picParent :: Lens' ProjectsInstancesCreate Text
 picParent
   = lens _picParent (\ s a -> s{_picParent = a})

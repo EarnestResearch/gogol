@@ -129,7 +129,7 @@ ptpUploadProtocol
   = lens _ptpUploadProtocol
       (\ s a -> s{_ptpUploadProtocol = a})
 
--- | ID of the \`BuildTrigger\` to update.
+-- | Required. ID of the \`BuildTrigger\` to update.
 ptpTriggerId :: Lens' ProjectsTriggersPatch Text
 ptpTriggerId
   = lens _ptpTriggerId (\ s a -> s{_ptpTriggerId = a})
@@ -151,7 +151,7 @@ ptpPayload :: Lens' ProjectsTriggersPatch BuildTrigger
 ptpPayload
   = lens _ptpPayload (\ s a -> s{_ptpPayload = a})
 
--- | ID of the project that owns the trigger.
+-- | Required. ID of the project that owns the trigger.
 ptpProjectId :: Lens' ProjectsTriggersPatch Text
 ptpProjectId
   = lens _ptpProjectId (\ s a -> s{_ptpProjectId = a})

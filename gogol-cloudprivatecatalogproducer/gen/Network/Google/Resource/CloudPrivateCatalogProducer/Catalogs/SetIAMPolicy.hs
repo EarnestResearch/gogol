@@ -22,7 +22,7 @@
 --
 -- Sets the IAM policy for the specified Catalog.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.setIamPolicy@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.setIamPolicy@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.SetIAMPolicy
     (
     -- * REST Resource

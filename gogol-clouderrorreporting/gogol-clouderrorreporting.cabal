@@ -1,6 +1,6 @@
 name:                  gogol-clouderrorreporting
 version:               0.5.0
-synopsis:              Google Stackdriver Error Reporting SDK.
+synopsis:              Google Error Reporting SDK.
 homepage:              https://github.com/brendanhay/gogol
 bug-reports:           https://github.com/brendanhay/gogol/issues
 license:               OtherLicense
@@ -49,5 +49,5 @@ library
         , Network.Google.CloudErrorReporting.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

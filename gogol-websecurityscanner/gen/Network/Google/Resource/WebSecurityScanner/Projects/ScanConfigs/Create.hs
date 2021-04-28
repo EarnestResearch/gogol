@@ -22,7 +22,7 @@
 --
 -- Creates a new ScanConfig.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.create@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.create@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.Create
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.WebSecurityScanner.Types
 -- | A resource alias for @websecurityscanner.projects.scanConfigs.create@ method which the
 -- 'ProjectsScanConfigsCreate' request conforms to.
 type ProjectsScanConfigsCreateResource =
-     "v1beta" :>
+     "v1" :>
        Capture "parent" Text :>
          "scanConfigs" :>
            QueryParam "$.xgafv" Xgafv :>

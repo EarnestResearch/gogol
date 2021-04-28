@@ -23,7 +23,7 @@
 -- Replace the data for the specified group. Fails if the group does not
 -- exist.
 --
--- /See:/ <https://cloud.google.com/error-reporting/ Stackdriver Error Reporting API Reference> for @clouderrorreporting.projects.groups.update@.
+-- /See:/ <https://cloud.google.com/error-reporting/ Error Reporting API Reference> for @clouderrorreporting.projects.groups.update@.
 module Network.Google.Resource.CloudErrorReporting.Projects.Groups.Update
     (
     -- * REST Resource
@@ -137,7 +137,7 @@ pguPayload
   = lens _pguPayload (\ s a -> s{_pguPayload = a})
 
 -- | The group resource name. Example:
--- 'projects\/my-project-123\/groups\/my-groupid'
+-- projects\/my-project-123\/groups\/CNSgkpnppqKCUw
 pguName :: Lens' ProjectsGroupsUpdate Text
 pguName = lens _pguName (\ s a -> s{_pguName = a})
 

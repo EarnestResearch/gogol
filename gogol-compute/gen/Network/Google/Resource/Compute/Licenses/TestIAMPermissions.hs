@@ -20,7 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Returns permissions that a caller has on the specified resource.
+-- Returns permissions that a caller has on the specified resource. Caution
+-- This resource is intended for use only by third-party partners who are
+-- creating Cloud Marketplace images.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.licenses.testIamPermissions@.
 module Network.Google.Resource.Compute.Licenses.TestIAMPermissions
@@ -56,7 +58,9 @@ type LicensesTestIAMPermissionsResource =
                        ReqBody '[JSON] TestPermissionsRequest :>
                          Post '[JSON] TestPermissionsResponse
 
--- | Returns permissions that a caller has on the specified resource.
+-- | Returns permissions that a caller has on the specified resource. Caution
+-- This resource is intended for use only by third-party partners who are
+-- creating Cloud Marketplace images.
 --
 -- /See:/ 'licensesTestIAMPermissions' smart constructor.
 data LicensesTestIAMPermissions =

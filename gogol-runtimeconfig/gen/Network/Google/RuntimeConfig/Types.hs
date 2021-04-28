@@ -82,7 +82,7 @@ runtimeConfigService
   = defaultService (ServiceId "runtimeconfig:v1")
       "runtimeconfig.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

@@ -22,7 +22,8 @@
 --
 -- Enable multiple services on a project. The operation is atomic: if
 -- enabling any service fails, then the entire batch fails, and no state
--- changes occur.
+-- changes occur. To enable a single service, use the \`EnableService\`
+-- method instead.
 --
 -- /See:/ <https://cloud.google.com/service-usage/ Service Usage API Reference> for @serviceusage.services.batchEnable@.
 module Network.Google.Resource.ServiceUsage.Services.BatchEnable
@@ -64,7 +65,8 @@ type ServicesBatchEnableResource =
 
 -- | Enable multiple services on a project. The operation is atomic: if
 -- enabling any service fails, then the entire batch fails, and no state
--- changes occur.
+-- changes occur. To enable a single service, use the \`EnableService\`
+-- method instead.
 --
 -- /See:/ 'servicesBatchEnable' smart constructor.
 data ServicesBatchEnable =
@@ -114,8 +116,8 @@ servicesBatchEnable pSbeParent_ pSbePayload_ =
 
 
 -- | Parent to enable services on. An example name would be:
--- \`projects\/123\` where \`123\` is the project number (not project ID).
--- The \`BatchEnableServices\` method currently only supports projects.
+-- \`projects\/123\` where \`123\` is the project number. The
+-- \`BatchEnableServices\` method currently only supports projects.
 sbeParent :: Lens' ServicesBatchEnable Text
 sbeParent
   = lens _sbeParent (\ s a -> s{_sbeParent = a})

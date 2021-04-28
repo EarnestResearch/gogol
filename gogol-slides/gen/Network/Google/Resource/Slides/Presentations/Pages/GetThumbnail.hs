@@ -60,8 +60,11 @@ type PresentationsPagesGetThumbnailResource =
              Capture "pageObjectId" Text :>
                "thumbnail" :>
                  QueryParam "$.xgafv" Xgafv :>
-                   QueryParam "thumbnailProperties.mimeType" Text :>
-                     QueryParam "thumbnailProperties.thumbnailSize" Text
+                   QueryParam "thumbnailProperties.mimeType"
+                     PresentationsPagesGetThumbnailThumbnailPropertiesMimeType
+                     :>
+                     QueryParam "thumbnailProperties.thumbnailSize"
+                       PresentationsPagesGetThumbnailThumbnailPropertiesThumbnailSize
                        :>
                        QueryParam "upload_protocol" Text :>
                          QueryParam "access_token" Text :>
@@ -78,8 +81,8 @@ type PresentationsPagesGetThumbnailResource =
 data PresentationsPagesGetThumbnail =
   PresentationsPagesGetThumbnail'
     { _ppgtXgafv :: !(Maybe Xgafv)
-    , _ppgtThumbnailPropertiesMimeType :: !(Maybe Text)
-    , _ppgtThumbnailPropertiesThumbnailSize :: !(Maybe Text)
+    , _ppgtThumbnailPropertiesMimeType :: !(Maybe PresentationsPagesGetThumbnailThumbnailPropertiesMimeType)
+    , _ppgtThumbnailPropertiesThumbnailSize :: !(Maybe PresentationsPagesGetThumbnailThumbnailPropertiesThumbnailSize)
     , _ppgtUploadProtocol :: !(Maybe Text)
     , _ppgtAccessToken :: !(Maybe Text)
     , _ppgtPageObjectId :: !Text
@@ -135,15 +138,15 @@ ppgtXgafv
   = lens _ppgtXgafv (\ s a -> s{_ppgtXgafv = a})
 
 -- | The optional mime type of the thumbnail image. If you don\'t specify the
--- mime type, the default mime type will be PNG.
-ppgtThumbnailPropertiesMimeType :: Lens' PresentationsPagesGetThumbnail (Maybe Text)
+-- mime type, the mime type defaults to PNG.
+ppgtThumbnailPropertiesMimeType :: Lens' PresentationsPagesGetThumbnail (Maybe PresentationsPagesGetThumbnailThumbnailPropertiesMimeType)
 ppgtThumbnailPropertiesMimeType
   = lens _ppgtThumbnailPropertiesMimeType
       (\ s a -> s{_ppgtThumbnailPropertiesMimeType = a})
 
 -- | The optional thumbnail image size. If you don\'t specify the size, the
 -- server chooses a default size of the image.
-ppgtThumbnailPropertiesThumbnailSize :: Lens' PresentationsPagesGetThumbnail (Maybe Text)
+ppgtThumbnailPropertiesThumbnailSize :: Lens' PresentationsPagesGetThumbnail (Maybe PresentationsPagesGetThumbnailThumbnailPropertiesThumbnailSize)
 ppgtThumbnailPropertiesThumbnailSize
   = lens _ppgtThumbnailPropertiesThumbnailSize
       (\ s a ->

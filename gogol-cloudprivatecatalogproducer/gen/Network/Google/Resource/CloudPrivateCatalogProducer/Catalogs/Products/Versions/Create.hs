@@ -22,7 +22,7 @@
 --
 -- Creates a Version instance under a given Product.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.create@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.products.versions.create@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Products.Versions.Create
     (
     -- * REST Resource

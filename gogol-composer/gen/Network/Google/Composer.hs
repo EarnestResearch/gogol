@@ -82,13 +82,28 @@ module Network.Google.Composer
     , lerNextPageToken
     , lerEnvironments
 
+    -- ** WebServerConfig
+    , WebServerConfig
+    , webServerConfig
+    , wscMachineType
+
+    -- ** DatabaseConfig
+    , DatabaseConfig
+    , databaseConfig
+    , dcMachineType
+
     -- ** EnvironmentConfig
     , EnvironmentConfig
     , environmentConfig
+    , ecDatabaseConfig
+    , ecWebServerConfig
     , ecNodeConfig
     , ecNodeCount
+    , ecPrivateEnvironmentConfig
+    , ecEncryptionConfig
     , ecSoftwareConfig
     , ecDagGcsPrefix
+    , ecWebServerNetworkAccessControl
     , ecGkeCluster
     , ecAirflowURI
 
@@ -105,6 +120,7 @@ module Network.Google.Composer
     , ncLocation
     , ncNetwork
     , ncOAuthScopes
+    , ncIPAllocationPolicy
     , ncServiceAccount
     , ncSubnetwork
     , ncMachineType
@@ -134,6 +150,9 @@ module Network.Google.Composer
     -- ** ImageVersion
     , ImageVersion
     , imageVersion
+    , ivUpgradeDisabled
+    , ivCreationDisabled
+    , ivReleaseDate
     , ivImageVersionId
     , ivSupportedPythonVersions
     , ivIsDefault
@@ -159,6 +178,28 @@ module Network.Google.Composer
     , statusDetailsItem
     , sdiAddtional
 
+    -- ** AllowedIPRange
+    , AllowedIPRange
+    , allowedIPRange
+    , airValue
+    , airDescription
+
+    -- ** IPAllocationPolicy
+    , IPAllocationPolicy
+    , ipAllocationPolicy
+    , iapServicesSecondaryRangeName
+    , iapUseIPAliases
+    , iapClusterSecondaryRangeName
+    , iapClusterIPv4CIdRBlock
+    , iapServicesIPv4CIdRBlock
+
+    -- ** Date
+    , Date
+    , date
+    , dDay
+    , dYear
+    , dMonth
+
     -- ** SoftwareConfigPypiPackages
     , SoftwareConfigPypiPackages
     , softwareConfigPypiPackages
@@ -173,6 +214,15 @@ module Network.Google.Composer
     -- ** Xgafv
     , Xgafv (..)
 
+    -- ** PrivateEnvironmentConfig
+    , PrivateEnvironmentConfig
+    , privateEnvironmentConfig
+    , pecWebServerIPv4CIdRBlock
+    , pecCloudSQLIPv4CIdRBlock
+    , pecWebServerIPv4ReservedRange
+    , pecPrivateClusterConfig
+    , pecEnablePrivateEnvironment
+
     -- ** SoftwareConfig
     , SoftwareConfig
     , softwareConfig
@@ -181,6 +231,23 @@ module Network.Google.Composer
     , scPypiPackages
     , scAirflowConfigOverrides
     , scEnvVariables
+
+    -- ** PrivateClusterConfig
+    , PrivateClusterConfig
+    , privateClusterConfig
+    , pccEnablePrivateEndpoint
+    , pccMasterIPv4CIdRBlock
+    , pccMasterIPv4ReservedRange
+
+    -- ** EncryptionConfig
+    , EncryptionConfig
+    , encryptionConfig
+    , ecKmsKeyName
+
+    -- ** WebServerNetworkAccessControl
+    , WebServerNetworkAccessControl
+    , webServerNetworkAccessControl
+    , wsnacAllowedIPRanges
 
     -- ** EnvironmentLabels
     , EnvironmentLabels

@@ -22,7 +22,7 @@
 --
 -- Deletes a store for the given merchant.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.pos.delete@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.pos.delete@.
 module Network.Google.Resource.Content.Pos.Delete
     (
     -- * REST Resource
@@ -33,10 +33,15 @@ module Network.Google.Resource.Content.Pos.Delete
     , PosDelete
 
     -- * Request Lenses
+    , pdXgafv
     , pdMerchantId
     , pdStoreCode
+    , pdUploadProtocol
+    , pdAccessToken
+    , pdUploadType
     , pdTargetMerchantId
     , pdDryRun
+    , pdCallback
     ) where
 
 import Network.Google.Prelude
@@ -52,18 +57,28 @@ type PosDeleteResource =
              Capture "targetMerchantId" (Textual Word64) :>
                "store" :>
                  Capture "storeCode" Text :>
-                   QueryParam "dryRun" Bool :>
-                     QueryParam "alt" AltJSON :> Delete '[JSON] ()
+                   QueryParam "$.xgafv" Xgafv :>
+                     QueryParam "upload_protocol" Text :>
+                       QueryParam "access_token" Text :>
+                         QueryParam "uploadType" Text :>
+                           QueryParam "dryRun" Bool :>
+                             QueryParam "callback" Text :>
+                               QueryParam "alt" AltJSON :> Delete '[JSON] ()
 
 -- | Deletes a store for the given merchant.
 --
 -- /See:/ 'posDelete' smart constructor.
 data PosDelete =
   PosDelete'
-    { _pdMerchantId :: !(Textual Word64)
+    { _pdXgafv :: !(Maybe Xgafv)
+    , _pdMerchantId :: !(Textual Word64)
     , _pdStoreCode :: !Text
+    , _pdUploadProtocol :: !(Maybe Text)
+    , _pdAccessToken :: !(Maybe Text)
+    , _pdUploadType :: !(Maybe Text)
     , _pdTargetMerchantId :: !(Textual Word64)
     , _pdDryRun :: !(Maybe Bool)
+    , _pdCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,13 +87,23 @@ data PosDelete =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'pdXgafv'
+--
 -- * 'pdMerchantId'
 --
 -- * 'pdStoreCode'
 --
+-- * 'pdUploadProtocol'
+--
+-- * 'pdAccessToken'
+--
+-- * 'pdUploadType'
+--
 -- * 'pdTargetMerchantId'
 --
 -- * 'pdDryRun'
+--
+-- * 'pdCallback'
 posDelete
     :: Word64 -- ^ 'pdMerchantId'
     -> Text -- ^ 'pdStoreCode'
@@ -86,12 +111,21 @@ posDelete
     -> PosDelete
 posDelete pPdMerchantId_ pPdStoreCode_ pPdTargetMerchantId_ =
   PosDelete'
-    { _pdMerchantId = _Coerce # pPdMerchantId_
+    { _pdXgafv = Nothing
+    , _pdMerchantId = _Coerce # pPdMerchantId_
     , _pdStoreCode = pPdStoreCode_
+    , _pdUploadProtocol = Nothing
+    , _pdAccessToken = Nothing
+    , _pdUploadType = Nothing
     , _pdTargetMerchantId = _Coerce # pPdTargetMerchantId_
     , _pdDryRun = Nothing
+    , _pdCallback = Nothing
     }
 
+
+-- | V1 error format.
+pdXgafv :: Lens' PosDelete (Maybe Xgafv)
+pdXgafv = lens _pdXgafv (\ s a -> s{_pdXgafv = a})
 
 -- | The ID of the POS or inventory data provider.
 pdMerchantId :: Lens' PosDelete Word64
@@ -103,6 +137,23 @@ pdMerchantId
 pdStoreCode :: Lens' PosDelete Text
 pdStoreCode
   = lens _pdStoreCode (\ s a -> s{_pdStoreCode = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+pdUploadProtocol :: Lens' PosDelete (Maybe Text)
+pdUploadProtocol
+  = lens _pdUploadProtocol
+      (\ s a -> s{_pdUploadProtocol = a})
+
+-- | OAuth access token.
+pdAccessToken :: Lens' PosDelete (Maybe Text)
+pdAccessToken
+  = lens _pdAccessToken
+      (\ s a -> s{_pdAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+pdUploadType :: Lens' PosDelete (Maybe Text)
+pdUploadType
+  = lens _pdUploadType (\ s a -> s{_pdUploadType = a})
 
 -- | The ID of the target merchant.
 pdTargetMerchantId :: Lens' PosDelete Word64
@@ -117,13 +168,23 @@ pdTargetMerchantId
 pdDryRun :: Lens' PosDelete (Maybe Bool)
 pdDryRun = lens _pdDryRun (\ s a -> s{_pdDryRun = a})
 
+-- | JSONP
+pdCallback :: Lens' PosDelete (Maybe Text)
+pdCallback
+  = lens _pdCallback (\ s a -> s{_pdCallback = a})
+
 instance GoogleRequest PosDelete where
         type Rs PosDelete = ()
         type Scopes PosDelete =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosDelete'{..}
           = go _pdMerchantId _pdTargetMerchantId _pdStoreCode
+              _pdXgafv
+              _pdUploadProtocol
+              _pdAccessToken
+              _pdUploadType
               _pdDryRun
+              _pdCallback
               (Just AltJSON)
               shoppingContentService
           where go

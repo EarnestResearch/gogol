@@ -24,9 +24,11 @@
 -- access control based on the type of action, and to assist with client
 -- debugging, the client MUST first upload the Action that produced the
 -- result, along with its Command, into the \`ContentAddressableStorage\`.
--- Errors: * \`INVALID_ARGUMENT\`: One or more arguments are invalid. *
--- \`FAILED_PRECONDITION\`: One or more errors occurred in updating the
--- action result, such as a missing command or action. *
+-- Server implementations MAY modify the
+-- \`UpdateActionResultRequest.action_result\` and return an equivalent
+-- value. Errors: * \`INVALID_ARGUMENT\`: One or more arguments are
+-- invalid. * \`FAILED_PRECONDITION\`: One or more errors occurred in
+-- updating the action result, such as a missing command or action. *
 -- \`RESOURCE_EXHAUSTED\`: There is insufficient storage space to add the
 -- entry to the cache.
 --
@@ -83,9 +85,11 @@ type ActionResultsUpdateResource =
 -- access control based on the type of action, and to assist with client
 -- debugging, the client MUST first upload the Action that produced the
 -- result, along with its Command, into the \`ContentAddressableStorage\`.
--- Errors: * \`INVALID_ARGUMENT\`: One or more arguments are invalid. *
--- \`FAILED_PRECONDITION\`: One or more errors occurred in updating the
--- action result, such as a missing command or action. *
+-- Server implementations MAY modify the
+-- \`UpdateActionResultRequest.action_result\` and return an equivalent
+-- value. Errors: * \`INVALID_ARGUMENT\`: One or more arguments are
+-- invalid. * \`FAILED_PRECONDITION\`: One or more errors occurred in
+-- updating the action result, such as a missing command or action. *
 -- \`RESOURCE_EXHAUSTED\`: There is insufficient storage space to add the
 -- entry to the cache.
 --

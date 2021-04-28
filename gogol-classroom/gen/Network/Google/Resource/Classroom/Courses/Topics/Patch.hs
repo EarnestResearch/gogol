@@ -145,8 +145,8 @@ ctpUploadProtocol
 -- specified. If a field supports empty values, it can be cleared by
 -- specifying it in the update mask and not in the Topic object. If a field
 -- that does not support empty values is included in the update mask and
--- not set in the Topic object, an \`INVALID_ARGUMENT\` error will be
--- returned. The following fields may be specified: * \`name\`
+-- not set in the Topic object, an \`INVALID_ARGUMENT\` error is returned.
+-- The following fields may be specified: * \`name\`
 ctpUpdateMask :: Lens' CoursesTopicsPatch (Maybe GFieldMask)
 ctpUpdateMask
   = lens _ctpUpdateMask

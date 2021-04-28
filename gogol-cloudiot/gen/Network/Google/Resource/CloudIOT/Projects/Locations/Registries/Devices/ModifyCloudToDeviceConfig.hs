@@ -144,7 +144,7 @@ plrdmctdcPayload
   = lens _plrdmctdcPayload
       (\ s a -> s{_plrdmctdcPayload = a})
 
--- | The name of the device. For example,
+-- | Required. The name of the device. For example,
 -- \`projects\/p0\/locations\/us-central1\/registries\/registry0\/devices\/device0\`
 -- or
 -- \`projects\/p0\/locations\/us-central1\/registries\/registry0\/devices\/{num_id}\`.

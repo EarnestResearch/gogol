@@ -141,14 +141,15 @@ pzgscUploadType
       (\ s a -> s{_pzgscUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) to return operations for. This
--- field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) to
+-- return operations for. This field has been deprecated and replaced by
+-- the name field.
 pzgscZone :: Lens' ProjectsZonesGetServerConfig Text
 pzgscZone
   = lens _pzgscZone (\ s a -> s{_pzgscZone = a})
 
 -- | The name (project and location) of the server config to get, specified
--- in the format \'projects\/*\/locations\/*\'.
+-- in the format \`projects\/*\/locations\/*\`.
 pzgscName :: Lens' ProjectsZonesGetServerConfig (Maybe Text)
 pzgscName
   = lens _pzgscName (\ s a -> s{_pzgscName = a})

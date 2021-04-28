@@ -122,7 +122,7 @@ sgUploadType :: Lens' ShelvesGet (Maybe Text)
 sgUploadType
   = lens _sgUploadType (\ s a -> s{_sgUploadType = a})
 
--- | The name of the shelf to retrieve.
+-- | Required. The name of the shelf to retrieve.
 sgName :: Lens' ShelvesGet Text
 sgName = lens _sgName (\ s a -> s{_sgName = a})
 

@@ -20,8 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists the permissions testable on a resource. A permission is testable
--- if it can be tested for an identity on a resource.
+-- Lists every permission that you can test on a resource. A permission is
+-- testable if you can check whether a member has that permission on the
+-- resource.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.permissions.queryTestablePermissions@.
 module Network.Google.Resource.IAM.Permissions.QueryTestablePermissions
@@ -59,8 +60,9 @@ type PermissionsQueryTestablePermissionsResource =
                      ReqBody '[JSON] QueryTestablePermissionsRequest :>
                        Post '[JSON] QueryTestablePermissionsResponse
 
--- | Lists the permissions testable on a resource. A permission is testable
--- if it can be tested for an identity on a resource.
+-- | Lists every permission that you can test on a resource. A permission is
+-- testable if you can check whether a member has that permission on the
+-- resource.
 --
 -- /See:/ 'permissionsQueryTestablePermissions' smart constructor.
 data PermissionsQueryTestablePermissions =

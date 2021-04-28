@@ -13,9 +13,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Enables bots to fetch information and perform actions in Hangouts Chat.
+-- Enables bots to fetch information and perform actions in Google Chat.
+-- Authentication using a service account is a prerequisite for using the
+-- Google Chat REST API.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference>
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference>
 module Network.Google.Chat
     (
     -- * Service Configuration
@@ -25,6 +27,27 @@ module Network.Google.Chat
     , ChatAPI
 
     -- * Resources
+
+    -- ** chat.dms.conversations.messages
+    , module Network.Google.Resource.Chat.Dms.Conversations.Messages
+
+    -- ** chat.dms.messages
+    , module Network.Google.Resource.Chat.Dms.Messages
+
+    -- ** chat.dms.webhooks
+    , module Network.Google.Resource.Chat.Dms.Webhooks
+
+    -- ** chat.media.download
+    , module Network.Google.Resource.Chat.Media.Download
+
+    -- ** chat.rooms.conversations.messages
+    , module Network.Google.Resource.Chat.Rooms.Conversations.Messages
+
+    -- ** chat.rooms.messages
+    , module Network.Google.Resource.Chat.Rooms.Messages
+
+    -- ** chat.rooms.webhooks
+    , module Network.Google.Resource.Chat.Rooms.Webhooks
 
     -- ** chat.spaces.get
     , module Network.Google.Resource.Chat.Spaces.Get
@@ -38,6 +61,9 @@ module Network.Google.Chat
     -- ** chat.spaces.members.list
     , module Network.Google.Resource.Chat.Spaces.Members.List
 
+    -- ** chat.spaces.messages.attachments.get
+    , module Network.Google.Resource.Chat.Spaces.Messages.Attachments.Get
+
     -- ** chat.spaces.messages.create
     , module Network.Google.Resource.Chat.Spaces.Messages.Create
 
@@ -49,6 +75,9 @@ module Network.Google.Chat
 
     -- ** chat.spaces.messages.update
     , module Network.Google.Resource.Chat.Spaces.Messages.Update
+
+    -- ** chat.spaces.webhooks
+    , module Network.Google.Resource.Chat.Spaces.Webhooks
 
     -- * Types
 
@@ -64,8 +93,10 @@ module Network.Google.Chat
     , Space
     , space
     , sName
+    , sThreaded
     , sDisplayName
     , sType
+    , sSingleUserBotDm
 
     -- ** KeyValue
     , KeyValue
@@ -97,6 +128,7 @@ module Network.Google.Chat
     , Annotation
     , annotation
     , aLength
+    , aSlashCommand
     , aType
     , aUserMention
     , aStartIndex
@@ -116,6 +148,15 @@ module Network.Google.Chat
     , actionParameter
     , apValue
     , apKey
+
+    -- ** SlashCommandMetadata
+    , SlashCommandMetadata
+    , slashCommandMetadata
+    , scmBot
+    , scmCommandId
+    , scmCommandName
+    , scmType
+    , scmTriggersDialog
 
     -- ** Membership
     , Membership
@@ -148,6 +189,11 @@ module Network.Google.Chat
     -- ** MembershipState
     , MembershipState (..)
 
+    -- ** AttachmentDataRef
+    , AttachmentDataRef
+    , attachmentDataRef
+    , adrResourceName
+
     -- ** CardHeaderImageStyle
     , CardHeaderImageStyle (..)
 
@@ -171,12 +217,34 @@ module Network.Google.Chat
     , lsrNextPageToken
     , lsrSpaces
 
+    -- ** Attachment
+    , Attachment
+    , attachment
+    , aDownloadURI
+    , aAttachmentDataRef
+    , aContentName
+    , aName
+    , aThumbnailURI
+    , aSource
+    , aDriveDataRef
+    , aContentType
+
     -- ** User
     , User
     , user
+    , uIsAnonymous
     , uName
     , uDisplayName
+    , uDomainId
     , uType
+
+    -- ** Media
+    , Media
+    , media
+    , mResourceName
+
+    -- ** AttachmentSource
+    , AttachmentSource (..)
 
     -- ** SpaceType
     , SpaceType (..)
@@ -188,6 +256,14 @@ module Network.Google.Chat
 
     -- ** AnnotationType
     , AnnotationType (..)
+
+    -- ** SlashCommandMetadataType
+    , SlashCommandMetadataType (..)
+
+    -- ** SlashCommand
+    , SlashCommand
+    , slashCommand
+    , scCommandId
 
     -- ** ImageButtonIcon
     , ImageButtonIcon (..)
@@ -210,6 +286,11 @@ module Network.Google.Chat
     , arURL
     , arType
 
+    -- ** DriveDataRef
+    , DriveDataRef
+    , driveDataRef
+    , ddrDriveFileId
+
     -- ** FormAction
     , FormAction
     , formAction
@@ -229,9 +310,11 @@ module Network.Google.Chat
     , mesSpace
     , mesText
     , mesSender
+    , mesAttachment
     , mesName
     , mesPreviewText
     , mesCards
+    , mesSlashCommand
     , mesActionResponse
     , mesArgumentText
     , mesThread
@@ -283,26 +366,44 @@ module Network.Google.Chat
 
 import Network.Google.Prelude
 import Network.Google.Chat.Types
+import Network.Google.Resource.Chat.Dms.Conversations.Messages
+import Network.Google.Resource.Chat.Dms.Messages
+import Network.Google.Resource.Chat.Dms.Webhooks
+import Network.Google.Resource.Chat.Media.Download
+import Network.Google.Resource.Chat.Rooms.Conversations.Messages
+import Network.Google.Resource.Chat.Rooms.Messages
+import Network.Google.Resource.Chat.Rooms.Webhooks
 import Network.Google.Resource.Chat.Spaces.Get
 import Network.Google.Resource.Chat.Spaces.List
 import Network.Google.Resource.Chat.Spaces.Members.Get
 import Network.Google.Resource.Chat.Spaces.Members.List
+import Network.Google.Resource.Chat.Spaces.Messages.Attachments.Get
 import Network.Google.Resource.Chat.Spaces.Messages.Create
 import Network.Google.Resource.Chat.Spaces.Messages.Delete
 import Network.Google.Resource.Chat.Spaces.Messages.Get
 import Network.Google.Resource.Chat.Spaces.Messages.Update
+import Network.Google.Resource.Chat.Spaces.Webhooks
 
 {- $resources
 TODO
 -}
 
--- | Represents the entirety of the methods and resources available for the Hangouts Chat API service.
+-- | Represents the entirety of the methods and resources available for the Google Chat API service.
 type ChatAPI =
-     SpacesMembersListResource :<|>
-       SpacesMembersGetResource
+     RoomsConversationsMessagesResource :<|>
+       RoomsMessagesResource
+       :<|> RoomsWebhooksResource
+       :<|> MediaDownloadResource
+       :<|> SpacesMembersListResource
+       :<|> SpacesMembersGetResource
+       :<|> SpacesMessagesAttachmentsGetResource
        :<|> SpacesMessagesGetResource
        :<|> SpacesMessagesCreateResource
        :<|> SpacesMessagesDeleteResource
        :<|> SpacesMessagesUpdateResource
        :<|> SpacesListResource
        :<|> SpacesGetResource
+       :<|> SpacesWebhooksResource
+       :<|> DmsConversationsMessagesResource
+       :<|> DmsMessagesResource
+       :<|> DmsWebhooksResource

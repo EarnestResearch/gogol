@@ -20,7 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates an instance.
+-- Creates an instance. When creating from a backup, the capacity of the
+-- new instance needs to be equal to or larger than the capacity of the
+-- backup (and also equal to or larger than the minimum capacity of the
+-- tier).
 --
 -- /See:/ <https://cloud.google.com/filestore/ Cloud Filestore API Reference> for @file.projects.locations.instances.create@.
 module Network.Google.Resource.File.Projects.Locations.Instances.Create
@@ -61,7 +64,10 @@ type ProjectsLocationsInstancesCreateResource =
                        QueryParam "alt" AltJSON :>
                          ReqBody '[JSON] Instance :> Post '[JSON] Operation
 
--- | Creates an instance.
+-- | Creates an instance. When creating from a backup, the capacity of the
+-- new instance needs to be equal to or larger than the capacity of the
+-- backup (and also equal to or larger than the minimum capacity of the
+-- tier).
 --
 -- /See:/ 'projectsLocationsInstancesCreate' smart constructor.
 data ProjectsLocationsInstancesCreate =
@@ -114,15 +120,15 @@ projectsLocationsInstancesCreate pPlicParent_ pPlicPayload_ =
     }
 
 
--- | The instance\'s project and location, in the format
+-- | Required. The instance\'s project and location, in the format
 -- projects\/{project_id}\/locations\/{location}. In Cloud Filestore,
 -- locations map to GCP zones, for example **us-west1-b**.
 plicParent :: Lens' ProjectsLocationsInstancesCreate Text
 plicParent
   = lens _plicParent (\ s a -> s{_plicParent = a})
 
--- | The name of the instance to create. The name must be unique for the
--- specified project and location.
+-- | Required. The name of the instance to create. The name must be unique
+-- for the specified project and location.
 plicInstanceId :: Lens' ProjectsLocationsInstancesCreate (Maybe Text)
 plicInstanceId
   = lens _plicInstanceId

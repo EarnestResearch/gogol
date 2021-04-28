@@ -21,9 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Creates a BackendService resource in the specified project using the
--- data included in the request. There are several restrictions and
--- guidelines to keep in mind when creating a backend service. Read
--- Restrictions and Guidelines for more information.
+-- data included in the request. For more information, see Backend services
+-- overview.
 --
 -- /See:/ <https://developers.google.com/compute/docs/reference/latest/ Compute Engine API Reference> for @compute.backendServices.insert@.
 module Network.Google.Resource.Compute.BackendServices.Insert
@@ -59,9 +58,8 @@ type BackendServicesInsertResource =
                        Post '[JSON] Operation
 
 -- | Creates a BackendService resource in the specified project using the
--- data included in the request. There are several restrictions and
--- guidelines to keep in mind when creating a backend service. Read
--- Restrictions and Guidelines for more information.
+-- data included in the request. For more information, see Backend services
+-- overview.
 --
 -- /See:/ 'backendServicesInsert' smart constructor.
 data BackendServicesInsert =

@@ -160,7 +160,9 @@ instance GoogleRequest
         type Rs BillingAccountsTestIAMPermissions =
              TestIAMPermissionsResponse
         type Scopes BillingAccountsTestIAMPermissions =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-billing.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient BillingAccountsTestIAMPermissions'{..}
           = go _batipResource _batipXgafv _batipUploadProtocol
               _batipAccessToken

@@ -121,7 +121,7 @@ ptdUploadProtocol
   = lens _ptdUploadProtocol
       (\ s a -> s{_ptdUploadProtocol = a})
 
--- | ID of the \`BuildTrigger\` to delete.
+-- | Required. ID of the \`BuildTrigger\` to delete.
 ptdTriggerId :: Lens' ProjectsTriggersDelete Text
 ptdTriggerId
   = lens _ptdTriggerId (\ s a -> s{_ptdTriggerId = a})
@@ -138,7 +138,7 @@ ptdUploadType
   = lens _ptdUploadType
       (\ s a -> s{_ptdUploadType = a})
 
--- | ID of the project that owns the trigger.
+-- | Required. ID of the project that owns the trigger.
 ptdProjectId :: Lens' ProjectsTriggersDelete Text
 ptdProjectId
   = lens _ptdProjectId (\ s a -> s{_ptdProjectId = a})

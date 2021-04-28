@@ -140,7 +140,7 @@ msqlUploadType
   = lens _msqlUploadType
       (\ s a -> s{_msqlUploadType = a})
 
--- | The matter id of the parent matter for which the saved queries are to be
+-- | The matter ID of the parent matter for which the saved queries are to be
 -- retrieved.
 msqlMatterId :: Lens' MattersSavedQueriesList Text
 msqlMatterId

@@ -139,8 +139,9 @@ oitpPayload :: Lens' OrganizationsInspectTemplatesPatch GooglePrivacyDlpV2Update
 oitpPayload
   = lens _oitpPayload (\ s a -> s{_oitpPayload = a})
 
--- | Resource name of organization and inspectTemplate to be updated, for
--- example \`organizations\/433245324\/inspectTemplates\/432452342\` or
+-- | Required. Resource name of organization and inspectTemplate to be
+-- updated, for example
+-- \`organizations\/433245324\/inspectTemplates\/432452342\` or
 -- projects\/project-id\/inspectTemplates\/432452342.
 oitpName :: Lens' OrganizationsInspectTemplatesPatch Text
 oitpName = lens _oitpName (\ s a -> s{_oitpName = a})

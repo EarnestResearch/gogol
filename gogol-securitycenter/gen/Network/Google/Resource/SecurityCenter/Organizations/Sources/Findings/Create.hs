@@ -23,7 +23,7 @@
 -- Creates a finding. The corresponding source must exist for finding
 -- creation to succeed.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.sources.findings.create@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.findings.create@.
 module Network.Google.Resource.SecurityCenter.Organizations.Sources.Findings.Create
     (
     -- * REST Resource
@@ -50,7 +50,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.sources.findings.create@ method which the
 -- 'OrganizationsSourcesFindingsCreate' request conforms to.
 type OrganizationsSourcesFindingsCreateResource =
-     "v1" :>
+     "v1p1beta1" :>
        Capture "parent" Text :>
          "findings" :>
            QueryParam "$.xgafv" Xgafv :>
@@ -60,7 +60,11 @@ type OrganizationsSourcesFindingsCreateResource =
                    QueryParam "findingId" Text :>
                      QueryParam "callback" Text :>
                        QueryParam "alt" AltJSON :>
-                         ReqBody '[JSON] Finding :> Post '[JSON] Finding
+                         ReqBody '[JSON]
+                           GoogleCloudSecuritycenterV1p1beta1Finding
+                           :>
+                           Post '[JSON]
+                             GoogleCloudSecuritycenterV1p1beta1Finding
 
 -- | Creates a finding. The corresponding source must exist for finding
 -- creation to succeed.
@@ -73,7 +77,7 @@ data OrganizationsSourcesFindingsCreate =
     , _osfcUploadProtocol :: !(Maybe Text)
     , _osfcAccessToken :: !(Maybe Text)
     , _osfcUploadType :: !(Maybe Text)
-    , _osfcPayload :: !Finding
+    , _osfcPayload :: !GoogleCloudSecuritycenterV1p1beta1Finding
     , _osfcFindingId :: !(Maybe Text)
     , _osfcCallback :: !(Maybe Text)
     }
@@ -101,7 +105,7 @@ data OrganizationsSourcesFindingsCreate =
 -- * 'osfcCallback'
 organizationsSourcesFindingsCreate
     :: Text -- ^ 'osfcParent'
-    -> Finding -- ^ 'osfcPayload'
+    -> GoogleCloudSecuritycenterV1p1beta1Finding -- ^ 'osfcPayload'
     -> OrganizationsSourcesFindingsCreate
 organizationsSourcesFindingsCreate pOsfcParent_ pOsfcPayload_ =
   OrganizationsSourcesFindingsCreate'
@@ -116,8 +120,8 @@ organizationsSourcesFindingsCreate pOsfcParent_ pOsfcPayload_ =
     }
 
 
--- | Resource name of the new finding\'s parent. Its format should be
--- \"organizations\/[organization_id]\/sources\/[source_id]\".
+-- | Required. Resource name of the new finding\'s parent. Its format should
+-- be \"organizations\/[organization_id]\/sources\/[source_id]\".
 osfcParent :: Lens' OrganizationsSourcesFindingsCreate Text
 osfcParent
   = lens _osfcParent (\ s a -> s{_osfcParent = a})
@@ -146,13 +150,12 @@ osfcUploadType
       (\ s a -> s{_osfcUploadType = a})
 
 -- | Multipart request metadata.
-osfcPayload :: Lens' OrganizationsSourcesFindingsCreate Finding
+osfcPayload :: Lens' OrganizationsSourcesFindingsCreate GoogleCloudSecuritycenterV1p1beta1Finding
 osfcPayload
   = lens _osfcPayload (\ s a -> s{_osfcPayload = a})
 
--- | Unique identifier provided by the client within the parent scope. It
--- must be alphanumeric and less than or equal to 32 characters and greater
--- than 0 characters in length.
+-- | Required. Unique identifier provided by the client within the parent
+-- scope.
 osfcFindingId :: Lens' OrganizationsSourcesFindingsCreate (Maybe Text)
 osfcFindingId
   = lens _osfcFindingId
@@ -166,7 +169,8 @@ osfcCallback
 instance GoogleRequest
            OrganizationsSourcesFindingsCreate
          where
-        type Rs OrganizationsSourcesFindingsCreate = Finding
+        type Rs OrganizationsSourcesFindingsCreate =
+             GoogleCloudSecuritycenterV1p1beta1Finding
         type Scopes OrganizationsSourcesFindingsCreate =
              '["https://www.googleapis.com/auth/cloud-platform"]
         requestClient OrganizationsSourcesFindingsCreate'{..}

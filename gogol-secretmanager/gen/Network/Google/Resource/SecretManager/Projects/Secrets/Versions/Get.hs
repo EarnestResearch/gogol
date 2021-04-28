@@ -21,8 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Gets metadata for a SecretVersion.
--- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the
--- \`latest\` SecretVersion.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 --
 -- /See:/ <https://cloud.google.com/secret-manager/ Secret Manager API Reference> for @secretmanager.projects.secrets.versions.get@.
 module Network.Google.Resource.SecretManager.Projects.Secrets.Versions.Get
@@ -59,8 +59,8 @@ type ProjectsSecretsVersionsGetResource =
                    QueryParam "alt" AltJSON :> Get '[JSON] SecretVersion
 
 -- | Gets metadata for a SecretVersion.
--- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the
--- \`latest\` SecretVersion.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 --
 -- /See:/ 'projectsSecretsVersionsGet' smart constructor.
 data ProjectsSecretsVersionsGet =
@@ -129,8 +129,8 @@ psvgUploadType
 
 -- | Required. The resource name of the SecretVersion in the format
 -- \`projects\/*\/secrets\/*\/versions\/*\`.
--- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the
--- \`latest\` SecretVersion.
+-- \`projects\/*\/secrets\/*\/versions\/latest\` is an alias to the most
+-- recently created SecretVersion.
 psvgName :: Lens' ProjectsSecretsVersionsGet Text
 psvgName = lens _psvgName (\ s a -> s{_psvgName = a})
 

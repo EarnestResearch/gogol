@@ -51,11 +51,11 @@ import Network.Google.StorageTransfer.Types
 type TransferJobsListResource =
      "v1" :>
        "transferJobs" :>
-         QueryParam "$.xgafv" Xgafv :>
-           QueryParam "upload_protocol" Text :>
-             QueryParam "access_token" Text :>
-               QueryParam "uploadType" Text :>
-                 QueryParam "filter" Text :>
+         QueryParam "filter" Text :>
+           QueryParam "$.xgafv" Xgafv :>
+             QueryParam "upload_protocol" Text :>
+               QueryParam "access_token" Text :>
+                 QueryParam "uploadType" Text :>
                    QueryParam "pageToken" Text :>
                      QueryParam "pageSize" (Textual Int32) :>
                        QueryParam "callback" Text :>
@@ -71,7 +71,7 @@ data TransferJobsList =
     , _tjlUploadProtocol :: !(Maybe Text)
     , _tjlAccessToken :: !(Maybe Text)
     , _tjlUploadType :: !(Maybe Text)
-    , _tjlFilter :: !(Maybe Text)
+    , _tjlFilter :: !Text
     , _tjlPageToken :: !(Maybe Text)
     , _tjlPageSize :: !(Maybe (Textual Int32))
     , _tjlCallback :: !(Maybe Text)
@@ -99,14 +99,15 @@ data TransferJobsList =
 --
 -- * 'tjlCallback'
 transferJobsList
-    :: TransferJobsList
-transferJobsList =
+    :: Text -- ^ 'tjlFilter'
+    -> TransferJobsList
+transferJobsList pTjlFilter_ =
   TransferJobsList'
     { _tjlXgafv = Nothing
     , _tjlUploadProtocol = Nothing
     , _tjlAccessToken = Nothing
     , _tjlUploadType = Nothing
-    , _tjlFilter = Nothing
+    , _tjlFilter = pTjlFilter_
     , _tjlPageToken = Nothing
     , _tjlPageSize = Nothing
     , _tjlCallback = Nothing
@@ -135,15 +136,15 @@ tjlUploadType
   = lens _tjlUploadType
       (\ s a -> s{_tjlUploadType = a})
 
--- | A list of query parameters specified as JSON text in the form of
--- {\"project_id\":\"my_project_id\",
--- \"job_names\":[\"jobid1\",\"jobid2\",...],
--- \"job_statuses\":[\"status1\",\"status2\",...]}. Since \`job_names\` and
--- \`job_statuses\` support multiple values, their values must be specified
--- with array notation. \`project_id\` is required. \`job_names\` and
--- \`job_statuses\` are optional. The valid values for \`job_statuses\` are
--- case-insensitive: \`ENABLED\`, \`DISABLED\`, and \`DELETED\`.
-tjlFilter :: Lens' TransferJobsList (Maybe Text)
+-- | Required. A list of query parameters specified as JSON text in the form
+-- of: \`{\"projectId\":\"my_project_id\",
+-- \"jobNames\":[\"jobid1\",\"jobid2\",...],
+-- \"jobStatuses\":[\"status1\",\"status2\",...]}\` Since \`jobNames\` and
+-- \`jobStatuses\` support multiple values, their values must be specified
+-- with array notation. \`projectId\` is required. \`jobNames\` and
+-- \`jobStatuses\` are optional. The valid values for \`jobStatuses\` are
+-- case-insensitive: ENABLED, DISABLED, and DELETED.
+tjlFilter :: Lens' TransferJobsList Text
 tjlFilter
   = lens _tjlFilter (\ s a -> s{_tjlFilter = a})
 
@@ -168,9 +169,9 @@ instance GoogleRequest TransferJobsList where
         type Scopes TransferJobsList =
              '["https://www.googleapis.com/auth/cloud-platform"]
         requestClient TransferJobsList'{..}
-          = go _tjlXgafv _tjlUploadProtocol _tjlAccessToken
+          = go (Just _tjlFilter) _tjlXgafv _tjlUploadProtocol
+              _tjlAccessToken
               _tjlUploadType
-              _tjlFilter
               _tjlPageToken
               _tjlPageSize
               _tjlCallback

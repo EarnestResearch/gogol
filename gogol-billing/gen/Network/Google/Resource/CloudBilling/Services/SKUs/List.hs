@@ -132,7 +132,7 @@ servicesSKUsList pSskulParent_ =
     }
 
 
--- | The name of the service. Example: \"services\/DA34-426B-A397\"
+-- | Required. The name of the service. Example: \"services\/DA34-426B-A397\"
 sskulParent :: Lens' ServicesSKUsList Text
 sskulParent
   = lens _sskulParent (\ s a -> s{_sskulParent = a})
@@ -215,7 +215,9 @@ sskulCallback
 instance GoogleRequest ServicesSKUsList where
         type Rs ServicesSKUsList = ListSKUsResponse
         type Scopes ServicesSKUsList =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+             '["https://www.googleapis.com/auth/cloud-billing",
+               "https://www.googleapis.com/auth/cloud-billing.readonly",
+               "https://www.googleapis.com/auth/cloud-platform"]
         requestClient ServicesSKUsList'{..}
           = go _sskulParent _sskulXgafv _sskulCurrencyCode
               _sskulUploadProtocol

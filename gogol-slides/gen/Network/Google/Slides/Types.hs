@@ -28,6 +28,13 @@ module Network.Google.Slides.Types
     , spreadsheetsScope
     , presentationsReadOnlyScope
 
+    -- * Autofit
+    , Autofit
+    , autofit
+    , aFontScale
+    , aLineSpacingReduction
+    , aAutofitType
+
     -- * ParagraphMarker
     , ParagraphMarker
     , paragraphMarker
@@ -400,6 +407,9 @@ module Network.Google.Slides.Types
     , dorObjectId
     , dorObjectIds
 
+    -- * PresentationsPagesGetThumbnailThumbnailPropertiesThumbnailSize
+    , PresentationsPagesGetThumbnailThumbnailPropertiesThumbnailSize (..)
+
     -- * PlaceholderType
     , PlaceholderType (..)
 
@@ -493,6 +503,9 @@ module Network.Google.Slides.Types
 
     -- * LinePropertiesDashStyle
     , LinePropertiesDashStyle (..)
+
+    -- * PresentationsPagesGetThumbnailThumbnailPropertiesMimeType
+    , PresentationsPagesGetThumbnailThumbnailPropertiesMimeType (..)
 
     -- * ImageProperties
     , ImageProperties
@@ -854,6 +867,9 @@ module Network.Google.Slides.Types
     , listNestingLevel
     , lnlAddtional
 
+    -- * AutofitAutofitType
+    , AutofitAutofitType (..)
+
     -- * Outline
     , Outline
     , outline
@@ -992,6 +1008,7 @@ module Network.Google.Slides.Types
     -- * ShapeProperties
     , ShapeProperties
     , shapeProperties
+    , spAutofit
     , spLink
     , spShadow
     , spOutline
@@ -1192,8 +1209,8 @@ driveReadOnlyScope = Proxy
 driveScope :: Proxy '["https://www.googleapis.com/auth/drive"]
 driveScope = Proxy
 
--- | View and manage Google Drive files and folders that you have opened or
--- created with this app
+-- | See, edit, create, and delete only the specific Google Drive files you
+-- use with this app
 driveFileScope :: Proxy '["https://www.googleapis.com/auth/drive.file"]
 driveFileScope = Proxy
 

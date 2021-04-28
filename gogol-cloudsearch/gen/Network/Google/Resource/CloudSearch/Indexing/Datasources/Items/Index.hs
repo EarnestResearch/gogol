@@ -22,9 +22,11 @@
 --
 -- Updates Item ACL, metadata, and content. It will insert the Item if it
 -- does not exist. This method does not support partial updates. Fields
--- with no provided values are cleared out in the Cloud Search index.
+-- with no provided values are cleared out in the Cloud Search index. This
+-- API requires an admin or service account to execute. The service account
+-- used is the one whitelisted in the corresponding data source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.index@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.index@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Index
     (
     -- * REST Resource
@@ -64,7 +66,9 @@ type IndexingDatasourcesItemsIndexResource =
 
 -- | Updates Item ACL, metadata, and content. It will insert the Item if it
 -- does not exist. This method does not support partial updates. Fields
--- with no provided values are cleared out in the Cloud Search index.
+-- with no provided values are cleared out in the Cloud Search index. This
+-- API requires an admin or service account to execute. The service account
+-- used is the one whitelisted in the corresponding data source.
 --
 -- /See:/ 'indexingDatasourcesItemsIndex' smart constructor.
 data IndexingDatasourcesItemsIndex =

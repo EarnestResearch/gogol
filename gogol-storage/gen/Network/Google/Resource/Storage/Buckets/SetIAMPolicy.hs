@@ -36,6 +36,7 @@ module Network.Google.Resource.Storage.Buckets.SetIAMPolicy
     , bsipBucket
     , bsipPayload
     , bsipUserProject
+    , bsipProvisionalUserProject
     ) where
 
 import Network.Google.Prelude
@@ -50,8 +51,9 @@ type BucketsSetIAMPolicyResource =
            Capture "bucket" Text :>
              "iam" :>
                QueryParam "userProject" Text :>
-                 QueryParam "alt" AltJSON :>
-                   ReqBody '[JSON] Policy :> Put '[JSON] Policy
+                 QueryParam "provisionalUserProject" Text :>
+                   QueryParam "alt" AltJSON :>
+                     ReqBody '[JSON] Policy :> Put '[JSON] Policy
 
 -- | Updates an IAM policy for the specified bucket.
 --
@@ -61,6 +63,7 @@ data BucketsSetIAMPolicy =
     { _bsipBucket :: !Text
     , _bsipPayload :: !Policy
     , _bsipUserProject :: !(Maybe Text)
+    , _bsipProvisionalUserProject :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -74,6 +77,8 @@ data BucketsSetIAMPolicy =
 -- * 'bsipPayload'
 --
 -- * 'bsipUserProject'
+--
+-- * 'bsipProvisionalUserProject'
 bucketsSetIAMPolicy
     :: Text -- ^ 'bsipBucket'
     -> Policy -- ^ 'bsipPayload'
@@ -83,6 +88,7 @@ bucketsSetIAMPolicy pBsipBucket_ pBsipPayload_ =
     { _bsipBucket = pBsipBucket_
     , _bsipPayload = pBsipPayload_
     , _bsipUserProject = Nothing
+    , _bsipProvisionalUserProject = Nothing
     }
 
 
@@ -103,14 +109,22 @@ bsipUserProject
   = lens _bsipUserProject
       (\ s a -> s{_bsipUserProject = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+bsipProvisionalUserProject :: Lens' BucketsSetIAMPolicy (Maybe Text)
+bsipProvisionalUserProject
+  = lens _bsipProvisionalUserProject
+      (\ s a -> s{_bsipProvisionalUserProject = a})
+
 instance GoogleRequest BucketsSetIAMPolicy where
         type Rs BucketsSetIAMPolicy = Policy
         type Scopes BucketsSetIAMPolicy =
              '["https://www.googleapis.com/auth/cloud-platform",
-               "https://www.googleapis.com/auth/devstorage.full_control",
-               "https://www.googleapis.com/auth/devstorage.read_write"]
+               "https://www.googleapis.com/auth/devstorage.full_control"]
         requestClient BucketsSetIAMPolicy'{..}
-          = go _bsipBucket _bsipUserProject (Just AltJSON)
+          = go _bsipBucket _bsipUserProject
+              _bsipProvisionalUserProject
+              (Just AltJSON)
               _bsipPayload
               storageService
           where go

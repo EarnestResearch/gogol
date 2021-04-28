@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and
+-- PERMISSION_DENIED errors.
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.regions.clusters.setIamPolicy@.
 module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.SetIAMPolicy
@@ -61,7 +62,8 @@ type ProjectsRegionsClustersSetIAMPolicyResource =
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and
+-- PERMISSION_DENIED errors.
 --
 -- /See:/ 'projectsRegionsClustersSetIAMPolicy' smart constructor.
 data ProjectsRegionsClustersSetIAMPolicy =

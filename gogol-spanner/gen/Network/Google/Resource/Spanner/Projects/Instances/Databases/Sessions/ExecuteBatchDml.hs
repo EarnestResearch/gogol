@@ -22,16 +22,12 @@
 --
 -- Executes a batch of SQL DML statements. This method allows many
 -- statements to be run with lower latency than submitting them
--- sequentially with ExecuteSql. Statements are executed in order,
--- sequentially. ExecuteBatchDmlResponse will contain a ResultSet for each
--- DML statement that has successfully executed. If a statement fails, its
--- error status will be returned as part of the ExecuteBatchDmlResponse.
--- Execution will stop at the first failed statement; the remaining
--- statements will not run. ExecuteBatchDml is expected to return an OK
--- status with a response even if there was an error while processing one
--- of the DML statements. Clients must inspect response.status to determine
--- if there were any errors while processing the request. See more details
--- in ExecuteBatchDmlRequest and ExecuteBatchDmlResponse.
+-- sequentially with ExecuteSql. Statements are executed in sequential
+-- order. A request can succeed even if a statement fails. The
+-- ExecuteBatchDmlResponse.status field in the response provides
+-- information about the statement that failed. Clients must inspect this
+-- field to determine whether an error occurred. Execution stops after the
+-- first failed statement; the remaining statements are not executed.
 --
 -- /See:/ <https://cloud.google.com/spanner/ Cloud Spanner API Reference> for @spanner.projects.instances.databases.sessions.executeBatchDml@.
 module Network.Google.Resource.Spanner.Projects.Instances.Databases.Sessions.ExecuteBatchDml
@@ -73,16 +69,12 @@ type ProjectsInstancesDatabasesSessionsExecuteBatchDmlResource
 
 -- | Executes a batch of SQL DML statements. This method allows many
 -- statements to be run with lower latency than submitting them
--- sequentially with ExecuteSql. Statements are executed in order,
--- sequentially. ExecuteBatchDmlResponse will contain a ResultSet for each
--- DML statement that has successfully executed. If a statement fails, its
--- error status will be returned as part of the ExecuteBatchDmlResponse.
--- Execution will stop at the first failed statement; the remaining
--- statements will not run. ExecuteBatchDml is expected to return an OK
--- status with a response even if there was an error while processing one
--- of the DML statements. Clients must inspect response.status to determine
--- if there were any errors while processing the request. See more details
--- in ExecuteBatchDmlRequest and ExecuteBatchDmlResponse.
+-- sequentially with ExecuteSql. Statements are executed in sequential
+-- order. A request can succeed even if a statement fails. The
+-- ExecuteBatchDmlResponse.status field in the response provides
+-- information about the statement that failed. Clients must inspect this
+-- field to determine whether an error occurred. Execution stops after the
+-- first failed statement; the remaining statements are not executed.
 --
 -- /See:/ 'projectsInstancesDatabasesSessionsExecuteBatchDml' smart constructor.
 data ProjectsInstancesDatabasesSessionsExecuteBatchDml =

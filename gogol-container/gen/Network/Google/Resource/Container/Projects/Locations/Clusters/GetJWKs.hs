@@ -107,7 +107,7 @@ projectsLocationsClustersGetJWKs pPlcgjParent_ =
 
 
 -- | The cluster (project, location, cluster id) to get keys for. Specified
--- in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcgjParent :: Lens' ProjectsLocationsClustersGetJWKs Text
 plcgjParent
   = lens _plcgjParent (\ s a -> s{_plcgjParent = a})
@@ -146,8 +146,7 @@ instance GoogleRequest
          where
         type Rs ProjectsLocationsClustersGetJWKs =
              GetJSONWebKeysResponse
-        type Scopes ProjectsLocationsClustersGetJWKs =
-             '["https://www.googleapis.com/auth/cloud-platform"]
+        type Scopes ProjectsLocationsClustersGetJWKs = '[]
         requestClient ProjectsLocationsClustersGetJWKs'{..}
           = go _plcgjParent _plcgjXgafv _plcgjUploadProtocol
               _plcgjAccessToken

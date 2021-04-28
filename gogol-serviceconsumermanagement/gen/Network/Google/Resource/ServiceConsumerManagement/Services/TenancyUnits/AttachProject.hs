@@ -154,7 +154,8 @@ stuapPayload :: Lens' ServicesTenancyUnitsAttachProject AttachTenantProjectReque
 stuapPayload
   = lens _stuapPayload (\ s a -> s{_stuapPayload = a})
 
--- | Name of the tenancy unit that the project will be attached to. Such as
+-- | Required. Name of the tenancy unit that the project will be attached to.
+-- Such as
 -- \'services\/service.googleapis.com\/projects\/12345\/tenancyUnits\/abcd\'.
 stuapName :: Lens' ServicesTenancyUnitsAttachProject Text
 stuapName

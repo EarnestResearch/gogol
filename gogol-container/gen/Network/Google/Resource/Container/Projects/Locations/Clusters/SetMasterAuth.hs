@@ -142,7 +142,7 @@ plcsmaPayload
       (\ s a -> s{_plcsmaPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to set auth.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcsmaName :: Lens' ProjectsLocationsClustersSetMasterAuth Text
 plcsmaName
   = lens _plcsmaName (\ s a -> s{_plcsmaName = a})

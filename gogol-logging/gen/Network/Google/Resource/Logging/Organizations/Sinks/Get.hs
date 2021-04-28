@@ -22,7 +22,7 @@
 --
 -- Gets a sink.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.organizations.sinks.get@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.organizations.sinks.get@.
 module Network.Google.Resource.Logging.Organizations.Sinks.Get
     (
     -- * REST Resource

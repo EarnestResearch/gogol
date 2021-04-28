@@ -73,6 +73,13 @@ module Network.Google.ServiceConsumerManagement
 
     -- * Types
 
+    -- ** JwtLocation
+    , JwtLocation
+    , jwtLocation
+    , jlValuePrefix
+    , jlHeader
+    , jlQuery
+
     -- ** MetricDescriptorValueType
     , MetricDescriptorValueType (..)
 
@@ -91,6 +98,7 @@ module Network.Google.ServiceConsumerManagement
     , mrdLabels
     , mrdType
     , mrdDescription
+    , mrdLaunchStage
 
     -- ** BackendRulePathTranslation
     , BackendRulePathTranslation (..)
@@ -113,6 +121,14 @@ module Network.Google.ServiceConsumerManagement
     , sCode
     , sMessage
 
+    -- ** V1Beta1ServiceIdentity
+    , V1Beta1ServiceIdentity
+    , v1Beta1ServiceIdentity
+    , vbsiEmail
+    , vbsiTag
+    , vbsiUniqueId
+    , vbsiName
+
     -- ** BillingDestination
     , BillingDestination
     , billingDestination
@@ -130,6 +146,11 @@ module Network.Google.ServiceConsumerManagement
     , arProviderId
     , arAudiences
 
+    -- ** V1Beta1GenerateServiceIdentityResponse
+    , V1Beta1GenerateServiceIdentityResponse
+    , v1Beta1GenerateServiceIdentityResponse
+    , vbgsirIdentity
+
     -- ** Context
     , Context
     , context
@@ -144,6 +165,7 @@ module Network.Google.ServiceConsumerManagement
     -- ** MetricDescriptor
     , MetricDescriptor
     , metricDescriptor
+    , mdMonitoredResourceTypes
     , mdMetricKind
     , mdName
     , mdMetadata
@@ -153,6 +175,7 @@ module Network.Google.ServiceConsumerManagement
     , mdValueType
     , mdDescription
     , mdUnit
+    , mdLaunchStage
 
     -- ** ListOperationsResponse
     , ListOperationsResponse
@@ -174,6 +197,8 @@ module Network.Google.ServiceConsumerManagement
     , brSelector
     , brMinDeadline
     , brAddress
+    , brProtocol
+    , brDisableAuth
     , brOperationDeadline
     , brDeadline
     , brPathTranslation
@@ -182,6 +207,11 @@ module Network.Google.ServiceConsumerManagement
     , SourceContext
     , sourceContext
     , scFileName
+
+    -- ** V1Beta1ImportProducerQuotaPoliciesResponse
+    , V1Beta1ImportProducerQuotaPoliciesResponse
+    , v1Beta1ImportProducerQuotaPoliciesResponse
+    , vbipqprPolicies
 
     -- ** SearchTenancyUnitsResponse
     , SearchTenancyUnitsResponse
@@ -230,7 +260,6 @@ module Network.Google.ServiceConsumerManagement
     , sAPIs
     , sTypes
     , sSystemTypes
-    , sExperimental
     , sMonitoredResources
     , sBackend
     , sMonitoring
@@ -363,6 +392,7 @@ module Network.Google.ServiceConsumerManagement
     -- ** V1Beta1QuotaOverride
     , V1Beta1QuotaOverride
     , v1Beta1QuotaOverride
+    , vbqoAdminOverrideAncestor
     , vbqoMetric
     , vbqoOverrideValue
     , vbqoName
@@ -377,10 +407,10 @@ module Network.Google.ServiceConsumerManagement
     , metricRuleMetricCosts
     , mrmcAddtional
 
-    -- ** AuthorizationConfig
-    , AuthorizationConfig
-    , authorizationConfig
-    , acProvider
+    -- ** V1Beta1ProducerQuotaPolicyDimensions
+    , V1Beta1ProducerQuotaPolicyDimensions
+    , v1Beta1ProducerQuotaPolicyDimensions
+    , vbpqpdAddtional
 
     -- ** DeleteTenantProjectRequest
     , DeleteTenantProjectRequest
@@ -403,11 +433,6 @@ module Network.Google.ServiceConsumerManagement
 
     -- ** TypeSyntax
     , TypeSyntax (..)
-
-    -- ** Experimental
-    , Experimental
-    , experimental
-    , eAuthorization
 
     -- ** Backend
     , Backend
@@ -464,7 +489,25 @@ module Network.Google.ServiceConsumerManagement
     , dDocumentationRootURL
     , dRules
     , dPages
+    , dServiceRootURL
     , dOverview
+
+    -- ** V1GenerateDefaultIdentityResponse
+    , V1GenerateDefaultIdentityResponse
+    , v1GenerateDefaultIdentityResponse
+    , vgdirAttachStatus
+    , vgdirRole
+    , vgdirIdentity
+
+    -- ** V1Beta1ProducerQuotaPolicy
+    , V1Beta1ProducerQuotaPolicy
+    , v1Beta1ProducerQuotaPolicy
+    , vbpqpMetric
+    , vbpqpName
+    , vbpqpContainer
+    , vbpqpDimensions
+    , vbpqpPolicyValue
+    , vbpqpUnit
 
     -- ** Xgafv
     , Xgafv (..)
@@ -475,6 +518,14 @@ module Network.Google.ServiceConsumerManagement
     , mdmSamplePeriod
     , mdmIngestDelay
     , mdmLaunchStage
+
+    -- ** V1DefaultIdentity
+    , V1DefaultIdentity
+    , v1DefaultIdentity
+    , vdiEmail
+    , vdiTag
+    , vdiUniqueId
+    , vdiName
 
     -- ** UndeleteTenantProjectRequest
     , UndeleteTenantProjectRequest
@@ -487,12 +538,18 @@ module Network.Google.ServiceConsumerManagement
     , sprSelector
     , sprParameters
 
+    -- ** V1GenerateDefaultIdentityResponseAttachStatus
+    , V1GenerateDefaultIdentityResponseAttachStatus (..)
+
     -- ** LabelDescriptor
     , LabelDescriptor
     , labelDescriptor
     , lKey
     , lValueType
     , lDescription
+
+    -- ** MonitoredResourceDescriptorLaunchStage
+    , MonitoredResourceDescriptorLaunchStage (..)
 
     -- ** V1Beta1DisableConsumerResponse
     , V1Beta1DisableConsumerResponse
@@ -554,10 +611,8 @@ module Network.Google.ServiceConsumerManagement
     -- ** Endpoint
     , Endpoint
     , endpoint
-    , eAliases
     , eAllowCORS
     , eName
-    , eFeatures
     , eTarget
 
     -- ** OAuthRequirements
@@ -716,6 +771,9 @@ module Network.Google.ServiceConsumerManagement
     , tenantProjectConfigLabels
     , tpclAddtional
 
+    -- ** MetricDescriptorLaunchStage
+    , MetricDescriptorLaunchStage (..)
+
     -- ** V1RemoveVisibilityLabelsResponse
     , V1RemoveVisibilityLabelsResponse
     , v1RemoveVisibilityLabelsResponse
@@ -726,6 +784,7 @@ module Network.Google.ServiceConsumerManagement
     , authProvider
     , apJWKsURI
     , apAudiences
+    , apJwtLocations
     , apId
     , apAuthorizationURL
     , apIssuer

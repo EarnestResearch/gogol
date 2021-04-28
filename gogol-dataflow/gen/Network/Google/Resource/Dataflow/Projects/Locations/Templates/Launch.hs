@@ -208,8 +208,8 @@ pltlCallback :: Lens' ProjectsLocationsTemplatesLaunch (Maybe Text)
 pltlCallback
   = lens _pltlCallback (\ s a -> s{_pltlCallback = a})
 
--- | Path to dynamic template spec file on GCS. The file must be a Json
--- serialized DynamicTemplateFieSpec object.
+-- | Path to dynamic template spec file on Cloud Storage. The file must be a
+-- Json serialized DynamicTemplateFieSpec object.
 pltlDynamicTemplateGcsPath :: Lens' ProjectsLocationsTemplatesLaunch (Maybe Text)
 pltlDynamicTemplateGcsPath
   = lens _pltlDynamicTemplateGcsPath

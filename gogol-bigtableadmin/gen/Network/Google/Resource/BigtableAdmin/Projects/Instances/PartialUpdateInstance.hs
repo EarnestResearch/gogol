@@ -128,8 +128,8 @@ pipuiUploadProtocol
   = lens _pipuiUploadProtocol
       (\ s a -> s{_pipuiUploadProtocol = a})
 
--- | The subset of Instance fields which should be replaced. Must be
--- explicitly set.
+-- | Required. The subset of Instance fields which should be replaced. Must
+-- be explicitly set.
 pipuiUpdateMask :: Lens' ProjectsInstancesPartialUpdateInstance (Maybe GFieldMask)
 pipuiUpdateMask
   = lens _pipuiUpdateMask
@@ -152,8 +152,8 @@ pipuiPayload :: Lens' ProjectsInstancesPartialUpdateInstance Instance
 pipuiPayload
   = lens _pipuiPayload (\ s a -> s{_pipuiPayload = a})
 
--- | (\`OutputOnly\`) The unique name of the instance. Values are of the form
--- \`projects\/\/instances\/a-z+[a-z0-9]\`.
+-- | The unique name of the instance. Values are of the form
+-- \`projects\/{project}\/instances\/a-z+[a-z0-9]\`.
 pipuiName :: Lens' ProjectsInstancesPartialUpdateInstance Text
 pipuiName
   = lens _pipuiName (\ s a -> s{_pipuiName = a})

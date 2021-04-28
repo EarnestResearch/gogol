@@ -129,14 +129,15 @@ piapfdUploadType
   = lens _piapfdUploadType
       (\ s a -> s{_piapfdUploadType = a})
 
--- | If true, ignore safety checks when deleting the app profile.
+-- | Required. If true, ignore safety checks when deleting the app profile.
 piapfdIgnoreWarnings :: Lens' ProjectsInstancesAppProFilesDelete (Maybe Bool)
 piapfdIgnoreWarnings
   = lens _piapfdIgnoreWarnings
       (\ s a -> s{_piapfdIgnoreWarnings = a})
 
--- | The unique name of the app profile to be deleted. Values are of the form
--- \`projects\/\/instances\/\/appProfiles\/\`.
+-- | Required. The unique name of the app profile to be deleted. Values are
+-- of the form
+-- \`projects\/{project}\/instances\/{instance}\/appProfiles\/{app_profile}\`.
 piapfdName :: Lens' ProjectsInstancesAppProFilesDelete Text
 piapfdName
   = lens _piapfdName (\ s a -> s{_piapfdName = a})

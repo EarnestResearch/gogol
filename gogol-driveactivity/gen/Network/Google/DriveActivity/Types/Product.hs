@@ -84,7 +84,7 @@ dRoot :: Lens' Drive (Maybe DriveItem)
 dRoot = lens _dRoot (\ s a -> s{_dRoot = a})
 
 -- | The resource name of the shared drive. The format is
--- \"COLLECTION_ID\/DRIVE_ID\". Clients should not assume a specific
+-- \`COLLECTION_ID\/DRIVE_ID\`. Clients should not assume a specific
 -- collection ID for this resource name.
 dName :: Lens' Drive (Maybe Text)
 dName = lens _dName (\ s a -> s{_dName = a})
@@ -339,7 +339,7 @@ driveReference = DriveReference' {_drName = Nothing, _drTitle = Nothing}
 
 
 -- | The resource name of the shared drive. The format is
--- \"COLLECTION_ID\/DRIVE_ID\". Clients should not assume a specific
+-- \`COLLECTION_ID\/DRIVE_ID\`. Clients should not assume a specific
 -- collection ID for this resource name.
 drName :: Lens' DriveReference (Maybe Text)
 drName = lens _drName (\ s a -> s{_drName = a})
@@ -519,19 +519,19 @@ queryDriveActivityRequest =
 
 
 -- | Return activities for this Drive folder and all children and
--- descendants. The format is \"items\/ITEM_ID\".
+-- descendants. The format is \`items\/ITEM_ID\`.
 qdarAncestorName :: Lens' QueryDriveActivityRequest (Maybe Text)
 qdarAncestorName
   = lens _qdarAncestorName
       (\ s a -> s{_qdarAncestorName = a})
 
--- | Return activities for this Drive item. The format is \"items\/ITEM_ID\".
+-- | Return activities for this Drive item. The format is \`items\/ITEM_ID\`.
 qdarItemName :: Lens' QueryDriveActivityRequest (Maybe Text)
 qdarItemName
   = lens _qdarItemName (\ s a -> s{_qdarItemName = a})
 
 -- | Details on how to consolidate related actions that make up the activity.
--- If not set, then related actions will not be consolidated.
+-- If not set, then related actions are not consolidated.
 qdarConsolidationStrategy :: Lens' QueryDriveActivityRequest (Maybe ConsolidationStrategy)
 qdarConsolidationStrategy
   = lens _qdarConsolidationStrategy
@@ -540,28 +540,32 @@ qdarConsolidationStrategy
 -- | The filtering for items returned from this query request. The format of
 -- the filter string is a sequence of expressions, joined by an optional
 -- \"AND\", where each expression is of the form \"field operator value\".
--- Supported fields: - 'time': Uses numerical operators on date values
+-- Supported fields: - \`time\`: Uses numerical operators on date values
 -- either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format.
--- Examples: - 'time > 1452409200000 AND time \<= 1492812924310' -
--- 'time >= \"2016-01-10T01:02:03-05:00\"' - 'detail.action_detail_case':
--- Uses the \"has\" operator (:) and either a singular value or a list of
+-- Examples: - \`time > 1452409200000 AND time \<= 1492812924310\` - \`time
+-- >= \"2016-01-10T01:02:03-05:00\"\` - \`detail.action_detail_case\`: Uses
+-- the \"has\" operator (:) and either a singular value or a list of
 -- allowed action types enclosed in parentheses. Examples: -
--- 'detail.action_detail_case: RENAME' -
--- 'detail.action_detail_case:(CREATE UPLOAD)' -
--- '-detail.action_detail_case:MOVE'
+-- \`detail.action_detail_case: RENAME\` -
+-- \`detail.action_detail_case:(CREATE EDIT)\` -
+-- \`-detail.action_detail_case:MOVE\`
 qdarFilter :: Lens' QueryDriveActivityRequest (Maybe Text)
 qdarFilter
   = lens _qdarFilter (\ s a -> s{_qdarFilter = a})
 
--- | The next_page_token value returned from a previous QueryDriveActivity
--- request, if any.
+-- | The token identifying which page of results to return. Set this to the
+-- next_page_token value returned from a previous query to obtain the
+-- following page of results. If not set, the first page of results will be
+-- returned.
 qdarPageToken :: Lens' QueryDriveActivityRequest (Maybe Text)
 qdarPageToken
   = lens _qdarPageToken
       (\ s a -> s{_qdarPageToken = a})
 
--- | The requested number of activity to return. If not set, a default value
--- will be used.
+-- | The miminum number of activities desired in the response; the server
+-- will attempt to return at least this quanitity. The server may also
+-- return fewer activities if it has a partial response ready before the
+-- request times out. If not set, a default value is used.
 qdarPageSize :: Lens' QueryDriveActivityRequest (Maybe Int32)
 qdarPageSize
   = lens _qdarPageSize (\ s a -> s{_qdarPageSize = a})
@@ -643,11 +647,12 @@ dirFolder :: Lens' DriveItemReference (Maybe Folder)
 dirFolder
   = lens _dirFolder (\ s a -> s{_dirFolder = a})
 
--- | The target Drive item. The format is \"items\/ITEM_ID\".
+-- | The target Drive item. The format is \`items\/ITEM_ID\`.
 dirName :: Lens' DriveItemReference (Maybe Text)
 dirName = lens _dirName (\ s a -> s{_dirName = a})
 
--- | The Drive item is a folder.
+-- | The Drive item is a folder. Includes information about the type of
+-- folder.
 dirDriveFolder :: Lens' DriveItemReference (Maybe DriveFolder)
 dirDriveFolder
   = lens _dirDriveFolder
@@ -707,7 +712,7 @@ knownUser = KnownUser' {_kuPersonName = Nothing, _kuIsCurrentUser = Nothing}
 
 
 -- | The identifier for this user that can be used with the People API to get
--- more information. The format is \"people\/ACCOUNT_ID\". See
+-- more information. The format is \`people\/ACCOUNT_ID\`. See
 -- https:\/\/developers.google.com\/people\/.
 kuPersonName :: Lens' KnownUser (Maybe Text)
 kuPersonName
@@ -811,7 +816,7 @@ copy
 copy = Copy' {_cOriginalObject = Nothing}
 
 
--- | The the original object.
+-- | The original object.
 cOriginalObject :: Lens' Copy (Maybe TargetReference)
 cOriginalObject
   = lens _cOriginalObject
@@ -1033,7 +1038,7 @@ domLegacyId :: Lens' Domain (Maybe Text)
 domLegacyId
   = lens _domLegacyId (\ s a -> s{_domLegacyId = a})
 
--- | The name of the domain, e.g. \"google.com\".
+-- | The name of the domain, e.g. \`google.com\`.
 domName :: Lens' Domain (Maybe Text)
 domName = lens _domName (\ s a -> s{_domName = a})
 
@@ -1951,7 +1956,7 @@ fcLegacyCommentId
       (\ s a -> s{_fcLegacyCommentId = a})
 
 -- | The link to the discussion thread containing this comment, for example,
--- \"https:\/\/docs.google.com\/DOCUMENT_ID\/edit?disco=THREAD_ID\".
+-- \`https:\/\/docs.google.com\/DOCUMENT_ID\/edit?disco=THREAD_ID\`.
 fcLinkToDiscussion :: Lens' FileComment (Maybe Text)
 fcLinkToDiscussion
   = lens _fcLinkToDiscussion
@@ -2069,9 +2074,10 @@ instance ToJSON NoConsolidation where
 -- | A comment with an assignment.
 --
 -- /See:/ 'assignment' smart constructor.
-newtype Assignment =
+data Assignment =
   Assignment'
-    { _aSubtype :: Maybe AssignmentSubtype
+    { _aAssignedUser :: !(Maybe User)
+    , _aSubtype :: !(Maybe AssignmentSubtype)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2080,11 +2086,19 @@ newtype Assignment =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'aAssignedUser'
+--
 -- * 'aSubtype'
 assignment
     :: Assignment
-assignment = Assignment' {_aSubtype = Nothing}
+assignment = Assignment' {_aAssignedUser = Nothing, _aSubtype = Nothing}
 
+
+-- | The user to whom the comment was assigned.
+aAssignedUser :: Lens' Assignment (Maybe User)
+aAssignedUser
+  = lens _aAssignedUser
+      (\ s a -> s{_aAssignedUser = a})
 
 -- | The sub-type of this event.
 aSubtype :: Lens' Assignment (Maybe AssignmentSubtype)
@@ -2093,11 +2107,16 @@ aSubtype = lens _aSubtype (\ s a -> s{_aSubtype = a})
 instance FromJSON Assignment where
         parseJSON
           = withObject "Assignment"
-              (\ o -> Assignment' <$> (o .:? "subtype"))
+              (\ o ->
+                 Assignment' <$>
+                   (o .:? "assignedUser") <*> (o .:? "subtype"))
 
 instance ToJSON Assignment where
         toJSON Assignment'{..}
-          = object (catMaybes [("subtype" .=) <$> _aSubtype])
+          = object
+              (catMaybes
+                 [("assignedUser" .=) <$> _aAssignedUser,
+                  ("subtype" .=) <$> _aSubtype])
 
 -- | Information about settings changes.
 --
@@ -2271,9 +2290,10 @@ pDomain = lens _pDomain (\ s a -> s{_pDomain = a})
 pUser :: Lens' Permission (Maybe User)
 pUser = lens _pUser (\ s a -> s{_pUser = a})
 
--- | Indicates the
--- </drive/web/manage-sharing#roles Google Drive permissions role>. The
--- role determines a user\'s ability to read, write, and comment on items.
+-- | Indicates the [Google Drive permissions
+-- role](https:\/\/developers.google.com\/drive\/web\/manage-sharing#roles).
+-- The role determines a user\'s ability to read, write, and comment on
+-- items.
 pRole :: Lens' Permission (Maybe PermissionRole)
 pRole = lens _pRole (\ s a -> s{_pRole = a})
 
@@ -2672,11 +2692,12 @@ diMimeType :: Lens' DriveItem (Maybe Text)
 diMimeType
   = lens _diMimeType (\ s a -> s{_diMimeType = a})
 
--- | The target Drive item. The format is \"items\/ITEM_ID\".
+-- | The target Drive item. The format is \`items\/ITEM_ID\`.
 diName :: Lens' DriveItem (Maybe Text)
 diName = lens _diName (\ s a -> s{_diName = a})
 
--- | The Drive item is a folder.
+-- | The Drive item is a folder. Includes information about the type of
+-- folder.
 diDriveFolder :: Lens' DriveItem (Maybe DriveFolder)
 diDriveFolder
   = lens _diDriveFolder

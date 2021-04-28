@@ -150,8 +150,9 @@ pzccirUploadType
       (\ s a -> s{_pzccirUploadType = a})
 
 -- | Deprecated. The name of the Google Compute Engine
--- [zone](\/compute\/docs\/zones#available) in which the cluster resides.
--- This field has been deprecated and replaced by the name field.
+-- [zone](https:\/\/cloud.google.com\/compute\/docs\/zones#available) in
+-- which the cluster resides. This field has been deprecated and replaced
+-- by the name field.
 pzccirZone :: Lens' ProjectsZonesClustersCompleteIPRotation Text
 pzccirZone
   = lens _pzccirZone (\ s a -> s{_pzccirZone = a})

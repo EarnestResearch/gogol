@@ -968,6 +968,69 @@ instance ToJSON
                   ("embeddedObjectSuggestionState" .=) <$>
                     _popssEmbeddedObjectSuggestionState])
 
+-- | Creates a Footnote segment and inserts a new FootnoteReference to it at
+-- the given location. The new Footnote segment will contain a space
+-- followed by a newline character.
+--
+-- /See:/ 'createFootNoteRequest' smart constructor.
+data CreateFootNoteRequest =
+  CreateFootNoteRequest'
+    { _cfnrLocation :: !(Maybe Location)
+    , _cfnrEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateFootNoteRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cfnrLocation'
+--
+-- * 'cfnrEndOfSegmentLocation'
+createFootNoteRequest
+    :: CreateFootNoteRequest
+createFootNoteRequest =
+  CreateFootNoteRequest'
+    {_cfnrLocation = Nothing, _cfnrEndOfSegmentLocation = Nothing}
+
+
+-- | Inserts the footnote reference at a specific index in the document. The
+-- footnote reference must be inserted inside the bounds of an existing
+-- Paragraph. For instance, it cannot be inserted at a table\'s start index
+-- (i.e. between the table and its preceding paragraph). Footnote
+-- references cannot be inserted inside an equation, header, footer or
+-- footnote. Since footnote references can only be inserted in the body,
+-- the segment ID field must be empty.
+cfnrLocation :: Lens' CreateFootNoteRequest (Maybe Location)
+cfnrLocation
+  = lens _cfnrLocation (\ s a -> s{_cfnrLocation = a})
+
+-- | Inserts the footnote reference at the end of the document body. Footnote
+-- references cannot be inserted inside a header, footer or footnote. Since
+-- footnote references can only be inserted in the body, the segment ID
+-- field must be empty.
+cfnrEndOfSegmentLocation :: Lens' CreateFootNoteRequest (Maybe EndOfSegmentLocation)
+cfnrEndOfSegmentLocation
+  = lens _cfnrEndOfSegmentLocation
+      (\ s a -> s{_cfnrEndOfSegmentLocation = a})
+
+instance FromJSON CreateFootNoteRequest where
+        parseJSON
+          = withObject "CreateFootNoteRequest"
+              (\ o ->
+                 CreateFootNoteRequest' <$>
+                   (o .:? "location") <*>
+                     (o .:? "endOfSegmentLocation"))
+
+instance ToJSON CreateFootNoteRequest where
+        toJSON CreateFootNoteRequest'{..}
+          = object
+              (catMaybes
+                 [("location" .=) <$> _cfnrLocation,
+                  ("endOfSegmentLocation" .=) <$>
+                    _cfnrEndOfSegmentLocation])
+
 -- | A mask that indicates which of the fields on the base
 -- PositionedObjectPositioning have been changed in this suggestion. For
 -- any field set to true, there is a new suggested value.
@@ -1222,6 +1285,78 @@ instance ToJSON CropProperties where
                   ("angle" .=) <$> _cpAngle,
                   ("offsetTop" .=) <$> _cpOffSetTop,
                   ("offsetLeft" .=) <$> _cpOffSetLeft])
+
+-- | Replaces an existing image with a new image. Replacing an image removes
+-- some image effects from the existing image in order to mirror the
+-- behavior of the Docs editor.
+--
+-- /See:/ 'replaceImageRequest' smart constructor.
+data ReplaceImageRequest =
+  ReplaceImageRequest'
+    { _rirImageReplaceMethod :: !(Maybe ReplaceImageRequestImageReplaceMethod)
+    , _rirImageObjectId :: !(Maybe Text)
+    , _rirURI :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ReplaceImageRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rirImageReplaceMethod'
+--
+-- * 'rirImageObjectId'
+--
+-- * 'rirURI'
+replaceImageRequest
+    :: ReplaceImageRequest
+replaceImageRequest =
+  ReplaceImageRequest'
+    { _rirImageReplaceMethod = Nothing
+    , _rirImageObjectId = Nothing
+    , _rirURI = Nothing
+    }
+
+
+-- | The replacement method.
+rirImageReplaceMethod :: Lens' ReplaceImageRequest (Maybe ReplaceImageRequestImageReplaceMethod)
+rirImageReplaceMethod
+  = lens _rirImageReplaceMethod
+      (\ s a -> s{_rirImageReplaceMethod = a})
+
+-- | The ID of the existing image that will be replaced.
+rirImageObjectId :: Lens' ReplaceImageRequest (Maybe Text)
+rirImageObjectId
+  = lens _rirImageObjectId
+      (\ s a -> s{_rirImageObjectId = a})
+
+-- | The URI of the new image. The image is fetched once at insertion time
+-- and a copy is stored for display inside the document. Images must be
+-- less than 50MB in size, cannot exceed 25 megapixels, and must be in one
+-- of PNG, JPEG, or GIF format. The provided URI can be at most 2 kB in
+-- length. The URI itself is saved with the image, and exposed via the
+-- ImageProperties.source_uri field.
+rirURI :: Lens' ReplaceImageRequest (Maybe Text)
+rirURI = lens _rirURI (\ s a -> s{_rirURI = a})
+
+instance FromJSON ReplaceImageRequest where
+        parseJSON
+          = withObject "ReplaceImageRequest"
+              (\ o ->
+                 ReplaceImageRequest' <$>
+                   (o .:? "imageReplaceMethod") <*>
+                     (o .:? "imageObjectId")
+                     <*> (o .:? "uri"))
+
+instance ToJSON ReplaceImageRequest where
+        toJSON ReplaceImageRequest'{..}
+          = object
+              (catMaybes
+                 [("imageReplaceMethod" .=) <$>
+                    _rirImageReplaceMethod,
+                  ("imageObjectId" .=) <$> _rirImageObjectId,
+                  ("uri" .=) <$> _rirURI])
 
 -- | A mask that indicates which of the fields on the base ParagraphStyle
 -- have been changed in this suggestion. For any field set to true, there
@@ -1666,6 +1801,61 @@ instance ToJSON AutoText where
                   ("textStyle" .=) <$> _atTextStyle,
                   ("type" .=) <$> _atType])
 
+-- | Creates a Header. The new header is applied to the SectionStyle at the
+-- location of the SectionBreak if specificed, otherwise it is applied to
+-- the DocumentStyle. If a header of the specified type already exists, a
+-- 400 bad request error is returned.
+--
+-- /See:/ 'createHeaderRequest' smart constructor.
+data CreateHeaderRequest =
+  CreateHeaderRequest'
+    { _chrSectionBreakLocation :: !(Maybe Location)
+    , _chrType :: !(Maybe CreateHeaderRequestType)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateHeaderRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'chrSectionBreakLocation'
+--
+-- * 'chrType'
+createHeaderRequest
+    :: CreateHeaderRequest
+createHeaderRequest =
+  CreateHeaderRequest' {_chrSectionBreakLocation = Nothing, _chrType = Nothing}
+
+
+-- | The location of the SectionBreak which begins the section this header
+-- should belong to. If \`section_break_location\' is unset or if it refers
+-- to the first section break in the document body, the header applies to
+-- the DocumentStyle
+chrSectionBreakLocation :: Lens' CreateHeaderRequest (Maybe Location)
+chrSectionBreakLocation
+  = lens _chrSectionBreakLocation
+      (\ s a -> s{_chrSectionBreakLocation = a})
+
+-- | The type of header to create.
+chrType :: Lens' CreateHeaderRequest (Maybe CreateHeaderRequestType)
+chrType = lens _chrType (\ s a -> s{_chrType = a})
+
+instance FromJSON CreateHeaderRequest where
+        parseJSON
+          = withObject "CreateHeaderRequest"
+              (\ o ->
+                 CreateHeaderRequest' <$>
+                   (o .:? "sectionBreakLocation") <*> (o .:? "type"))
+
+instance ToJSON CreateHeaderRequest where
+        toJSON CreateHeaderRequest'{..}
+          = object
+              (catMaybes
+                 [("sectionBreakLocation" .=) <$>
+                    _chrSectionBreakLocation,
+                  ("type" .=) <$> _chrType])
+
 -- | A List represents the list attributes for a group of paragraphs that all
 -- belong to the same list. A paragraph that is part of a list has a
 -- reference to the list\'s ID in its bullet.
@@ -2037,6 +2227,41 @@ instance ToJSON InsertPageBreakRequest where
                   ("endOfSegmentLocation" .=) <$>
                     _ipbrEndOfSegmentLocation])
 
+-- | The result of creating a footer.
+--
+-- /See:/ 'createFooterResponse' smart constructor.
+newtype CreateFooterResponse =
+  CreateFooterResponse'
+    { _cfrFooterId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateFooterResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cfrFooterId'
+createFooterResponse
+    :: CreateFooterResponse
+createFooterResponse = CreateFooterResponse' {_cfrFooterId = Nothing}
+
+
+-- | The ID of the created footer.
+cfrFooterId :: Lens' CreateFooterResponse (Maybe Text)
+cfrFooterId
+  = lens _cfrFooterId (\ s a -> s{_cfrFooterId = a})
+
+instance FromJSON CreateFooterResponse where
+        parseJSON
+          = withObject "CreateFooterResponse"
+              (\ o -> CreateFooterResponse' <$> (o .:? "footerId"))
+
+instance ToJSON CreateFooterResponse where
+        toJSON CreateFooterResponse'{..}
+          = object
+              (catMaybes [("footerId" .=) <$> _cfrFooterId])
+
 -- | A mask that indicates which of the fields on the base Background have
 -- been changed in this suggestion. For any field set to true, the
 -- Backgound has a new suggested value.
@@ -2224,6 +2449,122 @@ instance ToJSON Location where
               (catMaybes
                  [("index" .=) <$> _lIndex,
                   ("segmentId" .=) <$> _lSegmentId])
+
+-- | A person or email address mentioned in a document. These mentions behave
+-- as a single, immutable element containing the person\'s name or email
+-- address.
+--
+-- /See:/ 'person' smart constructor.
+data Person =
+  Person'
+    { _pSuggestedInsertionIds :: !(Maybe [Text])
+    , _pSuggestedTextStyleChanges :: !(Maybe PersonSuggestedTextStyleChanges)
+    , _pPersonProperties :: !(Maybe PersonProperties)
+    , _pSuggestedDeletionIds :: !(Maybe [Text])
+    , _pTextStyle :: !(Maybe TextStyle)
+    , _pPersonId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'Person' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pSuggestedInsertionIds'
+--
+-- * 'pSuggestedTextStyleChanges'
+--
+-- * 'pPersonProperties'
+--
+-- * 'pSuggestedDeletionIds'
+--
+-- * 'pTextStyle'
+--
+-- * 'pPersonId'
+person
+    :: Person
+person =
+  Person'
+    { _pSuggestedInsertionIds = Nothing
+    , _pSuggestedTextStyleChanges = Nothing
+    , _pPersonProperties = Nothing
+    , _pSuggestedDeletionIds = Nothing
+    , _pTextStyle = Nothing
+    , _pPersonId = Nothing
+    }
+
+
+-- | IDs for suggestions that insert this person link into the document. A
+-- Person might have multiple insertion IDs if it is a nested suggested
+-- change (a suggestion within a suggestion made by a different user, for
+-- example). If empty, then this person link isn\'t a suggested insertion.
+pSuggestedInsertionIds :: Lens' Person [Text]
+pSuggestedInsertionIds
+  = lens _pSuggestedInsertionIds
+      (\ s a -> s{_pSuggestedInsertionIds = a})
+      . _Default
+      . _Coerce
+
+-- | The suggested text style changes to this Person, keyed by suggestion ID.
+pSuggestedTextStyleChanges :: Lens' Person (Maybe PersonSuggestedTextStyleChanges)
+pSuggestedTextStyleChanges
+  = lens _pSuggestedTextStyleChanges
+      (\ s a -> s{_pSuggestedTextStyleChanges = a})
+
+-- | Output only. The properties of this Person. This field is always
+-- present.
+pPersonProperties :: Lens' Person (Maybe PersonProperties)
+pPersonProperties
+  = lens _pPersonProperties
+      (\ s a -> s{_pPersonProperties = a})
+
+-- | IDs for suggestions that remove this person link from the document. A
+-- Person might have multiple deletion IDs if, for example, multiple users
+-- suggest to delete it. If empty, then this person link isn\'t suggested
+-- for deletion.
+pSuggestedDeletionIds :: Lens' Person [Text]
+pSuggestedDeletionIds
+  = lens _pSuggestedDeletionIds
+      (\ s a -> s{_pSuggestedDeletionIds = a})
+      . _Default
+      . _Coerce
+
+-- | The text style of this Person.
+pTextStyle :: Lens' Person (Maybe TextStyle)
+pTextStyle
+  = lens _pTextStyle (\ s a -> s{_pTextStyle = a})
+
+-- | Output only. The unique ID of this link.
+pPersonId :: Lens' Person (Maybe Text)
+pPersonId
+  = lens _pPersonId (\ s a -> s{_pPersonId = a})
+
+instance FromJSON Person where
+        parseJSON
+          = withObject "Person"
+              (\ o ->
+                 Person' <$>
+                   (o .:? "suggestedInsertionIds" .!= mempty) <*>
+                     (o .:? "suggestedTextStyleChanges")
+                     <*> (o .:? "personProperties")
+                     <*> (o .:? "suggestedDeletionIds" .!= mempty)
+                     <*> (o .:? "textStyle")
+                     <*> (o .:? "personId"))
+
+instance ToJSON Person where
+        toJSON Person'{..}
+          = object
+              (catMaybes
+                 [("suggestedInsertionIds" .=) <$>
+                    _pSuggestedInsertionIds,
+                  ("suggestedTextStyleChanges" .=) <$>
+                    _pSuggestedTextStyleChanges,
+                  ("personProperties" .=) <$> _pPersonProperties,
+                  ("suggestedDeletionIds" .=) <$>
+                    _pSuggestedDeletionIds,
+                  ("textStyle" .=) <$> _pTextStyle,
+                  ("personId" .=) <$> _pPersonId])
 
 -- | A StructuralElement representing a table of contents.
 --
@@ -2507,7 +2848,7 @@ instance ToJSON DeleteTableColumnRequest where
                  [("tableCellLocation" .=) <$>
                     _dtcrTableCellLocation])
 
--- | The named ranges in the document, keyed by name.
+-- | Output only. The named ranges in the document, keyed by name.
 --
 -- /See:/ 'documentNamedRanges' smart constructor.
 newtype DocumentNamedRanges =
@@ -2581,7 +2922,7 @@ instance ToJSON EndOfSegmentLocation where
           = object
               (catMaybes [("segmentId" .=) <$> _eoslSegmentId])
 
--- | The inline objects in the document, keyed by object ID.
+-- | Output only. The inline objects in the document, keyed by object ID.
 --
 -- /See:/ 'documentInlineObjects' smart constructor.
 newtype DocumentInlineObjects =
@@ -2659,6 +3000,81 @@ instance FromJSON
 instance ToJSON ParagraphSuggestedPositionedObjectIds
          where
         toJSON = toJSON . _pspoiAddtional
+
+-- | Inserts a section break at the given location. A newline character will
+-- be inserted before the section break.
+--
+-- /See:/ 'insertSectionBreakRequest' smart constructor.
+data InsertSectionBreakRequest =
+  InsertSectionBreakRequest'
+    { _isbrLocation :: !(Maybe Location)
+    , _isbrEndOfSegmentLocation :: !(Maybe EndOfSegmentLocation)
+    , _isbrSectionType :: !(Maybe InsertSectionBreakRequestSectionType)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InsertSectionBreakRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'isbrLocation'
+--
+-- * 'isbrEndOfSegmentLocation'
+--
+-- * 'isbrSectionType'
+insertSectionBreakRequest
+    :: InsertSectionBreakRequest
+insertSectionBreakRequest =
+  InsertSectionBreakRequest'
+    { _isbrLocation = Nothing
+    , _isbrEndOfSegmentLocation = Nothing
+    , _isbrSectionType = Nothing
+    }
+
+
+-- | Inserts a newline and a section break at a specific index in the
+-- document. The section break must be inserted inside the bounds of an
+-- existing Paragraph. For instance, it cannot be inserted at a table\'s
+-- start index (i.e. between the table and its preceding paragraph).
+-- Section breaks cannot be inserted inside a table, equation, footnote,
+-- header, or footer. Since section breaks can only be inserted inside the
+-- body, the segment ID field must be empty.
+isbrLocation :: Lens' InsertSectionBreakRequest (Maybe Location)
+isbrLocation
+  = lens _isbrLocation (\ s a -> s{_isbrLocation = a})
+
+-- | Inserts a newline and a section break at the end of the document body.
+-- Section breaks cannot be inserted inside a footnote, header or footer.
+-- Because section breaks can only be inserted inside the body, the segment
+-- ID field must be empty.
+isbrEndOfSegmentLocation :: Lens' InsertSectionBreakRequest (Maybe EndOfSegmentLocation)
+isbrEndOfSegmentLocation
+  = lens _isbrEndOfSegmentLocation
+      (\ s a -> s{_isbrEndOfSegmentLocation = a})
+
+-- | The type of section to insert.
+isbrSectionType :: Lens' InsertSectionBreakRequest (Maybe InsertSectionBreakRequestSectionType)
+isbrSectionType
+  = lens _isbrSectionType
+      (\ s a -> s{_isbrSectionType = a})
+
+instance FromJSON InsertSectionBreakRequest where
+        parseJSON
+          = withObject "InsertSectionBreakRequest"
+              (\ o ->
+                 InsertSectionBreakRequest' <$>
+                   (o .:? "location") <*> (o .:? "endOfSegmentLocation")
+                     <*> (o .:? "sectionType"))
+
+instance ToJSON InsertSectionBreakRequest where
+        toJSON InsertSectionBreakRequest'{..}
+          = object
+              (catMaybes
+                 [("location" .=) <$> _isbrLocation,
+                  ("endOfSegmentLocation" .=) <$>
+                    _isbrEndOfSegmentLocation,
+                  ("sectionType" .=) <$> _isbrSectionType])
 
 -- | A reference to another portion of a document or an external URL
 -- resource.
@@ -2903,9 +3319,12 @@ instance ToJSON Dimension where
 -- /See:/ 'documentStyle' smart constructor.
 data DocumentStyle =
   DocumentStyle'
-    { _dsMarginTop :: !(Maybe Dimension)
+    { _dsUseCustomHeaderFooterMargins :: !(Maybe Bool)
+    , _dsMarginTop :: !(Maybe Dimension)
     , _dsDefaultFooterId :: !(Maybe Text)
     , _dsFirstPageHeaderId :: !(Maybe Text)
+    , _dsMarginFooter :: !(Maybe Dimension)
+    , _dsMarginHeader :: !(Maybe Dimension)
     , _dsFirstPageFooterId :: !(Maybe Text)
     , _dsDefaultHeaderId :: !(Maybe Text)
     , _dsUseEvenPageHeaderFooter :: !(Maybe Bool)
@@ -2926,11 +3345,17 @@ data DocumentStyle =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'dsUseCustomHeaderFooterMargins'
+--
 -- * 'dsMarginTop'
 --
 -- * 'dsDefaultFooterId'
 --
 -- * 'dsFirstPageHeaderId'
+--
+-- * 'dsMarginFooter'
+--
+-- * 'dsMarginHeader'
 --
 -- * 'dsFirstPageFooterId'
 --
@@ -2959,9 +3384,12 @@ documentStyle
     :: DocumentStyle
 documentStyle =
   DocumentStyle'
-    { _dsMarginTop = Nothing
+    { _dsUseCustomHeaderFooterMargins = Nothing
+    , _dsMarginTop = Nothing
     , _dsDefaultFooterId = Nothing
     , _dsFirstPageHeaderId = Nothing
+    , _dsMarginFooter = Nothing
+    , _dsMarginHeader = Nothing
     , _dsFirstPageFooterId = Nothing
     , _dsDefaultHeaderId = Nothing
     , _dsUseEvenPageHeaderFooter = Nothing
@@ -2977,12 +3405,24 @@ documentStyle =
     }
 
 
--- | The top page margin.
+-- | Indicates whether DocumentStyle margin_header, SectionStyle
+-- margin_header and DocumentStyle margin_footer, SectionStyle
+-- margin_footer are respected. When false, the default values in the Docs
+-- editor for header and footer margin are used. This property is
+-- read-only.
+dsUseCustomHeaderFooterMargins :: Lens' DocumentStyle (Maybe Bool)
+dsUseCustomHeaderFooterMargins
+  = lens _dsUseCustomHeaderFooterMargins
+      (\ s a -> s{_dsUseCustomHeaderFooterMargins = a})
+
+-- | The top page margin. Updating the top page margin on the document style
+-- clears the top page margin on all section styles.
 dsMarginTop :: Lens' DocumentStyle (Maybe Dimension)
 dsMarginTop
   = lens _dsMarginTop (\ s a -> s{_dsMarginTop = a})
 
 -- | The ID of the default footer. If not set, there is no default footer.
+-- This property is read-only.
 dsDefaultFooterId :: Lens' DocumentStyle (Maybe Text)
 dsDefaultFooterId
   = lens _dsDefaultFooterId
@@ -2992,23 +3432,38 @@ dsDefaultFooterId
 -- unique header for the first page does not exist. The value of
 -- use_first_page_header_footer determines whether to use the
 -- default_header_id or this value for the header on the first page. If not
--- set, there is no first page header.
+-- set, there is no first page header. This property is read-only.
 dsFirstPageHeaderId :: Lens' DocumentStyle (Maybe Text)
 dsFirstPageHeaderId
   = lens _dsFirstPageHeaderId
       (\ s a -> s{_dsFirstPageHeaderId = a})
 
+-- | The amount of space between the bottom of the page and the contents of
+-- the footer.
+dsMarginFooter :: Lens' DocumentStyle (Maybe Dimension)
+dsMarginFooter
+  = lens _dsMarginFooter
+      (\ s a -> s{_dsMarginFooter = a})
+
+-- | The amount of space between the top of the page and the contents of the
+-- header.
+dsMarginHeader :: Lens' DocumentStyle (Maybe Dimension)
+dsMarginHeader
+  = lens _dsMarginHeader
+      (\ s a -> s{_dsMarginHeader = a})
+
 -- | The ID of the footer used only for the first page. If not set then a
 -- unique footer for the first page does not exist. The value of
 -- use_first_page_header_footer determines whether to use the
 -- default_footer_id or this value for the footer on the first page. If not
--- set, there is no first page footer.
+-- set, there is no first page footer. This property is read-only.
 dsFirstPageFooterId :: Lens' DocumentStyle (Maybe Text)
 dsFirstPageFooterId
   = lens _dsFirstPageFooterId
       (\ s a -> s{_dsFirstPageFooterId = a})
 
 -- | The ID of the default header. If not set, there is no default header.
+-- This property is read-only.
 dsDefaultHeaderId :: Lens' DocumentStyle (Maybe Text)
 dsDefaultHeaderId
   = lens _dsDefaultHeaderId
@@ -3021,7 +3476,9 @@ dsUseEvenPageHeaderFooter
   = lens _dsUseEvenPageHeaderFooter
       (\ s a -> s{_dsUseEvenPageHeaderFooter = a})
 
--- | The left page margin.
+-- | The left page margin. Updating the left page margin on the document
+-- style clears the left page margin on all section styles. It may also
+-- cause columns to resize in all sections.
 dsMarginLeft :: Lens' DocumentStyle (Maybe Dimension)
 dsMarginLeft
   = lens _dsMarginLeft (\ s a -> s{_dsMarginLeft = a})
@@ -3043,7 +3500,7 @@ dsUseFirstPageHeaderFooter
 -- | The ID of the footer used only for even pages. The value of
 -- use_even_page_header_footer determines whether to use the
 -- default_footer_id or this value for the footer on even pages. If not
--- set, there is no even page footer.
+-- set, there is no even page footer. This property is read-only.
 dsEvenPageFooterId :: Lens' DocumentStyle (Maybe Text)
 dsEvenPageFooterId
   = lens _dsEvenPageFooterId
@@ -3054,18 +3511,22 @@ dsPageSize :: Lens' DocumentStyle (Maybe Size)
 dsPageSize
   = lens _dsPageSize (\ s a -> s{_dsPageSize = a})
 
--- | The background of the document.
+-- | The background of the document. Documents cannot have a transparent
+-- background color.
 dsBackgRound :: Lens' DocumentStyle (Maybe BackgRound)
 dsBackgRound
   = lens _dsBackgRound (\ s a -> s{_dsBackgRound = a})
 
--- | The right page margin.
+-- | The right page margin. Updating the right page margin on the document
+-- style clears the right page margin on all section styles. It may also
+-- cause columns to resize in all sections.
 dsMarginRight :: Lens' DocumentStyle (Maybe Dimension)
 dsMarginRight
   = lens _dsMarginRight
       (\ s a -> s{_dsMarginRight = a})
 
--- | The bottom page margin.
+-- | The bottom page margin. Updating the bottom page margin on the document
+-- style clears the bottom page margin on all section styles.
 dsMarginBottom :: Lens' DocumentStyle (Maybe Dimension)
 dsMarginBottom
   = lens _dsMarginBottom
@@ -3074,7 +3535,7 @@ dsMarginBottom
 -- | The ID of the header used only for even pages. The value of
 -- use_even_page_header_footer determines whether to use the
 -- default_header_id or this value for the header on even pages. If not
--- set, there is no even page header.
+-- set, there is no even page header. This property is read-only.
 dsEvenPageHeaderId :: Lens' DocumentStyle (Maybe Text)
 dsEvenPageHeaderId
   = lens _dsEvenPageHeaderId
@@ -3085,8 +3546,12 @@ instance FromJSON DocumentStyle where
           = withObject "DocumentStyle"
               (\ o ->
                  DocumentStyle' <$>
-                   (o .:? "marginTop") <*> (o .:? "defaultFooterId") <*>
-                     (o .:? "firstPageHeaderId")
+                   (o .:? "useCustomHeaderFooterMargins") <*>
+                     (o .:? "marginTop")
+                     <*> (o .:? "defaultFooterId")
+                     <*> (o .:? "firstPageHeaderId")
+                     <*> (o .:? "marginFooter")
+                     <*> (o .:? "marginHeader")
                      <*> (o .:? "firstPageFooterId")
                      <*> (o .:? "defaultHeaderId")
                      <*> (o .:? "useEvenPageHeaderFooter")
@@ -3104,9 +3569,13 @@ instance ToJSON DocumentStyle where
         toJSON DocumentStyle'{..}
           = object
               (catMaybes
-                 [("marginTop" .=) <$> _dsMarginTop,
+                 [("useCustomHeaderFooterMargins" .=) <$>
+                    _dsUseCustomHeaderFooterMargins,
+                  ("marginTop" .=) <$> _dsMarginTop,
                   ("defaultFooterId" .=) <$> _dsDefaultFooterId,
                   ("firstPageHeaderId" .=) <$> _dsFirstPageHeaderId,
+                  ("marginFooter" .=) <$> _dsMarginFooter,
+                  ("marginHeader" .=) <$> _dsMarginHeader,
                   ("firstPageFooterId" .=) <$> _dsFirstPageFooterId,
                   ("defaultHeaderId" .=) <$> _dsDefaultHeaderId,
                   ("useEvenPageHeaderFooter" .=) <$>
@@ -3159,6 +3628,116 @@ instance FromJSON Body where
 instance ToJSON Body where
         toJSON Body'{..}
           = object (catMaybes [("content" .=) <$> _bContent])
+
+-- | Updates the DocumentStyle.
+--
+-- /See:/ 'updateDocumentStyleRequest' smart constructor.
+data UpdateDocumentStyleRequest =
+  UpdateDocumentStyleRequest'
+    { _udsrDocumentStyle :: !(Maybe DocumentStyle)
+    , _udsrFields :: !(Maybe GFieldMask)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpdateDocumentStyleRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'udsrDocumentStyle'
+--
+-- * 'udsrFields'
+updateDocumentStyleRequest
+    :: UpdateDocumentStyleRequest
+updateDocumentStyleRequest =
+  UpdateDocumentStyleRequest'
+    {_udsrDocumentStyle = Nothing, _udsrFields = Nothing}
+
+
+-- | The styles to set on the document. Certain document style changes may
+-- cause other changes in order to mirror the behavior of the Docs editor.
+-- See the documentation of DocumentStyle for more information.
+udsrDocumentStyle :: Lens' UpdateDocumentStyleRequest (Maybe DocumentStyle)
+udsrDocumentStyle
+  = lens _udsrDocumentStyle
+      (\ s a -> s{_udsrDocumentStyle = a})
+
+-- | The fields that should be updated. At least one field must be specified.
+-- The root \`document_style\` is implied and should not be specified. A
+-- single \`\"*\"\` can be used as short-hand for listing every field. For
+-- example to update the background, set \`fields\` to \`\"background\"\`.
+udsrFields :: Lens' UpdateDocumentStyleRequest (Maybe GFieldMask)
+udsrFields
+  = lens _udsrFields (\ s a -> s{_udsrFields = a})
+
+instance FromJSON UpdateDocumentStyleRequest where
+        parseJSON
+          = withObject "UpdateDocumentStyleRequest"
+              (\ o ->
+                 UpdateDocumentStyleRequest' <$>
+                   (o .:? "documentStyle") <*> (o .:? "fields"))
+
+instance ToJSON UpdateDocumentStyleRequest where
+        toJSON UpdateDocumentStyleRequest'{..}
+          = object
+              (catMaybes
+                 [("documentStyle" .=) <$> _udsrDocumentStyle,
+                  ("fields" .=) <$> _udsrFields])
+
+-- | Creates a Footer. The new footer is applied to the SectionStyle at the
+-- location of the SectionBreak if specificed, otherwise it is applied to
+-- the DocumentStyle. If a footer of the specified type already exists, a
+-- 400 bad request error is returned.
+--
+-- /See:/ 'createFooterRequest' smart constructor.
+data CreateFooterRequest =
+  CreateFooterRequest'
+    { _cfrSectionBreakLocation :: !(Maybe Location)
+    , _cfrType :: !(Maybe CreateFooterRequestType)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateFooterRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cfrSectionBreakLocation'
+--
+-- * 'cfrType'
+createFooterRequest
+    :: CreateFooterRequest
+createFooterRequest =
+  CreateFooterRequest' {_cfrSectionBreakLocation = Nothing, _cfrType = Nothing}
+
+
+-- | The location of the SectionBreak immediately preceding the section whose
+-- SectionStyle this footer should belong to. If this is unset or refers to
+-- the first section break in the document, the footer applies to the
+-- document style.
+cfrSectionBreakLocation :: Lens' CreateFooterRequest (Maybe Location)
+cfrSectionBreakLocation
+  = lens _cfrSectionBreakLocation
+      (\ s a -> s{_cfrSectionBreakLocation = a})
+
+-- | The type of footer to create.
+cfrType :: Lens' CreateFooterRequest (Maybe CreateFooterRequestType)
+cfrType = lens _cfrType (\ s a -> s{_cfrType = a})
+
+instance FromJSON CreateFooterRequest where
+        parseJSON
+          = withObject "CreateFooterRequest"
+              (\ o ->
+                 CreateFooterRequest' <$>
+                   (o .:? "sectionBreakLocation") <*> (o .:? "type"))
+
+instance ToJSON CreateFooterRequest where
+        toJSON CreateFooterRequest'{..}
+          = object
+              (catMaybes
+                 [("sectionBreakLocation" .=) <$>
+                    _cfrSectionBreakLocation,
+                  ("type" .=) <$> _cfrType])
 
 -- | A mask that indicates which of the fields on the base ListProperties
 -- have been changed in this suggestion. For any field set to true, there
@@ -3247,6 +3826,126 @@ instance FromJSON ParagraphSuggestedBulletChanges
 instance ToJSON ParagraphSuggestedBulletChanges where
         toJSON = toJSON . _psbcAddtional
 
+-- | The result of creating a header.
+--
+-- /See:/ 'createHeaderResponse' smart constructor.
+newtype CreateHeaderResponse =
+  CreateHeaderResponse'
+    { _chrHeaderId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateHeaderResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'chrHeaderId'
+createHeaderResponse
+    :: CreateHeaderResponse
+createHeaderResponse = CreateHeaderResponse' {_chrHeaderId = Nothing}
+
+
+-- | The ID of the created header.
+chrHeaderId :: Lens' CreateHeaderResponse (Maybe Text)
+chrHeaderId
+  = lens _chrHeaderId (\ s a -> s{_chrHeaderId = a})
+
+instance FromJSON CreateHeaderResponse where
+        parseJSON
+          = withObject "CreateHeaderResponse"
+              (\ o -> CreateHeaderResponse' <$> (o .:? "headerId"))
+
+instance ToJSON CreateHeaderResponse where
+        toJSON CreateHeaderResponse'{..}
+          = object
+              (catMaybes [("headerId" .=) <$> _chrHeaderId])
+
+-- | Updates the TableRowStyle of rows in a table.
+--
+-- /See:/ 'updateTableRowStyleRequest' smart constructor.
+data UpdateTableRowStyleRequest =
+  UpdateTableRowStyleRequest'
+    { _utrsrRowIndices :: !(Maybe [Textual Int32])
+    , _utrsrTableStartLocation :: !(Maybe Location)
+    , _utrsrTableRowStyle :: !(Maybe TableRowStyle)
+    , _utrsrFields :: !(Maybe GFieldMask)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpdateTableRowStyleRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'utrsrRowIndices'
+--
+-- * 'utrsrTableStartLocation'
+--
+-- * 'utrsrTableRowStyle'
+--
+-- * 'utrsrFields'
+updateTableRowStyleRequest
+    :: UpdateTableRowStyleRequest
+updateTableRowStyleRequest =
+  UpdateTableRowStyleRequest'
+    { _utrsrRowIndices = Nothing
+    , _utrsrTableStartLocation = Nothing
+    , _utrsrTableRowStyle = Nothing
+    , _utrsrFields = Nothing
+    }
+
+
+-- | The list of zero-based row indices whose style should be updated. If no
+-- indices are specified, all rows will be updated.
+utrsrRowIndices :: Lens' UpdateTableRowStyleRequest [Int32]
+utrsrRowIndices
+  = lens _utrsrRowIndices
+      (\ s a -> s{_utrsrRowIndices = a})
+      . _Default
+      . _Coerce
+
+-- | The location where the table starts in the document.
+utrsrTableStartLocation :: Lens' UpdateTableRowStyleRequest (Maybe Location)
+utrsrTableStartLocation
+  = lens _utrsrTableStartLocation
+      (\ s a -> s{_utrsrTableStartLocation = a})
+
+-- | The styles to be set on the rows.
+utrsrTableRowStyle :: Lens' UpdateTableRowStyleRequest (Maybe TableRowStyle)
+utrsrTableRowStyle
+  = lens _utrsrTableRowStyle
+      (\ s a -> s{_utrsrTableRowStyle = a})
+
+-- | The fields that should be updated. At least one field must be specified.
+-- The root \`tableRowStyle\` is implied and should not be specified. A
+-- single \`\"*\"\` can be used as short-hand for listing every field. For
+-- example to update the minimum row height, set \`fields\` to
+-- \`\"min_row_height\"\`.
+utrsrFields :: Lens' UpdateTableRowStyleRequest (Maybe GFieldMask)
+utrsrFields
+  = lens _utrsrFields (\ s a -> s{_utrsrFields = a})
+
+instance FromJSON UpdateTableRowStyleRequest where
+        parseJSON
+          = withObject "UpdateTableRowStyleRequest"
+              (\ o ->
+                 UpdateTableRowStyleRequest' <$>
+                   (o .:? "rowIndices" .!= mempty) <*>
+                     (o .:? "tableStartLocation")
+                     <*> (o .:? "tableRowStyle")
+                     <*> (o .:? "fields"))
+
+instance ToJSON UpdateTableRowStyleRequest where
+        toJSON UpdateTableRowStyleRequest'{..}
+          = object
+              (catMaybes
+                 [("rowIndices" .=) <$> _utrsrRowIndices,
+                  ("tableStartLocation" .=) <$>
+                    _utrsrTableStartLocation,
+                  ("tableRowStyle" .=) <$> _utrsrTableRowStyle,
+                  ("fields" .=) <$> _utrsrFields])
+
 -- | A single response from an update.
 --
 -- /See:/ 'response' smart constructor.
@@ -3254,6 +3953,9 @@ data Response =
   Response'
     { _rReplaceAllText :: !(Maybe ReplaceAllTextResponse)
     , _rCreateNamedRange :: !(Maybe CreateNamedRangeResponse)
+    , _rCreateHeader :: !(Maybe CreateHeaderResponse)
+    , _rCreateFootNote :: !(Maybe CreateFootNoteResponse)
+    , _rCreateFooter :: !(Maybe CreateFooterResponse)
     , _rInsertInlineImage :: !(Maybe InsertInlineImageResponse)
     , _rInsertInlineSheetsChart :: !(Maybe InsertInlineSheetsChartResponse)
     }
@@ -3268,6 +3970,12 @@ data Response =
 --
 -- * 'rCreateNamedRange'
 --
+-- * 'rCreateHeader'
+--
+-- * 'rCreateFootNote'
+--
+-- * 'rCreateFooter'
+--
 -- * 'rInsertInlineImage'
 --
 -- * 'rInsertInlineSheetsChart'
@@ -3277,6 +3985,9 @@ response =
   Response'
     { _rReplaceAllText = Nothing
     , _rCreateNamedRange = Nothing
+    , _rCreateHeader = Nothing
+    , _rCreateFootNote = Nothing
+    , _rCreateFooter = Nothing
     , _rInsertInlineImage = Nothing
     , _rInsertInlineSheetsChart = Nothing
     }
@@ -3293,6 +4004,24 @@ rCreateNamedRange :: Lens' Response (Maybe CreateNamedRangeResponse)
 rCreateNamedRange
   = lens _rCreateNamedRange
       (\ s a -> s{_rCreateNamedRange = a})
+
+-- | The result of creating a header.
+rCreateHeader :: Lens' Response (Maybe CreateHeaderResponse)
+rCreateHeader
+  = lens _rCreateHeader
+      (\ s a -> s{_rCreateHeader = a})
+
+-- | The result of creating a footnote.
+rCreateFootNote :: Lens' Response (Maybe CreateFootNoteResponse)
+rCreateFootNote
+  = lens _rCreateFootNote
+      (\ s a -> s{_rCreateFootNote = a})
+
+-- | The result of creating a footer.
+rCreateFooter :: Lens' Response (Maybe CreateFooterResponse)
+rCreateFooter
+  = lens _rCreateFooter
+      (\ s a -> s{_rCreateFooter = a})
 
 -- | The result of inserting an inline image.
 rInsertInlineImage :: Lens' Response (Maybe InsertInlineImageResponse)
@@ -3313,6 +4042,9 @@ instance FromJSON Response where
                  Response' <$>
                    (o .:? "replaceAllText") <*>
                      (o .:? "createNamedRange")
+                     <*> (o .:? "createHeader")
+                     <*> (o .:? "createFootnote")
+                     <*> (o .:? "createFooter")
                      <*> (o .:? "insertInlineImage")
                      <*> (o .:? "insertInlineSheetsChart"))
 
@@ -3322,6 +4054,9 @@ instance ToJSON Response where
               (catMaybes
                  [("replaceAllText" .=) <$> _rReplaceAllText,
                   ("createNamedRange" .=) <$> _rCreateNamedRange,
+                  ("createHeader" .=) <$> _rCreateHeader,
+                  ("createFootnote" .=) <$> _rCreateFootNote,
+                  ("createFooter" .=) <$> _rCreateFooter,
                   ("insertInlineImage" .=) <$> _rInsertInlineImage,
                   ("insertInlineSheetsChart" .=) <$>
                     _rInsertInlineSheetsChart])
@@ -3570,7 +4305,7 @@ eoMarginTop :: Lens' EmbeddedObject (Maybe Dimension)
 eoMarginTop
   = lens _eoMarginTop (\ s a -> s{_eoMarginTop = a})
 
--- | The size of the embedded object.
+-- | The visible size of the image after cropping.
 eoSize :: Lens' EmbeddedObject (Maybe Size)
 eoSize = lens _eoSize (\ s a -> s{_eoSize = a})
 
@@ -3713,9 +4448,11 @@ instance ToJSON ReplaceAllTextResponse where
 -- /See:/ 'documentStyleSuggestionState' smart constructor.
 data DocumentStyleSuggestionState =
   DocumentStyleSuggestionState'
-    { _dsssFirstPageFooterIdSuggested :: !(Maybe Bool)
+    { _dsssMarginHeaderSuggested :: !(Maybe Bool)
+    , _dsssFirstPageFooterIdSuggested :: !(Maybe Bool)
     , _dsssDefaultHeaderIdSuggested :: !(Maybe Bool)
     , _dsssUseEvenPageHeaderFooterSuggested :: !(Maybe Bool)
+    , _dsssUseCustomHeaderFooterMarginsSuggested :: !(Maybe Bool)
     , _dsssPageNumberStartSuggested :: !(Maybe Bool)
     , _dsssBackgRoundSuggestionState :: !(Maybe BackgRoundSuggestionState)
     , _dsssUseFirstPageHeaderFooterSuggested :: !(Maybe Bool)
@@ -3726,6 +4463,7 @@ data DocumentStyleSuggestionState =
     , _dsssEvenPageHeaderIdSuggested :: !(Maybe Bool)
     , _dsssMarginLeftSuggested :: !(Maybe Bool)
     , _dsssMarginRightSuggested :: !(Maybe Bool)
+    , _dsssMarginFooterSuggested :: !(Maybe Bool)
     , _dsssFirstPageHeaderIdSuggested :: !(Maybe Bool)
     , _dsssDefaultFooterIdSuggested :: !(Maybe Bool)
     }
@@ -3736,11 +4474,15 @@ data DocumentStyleSuggestionState =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'dsssMarginHeaderSuggested'
+--
 -- * 'dsssFirstPageFooterIdSuggested'
 --
 -- * 'dsssDefaultHeaderIdSuggested'
 --
 -- * 'dsssUseEvenPageHeaderFooterSuggested'
+--
+-- * 'dsssUseCustomHeaderFooterMarginsSuggested'
 --
 -- * 'dsssPageNumberStartSuggested'
 --
@@ -3762,6 +4504,8 @@ data DocumentStyleSuggestionState =
 --
 -- * 'dsssMarginRightSuggested'
 --
+-- * 'dsssMarginFooterSuggested'
+--
 -- * 'dsssFirstPageHeaderIdSuggested'
 --
 -- * 'dsssDefaultFooterIdSuggested'
@@ -3769,9 +4513,11 @@ documentStyleSuggestionState
     :: DocumentStyleSuggestionState
 documentStyleSuggestionState =
   DocumentStyleSuggestionState'
-    { _dsssFirstPageFooterIdSuggested = Nothing
+    { _dsssMarginHeaderSuggested = Nothing
+    , _dsssFirstPageFooterIdSuggested = Nothing
     , _dsssDefaultHeaderIdSuggested = Nothing
     , _dsssUseEvenPageHeaderFooterSuggested = Nothing
+    , _dsssUseCustomHeaderFooterMarginsSuggested = Nothing
     , _dsssPageNumberStartSuggested = Nothing
     , _dsssBackgRoundSuggestionState = Nothing
     , _dsssUseFirstPageHeaderFooterSuggested = Nothing
@@ -3782,10 +4528,17 @@ documentStyleSuggestionState =
     , _dsssEvenPageHeaderIdSuggested = Nothing
     , _dsssMarginLeftSuggested = Nothing
     , _dsssMarginRightSuggested = Nothing
+    , _dsssMarginFooterSuggested = Nothing
     , _dsssFirstPageHeaderIdSuggested = Nothing
     , _dsssDefaultFooterIdSuggested = Nothing
     }
 
+
+-- | Indicates if there was a suggested change to margin_header.
+dsssMarginHeaderSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
+dsssMarginHeaderSuggested
+  = lens _dsssMarginHeaderSuggested
+      (\ s a -> s{_dsssMarginHeaderSuggested = a})
 
 -- | Indicates if there was a suggested change to first_page_footer_id.
 dsssFirstPageFooterIdSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
@@ -3806,6 +4559,14 @@ dsssUseEvenPageHeaderFooterSuggested
   = lens _dsssUseEvenPageHeaderFooterSuggested
       (\ s a ->
          s{_dsssUseEvenPageHeaderFooterSuggested = a})
+
+-- | Indicates if there was a suggested change to
+-- use_custom_header_footer_margins.
+dsssUseCustomHeaderFooterMarginsSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
+dsssUseCustomHeaderFooterMarginsSuggested
+  = lens _dsssUseCustomHeaderFooterMarginsSuggested
+      (\ s a ->
+         s{_dsssUseCustomHeaderFooterMarginsSuggested = a})
 
 -- | Indicates if there was a suggested change to page_number_start.
 dsssPageNumberStartSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
@@ -3871,6 +4632,12 @@ dsssMarginRightSuggested
   = lens _dsssMarginRightSuggested
       (\ s a -> s{_dsssMarginRightSuggested = a})
 
+-- | Indicates if there was a suggested change to margin_footer.
+dsssMarginFooterSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
+dsssMarginFooterSuggested
+  = lens _dsssMarginFooterSuggested
+      (\ s a -> s{_dsssMarginFooterSuggested = a})
+
 -- | Indicates if there was a suggested change to first_page_header_id.
 dsssFirstPageHeaderIdSuggested :: Lens' DocumentStyleSuggestionState (Maybe Bool)
 dsssFirstPageHeaderIdSuggested
@@ -3888,9 +4655,11 @@ instance FromJSON DocumentStyleSuggestionState where
           = withObject "DocumentStyleSuggestionState"
               (\ o ->
                  DocumentStyleSuggestionState' <$>
-                   (o .:? "firstPageFooterIdSuggested") <*>
-                     (o .:? "defaultHeaderIdSuggested")
+                   (o .:? "marginHeaderSuggested") <*>
+                     (o .:? "firstPageFooterIdSuggested")
+                     <*> (o .:? "defaultHeaderIdSuggested")
                      <*> (o .:? "useEvenPageHeaderFooterSuggested")
+                     <*> (o .:? "useCustomHeaderFooterMarginsSuggested")
                      <*> (o .:? "pageNumberStartSuggested")
                      <*> (o .:? "backgroundSuggestionState")
                      <*> (o .:? "useFirstPageHeaderFooterSuggested")
@@ -3901,6 +4670,7 @@ instance FromJSON DocumentStyleSuggestionState where
                      <*> (o .:? "evenPageHeaderIdSuggested")
                      <*> (o .:? "marginLeftSuggested")
                      <*> (o .:? "marginRightSuggested")
+                     <*> (o .:? "marginFooterSuggested")
                      <*> (o .:? "firstPageHeaderIdSuggested")
                      <*> (o .:? "defaultFooterIdSuggested"))
 
@@ -3908,12 +4678,16 @@ instance ToJSON DocumentStyleSuggestionState where
         toJSON DocumentStyleSuggestionState'{..}
           = object
               (catMaybes
-                 [("firstPageFooterIdSuggested" .=) <$>
+                 [("marginHeaderSuggested" .=) <$>
+                    _dsssMarginHeaderSuggested,
+                  ("firstPageFooterIdSuggested" .=) <$>
                     _dsssFirstPageFooterIdSuggested,
                   ("defaultHeaderIdSuggested" .=) <$>
                     _dsssDefaultHeaderIdSuggested,
                   ("useEvenPageHeaderFooterSuggested" .=) <$>
                     _dsssUseEvenPageHeaderFooterSuggested,
+                  ("useCustomHeaderFooterMarginsSuggested" .=) <$>
+                    _dsssUseCustomHeaderFooterMarginsSuggested,
                   ("pageNumberStartSuggested" .=) <$>
                     _dsssPageNumberStartSuggested,
                   ("backgroundSuggestionState" .=) <$>
@@ -3934,6 +4708,8 @@ instance ToJSON DocumentStyleSuggestionState where
                     _dsssMarginLeftSuggested,
                   ("marginRightSuggested" .=) <$>
                     _dsssMarginRightSuggested,
+                  ("marginFooterSuggested" .=) <$>
+                    _dsssMarginFooterSuggested,
                   ("firstPageHeaderIdSuggested" .=) <$>
                     _dsssFirstPageHeaderIdSuggested,
                   ("defaultFooterIdSuggested" .=) <$>
@@ -4107,7 +4883,7 @@ instance ToJSON PageBreakSuggestedTextStyleChanges
          where
         toJSON = toJSON . _pbstscAddtional
 
--- | The lists in the document, keyed by list ID.
+-- | Output only. The lists in the document, keyed by list ID.
 --
 -- /See:/ 'documentLists' smart constructor.
 newtype DocumentLists =
@@ -4465,7 +5241,7 @@ instance ToJSON SuggestedTableRowStyle where
                     _strsTableRowStyleSuggestionState,
                   ("tableRowStyle" .=) <$> _strsTableRowStyle])
 
--- | The footnotes in the document, keyed by footnote ID.
+-- | Output only. The footnotes in the document, keyed by footnote ID.
 --
 -- /See:/ 'documentFootNotes' smart constructor.
 newtype DocumentFootNotes =
@@ -4499,6 +5275,73 @@ instance FromJSON DocumentFootNotes where
 
 instance ToJSON DocumentFootNotes where
         toJSON = toJSON . _dfnAddtional
+
+-- | Updates the SectionStyle.
+--
+-- /See:/ 'updateSectionStyleRequest' smart constructor.
+data UpdateSectionStyleRequest =
+  UpdateSectionStyleRequest'
+    { _ussrRange :: !(Maybe Range)
+    , _ussrSectionStyle :: !(Maybe SectionStyle)
+    , _ussrFields :: !(Maybe GFieldMask)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpdateSectionStyleRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ussrRange'
+--
+-- * 'ussrSectionStyle'
+--
+-- * 'ussrFields'
+updateSectionStyleRequest
+    :: UpdateSectionStyleRequest
+updateSectionStyleRequest =
+  UpdateSectionStyleRequest'
+    {_ussrRange = Nothing, _ussrSectionStyle = Nothing, _ussrFields = Nothing}
+
+
+-- | The range overlapping the sections to style. Because section breaks can
+-- only be inserted inside the body, the segment ID field must be empty.
+ussrRange :: Lens' UpdateSectionStyleRequest (Maybe Range)
+ussrRange
+  = lens _ussrRange (\ s a -> s{_ussrRange = a})
+
+-- | The styles to be set on the section. Certain section style changes may
+-- cause other changes in order to mirror the behavior of the Docs editor.
+-- See the documentation of SectionStyle for more information.
+ussrSectionStyle :: Lens' UpdateSectionStyleRequest (Maybe SectionStyle)
+ussrSectionStyle
+  = lens _ussrSectionStyle
+      (\ s a -> s{_ussrSectionStyle = a})
+
+-- | The fields that should be updated. At least one field must be specified.
+-- The root \`section_style\` is implied and must not be specified. A
+-- single \`\"*\"\` can be used as short-hand for listing every field. For
+-- example to update the left margin, set \`fields\` to
+-- \`\"margin_left\"\`.
+ussrFields :: Lens' UpdateSectionStyleRequest (Maybe GFieldMask)
+ussrFields
+  = lens _ussrFields (\ s a -> s{_ussrFields = a})
+
+instance FromJSON UpdateSectionStyleRequest where
+        parseJSON
+          = withObject "UpdateSectionStyleRequest"
+              (\ o ->
+                 UpdateSectionStyleRequest' <$>
+                   (o .:? "range") <*> (o .:? "sectionStyle") <*>
+                     (o .:? "fields"))
+
+instance ToJSON UpdateSectionStyleRequest where
+        toJSON UpdateSectionStyleRequest'{..}
+          = object
+              (catMaybes
+                 [("range" .=) <$> _ussrRange,
+                  ("sectionStyle" .=) <$> _ussrSectionStyle,
+                  ("fields" .=) <$> _ussrFields])
 
 -- | The properties of an image.
 --
@@ -4547,8 +5390,7 @@ imageProperties =
     }
 
 
--- | The crop properties of the image. After cropping, the image will be
--- stretched to fit in its container.
+-- | The crop properties of the image.
 ipCropProperties :: Lens' ImageProperties (Maybe CropProperties)
 ipCropProperties
   = lens _ipCropProperties
@@ -4620,6 +5462,63 @@ instance ToJSON ImageProperties where
                   ("contrast" .=) <$> _ipContrast,
                   ("sourceUri" .=) <$> _ipSourceURI,
                   ("brightness" .=) <$> _ipBrightness])
+
+-- | Inserts an empty column into a table.
+--
+-- /See:/ 'insertTableColumnRequest' smart constructor.
+data InsertTableColumnRequest =
+  InsertTableColumnRequest'
+    { _itcrInsertRight :: !(Maybe Bool)
+    , _itcrTableCellLocation :: !(Maybe TableCellLocation)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'InsertTableColumnRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'itcrInsertRight'
+--
+-- * 'itcrTableCellLocation'
+insertTableColumnRequest
+    :: InsertTableColumnRequest
+insertTableColumnRequest =
+  InsertTableColumnRequest'
+    {_itcrInsertRight = Nothing, _itcrTableCellLocation = Nothing}
+
+
+-- | Whether to insert new column to the right of the reference cell
+-- location. - \`True\`: insert to the right. - \`False\`: insert to the
+-- left.
+itcrInsertRight :: Lens' InsertTableColumnRequest (Maybe Bool)
+itcrInsertRight
+  = lens _itcrInsertRight
+      (\ s a -> s{_itcrInsertRight = a})
+
+-- | The reference table cell location from which columns will be inserted. A
+-- new column will be inserted to the left (or right) of the column where
+-- the reference cell is. If the reference cell is a merged cell, a new
+-- column will be inserted to the left (or right) of the merged cell.
+itcrTableCellLocation :: Lens' InsertTableColumnRequest (Maybe TableCellLocation)
+itcrTableCellLocation
+  = lens _itcrTableCellLocation
+      (\ s a -> s{_itcrTableCellLocation = a})
+
+instance FromJSON InsertTableColumnRequest where
+        parseJSON
+          = withObject "InsertTableColumnRequest"
+              (\ o ->
+                 InsertTableColumnRequest' <$>
+                   (o .:? "insertRight") <*>
+                     (o .:? "tableCellLocation"))
+
+instance ToJSON InsertTableColumnRequest where
+        toJSON InsertTableColumnRequest'{..}
+          = object
+              (catMaybes
+                 [("insertRight" .=) <$> _itcrInsertRight,
+                  ("tableCellLocation" .=) <$> _itcrTableCellLocation])
 
 -- | A mask that indicates which of the fields on the base Size have been
 -- changed in this suggestion. For any field set to true, the Size has a
@@ -4826,6 +5725,139 @@ instance ToJSON TableStyle where
               (catMaybes
                  [("tableColumnProperties" .=) <$>
                     _tsTableColumnProperties])
+
+-- | Unmerges cells in a Table.
+--
+-- /See:/ 'unmergeTableCellsRequest' smart constructor.
+newtype UnmergeTableCellsRequest =
+  UnmergeTableCellsRequest'
+    { _utcrTableRange :: Maybe TableRange
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UnmergeTableCellsRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'utcrTableRange'
+unmergeTableCellsRequest
+    :: UnmergeTableCellsRequest
+unmergeTableCellsRequest = UnmergeTableCellsRequest' {_utcrTableRange = Nothing}
+
+
+-- | The table range specifying which cells of the table to unmerge. All
+-- merged cells in this range will be unmerged, and cells that are already
+-- unmerged will not be affected. If the range has no merged cells, the
+-- request will do nothing. If there is text in any of the merged cells,
+-- the text will remain in the \"head\" cell of the resulting block of
+-- unmerged cells. The \"head\" cell is the upper-left cell when the
+-- content direction is from left to right, and the upper-right otherwise.
+utcrTableRange :: Lens' UnmergeTableCellsRequest (Maybe TableRange)
+utcrTableRange
+  = lens _utcrTableRange
+      (\ s a -> s{_utcrTableRange = a})
+
+instance FromJSON UnmergeTableCellsRequest where
+        parseJSON
+          = withObject "UnmergeTableCellsRequest"
+              (\ o ->
+                 UnmergeTableCellsRequest' <$> (o .:? "tableRange"))
+
+instance ToJSON UnmergeTableCellsRequest where
+        toJSON UnmergeTableCellsRequest'{..}
+          = object
+              (catMaybes [("tableRange" .=) <$> _utcrTableRange])
+
+-- | Updates the TableColumnProperties of columns in a table.
+--
+-- /See:/ 'updateTableColumnPropertiesRequest' smart constructor.
+data UpdateTableColumnPropertiesRequest =
+  UpdateTableColumnPropertiesRequest'
+    { _utcprTableStartLocation :: !(Maybe Location)
+    , _utcprTableColumnProperties :: !(Maybe TableColumnProperties)
+    , _utcprFields :: !(Maybe GFieldMask)
+    , _utcprColumnIndices :: !(Maybe [Textual Int32])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpdateTableColumnPropertiesRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'utcprTableStartLocation'
+--
+-- * 'utcprTableColumnProperties'
+--
+-- * 'utcprFields'
+--
+-- * 'utcprColumnIndices'
+updateTableColumnPropertiesRequest
+    :: UpdateTableColumnPropertiesRequest
+updateTableColumnPropertiesRequest =
+  UpdateTableColumnPropertiesRequest'
+    { _utcprTableStartLocation = Nothing
+    , _utcprTableColumnProperties = Nothing
+    , _utcprFields = Nothing
+    , _utcprColumnIndices = Nothing
+    }
+
+
+-- | The location where the table starts in the document.
+utcprTableStartLocation :: Lens' UpdateTableColumnPropertiesRequest (Maybe Location)
+utcprTableStartLocation
+  = lens _utcprTableStartLocation
+      (\ s a -> s{_utcprTableStartLocation = a})
+
+-- | The table column properties to update. If the value of
+-- \`table_column_properties#width\` is less than 5 points (5\/72 inch), a
+-- 400 bad request error is returned.
+utcprTableColumnProperties :: Lens' UpdateTableColumnPropertiesRequest (Maybe TableColumnProperties)
+utcprTableColumnProperties
+  = lens _utcprTableColumnProperties
+      (\ s a -> s{_utcprTableColumnProperties = a})
+
+-- | The fields that should be updated. At least one field must be specified.
+-- The root \`tableColumnProperties\` is implied and should not be
+-- specified. A single \`\"*\"\` can be used as short-hand for listing
+-- every field. For example to update the column width, set \`fields\` to
+-- \`\"width\"\`.
+utcprFields :: Lens' UpdateTableColumnPropertiesRequest (Maybe GFieldMask)
+utcprFields
+  = lens _utcprFields (\ s a -> s{_utcprFields = a})
+
+-- | The list of zero-based column indices whose property should be updated.
+-- If no indices are specified, all columns will be updated.
+utcprColumnIndices :: Lens' UpdateTableColumnPropertiesRequest [Int32]
+utcprColumnIndices
+  = lens _utcprColumnIndices
+      (\ s a -> s{_utcprColumnIndices = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON UpdateTableColumnPropertiesRequest
+         where
+        parseJSON
+          = withObject "UpdateTableColumnPropertiesRequest"
+              (\ o ->
+                 UpdateTableColumnPropertiesRequest' <$>
+                   (o .:? "tableStartLocation") <*>
+                     (o .:? "tableColumnProperties")
+                     <*> (o .:? "fields")
+                     <*> (o .:? "columnIndices" .!= mempty))
+
+instance ToJSON UpdateTableColumnPropertiesRequest
+         where
+        toJSON UpdateTableColumnPropertiesRequest'{..}
+          = object
+              (catMaybes
+                 [("tableStartLocation" .=) <$>
+                    _utcprTableStartLocation,
+                  ("tableColumnProperties" .=) <$>
+                    _utcprTableColumnProperties,
+                  ("fields" .=) <$> _utcprFields,
+                  ("columnIndices" .=) <$> _utcprColumnIndices])
 
 -- | A ParagraphElement representing a footnote reference. A footnote
 -- reference is the inline content rendered with a number and is used to
@@ -5207,6 +6239,52 @@ instance ToJSON NamedRange where
               (catMaybes
                  [("namedRangeId" .=) <$> _nNamedRangeId,
                   ("ranges" .=) <$> _nRanges, ("name" .=) <$> _nName])
+
+-- | Properties specific to a linked Person.
+--
+-- /See:/ 'personProperties' smart constructor.
+data PersonProperties =
+  PersonProperties'
+    { _ppEmail :: !(Maybe Text)
+    , _ppName :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PersonProperties' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ppEmail'
+--
+-- * 'ppName'
+personProperties
+    :: PersonProperties
+personProperties = PersonProperties' {_ppEmail = Nothing, _ppName = Nothing}
+
+
+-- | Output only. The email address linked to this Person. This field is
+-- always present.
+ppEmail :: Lens' PersonProperties (Maybe Text)
+ppEmail = lens _ppEmail (\ s a -> s{_ppEmail = a})
+
+-- | Output only. The name of the person if it is displayed in the link text
+-- instead of the person\'s email address.
+ppName :: Lens' PersonProperties (Maybe Text)
+ppName = lens _ppName (\ s a -> s{_ppName = a})
+
+instance FromJSON PersonProperties where
+        parseJSON
+          = withObject "PersonProperties"
+              (\ o ->
+                 PersonProperties' <$>
+                   (o .:? "email") <*> (o .:? "name"))
+
+instance ToJSON PersonProperties where
+        toJSON PersonProperties'{..}
+          = object
+              (catMaybes
+                 [("email" .=) <$> _ppEmail, ("name" .=) <$> _ppName])
 
 -- | A mask that indicates which of the fields on the base CropProperties
 -- have been changed in this suggestion. For any field set to true, there
@@ -6083,6 +7161,46 @@ instance ToJSON TableCellStyle where
                   ("contentAlignment" .=) <$> _tcsContentAlignment,
                   ("paddingRight" .=) <$> _tcsPaddingRight])
 
+-- | The suggested text style changes to this Person, keyed by suggestion ID.
+--
+-- /See:/ 'personSuggestedTextStyleChanges' smart constructor.
+newtype PersonSuggestedTextStyleChanges =
+  PersonSuggestedTextStyleChanges'
+    { _pstscAddtional :: HashMap Text SuggestedTextStyle
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PersonSuggestedTextStyleChanges' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'pstscAddtional'
+personSuggestedTextStyleChanges
+    :: HashMap Text SuggestedTextStyle -- ^ 'pstscAddtional'
+    -> PersonSuggestedTextStyleChanges
+personSuggestedTextStyleChanges pPstscAddtional_ =
+  PersonSuggestedTextStyleChanges'
+    {_pstscAddtional = _Coerce # pPstscAddtional_}
+
+
+pstscAddtional :: Lens' PersonSuggestedTextStyleChanges (HashMap Text SuggestedTextStyle)
+pstscAddtional
+  = lens _pstscAddtional
+      (\ s a -> s{_pstscAddtional = a})
+      . _Coerce
+
+instance FromJSON PersonSuggestedTextStyleChanges
+         where
+        parseJSON
+          = withObject "PersonSuggestedTextStyleChanges"
+              (\ o ->
+                 PersonSuggestedTextStyleChanges' <$>
+                   (parseJSONObject o))
+
+instance ToJSON PersonSuggestedTextStyleChanges where
+        toJSON = toJSON . _pstscAddtional
+
 -- | A document header.
 --
 -- /See:/ 'header' smart constructor.
@@ -6283,67 +7401,68 @@ document =
     }
 
 
--- | The named ranges in the document, keyed by name.
+-- | Output only. The named ranges in the document, keyed by name.
 dNamedRanges :: Lens' Document (Maybe DocumentNamedRanges)
 dNamedRanges
   = lens _dNamedRanges (\ s a -> s{_dNamedRanges = a})
 
--- | The inline objects in the document, keyed by object ID.
+-- | Output only. The inline objects in the document, keyed by object ID.
 dInlineObjects :: Lens' Document (Maybe DocumentInlineObjects)
 dInlineObjects
   = lens _dInlineObjects
       (\ s a -> s{_dInlineObjects = a})
 
--- | The ID of the document.
+-- | Output only. The ID of the document.
 dDocumentId :: Lens' Document (Maybe Text)
 dDocumentId
   = lens _dDocumentId (\ s a -> s{_dDocumentId = a})
 
--- | The main body of the document.
+-- | Output only. The main body of the document.
 dBody :: Lens' Document (Maybe Body)
 dBody = lens _dBody (\ s a -> s{_dBody = a})
 
--- | The style of the document.
+-- | Output only. The style of the document.
 dDocumentStyle :: Lens' Document (Maybe DocumentStyle)
 dDocumentStyle
   = lens _dDocumentStyle
       (\ s a -> s{_dDocumentStyle = a})
 
--- | The footers in the document, keyed by footer ID.
+-- | Output only. The footers in the document, keyed by footer ID.
 dFooters :: Lens' Document (Maybe DocumentFooters)
 dFooters = lens _dFooters (\ s a -> s{_dFooters = a})
 
--- | The positioned objects in the document, keyed by object ID.
+-- | Output only. The positioned objects in the document, keyed by object ID.
 dPositionedObjects :: Lens' Document (Maybe DocumentPositionedObjects)
 dPositionedObjects
   = lens _dPositionedObjects
       (\ s a -> s{_dPositionedObjects = a})
 
--- | The suggestions view mode applied to the document. Note: When editing a
--- document, changes must be based on a document with SUGGESTIONS_INLINE.
+-- | Output only. The suggestions view mode applied to the document. Note:
+-- When editing a document, changes must be based on a document with
+-- SUGGESTIONS_INLINE.
 dSuggestionsViewMode :: Lens' Document (Maybe DocumentSuggestionsViewMode)
 dSuggestionsViewMode
   = lens _dSuggestionsViewMode
       (\ s a -> s{_dSuggestionsViewMode = a})
 
--- | The headers in the document, keyed by header ID.
+-- | Output only. The headers in the document, keyed by header ID.
 dHeaders :: Lens' Document (Maybe DocumentHeaders)
 dHeaders = lens _dHeaders (\ s a -> s{_dHeaders = a})
 
--- | The named styles of the document.
+-- | Output only. The named styles of the document.
 dNamedStyles :: Lens' Document (Maybe NamedStyles)
 dNamedStyles
   = lens _dNamedStyles (\ s a -> s{_dNamedStyles = a})
 
--- | The suggested changes to the named styles of the document, keyed by
--- suggestion ID.
+-- | Output only. The suggested changes to the named styles of the document,
+-- keyed by suggestion ID.
 dSuggestedNamedStylesChanges :: Lens' Document (Maybe DocumentSuggestedNamedStylesChanges)
 dSuggestedNamedStylesChanges
   = lens _dSuggestedNamedStylesChanges
       (\ s a -> s{_dSuggestedNamedStylesChanges = a})
 
--- | The suggested changes to the style of the document, keyed by suggestion
--- ID.
+-- | Output only. The suggested changes to the style of the document, keyed
+-- by suggestion ID.
 dSuggestedDocumentStyleChanges :: Lens' Document (Maybe DocumentSuggestedDocumentStyleChanges)
 dSuggestedDocumentStyleChanges
   = lens _dSuggestedDocumentStyleChanges
@@ -6353,9 +7472,9 @@ dSuggestedDocumentStyleChanges
 dTitle :: Lens' Document (Maybe Text)
 dTitle = lens _dTitle (\ s a -> s{_dTitle = a})
 
--- | The revision ID of the document. Can be used in update requests to
--- specify which revision of a document to apply updates to and how the
--- request should behave if the document has been edited since that
+-- | Output only. The revision ID of the document. Can be used in update
+-- requests to specify which revision of a document to apply updates to and
+-- how the request should behave if the document has been edited since that
 -- revision. Only populated if the user has edit access to the document.
 -- The format of the revision ID may change over time, so it should be
 -- treated opaquely. A returned revision ID is only guaranteed to be valid
@@ -6368,12 +7487,12 @@ dRevisionId :: Lens' Document (Maybe Text)
 dRevisionId
   = lens _dRevisionId (\ s a -> s{_dRevisionId = a})
 
--- | The footnotes in the document, keyed by footnote ID.
+-- | Output only. The footnotes in the document, keyed by footnote ID.
 dFootNotes :: Lens' Document (Maybe DocumentFootNotes)
 dFootNotes
   = lens _dFootNotes (\ s a -> s{_dFootNotes = a})
 
--- | The lists in the document, keyed by list ID.
+-- | Output only. The lists in the document, keyed by list ID.
 dLists :: Lens' Document (Maybe DocumentLists)
 dLists = lens _dLists (\ s a -> s{_dLists = a})
 
@@ -6421,8 +7540,8 @@ instance ToJSON Document where
                   ("footnotes" .=) <$> _dFootNotes,
                   ("lists" .=) <$> _dLists])
 
--- | The suggested changes to the style of the document, keyed by suggestion
--- ID.
+-- | Output only. The suggested changes to the style of the document, keyed
+-- by suggestion ID.
 --
 -- /See:/ 'documentSuggestedDocumentStyleChanges' smart constructor.
 newtype DocumentSuggestedDocumentStyleChanges =
@@ -6463,6 +7582,46 @@ instance FromJSON
 instance ToJSON DocumentSuggestedDocumentStyleChanges
          where
         toJSON = toJSON . _dsdscAddtional
+
+-- | Deletes a Header from the document.
+--
+-- /See:/ 'deleteHeaderRequest' smart constructor.
+newtype DeleteHeaderRequest =
+  DeleteHeaderRequest'
+    { _dhrHeaderId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DeleteHeaderRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dhrHeaderId'
+deleteHeaderRequest
+    :: DeleteHeaderRequest
+deleteHeaderRequest = DeleteHeaderRequest' {_dhrHeaderId = Nothing}
+
+
+-- | The id of the header to delete. If this header is defined on
+-- DocumentStyle, the reference to this header is removed, resulting in no
+-- header of that type for the first section of the document. If this
+-- header is defined on a SectionStyle, the reference to this header is
+-- removed and the header of that type is now continued from the previous
+-- section.
+dhrHeaderId :: Lens' DeleteHeaderRequest (Maybe Text)
+dhrHeaderId
+  = lens _dhrHeaderId (\ s a -> s{_dhrHeaderId = a})
+
+instance FromJSON DeleteHeaderRequest where
+        parseJSON
+          = withObject "DeleteHeaderRequest"
+              (\ o -> DeleteHeaderRequest' <$> (o .:? "headerId"))
+
+instance ToJSON DeleteHeaderRequest where
+        toJSON DeleteHeaderRequest'{..}
+          = object
+              (catMaybes [("headerId" .=) <$> _dhrHeaderId])
 
 -- | The named styles. Paragraphs in the document can inherit their TextStyle
 -- and ParagraphStyle from these named styles.
@@ -6569,6 +7728,98 @@ instance FromJSON EmbeddedDrawingProperties where
 
 instance ToJSON EmbeddedDrawingProperties where
         toJSON = const emptyObject
+
+-- | Updates the style of a range of table cells.
+--
+-- /See:/ 'updateTableCellStyleRequest' smart constructor.
+data UpdateTableCellStyleRequest =
+  UpdateTableCellStyleRequest'
+    { _utcsrTableStartLocation :: !(Maybe Location)
+    , _utcsrTableCellStyle :: !(Maybe TableCellStyle)
+    , _utcsrTableRange :: !(Maybe TableRange)
+    , _utcsrFields :: !(Maybe GFieldMask)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'UpdateTableCellStyleRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'utcsrTableStartLocation'
+--
+-- * 'utcsrTableCellStyle'
+--
+-- * 'utcsrTableRange'
+--
+-- * 'utcsrFields'
+updateTableCellStyleRequest
+    :: UpdateTableCellStyleRequest
+updateTableCellStyleRequest =
+  UpdateTableCellStyleRequest'
+    { _utcsrTableStartLocation = Nothing
+    , _utcsrTableCellStyle = Nothing
+    , _utcsrTableRange = Nothing
+    , _utcsrFields = Nothing
+    }
+
+
+-- | The location where the table starts in the document. When specified, the
+-- updates are applied to all the cells in the table.
+utcsrTableStartLocation :: Lens' UpdateTableCellStyleRequest (Maybe Location)
+utcsrTableStartLocation
+  = lens _utcsrTableStartLocation
+      (\ s a -> s{_utcsrTableStartLocation = a})
+
+-- | The style to set on the table cells. When updating borders, if a cell
+-- shares a border with an adjacent cell, the corresponding border property
+-- of the adjacent cell is updated as well. Borders that are merged and
+-- invisible are not updated. Since updating a border shared by adjacent
+-- cells in the same request can cause conflicting border updates, border
+-- updates are applied in the following order: - \`border_right\` -
+-- \`border_left\` - \`border_bottom\` - \`border_top\`
+utcsrTableCellStyle :: Lens' UpdateTableCellStyleRequest (Maybe TableCellStyle)
+utcsrTableCellStyle
+  = lens _utcsrTableCellStyle
+      (\ s a -> s{_utcsrTableCellStyle = a})
+
+-- | The table range representing the subset of the table to which the
+-- updates are applied.
+utcsrTableRange :: Lens' UpdateTableCellStyleRequest (Maybe TableRange)
+utcsrTableRange
+  = lens _utcsrTableRange
+      (\ s a -> s{_utcsrTableRange = a})
+
+-- | The fields that should be updated. At least one field must be specified.
+-- The root \`tableCellStyle\` is implied and should not be specified. A
+-- single \`\"*\"\` can be used as short-hand for listing every field. For
+-- example to update the table cell background color, set \`fields\` to
+-- \`\"backgroundColor\"\`. To reset a property to its default value,
+-- include its field name in the field mask but leave the field itself
+-- unset.
+utcsrFields :: Lens' UpdateTableCellStyleRequest (Maybe GFieldMask)
+utcsrFields
+  = lens _utcsrFields (\ s a -> s{_utcsrFields = a})
+
+instance FromJSON UpdateTableCellStyleRequest where
+        parseJSON
+          = withObject "UpdateTableCellStyleRequest"
+              (\ o ->
+                 UpdateTableCellStyleRequest' <$>
+                   (o .:? "tableStartLocation") <*>
+                     (o .:? "tableCellStyle")
+                     <*> (o .:? "tableRange")
+                     <*> (o .:? "fields"))
+
+instance ToJSON UpdateTableCellStyleRequest where
+        toJSON UpdateTableCellStyleRequest'{..}
+          = object
+              (catMaybes
+                 [("tableStartLocation" .=) <$>
+                    _utcsrTableStartLocation,
+                  ("tableCellStyle" .=) <$> _utcsrTableCellStyle,
+                  ("tableRange" .=) <$> _utcsrTableRange,
+                  ("fields" .=) <$> _utcsrFields])
 
 -- | A suggested change to a TextStyle.
 --
@@ -6736,6 +7987,49 @@ instance ToJSON SuggestedNamedStyles where
                  [("namedStylesSuggestionState" .=) <$>
                     _snsNamedStylesSuggestionState,
                   ("namedStyles" .=) <$> _snsNamedStyles])
+
+-- | Merges cells in a Table.
+--
+-- /See:/ 'mergeTableCellsRequest' smart constructor.
+newtype MergeTableCellsRequest =
+  MergeTableCellsRequest'
+    { _mtcrTableRange :: Maybe TableRange
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'MergeTableCellsRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'mtcrTableRange'
+mergeTableCellsRequest
+    :: MergeTableCellsRequest
+mergeTableCellsRequest = MergeTableCellsRequest' {_mtcrTableRange = Nothing}
+
+
+-- | The table range specifying which cells of the table to merge. Any text
+-- in the cells being merged will be concatenated and stored in the
+-- \"head\" cell of the range. This is the upper-left cell of the range
+-- when the content direction is left to right, and the upper-right cell of
+-- the range otherwise. If the range is non-rectangular (which can occur in
+-- some cases where the range covers cells that are already merged or where
+-- the table is non-rectangular), a 400 bad request error is returned.
+mtcrTableRange :: Lens' MergeTableCellsRequest (Maybe TableRange)
+mtcrTableRange
+  = lens _mtcrTableRange
+      (\ s a -> s{_mtcrTableRange = a})
+
+instance FromJSON MergeTableCellsRequest where
+        parseJSON
+          = withObject "MergeTableCellsRequest"
+              (\ o ->
+                 MergeTableCellsRequest' <$> (o .:? "tableRange"))
+
+instance ToJSON MergeTableCellsRequest where
+        toJSON MergeTableCellsRequest'{..}
+          = object
+              (catMaybes [("tableRange" .=) <$> _mtcrTableRange])
 
 -- | Provides control over how write requests are executed.
 --
@@ -7070,7 +8364,8 @@ updateTextStyleRequest =
 -- | The range of text to style. The range may be extended to include
 -- adjacent newlines. If the range fully contains a paragraph belonging to
 -- a list, the paragraph\'s bullet is also updated with the matching text
--- style.
+-- style. Ranges cannot be inserted inside a relative
+-- UpdateTextStyleRequest.
 utsrRange :: Lens' UpdateTextStyleRequest (Maybe Range)
 utsrRange
   = lens _utsrRange (\ s a -> s{_utsrRange = a})
@@ -7284,30 +8579,15 @@ nlIndentFirstLine
 -- replace the placeholder with the corresponding glyph for nesting level 0
 -- followed by a period as the suffix. So a list with a glyph type of
 -- UPPER_ALPHA and glyph format \`%0.\` at nesting level 0 will result in a
--- list with rendered glyphs
---
--- \`A.\`
---
--- \`B.\`
---
--- \`C.\` The glyph format can contain placeholders for the current nesting
--- level as well as placeholders for parent nesting levels. For example, a
--- list can have a glyph format of \`%0.\` at nesting level 0 and a glyph
--- format of \`%0.%1.\` at nesting level 1. Assuming both nesting levels
--- have DECIMAL glyph types, this would result in a list with rendered
--- glyphs
---
--- \`1.\`
---
--- \`2.\`
---
--- \` 2.1.\`
---
--- \` 2.2.\`
---
--- \`3.\` For nesting levels that are ordered, the string that replaces a
--- placeholder in the glyph format for a particular paragraph depends on
--- the paragraph\'s order within the list.
+-- list with rendered glyphs \`A.\` \`B.\` \`C.\` The glyph format can
+-- contain placeholders for the current nesting level as well as
+-- placeholders for parent nesting levels. For example, a list can have a
+-- glyph format of \`%0.\` at nesting level 0 and a glyph format of
+-- \`%0.%1.\` at nesting level 1. Assuming both nesting levels have DECIMAL
+-- glyph types, this would result in a list with rendered glyphs \`1.\`
+-- \`2.\` \` 2.1.\` \` 2.2.\` \`3.\` For nesting levels that are ordered,
+-- the string that replaces a placeholder in the glyph format for a
+-- particular paragraph depends on the paragraph\'s order within the list.
 nlGlyphFormat :: Lens' NestingLevel (Maybe Text)
 nlGlyphFormat
   = lens _nlGlyphFormat
@@ -7391,6 +8671,46 @@ instance ToJSON NestingLevel where
                   ("glyphType" .=) <$> _nlGlyphType,
                   ("startNumber" .=) <$> _nlStartNumber])
 
+-- | Deletes a Footer from the document.
+--
+-- /See:/ 'deleteFooterRequest' smart constructor.
+newtype DeleteFooterRequest =
+  DeleteFooterRequest'
+    { _dfrFooterId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'DeleteFooterRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'dfrFooterId'
+deleteFooterRequest
+    :: DeleteFooterRequest
+deleteFooterRequest = DeleteFooterRequest' {_dfrFooterId = Nothing}
+
+
+-- | The id of the footer to delete. If this footer is defined on
+-- DocumentStyle, the reference to this footer is removed, resulting in no
+-- footer of that type for the first section of the document. If this
+-- footer is defined on a SectionStyle, the reference to this footer is
+-- removed and the footer of that type is now continued from the previous
+-- section.
+dfrFooterId :: Lens' DeleteFooterRequest (Maybe Text)
+dfrFooterId
+  = lens _dfrFooterId (\ s a -> s{_dfrFooterId = a})
+
+instance FromJSON DeleteFooterRequest where
+        parseJSON
+          = withObject "DeleteFooterRequest"
+              (\ o -> DeleteFooterRequest' <$> (o .:? "footerId"))
+
+instance ToJSON DeleteFooterRequest where
+        toJSON DeleteFooterRequest'{..}
+          = object
+              (catMaybes [("footerId" .=) <$> _dfrFooterId])
+
 -- | Location of a single cell within a table.
 --
 -- /See:/ 'tableCellLocation' smart constructor.
@@ -7459,6 +8779,43 @@ instance ToJSON TableCellLocation where
                  [("columnIndex" .=) <$> _tclColumnIndex,
                   ("tableStartLocation" .=) <$> _tclTableStartLocation,
                   ("rowIndex" .=) <$> _tclRowIndex])
+
+-- | The result of creating a footnote.
+--
+-- /See:/ 'createFootNoteResponse' smart constructor.
+newtype CreateFootNoteResponse =
+  CreateFootNoteResponse'
+    { _cfnrFootNoteId :: Maybe Text
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'CreateFootNoteResponse' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'cfnrFootNoteId'
+createFootNoteResponse
+    :: CreateFootNoteResponse
+createFootNoteResponse = CreateFootNoteResponse' {_cfnrFootNoteId = Nothing}
+
+
+-- | The ID of the created footnote.
+cfnrFootNoteId :: Lens' CreateFootNoteResponse (Maybe Text)
+cfnrFootNoteId
+  = lens _cfnrFootNoteId
+      (\ s a -> s{_cfnrFootNoteId = a})
+
+instance FromJSON CreateFootNoteResponse where
+        parseJSON
+          = withObject "CreateFootNoteResponse"
+              (\ o ->
+                 CreateFootNoteResponse' <$> (o .:? "footnoteId"))
+
+instance ToJSON CreateFootNoteResponse where
+        toJSON CreateFootNoteResponse'{..}
+          = object
+              (catMaybes [("footnoteId" .=) <$> _cfnrFootNoteId])
 
 -- | Deletes a PositionedObject from the document.
 --
@@ -7924,8 +9281,8 @@ instance ToJSON ShadingSuggestionState where
                  [("backgroundColorSuggested" .=) <$>
                     _sssBackgRoundColorSuggested])
 
--- | The suggested changes to the named styles of the document, keyed by
--- suggestion ID.
+-- | Output only. The suggested changes to the named styles of the document,
+-- keyed by suggestion ID.
 --
 -- /See:/ 'documentSuggestedNamedStylesChanges' smart constructor.
 newtype DocumentSuggestedNamedStylesChanges =
@@ -8154,6 +9511,7 @@ instance ToJSON SheetsChartReferenceSuggestionState
 data ParagraphElement =
   ParagraphElement'
     { _peAutoText :: !(Maybe AutoText)
+    , _pePerson :: !(Maybe Person)
     , _peEndIndex :: !(Maybe (Textual Int32))
     , _peFootNoteReference :: !(Maybe FootNoteReference)
     , _peColumnBreak :: !(Maybe ColumnBreak)
@@ -8172,6 +9530,8 @@ data ParagraphElement =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'peAutoText'
+--
+-- * 'pePerson'
 --
 -- * 'peEndIndex'
 --
@@ -8195,6 +9555,7 @@ paragraphElement
 paragraphElement =
   ParagraphElement'
     { _peAutoText = Nothing
+    , _pePerson = Nothing
     , _peEndIndex = Nothing
     , _peFootNoteReference = Nothing
     , _peColumnBreak = Nothing
@@ -8211,6 +9572,10 @@ paragraphElement =
 peAutoText :: Lens' ParagraphElement (Maybe AutoText)
 peAutoText
   = lens _peAutoText (\ s a -> s{_peAutoText = a})
+
+-- | A paragraph element that links to a person or email address.
+pePerson :: Lens' ParagraphElement (Maybe Person)
+pePerson = lens _pePerson (\ s a -> s{_pePerson = a})
 
 -- | The zero-base end index of this paragraph element, exclusive, in UTF-16
 -- code units.
@@ -8270,8 +9635,9 @@ instance FromJSON ParagraphElement where
           = withObject "ParagraphElement"
               (\ o ->
                  ParagraphElement' <$>
-                   (o .:? "autoText") <*> (o .:? "endIndex") <*>
-                     (o .:? "footnoteReference")
+                   (o .:? "autoText") <*> (o .:? "person") <*>
+                     (o .:? "endIndex")
+                     <*> (o .:? "footnoteReference")
                      <*> (o .:? "columnBreak")
                      <*> (o .:? "textRun")
                      <*> (o .:? "equation")
@@ -8285,6 +9651,7 @@ instance ToJSON ParagraphElement where
           = object
               (catMaybes
                  [("autoText" .=) <$> _peAutoText,
+                  ("person" .=) <$> _pePerson,
                   ("endIndex" .=) <$> _peEndIndex,
                   ("footnoteReference" .=) <$> _peFootNoteReference,
                   ("columnBreak" .=) <$> _peColumnBreak,
@@ -8766,6 +10133,82 @@ instance ToJSON LinkedContentReferenceSuggestionState
                  [("sheetsChartReferenceSuggestionState" .=) <$>
                     _lcrssSheetsChartReferenceSuggestionState])
 
+-- | Replaces the contents of the specified NamedRange or NamedRanges with
+-- the given replacement content. Note that an individual NamedRange may
+-- consist of multiple discontinuous ranges. In this case, only the content
+-- in the first range will be replaced. The other ranges and their content
+-- will be deleted. In cases where replacing or deleting any ranges would
+-- result in an invalid document structure, a 400 bad request error is
+-- returned.
+--
+-- /See:/ 'replaceNamedRangeContentRequest' smart constructor.
+data ReplaceNamedRangeContentRequest =
+  ReplaceNamedRangeContentRequest'
+    { _rnrcrText :: !(Maybe Text)
+    , _rnrcrNamedRangeName :: !(Maybe Text)
+    , _rnrcrNamedRangeId :: !(Maybe Text)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'ReplaceNamedRangeContentRequest' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'rnrcrText'
+--
+-- * 'rnrcrNamedRangeName'
+--
+-- * 'rnrcrNamedRangeId'
+replaceNamedRangeContentRequest
+    :: ReplaceNamedRangeContentRequest
+replaceNamedRangeContentRequest =
+  ReplaceNamedRangeContentRequest'
+    { _rnrcrText = Nothing
+    , _rnrcrNamedRangeName = Nothing
+    , _rnrcrNamedRangeId = Nothing
+    }
+
+
+-- | Replaces the content of the specified named range(s) with the given
+-- text.
+rnrcrText :: Lens' ReplaceNamedRangeContentRequest (Maybe Text)
+rnrcrText
+  = lens _rnrcrText (\ s a -> s{_rnrcrText = a})
+
+-- | The name of the NamedRanges whose content will be replaced. If there are
+-- multiple named ranges with the given name, then the content of each one
+-- will be replaced. If there are no named ranges with the given name, then
+-- the request will be a no-op.
+rnrcrNamedRangeName :: Lens' ReplaceNamedRangeContentRequest (Maybe Text)
+rnrcrNamedRangeName
+  = lens _rnrcrNamedRangeName
+      (\ s a -> s{_rnrcrNamedRangeName = a})
+
+-- | The ID of the named range whose content will be replaced. If there is no
+-- named range with the given ID a 400 bad request error is returned.
+rnrcrNamedRangeId :: Lens' ReplaceNamedRangeContentRequest (Maybe Text)
+rnrcrNamedRangeId
+  = lens _rnrcrNamedRangeId
+      (\ s a -> s{_rnrcrNamedRangeId = a})
+
+instance FromJSON ReplaceNamedRangeContentRequest
+         where
+        parseJSON
+          = withObject "ReplaceNamedRangeContentRequest"
+              (\ o ->
+                 ReplaceNamedRangeContentRequest' <$>
+                   (o .:? "text") <*> (o .:? "namedRangeName") <*>
+                     (o .:? "namedRangeId"))
+
+instance ToJSON ReplaceNamedRangeContentRequest where
+        toJSON ReplaceNamedRangeContentRequest'{..}
+          = object
+              (catMaybes
+                 [("text" .=) <$> _rnrcrText,
+                  ("namedRangeName" .=) <$> _rnrcrNamedRangeName,
+                  ("namedRangeId" .=) <$> _rnrcrNamedRangeId])
+
 -- | The suggested text style changes to this InlineObject, keyed by
 -- suggestion ID.
 --
@@ -9210,7 +10653,7 @@ instance ToJSON
          where
         toJSON = toJSON . _fnrstscAddtional
 
--- | The headers in the document, keyed by header ID.
+-- | Output only. The headers in the document, keyed by header ID.
 --
 -- /See:/ 'documentHeaders' smart constructor.
 newtype DocumentHeaders =
@@ -9481,9 +10924,24 @@ instance ToJSON Table where
 -- /See:/ 'sectionStyle' smart constructor.
 data SectionStyle =
   SectionStyle'
-    { _ssColumnSeparatorStyle :: !(Maybe SectionStyleColumnSeparatorStyle)
+    { _ssMarginTop :: !(Maybe Dimension)
+    , _ssDefaultFooterId :: !(Maybe Text)
+    , _ssFirstPageHeaderId :: !(Maybe Text)
+    , _ssMarginFooter :: !(Maybe Dimension)
+    , _ssMarginHeader :: !(Maybe Dimension)
+    , _ssFirstPageFooterId :: !(Maybe Text)
+    , _ssSectionType :: !(Maybe SectionStyleSectionType)
+    , _ssDefaultHeaderId :: !(Maybe Text)
+    , _ssColumnSeparatorStyle :: !(Maybe SectionStyleColumnSeparatorStyle)
     , _ssContentDirection :: !(Maybe SectionStyleContentDirection)
     , _ssColumnProperties :: !(Maybe [SectionColumnProperties])
+    , _ssMarginLeft :: !(Maybe Dimension)
+    , _ssPageNumberStart :: !(Maybe (Textual Int32))
+    , _ssUseFirstPageHeaderFooter :: !(Maybe Bool)
+    , _ssEvenPageFooterId :: !(Maybe Text)
+    , _ssMarginRight :: !(Maybe Dimension)
+    , _ssMarginBottom :: !(Maybe Dimension)
+    , _ssEvenPageHeaderId :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -9492,37 +10950,165 @@ data SectionStyle =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
+-- * 'ssMarginTop'
+--
+-- * 'ssDefaultFooterId'
+--
+-- * 'ssFirstPageHeaderId'
+--
+-- * 'ssMarginFooter'
+--
+-- * 'ssMarginHeader'
+--
+-- * 'ssFirstPageFooterId'
+--
+-- * 'ssSectionType'
+--
+-- * 'ssDefaultHeaderId'
+--
 -- * 'ssColumnSeparatorStyle'
 --
 -- * 'ssContentDirection'
 --
 -- * 'ssColumnProperties'
+--
+-- * 'ssMarginLeft'
+--
+-- * 'ssPageNumberStart'
+--
+-- * 'ssUseFirstPageHeaderFooter'
+--
+-- * 'ssEvenPageFooterId'
+--
+-- * 'ssMarginRight'
+--
+-- * 'ssMarginBottom'
+--
+-- * 'ssEvenPageHeaderId'
 sectionStyle
     :: SectionStyle
 sectionStyle =
   SectionStyle'
-    { _ssColumnSeparatorStyle = Nothing
+    { _ssMarginTop = Nothing
+    , _ssDefaultFooterId = Nothing
+    , _ssFirstPageHeaderId = Nothing
+    , _ssMarginFooter = Nothing
+    , _ssMarginHeader = Nothing
+    , _ssFirstPageFooterId = Nothing
+    , _ssSectionType = Nothing
+    , _ssDefaultHeaderId = Nothing
+    , _ssColumnSeparatorStyle = Nothing
     , _ssContentDirection = Nothing
     , _ssColumnProperties = Nothing
+    , _ssMarginLeft = Nothing
+    , _ssPageNumberStart = Nothing
+    , _ssUseFirstPageHeaderFooter = Nothing
+    , _ssEvenPageFooterId = Nothing
+    , _ssMarginRight = Nothing
+    , _ssMarginBottom = Nothing
+    , _ssEvenPageHeaderId = Nothing
     }
 
 
+-- | The top page margin of the section. If unset, uses margin_top from
+-- DocumentStyle. When updating this property, setting a concrete value is
+-- required. Unsetting this property results in a 400 bad request error.
+ssMarginTop :: Lens' SectionStyle (Maybe Dimension)
+ssMarginTop
+  = lens _ssMarginTop (\ s a -> s{_ssMarginTop = a})
+
+-- | The ID of the default footer. If unset, the value inherits from the
+-- previous SectionBreak\'s SectionStyle. If the value is unset in the
+-- first SectionBreak, it inherits from DocumentStyle\'s default_footer_id.
+-- This property is read-only.
+ssDefaultFooterId :: Lens' SectionStyle (Maybe Text)
+ssDefaultFooterId
+  = lens _ssDefaultFooterId
+      (\ s a -> s{_ssDefaultFooterId = a})
+
+-- | The ID of the header used only for the first page of the section. If
+-- use_first_page_header_footer is true, this value is used for the header
+-- on the first page of the section. If it is false, the header on the
+-- first page of the section uses the default_header_id. If unset, the
+-- value inherits from the previous SectionBreak\'s SectionStyle. If the
+-- value is unset in the first SectionBreak, it inherits from
+-- DocumentStyle\'s first_page_header_id. This property is read-only.
+ssFirstPageHeaderId :: Lens' SectionStyle (Maybe Text)
+ssFirstPageHeaderId
+  = lens _ssFirstPageHeaderId
+      (\ s a -> s{_ssFirstPageHeaderId = a})
+
+-- | The footer margin of the section. If unset, uses margin_footer from
+-- DocumentStyle. If updated, use_custom_header_footer_margins is set to
+-- true on DocumentStyle. The value of use_custom_header_footer_margins on
+-- DocumentStyle indicates if a footer margin is being respected for this
+-- section When updating this property, setting a concrete value is
+-- required. Unsetting this property results in a 400 bad request error.
+ssMarginFooter :: Lens' SectionStyle (Maybe Dimension)
+ssMarginFooter
+  = lens _ssMarginFooter
+      (\ s a -> s{_ssMarginFooter = a})
+
+-- | The header margin of the section. If unset, uses margin_header from
+-- DocumentStyle. If updated, use_custom_header_footer_margins is set to
+-- true on DocumentStyle. The value of use_custom_header_footer_margins on
+-- DocumentStyle indicates if a header margin is being respected for this
+-- section. When updating this property, setting a concrete value is
+-- required. Unsetting this property results in a 400 bad request error.
+ssMarginHeader :: Lens' SectionStyle (Maybe Dimension)
+ssMarginHeader
+  = lens _ssMarginHeader
+      (\ s a -> s{_ssMarginHeader = a})
+
+-- | The ID of the footer used only for the first page of the section. If
+-- use_first_page_header_footer is true, this value is used for the footer
+-- on the first page of the section. If it is false, the footer on the
+-- first page of the section uses the default_footer_id. If unset, the
+-- value inherits from the previous SectionBreak\'s SectionStyle. If the
+-- value is unset in the first SectionBreak, it inherits from
+-- DocumentStyle\'s first_page_footer_id. This property is read-only.
+ssFirstPageFooterId :: Lens' SectionStyle (Maybe Text)
+ssFirstPageFooterId
+  = lens _ssFirstPageFooterId
+      (\ s a -> s{_ssFirstPageFooterId = a})
+
+-- | Output only. The type of section.
+ssSectionType :: Lens' SectionStyle (Maybe SectionStyleSectionType)
+ssSectionType
+  = lens _ssSectionType
+      (\ s a -> s{_ssSectionType = a})
+
+-- | The ID of the default header. If unset, the value inherits from the
+-- previous SectionBreak\'s SectionStyle. If the value is unset in the
+-- first SectionBreak, it inherits from DocumentStyle\'s default_header_id.
+-- This property is read-only.
+ssDefaultHeaderId :: Lens' SectionStyle (Maybe Text)
+ssDefaultHeaderId
+  = lens _ssDefaultHeaderId
+      (\ s a -> s{_ssDefaultHeaderId = a})
+
 -- | The style of column separators. This style can be set even when there is
--- one column in the section.
+-- one column in the section. When updating this property, setting a
+-- concrete value is required. Unsetting this property results in a 400 bad
+-- request error.
 ssColumnSeparatorStyle :: Lens' SectionStyle (Maybe SectionStyleColumnSeparatorStyle)
 ssColumnSeparatorStyle
   = lens _ssColumnSeparatorStyle
       (\ s a -> s{_ssColumnSeparatorStyle = a})
 
 -- | The content direction of this section. If unset, the value defaults to
--- LEFT_TO_RIGHT.
+-- LEFT_TO_RIGHT. When updating this property, setting a concrete value is
+-- required. Unsetting this property results in a 400 bad request error.
 ssContentDirection :: Lens' SectionStyle (Maybe SectionStyleContentDirection)
 ssContentDirection
   = lens _ssContentDirection
       (\ s a -> s{_ssContentDirection = a})
 
 -- | The section\'s columns properties. If empty, the section contains one
--- column with the default properties in the Docs editor.
+-- column with the default properties in the Docs editor. A section can be
+-- updated to have no more than three columns. When updating this property,
+-- setting a concrete value is required. Unsetting this property will
+-- result in a 400 bad request error.
 ssColumnProperties :: Lens' SectionStyle [SectionColumnProperties]
 ssColumnProperties
   = lens _ssColumnProperties
@@ -9530,23 +11116,127 @@ ssColumnProperties
       . _Default
       . _Coerce
 
+-- | The left page margin of the section. If unset, uses margin_left from
+-- DocumentStyle. Updating left margin causes columns in this section to
+-- resize. Since the margin affects column width, it is applied before
+-- column properties. When updating this property, setting a concrete value
+-- is required. Unsetting this property results in a 400 bad request error.
+ssMarginLeft :: Lens' SectionStyle (Maybe Dimension)
+ssMarginLeft
+  = lens _ssMarginLeft (\ s a -> s{_ssMarginLeft = a})
+
+-- | The page number from which to start counting the number of pages for
+-- this section. If unset, page numbering continues from the previous
+-- section. If the value is unset in the first SectionBreak, refer to
+-- DocumentStyle\'s page_number_start. When updating this property, setting
+-- a concrete value is required. Unsetting this property results in a 400
+-- bad request error.
+ssPageNumberStart :: Lens' SectionStyle (Maybe Int32)
+ssPageNumberStart
+  = lens _ssPageNumberStart
+      (\ s a -> s{_ssPageNumberStart = a})
+      . mapping _Coerce
+
+-- | Indicates whether to use the first page header \/ footer IDs for the
+-- first page of the section. If unset, it inherits from DocumentStyle\'s
+-- use_first_page_header_footer for the first section. If the value is
+-- unset for subsequent sectors, it should be interpreted as false. When
+-- updating this property, setting a concrete value is required. Unsetting
+-- this property results in a 400 bad request error.
+ssUseFirstPageHeaderFooter :: Lens' SectionStyle (Maybe Bool)
+ssUseFirstPageHeaderFooter
+  = lens _ssUseFirstPageHeaderFooter
+      (\ s a -> s{_ssUseFirstPageHeaderFooter = a})
+
+-- | The ID of the footer used only for even pages. If the value of
+-- DocumentStyle\'s use_even_page_header_footer is true, this value is used
+-- for the footers on even pages in the section. If it is false, the
+-- footers on even pages uses the default_footer_id. If unset, the value
+-- inherits from the previous SectionBreak\'s SectionStyle. If the value is
+-- unset in the first SectionBreak, it inherits from DocumentStyle\'s
+-- even_page_footer_id. This property is read-only.
+ssEvenPageFooterId :: Lens' SectionStyle (Maybe Text)
+ssEvenPageFooterId
+  = lens _ssEvenPageFooterId
+      (\ s a -> s{_ssEvenPageFooterId = a})
+
+-- | The right page margin of the section. If unset, uses margin_right from
+-- DocumentStyle. Updating right margin causes columns in this section to
+-- resize. Since the margin affects column width, it is applied before
+-- column properties. When updating this property, setting a concrete value
+-- is required. Unsetting this property results in a 400 bad request error.
+ssMarginRight :: Lens' SectionStyle (Maybe Dimension)
+ssMarginRight
+  = lens _ssMarginRight
+      (\ s a -> s{_ssMarginRight = a})
+
+-- | The bottom page margin of the section. If unset, uses margin_bottom from
+-- DocumentStyle. When updating this property, setting a concrete value is
+-- required. Unsetting this property results in a 400 bad request error.
+ssMarginBottom :: Lens' SectionStyle (Maybe Dimension)
+ssMarginBottom
+  = lens _ssMarginBottom
+      (\ s a -> s{_ssMarginBottom = a})
+
+-- | The ID of the header used only for even pages. If the value of
+-- DocumentStyle\'s use_even_page_header_footer is true, this value is used
+-- for the headers on even pages in the section. If it is false, the
+-- headers on even pages uses the default_header_id. If unset, the value
+-- inherits from the previous SectionBreak\'s SectionStyle. If the value is
+-- unset in the first SectionBreak, it inherits from DocumentStyle\'s
+-- even_page_header_id. This property is read-only.
+ssEvenPageHeaderId :: Lens' SectionStyle (Maybe Text)
+ssEvenPageHeaderId
+  = lens _ssEvenPageHeaderId
+      (\ s a -> s{_ssEvenPageHeaderId = a})
+
 instance FromJSON SectionStyle where
         parseJSON
           = withObject "SectionStyle"
               (\ o ->
                  SectionStyle' <$>
-                   (o .:? "columnSeparatorStyle") <*>
-                     (o .:? "contentDirection")
-                     <*> (o .:? "columnProperties" .!= mempty))
+                   (o .:? "marginTop") <*> (o .:? "defaultFooterId") <*>
+                     (o .:? "firstPageHeaderId")
+                     <*> (o .:? "marginFooter")
+                     <*> (o .:? "marginHeader")
+                     <*> (o .:? "firstPageFooterId")
+                     <*> (o .:? "sectionType")
+                     <*> (o .:? "defaultHeaderId")
+                     <*> (o .:? "columnSeparatorStyle")
+                     <*> (o .:? "contentDirection")
+                     <*> (o .:? "columnProperties" .!= mempty)
+                     <*> (o .:? "marginLeft")
+                     <*> (o .:? "pageNumberStart")
+                     <*> (o .:? "useFirstPageHeaderFooter")
+                     <*> (o .:? "evenPageFooterId")
+                     <*> (o .:? "marginRight")
+                     <*> (o .:? "marginBottom")
+                     <*> (o .:? "evenPageHeaderId"))
 
 instance ToJSON SectionStyle where
         toJSON SectionStyle'{..}
           = object
               (catMaybes
-                 [("columnSeparatorStyle" .=) <$>
+                 [("marginTop" .=) <$> _ssMarginTop,
+                  ("defaultFooterId" .=) <$> _ssDefaultFooterId,
+                  ("firstPageHeaderId" .=) <$> _ssFirstPageHeaderId,
+                  ("marginFooter" .=) <$> _ssMarginFooter,
+                  ("marginHeader" .=) <$> _ssMarginHeader,
+                  ("firstPageFooterId" .=) <$> _ssFirstPageFooterId,
+                  ("sectionType" .=) <$> _ssSectionType,
+                  ("defaultHeaderId" .=) <$> _ssDefaultHeaderId,
+                  ("columnSeparatorStyle" .=) <$>
                     _ssColumnSeparatorStyle,
                   ("contentDirection" .=) <$> _ssContentDirection,
-                  ("columnProperties" .=) <$> _ssColumnProperties])
+                  ("columnProperties" .=) <$> _ssColumnProperties,
+                  ("marginLeft" .=) <$> _ssMarginLeft,
+                  ("pageNumberStart" .=) <$> _ssPageNumberStart,
+                  ("useFirstPageHeaderFooter" .=) <$>
+                    _ssUseFirstPageHeaderFooter,
+                  ("evenPageFooterId" .=) <$> _ssEvenPageFooterId,
+                  ("marginRight" .=) <$> _ssMarginRight,
+                  ("marginBottom" .=) <$> _ssMarginBottom,
+                  ("evenPageHeaderId" .=) <$> _ssEvenPageHeaderId])
 
 -- | Represents the background of a document.
 --
@@ -9661,7 +11351,7 @@ sectionColumnProperties =
   SectionColumnProperties' {_scpWidth = Nothing, _scpPaddingEnd = Nothing}
 
 
--- | The width of the column.
+-- | Output only. The width of the column.
 scpWidth :: Lens' SectionColumnProperties (Maybe Dimension)
 scpWidth = lens _scpWidth (\ s a -> s{_scpWidth = a})
 
@@ -9742,7 +11432,7 @@ instance ToJSON CreateParagraphBulletsRequest where
                  [("bulletPreset" .=) <$> _cpbrBulletPreset,
                   ("range" .=) <$> _cpbrRange])
 
--- | The footers in the document, keyed by footer ID.
+-- | Output only. The footers in the document, keyed by footer ID.
 --
 -- /See:/ 'documentFooters' smart constructor.
 newtype DocumentFooters =
@@ -10687,7 +12377,7 @@ instance ToJSON ReplaceAllTextRequest where
                  [("containsText" .=) <$> _ratrContainsText,
                   ("replaceText" .=) <$> _ratrReplaceText])
 
--- | The positioned objects in the document, keyed by object ID.
+-- | Output only. The positioned objects in the document, keyed by object ID.
 --
 -- /See:/ 'documentPositionedObjects' smart constructor.
 newtype DocumentPositionedObjects =
@@ -10723,12 +12413,84 @@ instance FromJSON DocumentPositionedObjects where
 instance ToJSON DocumentPositionedObjects where
         toJSON = toJSON . _dpoAddtional
 
+-- | A table range represents a reference to a subset of a table. It\'s
+-- important to note that the cells specified by a table range do not
+-- necessarily form a rectangle. For example, let\'s say we have a 3 x 3
+-- table where all the cells of the last row are merged together. The table
+-- looks like this: [ ] A table range with table cell location =
+-- (table_start_location, row = 0, column = 0), row span = 3 and column
+-- span = 2 specifies the following cells: x x [ x x x ]
+--
+-- /See:/ 'tableRange' smart constructor.
+data TableRange =
+  TableRange'
+    { _trColumnSpan :: !(Maybe (Textual Int32))
+    , _trRowSpan :: !(Maybe (Textual Int32))
+    , _trTableCellLocation :: !(Maybe TableCellLocation)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'TableRange' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'trColumnSpan'
+--
+-- * 'trRowSpan'
+--
+-- * 'trTableCellLocation'
+tableRange
+    :: TableRange
+tableRange =
+  TableRange'
+    { _trColumnSpan = Nothing
+    , _trRowSpan = Nothing
+    , _trTableCellLocation = Nothing
+    }
+
+
+-- | The column span of the table range.
+trColumnSpan :: Lens' TableRange (Maybe Int32)
+trColumnSpan
+  = lens _trColumnSpan (\ s a -> s{_trColumnSpan = a})
+      . mapping _Coerce
+
+-- | The row span of the table range.
+trRowSpan :: Lens' TableRange (Maybe Int32)
+trRowSpan
+  = lens _trRowSpan (\ s a -> s{_trRowSpan = a}) .
+      mapping _Coerce
+
+-- | The cell location where the table range starts.
+trTableCellLocation :: Lens' TableRange (Maybe TableCellLocation)
+trTableCellLocation
+  = lens _trTableCellLocation
+      (\ s a -> s{_trTableCellLocation = a})
+
+instance FromJSON TableRange where
+        parseJSON
+          = withObject "TableRange"
+              (\ o ->
+                 TableRange' <$>
+                   (o .:? "columnSpan") <*> (o .:? "rowSpan") <*>
+                     (o .:? "tableCellLocation"))
+
+instance ToJSON TableRange where
+        toJSON TableRange'{..}
+          = object
+              (catMaybes
+                 [("columnSpan" .=) <$> _trColumnSpan,
+                  ("rowSpan" .=) <$> _trRowSpan,
+                  ("tableCellLocation" .=) <$> _trTableCellLocation])
+
 -- | A single update to apply to a document.
 --
 -- /See:/ 'request'' smart constructor.
 data Request' =
   Request''
     { _reqDeletePositionedObject :: !(Maybe DeletePositionedObjectRequest)
+    , _reqDeleteFooter :: !(Maybe DeleteFooterRequest)
     , _reqCreateParagraphBullets :: !(Maybe CreateParagraphBulletsRequest)
     , _reqInsertText :: !(Maybe InsertTextRequest)
     , _reqDeleteParagraphBullets :: !(Maybe DeleteParagraphBulletsRequest)
@@ -10737,12 +12499,27 @@ data Request' =
     , _reqReplaceAllText :: !(Maybe ReplaceAllTextRequest)
     , _reqUpdateParagraphStyle :: !(Maybe UpdateParagraphStyleRequest)
     , _reqCreateNamedRange :: !(Maybe CreateNamedRangeRequest)
+    , _reqReplaceImage :: !(Maybe ReplaceImageRequest)
+    , _reqCreateHeader :: !(Maybe CreateHeaderRequest)
     , _reqInsertPageBreak :: !(Maybe InsertPageBreakRequest)
+    , _reqCreateFootNote :: !(Maybe CreateFootNoteRequest)
+    , _reqInsertSectionBreak :: !(Maybe InsertSectionBreakRequest)
+    , _reqCreateFooter :: !(Maybe CreateFooterRequest)
     , _reqDeleteTableColumn :: !(Maybe DeleteTableColumnRequest)
     , _reqInsertInlineImage :: !(Maybe InsertInlineImageRequest)
+    , _reqUpdateDocumentStyle :: !(Maybe UpdateDocumentStyleRequest)
+    , _reqUpdateSectionStyle :: !(Maybe UpdateSectionStyleRequest)
     , _reqDeleteContentRange :: !(Maybe DeleteContentRangeRequest)
+    , _reqInsertTableColumn :: !(Maybe InsertTableColumnRequest)
+    , _reqUpdateTableRowStyle :: !(Maybe UpdateTableRowStyleRequest)
+    , _reqUpdateTableColumnProperties :: !(Maybe UpdateTableColumnPropertiesRequest)
+    , _reqUnmergeTableCells :: !(Maybe UnmergeTableCellsRequest)
+    , _reqMergeTableCells :: !(Maybe MergeTableCellsRequest)
     , _reqInsertTableRow :: !(Maybe InsertTableRowRequest)
     , _reqUpdateTextStyle :: !(Maybe UpdateTextStyleRequest)
+    , _reqDeleteHeader :: !(Maybe DeleteHeaderRequest)
+    , _reqUpdateTableCellStyle :: !(Maybe UpdateTableCellStyleRequest)
+    , _reqReplaceNamedRangeContent :: !(Maybe ReplaceNamedRangeContentRequest)
     , _reqInsertTable :: !(Maybe InsertTableRequest)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -10753,6 +12530,8 @@ data Request' =
 -- Use one of the following lenses to modify other fields as desired:
 --
 -- * 'reqDeletePositionedObject'
+--
+-- * 'reqDeleteFooter'
 --
 -- * 'reqCreateParagraphBullets'
 --
@@ -10770,17 +12549,47 @@ data Request' =
 --
 -- * 'reqCreateNamedRange'
 --
+-- * 'reqReplaceImage'
+--
+-- * 'reqCreateHeader'
+--
 -- * 'reqInsertPageBreak'
+--
+-- * 'reqCreateFootNote'
+--
+-- * 'reqInsertSectionBreak'
+--
+-- * 'reqCreateFooter'
 --
 -- * 'reqDeleteTableColumn'
 --
 -- * 'reqInsertInlineImage'
 --
+-- * 'reqUpdateDocumentStyle'
+--
+-- * 'reqUpdateSectionStyle'
+--
 -- * 'reqDeleteContentRange'
+--
+-- * 'reqInsertTableColumn'
+--
+-- * 'reqUpdateTableRowStyle'
+--
+-- * 'reqUpdateTableColumnProperties'
+--
+-- * 'reqUnmergeTableCells'
+--
+-- * 'reqMergeTableCells'
 --
 -- * 'reqInsertTableRow'
 --
 -- * 'reqUpdateTextStyle'
+--
+-- * 'reqDeleteHeader'
+--
+-- * 'reqUpdateTableCellStyle'
+--
+-- * 'reqReplaceNamedRangeContent'
 --
 -- * 'reqInsertTable'
 request'
@@ -10788,6 +12597,7 @@ request'
 request' =
   Request''
     { _reqDeletePositionedObject = Nothing
+    , _reqDeleteFooter = Nothing
     , _reqCreateParagraphBullets = Nothing
     , _reqInsertText = Nothing
     , _reqDeleteParagraphBullets = Nothing
@@ -10796,12 +12606,27 @@ request' =
     , _reqReplaceAllText = Nothing
     , _reqUpdateParagraphStyle = Nothing
     , _reqCreateNamedRange = Nothing
+    , _reqReplaceImage = Nothing
+    , _reqCreateHeader = Nothing
     , _reqInsertPageBreak = Nothing
+    , _reqCreateFootNote = Nothing
+    , _reqInsertSectionBreak = Nothing
+    , _reqCreateFooter = Nothing
     , _reqDeleteTableColumn = Nothing
     , _reqInsertInlineImage = Nothing
+    , _reqUpdateDocumentStyle = Nothing
+    , _reqUpdateSectionStyle = Nothing
     , _reqDeleteContentRange = Nothing
+    , _reqInsertTableColumn = Nothing
+    , _reqUpdateTableRowStyle = Nothing
+    , _reqUpdateTableColumnProperties = Nothing
+    , _reqUnmergeTableCells = Nothing
+    , _reqMergeTableCells = Nothing
     , _reqInsertTableRow = Nothing
     , _reqUpdateTextStyle = Nothing
+    , _reqDeleteHeader = Nothing
+    , _reqUpdateTableCellStyle = Nothing
+    , _reqReplaceNamedRangeContent = Nothing
     , _reqInsertTable = Nothing
     }
 
@@ -10811,6 +12636,12 @@ reqDeletePositionedObject :: Lens' Request' (Maybe DeletePositionedObjectRequest
 reqDeletePositionedObject
   = lens _reqDeletePositionedObject
       (\ s a -> s{_reqDeletePositionedObject = a})
+
+-- | Deletes a footer from the document.
+reqDeleteFooter :: Lens' Request' (Maybe DeleteFooterRequest)
+reqDeleteFooter
+  = lens _reqDeleteFooter
+      (\ s a -> s{_reqDeleteFooter = a})
 
 -- | Creates bullets for paragraphs.
 reqCreateParagraphBullets :: Lens' Request' (Maybe CreateParagraphBulletsRequest)
@@ -10860,11 +12691,41 @@ reqCreateNamedRange
   = lens _reqCreateNamedRange
       (\ s a -> s{_reqCreateNamedRange = a})
 
+-- | Replaces an image in the document.
+reqReplaceImage :: Lens' Request' (Maybe ReplaceImageRequest)
+reqReplaceImage
+  = lens _reqReplaceImage
+      (\ s a -> s{_reqReplaceImage = a})
+
+-- | Creates a header.
+reqCreateHeader :: Lens' Request' (Maybe CreateHeaderRequest)
+reqCreateHeader
+  = lens _reqCreateHeader
+      (\ s a -> s{_reqCreateHeader = a})
+
 -- | Inserts a page break at the specified location.
 reqInsertPageBreak :: Lens' Request' (Maybe InsertPageBreakRequest)
 reqInsertPageBreak
   = lens _reqInsertPageBreak
       (\ s a -> s{_reqInsertPageBreak = a})
+
+-- | Creates a footnote.
+reqCreateFootNote :: Lens' Request' (Maybe CreateFootNoteRequest)
+reqCreateFootNote
+  = lens _reqCreateFootNote
+      (\ s a -> s{_reqCreateFootNote = a})
+
+-- | Inserts a section break at the specified location.
+reqInsertSectionBreak :: Lens' Request' (Maybe InsertSectionBreakRequest)
+reqInsertSectionBreak
+  = lens _reqInsertSectionBreak
+      (\ s a -> s{_reqInsertSectionBreak = a})
+
+-- | Creates a footer.
+reqCreateFooter :: Lens' Request' (Maybe CreateFooterRequest)
+reqCreateFooter
+  = lens _reqCreateFooter
+      (\ s a -> s{_reqCreateFooter = a})
 
 -- | Deletes a column from a table.
 reqDeleteTableColumn :: Lens' Request' (Maybe DeleteTableColumnRequest)
@@ -10878,11 +12739,53 @@ reqInsertInlineImage
   = lens _reqInsertInlineImage
       (\ s a -> s{_reqInsertInlineImage = a})
 
+-- | Updates the style of the document.
+reqUpdateDocumentStyle :: Lens' Request' (Maybe UpdateDocumentStyleRequest)
+reqUpdateDocumentStyle
+  = lens _reqUpdateDocumentStyle
+      (\ s a -> s{_reqUpdateDocumentStyle = a})
+
+-- | Updates the section style of the specified range.
+reqUpdateSectionStyle :: Lens' Request' (Maybe UpdateSectionStyleRequest)
+reqUpdateSectionStyle
+  = lens _reqUpdateSectionStyle
+      (\ s a -> s{_reqUpdateSectionStyle = a})
+
 -- | Deletes content from the document.
 reqDeleteContentRange :: Lens' Request' (Maybe DeleteContentRangeRequest)
 reqDeleteContentRange
   = lens _reqDeleteContentRange
       (\ s a -> s{_reqDeleteContentRange = a})
+
+-- | Inserts an empty column into a table.
+reqInsertTableColumn :: Lens' Request' (Maybe InsertTableColumnRequest)
+reqInsertTableColumn
+  = lens _reqInsertTableColumn
+      (\ s a -> s{_reqInsertTableColumn = a})
+
+-- | Updates the row style in a table.
+reqUpdateTableRowStyle :: Lens' Request' (Maybe UpdateTableRowStyleRequest)
+reqUpdateTableRowStyle
+  = lens _reqUpdateTableRowStyle
+      (\ s a -> s{_reqUpdateTableRowStyle = a})
+
+-- | Updates the properties of columns in a table.
+reqUpdateTableColumnProperties :: Lens' Request' (Maybe UpdateTableColumnPropertiesRequest)
+reqUpdateTableColumnProperties
+  = lens _reqUpdateTableColumnProperties
+      (\ s a -> s{_reqUpdateTableColumnProperties = a})
+
+-- | Unmerges cells in a table.
+reqUnmergeTableCells :: Lens' Request' (Maybe UnmergeTableCellsRequest)
+reqUnmergeTableCells
+  = lens _reqUnmergeTableCells
+      (\ s a -> s{_reqUnmergeTableCells = a})
+
+-- | Merges cells in a table.
+reqMergeTableCells :: Lens' Request' (Maybe MergeTableCellsRequest)
+reqMergeTableCells
+  = lens _reqMergeTableCells
+      (\ s a -> s{_reqMergeTableCells = a})
 
 -- | Inserts an empty row into a table.
 reqInsertTableRow :: Lens' Request' (Maybe InsertTableRowRequest)
@@ -10896,6 +12799,24 @@ reqUpdateTextStyle
   = lens _reqUpdateTextStyle
       (\ s a -> s{_reqUpdateTextStyle = a})
 
+-- | Deletes a header from the document.
+reqDeleteHeader :: Lens' Request' (Maybe DeleteHeaderRequest)
+reqDeleteHeader
+  = lens _reqDeleteHeader
+      (\ s a -> s{_reqDeleteHeader = a})
+
+-- | Updates the style of table cells.
+reqUpdateTableCellStyle :: Lens' Request' (Maybe UpdateTableCellStyleRequest)
+reqUpdateTableCellStyle
+  = lens _reqUpdateTableCellStyle
+      (\ s a -> s{_reqUpdateTableCellStyle = a})
+
+-- | Replaces the content in a named range.
+reqReplaceNamedRangeContent :: Lens' Request' (Maybe ReplaceNamedRangeContentRequest)
+reqReplaceNamedRangeContent
+  = lens _reqReplaceNamedRangeContent
+      (\ s a -> s{_reqReplaceNamedRangeContent = a})
+
 -- | Inserts a table at the specified location.
 reqInsertTable :: Lens' Request' (Maybe InsertTableRequest)
 reqInsertTable
@@ -10908,7 +12829,8 @@ instance FromJSON Request' where
               (\ o ->
                  Request'' <$>
                    (o .:? "deletePositionedObject") <*>
-                     (o .:? "createParagraphBullets")
+                     (o .:? "deleteFooter")
+                     <*> (o .:? "createParagraphBullets")
                      <*> (o .:? "insertText")
                      <*> (o .:? "deleteParagraphBullets")
                      <*> (o .:? "deleteTableRow")
@@ -10916,12 +12838,27 @@ instance FromJSON Request' where
                      <*> (o .:? "replaceAllText")
                      <*> (o .:? "updateParagraphStyle")
                      <*> (o .:? "createNamedRange")
+                     <*> (o .:? "replaceImage")
+                     <*> (o .:? "createHeader")
                      <*> (o .:? "insertPageBreak")
+                     <*> (o .:? "createFootnote")
+                     <*> (o .:? "insertSectionBreak")
+                     <*> (o .:? "createFooter")
                      <*> (o .:? "deleteTableColumn")
                      <*> (o .:? "insertInlineImage")
+                     <*> (o .:? "updateDocumentStyle")
+                     <*> (o .:? "updateSectionStyle")
                      <*> (o .:? "deleteContentRange")
+                     <*> (o .:? "insertTableColumn")
+                     <*> (o .:? "updateTableRowStyle")
+                     <*> (o .:? "updateTableColumnProperties")
+                     <*> (o .:? "unmergeTableCells")
+                     <*> (o .:? "mergeTableCells")
                      <*> (o .:? "insertTableRow")
                      <*> (o .:? "updateTextStyle")
+                     <*> (o .:? "deleteHeader")
+                     <*> (o .:? "updateTableCellStyle")
+                     <*> (o .:? "replaceNamedRangeContent")
                      <*> (o .:? "insertTable"))
 
 instance ToJSON Request' where
@@ -10930,6 +12867,7 @@ instance ToJSON Request' where
               (catMaybes
                  [("deletePositionedObject" .=) <$>
                     _reqDeletePositionedObject,
+                  ("deleteFooter" .=) <$> _reqDeleteFooter,
                   ("createParagraphBullets" .=) <$>
                     _reqCreateParagraphBullets,
                   ("insertText" .=) <$> _reqInsertText,
@@ -10941,12 +12879,32 @@ instance ToJSON Request' where
                   ("updateParagraphStyle" .=) <$>
                     _reqUpdateParagraphStyle,
                   ("createNamedRange" .=) <$> _reqCreateNamedRange,
+                  ("replaceImage" .=) <$> _reqReplaceImage,
+                  ("createHeader" .=) <$> _reqCreateHeader,
                   ("insertPageBreak" .=) <$> _reqInsertPageBreak,
+                  ("createFootnote" .=) <$> _reqCreateFootNote,
+                  ("insertSectionBreak" .=) <$> _reqInsertSectionBreak,
+                  ("createFooter" .=) <$> _reqCreateFooter,
                   ("deleteTableColumn" .=) <$> _reqDeleteTableColumn,
                   ("insertInlineImage" .=) <$> _reqInsertInlineImage,
+                  ("updateDocumentStyle" .=) <$>
+                    _reqUpdateDocumentStyle,
+                  ("updateSectionStyle" .=) <$> _reqUpdateSectionStyle,
                   ("deleteContentRange" .=) <$> _reqDeleteContentRange,
+                  ("insertTableColumn" .=) <$> _reqInsertTableColumn,
+                  ("updateTableRowStyle" .=) <$>
+                    _reqUpdateTableRowStyle,
+                  ("updateTableColumnProperties" .=) <$>
+                    _reqUpdateTableColumnProperties,
+                  ("unmergeTableCells" .=) <$> _reqUnmergeTableCells,
+                  ("mergeTableCells" .=) <$> _reqMergeTableCells,
                   ("insertTableRow" .=) <$> _reqInsertTableRow,
                   ("updateTextStyle" .=) <$> _reqUpdateTextStyle,
+                  ("deleteHeader" .=) <$> _reqDeleteHeader,
+                  ("updateTableCellStyle" .=) <$>
+                    _reqUpdateTableCellStyle,
+                  ("replaceNamedRangeContent" .=) <$>
+                    _reqReplaceNamedRangeContent,
                   ("insertTable" .=) <$> _reqInsertTable])
 
 -- | The suggested changes to the positioned object properties, keyed by

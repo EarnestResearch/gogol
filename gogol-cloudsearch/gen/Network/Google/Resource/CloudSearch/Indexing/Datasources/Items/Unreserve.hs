@@ -22,9 +22,11 @@
 --
 -- Unreserves all items from a queue, making them all eligible to be
 -- polled. This method is useful for resetting the indexing queue after a
--- connector has been restarted.
+-- connector has been restarted. This API requires an admin or service
+-- account to execute. The service account used is the one whitelisted in
+-- the corresponding data source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.unreserve@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.unreserve@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Unreserve
     (
     -- * REST Resource
@@ -65,7 +67,9 @@ type IndexingDatasourcesItemsUnreserveResource =
 
 -- | Unreserves all items from a queue, making them all eligible to be
 -- polled. This method is useful for resetting the indexing queue after a
--- connector has been restarted.
+-- connector has been restarted. This API requires an admin or service
+-- account to execute. The service account used is the one whitelisted in
+-- the corresponding data source.
 --
 -- /See:/ 'indexingDatasourcesItemsUnreserve' smart constructor.
 data IndexingDatasourcesItemsUnreserve =

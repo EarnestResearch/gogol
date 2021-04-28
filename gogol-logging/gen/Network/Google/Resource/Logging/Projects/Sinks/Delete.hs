@@ -23,7 +23,7 @@
 -- Deletes a sink. If the sink has a unique writer_identity, then that
 -- service account is also deleted.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.projects.sinks.delete@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.projects.sinks.delete@.
 module Network.Google.Resource.Logging.Projects.Sinks.Delete
     (
     -- * REST Resource

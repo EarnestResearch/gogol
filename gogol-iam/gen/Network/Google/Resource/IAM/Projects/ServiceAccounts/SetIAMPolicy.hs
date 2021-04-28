@@ -20,19 +20,17 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the Cloud IAM access control policy for a ServiceAccount. Note:
--- Service accounts are both [resources and
--- identities](\/iam\/docs\/service-accounts#service_account_permissions).
--- This method treats the service account as a resource. Use it to grant
--- members access to the service account, such as when they need to
--- impersonate it. This method does not grant the service account access to
--- other resources, such as projects. To grant a service account access to
--- resources, include the service account in the Cloud IAM policy for the
--- desired resource, then call the appropriate \`setIamPolicy\` method on
--- the target resource. For example, to grant a service account access to a
--- project, call the
--- [projects.setIamPolicy](\/resource-manager\/reference\/rest\/v1\/projects\/setIamPolicy)
--- method.
+-- Sets the IAM policy that is attached to a ServiceAccount. Use this
+-- method to grant or revoke access to the service account. For example,
+-- you could grant a member the ability to impersonate the service account.
+-- This method does not enable the service account to access other
+-- resources. To grant roles to a service account on a resource, follow
+-- these steps: 1. Call the resource\'s \`getIamPolicy\` method to get its
+-- current IAM policy. 2. Edit the policy so that it binds the service
+-- account to an IAM role for the resource. 3. Call the resource\'s
+-- \`setIamPolicy\` method to update its IAM policy. For detailed
+-- instructions, see [Granting roles to a service account for specific
+-- resources](https:\/\/cloud.google.com\/iam\/help\/service-accounts\/granting-access-to-service-accounts).
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.setIamPolicy@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.SetIAMPolicy
@@ -71,19 +69,17 @@ type ProjectsServiceAccountsSetIAMPolicyResource =
                      ReqBody '[JSON] SetIAMPolicyRequest :>
                        Post '[JSON] Policy
 
--- | Sets the Cloud IAM access control policy for a ServiceAccount. Note:
--- Service accounts are both [resources and
--- identities](\/iam\/docs\/service-accounts#service_account_permissions).
--- This method treats the service account as a resource. Use it to grant
--- members access to the service account, such as when they need to
--- impersonate it. This method does not grant the service account access to
--- other resources, such as projects. To grant a service account access to
--- resources, include the service account in the Cloud IAM policy for the
--- desired resource, then call the appropriate \`setIamPolicy\` method on
--- the target resource. For example, to grant a service account access to a
--- project, call the
--- [projects.setIamPolicy](\/resource-manager\/reference\/rest\/v1\/projects\/setIamPolicy)
--- method.
+-- | Sets the IAM policy that is attached to a ServiceAccount. Use this
+-- method to grant or revoke access to the service account. For example,
+-- you could grant a member the ability to impersonate the service account.
+-- This method does not enable the service account to access other
+-- resources. To grant roles to a service account on a resource, follow
+-- these steps: 1. Call the resource\'s \`getIamPolicy\` method to get its
+-- current IAM policy. 2. Edit the policy so that it binds the service
+-- account to an IAM role for the resource. 3. Call the resource\'s
+-- \`setIamPolicy\` method to update its IAM policy. For detailed
+-- instructions, see [Granting roles to a service account for specific
+-- resources](https:\/\/cloud.google.com\/iam\/help\/service-accounts\/granting-access-to-service-accounts).
 --
 -- /See:/ 'projectsServiceAccountsSetIAMPolicy' smart constructor.
 data ProjectsServiceAccountsSetIAMPolicy =

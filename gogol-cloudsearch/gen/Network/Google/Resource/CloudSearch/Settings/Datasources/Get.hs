@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Gets a datasource.
+-- Gets a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.datasources.get@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.datasources.get@.
 module Network.Google.Resource.CloudSearch.Settings.Datasources.Get
     (
     -- * REST Resource
@@ -59,7 +60,8 @@ type SettingsDatasourcesGetResource =
                      QueryParam "callback" Text :>
                        QueryParam "alt" AltJSON :> Get '[JSON] DataSource
 
--- | Gets a datasource.
+-- | Gets a datasource. **Note:** This API requires an admin account to
+-- execute.
 --
 -- /See:/ 'settingsDatasourcesGet' smart constructor.
 data SettingsDatasourcesGet =

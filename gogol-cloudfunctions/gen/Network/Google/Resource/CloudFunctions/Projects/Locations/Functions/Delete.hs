@@ -127,7 +127,7 @@ plfdUploadType
   = lens _plfdUploadType
       (\ s a -> s{_plfdUploadType = a})
 
--- | The name of the function which should be deleted.
+-- | Required. The name of the function which should be deleted.
 plfdName :: Lens' ProjectsLocationsFunctionsDelete Text
 plfdName = lens _plfdName (\ s a -> s{_plfdName = a})
 

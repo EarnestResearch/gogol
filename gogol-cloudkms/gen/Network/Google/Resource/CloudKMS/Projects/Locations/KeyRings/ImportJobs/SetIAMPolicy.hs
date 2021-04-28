@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ <https://cloud.google.com/kms/ Cloud Key Management Service (KMS) API Reference> for @cloudkms.projects.locations.keyRings.importJobs.setIamPolicy@.
 module Network.Google.Resource.CloudKMS.Projects.Locations.KeyRings.ImportJobs.SetIAMPolicy
@@ -62,7 +63,8 @@ type ProjectsLocationsKeyRingsImportJobsSetIAMPolicyResource
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ 'projectsLocationsKeyRingsImportJobsSetIAMPolicy' smart constructor.
 data ProjectsLocationsKeyRingsImportJobsSetIAMPolicy =

@@ -34,6 +34,7 @@ module Network.Google.FactCheckTools.Types
     , GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating
     , googleFactcheckingFactchecktoolsV1alpha1ClaimRating
     , gffvcrWorstRating
+    , gffvcrRatingExplanation
     , gffvcrRatingValue
     , gffvcrImageURL
     , gffvcrBestRating
@@ -122,6 +123,6 @@ factCheckToolsService
       (ServiceId "factchecktools:v1alpha1")
       "factchecktools.googleapis.com"
 
--- | View your email address
+-- | See your primary Google Account email address
 userInfoEmailScope :: Proxy '["https://www.googleapis.com/auth/userinfo.email"]
 userInfoEmailScope = Proxy

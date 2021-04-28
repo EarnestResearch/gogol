@@ -125,7 +125,7 @@ plkrckgUploadType
   = lens _plkrckgUploadType
       (\ s a -> s{_plkrckgUploadType = a})
 
--- | The name of the CryptoKey to get.
+-- | Required. The name of the CryptoKey to get.
 plkrckgName :: Lens' ProjectsLocationsKeyRingsCryptoKeysGet Text
 plkrckgName
   = lens _plkrckgName (\ s a -> s{_plkrckgName = a})

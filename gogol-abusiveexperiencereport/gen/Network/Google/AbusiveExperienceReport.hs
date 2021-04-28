@@ -22,9 +22,6 @@ module Network.Google.AbusiveExperienceReport
     -- * Service Configuration
       abusiveExperienceReportService
 
-    -- * OAuth Scopes
-    , xapiZooScope
-
     -- * API Declaration
     , AbusiveExperienceReportAPI
 

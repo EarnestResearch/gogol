@@ -22,7 +22,7 @@
 --
 -- Updates an organization\'s settings.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.updateOrganizationSettings@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.updateOrganizationSettings@.
 module Network.Google.Resource.SecurityCenter.Organizations.UpdateOrganizationSettings
     (
     -- * REST Resource
@@ -50,7 +50,7 @@ import Network.Google.SecurityCenter.Types
 -- 'OrganizationsUpdateOrganizationSettings' request conforms to.
 type OrganizationsUpdateOrganizationSettingsResource
      =
-     "v1" :>
+     "v1p1beta1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -152,7 +152,7 @@ ouosPayload
 
 -- | The relative resource name of the settings. See:
 -- https:\/\/cloud.google.com\/apis\/design\/resource_names#relative_resource_name
--- Example: \"organizations\/123\/organizationSettings\".
+-- Example: \"organizations\/{organization_id}\/organizationSettings\".
 ouosName :: Lens' OrganizationsUpdateOrganizationSettings Text
 ouosName = lens _ouosName (\ s a -> s{_ouosName = a})
 

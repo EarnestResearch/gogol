@@ -43,6 +43,7 @@ module Network.Google.Resource.Storage.Objects.Patch
     , opIfMetagenerationNotMatch
     , opObject
     , opProjection
+    , opProvisionalUserProject
     , opGeneration
     ) where
 
@@ -67,10 +68,11 @@ type ObjectsPatchResource =
                            QueryParam "ifMetagenerationNotMatch" (Textual Int64)
                              :>
                              QueryParam "projection" ObjectsPatchProjection :>
-                               QueryParam "generation" (Textual Int64) :>
-                                 QueryParam "alt" AltJSON :>
-                                   ReqBody '[JSON] Object :>
-                                     Patch '[JSON] Object
+                               QueryParam "provisionalUserProject" Text :>
+                                 QueryParam "generation" (Textual Int64) :>
+                                   QueryParam "alt" AltJSON :>
+                                     ReqBody '[JSON] Object :>
+                                       Patch '[JSON] Object
 
 -- | Patches an object\'s metadata.
 --
@@ -87,6 +89,7 @@ data ObjectsPatch =
     , _opIfMetagenerationNotMatch :: !(Maybe (Textual Int64))
     , _opObject :: !Text
     , _opProjection :: !(Maybe ObjectsPatchProjection)
+    , _opProvisionalUserProject :: !(Maybe Text)
     , _opGeneration :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -116,6 +119,8 @@ data ObjectsPatch =
 --
 -- * 'opProjection'
 --
+-- * 'opProvisionalUserProject'
+--
 -- * 'opGeneration'
 objectsPatch
     :: Text -- ^ 'opBucket'
@@ -134,6 +139,7 @@ objectsPatch pOpBucket_ pOpPayload_ pOpObject_ =
     , _opIfMetagenerationNotMatch = Nothing
     , _opObject = pOpObject_
     , _opProjection = Nothing
+    , _opProvisionalUserProject = Nothing
     , _opGeneration = Nothing
     }
 
@@ -204,6 +210,13 @@ opProjection :: Lens' ObjectsPatch (Maybe ObjectsPatchProjection)
 opProjection
   = lens _opProjection (\ s a -> s{_opProjection = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+opProvisionalUserProject :: Lens' ObjectsPatch (Maybe Text)
+opProvisionalUserProject
+  = lens _opProvisionalUserProject
+      (\ s a -> s{_opProvisionalUserProject = a})
+
 -- | If present, selects a specific revision of this object (as opposed to
 -- the latest version, the default).
 opGeneration :: Lens' ObjectsPatch (Maybe Int64)
@@ -224,6 +237,7 @@ instance GoogleRequest ObjectsPatch where
               _opUserProject
               _opIfMetagenerationNotMatch
               _opProjection
+              _opProvisionalUserProject
               _opGeneration
               (Just AltJSON)
               _opPayload

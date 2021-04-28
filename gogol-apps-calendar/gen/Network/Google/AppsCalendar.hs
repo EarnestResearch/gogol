@@ -201,6 +201,7 @@ module Network.Google.AppsCalendar
     , eGuestsCanInviteOthers
     , eRecurrence
     , eGadget
+    , eEventType
     , eSequence
     , eICalUId
     , eEnd

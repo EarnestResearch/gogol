@@ -20,7 +20,7 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a ServiceAccountKey and returns it.
+-- Creates a ServiceAccountKey.
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference> for @iam.projects.serviceAccounts.keys.create@.
 module Network.Google.Resource.IAM.Projects.ServiceAccounts.Keys.Create
@@ -60,7 +60,7 @@ type ProjectsServiceAccountsKeysCreateResource =
                        ReqBody '[JSON] CreateServiceAccountKeyRequest :>
                          Post '[JSON] ServiceAccountKey
 
--- | Creates a ServiceAccountKey and returns it.
+-- | Creates a ServiceAccountKey.
 --
 -- /See:/ 'projectsServiceAccountsKeysCreate' smart constructor.
 data ProjectsServiceAccountsKeysCreate =
@@ -137,11 +137,11 @@ psakcPayload :: Lens' ProjectsServiceAccountsKeysCreate CreateServiceAccountKeyR
 psakcPayload
   = lens _psakcPayload (\ s a -> s{_psakcPayload = a})
 
--- | The resource name of the service account in the following format:
--- \`projects\/{PROJECT_ID}\/serviceAccounts\/{ACCOUNT}\`. Using \`-\` as a
--- wildcard for the \`PROJECT_ID\` will infer the project from the account.
--- The \`ACCOUNT\` value can be the \`email\` address or the \`unique_id\`
--- of the service account.
+-- | Required. The resource name of the service account in the following
+-- format: \`projects\/{PROJECT_ID}\/serviceAccounts\/{ACCOUNT}\`. Using
+-- \`-\` as a wildcard for the \`PROJECT_ID\` will infer the project from
+-- the account. The \`ACCOUNT\` value can be the \`email\` address or the
+-- \`unique_id\` of the service account.
 psakcName :: Lens' ProjectsServiceAccountsKeysCreate Text
 psakcName
   = lens _psakcName (\ s a -> s{_psakcName = a})

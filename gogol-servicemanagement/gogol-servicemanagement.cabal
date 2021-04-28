@@ -46,8 +46,6 @@ library
         , Network.Google.Resource.ServiceManagement.Services.Consumers.TestIAMPermissions
         , Network.Google.Resource.ServiceManagement.Services.Create
         , Network.Google.Resource.ServiceManagement.Services.Delete
-        , Network.Google.Resource.ServiceManagement.Services.Disable
-        , Network.Google.Resource.ServiceManagement.Services.Enable
         , Network.Google.Resource.ServiceManagement.Services.GenerateConfigReport
         , Network.Google.Resource.ServiceManagement.Services.Get
         , Network.Google.Resource.ServiceManagement.Services.GetConfig
@@ -67,5 +65,5 @@ library
         , Network.Google.ServiceManagement.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

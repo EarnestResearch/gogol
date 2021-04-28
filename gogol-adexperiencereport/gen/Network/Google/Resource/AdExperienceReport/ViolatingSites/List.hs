@@ -20,8 +20,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists sites with Ad Experience Report statuses of \"Failing\" or
--- \"Warning\".
+-- Lists sites that are failing in the Ad Experience Report on at least one
+-- platform.
 --
 -- /See:/ <https://developers.google.com/ad-experience-report/ Ad Experience Report API Reference> for @adexperiencereport.violatingSites.list@.
 module Network.Google.Resource.AdExperienceReport.ViolatingSites.List
@@ -57,8 +57,8 @@ type ViolatingSitesListResource =
                    QueryParam "alt" AltJSON :>
                      Get '[JSON] ViolatingSitesResponse
 
--- | Lists sites with Ad Experience Report statuses of \"Failing\" or
--- \"Warning\".
+-- | Lists sites that are failing in the Ad Experience Report on at least one
+-- platform.
 --
 -- /See:/ 'violatingSitesList' smart constructor.
 data ViolatingSitesList =
@@ -126,8 +126,7 @@ vslCallback
 
 instance GoogleRequest ViolatingSitesList where
         type Rs ViolatingSitesList = ViolatingSitesResponse
-        type Scopes ViolatingSitesList =
-             '["https://www.googleapis.com/auth/xapi.zoo"]
+        type Scopes ViolatingSitesList = '[]
         requestClient ViolatingSitesList'{..}
           = go _vslXgafv _vslUploadProtocol _vslAccessToken
               _vslUploadType

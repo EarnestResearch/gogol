@@ -22,7 +22,7 @@
 --
 -- Lists spaces the caller is a member of.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.list@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.list@.
 module Network.Google.Resource.Chat.Spaces.List
     (
     -- * REST Resource

@@ -49,7 +49,7 @@ import Network.Google.Prelude
 -- | A resource alias for @datafusion.projects.locations.operations.get@ method which the
 -- 'ProjectsLocationsOperationsGet' request conforms to.
 type ProjectsLocationsOperationsGetResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

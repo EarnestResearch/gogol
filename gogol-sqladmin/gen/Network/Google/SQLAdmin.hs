@@ -13,10 +13,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates and manages Cloud SQL instances, which provide fully managed
--- MySQL or PostgreSQL databases.
+-- API for Cloud SQL database instance management
 --
--- /See:/ <https://cloud.google.com/sql/docs/reference/latest Cloud SQL Admin API Reference>
+-- /See:/ <https://developers.google.com/cloud-sql/ Cloud SQL Admin API Reference>
 module Network.Google.SQLAdmin
     (
     -- * Service Configuration
@@ -133,6 +132,15 @@ module Network.Google.SQLAdmin
     -- ** sql.operations.list
     , module Network.Google.Resource.SQL.Operations.List
 
+    -- ** sql.projects.instances.rescheduleMaintenance
+    , module Network.Google.Resource.SQL.Projects.Instances.RescheduleMaintenance
+
+    -- ** sql.projects.instances.startExternalSync
+    , module Network.Google.Resource.SQL.Projects.Instances.StartExternalSync
+
+    -- ** sql.projects.instances.verifyExternalSyncSettings
+    , module Network.Google.Resource.SQL.Projects.Instances.VerifyExternalSyncSettings
+
     -- ** sql.sslCerts.createEphemeral
     , module Network.Google.Resource.SQL.SSLCerts.CreateEphemeral
 
@@ -165,6 +173,12 @@ module Network.Google.SQLAdmin
 
     -- * Types
 
+    -- ** SQLServerDatabaseDetails
+    , SQLServerDatabaseDetails
+    , sQLServerDatabaseDetails
+    , sqlsddRecoveryModel
+    , sqlsddCompatibilityLevel
+
     -- ** DemoteMasterMySQLReplicaConfiguration
     , DemoteMasterMySQLReplicaConfiguration
     , demoteMasterMySQLReplicaConfiguration
@@ -188,6 +202,9 @@ module Network.Google.SQLAdmin
     , scCreateTime
     , scInstance
 
+    -- ** FlagType
+    , FlagType (..)
+
     -- ** DatabasesListResponse
     , DatabasesListResponse
     , databasesListResponse
@@ -198,6 +215,16 @@ module Network.Google.SQLAdmin
     , InstancesExportRequest
     , instancesExportRequest
     , ierExportContext
+
+    -- ** SQLInstancesVerifyExternalSyncSettingsResponse
+    , SQLInstancesVerifyExternalSyncSettingsResponse
+    , sQLInstancesVerifyExternalSyncSettingsResponse
+    , sqlivessrKind
+    , sqlivessrWarnings
+    , sqlivessrErrors
+
+    -- ** BackupRunType
+    , BackupRunType (..)
 
     -- ** InstancesListServerCasResponse
     , InstancesListServerCasResponse
@@ -215,7 +242,21 @@ module Network.Google.SQLAdmin
     , OnPremisesConfiguration
     , onPremisesConfiguration
     , opcKind
+    , opcClientKey
+    , opcUsername
     , opcHostPort
+    , opcClientCertificate
+    , opcCaCertificate
+    , opcDumpFilePath
+    , opcPassword
+
+    -- ** InsightsConfig
+    , InsightsConfig
+    , insightsConfig
+    , icQueryInsightsEnabled
+    , icRecordApplicationTags
+    , icRecordClientAddress
+    , icQueryStringLength
 
     -- ** OperationsListResponse
     , OperationsListResponse
@@ -228,6 +269,7 @@ module Network.Google.SQLAdmin
     , APIWarning
     , apiWarning
     , awCode
+    , awRegion
     , awMessage
 
     -- ** DiskEncryptionConfiguration
@@ -235,6 +277,19 @@ module Network.Google.SQLAdmin
     , diskEncryptionConfiguration
     , decKind
     , decKmsKeyName
+
+    -- ** SQLExternalSyncSettingError
+    , SQLExternalSyncSettingError
+    , sQLExternalSyncSettingError
+    , sqlesseKind
+    , sqlesseType
+    , sqlesseDetail
+
+    -- ** Reschedule
+    , Reschedule
+    , reschedule
+    , rScheduleTime
+    , rRescheduleType
 
     -- ** ImportContext
     , ImportContext
@@ -245,6 +300,10 @@ module Network.Google.SQLAdmin
     , icURI
     , icFileType
     , icImportUser
+    , icBakImportOptions
+
+    -- ** BackupRetentionSettingsRetentionUnit
+    , BackupRetentionSettingsRetentionUnit (..)
 
     -- ** Operation
     , Operation
@@ -264,6 +323,7 @@ module Network.Google.SQLAdmin
     , oEndTime
     , oOperationType
     , oTargetLink
+    , oBackupContext
 
     -- ** Settings
     , Settings
@@ -272,17 +332,21 @@ module Network.Google.SQLAdmin
     , sReplicationType
     , sActivationPolicy
     , sSettingsVersion
+    , sInsightsConfig
+    , sActiveDirectoryConfig
     , sDataDiskSizeGb
     , sAuthorizedGaeApplications
     , sKind
     , sPricingPlan
     , sIPConfiguration
+    , sCollation
     , sMaintenanceWindow
     , sDatabaseReplicationEnabled
     , sUserLabels
     , sTier
     , sDatabaseFlags
     , sDataDiskType
+    , sDenyMaintenancePeriods
     , sCrashSafeReplicationEnabled
     , sLocationPreference
     , sBackupConfiguration
@@ -304,6 +368,7 @@ module Network.Google.SQLAdmin
     -- ** Database
     , Database
     , database
+    , dSQLserverDatabaseDetails
     , dEtag
     , dProject
     , dKind
@@ -316,6 +381,7 @@ module Network.Google.SQLAdmin
     -- ** SSLCertsCreateEphemeralRequest
     , SSLCertsCreateEphemeralRequest
     , sslCertsCreateEphemeralRequest
+    , sccerAccessToken
     , sccerPublicKey
 
     -- ** BinLogCoordinates
@@ -325,17 +391,29 @@ module Network.Google.SQLAdmin
     , blcKind
     , blcBinLogFileName
 
+    -- ** FlagAppliesToItem
+    , FlagAppliesToItem (..)
+
     -- ** DatabaseInstanceFailoverReplica
     , DatabaseInstanceFailoverReplica
     , databaseInstanceFailoverReplica
     , difrName
     , difrAvailable
 
+    -- ** SQLServerUserDetails
+    , SQLServerUserDetails
+    , sQLServerUserDetails
+    , sqlsudServerRoles
+    , sqlsudDisabled
+
     -- ** TiersListResponse
     , TiersListResponse
     , tiersListResponse
     , tlrKind
     , tlrItems
+
+    -- ** OperationOperationType
+    , OperationOperationType (..)
 
     -- ** UsersListResponse
     , UsersListResponse
@@ -351,6 +429,7 @@ module Network.Google.SQLAdmin
     , ecKind
     , ecURI
     , ecFileType
+    , ecOffLoad
     , ecSQLExportOptions
     , ecDatabases
 
@@ -366,11 +445,26 @@ module Network.Google.SQLAdmin
     , sclrKind
     , sclrItems
 
+    -- ** SettingsPricingPlan
+    , SettingsPricingPlan (..)
+
     -- ** DiskEncryptionStatus
     , DiskEncryptionStatus
     , diskEncryptionStatus
     , desKmsKeyVersionName
     , desKind
+
+    -- ** BackupRunBackupKind
+    , BackupRunBackupKind (..)
+
+    -- ** OperationStatus
+    , OperationStatus (..)
+
+    -- ** SQLActiveDirectoryConfig
+    , SQLActiveDirectoryConfig
+    , sQLActiveDirectoryConfig
+    , sqladcKind
+    , sqladcDomain
 
     -- ** SSLCertsInsertRequest
     , SSLCertsInsertRequest
@@ -410,21 +504,27 @@ module Network.Google.SQLAdmin
     , exportContextCSVExportOptions
     , ecceoSelectQuery
 
+    -- ** SettingsActivationPolicy
+    , SettingsActivationPolicy (..)
+
     -- ** User
     , User
     , user
     , uEtag
     , uProject
     , uKind
+    , uSQLserverUserDetails
     , uName
     , uPassword
     , uHost
+    , uType
     , uInstance
 
     -- ** DatabaseInstance
     , DatabaseInstance
     , databaseInstance
     , datBackendType
+    , datSatisfiesPzs
     , datMaxDiskSize
     , datOnPremisesConfiguration
     , datGceZone
@@ -436,6 +536,7 @@ module Network.Google.SQLAdmin
     , datDiskEncryptionConfiguration
     , datProject
     , datSettings
+    , datSecondaryGceZone
     , datKind
     , datDiskEncryptionStatus
     , datConnectionName
@@ -445,6 +546,7 @@ module Network.Google.SQLAdmin
     , datReplicaNames
     , datSelfLink
     , datFailoverReplica
+    , datScheduledMaintenance
     , datName
     , datMasterInstanceName
     , datReplicaConfiguration
@@ -460,6 +562,10 @@ module Network.Google.SQLAdmin
     , ccDestinationInstanceName
     , ccBinLogCoordinates
     , ccKind
+    , ccPointInTime
+
+    -- ** ImportContextFileType
+    , ImportContextFileType (..)
 
     -- ** Flag
     , Flag
@@ -467,6 +573,7 @@ module Network.Google.SQLAdmin
     , fMaxValue
     , fInBeta
     , fKind
+    , fAllowedIntValues
     , fAppliesTo
     , fName
     , fAllowedStringValues
@@ -474,18 +581,37 @@ module Network.Google.SQLAdmin
     , fMinValue
     , fRequiresRestart
 
+    -- ** SettingsAvailabilityType
+    , SettingsAvailabilityType (..)
+
+    -- ** BackupRetentionSettings
+    , BackupRetentionSettings
+    , backupRetentionSettings
+    , brsRetentionUnit
+    , brsRetainedBackups
+
+    -- ** MaintenanceWindowUpdateTrack
+    , MaintenanceWindowUpdateTrack (..)
+
     -- ** InstancesFailoverRequest
     , InstancesFailoverRequest
     , instancesFailoverRequest
     , ifrFailoverContext
 
+    -- ** APIWarningCode
+    , APIWarningCode (..)
+
     -- ** BackupRun
     , BackupRun
     , backupRun
     , brStatus
+    , brDiskEncryptionConfiguration
+    , brLocation
     , brStartTime
     , brKind
     , brError
+    , brDiskEncryptionStatus
+    , brBackupKind
     , brWindowStartTime
     , brSelfLink
     , brEndTime
@@ -495,6 +621,14 @@ module Network.Google.SQLAdmin
     , brDescription
     , brInstance
 
+    -- ** ImportContextBakImportOptions
+    , ImportContextBakImportOptions
+    , importContextBakImportOptions
+    , icbioEncryptionOptions
+
+    -- ** ProjectsInstancesStartExternalSyncSyncMode
+    , ProjectsInstancesStartExternalSyncSyncMode (..)
+
     -- ** ACLEntry
     , ACLEntry
     , aclEntry
@@ -503,11 +637,22 @@ module Network.Google.SQLAdmin
     , aeName
     , aeExpirationTime
 
+    -- ** SQLInstancesRescheduleMaintenanceRequestBody
+    , SQLInstancesRescheduleMaintenanceRequestBody
+    , sQLInstancesRescheduleMaintenanceRequestBody
+    , sqlirmrbReschedule
+
+    -- ** Xgafv
+    , Xgafv (..)
+
     -- ** DatabaseFlags
     , DatabaseFlags
     , databaseFlags
     , dfValue
     , dfName
+
+    -- ** SQLExternalSyncSettingErrorType
+    , SQLExternalSyncSettingErrorType (..)
 
     -- ** Tier
     , Tier
@@ -533,11 +678,21 @@ module Network.Google.SQLAdmin
     , msqlrcDumpFilePath
     , msqlrcPassword
 
+    -- ** SQLScheduledMaintenance
+    , SQLScheduledMaintenance
+    , sQLScheduledMaintenance
+    , sqlsmStartTime
+    , sqlsmCanReschedule
+    , sqlsmCanDefer
+
     -- ** SSLCertDetail
     , SSLCertDetail
     , sslCertDetail
     , scdCertInfo
     , scdCertPrivateKey
+
+    -- ** DatabaseInstanceInstanceType
+    , DatabaseInstanceInstanceType (..)
 
     -- ** InstancesRestoreBackupRequest
     , InstancesRestoreBackupRequest
@@ -563,16 +718,38 @@ module Network.Google.SQLAdmin
     , opeCode
     , opeMessage
 
+    -- ** IPMAppingType
+    , IPMAppingType (..)
+
     -- ** TruncateLogContext
     , TruncateLogContext
     , truncateLogContext
     , tlcKind
     , tlcLogType
 
+    -- ** ExportContextFileType
+    , ExportContextFileType (..)
+
     -- ** InstancesCloneRequest
     , InstancesCloneRequest
     , instancesCloneRequest
     , icrCloneContext
+
+    -- ** RescheduleRescheduleType
+    , RescheduleRescheduleType (..)
+
+    -- ** ImportContextBakImportOptionsEncryptionOptions
+    , ImportContextBakImportOptionsEncryptionOptions
+    , importContextBakImportOptionsEncryptionOptions
+    , icbioeoPvkPath
+    , icbioeoPvkPassword
+    , icbioeoCertPath
+
+    -- ** ProjectsInstancesVerifyExternalSyncSettingsSyncMode
+    , ProjectsInstancesVerifyExternalSyncSettingsSyncMode (..)
+
+    -- ** SettingsDataDiskType
+    , SettingsDataDiskType (..)
 
     -- ** ReplicaConfiguration
     , ReplicaConfiguration
@@ -581,11 +758,23 @@ module Network.Google.SQLAdmin
     , rcKind
     , rcMysqlReplicaConfiguration
 
+    -- ** DatabaseInstanceBackendType
+    , DatabaseInstanceBackendType (..)
+
+    -- ** DatabaseInstanceSuspensionReasonItem
+    , DatabaseInstanceSuspensionReasonItem (..)
+
     -- ** FailoverContext
     , FailoverContext
     , failoverContext
     , fcSettingsVersion
     , fcKind
+
+    -- ** BackupRunStatus
+    , BackupRunStatus (..)
+
+    -- ** DatabaseInstanceState
+    , DatabaseInstanceState (..)
 
     -- ** SSLCertsInsertResponse
     , SSLCertsInsertResponse
@@ -594,6 +783,9 @@ module Network.Google.SQLAdmin
     , scirOperation
     , scirKind
     , scirClientCert
+
+    -- ** DatabaseInstanceDatabaseVersion
+    , DatabaseInstanceDatabaseVersion (..)
 
     -- ** InstancesListResponse
     , InstancesListResponse
@@ -613,10 +805,21 @@ module Network.Google.SQLAdmin
     , BackupConfiguration
     , backupConfiguration
     , bcReplicationLogArchivingEnabled
+    , bcLocation
     , bcEnabled
     , bcStartTime
     , bcKind
     , bcBinaryLogEnabled
+    , bcBackupRetentionSettings
+    , bcPointInTimeRecoveryEnabled
+    , bcTransactionLogRetentionDays
+
+    -- ** DenyMaintenancePeriod
+    , DenyMaintenancePeriod
+    , denyMaintenancePeriod
+    , dmpTime
+    , dmpEndDate
+    , dmpStartDate
 
     -- ** InstancesImportRequest
     , InstancesImportRequest
@@ -629,6 +832,7 @@ module Network.Google.SQLAdmin
     , lpKind
     , lpFollowGaeApplication
     , lpZone
+    , lpSecondaryZone
 
     -- ** FlagsListResponse
     , FlagsListResponse
@@ -641,6 +845,9 @@ module Network.Google.SQLAdmin
     , instancesTruncateLogRequest
     , itlrTruncateLogContext
 
+    -- ** UserType
+    , UserType (..)
+
     -- ** ExportContextSQLExportOptions
     , ExportContextSQLExportOptions
     , exportContextSQLExportOptions
@@ -648,11 +855,21 @@ module Network.Google.SQLAdmin
     , ecsqleoMysqlExportOptions
     , ecsqleoTables
 
+    -- ** BackupContext
+    , BackupContext
+    , backupContext
+    , bKind
+    , bBackupId
+
+    -- ** SettingsReplicationType
+    , SettingsReplicationType (..)
+
     -- ** RestoreBackupContext
     , RestoreBackupContext
     , restoreBackupContext
     , rbcInstanceId
     , rbcBackupRunId
+    , rbcProject
     , rbcKind
 
     -- ** DemoteMasterContext
@@ -704,6 +921,9 @@ import Network.Google.Resource.SQL.Instances.TruncateLog
 import Network.Google.Resource.SQL.Instances.Update
 import Network.Google.Resource.SQL.Operations.Get
 import Network.Google.Resource.SQL.Operations.List
+import Network.Google.Resource.SQL.Projects.Instances.RescheduleMaintenance
+import Network.Google.Resource.SQL.Projects.Instances.StartExternalSync
+import Network.Google.Resource.SQL.Projects.Instances.VerifyExternalSyncSettings
 import Network.Google.Resource.SQL.SSLCerts.CreateEphemeral
 import Network.Google.Resource.SQL.SSLCerts.Delete
 import Network.Google.Resource.SQL.SSLCerts.Get
@@ -759,6 +979,10 @@ type SQLAdminAPI =
        :<|> InstancesUpdateResource
        :<|> OperationsListResource
        :<|> OperationsGetResource
+       :<|> ProjectsInstancesRescheduleMaintenanceResource
+       :<|> ProjectsInstancesStartExternalSyncResource
+       :<|>
+       ProjectsInstancesVerifyExternalSyncSettingsResource
        :<|> DatabasesInsertResource
        :<|> DatabasesListResource
        :<|> DatabasesPatchResource

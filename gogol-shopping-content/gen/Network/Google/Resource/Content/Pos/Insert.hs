@@ -22,7 +22,7 @@
 --
 -- Creates a store for the given merchant.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.pos.insert@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.pos.insert@.
 module Network.Google.Resource.Content.Pos.Insert
     (
     -- * REST Resource
@@ -33,10 +33,15 @@ module Network.Google.Resource.Content.Pos.Insert
     , PosInsert
 
     -- * Request Lenses
-    , ppMerchantId
-    , ppTargetMerchantId
-    , ppPayload
-    , ppDryRun
+    , posoXgafv
+    , posoMerchantId
+    , posoUploadProtocol
+    , posoAccessToken
+    , posoUploadType
+    , posoTargetMerchantId
+    , posoPayload
+    , posoDryRun
+    , posoCallback
     ) where
 
 import Network.Google.Prelude
@@ -51,19 +56,29 @@ type PosInsertResource =
            "pos" :>
              Capture "targetMerchantId" (Textual Word64) :>
                "store" :>
-                 QueryParam "dryRun" Bool :>
-                   QueryParam "alt" AltJSON :>
-                     ReqBody '[JSON] PosStore :> Post '[JSON] PosStore
+                 QueryParam "$.xgafv" Xgafv :>
+                   QueryParam "upload_protocol" Text :>
+                     QueryParam "access_token" Text :>
+                       QueryParam "uploadType" Text :>
+                         QueryParam "dryRun" Bool :>
+                           QueryParam "callback" Text :>
+                             QueryParam "alt" AltJSON :>
+                               ReqBody '[JSON] PosStore :> Post '[JSON] PosStore
 
 -- | Creates a store for the given merchant.
 --
 -- /See:/ 'posInsert' smart constructor.
 data PosInsert =
   PosInsert'
-    { _ppMerchantId :: !(Textual Word64)
-    , _ppTargetMerchantId :: !(Textual Word64)
-    , _ppPayload :: !PosStore
-    , _ppDryRun :: !(Maybe Bool)
+    { _posoXgafv :: !(Maybe Xgafv)
+    , _posoMerchantId :: !(Textual Word64)
+    , _posoUploadProtocol :: !(Maybe Text)
+    , _posoAccessToken :: !(Maybe Text)
+    , _posoUploadType :: !(Maybe Text)
+    , _posoTargetMerchantId :: !(Textual Word64)
+    , _posoPayload :: !PosStore
+    , _posoDryRun :: !(Maybe Bool)
+    , _posoCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -72,59 +87,109 @@ data PosInsert =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'ppMerchantId'
+-- * 'posoXgafv'
 --
--- * 'ppTargetMerchantId'
+-- * 'posoMerchantId'
 --
--- * 'ppPayload'
+-- * 'posoUploadProtocol'
 --
--- * 'ppDryRun'
+-- * 'posoAccessToken'
+--
+-- * 'posoUploadType'
+--
+-- * 'posoTargetMerchantId'
+--
+-- * 'posoPayload'
+--
+-- * 'posoDryRun'
+--
+-- * 'posoCallback'
 posInsert
-    :: Word64 -- ^ 'ppMerchantId'
-    -> Word64 -- ^ 'ppTargetMerchantId'
-    -> PosStore -- ^ 'ppPayload'
+    :: Word64 -- ^ 'posoMerchantId'
+    -> Word64 -- ^ 'posoTargetMerchantId'
+    -> PosStore -- ^ 'posoPayload'
     -> PosInsert
-posInsert pPpMerchantId_ pPpTargetMerchantId_ pPpPayload_ =
+posInsert pPosoMerchantId_ pPosoTargetMerchantId_ pPosoPayload_ =
   PosInsert'
-    { _ppMerchantId = _Coerce # pPpMerchantId_
-    , _ppTargetMerchantId = _Coerce # pPpTargetMerchantId_
-    , _ppPayload = pPpPayload_
-    , _ppDryRun = Nothing
+    { _posoXgafv = Nothing
+    , _posoMerchantId = _Coerce # pPosoMerchantId_
+    , _posoUploadProtocol = Nothing
+    , _posoAccessToken = Nothing
+    , _posoUploadType = Nothing
+    , _posoTargetMerchantId = _Coerce # pPosoTargetMerchantId_
+    , _posoPayload = pPosoPayload_
+    , _posoDryRun = Nothing
+    , _posoCallback = Nothing
     }
 
 
+-- | V1 error format.
+posoXgafv :: Lens' PosInsert (Maybe Xgafv)
+posoXgafv
+  = lens _posoXgafv (\ s a -> s{_posoXgafv = a})
+
 -- | The ID of the POS or inventory data provider.
-ppMerchantId :: Lens' PosInsert Word64
-ppMerchantId
-  = lens _ppMerchantId (\ s a -> s{_ppMerchantId = a})
+posoMerchantId :: Lens' PosInsert Word64
+posoMerchantId
+  = lens _posoMerchantId
+      (\ s a -> s{_posoMerchantId = a})
       . _Coerce
 
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+posoUploadProtocol :: Lens' PosInsert (Maybe Text)
+posoUploadProtocol
+  = lens _posoUploadProtocol
+      (\ s a -> s{_posoUploadProtocol = a})
+
+-- | OAuth access token.
+posoAccessToken :: Lens' PosInsert (Maybe Text)
+posoAccessToken
+  = lens _posoAccessToken
+      (\ s a -> s{_posoAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+posoUploadType :: Lens' PosInsert (Maybe Text)
+posoUploadType
+  = lens _posoUploadType
+      (\ s a -> s{_posoUploadType = a})
+
 -- | The ID of the target merchant.
-ppTargetMerchantId :: Lens' PosInsert Word64
-ppTargetMerchantId
-  = lens _ppTargetMerchantId
-      (\ s a -> s{_ppTargetMerchantId = a})
+posoTargetMerchantId :: Lens' PosInsert Word64
+posoTargetMerchantId
+  = lens _posoTargetMerchantId
+      (\ s a -> s{_posoTargetMerchantId = a})
       . _Coerce
 
 -- | Multipart request metadata.
-ppPayload :: Lens' PosInsert PosStore
-ppPayload
-  = lens _ppPayload (\ s a -> s{_ppPayload = a})
+posoPayload :: Lens' PosInsert PosStore
+posoPayload
+  = lens _posoPayload (\ s a -> s{_posoPayload = a})
 
 -- | Flag to simulate a request like in a live environment. If set to true,
 -- dry-run mode checks the validity of the request and returns errors (if
 -- any).
-ppDryRun :: Lens' PosInsert (Maybe Bool)
-ppDryRun = lens _ppDryRun (\ s a -> s{_ppDryRun = a})
+posoDryRun :: Lens' PosInsert (Maybe Bool)
+posoDryRun
+  = lens _posoDryRun (\ s a -> s{_posoDryRun = a})
+
+-- | JSONP
+posoCallback :: Lens' PosInsert (Maybe Text)
+posoCallback
+  = lens _posoCallback (\ s a -> s{_posoCallback = a})
 
 instance GoogleRequest PosInsert where
         type Rs PosInsert = PosStore
         type Scopes PosInsert =
              '["https://www.googleapis.com/auth/content"]
         requestClient PosInsert'{..}
-          = go _ppMerchantId _ppTargetMerchantId _ppDryRun
+          = go _posoMerchantId _posoTargetMerchantId _posoXgafv
+              _posoUploadProtocol
+              _posoAccessToken
+              _posoUploadType
+              _posoDryRun
+              _posoCallback
               (Just AltJSON)
-              _ppPayload
+              _posoPayload
               shoppingContentService
           where go
                   = buildClient (Proxy :: Proxy PosInsertResource)

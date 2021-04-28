@@ -20,9 +20,12 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Updates the schema of a data source.
+-- Updates the schema of a data source. This method does not perform
+-- incremental updates to the schema. Instead, this method updates the
+-- schema by overwriting the entire schema. **Note:** This API requires an
+-- admin or service account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.updateSchema@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.updateSchema@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.UpdateSchema
     (
     -- * REST Resource
@@ -61,7 +64,10 @@ type IndexingDatasourcesUpdateSchemaResource =
                          ReqBody '[JSON] UpdateSchemaRequest :>
                            Put '[JSON] Operation
 
--- | Updates the schema of a data source.
+-- | Updates the schema of a data source. This method does not perform
+-- incremental updates to the schema. Instead, this method updates the
+-- schema by overwriting the entire schema. **Note:** This API requires an
+-- admin or service account to execute.
 --
 -- /See:/ 'indexingDatasourcesUpdateSchema' smart constructor.
 data IndexingDatasourcesUpdateSchema =

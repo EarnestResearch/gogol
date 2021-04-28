@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.fhirStores.get@ method which the
 -- 'ProjectsLocationsDataSetsFhirStoresGet' request conforms to.
 type ProjectsLocationsDataSetsFhirStoresGetResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

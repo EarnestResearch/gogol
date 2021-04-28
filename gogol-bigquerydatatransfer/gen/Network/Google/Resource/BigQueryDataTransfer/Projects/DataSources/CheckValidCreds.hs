@@ -26,7 +26,7 @@
 -- whether we have OAuth token for the particular user, which is a
 -- pre-requisite before user can create a transfer config.
 --
--- /See:/ <https://cloud.google.com/bigquery/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.dataSources.checkValidCreds@.
+-- /See:/ <https://cloud.google.com/bigquery-transfer/ BigQuery Data Transfer API Reference> for @bigquerydatatransfer.projects.dataSources.checkValidCreds@.
 module Network.Google.Resource.BigQueryDataTransfer.Projects.DataSources.CheckValidCreds
     (
     -- * REST Resource
@@ -145,8 +145,9 @@ pdscvcPayload
   = lens _pdscvcPayload
       (\ s a -> s{_pdscvcPayload = a})
 
--- | The data source in the form:
--- \`projects\/{project_id}\/dataSources\/{data_source_id}\`
+-- | Required. The data source in the form:
+-- \`projects\/{project_id}\/dataSources\/{data_source_id}\` or
+-- \`projects\/{project_id}\/locations\/{location_id}\/dataSources\/{data_source_id}\`.
 pdscvcName :: Lens' ProjectsDataSourcesCheckValidCreds Text
 pdscvcName
   = lens _pdscvcName (\ s a -> s{_pdscvcName = a})

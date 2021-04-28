@@ -23,9 +23,12 @@
 -- Export resources from the FHIR store to the specified destination. This
 -- method returns an Operation that can be used to track the status of the
 -- export by calling GetOperation. Immediate fatal errors appear in the
--- error field. Otherwise, when the operation finishes, a detailed response
--- of type ExportResourcesResponse is returned in the response field. The
--- metadata field type for this operation is OperationMetadata.
+-- error field, errors are also logged to Cloud Logging (see [Viewing error
+-- logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging)).
+-- Otherwise, when the operation finishes, a detailed response of type
+-- ExportResourcesResponse is returned in the response field. The metadata
+-- field type for this operation is OperationMetadata.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.fhirStores.export@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.FhirStores.Export
@@ -54,7 +57,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsFhirStoresExport' request conforms to.
 type ProjectsLocationsDataSetsFhirStoresExportResource
      =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "export" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -68,9 +71,12 @@ type ProjectsLocationsDataSetsFhirStoresExportResource
 -- | Export resources from the FHIR store to the specified destination. This
 -- method returns an Operation that can be used to track the status of the
 -- export by calling GetOperation. Immediate fatal errors appear in the
--- error field. Otherwise, when the operation finishes, a detailed response
--- of type ExportResourcesResponse is returned in the response field. The
--- metadata field type for this operation is OperationMetadata.
+-- error field, errors are also logged to Cloud Logging (see [Viewing error
+-- logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging)).
+-- Otherwise, when the operation finishes, a detailed response of type
+-- ExportResourcesResponse is returned in the response field. The metadata
+-- field type for this operation is OperationMetadata.
 --
 -- /See:/ 'projectsLocationsDataSetsFhirStoresExport' smart constructor.
 data ProjectsLocationsDataSetsFhirStoresExport =
@@ -148,8 +154,7 @@ pldsfsePayload
   = lens _pldsfsePayload
       (\ s a -> s{_pldsfsePayload = a})
 
--- | The name of the FHIR store to export resource from. The name should be
--- in the format of
+-- | The name of the FHIR store to export resource from, in the format of
 -- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/fhirStores\/{fhir_store_id}\`.
 pldsfseName :: Lens' ProjectsLocationsDataSetsFhirStoresExport Text
 pldsfseName

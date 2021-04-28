@@ -119,7 +119,7 @@ shelvesBooksList pSblParent_ =
     }
 
 
--- | The name of the shelf whose books we\'d like to list.
+-- | Required. The name of the shelf whose books we\'d like to list.
 sblParent :: Lens' ShelvesBooksList Text
 sblParent
   = lens _sblParent (\ s a -> s{_sblParent = a})

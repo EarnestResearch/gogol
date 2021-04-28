@@ -22,18 +22,17 @@
 --
 -- Polls for unreserved items from the indexing queue and marks a set as
 -- reserved, starting with items that have the oldest timestamp from the
--- highest priority ItemStatus. The priority order is as follows:
--- ERROR
--- MODIFIED
--- NEW_ITEM
--- ACCEPTED
--- Reserving items ensures that polling from other threads cannot create
--- overlapping sets. After handling the reserved items, the client should
--- put items back into the unreserved state, either by calling index, or by
--- calling push with the type REQUEUE. Items automatically become available
--- (unreserved) after 4 hours even if no update or push method is called.
+-- highest priority ItemStatus. The priority order is as follows: ERROR
+-- MODIFIED NEW_ITEM ACCEPTED Reserving items ensures that polling from
+-- other threads cannot create overlapping sets. After handling the
+-- reserved items, the client should put items back into the unreserved
+-- state, either by calling index, or by calling push with the type
+-- REQUEUE. Items automatically become available (unreserved) after 4 hours
+-- even if no update or push method is called. This API requires an admin
+-- or service account to execute. The service account used is the one
+-- whitelisted in the corresponding data source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.poll@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.poll@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.Poll
     (
     -- * REST Resource
@@ -74,16 +73,15 @@ type IndexingDatasourcesItemsPollResource =
 
 -- | Polls for unreserved items from the indexing queue and marks a set as
 -- reserved, starting with items that have the oldest timestamp from the
--- highest priority ItemStatus. The priority order is as follows:
--- ERROR
--- MODIFIED
--- NEW_ITEM
--- ACCEPTED
--- Reserving items ensures that polling from other threads cannot create
--- overlapping sets. After handling the reserved items, the client should
--- put items back into the unreserved state, either by calling index, or by
--- calling push with the type REQUEUE. Items automatically become available
--- (unreserved) after 4 hours even if no update or push method is called.
+-- highest priority ItemStatus. The priority order is as follows: ERROR
+-- MODIFIED NEW_ITEM ACCEPTED Reserving items ensures that polling from
+-- other threads cannot create overlapping sets. After handling the
+-- reserved items, the client should put items back into the unreserved
+-- state, either by calling index, or by calling push with the type
+-- REQUEUE. Items automatically become available (unreserved) after 4 hours
+-- even if no update or push method is called. This API requires an admin
+-- or service account to execute. The service account used is the one
+-- whitelisted in the corresponding data source.
 --
 -- /See:/ 'indexingDatasourcesItemsPoll' smart constructor.
 data IndexingDatasourcesItemsPoll =

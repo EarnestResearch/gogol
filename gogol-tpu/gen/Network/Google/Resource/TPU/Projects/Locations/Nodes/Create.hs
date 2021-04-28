@@ -114,7 +114,7 @@ projectsLocationsNodesCreate pPlncParent_ pPlncPayload_ =
     }
 
 
--- | The parent resource name.
+-- | Required. The parent resource name.
 plncParent :: Lens' ProjectsLocationsNodesCreate Text
 plncParent
   = lens _plncParent (\ s a -> s{_plncParent = a})

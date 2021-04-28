@@ -124,8 +124,8 @@ pslUploadProtocol
   = lens _pslUploadProtocol
       (\ s a -> s{_pslUploadProtocol = a})
 
--- | The name of the project in which to list subscriptions. Format is
--- \`projects\/{project-id}\`.
+-- | Required. The name of the project in which to list subscriptions. Format
+-- is \`projects\/{project-id}\`.
 pslProject :: Lens' ProjectsSubscriptionsList Text
 pslProject
   = lens _pslProject (\ s a -> s{_pslProject = a})

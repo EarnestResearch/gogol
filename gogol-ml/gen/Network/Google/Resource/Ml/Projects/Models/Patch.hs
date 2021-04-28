@@ -23,7 +23,7 @@
 -- Updates a specific model resource. Currently the only supported fields
 -- to update are \`description\` and \`default_version.name\`.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.patch@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.patch@.
 module Network.Google.Resource.Ml.Projects.Models.Patch
     (
     -- * REST Resource

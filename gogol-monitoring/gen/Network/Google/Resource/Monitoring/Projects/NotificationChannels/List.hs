@@ -22,7 +22,7 @@
 --
 -- Lists the notification channels that have been created for the project.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.notificationChannels.list@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.notificationChannels.list@.
 module Network.Google.Resource.Monitoring.Projects.NotificationChannels.List
     (
     -- * REST Resource
@@ -140,7 +140,8 @@ pnclUploadProtocol
 -- | A comma-separated list of fields by which to sort the result. Supports
 -- the same set of fields as in filter. Entries can be prefixed with a
 -- minus sign to sort in descending rather than ascending order.For more
--- details, see sorting and filtering.
+-- details, see sorting and filtering
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3\/sorting-and-filtering).
 pnclOrderBy :: Lens' ProjectsNotificationChannelsList (Maybe Text)
 pnclOrderBy
   = lens _pnclOrderBy (\ s a -> s{_pnclOrderBy = a})
@@ -157,17 +158,19 @@ pnclUploadType
   = lens _pnclUploadType
       (\ s a -> s{_pnclUploadType = a})
 
--- | The project on which to execute the request. The format is
--- projects\/[PROJECT_ID]. That is, this names the container in which to
--- look for the notification channels; it does not name a specific channel.
--- To query a specific channel by REST resource name, use the
--- GetNotificationChannel operation.
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) on which
+-- to execute the request. The format is: projects\/[PROJECT_ID_OR_NUMBER]
+-- This names the container in which to look for the notification channels;
+-- it does not name a specific channel. To query a specific channel by REST
+-- resource name, use the GetNotificationChannel operation.
 pnclName :: Lens' ProjectsNotificationChannelsList Text
 pnclName = lens _pnclName (\ s a -> s{_pnclName = a})
 
 -- | If provided, this field specifies the criteria that must be met by
 -- notification channels to be included in the response.For more details,
--- see sorting and filtering.
+-- see sorting and filtering
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3\/sorting-and-filtering).
 pnclFilter :: Lens' ProjectsNotificationChannelsList (Maybe Text)
 pnclFilter
   = lens _pnclFilter (\ s a -> s{_pnclFilter = a})

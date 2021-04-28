@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Checks whether an item is accessible by specified principal.
+-- Checks whether an item is accessible by specified principal. **Note:**
+-- This API requires an admin account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.checkAccess@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.checkAccess@.
 module Network.Google.Resource.CloudSearch.Debug.Datasources.Items.CheckAccess
     (
     -- * REST Resource
@@ -62,7 +63,8 @@ type DebugDatasourcesItemsCheckAccessResource =
                          ReqBody '[JSON] Principal :>
                            Post '[JSON] CheckAccessResponse
 
--- | Checks whether an item is accessible by specified principal.
+-- | Checks whether an item is accessible by specified principal. **Note:**
+-- This API requires an admin account to execute.
 --
 -- /See:/ 'debugDatasourcesItemsCheckAccess' smart constructor.
 data DebugDatasourcesItemsCheckAccess =

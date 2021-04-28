@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a search application.
+-- Creates a search application. **Note:** This API requires an admin
+-- account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.settings.searchapplications.create@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.settings.searchapplications.create@.
 module Network.Google.Resource.CloudSearch.Settings.SearchApplications.Create
     (
     -- * REST Resource
@@ -59,7 +60,8 @@ type SettingsSearchApplicationsCreateResource =
                        ReqBody '[JSON] SearchApplication :>
                          Post '[JSON] Operation
 
--- | Creates a search application.
+-- | Creates a search application. **Note:** This API requires an admin
+-- account to execute.
 --
 -- /See:/ 'settingsSearchApplicationsCreate' smart constructor.
 data SettingsSearchApplicationsCreate =

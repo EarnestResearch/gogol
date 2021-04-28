@@ -147,7 +147,7 @@ popPayload :: Lens' ProjectsOccurrencesPatch Occurrence
 popPayload
   = lens _popPayload (\ s a -> s{_popPayload = a})
 
--- | The name of the occurrence in the form of
+-- | Required. The name of the occurrence in the form of
 -- \`projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]\`.
 popName :: Lens' ProjectsOccurrencesPatch Text
 popName = lens _popName (\ s a -> s{_popName = a})

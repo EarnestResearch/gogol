@@ -30,7 +30,7 @@
 -- instead, it becomes an operation with an Operation.error value with a
 -- google.rpc.Status.code of 1, corresponding to \`Code.CANCELLED\`.
 --
--- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Cloud Security Command Center API Reference> for @securitycenter.organizations.operations.cancel@.
+-- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.operations.cancel@.
 module Network.Google.Resource.SecurityCenter.Organizations.Operations.Cancel
     (
     -- * REST Resource
@@ -55,7 +55,7 @@ import Network.Google.SecurityCenter.Types
 -- | A resource alias for @securitycenter.organizations.operations.cancel@ method which the
 -- 'OrganizationsOperationsCancel' request conforms to.
 type OrganizationsOperationsCancelResource =
-     "v1" :>
+     "v1p1beta1" :>
        CaptureMode "name" "cancel" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

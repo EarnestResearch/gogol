@@ -20,9 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Sets the access control policy on a Folder, replacing any existing
--- policy. The \`resource\` field should be the Folder\'s resource name,
--- e.g. \"folders\/1234\". The caller must have
+-- Sets the access control policy on a folder, replacing any existing
+-- policy. The \`resource\` field should be the folder\'s resource name,
+-- for example: \"folders\/1234\". The caller must have
 -- \`resourcemanager.folders.setIamPolicy\` permission on the identified
 -- folder.
 --
@@ -52,7 +52,7 @@ import Network.Google.ResourceManager.Types
 -- | A resource alias for @cloudresourcemanager.folders.setIamPolicy@ method which the
 -- 'FoldersSetIAMPolicy' request conforms to.
 type FoldersSetIAMPolicyResource =
-     "v2" :>
+     "v3" :>
        CaptureMode "resource" "setIamPolicy" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -63,9 +63,9 @@ type FoldersSetIAMPolicyResource =
                      ReqBody '[JSON] SetIAMPolicyRequest :>
                        Post '[JSON] Policy
 
--- | Sets the access control policy on a Folder, replacing any existing
--- policy. The \`resource\` field should be the Folder\'s resource name,
--- e.g. \"folders\/1234\". The caller must have
+-- | Sets the access control policy on a folder, replacing any existing
+-- policy. The \`resource\` field should be the folder\'s resource name,
+-- for example: \"folders\/1234\". The caller must have
 -- \`resourcemanager.folders.setIamPolicy\` permission on the identified
 -- folder.
 --

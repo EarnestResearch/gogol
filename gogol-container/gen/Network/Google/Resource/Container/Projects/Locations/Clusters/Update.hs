@@ -137,7 +137,7 @@ plcuPayload
   = lens _plcuPayload (\ s a -> s{_plcuPayload = a})
 
 -- | The name (project, location, cluster) of the cluster to update.
--- Specified in the format \'projects\/*\/locations\/*\/clusters\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/clusters\/*\`.
 plcuName :: Lens' ProjectsLocationsClustersUpdate Text
 plcuName = lens _plcuName (\ s a -> s{_plcuName = a})
 

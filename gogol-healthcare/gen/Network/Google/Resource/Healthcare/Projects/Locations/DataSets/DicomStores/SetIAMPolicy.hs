@@ -21,7 +21,8 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.dicomStores.setIamPolicy@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.DicomStores.SetIAMPolicy
@@ -50,7 +51,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresSetIAMPolicy' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresSetIAMPolicyResource
      =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "resource" "setIamPolicy" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -62,7 +63,8 @@ type ProjectsLocationsDataSetsDicomStoresSetIAMPolicyResource
                        Post '[JSON] Policy
 
 -- | Sets the access control policy on the specified resource. Replaces any
--- existing policy.
+-- existing policy. Can return \`NOT_FOUND\`, \`INVALID_ARGUMENT\`, and
+-- \`PERMISSION_DENIED\` errors.
 --
 -- /See:/ 'projectsLocationsDataSetsDicomStoresSetIAMPolicy' smart constructor.
 data ProjectsLocationsDataSetsDicomStoresSetIAMPolicy =

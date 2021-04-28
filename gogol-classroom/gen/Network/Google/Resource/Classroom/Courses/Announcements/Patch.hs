@@ -151,8 +151,8 @@ capUploadProtocol
 -- specifying it in the update mask and not in the Announcement object. If
 -- a field that does not support empty values is included in the update
 -- mask and not set in the Announcement object, an \`INVALID_ARGUMENT\`
--- error will be returned. The following fields may be specified by
--- teachers: * \`text\` * \`state\` * \`scheduled_time\`
+-- error is returned. The following fields may be specified by teachers: *
+-- \`text\` * \`state\` * \`scheduled_time\`
 capUpdateMask :: Lens' CoursesAnnouncementsPatch (Maybe GFieldMask)
 capUpdateMask
   = lens _capUpdateMask

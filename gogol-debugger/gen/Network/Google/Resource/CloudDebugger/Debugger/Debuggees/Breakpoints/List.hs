@@ -22,7 +22,7 @@
 --
 -- Lists all breakpoints for the debuggee.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.list@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.debugger.debuggees.breakpoints.list@.
 module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.Breakpoints.List
     (
     -- * REST Resource
@@ -62,7 +62,9 @@ type DebuggerDebuggeesBreakpointsListResource =
                  QueryParam "includeInactive" Bool :>
                    QueryParam "upload_protocol" Text :>
                      QueryParam "access_token" Text :>
-                       QueryParam "action.value" Text :>
+                       QueryParam "action.value"
+                         DebuggerDebuggeesBreakpointsListActionValue
+                         :>
                          QueryParam "uploadType" Text :>
                            QueryParam "stripResults" Bool :>
                              QueryParam "includeAllUsers" Bool :>
@@ -81,7 +83,7 @@ data DebuggerDebuggeesBreakpointsList =
     , _ddblIncludeInactive :: !(Maybe Bool)
     , _ddblUploadProtocol :: !(Maybe Text)
     , _ddblAccessToken :: !(Maybe Text)
-    , _ddblActionValue :: !(Maybe Text)
+    , _ddblActionValue :: !(Maybe DebuggerDebuggeesBreakpointsListActionValue)
     , _ddblUploadType :: !(Maybe Text)
     , _ddblStripResults :: !(Maybe Bool)
     , _ddblIncludeAllUsers :: !(Maybe Bool)
@@ -165,7 +167,7 @@ ddblAccessToken
       (\ s a -> s{_ddblAccessToken = a})
 
 -- | Only breakpoints with the specified action will pass the filter.
-ddblActionValue :: Lens' DebuggerDebuggeesBreakpointsList (Maybe Text)
+ddblActionValue :: Lens' DebuggerDebuggeesBreakpointsList (Maybe DebuggerDebuggeesBreakpointsListActionValue)
 ddblActionValue
   = lens _ddblActionValue
       (\ s a -> s{_ddblActionValue = a})
@@ -201,14 +203,14 @@ ddblWaitToken
   = lens _ddblWaitToken
       (\ s a -> s{_ddblWaitToken = a})
 
--- | ID of the debuggee whose breakpoints to list.
+-- | Required. ID of the debuggee whose breakpoints to list.
 ddblDebuggeeId :: Lens' DebuggerDebuggeesBreakpointsList Text
 ddblDebuggeeId
   = lens _ddblDebuggeeId
       (\ s a -> s{_ddblDebuggeeId = a})
 
--- | The client version making the call. Schema: \`domain\/type\/version\`
--- (e.g., \`google.com\/intellij\/v1\`).
+-- | Required. The client version making the call. Schema:
+-- \`domain\/type\/version\` (e.g., \`google.com\/intellij\/v1\`).
 ddblClientVersion :: Lens' DebuggerDebuggeesBreakpointsList (Maybe Text)
 ddblClientVersion
   = lens _ddblClientVersion

@@ -44,7 +44,6 @@ module Network.Google.Storage.Types
     , Expr
     , expr
     , eLocation
-    , eKind
     , eExpression
     , eTitle
     , eDescription
@@ -121,9 +120,13 @@ module Network.Google.Storage.Types
     -- * BucketLifecycleRuleItemCondition
     , BucketLifecycleRuleItemCondition
     , bucketLifecycleRuleItemCondition
+    , blricNoncurrentTimeBefore
+    , blricDaysSinceCustomTime
     , blricAge
+    , blricDaysSinceNoncurrentTime
     , blricIsLive
     , blricNumNewerVersions
+    , blricCustomTimeBefore
     , blricMatchesStorageClass
     , blricMatchesPattern
     , blricCreatedBefore
@@ -187,6 +190,7 @@ module Network.Google.Storage.Types
     -- * Bucket
     , Bucket
     , bucket
+    , bucSatisfiesPZS
     , bucEtag
     , bucLocation
     , bucIAMConfiguration
@@ -196,6 +200,7 @@ module Network.Google.Storage.Types
     , bucLifecycle
     , bucOwner
     , bucRetentionPolicy
+    , bucZoneAffinity
     , bucSelfLink
     , bucName
     , bucEncryption
@@ -205,6 +210,7 @@ module Network.Google.Storage.Types
     , bucTimeCreated
     , bucId
     , bucLabels
+    , bucLocationType
     , bucUpdated
     , bucDefaultObjectACL
     , bucBilling
@@ -344,6 +350,7 @@ module Network.Google.Storage.Types
     , objMetageneration
     , objGeneration
     , objACL
+    , objCustomTime
     , objContentDisPosition
     , objMD5Hash
     , objContentType
@@ -420,12 +427,21 @@ module Network.Google.Storage.Types
     , pEtag
     , pResourceId
     , pKind
+    , pVersion
     , pBindings
+
+    -- * BucketIAMConfigurationUniformBucketLevelAccess
+    , BucketIAMConfigurationUniformBucketLevelAccess
+    , bucketIAMConfigurationUniformBucketLevelAccess
+    , bicublaLockedTime
+    , bicublaEnabled
 
     -- * BucketIAMConfiguration
     , BucketIAMConfiguration
     , bucketIAMConfiguration
     , bicBucketPolicyOnly
+    , bicUniformBucketLevelAccess
+    , bicPublicAccessPrevention
 
     -- * BucketsPatchPredefinedACL
     , BucketsPatchPredefinedACL (..)
@@ -489,7 +505,7 @@ import Network.Google.Storage.Types.Sum
 storageService :: ServiceConfig
 storageService
   = defaultService (ServiceId "storage:v1")
-      "www.googleapis.com"
+      "storage.googleapis.com"
 
 -- | View your data across Google Cloud Platform services
 cloudPlatformReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform.read-only"]

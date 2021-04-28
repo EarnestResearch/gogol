@@ -64,7 +64,9 @@ type AccountsProposalsListResource =
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
                    QueryParam "uploadType" Text :>
-                     QueryParam "filterSyntax" Text :>
+                     QueryParam "filterSyntax"
+                       AccountsProposalsListFilterSyntax
+                       :>
                        QueryParam "filter" Text :>
                          QueryParam "pageToken" Text :>
                            QueryParam "pageSize" (Textual Int32) :>
@@ -86,7 +88,7 @@ data AccountsProposalsList =
     , _aplUploadProtocol :: !(Maybe Text)
     , _aplAccessToken :: !(Maybe Text)
     , _aplUploadType :: !(Maybe Text)
-    , _aplFilterSyntax :: !(Maybe Text)
+    , _aplFilterSyntax :: !(Maybe AccountsProposalsListFilterSyntax)
     , _aplAccountId :: !Text
     , _aplFilter :: !(Maybe Text)
     , _aplPageToken :: !(Maybe Text)
@@ -161,7 +163,7 @@ aplUploadType
 
 -- | Syntax the filter is written in. Current implementation defaults to PQL
 -- but in the future it will be LIST_FILTER.
-aplFilterSyntax :: Lens' AccountsProposalsList (Maybe Text)
+aplFilterSyntax :: Lens' AccountsProposalsList (Maybe AccountsProposalsListFilterSyntax)
 aplFilterSyntax
   = lens _aplFilterSyntax
       (\ s a -> s{_aplFilterSyntax = a})

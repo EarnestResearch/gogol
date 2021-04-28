@@ -22,7 +22,7 @@
 --
 -- List all FindingTypeStats under a given ScanRun.
 --
--- /See:/ <https://cloud.google.com/security-scanner/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.findingTypeStats.list@.
+-- /See:/ <https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview/ Web Security Scanner API Reference> for @websecurityscanner.projects.scanConfigs.scanRuns.findingTypeStats.list@.
 module Network.Google.Resource.WebSecurityScanner.Projects.ScanConfigs.ScanRuns.FindingTypeStats.List
     (
     -- * REST Resource
@@ -48,7 +48,7 @@ import Network.Google.WebSecurityScanner.Types
 -- 'ProjectsScanConfigsScanRunsFindingTypeStatsList' request conforms to.
 type ProjectsScanConfigsScanRunsFindingTypeStatsListResource
      =
-     "v1beta" :>
+     "v1" :>
        Capture "parent" Text :>
          "findingTypeStats" :>
            QueryParam "$.xgafv" Xgafv :>

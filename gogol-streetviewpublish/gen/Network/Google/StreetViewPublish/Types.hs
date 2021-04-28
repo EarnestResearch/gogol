@@ -57,6 +57,9 @@ module Network.Google.StreetViewPublish.Types
     , sCode
     , sMessage
 
+    -- * PhotoGetView
+    , PhotoGetView (..)
+
     -- * PhotoResponse
     , PhotoResponse
     , photoResponse
@@ -75,6 +78,9 @@ module Network.Google.StreetViewPublish.Types
     -- * Empty
     , Empty
     , empty
+
+    -- * PhotosListView
+    , PhotosListView (..)
 
     -- * StatusDetailsItem
     , StatusDetailsItem
@@ -120,6 +126,9 @@ module Network.Google.StreetViewPublish.Types
 
     -- * Xgafv
     , Xgafv (..)
+
+    -- * PhotosBatchGetView
+    , PhotosBatchGetView (..)
 
     -- * OperationMetadata
     , OperationMetadata

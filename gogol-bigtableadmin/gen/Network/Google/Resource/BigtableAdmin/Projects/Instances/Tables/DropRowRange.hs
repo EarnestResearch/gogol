@@ -141,9 +141,9 @@ pitdrrPayload
   = lens _pitdrrPayload
       (\ s a -> s{_pitdrrPayload = a})
 
--- | The unique name of the table on which to drop a range of rows. Values
--- are of the form \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the table on which to drop a range of rows.
+-- Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitdrrName :: Lens' ProjectsInstancesTablesDropRowRange Text
 pitdrrName
   = lens _pitdrrName (\ s a -> s{_pitdrrName = a})

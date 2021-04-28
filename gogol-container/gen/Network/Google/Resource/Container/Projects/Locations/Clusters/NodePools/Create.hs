@@ -112,7 +112,7 @@ projectsLocationsClustersNodePoolsCreate pPlcnpcParent_ pPlcnpcPayload_ =
 
 -- | The parent (project, location, cluster id) where the node pool will be
 -- created. Specified in the format
--- \'projects\/*\/locations\/*\/clusters\/*\'.
+-- \`projects\/*\/locations\/*\/clusters\/*\`.
 plcnpcParent :: Lens' ProjectsLocationsClustersNodePoolsCreate Text
 plcnpcParent
   = lens _plcnpcParent (\ s a -> s{_plcnpcParent = a})

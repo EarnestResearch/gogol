@@ -21,7 +21,7 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Cancels unfinished test executions in a test matrix. This call returns
--- immediately and cancellation proceeds asychronously. If the matrix is
+-- immediately and cancellation proceeds asynchronously. If the matrix is
 -- already final, this operation will have no effect. May return any of the
 -- following canonical error codes: - PERMISSION_DENIED - if the user is
 -- not authorized to read project - INVALID_ARGUMENT - if the request is
@@ -67,7 +67,7 @@ type ProjectsTestMatricesCancelResource =
                            Post '[JSON] CancelTestMatrixResponse
 
 -- | Cancels unfinished test executions in a test matrix. This call returns
--- immediately and cancellation proceeds asychronously. If the matrix is
+-- immediately and cancellation proceeds asynchronously. If the matrix is
 -- already final, this operation will have no effect. May return any of the
 -- following canonical error codes: - PERMISSION_DENIED - if the user is
 -- not authorized to read project - INVALID_ARGUMENT - if the request is

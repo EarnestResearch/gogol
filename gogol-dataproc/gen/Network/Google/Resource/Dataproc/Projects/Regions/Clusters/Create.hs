@@ -20,7 +20,9 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Creates a cluster in a project.
+-- Creates a cluster in a project. The returned Operation.metadata will be
+-- ClusterOperationMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rpc\/google.cloud.dataproc.v1#clusteroperationmetadata).
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.regions.clusters.create@.
 module Network.Google.Resource.Dataproc.Projects.Regions.Clusters.Create
@@ -65,7 +67,9 @@ type ProjectsRegionsClustersCreateResource =
                              QueryParam "alt" AltJSON :>
                                ReqBody '[JSON] Cluster :> Post '[JSON] Operation
 
--- | Creates a cluster in a project.
+-- | Creates a cluster in a project. The returned Operation.metadata will be
+-- ClusterOperationMetadata
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rpc\/google.cloud.dataproc.v1#clusteroperationmetadata).
 --
 -- /See:/ 'projectsRegionsClustersCreate' smart constructor.
 data ProjectsRegionsClustersCreate =
@@ -129,8 +133,9 @@ prccXgafv
   = lens _prccXgafv (\ s a -> s{_prccXgafv = a})
 
 -- | Optional. A unique id used to identify the request. If the server
--- receives two CreateClusterRequest requests with the same id, then the
--- second request will be ignored and the first
+-- receives two CreateClusterRequest
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rpc\/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
+-- with the same id, then the second request will be ignored and the first
 -- google.longrunning.Operation created and stored in the backend is
 -- returned.It is recommended to always set this value to a UUID
 -- (https:\/\/en.wikipedia.org\/wiki\/Universally_unique_identifier).The id
@@ -164,7 +169,7 @@ prccPayload :: Lens' ProjectsRegionsClustersCreate Cluster
 prccPayload
   = lens _prccPayload (\ s a -> s{_prccPayload = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prccRegion :: Lens' ProjectsRegionsClustersCreate Text
 prccRegion
   = lens _prccRegion (\ s a -> s{_prccRegion = a})

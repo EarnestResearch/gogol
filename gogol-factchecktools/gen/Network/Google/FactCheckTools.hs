@@ -61,6 +61,7 @@ module Network.Google.FactCheckTools
     , GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating
     , googleFactcheckingFactchecktoolsV1alpha1ClaimRating
     , gffvcrWorstRating
+    , gffvcrRatingExplanation
     , gffvcrRatingValue
     , gffvcrImageURL
     , gffvcrBestRating

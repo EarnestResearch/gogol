@@ -504,6 +504,73 @@ instance ToJSON NonGuaranteedAuctionTerms where
                   ("autoOptimizePrivateAuction" .=) <$>
                     _ngatAutoOptimizePrivateAuction])
 
+-- | A mobile application that contains a external app ID, name, and app
+-- store.
+--
+-- /See:/ 'publisherProFileMobileApplication' smart constructor.
+data PublisherProFileMobileApplication =
+  PublisherProFileMobileApplication'
+    { _ppfmaExternalAppId :: !(Maybe Text)
+    , _ppfmaName :: !(Maybe Text)
+    , _ppfmaAppStore :: !(Maybe PublisherProFileMobileApplicationAppStore)
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'PublisherProFileMobileApplication' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'ppfmaExternalAppId'
+--
+-- * 'ppfmaName'
+--
+-- * 'ppfmaAppStore'
+publisherProFileMobileApplication
+    :: PublisherProFileMobileApplication
+publisherProFileMobileApplication =
+  PublisherProFileMobileApplication'
+    { _ppfmaExternalAppId = Nothing
+    , _ppfmaName = Nothing
+    , _ppfmaAppStore = Nothing
+    }
+
+
+-- | The external ID for the app from its app store.
+ppfmaExternalAppId :: Lens' PublisherProFileMobileApplication (Maybe Text)
+ppfmaExternalAppId
+  = lens _ppfmaExternalAppId
+      (\ s a -> s{_ppfmaExternalAppId = a})
+
+-- | The name of the app.
+ppfmaName :: Lens' PublisherProFileMobileApplication (Maybe Text)
+ppfmaName
+  = lens _ppfmaName (\ s a -> s{_ppfmaName = a})
+
+-- | The app store the app belongs to.
+ppfmaAppStore :: Lens' PublisherProFileMobileApplication (Maybe PublisherProFileMobileApplicationAppStore)
+ppfmaAppStore
+  = lens _ppfmaAppStore
+      (\ s a -> s{_ppfmaAppStore = a})
+
+instance FromJSON PublisherProFileMobileApplication
+         where
+        parseJSON
+          = withObject "PublisherProFileMobileApplication"
+              (\ o ->
+                 PublisherProFileMobileApplication' <$>
+                   (o .:? "externalAppId") <*> (o .:? "name") <*>
+                     (o .:? "appStore"))
+
+instance ToJSON PublisherProFileMobileApplication
+         where
+        toJSON PublisherProFileMobileApplication'{..}
+          = object
+              (catMaybes
+                 [("externalAppId" .=) <$> _ppfmaExternalAppId,
+                  ("name" .=) <$> _ppfmaName,
+                  ("appStore" .=) <$> _ppfmaAppStore])
+
 --
 -- /See:/ 'listClientUsersResponse' smart constructor.
 data ListClientUsersResponse =
@@ -571,6 +638,7 @@ data BidMetricsRow =
     , _bmrMeasurableImpressions :: !(Maybe MetricValue)
     , _bmrViewableImpressions :: !(Maybe MetricValue)
     , _bmrBilledImpressions :: !(Maybe MetricValue)
+    , _bmrReachedQueries :: !(Maybe MetricValue)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -592,6 +660,8 @@ data BidMetricsRow =
 -- * 'bmrViewableImpressions'
 --
 -- * 'bmrBilledImpressions'
+--
+-- * 'bmrReachedQueries'
 bidMetricsRow
     :: BidMetricsRow
 bidMetricsRow =
@@ -603,6 +673,7 @@ bidMetricsRow =
     , _bmrMeasurableImpressions = Nothing
     , _bmrViewableImpressions = Nothing
     , _bmrBilledImpressions = Nothing
+    , _bmrReachedQueries = Nothing
     }
 
 
@@ -616,7 +687,7 @@ bmrBidsInAuction
   = lens _bmrBidsInAuction
       (\ s a -> s{_bmrBidsInAuction = a})
 
--- | The number of bids that won an impression.
+-- | The number of bids that won the auction.
 bmrImpressionsWon :: Lens' BidMetricsRow (Maybe MetricValue)
 bmrImpressionsWon
   = lens _bmrImpressionsWon
@@ -648,6 +719,13 @@ bmrBilledImpressions
   = lens _bmrBilledImpressions
       (\ s a -> s{_bmrBilledImpressions = a})
 
+-- | The number of bids that won the auction and also won the mediation
+-- waterfall (if any).
+bmrReachedQueries :: Lens' BidMetricsRow (Maybe MetricValue)
+bmrReachedQueries
+  = lens _bmrReachedQueries
+      (\ s a -> s{_bmrReachedQueries = a})
+
 instance FromJSON BidMetricsRow where
         parseJSON
           = withObject "BidMetricsRow"
@@ -658,7 +736,8 @@ instance FromJSON BidMetricsRow where
                      <*> (o .:? "rowDimensions")
                      <*> (o .:? "measurableImpressions")
                      <*> (o .:? "viewableImpressions")
-                     <*> (o .:? "billedImpressions"))
+                     <*> (o .:? "billedImpressions")
+                     <*> (o .:? "reachedQueries"))
 
 instance ToJSON BidMetricsRow where
         toJSON BidMetricsRow'{..}
@@ -672,7 +751,8 @@ instance ToJSON BidMetricsRow where
                     _bmrMeasurableImpressions,
                   ("viewableImpressions" .=) <$>
                     _bmrViewableImpressions,
-                  ("billedImpressions" .=) <$> _bmrBilledImpressions])
+                  ("billedImpressions" .=) <$> _bmrBilledImpressions,
+                  ("reachedQueries" .=) <$> _bmrReachedQueries])
 
 -- | Specifies the day part targeting criteria.
 --
@@ -886,6 +966,7 @@ data FilteredBidDetailRow =
     { _fbdrDetailId :: !(Maybe (Textual Int32))
     , _fbdrRowDimensions :: !(Maybe RowDimensions)
     , _fbdrBidCount :: !(Maybe MetricValue)
+    , _fbdrDetail :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -899,6 +980,8 @@ data FilteredBidDetailRow =
 -- * 'fbdrRowDimensions'
 --
 -- * 'fbdrBidCount'
+--
+-- * 'fbdrDetail'
 filteredBidDetailRow
     :: FilteredBidDetailRow
 filteredBidDetailRow =
@@ -906,11 +989,16 @@ filteredBidDetailRow =
     { _fbdrDetailId = Nothing
     , _fbdrRowDimensions = Nothing
     , _fbdrBidCount = Nothing
+    , _fbdrDetail = Nothing
     }
 
 
--- | The ID of the detail. The associated value can be looked up in the
--- dictionary file corresponding to the DetailType in the response message.
+-- | Note: this field will be deprecated, use \"detail\" field instead. When
+-- \"detail\" field represents an integer value, this field is populated as
+-- the same integer value \"detail\" field represents, otherwise this field
+-- will be 0. The ID of the detail. The associated value can be looked up
+-- in the dictionary file corresponding to the DetailType in the response
+-- message.
 fbdrDetailId :: Lens' FilteredBidDetailRow (Maybe Int32)
 fbdrDetailId
   = lens _fbdrDetailId (\ s a -> s{_fbdrDetailId = a})
@@ -927,13 +1015,21 @@ fbdrBidCount :: Lens' FilteredBidDetailRow (Maybe MetricValue)
 fbdrBidCount
   = lens _fbdrBidCount (\ s a -> s{_fbdrBidCount = a})
 
+-- | The ID of the detail, can be numeric or text. The associated value can
+-- be looked up in the dictionary file corresponding to the DetailType in
+-- the response message.
+fbdrDetail :: Lens' FilteredBidDetailRow (Maybe Text)
+fbdrDetail
+  = lens _fbdrDetail (\ s a -> s{_fbdrDetail = a})
+
 instance FromJSON FilteredBidDetailRow where
         parseJSON
           = withObject "FilteredBidDetailRow"
               (\ o ->
                  FilteredBidDetailRow' <$>
                    (o .:? "detailId") <*> (o .:? "rowDimensions") <*>
-                     (o .:? "bidCount"))
+                     (o .:? "bidCount")
+                     <*> (o .:? "detail"))
 
 instance ToJSON FilteredBidDetailRow where
         toJSON FilteredBidDetailRow'{..}
@@ -941,7 +1037,8 @@ instance ToJSON FilteredBidDetailRow where
               (catMaybes
                  [("detailId" .=) <$> _fbdrDetailId,
                   ("rowDimensions" .=) <$> _fbdrRowDimensions,
-                  ("bidCount" .=) <$> _fbdrBidCount])
+                  ("bidCount" .=) <$> _fbdrBidCount,
+                  ("detail" .=) <$> _fbdrDetail])
 
 -- | Buyers are allowed to store certain types of private data in a
 -- proposal\/deal.
@@ -1105,9 +1202,10 @@ instance ToJSON ServingContext where
 
 -- | Note: this resource requires whitelisting for access. Please contact
 -- your account manager for access to Marketplace resources. Represents a
--- publisher profile in Marketplace. All fields are read only. All string
--- fields are free-form text entered by the publisher unless noted
--- otherwise.
+-- publisher profile
+-- (https:\/\/support.google.com\/admanager\/answer\/6035806) in
+-- Marketplace. All fields are read only. All string fields are free-form
+-- text entered by the publisher unless noted otherwise.
 --
 -- /See:/ 'publisherProFile' smart constructor.
 data PublisherProFile =
@@ -1116,9 +1214,11 @@ data PublisherProFile =
     , _ppfAudienceDescription :: !(Maybe Text)
     , _ppfLogoURL :: !(Maybe Text)
     , _ppfOverview :: !(Maybe Text)
+    , _ppfIsParent :: !(Maybe Bool)
     , _ppfSamplePageURL :: !(Maybe Text)
     , _ppfSeller :: !(Maybe Seller)
     , _ppfMediaKitURL :: !(Maybe Text)
+    , _ppfMobileApps :: !(Maybe [PublisherProFileMobileApplication])
     , _ppfBuyerPitchStatement :: !(Maybe Text)
     , _ppfDisplayName :: !(Maybe Text)
     , _ppfPublisherProFileId :: !(Maybe Text)
@@ -1143,11 +1243,15 @@ data PublisherProFile =
 --
 -- * 'ppfOverview'
 --
+-- * 'ppfIsParent'
+--
 -- * 'ppfSamplePageURL'
 --
 -- * 'ppfSeller'
 --
 -- * 'ppfMediaKitURL'
+--
+-- * 'ppfMobileApps'
 --
 -- * 'ppfBuyerPitchStatement'
 --
@@ -1172,9 +1276,11 @@ publisherProFile =
     , _ppfAudienceDescription = Nothing
     , _ppfLogoURL = Nothing
     , _ppfOverview = Nothing
+    , _ppfIsParent = Nothing
     , _ppfSamplePageURL = Nothing
     , _ppfSeller = Nothing
     , _ppfMediaKitURL = Nothing
+    , _ppfMobileApps = Nothing
     , _ppfBuyerPitchStatement = Nothing
     , _ppfDisplayName = Nothing
     , _ppfPublisherProFileId = Nothing
@@ -1211,6 +1317,18 @@ ppfOverview :: Lens' PublisherProFile (Maybe Text)
 ppfOverview
   = lens _ppfOverview (\ s a -> s{_ppfOverview = a})
 
+-- | Indicates if this profile is the parent profile of the seller. A parent
+-- profile represents all the inventory from the seller, as opposed to
+-- child profile that is created to brand a portion of inventory. One
+-- seller should have only one parent publisher profile, and can have
+-- multiple child profiles. Publisher profiles for the same seller will
+-- have same value of field
+-- google.ads.adexchange.buyer.v2beta1.PublisherProfile.seller. See
+-- https:\/\/support.google.com\/admanager\/answer\/6035806 for details.
+ppfIsParent :: Lens' PublisherProFile (Maybe Bool)
+ppfIsParent
+  = lens _ppfIsParent (\ s a -> s{_ppfIsParent = a})
+
 -- | URL to a sample content page.
 ppfSamplePageURL :: Lens' PublisherProFile (Maybe Text)
 ppfSamplePageURL
@@ -1227,6 +1345,15 @@ ppfMediaKitURL :: Lens' PublisherProFile (Maybe Text)
 ppfMediaKitURL
   = lens _ppfMediaKitURL
       (\ s a -> s{_ppfMediaKitURL = a})
+
+-- | The list of apps represented in this publisher profile. Empty if this is
+-- a parent profile.
+ppfMobileApps :: Lens' PublisherProFile [PublisherProFileMobileApplication]
+ppfMobileApps
+  = lens _ppfMobileApps
+      (\ s a -> s{_ppfMobileApps = a})
+      . _Default
+      . _Coerce
 
 -- | Statement explaining what\'s unique about publisher\'s business, and why
 -- buyers should partner with the publisher.
@@ -1295,9 +1422,11 @@ instance FromJSON PublisherProFile where
                      (o .:? "audienceDescription")
                      <*> (o .:? "logoUrl")
                      <*> (o .:? "overview")
+                     <*> (o .:? "isParent")
                      <*> (o .:? "samplePageUrl")
                      <*> (o .:? "seller")
                      <*> (o .:? "mediaKitUrl")
+                     <*> (o .:? "mobileApps" .!= mempty)
                      <*> (o .:? "buyerPitchStatement")
                      <*> (o .:? "displayName")
                      <*> (o .:? "publisherProfileId")
@@ -1317,9 +1446,11 @@ instance ToJSON PublisherProFile where
                     _ppfAudienceDescription,
                   ("logoUrl" .=) <$> _ppfLogoURL,
                   ("overview" .=) <$> _ppfOverview,
+                  ("isParent" .=) <$> _ppfIsParent,
                   ("samplePageUrl" .=) <$> _ppfSamplePageURL,
                   ("seller" .=) <$> _ppfSeller,
                   ("mediaKitUrl" .=) <$> _ppfMediaKitURL,
+                  ("mobileApps" .=) <$> _ppfMobileApps,
                   ("buyerPitchStatement" .=) <$>
                     _ppfBuyerPitchStatement,
                   ("displayName" .=) <$> _ppfDisplayName,
@@ -1667,8 +1798,8 @@ note =
     }
 
 
--- | The revision number of the proposal when the note is created.
--- \'OutputOnly
+-- | Output only. The revision number of the proposal when the note is
+-- created.
 nProposalRevision :: Lens' Note (Maybe Int64)
 nProposalRevision
   = lens _nProposalRevision
@@ -1681,16 +1812,16 @@ nProposalRevision
 nNote :: Lens' Note (Maybe Text)
 nNote = lens _nNote (\ s a -> s{_nNote = a})
 
--- | The unique ID for the note. \'OutputOnly
+-- | Output only. The unique ID for the note.
 nNoteId :: Lens' Note (Maybe Text)
 nNoteId = lens _nNoteId (\ s a -> s{_nNoteId = a})
 
--- | The role of the person (buyer\/seller) creating the note. \'OutputOnly
+-- | Output only. The role of the person (buyer\/seller) creating the note.
 nCreatorRole :: Lens' Note (Maybe NoteCreatorRole)
 nCreatorRole
   = lens _nCreatorRole (\ s a -> s{_nCreatorRole = a})
 
--- | The timestamp for when this note was created. \'OutputOnly
+-- | Output only. The timestamp for when this note was created.
 nCreateTime :: Lens' Note (Maybe UTCTime)
 nCreateTime
   = lens _nCreateTime (\ s a -> s{_nCreateTime = a}) .
@@ -1797,7 +1928,7 @@ money
 money = Money' {_mCurrencyCode = Nothing, _mNanos = Nothing, _mUnits = Nothing}
 
 
--- | The 3-letter currency code defined in ISO 4217.
+-- | The three-letter currency code defined in ISO 4217.
 mCurrencyCode :: Lens' Money (Maybe Text)
 mCurrencyCode
   = lens _mCurrencyCode
@@ -2067,7 +2198,7 @@ dealServingMetadata
 dealServingMetadata = DealServingMetadata' {_dsmDealPauseStatus = Nothing}
 
 
--- | Tracks which parties (if any) have paused a deal. \'OutputOnly
+-- | Output only. Tracks which parties (if any) have paused a deal.
 dsmDealPauseStatus :: Lens' DealServingMetadata (Maybe DealPauseStatus)
 dsmDealPauseStatus
   = lens _dsmDealPauseStatus
@@ -2116,13 +2247,13 @@ deliveryControl =
     }
 
 
--- | Specified the creative blocking levels to be applied. \'OutputOnly
+-- | Output only. Specified the creative blocking levels to be applied.
 dcCreativeBlockingLevel :: Lens' DeliveryControl (Maybe DeliveryControlCreativeBlockingLevel)
 dcCreativeBlockingLevel
   = lens _dcCreativeBlockingLevel
       (\ s a -> s{_dcCreativeBlockingLevel = a})
 
--- | Specifies any frequency caps. \'OutputOnly
+-- | Output only. Specifies any frequency caps.
 dcFrequencyCaps :: Lens' DeliveryControl [FrequencyCap]
 dcFrequencyCaps
   = lens _dcFrequencyCaps
@@ -2130,7 +2261,7 @@ dcFrequencyCaps
       . _Default
       . _Coerce
 
--- | Specifies how the impression delivery will be paced. \'OutputOnly
+-- | Output only. Specifies how the impression delivery will be paced.
 dcDeliveryRateType :: Lens' DeliveryControl (Maybe DeliveryControlDeliveryRateType)
 dcDeliveryRateType
   = lens _dcDeliveryRateType
@@ -2236,16 +2367,17 @@ data Creative =
     , _cAgencyId :: !(Maybe (Textual Int64))
     , _cCorrections :: !(Maybe [Correction])
     , _cClickThroughURLs :: !(Maybe [Text])
-    , _cRestrictedCategories :: !(Maybe [Text])
+    , _cRestrictedCategories :: !(Maybe [CreativeRestrictedCategoriesItem])
     , _cDetectedProductCategories :: !(Maybe [Textual Int32])
     , _cDealsStatus :: !(Maybe CreativeDealsStatus)
     , _cCreativeId :: !(Maybe Text)
     , _cVideo :: !(Maybe VideoContent)
+    , _cAdTechnologyProviders :: !(Maybe AdTechnologyProviders)
     , _cNATive :: !(Maybe NATiveContent)
     , _cDetectedSensitiveCategories :: !(Maybe [Textual Int32])
     , _cImpressionTrackingURLs :: !(Maybe [Text])
     , _cAccountId :: !(Maybe Text)
-    , _cAttributes :: !(Maybe [Text])
+    , _cAttributes :: !(Maybe [CreativeAttributesItem])
     , _cVersion :: !(Maybe (Textual Int32))
     , _cVendorIds :: !(Maybe [Textual Int32])
     , _cDetectedAdvertiserIds :: !(Maybe [Textual Int64])
@@ -2253,7 +2385,6 @@ data Creative =
     , _cServingRestrictions :: !(Maybe [ServingRestriction])
     , _cDetectedDomains :: !(Maybe [Text])
     , _cOpenAuctionStatus :: !(Maybe CreativeOpenAuctionStatus)
-    , _cFilteringStats :: !(Maybe FilteringStats)
     , _cDeclaredClickThroughURLs :: !(Maybe [Text])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -2287,6 +2418,8 @@ data Creative =
 --
 -- * 'cVideo'
 --
+-- * 'cAdTechnologyProviders'
+--
 -- * 'cNATive'
 --
 -- * 'cDetectedSensitiveCategories'
@@ -2311,8 +2444,6 @@ data Creative =
 --
 -- * 'cOpenAuctionStatus'
 --
--- * 'cFilteringStats'
---
 -- * 'cDeclaredClickThroughURLs'
 creative
     :: Creative
@@ -2330,6 +2461,7 @@ creative =
     , _cDealsStatus = Nothing
     , _cCreativeId = Nothing
     , _cVideo = Nothing
+    , _cAdTechnologyProviders = Nothing
     , _cNATive = Nothing
     , _cDetectedSensitiveCategories = Nothing
     , _cImpressionTrackingURLs = Nothing
@@ -2342,19 +2474,18 @@ creative =
     , _cServingRestrictions = Nothing
     , _cDetectedDomains = Nothing
     , _cOpenAuctionStatus = Nothing
-    , _cFilteringStats = Nothing
     , _cDeclaredClickThroughURLs = Nothing
     }
 
 
--- | \'OutputOnly The last update timestamp of the creative via API.
+-- | Output only. The last update timestamp of the creative via API.
 cAPIUpdateTime :: Lens' Creative (Maybe UTCTime)
 cAPIUpdateTime
   = lens _cAPIUpdateTime
       (\ s a -> s{_cAPIUpdateTime = a})
       . mapping _DateTime
 
--- | \'OutputOnly The detected languages for this creative. The order is
+-- | Output only. The detected languages for this creative. The order is
 -- arbitrary. The codes are 2 or 5 characters and are documented at
 -- https:\/\/developers.google.com\/adwords\/api\/docs\/appendix\/languagecodes.
 cDetectedLanguages :: Lens' Creative [Text]
@@ -2382,7 +2513,7 @@ cAgencyId
   = lens _cAgencyId (\ s a -> s{_cAgencyId = a}) .
       mapping _Coerce
 
--- | \'OutputOnly Shows any corrections that were applied to this creative.
+-- | Output only. Shows any corrections that were applied to this creative.
 cCorrections :: Lens' Creative [Correction]
 cCorrections
   = lens _cCorrections (\ s a -> s{_cCorrections = a})
@@ -2399,14 +2530,14 @@ cClickThroughURLs
 
 -- | All restricted categories for the ads that may be shown from this
 -- creative.
-cRestrictedCategories :: Lens' Creative [Text]
+cRestrictedCategories :: Lens' Creative [CreativeRestrictedCategoriesItem]
 cRestrictedCategories
   = lens _cRestrictedCategories
       (\ s a -> s{_cRestrictedCategories = a})
       . _Default
       . _Coerce
 
--- | \'OutputOnly Detected product categories, if any. See the
+-- | Output only. Detected product categories, if any. See the
 -- ad-product-categories.txt file in the technical documentation for a list
 -- of IDs.
 cDetectedProductCategories :: Lens' Creative [Int32]
@@ -2416,7 +2547,7 @@ cDetectedProductCategories
       . _Default
       . _Coerce
 
--- | \'OutputOnly The top-level deals status of this creative. If
+-- | Output only. The top-level deals status of this creative. If
 -- disapproved, an entry for \'auctionType=DIRECT_DEALS\' (or \'ALL\') in
 -- serving_restrictions will also exist. Note that this may be nuanced with
 -- other contextual restrictions, in which case, it may be preferable to
@@ -2436,11 +2567,17 @@ cCreativeId
 cVideo :: Lens' Creative (Maybe VideoContent)
 cVideo = lens _cVideo (\ s a -> s{_cVideo = a})
 
+-- | Output only. The detected ad technology providers.
+cAdTechnologyProviders :: Lens' Creative (Maybe AdTechnologyProviders)
+cAdTechnologyProviders
+  = lens _cAdTechnologyProviders
+      (\ s a -> s{_cAdTechnologyProviders = a})
+
 -- | A native creative.
 cNATive :: Lens' Creative (Maybe NATiveContent)
 cNATive = lens _cNATive (\ s a -> s{_cNATive = a})
 
--- | \'OutputOnly Detected sensitive categories, if any. See the
+-- | Output only. Detected sensitive categories, if any. See the
 -- ad-sensitive-categories.txt file in the technical documentation for a
 -- list of IDs. You should use these IDs along with the
 -- excluded-sensitive-category field in the bid request to filter your
@@ -2468,13 +2605,13 @@ cAccountId
 
 -- | All attributes for the ads that may be shown from this creative. Can be
 -- used to filter the response of the creatives.list method.
-cAttributes :: Lens' Creative [Text]
+cAttributes :: Lens' Creative [CreativeAttributesItem]
 cAttributes
   = lens _cAttributes (\ s a -> s{_cAttributes = a}) .
       _Default
       . _Coerce
 
--- | \'OutputOnly The version of this creative.
+-- | Output only. The version of this creative.
 cVersion :: Lens' Creative (Maybe Int32)
 cVersion
   = lens _cVersion (\ s a -> s{_cVersion = a}) .
@@ -2489,7 +2626,7 @@ cVendorIds
       _Default
       . _Coerce
 
--- | \'OutputOnly Detected advertiser IDs, if any.
+-- | Output only. Detected advertiser IDs, if any.
 cDetectedAdvertiserIds :: Lens' Creative [Int64]
 cDetectedAdvertiserIds
   = lens _cDetectedAdvertiserIds
@@ -2501,7 +2638,7 @@ cDetectedAdvertiserIds
 cHTML :: Lens' Creative (Maybe HTMLContent)
 cHTML = lens _cHTML (\ s a -> s{_cHTML = a})
 
--- | \'OutputOnly The granular status of this ad in specific contexts. A
+-- | Output only. The granular status of this ad in specific contexts. A
 -- context here relates to where something ultimately serves (for example,
 -- a physical location, a platform, an HTTPS vs HTTP request, or the type
 -- of auction).
@@ -2512,7 +2649,7 @@ cServingRestrictions
       . _Default
       . _Coerce
 
--- | \'OutputOnly The detected domains for this creative.
+-- | Output only. The detected domains for this creative.
 cDetectedDomains :: Lens' Creative [Text]
 cDetectedDomains
   = lens _cDetectedDomains
@@ -2520,7 +2657,7 @@ cDetectedDomains
       . _Default
       . _Coerce
 
--- | \'OutputOnly The top-level open auction status of this creative. If
+-- | Output only. The top-level open auction status of this creative. If
 -- disapproved, an entry for \'auctionType = OPEN_AUCTION\' (or \'ALL\') in
 -- serving_restrictions will also exist. Note that this may be nuanced with
 -- other contextual restrictions, in which case, it may be preferable to
@@ -2530,14 +2667,6 @@ cOpenAuctionStatus :: Lens' Creative (Maybe CreativeOpenAuctionStatus)
 cOpenAuctionStatus
   = lens _cOpenAuctionStatus
       (\ s a -> s{_cOpenAuctionStatus = a})
-
--- | \'OutputOnly The filtering stats for this creative. Deprecated; please
--- use bidders.accounts.filterSets.filteredBids.creatives.list method
--- instead.
-cFilteringStats :: Lens' Creative (Maybe FilteringStats)
-cFilteringStats
-  = lens _cFilteringStats
-      (\ s a -> s{_cFilteringStats = a})
 
 -- | The set of declared destination URLs for the creative.
 cDeclaredClickThroughURLs :: Lens' Creative [Text]
@@ -2564,6 +2693,7 @@ instance FromJSON Creative where
                      <*> (o .:? "dealsStatus")
                      <*> (o .:? "creativeId")
                      <*> (o .:? "video")
+                     <*> (o .:? "adTechnologyProviders")
                      <*> (o .:? "native")
                      <*> (o .:? "detectedSensitiveCategories" .!= mempty)
                      <*> (o .:? "impressionTrackingUrls" .!= mempty)
@@ -2576,7 +2706,6 @@ instance FromJSON Creative where
                      <*> (o .:? "servingRestrictions" .!= mempty)
                      <*> (o .:? "detectedDomains" .!= mempty)
                      <*> (o .:? "openAuctionStatus")
-                     <*> (o .:? "filteringStats")
                      <*> (o .:? "declaredClickThroughUrls" .!= mempty))
 
 instance ToJSON Creative where
@@ -2597,7 +2726,10 @@ instance ToJSON Creative where
                     _cDetectedProductCategories,
                   ("dealsStatus" .=) <$> _cDealsStatus,
                   ("creativeId" .=) <$> _cCreativeId,
-                  ("video" .=) <$> _cVideo, ("native" .=) <$> _cNATive,
+                  ("video" .=) <$> _cVideo,
+                  ("adTechnologyProviders" .=) <$>
+                    _cAdTechnologyProviders,
+                  ("native" .=) <$> _cNATive,
                   ("detectedSensitiveCategories" .=) <$>
                     _cDetectedSensitiveCategories,
                   ("impressionTrackingUrls" .=) <$>
@@ -2612,16 +2744,15 @@ instance ToJSON Creative where
                   ("servingRestrictions" .=) <$> _cServingRestrictions,
                   ("detectedDomains" .=) <$> _cDetectedDomains,
                   ("openAuctionStatus" .=) <$> _cOpenAuctionStatus,
-                  ("filteringStats" .=) <$> _cFilteringStats,
                   ("declaredClickThroughUrls" .=) <$>
                     _cDeclaredClickThroughURLs])
 
--- | \'OutputOnly The app type the restriction applies to for mobile device.
+-- | Output only. The app type the restriction applies to for mobile device.
 --
 -- /See:/ 'appContext' smart constructor.
 newtype AppContext =
   AppContext'
-    { _acAppTypes :: Maybe [Text]
+    { _acAppTypes :: Maybe [AppContextAppTypesItem]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -2637,7 +2768,7 @@ appContext = AppContext' {_acAppTypes = Nothing}
 
 
 -- | The app types this restriction applies to.
-acAppTypes :: Lens' AppContext [Text]
+acAppTypes :: Lens' AppContext [AppContextAppTypesItem]
 acAppTypes
   = lens _acAppTypes (\ s a -> s{_acAppTypes = a}) .
       _Default
@@ -2808,7 +2939,7 @@ instance ToJSON ListBidResponseErrorsResponse where
                   ("calloutStatusRows" .=) <$>
                     _lbrerCalloutStatusRows])
 
--- | \'OutputOnly Shows any corrections that were applied to this creative.
+-- | Output only. Shows any corrections that were applied to this creative.
 --
 -- /See:/ 'correction' smart constructor.
 data Correction =
@@ -3034,6 +3165,78 @@ instance ToJSON ListCreativesResponse where
                  [("nextPageToken" .=) <$> _lcrNextPageToken,
                   ("creatives" .=) <$> _lcrCreatives])
 
+-- | Detected ad technology provider information.
+--
+-- /See:/ 'adTechnologyProviders' smart constructor.
+data AdTechnologyProviders =
+  AdTechnologyProviders'
+    { _atpHasUnidentifiedProvider :: !(Maybe Bool)
+    , _atpDetectedProviderIds :: !(Maybe [Textual Int64])
+    }
+  deriving (Eq, Show, Data, Typeable, Generic)
+
+
+-- | Creates a value of 'AdTechnologyProviders' with the minimum fields required to make a request.
+--
+-- Use one of the following lenses to modify other fields as desired:
+--
+-- * 'atpHasUnidentifiedProvider'
+--
+-- * 'atpDetectedProviderIds'
+adTechnologyProviders
+    :: AdTechnologyProviders
+adTechnologyProviders =
+  AdTechnologyProviders'
+    {_atpHasUnidentifiedProvider = Nothing, _atpDetectedProviderIds = Nothing}
+
+
+-- | Whether the creative contains an unidentified ad technology provider. If
+-- true for a given creative, any bid submitted with that creative for an
+-- impression that will serve to an EEA user will be filtered before the
+-- auction.
+atpHasUnidentifiedProvider :: Lens' AdTechnologyProviders (Maybe Bool)
+atpHasUnidentifiedProvider
+  = lens _atpHasUnidentifiedProvider
+      (\ s a -> s{_atpHasUnidentifiedProvider = a})
+
+-- | The detected ad technology provider IDs for this creative. See
+-- https:\/\/storage.googleapis.com\/adx-rtb-dictionaries\/providers.csv
+-- for mapping of provider ID to provided name, a privacy policy URL, and a
+-- list of domains which can be attributed to the provider. If the creative
+-- contains provider IDs that are outside of those listed in the
+-- \`BidRequest.adslot.consented_providers_settings.consented_providers\`
+-- field on the (Google bid
+-- protocol)[https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/realtime-bidding-proto]
+-- and the
+-- \`BidRequest.user.ext.consented_providers_settings.consented_providers\`
+-- field on the (OpenRTB
+-- protocol)[https:\/\/developers.google.com\/authorized-buyers\/rtb\/downloads\/openrtb-adx-proto],
+-- and a bid is submitted with that creative for an impression that will
+-- serve to an EEA user, the bid will be filtered before the auction.
+atpDetectedProviderIds :: Lens' AdTechnologyProviders [Int64]
+atpDetectedProviderIds
+  = lens _atpDetectedProviderIds
+      (\ s a -> s{_atpDetectedProviderIds = a})
+      . _Default
+      . _Coerce
+
+instance FromJSON AdTechnologyProviders where
+        parseJSON
+          = withObject "AdTechnologyProviders"
+              (\ o ->
+                 AdTechnologyProviders' <$>
+                   (o .:? "hasUnidentifiedProvider") <*>
+                     (o .:? "detectedProviderIds" .!= mempty))
+
+instance ToJSON AdTechnologyProviders where
+        toJSON AdTechnologyProviders'{..}
+          = object
+              (catMaybes
+                 [("hasUnidentifiedProvider" .=) <$>
+                    _atpHasUnidentifiedProvider,
+                  ("detectedProviderIds" .=) <$>
+                    _atpDetectedProviderIds])
+
 -- | A response may include multiple rows, breaking down along various
 -- dimensions. Encapsulates the values of all dimensions for a given row.
 --
@@ -3224,12 +3427,12 @@ instance ToJSON
                   ("filteredBidDetailRows" .=) <$>
                     _lcsbbdrFilteredBidDetailRows])
 
--- | \'OutputOnly A security context.
+-- | Output only. A security context.
 --
 -- /See:/ 'securityContext' smart constructor.
 newtype SecurityContext =
   SecurityContext'
-    { _scSecurities :: Maybe [Text]
+    { _scSecurities :: Maybe [SecurityContextSecuritiesItem]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3245,7 +3448,7 @@ securityContext = SecurityContext' {_scSecurities = Nothing}
 
 
 -- | The security types in this context.
-scSecurities :: Lens' SecurityContext [Text]
+scSecurities :: Lens' SecurityContext [SecurityContextSecuritiesItem]
 scSecurities
   = lens _scSecurities (\ s a -> s{_scSecurities = a})
       . _Default
@@ -3262,14 +3465,15 @@ instance ToJSON SecurityContext where
           = object
               (catMaybes [("securities" .=) <$> _scSecurities])
 
--- | Represents a whole or partial calendar date, e.g. a birthday. The time
--- of day and time zone are either specified elsewhere or are not
--- significant. The date is relative to the Proleptic Gregorian Calendar.
--- This can represent: * A full date, with non-zero year, month and day
--- values * A month and day value, with a zero year, e.g. an anniversary *
--- A year on its own, with zero month and day values * A year and month
--- value, with a zero day, e.g. a credit card expiration date Related types
--- are google.type.TimeOfDay and \`google.protobuf.Timestamp\`.
+-- | Represents a whole or partial calendar date, such as a birthday. The
+-- time of day and time zone are either specified elsewhere or are
+-- insignificant. The date is relative to the Gregorian Calendar. This can
+-- represent one of the following: * A full date, with non-zero year,
+-- month, and day values * A month and day value, with a zero year, such as
+-- an anniversary * A year on its own, with zero month and day values * A
+-- year and month value, with a zero day, such as a credit card expiration
+-- date Related types are google.type.TimeOfDay and
+-- \`google.protobuf.Timestamp\`.
 --
 -- /See:/ 'date' smart constructor.
 data Date =
@@ -3295,22 +3499,22 @@ date
 date = Date' {_dDay = Nothing, _dYear = Nothing, _dMonth = Nothing}
 
 
--- | Day of month. Must be from 1 to 31 and valid for the year and month, or
--- 0 if specifying a year by itself or a year and month where the day is
--- not significant.
+-- | Day of a month. Must be from 1 to 31 and valid for the year and month,
+-- or 0 to specify a year by itself or a year and month where the day
+-- isn\'t significant.
 dDay :: Lens' Date (Maybe Int32)
 dDay
   = lens _dDay (\ s a -> s{_dDay = a}) .
       mapping _Coerce
 
--- | Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+-- | Year of the date. Must be from 1 to 9999, or 0 to specify a date without
 -- a year.
 dYear :: Lens' Date (Maybe Int32)
 dYear
   = lens _dYear (\ s a -> s{_dYear = a}) .
       mapping _Coerce
 
--- | Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+-- | Month of a year. Must be from 1 to 12, or 0 to specify a year without a
 -- month and day.
 dMonth :: Lens' Date (Maybe Int32)
 dMonth
@@ -3452,63 +3656,12 @@ instance ToJSON AbsoluteDateRange where
                  [("endDate" .=) <$> _adrEndDate,
                   ("startDate" .=) <$> _adrStartDate])
 
--- | A specific filtering status and how many times it occurred.
---
--- /See:/ 'reason' smart constructor.
-data Reason =
-  Reason'
-    { _rStatus :: !(Maybe (Textual Int32))
-    , _rCount :: !(Maybe (Textual Int64))
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'Reason' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'rStatus'
---
--- * 'rCount'
-reason
-    :: Reason
-reason = Reason' {_rStatus = Nothing, _rCount = Nothing}
-
-
--- | The filtering status code. Please refer to the
--- [creative-status-codes.txt](https:\/\/storage.googleapis.com\/adx-rtb-dictionaries\/creative-status-codes.txt)
--- file for different statuses.
-rStatus :: Lens' Reason (Maybe Int32)
-rStatus
-  = lens _rStatus (\ s a -> s{_rStatus = a}) .
-      mapping _Coerce
-
--- | The number of times the creative was filtered for the status. The count
--- is aggregated across all publishers on the exchange.
-rCount :: Lens' Reason (Maybe Int64)
-rCount
-  = lens _rCount (\ s a -> s{_rCount = a}) .
-      mapping _Coerce
-
-instance FromJSON Reason where
-        parseJSON
-          = withObject "Reason"
-              (\ o ->
-                 Reason' <$> (o .:? "status") <*> (o .:? "count"))
-
-instance ToJSON Reason where
-        toJSON Reason'{..}
-          = object
-              (catMaybes
-                 [("status" .=) <$> _rStatus,
-                  ("count" .=) <$> _rCount])
-
--- | \'OutputOnly The auction type the restriction applies to.
+-- | Output only. The auction type the restriction applies to.
 --
 -- /See:/ 'auctionContext' smart constructor.
 newtype AuctionContext =
   AuctionContext'
-    { _acAuctionTypes :: Maybe [Text]
+    { _acAuctionTypes :: Maybe [AuctionContextAuctionTypesItem]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -3524,7 +3677,7 @@ auctionContext = AuctionContext' {_acAuctionTypes = Nothing}
 
 
 -- | The auction types this restriction applies to.
-acAuctionTypes :: Lens' AuctionContext [Text]
+acAuctionTypes :: Lens' AuctionContext [AuctionContextAuctionTypesItem]
 acAuctionTypes
   = lens _acAuctionTypes
       (\ s a -> s{_acAuctionTypes = a})
@@ -3664,7 +3817,7 @@ deal =
     }
 
 
--- | Optional proposed flight start time of the deal. This will generally be
+-- | Optional. Proposed flight start time of the deal. This will generally be
 -- stored in the granularity of one second since deal serving starts at
 -- seconds boundary. Any time specified with more granularity (e.g., in
 -- milliseconds) will be truncated towards the start of time in seconds.
@@ -3674,9 +3827,8 @@ dAvailableStartTime
       (\ s a -> s{_dAvailableStartTime = a})
       . mapping _DateTime
 
--- | The external deal ID assigned to this deal once the deal is finalized.
--- This is the deal ID that shows up in serving\/reporting etc.
--- \'OutputOnly
+-- | Output only. The external deal ID assigned to this deal once the deal is
+-- finalized. This is the deal ID that shows up in serving\/reporting etc.
 dExternalDealId :: Lens' Deal (Maybe Text)
 dExternalDealId
   = lens _dExternalDealId
@@ -3688,8 +3840,8 @@ dBuyerPrivateData
   = lens _dBuyerPrivateData
       (\ s a -> s{_dBuyerPrivateData = a})
 
--- | True, if the buyside inventory setup is complete for this deal.
--- \'OutputOnly
+-- | Output only. True, if the buyside inventory setup is complete for this
+-- deal.
 dIsSetupComplete :: Lens' Deal (Maybe Bool)
 dIsSetupComplete
   = lens _dIsSetupComplete
@@ -3708,29 +3860,29 @@ dDeliveryControl
   = lens _dDeliveryControl
       (\ s a -> s{_dDeliveryControl = a})
 
--- | Metadata about the serving status of this deal. \'OutputOnly
+-- | Output only. Metadata about the serving status of this deal.
 dDealServingMetadata :: Lens' Deal (Maybe DealServingMetadata)
 dDealServingMetadata
   = lens _dDealServingMetadata
       (\ s a -> s{_dDealServingMetadata = a})
 
--- | ID of the proposal that this deal is part of. \'OutputOnly
+-- | Output only. ID of the proposal that this deal is part of.
 dProposalId :: Lens' Deal (Maybe Text)
 dProposalId
   = lens _dProposalId (\ s a -> s{_dProposalId = a})
 
--- | Specifies the subset of inventory targeted by the deal. \'OutputOnly
+-- | Output only. Specifies the subset of inventory targeted by the deal.
 dTargeting :: Lens' Deal (Maybe MarketplaceTargeting)
 dTargeting
   = lens _dTargeting (\ s a -> s{_dTargeting = a})
 
--- | A unique deal ID for the deal (server-assigned). \'OutputOnly
+-- | Output only. A unique deal ID for the deal (server-assigned).
 dDealId :: Lens' Deal (Maybe Text)
 dDealId = lens _dDealId (\ s a -> s{_dDealId = a})
 
--- | Restricitions about the creatives associated with the deal (i.e., size)
--- This is available for Programmatic Guaranteed\/Preferred Deals in Ad
--- Manager. \'OutputOnly
+-- | Output only. Restricitions about the creatives associated with the deal
+-- (i.e., size) This is available for Programmatic Guaranteed\/Preferred
+-- Deals in Ad Manager.
 dCreativeRestrictions :: Lens' Deal (Maybe CreativeRestrictions)
 dCreativeRestrictions
   = lens _dCreativeRestrictions
@@ -3744,9 +3896,9 @@ dSyndicationProduct
   = lens _dSyndicationProduct
       (\ s a -> s{_dSyndicationProduct = a})
 
--- | Optional revision number of the product that the deal was created from.
+-- | Optional. Revision number of the product that the deal was created from.
 -- If present on create, and the server \`product_revision\` has advanced
--- sinced the passed-in \`create_product_revision\`, an \`ABORTED\` error
+-- since the passed-in \`create_product_revision\`, an \`ABORTED\` error
 -- will be returned. Note: This field may be set only when creating the
 -- resource. Modifying this field while updating the resource will result
 -- in an error.
@@ -3756,7 +3908,7 @@ dCreateProductRevision
       (\ s a -> s{_dCreateProductRevision = a})
       . mapping _Coerce
 
--- | The time when the deal was last updated. \'OutputOnly
+-- | Output only. The time when the deal was last updated.
 dUpdateTime :: Lens' Deal (Maybe UTCTime)
 dUpdateTime
   = lens _dUpdateTime (\ s a -> s{_dUpdateTime = a}) .
@@ -3771,7 +3923,7 @@ dTargetingCriterion
       . _Default
       . _Coerce
 
--- | Seller contact information for the deal. \'OutputOnly
+-- | Output only. Seller contact information for the deal.
 dSellerContacts :: Lens' Deal [ContactInformation]
 dSellerContacts
   = lens _dSellerContacts
@@ -3792,9 +3944,9 @@ dDisplayName :: Lens' Deal (Maybe Text)
 dDisplayName
   = lens _dDisplayName (\ s a -> s{_dDisplayName = a})
 
--- | Specifies the creative source for programmatic deals. PUBLISHER means
--- creative is provided by seller and ADVERTISER means creative is provided
--- by buyer. \'OutputOnly
+-- | Output only. Specifies the creative source for programmatic deals.
+-- PUBLISHER means creative is provided by seller and ADVERTISER means
+-- creative is provided by buyer.
 dProgrammaticCreativeSource :: Lens' Deal (Maybe DealProgrammaticCreativeSource)
 dProgrammaticCreativeSource
   = lens _dProgrammaticCreativeSource
@@ -3809,7 +3961,7 @@ dAvailableEndTime
       (\ s a -> s{_dAvailableEndTime = a})
       . mapping _DateTime
 
--- | Specifies the creative pre-approval policy. \'OutputOnly
+-- | Output only. Specifies the creative pre-approval policy.
 dCreativePreApprovalPolicy :: Lens' Deal (Maybe DealCreativePreApprovalPolicy)
 dCreativePreApprovalPolicy
   = lens _dCreativePreApprovalPolicy
@@ -3820,13 +3972,13 @@ dDescription :: Lens' Deal (Maybe Text)
 dDescription
   = lens _dDescription (\ s a -> s{_dDescription = a})
 
--- | The time of the deal creation. \'OutputOnly
+-- | Output only. The time of the deal creation.
 dCreateTime :: Lens' Deal (Maybe UTCTime)
 dCreateTime
   = lens _dCreateTime (\ s a -> s{_dCreateTime = a}) .
       mapping _DateTime
 
--- | Specifies whether the creative is safeFrame compatible. \'OutputOnly
+-- | Output only. Specifies whether the creative is safeFrame compatible.
 dCreativeSafeFrameCompatibility :: Lens' Deal (Maybe DealCreativeSafeFrameCompatibility)
 dCreativeSafeFrameCompatibility
   = lens _dCreativeSafeFrameCompatibility
@@ -4001,6 +4153,7 @@ data Proposal =
     , _pNotes :: !(Maybe [Note])
     , _pProposalState :: !(Maybe ProposalProposalState)
     , _pLastUpdaterOrCommentorRole :: !(Maybe ProposalLastUpdaterOrCommentorRole)
+    , _pTermsAndConditions :: !(Maybe Text)
     , _pBuyer :: !(Maybe Buyer)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -4044,6 +4197,8 @@ data Proposal =
 --
 -- * 'pLastUpdaterOrCommentorRole'
 --
+-- * 'pTermsAndConditions'
+--
 -- * 'pBuyer'
 proposal
     :: Proposal
@@ -4066,6 +4221,7 @@ proposal =
     , _pNotes = Nothing
     , _pProposalState = Nothing
     , _pLastUpdaterOrCommentorRole = Nothing
+    , _pTermsAndConditions = Nothing
     , _pBuyer = Nothing
     }
 
@@ -4076,8 +4232,8 @@ pBuyerPrivateData
   = lens _pBuyerPrivateData
       (\ s a -> s{_pBuyerPrivateData = a})
 
--- | True, if the buyside inventory setup is complete for this proposal.
--- \'OutputOnly
+-- | Output only. True, if the buyside inventory setup is complete for this
+-- proposal.
 pIsSetupComplete :: Lens' Proposal (Maybe Bool)
 pIsSetupComplete
   = lens _pIsSetupComplete
@@ -4091,13 +4247,13 @@ pDeals
   = lens _pDeals (\ s a -> s{_pDeals = a}) . _Default .
       _Coerce
 
--- | The revision number for the proposal. Each update to the proposal or the
--- deal causes the proposal revision number to auto-increment. The buyer
--- keeps track of the last revision number they know of and pass it in when
--- making an update. If the head revision number on the server has since
--- incremented, then an ABORTED error is returned during the update
--- operation to let the buyer know that a subsequent update was made.
--- \'OutputOnly
+-- | Output only. The revision number for the proposal. Each update to the
+-- proposal or the deal causes the proposal revision number to
+-- auto-increment. The buyer keeps track of the last revision number they
+-- know of and pass it in when making an update. If the head revision
+-- number on the server has since incremented, then an ABORTED error is
+-- returned during the update operation to let the buyer know that a
+-- subsequent update was made.
 pProposalRevision :: Lens' Proposal (Maybe Int64)
 pProposalRevision
   = lens _pProposalRevision
@@ -4112,26 +4268,26 @@ pBuyerContacts
       . _Default
       . _Coerce
 
--- | Indicates whether the buyer\/seller created the proposal. \'OutputOnly
+-- | Output only. Indicates whether the buyer\/seller created the proposal.
 pOriginatorRole :: Lens' Proposal (Maybe ProposalOriginatorRole)
 pOriginatorRole
   = lens _pOriginatorRole
       (\ s a -> s{_pOriginatorRole = a})
 
--- | Reference to the buyer that will get billed for this proposal.
--- \'OutputOnly
+-- | Output only. Reference to the buyer that will get billed for this
+-- proposal.
 pBilledBuyer :: Lens' Proposal (Maybe Buyer)
 pBilledBuyer
   = lens _pBilledBuyer (\ s a -> s{_pBilledBuyer = a})
 
--- | Private auction ID if this proposal is a private auction proposal.
--- \'OutputOnly
+-- | Output only. Private auction ID if this proposal is a private auction
+-- proposal.
 pPrivateAuctionId :: Lens' Proposal (Maybe Text)
 pPrivateAuctionId
   = lens _pPrivateAuctionId
       (\ s a -> s{_pPrivateAuctionId = a})
 
--- | True if the proposal is being renegotiated. \'OutputOnly
+-- | Output only. True if the proposal is being renegotiated.
 pIsRenegotiating :: Lens' Proposal (Maybe Bool)
 pIsRenegotiating
   = lens _pIsRenegotiating
@@ -4143,18 +4299,18 @@ pIsRenegotiating
 pSeller :: Lens' Proposal (Maybe Seller)
 pSeller = lens _pSeller (\ s a -> s{_pSeller = a})
 
--- | The unique ID of the proposal. \'OutputOnly
+-- | Output only. The unique ID of the proposal.
 pProposalId :: Lens' Proposal (Maybe Text)
 pProposalId
   = lens _pProposalId (\ s a -> s{_pProposalId = a})
 
--- | The time when the proposal was last revised. \'OutputOnly
+-- | Output only. The time when the proposal was last revised.
 pUpdateTime :: Lens' Proposal (Maybe UTCTime)
 pUpdateTime
   = lens _pUpdateTime (\ s a -> s{_pUpdateTime = a}) .
       mapping _DateTime
 
--- | Contact information for the seller. \'OutputOnly
+-- | Output only. Contact information for the seller.
 pSellerContacts :: Lens' Proposal [ContactInformation]
 pSellerContacts
   = lens _pSellerContacts
@@ -4167,24 +4323,31 @@ pDisplayName :: Lens' Proposal (Maybe Text)
 pDisplayName
   = lens _pDisplayName (\ s a -> s{_pDisplayName = a})
 
--- | The notes associated with this proposal. \'OutputOnly
+-- | Output only. The notes associated with this proposal.
 pNotes :: Lens' Proposal [Note]
 pNotes
   = lens _pNotes (\ s a -> s{_pNotes = a}) . _Default .
       _Coerce
 
--- | The current state of the proposal. \'OutputOnly
+-- | Output only. The current state of the proposal.
 pProposalState :: Lens' Proposal (Maybe ProposalProposalState)
 pProposalState
   = lens _pProposalState
       (\ s a -> s{_pProposalState = a})
 
--- | The role of the last user that either updated the proposal or left a
--- comment. \'OutputOnly
+-- | Output only. The role of the last user that either updated the proposal
+-- or left a comment.
 pLastUpdaterOrCommentorRole :: Lens' Proposal (Maybe ProposalLastUpdaterOrCommentorRole)
 pLastUpdaterOrCommentorRole
   = lens _pLastUpdaterOrCommentorRole
       (\ s a -> s{_pLastUpdaterOrCommentorRole = a})
+
+-- | Output only. The terms and conditions set by the publisher for this
+-- proposal.
+pTermsAndConditions :: Lens' Proposal (Maybe Text)
+pTermsAndConditions
+  = lens _pTermsAndConditions
+      (\ s a -> s{_pTermsAndConditions = a})
 
 -- | Reference to the buyer on the proposal. Note: This field may be set only
 -- when creating the resource. Modifying this field while updating the
@@ -4214,6 +4377,7 @@ instance FromJSON Proposal where
                      <*> (o .:? "notes" .!= mempty)
                      <*> (o .:? "proposalState")
                      <*> (o .:? "lastUpdaterOrCommentorRole")
+                     <*> (o .:? "termsAndConditions")
                      <*> (o .:? "buyer"))
 
 instance ToJSON Proposal where
@@ -4238,6 +4402,7 @@ instance ToJSON Proposal where
                   ("proposalState" .=) <$> _pProposalState,
                   ("lastUpdaterOrCommentorRole" .=) <$>
                     _pLastUpdaterOrCommentorRole,
+                  ("termsAndConditions" .=) <$> _pTermsAndConditions,
                   ("buyer" .=) <$> _pBuyer])
 
 -- | A relative date range, specified by an offset and a duration. The
@@ -4541,7 +4706,7 @@ instance ToJSON FilteredBidCreativeRow where
                   ("rowDimensions" .=) <$> _fbcrRowDimensions,
                   ("bidCount" .=) <$> _fbcrBidCount])
 
--- | \'OutputOnly The Geo criteria the restriction applies to.
+-- | Output only. The Geo criteria the restriction applies to.
 --
 -- /See:/ 'locationContext' smart constructor.
 newtype LocationContext =
@@ -4860,12 +5025,13 @@ instance ToJSON BidResponseWithoutBidsStatusRow where
 -- /See:/ 'filterSet' smart constructor.
 data FilterSet =
   FilterSet'
-    { _fsPlatforms :: !(Maybe [Text])
+    { _fsPlatforms :: !(Maybe [FilterSetPlatformsItem])
     , _fsRealtimeTimeRange :: !(Maybe RealtimeTimeRange)
     , _fsEnvironment :: !(Maybe FilterSetEnvironment)
-    , _fsFormats :: !(Maybe [Text])
+    , _fsFormats :: !(Maybe [FilterSetFormatsItem])
+    , _fsFormat :: !(Maybe FilterSetFormat)
     , _fsCreativeId :: !(Maybe Text)
-    , _fsBreakdownDimensions :: !(Maybe [Text])
+    , _fsBreakdownDimensions :: !(Maybe [FilterSetBreakdownDimensionsItem])
     , _fsSellerNetworkIds :: !(Maybe [Textual Int32])
     , _fsDealId :: !(Maybe (Textual Int64))
     , _fsAbsoluteDateRange :: !(Maybe AbsoluteDateRange)
@@ -4888,6 +5054,8 @@ data FilterSet =
 -- * 'fsEnvironment'
 --
 -- * 'fsFormats'
+--
+-- * 'fsFormat'
 --
 -- * 'fsCreativeId'
 --
@@ -4914,6 +5082,7 @@ filterSet =
     , _fsRealtimeTimeRange = Nothing
     , _fsEnvironment = Nothing
     , _fsFormats = Nothing
+    , _fsFormat = Nothing
     , _fsCreativeId = Nothing
     , _fsBreakdownDimensions = Nothing
     , _fsSellerNetworkIds = Nothing
@@ -4929,7 +5098,7 @@ filterSet =
 -- | The list of platforms on which to filter; may be empty. The filters
 -- represented by multiple platforms are ORed together (i.e., if non-empty,
 -- results must match any one of the platforms).
-fsPlatforms :: Lens' FilterSet [Text]
+fsPlatforms :: Lens' FilterSet [FilterSetPlatformsItem]
 fsPlatforms
   = lens _fsPlatforms (\ s a -> s{_fsPlatforms = a}) .
       _Default
@@ -4948,14 +5117,19 @@ fsEnvironment
   = lens _fsEnvironment
       (\ s a -> s{_fsEnvironment = a})
 
--- | The list of formats on which to filter; may be empty. The filters
--- represented by multiple formats are ORed together (i.e., if non-empty,
--- results must match any one of the formats).
-fsFormats :: Lens' FilterSet [Text]
+-- | Creative formats bidded on or allowed to bid on, can be empty. Although
+-- this field is a list, it can only be populated with a single item. A
+-- HTTP 400 bad request error will be returned in the response if you
+-- specify multiple items.
+fsFormats :: Lens' FilterSet [FilterSetFormatsItem]
 fsFormats
   = lens _fsFormats (\ s a -> s{_fsFormats = a}) .
       _Default
       . _Coerce
+
+-- | Creative format bidded on or allowed to bid on, can be empty.
+fsFormat :: Lens' FilterSet (Maybe FilterSetFormat)
+fsFormat = lens _fsFormat (\ s a -> s{_fsFormat = a})
 
 -- | The ID of the creative on which to filter; optional. This field may be
 -- set only for a filter set that accesses account-level troubleshooting
@@ -4968,7 +5142,7 @@ fsCreativeId
 -- | The set of dimensions along which to break down the response; may be
 -- empty. If multiple dimensions are requested, the breakdown is along the
 -- Cartesian product of the requested dimensions.
-fsBreakdownDimensions :: Lens' FilterSet [Text]
+fsBreakdownDimensions :: Lens' FilterSet [FilterSetBreakdownDimensionsItem]
 fsBreakdownDimensions
   = lens _fsBreakdownDimensions
       (\ s a -> s{_fsBreakdownDimensions = a})
@@ -5045,6 +5219,7 @@ instance FromJSON FilterSet where
                      (o .:? "realtimeTimeRange")
                      <*> (o .:? "environment")
                      <*> (o .:? "formats" .!= mempty)
+                     <*> (o .:? "format")
                      <*> (o .:? "creativeId")
                      <*> (o .:? "breakdownDimensions" .!= mempty)
                      <*> (o .:? "sellerNetworkIds" .!= mempty)
@@ -5063,6 +5238,7 @@ instance ToJSON FilterSet where
                   ("realtimeTimeRange" .=) <$> _fsRealtimeTimeRange,
                   ("environment" .=) <$> _fsEnvironment,
                   ("formats" .=) <$> _fsFormats,
+                  ("format" .=) <$> _fsFormat,
                   ("creativeId" .=) <$> _fsCreativeId,
                   ("breakdownDimensions" .=) <$>
                     _fsBreakdownDimensions,
@@ -5473,12 +5649,12 @@ instance ToJSON ListImpressionMetricsResponse where
                   ("impressionMetricsRows" .=) <$>
                     _limrImpressionMetricsRows])
 
--- | \'OutputOnly The type of platform the restriction applies to.
+-- | Output only. The type of platform the restriction applies to.
 --
 -- /See:/ 'platformContext' smart constructor.
 newtype PlatformContext =
   PlatformContext'
-    { _pcPlatforms :: Maybe [Text]
+    { _pcPlatforms :: Maybe [PlatformContextPlatformsItem]
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5494,7 +5670,7 @@ platformContext = PlatformContext' {_pcPlatforms = Nothing}
 
 
 -- | The platforms this restriction applies to.
-pcPlatforms :: Lens' PlatformContext [Text]
+pcPlatforms :: Lens' PlatformContext [PlatformContextPlatformsItem]
 pcPlatforms
   = lens _pcPlatforms (\ s a -> s{_pcPlatforms = a}) .
       _Default
@@ -5650,8 +5826,11 @@ data GuaranteedFixedPriceTerms =
   GuaranteedFixedPriceTerms'
     { _gfptGuaranteedLooks :: !(Maybe (Textual Int64))
     , _gfptGuaranteedImpressions :: !(Maybe (Textual Int64))
+    , _gfptPercentShareOfVoice :: !(Maybe (Textual Int64))
+    , _gfptReservationType :: !(Maybe GuaranteedFixedPriceTermsReservationType)
     , _gfptFixedPrices :: !(Maybe [PricePerBuyer])
     , _gfptMinimumDailyLooks :: !(Maybe (Textual Int64))
+    , _gfptImpressionCap :: !(Maybe (Textual Int64))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5664,17 +5843,26 @@ data GuaranteedFixedPriceTerms =
 --
 -- * 'gfptGuaranteedImpressions'
 --
+-- * 'gfptPercentShareOfVoice'
+--
+-- * 'gfptReservationType'
+--
 -- * 'gfptFixedPrices'
 --
 -- * 'gfptMinimumDailyLooks'
+--
+-- * 'gfptImpressionCap'
 guaranteedFixedPriceTerms
     :: GuaranteedFixedPriceTerms
 guaranteedFixedPriceTerms =
   GuaranteedFixedPriceTerms'
     { _gfptGuaranteedLooks = Nothing
     , _gfptGuaranteedImpressions = Nothing
+    , _gfptPercentShareOfVoice = Nothing
+    , _gfptReservationType = Nothing
     , _gfptFixedPrices = Nothing
     , _gfptMinimumDailyLooks = Nothing
+    , _gfptImpressionCap = Nothing
     }
 
 
@@ -5693,6 +5881,22 @@ gfptGuaranteedImpressions
       (\ s a -> s{_gfptGuaranteedImpressions = a})
       . mapping _Coerce
 
+-- | For sponsorship deals, this is the percentage of the seller\'s eligible
+-- impressions that the deal will serve until the cap is reached.
+gfptPercentShareOfVoice :: Lens' GuaranteedFixedPriceTerms (Maybe Int64)
+gfptPercentShareOfVoice
+  = lens _gfptPercentShareOfVoice
+      (\ s a -> s{_gfptPercentShareOfVoice = a})
+      . mapping _Coerce
+
+-- | The reservation type for a Programmatic Guaranteed deal. This indicates
+-- whether the number of impressions is fixed, or a percent of available
+-- impressions. If not specified, the default reservation type is STANDARD.
+gfptReservationType :: Lens' GuaranteedFixedPriceTerms (Maybe GuaranteedFixedPriceTermsReservationType)
+gfptReservationType
+  = lens _gfptReservationType
+      (\ s a -> s{_gfptReservationType = a})
+
 -- | Fixed price for the specified buyer.
 gfptFixedPrices :: Lens' GuaranteedFixedPriceTerms [PricePerBuyer]
 gfptFixedPrices
@@ -5708,6 +5912,14 @@ gfptMinimumDailyLooks
       (\ s a -> s{_gfptMinimumDailyLooks = a})
       . mapping _Coerce
 
+-- | The lifetime impression cap for CPM sponsorship deals. The deal will
+-- stop serving when the cap is reached.
+gfptImpressionCap :: Lens' GuaranteedFixedPriceTerms (Maybe Int64)
+gfptImpressionCap
+  = lens _gfptImpressionCap
+      (\ s a -> s{_gfptImpressionCap = a})
+      . mapping _Coerce
+
 instance FromJSON GuaranteedFixedPriceTerms where
         parseJSON
           = withObject "GuaranteedFixedPriceTerms"
@@ -5715,8 +5927,11 @@ instance FromJSON GuaranteedFixedPriceTerms where
                  GuaranteedFixedPriceTerms' <$>
                    (o .:? "guaranteedLooks") <*>
                      (o .:? "guaranteedImpressions")
+                     <*> (o .:? "percentShareOfVoice")
+                     <*> (o .:? "reservationType")
                      <*> (o .:? "fixedPrices" .!= mempty)
-                     <*> (o .:? "minimumDailyLooks"))
+                     <*> (o .:? "minimumDailyLooks")
+                     <*> (o .:? "impressionCap"))
 
 instance ToJSON GuaranteedFixedPriceTerms where
         toJSON GuaranteedFixedPriceTerms'{..}
@@ -5725,8 +5940,12 @@ instance ToJSON GuaranteedFixedPriceTerms where
                  [("guaranteedLooks" .=) <$> _gfptGuaranteedLooks,
                   ("guaranteedImpressions" .=) <$>
                     _gfptGuaranteedImpressions,
+                  ("percentShareOfVoice" .=) <$>
+                    _gfptPercentShareOfVoice,
+                  ("reservationType" .=) <$> _gfptReservationType,
                   ("fixedPrices" .=) <$> _gfptFixedPrices,
-                  ("minimumDailyLooks" .=) <$> _gfptMinimumDailyLooks])
+                  ("minimumDailyLooks" .=) <$> _gfptMinimumDailyLooks,
+                  ("impressionCap" .=) <$> _gfptImpressionCap])
 
 -- | Native content for a creative.
 --
@@ -5911,8 +6130,8 @@ instance ToJSON NATiveContent where
 -- /See:/ 'videoTargeting' smart constructor.
 data VideoTargeting =
   VideoTargeting'
-    { _vtTargetedPositionTypes :: !(Maybe [Text])
-    , _vtExcludedPositionTypes :: !(Maybe [Text])
+    { _vtTargetedPositionTypes :: !(Maybe [VideoTargetingTargetedPositionTypesItem])
+    , _vtExcludedPositionTypes :: !(Maybe [VideoTargetingExcludedPositionTypesItem])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -5934,7 +6153,7 @@ videoTargeting =
 -- | A list of video positions to be included. When the included list is
 -- present, the excluded list must be empty. When the excluded list is
 -- present, the included list must be empty.
-vtTargetedPositionTypes :: Lens' VideoTargeting [Text]
+vtTargetedPositionTypes :: Lens' VideoTargeting [VideoTargetingTargetedPositionTypesItem]
 vtTargetedPositionTypes
   = lens _vtTargetedPositionTypes
       (\ s a -> s{_vtTargetedPositionTypes = a})
@@ -5943,7 +6162,7 @@ vtTargetedPositionTypes
 
 -- | A list of video positions to be excluded. Position types can either be
 -- included or excluded (XOR).
-vtExcludedPositionTypes :: Lens' VideoTargeting [Text]
+vtExcludedPositionTypes :: Lens' VideoTargeting [VideoTargetingExcludedPositionTypesItem]
 vtExcludedPositionTypes
   = lens _vtExcludedPositionTypes
       (\ s a -> s{_vtExcludedPositionTypes = a})
@@ -6701,7 +6920,7 @@ instance ToJSON ListBidResponsesWithoutBidsResponse
                   ("bidResponseWithoutBidsStatusRows" .=) <$>
                     _lbrwbrBidResponseWithoutBidsStatusRows])
 
--- | \'OutputOnly A representation of the status of an ad in a specific
+-- | Output only. A representation of the status of an ad in a specific
 -- context. A context here relates to where something ultimately serves
 -- (for example, a user or publisher geo, a platform, an HTTPS vs HTTP
 -- request, or the type of auction).
@@ -6963,7 +7182,7 @@ data CreativeSize =
     , _csCompanionSizes :: !(Maybe [Size])
     , _csSkippableAdType :: !(Maybe CreativeSizeSkippableAdType)
     , _csCreativeSizeType :: !(Maybe CreativeSizeCreativeSizeType)
-    , _csAllowedFormats :: !(Maybe [Text])
+    , _csAllowedFormats :: !(Maybe [CreativeSizeAllowedFormatsItem])
     , _csNATiveTemplate :: !(Maybe CreativeSizeNATiveTemplate)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -7028,15 +7247,15 @@ csCreativeSizeType
 -- empty then all formats are allowed. For example, if this field contains
 -- AllowedFormatType.AUDIO then the publisher only allows an audio ad
 -- (without any video).
-csAllowedFormats :: Lens' CreativeSize [Text]
+csAllowedFormats :: Lens' CreativeSize [CreativeSizeAllowedFormatsItem]
 csAllowedFormats
   = lens _csAllowedFormats
       (\ s a -> s{_csAllowedFormats = a})
       . _Default
       . _Coerce
 
--- | The native template for this creative. It will have a value only if
--- creative_size_type = CreativeSizeType.NATIVE. \'OutputOnly
+-- | Output only. The native template for this creative. It will have a value
+-- only if creative_size_type = CreativeSizeType.NATIVE.
 csNATiveTemplate :: Lens' CreativeSize (Maybe CreativeSizeNATiveTemplate)
 csNATiveTemplate
   = lens _csNATiveTemplate
@@ -7316,57 +7535,6 @@ instance ToJSON DealTerms where
                   ("guaranteedFixedPriceTerms" .=) <$>
                     _dtGuaranteedFixedPriceTerms,
                   ("description" .=) <$> _dtDescription])
-
--- | \'OutputOnly Filtering reasons for this creative during a period of a
--- single day (from midnight to midnight Pacific).
---
--- /See:/ 'filteringStats' smart constructor.
-data FilteringStats =
-  FilteringStats'
-    { _fsReasons :: !(Maybe [Reason])
-    , _fsDate :: !(Maybe Date)
-    }
-  deriving (Eq, Show, Data, Typeable, Generic)
-
-
--- | Creates a value of 'FilteringStats' with the minimum fields required to make a request.
---
--- Use one of the following lenses to modify other fields as desired:
---
--- * 'fsReasons'
---
--- * 'fsDate'
-filteringStats
-    :: FilteringStats
-filteringStats = FilteringStats' {_fsReasons = Nothing, _fsDate = Nothing}
-
-
--- | The set of filtering reasons for this date.
-fsReasons :: Lens' FilteringStats [Reason]
-fsReasons
-  = lens _fsReasons (\ s a -> s{_fsReasons = a}) .
-      _Default
-      . _Coerce
-
--- | The day during which the data was collected. The data is collected from
--- 00:00:00 to 23:59:59 PT. During switches from PST to PDT and back, the
--- day may contain 23 or 25 hours of data instead of the usual 24.
-fsDate :: Lens' FilteringStats (Maybe Date)
-fsDate = lens _fsDate (\ s a -> s{_fsDate = a})
-
-instance FromJSON FilteringStats where
-        parseJSON
-          = withObject "FilteringStats"
-              (\ o ->
-                 FilteringStats' <$>
-                   (o .:? "reasons" .!= mempty) <*> (o .:? "date"))
-
-instance ToJSON FilteringStats where
-        toJSON FilteringStats'{..}
-          = object
-              (catMaybes
-                 [("reasons" .=) <$> _fsReasons,
-                  ("date" .=) <$> _fsDate])
 
 -- | An invitation for a new client user to get access to the Authorized
 -- Buyers UI. All fields are required unless otherwise specified.
@@ -7719,7 +7887,8 @@ cEntityName
 cStatus :: Lens' Client (Maybe ClientStatus)
 cStatus = lens _cStatus (\ s a -> s{_cStatus = a})
 
--- | The type of the client entity: \`ADVERTISER\`, \`BRAND\`, or \`AGENCY\`.
+-- | An optional field for specifying the type of the client entity:
+-- \`ADVERTISER\`, \`BRAND\`, or \`AGENCY\`.
 cEntityType :: Lens' Client (Maybe ClientEntityType)
 cEntityType
   = lens _cEntityType (\ s a -> s{_cEntityType = a})
@@ -7767,7 +7936,8 @@ cClientName
 
 -- | Numerical identifier of the client entity. The entity can be an
 -- advertiser, a brand, or an agency. This identifier is unique among all
--- the entities with the same type. A list of all known advertisers with
+-- the entities with the same type. The value of this field is ignored if
+-- the entity type is not provided. A list of all known advertisers with
 -- their identifiers is available in the
 -- [advertisers.txt](https:\/\/storage.googleapis.com\/adx-rtb-dictionaries\/advertisers.txt)
 -- file. A list of all known brands with their identifiers is available in
@@ -7810,7 +7980,7 @@ instance ToJSON Client where
                   ("clientName" .=) <$> _cClientName,
                   ("entityId" .=) <$> _cEntityId])
 
--- | \'OutputOnly The reason and details for a disapproval.
+-- | Output only. The reason and details for a disapproval.
 --
 -- /See:/ 'disApproval' smart constructor.
 data DisApproval =

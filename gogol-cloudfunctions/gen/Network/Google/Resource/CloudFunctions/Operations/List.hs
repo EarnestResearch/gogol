@@ -162,20 +162,23 @@ olUploadType
 olName :: Lens' OperationsList (Maybe Text)
 olName = lens _olName (\ s a -> s{_olName = a})
 
--- | Required. A filter for matching the requested operations.
--- The supported formats of __filter__ are:
--- To query for specific function: 'project:*,location:*,function:*'
--- To query for all of the latest operations for a project:
--- 'project:*,latest:true'
+-- | Required. A filter for matching the requested operations. The supported
+-- formats of *filter* are: To query for a specific function:
+-- project:*,location:*,function:* To query for all of the latest
+-- operations for a project: project:*,latest:true
 olFilter :: Lens' OperationsList (Maybe Text)
 olFilter = lens _olFilter (\ s a -> s{_olFilter = a})
 
--- | The standard list page token.
+-- | Token identifying which result to start with, which is returned by a
+-- previous list call. Pagination is only supported when querying for a
+-- specific function.
 olPageToken :: Lens' OperationsList (Maybe Text)
 olPageToken
   = lens _olPageToken (\ s a -> s{_olPageToken = a})
 
--- | The standard list page size.
+-- | The maximum number of records that should be returned. Requested page
+-- size cannot exceed 100. If not set, the default page size is 100.
+-- Pagination is only supported when querying for a specific function.
 olPageSize :: Lens' OperationsList (Maybe Int32)
 olPageSize
   = lens _olPageSize (\ s a -> s{_olPageSize = a}) .

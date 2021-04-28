@@ -22,7 +22,7 @@
 --
 -- Lists human memberships in a space.
 --
--- /See:/ <https://developers.google.com/hangouts/chat Hangouts Chat API Reference> for @chat.spaces.members.list@.
+-- /See:/ <https://developers.google.com/hangouts/chat Google Chat API Reference> for @chat.spaces.members.list@.
 module Network.Google.Resource.Chat.Spaces.Members.List
     (
     -- * REST Resource

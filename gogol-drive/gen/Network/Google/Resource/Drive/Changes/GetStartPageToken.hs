@@ -111,7 +111,7 @@ cgsptSupportsTeamDrives
       (\ s a -> s{_cgsptSupportsTeamDrives = a})
 
 -- | The ID of the shared drive for which the starting pageToken for listing
--- future changes from that shared drive will be returned.
+-- future changes from that shared drive is returned.
 cgsptDriveId :: Lens' ChangesGetStartPageToken (Maybe Text)
 cgsptDriveId
   = lens _cgsptDriveId (\ s a -> s{_cgsptDriveId = a})

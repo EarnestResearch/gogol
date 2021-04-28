@@ -52,7 +52,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.updatePolicy@ method which the
 -- 'ProjectsUpdatePolicy' request conforms to.
 type ProjectsUpdatePolicyResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

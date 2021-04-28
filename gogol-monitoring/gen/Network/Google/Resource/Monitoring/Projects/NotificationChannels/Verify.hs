@@ -24,7 +24,7 @@
 -- to the channel as a result of calling
 -- SendNotificationChannelVerificationCode.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.notificationChannels.verify@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.notificationChannels.verify@.
 module Network.Google.Resource.Monitoring.Projects.NotificationChannels.Verify
     (
     -- * REST Resource
@@ -140,7 +140,7 @@ pncvPayload :: Lens' ProjectsNotificationChannelsVerify VerifyNotificationChanne
 pncvPayload
   = lens _pncvPayload (\ s a -> s{_pncvPayload = a})
 
--- | The notification channel to verify.
+-- | Required. The notification channel to verify.
 pncvName :: Lens' ProjectsNotificationChannelsVerify Text
 pncvName = lens _pncvName (\ s a -> s{_pncvName = a})
 

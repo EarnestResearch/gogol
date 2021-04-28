@@ -14,7 +14,8 @@ cabal-version:         >= 1.10
 extra-source-files:    README.md src/.gitkeep
 
 description:
-    Views and manages licenses for your domain.
+    The Google Enterprise License Manager API\'s allows you to license apps
+    for all the users of a domain managed by you.
     .
     /Warning:/ This is an experimental prototype/preview release which is still
     under exploratory development and not intended for public use, caveat emptor!
@@ -48,5 +49,5 @@ library
         , Network.Google.AppsLicensing.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

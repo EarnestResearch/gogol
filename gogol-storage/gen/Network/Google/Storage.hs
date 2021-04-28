@@ -209,7 +209,6 @@ module Network.Google.Storage
     , Expr
     , expr
     , eLocation
-    , eKind
     , eExpression
     , eTitle
     , eDescription
@@ -286,9 +285,13 @@ module Network.Google.Storage
     -- ** BucketLifecycleRuleItemCondition
     , BucketLifecycleRuleItemCondition
     , bucketLifecycleRuleItemCondition
+    , blricNoncurrentTimeBefore
+    , blricDaysSinceCustomTime
     , blricAge
+    , blricDaysSinceNoncurrentTime
     , blricIsLive
     , blricNumNewerVersions
+    , blricCustomTimeBefore
     , blricMatchesStorageClass
     , blricMatchesPattern
     , blricCreatedBefore
@@ -352,6 +355,7 @@ module Network.Google.Storage
     -- ** Bucket
     , Bucket
     , bucket
+    , bucSatisfiesPZS
     , bucEtag
     , bucLocation
     , bucIAMConfiguration
@@ -361,6 +365,7 @@ module Network.Google.Storage
     , bucLifecycle
     , bucOwner
     , bucRetentionPolicy
+    , bucZoneAffinity
     , bucSelfLink
     , bucName
     , bucEncryption
@@ -370,6 +375,7 @@ module Network.Google.Storage
     , bucTimeCreated
     , bucId
     , bucLabels
+    , bucLocationType
     , bucUpdated
     , bucDefaultObjectACL
     , bucBilling
@@ -509,6 +515,7 @@ module Network.Google.Storage
     , objMetageneration
     , objGeneration
     , objACL
+    , objCustomTime
     , objContentDisPosition
     , objMD5Hash
     , objContentType
@@ -585,12 +592,21 @@ module Network.Google.Storage
     , pEtag
     , pResourceId
     , pKind
+    , pVersion
     , pBindings
+
+    -- ** BucketIAMConfigurationUniformBucketLevelAccess
+    , BucketIAMConfigurationUniformBucketLevelAccess
+    , bucketIAMConfigurationUniformBucketLevelAccess
+    , bicublaLockedTime
+    , bicublaEnabled
 
     -- ** BucketIAMConfiguration
     , BucketIAMConfiguration
     , bucketIAMConfiguration
     , bicBucketPolicyOnly
+    , bicUniformBucketLevelAccess
+    , bicPublicAccessPrevention
 
     -- ** BucketsPatchPredefinedACL
     , BucketsPatchPredefinedACL (..)

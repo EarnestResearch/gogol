@@ -115,11 +115,15 @@ module Network.Google.TPU
     -- ** NodeState
     , NodeState (..)
 
+    -- ** NodeAPIVersion
+    , NodeAPIVersion (..)
+
     -- ** ListAcceleratorTypesResponse
     , ListAcceleratorTypesResponse
     , listAcceleratorTypesResponse
     , latrAcceleratorTypes
     , latrNextPageToken
+    , latrUnreachable
 
     -- ** Location
     , Location
@@ -155,6 +159,9 @@ module Network.Google.TPU
     , nAcceleratorType
     , nIPAddress
     , nState
+    , nSymptoms
+    , nAPIVersion
+    , nUseServiceNetworking
     , nNetwork
     , nHealth
     , nServiceAccount
@@ -169,6 +176,9 @@ module Network.Google.TPU
     , nTensorflowVersion
     , nPort
 
+    -- ** SymptomSymptomType
+    , SymptomSymptomType (..)
+
     -- ** StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
@@ -177,6 +187,14 @@ module Network.Google.TPU
     -- ** StopNodeRequest
     , StopNodeRequest
     , stopNodeRequest
+
+    -- ** Symptom
+    , Symptom
+    , symptom
+    , symDetails
+    , symWorkerId
+    , symCreateTime
+    , symSymptomType
 
     -- ** ReimageNodeRequest
     , ReimageNodeRequest
@@ -232,6 +250,7 @@ module Network.Google.TPU
     , ListTensorFlowVersionsResponse
     , listTensorFlowVersionsResponse
     , ltfvrNextPageToken
+    , ltfvrUnreachable
     , ltfvrTensorflowVersions
 
     -- ** OperationResponse

@@ -23,7 +23,7 @@
 -- Retrieves and updates tax settings of multiple accounts in a single
 -- request.
 --
--- /See:/ <https://developers.google.com/shopping-content Content API for Shopping Reference> for @content.accounttax.custombatch@.
+-- /See:/ <https://developers.google.com/shopping-content/v2/ Content API for Shopping Reference> for @content.accounttax.custombatch@.
 module Network.Google.Resource.Content.Accounttax.Custombatch
     (
     -- * REST Resource
@@ -34,8 +34,13 @@ module Network.Google.Resource.Content.Accounttax.Custombatch
     , AccounttaxCustombatch
 
     -- * Request Lenses
-    , aaPayload
-    , aaDryRun
+    , acccXgafv
+    , acccUploadProtocol
+    , acccAccessToken
+    , acccUploadType
+    , acccPayload
+    , acccDryRun
+    , acccCallback
     ) where
 
 import Network.Google.Prelude
@@ -48,10 +53,15 @@ type AccounttaxCustombatchResource =
        "v2" :>
          "accounttax" :>
            "batch" :>
-             QueryParam "dryRun" Bool :>
-               QueryParam "alt" AltJSON :>
-                 ReqBody '[JSON] AccounttaxCustomBatchRequest :>
-                   Post '[JSON] AccounttaxCustomBatchResponse
+             QueryParam "$.xgafv" Xgafv :>
+               QueryParam "upload_protocol" Text :>
+                 QueryParam "access_token" Text :>
+                   QueryParam "uploadType" Text :>
+                     QueryParam "dryRun" Bool :>
+                       QueryParam "callback" Text :>
+                         QueryParam "alt" AltJSON :>
+                           ReqBody '[JSON] AccounttaxCustomBatchRequest :>
+                             Post '[JSON] AccounttaxCustomBatchResponse
 
 -- | Retrieves and updates tax settings of multiple accounts in a single
 -- request.
@@ -59,8 +69,13 @@ type AccounttaxCustombatchResource =
 -- /See:/ 'accounttaxCustombatch' smart constructor.
 data AccounttaxCustombatch =
   AccounttaxCustombatch'
-    { _aaPayload :: !AccounttaxCustomBatchRequest
-    , _aaDryRun :: !(Maybe Bool)
+    { _acccXgafv :: !(Maybe Xgafv)
+    , _acccUploadProtocol :: !(Maybe Text)
+    , _acccAccessToken :: !(Maybe Text)
+    , _acccUploadType :: !(Maybe Text)
+    , _acccPayload :: !AccounttaxCustomBatchRequest
+    , _acccDryRun :: !(Maybe Bool)
+    , _acccCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -69,26 +84,73 @@ data AccounttaxCustombatch =
 --
 -- Use one of the following lenses to modify other fields as desired:
 --
--- * 'aaPayload'
+-- * 'acccXgafv'
 --
--- * 'aaDryRun'
+-- * 'acccUploadProtocol'
+--
+-- * 'acccAccessToken'
+--
+-- * 'acccUploadType'
+--
+-- * 'acccPayload'
+--
+-- * 'acccDryRun'
+--
+-- * 'acccCallback'
 accounttaxCustombatch
-    :: AccounttaxCustomBatchRequest -- ^ 'aaPayload'
+    :: AccounttaxCustomBatchRequest -- ^ 'acccPayload'
     -> AccounttaxCustombatch
-accounttaxCustombatch pAaPayload_ =
-  AccounttaxCustombatch' {_aaPayload = pAaPayload_, _aaDryRun = Nothing}
+accounttaxCustombatch pAcccPayload_ =
+  AccounttaxCustombatch'
+    { _acccXgafv = Nothing
+    , _acccUploadProtocol = Nothing
+    , _acccAccessToken = Nothing
+    , _acccUploadType = Nothing
+    , _acccPayload = pAcccPayload_
+    , _acccDryRun = Nothing
+    , _acccCallback = Nothing
+    }
 
+
+-- | V1 error format.
+acccXgafv :: Lens' AccounttaxCustombatch (Maybe Xgafv)
+acccXgafv
+  = lens _acccXgafv (\ s a -> s{_acccXgafv = a})
+
+-- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+acccUploadProtocol :: Lens' AccounttaxCustombatch (Maybe Text)
+acccUploadProtocol
+  = lens _acccUploadProtocol
+      (\ s a -> s{_acccUploadProtocol = a})
+
+-- | OAuth access token.
+acccAccessToken :: Lens' AccounttaxCustombatch (Maybe Text)
+acccAccessToken
+  = lens _acccAccessToken
+      (\ s a -> s{_acccAccessToken = a})
+
+-- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+acccUploadType :: Lens' AccounttaxCustombatch (Maybe Text)
+acccUploadType
+  = lens _acccUploadType
+      (\ s a -> s{_acccUploadType = a})
 
 -- | Multipart request metadata.
-aaPayload :: Lens' AccounttaxCustombatch AccounttaxCustomBatchRequest
-aaPayload
-  = lens _aaPayload (\ s a -> s{_aaPayload = a})
+acccPayload :: Lens' AccounttaxCustombatch AccounttaxCustomBatchRequest
+acccPayload
+  = lens _acccPayload (\ s a -> s{_acccPayload = a})
 
 -- | Flag to simulate a request like in a live environment. If set to true,
 -- dry-run mode checks the validity of the request and returns errors (if
 -- any).
-aaDryRun :: Lens' AccounttaxCustombatch (Maybe Bool)
-aaDryRun = lens _aaDryRun (\ s a -> s{_aaDryRun = a})
+acccDryRun :: Lens' AccounttaxCustombatch (Maybe Bool)
+acccDryRun
+  = lens _acccDryRun (\ s a -> s{_acccDryRun = a})
+
+-- | JSONP
+acccCallback :: Lens' AccounttaxCustombatch (Maybe Text)
+acccCallback
+  = lens _acccCallback (\ s a -> s{_acccCallback = a})
 
 instance GoogleRequest AccounttaxCustombatch where
         type Rs AccounttaxCustombatch =
@@ -96,7 +158,12 @@ instance GoogleRequest AccounttaxCustombatch where
         type Scopes AccounttaxCustombatch =
              '["https://www.googleapis.com/auth/content"]
         requestClient AccounttaxCustombatch'{..}
-          = go _aaDryRun (Just AltJSON) _aaPayload
+          = go _acccXgafv _acccUploadProtocol _acccAccessToken
+              _acccUploadType
+              _acccDryRun
+              _acccCallback
+              (Just AltJSON)
+              _acccPayload
               shoppingContentService
           where go
                   = buildClient

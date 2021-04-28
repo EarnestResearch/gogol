@@ -21,10 +21,9 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Deletes a model. You can only delete a model if there are no versions in
--- it. You can delete versions by calling
--- [projects.models.versions.delete](\/ml-engine\/reference\/rest\/v1\/projects.models.versions\/delete).
+-- it. You can delete versions by calling projects.models.versions.delete.
 --
--- /See:/ <https://cloud.google.com/ml/ Cloud Machine Learning Engine Reference> for @ml.projects.models.delete@.
+-- /See:/ <https://cloud.google.com/ml/ AI Platform Training & Prediction API Reference> for @ml.projects.models.delete@.
 module Network.Google.Resource.Ml.Projects.Models.Delete
     (
     -- * REST Resource
@@ -60,8 +59,7 @@ type ProjectsModelsDeleteResource =
                      Delete '[JSON] GoogleLongrunning__Operation
 
 -- | Deletes a model. You can only delete a model if there are no versions in
--- it. You can delete versions by calling
--- [projects.models.versions.delete](\/ml-engine\/reference\/rest\/v1\/projects.models.versions\/delete).
+-- it. You can delete versions by calling projects.models.versions.delete.
 --
 -- /See:/ 'projectsModelsDelete' smart constructor.
 data ProjectsModelsDelete =

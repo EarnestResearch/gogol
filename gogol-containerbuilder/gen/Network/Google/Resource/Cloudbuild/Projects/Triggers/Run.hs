@@ -126,7 +126,7 @@ ptrUploadProtocol
   = lens _ptrUploadProtocol
       (\ s a -> s{_ptrUploadProtocol = a})
 
--- | ID of the trigger.
+-- | Required. ID of the trigger.
 ptrTriggerId :: Lens' ProjectsTriggersRun Text
 ptrTriggerId
   = lens _ptrTriggerId (\ s a -> s{_ptrTriggerId = a})
@@ -148,7 +148,7 @@ ptrPayload :: Lens' ProjectsTriggersRun RepoSource
 ptrPayload
   = lens _ptrPayload (\ s a -> s{_ptrPayload = a})
 
--- | ID of the project.
+-- | Required. ID of the project.
 ptrProjectId :: Lens' ProjectsTriggersRun Text
 ptrProjectId
   = lens _ptrProjectId (\ s a -> s{_ptrProjectId = a})

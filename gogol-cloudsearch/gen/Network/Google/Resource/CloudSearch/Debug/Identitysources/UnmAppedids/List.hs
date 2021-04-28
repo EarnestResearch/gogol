@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists unmapped user identities for an identity source.
+-- Lists unmapped user identities for an identity source. **Note:** This
+-- API requires an admin account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.debug.identitysources.unmappedids.list@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.debug.identitysources.unmappedids.list@.
 module Network.Google.Resource.CloudSearch.Debug.Identitysources.UnmAppedids.List
     (
     -- * REST Resource
@@ -56,7 +57,9 @@ type DebugIdentitysourcesUnmAppedidsListResource =
          Capture "parent" Text :>
            "unmappedids" :>
              QueryParam "$.xgafv" Xgafv :>
-               QueryParam "resolutionStatusCode" Text :>
+               QueryParam "resolutionStatusCode"
+                 DebugIdentitysourcesUnmAppedidsListResolutionStatusCode
+                 :>
                  QueryParam "upload_protocol" Text :>
                    QueryParam "access_token" Text :>
                      QueryParam "uploadType" Text :>
@@ -67,14 +70,15 @@ type DebugIdentitysourcesUnmAppedidsListResource =
                                QueryParam "alt" AltJSON :>
                                  Get '[JSON] ListUnmAppedIdentitiesResponse
 
--- | Lists unmapped user identities for an identity source.
+-- | Lists unmapped user identities for an identity source. **Note:** This
+-- API requires an admin account to execute.
 --
 -- /See:/ 'debugIdentitysourcesUnmAppedidsList' smart constructor.
 data DebugIdentitysourcesUnmAppedidsList =
   DebugIdentitysourcesUnmAppedidsList'
     { _diualParent :: !Text
     , _diualXgafv :: !(Maybe Xgafv)
-    , _diualResolutionStatusCode :: !(Maybe Text)
+    , _diualResolutionStatusCode :: !(Maybe DebugIdentitysourcesUnmAppedidsListResolutionStatusCode)
     , _diualUploadProtocol :: !(Maybe Text)
     , _diualAccessToken :: !(Maybe Text)
     , _diualUploadType :: !(Maybe Text)
@@ -139,7 +143,7 @@ diualXgafv
   = lens _diualXgafv (\ s a -> s{_diualXgafv = a})
 
 -- | Limit users selection to this status.
-diualResolutionStatusCode :: Lens' DebugIdentitysourcesUnmAppedidsList (Maybe Text)
+diualResolutionStatusCode :: Lens' DebugIdentitysourcesUnmAppedidsList (Maybe DebugIdentitysourcesUnmAppedidsListResolutionStatusCode)
 diualResolutionStatusCode
   = lens _diualResolutionStatusCode
       (\ s a -> s{_diualResolutionStatusCode = a})

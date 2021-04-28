@@ -1,6 +1,6 @@
 name:                  gogol-debugger
 version:               0.5.0
-synopsis:              Google Stackdriver Debugger SDK.
+synopsis:              Google Cloud Debugger SDK.
 homepage:              https://github.com/brendanhay/gogol
 bug-reports:           https://github.com/brendanhay/gogol/issues
 license:               OtherLicense
@@ -50,5 +50,5 @@ library
         , Network.Google.Debugger.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

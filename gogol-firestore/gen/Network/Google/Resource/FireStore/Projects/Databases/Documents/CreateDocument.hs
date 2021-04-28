@@ -127,7 +127,7 @@ projectsDatabasesDocumentsCreateDocument pPddcdParent_ pPddcdCollectionId_ pPddc
     }
 
 
--- | The parent resource. For example:
+-- | Required. The parent resource. For example:
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\` or
 -- \`projects\/{project_id}\/databases\/{database_id}\/documents\/chatrooms\/{chatroom_id}\`
 pddcdParent :: Lens' ProjectsDatabasesDocumentsCreateDocument Text
@@ -158,8 +158,8 @@ pddcdAccessToken
   = lens _pddcdAccessToken
       (\ s a -> s{_pddcdAccessToken = a})
 
--- | The collection ID, relative to \`parent\`, to list. For example:
--- \`chatrooms\`.
+-- | Required. The collection ID, relative to \`parent\`, to list. For
+-- example: \`chatrooms\`.
 pddcdCollectionId :: Lens' ProjectsDatabasesDocumentsCreateDocument Text
 pddcdCollectionId
   = lens _pddcdCollectionId

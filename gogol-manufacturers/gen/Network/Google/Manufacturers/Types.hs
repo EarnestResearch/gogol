@@ -59,6 +59,9 @@ module Network.Google.Manufacturers.Types
     , dsDestination
     , dsStatus
 
+    -- * AccountsProductsGetInclude
+    , AccountsProductsGetInclude (..)
+
     -- * ImageStatus
     , ImageStatus (..)
 
@@ -67,6 +70,9 @@ module Network.Google.Manufacturers.Types
     , count
     , cValue
     , cUnit
+
+    -- * AccountsProductsListInclude
+    , AccountsProductsListInclude (..)
 
     -- * Capacity
     , Capacity
@@ -91,6 +97,7 @@ module Network.Google.Manufacturers.Types
     , aFlavor
     , aPattern
     , aSizeSystem
+    , aProductHighlight
     , aMaterial
     , aFormat
     , aProductType
@@ -107,6 +114,7 @@ module Network.Google.Manufacturers.Types
     , aGender
     , aSuggestedRetailPrice
     , aItemGroupId
+    , aRichProductContent
     , aTargetClientId
     , aSizeType
     , aReleaseDate

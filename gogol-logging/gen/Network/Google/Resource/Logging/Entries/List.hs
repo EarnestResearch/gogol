@@ -22,9 +22,10 @@
 --
 -- Lists log entries. Use this method to retrieve log entries that
 -- originated from a project\/folder\/organization\/billing account. For
--- ways to export log entries, see Exporting Logs.
+-- ways to export log entries, see Exporting Logs
+-- (https:\/\/cloud.google.com\/logging\/docs\/export).
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.entries.list@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.entries.list@.
 module Network.Google.Resource.Logging.Entries.List
     (
     -- * REST Resource
@@ -62,7 +63,8 @@ type EntriesListResource =
 
 -- | Lists log entries. Use this method to retrieve log entries that
 -- originated from a project\/folder\/organization\/billing account. For
--- ways to export log entries, see Exporting Logs.
+-- ways to export log entries, see Exporting Logs
+-- (https:\/\/cloud.google.com\/logging\/docs\/export).
 --
 -- /See:/ 'entriesList' smart constructor.
 data EntriesList =

@@ -53,7 +53,7 @@ type AccountsProductsListResource =
      "v1" :>
        Capture "parent" Text :>
          "products" :>
-           QueryParams "include" Text :>
+           QueryParams "include" AccountsProductsListInclude :>
              QueryParam "$.xgafv" Xgafv :>
                QueryParam "upload_protocol" Text :>
                  QueryParam "access_token" Text :>
@@ -70,7 +70,7 @@ type AccountsProductsListResource =
 data AccountsProductsList =
   AccountsProductsList'
     { _aplParent :: !Text
-    , _aplInclude :: !(Maybe [Text])
+    , _aplInclude :: !(Maybe [AccountsProductsListInclude])
     , _aplXgafv :: !(Maybe Xgafv)
     , _aplUploadProtocol :: !(Maybe Text)
     , _aplAccessToken :: !(Maybe Text)
@@ -128,7 +128,7 @@ aplParent
 
 -- | The information to be included in the response. Only sections listed
 -- here will be returned.
-aplInclude :: Lens' AccountsProductsList [Text]
+aplInclude :: Lens' AccountsProductsList [AccountsProductsListInclude]
 aplInclude
   = lens _aplInclude (\ s a -> s{_aplInclude = a}) .
       _Default

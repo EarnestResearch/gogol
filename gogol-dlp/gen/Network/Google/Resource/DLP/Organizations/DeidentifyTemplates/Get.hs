@@ -128,9 +128,10 @@ odtgUploadType
   = lens _odtgUploadType
       (\ s a -> s{_odtgUploadType = a})
 
--- | Resource name of the organization and deidentify template to be read,
--- for example \`organizations\/433245324\/deidentifyTemplates\/432452342\`
--- or projects\/project-id\/deidentifyTemplates\/432452342.
+-- | Required. Resource name of the organization and deidentify template to
+-- be read, for example
+-- \`organizations\/433245324\/deidentifyTemplates\/432452342\` or
+-- projects\/project-id\/deidentifyTemplates\/432452342.
 odtgName :: Lens' OrganizationsDeidentifyTemplatesGet Text
 odtgName = lens _odtgName (\ s a -> s{_odtgName = a})
 

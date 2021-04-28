@@ -50,7 +50,7 @@ import Network.Google.Prelude
 -- 'ProjectsLocationsDataSetsDicomStoresPatch' request conforms to.
 type ProjectsLocationsDataSetsDicomStoresPatchResource
      =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -152,7 +152,7 @@ pldsdspPayload
   = lens _pldsdspPayload
       (\ s a -> s{_pldsdspPayload = a})
 
--- | Output only. Resource name of the DICOM store, of the form
+-- | Resource name of the DICOM store, of the form
 -- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\/dicomStores\/{dicom_store_id}\`.
 pldsdspName :: Lens' ProjectsLocationsDataSetsDicomStoresPatch Text
 pldsdspName

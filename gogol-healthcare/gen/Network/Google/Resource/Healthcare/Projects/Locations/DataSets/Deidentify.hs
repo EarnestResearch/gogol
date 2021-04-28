@@ -23,7 +23,12 @@
 -- Creates a new dataset containing de-identified data from the source
 -- dataset. The metadata field type is OperationMetadata. If the request is
 -- successful, the response field type is DeidentifySummary. If errors
--- occur, details field type is DeidentifyErrorDetails.
+-- occur, error is set. The LRO result may still be successful if
+-- de-identification fails for some DICOM instances. The new de-identified
+-- dataset will not contain these failed resources. Failed resource totals
+-- are tracked in Operation.metadata. Error details are also logged to
+-- Cloud Logging. For more information, see [Viewing error logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging).
 --
 -- /See:/ <https://cloud.google.com/healthcare Cloud Healthcare API Reference> for @healthcare.projects.locations.datasets.deidentify@.
 module Network.Google.Resource.Healthcare.Projects.Locations.DataSets.Deidentify
@@ -51,7 +56,7 @@ import Network.Google.Prelude
 -- | A resource alias for @healthcare.projects.locations.datasets.deidentify@ method which the
 -- 'ProjectsLocationsDataSetsDeidentify' request conforms to.
 type ProjectsLocationsDataSetsDeidentifyResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "sourceDataset" "deidentify" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>
@@ -65,7 +70,12 @@ type ProjectsLocationsDataSetsDeidentifyResource =
 -- | Creates a new dataset containing de-identified data from the source
 -- dataset. The metadata field type is OperationMetadata. If the request is
 -- successful, the response field type is DeidentifySummary. If errors
--- occur, details field type is DeidentifyErrorDetails.
+-- occur, error is set. The LRO result may still be successful if
+-- de-identification fails for some DICOM instances. The new de-identified
+-- dataset will not contain these failed resources. Failed resource totals
+-- are tracked in Operation.metadata. Error details are also logged to
+-- Cloud Logging. For more information, see [Viewing error logs in Cloud
+-- Logging](https:\/\/cloud.google.com\/healthcare\/docs\/how-tos\/logging).
 --
 -- /See:/ 'projectsLocationsDataSetsDeidentify' smart constructor.
 data ProjectsLocationsDataSetsDeidentify =
@@ -119,8 +129,8 @@ pldsdXgafv :: Lens' ProjectsLocationsDataSetsDeidentify (Maybe Xgafv)
 pldsdXgafv
   = lens _pldsdXgafv (\ s a -> s{_pldsdXgafv = a})
 
--- | Source dataset resource name. (e.g.,
--- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`).
+-- | Source dataset resource name. For example,
+-- \`projects\/{project_id}\/locations\/{location_id}\/datasets\/{dataset_id}\`.
 pldsdSourceDataSet :: Lens' ProjectsLocationsDataSetsDeidentify Text
 pldsdSourceDataSet
   = lens _pldsdSourceDataSet

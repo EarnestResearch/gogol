@@ -144,7 +144,7 @@ pdjcPayload :: Lens' ProjectsDlpJobsCancel GooglePrivacyDlpV2CancelDlpJobRequest
 pdjcPayload
   = lens _pdjcPayload (\ s a -> s{_pdjcPayload = a})
 
--- | The name of the DlpJob resource to be cancelled.
+-- | Required. The name of the DlpJob resource to be cancelled.
 pdjcName :: Lens' ProjectsDlpJobsCancel Text
 pdjcName = lens _pdjcName (\ s a -> s{_pdjcName = a})
 

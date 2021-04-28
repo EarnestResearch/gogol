@@ -52,7 +52,7 @@ import Network.Google.Prelude
 -- | A resource alias for @accessapproval.organizations.approvalRequests.dismiss@ method which the
 -- 'OrganizationsApprovalRequestsDismiss' request conforms to.
 type OrganizationsApprovalRequestsDismissResource =
-     "v1beta1" :>
+     "v1" :>
        CaptureMode "name" "dismiss" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

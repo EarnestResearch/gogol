@@ -13,7 +13,8 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Manages OS login configuration for Google account users.
+-- You can use OS Login to manage access to your VM instances using IAM
+-- roles.
 --
 -- /See:/ <https://cloud.google.com/compute/docs/oslogin/ Cloud OS Login API Reference>
 module Network.Google.OSLogin
@@ -73,12 +74,14 @@ module Network.Google.OSLogin
     , ImportSSHPublicKeyResponse
     , importSSHPublicKeyResponse
     , ispkrLoginProFile
+    , ispkrDetails
 
     -- ** SSHPublicKey
     , SSHPublicKey
     , sshPublicKey
     , spkFingerprint
     , spkKey
+    , spkName
     , spkExpirationTimeUsec
 
     -- ** PosixAccount
@@ -90,6 +93,7 @@ module Network.Google.OSLogin
     , paShell
     , paPrimary
     , paAccountId
+    , paName
     , paGid
     , paOperatingSystemType
     , paSystemId

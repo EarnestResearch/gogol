@@ -138,8 +138,8 @@ piuPayload :: Lens' ProjectsInstancesUpdate Instance
 piuPayload
   = lens _piuPayload (\ s a -> s{_piuPayload = a})
 
--- | (\`OutputOnly\`) The unique name of the instance. Values are of the form
--- \`projects\/\/instances\/a-z+[a-z0-9]\`.
+-- | The unique name of the instance. Values are of the form
+-- \`projects\/{project}\/instances\/a-z+[a-z0-9]\`.
 piuName :: Lens' ProjectsInstancesUpdate Text
 piuName = lens _piuName (\ s a -> s{_piuName = a})
 

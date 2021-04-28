@@ -24,6 +24,13 @@ module Network.Google.ServiceUsage.Types
     , cloudPlatformScope
     , serviceManagementScope
 
+    -- * JwtLocation
+    , JwtLocation
+    , jwtLocation
+    , jlValuePrefix
+    , jlHeader
+    , jlQuery
+
     -- * MetricDescriptorValueType
     , MetricDescriptorValueType (..)
 
@@ -42,6 +49,7 @@ module Network.Google.ServiceUsage.Types
     , mrdLabels
     , mrdType
     , mrdDescription
+    , mrdLaunchStage
 
     -- * BackendRulePathTranslation
     , BackendRulePathTranslation (..)
@@ -56,7 +64,6 @@ module Network.Google.ServiceUsage.Types
     , gasAPIs
     , gasTypes
     , gasSystemTypes
-    , gasExperimental
     , gasMonitoredResources
     , gasBackend
     , gasMonitoring
@@ -77,6 +84,9 @@ module Network.Google.ServiceUsage.Types
     , gasCustomError
     , gasLogging
     , gasQuota
+
+    -- * GoogleAPIServiceusageV1beta1GetServiceIdentityResponseState
+    , GoogleAPIServiceusageV1beta1GetServiceIdentityResponseState (..)
 
     -- * DocumentationRule
     , DocumentationRule
@@ -123,6 +133,11 @@ module Network.Google.ServiceUsage.Types
     , lsrNextPageToken
     , lsrServices
 
+    -- * ImportConsumerOverridesResponse
+    , ImportConsumerOverridesResponse
+    , importConsumerOverridesResponse
+    , icorOverrides
+
     -- * Context
     , Context
     , context
@@ -137,6 +152,7 @@ module Network.Google.ServiceUsage.Types
     -- * MetricDescriptor
     , MetricDescriptor
     , metricDescriptor
+    , mdMonitoredResourceTypes
     , mdMetricKind
     , mdName
     , mdMetadata
@@ -146,6 +162,7 @@ module Network.Google.ServiceUsage.Types
     , mdValueType
     , mdDescription
     , mdUnit
+    , mdLaunchStage
 
     -- * ListOperationsResponse
     , ListOperationsResponse
@@ -164,6 +181,8 @@ module Network.Google.ServiceUsage.Types
     , brSelector
     , brMinDeadline
     , brAddress
+    , brProtocol
+    , brDisableAuth
     , brOperationDeadline
     , brDeadline
     , brPathTranslation
@@ -221,11 +240,23 @@ module Network.Google.ServiceUsage.Types
     , EnableServiceRequest
     , enableServiceRequest
 
+    -- * DeleteAdminQuotaPolicyMetadata
+    , DeleteAdminQuotaPolicyMetadata
+    , deleteAdminQuotaPolicyMetadata
+
+    -- * UpdateAdminQuotaPolicyMetadata
+    , UpdateAdminQuotaPolicyMetadata
+    , updateAdminQuotaPolicyMetadata
+
     -- * CustomErrorRule
     , CustomErrorRule
     , customErrorRule
     , cerIsErrorType
     , cerSelector
+
+    -- * CreateAdminQuotaPolicyMetadata
+    , CreateAdminQuotaPolicyMetadata
+    , createAdminQuotaPolicyMetadata
 
     -- * OptionValue
     , OptionValue
@@ -251,6 +282,10 @@ module Network.Google.ServiceUsage.Types
     , aRules
     , aProviders
 
+    -- * GetServiceIdentityMetadata
+    , GetServiceIdentityMetadata
+    , getServiceIdentityMetadata
+
     -- * MetricDescriptorMetadataLaunchStage
     , MetricDescriptorMetadataLaunchStage (..)
 
@@ -258,6 +293,12 @@ module Network.Google.ServiceUsage.Types
     , BatchCreateAdminOverridesResponse
     , batchCreateAdminOverridesResponse
     , bcaorOverrides
+
+    -- * ServiceIdentity
+    , ServiceIdentity
+    , serviceIdentity
+    , siEmail
+    , siUniqueId
 
     -- * Mixin
     , Mixin
@@ -290,6 +331,12 @@ module Network.Google.ServiceUsage.Types
     , pContent
     , pName
 
+    -- * GoogleAPIServiceusageV1beta1ServiceIdentity
+    , GoogleAPIServiceusageV1beta1ServiceIdentity
+    , googleAPIServiceusageV1beta1ServiceIdentity
+    , gasvsiEmail
+    , gasvsiUniqueId
+
     -- * AuthenticationRule
     , AuthenticationRule
     , authenticationRule
@@ -297,6 +344,12 @@ module Network.Google.ServiceUsage.Types
     , arSelector
     , arAllowWithoutCredential
     , arOAuth
+
+    -- * GetServiceIdentityResponse
+    , GetServiceIdentityResponse
+    , getServiceIdentityResponse
+    , gsirState
+    , gsirIdentity
 
     -- * LabelDescriptorValueType
     , LabelDescriptorValueType (..)
@@ -306,13 +359,23 @@ module Network.Google.ServiceUsage.Types
     , metricRuleMetricCosts
     , mrmcAddtional
 
-    -- * AuthorizationConfig
-    , AuthorizationConfig
-    , authorizationConfig
-    , acProvider
+    -- * AdminQuotaPolicy
+    , AdminQuotaPolicy
+    , adminQuotaPolicy
+    , aqpMetric
+    , aqpName
+    , aqpContainer
+    , aqpDimensions
+    , aqpPolicyValue
+    , aqpUnit
 
     -- * APISyntax
     , APISyntax (..)
+
+    -- * ImportAdminQuotaPoliciesResponse
+    , ImportAdminQuotaPoliciesResponse
+    , importAdminQuotaPoliciesResponse
+    , iaqprPolicies
 
     -- * TypeSyntax
     , TypeSyntax (..)
@@ -327,11 +390,6 @@ module Network.Google.ServiceUsage.Types
     , enableFailure
     , efServiceId
     , efErrorMessage
-
-    -- * Experimental
-    , Experimental
-    , experimental
-    , eAuthorization
 
     -- * Backend
     , Backend
@@ -363,6 +421,15 @@ module Network.Google.ServiceUsage.Types
     , metOptions
     , metSyntax
 
+    -- * ImportAdminQuotaPoliciesMetadata
+    , ImportAdminQuotaPoliciesMetadata
+    , importAdminQuotaPoliciesMetadata
+
+    -- * BatchGetServicesResponse
+    , BatchGetServicesResponse
+    , batchGetServicesResponse
+    , bgsrServices
+
     -- * SystemParameters
     , SystemParameters
     , systemParameters
@@ -376,9 +443,12 @@ module Network.Google.ServiceUsage.Types
     -- * QuotaOverride
     , QuotaOverride
     , quotaOverride
+    , qoAdminOverrideAncestor
+    , qoMetric
     , qoOverrideValue
     , qoName
     , qoDimensions
+    , qoUnit
 
     -- * BatchCreateConsumerOverridesResponse
     , BatchCreateConsumerOverridesResponse
@@ -392,6 +462,7 @@ module Network.Google.ServiceUsage.Types
     , dDocumentationRootURL
     , dRules
     , dPages
+    , dServiceRootURL
     , dOverview
 
     -- * Xgafv
@@ -409,6 +480,11 @@ module Network.Google.ServiceUsage.Types
     , mdmIngestDelay
     , mdmLaunchStage
 
+    -- * AdminQuotaPolicyDimensions
+    , AdminQuotaPolicyDimensions
+    , adminQuotaPolicyDimensions
+    , aqpdAddtional
+
     -- * SystemParameterRule
     , SystemParameterRule
     , systemParameterRule
@@ -422,6 +498,9 @@ module Network.Google.ServiceUsage.Types
     , lValueType
     , lDescription
 
+    -- * MonitoredResourceDescriptorLaunchStage
+    , MonitoredResourceDescriptorLaunchStage (..)
+
     -- * Usage
     , Usage
     , usage
@@ -432,6 +511,10 @@ module Network.Google.ServiceUsage.Types
     -- * FieldCardinality
     , FieldCardinality (..)
 
+    -- * ImportAdminOverridesMetadata
+    , ImportAdminOverridesMetadata
+    , importAdminOverridesMetadata
+
     -- * HTTP
     , HTTP
     , hTTP
@@ -441,6 +524,7 @@ module Network.Google.ServiceUsage.Types
     -- * DisableServiceRequest
     , DisableServiceRequest
     , disableServiceRequest
+    , dsrCheckIfServiceHasUsage
     , dsrDisableDependentServices
 
     -- * Type
@@ -478,10 +562,8 @@ module Network.Google.ServiceUsage.Types
     -- * Endpoint
     , Endpoint
     , endpoint
-    , eAliases
     , eAllowCORS
     , eName
-    , eFeatures
     , eTarget
 
     -- * OAuthRequirements
@@ -523,6 +605,9 @@ module Network.Google.ServiceUsage.Types
     , billing
     , bConsumerDestinations
 
+    -- * DisableServiceRequestCheckIfServiceHasUsage
+    , DisableServiceRequestCheckIfServiceHasUsage (..)
+
     -- * SourceInfo
     , SourceInfo
     , sourceInfo
@@ -540,6 +625,12 @@ module Network.Google.ServiceUsage.Types
     , gasvsState
     , gasvsConfig
     , gasvsName
+
+    -- * GoogleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , GoogleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , googleAPIServiceusageV1beta1GetServiceIdentityResponse
+    , gasvgsirState
+    , gasvgsirIdentity
 
     -- * Enum'
     , Enum'
@@ -589,19 +680,35 @@ module Network.Google.ServiceUsage.Types
     , operationResponse
     , orAddtional
 
+    -- * MetricDescriptorLaunchStage
+    , MetricDescriptorLaunchStage (..)
+
     -- * GoogleAPIServiceusageV1OperationMetadata
     , GoogleAPIServiceusageV1OperationMetadata
     , googleAPIServiceusageV1OperationMetadata
     , gasvomResourceNames
+
+    -- * ImportAdminOverridesResponse
+    , ImportAdminOverridesResponse
+    , importAdminOverridesResponse
+    , iaorOverrides
+
+    -- * ImportConsumerOverridesMetadata
+    , ImportConsumerOverridesMetadata
+    , importConsumerOverridesMetadata
 
     -- * AuthProvider
     , AuthProvider
     , authProvider
     , apJWKsURI
     , apAudiences
+    , apJwtLocations
     , apId
     , apAuthorizationURL
     , apIssuer
+
+    -- * GetServiceIdentityResponseState
+    , GetServiceIdentityResponseState (..)
 
     -- * ContextRule
     , ContextRule
@@ -617,6 +724,8 @@ module Network.Google.ServiceUsage.Types
     , googleAPIServiceusageV1ServiceConfig
     , gasvscAuthentication
     , gasvscAPIs
+    , gasvscMonitoredResources
+    , gasvscMonitoring
     , gasvscName
     , gasvscDocumentation
     , gasvscUsage
@@ -639,7 +748,7 @@ serviceUsageService
 cloudPlatformReadOnlyScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform.read-only"]
 cloudPlatformReadOnlyScope = Proxy
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

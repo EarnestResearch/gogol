@@ -22,7 +22,7 @@
 --
 -- Lists the descriptors for monitored resource types used by Logging.
 --
--- /See:/ <https://cloud.google.com/logging/docs/ Stackdriver Logging API Reference> for @logging.monitoredResourceDescriptors.list@.
+-- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.monitoredResourceDescriptors.list@.
 module Network.Google.Resource.Logging.MonitoredResourceDescriptors.List
     (
     -- * REST Resource

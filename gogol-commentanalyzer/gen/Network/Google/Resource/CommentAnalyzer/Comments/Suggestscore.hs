@@ -22,7 +22,7 @@
 --
 -- Suggest comment scores as training data.
 --
--- /See:/ <https://conversationai.github.io/ Perspective Comment Analyzer API Reference> for @commentanalyzer.comments.suggestscore@.
+-- /See:/ <https://github.com/conversationai/perspectiveapi/blob/master/README.md Perspective Comment Analyzer API Reference> for @commentanalyzer.comments.suggestscore@.
 module Network.Google.Resource.CommentAnalyzer.Comments.Suggestscore
     (
     -- * REST Resource

@@ -25,7 +25,7 @@
 -- DeleteCatalogRequest.force is true. The delete operation can be
 -- recovered by the PrivateCatalogProducer.UndeleteCatalog method.
 --
--- /See:/ <https://sites.google.com/corp/google.com/cloudprivatecatalog Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.delete@.
+-- /See:/ <https://cloud.google.com/private-catalog/ Cloud Private Catalog Producer API Reference> for @cloudprivatecatalogproducer.catalogs.delete@.
 module Network.Google.Resource.CloudPrivateCatalogProducer.Catalogs.Delete
     (
     -- * REST Resource

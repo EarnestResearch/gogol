@@ -124,11 +124,11 @@ psagUploadType
   = lens _psagUploadType
       (\ s a -> s{_psagUploadType = a})
 
--- | The resource name of the service account in the following format:
--- \`projects\/{PROJECT_ID}\/serviceAccounts\/{ACCOUNT}\`. Using \`-\` as a
--- wildcard for the \`PROJECT_ID\` will infer the project from the account.
--- The \`ACCOUNT\` value can be the \`email\` address or the \`unique_id\`
--- of the service account.
+-- | Required. The resource name of the service account in the following
+-- format: \`projects\/{PROJECT_ID}\/serviceAccounts\/{ACCOUNT}\`. Using
+-- \`-\` as a wildcard for the \`PROJECT_ID\` will infer the project from
+-- the account. The \`ACCOUNT\` value can be the \`email\` address or the
+-- \`unique_id\` of the service account.
 psagName :: Lens' ProjectsServiceAccountsGet Text
 psagName = lens _psagName (\ s a -> s{_psagName = a})
 

@@ -21,31 +21,35 @@ import Network.Google.Prelude hiding (Bytes)
 -- | The name of the template to retrieve.
 data OrdersGettestOrdertemplateTemplateName
     = TEMPLATE1
-      -- ^ @template1@
-    | Template1a
-      -- ^ @template1a@
-    | Template1b
-      -- ^ @template1b@
+      -- ^ @TEMPLATE1@
     | TEMPLATE2
-      -- ^ @template2@
+      -- ^ @TEMPLATE2@
+    | TEMPLATE1A
+      -- ^ @TEMPLATE1A@
+    | TEMPLATE1B
+      -- ^ @TEMPLATE1B@
+    | TEMPLATE3
+      -- ^ @TEMPLATE3@
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable OrdersGettestOrdertemplateTemplateName
 
 instance FromHttpApiData OrdersGettestOrdertemplateTemplateName where
     parseQueryParam = \case
-        "template1" -> Right TEMPLATE1
-        "template1a" -> Right Template1a
-        "template1b" -> Right Template1b
-        "template2" -> Right TEMPLATE2
+        "TEMPLATE1" -> Right TEMPLATE1
+        "TEMPLATE2" -> Right TEMPLATE2
+        "TEMPLATE1A" -> Right TEMPLATE1A
+        "TEMPLATE1B" -> Right TEMPLATE1B
+        "TEMPLATE3" -> Right TEMPLATE3
         x -> Left ("Unable to parse OrdersGettestOrdertemplateTemplateName from: " <> x)
 
 instance ToHttpApiData OrdersGettestOrdertemplateTemplateName where
     toQueryParam = \case
-        TEMPLATE1 -> "template1"
-        Template1a -> "template1a"
-        Template1b -> "template1b"
-        TEMPLATE2 -> "template2"
+        TEMPLATE1 -> "TEMPLATE1"
+        TEMPLATE2 -> "TEMPLATE2"
+        TEMPLATE1A -> "TEMPLATE1A"
+        TEMPLATE1B -> "TEMPLATE1B"
+        TEMPLATE3 -> "TEMPLATE3"
 
 instance FromJSON OrdersGettestOrdertemplateTemplateName where
     parseJSON = parseJSONText "OrdersGettestOrdertemplateTemplateName"
@@ -53,98 +57,66 @@ instance FromJSON OrdersGettestOrdertemplateTemplateName where
 instance ToJSON OrdersGettestOrdertemplateTemplateName where
     toJSON = toJSONText
 
--- | The ordering of the returned list. The only supported value are
--- placedDate desc and placedDate asc for now, which returns orders sorted
--- by placement date. \"placedDate desc\" stands for listing orders by
--- placement date, from oldest to most recent. \"placedDate asc\" stands
--- for listing orders by placement date, from most recent to oldest. In
--- future releases we\'ll support other sorting criteria.
-data OrdersListOrderBy
-    = PlacedDateAsc
-      -- ^ @placedDate asc@
-    | PlacedDateDesc
-      -- ^ @placedDate desc@
-      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
-
-instance Hashable OrdersListOrderBy
-
-instance FromHttpApiData OrdersListOrderBy where
-    parseQueryParam = \case
-        "placedDate asc" -> Right PlacedDateAsc
-        "placedDate desc" -> Right PlacedDateDesc
-        x -> Left ("Unable to parse OrdersListOrderBy from: " <> x)
-
-instance ToHttpApiData OrdersListOrderBy where
-    toQueryParam = \case
-        PlacedDateAsc -> "placedDate asc"
-        PlacedDateDesc -> "placedDate desc"
-
-instance FromJSON OrdersListOrderBy where
-    parseJSON = parseJSONText "OrdersListOrderBy"
-
-instance ToJSON OrdersListOrderBy where
-    toJSON = toJSONText
-
--- | Obtains orders that match any of the specified statuses. Multiple values
--- can be specified with comma separation. Additionally, please note that
--- active is a shortcut for pendingShipment and partiallyShipped, and
--- completed is a shortcut for shipped , partiallyDelivered, delivered,
--- partiallyReturned, returned, and canceled.
+-- | Obtains orders that match any of the specified statuses. Please note
+-- that \`active\` is a shortcut for \`pendingShipment\` and
+-- \`partiallyShipped\`, and \`completed\` is a shortcut for \`shipped\`,
+-- \`partiallyDelivered\`, \`delivered\`, \`partiallyReturned\`,
+-- \`returned\`, and \`canceled\`.
 data OrdersListStatuses
     = Active
-      -- ^ @active@
-    | Canceled
-      -- ^ @canceled@
+      -- ^ @ACTIVE@
     | Completed
-      -- ^ @completed@
-    | Delivered
-      -- ^ @delivered@
+      -- ^ @COMPLETED@
+    | Canceled
+      -- ^ @CANCELED@
     | InProgress
-      -- ^ @inProgress@
-    | PartiallyDelivered
-      -- ^ @partiallyDelivered@
-    | PartiallyReturned
-      -- ^ @partiallyReturned@
-    | PartiallyShipped
-      -- ^ @partiallyShipped@
+      -- ^ @IN_PROGRESS@
     | PendingShipment
-      -- ^ @pendingShipment@
-    | Returned
-      -- ^ @returned@
+      -- ^ @PENDING_SHIPMENT@
+    | PartiallyShipped
+      -- ^ @PARTIALLY_SHIPPED@
     | Shipped
-      -- ^ @shipped@
+      -- ^ @SHIPPED@
+    | PartiallyDelivered
+      -- ^ @PARTIALLY_DELIVERED@
+    | Delivered
+      -- ^ @DELIVERED@
+    | PartiallyReturned
+      -- ^ @PARTIALLY_RETURNED@
+    | Returned
+      -- ^ @RETURNED@
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable OrdersListStatuses
 
 instance FromHttpApiData OrdersListStatuses where
     parseQueryParam = \case
-        "active" -> Right Active
-        "canceled" -> Right Canceled
-        "completed" -> Right Completed
-        "delivered" -> Right Delivered
-        "inProgress" -> Right InProgress
-        "partiallyDelivered" -> Right PartiallyDelivered
-        "partiallyReturned" -> Right PartiallyReturned
-        "partiallyShipped" -> Right PartiallyShipped
-        "pendingShipment" -> Right PendingShipment
-        "returned" -> Right Returned
-        "shipped" -> Right Shipped
+        "ACTIVE" -> Right Active
+        "COMPLETED" -> Right Completed
+        "CANCELED" -> Right Canceled
+        "IN_PROGRESS" -> Right InProgress
+        "PENDING_SHIPMENT" -> Right PendingShipment
+        "PARTIALLY_SHIPPED" -> Right PartiallyShipped
+        "SHIPPED" -> Right Shipped
+        "PARTIALLY_DELIVERED" -> Right PartiallyDelivered
+        "DELIVERED" -> Right Delivered
+        "PARTIALLY_RETURNED" -> Right PartiallyReturned
+        "RETURNED" -> Right Returned
         x -> Left ("Unable to parse OrdersListStatuses from: " <> x)
 
 instance ToHttpApiData OrdersListStatuses where
     toQueryParam = \case
-        Active -> "active"
-        Canceled -> "canceled"
-        Completed -> "completed"
-        Delivered -> "delivered"
-        InProgress -> "inProgress"
-        PartiallyDelivered -> "partiallyDelivered"
-        PartiallyReturned -> "partiallyReturned"
-        PartiallyShipped -> "partiallyShipped"
-        PendingShipment -> "pendingShipment"
-        Returned -> "returned"
-        Shipped -> "shipped"
+        Active -> "ACTIVE"
+        Completed -> "COMPLETED"
+        Canceled -> "CANCELED"
+        InProgress -> "IN_PROGRESS"
+        PendingShipment -> "PENDING_SHIPMENT"
+        PartiallyShipped -> "PARTIALLY_SHIPPED"
+        Shipped -> "SHIPPED"
+        PartiallyDelivered -> "PARTIALLY_DELIVERED"
+        Delivered -> "DELIVERED"
+        PartiallyReturned -> "PARTIALLY_RETURNED"
+        Returned -> "RETURNED"
 
 instance FromJSON OrdersListStatuses where
     parseJSON = parseJSONText "OrdersListStatuses"
@@ -154,27 +126,56 @@ instance ToJSON OrdersListStatuses where
 
 -- | Return the results in the specified order.
 data OrderreturnsListOrderBy
-    = ReturnCreationTimeAsc
-      -- ^ @returnCreationTimeAsc@
-    | ReturnCreationTimeDesc
-      -- ^ @returnCreationTimeDesc@
+    = ReturnCreationTimeDesc
+      -- ^ @RETURN_CREATION_TIME_DESC@
+    | ReturnCreationTimeAsc
+      -- ^ @RETURN_CREATION_TIME_ASC@
       deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
 
 instance Hashable OrderreturnsListOrderBy
 
 instance FromHttpApiData OrderreturnsListOrderBy where
     parseQueryParam = \case
-        "returnCreationTimeAsc" -> Right ReturnCreationTimeAsc
-        "returnCreationTimeDesc" -> Right ReturnCreationTimeDesc
+        "RETURN_CREATION_TIME_DESC" -> Right ReturnCreationTimeDesc
+        "RETURN_CREATION_TIME_ASC" -> Right ReturnCreationTimeAsc
         x -> Left ("Unable to parse OrderreturnsListOrderBy from: " <> x)
 
 instance ToHttpApiData OrderreturnsListOrderBy where
     toQueryParam = \case
-        ReturnCreationTimeAsc -> "returnCreationTimeAsc"
-        ReturnCreationTimeDesc -> "returnCreationTimeDesc"
+        ReturnCreationTimeDesc -> "RETURN_CREATION_TIME_DESC"
+        ReturnCreationTimeAsc -> "RETURN_CREATION_TIME_ASC"
 
 instance FromJSON OrderreturnsListOrderBy where
     parseJSON = parseJSONText "OrderreturnsListOrderBy"
 
 instance ToJSON OrderreturnsListOrderBy where
+    toJSON = toJSONText
+
+-- | V1 error format.
+data Xgafv
+    = X1
+      -- ^ @1@
+      -- v1 error format
+    | X2
+      -- ^ @2@
+      -- v2 error format
+      deriving (Eq, Ord, Enum, Read, Show, Data, Typeable, Generic)
+
+instance Hashable Xgafv
+
+instance FromHttpApiData Xgafv where
+    parseQueryParam = \case
+        "1" -> Right X1
+        "2" -> Right X2
+        x -> Left ("Unable to parse Xgafv from: " <> x)
+
+instance ToHttpApiData Xgafv where
+    toQueryParam = \case
+        X1 -> "1"
+        X2 -> "2"
+
+instance FromJSON Xgafv where
+    parseJSON = parseJSONText "Xgafv"
+
+instance ToJSON Xgafv where
     toJSON = toJSONText

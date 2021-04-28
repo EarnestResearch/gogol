@@ -21,8 +21,10 @@
 -- Portability : non-portable (GHC extensions)
 --
 -- Starts a job cancellation request. To access the job resource after
--- cancellation, call regions\/{region}\/jobs.list or
--- regions\/{region}\/jobs.get.
+-- cancellation, call regions\/{region}\/jobs.list
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rest\/v1\/projects.regions.jobs\/list)
+-- or regions\/{region}\/jobs.get
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rest\/v1\/projects.regions.jobs\/get).
 --
 -- /See:/ <https://cloud.google.com/dataproc/ Cloud Dataproc API Reference> for @dataproc.projects.regions.jobs.cancel@.
 module Network.Google.Resource.Dataproc.Projects.Regions.Jobs.Cancel
@@ -69,8 +71,10 @@ type ProjectsRegionsJobsCancelResource =
                                  Post '[JSON] Job
 
 -- | Starts a job cancellation request. To access the job resource after
--- cancellation, call regions\/{region}\/jobs.list or
--- regions\/{region}\/jobs.get.
+-- cancellation, call regions\/{region}\/jobs.list
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rest\/v1\/projects.regions.jobs\/list)
+-- or regions\/{region}\/jobs.get
+-- (https:\/\/cloud.google.com\/dataproc\/docs\/reference\/rest\/v1\/projects.regions.jobs\/get).
 --
 -- /See:/ 'projectsRegionsJobsCancel' smart constructor.
 data ProjectsRegionsJobsCancel =
@@ -162,7 +166,7 @@ prjcPayload :: Lens' ProjectsRegionsJobsCancel CancelJobRequest
 prjcPayload
   = lens _prjcPayload (\ s a -> s{_prjcPayload = a})
 
--- | Required. The Cloud Dataproc region in which to handle the request.
+-- | Required. The Dataproc region in which to handle the request.
 prjcRegion :: Lens' ProjectsRegionsJobsCancel Text
 prjcRegion
   = lens _prjcRegion (\ s a -> s{_prjcRegion = a})

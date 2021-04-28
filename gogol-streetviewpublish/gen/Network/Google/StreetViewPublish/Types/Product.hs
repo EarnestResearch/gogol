@@ -20,11 +20,10 @@ module Network.Google.StreetViewPublish.Types.Product where
 import Network.Google.Prelude
 import Network.Google.StreetViewPublish.Types.Sum
 
--- | An object representing a latitude\/longitude pair. This is expressed as
--- a pair of doubles representing degrees latitude and degrees longitude.
--- Unless specified otherwise, this must conform to the
--- <http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf WGS84 standard>.
--- Values must be within normalized ranges.
+-- | An object that represents a latitude\/longitude pair. This is expressed
+-- as a pair of doubles to represent degrees latitude and degrees
+-- longitude. Unless specified otherwise, this object must conform to the
+-- WGS84 standard. Values must be within normalized ranges.
 --
 -- /See:/ 'latLng' smart constructor.
 data LatLng =
@@ -147,7 +146,7 @@ pThumbnailURL
       (\ s a -> s{_pThumbnailURL = a})
 
 -- | Output only. Status in Google Maps, whether this photo was published or
--- rejected.
+-- rejected. Not currently populated.
 pMapsPublishStatus :: Lens' Photo (Maybe PhotoMapsPublishStatus)
 pMapsPublishStatus
   = lens _pMapsPublishStatus
@@ -277,16 +276,15 @@ updatePhotoRequest =
 uprPhoto :: Lens' UpdatePhotoRequest (Maybe Photo)
 uprPhoto = lens _uprPhoto (\ s a -> s{_uprPhoto = a})
 
--- | Mask that identifies fields on the photo metadata to update. If not
--- present, the old Photo metadata is entirely replaced with the new Photo
--- metadata in this request. The update fails if invalid fields are
+-- | Required. Mask that identifies fields on the photo metadata to update.
+-- If not present, the old Photo metadata is entirely replaced with the new
+-- Photo metadata in this request. The update fails if invalid fields are
 -- specified. Multiple fields can be specified in a comma-delimited list.
 -- The following fields are valid: * \`pose.heading\` * \`pose.latLngPair\`
 -- * \`pose.pitch\` * \`pose.roll\` * \`pose.level\` * \`pose.altitude\` *
--- \`connections\` * \`places\`
--- __Note:__ When updateMask contains repeated fields, the entire set of
--- repeated values get replaced with the new contents. For example, if
--- updateMask contains \`connections\` and
+-- \`connections\` * \`places\` *Note:* When updateMask contains repeated
+-- fields, the entire set of repeated values get replaced with the new
+-- contents. For example, if updateMask contains \`connections\` and
 -- \`UpdatePhotoRequest.photo.connections\` is empty, all connections are
 -- removed.
 uprUpdateMask :: Lens' UpdatePhotoRequest (Maybe GFieldMask)
@@ -310,39 +308,11 @@ instance ToJSON UpdatePhotoRequest where
 
 -- | The \`Status\` type defines a logical error model that is suitable for
 -- different programming environments, including REST APIs and RPC APIs. It
--- is used by [gRPC](https:\/\/github.com\/grpc). The error model is
--- designed to be: - Simple to use and understand for most users - Flexible
--- enough to meet unexpected needs # Overview The \`Status\` message
+-- is used by [gRPC](https:\/\/github.com\/grpc). Each \`Status\` message
 -- contains three pieces of data: error code, error message, and error
--- details. The error code should be an enum value of google.rpc.Code, but
--- it may accept additional error codes if needed. The error message should
--- be a developer-facing English message that helps developers *understand*
--- and *resolve* the error. If a localized user-facing error message is
--- needed, put the localized message in the error details or localize it in
--- the client. The optional error details may contain arbitrary information
--- about the error. There is a predefined set of error detail types in the
--- package \`google.rpc\` that can be used for common error conditions. #
--- Language mapping The \`Status\` message is the logical representation of
--- the error model, but it is not necessarily the actual wire format. When
--- the \`Status\` message is exposed in different client libraries and
--- different wire protocols, it can be mapped differently. For example, it
--- will likely be mapped to some exceptions in Java, but more likely mapped
--- to some error codes in C. # Other uses The error model and the
--- \`Status\` message can be used in a variety of environments, either with
--- or without APIs, to provide a consistent developer experience across
--- different environments. Example uses of this error model include: -
--- Partial errors. If a service needs to return partial errors to the
--- client, it may embed the \`Status\` in the normal response to indicate
--- the partial errors. - Workflow errors. A typical workflow has multiple
--- steps. Each step may have a \`Status\` message for error reporting. -
--- Batch operations. If a client uses batch request and batch response, the
--- \`Status\` message should be used directly inside batch response, one
--- for each error sub-response. - Asynchronous operations. If an API call
--- embeds asynchronous operation results in its response, the status of
--- those operations should be represented directly using the \`Status\`
--- message. - Logging. If some API errors are stored in logs, the message
--- \`Status\` could be used directly after any stripping needed for
--- security\/privacy reasons.
+-- details. You can find out more about this error model and how to work
+-- with it in the [API Design
+-- Guide](https:\/\/cloud.google.com\/apis\/design\/errors).
 --
 -- /See:/ 'status' smart constructor.
 data Status =
@@ -515,7 +485,8 @@ oResponse
 
 -- | The server-assigned name, which is only unique within the same service
 -- that originally returns it. If you use the default HTTP mapping, the
--- \`name\` should have the format of \`operations\/some\/unique\/name\`.
+-- \`name\` should be a resource name ending with
+-- \`operations\/{unique_id}\`.
 oName :: Lens' Operation (Maybe Text)
 oName = lens _oName (\ s a -> s{_oName = a})
 
@@ -920,8 +891,7 @@ uploadRef
 uploadRef = UploadRef' {_urUploadURL = Nothing}
 
 
--- | Required. An upload reference should be unique for each user. It follows
--- the form:
+-- | An upload reference should be unique for each user. It follows the form:
 -- \"https:\/\/streetviewpublish.googleapis.com\/media\/user\/{account_id}\/photo\/{upload_reference}\"
 urUploadURL :: Lens' UploadRef (Maybe Text)
 urUploadURL

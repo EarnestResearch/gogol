@@ -124,7 +124,7 @@ pltvgUploadType
   = lens _pltvgUploadType
       (\ s a -> s{_pltvgUploadType = a})
 
--- | The resource name.
+-- | Required. The resource name.
 pltvgName :: Lens' ProjectsLocationsTensorflowVersionsGet Text
 pltvgName
   = lens _pltvgName (\ s a -> s{_pltvgName = a})

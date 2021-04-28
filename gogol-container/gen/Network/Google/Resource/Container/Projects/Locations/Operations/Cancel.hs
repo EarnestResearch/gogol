@@ -137,7 +137,7 @@ plocPayload
   = lens _plocPayload (\ s a -> s{_plocPayload = a})
 
 -- | The name (project, location, operation id) of the operation to cancel.
--- Specified in the format \'projects\/*\/locations\/*\/operations\/*\'.
+-- Specified in the format \`projects\/*\/locations\/*\/operations\/*\`.
 plocName :: Lens' ProjectsLocationsOperationsCancel Text
 plocName = lens _plocName (\ s a -> s{_plocName = a})
 

@@ -37,6 +37,7 @@ module Network.Google.Resource.Storage.ObjectAccessControls.Update
     , oacuPayload
     , oacuUserProject
     , oacuObject
+    , oacuProvisionalUserProject
     , oacuEntity
     , oacuGeneration
     ) where
@@ -56,10 +57,11 @@ type ObjectAccessControlsUpdateResource =
                  "acl" :>
                    Capture "entity" Text :>
                      QueryParam "userProject" Text :>
-                       QueryParam "generation" (Textual Int64) :>
-                         QueryParam "alt" AltJSON :>
-                           ReqBody '[JSON] ObjectAccessControl :>
-                             Put '[JSON] ObjectAccessControl
+                       QueryParam "provisionalUserProject" Text :>
+                         QueryParam "generation" (Textual Int64) :>
+                           QueryParam "alt" AltJSON :>
+                             ReqBody '[JSON] ObjectAccessControl :>
+                               Put '[JSON] ObjectAccessControl
 
 -- | Updates an ACL entry on the specified object.
 --
@@ -70,6 +72,7 @@ data ObjectAccessControlsUpdate =
     , _oacuPayload :: !ObjectAccessControl
     , _oacuUserProject :: !(Maybe Text)
     , _oacuObject :: !Text
+    , _oacuProvisionalUserProject :: !(Maybe Text)
     , _oacuEntity :: !Text
     , _oacuGeneration :: !(Maybe (Textual Int64))
     }
@@ -88,6 +91,8 @@ data ObjectAccessControlsUpdate =
 --
 -- * 'oacuObject'
 --
+-- * 'oacuProvisionalUserProject'
+--
 -- * 'oacuEntity'
 --
 -- * 'oacuGeneration'
@@ -103,6 +108,7 @@ objectAccessControlsUpdate pOacuBucket_ pOacuPayload_ pOacuObject_ pOacuEntity_ 
     , _oacuPayload = pOacuPayload_
     , _oacuUserProject = Nothing
     , _oacuObject = pOacuObject_
+    , _oacuProvisionalUserProject = Nothing
     , _oacuEntity = pOacuEntity_
     , _oacuGeneration = Nothing
     }
@@ -131,6 +137,13 @@ oacuObject :: Lens' ObjectAccessControlsUpdate Text
 oacuObject
   = lens _oacuObject (\ s a -> s{_oacuObject = a})
 
+-- | The project to be billed for this request if the target bucket is
+-- requester-pays bucket.
+oacuProvisionalUserProject :: Lens' ObjectAccessControlsUpdate (Maybe Text)
+oacuProvisionalUserProject
+  = lens _oacuProvisionalUserProject
+      (\ s a -> s{_oacuProvisionalUserProject = a})
+
 -- | The entity holding the permission. Can be user-userId,
 -- user-emailAddress, group-groupId, group-emailAddress, allUsers, or
 -- allAuthenticatedUsers.
@@ -156,6 +169,7 @@ instance GoogleRequest ObjectAccessControlsUpdate
         requestClient ObjectAccessControlsUpdate'{..}
           = go _oacuBucket _oacuObject _oacuEntity
               _oacuUserProject
+              _oacuProvisionalUserProject
               _oacuGeneration
               (Just AltJSON)
               _oacuPayload

@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists names of items associated with an unmapped identity.
+-- Lists names of items associated with an unmapped identity. **Note:**
+-- This API requires an admin account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.debug.identitysources.items.listForunmappedidentity@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.debug.identitysources.items.listForunmappedidentity@.
 module Network.Google.Resource.CloudSearch.Debug.Identitysources.Items.ListForunmAppedidentity
     (
     -- * REST Resource
@@ -71,7 +72,8 @@ type DebugIdentitysourcesItemsListForunmAppedidentityResource
                                    Get '[JSON]
                                      ListItemNamesForUnmAppedIdentityResponse
 
--- | Lists names of items associated with an unmapped identity.
+-- | Lists names of items associated with an unmapped identity. **Note:**
+-- This API requires an admin account to execute.
 --
 -- /See:/ 'debugIdentitysourcesItemsListForunmAppedidentity' smart constructor.
 data DebugIdentitysourcesItemsListForunmAppedidentity =

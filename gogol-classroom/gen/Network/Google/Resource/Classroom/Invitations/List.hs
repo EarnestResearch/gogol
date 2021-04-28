@@ -168,8 +168,8 @@ ilPageToken :: Lens' InvitationsList (Maybe Text)
 ilPageToken
   = lens _ilPageToken (\ s a -> s{_ilPageToken = a})
 
--- | Maximum number of items to return. Zero means no maximum. The server may
--- return fewer than the specified number of results.
+-- | Maximum number of items to return. The default is 500 if unspecified or
+-- \`0\`. The server may return fewer than the specified number of results.
 ilPageSize :: Lens' InvitationsList (Maybe Int32)
 ilPageSize
   = lens _ilPageSize (\ s a -> s{_ilPageSize = a}) .

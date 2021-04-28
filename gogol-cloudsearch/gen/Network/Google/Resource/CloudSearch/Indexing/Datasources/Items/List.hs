@@ -20,9 +20,11 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- Lists all or a subset of Item resources.
+-- Lists all or a subset of Item resources. This API requires an admin or
+-- service account to execute. The service account used is the one
+-- whitelisted in the corresponding data source.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.list@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.indexing.datasources.items.list@.
 module Network.Google.Resource.CloudSearch.Indexing.Datasources.Items.List
     (
     -- * REST Resource
@@ -69,7 +71,9 @@ type IndexingDatasourcesItemsListResource =
                                  QueryParam "alt" AltJSON :>
                                    Get '[JSON] ListItemsResponse
 
--- | Lists all or a subset of Item resources.
+-- | Lists all or a subset of Item resources. This API requires an admin or
+-- service account to execute. The service account used is the one
+-- whitelisted in the corresponding data source.
 --
 -- /See:/ 'indexingDatasourcesItemsList' smart constructor.
 data IndexingDatasourcesItemsList =
@@ -156,8 +160,8 @@ idilUploadType
   = lens _idilUploadType
       (\ s a -> s{_idilUploadType = a})
 
--- | Name of connector making this call.
--- Format: datasources\/{source_id}\/connectors\/{ID}
+-- | Name of connector making this call. Format:
+-- datasources\/{source_id}\/connectors\/{ID}
 idilConnectorName :: Lens' IndexingDatasourcesItemsList (Maybe Text)
 idilConnectorName
   = lens _idilConnectorName
@@ -168,9 +172,12 @@ idilName :: Lens' IndexingDatasourcesItemsList Text
 idilName = lens _idilName (\ s a -> s{_idilName = a})
 
 -- | When set to true, the indexing system only populates the following
--- fields: name, version, metadata.hash, structured_data.hash,
--- content.hash.
--- If this value is false, then all the fields are populated in Item.
+-- fields: name, version, queue. metadata.hash, metadata.title,
+-- metadata.sourceRepositoryURL, metadata.objectType, metadata.createTime,
+-- metadata.updateTime, metadata.contentLanguage, metadata.mimeType,
+-- structured_data.hash, content.hash, itemType, itemStatus.code,
+-- itemStatus.processingError.code, itemStatus.repositoryError.type, If
+-- this value is false, then all the fields are populated in Item.
 idilBrief :: Lens' IndexingDatasourcesItemsList (Maybe Bool)
 idilBrief
   = lens _idilBrief (\ s a -> s{_idilBrief = a})
@@ -189,8 +196,8 @@ idilPageToken
       (\ s a -> s{_idilPageToken = a})
 
 -- | Maximum number of items to fetch in a request. The max value is 1000
--- when brief is true. The max value is 10 if brief is false.
--- The default value is 10
+-- when brief is true. The max value is 10 if brief is false. The default
+-- value is 10
 idilPageSize :: Lens' IndexingDatasourcesItemsList (Maybe Int32)
 idilPageSize
   = lens _idilPageSize (\ s a -> s{_idilPageSize = a})

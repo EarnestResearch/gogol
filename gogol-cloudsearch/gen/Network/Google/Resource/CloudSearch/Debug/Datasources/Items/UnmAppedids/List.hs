@@ -20,9 +20,10 @@
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
 --
--- List all unmapped identities for a specific item.
+-- List all unmapped identities for a specific item. **Note:** This API
+-- requires an admin account to execute.
 --
--- /See:/ <https://gsuite.google.com/products/cloud-search/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.unmappedids.list@.
+-- /See:/ <https://developers.google.com/cloud-search/docs/guides/ Cloud Search API Reference> for @cloudsearch.debug.datasources.items.unmappedids.list@.
 module Network.Google.Resource.CloudSearch.Debug.Datasources.Items.UnmAppedids.List
     (
     -- * REST Resource
@@ -65,7 +66,8 @@ type DebugDatasourcesItemsUnmAppedidsListResource =
                              QueryParam "alt" AltJSON :>
                                Get '[JSON] ListUnmAppedIdentitiesResponse
 
--- | List all unmapped identities for a specific item.
+-- | List all unmapped identities for a specific item. **Note:** This API
+-- requires an admin account to execute.
 --
 -- /See:/ 'debugDatasourcesItemsUnmAppedidsList' smart constructor.
 data DebugDatasourcesItemsUnmAppedidsList =

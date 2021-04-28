@@ -54,7 +54,9 @@ type AccessPoliciesAccessLevelsGetResource =
            QueryParam "upload_protocol" Text :>
              QueryParam "access_token" Text :>
                QueryParam "uploadType" Text :>
-                 QueryParam "accessLevelFormat" Text :>
+                 QueryParam "accessLevelFormat"
+                   AccessPoliciesAccessLevelsGetAccessLevelFormat
+                   :>
                    QueryParam "callback" Text :>
                      QueryParam "alt" AltJSON :> Get '[JSON] AccessLevel
 
@@ -67,7 +69,7 @@ data AccessPoliciesAccessLevelsGet =
     , _apalgUploadProtocol :: !(Maybe Text)
     , _apalgAccessToken :: !(Maybe Text)
     , _apalgUploadType :: !(Maybe Text)
-    , _apalgAccessLevelFormat :: !(Maybe Text)
+    , _apalgAccessLevelFormat :: !(Maybe AccessPoliciesAccessLevelsGetAccessLevelFormat)
     , _apalgName :: !Text
     , _apalgCallback :: !(Maybe Text)
     }
@@ -135,7 +137,7 @@ apalgUploadType
 -- on how they were created. If set to CEL, all Access Levels are returned
 -- as \`CustomLevels\`. In the CEL case, \`BasicLevels\` are translated to
 -- equivalent \`CustomLevels\`.
-apalgAccessLevelFormat :: Lens' AccessPoliciesAccessLevelsGet (Maybe Text)
+apalgAccessLevelFormat :: Lens' AccessPoliciesAccessLevelsGet (Maybe AccessPoliciesAccessLevelsGetAccessLevelFormat)
 apalgAccessLevelFormat
   = lens _apalgAccessLevelFormat
       (\ s a -> s{_apalgAccessLevelFormat = a})

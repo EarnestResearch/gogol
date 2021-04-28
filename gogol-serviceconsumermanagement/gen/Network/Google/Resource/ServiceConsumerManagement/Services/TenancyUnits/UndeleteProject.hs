@@ -144,7 +144,7 @@ stuupPayload :: Lens' ServicesTenancyUnitsUndeleteProject UndeleteTenantProjectR
 stuupPayload
   = lens _stuupPayload (\ s a -> s{_stuupPayload = a})
 
--- | Name of the tenancy unit. Such as
+-- | Required. Name of the tenancy unit. Such as
 -- \'services\/service.googleapis.com\/projects\/12345\/tenancyUnits\/abcd\'.
 stuupName :: Lens' ServicesTenancyUnitsUndeleteProject Text
 stuupName

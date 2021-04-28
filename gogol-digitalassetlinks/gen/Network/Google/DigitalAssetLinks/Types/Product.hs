@@ -207,7 +207,7 @@ data ListResponse =
   ListResponse'
     { _lrDebugString :: !(Maybe Text)
     , _lrMaxAge :: !(Maybe GDuration)
-    , _lrErrorCode :: !(Maybe [Text])
+    , _lrErrorCode :: !(Maybe [ListResponseErrorCodeItem])
     , _lrStatements :: !(Maybe [Statement])
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -255,7 +255,7 @@ lrMaxAge
       mapping _GDuration
 
 -- | Error codes that describe the result of the List operation.
-lrErrorCode :: Lens' ListResponse [Text]
+lrErrorCode :: Lens' ListResponse [ListResponseErrorCodeItem]
 lrErrorCode
   = lens _lrErrorCode (\ s a -> s{_lrErrorCode = a}) .
       _Default
@@ -293,7 +293,7 @@ data CheckResponse =
   CheckResponse'
     { _crDebugString :: !(Maybe Text)
     , _crMaxAge :: !(Maybe GDuration)
-    , _crErrorCode :: !(Maybe [Text])
+    , _crErrorCode :: !(Maybe [CheckResponseErrorCodeItem])
     , _crLinked :: !(Maybe Bool)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
@@ -341,7 +341,7 @@ crMaxAge
       mapping _GDuration
 
 -- | Error codes that describe the result of the Check operation.
-crErrorCode :: Lens' CheckResponse [Text]
+crErrorCode :: Lens' CheckResponse [CheckResponseErrorCodeItem]
 crErrorCode
   = lens _crErrorCode (\ s a -> s{_crErrorCode = a}) .
       _Default

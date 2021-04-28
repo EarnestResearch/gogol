@@ -39,6 +39,7 @@ library
         , Network.Google.Resource.Genomics.Projects.Operations.Cancel
         , Network.Google.Resource.Genomics.Projects.Operations.Get
         , Network.Google.Resource.Genomics.Projects.Operations.List
+        , Network.Google.Resource.Genomics.Projects.Workers.CheckIn
         , Network.Google.Resource.Genomics.Workers.CheckIn
 
     other-modules:
@@ -46,5 +47,5 @@ library
         , Network.Google.Genomics.Types.Sum
 
     build-depends:
-          gogol-core == 0.5.0.*
+          gogol-core == .*
         , base       >= 4.7 && < 5

@@ -136,8 +136,8 @@ psasjPayload :: Lens' ProjectsServiceAccountsSignJwt SignJwtRequest
 psasjPayload
   = lens _psasjPayload (\ s a -> s{_psasjPayload = a})
 
--- | The resource name of the service account for which the credentials are
--- requested, in the following format:
+-- | Required. The resource name of the service account for which the
+-- credentials are requested, in the following format:
 -- \`projects\/-\/serviceAccounts\/{ACCOUNT_EMAIL_OR_UNIQUEID}\`. The \`-\`
 -- wildcard character is required; replacing it with a project ID is
 -- invalid.

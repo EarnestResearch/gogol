@@ -41,7 +41,7 @@
 -- GetVerificationCode() will typically return a much longer, websafe base
 -- 64 encoded string that has a longer expiration time.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.notificationChannels.getVerificationCode@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.notificationChannels.getVerificationCode@.
 module Network.Google.Resource.Monitoring.Projects.NotificationChannels.GetVerificationCode
     (
     -- * REST Resource
@@ -179,8 +179,8 @@ pncgvcPayload
   = lens _pncgvcPayload
       (\ s a -> s{_pncgvcPayload = a})
 
--- | The notification channel for which a verification code is to be
--- generated and retrieved. This must name a channel that is already
+-- | Required. The notification channel for which a verification code is to
+-- be generated and retrieved. This must name a channel that is already
 -- verified; if the specified channel is not verified, the request will
 -- fail.
 pncgvcName :: Lens' ProjectsNotificationChannelsGetVerificationCode Text

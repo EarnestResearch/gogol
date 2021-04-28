@@ -137,7 +137,7 @@ ptpPayload :: Lens' ProjectsTopicsPatch UpdateTopicRequest
 ptpPayload
   = lens _ptpPayload (\ s a -> s{_ptpPayload = a})
 
--- | The name of the topic. It must have the format
+-- | Required. The name of the topic. It must have the format
 -- \`\"projects\/{project}\/topics\/{topic}\"\`. \`{topic}\` must start
 -- with a letter, and contain only letters (\`[A-Za-z]\`), numbers
 -- (\`[0-9]\`), dashes (\`-\`), underscores (\`_\`), periods (\`.\`),

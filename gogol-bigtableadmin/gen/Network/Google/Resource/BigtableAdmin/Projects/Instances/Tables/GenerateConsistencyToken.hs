@@ -144,9 +144,9 @@ pitgctPayload
   = lens _pitgctPayload
       (\ s a -> s{_pitgctPayload = a})
 
--- | The unique name of the Table for which to create a consistency token.
--- Values are of the form \`projects\/\/instances\/\/tables\/
--- \`.
+-- | Required. The unique name of the Table for which to create a consistency
+-- token. Values are of the form
+-- \`projects\/{project}\/instances\/{instance}\/tables\/{table}\`.
 pitgctName :: Lens' ProjectsInstancesTablesGenerateConsistencyToken Text
 pitgctName
   = lens _pitgctName (\ s a -> s{_pitgctName = a})

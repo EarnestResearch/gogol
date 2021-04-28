@@ -25,7 +25,7 @@
 -- not be written, a corresponding failure message is included in the error
 -- response.
 --
--- /See:/ <https://cloud.google.com/monitoring/api/ Stackdriver Monitoring API Reference> for @monitoring.projects.timeSeries.create@.
+-- /See:/ <https://cloud.google.com/monitoring/api/ Cloud Monitoring API Reference> for @monitoring.projects.timeSeries.create@.
 module Network.Google.Resource.Monitoring.Projects.TimeSeries.Create
     (
     -- * REST Resource
@@ -143,8 +143,9 @@ ptscPayload :: Lens' ProjectsTimeSeriesCreate CreateTimeSeriesRequest
 ptscPayload
   = lens _ptscPayload (\ s a -> s{_ptscPayload = a})
 
--- | The project on which to execute the request. The format is
--- \"projects\/{project_id_or_number}\".
+-- | Required. The project
+-- (https:\/\/cloud.google.com\/monitoring\/api\/v3#project_name) on which
+-- to execute the request. The format is: projects\/[PROJECT_ID_OR_NUMBER]
 ptscName :: Lens' ProjectsTimeSeriesCreate Text
 ptscName = lens _ptscName (\ s a -> s{_ptscName = a})
 

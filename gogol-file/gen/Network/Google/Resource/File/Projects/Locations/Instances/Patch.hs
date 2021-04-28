@@ -126,7 +126,7 @@ plipUploadProtocol
 
 -- | Mask of fields to update. At least one path must be supplied in this
 -- field. The elements of the repeated paths field may only include these
--- fields: \"description\"
+-- fields: * \"description\" * \"file_shares\" * \"labels\"
 plipUpdateMask :: Lens' ProjectsLocationsInstancesPatch (Maybe GFieldMask)
 plipUpdateMask
   = lens _plipUpdateMask
@@ -150,7 +150,7 @@ plipPayload
   = lens _plipPayload (\ s a -> s{_plipPayload = a})
 
 -- | Output only. The resource name of the instance, in the format
--- projects\/{project_id}\/locations\/{location_id}\/instances\/{instance_id}.
+-- projects\/{project}\/locations\/{location}\/instances\/{instance}.
 plipName :: Lens' ProjectsLocationsInstancesPatch Text
 plipName = lens _plipName (\ s a -> s{_plipName = a})
 

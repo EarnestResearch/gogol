@@ -146,7 +146,7 @@ psmpcPayload :: Lens' ProjectsSubscriptionsModifyPushConfig ModifyPushConfigRequ
 psmpcPayload
   = lens _psmpcPayload (\ s a -> s{_psmpcPayload = a})
 
--- | The name of the subscription. Format is
+-- | Required. The name of the subscription. Format is
 -- \`projects\/{project}\/subscriptions\/{sub}\`.
 psmpcSubscription :: Lens' ProjectsSubscriptionsModifyPushConfig Text
 psmpcSubscription

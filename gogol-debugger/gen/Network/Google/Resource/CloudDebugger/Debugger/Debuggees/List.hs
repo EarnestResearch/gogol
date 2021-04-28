@@ -22,7 +22,7 @@
 --
 -- Lists all the debuggees that the user has access to.
 --
--- /See:/ <https://cloud.google.com/debugger Stackdriver Debugger API Reference> for @clouddebugger.debugger.debuggees.list@.
+-- /See:/ <https://cloud.google.com/debugger Cloud Debugger API Reference> for @clouddebugger.debugger.debuggees.list@.
 module Network.Google.Resource.CloudDebugger.Debugger.Debuggees.List
     (
     -- * REST Resource
@@ -131,7 +131,8 @@ ddlUploadProtocol
   = lens _ddlUploadProtocol
       (\ s a -> s{_ddlUploadProtocol = a})
 
--- | Project number of a Google Cloud project whose debuggees to list.
+-- | Required. Project number of a Google Cloud project whose debuggees to
+-- list.
 ddlProject :: Lens' DebuggerDebuggeesList (Maybe Text)
 ddlProject
   = lens _ddlProject (\ s a -> s{_ddlProject = a})
@@ -148,8 +149,8 @@ ddlUploadType
   = lens _ddlUploadType
       (\ s a -> s{_ddlUploadType = a})
 
--- | The client version making the call. Schema: \`domain\/type\/version\`
--- (e.g., \`google.com\/intellij\/v1\`).
+-- | Required. The client version making the call. Schema:
+-- \`domain\/type\/version\` (e.g., \`google.com\/intellij\/v1\`).
 ddlClientVersion :: Lens' DebuggerDebuggeesList (Maybe Text)
 ddlClientVersion
   = lens _ddlClientVersion

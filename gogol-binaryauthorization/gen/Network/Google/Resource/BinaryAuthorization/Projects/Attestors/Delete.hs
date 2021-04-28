@@ -47,7 +47,7 @@ import Network.Google.Prelude
 -- | A resource alias for @binaryauthorization.projects.attestors.delete@ method which the
 -- 'ProjectsAttestorsDelete' request conforms to.
 type ProjectsAttestorsDeleteResource =
-     "v1beta1" :>
+     "v1" :>
        Capture "name" Text :>
          QueryParam "$.xgafv" Xgafv :>
            QueryParam "upload_protocol" Text :>

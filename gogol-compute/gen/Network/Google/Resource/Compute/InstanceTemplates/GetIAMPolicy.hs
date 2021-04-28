@@ -36,6 +36,7 @@ module Network.Google.Resource.Compute.InstanceTemplates.GetIAMPolicy
     -- * Request Lenses
     , itgipProject
     , itgipResource
+    , itgipOptionsRequestedPolicyVersion
     ) where
 
 import Network.Google.Compute.Types
@@ -52,7 +53,9 @@ type InstanceTemplatesGetIAMPolicyResource =
                "instanceTemplates" :>
                  Capture "resource" Text :>
                    "getIamPolicy" :>
-                     QueryParam "alt" AltJSON :> Get '[JSON] Policy
+                     QueryParam "optionsRequestedPolicyVersion"
+                       (Textual Int32)
+                       :> QueryParam "alt" AltJSON :> Get '[JSON] Policy
 
 -- | Gets the access control policy for a resource. May be empty if no such
 -- policy or resource exists.
@@ -62,6 +65,7 @@ data InstanceTemplatesGetIAMPolicy =
   InstanceTemplatesGetIAMPolicy'
     { _itgipProject :: !Text
     , _itgipResource :: !Text
+    , _itgipOptionsRequestedPolicyVersion :: !(Maybe (Textual Int32))
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -73,13 +77,18 @@ data InstanceTemplatesGetIAMPolicy =
 -- * 'itgipProject'
 --
 -- * 'itgipResource'
+--
+-- * 'itgipOptionsRequestedPolicyVersion'
 instanceTemplatesGetIAMPolicy
     :: Text -- ^ 'itgipProject'
     -> Text -- ^ 'itgipResource'
     -> InstanceTemplatesGetIAMPolicy
 instanceTemplatesGetIAMPolicy pItgipProject_ pItgipResource_ =
   InstanceTemplatesGetIAMPolicy'
-    {_itgipProject = pItgipProject_, _itgipResource = pItgipResource_}
+    { _itgipProject = pItgipProject_
+    , _itgipResource = pItgipResource_
+    , _itgipOptionsRequestedPolicyVersion = Nothing
+    }
 
 
 -- | Project ID for this request.
@@ -93,6 +102,13 @@ itgipResource
   = lens _itgipResource
       (\ s a -> s{_itgipResource = a})
 
+-- | Requested IAM Policy version.
+itgipOptionsRequestedPolicyVersion :: Lens' InstanceTemplatesGetIAMPolicy (Maybe Int32)
+itgipOptionsRequestedPolicyVersion
+  = lens _itgipOptionsRequestedPolicyVersion
+      (\ s a -> s{_itgipOptionsRequestedPolicyVersion = a})
+      . mapping _Coerce
+
 instance GoogleRequest InstanceTemplatesGetIAMPolicy
          where
         type Rs InstanceTemplatesGetIAMPolicy = Policy
@@ -101,7 +117,9 @@ instance GoogleRequest InstanceTemplatesGetIAMPolicy
                "https://www.googleapis.com/auth/compute",
                "https://www.googleapis.com/auth/compute.readonly"]
         requestClient InstanceTemplatesGetIAMPolicy'{..}
-          = go _itgipProject _itgipResource (Just AltJSON)
+          = go _itgipProject _itgipResource
+              _itgipOptionsRequestedPolicyVersion
+              (Just AltJSON)
               computeService
           where go
                   = buildClient

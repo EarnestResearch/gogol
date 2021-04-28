@@ -56,6 +56,9 @@ module Network.Google.CloudProFiler.Types
     -- * Xgafv
     , Xgafv (..)
 
+    -- * CreateProFileRequestProFileTypeItem
+    , CreateProFileRequestProFileTypeItem (..)
+
     -- * Deployment
     , Deployment
     , deployment
@@ -74,7 +77,7 @@ cloudProfilerService
   = defaultService (ServiceId "cloudprofiler:v2")
       "cloudprofiler.googleapis.com"
 
--- | View and manage your data across Google Cloud Platform services
+-- | See, edit, configure, and delete your Google Cloud Platform data
 cloudPlatformScope :: Proxy '["https://www.googleapis.com/auth/cloud-platform"]
 cloudPlatformScope = Proxy
 

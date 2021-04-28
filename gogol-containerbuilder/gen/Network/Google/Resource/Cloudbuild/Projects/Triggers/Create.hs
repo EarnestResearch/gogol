@@ -137,7 +137,7 @@ ptcPayload :: Lens' ProjectsTriggersCreate BuildTrigger
 ptcPayload
   = lens _ptcPayload (\ s a -> s{_ptcPayload = a})
 
--- | ID of the project for which to configure automatic builds.
+-- | Required. ID of the project for which to configure automatic builds.
 ptcProjectId :: Lens' ProjectsTriggersCreate Text
 ptcProjectId
   = lens _ptcProjectId (\ s a -> s{_ptcProjectId = a})

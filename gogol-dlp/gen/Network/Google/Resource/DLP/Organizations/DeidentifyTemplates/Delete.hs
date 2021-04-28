@@ -128,9 +128,10 @@ odtdUploadType
   = lens _odtdUploadType
       (\ s a -> s{_odtdUploadType = a})
 
--- | Resource name of the organization and deidentify template to be deleted,
--- for example \`organizations\/433245324\/deidentifyTemplates\/432452342\`
--- or projects\/project-id\/deidentifyTemplates\/432452342.
+-- | Required. Resource name of the organization and deidentify template to
+-- be deleted, for example
+-- \`organizations\/433245324\/deidentifyTemplates\/432452342\` or
+-- projects\/project-id\/deidentifyTemplates\/432452342.
 odtdName :: Lens' OrganizationsDeidentifyTemplatesDelete Text
 odtdName = lens _odtdName (\ s a -> s{_odtdName = a})
 

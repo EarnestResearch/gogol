@@ -150,9 +150,9 @@ uspkpPayload :: Lens' UsersSSHPublicKeysPatch SSHPublicKey
 uspkpPayload
   = lens _uspkpPayload (\ s a -> s{_uspkpPayload = a})
 
--- | The fingerprint of the public key to update. Public keys are identified
--- by their SHA-256 fingerprint. The fingerprint of the public key is in
--- format \`users\/{user}\/sshPublicKeys\/{fingerprint}\`.
+-- | Required. The fingerprint of the public key to update. Public keys are
+-- identified by their SHA-256 fingerprint. The fingerprint of the public
+-- key is in format \`users\/{user}\/sshPublicKeys\/{fingerprint}\`.
 uspkpName :: Lens' UsersSSHPublicKeysPatch Text
 uspkpName
   = lens _uspkpName (\ s a -> s{_uspkpName = a})

@@ -65,9 +65,6 @@ module Network.Google.DataFusion
     -- ** datafusion.projects.locations.instances.testIamPermissions
     , module Network.Google.Resource.DataFusion.Projects.Locations.Instances.TestIAMPermissions
 
-    -- ** datafusion.projects.locations.instances.upgrade
-    , module Network.Google.Resource.DataFusion.Projects.Locations.Instances.Upgrade
-
     -- ** datafusion.projects.locations.list
     , module Network.Google.Resource.DataFusion.Projects.Locations.List
 
@@ -82,6 +79,9 @@ module Network.Google.DataFusion
 
     -- ** datafusion.projects.locations.operations.list
     , module Network.Google.Resource.DataFusion.Projects.Locations.Operations.List
+
+    -- ** datafusion.projects.locations.versions.list
+    , module Network.Google.Resource.DataFusion.Projects.Locations.Versions.List
 
     -- * Types
 
@@ -102,21 +102,11 @@ module Network.Google.DataFusion
     , operationSchema
     , osAddtional
 
-    -- ** CounterOptions
-    , CounterOptions
-    , counterOptions
-    , coField
-    , coMetric
-
     -- ** AuditConfig
     , AuditConfig
     , auditConfig
     , acService
     , acAuditLogConfigs
-    , acExemptedMembers
-
-    -- ** CloudAuditOptionsLogName
-    , CloudAuditOptionsLogName (..)
 
     -- ** Expr
     , Expr
@@ -142,9 +132,6 @@ module Network.Google.DataFusion
     , CancelOperationRequest
     , cancelOperationRequest
 
-    -- ** ConditionSys
-    , ConditionSys (..)
-
     -- ** Location
     , Location
     , location
@@ -167,24 +154,16 @@ module Network.Google.DataFusion
     , Empty
     , empty
 
-    -- ** RuleAction
-    , RuleAction (..)
+    -- ** AcceleratorAcceleratorType
+    , AcceleratorAcceleratorType (..)
+
+    -- ** AcceleratorState
+    , AcceleratorState (..)
 
     -- ** StatusDetailsItem
     , StatusDetailsItem
     , statusDetailsItem
     , sdiAddtional
-
-    -- ** Rule
-    , Rule
-    , rule
-    , rAction
-    , rIn
-    , rNotIn
-    , rConditions
-    , rPermissions
-    , rLogConfig
-    , rDescription
 
     -- ** SetIAMPolicyRequest
     , SetIAMPolicyRequest
@@ -201,19 +180,11 @@ module Network.Google.DataFusion
     , ncNetwork
     , ncIPAllocation
 
-    -- ** CloudAuditOptions
-    , CloudAuditOptions
-    , cloudAuditOptions
-    , caoAuthorizationLoggingOptions
-    , caoLogName
-
-    -- ** ConditionOp
-    , ConditionOp (..)
-
-    -- ** DataAccessOptions
-    , DataAccessOptions
-    , dataAccessOptions
-    , daoLogMode
+    -- ** Accelerator
+    , Accelerator
+    , accelerator
+    , aAcceleratorType
+    , aState
 
     -- ** RestartInstanceRequest
     , RestartInstanceRequest
@@ -221,6 +192,13 @@ module Network.Google.DataFusion
 
     -- ** AuditLogConfigLogType
     , AuditLogConfigLogType (..)
+
+    -- ** Version
+    , Version
+    , version
+    , vDefaultVersion
+    , vVersionNumber
+    , vAvailableFeatures
 
     -- ** Xgafv
     , Xgafv (..)
@@ -230,29 +208,23 @@ module Network.Google.DataFusion
     , testIAMPermissionsRequest
     , tiprPermissions
 
+    -- ** OperationMetadataAdditionalStatus
+    , OperationMetadataAdditionalStatus
+    , operationMetadataAdditionalStatus
+    , omasAddtional
+
     -- ** TestIAMPermissionsResponse
     , TestIAMPermissionsResponse
     , testIAMPermissionsResponse
     , tiamprPermissions
-
-    -- ** UpgradeInstanceRequest
-    , UpgradeInstanceRequest
-    , upgradeInstanceRequest
-
-    -- ** AuthorizationLoggingOptions
-    , AuthorizationLoggingOptions
-    , authorizationLoggingOptions
-    , aloPermissionType
 
     -- ** Policy
     , Policy
     , policy
     , pAuditConfigs
     , pEtag
-    , pRules
     , pVersion
     , pBindings
-    , pIAMOwned
 
     -- ** LocationLabels
     , LocationLabels
@@ -268,15 +240,13 @@ module Network.Google.DataFusion
     , OperationMetadata
     , operationMetadata
     , omAPIVersion
+    , omAdditionalStatus
     , omRequestedCancellation
     , omEndTime
     , omStatusDetail
     , omVerb
     , omTarget
     , omCreateTime
-
-    -- ** DataAccessOptionsLogMode
-    , DataAccessOptionsLogMode (..)
 
     -- ** AuditLogConfig
     , AuditLogConfig
@@ -291,35 +261,13 @@ module Network.Google.DataFusion
     , lirUnreachable
     , lirInstances
 
-    -- ** AuthorizationLoggingOptionsPermissionType
-    , AuthorizationLoggingOptionsPermissionType (..)
-
-    -- ** Condition
-    , Condition
-    , condition
-    , cOp
-    , cIAM
-    , cValues
-    , cSys
-    , cSvc
-
     -- ** InstanceState
     , InstanceState (..)
-
-    -- ** ConditionIAM
-    , ConditionIAM (..)
 
     -- ** OperationResponse
     , OperationResponse
     , operationResponse
     , orAddtional
-
-    -- ** LogConfig
-    , LogConfig
-    , logConfig
-    , lcCloudAudit
-    , lcDataAccess
-    , lcCounter
 
     -- ** InstanceOptions
     , InstanceOptions
@@ -337,23 +285,37 @@ module Network.Google.DataFusion
     , Instance
     , instance'
     , iStateMessage
+    , iTenantProjectId
     , iState
     , iEnableStackdriverLogging
+    , iP4ServiceAccount
+    , iEnableRbac
+    , iAPIEndpoint
     , iServiceEndpoint
     , iZone
+    , iGcsBucket
     , iServiceAccount
     , iNetworkConfig
     , iUpdateTime
+    , iAccelerators
     , iPrivateInstance
     , iName
     , iVersion
+    , iDataprocServiceAccount
     , iDisplayName
     , iEnableStackdriverMonitoring
     , iLabels
     , iOptions
     , iType
+    , iAvailableVersion
     , iDescription
     , iCreateTime
+
+    -- ** ListAvailableVersionsResponse
+    , ListAvailableVersionsResponse
+    , listAvailableVersionsResponse
+    , lavrNextPageToken
+    , lavrAvailableVersions
     ) where
 
 import Network.Google.Prelude
@@ -368,12 +330,12 @@ import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Patch
 import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Restart
 import Network.Google.Resource.DataFusion.Projects.Locations.Instances.SetIAMPolicy
 import Network.Google.Resource.DataFusion.Projects.Locations.Instances.TestIAMPermissions
-import Network.Google.Resource.DataFusion.Projects.Locations.Instances.Upgrade
 import Network.Google.Resource.DataFusion.Projects.Locations.List
 import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Cancel
 import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Delete
 import Network.Google.Resource.DataFusion.Projects.Locations.Operations.Get
 import Network.Google.Resource.DataFusion.Projects.Locations.Operations.List
+import Network.Google.Resource.DataFusion.Projects.Locations.Versions.List
 
 {- $resources
 TODO
@@ -381,8 +343,8 @@ TODO
 
 -- | Represents the entirety of the methods and resources available for the Cloud Data Fusion API service.
 type DataFusionAPI =
-     ProjectsLocationsInstancesListResource :<|>
-       ProjectsLocationsInstancesUpgradeResource
+     ProjectsLocationsVersionsListResource :<|>
+       ProjectsLocationsInstancesListResource
        :<|> ProjectsLocationsInstancesGetIAMPolicyResource
        :<|> ProjectsLocationsInstancesPatchResource
        :<|> ProjectsLocationsInstancesGetResource
