@@ -1,0 +1,31 @@
+{% include "_include/license.ede" %}
+--
+module {{ moduleName }}
+  (
+  {% for schema in schemas %}
+    {% case schema.value.type %}
+    {% when "sum" %}
+
+    -- * {{ schema.value.name }}
+    {{ schema.value.name }}
+      (
+      {% for branch in schema.value.branches %}
+        {{ branch.value.name }},
+      {% endfor %}
+        ..
+      ),
+    {% endcase %}
+  {% endfor %}
+  ) where
+
+import qualified Gogol.Prelude as Core
+{% for import in moduleImports %}
+import {{ import.value }}
+{% endfor %}
+{% for schema in schemas %}
+  {% case schema.value.type %}
+  {% when "sum" %}
+
+  {% include "_include/sum.ede" with type = schema.value %}
+  {% endcase %}
+{% endfor %}

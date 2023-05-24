@@ -1,0 +1,27 @@
+{% include "_include/license.ede" %}
+{% if action.type.help %}
+--
+-- {{ action.type.help | stripPrefix("-- | ") }}
+{% endif %}
+--
+-- /See:/ <{{ documentationLink }} {{ title }} Reference> for @{{ action.id }}@.
+module {{ action.ns }}
+    (
+    -- * Resource
+      {{ action.aliasName }}
+
+    -- ** Constructing a Request
+    , {{ action.type.name }} (..)
+    , {{ action.type.ctor.name }}
+    ) where
+
+import qualified Gogol.Prelude as Core
+{% for import in moduleImports %}
+import {{ import.value }}
+{% endfor %}
+
+-- | A resource alias for @{{ action.id }}@ method which the
+-- '{{ action.type.name }}' request conforms to.
+{{ action.alias }}
+
+{% include "_include/prod.ede" with type = action.type %}

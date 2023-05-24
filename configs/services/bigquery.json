@@ -1,0 +1,20 @@
+{
+    "library": "bigquery",
+    "canonicalName": "BigQuery",
+    "schemas": {
+        "JobConfigurationLoad": {
+            "properties": {
+                "quote": {
+                    "default": null
+                }
+            }
+        },
+      "Table": {
+        "properties": {
+          "requirePartitionFilter": {
+            "default": null
+          }
+        }
+      }
+    }
+}

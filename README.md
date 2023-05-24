@@ -1,64 +1,84 @@
 # Gogol
 
-**Warning:** This is an experimental prototype/preview release which is still
-under heavy development and not intended for public consumption, caveat emptor!
-
-[![Build Status](https://img.shields.io/travis/brendanhay/gogol/develop.svg?maxAge=2592000)](https://travis-ci.org/brendanhay/gogol)
 [![Hackage Version](https://img.shields.io/hackage/v/gogol.svg)](http://hackage.haskell.org/package/gogol)
-[![Gitter Chat](https://img.shields.io/gitter/room/brendanhay/gogol.js.svg?maxAge=2592000)](https://gitter.im/brendanhay/gogol)
-
 
 * [Description](#description)
 * [Documentation](#documentation)
 * [Organisation](#organisation)
 * [Change Log](#change-log)
 * [Contribute](#contribute)
+* [Code Generation](#code-generation)
 * [Licence](#licence)
-
 
 ## Description
 
-<img alt="Гоголь-моголь" height="261px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Kogel_mogel.JPG">
-<img alt="Мико́ла Васи́льович Го́голь" height="261px" src="https://upload.wikimedia.org/wikipedia/commons/3/31/NV_Gogol.png">
-
-A comprehensive Google Services SDK for Haskell supporting all of the publicly
-available services.
-
-An introductory blog post detailing the motivation can be found [here](http://brendanhay.nz/gogol-comprehensive-haskell-google-client).
+A comprehensive Google Services SDK for Haskell supporting all of the publicly available services.
 
 ## Documentation
 
 You can find the latest stable release documentation for each respective library
 on Hackage under the [Google section](http://hackage.haskell.org/packages/#cat:Google).
 
-Haddock documentation which is built by CI from the `develop` branch
-can be found [here](http://brendanhay.nz/gogol-doc).
-
-
 ## Organisation
 
 This repository is organised into the following directory structure:
 
-* [`gogol`](gogol): Actual operational logic, you'll need to import this to send requests etc.
-* `gogol-*`: Data types for each of the individual Google Compute Engine Service libraries.
-* [`core`](core): The `gogol-core` library upon which each of the services depends.
+* [`lib/gogol`](lib/gogol): Actual operational logic, you'll need to import this to send requests etc.
+* [`lib/gogol-core`](lib/gogol-core): The `gogol-core` library upon which each of the services depends.
+* [`lib/services/gogol-*`](lib/services): Data types for each of the individual Google Compute Engine Service libraries.
 * [`examples`](examples): A currently sparse collection of examples for the various services.
-* [`gen`](gen): The code generation binary, along with configuration, templates, and assets.
-* [`script`](script): CI scripts to manage the release lifecycle of the service libraries.
-* [`share`](share): Makefile plumbing common to all service libraries
-
-> See the `./gen` subdirectory for further details about generating an API client/SDK.
-
+* [`configs`](configs), Configuration, templates, and assets for the code generator.
+* [`gen`](gen): The code generation binary.
+* [`scripts`](scripts): Scripts to manage the release lifecycle of the service libraries.
 
 ## Change Log
 
 A change log for the entire project can be found under [`gogol/CHANGELOG.md`](gogol/CHANGELOG.md).
 
-
 ## Contribute
 
 For any problems, comments, or feedback please create an issue [here on GitHub](https://github.com/brendanhay/gogol/issues).
 
+## Code Generation
+
+For pull requests which affect generated output, please _do not include_ the actual regenerated service code, only commit the updates to the generator and related configuration.
+
+This ensures the Continuous Integration process is the single source of truth for generated code changes, and keeps pull requests readable and focused on actual generator code/logic changes.
+
+### Adding New Services
+
+The configuration for the generation step of each individual service endpoint lives under `./configs/services`. The naming matches the Google Discovery Service naming of endpoints, which are vendored under `./configs/models`.
+
+Rather than actually crawling the Discovery Service, the [Google API Go Client](https://www.github.com/google/google-api-go-client) is vendored under `./vendor`, and the JSON service definitions are copied to `./configs/models` to ensure reproducibility of the generation steps and the abilitry to diff across versions.
+
+### Example: Cloud Dataproc
+
+To add a new endpoint, first create the related JSON configuration in the `./configs/services` directory.
+
+Since the Cloud Dataproc API is called `dataproc-api.json` in the Google Discovery API,
+you would create the configuration `./configs/services/dataproc.json` with the following contents:
+
+```
+{
+ "library": "dataproc",
+ "canonicalName": "Dataproc"
+}
+```
+
+Then, the `Makefile` is used:
+
+```
+make clean
+make
+```
+
+This will build the `./bin/gogol-gen` binary, and will generate a Haskell library for each API that has matching `./configs/services/*.json` configuration.
+
+For the above example, the result would be a `./lib/services/gogol-dataproc` directory at the top-level of the project containing the generated API client.
+
+> `make full-clean` can be used to cause a complete re-download of all (including new) service models.
+
+> Individual clients/SDKs can be generated by passing a specific `MODELS` environment variable to the `make` command, for example: `MODELS=configs/models/admin/directory/v1/admin-api.json make`
 
 ## Licence
 
