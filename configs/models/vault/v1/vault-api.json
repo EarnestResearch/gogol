@@ -165,11 +165,7 @@
           ]
         },
         "count": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Counts the artifacts within the context of a matter and returns a detailed breakdown of metrics.",
-=======
           "description": "Counts the accounts processed by the specified query.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "flatPath": "v1/matters/{matterId}:count",
           "httpMethod": "POST",
           "id": "vault.matters.count",
@@ -196,11 +192,7 @@
           ]
         },
         "create": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Creates a new matter with the given name and description. The initial state is open, and the owner is the method caller. Returns the created matter with default view.",
-=======
           "description": "Creates a matter with the given name and description. The initial state is open, and the owner is the method caller. Returns the created matter with default view.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "flatPath": "v1/matters",
           "httpMethod": "POST",
           "id": "vault.matters.create",
@@ -264,15 +256,9 @@
                 "FULL"
               ],
               "enumDescriptions": [
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                "There is no specified view.",
-                "Response includes the matter_id, name, description, and state. Default choice.",
-                "Full representation of matter is returned. Everything above and including MatterPermissions list."
-=======
                 "The amount of detail is unspecified. Same as **BASIC**.",
                 "Returns the matter ID, name, description, and state. Default choice.",
                 "Returns the basic details and a list of matter owners and collaborators (see [MatterPermissions](https://developers.google.com/vault/reference/rest/v1/matters#matterpermission))."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               ],
               "location": "query",
               "type": "string"
@@ -306,11 +292,7 @@
               "type": "string"
             },
             "state": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "If set, list only matters with that specific state. The default is listing matters of all states.",
-=======
               "description": "If set, lists only matters with the specified state. The default lists matters of all states.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "enum": [
                 "STATE_UNSPECIFIED",
                 "OPEN",
@@ -319,15 +301,9 @@
               ],
               "enumDescriptions": [
                 "The matter has no specified state.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                "This matter is open.",
-                "This matter is closed.",
-                "This matter is deleted."
-=======
                 "The matter is open.",
                 "The matter is closed.",
                 "The matter is deleted."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               ],
               "location": "query",
               "type": "string"
@@ -340,15 +316,9 @@
                 "FULL"
               ],
               "enumDescriptions": [
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                "There is no specified view.",
-                "Response includes the matter_id, name, description, and state. Default choice.",
-                "Full representation of matter is returned. Everything above and including MatterPermissions list."
-=======
                 "The amount of detail is unspecified. Same as **BASIC**.",
                 "Returns the matter ID, name, description, and state. Default choice.",
                 "Returns the basic details and a list of matter owners and collaborators (see [MatterPermissions](https://developers.google.com/vault/reference/rest/v1/matters#matterpermission))."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               ],
               "location": "query",
               "type": "string"
@@ -606,11 +576,7 @@
         "holds": {
           "methods": {
             "addHeldAccounts": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "Adds HeldAccounts to a hold. Returns a list of accounts that have been successfully added. Accounts can only be added to an existing account-based hold.",
-=======
               "description": "Adds accounts to a hold. Returns a list of accounts that have been successfully added. Accounts can be added only to an existing account-based hold.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "flatPath": "v1/matters/{matterId}/holds/{holdId}:addHeldAccounts",
               "httpMethod": "POST",
               "id": "vault.matters.holds.addHeldAccounts",
@@ -731,15 +697,9 @@
                     "FULL_HOLD"
                   ],
                   "enumDescriptions": [
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                    "There is no specified view. Defaults to FULL_HOLD.",
-                    "Response includes the id, name, update time, corpus, and query.",
-                    "Full representation of a Hold. Response includes all fields of 'BASIC' and the entities the Hold applies to, such as accounts, or OU."
-=======
                     "Not specified. Defaults to **FULL_HOLD**.",
                     "Returns the hold ID, name, update time, service, and query.",
                     "Returns all details of **BASIC_HOLD** and the entities the hold applies to, such as accounts or organizational unit."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   ],
                   "location": "query",
                   "type": "string"
@@ -755,11 +715,7 @@
               ]
             },
             "list": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "Lists holds within a matter. An empty page token in ListHoldsResponse denotes no more holds to list.",
-=======
               "description": "Lists the holds in a matter.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "flatPath": "v1/matters/{matterId}/holds",
               "httpMethod": "GET",
               "id": "vault.matters.holds.list",
@@ -774,11 +730,7 @@
                   "type": "string"
                 },
                 "pageSize": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as page_size = 100.",
-=======
                   "description": "The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as **page_size** = 100.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "format": "int32",
                   "location": "query",
                   "type": "integer"
@@ -796,15 +748,9 @@
                     "FULL_HOLD"
                   ],
                   "enumDescriptions": [
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                    "There is no specified view. Defaults to FULL_HOLD.",
-                    "Response includes the id, name, update time, corpus, and query.",
-                    "Full representation of a Hold. Response includes all fields of 'BASIC' and the entities the Hold applies to, such as accounts, or OU."
-=======
                     "Not specified. Defaults to **FULL_HOLD**.",
                     "Returns the hold ID, name, update time, service, and query.",
                     "Returns all details of **BASIC_HOLD** and the entities the hold applies to, such as accounts or organizational unit."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   ],
                   "location": "query",
                   "type": "string"
@@ -820,11 +766,7 @@
               ]
             },
             "removeHeldAccounts": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "Removes HeldAccounts from a hold. Returns a list of statuses in the same order as the request. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.",
-=======
               "description": "Removes the specified accounts from a hold. Returns a list of statuses in the same order as the request.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "flatPath": "v1/matters/{matterId}/holds/{holdId}:removeHeldAccounts",
               "httpMethod": "POST",
               "id": "vault.matters.holds.removeHeldAccounts",
@@ -858,11 +800,7 @@
               ]
             },
             "update": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "Updates the OU and/or query parameters of a hold. You cannot add accounts to a hold that covers an OU, nor can you add OUs to a hold that covers individual accounts. Accounts listed in the hold will be ignored.",
-=======
               "description": "Updates the scope (organizational unit or accounts) and query parameters of a hold. You cannot add accounts to a hold that covers an organizational unit, nor can you add organizational units to a hold that covers individual accounts. If you try, the unsupported values are ignored.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "flatPath": "v1/matters/{matterId}/holds/{holdId}",
               "httpMethod": "PUT",
               "id": "vault.matters.holds.update",
@@ -900,11 +838,7 @@
             "accounts": {
               "methods": {
                 "create": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "Adds a HeldAccount to a hold. Accounts can only be added to a hold that has no held_org_unit set. Attempting to add an account to an OU-based hold will result in an error.",
-=======
                   "description": "Adds an account to a hold. Accounts can be added only to a hold that does not have an organizational unit set. If you try to add an account to an organizational unit-based hold, an error is returned.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "flatPath": "v1/matters/{matterId}/holds/{holdId}/accounts",
                   "httpMethod": "POST",
                   "id": "vault.matters.holds.accounts.create",
@@ -938,11 +872,7 @@
                   ]
                 },
                 "delete": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "Removes a HeldAccount from a hold. If this request leaves the hold with no held accounts, the hold will not apply to any accounts.",
-=======
                   "description": "Removes an account from a hold.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "flatPath": "v1/matters/{matterId}/holds/{holdId}/accounts/{accountId}",
                   "httpMethod": "DELETE",
                   "id": "vault.matters.holds.accounts.delete",
@@ -980,11 +910,7 @@
                   ]
                 },
                 "list": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "Lists HeldAccounts for a hold. This will only list individually specified held accounts. If the hold is on an OU, then use Admin SDK to enumerate its members.",
-=======
                   "description": "Lists the accounts covered by a hold. This can list only individually-specified accounts covered by the hold. If the hold covers an organizational unit, use the [Admin SDK](https://developers.google.com/admin-sdk/). to list the members of the organizational unit on hold.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "flatPath": "v1/matters/{matterId}/holds/{holdId}/accounts",
                   "httpMethod": "GET",
                   "id": "vault.matters.holds.accounts.list",
@@ -1031,11 +957,7 @@
               ],
               "parameters": {
                 "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "The matter ID of the parent matter for which the saved query is to be created.",
-=======
                   "description": "The ID of the matter to create the saved query in.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
@@ -1063,21 +985,13 @@
               ],
               "parameters": {
                 "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "The matter ID of the parent matter for which the saved query is to be deleted.",
-=======
                   "description": "The ID of the matter to delete the saved query from.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
                 },
                 "savedQueryId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "ID of the saved query to be deleted.",
-=======
                   "description": "ID of the saved query to delete.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
@@ -1102,21 +1016,13 @@
               ],
               "parameters": {
                 "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "The matter ID of the parent matter for which the saved query is to be retrieved.",
-=======
                   "description": "The ID of the matter to get the saved query from.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
                 },
                 "savedQueryId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "ID of the saved query to be retrieved.",
-=======
                   "description": "ID of the saved query to retrieve.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
@@ -1132,11 +1038,7 @@
               ]
             },
             "list": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "description": "Lists saved queries within a matter. An empty page token in ListSavedQueriesResponse denotes no more saved queries to list.",
-=======
               "description": "Lists the saved queries in a matter.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
               "flatPath": "v1/matters/{matterId}/savedQueries",
               "httpMethod": "GET",
               "id": "vault.matters.savedQueries.list",
@@ -1145,11 +1047,7 @@
               ],
               "parameters": {
                 "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-                  "description": "The matter ID of the parent matter for which the saved queries are to be retrieved.",
-=======
                   "description": "The ID of the matter to get the saved queries for.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
                   "location": "path",
                   "required": true,
                   "type": "string"
@@ -1255,11 +1153,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.",
-=======
           "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "flatPath": "v1/operations",
           "httpMethod": "GET",
           "id": "vault.operations.list",
@@ -1299,19 +1193,11 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-  "revision": "20210406",
-  "rootUrl": "https://vault.googleapis.com/",
-  "schemas": {
-    "AccountCount": {
-      "description": "Count number for each account.",
-=======
-  "revision": "20230323",
+  "revision": "20230405",
   "rootUrl": "https://vault.googleapis.com/",
   "schemas": {
     "AccountCount": {
       "description": "The results count for each account.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "AccountCount",
       "properties": {
         "account": {
@@ -1319,11 +1205,7 @@
           "description": "Account owner."
         },
         "count": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The number of artifacts found for this account.",
-=======
           "description": "The number of results (messages or files) found for this account.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "int64",
           "type": "string"
         }
@@ -1376,11 +1258,7 @@
       "type": "object"
     },
     "AddHeldAccountResult": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "A status detailing the status of each account creation, and the HeldAccount, if successful.",
-=======
       "description": "The status of each account creation, and the **HeldAccount**, if successful.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "AddHeldAccountResult",
       "properties": {
         "account": {
@@ -1399,22 +1277,14 @@
       "id": "AddHeldAccountsRequest",
       "properties": {
         "accountIds": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Account IDs to identify which accounts to add. Only account_ids or only emails should be specified, but not both.",
-=======
           "description": "A comma-separated list of the account IDs of the accounts to add to the hold. Specify either **emails** or **account_ids**, but not both.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "emails": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Emails to identify which accounts to add. Only emails or only account_ids should be specified, but not both.",
-=======
           "description": "A comma-separated list of the emails of the accounts to add to the hold. Specify either **emails** or **account_ids**, but not both.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
@@ -1438,19 +1308,11 @@
       "type": "object"
     },
     "AddMatterPermissionsRequest": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, it will be overwritten.",
-      "id": "AddMatterPermissionsRequest",
-      "properties": {
-        "ccMe": {
-          "description": "Only relevant if send_emails is true. True to CC requestor in the email message. False to not CC requestor.",
-=======
       "description": "Add an account with the permission specified. The role cannot be owner. If an account already has a role in the matter, the existing role is overwritten.",
       "id": "AddMatterPermissionsRequest",
       "properties": {
         "ccMe": {
           "description": "Only relevant if **sendEmails** is **true**. To CC the requestor in the email message, set to **true**. To not CC requestor, set to **false**.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "boolean"
         },
         "matterPermission": {
@@ -1458,11 +1320,7 @@
           "description": "The account and its role to add."
         },
         "sendEmails": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "True to send notification email to the added account. False to not send notification email.",
-=======
           "description": "To send a notification email to the added account, set to **true**. To not send a notification email, set to **false**.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "boolean"
         }
       },
@@ -1496,11 +1354,7 @@
       "id": "CloudStorageFile",
       "properties": {
         "bucketName": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The cloud storage bucket name of this export file. Can be used in cloud storage JSON/XML API, but not to list the bucket contents. Instead, you can get individual export files by object name.",
-=======
           "description": "The name of the Cloud Storage bucket for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis), but not to list the bucket contents. Instead, you can [get individual export files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by object name.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "md5Hash": {
@@ -1508,11 +1362,7 @@
           "type": "string"
         },
         "objectName": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The cloud storage object name of this export file. Can be used in cloud storage JSON/XML API.",
-=======
           "description": "The name of the Cloud Storage object for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis).",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "size": {
@@ -1551,17 +1401,6 @@
         },
         "hangoutsChatQuery": {
           "$ref": "HeldHangoutsChatQuery",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Details pertaining to Hangouts Chat holds. If set, corpus must be Hangouts Chat."
-        },
-        "mailQuery": {
-          "$ref": "HeldMailQuery",
-          "description": "Details pertaining to mail holds. If set, corpus must be mail."
-        },
-        "voiceQuery": {
-          "$ref": "HeldVoiceQuery",
-          "description": "Details pertaining to Voice holds. If set, corpus must be Voice."
-=======
           "description": "Service-specific options for Chat holds. If set, **CorpusType** must be **HANGOUTS_CHAT**."
         },
         "mailQuery": {
@@ -1571,7 +1410,6 @@
         "voiceQuery": {
           "$ref": "HeldVoiceQuery",
           "description": "Service-specific options for Voice holds. If set, **CorpusType** must be **VOICE**."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         }
       },
       "type": "object"
@@ -1610,26 +1448,16 @@
           "description": "The search query."
         },
         "view": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Specifies the granularity of the count result returned in response.",
-=======
           "description": "Sets the granularity of the count results.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "enum": [
             "COUNT_RESULT_VIEW_UNSPECIFIED",
             "TOTAL_COUNT",
             "ALL"
           ],
           "enumDescriptions": [
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-            "Default. It works the same as TOTAL_COUNT.",
-            "Response includes: total count, queried accounts count, matching accounts count, non-queryable accounts, queried account errors.",
-            "Response includes additional breakdown of account count."
-=======
             "Default. Same as **TOTAL_COUNT**.",
             "Response includes counts of the total accounts, queried accounts, matching accounts, non-queryable accounts, and queried account errors.",
             "Response includes the same details as **TOTAL_COUNT**, plus additional account breakdown."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           ],
           "type": "string"
         }
@@ -1642,16 +1470,6 @@
       "properties": {
         "groupsCountResult": {
           "$ref": "GroupsCountResult",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Count metrics of Groups."
-        },
-        "mailCountResult": {
-          "$ref": "MailCountResult",
-          "description": "Count metrics of Mail."
-        },
-        "totalCount": {
-          "description": "Total count of artifacts. For mail and groups, artifacts refers to messages.",
-=======
           "description": "Count metrics for Groups."
         },
         "mailCountResult": {
@@ -1660,7 +1478,6 @@
         },
         "totalCount": {
           "description": "Total count of messages.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "int64",
           "type": "string"
         }
@@ -1672,11 +1489,7 @@
       "id": "DriveExportOptions",
       "properties": {
         "includeAccessInfo": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Set to true to include access level information for users with indirect access to files.",
-=======
           "description": "To include access level information for users with [indirect access](https://support.google.com/vault/answer/6099459#metadata) to files, set to **true**.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "boolean"
         }
       },
@@ -1686,10 +1499,6 @@
       "description": "Additional options for Drive search",
       "id": "DriveOptions",
       "properties": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-        "includeSharedDrives": {
-          "description": "Set to true to include shared drive.",
-=======
         "clientSideEncryptedOption": {
           "description": "Set whether the results include only content encrypted with [Google Workspace Client-side encryption](https://support.google.com/a?p=cse_ov) content, only unencrypted content, or both. Defaults to both. Currently supported for Drive.",
           "enum": [
@@ -1708,7 +1517,6 @@
         },
         "includeSharedDrives": {
           "description": "Set to **true** to include shared drives.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "boolean"
         },
         "includeTeamDrives": {
@@ -1716,11 +1524,7 @@
           "type": "boolean"
         },
         "versionDate": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Search the versions of the Drive file as of the reference date. These timestamps are in GMT and rounded down to the given date.",
-=======
           "description": "Search the current version of the Drive file, but export the contents of the last version saved before 12:00 AM UTC on the specified date. Enter the date in UTC.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         }
@@ -1728,21 +1532,13 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
     },
     "Export": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "An export To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
-=======
       "description": "An export. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "Export",
       "properties": {
         "cloudStorageSink": {
@@ -1839,11 +1635,7 @@
         },
         "voiceOptions": {
           "$ref": "VoiceExportOptions",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Option available for voice export."
-=======
           "description": "Options for Voice exports."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         }
       },
       "type": "object"
@@ -1895,44 +1687,6 @@
         },
         "nonQueryableAccounts": {
           "description": "When **DataScope** is **HELD_DATA**, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "queriedAccountsCount": {
-          "description": "Total number of accounts involved in this count operation.",
-          "format": "int64",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "GroupsCountResult": {
-      "description": "Groups specific count metrics.",
-      "id": "GroupsCountResult",
-      "properties": {
-        "accountCountErrors": {
-          "description": "Error occurred when querying these accounts.",
-          "items": {
-            "$ref": "AccountCountError"
-          },
-          "type": "array"
-        },
-        "accountCounts": {
-          "description": "Subtotal count per matching account that have more than zero messages.",
-          "items": {
-            "$ref": "AccountCount"
-          },
-          "type": "array"
-        },
-        "matchingAccountsCount": {
-          "description": "Total number of accounts that can be queried and have more than zero messages.",
-          "format": "int64",
-          "type": "string"
-        },
-        "nonQueryableAccounts": {
-          "description": "When data scope is HELD_DATA in the request Query, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
           "items": {
             "type": "string"
           },
@@ -2014,17 +1768,6 @@
       "type": "object"
     },
     "HeldAccount": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "An account being held in a particular hold. This structure is immutable. This can be either a single user or a google group, depending on the corpus. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
-      "id": "HeldAccount",
-      "properties": {
-        "accountId": {
-          "description": "The account's ID as provided by the Admin SDK.",
-          "type": "string"
-        },
-        "email": {
-          "description": "The primary email address of the account. If used as an input, this takes precedence over account ID.",
-=======
       "description": "An account covered by a hold. This structure is immutable. It can be an individual account or a Google Group, depending on the service. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "id": "HeldAccount",
       "properties": {
@@ -2034,7 +1777,6 @@
         },
         "email": {
           "description": "The primary email address of the account. If used as an input, this takes precedence over **accountId**.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "firstName": {
@@ -2058,11 +1800,7 @@
       "id": "HeldDriveQuery",
       "properties": {
         "includeSharedDriveFiles": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "If true, include files in shared drives in the hold.",
-=======
           "description": "To include files in shared drives in the hold, set to **true**.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "boolean"
         },
         "includeTeamDriveFiles": {
@@ -2077,20 +1815,12 @@
       "id": "HeldGroupsQuery",
       "properties": {
         "endTime": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "The end time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
         "startTime": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "The start time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
@@ -2117,20 +1847,12 @@
       "id": "HeldMailQuery",
       "properties": {
         "endTime": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "The end time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
         "startTime": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "The start time for the query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
@@ -2142,11 +1864,7 @@
       "type": "object"
     },
     "HeldOrgUnit": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "A organizational unit being held in a particular hold. This structure is immutable.",
-=======
       "description": "The organizational unit covered by a hold. This structure is immutable.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "HeldOrgUnit",
       "properties": {
         "holdTime": {
@@ -2162,19 +1880,11 @@
       "type": "object"
     },
     "HeldVoiceQuery": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Query options for Voice holds.",
-      "id": "HeldVoiceQuery",
-      "properties": {
-        "coveredData": {
-          "description": "Data covered by this rule. Should be non-empty. Order does not matter and duplicates will be ignored.",
-=======
       "description": "Options for Voice holds.",
       "id": "HeldVoiceQuery",
       "properties": {
         "coveredData": {
           "description": "A list of data types covered by the hold. Should be non-empty. Order does not matter and duplicates are ignored.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "enum": [
               "COVERED_DATA_UNSPECIFIED",
@@ -2184,15 +1894,9 @@
             ],
             "enumDescriptions": [
               "Covered data unspecified.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "Voice text message will be covered.",
-              "Voicemail will be covered.",
-              "Call logs will be covered."
-=======
               "Voice text messages.",
               "Voicemails and their transcripts.",
               "Call logs."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
             ],
             "type": "string"
           },
@@ -2202,19 +1906,11 @@
       "type": "object"
     },
     "Hold": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Represents a hold within Vault. A hold restricts purging of artifacts based on the combination of the query and accounts restrictions. A hold can be configured to either apply to an explicitly configured set of accounts, or can be applied to all members of an organizational unit. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
-      "id": "Hold",
-      "properties": {
-        "accounts": {
-          "description": "If set, the hold applies to the enumerated accounts and org_unit must be empty.",
-=======
       "description": "A hold. A hold prevents the specified Google Workspace service from purging data for specific accounts or all members of an organizational unit. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "id": "Hold",
       "properties": {
         "accounts": {
           "description": "If set, the hold applies to the specified accounts and **orgUnit** must be empty.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "$ref": "HeldAccount"
           },
@@ -2235,11 +1931,7 @@
             "Drive, including Meet and Sites.",
             "For search, Gmail and classic Hangouts. For holds, Gmail only.",
             "Groups.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-            "Hangouts Chat.",
-=======
             "For export, Google Chat only. For holds, Google Chat and classic Hangouts.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
             "Google Voice."
           ],
           "type": "string"
@@ -2254,19 +1946,11 @@
         },
         "orgUnit": {
           "$ref": "HeldOrgUnit",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "If set, the hold applies to all members of the organizational unit and accounts must be empty. This property is mutable. For groups holds, set the accounts field."
-        },
-        "query": {
-          "$ref": "CorpusQuery",
-          "description": "The corpus-specific query. If set, the corpusQuery must match corpus type."
-=======
           "description": "If set, the hold applies to all members of the organizational unit and **accounts** must be empty. This property is mutable. For Groups holds, set **accounts**."
         },
         "query": {
           "$ref": "CorpusQuery",
           "description": "Service-specific options. If set, **CorpusQuery** must match **CorpusType**."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         },
         "updateTime": {
           "description": "The last time this hold was modified.",
@@ -2381,19 +2065,11 @@
       "type": "object"
     },
     "MailCountResult": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Mail specific count metrics.",
-      "id": "MailCountResult",
-      "properties": {
-        "accountCountErrors": {
-          "description": "Error occurred when querying these accounts.",
-=======
       "description": "Gmail and classic Hangouts-specific count metrics.",
       "id": "MailCountResult",
       "properties": {
         "accountCountErrors": {
           "description": "Errors occurred when querying these accounts.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "$ref": "AccountCountError"
           },
@@ -2412,11 +2088,7 @@
           "type": "string"
         },
         "nonQueryableAccounts": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When data scope is HELD_DATA in the request Query, these accounts in the request are not queried because they are not on hold. For other data scope, this field is not set.",
-=======
           "description": "When **DataScope** is **HELD_DATA** and when account emails are passed in explicitly, the list of accounts in the request that are not queried because they are not on hold in the matter. For other data scopes, this field is not set.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
@@ -2463,6 +2135,22 @@
       "description": "Additional options for Gmail search",
       "id": "MailOptions",
       "properties": {
+        "clientSideEncryptedOption": {
+          "description": "Specifies whether the results should include encrypted content, unencrypted content, or both. Defaults to including both.",
+          "enum": [
+            "CLIENT_SIDE_ENCRYPTED_OPTION_UNSPECIFIED",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_ANY",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_ENCRYPTED",
+            "CLIENT_SIDE_ENCRYPTED_OPTION_UNENCRYPTED"
+          ],
+          "enumDescriptions": [
+            "Encryption status unspecified. Results include both client-side encrypted and non-encrypted content.",
+            "Include both client-side encrypted and unencrypted content in results.",
+            "Include client-side encrypted content only.",
+            "Include unencrypted content only."
+          ],
+          "type": "string"
+        },
         "excludeDrafts": {
           "description": "Set to **true** to exclude drafts.",
           "type": "boolean"
@@ -2479,19 +2167,11 @@
           "type": "string"
         },
         "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The matter ID which is generated by the server. Should be blank when creating a new matter.",
-          "type": "string"
-        },
-        "matterPermissions": {
-          "description": "List of users and access to the matter. Currently there is no programmer defined limit on the number of permissions a matter can have.",
-=======
           "description": "The matter ID, which is generated by the server. Leave blank when creating a matter.",
           "type": "string"
         },
         "matterPermissions": {
           "description": "Lists the users and their permission for the matter. Currently there is no programmer defined limit on the number of permissions a matter can have.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "$ref": "MatterPermission"
           },
@@ -2521,19 +2201,11 @@
       "type": "object"
     },
     "MatterPermission": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Currently each matter only has one owner, and all others are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.",
-      "id": "MatterPermission",
-      "properties": {
-        "accountId": {
-          "description": "The account ID, as provided by Admin SDK.",
-=======
       "description": "Users can be matter owners or collaborators. Each matter has only one owner. All others users who can access the matter are collaborators. When an account is purged, its corresponding MatterPermission resources cease to exist.",
       "id": "MatterPermission",
       "properties": {
         "accountId": {
           "description": "The account ID, as provided by the [Admin SDK](https://developers.google.com/admin-sdk/).",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "role": {
@@ -2593,11 +2265,7 @@
       "id": "OrgUnitInfo",
       "properties": {
         "orgUnitId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Org unit to search, as provided by the Admin SDK Directory API.",
-=======
           "description": "The name of the organizational unit to search, as provided by the [Admin SDK Directory API](https://developers.google.com/admin-sdk/directory/).",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         }
       },
@@ -2609,11 +2277,7 @@
       "properties": {
         "accountInfo": {
           "$ref": "AccountInfo",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When 'ACCOUNT' is chosen as search method, account_info needs to be specified."
-=======
           "description": "Required when **SearchMethod** is **ACCOUNT**."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         },
         "corpus": {
           "description": "The Google Workspace service to search.",
@@ -2630,11 +2294,7 @@
             "Drive, including Meet and Sites.",
             "For search, Gmail and classic Hangouts. For holds, Gmail only.",
             "Groups.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-            "Hangouts Chat.",
-=======
             "For export, Google Chat only. For holds, Google Chat and classic Hangouts.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
             "Google Voice."
           ],
           "type": "string"
@@ -2660,21 +2320,13 @@
           "description": "Set Drive search-specific options."
         },
         "endTime": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The end time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "The end time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
         "hangoutsChatInfo": {
           "$ref": "HangoutsChatInfo",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When 'ROOM' is chosen as search method, hangout_chats_info needs to be specified. (read-only)"
-=======
           "description": "Required when **SearchMethod** is **ROOM**. (read-only)"
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         },
         "hangoutsChatOptions": {
           "$ref": "HangoutsChatOptions",
@@ -2708,35 +2360,9 @@
           ],
           "type": "string"
         },
-        "method": {
-          "description": "The search method to use. This field is similar to the search_method field but is introduced to support shared drives. It supports all search method types. In case the search_method is TEAM_DRIVE the response of this field will be SHARED_DRIVE only.",
-          "enum": [
-            "SEARCH_METHOD_UNSPECIFIED",
-            "ACCOUNT",
-            "ORG_UNIT",
-            "TEAM_DRIVE",
-            "ENTIRE_ORG",
-            "ROOM",
-            "SHARED_DRIVE"
-          ],
-          "enumDescriptions": [
-            "A search method must be specified. If a request does not specify a search method, it will be rejected.",
-            "Will search all accounts provided in account_info.",
-            "Will search all accounts in the OU specified in org_unit_info.",
-            "Will search for all accounts in the Team Drive specified in team_drive_info.",
-            "Will search for all accounts in the organization. No need to set account_info or org_unit_info. Not all CORPUS_TYPE support this scope. Supported by MAIL.",
-            "Will search in the Room specified in hangout_chats_info. (read-only)",
-            "Will search for all accounts in the shared drive specified in shared_drive_info."
-          ],
-          "type": "string"
-        },
         "orgUnitInfo": {
           "$ref": "OrgUnitInfo",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When 'ORG_UNIT' is chosen as as search method, org_unit_info needs to be specified."
-=======
           "description": "Required when **SearchMethod** is **ORG_UNIT**."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         },
         "searchMethod": {
           "description": "The search method to use.",
@@ -2747,18 +2373,6 @@
             "TEAM_DRIVE",
             "ENTIRE_ORG",
             "ROOM",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-            "SHARED_DRIVE"
-          ],
-          "enumDescriptions": [
-            "A search method must be specified. If a request does not specify a search method, it will be rejected.",
-            "Will search all accounts provided in account_info.",
-            "Will search all accounts in the OU specified in org_unit_info.",
-            "Will search for all accounts in the Team Drive specified in team_drive_info.",
-            "Will search for all accounts in the organization. No need to set account_info or org_unit_info. Not all CORPUS_TYPE support this scope. Supported by MAIL.",
-            "Will search in the Room specified in hangout_chats_info. (read-only)",
-            "Will search for all accounts in the shared drive specified in shared_drive_info."
-=======
             "SITES_URL",
             "SHARED_DRIVE"
           ],
@@ -2771,18 +2385,11 @@
             "Search messages in the Chat spaces specified in [HangoutsChatInfo](https://developers.google.com/vault/reference/rest/v1/Query#hangoutschatinfo).",
             "Search for sites by the published site URLs specified in [SitesUrlInfo](https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo).",
             "Search the files in the shared drives specified in [SharedDriveInfo](https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo)."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           ],
           "type": "string"
         },
         "sharedDriveInfo": {
           "$ref": "SharedDriveInfo",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When 'SHARED_DRIVE' is chosen as search method, shared_drive_info needs to be specified."
-        },
-        "startTime": {
-          "description": "The start time range for the search query. These timestamps are in GMT and rounded down to the start of the given date.",
-=======
           "description": "Required when **SearchMethod** is **SHARED_DRIVE**."
         },
         "sitesUrlInfo": {
@@ -2791,22 +2398,11 @@
         },
         "startTime": {
           "description": "The start time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
         "teamDriveInfo": {
           "$ref": "TeamDriveInfo",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "When 'TEAM_DRIVE' is chosen as search method, team_drive_info needs to be specified."
-        },
-        "terms": {
-          "description": "The corpus-specific search operators used to generate search results.",
-          "type": "string"
-        },
-        "timeZone": {
-          "description": "The time zone name. It should be an IANA TZ name, such as \"America/Los_Angeles\". For more information, see Time Zone.",
-=======
           "description": "Required when **SearchMethod** is **TEAM_DRIVE**."
         },
         "terms": {
@@ -2815,16 +2411,11 @@
         },
         "timeZone": {
           "description": "The time zone name. It should be an IANA TZ name, such as \"America/Los_Angeles\". For a list of time zone names, see [Time Zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For more information about how Vault uses time zones, see [the Vault help center](https://support.google.com/vault/answer/6092995#time).",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "voiceOptions": {
           "$ref": "VoiceOptions",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "For voice search, specify more options in this field."
-=======
           "description": "Set Voice search-specific options."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         }
       },
       "type": "object"
@@ -2834,11 +2425,7 @@
       "id": "RemoveHeldAccountsRequest",
       "properties": {
         "accountIds": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Account IDs to identify HeldAccounts to remove.",
-=======
           "description": "The account IDs of the accounts to remove from the hold.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
@@ -2852,11 +2439,7 @@
       "id": "RemoveHeldAccountsResponse",
       "properties": {
         "statuses": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "A list of statuses for deleted accounts. Results have the same order as the request.",
-=======
           "description": "A list of statuses for the deleted accounts. Results have the same order as the request.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "$ref": "Status"
           },
@@ -2894,19 +2477,11 @@
       "type": "object"
     },
     "SavedQuery": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Definition of the saved query. To work with Vault resources, the account must have the [required Vault privileges] (https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
-      "id": "SavedQuery",
-      "properties": {
-        "createTime": {
-          "description": "Output only. The server generated timestamp at which saved query was created.",
-=======
       "description": "The definition of a saved query. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege.",
       "id": "SavedQuery",
       "properties": {
         "createTime": {
           "description": "Output only. The server-generated timestamp when the saved query was created.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "format": "google-datetime",
           "type": "string"
         },
@@ -2915,20 +2490,12 @@
           "type": "string"
         },
         "matterId": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "Output only. The matter ID of the associated matter. The server does not look at this field during create and always uses matter id in the URL.",
-=======
           "description": "Output only. The matter ID of the matter the saved query is saved in. The server does not use this field during create and always uses matter ID in the URL.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "type": "string"
         },
         "query": {
           "$ref": "Query",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "The underlying Query object which contains all the information of the saved query."
-=======
           "description": "The search parameters of the saved query."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
         },
         "savedQueryId": {
           "description": "A unique identifier for the saved query.",
@@ -2938,13 +2505,6 @@
       "type": "object"
     },
     "SharedDriveInfo": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Shared drives to search",
-      "id": "SharedDriveInfo",
-      "properties": {
-        "sharedDriveIds": {
-          "description": "List of Shared drive IDs, as provided by Drive API.",
-=======
       "description": "The shared drives to search",
       "id": "SharedDriveInfo",
       "properties": {
@@ -2964,7 +2524,6 @@
       "properties": {
         "urls": {
           "description": "A list of published site URLs.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
@@ -3005,11 +2564,7 @@
       "id": "TeamDriveInfo",
       "properties": {
         "teamDriveIds": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-          "description": "List of Team Drive IDs, as provided by Drive API.",
-=======
           "description": "List of Team Drive IDs, as provided by the [Drive API](https://developers.google.com/drive).",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "items": {
             "type": "string"
           },
@@ -3040,19 +2595,11 @@
       "type": "object"
     },
     "VoiceExportOptions": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "The options for voice export.",
-      "id": "VoiceExportOptions",
-      "properties": {
-        "exportFormat": {
-          "description": "The export format for voice export.",
-=======
       "description": "The options for Voice exports.",
       "id": "VoiceExportOptions",
       "properties": {
         "exportFormat": {
           "description": "The file format for exported text messages.",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           "enum": [
             "EXPORT_FORMAT_UNSPECIFIED",
             "MBOX",
@@ -3060,13 +2607,8 @@
           ],
           "enumDescriptions": [
             "No export format specified.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-            "MBOX as export format.",
-            "PST as export format"
-=======
             "Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.",
             "Export as PST. Only available for Gmail, Groups, Hangouts, Voice and Calendar."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
           ],
           "type": "string"
         }
@@ -3074,11 +2616,7 @@
       "type": "object"
     },
     "VoiceOptions": {
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-      "description": "Voice search options",
-=======
       "description": "Additional options for Voice search",
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
       "id": "VoiceOptions",
       "properties": {
         "coveredData": {
@@ -3092,15 +2630,9 @@
             ],
             "enumDescriptions": [
               "Covered data unspecified.",
-<<<<<<< HEAD:gen/model/vault/v1/vault-api.json
-              "Voice text message will be covered.",
-              "Voicemail will be covered.",
-              "Call logs will be covered."
-=======
               "Voice text messages.",
               "Voicemails and their transcripts.",
               "Call logs."
->>>>>>> upstream/main:configs/models/vault/v1/vault-api.json
             ],
             "type": "string"
           },

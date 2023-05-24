@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,274 +31,274 @@
 --
 -- /See:/ <https://cloud.google.com/tasks/ Cloud Tasks API Reference>
 module Gogol.CloudTasks
-  ( -- * Configuration
-    cloudTasksService,
+    (
+    -- * Configuration
+      cloudTasksService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Resources
 
     -- ** cloudtasks.projects.locations.get
-    CloudTasksProjectsLocationsGetResource,
-    CloudTasksProjectsLocationsGet (..),
-    newCloudTasksProjectsLocationsGet,
+    , CloudTasksProjectsLocationsGetResource
+    , CloudTasksProjectsLocationsGet (..)
+    , newCloudTasksProjectsLocationsGet
 
     -- ** cloudtasks.projects.locations.list
-    CloudTasksProjectsLocationsListResource,
-    CloudTasksProjectsLocationsList (..),
-    newCloudTasksProjectsLocationsList,
+    , CloudTasksProjectsLocationsListResource
+    , CloudTasksProjectsLocationsList (..)
+    , newCloudTasksProjectsLocationsList
 
     -- ** cloudtasks.projects.locations.queues.create
-    CloudTasksProjectsLocationsQueuesCreateResource,
-    CloudTasksProjectsLocationsQueuesCreate (..),
-    newCloudTasksProjectsLocationsQueuesCreate,
+    , CloudTasksProjectsLocationsQueuesCreateResource
+    , CloudTasksProjectsLocationsQueuesCreate (..)
+    , newCloudTasksProjectsLocationsQueuesCreate
 
     -- ** cloudtasks.projects.locations.queues.delete
-    CloudTasksProjectsLocationsQueuesDeleteResource,
-    CloudTasksProjectsLocationsQueuesDelete (..),
-    newCloudTasksProjectsLocationsQueuesDelete,
+    , CloudTasksProjectsLocationsQueuesDeleteResource
+    , CloudTasksProjectsLocationsQueuesDelete (..)
+    , newCloudTasksProjectsLocationsQueuesDelete
 
     -- ** cloudtasks.projects.locations.queues.get
-    CloudTasksProjectsLocationsQueuesGetResource,
-    CloudTasksProjectsLocationsQueuesGet (..),
-    newCloudTasksProjectsLocationsQueuesGet,
+    , CloudTasksProjectsLocationsQueuesGetResource
+    , CloudTasksProjectsLocationsQueuesGet (..)
+    , newCloudTasksProjectsLocationsQueuesGet
 
     -- ** cloudtasks.projects.locations.queues.getIamPolicy
-    CloudTasksProjectsLocationsQueuesGetIamPolicyResource,
-    CloudTasksProjectsLocationsQueuesGetIamPolicy (..),
-    newCloudTasksProjectsLocationsQueuesGetIamPolicy,
+    , CloudTasksProjectsLocationsQueuesGetIamPolicyResource
+    , CloudTasksProjectsLocationsQueuesGetIamPolicy (..)
+    , newCloudTasksProjectsLocationsQueuesGetIamPolicy
 
     -- ** cloudtasks.projects.locations.queues.list
-    CloudTasksProjectsLocationsQueuesListResource,
-    CloudTasksProjectsLocationsQueuesList (..),
-    newCloudTasksProjectsLocationsQueuesList,
+    , CloudTasksProjectsLocationsQueuesListResource
+    , CloudTasksProjectsLocationsQueuesList (..)
+    , newCloudTasksProjectsLocationsQueuesList
 
     -- ** cloudtasks.projects.locations.queues.patch
-    CloudTasksProjectsLocationsQueuesPatchResource,
-    CloudTasksProjectsLocationsQueuesPatch (..),
-    newCloudTasksProjectsLocationsQueuesPatch,
+    , CloudTasksProjectsLocationsQueuesPatchResource
+    , CloudTasksProjectsLocationsQueuesPatch (..)
+    , newCloudTasksProjectsLocationsQueuesPatch
 
     -- ** cloudtasks.projects.locations.queues.pause
-    CloudTasksProjectsLocationsQueuesPauseResource,
-    CloudTasksProjectsLocationsQueuesPause (..),
-    newCloudTasksProjectsLocationsQueuesPause,
+    , CloudTasksProjectsLocationsQueuesPauseResource
+    , CloudTasksProjectsLocationsQueuesPause (..)
+    , newCloudTasksProjectsLocationsQueuesPause
 
     -- ** cloudtasks.projects.locations.queues.purge
-    CloudTasksProjectsLocationsQueuesPurgeResource,
-    CloudTasksProjectsLocationsQueuesPurge (..),
-    newCloudTasksProjectsLocationsQueuesPurge,
+    , CloudTasksProjectsLocationsQueuesPurgeResource
+    , CloudTasksProjectsLocationsQueuesPurge (..)
+    , newCloudTasksProjectsLocationsQueuesPurge
 
     -- ** cloudtasks.projects.locations.queues.resume
-    CloudTasksProjectsLocationsQueuesResumeResource,
-    CloudTasksProjectsLocationsQueuesResume (..),
-    newCloudTasksProjectsLocationsQueuesResume,
+    , CloudTasksProjectsLocationsQueuesResumeResource
+    , CloudTasksProjectsLocationsQueuesResume (..)
+    , newCloudTasksProjectsLocationsQueuesResume
 
     -- ** cloudtasks.projects.locations.queues.setIamPolicy
-    CloudTasksProjectsLocationsQueuesSetIamPolicyResource,
-    CloudTasksProjectsLocationsQueuesSetIamPolicy (..),
-    newCloudTasksProjectsLocationsQueuesSetIamPolicy,
+    , CloudTasksProjectsLocationsQueuesSetIamPolicyResource
+    , CloudTasksProjectsLocationsQueuesSetIamPolicy (..)
+    , newCloudTasksProjectsLocationsQueuesSetIamPolicy
 
     -- ** cloudtasks.projects.locations.queues.tasks.create
-    CloudTasksProjectsLocationsQueuesTasksCreateResource,
-    CloudTasksProjectsLocationsQueuesTasksCreate (..),
-    newCloudTasksProjectsLocationsQueuesTasksCreate,
+    , CloudTasksProjectsLocationsQueuesTasksCreateResource
+    , CloudTasksProjectsLocationsQueuesTasksCreate (..)
+    , newCloudTasksProjectsLocationsQueuesTasksCreate
 
     -- ** cloudtasks.projects.locations.queues.tasks.delete
-    CloudTasksProjectsLocationsQueuesTasksDeleteResource,
-    CloudTasksProjectsLocationsQueuesTasksDelete (..),
-    newCloudTasksProjectsLocationsQueuesTasksDelete,
+    , CloudTasksProjectsLocationsQueuesTasksDeleteResource
+    , CloudTasksProjectsLocationsQueuesTasksDelete (..)
+    , newCloudTasksProjectsLocationsQueuesTasksDelete
 
     -- ** cloudtasks.projects.locations.queues.tasks.get
-    CloudTasksProjectsLocationsQueuesTasksGetResource,
-    CloudTasksProjectsLocationsQueuesTasksGet (..),
-    newCloudTasksProjectsLocationsQueuesTasksGet,
+    , CloudTasksProjectsLocationsQueuesTasksGetResource
+    , CloudTasksProjectsLocationsQueuesTasksGet (..)
+    , newCloudTasksProjectsLocationsQueuesTasksGet
 
     -- ** cloudtasks.projects.locations.queues.tasks.list
-    CloudTasksProjectsLocationsQueuesTasksListResource,
-    CloudTasksProjectsLocationsQueuesTasksList (..),
-    newCloudTasksProjectsLocationsQueuesTasksList,
+    , CloudTasksProjectsLocationsQueuesTasksListResource
+    , CloudTasksProjectsLocationsQueuesTasksList (..)
+    , newCloudTasksProjectsLocationsQueuesTasksList
 
     -- ** cloudtasks.projects.locations.queues.tasks.run
-    CloudTasksProjectsLocationsQueuesTasksRunResource,
-    CloudTasksProjectsLocationsQueuesTasksRun (..),
-    newCloudTasksProjectsLocationsQueuesTasksRun,
+    , CloudTasksProjectsLocationsQueuesTasksRunResource
+    , CloudTasksProjectsLocationsQueuesTasksRun (..)
+    , newCloudTasksProjectsLocationsQueuesTasksRun
 
     -- ** cloudtasks.projects.locations.queues.testIamPermissions
-    CloudTasksProjectsLocationsQueuesTestIamPermissionsResource,
-    CloudTasksProjectsLocationsQueuesTestIamPermissions (..),
-    newCloudTasksProjectsLocationsQueuesTestIamPermissions,
+    , CloudTasksProjectsLocationsQueuesTestIamPermissionsResource
+    , CloudTasksProjectsLocationsQueuesTestIamPermissions (..)
+    , newCloudTasksProjectsLocationsQueuesTestIamPermissions
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AppEngineHttpRequest
-    AppEngineHttpRequest (..),
-    newAppEngineHttpRequest,
+    , AppEngineHttpRequest (..)
+    , newAppEngineHttpRequest
 
     -- ** AppEngineHttpRequest_Headers
-    AppEngineHttpRequest_Headers (..),
-    newAppEngineHttpRequest_Headers,
+    , AppEngineHttpRequest_Headers (..)
+    , newAppEngineHttpRequest_Headers
 
     -- ** AppEngineHttpRequest_HttpMethod
-    AppEngineHttpRequest_HttpMethod (..),
+    , AppEngineHttpRequest_HttpMethod (..)
 
     -- ** AppEngineRouting
-    AppEngineRouting (..),
-    newAppEngineRouting,
+    , AppEngineRouting (..)
+    , newAppEngineRouting
 
     -- ** Attempt
-    Attempt (..),
-    newAttempt,
+    , Attempt (..)
+    , newAttempt
 
     -- ** Binding
-    Binding (..),
-    newBinding,
+    , Binding (..)
+    , newBinding
 
     -- ** CreateTaskRequest
-    CreateTaskRequest (..),
-    newCreateTaskRequest,
+    , CreateTaskRequest (..)
+    , newCreateTaskRequest
 
     -- ** CreateTaskRequest_ResponseView
-    CreateTaskRequest_ResponseView (..),
+    , CreateTaskRequest_ResponseView (..)
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** Expr
-    Expr (..),
-    newExpr,
+    , Expr (..)
+    , newExpr
 
     -- ** GetIamPolicyRequest
-    GetIamPolicyRequest (..),
-    newGetIamPolicyRequest,
+    , GetIamPolicyRequest (..)
+    , newGetIamPolicyRequest
 
     -- ** GetPolicyOptions
-    GetPolicyOptions (..),
-    newGetPolicyOptions,
+    , GetPolicyOptions (..)
+    , newGetPolicyOptions
 
     -- ** HttpRequest
-    HttpRequest (..),
-    newHttpRequest,
+    , HttpRequest (..)
+    , newHttpRequest
 
     -- ** HttpRequest_Headers
-    HttpRequest_Headers (..),
-    newHttpRequest_Headers,
+    , HttpRequest_Headers (..)
+    , newHttpRequest_Headers
 
     -- ** HttpRequest_HttpMethod
-    HttpRequest_HttpMethod (..),
+    , HttpRequest_HttpMethod (..)
 
     -- ** ListLocationsResponse
-    ListLocationsResponse (..),
-    newListLocationsResponse,
+    , ListLocationsResponse (..)
+    , newListLocationsResponse
 
     -- ** ListQueuesResponse
-    ListQueuesResponse (..),
-    newListQueuesResponse,
+    , ListQueuesResponse (..)
+    , newListQueuesResponse
 
     -- ** ListTasksResponse
-    ListTasksResponse (..),
-    newListTasksResponse,
+    , ListTasksResponse (..)
+    , newListTasksResponse
 
     -- ** Location
-    Location (..),
-    newLocation,
+    , Location (..)
+    , newLocation
 
     -- ** Location_Labels
-    Location_Labels (..),
-    newLocation_Labels,
+    , Location_Labels (..)
+    , newLocation_Labels
 
     -- ** Location_Metadata
-    Location_Metadata (..),
-    newLocation_Metadata,
+    , Location_Metadata (..)
+    , newLocation_Metadata
 
     -- ** OAuthToken
-    OAuthToken (..),
-    newOAuthToken,
+    , OAuthToken (..)
+    , newOAuthToken
 
     -- ** OidcToken
-    OidcToken (..),
-    newOidcToken,
+    , OidcToken (..)
+    , newOidcToken
 
     -- ** PauseQueueRequest
-    PauseQueueRequest (..),
-    newPauseQueueRequest,
+    , PauseQueueRequest (..)
+    , newPauseQueueRequest
 
     -- ** Policy
-    Policy (..),
-    newPolicy,
+    , Policy (..)
+    , newPolicy
 
     -- ** PurgeQueueRequest
-    PurgeQueueRequest (..),
-    newPurgeQueueRequest,
+    , PurgeQueueRequest (..)
+    , newPurgeQueueRequest
 
     -- ** Queue
-    Queue (..),
-    newQueue,
+    , Queue (..)
+    , newQueue
 
     -- ** Queue_State
-    Queue_State (..),
+    , Queue_State (..)
 
     -- ** RateLimits
-    RateLimits (..),
-    newRateLimits,
+    , RateLimits (..)
+    , newRateLimits
 
     -- ** ResumeQueueRequest
-    ResumeQueueRequest (..),
-    newResumeQueueRequest,
+    , ResumeQueueRequest (..)
+    , newResumeQueueRequest
 
     -- ** RetryConfig
-    RetryConfig (..),
-    newRetryConfig,
+    , RetryConfig (..)
+    , newRetryConfig
 
     -- ** RunTaskRequest
-    RunTaskRequest (..),
-    newRunTaskRequest,
+    , RunTaskRequest (..)
+    , newRunTaskRequest
 
     -- ** RunTaskRequest_ResponseView
-    RunTaskRequest_ResponseView (..),
+    , RunTaskRequest_ResponseView (..)
 
     -- ** SetIamPolicyRequest
-    SetIamPolicyRequest (..),
-    newSetIamPolicyRequest,
+    , SetIamPolicyRequest (..)
+    , newSetIamPolicyRequest
 
     -- ** StackdriverLoggingConfig
-    StackdriverLoggingConfig (..),
-    newStackdriverLoggingConfig,
+    , StackdriverLoggingConfig (..)
+    , newStackdriverLoggingConfig
 
     -- ** Status
-    Status (..),
-    newStatus,
+    , Status (..)
+    , newStatus
 
     -- ** Status_DetailsItem
-    Status_DetailsItem (..),
-    newStatus_DetailsItem,
+    , Status_DetailsItem (..)
+    , newStatus_DetailsItem
 
     -- ** Task
-    Task (..),
-    newTask,
+    , Task (..)
+    , newTask
 
     -- ** Task_View
-    Task_View (..),
+    , Task_View (..)
 
     -- ** TestIamPermissionsRequest
-    TestIamPermissionsRequest (..),
-    newTestIamPermissionsRequest,
+    , TestIamPermissionsRequest (..)
+    , newTestIamPermissionsRequest
 
     -- ** TestIamPermissionsResponse
-    TestIamPermissionsResponse (..),
-    newTestIamPermissionsResponse,
+    , TestIamPermissionsResponse (..)
+    , newTestIamPermissionsResponse
 
     -- ** ProjectsLocationsQueuesTasksGetResponseView
-    ProjectsLocationsQueuesTasksGetResponseView (..),
+    , ProjectsLocationsQueuesTasksGetResponseView (..)
 
     -- ** ProjectsLocationsQueuesTasksListResponseView
-    ProjectsLocationsQueuesTasksListResponseView (..),
-  )
-where
+    , ProjectsLocationsQueuesTasksListResponseView (..)
+    ) where
 
 import Gogol.CloudTasks.Projects.Locations.Get
 import Gogol.CloudTasks.Projects.Locations.List

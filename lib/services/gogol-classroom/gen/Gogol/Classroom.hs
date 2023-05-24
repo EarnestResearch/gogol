@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,685 +31,685 @@
 --
 -- /See:/ <https://developers.google.com/classroom/ Google Classroom API Reference>
 module Gogol.Classroom
-  ( -- * Configuration
-    classroomService,
+    (
+    -- * Configuration
+      classroomService
 
     -- * OAuth Scopes
-    Classroom'Announcements,
-    Classroom'Announcements'Readonly,
-    Classroom'Courses,
-    Classroom'Courses'Readonly,
-    Classroom'Coursework'Me,
-    Classroom'Coursework'Me'Readonly,
-    Classroom'Coursework'Students,
-    Classroom'Coursework'Students'Readonly,
-    Classroom'Courseworkmaterials,
-    Classroom'Courseworkmaterials'Readonly,
-    Classroom'Guardianlinks'Me'Readonly,
-    Classroom'Guardianlinks'Students,
-    Classroom'Guardianlinks'Students'Readonly,
-    Classroom'Profile'Emails,
-    Classroom'Profile'Photos,
-    Classroom'PushNotifications,
-    Classroom'Rosters,
-    Classroom'Rosters'Readonly,
-    Classroom'StudentSubmissions'Me'Readonly,
-    Classroom'StudentSubmissions'Students'Readonly,
-    Classroom'Topics,
-    Classroom'Topics'Readonly,
+    , Classroom'Announcements
+    , Classroom'Announcements'Readonly
+    , Classroom'Courses
+    , Classroom'Courses'Readonly
+    , Classroom'Coursework'Me
+    , Classroom'Coursework'Me'Readonly
+    , Classroom'Coursework'Students
+    , Classroom'Coursework'Students'Readonly
+    , Classroom'Courseworkmaterials
+    , Classroom'Courseworkmaterials'Readonly
+    , Classroom'Guardianlinks'Me'Readonly
+    , Classroom'Guardianlinks'Students
+    , Classroom'Guardianlinks'Students'Readonly
+    , Classroom'Profile'Emails
+    , Classroom'Profile'Photos
+    , Classroom'PushNotifications
+    , Classroom'Rosters
+    , Classroom'Rosters'Readonly
+    , Classroom'StudentSubmissions'Me'Readonly
+    , Classroom'StudentSubmissions'Students'Readonly
+    , Classroom'Topics
+    , Classroom'Topics'Readonly
 
     -- * Resources
 
     -- ** classroom.courses.aliases.create
-    ClassroomCoursesAliasesCreateResource,
-    ClassroomCoursesAliasesCreate (..),
-    newClassroomCoursesAliasesCreate,
+    , ClassroomCoursesAliasesCreateResource
+    , ClassroomCoursesAliasesCreate (..)
+    , newClassroomCoursesAliasesCreate
 
     -- ** classroom.courses.aliases.delete
-    ClassroomCoursesAliasesDeleteResource,
-    ClassroomCoursesAliasesDelete (..),
-    newClassroomCoursesAliasesDelete,
+    , ClassroomCoursesAliasesDeleteResource
+    , ClassroomCoursesAliasesDelete (..)
+    , newClassroomCoursesAliasesDelete
 
     -- ** classroom.courses.aliases.list
-    ClassroomCoursesAliasesListResource,
-    ClassroomCoursesAliasesList (..),
-    newClassroomCoursesAliasesList,
+    , ClassroomCoursesAliasesListResource
+    , ClassroomCoursesAliasesList (..)
+    , newClassroomCoursesAliasesList
 
     -- ** classroom.courses.announcements.create
-    ClassroomCoursesAnnouncementsCreateResource,
-    ClassroomCoursesAnnouncementsCreate (..),
-    newClassroomCoursesAnnouncementsCreate,
+    , ClassroomCoursesAnnouncementsCreateResource
+    , ClassroomCoursesAnnouncementsCreate (..)
+    , newClassroomCoursesAnnouncementsCreate
 
     -- ** classroom.courses.announcements.delete
-    ClassroomCoursesAnnouncementsDeleteResource,
-    ClassroomCoursesAnnouncementsDelete (..),
-    newClassroomCoursesAnnouncementsDelete,
+    , ClassroomCoursesAnnouncementsDeleteResource
+    , ClassroomCoursesAnnouncementsDelete (..)
+    , newClassroomCoursesAnnouncementsDelete
 
     -- ** classroom.courses.announcements.get
-    ClassroomCoursesAnnouncementsGetResource,
-    ClassroomCoursesAnnouncementsGet (..),
-    newClassroomCoursesAnnouncementsGet,
+    , ClassroomCoursesAnnouncementsGetResource
+    , ClassroomCoursesAnnouncementsGet (..)
+    , newClassroomCoursesAnnouncementsGet
 
     -- ** classroom.courses.announcements.list
-    ClassroomCoursesAnnouncementsListResource,
-    ClassroomCoursesAnnouncementsList (..),
-    newClassroomCoursesAnnouncementsList,
+    , ClassroomCoursesAnnouncementsListResource
+    , ClassroomCoursesAnnouncementsList (..)
+    , newClassroomCoursesAnnouncementsList
 
     -- ** classroom.courses.announcements.modifyAssignees
-    ClassroomCoursesAnnouncementsModifyAssigneesResource,
-    ClassroomCoursesAnnouncementsModifyAssignees (..),
-    newClassroomCoursesAnnouncementsModifyAssignees,
+    , ClassroomCoursesAnnouncementsModifyAssigneesResource
+    , ClassroomCoursesAnnouncementsModifyAssignees (..)
+    , newClassroomCoursesAnnouncementsModifyAssignees
 
     -- ** classroom.courses.announcements.patch
-    ClassroomCoursesAnnouncementsPatchResource,
-    ClassroomCoursesAnnouncementsPatch (..),
-    newClassroomCoursesAnnouncementsPatch,
+    , ClassroomCoursesAnnouncementsPatchResource
+    , ClassroomCoursesAnnouncementsPatch (..)
+    , newClassroomCoursesAnnouncementsPatch
 
     -- ** classroom.courses.courseWork.create
-    ClassroomCoursesCourseWorkCreateResource,
-    ClassroomCoursesCourseWorkCreate (..),
-    newClassroomCoursesCourseWorkCreate,
+    , ClassroomCoursesCourseWorkCreateResource
+    , ClassroomCoursesCourseWorkCreate (..)
+    , newClassroomCoursesCourseWorkCreate
 
     -- ** classroom.courses.courseWork.delete
-    ClassroomCoursesCourseWorkDeleteResource,
-    ClassroomCoursesCourseWorkDelete (..),
-    newClassroomCoursesCourseWorkDelete,
+    , ClassroomCoursesCourseWorkDeleteResource
+    , ClassroomCoursesCourseWorkDelete (..)
+    , newClassroomCoursesCourseWorkDelete
 
     -- ** classroom.courses.courseWork.get
-    ClassroomCoursesCourseWorkGetResource,
-    ClassroomCoursesCourseWorkGet (..),
-    newClassroomCoursesCourseWorkGet,
+    , ClassroomCoursesCourseWorkGetResource
+    , ClassroomCoursesCourseWorkGet (..)
+    , newClassroomCoursesCourseWorkGet
 
     -- ** classroom.courses.courseWork.list
-    ClassroomCoursesCourseWorkListResource,
-    ClassroomCoursesCourseWorkList (..),
-    newClassroomCoursesCourseWorkList,
+    , ClassroomCoursesCourseWorkListResource
+    , ClassroomCoursesCourseWorkList (..)
+    , newClassroomCoursesCourseWorkList
 
     -- ** classroom.courses.courseWork.modifyAssignees
-    ClassroomCoursesCourseWorkModifyAssigneesResource,
-    ClassroomCoursesCourseWorkModifyAssignees (..),
-    newClassroomCoursesCourseWorkModifyAssignees,
+    , ClassroomCoursesCourseWorkModifyAssigneesResource
+    , ClassroomCoursesCourseWorkModifyAssignees (..)
+    , newClassroomCoursesCourseWorkModifyAssignees
 
     -- ** classroom.courses.courseWork.patch
-    ClassroomCoursesCourseWorkPatchResource,
-    ClassroomCoursesCourseWorkPatch (..),
-    newClassroomCoursesCourseWorkPatch,
+    , ClassroomCoursesCourseWorkPatchResource
+    , ClassroomCoursesCourseWorkPatch (..)
+    , newClassroomCoursesCourseWorkPatch
 
     -- ** classroom.courses.courseWork.studentSubmissions.get
-    ClassroomCoursesCourseWorkStudentSubmissionsGetResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsGet (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsGet,
+    , ClassroomCoursesCourseWorkStudentSubmissionsGetResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsGet (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsGet
 
     -- ** classroom.courses.courseWork.studentSubmissions.list
-    ClassroomCoursesCourseWorkStudentSubmissionsListResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsList (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsList,
+    , ClassroomCoursesCourseWorkStudentSubmissionsListResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsList (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsList
 
     -- ** classroom.courses.courseWork.studentSubmissions.modifyAttachments
-    ClassroomCoursesCourseWorkStudentSubmissionsModifyAttachmentsResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsModifyAttachments (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsModifyAttachments,
+    , ClassroomCoursesCourseWorkStudentSubmissionsModifyAttachmentsResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsModifyAttachments (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsModifyAttachments
 
     -- ** classroom.courses.courseWork.studentSubmissions.patch
-    ClassroomCoursesCourseWorkStudentSubmissionsPatchResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsPatch (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsPatch,
+    , ClassroomCoursesCourseWorkStudentSubmissionsPatchResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsPatch (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsPatch
 
     -- ** classroom.courses.courseWork.studentSubmissions.reclaim
-    ClassroomCoursesCourseWorkStudentSubmissionsReclaimResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsReclaim (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsReclaim,
+    , ClassroomCoursesCourseWorkStudentSubmissionsReclaimResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsReclaim (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsReclaim
 
     -- ** classroom.courses.courseWork.studentSubmissions.return
-    ClassroomCoursesCourseWorkStudentSubmissionsReturnResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsReturn (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsReturn,
+    , ClassroomCoursesCourseWorkStudentSubmissionsReturnResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsReturn (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsReturn
 
     -- ** classroom.courses.courseWork.studentSubmissions.turnIn
-    ClassroomCoursesCourseWorkStudentSubmissionsTurnInResource,
-    ClassroomCoursesCourseWorkStudentSubmissionsTurnIn (..),
-    newClassroomCoursesCourseWorkStudentSubmissionsTurnIn,
+    , ClassroomCoursesCourseWorkStudentSubmissionsTurnInResource
+    , ClassroomCoursesCourseWorkStudentSubmissionsTurnIn (..)
+    , newClassroomCoursesCourseWorkStudentSubmissionsTurnIn
 
     -- ** classroom.courses.courseWorkMaterials.create
-    ClassroomCoursesCourseWorkMaterialsCreateResource,
-    ClassroomCoursesCourseWorkMaterialsCreate (..),
-    newClassroomCoursesCourseWorkMaterialsCreate,
+    , ClassroomCoursesCourseWorkMaterialsCreateResource
+    , ClassroomCoursesCourseWorkMaterialsCreate (..)
+    , newClassroomCoursesCourseWorkMaterialsCreate
 
     -- ** classroom.courses.courseWorkMaterials.delete
-    ClassroomCoursesCourseWorkMaterialsDeleteResource,
-    ClassroomCoursesCourseWorkMaterialsDelete (..),
-    newClassroomCoursesCourseWorkMaterialsDelete,
+    , ClassroomCoursesCourseWorkMaterialsDeleteResource
+    , ClassroomCoursesCourseWorkMaterialsDelete (..)
+    , newClassroomCoursesCourseWorkMaterialsDelete
 
     -- ** classroom.courses.courseWorkMaterials.get
-    ClassroomCoursesCourseWorkMaterialsGetResource,
-    ClassroomCoursesCourseWorkMaterialsGet (..),
-    newClassroomCoursesCourseWorkMaterialsGet,
+    , ClassroomCoursesCourseWorkMaterialsGetResource
+    , ClassroomCoursesCourseWorkMaterialsGet (..)
+    , newClassroomCoursesCourseWorkMaterialsGet
 
     -- ** classroom.courses.courseWorkMaterials.list
-    ClassroomCoursesCourseWorkMaterialsListResource,
-    ClassroomCoursesCourseWorkMaterialsList (..),
-    newClassroomCoursesCourseWorkMaterialsList,
+    , ClassroomCoursesCourseWorkMaterialsListResource
+    , ClassroomCoursesCourseWorkMaterialsList (..)
+    , newClassroomCoursesCourseWorkMaterialsList
 
     -- ** classroom.courses.courseWorkMaterials.patch
-    ClassroomCoursesCourseWorkMaterialsPatchResource,
-    ClassroomCoursesCourseWorkMaterialsPatch (..),
-    newClassroomCoursesCourseWorkMaterialsPatch,
+    , ClassroomCoursesCourseWorkMaterialsPatchResource
+    , ClassroomCoursesCourseWorkMaterialsPatch (..)
+    , newClassroomCoursesCourseWorkMaterialsPatch
 
     -- ** classroom.courses.create
-    ClassroomCoursesCreateResource,
-    ClassroomCoursesCreate (..),
-    newClassroomCoursesCreate,
+    , ClassroomCoursesCreateResource
+    , ClassroomCoursesCreate (..)
+    , newClassroomCoursesCreate
 
     -- ** classroom.courses.delete
-    ClassroomCoursesDeleteResource,
-    ClassroomCoursesDelete (..),
-    newClassroomCoursesDelete,
+    , ClassroomCoursesDeleteResource
+    , ClassroomCoursesDelete (..)
+    , newClassroomCoursesDelete
 
     -- ** classroom.courses.get
-    ClassroomCoursesGetResource,
-    ClassroomCoursesGet (..),
-    newClassroomCoursesGet,
+    , ClassroomCoursesGetResource
+    , ClassroomCoursesGet (..)
+    , newClassroomCoursesGet
 
     -- ** classroom.courses.list
-    ClassroomCoursesListResource,
-    ClassroomCoursesList (..),
-    newClassroomCoursesList,
+    , ClassroomCoursesListResource
+    , ClassroomCoursesList (..)
+    , newClassroomCoursesList
 
     -- ** classroom.courses.patch
-    ClassroomCoursesPatchResource,
-    ClassroomCoursesPatch (..),
-    newClassroomCoursesPatch,
+    , ClassroomCoursesPatchResource
+    , ClassroomCoursesPatch (..)
+    , newClassroomCoursesPatch
 
     -- ** classroom.courses.students.create
-    ClassroomCoursesStudentsCreateResource,
-    ClassroomCoursesStudentsCreate (..),
-    newClassroomCoursesStudentsCreate,
+    , ClassroomCoursesStudentsCreateResource
+    , ClassroomCoursesStudentsCreate (..)
+    , newClassroomCoursesStudentsCreate
 
     -- ** classroom.courses.students.delete
-    ClassroomCoursesStudentsDeleteResource,
-    ClassroomCoursesStudentsDelete (..),
-    newClassroomCoursesStudentsDelete,
+    , ClassroomCoursesStudentsDeleteResource
+    , ClassroomCoursesStudentsDelete (..)
+    , newClassroomCoursesStudentsDelete
 
     -- ** classroom.courses.students.get
-    ClassroomCoursesStudentsGetResource,
-    ClassroomCoursesStudentsGet (..),
-    newClassroomCoursesStudentsGet,
+    , ClassroomCoursesStudentsGetResource
+    , ClassroomCoursesStudentsGet (..)
+    , newClassroomCoursesStudentsGet
 
     -- ** classroom.courses.students.list
-    ClassroomCoursesStudentsListResource,
-    ClassroomCoursesStudentsList (..),
-    newClassroomCoursesStudentsList,
+    , ClassroomCoursesStudentsListResource
+    , ClassroomCoursesStudentsList (..)
+    , newClassroomCoursesStudentsList
 
     -- ** classroom.courses.teachers.create
-    ClassroomCoursesTeachersCreateResource,
-    ClassroomCoursesTeachersCreate (..),
-    newClassroomCoursesTeachersCreate,
+    , ClassroomCoursesTeachersCreateResource
+    , ClassroomCoursesTeachersCreate (..)
+    , newClassroomCoursesTeachersCreate
 
     -- ** classroom.courses.teachers.delete
-    ClassroomCoursesTeachersDeleteResource,
-    ClassroomCoursesTeachersDelete (..),
-    newClassroomCoursesTeachersDelete,
+    , ClassroomCoursesTeachersDeleteResource
+    , ClassroomCoursesTeachersDelete (..)
+    , newClassroomCoursesTeachersDelete
 
     -- ** classroom.courses.teachers.get
-    ClassroomCoursesTeachersGetResource,
-    ClassroomCoursesTeachersGet (..),
-    newClassroomCoursesTeachersGet,
+    , ClassroomCoursesTeachersGetResource
+    , ClassroomCoursesTeachersGet (..)
+    , newClassroomCoursesTeachersGet
 
     -- ** classroom.courses.teachers.list
-    ClassroomCoursesTeachersListResource,
-    ClassroomCoursesTeachersList (..),
-    newClassroomCoursesTeachersList,
+    , ClassroomCoursesTeachersListResource
+    , ClassroomCoursesTeachersList (..)
+    , newClassroomCoursesTeachersList
 
     -- ** classroom.courses.topics.create
-    ClassroomCoursesTopicsCreateResource,
-    ClassroomCoursesTopicsCreate (..),
-    newClassroomCoursesTopicsCreate,
+    , ClassroomCoursesTopicsCreateResource
+    , ClassroomCoursesTopicsCreate (..)
+    , newClassroomCoursesTopicsCreate
 
     -- ** classroom.courses.topics.delete
-    ClassroomCoursesTopicsDeleteResource,
-    ClassroomCoursesTopicsDelete (..),
-    newClassroomCoursesTopicsDelete,
+    , ClassroomCoursesTopicsDeleteResource
+    , ClassroomCoursesTopicsDelete (..)
+    , newClassroomCoursesTopicsDelete
 
     -- ** classroom.courses.topics.get
-    ClassroomCoursesTopicsGetResource,
-    ClassroomCoursesTopicsGet (..),
-    newClassroomCoursesTopicsGet,
+    , ClassroomCoursesTopicsGetResource
+    , ClassroomCoursesTopicsGet (..)
+    , newClassroomCoursesTopicsGet
 
     -- ** classroom.courses.topics.list
-    ClassroomCoursesTopicsListResource,
-    ClassroomCoursesTopicsList (..),
-    newClassroomCoursesTopicsList,
+    , ClassroomCoursesTopicsListResource
+    , ClassroomCoursesTopicsList (..)
+    , newClassroomCoursesTopicsList
 
     -- ** classroom.courses.topics.patch
-    ClassroomCoursesTopicsPatchResource,
-    ClassroomCoursesTopicsPatch (..),
-    newClassroomCoursesTopicsPatch,
+    , ClassroomCoursesTopicsPatchResource
+    , ClassroomCoursesTopicsPatch (..)
+    , newClassroomCoursesTopicsPatch
 
     -- ** classroom.courses.update
-    ClassroomCoursesUpdateResource,
-    ClassroomCoursesUpdate (..),
-    newClassroomCoursesUpdate,
+    , ClassroomCoursesUpdateResource
+    , ClassroomCoursesUpdate (..)
+    , newClassroomCoursesUpdate
 
     -- ** classroom.invitations.accept
-    ClassroomInvitationsAcceptResource,
-    ClassroomInvitationsAccept (..),
-    newClassroomInvitationsAccept,
+    , ClassroomInvitationsAcceptResource
+    , ClassroomInvitationsAccept (..)
+    , newClassroomInvitationsAccept
 
     -- ** classroom.invitations.create
-    ClassroomInvitationsCreateResource,
-    ClassroomInvitationsCreate (..),
-    newClassroomInvitationsCreate,
+    , ClassroomInvitationsCreateResource
+    , ClassroomInvitationsCreate (..)
+    , newClassroomInvitationsCreate
 
     -- ** classroom.invitations.delete
-    ClassroomInvitationsDeleteResource,
-    ClassroomInvitationsDelete (..),
-    newClassroomInvitationsDelete,
+    , ClassroomInvitationsDeleteResource
+    , ClassroomInvitationsDelete (..)
+    , newClassroomInvitationsDelete
 
     -- ** classroom.invitations.get
-    ClassroomInvitationsGetResource,
-    ClassroomInvitationsGet (..),
-    newClassroomInvitationsGet,
+    , ClassroomInvitationsGetResource
+    , ClassroomInvitationsGet (..)
+    , newClassroomInvitationsGet
 
     -- ** classroom.invitations.list
-    ClassroomInvitationsListResource,
-    ClassroomInvitationsList (..),
-    newClassroomInvitationsList,
+    , ClassroomInvitationsListResource
+    , ClassroomInvitationsList (..)
+    , newClassroomInvitationsList
 
     -- ** classroom.registrations.create
-    ClassroomRegistrationsCreateResource,
-    ClassroomRegistrationsCreate (..),
-    newClassroomRegistrationsCreate,
+    , ClassroomRegistrationsCreateResource
+    , ClassroomRegistrationsCreate (..)
+    , newClassroomRegistrationsCreate
 
     -- ** classroom.registrations.delete
-    ClassroomRegistrationsDeleteResource,
-    ClassroomRegistrationsDelete (..),
-    newClassroomRegistrationsDelete,
+    , ClassroomRegistrationsDeleteResource
+    , ClassroomRegistrationsDelete (..)
+    , newClassroomRegistrationsDelete
 
     -- ** classroom.userProfiles.get
-    ClassroomUserProfilesGetResource,
-    ClassroomUserProfilesGet (..),
-    newClassroomUserProfilesGet,
+    , ClassroomUserProfilesGetResource
+    , ClassroomUserProfilesGet (..)
+    , newClassroomUserProfilesGet
 
     -- ** classroom.userProfiles.guardianInvitations.create
-    ClassroomUserProfilesGuardianInvitationsCreateResource,
-    ClassroomUserProfilesGuardianInvitationsCreate (..),
-    newClassroomUserProfilesGuardianInvitationsCreate,
+    , ClassroomUserProfilesGuardianInvitationsCreateResource
+    , ClassroomUserProfilesGuardianInvitationsCreate (..)
+    , newClassroomUserProfilesGuardianInvitationsCreate
 
     -- ** classroom.userProfiles.guardianInvitations.get
-    ClassroomUserProfilesGuardianInvitationsGetResource,
-    ClassroomUserProfilesGuardianInvitationsGet (..),
-    newClassroomUserProfilesGuardianInvitationsGet,
+    , ClassroomUserProfilesGuardianInvitationsGetResource
+    , ClassroomUserProfilesGuardianInvitationsGet (..)
+    , newClassroomUserProfilesGuardianInvitationsGet
 
     -- ** classroom.userProfiles.guardianInvitations.list
-    ClassroomUserProfilesGuardianInvitationsListResource,
-    ClassroomUserProfilesGuardianInvitationsList (..),
-    newClassroomUserProfilesGuardianInvitationsList,
+    , ClassroomUserProfilesGuardianInvitationsListResource
+    , ClassroomUserProfilesGuardianInvitationsList (..)
+    , newClassroomUserProfilesGuardianInvitationsList
 
     -- ** classroom.userProfiles.guardianInvitations.patch
-    ClassroomUserProfilesGuardianInvitationsPatchResource,
-    ClassroomUserProfilesGuardianInvitationsPatch (..),
-    newClassroomUserProfilesGuardianInvitationsPatch,
+    , ClassroomUserProfilesGuardianInvitationsPatchResource
+    , ClassroomUserProfilesGuardianInvitationsPatch (..)
+    , newClassroomUserProfilesGuardianInvitationsPatch
 
     -- ** classroom.userProfiles.guardians.delete
-    ClassroomUserProfilesGuardiansDeleteResource,
-    ClassroomUserProfilesGuardiansDelete (..),
-    newClassroomUserProfilesGuardiansDelete,
+    , ClassroomUserProfilesGuardiansDeleteResource
+    , ClassroomUserProfilesGuardiansDelete (..)
+    , newClassroomUserProfilesGuardiansDelete
 
     -- ** classroom.userProfiles.guardians.get
-    ClassroomUserProfilesGuardiansGetResource,
-    ClassroomUserProfilesGuardiansGet (..),
-    newClassroomUserProfilesGuardiansGet,
+    , ClassroomUserProfilesGuardiansGetResource
+    , ClassroomUserProfilesGuardiansGet (..)
+    , newClassroomUserProfilesGuardiansGet
 
     -- ** classroom.userProfiles.guardians.list
-    ClassroomUserProfilesGuardiansListResource,
-    ClassroomUserProfilesGuardiansList (..),
-    newClassroomUserProfilesGuardiansList,
+    , ClassroomUserProfilesGuardiansListResource
+    , ClassroomUserProfilesGuardiansList (..)
+    , newClassroomUserProfilesGuardiansList
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Announcement
-    Announcement (..),
-    newAnnouncement,
+    , Announcement (..)
+    , newAnnouncement
 
     -- ** Announcement_AssigneeMode
-    Announcement_AssigneeMode (..),
+    , Announcement_AssigneeMode (..)
 
     -- ** Announcement_State
-    Announcement_State (..),
+    , Announcement_State (..)
 
     -- ** Assignment
-    Assignment (..),
-    newAssignment,
+    , Assignment (..)
+    , newAssignment
 
     -- ** AssignmentSubmission
-    AssignmentSubmission (..),
-    newAssignmentSubmission,
+    , AssignmentSubmission (..)
+    , newAssignmentSubmission
 
     -- ** Attachment
-    Attachment (..),
-    newAttachment,
+    , Attachment (..)
+    , newAttachment
 
     -- ** CloudPubsubTopic
-    CloudPubsubTopic (..),
-    newCloudPubsubTopic,
+    , CloudPubsubTopic (..)
+    , newCloudPubsubTopic
 
     -- ** Course
-    Course (..),
-    newCourse,
+    , Course (..)
+    , newCourse
 
     -- ** Course_CourseState
-    Course_CourseState (..),
+    , Course_CourseState (..)
 
     -- ** CourseAlias
-    CourseAlias (..),
-    newCourseAlias,
+    , CourseAlias (..)
+    , newCourseAlias
 
     -- ** CourseMaterial
-    CourseMaterial (..),
-    newCourseMaterial,
+    , CourseMaterial (..)
+    , newCourseMaterial
 
     -- ** CourseMaterialSet
-    CourseMaterialSet (..),
-    newCourseMaterialSet,
+    , CourseMaterialSet (..)
+    , newCourseMaterialSet
 
     -- ** CourseRosterChangesInfo
-    CourseRosterChangesInfo (..),
-    newCourseRosterChangesInfo,
+    , CourseRosterChangesInfo (..)
+    , newCourseRosterChangesInfo
 
     -- ** CourseWork
-    CourseWork (..),
-    newCourseWork,
+    , CourseWork (..)
+    , newCourseWork
 
     -- ** CourseWork_AssigneeMode
-    CourseWork_AssigneeMode (..),
+    , CourseWork_AssigneeMode (..)
 
     -- ** CourseWork_State
-    CourseWork_State (..),
+    , CourseWork_State (..)
 
     -- ** CourseWork_SubmissionModificationMode
-    CourseWork_SubmissionModificationMode (..),
+    , CourseWork_SubmissionModificationMode (..)
 
     -- ** CourseWork_WorkType
-    CourseWork_WorkType (..),
+    , CourseWork_WorkType (..)
 
     -- ** CourseWorkChangesInfo
-    CourseWorkChangesInfo (..),
-    newCourseWorkChangesInfo,
+    , CourseWorkChangesInfo (..)
+    , newCourseWorkChangesInfo
 
     -- ** CourseWorkMaterial
-    CourseWorkMaterial (..),
-    newCourseWorkMaterial,
+    , CourseWorkMaterial (..)
+    , newCourseWorkMaterial
 
     -- ** CourseWorkMaterial_AssigneeMode
-    CourseWorkMaterial_AssigneeMode (..),
+    , CourseWorkMaterial_AssigneeMode (..)
 
     -- ** CourseWorkMaterial_State
-    CourseWorkMaterial_State (..),
+    , CourseWorkMaterial_State (..)
 
     -- ** Date
-    Date (..),
-    newDate,
+    , Date (..)
+    , newDate
 
     -- ** DriveFile
-    DriveFile (..),
-    newDriveFile,
+    , DriveFile (..)
+    , newDriveFile
 
     -- ** DriveFolder
-    DriveFolder (..),
-    newDriveFolder,
+    , DriveFolder (..)
+    , newDriveFolder
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** Feed
-    Feed (..),
-    newFeed,
+    , Feed (..)
+    , newFeed
 
     -- ** Feed_FeedType
-    Feed_FeedType (..),
+    , Feed_FeedType (..)
 
     -- ** Form
-    Form (..),
-    newForm,
+    , Form (..)
+    , newForm
 
     -- ** GlobalPermission
-    GlobalPermission (..),
-    newGlobalPermission,
+    , GlobalPermission (..)
+    , newGlobalPermission
 
     -- ** GlobalPermission_Permission
-    GlobalPermission_Permission (..),
+    , GlobalPermission_Permission (..)
 
     -- ** GradeCategory
-    GradeCategory (..),
-    newGradeCategory,
+    , GradeCategory (..)
+    , newGradeCategory
 
     -- ** GradeHistory
-    GradeHistory (..),
-    newGradeHistory,
+    , GradeHistory (..)
+    , newGradeHistory
 
     -- ** GradeHistory_GradeChangeType
-    GradeHistory_GradeChangeType (..),
+    , GradeHistory_GradeChangeType (..)
 
     -- ** GradebookSettings
-    GradebookSettings (..),
-    newGradebookSettings,
+    , GradebookSettings (..)
+    , newGradebookSettings
 
     -- ** GradebookSettings_CalculationType
-    GradebookSettings_CalculationType (..),
+    , GradebookSettings_CalculationType (..)
 
     -- ** GradebookSettings_DisplaySetting
-    GradebookSettings_DisplaySetting (..),
+    , GradebookSettings_DisplaySetting (..)
 
     -- ** Guardian
-    Guardian (..),
-    newGuardian,
+    , Guardian (..)
+    , newGuardian
 
     -- ** GuardianInvitation
-    GuardianInvitation (..),
-    newGuardianInvitation,
+    , GuardianInvitation (..)
+    , newGuardianInvitation
 
     -- ** GuardianInvitation_State
-    GuardianInvitation_State (..),
+    , GuardianInvitation_State (..)
 
     -- ** IndividualStudentsOptions
-    IndividualStudentsOptions (..),
-    newIndividualStudentsOptions,
+    , IndividualStudentsOptions (..)
+    , newIndividualStudentsOptions
 
     -- ** Invitation
-    Invitation (..),
-    newInvitation,
+    , Invitation (..)
+    , newInvitation
 
     -- ** Invitation_Role
-    Invitation_Role (..),
+    , Invitation_Role (..)
 
     -- ** Link
-    Link (..),
-    newLink,
+    , Link (..)
+    , newLink
 
     -- ** ListAnnouncementsResponse
-    ListAnnouncementsResponse (..),
-    newListAnnouncementsResponse,
+    , ListAnnouncementsResponse (..)
+    , newListAnnouncementsResponse
 
     -- ** ListCourseAliasesResponse
-    ListCourseAliasesResponse (..),
-    newListCourseAliasesResponse,
+    , ListCourseAliasesResponse (..)
+    , newListCourseAliasesResponse
 
     -- ** ListCourseWorkMaterialResponse
-    ListCourseWorkMaterialResponse (..),
-    newListCourseWorkMaterialResponse,
+    , ListCourseWorkMaterialResponse (..)
+    , newListCourseWorkMaterialResponse
 
     -- ** ListCourseWorkResponse
-    ListCourseWorkResponse (..),
-    newListCourseWorkResponse,
+    , ListCourseWorkResponse (..)
+    , newListCourseWorkResponse
 
     -- ** ListCoursesResponse
-    ListCoursesResponse (..),
-    newListCoursesResponse,
+    , ListCoursesResponse (..)
+    , newListCoursesResponse
 
     -- ** ListGuardianInvitationsResponse
-    ListGuardianInvitationsResponse (..),
-    newListGuardianInvitationsResponse,
+    , ListGuardianInvitationsResponse (..)
+    , newListGuardianInvitationsResponse
 
     -- ** ListGuardiansResponse
-    ListGuardiansResponse (..),
-    newListGuardiansResponse,
+    , ListGuardiansResponse (..)
+    , newListGuardiansResponse
 
     -- ** ListInvitationsResponse
-    ListInvitationsResponse (..),
-    newListInvitationsResponse,
+    , ListInvitationsResponse (..)
+    , newListInvitationsResponse
 
     -- ** ListStudentSubmissionsResponse
-    ListStudentSubmissionsResponse (..),
-    newListStudentSubmissionsResponse,
+    , ListStudentSubmissionsResponse (..)
+    , newListStudentSubmissionsResponse
 
     -- ** ListStudentsResponse
-    ListStudentsResponse (..),
-    newListStudentsResponse,
+    , ListStudentsResponse (..)
+    , newListStudentsResponse
 
     -- ** ListTeachersResponse
-    ListTeachersResponse (..),
-    newListTeachersResponse,
+    , ListTeachersResponse (..)
+    , newListTeachersResponse
 
     -- ** ListTopicResponse
-    ListTopicResponse (..),
-    newListTopicResponse,
+    , ListTopicResponse (..)
+    , newListTopicResponse
 
     -- ** Material
-    Material (..),
-    newMaterial,
+    , Material (..)
+    , newMaterial
 
     -- ** ModifyAnnouncementAssigneesRequest
-    ModifyAnnouncementAssigneesRequest (..),
-    newModifyAnnouncementAssigneesRequest,
+    , ModifyAnnouncementAssigneesRequest (..)
+    , newModifyAnnouncementAssigneesRequest
 
     -- ** ModifyAnnouncementAssigneesRequest_AssigneeMode
-    ModifyAnnouncementAssigneesRequest_AssigneeMode (..),
+    , ModifyAnnouncementAssigneesRequest_AssigneeMode (..)
 
     -- ** ModifyAttachmentsRequest
-    ModifyAttachmentsRequest (..),
-    newModifyAttachmentsRequest,
+    , ModifyAttachmentsRequest (..)
+    , newModifyAttachmentsRequest
 
     -- ** ModifyCourseWorkAssigneesRequest
-    ModifyCourseWorkAssigneesRequest (..),
-    newModifyCourseWorkAssigneesRequest,
+    , ModifyCourseWorkAssigneesRequest (..)
+    , newModifyCourseWorkAssigneesRequest
 
     -- ** ModifyCourseWorkAssigneesRequest_AssigneeMode
-    ModifyCourseWorkAssigneesRequest_AssigneeMode (..),
+    , ModifyCourseWorkAssigneesRequest_AssigneeMode (..)
 
     -- ** ModifyIndividualStudentsOptions
-    ModifyIndividualStudentsOptions (..),
-    newModifyIndividualStudentsOptions,
+    , ModifyIndividualStudentsOptions (..)
+    , newModifyIndividualStudentsOptions
 
     -- ** MultipleChoiceQuestion
-    MultipleChoiceQuestion (..),
-    newMultipleChoiceQuestion,
+    , MultipleChoiceQuestion (..)
+    , newMultipleChoiceQuestion
 
     -- ** MultipleChoiceSubmission
-    MultipleChoiceSubmission (..),
-    newMultipleChoiceSubmission,
+    , MultipleChoiceSubmission (..)
+    , newMultipleChoiceSubmission
 
     -- ** Name
-    Name (..),
-    newName,
+    , Name (..)
+    , newName
 
     -- ** ReclaimStudentSubmissionRequest
-    ReclaimStudentSubmissionRequest (..),
-    newReclaimStudentSubmissionRequest,
+    , ReclaimStudentSubmissionRequest (..)
+    , newReclaimStudentSubmissionRequest
 
     -- ** Registration
-    Registration (..),
-    newRegistration,
+    , Registration (..)
+    , newRegistration
 
     -- ** ReturnStudentSubmissionRequest
-    ReturnStudentSubmissionRequest (..),
-    newReturnStudentSubmissionRequest,
+    , ReturnStudentSubmissionRequest (..)
+    , newReturnStudentSubmissionRequest
 
     -- ** SharedDriveFile
-    SharedDriveFile (..),
-    newSharedDriveFile,
+    , SharedDriveFile (..)
+    , newSharedDriveFile
 
     -- ** SharedDriveFile_ShareMode
-    SharedDriveFile_ShareMode (..),
+    , SharedDriveFile_ShareMode (..)
 
     -- ** ShortAnswerSubmission
-    ShortAnswerSubmission (..),
-    newShortAnswerSubmission,
+    , ShortAnswerSubmission (..)
+    , newShortAnswerSubmission
 
     -- ** StateHistory
-    StateHistory (..),
-    newStateHistory,
+    , StateHistory (..)
+    , newStateHistory
 
     -- ** StateHistory_State
-    StateHistory_State (..),
+    , StateHistory_State (..)
 
     -- ** Student
-    Student (..),
-    newStudent,
+    , Student (..)
+    , newStudent
 
     -- ** StudentSubmission
-    StudentSubmission (..),
-    newStudentSubmission,
+    , StudentSubmission (..)
+    , newStudentSubmission
 
     -- ** StudentSubmission_CourseWorkType
-    StudentSubmission_CourseWorkType (..),
+    , StudentSubmission_CourseWorkType (..)
 
     -- ** StudentSubmission_State
-    StudentSubmission_State (..),
+    , StudentSubmission_State (..)
 
     -- ** SubmissionHistory
-    SubmissionHistory (..),
-    newSubmissionHistory,
+    , SubmissionHistory (..)
+    , newSubmissionHistory
 
     -- ** Teacher
-    Teacher (..),
-    newTeacher,
+    , Teacher (..)
+    , newTeacher
 
     -- ** TimeOfDay'
-    TimeOfDay' (..),
-    newTimeOfDay,
+    , TimeOfDay' (..)
+    , newTimeOfDay
 
     -- ** Topic
-    Topic (..),
-    newTopic,
+    , Topic (..)
+    , newTopic
 
     -- ** TurnInStudentSubmissionRequest
-    TurnInStudentSubmissionRequest (..),
-    newTurnInStudentSubmissionRequest,
+    , TurnInStudentSubmissionRequest (..)
+    , newTurnInStudentSubmissionRequest
 
     -- ** UserProfile
-    UserProfile (..),
-    newUserProfile,
+    , UserProfile (..)
+    , newUserProfile
 
     -- ** YouTubeVideo
-    YouTubeVideo (..),
-    newYouTubeVideo,
+    , YouTubeVideo (..)
+    , newYouTubeVideo
 
     -- ** CoursesAnnouncementsListAnnouncementStates
-    CoursesAnnouncementsListAnnouncementStates (..),
+    , CoursesAnnouncementsListAnnouncementStates (..)
 
     -- ** CoursesCourseWorkListCourseWorkStates
-    CoursesCourseWorkListCourseWorkStates (..),
+    , CoursesCourseWorkListCourseWorkStates (..)
 
     -- ** CoursesCourseWorkStudentSubmissionsListLate
-    CoursesCourseWorkStudentSubmissionsListLate (..),
+    , CoursesCourseWorkStudentSubmissionsListLate (..)
 
     -- ** CoursesCourseWorkStudentSubmissionsListStates
-    CoursesCourseWorkStudentSubmissionsListStates (..),
+    , CoursesCourseWorkStudentSubmissionsListStates (..)
 
     -- ** CoursesCourseWorkMaterialsListCourseWorkMaterialStates
-    CoursesCourseWorkMaterialsListCourseWorkMaterialStates (..),
+    , CoursesCourseWorkMaterialsListCourseWorkMaterialStates (..)
 
     -- ** CoursesListCourseStates
-    CoursesListCourseStates (..),
+    , CoursesListCourseStates (..)
 
     -- ** UserProfilesGuardianInvitationsListStates
-    UserProfilesGuardianInvitationsListStates (..),
-  )
-where
+    , UserProfilesGuardianInvitationsListStates (..)
+    ) where
 
 import Gogol.Classroom.Courses.Aliases.Create
 import Gogol.Classroom.Courses.Aliases.Delete

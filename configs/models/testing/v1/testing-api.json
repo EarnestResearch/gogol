@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
           "description": "View your data across Google Cloud services and see the email address of your Google Account"
@@ -168,7 +164,7 @@
               ]
             },
             "create": {
-              "description": "Creates and runs a matrix of tests according to the given specifications. Unsupported environments will be returned in the state UNSUPPORTED. A test matrix is limited to use at most 2000 devices in parallel. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed or if the matrix tries to use too many simultaneous devices.",
+              "description": "Creates and runs a matrix of tests according to the given specifications. Unsupported environments will be returned in the state UNSUPPORTED. A test matrix is limited to use at most 2000 devices in parallel. The returned matrix will not yet contain the executions that will be created for this matrix. That happens later on and will require a call to GetTestMatrix. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to write to project - INVALID_ARGUMENT - if the request is malformed or if the matrix tries to use too many simultaneous devices.",
               "flatPath": "v1/projects/{projectId}/testMatrices",
               "httpMethod": "POST",
               "id": "testing.projects.testMatrices.create",
@@ -200,7 +196,7 @@
               ]
             },
             "get": {
-              "description": "Checks the status of a test matrix. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist",
+              "description": "Checks the status of a test matrix and the executions once they are created. The test matrix will contain the list of test executions to run if and only if the resultStorage.toolResultsExecution fields have been populated. Note: Flaky test executions may still be added to the matrix at a later stage. May return any of the following canonical error codes: - PERMISSION_DENIED - if the user is not authorized to read project - INVALID_ARGUMENT - if the request is malformed - NOT_FOUND - if the Test Matrix does not exist",
               "flatPath": "v1/projects/{projectId}/testMatrices/{testMatrixId}",
               "httpMethod": "GET",
               "id": "testing.projects.testMatrices.get",
@@ -286,11 +282,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-  "revision": "20210326",
-=======
-  "revision": "20230124",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
+  "revision": "20230519",
   "rootUrl": "https://testing.googleapis.com/",
   "schemas": {
     "Account": {
@@ -383,11 +375,7 @@
           "type": "string"
         },
         "orchestratorOption": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator.",
-=======
           "description": "The option of whether running each test within its own invocation of instrumentation with Android Test Orchestrator or not. ** Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher! ** Orchestrator offers the following benefits: - No shared state - Crashes are isolated - Logs are scoped per test See for more information about Android Test Orchestrator. If not set, the test will be run without the orchestrator.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "enum": [
             "ORCHESTRATOR_OPTION_UNSPECIFIED",
             "USE_ORCHESTRATOR",
@@ -395,11 +383,7 @@
           ],
           "enumDescriptions": [
             "Default value: the server will choose the mode. Currently implies that the test will run without the orchestrator. In the future, all instrumentation tests will be run with the orchestrator. Using the orchestrator is highly encouraged because of all the benefits it offers.",
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-            "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.0 or higher! ** Recommended.",
-=======
             "Run test using orchestrator. ** Only compatible with AndroidJUnitRunner version 1.1 or higher! ** Recommended.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
             "Run test without using orchestrator."
           ],
           "type": "string"
@@ -569,22 +553,14 @@
           "type": "array"
         },
         "thumbnailUrl": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "URL of a thumbnail image (photo) of the device. e.g. https://lh3.googleusercontent.com/90WcauuJiCYABEl8U0lcZeuS5STUbf2yW...",
-=======
           "description": "URL of a thumbnail image (photo) of the device.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "type": "string"
         }
       },
       "type": "object"
     },
     "AndroidRoboTest": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-      "description": "A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes. Next tag: 30",
-=======
       "description": "A test of an android application that explores the application on a virtual or physical Android Device, finding culprits and crashes as it goes.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
       "id": "AndroidRoboTest",
       "properties": {
         "appApk": {
@@ -802,13 +778,18 @@
           "description": "Full Java-style package name for this application, e.g. \"com.example.foo\".",
           "type": "string"
         },
+        "services": {
+          "description": "Services contained in the tag.",
+          "items": {
+            "$ref": "Service"
+          },
+          "type": "array"
+        },
         "targetSdkVersion": {
           "description": "Specifies the API Level on which the application is designed to run.",
           "format": "int32",
           "type": "integer"
         },
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-=======
         "usesFeature": {
           "description": "Feature usage tags defined in the manifest.",
           "items": {
@@ -816,15 +797,12 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
         "usesPermission": {
           "description": "Permissions declared to be used by the application",
           "items": {
             "type": "string"
           },
           "type": "array"
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-=======
         },
         "versionCode": {
           "description": "Version number used internally by the app.",
@@ -834,7 +812,6 @@
         "versionName": {
           "description": "Version number shown to users.",
           "type": "string"
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
         }
       },
       "type": "object"
@@ -921,11 +898,7 @@
       "type": "object"
     },
     "Date": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values * A month and day value, with a zero year, such as an anniversary * A year on its own, with zero month and day values * A year and month value, with a zero day, such as a credit card expiration date Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.",
-=======
       "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
       "id": "Date",
       "properties": {
         "day": {
@@ -1259,8 +1232,6 @@
           "description": "The human-readable name for this device model. Examples: \"iPhone 4s\", \"iPad Mini 2\".",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-=======
         "perVersionInfo": {
           "description": "Version-specific information of an iOS model.",
           "items": {
@@ -1268,7 +1239,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
         "screenDensity": {
           "description": "Screen density in DPI.",
           "format": "int32",
@@ -1361,11 +1331,7 @@
           "type": "string"
         },
         "pullDirectories": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (e.g. /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (e.g. /Documents) by specifying the bundle id.",
-=======
           "description": "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (such as /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (such as /Documents) by specifying the bundle ID.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "items": {
             "$ref": "IosDeviceFile"
           },
@@ -1480,11 +1446,7 @@
       "id": "ManualSharding",
       "properties": {
         "testTargetsForShard": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "Required. Group of packages, classes, and/or test methods to be run for each shard. When any physical devices are selected, the number of test_targets_for_shard must be \u003e= 1 and \u003c= 50. When no physical devices are selected, the number must be \u003e= 1 and \u003c= 500.",
-=======
           "description": "Required. Group of packages, classes, and/or test methods to be run for each manually-created shard. You must specify at least one shard if this field is present. When you select one or more physical devices, the number of repeated test_targets_for_shard must be \u003c= 50. When you select one or more ARM virtual devices, it must be \u003c= 100. When you select only x86 virtual devices, it must be \u003c= 500.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "items": {
             "$ref": "TestTargetsForShard"
           },
@@ -1493,8 +1455,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-=======
     "Metadata": {
       "description": "A tag within a manifest. https://developer.android.com/guide/topics/manifest/meta-data-element.html",
       "id": "Metadata",
@@ -1510,7 +1470,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
     "NetworkConfiguration": {
       "id": "NetworkConfiguration",
       "properties": {
@@ -1645,11 +1604,7 @@
           "type": "string"
         },
         "orchestratorVersion": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator.",
-=======
           "description": "Deprecated: Use AndroidX Test Orchestrator going forward. A string representing the current version of Android Test Orchestrator that is used in the environment. The package is available at https://maven.google.com/web/index.html#com.android.support.test:orchestrator.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "type": "string"
         }
       },
@@ -1744,27 +1699,50 @@
       },
       "type": "object"
     },
+    "Service": {
+      "description": "The section of an tag. https://developer.android.com/guide/topics/manifest/service-element",
+      "id": "Service",
+      "properties": {
+        "intentFilter": {
+          "description": "Intent filters in the service",
+          "items": {
+            "$ref": "IntentFilter"
+          },
+          "type": "array"
+        },
+        "name": {
+          "description": "The android:name value",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Shard": {
       "description": "Output only. Details about the shard.",
       "id": "Shard",
       "properties": {
+        "estimatedShardDuration": {
+          "description": "Output only. The estimated shard duration based on previous test case timing records, if available.",
+          "format": "google-duration",
+          "readOnly": true,
+          "type": "string"
+        },
         "numShards": {
           "description": "Output only. The total number of shards.",
           "format": "int32",
+          "readOnly": true,
           "type": "integer"
         },
         "shardIndex": {
           "description": "Output only. The index of the shard among all the shards.",
           "format": "int32",
+          "readOnly": true,
           "type": "integer"
         },
         "testTargetsForShard": {
           "$ref": "TestTargetsForShard",
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "Output only. Test targets for each shard."
-=======
-          "description": "Output only. Test targets for each shard. Only set for manual sharding."
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
+          "description": "Output only. Test targets for each shard. Only set for manual sharding.",
+          "readOnly": true
         }
       },
       "type": "object"
@@ -1777,9 +1755,25 @@
           "$ref": "ManualSharding",
           "description": "Shards test cases into the specified groups of packages, classes, and/or methods."
         },
+        "smartSharding": {
+          "$ref": "SmartSharding",
+          "description": "Shards test based on previous test case timing records."
+        },
         "uniformSharding": {
           "$ref": "UniformSharding",
           "description": "Uniformly shards test cases given a total number of shards."
+        }
+      },
+      "type": "object"
+    },
+    "SmartSharding": {
+      "description": "Shards test based on previous test case timing records.",
+      "id": "SmartSharding",
+      "properties": {
+        "targetedShardDuration": {
+          "description": "The amount of time tests within a shard should take. Default: 300 seconds (5 minutes). The minimum allowed: 120 seconds (2 minutes). The shard count is dynamically set based on time, up to the maximum shard limit (described below). To guarantee at least one test case for each shard, the number of shards will not exceed the number of test cases. Shard duration will be exceeded if: - The maximum shard limit is reached and there is more calculated test time remaining to allocate into shards. - Any individual test is estimated to be longer than the targeted shard duration. Shard duration is not guaranteed because smart sharding uses test case history and default durations which may not be accurate. The rules for finding the test case timing records are: - If the service has seen a test case in the last 30 days, the record of the latest successful one will be used. - For new test cases, the average duration of other known test cases will be used. - If there are no previous test case timing records available, the test case is considered to be 15 seconds long by default. Because the actual shard duration can exceed the targeted shard duration, we recommend setting the targeted value at least 5 minutes less than the maximum allowed test timeout (45 minutes for physical devices and 60 minutes for virtual), or using the custom test timeout value you set. This approach avoids cancelling the shard before all tests can finish. Note that there is a limit for maximum number of shards. When you select one or more physical devices, the number of shards must be \u003c= 50. When you select one or more ARM virtual devices, it must be \u003c= 100. When you select only x86 virtual devices, it must be \u003c= 500. To guarantee at least one test case for per shard, the number of shards will not exceed the number of test cases. Each shard created will count toward daily test quota.",
+          "format": "google-duration",
+          "type": "string"
         }
       },
       "type": "object"
@@ -2011,11 +2005,7 @@
             "The test package and app package are the same.",
             "The test apk does not declare an instrumentation.",
             "The input app apk does not have a signature.",
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-            "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.0 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption.",
-=======
             "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
             "The test APK does not contain the test runner class specified by user or in the manifest file. This can be caused by either of the following reasons: - the user provided a runner class name that's incorrect, or - the test runner isn't built into the test APK (might be in the app APK instead).",
             "A main launcher activity could not be found.",
             "The app declares one or more permissions that are not allowed.",
@@ -2039,33 +2029,11 @@
             "The iOS application bundle (.app) couldn't be processed.",
             "APK contains no code. See also https://developer.android.com/guide/topics/manifest/application-element.html#code",
             "Either the provided input APK path was malformed, the APK file does not exist, or the user does not have permission to access the APK file.",
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-            "APK is built for a preview SDK which is unsupported"
-=======
             "APK is built for a preview SDK which is unsupported",
             "The matrix expanded to contain too many executions.",
             "Not enough test quota to run the executions in this matrix.",
             "A required cloud service api is not activated. See: https://firebase.google.com/docs/test-lab/android/continuous#requirements",
             "There was an unknown permission issue running this test."
-          ],
-          "type": "string"
-        },
-        "outcomeSummary": {
-          "description": "Output Only. The overall outcome of the test. Only set when the test matrix state is FINISHED.",
-          "enum": [
-            "OUTCOME_SUMMARY_UNSPECIFIED",
-            "SUCCESS",
-            "FAILURE",
-            "INCONCLUSIVE",
-            "SKIPPED"
-          ],
-          "enumDescriptions": [
-            "Do not use. For proto versioning only.",
-            "The test matrix run was successful, for instance: - All the test cases passed. - Robo did not detect a crash of the application under test.",
-            "A run failed, for instance: - One or more test case failed. - A test timed out. - The application under test crashed.",
-            "Something unexpected happened. The run should still be considered unsuccessful but this is likely a transient problem and re-running the test might be successful.",
-            "All tests were skipped, for instance: - All device configurations were incompatible."
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           ],
           "type": "string"
         },
@@ -2194,11 +2162,7 @@
         },
         "systrace": {
           "$ref": "SystraceSetup",
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run."
-=======
-          "description": "Deprecated: Systrace uses Python 2 which has been sunset 2020-01-01. Support of Systrace may stop at any time, at which point no Systrace file will be provided in the results. Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run."
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
+          "description": "Systrace configuration for the run. Deprecated: Systrace used Python 2 which was sunsetted on 2020-01-01. Systrace is no longer supported in the Cloud Testing API, and no Systrace file will be provided in the results."
         }
       },
       "type": "object"
@@ -2256,11 +2220,7 @@
       "id": "TestTargetsForShard",
       "properties": {
         "testTargets": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-          "description": "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of shard_test_targets must be greater than 0.",
-=======
           "description": "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of test_targets must be greater than 0.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "items": {
             "type": "string"
           },
@@ -2359,27 +2319,17 @@
       "type": "object"
     },
     "UniformSharding": {
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-      "description": "Uniformly shards test cases given a total number of shards. For Instrumentation test, it will be translated to \"-e numShard\" \"-e shardIndex\" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying these sharding arguments via environment_variables is invalid.",
-      "id": "UniformSharding",
-      "properties": {
-        "numShards": {
-          "description": "Required. Total number of shards. When any physical devices are selected, the number must be \u003e= 1 and \u003c= 50. When no physical devices are selected, the number must be \u003e= 1 and \u003c= 500.",
-=======
       "description": "Uniformly shards test cases given a total number of shards. For instrumentation tests, it will be translated to \"-e numShard\" and \"-e shardIndex\" AndroidJUnitRunner arguments. With uniform sharding enabled, specifying either of these sharding arguments via `environment_variables` is invalid. Based on the sharding mechanism AndroidJUnitRunner uses, there is no guarantee that test cases will be distributed uniformly across all shards.",
       "id": "UniformSharding",
       "properties": {
         "numShards": {
           "description": "Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be \u003c= 50. When you select one or more ARM virtual devices, it must be \u003c= 100. When you select only x86 virtual devices, it must be \u003c= 500.",
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
           "format": "int32",
           "type": "integer"
         }
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/testing/v1/testing-api.json
-=======
     "UsesFeature": {
       "description": "A tag within a manifest. https://developer.android.com/guide/topics/manifest/uses-feature-element.html",
       "id": "UsesFeature",
@@ -2395,7 +2345,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/testing/v1/testing-api.json
     "XcodeVersion": {
       "description": "An Xcode version that an iOS version is compatible with.",
       "id": "XcodeVersion",

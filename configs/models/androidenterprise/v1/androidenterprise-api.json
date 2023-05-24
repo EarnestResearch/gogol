@@ -290,11 +290,7 @@
           ]
         },
         "update": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play.",
-=======
           "description": "Updates the device policy. To ensure the policy is properly enforced, you need to prevent unmanaged accounts from accessing Google Play by setting the allowed_accounts in the managed configuration for the Google Play package. See restrict accounts in Google Play. When provisioning a new device, you should set the device policy using this method before adding the managed Google Play Account to the device, otherwise the policy will not be applied for a short period of time after adding the account to the device.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/devices/{deviceId}",
           "httpMethod": "PUT",
           "id": "androidenterprise.devices.update",
@@ -618,11 +614,7 @@
           "parameterOrder": [],
           "parameters": {
             "requestMode": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-              "description": "The request mode for pulling notifications. Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time. Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present. If omitted, defaults to waitForNotifications.",
-=======
               "description": "The request mode for pulling notifications. Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time. Specifying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present. If omitted, defaults to waitForNotifications.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
               "enum": [
                 "waitForNotifications",
                 "returnImmediately"
@@ -747,11 +739,7 @@
     "entitlements": {
       "methods": {
         "delete": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Removes an entitlement to an app for a user.",
-=======
           "description": "Removes an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}",
           "httpMethod": "DELETE",
           "id": "androidenterprise.entitlements.delete",
@@ -786,11 +774,7 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Retrieves details of an entitlement.",
-=======
           "description": "Retrieves details of an entitlement. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}",
           "httpMethod": "GET",
           "id": "androidenterprise.entitlements.get",
@@ -828,11 +812,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Lists all entitlements for the specified user. Only the ID is set.",
-=======
           "description": "Lists all entitlements for the specified user. Only the ID is set. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/entitlements",
           "httpMethod": "GET",
           "id": "androidenterprise.entitlements.list",
@@ -863,11 +843,7 @@
           ]
         },
         "update": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Adds or updates an entitlement to an app for a user.",
-=======
           "description": "Adds or updates an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/entitlements/{entitlementId}",
           "httpMethod": "PUT",
           "id": "androidenterprise.entitlements.update",
@@ -917,11 +893,7 @@
     "grouplicenses": {
       "methods": {
         "get": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Retrieves details of an enterprise's group license for a product.",
-=======
           "description": "Retrieves details of an enterprise's group license for a product. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}",
           "httpMethod": "GET",
           "id": "androidenterprise.grouplicenses.get",
@@ -952,11 +924,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Retrieves IDs of all products for which the enterprise has a group license.",
-=======
           "description": "Retrieves IDs of all products for which the enterprise has a group license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/groupLicenses",
           "httpMethod": "GET",
           "id": "androidenterprise.grouplicenses.list",
@@ -984,11 +952,7 @@
     "grouplicenseusers": {
       "methods": {
         "list": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Retrieves the IDs of the users who have been granted entitlements under the license.",
-=======
           "description": "Retrieves the IDs of the users who have been granted entitlements under the license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/groupLicenses/{groupLicenseId}/users",
           "httpMethod": "GET",
           "id": "androidenterprise.grouplicenseusers.list",
@@ -1594,11 +1558,7 @@
     "products": {
       "methods": {
         "approve": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": " Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. ",
-=======
           "description": " Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/products/{productId}/approve",
           "httpMethod": "POST",
           "id": "androidenterprise.products.approve",
@@ -1629,11 +1589,7 @@
           ]
         },
         "generateApprovalUrl": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day.",
-=======
           "description": "Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/products/{productId}/generateApprovalUrl",
           "httpMethod": "POST",
           "id": "androidenterprise.products.generateApprovalUrl",
@@ -1772,11 +1728,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Finds approved products that match a query, or all approved products if there is no query.",
-=======
           "description": "Finds approved products that match a query, or all approved products if there is no query. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/products",
           "httpMethod": "GET",
           "id": "androidenterprise.products.list",
@@ -1826,11 +1778,7 @@
           ]
         },
         "unapprove": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Unapproves the specified product (and the relevant app permissions, if any)",
-=======
           "description": "Unapproves the specified product (and the relevant app permissions, if any) **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/products/{productId}/unapprove",
           "httpMethod": "POST",
           "id": "androidenterprise.products.unapprove",
@@ -2366,11 +2314,7 @@
           ]
         },
         "getAvailableProductSet": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Retrieves the set of products a user is entitled to access.",
-=======
           "description": "Retrieves the set of products a user is entitled to access. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/availableProductSet",
           "httpMethod": "GET",
           "id": "androidenterprise.users.getAvailableProductSet",
@@ -2487,11 +2431,7 @@
           ]
         },
         "setAvailableProductSet": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.",
-=======
           "description": "Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "flatPath": "androidenterprise/v1/enterprises/{enterpriseId}/users/{userId}/availableProductSet",
           "httpMethod": "PUT",
           "id": "androidenterprise.users.setAvailableProductSet",
@@ -2709,11 +2649,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-  "revision": "20201201",
-=======
-  "revision": "20230219",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
+  "revision": "20230515",
   "rootUrl": "https://androidenterprise.googleapis.com/",
   "schemas": {
     "Administrator": {
@@ -3221,8 +3157,6 @@
           "description": "The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, \"123456789abcdef0\".",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-=======
         "device": {
           "description": "The internal hardware codename of the device. This comes from android.os.Build.DEVICE. (field named \"device\" per logs/wireless/android/android_checkin.proto)",
           "type": "string"
@@ -3235,7 +3169,6 @@
           "description": "The manufacturer of the device. This comes from android.os.Build.MANUFACTURER.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
         "managementType": {
           "description": "Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations. Possible values include: - \"managedDevice\", a device that has the EMM's device policy controller (DPC) as the device owner. - \"managedProfile\", a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC. - \"containerApp\", no longer used (deprecated). - \"unmanagedProfile\", a device that has been allowed (by the domain's admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC. ",
           "enum": [
@@ -3250,24 +3183,16 @@
             "",
             ""
           ],
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-=======
           "type": "string"
         },
         "model": {
           "description": "The model name of the device. This comes from android.os.Build.MODEL.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "type": "string"
         },
         "policy": {
           "$ref": "Policy",
           "description": "The policy enforced on the device."
         },
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-        "report": {
-          "$ref": "DeviceReport",
-          "description": "The device report updated with the latest app states."
-=======
         "product": {
           "description": "The product name of the device. This comes from android.os.Build.PRODUCT.",
           "type": "string"
@@ -3284,7 +3209,6 @@
           "description": "API compatibility version.",
           "format": "int32",
           "type": "integer"
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
         }
       },
       "type": "object"
@@ -3397,8 +3321,6 @@
         "accountEmail": {
           "description": "The email address of the service account.",
           "type": "string"
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-=======
         }
       },
       "type": "object"
@@ -3410,7 +3332,6 @@
         "uri": {
           "description": "An authentication url.",
           "type": "string"
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
         }
       },
       "type": "object"
@@ -3476,8 +3397,6 @@
             "$ref": "Entitlement"
           },
           "type": "array"
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-=======
         }
       },
       "type": "object"
@@ -3513,7 +3432,6 @@
             "User is required to be successfully authenticated by Google."
           ],
           "type": "string"
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
         }
       },
       "type": "object"
@@ -4086,11 +4004,7 @@
       "id": "Policy",
       "properties": {
         "autoUpdatePolicy": {
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-          "description": "The auto-update policy for apps installed on the device. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi.",
-=======
           "description": "Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency. When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect. \"choiceToTheUser\" allows the device's user to configure the app update policy. \"always\" enables auto updates. \"never\" disables auto updates. \"wifiOnly\" enables auto updates only when the device is connected to wifi.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
           "enum": [
             "autoUpdatePolicyUnspecified",
             "choiceToTheUser",
@@ -4259,6 +4173,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "fullDescription": {
+          "description": "The localized full app store description, if available.",
+          "type": "string"
         },
         "iconUrl": {
           "description": "A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.",
@@ -4446,18 +4364,12 @@
           ],
           "enumDescriptions": [
             "Unspecified. Defaults to AUTO_UPDATE_DEFAULT.",
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-            "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to a Wi-Fi network. * The device is charging * If the system update policy is set to `WINDOWED`: the local time of the device is within the daily maintenance window The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met.",
-=======
             "The app is automatically updated with low priority to minimize the impact on the user. The app is updated when the following constraints are met: * The device is not actively used * The device is connected to an unmetered network * The device is charging The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met.",
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
             "The app is not automatically updated for a maximum of 90 days after the app becomes out of date. 90 days after the app becomes out of date, the latest available version is installed automatically with low priority (see AUTO_UPDATE_DEFAULT). After the app is updated it is not automatically updated again until 90 days after it becomes out of date again. The user can still manually update the app from the Play Store at any time.",
             "The app is updated as soon as possible. No constraints are applied. The device is notified immediately about a new app update after it is published by the developer."
           ],
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/androidenterprise/v1/androidenterprise-api.json
-=======
         "enterpriseAuthenticationAppLinkConfigs": {
           "description": "An authentication URL configuration for the authenticator app of an identity provider. This helps to launch the identity provider's authenticator app during the authentication happening in a private app using Android WebView. Authenticator app should already be the [default handler](https://developer.android.com/training/app-links/verify-site-associations) for the authentication url on the device.",
           "items": {
@@ -4465,7 +4377,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/androidenterprise/v1/androidenterprise-api.json
         "managedConfiguration": {
           "$ref": "ManagedConfiguration",
           "description": "The managed configuration for the product."

@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.DialogFlow.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3ContinuousTestResult_Result
     GoogleCloudDialogflowCxV3ContinuousTestResult_Result
-      ( GoogleCloudDialogflowCxV3ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
         GoogleCloudDialogflowCxV3ContinuousTestResult_Result_Passed,
         GoogleCloudDialogflowCxV3ContinuousTestResult_Result_Failed,
         ..
@@ -43,7 +49,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3Deployment_State
     GoogleCloudDialogflowCxV3Deployment_State
-      ( GoogleCloudDialogflowCxV3Deployment_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3Deployment_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3Deployment_State_Running,
         GoogleCloudDialogflowCxV3Deployment_State_Succeeded,
         GoogleCloudDialogflowCxV3Deployment_State_Failed,
@@ -52,7 +59,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType
     GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType
-      ( GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_RESPONSETYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_RESPONSETYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_Partial,
         GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_Final,
         ..
@@ -60,14 +68,16 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode
     GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode
-      ( GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
         GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3EntityType_Kind
     GoogleCloudDialogflowCxV3EntityType_Kind
-      ( GoogleCloudDialogflowCxV3EntityType_Kind_KINDUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3EntityType_Kind_KINDUNSPECIFIED,
         GoogleCloudDialogflowCxV3EntityType_Kind_KINDMAP,
         GoogleCloudDialogflowCxV3EntityType_Kind_KINDLIST,
         GoogleCloudDialogflowCxV3EntityType_Kind_KINDREGEXP,
@@ -76,7 +86,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3Experiment_State
     GoogleCloudDialogflowCxV3Experiment_State
-      ( GoogleCloudDialogflowCxV3Experiment_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3Experiment_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3Experiment_State_Draft,
         GoogleCloudDialogflowCxV3Experiment_State_Running,
         GoogleCloudDialogflowCxV3Experiment_State_Done,
@@ -86,7 +97,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType
     GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType
-      ( GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_COUNTTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_COUNTTYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_TOTALNOMATCHCOUNT,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_TOTALTURNCOUNT,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_AVERAGETURNCOUNT,
@@ -95,7 +107,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ExperimentResultMetric_Type
     GoogleCloudDialogflowCxV3ExperimentResultMetric_Type
-      ( GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_METRICUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_METRICUNSPECIFIED,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_CONTAINEDSESSIONNOCALLBACKRATE,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_LIVEAGENTHANDOFFRATE,
         GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_CALLBACKSESSIONRATE,
@@ -106,7 +119,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat
     GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat
-      ( GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_DATAFORMATUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_DATAFORMATUNSPECIFIED,
         GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_Blob,
         GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_JSONPACKAGE,
         ..
@@ -114,7 +128,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat
     GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat
-      ( GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_DATAFORMATUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_DATAFORMATUNSPECIFIED,
         GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_Blob,
         GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_Json,
         ..
@@ -122,7 +137,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State
     GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State
-      ( GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Pending,
         GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Running,
         GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Done,
@@ -131,7 +147,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption
     GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption
-      ( GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_IMPORTOPTIONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_IMPORTOPTIONUNSPECIFIED,
         GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_Keep,
         GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_Fallback,
         ..
@@ -139,7 +156,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding
     GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding
-      ( GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED,
         GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIO_ENCODING_LINEAR_16,
         GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGFLAC,
         GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGMULAW,
@@ -152,7 +170,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant
     GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant
-      ( GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED,
         GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USEBESTAVAILABLE,
         GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USESTANDARD,
         GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USEENHANCED,
@@ -161,7 +180,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3Match_MatchType
     GoogleCloudDialogflowCxV3Match_MatchType
-      ( GoogleCloudDialogflowCxV3Match_MatchType_MATCHTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3Match_MatchType_MATCHTYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3Match_MatchType_Intent,
         GoogleCloudDialogflowCxV3Match_MatchType_DIRECTINTENT,
         GoogleCloudDialogflowCxV3Match_MatchType_PARAMETERFILLING,
@@ -173,7 +193,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode
     GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode
-      ( GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEUNSPECIFIED,
         GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEAUTOMATIC,
         GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEMANUAL,
         ..
@@ -181,7 +202,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3NluSettings_ModelType
     GoogleCloudDialogflowCxV3NluSettings_ModelType
-      ( GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPESTANDARD,
         GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEADVANCED,
         ..
@@ -189,7 +211,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding
     GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding
-      ( GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGUNSPECIFIED,
         GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUT_AUDIO_ENCODING_LINEAR_16,
         GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUT_AUDIO_ENCODING_MP3,
         GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGMP364KBPS,
@@ -200,7 +223,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State
     GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State
-      ( GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Empty,
         GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Invalid,
         GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Filled,
@@ -209,7 +233,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption
     GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption
-      ( GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_RESTOREOPTIONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_RESTOREOPTIONUNSPECIFIED,
         GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_Keep,
         GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_Fallback,
         ..
@@ -217,28 +242,32 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem
     GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem
-      ( GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_PURGEDATATYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_PURGEDATATYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_DIALOGFLOWHISTORY,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope
     GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope
-      ( GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTIONSCOPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTIONSCOPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTDISKSTORAGE,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy
     GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy
-      ( GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTIONSTRATEGYUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTIONSTRATEGYUNSPECIFIED,
         GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTWITHSERVICE,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat
     GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat
-      ( GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_AUDIOFORMATUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_AUDIOFORMATUNSPECIFIED,
         GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_Mulaw,
         GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_MP3,
         GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_Ogg,
@@ -247,7 +276,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode
     GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode
-      ( GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
         GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
         GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
         ..
@@ -255,7 +285,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3TestCaseResult_TestResult
     GoogleCloudDialogflowCxV3TestCaseResult_TestResult
-      ( GoogleCloudDialogflowCxV3TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
         GoogleCloudDialogflowCxV3TestCaseResult_TestResult_Passed,
         GoogleCloudDialogflowCxV3TestCaseResult_TestResult_Failed,
         ..
@@ -263,17 +294,20 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3TestRunDifference_Type
     GoogleCloudDialogflowCxV3TestRunDifference_Type
-      ( GoogleCloudDialogflowCxV3TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3TestRunDifference_Type_Intent,
         GoogleCloudDialogflowCxV3TestRunDifference_Type_Page,
         GoogleCloudDialogflowCxV3TestRunDifference_Type_Parameters,
         GoogleCloudDialogflowCxV3TestRunDifference_Type_Utterance,
+        GoogleCloudDialogflowCxV3TestRunDifference_Type_Flow,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem
     GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem
-      ( GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
         GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILEDINTENT,
         GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
         ..
@@ -281,7 +315,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ValidationMessage_ResourceType
     GoogleCloudDialogflowCxV3ValidationMessage_ResourceType
-      ( GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_RESOURCETYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_RESOURCETYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_Agent,
         GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_Intent,
         GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_INTENTTRAININGPHRASE,
@@ -300,7 +335,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3ValidationMessage_Severity
     GoogleCloudDialogflowCxV3ValidationMessage_Severity
-      ( GoogleCloudDialogflowCxV3ValidationMessage_Severity_SEVERITYUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3ValidationMessage_Severity_SEVERITYUNSPECIFIED,
         GoogleCloudDialogflowCxV3ValidationMessage_Severity_Info,
         GoogleCloudDialogflowCxV3ValidationMessage_Severity_Warning,
         GoogleCloudDialogflowCxV3ValidationMessage_Severity_Error',
@@ -309,7 +345,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3Version_State
     GoogleCloudDialogflowCxV3Version_State
-      ( GoogleCloudDialogflowCxV3Version_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3Version_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3Version_State_Running,
         GoogleCloudDialogflowCxV3Version_State_Succeeded,
         GoogleCloudDialogflowCxV3Version_State_Failed,
@@ -318,16 +355,41 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender
     GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender
-      ( GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERUNSPECIFIED,
         GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERMALE,
         GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERFEMALE,
         GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERNEUTRAL,
         ..
       ),
 
+    -- * GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+    GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+      (
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED,
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Post',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Get',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Head',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Put',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Delete',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Patch',
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Options,
+        ..
+      ),
+
+    -- * GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType
+    GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType
+      (
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED,
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Standard,
+        GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Flexible,
+        ..
+      ),
+
     -- * GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior
     GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior
-      ( GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
         GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_Append,
         GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_Replace,
         ..
@@ -335,7 +397,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result
     GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result
-      ( GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_Passed,
         GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_Failed,
         ..
@@ -343,7 +406,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State
     GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State
-      ( GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Pending,
         GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Running,
         GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Done,
@@ -352,7 +416,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding
     GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding
-      ( GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIO_ENCODING_LINEAR_16,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGFLAC,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGMULAW,
@@ -365,7 +430,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant
     GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant
-      ( GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USEBESTAVAILABLE,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USESTANDARD,
         GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USEENHANCED,
@@ -374,7 +440,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State
     GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State
-      ( GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Empty,
         GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Invalid,
         GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Filled,
@@ -383,7 +450,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult
     GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult
-      ( GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_Passed,
         GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_Failed,
         ..
@@ -391,25 +459,52 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
     GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
-      ( GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Intent,
         GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Page,
         GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Parameters,
         GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Utterance,
+        GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Flow,
         ..
       ),
 
     -- * GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem
     GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem
-      ( GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILEDINTENT,
         GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
         ..
       ),
 
+    -- * GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+    GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+      (
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED,
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Post',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Get',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Head',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Put',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Delete',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Patch',
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Options,
+        ..
+      ),
+
+    -- * GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType
+    GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType
+      (
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED,
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Standard,
+        GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Flexible,
+        ..
+      ),
+
     -- * GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior
     GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior
-      ( GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
+      (
+        GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
         GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_Append,
         GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_Replace,
         ..
@@ -417,7 +512,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType
     GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType
-      ( GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
         GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_SMARTREPLYDUALENCODERMODEL,
         GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_SMARTREPLYBERTMODEL,
         ..
@@ -425,7 +521,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
     GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
-      ( GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
@@ -434,7 +531,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
     GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-      ( GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
         GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
@@ -443,7 +541,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2ConversationEvent_Type
     GoogleCloudDialogflowV2ConversationEvent_Type
-      ( GoogleCloudDialogflowV2ConversationEvent_Type_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2ConversationEvent_Type_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2ConversationEvent_Type_CONVERSATIONSTARTED,
         GoogleCloudDialogflowV2ConversationEvent_Type_CONVERSATIONFINISHED,
         GoogleCloudDialogflowV2ConversationEvent_Type_HUMANINTERVENTIONNEEDED,
@@ -454,7 +553,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2ConversationModel_State
     GoogleCloudDialogflowV2ConversationModel_State
-      ( GoogleCloudDialogflowV2ConversationModel_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2ConversationModel_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV2ConversationModel_State_Creating,
         GoogleCloudDialogflowV2ConversationModel_State_Undeployed,
         GoogleCloudDialogflowV2ConversationModel_State_Deploying,
@@ -468,7 +568,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State
     GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State
-      ( GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Initializing,
         GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Running,
         GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Cancelled,
@@ -479,7 +580,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State
     GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State
-      ( GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Pending,
         GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Succeeded,
         GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Failed,
@@ -491,14 +593,16 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2EntityType_AutoExpansionMode
     GoogleCloudDialogflowV2EntityType_AutoExpansionMode
-      ( GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
         GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
         ..
       ),
 
     -- * GoogleCloudDialogflowV2EntityType_Kind
     GoogleCloudDialogflowV2EntityType_Kind
-      ( GoogleCloudDialogflowV2EntityType_Kind_KINDUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2EntityType_Kind_KINDUNSPECIFIED,
         GoogleCloudDialogflowV2EntityType_Kind_KINDMAP,
         GoogleCloudDialogflowV2EntityType_Kind_KINDLIST,
         GoogleCloudDialogflowV2EntityType_Kind_KINDREGEXP,
@@ -507,7 +611,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem
     GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem
-      ( GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED,
         GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_Facebook,
         GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_Slack,
         GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_Telegram,
@@ -522,7 +627,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2Intent_WebhookState
     GoogleCloudDialogflowV2Intent_WebhookState
-      ( GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
         GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEENABLED,
         GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEENABLEDFORSLOTFILLING,
         ..
@@ -530,7 +636,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2IntentMessage_Platform
     GoogleCloudDialogflowV2IntentMessage_Platform
-      ( GoogleCloudDialogflowV2IntentMessage_Platform_PLATFORMUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentMessage_Platform_PLATFORMUNSPECIFIED,
         GoogleCloudDialogflowV2IntentMessage_Platform_Facebook,
         GoogleCloudDialogflowV2IntentMessage_Platform_Slack,
         GoogleCloudDialogflowV2IntentMessage_Platform_Telegram,
@@ -545,7 +652,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions
     GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions
-      ( GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED,
         GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_Gray,
         GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_White,
         GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_Cropped,
@@ -555,7 +663,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
     GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
-      ( GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
         GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPACTION,
         GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPCONTENT,
         ..
@@ -563,7 +672,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment
     GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment
-      ( GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED,
         GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Leading,
         GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Center,
         GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Trailing,
@@ -572,14 +682,16 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType
     GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType
-      ( GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
         GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_Audio,
         ..
       ),
 
     -- * GoogleCloudDialogflowV2IntentTrainingPhrase_Type
     GoogleCloudDialogflowV2IntentTrainingPhrase_Type
-      ( GoogleCloudDialogflowV2IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2IntentTrainingPhrase_Type_Example,
         GoogleCloudDialogflowV2IntentTrainingPhrase_Type_Template,
         ..
@@ -587,7 +699,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2KnowledgeOperationMetadata_State
     GoogleCloudDialogflowV2KnowledgeOperationMetadata_State
-      ( GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Pending,
         GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Running,
         GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Done,
@@ -596,7 +709,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2Message_ParticipantRole
     GoogleCloudDialogflowV2Message_ParticipantRole
-      ( GoogleCloudDialogflowV2Message_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2Message_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2Message_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2Message_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2Message_ParticipantRole_ENDUSER,
@@ -605,7 +719,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode
     GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode
-      ( GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
         GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
         GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
         ..
@@ -613,7 +728,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
     GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
-      ( GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
@@ -622,7 +738,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
     GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-      ( GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
         GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
@@ -631,7 +748,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType
     GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType
-      ( GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
         GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_SMARTREPLYDUALENCODERMODEL,
         GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_SMARTREPLYBERTMODEL,
         ..
@@ -639,7 +757,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
     GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
-      ( GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
@@ -648,17 +767,20 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
     GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-      ( GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
+        GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST,
         GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION,
         ..
       ),
 
     -- * GoogleCloudDialogflowV2beta1ConversationEvent_Type
     GoogleCloudDialogflowV2beta1ConversationEvent_Type
-      ( GoogleCloudDialogflowV2beta1ConversationEvent_Type_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1ConversationEvent_Type_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1ConversationEvent_Type_CONVERSATIONSTARTED,
         GoogleCloudDialogflowV2beta1ConversationEvent_Type_CONVERSATIONFINISHED,
         GoogleCloudDialogflowV2beta1ConversationEvent_Type_HUMANINTERVENTIONNEEDED,
@@ -669,14 +791,16 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode
     GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode
-      ( GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
         ..
       ),
 
     -- * GoogleCloudDialogflowV2beta1EntityType_Kind
     GoogleCloudDialogflowV2beta1EntityType_Kind
-      ( GoogleCloudDialogflowV2beta1EntityType_Kind_KINDUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1EntityType_Kind_KINDUNSPECIFIED,
         GoogleCloudDialogflowV2beta1EntityType_Kind_KINDMAP,
         GoogleCloudDialogflowV2beta1EntityType_Kind_KINDLIST,
         GoogleCloudDialogflowV2beta1EntityType_Kind_KINDREGEXP,
@@ -685,7 +809,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem
     GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem
-      ( GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED,
         GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_Facebook,
         GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_Slack,
         GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_Telegram,
@@ -701,7 +826,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1Intent_WebhookState
     GoogleCloudDialogflowV2beta1Intent_WebhookState
-      ( GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEENABLED,
         GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEENABLEDFORSLOTFILLING,
         ..
@@ -709,7 +835,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessage_Platform
     GoogleCloudDialogflowV2beta1IntentMessage_Platform
-      ( GoogleCloudDialogflowV2beta1IntentMessage_Platform_PLATFORMUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessage_Platform_PLATFORMUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessage_Platform_Facebook,
         GoogleCloudDialogflowV2beta1IntentMessage_Platform_Slack,
         GoogleCloudDialogflowV2beta1IntentMessage_Platform_Telegram,
@@ -725,7 +852,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions
     GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions
-      ( GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_Gray,
         GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_White,
         GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_Cropped,
@@ -735,7 +863,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
     GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
-      ( GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPACTION,
         GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPCONTENT,
         ..
@@ -743,7 +872,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment
     GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment
-      ( GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Leading,
         GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Center,
         GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Trailing,
@@ -752,14 +882,16 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType
     GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType
-      ( GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_Audio,
         ..
       ),
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height
     GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height
-      ( GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_HEIGHTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_HEIGHTUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Short,
         GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Medium,
         GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Tall,
@@ -768,7 +900,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth
     GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth
-      ( GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_CARDWIDTHUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_CARDWIDTHUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_Small,
         GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_Medium,
         ..
@@ -776,7 +909,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation
     GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation
-      ( GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_CARDORIENTATIONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_CARDORIENTATIONUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_Horizontal,
         GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_Vertical,
         ..
@@ -784,7 +918,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment
     GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment
-      ( GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_THUMBNAILIMAGEALIGNMENTUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_THUMBNAILIMAGEALIGNMENTUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_Left',
         GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_Right',
         ..
@@ -792,7 +927,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type
     GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type
-      ( GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_Example,
         GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_Template,
         ..
@@ -800,7 +936,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel
     GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel
-      ( GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_MATCHCONFIDENCELEVELUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_MATCHCONFIDENCELEVELUNSPECIFIED,
         GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_Low,
         GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_Medium,
         GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_High,
@@ -809,7 +946,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State
     GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State
-      ( GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Pending,
         GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Running,
         GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Done,
@@ -818,7 +956,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1Message_ParticipantRole
     GoogleCloudDialogflowV2beta1Message_ParticipantRole
-      ( GoogleCloudDialogflowV2beta1Message_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1Message_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1Message_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2beta1Message_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2beta1Message_ParticipantRole_ENDUSER,
@@ -827,7 +966,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode
     GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode
-      ( GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
         GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
         ..
@@ -835,7 +975,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
     GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
-      ( GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
@@ -844,17 +985,20 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
     GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-      ( GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
+        GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST,
         GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION,
         ..
       ),
 
     -- * GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State
     GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State
-      ( GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED,
         GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Pending,
         GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Running,
         GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Done,
@@ -863,7 +1007,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem
     GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem
-      ( GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
+      (
+        GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
         GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILEDINTENT,
         GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
         ..
@@ -871,7 +1016,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * ProjectsLocationsAgentsIntentsListIntentView
     ProjectsLocationsAgentsIntentsListIntentView
-      ( ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWUNSPECIFIED,
+      (
+        ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWUNSPECIFIED,
         ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWPARTIAL,
         ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWFULL,
         ..
@@ -879,7 +1025,8 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * ProjectsLocationsAgentsTestCasesCalculateCoverageType
     ProjectsLocationsAgentsTestCasesCalculateCoverageType
-      ( ProjectsLocationsAgentsTestCasesCalculateCoverageType_COVERAGETYPEUNSPECIFIED,
+      (
+        ProjectsLocationsAgentsTestCasesCalculateCoverageType_COVERAGETYPEUNSPECIFIED,
         ProjectsLocationsAgentsTestCasesCalculateCoverageType_Intent,
         ProjectsLocationsAgentsTestCasesCalculateCoverageType_PAGETRANSITION,
         ProjectsLocationsAgentsTestCasesCalculateCoverageType_TRANSITIONROUTEGROUP,
@@ -888,28 +1035,28 @@ module Gogol.DialogFlow.Internal.Sum
 
     -- * ProjectsLocationsAgentsTestCasesListView
     ProjectsLocationsAgentsTestCasesListView
-      ( ProjectsLocationsAgentsTestCasesListView_TESTCASEVIEWUNSPECIFIED,
+      (
+        ProjectsLocationsAgentsTestCasesListView_TESTCASEVIEWUNSPECIFIED,
         ProjectsLocationsAgentsTestCasesListView_Basic,
         ProjectsLocationsAgentsTestCasesListView_Full,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -922,21 +1069,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The result of this continuous test run, i.e. whether all the tests in this continuous test run pass or not.
-newtype GoogleCloudDialogflowCxV3ContinuousTestResult_Result = GoogleCloudDialogflowCxV3ContinuousTestResult_Result {fromGoogleCloudDialogflowCxV3ContinuousTestResult_Result :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ContinuousTestResult_Result = GoogleCloudDialogflowCxV3ContinuousTestResult_Result { fromGoogleCloudDialogflowCxV3ContinuousTestResult_Result :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Should never be used.
 pattern GoogleCloudDialogflowCxV3ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED :: GoogleCloudDialogflowCxV3ContinuousTestResult_Result
@@ -954,21 +1100,20 @@ pattern GoogleCloudDialogflowCxV3ContinuousTestResult_Result_Failed = GoogleClou
   GoogleCloudDialogflowCxV3ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
   GoogleCloudDialogflowCxV3ContinuousTestResult_Result_Passed,
   GoogleCloudDialogflowCxV3ContinuousTestResult_Result_Failed,
-  GoogleCloudDialogflowCxV3ContinuousTestResult_Result
-  #-}
+  GoogleCloudDialogflowCxV3ContinuousTestResult_Result #-}
 
 -- | The current state of the deployment.
-newtype GoogleCloudDialogflowCxV3Deployment_State = GoogleCloudDialogflowCxV3Deployment_State {fromGoogleCloudDialogflowCxV3Deployment_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3Deployment_State = GoogleCloudDialogflowCxV3Deployment_State { fromGoogleCloudDialogflowCxV3Deployment_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowCxV3Deployment_State_STATEUNSPECIFIED :: GoogleCloudDialogflowCxV3Deployment_State
@@ -991,21 +1136,20 @@ pattern GoogleCloudDialogflowCxV3Deployment_State_Failed = GoogleCloudDialogflow
   GoogleCloudDialogflowCxV3Deployment_State_Running,
   GoogleCloudDialogflowCxV3Deployment_State_Succeeded,
   GoogleCloudDialogflowCxV3Deployment_State_Failed,
-  GoogleCloudDialogflowCxV3Deployment_State
-  #-}
+  GoogleCloudDialogflowCxV3Deployment_State #-}
 
 -- | Response type.
-newtype GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType = GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType {fromGoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType = GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType { fromGoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This should never happen.
 pattern GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_RESPONSETYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType
@@ -1023,21 +1167,20 @@ pattern GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_Final = Googl
   GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_RESPONSETYPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_Partial,
   GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType_Final,
-  GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType
-  #-}
+  GoogleCloudDialogflowCxV3DetectIntentResponse_ResponseType #-}
 
 -- | Indicates whether the entity type can be automatically expanded.
-newtype GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode = GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode {fromGoogleCloudDialogflowCxV3EntityType_AutoExpansionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode = GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode { fromGoogleCloudDialogflowCxV3EntityType_AutoExpansionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Auto expansion disabled for the entity.
 pattern GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED :: GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode
@@ -1050,21 +1193,20 @@ pattern GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODED
 {-# COMPLETE
   GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
   GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
-  GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode
-  #-}
+  GoogleCloudDialogflowCxV3EntityType_AutoExpansionMode #-}
 
 -- | Required. Indicates the kind of entity type.
-newtype GoogleCloudDialogflowCxV3EntityType_Kind = GoogleCloudDialogflowCxV3EntityType_Kind {fromGoogleCloudDialogflowCxV3EntityType_Kind :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3EntityType_Kind = GoogleCloudDialogflowCxV3EntityType_Kind { fromGoogleCloudDialogflowCxV3EntityType_Kind :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowCxV3EntityType_Kind_KINDUNSPECIFIED :: GoogleCloudDialogflowCxV3EntityType_Kind
@@ -1087,21 +1229,20 @@ pattern GoogleCloudDialogflowCxV3EntityType_Kind_KINDREGEXP = GoogleCloudDialogf
   GoogleCloudDialogflowCxV3EntityType_Kind_KINDMAP,
   GoogleCloudDialogflowCxV3EntityType_Kind_KINDLIST,
   GoogleCloudDialogflowCxV3EntityType_Kind_KINDREGEXP,
-  GoogleCloudDialogflowCxV3EntityType_Kind
-  #-}
+  GoogleCloudDialogflowCxV3EntityType_Kind #-}
 
 -- | The current state of the experiment. Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING. Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or RUNNING->DONE.
-newtype GoogleCloudDialogflowCxV3Experiment_State = GoogleCloudDialogflowCxV3Experiment_State {fromGoogleCloudDialogflowCxV3Experiment_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3Experiment_State = GoogleCloudDialogflowCxV3Experiment_State { fromGoogleCloudDialogflowCxV3Experiment_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowCxV3Experiment_State_STATEUNSPECIFIED :: GoogleCloudDialogflowCxV3Experiment_State
@@ -1129,21 +1270,20 @@ pattern GoogleCloudDialogflowCxV3Experiment_State_ROLLOUTFAILED = GoogleCloudDia
   GoogleCloudDialogflowCxV3Experiment_State_Running,
   GoogleCloudDialogflowCxV3Experiment_State_Done,
   GoogleCloudDialogflowCxV3Experiment_State_ROLLOUTFAILED,
-  GoogleCloudDialogflowCxV3Experiment_State
-  #-}
+  GoogleCloudDialogflowCxV3Experiment_State #-}
 
 -- | Count-based metric type. Only one of type or count_type is specified in each Metric.
-newtype GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType = GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType {fromGoogleCloudDialogflowCxV3ExperimentResultMetric_CountType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType = GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType { fromGoogleCloudDialogflowCxV3ExperimentResultMetric_CountType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Count type unspecified.
 pattern GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_COUNTTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType
@@ -1166,21 +1306,20 @@ pattern GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_AVERAGETURNCOU
   GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_TOTALNOMATCHCOUNT,
   GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_TOTALTURNCOUNT,
   GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType_AVERAGETURNCOUNT,
-  GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType
-  #-}
+  GoogleCloudDialogflowCxV3ExperimentResultMetric_CountType #-}
 
 -- | Ratio-based metric type. Only one of type or count_type is specified in each Metric.
-newtype GoogleCloudDialogflowCxV3ExperimentResultMetric_Type = GoogleCloudDialogflowCxV3ExperimentResultMetric_Type {fromGoogleCloudDialogflowCxV3ExperimentResultMetric_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ExperimentResultMetric_Type = GoogleCloudDialogflowCxV3ExperimentResultMetric_Type { fromGoogleCloudDialogflowCxV3ExperimentResultMetric_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Metric unspecified.
 pattern GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_METRICUNSPECIFIED :: GoogleCloudDialogflowCxV3ExperimentResultMetric_Type
@@ -1213,21 +1352,20 @@ pattern GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_SESSIONENDRATE = Go
   GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_CALLBACKSESSIONRATE,
   GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_ABANDONEDSESSIONRATE,
   GoogleCloudDialogflowCxV3ExperimentResultMetric_Type_SESSIONENDRATE,
-  GoogleCloudDialogflowCxV3ExperimentResultMetric_Type
-  #-}
+  GoogleCloudDialogflowCxV3ExperimentResultMetric_Type #-}
 
 -- | Optional. The data format of the exported agent. If not specified, @BLOB@ is assumed.
-newtype GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat = GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat {fromGoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat = GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat { fromGoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified format.
 pattern GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_DATAFORMATUNSPECIFIED :: GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat
@@ -1245,21 +1383,20 @@ pattern GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_JSONPACKAGE = Goo
   GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_DATAFORMATUNSPECIFIED,
   GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_Blob,
   GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat_JSONPACKAGE,
-  GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat
-  #-}
+  GoogleCloudDialogflowCxV3ExportAgentRequest_DataFormat #-}
 
 -- | The data format of the exported test cases. If not specified, @BLOB@ is assumed.
-newtype GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat = GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat {fromGoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat = GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat { fromGoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified format.
 pattern GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_DATAFORMATUNSPECIFIED :: GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat
@@ -1277,21 +1414,20 @@ pattern GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_Json = Google
   GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_DATAFORMATUNSPECIFIED,
   GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_Blob,
   GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat_Json,
-  GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat
-  #-}
+  GoogleCloudDialogflowCxV3ExportTestCasesRequest_DataFormat #-}
 
 -- | Required. Output only. The current state of this operation.
-newtype GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State {fromGoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State { fromGoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State
@@ -1314,21 +1450,20 @@ pattern GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Done = 
   GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Pending,
   GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Running,
   GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State_Done,
-  GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowCxV3GenericKnowledgeOperationMetadata_State #-}
 
 -- | Flow import mode. If not specified, @KEEP@ is assumed.
-newtype GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption = GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption {fromGoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption = GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption { fromGoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Treated as @KEEP@.
 pattern GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_IMPORTOPTIONUNSPECIFIED :: GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption
@@ -1346,21 +1481,20 @@ pattern GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_Fallback = Googl
   GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_IMPORTOPTIONUNSPECIFIED,
   GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_Keep,
   GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption_Fallback,
-  GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption
-  #-}
+  GoogleCloudDialogflowCxV3ImportFlowRequest_ImportOption #-}
 
 -- | Required. Audio encoding of the audio content to process.
-newtype GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding {fromGoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding { fromGoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED :: GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding
@@ -1403,21 +1537,20 @@ pattern GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGSPE
   GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGAMRWB,
   GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGOGGOPUS,
   GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding_AUDIOENCODINGSPEEXWITHHEADERBYTE,
-  GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding
-  #-}
+  GoogleCloudDialogflowCxV3InputAudioConfig_AudioEncoding #-}
 
 -- | Optional. Which variant of the Speech model to use.
-newtype GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant = GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant {fromGoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant = GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant { fromGoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No model variant specified. In this case Dialogflow defaults to USE/BEST/AVAILABLE.
 pattern GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED :: GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant
@@ -1440,21 +1573,20 @@ pattern GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USEENHANCED = Goo
   GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USEBESTAVAILABLE,
   GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USESTANDARD,
   GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant_USEENHANCED,
-  GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant
-  #-}
+  GoogleCloudDialogflowCxV3InputAudioConfig_ModelVariant #-}
 
 -- | Type of this Match.
-newtype GoogleCloudDialogflowCxV3Match_MatchType = GoogleCloudDialogflowCxV3Match_MatchType {fromGoogleCloudDialogflowCxV3Match_MatchType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3Match_MatchType = GoogleCloudDialogflowCxV3Match_MatchType { fromGoogleCloudDialogflowCxV3Match_MatchType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Should never be used.
 pattern GoogleCloudDialogflowCxV3Match_MatchType_MATCHTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3Match_MatchType
@@ -1492,21 +1624,20 @@ pattern GoogleCloudDialogflowCxV3Match_MatchType_Event = GoogleCloudDialogflowCx
   GoogleCloudDialogflowCxV3Match_MatchType_NOMATCH,
   GoogleCloudDialogflowCxV3Match_MatchType_NOINPUT,
   GoogleCloudDialogflowCxV3Match_MatchType_Event,
-  GoogleCloudDialogflowCxV3Match_MatchType
-  #-}
+  GoogleCloudDialogflowCxV3Match_MatchType #-}
 
 -- | Indicates NLU model training mode.
-newtype GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode = GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode {fromGoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode = GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode { fromGoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. @MODEL_TRAINING_MODE_AUTOMATIC@ will be used.
 pattern GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEUNSPECIFIED :: GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode
@@ -1524,21 +1655,20 @@ pattern GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODE
   GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEUNSPECIFIED,
   GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEAUTOMATIC,
   GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode_MODELTRAININGMODEMANUAL,
-  GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode
-  #-}
+  GoogleCloudDialogflowCxV3NluSettings_ModelTrainingMode #-}
 
 -- | Indicates the type of NLU model.
-newtype GoogleCloudDialogflowCxV3NluSettings_ModelType = GoogleCloudDialogflowCxV3NluSettings_ModelType {fromGoogleCloudDialogflowCxV3NluSettings_ModelType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3NluSettings_ModelType = GoogleCloudDialogflowCxV3NluSettings_ModelType { fromGoogleCloudDialogflowCxV3NluSettings_ModelType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. @MODEL_TYPE_STANDARD@ will be used.
 pattern GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3NluSettings_ModelType
@@ -1556,21 +1686,20 @@ pattern GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEADVANCED = Googl
   GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPESTANDARD,
   GoogleCloudDialogflowCxV3NluSettings_ModelType_MODELTYPEADVANCED,
-  GoogleCloudDialogflowCxV3NluSettings_ModelType
-  #-}
+  GoogleCloudDialogflowCxV3NluSettings_ModelType #-}
 
 -- | Required. Audio encoding of the synthesized audio content.
-newtype GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding {fromGoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding { fromGoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGUNSPECIFIED :: GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding
@@ -1603,21 +1732,20 @@ pattern GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCO
   GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGMP364KBPS,
   GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGOGGOPUS,
   GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding_OUTPUTAUDIOENCODINGMULAW,
-  GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding
-  #-}
+  GoogleCloudDialogflowCxV3OutputAudioConfig_AudioEncoding #-}
 
 -- | Always present for WebhookRequest. Required for WebhookResponse. The state of the parameter. This field can be set to INVALID by the webhook to invalidate the parameter; other values set by the webhook will be ignored.
-newtype GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State = GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State {fromGoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State = GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State { fromGoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED :: GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State
@@ -1640,21 +1768,20 @@ pattern GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Filled = Go
   GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Empty,
   GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Invalid,
   GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State_Filled,
-  GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State
-  #-}
+  GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo_State #-}
 
 -- | Agent restore mode. If not specified, @KEEP@ is assumed.
-newtype GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption = GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption {fromGoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption = GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption { fromGoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Treated as KEEP.
 pattern GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_RESTOREOPTIONUNSPECIFIED :: GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption
@@ -1672,20 +1799,19 @@ pattern GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_Fallback = Go
   GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_RESTOREOPTIONUNSPECIFIED,
   GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_Keep,
   GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption_Fallback,
-  GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption
-  #-}
+  GoogleCloudDialogflowCxV3RestoreAgentRequest_RestoreOption #-}
 
-newtype GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem = GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem {fromGoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem = GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem { fromGoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Do not use.
 pattern GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_PURGEDATATYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem
@@ -1698,21 +1824,20 @@ pattern GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_DIALOGFLOWH
 {-# COMPLETE
   GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_PURGEDATATYPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem_DIALOGFLOWHISTORY,
-  GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem
-  #-}
+  GoogleCloudDialogflowCxV3SecuritySettings_PurgeDataTypesItem #-}
 
 -- | Defines the data for which Dialogflow applies redaction. Dialogflow does not redact data that it does not have access to – for example, Cloud logging.
-newtype GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope = GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope {fromGoogleCloudDialogflowCxV3SecuritySettings_RedactionScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope = GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope { fromGoogleCloudDialogflowCxV3SecuritySettings_RedactionScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Don\'t redact any kind of data.
 pattern GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTIONSCOPEUNSPECIFIED :: GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope
@@ -1725,21 +1850,20 @@ pattern GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTDISKSTORA
 {-# COMPLETE
   GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTIONSCOPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope_REDACTDISKSTORAGE,
-  GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope
-  #-}
+  GoogleCloudDialogflowCxV3SecuritySettings_RedactionScope #-}
 
 -- | Strategy that defines how we do redaction.
-newtype GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy = GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy {fromGoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy = GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy { fromGoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not redact.
 pattern GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTIONSTRATEGYUNSPECIFIED :: GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy
@@ -1752,21 +1876,20 @@ pattern GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTWITHSE
 {-# COMPLETE
   GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTIONSTRATEGYUNSPECIFIED,
   GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy_REDACTWITHSERVICE,
-  GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy
-  #-}
+  GoogleCloudDialogflowCxV3SecuritySettings_RedactionStrategy #-}
 
 -- | File format for exported audio file. Currently only in telephony recordings.
-newtype GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat = GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat {fromGoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat = GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat { fromGoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Do not use.
 pattern GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_AUDIOFORMATUNSPECIFIED :: GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat
@@ -1789,21 +1912,20 @@ pattern GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat
   GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_Mulaw,
   GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_MP3,
   GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat_Ogg,
-  GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat
-  #-}
+  GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings_AudioFormat #-}
 
 -- | Required. Indicates whether the additional data should override or supplement the custom entity type definition.
-newtype GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode {fromGoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode { fromGoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED :: GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode
@@ -1821,21 +1943,20 @@ pattern GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVER
   GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
   GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
   GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
-  GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode
-  #-}
+  GoogleCloudDialogflowCxV3SessionEntityType_EntityOverrideMode #-}
 
 -- | Whether the test case passed in the agent environment.
-newtype GoogleCloudDialogflowCxV3TestCaseResult_TestResult = GoogleCloudDialogflowCxV3TestCaseResult_TestResult {fromGoogleCloudDialogflowCxV3TestCaseResult_TestResult :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3TestCaseResult_TestResult = GoogleCloudDialogflowCxV3TestCaseResult_TestResult { fromGoogleCloudDialogflowCxV3TestCaseResult_TestResult :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Should never be used.
 pattern GoogleCloudDialogflowCxV3TestCaseResult_TestResult_TESTRESULTUNSPECIFIED :: GoogleCloudDialogflowCxV3TestCaseResult_TestResult
@@ -1853,21 +1974,20 @@ pattern GoogleCloudDialogflowCxV3TestCaseResult_TestResult_Failed = GoogleCloudD
   GoogleCloudDialogflowCxV3TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
   GoogleCloudDialogflowCxV3TestCaseResult_TestResult_Passed,
   GoogleCloudDialogflowCxV3TestCaseResult_TestResult_Failed,
-  GoogleCloudDialogflowCxV3TestCaseResult_TestResult
-  #-}
+  GoogleCloudDialogflowCxV3TestCaseResult_TestResult #-}
 
 -- | The type of diff.
-newtype GoogleCloudDialogflowCxV3TestRunDifference_Type = GoogleCloudDialogflowCxV3TestRunDifference_Type {fromGoogleCloudDialogflowCxV3TestRunDifference_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3TestRunDifference_Type = GoogleCloudDialogflowCxV3TestRunDifference_Type { fromGoogleCloudDialogflowCxV3TestRunDifference_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should never be used.
 pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_DIFFTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3TestRunDifference_Type
@@ -1889,26 +2009,30 @@ pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_Parameters = GoogleCloud
 pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_Utterance :: GoogleCloudDialogflowCxV3TestRunDifference_Type
 pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_Utterance = GoogleCloudDialogflowCxV3TestRunDifference_Type "UTTERANCE"
 
+-- | The flow.
+pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_Flow :: GoogleCloudDialogflowCxV3TestRunDifference_Type
+pattern GoogleCloudDialogflowCxV3TestRunDifference_Type_Flow = GoogleCloudDialogflowCxV3TestRunDifference_Type "FLOW"
+
 {-# COMPLETE
   GoogleCloudDialogflowCxV3TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3TestRunDifference_Type_Intent,
   GoogleCloudDialogflowCxV3TestRunDifference_Type_Page,
   GoogleCloudDialogflowCxV3TestRunDifference_Type_Parameters,
   GoogleCloudDialogflowCxV3TestRunDifference_Type_Utterance,
-  GoogleCloudDialogflowCxV3TestRunDifference_Type
-  #-}
+  GoogleCloudDialogflowCxV3TestRunDifference_Type_Flow,
+  GoogleCloudDialogflowCxV3TestRunDifference_Type #-}
 
-newtype GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem = GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem {fromGoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem = GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem { fromGoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Failure reason is not assigned.
 pattern GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED :: GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem
@@ -1926,21 +2050,20 @@ pattern GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILEDWEBHOOK = 
   GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
   GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILEDINTENT,
   GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
-  GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem
-  #-}
+  GoogleCloudDialogflowCxV3TurnSignals_FailureReasonsItem #-}
 
 -- | The type of the resources where the message is found.
-newtype GoogleCloudDialogflowCxV3ValidationMessage_ResourceType = GoogleCloudDialogflowCxV3ValidationMessage_ResourceType {fromGoogleCloudDialogflowCxV3ValidationMessage_ResourceType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ValidationMessage_ResourceType = GoogleCloudDialogflowCxV3ValidationMessage_ResourceType { fromGoogleCloudDialogflowCxV3ValidationMessage_ResourceType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_RESOURCETYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3ValidationMessage_ResourceType
@@ -2013,21 +2136,20 @@ pattern GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_TRANSITIONROUTEG
   GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_Page,
   GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_Pages,
   GoogleCloudDialogflowCxV3ValidationMessage_ResourceType_TRANSITIONROUTEGROUP,
-  GoogleCloudDialogflowCxV3ValidationMessage_ResourceType
-  #-}
+  GoogleCloudDialogflowCxV3ValidationMessage_ResourceType #-}
 
 -- | Indicates the severity of the message.
-newtype GoogleCloudDialogflowCxV3ValidationMessage_Severity = GoogleCloudDialogflowCxV3ValidationMessage_Severity {fromGoogleCloudDialogflowCxV3ValidationMessage_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3ValidationMessage_Severity = GoogleCloudDialogflowCxV3ValidationMessage_Severity { fromGoogleCloudDialogflowCxV3ValidationMessage_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudDialogflowCxV3ValidationMessage_Severity_SEVERITYUNSPECIFIED :: GoogleCloudDialogflowCxV3ValidationMessage_Severity
@@ -2050,21 +2172,20 @@ pattern GoogleCloudDialogflowCxV3ValidationMessage_Severity_Error' = GoogleCloud
   GoogleCloudDialogflowCxV3ValidationMessage_Severity_Info,
   GoogleCloudDialogflowCxV3ValidationMessage_Severity_Warning,
   GoogleCloudDialogflowCxV3ValidationMessage_Severity_Error',
-  GoogleCloudDialogflowCxV3ValidationMessage_Severity
-  #-}
+  GoogleCloudDialogflowCxV3ValidationMessage_Severity #-}
 
 -- | Output only. The state of this version. This field is read-only and cannot be set by create and update methods.
-newtype GoogleCloudDialogflowCxV3Version_State = GoogleCloudDialogflowCxV3Version_State {fromGoogleCloudDialogflowCxV3Version_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3Version_State = GoogleCloudDialogflowCxV3Version_State { fromGoogleCloudDialogflowCxV3Version_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value is not used.
 pattern GoogleCloudDialogflowCxV3Version_State_STATEUNSPECIFIED :: GoogleCloudDialogflowCxV3Version_State
@@ -2087,21 +2208,20 @@ pattern GoogleCloudDialogflowCxV3Version_State_Failed = GoogleCloudDialogflowCxV
   GoogleCloudDialogflowCxV3Version_State_Running,
   GoogleCloudDialogflowCxV3Version_State_Succeeded,
   GoogleCloudDialogflowCxV3Version_State_Failed,
-  GoogleCloudDialogflowCxV3Version_State
-  #-}
+  GoogleCloudDialogflowCxV3Version_State #-}
 
 -- | Optional. The preferred gender of the voice. If not set, the service will choose a voice based on the other parameters such as language_code and name. Note that this is only a preference, not requirement. If a voice of the appropriate gender is not available, the synthesizer substitutes a voice with a different gender rather than failing the request.
-newtype GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender = GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender {fromGoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender = GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender { fromGoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | An unspecified gender, which means that the client doesn\'t care which gender the selected voice will have.
 pattern GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERUNSPECIFIED :: GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender
@@ -2124,21 +2244,107 @@ pattern GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDER
   GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERMALE,
   GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERFEMALE,
   GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender_SSMLVOICEGENDERNEUTRAL,
-  GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender
-  #-}
+  GoogleCloudDialogflowCxV3VoiceSelectionParams_SsmlGender #-}
+
+-- | Optional. HTTP method for the flexible webhook calls. Standard webhook always uses POST.
+newtype GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod { fromGoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | HTTP method not specified.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "HTTP_METHOD_UNSPECIFIED"
+
+-- | HTTP POST Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Post' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Post' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "POST"
+
+-- | HTTP GET Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Get' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Get' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "GET"
+
+-- | HTTP HEAD Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Head' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Head' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "HEAD"
+
+-- | HTTP PUT Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Put' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Put' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "PUT"
+
+-- | HTTP DELETE Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Delete' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Delete' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "DELETE"
+
+-- | HTTP PATCH Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Patch' :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Patch' = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "PATCH"
+
+-- | HTTP OPTIONS Method.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Options :: GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Options = GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod "OPTIONS"
+
+{-# COMPLETE
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED,
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Post',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Get',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Head',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Put',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Delete',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Patch',
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod_Options,
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_HttpMethod #-}
+
+-- | Optional. Type of the webhook.
+newtype GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType = GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType { fromGoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value. This value is unused.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED = GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType "WEBHOOK_TYPE_UNSPECIFIED"
+
+-- | Represents a standard webhook.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Standard :: GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Standard = GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType "STANDARD"
+
+-- | Represents a flexible webhook.
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Flexible :: GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Flexible = GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType "FLEXIBLE"
+
+{-# COMPLETE
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED,
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Standard,
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType_Flexible,
+  GoogleCloudDialogflowCxV3WebhookGenericWebService_WebhookType #-}
 
 -- | Merge behavior for @messages@.
-newtype GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior = GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior {fromGoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior = GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior { fromGoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. @APPEND@ will be used.
 pattern GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED :: GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior
@@ -2156,21 +2362,20 @@ pattern GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavio
   GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
   GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_Append,
   GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior_Replace,
-  GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior
-  #-}
+  GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse_MergeBehavior #-}
 
 -- | The result of this continuous test run, i.e. whether all the tests in this continuous test run pass or not.
-newtype GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result = GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result {fromGoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result = GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result { fromGoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Should never be used.
 pattern GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result
@@ -2188,21 +2393,20 @@ pattern GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_Failed = Googl
   GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_AGGREGATEDTESTRESULTUNSPECIFIED,
   GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_Passed,
   GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result_Failed,
-  GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result
-  #-}
+  GoogleCloudDialogflowCxV3beta1ContinuousTestResult_Result #-}
 
 -- | Required. Output only. The current state of this operation.
-newtype GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State {fromGoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State { fromGoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State
@@ -2225,21 +2429,20 @@ pattern GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Do
   GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Pending,
   GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Running,
   GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State_Done,
-  GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowCxV3beta1GenericKnowledgeOperationMetadata_State #-}
 
 -- | Required. Audio encoding of the audio content to process.
-newtype GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding {fromGoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding = GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding { fromGoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding
@@ -2282,21 +2485,20 @@ pattern GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODI
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGAMRWB,
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGOGGOPUS,
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding_AUDIOENCODINGSPEEXWITHHEADERBYTE,
-  GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding
-  #-}
+  GoogleCloudDialogflowCxV3beta1InputAudioConfig_AudioEncoding #-}
 
 -- | Optional. Which variant of the Speech model to use.
-newtype GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant = GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant {fromGoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant = GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant { fromGoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No model variant specified. In this case Dialogflow defaults to USE/BEST/AVAILABLE.
 pattern GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_SPEECHMODELVARIANTUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant
@@ -2319,21 +2521,20 @@ pattern GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USEENHANCED 
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USEBESTAVAILABLE,
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USESTANDARD,
   GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant_USEENHANCED,
-  GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant
-  #-}
+  GoogleCloudDialogflowCxV3beta1InputAudioConfig_ModelVariant #-}
 
 -- | Always present for WebhookRequest. Required for WebhookResponse. The state of the parameter. This field can be set to INVALID by the webhook to invalidate the parameter; other values set by the webhook will be ignored.
-newtype GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State = GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State {fromGoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State = GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State { fromGoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_PARAMETERSTATEUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State
@@ -2356,21 +2557,20 @@ pattern GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Filled
   GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Empty,
   GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Invalid,
   GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State_Filled,
-  GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State
-  #-}
+  GoogleCloudDialogflowCxV3beta1PageInfoFormInfoParameterInfo_State #-}
 
 -- | Whether the test case passed in the agent environment.
-newtype GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult = GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult {fromGoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult = GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult { fromGoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Should never be used.
 pattern GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_TESTRESULTUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult
@@ -2388,21 +2588,20 @@ pattern GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_Failed = GoogleC
   GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_TESTRESULTUNSPECIFIED,
   GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_Passed,
   GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult_Failed,
-  GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult
-  #-}
+  GoogleCloudDialogflowCxV3beta1TestCaseResult_TestResult #-}
 
 -- | The type of diff.
-newtype GoogleCloudDialogflowCxV3beta1TestRunDifference_Type = GoogleCloudDialogflowCxV3beta1TestRunDifference_Type {fromGoogleCloudDialogflowCxV3beta1TestRunDifference_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1TestRunDifference_Type = GoogleCloudDialogflowCxV3beta1TestRunDifference_Type { fromGoogleCloudDialogflowCxV3beta1TestRunDifference_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should never be used.
 pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_DIFFTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
@@ -2424,26 +2623,30 @@ pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Parameters = Google
 pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Utterance :: GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
 pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Utterance = GoogleCloudDialogflowCxV3beta1TestRunDifference_Type "UTTERANCE"
 
+-- | The flow.
+pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Flow :: GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
+pattern GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Flow = GoogleCloudDialogflowCxV3beta1TestRunDifference_Type "FLOW"
+
 {-# COMPLETE
   GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_DIFFTYPEUNSPECIFIED,
   GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Intent,
   GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Page,
   GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Parameters,
   GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Utterance,
-  GoogleCloudDialogflowCxV3beta1TestRunDifference_Type
-  #-}
+  GoogleCloudDialogflowCxV3beta1TestRunDifference_Type_Flow,
+  GoogleCloudDialogflowCxV3beta1TestRunDifference_Type #-}
 
-newtype GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem = GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem {fromGoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem = GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem { fromGoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Failure reason is not assigned.
 pattern GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem
@@ -2461,21 +2664,107 @@ pattern GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILEDWEBHO
   GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
   GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILEDINTENT,
   GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
-  GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem
-  #-}
+  GoogleCloudDialogflowCxV3beta1TurnSignals_FailureReasonsItem #-}
+
+-- | Optional. HTTP method for the flexible webhook calls. Standard webhook always uses POST.
+newtype GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod { fromGoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | HTTP method not specified.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "HTTP_METHOD_UNSPECIFIED"
+
+-- | HTTP POST Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Post' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Post' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "POST"
+
+-- | HTTP GET Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Get' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Get' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "GET"
+
+-- | HTTP HEAD Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Head' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Head' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "HEAD"
+
+-- | HTTP PUT Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Put' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Put' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "PUT"
+
+-- | HTTP DELETE Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Delete' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Delete' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "DELETE"
+
+-- | HTTP PATCH Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Patch' :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Patch' = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "PATCH"
+
+-- | HTTP OPTIONS Method.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Options :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Options = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod "OPTIONS"
+
+{-# COMPLETE
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_HTTPMETHODUNSPECIFIED,
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Post',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Get',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Head',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Put',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Delete',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Patch',
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod_Options,
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_HttpMethod #-}
+
+-- | Optional. Type of the webhook.
+newtype GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType { fromGoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value. This value is unused.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType "WEBHOOK_TYPE_UNSPECIFIED"
+
+-- | Represents a standard webhook.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Standard :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Standard = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType "STANDARD"
+
+-- | Represents a flexible webhook.
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Flexible :: GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType
+pattern GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Flexible = GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType "FLEXIBLE"
+
+{-# COMPLETE
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_WEBHOOKTYPEUNSPECIFIED,
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Standard,
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType_Flexible,
+  GoogleCloudDialogflowCxV3beta1WebhookGenericWebService_WebhookType #-}
 
 -- | Merge behavior for @messages@.
-newtype GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior = GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior {fromGoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior = GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior { fromGoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. @APPEND@ will be used.
 pattern GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED :: GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior
@@ -2493,21 +2782,20 @@ pattern GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBe
   GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_MERGEBEHAVIORUNSPECIFIED,
   GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_Append,
   GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior_Replace,
-  GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior
-  #-}
+  GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse_MergeBehavior #-}
 
 -- | Optional. Type of the article suggestion model. If not provided, model_type is used.
-newtype GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType = GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType {fromGoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType = GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType { fromGoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | ModelType unspecified.
 pattern GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED :: GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType
@@ -2525,21 +2813,20 @@ pattern GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_
   GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
   GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_SMARTREPLYDUALENCODERMODEL,
   GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType_SMARTREPLYBERTMODEL,
-  GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType
-  #-}
+  GoogleCloudDialogflowV2ArticleSuggestionModelMetadata_TrainingModelType #-}
 
 -- | Required. The participant role to remove the suggestion feature config. Only HUMAN/AGENT or END/USER can be used.
-newtype GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole {fromGoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole { fromGoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
@@ -2562,21 +2849,20 @@ pattern GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_Par
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole #-}
 
 -- | Required. The type of the suggestion feature to remove.
-newtype GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType {fromGoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType { fromGoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified feature type.
 pattern GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
@@ -2599,21 +2885,20 @@ pattern GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_Sug
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
   GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
-  GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-  #-}
+  GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType #-}
 
 -- | The type of the event that this notification refers to.
-newtype GoogleCloudDialogflowV2ConversationEvent_Type = GoogleCloudDialogflowV2ConversationEvent_Type {fromGoogleCloudDialogflowV2ConversationEvent_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2ConversationEvent_Type = GoogleCloudDialogflowV2ConversationEvent_Type { fromGoogleCloudDialogflowV2ConversationEvent_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Type not set.
 pattern GoogleCloudDialogflowV2ConversationEvent_Type_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2ConversationEvent_Type
@@ -2646,21 +2931,20 @@ pattern GoogleCloudDialogflowV2ConversationEvent_Type_UNRECOVERABLEERROR = Googl
   GoogleCloudDialogflowV2ConversationEvent_Type_HUMANINTERVENTIONNEEDED,
   GoogleCloudDialogflowV2ConversationEvent_Type_NEWMESSAGE,
   GoogleCloudDialogflowV2ConversationEvent_Type_UNRECOVERABLEERROR,
-  GoogleCloudDialogflowV2ConversationEvent_Type
-  #-}
+  GoogleCloudDialogflowV2ConversationEvent_Type #-}
 
 -- | Output only. State of the model. A model can only serve prediction requests after it gets deployed.
-newtype GoogleCloudDialogflowV2ConversationModel_State = GoogleCloudDialogflowV2ConversationModel_State {fromGoogleCloudDialogflowV2ConversationModel_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2ConversationModel_State = GoogleCloudDialogflowV2ConversationModel_State { fromGoogleCloudDialogflowV2ConversationModel_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should not be used, an un-set enum has this value by default.
 pattern GoogleCloudDialogflowV2ConversationModel_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV2ConversationModel_State
@@ -2708,21 +2992,20 @@ pattern GoogleCloudDialogflowV2ConversationModel_State_Pending = GoogleCloudDial
   GoogleCloudDialogflowV2ConversationModel_State_Deleting,
   GoogleCloudDialogflowV2ConversationModel_State_Failed,
   GoogleCloudDialogflowV2ConversationModel_State_Pending,
-  GoogleCloudDialogflowV2ConversationModel_State
-  #-}
+  GoogleCloudDialogflowV2ConversationModel_State #-}
 
 -- | State of CreateConversationModel operation.
-newtype GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State = GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State {fromGoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State = GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State { fromGoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Operation status not specified.
 pattern GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State
@@ -2755,21 +3038,20 @@ pattern GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadat
   GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Cancelled,
   GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Succeeded,
   GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State_Failed,
-  GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowV2CreateConversationModelEvaluationOperationMetadata_State #-}
 
 -- | State of CreateConversationModel operation.
-newtype GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State = GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State {fromGoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State = GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State { fromGoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Invalid.
 pattern GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State
@@ -2807,21 +3089,20 @@ pattern GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Tr
   GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Cancelled,
   GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Cancelling,
   GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State_Training,
-  GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowV2CreateConversationModelOperationMetadata_State #-}
 
 -- | Optional. Indicates whether the entity type can be automatically expanded.
-newtype GoogleCloudDialogflowV2EntityType_AutoExpansionMode = GoogleCloudDialogflowV2EntityType_AutoExpansionMode {fromGoogleCloudDialogflowV2EntityType_AutoExpansionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2EntityType_AutoExpansionMode = GoogleCloudDialogflowV2EntityType_AutoExpansionMode { fromGoogleCloudDialogflowV2EntityType_AutoExpansionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Auto expansion disabled for the entity.
 pattern GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED :: GoogleCloudDialogflowV2EntityType_AutoExpansionMode
@@ -2834,21 +3115,20 @@ pattern GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEF
 {-# COMPLETE
   GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
   GoogleCloudDialogflowV2EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
-  GoogleCloudDialogflowV2EntityType_AutoExpansionMode
-  #-}
+  GoogleCloudDialogflowV2EntityType_AutoExpansionMode #-}
 
 -- | Required. Indicates the kind of entity type.
-newtype GoogleCloudDialogflowV2EntityType_Kind = GoogleCloudDialogflowV2EntityType_Kind {fromGoogleCloudDialogflowV2EntityType_Kind :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2EntityType_Kind = GoogleCloudDialogflowV2EntityType_Kind { fromGoogleCloudDialogflowV2EntityType_Kind :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowV2EntityType_Kind_KINDUNSPECIFIED :: GoogleCloudDialogflowV2EntityType_Kind
@@ -2871,20 +3151,19 @@ pattern GoogleCloudDialogflowV2EntityType_Kind_KINDREGEXP = GoogleCloudDialogflo
   GoogleCloudDialogflowV2EntityType_Kind_KINDMAP,
   GoogleCloudDialogflowV2EntityType_Kind_KINDLIST,
   GoogleCloudDialogflowV2EntityType_Kind_KINDREGEXP,
-  GoogleCloudDialogflowV2EntityType_Kind
-  #-}
+  GoogleCloudDialogflowV2EntityType_Kind #-}
 
-newtype GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem = GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem {fromGoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem = GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem { fromGoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default platform.
 pattern GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED :: GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem
@@ -2937,21 +3216,20 @@ pattern GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_GOOGLEHANGOUT
   GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_Viber,
   GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_ACTIONSONGOOGLE,
   GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem_GOOGLEHANGOUTS,
-  GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem
-  #-}
+  GoogleCloudDialogflowV2Intent_DefaultResponsePlatformsItem #-}
 
 -- | Optional. Indicates whether webhooks are enabled for the intent.
-newtype GoogleCloudDialogflowV2Intent_WebhookState = GoogleCloudDialogflowV2Intent_WebhookState {fromGoogleCloudDialogflowV2Intent_WebhookState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2Intent_WebhookState = GoogleCloudDialogflowV2Intent_WebhookState { fromGoogleCloudDialogflowV2Intent_WebhookState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Webhook is disabled in the agent and in the intent.
 pattern GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED :: GoogleCloudDialogflowV2Intent_WebhookState
@@ -2969,21 +3247,20 @@ pattern GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEENABLEDFORSLOTFIL
   GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
   GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEENABLED,
   GoogleCloudDialogflowV2Intent_WebhookState_WEBHOOKSTATEENABLEDFORSLOTFILLING,
-  GoogleCloudDialogflowV2Intent_WebhookState
-  #-}
+  GoogleCloudDialogflowV2Intent_WebhookState #-}
 
 -- | Optional. The platform that this message is intended for.
-newtype GoogleCloudDialogflowV2IntentMessage_Platform = GoogleCloudDialogflowV2IntentMessage_Platform {fromGoogleCloudDialogflowV2IntentMessage_Platform :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentMessage_Platform = GoogleCloudDialogflowV2IntentMessage_Platform { fromGoogleCloudDialogflowV2IntentMessage_Platform :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default platform.
 pattern GoogleCloudDialogflowV2IntentMessage_Platform_PLATFORMUNSPECIFIED :: GoogleCloudDialogflowV2IntentMessage_Platform
@@ -3036,21 +3313,20 @@ pattern GoogleCloudDialogflowV2IntentMessage_Platform_GOOGLEHANGOUTS = GoogleClo
   GoogleCloudDialogflowV2IntentMessage_Platform_Viber,
   GoogleCloudDialogflowV2IntentMessage_Platform_ACTIONSONGOOGLE,
   GoogleCloudDialogflowV2IntentMessage_Platform_GOOGLEHANGOUTS,
-  GoogleCloudDialogflowV2IntentMessage_Platform
-  #-}
+  GoogleCloudDialogflowV2IntentMessage_Platform #-}
 
 -- | Optional. Settings for displaying the image. Applies to every image in items.
-newtype GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions = GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions {fromGoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions = GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions { fromGoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Fill the gaps between the image and the image container with gray bars.
 pattern GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED :: GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions
@@ -3078,21 +3354,20 @@ pattern GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptio
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_White,
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_Cropped,
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions_BLURREDBACKGROUND,
-  GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions
-  #-}
+  GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard_ImageDisplayOptions #-}
 
 -- | Optional. Specifies the type of viewer that is used when opening the URL. Defaults to opening via web browser.
-newtype GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint = GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint {fromGoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint = GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint { fromGoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED :: GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
@@ -3110,21 +3385,20 @@ pattern GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCard
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPACTION,
   GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPCONTENT,
-  GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
-  #-}
+  GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint #-}
 
 -- | Optional. Defines text alignment for all cells in this column.
-newtype GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment = GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment {fromGoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment = GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment { fromGoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Text is aligned to the leading edge of the column.
 pattern GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED :: GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment
@@ -3147,21 +3421,20 @@ pattern GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment
   GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Leading,
   GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Center,
   GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment_Trailing,
-  GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment
-  #-}
+  GoogleCloudDialogflowV2IntentMessageColumnProperties_HorizontalAlignment #-}
 
 -- | Optional. What type of media is the content (ie \"audio\").
-newtype GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType = GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType {fromGoogleCloudDialogflowV2IntentMessageMediaContent_MediaType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType = GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType { fromGoogleCloudDialogflowV2IntentMessageMediaContent_MediaType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED :: GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType
@@ -3174,21 +3447,20 @@ pattern GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_Audio = Googl
 {-# COMPLETE
   GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
   GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType_Audio,
-  GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType
-  #-}
+  GoogleCloudDialogflowV2IntentMessageMediaContent_MediaType #-}
 
 -- | Required. The type of the training phrase.
-newtype GoogleCloudDialogflowV2IntentTrainingPhrase_Type = GoogleCloudDialogflowV2IntentTrainingPhrase_Type {fromGoogleCloudDialogflowV2IntentTrainingPhrase_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2IntentTrainingPhrase_Type = GoogleCloudDialogflowV2IntentTrainingPhrase_Type { fromGoogleCloudDialogflowV2IntentTrainingPhrase_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should never be used.
 pattern GoogleCloudDialogflowV2IntentTrainingPhrase_Type_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2IntentTrainingPhrase_Type
@@ -3206,21 +3478,20 @@ pattern GoogleCloudDialogflowV2IntentTrainingPhrase_Type_Template = GoogleCloudD
   GoogleCloudDialogflowV2IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
   GoogleCloudDialogflowV2IntentTrainingPhrase_Type_Example,
   GoogleCloudDialogflowV2IntentTrainingPhrase_Type_Template,
-  GoogleCloudDialogflowV2IntentTrainingPhrase_Type
-  #-}
+  GoogleCloudDialogflowV2IntentTrainingPhrase_Type #-}
 
 -- | Output only. The current state of this operation.
-newtype GoogleCloudDialogflowV2KnowledgeOperationMetadata_State = GoogleCloudDialogflowV2KnowledgeOperationMetadata_State {fromGoogleCloudDialogflowV2KnowledgeOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2KnowledgeOperationMetadata_State = GoogleCloudDialogflowV2KnowledgeOperationMetadata_State { fromGoogleCloudDialogflowV2KnowledgeOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV2KnowledgeOperationMetadata_State
@@ -3243,21 +3514,20 @@ pattern GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Done = GoogleClo
   GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Pending,
   GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Running,
   GoogleCloudDialogflowV2KnowledgeOperationMetadata_State_Done,
-  GoogleCloudDialogflowV2KnowledgeOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowV2KnowledgeOperationMetadata_State #-}
 
 -- | Output only. The role of the participant.
-newtype GoogleCloudDialogflowV2Message_ParticipantRole = GoogleCloudDialogflowV2Message_ParticipantRole {fromGoogleCloudDialogflowV2Message_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2Message_ParticipantRole = GoogleCloudDialogflowV2Message_ParticipantRole { fromGoogleCloudDialogflowV2Message_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2Message_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2Message_ParticipantRole
@@ -3280,21 +3550,20 @@ pattern GoogleCloudDialogflowV2Message_ParticipantRole_ENDUSER = GoogleCloudDial
   GoogleCloudDialogflowV2Message_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2Message_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2Message_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2Message_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2Message_ParticipantRole #-}
 
 -- | Required. Indicates whether the additional data should override or supplement the custom entity type definition.
-newtype GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode {fromGoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode { fromGoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED :: GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode
@@ -3312,21 +3581,20 @@ pattern GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRI
   GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
   GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
   GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
-  GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode
-  #-}
+  GoogleCloudDialogflowV2SessionEntityType_EntityOverrideMode #-}
 
 -- | Required. The participant role to add or update the suggestion feature config. Only HUMAN/AGENT or END/USER can be used.
-newtype GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole {fromGoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole { fromGoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
@@ -3349,21 +3617,20 @@ pattern GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_Parti
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_ParticipantRole #-}
 
 -- | Required. The type of the suggestion feature to add or update.
-newtype GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType {fromGoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType { fromGoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified feature type.
 pattern GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
@@ -3386,21 +3653,20 @@ pattern GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_Sugge
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
   GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
-  GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-  #-}
+  GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType #-}
 
 -- | Optional. Type of the smart reply model. If not provided, model_type is used.
-newtype GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType = GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType {fromGoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType = GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType { fromGoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | ModelType unspecified.
 pattern GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED :: GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType
@@ -3418,21 +3684,20 @@ pattern GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_SMARTRE
   GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_MODELTYPEUNSPECIFIED,
   GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_SMARTREPLYDUALENCODERMODEL,
   GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType_SMARTREPLYBERTMODEL,
-  GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType
-  #-}
+  GoogleCloudDialogflowV2SmartReplyModelMetadata_TrainingModelType #-}
 
 -- | Required. The participant role to remove the suggestion feature config. Only HUMAN/AGENT or END/USER can be used.
-newtype GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole {fromGoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole { fromGoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
@@ -3455,21 +3720,20 @@ pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadat
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_ParticipantRole #-}
 
 -- | Required. The type of the suggestion feature to remove.
-newtype GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType {fromGoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType { fromGoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified feature type.
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
@@ -3487,6 +3751,10 @@ pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadat
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY :: GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "SMART_REPLY"
 
+-- | Run Dialogflow assist model for chat, which will return automated agent response as suggestion.
+pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST :: GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
+pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "DIALOGFLOW_ASSIST"
+
 -- | Run conversation summarization model for chat.
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION :: GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
 pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION = GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "CONVERSATION_SUMMARIZATION"
@@ -3496,22 +3764,22 @@ pattern GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadat
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
+  GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST,
   GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION,
-  GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-  #-}
+  GoogleCloudDialogflowV2beta1ClearSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType #-}
 
 -- | Required. The type of the event that this notification refers to.
-newtype GoogleCloudDialogflowV2beta1ConversationEvent_Type = GoogleCloudDialogflowV2beta1ConversationEvent_Type {fromGoogleCloudDialogflowV2beta1ConversationEvent_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1ConversationEvent_Type = GoogleCloudDialogflowV2beta1ConversationEvent_Type { fromGoogleCloudDialogflowV2beta1ConversationEvent_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Type not set.
 pattern GoogleCloudDialogflowV2beta1ConversationEvent_Type_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2beta1ConversationEvent_Type
@@ -3544,21 +3812,20 @@ pattern GoogleCloudDialogflowV2beta1ConversationEvent_Type_UNRECOVERABLEERROR = 
   GoogleCloudDialogflowV2beta1ConversationEvent_Type_HUMANINTERVENTIONNEEDED,
   GoogleCloudDialogflowV2beta1ConversationEvent_Type_NEWMESSAGE,
   GoogleCloudDialogflowV2beta1ConversationEvent_Type_UNRECOVERABLEERROR,
-  GoogleCloudDialogflowV2beta1ConversationEvent_Type
-  #-}
+  GoogleCloudDialogflowV2beta1ConversationEvent_Type #-}
 
 -- | Optional. Indicates whether the entity type can be automatically expanded.
-newtype GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode = GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode {fromGoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode = GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode { fromGoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Auto expansion disabled for the entity.
 pattern GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED :: GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode
@@ -3571,21 +3838,20 @@ pattern GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMO
 {-# COMPLETE
   GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEUNSPECIFIED,
   GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode_AUTOEXPANSIONMODEDEFAULT,
-  GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode
-  #-}
+  GoogleCloudDialogflowV2beta1EntityType_AutoExpansionMode #-}
 
 -- | Required. Indicates the kind of entity type.
-newtype GoogleCloudDialogflowV2beta1EntityType_Kind = GoogleCloudDialogflowV2beta1EntityType_Kind {fromGoogleCloudDialogflowV2beta1EntityType_Kind :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1EntityType_Kind = GoogleCloudDialogflowV2beta1EntityType_Kind { fromGoogleCloudDialogflowV2beta1EntityType_Kind :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowV2beta1EntityType_Kind_KINDUNSPECIFIED :: GoogleCloudDialogflowV2beta1EntityType_Kind
@@ -3608,20 +3874,19 @@ pattern GoogleCloudDialogflowV2beta1EntityType_Kind_KINDREGEXP = GoogleCloudDial
   GoogleCloudDialogflowV2beta1EntityType_Kind_KINDMAP,
   GoogleCloudDialogflowV2beta1EntityType_Kind_KINDLIST,
   GoogleCloudDialogflowV2beta1EntityType_Kind_KINDREGEXP,
-  GoogleCloudDialogflowV2beta1EntityType_Kind
-  #-}
+  GoogleCloudDialogflowV2beta1EntityType_Kind #-}
 
-newtype GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem = GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem {fromGoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem = GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem { fromGoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_PLATFORMUNSPECIFIED :: GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem
@@ -3679,21 +3944,20 @@ pattern GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_GOOGLEHA
   GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_ACTIONSONGOOGLE,
   GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_Telephony,
   GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem_GOOGLEHANGOUTS,
-  GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem
-  #-}
+  GoogleCloudDialogflowV2beta1Intent_DefaultResponsePlatformsItem #-}
 
 -- | Optional. Indicates whether webhooks are enabled for the intent.
-newtype GoogleCloudDialogflowV2beta1Intent_WebhookState = GoogleCloudDialogflowV2beta1Intent_WebhookState {fromGoogleCloudDialogflowV2beta1Intent_WebhookState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1Intent_WebhookState = GoogleCloudDialogflowV2beta1Intent_WebhookState { fromGoogleCloudDialogflowV2beta1Intent_WebhookState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Webhook is disabled in the agent and in the intent.
 pattern GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED :: GoogleCloudDialogflowV2beta1Intent_WebhookState
@@ -3711,21 +3975,20 @@ pattern GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEENABLEDFORSL
   GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEUNSPECIFIED,
   GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEENABLED,
   GoogleCloudDialogflowV2beta1Intent_WebhookState_WEBHOOKSTATEENABLEDFORSLOTFILLING,
-  GoogleCloudDialogflowV2beta1Intent_WebhookState
-  #-}
+  GoogleCloudDialogflowV2beta1Intent_WebhookState #-}
 
 -- | Optional. The platform that this message is intended for.
-newtype GoogleCloudDialogflowV2beta1IntentMessage_Platform = GoogleCloudDialogflowV2beta1IntentMessage_Platform {fromGoogleCloudDialogflowV2beta1IntentMessage_Platform :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessage_Platform = GoogleCloudDialogflowV2beta1IntentMessage_Platform { fromGoogleCloudDialogflowV2beta1IntentMessage_Platform :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1IntentMessage_Platform_PLATFORMUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessage_Platform
@@ -3783,21 +4046,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessage_Platform_GOOGLEHANGOUTS = Goog
   GoogleCloudDialogflowV2beta1IntentMessage_Platform_ACTIONSONGOOGLE,
   GoogleCloudDialogflowV2beta1IntentMessage_Platform_Telephony,
   GoogleCloudDialogflowV2beta1IntentMessage_Platform_GOOGLEHANGOUTS,
-  GoogleCloudDialogflowV2beta1IntentMessage_Platform
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessage_Platform #-}
 
 -- | Optional. Settings for displaying the image. Applies to every image in items.
-newtype GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions = GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions {fromGoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions = GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions { fromGoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Fill the gaps between the image and the image container with gray bars.
 pattern GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_IMAGEDISPLAYOPTIONSUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions
@@ -3825,21 +4087,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplay
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_White,
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_Cropped,
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions_BLURREDBACKGROUND,
-  GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard_ImageDisplayOptions #-}
 
 -- | Optional. Specifies the type of viewer that is used when opening the URL. Defaults to opening via web browser.
-newtype GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint = GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint {fromGoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint = GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint { fromGoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
@@ -3857,21 +4118,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouse
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_URLTYPEHINTUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPACTION,
   GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint_AMPCONTENT,
-  GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction_UrlTypeHint #-}
 
 -- | Optional. Defines text alignment for all cells in this column.
-newtype GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment = GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment {fromGoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment = GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment { fromGoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Text is aligned to the leading edge of the column.
 pattern GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_HORIZONTALALIGNMENTUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment
@@ -3894,21 +4154,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlig
   GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Leading,
   GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Center,
   GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment_Trailing,
-  GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageColumnProperties_HorizontalAlignment #-}
 
 -- | Optional. What type of media is the content (ie \"audio\").
-newtype GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType = GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType {fromGoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType = GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType { fromGoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType
@@ -3921,21 +4180,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_Audio = 
 {-# COMPLETE
   GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_RESPONSEMEDIATYPEUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType_Audio,
-  GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageMediaContent_MediaType #-}
 
 -- | Required for cards with vertical orientation. The height of the media within a rich card with a vertical layout. For a standalone card with horizontal layout, height is not customizable, and this field is ignored.
-newtype GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height = GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height {fromGoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height = GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height { fromGoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_HEIGHTUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height
@@ -3958,21 +4216,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_T
   GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Short,
   GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Medium,
   GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height_Tall,
-  GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageRbmCardContentRbmMedia_Height #-}
 
 -- | Required. The width of the cards in the carousel.
-newtype GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth = GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth {fromGoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth = GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth { fromGoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_CARDWIDTHUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth
@@ -3990,21 +4247,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_Mediu
   GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_CARDWIDTHUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_Small,
   GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth_Medium,
-  GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard_CardWidth #-}
 
 -- | Required. Orientation of the card.
-newtype GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation = GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation {fromGoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation = GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation { fromGoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_CARDORIENTATIONUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation
@@ -4022,21 +4278,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientati
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_CARDORIENTATIONUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_Horizontal,
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation_Vertical,
-  GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_CardOrientation #-}
 
 -- | Required if orientation is horizontal. Image preview alignment for standalone cards with horizontal layout.
-newtype GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment = GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment {fromGoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment = GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment { fromGoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_THUMBNAILIMAGEALIGNMENTUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment
@@ -4054,21 +4309,20 @@ pattern GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImag
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_THUMBNAILIMAGEALIGNMENTUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_Left',
   GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment_Right',
-  GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment
-  #-}
+  GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard_ThumbnailImageAlignment #-}
 
 -- | Required. The type of the training phrase.
-newtype GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type = GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type {fromGoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type = GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type { fromGoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should never be used.
 pattern GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type
@@ -4086,21 +4340,20 @@ pattern GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_Template = GoogleC
   GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_TYPEUNSPECIFIED,
   GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_Example,
   GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type_Template,
-  GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type
-  #-}
+  GoogleCloudDialogflowV2beta1IntentTrainingPhrase_Type #-}
 
 -- | The system\'s confidence level that this knowledge answer is a good match for this conversational query. NOTE: The confidence level for a given \`\` pair may change without notice, as it depends on models that are constantly being improved. However, it will change less frequently than the confidence score below, and should be preferred for referencing the quality of an answer.
-newtype GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel = GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel {fromGoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel = GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel { fromGoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_MATCHCONFIDENCELEVELUNSPECIFIED :: GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel
@@ -4123,21 +4376,20 @@ pattern GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_
   GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_Low,
   GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_Medium,
   GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel_High,
-  GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel
-  #-}
+  GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer_MatchConfidenceLevel #-}
 
 -- | Required. Output only. The current state of this operation.
-newtype GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State = GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State {fromGoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State = GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State { fromGoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State
@@ -4160,21 +4412,20 @@ pattern GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Done = Goog
   GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Pending,
   GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Running,
   GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State_Done,
-  GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowV2beta1KnowledgeOperationMetadata_State #-}
 
 -- | Output only. The role of the participant.
-newtype GoogleCloudDialogflowV2beta1Message_ParticipantRole = GoogleCloudDialogflowV2beta1Message_ParticipantRole {fromGoogleCloudDialogflowV2beta1Message_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1Message_ParticipantRole = GoogleCloudDialogflowV2beta1Message_ParticipantRole { fromGoogleCloudDialogflowV2beta1Message_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2beta1Message_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2beta1Message_ParticipantRole
@@ -4197,21 +4448,20 @@ pattern GoogleCloudDialogflowV2beta1Message_ParticipantRole_ENDUSER = GoogleClou
   GoogleCloudDialogflowV2beta1Message_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2beta1Message_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2beta1Message_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2beta1Message_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2beta1Message_ParticipantRole #-}
 
 -- | Required. Indicates whether the additional data should override or supplement the custom entity type definition.
-newtype GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode {fromGoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode = GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode { fromGoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. This value should be never used.
 pattern GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED :: GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode
@@ -4229,21 +4479,20 @@ pattern GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYO
   GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEUNSPECIFIED,
   GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODEOVERRIDE,
   GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode_ENTITYOVERRIDEMODESUPPLEMENT,
-  GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode
-  #-}
+  GoogleCloudDialogflowV2beta1SessionEntityType_EntityOverrideMode #-}
 
 -- | Required. The participant role to add or update the suggestion feature config. Only HUMAN/AGENT or END/USER can be used.
-newtype GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole {fromGoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole { fromGoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Participant role not set.
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ROLEUNSPECIFIED :: GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
@@ -4266,21 +4515,20 @@ pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_HUMANAGENT,
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_AUTOMATEDAGENT,
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole_ENDUSER,
-  GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole
-  #-}
+  GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_ParticipantRole #-}
 
 -- | Required. The type of the suggestion feature to add or update.
-newtype GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType {fromGoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType { fromGoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified feature type.
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_TYPEUNSPECIFIED :: GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
@@ -4298,6 +4546,10 @@ pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY :: GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "SMART_REPLY"
 
+-- | Run Dialogflow assist model for chat, which will return automated agent response as suggestion.
+pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST :: GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
+pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "DIALOGFLOW_ASSIST"
+
 -- | Run conversation summarization model for chat.
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION :: GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
 pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION = GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType "CONVERSATION_SUMMARIZATION"
@@ -4307,22 +4559,22 @@ pattern GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_ARTICLESUGGESTION,
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_Faq,
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_SMARTREPLY,
+  GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_DIALOGFLOWASSIST,
   GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType_CONVERSATIONSUMMARIZATION,
-  GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType
-  #-}
+  GoogleCloudDialogflowV2beta1SetSuggestionFeatureConfigOperationMetadata_SuggestionFeatureType #-}
 
 -- | Required. Output only. The current state of this operation.
-newtype GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State {fromGoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State = GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State { fromGoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State unspecified.
 pattern GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_STATEUNSPECIFIED :: GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State
@@ -4345,20 +4597,19 @@ pattern GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Don
   GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Pending,
   GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Running,
   GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State_Done,
-  GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State
-  #-}
+  GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata_State #-}
 
-newtype GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem = GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem {fromGoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem = GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem { fromGoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Failure reason is not assigned.
 pattern GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED :: GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem
@@ -4376,21 +4627,20 @@ pattern GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILEDWEBHOO
   GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILUREREASONUNSPECIFIED,
   GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILEDINTENT,
   GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem_FAILEDWEBHOOK,
-  GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem
-  #-}
+  GoogleCloudDialogflowV3alpha1TurnSignals_FailureReasonsItem #-}
 
 -- | The resource view to apply to the returned intent.
-newtype ProjectsLocationsAgentsIntentsListIntentView = ProjectsLocationsAgentsIntentsListIntentView {fromProjectsLocationsAgentsIntentsListIntentView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsAgentsIntentsListIntentView = ProjectsLocationsAgentsIntentsListIntentView { fromProjectsLocationsAgentsIntentsListIntentView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Treated as INTENT/VIEW/FULL.
 pattern ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWUNSPECIFIED :: ProjectsLocationsAgentsIntentsListIntentView
@@ -4408,21 +4658,20 @@ pattern ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWFULL = ProjectsLo
   ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWUNSPECIFIED,
   ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWPARTIAL,
   ProjectsLocationsAgentsIntentsListIntentView_INTENTVIEWFULL,
-  ProjectsLocationsAgentsIntentsListIntentView
-  #-}
+  ProjectsLocationsAgentsIntentsListIntentView #-}
 
 -- | Required. The type of coverage requested.
-newtype ProjectsLocationsAgentsTestCasesCalculateCoverageType = ProjectsLocationsAgentsTestCasesCalculateCoverageType {fromProjectsLocationsAgentsTestCasesCalculateCoverageType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsAgentsTestCasesCalculateCoverageType = ProjectsLocationsAgentsTestCasesCalculateCoverageType { fromProjectsLocationsAgentsTestCasesCalculateCoverageType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should never be used.
 pattern ProjectsLocationsAgentsTestCasesCalculateCoverageType_COVERAGETYPEUNSPECIFIED :: ProjectsLocationsAgentsTestCasesCalculateCoverageType
@@ -4445,21 +4694,20 @@ pattern ProjectsLocationsAgentsTestCasesCalculateCoverageType_TRANSITIONROUTEGRO
   ProjectsLocationsAgentsTestCasesCalculateCoverageType_Intent,
   ProjectsLocationsAgentsTestCasesCalculateCoverageType_PAGETRANSITION,
   ProjectsLocationsAgentsTestCasesCalculateCoverageType_TRANSITIONROUTEGROUP,
-  ProjectsLocationsAgentsTestCasesCalculateCoverageType
-  #-}
+  ProjectsLocationsAgentsTestCasesCalculateCoverageType #-}
 
 -- | Specifies whether response should include all fields or just the metadata.
-newtype ProjectsLocationsAgentsTestCasesListView = ProjectsLocationsAgentsTestCasesListView {fromProjectsLocationsAgentsTestCasesListView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsAgentsTestCasesListView = ProjectsLocationsAgentsTestCasesListView { fromProjectsLocationsAgentsTestCasesListView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default \/ unset value. The API will default to the BASIC view.
 pattern ProjectsLocationsAgentsTestCasesListView_TESTCASEVIEWUNSPECIFIED :: ProjectsLocationsAgentsTestCasesListView
@@ -4477,5 +4725,4 @@ pattern ProjectsLocationsAgentsTestCasesListView_Full = ProjectsLocationsAgentsT
   ProjectsLocationsAgentsTestCasesListView_TESTCASEVIEWUNSPECIFIED,
   ProjectsLocationsAgentsTestCasesListView_Basic,
   ProjectsLocationsAgentsTestCasesListView_Full,
-  ProjectsLocationsAgentsTestCasesListView
-  #-}
+  ProjectsLocationsAgentsTestCasesListView #-}

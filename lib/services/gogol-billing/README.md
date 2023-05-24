@@ -13,11 +13,7 @@
 
 ## Description
 
-<<<<<<< HEAD:gogol-blogger/README.md
-A client library for the Google Blogger API v3.
-=======
 A client library for the Google Cloud Billing.
->>>>>>> upstream/main:lib/services/gogol-billing/README.md
 
 
 ## Contribute

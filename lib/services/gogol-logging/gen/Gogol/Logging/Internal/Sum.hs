@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Logging.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * BucketMetadata_State
     BucketMetadata_State
-      ( BucketMetadata_State_OPERATIONSTATEUNSPECIFIED,
+      (
+        BucketMetadata_State_OPERATIONSTATEUNSPECIFIED,
         BucketMetadata_State_OPERATIONSTATESCHEDULED,
         BucketMetadata_State_OPERATIONSTATEWAITINGFORPERMISSIONS,
         BucketMetadata_State_OPERATIONSTATERUNNING,
@@ -47,7 +53,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * CopyLogEntriesMetadata_State
     CopyLogEntriesMetadata_State
-      ( CopyLogEntriesMetadata_State_OPERATIONSTATEUNSPECIFIED,
+      (
+        CopyLogEntriesMetadata_State_OPERATIONSTATEUNSPECIFIED,
         CopyLogEntriesMetadata_State_OPERATIONSTATESCHEDULED,
         CopyLogEntriesMetadata_State_OPERATIONSTATEWAITINGFORPERMISSIONS,
         CopyLogEntriesMetadata_State_OPERATIONSTATERUNNING,
@@ -59,7 +66,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * IndexConfig_Type
     IndexConfig_Type
-      ( IndexConfig_Type_INDEXTYPEUNSPECIFIED,
+      (
+        IndexConfig_Type_INDEXTYPEUNSPECIFIED,
         IndexConfig_Type_INDEXTYPESTRING,
         IndexConfig_Type_INDEXTYPEINTEGER,
         ..
@@ -67,7 +75,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * LabelDescriptor_ValueType
     LabelDescriptor_ValueType
-      ( LabelDescriptor_ValueType_String,
+      (
+        LabelDescriptor_ValueType_String,
         LabelDescriptor_ValueType_Bool,
         LabelDescriptor_ValueType_INT64,
         ..
@@ -75,7 +84,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * Link_LifecycleState
     Link_LifecycleState
-      ( Link_LifecycleState_LIFECYCLESTATEUNSPECIFIED,
+      (
+        Link_LifecycleState_LIFECYCLESTATEUNSPECIFIED,
         Link_LifecycleState_Active,
         Link_LifecycleState_DELETEREQUESTED,
         Link_LifecycleState_Updating,
@@ -86,7 +96,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * LinkMetadata_State
     LinkMetadata_State
-      ( LinkMetadata_State_OPERATIONSTATEUNSPECIFIED,
+      (
+        LinkMetadata_State_OPERATIONSTATEUNSPECIFIED,
         LinkMetadata_State_OPERATIONSTATESCHEDULED,
         LinkMetadata_State_OPERATIONSTATEWAITINGFORPERMISSIONS,
         LinkMetadata_State_OPERATIONSTATERUNNING,
@@ -98,7 +109,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * LogBucket_LifecycleState
     LogBucket_LifecycleState
-      ( LogBucket_LifecycleState_LIFECYCLESTATEUNSPECIFIED,
+      (
+        LogBucket_LifecycleState_LIFECYCLESTATEUNSPECIFIED,
         LogBucket_LifecycleState_Active,
         LogBucket_LifecycleState_DELETEREQUESTED,
         LogBucket_LifecycleState_Updating,
@@ -109,7 +121,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * LogEntry_Severity
     LogEntry_Severity
-      ( LogEntry_Severity_Default,
+      (
+        LogEntry_Severity_Default,
         LogEntry_Severity_Debug,
         LogEntry_Severity_Info,
         LogEntry_Severity_Notice,
@@ -123,7 +136,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * LogLine_Severity
     LogLine_Severity
-      ( LogLine_Severity_Default,
+      (
+        LogLine_Severity_Default,
         LogLine_Severity_Debug,
         LogLine_Severity_Info,
         LogLine_Severity_Notice,
@@ -137,14 +151,16 @@ module Gogol.Logging.Internal.Sum
 
     -- * LogMetric_Version
     LogMetric_Version
-      ( LogMetric_Version_V2,
+      (
+        LogMetric_Version_V2,
         LogMetric_Version_V1,
         ..
       ),
 
     -- * LogSink_OutputVersionFormat
     LogSink_OutputVersionFormat
-      ( LogSink_OutputVersionFormat_VERSIONFORMATUNSPECIFIED,
+      (
+        LogSink_OutputVersionFormat_VERSIONFORMATUNSPECIFIED,
         LogSink_OutputVersionFormat_V2,
         LogSink_OutputVersionFormat_V1,
         ..
@@ -152,7 +168,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * MetricDescriptor_LaunchStage
     MetricDescriptor_LaunchStage
-      ( MetricDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        MetricDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         MetricDescriptor_LaunchStage_Unimplemented,
         MetricDescriptor_LaunchStage_Prelaunch,
         MetricDescriptor_LaunchStage_EARLYACCESS,
@@ -165,7 +182,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * MetricDescriptor_MetricKind
     MetricDescriptor_MetricKind
-      ( MetricDescriptor_MetricKind_METRICKINDUNSPECIFIED,
+      (
+        MetricDescriptor_MetricKind_METRICKINDUNSPECIFIED,
         MetricDescriptor_MetricKind_Gauge,
         MetricDescriptor_MetricKind_Delta,
         MetricDescriptor_MetricKind_Cumulative,
@@ -174,7 +192,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * MetricDescriptor_ValueType
     MetricDescriptor_ValueType
-      ( MetricDescriptor_ValueType_VALUETYPEUNSPECIFIED,
+      (
+        MetricDescriptor_ValueType_VALUETYPEUNSPECIFIED,
         MetricDescriptor_ValueType_Bool,
         MetricDescriptor_ValueType_INT64,
         MetricDescriptor_ValueType_Double,
@@ -186,7 +205,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * MetricDescriptorMetadata_LaunchStage
     MetricDescriptorMetadata_LaunchStage
-      ( MetricDescriptorMetadata_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        MetricDescriptorMetadata_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         MetricDescriptorMetadata_LaunchStage_Unimplemented,
         MetricDescriptorMetadata_LaunchStage_Prelaunch,
         MetricDescriptorMetadata_LaunchStage_EARLYACCESS,
@@ -199,7 +219,8 @@ module Gogol.Logging.Internal.Sum
 
     -- * MonitoredResourceDescriptor_LaunchStage
     MonitoredResourceDescriptor_LaunchStage
-      ( MonitoredResourceDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        MonitoredResourceDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         MonitoredResourceDescriptor_LaunchStage_Unimplemented,
         MonitoredResourceDescriptor_LaunchStage_Prelaunch,
         MonitoredResourceDescriptor_LaunchStage_EARLYACCESS,
@@ -212,28 +233,28 @@ module Gogol.Logging.Internal.Sum
 
     -- * SuppressionInfo_Reason
     SuppressionInfo_Reason
-      ( SuppressionInfo_Reason_REASONUNSPECIFIED,
+      (
+        SuppressionInfo_Reason_REASONUNSPECIFIED,
         SuppressionInfo_Reason_RATELIMIT,
         SuppressionInfo_Reason_NOTCONSUMED,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -246,21 +267,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | State of an operation.
-newtype BucketMetadata_State = BucketMetadata_State {fromBucketMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketMetadata_State = BucketMetadata_State { fromBucketMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should not be used.
 pattern BucketMetadata_State_OPERATIONSTATEUNSPECIFIED :: BucketMetadata_State
@@ -298,21 +318,20 @@ pattern BucketMetadata_State_OPERATIONSTATECANCELLED = BucketMetadata_State "OPE
   BucketMetadata_State_OPERATIONSTATESUCCEEDED,
   BucketMetadata_State_OPERATIONSTATEFAILED,
   BucketMetadata_State_OPERATIONSTATECANCELLED,
-  BucketMetadata_State
-  #-}
+  BucketMetadata_State #-}
 
 -- | State of an operation.
-newtype CopyLogEntriesMetadata_State = CopyLogEntriesMetadata_State {fromCopyLogEntriesMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CopyLogEntriesMetadata_State = CopyLogEntriesMetadata_State { fromCopyLogEntriesMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should not be used.
 pattern CopyLogEntriesMetadata_State_OPERATIONSTATEUNSPECIFIED :: CopyLogEntriesMetadata_State
@@ -350,21 +369,20 @@ pattern CopyLogEntriesMetadata_State_OPERATIONSTATECANCELLED = CopyLogEntriesMet
   CopyLogEntriesMetadata_State_OPERATIONSTATESUCCEEDED,
   CopyLogEntriesMetadata_State_OPERATIONSTATEFAILED,
   CopyLogEntriesMetadata_State_OPERATIONSTATECANCELLED,
-  CopyLogEntriesMetadata_State
-  #-}
+  CopyLogEntriesMetadata_State #-}
 
 -- | Required. The type of data in this index.
-newtype IndexConfig_Type = IndexConfig_Type {fromIndexConfig_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype IndexConfig_Type = IndexConfig_Type { fromIndexConfig_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The index\'s type is unspecified.
 pattern IndexConfig_Type_INDEXTYPEUNSPECIFIED :: IndexConfig_Type
@@ -382,21 +400,20 @@ pattern IndexConfig_Type_INDEXTYPEINTEGER = IndexConfig_Type "INDEX_TYPE_INTEGER
   IndexConfig_Type_INDEXTYPEUNSPECIFIED,
   IndexConfig_Type_INDEXTYPESTRING,
   IndexConfig_Type_INDEXTYPEINTEGER,
-  IndexConfig_Type
-  #-}
+  IndexConfig_Type #-}
 
 -- | The type of data that can be assigned to the label.
-newtype LabelDescriptor_ValueType = LabelDescriptor_ValueType {fromLabelDescriptor_ValueType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LabelDescriptor_ValueType = LabelDescriptor_ValueType { fromLabelDescriptor_ValueType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | A variable-length string. This is the default.
 pattern LabelDescriptor_ValueType_String :: LabelDescriptor_ValueType
@@ -414,21 +431,20 @@ pattern LabelDescriptor_ValueType_INT64 = LabelDescriptor_ValueType "INT64"
   LabelDescriptor_ValueType_String,
   LabelDescriptor_ValueType_Bool,
   LabelDescriptor_ValueType_INT64,
-  LabelDescriptor_ValueType
-  #-}
+  LabelDescriptor_ValueType #-}
 
 -- | Output only. The resource lifecycle state.
-newtype Link_LifecycleState = Link_LifecycleState {fromLink_LifecycleState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Link_LifecycleState = Link_LifecycleState { fromLink_LifecycleState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified state. This is only used\/useful for distinguishing unset values.
 pattern Link_LifecycleState_LIFECYCLESTATEUNSPECIFIED :: Link_LifecycleState
@@ -461,21 +477,20 @@ pattern Link_LifecycleState_Failed = Link_LifecycleState "FAILED"
   Link_LifecycleState_Updating,
   Link_LifecycleState_Creating,
   Link_LifecycleState_Failed,
-  Link_LifecycleState
-  #-}
+  Link_LifecycleState #-}
 
 -- | State of an operation.
-newtype LinkMetadata_State = LinkMetadata_State {fromLinkMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LinkMetadata_State = LinkMetadata_State { fromLinkMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Should not be used.
 pattern LinkMetadata_State_OPERATIONSTATEUNSPECIFIED :: LinkMetadata_State
@@ -513,21 +528,20 @@ pattern LinkMetadata_State_OPERATIONSTATECANCELLED = LinkMetadata_State "OPERATI
   LinkMetadata_State_OPERATIONSTATESUCCEEDED,
   LinkMetadata_State_OPERATIONSTATEFAILED,
   LinkMetadata_State_OPERATIONSTATECANCELLED,
-  LinkMetadata_State
-  #-}
+  LinkMetadata_State #-}
 
 -- | Output only. The bucket lifecycle state.
-newtype LogBucket_LifecycleState = LogBucket_LifecycleState {fromLogBucket_LifecycleState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LogBucket_LifecycleState = LogBucket_LifecycleState { fromLogBucket_LifecycleState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified state. This is only used\/useful for distinguishing unset values.
 pattern LogBucket_LifecycleState_LIFECYCLESTATEUNSPECIFIED :: LogBucket_LifecycleState
@@ -560,21 +574,20 @@ pattern LogBucket_LifecycleState_Failed = LogBucket_LifecycleState "FAILED"
   LogBucket_LifecycleState_Updating,
   LogBucket_LifecycleState_Creating,
   LogBucket_LifecycleState_Failed,
-  LogBucket_LifecycleState
-  #-}
+  LogBucket_LifecycleState #-}
 
 -- | Optional. The severity of the log entry. The default value is LogSeverity.DEFAULT.
-newtype LogEntry_Severity = LogEntry_Severity {fromLogEntry_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LogEntry_Severity = LogEntry_Severity { fromLogEntry_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | (0) The log entry has no assigned severity level.
 pattern LogEntry_Severity_Default :: LogEntry_Severity
@@ -622,21 +635,20 @@ pattern LogEntry_Severity_Emergency = LogEntry_Severity "EMERGENCY"
   LogEntry_Severity_Critical,
   LogEntry_Severity_Alert,
   LogEntry_Severity_Emergency,
-  LogEntry_Severity
-  #-}
+  LogEntry_Severity #-}
 
 -- | Severity of this log entry.
-newtype LogLine_Severity = LogLine_Severity {fromLogLine_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LogLine_Severity = LogLine_Severity { fromLogLine_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | (0) The log entry has no assigned severity level.
 pattern LogLine_Severity_Default :: LogLine_Severity
@@ -684,21 +696,20 @@ pattern LogLine_Severity_Emergency = LogLine_Severity "EMERGENCY"
   LogLine_Severity_Critical,
   LogLine_Severity_Alert,
   LogLine_Severity_Emergency,
-  LogLine_Severity
-  #-}
+  LogLine_Severity #-}
 
 -- | Deprecated. The API version that created or updated this metric. The v2 format is used by default and cannot be changed.
-newtype LogMetric_Version = LogMetric_Version {fromLogMetric_Version :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LogMetric_Version = LogMetric_Version { fromLogMetric_Version :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Logging API v2.
 pattern LogMetric_Version_V2 :: LogMetric_Version
@@ -711,21 +722,20 @@ pattern LogMetric_Version_V1 = LogMetric_Version "V1"
 {-# COMPLETE
   LogMetric_Version_V2,
   LogMetric_Version_V1,
-  LogMetric_Version
-  #-}
+  LogMetric_Version #-}
 
 -- | Deprecated. This field is unused.
-newtype LogSink_OutputVersionFormat = LogSink_OutputVersionFormat {fromLogSink_OutputVersionFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LogSink_OutputVersionFormat = LogSink_OutputVersionFormat { fromLogSink_OutputVersionFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | An unspecified format version that will default to V2.
 pattern LogSink_OutputVersionFormat_VERSIONFORMATUNSPECIFIED :: LogSink_OutputVersionFormat
@@ -743,21 +753,20 @@ pattern LogSink_OutputVersionFormat_V1 = LogSink_OutputVersionFormat "V1"
   LogSink_OutputVersionFormat_VERSIONFORMATUNSPECIFIED,
   LogSink_OutputVersionFormat_V2,
   LogSink_OutputVersionFormat_V1,
-  LogSink_OutputVersionFormat
-  #-}
+  LogSink_OutputVersionFormat #-}
 
 -- | Optional. The launch stage of the metric definition.
-newtype MetricDescriptor_LaunchStage = MetricDescriptor_LaunchStage {fromMetricDescriptor_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetricDescriptor_LaunchStage = MetricDescriptor_LaunchStage { fromMetricDescriptor_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern MetricDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: MetricDescriptor_LaunchStage
@@ -800,21 +809,20 @@ pattern MetricDescriptor_LaunchStage_Deprecated = MetricDescriptor_LaunchStage "
   MetricDescriptor_LaunchStage_Beta,
   MetricDescriptor_LaunchStage_GA,
   MetricDescriptor_LaunchStage_Deprecated,
-  MetricDescriptor_LaunchStage
-  #-}
+  MetricDescriptor_LaunchStage #-}
 
 -- | Whether the metric records instantaneous values, changes to a value, etc. Some combinations of metric/kind and value/type might not be supported.
-newtype MetricDescriptor_MetricKind = MetricDescriptor_MetricKind {fromMetricDescriptor_MetricKind :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetricDescriptor_MetricKind = MetricDescriptor_MetricKind { fromMetricDescriptor_MetricKind :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern MetricDescriptor_MetricKind_METRICKINDUNSPECIFIED :: MetricDescriptor_MetricKind
@@ -837,21 +845,20 @@ pattern MetricDescriptor_MetricKind_Cumulative = MetricDescriptor_MetricKind "CU
   MetricDescriptor_MetricKind_Gauge,
   MetricDescriptor_MetricKind_Delta,
   MetricDescriptor_MetricKind_Cumulative,
-  MetricDescriptor_MetricKind
-  #-}
+  MetricDescriptor_MetricKind #-}
 
 -- | Whether the measurement is an integer, a floating-point number, etc. Some combinations of metric/kind and value/type might not be supported.
-newtype MetricDescriptor_ValueType = MetricDescriptor_ValueType {fromMetricDescriptor_ValueType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetricDescriptor_ValueType = MetricDescriptor_ValueType { fromMetricDescriptor_ValueType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern MetricDescriptor_ValueType_VALUETYPEUNSPECIFIED :: MetricDescriptor_ValueType
@@ -889,21 +896,20 @@ pattern MetricDescriptor_ValueType_Money = MetricDescriptor_ValueType "MONEY"
   MetricDescriptor_ValueType_String,
   MetricDescriptor_ValueType_Distribution,
   MetricDescriptor_ValueType_Money,
-  MetricDescriptor_ValueType
-  #-}
+  MetricDescriptor_ValueType #-}
 
 -- | Deprecated. Must use the MetricDescriptor.launch_stage instead.
-newtype MetricDescriptorMetadata_LaunchStage = MetricDescriptorMetadata_LaunchStage {fromMetricDescriptorMetadata_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetricDescriptorMetadata_LaunchStage = MetricDescriptorMetadata_LaunchStage { fromMetricDescriptorMetadata_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern MetricDescriptorMetadata_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: MetricDescriptorMetadata_LaunchStage
@@ -946,21 +952,20 @@ pattern MetricDescriptorMetadata_LaunchStage_Deprecated = MetricDescriptorMetada
   MetricDescriptorMetadata_LaunchStage_Beta,
   MetricDescriptorMetadata_LaunchStage_GA,
   MetricDescriptorMetadata_LaunchStage_Deprecated,
-  MetricDescriptorMetadata_LaunchStage
-  #-}
+  MetricDescriptorMetadata_LaunchStage #-}
 
 -- | Optional. The launch stage of the monitored resource definition.
-newtype MonitoredResourceDescriptor_LaunchStage = MonitoredResourceDescriptor_LaunchStage {fromMonitoredResourceDescriptor_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MonitoredResourceDescriptor_LaunchStage = MonitoredResourceDescriptor_LaunchStage { fromMonitoredResourceDescriptor_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern MonitoredResourceDescriptor_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: MonitoredResourceDescriptor_LaunchStage
@@ -1003,21 +1008,20 @@ pattern MonitoredResourceDescriptor_LaunchStage_Deprecated = MonitoredResourceDe
   MonitoredResourceDescriptor_LaunchStage_Beta,
   MonitoredResourceDescriptor_LaunchStage_GA,
   MonitoredResourceDescriptor_LaunchStage_Deprecated,
-  MonitoredResourceDescriptor_LaunchStage
-  #-}
+  MonitoredResourceDescriptor_LaunchStage #-}
 
 -- | The reason that entries were omitted from the session.
-newtype SuppressionInfo_Reason = SuppressionInfo_Reason {fromSuppressionInfo_Reason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SuppressionInfo_Reason = SuppressionInfo_Reason { fromSuppressionInfo_Reason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unexpected default.
 pattern SuppressionInfo_Reason_REASONUNSPECIFIED :: SuppressionInfo_Reason
@@ -1035,5 +1039,4 @@ pattern SuppressionInfo_Reason_NOTCONSUMED = SuppressionInfo_Reason "NOT_CONSUME
   SuppressionInfo_Reason_REASONUNSPECIFIED,
   SuppressionInfo_Reason_RATELIMIT,
   SuppressionInfo_Reason_NOTCONSUMED,
-  SuppressionInfo_Reason
-  #-}
+  SuppressionInfo_Reason #-}

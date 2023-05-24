@@ -421,11 +421,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/youtubeanalytics/v2/youtubeanalytics-api.json
-  "revision": "20200804",
-=======
   "revision": "20210510",
->>>>>>> upstream/main:configs/models/youtubeanalytics/v2/youtubeanalytics-api.json
   "rootUrl": "https://youtubeanalytics.googleapis.com/",
   "schemas": {
     "EmptyResponse": {
@@ -479,11 +475,7 @@
           "enumDescriptions": [
             "location is an xpath-like path pointing to the request field that caused the error.",
             "other location type which can safely be shared externally.",
-<<<<<<< HEAD:gen/model/youtubeanalytics/v2/youtubeanalytics-api.json
-            "Location is request paramater. This maps to the {@link PARAMETERS} in {@link MessageLocation}."
-=======
             "Location is request parameter. This maps to the {@link PARAMETERS} in {@link MessageLocation}."
->>>>>>> upstream/main:configs/models/youtubeanalytics/v2/youtubeanalytics-api.json
           ],
           "type": "string"
         }

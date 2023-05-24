@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/libraryagent/v1/libraryagent-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/libraryagent/v1/libraryagent-api.json
         }
       }
     }
@@ -283,11 +279,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/libraryagent/v1/libraryagent-api.json
-  "revision": "20210322",
-=======
   "revision": "20210806",
->>>>>>> upstream/main:configs/models/libraryagent/v1/libraryagent-api.json
   "rootUrl": "https://libraryagent.googleapis.com/",
   "schemas": {
     "GoogleExampleLibraryagentV1Book": {

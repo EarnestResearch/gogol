@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/websecurityscanner/v1beta/websecurityscanner-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/websecurityscanner/v1beta/websecurityscanner-api.json
         }
       }
     }
@@ -530,11 +526,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/websecurityscanner/v1beta/websecurityscanner-api.json
-  "revision": "20210417",
-=======
   "revision": "20230107",
->>>>>>> upstream/main:configs/models/websecurityscanner/v1beta/websecurityscanner-api.json
   "rootUrl": "https://websecurityscanner.googleapis.com/",
   "schemas": {
     "Authentication": {
@@ -595,11 +587,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/websecurityscanner/v1beta/websecurityscanner-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/websecurityscanner/v1beta/websecurityscanner-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -689,13 +677,10 @@
         "xss": {
           "$ref": "Xss",
           "description": "An addon containing information reported for an XSS, if any."
-<<<<<<< HEAD:gen/model/websecurityscanner/v1beta/websecurityscanner-api.json
-=======
         },
         "xxe": {
           "$ref": "Xxe",
           "description": "An addon containing information reported for an XXE, if any."
->>>>>>> upstream/main:configs/models/websecurityscanner/v1beta/websecurityscanner-api.json
         }
       },
       "type": "object"
@@ -994,11 +979,6 @@
               "Google Cloud Run service.",
               "Google Cloud Function service."
             ],
-            "enumDescriptions": [
-              "The target platform is unknown. Requests with this enum value will be rejected with INVALID_ARGUMENT error.",
-              "Google App Engine service.",
-              "Google Compute Engine service."
-            ],
             "type": "string"
           },
           "type": "array"
@@ -1231,12 +1211,8 @@
             "Indicates an authentication error, usually due to outdated ScanConfig authentication settings.",
             "Indicates a scan operation timeout, usually caused by a very large site.",
             "Indicates that a scan encountered excessive redirects, either to authentication or some other page outside of the scan scope.",
-<<<<<<< HEAD:gen/model/websecurityscanner/v1beta/websecurityscanner-api.json
-            "Indicates that a scan encountered numerous errors from the web site pages. When available, most_common_http_error_code field indicates the most common HTTP error code encountered during the scan."
-=======
             "Indicates that a scan encountered numerous errors from the web site pages. When available, most_common_http_error_code field indicates the most common HTTP error code encountered during the scan.",
             "Indicates that some of the starting web urls returned HTTP errors during the scan."
->>>>>>> upstream/main:configs/models/websecurityscanner/v1beta/websecurityscanner-api.json
           ],
           "type": "string"
         },

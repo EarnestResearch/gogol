@@ -15,11 +15,7 @@
   "description": "Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports.",
   "discoveryVersion": "v1",
   "documentationLink": "https://developers.google.com/ad-exchange/buyer-rest",
-<<<<<<< HEAD:gen/model/adexchangebuyer/v1.4/adexchangebuyer-api.json
-  "etag": "\"-2NioU2H8y8siEzrBOV_qzRI6kQ/jgvyhwo-2198NR_j9usHx-LJ-6E\"",
-=======
   "etag": "\"uWj2hSb4GVjzdDlAnRd2gbM1ZQ8/IVduoBfiyFTIbwq6UMkXBVfkd9k\"",
->>>>>>> upstream/main:configs/models/adexchangebuyer/v1.4/adexchangebuyer-api.json
   "icons": {
     "x16": "https://www.google.com/images/icons/product/doubleclick-16.gif",
     "x32": "https://www.google.com/images/icons/product/doubleclick-32.gif"
@@ -1259,11 +1255,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/adexchangebuyer/v1.4/adexchangebuyer-api.json
-  "revision": "20201004",
-=======
   "revision": "20210516",
->>>>>>> upstream/main:configs/models/adexchangebuyer/v1.4/adexchangebuyer-api.json
   "rootUrl": "https://www.googleapis.com/",
   "schemas": {
     "Account": {
@@ -3452,11 +3444,7 @@
           "type": "string"
         },
         "publisherAppIds": {
-<<<<<<< HEAD:gen/model/adexchangebuyer/v1.4/adexchangebuyer-api.json
-          "description": "The list of app IDs represented in this pubisher profile. Empty if this is a parent profile. Deprecated in favor of publisher_app.",
-=======
           "description": "The list of app IDs represented in this publisher profile. Empty if this is a parent profile. Deprecated in favor of publisher_app.",
->>>>>>> upstream/main:configs/models/adexchangebuyer/v1.4/adexchangebuyer-api.json
           "items": {
             "format": "int64",
             "type": "string"
@@ -3464,11 +3452,7 @@
           "type": "array"
         },
         "publisherApps": {
-<<<<<<< HEAD:gen/model/adexchangebuyer/v1.4/adexchangebuyer-api.json
-          "description": "The list of apps represented in this pubisher profile. Empty if this is a parent profile.",
-=======
           "description": "The list of apps represented in this publisher profile. Empty if this is a parent profile.",
->>>>>>> upstream/main:configs/models/adexchangebuyer/v1.4/adexchangebuyer-api.json
           "items": {
             "$ref": "MobileApplication"
           },

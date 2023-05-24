@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.CloudFunctions.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AuditLogConfig_LogType
     AuditLogConfig_LogType
-      ( AuditLogConfig_LogType_LOGTYPEUNSPECIFIED,
+      (
+        AuditLogConfig_LogType_LOGTYPEUNSPECIFIED,
         AuditLogConfig_LogType_ADMINREAD,
         AuditLogConfig_LogType_DATAWRITE,
         AuditLogConfig_LogType_DATAREAD,
@@ -44,7 +50,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * BuildConfig_DockerRegistry
     BuildConfig_DockerRegistry
-      ( BuildConfig_DockerRegistry_DOCKERREGISTRYUNSPECIFIED,
+      (
+        BuildConfig_DockerRegistry_DOCKERREGISTRYUNSPECIFIED,
         BuildConfig_DockerRegistry_CONTAINERREGISTRY,
         BuildConfig_DockerRegistry_ARTIFACTREGISTRY,
         ..
@@ -52,7 +59,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * EventTrigger_RetryPolicy
     EventTrigger_RetryPolicy
-      ( EventTrigger_RetryPolicy_RETRYPOLICYUNSPECIFIED,
+      (
+        EventTrigger_RetryPolicy_RETRYPOLICYUNSPECIFIED,
         EventTrigger_RetryPolicy_RETRYPOLICYDONOTRETRY,
         EventTrigger_RetryPolicy_RETRYPOLICYRETRY,
         ..
@@ -60,7 +68,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * Function_Environment
     Function_Environment
-      ( Function_Environment_ENVIRONMENTUNSPECIFIED,
+      (
+        Function_Environment_ENVIRONMENTUNSPECIFIED,
         Function_Environment_GEN_1,
         Function_Environment_GEN_2,
         ..
@@ -68,7 +77,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * Function_State
     Function_State
-      ( Function_State_STATEUNSPECIFIED,
+      (
+        Function_State_STATEUNSPECIFIED,
         Function_State_Active,
         Function_State_Failed,
         Function_State_Deploying,
@@ -77,9 +87,19 @@ module Gogol.CloudFunctions.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem
+    GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem
+      (
+        GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+        GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_1,
+        GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_2,
+        ..
+      ),
+
     -- * GoogleCloudFunctionsV2Stage_Name
     GoogleCloudFunctionsV2Stage_Name
-      ( GoogleCloudFunctionsV2Stage_Name_NAMEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2Stage_Name_NAMEUNSPECIFIED,
         GoogleCloudFunctionsV2Stage_Name_ARTIFACTREGISTRY,
         GoogleCloudFunctionsV2Stage_Name_Build,
         GoogleCloudFunctionsV2Stage_Name_Service,
@@ -91,7 +111,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2Stage_State
     GoogleCloudFunctionsV2Stage_State
-      ( GoogleCloudFunctionsV2Stage_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2Stage_State_STATEUNSPECIFIED,
         GoogleCloudFunctionsV2Stage_State_NOTSTARTED,
         GoogleCloudFunctionsV2Stage_State_INPROGRESS,
         GoogleCloudFunctionsV2Stage_State_Complete,
@@ -100,16 +121,27 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2StateMessage_Severity
     GoogleCloudFunctionsV2StateMessage_Severity
-      ( GoogleCloudFunctionsV2StateMessage_Severity_SEVERITYUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2StateMessage_Severity_SEVERITYUNSPECIFIED,
         GoogleCloudFunctionsV2StateMessage_Severity_Error',
         GoogleCloudFunctionsV2StateMessage_Severity_Warning,
         GoogleCloudFunctionsV2StateMessage_Severity_Info,
         ..
       ),
 
+    -- * GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem
+    GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem
+      (
+        GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+        GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_1,
+        GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_2,
+        ..
+      ),
+
     -- * GoogleCloudFunctionsV2alphaStage_Name
     GoogleCloudFunctionsV2alphaStage_Name
-      ( GoogleCloudFunctionsV2alphaStage_Name_NAMEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2alphaStage_Name_NAMEUNSPECIFIED,
         GoogleCloudFunctionsV2alphaStage_Name_ARTIFACTREGISTRY,
         GoogleCloudFunctionsV2alphaStage_Name_Build,
         GoogleCloudFunctionsV2alphaStage_Name_Service,
@@ -121,7 +153,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2alphaStage_State
     GoogleCloudFunctionsV2alphaStage_State
-      ( GoogleCloudFunctionsV2alphaStage_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2alphaStage_State_STATEUNSPECIFIED,
         GoogleCloudFunctionsV2alphaStage_State_NOTSTARTED,
         GoogleCloudFunctionsV2alphaStage_State_INPROGRESS,
         GoogleCloudFunctionsV2alphaStage_State_Complete,
@@ -130,16 +163,27 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2alphaStateMessage_Severity
     GoogleCloudFunctionsV2alphaStateMessage_Severity
-      ( GoogleCloudFunctionsV2alphaStateMessage_Severity_SEVERITYUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2alphaStateMessage_Severity_SEVERITYUNSPECIFIED,
         GoogleCloudFunctionsV2alphaStateMessage_Severity_Error',
         GoogleCloudFunctionsV2alphaStateMessage_Severity_Warning,
         GoogleCloudFunctionsV2alphaStateMessage_Severity_Info,
         ..
       ),
 
+    -- * GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem
+    GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem
+      (
+        GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+        GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_1,
+        GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_2,
+        ..
+      ),
+
     -- * GoogleCloudFunctionsV2betaStage_Name
     GoogleCloudFunctionsV2betaStage_Name
-      ( GoogleCloudFunctionsV2betaStage_Name_NAMEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2betaStage_Name_NAMEUNSPECIFIED,
         GoogleCloudFunctionsV2betaStage_Name_ARTIFACTREGISTRY,
         GoogleCloudFunctionsV2betaStage_Name_Build,
         GoogleCloudFunctionsV2betaStage_Name_Service,
@@ -151,7 +195,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2betaStage_State
     GoogleCloudFunctionsV2betaStage_State
-      ( GoogleCloudFunctionsV2betaStage_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2betaStage_State_STATEUNSPECIFIED,
         GoogleCloudFunctionsV2betaStage_State_NOTSTARTED,
         GoogleCloudFunctionsV2betaStage_State_INPROGRESS,
         GoogleCloudFunctionsV2betaStage_State_Complete,
@@ -160,7 +205,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * GoogleCloudFunctionsV2betaStateMessage_Severity
     GoogleCloudFunctionsV2betaStateMessage_Severity
-      ( GoogleCloudFunctionsV2betaStateMessage_Severity_SEVERITYUNSPECIFIED,
+      (
+        GoogleCloudFunctionsV2betaStateMessage_Severity_SEVERITYUNSPECIFIED,
         GoogleCloudFunctionsV2betaStateMessage_Severity_Error',
         GoogleCloudFunctionsV2betaStateMessage_Severity_Warning,
         GoogleCloudFunctionsV2betaStateMessage_Severity_Info,
@@ -169,7 +215,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * OperationMetadataV1_Type
     OperationMetadataV1_Type
-      ( OperationMetadataV1_Type_OPERATIONUNSPECIFIED,
+      (
+        OperationMetadataV1_Type_OPERATIONUNSPECIFIED,
         OperationMetadataV1_Type_CREATEFUNCTION,
         OperationMetadataV1_Type_UPDATEFUNCTION,
         OperationMetadataV1_Type_DELETEFUNCTION,
@@ -178,7 +225,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * Runtime_Environment
     Runtime_Environment
-      ( Runtime_Environment_ENVIRONMENTUNSPECIFIED,
+      (
+        Runtime_Environment_ENVIRONMENTUNSPECIFIED,
         Runtime_Environment_GEN_1,
         Runtime_Environment_GEN_2,
         ..
@@ -186,7 +234,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * Runtime_Stage
     Runtime_Stage
-      ( Runtime_Stage_RUNTIMESTAGEUNSPECIFIED,
+      (
+        Runtime_Stage_RUNTIMESTAGEUNSPECIFIED,
         Runtime_Stage_Development,
         Runtime_Stage_Alpha,
         Runtime_Stage_Beta,
@@ -198,7 +247,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * ServiceConfig_IngressSettings
     ServiceConfig_IngressSettings
-      ( ServiceConfig_IngressSettings_INGRESSSETTINGSUNSPECIFIED,
+      (
+        ServiceConfig_IngressSettings_INGRESSSETTINGSUNSPECIFIED,
         ServiceConfig_IngressSettings_ALLOWALL,
         ServiceConfig_IngressSettings_ALLOWINTERNALONLY,
         ServiceConfig_IngressSettings_ALLOWINTERNALANDGCLB,
@@ -207,7 +257,8 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * ServiceConfig_SecurityLevel
     ServiceConfig_SecurityLevel
-      ( ServiceConfig_SecurityLevel_SECURITYLEVELUNSPECIFIED,
+      (
+        ServiceConfig_SecurityLevel_SECURITYLEVELUNSPECIFIED,
         ServiceConfig_SecurityLevel_SECUREALWAYS,
         ServiceConfig_SecurityLevel_SECUREOPTIONAL,
         ..
@@ -215,28 +266,28 @@ module Gogol.CloudFunctions.Internal.Sum
 
     -- * ServiceConfig_VpcConnectorEgressSettings
     ServiceConfig_VpcConnectorEgressSettings
-      ( ServiceConfig_VpcConnectorEgressSettings_VPCCONNECTOREGRESSSETTINGSUNSPECIFIED,
+      (
+        ServiceConfig_VpcConnectorEgressSettings_VPCCONNECTOREGRESSSETTINGSUNSPECIFIED,
         ServiceConfig_VpcConnectorEgressSettings_PRIVATERANGESONLY,
         ServiceConfig_VpcConnectorEgressSettings_ALLTRAFFIC,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -249,21 +300,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The log type that this config enables.
-newtype AuditLogConfig_LogType = AuditLogConfig_LogType {fromAuditLogConfig_LogType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AuditLogConfig_LogType = AuditLogConfig_LogType { fromAuditLogConfig_LogType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default case. Should never be this.
 pattern AuditLogConfig_LogType_LOGTYPEUNSPECIFIED :: AuditLogConfig_LogType
@@ -286,21 +336,20 @@ pattern AuditLogConfig_LogType_DATAREAD = AuditLogConfig_LogType "DATA_READ"
   AuditLogConfig_LogType_ADMINREAD,
   AuditLogConfig_LogType_DATAWRITE,
   AuditLogConfig_LogType_DATAREAD,
-  AuditLogConfig_LogType
-  #-}
+  AuditLogConfig_LogType #-}
 
--- | Optional. Docker Registry to use for this deployment. This configuration is only applicable to 1st Gen functions, 2nd Gen functions can only use Artifact Registry. If @docker_repository@ field is specified, this field will be automatically set as @ARTIFACT_REGISTRY@. If unspecified, it currently defaults to @CONTAINER_REGISTRY@. This field may be overridden by the backend for eligible deployments.
-newtype BuildConfig_DockerRegistry = BuildConfig_DockerRegistry {fromBuildConfig_DockerRegistry :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+-- | Docker Registry to use for this deployment. This configuration is only applicable to 1st Gen functions, 2nd Gen functions can only use Artifact Registry. If @docker_repository@ field is specified, this field will be automatically set as @ARTIFACT_REGISTRY@. If unspecified, it currently defaults to @CONTAINER_REGISTRY@. This field may be overridden by the backend for eligible deployments.
+newtype BuildConfig_DockerRegistry = BuildConfig_DockerRegistry { fromBuildConfig_DockerRegistry :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern BuildConfig_DockerRegistry_DOCKERREGISTRYUNSPECIFIED :: BuildConfig_DockerRegistry
@@ -318,21 +367,20 @@ pattern BuildConfig_DockerRegistry_ARTIFACTREGISTRY = BuildConfig_DockerRegistry
   BuildConfig_DockerRegistry_DOCKERREGISTRYUNSPECIFIED,
   BuildConfig_DockerRegistry_CONTAINERREGISTRY,
   BuildConfig_DockerRegistry_ARTIFACTREGISTRY,
-  BuildConfig_DockerRegistry
-  #-}
+  BuildConfig_DockerRegistry #-}
 
 -- | Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
-newtype EventTrigger_RetryPolicy = EventTrigger_RetryPolicy {fromEventTrigger_RetryPolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EventTrigger_RetryPolicy = EventTrigger_RetryPolicy { fromEventTrigger_RetryPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern EventTrigger_RetryPolicy_RETRYPOLICYUNSPECIFIED :: EventTrigger_RetryPolicy
@@ -350,21 +398,20 @@ pattern EventTrigger_RetryPolicy_RETRYPOLICYRETRY = EventTrigger_RetryPolicy "RE
   EventTrigger_RetryPolicy_RETRYPOLICYUNSPECIFIED,
   EventTrigger_RetryPolicy_RETRYPOLICYDONOTRETRY,
   EventTrigger_RetryPolicy_RETRYPOLICYRETRY,
-  EventTrigger_RetryPolicy
-  #-}
+  EventTrigger_RetryPolicy #-}
 
 -- | Describe whether the function is 1st Gen or 2nd Gen.
-newtype Function_Environment = Function_Environment {fromFunction_Environment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Function_Environment = Function_Environment { fromFunction_Environment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern Function_Environment_ENVIRONMENTUNSPECIFIED :: Function_Environment
@@ -382,21 +429,20 @@ pattern Function_Environment_GEN_2 = Function_Environment "GEN_2"
   Function_Environment_ENVIRONMENTUNSPECIFIED,
   Function_Environment_GEN_1,
   Function_Environment_GEN_2,
-  Function_Environment
-  #-}
+  Function_Environment #-}
 
 -- | Output only. State of the function.
-newtype Function_State = Function_State {fromFunction_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Function_State = Function_State { fromFunction_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid state.
 pattern Function_State_STATEUNSPECIFIED :: Function_State
@@ -429,21 +475,50 @@ pattern Function_State_Unknown = Function_State "UNKNOWN"
   Function_State_Deploying,
   Function_State_Deleting,
   Function_State_Unknown,
-  Function_State
-  #-}
+  Function_State #-}
+
+newtype GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem = GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem { fromGoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Unspecified
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED :: GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED = GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem "ENVIRONMENT_UNSPECIFIED"
+
+-- | Gen 1
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_1 :: GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_1 = GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem "GEN_1"
+
+-- | Gen 2
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_2 :: GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_2 = GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem "GEN_2"
+
+{-# COMPLETE
+  GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+  GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_1,
+  GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem_GEN_2,
+  GoogleCloudFunctionsV2LocationMetadata_EnvironmentsItem #-}
 
 -- | Name of the Stage. This will be unique for each Stage.
-newtype GoogleCloudFunctionsV2Stage_Name = GoogleCloudFunctionsV2Stage_Name {fromGoogleCloudFunctionsV2Stage_Name :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2Stage_Name = GoogleCloudFunctionsV2Stage_Name { fromGoogleCloudFunctionsV2Stage_Name :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid name.
 pattern GoogleCloudFunctionsV2Stage_Name_NAMEUNSPECIFIED :: GoogleCloudFunctionsV2Stage_Name
@@ -481,21 +556,20 @@ pattern GoogleCloudFunctionsV2Stage_Name_TRIGGERROLLBACK = GoogleCloudFunctionsV
   GoogleCloudFunctionsV2Stage_Name_Trigger,
   GoogleCloudFunctionsV2Stage_Name_SERVICEROLLBACK,
   GoogleCloudFunctionsV2Stage_Name_TRIGGERROLLBACK,
-  GoogleCloudFunctionsV2Stage_Name
-  #-}
+  GoogleCloudFunctionsV2Stage_Name #-}
 
 -- | Current state of the Stage
-newtype GoogleCloudFunctionsV2Stage_State = GoogleCloudFunctionsV2Stage_State {fromGoogleCloudFunctionsV2Stage_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2Stage_State = GoogleCloudFunctionsV2Stage_State { fromGoogleCloudFunctionsV2Stage_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid state.
 pattern GoogleCloudFunctionsV2Stage_State_STATEUNSPECIFIED :: GoogleCloudFunctionsV2Stage_State
@@ -518,21 +592,20 @@ pattern GoogleCloudFunctionsV2Stage_State_Complete = GoogleCloudFunctionsV2Stage
   GoogleCloudFunctionsV2Stage_State_NOTSTARTED,
   GoogleCloudFunctionsV2Stage_State_INPROGRESS,
   GoogleCloudFunctionsV2Stage_State_Complete,
-  GoogleCloudFunctionsV2Stage_State
-  #-}
+  GoogleCloudFunctionsV2Stage_State #-}
 
 -- | Severity of the state message.
-newtype GoogleCloudFunctionsV2StateMessage_Severity = GoogleCloudFunctionsV2StateMessage_Severity {fromGoogleCloudFunctionsV2StateMessage_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2StateMessage_Severity = GoogleCloudFunctionsV2StateMessage_Severity { fromGoogleCloudFunctionsV2StateMessage_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid severity.
 pattern GoogleCloudFunctionsV2StateMessage_Severity_SEVERITYUNSPECIFIED :: GoogleCloudFunctionsV2StateMessage_Severity
@@ -555,21 +628,50 @@ pattern GoogleCloudFunctionsV2StateMessage_Severity_Info = GoogleCloudFunctionsV
   GoogleCloudFunctionsV2StateMessage_Severity_Error',
   GoogleCloudFunctionsV2StateMessage_Severity_Warning,
   GoogleCloudFunctionsV2StateMessage_Severity_Info,
-  GoogleCloudFunctionsV2StateMessage_Severity
-  #-}
+  GoogleCloudFunctionsV2StateMessage_Severity #-}
+
+newtype GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem = GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem { fromGoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Unspecified
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED :: GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED = GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem "ENVIRONMENT_UNSPECIFIED"
+
+-- | Gen 1
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_1 :: GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_1 = GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem "GEN_1"
+
+-- | Gen 2
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_2 :: GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_2 = GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem "GEN_2"
+
+{-# COMPLETE
+  GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+  GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_1,
+  GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem_GEN_2,
+  GoogleCloudFunctionsV2alphaLocationMetadata_EnvironmentsItem #-}
 
 -- | Name of the Stage. This will be unique for each Stage.
-newtype GoogleCloudFunctionsV2alphaStage_Name = GoogleCloudFunctionsV2alphaStage_Name {fromGoogleCloudFunctionsV2alphaStage_Name :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2alphaStage_Name = GoogleCloudFunctionsV2alphaStage_Name { fromGoogleCloudFunctionsV2alphaStage_Name :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid name.
 pattern GoogleCloudFunctionsV2alphaStage_Name_NAMEUNSPECIFIED :: GoogleCloudFunctionsV2alphaStage_Name
@@ -607,21 +709,20 @@ pattern GoogleCloudFunctionsV2alphaStage_Name_TRIGGERROLLBACK = GoogleCloudFunct
   GoogleCloudFunctionsV2alphaStage_Name_Trigger,
   GoogleCloudFunctionsV2alphaStage_Name_SERVICEROLLBACK,
   GoogleCloudFunctionsV2alphaStage_Name_TRIGGERROLLBACK,
-  GoogleCloudFunctionsV2alphaStage_Name
-  #-}
+  GoogleCloudFunctionsV2alphaStage_Name #-}
 
 -- | Current state of the Stage
-newtype GoogleCloudFunctionsV2alphaStage_State = GoogleCloudFunctionsV2alphaStage_State {fromGoogleCloudFunctionsV2alphaStage_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2alphaStage_State = GoogleCloudFunctionsV2alphaStage_State { fromGoogleCloudFunctionsV2alphaStage_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid state.
 pattern GoogleCloudFunctionsV2alphaStage_State_STATEUNSPECIFIED :: GoogleCloudFunctionsV2alphaStage_State
@@ -644,21 +745,20 @@ pattern GoogleCloudFunctionsV2alphaStage_State_Complete = GoogleCloudFunctionsV2
   GoogleCloudFunctionsV2alphaStage_State_NOTSTARTED,
   GoogleCloudFunctionsV2alphaStage_State_INPROGRESS,
   GoogleCloudFunctionsV2alphaStage_State_Complete,
-  GoogleCloudFunctionsV2alphaStage_State
-  #-}
+  GoogleCloudFunctionsV2alphaStage_State #-}
 
 -- | Severity of the state message.
-newtype GoogleCloudFunctionsV2alphaStateMessage_Severity = GoogleCloudFunctionsV2alphaStateMessage_Severity {fromGoogleCloudFunctionsV2alphaStateMessage_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2alphaStateMessage_Severity = GoogleCloudFunctionsV2alphaStateMessage_Severity { fromGoogleCloudFunctionsV2alphaStateMessage_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid severity.
 pattern GoogleCloudFunctionsV2alphaStateMessage_Severity_SEVERITYUNSPECIFIED :: GoogleCloudFunctionsV2alphaStateMessage_Severity
@@ -681,21 +781,50 @@ pattern GoogleCloudFunctionsV2alphaStateMessage_Severity_Info = GoogleCloudFunct
   GoogleCloudFunctionsV2alphaStateMessage_Severity_Error',
   GoogleCloudFunctionsV2alphaStateMessage_Severity_Warning,
   GoogleCloudFunctionsV2alphaStateMessage_Severity_Info,
-  GoogleCloudFunctionsV2alphaStateMessage_Severity
-  #-}
+  GoogleCloudFunctionsV2alphaStateMessage_Severity #-}
+
+newtype GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem = GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem { fromGoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Unspecified
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED :: GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED = GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem "ENVIRONMENT_UNSPECIFIED"
+
+-- | Gen 1
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_1 :: GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_1 = GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem "GEN_1"
+
+-- | Gen 2
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_2 :: GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem
+pattern GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_2 = GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem "GEN_2"
+
+{-# COMPLETE
+  GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_ENVIRONMENTUNSPECIFIED,
+  GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_1,
+  GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem_GEN_2,
+  GoogleCloudFunctionsV2betaLocationMetadata_EnvironmentsItem #-}
 
 -- | Name of the Stage. This will be unique for each Stage.
-newtype GoogleCloudFunctionsV2betaStage_Name = GoogleCloudFunctionsV2betaStage_Name {fromGoogleCloudFunctionsV2betaStage_Name :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2betaStage_Name = GoogleCloudFunctionsV2betaStage_Name { fromGoogleCloudFunctionsV2betaStage_Name :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid name.
 pattern GoogleCloudFunctionsV2betaStage_Name_NAMEUNSPECIFIED :: GoogleCloudFunctionsV2betaStage_Name
@@ -733,21 +862,20 @@ pattern GoogleCloudFunctionsV2betaStage_Name_TRIGGERROLLBACK = GoogleCloudFuncti
   GoogleCloudFunctionsV2betaStage_Name_Trigger,
   GoogleCloudFunctionsV2betaStage_Name_SERVICEROLLBACK,
   GoogleCloudFunctionsV2betaStage_Name_TRIGGERROLLBACK,
-  GoogleCloudFunctionsV2betaStage_Name
-  #-}
+  GoogleCloudFunctionsV2betaStage_Name #-}
 
 -- | Current state of the Stage
-newtype GoogleCloudFunctionsV2betaStage_State = GoogleCloudFunctionsV2betaStage_State {fromGoogleCloudFunctionsV2betaStage_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2betaStage_State = GoogleCloudFunctionsV2betaStage_State { fromGoogleCloudFunctionsV2betaStage_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid state.
 pattern GoogleCloudFunctionsV2betaStage_State_STATEUNSPECIFIED :: GoogleCloudFunctionsV2betaStage_State
@@ -770,21 +898,20 @@ pattern GoogleCloudFunctionsV2betaStage_State_Complete = GoogleCloudFunctionsV2b
   GoogleCloudFunctionsV2betaStage_State_NOTSTARTED,
   GoogleCloudFunctionsV2betaStage_State_INPROGRESS,
   GoogleCloudFunctionsV2betaStage_State_Complete,
-  GoogleCloudFunctionsV2betaStage_State
-  #-}
+  GoogleCloudFunctionsV2betaStage_State #-}
 
 -- | Severity of the state message.
-newtype GoogleCloudFunctionsV2betaStateMessage_Severity = GoogleCloudFunctionsV2betaStateMessage_Severity {fromGoogleCloudFunctionsV2betaStateMessage_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudFunctionsV2betaStateMessage_Severity = GoogleCloudFunctionsV2betaStateMessage_Severity { fromGoogleCloudFunctionsV2betaStateMessage_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Invalid severity.
 pattern GoogleCloudFunctionsV2betaStateMessage_Severity_SEVERITYUNSPECIFIED :: GoogleCloudFunctionsV2betaStateMessage_Severity
@@ -807,21 +934,20 @@ pattern GoogleCloudFunctionsV2betaStateMessage_Severity_Info = GoogleCloudFuncti
   GoogleCloudFunctionsV2betaStateMessage_Severity_Error',
   GoogleCloudFunctionsV2betaStateMessage_Severity_Warning,
   GoogleCloudFunctionsV2betaStateMessage_Severity_Info,
-  GoogleCloudFunctionsV2betaStateMessage_Severity
-  #-}
+  GoogleCloudFunctionsV2betaStateMessage_Severity #-}
 
 -- | Type of operation.
-newtype OperationMetadataV1_Type = OperationMetadataV1_Type {fromOperationMetadataV1_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype OperationMetadataV1_Type = OperationMetadataV1_Type { fromOperationMetadataV1_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown operation type.
 pattern OperationMetadataV1_Type_OPERATIONUNSPECIFIED :: OperationMetadataV1_Type
@@ -844,21 +970,20 @@ pattern OperationMetadataV1_Type_DELETEFUNCTION = OperationMetadataV1_Type "DELE
   OperationMetadataV1_Type_CREATEFUNCTION,
   OperationMetadataV1_Type_UPDATEFUNCTION,
   OperationMetadataV1_Type_DELETEFUNCTION,
-  OperationMetadataV1_Type
-  #-}
+  OperationMetadataV1_Type #-}
 
 -- | The environment for the runtime.
-newtype Runtime_Environment = Runtime_Environment {fromRuntime_Environment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Runtime_Environment = Runtime_Environment { fromRuntime_Environment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern Runtime_Environment_ENVIRONMENTUNSPECIFIED :: Runtime_Environment
@@ -876,21 +1001,20 @@ pattern Runtime_Environment_GEN_2 = Runtime_Environment "GEN_2"
   Runtime_Environment_ENVIRONMENTUNSPECIFIED,
   Runtime_Environment_GEN_1,
   Runtime_Environment_GEN_2,
-  Runtime_Environment
-  #-}
+  Runtime_Environment #-}
 
 -- | The stage of life this runtime is in, e.g., BETA, GA, etc.
-newtype Runtime_Stage = Runtime_Stage {fromRuntime_Stage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Runtime_Stage = Runtime_Stage { fromRuntime_Stage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern Runtime_Stage_RUNTIMESTAGEUNSPECIFIED :: Runtime_Stage
@@ -928,21 +1052,20 @@ pattern Runtime_Stage_Decommissioned = Runtime_Stage "DECOMMISSIONED"
   Runtime_Stage_GA,
   Runtime_Stage_Deprecated,
   Runtime_Stage_Decommissioned,
-  Runtime_Stage
-  #-}
+  Runtime_Stage #-}
 
 -- | The ingress settings for the function, controlling what traffic can reach it.
-newtype ServiceConfig_IngressSettings = ServiceConfig_IngressSettings {fromServiceConfig_IngressSettings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ServiceConfig_IngressSettings = ServiceConfig_IngressSettings { fromServiceConfig_IngressSettings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern ServiceConfig_IngressSettings_INGRESSSETTINGSUNSPECIFIED :: ServiceConfig_IngressSettings
@@ -965,21 +1088,20 @@ pattern ServiceConfig_IngressSettings_ALLOWINTERNALANDGCLB = ServiceConfig_Ingre
   ServiceConfig_IngressSettings_ALLOWALL,
   ServiceConfig_IngressSettings_ALLOWINTERNALONLY,
   ServiceConfig_IngressSettings_ALLOWINTERNALANDGCLB,
-  ServiceConfig_IngressSettings
-  #-}
+  ServiceConfig_IngressSettings #-}
 
 -- | Security level configure whether the function only accepts https. This configuration is only applicable to 1st Gen functions with Http trigger. By default https is optional for 1st Gen functions; 2nd Gen functions are https ONLY.
-newtype ServiceConfig_SecurityLevel = ServiceConfig_SecurityLevel {fromServiceConfig_SecurityLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ServiceConfig_SecurityLevel = ServiceConfig_SecurityLevel { fromServiceConfig_SecurityLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern ServiceConfig_SecurityLevel_SECURITYLEVELUNSPECIFIED :: ServiceConfig_SecurityLevel
@@ -997,21 +1119,20 @@ pattern ServiceConfig_SecurityLevel_SECUREOPTIONAL = ServiceConfig_SecurityLevel
   ServiceConfig_SecurityLevel_SECURITYLEVELUNSPECIFIED,
   ServiceConfig_SecurityLevel_SECUREALWAYS,
   ServiceConfig_SecurityLevel_SECUREOPTIONAL,
-  ServiceConfig_SecurityLevel
-  #-}
+  ServiceConfig_SecurityLevel #-}
 
 -- | The egress settings for the connector, controlling what traffic is diverted through it.
-newtype ServiceConfig_VpcConnectorEgressSettings = ServiceConfig_VpcConnectorEgressSettings {fromServiceConfig_VpcConnectorEgressSettings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ServiceConfig_VpcConnectorEgressSettings = ServiceConfig_VpcConnectorEgressSettings { fromServiceConfig_VpcConnectorEgressSettings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern ServiceConfig_VpcConnectorEgressSettings_VPCCONNECTOREGRESSSETTINGSUNSPECIFIED :: ServiceConfig_VpcConnectorEgressSettings
@@ -1029,5 +1150,4 @@ pattern ServiceConfig_VpcConnectorEgressSettings_ALLTRAFFIC = ServiceConfig_VpcC
   ServiceConfig_VpcConnectorEgressSettings_VPCCONNECTOREGRESSSETTINGSUNSPECIFIED,
   ServiceConfig_VpcConnectorEgressSettings_PRIVATERANGESONLY,
   ServiceConfig_VpcConnectorEgressSettings_ALLTRAFFIC,
-  ServiceConfig_VpcConnectorEgressSettings
-  #-}
+  ServiceConfig_VpcConnectorEgressSettings #-}

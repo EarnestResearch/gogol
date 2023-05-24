@@ -21,11 +21,7 @@
   "description": "Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.",
   "discoveryVersion": "v1",
   "documentationLink": "https://developers.google.com/doubleclick-advertisers/",
-<<<<<<< HEAD:gen/model/dfareporting/v3.1/dfareporting-api.json
-  "etag": "\"9eZ1uxVRThTDhLJCZHhqs3eQWz4/lSDUytSNxGcl1tfeDGlF_ujuIQg\"",
-=======
   "fullyEncodeReservedExpansion": true,
->>>>>>> upstream/main:configs/models/dfareporting/v3.3/dfareporting-api.json
   "icons": {
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
     "x32": "http://www.google.com/images/icons/product/search-32.gif"
@@ -2290,27 +2286,6 @@
                 "OBJECT_ACCOUNT_BILLING_FEATURE",
                 "OBJECT_BILLING_MINIMUM_FEE",
                 "OBJECT_BILLING_PROFILE",
-<<<<<<< HEAD:gen/model/dfareporting/v3.1/dfareporting-api.json
-                "OBJECT_CAMPAIGN",
-                "OBJECT_CONTENT_CATEGORY",
-                "OBJECT_CREATIVE",
-                "OBJECT_CREATIVE_ASSET",
-                "OBJECT_CREATIVE_BUNDLE",
-                "OBJECT_CREATIVE_FIELD",
-                "OBJECT_CREATIVE_GROUP",
-                "OBJECT_DFA_SITE",
-                "OBJECT_EVENT_TAG",
-                "OBJECT_FLOODLIGHT_ACTIVITY_GROUP",
-                "OBJECT_FLOODLIGHT_ACTVITY",
-                "OBJECT_FLOODLIGHT_CONFIGURATION",
-                "OBJECT_FLOODLIGHT_DV360_LINK",
-                "OBJECT_INSTREAM_CREATIVE",
-                "OBJECT_LANDING_PAGE",
-                "OBJECT_MEDIA_ORDER",
-                "OBJECT_PLACEMENT",
-                "OBJECT_PLACEMENT_STRATEGY",
-=======
->>>>>>> upstream/main:configs/models/dfareporting/v3.3/dfareporting-api.json
                 "OBJECT_PLAYSTORE_LINK",
                 "OBJECT_TARGETING_TEMPLATE",
                 "OBJECT_SEARCH_LIFT_STUDY",
@@ -9666,13 +9641,8 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/dfareporting/v3.1/dfareporting-api.json
-  "revision": "20190904",
-  "rootUrl": "https://www.googleapis.com/",
-=======
   "revision": "20220104",
   "rootUrl": "https://dfareporting.googleapis.com/",
->>>>>>> upstream/main:configs/models/dfareporting/v3.3/dfareporting-api.json
   "schemas": {
     "Account": {
       "description": "Contains properties of a Campaign Manager account.",
@@ -11337,13 +11307,10 @@
           "description": "The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[],mobileDeviceId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId or gclid is a required field.",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/dfareporting/v3.1/dfareporting-api.json
-=======
         "mobileDeviceId": {
           "description": "The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or gclid is a required field.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dfareporting/v3.3/dfareporting-api.json
         "nonPersonalizedAd": {
           "description": "Whether the conversion was for a non personalized ad.",
           "type": "boolean"
@@ -14763,6 +14730,10 @@
           ],
           "type": "string"
         },
+        "hidden": {
+          "description": "Whether this activity is archived.",
+          "type": "boolean"
+        },
         "id": {
           "description": "ID of this floodlight activity. This is a read-only, auto-generated field.",
           "format": "int64",
@@ -17301,6 +17272,10 @@
             ""
           ],
           "type": "string"
+        },
+        "disregardOverdelivery": {
+          "description": "Whether cap costs are ignored by ad serving.",
+          "type": "boolean"
         },
         "endDate": {
           "format": "date",

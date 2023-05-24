@@ -992,84 +992,6 @@
         }
       }
     },
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-    "inventory": {
-      "methods": {
-        "custombatch": {
-          "description": "Updates price and availability for multiple products or stores in a single request. This operation does not update the expiration date of the products.",
-          "flatPath": "inventory/batch",
-          "httpMethod": "POST",
-          "id": "content.inventory.custombatch",
-          "parameterOrder": [],
-          "parameters": {
-            "dryRun": {
-              "description": "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).",
-              "location": "query",
-              "type": "boolean"
-            }
-          },
-          "path": "inventory/batch",
-          "request": {
-            "$ref": "InventoryCustomBatchRequest"
-          },
-          "response": {
-            "$ref": "InventoryCustomBatchResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ]
-        },
-        "set": {
-          "description": "Updates price and availability of a product in your Merchant Center account.",
-          "flatPath": "{merchantId}/inventory/{storeCode}/products/{productId}",
-          "httpMethod": "POST",
-          "id": "content.inventory.set",
-          "parameterOrder": [
-            "merchantId",
-            "storeCode",
-            "productId"
-          ],
-          "parameters": {
-            "dryRun": {
-              "description": "Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).",
-              "location": "query",
-              "type": "boolean"
-            },
-            "merchantId": {
-              "description": "The ID of the account that contains the product. This account cannot be a multi-client account.",
-              "format": "uint64",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "productId": {
-              "description": "The REST ID of the product for which to update price and availability.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "storeCode": {
-              "description": "The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "{merchantId}/inventory/{storeCode}/products/{productId}",
-          "request": {
-            "$ref": "InventorySetRequest"
-          },
-          "response": {
-            "$ref": "InventorySetResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ]
-        }
-      }
-    },
-=======
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
     "liasettings": {
       "methods": {
         "custombatch": {
@@ -3301,11 +3223,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-  "revision": "20210311",
-=======
   "revision": "20220317",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
   "rootUrl": "https://shoppingcontent.googleapis.com/",
   "schemas": {
     "Account": {
@@ -4260,11 +4178,7 @@
       "id": "BusinessDayConfig",
       "properties": {
         "businessDays": {
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-          "description": "Regular business days. May not be empty.",
-=======
           "description": "Regular business days, such as '\"monday\"'. May not be empty.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
           "items": {
             "type": "string"
           },
@@ -4322,11 +4236,7 @@
           "type": "string"
         },
         "services": {
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-          "description": "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service.",
-=======
           "description": "A list of supported services (e.g., `\"ground\"`) for that carrier. Contains at least one service. This is the list of valid values for CarrierRate.carrierService.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
           "items": {
             "type": "string"
           },
@@ -4924,8 +4834,6 @@
         "transitTimeTable": {
           "$ref": "TransitTable",
           "description": "Transit time table, number of business days spent in transit based on row and column dimensions. Either `{min,max}TransitTimeInDays` or `transitTimeTable` can be set, but not both."
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-=======
         },
         "warehouseBasedDeliveryTimes": {
           "description": "Indicates that the delivery time should be calculated per warehouse (shipping origin location) based on the settings of the selected carrier. When set, no other transit time related field in DeliveryTime should be set.",
@@ -4933,7 +4841,6 @@
             "$ref": "WarehouseBasedDeliveryTime"
           },
           "type": "array"
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
         }
       },
       "type": "object"
@@ -5136,252 +5043,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-    "Inventory": {
-      "id": "Inventory",
-      "properties": {
-        "availability": {
-          "description": "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" ",
-          "type": "string"
-        },
-        "customLabel0": {
-          "description": "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel1": {
-          "description": "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel2": {
-          "description": "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel3": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel4": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "installment": {
-          "$ref": "Installment",
-          "description": "Number and amount of installments to pay for an item. Brazil only."
-        },
-        "instoreProductLocation": {
-          "description": "The instore product location. Supported only for local products.",
-          "type": "string"
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#inventory`\"",
-          "type": "string"
-        },
-        "loyaltyPoints": {
-          "$ref": "LoyaltyPoints",
-          "description": "Loyalty points that users receive after purchasing the item. Japan only."
-        },
-        "pickup": {
-          "$ref": "InventoryPickup",
-          "description": "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\"."
-        },
-        "price": {
-          "$ref": "Price",
-          "description": "The price of the product."
-        },
-        "quantity": {
-          "description": "The quantity of the product. Must be equal to or greater than zero. Supported only for local products.",
-          "format": "uint32",
-          "type": "integer"
-        },
-        "salePrice": {
-          "$ref": "Price",
-          "description": "The sale price of the product. Mandatory if `sale_price_effective_date` is defined."
-        },
-        "salePriceEffectiveDate": {
-          "description": "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.",
-          "type": "string"
-        },
-        "sellOnGoogleQuantity": {
-          "description": "The quantity of the product that is available for selling on Google. Supported only for online products.",
-          "format": "uint32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "InventoryCustomBatchRequest": {
-      "id": "InventoryCustomBatchRequest",
-      "properties": {
-        "entries": {
-          "description": "The request entries to be processed in the batch.",
-          "items": {
-            "$ref": "InventoryCustomBatchRequestEntry"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "InventoryCustomBatchRequestEntry": {
-      "description": "A batch entry encoding a single non-batch inventory request.",
-      "id": "InventoryCustomBatchRequestEntry",
-      "properties": {
-        "batchId": {
-          "description": "An entry ID, unique within the batch request.",
-          "format": "uint32",
-          "type": "integer"
-        },
-        "inventory": {
-          "$ref": "Inventory",
-          "description": "Price and availability of the product."
-        },
-        "merchantId": {
-          "description": "The ID of the managing account.",
-          "format": "uint64",
-          "type": "string"
-        },
-        "productId": {
-          "description": "The ID of the product for which to update price and availability.",
-          "type": "string"
-        },
-        "storeCode": {
-          "description": "The code of the store for which to update price and availability. Use `online` to update price and availability of an online product.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "InventoryCustomBatchResponse": {
-      "id": "InventoryCustomBatchResponse",
-      "properties": {
-        "entries": {
-          "description": "The result of the execution of the batch requests.",
-          "items": {
-            "$ref": "InventoryCustomBatchResponseEntry"
-          },
-          "type": "array"
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"content#inventoryCustomBatchResponse\".",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "InventoryCustomBatchResponseEntry": {
-      "description": "A batch entry encoding a single non-batch inventory response.",
-      "id": "InventoryCustomBatchResponseEntry",
-      "properties": {
-        "batchId": {
-          "description": "The ID of the request entry this entry responds to.",
-          "format": "uint32",
-          "type": "integer"
-        },
-        "errors": {
-          "$ref": "Errors",
-          "description": "A list of errors defined if and only if the request failed."
-        },
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#inventoryCustomBatchResponseEntry`\"",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "InventoryPickup": {
-      "id": "InventoryPickup",
-      "properties": {
-        "pickupMethod": {
-          "description": "Whether store pickup is available for this offer and whether the pickup option should be shown as buy, reserve, or not supported. Only supported for local inventory. Unless the value is \"not supported\", must be submitted together with `pickupSla`. Acceptable values are: - \"`buy`\" - \"`not supported`\" - \"`reserve`\" - \"`ship to store`\" ",
-          "type": "string"
-        },
-        "pickupSla": {
-          "description": "The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`. Acceptable values are: - \"`five day`\" - \"`four day`\" - \"`multi day`\" - \"`multi week`\" - \"`next day`\" - \"`same day`\" - \"`seven day`\" - \"`six day`\" - \"`three day`\" - \"`two day`\" ",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "InventorySetRequest": {
-      "id": "InventorySetRequest",
-      "properties": {
-        "availability": {
-          "description": "The availability of the product. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" ",
-          "type": "string"
-        },
-        "customLabel0": {
-          "description": "Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel1": {
-          "description": "Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel2": {
-          "description": "Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel3": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "customLabel4": {
-          "description": "Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products.",
-          "type": "string"
-        },
-        "installment": {
-          "$ref": "Installment",
-          "description": "Number and amount of installments to pay for an item. Brazil only."
-        },
-        "instoreProductLocation": {
-          "description": "The instore product location. Supported only for local products.",
-          "type": "string"
-        },
-        "loyaltyPoints": {
-          "$ref": "LoyaltyPoints",
-          "description": "Loyalty points that users receive after purchasing the item. Japan only."
-        },
-        "pickup": {
-          "$ref": "InventoryPickup",
-          "description": "Store pickup information. Only supported for local inventory. Not setting `pickup` means \"don't update\" while setting it to the empty value (`{}` in JSON) means \"delete\". Otherwise, `pickupMethod` and `pickupSla` must be set together, unless `pickupMethod` is \"not supported\"."
-        },
-        "price": {
-          "$ref": "Price",
-          "description": "The price of the product."
-        },
-        "quantity": {
-          "description": "The quantity of the product. Must be equal to or greater than zero. Supported only for local products.",
-          "format": "uint32",
-          "type": "integer"
-        },
-        "salePrice": {
-          "$ref": "Price",
-          "description": "The sale price of the product. Mandatory if `sale_price_effective_date` is defined."
-        },
-        "salePriceEffectiveDate": {
-          "description": "A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided.",
-          "type": "string"
-        },
-        "sellOnGoogleQuantity": {
-          "description": "The quantity of the product that is available for selling on Google. Supported only for online products.",
-          "format": "uint32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "InventorySetResponse": {
-      "id": "InventorySetResponse",
-      "properties": {
-        "kind": {
-          "description": "Identifies what kind of resource this is. Value: the fixed string \"content#inventorySetResponse\".",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-=======
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
     "InvoiceSummary": {
       "id": "InvoiceSummary",
       "properties": {
@@ -8549,8 +8210,6 @@
         },
         "kind": {
           "description": "Identifies what kind of resource this is. Value: the fixed string \"`content#posStore`\"",
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-=======
           "type": "string"
         },
         "phoneNumber": {
@@ -8559,7 +8218,6 @@
         },
         "placeId": {
           "description": "The Google Place Id of the store location.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
           "type": "string"
         },
         "storeAddress": {
@@ -8568,8 +8226,6 @@
         },
         "storeCode": {
           "description": "Required. A store identifier that is unique for the given merchant.",
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-=======
           "type": "string"
         },
         "storeName": {
@@ -8578,7 +8234,6 @@
         },
         "websiteUrl": {
           "description": "The website url for the store or merchant.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
           "type": "string"
         }
       },
@@ -8634,11 +8289,7 @@
       "type": "object"
     },
     "Product": {
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-      "description": " Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
-=======
       "description": " Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
       "id": "Product",
       "properties": {
         "additionalImageLinks": {
@@ -10452,11 +10103,7 @@
           "type": "string"
         },
         "value": {
-<<<<<<< HEAD:gen/model/content/v2/content-api.json
-          "description": "Required. The weight represented as a number.",
-=======
           "description": "Required. The weight represented as a number. The weight can have a maximum precision of four decimal places.",
->>>>>>> upstream/main:configs/models/content/v2/content-api.json
           "type": "string"
         }
       },

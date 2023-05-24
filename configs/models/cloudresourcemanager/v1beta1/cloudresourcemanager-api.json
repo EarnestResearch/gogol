@@ -127,6 +127,7 @@
               "type": "string"
             },
             "organizationId": {
+              "deprecated": true,
               "description": "The id of the Organization resource to fetch. This field is deprecated and will be removed in v1. Use name instead.",
               "location": "query",
               "type": "string"
@@ -261,6 +262,7 @@
           ]
         },
         "update": {
+          "deprecated": true,
           "description": "Updates an Organization resource identified by the specified resource name.",
           "flatPath": "v1beta1/organizations/{organizationsId}",
           "httpMethod": "PUT",
@@ -566,7 +568,7 @@
       }
     }
   },
-  "revision": "20230129",
+  "revision": "20230514",
   "rootUrl": "https://cloudresourcemanager.googleapis.com/",
   "schemas": {
     "Ancestor": {

@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
         }
       }
     }
@@ -403,11 +399,7 @@
               ],
               "parameters": {
                 "name": {
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-                  "description": "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length // of the `short_name` component is 50 characters.",
-=======
                   "description": "Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.",
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
                   "location": "path",
                   "pattern": "^accessPolicies/[^/]+/accessLevels/[^/]+$",
                   "required": true,
@@ -559,11 +551,7 @@
               ],
               "parameters": {
                 "name": {
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-                  "description": "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`",
-=======
                   "description": "Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.",
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
                   "location": "path",
                   "pattern": "^accessPolicies/[^/]+/servicePerimeters/[^/]+$",
                   "required": true,
@@ -621,11 +609,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-  "revision": "20210319",
-=======
   "revision": "20230130",
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
   "rootUrl": "https://accesscontextmanager.googleapis.com/",
   "schemas": {
     "AccessContextManagerOperationMetadata": {
@@ -651,11 +635,7 @@
           "type": "string"
         },
         "name": {
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-          "description": "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length // of the `short_name` component is 50 characters.",
-=======
           "description": "Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.",
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
           "type": "string"
         },
         "title": {
@@ -986,11 +966,7 @@
           "type": "string"
         },
         "name": {
-<<<<<<< HEAD:gen/model/accesscontextmanager/v1beta/accesscontextmanager-api.json
-          "description": "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`",
-=======
           "description": "Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.",
->>>>>>> upstream/main:configs/models/accesscontextmanager/v1beta/accesscontextmanager-api.json
           "type": "string"
         },
         "perimeterType": {

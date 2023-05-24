@@ -155,11 +155,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/analyticsreporting/v4/analyticsreporting-api.json
-  "revision": "20210106",
-=======
   "revision": "20211020",
->>>>>>> upstream/main:configs/models/analyticsreporting/v4/analyticsreporting-api.json
   "rootUrl": "https://analyticsreporting.googleapis.com/",
   "schemas": {
     "Activity": {

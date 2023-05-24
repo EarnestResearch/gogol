@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,676 +26,719 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.AndroidPublisher.Types
-  ( -- * Configuration
-    androidPublisherService,
+    (
+    -- * Configuration
+      androidPublisherService
 
     -- * OAuth Scopes
-    Androidpublisher'FullControl,
+    , Androidpublisher'FullControl
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AcquisitionTargetingRule
-    AcquisitionTargetingRule (..),
-    newAcquisitionTargetingRule,
+    , AcquisitionTargetingRule (..)
+    , newAcquisitionTargetingRule
 
     -- ** ActivateBasePlanRequest
-    ActivateBasePlanRequest (..),
-    newActivateBasePlanRequest,
+    , ActivateBasePlanRequest (..)
+    , newActivateBasePlanRequest
 
     -- ** ActivateSubscriptionOfferRequest
-    ActivateSubscriptionOfferRequest (..),
-    newActivateSubscriptionOfferRequest,
+    , ActivateSubscriptionOfferRequest (..)
+    , newActivateSubscriptionOfferRequest
 
     -- ** Apk
-    Apk (..),
-    newApk,
+    , Apk (..)
+    , newApk
 
     -- ** ApkBinary
-    ApkBinary (..),
-    newApkBinary,
+    , ApkBinary (..)
+    , newApkBinary
 
     -- ** ApksAddExternallyHostedRequest
-    ApksAddExternallyHostedRequest (..),
-    newApksAddExternallyHostedRequest,
+    , ApksAddExternallyHostedRequest (..)
+    , newApksAddExternallyHostedRequest
 
     -- ** ApksAddExternallyHostedResponse
-    ApksAddExternallyHostedResponse (..),
-    newApksAddExternallyHostedResponse,
+    , ApksAddExternallyHostedResponse (..)
+    , newApksAddExternallyHostedResponse
 
     -- ** ApksListResponse
-    ApksListResponse (..),
-    newApksListResponse,
+    , ApksListResponse (..)
+    , newApksListResponse
 
     -- ** AppDetails
-    AppDetails (..),
-    newAppDetails,
+    , AppDetails (..)
+    , newAppDetails
 
     -- ** AppEdit
-    AppEdit (..),
-    newAppEdit,
+    , AppEdit (..)
+    , newAppEdit
 
     -- ** ArchiveSubscriptionRequest
-    ArchiveSubscriptionRequest (..),
-    newArchiveSubscriptionRequest,
+    , ArchiveSubscriptionRequest (..)
+    , newArchiveSubscriptionRequest
 
     -- ** AutoRenewingBasePlanType
-    AutoRenewingBasePlanType (..),
-    newAutoRenewingBasePlanType,
+    , AutoRenewingBasePlanType (..)
+    , newAutoRenewingBasePlanType
 
     -- ** AutoRenewingBasePlanType_ProrationMode
-    AutoRenewingBasePlanType_ProrationMode (..),
+    , AutoRenewingBasePlanType_ProrationMode (..)
 
     -- ** AutoRenewingBasePlanType_ResubscribeState
-    AutoRenewingBasePlanType_ResubscribeState (..),
+    , AutoRenewingBasePlanType_ResubscribeState (..)
 
     -- ** AutoRenewingPlan
-    AutoRenewingPlan (..),
-    newAutoRenewingPlan,
+    , AutoRenewingPlan (..)
+    , newAutoRenewingPlan
 
     -- ** BasePlan
-    BasePlan (..),
-    newBasePlan,
+    , BasePlan (..)
+    , newBasePlan
 
     -- ** BasePlan_State
-    BasePlan_State (..),
+    , BasePlan_State (..)
 
     -- ** Bundle
-    Bundle (..),
-    newBundle,
+    , Bundle (..)
+    , newBundle
 
     -- ** BundlesListResponse
-    BundlesListResponse (..),
-    newBundlesListResponse,
+    , BundlesListResponse (..)
+    , newBundlesListResponse
 
     -- ** CancelSurveyResult
-    CancelSurveyResult (..),
-    newCancelSurveyResult,
+    , CancelSurveyResult (..)
+    , newCancelSurveyResult
 
     -- ** CancelSurveyResult_Reason
-    CancelSurveyResult_Reason (..),
+    , CancelSurveyResult_Reason (..)
 
     -- ** CanceledStateContext
-    CanceledStateContext (..),
-    newCanceledStateContext,
+    , CanceledStateContext (..)
+    , newCanceledStateContext
 
     -- ** Comment
-    Comment (..),
-    newComment,
+    , Comment (..)
+    , newComment
 
     -- ** ConvertRegionPricesRequest
-    ConvertRegionPricesRequest (..),
-    newConvertRegionPricesRequest,
+    , ConvertRegionPricesRequest (..)
+    , newConvertRegionPricesRequest
 
     -- ** ConvertRegionPricesResponse
-    ConvertRegionPricesResponse (..),
-    newConvertRegionPricesResponse,
+    , ConvertRegionPricesResponse (..)
+    , newConvertRegionPricesResponse
 
     -- ** ConvertRegionPricesResponse_ConvertedRegionPrices
-    ConvertRegionPricesResponse_ConvertedRegionPrices (..),
-    newConvertRegionPricesResponse_ConvertedRegionPrices,
+    , ConvertRegionPricesResponse_ConvertedRegionPrices (..)
+    , newConvertRegionPricesResponse_ConvertedRegionPrices
 
     -- ** ConvertedOtherRegionsPrice
-    ConvertedOtherRegionsPrice (..),
-    newConvertedOtherRegionsPrice,
+    , ConvertedOtherRegionsPrice (..)
+    , newConvertedOtherRegionsPrice
 
     -- ** ConvertedRegionPrice
-    ConvertedRegionPrice (..),
-    newConvertedRegionPrice,
+    , ConvertedRegionPrice (..)
+    , newConvertedRegionPrice
 
     -- ** CountryTargeting
-    CountryTargeting (..),
-    newCountryTargeting,
+    , CountryTargeting (..)
+    , newCountryTargeting
 
     -- ** DeactivateBasePlanRequest
-    DeactivateBasePlanRequest (..),
-    newDeactivateBasePlanRequest,
+    , DeactivateBasePlanRequest (..)
+    , newDeactivateBasePlanRequest
 
     -- ** DeactivateSubscriptionOfferRequest
-    DeactivateSubscriptionOfferRequest (..),
-    newDeactivateSubscriptionOfferRequest,
+    , DeactivateSubscriptionOfferRequest (..)
+    , newDeactivateSubscriptionOfferRequest
 
     -- ** DeobfuscationFile
-    DeobfuscationFile (..),
-    newDeobfuscationFile,
+    , DeobfuscationFile (..)
+    , newDeobfuscationFile
 
     -- ** DeobfuscationFile_SymbolType
-    DeobfuscationFile_SymbolType (..),
+    , DeobfuscationFile_SymbolType (..)
 
     -- ** DeobfuscationFilesUploadResponse
-    DeobfuscationFilesUploadResponse (..),
-    newDeobfuscationFilesUploadResponse,
+    , DeobfuscationFilesUploadResponse (..)
+    , newDeobfuscationFilesUploadResponse
 
     -- ** DeveloperComment
-    DeveloperComment (..),
-    newDeveloperComment,
+    , DeveloperComment (..)
+    , newDeveloperComment
 
     -- ** DeveloperInitiatedCancellation
-    DeveloperInitiatedCancellation (..),
-    newDeveloperInitiatedCancellation,
+    , DeveloperInitiatedCancellation (..)
+    , newDeveloperInitiatedCancellation
 
     -- ** DeviceGroup
-    DeviceGroup (..),
-    newDeviceGroup,
+    , DeviceGroup (..)
+    , newDeviceGroup
 
     -- ** DeviceId
-    DeviceId (..),
-    newDeviceId,
+    , DeviceId (..)
+    , newDeviceId
 
     -- ** DeviceMetadata
-    DeviceMetadata (..),
-    newDeviceMetadata,
+    , DeviceMetadata (..)
+    , newDeviceMetadata
 
     -- ** DeviceRam
-    DeviceRam (..),
-    newDeviceRam,
+    , DeviceRam (..)
+    , newDeviceRam
 
     -- ** DeviceSelector
-    DeviceSelector (..),
-    newDeviceSelector,
+    , DeviceSelector (..)
+    , newDeviceSelector
 
     -- ** DeviceSpec
-    DeviceSpec (..),
-    newDeviceSpec,
+    , DeviceSpec (..)
+    , newDeviceSpec
 
     -- ** DeviceTier
-    DeviceTier (..),
-    newDeviceTier,
+    , DeviceTier (..)
+    , newDeviceTier
 
     -- ** DeviceTierConfig
-    DeviceTierConfig (..),
-    newDeviceTierConfig,
+    , DeviceTierConfig (..)
+    , newDeviceTierConfig
 
     -- ** DeviceTierSet
-    DeviceTierSet (..),
-    newDeviceTierSet,
+    , DeviceTierSet (..)
+    , newDeviceTierSet
 
     -- ** ExpansionFile
-    ExpansionFile (..),
-    newExpansionFile,
+    , ExpansionFile (..)
+    , newExpansionFile
 
     -- ** ExpansionFilesUploadResponse
-    ExpansionFilesUploadResponse (..),
-    newExpansionFilesUploadResponse,
+    , ExpansionFilesUploadResponse (..)
+    , newExpansionFilesUploadResponse
 
     -- ** ExternalAccountIdentifiers
-    ExternalAccountIdentifiers (..),
-    newExternalAccountIdentifiers,
+    , ExternalAccountIdentifiers (..)
+    , newExternalAccountIdentifiers
+
+    -- ** ExternalSubscription
+    , ExternalSubscription (..)
+    , newExternalSubscription
+
+    -- ** ExternalSubscription_SubscriptionType
+    , ExternalSubscription_SubscriptionType (..)
+
+    -- ** ExternalTransaction
+    , ExternalTransaction (..)
+    , newExternalTransaction
+
+    -- ** ExternalTransaction_TransactionState
+    , ExternalTransaction_TransactionState (..)
+
+    -- ** ExternalTransactionAddress
+    , ExternalTransactionAddress (..)
+    , newExternalTransactionAddress
+
+    -- ** ExternalTransactionTestPurchase
+    , ExternalTransactionTestPurchase (..)
+    , newExternalTransactionTestPurchase
 
     -- ** ExternallyHostedApk
-    ExternallyHostedApk (..),
-    newExternallyHostedApk,
+    , ExternallyHostedApk (..)
+    , newExternallyHostedApk
+
+    -- ** FullRefund
+    , FullRefund (..)
+    , newFullRefund
 
     -- ** GeneratedApksListResponse
-    GeneratedApksListResponse (..),
-    newGeneratedApksListResponse,
+    , GeneratedApksListResponse (..)
+    , newGeneratedApksListResponse
 
     -- ** GeneratedApksPerSigningKey
-    GeneratedApksPerSigningKey (..),
-    newGeneratedApksPerSigningKey,
+    , GeneratedApksPerSigningKey (..)
+    , newGeneratedApksPerSigningKey
 
     -- ** GeneratedAssetPackSlice
-    GeneratedAssetPackSlice (..),
-    newGeneratedAssetPackSlice,
+    , GeneratedAssetPackSlice (..)
+    , newGeneratedAssetPackSlice
 
     -- ** GeneratedSplitApk
-    GeneratedSplitApk (..),
-    newGeneratedSplitApk,
+    , GeneratedSplitApk (..)
+    , newGeneratedSplitApk
 
     -- ** GeneratedStandaloneApk
-    GeneratedStandaloneApk (..),
-    newGeneratedStandaloneApk,
+    , GeneratedStandaloneApk (..)
+    , newGeneratedStandaloneApk
 
     -- ** GeneratedUniversalApk
-    GeneratedUniversalApk (..),
-    newGeneratedUniversalApk,
+    , GeneratedUniversalApk (..)
+    , newGeneratedUniversalApk
 
     -- ** Grant
-    Grant (..),
-    newGrant,
+    , Grant (..)
+    , newGrant
 
     -- ** Grant_AppLevelPermissionsItem
-    Grant_AppLevelPermissionsItem (..),
+    , Grant_AppLevelPermissionsItem (..)
 
     -- ** Image
-    Image (..),
-    newImage,
+    , Image (..)
+    , newImage
 
     -- ** ImagesDeleteAllResponse
-    ImagesDeleteAllResponse (..),
-    newImagesDeleteAllResponse,
+    , ImagesDeleteAllResponse (..)
+    , newImagesDeleteAllResponse
 
     -- ** ImagesListResponse
-    ImagesListResponse (..),
-    newImagesListResponse,
+    , ImagesListResponse (..)
+    , newImagesListResponse
 
     -- ** ImagesUploadResponse
-    ImagesUploadResponse (..),
-    newImagesUploadResponse,
+    , ImagesUploadResponse (..)
+    , newImagesUploadResponse
 
     -- ** InAppProduct
-    InAppProduct (..),
-    newInAppProduct,
+    , InAppProduct (..)
+    , newInAppProduct
 
     -- ** InAppProduct_Listings
-    InAppProduct_Listings (..),
-    newInAppProduct_Listings,
+    , InAppProduct_Listings (..)
+    , newInAppProduct_Listings
 
     -- ** InAppProduct_Prices
-    InAppProduct_Prices (..),
-    newInAppProduct_Prices,
+    , InAppProduct_Prices (..)
+    , newInAppProduct_Prices
 
     -- ** InAppProduct_PurchaseType
-    InAppProduct_PurchaseType (..),
+    , InAppProduct_PurchaseType (..)
 
     -- ** InAppProduct_Status
-    InAppProduct_Status (..),
+    , InAppProduct_Status (..)
 
     -- ** InAppProductListing
-    InAppProductListing (..),
-    newInAppProductListing,
+    , InAppProductListing (..)
+    , newInAppProductListing
 
     -- ** InappproductsListResponse
-    InappproductsListResponse (..),
-    newInappproductsListResponse,
+    , InappproductsListResponse (..)
+    , newInappproductsListResponse
 
     -- ** InternalAppSharingArtifact
-    InternalAppSharingArtifact (..),
-    newInternalAppSharingArtifact,
+    , InternalAppSharingArtifact (..)
+    , newInternalAppSharingArtifact
 
     -- ** IntroductoryPriceInfo
-    IntroductoryPriceInfo (..),
-    newIntroductoryPriceInfo,
+    , IntroductoryPriceInfo (..)
+    , newIntroductoryPriceInfo
 
     -- ** ListDeviceTierConfigsResponse
-    ListDeviceTierConfigsResponse (..),
-    newListDeviceTierConfigsResponse,
+    , ListDeviceTierConfigsResponse (..)
+    , newListDeviceTierConfigsResponse
 
     -- ** ListSubscriptionOffersResponse
-    ListSubscriptionOffersResponse (..),
-    newListSubscriptionOffersResponse,
+    , ListSubscriptionOffersResponse (..)
+    , newListSubscriptionOffersResponse
 
     -- ** ListSubscriptionsResponse
-    ListSubscriptionsResponse (..),
-    newListSubscriptionsResponse,
+    , ListSubscriptionsResponse (..)
+    , newListSubscriptionsResponse
 
     -- ** ListUsersResponse
-    ListUsersResponse (..),
-    newListUsersResponse,
+    , ListUsersResponse (..)
+    , newListUsersResponse
 
     -- ** Listing
-    Listing (..),
-    newListing,
+    , Listing (..)
+    , newListing
 
     -- ** ListingsListResponse
-    ListingsListResponse (..),
-    newListingsListResponse,
+    , ListingsListResponse (..)
+    , newListingsListResponse
 
     -- ** LocalizedText
-    LocalizedText (..),
-    newLocalizedText,
+    , LocalizedText (..)
+    , newLocalizedText
 
     -- ** ManagedProductTaxAndComplianceSettings
-    ManagedProductTaxAndComplianceSettings (..),
-    newManagedProductTaxAndComplianceSettings,
+    , ManagedProductTaxAndComplianceSettings (..)
+    , newManagedProductTaxAndComplianceSettings
 
     -- ** ManagedProductTaxAndComplianceSettings_EeaWithdrawalRightType
-    ManagedProductTaxAndComplianceSettings_EeaWithdrawalRightType (..),
+    , ManagedProductTaxAndComplianceSettings_EeaWithdrawalRightType (..)
 
     -- ** ManagedProductTaxAndComplianceSettings_TaxRateInfoByRegionCode
-    ManagedProductTaxAndComplianceSettings_TaxRateInfoByRegionCode (..),
-    newManagedProductTaxAndComplianceSettings_TaxRateInfoByRegionCode,
+    , ManagedProductTaxAndComplianceSettings_TaxRateInfoByRegionCode (..)
+    , newManagedProductTaxAndComplianceSettings_TaxRateInfoByRegionCode
 
     -- ** MigrateBasePlanPricesRequest
-    MigrateBasePlanPricesRequest (..),
-    newMigrateBasePlanPricesRequest,
+    , MigrateBasePlanPricesRequest (..)
+    , newMigrateBasePlanPricesRequest
 
     -- ** MigrateBasePlanPricesResponse
-    MigrateBasePlanPricesResponse (..),
-    newMigrateBasePlanPricesResponse,
+    , MigrateBasePlanPricesResponse (..)
+    , newMigrateBasePlanPricesResponse
 
     -- ** Money
-    Money (..),
-    newMoney,
+    , Money (..)
+    , newMoney
 
     -- ** OfferDetails
-    OfferDetails (..),
-    newOfferDetails,
+    , OfferDetails (..)
+    , newOfferDetails
 
     -- ** OfferTag
-    OfferTag (..),
-    newOfferTag,
+    , OfferTag (..)
+    , newOfferTag
+
+    -- ** OneTimeExternalTransaction
+    , OneTimeExternalTransaction (..)
+    , newOneTimeExternalTransaction
 
     -- ** OtherRegionsBasePlanConfig
-    OtherRegionsBasePlanConfig (..),
-    newOtherRegionsBasePlanConfig,
+    , OtherRegionsBasePlanConfig (..)
+    , newOtherRegionsBasePlanConfig
 
     -- ** OtherRegionsSubscriptionOfferConfig
-    OtherRegionsSubscriptionOfferConfig (..),
-    newOtherRegionsSubscriptionOfferConfig,
+    , OtherRegionsSubscriptionOfferConfig (..)
+    , newOtherRegionsSubscriptionOfferConfig
 
     -- ** OtherRegionsSubscriptionOfferPhaseConfig
-    OtherRegionsSubscriptionOfferPhaseConfig (..),
-    newOtherRegionsSubscriptionOfferPhaseConfig,
+    , OtherRegionsSubscriptionOfferPhaseConfig (..)
+    , newOtherRegionsSubscriptionOfferPhaseConfig
 
     -- ** OtherRegionsSubscriptionOfferPhasePrices
-    OtherRegionsSubscriptionOfferPhasePrices (..),
-    newOtherRegionsSubscriptionOfferPhasePrices,
+    , OtherRegionsSubscriptionOfferPhasePrices (..)
+    , newOtherRegionsSubscriptionOfferPhasePrices
 
     -- ** PageInfo
-    PageInfo (..),
-    newPageInfo,
+    , PageInfo (..)
+    , newPageInfo
+
+    -- ** PartialRefund
+    , PartialRefund (..)
+    , newPartialRefund
 
     -- ** PausedStateContext
-    PausedStateContext (..),
-    newPausedStateContext,
+    , PausedStateContext (..)
+    , newPausedStateContext
 
     -- ** PrepaidBasePlanType
-    PrepaidBasePlanType (..),
-    newPrepaidBasePlanType,
+    , PrepaidBasePlanType (..)
+    , newPrepaidBasePlanType
 
     -- ** PrepaidBasePlanType_TimeExtension
-    PrepaidBasePlanType_TimeExtension (..),
+    , PrepaidBasePlanType_TimeExtension (..)
 
     -- ** PrepaidPlan
-    PrepaidPlan (..),
-    newPrepaidPlan,
+    , PrepaidPlan (..)
+    , newPrepaidPlan
 
     -- ** Price
-    Price (..),
-    newPrice,
+    , Price (..)
+    , newPrice
 
     -- ** ProductPurchase
-    ProductPurchase (..),
-    newProductPurchase,
+    , ProductPurchase (..)
+    , newProductPurchase
 
     -- ** ProductPurchasesAcknowledgeRequest
-    ProductPurchasesAcknowledgeRequest (..),
-    newProductPurchasesAcknowledgeRequest,
+    , ProductPurchasesAcknowledgeRequest (..)
+    , newProductPurchasesAcknowledgeRequest
+
+    -- ** RecurringExternalTransaction
+    , RecurringExternalTransaction (..)
+    , newRecurringExternalTransaction
+
+    -- ** RefundExternalTransactionRequest
+    , RefundExternalTransactionRequest (..)
+    , newRefundExternalTransactionRequest
 
     -- ** RegionalBasePlanConfig
-    RegionalBasePlanConfig (..),
-    newRegionalBasePlanConfig,
+    , RegionalBasePlanConfig (..)
+    , newRegionalBasePlanConfig
 
     -- ** RegionalPriceMigrationConfig
-    RegionalPriceMigrationConfig (..),
-    newRegionalPriceMigrationConfig,
+    , RegionalPriceMigrationConfig (..)
+    , newRegionalPriceMigrationConfig
 
     -- ** RegionalSubscriptionOfferConfig
-    RegionalSubscriptionOfferConfig (..),
-    newRegionalSubscriptionOfferConfig,
+    , RegionalSubscriptionOfferConfig (..)
+    , newRegionalSubscriptionOfferConfig
 
     -- ** RegionalSubscriptionOfferPhaseConfig
-    RegionalSubscriptionOfferPhaseConfig (..),
-    newRegionalSubscriptionOfferPhaseConfig,
+    , RegionalSubscriptionOfferPhaseConfig (..)
+    , newRegionalSubscriptionOfferPhaseConfig
 
     -- ** RegionalTaxRateInfo
-    RegionalTaxRateInfo (..),
-    newRegionalTaxRateInfo,
+    , RegionalTaxRateInfo (..)
+    , newRegionalTaxRateInfo
 
     -- ** RegionalTaxRateInfo_StreamingTaxType
-    RegionalTaxRateInfo_StreamingTaxType (..),
+    , RegionalTaxRateInfo_StreamingTaxType (..)
 
     -- ** RegionalTaxRateInfo_TaxTier
-    RegionalTaxRateInfo_TaxTier (..),
+    , RegionalTaxRateInfo_TaxTier (..)
 
     -- ** RegionsVersion
-    RegionsVersion (..),
-    newRegionsVersion,
+    , RegionsVersion (..)
+    , newRegionsVersion
 
     -- ** ReplacementCancellation
-    ReplacementCancellation (..),
-    newReplacementCancellation,
+    , ReplacementCancellation (..)
+    , newReplacementCancellation
 
     -- ** Review
-    Review (..),
-    newReview,
+    , Review (..)
+    , newReview
 
     -- ** ReviewReplyResult
-    ReviewReplyResult (..),
-    newReviewReplyResult,
+    , ReviewReplyResult (..)
+    , newReviewReplyResult
 
     -- ** ReviewsListResponse
-    ReviewsListResponse (..),
-    newReviewsListResponse,
+    , ReviewsListResponse (..)
+    , newReviewsListResponse
 
     -- ** ReviewsReplyRequest
-    ReviewsReplyRequest (..),
-    newReviewsReplyRequest,
+    , ReviewsReplyRequest (..)
+    , newReviewsReplyRequest
 
     -- ** ReviewsReplyResponse
-    ReviewsReplyResponse (..),
-    newReviewsReplyResponse,
+    , ReviewsReplyResponse (..)
+    , newReviewsReplyResponse
 
     -- ** SubscribeWithGoogleInfo
-    SubscribeWithGoogleInfo (..),
-    newSubscribeWithGoogleInfo,
+    , SubscribeWithGoogleInfo (..)
+    , newSubscribeWithGoogleInfo
 
     -- ** Subscription
-    Subscription (..),
-    newSubscription,
+    , Subscription (..)
+    , newSubscription
 
     -- ** SubscriptionCancelSurveyResult
-    SubscriptionCancelSurveyResult (..),
-    newSubscriptionCancelSurveyResult,
+    , SubscriptionCancelSurveyResult (..)
+    , newSubscriptionCancelSurveyResult
 
     -- ** SubscriptionDeferralInfo
-    SubscriptionDeferralInfo (..),
-    newSubscriptionDeferralInfo,
+    , SubscriptionDeferralInfo (..)
+    , newSubscriptionDeferralInfo
 
     -- ** SubscriptionItemPriceChangeDetails
-    SubscriptionItemPriceChangeDetails (..),
-    newSubscriptionItemPriceChangeDetails,
+    , SubscriptionItemPriceChangeDetails (..)
+    , newSubscriptionItemPriceChangeDetails
 
     -- ** SubscriptionItemPriceChangeDetails_PriceChangeMode
-    SubscriptionItemPriceChangeDetails_PriceChangeMode (..),
+    , SubscriptionItemPriceChangeDetails_PriceChangeMode (..)
 
     -- ** SubscriptionItemPriceChangeDetails_PriceChangeState
-    SubscriptionItemPriceChangeDetails_PriceChangeState (..),
+    , SubscriptionItemPriceChangeDetails_PriceChangeState (..)
 
     -- ** SubscriptionListing
-    SubscriptionListing (..),
-    newSubscriptionListing,
+    , SubscriptionListing (..)
+    , newSubscriptionListing
 
     -- ** SubscriptionOffer
-    SubscriptionOffer (..),
-    newSubscriptionOffer,
+    , SubscriptionOffer (..)
+    , newSubscriptionOffer
 
     -- ** SubscriptionOffer_State
-    SubscriptionOffer_State (..),
+    , SubscriptionOffer_State (..)
 
     -- ** SubscriptionOfferPhase
-    SubscriptionOfferPhase (..),
-    newSubscriptionOfferPhase,
+    , SubscriptionOfferPhase (..)
+    , newSubscriptionOfferPhase
 
     -- ** SubscriptionOfferTargeting
-    SubscriptionOfferTargeting (..),
-    newSubscriptionOfferTargeting,
+    , SubscriptionOfferTargeting (..)
+    , newSubscriptionOfferTargeting
 
     -- ** SubscriptionPriceChange
-    SubscriptionPriceChange (..),
-    newSubscriptionPriceChange,
+    , SubscriptionPriceChange (..)
+    , newSubscriptionPriceChange
 
     -- ** SubscriptionPurchase
-    SubscriptionPurchase (..),
-    newSubscriptionPurchase,
+    , SubscriptionPurchase (..)
+    , newSubscriptionPurchase
 
     -- ** SubscriptionPurchaseLineItem
-    SubscriptionPurchaseLineItem (..),
-    newSubscriptionPurchaseLineItem,
+    , SubscriptionPurchaseLineItem (..)
+    , newSubscriptionPurchaseLineItem
 
     -- ** SubscriptionPurchaseV2
-    SubscriptionPurchaseV2 (..),
-    newSubscriptionPurchaseV2,
+    , SubscriptionPurchaseV2 (..)
+    , newSubscriptionPurchaseV2
 
     -- ** SubscriptionPurchaseV2_AcknowledgementState
-    SubscriptionPurchaseV2_AcknowledgementState (..),
+    , SubscriptionPurchaseV2_AcknowledgementState (..)
 
     -- ** SubscriptionPurchaseV2_SubscriptionState
-    SubscriptionPurchaseV2_SubscriptionState (..),
+    , SubscriptionPurchaseV2_SubscriptionState (..)
 
     -- ** SubscriptionPurchasesAcknowledgeRequest
-    SubscriptionPurchasesAcknowledgeRequest (..),
-    newSubscriptionPurchasesAcknowledgeRequest,
+    , SubscriptionPurchasesAcknowledgeRequest (..)
+    , newSubscriptionPurchasesAcknowledgeRequest
 
     -- ** SubscriptionPurchasesDeferRequest
-    SubscriptionPurchasesDeferRequest (..),
-    newSubscriptionPurchasesDeferRequest,
+    , SubscriptionPurchasesDeferRequest (..)
+    , newSubscriptionPurchasesDeferRequest
 
     -- ** SubscriptionPurchasesDeferResponse
-    SubscriptionPurchasesDeferResponse (..),
-    newSubscriptionPurchasesDeferResponse,
+    , SubscriptionPurchasesDeferResponse (..)
+    , newSubscriptionPurchasesDeferResponse
 
     -- ** SubscriptionTaxAndComplianceSettings
-    SubscriptionTaxAndComplianceSettings (..),
-    newSubscriptionTaxAndComplianceSettings,
+    , SubscriptionTaxAndComplianceSettings (..)
+    , newSubscriptionTaxAndComplianceSettings
 
     -- ** SubscriptionTaxAndComplianceSettings_EeaWithdrawalRightType
-    SubscriptionTaxAndComplianceSettings_EeaWithdrawalRightType (..),
+    , SubscriptionTaxAndComplianceSettings_EeaWithdrawalRightType (..)
 
     -- ** SubscriptionTaxAndComplianceSettings_TaxRateInfoByRegionCode
-    SubscriptionTaxAndComplianceSettings_TaxRateInfoByRegionCode (..),
-    newSubscriptionTaxAndComplianceSettings_TaxRateInfoByRegionCode,
+    , SubscriptionTaxAndComplianceSettings_TaxRateInfoByRegionCode (..)
+    , newSubscriptionTaxAndComplianceSettings_TaxRateInfoByRegionCode
 
     -- ** SystemApksListResponse
-    SystemApksListResponse (..),
-    newSystemApksListResponse,
+    , SystemApksListResponse (..)
+    , newSystemApksListResponse
 
     -- ** SystemFeature
-    SystemFeature (..),
-    newSystemFeature,
+    , SystemFeature (..)
+    , newSystemFeature
 
     -- ** SystemInitiatedCancellation
-    SystemInitiatedCancellation (..),
-    newSystemInitiatedCancellation,
+    , SystemInitiatedCancellation (..)
+    , newSystemInitiatedCancellation
 
     -- ** TargetingRuleScope
-    TargetingRuleScope (..),
-    newTargetingRuleScope,
+    , TargetingRuleScope (..)
+    , newTargetingRuleScope
 
     -- ** TestPurchase
-    TestPurchase (..),
-    newTestPurchase,
+    , TestPurchase (..)
+    , newTestPurchase
 
     -- ** Testers
-    Testers (..),
-    newTesters,
+    , Testers (..)
+    , newTesters
 
     -- ** Timestamp
-    Timestamp (..),
-    newTimestamp,
+    , Timestamp (..)
+    , newTimestamp
 
     -- ** TokenPagination
-    TokenPagination (..),
-    newTokenPagination,
+    , TokenPagination (..)
+    , newTokenPagination
 
     -- ** Track
-    Track (..),
-    newTrack,
+    , Track (..)
+    , newTrack
 
     -- ** TrackCountryAvailability
-    TrackCountryAvailability (..),
-    newTrackCountryAvailability,
+    , TrackCountryAvailability (..)
+    , newTrackCountryAvailability
 
     -- ** TrackRelease
-    TrackRelease (..),
-    newTrackRelease,
+    , TrackRelease (..)
+    , newTrackRelease
 
     -- ** TrackRelease_Status
-    TrackRelease_Status (..),
+    , TrackRelease_Status (..)
 
     -- ** TrackTargetedCountry
-    TrackTargetedCountry (..),
-    newTrackTargetedCountry,
+    , TrackTargetedCountry (..)
+    , newTrackTargetedCountry
 
     -- ** TracksListResponse
-    TracksListResponse (..),
-    newTracksListResponse,
+    , TracksListResponse (..)
+    , newTracksListResponse
 
     -- ** UpgradeTargetingRule
-    UpgradeTargetingRule (..),
-    newUpgradeTargetingRule,
+    , UpgradeTargetingRule (..)
+    , newUpgradeTargetingRule
 
     -- ** User
-    User (..),
-    newUser,
+    , User (..)
+    , newUser
 
     -- ** User_AccessState
-    User_AccessState (..),
+    , User_AccessState (..)
 
     -- ** User_DeveloperAccountPermissionsItem
-    User_DeveloperAccountPermissionsItem (..),
+    , User_DeveloperAccountPermissionsItem (..)
 
     -- ** UserComment
-    UserComment (..),
-    newUserComment,
+    , UserComment (..)
+    , newUserComment
 
     -- ** UserCountrySet
-    UserCountrySet (..),
-    newUserCountrySet,
+    , UserCountrySet (..)
+    , newUserCountrySet
 
     -- ** UserInitiatedCancellation
-    UserInitiatedCancellation (..),
-    newUserInitiatedCancellation,
+    , UserInitiatedCancellation (..)
+    , newUserInitiatedCancellation
 
     -- ** UsesPermission
-    UsesPermission (..),
-    newUsesPermission,
+    , UsesPermission (..)
+    , newUsesPermission
 
     -- ** Variant
-    Variant (..),
-    newVariant,
+    , Variant (..)
+    , newVariant
 
     -- ** VoidedPurchase
-    VoidedPurchase (..),
-    newVoidedPurchase,
+    , VoidedPurchase (..)
+    , newVoidedPurchase
 
     -- ** VoidedPurchasesListResponse
-    VoidedPurchasesListResponse (..),
-    newVoidedPurchasesListResponse,
+    , VoidedPurchasesListResponse (..)
+    , newVoidedPurchasesListResponse
 
     -- ** EditsDeobfuscationfilesUploadDeobfuscationFileType
-    EditsDeobfuscationfilesUploadDeobfuscationFileType (..),
+    , EditsDeobfuscationfilesUploadDeobfuscationFileType (..)
 
     -- ** EditsExpansionfilesGetExpansionFileType
-    EditsExpansionfilesGetExpansionFileType (..),
+    , EditsExpansionfilesGetExpansionFileType (..)
 
     -- ** EditsExpansionfilesPatchExpansionFileType
-    EditsExpansionfilesPatchExpansionFileType (..),
+    , EditsExpansionfilesPatchExpansionFileType (..)
 
     -- ** EditsExpansionfilesUpdateExpansionFileType
-    EditsExpansionfilesUpdateExpansionFileType (..),
+    , EditsExpansionfilesUpdateExpansionFileType (..)
 
     -- ** EditsExpansionfilesUploadExpansionFileType
-    EditsExpansionfilesUploadExpansionFileType (..),
+    , EditsExpansionfilesUploadExpansionFileType (..)
 
     -- ** EditsImagesDeleteImageType
-    EditsImagesDeleteImageType (..),
+    , EditsImagesDeleteImageType (..)
 
     -- ** EditsImagesDeleteallImageType
-    EditsImagesDeleteallImageType (..),
+    , EditsImagesDeleteallImageType (..)
 
     -- ** EditsImagesListImageType
-    EditsImagesListImageType (..),
+    , EditsImagesListImageType (..)
 
     -- ** EditsImagesUploadImageType
-    EditsImagesUploadImageType (..),
-  )
-where
+    , EditsImagesUploadImageType (..)
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.AndroidPublisher.Internal.Product
 import Gogol.AndroidPublisher.Internal.Sum
-import qualified Gogol.Prelude as Core
 
 -- | Default request referring to version @v3@ of the Google Play Android Developer API. This contains the host and root path used as a starting point for constructing service requests.
 androidPublisherService :: Core.ServiceConfig
-androidPublisherService =
-  Core.defaultService
-    (Core.ServiceId "androidpublisher:v3")
-    "androidpublisher.googleapis.com"
+androidPublisherService
+  = Core.defaultService
+      (Core.ServiceId "androidpublisher:v3")
+      "androidpublisher.googleapis.com"
 
 -- | View and manage your Google Play Developer account
 type Androidpublisher'FullControl = "https://www.googleapis.com/auth/androidpublisher"

@@ -6,11 +6,7 @@
           "description": "Apply machine learning models to reveal the structure and meaning of text"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/language/v1beta2/language-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/language/v1beta2/language-api.json
         }
       }
     }
@@ -231,11 +227,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/language/v1beta2/language-api.json
-  "revision": "20210319",
-=======
-  "revision": "20221015",
->>>>>>> upstream/main:configs/models/language/v1beta2/language-api.json
+  "revision": "20230424",
   "rootUrl": "https://language.googleapis.com/",
   "schemas": {
     "AnalyzeEntitiesRequest": {
@@ -513,7 +505,7 @@
           "type": "number"
         },
         "name": {
-          "description": "The name of the category representing the document, from the [predefined taxonomy](https://cloud.google.com/natural-language/docs/categories).",
+          "description": "The name of the category representing the document.",
           "type": "string"
         }
       },
@@ -750,11 +742,7 @@
       "type": "object"
     },
     "Document": {
-<<<<<<< HEAD:gen/model/language/v1beta2/language-api.json
-      "description": "################################################################ # Represents the input to API methods.",
-=======
       "description": "Represents the input to API methods.",
->>>>>>> upstream/main:configs/models/language/v1beta2/language-api.json
       "id": "Document",
       "properties": {
         "boilerplateHandling": {
@@ -902,11 +890,7 @@
       "type": "object"
     },
     "Features": {
-<<<<<<< HEAD:gen/model/language/v1beta2/language-api.json
-      "description": "All available features for sentiment, syntax, and semantic analysis. Setting each one to true will enable that specific analysis for the input. Next ID: 10",
-=======
-      "description": "All available features for sentiment, syntax, and semantic analysis. Setting each one to true will enable that specific analysis for the input. Next ID: 11",
->>>>>>> upstream/main:configs/models/language/v1beta2/language-api.json
+      "description": "All available features for sentiment, syntax, and semantic analysis. Setting each one to true will enable that specific analysis for the input. Next ID: 12",
       "id": "Features",
       "properties": {
         "classificationModelOptions": {

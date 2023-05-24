@@ -624,6 +624,7 @@
               "type": "string"
             },
             "hl": {
+              "deprecated": true,
               "description": "Return content in specified language",
               "location": "query",
               "type": "string"
@@ -966,37 +967,6 @@
           "scopes": [
             "https://www.googleapis.com/auth/youtube.force-ssl"
           ]
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-        },
-        "update": {
-          "description": "Updates an existing resource.",
-          "flatPath": "youtube/v3/commentThreads",
-          "httpMethod": "PUT",
-          "id": "youtube.commentThreads.update",
-          "parameterOrder": [
-            "part"
-          ],
-          "parameters": {
-            "part": {
-              "description": "The *part* parameter specifies a comma-separated list of commentThread resource properties that the API response will include. You must at least include the snippet part in the parameter value since that part contains all of the properties that the API request can update.",
-              "location": "query",
-              "repeated": true,
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "youtube/v3/commentThreads",
-          "request": {
-            "$ref": "CommentThread"
-          },
-          "response": {
-            "$ref": "CommentThread"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/youtube.force-ssl"
-          ]
-=======
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
         }
       }
     },
@@ -1162,7 +1132,7 @@
               "type": "string"
             },
             "moderationStatus": {
-              "description": "Specifies the requested moderation status. Note, comments can be in statuses, which are not available through this call. For example, this call does not allow to mark a comment as 'likely spam'. Valid values: MODERATION_STATUS_PUBLISHED, MODERATION_STATUS_HELD_FOR_REVIEW, MODERATION_STATUS_REJECTED.",
+              "description": "Specifies the requested moderation status. Note, comments can be in statuses, which are not available through this call. For example, this call does not allow to mark a comment as 'likely spam'. Valid values: 'heldForReview', 'published' or 'rejected'.",
               "enum": [
                 "published",
                 "heldForReview",
@@ -2443,11 +2413,7 @@
               "type": "string"
             },
             "hl": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-              "description": "Returen content in specified language",
-=======
               "description": "Return content in specified language",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
               "location": "query",
               "type": "string"
             },
@@ -2721,10 +2687,6 @@
               "type": "string"
             },
             "type": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-              "default": "video,channel,playlist",
-=======
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
               "description": "Restrict results to a particular set of resource types from One Platform.",
               "location": "query",
               "repeated": true,
@@ -3064,11 +3026,7 @@
               "type": "string"
             },
             "part": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-              "description": "The *part* parameter specifies the superChatEvent resource parts that the API response will include. Supported values are id and snippet.",
-=======
               "description": "The *part* parameter specifies the superChatEvent resource parts that the API response will include. This parameter is currently not supported.",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
               "location": "query",
               "repeated": true,
               "required": true,
@@ -3098,13 +3056,10 @@
             "part"
           ],
           "parameters": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "externalChannelId": {
               "location": "query",
               "type": "string"
             },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "part": {
               "location": "query",
               "repeated": true,
@@ -3137,14 +3092,11 @@
             "type"
           ],
           "parameters": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "externalChannelId": {
               "description": "Channel ID to which changes should be applied, for delegation.",
               "location": "query",
               "type": "string"
             },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "linkingToken": {
               "description": "Delete the partner links with the given linking token.",
               "location": "query",
@@ -3183,14 +3135,11 @@
             "part"
           ],
           "parameters": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "externalChannelId": {
               "description": "Channel ID to which changes should be applied, for delegation.",
               "location": "query",
               "type": "string"
             },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "part": {
               "description": "The *part* parameter specifies the thirdPartyLink resource parts that the API request and response will include. Supported values are linkingToken, status, and snippet.",
               "location": "query",
@@ -3216,14 +3165,11 @@
             "part"
           ],
           "parameters": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "externalChannelId": {
               "description": "Channel ID to which changes should be applied, for delegation.",
               "location": "query",
               "type": "string"
             },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "linkingToken": {
               "description": "Get a third party link with the given linking token.",
               "location": "query",
@@ -3252,11 +3198,7 @@
           },
           "path": "youtube/v3/thirdPartyLinks",
           "response": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-            "$ref": "ThirdPartyLink"
-=======
             "$ref": "ThirdPartyLinkListResponse"
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
           }
         },
         "update": {
@@ -3268,14 +3210,11 @@
             "part"
           ],
           "parameters": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "externalChannelId": {
               "description": "Channel ID to which changes should be applied, for delegation.",
               "location": "query",
               "type": "string"
             },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "part": {
               "description": "The *part* parameter specifies the thirdPartyLink resource parts that the API request and response will include. Supported values are linkingToken, status, and snippet.",
               "location": "query",
@@ -3502,11 +3441,7 @@
               "video/*",
               "application/octet-stream"
             ],
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-            "maxSize": "137438953472",
-=======
             "maxSize": "274877906944",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "protocols": {
               "resumable": {
                 "multipart": true,
@@ -3605,6 +3540,7 @@
               "type": "string"
             },
             "locale": {
+              "deprecated": true,
               "location": "query",
               "type": "string"
             },
@@ -3897,11 +3833,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-  "revision": "20210419",
-=======
-  "revision": "20230330",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
+  "revision": "20230522",
   "rootUrl": "https://youtube.googleapis.com/",
   "schemas": {
     "AbuseReport": {
@@ -5324,14 +5256,11 @@
       "description": "Information specific to a store on a merchandising platform linked to a YouTube channel.",
       "id": "ChannelToStoreLinkDetails",
       "properties": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
         "merchantId": {
           "description": "Google Merchant Center id of the store.",
           "format": "uint64",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
         "storeName": {
           "description": "Name of the store.",
           "type": "string"
@@ -5855,12 +5784,9 @@
             "cbfcUnspecified",
             "cbfcU",
             "cbfcUA",
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "cbfcUA7plus",
             "cbfcUA13plus",
             "cbfcUA16plus",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "cbfcA",
             "cbfcS",
             "cbfcUnrated"
@@ -5869,12 +5795,9 @@
             "",
             "U",
             "U/A",
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "U/A 7+",
             "U/A 13+",
             "U/A 16+",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "A",
             "S",
             ""
@@ -6856,10 +6779,7 @@
             "mibacVm6",
             "mibacVm12",
             "mibacVm14",
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "mibacVm16",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "mibacVm18",
             "mibacUnrated"
           ],
@@ -6870,11 +6790,8 @@
             "",
             "",
             "",
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "",
             "",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             ""
           ],
           "type": "string"
@@ -7406,8 +7323,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
     "Cuepoint": {
       "description": "Note that there may be a 5-second end-point resolution issue. For instance, if a cuepoint comes in for 22:03:27, we may stuff the cuepoint into 22:03:25 or 22:03:30, depending. This is an artifact of HLS.",
       "id": "Cuepoint",
@@ -7448,7 +7363,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
     "Entity": {
       "id": "Entity",
       "properties": {
@@ -7940,14 +7854,6 @@
           "type": "boolean"
         },
         "enableDvr": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-          "annotations": {
-            "required": [
-              "youtube.liveBroadcasts.update"
-            ]
-          },
-=======
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
           "description": "This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true. *Important:* You must set the value to true and also set the enableArchive property's value to true if you want to make playback available immediately after the broadcast ends.",
           "type": "boolean"
         },
@@ -8001,14 +7907,6 @@
           "type": "string"
         },
         "recordFromStart": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-          "annotations": {
-            "required": [
-              "youtube.liveBroadcasts.update"
-            ]
-          },
-=======
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
           "description": "Automatically start recording after the event goes live. The default value for this property is true. *Important:* You must also set the enableDvr property's value to true if you want the playback to be available immediately after the broadcast ends. If you set this property's value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback.",
           "type": "boolean"
         },
@@ -8152,13 +8050,8 @@
       "description": "Statistics about the live broadcast. These represent a snapshot of the values at the time of the request. Statistics are only returned for live broadcasts.",
       "id": "LiveBroadcastStatistics",
       "properties": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-        "totalChatCount": {
-          "description": "The total number of live chat messages currently on the broadcast. The property and its value will be present if the broadcast is public, has the live chat feature enabled, and has at least one message. Note that this field will not be filled after the broadcast ends. So this property would not identify the number of chat messages for an archived video of a completed live broadcast.",
-=======
         "concurrentViewers": {
           "description": "The number of viewers currently watching the broadcast. The property and its value will be present if the broadcast has current viewers and the broadcast owner has not hidden the viewcount for the video. Note that YouTube stops tracking the number of concurrent viewers for a broadcast when the broadcast ends. So, this property would not identify the number of viewers watching an archived video of a live broadcast that already ended.",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
           "format": "uint64",
           "type": "string"
         }
@@ -8563,13 +8456,10 @@
         "messageRetractedDetails": {
           "$ref": "LiveChatMessageRetractedDetails"
         },
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
         "newSponsorDetails": {
           "$ref": "LiveChatNewSponsorDetails",
           "description": "Details about the New Member Announcement event, this is only set if the type is 'newSponsorEvent'. Please note that \"member\" is the new term for \"sponsor\"."
         },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
         "publishedAt": {
           "description": "The date and time when the message was orignally published.",
           "format": "date-time",
@@ -8598,12 +8488,9 @@
             "sponsorOnlyModeStartedEvent",
             "sponsorOnlyModeEndedEvent",
             "newSponsorEvent",
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
             "memberMilestoneChatEvent",
             "membershipGiftingEvent",
             "giftMembershipReceivedEvent",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
             "messageDeletedEvent",
             "messageRetractedEvent",
             "userBannedEvent",
@@ -8611,6 +8498,9 @@
             "superStickerEvent"
           ],
           "enumDescriptions": [
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -8716,8 +8606,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
     "LiveChatNewSponsorDetails": {
       "id": "LiveChatNewSponsorDetails",
       "properties": {
@@ -8732,7 +8620,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
     "LiveChatSuperChatDetails": {
       "id": "LiveChatSuperChatDetails",
       "properties": {
@@ -10278,12 +10165,9 @@
     "TestItem": {
       "id": "TestItem",
       "properties": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
         "featuredPart": {
           "type": "boolean"
         },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
         "gaia": {
           "format": "int64",
           "type": "string"
@@ -10330,8 +10214,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-=======
     "ThirdPartyLinkListResponse": {
       "id": "ThirdPartyLinkListResponse",
       "properties": {
@@ -10353,7 +10235,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
     "ThirdPartyLinkSnippet": {
       "description": "Basic information about a third party account link, including its type and type-specific information.",
       "id": "ThirdPartyLinkSnippet",
@@ -11442,11 +11323,7 @@
       "type": "object"
     },
     "VideoStatus": {
-<<<<<<< HEAD:gen/model/youtube/v3/youtube-api.json
-      "description": "Basic details about a video category, such as its localized title. Next Id: 17",
-=======
       "description": "Basic details about a video category, such as its localized title. Next Id: 18",
->>>>>>> upstream/main:configs/models/youtube/v3/youtube-api.json
       "id": "VideoStatus",
       "properties": {
         "embeddable": {

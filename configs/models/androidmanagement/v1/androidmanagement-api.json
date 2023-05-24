@@ -115,11 +115,7 @@
           "parameterOrder": [],
           "parameters": {
             "agreementAccepted": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "This feature is not generally available yet. Whether the managed Google Play Agreement is presented and agreed.",
-=======
               "description": "Whether the enterprise admin has seen and agreed to the managed Google Play Agreement (https://www.android.com/enterprise/terms/). Do not set this field for any customer-managed enterprise (https://developers.google.com/android/management/create-enterprise#customer-managed_enterprises). Set this to field to true for all EMM-managed enterprises (https://developers.google.com/android/management/create-enterprise#emm-managed_enterprises).",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "location": "query",
               "type": "boolean"
             },
@@ -151,11 +147,7 @@
           ]
         },
         "delete": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "This feature is not generally available yet. Deletes an enterprise.",
-=======
           "description": "Deletes an enterprise. Only available for EMM-managed enterprises.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "flatPath": "v1/enterprises/{enterprisesId}",
           "httpMethod": "DELETE",
           "id": "androidmanagement.enterprises.delete",
@@ -164,11 +156,7 @@
           ],
           "parameters": {
             "name": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "This feature is not generally available yet. The name of the enterprise in the form enterprises/{enterpriseId}.",
-=======
               "description": "The name of the enterprise in the form enterprises/{enterpriseId}.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "location": "path",
               "pattern": "^enterprises/[^/]+$",
               "required": true,
@@ -209,62 +197,37 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "This feature is not generally available yet. Lists enterprises that are managed by an EMM. Only partial views are returned.",
-=======
           "description": "Lists EMM-managed enterprises. Only BASIC fields are returned.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "flatPath": "v1/enterprises",
           "httpMethod": "GET",
           "id": "androidmanagement.enterprises.list",
           "parameterOrder": [],
           "parameters": {
             "pageSize": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "This feature is not generally available yet. The requested page size. The actual page size may be fixed to a min or max value.",
-=======
               "description": "The requested page size. The actual page size may be fixed to a min or max value.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "format": "int32",
               "location": "query",
               "type": "integer"
             },
             "pageToken": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "This feature is not generally available yet. A token identifying a page of results returned by the server.",
-=======
               "description": "A token identifying a page of results returned by the server.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "location": "query",
               "type": "string"
             },
             "projectId": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "Required. This feature is not generally available yet. The ID of the Cloud project of the EMM the enterprises belongs to.",
-=======
               "description": "Required. The Cloud project ID of the EMM managing the enterprises.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "location": "query",
               "type": "string"
             },
             "view": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "description": "This feature is not generally available yet. View that specify that partial response should be returned.",
-=======
               "description": "Specifies which Enterprise fields to return. This method only supports BASIC.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "enum": [
                 "ENTERPRISE_VIEW_UNSPECIFIED",
                 "BASIC"
               ],
               "enumDescriptions": [
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-                "This feature is not generally available yet. The API will default to the BASIC view for the List method.",
-                "This feature is not generally available yet. Includes name and enterprise_display_name fields."
-=======
                 "The API will default to the BASIC view for the List method.",
                 "Includes name and enterprise_display_name fields."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               ],
               "location": "query",
               "type": "string"
@@ -1102,14 +1065,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-  "revision": "20210405",
-  "rootUrl": "https://androidmanagement.googleapis.com/",
-  "schemas": {
-    "AdvancedSecurityOverrides": {
-      "description": "Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.",
-=======
-  "revision": "20230308",
+  "revision": "20230508",
   "rootUrl": "https://androidmanagement.googleapis.com/",
   "schemas": {
     "AdbShellCommandEvent": {
@@ -1131,7 +1087,6 @@
     },
     "AdvancedSecurityOverrides": {
       "description": "Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "AdvancedSecurityOverrides",
       "properties": {
         "commonCriteriaMode": {
@@ -1176,8 +1131,6 @@
           ],
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         "personalAppsThatCanReadWorkNotifications": {
           "description": "Personal apps that can read work profile notifications using a NotificationListenerService (https://developer.android.com/reference/android/service/notification/NotificationListenerService). By default, no personal apps (aside from system apps) can read work notifications. Each value in the list must be a package name.",
           "items": {
@@ -1185,7 +1138,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         "untrustedAppsPolicy": {
           "description": "The policy for untrusted apps (apps from unknown sources) enforced on the device. Replaces install_unknown_sources_allowed (deprecated).",
           "enum": [
@@ -1232,8 +1184,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "AppProcessInfo": {
       "description": "Information about a process. It contains process name, start time, app Uid, app Pid, seinfo tag, hash of the base APK.",
       "id": "AppProcessInfo",
@@ -1286,7 +1236,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "AppTrackInfo": {
       "description": "Id to name association of a app track.",
       "id": "AppTrackInfo",
@@ -1302,8 +1251,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "AppVersion": {
       "description": "This represents a single version of the app.",
       "id": "AppVersion",
@@ -1331,13 +1278,10 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "Application": {
       "description": "Information about an app.",
       "id": "Application",
       "properties": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         "appPricing": {
           "description": "Whether this app is free, free with in-app purchases, or paid. If the pricing is unspecified, this means the app is not generally available anymore (even though it might still be available to people who own it).",
           "enum": [
@@ -1354,7 +1298,6 @@
           ],
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         "appTracks": {
           "description": "Application tracks visible to the enterprise.",
           "items": {
@@ -1362,8 +1305,6 @@
           },
           "type": "array"
         },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         "appVersions": {
           "description": "Versions currently available for this app.",
           "items": {
@@ -1449,7 +1390,6 @@
           "description": "A link to an image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 512 x 512.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         "managedProperties": {
           "description": "The set of managed properties available to be pre-configured for the app.",
           "items": {
@@ -1573,10 +1513,6 @@
           },
           "type": "array"
         },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-        "autoUpdateMode": {
-          "description": "This feature is not generally available yet.",
-=======
         "alwaysOnVpnLockdownExemption": {
           "description": "Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN_LOCKDOWN_ENFORCED, the app is not allowed networking, and if set to VPN_LOCKDOWN_EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non_compliance_reason set to API_LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non_compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications[i].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy.",
           "enum": [
@@ -1593,7 +1529,6 @@
         },
         "autoUpdateMode": {
           "description": "Controls the auto-update mode for the app.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "enum": [
             "AUTO_UPDATE_MODE_UNSPECIFIED",
             "AUTO_UPDATE_DEFAULT",
@@ -1601,17 +1536,10 @@
             "AUTO_UPDATE_HIGH_PRIORITY"
           ],
           "enumDescriptions": [
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "This feature is not generally available yet.",
-            "This feature is not generally available yet.",
-            "This feature is not generally available yet.",
-            "This feature is not generally available yet."
-=======
             "Unspecified. Defaults to AUTO_UPDATE_DEFAULT.",
             "The app is automatically updated with low priority to minimize the impact on the user.The app is updated when all of the following constraints are met: The device is not actively used. The device is connected to an unmetered network. The device is charging.The device is notified about a new update within 24 hours after it is published by the developer, after which the app is updated the next time the constraints above are met.",
             "The app is not automatically updated for a maximum of 90 days after the app becomes out of date.90 days after the app becomes out of date, the latest available version is installed automatically with low priority (see AUTO_UPDATE_DEFAULT). After the app is updated it is not automatically updated again until 90 days after it becomes out of date again.The user can still manually update the app from the Play Store at any time.",
             "The app is updated as soon as possible. No constraints are applied.The device is notified immediately about a new update after it becomes available."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "type": "string"
         },
@@ -1670,15 +1598,6 @@
               "Grants access to network activity logs. Allows the delegated application to call setNetworkLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#setNetworkLoggingEnabled%28android.content.ComponentName,%20boolean%29), isNetworkLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#isNetworkLoggingEnabled%28android.content.ComponentName%29) and retrieveNetworkLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrieveNetworkLogs%28android.content.ComponentName,%20long%29) methods. This scope can be delegated to at most one application. Supported for fully managed devices on Android 10 and above. Supported for a work profile on Android 12 and above. When delegation is supported and set, NETWORK_ACTIVITY_LOGS is ignored.",
               "Grants access to security logs. Allows the delegated application to call setSecurityLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#setSecurityLoggingEnabled%28android.content.ComponentName,%20boolean%29), isSecurityLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#isSecurityLoggingEnabled%28android.content.ComponentName%29), retrieveSecurityLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrieveSecurityLogs%28android.content.ComponentName%29) and retrievePreRebootSecurityLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrievePreRebootSecurityLogs%28android.content.ComponentName%29) methods. This scope can be delegated to at most one application. Supported for fully managed devices and company-owned devices with a work profile on Android 12 and above. When delegation is supported and set, SECURITY_LOGS is ignored."
             ],
-            "enumDescriptions": [
-              "No delegation scope specified.",
-              "Grants access to certificate installation and management.",
-              "Grants access to managed configurations management.",
-              "Grants access to blocking uninstallation.",
-              "Grants access to permission policy and permission grant state.",
-              "Grants access to package access state.",
-              "Grants access for enabling system apps."
-            ],
             "type": "string"
           },
           "type": "array"
@@ -1714,11 +1633,7 @@
           "type": "string"
         },
         "lockTaskAllowed": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to to configure a dedicated device.",
-=======
           "description": "Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to configure a dedicated device.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "type": "boolean"
         },
         "managedConfiguration": {
@@ -1860,8 +1775,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "BatchUsageLogEvents": {
       "description": "Batched event logs of events from the device.",
       "id": "BatchUsageLogEvents",
@@ -1889,7 +1802,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "BlockAction": {
       "description": "An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a device or work profile to displays a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified.",
       "id": "BlockAction",
@@ -1916,8 +1828,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "CertAuthorityInstalledEvent": {
       "description": "A new root certificate was installed into the system's trusted credential storage. This is available device-wide on fully managed devices and within the work profile on organization-owned devices with a work profile.",
       "id": "CertAuthorityInstalledEvent",
@@ -1969,7 +1879,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "ChoosePrivateKeyRule": {
       "description": "Controls apps' access to private keys. The rule determines which private key, if any, Android Device Policy grants to the specified app. Access is granted either when the app calls KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) (or any overloads) to request a private key alias for a given URL, or for rules that are not URL-specific (that is, if urlPattern is not set, or set to the empty string or .*) on Android 11 and above, directly so that the app can call KeyChain.getPrivateKey (https://developer.android.com/reference/android/security/KeyChain#getPrivateKey%28android.content.Context,%20java.lang.String%29), without first having to call KeyChain.choosePrivateKeyAlias.When an app calls KeyChain.choosePrivateKeyAlias if more than one choosePrivateKeyRules matches, the last matching rule defines which key alias to return.",
       "id": "ChoosePrivateKeyRule",
@@ -2093,24 +2002,16 @@
             "LOCK",
             "RESET_PASSWORD",
             "REBOOT",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "RELINQUISH_OWNERSHIP"
-=======
             "RELINQUISH_OWNERSHIP",
             "CLEAR_APP_DATA"
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "enumDescriptions": [
             "This value is disallowed.",
             "Lock the device, as if the lock screen timeout had expired.",
             "Reset the user's password.",
             "Reboot the device. Only supported on fully managed devices running Android 7.0 (API level 24) or higher.",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "Removes the work profile and all policies from a company-owned Android 8.0+ device, relinquishing the device for personal use. Apps and data associated with the personal profile(s) are preserved. The device will be deleted from the server after it acknowledges the command."
-=======
             "Removes the work profile and all policies from a company-owned Android 8.0+ device, relinquishing the device for personal use. Apps and data associated with the personal profile(s) are preserved. The device will be deleted from the server after it acknowledges the command.",
             "Clears the application data of specified apps. This is supported on Android 9 and above. Note that an application can store data outside of its application data, for example in external storage or in a user dictionary. See also clear_apps_data_params."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "type": "string"
         },
@@ -2168,10 +2069,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-    "ContactInfo": {
-      "description": "Contact details for LaForge enterprises.",
-=======
     "ConnectEvent": {
       "description": "A TCP connect event was initiated through the standard network stack.",
       "id": "ConnectEvent",
@@ -2194,7 +2091,6 @@
     },
     "ContactInfo": {
       "description": "Contact details for managed Google Play enterprises.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "ContactInfo",
       "properties": {
         "contactEmail": {
@@ -2250,10 +2146,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-    "Date": {
-      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values A month and day value, with a zero year, such as an anniversary A year on its own, with zero month and day values A year and month value, with a zero day, such as a credit card expiration dateRelated types are google.type.TimeOfDay and google.protobuf.Timestamp.",
-=======
     "CrossProfilePolicies": {
       "description": "Cross-profile policies applied on the device.",
       "id": "CrossProfilePolicies",
@@ -2332,7 +2224,6 @@
     },
     "Date": {
       "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: A full date, with non-zero year, month, and day values. A month and day, with a zero year (for example, an anniversary). A year on its own, with a zero month and a zero day. A year and month, with a zero day (for example, a credit card expiration date).Related types: google.type.TimeOfDay google.type.DateTime google.protobuf.Timestamp",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "Date",
       "properties": {
         "day": {
@@ -2581,6 +2472,29 @@
       },
       "type": "object"
     },
+    "DeviceConnectivityManagement": {
+      "description": "Covers controls for device connectivity such as Wi-Fi, USB data access, keyboard/mouse connections, and more.",
+      "id": "DeviceConnectivityManagement",
+      "properties": {
+        "usbDataAccess": {
+          "description": "Controls what can be transferred via USB, files and/or data. This is supported only on company-owned devices.",
+          "enum": [
+            "USB_DATA_ACCESS_UNSPECIFIED",
+            "ALLOW_USB_DATA_TRANSFER",
+            "DISALLOW_USB_FILE_TRANSFER",
+            "DISALLOW_USB_DATA_TRANSFER"
+          ],
+          "enumDescriptions": [
+            "Unspecified. Defaults to ALLOW_USB_DATA_TRANSFER, unless usbFileTransferDisabled is set to true. If usbFileTransferDisabled is set to true, this is equivalent to DISALLOW_USB_FILE_TRANSFER.",
+            "All types of USB data transfers are allowed. usbFileTransferDisabled is ignored.",
+            "Transferring files over USB is disallowed. Other types of USB data connections, such as mouse and keyboard connection, are allowed. usbFileTransferDisabled is ignored.",
+            "When set, all types of USB data transfers are prohibited. Supported for devices running Android 12 or above with USB HAL 1.3 or above. If the setting is not supported, DISALLOW_USB_FILE_TRANSFER will be set. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 12. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not have USB HAL 1.3 or above. usbFileTransferDisabled is ignored."
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "DeviceSettings": {
       "description": "Information about security related device settings on device.",
       "id": "DeviceSettings",
@@ -2716,11 +2630,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for Empty is empty JSON object {}.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } ",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -2748,11 +2658,7 @@
           "type": "string"
         },
         "duration": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "The length of time the enrollment token is valid, ranging from 1 minute to 90 days. If not specified, the default duration is 1 hour.",
-=======
           "description": "The length of time the enrollment token is valid, ranging from 1 minute to Durations.MAX_VALUE (https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/util/Durations.html#MAX_VALUE), approximately 10,000 years. If not specified, the default duration is 1 hour. Please note that if requested duration causes the resulting expiration_timestamp to exceed Timestamps.MAX_VALUE (https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/util/Timestamps.html#MAX_VALUE), then expiration_timestamp is coerced to Timestamps.MAX_VALUE.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "format": "google-duration",
           "type": "string"
         },
@@ -2798,11 +2704,7 @@
         },
         "contactInfo": {
           "$ref": "ContactInfo",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "This feature is not generally available yet. The enterprise contact info of an EMM owned enterprise"
-=======
           "description": "The enterprise contact info of an EMM-managed enterprise."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         },
         "enabledNotificationTypes": {
           "description": "The types of Google Pub/Sub notifications enabled for the enterprise.",
@@ -2822,13 +2724,6 @@
               "A notification sent when a device issues a status report.",
               "A notification sent when a device command has completed.",
               "A notification sent when device sends BatchUsageLogEvents."
-            ],
-            "enumDescriptions": [
-              "This value is ignored.",
-              "A notification sent when a device enrolls.",
-              "Deprecated.",
-              "A notification sent when a device issues a status report.",
-              "A notification sent when a device command has completed."
             ],
             "type": "string"
           },
@@ -2905,10 +2800,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-    "FreezePeriod": {
-      "description": "A system freeze period. When a device’s clock is within the freeze period, all incoming system updates (including security patches) are blocked and won’t be installed. When a device is outside the freeze period, normal update behavior applies. Leap years are ignored in freeze period calculations, in particular: * If Feb. 29th is set as the start or end date of a freeze period, the freeze period will start or end on Feb. 28th instead. * When a device’s system clock reads Feb. 29th, it’s treated as Feb. 28th. * When calculating the number of days in a freeze period or the time between two freeze periods, Feb. 29th is ignored and not counted as a day.",
-=======
     "FilePulledEvent": {
       "description": "A file was downloaded from the device.",
       "id": "FilePulledEvent",
@@ -2933,7 +2824,6 @@
     },
     "FreezePeriod": {
       "description": "A system freeze period. When a device’s clock is within the freeze period, all incoming system updates (including security patches) are blocked and won’t be installed. When a device is outside the freeze period, normal update behavior applies. Leap years are ignored in freeze period calculations, in particular: * If Feb. 29th is set as the start or end date of a freeze period, the freeze period will start or end on Feb. 28th instead. * When a device’s system clock reads Feb. 29th, it’s treated as Feb. 28th. * When calculating the number of days in a freeze period or the time between two freeze periods, Feb. 29th is ignored and not counted as a day.Note: For Freeze Periods to take effect, SystemUpdateType cannot be specified as SYSTEM_UPDATE_TYPE_UNSPECIFIED, because freeze periods require a defined policy to be specified.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "FreezePeriod",
       "properties": {
         "endDate": {
@@ -3232,8 +3122,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "KeyguardDismissAuthAttemptEvent": {
       "description": "An attempt was made to unlock the device.",
       "id": "KeyguardDismissAuthAttemptEvent",
@@ -3261,7 +3149,6 @@
       "properties": {},
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "KioskCustomization": {
       "description": "Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.",
       "id": "KioskCustomization",
@@ -3372,14 +3259,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-    "ListEnterprisesResponse": {
-      "description": "This feature is not generally available yet. Response to a request to list enterprises.",
-      "id": "ListEnterprisesResponse",
-      "properties": {
-        "enterprises": {
-          "description": "This feature is not generally available yet. The list of enterprises.",
-=======
     "ListEnrollmentTokensResponse": {
       "description": "Response to a request to list enrollment tokens for a given enterprise.",
       "id": "ListEnrollmentTokensResponse",
@@ -3404,18 +3283,13 @@
       "properties": {
         "enterprises": {
           "description": "The list of enterprises.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "items": {
             "$ref": "Enterprise"
           },
           "type": "array"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "This feature is not generally available yet. If there are more results, a token to retrieve next page of results.",
-=======
           "description": "If there are more results, a token to retrieve next page of results.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "type": "string"
         }
       },
@@ -3758,7 +3632,8 @@
             "APP_INSTALLED",
             "PENDING",
             "APP_INCOMPATIBLE",
-            "APP_NOT_UPDATED"
+            "APP_NOT_UPDATED",
+            "DEVICE_INCOMPATIBLE"
           ],
           "enumDescriptions": [
             "This value is disallowed.",
@@ -3771,7 +3646,8 @@
             "A blocked app is installed.",
             "The setting hasn't been applied at the time of the report, but is expected to be applied shortly.",
             "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough.",
-            "The app is installed, but it hasn't been updated to the minimum version code specified by policy."
+            "The app is installed, but it hasn't been updated to the minimum version code specified by policy.",
+            "The device is incompatible with the policy requirements."
           ],
           "type": "string"
         },
@@ -3781,8 +3657,6 @@
         },
         "settingName": {
           "description": "The name of the policy setting. This is the JSON field name of a top-level Policy field.",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
           "type": "string"
         },
         "specificNonComplianceContext": {
@@ -3807,7 +3681,6 @@
             "There is an incorrect value in ONC Wi-Fi configuration. fieldPath specifies which field value is incorrect. oncWifiContext is set. nonComplianceReason is set to INVALID_VALUE.",
             "The ONC Wi-Fi setting is not supported in the API level of the Android version running on the device. fieldPath specifies which field value is not supported. oncWifiContext is set. nonComplianceReason is set to API_LEVEL."
           ],
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "type": "string"
         }
       },
@@ -3830,7 +3703,8 @@
             "APP_INSTALLED",
             "PENDING",
             "APP_INCOMPATIBLE",
-            "APP_NOT_UPDATED"
+            "APP_NOT_UPDATED",
+            "DEVICE_INCOMPATIBLE"
           ],
           "enumDescriptions": [
             "This value is disallowed.",
@@ -3843,7 +3717,8 @@
             "A blocked app is installed.",
             "The setting hasn't been applied at the time of the report, but is expected to be applied shortly.",
             "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough.",
-            "The app is installed, but it hasn't been updated to the minimum version code specified by policy."
+            "The app is installed, but it hasn't been updated to the minimum version code specified by policy.",
+            "The device is incompatible with the policy requirements."
           ],
           "type": "string"
         },
@@ -3876,8 +3751,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "OncWifiContext": {
       "description": "Additional context for non-compliance related to Wi-Fi configuration.",
       "id": "OncWifiContext",
@@ -3889,7 +3762,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "Operation": {
       "description": "This resource represents a long-running operation that is the result of a network API call.",
       "id": "Operation",
@@ -4076,15 +3948,6 @@
           ],
           "enumDescriptions": [
             "There are no password requirements.",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "The device must be secured with a low-security biometric recognition technology, at minimum. This includes technologies that can recognize the identity of an individual that are roughly equivalent to a 3-digit PIN (false detection is less than 1 in 1,000).",
-            "A password is required, but there are no restrictions on what the password must contain.",
-            "The password must contain numeric characters.",
-            "The password must contain numeric characters with no repeating (4444) or ordered (1234, 4321, 2468) sequences.",
-            "The password must contain alphabetic (or symbol) characters.",
-            "The password must contain both numeric and alphabetic (or symbol) characters.",
-            "The password must meet the minimum requirements specified in passwordMinimumLength, passwordMinimumLetters, passwordMinimumSymbols, etc. For example, if passwordMinimumSymbols is 2, the password must contain at least two symbols."
-=======
             "The device must be secured with a low-security biometric recognition technology, at minimum. This includes technologies that can recognize the identity of an individual that are roughly equivalent to a 3-digit PIN (false detection is less than 1 in 1,000).This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_LOW for application. See PasswordQuality for details.",
             "A password is required, but there are no restrictions on what the password must contain.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_LOW for application. See PasswordQuality for details.",
             "The password must contain numeric characters.This, when applied on personally owned work profile devices on Android 12 device-scoped, will be treated as COMPLEXITY_MEDIUM for application. See PasswordQuality for details.",
@@ -4095,7 +3958,6 @@
             "Define the low password complexity band as: pattern PIN with repeating (4444) or ordered (1234, 4321, 2468) sequencesThis sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details.",
             "Define the medium password complexity band as: PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences, length at least 4 alphabetic, length at least 4 alphanumeric, length at least 4This sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details.",
             "Define the high password complexity band as:On Android 12 and above: PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences, length at least 8 alphabetic, length at least 6 alphanumeric, length at least 6This sets the minimum complexity band which the password must meet.Enforcement varies among different Android versions, management modes and password scopes. See PasswordQuality for details."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "type": "string"
         },
@@ -4126,8 +3988,6 @@
             "The timeout period is set to 24 hours."
           ],
           "type": "string"
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         },
         "unifiedLockSettings": {
           "description": "Controls whether a unified lock is allowed for the device and the work profile, on devices running Android 9 and above with a work profile. This can be set only if password_scope is set to SCOPE_PROFILE, the policy will be rejected otherwise. If user has not set a separate work lock and this field is set to REQUIRE_SEPARATE_WORK_LOCK, a NonComplianceDetail is reported with nonComplianceReason set to USER_ACTION.",
@@ -4167,7 +4027,6 @@
             "This app’s data could not be cleared because the device API level does not support this command."
           ],
           "type": "string"
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         }
       },
       "type": "object"
@@ -4261,11 +4120,7 @@
           "type": "array"
         },
         "cameraDisabled": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Whether camera is disabled.",
-=======
           "description": "If true, the camera is disabled on the personal profile.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "type": "boolean"
         },
         "maxDaysWithWorkOff": {
@@ -4297,11 +4152,7 @@
           "type": "string"
         },
         "screenCaptureDisabled": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Whether screen capture is disabled.",
-=======
           "description": "If true, screen capture is disabled for all users.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           "type": "boolean"
         }
       },
@@ -4328,11 +4179,7 @@
         },
         "advancedSecurityOverrides": {
           "$ref": "AdvancedSecurityOverrides",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Security policies set to the most secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values."
-=======
           "description": "Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         },
         "alwaysOnVpnPackage": {
           "$ref": "AlwaysOnVpnPackage",
@@ -4356,7 +4203,7 @@
           "type": "array"
         },
         "appAutoUpdatePolicy": {
-          "description": "Deprecated. Use autoUpdateMode instead.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.",
+          "description": "Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.",
           "enum": [
             "APP_AUTO_UPDATE_POLICY_UNSPECIFIED",
             "CHOICE_TO_THE_USER",
@@ -4488,6 +4335,10 @@
           ],
           "type": "string"
         },
+        "deviceConnectivityManagement": {
+          "$ref": "DeviceConnectivityManagement",
+          "description": "Covers controls for device connectivity such as Wi-Fi, USB data access, keyboard/mouse connections, and more."
+        },
         "deviceOwnerLockScreenInfo": {
           "$ref": "UserFacingMessage",
           "description": "The device owner information to be shown on the lock screen."
@@ -4560,11 +4411,7 @@
               "Disable unredacted notifications on secure keyguard screens.",
               "Ignore trust agent state on secure keyguard screens.",
               "Disable fingerprint sensor on secure keyguard screens.",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "Disable text entry into notifications on secure keyguard screens.",
-=======
               "On devices running Android 6 and below, disables text entry into notifications on secure keyguard screens. Has no effect on Android 7 and above.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
               "Disable face authentication on secure keyguard screens.",
               "Disable iris authentication on secure keyguard screens.",
               "Disable all biometric authentication on secure keyguard screens.",
@@ -4615,8 +4462,6 @@
           "format": "int64",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         "microphoneAccess": {
           "description": "Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices.",
           "enum": [
@@ -4633,7 +4478,6 @@
           ],
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         "minimumApiLevel": {
           "description": "The minimum allowed Android API level.",
           "format": "int32",
@@ -4695,11 +4539,7 @@
         },
         "passwordRequirements": {
           "$ref": "PasswordRequirements",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use password_policies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here."
-=======
           "description": "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here. unified_lock_settings cannot be used here."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         },
         "permissionGrants": {
           "description": "Explicit permission or group grants or denials for all apps. These values override the default_permission_policy.",
@@ -4710,11 +4550,7 @@
         },
         "permittedAccessibilityServices": {
           "$ref": "PackageNameList",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used."
-=======
           "description": "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         },
         "permittedInputMethods": {
           "$ref": "PackageNameList",
@@ -4752,8 +4588,6 @@
           },
           "type": "array"
         },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         "preferentialNetworkService": {
           "description": "Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices.",
           "enum": [
@@ -4768,7 +4602,6 @@
           ],
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         "privateKeySelectionEnabled": {
           "description": "Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable.",
           "type": "boolean"
@@ -4885,11 +4718,7 @@
           "type": "boolean"
         },
         "wifiConfigDisabled": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "Whether configuring Wi-Fi access points is disabled.Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled).",
-=======
-          "description": "Whether configuring Wi-Fi access points is disabled. Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled).",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
+          "description": "Whether configuring Wi-Fi networks is disabled. Supported on fully managed devices and work profiles on company-owned devices. For fully managed devices, setting this to true removes all configured networks and retains only the networks configured using openNetworkConfiguration. For work profiles on company-owned devices, existing configured networks are not affected and the user is not allowed to add, remove, or modify Wi-Fi networks. Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled).",
           "type": "boolean"
         },
         "wifiConfigsLockdownEnabled": {
@@ -4905,11 +4734,7 @@
       "properties": {
         "blockAction": {
           "$ref": "BlockAction",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified."
-=======
           "description": "An action to block access to apps and data on a company owned device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         },
         "settingName": {
           "description": "The top-level policy to enforce. For example, applications or passwordPolicies.",
@@ -4917,11 +4742,7 @@
         },
         "wipeAction": {
           "$ref": "WipeAction",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-          "description": "An action to reset a fully managed device or delete a work profile. Note: blockAction must also be specified."
-=======
           "description": "An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         }
       },
       "type": "object"
@@ -4942,22 +4763,14 @@
           "enum": [
             "SECURITY_RISK_UNSPECIFIED",
             "UNKNOWN_OS",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "COMPROMISED_OS"
-=======
             "COMPROMISED_OS",
             "HARDWARE_BACKED_EVALUATION_FAILED"
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "enumDescriptions": [
             "Unspecified.",
             "SafetyNet detects that the device is running an unknown OS (basicIntegrity check succeeds but ctsProfileMatch fails).",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-            "SafetyNet detects that the device is running a compromised OS (basicIntegrity check fails)."
-=======
             "SafetyNet detects that the device is running a compromised OS (basicIntegrity check fails).",
             "SafetyNet detects that the device does not have a strong guarantee of system integrity, such as a hardware-backed keystore (https://developer.android.com/training/articles/security-key-attestation)."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
           ],
           "type": "string"
         }
@@ -5032,8 +4845,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     "RemoteLockEvent": {
       "description": "The device or profile has been remotely locked via the LOCK command.",
       "id": "RemoteLockEvent",
@@ -5055,7 +4866,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     "SecurityPosture": {
       "description": "The security posture of the device, as determined by the current device state and the policies applied.",
       "id": "SecurityPosture",
@@ -5202,8 +5012,6 @@
         "systemUpdateInfo": {
           "$ref": "SystemUpdateInfo",
           "description": "Information about a potential pending system update."
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
         }
       },
       "type": "object"
@@ -5219,7 +5027,6 @@
         "passwordPoliciesContext": {
           "$ref": "PasswordPoliciesContext",
           "description": "Additional context for non-compliance related to password policies. See PASSWORD_POLICIES_PASSWORD_EXPIRED and PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
         }
       },
       "type": "object"
@@ -5732,12 +5539,8 @@
               "PRIVATE_APPS",
               "WEB_APPS",
               "STORE_BUILDER",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "MANAGED_CONFIGURATIONS"
-=======
               "MANAGED_CONFIGURATIONS",
               "ZERO_TOUCH_CUSTOMER_MANAGEMENT"
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
             ],
             "enumDescriptions": [
               "Unspecified feature.",
@@ -5745,12 +5548,8 @@
               "The private apps page (https://developers.google.com/android/management/apps#private-apps).",
               "The Web Apps page (https://developers.google.com/android/management/apps#web-apps).",
               "The organize apps page (https://developers.google.com/android/management/apps#organize-apps).",
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-              "The managed configurations page (https://developers.google.com/android/management/managed-configurations-iframe)."
-=======
               "The managed configurations page (https://developers.google.com/android/management/managed-configurations-iframe).",
               "The zero-touch iframe (https://developers.google.com/android/management/zero-touch-iframe)."
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
             ],
             "type": "string"
           },
@@ -5787,11 +5586,7 @@
       "type": "object"
     },
     "WipeAction": {
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-      "description": "An action to reset a fully managed device or delete a work profile. Note: blockAction must also be specified.",
-=======
       "description": "An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified.",
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
       "id": "WipeAction",
       "properties": {
         "preserveFrp": {
@@ -5805,15 +5600,12 @@
         }
       },
       "type": "object"
-<<<<<<< HEAD:gen/model/androidmanagement/v1/androidmanagement-api.json
-=======
     },
     "WipeFailureEvent": {
       "description": "The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Intentionally empty.",
       "id": "WipeFailureEvent",
       "properties": {},
       "type": "object"
->>>>>>> upstream/main:configs/models/androidmanagement/v1/androidmanagement-api.json
     }
   },
   "servicePath": "",

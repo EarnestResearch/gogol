@@ -6,11 +6,7 @@
           "description": "View and manage your applications deployed on Google App Engine"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/appengine/v1/appengine-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/appengine/v1/appengine-api.json
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
           "description": "View your data across Google Cloud services and see the email address of your Google Account"
@@ -167,11 +163,7 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/appengine/v1/appengine-api.json
-          "description": "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application.",
-=======
           "description": "Updates the specified Application resource. You can update the following fields: auth_domain - Google authentication domain for controlling user access to the application. default_cookie_expiration - Cookie expiration policy for the application. iap - Identity-Aware Proxy properties for the application.",
->>>>>>> upstream/main:configs/models/appengine/v1/appengine-api.json
           "flatPath": "v1/apps/{appsId}",
           "httpMethod": "PATCH",
           "id": "appengine.apps.patch",
@@ -1695,11 +1687,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/appengine/v1/appengine-api.json
-  "revision": "20210410",
-=======
-  "revision": "20230320",
->>>>>>> upstream/main:configs/models/appengine/v1/appengine-api.json
+  "revision": "20230501",
   "rootUrl": "https://appengine.googleapis.com/",
   "schemas": {
     "ApiConfigHandler": {
@@ -1787,22 +1775,6 @@
         "codeBucket": {
           "description": "Output only. Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly",
           "readOnly": true,
-          "type": "string"
-        },
-        "databaseType": {
-          "description": "The type of the Cloud Firestore or Cloud Datastore database associated with this application.",
-          "enum": [
-            "DATABASE_TYPE_UNSPECIFIED",
-            "CLOUD_DATASTORE",
-            "CLOUD_FIRESTORE",
-            "CLOUD_DATASTORE_COMPATIBILITY"
-          ],
-          "enumDescriptions": [
-            "Database type is unspecified.",
-            "Cloud Datastore",
-            "Cloud Firestore Native",
-            "Cloud Firestore in Datastore Mode"
-          ],
           "type": "string"
         },
         "databaseType": {
@@ -1943,7 +1915,7 @@
       "type": "object"
     },
     "AuthorizedDomain": {
-      "description": "A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Webmaster Central (https://www.google.com/webmasters/verification/home).",
+      "description": "A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Search Console (https://search.google.com/search-console/welcome).",
       "id": "AuthorizedDomain",
       "properties": {
         "id": {
@@ -2252,11 +2224,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/appengine/v1/appengine-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for Empty is empty JSON object {}.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } ",
->>>>>>> upstream/main:configs/models/appengine/v1/appengine-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -2406,8 +2374,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/appengine/v1/appengine-api.json
-=======
     "FlexibleRuntimeSettings": {
       "description": "Runtime settings for the App Engine flexible environment.",
       "id": "FlexibleRuntimeSettings",
@@ -2423,7 +2389,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/appengine/v1/appengine-api.json
     "GoogleAppengineV1betaLocationMetadata": {
       "description": "Metadata for the given google.cloud.location.Location.",
       "id": "GoogleAppengineV1betaLocationMetadata",
@@ -2850,7 +2815,7 @@
       "type": "object"
     },
     "Location": {
-      "description": "A resource that represents Google Cloud Platform location.",
+      "description": "A resource that represents a Google Cloud location.",
       "id": "Location",
       "properties": {
         "displayName": {

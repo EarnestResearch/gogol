@@ -3,7 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
+          "description": "View and manage your data across Google Cloud Platform services"
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
           "description": "View your data across Google Cloud Platform services"
@@ -23,11 +23,7 @@
   "canonicalName": "Dns",
   "description": "",
   "discoveryVersion": "v1",
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-  "documentationLink": "https://cloud.google.com/dns/docs",
-=======
   "documentationLink": "http://developers.google.com/cloud-dns",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
   "fullyEncodeReservedExpansion": true,
   "icons": {
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -121,13 +117,8 @@
     "changes": {
       "methods": {
         "create": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Atomically updates the ResourceRecordSet collection.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes",
-=======
           "description": "Atomically update the ResourceRecordSet collection.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "POST",
           "id": "dns.changes.create",
           "parameterOrder": [
@@ -141,7 +132,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -153,11 +144,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "Change"
           },
@@ -170,13 +157,8 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Fetches the representation of an existing Change.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes/{changeId}",
-=======
           "description": "Fetch the representation of an existing Change.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes/{changeId}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.changes.get",
           "parameterOrder": [
@@ -197,7 +179,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -209,11 +191,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes/{changeId}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes/{changeId}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "Change"
           },
@@ -225,13 +203,8 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates Changes to a ResourceRecordSet collection.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes",
-=======
           "description": "Enumerate Changes to a ResourceRecordSet collection.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.changes.list",
           "parameterOrder": [
@@ -240,13 +213,13 @@
           ],
           "parameters": {
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
             },
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -280,11 +253,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/changes",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/changes",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "ChangesListResponse"
           },
@@ -300,13 +269,8 @@
     "dnsKeys": {
       "methods": {
         "get": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Fetches the representation of an existing DnsKey.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
-=======
           "description": "Fetch the representation of an existing DnsKey.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.dnsKeys.get",
           "parameterOrder": [
@@ -321,7 +285,7 @@
               "type": "string"
             },
             "digestType": {
-              "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type is computed and displayed.",
+              "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.",
               "location": "query",
               "type": "string"
             },
@@ -332,7 +296,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -344,11 +308,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "DnsKey"
           },
@@ -360,13 +320,8 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates DnsKeys to a ResourceRecordSet collection.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/dnsKeys",
-=======
           "description": "Enumerate DnsKeys to a ResourceRecordSet collection.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/dnsKeys",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.dnsKeys.list",
           "parameterOrder": [
@@ -375,18 +330,18 @@
           ],
           "parameters": {
             "digestType": {
-              "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type is computed and displayed.",
+              "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type will be computed and displayed.",
               "location": "query",
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
             },
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -403,11 +358,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/dnsKeys",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/dnsKeys",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "DnsKeysListResponse"
           },
@@ -423,13 +374,8 @@
     "managedZoneOperations": {
       "methods": {
         "get": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Fetches the representation of an existing Operation.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/operations/{operation}",
-=======
           "description": "Fetch the representation of an existing Operation.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/operations/{operation}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.managedZoneOperations.get",
           "parameterOrder": [
@@ -450,7 +396,7 @@
               "type": "string"
             },
             "operation": {
-              "description": "Identifies the operation addressed by this request (ID of the operation).",
+              "description": "Identifies the operation addressed by this request.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -462,11 +408,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/operations/{operation}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/operations/{operation}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "Operation"
           },
@@ -478,13 +420,8 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates Operations for the given ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/operations",
-=======
           "description": "Enumerate Operations for the given ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/operations",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.managedZoneOperations.list",
           "parameterOrder": [
@@ -499,7 +436,7 @@
               "type": "string"
             },
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -519,13 +456,8 @@
               "default": "START_TIME",
               "description": "Sorting criterion. The only supported values are START_TIME and ID.",
               "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-                "startTime",
-                "id"
-=======
                 "START_TIME",
                 "ID"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
               ],
               "enumDescriptions": [
                 "",
@@ -535,11 +467,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/operations",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/operations",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "ManagedZoneOperationsListResponse"
           },
@@ -555,13 +483,8 @@
     "managedZones": {
       "methods": {
         "create": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Creates a new ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones",
-=======
           "description": "Create a new ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "POST",
           "id": "dns.managedZones.create",
           "parameterOrder": [
@@ -580,11 +503,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "ManagedZone"
           },
@@ -597,13 +516,8 @@
           ]
         },
         "delete": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Deletes a previously created ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "description": "Delete a previously created ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "DELETE",
           "id": "dns.managedZones.delete",
           "parameterOrder": [
@@ -617,7 +531,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -629,24 +543,15 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "scopes": [
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Fetches the representation of an existing ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "description": "Fetch the representation of an existing ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.managedZones.get",
           "parameterOrder": [
@@ -660,7 +565,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -672,11 +577,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "ManagedZone"
           },
@@ -688,13 +589,8 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates ManagedZones that have been created but not yet deleted.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones",
-=======
           "description": "Enumerate ManagedZones that have been created but not yet deleted.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.managedZones.list",
           "parameterOrder": [
@@ -707,7 +603,7 @@
               "type": "string"
             },
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -724,11 +620,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "ManagedZonesListResponse"
           },
@@ -740,13 +632,8 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Applies a partial update to an existing ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "description": "Apply a partial update to an existing ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "PATCH",
           "id": "dns.managedZones.patch",
           "parameterOrder": [
@@ -760,7 +647,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -772,11 +659,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "ManagedZone"
           },
@@ -789,13 +672,8 @@
           ]
         },
         "update": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Updates an existing ManagedZone.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "description": "Update an existing ManagedZone.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "PUT",
           "id": "dns.managedZones.update",
           "parameterOrder": [
@@ -809,7 +687,7 @@
               "type": "string"
             },
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
@@ -821,11 +699,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "ManagedZone"
           },
@@ -842,13 +716,8 @@
     "policies": {
       "methods": {
         "create": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Creates a new Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies",
-=======
           "description": "Create a new Policy",
           "flatPath": "dns/v2beta1/projects/{project}/policies",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "POST",
           "id": "dns.policies.create",
           "parameterOrder": [
@@ -867,11 +736,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies",
-=======
           "path": "dns/v2beta1/projects/{project}/policies",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "Policy"
           },
@@ -880,13 +745,8 @@
           }
         },
         "delete": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Deletes a previously created Policy. Fails if the policy is still being referenced by a network.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "description": "Delete a previously created Policy. Will fail if the policy is still being referenced by a network.",
           "flatPath": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "DELETE",
           "id": "dns.policies.delete",
           "parameterOrder": [
@@ -912,23 +772,11 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies/{policy}",
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "get": {
-          "description": "Fetches the representation of an existing Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "path": "dns/v2beta1/projects/{project}/policies/{policy}"
         },
         "get": {
           "description": "Fetch the representation of an existing Policy.",
           "flatPath": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.policies.get",
           "parameterOrder": [
@@ -954,23 +802,14 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "path": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "Policy"
           }
         },
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates all Policies associated with a project.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies",
-=======
           "description": "Enumerate all Policies associated with a project.",
           "flatPath": "dns/v2beta1/projects/{project}/policies",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.policies.list",
           "parameterOrder": [
@@ -978,7 +817,7 @@
           ],
           "parameters": {
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -995,23 +834,14 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies",
-=======
           "path": "dns/v2beta1/projects/{project}/policies",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "PoliciesListResponse"
           }
         },
         "patch": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Applies a partial update to an existing Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "description": "Apply a partial update to an existing Policy.",
           "flatPath": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "PATCH",
           "id": "dns.policies.patch",
           "parameterOrder": [
@@ -1037,11 +867,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "path": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "Policy"
           },
@@ -1050,13 +876,8 @@
           }
         },
         "update": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Updates an existing Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "description": "Update an existing Policy.",
           "flatPath": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "PUT",
           "id": "dns.policies.update",
           "parameterOrder": [
@@ -1082,11 +903,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/policies/{policy}",
-=======
           "path": "dns/v2beta1/projects/{project}/policies/{policy}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "request": {
             "$ref": "Policy"
           },
@@ -1099,13 +916,8 @@
     "projects": {
       "methods": {
         "get": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Fetches the representation of an existing Project.",
-          "flatPath": "dns/v1beta2/projects/{project}",
-=======
           "description": "Fetch the representation of an existing Project.",
           "flatPath": "dns/v2beta1/projects/{project}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.projects.get",
           "parameterOrder": [
@@ -1124,11 +936,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}",
-=======
           "path": "dns/v2beta1/projects/{project}",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "Project"
           },
@@ -1139,223 +947,13 @@
             "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
           ]
         }
-      },
-      "resources": {
-        "managedZones": {
-          "resources": {
-            "rrsets": {
-              "methods": {
-                "create": {
-                  "description": "Creates a new ResourceRecordSet.",
-                  "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
-                  "httpMethod": "POST",
-                  "id": "dns.projects.managedZones.rrsets.create",
-                  "parameterOrder": [
-                    "project",
-                    "managedZone"
-                  ],
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "location": "query",
-                      "type": "string"
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    }
-                  },
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
-                  "request": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ]
-                },
-                "delete": {
-                  "description": "Deletes a previously created ResourceRecordSet.",
-                  "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "DELETE",
-                  "id": "dns.projects.managedZones.rrsets.delete",
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "location": "query",
-                      "type": "string"
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    }
-                  },
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ]
-                },
-                "get": {
-                  "description": "Fetches the representation of an existing ResourceRecordSet.",
-                  "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "GET",
-                  "id": "dns.projects.managedZones.rrsets.get",
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "location": "query",
-                      "type": "string"
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    }
-                  },
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/cloud-platform.read-only",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ]
-                },
-                "patch": {
-                  "description": "Applies a partial update to an existing ResourceRecordSet.",
-                  "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "httpMethod": "PATCH",
-                  "id": "dns.projects.managedZones.rrsets.patch",
-                  "parameterOrder": [
-                    "project",
-                    "managedZone",
-                    "name",
-                    "type"
-                  ],
-                  "parameters": {
-                    "clientOperationId": {
-                      "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-                      "location": "query",
-                      "type": "string"
-                    },
-                    "managedZone": {
-                      "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "name": {
-                      "description": "Fully qualified domain name.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "project": {
-                      "description": "Identifies the project addressed by this request.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "type": {
-                      "description": "RRSet type.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    }
-                  },
-                  "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
-                  "request": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "response": {
-                    "$ref": "ResourceRecordSet"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-                  ]
-                }
-              }
-            }
-          }
-        }
       }
     },
     "resourceRecordSets": {
       "methods": {
         "list": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Enumerates ResourceRecordSets that you have created but not yet deleted.",
-          "flatPath": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
-=======
           "description": "Enumerate ResourceRecordSets that have been created but not yet deleted.",
           "flatPath": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/rrsets",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "httpMethod": "GET",
           "id": "dns.resourceRecordSets.list",
           "parameterOrder": [
@@ -1364,13 +962,13 @@
           ],
           "parameters": {
             "managedZone": {
-              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+              "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or id.",
               "location": "path",
               "required": true,
               "type": "string"
             },
             "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+              "description": "Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.",
               "format": "int32",
               "location": "query",
               "type": "integer"
@@ -1397,11 +995,7 @@
               "type": "string"
             }
           },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "path": "dns/v1beta2/projects/{project}/managedZones/{managedZone}/rrsets",
-=======
           "path": "dns/v2beta1/projects/{project}/managedZones/{managedZone}/rrsets",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "response": {
             "$ref": "ResourceRecordSetsListResponse"
           },
@@ -1413,511 +1007,9 @@
           ]
         }
       }
-    },
-    "responsePolicies": {
-      "methods": {
-        "create": {
-          "description": "Creates a new Response Policy",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies",
-          "httpMethod": "POST",
-          "id": "dns.responsePolicies.create",
-          "parameterOrder": [
-            "project"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies",
-          "request": {
-            "$ref": "ResponsePolicy"
-          },
-          "response": {
-            "$ref": "ResponsePolicy"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "delete": {
-          "description": "Deletes a previously created Response Policy. Fails if the response policy is non-empty or still being referenced by a network.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "httpMethod": "DELETE",
-          "id": "dns.responsePolicies.delete",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "get": {
-          "description": "Fetches the representation of an existing Response Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "httpMethod": "GET",
-          "id": "dns.responsePolicies.get",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "response": {
-            "$ref": "ResponsePolicy"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/cloud-platform.read-only",
-            "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "list": {
-          "description": "Enumerates all Response Policies associated with a project.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies",
-          "httpMethod": "GET",
-          "id": "dns.responsePolicies.list",
-          "parameterOrder": [
-            "project"
-          ],
-          "parameters": {
-            "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
-              "format": "int32",
-              "location": "query",
-              "type": "integer"
-            },
-            "pageToken": {
-              "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies",
-          "response": {
-            "$ref": "ResponsePoliciesListResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/cloud-platform.read-only",
-            "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "patch": {
-          "description": "Applies a partial update to an existing Response Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "httpMethod": "PATCH",
-          "id": "dns.responsePolicies.patch",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Respones Policy addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "request": {
-            "$ref": "ResponsePolicy"
-          },
-          "response": {
-            "$ref": "ResponsePoliciesPatchResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "update": {
-          "description": "Updates an existing Response Policy.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "httpMethod": "PUT",
-          "id": "dns.responsePolicies.update",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}",
-          "request": {
-            "$ref": "ResponsePolicy"
-          },
-          "response": {
-            "$ref": "ResponsePoliciesUpdateResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        }
-      }
-    },
-    "responsePolicyRules": {
-      "methods": {
-        "create": {
-          "description": "Creates a new Response Policy Rule.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules",
-          "httpMethod": "POST",
-          "id": "dns.responsePolicyRules.create",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules",
-          "request": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "response": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "delete": {
-          "description": "Deletes a previously created Response Policy Rule.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "httpMethod": "DELETE",
-          "id": "dns.responsePolicyRules.delete",
-          "parameterOrder": [
-            "project",
-            "responsePolicy",
-            "responsePolicyRule"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicyRule": {
-              "description": "User assigned name of the Response Policy Rule addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "get": {
-          "description": "Fetches the representation of an existing Response Policy Rule.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "httpMethod": "GET",
-          "id": "dns.responsePolicyRules.get",
-          "parameterOrder": [
-            "project",
-            "responsePolicy",
-            "responsePolicyRule"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicyRule": {
-              "description": "User assigned name of the Response Policy Rule addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "response": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/cloud-platform.read-only",
-            "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "list": {
-          "description": "Enumerates all Response Policy Rules associated with a project.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules",
-          "httpMethod": "GET",
-          "id": "dns.responsePolicyRules.list",
-          "parameterOrder": [
-            "project",
-            "responsePolicy"
-          ],
-          "parameters": {
-            "maxResults": {
-              "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
-              "format": "int32",
-              "location": "query",
-              "type": "integer"
-            },
-            "pageToken": {
-              "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy to list.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules",
-          "response": {
-            "$ref": "ResponsePolicyRulesListResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/cloud-platform.read-only",
-            "https://www.googleapis.com/auth/ndev.clouddns.readonly",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "patch": {
-          "description": "Applies a partial update to an existing Response Policy Rule.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "httpMethod": "PATCH",
-          "id": "dns.responsePolicyRules.patch",
-          "parameterOrder": [
-            "project",
-            "responsePolicy",
-            "responsePolicyRule"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicyRule": {
-              "description": "User assigned name of the Response Policy Rule addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "request": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "response": {
-            "$ref": "ResponsePolicyRulesPatchResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        },
-        "update": {
-          "description": "Updates an existing Response Policy Rule.",
-          "flatPath": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "httpMethod": "PUT",
-          "id": "dns.responsePolicyRules.update",
-          "parameterOrder": [
-            "project",
-            "responsePolicy",
-            "responsePolicyRule"
-          ],
-          "parameters": {
-            "clientOperationId": {
-              "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
-              "location": "query",
-              "type": "string"
-            },
-            "project": {
-              "description": "Identifies the project addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicy": {
-              "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            },
-            "responsePolicyRule": {
-              "description": "User assigned name of the Response Policy Rule addressed by this request.",
-              "location": "path",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "path": "dns/v1beta2/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
-          "request": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "response": {
-            "$ref": "ResponsePolicyRulesUpdateResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/cloud-platform",
-            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
-          ]
-        }
-      }
     }
   },
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-  "revision": "20210319",
-=======
   "revision": "20200806",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
   "rootUrl": "https://dns.googleapis.com/",
   "schemas": {
     "Change": {
@@ -1957,13 +1049,8 @@
         "status": {
           "description": "Status of the operation (output only). A status of \"done\" means that the request to update the authoritative servers has been sent but the servers might not be updated yet.",
           "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-            "pending",
-            "done"
-=======
             "PENDING",
             "DONE"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "enumDescriptions": [
             "",
@@ -1994,11 +1081,7 @@
           "type": "string"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. This lets you retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a \"snapshot\" of collections larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a \"snapshot\" of collections larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         }
       },
@@ -2011,19 +1094,11 @@
         "algorithm": {
           "description": "String mnemonic specifying the DNSSEC algorithm of this key. Immutable after creation time.",
           "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-            "rsasha1",
-            "rsasha256",
-            "rsasha512",
-            "ecdsap256sha256",
-            "ecdsap384sha384"
-=======
             "RSASHA1",
             "RSASHA256",
             "RSASHA512",
             "ECDSAP256SHA256",
             "ECDSAP384SHA384"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "enumDescriptions": [
             "",
@@ -2054,11 +1129,11 @@
           "type": "string"
         },
         "isActive": {
-          "description": "Active keys are used to sign subsequent changes to the ManagedZone. Inactive keys are still present as DNSKEY Resource Records for the use of resolvers validating existing signatures.",
+          "description": "Active keys will be used to sign subsequent changes to the ManagedZone. Inactive keys will still be present as DNSKEY Resource Records for the use of resolvers validating existing signatures.",
           "type": "boolean"
         },
         "keyLength": {
-          "description": "Length of the key in bits. Specified at creation time, and then immutable.",
+          "description": "Length of the key in bits. Specified at creation time then immutable.",
           "format": "uint32",
           "type": "integer"
         },
@@ -2076,7 +1151,7 @@
           "type": "string"
         },
         "type": {
-          "description": "One of \"KEY_SIGNING\" or \"ZONE_SIGNING\". Keys of type KEY_SIGNING have the Secure Entry Point flag set and, when active, are used to sign only resource record sets of type DNSKEY. Otherwise, the Secure Entry Point flag is cleared, and this key is used to sign only resource record sets of other types. Immutable after creation time.",
+          "description": "One of \"KEY_SIGNING\" or \"ZONE_SIGNING\". Keys of type KEY_SIGNING have the Secure Entry Point flag set and, when active, will be used to sign only resource record sets of type DNSKEY. Otherwise, the Secure Entry Point flag will be cleared and this key will be used to sign only resource record sets of other types. Immutable after creation time.",
           "enum": [
             "KEY_SIGNING",
             "ZONE_SIGNING"
@@ -2121,19 +1196,11 @@
         "algorithm": {
           "description": "String mnemonic specifying the DNSSEC algorithm of this key.",
           "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-            "rsasha1",
-            "rsasha256",
-            "rsasha512",
-            "ecdsap256sha256",
-            "ecdsap384sha384"
-=======
             "RSASHA1",
             "RSASHA256",
             "RSASHA512",
             "ECDSAP256SHA256",
             "ECDSAP384SHA384"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "enumDescriptions": [
             "",
@@ -2150,7 +1217,7 @@
           "type": "integer"
         },
         "keyType": {
-          "description": "Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, are only used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and are used to sign all other types of resource record sets.",
+          "description": "Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, will only be used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and will be used to sign all other types of resource record sets.",
           "enum": [
             "KEY_SIGNING",
             "ZONE_SIGNING"
@@ -2188,11 +1255,7 @@
           "type": "string"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. There is no way to retrieve a \"snapshot\" of collections larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a \"snapshot\" of collections larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         }
       },
@@ -2243,7 +1306,7 @@
           "type": "string"
         },
         "nameServerSet": {
-          "description": "Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.",
+          "description": "Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users will leave this field unset.",
           "type": "string"
         },
         "nameServers": {
@@ -2263,26 +1326,13 @@
         },
         "reverseLookupConfig": {
           "$ref": "ManagedZoneReverseLookupConfig",
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS resolves reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config."
-        },
-        "serviceDirectoryConfig": {
-          "$ref": "ManagedZoneServiceDirectoryConfig",
-          "description": "This field links to the associated service directory namespace. Do not set this field for public zones or forwarding zones."
-=======
           "description": "The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS will resolve reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config."
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
         },
         "visibility": {
           "description": "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.",
           "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-            "public",
-            "private"
-=======
             "PUBLIC",
             "PRIVATE"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "enumDescriptions": [
             "",
@@ -2344,7 +1394,7 @@
           "type": "string"
         },
         "targetNameServers": {
-          "description": "List of target name servers to forward to. Cloud DNS selects the best available name server if more than one target is given.",
+          "description": "List of target name servers to forward to. Cloud DNS will select the best available name server if more than one target is given.",
           "items": {
             "$ref": "ManagedZoneForwardingConfigNameServerTarget"
           },
@@ -2357,16 +1407,6 @@
       "id": "ManagedZoneForwardingConfigNameServerTarget",
       "properties": {
         "forwardingPath": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Forwarding path for this NameServerTarget. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on IP address ranges; that is, RFC1918 addresses go to the VPC network, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through the VPC network for this target.",
-          "enum": [
-            "default",
-            "private"
-          ],
-          "enumDescriptions": [
-            "Cloud DNS makes forwarding decisions based on address ranges; that is, RFC1918 addresses forward to the target through the VPC and non-RFC1918 addresses forward to the target through the internet",
-            "Cloud DNS always forwards to this target through the VPC."
-=======
           "description": "Forwarding path for this NameServerTarget. If unset or set to DEFAULT, Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses go to the VPC, non-RFC1918 addresses go to the Internet. When set to PRIVATE, Cloud DNS will always send queries through VPC for this target.",
           "enum": [
             "DEFAULT",
@@ -2375,16 +1415,11 @@
           "enumDescriptions": [
             "Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses forward to the target through the VPC and non-RFC1918 addresses will forward to the target through the Internet",
             "Cloud DNS will always forward to this target through the VPC."
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "type": "string"
         },
         "ipv4Address": {
           "description": "IPv4 address of a target name server.",
-          "type": "string"
-        },
-        "ipv6Address": {
-          "description": "IPv6 address of a target name server. Does not accept both fields (ipv4 \u0026 ipv6) being populated.",
           "type": "string"
         },
         "kind": {
@@ -2405,11 +1440,7 @@
           "type": "string"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         },
         "operations": {
@@ -2479,50 +1510,7 @@
           "type": "string"
         },
         "networkUrl": {
-          "description": "The fully qualified URL of the VPC network to bind to. Format this URL like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "ManagedZoneReverseLookupConfig": {
-      "id": "ManagedZoneReverseLookupConfig",
-      "properties": {
-        "kind": {
-          "default": "dns#managedZoneReverseLookupConfig",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "ManagedZoneServiceDirectoryConfig": {
-      "description": "Contains information about Service Directory-backed zones.",
-      "id": "ManagedZoneServiceDirectoryConfig",
-      "properties": {
-        "kind": {
-          "default": "dns#managedZoneServiceDirectoryConfig",
-          "type": "string"
-        },
-        "namespace": {
-          "$ref": "ManagedZoneServiceDirectoryConfigNamespace",
-          "description": "Contains information about the namespace associated with the zone."
-        }
-      },
-      "type": "object"
-    },
-    "ManagedZoneServiceDirectoryConfigNamespace": {
-      "id": "ManagedZoneServiceDirectoryConfigNamespace",
-      "properties": {
-        "deletionTime": {
-          "description": "The time that the namespace backing this zone was deleted; an empty string if it still exists. This is in RFC3339 text format. Output only.",
-          "type": "string"
-        },
-        "kind": {
-          "default": "dns#managedZoneServiceDirectoryConfigNamespace",
-          "type": "string"
-        },
-        "namespaceUrl": {
-          "description": "The fully qualified URL of the namespace associated with the zone. Format must be https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}",
+          "description": "The fully qualified URL of the VPC network to bind to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}",
           "type": "string"
         }
       },
@@ -2557,11 +1545,7 @@
           "type": "array"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         }
       },
@@ -2590,13 +1574,8 @@
         "status": {
           "description": "Status of the operation. Can be one of the following: \"PENDING\" or \"DONE\" (output only). A status of \"DONE\" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.",
           "enum": [
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-            "pending",
-            "done"
-=======
             "PENDING",
             "DONE"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "enumDescriptions": [
             "",
@@ -2659,11 +1638,7 @@
           "type": "string"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         },
         "policies": {
@@ -2713,7 +1688,7 @@
           "type": "string"
         },
         "enableInboundForwarding": {
-          "description": "Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address is allocated from each of the subnetworks that are bound to this policy.",
+          "description": "Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address will be allocated from each of the sub-networks that are bound to this policy.",
           "type": "boolean"
         },
         "enableLogging": {
@@ -2730,7 +1705,7 @@
           "type": "string"
         },
         "name": {
-          "description": "User-assigned name for this policy.",
+          "description": "User assigned name for this policy.",
           "type": "string"
         },
         "networks": {
@@ -2764,16 +1739,6 @@
       "id": "PolicyAlternativeNameServerConfigTargetNameServer",
       "properties": {
         "forwardingPath": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "Forwarding path for this TargetNameServer. If unset or set to DEFAULT, Cloud DNS makes forwarding decisions based on address ranges; that is, RFC1918 addresses go to the VPC network, non-RFC1918 addresses go to the internet. When set to PRIVATE, Cloud DNS always sends queries through the VPC network for this target.",
-          "enum": [
-            "default",
-            "private"
-          ],
-          "enumDescriptions": [
-            "Cloud DNS makes forwarding decision based on IP address ranges; that is, RFC1918 addresses forward to the target through the VPC and non-RFC1918 addresses forward to the target through the internet",
-            "Cloud DNS always forwards to this target through the VPC."
-=======
           "description": "Forwarding path for this TargetNameServer. If unset or set to DEFAULT, Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses go to the VPC, non-RFC1918 addresses go to the Internet. When set to PRIVATE, Cloud DNS will always send queries through VPC for this target.",
           "enum": [
             "DEFAULT",
@@ -2782,16 +1747,11 @@
           "enumDescriptions": [
             "Cloud DNS will make forwarding decision based on address ranges, i.e. RFC1918 addresses forward to the target through the VPC and non-RFC1918 addresses will forward to the target through the Internet",
             "Cloud DNS will always forward to this target through the VPC."
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           ],
           "type": "string"
         },
         "ipv4Address": {
           "description": "IPv4 address to forward to.",
-          "type": "string"
-        },
-        "ipv6Address": {
-          "description": "IPv6 address to forward to. Does not accept both fields (ipv4 \u0026 ipv6) being populated.",
           "type": "string"
         },
         "kind": {
@@ -2816,7 +1776,7 @@
       "type": "object"
     },
     "Project": {
-      "description": "A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console. Next tag: 7.",
+      "description": "A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.",
       "id": "Project",
       "properties": {
         "id": {
@@ -2882,11 +1842,6 @@
           "format": "int32",
           "type": "integer"
         },
-        "responsePolicyRulesPerResponsePolicy": {
-          "description": "Maximum allowed number of rules per response policy.",
-          "format": "int32",
-          "type": "integer"
-        },
         "rrsetAdditionsPerChange": {
           "description": "Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.",
           "format": "int32",
@@ -2928,7 +1883,7 @@
       "type": "object"
     },
     "ResourceRecordSet": {
-      "description": "A unit of data that is returned by the DNS servers.",
+      "description": "A unit of data that will be returned by the DNS servers.",
       "id": "ResourceRecordSet",
       "properties": {
         "kind": {
@@ -2977,11 +1932,7 @@
           "type": "string"
         },
         "nextPageToken": {
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. This lets you retrieve complete contents of even larger collections, one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-=======
           "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. In this way you can retrieve the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned will be an inconsistent view of the collection. There is no way to retrieve a consistent snapshot of a collection larger than the maximum page size.",
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
           "type": "string"
         },
         "rrsets": {
@@ -3004,194 +1955,9 @@
         }
       },
       "type": "object"
-    },
-    "ResponsePoliciesListResponse": {
-      "id": "ResponsePoliciesListResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-          "type": "string"
-        },
-        "responsePolicies": {
-          "description": "The Response Policy resources.",
-          "items": {
-            "$ref": "ResponsePolicy"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePoliciesPatchResponse": {
-      "id": "ResponsePoliciesPatchResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "responsePolicy": {
-          "$ref": "ResponsePolicy"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePoliciesUpdateResponse": {
-      "id": "ResponsePoliciesUpdateResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "responsePolicy": {
-          "$ref": "ResponsePolicy"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicy": {
-      "description": "A Response Policy is a collection of selectors that apply to queries made against one or more Virtual Private Cloud networks.",
-      "id": "ResponsePolicy",
-      "properties": {
-        "description": {
-          "description": "User-provided description for this Response Policy.",
-          "type": "string"
-        },
-        "id": {
-          "description": "Unique identifier for the resource; defined by the server (output only).",
-          "format": "int64",
-          "type": "string"
-        },
-        "kind": {
-          "default": "dns#responsePolicy",
-          "type": "string"
-        },
-        "networks": {
-          "description": "List of network names specifying networks to which this policy is applied.",
-          "items": {
-            "$ref": "ResponsePolicyNetwork"
-          },
-          "type": "array"
-        },
-        "responsePolicyName": {
-          "description": "User assigned name for this Response Policy.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyNetwork": {
-      "id": "ResponsePolicyNetwork",
-      "properties": {
-        "kind": {
-          "default": "dns#responsePolicyNetwork",
-          "type": "string"
-        },
-        "networkUrl": {
-          "description": "The fully qualified URL of the VPC network to bind to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyRule": {
-      "description": "A Response Policy Rule is a selector that applies its behavior to queries that match the selector. Selectors are DNS names, which may be wildcards or exact matches. Each DNS query subject to a Response Policy matches at most one ResponsePolicyRule, as identified by the dns_name field with the longest matching suffix.",
-      "id": "ResponsePolicyRule",
-      "properties": {
-        "behavior": {
-          "description": "Answer this query with a behavior rather than DNS data.",
-          "enum": [
-            "behaviorUnspecified",
-            "bypassResponsePolicy"
-          ],
-          "enumDescriptions": [
-            "",
-            "Skip a less-specific ResponsePolicyRule and continue normal query logic. This can be used in conjunction with a wildcard to exempt a subset of the wildcard ResponsePolicyRule from the ResponsePolicy behavior and e.g., query the public internet instead. For instance, if these rules exist: *.example.com -\u003e 1.2.3.4 foo.example.com -\u003e PASSTHRU Then a query for 'foo.example.com' skips the wildcard."
-          ],
-          "type": "string"
-        },
-        "dnsName": {
-          "description": "The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.",
-          "type": "string"
-        },
-        "kind": {
-          "default": "dns#responsePolicyRule",
-          "type": "string"
-        },
-        "localData": {
-          "$ref": "ResponsePolicyRuleLocalData",
-          "description": "Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed."
-        },
-        "ruleName": {
-          "description": "An identifier for this rule. Must be unique with the ResponsePolicy.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyRuleLocalData": {
-      "id": "ResponsePolicyRuleLocalData",
-      "properties": {
-        "localDatas": {
-          "description": "All resource record sets for this selector, one per resource record type. The name must match the dns_name.",
-          "items": {
-            "$ref": "ResourceRecordSet"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyRulesListResponse": {
-      "id": "ResponsePolicyRulesListResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "nextPageToken": {
-          "description": "The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your page token. This lets you the complete contents of even very large collections one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.",
-          "type": "string"
-        },
-        "responsePolicyRules": {
-          "description": "The Response Policy Rule resources.",
-          "items": {
-            "$ref": "ResponsePolicyRule"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyRulesPatchResponse": {
-      "id": "ResponsePolicyRulesPatchResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "responsePolicyRule": {
-          "$ref": "ResponsePolicyRule"
-        }
-      },
-      "type": "object"
-    },
-    "ResponsePolicyRulesUpdateResponse": {
-      "id": "ResponsePolicyRulesUpdateResponse",
-      "properties": {
-        "header": {
-          "$ref": "ResponseHeader"
-        },
-        "responsePolicyRule": {
-          "$ref": "ResponsePolicyRule"
-        }
-      },
-      "type": "object"
     }
   },
   "servicePath": "",
   "title": "Cloud DNS API",
-<<<<<<< HEAD:gen/model/dns/v1beta2/dns-api.json
-  "version": "v1beta2"
-=======
   "version": "v2beta1"
->>>>>>> upstream/main:configs/models/dns/v2beta1/dns-api.json
 }

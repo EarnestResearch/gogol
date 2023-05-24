@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.AndroidManagement.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AdvancedSecurityOverrides_CommonCriteriaMode
     AdvancedSecurityOverrides_CommonCriteriaMode
-      ( AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEUNSPECIFIED,
+      (
+        AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEUNSPECIFIED,
         AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEDISABLED,
         AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEENABLED,
         ..
@@ -43,7 +49,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * AdvancedSecurityOverrides_DeveloperSettings
     AdvancedSecurityOverrides_DeveloperSettings
-      ( AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSUNSPECIFIED,
+      (
+        AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSUNSPECIFIED,
         AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSDISABLED,
         AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSALLOWED,
         ..
@@ -51,7 +58,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * AdvancedSecurityOverrides_GooglePlayProtectVerifyApps
     AdvancedSecurityOverrides_GooglePlayProtectVerifyApps
-      ( AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_GOOGLEPLAYPROTECTVERIFYAPPSUNSPECIFIED,
+      (
+        AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_GOOGLEPLAYPROTECTVERIFYAPPSUNSPECIFIED,
         AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_VERIFYAPPSENFORCED,
         AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_VERIFYAPPSUSERCHOICE,
         ..
@@ -59,7 +67,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * AdvancedSecurityOverrides_UntrustedAppsPolicy
     AdvancedSecurityOverrides_UntrustedAppsPolicy
-      ( AdvancedSecurityOverrides_UntrustedAppsPolicy_UNTRUSTEDAPPSPOLICYUNSPECIFIED,
+      (
+        AdvancedSecurityOverrides_UntrustedAppsPolicy_UNTRUSTEDAPPSPOLICYUNSPECIFIED,
         AdvancedSecurityOverrides_UntrustedAppsPolicy_DISALLOWINSTALL,
         AdvancedSecurityOverrides_UntrustedAppsPolicy_ALLOWINSTALLINPERSONALPROFILEONLY,
         AdvancedSecurityOverrides_UntrustedAppsPolicy_ALLOWINSTALLDEVICEWIDE,
@@ -68,7 +77,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Application_AppPricing
     Application_AppPricing
-      ( Application_AppPricing_APPPRICINGUNSPECIFIED,
+      (
+        Application_AppPricing_APPPRICINGUNSPECIFIED,
         Application_AppPricing_Free,
         Application_AppPricing_FREEWITHINAPPPURCHASE,
         Application_AppPricing_Paid,
@@ -77,7 +87,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Application_ContentRating
     Application_ContentRating
-      ( Application_ContentRating_CONTENTRATINGUNSPECIFIED,
+      (
+        Application_ContentRating_CONTENTRATINGUNSPECIFIED,
         Application_ContentRating_THREEYEARS,
         Application_ContentRating_SEVENYEARS,
         Application_ContentRating_TWELVEYEARS,
@@ -88,7 +99,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Application_DistributionChannel
     Application_DistributionChannel
-      ( Application_DistributionChannel_DISTRIBUTIONCHANNELUNSPECIFIED,
+      (
+        Application_DistributionChannel_DISTRIBUTIONCHANNELUNSPECIFIED,
         Application_DistributionChannel_PUBLICGOOGLEHOSTED,
         Application_DistributionChannel_PRIVATEGOOGLEHOSTED,
         Application_DistributionChannel_PRIVATESELFHOSTED,
@@ -97,14 +109,16 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Application_FeaturesItem
     Application_FeaturesItem
-      ( Application_FeaturesItem_APPFEATUREUNSPECIFIED,
+      (
+        Application_FeaturesItem_APPFEATUREUNSPECIFIED,
         Application_FeaturesItem_VPNAPP,
         ..
       ),
 
     -- * ApplicationEvent_EventType
     ApplicationEvent_EventType
-      ( ApplicationEvent_EventType_APPLICATIONEVENTTYPEUNSPECIFIED,
+      (
+        ApplicationEvent_EventType_APPLICATIONEVENTTYPEUNSPECIFIED,
         ApplicationEvent_EventType_Installed,
         ApplicationEvent_EventType_Changed,
         ApplicationEvent_EventType_DATACLEARED,
@@ -118,7 +132,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_AlwaysOnVpnLockdownExemption
     ApplicationPolicy_AlwaysOnVpnLockdownExemption
-      ( ApplicationPolicy_AlwaysOnVpnLockdownExemption_ALWAYSONVPNLOCKDOWNEXEMPTIONUNSPECIFIED,
+      (
+        ApplicationPolicy_AlwaysOnVpnLockdownExemption_ALWAYSONVPNLOCKDOWNEXEMPTIONUNSPECIFIED,
         ApplicationPolicy_AlwaysOnVpnLockdownExemption_VPNLOCKDOWNENFORCED,
         ApplicationPolicy_AlwaysOnVpnLockdownExemption_VPNLOCKDOWNEXEMPTION,
         ..
@@ -126,7 +141,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_AutoUpdateMode
     ApplicationPolicy_AutoUpdateMode
-      ( ApplicationPolicy_AutoUpdateMode_AUTOUPDATEMODEUNSPECIFIED,
+      (
+        ApplicationPolicy_AutoUpdateMode_AUTOUPDATEMODEUNSPECIFIED,
         ApplicationPolicy_AutoUpdateMode_AUTOUPDATEDEFAULT,
         ApplicationPolicy_AutoUpdateMode_AUTOUPDATEPOSTPONED,
         ApplicationPolicy_AutoUpdateMode_AUTOUPDATEHIGHPRIORITY,
@@ -135,7 +151,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_ConnectedWorkAndPersonalApp
     ApplicationPolicy_ConnectedWorkAndPersonalApp
-      ( ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPUNSPECIFIED,
+      (
+        ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPUNSPECIFIED,
         ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPDISALLOWED,
         ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPALLOWED,
         ..
@@ -143,7 +160,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_DefaultPermissionPolicy
     ApplicationPolicy_DefaultPermissionPolicy
-      ( ApplicationPolicy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED,
+      (
+        ApplicationPolicy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED,
         ApplicationPolicy_DefaultPermissionPolicy_Prompt,
         ApplicationPolicy_DefaultPermissionPolicy_Grant,
         ApplicationPolicy_DefaultPermissionPolicy_Deny,
@@ -152,7 +170,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_DelegatedScopesItem
     ApplicationPolicy_DelegatedScopesItem
-      ( ApplicationPolicy_DelegatedScopesItem_DELEGATEDSCOPEUNSPECIFIED,
+      (
+        ApplicationPolicy_DelegatedScopesItem_DELEGATEDSCOPEUNSPECIFIED,
         ApplicationPolicy_DelegatedScopesItem_CERTINSTALL,
         ApplicationPolicy_DelegatedScopesItem_MANAGEDCONFIGURATIONS,
         ApplicationPolicy_DelegatedScopesItem_BLOCKUNINSTALL,
@@ -166,7 +185,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_InstallType
     ApplicationPolicy_InstallType
-      ( ApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED,
+      (
+        ApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED,
         ApplicationPolicy_InstallType_Preinstalled,
         ApplicationPolicy_InstallType_FORCEINSTALLED,
         ApplicationPolicy_InstallType_Blocked,
@@ -178,7 +198,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationPolicy_WorkProfileWidgets
     ApplicationPolicy_WorkProfileWidgets
-      ( ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSUNSPECIFIED,
+      (
+        ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSUNSPECIFIED,
         ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSALLOWED,
         ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSDISALLOWED,
         ..
@@ -186,7 +207,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationReport_ApplicationSource
     ApplicationReport_ApplicationSource
-      ( ApplicationReport_ApplicationSource_APPLICATIONSOURCEUNSPECIFIED,
+      (
+        ApplicationReport_ApplicationSource_APPLICATIONSOURCEUNSPECIFIED,
         ApplicationReport_ApplicationSource_SYSTEMAPPFACTORYVERSION,
         ApplicationReport_ApplicationSource_SYSTEMAPPUPDATEDVERSION,
         ApplicationReport_ApplicationSource_INSTALLEDFROMPLAYSTORE,
@@ -195,7 +217,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ApplicationReport_State
     ApplicationReport_State
-      ( ApplicationReport_State_APPLICATIONSTATEUNSPECIFIED,
+      (
+        ApplicationReport_State_APPLICATIONSTATEUNSPECIFIED,
         ApplicationReport_State_Removed,
         ApplicationReport_State_Installed,
         ..
@@ -203,7 +226,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * BlockAction_BlockScope
     BlockAction_BlockScope
-      ( BlockAction_BlockScope_BLOCKSCOPEUNSPECIFIED,
+      (
+        BlockAction_BlockScope_BLOCKSCOPEUNSPECIFIED,
         BlockAction_BlockScope_BLOCKSCOPEWORKPROFILE,
         BlockAction_BlockScope_BLOCKSCOPEDEVICE,
         ..
@@ -211,7 +235,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Command_ErrorCode
     Command_ErrorCode
-      ( Command_ErrorCode_COMMANDERRORCODEUNSPECIFIED,
+      (
+        Command_ErrorCode_COMMANDERRORCODEUNSPECIFIED,
         Command_ErrorCode_Unknown,
         Command_ErrorCode_APILEVEL,
         Command_ErrorCode_MANAGEMENTMODE,
@@ -222,7 +247,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Command_ResetPasswordFlagsItem
     Command_ResetPasswordFlagsItem
-      ( Command_ResetPasswordFlagsItem_RESETPASSWORDFLAGUNSPECIFIED,
+      (
+        Command_ResetPasswordFlagsItem_RESETPASSWORDFLAGUNSPECIFIED,
         Command_ResetPasswordFlagsItem_REQUIREENTRY,
         Command_ResetPasswordFlagsItem_DONOTASKCREDENTIALSONBOOT,
         Command_ResetPasswordFlagsItem_LOCKNOW,
@@ -231,7 +257,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Command_Type
     Command_Type
-      ( Command_Type_COMMANDTYPEUNSPECIFIED,
+      (
+        Command_Type_COMMANDTYPEUNSPECIFIED,
         Command_Type_Lock,
         Command_Type_RESETPASSWORD,
         Command_Type_Reboot,
@@ -242,7 +269,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * CommonCriteriaModeInfo_CommonCriteriaModeStatus
     CommonCriteriaModeInfo_CommonCriteriaModeStatus
-      ( CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODESTATUSUNKNOWN,
+      (
+        CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODESTATUSUNKNOWN,
         CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODEDISABLED,
         CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODEENABLED,
         ..
@@ -250,7 +278,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * CrossProfilePolicies_CrossProfileCopyPaste
     CrossProfilePolicies_CrossProfileCopyPaste
-      ( CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEUNSPECIFIED,
+      (
+        CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEUNSPECIFIED,
         CrossProfilePolicies_CrossProfileCopyPaste_COPYFROMWORKTOPERSONALDISALLOWED,
         CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEALLOWED,
         ..
@@ -258,7 +287,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * CrossProfilePolicies_CrossProfileDataSharing
     CrossProfilePolicies_CrossProfileDataSharing
-      ( CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGUNSPECIFIED,
+      (
+        CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGUNSPECIFIED,
         CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGDISALLOWED,
         CrossProfilePolicies_CrossProfileDataSharing_DATASHARINGFROMWORKTOPERSONALDISALLOWED,
         CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGALLOWED,
@@ -267,7 +297,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * CrossProfilePolicies_ShowWorkContactsInPersonalProfile
     CrossProfilePolicies_ShowWorkContactsInPersonalProfile
-      ( CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEUNSPECIFIED,
+      (
+        CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEUNSPECIFIED,
         CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEDISALLOWED,
         CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEALLOWED,
         ..
@@ -275,7 +306,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * CrossProfilePolicies_WorkProfileWidgetsDefault
     CrossProfilePolicies_WorkProfileWidgetsDefault
-      ( CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTUNSPECIFIED,
+      (
+        CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTUNSPECIFIED,
         CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTALLOWED,
         CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTDISALLOWED,
         ..
@@ -283,7 +315,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Device_AppliedState
     Device_AppliedState
-      ( Device_AppliedState_DEVICESTATEUNSPECIFIED,
+      (
+        Device_AppliedState_DEVICESTATEUNSPECIFIED,
         Device_AppliedState_Active,
         Device_AppliedState_Disabled,
         Device_AppliedState_Deleted,
@@ -293,7 +326,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Device_ManagementMode
     Device_ManagementMode
-      ( Device_ManagementMode_MANAGEMENTMODEUNSPECIFIED,
+      (
+        Device_ManagementMode_MANAGEMENTMODEUNSPECIFIED,
         Device_ManagementMode_DEVICEOWNER,
         Device_ManagementMode_PROFILEOWNER,
         ..
@@ -301,7 +335,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Device_Ownership
     Device_Ownership
-      ( Device_Ownership_OWNERSHIPUNSPECIFIED,
+      (
+        Device_Ownership_OWNERSHIPUNSPECIFIED,
         Device_Ownership_COMPANYOWNED,
         Device_Ownership_PERSONALLYOWNED,
         ..
@@ -309,7 +344,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Device_State
     Device_State
-      ( Device_State_DEVICESTATEUNSPECIFIED,
+      (
+        Device_State_DEVICESTATEUNSPECIFIED,
         Device_State_Active,
         Device_State_Disabled,
         Device_State_Deleted,
@@ -317,9 +353,20 @@ module Gogol.AndroidManagement.Internal.Sum
         ..
       ),
 
+    -- * DeviceConnectivityManagement_UsbDataAccess
+    DeviceConnectivityManagement_UsbDataAccess
+      (
+        DeviceConnectivityManagement_UsbDataAccess_USBDATAACCESSUNSPECIFIED,
+        DeviceConnectivityManagement_UsbDataAccess_ALLOWUSBDATATRANSFER,
+        DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBFILETRANSFER,
+        DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBDATATRANSFER,
+        ..
+      ),
+
     -- * DeviceSettings_EncryptionStatus
     DeviceSettings_EncryptionStatus
-      ( DeviceSettings_EncryptionStatus_ENCRYPTIONSTATUSUNSPECIFIED,
+      (
+        DeviceSettings_EncryptionStatus_ENCRYPTIONSTATUSUNSPECIFIED,
         DeviceSettings_EncryptionStatus_Unsupported,
         DeviceSettings_EncryptionStatus_Inactive,
         DeviceSettings_EncryptionStatus_Activating,
@@ -331,7 +378,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Display_State
     Display_State
-      ( Display_State_DISPLAYSTATEUNSPECIFIED,
+      (
+        Display_State_DISPLAYSTATEUNSPECIFIED,
         Display_State_Off,
         Display_State_ON,
         Display_State_Doze,
@@ -341,7 +389,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * EnrollmentToken_AllowPersonalUsage
     EnrollmentToken_AllowPersonalUsage
-      ( EnrollmentToken_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
+      (
+        EnrollmentToken_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
         EnrollmentToken_AllowPersonalUsage_PERSONALUSAGEALLOWED,
         EnrollmentToken_AllowPersonalUsage_PERSONALUSAGEDISALLOWED,
         ..
@@ -349,7 +398,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Enterprise_EnabledNotificationTypesItem
     Enterprise_EnabledNotificationTypesItem
-      ( Enterprise_EnabledNotificationTypesItem_NOTIFICATIONTYPEUNSPECIFIED,
+      (
+        Enterprise_EnabledNotificationTypesItem_NOTIFICATIONTYPEUNSPECIFIED,
         Enterprise_EnabledNotificationTypesItem_Enrollment,
         Enterprise_EnabledNotificationTypesItem_COMPLIANCEREPORT,
         Enterprise_EnabledNotificationTypesItem_STATUSREPORT,
@@ -360,7 +410,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KeyedAppState_Severity
     KeyedAppState_Severity
-      ( KeyedAppState_Severity_SEVERITYUNSPECIFIED,
+      (
+        KeyedAppState_Severity_SEVERITYUNSPECIFIED,
         KeyedAppState_Severity_Info,
         KeyedAppState_Severity_Error',
         ..
@@ -368,7 +419,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KioskCustomization_DeviceSettings
     KioskCustomization_DeviceSettings
-      ( KioskCustomization_DeviceSettings_DEVICESETTINGSUNSPECIFIED,
+      (
+        KioskCustomization_DeviceSettings_DEVICESETTINGSUNSPECIFIED,
         KioskCustomization_DeviceSettings_SETTINGSACCESSALLOWED,
         KioskCustomization_DeviceSettings_SETTINGSACCESSBLOCKED,
         ..
@@ -376,7 +428,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KioskCustomization_PowerButtonActions
     KioskCustomization_PowerButtonActions
-      ( KioskCustomization_PowerButtonActions_POWERBUTTONACTIONSUNSPECIFIED,
+      (
+        KioskCustomization_PowerButtonActions_POWERBUTTONACTIONSUNSPECIFIED,
         KioskCustomization_PowerButtonActions_POWERBUTTONAVAILABLE,
         KioskCustomization_PowerButtonActions_POWERBUTTONBLOCKED,
         ..
@@ -384,7 +437,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KioskCustomization_StatusBar
     KioskCustomization_StatusBar
-      ( KioskCustomization_StatusBar_STATUSBARUNSPECIFIED,
+      (
+        KioskCustomization_StatusBar_STATUSBARUNSPECIFIED,
         KioskCustomization_StatusBar_NOTIFICATIONSANDSYSTEMINFOENABLED,
         KioskCustomization_StatusBar_NOTIFICATIONSANDSYSTEMINFODISABLED,
         KioskCustomization_StatusBar_SYSTEMINFOONLY,
@@ -393,7 +447,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KioskCustomization_SystemErrorWarnings
     KioskCustomization_SystemErrorWarnings
-      ( KioskCustomization_SystemErrorWarnings_SYSTEMERRORWARNINGSUNSPECIFIED,
+      (
+        KioskCustomization_SystemErrorWarnings_SYSTEMERRORWARNINGSUNSPECIFIED,
         KioskCustomization_SystemErrorWarnings_ERRORANDWARNINGSENABLED,
         KioskCustomization_SystemErrorWarnings_ERRORANDWARNINGSMUTED,
         ..
@@ -401,7 +456,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * KioskCustomization_SystemNavigation
     KioskCustomization_SystemNavigation
-      ( KioskCustomization_SystemNavigation_SYSTEMNAVIGATIONUNSPECIFIED,
+      (
+        KioskCustomization_SystemNavigation_SYSTEMNAVIGATIONUNSPECIFIED,
         KioskCustomization_SystemNavigation_NAVIGATIONENABLED,
         KioskCustomization_SystemNavigation_NAVIGATIONDISABLED,
         KioskCustomization_SystemNavigation_HOMEBUTTONONLY,
@@ -410,7 +466,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * ManagedProperty_Type
     ManagedProperty_Type
-      ( ManagedProperty_Type_MANAGEDPROPERTYTYPEUNSPECIFIED,
+      (
+        ManagedProperty_Type_MANAGEDPROPERTYTYPEUNSPECIFIED,
         ManagedProperty_Type_Bool,
         ManagedProperty_Type_String,
         ManagedProperty_Type_Integer,
@@ -424,7 +481,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * MemoryEvent_EventType
     MemoryEvent_EventType
-      ( MemoryEvent_EventType_MEMORYEVENTTYPEUNSPECIFIED,
+      (
+        MemoryEvent_EventType_MEMORYEVENTTYPEUNSPECIFIED,
         MemoryEvent_EventType_RAMMEASURED,
         MemoryEvent_EventType_INTERNALSTORAGEMEASURED,
         MemoryEvent_EventType_EXTERNALSTORAGEDETECTED,
@@ -435,7 +493,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * NonComplianceDetail_InstallationFailureReason
     NonComplianceDetail_InstallationFailureReason
-      ( NonComplianceDetail_InstallationFailureReason_INSTALLATIONFAILUREREASONUNSPECIFIED,
+      (
+        NonComplianceDetail_InstallationFailureReason_INSTALLATIONFAILUREREASONUNSPECIFIED,
         NonComplianceDetail_InstallationFailureReason_INSTALLATIONFAILUREREASONUNKNOWN,
         NonComplianceDetail_InstallationFailureReason_INPROGRESS,
         NonComplianceDetail_InstallationFailureReason_NOTFOUND,
@@ -451,7 +510,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * NonComplianceDetail_NonComplianceReason
     NonComplianceDetail_NonComplianceReason
-      ( NonComplianceDetail_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
+      (
+        NonComplianceDetail_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
         NonComplianceDetail_NonComplianceReason_APILEVEL,
         NonComplianceDetail_NonComplianceReason_MANAGEMENTMODE,
         NonComplianceDetail_NonComplianceReason_USERACTION,
@@ -462,12 +522,14 @@ module Gogol.AndroidManagement.Internal.Sum
         NonComplianceDetail_NonComplianceReason_Pending,
         NonComplianceDetail_NonComplianceReason_APPINCOMPATIBLE,
         NonComplianceDetail_NonComplianceReason_APPNOTUPDATED,
+        NonComplianceDetail_NonComplianceReason_DEVICEINCOMPATIBLE,
         ..
       ),
 
     -- * NonComplianceDetail_SpecificNonComplianceReason
     NonComplianceDetail_SpecificNonComplianceReason
-      ( NonComplianceDetail_SpecificNonComplianceReason_SPECIFICNONCOMPLIANCEREASONUNSPECIFIED,
+      (
+        NonComplianceDetail_SpecificNonComplianceReason_SPECIFICNONCOMPLIANCEREASONUNSPECIFIED,
         NonComplianceDetail_SpecificNonComplianceReason_PASSWORDPOLICIESUSERCREDENTIALSCONFIRMATIONREQUIRED,
         NonComplianceDetail_SpecificNonComplianceReason_PASSWORDPOLICIESPASSWORDEXPIRED,
         NonComplianceDetail_SpecificNonComplianceReason_PASSWORDPOLICIESPASSWORDNOTSUFFICIENT,
@@ -478,7 +540,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * NonComplianceDetailCondition_NonComplianceReason
     NonComplianceDetailCondition_NonComplianceReason
-      ( NonComplianceDetailCondition_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
+      (
+        NonComplianceDetailCondition_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
         NonComplianceDetailCondition_NonComplianceReason_APILEVEL,
         NonComplianceDetailCondition_NonComplianceReason_MANAGEMENTMODE,
         NonComplianceDetailCondition_NonComplianceReason_USERACTION,
@@ -489,12 +552,14 @@ module Gogol.AndroidManagement.Internal.Sum
         NonComplianceDetailCondition_NonComplianceReason_Pending,
         NonComplianceDetailCondition_NonComplianceReason_APPINCOMPATIBLE,
         NonComplianceDetailCondition_NonComplianceReason_APPNOTUPDATED,
+        NonComplianceDetailCondition_NonComplianceReason_DEVICEINCOMPATIBLE,
         ..
       ),
 
     -- * OsStartupEvent_VerifiedBootState
     OsStartupEvent_VerifiedBootState
-      ( OsStartupEvent_VerifiedBootState_VERIFIEDBOOTSTATEUNSPECIFIED,
+      (
+        OsStartupEvent_VerifiedBootState_VERIFIEDBOOTSTATEUNSPECIFIED,
         OsStartupEvent_VerifiedBootState_Green,
         OsStartupEvent_VerifiedBootState_Yellow,
         OsStartupEvent_VerifiedBootState_Orange,
@@ -503,7 +568,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * OsStartupEvent_VerityMode
     OsStartupEvent_VerityMode
-      ( OsStartupEvent_VerityMode_DMVERITYMODEUNSPECIFIED,
+      (
+        OsStartupEvent_VerityMode_DMVERITYMODEUNSPECIFIED,
         OsStartupEvent_VerityMode_Enforcing,
         OsStartupEvent_VerityMode_IOERROR,
         OsStartupEvent_VerityMode_Disabled,
@@ -512,7 +578,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PasswordPoliciesContext_PasswordPolicyScope
     PasswordPoliciesContext_PasswordPolicyScope
-      ( PasswordPoliciesContext_PasswordPolicyScope_SCOPEUNSPECIFIED,
+      (
+        PasswordPoliciesContext_PasswordPolicyScope_SCOPEUNSPECIFIED,
         PasswordPoliciesContext_PasswordPolicyScope_SCOPEDEVICE,
         PasswordPoliciesContext_PasswordPolicyScope_SCOPEPROFILE,
         ..
@@ -520,7 +587,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PasswordRequirements_PasswordQuality
     PasswordRequirements_PasswordQuality
-      ( PasswordRequirements_PasswordQuality_PASSWORDQUALITYUNSPECIFIED,
+      (
+        PasswordRequirements_PasswordQuality_PASSWORDQUALITYUNSPECIFIED,
         PasswordRequirements_PasswordQuality_BIOMETRICWEAK,
         PasswordRequirements_PasswordQuality_Something,
         PasswordRequirements_PasswordQuality_Numeric,
@@ -536,7 +604,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PasswordRequirements_PasswordScope
     PasswordRequirements_PasswordScope
-      ( PasswordRequirements_PasswordScope_SCOPEUNSPECIFIED,
+      (
+        PasswordRequirements_PasswordScope_SCOPEUNSPECIFIED,
         PasswordRequirements_PasswordScope_SCOPEDEVICE,
         PasswordRequirements_PasswordScope_SCOPEPROFILE,
         ..
@@ -544,7 +613,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PasswordRequirements_RequirePasswordUnlock
     PasswordRequirements_RequirePasswordUnlock
-      ( PasswordRequirements_RequirePasswordUnlock_REQUIREPASSWORDUNLOCKUNSPECIFIED,
+      (
+        PasswordRequirements_RequirePasswordUnlock_REQUIREPASSWORDUNLOCKUNSPECIFIED,
         PasswordRequirements_RequirePasswordUnlock_USEDEFAULTDEVICETIMEOUT,
         PasswordRequirements_RequirePasswordUnlock_REQUIREEVERYDAY,
         ..
@@ -552,7 +622,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PasswordRequirements_UnifiedLockSettings
     PasswordRequirements_UnifiedLockSettings
-      ( PasswordRequirements_UnifiedLockSettings_UNIFIEDLOCKSETTINGSUNSPECIFIED,
+      (
+        PasswordRequirements_UnifiedLockSettings_UNIFIEDLOCKSETTINGSUNSPECIFIED,
         PasswordRequirements_UnifiedLockSettings_ALLOWUNIFIEDWORKANDPERSONALLOCK,
         PasswordRequirements_UnifiedLockSettings_REQUIRESEPARATEWORKLOCK,
         ..
@@ -560,7 +631,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PerAppResult_ClearingResult
     PerAppResult_ClearingResult
-      ( PerAppResult_ClearingResult_CLEARINGRESULTUNSPECIFIED,
+      (
+        PerAppResult_ClearingResult_CLEARINGRESULTUNSPECIFIED,
         PerAppResult_ClearingResult_Success,
         PerAppResult_ClearingResult_APPNOTFOUND,
         PerAppResult_ClearingResult_APPPROTECTED,
@@ -570,7 +642,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PermissionGrant_Policy
     PermissionGrant_Policy
-      ( PermissionGrant_Policy_PERMISSIONPOLICYUNSPECIFIED,
+      (
+        PermissionGrant_Policy_PERMISSIONPOLICYUNSPECIFIED,
         PermissionGrant_Policy_Prompt,
         PermissionGrant_Policy_Grant,
         PermissionGrant_Policy_Deny,
@@ -579,7 +652,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PersonalApplicationPolicy_InstallType
     PersonalApplicationPolicy_InstallType
-      ( PersonalApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED,
+      (
+        PersonalApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED,
         PersonalApplicationPolicy_InstallType_Blocked,
         PersonalApplicationPolicy_InstallType_Available,
         ..
@@ -587,7 +661,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PersonalUsagePolicies_PersonalPlayStoreMode
     PersonalUsagePolicies_PersonalPlayStoreMode
-      ( PersonalUsagePolicies_PersonalPlayStoreMode_PLAYSTOREMODEUNSPECIFIED,
+      (
+        PersonalUsagePolicies_PersonalPlayStoreMode_PLAYSTOREMODEUNSPECIFIED,
         PersonalUsagePolicies_PersonalPlayStoreMode_Blacklist,
         PersonalUsagePolicies_PersonalPlayStoreMode_Blocklist,
         PersonalUsagePolicies_PersonalPlayStoreMode_Allowlist,
@@ -596,7 +671,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_AndroidDevicePolicyTracksItem
     Policy_AndroidDevicePolicyTracksItem
-      ( Policy_AndroidDevicePolicyTracksItem_APPTRACKUNSPECIFIED,
+      (
+        Policy_AndroidDevicePolicyTracksItem_APPTRACKUNSPECIFIED,
         Policy_AndroidDevicePolicyTracksItem_Production,
         Policy_AndroidDevicePolicyTracksItem_Beta,
         ..
@@ -604,7 +680,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_AppAutoUpdatePolicy
     Policy_AppAutoUpdatePolicy
-      ( Policy_AppAutoUpdatePolicy_APPAUTOUPDATEPOLICYUNSPECIFIED,
+      (
+        Policy_AppAutoUpdatePolicy_APPAUTOUPDATEPOLICYUNSPECIFIED,
         Policy_AppAutoUpdatePolicy_CHOICETOTHEUSER,
         Policy_AppAutoUpdatePolicy_Never,
         Policy_AppAutoUpdatePolicy_WIFIONLY,
@@ -614,7 +691,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_AutoDateAndTimeZone
     Policy_AutoDateAndTimeZone
-      ( Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUNSPECIFIED,
+      (
+        Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUNSPECIFIED,
         Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUSERCHOICE,
         Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEENFORCED,
         ..
@@ -622,7 +700,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_CameraAccess
     Policy_CameraAccess
-      ( Policy_CameraAccess_CAMERAACCESSUNSPECIFIED,
+      (
+        Policy_CameraAccess_CAMERAACCESSUNSPECIFIED,
         Policy_CameraAccess_CAMERAACCESSUSERCHOICE,
         Policy_CameraAccess_CAMERAACCESSDISABLED,
         Policy_CameraAccess_CAMERAACCESSENFORCED,
@@ -631,7 +710,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_DefaultPermissionPolicy
     Policy_DefaultPermissionPolicy
-      ( Policy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED,
+      (
+        Policy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED,
         Policy_DefaultPermissionPolicy_Prompt,
         Policy_DefaultPermissionPolicy_Grant,
         Policy_DefaultPermissionPolicy_Deny,
@@ -640,7 +720,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_EncryptionPolicy
     Policy_EncryptionPolicy
-      ( Policy_EncryptionPolicy_ENCRYPTIONPOLICYUNSPECIFIED,
+      (
+        Policy_EncryptionPolicy_ENCRYPTIONPOLICYUNSPECIFIED,
         Policy_EncryptionPolicy_ENABLEDWITHOUTPASSWORD,
         Policy_EncryptionPolicy_ENABLEDWITHPASSWORD,
         ..
@@ -648,7 +729,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_KeyguardDisabledFeaturesItem
     Policy_KeyguardDisabledFeaturesItem
-      ( Policy_KeyguardDisabledFeaturesItem_KEYGUARDDISABLEDFEATUREUNSPECIFIED,
+      (
+        Policy_KeyguardDisabledFeaturesItem_KEYGUARDDISABLEDFEATUREUNSPECIFIED,
         Policy_KeyguardDisabledFeaturesItem_Camera,
         Policy_KeyguardDisabledFeaturesItem_Notifications,
         Policy_KeyguardDisabledFeaturesItem_UNREDACTEDNOTIFICATIONS,
@@ -664,7 +746,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_LocationMode
     Policy_LocationMode
-      ( Policy_LocationMode_LOCATIONMODEUNSPECIFIED,
+      (
+        Policy_LocationMode_LOCATIONMODEUNSPECIFIED,
         Policy_LocationMode_HIGHACCURACY,
         Policy_LocationMode_SENSORSONLY,
         Policy_LocationMode_BATTERYSAVING,
@@ -677,7 +760,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_MicrophoneAccess
     Policy_MicrophoneAccess
-      ( Policy_MicrophoneAccess_MICROPHONEACCESSUNSPECIFIED,
+      (
+        Policy_MicrophoneAccess_MICROPHONEACCESSUNSPECIFIED,
         Policy_MicrophoneAccess_MICROPHONEACCESSUSERCHOICE,
         Policy_MicrophoneAccess_MICROPHONEACCESSDISABLED,
         Policy_MicrophoneAccess_MICROPHONEACCESSENFORCED,
@@ -686,7 +770,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_PlayStoreMode
     Policy_PlayStoreMode
-      ( Policy_PlayStoreMode_PLAYSTOREMODEUNSPECIFIED,
+      (
+        Policy_PlayStoreMode_PLAYSTOREMODEUNSPECIFIED,
         Policy_PlayStoreMode_Whitelist,
         Policy_PlayStoreMode_Blacklist,
         ..
@@ -694,7 +779,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_PreferentialNetworkService
     Policy_PreferentialNetworkService
-      ( Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEUNSPECIFIED,
+      (
+        Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEUNSPECIFIED,
         Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEDISABLED,
         Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEENABLED,
         ..
@@ -702,7 +788,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * Policy_StayOnPluggedModesItem
     Policy_StayOnPluggedModesItem
-      ( Policy_StayOnPluggedModesItem_BATTERYPLUGGEDMODEUNSPECIFIED,
+      (
+        Policy_StayOnPluggedModesItem_BATTERYPLUGGEDMODEUNSPECIFIED,
         Policy_StayOnPluggedModesItem_AC,
         Policy_StayOnPluggedModesItem_Usb,
         Policy_StayOnPluggedModesItem_Wireless,
@@ -711,7 +798,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PostureDetail_SecurityRisk
     PostureDetail_SecurityRisk
-      ( PostureDetail_SecurityRisk_SECURITYRISKUNSPECIFIED,
+      (
+        PostureDetail_SecurityRisk_SECURITYRISKUNSPECIFIED,
         PostureDetail_SecurityRisk_UNKNOWNOS,
         PostureDetail_SecurityRisk_COMPROMISEDOS,
         PostureDetail_SecurityRisk_HARDWAREBACKEDEVALUATIONFAILED,
@@ -720,7 +808,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * PowerManagementEvent_EventType
     PowerManagementEvent_EventType
-      ( PowerManagementEvent_EventType_POWERMANAGEMENTEVENTTYPEUNSPECIFIED,
+      (
+        PowerManagementEvent_EventType_POWERMANAGEMENTEVENTTYPEUNSPECIFIED,
         PowerManagementEvent_EventType_BATTERYLEVELCOLLECTED,
         PowerManagementEvent_EventType_POWERCONNECTED,
         PowerManagementEvent_EventType_POWERDISCONNECTED,
@@ -733,7 +822,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * SecurityPosture_DevicePosture
     SecurityPosture_DevicePosture
-      ( SecurityPosture_DevicePosture_POSTUREUNSPECIFIED,
+      (
+        SecurityPosture_DevicePosture_POSTUREUNSPECIFIED,
         SecurityPosture_DevicePosture_Secure',
         SecurityPosture_DevicePosture_ATRISK,
         SecurityPosture_DevicePosture_POTENTIALLYCOMPROMISED,
@@ -742,7 +832,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * SigninDetail_AllowPersonalUsage
     SigninDetail_AllowPersonalUsage
-      ( SigninDetail_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
+      (
+        SigninDetail_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
         SigninDetail_AllowPersonalUsage_PERSONALUSAGEALLOWED,
         SigninDetail_AllowPersonalUsage_PERSONALUSAGEDISALLOWED,
         ..
@@ -750,7 +841,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * SystemUpdate_Type
     SystemUpdate_Type
-      ( SystemUpdate_Type_SYSTEMUPDATETYPEUNSPECIFIED,
+      (
+        SystemUpdate_Type_SYSTEMUPDATETYPEUNSPECIFIED,
         SystemUpdate_Type_Automatic,
         SystemUpdate_Type_Windowed,
         SystemUpdate_Type_Postpone,
@@ -759,7 +851,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * SystemUpdateInfo_UpdateStatus
     SystemUpdateInfo_UpdateStatus
-      ( SystemUpdateInfo_UpdateStatus_UPDATESTATUSUNKNOWN,
+      (
+        SystemUpdateInfo_UpdateStatus_UPDATESTATUSUNKNOWN,
         SystemUpdateInfo_UpdateStatus_UPTODATE,
         SystemUpdateInfo_UpdateStatus_UNKNOWNUPDATEAVAILABLE,
         SystemUpdateInfo_UpdateStatus_SECURITYUPDATEAVAILABLE,
@@ -769,7 +862,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * UsageLog_EnabledLogTypesItem
     UsageLog_EnabledLogTypesItem
-      ( UsageLog_EnabledLogTypesItem_LOGTYPEUNSPECIFIED,
+      (
+        UsageLog_EnabledLogTypesItem_LOGTYPEUNSPECIFIED,
         UsageLog_EnabledLogTypesItem_SECURITYLOGS,
         UsageLog_EnabledLogTypesItem_NETWORKACTIVITYLOGS,
         ..
@@ -777,7 +871,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * UsageLog_UploadOnCellularAllowedItem
     UsageLog_UploadOnCellularAllowedItem
-      ( UsageLog_UploadOnCellularAllowedItem_LOGTYPEUNSPECIFIED,
+      (
+        UsageLog_UploadOnCellularAllowedItem_LOGTYPEUNSPECIFIED,
         UsageLog_UploadOnCellularAllowedItem_SECURITYLOGS,
         UsageLog_UploadOnCellularAllowedItem_NETWORKACTIVITYLOGS,
         ..
@@ -785,7 +880,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * UsageLogEvent_EventType
     UsageLogEvent_EventType
-      ( UsageLogEvent_EventType_EVENTTYPEUNSPECIFIED,
+      (
+        UsageLogEvent_EventType_EVENTTYPEUNSPECIFIED,
         UsageLogEvent_EventType_ADBSHELLCOMMAND,
         UsageLogEvent_EventType_ADBSHELLINTERACTIVE,
         UsageLogEvent_EventType_APPPROCESSSTART,
@@ -818,7 +914,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * WebApp_DisplayMode
     WebApp_DisplayMode
-      ( WebApp_DisplayMode_DISPLAYMODEUNSPECIFIED,
+      (
+        WebApp_DisplayMode_DISPLAYMODEUNSPECIFIED,
         WebApp_DisplayMode_MINIMALUI,
         WebApp_DisplayMode_Standalone,
         WebApp_DisplayMode_FULLSCREEN,
@@ -827,7 +924,8 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * WebToken_EnabledFeaturesItem
     WebToken_EnabledFeaturesItem
-      ( WebToken_EnabledFeaturesItem_FEATUREUNSPECIFIED,
+      (
+        WebToken_EnabledFeaturesItem_FEATUREUNSPECIFIED,
         WebToken_EnabledFeaturesItem_PLAYSEARCH,
         WebToken_EnabledFeaturesItem_PRIVATEAPPS,
         WebToken_EnabledFeaturesItem_WEBAPPS,
@@ -839,14 +937,16 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * WebToken_PermissionsItem
     WebToken_PermissionsItem
-      ( WebToken_PermissionsItem_WEBTOKENPERMISSIONUNSPECIFIED,
+      (
+        WebToken_PermissionsItem_WEBTOKENPERMISSIONUNSPECIFIED,
         WebToken_PermissionsItem_APPROVEAPPS,
         ..
       ),
 
     -- * EnterprisesDevicesDeleteWipeDataFlags
     EnterprisesDevicesDeleteWipeDataFlags
-      ( EnterprisesDevicesDeleteWipeDataFlags_WIPEDATAFLAGUNSPECIFIED,
+      (
+        EnterprisesDevicesDeleteWipeDataFlags_WIPEDATAFLAGUNSPECIFIED,
         EnterprisesDevicesDeleteWipeDataFlags_PRESERVERESETPROTECTIONDATA,
         EnterprisesDevicesDeleteWipeDataFlags_WIPEEXTERNALSTORAGE,
         ..
@@ -854,27 +954,27 @@ module Gogol.AndroidManagement.Internal.Sum
 
     -- * EnterprisesListView
     EnterprisesListView
-      ( EnterprisesListView_ENTERPRISEVIEWUNSPECIFIED,
+      (
+        EnterprisesListView_ENTERPRISEVIEWUNSPECIFIED,
         EnterprisesListView_Basic,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -887,21 +987,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Controls Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https:\/\/www.commoncriteriaportal.org\/) (CC). Enabling Common Criteria Mode increases certain security components on a device, including AES-GCM encryption of Bluetooth Long Term Keys, and Wi-Fi configuration stores.Warning: Common Criteria Mode enforces a strict security model typically only required for IT products used in national security systems and other highly sensitive organizations. Standard device use may be affected. Only enabled if required.
-newtype AdvancedSecurityOverrides_CommonCriteriaMode = AdvancedSecurityOverrides_CommonCriteriaMode {fromAdvancedSecurityOverrides_CommonCriteriaMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AdvancedSecurityOverrides_CommonCriteriaMode = AdvancedSecurityOverrides_CommonCriteriaMode { fromAdvancedSecurityOverrides_CommonCriteriaMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to COMMON/CRITERIA/MODE_DISABLED.
 pattern AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEUNSPECIFIED :: AdvancedSecurityOverrides_CommonCriteriaMode
@@ -919,21 +1018,20 @@ pattern AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEENABLED =
   AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEUNSPECIFIED,
   AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEDISABLED,
   AdvancedSecurityOverrides_CommonCriteriaMode_COMMONCRITERIAMODEENABLED,
-  AdvancedSecurityOverrides_CommonCriteriaMode
-  #-}
+  AdvancedSecurityOverrides_CommonCriteriaMode #-}
 
 -- | Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated).
-newtype AdvancedSecurityOverrides_DeveloperSettings = AdvancedSecurityOverrides_DeveloperSettings {fromAdvancedSecurityOverrides_DeveloperSettings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AdvancedSecurityOverrides_DeveloperSettings = AdvancedSecurityOverrides_DeveloperSettings { fromAdvancedSecurityOverrides_DeveloperSettings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to DEVELOPER/SETTINGS/DISABLED.
 pattern AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSUNSPECIFIED :: AdvancedSecurityOverrides_DeveloperSettings
@@ -951,21 +1049,20 @@ pattern AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSALLOWED = A
   AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSUNSPECIFIED,
   AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSDISABLED,
   AdvancedSecurityOverrides_DeveloperSettings_DEVELOPERSETTINGSALLOWED,
-  AdvancedSecurityOverrides_DeveloperSettings
-  #-}
+  AdvancedSecurityOverrides_DeveloperSettings #-}
 
 -- | Whether Google Play Protect verification (https:\/\/support.google.com\/accounts\/answer\/2812853) is enforced. Replaces ensureVerifyAppsEnabled (deprecated).
-newtype AdvancedSecurityOverrides_GooglePlayProtectVerifyApps = AdvancedSecurityOverrides_GooglePlayProtectVerifyApps {fromAdvancedSecurityOverrides_GooglePlayProtectVerifyApps :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AdvancedSecurityOverrides_GooglePlayProtectVerifyApps = AdvancedSecurityOverrides_GooglePlayProtectVerifyApps { fromAdvancedSecurityOverrides_GooglePlayProtectVerifyApps :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to VERIFY/APPS/ENFORCED.
 pattern AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_GOOGLEPLAYPROTECTVERIFYAPPSUNSPECIFIED :: AdvancedSecurityOverrides_GooglePlayProtectVerifyApps
@@ -983,21 +1080,20 @@ pattern AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_VERIFYAPPSUSERCHOI
   AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_GOOGLEPLAYPROTECTVERIFYAPPSUNSPECIFIED,
   AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_VERIFYAPPSENFORCED,
   AdvancedSecurityOverrides_GooglePlayProtectVerifyApps_VERIFYAPPSUSERCHOICE,
-  AdvancedSecurityOverrides_GooglePlayProtectVerifyApps
-  #-}
+  AdvancedSecurityOverrides_GooglePlayProtectVerifyApps #-}
 
 -- | The policy for untrusted apps (apps from unknown sources) enforced on the device. Replaces install/unknown/sources_allowed (deprecated).
-newtype AdvancedSecurityOverrides_UntrustedAppsPolicy = AdvancedSecurityOverrides_UntrustedAppsPolicy {fromAdvancedSecurityOverrides_UntrustedAppsPolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AdvancedSecurityOverrides_UntrustedAppsPolicy = AdvancedSecurityOverrides_UntrustedAppsPolicy { fromAdvancedSecurityOverrides_UntrustedAppsPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to DISALLOW_INSTALL.
 pattern AdvancedSecurityOverrides_UntrustedAppsPolicy_UNTRUSTEDAPPSPOLICYUNSPECIFIED :: AdvancedSecurityOverrides_UntrustedAppsPolicy
@@ -1020,21 +1116,20 @@ pattern AdvancedSecurityOverrides_UntrustedAppsPolicy_ALLOWINSTALLDEVICEWIDE = A
   AdvancedSecurityOverrides_UntrustedAppsPolicy_DISALLOWINSTALL,
   AdvancedSecurityOverrides_UntrustedAppsPolicy_ALLOWINSTALLINPERSONALPROFILEONLY,
   AdvancedSecurityOverrides_UntrustedAppsPolicy_ALLOWINSTALLDEVICEWIDE,
-  AdvancedSecurityOverrides_UntrustedAppsPolicy
-  #-}
+  AdvancedSecurityOverrides_UntrustedAppsPolicy #-}
 
 -- | Whether this app is free, free with in-app purchases, or paid. If the pricing is unspecified, this means the app is not generally available anymore (even though it might still be available to people who own it).
-newtype Application_AppPricing = Application_AppPricing {fromApplication_AppPricing :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Application_AppPricing = Application_AppPricing { fromApplication_AppPricing :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown pricing, used to denote an approved app that is not generally available.
 pattern Application_AppPricing_APPPRICINGUNSPECIFIED :: Application_AppPricing
@@ -1057,21 +1152,20 @@ pattern Application_AppPricing_Paid = Application_AppPricing "PAID"
   Application_AppPricing_Free,
   Application_AppPricing_FREEWITHINAPPPURCHASE,
   Application_AppPricing_Paid,
-  Application_AppPricing
-  #-}
+  Application_AppPricing #-}
 
 -- | The content rating for this app.
-newtype Application_ContentRating = Application_ContentRating {fromApplication_ContentRating :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Application_ContentRating = Application_ContentRating { fromApplication_ContentRating :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Application_ContentRating_CONTENTRATINGUNSPECIFIED :: Application_ContentRating
@@ -1104,21 +1198,20 @@ pattern Application_ContentRating_EIGHTEENYEARS = Application_ContentRating "EIG
   Application_ContentRating_TWELVEYEARS,
   Application_ContentRating_SIXTEENYEARS,
   Application_ContentRating_EIGHTEENYEARS,
-  Application_ContentRating
-  #-}
+  Application_ContentRating #-}
 
 -- | How and to whom the package is made available.
-newtype Application_DistributionChannel = Application_DistributionChannel {fromApplication_DistributionChannel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Application_DistributionChannel = Application_DistributionChannel { fromApplication_DistributionChannel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Application_DistributionChannel_DISTRIBUTIONCHANNELUNSPECIFIED :: Application_DistributionChannel
@@ -1141,20 +1234,19 @@ pattern Application_DistributionChannel_PRIVATESELFHOSTED = Application_Distribu
   Application_DistributionChannel_PUBLICGOOGLEHOSTED,
   Application_DistributionChannel_PRIVATEGOOGLEHOSTED,
   Application_DistributionChannel_PRIVATESELFHOSTED,
-  Application_DistributionChannel
-  #-}
+  Application_DistributionChannel #-}
 
-newtype Application_FeaturesItem = Application_FeaturesItem {fromApplication_FeaturesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Application_FeaturesItem = Application_FeaturesItem { fromApplication_FeaturesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Application_FeaturesItem_APPFEATUREUNSPECIFIED :: Application_FeaturesItem
@@ -1167,21 +1259,20 @@ pattern Application_FeaturesItem_VPNAPP = Application_FeaturesItem "VPN_APP"
 {-# COMPLETE
   Application_FeaturesItem_APPFEATUREUNSPECIFIED,
   Application_FeaturesItem_VPNAPP,
-  Application_FeaturesItem
-  #-}
+  Application_FeaturesItem #-}
 
 -- | App event type.
-newtype ApplicationEvent_EventType = ApplicationEvent_EventType {fromApplicationEvent_EventType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationEvent_EventType = ApplicationEvent_EventType { fromApplicationEvent_EventType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern ApplicationEvent_EventType_APPLICATIONEVENTTYPEUNSPECIFIED :: ApplicationEvent_EventType
@@ -1229,21 +1320,20 @@ pattern ApplicationEvent_EventType_Unpinned = ApplicationEvent_EventType "UNPINN
   ApplicationEvent_EventType_Restarted,
   ApplicationEvent_EventType_Pinned,
   ApplicationEvent_EventType_Unpinned,
-  ApplicationEvent_EventType
-  #-}
+  ApplicationEvent_EventType #-}
 
 -- | Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN/LOCKDOWN/ENFORCED, the app is not allowed networking, and if set to VPN/LOCKDOWN/EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non/compliance/reason set to API/LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non/compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications[i].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy.
-newtype ApplicationPolicy_AlwaysOnVpnLockdownExemption = ApplicationPolicy_AlwaysOnVpnLockdownExemption {fromApplicationPolicy_AlwaysOnVpnLockdownExemption :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_AlwaysOnVpnLockdownExemption = ApplicationPolicy_AlwaysOnVpnLockdownExemption { fromApplicationPolicy_AlwaysOnVpnLockdownExemption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to VPN/LOCKDOWN/ENFORCED.
 pattern ApplicationPolicy_AlwaysOnVpnLockdownExemption_ALWAYSONVPNLOCKDOWNEXEMPTIONUNSPECIFIED :: ApplicationPolicy_AlwaysOnVpnLockdownExemption
@@ -1261,21 +1351,20 @@ pattern ApplicationPolicy_AlwaysOnVpnLockdownExemption_VPNLOCKDOWNEXEMPTION = Ap
   ApplicationPolicy_AlwaysOnVpnLockdownExemption_ALWAYSONVPNLOCKDOWNEXEMPTIONUNSPECIFIED,
   ApplicationPolicy_AlwaysOnVpnLockdownExemption_VPNLOCKDOWNENFORCED,
   ApplicationPolicy_AlwaysOnVpnLockdownExemption_VPNLOCKDOWNEXEMPTION,
-  ApplicationPolicy_AlwaysOnVpnLockdownExemption
-  #-}
+  ApplicationPolicy_AlwaysOnVpnLockdownExemption #-}
 
 -- | Controls the auto-update mode for the app.
-newtype ApplicationPolicy_AutoUpdateMode = ApplicationPolicy_AutoUpdateMode {fromApplicationPolicy_AutoUpdateMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_AutoUpdateMode = ApplicationPolicy_AutoUpdateMode { fromApplicationPolicy_AutoUpdateMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to AUTO/UPDATE/DEFAULT.
 pattern ApplicationPolicy_AutoUpdateMode_AUTOUPDATEMODEUNSPECIFIED :: ApplicationPolicy_AutoUpdateMode
@@ -1298,21 +1387,20 @@ pattern ApplicationPolicy_AutoUpdateMode_AUTOUPDATEHIGHPRIORITY = ApplicationPol
   ApplicationPolicy_AutoUpdateMode_AUTOUPDATEDEFAULT,
   ApplicationPolicy_AutoUpdateMode_AUTOUPDATEPOSTPONED,
   ApplicationPolicy_AutoUpdateMode_AUTOUPDATEHIGHPRIORITY,
-  ApplicationPolicy_AutoUpdateMode
-  #-}
+  ApplicationPolicy_AutoUpdateMode #-}
 
 -- | Controls whether the app can communicate with itself across a device’s work and personal profiles, subject to user consent.
-newtype ApplicationPolicy_ConnectedWorkAndPersonalApp = ApplicationPolicy_ConnectedWorkAndPersonalApp {fromApplicationPolicy_ConnectedWorkAndPersonalApp :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_ConnectedWorkAndPersonalApp = ApplicationPolicy_ConnectedWorkAndPersonalApp { fromApplicationPolicy_ConnectedWorkAndPersonalApp :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to CONNECTED/WORK/AND/PERSONAL/APPS_DISALLOWED.
 pattern ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPUNSPECIFIED :: ApplicationPolicy_ConnectedWorkAndPersonalApp
@@ -1330,21 +1418,20 @@ pattern ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAP
   ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPUNSPECIFIED,
   ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPDISALLOWED,
   ApplicationPolicy_ConnectedWorkAndPersonalApp_CONNECTEDWORKANDPERSONALAPPALLOWED,
-  ApplicationPolicy_ConnectedWorkAndPersonalApp
-  #-}
+  ApplicationPolicy_ConnectedWorkAndPersonalApp #-}
 
 -- | The default policy for all permissions requested by the app. If specified, this overrides the policy-level default/permission/policy which applies to all apps. It does not override the permission_grants which applies to all apps.
-newtype ApplicationPolicy_DefaultPermissionPolicy = ApplicationPolicy_DefaultPermissionPolicy {fromApplicationPolicy_DefaultPermissionPolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_DefaultPermissionPolicy = ApplicationPolicy_DefaultPermissionPolicy { fromApplicationPolicy_DefaultPermissionPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Policy not specified. If no policy is specified for a permission at any level, then the PROMPT behavior is used by default.
 pattern ApplicationPolicy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED :: ApplicationPolicy_DefaultPermissionPolicy
@@ -1367,20 +1454,19 @@ pattern ApplicationPolicy_DefaultPermissionPolicy_Deny = ApplicationPolicy_Defau
   ApplicationPolicy_DefaultPermissionPolicy_Prompt,
   ApplicationPolicy_DefaultPermissionPolicy_Grant,
   ApplicationPolicy_DefaultPermissionPolicy_Deny,
-  ApplicationPolicy_DefaultPermissionPolicy
-  #-}
+  ApplicationPolicy_DefaultPermissionPolicy #-}
 
-newtype ApplicationPolicy_DelegatedScopesItem = ApplicationPolicy_DelegatedScopesItem {fromApplicationPolicy_DelegatedScopesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_DelegatedScopesItem = ApplicationPolicy_DelegatedScopesItem { fromApplicationPolicy_DelegatedScopesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No delegation scope specified.
 pattern ApplicationPolicy_DelegatedScopesItem_DELEGATEDSCOPEUNSPECIFIED :: ApplicationPolicy_DelegatedScopesItem
@@ -1428,21 +1514,20 @@ pattern ApplicationPolicy_DelegatedScopesItem_SECURITYLOGS = ApplicationPolicy_D
   ApplicationPolicy_DelegatedScopesItem_ENABLESYSTEMAPP,
   ApplicationPolicy_DelegatedScopesItem_NETWORKACTIVITYLOGS,
   ApplicationPolicy_DelegatedScopesItem_SECURITYLOGS,
-  ApplicationPolicy_DelegatedScopesItem
-  #-}
+  ApplicationPolicy_DelegatedScopesItem #-}
 
 -- | The type of installation to perform.
-newtype ApplicationPolicy_InstallType = ApplicationPolicy_InstallType {fromApplicationPolicy_InstallType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_InstallType = ApplicationPolicy_InstallType { fromApplicationPolicy_InstallType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to AVAILABLE.
 pattern ApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED :: ApplicationPolicy_InstallType
@@ -1480,21 +1565,20 @@ pattern ApplicationPolicy_InstallType_Kiosk = ApplicationPolicy_InstallType "KIO
   ApplicationPolicy_InstallType_Available,
   ApplicationPolicy_InstallType_REQUIREDFORSETUP,
   ApplicationPolicy_InstallType_Kiosk,
-  ApplicationPolicy_InstallType
-  #-}
+  ApplicationPolicy_InstallType #-}
 
 -- | Specifies whether the app installed in the work profile is allowed to add widgets to the home screen.
-newtype ApplicationPolicy_WorkProfileWidgets = ApplicationPolicy_WorkProfileWidgets {fromApplicationPolicy_WorkProfileWidgets :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationPolicy_WorkProfileWidgets = ApplicationPolicy_WorkProfileWidgets { fromApplicationPolicy_WorkProfileWidgets :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to work/profile/widgets_default
 pattern ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSUNSPECIFIED :: ApplicationPolicy_WorkProfileWidgets
@@ -1512,21 +1596,20 @@ pattern ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSDISALLOWED = Appl
   ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSUNSPECIFIED,
   ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSALLOWED,
   ApplicationPolicy_WorkProfileWidgets_WORKPROFILEWIDGETSDISALLOWED,
-  ApplicationPolicy_WorkProfileWidgets
-  #-}
+  ApplicationPolicy_WorkProfileWidgets #-}
 
 -- | The source of the package.
-newtype ApplicationReport_ApplicationSource = ApplicationReport_ApplicationSource {fromApplicationReport_ApplicationSource :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationReport_ApplicationSource = ApplicationReport_ApplicationSource { fromApplicationReport_ApplicationSource :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The app was sideloaded from an unspecified source.
 pattern ApplicationReport_ApplicationSource_APPLICATIONSOURCEUNSPECIFIED :: ApplicationReport_ApplicationSource
@@ -1549,21 +1632,20 @@ pattern ApplicationReport_ApplicationSource_INSTALLEDFROMPLAYSTORE = Application
   ApplicationReport_ApplicationSource_SYSTEMAPPFACTORYVERSION,
   ApplicationReport_ApplicationSource_SYSTEMAPPUPDATEDVERSION,
   ApplicationReport_ApplicationSource_INSTALLEDFROMPLAYSTORE,
-  ApplicationReport_ApplicationSource
-  #-}
+  ApplicationReport_ApplicationSource #-}
 
 -- | Application state.
-newtype ApplicationReport_State = ApplicationReport_State {fromApplicationReport_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationReport_State = ApplicationReport_State { fromApplicationReport_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | App state is unspecified
 pattern ApplicationReport_State_APPLICATIONSTATEUNSPECIFIED :: ApplicationReport_State
@@ -1581,21 +1663,20 @@ pattern ApplicationReport_State_Installed = ApplicationReport_State "INSTALLED"
   ApplicationReport_State_APPLICATIONSTATEUNSPECIFIED,
   ApplicationReport_State_Removed,
   ApplicationReport_State_Installed,
-  ApplicationReport_State
-  #-}
+  ApplicationReport_State #-}
 
 -- | Specifies the scope of this BlockAction. Only applicable to devices that are company-owned.
-newtype BlockAction_BlockScope = BlockAction_BlockScope {fromBlockAction_BlockScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BlockAction_BlockScope = BlockAction_BlockScope { fromBlockAction_BlockScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to BLOCK/SCOPE/WORK_PROFILE.
 pattern BlockAction_BlockScope_BLOCKSCOPEUNSPECIFIED :: BlockAction_BlockScope
@@ -1613,21 +1694,20 @@ pattern BlockAction_BlockScope_BLOCKSCOPEDEVICE = BlockAction_BlockScope "BLOCK_
   BlockAction_BlockScope_BLOCKSCOPEUNSPECIFIED,
   BlockAction_BlockScope_BLOCKSCOPEWORKPROFILE,
   BlockAction_BlockScope_BLOCKSCOPEDEVICE,
-  BlockAction_BlockScope
-  #-}
+  BlockAction_BlockScope #-}
 
 -- | If the command failed, an error code explaining the failure. This is not set when the command is cancelled by the caller.
-newtype Command_ErrorCode = Command_ErrorCode {fromCommand_ErrorCode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Command_ErrorCode = Command_ErrorCode { fromCommand_ErrorCode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | There was no error.
 pattern Command_ErrorCode_COMMANDERRORCODEUNSPECIFIED :: Command_ErrorCode
@@ -1660,20 +1740,19 @@ pattern Command_ErrorCode_Unsupported = Command_ErrorCode "UNSUPPORTED"
   Command_ErrorCode_MANAGEMENTMODE,
   Command_ErrorCode_INVALIDVALUE,
   Command_ErrorCode_Unsupported,
-  Command_ErrorCode
-  #-}
+  Command_ErrorCode #-}
 
-newtype Command_ResetPasswordFlagsItem = Command_ResetPasswordFlagsItem {fromCommand_ResetPasswordFlagsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Command_ResetPasswordFlagsItem = Command_ResetPasswordFlagsItem { fromCommand_ResetPasswordFlagsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern Command_ResetPasswordFlagsItem_RESETPASSWORDFLAGUNSPECIFIED :: Command_ResetPasswordFlagsItem
@@ -1696,21 +1775,20 @@ pattern Command_ResetPasswordFlagsItem_LOCKNOW = Command_ResetPasswordFlagsItem 
   Command_ResetPasswordFlagsItem_REQUIREENTRY,
   Command_ResetPasswordFlagsItem_DONOTASKCREDENTIALSONBOOT,
   Command_ResetPasswordFlagsItem_LOCKNOW,
-  Command_ResetPasswordFlagsItem
-  #-}
+  Command_ResetPasswordFlagsItem #-}
 
 -- | The type of the command.
-newtype Command_Type = Command_Type {fromCommand_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Command_Type = Command_Type { fromCommand_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern Command_Type_COMMANDTYPEUNSPECIFIED :: Command_Type
@@ -1743,21 +1821,20 @@ pattern Command_Type_CLEARAPPDATA = Command_Type "CLEAR_APP_DATA"
   Command_Type_Reboot,
   Command_Type_RELINQUISHOWNERSHIP,
   Command_Type_CLEARAPPDATA,
-  Command_Type
-  #-}
+  Command_Type #-}
 
 -- | Whether Common Criteria Mode is enabled.
-newtype CommonCriteriaModeInfo_CommonCriteriaModeStatus = CommonCriteriaModeInfo_CommonCriteriaModeStatus {fromCommonCriteriaModeInfo_CommonCriteriaModeStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CommonCriteriaModeInfo_CommonCriteriaModeStatus = CommonCriteriaModeInfo_CommonCriteriaModeStatus { fromCommonCriteriaModeInfo_CommonCriteriaModeStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown status.
 pattern CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODESTATUSUNKNOWN :: CommonCriteriaModeInfo_CommonCriteriaModeStatus
@@ -1775,21 +1852,20 @@ pattern CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODEENABLE
   CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODESTATUSUNKNOWN,
   CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODEDISABLED,
   CommonCriteriaModeInfo_CommonCriteriaModeStatus_COMMONCRITERIAMODEENABLED,
-  CommonCriteriaModeInfo_CommonCriteriaModeStatus
-  #-}
+  CommonCriteriaModeInfo_CommonCriteriaModeStatus #-}
 
 -- | Whether text copied from one profile (personal or work) can be pasted in the other profile.
-newtype CrossProfilePolicies_CrossProfileCopyPaste = CrossProfilePolicies_CrossProfileCopyPaste {fromCrossProfilePolicies_CrossProfileCopyPaste :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CrossProfilePolicies_CrossProfileCopyPaste = CrossProfilePolicies_CrossProfileCopyPaste { fromCrossProfilePolicies_CrossProfileCopyPaste :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to COPY/FROM/WORK/TO/PERSONAL_DISALLOWED
 pattern CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEUNSPECIFIED :: CrossProfilePolicies_CrossProfileCopyPaste
@@ -1807,21 +1883,20 @@ pattern CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEALLOWED 
   CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEUNSPECIFIED,
   CrossProfilePolicies_CrossProfileCopyPaste_COPYFROMWORKTOPERSONALDISALLOWED,
   CrossProfilePolicies_CrossProfileCopyPaste_CROSSPROFILECOPYPASTEALLOWED,
-  CrossProfilePolicies_CrossProfileCopyPaste
-  #-}
+  CrossProfilePolicies_CrossProfileCopyPaste #-}
 
 -- | Whether data from one profile (personal or work) can be shared with apps in the other profile. Specifically controls simple data sharing via intents. Management of other cross-profile communication channels, such as contact search, copy\/paste, or connected work & personal apps, are configured separately.
-newtype CrossProfilePolicies_CrossProfileDataSharing = CrossProfilePolicies_CrossProfileDataSharing {fromCrossProfilePolicies_CrossProfileDataSharing :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CrossProfilePolicies_CrossProfileDataSharing = CrossProfilePolicies_CrossProfileDataSharing { fromCrossProfilePolicies_CrossProfileDataSharing :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to DATA/SHARING/FROM/WORK/TO/PERSONAL/DISALLOWED.
 pattern CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGUNSPECIFIED :: CrossProfilePolicies_CrossProfileDataSharing
@@ -1844,21 +1919,20 @@ pattern CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGALLO
   CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGDISALLOWED,
   CrossProfilePolicies_CrossProfileDataSharing_DATASHARINGFROMWORKTOPERSONALDISALLOWED,
   CrossProfilePolicies_CrossProfileDataSharing_CROSSPROFILEDATASHARINGALLOWED,
-  CrossProfilePolicies_CrossProfileDataSharing
-  #-}
+  CrossProfilePolicies_CrossProfileDataSharing #-}
 
 -- | Whether contacts stored in the work profile can be shown in personal profile contact searches and incoming calls.
-newtype CrossProfilePolicies_ShowWorkContactsInPersonalProfile = CrossProfilePolicies_ShowWorkContactsInPersonalProfile {fromCrossProfilePolicies_ShowWorkContactsInPersonalProfile :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CrossProfilePolicies_ShowWorkContactsInPersonalProfile = CrossProfilePolicies_ShowWorkContactsInPersonalProfile { fromCrossProfilePolicies_ShowWorkContactsInPersonalProfile :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to SHOW/WORK/CONTACTS/IN/PERSONAL/PROFILE/ALLOWED.
 pattern CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEUNSPECIFIED :: CrossProfilePolicies_ShowWorkContactsInPersonalProfile
@@ -1876,21 +1950,20 @@ pattern CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSI
   CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEUNSPECIFIED,
   CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEDISALLOWED,
   CrossProfilePolicies_ShowWorkContactsInPersonalProfile_SHOWWORKCONTACTSINPERSONALPROFILEALLOWED,
-  CrossProfilePolicies_ShowWorkContactsInPersonalProfile
-  #-}
+  CrossProfilePolicies_ShowWorkContactsInPersonalProfile #-}
 
 -- | Specifies the default behaviour for work profile widgets. If the policy does not specify work/profile/widgets for a specific application, it will behave according to the value specified here.
-newtype CrossProfilePolicies_WorkProfileWidgetsDefault = CrossProfilePolicies_WorkProfileWidgetsDefault {fromCrossProfilePolicies_WorkProfileWidgetsDefault :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CrossProfilePolicies_WorkProfileWidgetsDefault = CrossProfilePolicies_WorkProfileWidgetsDefault { fromCrossProfilePolicies_WorkProfileWidgetsDefault :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to WORK/PROFILE/WIDGETS/DEFAULT/DISALLOWED.
 pattern CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTUNSPECIFIED :: CrossProfilePolicies_WorkProfileWidgetsDefault
@@ -1908,21 +1981,20 @@ pattern CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULT
   CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTUNSPECIFIED,
   CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTALLOWED,
   CrossProfilePolicies_WorkProfileWidgetsDefault_WORKPROFILEWIDGETSDEFAULTDISALLOWED,
-  CrossProfilePolicies_WorkProfileWidgetsDefault
-  #-}
+  CrossProfilePolicies_WorkProfileWidgetsDefault #-}
 
 -- | The state currently applied to the device.
-newtype Device_AppliedState = Device_AppliedState {fromDevice_AppliedState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Device_AppliedState = Device_AppliedState { fromDevice_AppliedState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern Device_AppliedState_DEVICESTATEUNSPECIFIED :: Device_AppliedState
@@ -1950,21 +2022,20 @@ pattern Device_AppliedState_Provisioning = Device_AppliedState "PROVISIONING"
   Device_AppliedState_Disabled,
   Device_AppliedState_Deleted,
   Device_AppliedState_Provisioning,
-  Device_AppliedState
-  #-}
+  Device_AppliedState #-}
 
 -- | The type of management mode Android Device Policy takes on the device. This influences which policy settings are supported.
-newtype Device_ManagementMode = Device_ManagementMode {fromDevice_ManagementMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Device_ManagementMode = Device_ManagementMode { fromDevice_ManagementMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern Device_ManagementMode_MANAGEMENTMODEUNSPECIFIED :: Device_ManagementMode
@@ -1982,21 +2053,20 @@ pattern Device_ManagementMode_PROFILEOWNER = Device_ManagementMode "PROFILE_OWNE
   Device_ManagementMode_MANAGEMENTMODEUNSPECIFIED,
   Device_ManagementMode_DEVICEOWNER,
   Device_ManagementMode_PROFILEOWNER,
-  Device_ManagementMode
-  #-}
+  Device_ManagementMode #-}
 
 -- | Ownership of the managed device.
-newtype Device_Ownership = Device_Ownership {fromDevice_Ownership :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Device_Ownership = Device_Ownership { fromDevice_Ownership :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Ownership is unspecified.
 pattern Device_Ownership_OWNERSHIPUNSPECIFIED :: Device_Ownership
@@ -2014,21 +2084,20 @@ pattern Device_Ownership_PERSONALLYOWNED = Device_Ownership "PERSONALLY_OWNED"
   Device_Ownership_OWNERSHIPUNSPECIFIED,
   Device_Ownership_COMPANYOWNED,
   Device_Ownership_PERSONALLYOWNED,
-  Device_Ownership
-  #-}
+  Device_Ownership #-}
 
 -- | The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete.
-newtype Device_State = Device_State {fromDevice_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Device_State = Device_State { fromDevice_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern Device_State_DEVICESTATEUNSPECIFIED :: Device_State
@@ -2056,21 +2125,56 @@ pattern Device_State_Provisioning = Device_State "PROVISIONING"
   Device_State_Disabled,
   Device_State_Deleted,
   Device_State_Provisioning,
-  Device_State
-  #-}
+  Device_State #-}
+
+-- | Controls what can be transferred via USB, files and\/or data. This is supported only on company-owned devices.
+newtype DeviceConnectivityManagement_UsbDataAccess = DeviceConnectivityManagement_UsbDataAccess { fromDeviceConnectivityManagement_UsbDataAccess :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Unspecified. Defaults to ALLOW/USB/DATA/TRANSFER, unless usbFileTransferDisabled is set to true. If usbFileTransferDisabled is set to true, this is equivalent to DISALLOW/USB/FILE/TRANSFER.
+pattern DeviceConnectivityManagement_UsbDataAccess_USBDATAACCESSUNSPECIFIED :: DeviceConnectivityManagement_UsbDataAccess
+pattern DeviceConnectivityManagement_UsbDataAccess_USBDATAACCESSUNSPECIFIED = DeviceConnectivityManagement_UsbDataAccess "USB_DATA_ACCESS_UNSPECIFIED"
+
+-- | All types of USB data transfers are allowed. usbFileTransferDisabled is ignored.
+pattern DeviceConnectivityManagement_UsbDataAccess_ALLOWUSBDATATRANSFER :: DeviceConnectivityManagement_UsbDataAccess
+pattern DeviceConnectivityManagement_UsbDataAccess_ALLOWUSBDATATRANSFER = DeviceConnectivityManagement_UsbDataAccess "ALLOW_USB_DATA_TRANSFER"
+
+-- | Transferring files over USB is disallowed. Other types of USB data connections, such as mouse and keyboard connection, are allowed. usbFileTransferDisabled is ignored.
+pattern DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBFILETRANSFER :: DeviceConnectivityManagement_UsbDataAccess
+pattern DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBFILETRANSFER = DeviceConnectivityManagement_UsbDataAccess "DISALLOW_USB_FILE_TRANSFER"
+
+-- | When set, all types of USB data transfers are prohibited. Supported for devices running Android 12 or above with USB HAL 1.3 or above. If the setting is not supported, DISALLOW/USB/FILE/TRANSFER will be set. A nonComplianceDetail with API/LEVEL is reported if the Android version is less than 12. A nonComplianceDetail with DEVICE_INCOMPATIBLE is reported if the device does not have USB HAL 1.3 or above. usbFileTransferDisabled is ignored.
+pattern DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBDATATRANSFER :: DeviceConnectivityManagement_UsbDataAccess
+pattern DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBDATATRANSFER = DeviceConnectivityManagement_UsbDataAccess "DISALLOW_USB_DATA_TRANSFER"
+
+{-# COMPLETE
+  DeviceConnectivityManagement_UsbDataAccess_USBDATAACCESSUNSPECIFIED,
+  DeviceConnectivityManagement_UsbDataAccess_ALLOWUSBDATATRANSFER,
+  DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBFILETRANSFER,
+  DeviceConnectivityManagement_UsbDataAccess_DISALLOWUSBDATATRANSFER,
+  DeviceConnectivityManagement_UsbDataAccess #-}
 
 -- | Encryption status from DevicePolicyManager.
-newtype DeviceSettings_EncryptionStatus = DeviceSettings_EncryptionStatus {fromDeviceSettings_EncryptionStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceSettings_EncryptionStatus = DeviceSettings_EncryptionStatus { fromDeviceSettings_EncryptionStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. No device should have this type.
 pattern DeviceSettings_EncryptionStatus_ENCRYPTIONSTATUSUNSPECIFIED :: DeviceSettings_EncryptionStatus
@@ -2108,21 +2212,20 @@ pattern DeviceSettings_EncryptionStatus_ACTIVEPERUSER = DeviceSettings_Encryptio
   DeviceSettings_EncryptionStatus_Active,
   DeviceSettings_EncryptionStatus_ACTIVEDEFAULTKEY,
   DeviceSettings_EncryptionStatus_ACTIVEPERUSER,
-  DeviceSettings_EncryptionStatus
-  #-}
+  DeviceSettings_EncryptionStatus #-}
 
 -- | State of the display.
-newtype Display_State = Display_State {fromDisplay_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Display_State = Display_State { fromDisplay_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern Display_State_DISPLAYSTATEUNSPECIFIED :: Display_State
@@ -2150,21 +2253,20 @@ pattern Display_State_Suspended = Display_State "SUSPENDED"
   Display_State_ON,
   Display_State_Doze,
   Display_State_Suspended,
-  Display_State
-  #-}
+  Display_State #-}
 
 -- | Controls whether personal usage is allowed on a device provisioned with this enrollment token.For company-owned devices: Enabling personal usage allows the user to set up a work profile on the device. Disabling personal usage requires the user provision the device as a fully managed device.For personally-owned devices: Enabling personal usage allows the user to set up a work profile on the device. Disabling personal usage will prevent the device from provisioning. Personal usage cannot be disabled on personally-owned device.
-newtype EnrollmentToken_AllowPersonalUsage = EnrollmentToken_AllowPersonalUsage {fromEnrollmentToken_AllowPersonalUsage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EnrollmentToken_AllowPersonalUsage = EnrollmentToken_AllowPersonalUsage { fromEnrollmentToken_AllowPersonalUsage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Personal usage restriction is not specified
 pattern EnrollmentToken_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED :: EnrollmentToken_AllowPersonalUsage
@@ -2182,20 +2284,19 @@ pattern EnrollmentToken_AllowPersonalUsage_PERSONALUSAGEDISALLOWED = EnrollmentT
   EnrollmentToken_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
   EnrollmentToken_AllowPersonalUsage_PERSONALUSAGEALLOWED,
   EnrollmentToken_AllowPersonalUsage_PERSONALUSAGEDISALLOWED,
-  EnrollmentToken_AllowPersonalUsage
-  #-}
+  EnrollmentToken_AllowPersonalUsage #-}
 
-newtype Enterprise_EnabledNotificationTypesItem = Enterprise_EnabledNotificationTypesItem {fromEnterprise_EnabledNotificationTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Enterprise_EnabledNotificationTypesItem = Enterprise_EnabledNotificationTypesItem { fromEnterprise_EnabledNotificationTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern Enterprise_EnabledNotificationTypesItem_NOTIFICATIONTYPEUNSPECIFIED :: Enterprise_EnabledNotificationTypesItem
@@ -2228,21 +2329,20 @@ pattern Enterprise_EnabledNotificationTypesItem_USAGELOGS = Enterprise_EnabledNo
   Enterprise_EnabledNotificationTypesItem_STATUSREPORT,
   Enterprise_EnabledNotificationTypesItem_Command,
   Enterprise_EnabledNotificationTypesItem_USAGELOGS,
-  Enterprise_EnabledNotificationTypesItem
-  #-}
+  Enterprise_EnabledNotificationTypesItem #-}
 
 -- | The severity of the app state.
-newtype KeyedAppState_Severity = KeyedAppState_Severity {fromKeyedAppState_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KeyedAppState_Severity = KeyedAppState_Severity { fromKeyedAppState_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified severity level.
 pattern KeyedAppState_Severity_SEVERITYUNSPECIFIED :: KeyedAppState_Severity
@@ -2260,21 +2360,20 @@ pattern KeyedAppState_Severity_Error' = KeyedAppState_Severity "ERROR"
   KeyedAppState_Severity_SEVERITYUNSPECIFIED,
   KeyedAppState_Severity_Info,
   KeyedAppState_Severity_Error',
-  KeyedAppState_Severity
-  #-}
+  KeyedAppState_Severity #-}
 
 -- | Specifies whether the Settings app is allowed in kiosk mode.
-newtype KioskCustomization_DeviceSettings = KioskCustomization_DeviceSettings {fromKioskCustomization_DeviceSettings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KioskCustomization_DeviceSettings = KioskCustomization_DeviceSettings { fromKioskCustomization_DeviceSettings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified, defaults to SETTINGS/ACCESS/ALLOWED.
 pattern KioskCustomization_DeviceSettings_DEVICESETTINGSUNSPECIFIED :: KioskCustomization_DeviceSettings
@@ -2292,21 +2391,20 @@ pattern KioskCustomization_DeviceSettings_SETTINGSACCESSBLOCKED = KioskCustomiza
   KioskCustomization_DeviceSettings_DEVICESETTINGSUNSPECIFIED,
   KioskCustomization_DeviceSettings_SETTINGSACCESSALLOWED,
   KioskCustomization_DeviceSettings_SETTINGSACCESSBLOCKED,
-  KioskCustomization_DeviceSettings
-  #-}
+  KioskCustomization_DeviceSettings #-}
 
 -- | Sets the behavior of a device in kiosk mode when a user presses and holds (long-presses) the Power button.
-newtype KioskCustomization_PowerButtonActions = KioskCustomization_PowerButtonActions {fromKioskCustomization_PowerButtonActions :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KioskCustomization_PowerButtonActions = KioskCustomization_PowerButtonActions { fromKioskCustomization_PowerButtonActions :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified, defaults to POWER/BUTTON/AVAILABLE.
 pattern KioskCustomization_PowerButtonActions_POWERBUTTONACTIONSUNSPECIFIED :: KioskCustomization_PowerButtonActions
@@ -2324,21 +2422,20 @@ pattern KioskCustomization_PowerButtonActions_POWERBUTTONBLOCKED = KioskCustomiz
   KioskCustomization_PowerButtonActions_POWERBUTTONACTIONSUNSPECIFIED,
   KioskCustomization_PowerButtonActions_POWERBUTTONAVAILABLE,
   KioskCustomization_PowerButtonActions_POWERBUTTONBLOCKED,
-  KioskCustomization_PowerButtonActions
-  #-}
+  KioskCustomization_PowerButtonActions #-}
 
 -- | Specifies whether system info and notifications are disabled in kiosk mode.
-newtype KioskCustomization_StatusBar = KioskCustomization_StatusBar {fromKioskCustomization_StatusBar :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KioskCustomization_StatusBar = KioskCustomization_StatusBar { fromKioskCustomization_StatusBar :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified, defaults to INFO/AND/NOTIFICATIONS_DISABLED.
 pattern KioskCustomization_StatusBar_STATUSBARUNSPECIFIED :: KioskCustomization_StatusBar
@@ -2361,21 +2458,20 @@ pattern KioskCustomization_StatusBar_SYSTEMINFOONLY = KioskCustomization_StatusB
   KioskCustomization_StatusBar_NOTIFICATIONSANDSYSTEMINFOENABLED,
   KioskCustomization_StatusBar_NOTIFICATIONSANDSYSTEMINFODISABLED,
   KioskCustomization_StatusBar_SYSTEMINFOONLY,
-  KioskCustomization_StatusBar
-  #-}
+  KioskCustomization_StatusBar #-}
 
 -- | Specifies whether system error dialogs for crashed or unresponsive apps are blocked in kiosk mode. When blocked, the system will force-stop the app as if the user chooses the \"close app\" option on the UI.
-newtype KioskCustomization_SystemErrorWarnings = KioskCustomization_SystemErrorWarnings {fromKioskCustomization_SystemErrorWarnings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KioskCustomization_SystemErrorWarnings = KioskCustomization_SystemErrorWarnings { fromKioskCustomization_SystemErrorWarnings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified, defaults to ERROR/AND/WARNINGS_MUTED.
 pattern KioskCustomization_SystemErrorWarnings_SYSTEMERRORWARNINGSUNSPECIFIED :: KioskCustomization_SystemErrorWarnings
@@ -2393,21 +2489,20 @@ pattern KioskCustomization_SystemErrorWarnings_ERRORANDWARNINGSMUTED = KioskCust
   KioskCustomization_SystemErrorWarnings_SYSTEMERRORWARNINGSUNSPECIFIED,
   KioskCustomization_SystemErrorWarnings_ERRORANDWARNINGSENABLED,
   KioskCustomization_SystemErrorWarnings_ERRORANDWARNINGSMUTED,
-  KioskCustomization_SystemErrorWarnings
-  #-}
+  KioskCustomization_SystemErrorWarnings #-}
 
 -- | Specifies which navigation features are enabled (e.g. Home, Overview buttons) in kiosk mode.
-newtype KioskCustomization_SystemNavigation = KioskCustomization_SystemNavigation {fromKioskCustomization_SystemNavigation :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype KioskCustomization_SystemNavigation = KioskCustomization_SystemNavigation { fromKioskCustomization_SystemNavigation :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified, defaults to NAVIGATION_DISABLED.
 pattern KioskCustomization_SystemNavigation_SYSTEMNAVIGATIONUNSPECIFIED :: KioskCustomization_SystemNavigation
@@ -2430,21 +2525,20 @@ pattern KioskCustomization_SystemNavigation_HOMEBUTTONONLY = KioskCustomization_
   KioskCustomization_SystemNavigation_NAVIGATIONENABLED,
   KioskCustomization_SystemNavigation_NAVIGATIONDISABLED,
   KioskCustomization_SystemNavigation_HOMEBUTTONONLY,
-  KioskCustomization_SystemNavigation
-  #-}
+  KioskCustomization_SystemNavigation #-}
 
 -- | The type of the property.
-newtype ManagedProperty_Type = ManagedProperty_Type {fromManagedProperty_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ManagedProperty_Type = ManagedProperty_Type { fromManagedProperty_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not used.
 pattern ManagedProperty_Type_MANAGEDPROPERTYTYPEUNSPECIFIED :: ManagedProperty_Type
@@ -2492,21 +2586,20 @@ pattern ManagedProperty_Type_BUNDLEARRAY = ManagedProperty_Type "BUNDLE_ARRAY"
   ManagedProperty_Type_Hidden,
   ManagedProperty_Type_Bundle,
   ManagedProperty_Type_BUNDLEARRAY,
-  ManagedProperty_Type
-  #-}
+  ManagedProperty_Type #-}
 
 -- | Event type.
-newtype MemoryEvent_EventType = MemoryEvent_EventType {fromMemoryEvent_EventType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MemoryEvent_EventType = MemoryEvent_EventType { fromMemoryEvent_EventType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. No events have this type.
 pattern MemoryEvent_EventType_MEMORYEVENTTYPEUNSPECIFIED :: MemoryEvent_EventType
@@ -2539,21 +2632,20 @@ pattern MemoryEvent_EventType_EXTERNALSTORAGEMEASURED = MemoryEvent_EventType "E
   MemoryEvent_EventType_EXTERNALSTORAGEDETECTED,
   MemoryEvent_EventType_EXTERNALSTORAGEREMOVED,
   MemoryEvent_EventType_EXTERNALSTORAGEMEASURED,
-  MemoryEvent_EventType
-  #-}
+  MemoryEvent_EventType #-}
 
 -- | If package/name is set and the non-compliance reason is APP/NOT/INSTALLED or APP/NOT_UPDATED, the detailed reason the app can\'t be installed or updated.
-newtype NonComplianceDetail_InstallationFailureReason = NonComplianceDetail_InstallationFailureReason {fromNonComplianceDetail_InstallationFailureReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NonComplianceDetail_InstallationFailureReason = NonComplianceDetail_InstallationFailureReason { fromNonComplianceDetail_InstallationFailureReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern NonComplianceDetail_InstallationFailureReason_INSTALLATIONFAILUREREASONUNSPECIFIED :: NonComplianceDetail_InstallationFailureReason
@@ -2611,21 +2703,20 @@ pattern NonComplianceDetail_InstallationFailureReason_USERINVALID = NonComplianc
   NonComplianceDetail_InstallationFailureReason_NOLICENSESREMAINING,
   NonComplianceDetail_InstallationFailureReason_NOTENROLLED,
   NonComplianceDetail_InstallationFailureReason_USERINVALID,
-  NonComplianceDetail_InstallationFailureReason
-  #-}
+  NonComplianceDetail_InstallationFailureReason #-}
 
 -- | The reason the device is not in compliance with the setting.
-newtype NonComplianceDetail_NonComplianceReason = NonComplianceDetail_NonComplianceReason {fromNonComplianceDetail_NonComplianceReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NonComplianceDetail_NonComplianceReason = NonComplianceDetail_NonComplianceReason { fromNonComplianceDetail_NonComplianceReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern NonComplianceDetail_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED :: NonComplianceDetail_NonComplianceReason
@@ -2671,6 +2762,10 @@ pattern NonComplianceDetail_NonComplianceReason_APPINCOMPATIBLE = NonComplianceD
 pattern NonComplianceDetail_NonComplianceReason_APPNOTUPDATED :: NonComplianceDetail_NonComplianceReason
 pattern NonComplianceDetail_NonComplianceReason_APPNOTUPDATED = NonComplianceDetail_NonComplianceReason "APP_NOT_UPDATED"
 
+-- | The device is incompatible with the policy requirements.
+pattern NonComplianceDetail_NonComplianceReason_DEVICEINCOMPATIBLE :: NonComplianceDetail_NonComplianceReason
+pattern NonComplianceDetail_NonComplianceReason_DEVICEINCOMPATIBLE = NonComplianceDetail_NonComplianceReason "DEVICE_INCOMPATIBLE"
+
 {-# COMPLETE
   NonComplianceDetail_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
   NonComplianceDetail_NonComplianceReason_APILEVEL,
@@ -2683,21 +2778,21 @@ pattern NonComplianceDetail_NonComplianceReason_APPNOTUPDATED = NonComplianceDet
   NonComplianceDetail_NonComplianceReason_Pending,
   NonComplianceDetail_NonComplianceReason_APPINCOMPATIBLE,
   NonComplianceDetail_NonComplianceReason_APPNOTUPDATED,
-  NonComplianceDetail_NonComplianceReason
-  #-}
+  NonComplianceDetail_NonComplianceReason_DEVICEINCOMPATIBLE,
+  NonComplianceDetail_NonComplianceReason #-}
 
 -- | The policy-specific reason the device is not in compliance with the setting.
-newtype NonComplianceDetail_SpecificNonComplianceReason = NonComplianceDetail_SpecificNonComplianceReason {fromNonComplianceDetail_SpecificNonComplianceReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NonComplianceDetail_SpecificNonComplianceReason = NonComplianceDetail_SpecificNonComplianceReason { fromNonComplianceDetail_SpecificNonComplianceReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Specific non-compliance reason is not specified. Fields in specific/non/compliance_context are not set.
 pattern NonComplianceDetail_SpecificNonComplianceReason_SPECIFICNONCOMPLIANCEREASONUNSPECIFIED :: NonComplianceDetail_SpecificNonComplianceReason
@@ -2730,21 +2825,20 @@ pattern NonComplianceDetail_SpecificNonComplianceReason_ONCWIFIAPILEVEL = NonCom
   NonComplianceDetail_SpecificNonComplianceReason_PASSWORDPOLICIESPASSWORDNOTSUFFICIENT,
   NonComplianceDetail_SpecificNonComplianceReason_ONCWIFIINVALIDVALUE,
   NonComplianceDetail_SpecificNonComplianceReason_ONCWIFIAPILEVEL,
-  NonComplianceDetail_SpecificNonComplianceReason
-  #-}
+  NonComplianceDetail_SpecificNonComplianceReason #-}
 
 -- | The reason the device is not in compliance with the setting. If not set, then this condition matches any reason.
-newtype NonComplianceDetailCondition_NonComplianceReason = NonComplianceDetailCondition_NonComplianceReason {fromNonComplianceDetailCondition_NonComplianceReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NonComplianceDetailCondition_NonComplianceReason = NonComplianceDetailCondition_NonComplianceReason { fromNonComplianceDetailCondition_NonComplianceReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is disallowed.
 pattern NonComplianceDetailCondition_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED :: NonComplianceDetailCondition_NonComplianceReason
@@ -2790,6 +2884,10 @@ pattern NonComplianceDetailCondition_NonComplianceReason_APPINCOMPATIBLE = NonCo
 pattern NonComplianceDetailCondition_NonComplianceReason_APPNOTUPDATED :: NonComplianceDetailCondition_NonComplianceReason
 pattern NonComplianceDetailCondition_NonComplianceReason_APPNOTUPDATED = NonComplianceDetailCondition_NonComplianceReason "APP_NOT_UPDATED"
 
+-- | The device is incompatible with the policy requirements.
+pattern NonComplianceDetailCondition_NonComplianceReason_DEVICEINCOMPATIBLE :: NonComplianceDetailCondition_NonComplianceReason
+pattern NonComplianceDetailCondition_NonComplianceReason_DEVICEINCOMPATIBLE = NonComplianceDetailCondition_NonComplianceReason "DEVICE_INCOMPATIBLE"
+
 {-# COMPLETE
   NonComplianceDetailCondition_NonComplianceReason_NONCOMPLIANCEREASONUNSPECIFIED,
   NonComplianceDetailCondition_NonComplianceReason_APILEVEL,
@@ -2802,21 +2900,21 @@ pattern NonComplianceDetailCondition_NonComplianceReason_APPNOTUPDATED = NonComp
   NonComplianceDetailCondition_NonComplianceReason_Pending,
   NonComplianceDetailCondition_NonComplianceReason_APPINCOMPATIBLE,
   NonComplianceDetailCondition_NonComplianceReason_APPNOTUPDATED,
-  NonComplianceDetailCondition_NonComplianceReason
-  #-}
+  NonComplianceDetailCondition_NonComplianceReason_DEVICEINCOMPATIBLE,
+  NonComplianceDetailCondition_NonComplianceReason #-}
 
 -- | Verified Boot state.
-newtype OsStartupEvent_VerifiedBootState = OsStartupEvent_VerifiedBootState {fromOsStartupEvent_VerifiedBootState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype OsStartupEvent_VerifiedBootState = OsStartupEvent_VerifiedBootState { fromOsStartupEvent_VerifiedBootState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown value.
 pattern OsStartupEvent_VerifiedBootState_VERIFIEDBOOTSTATEUNSPECIFIED :: OsStartupEvent_VerifiedBootState
@@ -2839,21 +2937,20 @@ pattern OsStartupEvent_VerifiedBootState_Orange = OsStartupEvent_VerifiedBootSta
   OsStartupEvent_VerifiedBootState_Green,
   OsStartupEvent_VerifiedBootState_Yellow,
   OsStartupEvent_VerifiedBootState_Orange,
-  OsStartupEvent_VerifiedBootState
-  #-}
+  OsStartupEvent_VerifiedBootState #-}
 
 -- | dm-verity mode.
-newtype OsStartupEvent_VerityMode = OsStartupEvent_VerityMode {fromOsStartupEvent_VerityMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype OsStartupEvent_VerityMode = OsStartupEvent_VerityMode { fromOsStartupEvent_VerityMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown value.
 pattern OsStartupEvent_VerityMode_DMVERITYMODEUNSPECIFIED :: OsStartupEvent_VerityMode
@@ -2876,21 +2973,20 @@ pattern OsStartupEvent_VerityMode_Disabled = OsStartupEvent_VerityMode "DISABLED
   OsStartupEvent_VerityMode_Enforcing,
   OsStartupEvent_VerityMode_IOERROR,
   OsStartupEvent_VerityMode_Disabled,
-  OsStartupEvent_VerityMode
-  #-}
+  OsStartupEvent_VerityMode #-}
 
 -- | The scope of non-compliant password.
-newtype PasswordPoliciesContext_PasswordPolicyScope = PasswordPoliciesContext_PasswordPolicyScope {fromPasswordPoliciesContext_PasswordPolicyScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PasswordPoliciesContext_PasswordPolicyScope = PasswordPoliciesContext_PasswordPolicyScope { fromPasswordPoliciesContext_PasswordPolicyScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The scope is unspecified. The password requirements are applied to the work profile for work profile devices and the whole device for fully managed or dedicated devices.
 pattern PasswordPoliciesContext_PasswordPolicyScope_SCOPEUNSPECIFIED :: PasswordPoliciesContext_PasswordPolicyScope
@@ -2908,21 +3004,20 @@ pattern PasswordPoliciesContext_PasswordPolicyScope_SCOPEPROFILE = PasswordPolic
   PasswordPoliciesContext_PasswordPolicyScope_SCOPEUNSPECIFIED,
   PasswordPoliciesContext_PasswordPolicyScope_SCOPEDEVICE,
   PasswordPoliciesContext_PasswordPolicyScope_SCOPEPROFILE,
-  PasswordPoliciesContext_PasswordPolicyScope
-  #-}
+  PasswordPoliciesContext_PasswordPolicyScope #-}
 
 -- | The required password quality.
-newtype PasswordRequirements_PasswordQuality = PasswordRequirements_PasswordQuality {fromPasswordRequirements_PasswordQuality :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PasswordRequirements_PasswordQuality = PasswordRequirements_PasswordQuality { fromPasswordRequirements_PasswordQuality :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | There are no password requirements.
 pattern PasswordRequirements_PasswordQuality_PASSWORDQUALITYUNSPECIFIED :: PasswordRequirements_PasswordQuality
@@ -2980,21 +3075,20 @@ pattern PasswordRequirements_PasswordQuality_COMPLEXITYHIGH = PasswordRequiremen
   PasswordRequirements_PasswordQuality_COMPLEXITYLOW,
   PasswordRequirements_PasswordQuality_COMPLEXITYMEDIUM,
   PasswordRequirements_PasswordQuality_COMPLEXITYHIGH,
-  PasswordRequirements_PasswordQuality
-  #-}
+  PasswordRequirements_PasswordQuality #-}
 
 -- | The scope that the password requirement applies to.
-newtype PasswordRequirements_PasswordScope = PasswordRequirements_PasswordScope {fromPasswordRequirements_PasswordScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PasswordRequirements_PasswordScope = PasswordRequirements_PasswordScope { fromPasswordRequirements_PasswordScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The scope is unspecified. The password requirements are applied to the work profile for work profile devices and the whole device for fully managed or dedicated devices.
 pattern PasswordRequirements_PasswordScope_SCOPEUNSPECIFIED :: PasswordRequirements_PasswordScope
@@ -3012,21 +3106,20 @@ pattern PasswordRequirements_PasswordScope_SCOPEPROFILE = PasswordRequirements_P
   PasswordRequirements_PasswordScope_SCOPEUNSPECIFIED,
   PasswordRequirements_PasswordScope_SCOPEDEVICE,
   PasswordRequirements_PasswordScope_SCOPEPROFILE,
-  PasswordRequirements_PasswordScope
-  #-}
+  PasswordRequirements_PasswordScope #-}
 
 -- | The length of time after a device or work profile is unlocked using a strong form of authentication (password, PIN, pattern) that it can be unlocked using any other authentication method (e.g. fingerprint, trust agents, face). After the specified time period elapses, only strong forms of authentication can be used to unlock the device or work profile.
-newtype PasswordRequirements_RequirePasswordUnlock = PasswordRequirements_RequirePasswordUnlock {fromPasswordRequirements_RequirePasswordUnlock :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PasswordRequirements_RequirePasswordUnlock = PasswordRequirements_RequirePasswordUnlock { fromPasswordRequirements_RequirePasswordUnlock :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to USE/DEFAULT/DEVICE_TIMEOUT.
 pattern PasswordRequirements_RequirePasswordUnlock_REQUIREPASSWORDUNLOCKUNSPECIFIED :: PasswordRequirements_RequirePasswordUnlock
@@ -3044,21 +3137,20 @@ pattern PasswordRequirements_RequirePasswordUnlock_REQUIREEVERYDAY = PasswordReq
   PasswordRequirements_RequirePasswordUnlock_REQUIREPASSWORDUNLOCKUNSPECIFIED,
   PasswordRequirements_RequirePasswordUnlock_USEDEFAULTDEVICETIMEOUT,
   PasswordRequirements_RequirePasswordUnlock_REQUIREEVERYDAY,
-  PasswordRequirements_RequirePasswordUnlock
-  #-}
+  PasswordRequirements_RequirePasswordUnlock #-}
 
 -- | Controls whether a unified lock is allowed for the device and the work profile, on devices running Android 9 and above with a work profile. This can be set only if password/scope is set to SCOPE/PROFILE, the policy will be rejected otherwise. If user has not set a separate work lock and this field is set to REQUIRE/SEPARATE/WORK/LOCK, a NonComplianceDetail is reported with nonComplianceReason set to USER/ACTION.
-newtype PasswordRequirements_UnifiedLockSettings = PasswordRequirements_UnifiedLockSettings {fromPasswordRequirements_UnifiedLockSettings :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PasswordRequirements_UnifiedLockSettings = PasswordRequirements_UnifiedLockSettings { fromPasswordRequirements_UnifiedLockSettings :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to ALLOW/UNIFIED/WORK/AND/PERSONAL_LOCK.
 pattern PasswordRequirements_UnifiedLockSettings_UNIFIEDLOCKSETTINGSUNSPECIFIED :: PasswordRequirements_UnifiedLockSettings
@@ -3076,21 +3168,20 @@ pattern PasswordRequirements_UnifiedLockSettings_REQUIRESEPARATEWORKLOCK = Passw
   PasswordRequirements_UnifiedLockSettings_UNIFIEDLOCKSETTINGSUNSPECIFIED,
   PasswordRequirements_UnifiedLockSettings_ALLOWUNIFIEDWORKANDPERSONALLOCK,
   PasswordRequirements_UnifiedLockSettings_REQUIRESEPARATEWORKLOCK,
-  PasswordRequirements_UnifiedLockSettings
-  #-}
+  PasswordRequirements_UnifiedLockSettings #-}
 
 -- | The result of an attempt to clear the data of a single app.
-newtype PerAppResult_ClearingResult = PerAppResult_ClearingResult {fromPerAppResult_ClearingResult :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PerAppResult_ClearingResult = PerAppResult_ClearingResult { fromPerAppResult_ClearingResult :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified result.
 pattern PerAppResult_ClearingResult_CLEARINGRESULTUNSPECIFIED :: PerAppResult_ClearingResult
@@ -3118,21 +3209,20 @@ pattern PerAppResult_ClearingResult_APILEVEL = PerAppResult_ClearingResult "API_
   PerAppResult_ClearingResult_APPNOTFOUND,
   PerAppResult_ClearingResult_APPPROTECTED,
   PerAppResult_ClearingResult_APILEVEL,
-  PerAppResult_ClearingResult
-  #-}
+  PerAppResult_ClearingResult #-}
 
 -- | The policy for granting the permission.
-newtype PermissionGrant_Policy = PermissionGrant_Policy {fromPermissionGrant_Policy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PermissionGrant_Policy = PermissionGrant_Policy { fromPermissionGrant_Policy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Policy not specified. If no policy is specified for a permission at any level, then the PROMPT behavior is used by default.
 pattern PermissionGrant_Policy_PERMISSIONPOLICYUNSPECIFIED :: PermissionGrant_Policy
@@ -3155,21 +3245,20 @@ pattern PermissionGrant_Policy_Deny = PermissionGrant_Policy "DENY"
   PermissionGrant_Policy_Prompt,
   PermissionGrant_Policy_Grant,
   PermissionGrant_Policy_Deny,
-  PermissionGrant_Policy
-  #-}
+  PermissionGrant_Policy #-}
 
 -- | The type of installation to perform.
-newtype PersonalApplicationPolicy_InstallType = PersonalApplicationPolicy_InstallType {fromPersonalApplicationPolicy_InstallType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PersonalApplicationPolicy_InstallType = PersonalApplicationPolicy_InstallType { fromPersonalApplicationPolicy_InstallType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to AVAILABLE.
 pattern PersonalApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED :: PersonalApplicationPolicy_InstallType
@@ -3187,21 +3276,20 @@ pattern PersonalApplicationPolicy_InstallType_Available = PersonalApplicationPol
   PersonalApplicationPolicy_InstallType_INSTALLTYPEUNSPECIFIED,
   PersonalApplicationPolicy_InstallType_Blocked,
   PersonalApplicationPolicy_InstallType_Available,
-  PersonalApplicationPolicy_InstallType
-  #-}
+  PersonalApplicationPolicy_InstallType #-}
 
 -- | Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
-newtype PersonalUsagePolicies_PersonalPlayStoreMode = PersonalUsagePolicies_PersonalPlayStoreMode {fromPersonalUsagePolicies_PersonalPlayStoreMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PersonalUsagePolicies_PersonalPlayStoreMode = PersonalUsagePolicies_PersonalPlayStoreMode { fromPersonalUsagePolicies_PersonalPlayStoreMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to BLOCKLIST.
 pattern PersonalUsagePolicies_PersonalPlayStoreMode_PLAYSTOREMODEUNSPECIFIED :: PersonalUsagePolicies_PersonalPlayStoreMode
@@ -3224,20 +3312,19 @@ pattern PersonalUsagePolicies_PersonalPlayStoreMode_Allowlist = PersonalUsagePol
   PersonalUsagePolicies_PersonalPlayStoreMode_Blacklist,
   PersonalUsagePolicies_PersonalPlayStoreMode_Blocklist,
   PersonalUsagePolicies_PersonalPlayStoreMode_Allowlist,
-  PersonalUsagePolicies_PersonalPlayStoreMode
-  #-}
+  PersonalUsagePolicies_PersonalPlayStoreMode #-}
 
-newtype Policy_AndroidDevicePolicyTracksItem = Policy_AndroidDevicePolicyTracksItem {fromPolicy_AndroidDevicePolicyTracksItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_AndroidDevicePolicyTracksItem = Policy_AndroidDevicePolicyTracksItem { fromPolicy_AndroidDevicePolicyTracksItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern Policy_AndroidDevicePolicyTracksItem_APPTRACKUNSPECIFIED :: Policy_AndroidDevicePolicyTracksItem
@@ -3255,21 +3342,20 @@ pattern Policy_AndroidDevicePolicyTracksItem_Beta = Policy_AndroidDevicePolicyTr
   Policy_AndroidDevicePolicyTracksItem_APPTRACKUNSPECIFIED,
   Policy_AndroidDevicePolicyTracksItem_Production,
   Policy_AndroidDevicePolicyTracksItem_Beta,
-  Policy_AndroidDevicePolicyTracksItem
-  #-}
+  Policy_AndroidDevicePolicyTracksItem #-}
 
--- | Deprecated. Use autoUpdateMode instead.When autoUpdateMode is set to AUTO/UPDATE/POSTPONED or AUTO/UPDATE/HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
-newtype Policy_AppAutoUpdatePolicy = Policy_AppAutoUpdatePolicy {fromPolicy_AppAutoUpdatePolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+-- | Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency.When autoUpdateMode is set to AUTO/UPDATE/POSTPONED or AUTO/UPDATE/HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
+newtype Policy_AppAutoUpdatePolicy = Policy_AppAutoUpdatePolicy { fromPolicy_AppAutoUpdatePolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The auto-update policy is not set. Equivalent to CHOICE/TO/THE_USER.
 pattern Policy_AppAutoUpdatePolicy_APPAUTOUPDATEPOLICYUNSPECIFIED :: Policy_AppAutoUpdatePolicy
@@ -3297,21 +3383,20 @@ pattern Policy_AppAutoUpdatePolicy_Always = Policy_AppAutoUpdatePolicy "ALWAYS"
   Policy_AppAutoUpdatePolicy_Never,
   Policy_AppAutoUpdatePolicy_WIFIONLY,
   Policy_AppAutoUpdatePolicy_Always,
-  Policy_AppAutoUpdatePolicy
-  #-}
+  Policy_AppAutoUpdatePolicy #-}
 
 -- | Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
-newtype Policy_AutoDateAndTimeZone = Policy_AutoDateAndTimeZone {fromPolicy_AutoDateAndTimeZone :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_AutoDateAndTimeZone = Policy_AutoDateAndTimeZone { fromPolicy_AutoDateAndTimeZone :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to AUTO/DATE/AND/TIME/ZONE/USER/CHOICE.
 pattern Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUNSPECIFIED :: Policy_AutoDateAndTimeZone
@@ -3329,21 +3414,20 @@ pattern Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEENFORCED = Policy_AutoDate
   Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUNSPECIFIED,
   Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEUSERCHOICE,
   Policy_AutoDateAndTimeZone_AUTODATEANDTIMEZONEENFORCED,
-  Policy_AutoDateAndTimeZone
-  #-}
+  Policy_AutoDateAndTimeZone #-}
 
 -- | Controls the use of the camera and whether the user has access to the camera access toggle.
-newtype Policy_CameraAccess = Policy_CameraAccess {fromPolicy_CameraAccess :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_CameraAccess = Policy_CameraAccess { fromPolicy_CameraAccess :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If camera/disabled is true, this is equivalent to CAMERA/ACCESS/DISABLED. Otherwise, this is equivalent to CAMERA/ACCESS/USER/CHOICE.
 pattern Policy_CameraAccess_CAMERAACCESSUNSPECIFIED :: Policy_CameraAccess
@@ -3366,21 +3450,20 @@ pattern Policy_CameraAccess_CAMERAACCESSENFORCED = Policy_CameraAccess "CAMERA_A
   Policy_CameraAccess_CAMERAACCESSUSERCHOICE,
   Policy_CameraAccess_CAMERAACCESSDISABLED,
   Policy_CameraAccess_CAMERAACCESSENFORCED,
-  Policy_CameraAccess
-  #-}
+  Policy_CameraAccess #-}
 
 -- | The default permission policy for runtime permission requests.
-newtype Policy_DefaultPermissionPolicy = Policy_DefaultPermissionPolicy {fromPolicy_DefaultPermissionPolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_DefaultPermissionPolicy = Policy_DefaultPermissionPolicy { fromPolicy_DefaultPermissionPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Policy not specified. If no policy is specified for a permission at any level, then the PROMPT behavior is used by default.
 pattern Policy_DefaultPermissionPolicy_PERMISSIONPOLICYUNSPECIFIED :: Policy_DefaultPermissionPolicy
@@ -3403,21 +3486,20 @@ pattern Policy_DefaultPermissionPolicy_Deny = Policy_DefaultPermissionPolicy "DE
   Policy_DefaultPermissionPolicy_Prompt,
   Policy_DefaultPermissionPolicy_Grant,
   Policy_DefaultPermissionPolicy_Deny,
-  Policy_DefaultPermissionPolicy
-  #-}
+  Policy_DefaultPermissionPolicy #-}
 
 -- | Whether encryption is enabled
-newtype Policy_EncryptionPolicy = Policy_EncryptionPolicy {fromPolicy_EncryptionPolicy :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_EncryptionPolicy = Policy_EncryptionPolicy { fromPolicy_EncryptionPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored, i.e. no encryption required
 pattern Policy_EncryptionPolicy_ENCRYPTIONPOLICYUNSPECIFIED :: Policy_EncryptionPolicy
@@ -3435,20 +3517,19 @@ pattern Policy_EncryptionPolicy_ENABLEDWITHPASSWORD = Policy_EncryptionPolicy "E
   Policy_EncryptionPolicy_ENCRYPTIONPOLICYUNSPECIFIED,
   Policy_EncryptionPolicy_ENABLEDWITHOUTPASSWORD,
   Policy_EncryptionPolicy_ENABLEDWITHPASSWORD,
-  Policy_EncryptionPolicy
-  #-}
+  Policy_EncryptionPolicy #-}
 
-newtype Policy_KeyguardDisabledFeaturesItem = Policy_KeyguardDisabledFeaturesItem {fromPolicy_KeyguardDisabledFeaturesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_KeyguardDisabledFeaturesItem = Policy_KeyguardDisabledFeaturesItem { fromPolicy_KeyguardDisabledFeaturesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern Policy_KeyguardDisabledFeaturesItem_KEYGUARDDISABLEDFEATUREUNSPECIFIED :: Policy_KeyguardDisabledFeaturesItem
@@ -3506,21 +3587,20 @@ pattern Policy_KeyguardDisabledFeaturesItem_ALLFEATURES = Policy_KeyguardDisable
   Policy_KeyguardDisabledFeaturesItem_Iris,
   Policy_KeyguardDisabledFeaturesItem_Biometrics,
   Policy_KeyguardDisabledFeaturesItem_ALLFEATURES,
-  Policy_KeyguardDisabledFeaturesItem
-  #-}
+  Policy_KeyguardDisabledFeaturesItem #-}
 
 -- | The degree of location detection enabled.
-newtype Policy_LocationMode = Policy_LocationMode {fromPolicy_LocationMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_LocationMode = Policy_LocationMode { fromPolicy_LocationMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Defaults to LOCATION/USER/CHOICE.
 pattern Policy_LocationMode_LOCATIONMODEUNSPECIFIED :: Policy_LocationMode
@@ -3563,21 +3643,20 @@ pattern Policy_LocationMode_LOCATIONDISABLED = Policy_LocationMode "LOCATION_DIS
   Policy_LocationMode_LOCATIONUSERCHOICE,
   Policy_LocationMode_LOCATIONENFORCED,
   Policy_LocationMode_LOCATIONDISABLED,
-  Policy_LocationMode
-  #-}
+  Policy_LocationMode #-}
 
 -- | Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices.
-newtype Policy_MicrophoneAccess = Policy_MicrophoneAccess {fromPolicy_MicrophoneAccess :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_MicrophoneAccess = Policy_MicrophoneAccess { fromPolicy_MicrophoneAccess :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If unmute/microphone/disabled is true, this is equivalent to MICROPHONE/ACCESS/DISABLED. Otherwise, this is equivalent to MICROPHONE/ACCESS/USER_CHOICE.
 pattern Policy_MicrophoneAccess_MICROPHONEACCESSUNSPECIFIED :: Policy_MicrophoneAccess
@@ -3600,21 +3679,20 @@ pattern Policy_MicrophoneAccess_MICROPHONEACCESSENFORCED = Policy_MicrophoneAcce
   Policy_MicrophoneAccess_MICROPHONEACCESSUSERCHOICE,
   Policy_MicrophoneAccess_MICROPHONEACCESSDISABLED,
   Policy_MicrophoneAccess_MICROPHONEACCESSENFORCED,
-  Policy_MicrophoneAccess
-  #-}
+  Policy_MicrophoneAccess #-}
 
 -- | This mode controls which apps are available to the user in the Play Store and the behavior on the device when apps are removed from the policy.
-newtype Policy_PlayStoreMode = Policy_PlayStoreMode {fromPolicy_PlayStoreMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_PlayStoreMode = Policy_PlayStoreMode { fromPolicy_PlayStoreMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to WHITELIST.
 pattern Policy_PlayStoreMode_PLAYSTOREMODEUNSPECIFIED :: Policy_PlayStoreMode
@@ -3632,21 +3710,20 @@ pattern Policy_PlayStoreMode_Blacklist = Policy_PlayStoreMode "BLACKLIST"
   Policy_PlayStoreMode_PLAYSTOREMODEUNSPECIFIED,
   Policy_PlayStoreMode_Whitelist,
   Policy_PlayStoreMode_Blacklist,
-  Policy_PlayStoreMode
-  #-}
+  Policy_PlayStoreMode #-}
 
 -- | Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees\' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices.
-newtype Policy_PreferentialNetworkService = Policy_PreferentialNetworkService {fromPolicy_PreferentialNetworkService :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_PreferentialNetworkService = Policy_PreferentialNetworkService { fromPolicy_PreferentialNetworkService :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. Defaults to PREFERENTIAL/NETWORK/SERVICES_DISABLED.
 pattern Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEUNSPECIFIED :: Policy_PreferentialNetworkService
@@ -3664,20 +3741,19 @@ pattern Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEENABLED = Po
   Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEUNSPECIFIED,
   Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEDISABLED,
   Policy_PreferentialNetworkService_PREFERENTIALNETWORKSERVICEENABLED,
-  Policy_PreferentialNetworkService
-  #-}
+  Policy_PreferentialNetworkService #-}
 
-newtype Policy_StayOnPluggedModesItem = Policy_StayOnPluggedModesItem {fromPolicy_StayOnPluggedModesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Policy_StayOnPluggedModesItem = Policy_StayOnPluggedModesItem { fromPolicy_StayOnPluggedModesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern Policy_StayOnPluggedModesItem_BATTERYPLUGGEDMODEUNSPECIFIED :: Policy_StayOnPluggedModesItem
@@ -3700,21 +3776,20 @@ pattern Policy_StayOnPluggedModesItem_Wireless = Policy_StayOnPluggedModesItem "
   Policy_StayOnPluggedModesItem_AC,
   Policy_StayOnPluggedModesItem_Usb,
   Policy_StayOnPluggedModesItem_Wireless,
-  Policy_StayOnPluggedModesItem
-  #-}
+  Policy_StayOnPluggedModesItem #-}
 
 -- | A specific security risk that negatively affects the security posture of the device.
-newtype PostureDetail_SecurityRisk = PostureDetail_SecurityRisk {fromPostureDetail_SecurityRisk :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PostureDetail_SecurityRisk = PostureDetail_SecurityRisk { fromPostureDetail_SecurityRisk :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PostureDetail_SecurityRisk_SECURITYRISKUNSPECIFIED :: PostureDetail_SecurityRisk
@@ -3737,21 +3812,20 @@ pattern PostureDetail_SecurityRisk_HARDWAREBACKEDEVALUATIONFAILED = PostureDetai
   PostureDetail_SecurityRisk_UNKNOWNOS,
   PostureDetail_SecurityRisk_COMPROMISEDOS,
   PostureDetail_SecurityRisk_HARDWAREBACKEDEVALUATIONFAILED,
-  PostureDetail_SecurityRisk
-  #-}
+  PostureDetail_SecurityRisk #-}
 
 -- | Event type.
-newtype PowerManagementEvent_EventType = PowerManagementEvent_EventType {fromPowerManagementEvent_EventType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PowerManagementEvent_EventType = PowerManagementEvent_EventType { fromPowerManagementEvent_EventType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. No events have this type.
 pattern PowerManagementEvent_EventType_POWERMANAGEMENTEVENTTYPEUNSPECIFIED :: PowerManagementEvent_EventType
@@ -3794,21 +3868,20 @@ pattern PowerManagementEvent_EventType_Shutdown = PowerManagementEvent_EventType
   PowerManagementEvent_EventType_BATTERYOKAY,
   PowerManagementEvent_EventType_BOOTCOMPLETED,
   PowerManagementEvent_EventType_Shutdown,
-  PowerManagementEvent_EventType
-  #-}
+  PowerManagementEvent_EventType #-}
 
 -- | Device\'s security posture value.
-newtype SecurityPosture_DevicePosture = SecurityPosture_DevicePosture {fromSecurityPosture_DevicePosture :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SecurityPosture_DevicePosture = SecurityPosture_DevicePosture { fromSecurityPosture_DevicePosture :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. There is no posture detail for this posture value.
 pattern SecurityPosture_DevicePosture_POSTUREUNSPECIFIED :: SecurityPosture_DevicePosture
@@ -3831,21 +3904,20 @@ pattern SecurityPosture_DevicePosture_POTENTIALLYCOMPROMISED = SecurityPosture_D
   SecurityPosture_DevicePosture_Secure',
   SecurityPosture_DevicePosture_ATRISK,
   SecurityPosture_DevicePosture_POTENTIALLYCOMPROMISED,
-  SecurityPosture_DevicePosture
-  #-}
+  SecurityPosture_DevicePosture #-}
 
 -- | Controls whether personal usage is allowed on a device provisioned with this enrollment token.For company-owned devices: Enabling personal usage allows the user to set up a work profile on the device. Disabling personal usage requires the user provision the device as a fully managed device.For personally-owned devices: Enabling personal usage allows the user to set up a work profile on the device. Disabling personal usage will prevent the device from provisioning. Personal usage cannot be disabled on personally-owned device.
-newtype SigninDetail_AllowPersonalUsage = SigninDetail_AllowPersonalUsage {fromSigninDetail_AllowPersonalUsage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SigninDetail_AllowPersonalUsage = SigninDetail_AllowPersonalUsage { fromSigninDetail_AllowPersonalUsage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Personal usage restriction is not specified
 pattern SigninDetail_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED :: SigninDetail_AllowPersonalUsage
@@ -3863,21 +3935,20 @@ pattern SigninDetail_AllowPersonalUsage_PERSONALUSAGEDISALLOWED = SigninDetail_A
   SigninDetail_AllowPersonalUsage_ALLOWPERSONALUSAGEUNSPECIFIED,
   SigninDetail_AllowPersonalUsage_PERSONALUSAGEALLOWED,
   SigninDetail_AllowPersonalUsage_PERSONALUSAGEDISALLOWED,
-  SigninDetail_AllowPersonalUsage
-  #-}
+  SigninDetail_AllowPersonalUsage #-}
 
 -- | The type of system update to configure.
-newtype SystemUpdate_Type = SystemUpdate_Type {fromSystemUpdate_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SystemUpdate_Type = SystemUpdate_Type { fromSystemUpdate_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Follow the default update behavior for the device, which typically requires the user to accept system updates.
 pattern SystemUpdate_Type_SYSTEMUPDATETYPEUNSPECIFIED :: SystemUpdate_Type
@@ -3900,21 +3971,20 @@ pattern SystemUpdate_Type_Postpone = SystemUpdate_Type "POSTPONE"
   SystemUpdate_Type_Automatic,
   SystemUpdate_Type_Windowed,
   SystemUpdate_Type_Postpone,
-  SystemUpdate_Type
-  #-}
+  SystemUpdate_Type #-}
 
 -- | The status of an update: whether an update exists and what type it is.
-newtype SystemUpdateInfo_UpdateStatus = SystemUpdateInfo_UpdateStatus {fromSystemUpdateInfo_UpdateStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SystemUpdateInfo_UpdateStatus = SystemUpdateInfo_UpdateStatus { fromSystemUpdateInfo_UpdateStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | It is unknown whether there is a pending system update. This happens when, for example, the device API level is less than 26, or if the version of Android Device Policy is outdated.
 pattern SystemUpdateInfo_UpdateStatus_UPDATESTATUSUNKNOWN :: SystemUpdateInfo_UpdateStatus
@@ -3942,20 +4012,19 @@ pattern SystemUpdateInfo_UpdateStatus_OSUPDATEAVAILABLE = SystemUpdateInfo_Updat
   SystemUpdateInfo_UpdateStatus_UNKNOWNUPDATEAVAILABLE,
   SystemUpdateInfo_UpdateStatus_SECURITYUPDATEAVAILABLE,
   SystemUpdateInfo_UpdateStatus_OSUPDATEAVAILABLE,
-  SystemUpdateInfo_UpdateStatus
-  #-}
+  SystemUpdateInfo_UpdateStatus #-}
 
-newtype UsageLog_EnabledLogTypesItem = UsageLog_EnabledLogTypesItem {fromUsageLog_EnabledLogTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UsageLog_EnabledLogTypesItem = UsageLog_EnabledLogTypesItem { fromUsageLog_EnabledLogTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is not used.
 pattern UsageLog_EnabledLogTypesItem_LOGTYPEUNSPECIFIED :: UsageLog_EnabledLogTypesItem
@@ -3973,20 +4042,19 @@ pattern UsageLog_EnabledLogTypesItem_NETWORKACTIVITYLOGS = UsageLog_EnabledLogTy
   UsageLog_EnabledLogTypesItem_LOGTYPEUNSPECIFIED,
   UsageLog_EnabledLogTypesItem_SECURITYLOGS,
   UsageLog_EnabledLogTypesItem_NETWORKACTIVITYLOGS,
-  UsageLog_EnabledLogTypesItem
-  #-}
+  UsageLog_EnabledLogTypesItem #-}
 
-newtype UsageLog_UploadOnCellularAllowedItem = UsageLog_UploadOnCellularAllowedItem {fromUsageLog_UploadOnCellularAllowedItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UsageLog_UploadOnCellularAllowedItem = UsageLog_UploadOnCellularAllowedItem { fromUsageLog_UploadOnCellularAllowedItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is not used.
 pattern UsageLog_UploadOnCellularAllowedItem_LOGTYPEUNSPECIFIED :: UsageLog_UploadOnCellularAllowedItem
@@ -4004,21 +4072,20 @@ pattern UsageLog_UploadOnCellularAllowedItem_NETWORKACTIVITYLOGS = UsageLog_Uplo
   UsageLog_UploadOnCellularAllowedItem_LOGTYPEUNSPECIFIED,
   UsageLog_UploadOnCellularAllowedItem_SECURITYLOGS,
   UsageLog_UploadOnCellularAllowedItem_NETWORKACTIVITYLOGS,
-  UsageLog_UploadOnCellularAllowedItem
-  #-}
+  UsageLog_UploadOnCellularAllowedItem #-}
 
 -- | The particular usage log event type that was reported on the device. Use this to determine which event field to access.
-newtype UsageLogEvent_EventType = UsageLogEvent_EventType {fromUsageLogEvent_EventType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UsageLogEvent_EventType = UsageLogEvent_EventType { fromUsageLogEvent_EventType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is not used
 pattern UsageLogEvent_EventType_EVENTTYPEUNSPECIFIED :: UsageLogEvent_EventType
@@ -4161,21 +4228,20 @@ pattern UsageLogEvent_EventType_Dns = UsageLogEvent_EventType "DNS"
   UsageLogEvent_EventType_WIPEFAILURE,
   UsageLogEvent_EventType_Connect,
   UsageLogEvent_EventType_Dns,
-  UsageLogEvent_EventType
-  #-}
+  UsageLogEvent_EventType #-}
 
 -- | The display mode of the web app.
-newtype WebApp_DisplayMode = WebApp_DisplayMode {fromWebApp_DisplayMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype WebApp_DisplayMode = WebApp_DisplayMode { fromWebApp_DisplayMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not used.
 pattern WebApp_DisplayMode_DISPLAYMODEUNSPECIFIED :: WebApp_DisplayMode
@@ -4198,20 +4264,19 @@ pattern WebApp_DisplayMode_FULLSCREEN = WebApp_DisplayMode "FULL_SCREEN"
   WebApp_DisplayMode_MINIMALUI,
   WebApp_DisplayMode_Standalone,
   WebApp_DisplayMode_FULLSCREEN,
-  WebApp_DisplayMode
-  #-}
+  WebApp_DisplayMode #-}
 
-newtype WebToken_EnabledFeaturesItem = WebToken_EnabledFeaturesItem {fromWebToken_EnabledFeaturesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype WebToken_EnabledFeaturesItem = WebToken_EnabledFeaturesItem { fromWebToken_EnabledFeaturesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified feature.
 pattern WebToken_EnabledFeaturesItem_FEATUREUNSPECIFIED :: WebToken_EnabledFeaturesItem
@@ -4249,20 +4314,19 @@ pattern WebToken_EnabledFeaturesItem_ZEROTOUCHCUSTOMERMANAGEMENT = WebToken_Enab
   WebToken_EnabledFeaturesItem_STOREBUILDER,
   WebToken_EnabledFeaturesItem_MANAGEDCONFIGURATIONS,
   WebToken_EnabledFeaturesItem_ZEROTOUCHCUSTOMERMANAGEMENT,
-  WebToken_EnabledFeaturesItem
-  #-}
+  WebToken_EnabledFeaturesItem #-}
 
-newtype WebToken_PermissionsItem = WebToken_PermissionsItem {fromWebToken_PermissionsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype WebToken_PermissionsItem = WebToken_PermissionsItem { fromWebToken_PermissionsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern WebToken_PermissionsItem_WEBTOKENPERMISSIONUNSPECIFIED :: WebToken_PermissionsItem
@@ -4275,21 +4339,20 @@ pattern WebToken_PermissionsItem_APPROVEAPPS = WebToken_PermissionsItem "APPROVE
 {-# COMPLETE
   WebToken_PermissionsItem_WEBTOKENPERMISSIONUNSPECIFIED,
   WebToken_PermissionsItem_APPROVEAPPS,
-  WebToken_PermissionsItem
-  #-}
+  WebToken_PermissionsItem #-}
 
 -- | Optional flags that control the device wiping behavior.
-newtype EnterprisesDevicesDeleteWipeDataFlags = EnterprisesDevicesDeleteWipeDataFlags {fromEnterprisesDevicesDeleteWipeDataFlags :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EnterprisesDevicesDeleteWipeDataFlags = EnterprisesDevicesDeleteWipeDataFlags { fromEnterprisesDevicesDeleteWipeDataFlags :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is ignored.
 pattern EnterprisesDevicesDeleteWipeDataFlags_WIPEDATAFLAGUNSPECIFIED :: EnterprisesDevicesDeleteWipeDataFlags
@@ -4307,21 +4370,20 @@ pattern EnterprisesDevicesDeleteWipeDataFlags_WIPEEXTERNALSTORAGE = EnterprisesD
   EnterprisesDevicesDeleteWipeDataFlags_WIPEDATAFLAGUNSPECIFIED,
   EnterprisesDevicesDeleteWipeDataFlags_PRESERVERESETPROTECTIONDATA,
   EnterprisesDevicesDeleteWipeDataFlags_WIPEEXTERNALSTORAGE,
-  EnterprisesDevicesDeleteWipeDataFlags
-  #-}
+  EnterprisesDevicesDeleteWipeDataFlags #-}
 
 -- | Specifies which Enterprise fields to return. This method only supports BASIC.
-newtype EnterprisesListView = EnterprisesListView {fromEnterprisesListView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EnterprisesListView = EnterprisesListView { fromEnterprisesListView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The API will default to the BASIC view for the List method.
 pattern EnterprisesListView_ENTERPRISEVIEWUNSPECIFIED :: EnterprisesListView
@@ -4334,5 +4396,4 @@ pattern EnterprisesListView_Basic = EnterprisesListView "BASIC"
 {-# COMPLETE
   EnterprisesListView_ENTERPRISEVIEWUNSPECIFIED,
   EnterprisesListView_Basic,
-  EnterprisesListView
-  #-}
+  EnterprisesListView #-}

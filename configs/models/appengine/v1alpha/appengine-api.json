@@ -6,11 +6,7 @@
           "description": "View and manage your applications deployed on Google App Engine"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/appengine/v1alpha/appengine-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/appengine/v1alpha/appengine-api.json
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
           "description": "View your data across Google Cloud services and see the email address of your Google Account"
@@ -891,11 +887,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/appengine/v1alpha/appengine-api.json
-  "revision": "20210410",
-=======
-  "revision": "20230306",
->>>>>>> upstream/main:configs/models/appengine/v1alpha/appengine-api.json
+  "revision": "20230501",
   "rootUrl": "https://appengine.googleapis.com/",
   "schemas": {
     "AuthorizedCertificate": {
@@ -950,7 +942,7 @@
       "type": "object"
     },
     "AuthorizedDomain": {
-      "description": "A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Webmaster Central (https://www.google.com/webmasters/verification/home).",
+      "description": "A domain that a user has been authorized to administer. To authorize use of a domain, verify ownership via Search Console (https://search.google.com/search-console/welcome).",
       "id": "AuthorizedDomain",
       "properties": {
         "id": {
@@ -1039,11 +1031,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/appengine/v1alpha/appengine-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for Empty is empty JSON object {}.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } ",
->>>>>>> upstream/main:configs/models/appengine/v1alpha/appengine-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -1159,7 +1147,7 @@
       "type": "object"
     },
     "Location": {
-      "description": "A resource that represents Google Cloud Platform location.",
+      "description": "A resource that represents a Google Cloud location.",
       "id": "Location",
       "properties": {
         "displayName": {

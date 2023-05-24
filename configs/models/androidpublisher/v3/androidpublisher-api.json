@@ -1844,6 +1844,96 @@
         }
       }
     },
+    "externaltransactions": {
+      "methods": {
+        "createexternaltransaction": {
+          "description": "Creates a new external transaction.",
+          "flatPath": "androidpublisher/v3/applications/{applicationsId}/externalTransactions",
+          "httpMethod": "POST",
+          "id": "androidpublisher.externaltransactions.createexternaltransaction",
+          "parameterOrder": [
+            "parent"
+          ],
+          "parameters": {
+            "externalTransactionId": {
+              "description": "Required. The id to use for the external transaction. Must be unique across all other transactions for the app. This value should be 1-63 characters and valid characters are /a-z0-9_-/. Do not use this field to store any Personally Identifiable Information (PII) such as emails. Attempting to store PII in this field may result in requests being blocked.",
+              "location": "query",
+              "type": "string"
+            },
+            "parent": {
+              "description": "Required. The parent resource where this external transaction will be created. Format: applications/{package_name}",
+              "location": "path",
+              "pattern": "^applications/[^/]+$",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "path": "androidpublisher/v3/{+parent}/externalTransactions",
+          "request": {
+            "$ref": "ExternalTransaction"
+          },
+          "response": {
+            "$ref": "ExternalTransaction"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ]
+        },
+        "getexternaltransaction": {
+          "description": "Gets an existing external transaction.",
+          "flatPath": "androidpublisher/v3/applications/{applicationsId}/externalTransactions/{externalTransactionsId}",
+          "httpMethod": "GET",
+          "id": "androidpublisher.externaltransactions.getexternaltransaction",
+          "parameterOrder": [
+            "name"
+          ],
+          "parameters": {
+            "name": {
+              "description": "Required. The name of the external transaction to retrieve. Format: applications/{package_name}/externalTransactions/{external_transaction}",
+              "location": "path",
+              "pattern": "^applications/[^/]+/externalTransactions/[^/]+$",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "path": "androidpublisher/v3/{+name}",
+          "response": {
+            "$ref": "ExternalTransaction"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ]
+        },
+        "refundexternaltransaction": {
+          "description": "Refunds or partially refunds an existing external transaction.",
+          "flatPath": "androidpublisher/v3/applications/{applicationsId}/externalTransactions/{externalTransactionsId}:refund",
+          "httpMethod": "POST",
+          "id": "androidpublisher.externaltransactions.refundexternaltransaction",
+          "parameterOrder": [
+            "name"
+          ],
+          "parameters": {
+            "name": {
+              "description": "Required. The name of the external transaction that will be refunded. Format: applications/{package_name}/externalTransactions/{external_transaction}",
+              "location": "path",
+              "pattern": "^applications/[^/]+/externalTransactions/[^/]+$",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "path": "androidpublisher/v3/{+name}:refund",
+          "request": {
+            "$ref": "RefundExternalTransactionRequest"
+          },
+          "response": {
+            "$ref": "ExternalTransaction"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/androidpublisher"
+          ]
+        }
+      }
+    },
     "generatedapks": {
       "methods": {
         "download": {
@@ -2009,7 +2099,7 @@
     "inappproducts": {
       "methods": {
         "delete": {
-          "description": "Deletes an in-app product (i.e. a managed product or a subscriptions).",
+          "description": "Deletes an in-app product (i.e. a managed product or a subscription).",
           "flatPath": "androidpublisher/v3/applications/{packageName}/inappproducts/{sku}",
           "httpMethod": "DELETE",
           "id": "androidpublisher.inappproducts.delete",
@@ -2068,7 +2158,7 @@
           ]
         },
         "insert": {
-          "description": "Creates an in-app product (i.e. a managed product or a subscriptions).",
+          "description": "Creates an in-app product (i.e. a managed product or a subscription).",
           "flatPath": "androidpublisher/v3/applications/{packageName}/inappproducts",
           "httpMethod": "POST",
           "id": "androidpublisher.inappproducts.insert",
@@ -2109,6 +2199,7 @@
           ],
           "parameters": {
             "maxResults": {
+              "deprecated": true,
               "description": "Deprecated and ignored. The page size is determined by the server.",
               "format": "uint32",
               "location": "query",
@@ -2121,7 +2212,8 @@
               "type": "string"
             },
             "startIndex": {
-              "description": "Deprecated and ignored. Set the `token` parameter to rertieve the next page.",
+              "deprecated": true,
+              "description": "Deprecated and ignored. Set the `token` parameter to retrieve the next page.",
               "format": "uint32",
               "location": "query",
               "type": "integer"
@@ -2141,7 +2233,7 @@
           ]
         },
         "patch": {
-          "description": "Patches an in-app product (i.e. a managed product or a subscriptions).",
+          "description": "Patches an in-app product (i.e. a managed product or a subscription).",
           "flatPath": "androidpublisher/v3/applications/{packageName}/inappproducts/{sku}",
           "httpMethod": "PATCH",
           "id": "androidpublisher.inappproducts.patch",
@@ -2180,7 +2272,7 @@
           ]
         },
         "update": {
-          "description": "Updates an in-app product (i.e. a managed product or a subscriptions).",
+          "description": "Updates an in-app product (i.e. a managed product or a subscription).",
           "flatPath": "androidpublisher/v3/applications/{packageName}/inappproducts/{sku}",
           "httpMethod": "PUT",
           "id": "androidpublisher.inappproducts.update",
@@ -2400,7 +2492,7 @@
                   "type": "string"
                 },
                 "regionsVersion.version": {
-                  "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                  "description": "Required. The latest version is 2022/02.",
                   "location": "query",
                   "type": "string"
                 }
@@ -2538,7 +2630,7 @@
                   "type": "string"
                 },
                 "regionsVersion.version": {
-                  "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                  "description": "Required. The latest version is 2022/02.",
                   "location": "query",
                   "type": "string"
                 },
@@ -2809,7 +2901,7 @@
                           "type": "string"
                         },
                         "regionsVersion.version": {
-                          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                          "description": "Required. The latest version is 2022/02.",
                           "location": "query",
                           "type": "string"
                         }
@@ -3046,7 +3138,7 @@
                           "type": "string"
                         },
                         "regionsVersion.version": {
-                          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                          "description": "Required. The latest version is 2022/02.",
                           "location": "query",
                           "type": "string"
                         },
@@ -3955,7 +4047,7 @@
       }
     }
   },
-  "revision": "20230330",
+  "revision": "20230523",
   "rootUrl": "https://androidpublisher.googleapis.com/",
   "schemas": {
     "AcquisitionTargetingRule": {
@@ -4753,6 +4845,122 @@
       },
       "type": "object"
     },
+    "ExternalSubscription": {
+      "description": "Details of an external subscription.",
+      "id": "ExternalSubscription",
+      "properties": {
+        "subscriptionType": {
+          "description": "Required. The type of the external subscription.",
+          "enum": [
+            "SUBSCRIPTION_TYPE_UNSPECIFIED",
+            "RECURRING",
+            "PREPAID"
+          ],
+          "enumDescriptions": [
+            "Unspecified, do not use.",
+            "This is a recurring subscription where the user is charged every billing cycle.",
+            "This is a prepaid subscription where the user pays up front."
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ExternalTransaction": {
+      "description": "The details of an external transaction.",
+      "id": "ExternalTransaction",
+      "properties": {
+        "createTime": {
+          "description": "Output only. The time when this transaction was created. This is the time when Google was notified of the transaction.",
+          "format": "google-datetime",
+          "readOnly": true,
+          "type": "string"
+        },
+        "currentPreTaxAmount": {
+          "$ref": "Price",
+          "description": "Output only. The current transaction amount before tax. This represents the current pre-tax amount including any refunds that may have been applied to this transaction.",
+          "readOnly": true
+        },
+        "currentTaxAmount": {
+          "$ref": "Price",
+          "description": "Output only. The current tax amount. This represents the current tax amount including any refunds that may have been applied to this transaction.",
+          "readOnly": true
+        },
+        "externalTransactionId": {
+          "description": "Output only. The id of this transaction. All transaction ids under the same package name must be unique. Set when creating the external transaction.",
+          "readOnly": true,
+          "type": "string"
+        },
+        "oneTimeTransaction": {
+          "$ref": "OneTimeExternalTransaction",
+          "description": "This is a one-time transaction and not part of a subscription."
+        },
+        "originalPreTaxAmount": {
+          "$ref": "Price",
+          "description": "Required. The original transaction amount before taxes. This represents the pre-tax amount originally notified to Google before any refunds were applied."
+        },
+        "originalTaxAmount": {
+          "$ref": "Price",
+          "description": "Required. The original tax amount. This represents the tax amount originally notified to Google before any refunds were applied."
+        },
+        "packageName": {
+          "description": "Output only. The resource name of the external transaction. The package name of the application the inapp products were sold (for example, 'com.some.app').",
+          "readOnly": true,
+          "type": "string"
+        },
+        "recurringTransaction": {
+          "$ref": "RecurringExternalTransaction",
+          "description": "This transaction is part of a recurring series of transactions."
+        },
+        "testPurchase": {
+          "$ref": "ExternalTransactionTestPurchase",
+          "description": "Output only. If set, this transaction was a test purchase. Google will not charge for a test transaction.",
+          "readOnly": true
+        },
+        "transactionState": {
+          "description": "Output only. The current state of the transaction.",
+          "enum": [
+            "TRANSACTION_STATE_UNSPECIFIED",
+            "TRANSACTION_REPORTED",
+            "TRANSACTION_CANCELED"
+          ],
+          "enumDescriptions": [
+            "Unspecified transaction state. Not used.",
+            "The transaction has been successfully reported to Google.",
+            "The transaction has been fully refunded."
+          ],
+          "readOnly": true,
+          "type": "string"
+        },
+        "transactionTime": {
+          "description": "Required. The time when the transaction was completed.",
+          "format": "google-datetime",
+          "type": "string"
+        },
+        "userTaxAddress": {
+          "$ref": "ExternalTransactionAddress",
+          "description": "Required. User address for tax computation."
+        }
+      },
+      "type": "object"
+    },
+    "ExternalTransactionAddress": {
+      "description": "User's address for the external transaction.",
+      "id": "ExternalTransactionAddress",
+      "properties": {
+        "regionCode": {
+          "description": "Required. Two letter region code based on ISO-3166-1 Alpha-2 (UN region codes).",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ExternalTransactionTestPurchase": {
+      "description": "Represents a transaction performed using a test account. These transactions will not be charged by Google.",
+      "id": "ExternalTransactionTestPurchase",
+      "properties": {},
+      "type": "object"
+    },
     "ExternallyHostedApk": {
       "description": "Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to organizations using Managed Play whose application is configured to restrict distribution to the organizations.",
       "id": "ExternallyHostedApk",
@@ -4834,6 +5042,12 @@
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "FullRefund": {
+      "description": "A full refund of the remaining amount of a transaction.",
+      "id": "FullRefund",
+      "properties": {},
       "type": "object"
     },
     "GeneratedApksListResponse": {
@@ -4979,7 +5193,8 @@
               "CAN_MANAGE_TRACK_USERS",
               "CAN_MANAGE_PUBLIC_LISTING",
               "CAN_MANAGE_DRAFT_APPS",
-              "CAN_MANAGE_ORDERS"
+              "CAN_MANAGE_ORDERS",
+              "CAN_MANAGE_APP_CONTENT"
             ],
             "enumDescriptions": [
               "Unknown or unspecified permission.",
@@ -4992,7 +5207,8 @@
               "Manage testing tracks and edit tester lists.",
               "Manage store presence.",
               "Edit and delete draft apps.",
-              "Manage orders and subscriptions."
+              "Manage orders and subscriptions.",
+              "Manage policy related pages."
             ],
             "type": "string"
           },
@@ -5486,6 +5702,17 @@
       },
       "type": "object"
     },
+    "OneTimeExternalTransaction": {
+      "description": "Represents a one-time transaction.",
+      "id": "OneTimeExternalTransaction",
+      "properties": {
+        "externalTransactionToken": {
+          "description": "Input only. Provided during the call to Create. Retrieved from the client when the alternative billing flow is launched.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "OtherRegionsBasePlanConfig": {
       "description": "Pricing information for any new locations Play may launch in.",
       "id": "OtherRegionsBasePlanConfig",
@@ -5569,6 +5796,21 @@
           "description": "Total number of results available on the backend ! The total number of results in the result set.",
           "format": "int32",
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "PartialRefund": {
+      "description": "A partial refund of a transaction.",
+      "id": "PartialRefund",
+      "properties": {
+        "refundId": {
+          "description": "Required. A unique id distinguishing this partial refund. If the refund is successful, subsequent refunds with the same id will fail. Must be unique across refunds for one individual transaction.",
+          "type": "string"
+        },
+        "refundPreTaxAmount": {
+          "$ref": "Price",
+          "description": "Required. The pre-tax amount of the partial refund. Should be less than the remaining pre-tax amount of the transaction."
         }
       },
       "type": "object"
@@ -5717,6 +5959,45 @@
       },
       "type": "object"
     },
+    "RecurringExternalTransaction": {
+      "description": "Represents a transaction that is part of a recurring series of payments. This can be a subscription or a one-time product with multiple payments (such as preorder).",
+      "id": "RecurringExternalTransaction",
+      "properties": {
+        "externalSubscription": {
+          "$ref": "ExternalSubscription",
+          "description": "Details of an external subscription."
+        },
+        "externalTransactionToken": {
+          "description": "Input only. Provided during the call to Create. Retrieved from the client when the alternative billing flow is launched. Required only for the initial purchase.",
+          "type": "string"
+        },
+        "initialExternalTransactionId": {
+          "description": "The external transaction id of the first transaction of this recurring series of transactions. For example, for a subscription this would be the transaction id of the first payment. Required when creating recurring external transactions.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RefundExternalTransactionRequest": {
+      "description": "A request to refund an existing external transaction.",
+      "id": "RefundExternalTransactionRequest",
+      "properties": {
+        "fullRefund": {
+          "$ref": "FullRefund",
+          "description": "A full-amount refund."
+        },
+        "partialRefund": {
+          "$ref": "PartialRefund",
+          "description": "A partial refund."
+        },
+        "refundTime": {
+          "description": "Required. The time that the transaction was refunded.",
+          "format": "google-datetime",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "RegionalBasePlanConfig": {
       "description": "Configuration for a base plan specific to a region.",
       "id": "RegionalBasePlanConfig",
@@ -5845,11 +6126,11 @@
       "type": "object"
     },
     "RegionsVersion": {
-      "description": "The version of the available regions being used for the specified resource.",
+      "description": "The version of the available regions being used for the specified resource. A string representing the version of available regions being used for the specified resource. Regional prices for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353).",
       "id": "RegionsVersion",
       "properties": {
         "version": {
-          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+          "description": "Required. The latest version is 2022/02.",
           "type": "string"
         }
       },
@@ -6835,7 +7116,8 @@
               "CAN_MANAGE_DRAFT_APPS_GLOBAL",
               "CAN_CREATE_MANAGED_PLAY_APPS_GLOBAL",
               "CAN_CHANGE_MANAGED_PLAY_SETTING_GLOBAL",
-              "CAN_MANAGE_ORDERS_GLOBAL"
+              "CAN_MANAGE_ORDERS_GLOBAL",
+              "CAN_MANAGE_APP_CONTENT_GLOBAL"
             ],
             "enumDescriptions": [
               "Unknown or unspecified permission.",
@@ -6852,7 +7134,8 @@
               "Create, edit, and delete draft apps.",
               "Create and publish private apps to your organization.",
               "Choose whether apps are public, or only available to your organization.",
-              "Manage orders and subscriptions."
+              "Manage orders and subscriptions.",
+              "Manage policy related pages on all apps for the developer."
             ],
             "type": "string"
           },

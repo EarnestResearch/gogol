@@ -6,11 +6,7 @@
           "description": "Apply machine learning models to reveal the structure and meaning of text"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/language/v1beta1/language-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/language/v1beta1/language-api.json
         }
       }
     }
@@ -193,11 +189,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/language/v1beta1/language-api.json
-  "revision": "20210319",
-=======
   "revision": "20221015",
->>>>>>> upstream/main:configs/models/language/v1beta1/language-api.json
   "rootUrl": "https://language.googleapis.com/",
   "schemas": {
     "AnalyzeEntitiesRequest": {
@@ -600,11 +592,7 @@
       "type": "object"
     },
     "Document": {
-<<<<<<< HEAD:gen/model/language/v1beta1/language-api.json
-      "description": "################################################################ # Represents the input to API methods.",
-=======
       "description": "Represents the input to API methods.",
->>>>>>> upstream/main:configs/models/language/v1beta1/language-api.json
       "id": "Document",
       "properties": {
         "content": {

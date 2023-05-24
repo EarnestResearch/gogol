@@ -158,11 +158,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/playcustomapp/v1/playcustomapp-api.json
-  "revision": "20201020",
-=======
   "revision": "20211022",
->>>>>>> upstream/main:configs/models/playcustomapp/v1/playcustomapp-api.json
   "rootUrl": "https://playcustomapp.googleapis.com/",
   "schemas": {
     "CustomApp": {
@@ -173,8 +169,6 @@
           "description": "Default listing language in BCP 47 format.",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/playcustomapp/v1/playcustomapp-api.json
-=======
         "organizations": {
           "description": "Organizations to which the custom app should be made available. If the request contains any organizations, then the app will be restricted to only these organizations. To support the organization linked to the developer account, the organization ID should be provided explicitly together with other organizations. If no organizations are provided, then the app is only available to the organization linked to the developer account.",
           "items": {
@@ -182,7 +176,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/playcustomapp/v1/playcustomapp-api.json
         "packageName": {
           "description": "Output only. Package name of the created Android app. Only present in the API response.",
           "readOnly": true,

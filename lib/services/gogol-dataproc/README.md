@@ -13,11 +13,7 @@
 
 ## Description
 
-<<<<<<< HEAD:gogol-debugger/README.md
-A client library for the Google Cloud Debugger.
-=======
 A client library for the Google Cloud Dataproc.
->>>>>>> upstream/main:lib/services/gogol-dataproc/README.md
 
 
 ## Contribute

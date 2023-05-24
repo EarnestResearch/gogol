@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Run.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * GoogleCloudRunV2Condition_ExecutionReason
     GoogleCloudRunV2Condition_ExecutionReason
-      ( GoogleCloudRunV2Condition_ExecutionReason_EXECUTIONREASONUNDEFINED,
+      (
+        GoogleCloudRunV2Condition_ExecutionReason_EXECUTIONREASONUNDEFINED,
         GoogleCloudRunV2Condition_ExecutionReason_JOBSTATUSSERVICEPOLLINGERROR,
         GoogleCloudRunV2Condition_ExecutionReason_NONZEROEXITCODE,
         GoogleCloudRunV2Condition_ExecutionReason_Cancelled,
@@ -45,7 +51,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Condition_Reason
     GoogleCloudRunV2Condition_Reason
-      ( GoogleCloudRunV2Condition_Reason_COMMONREASONUNDEFINED,
+      (
+        GoogleCloudRunV2Condition_Reason_COMMONREASONUNDEFINED,
         GoogleCloudRunV2Condition_Reason_Unknown,
         GoogleCloudRunV2Condition_Reason_REVISIONFAILED,
         GoogleCloudRunV2Condition_Reason_PROGRESSDEADLINEEXCEEDED,
@@ -65,7 +72,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Condition_RevisionReason
     GoogleCloudRunV2Condition_RevisionReason
-      ( GoogleCloudRunV2Condition_RevisionReason_REVISIONREASONUNDEFINED,
+      (
+        GoogleCloudRunV2Condition_RevisionReason_REVISIONREASONUNDEFINED,
         GoogleCloudRunV2Condition_RevisionReason_Pending,
         GoogleCloudRunV2Condition_RevisionReason_Reserve,
         GoogleCloudRunV2Condition_RevisionReason_Retired,
@@ -83,7 +91,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Condition_Severity
     GoogleCloudRunV2Condition_Severity
-      ( GoogleCloudRunV2Condition_Severity_SEVERITYUNSPECIFIED,
+      (
+        GoogleCloudRunV2Condition_Severity_SEVERITYUNSPECIFIED,
         GoogleCloudRunV2Condition_Severity_Error',
         GoogleCloudRunV2Condition_Severity_Warning,
         GoogleCloudRunV2Condition_Severity_Info,
@@ -92,7 +101,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Condition_State
     GoogleCloudRunV2Condition_State
-      ( GoogleCloudRunV2Condition_State_STATEUNSPECIFIED,
+      (
+        GoogleCloudRunV2Condition_State_STATEUNSPECIFIED,
         GoogleCloudRunV2Condition_State_CONDITIONPENDING,
         GoogleCloudRunV2Condition_State_CONDITIONRECONCILING,
         GoogleCloudRunV2Condition_State_CONDITIONFAILED,
@@ -100,9 +110,18 @@ module Gogol.Run.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudRunV2EmptyDirVolumeSource_Medium
+    GoogleCloudRunV2EmptyDirVolumeSource_Medium
+      (
+        GoogleCloudRunV2EmptyDirVolumeSource_Medium_MEDIUMUNSPECIFIED,
+        GoogleCloudRunV2EmptyDirVolumeSource_Medium_Memory,
+        ..
+      ),
+
     -- * GoogleCloudRunV2Execution_LaunchStage
     GoogleCloudRunV2Execution_LaunchStage
-      ( GoogleCloudRunV2Execution_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        GoogleCloudRunV2Execution_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         GoogleCloudRunV2Execution_LaunchStage_Unimplemented,
         GoogleCloudRunV2Execution_LaunchStage_Prelaunch,
         GoogleCloudRunV2Execution_LaunchStage_EARLYACCESS,
@@ -115,7 +134,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Job_LaunchStage
     GoogleCloudRunV2Job_LaunchStage
-      ( GoogleCloudRunV2Job_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        GoogleCloudRunV2Job_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         GoogleCloudRunV2Job_LaunchStage_Unimplemented,
         GoogleCloudRunV2Job_LaunchStage_Prelaunch,
         GoogleCloudRunV2Job_LaunchStage_EARLYACCESS,
@@ -128,7 +148,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Revision_EncryptionKeyRevocationAction
     GoogleCloudRunV2Revision_EncryptionKeyRevocationAction
-      ( GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_ENCRYPTIONKEYREVOCATIONACTIONUNSPECIFIED,
+      (
+        GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_ENCRYPTIONKEYREVOCATIONACTIONUNSPECIFIED,
         GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_PREVENTNEW,
         GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_Shutdown,
         ..
@@ -136,7 +157,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Revision_ExecutionEnvironment
     GoogleCloudRunV2Revision_ExecutionEnvironment
-      ( GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
+      (
+        GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
         GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
         GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
         ..
@@ -144,7 +166,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Revision_LaunchStage
     GoogleCloudRunV2Revision_LaunchStage
-      ( GoogleCloudRunV2Revision_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        GoogleCloudRunV2Revision_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         GoogleCloudRunV2Revision_LaunchStage_Unimplemented,
         GoogleCloudRunV2Revision_LaunchStage_Prelaunch,
         GoogleCloudRunV2Revision_LaunchStage_EARLYACCESS,
@@ -157,7 +180,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment
     GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment
-      ( GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
+      (
+        GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
         GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
         GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
         ..
@@ -165,7 +189,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Service_Ingress
     GoogleCloudRunV2Service_Ingress
-      ( GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICUNSPECIFIED,
+      (
+        GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICUNSPECIFIED,
         GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICALL,
         GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICINTERNALONLY,
         GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICINTERNALLOADBALANCER,
@@ -174,7 +199,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Service_LaunchStage
     GoogleCloudRunV2Service_LaunchStage
-      ( GoogleCloudRunV2Service_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
+      (
+        GoogleCloudRunV2Service_LaunchStage_LAUNCHSTAGEUNSPECIFIED,
         GoogleCloudRunV2Service_LaunchStage_Unimplemented,
         GoogleCloudRunV2Service_LaunchStage_Prelaunch,
         GoogleCloudRunV2Service_LaunchStage_EARLYACCESS,
@@ -187,7 +213,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2Task_ExecutionEnvironment
     GoogleCloudRunV2Task_ExecutionEnvironment
-      ( GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
+      (
+        GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
         GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
         GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
         ..
@@ -195,7 +222,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2TaskTemplate_ExecutionEnvironment
     GoogleCloudRunV2TaskTemplate_ExecutionEnvironment
-      ( GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
+      (
+        GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
         GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
         GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
         ..
@@ -203,7 +231,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2TrafficTarget_Type
     GoogleCloudRunV2TrafficTarget_Type
-      ( GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
+      (
+        GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
         GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPELATEST,
         GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEREVISION,
         ..
@@ -211,7 +240,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2TrafficTargetStatus_Type
     GoogleCloudRunV2TrafficTargetStatus_Type
-      ( GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
+      (
+        GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
         GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPELATEST,
         GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEREVISION,
         ..
@@ -219,7 +249,8 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleCloudRunV2VpcAccess_Egress
     GoogleCloudRunV2VpcAccess_Egress
-      ( GoogleCloudRunV2VpcAccess_Egress_VPCEGRESSUNSPECIFIED,
+      (
+        GoogleCloudRunV2VpcAccess_Egress_VPCEGRESSUNSPECIFIED,
         GoogleCloudRunV2VpcAccess_Egress_ALLTRAFFIC,
         GoogleCloudRunV2VpcAccess_Egress_PRIVATERANGESONLY,
         ..
@@ -227,29 +258,29 @@ module Gogol.Run.Internal.Sum
 
     -- * GoogleIamV1AuditLogConfig_LogType
     GoogleIamV1AuditLogConfig_LogType
-      ( GoogleIamV1AuditLogConfig_LogType_LOGTYPEUNSPECIFIED,
+      (
+        GoogleIamV1AuditLogConfig_LogType_LOGTYPEUNSPECIFIED,
         GoogleIamV1AuditLogConfig_LogType_ADMINREAD,
         GoogleIamV1AuditLogConfig_LogType_DATAWRITE,
         GoogleIamV1AuditLogConfig_LogType_DATAREAD,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -262,21 +293,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | A reason for the execution condition.
-newtype GoogleCloudRunV2Condition_ExecutionReason = GoogleCloudRunV2Condition_ExecutionReason {fromGoogleCloudRunV2Condition_ExecutionReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Condition_ExecutionReason = GoogleCloudRunV2Condition_ExecutionReason { fromGoogleCloudRunV2Condition_ExecutionReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern GoogleCloudRunV2Condition_ExecutionReason_EXECUTIONREASONUNDEFINED :: GoogleCloudRunV2Condition_ExecutionReason
@@ -304,21 +334,20 @@ pattern GoogleCloudRunV2Condition_ExecutionReason_Cancelling = GoogleCloudRunV2C
   GoogleCloudRunV2Condition_ExecutionReason_NONZEROEXITCODE,
   GoogleCloudRunV2Condition_ExecutionReason_Cancelled,
   GoogleCloudRunV2Condition_ExecutionReason_Cancelling,
-  GoogleCloudRunV2Condition_ExecutionReason
-  #-}
+  GoogleCloudRunV2Condition_ExecutionReason #-}
 
 -- | A common (service-level) reason for this condition.
-newtype GoogleCloudRunV2Condition_Reason = GoogleCloudRunV2Condition_Reason {fromGoogleCloudRunV2Condition_Reason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Condition_Reason = GoogleCloudRunV2Condition_Reason { fromGoogleCloudRunV2Condition_Reason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern GoogleCloudRunV2Condition_Reason_COMMONREASONUNDEFINED :: GoogleCloudRunV2Condition_Reason
@@ -396,21 +425,20 @@ pattern GoogleCloudRunV2Condition_Reason_Internal = GoogleCloudRunV2Condition_Re
   GoogleCloudRunV2Condition_Reason_IMMEDIATERETRY,
   GoogleCloudRunV2Condition_Reason_POSTPONEDRETRY,
   GoogleCloudRunV2Condition_Reason_Internal,
-  GoogleCloudRunV2Condition_Reason
-  #-}
+  GoogleCloudRunV2Condition_Reason #-}
 
 -- | A reason for the revision condition.
-newtype GoogleCloudRunV2Condition_RevisionReason = GoogleCloudRunV2Condition_RevisionReason {fromGoogleCloudRunV2Condition_RevisionReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Condition_RevisionReason = GoogleCloudRunV2Condition_RevisionReason { fromGoogleCloudRunV2Condition_RevisionReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern GoogleCloudRunV2Condition_RevisionReason_REVISIONREASONUNDEFINED :: GoogleCloudRunV2Condition_RevisionReason
@@ -478,21 +506,20 @@ pattern GoogleCloudRunV2Condition_RevisionReason_MININSTANCESWARMING = GoogleClo
   GoogleCloudRunV2Condition_RevisionReason_NODEPLOYMENT,
   GoogleCloudRunV2Condition_RevisionReason_HEALTHCHECKSKIPPED,
   GoogleCloudRunV2Condition_RevisionReason_MININSTANCESWARMING,
-  GoogleCloudRunV2Condition_RevisionReason
-  #-}
+  GoogleCloudRunV2Condition_RevisionReason #-}
 
 -- | How to interpret failures of this condition, one of Error, Warning, Info
-newtype GoogleCloudRunV2Condition_Severity = GoogleCloudRunV2Condition_Severity {fromGoogleCloudRunV2Condition_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Condition_Severity = GoogleCloudRunV2Condition_Severity { fromGoogleCloudRunV2Condition_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified severity
 pattern GoogleCloudRunV2Condition_Severity_SEVERITYUNSPECIFIED :: GoogleCloudRunV2Condition_Severity
@@ -515,21 +542,20 @@ pattern GoogleCloudRunV2Condition_Severity_Info = GoogleCloudRunV2Condition_Seve
   GoogleCloudRunV2Condition_Severity_Error',
   GoogleCloudRunV2Condition_Severity_Warning,
   GoogleCloudRunV2Condition_Severity_Info,
-  GoogleCloudRunV2Condition_Severity
-  #-}
+  GoogleCloudRunV2Condition_Severity #-}
 
 -- | State of the condition.
-newtype GoogleCloudRunV2Condition_State = GoogleCloudRunV2Condition_State {fromGoogleCloudRunV2Condition_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Condition_State = GoogleCloudRunV2Condition_State { fromGoogleCloudRunV2Condition_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value. This value is used if the state is omitted.
 pattern GoogleCloudRunV2Condition_State_STATEUNSPECIFIED :: GoogleCloudRunV2Condition_State
@@ -557,21 +583,46 @@ pattern GoogleCloudRunV2Condition_State_CONDITIONSUCCEEDED = GoogleCloudRunV2Con
   GoogleCloudRunV2Condition_State_CONDITIONRECONCILING,
   GoogleCloudRunV2Condition_State_CONDITIONFAILED,
   GoogleCloudRunV2Condition_State_CONDITIONSUCCEEDED,
-  GoogleCloudRunV2Condition_State
-  #-}
+  GoogleCloudRunV2Condition_State #-}
+
+-- | The medium on which the data is stored. Acceptable values today is only MEMORY or none. When none, the default will currently be backed by memory but could change over time. +optional
+newtype GoogleCloudRunV2EmptyDirVolumeSource_Medium = GoogleCloudRunV2EmptyDirVolumeSource_Medium { fromGoogleCloudRunV2EmptyDirVolumeSource_Medium :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | When not specified, falls back to the default implementation which is currently in memory (this may change over time).
+pattern GoogleCloudRunV2EmptyDirVolumeSource_Medium_MEDIUMUNSPECIFIED :: GoogleCloudRunV2EmptyDirVolumeSource_Medium
+pattern GoogleCloudRunV2EmptyDirVolumeSource_Medium_MEDIUMUNSPECIFIED = GoogleCloudRunV2EmptyDirVolumeSource_Medium "MEDIUM_UNSPECIFIED"
+
+-- | Explicitly set the EmptyDir to be in memory. Uses tmpfs.
+pattern GoogleCloudRunV2EmptyDirVolumeSource_Medium_Memory :: GoogleCloudRunV2EmptyDirVolumeSource_Medium
+pattern GoogleCloudRunV2EmptyDirVolumeSource_Medium_Memory = GoogleCloudRunV2EmptyDirVolumeSource_Medium "MEMORY"
+
+{-# COMPLETE
+  GoogleCloudRunV2EmptyDirVolumeSource_Medium_MEDIUMUNSPECIFIED,
+  GoogleCloudRunV2EmptyDirVolumeSource_Medium_Memory,
+  GoogleCloudRunV2EmptyDirVolumeSource_Medium #-}
 
 -- | The least stable launch stage needed to create this resource, as defined by <https://cloud.google.com/terms/launch-stages Google Cloud Platform Launch Stages>. Cloud Run supports @ALPHA@, @BETA@, and @GA@. Note that this value might not be what was used as input. For example, if ALPHA was provided as input in the parent resource, but only BETA and GA-level features are were, this field will be BETA.
-newtype GoogleCloudRunV2Execution_LaunchStage = GoogleCloudRunV2Execution_LaunchStage {fromGoogleCloudRunV2Execution_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Execution_LaunchStage = GoogleCloudRunV2Execution_LaunchStage { fromGoogleCloudRunV2Execution_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern GoogleCloudRunV2Execution_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: GoogleCloudRunV2Execution_LaunchStage
@@ -614,21 +665,20 @@ pattern GoogleCloudRunV2Execution_LaunchStage_Deprecated = GoogleCloudRunV2Execu
   GoogleCloudRunV2Execution_LaunchStage_Beta,
   GoogleCloudRunV2Execution_LaunchStage_GA,
   GoogleCloudRunV2Execution_LaunchStage_Deprecated,
-  GoogleCloudRunV2Execution_LaunchStage
-  #-}
+  GoogleCloudRunV2Execution_LaunchStage #-}
 
 -- | The launch stage as defined by <https://cloud.google.com/terms/launch-stages Google Cloud Platform Launch Stages>. Cloud Run supports @ALPHA@, @BETA@, and @GA@. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
-newtype GoogleCloudRunV2Job_LaunchStage = GoogleCloudRunV2Job_LaunchStage {fromGoogleCloudRunV2Job_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Job_LaunchStage = GoogleCloudRunV2Job_LaunchStage { fromGoogleCloudRunV2Job_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern GoogleCloudRunV2Job_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: GoogleCloudRunV2Job_LaunchStage
@@ -671,21 +721,20 @@ pattern GoogleCloudRunV2Job_LaunchStage_Deprecated = GoogleCloudRunV2Job_LaunchS
   GoogleCloudRunV2Job_LaunchStage_Beta,
   GoogleCloudRunV2Job_LaunchStage_GA,
   GoogleCloudRunV2Job_LaunchStage_Deprecated,
-  GoogleCloudRunV2Job_LaunchStage
-  #-}
+  GoogleCloudRunV2Job_LaunchStage #-}
 
 -- | The action to take if the encryption key is revoked.
-newtype GoogleCloudRunV2Revision_EncryptionKeyRevocationAction = GoogleCloudRunV2Revision_EncryptionKeyRevocationAction {fromGoogleCloudRunV2Revision_EncryptionKeyRevocationAction :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Revision_EncryptionKeyRevocationAction = GoogleCloudRunV2Revision_EncryptionKeyRevocationAction { fromGoogleCloudRunV2Revision_EncryptionKeyRevocationAction :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_ENCRYPTIONKEYREVOCATIONACTIONUNSPECIFIED :: GoogleCloudRunV2Revision_EncryptionKeyRevocationAction
@@ -703,21 +752,20 @@ pattern GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_Shutdown = Google
   GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_ENCRYPTIONKEYREVOCATIONACTIONUNSPECIFIED,
   GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_PREVENTNEW,
   GoogleCloudRunV2Revision_EncryptionKeyRevocationAction_Shutdown,
-  GoogleCloudRunV2Revision_EncryptionKeyRevocationAction
-  #-}
+  GoogleCloudRunV2Revision_EncryptionKeyRevocationAction #-}
 
 -- | The execution environment being used to host this Revision.
-newtype GoogleCloudRunV2Revision_ExecutionEnvironment = GoogleCloudRunV2Revision_ExecutionEnvironment {fromGoogleCloudRunV2Revision_ExecutionEnvironment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Revision_ExecutionEnvironment = GoogleCloudRunV2Revision_ExecutionEnvironment { fromGoogleCloudRunV2Revision_ExecutionEnvironment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED :: GoogleCloudRunV2Revision_ExecutionEnvironment
@@ -735,21 +783,20 @@ pattern GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2
   GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
   GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
   GoogleCloudRunV2Revision_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
-  GoogleCloudRunV2Revision_ExecutionEnvironment
-  #-}
+  GoogleCloudRunV2Revision_ExecutionEnvironment #-}
 
 -- | The least stable launch stage needed to create this resource, as defined by <https://cloud.google.com/terms/launch-stages Google Cloud Platform Launch Stages>. Cloud Run supports @ALPHA@, @BETA@, and @GA@. Note that this value might not be what was used as input. For example, if ALPHA was provided as input in the parent resource, but only BETA and GA-level features are were, this field will be BETA.
-newtype GoogleCloudRunV2Revision_LaunchStage = GoogleCloudRunV2Revision_LaunchStage {fromGoogleCloudRunV2Revision_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Revision_LaunchStage = GoogleCloudRunV2Revision_LaunchStage { fromGoogleCloudRunV2Revision_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern GoogleCloudRunV2Revision_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: GoogleCloudRunV2Revision_LaunchStage
@@ -792,21 +839,20 @@ pattern GoogleCloudRunV2Revision_LaunchStage_Deprecated = GoogleCloudRunV2Revisi
   GoogleCloudRunV2Revision_LaunchStage_Beta,
   GoogleCloudRunV2Revision_LaunchStage_GA,
   GoogleCloudRunV2Revision_LaunchStage_Deprecated,
-  GoogleCloudRunV2Revision_LaunchStage
-  #-}
+  GoogleCloudRunV2Revision_LaunchStage #-}
 
 -- | The sandbox environment to host this Revision.
-newtype GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment = GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment {fromGoogleCloudRunV2RevisionTemplate_ExecutionEnvironment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment = GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment { fromGoogleCloudRunV2RevisionTemplate_ExecutionEnvironment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED :: GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment
@@ -824,21 +870,20 @@ pattern GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTION_ENVIRONM
   GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
   GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
   GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
-  GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment
-  #-}
+  GoogleCloudRunV2RevisionTemplate_ExecutionEnvironment #-}
 
 -- | Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS/TRAFFIC/UNSPECIFIED if no revision is active.
-newtype GoogleCloudRunV2Service_Ingress = GoogleCloudRunV2Service_Ingress {fromGoogleCloudRunV2Service_Ingress :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Service_Ingress = GoogleCloudRunV2Service_Ingress { fromGoogleCloudRunV2Service_Ingress :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICUNSPECIFIED :: GoogleCloudRunV2Service_Ingress
@@ -861,21 +906,20 @@ pattern GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICINTERNALLOADBALANCER = Goo
   GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICALL,
   GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICINTERNALONLY,
   GoogleCloudRunV2Service_Ingress_INGRESSTRAFFICINTERNALLOADBALANCER,
-  GoogleCloudRunV2Service_Ingress
-  #-}
+  GoogleCloudRunV2Service_Ingress #-}
 
 -- | The launch stage as defined by <https://cloud.google.com/terms/launch-stages Google Cloud Platform Launch Stages>. Cloud Run supports @ALPHA@, @BETA@, and @GA@. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
-newtype GoogleCloudRunV2Service_LaunchStage = GoogleCloudRunV2Service_LaunchStage {fromGoogleCloudRunV2Service_LaunchStage :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Service_LaunchStage = GoogleCloudRunV2Service_LaunchStage { fromGoogleCloudRunV2Service_LaunchStage :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use this default value.
 pattern GoogleCloudRunV2Service_LaunchStage_LAUNCHSTAGEUNSPECIFIED :: GoogleCloudRunV2Service_LaunchStage
@@ -918,21 +962,20 @@ pattern GoogleCloudRunV2Service_LaunchStage_Deprecated = GoogleCloudRunV2Service
   GoogleCloudRunV2Service_LaunchStage_Beta,
   GoogleCloudRunV2Service_LaunchStage_GA,
   GoogleCloudRunV2Service_LaunchStage_Deprecated,
-  GoogleCloudRunV2Service_LaunchStage
-  #-}
+  GoogleCloudRunV2Service_LaunchStage #-}
 
 -- | The execution environment being used to host this Task.
-newtype GoogleCloudRunV2Task_ExecutionEnvironment = GoogleCloudRunV2Task_ExecutionEnvironment {fromGoogleCloudRunV2Task_ExecutionEnvironment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2Task_ExecutionEnvironment = GoogleCloudRunV2Task_ExecutionEnvironment { fromGoogleCloudRunV2Task_ExecutionEnvironment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED :: GoogleCloudRunV2Task_ExecutionEnvironment
@@ -950,21 +993,20 @@ pattern GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2 = G
   GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
   GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
   GoogleCloudRunV2Task_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
-  GoogleCloudRunV2Task_ExecutionEnvironment
-  #-}
+  GoogleCloudRunV2Task_ExecutionEnvironment #-}
 
 -- | The execution environment being used to host this Task.
-newtype GoogleCloudRunV2TaskTemplate_ExecutionEnvironment = GoogleCloudRunV2TaskTemplate_ExecutionEnvironment {fromGoogleCloudRunV2TaskTemplate_ExecutionEnvironment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2TaskTemplate_ExecutionEnvironment = GoogleCloudRunV2TaskTemplate_ExecutionEnvironment { fromGoogleCloudRunV2TaskTemplate_ExecutionEnvironment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED :: GoogleCloudRunV2TaskTemplate_ExecutionEnvironment
@@ -982,21 +1024,20 @@ pattern GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_
   GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTIONENVIRONMENTUNSPECIFIED,
   GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN1,
   GoogleCloudRunV2TaskTemplate_ExecutionEnvironment_EXECUTION_ENVIRONMENT_GEN2,
-  GoogleCloudRunV2TaskTemplate_ExecutionEnvironment
-  #-}
+  GoogleCloudRunV2TaskTemplate_ExecutionEnvironment #-}
 
 -- | The allocation type for this traffic target.
-newtype GoogleCloudRunV2TrafficTarget_Type = GoogleCloudRunV2TrafficTarget_Type {fromGoogleCloudRunV2TrafficTarget_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2TrafficTarget_Type = GoogleCloudRunV2TrafficTarget_Type { fromGoogleCloudRunV2TrafficTarget_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified instance allocation type.
 pattern GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED :: GoogleCloudRunV2TrafficTarget_Type
@@ -1014,21 +1055,20 @@ pattern GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEREVISION =
   GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
   GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPELATEST,
   GoogleCloudRunV2TrafficTarget_Type_TRAFFICTARGETALLOCATIONTYPEREVISION,
-  GoogleCloudRunV2TrafficTarget_Type
-  #-}
+  GoogleCloudRunV2TrafficTarget_Type #-}
 
 -- | The allocation type for this traffic target.
-newtype GoogleCloudRunV2TrafficTargetStatus_Type = GoogleCloudRunV2TrafficTargetStatus_Type {fromGoogleCloudRunV2TrafficTargetStatus_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2TrafficTargetStatus_Type = GoogleCloudRunV2TrafficTargetStatus_Type { fromGoogleCloudRunV2TrafficTargetStatus_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified instance allocation type.
 pattern GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED :: GoogleCloudRunV2TrafficTargetStatus_Type
@@ -1046,21 +1086,20 @@ pattern GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEREVI
   GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEUNSPECIFIED,
   GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPELATEST,
   GoogleCloudRunV2TrafficTargetStatus_Type_TRAFFICTARGETALLOCATIONTYPEREVISION,
-  GoogleCloudRunV2TrafficTargetStatus_Type
-  #-}
+  GoogleCloudRunV2TrafficTargetStatus_Type #-}
 
 -- | Traffic VPC egress settings.
-newtype GoogleCloudRunV2VpcAccess_Egress = GoogleCloudRunV2VpcAccess_Egress {fromGoogleCloudRunV2VpcAccess_Egress :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRunV2VpcAccess_Egress = GoogleCloudRunV2VpcAccess_Egress { fromGoogleCloudRunV2VpcAccess_Egress :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern GoogleCloudRunV2VpcAccess_Egress_VPCEGRESSUNSPECIFIED :: GoogleCloudRunV2VpcAccess_Egress
@@ -1078,21 +1117,20 @@ pattern GoogleCloudRunV2VpcAccess_Egress_PRIVATERANGESONLY = GoogleCloudRunV2Vpc
   GoogleCloudRunV2VpcAccess_Egress_VPCEGRESSUNSPECIFIED,
   GoogleCloudRunV2VpcAccess_Egress_ALLTRAFFIC,
   GoogleCloudRunV2VpcAccess_Egress_PRIVATERANGESONLY,
-  GoogleCloudRunV2VpcAccess_Egress
-  #-}
+  GoogleCloudRunV2VpcAccess_Egress #-}
 
 -- | The log type that this config enables.
-newtype GoogleIamV1AuditLogConfig_LogType = GoogleIamV1AuditLogConfig_LogType {fromGoogleIamV1AuditLogConfig_LogType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleIamV1AuditLogConfig_LogType = GoogleIamV1AuditLogConfig_LogType { fromGoogleIamV1AuditLogConfig_LogType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default case. Should never be this.
 pattern GoogleIamV1AuditLogConfig_LogType_LOGTYPEUNSPECIFIED :: GoogleIamV1AuditLogConfig_LogType
@@ -1115,5 +1153,4 @@ pattern GoogleIamV1AuditLogConfig_LogType_DATAREAD = GoogleIamV1AuditLogConfig_L
   GoogleIamV1AuditLogConfig_LogType_ADMINREAD,
   GoogleIamV1AuditLogConfig_LogType_DATAWRITE,
   GoogleIamV1AuditLogConfig_LogType_DATAREAD,
-  GoogleIamV1AuditLogConfig_LogType
-  #-}
+  GoogleIamV1AuditLogConfig_LogType #-}

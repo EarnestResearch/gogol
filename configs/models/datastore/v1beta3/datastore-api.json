@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
         },
         "https://www.googleapis.com/auth/datastore": {
           "description": "View and manage your Google Cloud Datastore data"
@@ -340,11 +336,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-  "revision": "20210326",
-=======
-  "revision": "20230328",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
+  "revision": "20230508",
   "rootUrl": "https://datastore.googleapis.com/",
   "schemas": {
     "Aggregation": {
@@ -558,11 +550,7 @@
       "id": "CompositeFilter",
       "properties": {
         "filters": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "The list of filters to combine. Must contain at least one filter.",
-=======
           "description": "The list of filters to combine. Requires: * At least one filter is present.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           "items": {
             "$ref": "Filter"
           },
@@ -598,7 +586,7 @@
       "type": "object"
     },
     "Entity": {
-      "description": "A Datastore data object. An entity is limited to 1 megabyte when stored. That _roughly_ corresponds to a limit of 1 megabyte for the serialized form of this message.",
+      "description": "A Datastore data object. Must not exceed 1 MiB - 4 bytes.",
       "id": "Entity",
       "properties": {
         "key": {
@@ -609,11 +597,7 @@
           "additionalProperties": {
             "$ref": "Value"
           },
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "The entity's properties. The map's keys are property names. A property name matching regex `__.*__` is reserved. A reserved property name is forbidden in certain documented contexts. The name must not contain more than 500 characters. The name cannot be `\"\"`.",
-=======
           "description": "The entity's properties. The map's keys are property names. A property name matching regex `__.*__` is reserved. A reserved property name is forbidden in certain documented contexts. The map keys, represented as UTF-8, must not exceed 1,500 bytes and cannot be empty.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           "type": "object"
         }
       },
@@ -725,8 +709,6 @@
             "Request has completed successfully.",
             "Request has finished being processed, but encountered an error.",
             "Request has finished being cancelled after user called google.longrunning.Operations.CancelOperation."
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-=======
           ],
           "type": "string"
         }
@@ -774,7 +756,6 @@
             "Eventually-consistent reads are redirected to Cloud Firestore.",
             "Strongly-consistent reads are redirected to Cloud Firestore.",
             "Writes are redirected to Cloud Firestore."
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           ],
           "type": "string"
         }
@@ -1251,11 +1232,7 @@
       "type": "object"
     },
     "LatLng": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-      "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.",
-=======
       "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
       "id": "LatLng",
       "properties": {
         "latitude": {
@@ -1342,14 +1319,11 @@
         "update": {
           "$ref": "Entity",
           "description": "The entity to update. The entity must already exist. Must have a complete key path."
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-=======
         },
         "updateTime": {
           "description": "The update time of the entity that this mutation is being applied to. If this does not match the current update time on the server, the mutation conflicts.",
           "format": "google-datetime",
           "type": "string"
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
         },
         "upsert": {
           "$ref": "Entity",
@@ -1374,14 +1348,11 @@
         "key": {
           "$ref": "Key",
           "description": "The automatically allocated key. Set only when the mutation allocated a key."
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-=======
         },
         "updateTime": {
           "description": "The update time of the entity on the server after processing the mutation. If the mutation doesn't change anything on the server, then the timestamp will be the update timestamp of the current entity. This field will not be set after a 'delete'.",
           "format": "google-datetime",
           "type": "string"
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
         },
         "version": {
           "description": "The version of the entity on the server after processing the mutation. If the mutation doesn't change anything on the server, then the version will be the version of the current entity or, if no entity is present, a version that is strictly greater than the version of any previous entity and less than the version of any possible future entity.",
@@ -1416,19 +1387,11 @@
           "type": "string"
         },
         "kind": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "The kind of the entity. A kind matching regex `__.*__` is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`.",
-          "type": "string"
-        },
-        "name": {
-          "description": "The name of the entity. A name matching regex `__.*__` is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`.",
-=======
           "description": "The kind of the entity. A kind matching regex `__.*__` is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`. Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are encoded as `__bytes__` where `` is the base-64 encoding of the bytes.",
           "type": "string"
         },
         "name": {
           "description": "The name of the entity. A name matching regex `__.*__` is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`. Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are encoded as `__bytes__` where `` is the base-64 encoding of the bytes.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           "type": "string"
         }
       },
@@ -1529,11 +1492,7 @@
       "id": "Query",
       "properties": {
         "distinctOn": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned).",
-=======
           "description": "The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned). Requires: * If `order` is specified, the set of distinct on properties must appear before the non-distinct on properties in `order`.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           "items": {
             "$ref": "PropertyReference"
           },
@@ -1677,11 +1636,7 @@
       "id": "ReadOptions",
       "properties": {
         "readConsistency": {
-<<<<<<< HEAD:gen/model/datastore/v1beta3/datastore-api.json
-          "description": "The non-transactional read consistency to use. Cannot be set to `STRONG` for global queries.",
-=======
           "description": "The non-transactional read consistency to use.",
->>>>>>> upstream/main:configs/models/datastore/v1beta3/datastore-api.json
           "enum": [
             "READ_CONSISTENCY_UNSPECIFIED",
             "STRONG",

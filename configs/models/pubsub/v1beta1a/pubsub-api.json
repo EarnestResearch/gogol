@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/pubsub/v1beta1a/pubsub-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/pubsub/v1beta1a/pubsub-api.json
         },
         "https://www.googleapis.com/auth/pubsub": {
           "description": "View and manage Pub/Sub topics and subscriptions"
@@ -461,11 +457,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/pubsub/v1beta1a/pubsub-api.json
-  "revision": "20210322",
-=======
   "revision": "20210809",
->>>>>>> upstream/main:configs/models/pubsub/v1beta1a/pubsub-api.json
   "rootUrl": "https://pubsub.googleapis.com/",
   "schemas": {
     "AcknowledgeRequest": {

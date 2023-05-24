@@ -1446,15 +1446,11 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-                            "queryString"
-=======
                             "queryString",
                             "serverPageLocationUrl",
                             "serverPageLocationPath",
                             "serverPageLocationHostname",
                             "visitorRegion"
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                           ],
                           "enumDescriptions": [
                             "",
@@ -1492,13 +1488,10 @@
                             "For web or mobile.",
                             "",
                             "",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
                             "",
                             "",
                             "",
                             "",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                             "",
                             "",
                             "",
@@ -1716,15 +1709,11 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-                            "queryString"
-=======
                             "queryString",
                             "serverPageLocationUrl",
                             "serverPageLocationPath",
                             "serverPageLocationHostname",
                             "visitorRegion"
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                           ],
                           "enumDescriptions": [
                             "",
@@ -1762,13 +1751,10 @@
                             "For web or mobile.",
                             "",
                             "",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
                             "",
                             "",
                             "",
                             "",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                             "",
                             "",
                             "",
@@ -2014,15 +2000,11 @@
                             "requestPath",
                             "requestMethod",
                             "clientName",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-                            "queryString"
-=======
                             "queryString",
                             "serverPageLocationUrl",
                             "serverPageLocationPath",
                             "serverPageLocationHostname",
                             "visitorRegion"
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                           ],
                           "enumDescriptions": [
                             "",
@@ -2060,13 +2042,10 @@
                             "For web or mobile.",
                             "",
                             "",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
                             "",
                             "",
                             "",
                             "",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
                             "",
                             "",
                             "",
@@ -3737,11 +3716,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-  "revision": "20210217",
-=======
-  "revision": "20230102",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
+  "revision": "20230405",
   "rootUrl": "https://tagmanager.googleapis.com/",
   "schemas": {
     "Account": {
@@ -3948,15 +3923,11 @@
             "requestPath",
             "requestMethod",
             "clientName",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-            "queryString"
-=======
             "queryString",
             "serverPageLocationUrl",
             "serverPageLocationPath",
             "serverPageLocationHostname",
             "visitorRegion"
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
           ],
           "enumDescriptions": [
             "",
@@ -3994,13 +3965,10 @@
             "For web or mobile.",
             "",
             "",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
             "",
             "",
             "",
             "",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
             "",
             "",
             "",
@@ -4106,15 +4074,12 @@
           "type": "string"
         },
         "name": {
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
           "annotations": {
             "required": [
               "tagmanager.accounts.containers.workspaces.clients.create",
               "tagmanager.accounts.containers.workspaces.clients.update"
             ]
           },
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
           "description": "Client display name. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update",
           "type": "string"
         },
@@ -4147,15 +4112,12 @@
           "type": "string"
         },
         "type": {
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
           "annotations": {
             "required": [
               "tagmanager.accounts.containers.workspaces.clients.create",
               "tagmanager.accounts.containers.workspaces.clients.update"
             ]
           },
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
           "description": "Client type. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update",
           "type": "string"
         },
@@ -4574,6 +4536,10 @@
           "description": "Number of tags in the container version.",
           "type": "string"
         },
+        "numTransformations": {
+          "description": "Number of transformations in the container version.",
+          "type": "string"
+        },
         "numTriggers": {
           "description": "Number of triggers in the container version.",
           "type": "string"
@@ -4973,8 +4939,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
     "GetContainerSnippetResponse": {
       "id": "GetContainerSnippetResponse",
       "properties": {
@@ -4985,7 +4949,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
     "GetWorkspaceStatusResponse": {
       "description": "The changes that have occurred in the workspace since the base container version.",
       "id": "GetWorkspaceStatusResponse",
@@ -5913,12 +5876,9 @@
             "windowLoaded",
             "customEvent",
             "triggerGroup",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
             "init",
             "consentInit",
             "serverPageview",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
             "always",
             "firebaseAppException",
             "firebaseAppUpdate",
@@ -5978,12 +5938,9 @@
             "",
             "",
             "",
-<<<<<<< HEAD:gen/model/tagmanager/v2/tagmanager-api.json
-=======
             "",
             "",
             "",
->>>>>>> upstream/main:configs/models/tagmanager/v2/tagmanager-api.json
             ""
           ],
           "type": "string"

@@ -18,11 +18,7 @@
           "description": "View and manage the provisioning of users on your domain"
         },
         "https://www.googleapis.com/auth/documents": {
-<<<<<<< HEAD:gen/model/script/v1/script-api.json
-          "description": "See, create, and edit all Google Docs documents you have access to"
-=======
           "description": "See, edit, create, and delete all your Google Docs documents"
->>>>>>> upstream/main:configs/models/script/v1/script-api.json
         },
         "https://www.googleapis.com/auth/drive": {
           "description": "See, edit, create, and delete all of your Google Drive files"
@@ -891,11 +887,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/script/v1/script-api.json
-  "revision": "20210410",
-=======
-  "revision": "20220323",
->>>>>>> upstream/main:configs/models/script/v1/script-api.json
+  "revision": "20230429",
   "rootUrl": "https://script.googleapis.com/",
   "schemas": {
     "Content": {
@@ -983,11 +975,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/script/v1/script-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/script/v1/script-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -1324,6 +1312,20 @@
         },
         "projectName": {
           "description": "Name of the script being executed.",
+          "type": "string"
+        },
+        "runtimeVersion": {
+          "description": "Which version of maestro to use to execute the script.",
+          "enum": [
+            "RUNTIME_VERSION_UNSPECIFIED",
+            "DEPRECATED_ES5",
+            "V8"
+          ],
+          "enumDescriptions": [
+            "Runtime version unset / unknown.",
+            "Legacy rhino version of the Apps script runtime",
+            "Current default V8 version of the apps script runtime."
+          ],
           "type": "string"
         },
         "startTime": {

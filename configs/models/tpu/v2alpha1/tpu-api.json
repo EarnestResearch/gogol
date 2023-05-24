@@ -728,6 +728,11 @@
                     "name"
                   ],
                   "parameters": {
+                    "force": {
+                      "description": "If set to true, all running nodes belonging to this queued resource will be deleted first and then the queued resource will be deleted. Otherwise (i.e. force=false), the queued resource will only be deleted if its nodes have already been deleted or the queued resource is in the ACCEPTED, FAILED, or SUSPENDED state.",
+                      "location": "query",
+                      "type": "boolean"
+                    },
                     "name": {
                       "description": "Required. The resource name.",
                       "location": "path",
@@ -805,34 +810,6 @@
                   "path": "v2alpha1/{+parent}/queuedResources",
                   "response": {
                     "$ref": "ListQueuedResourcesResponse"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform"
-                  ]
-                },
-                "reset": {
-                  "description": "Resets a QueuedResource TPU instance",
-                  "flatPath": "v2alpha1/projects/{projectsId}/locations/{locationsId}/queuedResources/{queuedResourcesId}:reset",
-                  "httpMethod": "POST",
-                  "id": "tpu.projects.locations.queuedResources.reset",
-                  "parameterOrder": [
-                    "name"
-                  ],
-                  "parameters": {
-                    "name": {
-                      "description": "Required. The name of the queued resource.",
-                      "location": "path",
-                      "pattern": "^projects/[^/]+/locations/[^/]+/queuedResources/[^/]+$",
-                      "required": true,
-                      "type": "string"
-                    }
-                  },
-                  "path": "v2alpha1/{+name}:reset",
-                  "request": {
-                    "$ref": "ResetQueuedResourceRequest"
-                  },
-                  "response": {
-                    "$ref": "Operation"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform"
@@ -920,7 +897,7 @@
       }
     }
   },
-  "revision": "20230330",
+  "revision": "20230508",
   "rootUrl": "https://tpu.googleapis.com/",
   "schemas": {
     "AcceleratorConfig": {
@@ -1323,7 +1300,7 @@
       "type": "object"
     },
     "Location": {
-      "description": "A resource that represents Google Cloud Platform location.",
+      "description": "A resource that represents a Google Cloud location.",
       "id": "Location",
       "properties": {
         "displayName": {
@@ -1491,6 +1468,11 @@
           },
           "description": "Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script",
           "type": "object"
+        },
+        "multisliceNode": {
+          "description": "Output only. Whether the Node belongs to a Multislice group.",
+          "readOnly": true,
+          "type": "boolean"
         },
         "name": {
           "description": "Output only. Immutable. The name of the TPU.",
@@ -1815,12 +1797,6 @@
           "type": "string"
         }
       },
-      "type": "object"
-    },
-    "ResetQueuedResourceRequest": {
-      "description": "Request for ResetQueuedResource.",
-      "id": "ResetQueuedResourceRequest",
-      "properties": {},
       "type": "object"
     },
     "RuntimeVersion": {

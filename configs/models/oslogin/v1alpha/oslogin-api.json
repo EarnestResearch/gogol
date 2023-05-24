@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/oslogin/v1alpha/oslogin-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/oslogin/v1alpha/oslogin-api.json
         },
         "https://www.googleapis.com/auth/cloud-platform.read-only": {
           "description": "View your data across Google Cloud services and see the email address of your Google Account"
@@ -407,19 +403,11 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/oslogin/v1alpha/oslogin-api.json
-  "revision": "20210410",
-  "rootUrl": "https://oslogin.googleapis.com/",
-  "schemas": {
-    "Empty": {
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
   "revision": "20220319",
   "rootUrl": "https://oslogin.googleapis.com/",
   "schemas": {
     "Empty": {
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/oslogin/v1alpha/oslogin-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -580,8 +568,6 @@
         "name": {
           "description": "Output only. The canonical resource name.",
           "readOnly": true,
-<<<<<<< HEAD:gen/model/oslogin/v1alpha/oslogin-api.json
-=======
           "type": "string"
         }
       },
@@ -604,7 +590,6 @@
       "properties": {
         "rpId": {
           "description": "Relying party ID for Web Authentication.",
->>>>>>> upstream/main:configs/models/oslogin/v1alpha/oslogin-api.json
           "type": "string"
         }
       },

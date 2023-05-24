@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,125 +31,125 @@
 --
 -- /See:/ <https://cloud.google.com/iam/ Identity and Access Management (IAM) API Reference>
 module Gogol.IAM
-  ( -- * Configuration
-    iAMService,
+    (
+    -- * Configuration
+      iAMService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Resources
 
     -- ** iam.policies.createPolicy
-    IAMPoliciesCreatePolicyResource,
-    IAMPoliciesCreatePolicy (..),
-    newIAMPoliciesCreatePolicy,
+    , IAMPoliciesCreatePolicyResource
+    , IAMPoliciesCreatePolicy (..)
+    , newIAMPoliciesCreatePolicy
 
     -- ** iam.policies.delete
-    IAMPoliciesDeleteResource,
-    IAMPoliciesDelete (..),
-    newIAMPoliciesDelete,
+    , IAMPoliciesDeleteResource
+    , IAMPoliciesDelete (..)
+    , newIAMPoliciesDelete
 
     -- ** iam.policies.get
-    IAMPoliciesGetResource,
-    IAMPoliciesGet (..),
-    newIAMPoliciesGet,
+    , IAMPoliciesGetResource
+    , IAMPoliciesGet (..)
+    , newIAMPoliciesGet
 
     -- ** iam.policies.listPolicies
-    IAMPoliciesListPoliciesResource,
-    IAMPoliciesListPolicies (..),
-    newIAMPoliciesListPolicies,
+    , IAMPoliciesListPoliciesResource
+    , IAMPoliciesListPolicies (..)
+    , newIAMPoliciesListPolicies
 
     -- ** iam.policies.operations.get
-    IAMPoliciesOperationsGetResource,
-    IAMPoliciesOperationsGet (..),
-    newIAMPoliciesOperationsGet,
+    , IAMPoliciesOperationsGetResource
+    , IAMPoliciesOperationsGet (..)
+    , newIAMPoliciesOperationsGet
 
     -- ** iam.policies.update
-    IAMPoliciesUpdateResource,
-    IAMPoliciesUpdate (..),
-    newIAMPoliciesUpdate,
+    , IAMPoliciesUpdateResource
+    , IAMPoliciesUpdate (..)
+    , newIAMPoliciesUpdate
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** GoogleIamAdminV1AuditData
-    GoogleIamAdminV1AuditData (..),
-    newGoogleIamAdminV1AuditData,
+    , GoogleIamAdminV1AuditData (..)
+    , newGoogleIamAdminV1AuditData
 
     -- ** GoogleIamAdminV1AuditDataPermissionDelta
-    GoogleIamAdminV1AuditDataPermissionDelta (..),
-    newGoogleIamAdminV1AuditDataPermissionDelta,
+    , GoogleIamAdminV1AuditDataPermissionDelta (..)
+    , newGoogleIamAdminV1AuditDataPermissionDelta
 
     -- ** GoogleIamV1BindingDelta
-    GoogleIamV1BindingDelta (..),
-    newGoogleIamV1BindingDelta,
+    , GoogleIamV1BindingDelta (..)
+    , newGoogleIamV1BindingDelta
 
     -- ** GoogleIamV1BindingDelta_Action
-    GoogleIamV1BindingDelta_Action (..),
+    , GoogleIamV1BindingDelta_Action (..)
 
     -- ** GoogleIamV1LoggingAuditData
-    GoogleIamV1LoggingAuditData (..),
-    newGoogleIamV1LoggingAuditData,
+    , GoogleIamV1LoggingAuditData (..)
+    , newGoogleIamV1LoggingAuditData
 
     -- ** GoogleIamV1PolicyDelta
-    GoogleIamV1PolicyDelta (..),
-    newGoogleIamV1PolicyDelta,
+    , GoogleIamV1PolicyDelta (..)
+    , newGoogleIamV1PolicyDelta
 
     -- ** GoogleIamV1betaWorkloadIdentityPoolOperationMetadata
-    GoogleIamV1betaWorkloadIdentityPoolOperationMetadata (..),
-    newGoogleIamV1betaWorkloadIdentityPoolOperationMetadata,
+    , GoogleIamV1betaWorkloadIdentityPoolOperationMetadata (..)
+    , newGoogleIamV1betaWorkloadIdentityPoolOperationMetadata
 
     -- ** GoogleIamV2DenyRule
-    GoogleIamV2DenyRule (..),
-    newGoogleIamV2DenyRule,
+    , GoogleIamV2DenyRule (..)
+    , newGoogleIamV2DenyRule
 
     -- ** GoogleIamV2ListPoliciesResponse
-    GoogleIamV2ListPoliciesResponse (..),
-    newGoogleIamV2ListPoliciesResponse,
+    , GoogleIamV2ListPoliciesResponse (..)
+    , newGoogleIamV2ListPoliciesResponse
 
     -- ** GoogleIamV2Policy
-    GoogleIamV2Policy (..),
-    newGoogleIamV2Policy,
+    , GoogleIamV2Policy (..)
+    , newGoogleIamV2Policy
 
     -- ** GoogleIamV2Policy_Annotations
-    GoogleIamV2Policy_Annotations (..),
-    newGoogleIamV2Policy_Annotations,
+    , GoogleIamV2Policy_Annotations (..)
+    , newGoogleIamV2Policy_Annotations
 
     -- ** GoogleIamV2PolicyOperationMetadata
-    GoogleIamV2PolicyOperationMetadata (..),
-    newGoogleIamV2PolicyOperationMetadata,
+    , GoogleIamV2PolicyOperationMetadata (..)
+    , newGoogleIamV2PolicyOperationMetadata
 
     -- ** GoogleIamV2PolicyRule
-    GoogleIamV2PolicyRule (..),
-    newGoogleIamV2PolicyRule,
+    , GoogleIamV2PolicyRule (..)
+    , newGoogleIamV2PolicyRule
 
     -- ** GoogleLongrunningOperation
-    GoogleLongrunningOperation (..),
-    newGoogleLongrunningOperation,
+    , GoogleLongrunningOperation (..)
+    , newGoogleLongrunningOperation
 
     -- ** GoogleLongrunningOperation_Metadata
-    GoogleLongrunningOperation_Metadata (..),
-    newGoogleLongrunningOperation_Metadata,
+    , GoogleLongrunningOperation_Metadata (..)
+    , newGoogleLongrunningOperation_Metadata
 
     -- ** GoogleLongrunningOperation_Response
-    GoogleLongrunningOperation_Response (..),
-    newGoogleLongrunningOperation_Response,
+    , GoogleLongrunningOperation_Response (..)
+    , newGoogleLongrunningOperation_Response
 
     -- ** GoogleRpcStatus
-    GoogleRpcStatus (..),
-    newGoogleRpcStatus,
+    , GoogleRpcStatus (..)
+    , newGoogleRpcStatus
 
     -- ** GoogleRpcStatus_DetailsItem
-    GoogleRpcStatus_DetailsItem (..),
-    newGoogleRpcStatus_DetailsItem,
+    , GoogleRpcStatus_DetailsItem (..)
+    , newGoogleRpcStatus_DetailsItem
 
     -- ** GoogleTypeExpr
-    GoogleTypeExpr (..),
-    newGoogleTypeExpr,
-  )
-where
+    , GoogleTypeExpr (..)
+    , newGoogleTypeExpr
+    ) where
 
 import Gogol.IAM.Policies.CreatePolicy
 import Gogol.IAM.Policies.Delete

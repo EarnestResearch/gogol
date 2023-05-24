@@ -20,7 +20,6 @@
             parallel
             shellcheck
             shfmt
-            stack
           ];
         };
       });

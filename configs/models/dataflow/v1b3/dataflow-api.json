@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         },
         "https://www.googleapis.com/auth/compute": {
           "description": "View and manage your Google Compute Engine resources"
@@ -219,14 +215,11 @@
                 },
                 "location": {
                   "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
                   "location": "query",
                   "type": "string"
                 },
                 "name": {
                   "description": "Optional. The job name. Optional.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                   "location": "query",
                   "type": "string"
                 },
@@ -258,11 +251,7 @@
                   "enumDescriptions": [
                     "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                     "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                    "Request all information available for this job.",
-=======
                     "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                     "Request summary info and limited job description data for steps, labels and environment."
                   ],
                   "location": "query",
@@ -281,11 +270,7 @@
               ]
             },
             "create": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-              "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.",
-=======
               "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
               "flatPath": "v1b3/projects/{projectId}/jobs",
               "httpMethod": "POST",
               "id": "dataflow.projects.jobs.create",
@@ -320,11 +305,7 @@
                   "enumDescriptions": [
                     "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                     "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                    "Request all information available for this job.",
-=======
                     "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                     "Request summary info and limited job description data for steps, labels and environment."
                   ],
                   "location": "query",
@@ -383,11 +364,7 @@
                   "enumDescriptions": [
                     "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                     "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                    "Request all information available for this job.",
-=======
                     "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                     "Request summary info and limited job description data for steps, labels and environment."
                   ],
                   "location": "query",
@@ -478,14 +455,11 @@
                 },
                 "location": {
                   "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
                   "location": "query",
                   "type": "string"
                 },
                 "name": {
                   "description": "Optional. The job name. Optional.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                   "location": "query",
                   "type": "string"
                 },
@@ -517,11 +491,7 @@
                   "enumDescriptions": [
                     "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                     "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                    "Request all information available for this job.",
-=======
                     "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                     "Request summary info and limited job description data for steps, labels and environment."
                   ],
                   "location": "query",
@@ -956,11 +926,7 @@
             "jobs": {
               "methods": {
                 "create": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                  "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.",
-=======
                   "description": "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                   "flatPath": "v1b3/projects/{projectId}/locations/{location}/jobs",
                   "httpMethod": "POST",
                   "id": "dataflow.projects.locations.jobs.create",
@@ -997,11 +963,7 @@
                       "enumDescriptions": [
                         "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                         "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                        "Request all information available for this job.",
-=======
                         "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                         "Request summary info and limited job description data for steps, labels and environment."
                       ],
                       "location": "query",
@@ -1062,11 +1024,7 @@
                       "enumDescriptions": [
                         "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                         "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                        "Request all information available for this job.",
-=======
                         "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                         "Request summary info and limited job description data for steps, labels and environment."
                       ],
                       "location": "query",
@@ -1249,11 +1207,7 @@
                       "enumDescriptions": [
                         "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
                         "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-                        "Request all information available for this job.",
-=======
                         "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
                         "Request summary info and limited job description data for steps, labels and environment."
                       ],
                       "location": "query",
@@ -1887,50 +1841,6 @@
                 }
               }
             },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "sql": {
-              "methods": {
-                "validate": {
-                  "description": "Validates a GoogleSQL query for Cloud Dataflow syntax. Will always confirm the given query parses correctly, and if able to look up schema information from DataCatalog, will validate that the query analyzes properly as well.",
-                  "flatPath": "v1b3/projects/{projectId}/locations/{location}/sql:validate",
-                  "httpMethod": "GET",
-                  "id": "dataflow.projects.locations.sql.validate",
-                  "parameterOrder": [
-                    "projectId",
-                    "location"
-                  ],
-                  "parameters": {
-                    "location": {
-                      "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "projectId": {
-                      "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
-                      "location": "path",
-                      "required": true,
-                      "type": "string"
-                    },
-                    "query": {
-                      "description": "The sql query to validate.",
-                      "location": "query",
-                      "type": "string"
-                    }
-                  },
-                  "path": "v1b3/projects/{projectId}/locations/{location}/sql:validate",
-                  "response": {
-                    "$ref": "ValidateResponse"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
-                    "https://www.googleapis.com/auth/userinfo.email"
-                  ]
-                }
-              }
-            },
-=======
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
             "templates": {
               "methods": {
                 "create": {
@@ -2301,11 +2211,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-  "revision": "20210408",
-=======
-  "revision": "20230327",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
+  "revision": "20230514",
   "rootUrl": "https://dataflow.googleapis.com/",
   "schemas": {
     "ApproximateProgress": {
@@ -2416,11 +2322,7 @@
           "type": "string"
         },
         "workerPool": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "A short and friendly name for the worker pool this event refers to, populated from the value of PoolStageRelation::user_pool_name.",
-=======
           "description": "A short and friendly name for the worker pool this event refers to.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "type": "string"
         }
       },
@@ -2476,11 +2378,7 @@
       "type": "object"
     },
     "BigTableIODetails": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-      "description": "Metadata for a Cloud BigTable connector used by the job.",
-=======
       "description": "Metadata for a Cloud Bigtable connector used by the job.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
       "id": "BigTableIODetails",
       "properties": {
         "instanceId": {
@@ -2629,8 +2527,6 @@
           "description": "Name of the docker container image. E.g., gcr.io/project/some-image",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "imageRepositoryCertPath": {
           "description": "Cloud Storage path to self-signed certificate of private registry.",
           "type": "string"
@@ -2643,7 +2539,6 @@
           "description": "Secret Manager secret id for username to authenticate to private registry.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "metadata": {
           "$ref": "TemplateMetadata",
           "description": "Metadata describing a template including description and validation rules."
@@ -3133,11 +3028,7 @@
           "description": "Any debugging options to be supplied to the job."
         },
         "experiments": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "The list of experiments to enable. This field should be used for SDK related experiments and not for service related experiments. The proper field for service related experiments is service_options. For more details see the rationale at go/user-specified-service-options.",
-=======
           "description": "The list of experiments to enable. This field should be used for SDK related experiments and not for service related experiments. The proper field for service related experiments is service_options.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "items": {
             "type": "string"
           },
@@ -3182,11 +3073,7 @@
           "type": "string"
         },
         "serviceOptions": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "The list of service options to enable. This field should be used for service related experiments only. These experiments, when graduating to GA, should be replaced by dedicated fields or become default (i.e. always on). For more details see the rationale at go/user-specified-service-options.",
-=======
           "description": "The list of service options to enable. This field should be used for service related experiments only. These experiments, when graduating to GA, should be replaced by dedicated fields or become default (i.e. always on).",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "items": {
             "type": "string"
           },
@@ -3425,8 +3312,6 @@
           "description": "Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }.",
           "type": "object"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "autoscalingAlgorithm": {
           "description": "The algorithm to use for autoscaling",
           "enum": [
@@ -3454,7 +3339,6 @@
           "description": "If true serial port logging will be enabled for the launcher VM.",
           "type": "boolean"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "enableStreamingEngine": {
           "description": "Whether to enable Streaming Engine for the job.",
           "type": "boolean"
@@ -3491,13 +3375,10 @@
           "description": "Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "launcherMachineType": {
           "description": "The machine type to use for launching the job. The default is n1-standard-1.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "machineType": {
           "description": "The machine type to use for the job. Defaults to the value from the template if not specified.",
           "type": "string"
@@ -3516,8 +3397,6 @@
           "format": "int32",
           "type": "integer"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "saveHeapDumpsToGcsPath": {
           "description": "Cloud Storage bucket (directory) to upload heap dumps to. Enabling this field implies that `dump_heap_on_oom` is set to true.",
           "type": "string"
@@ -3526,7 +3405,6 @@
           "description": "Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "serviceAccountEmail": {
           "description": "The email address of the service account to run the job as.",
           "type": "string"
@@ -3672,8 +3550,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
     "HotKeyDebuggingInfo": {
       "description": "Information useful for debugging a hot key detection.",
       "id": "HotKeyDebuggingInfo",
@@ -3688,7 +3564,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
     "HotKeyDetection": {
       "description": "Proto describing a hot key detected on a given WorkItem.",
       "id": "HotKeyDetection",
@@ -3709,8 +3584,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
     "HotKeyInfo": {
       "description": "Information about a hot key.",
       "id": "HotKeyInfo",
@@ -3731,7 +3604,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
     "InstructionInput": {
       "description": "An input of an instruction, as a reference to an output of a producer instruction.",
       "id": "InstructionInput",
@@ -3830,11 +3702,7 @@
       "type": "object"
     },
     "Job": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-      "description": "Defines a job to be run by the Cloud Dataflow service. nextID: 26",
-=======
       "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
       "id": "Job",
       "properties": {
         "clientRequestId": {
@@ -3917,11 +3785,7 @@
           "type": "string"
         },
         "name": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "The user-specified Cloud Dataflow job name. Only one Job with a given name may exist in a project at any given time. If a caller attempts to create a Job with the same name as an already-existing Job, the attempt returns the existing Job. The name must match the regular expression `[a-z]([-a-z0-9]{0,38}[a-z0-9])?`",
-=======
           "description": "The user-specified Cloud Dataflow job name. Only one Job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a Job with the same name as an already-existing Job, the attempt returns the existing Job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "type": "string"
         },
         "pipelineDescription": {
@@ -3973,6 +3837,10 @@
             "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
           ],
           "type": "string"
+        },
+        "runtimeUpdatableParams": {
+          "$ref": "RuntimeUpdatableParams",
+          "description": "This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation."
         },
         "satisfiesPzs": {
           "description": "Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
@@ -4123,11 +3991,7 @@
       "id": "JobMetadata",
       "properties": {
         "bigTableDetails": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "Identification of a Cloud BigTable source used in the Dataflow job.",
-=======
           "description": "Identification of a Cloud Bigtable source used in the Dataflow job.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "items": {
             "$ref": "BigTableIODetails"
           },
@@ -4183,11 +4047,7 @@
       "type": "object"
     },
     "JobMetrics": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-      "description": "JobMetrics contains a collection of metrics describing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job. This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring.",
-=======
       "description": "JobMetrics contains a collection of metrics describing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job. For more information, see [Dataflow job metrics] (https://cloud.google.com/dataflow/docs/guides/using-monitoring-intf). This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
       "id": "JobMetrics",
       "properties": {
         "metricTime": {
@@ -4537,14 +4397,11 @@
           "format": "uint64",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "currentOoms": {
           "description": "Number of Out of Memory (OOM) events recorded since the previous measurement.",
           "format": "int64",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "currentRssBytes": {
           "description": "Instantenous memory (RSS) size in bytes.",
           "format": "uint64",
@@ -4872,13 +4729,14 @@
             "GCS_READ_FOLDER",
             "GCS_WRITE_FOLDER",
             "PUBSUB_TOPIC",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "PUBSUB_SUBSCRIPTION"
-=======
             "PUBSUB_SUBSCRIPTION",
             "BIGQUERY_TABLE",
-            "JAVASCRIPT_UDF_FILE"
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
+            "JAVASCRIPT_UDF_FILE",
+            "SERVICE_ACCOUNT",
+            "MACHINE_TYPE",
+            "KMS_KEY_NAME",
+            "WORKER_REGION",
+            "WORKER_ZONE"
           ],
           "enumDescriptions": [
             "Default input type.",
@@ -4890,15 +4748,14 @@
             "The parameter specifies a Cloud Storage folder path to read from.",
             "The parameter specifies a Cloud Storage folder to write to.",
             "The parameter specifies a Pub/Sub Topic.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "The parameter specifies a Pub/Sub Subscription."
-          ],
-          "type": "string"
-        },
-=======
             "The parameter specifies a Pub/Sub Subscription.",
             "The parameter specifies a BigQuery table.",
-            "The parameter specifies a JavaScript UDF in Cloud Storage."
+            "The parameter specifies a JavaScript UDF in Cloud Storage.",
+            "The parameter specifies a Service Account email.",
+            "The parameter specifies a Machine Type.",
+            "The parameter specifies a KMS Key name.",
+            "The parameter specifies a Worker Region.",
+            "The parameter specifies a Worker Zone."
           ],
           "type": "string"
         },
@@ -4913,7 +4770,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "regexes": {
           "description": "Optional. Regexes that the parameter must match.",
           "items": {
@@ -5015,23 +4871,6 @@
       },
       "type": "object"
     },
-    "Point": {
-      "description": "A point in the timeseries.",
-      "id": "Point",
-      "properties": {
-        "time": {
-          "description": "The timestamp of the point.",
-          "format": "google-datetime",
-          "type": "string"
-        },
-        "value": {
-          "description": "The value of the point.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
     "Position": {
       "description": "Position defines a position within a collection of data. The value can be either the end position, a key (used with ordered collections), a byte offset, or a record index.",
       "id": "Position",
@@ -5107,6 +4946,10 @@
           "description": "Indicates whether the pipeline allows late-arriving data.",
           "type": "boolean"
         },
+        "dynamicDestinations": {
+          "description": "If true, then this location represents dynamic topics.",
+          "type": "boolean"
+        },
         "idLabel": {
           "description": "If set, contains a pubsub label from which to extract record ids. If left empty, record deduplication will be strictly best effort.",
           "type": "string"
@@ -5154,31 +4997,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-    "QueryInfo": {
-      "description": "Information about a validated query.",
-      "id": "QueryInfo",
-      "properties": {
-        "queryProperty": {
-          "description": "Includes an entry for each satisfied QueryProperty.",
-          "items": {
-            "enum": [
-              "QUERY_PROPERTY_UNSPECIFIED",
-              "HAS_UNBOUNDED_SOURCE"
-            ],
-            "enumDescriptions": [
-              "The query property is unknown or unspecified.",
-              "Indicates this query reads from \u003e= 1 unbounded source."
-            ],
-            "type": "string"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-=======
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
     "ReadInstruction": {
       "description": "An instruction that reads records. Takes no inputs, produces one output.",
       "id": "ReadInstruction",
@@ -5312,21 +5130,6 @@
           "additionalProperties": {
             "type": "string"
           },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }.",
-          "type": "object"
-        },
-        "bypassTempDirValidation": {
-          "description": "Whether to bypass the safety checks for the job's temporary directory. Use with caution.",
-          "type": "boolean"
-        },
-        "enableStreamingEngine": {
-          "description": "Whether to enable Streaming Engine for the job.",
-          "type": "boolean"
-        },
-        "ipConfiguration": {
-          "description": "Configuration for VM IPs.",
-=======
           "description": "Optional. Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }.",
           "type": "object"
         },
@@ -5340,7 +5143,6 @@
         },
         "ipConfiguration": {
           "description": "Optional. Configuration for VM IPs.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "enum": [
             "WORKER_IP_UNSPECIFIED",
             "WORKER_IP_PUBLIC",
@@ -5354,17 +5156,6 @@
           "type": "string"
         },
         "kmsKeyName": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/",
-          "type": "string"
-        },
-        "machineType": {
-          "description": "The machine type to use for the job. Defaults to the value from the template if not specified.",
-          "type": "string"
-        },
-        "maxWorkers": {
-          "description": "The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.",
-=======
           "description": "Optional. Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/",
           "type": "string"
         },
@@ -5374,16 +5165,11 @@
         },
         "maxWorkers": {
           "description": "Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "format": "int32",
           "type": "integer"
         },
         "network": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\".",
-=======
           "description": "Optional. Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\".",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "type": "string"
         },
         "numWorkers": {
@@ -5396,25 +5182,6 @@
           "type": "string"
         },
         "subnetwork": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL.",
-          "type": "string"
-        },
-        "tempLocation": {
-          "description": "The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.",
-          "type": "string"
-        },
-        "workerRegion": {
-          "description": "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.",
-          "type": "string"
-        },
-        "workerZone": {
-          "description": "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.",
-          "type": "string"
-        },
-        "zone": {
-          "description": "The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.",
-=======
           "description": "Optional. Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL.",
           "type": "string"
         },
@@ -5432,7 +5199,6 @@
         },
         "zone": {
           "description": "Optional. The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "type": "string"
         }
       },
@@ -5456,6 +5222,23 @@
       },
       "type": "object"
     },
+    "RuntimeUpdatableParams": {
+      "description": "Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation.",
+      "id": "RuntimeUpdatableParams",
+      "properties": {
+        "maxNumWorkers": {
+          "description": "The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "minNumWorkers": {
+          "description": "The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "SDKInfo": {
       "description": "SDK Information.",
       "id": "SDKInfo",
@@ -5465,22 +5248,14 @@
           "enum": [
             "UNKNOWN",
             "JAVA",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "PYTHON"
-=======
             "PYTHON",
             "GO"
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           ],
           "enumDescriptions": [
             "UNKNOWN Language.",
             "Java.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "Python."
-=======
             "Python.",
             "Go."
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           ],
           "type": "string"
         },
@@ -5492,11 +5267,6 @@
       "type": "object"
     },
     "SdkHarnessContainerImage": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-      "description": "Defines a SDK harness container for executing Dataflow pipelines.",
-      "id": "SdkHarnessContainerImage",
-      "properties": {
-=======
       "description": "Defines an SDK harness container for executing Dataflow pipelines.",
       "id": "SdkHarnessContainerImage",
       "properties": {
@@ -5507,7 +5277,6 @@
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "containerImage": {
           "description": "A docker container image that resides in Google Container Registry.",
           "type": "string"
@@ -5540,11 +5309,7 @@
             "Cloud Dataflow is unaware of this version.",
             "This is a known version of an SDK, and is supported.",
             "A newer version of the SDK family exists, and an update is recommended.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-            "This version of the SDK is deprecated and will eventually be no longer supported.",
-=======
             "This version of the SDK is deprecated and will eventually be unsupported.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
             "Support for this SDK version has ended and it should no longer be used."
           ],
           "type": "string"
@@ -5787,23 +5552,16 @@
           "type": "string"
         },
         "pubsubMetadata": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-          "description": "PubSub snapshot metadata.",
-=======
           "description": "Pub/Sub snapshot metadata.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "items": {
             "$ref": "PubsubSnapshotMetadata"
           },
           "type": "array"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "region": {
           "description": "Cloud region where this snapshot lives in, e.g., \"us-central1\".",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "sourceJobId": {
           "description": "The job this snapshot was created from.",
           "type": "string"
@@ -6233,13 +5991,10 @@
             "Execution of the component was cancelled."
           ],
           "type": "string"
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         },
         "stragglerSummary": {
           "$ref": "StragglerSummary",
           "description": "Straggler summary for this stage."
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         }
       },
       "type": "object"
@@ -6287,11 +6042,7 @@
       "type": "object"
     },
     "Step": {
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-      "description": "Defines a particular step within a Cloud Dataflow job. A job consists of multiple steps, each of which performs some specific operation as part of the overall job. Data is typically passed from one step to another as part of the job. Here's an example of a sequence of steps which together implement a Map-Reduce job: * Read a collection of data from some source, parsing the collection's elements. * Validate the elements. * Apply a user-defined function to map each element to some value and extract an element-specific key value. * Group elements with the same key into a single element with that key, transforming a multiply-keyed collection into a uniquely-keyed collection. * Write the elements out to some data sink. Note that the Cloud Dataflow service may be used to run many different types of jobs, not just Map-Reduce.",
-=======
       "description": "Defines a particular step within a Cloud Dataflow job. A job consists of multiple steps, each of which performs some specific operation as part of the overall job. Data is typically passed from one step to another as part of the job. **Note:** The properties of this object are not stable and might change. Here's an example of a sequence of steps which together implement a Map-Reduce job: * Read a collection of data from some source, parsing the collection's elements. * Validate the elements. * Apply a user-defined function to map each element to some value and extract an element-specific key value. * Group elements with the same key into a single element with that key, transforming a multiply-keyed collection into a uniquely-keyed collection. * Write the elements out to some data sink. Note that the Cloud Dataflow service may be used to run many different types of jobs, not just Map-Reduce.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
       "id": "Step",
       "properties": {
         "kind": {
@@ -6604,8 +6355,6 @@
       "properties": {
         "streamId": {
           "description": "Identifies the particular stream within the streaming Dataflow job.",
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
           "type": "string"
         }
       },
@@ -6637,7 +6386,6 @@
         },
         "workerName": {
           "description": "Name of the worker where the straggler was detected.",
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
           "type": "string"
         }
       },
@@ -6887,24 +6635,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-    "ValidateResponse": {
-      "description": "Response to the validation request.",
-      "id": "ValidateResponse",
-      "properties": {
-        "errorMessage": {
-          "description": "Will be empty if validation succeeds.",
-          "type": "string"
-        },
-        "queryInfo": {
-          "$ref": "QueryInfo",
-          "description": "Information about the validated query. Not defined if validation fails."
-        }
-      },
-      "type": "object"
-    },
-=======
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
     "WorkItem": {
       "description": "WorkItem represents basic information about a WorkItem to be executed in the cloud.",
       "id": "WorkItem",
@@ -7028,13 +6758,10 @@
           ],
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/dataflow/v1b3/dataflow-api.json
-=======
         "stragglerInfo": {
           "$ref": "StragglerInfo",
           "description": "Information about straggler detections for this work item."
         },
->>>>>>> upstream/main:configs/models/dataflow/v1b3/dataflow-api.json
         "taskId": {
           "description": "Name of this work item.",
           "type": "string"

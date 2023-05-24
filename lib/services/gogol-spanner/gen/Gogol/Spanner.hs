@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,1006 +31,1039 @@
 --
 -- /See:/ <https://cloud.google.com/spanner/ Cloud Spanner API Reference>
 module Gogol.Spanner
-  ( -- * Configuration
-    spannerService,
+    (
+    -- * Configuration
+      spannerService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
-    Spanner'Admin,
-    Spanner'Data,
+    , CloudPlatform'FullControl
+    , Spanner'Admin
+    , Spanner'Data
 
     -- * Resources
 
     -- ** spanner.projects.instanceConfigOperations.list
-    SpannerProjectsInstanceConfigOperationsListResource,
-    SpannerProjectsInstanceConfigOperationsList (..),
-    newSpannerProjectsInstanceConfigOperationsList,
+    , SpannerProjectsInstanceConfigOperationsListResource
+    , SpannerProjectsInstanceConfigOperationsList (..)
+    , newSpannerProjectsInstanceConfigOperationsList
 
     -- ** spanner.projects.instanceConfigs.create
-    SpannerProjectsInstanceConfigsCreateResource,
-    SpannerProjectsInstanceConfigsCreate (..),
-    newSpannerProjectsInstanceConfigsCreate,
+    , SpannerProjectsInstanceConfigsCreateResource
+    , SpannerProjectsInstanceConfigsCreate (..)
+    , newSpannerProjectsInstanceConfigsCreate
 
     -- ** spanner.projects.instanceConfigs.delete
-    SpannerProjectsInstanceConfigsDeleteResource,
-    SpannerProjectsInstanceConfigsDelete (..),
-    newSpannerProjectsInstanceConfigsDelete,
+    , SpannerProjectsInstanceConfigsDeleteResource
+    , SpannerProjectsInstanceConfigsDelete (..)
+    , newSpannerProjectsInstanceConfigsDelete
 
     -- ** spanner.projects.instanceConfigs.get
-    SpannerProjectsInstanceConfigsGetResource,
-    SpannerProjectsInstanceConfigsGet (..),
-    newSpannerProjectsInstanceConfigsGet,
+    , SpannerProjectsInstanceConfigsGetResource
+    , SpannerProjectsInstanceConfigsGet (..)
+    , newSpannerProjectsInstanceConfigsGet
 
     -- ** spanner.projects.instanceConfigs.list
-    SpannerProjectsInstanceConfigsListResource,
-    SpannerProjectsInstanceConfigsList (..),
-    newSpannerProjectsInstanceConfigsList,
+    , SpannerProjectsInstanceConfigsListResource
+    , SpannerProjectsInstanceConfigsList (..)
+    , newSpannerProjectsInstanceConfigsList
 
     -- ** spanner.projects.instanceConfigs.operations.cancel
-    SpannerProjectsInstanceConfigsOperationsCancelResource,
-    SpannerProjectsInstanceConfigsOperationsCancel (..),
-    newSpannerProjectsInstanceConfigsOperationsCancel,
+    , SpannerProjectsInstanceConfigsOperationsCancelResource
+    , SpannerProjectsInstanceConfigsOperationsCancel (..)
+    , newSpannerProjectsInstanceConfigsOperationsCancel
 
     -- ** spanner.projects.instanceConfigs.operations.delete
-    SpannerProjectsInstanceConfigsOperationsDeleteResource,
-    SpannerProjectsInstanceConfigsOperationsDelete (..),
-    newSpannerProjectsInstanceConfigsOperationsDelete,
+    , SpannerProjectsInstanceConfigsOperationsDeleteResource
+    , SpannerProjectsInstanceConfigsOperationsDelete (..)
+    , newSpannerProjectsInstanceConfigsOperationsDelete
 
     -- ** spanner.projects.instanceConfigs.operations.get
-    SpannerProjectsInstanceConfigsOperationsGetResource,
-    SpannerProjectsInstanceConfigsOperationsGet (..),
-    newSpannerProjectsInstanceConfigsOperationsGet,
+    , SpannerProjectsInstanceConfigsOperationsGetResource
+    , SpannerProjectsInstanceConfigsOperationsGet (..)
+    , newSpannerProjectsInstanceConfigsOperationsGet
 
     -- ** spanner.projects.instanceConfigs.operations.list
-    SpannerProjectsInstanceConfigsOperationsListResource,
-    SpannerProjectsInstanceConfigsOperationsList (..),
-    newSpannerProjectsInstanceConfigsOperationsList,
+    , SpannerProjectsInstanceConfigsOperationsListResource
+    , SpannerProjectsInstanceConfigsOperationsList (..)
+    , newSpannerProjectsInstanceConfigsOperationsList
 
     -- ** spanner.projects.instanceConfigs.patch
-    SpannerProjectsInstanceConfigsPatchResource,
-    SpannerProjectsInstanceConfigsPatch (..),
-    newSpannerProjectsInstanceConfigsPatch,
+    , SpannerProjectsInstanceConfigsPatchResource
+    , SpannerProjectsInstanceConfigsPatch (..)
+    , newSpannerProjectsInstanceConfigsPatch
 
     -- ** spanner.projects.instances.backupOperations.list
-    SpannerProjectsInstancesBackupOperationsListResource,
-    SpannerProjectsInstancesBackupOperationsList (..),
-    newSpannerProjectsInstancesBackupOperationsList,
+    , SpannerProjectsInstancesBackupOperationsListResource
+    , SpannerProjectsInstancesBackupOperationsList (..)
+    , newSpannerProjectsInstancesBackupOperationsList
 
     -- ** spanner.projects.instances.backups.copy
-    SpannerProjectsInstancesBackupsCopyResource,
-    SpannerProjectsInstancesBackupsCopy (..),
-    newSpannerProjectsInstancesBackupsCopy,
+    , SpannerProjectsInstancesBackupsCopyResource
+    , SpannerProjectsInstancesBackupsCopy (..)
+    , newSpannerProjectsInstancesBackupsCopy
 
     -- ** spanner.projects.instances.backups.create
-    SpannerProjectsInstancesBackupsCreateResource,
-    SpannerProjectsInstancesBackupsCreate (..),
-    newSpannerProjectsInstancesBackupsCreate,
+    , SpannerProjectsInstancesBackupsCreateResource
+    , SpannerProjectsInstancesBackupsCreate (..)
+    , newSpannerProjectsInstancesBackupsCreate
 
     -- ** spanner.projects.instances.backups.delete
-    SpannerProjectsInstancesBackupsDeleteResource,
-    SpannerProjectsInstancesBackupsDelete (..),
-    newSpannerProjectsInstancesBackupsDelete,
+    , SpannerProjectsInstancesBackupsDeleteResource
+    , SpannerProjectsInstancesBackupsDelete (..)
+    , newSpannerProjectsInstancesBackupsDelete
 
     -- ** spanner.projects.instances.backups.get
-    SpannerProjectsInstancesBackupsGetResource,
-    SpannerProjectsInstancesBackupsGet (..),
-    newSpannerProjectsInstancesBackupsGet,
+    , SpannerProjectsInstancesBackupsGetResource
+    , SpannerProjectsInstancesBackupsGet (..)
+    , newSpannerProjectsInstancesBackupsGet
 
     -- ** spanner.projects.instances.backups.getIamPolicy
-    SpannerProjectsInstancesBackupsGetIamPolicyResource,
-    SpannerProjectsInstancesBackupsGetIamPolicy (..),
-    newSpannerProjectsInstancesBackupsGetIamPolicy,
+    , SpannerProjectsInstancesBackupsGetIamPolicyResource
+    , SpannerProjectsInstancesBackupsGetIamPolicy (..)
+    , newSpannerProjectsInstancesBackupsGetIamPolicy
 
     -- ** spanner.projects.instances.backups.list
-    SpannerProjectsInstancesBackupsListResource,
-    SpannerProjectsInstancesBackupsList (..),
-    newSpannerProjectsInstancesBackupsList,
+    , SpannerProjectsInstancesBackupsListResource
+    , SpannerProjectsInstancesBackupsList (..)
+    , newSpannerProjectsInstancesBackupsList
 
     -- ** spanner.projects.instances.backups.operations.cancel
-    SpannerProjectsInstancesBackupsOperationsCancelResource,
-    SpannerProjectsInstancesBackupsOperationsCancel (..),
-    newSpannerProjectsInstancesBackupsOperationsCancel,
+    , SpannerProjectsInstancesBackupsOperationsCancelResource
+    , SpannerProjectsInstancesBackupsOperationsCancel (..)
+    , newSpannerProjectsInstancesBackupsOperationsCancel
 
     -- ** spanner.projects.instances.backups.operations.delete
-    SpannerProjectsInstancesBackupsOperationsDeleteResource,
-    SpannerProjectsInstancesBackupsOperationsDelete (..),
-    newSpannerProjectsInstancesBackupsOperationsDelete,
+    , SpannerProjectsInstancesBackupsOperationsDeleteResource
+    , SpannerProjectsInstancesBackupsOperationsDelete (..)
+    , newSpannerProjectsInstancesBackupsOperationsDelete
 
     -- ** spanner.projects.instances.backups.operations.get
-    SpannerProjectsInstancesBackupsOperationsGetResource,
-    SpannerProjectsInstancesBackupsOperationsGet (..),
-    newSpannerProjectsInstancesBackupsOperationsGet,
+    , SpannerProjectsInstancesBackupsOperationsGetResource
+    , SpannerProjectsInstancesBackupsOperationsGet (..)
+    , newSpannerProjectsInstancesBackupsOperationsGet
 
     -- ** spanner.projects.instances.backups.operations.list
-    SpannerProjectsInstancesBackupsOperationsListResource,
-    SpannerProjectsInstancesBackupsOperationsList (..),
-    newSpannerProjectsInstancesBackupsOperationsList,
+    , SpannerProjectsInstancesBackupsOperationsListResource
+    , SpannerProjectsInstancesBackupsOperationsList (..)
+    , newSpannerProjectsInstancesBackupsOperationsList
 
     -- ** spanner.projects.instances.backups.patch
-    SpannerProjectsInstancesBackupsPatchResource,
-    SpannerProjectsInstancesBackupsPatch (..),
-    newSpannerProjectsInstancesBackupsPatch,
+    , SpannerProjectsInstancesBackupsPatchResource
+    , SpannerProjectsInstancesBackupsPatch (..)
+    , newSpannerProjectsInstancesBackupsPatch
 
     -- ** spanner.projects.instances.backups.setIamPolicy
-    SpannerProjectsInstancesBackupsSetIamPolicyResource,
-    SpannerProjectsInstancesBackupsSetIamPolicy (..),
-    newSpannerProjectsInstancesBackupsSetIamPolicy,
+    , SpannerProjectsInstancesBackupsSetIamPolicyResource
+    , SpannerProjectsInstancesBackupsSetIamPolicy (..)
+    , newSpannerProjectsInstancesBackupsSetIamPolicy
 
     -- ** spanner.projects.instances.backups.testIamPermissions
-    SpannerProjectsInstancesBackupsTestIamPermissionsResource,
-    SpannerProjectsInstancesBackupsTestIamPermissions (..),
-    newSpannerProjectsInstancesBackupsTestIamPermissions,
+    , SpannerProjectsInstancesBackupsTestIamPermissionsResource
+    , SpannerProjectsInstancesBackupsTestIamPermissions (..)
+    , newSpannerProjectsInstancesBackupsTestIamPermissions
 
     -- ** spanner.projects.instances.create
-    SpannerProjectsInstancesCreateResource,
-    SpannerProjectsInstancesCreate (..),
-    newSpannerProjectsInstancesCreate,
+    , SpannerProjectsInstancesCreateResource
+    , SpannerProjectsInstancesCreate (..)
+    , newSpannerProjectsInstancesCreate
 
     -- ** spanner.projects.instances.databaseOperations.list
-    SpannerProjectsInstancesDatabaseOperationsListResource,
-    SpannerProjectsInstancesDatabaseOperationsList (..),
-    newSpannerProjectsInstancesDatabaseOperationsList,
+    , SpannerProjectsInstancesDatabaseOperationsListResource
+    , SpannerProjectsInstancesDatabaseOperationsList (..)
+    , newSpannerProjectsInstancesDatabaseOperationsList
 
     -- ** spanner.projects.instances.databases.create
-    SpannerProjectsInstancesDatabasesCreateResource,
-    SpannerProjectsInstancesDatabasesCreate (..),
-    newSpannerProjectsInstancesDatabasesCreate,
+    , SpannerProjectsInstancesDatabasesCreateResource
+    , SpannerProjectsInstancesDatabasesCreate (..)
+    , newSpannerProjectsInstancesDatabasesCreate
 
     -- ** spanner.projects.instances.databases.databaseRoles.list
-    SpannerProjectsInstancesDatabasesDatabaseRolesListResource,
-    SpannerProjectsInstancesDatabasesDatabaseRolesList (..),
-    newSpannerProjectsInstancesDatabasesDatabaseRolesList,
+    , SpannerProjectsInstancesDatabasesDatabaseRolesListResource
+    , SpannerProjectsInstancesDatabasesDatabaseRolesList (..)
+    , newSpannerProjectsInstancesDatabasesDatabaseRolesList
 
     -- ** spanner.projects.instances.databases.databaseRoles.testIamPermissions
-    SpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissionsResource,
-    SpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissions (..),
-    newSpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissions,
+    , SpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissionsResource
+    , SpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissions (..)
+    , newSpannerProjectsInstancesDatabasesDatabaseRolesTestIamPermissions
 
     -- ** spanner.projects.instances.databases.dropDatabase
-    SpannerProjectsInstancesDatabasesDropDatabaseResource,
-    SpannerProjectsInstancesDatabasesDropDatabase (..),
-    newSpannerProjectsInstancesDatabasesDropDatabase,
+    , SpannerProjectsInstancesDatabasesDropDatabaseResource
+    , SpannerProjectsInstancesDatabasesDropDatabase (..)
+    , newSpannerProjectsInstancesDatabasesDropDatabase
 
     -- ** spanner.projects.instances.databases.get
-    SpannerProjectsInstancesDatabasesGetResource,
-    SpannerProjectsInstancesDatabasesGet (..),
-    newSpannerProjectsInstancesDatabasesGet,
+    , SpannerProjectsInstancesDatabasesGetResource
+    , SpannerProjectsInstancesDatabasesGet (..)
+    , newSpannerProjectsInstancesDatabasesGet
 
     -- ** spanner.projects.instances.databases.getDdl
-    SpannerProjectsInstancesDatabasesGetDdlResource,
-    SpannerProjectsInstancesDatabasesGetDdl (..),
-    newSpannerProjectsInstancesDatabasesGetDdl,
+    , SpannerProjectsInstancesDatabasesGetDdlResource
+    , SpannerProjectsInstancesDatabasesGetDdl (..)
+    , newSpannerProjectsInstancesDatabasesGetDdl
 
     -- ** spanner.projects.instances.databases.getIamPolicy
-    SpannerProjectsInstancesDatabasesGetIamPolicyResource,
-    SpannerProjectsInstancesDatabasesGetIamPolicy (..),
-    newSpannerProjectsInstancesDatabasesGetIamPolicy,
+    , SpannerProjectsInstancesDatabasesGetIamPolicyResource
+    , SpannerProjectsInstancesDatabasesGetIamPolicy (..)
+    , newSpannerProjectsInstancesDatabasesGetIamPolicy
 
     -- ** spanner.projects.instances.databases.getScans
-    SpannerProjectsInstancesDatabasesGetScansResource,
-    SpannerProjectsInstancesDatabasesGetScans (..),
-    newSpannerProjectsInstancesDatabasesGetScans,
+    , SpannerProjectsInstancesDatabasesGetScansResource
+    , SpannerProjectsInstancesDatabasesGetScans (..)
+    , newSpannerProjectsInstancesDatabasesGetScans
 
     -- ** spanner.projects.instances.databases.list
-    SpannerProjectsInstancesDatabasesListResource,
-    SpannerProjectsInstancesDatabasesList (..),
-    newSpannerProjectsInstancesDatabasesList,
+    , SpannerProjectsInstancesDatabasesListResource
+    , SpannerProjectsInstancesDatabasesList (..)
+    , newSpannerProjectsInstancesDatabasesList
 
     -- ** spanner.projects.instances.databases.operations.cancel
-    SpannerProjectsInstancesDatabasesOperationsCancelResource,
-    SpannerProjectsInstancesDatabasesOperationsCancel (..),
-    newSpannerProjectsInstancesDatabasesOperationsCancel,
+    , SpannerProjectsInstancesDatabasesOperationsCancelResource
+    , SpannerProjectsInstancesDatabasesOperationsCancel (..)
+    , newSpannerProjectsInstancesDatabasesOperationsCancel
 
     -- ** spanner.projects.instances.databases.operations.delete
-    SpannerProjectsInstancesDatabasesOperationsDeleteResource,
-    SpannerProjectsInstancesDatabasesOperationsDelete (..),
-    newSpannerProjectsInstancesDatabasesOperationsDelete,
+    , SpannerProjectsInstancesDatabasesOperationsDeleteResource
+    , SpannerProjectsInstancesDatabasesOperationsDelete (..)
+    , newSpannerProjectsInstancesDatabasesOperationsDelete
 
     -- ** spanner.projects.instances.databases.operations.get
-    SpannerProjectsInstancesDatabasesOperationsGetResource,
-    SpannerProjectsInstancesDatabasesOperationsGet (..),
-    newSpannerProjectsInstancesDatabasesOperationsGet,
+    , SpannerProjectsInstancesDatabasesOperationsGetResource
+    , SpannerProjectsInstancesDatabasesOperationsGet (..)
+    , newSpannerProjectsInstancesDatabasesOperationsGet
 
     -- ** spanner.projects.instances.databases.operations.list
-    SpannerProjectsInstancesDatabasesOperationsListResource,
-    SpannerProjectsInstancesDatabasesOperationsList (..),
-    newSpannerProjectsInstancesDatabasesOperationsList,
+    , SpannerProjectsInstancesDatabasesOperationsListResource
+    , SpannerProjectsInstancesDatabasesOperationsList (..)
+    , newSpannerProjectsInstancesDatabasesOperationsList
+
+    -- ** spanner.projects.instances.databases.patch
+    , SpannerProjectsInstancesDatabasesPatchResource
+    , SpannerProjectsInstancesDatabasesPatch (..)
+    , newSpannerProjectsInstancesDatabasesPatch
 
     -- ** spanner.projects.instances.databases.restore
-    SpannerProjectsInstancesDatabasesRestoreResource,
-    SpannerProjectsInstancesDatabasesRestore (..),
-    newSpannerProjectsInstancesDatabasesRestore,
+    , SpannerProjectsInstancesDatabasesRestoreResource
+    , SpannerProjectsInstancesDatabasesRestore (..)
+    , newSpannerProjectsInstancesDatabasesRestore
 
     -- ** spanner.projects.instances.databases.sessions.batchCreate
-    SpannerProjectsInstancesDatabasesSessionsBatchCreateResource,
-    SpannerProjectsInstancesDatabasesSessionsBatchCreate (..),
-    newSpannerProjectsInstancesDatabasesSessionsBatchCreate,
+    , SpannerProjectsInstancesDatabasesSessionsBatchCreateResource
+    , SpannerProjectsInstancesDatabasesSessionsBatchCreate (..)
+    , newSpannerProjectsInstancesDatabasesSessionsBatchCreate
 
     -- ** spanner.projects.instances.databases.sessions.beginTransaction
-    SpannerProjectsInstancesDatabasesSessionsBeginTransactionResource,
-    SpannerProjectsInstancesDatabasesSessionsBeginTransaction (..),
-    newSpannerProjectsInstancesDatabasesSessionsBeginTransaction,
+    , SpannerProjectsInstancesDatabasesSessionsBeginTransactionResource
+    , SpannerProjectsInstancesDatabasesSessionsBeginTransaction (..)
+    , newSpannerProjectsInstancesDatabasesSessionsBeginTransaction
 
     -- ** spanner.projects.instances.databases.sessions.commit
-    SpannerProjectsInstancesDatabasesSessionsCommitResource,
-    SpannerProjectsInstancesDatabasesSessionsCommit (..),
-    newSpannerProjectsInstancesDatabasesSessionsCommit,
+    , SpannerProjectsInstancesDatabasesSessionsCommitResource
+    , SpannerProjectsInstancesDatabasesSessionsCommit (..)
+    , newSpannerProjectsInstancesDatabasesSessionsCommit
 
     -- ** spanner.projects.instances.databases.sessions.create
-    SpannerProjectsInstancesDatabasesSessionsCreateResource,
-    SpannerProjectsInstancesDatabasesSessionsCreate (..),
-    newSpannerProjectsInstancesDatabasesSessionsCreate,
+    , SpannerProjectsInstancesDatabasesSessionsCreateResource
+    , SpannerProjectsInstancesDatabasesSessionsCreate (..)
+    , newSpannerProjectsInstancesDatabasesSessionsCreate
 
     -- ** spanner.projects.instances.databases.sessions.delete
-    SpannerProjectsInstancesDatabasesSessionsDeleteResource,
-    SpannerProjectsInstancesDatabasesSessionsDelete (..),
-    newSpannerProjectsInstancesDatabasesSessionsDelete,
+    , SpannerProjectsInstancesDatabasesSessionsDeleteResource
+    , SpannerProjectsInstancesDatabasesSessionsDelete (..)
+    , newSpannerProjectsInstancesDatabasesSessionsDelete
 
     -- ** spanner.projects.instances.databases.sessions.executeBatchDml
-    SpannerProjectsInstancesDatabasesSessionsExecuteBatchDmlResource,
-    SpannerProjectsInstancesDatabasesSessionsExecuteBatchDml (..),
-    newSpannerProjectsInstancesDatabasesSessionsExecuteBatchDml,
+    , SpannerProjectsInstancesDatabasesSessionsExecuteBatchDmlResource
+    , SpannerProjectsInstancesDatabasesSessionsExecuteBatchDml (..)
+    , newSpannerProjectsInstancesDatabasesSessionsExecuteBatchDml
 
     -- ** spanner.projects.instances.databases.sessions.executeSql
-    SpannerProjectsInstancesDatabasesSessionsExecuteSqlResource,
-    SpannerProjectsInstancesDatabasesSessionsExecuteSql (..),
-    newSpannerProjectsInstancesDatabasesSessionsExecuteSql,
+    , SpannerProjectsInstancesDatabasesSessionsExecuteSqlResource
+    , SpannerProjectsInstancesDatabasesSessionsExecuteSql (..)
+    , newSpannerProjectsInstancesDatabasesSessionsExecuteSql
 
     -- ** spanner.projects.instances.databases.sessions.executeStreamingSql
-    SpannerProjectsInstancesDatabasesSessionsExecuteStreamingSqlResource,
-    SpannerProjectsInstancesDatabasesSessionsExecuteStreamingSql (..),
-    newSpannerProjectsInstancesDatabasesSessionsExecuteStreamingSql,
+    , SpannerProjectsInstancesDatabasesSessionsExecuteStreamingSqlResource
+    , SpannerProjectsInstancesDatabasesSessionsExecuteStreamingSql (..)
+    , newSpannerProjectsInstancesDatabasesSessionsExecuteStreamingSql
 
     -- ** spanner.projects.instances.databases.sessions.get
-    SpannerProjectsInstancesDatabasesSessionsGetResource,
-    SpannerProjectsInstancesDatabasesSessionsGet (..),
-    newSpannerProjectsInstancesDatabasesSessionsGet,
+    , SpannerProjectsInstancesDatabasesSessionsGetResource
+    , SpannerProjectsInstancesDatabasesSessionsGet (..)
+    , newSpannerProjectsInstancesDatabasesSessionsGet
 
     -- ** spanner.projects.instances.databases.sessions.list
-    SpannerProjectsInstancesDatabasesSessionsListResource,
-    SpannerProjectsInstancesDatabasesSessionsList (..),
-    newSpannerProjectsInstancesDatabasesSessionsList,
+    , SpannerProjectsInstancesDatabasesSessionsListResource
+    , SpannerProjectsInstancesDatabasesSessionsList (..)
+    , newSpannerProjectsInstancesDatabasesSessionsList
 
     -- ** spanner.projects.instances.databases.sessions.partitionQuery
-    SpannerProjectsInstancesDatabasesSessionsPartitionQueryResource,
-    SpannerProjectsInstancesDatabasesSessionsPartitionQuery (..),
-    newSpannerProjectsInstancesDatabasesSessionsPartitionQuery,
+    , SpannerProjectsInstancesDatabasesSessionsPartitionQueryResource
+    , SpannerProjectsInstancesDatabasesSessionsPartitionQuery (..)
+    , newSpannerProjectsInstancesDatabasesSessionsPartitionQuery
 
     -- ** spanner.projects.instances.databases.sessions.partitionRead
-    SpannerProjectsInstancesDatabasesSessionsPartitionReadResource,
-    SpannerProjectsInstancesDatabasesSessionsPartitionRead (..),
-    newSpannerProjectsInstancesDatabasesSessionsPartitionRead,
+    , SpannerProjectsInstancesDatabasesSessionsPartitionReadResource
+    , SpannerProjectsInstancesDatabasesSessionsPartitionRead (..)
+    , newSpannerProjectsInstancesDatabasesSessionsPartitionRead
 
     -- ** spanner.projects.instances.databases.sessions.read
-    SpannerProjectsInstancesDatabasesSessionsReadResource,
-    SpannerProjectsInstancesDatabasesSessionsRead (..),
-    newSpannerProjectsInstancesDatabasesSessionsRead,
+    , SpannerProjectsInstancesDatabasesSessionsReadResource
+    , SpannerProjectsInstancesDatabasesSessionsRead (..)
+    , newSpannerProjectsInstancesDatabasesSessionsRead
 
     -- ** spanner.projects.instances.databases.sessions.rollback
-    SpannerProjectsInstancesDatabasesSessionsRollbackResource,
-    SpannerProjectsInstancesDatabasesSessionsRollback (..),
-    newSpannerProjectsInstancesDatabasesSessionsRollback,
+    , SpannerProjectsInstancesDatabasesSessionsRollbackResource
+    , SpannerProjectsInstancesDatabasesSessionsRollback (..)
+    , newSpannerProjectsInstancesDatabasesSessionsRollback
 
     -- ** spanner.projects.instances.databases.sessions.streamingRead
-    SpannerProjectsInstancesDatabasesSessionsStreamingReadResource,
-    SpannerProjectsInstancesDatabasesSessionsStreamingRead (..),
-    newSpannerProjectsInstancesDatabasesSessionsStreamingRead,
+    , SpannerProjectsInstancesDatabasesSessionsStreamingReadResource
+    , SpannerProjectsInstancesDatabasesSessionsStreamingRead (..)
+    , newSpannerProjectsInstancesDatabasesSessionsStreamingRead
 
     -- ** spanner.projects.instances.databases.setIamPolicy
-    SpannerProjectsInstancesDatabasesSetIamPolicyResource,
-    SpannerProjectsInstancesDatabasesSetIamPolicy (..),
-    newSpannerProjectsInstancesDatabasesSetIamPolicy,
+    , SpannerProjectsInstancesDatabasesSetIamPolicyResource
+    , SpannerProjectsInstancesDatabasesSetIamPolicy (..)
+    , newSpannerProjectsInstancesDatabasesSetIamPolicy
 
     -- ** spanner.projects.instances.databases.testIamPermissions
-    SpannerProjectsInstancesDatabasesTestIamPermissionsResource,
-    SpannerProjectsInstancesDatabasesTestIamPermissions (..),
-    newSpannerProjectsInstancesDatabasesTestIamPermissions,
+    , SpannerProjectsInstancesDatabasesTestIamPermissionsResource
+    , SpannerProjectsInstancesDatabasesTestIamPermissions (..)
+    , newSpannerProjectsInstancesDatabasesTestIamPermissions
 
     -- ** spanner.projects.instances.databases.updateDdl
-    SpannerProjectsInstancesDatabasesUpdateDdlResource,
-    SpannerProjectsInstancesDatabasesUpdateDdl (..),
-    newSpannerProjectsInstancesDatabasesUpdateDdl,
+    , SpannerProjectsInstancesDatabasesUpdateDdlResource
+    , SpannerProjectsInstancesDatabasesUpdateDdl (..)
+    , newSpannerProjectsInstancesDatabasesUpdateDdl
 
     -- ** spanner.projects.instances.delete
-    SpannerProjectsInstancesDeleteResource,
-    SpannerProjectsInstancesDelete (..),
-    newSpannerProjectsInstancesDelete,
+    , SpannerProjectsInstancesDeleteResource
+    , SpannerProjectsInstancesDelete (..)
+    , newSpannerProjectsInstancesDelete
 
     -- ** spanner.projects.instances.get
-    SpannerProjectsInstancesGetResource,
-    SpannerProjectsInstancesGet (..),
-    newSpannerProjectsInstancesGet,
+    , SpannerProjectsInstancesGetResource
+    , SpannerProjectsInstancesGet (..)
+    , newSpannerProjectsInstancesGet
 
     -- ** spanner.projects.instances.getIamPolicy
-    SpannerProjectsInstancesGetIamPolicyResource,
-    SpannerProjectsInstancesGetIamPolicy (..),
-    newSpannerProjectsInstancesGetIamPolicy,
+    , SpannerProjectsInstancesGetIamPolicyResource
+    , SpannerProjectsInstancesGetIamPolicy (..)
+    , newSpannerProjectsInstancesGetIamPolicy
+
+    -- ** spanner.projects.instances.instancePartitions.operations.cancel
+    , SpannerProjectsInstancesInstancePartitionsOperationsCancelResource
+    , SpannerProjectsInstancesInstancePartitionsOperationsCancel (..)
+    , newSpannerProjectsInstancesInstancePartitionsOperationsCancel
+
+    -- ** spanner.projects.instances.instancePartitions.operations.delete
+    , SpannerProjectsInstancesInstancePartitionsOperationsDeleteResource
+    , SpannerProjectsInstancesInstancePartitionsOperationsDelete (..)
+    , newSpannerProjectsInstancesInstancePartitionsOperationsDelete
+
+    -- ** spanner.projects.instances.instancePartitions.operations.get
+    , SpannerProjectsInstancesInstancePartitionsOperationsGetResource
+    , SpannerProjectsInstancesInstancePartitionsOperationsGet (..)
+    , newSpannerProjectsInstancesInstancePartitionsOperationsGet
+
+    -- ** spanner.projects.instances.instancePartitions.operations.list
+    , SpannerProjectsInstancesInstancePartitionsOperationsListResource
+    , SpannerProjectsInstancesInstancePartitionsOperationsList (..)
+    , newSpannerProjectsInstancesInstancePartitionsOperationsList
 
     -- ** spanner.projects.instances.list
-    SpannerProjectsInstancesListResource,
-    SpannerProjectsInstancesList (..),
-    newSpannerProjectsInstancesList,
+    , SpannerProjectsInstancesListResource
+    , SpannerProjectsInstancesList (..)
+    , newSpannerProjectsInstancesList
 
     -- ** spanner.projects.instances.operations.cancel
-    SpannerProjectsInstancesOperationsCancelResource,
-    SpannerProjectsInstancesOperationsCancel (..),
-    newSpannerProjectsInstancesOperationsCancel,
+    , SpannerProjectsInstancesOperationsCancelResource
+    , SpannerProjectsInstancesOperationsCancel (..)
+    , newSpannerProjectsInstancesOperationsCancel
 
     -- ** spanner.projects.instances.operations.delete
-    SpannerProjectsInstancesOperationsDeleteResource,
-    SpannerProjectsInstancesOperationsDelete (..),
-    newSpannerProjectsInstancesOperationsDelete,
+    , SpannerProjectsInstancesOperationsDeleteResource
+    , SpannerProjectsInstancesOperationsDelete (..)
+    , newSpannerProjectsInstancesOperationsDelete
 
     -- ** spanner.projects.instances.operations.get
-    SpannerProjectsInstancesOperationsGetResource,
-    SpannerProjectsInstancesOperationsGet (..),
-    newSpannerProjectsInstancesOperationsGet,
+    , SpannerProjectsInstancesOperationsGetResource
+    , SpannerProjectsInstancesOperationsGet (..)
+    , newSpannerProjectsInstancesOperationsGet
 
     -- ** spanner.projects.instances.operations.list
-    SpannerProjectsInstancesOperationsListResource,
-    SpannerProjectsInstancesOperationsList (..),
-    newSpannerProjectsInstancesOperationsList,
+    , SpannerProjectsInstancesOperationsListResource
+    , SpannerProjectsInstancesOperationsList (..)
+    , newSpannerProjectsInstancesOperationsList
 
     -- ** spanner.projects.instances.patch
-    SpannerProjectsInstancesPatchResource,
-    SpannerProjectsInstancesPatch (..),
-    newSpannerProjectsInstancesPatch,
+    , SpannerProjectsInstancesPatchResource
+    , SpannerProjectsInstancesPatch (..)
+    , newSpannerProjectsInstancesPatch
 
     -- ** spanner.projects.instances.setIamPolicy
-    SpannerProjectsInstancesSetIamPolicyResource,
-    SpannerProjectsInstancesSetIamPolicy (..),
-    newSpannerProjectsInstancesSetIamPolicy,
+    , SpannerProjectsInstancesSetIamPolicyResource
+    , SpannerProjectsInstancesSetIamPolicy (..)
+    , newSpannerProjectsInstancesSetIamPolicy
 
     -- ** spanner.projects.instances.testIamPermissions
-    SpannerProjectsInstancesTestIamPermissionsResource,
-    SpannerProjectsInstancesTestIamPermissions (..),
-    newSpannerProjectsInstancesTestIamPermissions,
+    , SpannerProjectsInstancesTestIamPermissionsResource
+    , SpannerProjectsInstancesTestIamPermissions (..)
+    , newSpannerProjectsInstancesTestIamPermissions
 
     -- ** spanner.scans.list
-    SpannerScansListResource,
-    SpannerScansList (..),
-    newSpannerScansList,
+    , SpannerScansListResource
+    , SpannerScansList (..)
+    , newSpannerScansList
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Backup
-    Backup (..),
-    newBackup,
+    , Backup (..)
+    , newBackup
 
     -- ** Backup_DatabaseDialect
-    Backup_DatabaseDialect (..),
+    , Backup_DatabaseDialect (..)
 
     -- ** Backup_State
-    Backup_State (..),
+    , Backup_State (..)
 
     -- ** BackupInfo
-    BackupInfo (..),
-    newBackupInfo,
+    , BackupInfo (..)
+    , newBackupInfo
 
     -- ** BatchCreateSessionsRequest
-    BatchCreateSessionsRequest (..),
-    newBatchCreateSessionsRequest,
+    , BatchCreateSessionsRequest (..)
+    , newBatchCreateSessionsRequest
 
     -- ** BatchCreateSessionsResponse
-    BatchCreateSessionsResponse (..),
-    newBatchCreateSessionsResponse,
+    , BatchCreateSessionsResponse (..)
+    , newBatchCreateSessionsResponse
 
     -- ** BeginTransactionRequest
-    BeginTransactionRequest (..),
-    newBeginTransactionRequest,
+    , BeginTransactionRequest (..)
+    , newBeginTransactionRequest
 
     -- ** Binding
-    Binding (..),
-    newBinding,
+    , Binding (..)
+    , newBinding
 
     -- ** ChildLink
-    ChildLink (..),
-    newChildLink,
+    , ChildLink (..)
+    , newChildLink
 
     -- ** CommitRequest
-    CommitRequest (..),
-    newCommitRequest,
+    , CommitRequest (..)
+    , newCommitRequest
 
     -- ** CommitResponse
-    CommitResponse (..),
-    newCommitResponse,
+    , CommitResponse (..)
+    , newCommitResponse
 
     -- ** CommitStats
-    CommitStats (..),
-    newCommitStats,
+    , CommitStats (..)
+    , newCommitStats
 
     -- ** ContextValue
-    ContextValue (..),
-    newContextValue,
+    , ContextValue (..)
+    , newContextValue
 
     -- ** ContextValue_Severity
-    ContextValue_Severity (..),
+    , ContextValue_Severity (..)
 
     -- ** CopyBackupEncryptionConfig
-    CopyBackupEncryptionConfig (..),
-    newCopyBackupEncryptionConfig,
+    , CopyBackupEncryptionConfig (..)
+    , newCopyBackupEncryptionConfig
 
     -- ** CopyBackupEncryptionConfig_EncryptionType
-    CopyBackupEncryptionConfig_EncryptionType (..),
+    , CopyBackupEncryptionConfig_EncryptionType (..)
 
     -- ** CopyBackupMetadata
-    CopyBackupMetadata (..),
-    newCopyBackupMetadata,
+    , CopyBackupMetadata (..)
+    , newCopyBackupMetadata
 
     -- ** CopyBackupRequest
-    CopyBackupRequest (..),
-    newCopyBackupRequest,
+    , CopyBackupRequest (..)
+    , newCopyBackupRequest
 
     -- ** CreateBackupMetadata
-    CreateBackupMetadata (..),
-    newCreateBackupMetadata,
+    , CreateBackupMetadata (..)
+    , newCreateBackupMetadata
 
     -- ** CreateDatabaseMetadata
-    CreateDatabaseMetadata (..),
-    newCreateDatabaseMetadata,
+    , CreateDatabaseMetadata (..)
+    , newCreateDatabaseMetadata
 
     -- ** CreateDatabaseRequest
-    CreateDatabaseRequest (..),
-    newCreateDatabaseRequest,
+    , CreateDatabaseRequest (..)
+    , newCreateDatabaseRequest
 
     -- ** CreateDatabaseRequest_DatabaseDialect
-    CreateDatabaseRequest_DatabaseDialect (..),
+    , CreateDatabaseRequest_DatabaseDialect (..)
 
     -- ** CreateInstanceConfigMetadata
-    CreateInstanceConfigMetadata (..),
-    newCreateInstanceConfigMetadata,
+    , CreateInstanceConfigMetadata (..)
+    , newCreateInstanceConfigMetadata
 
     -- ** CreateInstanceConfigRequest
-    CreateInstanceConfigRequest (..),
-    newCreateInstanceConfigRequest,
+    , CreateInstanceConfigRequest (..)
+    , newCreateInstanceConfigRequest
 
     -- ** CreateInstanceMetadata
-    CreateInstanceMetadata (..),
-    newCreateInstanceMetadata,
+    , CreateInstanceMetadata (..)
+    , newCreateInstanceMetadata
 
     -- ** CreateInstanceRequest
-    CreateInstanceRequest (..),
-    newCreateInstanceRequest,
+    , CreateInstanceRequest (..)
+    , newCreateInstanceRequest
 
     -- ** CreateSessionRequest
-    CreateSessionRequest (..),
-    newCreateSessionRequest,
+    , CreateSessionRequest (..)
+    , newCreateSessionRequest
 
     -- ** Database
-    Database (..),
-    newDatabase,
+    , Database (..)
+    , newDatabase
 
     -- ** Database_DatabaseDialect
-    Database_DatabaseDialect (..),
+    , Database_DatabaseDialect (..)
 
     -- ** Database_State
-    Database_State (..),
+    , Database_State (..)
 
     -- ** DatabaseRole
-    DatabaseRole (..),
-    newDatabaseRole,
+    , DatabaseRole (..)
+    , newDatabaseRole
 
     -- ** Delete'
-    Delete' (..),
-    newDelete,
+    , Delete' (..)
+    , newDelete
 
     -- ** DerivedMetric
-    DerivedMetric (..),
-    newDerivedMetric,
+    , DerivedMetric (..)
+    , newDerivedMetric
 
     -- ** DiagnosticMessage
-    DiagnosticMessage (..),
-    newDiagnosticMessage,
+    , DiagnosticMessage (..)
+    , newDiagnosticMessage
 
     -- ** DiagnosticMessage_Severity
-    DiagnosticMessage_Severity (..),
+    , DiagnosticMessage_Severity (..)
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** EncryptionConfig
-    EncryptionConfig (..),
-    newEncryptionConfig,
+    , EncryptionConfig (..)
+    , newEncryptionConfig
 
     -- ** EncryptionInfo
-    EncryptionInfo (..),
-    newEncryptionInfo,
+    , EncryptionInfo (..)
+    , newEncryptionInfo
 
     -- ** EncryptionInfo_EncryptionType
-    EncryptionInfo_EncryptionType (..),
+    , EncryptionInfo_EncryptionType (..)
 
     -- ** ExecuteBatchDmlRequest
-    ExecuteBatchDmlRequest (..),
-    newExecuteBatchDmlRequest,
+    , ExecuteBatchDmlRequest (..)
+    , newExecuteBatchDmlRequest
 
     -- ** ExecuteBatchDmlResponse
-    ExecuteBatchDmlResponse (..),
-    newExecuteBatchDmlResponse,
+    , ExecuteBatchDmlResponse (..)
+    , newExecuteBatchDmlResponse
 
     -- ** ExecuteSqlRequest
-    ExecuteSqlRequest (..),
-    newExecuteSqlRequest,
+    , ExecuteSqlRequest (..)
+    , newExecuteSqlRequest
 
     -- ** ExecuteSqlRequest_ParamTypes
-    ExecuteSqlRequest_ParamTypes (..),
-    newExecuteSqlRequest_ParamTypes,
+    , ExecuteSqlRequest_ParamTypes (..)
+    , newExecuteSqlRequest_ParamTypes
 
     -- ** ExecuteSqlRequest_Params
-    ExecuteSqlRequest_Params (..),
-    newExecuteSqlRequest_Params,
+    , ExecuteSqlRequest_Params (..)
+    , newExecuteSqlRequest_Params
 
     -- ** ExecuteSqlRequest_QueryMode
-    ExecuteSqlRequest_QueryMode (..),
+    , ExecuteSqlRequest_QueryMode (..)
 
     -- ** Expr
-    Expr (..),
-    newExpr,
+    , Expr (..)
+    , newExpr
 
     -- ** Field
-    Field (..),
-    newField,
+    , Field (..)
+    , newField
 
     -- ** FreeInstanceMetadata
-    FreeInstanceMetadata (..),
-    newFreeInstanceMetadata,
+    , FreeInstanceMetadata (..)
+    , newFreeInstanceMetadata
 
     -- ** FreeInstanceMetadata_ExpireBehavior
-    FreeInstanceMetadata_ExpireBehavior (..),
+    , FreeInstanceMetadata_ExpireBehavior (..)
 
     -- ** GetDatabaseDdlResponse
-    GetDatabaseDdlResponse (..),
-    newGetDatabaseDdlResponse,
+    , GetDatabaseDdlResponse (..)
+    , newGetDatabaseDdlResponse
 
     -- ** GetIamPolicyRequest
-    GetIamPolicyRequest (..),
-    newGetIamPolicyRequest,
+    , GetIamPolicyRequest (..)
+    , newGetIamPolicyRequest
 
     -- ** GetPolicyOptions
-    GetPolicyOptions (..),
-    newGetPolicyOptions,
+    , GetPolicyOptions (..)
+    , newGetPolicyOptions
 
     -- ** IndexedHotKey
-    IndexedHotKey (..),
-    newIndexedHotKey,
+    , IndexedHotKey (..)
+    , newIndexedHotKey
 
     -- ** IndexedHotKey_SparseHotKeys
-    IndexedHotKey_SparseHotKeys (..),
-    newIndexedHotKey_SparseHotKeys,
+    , IndexedHotKey_SparseHotKeys (..)
+    , newIndexedHotKey_SparseHotKeys
 
     -- ** IndexedKeyRangeInfos
-    IndexedKeyRangeInfos (..),
-    newIndexedKeyRangeInfos,
+    , IndexedKeyRangeInfos (..)
+    , newIndexedKeyRangeInfos
 
     -- ** IndexedKeyRangeInfos_KeyRangeInfos
-    IndexedKeyRangeInfos_KeyRangeInfos (..),
-    newIndexedKeyRangeInfos_KeyRangeInfos,
+    , IndexedKeyRangeInfos_KeyRangeInfos (..)
+    , newIndexedKeyRangeInfos_KeyRangeInfos
 
     -- ** Instance
-    Instance (..),
-    newInstance,
+    , Instance (..)
+    , newInstance
 
     -- ** Instance_InstanceType
-    Instance_InstanceType (..),
+    , Instance_InstanceType (..)
 
     -- ** Instance_Labels
-    Instance_Labels (..),
-    newInstance_Labels,
+    , Instance_Labels (..)
+    , newInstance_Labels
 
     -- ** Instance_State
-    Instance_State (..),
+    , Instance_State (..)
 
     -- ** InstanceConfig
-    InstanceConfig (..),
-    newInstanceConfig,
+    , InstanceConfig (..)
+    , newInstanceConfig
 
     -- ** InstanceConfig_ConfigType
-    InstanceConfig_ConfigType (..),
+    , InstanceConfig_ConfigType (..)
 
     -- ** InstanceConfig_FreeInstanceAvailability
-    InstanceConfig_FreeInstanceAvailability (..),
+    , InstanceConfig_FreeInstanceAvailability (..)
 
     -- ** InstanceConfig_Labels
-    InstanceConfig_Labels (..),
-    newInstanceConfig_Labels,
+    , InstanceConfig_Labels (..)
+    , newInstanceConfig_Labels
 
     -- ** InstanceConfig_State
-    InstanceConfig_State (..),
+    , InstanceConfig_State (..)
 
     -- ** InstanceOperationProgress
-    InstanceOperationProgress (..),
-    newInstanceOperationProgress,
+    , InstanceOperationProgress (..)
+    , newInstanceOperationProgress
 
     -- ** KeyRange
-    KeyRange (..),
-    newKeyRange,
+    , KeyRange (..)
+    , newKeyRange
 
     -- ** KeyRangeInfo
-    KeyRangeInfo (..),
-    newKeyRangeInfo,
+    , KeyRangeInfo (..)
+    , newKeyRangeInfo
 
     -- ** KeyRangeInfos
-    KeyRangeInfos (..),
-    newKeyRangeInfos,
+    , KeyRangeInfos (..)
+    , newKeyRangeInfos
 
     -- ** KeySet
-    KeySet (..),
-    newKeySet,
+    , KeySet (..)
+    , newKeySet
 
     -- ** ListBackupOperationsResponse
-    ListBackupOperationsResponse (..),
-    newListBackupOperationsResponse,
+    , ListBackupOperationsResponse (..)
+    , newListBackupOperationsResponse
 
     -- ** ListBackupsResponse
-    ListBackupsResponse (..),
-    newListBackupsResponse,
+    , ListBackupsResponse (..)
+    , newListBackupsResponse
 
     -- ** ListDatabaseOperationsResponse
-    ListDatabaseOperationsResponse (..),
-    newListDatabaseOperationsResponse,
+    , ListDatabaseOperationsResponse (..)
+    , newListDatabaseOperationsResponse
 
     -- ** ListDatabaseRolesResponse
-    ListDatabaseRolesResponse (..),
-    newListDatabaseRolesResponse,
+    , ListDatabaseRolesResponse (..)
+    , newListDatabaseRolesResponse
 
     -- ** ListDatabasesResponse
-    ListDatabasesResponse (..),
-    newListDatabasesResponse,
+    , ListDatabasesResponse (..)
+    , newListDatabasesResponse
 
     -- ** ListInstanceConfigOperationsResponse
-    ListInstanceConfigOperationsResponse (..),
-    newListInstanceConfigOperationsResponse,
+    , ListInstanceConfigOperationsResponse (..)
+    , newListInstanceConfigOperationsResponse
 
     -- ** ListInstanceConfigsResponse
-    ListInstanceConfigsResponse (..),
-    newListInstanceConfigsResponse,
+    , ListInstanceConfigsResponse (..)
+    , newListInstanceConfigsResponse
 
     -- ** ListInstancesResponse
-    ListInstancesResponse (..),
-    newListInstancesResponse,
+    , ListInstancesResponse (..)
+    , newListInstancesResponse
 
     -- ** ListOperationsResponse
-    ListOperationsResponse (..),
-    newListOperationsResponse,
+    , ListOperationsResponse (..)
+    , newListOperationsResponse
 
     -- ** ListScansResponse
-    ListScansResponse (..),
-    newListScansResponse,
+    , ListScansResponse (..)
+    , newListScansResponse
 
     -- ** ListSessionsResponse
-    ListSessionsResponse (..),
-    newListSessionsResponse,
+    , ListSessionsResponse (..)
+    , newListSessionsResponse
 
     -- ** LocalizedString
-    LocalizedString (..),
-    newLocalizedString,
+    , LocalizedString (..)
+    , newLocalizedString
 
     -- ** LocalizedString_Args
-    LocalizedString_Args (..),
-    newLocalizedString_Args,
+    , LocalizedString_Args (..)
+    , newLocalizedString_Args
 
     -- ** Metric
-    Metric (..),
-    newMetric,
+    , Metric (..)
+    , newMetric
 
     -- ** Metric_Aggregation
-    Metric_Aggregation (..),
+    , Metric_Aggregation (..)
 
     -- ** Metric_IndexedHotKeys
-    Metric_IndexedHotKeys (..),
-    newMetric_IndexedHotKeys,
+    , Metric_IndexedHotKeys (..)
+    , newMetric_IndexedHotKeys
 
     -- ** Metric_IndexedKeyRangeInfos
-    Metric_IndexedKeyRangeInfos (..),
-    newMetric_IndexedKeyRangeInfos,
+    , Metric_IndexedKeyRangeInfos (..)
+    , newMetric_IndexedKeyRangeInfos
 
     -- ** MetricMatrix
-    MetricMatrix (..),
-    newMetricMatrix,
+    , MetricMatrix (..)
+    , newMetricMatrix
 
     -- ** MetricMatrixRow
-    MetricMatrixRow (..),
-    newMetricMatrixRow,
+    , MetricMatrixRow (..)
+    , newMetricMatrixRow
 
     -- ** Mutation
-    Mutation (..),
-    newMutation,
+    , Mutation (..)
+    , newMutation
 
     -- ** Operation
-    Operation (..),
-    newOperation,
+    , Operation (..)
+    , newOperation
 
     -- ** Operation_Metadata
-    Operation_Metadata (..),
-    newOperation_Metadata,
+    , Operation_Metadata (..)
+    , newOperation_Metadata
 
     -- ** Operation_Response
-    Operation_Response (..),
-    newOperation_Response,
+    , Operation_Response (..)
+    , newOperation_Response
 
     -- ** OperationProgress
-    OperationProgress (..),
-    newOperationProgress,
+    , OperationProgress (..)
+    , newOperationProgress
 
     -- ** OptimizeRestoredDatabaseMetadata
-    OptimizeRestoredDatabaseMetadata (..),
-    newOptimizeRestoredDatabaseMetadata,
+    , OptimizeRestoredDatabaseMetadata (..)
+    , newOptimizeRestoredDatabaseMetadata
 
     -- ** PartialResultSet
-    PartialResultSet (..),
-    newPartialResultSet,
+    , PartialResultSet (..)
+    , newPartialResultSet
 
     -- ** Partition
-    Partition (..),
-    newPartition,
+    , Partition (..)
+    , newPartition
 
     -- ** PartitionOptions
-    PartitionOptions (..),
-    newPartitionOptions,
+    , PartitionOptions (..)
+    , newPartitionOptions
 
     -- ** PartitionQueryRequest
-    PartitionQueryRequest (..),
-    newPartitionQueryRequest,
+    , PartitionQueryRequest (..)
+    , newPartitionQueryRequest
 
     -- ** PartitionQueryRequest_ParamTypes
-    PartitionQueryRequest_ParamTypes (..),
-    newPartitionQueryRequest_ParamTypes,
+    , PartitionQueryRequest_ParamTypes (..)
+    , newPartitionQueryRequest_ParamTypes
 
     -- ** PartitionQueryRequest_Params
-    PartitionQueryRequest_Params (..),
-    newPartitionQueryRequest_Params,
+    , PartitionQueryRequest_Params (..)
+    , newPartitionQueryRequest_Params
 
     -- ** PartitionReadRequest
-    PartitionReadRequest (..),
-    newPartitionReadRequest,
+    , PartitionReadRequest (..)
+    , newPartitionReadRequest
 
     -- ** PartitionResponse
-    PartitionResponse (..),
-    newPartitionResponse,
+    , PartitionResponse (..)
+    , newPartitionResponse
 
     -- ** PartitionedDml
-    PartitionedDml (..),
-    newPartitionedDml,
+    , PartitionedDml (..)
+    , newPartitionedDml
 
     -- ** PlanNode
-    PlanNode (..),
-    newPlanNode,
+    , PlanNode (..)
+    , newPlanNode
 
     -- ** PlanNode_ExecutionStats
-    PlanNode_ExecutionStats (..),
-    newPlanNode_ExecutionStats,
+    , PlanNode_ExecutionStats (..)
+    , newPlanNode_ExecutionStats
 
     -- ** PlanNode_Kind
-    PlanNode_Kind (..),
+    , PlanNode_Kind (..)
 
     -- ** PlanNode_Metadata
-    PlanNode_Metadata (..),
-    newPlanNode_Metadata,
+    , PlanNode_Metadata (..)
+    , newPlanNode_Metadata
 
     -- ** Policy
-    Policy (..),
-    newPolicy,
+    , Policy (..)
+    , newPolicy
 
     -- ** PrefixNode
-    PrefixNode (..),
-    newPrefixNode,
+    , PrefixNode (..)
+    , newPrefixNode
 
     -- ** QueryOptions
-    QueryOptions (..),
-    newQueryOptions,
+    , QueryOptions (..)
+    , newQueryOptions
 
     -- ** QueryPlan
-    QueryPlan (..),
-    newQueryPlan,
+    , QueryPlan (..)
+    , newQueryPlan
 
     -- ** ReadOnly
-    ReadOnly (..),
-    newReadOnly,
+    , ReadOnly (..)
+    , newReadOnly
 
     -- ** ReadRequest
-    ReadRequest (..),
-    newReadRequest,
+    , ReadRequest (..)
+    , newReadRequest
 
     -- ** ReadWrite
-    ReadWrite (..),
-    newReadWrite,
+    , ReadWrite (..)
+    , newReadWrite
 
     -- ** ReadWrite_ReadLockMode
-    ReadWrite_ReadLockMode (..),
+    , ReadWrite_ReadLockMode (..)
 
     -- ** ReplicaInfo
-    ReplicaInfo (..),
-    newReplicaInfo,
+    , ReplicaInfo (..)
+    , newReplicaInfo
 
     -- ** ReplicaInfo_Type
-    ReplicaInfo_Type (..),
+    , ReplicaInfo_Type (..)
 
     -- ** RequestOptions
-    RequestOptions (..),
-    newRequestOptions,
+    , RequestOptions (..)
+    , newRequestOptions
 
     -- ** RequestOptions_Priority
-    RequestOptions_Priority (..),
+    , RequestOptions_Priority (..)
 
     -- ** RestoreDatabaseEncryptionConfig
-    RestoreDatabaseEncryptionConfig (..),
-    newRestoreDatabaseEncryptionConfig,
+    , RestoreDatabaseEncryptionConfig (..)
+    , newRestoreDatabaseEncryptionConfig
 
     -- ** RestoreDatabaseEncryptionConfig_EncryptionType
-    RestoreDatabaseEncryptionConfig_EncryptionType (..),
+    , RestoreDatabaseEncryptionConfig_EncryptionType (..)
 
     -- ** RestoreDatabaseMetadata
-    RestoreDatabaseMetadata (..),
-    newRestoreDatabaseMetadata,
+    , RestoreDatabaseMetadata (..)
+    , newRestoreDatabaseMetadata
 
     -- ** RestoreDatabaseMetadata_SourceType
-    RestoreDatabaseMetadata_SourceType (..),
+    , RestoreDatabaseMetadata_SourceType (..)
 
     -- ** RestoreDatabaseRequest
-    RestoreDatabaseRequest (..),
-    newRestoreDatabaseRequest,
+    , RestoreDatabaseRequest (..)
+    , newRestoreDatabaseRequest
 
     -- ** RestoreInfo
-    RestoreInfo (..),
-    newRestoreInfo,
+    , RestoreInfo (..)
+    , newRestoreInfo
 
     -- ** RestoreInfo_SourceType
-    RestoreInfo_SourceType (..),
+    , RestoreInfo_SourceType (..)
 
     -- ** ResultSet
-    ResultSet (..),
-    newResultSet,
+    , ResultSet (..)
+    , newResultSet
 
     -- ** ResultSetMetadata
-    ResultSetMetadata (..),
-    newResultSetMetadata,
+    , ResultSetMetadata (..)
+    , newResultSetMetadata
 
     -- ** ResultSetStats
-    ResultSetStats (..),
-    newResultSetStats,
+    , ResultSetStats (..)
+    , newResultSetStats
 
     -- ** ResultSetStats_QueryStats
-    ResultSetStats_QueryStats (..),
-    newResultSetStats_QueryStats,
+    , ResultSetStats_QueryStats (..)
+    , newResultSetStats_QueryStats
 
     -- ** RollbackRequest
-    RollbackRequest (..),
-    newRollbackRequest,
+    , RollbackRequest (..)
+    , newRollbackRequest
 
     -- ** Scan
-    Scan (..),
-    newScan,
+    , Scan (..)
+    , newScan
 
     -- ** Scan_Details
-    Scan_Details (..),
-    newScan_Details,
+    , Scan_Details (..)
+    , newScan_Details
 
     -- ** ScanData
-    ScanData (..),
-    newScanData,
+    , ScanData (..)
+    , newScanData
 
     -- ** Session
-    Session (..),
-    newSession,
+    , Session (..)
+    , newSession
 
     -- ** Session_Labels
-    Session_Labels (..),
-    newSession_Labels,
+    , Session_Labels (..)
+    , newSession_Labels
 
     -- ** SetIamPolicyRequest
-    SetIamPolicyRequest (..),
-    newSetIamPolicyRequest,
+    , SetIamPolicyRequest (..)
+    , newSetIamPolicyRequest
 
     -- ** ShortRepresentation
-    ShortRepresentation (..),
-    newShortRepresentation,
+    , ShortRepresentation (..)
+    , newShortRepresentation
 
     -- ** ShortRepresentation_Subqueries
-    ShortRepresentation_Subqueries (..),
-    newShortRepresentation_Subqueries,
+    , ShortRepresentation_Subqueries (..)
+    , newShortRepresentation_Subqueries
 
     -- ** Statement
-    Statement (..),
-    newStatement,
+    , Statement (..)
+    , newStatement
 
     -- ** Statement_ParamTypes
-    Statement_ParamTypes (..),
-    newStatement_ParamTypes,
+    , Statement_ParamTypes (..)
+    , newStatement_ParamTypes
 
     -- ** Statement_Params
-    Statement_Params (..),
-    newStatement_Params,
+    , Statement_Params (..)
+    , newStatement_Params
 
     -- ** Status
-    Status (..),
-    newStatus,
+    , Status (..)
+    , newStatus
 
     -- ** Status_DetailsItem
-    Status_DetailsItem (..),
-    newStatus_DetailsItem,
+    , Status_DetailsItem (..)
+    , newStatus_DetailsItem
 
     -- ** StructType
-    StructType (..),
-    newStructType,
+    , StructType (..)
+    , newStructType
 
     -- ** TestIamPermissionsRequest
-    TestIamPermissionsRequest (..),
-    newTestIamPermissionsRequest,
+    , TestIamPermissionsRequest (..)
+    , newTestIamPermissionsRequest
 
     -- ** TestIamPermissionsResponse
-    TestIamPermissionsResponse (..),
-    newTestIamPermissionsResponse,
+    , TestIamPermissionsResponse (..)
+    , newTestIamPermissionsResponse
 
     -- ** Transaction
-    Transaction (..),
-    newTransaction,
+    , Transaction (..)
+    , newTransaction
 
     -- ** TransactionOptions
-    TransactionOptions (..),
-    newTransactionOptions,
+    , TransactionOptions (..)
+    , newTransactionOptions
 
     -- ** TransactionSelector
-    TransactionSelector (..),
-    newTransactionSelector,
+    , TransactionSelector (..)
+    , newTransactionSelector
 
     -- ** Type
-    Type (..),
-    newType,
+    , Type (..)
+    , newType
 
     -- ** Type_Code
-    Type_Code (..),
+    , Type_Code (..)
 
     -- ** Type_TypeAnnotation
-    Type_TypeAnnotation (..),
+    , Type_TypeAnnotation (..)
 
     -- ** UpdateDatabaseDdlMetadata
-    UpdateDatabaseDdlMetadata (..),
-    newUpdateDatabaseDdlMetadata,
+    , UpdateDatabaseDdlMetadata (..)
+    , newUpdateDatabaseDdlMetadata
 
     -- ** UpdateDatabaseDdlRequest
-    UpdateDatabaseDdlRequest (..),
-    newUpdateDatabaseDdlRequest,
+    , UpdateDatabaseDdlRequest (..)
+    , newUpdateDatabaseDdlRequest
+
+    -- ** UpdateDatabaseMetadata
+    , UpdateDatabaseMetadata (..)
+    , newUpdateDatabaseMetadata
+
+    -- ** UpdateDatabaseRequest
+    , UpdateDatabaseRequest (..)
+    , newUpdateDatabaseRequest
 
     -- ** UpdateInstanceConfigMetadata
-    UpdateInstanceConfigMetadata (..),
-    newUpdateInstanceConfigMetadata,
+    , UpdateInstanceConfigMetadata (..)
+    , newUpdateInstanceConfigMetadata
 
     -- ** UpdateInstanceConfigRequest
-    UpdateInstanceConfigRequest (..),
-    newUpdateInstanceConfigRequest,
+    , UpdateInstanceConfigRequest (..)
+    , newUpdateInstanceConfigRequest
 
     -- ** UpdateInstanceMetadata
-    UpdateInstanceMetadata (..),
-    newUpdateInstanceMetadata,
+    , UpdateInstanceMetadata (..)
+    , newUpdateInstanceMetadata
 
     -- ** UpdateInstanceRequest
-    UpdateInstanceRequest (..),
-    newUpdateInstanceRequest,
+    , UpdateInstanceRequest (..)
+    , newUpdateInstanceRequest
 
     -- ** VisualizationData
-    VisualizationData (..),
-    newVisualizationData,
+    , VisualizationData (..)
+    , newVisualizationData
 
     -- ** VisualizationData_KeyUnit
-    VisualizationData_KeyUnit (..),
+    , VisualizationData_KeyUnit (..)
 
     -- ** Write
-    Write (..),
-    newWrite,
+    , Write (..)
+    , newWrite
 
     -- ** ProjectsInstancesBackupsCreateEncryptionConfigEncryptionType
-    ProjectsInstancesBackupsCreateEncryptionConfigEncryptionType (..),
+    , ProjectsInstancesBackupsCreateEncryptionConfigEncryptionType (..)
 
     -- ** ProjectsInstancesDatabasesGetScansView
-    ProjectsInstancesDatabasesGetScansView (..),
+    , ProjectsInstancesDatabasesGetScansView (..)
 
     -- ** ScansListView
-    ScansListView (..),
-  )
-where
+    , ScansListView (..)
+    ) where
 
 import Gogol.Spanner.Projects.InstanceConfigOperations.List
 import Gogol.Spanner.Projects.InstanceConfigs.Create
@@ -1070,6 +1104,7 @@ import Gogol.Spanner.Projects.Instances.Databases.Operations.Cancel
 import Gogol.Spanner.Projects.Instances.Databases.Operations.Delete
 import Gogol.Spanner.Projects.Instances.Databases.Operations.Get
 import Gogol.Spanner.Projects.Instances.Databases.Operations.List
+import Gogol.Spanner.Projects.Instances.Databases.Patch
 import Gogol.Spanner.Projects.Instances.Databases.Restore
 import Gogol.Spanner.Projects.Instances.Databases.Sessions.BatchCreate
 import Gogol.Spanner.Projects.Instances.Databases.Sessions.BeginTransaction
@@ -1092,6 +1127,10 @@ import Gogol.Spanner.Projects.Instances.Databases.UpdateDdl
 import Gogol.Spanner.Projects.Instances.Delete
 import Gogol.Spanner.Projects.Instances.Get
 import Gogol.Spanner.Projects.Instances.GetIamPolicy
+import Gogol.Spanner.Projects.Instances.InstancePartitions.Operations.Cancel
+import Gogol.Spanner.Projects.Instances.InstancePartitions.Operations.Delete
+import Gogol.Spanner.Projects.Instances.InstancePartitions.Operations.Get
+import Gogol.Spanner.Projects.Instances.InstancePartitions.Operations.List
 import Gogol.Spanner.Projects.Instances.List
 import Gogol.Spanner.Projects.Instances.Operations.Cancel
 import Gogol.Spanner.Projects.Instances.Operations.Delete

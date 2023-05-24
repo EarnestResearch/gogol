@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,273 +26,276 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Drive.Types
-  ( -- * Configuration
-    driveService,
+    (
+    -- * Configuration
+      driveService
 
     -- * OAuth Scopes
-    Drive'FullControl,
-    Drive'Appdata,
-    Drive'File,
-    Drive'Metadata,
-    Drive'Metadata'Readonly,
-    Drive'Photos'Readonly,
-    Drive'Readonly,
-    Drive'Scripts,
+    , Drive'FullControl
+    , Drive'Appdata
+    , Drive'File
+    , Drive'Metadata
+    , Drive'Metadata'Readonly
+    , Drive'Photos'Readonly
+    , Drive'Readonly
+    , Drive'Scripts
 
     -- * Types
 
+    -- ** Xgafv
+    , Xgafv (..)
+
     -- ** About
-    About (..),
-    newAbout,
+    , About (..)
+    , newAbout
 
     -- ** About_DriveThemesItem
-    About_DriveThemesItem (..),
-    newAbout_DriveThemesItem,
+    , About_DriveThemesItem (..)
+    , newAbout_DriveThemesItem
 
     -- ** About_ExportFormats
-    About_ExportFormats (..),
-    newAbout_ExportFormats,
+    , About_ExportFormats (..)
+    , newAbout_ExportFormats
 
     -- ** About_ImportFormats
-    About_ImportFormats (..),
-    newAbout_ImportFormats,
+    , About_ImportFormats (..)
+    , newAbout_ImportFormats
 
     -- ** About_MaxImportSizes
-    About_MaxImportSizes (..),
-    newAbout_MaxImportSizes,
+    , About_MaxImportSizes (..)
+    , newAbout_MaxImportSizes
 
     -- ** About_StorageQuota
-    About_StorageQuota (..),
-    newAbout_StorageQuota,
+    , About_StorageQuota (..)
+    , newAbout_StorageQuota
 
     -- ** About_TeamDriveThemesItem
-    About_TeamDriveThemesItem (..),
-    newAbout_TeamDriveThemesItem,
+    , About_TeamDriveThemesItem (..)
+    , newAbout_TeamDriveThemesItem
 
     -- ** Change
-    Change (..),
-    newChange,
+    , Change (..)
+    , newChange
 
     -- ** ChangeList
-    ChangeList (..),
-    newChangeList,
+    , ChangeList (..)
+    , newChangeList
 
     -- ** Channel
-    Channel (..),
-    newChannel,
+    , Channel (..)
+    , newChannel
 
     -- ** Channel_Params
-    Channel_Params (..),
-    newChannel_Params,
+    , Channel_Params (..)
+    , newChannel_Params
 
     -- ** Comment
-    Comment (..),
-    newComment,
+    , Comment (..)
+    , newComment
 
     -- ** Comment_QuotedFileContent
-    Comment_QuotedFileContent (..),
-    newComment_QuotedFileContent,
+    , Comment_QuotedFileContent (..)
+    , newComment_QuotedFileContent
 
     -- ** CommentList
-    CommentList (..),
-    newCommentList,
+    , CommentList (..)
+    , newCommentList
 
     -- ** ContentRestriction
-    ContentRestriction (..),
-    newContentRestriction,
+    , ContentRestriction (..)
+    , newContentRestriction
 
     -- ** Drive
-    Drive (..),
-    newDrive,
+    , Drive (..)
+    , newDrive
 
     -- ** Drive_BackgroundImageFile
-    Drive_BackgroundImageFile (..),
-    newDrive_BackgroundImageFile,
+    , Drive_BackgroundImageFile (..)
+    , newDrive_BackgroundImageFile
 
     -- ** Drive_Capabilities
-    Drive_Capabilities (..),
-    newDrive_Capabilities,
+    , Drive_Capabilities (..)
+    , newDrive_Capabilities
 
     -- ** Drive_Restrictions
-    Drive_Restrictions (..),
-    newDrive_Restrictions,
+    , Drive_Restrictions (..)
+    , newDrive_Restrictions
 
     -- ** DriveList
-    DriveList (..),
-    newDriveList,
+    , DriveList (..)
+    , newDriveList
 
     -- ** File
-    File (..),
-    newFile,
+    , File (..)
+    , newFile
 
     -- ** File_AppProperties
-    File_AppProperties (..),
-    newFile_AppProperties,
+    , File_AppProperties (..)
+    , newFile_AppProperties
 
     -- ** File_Capabilities
-    File_Capabilities (..),
-    newFile_Capabilities,
+    , File_Capabilities (..)
+    , newFile_Capabilities
 
     -- ** File_ContentHints
-    File_ContentHints (..),
-    newFile_ContentHints,
+    , File_ContentHints (..)
+    , newFile_ContentHints
 
     -- ** File_ContentHints_Thumbnail
-    File_ContentHints_Thumbnail (..),
-    newFile_ContentHints_Thumbnail,
+    , File_ContentHints_Thumbnail (..)
+    , newFile_ContentHints_Thumbnail
 
     -- ** File_ExportLinks
-    File_ExportLinks (..),
-    newFile_ExportLinks,
+    , File_ExportLinks (..)
+    , newFile_ExportLinks
 
     -- ** File_ImageMediaMetadata
-    File_ImageMediaMetadata (..),
-    newFile_ImageMediaMetadata,
+    , File_ImageMediaMetadata (..)
+    , newFile_ImageMediaMetadata
 
     -- ** File_ImageMediaMetadata_Location
-    File_ImageMediaMetadata_Location (..),
-    newFile_ImageMediaMetadata_Location,
+    , File_ImageMediaMetadata_Location (..)
+    , newFile_ImageMediaMetadata_Location
 
     -- ** File_LabelInfo
-    File_LabelInfo (..),
-    newFile_LabelInfo,
+    , File_LabelInfo (..)
+    , newFile_LabelInfo
 
     -- ** File_LinkShareMetadata
-    File_LinkShareMetadata (..),
-    newFile_LinkShareMetadata,
+    , File_LinkShareMetadata (..)
+    , newFile_LinkShareMetadata
 
     -- ** File_Properties
-    File_Properties (..),
-    newFile_Properties,
+    , File_Properties (..)
+    , newFile_Properties
 
     -- ** File_ShortcutDetails
-    File_ShortcutDetails (..),
-    newFile_ShortcutDetails,
+    , File_ShortcutDetails (..)
+    , newFile_ShortcutDetails
 
     -- ** File_VideoMediaMetadata
-    File_VideoMediaMetadata (..),
-    newFile_VideoMediaMetadata,
+    , File_VideoMediaMetadata (..)
+    , newFile_VideoMediaMetadata
 
     -- ** FileList
-    FileList (..),
-    newFileList,
+    , FileList (..)
+    , newFileList
 
     -- ** GeneratedIds
-    GeneratedIds (..),
-    newGeneratedIds,
+    , GeneratedIds (..)
+    , newGeneratedIds
 
     -- ** Label
-    Label (..),
-    newLabel,
+    , Label (..)
+    , newLabel
 
     -- ** Label_Fields
-    Label_Fields (..),
-    newLabel_Fields,
+    , Label_Fields (..)
+    , newLabel_Fields
 
     -- ** LabelField
-    LabelField (..),
-    newLabelField,
+    , LabelField (..)
+    , newLabelField
 
     -- ** LabelFieldModification
-    LabelFieldModification (..),
-    newLabelFieldModification,
+    , LabelFieldModification (..)
+    , newLabelFieldModification
 
     -- ** LabelList
-    LabelList (..),
-    newLabelList,
+    , LabelList (..)
+    , newLabelList
 
     -- ** LabelModification
-    LabelModification (..),
-    newLabelModification,
+    , LabelModification (..)
+    , newLabelModification
 
     -- ** ModifyLabelsRequest
-    ModifyLabelsRequest (..),
-    newModifyLabelsRequest,
+    , ModifyLabelsRequest (..)
+    , newModifyLabelsRequest
 
     -- ** ModifyLabelsResponse
-    ModifyLabelsResponse (..),
-    newModifyLabelsResponse,
+    , ModifyLabelsResponse (..)
+    , newModifyLabelsResponse
 
     -- ** Permission
-    Permission (..),
-    newPermission,
+    , Permission (..)
+    , newPermission
 
     -- ** Permission_PermissionDetailsItem
-    Permission_PermissionDetailsItem (..),
-    newPermission_PermissionDetailsItem,
+    , Permission_PermissionDetailsItem (..)
+    , newPermission_PermissionDetailsItem
 
     -- ** Permission_TeamDrivePermissionDetailsItem
-    Permission_TeamDrivePermissionDetailsItem (..),
-    newPermission_TeamDrivePermissionDetailsItem,
+    , Permission_TeamDrivePermissionDetailsItem (..)
+    , newPermission_TeamDrivePermissionDetailsItem
 
     -- ** PermissionList
-    PermissionList (..),
-    newPermissionList,
+    , PermissionList (..)
+    , newPermissionList
 
     -- ** Reply
-    Reply (..),
-    newReply,
+    , Reply (..)
+    , newReply
 
     -- ** ReplyList
-    ReplyList (..),
-    newReplyList,
+    , ReplyList (..)
+    , newReplyList
 
     -- ** Revision
-    Revision (..),
-    newRevision,
+    , Revision (..)
+    , newRevision
 
     -- ** Revision_ExportLinks
-    Revision_ExportLinks (..),
-    newRevision_ExportLinks,
+    , Revision_ExportLinks (..)
+    , newRevision_ExportLinks
 
     -- ** RevisionList
-    RevisionList (..),
-    newRevisionList,
+    , RevisionList (..)
+    , newRevisionList
 
     -- ** StartPageToken
-    StartPageToken (..),
-    newStartPageToken,
+    , StartPageToken (..)
+    , newStartPageToken
 
     -- ** TeamDrive
-    TeamDrive (..),
-    newTeamDrive,
+    , TeamDrive (..)
+    , newTeamDrive
 
     -- ** TeamDrive_BackgroundImageFile
-    TeamDrive_BackgroundImageFile (..),
-    newTeamDrive_BackgroundImageFile,
+    , TeamDrive_BackgroundImageFile (..)
+    , newTeamDrive_BackgroundImageFile
 
     -- ** TeamDrive_Capabilities
-    TeamDrive_Capabilities (..),
-    newTeamDrive_Capabilities,
+    , TeamDrive_Capabilities (..)
+    , newTeamDrive_Capabilities
 
     -- ** TeamDrive_Restrictions
-    TeamDrive_Restrictions (..),
-    newTeamDrive_Restrictions,
+    , TeamDrive_Restrictions (..)
+    , newTeamDrive_Restrictions
 
     -- ** TeamDriveList
-    TeamDriveList (..),
-    newTeamDriveList,
+    , TeamDriveList (..)
+    , newTeamDriveList
 
     -- ** User
-    User (..),
-    newUser,
+    , User (..)
+    , newUser
 
     -- ** FilesListCorpus
-    FilesListCorpus (..),
-  )
-where
+    , FilesListCorpus (..)
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.Drive.Internal.Product
 import Gogol.Drive.Internal.Sum
-import qualified Gogol.Prelude as Core
 
--- | Default request referring to version @v3@ of the Drive API. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version @v3@ of the Google Drive API. This contains the host and root path used as a starting point for constructing service requests.
 driveService :: Core.ServiceConfig
-driveService =
-  Core.defaultService
-    (Core.ServiceId "drive:v3")
-    "www.googleapis.com"
+driveService
+  = Core.defaultService (Core.ServiceId "drive:v3")
+      "www.googleapis.com"
 
 -- | See, edit, create, and delete all of your Google Drive files
 type Drive'FullControl = "https://www.googleapis.com/auth/drive"

@@ -214,8 +214,6 @@
             "https://www.googleapis.com/auth/doubleclicksearch"
           ]
         },
-<<<<<<< HEAD:gen/model/doubleclicksearch/v2/doubleclicksearch-api.json
-=======
         "getByCustomerId": {
           "description": "Retrieves a list of conversions from a DoubleClick Search engine account.",
           "flatPath": "doubleclicksearch/v2/customer/{customerId}/conversion",
@@ -320,7 +318,6 @@
             "https://www.googleapis.com/auth/doubleclicksearch"
           ]
         },
->>>>>>> upstream/main:configs/models/doubleclicksearch/v2/doubleclicksearch-api.json
         "insert": {
           "description": "Inserts a batch of new conversions into DoubleClick Search.",
           "flatPath": "doubleclicksearch/v2/conversion",
@@ -447,8 +444,6 @@
             }
           },
           "path": "doubleclicksearch/v2/reports/{reportId}/files/{reportFragment}",
-<<<<<<< HEAD:gen/model/doubleclicksearch/v2/doubleclicksearch-api.json
-=======
           "scopes": [
             "https://www.googleapis.com/auth/doubleclicksearch"
           ],
@@ -484,7 +479,6 @@
           "response": {
             "$ref": "IdMappingFile"
           },
->>>>>>> upstream/main:configs/models/doubleclicksearch/v2/doubleclicksearch-api.json
           "scopes": [
             "https://www.googleapis.com/auth/doubleclicksearch"
           ],
@@ -549,11 +543,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/doubleclicksearch/v2/doubleclicksearch-api.json
-  "revision": "20200825",
-=======
   "revision": "20221108",
->>>>>>> upstream/main:configs/models/doubleclicksearch/v2/doubleclicksearch-api.json
   "rootUrl": "https://doubleclicksearch.googleapis.com/",
   "schemas": {
     "Availability": {
@@ -588,13 +578,10 @@
           },
           "description": "The time by which all conversions have been uploaded, in epoch millis UTC.",
           "format": "int64",
-<<<<<<< HEAD:gen/model/doubleclicksearch/v2/doubleclicksearch-api.json
-=======
           "type": "string"
         },
         "customerId": {
           "description": "Customer ID of a client account in the new Search Ads 360 experience.",
->>>>>>> upstream/main:configs/models/doubleclicksearch/v2/doubleclicksearch-api.json
           "type": "string"
         },
         "segmentationId": {

@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/datastore/v1beta1/datastore-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/datastore/v1beta1/datastore-api.json
         },
         "https://www.googleapis.com/auth/datastore": {
           "description": "View and manage your Google Cloud Datastore data"
@@ -172,11 +168,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/datastore/v1beta1/datastore-api.json
-  "revision": "20210326",
-=======
   "revision": "20220207",
->>>>>>> upstream/main:configs/models/datastore/v1beta1/datastore-api.json
   "rootUrl": "https://datastore.googleapis.com/",
   "schemas": {
     "GoogleDatastoreAdminV1CommonMetadata": {
@@ -239,8 +231,6 @@
             "Request has completed successfully.",
             "Request has finished being processed, but encountered an error.",
             "Request has finished being cancelled after user called google.longrunning.Operations.CancelOperation."
-<<<<<<< HEAD:gen/model/datastore/v1beta1/datastore-api.json
-=======
           ],
           "type": "string"
         }
@@ -288,7 +278,6 @@
             "Eventually-consistent reads are redirected to Cloud Firestore.",
             "Strongly-consistent reads are redirected to Cloud Firestore.",
             "Writes are redirected to Cloud Firestore."
->>>>>>> upstream/main:configs/models/datastore/v1beta1/datastore-api.json
           ],
           "type": "string"
         }

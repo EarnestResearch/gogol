@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.FireStore.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * CompositeFilter_Op
     CompositeFilter_Op
-      ( CompositeFilter_Op_OPERATORUNSPECIFIED,
+      (
+        CompositeFilter_Op_OPERATORUNSPECIFIED,
         CompositeFilter_Op_And,
         CompositeFilter_Op_OR,
         ..
@@ -43,7 +49,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * FieldFilter_Op
     FieldFilter_Op
-      ( FieldFilter_Op_OPERATORUNSPECIFIED,
+      (
+        FieldFilter_Op_OPERATORUNSPECIFIED,
         FieldFilter_Op_LESSTHAN,
         FieldFilter_Op_LESSTHANOREQUAL,
         FieldFilter_Op_GREATERTHAN,
@@ -59,14 +66,26 @@ module Gogol.FireStore.Internal.Sum
 
     -- * FieldTransform_SetToServerValue
     FieldTransform_SetToServerValue
-      ( FieldTransform_SetToServerValue_SERVERVALUEUNSPECIFIED,
+      (
+        FieldTransform_SetToServerValue_SERVERVALUEUNSPECIFIED,
         FieldTransform_SetToServerValue_REQUESTTIME,
+        ..
+      ),
+
+    -- * GoogleFirestoreAdminV1Backup_State
+    GoogleFirestoreAdminV1Backup_State
+      (
+        GoogleFirestoreAdminV1Backup_State_STATEUNSPECIFIED,
+        GoogleFirestoreAdminV1Backup_State_Creating,
+        GoogleFirestoreAdminV1Backup_State_Ready,
+        GoogleFirestoreAdminV1Backup_State_NOTAVAILABLE,
         ..
       ),
 
     -- * GoogleFirestoreAdminV1Database_AppEngineIntegrationMode
     GoogleFirestoreAdminV1Database_AppEngineIntegrationMode
-      ( GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_APPENGINEINTEGRATIONMODEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_APPENGINEINTEGRATIONMODEUNSPECIFIED,
         GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_Enabled,
         GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_Disabled,
         ..
@@ -74,16 +93,27 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1Database_ConcurrencyMode
     GoogleFirestoreAdminV1Database_ConcurrencyMode
-      ( GoogleFirestoreAdminV1Database_ConcurrencyMode_CONCURRENCYMODEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1Database_ConcurrencyMode_CONCURRENCYMODEUNSPECIFIED,
         GoogleFirestoreAdminV1Database_ConcurrencyMode_Optimistic,
         GoogleFirestoreAdminV1Database_ConcurrencyMode_Pessimistic,
         GoogleFirestoreAdminV1Database_ConcurrencyMode_OPTIMISTICWITHENTITYGROUPS,
         ..
       ),
 
+    -- * GoogleFirestoreAdminV1Database_DeleteProtectionState
+    GoogleFirestoreAdminV1Database_DeleteProtectionState
+      (
+        GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONSTATEUNSPECIFIED,
+        GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONDISABLED,
+        GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONENABLED,
+        ..
+      ),
+
     -- * GoogleFirestoreAdminV1Database_Type
     GoogleFirestoreAdminV1Database_Type
-      ( GoogleFirestoreAdminV1Database_Type_DATABASETYPEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1Database_Type_DATABASETYPEUNSPECIFIED,
         GoogleFirestoreAdminV1Database_Type_FIRESTORENATIVE,
         GoogleFirestoreAdminV1Database_Type_DATASTOREMODE,
         ..
@@ -91,7 +121,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState
     GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState
-      ( GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED,
         GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Initializing,
         GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Processing,
         GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Cancelling,
@@ -104,7 +135,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1FieldOperationMetadata_State
     GoogleFirestoreAdminV1FieldOperationMetadata_State
-      ( GoogleFirestoreAdminV1FieldOperationMetadata_State_OPERATIONSTATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1FieldOperationMetadata_State_OPERATIONSTATEUNSPECIFIED,
         GoogleFirestoreAdminV1FieldOperationMetadata_State_Initializing,
         GoogleFirestoreAdminV1FieldOperationMetadata_State_Processing,
         GoogleFirestoreAdminV1FieldOperationMetadata_State_Cancelling,
@@ -117,7 +149,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState
     GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState
-      ( GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED,
         GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Initializing,
         GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Processing,
         GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Cancelling,
@@ -130,14 +163,16 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1Index_ApiScope
     GoogleFirestoreAdminV1Index_ApiScope
-      ( GoogleFirestoreAdminV1Index_ApiScope_ANYAPI,
+      (
+        GoogleFirestoreAdminV1Index_ApiScope_ANYAPI,
         GoogleFirestoreAdminV1Index_ApiScope_DATASTOREMODEAPI,
         ..
       ),
 
     -- * GoogleFirestoreAdminV1Index_QueryScope
     GoogleFirestoreAdminV1Index_QueryScope
-      ( GoogleFirestoreAdminV1Index_QueryScope_QUERYSCOPEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1Index_QueryScope_QUERYSCOPEUNSPECIFIED,
         GoogleFirestoreAdminV1Index_QueryScope_Collection,
         GoogleFirestoreAdminV1Index_QueryScope_COLLECTIONGROUP,
         GoogleFirestoreAdminV1Index_QueryScope_COLLECTIONRECURSIVE,
@@ -146,7 +181,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1Index_State
     GoogleFirestoreAdminV1Index_State
-      ( GoogleFirestoreAdminV1Index_State_STATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1Index_State_STATEUNSPECIFIED,
         GoogleFirestoreAdminV1Index_State_Creating,
         GoogleFirestoreAdminV1Index_State_Ready,
         GoogleFirestoreAdminV1Index_State_NEEDSREPAIR,
@@ -155,7 +191,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1IndexConfigDelta_ChangeType
     GoogleFirestoreAdminV1IndexConfigDelta_ChangeType
-      ( GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
         GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_Add,
         GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_Remove,
         ..
@@ -163,14 +200,16 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1IndexField_ArrayConfig
     GoogleFirestoreAdminV1IndexField_ArrayConfig
-      ( GoogleFirestoreAdminV1IndexField_ArrayConfig_ARRAYCONFIGUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1IndexField_ArrayConfig_ARRAYCONFIGUNSPECIFIED,
         GoogleFirestoreAdminV1IndexField_ArrayConfig_Contains,
         ..
       ),
 
     -- * GoogleFirestoreAdminV1IndexField_Order
     GoogleFirestoreAdminV1IndexField_Order
-      ( GoogleFirestoreAdminV1IndexField_Order_ORDERUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1IndexField_Order_ORDERUNSPECIFIED,
         GoogleFirestoreAdminV1IndexField_Order_Ascending,
         GoogleFirestoreAdminV1IndexField_Order_Descending,
         ..
@@ -178,7 +217,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1IndexOperationMetadata_State
     GoogleFirestoreAdminV1IndexOperationMetadata_State
-      ( GoogleFirestoreAdminV1IndexOperationMetadata_State_OPERATIONSTATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1IndexOperationMetadata_State_OPERATIONSTATEUNSPECIFIED,
         GoogleFirestoreAdminV1IndexOperationMetadata_State_Initializing,
         GoogleFirestoreAdminV1IndexOperationMetadata_State_Processing,
         GoogleFirestoreAdminV1IndexOperationMetadata_State_Cancelling,
@@ -191,7 +231,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1TtlConfig_State
     GoogleFirestoreAdminV1TtlConfig_State
-      ( GoogleFirestoreAdminV1TtlConfig_State_STATEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1TtlConfig_State_STATEUNSPECIFIED,
         GoogleFirestoreAdminV1TtlConfig_State_Creating,
         GoogleFirestoreAdminV1TtlConfig_State_Active,
         GoogleFirestoreAdminV1TtlConfig_State_NEEDSREPAIR,
@@ -200,15 +241,31 @@ module Gogol.FireStore.Internal.Sum
 
     -- * GoogleFirestoreAdminV1TtlConfigDelta_ChangeType
     GoogleFirestoreAdminV1TtlConfigDelta_ChangeType
-      ( GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
+      (
+        GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
         GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_Add,
         GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_Remove,
         ..
       ),
 
+    -- * GoogleFirestoreAdminV1WeeklyRecurrence_Day
+    GoogleFirestoreAdminV1WeeklyRecurrence_Day
+      (
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_DAYOFWEEKUNSPECIFIED,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Monday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Tuesday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Wednesday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Thursday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Friday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Saturday,
+        GoogleFirestoreAdminV1WeeklyRecurrence_Day_Sunday,
+        ..
+      ),
+
     -- * Order_Direction
     Order_Direction
-      ( Order_Direction_DIRECTIONUNSPECIFIED,
+      (
+        Order_Direction_DIRECTIONUNSPECIFIED,
         Order_Direction_Ascending,
         Order_Direction_Descending,
         ..
@@ -216,7 +273,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * TargetChange_TargetChangeType
     TargetChange_TargetChangeType
-      ( TargetChange_TargetChangeType_NOCHANGE,
+      (
+        TargetChange_TargetChangeType_NOCHANGE,
         TargetChange_TargetChangeType_Add,
         TargetChange_TargetChangeType_Remove,
         TargetChange_TargetChangeType_Current,
@@ -226,7 +284,8 @@ module Gogol.FireStore.Internal.Sum
 
     -- * UnaryFilter_Op
     UnaryFilter_Op
-      ( UnaryFilter_Op_OPERATORUNSPECIFIED,
+      (
+        UnaryFilter_Op_OPERATORUNSPECIFIED,
         UnaryFilter_Op_ISNAN,
         UnaryFilter_Op_ISNULL,
         UnaryFilter_Op_ISNOTNAN,
@@ -236,26 +295,26 @@ module Gogol.FireStore.Internal.Sum
 
     -- * Value_NullValue
     Value_NullValue
-      ( Value_NullValue_NULLVALUE,
+      (
+        Value_NullValue_NULLVALUE,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -268,21 +327,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The operator for combining multiple filters.
-newtype CompositeFilter_Op = CompositeFilter_Op {fromCompositeFilter_Op :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompositeFilter_Op = CompositeFilter_Op { fromCompositeFilter_Op :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. This value must not be used.
 pattern CompositeFilter_Op_OPERATORUNSPECIFIED :: CompositeFilter_Op
@@ -300,21 +358,20 @@ pattern CompositeFilter_Op_OR = CompositeFilter_Op "OR"
   CompositeFilter_Op_OPERATORUNSPECIFIED,
   CompositeFilter_Op_And,
   CompositeFilter_Op_OR,
-  CompositeFilter_Op
-  #-}
+  CompositeFilter_Op #-}
 
 -- | The operator to filter by.
-newtype FieldFilter_Op = FieldFilter_Op {fromFieldFilter_Op :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype FieldFilter_Op = FieldFilter_Op { fromFieldFilter_Op :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. This value must not be used.
 pattern FieldFilter_Op_OPERATORUNSPECIFIED :: FieldFilter_Op
@@ -372,21 +429,20 @@ pattern FieldFilter_Op_NOTIN = FieldFilter_Op "NOT_IN"
   FieldFilter_Op_IN,
   FieldFilter_Op_ARRAYCONTAINSANY,
   FieldFilter_Op_NOTIN,
-  FieldFilter_Op
-  #-}
+  FieldFilter_Op #-}
 
 -- | Sets the field to the given server value.
-newtype FieldTransform_SetToServerValue = FieldTransform_SetToServerValue {fromFieldTransform_SetToServerValue :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype FieldTransform_SetToServerValue = FieldTransform_SetToServerValue { fromFieldTransform_SetToServerValue :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. This value must not be used.
 pattern FieldTransform_SetToServerValue_SERVERVALUEUNSPECIFIED :: FieldTransform_SetToServerValue
@@ -399,21 +455,56 @@ pattern FieldTransform_SetToServerValue_REQUESTTIME = FieldTransform_SetToServer
 {-# COMPLETE
   FieldTransform_SetToServerValue_SERVERVALUEUNSPECIFIED,
   FieldTransform_SetToServerValue_REQUESTTIME,
-  FieldTransform_SetToServerValue
-  #-}
+  FieldTransform_SetToServerValue #-}
+
+-- | Output only. The current state of the backup.
+newtype GoogleFirestoreAdminV1Backup_State = GoogleFirestoreAdminV1Backup_State { fromGoogleFirestoreAdminV1Backup_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | The state is unspecified.
+pattern GoogleFirestoreAdminV1Backup_State_STATEUNSPECIFIED :: GoogleFirestoreAdminV1Backup_State
+pattern GoogleFirestoreAdminV1Backup_State_STATEUNSPECIFIED = GoogleFirestoreAdminV1Backup_State "STATE_UNSPECIFIED"
+
+-- | The pending backup is still being created. Operations on the backup will be rejected in this state.
+pattern GoogleFirestoreAdminV1Backup_State_Creating :: GoogleFirestoreAdminV1Backup_State
+pattern GoogleFirestoreAdminV1Backup_State_Creating = GoogleFirestoreAdminV1Backup_State "CREATING"
+
+-- | The backup is complete and ready to use.
+pattern GoogleFirestoreAdminV1Backup_State_Ready :: GoogleFirestoreAdminV1Backup_State
+pattern GoogleFirestoreAdminV1Backup_State_Ready = GoogleFirestoreAdminV1Backup_State "READY"
+
+-- | The backup is not available at this moment.
+pattern GoogleFirestoreAdminV1Backup_State_NOTAVAILABLE :: GoogleFirestoreAdminV1Backup_State
+pattern GoogleFirestoreAdminV1Backup_State_NOTAVAILABLE = GoogleFirestoreAdminV1Backup_State "NOT_AVAILABLE"
+
+{-# COMPLETE
+  GoogleFirestoreAdminV1Backup_State_STATEUNSPECIFIED,
+  GoogleFirestoreAdminV1Backup_State_Creating,
+  GoogleFirestoreAdminV1Backup_State_Ready,
+  GoogleFirestoreAdminV1Backup_State_NOTAVAILABLE,
+  GoogleFirestoreAdminV1Backup_State #-}
 
 -- | The App Engine integration mode to use for this database.
-newtype GoogleFirestoreAdminV1Database_AppEngineIntegrationMode = GoogleFirestoreAdminV1Database_AppEngineIntegrationMode {fromGoogleFirestoreAdminV1Database_AppEngineIntegrationMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Database_AppEngineIntegrationMode = GoogleFirestoreAdminV1Database_AppEngineIntegrationMode { fromGoogleFirestoreAdminV1Database_AppEngineIntegrationMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not used.
 pattern GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_APPENGINEINTEGRATIONMODEUNSPECIFIED :: GoogleFirestoreAdminV1Database_AppEngineIntegrationMode
@@ -431,21 +522,20 @@ pattern GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_Disabled = Googl
   GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_APPENGINEINTEGRATIONMODEUNSPECIFIED,
   GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_Enabled,
   GoogleFirestoreAdminV1Database_AppEngineIntegrationMode_Disabled,
-  GoogleFirestoreAdminV1Database_AppEngineIntegrationMode
-  #-}
+  GoogleFirestoreAdminV1Database_AppEngineIntegrationMode #-}
 
 -- | The concurrency control mode to use for this database.
-newtype GoogleFirestoreAdminV1Database_ConcurrencyMode = GoogleFirestoreAdminV1Database_ConcurrencyMode {fromGoogleFirestoreAdminV1Database_ConcurrencyMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Database_ConcurrencyMode = GoogleFirestoreAdminV1Database_ConcurrencyMode { fromGoogleFirestoreAdminV1Database_ConcurrencyMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not used.
 pattern GoogleFirestoreAdminV1Database_ConcurrencyMode_CONCURRENCYMODEUNSPECIFIED :: GoogleFirestoreAdminV1Database_ConcurrencyMode
@@ -468,21 +558,51 @@ pattern GoogleFirestoreAdminV1Database_ConcurrencyMode_OPTIMISTICWITHENTITYGROUP
   GoogleFirestoreAdminV1Database_ConcurrencyMode_Optimistic,
   GoogleFirestoreAdminV1Database_ConcurrencyMode_Pessimistic,
   GoogleFirestoreAdminV1Database_ConcurrencyMode_OPTIMISTICWITHENTITYGROUPS,
-  GoogleFirestoreAdminV1Database_ConcurrencyMode
-  #-}
+  GoogleFirestoreAdminV1Database_ConcurrencyMode #-}
+
+-- | State of delete protection for the database.
+newtype GoogleFirestoreAdminV1Database_DeleteProtectionState = GoogleFirestoreAdminV1Database_DeleteProtectionState { fromGoogleFirestoreAdminV1Database_DeleteProtectionState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | The default value. Delete protection type is not specified
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONSTATEUNSPECIFIED :: GoogleFirestoreAdminV1Database_DeleteProtectionState
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONSTATEUNSPECIFIED = GoogleFirestoreAdminV1Database_DeleteProtectionState "DELETE_PROTECTION_STATE_UNSPECIFIED"
+
+-- | Delete protection is disabled
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONDISABLED :: GoogleFirestoreAdminV1Database_DeleteProtectionState
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONDISABLED = GoogleFirestoreAdminV1Database_DeleteProtectionState "DELETE_PROTECTION_DISABLED"
+
+-- | Delete protection is enabled
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONENABLED :: GoogleFirestoreAdminV1Database_DeleteProtectionState
+pattern GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONENABLED = GoogleFirestoreAdminV1Database_DeleteProtectionState "DELETE_PROTECTION_ENABLED"
+
+{-# COMPLETE
+  GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONSTATEUNSPECIFIED,
+  GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONDISABLED,
+  GoogleFirestoreAdminV1Database_DeleteProtectionState_DELETEPROTECTIONENABLED,
+  GoogleFirestoreAdminV1Database_DeleteProtectionState #-}
 
 -- | The type of the database. See https:\/\/cloud.google.com\/datastore\/docs\/firestore-or-datastore for information about how to choose.
-newtype GoogleFirestoreAdminV1Database_Type = GoogleFirestoreAdminV1Database_Type {fromGoogleFirestoreAdminV1Database_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Database_Type = GoogleFirestoreAdminV1Database_Type { fromGoogleFirestoreAdminV1Database_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value. This value is used if the database type is omitted.
 pattern GoogleFirestoreAdminV1Database_Type_DATABASETYPEUNSPECIFIED :: GoogleFirestoreAdminV1Database_Type
@@ -500,21 +620,20 @@ pattern GoogleFirestoreAdminV1Database_Type_DATASTOREMODE = GoogleFirestoreAdmin
   GoogleFirestoreAdminV1Database_Type_DATABASETYPEUNSPECIFIED,
   GoogleFirestoreAdminV1Database_Type_FIRESTORENATIVE,
   GoogleFirestoreAdminV1Database_Type_DATASTOREMODE,
-  GoogleFirestoreAdminV1Database_Type
-  #-}
+  GoogleFirestoreAdminV1Database_Type #-}
 
 -- | The state of the export operation.
-newtype GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState = GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState {fromGoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState = GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState { fromGoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED :: GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState
@@ -557,21 +676,20 @@ pattern GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Cancelled =
   GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Successful,
   GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Failed,
   GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState_Cancelled,
-  GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState
-  #-}
+  GoogleFirestoreAdminV1ExportDocumentsMetadata_OperationState #-}
 
 -- | The state of the operation.
-newtype GoogleFirestoreAdminV1FieldOperationMetadata_State = GoogleFirestoreAdminV1FieldOperationMetadata_State {fromGoogleFirestoreAdminV1FieldOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1FieldOperationMetadata_State = GoogleFirestoreAdminV1FieldOperationMetadata_State { fromGoogleFirestoreAdminV1FieldOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleFirestoreAdminV1FieldOperationMetadata_State_OPERATIONSTATEUNSPECIFIED :: GoogleFirestoreAdminV1FieldOperationMetadata_State
@@ -614,21 +732,20 @@ pattern GoogleFirestoreAdminV1FieldOperationMetadata_State_Cancelled = GoogleFir
   GoogleFirestoreAdminV1FieldOperationMetadata_State_Successful,
   GoogleFirestoreAdminV1FieldOperationMetadata_State_Failed,
   GoogleFirestoreAdminV1FieldOperationMetadata_State_Cancelled,
-  GoogleFirestoreAdminV1FieldOperationMetadata_State
-  #-}
+  GoogleFirestoreAdminV1FieldOperationMetadata_State #-}
 
 -- | The state of the import operation.
-newtype GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState = GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState {fromGoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState = GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState { fromGoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_OPERATIONSTATEUNSPECIFIED :: GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState
@@ -671,21 +788,20 @@ pattern GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Cancelled =
   GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Successful,
   GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Failed,
   GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState_Cancelled,
-  GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState
-  #-}
+  GoogleFirestoreAdminV1ImportDocumentsMetadata_OperationState #-}
 
 -- | The API scope supported by this index.
-newtype GoogleFirestoreAdminV1Index_ApiScope = GoogleFirestoreAdminV1Index_ApiScope {fromGoogleFirestoreAdminV1Index_ApiScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Index_ApiScope = GoogleFirestoreAdminV1Index_ApiScope { fromGoogleFirestoreAdminV1Index_ApiScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The index can be used by both Firestore Native and Firestore in Datastore Mode query API. This is the default.
 pattern GoogleFirestoreAdminV1Index_ApiScope_ANYAPI :: GoogleFirestoreAdminV1Index_ApiScope
@@ -698,21 +814,20 @@ pattern GoogleFirestoreAdminV1Index_ApiScope_DATASTOREMODEAPI = GoogleFirestoreA
 {-# COMPLETE
   GoogleFirestoreAdminV1Index_ApiScope_ANYAPI,
   GoogleFirestoreAdminV1Index_ApiScope_DATASTOREMODEAPI,
-  GoogleFirestoreAdminV1Index_ApiScope
-  #-}
+  GoogleFirestoreAdminV1Index_ApiScope #-}
 
 -- | Indexes with a collection query scope specified allow queries against a collection that is the child of a specific document, specified at query time, and that has the same collection id. Indexes with a collection group query scope specified allow queries against all collections descended from a specific document, specified at query time, and that have the same collection id as this index.
-newtype GoogleFirestoreAdminV1Index_QueryScope = GoogleFirestoreAdminV1Index_QueryScope {fromGoogleFirestoreAdminV1Index_QueryScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Index_QueryScope = GoogleFirestoreAdminV1Index_QueryScope { fromGoogleFirestoreAdminV1Index_QueryScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The query scope is unspecified. Not a valid option.
 pattern GoogleFirestoreAdminV1Index_QueryScope_QUERYSCOPEUNSPECIFIED :: GoogleFirestoreAdminV1Index_QueryScope
@@ -735,21 +850,20 @@ pattern GoogleFirestoreAdminV1Index_QueryScope_COLLECTIONRECURSIVE = GoogleFires
   GoogleFirestoreAdminV1Index_QueryScope_Collection,
   GoogleFirestoreAdminV1Index_QueryScope_COLLECTIONGROUP,
   GoogleFirestoreAdminV1Index_QueryScope_COLLECTIONRECURSIVE,
-  GoogleFirestoreAdminV1Index_QueryScope
-  #-}
+  GoogleFirestoreAdminV1Index_QueryScope #-}
 
 -- | Output only. The serving state of the index.
-newtype GoogleFirestoreAdminV1Index_State = GoogleFirestoreAdminV1Index_State {fromGoogleFirestoreAdminV1Index_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1Index_State = GoogleFirestoreAdminV1Index_State { fromGoogleFirestoreAdminV1Index_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The state is unspecified.
 pattern GoogleFirestoreAdminV1Index_State_STATEUNSPECIFIED :: GoogleFirestoreAdminV1Index_State
@@ -772,21 +886,20 @@ pattern GoogleFirestoreAdminV1Index_State_NEEDSREPAIR = GoogleFirestoreAdminV1In
   GoogleFirestoreAdminV1Index_State_Creating,
   GoogleFirestoreAdminV1Index_State_Ready,
   GoogleFirestoreAdminV1Index_State_NEEDSREPAIR,
-  GoogleFirestoreAdminV1Index_State
-  #-}
+  GoogleFirestoreAdminV1Index_State #-}
 
 -- | Specifies how the index is changing.
-newtype GoogleFirestoreAdminV1IndexConfigDelta_ChangeType = GoogleFirestoreAdminV1IndexConfigDelta_ChangeType {fromGoogleFirestoreAdminV1IndexConfigDelta_ChangeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1IndexConfigDelta_ChangeType = GoogleFirestoreAdminV1IndexConfigDelta_ChangeType { fromGoogleFirestoreAdminV1IndexConfigDelta_ChangeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The type of change is not specified or known.
 pattern GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED :: GoogleFirestoreAdminV1IndexConfigDelta_ChangeType
@@ -804,21 +917,20 @@ pattern GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_Remove = GoogleFiresto
   GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
   GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_Add,
   GoogleFirestoreAdminV1IndexConfigDelta_ChangeType_Remove,
-  GoogleFirestoreAdminV1IndexConfigDelta_ChangeType
-  #-}
+  GoogleFirestoreAdminV1IndexConfigDelta_ChangeType #-}
 
 -- | Indicates that this field supports operations on @array_value@s.
-newtype GoogleFirestoreAdminV1IndexField_ArrayConfig = GoogleFirestoreAdminV1IndexField_ArrayConfig {fromGoogleFirestoreAdminV1IndexField_ArrayConfig :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1IndexField_ArrayConfig = GoogleFirestoreAdminV1IndexField_ArrayConfig { fromGoogleFirestoreAdminV1IndexField_ArrayConfig :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The index does not support additional array queries.
 pattern GoogleFirestoreAdminV1IndexField_ArrayConfig_ARRAYCONFIGUNSPECIFIED :: GoogleFirestoreAdminV1IndexField_ArrayConfig
@@ -831,21 +943,20 @@ pattern GoogleFirestoreAdminV1IndexField_ArrayConfig_Contains = GoogleFirestoreA
 {-# COMPLETE
   GoogleFirestoreAdminV1IndexField_ArrayConfig_ARRAYCONFIGUNSPECIFIED,
   GoogleFirestoreAdminV1IndexField_ArrayConfig_Contains,
-  GoogleFirestoreAdminV1IndexField_ArrayConfig
-  #-}
+  GoogleFirestoreAdminV1IndexField_ArrayConfig #-}
 
 -- | Indicates that this field supports ordering by the specified order or comparing using =, !=, \<, \<=, >, >=.
-newtype GoogleFirestoreAdminV1IndexField_Order = GoogleFirestoreAdminV1IndexField_Order {fromGoogleFirestoreAdminV1IndexField_Order :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1IndexField_Order = GoogleFirestoreAdminV1IndexField_Order { fromGoogleFirestoreAdminV1IndexField_Order :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The ordering is unspecified. Not a valid option.
 pattern GoogleFirestoreAdminV1IndexField_Order_ORDERUNSPECIFIED :: GoogleFirestoreAdminV1IndexField_Order
@@ -863,21 +974,20 @@ pattern GoogleFirestoreAdminV1IndexField_Order_Descending = GoogleFirestoreAdmin
   GoogleFirestoreAdminV1IndexField_Order_ORDERUNSPECIFIED,
   GoogleFirestoreAdminV1IndexField_Order_Ascending,
   GoogleFirestoreAdminV1IndexField_Order_Descending,
-  GoogleFirestoreAdminV1IndexField_Order
-  #-}
+  GoogleFirestoreAdminV1IndexField_Order #-}
 
 -- | The state of the operation.
-newtype GoogleFirestoreAdminV1IndexOperationMetadata_State = GoogleFirestoreAdminV1IndexOperationMetadata_State {fromGoogleFirestoreAdminV1IndexOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1IndexOperationMetadata_State = GoogleFirestoreAdminV1IndexOperationMetadata_State { fromGoogleFirestoreAdminV1IndexOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleFirestoreAdminV1IndexOperationMetadata_State_OPERATIONSTATEUNSPECIFIED :: GoogleFirestoreAdminV1IndexOperationMetadata_State
@@ -920,21 +1030,20 @@ pattern GoogleFirestoreAdminV1IndexOperationMetadata_State_Cancelled = GoogleFir
   GoogleFirestoreAdminV1IndexOperationMetadata_State_Successful,
   GoogleFirestoreAdminV1IndexOperationMetadata_State_Failed,
   GoogleFirestoreAdminV1IndexOperationMetadata_State_Cancelled,
-  GoogleFirestoreAdminV1IndexOperationMetadata_State
-  #-}
+  GoogleFirestoreAdminV1IndexOperationMetadata_State #-}
 
 -- | Output only. The state of the TTL configuration.
-newtype GoogleFirestoreAdminV1TtlConfig_State = GoogleFirestoreAdminV1TtlConfig_State {fromGoogleFirestoreAdminV1TtlConfig_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1TtlConfig_State = GoogleFirestoreAdminV1TtlConfig_State { fromGoogleFirestoreAdminV1TtlConfig_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The state is unspecified or unknown.
 pattern GoogleFirestoreAdminV1TtlConfig_State_STATEUNSPECIFIED :: GoogleFirestoreAdminV1TtlConfig_State
@@ -957,21 +1066,20 @@ pattern GoogleFirestoreAdminV1TtlConfig_State_NEEDSREPAIR = GoogleFirestoreAdmin
   GoogleFirestoreAdminV1TtlConfig_State_Creating,
   GoogleFirestoreAdminV1TtlConfig_State_Active,
   GoogleFirestoreAdminV1TtlConfig_State_NEEDSREPAIR,
-  GoogleFirestoreAdminV1TtlConfig_State
-  #-}
+  GoogleFirestoreAdminV1TtlConfig_State #-}
 
 -- | Specifies how the TTL configuration is changing.
-newtype GoogleFirestoreAdminV1TtlConfigDelta_ChangeType = GoogleFirestoreAdminV1TtlConfigDelta_ChangeType {fromGoogleFirestoreAdminV1TtlConfigDelta_ChangeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleFirestoreAdminV1TtlConfigDelta_ChangeType = GoogleFirestoreAdminV1TtlConfigDelta_ChangeType { fromGoogleFirestoreAdminV1TtlConfigDelta_ChangeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The type of change is not specified or known.
 pattern GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED :: GoogleFirestoreAdminV1TtlConfigDelta_ChangeType
@@ -989,21 +1097,76 @@ pattern GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_Remove = GoogleFirestore
   GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_CHANGETYPEUNSPECIFIED,
   GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_Add,
   GoogleFirestoreAdminV1TtlConfigDelta_ChangeType_Remove,
-  GoogleFirestoreAdminV1TtlConfigDelta_ChangeType
-  #-}
+  GoogleFirestoreAdminV1TtlConfigDelta_ChangeType #-}
+
+-- | The day of week to run. DAY/OF/WEEK_UNSPECIFIED is not allowed.
+newtype GoogleFirestoreAdminV1WeeklyRecurrence_Day = GoogleFirestoreAdminV1WeeklyRecurrence_Day { fromGoogleFirestoreAdminV1WeeklyRecurrence_Day :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | The day of the week is unspecified.
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_DAYOFWEEKUNSPECIFIED :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_DAYOFWEEKUNSPECIFIED = GoogleFirestoreAdminV1WeeklyRecurrence_Day "DAY_OF_WEEK_UNSPECIFIED"
+
+-- | Monday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Monday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Monday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "MONDAY"
+
+-- | Tuesday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Tuesday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Tuesday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "TUESDAY"
+
+-- | Wednesday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Wednesday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Wednesday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "WEDNESDAY"
+
+-- | Thursday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Thursday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Thursday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "THURSDAY"
+
+-- | Friday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Friday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Friday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "FRIDAY"
+
+-- | Saturday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Saturday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Saturday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "SATURDAY"
+
+-- | Sunday
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Sunday :: GoogleFirestoreAdminV1WeeklyRecurrence_Day
+pattern GoogleFirestoreAdminV1WeeklyRecurrence_Day_Sunday = GoogleFirestoreAdminV1WeeklyRecurrence_Day "SUNDAY"
+
+{-# COMPLETE
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_DAYOFWEEKUNSPECIFIED,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Monday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Tuesday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Wednesday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Thursday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Friday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Saturday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day_Sunday,
+  GoogleFirestoreAdminV1WeeklyRecurrence_Day #-}
 
 -- | The direction to order by. Defaults to @ASCENDING@.
-newtype Order_Direction = Order_Direction {fromOrder_Direction :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Order_Direction = Order_Direction { fromOrder_Direction :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Order_Direction_DIRECTIONUNSPECIFIED :: Order_Direction
@@ -1021,21 +1184,20 @@ pattern Order_Direction_Descending = Order_Direction "DESCENDING"
   Order_Direction_DIRECTIONUNSPECIFIED,
   Order_Direction_Ascending,
   Order_Direction_Descending,
-  Order_Direction
-  #-}
+  Order_Direction #-}
 
 -- | The type of change that occurred.
-newtype TargetChange_TargetChangeType = TargetChange_TargetChangeType {fromTargetChange_TargetChangeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype TargetChange_TargetChangeType = TargetChange_TargetChangeType { fromTargetChange_TargetChangeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No change has occurred. Used only to send an updated @resume_token@.
 pattern TargetChange_TargetChangeType_NOCHANGE :: TargetChange_TargetChangeType
@@ -1063,21 +1225,20 @@ pattern TargetChange_TargetChangeType_Reset = TargetChange_TargetChangeType "RES
   TargetChange_TargetChangeType_Remove,
   TargetChange_TargetChangeType_Current,
   TargetChange_TargetChangeType_Reset,
-  TargetChange_TargetChangeType
-  #-}
+  TargetChange_TargetChangeType #-}
 
 -- | The unary operator to apply.
-newtype UnaryFilter_Op = UnaryFilter_Op {fromUnaryFilter_Op :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UnaryFilter_Op = UnaryFilter_Op { fromUnaryFilter_Op :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified. This value must not be used.
 pattern UnaryFilter_Op_OPERATORUNSPECIFIED :: UnaryFilter_Op
@@ -1105,21 +1266,20 @@ pattern UnaryFilter_Op_ISNOTNULL = UnaryFilter_Op "IS_NOT_NULL"
   UnaryFilter_Op_ISNULL,
   UnaryFilter_Op_ISNOTNAN,
   UnaryFilter_Op_ISNOTNULL,
-  UnaryFilter_Op
-  #-}
+  UnaryFilter_Op #-}
 
 -- | A null value.
-newtype Value_NullValue = Value_NullValue {fromValue_NullValue :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Value_NullValue = Value_NullValue { fromValue_NullValue :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Null value.
 pattern Value_NullValue_NULLVALUE :: Value_NullValue
@@ -1127,5 +1287,4 @@ pattern Value_NullValue_NULLVALUE = Value_NullValue "NULL_VALUE"
 
 {-# COMPLETE
   Value_NullValue_NULLVALUE,
-  Value_NullValue
-  #-}
+  Value_NullValue #-}

@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Games.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AchievementDefinition_AchievementType
     AchievementDefinition_AchievementType
-      ( AchievementDefinition_AchievementType_ACHIEVEMENTTYPEUNSPECIFIED,
+      (
+        AchievementDefinition_AchievementType_ACHIEVEMENTTYPEUNSPECIFIED,
         AchievementDefinition_AchievementType_Standard,
         AchievementDefinition_AchievementType_Incremental,
         ..
@@ -43,7 +49,8 @@ module Gogol.Games.Internal.Sum
 
     -- * AchievementDefinition_InitialState
     AchievementDefinition_InitialState
-      ( AchievementDefinition_InitialState_INITIALACHIEVEMENTSTATEUNSPECIFIED,
+      (
+        AchievementDefinition_InitialState_INITIALACHIEVEMENTSTATEUNSPECIFIED,
         AchievementDefinition_InitialState_Hidden,
         AchievementDefinition_InitialState_Revealed,
         AchievementDefinition_InitialState_Unlocked,
@@ -52,7 +59,8 @@ module Gogol.Games.Internal.Sum
 
     -- * AchievementRevealResponse_CurrentState
     AchievementRevealResponse_CurrentState
-      ( AchievementRevealResponse_CurrentState_REVEALACHIEVEMENTSTATEUNSPECIFIED,
+      (
+        AchievementRevealResponse_CurrentState_REVEALACHIEVEMENTSTATEUNSPECIFIED,
         AchievementRevealResponse_CurrentState_Revealed,
         AchievementRevealResponse_CurrentState_Unlocked,
         ..
@@ -60,7 +68,8 @@ module Gogol.Games.Internal.Sum
 
     -- * AchievementUpdateRequest_UpdateType
     AchievementUpdateRequest_UpdateType
-      ( AchievementUpdateRequest_UpdateType_ACHIEVEMENTUPDATETYPEUNSPECIFIED,
+      (
+        AchievementUpdateRequest_UpdateType_ACHIEVEMENTUPDATETYPEUNSPECIFIED,
         AchievementUpdateRequest_UpdateType_Reveal,
         AchievementUpdateRequest_UpdateType_Unlock,
         AchievementUpdateRequest_UpdateType_Increment,
@@ -70,7 +79,8 @@ module Gogol.Games.Internal.Sum
 
     -- * AchievementUpdateResponse_CurrentState
     AchievementUpdateResponse_CurrentState
-      ( AchievementUpdateResponse_CurrentState_UPDATEDACHIEVEMENTSTATEUNSPECIFIED,
+      (
+        AchievementUpdateResponse_CurrentState_UPDATEDACHIEVEMENTSTATEUNSPECIFIED,
         AchievementUpdateResponse_CurrentState_Hidden,
         AchievementUpdateResponse_CurrentState_Revealed,
         AchievementUpdateResponse_CurrentState_Unlocked,
@@ -79,14 +89,16 @@ module Gogol.Games.Internal.Sum
 
     -- * Application_EnabledFeaturesItem
     Application_EnabledFeaturesItem
-      ( Application_EnabledFeaturesItem_APPLICATIONFEATUREUNSPECIFIED,
+      (
+        Application_EnabledFeaturesItem_APPLICATIONFEATUREUNSPECIFIED,
         Application_EnabledFeaturesItem_Snapshots,
         ..
       ),
 
     -- * EventBatchRecordFailure_FailureCause
     EventBatchRecordFailure_FailureCause
-      ( EventBatchRecordFailure_FailureCause_EVENTFAILURECAUSEUNSPECIFIED,
+      (
+        EventBatchRecordFailure_FailureCause_EVENTFAILURECAUSEUNSPECIFIED,
         EventBatchRecordFailure_FailureCause_TOOLARGE,
         EventBatchRecordFailure_FailureCause_TIMEPERIODEXPIRED,
         EventBatchRecordFailure_FailureCause_TIMEPERIODSHORT,
@@ -98,7 +110,8 @@ module Gogol.Games.Internal.Sum
 
     -- * EventDefinition_Visibility
     EventDefinition_Visibility
-      ( EventDefinition_Visibility_EVENTVISIBILITYUNSPECIFIED,
+      (
+        EventDefinition_Visibility_EVENTVISIBILITYUNSPECIFIED,
         EventDefinition_Visibility_Revealed,
         EventDefinition_Visibility_Hidden,
         ..
@@ -106,7 +119,8 @@ module Gogol.Games.Internal.Sum
 
     -- * EventRecordFailure_FailureCause
     EventRecordFailure_FailureCause
-      ( EventRecordFailure_FailureCause_EVENTUPDATEFAILURECAUSEUNSPECIFIED,
+      (
+        EventRecordFailure_FailureCause_EVENTUPDATEFAILURECAUSEUNSPECIFIED,
         EventRecordFailure_FailureCause_NOTFOUND,
         EventRecordFailure_FailureCause_INVALIDUPDATEVALUE,
         ..
@@ -114,7 +128,8 @@ module Gogol.Games.Internal.Sum
 
     -- * Instance_PlatformType
     Instance_PlatformType
-      ( Instance_PlatformType_PLATFORMTYPEUNSPECIFIED,
+      (
+        Instance_PlatformType_PLATFORMTYPEUNSPECIFIED,
         Instance_PlatformType_Android,
         Instance_PlatformType_Ios,
         Instance_PlatformType_WEBAPP,
@@ -123,7 +138,8 @@ module Gogol.Games.Internal.Sum
 
     -- * Leaderboard_Order
     Leaderboard_Order
-      ( Leaderboard_Order_SCOREORDERUNSPECIFIED,
+      (
+        Leaderboard_Order_SCOREORDERUNSPECIFIED,
         Leaderboard_Order_LARGERISBETTER,
         Leaderboard_Order_SMALLERISBETTER,
         ..
@@ -131,7 +147,8 @@ module Gogol.Games.Internal.Sum
 
     -- * LeaderboardEntry_TimeSpan
     LeaderboardEntry_TimeSpan
-      ( LeaderboardEntry_TimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        LeaderboardEntry_TimeSpan_SCORETIMESPANUNSPECIFIED,
         LeaderboardEntry_TimeSpan_ALLTIME,
         LeaderboardEntry_TimeSpan_Weekly,
         LeaderboardEntry_TimeSpan_Daily,
@@ -140,7 +157,8 @@ module Gogol.Games.Internal.Sum
 
     -- * Player_FriendStatus
     Player_FriendStatus
-      ( Player_FriendStatus_FRIENDSTATUSUNSPECIFIED,
+      (
+        Player_FriendStatus_FRIENDSTATUSUNSPECIFIED,
         Player_FriendStatus_NORELATIONSHIP,
         Player_FriendStatus_Friend,
         ..
@@ -148,7 +166,8 @@ module Gogol.Games.Internal.Sum
 
     -- * PlayerAchievement_AchievementState
     PlayerAchievement_AchievementState
-      ( PlayerAchievement_AchievementState_STATEUNSPECIFIED,
+      (
+        PlayerAchievement_AchievementState_STATEUNSPECIFIED,
         PlayerAchievement_AchievementState_Hidden,
         PlayerAchievement_AchievementState_Revealed,
         PlayerAchievement_AchievementState_Unlocked,
@@ -157,7 +176,8 @@ module Gogol.Games.Internal.Sum
 
     -- * PlayerLeaderboardScore_TimeSpan
     PlayerLeaderboardScore_TimeSpan
-      ( PlayerLeaderboardScore_TimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        PlayerLeaderboardScore_TimeSpan_SCORETIMESPANUNSPECIFIED,
         PlayerLeaderboardScore_TimeSpan_ALLTIME,
         PlayerLeaderboardScore_TimeSpan_Weekly,
         PlayerLeaderboardScore_TimeSpan_Daily,
@@ -166,7 +186,8 @@ module Gogol.Games.Internal.Sum
 
     -- * PlayerScore_TimeSpan
     PlayerScore_TimeSpan
-      ( PlayerScore_TimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        PlayerScore_TimeSpan_SCORETIMESPANUNSPECIFIED,
         PlayerScore_TimeSpan_ALLTIME,
         PlayerScore_TimeSpan_Weekly,
         PlayerScore_TimeSpan_Daily,
@@ -175,7 +196,8 @@ module Gogol.Games.Internal.Sum
 
     -- * PlayerScoreResponse_BeatenScoreTimeSpansItem
     PlayerScoreResponse_BeatenScoreTimeSpansItem
-      ( PlayerScoreResponse_BeatenScoreTimeSpansItem_SCORETIMESPANUNSPECIFIED,
+      (
+        PlayerScoreResponse_BeatenScoreTimeSpansItem_SCORETIMESPANUNSPECIFIED,
         PlayerScoreResponse_BeatenScoreTimeSpansItem_ALLTIME,
         PlayerScoreResponse_BeatenScoreTimeSpansItem_Weekly,
         PlayerScoreResponse_BeatenScoreTimeSpansItem_Daily,
@@ -184,7 +206,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ProfileSettings_FriendsListVisibility
     ProfileSettings_FriendsListVisibility
-      ( ProfileSettings_FriendsListVisibility_FRIENDSLISTVISIBILITYUNSPECIFIED,
+      (
+        ProfileSettings_FriendsListVisibility_FRIENDSLISTVISIBILITYUNSPECIFIED,
         ProfileSettings_FriendsListVisibility_Visible,
         ProfileSettings_FriendsListVisibility_REQUESTREQUIRED,
         ProfileSettings_FriendsListVisibility_Unavailable,
@@ -193,7 +216,8 @@ module Gogol.Games.Internal.Sum
 
     -- * RevisionCheckResponse_RevisionStatus
     RevisionCheckResponse_RevisionStatus
-      ( RevisionCheckResponse_RevisionStatus_REVISIONSTATUSUNSPECIFIED,
+      (
+        RevisionCheckResponse_RevisionStatus_REVISIONSTATUSUNSPECIFIED,
         RevisionCheckResponse_RevisionStatus_OK,
         RevisionCheckResponse_RevisionStatus_Deprecated,
         RevisionCheckResponse_RevisionStatus_Invalid,
@@ -202,14 +226,16 @@ module Gogol.Games.Internal.Sum
 
     -- * Snapshot_Type
     Snapshot_Type
-      ( Snapshot_Type_SNAPSHOTTYPEUNSPECIFIED,
+      (
+        Snapshot_Type_SNAPSHOTTYPEUNSPECIFIED,
         Snapshot_Type_SAVEGAME,
         ..
       ),
 
     -- * AchievementsListState
     AchievementsListState
-      ( AchievementsListState_All,
+      (
+        AchievementsListState_All,
         AchievementsListState_Hidden,
         AchievementsListState_Revealed,
         AchievementsListState_Unlocked,
@@ -218,7 +244,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ApplicationsGetPlatformType
     ApplicationsGetPlatformType
-      ( ApplicationsGetPlatformType_PLATFORMTYPEUNSPECIFIED,
+      (
+        ApplicationsGetPlatformType_PLATFORMTYPEUNSPECIFIED,
         ApplicationsGetPlatformType_Android,
         ApplicationsGetPlatformType_Ios,
         ApplicationsGetPlatformType_WEBAPP,
@@ -227,7 +254,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ApplicationsGetEndPointEndPointType
     ApplicationsGetEndPointEndPointType
-      ( ApplicationsGetEndPointEndPointType_ENDPOINTTYPEUNSPECIFIED,
+      (
+        ApplicationsGetEndPointEndPointType_ENDPOINTTYPEUNSPECIFIED,
         ApplicationsGetEndPointEndPointType_PROFILECREATION,
         ApplicationsGetEndPointEndPointType_PROFILESETTINGS,
         ..
@@ -235,20 +263,23 @@ module Gogol.Games.Internal.Sum
 
     -- * MetagameListCategoriesByPlayerCollection
     MetagameListCategoriesByPlayerCollection
-      ( MetagameListCategoriesByPlayerCollection_COLLECTIONUNSPECIFIED,
+      (
+        MetagameListCategoriesByPlayerCollection_COLLECTIONUNSPECIFIED,
         MetagameListCategoriesByPlayerCollection_All,
         ..
       ),
 
     -- * PlayersListCollection
     PlayersListCollection
-      ( PlayersListCollection_PlayedWith,
+      (
+        PlayersListCollection_PlayedWith,
         ..
       ),
 
     -- * ScoresGetIncludeRankType
     ScoresGetIncludeRankType
-      ( ScoresGetIncludeRankType_INCLUDERANKTYPEUNSPECIFIED,
+      (
+        ScoresGetIncludeRankType_INCLUDERANKTYPEUNSPECIFIED,
         ScoresGetIncludeRankType_All,
         ScoresGetIncludeRankType_Public,
         ScoresGetIncludeRankType_Social,
@@ -258,7 +289,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ScoresGetTimeSpan
     ScoresGetTimeSpan
-      ( ScoresGetTimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        ScoresGetTimeSpan_SCORETIMESPANUNSPECIFIED,
         ScoresGetTimeSpan_All,
         ScoresGetTimeSpan_ALLTIME,
         ScoresGetTimeSpan_Weekly,
@@ -268,7 +300,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ScoresListCollection
     ScoresListCollection
-      ( ScoresListCollection_SCORECOLLECTIONUNSPECIFIED,
+      (
+        ScoresListCollection_SCORECOLLECTIONUNSPECIFIED,
         ScoresListCollection_Public,
         ScoresListCollection_Social,
         ScoresListCollection_Friends,
@@ -277,7 +310,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ScoresListTimeSpan
     ScoresListTimeSpan
-      ( ScoresListTimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        ScoresListTimeSpan_SCORETIMESPANUNSPECIFIED,
         ScoresListTimeSpan_ALLTIME,
         ScoresListTimeSpan_Weekly,
         ScoresListTimeSpan_Daily,
@@ -286,7 +320,8 @@ module Gogol.Games.Internal.Sum
 
     -- * ScoresListWindowCollection
     ScoresListWindowCollection
-      ( ScoresListWindowCollection_SCORECOLLECTIONUNSPECIFIED,
+      (
+        ScoresListWindowCollection_SCORECOLLECTIONUNSPECIFIED,
         ScoresListWindowCollection_Public,
         ScoresListWindowCollection_Social,
         ScoresListWindowCollection_Friends,
@@ -295,29 +330,29 @@ module Gogol.Games.Internal.Sum
 
     -- * ScoresListWindowTimeSpan
     ScoresListWindowTimeSpan
-      ( ScoresListWindowTimeSpan_SCORETIMESPANUNSPECIFIED,
+      (
+        ScoresListWindowTimeSpan_SCORETIMESPANUNSPECIFIED,
         ScoresListWindowTimeSpan_ALLTIME,
         ScoresListWindowTimeSpan_Weekly,
         ScoresListWindowTimeSpan_Daily,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -330,21 +365,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The type of the achievement.
-newtype AchievementDefinition_AchievementType = AchievementDefinition_AchievementType {fromAchievementDefinition_AchievementType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementDefinition_AchievementType = AchievementDefinition_AchievementType { fromAchievementDefinition_AchievementType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern AchievementDefinition_AchievementType_ACHIEVEMENTTYPEUNSPECIFIED :: AchievementDefinition_AchievementType
@@ -362,21 +396,20 @@ pattern AchievementDefinition_AchievementType_Incremental = AchievementDefinitio
   AchievementDefinition_AchievementType_ACHIEVEMENTTYPEUNSPECIFIED,
   AchievementDefinition_AchievementType_Standard,
   AchievementDefinition_AchievementType_Incremental,
-  AchievementDefinition_AchievementType
-  #-}
+  AchievementDefinition_AchievementType #-}
 
 -- | The initial state of the achievement.
-newtype AchievementDefinition_InitialState = AchievementDefinition_InitialState {fromAchievementDefinition_InitialState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementDefinition_InitialState = AchievementDefinition_InitialState { fromAchievementDefinition_InitialState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern AchievementDefinition_InitialState_INITIALACHIEVEMENTSTATEUNSPECIFIED :: AchievementDefinition_InitialState
@@ -399,21 +432,20 @@ pattern AchievementDefinition_InitialState_Unlocked = AchievementDefinition_Init
   AchievementDefinition_InitialState_Hidden,
   AchievementDefinition_InitialState_Revealed,
   AchievementDefinition_InitialState_Unlocked,
-  AchievementDefinition_InitialState
-  #-}
+  AchievementDefinition_InitialState #-}
 
 -- | The current state of the achievement for which a reveal was attempted. This might be @UNLOCKED@ if the achievement was already unlocked.
-newtype AchievementRevealResponse_CurrentState = AchievementRevealResponse_CurrentState {fromAchievementRevealResponse_CurrentState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementRevealResponse_CurrentState = AchievementRevealResponse_CurrentState { fromAchievementRevealResponse_CurrentState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern AchievementRevealResponse_CurrentState_REVEALACHIEVEMENTSTATEUNSPECIFIED :: AchievementRevealResponse_CurrentState
@@ -431,21 +463,20 @@ pattern AchievementRevealResponse_CurrentState_Unlocked = AchievementRevealRespo
   AchievementRevealResponse_CurrentState_REVEALACHIEVEMENTSTATEUNSPECIFIED,
   AchievementRevealResponse_CurrentState_Revealed,
   AchievementRevealResponse_CurrentState_Unlocked,
-  AchievementRevealResponse_CurrentState
-  #-}
+  AchievementRevealResponse_CurrentState #-}
 
 -- | The type of update being applied.
-newtype AchievementUpdateRequest_UpdateType = AchievementUpdateRequest_UpdateType {fromAchievementUpdateRequest_UpdateType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementUpdateRequest_UpdateType = AchievementUpdateRequest_UpdateType { fromAchievementUpdateRequest_UpdateType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern AchievementUpdateRequest_UpdateType_ACHIEVEMENTUPDATETYPEUNSPECIFIED :: AchievementUpdateRequest_UpdateType
@@ -473,21 +504,20 @@ pattern AchievementUpdateRequest_UpdateType_SETSTEPSATLEAST = AchievementUpdateR
   AchievementUpdateRequest_UpdateType_Unlock,
   AchievementUpdateRequest_UpdateType_Increment,
   AchievementUpdateRequest_UpdateType_SETSTEPSATLEAST,
-  AchievementUpdateRequest_UpdateType
-  #-}
+  AchievementUpdateRequest_UpdateType #-}
 
 -- | The current state of the achievement.
-newtype AchievementUpdateResponse_CurrentState = AchievementUpdateResponse_CurrentState {fromAchievementUpdateResponse_CurrentState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementUpdateResponse_CurrentState = AchievementUpdateResponse_CurrentState { fromAchievementUpdateResponse_CurrentState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern AchievementUpdateResponse_CurrentState_UPDATEDACHIEVEMENTSTATEUNSPECIFIED :: AchievementUpdateResponse_CurrentState
@@ -510,20 +540,19 @@ pattern AchievementUpdateResponse_CurrentState_Unlocked = AchievementUpdateRespo
   AchievementUpdateResponse_CurrentState_Hidden,
   AchievementUpdateResponse_CurrentState_Revealed,
   AchievementUpdateResponse_CurrentState_Unlocked,
-  AchievementUpdateResponse_CurrentState
-  #-}
+  AchievementUpdateResponse_CurrentState #-}
 
-newtype Application_EnabledFeaturesItem = Application_EnabledFeaturesItem {fromApplication_EnabledFeaturesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Application_EnabledFeaturesItem = Application_EnabledFeaturesItem { fromApplication_EnabledFeaturesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Safe default, don\'t use.
 pattern Application_EnabledFeaturesItem_APPLICATIONFEATUREUNSPECIFIED :: Application_EnabledFeaturesItem
@@ -536,21 +565,20 @@ pattern Application_EnabledFeaturesItem_Snapshots = Application_EnabledFeaturesI
 {-# COMPLETE
   Application_EnabledFeaturesItem_APPLICATIONFEATUREUNSPECIFIED,
   Application_EnabledFeaturesItem_Snapshots,
-  Application_EnabledFeaturesItem
-  #-}
+  Application_EnabledFeaturesItem #-}
 
 -- | The cause for the update failure.
-newtype EventBatchRecordFailure_FailureCause = EventBatchRecordFailure_FailureCause {fromEventBatchRecordFailure_FailureCause :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EventBatchRecordFailure_FailureCause = EventBatchRecordFailure_FailureCause { fromEventBatchRecordFailure_FailureCause :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Should not be used.
 pattern EventBatchRecordFailure_FailureCause_EVENTFAILURECAUSEUNSPECIFIED :: EventBatchRecordFailure_FailureCause
@@ -588,21 +616,20 @@ pattern EventBatchRecordFailure_FailureCause_RECORDRATEHIGH = EventBatchRecordFa
   EventBatchRecordFailure_FailureCause_TIMEPERIODLONG,
   EventBatchRecordFailure_FailureCause_ALREADYUPDATED,
   EventBatchRecordFailure_FailureCause_RECORDRATEHIGH,
-  EventBatchRecordFailure_FailureCause
-  #-}
+  EventBatchRecordFailure_FailureCause #-}
 
 -- | The visibility of event being tracked in this definition.
-newtype EventDefinition_Visibility = EventDefinition_Visibility {fromEventDefinition_Visibility :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EventDefinition_Visibility = EventDefinition_Visibility { fromEventDefinition_Visibility :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Should not be used.
 pattern EventDefinition_Visibility_EVENTVISIBILITYUNSPECIFIED :: EventDefinition_Visibility
@@ -620,21 +647,20 @@ pattern EventDefinition_Visibility_Hidden = EventDefinition_Visibility "HIDDEN"
   EventDefinition_Visibility_EVENTVISIBILITYUNSPECIFIED,
   EventDefinition_Visibility_Revealed,
   EventDefinition_Visibility_Hidden,
-  EventDefinition_Visibility
-  #-}
+  EventDefinition_Visibility #-}
 
 -- | The cause for the update failure.
-newtype EventRecordFailure_FailureCause = EventRecordFailure_FailureCause {fromEventRecordFailure_FailureCause :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EventRecordFailure_FailureCause = EventRecordFailure_FailureCause { fromEventRecordFailure_FailureCause :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Should not use.
 pattern EventRecordFailure_FailureCause_EVENTUPDATEFAILURECAUSEUNSPECIFIED :: EventRecordFailure_FailureCause
@@ -652,21 +678,20 @@ pattern EventRecordFailure_FailureCause_INVALIDUPDATEVALUE = EventRecordFailure_
   EventRecordFailure_FailureCause_EVENTUPDATEFAILURECAUSEUNSPECIFIED,
   EventRecordFailure_FailureCause_NOTFOUND,
   EventRecordFailure_FailureCause_INVALIDUPDATEVALUE,
-  EventRecordFailure_FailureCause
-  #-}
+  EventRecordFailure_FailureCause #-}
 
 -- | The platform type.
-newtype Instance_PlatformType = Instance_PlatformType {fromInstance_PlatformType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_PlatformType = Instance_PlatformType { fromInstance_PlatformType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Should be unused.
 pattern Instance_PlatformType_PLATFORMTYPEUNSPECIFIED :: Instance_PlatformType
@@ -689,21 +714,20 @@ pattern Instance_PlatformType_WEBAPP = Instance_PlatformType "WEB_APP"
   Instance_PlatformType_Android,
   Instance_PlatformType_Ios,
   Instance_PlatformType_WEBAPP,
-  Instance_PlatformType
-  #-}
+  Instance_PlatformType #-}
 
 -- | How scores are ordered.
-newtype Leaderboard_Order = Leaderboard_Order {fromLeaderboard_Order :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Leaderboard_Order = Leaderboard_Order { fromLeaderboard_Order :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Leaderboard_Order_SCOREORDERUNSPECIFIED :: Leaderboard_Order
@@ -721,21 +745,20 @@ pattern Leaderboard_Order_SMALLERISBETTER = Leaderboard_Order "SMALLER_IS_BETTER
   Leaderboard_Order_SCOREORDERUNSPECIFIED,
   Leaderboard_Order_LARGERISBETTER,
   Leaderboard_Order_SMALLERISBETTER,
-  Leaderboard_Order
-  #-}
+  Leaderboard_Order #-}
 
 -- | The time span of this high score.
-newtype LeaderboardEntry_TimeSpan = LeaderboardEntry_TimeSpan {fromLeaderboardEntry_TimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LeaderboardEntry_TimeSpan = LeaderboardEntry_TimeSpan { fromLeaderboardEntry_TimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern LeaderboardEntry_TimeSpan_SCORETIMESPANUNSPECIFIED :: LeaderboardEntry_TimeSpan
@@ -758,21 +781,20 @@ pattern LeaderboardEntry_TimeSpan_Daily = LeaderboardEntry_TimeSpan "DAILY"
   LeaderboardEntry_TimeSpan_ALLTIME,
   LeaderboardEntry_TimeSpan_Weekly,
   LeaderboardEntry_TimeSpan_Daily,
-  LeaderboardEntry_TimeSpan
-  #-}
+  LeaderboardEntry_TimeSpan #-}
 
 -- | The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game.
-newtype Player_FriendStatus = Player_FriendStatus {fromPlayer_FriendStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Player_FriendStatus = Player_FriendStatus { fromPlayer_FriendStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Player_FriendStatus_FRIENDSTATUSUNSPECIFIED :: Player_FriendStatus
@@ -790,21 +812,20 @@ pattern Player_FriendStatus_Friend = Player_FriendStatus "FRIEND"
   Player_FriendStatus_FRIENDSTATUSUNSPECIFIED,
   Player_FriendStatus_NORELATIONSHIP,
   Player_FriendStatus_Friend,
-  Player_FriendStatus
-  #-}
+  Player_FriendStatus #-}
 
 -- | The state of the achievement.
-newtype PlayerAchievement_AchievementState = PlayerAchievement_AchievementState {fromPlayerAchievement_AchievementState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlayerAchievement_AchievementState = PlayerAchievement_AchievementState { fromPlayerAchievement_AchievementState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern PlayerAchievement_AchievementState_STATEUNSPECIFIED :: PlayerAchievement_AchievementState
@@ -827,21 +848,20 @@ pattern PlayerAchievement_AchievementState_Unlocked = PlayerAchievement_Achievem
   PlayerAchievement_AchievementState_Hidden,
   PlayerAchievement_AchievementState_Revealed,
   PlayerAchievement_AchievementState_Unlocked,
-  PlayerAchievement_AchievementState
-  #-}
+  PlayerAchievement_AchievementState #-}
 
 -- | The time span of this score.
-newtype PlayerLeaderboardScore_TimeSpan = PlayerLeaderboardScore_TimeSpan {fromPlayerLeaderboardScore_TimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlayerLeaderboardScore_TimeSpan = PlayerLeaderboardScore_TimeSpan { fromPlayerLeaderboardScore_TimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern PlayerLeaderboardScore_TimeSpan_SCORETIMESPANUNSPECIFIED :: PlayerLeaderboardScore_TimeSpan
@@ -864,21 +884,20 @@ pattern PlayerLeaderboardScore_TimeSpan_Daily = PlayerLeaderboardScore_TimeSpan 
   PlayerLeaderboardScore_TimeSpan_ALLTIME,
   PlayerLeaderboardScore_TimeSpan_Weekly,
   PlayerLeaderboardScore_TimeSpan_Daily,
-  PlayerLeaderboardScore_TimeSpan
-  #-}
+  PlayerLeaderboardScore_TimeSpan #-}
 
 -- | The time span for this player score.
-newtype PlayerScore_TimeSpan = PlayerScore_TimeSpan {fromPlayerScore_TimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlayerScore_TimeSpan = PlayerScore_TimeSpan { fromPlayerScore_TimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern PlayerScore_TimeSpan_SCORETIMESPANUNSPECIFIED :: PlayerScore_TimeSpan
@@ -901,20 +920,19 @@ pattern PlayerScore_TimeSpan_Daily = PlayerScore_TimeSpan "DAILY"
   PlayerScore_TimeSpan_ALLTIME,
   PlayerScore_TimeSpan_Weekly,
   PlayerScore_TimeSpan_Daily,
-  PlayerScore_TimeSpan
-  #-}
+  PlayerScore_TimeSpan #-}
 
-newtype PlayerScoreResponse_BeatenScoreTimeSpansItem = PlayerScoreResponse_BeatenScoreTimeSpansItem {fromPlayerScoreResponse_BeatenScoreTimeSpansItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlayerScoreResponse_BeatenScoreTimeSpansItem = PlayerScoreResponse_BeatenScoreTimeSpansItem { fromPlayerScoreResponse_BeatenScoreTimeSpansItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern PlayerScoreResponse_BeatenScoreTimeSpansItem_SCORETIMESPANUNSPECIFIED :: PlayerScoreResponse_BeatenScoreTimeSpansItem
@@ -937,20 +955,19 @@ pattern PlayerScoreResponse_BeatenScoreTimeSpansItem_Daily = PlayerScoreResponse
   PlayerScoreResponse_BeatenScoreTimeSpansItem_ALLTIME,
   PlayerScoreResponse_BeatenScoreTimeSpansItem_Weekly,
   PlayerScoreResponse_BeatenScoreTimeSpansItem_Daily,
-  PlayerScoreResponse_BeatenScoreTimeSpansItem
-  #-}
+  PlayerScoreResponse_BeatenScoreTimeSpansItem #-}
 
-newtype ProfileSettings_FriendsListVisibility = ProfileSettings_FriendsListVisibility {fromProfileSettings_FriendsListVisibility :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProfileSettings_FriendsListVisibility = ProfileSettings_FriendsListVisibility { fromProfileSettings_FriendsListVisibility :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unused.
 pattern ProfileSettings_FriendsListVisibility_FRIENDSLISTVISIBILITYUNSPECIFIED :: ProfileSettings_FriendsListVisibility
@@ -973,21 +990,20 @@ pattern ProfileSettings_FriendsListVisibility_Unavailable = ProfileSettings_Frie
   ProfileSettings_FriendsListVisibility_Visible,
   ProfileSettings_FriendsListVisibility_REQUESTREQUIRED,
   ProfileSettings_FriendsListVisibility_Unavailable,
-  ProfileSettings_FriendsListVisibility
-  #-}
+  ProfileSettings_FriendsListVisibility #-}
 
 -- | The result of the revision check.
-newtype RevisionCheckResponse_RevisionStatus = RevisionCheckResponse_RevisionStatus {fromRevisionCheckResponse_RevisionStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype RevisionCheckResponse_RevisionStatus = RevisionCheckResponse_RevisionStatus { fromRevisionCheckResponse_RevisionStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern RevisionCheckResponse_RevisionStatus_REVISIONSTATUSUNSPECIFIED :: RevisionCheckResponse_RevisionStatus
@@ -1010,21 +1026,20 @@ pattern RevisionCheckResponse_RevisionStatus_Invalid = RevisionCheckResponse_Rev
   RevisionCheckResponse_RevisionStatus_OK,
   RevisionCheckResponse_RevisionStatus_Deprecated,
   RevisionCheckResponse_RevisionStatus_Invalid,
-  RevisionCheckResponse_RevisionStatus
-  #-}
+  RevisionCheckResponse_RevisionStatus #-}
 
 -- | The type of this snapshot.
-newtype Snapshot_Type = Snapshot_Type {fromSnapshot_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Snapshot_Type = Snapshot_Type { fromSnapshot_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Snapshot_Type_SNAPSHOTTYPEUNSPECIFIED :: Snapshot_Type
@@ -1037,21 +1052,20 @@ pattern Snapshot_Type_SAVEGAME = Snapshot_Type "SAVE_GAME"
 {-# COMPLETE
   Snapshot_Type_SNAPSHOTTYPEUNSPECIFIED,
   Snapshot_Type_SAVEGAME,
-  Snapshot_Type
-  #-}
+  Snapshot_Type #-}
 
 -- | Tells the server to return only achievements with the specified state. If this parameter isn\'t specified, all achievements are returned.
-newtype AchievementsListState = AchievementsListState {fromAchievementsListState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AchievementsListState = AchievementsListState { fromAchievementsListState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | List all achievements. This is the default.
 pattern AchievementsListState_All :: AchievementsListState
@@ -1074,21 +1088,20 @@ pattern AchievementsListState_Unlocked = AchievementsListState "UNLOCKED"
   AchievementsListState_Hidden,
   AchievementsListState_Revealed,
   AchievementsListState_Unlocked,
-  AchievementsListState
-  #-}
+  AchievementsListState #-}
 
 -- | Restrict application details returned to the specific platform.
-newtype ApplicationsGetPlatformType = ApplicationsGetPlatformType {fromApplicationsGetPlatformType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationsGetPlatformType = ApplicationsGetPlatformType { fromApplicationsGetPlatformType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value, don\'t use.
 pattern ApplicationsGetPlatformType_PLATFORMTYPEUNSPECIFIED :: ApplicationsGetPlatformType
@@ -1111,21 +1124,20 @@ pattern ApplicationsGetPlatformType_WEBAPP = ApplicationsGetPlatformType "WEB_AP
   ApplicationsGetPlatformType_Android,
   ApplicationsGetPlatformType_Ios,
   ApplicationsGetPlatformType_WEBAPP,
-  ApplicationsGetPlatformType
-  #-}
+  ApplicationsGetPlatformType #-}
 
 -- | Type of endpoint being requested.
-newtype ApplicationsGetEndPointEndPointType = ApplicationsGetEndPointEndPointType {fromApplicationsGetEndPointEndPointType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ApplicationsGetEndPointEndPointType = ApplicationsGetEndPointEndPointType { fromApplicationsGetEndPointEndPointType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ApplicationsGetEndPointEndPointType_ENDPOINTTYPEUNSPECIFIED :: ApplicationsGetEndPointEndPointType
@@ -1143,21 +1155,20 @@ pattern ApplicationsGetEndPointEndPointType_PROFILESETTINGS = ApplicationsGetEnd
   ApplicationsGetEndPointEndPointType_ENDPOINTTYPEUNSPECIFIED,
   ApplicationsGetEndPointEndPointType_PROFILECREATION,
   ApplicationsGetEndPointEndPointType_PROFILESETTINGS,
-  ApplicationsGetEndPointEndPointType
-  #-}
+  ApplicationsGetEndPointEndPointType #-}
 
 -- | The collection of categories for which data will be returned.
-newtype MetagameListCategoriesByPlayerCollection = MetagameListCategoriesByPlayerCollection {fromMetagameListCategoriesByPlayerCollection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetagameListCategoriesByPlayerCollection = MetagameListCategoriesByPlayerCollection { fromMetagameListCategoriesByPlayerCollection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern MetagameListCategoriesByPlayerCollection_COLLECTIONUNSPECIFIED :: MetagameListCategoriesByPlayerCollection
@@ -1170,21 +1181,20 @@ pattern MetagameListCategoriesByPlayerCollection_All = MetagameListCategoriesByP
 {-# COMPLETE
   MetagameListCategoriesByPlayerCollection_COLLECTIONUNSPECIFIED,
   MetagameListCategoriesByPlayerCollection_All,
-  MetagameListCategoriesByPlayerCollection
-  #-}
+  MetagameListCategoriesByPlayerCollection #-}
 
 -- | Collection of players being retrieved
-newtype PlayersListCollection = PlayersListCollection {fromPlayersListCollection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlayersListCollection = PlayersListCollection { fromPlayersListCollection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Retrieve a list of players you have played a multiplayer game (realtime or turn-based) with recently.
 pattern PlayersListCollection_PlayedWith :: PlayersListCollection
@@ -1192,21 +1202,20 @@ pattern PlayersListCollection_PlayedWith = PlayersListCollection "played_with"
 
 {-# COMPLETE
   PlayersListCollection_PlayedWith,
-  PlayersListCollection
-  #-}
+  PlayersListCollection #-}
 
 -- | The types of ranks to return. If the parameter is omitted, no ranks will be returned.
-newtype ScoresGetIncludeRankType = ScoresGetIncludeRankType {fromScoresGetIncludeRankType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresGetIncludeRankType = ScoresGetIncludeRankType { fromScoresGetIncludeRankType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Should be unused.
 pattern ScoresGetIncludeRankType_INCLUDERANKTYPEUNSPECIFIED :: ScoresGetIncludeRankType
@@ -1234,21 +1243,20 @@ pattern ScoresGetIncludeRankType_Friends = ScoresGetIncludeRankType "FRIENDS"
   ScoresGetIncludeRankType_Public,
   ScoresGetIncludeRankType_Social,
   ScoresGetIncludeRankType_Friends,
-  ScoresGetIncludeRankType
-  #-}
+  ScoresGetIncludeRankType #-}
 
 -- | The time span for the scores and ranks you\'re requesting.
-newtype ScoresGetTimeSpan = ScoresGetTimeSpan {fromScoresGetTimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresGetTimeSpan = ScoresGetTimeSpan { fromScoresGetTimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ScoresGetTimeSpan_SCORETIMESPANUNSPECIFIED :: ScoresGetTimeSpan
@@ -1276,21 +1284,20 @@ pattern ScoresGetTimeSpan_Daily = ScoresGetTimeSpan "DAILY"
   ScoresGetTimeSpan_ALLTIME,
   ScoresGetTimeSpan_Weekly,
   ScoresGetTimeSpan_Daily,
-  ScoresGetTimeSpan
-  #-}
+  ScoresGetTimeSpan #-}
 
 -- | The collection of scores you\'re requesting.
-newtype ScoresListCollection = ScoresListCollection {fromScoresListCollection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresListCollection = ScoresListCollection { fromScoresListCollection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ScoresListCollection_SCORECOLLECTIONUNSPECIFIED :: ScoresListCollection
@@ -1313,21 +1320,20 @@ pattern ScoresListCollection_Friends = ScoresListCollection "FRIENDS"
   ScoresListCollection_Public,
   ScoresListCollection_Social,
   ScoresListCollection_Friends,
-  ScoresListCollection
-  #-}
+  ScoresListCollection #-}
 
 -- | The time span for the scores and ranks you\'re requesting.
-newtype ScoresListTimeSpan = ScoresListTimeSpan {fromScoresListTimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresListTimeSpan = ScoresListTimeSpan { fromScoresListTimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ScoresListTimeSpan_SCORETIMESPANUNSPECIFIED :: ScoresListTimeSpan
@@ -1350,21 +1356,20 @@ pattern ScoresListTimeSpan_Daily = ScoresListTimeSpan "DAILY"
   ScoresListTimeSpan_ALLTIME,
   ScoresListTimeSpan_Weekly,
   ScoresListTimeSpan_Daily,
-  ScoresListTimeSpan
-  #-}
+  ScoresListTimeSpan #-}
 
 -- | The collection of scores you\'re requesting.
-newtype ScoresListWindowCollection = ScoresListWindowCollection {fromScoresListWindowCollection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresListWindowCollection = ScoresListWindowCollection { fromScoresListWindowCollection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ScoresListWindowCollection_SCORECOLLECTIONUNSPECIFIED :: ScoresListWindowCollection
@@ -1387,21 +1392,20 @@ pattern ScoresListWindowCollection_Friends = ScoresListWindowCollection "FRIENDS
   ScoresListWindowCollection_Public,
   ScoresListWindowCollection_Social,
   ScoresListWindowCollection_Friends,
-  ScoresListWindowCollection
-  #-}
+  ScoresListWindowCollection #-}
 
 -- | The time span for the scores and ranks you\'re requesting.
-newtype ScoresListWindowTimeSpan = ScoresListWindowTimeSpan {fromScoresListWindowTimeSpan :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ScoresListWindowTimeSpan = ScoresListWindowTimeSpan { fromScoresListWindowTimeSpan :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ScoresListWindowTimeSpan_SCORETIMESPANUNSPECIFIED :: ScoresListWindowTimeSpan
@@ -1424,5 +1428,4 @@ pattern ScoresListWindowTimeSpan_Daily = ScoresListWindowTimeSpan "DAILY"
   ScoresListWindowTimeSpan_ALLTIME,
   ScoresListWindowTimeSpan_Weekly,
   ScoresListWindowTimeSpan_Daily,
-  ScoresListWindowTimeSpan
-  #-}
+  ScoresListWindowTimeSpan #-}

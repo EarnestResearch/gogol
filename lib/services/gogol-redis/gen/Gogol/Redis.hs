@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,289 +31,289 @@
 --
 -- /See:/ <https://cloud.google.com/memorystore/docs/redis/ Google Cloud Memorystore for Redis API Reference>
 module Gogol.Redis
-  ( -- * Configuration
-    redisService,
+    (
+    -- * Configuration
+      redisService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Resources
 
     -- ** redis.projects.locations.get
-    RedisProjectsLocationsGetResource,
-    RedisProjectsLocationsGet (..),
-    newRedisProjectsLocationsGet,
+    , RedisProjectsLocationsGetResource
+    , RedisProjectsLocationsGet (..)
+    , newRedisProjectsLocationsGet
 
     -- ** redis.projects.locations.instances.create
-    RedisProjectsLocationsInstancesCreateResource,
-    RedisProjectsLocationsInstancesCreate (..),
-    newRedisProjectsLocationsInstancesCreate,
+    , RedisProjectsLocationsInstancesCreateResource
+    , RedisProjectsLocationsInstancesCreate (..)
+    , newRedisProjectsLocationsInstancesCreate
 
     -- ** redis.projects.locations.instances.delete
-    RedisProjectsLocationsInstancesDeleteResource,
-    RedisProjectsLocationsInstancesDelete (..),
-    newRedisProjectsLocationsInstancesDelete,
+    , RedisProjectsLocationsInstancesDeleteResource
+    , RedisProjectsLocationsInstancesDelete (..)
+    , newRedisProjectsLocationsInstancesDelete
 
     -- ** redis.projects.locations.instances.export
-    RedisProjectsLocationsInstancesExportResource,
-    RedisProjectsLocationsInstancesExport (..),
-    newRedisProjectsLocationsInstancesExport,
+    , RedisProjectsLocationsInstancesExportResource
+    , RedisProjectsLocationsInstancesExport (..)
+    , newRedisProjectsLocationsInstancesExport
 
     -- ** redis.projects.locations.instances.failover
-    RedisProjectsLocationsInstancesFailoverResource,
-    RedisProjectsLocationsInstancesFailover (..),
-    newRedisProjectsLocationsInstancesFailover,
+    , RedisProjectsLocationsInstancesFailoverResource
+    , RedisProjectsLocationsInstancesFailover (..)
+    , newRedisProjectsLocationsInstancesFailover
 
     -- ** redis.projects.locations.instances.get
-    RedisProjectsLocationsInstancesGetResource,
-    RedisProjectsLocationsInstancesGet (..),
-    newRedisProjectsLocationsInstancesGet,
+    , RedisProjectsLocationsInstancesGetResource
+    , RedisProjectsLocationsInstancesGet (..)
+    , newRedisProjectsLocationsInstancesGet
 
     -- ** redis.projects.locations.instances.getAuthString
-    RedisProjectsLocationsInstancesGetAuthStringResource,
-    RedisProjectsLocationsInstancesGetAuthString (..),
-    newRedisProjectsLocationsInstancesGetAuthString,
+    , RedisProjectsLocationsInstancesGetAuthStringResource
+    , RedisProjectsLocationsInstancesGetAuthString (..)
+    , newRedisProjectsLocationsInstancesGetAuthString
 
     -- ** redis.projects.locations.instances.import
-    RedisProjectsLocationsInstancesImportResource,
-    RedisProjectsLocationsInstancesImport (..),
-    newRedisProjectsLocationsInstancesImport,
+    , RedisProjectsLocationsInstancesImportResource
+    , RedisProjectsLocationsInstancesImport (..)
+    , newRedisProjectsLocationsInstancesImport
 
     -- ** redis.projects.locations.instances.list
-    RedisProjectsLocationsInstancesListResource,
-    RedisProjectsLocationsInstancesList (..),
-    newRedisProjectsLocationsInstancesList,
+    , RedisProjectsLocationsInstancesListResource
+    , RedisProjectsLocationsInstancesList (..)
+    , newRedisProjectsLocationsInstancesList
 
     -- ** redis.projects.locations.instances.patch
-    RedisProjectsLocationsInstancesPatchResource,
-    RedisProjectsLocationsInstancesPatch (..),
-    newRedisProjectsLocationsInstancesPatch,
+    , RedisProjectsLocationsInstancesPatchResource
+    , RedisProjectsLocationsInstancesPatch (..)
+    , newRedisProjectsLocationsInstancesPatch
 
     -- ** redis.projects.locations.instances.rescheduleMaintenance
-    RedisProjectsLocationsInstancesRescheduleMaintenanceResource,
-    RedisProjectsLocationsInstancesRescheduleMaintenance (..),
-    newRedisProjectsLocationsInstancesRescheduleMaintenance,
+    , RedisProjectsLocationsInstancesRescheduleMaintenanceResource
+    , RedisProjectsLocationsInstancesRescheduleMaintenance (..)
+    , newRedisProjectsLocationsInstancesRescheduleMaintenance
 
     -- ** redis.projects.locations.instances.upgrade
-    RedisProjectsLocationsInstancesUpgradeResource,
-    RedisProjectsLocationsInstancesUpgrade (..),
-    newRedisProjectsLocationsInstancesUpgrade,
+    , RedisProjectsLocationsInstancesUpgradeResource
+    , RedisProjectsLocationsInstancesUpgrade (..)
+    , newRedisProjectsLocationsInstancesUpgrade
 
     -- ** redis.projects.locations.list
-    RedisProjectsLocationsListResource,
-    RedisProjectsLocationsList (..),
-    newRedisProjectsLocationsList,
+    , RedisProjectsLocationsListResource
+    , RedisProjectsLocationsList (..)
+    , newRedisProjectsLocationsList
 
     -- ** redis.projects.locations.operations.cancel
-    RedisProjectsLocationsOperationsCancelResource,
-    RedisProjectsLocationsOperationsCancel (..),
-    newRedisProjectsLocationsOperationsCancel,
+    , RedisProjectsLocationsOperationsCancelResource
+    , RedisProjectsLocationsOperationsCancel (..)
+    , newRedisProjectsLocationsOperationsCancel
 
     -- ** redis.projects.locations.operations.delete
-    RedisProjectsLocationsOperationsDeleteResource,
-    RedisProjectsLocationsOperationsDelete (..),
-    newRedisProjectsLocationsOperationsDelete,
+    , RedisProjectsLocationsOperationsDeleteResource
+    , RedisProjectsLocationsOperationsDelete (..)
+    , newRedisProjectsLocationsOperationsDelete
 
     -- ** redis.projects.locations.operations.get
-    RedisProjectsLocationsOperationsGetResource,
-    RedisProjectsLocationsOperationsGet (..),
-    newRedisProjectsLocationsOperationsGet,
+    , RedisProjectsLocationsOperationsGetResource
+    , RedisProjectsLocationsOperationsGet (..)
+    , newRedisProjectsLocationsOperationsGet
 
     -- ** redis.projects.locations.operations.list
-    RedisProjectsLocationsOperationsListResource,
-    RedisProjectsLocationsOperationsList (..),
-    newRedisProjectsLocationsOperationsList,
+    , RedisProjectsLocationsOperationsListResource
+    , RedisProjectsLocationsOperationsList (..)
+    , newRedisProjectsLocationsOperationsList
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** ExportInstanceRequest
-    ExportInstanceRequest (..),
-    newExportInstanceRequest,
+    , ExportInstanceRequest (..)
+    , newExportInstanceRequest
 
     -- ** FailoverInstanceRequest
-    FailoverInstanceRequest (..),
-    newFailoverInstanceRequest,
+    , FailoverInstanceRequest (..)
+    , newFailoverInstanceRequest
 
     -- ** FailoverInstanceRequest_DataProtectionMode
-    FailoverInstanceRequest_DataProtectionMode (..),
+    , FailoverInstanceRequest_DataProtectionMode (..)
 
     -- ** GcsDestination
-    GcsDestination (..),
-    newGcsDestination,
+    , GcsDestination (..)
+    , newGcsDestination
 
     -- ** GcsSource
-    GcsSource (..),
-    newGcsSource,
+    , GcsSource (..)
+    , newGcsSource
 
     -- ** GoogleCloudRedisV1LocationMetadata
-    GoogleCloudRedisV1LocationMetadata (..),
-    newGoogleCloudRedisV1LocationMetadata,
+    , GoogleCloudRedisV1LocationMetadata (..)
+    , newGoogleCloudRedisV1LocationMetadata
 
     -- ** GoogleCloudRedisV1LocationMetadata_AvailableZones
-    GoogleCloudRedisV1LocationMetadata_AvailableZones (..),
-    newGoogleCloudRedisV1LocationMetadata_AvailableZones,
+    , GoogleCloudRedisV1LocationMetadata_AvailableZones (..)
+    , newGoogleCloudRedisV1LocationMetadata_AvailableZones
 
     -- ** GoogleCloudRedisV1OperationMetadata
-    GoogleCloudRedisV1OperationMetadata (..),
-    newGoogleCloudRedisV1OperationMetadata,
+    , GoogleCloudRedisV1OperationMetadata (..)
+    , newGoogleCloudRedisV1OperationMetadata
 
     -- ** GoogleCloudRedisV1ZoneMetadata
-    GoogleCloudRedisV1ZoneMetadata (..),
-    newGoogleCloudRedisV1ZoneMetadata,
+    , GoogleCloudRedisV1ZoneMetadata (..)
+    , newGoogleCloudRedisV1ZoneMetadata
 
     -- ** ImportInstanceRequest
-    ImportInstanceRequest (..),
-    newImportInstanceRequest,
+    , ImportInstanceRequest (..)
+    , newImportInstanceRequest
 
     -- ** InputConfig
-    InputConfig (..),
-    newInputConfig,
+    , InputConfig (..)
+    , newInputConfig
 
     -- ** Instance
-    Instance (..),
-    newInstance,
+    , Instance (..)
+    , newInstance
 
     -- ** Instance_ConnectMode
-    Instance_ConnectMode (..),
+    , Instance_ConnectMode (..)
 
     -- ** Instance_Labels
-    Instance_Labels (..),
-    newInstance_Labels,
+    , Instance_Labels (..)
+    , newInstance_Labels
 
     -- ** Instance_ReadReplicasMode
-    Instance_ReadReplicasMode (..),
+    , Instance_ReadReplicasMode (..)
 
     -- ** Instance_RedisConfigs
-    Instance_RedisConfigs (..),
-    newInstance_RedisConfigs,
+    , Instance_RedisConfigs (..)
+    , newInstance_RedisConfigs
 
     -- ** Instance_State
-    Instance_State (..),
+    , Instance_State (..)
 
     -- ** Instance_SuspensionReasonsItem
-    Instance_SuspensionReasonsItem (..),
+    , Instance_SuspensionReasonsItem (..)
 
     -- ** Instance_Tier
-    Instance_Tier (..),
+    , Instance_Tier (..)
 
     -- ** Instance_TransitEncryptionMode
-    Instance_TransitEncryptionMode (..),
+    , Instance_TransitEncryptionMode (..)
 
     -- ** InstanceAuthString
-    InstanceAuthString (..),
-    newInstanceAuthString,
+    , InstanceAuthString (..)
+    , newInstanceAuthString
 
     -- ** ListInstancesResponse
-    ListInstancesResponse (..),
-    newListInstancesResponse,
+    , ListInstancesResponse (..)
+    , newListInstancesResponse
 
     -- ** ListLocationsResponse
-    ListLocationsResponse (..),
-    newListLocationsResponse,
+    , ListLocationsResponse (..)
+    , newListLocationsResponse
 
     -- ** ListOperationsResponse
-    ListOperationsResponse (..),
-    newListOperationsResponse,
+    , ListOperationsResponse (..)
+    , newListOperationsResponse
 
     -- ** Location
-    Location (..),
-    newLocation,
+    , Location (..)
+    , newLocation
 
     -- ** Location_Labels
-    Location_Labels (..),
-    newLocation_Labels,
+    , Location_Labels (..)
+    , newLocation_Labels
 
     -- ** Location_Metadata
-    Location_Metadata (..),
-    newLocation_Metadata,
+    , Location_Metadata (..)
+    , newLocation_Metadata
 
     -- ** MaintenancePolicy
-    MaintenancePolicy (..),
-    newMaintenancePolicy,
+    , MaintenancePolicy (..)
+    , newMaintenancePolicy
 
     -- ** MaintenanceSchedule
-    MaintenanceSchedule (..),
-    newMaintenanceSchedule,
+    , MaintenanceSchedule (..)
+    , newMaintenanceSchedule
 
     -- ** NodeInfo
-    NodeInfo (..),
-    newNodeInfo,
+    , NodeInfo (..)
+    , newNodeInfo
 
     -- ** Operation
-    Operation (..),
-    newOperation,
+    , Operation (..)
+    , newOperation
 
     -- ** Operation_Metadata
-    Operation_Metadata (..),
-    newOperation_Metadata,
+    , Operation_Metadata (..)
+    , newOperation_Metadata
 
     -- ** Operation_Response
-    Operation_Response (..),
-    newOperation_Response,
+    , Operation_Response (..)
+    , newOperation_Response
 
     -- ** OutputConfig
-    OutputConfig (..),
-    newOutputConfig,
+    , OutputConfig (..)
+    , newOutputConfig
 
     -- ** PersistenceConfig
-    PersistenceConfig (..),
-    newPersistenceConfig,
+    , PersistenceConfig (..)
+    , newPersistenceConfig
 
     -- ** PersistenceConfig_PersistenceMode
-    PersistenceConfig_PersistenceMode (..),
+    , PersistenceConfig_PersistenceMode (..)
 
     -- ** PersistenceConfig_RdbSnapshotPeriod
-    PersistenceConfig_RdbSnapshotPeriod (..),
+    , PersistenceConfig_RdbSnapshotPeriod (..)
 
     -- ** ReconciliationOperationMetadata
-    ReconciliationOperationMetadata (..),
-    newReconciliationOperationMetadata,
+    , ReconciliationOperationMetadata (..)
+    , newReconciliationOperationMetadata
 
     -- ** ReconciliationOperationMetadata_ExclusiveAction
-    ReconciliationOperationMetadata_ExclusiveAction (..),
+    , ReconciliationOperationMetadata_ExclusiveAction (..)
 
     -- ** RescheduleMaintenanceRequest
-    RescheduleMaintenanceRequest (..),
-    newRescheduleMaintenanceRequest,
+    , RescheduleMaintenanceRequest (..)
+    , newRescheduleMaintenanceRequest
 
     -- ** RescheduleMaintenanceRequest_RescheduleType
-    RescheduleMaintenanceRequest_RescheduleType (..),
+    , RescheduleMaintenanceRequest_RescheduleType (..)
 
     -- ** Status
-    Status (..),
-    newStatus,
+    , Status (..)
+    , newStatus
 
     -- ** Status_DetailsItem
-    Status_DetailsItem (..),
-    newStatus_DetailsItem,
+    , Status_DetailsItem (..)
+    , newStatus_DetailsItem
 
     -- ** TimeOfDay'
-    TimeOfDay' (..),
-    newTimeOfDay,
+    , TimeOfDay' (..)
+    , newTimeOfDay
 
     -- ** TlsCertificate
-    TlsCertificate (..),
-    newTlsCertificate,
+    , TlsCertificate (..)
+    , newTlsCertificate
 
     -- ** UpgradeInstanceRequest
-    UpgradeInstanceRequest (..),
-    newUpgradeInstanceRequest,
+    , UpgradeInstanceRequest (..)
+    , newUpgradeInstanceRequest
 
     -- ** WeeklyMaintenanceWindow
-    WeeklyMaintenanceWindow (..),
-    newWeeklyMaintenanceWindow,
+    , WeeklyMaintenanceWindow (..)
+    , newWeeklyMaintenanceWindow
 
     -- ** WeeklyMaintenanceWindow_Day
-    WeeklyMaintenanceWindow_Day (..),
-  )
-where
+    , WeeklyMaintenanceWindow_Day (..)
+    ) where
 
 import Gogol.Redis.Projects.Locations.Get
 import Gogol.Redis.Projects.Locations.Instances.Create

@@ -401,11 +401,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-  "revision": "20200803",
-=======
   "revision": "20220727",
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
   "rootUrl": "https://blogger.googleapis.com/",
   "schemas": {
     "Blog": {
@@ -803,19 +799,12 @@
           "description": "The status of the page for admin resources (either LIVE or DRAFT).",
           "enum": [
             "LIVE",
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-            "DRAFT"
-          ],
-          "enumDescriptions": [
-            "",
-=======
             "DRAFT",
             "SOFT_TRASHED"
           ],
           "enumDescriptions": [
             "",
             "",
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
             ""
           ],
           "type": "string"
@@ -1017,20 +1006,13 @@
           "enum": [
             "LIVE",
             "DRAFT",
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-            "SCHEDULED"
-=======
             "SCHEDULED",
             "SOFT_TRASHED"
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
           ],
           "enumDescriptions": [
             "",
             "",
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-=======
             "",
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
             ""
           ],
           "type": "string"
@@ -1043,13 +1025,10 @@
           "description": "The title link URL, similar to atom's related link.",
           "type": "string"
         },
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-=======
         "trashed": {
           "description": "RFC 3339 date-time when this Post was last trashed.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
         "updated": {
           "description": "RFC 3339 date-time when this Post was last updated.",
           "type": "string"
@@ -1154,10 +1133,6 @@
     }
   },
   "servicePath": "",
-<<<<<<< HEAD:gen/model/blogger/v2/blogger-api.json
-  "title": "Blogger API v3",
-=======
   "title": "Blogger API",
->>>>>>> upstream/main:configs/models/blogger/v2/blogger-api.json
   "version": "v2"
 }

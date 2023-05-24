@@ -945,11 +945,7 @@
               ]
             },
             "import": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-              "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.",
-=======
-              "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
+              "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message.",
               "flatPath": "gmail/v1/users/{userId}/messages/import",
               "httpMethod": "POST",
               "id": "gmail.users.messages.import",
@@ -1110,7 +1106,7 @@
                   "type": "boolean"
                 },
                 "labelIds": {
-                  "description": "Only return messages with labels that match all of the specified label IDs.",
+                  "description": "Only return messages with labels that match all of the specified label IDs. Messages in a thread might have labels that other messages in the same thread don't have. To learn more, see [Manage labels on messages and threads](https://developers.google.com/gmail/api/guides/labels#manage_labels_on_messages_threads).",
                   "location": "query",
                   "repeated": true,
                   "type": "string"
@@ -1188,11 +1184,7 @@
               ]
             },
             "send": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-              "description": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.",
-=======
               "description": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
               "flatPath": "gmail/v1/users/{userId}/messages/send",
               "httpMethod": "POST",
               "id": "gmail.users.messages.send",
@@ -2039,11 +2031,7 @@
             "delegates": {
               "methods": {
                 "create": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-                  "description": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same G Suite organization as the delegator user. Gmail imposes limitations on the number of delegates and delegators each user in a G Suite organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. Note that a delegate user must be referred to by their primary email address, and not an email alias. Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.",
-=======
                   "description": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. Note that a delegate user must be referred to by their primary email address, and not an email alias. Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
                   "flatPath": "gmail/v1/users/{userId}/settings/delegates",
                   "httpMethod": "POST",
                   "id": "gmail.users.settings.delegates.create",
@@ -2195,11 +2183,7 @@
                   ]
                 },
                 "delete": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-                  "description": "Deletes a filter.",
-=======
                   "description": "Immediately and permanently deletes the specified filter.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
                   "flatPath": "gmail/v1/users/{userId}/settings/filters/{id}",
                   "httpMethod": "DELETE",
                   "id": "gmail.users.settings.filters.delete",
@@ -2841,11 +2825,7 @@
         "threads": {
           "methods": {
             "delete": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-              "description": "Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer `threads.trash` instead.",
-=======
               "description": "Immediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
               "flatPath": "gmail/v1/users/{userId}/threads/{id}",
               "httpMethod": "DELETE",
               "id": "gmail.users.threads.delete",
@@ -3027,11 +3007,7 @@
               ]
             },
             "trash": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-              "description": "Moves the specified thread to the trash.",
-=======
               "description": "Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
               "flatPath": "gmail/v1/users/{userId}/threads/{id}/trash",
               "httpMethod": "POST",
               "id": "gmail.users.threads.trash",
@@ -3064,11 +3040,7 @@
               ]
             },
             "untrash": {
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-              "description": "Removes the specified thread from the trash.",
-=======
               "description": "Removes the specified thread from the trash. Any messages that belong to the thread are also removed from the trash.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
               "flatPath": "gmail/v1/users/{userId}/threads/{id}/untrash",
               "httpMethod": "POST",
               "id": "gmail.users.threads.untrash",
@@ -3105,11 +3077,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-  "revision": "20210301",
-=======
-  "revision": "20230206",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
+  "revision": "20230515",
   "rootUrl": "https://gmail.googleapis.com/",
   "schemas": {
     "AutoForwarding": {
@@ -3194,7 +3162,7 @@
           "type": "string"
         },
         "primaryKeyPairId": {
-          "description": "If a key pair is associated, the identifier of the key pair, CseKeyPair.",
+          "description": "If a key pair is associated, the ID of the key pair, CseKeyPair.",
           "type": "string"
         }
       },
@@ -3725,8 +3693,6 @@
       "properties": {
         "displayLanguage": {
           "description": "The language to display Gmail in, formatted as an RFC 3066 Language Tag (for example `en-GB`, `fr` or `ja` for British English, French, or Japanese respectively). The set of languages supported by Gmail evolves over time, so please refer to the \"Language\" dropdown in the Gmail settings for all available options, as described in the language settings help article. A table of sample values is also provided in the Managing Language Settings guide Not all Gmail clients can display the same set of languages. In the case that a user's display language is not available for use on a particular client, said client automatically chooses to display in the closest supported variant (or a reasonable default).",
-<<<<<<< HEAD:gen/model/gmail/v1/gmail-api.json
-=======
           "type": "string"
         }
       },
@@ -3761,7 +3727,6 @@
         },
         "nextPageToken": {
           "description": "Pagination token to be passed to a subsequent ListCseKeyPairs call in order to retrieve the next page of key pairs. If this value is not returned, then no further pages remain.",
->>>>>>> upstream/main:configs/models/gmail/v1/gmail-api.json
           "type": "string"
         }
       },

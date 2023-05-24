@@ -13,11 +13,7 @@
 
 ## Description
 
-<<<<<<< HEAD:gogol-cloudtrace/README.md
-A client library for the Google Cloud Trace.
-=======
 A client library for the Google Cloud Shell.
->>>>>>> upstream/main:lib/services/gogol-cloudshell/README.md
 
 
 ## Contribute

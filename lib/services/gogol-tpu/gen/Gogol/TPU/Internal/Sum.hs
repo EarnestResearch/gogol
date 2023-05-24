@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.TPU.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AcceleratorConfig_Type
     AcceleratorConfig_Type
-      ( AcceleratorConfig_Type_TYPEUNSPECIFIED,
+      (
+        AcceleratorConfig_Type_TYPEUNSPECIFIED,
         AcceleratorConfig_Type_V2,
         AcceleratorConfig_Type_V3,
         AcceleratorConfig_Type_V4,
@@ -44,7 +50,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * AttachedDisk_Mode
     AttachedDisk_Mode
-      ( AttachedDisk_Mode_DISKMODEUNSPECIFIED,
+      (
+        AttachedDisk_Mode_DISKMODEUNSPECIFIED,
         AttachedDisk_Mode_READWRITE,
         AttachedDisk_Mode_READONLY,
         ..
@@ -52,7 +59,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_ApiVersion
     Node_ApiVersion
-      ( Node_ApiVersion_APIVERSIONUNSPECIFIED,
+      (
+        Node_ApiVersion_APIVERSIONUNSPECIFIED,
         Node_ApiVersion_V1_ALPHA1,
         Node_ApiVersion_V1,
         Node_ApiVersion_V2_ALPHA1,
@@ -62,7 +70,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_Health
     Node_Health
-      ( Node_Health_HEALTHUNSPECIFIED,
+      (
+        Node_Health_HEALTHUNSPECIFIED,
         Node_Health_Healthy,
         Node_Health_Timeout,
         Node_Health_UNHEALTHYTENSORFLOW,
@@ -72,7 +81,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_State
     Node_State
-      ( Node_State_STATEUNSPECIFIED,
+      (
+        Node_State_STATEUNSPECIFIED,
         Node_State_Creating,
         Node_State_Ready,
         Node_State_Restarting,
@@ -92,7 +102,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Symptom_SymptomType
     Symptom_SymptomType
-      ( Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED,
+      (
+        Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED,
         Symptom_SymptomType_LOWMEMORY,
         Symptom_SymptomType_OUTOFMEMORY,
         Symptom_SymptomType_EXECUTETIMEDOUT,
@@ -101,23 +112,22 @@ module Gogol.TPU.Internal.Sum
         Symptom_SymptomType_PROJECTABUSE,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -130,21 +140,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Required. Type of TPU.
-newtype AcceleratorConfig_Type = AcceleratorConfig_Type {fromAcceleratorConfig_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AcceleratorConfig_Type = AcceleratorConfig_Type { fromAcceleratorConfig_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified version.
 pattern AcceleratorConfig_Type_TYPEUNSPECIFIED :: AcceleratorConfig_Type
@@ -167,21 +176,20 @@ pattern AcceleratorConfig_Type_V4 = AcceleratorConfig_Type "V4"
   AcceleratorConfig_Type_V2,
   AcceleratorConfig_Type_V3,
   AcceleratorConfig_Type_V4,
-  AcceleratorConfig_Type
-  #-}
+  AcceleratorConfig_Type #-}
 
 -- | The mode in which to attach this disk. If not specified, the default is READ/WRITE mode. Only applicable to data/disks.
-newtype AttachedDisk_Mode = AttachedDisk_Mode {fromAttachedDisk_Mode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AttachedDisk_Mode = AttachedDisk_Mode { fromAttachedDisk_Mode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The disk mode is not known\/set.
 pattern AttachedDisk_Mode_DISKMODEUNSPECIFIED :: AttachedDisk_Mode
@@ -199,21 +207,20 @@ pattern AttachedDisk_Mode_READONLY = AttachedDisk_Mode "READ_ONLY"
   AttachedDisk_Mode_DISKMODEUNSPECIFIED,
   AttachedDisk_Mode_READWRITE,
   AttachedDisk_Mode_READONLY,
-  AttachedDisk_Mode
-  #-}
+  AttachedDisk_Mode #-}
 
 -- | Output only. The API version that created this Node.
-newtype Node_ApiVersion = Node_ApiVersion {fromNode_ApiVersion :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_ApiVersion = Node_ApiVersion { fromNode_ApiVersion :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | API version is unknown.
 pattern Node_ApiVersion_APIVERSIONUNSPECIFIED :: Node_ApiVersion
@@ -241,21 +248,20 @@ pattern Node_ApiVersion_V2 = Node_ApiVersion "V2"
   Node_ApiVersion_V1,
   Node_ApiVersion_V2_ALPHA1,
   Node_ApiVersion_V2,
-  Node_ApiVersion
-  #-}
+  Node_ApiVersion #-}
 
 -- | The health status of the TPU node.
-newtype Node_Health = Node_Health {fromNode_Health :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_Health = Node_Health { fromNode_Health :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Health status is unknown: not initialized or failed to retrieve.
 pattern Node_Health_HEALTHUNSPECIFIED :: Node_Health
@@ -283,21 +289,20 @@ pattern Node_Health_UNHEALTHYMAINTENANCE = Node_Health "UNHEALTHY_MAINTENANCE"
   Node_Health_Timeout,
   Node_Health_UNHEALTHYTENSORFLOW,
   Node_Health_UNHEALTHYMAINTENANCE,
-  Node_Health
-  #-}
+  Node_Health #-}
 
 -- | Output only. The current state for the TPU Node.
-newtype Node_State = Node_State {fromNode_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_State = Node_State { fromNode_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | TPU node state is not known\/set.
 pattern Node_State_STATEUNSPECIFIED :: Node_State
@@ -375,21 +380,20 @@ pattern Node_State_Unhiding = Node_State "UNHIDING"
   Node_State_Hiding,
   Node_State_Hidden,
   Node_State_Unhiding,
-  Node_State
-  #-}
+  Node_State #-}
 
 -- | Type of the Symptom.
-newtype Symptom_SymptomType = Symptom_SymptomType {fromSymptom_SymptomType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Symptom_SymptomType = Symptom_SymptomType { fromSymptom_SymptomType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified symptom.
 pattern Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED :: Symptom_SymptomType
@@ -427,5 +431,4 @@ pattern Symptom_SymptomType_PROJECTABUSE = Symptom_SymptomType "PROJECT_ABUSE"
   Symptom_SymptomType_MESHBUILDFAIL,
   Symptom_SymptomType_HBMOUTOFMEMORY,
   Symptom_SymptomType_PROJECTABUSE,
-  Symptom_SymptomType
-  #-}
+  Symptom_SymptomType #-}

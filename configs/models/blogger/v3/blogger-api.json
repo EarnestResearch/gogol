@@ -831,19 +831,12 @@
             "status": {
               "enum": [
                 "LIVE",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-                "DRAFT"
-              ],
-              "enumDescriptions": [
-                "",
-=======
                 "DRAFT",
                 "SOFT_TRASHED"
               ],
               "enumDescriptions": [
                 "",
                 "",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
                 ""
               ],
               "location": "query",
@@ -1119,20 +1112,13 @@
               "enum": [
                 "LIVE",
                 "DRAFT",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-                "SCHEDULED"
-=======
                 "SCHEDULED",
                 "SOFT_TRASHED"
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
               ],
               "enumDescriptions": [
                 "",
                 "",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-=======
                 "",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
                 ""
               ],
               "location": "query",
@@ -1407,8 +1393,6 @@
               "type": "string"
             },
             "pageToken": {
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-=======
               "location": "query",
               "type": "string"
             },
@@ -1425,7 +1409,6 @@
                 "The option to sort posts in descending order in time.",
                 "The option to sort posts in ascending order in time."
               ],
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
               "location": "query",
               "type": "string"
             },
@@ -1437,20 +1420,13 @@
               "enum": [
                 "LIVE",
                 "DRAFT",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-                "SCHEDULED"
-=======
                 "SCHEDULED",
                 "SOFT_TRASHED"
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
               ],
               "enumDescriptions": [
                 "",
                 "",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-=======
                 "",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
                 ""
               ],
               "location": "query",
@@ -1734,11 +1710,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-  "revision": "20210227",
-=======
   "revision": "20221221",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
   "rootUrl": "https://blogger.googleapis.com/",
   "schemas": {
     "Blog": {
@@ -2136,19 +2108,12 @@
           "description": "The status of the page for admin resources (either LIVE or DRAFT).",
           "enum": [
             "LIVE",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-            "DRAFT"
-          ],
-          "enumDescriptions": [
-            "",
-=======
             "DRAFT",
             "SOFT_TRASHED"
           ],
           "enumDescriptions": [
             "",
             "",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
             ""
           ],
           "type": "string"
@@ -2392,20 +2357,13 @@
           "enum": [
             "LIVE",
             "DRAFT",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-            "SCHEDULED"
-=======
             "SCHEDULED",
             "SOFT_TRASHED"
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
           ],
           "enumDescriptions": [
             "",
             "",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-=======
             "",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
             ""
           ],
           "type": "string"
@@ -2591,10 +2549,6 @@
     }
   },
   "servicePath": "",
-<<<<<<< HEAD:gen/model/blogger/v3/blogger-api.json
-  "title": "Blogger API v3",
-=======
   "title": "Blogger API",
->>>>>>> upstream/main:configs/models/blogger/v3/blogger-api.json
   "version": "v3"
 }

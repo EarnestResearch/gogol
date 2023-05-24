@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/vision/v1p2beta1/vision-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/vision/v1p2beta1/vision-api.json
         },
         "https://www.googleapis.com/auth/cloud-vision": {
           "description": "Apply machine learning models to understand and label images"
@@ -453,11 +449,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/vision/v1p2beta1/vision-api.json
-  "revision": "20210402",
-=======
-  "revision": "20220926",
->>>>>>> upstream/main:configs/models/vision/v1p2beta1/vision-api.json
+  "revision": "20230407",
   "rootUrl": "https://vision.googleapis.com/",
   "schemas": {
     "AnnotateFileResponse": {
@@ -3349,11 +3341,7 @@
           "type": "integer"
         },
         "model": {
-<<<<<<< HEAD:gen/model/vision/v1p2beta1/vision-api.json
-          "description": "Model to use for the feature. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\".",
-=======
           "description": "Model to use for the feature. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\". `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support \"builtin/weekly\" for the bleeding edge release updated weekly.",
->>>>>>> upstream/main:configs/models/vision/v1p2beta1/vision-api.json
           "type": "string"
         },
         "type": {
@@ -4135,16 +4123,13 @@
       "description": "Parameters for text detections. This is used to control TEXT_DETECTION and DOCUMENT_TEXT_DETECTION features.",
       "id": "GoogleCloudVisionV1p2beta1TextDetectionParams",
       "properties": {
-<<<<<<< HEAD:gen/model/vision/v1p2beta1/vision-api.json
-=======
         "advancedOcrOptions": {
-          "description": "A list of advanced OCR options to fine-tune OCR behavior.",
+          "description": "A list of advanced OCR options to further fine-tune OCR behavior. Current valid values are: - `legacy_layout`: a heuristics layout detection algorithm, which serves as an alternative to the current ML-based layout detection algorithm. Customers can choose the best suitable layout algorithm based on their situation.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
->>>>>>> upstream/main:configs/models/vision/v1p2beta1/vision-api.json
         "enableTextDetectionConfidenceScore": {
           "description": "By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well.",
           "type": "boolean"
@@ -7592,11 +7577,7 @@
       "type": "object"
     },
     "LatLng": {
-<<<<<<< HEAD:gen/model/vision/v1p2beta1/vision-api.json
-      "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this must conform to the WGS84 standard. Values must be within normalized ranges.",
-=======
       "description": "An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges.",
->>>>>>> upstream/main:configs/models/vision/v1p2beta1/vision-api.json
       "id": "LatLng",
       "properties": {
         "latitude": {

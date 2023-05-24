@@ -87,11 +87,7 @@
           "description": "View user schemas on your domain"
         },
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
         }
       }
     }
@@ -102,11 +98,7 @@
   "canonicalName": "directory",
   "description": "Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.",
   "discoveryVersion": "v1",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-  "documentationLink": "http://developers.google.com/admin-sdk/",
-=======
   "documentationLink": "https://developers.google.com/admin-sdk/",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
   "fullyEncodeReservedExpansion": true,
   "icons": {
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -201,11 +193,7 @@
     "asps": {
       "methods": {
         "delete": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Delete an ASP issued by a user.",
-=======
           "description": "Deletes an ASP issued by a user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/asps/{codeId}",
           "httpMethod": "DELETE",
           "id": "directory.asps.delete",
@@ -234,11 +222,7 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Get information about an ASP issued by a user.",
-=======
           "description": "Gets information about an ASP issued by a user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/asps/{codeId}",
           "httpMethod": "GET",
           "id": "directory.asps.get",
@@ -270,11 +254,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List the ASPs issued by a user.",
-=======
           "description": "Lists the ASPs issued by a user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/asps",
           "httpMethod": "GET",
           "id": "directory.asps.list",
@@ -302,11 +282,7 @@
     "channels": {
       "methods": {
         "stop": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Stop watching resources through this channel.",
-=======
           "description": "Stops watching resources through this channel.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory_v1/channels/stop",
           "httpMethod": "POST",
           "id": "admin.channels.stop",
@@ -448,22 +424,13 @@
                 "The date and time the Chrome device was last synchronized with the policy settings in the Admin console.",
                 "Chrome device notes as annotated by the administrator.",
                 "The Chrome device serial number entered when the device was enabled.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                "Chrome device status. For more information, see the \u003ca [chromeosdevices](/admin-sdk/directory/v1/reference/chromeosdevices.html).",
-                "Chrome device support end date. This is applicable only for devices purchased directly from Google."
-=======
                 "Chrome device status. For more information, see the \u003ca [chromeosdevices](/admin-sdk/directory/v1/reference/chromeosdevices.html)."
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               ],
               "location": "query",
               "type": "string"
             },
             "orgUnitPath": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The full path of the organizational unit or its unique ID.",
-=======
               "description": "The full path of the organizational unit (minus the leading `/`) or its unique ID.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "query",
               "type": "string"
             },
@@ -514,11 +481,7 @@
           ]
         },
         "moveDevicesToOu": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Move or insert multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.",
-=======
           "description": "Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu",
           "httpMethod": "POST",
           "id": "directory.chromeosdevices.moveDevicesToOu",
@@ -528,11 +491,7 @@
           ],
           "parameters": {
             "customerId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account",
-=======
               "description": "Immutable. ID of the Google Workspace account",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -665,21 +624,13 @@
                   ],
                   "parameters": {
                     "customerId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                      "description": "Immutable. Immutable ID of the Google Workspace account.",
-=======
                       "description": "Immutable. ID of the Google Workspace account.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                       "location": "path",
                       "required": true,
                       "type": "string"
                     },
                     "deviceId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                      "description": "Immutable. Immutable ID of Chrome OS Device.",
-=======
                       "description": "Immutable. ID of Chrome OS Device.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                       "location": "path",
                       "required": true,
                       "type": "string"
@@ -712,32 +663,20 @@
                       ],
                       "parameters": {
                         "commandId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                          "description": "Immutable. Immutable ID of Chrome OS Device Command.",
-=======
                           "description": "Immutable. ID of Chrome OS Device Command.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                           "format": "int64",
                           "location": "path",
                           "required": true,
                           "type": "string"
                         },
                         "customerId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                          "description": "Immutable. Immutable ID of the Google Workspace account.",
-=======
                           "description": "Immutable. ID of the Google Workspace account.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                           "location": "path",
                           "required": true,
                           "type": "string"
                         },
                         "deviceId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-                          "description": "Immutable. Immutable ID of Chrome OS Device.",
-=======
                           "description": "Immutable. ID of Chrome OS Device.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                           "location": "path",
                           "required": true,
                           "type": "string"
@@ -788,11 +727,7 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Patch Customers via Apiary Patch Orchestration",
-=======
           "description": "Patches a customer.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customers/{customerKey}",
           "httpMethod": "PATCH",
           "id": "directory.customers.patch",
@@ -849,8 +784,6 @@
       "resources": {
         "chrome": {
           "resources": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
             "printServers": {
               "methods": {
                 "batchCreatePrintServers": {
@@ -1076,7 +1009,6 @@
                 }
               }
             },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
             "printers": {
               "methods": {
                 "batchCreatePrinters": {
@@ -1228,14 +1160,11 @@
                       "location": "query",
                       "type": "string"
                     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
                     "orderBy": {
                       "description": "The order to sort results by. Must be one of display_name, description, make_and_model, or create_time. Default order is ascending, but descending order can be returned by appending \"desc\" to the order_by field. For instance, \"description desc\" will return the printers sorted by description in descending order.",
                       "location": "query",
                       "type": "string"
                     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                     "orgUnitId": {
                       "description": "Organization Unit that we want to list the printers for. When org_unit is not present in the request then all printers of the customer are returned (or filtered). When org_unit is present in the request then only printers available to this OU will be returned (owned or inherited). You may see if printer is owned or inherited for this OU by looking at Printer.org_unit_id.",
                       "location": "query",
@@ -1398,11 +1327,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -1460,11 +1385,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -1527,11 +1448,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -1589,11 +1506,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -1677,31 +1590,19 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieve all groups of a domain or of a user given a userKey (paginated)",
-=======
           "description": "Retrieves all groups of a domain or of a user given a userKey (paginated).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/groups",
           "httpMethod": "GET",
           "id": "directory.groups.list",
           "parameterOrder": [],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users)",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "query",
               "type": "string"
             },
             "domain": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.",
-=======
               "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "query",
               "type": "string"
             },
@@ -1970,11 +1871,7 @@
           ]
         },
         "hasMember": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Checks whether the given user is a member of the group. Membership can be direct or nested.",
-=======
           "description": "Checks whether the given user is a member of the group. Membership can be direct or nested, but if nested, the `memberKey` and `groupKey` must be entities in the same domain or an `Invalid input` error is returned. To check for nested memberships that include entities outside of the group's domain, use the [`checkTransitiveMembership()`](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership) method in the Cloud Identity Groups API.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/groups/{groupKey}/hasMember/{memberKey}",
           "httpMethod": "GET",
           "id": "directory.members.hasMember",
@@ -2036,11 +1933,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieves a paginated list of all members in a group.",
-=======
           "description": "Retrieves a paginated list of all members in a group. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/groups/{groupKey}/members",
           "httpMethod": "GET",
           "id": "directory.members.list",
@@ -2270,11 +2163,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieves a paginated list of all mobile devices for an account.",
-=======
           "description": "Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/devices/mobile",
           "httpMethod": "GET",
           "id": "directory.mobiledevices.list",
@@ -2383,11 +2272,6 @@
             "orgUnitPath"
           ],
           "parameters": {
-            "allowPlus": {
-              "description": "Parses org unit path without url decode to allow for plus in ou name",
-              "location": "query",
-              "type": "boolean"
-            },
             "customerId": {
               "description": "The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).",
               "location": "path",
@@ -2395,11 +2279,7 @@
               "type": "string"
             },
             "orgUnitPath": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The full path of the organizational unit or its unique ID.",
-=======
               "description": "The full path of the organizational unit (minus the leading `/`) or its unique ID.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "pattern": "^.*$",
               "required": true,
@@ -2421,11 +2301,6 @@
             "orgUnitPath"
           ],
           "parameters": {
-            "allowPlus": {
-              "description": "Parses org unit path without url decode to allow for plus in ou name",
-              "location": "query",
-              "type": "boolean"
-            },
             "customerId": {
               "description": "The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).",
               "location": "path",
@@ -2433,11 +2308,7 @@
               "type": "string"
             },
             "orgUnitPath": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The full path of the organizational unit or its unique ID.",
-=======
               "description": "The full path of the organizational unit (minus the leading `/`) or its unique ID.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "pattern": "^.*$",
               "required": true,
@@ -2534,11 +2405,6 @@
             "orgUnitPath"
           ],
           "parameters": {
-            "allowPlus": {
-              "description": "Parses org unit path without url decode to allow for plus in ou name",
-              "location": "query",
-              "type": "boolean"
-            },
             "customerId": {
               "description": "The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).",
               "location": "path",
@@ -2546,11 +2412,7 @@
               "type": "string"
             },
             "orgUnitPath": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The full path of the organizational unit or its unique ID.",
-=======
               "description": "The full path of the organizational unit (minus the leading `/`) or its unique ID.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "pattern": "^.*$",
               "required": true,
@@ -2578,11 +2440,6 @@
             "orgUnitPath"
           ],
           "parameters": {
-            "allowPlus": {
-              "description": "Parses org unit path without url decode to allow for plus in ou name",
-              "location": "query",
-              "type": "boolean"
-            },
             "customerId": {
               "description": "The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).",
               "location": "path",
@@ -2590,11 +2447,7 @@
               "type": "string"
             },
             "orgUnitPath": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The full path of the organizational unit or its unique ID.",
-=======
               "description": "The full path of the organizational unit (minus the leading `/`) or its unique ID.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "pattern": "^.*$",
               "required": true,
@@ -2626,11 +2479,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -2793,11 +2642,7 @@
               ]
             },
             "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Patches a building via Apiary Patch Orchestration.",
-=======
               "description": "Patches a building.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "flatPath": "admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
               "httpMethod": "PATCH",
               "id": "directory.resources.buildings.patch",
@@ -3036,11 +2881,7 @@
               ]
             },
             "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Patches a calendar resource via Apiary Patch Orchestration.",
-=======
               "description": "Patches a calendar resource.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "flatPath": "admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
               "httpMethod": "PATCH",
               "id": "directory.resources.calendars.patch",
@@ -3237,11 +3078,7 @@
               ]
             },
             "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Patches a feature via Apiary Patch Orchestration.",
-=======
               "description": "Patches a feature.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "flatPath": "admin/directory/v1/customer/{customer}/resources/features/{featureKey}",
               "httpMethod": "PATCH",
               "id": "directory.resources.features.patch",
@@ -3374,11 +3211,7 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieve a role assignment.",
-=======
           "description": "Retrieves a role assignment.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}",
           "httpMethod": "GET",
           "id": "directory.roleAssignments.get",
@@ -3388,11 +3221,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3450,11 +3279,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3540,11 +3365,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3602,11 +3423,7 @@
           ],
           "parameters": {
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3635,11 +3452,7 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Patch role via Apiary Patch Orchestration",
-=======
           "description": "Patches a role.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customer}/roles/{roleId}",
           "httpMethod": "PATCH",
           "id": "directory.roles.patch",
@@ -3711,11 +3524,7 @@
     "schemas": {
       "methods": {
         "delete": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Delete schema",
-=======
           "description": "Deletes a schema.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
           "httpMethod": "DELETE",
           "id": "directory.schemas.delete",
@@ -3743,11 +3552,7 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieve schema",
-=======
           "description": "Retrieves a schema.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
           "httpMethod": "GET",
           "id": "directory.schemas.get",
@@ -3757,11 +3562,7 @@
           ],
           "parameters": {
             "customerId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3783,11 +3584,7 @@
           ]
         },
         "insert": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Create schema.",
-=======
           "description": "Creates a schema.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas",
           "httpMethod": "POST",
           "id": "directory.schemas.insert",
@@ -3814,11 +3611,7 @@
           ]
         },
         "list": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Retrieve all schemas for a customer",
-=======
           "description": "Retrieves all schemas for a customer.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas",
           "httpMethod": "GET",
           "id": "directory.schemas.list",
@@ -3827,11 +3620,7 @@
           ],
           "parameters": {
             "customerId": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Immutable ID of the Google Workspace account.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "path",
               "required": true,
               "type": "string"
@@ -3847,11 +3636,7 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Patch Schema via Apiary Patch Orchestration",
-=======
           "description": "Patches a schema.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
           "httpMethod": "PATCH",
           "id": "directory.schemas.patch",
@@ -3885,11 +3670,7 @@
           ]
         },
         "update": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Update schema",
-=======
           "description": "Updates a schema.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
           "httpMethod": "PUT",
           "id": "directory.schemas.update",
@@ -3927,11 +3708,7 @@
     "tokens": {
       "methods": {
         "delete": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Delete all access tokens issued by a user for an application.",
-=======
           "description": "Deletes all access tokens issued by a user for an application.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/tokens/{clientId}",
           "httpMethod": "DELETE",
           "id": "directory.tokens.delete",
@@ -3959,11 +3736,7 @@
           ]
         },
         "get": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Get information about an access token issued by a user.",
-=======
           "description": "Gets information about an access token issued by a user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/tokens/{clientId}",
           "httpMethod": "GET",
           "id": "directory.tokens.get",
@@ -4022,11 +3795,7 @@
     "twoStepVerification": {
       "methods": {
         "turnOff": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Turn off 2-Step Verification for user.",
-=======
           "description": "Turns off 2-Step Verification for user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/twoStepVerification/turnOff",
           "httpMethod": "POST",
           "id": "directory.twoStepVerification.turnOff",
@@ -4132,7 +3901,7 @@
           ]
         },
         "insert": {
-          "description": "Creates a user.",
+          "description": "Creates a user. Mutate calls immediately following user creation might sometimes fail as the user isn't fully created due to propagation delay in our backends. Check the error details for the \"User creation is not complete\" message to see if this is the case. Retrying the calls after some time can help in this case.",
           "flatPath": "admin/directory/v1/users",
           "httpMethod": "POST",
           "id": "directory.users.insert",
@@ -4162,20 +3931,12 @@
               "type": "string"
             },
             "customer": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.",
-=======
               "description": "The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "query",
               "type": "string"
             },
             "domain": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.",
-=======
               "description": "The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "location": "query",
               "type": "string"
             },
@@ -4316,11 +4077,7 @@
           ]
         },
         "patch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Updates a user using patch semantics. The update method should be used instead, since it also supports patch semantics and has better performance. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.",
-=======
           "description": "Updates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you're mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/admin-sdk/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}",
           "httpMethod": "PATCH",
           "id": "directory.users.patch",
@@ -4347,11 +4104,7 @@
           ]
         },
         "signOut": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Sign a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.",
-=======
           "description": "Signs a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/signOut",
           "httpMethod": "POST",
           "id": "directory.users.signOut",
@@ -4396,11 +4149,7 @@
           ]
         },
         "update": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Updates a user. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared.",
-=======
           "description": "Updates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can't be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-users#update_user) for more information.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}",
           "httpMethod": "PUT",
           "id": "directory.users.update",
@@ -4427,11 +4176,7 @@
           ]
         },
         "watch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Watch for changes in users list",
-=======
           "description": "Watches for changes in users list.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/watch",
           "httpMethod": "POST",
           "id": "directory.users.watch",
@@ -4669,11 +4414,7 @@
               ]
             },
             "watch": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "description": "Watch for changes in users list.",
-=======
               "description": "Watches for changes in users list.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
               "flatPath": "admin/directory/v1/users/{userKey}/aliases/watch",
               "httpMethod": "POST",
               "id": "directory.users.aliases.watch",
@@ -4826,11 +4567,7 @@
     "verificationCodes": {
       "methods": {
         "generate": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Generate new backup verification codes for the user.",
-=======
           "description": "Generates new backup verification codes for the user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/verificationCodes/generate",
           "httpMethod": "POST",
           "id": "directory.verificationCodes.generate",
@@ -4851,11 +4588,7 @@
           ]
         },
         "invalidate": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Invalidate the current backup verification codes for the user.",
-=======
           "description": "Invalidates the current backup verification codes for the user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "flatPath": "admin/directory/v1/users/{userKey}/verificationCodes/invalidate",
           "httpMethod": "POST",
           "id": "directory.verificationCodes.invalidate",
@@ -4902,11 +4635,7 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-  "revision": "20210420",
-=======
-  "revision": "20230316",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
+  "revision": "20230516",
   "rootUrl": "https://admin.googleapis.com/",
   "schemas": {
     "Alias": {
@@ -5045,8 +4774,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
     "BatchCreatePrintServersRequest": {
       "description": "Request to add multiple new print servers in a batch.",
       "id": "BatchCreatePrintServersRequest",
@@ -5081,7 +4808,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
     "BatchCreatePrintersRequest": {
       "description": "Request for adding new printers in batch.",
       "id": "BatchCreatePrintersRequest",
@@ -5117,8 +4843,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
     "BatchDeletePrintServersRequest": {
       "description": "Request to delete multiple existing print servers in a batch.",
       "id": "BatchDeletePrintServersRequest",
@@ -5153,7 +4877,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
     "BatchDeletePrintersRequest": {
       "description": "Request for deleting existing printers in batch.",
       "id": "BatchDeletePrintersRequest",
@@ -5477,11 +5200,7 @@
       "id": "ChromeOsDevice",
       "properties": {
         "activeTimeRanges": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of active time ranges (Read-only).",
-=======
           "description": "A list of active time ranges (Read-only).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "properties": {
               "activeTime": {
@@ -5736,25 +5455,19 @@
         },
         "firmwareVersion": {
           "description": "The Chrome device's firmware version.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
           "type": "string"
         },
         "firstEnrollmentTime": {
           "description": "Date and time for the first time the device was enrolled.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         },
         "kind": {
           "default": "admin#directory#chromeosdevice",
           "description": "The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
           "type": "string"
         },
         "lastDeprovisionTimestamp": {
           "description": "(Read-only) Date and time for the last deprovision of the device.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         },
         "lastEnrollmentTime": {
@@ -5807,12 +5520,6 @@
         },
         "orderNumber": {
           "description": "The device's order number. Only devices directly purchased from Google have an order number.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "type": "string"
-        },
-        "orgUnitPath": {
-          "description": "The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#update_chrome_device) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).",
-=======
           "type": "string"
         },
         "orgUnitId": {
@@ -5821,7 +5528,6 @@
         },
         "orgUnitPath": {
           "description": "The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         },
         "osUpdateStatus": {
@@ -5837,37 +5543,10 @@
           "type": "string"
         },
         "recentUsers": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of recent device users, in descending order, by last login time.",
-          "items": {
-            "$ref": "RecentUsers"
-          },
-          "type": "array"
-        },
-        "screenshotFiles": {
-          "description": "List of screenshot files to download. Type is always \"SCREENSHOT_FILE\". (Read-only)",
-=======
           "description": "A list of recent device users, in descending order, by last login time.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "description": "A list of recent device users, in descending order, by last login time.",
             "properties": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-              "createTime": {
-                "description": "Date and time the file was created",
-                "format": "date-time",
-                "type": "string"
-              },
-              "downloadUrl": {
-                "description": "File download URL",
-                "type": "string"
-              },
-              "name": {
-                "description": "File name",
-                "type": "string"
-              },
-              "type": {
-=======
               "email": {
                 "description": "The user's email address. This is only present if the user type is `USER_TYPE_MANAGED`.",
                 "type": "string"
@@ -5899,7 +5578,6 @@
                 "type": "string"
               },
               "type": {
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
                 "description": "File type",
                 "type": "string"
               }
@@ -5985,10 +5663,7 @@
       "type": "object"
     },
     "ChromeOsDeviceAction": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
       "description": "Data about an update to the status of a Chrome OS device.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
       "id": "ChromeOsDeviceAction",
       "properties": {
         "action": {
@@ -6051,8 +5726,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
     "CreatePrintServerRequest": {
       "description": "Request for adding a new print server.",
       "id": "CreatePrintServerRequest",
@@ -6068,7 +5741,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
     "CreatePrinterRequest": {
       "description": "Request for adding a new printer.",
       "id": "CreatePrinterRequest",
@@ -6227,13 +5899,9 @@
             "TAKE_A_SCREENSHOT",
             "SET_VOLUME",
             "WIPE_USERS",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-            "REMOTE_POWERWASH"
-=======
             "REMOTE_POWERWASH",
             "DEVICE_START_CRD_SESSION",
             "CAPTURE_LOGS"
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           ],
           "enumDescriptions": [
             "The command type was unspecified.",
@@ -6241,13 +5909,9 @@
             "Take a screenshot of the device. Only available if the device is in Kiosk Mode.",
             "Set the volume of the device. Can only be issued to Kiosk and managed guest session devices.",
             "Wipe all the users off of the device. Executing this command in the device will remove all user profile data, but it will keep device policy and enrollment.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-            "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!"
-=======
             "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!",
             "Starts a Chrome Remote Desktop session.",
-            "Capture the system logs of a kiosk device. The logs can be downloaded from the downloadUrl link present in deviceFiles field of [chromeosdevices](https://developers.google.com/admin-sdk/directory/reference/rest/v1/chromeosdevices)"
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
+            "Capture the system logs of a kiosk device. The logs can be downloaded from the downloadUrl link present in `deviceFiles` field of [chromeosdevices](https://developers.google.com/admin-sdk/directory/reference/rest/v1/chromeosdevices)"
           ],
           "type": "string"
         }
@@ -6258,13 +5922,10 @@
       "description": "The result of executing a command.",
       "id": "DirectoryChromeosdevicesCommandResult",
       "properties": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
         "commandResultPayload": {
           "description": "The payload for the command result. The following commands respond with a payload: * `DEVICE_START_CRD_SESSION`: Payload is a stringified JSON object in the form: { \"url\": url }. The URL provides a link to the Chrome Remote Desktop session.",
           "type": "string"
         },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
         "errorMessage": {
           "description": "The error message with a short explanation as to why the command failed. Only present if the command failed.",
           "type": "string"
@@ -6305,13 +5966,9 @@
             "TAKE_A_SCREENSHOT",
             "SET_VOLUME",
             "WIPE_USERS",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-            "REMOTE_POWERWASH"
-=======
             "REMOTE_POWERWASH",
             "DEVICE_START_CRD_SESSION",
             "CAPTURE_LOGS"
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           ],
           "enumDescriptions": [
             "The command type was unspecified.",
@@ -6319,22 +5976,14 @@
             "Take a screenshot of the device. Only available if the device is in Kiosk Mode.",
             "Set the volume of the device. Can only be issued to Kiosk and managed guest session devices.",
             "Wipe all the users off of the device. Executing this command in the device will remove all user profile data, but it will keep device policy and enrollment.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-            "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!"
-=======
             "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!",
             "Starts a Chrome Remote Desktop session.",
-            "Capture the system logs of a kiosk device. The logs can be downloaded from the downloadUrl link present in deviceFiles field of [chromeosdevices](https://developers.google.com/admin-sdk/directory/reference/rest/v1/chromeosdevices)"
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
+            "Capture the system logs of a kiosk device. The logs can be downloaded from the downloadUrl link present in `deviceFiles` field of [chromeosdevices](https://developers.google.com/admin-sdk/directory/reference/rest/v1/chromeosdevices)"
           ],
           "type": "string"
         },
         "payload": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The payload for the command, provide it only if command supports it. The following commands support adding payload: - SET_VOLUME: Payload is a stringified JSON object in the form: { \"volume\": 50 }. The volume has to be an integer in the range [0,100].",
-=======
           "description": "The payload for the command, provide it only if command supports it. The following commands support adding payload: * `SET_VOLUME`: Payload is a stringified JSON object in the form: { \"volume\": 50 }. The volume has to be an integer in the range [0,100]. * `DEVICE_START_CRD_SESSION`: Payload is optionally a stringified JSON object in the form: { \"ackedUserPresence\": true }. `ackedUserPresence` is a boolean. By default, `ackedUserPresence` is set to `false`. To start a Chrome Remote Desktop session for an active device, set `ackedUserPresence` to `true`.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         }
       },
@@ -6478,11 +6127,7 @@
       "type": "object"
     },
     "Empty": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"
@@ -6513,11 +6158,7 @@
             "DATA_LOSS"
           ],
           "enumDescriptions": [
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-            "Not an error; returned on success HTTP Mapping: 200 OK",
-=======
             "Not an error; returned on success. HTTP Mapping: 200 OK",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
             "The operation was cancelled, typically by the caller. HTTP Mapping: 499 Client Closed Request",
             "Unknown error. For example, this error may be returned when a `Status` value received from another address space belongs to an error space that is not known in this address space. Also errors raised by APIs that do not return enough error information may be converted to this error. HTTP Mapping: 500 Internal Server Error",
             "The client specified an invalid argument. Note that this differs from `FAILED_PRECONDITION`. `INVALID_ARGUMENT` indicates arguments that are problematic regardless of the state of the system (e.g., a malformed file name). HTTP Mapping: 400 Bad Request",
@@ -6631,17 +6272,6 @@
       "type": "object"
     },
     "Group": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-      "description": "Google Groups provide your users the ability to send messages to groups of people using the group's email address. For more information about common tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-groups).",
-      "id": "Group",
-      "properties": {
-        "adminCreated": {
-          "description": "Value is `true` if this group was created by an administrator rather than a user.",
-          "type": "boolean"
-        },
-        "aliases": {
-          "description": "List of a group's alias email addresses.",
-=======
       "description": "Google Groups provide your users the ability to send messages to groups of people using the group's email address. For more information about common tasks, see the [Developer's Guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-groups). For information about other types of groups, see the [Cloud Identity Groups API documentation](https://cloud.google.com/identity/docs/groups). Note: The user calling the API (or being impersonated by a service account) must have an assigned [role](https://developers.google.com/admin-sdk/directory/v1/guides/manage-roles) that includes Admin API Groups permissions, such as Super Admin or Groups Admin.",
       "id": "Group",
       "properties": {
@@ -6651,7 +6281,6 @@
         },
         "aliases": {
           "description": "Read-only. The list of a group's alias email addresses. To add, update, or remove a group's aliases, use the `groups.aliases` methods. If edited in a group's POST or PUT request, the edit is ignored.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -6680,11 +6309,7 @@
           "type": "string"
         },
         "id": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The unique ID of a group. A group `id` can be used as a group request URI's `groupKey`.",
-=======
           "description": "Read-only. The unique ID of a group. A group `id` can be used as a group request URI's `groupKey`.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         },
         "kind": {
@@ -6697,11 +6322,7 @@
           "type": "string"
         },
         "nonEditableAliases": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of the group's non-editable alias email addresses that are outside of the account's primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API's response for a group. If edited in a group's POST or PUT request, the edit is ignored by the API service.",
-=======
           "description": "Read-only. The list of the group's non-editable alias email addresses that are outside of the account's primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API's response for a group. If edited in a group's POST or PUT request, the edit is ignored.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -6763,8 +6384,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
     "ListPrintServersResponse": {
       "id": "ListPrintServersResponse",
       "properties": {
@@ -6782,7 +6401,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
     "ListPrinterModelsResponse": {
       "description": "Response for listing allowed printer models.",
       "id": "ListPrinterModelsResponse",
@@ -6810,11 +6428,7 @@
           "type": "string"
         },
         "printers": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was given in the request, then all printers will be returned.",
-=======
           "description": "List of printers. If `org_unit_id` was given in the request, then only printers visible for this OU will be returned. If `org_unit_id` was not given in the request, then all printers will be returned.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "$ref": "Printer"
           },
@@ -6828,7 +6442,7 @@
       "id": "Member",
       "properties": {
         "delivery_settings": {
-          "description": "Defines mail delivery preferences of member. This is only supported by create/update/get.",
+          "description": "Defines mail delivery preferences of member. This field is only supported by `insert`, `update`, and `get` methods.",
           "type": "string"
         },
         "email": {
@@ -6979,11 +6593,7 @@
           "type": "string"
         },
         "email": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of owner's email addresses. If your application needs the current list of user emails, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For additional information, see the [retrieve a user](/admin-sdk/directory/v1/guides/manage-users#get_user) method.",
-=======
           "description": "The list of the owner's email addresses. If your application needs the current list of user emails, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For additional information, see the [retrieve a user](/admin-sdk/directory/v1/guides/manage-users#get_user) method.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -7045,11 +6655,7 @@
           "type": "string"
         },
         "name": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of the owner's user names. If your application needs the current list of device owner names, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For more information about retrieving mobile device user information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-users#get_user).",
-=======
           "description": "The list of the owner's user names. If your application needs the current list of device owner names, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For more information about retrieving mobile device user information, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-users#get_user).",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -7160,15 +6766,11 @@
       "type": "object"
     },
     "OrgUnit": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-      "description": "Managing your account's organizational units allows you to configure your users' access to services and custom settings. For more information about common organizational unit tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-org-units.html).",
-=======
       "description": "Managing your account's organizational units allows you to configure your users' access to services and custom settings. For more information about common organizational unit tasks, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-org-units.html). The customer's organizational unit hierarchy is limited to 35 levels of depth.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
       "id": "OrgUnit",
       "properties": {
         "blockInheritance": {
-          "description": "Determines if a sub-organizational unit can inherit the settings of the parent organization. The default value is `false`, meaning a sub-organizational unit inherits the settings of the nearest parent organizational unit. For more information on inheritance and users in an organization structure, see the [administration help center](https://support.google.com/a/answer/4352075).",
+          "description": "Determines if a sub-organizational unit can inherit the settings of the parent organization. The default value is `false`, meaning a sub-organizational unit inherits the settings of the nearest parent organizational unit. We recommend using the default value because setting `block_inheritance` to `true` can have _unintended consequences_. For more information about inheritance and users in an organization structure, see the [administration help center](https://support.google.com/a/answer/4352075).",
           "type": "boolean"
         },
         "description": {
@@ -7225,11 +6827,7 @@
           "type": "string"
         },
         "organizationUnits": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "List of organizational unit objects.",
-=======
           "description": "A list of organizational unit objects.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "$ref": "OrgUnit"
           },
@@ -7238,8 +6836,6 @@
       },
       "type": "object"
     },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
     "OsUpdateStatus": {
       "description": "Contains information regarding the current OS update status.",
       "id": "OsUpdateStatus",
@@ -7381,7 +6977,6 @@
       },
       "type": "object"
     },
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
     "Printer": {
       "description": "Printer configuration.",
       "id": "Printer",
@@ -7509,24 +7104,6 @@
         "kind": {
           "default": "admin#directory#privileges",
           "description": "The type of the API resource. This is always `admin#directory#privileges`.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "RecentUsers": {
-      "description": "List of recent device users, in descending order, by last login time.",
-      "id": "RecentUsers",
-      "properties": {
-        "email": {
-          "description": "The user's email address. This is only present if the user type is `USER_TYPE_MANAGED`.",
-          "type": "string"
-        },
-        "type": {
-          "description": "The type of the user.",
-=======
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         }
       },
@@ -7600,7 +7177,7 @@
       "id": "RoleAssignment",
       "properties": {
         "assignedTo": {
-          "description": "The unique ID of the entity this role is assigned to—either the `user_id` of a user or the `uniqueId` of a service account, as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).",
+          "description": "The unique ID of the entity this role is assigned to—either the `user_id` of a user, the `group_id` of a group, or the `uniqueId` of a service account as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).",
           "type": "string"
         },
         "assigneeType": {
@@ -7741,11 +7318,7 @@
               "directory.schemas.insert"
             ]
           },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The schema's name.",
-=======
           "description": "The schema's name. Each `schema_name` must be unique within a customer. Reusing a name results in a `409: Entity already exists` error.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         }
       },
@@ -7921,15 +7494,11 @@
       "type": "object"
     },
     "User": {
-      "description": "The Directory API allows you to create and manage your account's users, user aliases, and user Gmail chat profile photos. For more information about common tasks, see the [User Accounts Developer's Guide](/admin-sdk/directory/v1/guides/manage-users.html) and the [User Aliases Developer's Guide](/admin-sdk/directory/v1/guides/manage-user-aliases.html).",
+      "description": "The Directory API allows you to create and manage your account's users, user aliases, and user Google profile photos. For more information about common tasks, see the [User Accounts Developer's Guide](/admin-sdk/directory/v1/guides/manage-users.html) and the [User Aliases Developer's Guide](/admin-sdk/directory/v1/guides/manage-user-aliases.html).",
       "id": "User",
       "properties": {
         "addresses": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of the user's addresses. The maximum allowed data size for this field is 10Kb.",
-=======
           "description": "The list of the user's addresses. The maximum allowed data size for this field is 10KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "agreedToTerms": {
@@ -7938,11 +7507,7 @@
           "type": "boolean"
         },
         "aliases": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Output only. List of the user's alias email addresses.",
-=======
           "description": "Output only. The list of the user's alias email addresses.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -7981,11 +7546,7 @@
           "type": "string"
         },
         "emails": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of the user's email addresses. The maximum allowed data size for this field is 10Kb.",
-=======
           "description": "The list of the user's email addresses. The maximum allowed data size for this field is 10KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "etag": {
@@ -7994,17 +7555,6 @@
           "type": "string"
         },
         "externalIds": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of external IDs for the user, such as an employee or network ID. The maximum allowed data size for this field is 2Kb.",
-          "type": "any"
-        },
-        "gender": {
-          "description": "The user's gender. The maximum allowed data size for this field is 1Kb.",
-          "type": "any"
-        },
-        "hashFunction": {
-          "description": "Stores the hash format of the password property. We recommend sending the `password` property value as a base 16 bit hexadecimal-encoded hash value. Set the `hashFunction` values as either the [SHA-1](https://wikipedia.org/wiki/SHA-1), [MD5](https://wikipedia.org/wiki/MD5), or [crypt](https://en.wikipedia.org/wiki/Crypt_\\(C\\)) hash format.",
-=======
           "description": "The list of external IDs for the user, such as an employee or network ID. The maximum allowed data size for this field is 2KB.",
           "type": "any"
         },
@@ -8014,7 +7564,6 @@
         },
         "hashFunction": {
           "description": "Stores the hash format of the `password` property. The following `hashFunction` values are allowed: * `MD5` - Accepts simple hex-encoded values. * `SHA-1` - Accepts simple hex-encoded values. * `crypt` - Compliant with the [C crypt library](https://en.wikipedia.org/wiki/Crypt_%28C%29). Supports the DES, MD5 (hash prefix `$1$`), SHA-256 (hash prefix `$5$`), and SHA-512 (hash prefix `$6$`) hash algorithms. If rounds are specified as part of the prefix, they must be 10,000 or fewer.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         },
         "id": {
@@ -8022,11 +7571,7 @@
           "type": "string"
         },
         "ims": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The user's Instant Messenger (IM) accounts. A user account can have multiple ims properties. But, only one of these ims properties can be the primary IM contact. The maximum allowed data size for this field is 2Kb.",
-=======
           "description": "The list of the user's Instant Messenger (IM) accounts. A user account can have multiple ims properties. But, only one of these ims properties can be the primary IM contact. The maximum allowed data size for this field is 2KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "includeInGlobalAddressList": {
@@ -8034,11 +7579,7 @@
           "type": "boolean"
         },
         "ipWhitelisted": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "If `true`, the user's IP address is [whitelisted](https://support.google.com/a/answer/60752).",
-=======
           "description": "If `true`, the user's IP address is subject to a deprecated IP address [`allowlist`](https://support.google.com/a/answer/60752) configuration.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "boolean"
         },
         "isAdmin": {
@@ -8067,11 +7608,7 @@
           "type": "boolean"
         },
         "keywords": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The user's keywords. The maximum allowed data size for this field is 1Kb.",
-=======
           "description": "The list of the user's keywords. The maximum allowed data size for this field is 1KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "kind": {
@@ -8081,11 +7618,7 @@
           "type": "string"
         },
         "languages": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The user's languages. The maximum allowed data size for this field is 1Kb.",
-=======
           "description": "The user's languages. The maximum allowed data size for this field is 1KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "lastLoginTime": {
@@ -8095,11 +7628,7 @@
           "type": "string"
         },
         "locations": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The user's locations. The maximum allowed data size for this field is 10Kb.",
-=======
           "description": "The user's locations. The maximum allowed data size for this field is 10KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "name": {
@@ -8109,17 +7638,10 @@
               "directory.users.insert"
             ]
           },
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Holds the given and family names of the user, and the read-only `fullName` value. The maximum number of characters in the `givenName` and in the `familyName` values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the [administration help center](https://support.google.com/a/answer/9193374). Maximum allowed data size for this field is 1Kb."
-        },
-        "nonEditableAliases": {
-          "description": "Output only. List of the user's non-editable alias email addresses. These are typically outside the account's primary domain or sub-domain.",
-=======
           "description": "Holds the given and family names of the user, and the read-only `fullName` value. The maximum number of characters in the `givenName` and in the `familyName` values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the [administration help center](https://support.google.com/a/answer/9193374). Maximum allowed data size for this field is 1KB."
         },
         "nonEditableAliases": {
           "description": "Output only. The list of the user's non-editable alias email addresses. These are typically outside the account's primary domain or sub-domain.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "items": {
             "type": "string"
           },
@@ -8135,11 +7657,7 @@
           "type": "string"
         },
         "organizations": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of organizations the user belongs to. The maximum allowed data size for this field is 10Kb.",
-=======
           "description": "The list of organizations the user belongs to. The maximum allowed data size for this field is 10KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "password": {
@@ -8152,19 +7670,11 @@
           "type": "string"
         },
         "phones": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of the user's phone numbers. The maximum allowed data size for this field is 1Kb.",
-          "type": "any"
-        },
-        "posixAccounts": {
-          "description": "A list of [POSIX](https://www.opengroup.org/austin/papers/posix_faq.html) account information for the user.",
-=======
           "description": "The list of the user's phone numbers. The maximum allowed data size for this field is 1KB.",
           "type": "any"
         },
         "posixAccounts": {
           "description": "The list of [POSIX](https://www.opengroup.org/austin/papers/posix_faq.html) account information for the user.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "primaryEmail": {
@@ -8185,11 +7695,7 @@
           "type": "string"
         },
         "relations": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "A list of the user's relationships to other users. The maximum allowed data size for this field is 2Kb.",
-=======
           "description": "The list of the user's relationships to other users. The maximum allowed data size for this field is 2KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         },
         "sshPublicKeys": {
@@ -8211,20 +7717,12 @@
           "type": "string"
         },
         "thumbnailPhotoUrl": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "Output only. Photo Url of the user (Read-only)",
-=======
           "description": "Output only. The URL of the user's profile photo. The URL might be temporary or private.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "readOnly": true,
           "type": "string"
         },
         "websites": {
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-          "description": "The user's websites. The maximum allowed data size for this field is 2Kb.",
-=======
           "description": "The user's websites. The maximum allowed data size for this field is 2KB.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "any"
         }
       },
@@ -8299,8 +7797,6 @@
         },
         "type": {
           "description": "Each entry can have a type which indicates standard values of that entry. For example address could be of home work etc. In addition to the standard type an entry can have a custom type and can take any value. Such type should have the CUSTOM value as type and also have a customType value.",
-<<<<<<< HEAD:gen/model/admin/directory/v1/admin-api.json
-=======
           "type": "string"
         }
       },
@@ -8328,7 +7824,6 @@
         },
         "primaryEmail": {
           "description": "The user's primary email address.",
->>>>>>> upstream/main:configs/models/admin/directory/v1/admin-api.json
           "type": "string"
         }
       },

@@ -3,11 +3,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-<<<<<<< HEAD:gen/model/firestore/v1beta2/firestore-api.json
-          "description": "See, edit, configure, and delete your Google Cloud Platform data"
-=======
           "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
->>>>>>> upstream/main:configs/models/firestore/v1beta2/firestore-api.json
         },
         "https://www.googleapis.com/auth/datastore": {
           "description": "View and manage your Google Cloud Datastore data"
@@ -419,19 +415,11 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/firestore/v1beta2/firestore-api.json
-  "revision": "20210326",
-  "rootUrl": "https://firestore.googleapis.com/",
-  "schemas": {
-    "Empty": {
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
   "revision": "20220319",
   "rootUrl": "https://firestore.googleapis.com/",
   "schemas": {
     "Empty": {
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/firestore/v1beta2/firestore-api.json
       "id": "Empty",
       "properties": {},
       "type": "object"

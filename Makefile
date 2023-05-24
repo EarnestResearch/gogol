@@ -25,7 +25,7 @@ gen: $(BIN)/gogol-gen $(MODEL_DIR)
  $(addprefix --model=,$(MODELS))
 
 $(BIN)/gogol-gen: $(BIN)
-	stack build gogol-gen --stack-yaml=$(STACK_YAML) --nix --copy-bins --local-bin-path $(BIN)
+	stack build gogol-gen --stack-yaml=$(STACK_YAML) --copy-bins --local-bin-path $(BIN)
 
 $(BIN):
 	mkdir $@

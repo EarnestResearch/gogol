@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -25,17 +26,22 @@
 -- Maintainer  : Brendan Hay <brendan.g.hay+gogol@gmail.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.IAP.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AttributePropagationSettings_OutputCredentialsItem
     AttributePropagationSettings_OutputCredentialsItem
-      ( AttributePropagationSettings_OutputCredentialsItem_OUTPUTCREDENTIALSUNSPECIFIED,
+      (
+        AttributePropagationSettings_OutputCredentialsItem_OUTPUTCREDENTIALSUNSPECIFIED,
         AttributePropagationSettings_OutputCredentialsItem_Header,
         AttributePropagationSettings_OutputCredentialsItem_Jwt,
         AttributePropagationSettings_OutputCredentialsItem_Rctoken,
@@ -44,7 +50,8 @@ module Gogol.IAP.Internal.Sum
 
     -- * ReauthSettings_Method
     ReauthSettings_Method
-      ( ReauthSettings_Method_METHODUNSPECIFIED,
+      (
+        ReauthSettings_Method_METHODUNSPECIFIED,
         ReauthSettings_Method_Login,
         ReauthSettings_Method_Password,
         ReauthSettings_Method_SECUREKEY,
@@ -54,28 +61,28 @@ module Gogol.IAP.Internal.Sum
 
     -- * ReauthSettings_PolicyType
     ReauthSettings_PolicyType
-      ( ReauthSettings_PolicyType_POLICYTYPEUNSPECIFIED,
+      (
+        ReauthSettings_PolicyType_POLICYTYPEUNSPECIFIED,
         ReauthSettings_PolicyType_Minimum,
         ReauthSettings_PolicyType_Default,
         ..
       ),
-  )
-where
+  ) where
 
 import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -88,22 +95,21 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
-newtype AttributePropagationSettings_OutputCredentialsItem = AttributePropagationSettings_OutputCredentialsItem {fromAttributePropagationSettings_OutputCredentialsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AttributePropagationSettings_OutputCredentialsItem = AttributePropagationSettings_OutputCredentialsItem { fromAttributePropagationSettings_OutputCredentialsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
--- | Output credential not provided. This is unsupported in IAP. An output credential is required.
+-- | An output credential is required.
 pattern AttributePropagationSettings_OutputCredentialsItem_OUTPUTCREDENTIALSUNSPECIFIED :: AttributePropagationSettings_OutputCredentialsItem
 pattern AttributePropagationSettings_OutputCredentialsItem_OUTPUTCREDENTIALSUNSPECIFIED = AttributePropagationSettings_OutputCredentialsItem "OUTPUT_CREDENTIALS_UNSPECIFIED"
 
@@ -124,21 +130,20 @@ pattern AttributePropagationSettings_OutputCredentialsItem_Rctoken = AttributePr
   AttributePropagationSettings_OutputCredentialsItem_Header,
   AttributePropagationSettings_OutputCredentialsItem_Jwt,
   AttributePropagationSettings_OutputCredentialsItem_Rctoken,
-  AttributePropagationSettings_OutputCredentialsItem
-  #-}
+  AttributePropagationSettings_OutputCredentialsItem #-}
 
 -- | Reauth method requested.
-newtype ReauthSettings_Method = ReauthSettings_Method {fromReauthSettings_Method :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ReauthSettings_Method = ReauthSettings_Method { fromReauthSettings_Method :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Reauthentication disabled.
 pattern ReauthSettings_Method_METHODUNSPECIFIED :: ReauthSettings_Method
@@ -148,7 +153,7 @@ pattern ReauthSettings_Method_METHODUNSPECIFIED = ReauthSettings_Method "METHOD_
 pattern ReauthSettings_Method_Login :: ReauthSettings_Method
 pattern ReauthSettings_Method_Login = ReauthSettings_Method "LOGIN"
 
--- | Deprecated.
+-- | 
 pattern ReauthSettings_Method_Password :: ReauthSettings_Method
 pattern ReauthSettings_Method_Password = ReauthSettings_Method "PASSWORD"
 
@@ -166,21 +171,20 @@ pattern ReauthSettings_Method_ENROLLEDSECONDFACTORS = ReauthSettings_Method "ENR
   ReauthSettings_Method_Password,
   ReauthSettings_Method_SECUREKEY,
   ReauthSettings_Method_ENROLLEDSECONDFACTORS,
-  ReauthSettings_Method
-  #-}
+  ReauthSettings_Method #-}
 
 -- | How IAP determines the effective policy in cases of hierarchial policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.
-newtype ReauthSettings_PolicyType = ReauthSettings_PolicyType {fromReauthSettings_PolicyType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ReauthSettings_PolicyType = ReauthSettings_PolicyType { fromReauthSettings_PolicyType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ReauthSettings_PolicyType_POLICYTYPEUNSPECIFIED :: ReauthSettings_PolicyType
@@ -198,5 +202,4 @@ pattern ReauthSettings_PolicyType_Default = ReauthSettings_PolicyType "DEFAULT"
   ReauthSettings_PolicyType_POLICYTYPEUNSPECIFIED,
   ReauthSettings_PolicyType_Minimum,
   ReauthSettings_PolicyType_Default,
-  ReauthSettings_PolicyType
-  #-}
+  ReauthSettings_PolicyType #-}

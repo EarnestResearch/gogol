@@ -5,13 +5,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -30,206 +31,206 @@
 --
 -- /See:/ <https://cloud.google.com/binary-authorization/ Binary Authorization API Reference>
 module Gogol.BinaryAuthorization
-  ( -- * Configuration
-    binaryAuthorizationService,
+    (
+    -- * Configuration
+      binaryAuthorizationService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Resources
 
     -- ** binaryauthorization.projects.attestors.create
-    BinaryAuthorizationProjectsAttestorsCreateResource,
-    BinaryAuthorizationProjectsAttestorsCreate (..),
-    newBinaryAuthorizationProjectsAttestorsCreate,
+    , BinaryAuthorizationProjectsAttestorsCreateResource
+    , BinaryAuthorizationProjectsAttestorsCreate (..)
+    , newBinaryAuthorizationProjectsAttestorsCreate
 
     -- ** binaryauthorization.projects.attestors.delete
-    BinaryAuthorizationProjectsAttestorsDeleteResource,
-    BinaryAuthorizationProjectsAttestorsDelete (..),
-    newBinaryAuthorizationProjectsAttestorsDelete,
+    , BinaryAuthorizationProjectsAttestorsDeleteResource
+    , BinaryAuthorizationProjectsAttestorsDelete (..)
+    , newBinaryAuthorizationProjectsAttestorsDelete
 
     -- ** binaryauthorization.projects.attestors.get
-    BinaryAuthorizationProjectsAttestorsGetResource,
-    BinaryAuthorizationProjectsAttestorsGet (..),
-    newBinaryAuthorizationProjectsAttestorsGet,
+    , BinaryAuthorizationProjectsAttestorsGetResource
+    , BinaryAuthorizationProjectsAttestorsGet (..)
+    , newBinaryAuthorizationProjectsAttestorsGet
 
     -- ** binaryauthorization.projects.attestors.getIamPolicy
-    BinaryAuthorizationProjectsAttestorsGetIamPolicyResource,
-    BinaryAuthorizationProjectsAttestorsGetIamPolicy (..),
-    newBinaryAuthorizationProjectsAttestorsGetIamPolicy,
+    , BinaryAuthorizationProjectsAttestorsGetIamPolicyResource
+    , BinaryAuthorizationProjectsAttestorsGetIamPolicy (..)
+    , newBinaryAuthorizationProjectsAttestorsGetIamPolicy
 
     -- ** binaryauthorization.projects.attestors.list
-    BinaryAuthorizationProjectsAttestorsListResource,
-    BinaryAuthorizationProjectsAttestorsList (..),
-    newBinaryAuthorizationProjectsAttestorsList,
+    , BinaryAuthorizationProjectsAttestorsListResource
+    , BinaryAuthorizationProjectsAttestorsList (..)
+    , newBinaryAuthorizationProjectsAttestorsList
 
     -- ** binaryauthorization.projects.attestors.setIamPolicy
-    BinaryAuthorizationProjectsAttestorsSetIamPolicyResource,
-    BinaryAuthorizationProjectsAttestorsSetIamPolicy (..),
-    newBinaryAuthorizationProjectsAttestorsSetIamPolicy,
+    , BinaryAuthorizationProjectsAttestorsSetIamPolicyResource
+    , BinaryAuthorizationProjectsAttestorsSetIamPolicy (..)
+    , newBinaryAuthorizationProjectsAttestorsSetIamPolicy
 
     -- ** binaryauthorization.projects.attestors.testIamPermissions
-    BinaryAuthorizationProjectsAttestorsTestIamPermissionsResource,
-    BinaryAuthorizationProjectsAttestorsTestIamPermissions (..),
-    newBinaryAuthorizationProjectsAttestorsTestIamPermissions,
+    , BinaryAuthorizationProjectsAttestorsTestIamPermissionsResource
+    , BinaryAuthorizationProjectsAttestorsTestIamPermissions (..)
+    , newBinaryAuthorizationProjectsAttestorsTestIamPermissions
 
     -- ** binaryauthorization.projects.attestors.update
-    BinaryAuthorizationProjectsAttestorsUpdateResource,
-    BinaryAuthorizationProjectsAttestorsUpdate (..),
-    newBinaryAuthorizationProjectsAttestorsUpdate,
+    , BinaryAuthorizationProjectsAttestorsUpdateResource
+    , BinaryAuthorizationProjectsAttestorsUpdate (..)
+    , newBinaryAuthorizationProjectsAttestorsUpdate
 
     -- ** binaryauthorization.projects.attestors.validateAttestationOccurrence
-    BinaryAuthorizationProjectsAttestorsValidateAttestationOccurrenceResource,
-    BinaryAuthorizationProjectsAttestorsValidateAttestationOccurrence (..),
-    newBinaryAuthorizationProjectsAttestorsValidateAttestationOccurrence,
+    , BinaryAuthorizationProjectsAttestorsValidateAttestationOccurrenceResource
+    , BinaryAuthorizationProjectsAttestorsValidateAttestationOccurrence (..)
+    , newBinaryAuthorizationProjectsAttestorsValidateAttestationOccurrence
 
     -- ** binaryauthorization.projects.getPolicy
-    BinaryAuthorizationProjectsGetPolicyResource,
-    BinaryAuthorizationProjectsGetPolicy (..),
-    newBinaryAuthorizationProjectsGetPolicy,
+    , BinaryAuthorizationProjectsGetPolicyResource
+    , BinaryAuthorizationProjectsGetPolicy (..)
+    , newBinaryAuthorizationProjectsGetPolicy
 
     -- ** binaryauthorization.projects.policy.getIamPolicy
-    BinaryAuthorizationProjectsPolicyGetIamPolicyResource,
-    BinaryAuthorizationProjectsPolicyGetIamPolicy (..),
-    newBinaryAuthorizationProjectsPolicyGetIamPolicy,
+    , BinaryAuthorizationProjectsPolicyGetIamPolicyResource
+    , BinaryAuthorizationProjectsPolicyGetIamPolicy (..)
+    , newBinaryAuthorizationProjectsPolicyGetIamPolicy
 
     -- ** binaryauthorization.projects.policy.setIamPolicy
-    BinaryAuthorizationProjectsPolicySetIamPolicyResource,
-    BinaryAuthorizationProjectsPolicySetIamPolicy (..),
-    newBinaryAuthorizationProjectsPolicySetIamPolicy,
+    , BinaryAuthorizationProjectsPolicySetIamPolicyResource
+    , BinaryAuthorizationProjectsPolicySetIamPolicy (..)
+    , newBinaryAuthorizationProjectsPolicySetIamPolicy
 
     -- ** binaryauthorization.projects.policy.testIamPermissions
-    BinaryAuthorizationProjectsPolicyTestIamPermissionsResource,
-    BinaryAuthorizationProjectsPolicyTestIamPermissions (..),
-    newBinaryAuthorizationProjectsPolicyTestIamPermissions,
+    , BinaryAuthorizationProjectsPolicyTestIamPermissionsResource
+    , BinaryAuthorizationProjectsPolicyTestIamPermissions (..)
+    , newBinaryAuthorizationProjectsPolicyTestIamPermissions
 
     -- ** binaryauthorization.projects.updatePolicy
-    BinaryAuthorizationProjectsUpdatePolicyResource,
-    BinaryAuthorizationProjectsUpdatePolicy (..),
-    newBinaryAuthorizationProjectsUpdatePolicy,
+    , BinaryAuthorizationProjectsUpdatePolicyResource
+    , BinaryAuthorizationProjectsUpdatePolicy (..)
+    , newBinaryAuthorizationProjectsUpdatePolicy
 
     -- ** binaryauthorization.systempolicy.getPolicy
-    BinaryAuthorizationSystempolicyGetPolicyResource,
-    BinaryAuthorizationSystempolicyGetPolicy (..),
-    newBinaryAuthorizationSystempolicyGetPolicy,
+    , BinaryAuthorizationSystempolicyGetPolicyResource
+    , BinaryAuthorizationSystempolicyGetPolicy (..)
+    , newBinaryAuthorizationSystempolicyGetPolicy
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AdmissionRule
-    AdmissionRule (..),
-    newAdmissionRule,
+    , AdmissionRule (..)
+    , newAdmissionRule
 
     -- ** AdmissionRule_EnforcementMode
-    AdmissionRule_EnforcementMode (..),
+    , AdmissionRule_EnforcementMode (..)
 
     -- ** AdmissionRule_EvaluationMode
-    AdmissionRule_EvaluationMode (..),
+    , AdmissionRule_EvaluationMode (..)
 
     -- ** AdmissionWhitelistPattern
-    AdmissionWhitelistPattern (..),
-    newAdmissionWhitelistPattern,
+    , AdmissionWhitelistPattern (..)
+    , newAdmissionWhitelistPattern
 
     -- ** AttestationOccurrence
-    AttestationOccurrence (..),
-    newAttestationOccurrence,
+    , AttestationOccurrence (..)
+    , newAttestationOccurrence
 
     -- ** Attestor
-    Attestor (..),
-    newAttestor,
+    , Attestor (..)
+    , newAttestor
 
     -- ** AttestorPublicKey
-    AttestorPublicKey (..),
-    newAttestorPublicKey,
+    , AttestorPublicKey (..)
+    , newAttestorPublicKey
 
     -- ** Binding
-    Binding (..),
-    newBinding,
+    , Binding (..)
+    , newBinding
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** Expr
-    Expr (..),
-    newExpr,
+    , Expr (..)
+    , newExpr
 
     -- ** IamPolicy
-    IamPolicy (..),
-    newIamPolicy,
+    , IamPolicy (..)
+    , newIamPolicy
 
     -- ** Jwt
-    Jwt (..),
-    newJwt,
+    , Jwt (..)
+    , newJwt
 
     -- ** ListAttestorsResponse
-    ListAttestorsResponse (..),
-    newListAttestorsResponse,
+    , ListAttestorsResponse (..)
+    , newListAttestorsResponse
 
     -- ** PkixPublicKey
-    PkixPublicKey (..),
-    newPkixPublicKey,
+    , PkixPublicKey (..)
+    , newPkixPublicKey
 
     -- ** PkixPublicKey_SignatureAlgorithm
-    PkixPublicKey_SignatureAlgorithm (..),
+    , PkixPublicKey_SignatureAlgorithm (..)
 
     -- ** Policy
-    Policy (..),
-    newPolicy,
+    , Policy (..)
+    , newPolicy
 
     -- ** Policy_ClusterAdmissionRules
-    Policy_ClusterAdmissionRules (..),
-    newPolicy_ClusterAdmissionRules,
+    , Policy_ClusterAdmissionRules (..)
+    , newPolicy_ClusterAdmissionRules
 
     -- ** Policy_GlobalPolicyEvaluationMode
-    Policy_GlobalPolicyEvaluationMode (..),
+    , Policy_GlobalPolicyEvaluationMode (..)
 
     -- ** Policy_IstioServiceIdentityAdmissionRules
-    Policy_IstioServiceIdentityAdmissionRules (..),
-    newPolicy_IstioServiceIdentityAdmissionRules,
+    , Policy_IstioServiceIdentityAdmissionRules (..)
+    , newPolicy_IstioServiceIdentityAdmissionRules
 
     -- ** Policy_KubernetesNamespaceAdmissionRules
-    Policy_KubernetesNamespaceAdmissionRules (..),
-    newPolicy_KubernetesNamespaceAdmissionRules,
+    , Policy_KubernetesNamespaceAdmissionRules (..)
+    , newPolicy_KubernetesNamespaceAdmissionRules
 
     -- ** Policy_KubernetesServiceAccountAdmissionRules
-    Policy_KubernetesServiceAccountAdmissionRules (..),
-    newPolicy_KubernetesServiceAccountAdmissionRules,
+    , Policy_KubernetesServiceAccountAdmissionRules (..)
+    , newPolicy_KubernetesServiceAccountAdmissionRules
 
     -- ** SetIamPolicyRequest
-    SetIamPolicyRequest (..),
-    newSetIamPolicyRequest,
+    , SetIamPolicyRequest (..)
+    , newSetIamPolicyRequest
 
     -- ** Signature
-    Signature (..),
-    newSignature,
+    , Signature (..)
+    , newSignature
 
     -- ** TestIamPermissionsRequest
-    TestIamPermissionsRequest (..),
-    newTestIamPermissionsRequest,
+    , TestIamPermissionsRequest (..)
+    , newTestIamPermissionsRequest
 
     -- ** TestIamPermissionsResponse
-    TestIamPermissionsResponse (..),
-    newTestIamPermissionsResponse,
+    , TestIamPermissionsResponse (..)
+    , newTestIamPermissionsResponse
 
     -- ** UserOwnedGrafeasNote
-    UserOwnedGrafeasNote (..),
-    newUserOwnedGrafeasNote,
+    , UserOwnedGrafeasNote (..)
+    , newUserOwnedGrafeasNote
 
     -- ** ValidateAttestationOccurrenceRequest
-    ValidateAttestationOccurrenceRequest (..),
-    newValidateAttestationOccurrenceRequest,
+    , ValidateAttestationOccurrenceRequest (..)
+    , newValidateAttestationOccurrenceRequest
 
     -- ** ValidateAttestationOccurrenceResponse
-    ValidateAttestationOccurrenceResponse (..),
-    newValidateAttestationOccurrenceResponse,
+    , ValidateAttestationOccurrenceResponse (..)
+    , newValidateAttestationOccurrenceResponse
 
     -- ** ValidateAttestationOccurrenceResponse_Result
-    ValidateAttestationOccurrenceResponse_Result (..),
-  )
-where
+    , ValidateAttestationOccurrenceResponse_Result (..)
+    ) where
 
 import Gogol.BinaryAuthorization.Projects.Attestors.Create
 import Gogol.BinaryAuthorization.Projects.Attestors.Delete

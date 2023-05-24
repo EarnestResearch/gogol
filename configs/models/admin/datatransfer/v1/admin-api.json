@@ -17,11 +17,7 @@
   "canonicalName": "DataTransfer",
   "description": "Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.",
   "discoveryVersion": "v1",
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-  "documentationLink": "http://developers.google.com/admin-sdk/",
-=======
   "documentationLink": "https://developers.google.com/admin-sdk/",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
   "fullyEncodeReservedExpansion": true,
   "icons": {
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
@@ -206,11 +202,7 @@
           ]
         },
         "insert": {
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-          "description": "Inserts a data transfer request.",
-=======
           "description": "Inserts a data transfer request. See the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference for specific application requirements.",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
           "flatPath": "admin/datatransfer/v1/transfers",
           "httpMethod": "POST",
           "id": "datatransfer.transfers.insert",
@@ -280,19 +272,11 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-  "revision": "20210105",
-  "rootUrl": "https://admin.googleapis.com/",
-  "schemas": {
-    "Application": {
-      "description": "Applications resources represent applications installed on the domain that support transferring ownership of user data.",
-=======
   "revision": "20221109",
   "rootUrl": "https://admin.googleapis.com/",
   "schemas": {
     "Application": {
       "description": "Application resources represent applications installed on the domain that support transferring ownership of user data.",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
       "id": "Application",
       "properties": {
         "etag": {
@@ -314,11 +298,7 @@
           "type": "string"
         },
         "transferParams": {
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-          "description": "The list of all possible transfer parameters for this application. These parameters can be used to select the data of the user in this application to be transferred.",
-=======
           "description": "The list of all possible transfer parameters for this application. These parameters select which categories of the user's data to transfer.",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
           "items": {
             "$ref": "ApplicationTransferParam"
           },
@@ -337,11 +317,7 @@
           "type": "string"
         },
         "applicationTransferParams": {
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-          "description": "The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application.",
-=======
           "description": "The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application. For more information about the specific values available for each application, see the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference.",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
           "items": {
             "$ref": "ApplicationTransferParam"
           },
@@ -363,11 +339,7 @@
           "type": "string"
         },
         "value": {
-<<<<<<< HEAD:gen/model/admin/datatransfer/v1/admin-api.json
-          "description": "The value of the corresponding transfer parameter. eg: 'PRIVATE' or 'SHARED'",
-=======
           "description": "The value of the transfer parameter, such as `PRIVATE` or `SHARED`.",
->>>>>>> upstream/main:configs/models/admin/datatransfer/v1/admin-api.json
           "items": {
             "type": "string"
           },

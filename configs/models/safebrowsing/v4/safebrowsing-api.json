@@ -261,19 +261,11 @@
       }
     }
   },
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-  "revision": "20210218",
-  "rootUrl": "https://safebrowsing.googleapis.com/",
-  "schemas": {
-    "GoogleProtobufEmpty": {
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
-=======
   "revision": "20230216",
   "rootUrl": "https://safebrowsing.googleapis.com/",
   "schemas": {
     "GoogleProtobufEmpty": {
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
       "id": "GoogleProtobufEmpty",
       "properties": {},
       "type": "object"
@@ -403,12 +395,8 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "HIGH_CONFIDENCE_ALLOWLIST"
-=======
             "HIGH_CONFIDENCE_ALLOWLIST",
             "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -422,14 +410,6 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-            "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-            "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
-=======
             "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
             "Patterns to be used for activating the subresource filter.",
@@ -437,7 +417,6 @@
             "Trick-to-bill threat type.",
             "URL expressions that are very likely to be safe.",
             "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "type": "string"
         }
@@ -616,12 +595,8 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "HIGH_CONFIDENCE_ALLOWLIST"
-=======
             "HIGH_CONFIDENCE_ALLOWLIST",
             "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -635,14 +610,6 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-            "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-            "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
-=======
             "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
             "Patterns to be used for activating the subresource filter.",
@@ -650,7 +617,6 @@
             "Trick-to-bill threat type.",
             "URL expressions that are very likely to be safe.",
             "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "type": "string"
         }
@@ -959,12 +925,8 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "HIGH_CONFIDENCE_ALLOWLIST"
-=======
             "HIGH_CONFIDENCE_ALLOWLIST",
             "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -978,14 +940,6 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-            "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-            "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
-=======
             "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
             "Patterns to be used for activating the subresource filter.",
@@ -993,7 +947,6 @@
             "Trick-to-bill threat type.",
             "URL expressions that are very likely to be safe.",
             "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "type": "string"
         },
@@ -1142,12 +1095,8 @@
               "SUBRESOURCE_FILTER",
               "SUSPICIOUS",
               "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-              "HIGH_CONFIDENCE_ALLOWLIST"
-=======
               "HIGH_CONFIDENCE_ALLOWLIST",
               "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
             ],
             "enumDescriptions": [
               "Unknown.",
@@ -1161,14 +1110,6 @@
               "Client side detection whitelist threat type.",
               "Client side download detection whitelist threat type.",
               "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-              "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-              "List used for offline APK checks in PAM.",
-              "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-              "Entities that are suspected to present a threat.",
-              "Trick-to-bill threat list.",
-              "Safe list to ship hashes of known safe URL expressions."
-=======
               "Whitelist used when detecting client incident threats.",
               "List used for offline APK checks in PAM.",
               "Patterns to be used for activating the subresource filter.",
@@ -1176,7 +1117,6 @@
               "Trick-to-bill threat type.",
               "URL expressions that are very likely to be safe.",
               "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
             ],
             "type": "string"
           },
@@ -1256,12 +1196,8 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "HIGH_CONFIDENCE_ALLOWLIST"
-=======
             "HIGH_CONFIDENCE_ALLOWLIST",
             "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1275,14 +1211,6 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-            "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-            "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
-=======
             "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
             "Patterns to be used for activating the subresource filter.",
@@ -1290,7 +1218,6 @@
             "Trick-to-bill threat type.",
             "URL expressions that are very likely to be safe.",
             "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "type": "string"
         }
@@ -1381,12 +1308,8 @@
             "SUBRESOURCE_FILTER",
             "SUSPICIOUS",
             "TRICK_TO_BILL",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "HIGH_CONFIDENCE_ALLOWLIST"
-=======
             "HIGH_CONFIDENCE_ALLOWLIST",
             "ACCURACY_TIPS"
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1400,14 +1323,6 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-<<<<<<< HEAD:gen/model/safebrowsing/v4/safebrowsing-api.json
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
-            "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
-            "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions."
-=======
             "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
             "Patterns to be used for activating the subresource filter.",
@@ -1415,7 +1330,6 @@
             "Trick-to-bill threat type.",
             "URL expressions that are very likely to be safe.",
             "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
->>>>>>> upstream/main:configs/models/safebrowsing/v4/safebrowsing-api.json
           ],
           "type": "string"
         }
