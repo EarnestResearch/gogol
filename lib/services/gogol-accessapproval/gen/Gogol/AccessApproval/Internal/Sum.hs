@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.AccessApproval.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AccessApprovalSettings_RequestScopeMaxWidthPreference
     AccessApprovalSettings_RequestScopeMaxWidthPreference
-      ( AccessApprovalSettings_RequestScopeMaxWidthPreference_REQUESTSCOPEMAXWIDTHPREFERENCEUNSPECIFIED,
+      (
+        AccessApprovalSettings_RequestScopeMaxWidthPreference_REQUESTSCOPEMAXWIDTHPREFERENCEUNSPECIFIED,
         AccessApprovalSettings_RequestScopeMaxWidthPreference_Organization,
         AccessApprovalSettings_RequestScopeMaxWidthPreference_Folder,
         AccessApprovalSettings_RequestScopeMaxWidthPreference_Project,
@@ -42,7 +48,8 @@ module Gogol.AccessApproval.Internal.Sum
 
     -- * AccessReason_Type
     AccessReason_Type
-      ( AccessReason_Type_TYPEUNSPECIFIED,
+      (
+        AccessReason_Type_TYPEUNSPECIFIED,
         AccessReason_Type_CUSTOMERINITIATEDSUPPORT,
         AccessReason_Type_GOOGLEINITIATEDSERVICE,
         AccessReason_Type_GOOGLEINITIATEDREVIEW,
@@ -52,16 +59,29 @@ module Gogol.AccessApproval.Internal.Sum
         ..
       ),
 
+    -- * CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+    CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+      (
+        CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALPOLICYUNSPECIFIED,
+        CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDALL,
+        CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDEXTERNALJUSTIFICATIONS,
+        CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALNOTENABLED,
+        CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALINHERITED,
+        ..
+      ),
+
     -- * EnrolledService_EnrollmentLevel
     EnrolledService_EnrollmentLevel
-      ( EnrolledService_EnrollmentLevel_ENROLLMENTLEVELUNSPECIFIED,
+      (
+        EnrolledService_EnrollmentLevel_ENROLLMENTLEVELUNSPECIFIED,
         EnrolledService_EnrollmentLevel_BLOCKALL,
         ..
       ),
 
     -- * SignatureInfo_GoogleKeyAlgorithm
     SignatureInfo_GoogleKeyAlgorithm
-      ( SignatureInfo_GoogleKeyAlgorithm_CRYPTOKEYVERSIONALGORITHMUNSPECIFIED,
+      (
+        SignatureInfo_GoogleKeyAlgorithm_CRYPTOKEYVERSIONALGORITHMUNSPECIFIED,
         SignatureInfo_GoogleKeyAlgorithm_GOOGLESYMMETRICENCRYPTION,
         SignatureInfo_GoogleKeyAlgorithm_AES128GCM,
         SignatureInfo_GoogleKeyAlgorithm_AES256GCM,
@@ -99,25 +119,25 @@ module Gogol.AccessApproval.Internal.Sum
         SignatureInfo_GoogleKeyAlgorithm_EXTERNALSYMMETRICENCRYPTION,
         SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_ML_DSA_65,
         SignatureInfo_GoogleKeyAlgorithm_PQSIGNSLHDSASHA2128S,
+        SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -130,21 +150,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Optional. A setting to indicate the maximum width of an Access Approval request.
-newtype AccessApprovalSettings_RequestScopeMaxWidthPreference = AccessApprovalSettings_RequestScopeMaxWidthPreference {fromAccessApprovalSettings_RequestScopeMaxWidthPreference :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AccessApprovalSettings_RequestScopeMaxWidthPreference = AccessApprovalSettings_RequestScopeMaxWidthPreference { fromAccessApprovalSettings_RequestScopeMaxWidthPreference :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value for proto, shouldn\'t be used.
 pattern AccessApprovalSettings_RequestScopeMaxWidthPreference_REQUESTSCOPEMAXWIDTHPREFERENCEUNSPECIFIED :: AccessApprovalSettings_RequestScopeMaxWidthPreference
@@ -167,21 +186,20 @@ pattern AccessApprovalSettings_RequestScopeMaxWidthPreference_Project = AccessAp
   AccessApprovalSettings_RequestScopeMaxWidthPreference_Organization,
   AccessApprovalSettings_RequestScopeMaxWidthPreference_Folder,
   AccessApprovalSettings_RequestScopeMaxWidthPreference_Project,
-  AccessApprovalSettings_RequestScopeMaxWidthPreference
-  #-}
+  AccessApprovalSettings_RequestScopeMaxWidthPreference #-}
 
 -- | Type of access justification.
-newtype AccessReason_Type = AccessReason_Type {fromAccessReason_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AccessReason_Type = AccessReason_Type { fromAccessReason_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value for proto, shouldn\'t be used.
 pattern AccessReason_Type_TYPEUNSPECIFIED :: AccessReason_Type
@@ -219,21 +237,61 @@ pattern AccessReason_Type_CLOUDINITIATEDACCESS = AccessReason_Type "CLOUD_INITIA
   AccessReason_Type_THIRDPARTYDATAREQUEST,
   AccessReason_Type_GOOGLERESPONSETOPRODUCTIONALERT,
   AccessReason_Type_CLOUDINITIATEDACCESS,
-  AccessReason_Type
-  #-}
+  AccessReason_Type #-}
+
+-- | Optional. Policy for approval based on the justification given.
+newtype CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy { fromCustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value for proto.
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALPOLICYUNSPECIFIED :: CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALPOLICYUNSPECIFIED = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy "JUSTIFICATION_BASED_APPROVAL_POLICY_UNSPECIFIED"
+
+-- | Instant approval is enabled for all accesses.
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDALL :: CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDALL = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy "JUSTIFICATION_BASED_APPROVAL_ENABLED_ALL"
+
+-- | Instant approval is enabled for external justifications.
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDEXTERNALJUSTIFICATIONS :: CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDEXTERNALJUSTIFICATIONS = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy "JUSTIFICATION_BASED_APPROVAL_ENABLED_EXTERNAL_JUSTIFICATIONS"
+
+-- | Instant approval is not enabled for any accesses.
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALNOTENABLED :: CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALNOTENABLED = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy "JUSTIFICATION_BASED_APPROVAL_NOT_ENABLED"
+
+-- | Instant approval is inherited from the parent.
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALINHERITED :: CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy
+pattern CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALINHERITED = CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy "JUSTIFICATION_BASED_APPROVAL_INHERITED"
+
+{-# COMPLETE
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALPOLICYUNSPECIFIED,
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDALL,
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALENABLEDEXTERNALJUSTIFICATIONS,
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALNOTENABLED,
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy_JUSTIFICATIONBASEDAPPROVALINHERITED,
+  CustomerApprovalApprovalPolicy_JustificationBasedApprovalPolicy #-}
 
 -- | The enrollment level of the service.
-newtype EnrolledService_EnrollmentLevel = EnrolledService_EnrollmentLevel {fromEnrolledService_EnrollmentLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EnrolledService_EnrollmentLevel = EnrolledService_EnrollmentLevel { fromEnrolledService_EnrollmentLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value for proto, shouldn\'t be used.
 pattern EnrolledService_EnrollmentLevel_ENROLLMENTLEVELUNSPECIFIED :: EnrolledService_EnrollmentLevel
@@ -246,21 +304,20 @@ pattern EnrolledService_EnrollmentLevel_BLOCKALL = EnrolledService_EnrollmentLev
 {-# COMPLETE
   EnrolledService_EnrollmentLevel_ENROLLMENTLEVELUNSPECIFIED,
   EnrolledService_EnrollmentLevel_BLOCKALL,
-  EnrolledService_EnrollmentLevel
-  #-}
+  EnrolledService_EnrollmentLevel #-}
 
 -- | The hashing algorithm used for signature verification. It will only be present in the case of Google managed keys.
-newtype SignatureInfo_GoogleKeyAlgorithm = SignatureInfo_GoogleKeyAlgorithm {fromSignatureInfo_GoogleKeyAlgorithm :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SignatureInfo_GoogleKeyAlgorithm = SignatureInfo_GoogleKeyAlgorithm { fromSignatureInfo_GoogleKeyAlgorithm :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified.
 pattern SignatureInfo_GoogleKeyAlgorithm_CRYPTOKEYVERSIONALGORITHMUNSPECIFIED :: SignatureInfo_GoogleKeyAlgorithm
@@ -414,6 +471,10 @@ pattern SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_ML_DSA_65 = SignatureInfo_Googl
 pattern SignatureInfo_GoogleKeyAlgorithm_PQSIGNSLHDSASHA2128S :: SignatureInfo_GoogleKeyAlgorithm
 pattern SignatureInfo_GoogleKeyAlgorithm_PQSIGNSLHDSASHA2128S = SignatureInfo_GoogleKeyAlgorithm "PQ_SIGN_SLH_DSA_SHA2_128S"
 
+-- | The post-quantum stateless hash-based digital signature algorithm, at security level 1. Randomized pre-hash version supporting SHA256 digests.
+pattern SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256 :: SignatureInfo_GoogleKeyAlgorithm
+pattern SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256 = SignatureInfo_GoogleKeyAlgorithm "PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256"
+
 {-# COMPLETE
   SignatureInfo_GoogleKeyAlgorithm_CRYPTOKEYVERSIONALGORITHMUNSPECIFIED,
   SignatureInfo_GoogleKeyAlgorithm_GOOGLESYMMETRICENCRYPTION,
@@ -453,5 +514,5 @@ pattern SignatureInfo_GoogleKeyAlgorithm_PQSIGNSLHDSASHA2128S = SignatureInfo_Go
   SignatureInfo_GoogleKeyAlgorithm_EXTERNALSYMMETRICENCRYPTION,
   SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_ML_DSA_65,
   SignatureInfo_GoogleKeyAlgorithm_PQSIGNSLHDSASHA2128S,
-  SignatureInfo_GoogleKeyAlgorithm
-  #-}
+  SignatureInfo_GoogleKeyAlgorithm_PQ_SIGN_HASH_SLH_DSA_SHA2_128S_SHA256,
+  SignatureInfo_GoogleKeyAlgorithm #-}

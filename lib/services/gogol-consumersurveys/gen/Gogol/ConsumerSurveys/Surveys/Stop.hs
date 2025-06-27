@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,54 +29,55 @@
 --
 -- /See:/ <https://developers.google.com/surveys/ Consumer Surveys API Reference> for @consumersurveys.surveys.stop@.
 module Gogol.ConsumerSurveys.Surveys.Stop
-  ( -- * Resource
-    ConsumerSurveysSurveysStopResource,
+    (
+    -- * Resource
+      ConsumerSurveysSurveysStopResource
 
     -- ** Constructing a Request
-    ConsumerSurveysSurveysStop (..),
-    newConsumerSurveysSurveysStop,
-  )
-where
+    , ConsumerSurveysSurveysStop (..)
+    , newConsumerSurveysSurveysStop
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.ConsumerSurveys.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @consumersurveys.surveys.stop@ method which the
 -- 'ConsumerSurveysSurveysStop' request conforms to.
 type ConsumerSurveysSurveysStopResource =
-  "consumersurveys"
-    Core.:> "v2"
-    Core.:> "surveys"
-    Core.:> Core.Capture "resourceId" Core.Text
-    Core.:> "stop"
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Post '[Core.JSON] SurveysStopResponse
+     "consumersurveys" Core.:>
+       "v2" Core.:>
+         "surveys" Core.:>
+           Core.Capture "resourceId" Core.Text Core.:>
+             "stop" Core.:>
+               Core.QueryParam "alt" Core.AltJSON Core.:>
+                 Core.Post '[Core.JSON] SurveysStopResponse
 
 -- | Stops a running survey.
 --
 -- /See:/ 'newConsumerSurveysSurveysStop' smart constructor.
 newtype ConsumerSurveysSurveysStop = ConsumerSurveysSurveysStop
-  { resourceId :: Core.Text
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+
+      resourceId :: Core.Text
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'ConsumerSurveysSurveysStop' with the minimum fields required to make a request.
-newConsumerSurveysSurveysStop ::
-  -- |  See 'resourceId'.
-  Core.Text ->
-  ConsumerSurveysSurveysStop
-newConsumerSurveysSurveysStop resourceId =
-  ConsumerSurveysSurveysStop {resourceId = resourceId}
-
+newConsumerSurveysSurveysStop 
+    :: 
+                              Core.Text
+       -- ^  See 'resourceId'.
+    -> ConsumerSurveysSurveysStop
+newConsumerSurveysSurveysStop resourceId
+  = ConsumerSurveysSurveysStop{resourceId = resourceId}
 instance Core.GoogleRequest ConsumerSurveysSurveysStop where
-  type Rs ConsumerSurveysSurveysStop = SurveysStopResponse
-  type
-    Scopes ConsumerSurveysSurveysStop =
-      '[Consumersurveys'FullControl, Userinfo'Email]
-  requestClient ConsumerSurveysSurveysStop {..} =
-    go resourceId (Core.Just Core.AltJSON) consumerSurveysService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy ConsumerSurveysSurveysStopResource)
-          Core.mempty
+        type Rs ConsumerSurveysSurveysStop = SurveysStopResponse
+        type Scopes ConsumerSurveysSurveysStop =
+             '[Consumersurveys'FullControl, Userinfo'Email]
+        requestClient ConsumerSurveysSurveysStop{..}
+          = go resourceId (Core.Just Core.AltJSON) consumerSurveysService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy ConsumerSurveysSurveysStopResource)
+                      Core.mempty
+

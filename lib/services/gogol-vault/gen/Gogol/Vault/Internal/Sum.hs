@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Vault.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AccountCountError_ErrorType
     AccountCountError_ErrorType
-      ( AccountCountError_ErrorType_ERRORTYPEUNSPECIFIED,
+      (
+        AccountCountError_ErrorType_ERRORTYPEUNSPECIFIED,
         AccountCountError_ErrorType_WILDCARDTOOBROAD,
         AccountCountError_ErrorType_TOOMANYTERMS,
         AccountCountError_ErrorType_LOCATIONUNAVAILABLE,
@@ -44,7 +50,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * CalendarExportOptions_ExportFormat
     CalendarExportOptions_ExportFormat
-      ( CalendarExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        CalendarExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         CalendarExportOptions_ExportFormat_Mbox,
         CalendarExportOptions_ExportFormat_Pst,
         CalendarExportOptions_ExportFormat_Ics,
@@ -54,7 +61,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * CalendarOptions_ResponseStatusesItem
     CalendarOptions_ResponseStatusesItem
-      ( CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEUNSPECIFIED,
+      (
+        CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEUNSPECIFIED,
         CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSENEEDSACTION,
         CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEACCEPTED,
         CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEDECLINED,
@@ -64,7 +72,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * CountArtifactsRequest_View
     CountArtifactsRequest_View
-      ( CountArtifactsRequest_View_COUNTRESULTVIEWUNSPECIFIED,
+      (
+        CountArtifactsRequest_View_COUNTRESULTVIEWUNSPECIFIED,
         CountArtifactsRequest_View_TOTALCOUNT,
         CountArtifactsRequest_View_All,
         ..
@@ -72,16 +81,28 @@ module Gogol.Vault.Internal.Sum
 
     -- * DriveOptions_ClientSideEncryptedOption
     DriveOptions_ClientSideEncryptedOption
-      ( DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED,
+      (
+        DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED,
         DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONANY,
         DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONENCRYPTED,
         DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYPTED,
         ..
       ),
 
+    -- * DriveOptions_SharedDrivesOption
+    DriveOptions_SharedDrivesOption
+      (
+        DriveOptions_SharedDrivesOption_SHAREDDRIVESOPTIONUNSPECIFIED,
+        DriveOptions_SharedDrivesOption_NOTINCLUDED,
+        DriveOptions_SharedDrivesOption_INCLUDEDIFACCOUNTISNOTAMEMBER,
+        DriveOptions_SharedDrivesOption_Included,
+        ..
+      ),
+
     -- * Export_Status
     Export_Status
-      ( Export_Status_EXPORTSTATUSUNSPECIFIED,
+      (
+        Export_Status_EXPORTSTATUSUNSPECIFIED,
         Export_Status_Completed,
         Export_Status_Failed,
         Export_Status_INPROGRESS,
@@ -90,7 +111,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * ExportOptions_Region
     ExportOptions_Region
-      ( ExportOptions_Region_EXPORTREGIONUNSPECIFIED,
+      (
+        ExportOptions_Region_EXPORTREGIONUNSPECIFIED,
         ExportOptions_Region_Any,
         ExportOptions_Region_US,
         ExportOptions_Region_Europe,
@@ -99,7 +121,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * GeminiExportOptions_ExportFormat
     GeminiExportOptions_ExportFormat
-      ( GeminiExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        GeminiExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         GeminiExportOptions_ExportFormat_Mbox,
         GeminiExportOptions_ExportFormat_Pst,
         GeminiExportOptions_ExportFormat_Ics,
@@ -109,7 +132,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * GroupsExportOptions_ExportFormat
     GroupsExportOptions_ExportFormat
-      ( GroupsExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        GroupsExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         GroupsExportOptions_ExportFormat_Mbox,
         GroupsExportOptions_ExportFormat_Pst,
         GroupsExportOptions_ExportFormat_Ics,
@@ -119,7 +143,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * HangoutsChatExportOptions_ExportFormat
     HangoutsChatExportOptions_ExportFormat
-      ( HangoutsChatExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        HangoutsChatExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         HangoutsChatExportOptions_ExportFormat_Mbox,
         HangoutsChatExportOptions_ExportFormat_Pst,
         HangoutsChatExportOptions_ExportFormat_Ics,
@@ -129,7 +154,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * HeldVoiceQuery_CoveredDataItem
     HeldVoiceQuery_CoveredDataItem
-      ( HeldVoiceQuery_CoveredDataItem_COVEREDDATAUNSPECIFIED,
+      (
+        HeldVoiceQuery_CoveredDataItem_COVEREDDATAUNSPECIFIED,
         HeldVoiceQuery_CoveredDataItem_TEXTMESSAGES,
         HeldVoiceQuery_CoveredDataItem_Voicemails,
         HeldVoiceQuery_CoveredDataItem_CALLLOGS,
@@ -138,7 +164,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Hold_Corpus
     Hold_Corpus
-      ( Hold_Corpus_CORPUSTYPEUNSPECIFIED,
+      (
+        Hold_Corpus_CORPUSTYPEUNSPECIFIED,
         Hold_Corpus_Drive,
         Hold_Corpus_Mail,
         Hold_Corpus_Groups,
@@ -151,7 +178,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MailExportOptions_ExportFormat
     MailExportOptions_ExportFormat
-      ( MailExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        MailExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         MailExportOptions_ExportFormat_Mbox,
         MailExportOptions_ExportFormat_Pst,
         MailExportOptions_ExportFormat_Ics,
@@ -161,7 +189,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MailOptions_ClientSideEncryptedOption
     MailOptions_ClientSideEncryptedOption
-      ( MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED,
+      (
+        MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED,
         MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONANY,
         MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONENCRYPTED,
         MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYPTED,
@@ -170,7 +199,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Matter_MatterRegion
     Matter_MatterRegion
-      ( Matter_MatterRegion_MATTERREGIONUNSPECIFIED,
+      (
+        Matter_MatterRegion_MATTERREGIONUNSPECIFIED,
         Matter_MatterRegion_Any,
         Matter_MatterRegion_US,
         Matter_MatterRegion_Europe,
@@ -179,7 +209,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Matter_State
     Matter_State
-      ( Matter_State_STATEUNSPECIFIED,
+      (
+        Matter_State_STATEUNSPECIFIED,
         Matter_State_Open,
         Matter_State_Closed,
         Matter_State_Deleted,
@@ -188,7 +219,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MatterPermission_Role
     MatterPermission_Role
-      ( MatterPermission_Role_ROLEUNSPECIFIED,
+      (
+        MatterPermission_Role_ROLEUNSPECIFIED,
         MatterPermission_Role_Collaborator,
         MatterPermission_Role_Owner,
         ..
@@ -196,7 +228,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Query_Corpus
     Query_Corpus
-      ( Query_Corpus_CORPUSTYPEUNSPECIFIED,
+      (
+        Query_Corpus_CORPUSTYPEUNSPECIFIED,
         Query_Corpus_Drive,
         Query_Corpus_Mail,
         Query_Corpus_Groups,
@@ -209,7 +242,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Query_DataScope
     Query_DataScope
-      ( Query_DataScope_DATASCOPEUNSPECIFIED,
+      (
+        Query_DataScope_DATASCOPEUNSPECIFIED,
         Query_DataScope_ALLDATA,
         Query_DataScope_HELDDATA,
         Query_DataScope_UNPROCESSEDDATA,
@@ -218,7 +252,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Query_Method
     Query_Method
-      ( Query_Method_SEARCHMETHODUNSPECIFIED,
+      (
+        Query_Method_SEARCHMETHODUNSPECIFIED,
         Query_Method_Account,
         Query_Method_ORGUNIT,
         Query_Method_TEAMDRIVE,
@@ -232,7 +267,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * Query_SearchMethod
     Query_SearchMethod
-      ( Query_SearchMethod_SEARCHMETHODUNSPECIFIED,
+      (
+        Query_SearchMethod_SEARCHMETHODUNSPECIFIED,
         Query_SearchMethod_Account,
         Query_SearchMethod_ORGUNIT,
         Query_SearchMethod_TEAMDRIVE,
@@ -246,7 +282,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * VoiceExportOptions_ExportFormat
     VoiceExportOptions_ExportFormat
-      ( VoiceExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
+      (
+        VoiceExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED,
         VoiceExportOptions_ExportFormat_Mbox,
         VoiceExportOptions_ExportFormat_Pst,
         VoiceExportOptions_ExportFormat_Ics,
@@ -256,7 +293,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * VoiceOptions_CoveredDataItem
     VoiceOptions_CoveredDataItem
-      ( VoiceOptions_CoveredDataItem_COVEREDDATAUNSPECIFIED,
+      (
+        VoiceOptions_CoveredDataItem_COVEREDDATAUNSPECIFIED,
         VoiceOptions_CoveredDataItem_TEXTMESSAGES,
         VoiceOptions_CoveredDataItem_Voicemails,
         VoiceOptions_CoveredDataItem_CALLLOGS,
@@ -265,7 +303,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MattersGetView
     MattersGetView
-      ( MattersGetView_VIEWUNSPECIFIED,
+      (
+        MattersGetView_VIEWUNSPECIFIED,
         MattersGetView_Basic,
         MattersGetView_Full,
         ..
@@ -273,7 +312,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MattersHoldsGetView
     MattersHoldsGetView
-      ( MattersHoldsGetView_HOLDVIEWUNSPECIFIED,
+      (
+        MattersHoldsGetView_HOLDVIEWUNSPECIFIED,
         MattersHoldsGetView_BASICHOLD,
         MattersHoldsGetView_FULLHOLD,
         ..
@@ -281,7 +321,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MattersHoldsListView
     MattersHoldsListView
-      ( MattersHoldsListView_HOLDVIEWUNSPECIFIED,
+      (
+        MattersHoldsListView_HOLDVIEWUNSPECIFIED,
         MattersHoldsListView_BASICHOLD,
         MattersHoldsListView_FULLHOLD,
         ..
@@ -289,7 +330,8 @@ module Gogol.Vault.Internal.Sum
 
     -- * MattersListState
     MattersListState
-      ( MattersListState_STATEUNSPECIFIED,
+      (
+        MattersListState_STATEUNSPECIFIED,
         MattersListState_Open,
         MattersListState_Closed,
         MattersListState_Deleted,
@@ -298,28 +340,28 @@ module Gogol.Vault.Internal.Sum
 
     -- * MattersListView
     MattersListView
-      ( MattersListView_VIEWUNSPECIFIED,
+      (
+        MattersListView_VIEWUNSPECIFIED,
         MattersListView_Basic,
         MattersListView_Full,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -332,21 +374,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Account query error.
-newtype AccountCountError_ErrorType = AccountCountError_ErrorType {fromAccountCountError_ErrorType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AccountCountError_ErrorType = AccountCountError_ErrorType { fromAccountCountError_ErrorType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default.
 pattern AccountCountError_ErrorType_ERRORTYPEUNSPECIFIED :: AccountCountError_ErrorType
@@ -379,21 +420,20 @@ pattern AccountCountError_ErrorType_DEADLINEEXCEEDED = AccountCountError_ErrorTy
   AccountCountError_ErrorType_LOCATIONUNAVAILABLE,
   AccountCountError_ErrorType_Unknown,
   AccountCountError_ErrorType_DEADLINEEXCEEDED,
-  AccountCountError_ErrorType
-  #-}
+  AccountCountError_ErrorType #-}
 
 -- | The file format for exported text messages.
-newtype CalendarExportOptions_ExportFormat = CalendarExportOptions_ExportFormat {fromCalendarExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CalendarExportOptions_ExportFormat = CalendarExportOptions_ExportFormat { fromCalendarExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern CalendarExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: CalendarExportOptions_ExportFormat
@@ -421,20 +461,19 @@ pattern CalendarExportOptions_ExportFormat_Xml = CalendarExportOptions_ExportFor
   CalendarExportOptions_ExportFormat_Pst,
   CalendarExportOptions_ExportFormat_Ics,
   CalendarExportOptions_ExportFormat_Xml,
-  CalendarExportOptions_ExportFormat
-  #-}
+  CalendarExportOptions_ExportFormat #-}
 
-newtype CalendarOptions_ResponseStatusesItem = CalendarOptions_ResponseStatusesItem {fromCalendarOptions_ResponseStatusesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CalendarOptions_ResponseStatusesItem = CalendarOptions_ResponseStatusesItem { fromCalendarOptions_ResponseStatusesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Attendee response unspecified. If this is set no filtering on responses will be done, all other attendee responses that are part of the query options are ignored.
 pattern CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEUNSPECIFIED :: CalendarOptions_ResponseStatusesItem
@@ -462,21 +501,20 @@ pattern CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSETENTATIVE = Calenda
   CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEACCEPTED,
   CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSEDECLINED,
   CalendarOptions_ResponseStatusesItem_ATTENDEERESPONSETENTATIVE,
-  CalendarOptions_ResponseStatusesItem
-  #-}
+  CalendarOptions_ResponseStatusesItem #-}
 
 -- | Sets the granularity of the count results.
-newtype CountArtifactsRequest_View = CountArtifactsRequest_View {fromCountArtifactsRequest_View :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CountArtifactsRequest_View = CountArtifactsRequest_View { fromCountArtifactsRequest_View :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default. Same as **TOTAL_COUNT**.
 pattern CountArtifactsRequest_View_COUNTRESULTVIEWUNSPECIFIED :: CountArtifactsRequest_View
@@ -494,21 +532,20 @@ pattern CountArtifactsRequest_View_All = CountArtifactsRequest_View "ALL"
   CountArtifactsRequest_View_COUNTRESULTVIEWUNSPECIFIED,
   CountArtifactsRequest_View_TOTALCOUNT,
   CountArtifactsRequest_View_All,
-  CountArtifactsRequest_View
-  #-}
+  CountArtifactsRequest_View #-}
 
 -- | Set whether the results include only content encrypted with <https://support.google.com/a?p=cse_ov Google Workspace Client-side encryption> content, only unencrypted content, or both. Defaults to both. Currently supported for Drive.
-newtype DriveOptions_ClientSideEncryptedOption = DriveOptions_ClientSideEncryptedOption {fromDriveOptions_ClientSideEncryptedOption :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DriveOptions_ClientSideEncryptedOption = DriveOptions_ClientSideEncryptedOption { fromDriveOptions_ClientSideEncryptedOption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Encryption status unspecified. Results include both client-side encrypted and non-encrypted content.
 pattern DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED :: DriveOptions_ClientSideEncryptedOption
@@ -531,21 +568,56 @@ pattern DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYP
   DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONANY,
   DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONENCRYPTED,
   DriveOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYPTED,
-  DriveOptions_ClientSideEncryptedOption
-  #-}
+  DriveOptions_ClientSideEncryptedOption #-}
+
+-- | Optional. Options to include or exclude documents in shared drives. We recommend using this field over include/shared/drives. This field overrides include/shared/drives and include/team/drives when set.
+newtype DriveOptions_SharedDrivesOption = DriveOptions_SharedDrivesOption { fromDriveOptions_SharedDrivesOption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | No shared drive option specified.
+pattern DriveOptions_SharedDrivesOption_SHAREDDRIVESOPTIONUNSPECIFIED :: DriveOptions_SharedDrivesOption
+pattern DriveOptions_SharedDrivesOption_SHAREDDRIVESOPTIONUNSPECIFIED = DriveOptions_SharedDrivesOption "SHARED_DRIVES_OPTION_UNSPECIFIED"
+
+-- | If a resource is in a shared drive, it isn\'t included in the search.
+pattern DriveOptions_SharedDrivesOption_NOTINCLUDED :: DriveOptions_SharedDrivesOption
+pattern DriveOptions_SharedDrivesOption_NOTINCLUDED = DriveOptions_SharedDrivesOption "NOT_INCLUDED"
+
+-- | Shared drive resources are only included in instances where the account is a collaborator on a resource but they are not a member of the shared drive. This maps to the /\"Included only if documents shared directly (not due to shared drive membership)\"/ option in the Vault UI. (Previously \"include/shared/drives\" off)
+pattern DriveOptions_SharedDrivesOption_INCLUDEDIFACCOUNTISNOTAMEMBER :: DriveOptions_SharedDrivesOption
+pattern DriveOptions_SharedDrivesOption_INCLUDEDIFACCOUNTISNOTAMEMBER = DriveOptions_SharedDrivesOption "INCLUDED_IF_ACCOUNT_IS_NOT_A_MEMBER"
+
+-- | Resources in shared drives are included in the search. (Previously \"include/shared/drives\" on)
+pattern DriveOptions_SharedDrivesOption_Included :: DriveOptions_SharedDrivesOption
+pattern DriveOptions_SharedDrivesOption_Included = DriveOptions_SharedDrivesOption "INCLUDED"
+
+{-# COMPLETE
+  DriveOptions_SharedDrivesOption_SHAREDDRIVESOPTIONUNSPECIFIED,
+  DriveOptions_SharedDrivesOption_NOTINCLUDED,
+  DriveOptions_SharedDrivesOption_INCLUDEDIFACCOUNTISNOTAMEMBER,
+  DriveOptions_SharedDrivesOption_Included,
+  DriveOptions_SharedDrivesOption #-}
 
 -- | Output only. The status of the export.
-newtype Export_Status = Export_Status {fromExport_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Export_Status = Export_Status { fromExport_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The status is unspecified.
 pattern Export_Status_EXPORTSTATUSUNSPECIFIED :: Export_Status
@@ -568,21 +640,20 @@ pattern Export_Status_INPROGRESS = Export_Status "IN_PROGRESS"
   Export_Status_Completed,
   Export_Status_Failed,
   Export_Status_INPROGRESS,
-  Export_Status
-  #-}
+  Export_Status #-}
 
 -- | The requested data region for the export.
-newtype ExportOptions_Region = ExportOptions_Region {fromExportOptions_Region :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ExportOptions_Region = ExportOptions_Region { fromExportOptions_Region :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The region is unspecified. Defaults to ANY.
 pattern ExportOptions_Region_EXPORTREGIONUNSPECIFIED :: ExportOptions_Region
@@ -605,21 +676,20 @@ pattern ExportOptions_Region_Europe = ExportOptions_Region "EUROPE"
   ExportOptions_Region_Any,
   ExportOptions_Region_US,
   ExportOptions_Region_Europe,
-  ExportOptions_Region
-  #-}
+  ExportOptions_Region #-}
 
 -- | The file format for exported messages.
-newtype GeminiExportOptions_ExportFormat = GeminiExportOptions_ExportFormat {fromGeminiExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GeminiExportOptions_ExportFormat = GeminiExportOptions_ExportFormat { fromGeminiExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern GeminiExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: GeminiExportOptions_ExportFormat
@@ -647,21 +717,20 @@ pattern GeminiExportOptions_ExportFormat_Xml = GeminiExportOptions_ExportFormat 
   GeminiExportOptions_ExportFormat_Pst,
   GeminiExportOptions_ExportFormat_Ics,
   GeminiExportOptions_ExportFormat_Xml,
-  GeminiExportOptions_ExportFormat
-  #-}
+  GeminiExportOptions_ExportFormat #-}
 
 -- | The file format for exported messages.
-newtype GroupsExportOptions_ExportFormat = GroupsExportOptions_ExportFormat {fromGroupsExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GroupsExportOptions_ExportFormat = GroupsExportOptions_ExportFormat { fromGroupsExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern GroupsExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: GroupsExportOptions_ExportFormat
@@ -689,21 +758,20 @@ pattern GroupsExportOptions_ExportFormat_Xml = GroupsExportOptions_ExportFormat 
   GroupsExportOptions_ExportFormat_Pst,
   GroupsExportOptions_ExportFormat_Ics,
   GroupsExportOptions_ExportFormat_Xml,
-  GroupsExportOptions_ExportFormat
-  #-}
+  GroupsExportOptions_ExportFormat #-}
 
 -- | The file format for exported messages.
-newtype HangoutsChatExportOptions_ExportFormat = HangoutsChatExportOptions_ExportFormat {fromHangoutsChatExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype HangoutsChatExportOptions_ExportFormat = HangoutsChatExportOptions_ExportFormat { fromHangoutsChatExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern HangoutsChatExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: HangoutsChatExportOptions_ExportFormat
@@ -731,20 +799,19 @@ pattern HangoutsChatExportOptions_ExportFormat_Xml = HangoutsChatExportOptions_E
   HangoutsChatExportOptions_ExportFormat_Pst,
   HangoutsChatExportOptions_ExportFormat_Ics,
   HangoutsChatExportOptions_ExportFormat_Xml,
-  HangoutsChatExportOptions_ExportFormat
-  #-}
+  HangoutsChatExportOptions_ExportFormat #-}
 
-newtype HeldVoiceQuery_CoveredDataItem = HeldVoiceQuery_CoveredDataItem {fromHeldVoiceQuery_CoveredDataItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype HeldVoiceQuery_CoveredDataItem = HeldVoiceQuery_CoveredDataItem { fromHeldVoiceQuery_CoveredDataItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Covered data unspecified.
 pattern HeldVoiceQuery_CoveredDataItem_COVEREDDATAUNSPECIFIED :: HeldVoiceQuery_CoveredDataItem
@@ -767,21 +834,20 @@ pattern HeldVoiceQuery_CoveredDataItem_CALLLOGS = HeldVoiceQuery_CoveredDataItem
   HeldVoiceQuery_CoveredDataItem_TEXTMESSAGES,
   HeldVoiceQuery_CoveredDataItem_Voicemails,
   HeldVoiceQuery_CoveredDataItem_CALLLOGS,
-  HeldVoiceQuery_CoveredDataItem
-  #-}
+  HeldVoiceQuery_CoveredDataItem #-}
 
 -- | The service to be searched.
-newtype Hold_Corpus = Hold_Corpus {fromHold_Corpus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Hold_Corpus = Hold_Corpus { fromHold_Corpus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No service specified.
 pattern Hold_Corpus_CORPUSTYPEUNSPECIFIED :: Hold_Corpus
@@ -824,21 +890,20 @@ pattern Hold_Corpus_Gemini = Hold_Corpus "GEMINI"
   Hold_Corpus_Voice,
   Hold_Corpus_Calendar,
   Hold_Corpus_Gemini,
-  Hold_Corpus
-  #-}
+  Hold_Corpus #-}
 
 -- | The file format for exported messages.
-newtype MailExportOptions_ExportFormat = MailExportOptions_ExportFormat {fromMailExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MailExportOptions_ExportFormat = MailExportOptions_ExportFormat { fromMailExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern MailExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: MailExportOptions_ExportFormat
@@ -866,21 +931,20 @@ pattern MailExportOptions_ExportFormat_Xml = MailExportOptions_ExportFormat "XML
   MailExportOptions_ExportFormat_Pst,
   MailExportOptions_ExportFormat_Ics,
   MailExportOptions_ExportFormat_Xml,
-  MailExportOptions_ExportFormat
-  #-}
+  MailExportOptions_ExportFormat #-}
 
 -- | Specifies whether the results should include encrypted content, unencrypted content, or both. Defaults to including both.
-newtype MailOptions_ClientSideEncryptedOption = MailOptions_ClientSideEncryptedOption {fromMailOptions_ClientSideEncryptedOption :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MailOptions_ClientSideEncryptedOption = MailOptions_ClientSideEncryptedOption { fromMailOptions_ClientSideEncryptedOption :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Encryption status unspecified. Results include both client-side encrypted and non-encrypted content.
 pattern MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNSPECIFIED :: MailOptions_ClientSideEncryptedOption
@@ -903,21 +967,20 @@ pattern MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYPT
   MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONANY,
   MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONENCRYPTED,
   MailOptions_ClientSideEncryptedOption_CLIENTSIDEENCRYPTEDOPTIONUNENCRYPTED,
-  MailOptions_ClientSideEncryptedOption
-  #-}
+  MailOptions_ClientSideEncryptedOption #-}
 
 -- | Optional. The requested data region for the matter.
-newtype Matter_MatterRegion = Matter_MatterRegion {fromMatter_MatterRegion :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Matter_MatterRegion = Matter_MatterRegion { fromMatter_MatterRegion :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The region is unspecified. Defaults to ANY.
 pattern Matter_MatterRegion_MATTERREGIONUNSPECIFIED :: Matter_MatterRegion
@@ -940,21 +1003,20 @@ pattern Matter_MatterRegion_Europe = Matter_MatterRegion "EUROPE"
   Matter_MatterRegion_Any,
   Matter_MatterRegion_US,
   Matter_MatterRegion_Europe,
-  Matter_MatterRegion
-  #-}
+  Matter_MatterRegion #-}
 
 -- | The state of the matter.
-newtype Matter_State = Matter_State {fromMatter_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Matter_State = Matter_State { fromMatter_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The matter has no specified state.
 pattern Matter_State_STATEUNSPECIFIED :: Matter_State
@@ -977,21 +1039,20 @@ pattern Matter_State_Deleted = Matter_State "DELETED"
   Matter_State_Open,
   Matter_State_Closed,
   Matter_State_Deleted,
-  Matter_State
-  #-}
+  Matter_State #-}
 
 -- | The user\'s role for the matter.
-newtype MatterPermission_Role = MatterPermission_Role {fromMatterPermission_Role :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MatterPermission_Role = MatterPermission_Role { fromMatterPermission_Role :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No role assigned.
 pattern MatterPermission_Role_ROLEUNSPECIFIED :: MatterPermission_Role
@@ -1009,21 +1070,20 @@ pattern MatterPermission_Role_Owner = MatterPermission_Role "OWNER"
   MatterPermission_Role_ROLEUNSPECIFIED,
   MatterPermission_Role_Collaborator,
   MatterPermission_Role_Owner,
-  MatterPermission_Role
-  #-}
+  MatterPermission_Role #-}
 
 -- | The Google Workspace service to search.
-newtype Query_Corpus = Query_Corpus {fromQuery_Corpus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Query_Corpus = Query_Corpus { fromQuery_Corpus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No service specified.
 pattern Query_Corpus_CORPUSTYPEUNSPECIFIED :: Query_Corpus
@@ -1066,21 +1126,20 @@ pattern Query_Corpus_Gemini = Query_Corpus "GEMINI"
   Query_Corpus_Voice,
   Query_Corpus_Calendar,
   Query_Corpus_Gemini,
-  Query_Corpus
-  #-}
+  Query_Corpus #-}
 
 -- | The data source to search.
-newtype Query_DataScope = Query_DataScope {fromQuery_DataScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Query_DataScope = Query_DataScope { fromQuery_DataScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No data source specified.
 pattern Query_DataScope_DATASCOPEUNSPECIFIED :: Query_DataScope
@@ -1103,31 +1162,30 @@ pattern Query_DataScope_UNPROCESSEDDATA = Query_DataScope "UNPROCESSED_DATA"
   Query_DataScope_ALLDATA,
   Query_DataScope_HELDDATA,
   Query_DataScope_UNPROCESSEDDATA,
-  Query_DataScope
-  #-}
+  Query_DataScope #-}
 
 -- | The entity to search. This field replaces __searchMethod__ to support shared drives. When __searchMethod__ is __TEAM/DRIVE__, the response of this field is __SHARED/DRIVE__.
-newtype Query_Method = Query_Method {fromQuery_Method :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Query_Method = Query_Method { fromQuery_Method :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | A search method must be specified or else it is rejected.
 pattern Query_Method_SEARCHMETHODUNSPECIFIED :: Query_Method
 pattern Query_Method_SEARCHMETHODUNSPECIFIED = Query_Method "SEARCH_METHOD_UNSPECIFIED"
 
--- | Search the data of the accounts specified in <https://developers.google.com/vault/reference/rest/v1/Query#accountinfo AccountInfo>.
+-- | Search the data of the accounts specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#accountinfo AccountInfo>.
 pattern Query_Method_Account :: Query_Method
 pattern Query_Method_Account = Query_Method "ACCOUNT"
 
--- | Search the data of all accounts in the organizational unit specified in <https://developers.google.com/vault/reference/rest/v1/Query#orgunitinfo OrgUnitInfo>.
+-- | Search the data of all accounts in the organizational unit specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#orgunitinfo OrgUnitInfo>.
 pattern Query_Method_ORGUNIT :: Query_Method
 pattern Query_Method_ORGUNIT = Query_Method "ORG_UNIT"
 
@@ -1139,15 +1197,15 @@ pattern Query_Method_TEAMDRIVE = Query_Method "TEAM_DRIVE"
 pattern Query_Method_ENTIREORG :: Query_Method
 pattern Query_Method_ENTIREORG = Query_Method "ENTIRE_ORG"
 
--- | Search messages in the Chat spaces specified in <https://developers.google.com/vault/reference/rest/v1/Query#hangoutschatinfo HangoutsChatInfo>.
+-- | Search messages in the Chat spaces specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#hangoutschatinfo HangoutsChatInfo>.
 pattern Query_Method_Room :: Query_Method
 pattern Query_Method_Room = Query_Method "ROOM"
 
--- | Search for sites by the published site URLs specified in <https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo SitesUrlInfo>.
+-- | Search for sites by the published site URLs specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#sitesurlinfo SitesUrlInfo>.
 pattern Query_Method_SITESURL :: Query_Method
 pattern Query_Method_SITESURL = Query_Method "SITES_URL"
 
--- | Search the files in the shared drives specified in <https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo SharedDriveInfo>.
+-- | Search the files in the shared drives specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#shareddriveinfo SharedDriveInfo>.
 pattern Query_Method_SHAREDDRIVE :: Query_Method
 pattern Query_Method_SHAREDDRIVE = Query_Method "SHARED_DRIVE"
 
@@ -1165,31 +1223,30 @@ pattern Query_Method_DRIVEDOCUMENT = Query_Method "DRIVE_DOCUMENT"
   Query_Method_SITESURL,
   Query_Method_SHAREDDRIVE,
   Query_Method_DRIVEDOCUMENT,
-  Query_Method
-  #-}
+  Query_Method #-}
 
 -- | The search method to use.
-newtype Query_SearchMethod = Query_SearchMethod {fromQuery_SearchMethod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Query_SearchMethod = Query_SearchMethod { fromQuery_SearchMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | A search method must be specified or else it is rejected.
 pattern Query_SearchMethod_SEARCHMETHODUNSPECIFIED :: Query_SearchMethod
 pattern Query_SearchMethod_SEARCHMETHODUNSPECIFIED = Query_SearchMethod "SEARCH_METHOD_UNSPECIFIED"
 
--- | Search the data of the accounts specified in <https://developers.google.com/vault/reference/rest/v1/Query#accountinfo AccountInfo>.
+-- | Search the data of the accounts specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#accountinfo AccountInfo>.
 pattern Query_SearchMethod_Account :: Query_SearchMethod
 pattern Query_SearchMethod_Account = Query_SearchMethod "ACCOUNT"
 
--- | Search the data of all accounts in the organizational unit specified in <https://developers.google.com/vault/reference/rest/v1/Query#orgunitinfo OrgUnitInfo>.
+-- | Search the data of all accounts in the organizational unit specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#orgunitinfo OrgUnitInfo>.
 pattern Query_SearchMethod_ORGUNIT :: Query_SearchMethod
 pattern Query_SearchMethod_ORGUNIT = Query_SearchMethod "ORG_UNIT"
 
@@ -1201,15 +1258,15 @@ pattern Query_SearchMethod_TEAMDRIVE = Query_SearchMethod "TEAM_DRIVE"
 pattern Query_SearchMethod_ENTIREORG :: Query_SearchMethod
 pattern Query_SearchMethod_ENTIREORG = Query_SearchMethod "ENTIRE_ORG"
 
--- | Search messages in the Chat spaces specified in <https://developers.google.com/vault/reference/rest/v1/Query#hangoutschatinfo HangoutsChatInfo>.
+-- | Search messages in the Chat spaces specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#hangoutschatinfo HangoutsChatInfo>.
 pattern Query_SearchMethod_Room :: Query_SearchMethod
 pattern Query_SearchMethod_Room = Query_SearchMethod "ROOM"
 
--- | Search for sites by the published site URLs specified in <https://developers.google.com/vault/reference/rest/v1/Query#sitesurlinfo SitesUrlInfo>.
+-- | Search for sites by the published site URLs specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#sitesurlinfo SitesUrlInfo>.
 pattern Query_SearchMethod_SITESURL :: Query_SearchMethod
 pattern Query_SearchMethod_SITESURL = Query_SearchMethod "SITES_URL"
 
--- | Search the files in the shared drives specified in <https://developers.google.com/vault/reference/rest/v1/Query#shareddriveinfo SharedDriveInfo>.
+-- | Search the files in the shared drives specified in <https://developers.google.com/workspace/vault/reference/rest/v1/Query#shareddriveinfo SharedDriveInfo>.
 pattern Query_SearchMethod_SHAREDDRIVE :: Query_SearchMethod
 pattern Query_SearchMethod_SHAREDDRIVE = Query_SearchMethod "SHARED_DRIVE"
 
@@ -1227,21 +1284,20 @@ pattern Query_SearchMethod_DRIVEDOCUMENT = Query_SearchMethod "DRIVE_DOCUMENT"
   Query_SearchMethod_SITESURL,
   Query_SearchMethod_SHAREDDRIVE,
   Query_SearchMethod_DRIVEDOCUMENT,
-  Query_SearchMethod
-  #-}
+  Query_SearchMethod #-}
 
 -- | The file format for exported text messages.
-newtype VoiceExportOptions_ExportFormat = VoiceExportOptions_ExportFormat {fromVoiceExportOptions_ExportFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype VoiceExportOptions_ExportFormat = VoiceExportOptions_ExportFormat { fromVoiceExportOptions_ExportFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No export format specified.
 pattern VoiceExportOptions_ExportFormat_EXPORTFORMATUNSPECIFIED :: VoiceExportOptions_ExportFormat
@@ -1269,20 +1325,19 @@ pattern VoiceExportOptions_ExportFormat_Xml = VoiceExportOptions_ExportFormat "X
   VoiceExportOptions_ExportFormat_Pst,
   VoiceExportOptions_ExportFormat_Ics,
   VoiceExportOptions_ExportFormat_Xml,
-  VoiceExportOptions_ExportFormat
-  #-}
+  VoiceExportOptions_ExportFormat #-}
 
-newtype VoiceOptions_CoveredDataItem = VoiceOptions_CoveredDataItem {fromVoiceOptions_CoveredDataItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype VoiceOptions_CoveredDataItem = VoiceOptions_CoveredDataItem { fromVoiceOptions_CoveredDataItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Covered data unspecified.
 pattern VoiceOptions_CoveredDataItem_COVEREDDATAUNSPECIFIED :: VoiceOptions_CoveredDataItem
@@ -1305,21 +1360,20 @@ pattern VoiceOptions_CoveredDataItem_CALLLOGS = VoiceOptions_CoveredDataItem "CA
   VoiceOptions_CoveredDataItem_TEXTMESSAGES,
   VoiceOptions_CoveredDataItem_Voicemails,
   VoiceOptions_CoveredDataItem_CALLLOGS,
-  VoiceOptions_CoveredDataItem
-  #-}
+  VoiceOptions_CoveredDataItem #-}
 
 -- | Specifies how much information about the matter to return in the response.
-newtype MattersGetView = MattersGetView {fromMattersGetView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MattersGetView = MattersGetView { fromMattersGetView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The amount of detail is unspecified. Same as __BASIC__.
 pattern MattersGetView_VIEWUNSPECIFIED :: MattersGetView
@@ -1329,7 +1383,7 @@ pattern MattersGetView_VIEWUNSPECIFIED = MattersGetView "VIEW_UNSPECIFIED"
 pattern MattersGetView_Basic :: MattersGetView
 pattern MattersGetView_Basic = MattersGetView "BASIC"
 
--- | Returns the basic details and a list of matter owners and collaborators (see <https://developers.google.com/vault/reference/rest/v1/matters#matterpermission MatterPermissions>).
+-- | Returns the basic details and a list of matter owners and collaborators (see <https://developers.google.com/workspace/vault/reference/rest/v1/matters#matterpermission MatterPermissions>).
 pattern MattersGetView_Full :: MattersGetView
 pattern MattersGetView_Full = MattersGetView "FULL"
 
@@ -1337,21 +1391,20 @@ pattern MattersGetView_Full = MattersGetView "FULL"
   MattersGetView_VIEWUNSPECIFIED,
   MattersGetView_Basic,
   MattersGetView_Full,
-  MattersGetView
-  #-}
+  MattersGetView #-}
 
 -- | The amount of detail to return for a hold.
-newtype MattersHoldsGetView = MattersHoldsGetView {fromMattersHoldsGetView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MattersHoldsGetView = MattersHoldsGetView { fromMattersHoldsGetView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Defaults to **FULL_HOLD**.
 pattern MattersHoldsGetView_HOLDVIEWUNSPECIFIED :: MattersHoldsGetView
@@ -1369,21 +1422,20 @@ pattern MattersHoldsGetView_FULLHOLD = MattersHoldsGetView "FULL_HOLD"
   MattersHoldsGetView_HOLDVIEWUNSPECIFIED,
   MattersHoldsGetView_BASICHOLD,
   MattersHoldsGetView_FULLHOLD,
-  MattersHoldsGetView
-  #-}
+  MattersHoldsGetView #-}
 
 -- | The amount of detail to return for a hold.
-newtype MattersHoldsListView = MattersHoldsListView {fromMattersHoldsListView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MattersHoldsListView = MattersHoldsListView { fromMattersHoldsListView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not specified. Defaults to **FULL_HOLD**.
 pattern MattersHoldsListView_HOLDVIEWUNSPECIFIED :: MattersHoldsListView
@@ -1401,21 +1453,20 @@ pattern MattersHoldsListView_FULLHOLD = MattersHoldsListView "FULL_HOLD"
   MattersHoldsListView_HOLDVIEWUNSPECIFIED,
   MattersHoldsListView_BASICHOLD,
   MattersHoldsListView_FULLHOLD,
-  MattersHoldsListView
-  #-}
+  MattersHoldsListView #-}
 
 -- | If set, lists only matters with the specified state. The default lists matters of all states.
-newtype MattersListState = MattersListState {fromMattersListState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MattersListState = MattersListState { fromMattersListState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The matter has no specified state.
 pattern MattersListState_STATEUNSPECIFIED :: MattersListState
@@ -1438,21 +1489,20 @@ pattern MattersListState_Deleted = MattersListState "DELETED"
   MattersListState_Open,
   MattersListState_Closed,
   MattersListState_Deleted,
-  MattersListState
-  #-}
+  MattersListState #-}
 
 -- | Specifies how much information about the matter to return in response.
-newtype MattersListView = MattersListView {fromMattersListView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MattersListView = MattersListView { fromMattersListView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The amount of detail is unspecified. Same as __BASIC__.
 pattern MattersListView_VIEWUNSPECIFIED :: MattersListView
@@ -1462,7 +1512,7 @@ pattern MattersListView_VIEWUNSPECIFIED = MattersListView "VIEW_UNSPECIFIED"
 pattern MattersListView_Basic :: MattersListView
 pattern MattersListView_Basic = MattersListView "BASIC"
 
--- | Returns the basic details and a list of matter owners and collaborators (see <https://developers.google.com/vault/reference/rest/v1/matters#matterpermission MatterPermissions>).
+-- | Returns the basic details and a list of matter owners and collaborators (see <https://developers.google.com/workspace/vault/reference/rest/v1/matters#matterpermission MatterPermissions>).
 pattern MattersListView_Full :: MattersListView
 pattern MattersListView_Full = MattersListView "FULL"
 
@@ -1470,5 +1520,4 @@ pattern MattersListView_Full = MattersListView "FULL"
   MattersListView_VIEWUNSPECIFIED,
   MattersListView_Basic,
   MattersListView_Full,
-  MattersListView
-  #-}
+  MattersListView #-}

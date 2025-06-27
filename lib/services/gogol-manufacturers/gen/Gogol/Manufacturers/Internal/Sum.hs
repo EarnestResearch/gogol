@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Manufacturers.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * DestinationStatus_Status
     DestinationStatus_Status
-      ( DestinationStatus_Status_Unknown,
+      (
+        DestinationStatus_Status_Unknown,
         DestinationStatus_Status_Active,
         DestinationStatus_Status_Pending,
         DestinationStatus_Status_Disapproved,
@@ -42,7 +48,8 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * Image_Status
     Image_Status
-      ( Image_Status_STATUSUNSPECIFIED,
+      (
+        Image_Status_STATUSUNSPECIFIED,
         Image_Status_PENDINGPROCESSING,
         Image_Status_PENDINGCRAWL,
         Image_Status_OK,
@@ -60,7 +67,8 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * Image_Type
     Image_Type
-      ( Image_Type_TYPEUNSPECIFIED,
+      (
+        Image_Type_TYPEUNSPECIFIED,
         Image_Type_Crawled,
         Image_Type_Uploaded,
         ..
@@ -68,7 +76,8 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * Issue_Resolution
     Issue_Resolution
-      ( Issue_Resolution_RESOLUTIONUNSPECIFIED,
+      (
+        Issue_Resolution_RESOLUTIONUNSPECIFIED,
         Issue_Resolution_USERACTION,
         Issue_Resolution_PENDINGPROCESSING,
         ..
@@ -76,7 +85,8 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * Issue_Severity
     Issue_Severity
-      ( Issue_Severity_SEVERITYUNSPECIFIED,
+      (
+        Issue_Severity_SEVERITYUNSPECIFIED,
         Issue_Severity_Error',
         Issue_Severity_Warning,
         Issue_Severity_Info,
@@ -85,7 +95,8 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * AccountsProductsGetInclude
     AccountsProductsGetInclude
-      ( AccountsProductsGetInclude_Unknown,
+      (
+        AccountsProductsGetInclude_Unknown,
         AccountsProductsGetInclude_Attributes,
         AccountsProductsGetInclude_Issues,
         AccountsProductsGetInclude_DESTINATIONSTATUSES,
@@ -94,29 +105,29 @@ module Gogol.Manufacturers.Internal.Sum
 
     -- * AccountsProductsListInclude
     AccountsProductsListInclude
-      ( AccountsProductsListInclude_Unknown,
+      (
+        AccountsProductsListInclude_Unknown,
         AccountsProductsListInclude_Attributes,
         AccountsProductsListInclude_Issues,
         AccountsProductsListInclude_DESTINATIONSTATUSES,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -129,21 +140,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The status of the destination.
-newtype DestinationStatus_Status = DestinationStatus_Status {fromDestinationStatus_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DestinationStatus_Status = DestinationStatus_Status { fromDestinationStatus_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified status, never used.
 pattern DestinationStatus_Status_Unknown :: DestinationStatus_Status
@@ -166,21 +176,20 @@ pattern DestinationStatus_Status_Disapproved = DestinationStatus_Status "DISAPPR
   DestinationStatus_Status_Active,
   DestinationStatus_Status_Pending,
   DestinationStatus_Status_Disapproved,
-  DestinationStatus_Status
-  #-}
+  DestinationStatus_Status #-}
 
 -- | The status of the image. \@OutputOnly
-newtype Image_Status = Image_Status {fromImage_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Image_Status = Image_Status { fromImage_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The image status is unspecified. Should not be used.
 pattern Image_Status_STATUSUNSPECIFIED :: Image_Status
@@ -248,21 +257,20 @@ pattern Image_Status_HTTP_404 = Image_Status "HTTP_404"
   Image_Status_CRAWLSKIPPED,
   Image_Status_Hostloaded,
   Image_Status_HTTP_404,
-  Image_Status
-  #-}
+  Image_Status #-}
 
 -- | The type of the image, i.e., crawled or uploaded. \@OutputOnly
-newtype Image_Type = Image_Type {fromImage_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Image_Type = Image_Type { fromImage_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Type is unspecified. Should not be used.
 pattern Image_Type_TYPEUNSPECIFIED :: Image_Type
@@ -280,21 +288,20 @@ pattern Image_Type_Uploaded = Image_Type "UPLOADED"
   Image_Type_TYPEUNSPECIFIED,
   Image_Type_Crawled,
   Image_Type_Uploaded,
-  Image_Type
-  #-}
+  Image_Type #-}
 
 -- | What needs to happen to resolve the issue.
-newtype Issue_Resolution = Issue_Resolution {fromIssue_Resolution :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Issue_Resolution = Issue_Resolution { fromIssue_Resolution :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified resolution, never used.
 pattern Issue_Resolution_RESOLUTIONUNSPECIFIED :: Issue_Resolution
@@ -312,21 +319,20 @@ pattern Issue_Resolution_PENDINGPROCESSING = Issue_Resolution "PENDING_PROCESSIN
   Issue_Resolution_RESOLUTIONUNSPECIFIED,
   Issue_Resolution_USERACTION,
   Issue_Resolution_PENDINGPROCESSING,
-  Issue_Resolution
-  #-}
+  Issue_Resolution #-}
 
 -- | The severity of the issue.
-newtype Issue_Severity = Issue_Severity {fromIssue_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Issue_Severity = Issue_Severity { fromIssue_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified severity, never used.
 pattern Issue_Severity_SEVERITYUNSPECIFIED :: Issue_Severity
@@ -349,21 +355,20 @@ pattern Issue_Severity_Info = Issue_Severity "INFO"
   Issue_Severity_Error',
   Issue_Severity_Warning,
   Issue_Severity_Info,
-  Issue_Severity
-  #-}
+  Issue_Severity #-}
 
 -- | The information to be included in the response. Only sections listed here will be returned.
-newtype AccountsProductsGetInclude = AccountsProductsGetInclude {fromAccountsProductsGetInclude :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AccountsProductsGetInclude = AccountsProductsGetInclude { fromAccountsProductsGetInclude :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown, never used.
 pattern AccountsProductsGetInclude_Unknown :: AccountsProductsGetInclude
@@ -386,21 +391,20 @@ pattern AccountsProductsGetInclude_DESTINATIONSTATUSES = AccountsProductsGetIncl
   AccountsProductsGetInclude_Attributes,
   AccountsProductsGetInclude_Issues,
   AccountsProductsGetInclude_DESTINATIONSTATUSES,
-  AccountsProductsGetInclude
-  #-}
+  AccountsProductsGetInclude #-}
 
 -- | The information to be included in the response. Only sections listed here will be returned.
-newtype AccountsProductsListInclude = AccountsProductsListInclude {fromAccountsProductsListInclude :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AccountsProductsListInclude = AccountsProductsListInclude { fromAccountsProductsListInclude :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown, never used.
 pattern AccountsProductsListInclude_Unknown :: AccountsProductsListInclude
@@ -423,5 +427,4 @@ pattern AccountsProductsListInclude_DESTINATIONSTATUSES = AccountsProductsListIn
   AccountsProductsListInclude_Attributes,
   AccountsProductsListInclude_Issues,
   AccountsProductsListInclude_DESTINATIONSTATUSES,
-  AccountsProductsListInclude
-  #-}
+  AccountsProductsListInclude #-}

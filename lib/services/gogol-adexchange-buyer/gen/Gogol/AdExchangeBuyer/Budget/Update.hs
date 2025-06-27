@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,71 +29,65 @@
 --
 -- /See:/ <https://developers.google.com/ad-exchange/buyer-rest Ad Exchange Buyer API Reference> for @adexchangebuyer.budget.update@.
 module Gogol.AdExchangeBuyer.Budget.Update
-  ( -- * Resource
-    AdExchangeBuyerBudgetUpdateResource,
+    (
+    -- * Resource
+      AdExchangeBuyerBudgetUpdateResource
 
     -- ** Constructing a Request
-    AdExchangeBuyerBudgetUpdate (..),
-    newAdExchangeBuyerBudgetUpdate,
-  )
-where
+    , AdExchangeBuyerBudgetUpdate (..)
+    , newAdExchangeBuyerBudgetUpdate
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.AdExchangeBuyer.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @adexchangebuyer.budget.update@ method which the
 -- 'AdExchangeBuyerBudgetUpdate' request conforms to.
 type AdExchangeBuyerBudgetUpdateResource =
-  "adexchangebuyer"
-    Core.:> "v1.4"
-    Core.:> "billinginfo"
-    Core.:> Core.Capture "accountId" Core.Int64
-    Core.:> Core.Capture "billingId" Core.Int64
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.ReqBody '[Core.JSON] Budget
-    Core.:> Core.Put '[Core.JSON] Budget
+     "adexchangebuyer" Core.:>
+       "v1.4" Core.:>
+         "billinginfo" Core.:>
+           Core.Capture "accountId" Core.Int64 Core.:>
+             Core.Capture "billingId" Core.Int64 Core.:>
+               Core.QueryParam "alt" Core.AltJSON Core.:>
+                 Core.ReqBody '[Core.JSON] Budget Core.:>
+                   Core.Put '[Core.JSON] Budget
 
 -- | Updates the budget amount for the budget of the adgroup specified by the accountId and billingId, with the budget amount in the request.
 --
 -- /See:/ 'newAdExchangeBuyerBudgetUpdate' smart constructor.
 data AdExchangeBuyerBudgetUpdate = AdExchangeBuyerBudgetUpdate
-  { -- | The account id associated with the budget being updated.
-    accountId :: Core.Int64,
-    -- | The billing id associated with the budget being updated.
-    billingId :: Core.Int64,
-    -- | Multipart request metadata.
-    payload :: Budget
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | The account id associated with the budget being updated.
+      accountId :: Core.Int64
+      -- | The billing id associated with the budget being updated.
+    , billingId :: Core.Int64
+      -- | Multipart request metadata.
+    , payload :: Budget
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'AdExchangeBuyerBudgetUpdate' with the minimum fields required to make a request.
-newAdExchangeBuyerBudgetUpdate ::
-  -- |  The account id associated with the budget being updated. See 'accountId'.
-  Core.Int64 ->
-  -- |  The billing id associated with the budget being updated. See 'billingId'.
-  Core.Int64 ->
-  -- |  Multipart request metadata. See 'payload'.
-  Budget ->
-  AdExchangeBuyerBudgetUpdate
-newAdExchangeBuyerBudgetUpdate accountId billingId payload =
-  AdExchangeBuyerBudgetUpdate
-    { accountId = accountId,
-      billingId = billingId,
-      payload = payload
-    }
-
+newAdExchangeBuyerBudgetUpdate 
+    :: 
+                               Core.Int64
+       -- ^  The account id associated with the budget being updated. See 'accountId'.
+    -> Core.Int64
+       -- ^  The billing id associated with the budget being updated. See 'billingId'.
+    -> Budget
+       -- ^  Multipart request metadata. See 'payload'.
+    -> AdExchangeBuyerBudgetUpdate
+newAdExchangeBuyerBudgetUpdate accountId billingId payload
+  = AdExchangeBuyerBudgetUpdate{accountId = accountId,
+                                billingId = billingId, payload = payload}
 instance Core.GoogleRequest AdExchangeBuyerBudgetUpdate where
-  type Rs AdExchangeBuyerBudgetUpdate = Budget
-  type Scopes AdExchangeBuyerBudgetUpdate = '[Adexchange'Buyer]
-  requestClient AdExchangeBuyerBudgetUpdate {..} =
-    go
-      accountId
-      billingId
-      (Core.Just Core.AltJSON)
-      payload
-      adExchangeBuyerService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy AdExchangeBuyerBudgetUpdateResource)
-          Core.mempty
+        type Rs AdExchangeBuyerBudgetUpdate = Budget
+        type Scopes AdExchangeBuyerBudgetUpdate = '[Adexchange'Buyer]
+        requestClient AdExchangeBuyerBudgetUpdate{..}
+          = go accountId billingId (Core.Just Core.AltJSON) payload
+              adExchangeBuyerService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy AdExchangeBuyerBudgetUpdateResource)
+                      Core.mempty
+

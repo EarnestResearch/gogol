@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,84 +29,74 @@
 --
 -- /See:/ <https://cloud.google.com/container-analysis/api/reference/rest/ Container Analysis API Reference> for @containeranalysis.projects.occurrences.get@.
 module Gogol.ContainerAnalysis.Projects.Occurrences.Get
-  ( -- * Resource
-    ContainerAnalysisProjectsOccurrencesGetResource,
+    (
+    -- * Resource
+      ContainerAnalysisProjectsOccurrencesGetResource
 
     -- ** Constructing a Request
-    ContainerAnalysisProjectsOccurrencesGet (..),
-    newContainerAnalysisProjectsOccurrencesGet,
-  )
-where
+    , ContainerAnalysisProjectsOccurrencesGet (..)
+    , newContainerAnalysisProjectsOccurrencesGet
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.ContainerAnalysis.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @containeranalysis.projects.occurrences.get@ method which the
 -- 'ContainerAnalysisProjectsOccurrencesGet' request conforms to.
 type ContainerAnalysisProjectsOccurrencesGetResource =
-  "v1"
-    Core.:> Core.Capture "name" Core.Text
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get '[Core.JSON] Occurrence
+     "v1" Core.:>
+       Core.Capture "name" Core.Text Core.:>
+         Core.QueryParam "$.xgafv" Xgafv Core.:>
+           Core.QueryParam "access_token" Core.Text Core.:>
+             Core.QueryParam "callback" Core.Text Core.:>
+               Core.QueryParam "uploadType" Core.Text Core.:>
+                 Core.QueryParam "upload_protocol" Core.Text Core.:>
+                   Core.QueryParam "alt" Core.AltJSON Core.:>
+                     Core.Get '[Core.JSON] Occurrence
 
 -- | Gets the specified occurrence.
 --
 -- /See:/ 'newContainerAnalysisProjectsOccurrencesGet' smart constructor.
 data ContainerAnalysisProjectsOccurrencesGet = ContainerAnalysisProjectsOccurrencesGet
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Required. The name of the occurrence in the form of @projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]@.
-    name :: Core.Text,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Required. The name of the occurrence in the form of @projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]@.
+    , name :: Core.Text
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'ContainerAnalysisProjectsOccurrencesGet' with the minimum fields required to make a request.
-newContainerAnalysisProjectsOccurrencesGet ::
-  -- |  Required. The name of the occurrence in the form of @projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]@. See 'name'.
-  Core.Text ->
-  ContainerAnalysisProjectsOccurrencesGet
-newContainerAnalysisProjectsOccurrencesGet name =
-  ContainerAnalysisProjectsOccurrencesGet
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      name = name,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
+newContainerAnalysisProjectsOccurrencesGet 
+    :: 
+                                           Core.Text
+       -- ^  Required. The name of the occurrence in the form of @projects\/[PROJECT_ID]\/occurrences\/[OCCURRENCE_ID]@. See 'name'.
+    -> ContainerAnalysisProjectsOccurrencesGet
+newContainerAnalysisProjectsOccurrencesGet name
+  = ContainerAnalysisProjectsOccurrencesGet{xgafv = Core.Nothing,
+                                            accessToken = Core.Nothing, callback = Core.Nothing,
+                                            name = name, uploadType = Core.Nothing,
+                                            uploadProtocol = Core.Nothing}
+instance Core.GoogleRequest ContainerAnalysisProjectsOccurrencesGet
+         where
+        type Rs ContainerAnalysisProjectsOccurrencesGet = Occurrence
+        type Scopes ContainerAnalysisProjectsOccurrencesGet =
+             '[CloudPlatform'FullControl]
+        requestClient ContainerAnalysisProjectsOccurrencesGet{..}
+          = go name xgafv accessToken callback uploadType uploadProtocol
+              (Core.Just Core.AltJSON)
+              containerAnalysisService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy ContainerAnalysisProjectsOccurrencesGetResource)
+                      Core.mempty
 
-instance Core.GoogleRequest ContainerAnalysisProjectsOccurrencesGet where
-  type Rs ContainerAnalysisProjectsOccurrencesGet = Occurrence
-  type
-    Scopes ContainerAnalysisProjectsOccurrencesGet =
-      '[CloudPlatform'FullControl]
-  requestClient ContainerAnalysisProjectsOccurrencesGet {..} =
-    go
-      name
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      containerAnalysisService
-    where
-      go =
-        Core.buildClient
-          ( Core.Proxy ::
-              Core.Proxy ContainerAnalysisProjectsOccurrencesGetResource
-          )
-          Core.mempty

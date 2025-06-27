@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,54 +24,54 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.URLShortener.Types
-  ( -- * Configuration
-    uRLShortenerService,
+    (
+    -- * Configuration
+      uRLShortenerService
 
     -- * OAuth Scopes
-    Urlshortener'FullControl,
+    , Urlshortener'FullControl
 
     -- * Types
 
     -- ** AnalyticsSnapshot
-    AnalyticsSnapshot (..),
-    newAnalyticsSnapshot,
+    , AnalyticsSnapshot (..)
+    , newAnalyticsSnapshot
 
     -- ** AnalyticsSummary
-    AnalyticsSummary (..),
-    newAnalyticsSummary,
+    , AnalyticsSummary (..)
+    , newAnalyticsSummary
 
     -- ** StringCount
-    StringCount (..),
-    newStringCount,
+    , StringCount (..)
+    , newStringCount
 
     -- ** Url
-    Url (..),
-    newUrl,
+    , Url (..)
+    , newUrl
 
     -- ** UrlHistory
-    UrlHistory (..),
-    newUrlHistory,
+    , UrlHistory (..)
+    , newUrlHistory
 
     -- ** UrlGetProjection
-    UrlGetProjection (..),
+    , UrlGetProjection (..)
 
     -- ** UrlListProjection
-    UrlListProjection (..),
-  )
-where
+    , UrlListProjection (..)
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.URLShortener.Internal.Product
 import Gogol.URLShortener.Internal.Sum
 
 -- | Default request referring to version @v1@ of the URL Shortener API. This contains the host and root path used as a starting point for constructing service requests.
 uRLShortenerService :: Core.ServiceConfig
-uRLShortenerService =
-  Core.defaultService
-    (Core.ServiceId "urlshortener:v1")
-    "www.googleapis.com"
+uRLShortenerService
+  = Core.defaultService (Core.ServiceId "urlshortener:v1")
+      "www.googleapis.com"
 
 -- | Manage your goo.gl short URLs
 type Urlshortener'FullControl =
-  "https://www.googleapis.com/auth/urlshortener"
+     "https://www.googleapis.com/auth/urlshortener"

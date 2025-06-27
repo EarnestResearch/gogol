@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -26,128 +27,128 @@
 --
 -- The Google Tasks API lets you manage your tasks and task lists.
 --
--- /See:/ <https://developers.google.com/tasks/ Google Tasks API Reference>
+-- /See:/ <https://developers.google.com/workspace/tasks/ Google Tasks API Reference>
 module Gogol.AppsTasks
-  ( -- * Configuration
-    appsTasksService,
+    (
+    -- * Configuration
+      appsTasksService
 
     -- * OAuth Scopes
-    Tasks'FullControl,
-    Tasks'Readonly,
+    , Tasks'FullControl
+    , Tasks'Readonly
 
     -- * Resources
 
     -- ** tasks.tasklists.delete
-    TasksTasklistsDeleteResource,
-    TasksTasklistsDelete (..),
-    newTasksTasklistsDelete,
+    , TasksTasklistsDeleteResource
+    , TasksTasklistsDelete (..)
+    , newTasksTasklistsDelete
 
     -- ** tasks.tasklists.get
-    TasksTasklistsGetResource,
-    TasksTasklistsGet (..),
-    newTasksTasklistsGet,
+    , TasksTasklistsGetResource
+    , TasksTasklistsGet (..)
+    , newTasksTasklistsGet
 
     -- ** tasks.tasklists.insert
-    TasksTasklistsInsertResource,
-    TasksTasklistsInsert (..),
-    newTasksTasklistsInsert,
+    , TasksTasklistsInsertResource
+    , TasksTasklistsInsert (..)
+    , newTasksTasklistsInsert
 
     -- ** tasks.tasklists.list
-    TasksTasklistsListResource,
-    TasksTasklistsList (..),
-    newTasksTasklistsList,
+    , TasksTasklistsListResource
+    , TasksTasklistsList (..)
+    , newTasksTasklistsList
 
     -- ** tasks.tasklists.patch
-    TasksTasklistsPatchResource,
-    TasksTasklistsPatch (..),
-    newTasksTasklistsPatch,
+    , TasksTasklistsPatchResource
+    , TasksTasklistsPatch (..)
+    , newTasksTasklistsPatch
 
     -- ** tasks.tasklists.update
-    TasksTasklistsUpdateResource,
-    TasksTasklistsUpdate (..),
-    newTasksTasklistsUpdate,
+    , TasksTasklistsUpdateResource
+    , TasksTasklistsUpdate (..)
+    , newTasksTasklistsUpdate
 
     -- ** tasks.tasks.clear
-    TasksTasksClearResource,
-    TasksTasksClear (..),
-    newTasksTasksClear,
+    , TasksTasksClearResource
+    , TasksTasksClear (..)
+    , newTasksTasksClear
 
     -- ** tasks.tasks.delete
-    TasksTasksDeleteResource,
-    TasksTasksDelete (..),
-    newTasksTasksDelete,
+    , TasksTasksDeleteResource
+    , TasksTasksDelete (..)
+    , newTasksTasksDelete
 
     -- ** tasks.tasks.get
-    TasksTasksGetResource,
-    TasksTasksGet (..),
-    newTasksTasksGet,
+    , TasksTasksGetResource
+    , TasksTasksGet (..)
+    , newTasksTasksGet
 
     -- ** tasks.tasks.insert
-    TasksTasksInsertResource,
-    TasksTasksInsert (..),
-    newTasksTasksInsert,
+    , TasksTasksInsertResource
+    , TasksTasksInsert (..)
+    , newTasksTasksInsert
 
     -- ** tasks.tasks.list
-    TasksTasksListResource,
-    TasksTasksList (..),
-    newTasksTasksList,
+    , TasksTasksListResource
+    , TasksTasksList (..)
+    , newTasksTasksList
 
     -- ** tasks.tasks.move
-    TasksTasksMoveResource,
-    TasksTasksMove (..),
-    newTasksTasksMove,
+    , TasksTasksMoveResource
+    , TasksTasksMove (..)
+    , newTasksTasksMove
 
     -- ** tasks.tasks.patch
-    TasksTasksPatchResource,
-    TasksTasksPatch (..),
-    newTasksTasksPatch,
+    , TasksTasksPatchResource
+    , TasksTasksPatch (..)
+    , newTasksTasksPatch
 
     -- ** tasks.tasks.update
-    TasksTasksUpdateResource,
-    TasksTasksUpdate (..),
-    newTasksTasksUpdate,
+    , TasksTasksUpdateResource
+    , TasksTasksUpdate (..)
+    , newTasksTasksUpdate
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AssignmentInfo
-    AssignmentInfo (..),
-    newAssignmentInfo,
+    , AssignmentInfo (..)
+    , newAssignmentInfo
 
     -- ** AssignmentInfo_SurfaceType
-    AssignmentInfo_SurfaceType (..),
+    , AssignmentInfo_SurfaceType (..)
 
     -- ** DriveResourceInfo
-    DriveResourceInfo (..),
-    newDriveResourceInfo,
+    , DriveResourceInfo (..)
+    , newDriveResourceInfo
 
     -- ** SpaceInfo
-    SpaceInfo (..),
-    newSpaceInfo,
+    , SpaceInfo (..)
+    , newSpaceInfo
 
     -- ** Task
-    Task (..),
-    newTask,
+    , Task (..)
+    , newTask
 
     -- ** Task_LinksItem
-    Task_LinksItem (..),
-    newTask_LinksItem,
+    , Task_LinksItem (..)
+    , newTask_LinksItem
 
     -- ** TaskList
-    TaskList (..),
-    newTaskList,
+    , TaskList (..)
+    , newTaskList
 
     -- ** TaskLists
-    TaskLists (..),
-    newTaskLists,
+    , TaskLists (..)
+    , newTaskLists
 
     -- ** Tasks
-    Tasks (..),
-    newTasks,
-  )
-where
+    , Tasks (..)
+    , newTasks
+    ) where
 
 import Gogol.AppsTasks.Tasks.Clear
 import Gogol.AppsTasks.Tasks.Delete

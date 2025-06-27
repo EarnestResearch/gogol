@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.AndroidDeviceProvisioning.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * ClaimDeviceRequest_SectionType
     ClaimDeviceRequest_SectionType
-      ( ClaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        ClaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
         ClaimDeviceRequest_SectionType_SECTIONTYPESIMLOCK,
         ClaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH,
         ..
@@ -41,7 +47,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * Company_TermsStatus
     Company_TermsStatus
-      ( Company_TermsStatus_TERMSSTATUSUNSPECIFIED,
+      (
+        Company_TermsStatus_TERMSSTATUSUNSPECIFIED,
         Company_TermsStatus_TERMSSTATUSNOTACCEPTED,
         Company_TermsStatus_TERMSSTATUSACCEPTED,
         Company_TermsStatus_TERMSSTATUSSTALE,
@@ -50,14 +57,16 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * DeviceClaim_AdditionalService
     DeviceClaim_AdditionalService
-      ( DeviceClaim_AdditionalService_ADDITIONALSERVICEUNSPECIFIED,
+      (
+        DeviceClaim_AdditionalService_ADDITIONALSERVICEUNSPECIFIED,
         DeviceClaim_AdditionalService_DEVICEPROTECTION,
         ..
       ),
 
     -- * DeviceClaim_SectionType
     DeviceClaim_SectionType
-      ( DeviceClaim_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        DeviceClaim_SectionType_SECTIONTYPEUNSPECIFIED,
         DeviceClaim_SectionType_SECTIONTYPESIMLOCK,
         DeviceClaim_SectionType_SECTIONTYPEZEROTOUCH,
         ..
@@ -65,7 +74,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * DeviceIdentifier_DeviceType
     DeviceIdentifier_DeviceType
-      ( DeviceIdentifier_DeviceType_DEVICETYPEUNSPECIFIED,
+      (
+        DeviceIdentifier_DeviceType_DEVICETYPEUNSPECIFIED,
         DeviceIdentifier_DeviceType_DEVICETYPEANDROID,
         DeviceIdentifier_DeviceType_DEVICETYPECHROMEOS,
         ..
@@ -73,7 +83,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * DevicesLongRunningOperationMetadata_ProcessingStatus
     DevicesLongRunningOperationMetadata_ProcessingStatus
-      ( DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSSTATUSUNSPECIFIED,
+      (
+        DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSSTATUSUNSPECIFIED,
         DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSPENDING,
         DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSINPROGRESS,
         DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSPROCESSED,
@@ -82,7 +93,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * FindDevicesByOwnerRequest_SectionType
     FindDevicesByOwnerRequest_SectionType
-      ( FindDevicesByOwnerRequest_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        FindDevicesByOwnerRequest_SectionType_SECTIONTYPEUNSPECIFIED,
         FindDevicesByOwnerRequest_SectionType_SECTIONTYPESIMLOCK,
         FindDevicesByOwnerRequest_SectionType_SECTIONTYPEZEROTOUCH,
         ..
@@ -90,7 +102,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * GetDeviceSimLockStateResponse_SimLockState
     GetDeviceSimLockStateResponse_SimLockState
-      ( GetDeviceSimLockStateResponse_SimLockState_SIMLOCKSTATEUNSPECIFIED,
+      (
+        GetDeviceSimLockStateResponse_SimLockState_SIMLOCKSTATEUNSPECIFIED,
         GetDeviceSimLockStateResponse_SimLockState_Unlocked,
         GetDeviceSimLockStateResponse_SimLockState_LOCKEDTOPARTNER,
         GetDeviceSimLockStateResponse_SimLockState_LOCKEDTOOTHERPARTNER,
@@ -99,7 +112,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * PartnerClaim_SectionType
     PartnerClaim_SectionType
-      ( PartnerClaim_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        PartnerClaim_SectionType_SECTIONTYPEUNSPECIFIED,
         PartnerClaim_SectionType_SECTIONTYPESIMLOCK,
         PartnerClaim_SectionType_SECTIONTYPEZEROTOUCH,
         ..
@@ -107,7 +121,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * PartnerUnclaim_SectionType
     PartnerUnclaim_SectionType
-      ( PartnerUnclaim_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        PartnerUnclaim_SectionType_SECTIONTYPEUNSPECIFIED,
         PartnerUnclaim_SectionType_SECTIONTYPESIMLOCK,
         PartnerUnclaim_SectionType_SECTIONTYPEZEROTOUCH,
         ..
@@ -115,7 +130,8 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * PerDeviceStatusInBatch_Status
     PerDeviceStatusInBatch_Status
-      ( PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSUNSPECIFIED,
+      (
+        PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSUNSPECIFIED,
         PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSUNKNOWNERROR,
         PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSOTHERERROR,
         PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSSUCCESS,
@@ -131,28 +147,28 @@ module Gogol.AndroidDeviceProvisioning.Internal.Sum
 
     -- * UnclaimDeviceRequest_SectionType
     UnclaimDeviceRequest_SectionType
-      ( UnclaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
+      (
+        UnclaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
         UnclaimDeviceRequest_SectionType_SECTIONTYPESIMLOCK,
         UnclaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -165,21 +181,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Required. The section type of the device\'s provisioning record.
-newtype ClaimDeviceRequest_SectionType = ClaimDeviceRequest_SectionType {fromClaimDeviceRequest_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ClaimDeviceRequest_SectionType = ClaimDeviceRequest_SectionType { fromClaimDeviceRequest_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern ClaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED :: ClaimDeviceRequest_SectionType
@@ -197,21 +212,20 @@ pattern ClaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH = ClaimDeviceRequest
   ClaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
   ClaimDeviceRequest_SectionType_SECTIONTYPESIMLOCK,
   ClaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH,
-  ClaimDeviceRequest_SectionType
-  #-}
+  ClaimDeviceRequest_SectionType #-}
 
 -- | Output only. Whether any user from the company has accepted the latest Terms of Service (ToS). See TermsStatus.
-newtype Company_TermsStatus = Company_TermsStatus {fromCompany_TermsStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Company_TermsStatus = Company_TermsStatus { fromCompany_TermsStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value should never be set if the enum is present.
 pattern Company_TermsStatus_TERMSSTATUSUNSPECIFIED :: Company_TermsStatus
@@ -234,21 +248,20 @@ pattern Company_TermsStatus_TERMSSTATUSSTALE = Company_TermsStatus "TERMS_STATUS
   Company_TermsStatus_TERMSSTATUSNOTACCEPTED,
   Company_TermsStatus_TERMSSTATUSACCEPTED,
   Company_TermsStatus_TERMSSTATUSSTALE,
-  Company_TermsStatus
-  #-}
+  Company_TermsStatus #-}
 
 -- | The Additional service registered for the device.
-newtype DeviceClaim_AdditionalService = DeviceClaim_AdditionalService {fromDeviceClaim_AdditionalService :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceClaim_AdditionalService = DeviceClaim_AdditionalService { fromDeviceClaim_AdditionalService :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No additional service.
 pattern DeviceClaim_AdditionalService_ADDITIONALSERVICEUNSPECIFIED :: DeviceClaim_AdditionalService
@@ -261,21 +274,20 @@ pattern DeviceClaim_AdditionalService_DEVICEPROTECTION = DeviceClaim_AdditionalS
 {-# COMPLETE
   DeviceClaim_AdditionalService_ADDITIONALSERVICEUNSPECIFIED,
   DeviceClaim_AdditionalService_DEVICEPROTECTION,
-  DeviceClaim_AdditionalService
-  #-}
+  DeviceClaim_AdditionalService #-}
 
 -- | Output only. The type of claim made on the device.
-newtype DeviceClaim_SectionType = DeviceClaim_SectionType {fromDeviceClaim_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceClaim_SectionType = DeviceClaim_SectionType { fromDeviceClaim_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern DeviceClaim_SectionType_SECTIONTYPEUNSPECIFIED :: DeviceClaim_SectionType
@@ -293,21 +305,20 @@ pattern DeviceClaim_SectionType_SECTIONTYPEZEROTOUCH = DeviceClaim_SectionType "
   DeviceClaim_SectionType_SECTIONTYPEUNSPECIFIED,
   DeviceClaim_SectionType_SECTIONTYPESIMLOCK,
   DeviceClaim_SectionType_SECTIONTYPEZEROTOUCH,
-  DeviceClaim_SectionType
-  #-}
+  DeviceClaim_SectionType #-}
 
 -- | The type of the device
-newtype DeviceIdentifier_DeviceType = DeviceIdentifier_DeviceType {fromDeviceIdentifier_DeviceType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceIdentifier_DeviceType = DeviceIdentifier_DeviceType { fromDeviceIdentifier_DeviceType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Device type is not specified.
 pattern DeviceIdentifier_DeviceType_DEVICETYPEUNSPECIFIED :: DeviceIdentifier_DeviceType
@@ -325,21 +336,20 @@ pattern DeviceIdentifier_DeviceType_DEVICETYPECHROMEOS = DeviceIdentifier_Device
   DeviceIdentifier_DeviceType_DEVICETYPEUNSPECIFIED,
   DeviceIdentifier_DeviceType_DEVICETYPEANDROID,
   DeviceIdentifier_DeviceType_DEVICETYPECHROMEOS,
-  DeviceIdentifier_DeviceType
-  #-}
+  DeviceIdentifier_DeviceType #-}
 
 -- | The processing status of the operation.
-newtype DevicesLongRunningOperationMetadata_ProcessingStatus = DevicesLongRunningOperationMetadata_ProcessingStatus {fromDevicesLongRunningOperationMetadata_ProcessingStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DevicesLongRunningOperationMetadata_ProcessingStatus = DevicesLongRunningOperationMetadata_ProcessingStatus { fromDevicesLongRunningOperationMetadata_ProcessingStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Invalid code. Shouldn\'t be used.
 pattern DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSSTATUSUNSPECIFIED :: DevicesLongRunningOperationMetadata_ProcessingStatus
@@ -362,21 +372,20 @@ pattern DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSPROCESS
   DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSPENDING,
   DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSINPROGRESS,
   DevicesLongRunningOperationMetadata_ProcessingStatus_BATCHPROCESSPROCESSED,
-  DevicesLongRunningOperationMetadata_ProcessingStatus
-  #-}
+  DevicesLongRunningOperationMetadata_ProcessingStatus #-}
 
 -- | Required. The section type of the device\'s provisioning record.
-newtype FindDevicesByOwnerRequest_SectionType = FindDevicesByOwnerRequest_SectionType {fromFindDevicesByOwnerRequest_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype FindDevicesByOwnerRequest_SectionType = FindDevicesByOwnerRequest_SectionType { fromFindDevicesByOwnerRequest_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern FindDevicesByOwnerRequest_SectionType_SECTIONTYPEUNSPECIFIED :: FindDevicesByOwnerRequest_SectionType
@@ -394,20 +403,19 @@ pattern FindDevicesByOwnerRequest_SectionType_SECTIONTYPEZEROTOUCH = FindDevices
   FindDevicesByOwnerRequest_SectionType_SECTIONTYPEUNSPECIFIED,
   FindDevicesByOwnerRequest_SectionType_SECTIONTYPESIMLOCK,
   FindDevicesByOwnerRequest_SectionType_SECTIONTYPEZEROTOUCH,
-  FindDevicesByOwnerRequest_SectionType
-  #-}
+  FindDevicesByOwnerRequest_SectionType #-}
 
-newtype GetDeviceSimLockStateResponse_SimLockState = GetDeviceSimLockStateResponse_SimLockState {fromGetDeviceSimLockStateResponse_SimLockState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GetDeviceSimLockStateResponse_SimLockState = GetDeviceSimLockStateResponse_SimLockState { fromGetDeviceSimLockStateResponse_SimLockState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Invalid code. Shouldn\'t be used.
 pattern GetDeviceSimLockStateResponse_SimLockState_SIMLOCKSTATEUNSPECIFIED :: GetDeviceSimLockStateResponse_SimLockState
@@ -430,21 +438,20 @@ pattern GetDeviceSimLockStateResponse_SimLockState_LOCKEDTOOTHERPARTNER = GetDev
   GetDeviceSimLockStateResponse_SimLockState_Unlocked,
   GetDeviceSimLockStateResponse_SimLockState_LOCKEDTOPARTNER,
   GetDeviceSimLockStateResponse_SimLockState_LOCKEDTOOTHERPARTNER,
-  GetDeviceSimLockStateResponse_SimLockState
-  #-}
+  GetDeviceSimLockStateResponse_SimLockState #-}
 
 -- | Required. The section type of the device\'s provisioning record.
-newtype PartnerClaim_SectionType = PartnerClaim_SectionType {fromPartnerClaim_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PartnerClaim_SectionType = PartnerClaim_SectionType { fromPartnerClaim_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern PartnerClaim_SectionType_SECTIONTYPEUNSPECIFIED :: PartnerClaim_SectionType
@@ -462,21 +469,20 @@ pattern PartnerClaim_SectionType_SECTIONTYPEZEROTOUCH = PartnerClaim_SectionType
   PartnerClaim_SectionType_SECTIONTYPEUNSPECIFIED,
   PartnerClaim_SectionType_SECTIONTYPESIMLOCK,
   PartnerClaim_SectionType_SECTIONTYPEZEROTOUCH,
-  PartnerClaim_SectionType
-  #-}
+  PartnerClaim_SectionType #-}
 
 -- | Required. The section type of the device\'s provisioning record.
-newtype PartnerUnclaim_SectionType = PartnerUnclaim_SectionType {fromPartnerUnclaim_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PartnerUnclaim_SectionType = PartnerUnclaim_SectionType { fromPartnerUnclaim_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern PartnerUnclaim_SectionType_SECTIONTYPEUNSPECIFIED :: PartnerUnclaim_SectionType
@@ -494,21 +500,20 @@ pattern PartnerUnclaim_SectionType_SECTIONTYPEZEROTOUCH = PartnerUnclaim_Section
   PartnerUnclaim_SectionType_SECTIONTYPEUNSPECIFIED,
   PartnerUnclaim_SectionType_SECTIONTYPESIMLOCK,
   PartnerUnclaim_SectionType_SECTIONTYPEZEROTOUCH,
-  PartnerUnclaim_SectionType
-  #-}
+  PartnerUnclaim_SectionType #-}
 
 -- | The result status of the device after processing.
-newtype PerDeviceStatusInBatch_Status = PerDeviceStatusInBatch_Status {fromPerDeviceStatusInBatch_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PerDeviceStatusInBatch_Status = PerDeviceStatusInBatch_Status { fromPerDeviceStatusInBatch_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Invalid code. Shouldn\'t be used.
 pattern PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSUNSPECIFIED :: PerDeviceStatusInBatch_Status
@@ -566,21 +571,20 @@ pattern PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSDEVICELIMITEXCEEDED = Pe
   PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSINVALIDTOKEN,
   PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSREVOKEDTOKEN,
   PerDeviceStatusInBatch_Status_SINGLEDEVICESTATUSDEVICELIMITEXCEEDED,
-  PerDeviceStatusInBatch_Status
-  #-}
+  PerDeviceStatusInBatch_Status #-}
 
 -- | Required. The section type of the device\'s provisioning record.
-newtype UnclaimDeviceRequest_SectionType = UnclaimDeviceRequest_SectionType {fromUnclaimDeviceRequest_SectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UnclaimDeviceRequest_SectionType = UnclaimDeviceRequest_SectionType { fromUnclaimDeviceRequest_SectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified section type.
 pattern UnclaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED :: UnclaimDeviceRequest_SectionType
@@ -598,5 +602,4 @@ pattern UnclaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH = UnclaimDeviceReq
   UnclaimDeviceRequest_SectionType_SECTIONTYPEUNSPECIFIED,
   UnclaimDeviceRequest_SectionType_SECTIONTYPESIMLOCK,
   UnclaimDeviceRequest_SectionType_SECTIONTYPEZEROTOUCH,
-  UnclaimDeviceRequest_SectionType
-  #-}
+  UnclaimDeviceRequest_SectionType #-}

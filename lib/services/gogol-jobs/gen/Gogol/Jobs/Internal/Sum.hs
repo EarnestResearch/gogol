@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Jobs.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * BatchOperationMetadata_State
     BatchOperationMetadata_State
-      ( BatchOperationMetadata_State_STATEUNSPECIFIED,
+      (
+        BatchOperationMetadata_State_STATEUNSPECIFIED,
         BatchOperationMetadata_State_Initializing,
         BatchOperationMetadata_State_Processing,
         BatchOperationMetadata_State_Succeeded,
@@ -45,7 +51,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CommuteFilter_CommuteMethod
     CommuteFilter_CommuteMethod
-      ( CommuteFilter_CommuteMethod_COMMUTEMETHODUNSPECIFIED,
+      (
+        CommuteFilter_CommuteMethod_COMMUTEMETHODUNSPECIFIED,
         CommuteFilter_CommuteMethod_Driving,
         CommuteFilter_CommuteMethod_Transit,
         CommuteFilter_CommuteMethod_Walking,
@@ -56,7 +63,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CommuteFilter_RoadTraffic
     CommuteFilter_RoadTraffic
-      ( CommuteFilter_RoadTraffic_ROADTRAFFICUNSPECIFIED,
+      (
+        CommuteFilter_RoadTraffic_ROADTRAFFICUNSPECIFIED,
         CommuteFilter_RoadTraffic_TRAFFICFREE,
         CommuteFilter_RoadTraffic_BUSYHOUR,
         ..
@@ -64,7 +72,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Company_Size
     Company_Size
-      ( Company_Size_COMPANYSIZEUNSPECIFIED,
+      (
+        Company_Size_COMPANYSIZEUNSPECIFIED,
         Company_Size_Mini,
         Company_Size_Small,
         Company_Size_Smedium,
@@ -77,7 +86,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CompensationEntry_Type
     CompensationEntry_Type
-      ( CompensationEntry_Type_COMPENSATIONTYPEUNSPECIFIED,
+      (
+        CompensationEntry_Type_COMPENSATIONTYPEUNSPECIFIED,
         CompensationEntry_Type_Base,
         CompensationEntry_Type_Bonus,
         CompensationEntry_Type_SIGNINGBONUS,
@@ -91,7 +101,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CompensationEntry_Unit
     CompensationEntry_Unit
-      ( CompensationEntry_Unit_COMPENSATIONUNITUNSPECIFIED,
+      (
+        CompensationEntry_Unit_COMPENSATIONUNITUNSPECIFIED,
         CompensationEntry_Unit_Hourly,
         CompensationEntry_Unit_Daily,
         CompensationEntry_Unit_Weekly,
@@ -104,7 +115,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CompensationFilter_Type
     CompensationFilter_Type
-      ( CompensationFilter_Type_FILTERTYPEUNSPECIFIED,
+      (
+        CompensationFilter_Type_FILTERTYPEUNSPECIFIED,
         CompensationFilter_Type_UNITONLY,
         CompensationFilter_Type_UNITANDAMOUNT,
         CompensationFilter_Type_ANNUALIZEDBASEAMOUNT,
@@ -114,7 +126,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CompensationFilter_UnitsItem
     CompensationFilter_UnitsItem
-      ( CompensationFilter_UnitsItem_COMPENSATIONUNITUNSPECIFIED,
+      (
+        CompensationFilter_UnitsItem_COMPENSATIONUNITUNSPECIFIED,
         CompensationFilter_UnitsItem_Hourly,
         CompensationFilter_UnitsItem_Daily,
         CompensationFilter_UnitsItem_Weekly,
@@ -127,7 +140,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CompletionResult_Type
     CompletionResult_Type
-      ( CompletionResult_Type_COMPLETIONTYPEUNSPECIFIED,
+      (
+        CompletionResult_Type_COMPLETIONTYPEUNSPECIFIED,
         CompletionResult_Type_JOBTITLE,
         CompletionResult_Type_COMPANYNAME,
         CompletionResult_Type_Combined,
@@ -136,7 +150,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * CustomRankingInfo_ImportanceLevel
     CustomRankingInfo_ImportanceLevel
-      ( CustomRankingInfo_ImportanceLevel_IMPORTANCELEVELUNSPECIFIED,
+      (
+        CustomRankingInfo_ImportanceLevel_IMPORTANCELEVELUNSPECIFIED,
         CustomRankingInfo_ImportanceLevel_None,
         CustomRankingInfo_ImportanceLevel_Low,
         CustomRankingInfo_ImportanceLevel_Mild,
@@ -148,7 +163,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * DeviceInfo_DeviceType
     DeviceInfo_DeviceType
-      ( DeviceInfo_DeviceType_DEVICETYPEUNSPECIFIED,
+      (
+        DeviceInfo_DeviceType_DEVICETYPEUNSPECIFIED,
         DeviceInfo_DeviceType_Web,
         DeviceInfo_DeviceType_MOBILEWEB,
         DeviceInfo_DeviceType_Android,
@@ -160,7 +176,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_DegreeTypesItem
     Job_DegreeTypesItem
-      ( Job_DegreeTypesItem_DEGREETYPEUNSPECIFIED,
+      (
+        Job_DegreeTypesItem_DEGREETYPEUNSPECIFIED,
         Job_DegreeTypesItem_PRIMARYEDUCATION,
         Job_DegreeTypesItem_LOWERSECONDARYEDUCATION,
         Job_DegreeTypesItem_UPPERSECONDARYEDUCATION,
@@ -174,7 +191,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_EmploymentTypesItem
     Job_EmploymentTypesItem
-      ( Job_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED,
+      (
+        Job_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED,
         Job_EmploymentTypesItem_FULLTIME,
         Job_EmploymentTypesItem_PARTTIME,
         Job_EmploymentTypesItem_Contractor,
@@ -190,7 +208,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_JobBenefitsItem
     Job_JobBenefitsItem
-      ( Job_JobBenefitsItem_JOBBENEFITUNSPECIFIED,
+      (
+        Job_JobBenefitsItem_JOBBENEFITUNSPECIFIED,
         Job_JobBenefitsItem_CHILDCARE,
         Job_JobBenefitsItem_Dental,
         Job_JobBenefitsItem_DOMESTICPARTNER,
@@ -207,7 +226,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_JobLevel
     Job_JobLevel
-      ( Job_JobLevel_JOBLEVELUNSPECIFIED,
+      (
+        Job_JobLevel_JOBLEVELUNSPECIFIED,
         Job_JobLevel_ENTRYLEVEL,
         Job_JobLevel_Experienced,
         Job_JobLevel_Manager,
@@ -218,7 +238,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_PostingRegion
     Job_PostingRegion
-      ( Job_PostingRegion_POSTINGREGIONUNSPECIFIED,
+      (
+        Job_PostingRegion_POSTINGREGIONUNSPECIFIED,
         Job_PostingRegion_ADMINISTRATIVEAREA,
         Job_PostingRegion_Nation,
         Job_PostingRegion_Telecommute,
@@ -227,7 +248,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Job_Visibility
     Job_Visibility
-      ( Job_Visibility_VISIBILITYUNSPECIFIED,
+      (
+        Job_Visibility_VISIBILITYUNSPECIFIED,
         Job_Visibility_ACCOUNTONLY,
         Job_Visibility_SHAREDWITHGOOGLE,
         Job_Visibility_SHAREDWITHPUBLIC,
@@ -236,7 +258,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * JobDerivedInfo_JobCategoriesItem
     JobDerivedInfo_JobCategoriesItem
-      ( JobDerivedInfo_JobCategoriesItem_JOBCATEGORYUNSPECIFIED,
+      (
+        JobDerivedInfo_JobCategoriesItem_JOBCATEGORYUNSPECIFIED,
         JobDerivedInfo_JobCategoriesItem_ACCOUNTINGANDFINANCE,
         JobDerivedInfo_JobCategoriesItem_ADMINISTRATIVEANDOFFICE,
         JobDerivedInfo_JobCategoriesItem_ADVERTISINGANDMARKETING,
@@ -272,7 +295,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * JobEvent_Type
     JobEvent_Type
-      ( JobEvent_Type_JOBEVENTTYPEUNSPECIFIED,
+      (
+        JobEvent_Type_JOBEVENTTYPEUNSPECIFIED,
         JobEvent_Type_Impression,
         JobEvent_Type_View,
         JobEvent_Type_VIEWREDIRECT,
@@ -293,7 +317,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * JobQuery_EmploymentTypesItem
     JobQuery_EmploymentTypesItem
-      ( JobQuery_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED,
+      (
+        JobQuery_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED,
         JobQuery_EmploymentTypesItem_FULLTIME,
         JobQuery_EmploymentTypesItem_PARTTIME,
         JobQuery_EmploymentTypesItem_Contractor,
@@ -309,7 +334,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * JobQuery_JobCategoriesItem
     JobQuery_JobCategoriesItem
-      ( JobQuery_JobCategoriesItem_JOBCATEGORYUNSPECIFIED,
+      (
+        JobQuery_JobCategoriesItem_JOBCATEGORYUNSPECIFIED,
         JobQuery_JobCategoriesItem_ACCOUNTINGANDFINANCE,
         JobQuery_JobCategoriesItem_ADMINISTRATIVEANDOFFICE,
         JobQuery_JobCategoriesItem_ADVERTISINGANDMARKETING,
@@ -345,7 +371,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * Location_LocationType
     Location_LocationType
-      ( Location_LocationType_LOCATIONTYPEUNSPECIFIED,
+      (
+        Location_LocationType_LOCATIONTYPEUNSPECIFIED,
         Location_LocationType_Country,
         Location_LocationType_ADMINISTRATIVEAREA,
         Location_LocationType_SUBADMINISTRATIVEAREA,
@@ -361,7 +388,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * LocationFilter_TelecommutePreference
     LocationFilter_TelecommutePreference
-      ( LocationFilter_TelecommutePreference_TELECOMMUTEPREFERENCEUNSPECIFIED,
+      (
+        LocationFilter_TelecommutePreference_TELECOMMUTEPREFERENCEUNSPECIFIED,
         LocationFilter_TelecommutePreference_TELECOMMUTEEXCLUDED,
         LocationFilter_TelecommutePreference_TELECOMMUTEALLOWED,
         LocationFilter_TelecommutePreference_TELECOMMUTEJOBSEXCLUDED,
@@ -370,7 +398,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * ProcessingOptions_HtmlSanitization
     ProcessingOptions_HtmlSanitization
-      ( ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONUNSPECIFIED,
+      (
+        ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONUNSPECIFIED,
         ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONDISABLED,
         ProcessingOptions_HtmlSanitization_SIMPLEFORMATTINGONLY,
         ..
@@ -378,7 +407,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * SearchJobsRequest_DiversificationLevel
     SearchJobsRequest_DiversificationLevel
-      ( SearchJobsRequest_DiversificationLevel_DIVERSIFICATIONLEVELUNSPECIFIED,
+      (
+        SearchJobsRequest_DiversificationLevel_DIVERSIFICATIONLEVELUNSPECIFIED,
         SearchJobsRequest_DiversificationLevel_Disabled,
         SearchJobsRequest_DiversificationLevel_Simple,
         SearchJobsRequest_DiversificationLevel_ONEPERCOMPANY,
@@ -390,7 +420,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * SearchJobsRequest_JobView
     SearchJobsRequest_JobView
-      ( SearchJobsRequest_JobView_JOBVIEWUNSPECIFIED,
+      (
+        SearchJobsRequest_JobView_JOBVIEWUNSPECIFIED,
         SearchJobsRequest_JobView_JOBVIEWIDONLY,
         SearchJobsRequest_JobView_JOBVIEWMINIMAL,
         SearchJobsRequest_JobView_JOBVIEWSMALL,
@@ -400,7 +431,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * SearchJobsRequest_KeywordMatchMode
     SearchJobsRequest_KeywordMatchMode
-      ( SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHMODEUNSPECIFIED,
+      (
+        SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHMODEUNSPECIFIED,
         SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHDISABLED,
         SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHALL,
         SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHTITLEONLY,
@@ -409,7 +441,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * SearchJobsRequest_RelevanceThreshold
     SearchJobsRequest_RelevanceThreshold
-      ( SearchJobsRequest_RelevanceThreshold_RELEVANCETHRESHOLDUNSPECIFIED,
+      (
+        SearchJobsRequest_RelevanceThreshold_RELEVANCETHRESHOLDUNSPECIFIED,
         SearchJobsRequest_RelevanceThreshold_Lowest,
         SearchJobsRequest_RelevanceThreshold_Low,
         SearchJobsRequest_RelevanceThreshold_Medium,
@@ -419,7 +452,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * SearchJobsRequest_SearchMode
     SearchJobsRequest_SearchMode
-      ( SearchJobsRequest_SearchMode_SEARCHMODEUNSPECIFIED,
+      (
+        SearchJobsRequest_SearchMode_SEARCHMODEUNSPECIFIED,
         SearchJobsRequest_SearchMode_JOBSEARCH,
         SearchJobsRequest_SearchMode_FEATUREDJOBSEARCH,
         ..
@@ -427,7 +461,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * ProjectsTenantsCompleteQueryScope
     ProjectsTenantsCompleteQueryScope
-      ( ProjectsTenantsCompleteQueryScope_COMPLETIONSCOPEUNSPECIFIED,
+      (
+        ProjectsTenantsCompleteQueryScope_COMPLETIONSCOPEUNSPECIFIED,
         ProjectsTenantsCompleteQueryScope_Tenant,
         ProjectsTenantsCompleteQueryScope_Public,
         ..
@@ -435,7 +470,8 @@ module Gogol.Jobs.Internal.Sum
 
     -- * ProjectsTenantsCompleteQueryType
     ProjectsTenantsCompleteQueryType
-      ( ProjectsTenantsCompleteQueryType_COMPLETIONTYPEUNSPECIFIED,
+      (
+        ProjectsTenantsCompleteQueryType_COMPLETIONTYPEUNSPECIFIED,
         ProjectsTenantsCompleteQueryType_JOBTITLE,
         ProjectsTenantsCompleteQueryType_COMPANYNAME,
         ProjectsTenantsCompleteQueryType_Combined,
@@ -444,30 +480,30 @@ module Gogol.Jobs.Internal.Sum
 
     -- * ProjectsTenantsJobsListJobView
     ProjectsTenantsJobsListJobView
-      ( ProjectsTenantsJobsListJobView_JOBVIEWUNSPECIFIED,
+      (
+        ProjectsTenantsJobsListJobView_JOBVIEWUNSPECIFIED,
         ProjectsTenantsJobsListJobView_JOBVIEWIDONLY,
         ProjectsTenantsJobsListJobView_JOBVIEWMINIMAL,
         ProjectsTenantsJobsListJobView_JOBVIEWSMALL,
         ProjectsTenantsJobsListJobView_JOBVIEWFULL,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -480,21 +516,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The state of a long running operation.
-newtype BatchOperationMetadata_State = BatchOperationMetadata_State {fromBatchOperationMetadata_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BatchOperationMetadata_State = BatchOperationMetadata_State { fromBatchOperationMetadata_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern BatchOperationMetadata_State_STATEUNSPECIFIED :: BatchOperationMetadata_State
@@ -532,21 +567,20 @@ pattern BatchOperationMetadata_State_Cancelled = BatchOperationMetadata_State "C
   BatchOperationMetadata_State_Failed,
   BatchOperationMetadata_State_Cancelling,
   BatchOperationMetadata_State_Cancelled,
-  BatchOperationMetadata_State
-  #-}
+  BatchOperationMetadata_State #-}
 
 -- | Required. The method of transportation to calculate the commute time for.
-newtype CommuteFilter_CommuteMethod = CommuteFilter_CommuteMethod {fromCommuteFilter_CommuteMethod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CommuteFilter_CommuteMethod = CommuteFilter_CommuteMethod { fromCommuteFilter_CommuteMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Commute method isn\'t specified.
 pattern CommuteFilter_CommuteMethod_COMMUTEMETHODUNSPECIFIED :: CommuteFilter_CommuteMethod
@@ -579,21 +613,20 @@ pattern CommuteFilter_CommuteMethod_TRANSITACCESSIBLE = CommuteFilter_CommuteMet
   CommuteFilter_CommuteMethod_Walking,
   CommuteFilter_CommuteMethod_Cycling,
   CommuteFilter_CommuteMethod_TRANSITACCESSIBLE,
-  CommuteFilter_CommuteMethod
-  #-}
+  CommuteFilter_CommuteMethod #-}
 
 -- | Specifies the traffic density to use when calculating commute time.
-newtype CommuteFilter_RoadTraffic = CommuteFilter_RoadTraffic {fromCommuteFilter_RoadTraffic :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CommuteFilter_RoadTraffic = CommuteFilter_RoadTraffic { fromCommuteFilter_RoadTraffic :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Road traffic situation isn\'t specified.
 pattern CommuteFilter_RoadTraffic_ROADTRAFFICUNSPECIFIED :: CommuteFilter_RoadTraffic
@@ -611,21 +644,20 @@ pattern CommuteFilter_RoadTraffic_BUSYHOUR = CommuteFilter_RoadTraffic "BUSY_HOU
   CommuteFilter_RoadTraffic_ROADTRAFFICUNSPECIFIED,
   CommuteFilter_RoadTraffic_TRAFFICFREE,
   CommuteFilter_RoadTraffic_BUSYHOUR,
-  CommuteFilter_RoadTraffic
-  #-}
+  CommuteFilter_RoadTraffic #-}
 
 -- | The employer\'s company size.
-newtype Company_Size = Company_Size {fromCompany_Size :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Company_Size = Company_Size { fromCompany_Size :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value if the size isn\'t specified.
 pattern Company_Size_COMPANYSIZEUNSPECIFIED :: Company_Size
@@ -668,21 +700,20 @@ pattern Company_Size_Giant = Company_Size "GIANT"
   Company_Size_Big,
   Company_Size_Bigger,
   Company_Size_Giant,
-  Company_Size
-  #-}
+  Company_Size #-}
 
 -- | Compensation type. Default is CompensationType.COMPENSATION/TYPE/UNSPECIFIED.
-newtype CompensationEntry_Type = CompensationEntry_Type {fromCompensationEntry_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompensationEntry_Type = CompensationEntry_Type { fromCompensationEntry_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern CompensationEntry_Type_COMPENSATIONTYPEUNSPECIFIED :: CompensationEntry_Type
@@ -730,21 +761,20 @@ pattern CompensationEntry_Type_OTHERCOMPENSATIONTYPE = CompensationEntry_Type "O
   CompensationEntry_Type_Commissions,
   CompensationEntry_Type_Tips,
   CompensationEntry_Type_OTHERCOMPENSATIONTYPE,
-  CompensationEntry_Type
-  #-}
+  CompensationEntry_Type #-}
 
 -- | Frequency of the specified amount. Default is CompensationUnit.COMPENSATION/UNIT/UNSPECIFIED.
-newtype CompensationEntry_Unit = CompensationEntry_Unit {fromCompensationEntry_Unit :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompensationEntry_Unit = CompensationEntry_Unit { fromCompensationEntry_Unit :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern CompensationEntry_Unit_COMPENSATIONUNITUNSPECIFIED :: CompensationEntry_Unit
@@ -787,21 +817,20 @@ pattern CompensationEntry_Unit_OTHERCOMPENSATIONUNIT = CompensationEntry_Unit "O
   CompensationEntry_Unit_Yearly,
   CompensationEntry_Unit_ONETIME,
   CompensationEntry_Unit_OTHERCOMPENSATIONUNIT,
-  CompensationEntry_Unit
-  #-}
+  CompensationEntry_Unit #-}
 
 -- | Required. Type of filter.
-newtype CompensationFilter_Type = CompensationFilter_Type {fromCompensationFilter_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompensationFilter_Type = CompensationFilter_Type { fromCompensationFilter_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Filter type unspecified. Position holder, INVALID, should never be used.
 pattern CompensationFilter_Type_FILTERTYPEUNSPECIFIED :: CompensationFilter_Type
@@ -829,20 +858,19 @@ pattern CompensationFilter_Type_ANNUALIZEDTOTALAMOUNT = CompensationFilter_Type 
   CompensationFilter_Type_UNITANDAMOUNT,
   CompensationFilter_Type_ANNUALIZEDBASEAMOUNT,
   CompensationFilter_Type_ANNUALIZEDTOTALAMOUNT,
-  CompensationFilter_Type
-  #-}
+  CompensationFilter_Type #-}
 
-newtype CompensationFilter_UnitsItem = CompensationFilter_UnitsItem {fromCompensationFilter_UnitsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompensationFilter_UnitsItem = CompensationFilter_UnitsItem { fromCompensationFilter_UnitsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern CompensationFilter_UnitsItem_COMPENSATIONUNITUNSPECIFIED :: CompensationFilter_UnitsItem
@@ -885,21 +913,20 @@ pattern CompensationFilter_UnitsItem_OTHERCOMPENSATIONUNIT = CompensationFilter_
   CompensationFilter_UnitsItem_Yearly,
   CompensationFilter_UnitsItem_ONETIME,
   CompensationFilter_UnitsItem_OTHERCOMPENSATIONUNIT,
-  CompensationFilter_UnitsItem
-  #-}
+  CompensationFilter_UnitsItem #-}
 
 -- | The completion topic.
-newtype CompletionResult_Type = CompletionResult_Type {fromCompletionResult_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CompletionResult_Type = CompletionResult_Type { fromCompletionResult_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern CompletionResult_Type_COMPLETIONTYPEUNSPECIFIED :: CompletionResult_Type
@@ -922,21 +949,20 @@ pattern CompletionResult_Type_Combined = CompletionResult_Type "COMBINED"
   CompletionResult_Type_JOBTITLE,
   CompletionResult_Type_COMPANYNAME,
   CompletionResult_Type_Combined,
-  CompletionResult_Type
-  #-}
+  CompletionResult_Type #-}
 
 -- | Required. Controls over how important the score of CustomRankingInfo.ranking_expression gets applied to job\'s final ranking position. An error is thrown if not specified.
-newtype CustomRankingInfo_ImportanceLevel = CustomRankingInfo_ImportanceLevel {fromCustomRankingInfo_ImportanceLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CustomRankingInfo_ImportanceLevel = CustomRankingInfo_ImportanceLevel { fromCustomRankingInfo_ImportanceLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value if the importance level isn\'t specified.
 pattern CustomRankingInfo_ImportanceLevel_IMPORTANCELEVELUNSPECIFIED :: CustomRankingInfo_ImportanceLevel
@@ -974,21 +1000,20 @@ pattern CustomRankingInfo_ImportanceLevel_Extreme = CustomRankingInfo_Importance
   CustomRankingInfo_ImportanceLevel_Medium,
   CustomRankingInfo_ImportanceLevel_High,
   CustomRankingInfo_ImportanceLevel_Extreme,
-  CustomRankingInfo_ImportanceLevel
-  #-}
+  CustomRankingInfo_ImportanceLevel #-}
 
 -- | Type of the device.
-newtype DeviceInfo_DeviceType = DeviceInfo_DeviceType {fromDeviceInfo_DeviceType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceInfo_DeviceType = DeviceInfo_DeviceType { fromDeviceInfo_DeviceType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The device type isn\'t specified.
 pattern DeviceInfo_DeviceType_DEVICETYPEUNSPECIFIED :: DeviceInfo_DeviceType
@@ -1026,20 +1051,19 @@ pattern DeviceInfo_DeviceType_Other = DeviceInfo_DeviceType "OTHER"
   DeviceInfo_DeviceType_Ios,
   DeviceInfo_DeviceType_Bot,
   DeviceInfo_DeviceType_Other,
-  DeviceInfo_DeviceType
-  #-}
+  DeviceInfo_DeviceType #-}
 
-newtype Job_DegreeTypesItem = Job_DegreeTypesItem {fromJob_DegreeTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_DegreeTypesItem = Job_DegreeTypesItem { fromJob_DegreeTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Represents no degree, or early childhood education. Maps to ISCED code 0. Ex) Kindergarten
 pattern Job_DegreeTypesItem_DEGREETYPEUNSPECIFIED :: Job_DegreeTypesItem
@@ -1087,20 +1111,19 @@ pattern Job_DegreeTypesItem_DOCTORALOREQUIVALENT = Job_DegreeTypesItem "DOCTORAL
   Job_DegreeTypesItem_BACHELORSOREQUIVALENT,
   Job_DegreeTypesItem_MASTERSOREQUIVALENT,
   Job_DegreeTypesItem_DOCTORALOREQUIVALENT,
-  Job_DegreeTypesItem
-  #-}
+  Job_DegreeTypesItem #-}
 
-newtype Job_EmploymentTypesItem = Job_EmploymentTypesItem {fromJob_EmploymentTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_EmploymentTypesItem = Job_EmploymentTypesItem { fromJob_EmploymentTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value if the employment type isn\'t specified.
 pattern Job_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED :: Job_EmploymentTypesItem
@@ -1158,20 +1181,19 @@ pattern Job_EmploymentTypesItem_OTHEREMPLOYMENTTYPE = Job_EmploymentTypesItem "O
   Job_EmploymentTypesItem_PERDIEM,
   Job_EmploymentTypesItem_FLYINFLYOUT,
   Job_EmploymentTypesItem_OTHEREMPLOYMENTTYPE,
-  Job_EmploymentTypesItem
-  #-}
+  Job_EmploymentTypesItem #-}
 
-newtype Job_JobBenefitsItem = Job_JobBenefitsItem {fromJob_JobBenefitsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_JobBenefitsItem = Job_JobBenefitsItem { fromJob_JobBenefitsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value if the type isn\'t specified.
 pattern Job_JobBenefitsItem_JOBBENEFITUNSPECIFIED :: Job_JobBenefitsItem
@@ -1234,21 +1256,20 @@ pattern Job_JobBenefitsItem_Vision = Job_JobBenefitsItem "VISION"
   Job_JobBenefitsItem_SICKDAYS,
   Job_JobBenefitsItem_Vacation,
   Job_JobBenefitsItem_Vision,
-  Job_JobBenefitsItem
-  #-}
+  Job_JobBenefitsItem #-}
 
 -- | The experience level associated with the job, such as \"Entry Level\".
-newtype Job_JobLevel = Job_JobLevel {fromJob_JobLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_JobLevel = Job_JobLevel { fromJob_JobLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value if the level isn\'t specified.
 pattern Job_JobLevel_JOBLEVELUNSPECIFIED :: Job_JobLevel
@@ -1281,21 +1302,20 @@ pattern Job_JobLevel_Executive = Job_JobLevel "EXECUTIVE"
   Job_JobLevel_Manager,
   Job_JobLevel_Director,
   Job_JobLevel_Executive,
-  Job_JobLevel
-  #-}
+  Job_JobLevel #-}
 
 -- | The job PostingRegion (for example, state, country) throughout which the job is available. If this field is set, a LocationFilter in a search query within the job region finds this job posting if an exact location match isn\'t specified. If this field is set to PostingRegion.NATION or PostingRegion.ADMINISTRATIVE_AREA, setting job Job.addresses to the same location level as this field is strongly recommended.
-newtype Job_PostingRegion = Job_PostingRegion {fromJob_PostingRegion :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_PostingRegion = Job_PostingRegion { fromJob_PostingRegion :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If the region is unspecified, the job is only returned if it matches the LocationFilter.
 pattern Job_PostingRegion_POSTINGREGIONUNSPECIFIED :: Job_PostingRegion
@@ -1318,27 +1338,26 @@ pattern Job_PostingRegion_Telecommute = Job_PostingRegion "TELECOMMUTE"
   Job_PostingRegion_ADMINISTRATIVEAREA,
   Job_PostingRegion_Nation,
   Job_PostingRegion_Telecommute,
-  Job_PostingRegion
-  #-}
+  Job_PostingRegion #-}
 
 -- | Deprecated. The job is only visible to the owner. The visibility of the job. Defaults to Visibility.ACCOUNT_ONLY if not specified.
-newtype Job_Visibility = Job_Visibility {fromJob_Visibility :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Job_Visibility = Job_Visibility { fromJob_Visibility :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern Job_Visibility_VISIBILITYUNSPECIFIED :: Job_Visibility
 pattern Job_Visibility_VISIBILITYUNSPECIFIED = Job_Visibility "VISIBILITY_UNSPECIFIED"
 
--- | The resource is only visible to the GCP account who owns it.
+-- | The resource is only visible to the Google Cloud account who owns it.
 pattern Job_Visibility_ACCOUNTONLY :: Job_Visibility
 pattern Job_Visibility_ACCOUNTONLY = Job_Visibility "ACCOUNT_ONLY"
 
@@ -1355,20 +1374,19 @@ pattern Job_Visibility_SHAREDWITHPUBLIC = Job_Visibility "SHARED_WITH_PUBLIC"
   Job_Visibility_ACCOUNTONLY,
   Job_Visibility_SHAREDWITHGOOGLE,
   Job_Visibility_SHAREDWITHPUBLIC,
-  Job_Visibility
-  #-}
+  Job_Visibility #-}
 
-newtype JobDerivedInfo_JobCategoriesItem = JobDerivedInfo_JobCategoriesItem {fromJobDerivedInfo_JobCategoriesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype JobDerivedInfo_JobCategoriesItem = JobDerivedInfo_JobCategoriesItem { fromJobDerivedInfo_JobCategoriesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value if the category isn\'t specified.
 pattern JobDerivedInfo_JobCategoriesItem_JOBCATEGORYUNSPECIFIED :: JobDerivedInfo_JobCategoriesItem
@@ -1526,21 +1544,20 @@ pattern JobDerivedInfo_JobCategoriesItem_TRANSPORTATIONANDLOGISTICS = JobDerived
   JobDerivedInfo_JobCategoriesItem_SOCIALSERVICESANDNONPROFIT,
   JobDerivedInfo_JobCategoriesItem_SPORTSFITNESSANDRECREATION,
   JobDerivedInfo_JobCategoriesItem_TRANSPORTATIONANDLOGISTICS,
-  JobDerivedInfo_JobCategoriesItem
-  #-}
+  JobDerivedInfo_JobCategoriesItem #-}
 
 -- | Required. The type of the event (see JobEventType).
-newtype JobEvent_Type = JobEvent_Type {fromJobEvent_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype JobEvent_Type = JobEvent_Type { fromJobEvent_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The event is unspecified by other provided values.
 pattern JobEvent_Type_JOBEVENTTYPEUNSPECIFIED :: JobEvent_Type
@@ -1623,20 +1640,19 @@ pattern JobEvent_Type_INTERVIEWGRANTED = JobEvent_Type "INTERVIEW_GRANTED"
   JobEvent_Type_Hired,
   JobEvent_Type_SENTCV,
   JobEvent_Type_INTERVIEWGRANTED,
-  JobEvent_Type
-  #-}
+  JobEvent_Type #-}
 
-newtype JobQuery_EmploymentTypesItem = JobQuery_EmploymentTypesItem {fromJobQuery_EmploymentTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype JobQuery_EmploymentTypesItem = JobQuery_EmploymentTypesItem { fromJobQuery_EmploymentTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value if the employment type isn\'t specified.
 pattern JobQuery_EmploymentTypesItem_EMPLOYMENTTYPEUNSPECIFIED :: JobQuery_EmploymentTypesItem
@@ -1694,20 +1710,19 @@ pattern JobQuery_EmploymentTypesItem_OTHEREMPLOYMENTTYPE = JobQuery_EmploymentTy
   JobQuery_EmploymentTypesItem_PERDIEM,
   JobQuery_EmploymentTypesItem_FLYINFLYOUT,
   JobQuery_EmploymentTypesItem_OTHEREMPLOYMENTTYPE,
-  JobQuery_EmploymentTypesItem
-  #-}
+  JobQuery_EmploymentTypesItem #-}
 
-newtype JobQuery_JobCategoriesItem = JobQuery_JobCategoriesItem {fromJobQuery_JobCategoriesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype JobQuery_JobCategoriesItem = JobQuery_JobCategoriesItem { fromJobQuery_JobCategoriesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value if the category isn\'t specified.
 pattern JobQuery_JobCategoriesItem_JOBCATEGORYUNSPECIFIED :: JobQuery_JobCategoriesItem
@@ -1865,21 +1880,20 @@ pattern JobQuery_JobCategoriesItem_TRANSPORTATIONANDLOGISTICS = JobQuery_JobCate
   JobQuery_JobCategoriesItem_SOCIALSERVICESANDNONPROFIT,
   JobQuery_JobCategoriesItem_SPORTSFITNESSANDRECREATION,
   JobQuery_JobCategoriesItem_TRANSPORTATIONANDLOGISTICS,
-  JobQuery_JobCategoriesItem
-  #-}
+  JobQuery_JobCategoriesItem #-}
 
 -- | The type of a location, which corresponds to the address lines field of google.type.PostalAddress. For example, \"Downtown, Atlanta, GA, USA\" has a type of LocationType.NEIGHBORHOOD, and \"Kansas City, KS, USA\" has a type of LocationType.LOCALITY.
-newtype Location_LocationType = Location_LocationType {fromLocation_LocationType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Location_LocationType = Location_LocationType { fromLocation_LocationType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value if the type isn\'t specified.
 pattern Location_LocationType_LOCATIONTYPEUNSPECIFIED :: Location_LocationType
@@ -1937,22 +1951,21 @@ pattern Location_LocationType_STREETADDRESS = Location_LocationType "STREET_ADDR
   Location_LocationType_SUB_LOCALITY_2,
   Location_LocationType_Neighborhood,
   Location_LocationType_STREETADDRESS,
-  Location_LocationType
-  #-}
+  Location_LocationType #-}
 
 -- | Allows the client to return jobs without a set location, specifically, telecommuting jobs (telecommuting is considered by the service as a special location). Job.posting/region indicates if a job permits telecommuting. If this field is set to TelecommutePreference.TELECOMMUTE/ALLOWED, telecommuting jobs are searched, and address and lat/lng are ignored. If not set or set to TelecommutePreference.TELECOMMUTE/EXCLUDED, the telecommute status of the jobs is ignored. Jobs that have PostingRegion.TELECOMMUTE and have additional Job.addresses may still be matched based on other location filters using address or lat_lng. This filter can be used by itself to search exclusively for telecommuting jobs, or it can be combined with another location filter to search for a combination of job locations, such as \"Mountain View\" or \"telecommuting\" jobs. However, when used in combination with other location filters, telecommuting jobs can be treated as less relevant than other jobs in the search response. This field is only
 -- used for job search requests.
-newtype LocationFilter_TelecommutePreference = LocationFilter_TelecommutePreference {fromLocationFilter_TelecommutePreference :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LocationFilter_TelecommutePreference = LocationFilter_TelecommutePreference { fromLocationFilter_TelecommutePreference :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value if the telecommute preference isn\'t specified.
 pattern LocationFilter_TelecommutePreference_TELECOMMUTEPREFERENCEUNSPECIFIED :: LocationFilter_TelecommutePreference
@@ -1975,21 +1988,20 @@ pattern LocationFilter_TelecommutePreference_TELECOMMUTEJOBSEXCLUDED = LocationF
   LocationFilter_TelecommutePreference_TELECOMMUTEEXCLUDED,
   LocationFilter_TelecommutePreference_TELECOMMUTEALLOWED,
   LocationFilter_TelecommutePreference_TELECOMMUTEJOBSEXCLUDED,
-  LocationFilter_TelecommutePreference
-  #-}
+  LocationFilter_TelecommutePreference #-}
 
 -- | Option for job HTML content sanitization. Applied fields are: * description * applicationInfo.instruction * incentives * qualifications * responsibilities HTML tags in these fields may be stripped if sanitiazation isn\'t disabled. Defaults to HtmlSanitization.SIMPLE/FORMATTING/ONLY.
-newtype ProcessingOptions_HtmlSanitization = ProcessingOptions_HtmlSanitization {fromProcessingOptions_HtmlSanitization :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProcessingOptions_HtmlSanitization = ProcessingOptions_HtmlSanitization { fromProcessingOptions_HtmlSanitization :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONUNSPECIFIED :: ProcessingOptions_HtmlSanitization
@@ -2007,21 +2019,20 @@ pattern ProcessingOptions_HtmlSanitization_SIMPLEFORMATTINGONLY = ProcessingOpti
   ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONUNSPECIFIED,
   ProcessingOptions_HtmlSanitization_HTMLSANITIZATIONDISABLED,
   ProcessingOptions_HtmlSanitization_SIMPLEFORMATTINGONLY,
-  ProcessingOptions_HtmlSanitization
-  #-}
+  ProcessingOptions_HtmlSanitization #-}
 
 -- | Controls whether highly similar jobs are returned next to each other in the search results. Jobs are identified as highly similar based on their titles, job categories, and locations. Highly similar results are clustered so that only one representative job of the cluster is displayed to the job seeker higher up in the results, with the other jobs being displayed lower down in the results. Defaults to DiversificationLevel.SIMPLE if no value is specified.
-newtype SearchJobsRequest_DiversificationLevel = SearchJobsRequest_DiversificationLevel {fromSearchJobsRequest_DiversificationLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SearchJobsRequest_DiversificationLevel = SearchJobsRequest_DiversificationLevel { fromSearchJobsRequest_DiversificationLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The diversification level isn\'t specified.
 pattern SearchJobsRequest_DiversificationLevel_DIVERSIFICATIONLEVELUNSPECIFIED :: SearchJobsRequest_DiversificationLevel
@@ -2059,21 +2070,20 @@ pattern SearchJobsRequest_DiversificationLevel_DIVERSIFYBYLOOSERSIMILARITY = Sea
   SearchJobsRequest_DiversificationLevel_TWOPERCOMPANY,
   SearchJobsRequest_DiversificationLevel_MAXTHREEPERCOMPANY,
   SearchJobsRequest_DiversificationLevel_DIVERSIFYBYLOOSERSIMILARITY,
-  SearchJobsRequest_DiversificationLevel
-  #-}
+  SearchJobsRequest_DiversificationLevel #-}
 
 -- | The desired job attributes returned for jobs in the search response. Defaults to JobView.JOB/VIEW/SMALL if no value is specified.
-newtype SearchJobsRequest_JobView = SearchJobsRequest_JobView {fromSearchJobsRequest_JobView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SearchJobsRequest_JobView = SearchJobsRequest_JobView { fromSearchJobsRequest_JobView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern SearchJobsRequest_JobView_JOBVIEWUNSPECIFIED :: SearchJobsRequest_JobView
@@ -2101,21 +2111,20 @@ pattern SearchJobsRequest_JobView_JOBVIEWFULL = SearchJobsRequest_JobView "JOB_V
   SearchJobsRequest_JobView_JOBVIEWMINIMAL,
   SearchJobsRequest_JobView_JOBVIEWSMALL,
   SearchJobsRequest_JobView_JOBVIEWFULL,
-  SearchJobsRequest_JobView
-  #-}
+  SearchJobsRequest_JobView #-}
 
 -- | Controls what keyword match options to use. If both keyword/match/mode and disable/keyword/match are set, keyword/match/mode will take precedence. Defaults to KeywordMatchMode.KEYWORD/MATCH/ALL if no value is specified.
-newtype SearchJobsRequest_KeywordMatchMode = SearchJobsRequest_KeywordMatchMode {fromSearchJobsRequest_KeywordMatchMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SearchJobsRequest_KeywordMatchMode = SearchJobsRequest_KeywordMatchMode { fromSearchJobsRequest_KeywordMatchMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The keyword match option isn\'t specified. Defaults to KeywordMatchMode.KEYWORD/MATCH/ALL behavior.
 pattern SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHMODEUNSPECIFIED :: SearchJobsRequest_KeywordMatchMode
@@ -2138,21 +2147,20 @@ pattern SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHTITLEONLY = SearchJobsReq
   SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHDISABLED,
   SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHALL,
   SearchJobsRequest_KeywordMatchMode_KEYWORDMATCHTITLEONLY,
-  SearchJobsRequest_KeywordMatchMode
-  #-}
+  SearchJobsRequest_KeywordMatchMode #-}
 
 -- | Optional. The relevance threshold of the search results. Default to Google defined threshold, leveraging a balance of precision and recall to deliver both highly accurate results and comprehensive coverage of relevant information.
-newtype SearchJobsRequest_RelevanceThreshold = SearchJobsRequest_RelevanceThreshold {fromSearchJobsRequest_RelevanceThreshold :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SearchJobsRequest_RelevanceThreshold = SearchJobsRequest_RelevanceThreshold { fromSearchJobsRequest_RelevanceThreshold :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. In this case, server behavior defaults to Google defined threshold.
 pattern SearchJobsRequest_RelevanceThreshold_RELEVANCETHRESHOLDUNSPECIFIED :: SearchJobsRequest_RelevanceThreshold
@@ -2180,21 +2188,20 @@ pattern SearchJobsRequest_RelevanceThreshold_High = SearchJobsRequest_RelevanceT
   SearchJobsRequest_RelevanceThreshold_Low,
   SearchJobsRequest_RelevanceThreshold_Medium,
   SearchJobsRequest_RelevanceThreshold_High,
-  SearchJobsRequest_RelevanceThreshold
-  #-}
+  SearchJobsRequest_RelevanceThreshold #-}
 
 -- | Mode of a search. Defaults to SearchMode.JOB_SEARCH.
-newtype SearchJobsRequest_SearchMode = SearchJobsRequest_SearchMode {fromSearchJobsRequest_SearchMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SearchJobsRequest_SearchMode = SearchJobsRequest_SearchMode { fromSearchJobsRequest_SearchMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The mode of the search method isn\'t specified. The default search behavior is identical to JOB_SEARCH search behavior.
 pattern SearchJobsRequest_SearchMode_SEARCHMODEUNSPECIFIED :: SearchJobsRequest_SearchMode
@@ -2212,21 +2219,20 @@ pattern SearchJobsRequest_SearchMode_FEATUREDJOBSEARCH = SearchJobsRequest_Searc
   SearchJobsRequest_SearchMode_SEARCHMODEUNSPECIFIED,
   SearchJobsRequest_SearchMode_JOBSEARCH,
   SearchJobsRequest_SearchMode_FEATUREDJOBSEARCH,
-  SearchJobsRequest_SearchMode
-  #-}
+  SearchJobsRequest_SearchMode #-}
 
 -- | The scope of the completion. The defaults is CompletionScope.PUBLIC.
-newtype ProjectsTenantsCompleteQueryScope = ProjectsTenantsCompleteQueryScope {fromProjectsTenantsCompleteQueryScope :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsTenantsCompleteQueryScope = ProjectsTenantsCompleteQueryScope { fromProjectsTenantsCompleteQueryScope :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern ProjectsTenantsCompleteQueryScope_COMPLETIONSCOPEUNSPECIFIED :: ProjectsTenantsCompleteQueryScope
@@ -2244,21 +2250,20 @@ pattern ProjectsTenantsCompleteQueryScope_Public = ProjectsTenantsCompleteQueryS
   ProjectsTenantsCompleteQueryScope_COMPLETIONSCOPEUNSPECIFIED,
   ProjectsTenantsCompleteQueryScope_Tenant,
   ProjectsTenantsCompleteQueryScope_Public,
-  ProjectsTenantsCompleteQueryScope
-  #-}
+  ProjectsTenantsCompleteQueryScope #-}
 
 -- | The completion topic. The default is CompletionType.COMBINED.
-newtype ProjectsTenantsCompleteQueryType = ProjectsTenantsCompleteQueryType {fromProjectsTenantsCompleteQueryType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsTenantsCompleteQueryType = ProjectsTenantsCompleteQueryType { fromProjectsTenantsCompleteQueryType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern ProjectsTenantsCompleteQueryType_COMPLETIONTYPEUNSPECIFIED :: ProjectsTenantsCompleteQueryType
@@ -2281,21 +2286,20 @@ pattern ProjectsTenantsCompleteQueryType_Combined = ProjectsTenantsCompleteQuery
   ProjectsTenantsCompleteQueryType_JOBTITLE,
   ProjectsTenantsCompleteQueryType_COMPANYNAME,
   ProjectsTenantsCompleteQueryType_Combined,
-  ProjectsTenantsCompleteQueryType
-  #-}
+  ProjectsTenantsCompleteQueryType #-}
 
 -- | The desired job attributes returned for jobs in the search response. Defaults to JobView.JOB/VIEW/FULL if no value is specified.
-newtype ProjectsTenantsJobsListJobView = ProjectsTenantsJobsListJobView {fromProjectsTenantsJobsListJobView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsTenantsJobsListJobView = ProjectsTenantsJobsListJobView { fromProjectsTenantsJobsListJobView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value.
 pattern ProjectsTenantsJobsListJobView_JOBVIEWUNSPECIFIED :: ProjectsTenantsJobsListJobView
@@ -2323,5 +2327,4 @@ pattern ProjectsTenantsJobsListJobView_JOBVIEWFULL = ProjectsTenantsJobsListJobV
   ProjectsTenantsJobsListJobView_JOBVIEWMINIMAL,
   ProjectsTenantsJobsListJobView_JOBVIEWSMALL,
   ProjectsTenantsJobsListJobView_JOBVIEWFULL,
-  ProjectsTenantsJobsListJobView
-  #-}
+  ProjectsTenantsJobsListJobView #-}

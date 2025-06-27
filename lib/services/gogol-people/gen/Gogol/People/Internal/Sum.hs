@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.People.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AgeRangeType_AgeRange
     AgeRangeType_AgeRange
-      ( AgeRangeType_AgeRange_AGERANGEUNSPECIFIED,
+      (
+        AgeRangeType_AgeRange_AGERANGEUNSPECIFIED,
         AgeRangeType_AgeRange_LESSTHANEIGHTEEN,
         AgeRangeType_AgeRange_EIGHTEENTOTWENTY,
         AgeRangeType_AgeRange_TWENTYONEOROLDER,
@@ -42,7 +48,8 @@ module Gogol.People.Internal.Sum
 
     -- * BatchCreateContactsRequest_SourcesItem
     BatchCreateContactsRequest_SourcesItem
-      ( BatchCreateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
+      (
+        BatchCreateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
         BatchCreateContactsRequest_SourcesItem_READSOURCETYPEPROFILE,
         BatchCreateContactsRequest_SourcesItem_READSOURCETYPECONTACT,
         BatchCreateContactsRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
@@ -52,7 +59,8 @@ module Gogol.People.Internal.Sum
 
     -- * BatchUpdateContactsRequest_SourcesItem
     BatchUpdateContactsRequest_SourcesItem
-      ( BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
+      (
+        BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
         BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEPROFILE,
         BatchUpdateContactsRequest_SourcesItem_READSOURCETYPECONTACT,
         BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
@@ -62,7 +70,8 @@ module Gogol.People.Internal.Sum
 
     -- * Biography_ContentType
     Biography_ContentType
-      ( Biography_ContentType_CONTENTTYPEUNSPECIFIED,
+      (
+        Biography_ContentType_CONTENTTYPEUNSPECIFIED,
         Biography_ContentType_TEXTPLAIN,
         Biography_ContentType_TEXTHTML,
         ..
@@ -70,7 +79,8 @@ module Gogol.People.Internal.Sum
 
     -- * ContactGroup_GroupType
     ContactGroup_GroupType
-      ( ContactGroup_GroupType_GROUPTYPEUNSPECIFIED,
+      (
+        ContactGroup_GroupType_GROUPTYPEUNSPECIFIED,
         ContactGroup_GroupType_USERCONTACTGROUP,
         ContactGroup_GroupType_SYSTEMCONTACTGROUP,
         ..
@@ -78,7 +88,8 @@ module Gogol.People.Internal.Sum
 
     -- * CopyOtherContactToMyContactsGroupRequest_SourcesItem
     CopyOtherContactToMyContactsGroupRequest_SourcesItem
-      ( CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
+      (
+        CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
         CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEPROFILE,
         CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPECONTACT,
         CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
@@ -88,7 +99,8 @@ module Gogol.People.Internal.Sum
 
     -- * MiscKeyword_Type
     MiscKeyword_Type
-      ( MiscKeyword_Type_TYPEUNSPECIFIED,
+      (
+        MiscKeyword_Type_TYPEUNSPECIFIED,
         MiscKeyword_Type_OUTLOOKBILLINGINFORMATION,
         MiscKeyword_Type_OUTLOOKDIRECTORYSERVER,
         MiscKeyword_Type_OUTLOOKKEYWORD,
@@ -105,7 +117,8 @@ module Gogol.People.Internal.Sum
 
     -- * Nickname_Type
     Nickname_Type
-      ( Nickname_Type_Default,
+      (
+        Nickname_Type_Default,
         Nickname_Type_MAIDENNAME,
         Nickname_Type_Initials,
         Nickname_Type_Gplus,
@@ -117,7 +130,8 @@ module Gogol.People.Internal.Sum
 
     -- * Person_AgeRange
     Person_AgeRange
-      ( Person_AgeRange_AGERANGEUNSPECIFIED,
+      (
+        Person_AgeRange_AGERANGEUNSPECIFIED,
         Person_AgeRange_LESSTHANEIGHTEEN,
         Person_AgeRange_EIGHTEENTOTWENTY,
         Person_AgeRange_TWENTYONEOROLDER,
@@ -126,7 +140,8 @@ module Gogol.People.Internal.Sum
 
     -- * PersonMetadata_ObjectType
     PersonMetadata_ObjectType
-      ( PersonMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
+      (
+        PersonMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
         PersonMetadata_ObjectType_Person,
         PersonMetadata_ObjectType_Page,
         ..
@@ -134,7 +149,8 @@ module Gogol.People.Internal.Sum
 
     -- * ProfileMetadata_ObjectType
     ProfileMetadata_ObjectType
-      ( ProfileMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
+      (
+        ProfileMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
         ProfileMetadata_ObjectType_Person,
         ProfileMetadata_ObjectType_Page,
         ..
@@ -142,7 +158,8 @@ module Gogol.People.Internal.Sum
 
     -- * ProfileMetadata_UserTypesItem
     ProfileMetadata_UserTypesItem
-      ( ProfileMetadata_UserTypesItem_USERTYPEUNKNOWN,
+      (
+        ProfileMetadata_UserTypesItem_USERTYPEUNKNOWN,
         ProfileMetadata_UserTypesItem_GOOGLEUSER,
         ProfileMetadata_UserTypesItem_GPLUSUSER,
         ProfileMetadata_UserTypesItem_GOOGLEAPPSUSER,
@@ -151,7 +168,8 @@ module Gogol.People.Internal.Sum
 
     -- * Source_Type
     Source_Type
-      ( Source_Type_SOURCETYPEUNSPECIFIED,
+      (
+        Source_Type_SOURCETYPEUNSPECIFIED,
         Source_Type_Account,
         Source_Type_Profile,
         Source_Type_DOMAINPROFILE,
@@ -163,7 +181,8 @@ module Gogol.People.Internal.Sum
 
     -- * UpdateContactPhotoRequest_SourcesItem
     UpdateContactPhotoRequest_SourcesItem
-      ( UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
+      (
+        UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEUNSPECIFIED,
         UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEPROFILE,
         UpdateContactPhotoRequest_SourcesItem_READSOURCETYPECONTACT,
         UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
@@ -173,7 +192,8 @@ module Gogol.People.Internal.Sum
 
     -- * OtherContactsListSources
     OtherContactsListSources
-      ( OtherContactsListSources_READSOURCETYPEUNSPECIFIED,
+      (
+        OtherContactsListSources_READSOURCETYPEUNSPECIFIED,
         OtherContactsListSources_READSOURCETYPEPROFILE,
         OtherContactsListSources_READSOURCETYPECONTACT,
         OtherContactsListSources_READSOURCETYPEDOMAINCONTACT,
@@ -183,7 +203,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleConnectionsListSortOrder
     PeopleConnectionsListSortOrder
-      ( PeopleConnectionsListSortOrder_LASTMODIFIEDASCENDING,
+      (
+        PeopleConnectionsListSortOrder_LASTMODIFIEDASCENDING,
         PeopleConnectionsListSortOrder_LASTMODIFIEDDESCENDING,
         PeopleConnectionsListSortOrder_FIRSTNAMEASCENDING,
         PeopleConnectionsListSortOrder_LASTNAMEASCENDING,
@@ -192,7 +213,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleConnectionsListSources
     PeopleConnectionsListSources
-      ( PeopleConnectionsListSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleConnectionsListSources_READSOURCETYPEUNSPECIFIED,
         PeopleConnectionsListSources_READSOURCETYPEPROFILE,
         PeopleConnectionsListSources_READSOURCETYPECONTACT,
         PeopleConnectionsListSources_READSOURCETYPEDOMAINCONTACT,
@@ -202,7 +224,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleCreateContactSources
     PeopleCreateContactSources
-      ( PeopleCreateContactSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleCreateContactSources_READSOURCETYPEUNSPECIFIED,
         PeopleCreateContactSources_READSOURCETYPEPROFILE,
         PeopleCreateContactSources_READSOURCETYPECONTACT,
         PeopleCreateContactSources_READSOURCETYPEDOMAINCONTACT,
@@ -212,7 +235,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleDeleteContactPhotoSources
     PeopleDeleteContactPhotoSources
-      ( PeopleDeleteContactPhotoSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleDeleteContactPhotoSources_READSOURCETYPEUNSPECIFIED,
         PeopleDeleteContactPhotoSources_READSOURCETYPEPROFILE,
         PeopleDeleteContactPhotoSources_READSOURCETYPECONTACT,
         PeopleDeleteContactPhotoSources_READSOURCETYPEDOMAINCONTACT,
@@ -222,7 +246,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleGetSources
     PeopleGetSources
-      ( PeopleGetSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleGetSources_READSOURCETYPEUNSPECIFIED,
         PeopleGetSources_READSOURCETYPEPROFILE,
         PeopleGetSources_READSOURCETYPECONTACT,
         PeopleGetSources_READSOURCETYPEDOMAINCONTACT,
@@ -232,7 +257,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleGetBatchGetSources
     PeopleGetBatchGetSources
-      ( PeopleGetBatchGetSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleGetBatchGetSources_READSOURCETYPEUNSPECIFIED,
         PeopleGetBatchGetSources_READSOURCETYPEPROFILE,
         PeopleGetBatchGetSources_READSOURCETYPECONTACT,
         PeopleGetBatchGetSources_READSOURCETYPEDOMAINCONTACT,
@@ -242,14 +268,16 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleListDirectoryPeopleMergeSources
     PeopleListDirectoryPeopleMergeSources
-      ( PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
+      (
+        PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
         PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT,
         ..
       ),
 
     -- * PeopleListDirectoryPeopleSources
     PeopleListDirectoryPeopleSources
-      ( PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
+      (
+        PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
         PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINCONTACT,
         PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE,
         ..
@@ -257,7 +285,8 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleSearchContactsSources
     PeopleSearchContactsSources
-      ( PeopleSearchContactsSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleSearchContactsSources_READSOURCETYPEUNSPECIFIED,
         PeopleSearchContactsSources_READSOURCETYPEPROFILE,
         PeopleSearchContactsSources_READSOURCETYPECONTACT,
         PeopleSearchContactsSources_READSOURCETYPEDOMAINCONTACT,
@@ -267,14 +296,16 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleSearchDirectoryPeopleMergeSources
     PeopleSearchDirectoryPeopleMergeSources
-      ( PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
+      (
+        PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
         PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT,
         ..
       ),
 
     -- * PeopleSearchDirectoryPeopleSources
     PeopleSearchDirectoryPeopleSources
-      ( PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
+      (
+        PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
         PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINCONTACT,
         PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE,
         ..
@@ -282,30 +313,30 @@ module Gogol.People.Internal.Sum
 
     -- * PeopleUpdateContactSources
     PeopleUpdateContactSources
-      ( PeopleUpdateContactSources_READSOURCETYPEUNSPECIFIED,
+      (
+        PeopleUpdateContactSources_READSOURCETYPEUNSPECIFIED,
         PeopleUpdateContactSources_READSOURCETYPEPROFILE,
         PeopleUpdateContactSources_READSOURCETYPECONTACT,
         PeopleUpdateContactSources_READSOURCETYPEDOMAINCONTACT,
         PeopleUpdateContactSources_READSOURCETYPEOTHERCONTACT,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -318,21 +349,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The age range.
-newtype AgeRangeType_AgeRange = AgeRangeType_AgeRange {fromAgeRangeType_AgeRange :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AgeRangeType_AgeRange = AgeRangeType_AgeRange { fromAgeRangeType_AgeRange :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern AgeRangeType_AgeRange_AGERANGEUNSPECIFIED :: AgeRangeType_AgeRange
@@ -355,20 +385,19 @@ pattern AgeRangeType_AgeRange_TWENTYONEOROLDER = AgeRangeType_AgeRange "TWENTY_O
   AgeRangeType_AgeRange_LESSTHANEIGHTEEN,
   AgeRangeType_AgeRange_EIGHTEENTOTWENTY,
   AgeRangeType_AgeRange_TWENTYONEOROLDER,
-  AgeRangeType_AgeRange
-  #-}
+  AgeRangeType_AgeRange #-}
 
-newtype BatchCreateContactsRequest_SourcesItem = BatchCreateContactsRequest_SourcesItem {fromBatchCreateContactsRequest_SourcesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BatchCreateContactsRequest_SourcesItem = BatchCreateContactsRequest_SourcesItem { fromBatchCreateContactsRequest_SourcesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern BatchCreateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED :: BatchCreateContactsRequest_SourcesItem
@@ -396,20 +425,19 @@ pattern BatchCreateContactsRequest_SourcesItem_READSOURCETYPEOTHERCONTACT = Batc
   BatchCreateContactsRequest_SourcesItem_READSOURCETYPECONTACT,
   BatchCreateContactsRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
   BatchCreateContactsRequest_SourcesItem_READSOURCETYPEOTHERCONTACT,
-  BatchCreateContactsRequest_SourcesItem
-  #-}
+  BatchCreateContactsRequest_SourcesItem #-}
 
-newtype BatchUpdateContactsRequest_SourcesItem = BatchUpdateContactsRequest_SourcesItem {fromBatchUpdateContactsRequest_SourcesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BatchUpdateContactsRequest_SourcesItem = BatchUpdateContactsRequest_SourcesItem { fromBatchUpdateContactsRequest_SourcesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEUNSPECIFIED :: BatchUpdateContactsRequest_SourcesItem
@@ -437,21 +465,20 @@ pattern BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEOTHERCONTACT = Batc
   BatchUpdateContactsRequest_SourcesItem_READSOURCETYPECONTACT,
   BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
   BatchUpdateContactsRequest_SourcesItem_READSOURCETYPEOTHERCONTACT,
-  BatchUpdateContactsRequest_SourcesItem
-  #-}
+  BatchUpdateContactsRequest_SourcesItem #-}
 
 -- | The content type of the biography.
-newtype Biography_ContentType = Biography_ContentType {fromBiography_ContentType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Biography_ContentType = Biography_ContentType { fromBiography_ContentType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Biography_ContentType_CONTENTTYPEUNSPECIFIED :: Biography_ContentType
@@ -469,21 +496,20 @@ pattern Biography_ContentType_TEXTHTML = Biography_ContentType "TEXT_HTML"
   Biography_ContentType_CONTENTTYPEUNSPECIFIED,
   Biography_ContentType_TEXTPLAIN,
   Biography_ContentType_TEXTHTML,
-  Biography_ContentType
-  #-}
+  Biography_ContentType #-}
 
 -- | Output only. The contact group type.
-newtype ContactGroup_GroupType = ContactGroup_GroupType {fromContactGroup_GroupType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ContactGroup_GroupType = ContactGroup_GroupType { fromContactGroup_GroupType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern ContactGroup_GroupType_GROUPTYPEUNSPECIFIED :: ContactGroup_GroupType
@@ -501,20 +527,19 @@ pattern ContactGroup_GroupType_SYSTEMCONTACTGROUP = ContactGroup_GroupType "SYST
   ContactGroup_GroupType_GROUPTYPEUNSPECIFIED,
   ContactGroup_GroupType_USERCONTACTGROUP,
   ContactGroup_GroupType_SYSTEMCONTACTGROUP,
-  ContactGroup_GroupType
-  #-}
+  ContactGroup_GroupType #-}
 
-newtype CopyOtherContactToMyContactsGroupRequest_SourcesItem = CopyOtherContactToMyContactsGroupRequest_SourcesItem {fromCopyOtherContactToMyContactsGroupRequest_SourcesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CopyOtherContactToMyContactsGroupRequest_SourcesItem = CopyOtherContactToMyContactsGroupRequest_SourcesItem { fromCopyOtherContactToMyContactsGroupRequest_SourcesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEUNSPECIFIED :: CopyOtherContactToMyContactsGroupRequest_SourcesItem
@@ -542,21 +567,20 @@ pattern CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEOTHER
   CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPECONTACT,
   CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
   CopyOtherContactToMyContactsGroupRequest_SourcesItem_READSOURCETYPEOTHERCONTACT,
-  CopyOtherContactToMyContactsGroupRequest_SourcesItem
-  #-}
+  CopyOtherContactToMyContactsGroupRequest_SourcesItem #-}
 
 -- | The miscellaneous keyword type.
-newtype MiscKeyword_Type = MiscKeyword_Type {fromMiscKeyword_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MiscKeyword_Type = MiscKeyword_Type { fromMiscKeyword_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern MiscKeyword_Type_TYPEUNSPECIFIED :: MiscKeyword_Type
@@ -619,21 +643,20 @@ pattern MiscKeyword_Type_Other = MiscKeyword_Type "OTHER"
   MiscKeyword_Type_Home,
   MiscKeyword_Type_Work,
   MiscKeyword_Type_Other,
-  MiscKeyword_Type
-  #-}
+  MiscKeyword_Type #-}
 
 -- | The type of the nickname.
-newtype Nickname_Type = Nickname_Type {fromNickname_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Nickname_Type = Nickname_Type { fromNickname_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Generic nickname.
 pattern Nickname_Type_Default :: Nickname_Type
@@ -671,21 +694,20 @@ pattern Nickname_Type_SHORTNAME = Nickname_Type "SHORT_NAME"
   Nickname_Type_OTHERNAME,
   Nickname_Type_ALTERNATENAME,
   Nickname_Type_SHORTNAME,
-  Nickname_Type
-  #-}
+  Nickname_Type #-}
 
 -- | Output only. __DEPRECATED__ (Please use @person.ageRanges@ instead) The person\'s age range.
-newtype Person_AgeRange = Person_AgeRange {fromPerson_AgeRange :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Person_AgeRange = Person_AgeRange { fromPerson_AgeRange :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Person_AgeRange_AGERANGEUNSPECIFIED :: Person_AgeRange
@@ -708,21 +730,20 @@ pattern Person_AgeRange_TWENTYONEOROLDER = Person_AgeRange "TWENTY_ONE_OR_OLDER"
   Person_AgeRange_LESSTHANEIGHTEEN,
   Person_AgeRange_EIGHTEENTOTWENTY,
   Person_AgeRange_TWENTYONEOROLDER,
-  Person_AgeRange
-  #-}
+  Person_AgeRange #-}
 
 -- | Output only. __DEPRECATED__ (Please use @person.metadata.sources.profileMetadata.objectType@ instead) The type of the person object.
-newtype PersonMetadata_ObjectType = PersonMetadata_ObjectType {fromPersonMetadata_ObjectType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PersonMetadata_ObjectType = PersonMetadata_ObjectType { fromPersonMetadata_ObjectType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PersonMetadata_ObjectType_OBJECTTYPEUNSPECIFIED :: PersonMetadata_ObjectType
@@ -740,21 +761,20 @@ pattern PersonMetadata_ObjectType_Page = PersonMetadata_ObjectType "PAGE"
   PersonMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
   PersonMetadata_ObjectType_Person,
   PersonMetadata_ObjectType_Page,
-  PersonMetadata_ObjectType
-  #-}
+  PersonMetadata_ObjectType #-}
 
 -- | Output only. The profile object type.
-newtype ProfileMetadata_ObjectType = ProfileMetadata_ObjectType {fromProfileMetadata_ObjectType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProfileMetadata_ObjectType = ProfileMetadata_ObjectType { fromProfileMetadata_ObjectType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern ProfileMetadata_ObjectType_OBJECTTYPEUNSPECIFIED :: ProfileMetadata_ObjectType
@@ -772,20 +792,19 @@ pattern ProfileMetadata_ObjectType_Page = ProfileMetadata_ObjectType "PAGE"
   ProfileMetadata_ObjectType_OBJECTTYPEUNSPECIFIED,
   ProfileMetadata_ObjectType_Person,
   ProfileMetadata_ObjectType_Page,
-  ProfileMetadata_ObjectType
-  #-}
+  ProfileMetadata_ObjectType #-}
 
-newtype ProfileMetadata_UserTypesItem = ProfileMetadata_UserTypesItem {fromProfileMetadata_UserTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProfileMetadata_UserTypesItem = ProfileMetadata_UserTypesItem { fromProfileMetadata_UserTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The user type is not known.
 pattern ProfileMetadata_UserTypesItem_USERTYPEUNKNOWN :: ProfileMetadata_UserTypesItem
@@ -808,21 +827,20 @@ pattern ProfileMetadata_UserTypesItem_GOOGLEAPPSUSER = ProfileMetadata_UserTypes
   ProfileMetadata_UserTypesItem_GOOGLEUSER,
   ProfileMetadata_UserTypesItem_GPLUSUSER,
   ProfileMetadata_UserTypesItem_GOOGLEAPPSUSER,
-  ProfileMetadata_UserTypesItem
-  #-}
+  ProfileMetadata_UserTypesItem #-}
 
 -- | The source type.
-newtype Source_Type = Source_Type {fromSource_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Source_Type = Source_Type { fromSource_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern Source_Type_SOURCETYPEUNSPECIFIED :: Source_Type
@@ -860,20 +878,19 @@ pattern Source_Type_DOMAINCONTACT = Source_Type "DOMAIN_CONTACT"
   Source_Type_Contact,
   Source_Type_OTHERCONTACT,
   Source_Type_DOMAINCONTACT,
-  Source_Type
-  #-}
+  Source_Type #-}
 
-newtype UpdateContactPhotoRequest_SourcesItem = UpdateContactPhotoRequest_SourcesItem {fromUpdateContactPhotoRequest_SourcesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UpdateContactPhotoRequest_SourcesItem = UpdateContactPhotoRequest_SourcesItem { fromUpdateContactPhotoRequest_SourcesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEUNSPECIFIED :: UpdateContactPhotoRequest_SourcesItem
@@ -901,21 +918,20 @@ pattern UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEOTHERCONTACT = Updat
   UpdateContactPhotoRequest_SourcesItem_READSOURCETYPECONTACT,
   UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEDOMAINCONTACT,
   UpdateContactPhotoRequest_SourcesItem_READSOURCETYPEOTHERCONTACT,
-  UpdateContactPhotoRequest_SourcesItem
-  #-}
+  UpdateContactPhotoRequest_SourcesItem #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT if not set. Possible values for this field are: * READ/SOURCE/TYPE/CONTACT * READ/SOURCE/TYPE/CONTACT,READ/SOURCE/TYPE/PROFILE Specifying READ/SOURCE/TYPE/PROFILE without specifying READ/SOURCE/TYPE/CONTACT is not permitted.
-newtype OtherContactsListSources = OtherContactsListSources {fromOtherContactsListSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype OtherContactsListSources = OtherContactsListSources { fromOtherContactsListSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern OtherContactsListSources_READSOURCETYPEUNSPECIFIED :: OtherContactsListSources
@@ -943,21 +959,20 @@ pattern OtherContactsListSources_READSOURCETYPEOTHERCONTACT = OtherContactsListS
   OtherContactsListSources_READSOURCETYPECONTACT,
   OtherContactsListSources_READSOURCETYPEDOMAINCONTACT,
   OtherContactsListSources_READSOURCETYPEOTHERCONTACT,
-  OtherContactsListSources
-  #-}
+  OtherContactsListSources #-}
 
 -- | Optional. The order in which the connections should be sorted. Defaults to @LAST_MODIFIED_ASCENDING@.
-newtype PeopleConnectionsListSortOrder = PeopleConnectionsListSortOrder {fromPeopleConnectionsListSortOrder :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleConnectionsListSortOrder = PeopleConnectionsListSortOrder { fromPeopleConnectionsListSortOrder :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Sort people by when they were changed; older entries first.
 pattern PeopleConnectionsListSortOrder_LASTMODIFIEDASCENDING :: PeopleConnectionsListSortOrder
@@ -980,21 +995,20 @@ pattern PeopleConnectionsListSortOrder_LASTNAMEASCENDING = PeopleConnectionsList
   PeopleConnectionsListSortOrder_LASTMODIFIEDDESCENDING,
   PeopleConnectionsListSortOrder_FIRSTNAMEASCENDING,
   PeopleConnectionsListSortOrder_LASTNAMEASCENDING,
-  PeopleConnectionsListSortOrder
-  #-}
+  PeopleConnectionsListSortOrder #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT and READ/SOURCE/TYPE/PROFILE if not set.
-newtype PeopleConnectionsListSources = PeopleConnectionsListSources {fromPeopleConnectionsListSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleConnectionsListSources = PeopleConnectionsListSources { fromPeopleConnectionsListSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleConnectionsListSources_READSOURCETYPEUNSPECIFIED :: PeopleConnectionsListSources
@@ -1022,21 +1036,20 @@ pattern PeopleConnectionsListSources_READSOURCETYPEOTHERCONTACT = PeopleConnecti
   PeopleConnectionsListSources_READSOURCETYPECONTACT,
   PeopleConnectionsListSources_READSOURCETYPEDOMAINCONTACT,
   PeopleConnectionsListSources_READSOURCETYPEOTHERCONTACT,
-  PeopleConnectionsListSources
-  #-}
+  PeopleConnectionsListSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT and READ/SOURCE/TYPE/PROFILE if not set.
-newtype PeopleCreateContactSources = PeopleCreateContactSources {fromPeopleCreateContactSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleCreateContactSources = PeopleCreateContactSources { fromPeopleCreateContactSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleCreateContactSources_READSOURCETYPEUNSPECIFIED :: PeopleCreateContactSources
@@ -1064,21 +1077,20 @@ pattern PeopleCreateContactSources_READSOURCETYPEOTHERCONTACT = PeopleCreateCont
   PeopleCreateContactSources_READSOURCETYPECONTACT,
   PeopleCreateContactSources_READSOURCETYPEDOMAINCONTACT,
   PeopleCreateContactSources_READSOURCETYPEOTHERCONTACT,
-  PeopleCreateContactSources
-  #-}
+  PeopleCreateContactSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT and READ/SOURCE/TYPE/PROFILE if not set.
-newtype PeopleDeleteContactPhotoSources = PeopleDeleteContactPhotoSources {fromPeopleDeleteContactPhotoSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleDeleteContactPhotoSources = PeopleDeleteContactPhotoSources { fromPeopleDeleteContactPhotoSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleDeleteContactPhotoSources_READSOURCETYPEUNSPECIFIED :: PeopleDeleteContactPhotoSources
@@ -1106,21 +1118,20 @@ pattern PeopleDeleteContactPhotoSources_READSOURCETYPEOTHERCONTACT = PeopleDelet
   PeopleDeleteContactPhotoSources_READSOURCETYPECONTACT,
   PeopleDeleteContactPhotoSources_READSOURCETYPEDOMAINCONTACT,
   PeopleDeleteContactPhotoSources_READSOURCETYPEOTHERCONTACT,
-  PeopleDeleteContactPhotoSources
-  #-}
+  PeopleDeleteContactPhotoSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/PROFILE and READ/SOURCE/TYPE/CONTACT if not set.
-newtype PeopleGetSources = PeopleGetSources {fromPeopleGetSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleGetSources = PeopleGetSources { fromPeopleGetSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleGetSources_READSOURCETYPEUNSPECIFIED :: PeopleGetSources
@@ -1148,21 +1159,20 @@ pattern PeopleGetSources_READSOURCETYPEOTHERCONTACT = PeopleGetSources "READ_SOU
   PeopleGetSources_READSOURCETYPECONTACT,
   PeopleGetSources_READSOURCETYPEDOMAINCONTACT,
   PeopleGetSources_READSOURCETYPEOTHERCONTACT,
-  PeopleGetSources
-  #-}
+  PeopleGetSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT and READ/SOURCE/TYPE/PROFILE if not set.
-newtype PeopleGetBatchGetSources = PeopleGetBatchGetSources {fromPeopleGetBatchGetSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleGetBatchGetSources = PeopleGetBatchGetSources { fromPeopleGetBatchGetSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleGetBatchGetSources_READSOURCETYPEUNSPECIFIED :: PeopleGetBatchGetSources
@@ -1190,21 +1200,20 @@ pattern PeopleGetBatchGetSources_READSOURCETYPEOTHERCONTACT = PeopleGetBatchGetS
   PeopleGetBatchGetSources_READSOURCETYPECONTACT,
   PeopleGetBatchGetSources_READSOURCETYPEDOMAINCONTACT,
   PeopleGetBatchGetSources_READSOURCETYPEOTHERCONTACT,
-  PeopleGetBatchGetSources
-  #-}
+  PeopleGetBatchGetSources #-}
 
 -- | Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
-newtype PeopleListDirectoryPeopleMergeSources = PeopleListDirectoryPeopleMergeSources {fromPeopleListDirectoryPeopleMergeSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleListDirectoryPeopleMergeSources = PeopleListDirectoryPeopleMergeSources { fromPeopleListDirectoryPeopleMergeSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED :: PeopleListDirectoryPeopleMergeSources
@@ -1217,21 +1226,20 @@ pattern PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT = 
 {-# COMPLETE
   PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
   PeopleListDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT,
-  PeopleListDirectoryPeopleMergeSources
-  #-}
+  PeopleListDirectoryPeopleMergeSources #-}
 
 -- | Required. Directory sources to return.
-newtype PeopleListDirectoryPeopleSources = PeopleListDirectoryPeopleSources {fromPeopleListDirectoryPeopleSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleListDirectoryPeopleSources = PeopleListDirectoryPeopleSources { fromPeopleListDirectoryPeopleSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED :: PeopleListDirectoryPeopleSources
@@ -1249,21 +1257,20 @@ pattern PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE = Peop
   PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
   PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINCONTACT,
   PeopleListDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE,
-  PeopleListDirectoryPeopleSources
-  #-}
+  PeopleListDirectoryPeopleSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE_CONTACT if not set.
-newtype PeopleSearchContactsSources = PeopleSearchContactsSources {fromPeopleSearchContactsSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleSearchContactsSources = PeopleSearchContactsSources { fromPeopleSearchContactsSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleSearchContactsSources_READSOURCETYPEUNSPECIFIED :: PeopleSearchContactsSources
@@ -1291,21 +1298,20 @@ pattern PeopleSearchContactsSources_READSOURCETYPEOTHERCONTACT = PeopleSearchCon
   PeopleSearchContactsSources_READSOURCETYPECONTACT,
   PeopleSearchContactsSources_READSOURCETYPEDOMAINCONTACT,
   PeopleSearchContactsSources_READSOURCETYPEOTHERCONTACT,
-  PeopleSearchContactsSources
-  #-}
+  PeopleSearchContactsSources #-}
 
 -- | Optional. Additional data to merge into the directory sources if they are connected through verified join keys such as email addresses or phone numbers.
-newtype PeopleSearchDirectoryPeopleMergeSources = PeopleSearchDirectoryPeopleMergeSources {fromPeopleSearchDirectoryPeopleMergeSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleSearchDirectoryPeopleMergeSources = PeopleSearchDirectoryPeopleMergeSources { fromPeopleSearchDirectoryPeopleMergeSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED :: PeopleSearchDirectoryPeopleMergeSources
@@ -1318,21 +1324,20 @@ pattern PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT 
 {-# COMPLETE
   PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPEUNSPECIFIED,
   PeopleSearchDirectoryPeopleMergeSources_DIRECTORYMERGESOURCETYPECONTACT,
-  PeopleSearchDirectoryPeopleMergeSources
-  #-}
+  PeopleSearchDirectoryPeopleMergeSources #-}
 
 -- | Required. Directory sources to return.
-newtype PeopleSearchDirectoryPeopleSources = PeopleSearchDirectoryPeopleSources {fromPeopleSearchDirectoryPeopleSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleSearchDirectoryPeopleSources = PeopleSearchDirectoryPeopleSources { fromPeopleSearchDirectoryPeopleSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED :: PeopleSearchDirectoryPeopleSources
@@ -1350,21 +1355,20 @@ pattern PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE = Pe
   PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEUNSPECIFIED,
   PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINCONTACT,
   PeopleSearchDirectoryPeopleSources_DIRECTORYSOURCETYPEDOMAINPROFILE,
-  PeopleSearchDirectoryPeopleSources
-  #-}
+  PeopleSearchDirectoryPeopleSources #-}
 
 -- | Optional. A mask of what source types to return. Defaults to READ/SOURCE/TYPE/CONTACT and READ/SOURCE/TYPE/PROFILE if not set.
-newtype PeopleUpdateContactSources = PeopleUpdateContactSources {fromPeopleUpdateContactSources :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PeopleUpdateContactSources = PeopleUpdateContactSources { fromPeopleUpdateContactSources :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern PeopleUpdateContactSources_READSOURCETYPEUNSPECIFIED :: PeopleUpdateContactSources
@@ -1392,5 +1396,4 @@ pattern PeopleUpdateContactSources_READSOURCETYPEOTHERCONTACT = PeopleUpdateCont
   PeopleUpdateContactSources_READSOURCETYPECONTACT,
   PeopleUpdateContactSources_READSOURCETYPEDOMAINCONTACT,
   PeopleUpdateContactSources_READSOURCETYPEOTHERCONTACT,
-  PeopleUpdateContactSources
-  #-}
+  PeopleUpdateContactSources #-}

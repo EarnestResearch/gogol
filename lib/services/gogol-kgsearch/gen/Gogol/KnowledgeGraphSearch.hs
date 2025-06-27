@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,26 +29,26 @@
 --
 -- /See:/ <https://developers.google.com/knowledge-graph/ Knowledge Graph Search API Reference>
 module Gogol.KnowledgeGraphSearch
-  ( -- * Configuration
-    knowledgeGraphSearchService,
+    (
+    -- * Configuration
+      knowledgeGraphSearchService
 
     -- * Resources
 
     -- ** kgsearch.entities.search
-    KgsearchEntitiesSearchResource,
-    KgsearchEntitiesSearch (..),
-    newKgsearchEntitiesSearch,
+    , KgsearchEntitiesSearchResource
+    , KgsearchEntitiesSearch (..)
+    , newKgsearchEntitiesSearch
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** SearchResponse
-    SearchResponse (..),
-    newSearchResponse,
-  )
-where
+    , SearchResponse (..)
+    , newSearchResponse
+    ) where
 
 import Gogol.KnowledgeGraphSearch.Kgsearch.Entities.Search
 import Gogol.KnowledgeGraphSearch.Types

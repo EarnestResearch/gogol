@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.VideoIntelligence.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood
     GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood
-      ( GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
         GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_VERYUNLIKELY,
         GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_Unlikely,
         GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_Possible,
@@ -42,9 +48,19 @@ module Gogol.VideoIntelligence.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State
+    GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State
+      (
+        GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+        GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Succeeded,
+        GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Failed,
+        ..
+      ),
+
     -- * GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature
     GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature
-      ( GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_LABELDETECTION,
         GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_EXPLICITCONTENTDETECTION,
@@ -59,7 +75,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood
     GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood
-      ( GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
         GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_VERYUNLIKELY,
         GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_Unlikely,
         GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_Possible,
@@ -68,9 +85,19 @@ module Gogol.VideoIntelligence.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State
+    GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State
+      (
+        GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+        GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Succeeded,
+        GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Failed,
+        ..
+      ),
+
     -- * GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature
     GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature
-      ( GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_LABELDETECTION,
         GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_EXPLICITCONTENTDETECTION,
@@ -85,7 +112,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood
     GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood
-      ( GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
         GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_VERYUNLIKELY,
         GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_Unlikely,
         GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
@@ -94,9 +122,19 @@ module Gogol.VideoIntelligence.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State
+    GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State
+      (
+        GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+        GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Succeeded,
+        GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Failed,
+        ..
+      ),
+
     -- * GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature
     GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature
-      ( GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_LABELDETECTION,
         GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_EXPLICITCONTENTDETECTION,
@@ -111,7 +149,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood
     GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood
-      ( GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
         GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_VERYUNLIKELY,
         GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_Unlikely,
         GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
@@ -120,9 +159,19 @@ module Gogol.VideoIntelligence.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State
+    GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State
+      (
+        GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+        GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Succeeded,
+        GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Failed,
+        ..
+      ),
+
     -- * GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature
     GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature
-      ( GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_LABELDETECTION,
         GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_EXPLICITCONTENTDETECTION,
@@ -137,7 +186,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem
     GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem
-      ( GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_LABELDETECTION,
         GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_EXPLICITCONTENTDETECTION,
@@ -153,7 +203,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood
     GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood
-      ( GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED,
         GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_VERYUNLIKELY,
         GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_Unlikely,
         GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
@@ -162,9 +213,19 @@ module Gogol.VideoIntelligence.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State
+    GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State
+      (
+        GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+        GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Succeeded,
+        GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Failed,
+        ..
+      ),
+
     -- * GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode
     GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode
-      ( GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_LABELDETECTIONMODEUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_LABELDETECTIONMODEUNSPECIFIED,
         GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_SHOTMODE,
         GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_FRAMEMODE,
         GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_SHOTANDFRAMEMODE,
@@ -173,7 +234,8 @@ module Gogol.VideoIntelligence.Internal.Sum
 
     -- * GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature
     GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature
-      ( GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
+      (
+        GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED,
         GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_LABELDETECTION,
         GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_SHOTCHANGEDETECTION,
         GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_EXPLICITCONTENTDETECTION,
@@ -186,23 +248,22 @@ module Gogol.VideoIntelligence.Internal.Sum
         GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_PERSONDETECTION,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -215,21 +276,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Likelihood of the pornography content..
-newtype GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood {fromGoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood { fromGoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified likelihood.
 pattern GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED :: GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood
@@ -262,21 +322,51 @@ pattern GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihoo
   GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_Possible,
   GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_Likely,
   GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood_VERYLIKELY,
-  GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood
-  #-}
+  GoogleCloudVideointelligenceV1_ExplicitContentFrame_PornographyLikelihood #-}
+
+-- | Output only. State of the @output_uri@ export.
+newtype GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State = GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State { fromGoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value.
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_STATEUNSPECIFIED :: GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_STATEUNSPECIFIED = GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State "STATE_UNSPECIFIED"
+
+-- | Export succeeded.
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Succeeded :: GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Succeeded = GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State "SUCCEEDED"
+
+-- | Export failed.
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Failed :: GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Failed = GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State "FAILED"
+
+{-# COMPLETE
+  GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+  GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Succeeded,
+  GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State_Failed,
+  GoogleCloudVideointelligenceV1_ExportToOutputUriStatus_State #-}
 
 -- | Specifies which feature is being tracked if the request contains more than one feature.
-newtype GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature {fromGoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature { fromGoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature
@@ -329,21 +419,20 @@ pattern GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_PERSONDET
   GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_OBJECTTRACKING,
   GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature
-  #-}
+  GoogleCloudVideointelligenceV1_VideoAnnotationProgress_Feature #-}
 
 -- | Likelihood of the pornography content..
-newtype GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood {fromGoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood { fromGoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified likelihood.
 pattern GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED :: GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood
@@ -376,21 +465,51 @@ pattern GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLike
   GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_Possible,
   GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_Likely,
   GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood_VERYLIKELY,
-  GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood
-  #-}
+  GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame_PornographyLikelihood #-}
+
+-- | Output only. State of the @output_uri@ export.
+newtype GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State = GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State { fromGoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value.
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_STATEUNSPECIFIED :: GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_STATEUNSPECIFIED = GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State "STATE_UNSPECIFIED"
+
+-- | Export succeeded.
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Succeeded :: GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Succeeded = GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State "SUCCEEDED"
+
+-- | Export failed.
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Failed :: GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Failed = GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State "FAILED"
+
+{-# COMPLETE
+  GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+  GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Succeeded,
+  GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State_Failed,
+  GoogleCloudVideointelligenceV1beta2_ExportToOutputUriStatus_State #-}
 
 -- | Specifies which feature is being tracked if the request contains more than one feature.
-newtype GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature {fromGoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature { fromGoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature
@@ -443,21 +562,20 @@ pattern GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_PERS
   GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_OBJECTTRACKING,
   GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature
-  #-}
+  GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress_Feature #-}
 
 -- | Likelihood of the pornography content..
-newtype GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood {fromGoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood { fromGoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified likelihood.
 pattern GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED :: GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood
@@ -490,21 +608,51 @@ pattern GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLi
   GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
   GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_Likely,
   GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood_VERYLIKELY,
-  GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood
-  #-}
+  GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame_PornographyLikelihood #-}
+
+-- | Output only. State of the @output_uri@ export.
+newtype GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State = GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State { fromGoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value.
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED :: GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED = GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State "STATE_UNSPECIFIED"
+
+-- | Export succeeded.
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Succeeded :: GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Succeeded = GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State "SUCCEEDED"
+
+-- | Export failed.
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Failed :: GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Failed = GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State "FAILED"
+
+{-# COMPLETE
+  GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+  GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Succeeded,
+  GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State_Failed,
+  GoogleCloudVideointelligenceV1p1beta1_ExportToOutputUriStatus_State #-}
 
 -- | Specifies which feature is being tracked if the request contains more than one feature.
-newtype GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature {fromGoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature { fromGoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature
@@ -557,21 +705,20 @@ pattern GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_PE
   GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_OBJECTTRACKING,
   GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature
-  #-}
+  GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress_Feature #-}
 
 -- | Likelihood of the pornography content..
-newtype GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood {fromGoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood { fromGoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified likelihood.
 pattern GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED :: GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood
@@ -604,21 +751,51 @@ pattern GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLi
   GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
   GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_Likely,
   GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood_VERYLIKELY,
-  GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood
-  #-}
+  GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame_PornographyLikelihood #-}
+
+-- | Output only. State of the @output_uri@ export.
+newtype GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State = GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State { fromGoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value.
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED :: GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED = GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State "STATE_UNSPECIFIED"
+
+-- | Export succeeded.
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Succeeded :: GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Succeeded = GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State "SUCCEEDED"
+
+-- | Export failed.
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Failed :: GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Failed = GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State "FAILED"
+
+{-# COMPLETE
+  GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+  GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Succeeded,
+  GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State_Failed,
+  GoogleCloudVideointelligenceV1p2beta1_ExportToOutputUriStatus_State #-}
 
 -- | Specifies which feature is being tracked if the request contains more than one feature.
-newtype GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature {fromGoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature { fromGoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature
@@ -671,20 +848,19 @@ pattern GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_PE
   GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_OBJECTTRACKING,
   GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature
-  #-}
+  GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress_Feature #-}
 
-newtype GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem = GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem {fromGoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem = GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem { fromGoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem
@@ -742,21 +918,20 @@ pattern GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_
   GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_CELEBRITYRECOGNITION,
   GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem
-  #-}
+  GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoRequest_FeaturesItem #-}
 
 -- | Likelihood of the pornography content..
-newtype GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood {fromGoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood = GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood { fromGoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified likelihood.
 pattern GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_LIKELIHOODUNSPECIFIED :: GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood
@@ -789,21 +964,51 @@ pattern GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLi
   GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_Possible,
   GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_Likely,
   GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood_VERYLIKELY,
-  GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood
-  #-}
+  GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame_PornographyLikelihood #-}
+
+-- | Output only. State of the @output_uri@ export.
+newtype GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State = GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State { fromGoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default value.
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED :: GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED = GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State "STATE_UNSPECIFIED"
+
+-- | Export succeeded.
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Succeeded :: GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Succeeded = GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State "SUCCEEDED"
+
+-- | Export failed.
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Failed :: GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State
+pattern GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Failed = GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State "FAILED"
+
+{-# COMPLETE
+  GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_STATEUNSPECIFIED,
+  GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Succeeded,
+  GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State_Failed,
+  GoogleCloudVideointelligenceV1p3beta1_ExportToOutputUriStatus_State #-}
 
 -- | What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to @SHOT_MODE@.
-newtype GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode = GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode {fromGoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode = GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode { fromGoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_LABELDETECTIONMODEUNSPECIFIED :: GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode
@@ -826,21 +1031,20 @@ pattern GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectio
   GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_SHOTMODE,
   GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_FRAMEMODE,
   GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode_SHOTANDFRAMEMODE,
-  GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode
-  #-}
+  GoogleCloudVideointelligenceV1p3beta1_LabelDetectionConfig_LabelDetectionMode #-}
 
 -- | Specifies which feature is being tracked if the request contains more than one feature.
-newtype GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature {fromGoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature = GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature { fromGoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_FEATUREUNSPECIFIED :: GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature
@@ -898,5 +1102,4 @@ pattern GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_PE
   GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_LOGORECOGNITION,
   GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_CELEBRITYRECOGNITION,
   GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature_PERSONDETECTION,
-  GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature
-  #-}
+  GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress_Feature #-}

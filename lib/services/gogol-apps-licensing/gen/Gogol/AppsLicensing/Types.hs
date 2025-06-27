@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,47 +24,47 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.AppsLicensing.Types
-  ( -- * Configuration
-    appsLicensingService,
+    (
+    -- * Configuration
+      appsLicensingService
 
     -- * OAuth Scopes
-    Apps'Licensing,
+    , Apps'Licensing
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** LicenseAssignment
-    LicenseAssignment (..),
-    newLicenseAssignment,
+    , LicenseAssignment (..)
+    , newLicenseAssignment
 
     -- ** LicenseAssignmentInsert
-    LicenseAssignmentInsert (..),
-    newLicenseAssignmentInsert,
+    , LicenseAssignmentInsert (..)
+    , newLicenseAssignmentInsert
 
     -- ** LicenseAssignmentList
-    LicenseAssignmentList (..),
-    newLicenseAssignmentList,
-  )
-where
+    , LicenseAssignmentList (..)
+    , newLicenseAssignmentList
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.AppsLicensing.Internal.Product
 import Gogol.AppsLicensing.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v1@ of the Enterprise License Manager API. This contains the host and root path used as a starting point for constructing service requests.
 appsLicensingService :: Core.ServiceConfig
-appsLicensingService =
-  Core.defaultService
-    (Core.ServiceId "licensing:v1")
-    "licensing.googleapis.com"
+appsLicensingService
+  = Core.defaultService (Core.ServiceId "licensing:v1")
+      "licensing.googleapis.com"
 
 -- | View and manage G Suite licenses for your domain
 type Apps'Licensing =
-  "https://www.googleapis.com/auth/apps.licensing"
+     "https://www.googleapis.com/auth/apps.licensing"

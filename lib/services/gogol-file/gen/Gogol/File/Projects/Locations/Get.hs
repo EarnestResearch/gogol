@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,80 +29,70 @@
 --
 -- /See:/ <https://cloud.google.com/filestore/ Cloud Filestore API Reference> for @file.projects.locations.get@.
 module Gogol.File.Projects.Locations.Get
-  ( -- * Resource
-    FileProjectsLocationsGetResource,
+    (
+    -- * Resource
+      FileProjectsLocationsGetResource
 
     -- ** Constructing a Request
-    FileProjectsLocationsGet (..),
-    newFileProjectsLocationsGet,
-  )
-where
+    , FileProjectsLocationsGet (..)
+    , newFileProjectsLocationsGet
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.File.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @file.projects.locations.get@ method which the
 -- 'FileProjectsLocationsGet' request conforms to.
 type FileProjectsLocationsGetResource =
-  "v1"
-    Core.:> Core.Capture "name" Core.Text
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get '[Core.JSON] Location
+     "v1" Core.:>
+       Core.Capture "name" Core.Text Core.:>
+         Core.QueryParam "$.xgafv" Xgafv Core.:>
+           Core.QueryParam "access_token" Core.Text Core.:>
+             Core.QueryParam "callback" Core.Text Core.:>
+               Core.QueryParam "uploadType" Core.Text Core.:>
+                 Core.QueryParam "upload_protocol" Core.Text Core.:>
+                   Core.QueryParam "alt" Core.AltJSON Core.:>
+                     Core.Get '[Core.JSON] Location
 
 -- | Gets information about a location.
 --
 -- /See:/ 'newFileProjectsLocationsGet' smart constructor.
 data FileProjectsLocationsGet = FileProjectsLocationsGet
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Resource name for the location.
-    name :: Core.Text,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Resource name for the location.
+    , name :: Core.Text
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'FileProjectsLocationsGet' with the minimum fields required to make a request.
-newFileProjectsLocationsGet ::
-  -- |  Resource name for the location. See 'name'.
-  Core.Text ->
-  FileProjectsLocationsGet
-newFileProjectsLocationsGet name =
-  FileProjectsLocationsGet
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      name = name,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
-
+newFileProjectsLocationsGet 
+    :: 
+                            Core.Text
+       -- ^  Resource name for the location. See 'name'.
+    -> FileProjectsLocationsGet
+newFileProjectsLocationsGet name
+  = FileProjectsLocationsGet{xgafv = Core.Nothing,
+                             accessToken = Core.Nothing, callback = Core.Nothing, name = name,
+                             uploadType = Core.Nothing, uploadProtocol = Core.Nothing}
 instance Core.GoogleRequest FileProjectsLocationsGet where
-  type Rs FileProjectsLocationsGet = Location
-  type Scopes FileProjectsLocationsGet = '[CloudPlatform'FullControl]
-  requestClient FileProjectsLocationsGet {..} =
-    go
-      name
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      fileService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy FileProjectsLocationsGetResource)
-          Core.mempty
+        type Rs FileProjectsLocationsGet = Location
+        type Scopes FileProjectsLocationsGet = '[CloudPlatform'FullControl]
+        requestClient FileProjectsLocationsGet{..}
+          = go name xgafv accessToken callback uploadType uploadProtocol
+              (Core.Just Core.AltJSON)
+              fileService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy FileProjectsLocationsGetResource)
+                      Core.mempty
+

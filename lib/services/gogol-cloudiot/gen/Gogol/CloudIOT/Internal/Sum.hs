@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.CloudIOT.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * Device_LogLevel
     Device_LogLevel
-      ( Device_LogLevel_LOGLEVELUNSPECIFIED,
+      (
+        Device_LogLevel_LOGLEVELUNSPECIFIED,
         Device_LogLevel_None,
         Device_LogLevel_Error',
         Device_LogLevel_Info,
@@ -43,7 +49,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * DeviceRegistry_LogLevel
     DeviceRegistry_LogLevel
-      ( DeviceRegistry_LogLevel_LOGLEVELUNSPECIFIED,
+      (
+        DeviceRegistry_LogLevel_LOGLEVELUNSPECIFIED,
         DeviceRegistry_LogLevel_None,
         DeviceRegistry_LogLevel_Error',
         DeviceRegistry_LogLevel_Info,
@@ -53,7 +60,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * GatewayConfig_GatewayAuthMethod
     GatewayConfig_GatewayAuthMethod
-      ( GatewayConfig_GatewayAuthMethod_GATEWAYAUTHMETHODUNSPECIFIED,
+      (
+        GatewayConfig_GatewayAuthMethod_GATEWAYAUTHMETHODUNSPECIFIED,
         GatewayConfig_GatewayAuthMethod_ASSOCIATIONONLY,
         GatewayConfig_GatewayAuthMethod_DEVICEAUTHTOKENONLY,
         GatewayConfig_GatewayAuthMethod_ASSOCIATIONANDDEVICEAUTHTOKEN,
@@ -62,7 +70,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * GatewayConfig_GatewayType
     GatewayConfig_GatewayType
-      ( GatewayConfig_GatewayType_GATEWAYTYPEUNSPECIFIED,
+      (
+        GatewayConfig_GatewayType_GATEWAYTYPEUNSPECIFIED,
         GatewayConfig_GatewayType_Gateway,
         GatewayConfig_GatewayType_NONGATEWAY,
         ..
@@ -70,7 +79,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * HttpConfig_HttpEnabledState
     HttpConfig_HttpEnabledState
-      ( HttpConfig_HttpEnabledState_HTTPSTATEUNSPECIFIED,
+      (
+        HttpConfig_HttpEnabledState_HTTPSTATEUNSPECIFIED,
         HttpConfig_HttpEnabledState_HTTPENABLED,
         HttpConfig_HttpEnabledState_HTTPDISABLED,
         ..
@@ -78,7 +88,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * MqttConfig_MqttEnabledState
     MqttConfig_MqttEnabledState
-      ( MqttConfig_MqttEnabledState_MQTTSTATEUNSPECIFIED,
+      (
+        MqttConfig_MqttEnabledState_MQTTSTATEUNSPECIFIED,
         MqttConfig_MqttEnabledState_MQTTENABLED,
         MqttConfig_MqttEnabledState_MQTTDISABLED,
         ..
@@ -86,14 +97,16 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * PublicKeyCertificate_Format
     PublicKeyCertificate_Format
-      ( PublicKeyCertificate_Format_UNSPECIFIEDPUBLICKEYCERTIFICATEFORMAT,
+      (
+        PublicKeyCertificate_Format_UNSPECIFIEDPUBLICKEYCERTIFICATEFORMAT,
         PublicKeyCertificate_Format_X509CERTIFICATEPEM,
         ..
       ),
 
     -- * PublicKeyCredential_Format
     PublicKeyCredential_Format
-      ( PublicKeyCredential_Format_UNSPECIFIEDPUBLICKEYFORMAT,
+      (
+        PublicKeyCredential_Format_UNSPECIFIEDPUBLICKEYFORMAT,
         PublicKeyCredential_Format_RSAPEM,
         PublicKeyCredential_Format_RSAX509PEM,
         PublicKeyCredential_Format_ES256PEM,
@@ -103,7 +116,8 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
     ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
-      ( ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
+      (
+        ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
         ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_Gateway,
         ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_NONGATEWAY,
         ..
@@ -111,28 +125,28 @@ module Gogol.CloudIOT.Internal.Sum
 
     -- * ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType
     ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType
-      ( ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
+      (
+        ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
         ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_Gateway,
         ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_NONGATEWAY,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -145,21 +159,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | __Beta Feature__ The logging verbosity for device activity. If unspecified, DeviceRegistry.log_level will be used.
-newtype Device_LogLevel = Device_LogLevel {fromDevice_LogLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Device_LogLevel = Device_LogLevel { fromDevice_LogLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No logging specified. If not specified, logging will be disabled.
 pattern Device_LogLevel_LOGLEVELUNSPECIFIED :: Device_LogLevel
@@ -187,21 +200,20 @@ pattern Device_LogLevel_Debug = Device_LogLevel "DEBUG"
   Device_LogLevel_Error',
   Device_LogLevel_Info,
   Device_LogLevel_Debug,
-  Device_LogLevel
-  #-}
+  Device_LogLevel #-}
 
 -- | __Beta Feature__ The default logging verbosity for activity from devices in this registry. The verbosity level can be overridden by Device.log_level.
-newtype DeviceRegistry_LogLevel = DeviceRegistry_LogLevel {fromDeviceRegistry_LogLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DeviceRegistry_LogLevel = DeviceRegistry_LogLevel { fromDeviceRegistry_LogLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No logging specified. If not specified, logging will be disabled.
 pattern DeviceRegistry_LogLevel_LOGLEVELUNSPECIFIED :: DeviceRegistry_LogLevel
@@ -229,21 +241,20 @@ pattern DeviceRegistry_LogLevel_Debug = DeviceRegistry_LogLevel "DEBUG"
   DeviceRegistry_LogLevel_Error',
   DeviceRegistry_LogLevel_Info,
   DeviceRegistry_LogLevel_Debug,
-  DeviceRegistry_LogLevel
-  #-}
+  DeviceRegistry_LogLevel #-}
 
 -- | Indicates how to authorize and\/or authenticate devices to access the gateway.
-newtype GatewayConfig_GatewayAuthMethod = GatewayConfig_GatewayAuthMethod {fromGatewayConfig_GatewayAuthMethod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GatewayConfig_GatewayAuthMethod = GatewayConfig_GatewayAuthMethod { fromGatewayConfig_GatewayAuthMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No authentication\/authorization method specified. No devices are allowed to access the gateway.
 pattern GatewayConfig_GatewayAuthMethod_GATEWAYAUTHMETHODUNSPECIFIED :: GatewayConfig_GatewayAuthMethod
@@ -266,21 +277,20 @@ pattern GatewayConfig_GatewayAuthMethod_ASSOCIATIONANDDEVICEAUTHTOKEN = GatewayC
   GatewayConfig_GatewayAuthMethod_ASSOCIATIONONLY,
   GatewayConfig_GatewayAuthMethod_DEVICEAUTHTOKENONLY,
   GatewayConfig_GatewayAuthMethod_ASSOCIATIONANDDEVICEAUTHTOKEN,
-  GatewayConfig_GatewayAuthMethod
-  #-}
+  GatewayConfig_GatewayAuthMethod #-}
 
 -- | Indicates whether the device is a gateway.
-newtype GatewayConfig_GatewayType = GatewayConfig_GatewayType {fromGatewayConfig_GatewayType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GatewayConfig_GatewayType = GatewayConfig_GatewayType { fromGatewayConfig_GatewayType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If unspecified, the device is considered a non-gateway device.
 pattern GatewayConfig_GatewayType_GATEWAYTYPEUNSPECIFIED :: GatewayConfig_GatewayType
@@ -298,21 +308,20 @@ pattern GatewayConfig_GatewayType_NONGATEWAY = GatewayConfig_GatewayType "NON_GA
   GatewayConfig_GatewayType_GATEWAYTYPEUNSPECIFIED,
   GatewayConfig_GatewayType_Gateway,
   GatewayConfig_GatewayType_NONGATEWAY,
-  GatewayConfig_GatewayType
-  #-}
+  GatewayConfig_GatewayType #-}
 
 -- | If enabled, allows devices to use DeviceService via the HTTP protocol. Otherwise, any requests to DeviceService will fail for this registry.
-newtype HttpConfig_HttpEnabledState = HttpConfig_HttpEnabledState {fromHttpConfig_HttpEnabledState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype HttpConfig_HttpEnabledState = HttpConfig_HttpEnabledState { fromHttpConfig_HttpEnabledState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No HTTP state specified. If not specified, DeviceService will be enabled by default.
 pattern HttpConfig_HttpEnabledState_HTTPSTATEUNSPECIFIED :: HttpConfig_HttpEnabledState
@@ -330,21 +339,20 @@ pattern HttpConfig_HttpEnabledState_HTTPDISABLED = HttpConfig_HttpEnabledState "
   HttpConfig_HttpEnabledState_HTTPSTATEUNSPECIFIED,
   HttpConfig_HttpEnabledState_HTTPENABLED,
   HttpConfig_HttpEnabledState_HTTPDISABLED,
-  HttpConfig_HttpEnabledState
-  #-}
+  HttpConfig_HttpEnabledState #-}
 
 -- | If enabled, allows connections using the MQTT protocol. Otherwise, MQTT connections to this registry will fail.
-newtype MqttConfig_MqttEnabledState = MqttConfig_MqttEnabledState {fromMqttConfig_MqttEnabledState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MqttConfig_MqttEnabledState = MqttConfig_MqttEnabledState { fromMqttConfig_MqttEnabledState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No MQTT state specified. If not specified, MQTT will be enabled by default.
 pattern MqttConfig_MqttEnabledState_MQTTSTATEUNSPECIFIED :: MqttConfig_MqttEnabledState
@@ -362,21 +370,20 @@ pattern MqttConfig_MqttEnabledState_MQTTDISABLED = MqttConfig_MqttEnabledState "
   MqttConfig_MqttEnabledState_MQTTSTATEUNSPECIFIED,
   MqttConfig_MqttEnabledState_MQTTENABLED,
   MqttConfig_MqttEnabledState_MQTTDISABLED,
-  MqttConfig_MqttEnabledState
-  #-}
+  MqttConfig_MqttEnabledState #-}
 
 -- | The certificate format.
-newtype PublicKeyCertificate_Format = PublicKeyCertificate_Format {fromPublicKeyCertificate_Format :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PublicKeyCertificate_Format = PublicKeyCertificate_Format { fromPublicKeyCertificate_Format :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The format has not been specified. This is an invalid default value and must not be used.
 pattern PublicKeyCertificate_Format_UNSPECIFIEDPUBLICKEYCERTIFICATEFORMAT :: PublicKeyCertificate_Format
@@ -389,21 +396,20 @@ pattern PublicKeyCertificate_Format_X509CERTIFICATEPEM = PublicKeyCertificate_Fo
 {-# COMPLETE
   PublicKeyCertificate_Format_UNSPECIFIEDPUBLICKEYCERTIFICATEFORMAT,
   PublicKeyCertificate_Format_X509CERTIFICATEPEM,
-  PublicKeyCertificate_Format
-  #-}
+  PublicKeyCertificate_Format #-}
 
 -- | The format of the key.
-newtype PublicKeyCredential_Format = PublicKeyCredential_Format {fromPublicKeyCredential_Format :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PublicKeyCredential_Format = PublicKeyCredential_Format { fromPublicKeyCredential_Format :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The format has not been specified. This is an invalid default value and must not be used.
 pattern PublicKeyCredential_Format_UNSPECIFIEDPUBLICKEYFORMAT :: PublicKeyCredential_Format
@@ -431,21 +437,20 @@ pattern PublicKeyCredential_Format_ES256X509PEM = PublicKeyCredential_Format "ES
   PublicKeyCredential_Format_RSAX509PEM,
   PublicKeyCredential_Format_ES256PEM,
   PublicKeyCredential_Format_ES256X509PEM,
-  PublicKeyCredential_Format
-  #-}
+  PublicKeyCredential_Format #-}
 
 -- | If @GATEWAY@ is specified, only gateways are returned. If @NON_GATEWAY@ is specified, only non-gateway devices are returned. If @GATEWAY_TYPE_UNSPECIFIED@ is specified, all devices are returned.
-newtype ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType = ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType {fromProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType = ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType { fromProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If unspecified, the device is considered a non-gateway device.
 pattern ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED :: ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
@@ -463,21 +468,20 @@ pattern ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_NONG
   ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
   ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_Gateway,
   ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType_NONGATEWAY,
-  ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType
-  #-}
+  ProjectsLocationsRegistriesDevicesListGatewayListOptionsGatewayType #-}
 
 -- | If @GATEWAY@ is specified, only gateways are returned. If @NON_GATEWAY@ is specified, only non-gateway devices are returned. If @GATEWAY_TYPE_UNSPECIFIED@ is specified, all devices are returned.
-newtype ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType = ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType {fromProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType = ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType { fromProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If unspecified, the device is considered a non-gateway device.
 pattern ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED :: ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType
@@ -495,5 +499,4 @@ pattern ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayTyp
   ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_GATEWAYTYPEUNSPECIFIED,
   ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_Gateway,
   ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType_NONGATEWAY,
-  ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType
-  #-}
+  ProjectsLocationsRegistriesGroupsDevicesListGatewayListOptionsGatewayType #-}

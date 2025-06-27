@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Analytics.Internal.Sum
-  ( -- * DataGaGetOutput
+  (
+
+    -- * DataGaGetOutput
     DataGaGetOutput
-      ( DataGaGetOutput_DataTable,
+      (
+        DataGaGetOutput_DataTable,
         DataGaGetOutput_Json,
         ..
       ),
 
     -- * DataGaGetSamplingLevel
     DataGaGetSamplingLevel
-      ( DataGaGetSamplingLevel_Default,
+      (
+        DataGaGetSamplingLevel_Default,
         DataGaGetSamplingLevel_Faster,
         DataGaGetSamplingLevel_HIGHERPRECISION,
         ..
@@ -41,28 +47,28 @@ module Gogol.Analytics.Internal.Sum
 
     -- * DataMcfGetSamplingLevel
     DataMcfGetSamplingLevel
-      ( DataMcfGetSamplingLevel_Default,
+      (
+        DataMcfGetSamplingLevel_Default,
         DataMcfGetSamplingLevel_Faster,
         DataMcfGetSamplingLevel_HIGHERPRECISION,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | The selected format for the response. Default format is JSON.
-newtype DataGaGetOutput = DataGaGetOutput {fromDataGaGetOutput :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DataGaGetOutput = DataGaGetOutput { fromDataGaGetOutput :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Returns the response in Google Charts Data Table format. This is useful in creating visualization using Google Charts.
 pattern DataGaGetOutput_DataTable :: DataGaGetOutput
@@ -75,21 +81,20 @@ pattern DataGaGetOutput_Json = DataGaGetOutput "json"
 {-# COMPLETE
   DataGaGetOutput_DataTable,
   DataGaGetOutput_Json,
-  DataGaGetOutput
-  #-}
+  DataGaGetOutput #-}
 
 -- | The desired sampling level.
-newtype DataGaGetSamplingLevel = DataGaGetSamplingLevel {fromDataGaGetSamplingLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DataGaGetSamplingLevel = DataGaGetSamplingLevel { fromDataGaGetSamplingLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Returns response with a sample size that balances speed and accuracy.
 pattern DataGaGetSamplingLevel_Default :: DataGaGetSamplingLevel
@@ -107,21 +112,20 @@ pattern DataGaGetSamplingLevel_HIGHERPRECISION = DataGaGetSamplingLevel "HIGHER_
   DataGaGetSamplingLevel_Default,
   DataGaGetSamplingLevel_Faster,
   DataGaGetSamplingLevel_HIGHERPRECISION,
-  DataGaGetSamplingLevel
-  #-}
+  DataGaGetSamplingLevel #-}
 
 -- | The desired sampling level.
-newtype DataMcfGetSamplingLevel = DataMcfGetSamplingLevel {fromDataMcfGetSamplingLevel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DataMcfGetSamplingLevel = DataMcfGetSamplingLevel { fromDataMcfGetSamplingLevel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Returns response with a sample size that balances speed and accuracy.
 pattern DataMcfGetSamplingLevel_Default :: DataMcfGetSamplingLevel
@@ -139,5 +143,4 @@ pattern DataMcfGetSamplingLevel_HIGHERPRECISION = DataMcfGetSamplingLevel "HIGHE
   DataMcfGetSamplingLevel_Default,
   DataMcfGetSamplingLevel_Faster,
   DataMcfGetSamplingLevel_HIGHERPRECISION,
-  DataMcfGetSamplingLevel
-  #-}
+  DataMcfGetSamplingLevel #-}

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,154 +24,112 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.CivicInfo.Types
-  ( -- * Configuration
-    civicInfoService,
+    (
+    -- * Configuration
+      civicInfoService
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
-    -- ** AdministrationRegion
-    AdministrationRegion (..),
-    newAdministrationRegion,
+    -- ** CivicinfoApiprotosV2DivisionByAddressResponse
+    , CivicinfoApiprotosV2DivisionByAddressResponse (..)
+    , newCivicinfoApiprotosV2DivisionByAddressResponse
 
-    -- ** AdministrativeBody
-    AdministrativeBody (..),
-    newAdministrativeBody,
+    -- ** CivicinfoApiprotosV2DivisionByAddressResponse_Divisions
+    , CivicinfoApiprotosV2DivisionByAddressResponse_Divisions (..)
+    , newCivicinfoApiprotosV2DivisionByAddressResponse_Divisions
 
-    -- ** Candidate
-    Candidate (..),
-    newCandidate,
+    -- ** CivicinfoApiprotosV2DivisionSearchResponse
+    , CivicinfoApiprotosV2DivisionSearchResponse (..)
+    , newCivicinfoApiprotosV2DivisionSearchResponse
 
-    -- ** Channel
-    Channel (..),
-    newChannel,
+    -- ** CivicinfoApiprotosV2DivisionSearchResult
+    , CivicinfoApiprotosV2DivisionSearchResult (..)
+    , newCivicinfoApiprotosV2DivisionSearchResult
 
-    -- ** Contest
-    Contest (..),
-    newContest,
+    -- ** CivicinfoApiprotosV2ElectionsQueryResponse
+    , CivicinfoApiprotosV2ElectionsQueryResponse (..)
+    , newCivicinfoApiprotosV2ElectionsQueryResponse
 
-    -- ** Contest_LevelItem
-    Contest_LevelItem (..),
+    -- ** CivicinfoApiprotosV2VoterInfoResponse
+    , CivicinfoApiprotosV2VoterInfoResponse (..)
+    , newCivicinfoApiprotosV2VoterInfoResponse
 
-    -- ** Contest_RolesItem
-    Contest_RolesItem (..),
+    -- ** CivicinfoSchemaV2AdministrationRegion
+    , CivicinfoSchemaV2AdministrationRegion (..)
+    , newCivicinfoSchemaV2AdministrationRegion
 
-    -- ** DivisionByAddressResponse
-    DivisionByAddressResponse (..),
-    newDivisionByAddressResponse,
+    -- ** CivicinfoSchemaV2AdministrativeBody
+    , CivicinfoSchemaV2AdministrativeBody (..)
+    , newCivicinfoSchemaV2AdministrativeBody
 
-    -- ** DivisionByAddressResponse_Divisions
-    DivisionByAddressResponse_Divisions (..),
-    newDivisionByAddressResponse_Divisions,
+    -- ** CivicinfoSchemaV2Candidate
+    , CivicinfoSchemaV2Candidate (..)
+    , newCivicinfoSchemaV2Candidate
 
-    -- ** DivisionSearchResponse
-    DivisionSearchResponse (..),
-    newDivisionSearchResponse,
+    -- ** CivicinfoSchemaV2Channel
+    , CivicinfoSchemaV2Channel (..)
+    , newCivicinfoSchemaV2Channel
 
-    -- ** DivisionSearchResult
-    DivisionSearchResult (..),
-    newDivisionSearchResult,
+    -- ** CivicinfoSchemaV2Contest
+    , CivicinfoSchemaV2Contest (..)
+    , newCivicinfoSchemaV2Contest
 
-    -- ** Election
-    Election (..),
-    newElection,
+    -- ** CivicinfoSchemaV2Contest_LevelItem
+    , CivicinfoSchemaV2Contest_LevelItem (..)
 
-    -- ** Election_ShapeLookupBehavior
-    Election_ShapeLookupBehavior (..),
+    -- ** CivicinfoSchemaV2Contest_RolesItem
+    , CivicinfoSchemaV2Contest_RolesItem (..)
 
-    -- ** ElectionOfficial
-    ElectionOfficial (..),
-    newElectionOfficial,
+    -- ** CivicinfoSchemaV2Election
+    , CivicinfoSchemaV2Election (..)
+    , newCivicinfoSchemaV2Election
 
-    -- ** ElectionsQueryResponse
-    ElectionsQueryResponse (..),
-    newElectionsQueryResponse,
+    -- ** CivicinfoSchemaV2Election_ShapeLookupBehavior
+    , CivicinfoSchemaV2Election_ShapeLookupBehavior (..)
 
-    -- ** ElectoralDistrict
-    ElectoralDistrict (..),
-    newElectoralDistrict,
+    -- ** CivicinfoSchemaV2ElectionOfficial
+    , CivicinfoSchemaV2ElectionOfficial (..)
+    , newCivicinfoSchemaV2ElectionOfficial
 
-    -- ** ElectoralDistrict_Scope
-    ElectoralDistrict_Scope (..),
+    -- ** CivicinfoSchemaV2ElectoralDistrict
+    , CivicinfoSchemaV2ElectoralDistrict (..)
+    , newCivicinfoSchemaV2ElectoralDistrict
 
-    -- ** GeographicDivision
-    GeographicDivision (..),
-    newGeographicDivision,
+    -- ** CivicinfoSchemaV2ElectoralDistrict_Scope
+    , CivicinfoSchemaV2ElectoralDistrict_Scope (..)
 
-    -- ** Office
-    Office (..),
-    newOffice,
+    -- ** CivicinfoSchemaV2GeographicDivision
+    , CivicinfoSchemaV2GeographicDivision (..)
+    , newCivicinfoSchemaV2GeographicDivision
 
-    -- ** Office_LevelsItem
-    Office_LevelsItem (..),
+    -- ** CivicinfoSchemaV2PollingLocation
+    , CivicinfoSchemaV2PollingLocation (..)
+    , newCivicinfoSchemaV2PollingLocation
 
-    -- ** Office_RolesItem
-    Office_RolesItem (..),
+    -- ** CivicinfoSchemaV2Precinct
+    , CivicinfoSchemaV2Precinct (..)
+    , newCivicinfoSchemaV2Precinct
 
-    -- ** Official
-    Official (..),
-    newOfficial,
+    -- ** CivicinfoSchemaV2SimpleAddressType
+    , CivicinfoSchemaV2SimpleAddressType (..)
+    , newCivicinfoSchemaV2SimpleAddressType
 
-    -- ** PollingLocation
-    PollingLocation (..),
-    newPollingLocation,
+    -- ** CivicinfoSchemaV2Source
+    , CivicinfoSchemaV2Source (..)
+    , newCivicinfoSchemaV2Source
+    ) where
 
-    -- ** Precinct
-    Precinct (..),
-    newPrecinct,
-
-    -- ** RepresentativeInfoData
-    RepresentativeInfoData (..),
-    newRepresentativeInfoData,
-
-    -- ** RepresentativeInfoData_Divisions
-    RepresentativeInfoData_Divisions (..),
-    newRepresentativeInfoData_Divisions,
-
-    -- ** RepresentativeInfoResponse
-    RepresentativeInfoResponse (..),
-    newRepresentativeInfoResponse,
-
-    -- ** RepresentativeInfoResponse_Divisions
-    RepresentativeInfoResponse_Divisions (..),
-    newRepresentativeInfoResponse_Divisions,
-
-    -- ** SimpleAddressType
-    SimpleAddressType (..),
-    newSimpleAddressType,
-
-    -- ** Source
-    Source (..),
-    newSource,
-
-    -- ** VoterInfoResponse
-    VoterInfoResponse (..),
-    newVoterInfoResponse,
-
-    -- ** RepresentativesRepresentativeInfoByAddressLevels
-    RepresentativesRepresentativeInfoByAddressLevels (..),
-
-    -- ** RepresentativesRepresentativeInfoByAddressRoles
-    RepresentativesRepresentativeInfoByAddressRoles (..),
-
-    -- ** RepresentativesRepresentativeInfoByDivisionLevels
-    RepresentativesRepresentativeInfoByDivisionLevels (..),
-
-    -- ** RepresentativesRepresentativeInfoByDivisionRoles
-    RepresentativesRepresentativeInfoByDivisionRoles (..),
-  )
-where
-
+import qualified Gogol.Prelude as Core
 import Gogol.CivicInfo.Internal.Product
 import Gogol.CivicInfo.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v2@ of the Google Civic Information API. This contains the host and root path used as a starting point for constructing service requests.
 civicInfoService :: Core.ServiceConfig
-civicInfoService =
-  Core.defaultService
-    (Core.ServiceId "civicinfo:v2")
-    "civicinfo.googleapis.com"
+civicInfoService
+  = Core.defaultService (Core.ServiceId "civicinfo:v2")
+      "civicinfo.googleapis.com"

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.StorageTransfer.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AgentPool_State
     AgentPool_State
-      ( AgentPool_State_STATEUNSPECIFIED,
+      (
+        AgentPool_State_STATEUNSPECIFIED,
         AgentPool_State_Creating,
         AgentPool_State_Created,
         AgentPool_State_Deleting,
@@ -42,7 +48,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * ErrorSummary_ErrorCode
     ErrorSummary_ErrorCode
-      ( ErrorSummary_ErrorCode_OK,
+      (
+        ErrorSummary_ErrorCode_OK,
         ErrorSummary_ErrorCode_Cancelled,
         ErrorSummary_ErrorCode_Unknown,
         ErrorSummary_ErrorCode_INVALIDARGUMENT,
@@ -64,15 +71,18 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * LoggingConfig_LogActionStatesItem
     LoggingConfig_LogActionStatesItem
-      ( LoggingConfig_LogActionStatesItem_LOGGABLEACTIONSTATEUNSPECIFIED,
+      (
+        LoggingConfig_LogActionStatesItem_LOGGABLEACTIONSTATEUNSPECIFIED,
         LoggingConfig_LogActionStatesItem_Succeeded,
         LoggingConfig_LogActionStatesItem_Failed,
+        LoggingConfig_LogActionStatesItem_Skipped,
         ..
       ),
 
     -- * LoggingConfig_LogActionsItem
     LoggingConfig_LogActionsItem
-      ( LoggingConfig_LogActionsItem_LOGGABLEACTIONUNSPECIFIED,
+      (
+        LoggingConfig_LogActionsItem_LOGGABLEACTIONUNSPECIFIED,
         LoggingConfig_LogActionsItem_Find,
         LoggingConfig_LogActionsItem_Delete',
         LoggingConfig_LogActionsItem_Copy,
@@ -81,7 +91,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_Acl
     MetadataOptions_Acl
-      ( MetadataOptions_Acl_ACLUNSPECIFIED,
+      (
+        MetadataOptions_Acl_ACLUNSPECIFIED,
         MetadataOptions_Acl_ACLDESTINATIONBUCKETDEFAULT,
         MetadataOptions_Acl_ACLPRESERVE,
         ..
@@ -89,7 +100,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_Gid
     MetadataOptions_Gid
-      ( MetadataOptions_Gid_GIDUNSPECIFIED,
+      (
+        MetadataOptions_Gid_GIDUNSPECIFIED,
         MetadataOptions_Gid_GIDSKIP,
         MetadataOptions_Gid_GIDNUMBER,
         ..
@@ -97,7 +109,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_KmsKey
     MetadataOptions_KmsKey
-      ( MetadataOptions_KmsKey_KMSKEYUNSPECIFIED,
+      (
+        MetadataOptions_KmsKey_KMSKEYUNSPECIFIED,
         MetadataOptions_KmsKey_KMSKEYDESTINATIONBUCKETDEFAULT,
         MetadataOptions_KmsKey_KMSKEYPRESERVE,
         ..
@@ -105,7 +118,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_Mode
     MetadataOptions_Mode
-      ( MetadataOptions_Mode_MODEUNSPECIFIED,
+      (
+        MetadataOptions_Mode_MODEUNSPECIFIED,
         MetadataOptions_Mode_MODESKIP,
         MetadataOptions_Mode_MODEPRESERVE,
         ..
@@ -113,7 +127,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_StorageClass
     MetadataOptions_StorageClass
-      ( MetadataOptions_StorageClass_STORAGECLASSUNSPECIFIED,
+      (
+        MetadataOptions_StorageClass_STORAGECLASSUNSPECIFIED,
         MetadataOptions_StorageClass_STORAGECLASSDESTINATIONBUCKETDEFAULT,
         MetadataOptions_StorageClass_STORAGECLASSPRESERVE,
         MetadataOptions_StorageClass_STORAGECLASSSTANDARD,
@@ -125,7 +140,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_Symlink
     MetadataOptions_Symlink
-      ( MetadataOptions_Symlink_SYMLINKUNSPECIFIED,
+      (
+        MetadataOptions_Symlink_SYMLINKUNSPECIFIED,
         MetadataOptions_Symlink_SYMLINKSKIP,
         MetadataOptions_Symlink_SYMLINKPRESERVE,
         ..
@@ -133,7 +149,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_TemporaryHold
     MetadataOptions_TemporaryHold
-      ( MetadataOptions_TemporaryHold_TEMPORARYHOLDUNSPECIFIED,
+      (
+        MetadataOptions_TemporaryHold_TEMPORARYHOLDUNSPECIFIED,
         MetadataOptions_TemporaryHold_TEMPORARYHOLDSKIP,
         MetadataOptions_TemporaryHold_TEMPORARYHOLDPRESERVE,
         ..
@@ -141,7 +158,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_TimeCreated
     MetadataOptions_TimeCreated
-      ( MetadataOptions_TimeCreated_TIMECREATEDUNSPECIFIED,
+      (
+        MetadataOptions_TimeCreated_TIMECREATEDUNSPECIFIED,
         MetadataOptions_TimeCreated_TIMECREATEDSKIP,
         MetadataOptions_TimeCreated_TIMECREATEDPRESERVEASCUSTOMTIME,
         ..
@@ -149,7 +167,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * MetadataOptions_Uid
     MetadataOptions_Uid
-      ( MetadataOptions_Uid_UIDUNSPECIFIED,
+      (
+        MetadataOptions_Uid_UIDUNSPECIFIED,
         MetadataOptions_Uid_UIDSKIP,
         MetadataOptions_Uid_UIDNUMBER,
         ..
@@ -157,7 +176,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * NotificationConfig_EventTypesItem
     NotificationConfig_EventTypesItem
-      ( NotificationConfig_EventTypesItem_EVENTTYPEUNSPECIFIED,
+      (
+        NotificationConfig_EventTypesItem_EVENTTYPEUNSPECIFIED,
         NotificationConfig_EventTypesItem_TRANSFEROPERATIONSUCCESS,
         NotificationConfig_EventTypesItem_TRANSFEROPERATIONFAILED,
         NotificationConfig_EventTypesItem_TRANSFEROPERATIONABORTED,
@@ -166,7 +186,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * NotificationConfig_PayloadFormat
     NotificationConfig_PayloadFormat
-      ( NotificationConfig_PayloadFormat_PAYLOADFORMATUNSPECIFIED,
+      (
+        NotificationConfig_PayloadFormat_PAYLOADFORMATUNSPECIFIED,
         NotificationConfig_PayloadFormat_None,
         NotificationConfig_PayloadFormat_Json,
         ..
@@ -174,7 +195,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * S3CompatibleMetadata_AuthMethod
     S3CompatibleMetadata_AuthMethod
-      ( S3CompatibleMetadata_AuthMethod_AUTHMETHODUNSPECIFIED,
+      (
+        S3CompatibleMetadata_AuthMethod_AUTHMETHODUNSPECIFIED,
         S3CompatibleMetadata_AuthMethod_AUTH_METHOD_AWS_SIGNATURE_V4,
         S3CompatibleMetadata_AuthMethod_AUTH_METHOD_AWS_SIGNATURE_V2,
         ..
@@ -182,7 +204,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * S3CompatibleMetadata_ListApi
     S3CompatibleMetadata_ListApi
-      ( S3CompatibleMetadata_ListApi_LISTAPIUNSPECIFIED,
+      (
+        S3CompatibleMetadata_ListApi_LISTAPIUNSPECIFIED,
         S3CompatibleMetadata_ListApi_LIST_OBJECTS_V2,
         S3CompatibleMetadata_ListApi_LISTOBJECTS,
         ..
@@ -190,7 +213,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * S3CompatibleMetadata_Protocol
     S3CompatibleMetadata_Protocol
-      ( S3CompatibleMetadata_Protocol_NETWORKPROTOCOLUNSPECIFIED,
+      (
+        S3CompatibleMetadata_Protocol_NETWORKPROTOCOLUNSPECIFIED,
         S3CompatibleMetadata_Protocol_NETWORKPROTOCOLHTTPS,
         S3CompatibleMetadata_Protocol_NETWORKPROTOCOLHTTP,
         ..
@@ -198,7 +222,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * S3CompatibleMetadata_RequestModel
     S3CompatibleMetadata_RequestModel
-      ( S3CompatibleMetadata_RequestModel_REQUESTMODELUNSPECIFIED,
+      (
+        S3CompatibleMetadata_RequestModel_REQUESTMODELUNSPECIFIED,
         S3CompatibleMetadata_RequestModel_REQUESTMODELVIRTUALHOSTEDSTYLE,
         S3CompatibleMetadata_RequestModel_REQUESTMODELPATHSTYLE,
         ..
@@ -206,7 +231,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * TransferJob_Status
     TransferJob_Status
-      ( TransferJob_Status_STATUSUNSPECIFIED,
+      (
+        TransferJob_Status_STATUSUNSPECIFIED,
         TransferJob_Status_Enabled,
         TransferJob_Status_Disabled,
         TransferJob_Status_Deleted,
@@ -215,7 +241,8 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * TransferOperation_Status
     TransferOperation_Status
-      ( TransferOperation_Status_STATUSUNSPECIFIED,
+      (
+        TransferOperation_Status_STATUSUNSPECIFIED,
         TransferOperation_Status_INPROGRESS,
         TransferOperation_Status_Paused,
         TransferOperation_Status_Success,
@@ -228,29 +255,29 @@ module Gogol.StorageTransfer.Internal.Sum
 
     -- * TransferOptions_OverwriteWhen
     TransferOptions_OverwriteWhen
-      ( TransferOptions_OverwriteWhen_OVERWRITEWHENUNSPECIFIED,
+      (
+        TransferOptions_OverwriteWhen_OVERWRITEWHENUNSPECIFIED,
         TransferOptions_OverwriteWhen_Different,
         TransferOptions_OverwriteWhen_Never,
         TransferOptions_OverwriteWhen_Always,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -263,21 +290,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Output only. Specifies the state of the AgentPool.
-newtype AgentPool_State = AgentPool_State {fromAgentPool_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AgentPool_State = AgentPool_State { fromAgentPool_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern AgentPool_State_STATEUNSPECIFIED :: AgentPool_State
@@ -300,21 +326,20 @@ pattern AgentPool_State_Deleting = AgentPool_State "DELETING"
   AgentPool_State_Creating,
   AgentPool_State_Created,
   AgentPool_State_Deleting,
-  AgentPool_State
-  #-}
+  AgentPool_State #-}
 
 -- | Required.
-newtype ErrorSummary_ErrorCode = ErrorSummary_ErrorCode {fromErrorSummary_ErrorCode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ErrorSummary_ErrorCode = ErrorSummary_ErrorCode { fromErrorSummary_ErrorCode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not an error; returned on success. HTTP Mapping: 200 OK
 pattern ErrorSummary_ErrorCode_OK :: ErrorSummary_ErrorCode
@@ -402,20 +427,19 @@ pattern ErrorSummary_ErrorCode_DATALOSS = ErrorSummary_ErrorCode "DATA_LOSS"
   ErrorSummary_ErrorCode_Internal,
   ErrorSummary_ErrorCode_Unavailable,
   ErrorSummary_ErrorCode_DATALOSS,
-  ErrorSummary_ErrorCode
-  #-}
+  ErrorSummary_ErrorCode #-}
 
-newtype LoggingConfig_LogActionStatesItem = LoggingConfig_LogActionStatesItem {fromLoggingConfig_LogActionStatesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LoggingConfig_LogActionStatesItem = LoggingConfig_LogActionStatesItem { fromLoggingConfig_LogActionStatesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern LoggingConfig_LogActionStatesItem_LOGGABLEACTIONSTATEUNSPECIFIED :: LoggingConfig_LogActionStatesItem
@@ -429,24 +453,28 @@ pattern LoggingConfig_LogActionStatesItem_Succeeded = LoggingConfig_LogActionSta
 pattern LoggingConfig_LogActionStatesItem_Failed :: LoggingConfig_LogActionStatesItem
 pattern LoggingConfig_LogActionStatesItem_Failed = LoggingConfig_LogActionStatesItem "FAILED"
 
+-- | The @COPY@ action was skipped for this file. Only supported for agent-based transfers. @SKIPPED@ actions are logged as INFO.
+pattern LoggingConfig_LogActionStatesItem_Skipped :: LoggingConfig_LogActionStatesItem
+pattern LoggingConfig_LogActionStatesItem_Skipped = LoggingConfig_LogActionStatesItem "SKIPPED"
+
 {-# COMPLETE
   LoggingConfig_LogActionStatesItem_LOGGABLEACTIONSTATEUNSPECIFIED,
   LoggingConfig_LogActionStatesItem_Succeeded,
   LoggingConfig_LogActionStatesItem_Failed,
-  LoggingConfig_LogActionStatesItem
-  #-}
+  LoggingConfig_LogActionStatesItem_Skipped,
+  LoggingConfig_LogActionStatesItem #-}
 
-newtype LoggingConfig_LogActionsItem = LoggingConfig_LogActionsItem {fromLoggingConfig_LogActionsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype LoggingConfig_LogActionsItem = LoggingConfig_LogActionsItem { fromLoggingConfig_LogActionsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern LoggingConfig_LogActionsItem_LOGGABLEACTIONUNSPECIFIED :: LoggingConfig_LogActionsItem
@@ -469,21 +497,20 @@ pattern LoggingConfig_LogActionsItem_Copy = LoggingConfig_LogActionsItem "COPY"
   LoggingConfig_LogActionsItem_Find,
   LoggingConfig_LogActionsItem_Delete',
   LoggingConfig_LogActionsItem_Copy,
-  LoggingConfig_LogActionsItem
-  #-}
+  LoggingConfig_LogActionsItem #-}
 
 -- | Specifies how each object\'s ACLs should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as ACL/DESTINATION/BUCKET_DEFAULT.
-newtype MetadataOptions_Acl = MetadataOptions_Acl {fromMetadataOptions_Acl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_Acl = MetadataOptions_Acl { fromMetadataOptions_Acl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | ACL behavior is unspecified.
 pattern MetadataOptions_Acl_ACLUNSPECIFIED :: MetadataOptions_Acl
@@ -501,21 +528,20 @@ pattern MetadataOptions_Acl_ACLPRESERVE = MetadataOptions_Acl "ACL_PRESERVE"
   MetadataOptions_Acl_ACLUNSPECIFIED,
   MetadataOptions_Acl_ACLDESTINATIONBUCKETDEFAULT,
   MetadataOptions_Acl_ACLPRESERVE,
-  MetadataOptions_Acl
-  #-}
+  MetadataOptions_Acl #-}
 
 -- | Specifies how each file\'s POSIX group ID (GID) attribute should be handled by the transfer. By default, GID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
-newtype MetadataOptions_Gid = MetadataOptions_Gid {fromMetadataOptions_Gid :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_Gid = MetadataOptions_Gid { fromMetadataOptions_Gid :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | GID behavior is unspecified.
 pattern MetadataOptions_Gid_GIDUNSPECIFIED :: MetadataOptions_Gid
@@ -533,21 +559,20 @@ pattern MetadataOptions_Gid_GIDNUMBER = MetadataOptions_Gid "GID_NUMBER"
   MetadataOptions_Gid_GIDUNSPECIFIED,
   MetadataOptions_Gid_GIDSKIP,
   MetadataOptions_Gid_GIDNUMBER,
-  MetadataOptions_Gid
-  #-}
+  MetadataOptions_Gid #-}
 
 -- | Specifies how each object\'s Cloud KMS customer-managed encryption key (CMEK) is preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as KMS/KEY/DESTINATION/BUCKET/DEFAULT.
-newtype MetadataOptions_KmsKey = MetadataOptions_KmsKey {fromMetadataOptions_KmsKey :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_KmsKey = MetadataOptions_KmsKey { fromMetadataOptions_KmsKey :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | KmsKey behavior is unspecified.
 pattern MetadataOptions_KmsKey_KMSKEYUNSPECIFIED :: MetadataOptions_KmsKey
@@ -565,21 +590,20 @@ pattern MetadataOptions_KmsKey_KMSKEYPRESERVE = MetadataOptions_KmsKey "KMS_KEY_
   MetadataOptions_KmsKey_KMSKEYUNSPECIFIED,
   MetadataOptions_KmsKey_KMSKEYDESTINATIONBUCKETDEFAULT,
   MetadataOptions_KmsKey_KMSKEYPRESERVE,
-  MetadataOptions_KmsKey
-  #-}
+  MetadataOptions_KmsKey #-}
 
 -- | Specifies how each file\'s mode attribute should be handled by the transfer. By default, mode is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
-newtype MetadataOptions_Mode = MetadataOptions_Mode {fromMetadataOptions_Mode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_Mode = MetadataOptions_Mode { fromMetadataOptions_Mode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Mode behavior is unspecified.
 pattern MetadataOptions_Mode_MODEUNSPECIFIED :: MetadataOptions_Mode
@@ -597,21 +621,20 @@ pattern MetadataOptions_Mode_MODEPRESERVE = MetadataOptions_Mode "MODE_PRESERVE"
   MetadataOptions_Mode_MODEUNSPECIFIED,
   MetadataOptions_Mode_MODESKIP,
   MetadataOptions_Mode_MODEPRESERVE,
-  MetadataOptions_Mode
-  #-}
+  MetadataOptions_Mode #-}
 
 -- | Specifies the storage class to set on objects being transferred to Google Cloud Storage buckets. If unspecified, the default behavior is the same as STORAGE/CLASS/DESTINATION/BUCKET/DEFAULT.
-newtype MetadataOptions_StorageClass = MetadataOptions_StorageClass {fromMetadataOptions_StorageClass :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_StorageClass = MetadataOptions_StorageClass { fromMetadataOptions_StorageClass :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Storage class behavior is unspecified.
 pattern MetadataOptions_StorageClass_STORAGECLASSUNSPECIFIED :: MetadataOptions_StorageClass
@@ -649,21 +672,20 @@ pattern MetadataOptions_StorageClass_STORAGECLASSARCHIVE = MetadataOptions_Stora
   MetadataOptions_StorageClass_STORAGECLASSNEARLINE,
   MetadataOptions_StorageClass_STORAGECLASSCOLDLINE,
   MetadataOptions_StorageClass_STORAGECLASSARCHIVE,
-  MetadataOptions_StorageClass
-  #-}
+  MetadataOptions_StorageClass #-}
 
 -- | Specifies how symlinks should be handled by the transfer. By default, symlinks are not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
-newtype MetadataOptions_Symlink = MetadataOptions_Symlink {fromMetadataOptions_Symlink :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_Symlink = MetadataOptions_Symlink { fromMetadataOptions_Symlink :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Symlink behavior is unspecified.
 pattern MetadataOptions_Symlink_SYMLINKUNSPECIFIED :: MetadataOptions_Symlink
@@ -681,21 +703,20 @@ pattern MetadataOptions_Symlink_SYMLINKPRESERVE = MetadataOptions_Symlink "SYMLI
   MetadataOptions_Symlink_SYMLINKUNSPECIFIED,
   MetadataOptions_Symlink_SYMLINKSKIP,
   MetadataOptions_Symlink_SYMLINKPRESERVE,
-  MetadataOptions_Symlink
-  #-}
+  MetadataOptions_Symlink #-}
 
 -- | Specifies how each object\'s temporary hold status should be preserved for transfers between Google Cloud Storage buckets. If unspecified, the default behavior is the same as TEMPORARY/HOLD/PRESERVE.
-newtype MetadataOptions_TemporaryHold = MetadataOptions_TemporaryHold {fromMetadataOptions_TemporaryHold :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_TemporaryHold = MetadataOptions_TemporaryHold { fromMetadataOptions_TemporaryHold :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Temporary hold behavior is unspecified.
 pattern MetadataOptions_TemporaryHold_TEMPORARYHOLDUNSPECIFIED :: MetadataOptions_TemporaryHold
@@ -713,21 +734,20 @@ pattern MetadataOptions_TemporaryHold_TEMPORARYHOLDPRESERVE = MetadataOptions_Te
   MetadataOptions_TemporaryHold_TEMPORARYHOLDUNSPECIFIED,
   MetadataOptions_TemporaryHold_TEMPORARYHOLDSKIP,
   MetadataOptions_TemporaryHold_TEMPORARYHOLDPRESERVE,
-  MetadataOptions_TemporaryHold
-  #-}
+  MetadataOptions_TemporaryHold #-}
 
 -- | Specifies how each object\'s @timeCreated@ metadata is preserved for transfers. If unspecified, the default behavior is the same as TIME/CREATED/SKIP. This behavior is supported for transfers to Cloud Storage buckets from Cloud Storage, Amazon S3, S3-compatible storage, and Azure sources.
-newtype MetadataOptions_TimeCreated = MetadataOptions_TimeCreated {fromMetadataOptions_TimeCreated :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_TimeCreated = MetadataOptions_TimeCreated { fromMetadataOptions_TimeCreated :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | TimeCreated behavior is unspecified.
 pattern MetadataOptions_TimeCreated_TIMECREATEDUNSPECIFIED :: MetadataOptions_TimeCreated
@@ -745,21 +765,20 @@ pattern MetadataOptions_TimeCreated_TIMECREATEDPRESERVEASCUSTOMTIME = MetadataOp
   MetadataOptions_TimeCreated_TIMECREATEDUNSPECIFIED,
   MetadataOptions_TimeCreated_TIMECREATEDSKIP,
   MetadataOptions_TimeCreated_TIMECREATEDPRESERVEASCUSTOMTIME,
-  MetadataOptions_TimeCreated
-  #-}
+  MetadataOptions_TimeCreated #-}
 
 -- | Specifies how each file\'s POSIX user ID (UID) attribute should be handled by the transfer. By default, UID is not preserved. Only applicable to transfers involving POSIX file systems, and ignored for other transfers.
-newtype MetadataOptions_Uid = MetadataOptions_Uid {fromMetadataOptions_Uid :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype MetadataOptions_Uid = MetadataOptions_Uid { fromMetadataOptions_Uid :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | UID behavior is unspecified.
 pattern MetadataOptions_Uid_UIDUNSPECIFIED :: MetadataOptions_Uid
@@ -777,20 +796,19 @@ pattern MetadataOptions_Uid_UIDNUMBER = MetadataOptions_Uid "UID_NUMBER"
   MetadataOptions_Uid_UIDUNSPECIFIED,
   MetadataOptions_Uid_UIDSKIP,
   MetadataOptions_Uid_UIDNUMBER,
-  MetadataOptions_Uid
-  #-}
+  MetadataOptions_Uid #-}
 
-newtype NotificationConfig_EventTypesItem = NotificationConfig_EventTypesItem {fromNotificationConfig_EventTypesItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NotificationConfig_EventTypesItem = NotificationConfig_EventTypesItem { fromNotificationConfig_EventTypesItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Illegal value, to avoid allowing a default.
 pattern NotificationConfig_EventTypesItem_EVENTTYPEUNSPECIFIED :: NotificationConfig_EventTypesItem
@@ -813,21 +831,20 @@ pattern NotificationConfig_EventTypesItem_TRANSFEROPERATIONABORTED = Notificatio
   NotificationConfig_EventTypesItem_TRANSFEROPERATIONSUCCESS,
   NotificationConfig_EventTypesItem_TRANSFEROPERATIONFAILED,
   NotificationConfig_EventTypesItem_TRANSFEROPERATIONABORTED,
-  NotificationConfig_EventTypesItem
-  #-}
+  NotificationConfig_EventTypesItem #-}
 
 -- | Required. The desired format of the notification message payloads.
-newtype NotificationConfig_PayloadFormat = NotificationConfig_PayloadFormat {fromNotificationConfig_PayloadFormat :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype NotificationConfig_PayloadFormat = NotificationConfig_PayloadFormat { fromNotificationConfig_PayloadFormat :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Illegal value, to avoid allowing a default.
 pattern NotificationConfig_PayloadFormat_PAYLOADFORMATUNSPECIFIED :: NotificationConfig_PayloadFormat
@@ -845,21 +862,20 @@ pattern NotificationConfig_PayloadFormat_Json = NotificationConfig_PayloadFormat
   NotificationConfig_PayloadFormat_PAYLOADFORMATUNSPECIFIED,
   NotificationConfig_PayloadFormat_None,
   NotificationConfig_PayloadFormat_Json,
-  NotificationConfig_PayloadFormat
-  #-}
+  NotificationConfig_PayloadFormat #-}
 
 -- | Specifies the authentication and authorization method used by the storage service. When not specified, Transfer Service will attempt to determine right auth method to use.
-newtype S3CompatibleMetadata_AuthMethod = S3CompatibleMetadata_AuthMethod {fromS3CompatibleMetadata_AuthMethod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype S3CompatibleMetadata_AuthMethod = S3CompatibleMetadata_AuthMethod { fromS3CompatibleMetadata_AuthMethod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | AuthMethod is not specified.
 pattern S3CompatibleMetadata_AuthMethod_AUTHMETHODUNSPECIFIED :: S3CompatibleMetadata_AuthMethod
@@ -877,21 +893,20 @@ pattern S3CompatibleMetadata_AuthMethod_AUTH_METHOD_AWS_SIGNATURE_V2 = S3Compati
   S3CompatibleMetadata_AuthMethod_AUTHMETHODUNSPECIFIED,
   S3CompatibleMetadata_AuthMethod_AUTH_METHOD_AWS_SIGNATURE_V4,
   S3CompatibleMetadata_AuthMethod_AUTH_METHOD_AWS_SIGNATURE_V2,
-  S3CompatibleMetadata_AuthMethod
-  #-}
+  S3CompatibleMetadata_AuthMethod #-}
 
 -- | The Listing API to use for discovering objects. When not specified, Transfer Service will attempt to determine the right API to use.
-newtype S3CompatibleMetadata_ListApi = S3CompatibleMetadata_ListApi {fromS3CompatibleMetadata_ListApi :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype S3CompatibleMetadata_ListApi = S3CompatibleMetadata_ListApi { fromS3CompatibleMetadata_ListApi :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | ListApi is not specified.
 pattern S3CompatibleMetadata_ListApi_LISTAPIUNSPECIFIED :: S3CompatibleMetadata_ListApi
@@ -909,21 +924,20 @@ pattern S3CompatibleMetadata_ListApi_LISTOBJECTS = S3CompatibleMetadata_ListApi 
   S3CompatibleMetadata_ListApi_LISTAPIUNSPECIFIED,
   S3CompatibleMetadata_ListApi_LIST_OBJECTS_V2,
   S3CompatibleMetadata_ListApi_LISTOBJECTS,
-  S3CompatibleMetadata_ListApi
-  #-}
+  S3CompatibleMetadata_ListApi #-}
 
 -- | Specifies the network protocol of the agent. When not specified, the default value of NetworkProtocol NETWORK/PROTOCOL/HTTPS is used.
-newtype S3CompatibleMetadata_Protocol = S3CompatibleMetadata_Protocol {fromS3CompatibleMetadata_Protocol :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype S3CompatibleMetadata_Protocol = S3CompatibleMetadata_Protocol { fromS3CompatibleMetadata_Protocol :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | NetworkProtocol is not specified.
 pattern S3CompatibleMetadata_Protocol_NETWORKPROTOCOLUNSPECIFIED :: S3CompatibleMetadata_Protocol
@@ -941,21 +955,20 @@ pattern S3CompatibleMetadata_Protocol_NETWORKPROTOCOLHTTP = S3CompatibleMetadata
   S3CompatibleMetadata_Protocol_NETWORKPROTOCOLUNSPECIFIED,
   S3CompatibleMetadata_Protocol_NETWORKPROTOCOLHTTPS,
   S3CompatibleMetadata_Protocol_NETWORKPROTOCOLHTTP,
-  S3CompatibleMetadata_Protocol
-  #-}
+  S3CompatibleMetadata_Protocol #-}
 
 -- | Specifies the API request model used to call the storage service. When not specified, the default value of RequestModel REQUEST/MODEL/VIRTUAL/HOSTED/STYLE is used.
-newtype S3CompatibleMetadata_RequestModel = S3CompatibleMetadata_RequestModel {fromS3CompatibleMetadata_RequestModel :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype S3CompatibleMetadata_RequestModel = S3CompatibleMetadata_RequestModel { fromS3CompatibleMetadata_RequestModel :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | RequestModel is not specified.
 pattern S3CompatibleMetadata_RequestModel_REQUESTMODELUNSPECIFIED :: S3CompatibleMetadata_RequestModel
@@ -973,21 +986,20 @@ pattern S3CompatibleMetadata_RequestModel_REQUESTMODELPATHSTYLE = S3CompatibleMe
   S3CompatibleMetadata_RequestModel_REQUESTMODELUNSPECIFIED,
   S3CompatibleMetadata_RequestModel_REQUESTMODELVIRTUALHOSTEDSTYLE,
   S3CompatibleMetadata_RequestModel_REQUESTMODELPATHSTYLE,
-  S3CompatibleMetadata_RequestModel
-  #-}
+  S3CompatibleMetadata_RequestModel #-}
 
 -- | Status of the job. This value MUST be specified for @CreateTransferJobRequests@. __Note:__ The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.
-newtype TransferJob_Status = TransferJob_Status {fromTransferJob_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype TransferJob_Status = TransferJob_Status { fromTransferJob_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Zero is an illegal value.
 pattern TransferJob_Status_STATUSUNSPECIFIED :: TransferJob_Status
@@ -1010,21 +1022,20 @@ pattern TransferJob_Status_Deleted = TransferJob_Status "DELETED"
   TransferJob_Status_Enabled,
   TransferJob_Status_Disabled,
   TransferJob_Status_Deleted,
-  TransferJob_Status
-  #-}
+  TransferJob_Status #-}
 
 -- | Status of the transfer operation.
-newtype TransferOperation_Status = TransferOperation_Status {fromTransferOperation_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype TransferOperation_Status = TransferOperation_Status { fromTransferOperation_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Zero is an illegal value.
 pattern TransferOperation_Status_STATUSUNSPECIFIED :: TransferOperation_Status
@@ -1067,21 +1078,20 @@ pattern TransferOperation_Status_Suspending = TransferOperation_Status "SUSPENDI
   TransferOperation_Status_Aborted,
   TransferOperation_Status_Queued,
   TransferOperation_Status_Suspending,
-  TransferOperation_Status
-  #-}
+  TransferOperation_Status #-}
 
 -- | When to overwrite objects that already exist in the sink. If not set, overwrite behavior is determined by overwrite/objects/already/existing/in_sink.
-newtype TransferOptions_OverwriteWhen = TransferOptions_OverwriteWhen {fromTransferOptions_OverwriteWhen :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype TransferOptions_OverwriteWhen = TransferOptions_OverwriteWhen { fromTransferOptions_OverwriteWhen :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Overwrite behavior is unspecified.
 pattern TransferOptions_OverwriteWhen_OVERWRITEWHENUNSPECIFIED :: TransferOptions_OverwriteWhen
@@ -1104,5 +1114,4 @@ pattern TransferOptions_OverwriteWhen_Always = TransferOptions_OverwriteWhen "AL
   TransferOptions_OverwriteWhen_Different,
   TransferOptions_OverwriteWhen_Never,
   TransferOptions_OverwriteWhen_Always,
-  TransferOptions_OverwriteWhen
-  #-}
+  TransferOptions_OverwriteWhen #-}

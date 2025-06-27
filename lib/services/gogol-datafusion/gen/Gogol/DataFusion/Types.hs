@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,226 +24,230 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.DataFusion.Types
-  ( -- * Configuration
-    dataFusionService,
+    (
+    -- * Configuration
+      dataFusionService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Accelerator
-    Accelerator (..),
-    newAccelerator,
+    , Accelerator (..)
+    , newAccelerator
 
     -- ** Accelerator_AcceleratorType
-    Accelerator_AcceleratorType (..),
+    , Accelerator_AcceleratorType (..)
 
     -- ** Accelerator_State
-    Accelerator_State (..),
+    , Accelerator_State (..)
 
     -- ** AuditConfig
-    AuditConfig (..),
-    newAuditConfig,
+    , AuditConfig (..)
+    , newAuditConfig
 
     -- ** AuditLogConfig
-    AuditLogConfig (..),
-    newAuditLogConfig,
+    , AuditLogConfig (..)
+    , newAuditLogConfig
 
     -- ** AuditLogConfig_LogType
-    AuditLogConfig_LogType (..),
+    , AuditLogConfig_LogType (..)
 
     -- ** Binding
-    Binding (..),
-    newBinding,
+    , Binding (..)
+    , newBinding
 
     -- ** CancelOperationRequest
-    CancelOperationRequest (..),
-    newCancelOperationRequest,
+    , CancelOperationRequest (..)
+    , newCancelOperationRequest
 
     -- ** CryptoKeyConfig
-    CryptoKeyConfig (..),
-    newCryptoKeyConfig,
+    , CryptoKeyConfig (..)
+    , newCryptoKeyConfig
 
     -- ** DnsPeering
-    DnsPeering (..),
-    newDnsPeering,
+    , DnsPeering (..)
+    , newDnsPeering
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** EventPublishConfig
-    EventPublishConfig (..),
-    newEventPublishConfig,
+    , EventPublishConfig (..)
+    , newEventPublishConfig
 
     -- ** Expr
-    Expr (..),
-    newExpr,
+    , Expr (..)
+    , newExpr
 
     -- ** Instance
-    Instance (..),
-    newInstance,
+    , Instance (..)
+    , newInstance
 
     -- ** Instance_DisabledReasonItem
-    Instance_DisabledReasonItem (..),
+    , Instance_DisabledReasonItem (..)
 
     -- ** Instance_Labels
-    Instance_Labels (..),
-    newInstance_Labels,
+    , Instance_Labels (..)
+    , newInstance_Labels
 
     -- ** Instance_Options
-    Instance_Options (..),
-    newInstance_Options,
+    , Instance_Options (..)
+    , newInstance_Options
 
     -- ** Instance_State
-    Instance_State (..),
+    , Instance_State (..)
+
+    -- ** Instance_Tags
+    , Instance_Tags (..)
+    , newInstance_Tags
 
     -- ** Instance_Type
-    Instance_Type (..),
+    , Instance_Type (..)
 
     -- ** ListAvailableVersionsResponse
-    ListAvailableVersionsResponse (..),
-    newListAvailableVersionsResponse,
+    , ListAvailableVersionsResponse (..)
+    , newListAvailableVersionsResponse
 
     -- ** ListDnsPeeringsResponse
-    ListDnsPeeringsResponse (..),
-    newListDnsPeeringsResponse,
+    , ListDnsPeeringsResponse (..)
+    , newListDnsPeeringsResponse
 
     -- ** ListInstancesResponse
-    ListInstancesResponse (..),
-    newListInstancesResponse,
+    , ListInstancesResponse (..)
+    , newListInstancesResponse
 
     -- ** ListLocationsResponse
-    ListLocationsResponse (..),
-    newListLocationsResponse,
+    , ListLocationsResponse (..)
+    , newListLocationsResponse
 
     -- ** ListOperationsResponse
-    ListOperationsResponse (..),
-    newListOperationsResponse,
+    , ListOperationsResponse (..)
+    , newListOperationsResponse
 
     -- ** Location
-    Location (..),
-    newLocation,
+    , Location (..)
+    , newLocation
 
     -- ** Location_Labels
-    Location_Labels (..),
-    newLocation_Labels,
+    , Location_Labels (..)
+    , newLocation_Labels
 
     -- ** Location_Metadata
-    Location_Metadata (..),
-    newLocation_Metadata,
+    , Location_Metadata (..)
+    , newLocation_Metadata
 
     -- ** LoggingConfig
-    LoggingConfig (..),
-    newLoggingConfig,
+    , LoggingConfig (..)
+    , newLoggingConfig
 
     -- ** MaintenanceEvent
-    MaintenanceEvent (..),
-    newMaintenanceEvent,
+    , MaintenanceEvent (..)
+    , newMaintenanceEvent
 
     -- ** MaintenanceEvent_State
-    MaintenanceEvent_State (..),
+    , MaintenanceEvent_State (..)
 
     -- ** MaintenancePolicy
-    MaintenancePolicy (..),
-    newMaintenancePolicy,
+    , MaintenancePolicy (..)
+    , newMaintenancePolicy
 
     -- ** MaintenanceWindow
-    MaintenanceWindow (..),
-    newMaintenanceWindow,
+    , MaintenanceWindow (..)
+    , newMaintenanceWindow
 
     -- ** NetworkConfig
-    NetworkConfig (..),
-    newNetworkConfig,
+    , NetworkConfig (..)
+    , newNetworkConfig
 
     -- ** NetworkConfig_ConnectionType
-    NetworkConfig_ConnectionType (..),
+    , NetworkConfig_ConnectionType (..)
 
     -- ** Operation
-    Operation (..),
-    newOperation,
+    , Operation (..)
+    , newOperation
 
     -- ** Operation_Metadata
-    Operation_Metadata (..),
-    newOperation_Metadata,
+    , Operation_Metadata (..)
+    , newOperation_Metadata
 
     -- ** Operation_Response
-    Operation_Response (..),
-    newOperation_Response,
+    , Operation_Response (..)
+    , newOperation_Response
 
     -- ** OperationMetadata
-    OperationMetadata (..),
-    newOperationMetadata,
+    , OperationMetadata (..)
+    , newOperationMetadata
 
     -- ** OperationMetadata_AdditionalStatus
-    OperationMetadata_AdditionalStatus (..),
-    newOperationMetadata_AdditionalStatus,
+    , OperationMetadata_AdditionalStatus (..)
+    , newOperationMetadata_AdditionalStatus
 
     -- ** Policy
-    Policy (..),
-    newPolicy,
+    , Policy (..)
+    , newPolicy
 
     -- ** PrivateServiceConnectConfig
-    PrivateServiceConnectConfig (..),
-    newPrivateServiceConnectConfig,
+    , PrivateServiceConnectConfig (..)
+    , newPrivateServiceConnectConfig
 
     -- ** RecurringTimeWindow
-    RecurringTimeWindow (..),
-    newRecurringTimeWindow,
+    , RecurringTimeWindow (..)
+    , newRecurringTimeWindow
 
     -- ** RestartInstanceRequest
-    RestartInstanceRequest (..),
-    newRestartInstanceRequest,
+    , RestartInstanceRequest (..)
+    , newRestartInstanceRequest
 
     -- ** SetIamPolicyRequest
-    SetIamPolicyRequest (..),
-    newSetIamPolicyRequest,
+    , SetIamPolicyRequest (..)
+    , newSetIamPolicyRequest
 
     -- ** Status
-    Status (..),
-    newStatus,
+    , Status (..)
+    , newStatus
 
     -- ** Status_DetailsItem
-    Status_DetailsItem (..),
-    newStatus_DetailsItem,
+    , Status_DetailsItem (..)
+    , newStatus_DetailsItem
 
     -- ** TestIamPermissionsRequest
-    TestIamPermissionsRequest (..),
-    newTestIamPermissionsRequest,
+    , TestIamPermissionsRequest (..)
+    , newTestIamPermissionsRequest
 
     -- ** TestIamPermissionsResponse
-    TestIamPermissionsResponse (..),
-    newTestIamPermissionsResponse,
+    , TestIamPermissionsResponse (..)
+    , newTestIamPermissionsResponse
 
     -- ** TimeWindow
-    TimeWindow (..),
-    newTimeWindow,
+    , TimeWindow (..)
+    , newTimeWindow
 
     -- ** Version
-    Version (..),
-    newVersion,
+    , Version (..)
+    , newVersion
 
     -- ** Version_Type
-    Version_Type (..),
-  )
-where
+    , Version_Type (..)
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.DataFusion.Internal.Product
 import Gogol.DataFusion.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v1@ of the Cloud Data Fusion API. This contains the host and root path used as a starting point for constructing service requests.
 dataFusionService :: Core.ServiceConfig
-dataFusionService =
-  Core.defaultService
-    (Core.ServiceId "datafusion:v1")
-    "datafusion.googleapis.com"
+dataFusionService
+  = Core.defaultService (Core.ServiceId "datafusion:v1")
+      "datafusion.googleapis.com"
 
 -- | See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
 type CloudPlatform'FullControl =
-  "https://www.googleapis.com/auth/cloud-platform"
+     "https://www.googleapis.com/auth/cloud-platform"

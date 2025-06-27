@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,52 +29,53 @@
 --
 -- /See:/ <https://developers.google.com/glass Google Mirror API Reference> for @mirror.subscriptions.delete@.
 module Gogol.Mirror.Subscriptions.Delete
-  ( -- * Resource
-    MirrorSubscriptionsDeleteResource,
+    (
+    -- * Resource
+      MirrorSubscriptionsDeleteResource
 
     -- ** Constructing a Request
-    MirrorSubscriptionsDelete (..),
-    newMirrorSubscriptionsDelete,
-  )
-where
+    , MirrorSubscriptionsDelete (..)
+    , newMirrorSubscriptionsDelete
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.Mirror.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @mirror.subscriptions.delete@ method which the
 -- 'MirrorSubscriptionsDelete' request conforms to.
 type MirrorSubscriptionsDeleteResource =
-  "mirror"
-    Core.:> "v1"
-    Core.:> "subscriptions"
-    Core.:> Core.Capture "id" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Delete '[Core.JSON] ()
+     "mirror" Core.:>
+       "v1" Core.:>
+         "subscriptions" Core.:>
+           Core.Capture "id" Core.Text Core.:>
+             Core.QueryParam "alt" Core.AltJSON Core.:>
+               Core.Delete '[Core.JSON] ()
 
 -- | Deletes a subscription.
 --
 -- /See:/ 'newMirrorSubscriptionsDelete' smart constructor.
 newtype MirrorSubscriptionsDelete = MirrorSubscriptionsDelete
-  { -- | The ID of the subscription.
-    id :: Core.Text
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | The ID of the subscription.
+      id :: Core.Text
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'MirrorSubscriptionsDelete' with the minimum fields required to make a request.
-newMirrorSubscriptionsDelete ::
-  -- |  The ID of the subscription. See 'id'.
-  Core.Text ->
-  MirrorSubscriptionsDelete
-newMirrorSubscriptionsDelete id =
-  MirrorSubscriptionsDelete {id = id}
-
+newMirrorSubscriptionsDelete 
+    :: 
+                             Core.Text
+       -- ^  The ID of the subscription. See 'id'.
+    -> MirrorSubscriptionsDelete
+newMirrorSubscriptionsDelete id
+  = MirrorSubscriptionsDelete{id = id}
 instance Core.GoogleRequest MirrorSubscriptionsDelete where
-  type Rs MirrorSubscriptionsDelete = ()
-  type Scopes MirrorSubscriptionsDelete = '[Glass'Timeline]
-  requestClient MirrorSubscriptionsDelete {..} =
-    go id (Core.Just Core.AltJSON) mirrorService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy MirrorSubscriptionsDeleteResource)
-          Core.mempty
+        type Rs MirrorSubscriptionsDelete = ()
+        type Scopes MirrorSubscriptionsDelete = '[Glass'Timeline]
+        requestClient MirrorSubscriptionsDelete{..}
+          = go id (Core.Just Core.AltJSON) mirrorService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy MirrorSubscriptionsDeleteResource)
+                      Core.mempty
+

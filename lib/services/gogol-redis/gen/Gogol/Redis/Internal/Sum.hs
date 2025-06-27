@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Redis.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AOFConfig_AppendFsync
     AOFConfig_AppendFsync
-      ( AOFConfig_AppendFsync_APPENDFSYNCUNSPECIFIED,
+      (
+        AOFConfig_AppendFsync_APPENDFSYNCUNSPECIFIED,
         AOFConfig_AppendFsync_NO,
         AOFConfig_AppendFsync_Everysec,
         AOFConfig_AppendFsync_Always,
@@ -42,7 +48,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * AutomatedBackupConfig_AutomatedBackupMode
     AutomatedBackupConfig_AutomatedBackupMode
-      ( AutomatedBackupConfig_AutomatedBackupMode_AUTOMATEDBACKUPMODEUNSPECIFIED,
+      (
+        AutomatedBackupConfig_AutomatedBackupMode_AUTOMATEDBACKUPMODEUNSPECIFIED,
         AutomatedBackupConfig_AutomatedBackupMode_Disabled,
         AutomatedBackupConfig_AutomatedBackupMode_Enabled,
         ..
@@ -50,7 +57,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * AvailabilityConfiguration_AvailabilityType
     AvailabilityConfiguration_AvailabilityType
-      ( AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEUNSPECIFIED,
+      (
+        AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEUNSPECIFIED,
         AvailabilityConfiguration_AvailabilityType_Zonal,
         AvailabilityConfiguration_AvailabilityType_Regional,
         AvailabilityConfiguration_AvailabilityType_MULTIREGIONAL,
@@ -60,7 +68,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Backup_BackupType
     Backup_BackupType
-      ( Backup_BackupType_BACKUPTYPEUNSPECIFIED,
+      (
+        Backup_BackupType_BACKUPTYPEUNSPECIFIED,
         Backup_BackupType_ONDEMAND,
         Backup_BackupType_Automated,
         ..
@@ -68,7 +77,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Backup_NodeType
     Backup_NodeType
-      ( Backup_NodeType_NODETYPEUNSPECIFIED,
+      (
+        Backup_NodeType_NODETYPEUNSPECIFIED,
         Backup_NodeType_REDISSHAREDCORENANO,
         Backup_NodeType_REDISHIGHMEMMEDIUM,
         Backup_NodeType_REDISHIGHMEMXLARGE,
@@ -78,7 +88,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Backup_State
     Backup_State
-      ( Backup_State_STATEUNSPECIFIED,
+      (
+        Backup_State_STATEUNSPECIFIED,
         Backup_State_Creating,
         Backup_State_Active,
         Backup_State_Deleting,
@@ -88,7 +99,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * BackupRun_Status
     BackupRun_Status
-      ( BackupRun_Status_STATUSUNSPECIFIED,
+      (
+        BackupRun_Status_STATUSUNSPECIFIED,
         BackupRun_Status_Successful,
         BackupRun_Status_Failed,
         ..
@@ -96,7 +108,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Cluster_AuthorizationMode
     Cluster_AuthorizationMode
-      ( Cluster_AuthorizationMode_AUTHMODEUNSPECIFIED,
+      (
+        Cluster_AuthorizationMode_AUTHMODEUNSPECIFIED,
         Cluster_AuthorizationMode_AUTHMODEIAMAUTH,
         Cluster_AuthorizationMode_AUTHMODEDISABLED,
         ..
@@ -104,7 +117,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Cluster_NodeType
     Cluster_NodeType
-      ( Cluster_NodeType_NODETYPEUNSPECIFIED,
+      (
+        Cluster_NodeType_NODETYPEUNSPECIFIED,
         Cluster_NodeType_REDISSHAREDCORENANO,
         Cluster_NodeType_REDISHIGHMEMMEDIUM,
         Cluster_NodeType_REDISHIGHMEMXLARGE,
@@ -114,7 +128,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Cluster_State
     Cluster_State
-      ( Cluster_State_STATEUNSPECIFIED,
+      (
+        Cluster_State_STATEUNSPECIFIED,
         Cluster_State_Creating,
         Cluster_State_Active,
         Cluster_State_Updating,
@@ -124,7 +139,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Cluster_TransitEncryptionMode
     Cluster_TransitEncryptionMode
-      ( Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
+      (
+        Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
         Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEDISABLED,
         Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODESERVERAUTHENTICATION,
         ..
@@ -132,7 +148,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * ClusterPersistenceConfig_Mode
     ClusterPersistenceConfig_Mode
-      ( ClusterPersistenceConfig_Mode_PERSISTENCEMODEUNSPECIFIED,
+      (
+        ClusterPersistenceConfig_Mode_PERSISTENCEMODEUNSPECIFIED,
         ClusterPersistenceConfig_Mode_Disabled,
         ClusterPersistenceConfig_Mode_Rdb,
         ClusterPersistenceConfig_Mode_Aof,
@@ -141,7 +158,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * ClusterWeeklyMaintenanceWindow_Day
     ClusterWeeklyMaintenanceWindow_Day
-      ( ClusterWeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED,
+      (
+        ClusterWeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED,
         ClusterWeeklyMaintenanceWindow_Day_Monday,
         ClusterWeeklyMaintenanceWindow_Day_Tuesday,
         ClusterWeeklyMaintenanceWindow_Day_Wednesday,
@@ -154,7 +172,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * CrossClusterReplicationConfig_ClusterRole
     CrossClusterReplicationConfig_ClusterRole
-      ( CrossClusterReplicationConfig_ClusterRole_CLUSTERROLEUNSPECIFIED,
+      (
+        CrossClusterReplicationConfig_ClusterRole_CLUSTERROLEUNSPECIFIED,
         CrossClusterReplicationConfig_ClusterRole_None,
         CrossClusterReplicationConfig_ClusterRole_Primary,
         CrossClusterReplicationConfig_ClusterRole_Secondary,
@@ -163,7 +182,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceFeed_FeedType
     DatabaseResourceFeed_FeedType
-      ( DatabaseResourceFeed_FeedType_FEEDTYPEUNSPECIFIED,
+      (
+        DatabaseResourceFeed_FeedType_FEEDTYPEUNSPECIFIED,
         DatabaseResourceFeed_FeedType_RESOURCEMETADATA,
         DatabaseResourceFeed_FeedType_OBSERVABILITYDATA,
         DatabaseResourceFeed_FeedType_SECURITYFINDINGDATA,
@@ -173,7 +193,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceHealthSignalData_Provider
     DatabaseResourceHealthSignalData_Provider
-      ( DatabaseResourceHealthSignalData_Provider_PROVIDERUNSPECIFIED,
+      (
+        DatabaseResourceHealthSignalData_Provider_PROVIDERUNSPECIFIED,
         DatabaseResourceHealthSignalData_Provider_Gcp,
         DatabaseResourceHealthSignalData_Provider_Aws,
         DatabaseResourceHealthSignalData_Provider_Azure,
@@ -185,7 +206,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceHealthSignalData_SignalClass
     DatabaseResourceHealthSignalData_SignalClass
-      ( DatabaseResourceHealthSignalData_SignalClass_CLASSUNSPECIFIED,
+      (
+        DatabaseResourceHealthSignalData_SignalClass_CLASSUNSPECIFIED,
         DatabaseResourceHealthSignalData_SignalClass_Threat,
         DatabaseResourceHealthSignalData_SignalClass_Vulnerability,
         DatabaseResourceHealthSignalData_SignalClass_Misconfiguration,
@@ -196,7 +218,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceHealthSignalData_SignalSeverity
     DatabaseResourceHealthSignalData_SignalSeverity
-      ( DatabaseResourceHealthSignalData_SignalSeverity_SIGNALSEVERITYUNSPECIFIED,
+      (
+        DatabaseResourceHealthSignalData_SignalSeverity_SIGNALSEVERITYUNSPECIFIED,
         DatabaseResourceHealthSignalData_SignalSeverity_Critical,
         DatabaseResourceHealthSignalData_SignalSeverity_High,
         DatabaseResourceHealthSignalData_SignalSeverity_Medium,
@@ -206,7 +229,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceHealthSignalData_SignalType
     DatabaseResourceHealthSignalData_SignalType
-      ( DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
+      (
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENOTPROTECTEDBYAUTOMATICFAILOVER,
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEGROUPNOTREPLICATINGACROSSREGIONS,
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENOTAVAILABLEINMULTIPLEZONES,
@@ -294,12 +318,21 @@ module Gogol.Redis.Internal.Sum
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENOMAINTENANCEPOLICYCONFIGURED,
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENODELETIONPROTECTION,
         DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMEMORYLIMIT,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELARGEROWS,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED,
+        DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED,
         ..
       ),
 
     -- * DatabaseResourceHealthSignalData_State
     DatabaseResourceHealthSignalData_State
-      ( DatabaseResourceHealthSignalData_State_STATEUNSPECIFIED,
+      (
+        DatabaseResourceHealthSignalData_State_STATEUNSPECIFIED,
         DatabaseResourceHealthSignalData_State_Active,
         DatabaseResourceHealthSignalData_State_Resolved,
         DatabaseResourceHealthSignalData_State_Muted,
@@ -308,7 +341,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceId_Provider
     DatabaseResourceId_Provider
-      ( DatabaseResourceId_Provider_PROVIDERUNSPECIFIED,
+      (
+        DatabaseResourceId_Provider_PROVIDERUNSPECIFIED,
         DatabaseResourceId_Provider_Gcp,
         DatabaseResourceId_Provider_Aws,
         DatabaseResourceId_Provider_Azure,
@@ -320,7 +354,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceMetadata_CurrentState
     DatabaseResourceMetadata_CurrentState
-      ( DatabaseResourceMetadata_CurrentState_STATEUNSPECIFIED,
+      (
+        DatabaseResourceMetadata_CurrentState_STATEUNSPECIFIED,
         DatabaseResourceMetadata_CurrentState_Healthy,
         DatabaseResourceMetadata_CurrentState_Unhealthy,
         DatabaseResourceMetadata_CurrentState_Suspended,
@@ -331,7 +366,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceMetadata_Edition
     DatabaseResourceMetadata_Edition
-      ( DatabaseResourceMetadata_Edition_EDITIONUNSPECIFIED,
+      (
+        DatabaseResourceMetadata_Edition_EDITIONUNSPECIFIED,
         DatabaseResourceMetadata_Edition_EDITIONENTERPRISE,
         DatabaseResourceMetadata_Edition_EDITIONENTERPRISEPLUS,
         ..
@@ -339,7 +375,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceMetadata_ExpectedState
     DatabaseResourceMetadata_ExpectedState
-      ( DatabaseResourceMetadata_ExpectedState_STATEUNSPECIFIED,
+      (
+        DatabaseResourceMetadata_ExpectedState_STATEUNSPECIFIED,
         DatabaseResourceMetadata_ExpectedState_Healthy,
         DatabaseResourceMetadata_ExpectedState_Unhealthy,
         DatabaseResourceMetadata_ExpectedState_Suspended,
@@ -350,7 +387,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceMetadata_InstanceType
     DatabaseResourceMetadata_InstanceType
-      ( DatabaseResourceMetadata_InstanceType_INSTANCETYPEUNSPECIFIED,
+      (
+        DatabaseResourceMetadata_InstanceType_INSTANCETYPEUNSPECIFIED,
         DatabaseResourceMetadata_InstanceType_SUBRESOURCETYPEUNSPECIFIED,
         DatabaseResourceMetadata_InstanceType_Primary,
         DatabaseResourceMetadata_InstanceType_Secondary,
@@ -366,7 +404,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceMetadata_SuspensionReason
     DatabaseResourceMetadata_SuspensionReason
-      ( DatabaseResourceMetadata_SuspensionReason_SUSPENSIONREASONUNSPECIFIED,
+      (
+        DatabaseResourceMetadata_SuspensionReason_SUSPENSIONREASONUNSPECIFIED,
         DatabaseResourceMetadata_SuspensionReason_WIPEOUTHIDEEVENT,
         DatabaseResourceMetadata_SuspensionReason_WIPEOUTPURGEEVENT,
         DatabaseResourceMetadata_SuspensionReason_BILLINGDISABLED,
@@ -378,7 +417,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceRecommendationSignalData_RecommendationState
     DatabaseResourceRecommendationSignalData_RecommendationState
-      ( DatabaseResourceRecommendationSignalData_RecommendationState_Unspecified,
+      (
+        DatabaseResourceRecommendationSignalData_RecommendationState_Unspecified,
         DatabaseResourceRecommendationSignalData_RecommendationState_Active,
         DatabaseResourceRecommendationSignalData_RecommendationState_Claimed,
         DatabaseResourceRecommendationSignalData_RecommendationState_Succeeded,
@@ -389,7 +429,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * DatabaseResourceRecommendationSignalData_SignalType
     DatabaseResourceRecommendationSignalData_SignalType
-      ( DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
+      (
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENOTPROTECTEDBYAUTOMATICFAILOVER,
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEGROUPNOTREPLICATINGACROSSREGIONS,
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENOTAVAILABLEINMULTIPLEZONES,
@@ -477,12 +518,21 @@ module Gogol.Redis.Internal.Sum
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENOMAINTENANCEPOLICYCONFIGURED,
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENODELETIONPROTECTION,
         DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMEMORYLIMIT,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELARGEROWS,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED,
+        DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED,
         ..
       ),
 
     -- * EncryptionInfo_EncryptionType
     EncryptionInfo_EncryptionType
-      ( EncryptionInfo_EncryptionType_TYPEUNSPECIFIED,
+      (
+        EncryptionInfo_EncryptionType_TYPEUNSPECIFIED,
         EncryptionInfo_EncryptionType_GOOGLEDEFAULTENCRYPTION,
         EncryptionInfo_EncryptionType_CUSTOMERMANAGEDENCRYPTION,
         ..
@@ -490,7 +540,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * EncryptionInfo_KmsKeyPrimaryState
     EncryptionInfo_KmsKeyPrimaryState
-      ( EncryptionInfo_KmsKeyPrimaryState_KMSKEYSTATEUNSPECIFIED,
+      (
+        EncryptionInfo_KmsKeyPrimaryState_KMSKEYSTATEUNSPECIFIED,
         EncryptionInfo_KmsKeyPrimaryState_Enabled,
         EncryptionInfo_KmsKeyPrimaryState_PERMISSIONDENIED,
         EncryptionInfo_KmsKeyPrimaryState_Disabled,
@@ -504,7 +555,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Entitlement_EntitlementState
     Entitlement_EntitlementState
-      ( Entitlement_EntitlementState_ENTITLEMENTSTATEUNSPECIFIED,
+      (
+        Entitlement_EntitlementState_ENTITLEMENTSTATEUNSPECIFIED,
         Entitlement_EntitlementState_Entitled,
         Entitlement_EntitlementState_Revoked,
         ..
@@ -512,7 +564,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Entitlement_Type
     Entitlement_Type
-      ( Entitlement_Type_ENTITLEMENTTYPEUNSPECIFIED,
+      (
+        Entitlement_Type_ENTITLEMENTTYPEUNSPECIFIED,
         Entitlement_Type_Gemini,
         Entitlement_Type_Native,
         Entitlement_Type_GCASTANDARD,
@@ -521,7 +574,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * FailoverInstanceRequest_DataProtectionMode
     FailoverInstanceRequest_DataProtectionMode
-      ( FailoverInstanceRequest_DataProtectionMode_DATAPROTECTIONMODEUNSPECIFIED,
+      (
+        FailoverInstanceRequest_DataProtectionMode_DATAPROTECTIONMODEUNSPECIFIED,
         FailoverInstanceRequest_DataProtectionMode_LIMITEDDATALOSS,
         FailoverInstanceRequest_DataProtectionMode_FORCEDATALOSS,
         ..
@@ -529,7 +583,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Instance_ConnectMode
     Instance_ConnectMode
-      ( Instance_ConnectMode_CONNECTMODEUNSPECIFIED,
+      (
+        Instance_ConnectMode_CONNECTMODEUNSPECIFIED,
         Instance_ConnectMode_DIRECTPEERING,
         Instance_ConnectMode_PRIVATESERVICEACCESS,
         ..
@@ -537,7 +592,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Instance_ReadReplicasMode
     Instance_ReadReplicasMode
-      ( Instance_ReadReplicasMode_READREPLICASMODEUNSPECIFIED,
+      (
+        Instance_ReadReplicasMode_READREPLICASMODEUNSPECIFIED,
         Instance_ReadReplicasMode_READREPLICASDISABLED,
         Instance_ReadReplicasMode_READREPLICASENABLED,
         ..
@@ -545,7 +601,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Instance_State
     Instance_State
-      ( Instance_State_STATEUNSPECIFIED,
+      (
+        Instance_State_STATEUNSPECIFIED,
         Instance_State_Creating,
         Instance_State_Ready,
         Instance_State_Updating,
@@ -559,14 +616,16 @@ module Gogol.Redis.Internal.Sum
 
     -- * Instance_SuspensionReasonsItem
     Instance_SuspensionReasonsItem
-      ( Instance_SuspensionReasonsItem_SUSPENSIONREASONUNSPECIFIED,
+      (
+        Instance_SuspensionReasonsItem_SUSPENSIONREASONUNSPECIFIED,
         Instance_SuspensionReasonsItem_CUSTOMERMANAGEDKEYISSUE,
         ..
       ),
 
     -- * Instance_Tier
     Instance_Tier
-      ( Instance_Tier_TIERUNSPECIFIED,
+      (
+        Instance_Tier_TIERUNSPECIFIED,
         Instance_Tier_Basic,
         Instance_Tier_STANDARDHA,
         ..
@@ -574,7 +633,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Instance_TransitEncryptionMode
     Instance_TransitEncryptionMode
-      ( Instance_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
+      (
+        Instance_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
         Instance_TransitEncryptionMode_SERVERAUTHENTICATION,
         Instance_TransitEncryptionMode_Disabled,
         ..
@@ -582,7 +642,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * ObservabilityMetricData_AggregationType
     ObservabilityMetricData_AggregationType
-      ( ObservabilityMetricData_AggregationType_AGGREGATIONTYPEUNSPECIFIED,
+      (
+        ObservabilityMetricData_AggregationType_AGGREGATIONTYPEUNSPECIFIED,
         ObservabilityMetricData_AggregationType_Peak,
         ObservabilityMetricData_AggregationType_P99,
         ObservabilityMetricData_AggregationType_P95,
@@ -592,7 +653,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * ObservabilityMetricData_MetricType
     ObservabilityMetricData_MetricType
-      ( ObservabilityMetricData_MetricType_METRICTYPEUNSPECIFIED,
+      (
+        ObservabilityMetricData_MetricType_METRICTYPEUNSPECIFIED,
         ObservabilityMetricData_MetricType_CPUUTILIZATION,
         ObservabilityMetricData_MetricType_MEMORYUTILIZATION,
         ObservabilityMetricData_MetricType_NETWORKCONNECTIONS,
@@ -606,7 +668,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * OperationError_ErrorType
     OperationError_ErrorType
-      ( OperationError_ErrorType_OPERATIONERRORTYPEUNSPECIFIED,
+      (
+        OperationError_ErrorType_OPERATIONERRORTYPEUNSPECIFIED,
         OperationError_ErrorType_KMSKEYERROR,
         OperationError_ErrorType_DATABASEERROR,
         OperationError_ErrorType_STOCKOUTERROR,
@@ -618,7 +681,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PersistenceConfig_PersistenceMode
     PersistenceConfig_PersistenceMode
-      ( PersistenceConfig_PersistenceMode_PERSISTENCEMODEUNSPECIFIED,
+      (
+        PersistenceConfig_PersistenceMode_PERSISTENCEMODEUNSPECIFIED,
         PersistenceConfig_PersistenceMode_Disabled,
         PersistenceConfig_PersistenceMode_Rdb,
         ..
@@ -626,7 +690,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PersistenceConfig_RdbSnapshotPeriod
     PersistenceConfig_RdbSnapshotPeriod
-      ( PersistenceConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED,
+      (
+        PersistenceConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED,
         PersistenceConfig_RdbSnapshotPeriod_ONEHOUR,
         PersistenceConfig_RdbSnapshotPeriod_SIXHOURS,
         PersistenceConfig_RdbSnapshotPeriod_TWELVEHOURS,
@@ -636,7 +701,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * Product_Engine
     Product_Engine
-      ( Product_Engine_ENGINEUNSPECIFIED,
+      (
+        Product_Engine_ENGINEUNSPECIFIED,
         Product_Engine_ENGINEMYSQL,
         Product_Engine_Mysql,
         Product_Engine_ENGINEPOSTGRES,
@@ -652,12 +718,15 @@ module Gogol.Redis.Internal.Sum
         Product_Engine_ENGINEOTHER,
         Product_Engine_ENGINEFIRESTOREWITHNATIVEMODE,
         Product_Engine_ENGINEFIRESTOREWITHDATASTOREMODE,
+        Product_Engine_ENGINEEXADATAORACLE,
+        Product_Engine_ENGINEADBSERVERLESSORACLE,
         ..
       ),
 
     -- * Product_Type
     Product_Type
-      ( Product_Type_PRODUCTTYPEUNSPECIFIED,
+      (
+        Product_Type_PRODUCTTYPEUNSPECIFIED,
         Product_Type_PRODUCTTYPECLOUDSQL,
         Product_Type_CLOUDSQL,
         Product_Type_PRODUCTTYPEALLOYDB,
@@ -667,14 +736,17 @@ module Gogol.Redis.Internal.Sum
         Product_Type_ONPREM,
         Product_Type_PRODUCTTYPEMEMORYSTORE,
         Product_Type_PRODUCTTYPEBIGTABLE,
-        Product_Type_PRODUCTTYPEOTHER,
         Product_Type_PRODUCTTYPEFIRESTORE,
+        Product_Type_PRODUCTTYPECOMPUTEENGINE,
+        Product_Type_PRODUCTTYPEORACLEONGCP,
+        Product_Type_PRODUCTTYPEOTHER,
         ..
       ),
 
     -- * PscAutoConnection_ConnectionType
     PscAutoConnection_ConnectionType
-      ( PscAutoConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
+      (
+        PscAutoConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
         PscAutoConnection_ConnectionType_CONNECTIONTYPEDISCOVERY,
         PscAutoConnection_ConnectionType_CONNECTIONTYPEPRIMARY,
         PscAutoConnection_ConnectionType_CONNECTIONTYPEREADER,
@@ -683,7 +755,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PscAutoConnection_PscConnectionStatus
     PscAutoConnection_PscConnectionStatus
-      ( PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
+      (
+        PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
         PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSACTIVE,
         PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND,
         ..
@@ -691,7 +764,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PscConnection_ConnectionType
     PscConnection_ConnectionType
-      ( PscConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
+      (
+        PscConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
         PscConnection_ConnectionType_CONNECTIONTYPEDISCOVERY,
         PscConnection_ConnectionType_CONNECTIONTYPEPRIMARY,
         PscConnection_ConnectionType_CONNECTIONTYPEREADER,
@@ -700,7 +774,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PscConnection_PscConnectionStatus
     PscConnection_PscConnectionStatus
-      ( PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
+      (
+        PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
         PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSACTIVE,
         PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND,
         ..
@@ -708,7 +783,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * PscServiceAttachment_ConnectionType
     PscServiceAttachment_ConnectionType
-      ( PscServiceAttachment_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
+      (
+        PscServiceAttachment_ConnectionType_CONNECTIONTYPEUNSPECIFIED,
         PscServiceAttachment_ConnectionType_CONNECTIONTYPEDISCOVERY,
         PscServiceAttachment_ConnectionType_CONNECTIONTYPEPRIMARY,
         PscServiceAttachment_ConnectionType_CONNECTIONTYPEREADER,
@@ -717,7 +793,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * RDBConfig_RdbSnapshotPeriod
     RDBConfig_RdbSnapshotPeriod
-      ( RDBConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED,
+      (
+        RDBConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED,
         RDBConfig_RdbSnapshotPeriod_ONEHOUR,
         RDBConfig_RdbSnapshotPeriod_SIXHOURS,
         RDBConfig_RdbSnapshotPeriod_TWELVEHOURS,
@@ -727,7 +804,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * ReconciliationOperationMetadata_ExclusiveAction
     ReconciliationOperationMetadata_ExclusiveAction
-      ( ReconciliationOperationMetadata_ExclusiveAction_UNKNOWNREPAIRACTION,
+      (
+        ReconciliationOperationMetadata_ExclusiveAction_UNKNOWNREPAIRACTION,
         ReconciliationOperationMetadata_ExclusiveAction_Delete',
         ReconciliationOperationMetadata_ExclusiveAction_Retry,
         ..
@@ -735,7 +813,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * RescheduleClusterMaintenanceRequest_RescheduleType
     RescheduleClusterMaintenanceRequest_RescheduleType
-      ( RescheduleClusterMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED,
+      (
+        RescheduleClusterMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED,
         RescheduleClusterMaintenanceRequest_RescheduleType_Immediate,
         RescheduleClusterMaintenanceRequest_RescheduleType_SPECIFICTIME,
         ..
@@ -743,7 +822,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * RescheduleMaintenanceRequest_RescheduleType
     RescheduleMaintenanceRequest_RescheduleType
-      ( RescheduleMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED,
+      (
+        RescheduleMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED,
         RescheduleMaintenanceRequest_RescheduleType_Immediate,
         RescheduleMaintenanceRequest_RescheduleType_NEXTAVAILABLEWINDOW,
         RescheduleMaintenanceRequest_RescheduleType_SPECIFICTIME,
@@ -752,7 +832,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * RetentionSettings_RetentionUnit
     RetentionSettings_RetentionUnit
-      ( RetentionSettings_RetentionUnit_RETENTIONUNITUNSPECIFIED,
+      (
+        RetentionSettings_RetentionUnit_RETENTIONUNITUNSPECIFIED,
         RetentionSettings_RetentionUnit_Count,
         RetentionSettings_RetentionUnit_Time,
         RetentionSettings_RetentionUnit_Duration,
@@ -762,7 +843,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * UpdateInfo_TargetNodeType
     UpdateInfo_TargetNodeType
-      ( UpdateInfo_TargetNodeType_NODETYPEUNSPECIFIED,
+      (
+        UpdateInfo_TargetNodeType_NODETYPEUNSPECIFIED,
         UpdateInfo_TargetNodeType_REDISSHAREDCORENANO,
         UpdateInfo_TargetNodeType_REDISHIGHMEMMEDIUM,
         UpdateInfo_TargetNodeType_REDISHIGHMEMXLARGE,
@@ -772,7 +854,8 @@ module Gogol.Redis.Internal.Sum
 
     -- * WeeklyMaintenanceWindow_Day
     WeeklyMaintenanceWindow_Day
-      ( WeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED,
+      (
+        WeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED,
         WeeklyMaintenanceWindow_Day_Monday,
         WeeklyMaintenanceWindow_Day_Tuesday,
         WeeklyMaintenanceWindow_Day_Wednesday,
@@ -785,28 +868,28 @@ module Gogol.Redis.Internal.Sum
 
     -- * ZoneDistributionConfig_Mode
     ZoneDistributionConfig_Mode
-      ( ZoneDistributionConfig_Mode_ZONEDISTRIBUTIONMODEUNSPECIFIED,
+      (
+        ZoneDistributionConfig_Mode_ZONEDISTRIBUTIONMODEUNSPECIFIED,
         ZoneDistributionConfig_Mode_MULTIZONE,
         ZoneDistributionConfig_Mode_SINGLEZONE,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -819,21 +902,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Optional. fsync configuration.
-newtype AOFConfig_AppendFsync = AOFConfig_AppendFsync {fromAOFConfig_AppendFsync :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AOFConfig_AppendFsync = AOFConfig_AppendFsync { fromAOFConfig_AppendFsync :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set. Default: EVERYSEC
 pattern AOFConfig_AppendFsync_APPENDFSYNCUNSPECIFIED :: AOFConfig_AppendFsync
@@ -856,21 +938,20 @@ pattern AOFConfig_AppendFsync_Always = AOFConfig_AppendFsync "ALWAYS"
   AOFConfig_AppendFsync_NO,
   AOFConfig_AppendFsync_Everysec,
   AOFConfig_AppendFsync_Always,
-  AOFConfig_AppendFsync
-  #-}
+  AOFConfig_AppendFsync #-}
 
 -- | Optional. The automated backup mode. If the mode is disabled, the other fields will be ignored.
-newtype AutomatedBackupConfig_AutomatedBackupMode = AutomatedBackupConfig_AutomatedBackupMode {fromAutomatedBackupConfig_AutomatedBackupMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AutomatedBackupConfig_AutomatedBackupMode = AutomatedBackupConfig_AutomatedBackupMode { fromAutomatedBackupConfig_AutomatedBackupMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Automated backup config is not specified.
 pattern AutomatedBackupConfig_AutomatedBackupMode_AUTOMATEDBACKUPMODEUNSPECIFIED :: AutomatedBackupConfig_AutomatedBackupMode
@@ -888,21 +969,21 @@ pattern AutomatedBackupConfig_AutomatedBackupMode_Enabled = AutomatedBackupConfi
   AutomatedBackupConfig_AutomatedBackupMode_AUTOMATEDBACKUPMODEUNSPECIFIED,
   AutomatedBackupConfig_AutomatedBackupMode_Disabled,
   AutomatedBackupConfig_AutomatedBackupMode_Enabled,
-  AutomatedBackupConfig_AutomatedBackupMode
-  #-}
+  AutomatedBackupConfig_AutomatedBackupMode #-}
 
 -- | Availability type. Potential values: * @ZONAL@: The instance serves data from only one zone. Outages in that zone affect data accessibility. * @REGIONAL@: The instance can serve data from more than one zone in a region (it is highly available).
-newtype AvailabilityConfiguration_AvailabilityType = AvailabilityConfiguration_AvailabilityType {fromAvailabilityConfiguration_AvailabilityType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AvailabilityConfiguration_AvailabilityType = AvailabilityConfiguration_AvailabilityType { fromAvailabilityConfiguration_AvailabilityType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEUNSPECIFIED :: AvailabilityConfiguration_AvailabilityType
 pattern AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEUNSPECIFIED = AvailabilityConfiguration_AvailabilityType "AVAILABILITY_TYPE_UNSPECIFIED"
@@ -929,21 +1010,20 @@ pattern AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEOTHER = Avail
   AvailabilityConfiguration_AvailabilityType_Regional,
   AvailabilityConfiguration_AvailabilityType_MULTIREGIONAL,
   AvailabilityConfiguration_AvailabilityType_AVAILABILITYTYPEOTHER,
-  AvailabilityConfiguration_AvailabilityType
-  #-}
+  AvailabilityConfiguration_AvailabilityType #-}
 
 -- | Output only. Type of the backup.
-newtype Backup_BackupType = Backup_BackupType {fromBackup_BackupType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Backup_BackupType = Backup_BackupType { fromBackup_BackupType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value, not set.
 pattern Backup_BackupType_BACKUPTYPEUNSPECIFIED :: Backup_BackupType
@@ -961,21 +1041,20 @@ pattern Backup_BackupType_Automated = Backup_BackupType "AUTOMATED"
   Backup_BackupType_BACKUPTYPEUNSPECIFIED,
   Backup_BackupType_ONDEMAND,
   Backup_BackupType_Automated,
-  Backup_BackupType
-  #-}
+  Backup_BackupType #-}
 
 -- | Output only. Node type of the cluster.
-newtype Backup_NodeType = Backup_NodeType {fromBackup_NodeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Backup_NodeType = Backup_NodeType { fromBackup_NodeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Node type unspecified
 pattern Backup_NodeType_NODETYPEUNSPECIFIED :: Backup_NodeType
@@ -1003,21 +1082,20 @@ pattern Backup_NodeType_REDISSTANDARDSMALL = Backup_NodeType "REDIS_STANDARD_SMA
   Backup_NodeType_REDISHIGHMEMMEDIUM,
   Backup_NodeType_REDISHIGHMEMXLARGE,
   Backup_NodeType_REDISSTANDARDSMALL,
-  Backup_NodeType
-  #-}
+  Backup_NodeType #-}
 
 -- | Output only. State of the backup.
-newtype Backup_State = Backup_State {fromBackup_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Backup_State = Backup_State { fromBackup_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value, not set.
 pattern Backup_State_STATEUNSPECIFIED :: Backup_State
@@ -1045,21 +1123,21 @@ pattern Backup_State_Suspended = Backup_State "SUSPENDED"
   Backup_State_Active,
   Backup_State_Deleting,
   Backup_State_Suspended,
-  Backup_State
-  #-}
+  Backup_State #-}
 
 -- | The status of this run. REQUIRED
-newtype BackupRun_Status = BackupRun_Status {fromBackupRun_Status :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BackupRun_Status = BackupRun_Status { fromBackupRun_Status :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern BackupRun_Status_STATUSUNSPECIFIED :: BackupRun_Status
 pattern BackupRun_Status_STATUSUNSPECIFIED = BackupRun_Status "STATUS_UNSPECIFIED"
@@ -1076,21 +1154,20 @@ pattern BackupRun_Status_Failed = BackupRun_Status "FAILED"
   BackupRun_Status_STATUSUNSPECIFIED,
   BackupRun_Status_Successful,
   BackupRun_Status_Failed,
-  BackupRun_Status
-  #-}
+  BackupRun_Status #-}
 
 -- | Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
-newtype Cluster_AuthorizationMode = Cluster_AuthorizationMode {fromCluster_AuthorizationMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Cluster_AuthorizationMode = Cluster_AuthorizationMode { fromCluster_AuthorizationMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Cluster_AuthorizationMode_AUTHMODEUNSPECIFIED :: Cluster_AuthorizationMode
@@ -1108,21 +1185,20 @@ pattern Cluster_AuthorizationMode_AUTHMODEDISABLED = Cluster_AuthorizationMode "
   Cluster_AuthorizationMode_AUTHMODEUNSPECIFIED,
   Cluster_AuthorizationMode_AUTHMODEIAMAUTH,
   Cluster_AuthorizationMode_AUTHMODEDISABLED,
-  Cluster_AuthorizationMode
-  #-}
+  Cluster_AuthorizationMode #-}
 
 -- | Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
-newtype Cluster_NodeType = Cluster_NodeType {fromCluster_NodeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Cluster_NodeType = Cluster_NodeType { fromCluster_NodeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Node type unspecified
 pattern Cluster_NodeType_NODETYPEUNSPECIFIED :: Cluster_NodeType
@@ -1150,21 +1226,20 @@ pattern Cluster_NodeType_REDISSTANDARDSMALL = Cluster_NodeType "REDIS_STANDARD_S
   Cluster_NodeType_REDISHIGHMEMMEDIUM,
   Cluster_NodeType_REDISHIGHMEMXLARGE,
   Cluster_NodeType_REDISSTANDARDSMALL,
-  Cluster_NodeType
-  #-}
+  Cluster_NodeType #-}
 
 -- | Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED
-newtype Cluster_State = Cluster_State {fromCluster_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Cluster_State = Cluster_State { fromCluster_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Cluster_State_STATEUNSPECIFIED :: Cluster_State
@@ -1192,21 +1267,20 @@ pattern Cluster_State_Deleting = Cluster_State "DELETING"
   Cluster_State_Active,
   Cluster_State_Updating,
   Cluster_State_Deleting,
-  Cluster_State
-  #-}
+  Cluster_State #-}
 
 -- | Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster.
-newtype Cluster_TransitEncryptionMode = Cluster_TransitEncryptionMode {fromCluster_TransitEncryptionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Cluster_TransitEncryptionMode = Cluster_TransitEncryptionMode { fromCluster_TransitEncryptionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | In-transit encryption not set.
 pattern Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED :: Cluster_TransitEncryptionMode
@@ -1224,21 +1298,20 @@ pattern Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODESERVERAUTHENTICATION 
   Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
   Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODEDISABLED,
   Cluster_TransitEncryptionMode_TRANSITENCRYPTIONMODESERVERAUTHENTICATION,
-  Cluster_TransitEncryptionMode
-  #-}
+  Cluster_TransitEncryptionMode #-}
 
 -- | Optional. The mode of persistence.
-newtype ClusterPersistenceConfig_Mode = ClusterPersistenceConfig_Mode {fromClusterPersistenceConfig_Mode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ClusterPersistenceConfig_Mode = ClusterPersistenceConfig_Mode { fromClusterPersistenceConfig_Mode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern ClusterPersistenceConfig_Mode_PERSISTENCEMODEUNSPECIFIED :: ClusterPersistenceConfig_Mode
@@ -1261,21 +1334,20 @@ pattern ClusterPersistenceConfig_Mode_Aof = ClusterPersistenceConfig_Mode "AOF"
   ClusterPersistenceConfig_Mode_Disabled,
   ClusterPersistenceConfig_Mode_Rdb,
   ClusterPersistenceConfig_Mode_Aof,
-  ClusterPersistenceConfig_Mode
-  #-}
+  ClusterPersistenceConfig_Mode #-}
 
 -- | Allows to define schedule that runs specified day of the week.
-newtype ClusterWeeklyMaintenanceWindow_Day = ClusterWeeklyMaintenanceWindow_Day {fromClusterWeeklyMaintenanceWindow_Day :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ClusterWeeklyMaintenanceWindow_Day = ClusterWeeklyMaintenanceWindow_Day { fromClusterWeeklyMaintenanceWindow_Day :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The day of the week is unspecified.
 pattern ClusterWeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED :: ClusterWeeklyMaintenanceWindow_Day
@@ -1318,21 +1390,20 @@ pattern ClusterWeeklyMaintenanceWindow_Day_Sunday = ClusterWeeklyMaintenanceWind
   ClusterWeeklyMaintenanceWindow_Day_Friday,
   ClusterWeeklyMaintenanceWindow_Day_Saturday,
   ClusterWeeklyMaintenanceWindow_Day_Sunday,
-  ClusterWeeklyMaintenanceWindow_Day
-  #-}
+  ClusterWeeklyMaintenanceWindow_Day #-}
 
 -- | The role of the cluster in cross cluster replication.
-newtype CrossClusterReplicationConfig_ClusterRole = CrossClusterReplicationConfig_ClusterRole {fromCrossClusterReplicationConfig_ClusterRole :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CrossClusterReplicationConfig_ClusterRole = CrossClusterReplicationConfig_ClusterRole { fromCrossClusterReplicationConfig_ClusterRole :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Cluster role is not set. The behavior is equivalent to NONE.
 pattern CrossClusterReplicationConfig_ClusterRole_CLUSTERROLEUNSPECIFIED :: CrossClusterReplicationConfig_ClusterRole
@@ -1355,21 +1426,21 @@ pattern CrossClusterReplicationConfig_ClusterRole_Secondary = CrossClusterReplic
   CrossClusterReplicationConfig_ClusterRole_None,
   CrossClusterReplicationConfig_ClusterRole_Primary,
   CrossClusterReplicationConfig_ClusterRole_Secondary,
-  CrossClusterReplicationConfig_ClusterRole
-  #-}
+  CrossClusterReplicationConfig_ClusterRole #-}
 
 -- | Required. Type feed to be ingested into condor
-newtype DatabaseResourceFeed_FeedType = DatabaseResourceFeed_FeedType {fromDatabaseResourceFeed_FeedType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceFeed_FeedType = DatabaseResourceFeed_FeedType { fromDatabaseResourceFeed_FeedType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceFeed_FeedType_FEEDTYPEUNSPECIFIED :: DatabaseResourceFeed_FeedType
 pattern DatabaseResourceFeed_FeedType_FEEDTYPEUNSPECIFIED = DatabaseResourceFeed_FeedType "FEEDTYPE_UNSPECIFIED"
@@ -1396,21 +1467,21 @@ pattern DatabaseResourceFeed_FeedType_RECOMMENDATIONSIGNALDATA = DatabaseResourc
   DatabaseResourceFeed_FeedType_OBSERVABILITYDATA,
   DatabaseResourceFeed_FeedType_SECURITYFINDINGDATA,
   DatabaseResourceFeed_FeedType_RECOMMENDATIONSIGNALDATA,
-  DatabaseResourceFeed_FeedType
-  #-}
+  DatabaseResourceFeed_FeedType #-}
 
 -- | Cloud provider name. Ex: GCP\/AWS\/Azure\/OnPrem\/SelfManaged
-newtype DatabaseResourceHealthSignalData_Provider = DatabaseResourceHealthSignalData_Provider {fromDatabaseResourceHealthSignalData_Provider :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceHealthSignalData_Provider = DatabaseResourceHealthSignalData_Provider { fromDatabaseResourceHealthSignalData_Provider :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceHealthSignalData_Provider_PROVIDERUNSPECIFIED :: DatabaseResourceHealthSignalData_Provider
 pattern DatabaseResourceHealthSignalData_Provider_PROVIDERUNSPECIFIED = DatabaseResourceHealthSignalData_Provider "PROVIDER_UNSPECIFIED"
@@ -1447,21 +1518,20 @@ pattern DatabaseResourceHealthSignalData_Provider_PROVIDEROTHER = DatabaseResour
   DatabaseResourceHealthSignalData_Provider_Onprem,
   DatabaseResourceHealthSignalData_Provider_Selfmanaged,
   DatabaseResourceHealthSignalData_Provider_PROVIDEROTHER,
-  DatabaseResourceHealthSignalData_Provider
-  #-}
+  DatabaseResourceHealthSignalData_Provider #-}
 
 -- | Required. The class of the signal, such as if it\'s a THREAT or VULNERABILITY.
-newtype DatabaseResourceHealthSignalData_SignalClass = DatabaseResourceHealthSignalData_SignalClass {fromDatabaseResourceHealthSignalData_SignalClass :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceHealthSignalData_SignalClass = DatabaseResourceHealthSignalData_SignalClass { fromDatabaseResourceHealthSignalData_SignalClass :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified signal class.
 pattern DatabaseResourceHealthSignalData_SignalClass_CLASSUNSPECIFIED :: DatabaseResourceHealthSignalData_SignalClass
@@ -1494,21 +1564,20 @@ pattern DatabaseResourceHealthSignalData_SignalClass_Error' = DatabaseResourceHe
   DatabaseResourceHealthSignalData_SignalClass_Misconfiguration,
   DatabaseResourceHealthSignalData_SignalClass_Observation,
   DatabaseResourceHealthSignalData_SignalClass_Error',
-  DatabaseResourceHealthSignalData_SignalClass
-  #-}
+  DatabaseResourceHealthSignalData_SignalClass #-}
 
 -- | The severity of the signal, such as if it\'s a HIGH or LOW severity.
-newtype DatabaseResourceHealthSignalData_SignalSeverity = DatabaseResourceHealthSignalData_SignalSeverity {fromDatabaseResourceHealthSignalData_SignalSeverity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceHealthSignalData_SignalSeverity = DatabaseResourceHealthSignalData_SignalSeverity { fromDatabaseResourceHealthSignalData_SignalSeverity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | This value is used for findings when a source doesn\'t write a severity value.
 pattern DatabaseResourceHealthSignalData_SignalSeverity_SIGNALSEVERITYUNSPECIFIED :: DatabaseResourceHealthSignalData_SignalSeverity
@@ -1536,21 +1605,20 @@ pattern DatabaseResourceHealthSignalData_SignalSeverity_Low = DatabaseResourceHe
   DatabaseResourceHealthSignalData_SignalSeverity_High,
   DatabaseResourceHealthSignalData_SignalSeverity_Medium,
   DatabaseResourceHealthSignalData_SignalSeverity_Low,
-  DatabaseResourceHealthSignalData_SignalSeverity
-  #-}
+  DatabaseResourceHealthSignalData_SignalSeverity #-}
 
 -- | Required. Type of signal, for example, @AVAILABLE_IN_MULTIPLE_ZONES@, @LOGGING_MOST_ERRORS@, etc.
-newtype DatabaseResourceHealthSignalData_SignalType = DatabaseResourceHealthSignalData_SignalType {fromDatabaseResourceHealthSignalData_SignalType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceHealthSignalData_SignalType = DatabaseResourceHealthSignalData_SignalType { fromDatabaseResourceHealthSignalData_SignalType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEUNSPECIFIED :: DatabaseResourceHealthSignalData_SignalType
@@ -1904,6 +1972,38 @@ pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENODELETIONPROTECTI
 pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY :: DatabaseResourceHealthSignalData_SignalType
 pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_INEFFICIENT_QUERY"
 
+-- | Indicates that the instance has read intensive workload.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_READ_INTENSIVE_WORKLOAD"
+
+-- | Indicates that the instance is nearing memory limit.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMEMORYLIMIT :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMEMORYLIMIT = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_MEMORY_LIMIT"
+
+-- | Indicates that the instance\'s max server memory is configured higher than the recommended value.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_MAX_SERVER_MEMORY"
+
+-- | Indicates that the database has large rows beyond the recommended limit.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELARGEROWS :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELARGEROWS = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_LARGE_ROWS"
+
+-- | Heavy write pressure on the database rows.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_HIGH_WRITE_PRESSURE"
+
+-- | Heavy read pressure on the database rows.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_HIGH_READ_PRESSURE"
+
+-- | Encryption org policy not satisfied.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_ENCRYPTION_ORG_POLICY_NOT_SATISFIED"
+
+-- | Location org policy not satisfied.
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED :: DatabaseResourceHealthSignalData_SignalType
+pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED = DatabaseResourceHealthSignalData_SignalType "SIGNAL_TYPE_LOCATION_ORG_POLICY_NOT_SATISFIED"
+
 {-# COMPLETE
   DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
   DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENOTPROTECTEDBYAUTOMATICFAILOVER,
@@ -1993,20 +2093,27 @@ pattern DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY =
   DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENOMAINTENANCEPOLICYCONFIGURED,
   DatabaseResourceHealthSignalData_SignalType_SIGNALTYPENODELETIONPROTECTION,
   DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY,
-  DatabaseResourceHealthSignalData_SignalType
-  #-}
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMEMORYLIMIT,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELARGEROWS,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED,
+  DatabaseResourceHealthSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED,
+  DatabaseResourceHealthSignalData_SignalType #-}
 
-newtype DatabaseResourceHealthSignalData_State = DatabaseResourceHealthSignalData_State {fromDatabaseResourceHealthSignalData_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceHealthSignalData_State = DatabaseResourceHealthSignalData_State { fromDatabaseResourceHealthSignalData_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified state.
 pattern DatabaseResourceHealthSignalData_State_STATEUNSPECIFIED :: DatabaseResourceHealthSignalData_State
@@ -2029,21 +2136,21 @@ pattern DatabaseResourceHealthSignalData_State_Muted = DatabaseResourceHealthSig
   DatabaseResourceHealthSignalData_State_Active,
   DatabaseResourceHealthSignalData_State_Resolved,
   DatabaseResourceHealthSignalData_State_Muted,
-  DatabaseResourceHealthSignalData_State
-  #-}
+  DatabaseResourceHealthSignalData_State #-}
 
 -- | Required. Cloud provider name. Ex: GCP\/AWS\/Azure\/OnPrem\/SelfManaged
-newtype DatabaseResourceId_Provider = DatabaseResourceId_Provider {fromDatabaseResourceId_Provider :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceId_Provider = DatabaseResourceId_Provider { fromDatabaseResourceId_Provider :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceId_Provider_PROVIDERUNSPECIFIED :: DatabaseResourceId_Provider
 pattern DatabaseResourceId_Provider_PROVIDERUNSPECIFIED = DatabaseResourceId_Provider "PROVIDER_UNSPECIFIED"
@@ -2080,21 +2187,21 @@ pattern DatabaseResourceId_Provider_PROVIDEROTHER = DatabaseResourceId_Provider 
   DatabaseResourceId_Provider_Onprem,
   DatabaseResourceId_Provider_Selfmanaged,
   DatabaseResourceId_Provider_PROVIDEROTHER,
-  DatabaseResourceId_Provider
-  #-}
+  DatabaseResourceId_Provider #-}
 
 -- | Current state of the instance.
-newtype DatabaseResourceMetadata_CurrentState = DatabaseResourceMetadata_CurrentState {fromDatabaseResourceMetadata_CurrentState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceMetadata_CurrentState = DatabaseResourceMetadata_CurrentState { fromDatabaseResourceMetadata_CurrentState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceMetadata_CurrentState_STATEUNSPECIFIED :: DatabaseResourceMetadata_CurrentState
 pattern DatabaseResourceMetadata_CurrentState_STATEUNSPECIFIED = DatabaseResourceMetadata_CurrentState "STATE_UNSPECIFIED"
@@ -2126,21 +2233,20 @@ pattern DatabaseResourceMetadata_CurrentState_STATEOTHER = DatabaseResourceMetad
   DatabaseResourceMetadata_CurrentState_Suspended,
   DatabaseResourceMetadata_CurrentState_Deleted,
   DatabaseResourceMetadata_CurrentState_STATEOTHER,
-  DatabaseResourceMetadata_CurrentState
-  #-}
+  DatabaseResourceMetadata_CurrentState #-}
 
 -- | Optional. Edition represents whether the instance is ENTERPRISE or ENTERPRISE_PLUS. This information is core to Cloud SQL only and is used to identify the edition of the instance.
-newtype DatabaseResourceMetadata_Edition = DatabaseResourceMetadata_Edition {fromDatabaseResourceMetadata_Edition :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceMetadata_Edition = DatabaseResourceMetadata_Edition { fromDatabaseResourceMetadata_Edition :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default, to make it consistent with instance edition enum.
 pattern DatabaseResourceMetadata_Edition_EDITIONUNSPECIFIED :: DatabaseResourceMetadata_Edition
@@ -2158,21 +2264,21 @@ pattern DatabaseResourceMetadata_Edition_EDITIONENTERPRISEPLUS = DatabaseResourc
   DatabaseResourceMetadata_Edition_EDITIONUNSPECIFIED,
   DatabaseResourceMetadata_Edition_EDITIONENTERPRISE,
   DatabaseResourceMetadata_Edition_EDITIONENTERPRISEPLUS,
-  DatabaseResourceMetadata_Edition
-  #-}
+  DatabaseResourceMetadata_Edition #-}
 
 -- | The state that the instance is expected to be in. For example, an instance state can transition to UNHEALTHY due to wrong patch update, while the expected state will remain at the HEALTHY.
-newtype DatabaseResourceMetadata_ExpectedState = DatabaseResourceMetadata_ExpectedState {fromDatabaseResourceMetadata_ExpectedState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceMetadata_ExpectedState = DatabaseResourceMetadata_ExpectedState { fromDatabaseResourceMetadata_ExpectedState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceMetadata_ExpectedState_STATEUNSPECIFIED :: DatabaseResourceMetadata_ExpectedState
 pattern DatabaseResourceMetadata_ExpectedState_STATEUNSPECIFIED = DatabaseResourceMetadata_ExpectedState "STATE_UNSPECIFIED"
@@ -2204,21 +2310,20 @@ pattern DatabaseResourceMetadata_ExpectedState_STATEOTHER = DatabaseResourceMeta
   DatabaseResourceMetadata_ExpectedState_Suspended,
   DatabaseResourceMetadata_ExpectedState_Deleted,
   DatabaseResourceMetadata_ExpectedState_STATEOTHER,
-  DatabaseResourceMetadata_ExpectedState
-  #-}
+  DatabaseResourceMetadata_ExpectedState #-}
 
 -- | The type of the instance. Specified at creation time.
-newtype DatabaseResourceMetadata_InstanceType = DatabaseResourceMetadata_InstanceType {fromDatabaseResourceMetadata_InstanceType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceMetadata_InstanceType = DatabaseResourceMetadata_InstanceType { fromDatabaseResourceMetadata_InstanceType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern DatabaseResourceMetadata_InstanceType_INSTANCETYPEUNSPECIFIED :: DatabaseResourceMetadata_InstanceType
@@ -2276,21 +2381,20 @@ pattern DatabaseResourceMetadata_InstanceType_SUBRESOURCETYPEOTHER = DatabaseRes
   DatabaseResourceMetadata_InstanceType_SUBRESOURCETYPEREADREPLICA,
   DatabaseResourceMetadata_InstanceType_SUBRESOURCETYPEEXTERNALPRIMARY,
   DatabaseResourceMetadata_InstanceType_SUBRESOURCETYPEOTHER,
-  DatabaseResourceMetadata_InstanceType
-  #-}
+  DatabaseResourceMetadata_InstanceType #-}
 
 -- | Optional. Suspension reason for the resource.
-newtype DatabaseResourceMetadata_SuspensionReason = DatabaseResourceMetadata_SuspensionReason {fromDatabaseResourceMetadata_SuspensionReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceMetadata_SuspensionReason = DatabaseResourceMetadata_SuspensionReason { fromDatabaseResourceMetadata_SuspensionReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Suspension reason is unspecified.
 pattern DatabaseResourceMetadata_SuspensionReason_SUSPENSIONREASONUNSPECIFIED :: DatabaseResourceMetadata_SuspensionReason
@@ -2328,21 +2432,21 @@ pattern DatabaseResourceMetadata_SuspensionReason_REPLICATEDCLUSTERENCRYPTIONKEY
   DatabaseResourceMetadata_SuspensionReason_ABUSERDETECTED,
   DatabaseResourceMetadata_SuspensionReason_ENCRYPTIONKEYINACCESSIBLE,
   DatabaseResourceMetadata_SuspensionReason_REPLICATEDCLUSTERENCRYPTIONKEYINACCESSIBLE,
-  DatabaseResourceMetadata_SuspensionReason
-  #-}
+  DatabaseResourceMetadata_SuspensionReason #-}
 
 -- | Required. Recommendation state
-newtype DatabaseResourceRecommendationSignalData_RecommendationState = DatabaseResourceRecommendationSignalData_RecommendationState {fromDatabaseResourceRecommendationSignalData_RecommendationState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceRecommendationSignalData_RecommendationState = DatabaseResourceRecommendationSignalData_RecommendationState { fromDatabaseResourceRecommendationSignalData_RecommendationState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern DatabaseResourceRecommendationSignalData_RecommendationState_Unspecified :: DatabaseResourceRecommendationSignalData_RecommendationState
 pattern DatabaseResourceRecommendationSignalData_RecommendationState_Unspecified = DatabaseResourceRecommendationSignalData_RecommendationState "UNSPECIFIED"
@@ -2374,21 +2478,20 @@ pattern DatabaseResourceRecommendationSignalData_RecommendationState_Dismissed =
   DatabaseResourceRecommendationSignalData_RecommendationState_Succeeded,
   DatabaseResourceRecommendationSignalData_RecommendationState_Failed,
   DatabaseResourceRecommendationSignalData_RecommendationState_Dismissed,
-  DatabaseResourceRecommendationSignalData_RecommendationState
-  #-}
+  DatabaseResourceRecommendationSignalData_RecommendationState #-}
 
 -- | Required. Type of signal, for example, @SIGNAL_TYPE_IDLE@, @SIGNAL_TYPE_HIGH_NUMBER_OF_TABLES@, etc.
-newtype DatabaseResourceRecommendationSignalData_SignalType = DatabaseResourceRecommendationSignalData_SignalType {fromDatabaseResourceRecommendationSignalData_SignalType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype DatabaseResourceRecommendationSignalData_SignalType = DatabaseResourceRecommendationSignalData_SignalType { fromDatabaseResourceRecommendationSignalData_SignalType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified.
 pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEUNSPECIFIED :: DatabaseResourceRecommendationSignalData_SignalType
@@ -2742,6 +2845,38 @@ pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENODELETION
 pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY :: DatabaseResourceRecommendationSignalData_SignalType
 pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_INEFFICIENT_QUERY"
 
+-- | Indicates that the instance has read intensive workload.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_READ_INTENSIVE_WORKLOAD"
+
+-- | Indicates that the instance is nearing memory limit.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMEMORYLIMIT :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMEMORYLIMIT = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_MEMORY_LIMIT"
+
+-- | Indicates that the instance\'s max server memory is configured higher than the recommended value.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_MAX_SERVER_MEMORY"
+
+-- | Indicates that the database has large rows beyond the recommended limit.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELARGEROWS :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELARGEROWS = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_LARGE_ROWS"
+
+-- | Heavy write pressure on the database rows.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_HIGH_WRITE_PRESSURE"
+
+-- | Heavy read pressure on the database rows.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_HIGH_READ_PRESSURE"
+
+-- | Encryption org policy not satisfied.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_ENCRYPTION_ORG_POLICY_NOT_SATISFIED"
+
+-- | Location org policy not satisfied.
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED :: DatabaseResourceRecommendationSignalData_SignalType
+pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED = DatabaseResourceRecommendationSignalData_SignalType "SIGNAL_TYPE_LOCATION_ORG_POLICY_NOT_SATISFIED"
+
 {-# COMPLETE
   DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEUNSPECIFIED,
   DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENOTPROTECTEDBYAUTOMATICFAILOVER,
@@ -2831,21 +2966,28 @@ pattern DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEINEFFICIEN
   DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENOMAINTENANCEPOLICYCONFIGURED,
   DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPENODELETIONPROTECTION,
   DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEINEFFICIENTQUERY,
-  DatabaseResourceRecommendationSignalData_SignalType
-  #-}
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEREADINTENSIVEWORKLOAD,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMEMORYLIMIT,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEMAXSERVERMEMORY,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELARGEROWS,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHWRITEPRESSURE,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEHIGHREADPRESSURE,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPEENCRYPTIONORGPOLICYNOTSATISFIED,
+  DatabaseResourceRecommendationSignalData_SignalType_SIGNALTYPELOCATIONORGPOLICYNOTSATISFIED,
+  DatabaseResourceRecommendationSignalData_SignalType #-}
 
 -- | Output only. Type of encryption.
-newtype EncryptionInfo_EncryptionType = EncryptionInfo_EncryptionType {fromEncryptionInfo_EncryptionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EncryptionInfo_EncryptionType = EncryptionInfo_EncryptionType { fromEncryptionInfo_EncryptionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Encryption type not specified. Defaults to GOOGLE/DEFAULT/ENCRYPTION.
 pattern EncryptionInfo_EncryptionType_TYPEUNSPECIFIED :: EncryptionInfo_EncryptionType
@@ -2863,21 +3005,20 @@ pattern EncryptionInfo_EncryptionType_CUSTOMERMANAGEDENCRYPTION = EncryptionInfo
   EncryptionInfo_EncryptionType_TYPEUNSPECIFIED,
   EncryptionInfo_EncryptionType_GOOGLEDEFAULTENCRYPTION,
   EncryptionInfo_EncryptionType_CUSTOMERMANAGEDENCRYPTION,
-  EncryptionInfo_EncryptionType
-  #-}
+  EncryptionInfo_EncryptionType #-}
 
 -- | Output only. The state of the primary version of the KMS key perceived by the system. This field is not populated in backups.
-newtype EncryptionInfo_KmsKeyPrimaryState = EncryptionInfo_KmsKeyPrimaryState {fromEncryptionInfo_KmsKeyPrimaryState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype EncryptionInfo_KmsKeyPrimaryState = EncryptionInfo_KmsKeyPrimaryState { fromEncryptionInfo_KmsKeyPrimaryState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default value. This value is unused.
 pattern EncryptionInfo_KmsKeyPrimaryState_KMSKEYSTATEUNSPECIFIED :: EncryptionInfo_KmsKeyPrimaryState
@@ -2925,21 +3066,21 @@ pattern EncryptionInfo_KmsKeyPrimaryState_UNKNOWNFAILURE = EncryptionInfo_KmsKey
   EncryptionInfo_KmsKeyPrimaryState_EKMKEYUNREACHABLEDETECTED,
   EncryptionInfo_KmsKeyPrimaryState_BILLINGDISABLED,
   EncryptionInfo_KmsKeyPrimaryState_UNKNOWNFAILURE,
-  EncryptionInfo_KmsKeyPrimaryState
-  #-}
+  EncryptionInfo_KmsKeyPrimaryState #-}
 
 -- | The current state of user\'s accessibility to a feature\/benefit.
-newtype Entitlement_EntitlementState = Entitlement_EntitlementState {fromEntitlement_EntitlementState :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Entitlement_EntitlementState = Entitlement_EntitlementState { fromEntitlement_EntitlementState :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
 
 pattern Entitlement_EntitlementState_ENTITLEMENTSTATEUNSPECIFIED :: Entitlement_EntitlementState
 pattern Entitlement_EntitlementState_ENTITLEMENTSTATEUNSPECIFIED = Entitlement_EntitlementState "ENTITLEMENT_STATE_UNSPECIFIED"
@@ -2956,21 +3097,20 @@ pattern Entitlement_EntitlementState_Revoked = Entitlement_EntitlementState "REV
   Entitlement_EntitlementState_ENTITLEMENTSTATEUNSPECIFIED,
   Entitlement_EntitlementState_Entitled,
   Entitlement_EntitlementState_Revoked,
-  Entitlement_EntitlementState
-  #-}
+  Entitlement_EntitlementState #-}
 
 -- | An enum that represents the type of this entitlement.
-newtype Entitlement_Type = Entitlement_Type {fromEntitlement_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Entitlement_Type = Entitlement_Type { fromEntitlement_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The entitlement type is unspecified.
 pattern Entitlement_Type_ENTITLEMENTTYPEUNSPECIFIED :: Entitlement_Type
@@ -2993,21 +3133,20 @@ pattern Entitlement_Type_GCASTANDARD = Entitlement_Type "GCA_STANDARD"
   Entitlement_Type_Gemini,
   Entitlement_Type_Native,
   Entitlement_Type_GCASTANDARD,
-  Entitlement_Type
-  #-}
+  Entitlement_Type #-}
 
 -- | Optional. Available data protection modes that the user can choose. If it\'s unspecified, data protection mode will be LIMITED/DATA/LOSS by default.
-newtype FailoverInstanceRequest_DataProtectionMode = FailoverInstanceRequest_DataProtectionMode {fromFailoverInstanceRequest_DataProtectionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype FailoverInstanceRequest_DataProtectionMode = FailoverInstanceRequest_DataProtectionMode { fromFailoverInstanceRequest_DataProtectionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Defaults to LIMITED/DATA/LOSS if a data protection mode is not specified.
 pattern FailoverInstanceRequest_DataProtectionMode_DATAPROTECTIONMODEUNSPECIFIED :: FailoverInstanceRequest_DataProtectionMode
@@ -3025,21 +3164,20 @@ pattern FailoverInstanceRequest_DataProtectionMode_FORCEDATALOSS = FailoverInsta
   FailoverInstanceRequest_DataProtectionMode_DATAPROTECTIONMODEUNSPECIFIED,
   FailoverInstanceRequest_DataProtectionMode_LIMITEDDATALOSS,
   FailoverInstanceRequest_DataProtectionMode_FORCEDATALOSS,
-  FailoverInstanceRequest_DataProtectionMode
-  #-}
+  FailoverInstanceRequest_DataProtectionMode #-}
 
 -- | Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING.
-newtype Instance_ConnectMode = Instance_ConnectMode {fromInstance_ConnectMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_ConnectMode = Instance_ConnectMode { fromInstance_ConnectMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Instance_ConnectMode_CONNECTMODEUNSPECIFIED :: Instance_ConnectMode
@@ -3057,21 +3195,20 @@ pattern Instance_ConnectMode_PRIVATESERVICEACCESS = Instance_ConnectMode "PRIVAT
   Instance_ConnectMode_CONNECTMODEUNSPECIFIED,
   Instance_ConnectMode_DIRECTPEERING,
   Instance_ConnectMode_PRIVATESERVICEACCESS,
-  Instance_ConnectMode
-  #-}
+  Instance_ConnectMode #-}
 
 -- | Optional. Read replicas mode for the instance. Defaults to READ/REPLICAS/DISABLED.
-newtype Instance_ReadReplicasMode = Instance_ReadReplicasMode {fromInstance_ReadReplicasMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_ReadReplicasMode = Instance_ReadReplicasMode { fromInstance_ReadReplicasMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | If not set, Memorystore Redis backend will default to READ/REPLICAS/DISABLED.
 pattern Instance_ReadReplicasMode_READREPLICASMODEUNSPECIFIED :: Instance_ReadReplicasMode
@@ -3089,21 +3226,20 @@ pattern Instance_ReadReplicasMode_READREPLICASENABLED = Instance_ReadReplicasMod
   Instance_ReadReplicasMode_READREPLICASMODEUNSPECIFIED,
   Instance_ReadReplicasMode_READREPLICASDISABLED,
   Instance_ReadReplicasMode_READREPLICASENABLED,
-  Instance_ReadReplicasMode
-  #-}
+  Instance_ReadReplicasMode #-}
 
 -- | Output only. The current state of this instance.
-newtype Instance_State = Instance_State {fromInstance_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_State = Instance_State { fromInstance_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Instance_State_STATEUNSPECIFIED :: Instance_State
@@ -3151,20 +3287,19 @@ pattern Instance_State_FAILINGOVER = Instance_State "FAILING_OVER"
   Instance_State_Maintenance,
   Instance_State_Importing,
   Instance_State_FAILINGOVER,
-  Instance_State
-  #-}
+  Instance_State #-}
 
-newtype Instance_SuspensionReasonsItem = Instance_SuspensionReasonsItem {fromInstance_SuspensionReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_SuspensionReasonsItem = Instance_SuspensionReasonsItem { fromInstance_SuspensionReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Instance_SuspensionReasonsItem_SUSPENSIONREASONUNSPECIFIED :: Instance_SuspensionReasonsItem
@@ -3177,21 +3312,20 @@ pattern Instance_SuspensionReasonsItem_CUSTOMERMANAGEDKEYISSUE = Instance_Suspen
 {-# COMPLETE
   Instance_SuspensionReasonsItem_SUSPENSIONREASONUNSPECIFIED,
   Instance_SuspensionReasonsItem_CUSTOMERMANAGEDKEYISSUE,
-  Instance_SuspensionReasonsItem
-  #-}
+  Instance_SuspensionReasonsItem #-}
 
 -- | Required. The service tier of the instance.
-newtype Instance_Tier = Instance_Tier {fromInstance_Tier :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_Tier = Instance_Tier { fromInstance_Tier :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Instance_Tier_TIERUNSPECIFIED :: Instance_Tier
@@ -3209,21 +3343,20 @@ pattern Instance_Tier_STANDARDHA = Instance_Tier "STANDARD_HA"
   Instance_Tier_TIERUNSPECIFIED,
   Instance_Tier_Basic,
   Instance_Tier_STANDARDHA,
-  Instance_Tier
-  #-}
+  Instance_Tier #-}
 
 -- | Optional. The TLS mode of the Redis instance. If not provided, TLS is disabled for the instance.
-newtype Instance_TransitEncryptionMode = Instance_TransitEncryptionMode {fromInstance_TransitEncryptionMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Instance_TransitEncryptionMode = Instance_TransitEncryptionMode { fromInstance_TransitEncryptionMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern Instance_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED :: Instance_TransitEncryptionMode
@@ -3241,21 +3374,20 @@ pattern Instance_TransitEncryptionMode_Disabled = Instance_TransitEncryptionMode
   Instance_TransitEncryptionMode_TRANSITENCRYPTIONMODEUNSPECIFIED,
   Instance_TransitEncryptionMode_SERVERAUTHENTICATION,
   Instance_TransitEncryptionMode_Disabled,
-  Instance_TransitEncryptionMode
-  #-}
+  Instance_TransitEncryptionMode #-}
 
 -- | Required. Type of aggregation performed on the metric.
-newtype ObservabilityMetricData_AggregationType = ObservabilityMetricData_AggregationType {fromObservabilityMetricData_AggregationType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObservabilityMetricData_AggregationType = ObservabilityMetricData_AggregationType { fromObservabilityMetricData_AggregationType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified aggregation type.
 pattern ObservabilityMetricData_AggregationType_AGGREGATIONTYPEUNSPECIFIED :: ObservabilityMetricData_AggregationType
@@ -3283,21 +3415,20 @@ pattern ObservabilityMetricData_AggregationType_Current = ObservabilityMetricDat
   ObservabilityMetricData_AggregationType_P99,
   ObservabilityMetricData_AggregationType_P95,
   ObservabilityMetricData_AggregationType_Current,
-  ObservabilityMetricData_AggregationType
-  #-}
+  ObservabilityMetricData_AggregationType #-}
 
 -- | Required. Type of metric like CPU, Memory, etc.
-newtype ObservabilityMetricData_MetricType = ObservabilityMetricData_MetricType {fromObservabilityMetricData_MetricType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObservabilityMetricData_MetricType = ObservabilityMetricData_MetricType { fromObservabilityMetricData_MetricType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified metric type.
 pattern ObservabilityMetricData_MetricType_METRICTYPEUNSPECIFIED :: ObservabilityMetricData_MetricType
@@ -3345,20 +3476,19 @@ pattern ObservabilityMetricData_MetricType_PROCESSINGUNITCOUNT = ObservabilityMe
   ObservabilityMetricData_MetricType_NODECOUNT,
   ObservabilityMetricData_MetricType_MEMORYUSEDBYTES,
   ObservabilityMetricData_MetricType_PROCESSINGUNITCOUNT,
-  ObservabilityMetricData_MetricType
-  #-}
+  ObservabilityMetricData_MetricType #-}
 
-newtype OperationError_ErrorType = OperationError_ErrorType {fromOperationError_ErrorType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype OperationError_ErrorType = OperationError_ErrorType { fromOperationError_ErrorType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | UNSPECIFIED means product type is not known or available.
 pattern OperationError_ErrorType_OPERATIONERRORTYPEUNSPECIFIED :: OperationError_ErrorType
@@ -3396,21 +3526,20 @@ pattern OperationError_ErrorType_INTERNALERROR = OperationError_ErrorType "INTER
   OperationError_ErrorType_CANCELLATIONERROR,
   OperationError_ErrorType_SQLSERVERERROR,
   OperationError_ErrorType_INTERNALERROR,
-  OperationError_ErrorType
-  #-}
+  OperationError_ErrorType #-}
 
 -- | Optional. Controls whether Persistence features are enabled. If not provided, the existing value will be used.
-newtype PersistenceConfig_PersistenceMode = PersistenceConfig_PersistenceMode {fromPersistenceConfig_PersistenceMode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PersistenceConfig_PersistenceMode = PersistenceConfig_PersistenceMode { fromPersistenceConfig_PersistenceMode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern PersistenceConfig_PersistenceMode_PERSISTENCEMODEUNSPECIFIED :: PersistenceConfig_PersistenceMode
@@ -3428,21 +3557,20 @@ pattern PersistenceConfig_PersistenceMode_Rdb = PersistenceConfig_PersistenceMod
   PersistenceConfig_PersistenceMode_PERSISTENCEMODEUNSPECIFIED,
   PersistenceConfig_PersistenceMode_Disabled,
   PersistenceConfig_PersistenceMode_Rdb,
-  PersistenceConfig_PersistenceMode
-  #-}
+  PersistenceConfig_PersistenceMode #-}
 
 -- | Optional. Period between RDB snapshots. Snapshots will be attempted every period starting from the provided snapshot start time. For example, a start time of 01\/01\/2033 06:45 and SIX/HOURS snapshot period will do nothing until 01\/01\/2033, and then trigger snapshots every day at 06:45, 12:45, 18:45, and 00:45 the next day, and so on. If not provided, TWENTY/FOUR_HOURS will be used as default.
-newtype PersistenceConfig_RdbSnapshotPeriod = PersistenceConfig_RdbSnapshotPeriod {fromPersistenceConfig_RdbSnapshotPeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PersistenceConfig_RdbSnapshotPeriod = PersistenceConfig_RdbSnapshotPeriod { fromPersistenceConfig_RdbSnapshotPeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern PersistenceConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED :: PersistenceConfig_RdbSnapshotPeriod
@@ -3470,21 +3598,20 @@ pattern PersistenceConfig_RdbSnapshotPeriod_TWENTYFOURHOURS = PersistenceConfig_
   PersistenceConfig_RdbSnapshotPeriod_SIXHOURS,
   PersistenceConfig_RdbSnapshotPeriod_TWELVEHOURS,
   PersistenceConfig_RdbSnapshotPeriod_TWENTYFOURHOURS,
-  PersistenceConfig_RdbSnapshotPeriod
-  #-}
+  PersistenceConfig_RdbSnapshotPeriod #-}
 
 -- | The specific engine that the underlying database is running.
-newtype Product_Engine = Product_Engine {fromProduct_Engine :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Product_Engine = Product_Engine { fromProduct_Engine :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | UNSPECIFIED means engine type is not known or available.
 pattern Product_Engine_ENGINEUNSPECIFIED :: Product_Engine
@@ -3550,6 +3677,14 @@ pattern Product_Engine_ENGINEFIRESTOREWITHNATIVEMODE = Product_Engine "ENGINE_FI
 pattern Product_Engine_ENGINEFIRESTOREWITHDATASTOREMODE :: Product_Engine
 pattern Product_Engine_ENGINEFIRESTOREWITHDATASTOREMODE = Product_Engine "ENGINE_FIRESTORE_WITH_DATASTORE_MODE"
 
+-- | Oracle Exadata engine.
+pattern Product_Engine_ENGINEEXADATAORACLE :: Product_Engine
+pattern Product_Engine_ENGINEEXADATAORACLE = Product_Engine "ENGINE_EXADATA_ORACLE"
+
+-- | Oracle Autonomous DB Serverless engine.
+pattern Product_Engine_ENGINEADBSERVERLESSORACLE :: Product_Engine
+pattern Product_Engine_ENGINEADBSERVERLESSORACLE = Product_Engine "ENGINE_ADB_SERVERLESS_ORACLE"
+
 {-# COMPLETE
   Product_Engine_ENGINEUNSPECIFIED,
   Product_Engine_ENGINEMYSQL,
@@ -3567,21 +3702,22 @@ pattern Product_Engine_ENGINEFIRESTOREWITHDATASTOREMODE = Product_Engine "ENGINE
   Product_Engine_ENGINEOTHER,
   Product_Engine_ENGINEFIRESTOREWITHNATIVEMODE,
   Product_Engine_ENGINEFIRESTOREWITHDATASTOREMODE,
-  Product_Engine
-  #-}
+  Product_Engine_ENGINEEXADATAORACLE,
+  Product_Engine_ENGINEADBSERVERLESSORACLE,
+  Product_Engine #-}
 
 -- | Type of specific database product. It could be CloudSQL, AlloyDB etc..
-newtype Product_Type = Product_Type {fromProduct_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Product_Type = Product_Type { fromProduct_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | UNSPECIFIED means product type is not known or available.
 pattern Product_Type_PRODUCTTYPEUNSPECIFIED :: Product_Type
@@ -3623,13 +3759,21 @@ pattern Product_Type_PRODUCTTYPEMEMORYSTORE = Product_Type "PRODUCT_TYPE_MEMORYS
 pattern Product_Type_PRODUCTTYPEBIGTABLE :: Product_Type
 pattern Product_Type_PRODUCTTYPEBIGTABLE = Product_Type "PRODUCT_TYPE_BIGTABLE"
 
--- | Other refers to rest of other product type. This is to be when product type is known, but it is not present in this enum.
-pattern Product_Type_PRODUCTTYPEOTHER :: Product_Type
-pattern Product_Type_PRODUCTTYPEOTHER = Product_Type "PRODUCT_TYPE_OTHER"
-
 -- | Firestore product area in GCP.
 pattern Product_Type_PRODUCTTYPEFIRESTORE :: Product_Type
 pattern Product_Type_PRODUCTTYPEFIRESTORE = Product_Type "PRODUCT_TYPE_FIRESTORE"
+
+-- | Compute Engine self managed databases
+pattern Product_Type_PRODUCTTYPECOMPUTEENGINE :: Product_Type
+pattern Product_Type_PRODUCTTYPECOMPUTEENGINE = Product_Type "PRODUCT_TYPE_COMPUTE_ENGINE"
+
+-- | Oracle product area in GCP
+pattern Product_Type_PRODUCTTYPEORACLEONGCP :: Product_Type
+pattern Product_Type_PRODUCTTYPEORACLEONGCP = Product_Type "PRODUCT_TYPE_ORACLE_ON_GCP"
+
+-- | Other refers to rest of other product type. This is to be when product type is known, but it is not present in this enum.
+pattern Product_Type_PRODUCTTYPEOTHER :: Product_Type
+pattern Product_Type_PRODUCTTYPEOTHER = Product_Type "PRODUCT_TYPE_OTHER"
 
 {-# COMPLETE
   Product_Type_PRODUCTTYPEUNSPECIFIED,
@@ -3642,23 +3786,24 @@ pattern Product_Type_PRODUCTTYPEFIRESTORE = Product_Type "PRODUCT_TYPE_FIRESTORE
   Product_Type_ONPREM,
   Product_Type_PRODUCTTYPEMEMORYSTORE,
   Product_Type_PRODUCTTYPEBIGTABLE,
-  Product_Type_PRODUCTTYPEOTHER,
   Product_Type_PRODUCTTYPEFIRESTORE,
-  Product_Type
-  #-}
+  Product_Type_PRODUCTTYPECOMPUTEENGINE,
+  Product_Type_PRODUCTTYPEORACLEONGCP,
+  Product_Type_PRODUCTTYPEOTHER,
+  Product_Type #-}
 
 -- | Output only. Type of the PSC connection.
-newtype PscAutoConnection_ConnectionType = PscAutoConnection_ConnectionType {fromPscAutoConnection_ConnectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PscAutoConnection_ConnectionType = PscAutoConnection_ConnectionType { fromPscAutoConnection_ConnectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Cluster endpoint Type is not set
 pattern PscAutoConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED :: PscAutoConnection_ConnectionType
@@ -3681,21 +3826,20 @@ pattern PscAutoConnection_ConnectionType_CONNECTIONTYPEREADER = PscAutoConnectio
   PscAutoConnection_ConnectionType_CONNECTIONTYPEDISCOVERY,
   PscAutoConnection_ConnectionType_CONNECTIONTYPEPRIMARY,
   PscAutoConnection_ConnectionType_CONNECTIONTYPEREADER,
-  PscAutoConnection_ConnectionType
-  #-}
+  PscAutoConnection_ConnectionType #-}
 
 -- | Output only. The status of the PSC connection. Please note that this value is updated periodically. Please use Private Service Connect APIs for the latest status.
-newtype PscAutoConnection_PscConnectionStatus = PscAutoConnection_PscConnectionStatus {fromPscAutoConnection_PscConnectionStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PscAutoConnection_PscConnectionStatus = PscAutoConnection_PscConnectionStatus { fromPscAutoConnection_PscConnectionStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | PSC connection status is not specified.
 pattern PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED :: PscAutoConnection_PscConnectionStatus
@@ -3713,21 +3857,20 @@ pattern PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND = PscA
   PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
   PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSACTIVE,
   PscAutoConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND,
-  PscAutoConnection_PscConnectionStatus
-  #-}
+  PscAutoConnection_PscConnectionStatus #-}
 
 -- | Output only. Type of the PSC connection.
-newtype PscConnection_ConnectionType = PscConnection_ConnectionType {fromPscConnection_ConnectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PscConnection_ConnectionType = PscConnection_ConnectionType { fromPscConnection_ConnectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Cluster endpoint Type is not set
 pattern PscConnection_ConnectionType_CONNECTIONTYPEUNSPECIFIED :: PscConnection_ConnectionType
@@ -3750,21 +3893,20 @@ pattern PscConnection_ConnectionType_CONNECTIONTYPEREADER = PscConnection_Connec
   PscConnection_ConnectionType_CONNECTIONTYPEDISCOVERY,
   PscConnection_ConnectionType_CONNECTIONTYPEPRIMARY,
   PscConnection_ConnectionType_CONNECTIONTYPEREADER,
-  PscConnection_ConnectionType
-  #-}
+  PscConnection_ConnectionType #-}
 
 -- | Output only. The status of the PSC connection. Please note that this value is updated periodically. To get the latest status of a PSC connection, follow https:\/\/cloud.google.com\/vpc\/docs\/configure-private-service-connect-services#endpoint-details.
-newtype PscConnection_PscConnectionStatus = PscConnection_PscConnectionStatus {fromPscConnection_PscConnectionStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PscConnection_PscConnectionStatus = PscConnection_PscConnectionStatus { fromPscConnection_PscConnectionStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | PSC connection status is not specified.
 pattern PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED :: PscConnection_PscConnectionStatus
@@ -3782,21 +3924,20 @@ pattern PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND = PscConne
   PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSUNSPECIFIED,
   PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSACTIVE,
   PscConnection_PscConnectionStatus_PSCCONNECTIONSTATUSNOTFOUND,
-  PscConnection_PscConnectionStatus
-  #-}
+  PscConnection_PscConnectionStatus #-}
 
 -- | Output only. Type of a PSC connection targeting this service attachment.
-newtype PscServiceAttachment_ConnectionType = PscServiceAttachment_ConnectionType {fromPscServiceAttachment_ConnectionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PscServiceAttachment_ConnectionType = PscServiceAttachment_ConnectionType { fromPscServiceAttachment_ConnectionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Cluster endpoint Type is not set
 pattern PscServiceAttachment_ConnectionType_CONNECTIONTYPEUNSPECIFIED :: PscServiceAttachment_ConnectionType
@@ -3819,21 +3960,20 @@ pattern PscServiceAttachment_ConnectionType_CONNECTIONTYPEREADER = PscServiceAtt
   PscServiceAttachment_ConnectionType_CONNECTIONTYPEDISCOVERY,
   PscServiceAttachment_ConnectionType_CONNECTIONTYPEPRIMARY,
   PscServiceAttachment_ConnectionType_CONNECTIONTYPEREADER,
-  PscServiceAttachment_ConnectionType
-  #-}
+  PscServiceAttachment_ConnectionType #-}
 
 -- | Optional. Period between RDB snapshots.
-newtype RDBConfig_RdbSnapshotPeriod = RDBConfig_RdbSnapshotPeriod {fromRDBConfig_RdbSnapshotPeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype RDBConfig_RdbSnapshotPeriod = RDBConfig_RdbSnapshotPeriod { fromRDBConfig_RdbSnapshotPeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern RDBConfig_RdbSnapshotPeriod_SNAPSHOTPERIODUNSPECIFIED :: RDBConfig_RdbSnapshotPeriod
@@ -3861,21 +4001,20 @@ pattern RDBConfig_RdbSnapshotPeriod_TWENTYFOURHOURS = RDBConfig_RdbSnapshotPerio
   RDBConfig_RdbSnapshotPeriod_SIXHOURS,
   RDBConfig_RdbSnapshotPeriod_TWELVEHOURS,
   RDBConfig_RdbSnapshotPeriod_TWENTYFOURHOURS,
-  RDBConfig_RdbSnapshotPeriod
-  #-}
+  RDBConfig_RdbSnapshotPeriod #-}
 
 -- | Excluisive action returned by the CLH.
-newtype ReconciliationOperationMetadata_ExclusiveAction = ReconciliationOperationMetadata_ExclusiveAction {fromReconciliationOperationMetadata_ExclusiveAction :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ReconciliationOperationMetadata_ExclusiveAction = ReconciliationOperationMetadata_ExclusiveAction { fromReconciliationOperationMetadata_ExclusiveAction :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unknown repair action.
 pattern ReconciliationOperationMetadata_ExclusiveAction_UNKNOWNREPAIRACTION :: ReconciliationOperationMetadata_ExclusiveAction
@@ -3893,21 +4032,20 @@ pattern ReconciliationOperationMetadata_ExclusiveAction_Retry = ReconciliationOp
   ReconciliationOperationMetadata_ExclusiveAction_UNKNOWNREPAIRACTION,
   ReconciliationOperationMetadata_ExclusiveAction_Delete',
   ReconciliationOperationMetadata_ExclusiveAction_Retry,
-  ReconciliationOperationMetadata_ExclusiveAction
-  #-}
+  ReconciliationOperationMetadata_ExclusiveAction #-}
 
 -- | Required. If reschedule type is SPECIFIC/TIME, must set up schedule/time as well.
-newtype RescheduleClusterMaintenanceRequest_RescheduleType = RescheduleClusterMaintenanceRequest_RescheduleType {fromRescheduleClusterMaintenanceRequest_RescheduleType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype RescheduleClusterMaintenanceRequest_RescheduleType = RescheduleClusterMaintenanceRequest_RescheduleType { fromRescheduleClusterMaintenanceRequest_RescheduleType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern RescheduleClusterMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED :: RescheduleClusterMaintenanceRequest_RescheduleType
@@ -3925,21 +4063,20 @@ pattern RescheduleClusterMaintenanceRequest_RescheduleType_SPECIFICTIME = Resche
   RescheduleClusterMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED,
   RescheduleClusterMaintenanceRequest_RescheduleType_Immediate,
   RescheduleClusterMaintenanceRequest_RescheduleType_SPECIFICTIME,
-  RescheduleClusterMaintenanceRequest_RescheduleType
-  #-}
+  RescheduleClusterMaintenanceRequest_RescheduleType #-}
 
 -- | Required. If reschedule type is SPECIFIC/TIME, must set up schedule/time as well.
-newtype RescheduleMaintenanceRequest_RescheduleType = RescheduleMaintenanceRequest_RescheduleType {fromRescheduleMaintenanceRequest_RescheduleType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype RescheduleMaintenanceRequest_RescheduleType = RescheduleMaintenanceRequest_RescheduleType { fromRescheduleMaintenanceRequest_RescheduleType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not set.
 pattern RescheduleMaintenanceRequest_RescheduleType_RESCHEDULETYPEUNSPECIFIED :: RescheduleMaintenanceRequest_RescheduleType
@@ -3962,21 +4099,20 @@ pattern RescheduleMaintenanceRequest_RescheduleType_SPECIFICTIME = RescheduleMai
   RescheduleMaintenanceRequest_RescheduleType_Immediate,
   RescheduleMaintenanceRequest_RescheduleType_NEXTAVAILABLEWINDOW,
   RescheduleMaintenanceRequest_RescheduleType_SPECIFICTIME,
-  RescheduleMaintenanceRequest_RescheduleType
-  #-}
+  RescheduleMaintenanceRequest_RescheduleType #-}
 
 -- | The unit that \'retained_backups\' represents.
-newtype RetentionSettings_RetentionUnit = RetentionSettings_RetentionUnit {fromRetentionSettings_RetentionUnit :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype RetentionSettings_RetentionUnit = RetentionSettings_RetentionUnit { fromRetentionSettings_RetentionUnit :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Backup retention unit is unspecified, will be treated as COUNT.
 pattern RetentionSettings_RetentionUnit_RETENTIONUNITUNSPECIFIED :: RetentionSettings_RetentionUnit
@@ -4004,21 +4140,20 @@ pattern RetentionSettings_RetentionUnit_RETENTIONUNITOTHER = RetentionSettings_R
   RetentionSettings_RetentionUnit_Time,
   RetentionSettings_RetentionUnit_Duration,
   RetentionSettings_RetentionUnit_RETENTIONUNITOTHER,
-  RetentionSettings_RetentionUnit
-  #-}
+  RetentionSettings_RetentionUnit #-}
 
 -- | Target node type for redis cluster.
-newtype UpdateInfo_TargetNodeType = UpdateInfo_TargetNodeType {fromUpdateInfo_TargetNodeType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype UpdateInfo_TargetNodeType = UpdateInfo_TargetNodeType { fromUpdateInfo_TargetNodeType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Node type unspecified
 pattern UpdateInfo_TargetNodeType_NODETYPEUNSPECIFIED :: UpdateInfo_TargetNodeType
@@ -4046,21 +4181,20 @@ pattern UpdateInfo_TargetNodeType_REDISSTANDARDSMALL = UpdateInfo_TargetNodeType
   UpdateInfo_TargetNodeType_REDISHIGHMEMMEDIUM,
   UpdateInfo_TargetNodeType_REDISHIGHMEMXLARGE,
   UpdateInfo_TargetNodeType_REDISSTANDARDSMALL,
-  UpdateInfo_TargetNodeType
-  #-}
+  UpdateInfo_TargetNodeType #-}
 
 -- | Required. The day of week that maintenance updates occur.
-newtype WeeklyMaintenanceWindow_Day = WeeklyMaintenanceWindow_Day {fromWeeklyMaintenanceWindow_Day :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype WeeklyMaintenanceWindow_Day = WeeklyMaintenanceWindow_Day { fromWeeklyMaintenanceWindow_Day :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The day of the week is unspecified.
 pattern WeeklyMaintenanceWindow_Day_DAYOFWEEKUNSPECIFIED :: WeeklyMaintenanceWindow_Day
@@ -4103,21 +4237,20 @@ pattern WeeklyMaintenanceWindow_Day_Sunday = WeeklyMaintenanceWindow_Day "SUNDAY
   WeeklyMaintenanceWindow_Day_Friday,
   WeeklyMaintenanceWindow_Day_Saturday,
   WeeklyMaintenanceWindow_Day_Sunday,
-  WeeklyMaintenanceWindow_Day
-  #-}
+  WeeklyMaintenanceWindow_Day #-}
 
 -- | Optional. The mode of zone distribution. Defaults to MULTI_ZONE, when not specified.
-newtype ZoneDistributionConfig_Mode = ZoneDistributionConfig_Mode {fromZoneDistributionConfig_Mode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ZoneDistributionConfig_Mode = ZoneDistributionConfig_Mode { fromZoneDistributionConfig_Mode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Not Set. Default: MULTI_ZONE
 pattern ZoneDistributionConfig_Mode_ZONEDISTRIBUTIONMODEUNSPECIFIED :: ZoneDistributionConfig_Mode
@@ -4135,5 +4268,4 @@ pattern ZoneDistributionConfig_Mode_SINGLEZONE = ZoneDistributionConfig_Mode "SI
   ZoneDistributionConfig_Mode_ZONEDISTRIBUTIONMODEUNSPECIFIED,
   ZoneDistributionConfig_Mode_MULTIZONE,
   ZoneDistributionConfig_Mode_SINGLEZONE,
-  ZoneDistributionConfig_Mode
-  #-}
+  ZoneDistributionConfig_Mode #-}

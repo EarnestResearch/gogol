@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,86 +24,87 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.GamesManagement.Types
-  ( -- * Configuration
-    gamesManagementService,
+    (
+    -- * Configuration
+      gamesManagementService
 
     -- * OAuth Scopes
-    Games'FullControl,
+    , Games'FullControl
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AchievementResetAllResponse
-    AchievementResetAllResponse (..),
-    newAchievementResetAllResponse,
+    , AchievementResetAllResponse (..)
+    , newAchievementResetAllResponse
 
     -- ** AchievementResetMultipleForAllRequest
-    AchievementResetMultipleForAllRequest (..),
-    newAchievementResetMultipleForAllRequest,
+    , AchievementResetMultipleForAllRequest (..)
+    , newAchievementResetMultipleForAllRequest
 
     -- ** AchievementResetResponse
-    AchievementResetResponse (..),
-    newAchievementResetResponse,
+    , AchievementResetResponse (..)
+    , newAchievementResetResponse
 
     -- ** EventsResetMultipleForAllRequest
-    EventsResetMultipleForAllRequest (..),
-    newEventsResetMultipleForAllRequest,
+    , EventsResetMultipleForAllRequest (..)
+    , newEventsResetMultipleForAllRequest
 
     -- ** GamesPlayerExperienceInfoResource
-    GamesPlayerExperienceInfoResource (..),
-    newGamesPlayerExperienceInfoResource,
+    , GamesPlayerExperienceInfoResource (..)
+    , newGamesPlayerExperienceInfoResource
 
     -- ** GamesPlayerLevelResource
-    GamesPlayerLevelResource (..),
-    newGamesPlayerLevelResource,
+    , GamesPlayerLevelResource (..)
+    , newGamesPlayerLevelResource
 
     -- ** HiddenPlayer
-    HiddenPlayer (..),
-    newHiddenPlayer,
+    , HiddenPlayer (..)
+    , newHiddenPlayer
 
     -- ** HiddenPlayerList
-    HiddenPlayerList (..),
-    newHiddenPlayerList,
+    , HiddenPlayerList (..)
+    , newHiddenPlayerList
 
     -- ** Player
-    Player (..),
-    newPlayer,
+    , Player (..)
+    , newPlayer
 
     -- ** Player_Name
-    Player_Name (..),
-    newPlayer_Name,
+    , Player_Name (..)
+    , newPlayer_Name
 
     -- ** PlayerScoreResetAllResponse
-    PlayerScoreResetAllResponse (..),
-    newPlayerScoreResetAllResponse,
+    , PlayerScoreResetAllResponse (..)
+    , newPlayerScoreResetAllResponse
 
     -- ** PlayerScoreResetResponse
-    PlayerScoreResetResponse (..),
-    newPlayerScoreResetResponse,
+    , PlayerScoreResetResponse (..)
+    , newPlayerScoreResetResponse
 
     -- ** ProfileSettings
-    ProfileSettings (..),
-    newProfileSettings,
+    , ProfileSettings (..)
+    , newProfileSettings
 
     -- ** ScoresResetMultipleForAllRequest
-    ScoresResetMultipleForAllRequest (..),
-    newScoresResetMultipleForAllRequest,
-  )
-where
+    , ScoresResetMultipleForAllRequest (..)
+    , newScoresResetMultipleForAllRequest
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.GamesManagement.Internal.Product
 import Gogol.GamesManagement.Internal.Sum
-import Gogol.Prelude qualified as Core
 
--- | Default request referring to version @v1management@ of the Google Play Game Management. This contains the host and root path used as a starting point for constructing service requests.
+-- | Default request referring to version @v1management@ of the Google Play Games Services Management API. This contains the host and root path used as a starting point for constructing service requests.
 gamesManagementService :: Core.ServiceConfig
-gamesManagementService =
-  Core.defaultService
-    (Core.ServiceId "gamesManagement:v1management")
-    "gamesmanagement.googleapis.com"
+gamesManagementService
+  = Core.defaultService
+      (Core.ServiceId "gamesManagement:v1management")
+      "gamesmanagement.googleapis.com"
 
 -- | Create, edit, and delete your Google Play Games activity
 type Games'FullControl = "https://www.googleapis.com/auth/games"

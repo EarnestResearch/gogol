@@ -44,7 +44,7 @@ library
     , haskell-src-exts      >=1.23.1   && <1.24
     , lens                  >=5.3.4    && <5.4
     , mtl                   >=2.3
-    , pandoc                >=3.6.3    && <3.7
+    , pandoc                >=3.6.3    && <3.8
     , parsec                >=3.1
     , system-fileio         >=0.3.16.6 && <0.4
     , system-filepath       >=0.4.14.1 && <0.5

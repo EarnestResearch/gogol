@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,87 +29,74 @@
 --
 -- /See:/ <https://cloud.google.com/logging/docs/ Cloud Logging API Reference> for @logging.organizations.getSettings@.
 module Gogol.Logging.Organizations.GetSettings
-  ( -- * Resource
-    LoggingOrganizationsGetSettingsResource,
+    (
+    -- * Resource
+      LoggingOrganizationsGetSettingsResource
 
     -- ** Constructing a Request
-    LoggingOrganizationsGetSettings (..),
-    newLoggingOrganizationsGetSettings,
-  )
-where
+    , LoggingOrganizationsGetSettings (..)
+    , newLoggingOrganizationsGetSettings
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.Logging.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @logging.organizations.getSettings@ method which the
 -- 'LoggingOrganizationsGetSettings' request conforms to.
 type LoggingOrganizationsGetSettingsResource =
-  "v2"
-    Core.:> Core.Capture "name" Core.Text
-    Core.:> "settings"
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get '[Core.JSON] Settings
+     "v2" Core.:>
+       Core.Capture "name" Core.Text Core.:>
+         "settings" Core.:>
+           Core.QueryParam "$.xgafv" Xgafv Core.:>
+             Core.QueryParam "access_token" Core.Text Core.:>
+               Core.QueryParam "callback" Core.Text Core.:>
+                 Core.QueryParam "uploadType" Core.Text Core.:>
+                   Core.QueryParam "upload_protocol" Core.Text Core.:>
+                     Core.QueryParam "alt" Core.AltJSON Core.:>
+                       Core.Get '[Core.JSON] Settings
 
 -- | Gets the settings for the given resource.Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts.See View default resource settings for Logging (https:\/\/cloud.google.com\/logging\/docs\/default-settings#view-org-settings) for more information.
 --
 -- /See:/ 'newLoggingOrganizationsGetSettings' smart constructor.
 data LoggingOrganizationsGetSettings = LoggingOrganizationsGetSettings
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Required. The resource for which to retrieve settings. \"projects\/[PROJECT/ID]\/settings\" \"organizations\/[ORGANIZATION/ID]\/settings\" \"billingAccounts\/[BILLING/ACCOUNT/ID]\/settings\" \"folders\/[FOLDER_ID]\/settings\" For example:\"organizations\/12345\/settings\"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts.
-    name :: Core.Text,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Required. The resource for which to retrieve settings. \"projects\/[PROJECT/ID]\/settings\" \"organizations\/[ORGANIZATION/ID]\/settings\" \"billingAccounts\/[BILLING/ACCOUNT/ID]\/settings\" \"folders\/[FOLDER_ID]\/settings\" For example:\"organizations\/12345\/settings\"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts.
+    , name :: Core.Text
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'LoggingOrganizationsGetSettings' with the minimum fields required to make a request.
-newLoggingOrganizationsGetSettings ::
-  -- |  Required. The resource for which to retrieve settings. \"projects\/[PROJECT/ID]\/settings\" \"organizations\/[ORGANIZATION/ID]\/settings\" \"billingAccounts\/[BILLING/ACCOUNT/ID]\/settings\" \"folders\/[FOLDER_ID]\/settings\" For example:\"organizations\/12345\/settings\"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts. See 'name'.
-  Core.Text ->
-  LoggingOrganizationsGetSettings
-newLoggingOrganizationsGetSettings name =
-  LoggingOrganizationsGetSettings
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      name = name,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
-
+newLoggingOrganizationsGetSettings 
+    :: 
+                                   Core.Text
+       -- ^  Required. The resource for which to retrieve settings. \"projects\/[PROJECT/ID]\/settings\" \"organizations\/[ORGANIZATION/ID]\/settings\" \"billingAccounts\/[BILLING/ACCOUNT/ID]\/settings\" \"folders\/[FOLDER_ID]\/settings\" For example:\"organizations\/12345\/settings\"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts. See 'name'.
+    -> LoggingOrganizationsGetSettings
+newLoggingOrganizationsGetSettings name
+  = LoggingOrganizationsGetSettings{xgafv = Core.Nothing,
+                                    accessToken = Core.Nothing, callback = Core.Nothing,
+                                    name = name, uploadType = Core.Nothing,
+                                    uploadProtocol = Core.Nothing}
 instance Core.GoogleRequest LoggingOrganizationsGetSettings where
-  type Rs LoggingOrganizationsGetSettings = Settings
-  type
-    Scopes LoggingOrganizationsGetSettings =
-      '[ CloudPlatform'FullControl,
-         CloudPlatform'ReadOnly,
-         Logging'Admin,
-         Logging'Read
-       ]
-  requestClient LoggingOrganizationsGetSettings {..} =
-    go
-      name
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      loggingService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy LoggingOrganizationsGetSettingsResource)
-          Core.mempty
+        type Rs LoggingOrganizationsGetSettings = Settings
+        type Scopes LoggingOrganizationsGetSettings =
+             '[CloudPlatform'FullControl, CloudPlatform'ReadOnly, Logging'Admin,
+               Logging'Read]
+        requestClient LoggingOrganizationsGetSettings{..}
+          = go name xgafv accessToken callback uploadType uploadProtocol
+              (Core.Just Core.AltJSON)
+              loggingService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy LoggingOrganizationsGetSettingsResource)
+                      Core.mempty
+

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,145 +24,145 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.ReplicaPool.Types
-  ( -- * Configuration
-    replicaPoolService,
+    (
+    -- * Configuration
+      replicaPoolService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
-    CloudPlatform'ReadOnly,
-    Ndev'Cloudman,
-    Ndev'Cloudman'Readonly,
-    Replicapool'FullControl,
-    Replicapool'Readonly,
+    , CloudPlatform'FullControl
+    , CloudPlatform'ReadOnly
+    , Ndev'Cloudman
+    , Ndev'Cloudman'Readonly
+    , Replicapool'FullControl
+    , Replicapool'Readonly
 
     -- * Types
 
     -- ** AccessConfig
-    AccessConfig (..),
-    newAccessConfig,
+    , AccessConfig (..)
+    , newAccessConfig
 
     -- ** Action
-    Action (..),
-    newAction,
+    , Action (..)
+    , newAction
 
     -- ** DiskAttachment
-    DiskAttachment (..),
-    newDiskAttachment,
+    , DiskAttachment (..)
+    , newDiskAttachment
 
     -- ** EnvVariable
-    EnvVariable (..),
-    newEnvVariable,
+    , EnvVariable (..)
+    , newEnvVariable
 
     -- ** ExistingDisk
-    ExistingDisk (..),
-    newExistingDisk,
+    , ExistingDisk (..)
+    , newExistingDisk
 
     -- ** HealthCheck
-    HealthCheck (..),
-    newHealthCheck,
+    , HealthCheck (..)
+    , newHealthCheck
 
     -- ** Label
-    Label (..),
-    newLabel,
+    , Label (..)
+    , newLabel
 
     -- ** Metadata
-    Metadata (..),
-    newMetadata,
+    , Metadata (..)
+    , newMetadata
 
     -- ** MetadataItem
-    MetadataItem (..),
-    newMetadataItem,
+    , MetadataItem (..)
+    , newMetadataItem
 
     -- ** NetworkInterface
-    NetworkInterface (..),
-    newNetworkInterface,
+    , NetworkInterface (..)
+    , newNetworkInterface
 
     -- ** NewDisk
-    NewDisk (..),
-    newNewDisk,
+    , NewDisk (..)
+    , newNewDisk
 
     -- ** NewDiskInitializeParams
-    NewDiskInitializeParams (..),
-    newNewDiskInitializeParams,
+    , NewDiskInitializeParams (..)
+    , newNewDiskInitializeParams
 
     -- ** Pool
-    Pool (..),
-    newPool,
+    , Pool (..)
+    , newPool
 
     -- ** PoolsDeleteRequest
-    PoolsDeleteRequest (..),
-    newPoolsDeleteRequest,
+    , PoolsDeleteRequest (..)
+    , newPoolsDeleteRequest
 
     -- ** PoolsListResponse
-    PoolsListResponse (..),
-    newPoolsListResponse,
+    , PoolsListResponse (..)
+    , newPoolsListResponse
 
     -- ** Replica
-    Replica (..),
-    newReplica,
+    , Replica (..)
+    , newReplica
 
     -- ** ReplicaStatus
-    ReplicaStatus (..),
-    newReplicaStatus,
+    , ReplicaStatus (..)
+    , newReplicaStatus
 
     -- ** ReplicasDeleteRequest
-    ReplicasDeleteRequest (..),
-    newReplicasDeleteRequest,
+    , ReplicasDeleteRequest (..)
+    , newReplicasDeleteRequest
 
     -- ** ReplicasListResponse
-    ReplicasListResponse (..),
-    newReplicasListResponse,
+    , ReplicasListResponse (..)
+    , newReplicasListResponse
 
     -- ** ServiceAccount
-    ServiceAccount (..),
-    newServiceAccount,
+    , ServiceAccount (..)
+    , newServiceAccount
 
     -- ** Tag
-    Tag (..),
-    newTag,
+    , Tag (..)
+    , newTag
 
     -- ** Template
-    Template (..),
-    newTemplate,
+    , Template (..)
+    , newTemplate
 
     -- ** VmParams
-    VmParams (..),
-    newVmParams,
-  )
-where
+    , VmParams (..)
+    , newVmParams
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.ReplicaPool.Internal.Product
 import Gogol.ReplicaPool.Internal.Sum
 
 -- | Default request referring to version @v1beta1@ of the Replica Pool API. This contains the host and root path used as a starting point for constructing service requests.
 replicaPoolService :: Core.ServiceConfig
-replicaPoolService =
-  Core.defaultService
-    (Core.ServiceId "replicapool:v1beta1")
-    "www.googleapis.com"
+replicaPoolService
+  = Core.defaultService (Core.ServiceId "replicapool:v1beta1")
+      "www.googleapis.com"
 
 -- | View and manage your data across Google Cloud Platform services
 type CloudPlatform'FullControl =
-  "https://www.googleapis.com/auth/cloud-platform"
+     "https://www.googleapis.com/auth/cloud-platform"
 
 -- | View your data across Google Cloud Platform services
 type CloudPlatform'ReadOnly =
-  "https://www.googleapis.com/auth/cloud-platform.read-only"
+     "https://www.googleapis.com/auth/cloud-platform.read-only"
 
 -- | View and manage your Google Cloud Platform management resources and deployment status information
 type Ndev'Cloudman =
-  "https://www.googleapis.com/auth/ndev.cloudman"
+     "https://www.googleapis.com/auth/ndev.cloudman"
 
 -- | View your Google Cloud Platform management resources and deployment status information
 type Ndev'Cloudman'Readonly =
-  "https://www.googleapis.com/auth/ndev.cloudman.readonly"
+     "https://www.googleapis.com/auth/ndev.cloudman.readonly"
 
 -- | View and manage replica pools
 type Replicapool'FullControl =
-  "https://www.googleapis.com/auth/replicapool"
+     "https://www.googleapis.com/auth/replicapool"
 
 -- | View replica pools
 type Replicapool'Readonly =
-  "https://www.googleapis.com/auth/replicapool.readonly"
+     "https://www.googleapis.com/auth/replicapool.readonly"

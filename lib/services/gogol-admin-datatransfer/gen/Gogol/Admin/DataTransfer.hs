@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -26,72 +27,72 @@
 --
 -- Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.
 --
--- /See:/ <https://developers.google.com/admin-sdk/ Admin SDK API Reference>
+-- /See:/ <https://developers.google.com/workspace/admin/ Admin SDK API Reference>
 module Gogol.Admin.DataTransfer
-  ( -- * Configuration
-    adminDataTransferService,
+    (
+    -- * Configuration
+      adminDataTransferService
 
     -- * OAuth Scopes
-    Admin'Datatransfer,
-    Admin'Datatransfer'Readonly,
+    , Admin'Datatransfer
+    , Admin'Datatransfer'Readonly
 
     -- * Resources
 
     -- ** datatransfer.applications.get
-    DatatransferApplicationsGetResource,
-    DatatransferApplicationsGet (..),
-    newDatatransferApplicationsGet,
+    , DatatransferApplicationsGetResource
+    , DatatransferApplicationsGet (..)
+    , newDatatransferApplicationsGet
 
     -- ** datatransfer.applications.list
-    DatatransferApplicationsListResource,
-    DatatransferApplicationsList (..),
-    newDatatransferApplicationsList,
+    , DatatransferApplicationsListResource
+    , DatatransferApplicationsList (..)
+    , newDatatransferApplicationsList
 
     -- ** datatransfer.transfers.get
-    DatatransferTransfersGetResource,
-    DatatransferTransfersGet (..),
-    newDatatransferTransfersGet,
+    , DatatransferTransfersGetResource
+    , DatatransferTransfersGet (..)
+    , newDatatransferTransfersGet
 
     -- ** datatransfer.transfers.insert
-    DatatransferTransfersInsertResource,
-    DatatransferTransfersInsert (..),
-    newDatatransferTransfersInsert,
+    , DatatransferTransfersInsertResource
+    , DatatransferTransfersInsert (..)
+    , newDatatransferTransfersInsert
 
     -- ** datatransfer.transfers.list
-    DatatransferTransfersListResource,
-    DatatransferTransfersList (..),
-    newDatatransferTransfersList,
+    , DatatransferTransfersListResource
+    , DatatransferTransfersList (..)
+    , newDatatransferTransfersList
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** Application
-    Application (..),
-    newApplication,
+    , Application (..)
+    , newApplication
 
     -- ** ApplicationDataTransfer
-    ApplicationDataTransfer (..),
-    newApplicationDataTransfer,
+    , ApplicationDataTransfer (..)
+    , newApplicationDataTransfer
 
     -- ** ApplicationTransferParam
-    ApplicationTransferParam (..),
-    newApplicationTransferParam,
+    , ApplicationTransferParam (..)
+    , newApplicationTransferParam
 
     -- ** ApplicationsListResponse
-    ApplicationsListResponse (..),
-    newApplicationsListResponse,
+    , ApplicationsListResponse (..)
+    , newApplicationsListResponse
 
     -- ** DataTransfer
-    DataTransfer (..),
-    newDataTransfer,
+    , DataTransfer (..)
+    , newDataTransfer
 
     -- ** DataTransfersListResponse
-    DataTransfersListResponse (..),
-    newDataTransfersListResponse,
-  )
-where
+    , DataTransfersListResponse (..)
+    , newDataTransfersListResponse
+    ) where
 
 import Gogol.Admin.DataTransfer.Applications.Get
 import Gogol.Admin.DataTransfer.Applications.List

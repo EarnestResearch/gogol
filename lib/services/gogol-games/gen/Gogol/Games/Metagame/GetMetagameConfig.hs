@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -26,77 +27,68 @@
 --
 -- Return the metagame configuration data for the calling application.
 --
--- /See:/ <https://developers.google.com/games/ Google Play Game Services Reference> for @games.metagame.getMetagameConfig@.
+-- /See:/ <https://developers.google.com/games/ Google Play Games Services API Reference> for @games.metagame.getMetagameConfig@.
 module Gogol.Games.Metagame.GetMetagameConfig
-  ( -- * Resource
-    GamesMetagameGetMetagameConfigResource,
+    (
+    -- * Resource
+      GamesMetagameGetMetagameConfigResource
 
     -- ** Constructing a Request
-    GamesMetagameGetMetagameConfig (..),
-    newGamesMetagameGetMetagameConfig,
-  )
-where
+    , GamesMetagameGetMetagameConfig (..)
+    , newGamesMetagameGetMetagameConfig
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.Games.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @games.metagame.getMetagameConfig@ method which the
 -- 'GamesMetagameGetMetagameConfig' request conforms to.
 type GamesMetagameGetMetagameConfigResource =
-  "games"
-    Core.:> "v1"
-    Core.:> "metagameConfig"
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get '[Core.JSON] MetagameConfig
+     "games" Core.:>
+       "v1" Core.:>
+         "metagameConfig" Core.:>
+           Core.QueryParam "$.xgafv" Xgafv Core.:>
+             Core.QueryParam "access_token" Core.Text Core.:>
+               Core.QueryParam "callback" Core.Text Core.:>
+                 Core.QueryParam "uploadType" Core.Text Core.:>
+                   Core.QueryParam "upload_protocol" Core.Text Core.:>
+                     Core.QueryParam "alt" Core.AltJSON Core.:>
+                       Core.Get '[Core.JSON] MetagameConfig
 
 -- | Return the metagame configuration data for the calling application.
 --
 -- /See:/ 'newGamesMetagameGetMetagameConfig' smart constructor.
 data GamesMetagameGetMetagameConfig = GamesMetagameGetMetagameConfig
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'GamesMetagameGetMetagameConfig' with the minimum fields required to make a request.
-newGamesMetagameGetMetagameConfig ::
-  GamesMetagameGetMetagameConfig
-newGamesMetagameGetMetagameConfig =
-  GamesMetagameGetMetagameConfig
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
-
+newGamesMetagameGetMetagameConfig 
+    ::  GamesMetagameGetMetagameConfig
+newGamesMetagameGetMetagameConfig
+  = GamesMetagameGetMetagameConfig{xgafv = Core.Nothing,
+                                   accessToken = Core.Nothing, callback = Core.Nothing,
+                                   uploadType = Core.Nothing, uploadProtocol = Core.Nothing}
 instance Core.GoogleRequest GamesMetagameGetMetagameConfig where
-  type Rs GamesMetagameGetMetagameConfig = MetagameConfig
-  type Scopes GamesMetagameGetMetagameConfig = '[Games'FullControl]
-  requestClient GamesMetagameGetMetagameConfig {..} =
-    go
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      gamesService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy GamesMetagameGetMetagameConfigResource)
-          Core.mempty
+        type Rs GamesMetagameGetMetagameConfig = MetagameConfig
+        type Scopes GamesMetagameGetMetagameConfig = '[Games'FullControl]
+        requestClient GamesMetagameGetMetagameConfig{..}
+          = go xgafv accessToken callback uploadType uploadProtocol
+              (Core.Just Core.AltJSON)
+              gamesService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy GamesMetagameGetMetagameConfigResource)
+                      Core.mempty
+

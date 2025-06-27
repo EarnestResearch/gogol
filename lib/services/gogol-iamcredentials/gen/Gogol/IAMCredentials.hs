@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,82 +29,102 @@
 --
 -- /See:/ <https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials IAM Service Account Credentials API Reference>
 module Gogol.IAMCredentials
-  ( -- * Configuration
-    iAMCredentialsService,
+    (
+    -- * Configuration
+      iAMCredentialsService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
+    , CloudPlatform'FullControl
 
     -- * Resources
 
+    -- ** iamcredentials.locations.workforcePools.getAllowedLocations
+    , IAMCredentialsLocationsWorkforcePoolsGetAllowedLocationsResource
+    , IAMCredentialsLocationsWorkforcePoolsGetAllowedLocations (..)
+    , newIAMCredentialsLocationsWorkforcePoolsGetAllowedLocations
+
+    -- ** iamcredentials.projects.locations.workloadIdentityPools.getAllowedLocations
+    , IAMCredentialsProjectsLocationsWorkloadIdentityPoolsGetAllowedLocationsResource
+    , IAMCredentialsProjectsLocationsWorkloadIdentityPoolsGetAllowedLocations (..)
+    , newIAMCredentialsProjectsLocationsWorkloadIdentityPoolsGetAllowedLocations
+
     -- ** iamcredentials.projects.serviceAccounts.generateAccessToken
-    IAMCredentialsProjectsServiceAccountsGenerateAccessTokenResource,
-    IAMCredentialsProjectsServiceAccountsGenerateAccessToken (..),
-    newIAMCredentialsProjectsServiceAccountsGenerateAccessToken,
+    , IAMCredentialsProjectsServiceAccountsGenerateAccessTokenResource
+    , IAMCredentialsProjectsServiceAccountsGenerateAccessToken (..)
+    , newIAMCredentialsProjectsServiceAccountsGenerateAccessToken
 
     -- ** iamcredentials.projects.serviceAccounts.generateIdToken
-    IAMCredentialsProjectsServiceAccountsGenerateIdTokenResource,
-    IAMCredentialsProjectsServiceAccountsGenerateIdToken (..),
-    newIAMCredentialsProjectsServiceAccountsGenerateIdToken,
+    , IAMCredentialsProjectsServiceAccountsGenerateIdTokenResource
+    , IAMCredentialsProjectsServiceAccountsGenerateIdToken (..)
+    , newIAMCredentialsProjectsServiceAccountsGenerateIdToken
 
     -- ** iamcredentials.projects.serviceAccounts.getAllowedLocations
-    IAMCredentialsProjectsServiceAccountsGetAllowedLocationsResource,
-    IAMCredentialsProjectsServiceAccountsGetAllowedLocations (..),
-    newIAMCredentialsProjectsServiceAccountsGetAllowedLocations,
+    , IAMCredentialsProjectsServiceAccountsGetAllowedLocationsResource
+    , IAMCredentialsProjectsServiceAccountsGetAllowedLocations (..)
+    , newIAMCredentialsProjectsServiceAccountsGetAllowedLocations
 
     -- ** iamcredentials.projects.serviceAccounts.signBlob
-    IAMCredentialsProjectsServiceAccountsSignBlobResource,
-    IAMCredentialsProjectsServiceAccountsSignBlob (..),
-    newIAMCredentialsProjectsServiceAccountsSignBlob,
+    , IAMCredentialsProjectsServiceAccountsSignBlobResource
+    , IAMCredentialsProjectsServiceAccountsSignBlob (..)
+    , newIAMCredentialsProjectsServiceAccountsSignBlob
 
     -- ** iamcredentials.projects.serviceAccounts.signJwt
-    IAMCredentialsProjectsServiceAccountsSignJwtResource,
-    IAMCredentialsProjectsServiceAccountsSignJwt (..),
-    newIAMCredentialsProjectsServiceAccountsSignJwt,
+    , IAMCredentialsProjectsServiceAccountsSignJwtResource
+    , IAMCredentialsProjectsServiceAccountsSignJwt (..)
+    , newIAMCredentialsProjectsServiceAccountsSignJwt
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** GenerateAccessTokenRequest
-    GenerateAccessTokenRequest (..),
-    newGenerateAccessTokenRequest,
+    , GenerateAccessTokenRequest (..)
+    , newGenerateAccessTokenRequest
 
     -- ** GenerateAccessTokenResponse
-    GenerateAccessTokenResponse (..),
-    newGenerateAccessTokenResponse,
+    , GenerateAccessTokenResponse (..)
+    , newGenerateAccessTokenResponse
 
     -- ** GenerateIdTokenRequest
-    GenerateIdTokenRequest (..),
-    newGenerateIdTokenRequest,
+    , GenerateIdTokenRequest (..)
+    , newGenerateIdTokenRequest
 
     -- ** GenerateIdTokenResponse
-    GenerateIdTokenResponse (..),
-    newGenerateIdTokenResponse,
+    , GenerateIdTokenResponse (..)
+    , newGenerateIdTokenResponse
 
     -- ** ServiceAccountAllowedLocations
-    ServiceAccountAllowedLocations (..),
-    newServiceAccountAllowedLocations,
+    , ServiceAccountAllowedLocations (..)
+    , newServiceAccountAllowedLocations
 
     -- ** SignBlobRequest
-    SignBlobRequest (..),
-    newSignBlobRequest,
+    , SignBlobRequest (..)
+    , newSignBlobRequest
 
     -- ** SignBlobResponse
-    SignBlobResponse (..),
-    newSignBlobResponse,
+    , SignBlobResponse (..)
+    , newSignBlobResponse
 
     -- ** SignJwtRequest
-    SignJwtRequest (..),
-    newSignJwtRequest,
+    , SignJwtRequest (..)
+    , newSignJwtRequest
 
     -- ** SignJwtResponse
-    SignJwtResponse (..),
-    newSignJwtResponse,
-  )
-where
+    , SignJwtResponse (..)
+    , newSignJwtResponse
 
+    -- ** WorkforcePoolAllowedLocations
+    , WorkforcePoolAllowedLocations (..)
+    , newWorkforcePoolAllowedLocations
+
+    -- ** WorkloadIdentityPoolAllowedLocations
+    , WorkloadIdentityPoolAllowedLocations (..)
+    , newWorkloadIdentityPoolAllowedLocations
+    ) where
+
+import Gogol.IAMCredentials.Locations.WorkforcePools.GetAllowedLocations
+import Gogol.IAMCredentials.Projects.Locations.WorkloadIdentityPools.GetAllowedLocations
 import Gogol.IAMCredentials.Projects.ServiceAccounts.GenerateAccessToken
 import Gogol.IAMCredentials.Projects.ServiceAccounts.GenerateIdToken
 import Gogol.IAMCredentials.Projects.ServiceAccounts.GetAllowedLocations

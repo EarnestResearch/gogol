@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,371 +24,371 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.PubSub.Types
-  ( -- * Configuration
-    pubSubService,
+    (
+    -- * Configuration
+      pubSubService
 
     -- * OAuth Scopes
-    CloudPlatform'FullControl,
-    Pubsub'FullControl,
+    , CloudPlatform'FullControl
+    , Pubsub'FullControl
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AcknowledgeRequest
-    AcknowledgeRequest (..),
-    newAcknowledgeRequest,
+    , AcknowledgeRequest (..)
+    , newAcknowledgeRequest
 
     -- ** AnalyticsHubSubscriptionInfo
-    AnalyticsHubSubscriptionInfo (..),
-    newAnalyticsHubSubscriptionInfo,
+    , AnalyticsHubSubscriptionInfo (..)
+    , newAnalyticsHubSubscriptionInfo
 
     -- ** AvroConfig
-    AvroConfig (..),
-    newAvroConfig,
+    , AvroConfig (..)
+    , newAvroConfig
 
     -- ** AvroFormat
-    AvroFormat (..),
-    newAvroFormat,
+    , AvroFormat (..)
+    , newAvroFormat
 
     -- ** AwsKinesis
-    AwsKinesis (..),
-    newAwsKinesis,
+    , AwsKinesis (..)
+    , newAwsKinesis
 
     -- ** AwsKinesis_State
-    AwsKinesis_State (..),
+    , AwsKinesis_State (..)
 
     -- ** AwsMsk
-    AwsMsk (..),
-    newAwsMsk,
+    , AwsMsk (..)
+    , newAwsMsk
 
     -- ** AwsMsk_State
-    AwsMsk_State (..),
+    , AwsMsk_State (..)
 
     -- ** AzureEventHubs
-    AzureEventHubs (..),
-    newAzureEventHubs,
+    , AzureEventHubs (..)
+    , newAzureEventHubs
 
     -- ** AzureEventHubs_State
-    AzureEventHubs_State (..),
+    , AzureEventHubs_State (..)
 
     -- ** BigQueryConfig
-    BigQueryConfig (..),
-    newBigQueryConfig,
+    , BigQueryConfig (..)
+    , newBigQueryConfig
 
     -- ** BigQueryConfig_State
-    BigQueryConfig_State (..),
+    , BigQueryConfig_State (..)
 
     -- ** Binding
-    Binding (..),
-    newBinding,
+    , Binding (..)
+    , newBinding
 
     -- ** CloudStorage
-    CloudStorage (..),
-    newCloudStorage,
+    , CloudStorage (..)
+    , newCloudStorage
 
     -- ** CloudStorage_State
-    CloudStorage_State (..),
+    , CloudStorage_State (..)
 
     -- ** CloudStorageConfig
-    CloudStorageConfig (..),
-    newCloudStorageConfig,
+    , CloudStorageConfig (..)
+    , newCloudStorageConfig
 
     -- ** CloudStorageConfig_State
-    CloudStorageConfig_State (..),
+    , CloudStorageConfig_State (..)
 
     -- ** CommitSchemaRequest
-    CommitSchemaRequest (..),
-    newCommitSchemaRequest,
+    , CommitSchemaRequest (..)
+    , newCommitSchemaRequest
 
     -- ** ConfluentCloud
-    ConfluentCloud (..),
-    newConfluentCloud,
+    , ConfluentCloud (..)
+    , newConfluentCloud
 
     -- ** ConfluentCloud_State
-    ConfluentCloud_State (..),
+    , ConfluentCloud_State (..)
 
     -- ** CreateSnapshotRequest
-    CreateSnapshotRequest (..),
-    newCreateSnapshotRequest,
+    , CreateSnapshotRequest (..)
+    , newCreateSnapshotRequest
 
     -- ** CreateSnapshotRequest_Labels
-    CreateSnapshotRequest_Labels (..),
-    newCreateSnapshotRequest_Labels,
+    , CreateSnapshotRequest_Labels (..)
+    , newCreateSnapshotRequest_Labels
 
     -- ** DeadLetterPolicy
-    DeadLetterPolicy (..),
-    newDeadLetterPolicy,
+    , DeadLetterPolicy (..)
+    , newDeadLetterPolicy
 
     -- ** DetachSubscriptionResponse
-    DetachSubscriptionResponse (..),
-    newDetachSubscriptionResponse,
+    , DetachSubscriptionResponse (..)
+    , newDetachSubscriptionResponse
 
     -- ** Empty
-    Empty (..),
-    newEmpty,
+    , Empty (..)
+    , newEmpty
 
     -- ** ExpirationPolicy
-    ExpirationPolicy (..),
-    newExpirationPolicy,
+    , ExpirationPolicy (..)
+    , newExpirationPolicy
 
     -- ** Expr
-    Expr (..),
-    newExpr,
+    , Expr (..)
+    , newExpr
 
     -- ** IngestionDataSourceSettings
-    IngestionDataSourceSettings (..),
-    newIngestionDataSourceSettings,
+    , IngestionDataSourceSettings (..)
+    , newIngestionDataSourceSettings
 
     -- ** JavaScriptUDF
-    JavaScriptUDF (..),
-    newJavaScriptUDF,
+    , JavaScriptUDF (..)
+    , newJavaScriptUDF
 
     -- ** ListSchemaRevisionsResponse
-    ListSchemaRevisionsResponse (..),
-    newListSchemaRevisionsResponse,
+    , ListSchemaRevisionsResponse (..)
+    , newListSchemaRevisionsResponse
 
     -- ** ListSchemasResponse
-    ListSchemasResponse (..),
-    newListSchemasResponse,
+    , ListSchemasResponse (..)
+    , newListSchemasResponse
 
     -- ** ListSnapshotsResponse
-    ListSnapshotsResponse (..),
-    newListSnapshotsResponse,
+    , ListSnapshotsResponse (..)
+    , newListSnapshotsResponse
 
     -- ** ListSubscriptionsResponse
-    ListSubscriptionsResponse (..),
-    newListSubscriptionsResponse,
+    , ListSubscriptionsResponse (..)
+    , newListSubscriptionsResponse
 
     -- ** ListTopicSnapshotsResponse
-    ListTopicSnapshotsResponse (..),
-    newListTopicSnapshotsResponse,
+    , ListTopicSnapshotsResponse (..)
+    , newListTopicSnapshotsResponse
 
     -- ** ListTopicSubscriptionsResponse
-    ListTopicSubscriptionsResponse (..),
-    newListTopicSubscriptionsResponse,
+    , ListTopicSubscriptionsResponse (..)
+    , newListTopicSubscriptionsResponse
 
     -- ** ListTopicsResponse
-    ListTopicsResponse (..),
-    newListTopicsResponse,
+    , ListTopicsResponse (..)
+    , newListTopicsResponse
 
     -- ** MessageStoragePolicy
-    MessageStoragePolicy (..),
-    newMessageStoragePolicy,
+    , MessageStoragePolicy (..)
+    , newMessageStoragePolicy
 
     -- ** MessageTransform
-    MessageTransform (..),
-    newMessageTransform,
+    , MessageTransform (..)
+    , newMessageTransform
 
     -- ** ModifyAckDeadlineRequest
-    ModifyAckDeadlineRequest (..),
-    newModifyAckDeadlineRequest,
+    , ModifyAckDeadlineRequest (..)
+    , newModifyAckDeadlineRequest
 
     -- ** ModifyPushConfigRequest
-    ModifyPushConfigRequest (..),
-    newModifyPushConfigRequest,
+    , ModifyPushConfigRequest (..)
+    , newModifyPushConfigRequest
 
     -- ** NoWrapper
-    NoWrapper (..),
-    newNoWrapper,
+    , NoWrapper (..)
+    , newNoWrapper
 
     -- ** OidcToken
-    OidcToken (..),
-    newOidcToken,
+    , OidcToken (..)
+    , newOidcToken
 
     -- ** PlatformLogsSettings
-    PlatformLogsSettings (..),
-    newPlatformLogsSettings,
+    , PlatformLogsSettings (..)
+    , newPlatformLogsSettings
 
     -- ** PlatformLogsSettings_Severity
-    PlatformLogsSettings_Severity (..),
+    , PlatformLogsSettings_Severity (..)
 
     -- ** Policy
-    Policy (..),
-    newPolicy,
+    , Policy (..)
+    , newPolicy
 
     -- ** PubSubAvroFormat
-    PubSubAvroFormat (..),
-    newPubSubAvroFormat,
+    , PubSubAvroFormat (..)
+    , newPubSubAvroFormat
 
     -- ** PublishRequest
-    PublishRequest (..),
-    newPublishRequest,
+    , PublishRequest (..)
+    , newPublishRequest
 
     -- ** PublishResponse
-    PublishResponse (..),
-    newPublishResponse,
+    , PublishResponse (..)
+    , newPublishResponse
 
     -- ** PubsubMessage
-    PubsubMessage (..),
-    newPubsubMessage,
+    , PubsubMessage (..)
+    , newPubsubMessage
 
     -- ** PubsubMessage_Attributes
-    PubsubMessage_Attributes (..),
-    newPubsubMessage_Attributes,
+    , PubsubMessage_Attributes (..)
+    , newPubsubMessage_Attributes
 
     -- ** PubsubWrapper
-    PubsubWrapper (..),
-    newPubsubWrapper,
+    , PubsubWrapper (..)
+    , newPubsubWrapper
 
     -- ** PullRequest
-    PullRequest (..),
-    newPullRequest,
+    , PullRequest (..)
+    , newPullRequest
 
     -- ** PullResponse
-    PullResponse (..),
-    newPullResponse,
+    , PullResponse (..)
+    , newPullResponse
 
     -- ** PushConfig
-    PushConfig (..),
-    newPushConfig,
+    , PushConfig (..)
+    , newPushConfig
 
     -- ** PushConfig_Attributes
-    PushConfig_Attributes (..),
-    newPushConfig_Attributes,
+    , PushConfig_Attributes (..)
+    , newPushConfig_Attributes
 
     -- ** ReceivedMessage
-    ReceivedMessage (..),
-    newReceivedMessage,
+    , ReceivedMessage (..)
+    , newReceivedMessage
 
     -- ** RetryPolicy
-    RetryPolicy (..),
-    newRetryPolicy,
+    , RetryPolicy (..)
+    , newRetryPolicy
 
     -- ** RollbackSchemaRequest
-    RollbackSchemaRequest (..),
-    newRollbackSchemaRequest,
+    , RollbackSchemaRequest (..)
+    , newRollbackSchemaRequest
 
     -- ** Schema
-    Schema (..),
-    newSchema,
+    , Schema (..)
+    , newSchema
 
     -- ** Schema_Type
-    Schema_Type (..),
+    , Schema_Type (..)
 
     -- ** SchemaSettings
-    SchemaSettings (..),
-    newSchemaSettings,
+    , SchemaSettings (..)
+    , newSchemaSettings
 
     -- ** SchemaSettings_Encoding
-    SchemaSettings_Encoding (..),
+    , SchemaSettings_Encoding (..)
 
     -- ** SeekRequest
-    SeekRequest (..),
-    newSeekRequest,
+    , SeekRequest (..)
+    , newSeekRequest
 
     -- ** SeekResponse
-    SeekResponse (..),
-    newSeekResponse,
+    , SeekResponse (..)
+    , newSeekResponse
 
     -- ** SetIamPolicyRequest
-    SetIamPolicyRequest (..),
-    newSetIamPolicyRequest,
+    , SetIamPolicyRequest (..)
+    , newSetIamPolicyRequest
 
     -- ** Snapshot
-    Snapshot (..),
-    newSnapshot,
+    , Snapshot (..)
+    , newSnapshot
 
     -- ** Snapshot_Labels
-    Snapshot_Labels (..),
-    newSnapshot_Labels,
+    , Snapshot_Labels (..)
+    , newSnapshot_Labels
 
     -- ** Subscription
-    Subscription (..),
-    newSubscription,
+    , Subscription (..)
+    , newSubscription
 
     -- ** Subscription_Labels
-    Subscription_Labels (..),
-    newSubscription_Labels,
+    , Subscription_Labels (..)
+    , newSubscription_Labels
 
     -- ** Subscription_State
-    Subscription_State (..),
+    , Subscription_State (..)
 
     -- ** TestIamPermissionsRequest
-    TestIamPermissionsRequest (..),
-    newTestIamPermissionsRequest,
+    , TestIamPermissionsRequest (..)
+    , newTestIamPermissionsRequest
 
     -- ** TestIamPermissionsResponse
-    TestIamPermissionsResponse (..),
-    newTestIamPermissionsResponse,
+    , TestIamPermissionsResponse (..)
+    , newTestIamPermissionsResponse
 
     -- ** TextConfig
-    TextConfig (..),
-    newTextConfig,
+    , TextConfig (..)
+    , newTextConfig
 
     -- ** TextFormat
-    TextFormat (..),
-    newTextFormat,
+    , TextFormat (..)
+    , newTextFormat
 
     -- ** Topic
-    Topic (..),
-    newTopic,
+    , Topic (..)
+    , newTopic
 
     -- ** Topic_Labels
-    Topic_Labels (..),
-    newTopic_Labels,
+    , Topic_Labels (..)
+    , newTopic_Labels
 
     -- ** Topic_State
-    Topic_State (..),
+    , Topic_State (..)
 
     -- ** UpdateSnapshotRequest
-    UpdateSnapshotRequest (..),
-    newUpdateSnapshotRequest,
+    , UpdateSnapshotRequest (..)
+    , newUpdateSnapshotRequest
 
     -- ** UpdateSubscriptionRequest
-    UpdateSubscriptionRequest (..),
-    newUpdateSubscriptionRequest,
+    , UpdateSubscriptionRequest (..)
+    , newUpdateSubscriptionRequest
 
     -- ** UpdateTopicRequest
-    UpdateTopicRequest (..),
-    newUpdateTopicRequest,
+    , UpdateTopicRequest (..)
+    , newUpdateTopicRequest
 
     -- ** ValidateMessageRequest
-    ValidateMessageRequest (..),
-    newValidateMessageRequest,
+    , ValidateMessageRequest (..)
+    , newValidateMessageRequest
 
     -- ** ValidateMessageRequest_Encoding
-    ValidateMessageRequest_Encoding (..),
+    , ValidateMessageRequest_Encoding (..)
 
     -- ** ValidateMessageResponse
-    ValidateMessageResponse (..),
-    newValidateMessageResponse,
+    , ValidateMessageResponse (..)
+    , newValidateMessageResponse
 
     -- ** ValidateSchemaRequest
-    ValidateSchemaRequest (..),
-    newValidateSchemaRequest,
+    , ValidateSchemaRequest (..)
+    , newValidateSchemaRequest
 
     -- ** ValidateSchemaResponse
-    ValidateSchemaResponse (..),
-    newValidateSchemaResponse,
+    , ValidateSchemaResponse (..)
+    , newValidateSchemaResponse
 
     -- ** ProjectsSchemasGetView
-    ProjectsSchemasGetView (..),
+    , ProjectsSchemasGetView (..)
 
     -- ** ProjectsSchemasListView
-    ProjectsSchemasListView (..),
+    , ProjectsSchemasListView (..)
 
     -- ** ProjectsSchemasListRevisionsView
-    ProjectsSchemasListRevisionsView (..),
-  )
-where
+    , ProjectsSchemasListRevisionsView (..)
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.PubSub.Internal.Product
 import Gogol.PubSub.Internal.Sum
 
 -- | Default request referring to version @v1@ of the Cloud Pub/Sub API. This contains the host and root path used as a starting point for constructing service requests.
 pubSubService :: Core.ServiceConfig
-pubSubService =
-  Core.defaultService
-    (Core.ServiceId "pubsub:v1")
-    "pubsub.googleapis.com"
+pubSubService
+  = Core.defaultService (Core.ServiceId "pubsub:v1")
+      "pubsub.googleapis.com"
 
 -- | See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
 type CloudPlatform'FullControl =
-  "https://www.googleapis.com/auth/cloud-platform"
+     "https://www.googleapis.com/auth/cloud-platform"
 
 -- | View and manage Pub\/Sub topics and subscriptions
 type Pubsub'FullControl = "https://www.googleapis.com/auth/pubsub"

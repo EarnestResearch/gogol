@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,94 +29,82 @@
 --
 -- /See:/ <https://cloud.google.com/recaptcha-enterprise/ reCAPTCHA Enterprise API Reference> for @recaptchaenterprise.projects.keys.retrieveLegacySecretKey@.
 module Gogol.ReCaptchaEnterprise.Projects.Keys.RetrieveLegacySecretKey
-  ( -- * Resource
-    ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource,
+    (
+    -- * Resource
+      ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource
 
     -- ** Constructing a Request
-    ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey (..),
-    newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey,
-  )
-where
+    , ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey (..)
+    , newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.ReCaptchaEnterprise.Types
 
 -- | A resource alias for @recaptchaenterprise.projects.keys.retrieveLegacySecretKey@ method which the
 -- 'ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey' request conforms to.
-type ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource =
-  "v1"
-    Core.:> Core.CaptureMode "key" "retrieveLegacySecretKey" Core.Text
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get
-              '[Core.JSON]
-              GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
+type ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource
+     =
+     "v1" Core.:>
+       Core.CaptureMode "key" "retrieveLegacySecretKey" Core.Text Core.:>
+         Core.QueryParam "$.xgafv" Xgafv Core.:>
+           Core.QueryParam "access_token" Core.Text Core.:>
+             Core.QueryParam "callback" Core.Text Core.:>
+               Core.QueryParam "uploadType" Core.Text Core.:>
+                 Core.QueryParam "upload_protocol" Core.Text Core.:>
+                   Core.QueryParam "alt" Core.AltJSON Core.:>
+                     Core.Get '[Core.JSON]
+                       GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
 
 -- | Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.
 --
 -- /See:/ 'newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey' smart constructor.
 data ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey = ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Required. The public key name linked to the requested secret key in the format @projects\/{project}\/keys\/{key}@.
-    key :: Core.Text,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Required. The public key name linked to the requested secret key in the format @projects\/{project}\/keys\/{key}@.
+    , key :: Core.Text
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey' with the minimum fields required to make a request.
-newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey ::
-  -- |  Required. The public key name linked to the requested secret key in the format @projects\/{project}\/keys\/{key}@. See 'key'.
-  Core.Text ->
-  ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
-newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey key =
-  ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
-    { xgafv =
-        Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      key = key,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
+newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey 
+    :: 
+                                                          Core.Text
+       -- ^  Required. The public key name linked to the requested secret key in the format @projects\/{project}\/keys\/{key}@. See 'key'.
+    -> ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
+newReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey key
+  = ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey{xgafv =
+                                                             Core.Nothing,
+                                                           accessToken = Core.Nothing,
+                                                           callback = Core.Nothing, key = key,
+                                                           uploadType = Core.Nothing,
+                                                           uploadProtocol = Core.Nothing}
+instance Core.GoogleRequest
+           ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
+         where
+        type Rs ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey =
+             GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
+        type Scopes ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
+             = '[CloudPlatform'FullControl]
+        requestClient
+          ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey{..}
+          = go key xgafv accessToken callback uploadType uploadProtocol
+              (Core.Just Core.AltJSON)
+              reCaptchaEnterpriseService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy
+                           ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource)
+                      Core.mempty
 
-instance
-  Core.GoogleRequest
-    ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey
-  where
-  type
-    Rs ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey =
-      GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
-  type
-    Scopes ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey =
-      '[CloudPlatform'FullControl]
-  requestClient
-    ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKey {..} =
-      go
-        key
-        xgafv
-        accessToken
-        callback
-        uploadType
-        uploadProtocol
-        (Core.Just Core.AltJSON)
-        reCaptchaEnterpriseService
-      where
-        go =
-          Core.buildClient
-            ( Core.Proxy ::
-                Core.Proxy
-                  ReCaptchaEnterpriseProjectsKeysRetrieveLegacySecretKeyResource
-            )
-            Core.mempty

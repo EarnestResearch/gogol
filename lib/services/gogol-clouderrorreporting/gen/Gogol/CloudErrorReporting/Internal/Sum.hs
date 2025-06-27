@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.CloudErrorReporting.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * ErrorGroup_ResolutionStatus
     ErrorGroup_ResolutionStatus
-      ( ErrorGroup_ResolutionStatus_RESOLUTIONSTATUSUNSPECIFIED,
+      (
+        ErrorGroup_ResolutionStatus_RESOLUTIONSTATUSUNSPECIFIED,
         ErrorGroup_ResolutionStatus_Open,
         ErrorGroup_ResolutionStatus_Acknowledged,
         ErrorGroup_ResolutionStatus_Resolved,
@@ -43,7 +49,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsEventsListTimeRangePeriod
     ProjectsEventsListTimeRangePeriod
-      ( ProjectsEventsListTimeRangePeriod_PERIODUNSPECIFIED,
+      (
+        ProjectsEventsListTimeRangePeriod_PERIODUNSPECIFIED,
         ProjectsEventsListTimeRangePeriod_PERIOD1HOUR,
         ProjectsEventsListTimeRangePeriod_PERIOD6HOURS,
         ProjectsEventsListTimeRangePeriod_PERIOD1DAY,
@@ -54,7 +61,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsGroupStatsListAlignment
     ProjectsGroupStatsListAlignment
-      ( ProjectsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
+      (
+        ProjectsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
         ProjectsGroupStatsListAlignment_ALIGNMENTEQUALROUNDED,
         ProjectsGroupStatsListAlignment_ALIGNMENTEQUALATEND,
         ..
@@ -62,7 +70,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsGroupStatsListOrder
     ProjectsGroupStatsListOrder
-      ( ProjectsGroupStatsListOrder_GROUPORDERUNSPECIFIED,
+      (
+        ProjectsGroupStatsListOrder_GROUPORDERUNSPECIFIED,
         ProjectsGroupStatsListOrder_COUNTDESC,
         ProjectsGroupStatsListOrder_LASTSEENDESC,
         ProjectsGroupStatsListOrder_CREATEDDESC,
@@ -72,7 +81,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsGroupStatsListTimeRangePeriod
     ProjectsGroupStatsListTimeRangePeriod
-      ( ProjectsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED,
+      (
+        ProjectsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED,
         ProjectsGroupStatsListTimeRangePeriod_PERIOD1HOUR,
         ProjectsGroupStatsListTimeRangePeriod_PERIOD6HOURS,
         ProjectsGroupStatsListTimeRangePeriod_PERIOD1DAY,
@@ -83,7 +93,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsLocationsEventsListTimeRangePeriod
     ProjectsLocationsEventsListTimeRangePeriod
-      ( ProjectsLocationsEventsListTimeRangePeriod_PERIODUNSPECIFIED,
+      (
+        ProjectsLocationsEventsListTimeRangePeriod_PERIODUNSPECIFIED,
         ProjectsLocationsEventsListTimeRangePeriod_PERIOD1HOUR,
         ProjectsLocationsEventsListTimeRangePeriod_PERIOD6HOURS,
         ProjectsLocationsEventsListTimeRangePeriod_PERIOD1DAY,
@@ -94,7 +105,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsLocationsGroupStatsListAlignment
     ProjectsLocationsGroupStatsListAlignment
-      ( ProjectsLocationsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
+      (
+        ProjectsLocationsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
         ProjectsLocationsGroupStatsListAlignment_ALIGNMENTEQUALROUNDED,
         ProjectsLocationsGroupStatsListAlignment_ALIGNMENTEQUALATEND,
         ..
@@ -102,7 +114,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsLocationsGroupStatsListOrder
     ProjectsLocationsGroupStatsListOrder
-      ( ProjectsLocationsGroupStatsListOrder_GROUPORDERUNSPECIFIED,
+      (
+        ProjectsLocationsGroupStatsListOrder_GROUPORDERUNSPECIFIED,
         ProjectsLocationsGroupStatsListOrder_COUNTDESC,
         ProjectsLocationsGroupStatsListOrder_LASTSEENDESC,
         ProjectsLocationsGroupStatsListOrder_CREATEDDESC,
@@ -112,7 +125,8 @@ module Gogol.CloudErrorReporting.Internal.Sum
 
     -- * ProjectsLocationsGroupStatsListTimeRangePeriod
     ProjectsLocationsGroupStatsListTimeRangePeriod
-      ( ProjectsLocationsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED,
+      (
+        ProjectsLocationsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED,
         ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD1HOUR,
         ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD6HOURS,
         ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD1DAY,
@@ -120,23 +134,22 @@ module Gogol.CloudErrorReporting.Internal.Sum
         ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD30DAYS,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -149,21 +162,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Error group\'s resolution status. An unspecified resolution status will be interpreted as OPEN
-newtype ErrorGroup_ResolutionStatus = ErrorGroup_ResolutionStatus {fromErrorGroup_ResolutionStatus :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ErrorGroup_ResolutionStatus = ErrorGroup_ResolutionStatus { fromErrorGroup_ResolutionStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Status is unknown. When left unspecified in requests, it is treated like OPEN.
 pattern ErrorGroup_ResolutionStatus_RESOLUTIONSTATUSUNSPECIFIED :: ErrorGroup_ResolutionStatus
@@ -191,21 +203,20 @@ pattern ErrorGroup_ResolutionStatus_Muted = ErrorGroup_ResolutionStatus "MUTED"
   ErrorGroup_ResolutionStatus_Acknowledged,
   ErrorGroup_ResolutionStatus_Resolved,
   ErrorGroup_ResolutionStatus_Muted,
-  ErrorGroup_ResolutionStatus
-  #-}
+  ErrorGroup_ResolutionStatus #-}
 
 -- | Restricts the query to the specified time range.
-newtype ProjectsEventsListTimeRangePeriod = ProjectsEventsListTimeRangePeriod {fromProjectsEventsListTimeRangePeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsEventsListTimeRangePeriod = ProjectsEventsListTimeRangePeriod { fromProjectsEventsListTimeRangePeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use.
 pattern ProjectsEventsListTimeRangePeriod_PERIODUNSPECIFIED :: ProjectsEventsListTimeRangePeriod
@@ -238,21 +249,20 @@ pattern ProjectsEventsListTimeRangePeriod_PERIOD30DAYS = ProjectsEventsListTimeR
   ProjectsEventsListTimeRangePeriod_PERIOD1DAY,
   ProjectsEventsListTimeRangePeriod_PERIOD1WEEK,
   ProjectsEventsListTimeRangePeriod_PERIOD30DAYS,
-  ProjectsEventsListTimeRangePeriod
-  #-}
+  ProjectsEventsListTimeRangePeriod #-}
 
 -- | Optional. The alignment of the timed counts to be returned. Default is @ALIGNMENT_EQUAL_AT_END@.
-newtype ProjectsGroupStatsListAlignment = ProjectsGroupStatsListAlignment {fromProjectsGroupStatsListAlignment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsGroupStatsListAlignment = ProjectsGroupStatsListAlignment { fromProjectsGroupStatsListAlignment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No alignment specified.
 pattern ProjectsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED :: ProjectsGroupStatsListAlignment
@@ -270,21 +280,20 @@ pattern ProjectsGroupStatsListAlignment_ALIGNMENTEQUALATEND = ProjectsGroupStats
   ProjectsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
   ProjectsGroupStatsListAlignment_ALIGNMENTEQUALROUNDED,
   ProjectsGroupStatsListAlignment_ALIGNMENTEQUALATEND,
-  ProjectsGroupStatsListAlignment
-  #-}
+  ProjectsGroupStatsListAlignment #-}
 
 -- | Optional. The sort order in which the results are returned. Default is @COUNT_DESC@.
-newtype ProjectsGroupStatsListOrder = ProjectsGroupStatsListOrder {fromProjectsGroupStatsListOrder :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsGroupStatsListOrder = ProjectsGroupStatsListOrder { fromProjectsGroupStatsListOrder :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No group order specified.
 pattern ProjectsGroupStatsListOrder_GROUPORDERUNSPECIFIED :: ProjectsGroupStatsListOrder
@@ -312,21 +321,20 @@ pattern ProjectsGroupStatsListOrder_AFFECTEDUSERSDESC = ProjectsGroupStatsListOr
   ProjectsGroupStatsListOrder_LASTSEENDESC,
   ProjectsGroupStatsListOrder_CREATEDDESC,
   ProjectsGroupStatsListOrder_AFFECTEDUSERSDESC,
-  ProjectsGroupStatsListOrder
-  #-}
+  ProjectsGroupStatsListOrder #-}
 
 -- | Restricts the query to the specified time range.
-newtype ProjectsGroupStatsListTimeRangePeriod = ProjectsGroupStatsListTimeRangePeriod {fromProjectsGroupStatsListTimeRangePeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsGroupStatsListTimeRangePeriod = ProjectsGroupStatsListTimeRangePeriod { fromProjectsGroupStatsListTimeRangePeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use.
 pattern ProjectsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED :: ProjectsGroupStatsListTimeRangePeriod
@@ -359,21 +367,20 @@ pattern ProjectsGroupStatsListTimeRangePeriod_PERIOD30DAYS = ProjectsGroupStatsL
   ProjectsGroupStatsListTimeRangePeriod_PERIOD1DAY,
   ProjectsGroupStatsListTimeRangePeriod_PERIOD1WEEK,
   ProjectsGroupStatsListTimeRangePeriod_PERIOD30DAYS,
-  ProjectsGroupStatsListTimeRangePeriod
-  #-}
+  ProjectsGroupStatsListTimeRangePeriod #-}
 
 -- | Restricts the query to the specified time range.
-newtype ProjectsLocationsEventsListTimeRangePeriod = ProjectsLocationsEventsListTimeRangePeriod {fromProjectsLocationsEventsListTimeRangePeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsEventsListTimeRangePeriod = ProjectsLocationsEventsListTimeRangePeriod { fromProjectsLocationsEventsListTimeRangePeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use.
 pattern ProjectsLocationsEventsListTimeRangePeriod_PERIODUNSPECIFIED :: ProjectsLocationsEventsListTimeRangePeriod
@@ -406,21 +413,20 @@ pattern ProjectsLocationsEventsListTimeRangePeriod_PERIOD30DAYS = ProjectsLocati
   ProjectsLocationsEventsListTimeRangePeriod_PERIOD1DAY,
   ProjectsLocationsEventsListTimeRangePeriod_PERIOD1WEEK,
   ProjectsLocationsEventsListTimeRangePeriod_PERIOD30DAYS,
-  ProjectsLocationsEventsListTimeRangePeriod
-  #-}
+  ProjectsLocationsEventsListTimeRangePeriod #-}
 
 -- | Optional. The alignment of the timed counts to be returned. Default is @ALIGNMENT_EQUAL_AT_END@.
-newtype ProjectsLocationsGroupStatsListAlignment = ProjectsLocationsGroupStatsListAlignment {fromProjectsLocationsGroupStatsListAlignment :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsGroupStatsListAlignment = ProjectsLocationsGroupStatsListAlignment { fromProjectsLocationsGroupStatsListAlignment :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No alignment specified.
 pattern ProjectsLocationsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED :: ProjectsLocationsGroupStatsListAlignment
@@ -438,21 +444,20 @@ pattern ProjectsLocationsGroupStatsListAlignment_ALIGNMENTEQUALATEND = ProjectsL
   ProjectsLocationsGroupStatsListAlignment_ERRORCOUNTALIGNMENTUNSPECIFIED,
   ProjectsLocationsGroupStatsListAlignment_ALIGNMENTEQUALROUNDED,
   ProjectsLocationsGroupStatsListAlignment_ALIGNMENTEQUALATEND,
-  ProjectsLocationsGroupStatsListAlignment
-  #-}
+  ProjectsLocationsGroupStatsListAlignment #-}
 
 -- | Optional. The sort order in which the results are returned. Default is @COUNT_DESC@.
-newtype ProjectsLocationsGroupStatsListOrder = ProjectsLocationsGroupStatsListOrder {fromProjectsLocationsGroupStatsListOrder :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsGroupStatsListOrder = ProjectsLocationsGroupStatsListOrder { fromProjectsLocationsGroupStatsListOrder :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No group order specified.
 pattern ProjectsLocationsGroupStatsListOrder_GROUPORDERUNSPECIFIED :: ProjectsLocationsGroupStatsListOrder
@@ -480,21 +485,20 @@ pattern ProjectsLocationsGroupStatsListOrder_AFFECTEDUSERSDESC = ProjectsLocatio
   ProjectsLocationsGroupStatsListOrder_LASTSEENDESC,
   ProjectsLocationsGroupStatsListOrder_CREATEDDESC,
   ProjectsLocationsGroupStatsListOrder_AFFECTEDUSERSDESC,
-  ProjectsLocationsGroupStatsListOrder
-  #-}
+  ProjectsLocationsGroupStatsListOrder #-}
 
 -- | Restricts the query to the specified time range.
-newtype ProjectsLocationsGroupStatsListTimeRangePeriod = ProjectsLocationsGroupStatsListTimeRangePeriod {fromProjectsLocationsGroupStatsListTimeRangePeriod :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsLocationsGroupStatsListTimeRangePeriod = ProjectsLocationsGroupStatsListTimeRangePeriod { fromProjectsLocationsGroupStatsListTimeRangePeriod :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Do not use.
 pattern ProjectsLocationsGroupStatsListTimeRangePeriod_PERIODUNSPECIFIED :: ProjectsLocationsGroupStatsListTimeRangePeriod
@@ -527,5 +531,4 @@ pattern ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD30DAYS = ProjectsLo
   ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD1DAY,
   ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD1WEEK,
   ProjectsLocationsGroupStatsListTimeRangePeriod_PERIOD30DAYS,
-  ProjectsLocationsGroupStatsListTimeRangePeriod
-  #-}
+  ProjectsLocationsGroupStatsListTimeRangePeriod #-}

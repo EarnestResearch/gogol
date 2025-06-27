@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,102 +29,90 @@
 --
 -- /See:/ <https://console.cloud.google.com/apis/api/securitycenter.googleapis.com/overview Security Command Center API Reference> for @securitycenter.organizations.sources.findings.patch@.
 module Gogol.SecurityCenter.Organizations.Sources.Findings.Patch
-  ( -- * Resource
-    SecurityCenterOrganizationsSourcesFindingsPatchResource,
+    (
+    -- * Resource
+      SecurityCenterOrganizationsSourcesFindingsPatchResource
 
     -- ** Constructing a Request
-    SecurityCenterOrganizationsSourcesFindingsPatch (..),
-    newSecurityCenterOrganizationsSourcesFindingsPatch,
-  )
-where
+    , SecurityCenterOrganizationsSourcesFindingsPatch (..)
+    , newSecurityCenterOrganizationsSourcesFindingsPatch
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.SecurityCenter.Types
 
 -- | A resource alias for @securitycenter.organizations.sources.findings.patch@ method which the
 -- 'SecurityCenterOrganizationsSourcesFindingsPatch' request conforms to.
 type SecurityCenterOrganizationsSourcesFindingsPatchResource =
-  "v1p1beta1"
-    Core.:> Core.Capture "name" Core.Text
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "updateMask" Core.FieldMask
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.ReqBody '[Core.JSON] GoogleCloudSecuritycenterV1p1beta1Finding
-    Core.:> Core.Patch '[Core.JSON] GoogleCloudSecuritycenterV1p1beta1Finding
+     "v1p1beta1" Core.:>
+       Core.Capture "name" Core.Text Core.:>
+         Core.QueryParam "$.xgafv" Xgafv Core.:>
+           Core.QueryParam "access_token" Core.Text Core.:>
+             Core.QueryParam "callback" Core.Text Core.:>
+               Core.QueryParam "updateMask" Core.FieldMask Core.:>
+                 Core.QueryParam "uploadType" Core.Text Core.:>
+                   Core.QueryParam "upload_protocol" Core.Text Core.:>
+                     Core.QueryParam "alt" Core.AltJSON Core.:>
+                       Core.ReqBody '[Core.JSON] GoogleCloudSecuritycenterV1p1beta1Finding
+                         Core.:>
+                         Core.Patch '[Core.JSON] GoogleCloudSecuritycenterV1p1beta1Finding
 
 -- | Creates or updates a finding. The corresponding source must exist for a finding creation to succeed.
 --
 -- /See:/ 'newSecurityCenterOrganizationsSourcesFindingsPatch' smart constructor.
 data SecurityCenterOrganizationsSourcesFindingsPatch = SecurityCenterOrganizationsSourcesFindingsPatch
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | The relative resource name of this finding. See: https:\/\/cloud.google.com\/apis\/design\/resource/names#relative/resource/name Example: \"organizations\/{organization/id}\/sources\/{source/id}\/findings\/{finding/id}\"
-    name :: Core.Text,
-    -- | Multipart request metadata.
-    payload :: GoogleCloudSecuritycenterV1p1beta1Finding,
-    -- | The FieldMask to use when updating the finding resource. This field should not be specified when creating a finding. When updating a finding, an empty mask is treated as updating all mutable fields and replacing source/properties. Individual source/properties can be added\/updated by using \"source_properties.\" in the field mask.
-    updateMask :: (Core.Maybe Core.FieldMask),
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | The relative resource name of this finding. See: https:\/\/cloud.google.com\/apis\/design\/resource/names#relative/resource/name Example: \"organizations\/{organization/id}\/sources\/{source/id}\/findings\/{finding/id}\"
+    , name :: Core.Text
+      -- | Multipart request metadata.
+    , payload :: GoogleCloudSecuritycenterV1p1beta1Finding
+      -- | The FieldMask to use when updating the finding resource. This field should not be specified when creating a finding. When updating a finding, an empty mask is treated as updating all mutable fields and replacing source/properties. Individual source/properties can be added\/updated by using \"source_properties.\" in the field mask.
+    , updateMask :: (Core.Maybe Core.FieldMask)
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'SecurityCenterOrganizationsSourcesFindingsPatch' with the minimum fields required to make a request.
-newSecurityCenterOrganizationsSourcesFindingsPatch ::
-  -- |  The relative resource name of this finding. See: https:\/\/cloud.google.com\/apis\/design\/resource/names#relative/resource/name Example: \"organizations\/{organization/id}\/sources\/{source/id}\/findings\/{finding/id}\" See 'name'.
-  Core.Text ->
-  -- |  Multipart request metadata. See 'payload'.
-  GoogleCloudSecuritycenterV1p1beta1Finding ->
-  SecurityCenterOrganizationsSourcesFindingsPatch
-newSecurityCenterOrganizationsSourcesFindingsPatch name payload =
-  SecurityCenterOrganizationsSourcesFindingsPatch
-    { xgafv =
-        Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      name = name,
-      payload = payload,
-      updateMask = Core.Nothing,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
+newSecurityCenterOrganizationsSourcesFindingsPatch 
+    :: 
+                                                   Core.Text
+       -- ^  The relative resource name of this finding. See: https:\/\/cloud.google.com\/apis\/design\/resource/names#relative/resource/name Example: \"organizations\/{organization/id}\/sources\/{source/id}\/findings\/{finding/id}\" See 'name'.
+    -> GoogleCloudSecuritycenterV1p1beta1Finding
+       -- ^  Multipart request metadata. See 'payload'.
+    -> SecurityCenterOrganizationsSourcesFindingsPatch
+newSecurityCenterOrganizationsSourcesFindingsPatch name payload
+  = SecurityCenterOrganizationsSourcesFindingsPatch{xgafv =
+                                                      Core.Nothing,
+                                                    accessToken = Core.Nothing,
+                                                    callback = Core.Nothing, name = name,
+                                                    payload = payload, updateMask = Core.Nothing,
+                                                    uploadType = Core.Nothing,
+                                                    uploadProtocol = Core.Nothing}
+instance Core.GoogleRequest
+           SecurityCenterOrganizationsSourcesFindingsPatch
+         where
+        type Rs SecurityCenterOrganizationsSourcesFindingsPatch =
+             GoogleCloudSecuritycenterV1p1beta1Finding
+        type Scopes SecurityCenterOrganizationsSourcesFindingsPatch =
+             '[CloudPlatform'FullControl]
+        requestClient SecurityCenterOrganizationsSourcesFindingsPatch{..}
+          = go name xgafv accessToken callback updateMask uploadType
+              uploadProtocol
+              (Core.Just Core.AltJSON)
+              payload
+              securityCenterService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy SecurityCenterOrganizationsSourcesFindingsPatchResource)
+                      Core.mempty
 
-instance
-  Core.GoogleRequest
-    SecurityCenterOrganizationsSourcesFindingsPatch
-  where
-  type
-    Rs SecurityCenterOrganizationsSourcesFindingsPatch =
-      GoogleCloudSecuritycenterV1p1beta1Finding
-  type
-    Scopes SecurityCenterOrganizationsSourcesFindingsPatch =
-      '[CloudPlatform'FullControl]
-  requestClient SecurityCenterOrganizationsSourcesFindingsPatch {..} =
-    go
-      name
-      xgafv
-      accessToken
-      callback
-      updateMask
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      payload
-      securityCenterService
-    where
-      go =
-        Core.buildClient
-          ( Core.Proxy ::
-              Core.Proxy SecurityCenterOrganizationsSourcesFindingsPatchResource
-          )
-          Core.mempty

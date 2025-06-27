@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.ServiceControl.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AuthorizationInfo_PermissionType
     AuthorizationInfo_PermissionType
-      ( AuthorizationInfo_PermissionType_PERMISSIONTYPEUNSPECIFIED,
+      (
+        AuthorizationInfo_PermissionType_PERMISSIONTYPEUNSPECIFIED,
         AuthorizationInfo_PermissionType_ADMINREAD,
         AuthorizationInfo_PermissionType_ADMINWRITE,
         AuthorizationInfo_PermissionType_DATAREAD,
@@ -43,7 +49,8 @@ module Gogol.ServiceControl.Internal.Sum
 
     -- * V2LogEntry_Severity
     V2LogEntry_Severity
-      ( V2LogEntry_Severity_Default,
+      (
+        V2LogEntry_Severity_Default,
         V2LogEntry_Severity_Debug,
         V2LogEntry_Severity_Info,
         V2LogEntry_Severity_Notice,
@@ -57,7 +64,8 @@ module Gogol.ServiceControl.Internal.Sum
 
     -- * V2ResourceEvent_Path
     V2ResourceEvent_Path
-      ( V2ResourceEvent_Path_APIPATHUNSPECIFIED,
+      (
+        V2ResourceEvent_Path_APIPATHUNSPECIFIED,
         V2ResourceEvent_Path_Request',
         V2ResourceEvent_Path_Response,
         ..
@@ -65,7 +73,8 @@ module Gogol.ServiceControl.Internal.Sum
 
     -- * V2ResourceEvent_Type
     V2ResourceEvent_Type
-      ( V2ResourceEvent_Type_TYPEUNSPECIFIED,
+      (
+        V2ResourceEvent_Type_TYPEUNSPECIFIED,
         V2ResourceEvent_Type_Create,
         V2ResourceEvent_Type_Update,
         V2ResourceEvent_Type_Delete',
@@ -75,29 +84,29 @@ module Gogol.ServiceControl.Internal.Sum
 
     -- * ViolationInfo_PolicyType
     ViolationInfo_PolicyType
-      ( ViolationInfo_PolicyType_POLICYTYPEUNSPECIFIED,
+      (
+        ViolationInfo_PolicyType_POLICYTYPEUNSPECIFIED,
         ViolationInfo_PolicyType_BOOLEANCONSTRAINT,
         ViolationInfo_PolicyType_LISTCONSTRAINT,
         ViolationInfo_PolicyType_CUSTOMCONSTRAINT,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -110,21 +119,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | The type of the permission that was checked. For data access audit logs this corresponds with the permission type that must be enabled in the project\/folder\/organization IAM policy in order for the log to be written.
-newtype AuthorizationInfo_PermissionType = AuthorizationInfo_PermissionType {fromAuthorizationInfo_PermissionType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AuthorizationInfo_PermissionType = AuthorizationInfo_PermissionType { fromAuthorizationInfo_PermissionType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default. Should not be used.
 pattern AuthorizationInfo_PermissionType_PERMISSIONTYPEUNSPECIFIED :: AuthorizationInfo_PermissionType
@@ -152,21 +160,20 @@ pattern AuthorizationInfo_PermissionType_DATAWRITE = AuthorizationInfo_Permissio
   AuthorizationInfo_PermissionType_ADMINWRITE,
   AuthorizationInfo_PermissionType_DATAREAD,
   AuthorizationInfo_PermissionType_DATAWRITE,
-  AuthorizationInfo_PermissionType
-  #-}
+  AuthorizationInfo_PermissionType #-}
 
 -- | The severity of the log entry. The default value is @LogSeverity.DEFAULT@.
-newtype V2LogEntry_Severity = V2LogEntry_Severity {fromV2LogEntry_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype V2LogEntry_Severity = V2LogEntry_Severity { fromV2LogEntry_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | (0) The log entry has no assigned severity level.
 pattern V2LogEntry_Severity_Default :: V2LogEntry_Severity
@@ -214,21 +221,20 @@ pattern V2LogEntry_Severity_Emergency = V2LogEntry_Severity "EMERGENCY"
   V2LogEntry_Severity_Critical,
   V2LogEntry_Severity_Alert,
   V2LogEntry_Severity_Emergency,
-  V2LogEntry_Severity
-  #-}
+  V2LogEntry_Severity #-}
 
 -- | The api path the resource event was created in. This should match the source of the @payload@ field. For direct integrations with Chemist, this should generally be the RESPONSE. go\/resource-event-pipeline-type
-newtype V2ResourceEvent_Path = V2ResourceEvent_Path {fromV2ResourceEvent_Path :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype V2ResourceEvent_Path = V2ResourceEvent_Path { fromV2ResourceEvent_Path :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Do not use.
 pattern V2ResourceEvent_Path_APIPATHUNSPECIFIED :: V2ResourceEvent_Path
@@ -246,21 +252,20 @@ pattern V2ResourceEvent_Path_Response = V2ResourceEvent_Path "RESPONSE"
   V2ResourceEvent_Path_APIPATHUNSPECIFIED,
   V2ResourceEvent_Path_Request',
   V2ResourceEvent_Path_Response,
-  V2ResourceEvent_Path
-  #-}
+  V2ResourceEvent_Path #-}
 
 -- | The resource event type determines how the backend service should process the event.
-newtype V2ResourceEvent_Type = V2ResourceEvent_Type {fromV2ResourceEvent_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype V2ResourceEvent_Type = V2ResourceEvent_Type { fromV2ResourceEvent_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The resource event type is unclear. We do not expect any events to fall into this category.
 pattern V2ResourceEvent_Type_TYPEUNSPECIFIED :: V2ResourceEvent_Type
@@ -288,21 +293,20 @@ pattern V2ResourceEvent_Type_Undelete = V2ResourceEvent_Type "UNDELETE"
   V2ResourceEvent_Type_Update,
   V2ResourceEvent_Type_Delete',
   V2ResourceEvent_Type_Undelete,
-  V2ResourceEvent_Type
-  #-}
+  V2ResourceEvent_Type #-}
 
 -- | Optional. Indicates the type of the policy.
-newtype ViolationInfo_PolicyType = ViolationInfo_PolicyType {fromViolationInfo_PolicyType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ViolationInfo_PolicyType = ViolationInfo_PolicyType { fromViolationInfo_PolicyType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value should not be used.
 pattern ViolationInfo_PolicyType_POLICYTYPEUNSPECIFIED :: ViolationInfo_PolicyType
@@ -325,5 +329,4 @@ pattern ViolationInfo_PolicyType_CUSTOMCONSTRAINT = ViolationInfo_PolicyType "CU
   ViolationInfo_PolicyType_BOOLEANCONSTRAINT,
   ViolationInfo_PolicyType_LISTCONSTRAINT,
   ViolationInfo_PolicyType_CUSTOMCONSTRAINT,
-  ViolationInfo_PolicyType
-  #-}
+  ViolationInfo_PolicyType #-}

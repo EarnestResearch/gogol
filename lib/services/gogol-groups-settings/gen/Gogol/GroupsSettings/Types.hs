@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,32 +24,32 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.GroupsSettings.Types
-  ( -- * Configuration
-    groupsSettingsService,
+    (
+    -- * Configuration
+      groupsSettingsService
 
     -- * OAuth Scopes
-    Apps'Groups'Settings,
+    , Apps'Groups'Settings
 
     -- * Types
 
     -- ** Groups
-    Groups (..),
-    newGroups,
-  )
-where
+    , Groups (..)
+    , newGroups
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.GroupsSettings.Internal.Product
 import Gogol.GroupsSettings.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v1@ of the Groups Settings API. This contains the host and root path used as a starting point for constructing service requests.
 groupsSettingsService :: Core.ServiceConfig
-groupsSettingsService =
-  Core.defaultService
-    (Core.ServiceId "groupssettings:v1")
-    "www.googleapis.com"
+groupsSettingsService
+  = Core.defaultService (Core.ServiceId "groupssettings:v1")
+      "www.googleapis.com"
 
 -- | View and manage the settings of a G Suite group
 type Apps'Groups'Settings =
-  "https://www.googleapis.com/auth/apps.groups.settings"
+     "https://www.googleapis.com/auth/apps.groups.settings"

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,66 +29,61 @@
 --
 -- /See:/ <https://developers.google.com/identity-toolkit/v3/ Google Identity Toolkit API Reference> for @identitytoolkit.relyingparty.getOobConfirmationCode@.
 module Gogol.IdentityToolkit.Relyingparty.GetOobConfirmationCode
-  ( -- * Resource
-    IdentityToolkitRelyingpartyGetOobConfirmationCodeResource,
+    (
+    -- * Resource
+      IdentityToolkitRelyingpartyGetOobConfirmationCodeResource
 
     -- ** Constructing a Request
-    IdentityToolkitRelyingpartyGetOobConfirmationCode (..),
-    newIdentityToolkitRelyingpartyGetOobConfirmationCode,
-  )
-where
+    , IdentityToolkitRelyingpartyGetOobConfirmationCode (..)
+    , newIdentityToolkitRelyingpartyGetOobConfirmationCode
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.IdentityToolkit.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @identitytoolkit.relyingparty.getOobConfirmationCode@ method which the
 -- 'IdentityToolkitRelyingpartyGetOobConfirmationCode' request conforms to.
 type IdentityToolkitRelyingpartyGetOobConfirmationCodeResource =
-  "identitytoolkit"
-    Core.:> "v3"
-    Core.:> "relyingparty"
-    Core.:> "getOobConfirmationCode"
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.ReqBody '[Core.JSON] Relyingparty
-    Core.:> Core.Post '[Core.JSON] GetOobConfirmationCodeResponse
+     "identitytoolkit" Core.:>
+       "v3" Core.:>
+         "relyingparty" Core.:>
+           "getOobConfirmationCode" Core.:>
+             Core.QueryParam "alt" Core.AltJSON Core.:>
+               Core.ReqBody '[Core.JSON] Relyingparty Core.:>
+                 Core.Post '[Core.JSON] GetOobConfirmationCodeResponse
 
 -- | Get a code for user action confirmation.
 --
 -- /See:/ 'newIdentityToolkitRelyingpartyGetOobConfirmationCode' smart constructor.
 newtype IdentityToolkitRelyingpartyGetOobConfirmationCode = IdentityToolkitRelyingpartyGetOobConfirmationCode
-  { -- | Multipart request metadata.
-    payload :: Relyingparty
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | Multipart request metadata.
+      payload :: Relyingparty
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'IdentityToolkitRelyingpartyGetOobConfirmationCode' with the minimum fields required to make a request.
-newIdentityToolkitRelyingpartyGetOobConfirmationCode ::
-  -- |  Multipart request metadata. See 'payload'.
-  Relyingparty ->
-  IdentityToolkitRelyingpartyGetOobConfirmationCode
-newIdentityToolkitRelyingpartyGetOobConfirmationCode payload =
-  IdentityToolkitRelyingpartyGetOobConfirmationCode
-    { payload =
-        payload
-    }
+newIdentityToolkitRelyingpartyGetOobConfirmationCode 
+    :: 
+                                                     Relyingparty
+       -- ^  Multipart request metadata. See 'payload'.
+    -> IdentityToolkitRelyingpartyGetOobConfirmationCode
+newIdentityToolkitRelyingpartyGetOobConfirmationCode payload
+  = IdentityToolkitRelyingpartyGetOobConfirmationCode{payload =
+                                                        payload}
+instance Core.GoogleRequest
+           IdentityToolkitRelyingpartyGetOobConfirmationCode
+         where
+        type Rs IdentityToolkitRelyingpartyGetOobConfirmationCode =
+             GetOobConfirmationCodeResponse
+        type Scopes IdentityToolkitRelyingpartyGetOobConfirmationCode =
+             '[CloudPlatform'FullControl]
+        requestClient IdentityToolkitRelyingpartyGetOobConfirmationCode{..}
+          = go (Core.Just Core.AltJSON) payload identityToolkitService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy
+                           IdentityToolkitRelyingpartyGetOobConfirmationCodeResource)
+                      Core.mempty
 
-instance
-  Core.GoogleRequest
-    IdentityToolkitRelyingpartyGetOobConfirmationCode
-  where
-  type
-    Rs IdentityToolkitRelyingpartyGetOobConfirmationCode =
-      GetOobConfirmationCodeResponse
-  type
-    Scopes IdentityToolkitRelyingpartyGetOobConfirmationCode =
-      '[CloudPlatform'FullControl]
-  requestClient IdentityToolkitRelyingpartyGetOobConfirmationCode {..} =
-    go (Core.Just Core.AltJSON) payload identityToolkitService
-    where
-      go =
-        Core.buildClient
-          ( Core.Proxy ::
-              Core.Proxy
-                IdentityToolkitRelyingpartyGetOobConfirmationCodeResource
-          )
-          Core.mempty

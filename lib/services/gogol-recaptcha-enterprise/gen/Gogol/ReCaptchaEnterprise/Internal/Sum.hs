@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.ReCaptchaEnterprise.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem
     GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem
-      ( GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_ACCOUNTDEFENDERLABELUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_ACCOUNTDEFENDERLABELUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_PROFILEMATCH,
         GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_SUSPICIOUSLOGINACTIVITY,
         GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_SUSPICIOUSACCOUNTCREATION,
@@ -43,7 +49,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult
     GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult
-      ( GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_RESULTUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_RESULTUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_SUCCESSUSERVERIFIED,
         GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_ERRORUSERNOTVERIFIED,
         GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_ERRORSITEONBOARDINGINCOMPLETE,
@@ -58,7 +65,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation
     GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation
-      ( GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_ANNOTATIONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_ANNOTATIONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_Legitimate,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_Fraudulent,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_PASSWORDCORRECT,
@@ -68,7 +76,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem
     GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem
-      ( GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_REASONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_REASONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_Chargeback,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_CHARGEBACKFRAUD,
         GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_CHARGEBACKDISPUTE,
@@ -86,17 +95,41 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
         ..
       ),
 
+    -- * GoogleCloudRecaptchaenterpriseV1Bot_BotType
+    GoogleCloudRecaptchaenterpriseV1Bot_BotType
+      (
+        GoogleCloudRecaptchaenterpriseV1Bot_BotType_BOTTYPEUNSPECIFIED,
+        GoogleCloudRecaptchaenterpriseV1Bot_BotType_AIAGENT,
+        GoogleCloudRecaptchaenterpriseV1Bot_BotType_CONTENTSCRAPER,
+        GoogleCloudRecaptchaenterpriseV1Bot_BotType_SEARCHINDEXER,
+        ..
+      ),
+
     -- * GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention
     GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention
-      ( GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_FRAUDPREVENTIONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_FRAUDPREVENTIONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_Enabled,
         GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_Disabled,
         ..
       ),
 
+    -- * GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+    GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+      (
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_REASONUNSPECIFIED,
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_HIGHTRANSACTIONVELOCITY,
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_EXCESSIVEENUMERATIONPATTERN,
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_SHORTIDENTITYHISTORY,
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_GEOLOCATIONDISCREPANCY,
+        GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_ASSOCIATEDWITHFRAUDCLUSTER,
+        ..
+      ),
+
     -- * GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem
     GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem
-      ( GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_CARDLABELUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_CARDLABELUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_Prepaid,
         GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_Virtual,
         GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_UNEXPECTEDLOCATION,
@@ -105,14 +138,16 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType
     GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType
-      ( GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_OVERRIDETYPEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_OVERRIDETYPEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_Allow,
         ..
       ),
 
     -- * GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge
     GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge
-      ( GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_CHALLENGEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_CHALLENGEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Nocaptcha,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Passed,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Failed,
@@ -121,7 +156,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem
     GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem
-      ( GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_CLASSIFICATIONREASONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_CLASSIFICATIONREASONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_Automation,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_UNEXPECTEDENVIRONMENT,
         GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_TOOMUCHTRAFFIC,
@@ -134,14 +170,16 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem
     GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem
-      ( GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_SMSTOLLFRAUDREASONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_SMSTOLLFRAUDREASONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_INVALIDPHONENUMBER,
         ..
       ),
 
     -- * GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge
     GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge
-      ( GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_TESTINGCHALLENGEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_TESTINGCHALLENGEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_Nocaptcha,
         GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_UNSOLVABLECHALLENGE,
         ..
@@ -149,7 +187,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason
     GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason
-      ( GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_INVALIDREASONUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_INVALIDREASONUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_UNKNOWNINVALIDREASON,
         GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_Malformed,
         GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_Expired,
@@ -161,7 +200,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType
     GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType
-      ( GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_TRANSACTIONEVENTTYPEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_TRANSACTIONEVENTTYPEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_MERCHANTAPPROVE,
         GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_MERCHANTDENY,
         GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_MANUALREVIEW,
@@ -185,7 +225,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
     GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
-      ( GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_WAFFEATUREUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_WAFFEATUREUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_CHALLENGEPAGE,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_SESSIONTOKEN,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_ACTIONTOKEN,
@@ -195,7 +236,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1WafSettings_WafService
     GoogleCloudRecaptchaenterpriseV1WafSettings_WafService
-      ( GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_WAFSERVICEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_WAFSERVICEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_CA,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Fastly,
         GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Cloudflare,
@@ -205,7 +247,8 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference
     GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference
-      ( GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_CHALLENGESECURITYPREFERENCEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_CHALLENGESECURITYPREFERENCEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Usability,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Balance,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Security,
@@ -214,29 +257,29 @@ module Gogol.ReCaptchaEnterprise.Internal.Sum
 
     -- * GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType
     GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType
-      ( GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_INTEGRATIONTYPEUNSPECIFIED,
+      (
+        GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_INTEGRATIONTYPEUNSPECIFIED,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Score,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Checkbox,
         GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Invisible,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -249,20 +292,19 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
-newtype GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem = GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem {fromGoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem = GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem { fromGoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified type.
 pattern GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_ACCOUNTDEFENDERLABELUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem
@@ -290,21 +332,20 @@ pattern GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_REL
   GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_SUSPICIOUSLOGINACTIVITY,
   GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_SUSPICIOUSACCOUNTCREATION,
   GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem_RELATEDACCOUNTSNUMBERHIGH,
-  GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem
-  #-}
+  GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment_LabelsItem #-}
 
 -- | Output only. Result of the latest account verification challenge.
-newtype GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult = GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult {fromGoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult = GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult { fromGoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No information about the latest account verification.
 pattern GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_RESULTUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult
@@ -357,21 +398,20 @@ pattern GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificati
   GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_ERRORCUSTOMERQUOTAEXHAUSTED,
   GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_ERRORVERIFICATIONBYPASSED,
   GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult_ERRORVERDICTMISMATCH,
-  GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult
-  #-}
+  GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo_LatestVerificationResult #-}
 
 -- | Optional. The annotation that is assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent.
-newtype GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation = GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation {fromGoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation = GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation { fromGoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified type.
 pattern GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_ANNOTATIONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation
@@ -399,20 +439,19 @@ pattern GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_PAS
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_Fraudulent,
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_PASSWORDCORRECT,
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation_PASSWORDINCORRECT,
-  GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation
-  #-}
+  GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_Annotation #-}
 
-newtype GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem = GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem {fromGoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem = GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem { fromGoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified reason. Do not use.
 pattern GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_REASONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem
@@ -490,21 +529,56 @@ pattern GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_SO
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_CORRECTPASSWORD,
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_INCORRECTPASSWORD,
   GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem_SOCIALSPAM,
-  GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem
-  #-}
+  GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest_ReasonsItem #-}
+
+-- | Optional. Enumerated field representing the type of bot.
+newtype GoogleCloudRecaptchaenterpriseV1Bot_BotType = GoogleCloudRecaptchaenterpriseV1Bot_BotType { fromGoogleCloudRecaptchaenterpriseV1Bot_BotType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default unspecified type.
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_BOTTYPEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1Bot_BotType
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_BOTTYPEUNSPECIFIED = GoogleCloudRecaptchaenterpriseV1Bot_BotType "BOT_TYPE_UNSPECIFIED"
+
+-- | Software program that interacts with a site and performs tasks autonomously.
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_AIAGENT :: GoogleCloudRecaptchaenterpriseV1Bot_BotType
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_AIAGENT = GoogleCloudRecaptchaenterpriseV1Bot_BotType "AI_AGENT"
+
+-- | Software that extracts specific data from sites for use.
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_CONTENTSCRAPER :: GoogleCloudRecaptchaenterpriseV1Bot_BotType
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_CONTENTSCRAPER = GoogleCloudRecaptchaenterpriseV1Bot_BotType "CONTENT_SCRAPER"
+
+-- | Software that crawls sites and stores content for the purpose of efficient retrieval, likely as part of a search engine.
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_SEARCHINDEXER :: GoogleCloudRecaptchaenterpriseV1Bot_BotType
+pattern GoogleCloudRecaptchaenterpriseV1Bot_BotType_SEARCHINDEXER = GoogleCloudRecaptchaenterpriseV1Bot_BotType "SEARCH_INDEXER"
+
+{-# COMPLETE
+  GoogleCloudRecaptchaenterpriseV1Bot_BotType_BOTTYPEUNSPECIFIED,
+  GoogleCloudRecaptchaenterpriseV1Bot_BotType_AIAGENT,
+  GoogleCloudRecaptchaenterpriseV1Bot_BotType_CONTENTSCRAPER,
+  GoogleCloudRecaptchaenterpriseV1Bot_BotType_SEARCHINDEXER,
+  GoogleCloudRecaptchaenterpriseV1Bot_BotType #-}
 
 -- | Optional. The Fraud Prevention setting for this assessment.
-newtype GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention = GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention {fromGoogleCloudRecaptchaenterpriseV1Event_FraudPrevention :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention = GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention { fromGoogleCloudRecaptchaenterpriseV1Event_FraudPrevention :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default, unspecified setting. @fraud_prevention_assessment@ is returned if @transaction_data@ is present in @Event@ and Fraud Prevention is enabled in the Google Cloud console.
 pattern GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_FRAUDPREVENTIONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention
@@ -522,20 +596,65 @@ pattern GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_Disabled = GoogleC
   GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_FRAUDPREVENTIONUNSPECIFIED,
   GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_Enabled,
   GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention_Disabled,
-  GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention
-  #-}
+  GoogleCloudRecaptchaenterpriseV1Event_FraudPrevention #-}
 
-newtype GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem = GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem {fromGoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+-- | Output only. Risk reasons applicable to the Fraud Prevention assessment.
+newtype GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason { fromGoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Default unspecified type.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_REASONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_REASONUNSPECIFIED = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "REASON_UNSPECIFIED"
+
+-- | A suspiciously high number of recent transactions have used identifiers present in this transaction.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_HIGHTRANSACTIONVELOCITY :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_HIGHTRANSACTIONVELOCITY = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "HIGH_TRANSACTION_VELOCITY"
+
+-- | User is cycling through a suspiciously large number of identifiers, suggesting enumeration or validation attacks within a potential fraud network.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_EXCESSIVEENUMERATIONPATTERN :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_EXCESSIVEENUMERATIONPATTERN = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "EXCESSIVE_ENUMERATION_PATTERN"
+
+-- | User has a short history or no history in the reCAPTCHA network, suggesting the possibility of synthetic identity generation.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_SHORTIDENTITYHISTORY :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_SHORTIDENTITYHISTORY = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "SHORT_IDENTITY_HISTORY"
+
+-- | Identifiers used in this transaction originate from an unusual or conflicting set of geolocations.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_GEOLOCATIONDISCREPANCY :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_GEOLOCATIONDISCREPANCY = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "GEOLOCATION_DISCREPANCY"
+
+-- | This transaction is linked to a cluster of known fraudulent activity.
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_ASSOCIATEDWITHFRAUDCLUSTER :: GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason
+pattern GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_ASSOCIATEDWITHFRAUDCLUSTER = GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason "ASSOCIATED_WITH_FRAUD_CLUSTER"
+
+{-# COMPLETE
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_REASONUNSPECIFIED,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_HIGHTRANSACTIONVELOCITY,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_EXCESSIVEENUMERATIONPATTERN,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_SHORTIDENTITYHISTORY,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_GEOLOCATIONDISCREPANCY,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason_ASSOCIATEDWITHFRAUDCLUSTER,
+  GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentRiskReason_Reason #-}
+
+newtype GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem = GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem { fromGoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | No label specified.
 pattern GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_CARDLABELUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem
@@ -558,21 +677,20 @@ pattern GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_U
   GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_Prepaid,
   GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_Virtual,
   GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem_UNEXPECTEDLOCATION,
-  GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem
-  #-}
+  GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals_CardLabelsItem #-}
 
 -- | Required. Describes the type of IP override.
-newtype GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType = GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType {fromGoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType = GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType { fromGoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default override type that indicates this enum hasn\'t been specified.
 pattern GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_OVERRIDETYPEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType
@@ -585,21 +703,20 @@ pattern GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_Allow = Goog
 {-# COMPLETE
   GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_OVERRIDETYPEUNSPECIFIED,
   GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType_Allow,
-  GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType
-  #-}
+  GoogleCloudRecaptchaenterpriseV1IpOverrideData_OverrideType #-}
 
 -- | Output only. Challenge information for SCORE/AND/CHALLENGE and INVISIBLE keys
-newtype GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge = GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge {fromGoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge = GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge { fromGoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified type.
 pattern GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_CHALLENGEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge
@@ -622,20 +739,19 @@ pattern GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Failed = GoogleCl
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Nocaptcha,
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Passed,
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge_Failed,
-  GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge
-  #-}
+  GoogleCloudRecaptchaenterpriseV1RiskAnalysis_Challenge #-}
 
-newtype GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem = GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem {fromGoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem = GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem { fromGoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified type.
 pattern GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_CLASSIFICATIONREASONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem
@@ -678,20 +794,19 @@ pattern GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_SUSPECTEDCHARGE
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_LOWCONFIDENCESCORE,
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_SUSPECTEDCARDING,
   GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem_SUSPECTEDCHARGEBACK,
-  GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem
-  #-}
+  GoogleCloudRecaptchaenterpriseV1RiskAnalysis_ReasonsItem #-}
 
-newtype GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem = GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem {fromGoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem = GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem { fromGoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified reason
 pattern GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_SMSTOLLFRAUDREASONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem
@@ -704,21 +819,20 @@ pattern GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_INVALIDP
 {-# COMPLETE
   GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_SMSTOLLFRAUDREASONUNSPECIFIED,
   GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem_INVALIDPHONENUMBER,
-  GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem
-  #-}
+  GoogleCloudRecaptchaenterpriseV1SmsTollFraudVerdict_ReasonsItem #-}
 
 -- | Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site return nocaptcha if NOCAPTCHA, or an unsolvable challenge if CHALLENGE.
-newtype GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge = GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge {fromGoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge = GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge { fromGoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Perform the normal risk analysis and return either nocaptcha or a challenge depending on risk and trust factors.
 pattern GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_TESTINGCHALLENGEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge
@@ -736,21 +850,20 @@ pattern GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_UNSOLVAB
   GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_TESTINGCHALLENGEUNSPECIFIED,
   GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_Nocaptcha,
   GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge_UNSOLVABLECHALLENGE,
-  GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge
-  #-}
+  GoogleCloudRecaptchaenterpriseV1TestingOptions_TestingChallenge #-}
 
 -- | Output only. Reason associated with the response when valid = false.
-newtype GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason = GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason {fromGoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason = GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason { fromGoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default unspecified type.
 pattern GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_INVALIDREASONUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason
@@ -788,21 +901,20 @@ pattern GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_BROWSERERR
   GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_Dupe,
   GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_Missing,
   GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason_BROWSERERROR,
-  GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason
-  #-}
+  GoogleCloudRecaptchaenterpriseV1TokenProperties_InvalidReason #-}
 
 -- | Optional. The type of this transaction event.
-newtype GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType = GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType {fromGoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType = GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType { fromGoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default, unspecified event type.
 pattern GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_TRANSACTIONEVENTTYPEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType
@@ -900,21 +1012,20 @@ pattern GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_REFUNDREVERSE
   GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_REFUNDDECLINE,
   GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_Refund,
   GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType_REFUNDREVERSE,
-  GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType
-  #-}
+  GoogleCloudRecaptchaenterpriseV1TransactionEvent_EventType #-}
 
 -- | Required. The WAF feature for which this key is enabled.
-newtype GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature = GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature {fromGoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature = GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature { fromGoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Undefined feature.
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_WAFFEATUREUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
@@ -932,7 +1043,7 @@ pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_SESSIONTOKEN = Go
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_ACTIONTOKEN :: GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_ACTIONTOKEN = GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature "ACTION_TOKEN"
 
--- | Use reCAPTCHA WAF express protection to protect any content other than web pages, like APIs and IoT devices.
+-- | Deprecated: Use @express_settings@ instead.
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_Express :: GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_Express = GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature "EXPRESS"
 
@@ -942,21 +1053,20 @@ pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_Express = GoogleC
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_SESSIONTOKEN,
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_ACTIONTOKEN,
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature_Express,
-  GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature
-  #-}
+  GoogleCloudRecaptchaenterpriseV1WafSettings_WafFeature #-}
 
 -- | Required. The WAF service that uses this key.
-newtype GoogleCloudRecaptchaenterpriseV1WafSettings_WafService = GoogleCloudRecaptchaenterpriseV1WafSettings_WafService {fromGoogleCloudRecaptchaenterpriseV1WafSettings_WafService :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1WafSettings_WafService = GoogleCloudRecaptchaenterpriseV1WafSettings_WafService { fromGoogleCloudRecaptchaenterpriseV1WafSettings_WafService :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Undefined WAF
 pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_WAFSERVICEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1WafSettings_WafService
@@ -984,21 +1094,20 @@ pattern GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Akamai = GoogleCl
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Fastly,
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Cloudflare,
   GoogleCloudRecaptchaenterpriseV1WafSettings_WafService_Akamai,
-  GoogleCloudRecaptchaenterpriseV1WafSettings_WafService
-  #-}
+  GoogleCloudRecaptchaenterpriseV1WafSettings_WafService #-}
 
 -- | Optional. Settings for the frequency and difficulty at which this key triggers captcha challenges. This should only be specified for IntegrationTypes CHECKBOX and INVISIBLE and SCORE/AND/CHALLENGE.
-newtype GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference = GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference {fromGoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference = GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference { fromGoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default type that indicates this enum hasn\'t been specified.
 pattern GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_CHALLENGESECURITYPREFERENCEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference
@@ -1021,21 +1130,20 @@ pattern GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreferen
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Usability,
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Balance,
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference_Security,
-  GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference
-  #-}
+  GoogleCloudRecaptchaenterpriseV1WebKeySettings_ChallengeSecurityPreference #-}
 
 -- | Required. Describes how this key is integrated with the website.
-newtype GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType = GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType {fromGoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType = GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType { fromGoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default type that indicates this enum hasn\'t been specified. This is not a valid IntegrationType, one of the other types must be specified instead.
 pattern GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_INTEGRATIONTYPEUNSPECIFIED :: GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType
@@ -1058,5 +1166,4 @@ pattern GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Invisible
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Score,
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Checkbox,
   GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType_Invisible,
-  GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType
-  #-}
+  GoogleCloudRecaptchaenterpriseV1WebKeySettings_IntegrationType #-}

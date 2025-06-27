@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,58 +29,57 @@
 --
 -- /See:/ <https://developers.google.com/ad-exchange/buyer-rest Ad Exchange Buyer API Reference> for @adexchangebuyer.pretargetingConfig.list@.
 module Gogol.AdExchangeBuyer.PretargetingConfig.List
-  ( -- * Resource
-    AdExchangeBuyerPretargetingConfigListResource,
+    (
+    -- * Resource
+      AdExchangeBuyerPretargetingConfigListResource
 
     -- ** Constructing a Request
-    AdExchangeBuyerPretargetingConfigList (..),
-    newAdExchangeBuyerPretargetingConfigList,
-  )
-where
+    , AdExchangeBuyerPretargetingConfigList (..)
+    , newAdExchangeBuyerPretargetingConfigList
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.AdExchangeBuyer.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @adexchangebuyer.pretargetingConfig.list@ method which the
 -- 'AdExchangeBuyerPretargetingConfigList' request conforms to.
 type AdExchangeBuyerPretargetingConfigListResource =
-  "adexchangebuyer"
-    Core.:> "v1.4"
-    Core.:> "pretargetingconfigs"
-    Core.:> Core.Capture "accountId" Core.Int64
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Get '[Core.JSON] PretargetingConfigList
+     "adexchangebuyer" Core.:>
+       "v1.4" Core.:>
+         "pretargetingconfigs" Core.:>
+           Core.Capture "accountId" Core.Int64 Core.:>
+             Core.QueryParam "alt" Core.AltJSON Core.:>
+               Core.Get '[Core.JSON] PretargetingConfigList
 
 -- | Retrieves a list of the authenticated user\'s pretargeting configurations.
 --
 -- /See:/ 'newAdExchangeBuyerPretargetingConfigList' smart constructor.
 newtype AdExchangeBuyerPretargetingConfigList = AdExchangeBuyerPretargetingConfigList
-  { -- | The account id to get the pretargeting configs for.
-    accountId :: Core.Int64
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | The account id to get the pretargeting configs for.
+      accountId :: Core.Int64
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'AdExchangeBuyerPretargetingConfigList' with the minimum fields required to make a request.
-newAdExchangeBuyerPretargetingConfigList ::
-  -- |  The account id to get the pretargeting configs for. See 'accountId'.
-  Core.Int64 ->
-  AdExchangeBuyerPretargetingConfigList
-newAdExchangeBuyerPretargetingConfigList accountId =
-  AdExchangeBuyerPretargetingConfigList {accountId = accountId}
+newAdExchangeBuyerPretargetingConfigList 
+    :: 
+                                         Core.Int64
+       -- ^  The account id to get the pretargeting configs for. See 'accountId'.
+    -> AdExchangeBuyerPretargetingConfigList
+newAdExchangeBuyerPretargetingConfigList accountId
+  = AdExchangeBuyerPretargetingConfigList{accountId = accountId}
+instance Core.GoogleRequest AdExchangeBuyerPretargetingConfigList
+         where
+        type Rs AdExchangeBuyerPretargetingConfigList =
+             PretargetingConfigList
+        type Scopes AdExchangeBuyerPretargetingConfigList =
+             '[Adexchange'Buyer]
+        requestClient AdExchangeBuyerPretargetingConfigList{..}
+          = go accountId (Core.Just Core.AltJSON) adExchangeBuyerService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy AdExchangeBuyerPretargetingConfigListResource)
+                      Core.mempty
 
-instance Core.GoogleRequest AdExchangeBuyerPretargetingConfigList where
-  type
-    Rs AdExchangeBuyerPretargetingConfigList =
-      PretargetingConfigList
-  type
-    Scopes AdExchangeBuyerPretargetingConfigList =
-      '[Adexchange'Buyer]
-  requestClient AdExchangeBuyerPretargetingConfigList {..} =
-    go accountId (Core.Just Core.AltJSON) adExchangeBuyerService
-    where
-      go =
-        Core.buildClient
-          ( Core.Proxy ::
-              Core.Proxy AdExchangeBuyerPretargetingConfigListResource
-          )
-          Core.mempty

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,28 +24,28 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.KnowledgeGraphSearch.Types
-  ( -- * Configuration
-    knowledgeGraphSearchService,
+    (
+    -- * Configuration
+      knowledgeGraphSearchService
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** SearchResponse
-    SearchResponse (..),
-    newSearchResponse,
-  )
-where
+    , SearchResponse (..)
+    , newSearchResponse
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.KnowledgeGraphSearch.Internal.Product
 import Gogol.KnowledgeGraphSearch.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v1@ of the Knowledge Graph Search API. This contains the host and root path used as a starting point for constructing service requests.
 knowledgeGraphSearchService :: Core.ServiceConfig
-knowledgeGraphSearchService =
-  Core.defaultService
-    (Core.ServiceId "kgsearch:v1")
-    "kgsearch.googleapis.com"
+knowledgeGraphSearchService
+  = Core.defaultService (Core.ServiceId "kgsearch:v1")
+      "kgsearch.googleapis.com"

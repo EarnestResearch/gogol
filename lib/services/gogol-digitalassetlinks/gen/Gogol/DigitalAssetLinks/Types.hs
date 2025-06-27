@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,73 +24,81 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.DigitalAssetLinks.Types
-  ( -- * Configuration
-    digitalAssetLinksService,
+    (
+    -- * Configuration
+      digitalAssetLinksService
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
 
     -- ** AndroidAppAsset
-    AndroidAppAsset (..),
-    newAndroidAppAsset,
+    , AndroidAppAsset (..)
+    , newAndroidAppAsset
 
     -- ** Asset
-    Asset (..),
-    newAsset,
+    , Asset (..)
+    , newAsset
 
     -- ** BulkCheckRequest
-    BulkCheckRequest (..),
-    newBulkCheckRequest,
+    , BulkCheckRequest (..)
+    , newBulkCheckRequest
 
     -- ** BulkCheckResponse
-    BulkCheckResponse (..),
-    newBulkCheckResponse,
+    , BulkCheckResponse (..)
+    , newBulkCheckResponse
 
     -- ** BulkCheckResponse_BulkErrorCode
-    BulkCheckResponse_BulkErrorCode (..),
+    , BulkCheckResponse_BulkErrorCode (..)
 
     -- ** CertificateInfo
-    CertificateInfo (..),
-    newCertificateInfo,
+    , CertificateInfo (..)
+    , newCertificateInfo
 
     -- ** CheckResponse
-    CheckResponse (..),
-    newCheckResponse,
+    , CheckResponse (..)
+    , newCheckResponse
 
     -- ** CheckResponse_ErrorCodeItem
-    CheckResponse_ErrorCodeItem (..),
+    , CheckResponse_ErrorCodeItem (..)
+
+    -- ** CheckResponse_RelationExtensionsItem
+    , CheckResponse_RelationExtensionsItem (..)
+    , newCheckResponse_RelationExtensionsItem
 
     -- ** ListResponse
-    ListResponse (..),
-    newListResponse,
+    , ListResponse (..)
+    , newListResponse
 
     -- ** ListResponse_ErrorCodeItem
-    ListResponse_ErrorCodeItem (..),
+    , ListResponse_ErrorCodeItem (..)
 
     -- ** Statement
-    Statement (..),
-    newStatement,
+    , Statement (..)
+    , newStatement
+
+    -- ** Statement_RelationExtensions
+    , Statement_RelationExtensions (..)
+    , newStatement_RelationExtensions
 
     -- ** StatementTemplate
-    StatementTemplate (..),
-    newStatementTemplate,
+    , StatementTemplate (..)
+    , newStatementTemplate
 
     -- ** WebAsset
-    WebAsset (..),
-    newWebAsset,
-  )
-where
+    , WebAsset (..)
+    , newWebAsset
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.DigitalAssetLinks.Internal.Product
 import Gogol.DigitalAssetLinks.Internal.Sum
-import Gogol.Prelude qualified as Core
 
 -- | Default request referring to version @v1@ of the Digital Asset Links API. This contains the host and root path used as a starting point for constructing service requests.
 digitalAssetLinksService :: Core.ServiceConfig
-digitalAssetLinksService =
-  Core.defaultService
-    (Core.ServiceId "digitalassetlinks:v1")
-    "digitalassetlinks.googleapis.com"
+digitalAssetLinksService
+  = Core.defaultService (Core.ServiceId "digitalassetlinks:v1")
+      "digitalassetlinks.googleapis.com"

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.Storage.Internal.Sum
-  ( -- * BucketsGetProjection
+  (
+
+    -- * BucketsGetProjection
     BucketsGetProjection
-      ( BucketsGetProjection_Full,
+      (
+        BucketsGetProjection_Full,
         BucketsGetProjection_NoAcl,
         ..
       ),
 
     -- * BucketsInsertPredefinedAcl
     BucketsInsertPredefinedAcl
-      ( BucketsInsertPredefinedAcl_AuthenticatedRead,
+      (
+        BucketsInsertPredefinedAcl_AuthenticatedRead,
         BucketsInsertPredefinedAcl_Private,
         BucketsInsertPredefinedAcl_ProjectPrivate,
         BucketsInsertPredefinedAcl_PublicRead,
@@ -43,7 +49,8 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsInsertPredefinedDefaultObjectAcl
     BucketsInsertPredefinedDefaultObjectAcl
-      ( BucketsInsertPredefinedDefaultObjectAcl_AuthenticatedRead,
+      (
+        BucketsInsertPredefinedDefaultObjectAcl_AuthenticatedRead,
         BucketsInsertPredefinedDefaultObjectAcl_BucketOwnerFullControl,
         BucketsInsertPredefinedDefaultObjectAcl_BucketOwnerRead,
         BucketsInsertPredefinedDefaultObjectAcl_Private,
@@ -54,21 +61,24 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsInsertProjection
     BucketsInsertProjection
-      ( BucketsInsertProjection_Full,
+      (
+        BucketsInsertProjection_Full,
         BucketsInsertProjection_NoAcl,
         ..
       ),
 
     -- * BucketsListProjection
     BucketsListProjection
-      ( BucketsListProjection_Full,
+      (
+        BucketsListProjection_Full,
         BucketsListProjection_NoAcl,
         ..
       ),
 
     -- * BucketsPatchPredefinedAcl
     BucketsPatchPredefinedAcl
-      ( BucketsPatchPredefinedAcl_AuthenticatedRead,
+      (
+        BucketsPatchPredefinedAcl_AuthenticatedRead,
         BucketsPatchPredefinedAcl_Private,
         BucketsPatchPredefinedAcl_ProjectPrivate,
         BucketsPatchPredefinedAcl_PublicRead,
@@ -78,7 +88,8 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsPatchPredefinedDefaultObjectAcl
     BucketsPatchPredefinedDefaultObjectAcl
-      ( BucketsPatchPredefinedDefaultObjectAcl_AuthenticatedRead,
+      (
+        BucketsPatchPredefinedDefaultObjectAcl_AuthenticatedRead,
         BucketsPatchPredefinedDefaultObjectAcl_BucketOwnerFullControl,
         BucketsPatchPredefinedDefaultObjectAcl_BucketOwnerRead,
         BucketsPatchPredefinedDefaultObjectAcl_Private,
@@ -89,21 +100,24 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsPatchProjection
     BucketsPatchProjection
-      ( BucketsPatchProjection_Full,
+      (
+        BucketsPatchProjection_Full,
         BucketsPatchProjection_NoAcl,
         ..
       ),
 
     -- * BucketsRestoreProjection
     BucketsRestoreProjection
-      ( BucketsRestoreProjection_Full,
+      (
+        BucketsRestoreProjection_Full,
         BucketsRestoreProjection_NoAcl,
         ..
       ),
 
     -- * BucketsUpdatePredefinedAcl
     BucketsUpdatePredefinedAcl
-      ( BucketsUpdatePredefinedAcl_AuthenticatedRead,
+      (
+        BucketsUpdatePredefinedAcl_AuthenticatedRead,
         BucketsUpdatePredefinedAcl_Private,
         BucketsUpdatePredefinedAcl_ProjectPrivate,
         BucketsUpdatePredefinedAcl_PublicRead,
@@ -113,7 +127,8 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsUpdatePredefinedDefaultObjectAcl
     BucketsUpdatePredefinedDefaultObjectAcl
-      ( BucketsUpdatePredefinedDefaultObjectAcl_AuthenticatedRead,
+      (
+        BucketsUpdatePredefinedDefaultObjectAcl_AuthenticatedRead,
         BucketsUpdatePredefinedDefaultObjectAcl_BucketOwnerFullControl,
         BucketsUpdatePredefinedDefaultObjectAcl_BucketOwnerRead,
         BucketsUpdatePredefinedDefaultObjectAcl_Private,
@@ -124,14 +139,16 @@ module Gogol.Storage.Internal.Sum
 
     -- * BucketsUpdateProjection
     BucketsUpdateProjection
-      ( BucketsUpdateProjection_Full,
+      (
+        BucketsUpdateProjection_Full,
         BucketsUpdateProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsComposeDestinationPredefinedAcl
     ObjectsComposeDestinationPredefinedAcl
-      ( ObjectsComposeDestinationPredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsComposeDestinationPredefinedAcl_AuthenticatedRead,
         ObjectsComposeDestinationPredefinedAcl_BucketOwnerFullControl,
         ObjectsComposeDestinationPredefinedAcl_BucketOwnerRead,
         ObjectsComposeDestinationPredefinedAcl_Private,
@@ -142,7 +159,8 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsCopyDestinationPredefinedAcl
     ObjectsCopyDestinationPredefinedAcl
-      ( ObjectsCopyDestinationPredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsCopyDestinationPredefinedAcl_AuthenticatedRead,
         ObjectsCopyDestinationPredefinedAcl_BucketOwnerFullControl,
         ObjectsCopyDestinationPredefinedAcl_BucketOwnerRead,
         ObjectsCopyDestinationPredefinedAcl_Private,
@@ -153,21 +171,24 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsCopyProjection
     ObjectsCopyProjection
-      ( ObjectsCopyProjection_Full,
+      (
+        ObjectsCopyProjection_Full,
         ObjectsCopyProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsGetProjection
     ObjectsGetProjection
-      ( ObjectsGetProjection_Full,
+      (
+        ObjectsGetProjection_Full,
         ObjectsGetProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsInsertPredefinedAcl
     ObjectsInsertPredefinedAcl
-      ( ObjectsInsertPredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsInsertPredefinedAcl_AuthenticatedRead,
         ObjectsInsertPredefinedAcl_BucketOwnerFullControl,
         ObjectsInsertPredefinedAcl_BucketOwnerRead,
         ObjectsInsertPredefinedAcl_Private,
@@ -178,21 +199,32 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsInsertProjection
     ObjectsInsertProjection
-      ( ObjectsInsertProjection_Full,
+      (
+        ObjectsInsertProjection_Full,
         ObjectsInsertProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsListProjection
     ObjectsListProjection
-      ( ObjectsListProjection_Full,
+      (
+        ObjectsListProjection_Full,
         ObjectsListProjection_NoAcl,
+        ..
+      ),
+
+    -- * ObjectsMoveProjection
+    ObjectsMoveProjection
+      (
+        ObjectsMoveProjection_Full,
+        ObjectsMoveProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsPatchPredefinedAcl
     ObjectsPatchPredefinedAcl
-      ( ObjectsPatchPredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsPatchPredefinedAcl_AuthenticatedRead,
         ObjectsPatchPredefinedAcl_BucketOwnerFullControl,
         ObjectsPatchPredefinedAcl_BucketOwnerRead,
         ObjectsPatchPredefinedAcl_Private,
@@ -203,21 +235,24 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsPatchProjection
     ObjectsPatchProjection
-      ( ObjectsPatchProjection_Full,
+      (
+        ObjectsPatchProjection_Full,
         ObjectsPatchProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsRestoreProjection
     ObjectsRestoreProjection
-      ( ObjectsRestoreProjection_Full,
+      (
+        ObjectsRestoreProjection_Full,
         ObjectsRestoreProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsRewriteDestinationPredefinedAcl
     ObjectsRewriteDestinationPredefinedAcl
-      ( ObjectsRewriteDestinationPredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsRewriteDestinationPredefinedAcl_AuthenticatedRead,
         ObjectsRewriteDestinationPredefinedAcl_BucketOwnerFullControl,
         ObjectsRewriteDestinationPredefinedAcl_BucketOwnerRead,
         ObjectsRewriteDestinationPredefinedAcl_Private,
@@ -228,14 +263,16 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsRewriteProjection
     ObjectsRewriteProjection
-      ( ObjectsRewriteProjection_Full,
+      (
+        ObjectsRewriteProjection_Full,
         ObjectsRewriteProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsUpdatePredefinedAcl
     ObjectsUpdatePredefinedAcl
-      ( ObjectsUpdatePredefinedAcl_AuthenticatedRead,
+      (
+        ObjectsUpdatePredefinedAcl_AuthenticatedRead,
         ObjectsUpdatePredefinedAcl_BucketOwnerFullControl,
         ObjectsUpdatePredefinedAcl_BucketOwnerRead,
         ObjectsUpdatePredefinedAcl_Private,
@@ -246,34 +283,35 @@ module Gogol.Storage.Internal.Sum
 
     -- * ObjectsUpdateProjection
     ObjectsUpdateProjection
-      ( ObjectsUpdateProjection_Full,
+      (
+        ObjectsUpdateProjection_Full,
         ObjectsUpdateProjection_NoAcl,
         ..
       ),
 
     -- * ObjectsWatchAllProjection
     ObjectsWatchAllProjection
-      ( ObjectsWatchAllProjection_Full,
+      (
+        ObjectsWatchAllProjection_Full,
         ObjectsWatchAllProjection_NoAcl,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | Set of properties to return. Defaults to noAcl.
-newtype BucketsGetProjection = BucketsGetProjection {fromBucketsGetProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsGetProjection = BucketsGetProjection { fromBucketsGetProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsGetProjection_Full :: BucketsGetProjection
@@ -286,21 +324,20 @@ pattern BucketsGetProjection_NoAcl = BucketsGetProjection "noAcl"
 {-# COMPLETE
   BucketsGetProjection_Full,
   BucketsGetProjection_NoAcl,
-  BucketsGetProjection
-  #-}
+  BucketsGetProjection #-}
 
 -- | Apply a predefined set of access controls to this bucket.
-newtype BucketsInsertPredefinedAcl = BucketsInsertPredefinedAcl {fromBucketsInsertPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsInsertPredefinedAcl = BucketsInsertPredefinedAcl { fromBucketsInsertPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Project team owners get OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsInsertPredefinedAcl_AuthenticatedRead :: BucketsInsertPredefinedAcl
@@ -328,21 +365,20 @@ pattern BucketsInsertPredefinedAcl_PublicReadWrite = BucketsInsertPredefinedAcl 
   BucketsInsertPredefinedAcl_ProjectPrivate,
   BucketsInsertPredefinedAcl_PublicRead,
   BucketsInsertPredefinedAcl_PublicReadWrite,
-  BucketsInsertPredefinedAcl
-  #-}
+  BucketsInsertPredefinedAcl #-}
 
 -- | Apply a predefined set of default object access controls to this bucket.
-newtype BucketsInsertPredefinedDefaultObjectAcl = BucketsInsertPredefinedDefaultObjectAcl {fromBucketsInsertPredefinedDefaultObjectAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsInsertPredefinedDefaultObjectAcl = BucketsInsertPredefinedDefaultObjectAcl { fromBucketsInsertPredefinedDefaultObjectAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsInsertPredefinedDefaultObjectAcl_AuthenticatedRead :: BucketsInsertPredefinedDefaultObjectAcl
@@ -375,21 +411,20 @@ pattern BucketsInsertPredefinedDefaultObjectAcl_PublicRead = BucketsInsertPredef
   BucketsInsertPredefinedDefaultObjectAcl_Private,
   BucketsInsertPredefinedDefaultObjectAcl_ProjectPrivate,
   BucketsInsertPredefinedDefaultObjectAcl_PublicRead,
-  BucketsInsertPredefinedDefaultObjectAcl
-  #-}
+  BucketsInsertPredefinedDefaultObjectAcl #-}
 
 -- | Set of properties to return. Defaults to noAcl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
-newtype BucketsInsertProjection = BucketsInsertProjection {fromBucketsInsertProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsInsertProjection = BucketsInsertProjection { fromBucketsInsertProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsInsertProjection_Full :: BucketsInsertProjection
@@ -402,21 +437,20 @@ pattern BucketsInsertProjection_NoAcl = BucketsInsertProjection "noAcl"
 {-# COMPLETE
   BucketsInsertProjection_Full,
   BucketsInsertProjection_NoAcl,
-  BucketsInsertProjection
-  #-}
+  BucketsInsertProjection #-}
 
 -- | Set of properties to return. Defaults to noAcl.
-newtype BucketsListProjection = BucketsListProjection {fromBucketsListProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsListProjection = BucketsListProjection { fromBucketsListProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsListProjection_Full :: BucketsListProjection
@@ -429,21 +463,20 @@ pattern BucketsListProjection_NoAcl = BucketsListProjection "noAcl"
 {-# COMPLETE
   BucketsListProjection_Full,
   BucketsListProjection_NoAcl,
-  BucketsListProjection
-  #-}
+  BucketsListProjection #-}
 
 -- | Apply a predefined set of access controls to this bucket.
-newtype BucketsPatchPredefinedAcl = BucketsPatchPredefinedAcl {fromBucketsPatchPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsPatchPredefinedAcl = BucketsPatchPredefinedAcl { fromBucketsPatchPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Project team owners get OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsPatchPredefinedAcl_AuthenticatedRead :: BucketsPatchPredefinedAcl
@@ -471,21 +504,20 @@ pattern BucketsPatchPredefinedAcl_PublicReadWrite = BucketsPatchPredefinedAcl "p
   BucketsPatchPredefinedAcl_ProjectPrivate,
   BucketsPatchPredefinedAcl_PublicRead,
   BucketsPatchPredefinedAcl_PublicReadWrite,
-  BucketsPatchPredefinedAcl
-  #-}
+  BucketsPatchPredefinedAcl #-}
 
 -- | Apply a predefined set of default object access controls to this bucket.
-newtype BucketsPatchPredefinedDefaultObjectAcl = BucketsPatchPredefinedDefaultObjectAcl {fromBucketsPatchPredefinedDefaultObjectAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsPatchPredefinedDefaultObjectAcl = BucketsPatchPredefinedDefaultObjectAcl { fromBucketsPatchPredefinedDefaultObjectAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsPatchPredefinedDefaultObjectAcl_AuthenticatedRead :: BucketsPatchPredefinedDefaultObjectAcl
@@ -518,21 +550,20 @@ pattern BucketsPatchPredefinedDefaultObjectAcl_PublicRead = BucketsPatchPredefin
   BucketsPatchPredefinedDefaultObjectAcl_Private,
   BucketsPatchPredefinedDefaultObjectAcl_ProjectPrivate,
   BucketsPatchPredefinedDefaultObjectAcl_PublicRead,
-  BucketsPatchPredefinedDefaultObjectAcl
-  #-}
+  BucketsPatchPredefinedDefaultObjectAcl #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype BucketsPatchProjection = BucketsPatchProjection {fromBucketsPatchProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsPatchProjection = BucketsPatchProjection { fromBucketsPatchProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsPatchProjection_Full :: BucketsPatchProjection
@@ -545,21 +576,20 @@ pattern BucketsPatchProjection_NoAcl = BucketsPatchProjection "noAcl"
 {-# COMPLETE
   BucketsPatchProjection_Full,
   BucketsPatchProjection_NoAcl,
-  BucketsPatchProjection
-  #-}
+  BucketsPatchProjection #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype BucketsRestoreProjection = BucketsRestoreProjection {fromBucketsRestoreProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsRestoreProjection = BucketsRestoreProjection { fromBucketsRestoreProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsRestoreProjection_Full :: BucketsRestoreProjection
@@ -572,21 +602,20 @@ pattern BucketsRestoreProjection_NoAcl = BucketsRestoreProjection "noAcl"
 {-# COMPLETE
   BucketsRestoreProjection_Full,
   BucketsRestoreProjection_NoAcl,
-  BucketsRestoreProjection
-  #-}
+  BucketsRestoreProjection #-}
 
 -- | Apply a predefined set of access controls to this bucket.
-newtype BucketsUpdatePredefinedAcl = BucketsUpdatePredefinedAcl {fromBucketsUpdatePredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsUpdatePredefinedAcl = BucketsUpdatePredefinedAcl { fromBucketsUpdatePredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Project team owners get OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsUpdatePredefinedAcl_AuthenticatedRead :: BucketsUpdatePredefinedAcl
@@ -614,21 +643,20 @@ pattern BucketsUpdatePredefinedAcl_PublicReadWrite = BucketsUpdatePredefinedAcl 
   BucketsUpdatePredefinedAcl_ProjectPrivate,
   BucketsUpdatePredefinedAcl_PublicRead,
   BucketsUpdatePredefinedAcl_PublicReadWrite,
-  BucketsUpdatePredefinedAcl
-  #-}
+  BucketsUpdatePredefinedAcl #-}
 
 -- | Apply a predefined set of default object access controls to this bucket.
-newtype BucketsUpdatePredefinedDefaultObjectAcl = BucketsUpdatePredefinedDefaultObjectAcl {fromBucketsUpdatePredefinedDefaultObjectAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsUpdatePredefinedDefaultObjectAcl = BucketsUpdatePredefinedDefaultObjectAcl { fromBucketsUpdatePredefinedDefaultObjectAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern BucketsUpdatePredefinedDefaultObjectAcl_AuthenticatedRead :: BucketsUpdatePredefinedDefaultObjectAcl
@@ -661,21 +689,20 @@ pattern BucketsUpdatePredefinedDefaultObjectAcl_PublicRead = BucketsUpdatePredef
   BucketsUpdatePredefinedDefaultObjectAcl_Private,
   BucketsUpdatePredefinedDefaultObjectAcl_ProjectPrivate,
   BucketsUpdatePredefinedDefaultObjectAcl_PublicRead,
-  BucketsUpdatePredefinedDefaultObjectAcl
-  #-}
+  BucketsUpdatePredefinedDefaultObjectAcl #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype BucketsUpdateProjection = BucketsUpdateProjection {fromBucketsUpdateProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BucketsUpdateProjection = BucketsUpdateProjection { fromBucketsUpdateProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern BucketsUpdateProjection_Full :: BucketsUpdateProjection
@@ -688,21 +715,20 @@ pattern BucketsUpdateProjection_NoAcl = BucketsUpdateProjection "noAcl"
 {-# COMPLETE
   BucketsUpdateProjection_Full,
   BucketsUpdateProjection_NoAcl,
-  BucketsUpdateProjection
-  #-}
+  BucketsUpdateProjection #-}
 
 -- | Apply a predefined set of access controls to the destination object.
-newtype ObjectsComposeDestinationPredefinedAcl = ObjectsComposeDestinationPredefinedAcl {fromObjectsComposeDestinationPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsComposeDestinationPredefinedAcl = ObjectsComposeDestinationPredefinedAcl { fromObjectsComposeDestinationPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsComposeDestinationPredefinedAcl_AuthenticatedRead :: ObjectsComposeDestinationPredefinedAcl
@@ -735,21 +761,20 @@ pattern ObjectsComposeDestinationPredefinedAcl_PublicRead = ObjectsComposeDestin
   ObjectsComposeDestinationPredefinedAcl_Private,
   ObjectsComposeDestinationPredefinedAcl_ProjectPrivate,
   ObjectsComposeDestinationPredefinedAcl_PublicRead,
-  ObjectsComposeDestinationPredefinedAcl
-  #-}
+  ObjectsComposeDestinationPredefinedAcl #-}
 
 -- | Apply a predefined set of access controls to the destination object.
-newtype ObjectsCopyDestinationPredefinedAcl = ObjectsCopyDestinationPredefinedAcl {fromObjectsCopyDestinationPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsCopyDestinationPredefinedAcl = ObjectsCopyDestinationPredefinedAcl { fromObjectsCopyDestinationPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsCopyDestinationPredefinedAcl_AuthenticatedRead :: ObjectsCopyDestinationPredefinedAcl
@@ -782,21 +807,20 @@ pattern ObjectsCopyDestinationPredefinedAcl_PublicRead = ObjectsCopyDestinationP
   ObjectsCopyDestinationPredefinedAcl_Private,
   ObjectsCopyDestinationPredefinedAcl_ProjectPrivate,
   ObjectsCopyDestinationPredefinedAcl_PublicRead,
-  ObjectsCopyDestinationPredefinedAcl
-  #-}
+  ObjectsCopyDestinationPredefinedAcl #-}
 
 -- | Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-newtype ObjectsCopyProjection = ObjectsCopyProjection {fromObjectsCopyProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsCopyProjection = ObjectsCopyProjection { fromObjectsCopyProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsCopyProjection_Full :: ObjectsCopyProjection
@@ -809,21 +833,20 @@ pattern ObjectsCopyProjection_NoAcl = ObjectsCopyProjection "noAcl"
 {-# COMPLETE
   ObjectsCopyProjection_Full,
   ObjectsCopyProjection_NoAcl,
-  ObjectsCopyProjection
-  #-}
+  ObjectsCopyProjection #-}
 
 -- | Set of properties to return. Defaults to noAcl.
-newtype ObjectsGetProjection = ObjectsGetProjection {fromObjectsGetProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsGetProjection = ObjectsGetProjection { fromObjectsGetProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsGetProjection_Full :: ObjectsGetProjection
@@ -836,21 +859,20 @@ pattern ObjectsGetProjection_NoAcl = ObjectsGetProjection "noAcl"
 {-# COMPLETE
   ObjectsGetProjection_Full,
   ObjectsGetProjection_NoAcl,
-  ObjectsGetProjection
-  #-}
+  ObjectsGetProjection #-}
 
 -- | Apply a predefined set of access controls to this object.
-newtype ObjectsInsertPredefinedAcl = ObjectsInsertPredefinedAcl {fromObjectsInsertPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsInsertPredefinedAcl = ObjectsInsertPredefinedAcl { fromObjectsInsertPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsInsertPredefinedAcl_AuthenticatedRead :: ObjectsInsertPredefinedAcl
@@ -883,21 +905,20 @@ pattern ObjectsInsertPredefinedAcl_PublicRead = ObjectsInsertPredefinedAcl "publ
   ObjectsInsertPredefinedAcl_Private,
   ObjectsInsertPredefinedAcl_ProjectPrivate,
   ObjectsInsertPredefinedAcl_PublicRead,
-  ObjectsInsertPredefinedAcl
-  #-}
+  ObjectsInsertPredefinedAcl #-}
 
 -- | Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-newtype ObjectsInsertProjection = ObjectsInsertProjection {fromObjectsInsertProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsInsertProjection = ObjectsInsertProjection { fromObjectsInsertProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsInsertProjection_Full :: ObjectsInsertProjection
@@ -910,21 +931,20 @@ pattern ObjectsInsertProjection_NoAcl = ObjectsInsertProjection "noAcl"
 {-# COMPLETE
   ObjectsInsertProjection_Full,
   ObjectsInsertProjection_NoAcl,
-  ObjectsInsertProjection
-  #-}
+  ObjectsInsertProjection #-}
 
 -- | Set of properties to return. Defaults to noAcl.
-newtype ObjectsListProjection = ObjectsListProjection {fromObjectsListProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsListProjection = ObjectsListProjection { fromObjectsListProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsListProjection_Full :: ObjectsListProjection
@@ -937,21 +957,46 @@ pattern ObjectsListProjection_NoAcl = ObjectsListProjection "noAcl"
 {-# COMPLETE
   ObjectsListProjection_Full,
   ObjectsListProjection_NoAcl,
-  ObjectsListProjection
-  #-}
+  ObjectsListProjection #-}
+
+-- | Set of properties to return. Defaults to noAcl.
+newtype ObjectsMoveProjection = ObjectsMoveProjection { fromObjectsMoveProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Include all properties.
+pattern ObjectsMoveProjection_Full :: ObjectsMoveProjection
+pattern ObjectsMoveProjection_Full = ObjectsMoveProjection "full"
+
+-- | Omit the owner, acl property.
+pattern ObjectsMoveProjection_NoAcl :: ObjectsMoveProjection
+pattern ObjectsMoveProjection_NoAcl = ObjectsMoveProjection "noAcl"
+
+{-# COMPLETE
+  ObjectsMoveProjection_Full,
+  ObjectsMoveProjection_NoAcl,
+  ObjectsMoveProjection #-}
 
 -- | Apply a predefined set of access controls to this object.
-newtype ObjectsPatchPredefinedAcl = ObjectsPatchPredefinedAcl {fromObjectsPatchPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsPatchPredefinedAcl = ObjectsPatchPredefinedAcl { fromObjectsPatchPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsPatchPredefinedAcl_AuthenticatedRead :: ObjectsPatchPredefinedAcl
@@ -984,21 +1029,20 @@ pattern ObjectsPatchPredefinedAcl_PublicRead = ObjectsPatchPredefinedAcl "public
   ObjectsPatchPredefinedAcl_Private,
   ObjectsPatchPredefinedAcl_ProjectPrivate,
   ObjectsPatchPredefinedAcl_PublicRead,
-  ObjectsPatchPredefinedAcl
-  #-}
+  ObjectsPatchPredefinedAcl #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype ObjectsPatchProjection = ObjectsPatchProjection {fromObjectsPatchProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsPatchProjection = ObjectsPatchProjection { fromObjectsPatchProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsPatchProjection_Full :: ObjectsPatchProjection
@@ -1011,21 +1055,20 @@ pattern ObjectsPatchProjection_NoAcl = ObjectsPatchProjection "noAcl"
 {-# COMPLETE
   ObjectsPatchProjection_Full,
   ObjectsPatchProjection_NoAcl,
-  ObjectsPatchProjection
-  #-}
+  ObjectsPatchProjection #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype ObjectsRestoreProjection = ObjectsRestoreProjection {fromObjectsRestoreProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsRestoreProjection = ObjectsRestoreProjection { fromObjectsRestoreProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsRestoreProjection_Full :: ObjectsRestoreProjection
@@ -1038,21 +1081,20 @@ pattern ObjectsRestoreProjection_NoAcl = ObjectsRestoreProjection "noAcl"
 {-# COMPLETE
   ObjectsRestoreProjection_Full,
   ObjectsRestoreProjection_NoAcl,
-  ObjectsRestoreProjection
-  #-}
+  ObjectsRestoreProjection #-}
 
 -- | Apply a predefined set of access controls to the destination object.
-newtype ObjectsRewriteDestinationPredefinedAcl = ObjectsRewriteDestinationPredefinedAcl {fromObjectsRewriteDestinationPredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsRewriteDestinationPredefinedAcl = ObjectsRewriteDestinationPredefinedAcl { fromObjectsRewriteDestinationPredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsRewriteDestinationPredefinedAcl_AuthenticatedRead :: ObjectsRewriteDestinationPredefinedAcl
@@ -1085,21 +1127,20 @@ pattern ObjectsRewriteDestinationPredefinedAcl_PublicRead = ObjectsRewriteDestin
   ObjectsRewriteDestinationPredefinedAcl_Private,
   ObjectsRewriteDestinationPredefinedAcl_ProjectPrivate,
   ObjectsRewriteDestinationPredefinedAcl_PublicRead,
-  ObjectsRewriteDestinationPredefinedAcl
-  #-}
+  ObjectsRewriteDestinationPredefinedAcl #-}
 
 -- | Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
-newtype ObjectsRewriteProjection = ObjectsRewriteProjection {fromObjectsRewriteProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsRewriteProjection = ObjectsRewriteProjection { fromObjectsRewriteProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsRewriteProjection_Full :: ObjectsRewriteProjection
@@ -1112,21 +1153,20 @@ pattern ObjectsRewriteProjection_NoAcl = ObjectsRewriteProjection "noAcl"
 {-# COMPLETE
   ObjectsRewriteProjection_Full,
   ObjectsRewriteProjection_NoAcl,
-  ObjectsRewriteProjection
-  #-}
+  ObjectsRewriteProjection #-}
 
 -- | Apply a predefined set of access controls to this object.
-newtype ObjectsUpdatePredefinedAcl = ObjectsUpdatePredefinedAcl {fromObjectsUpdatePredefinedAcl :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsUpdatePredefinedAcl = ObjectsUpdatePredefinedAcl { fromObjectsUpdatePredefinedAcl :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
 pattern ObjectsUpdatePredefinedAcl_AuthenticatedRead :: ObjectsUpdatePredefinedAcl
@@ -1159,21 +1199,20 @@ pattern ObjectsUpdatePredefinedAcl_PublicRead = ObjectsUpdatePredefinedAcl "publ
   ObjectsUpdatePredefinedAcl_Private,
   ObjectsUpdatePredefinedAcl_ProjectPrivate,
   ObjectsUpdatePredefinedAcl_PublicRead,
-  ObjectsUpdatePredefinedAcl
-  #-}
+  ObjectsUpdatePredefinedAcl #-}
 
 -- | Set of properties to return. Defaults to full.
-newtype ObjectsUpdateProjection = ObjectsUpdateProjection {fromObjectsUpdateProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsUpdateProjection = ObjectsUpdateProjection { fromObjectsUpdateProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsUpdateProjection_Full :: ObjectsUpdateProjection
@@ -1186,21 +1225,20 @@ pattern ObjectsUpdateProjection_NoAcl = ObjectsUpdateProjection "noAcl"
 {-# COMPLETE
   ObjectsUpdateProjection_Full,
   ObjectsUpdateProjection_NoAcl,
-  ObjectsUpdateProjection
-  #-}
+  ObjectsUpdateProjection #-}
 
 -- | Set of properties to return. Defaults to noAcl.
-newtype ObjectsWatchAllProjection = ObjectsWatchAllProjection {fromObjectsWatchAllProjection :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ObjectsWatchAllProjection = ObjectsWatchAllProjection { fromObjectsWatchAllProjection :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Include all properties.
 pattern ObjectsWatchAllProjection_Full :: ObjectsWatchAllProjection
@@ -1213,5 +1251,4 @@ pattern ObjectsWatchAllProjection_NoAcl = ObjectsWatchAllProjection "noAcl"
 {-# COMPLETE
   ObjectsWatchAllProjection_Full,
   ObjectsWatchAllProjection_NoAcl,
-  ObjectsWatchAllProjection
-  #-}
+  ObjectsWatchAllProjection #-}

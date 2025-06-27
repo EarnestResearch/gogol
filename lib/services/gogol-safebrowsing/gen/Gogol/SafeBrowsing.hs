@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,40 +29,99 @@
 --
 -- /See:/ <https://developers.google.com/safe-browsing/ Safe Browsing API Reference>
 module Gogol.SafeBrowsing
-  ( -- * Configuration
-    safeBrowsingService,
+    (
+    -- * Configuration
+      safeBrowsingService
 
     -- * Resources
 
+    -- ** safebrowsing.hashList.get
+    , SafeBrowsingHashListGetResource
+    , SafeBrowsingHashListGet (..)
+    , newSafeBrowsingHashListGet
+
+    -- ** safebrowsing.hashLists.batchGet
+    , SafeBrowsingHashListsBatchGetResource
+    , SafeBrowsingHashListsBatchGet (..)
+    , newSafeBrowsingHashListsBatchGet
+
+    -- ** safebrowsing.hashLists.list
+    , SafeBrowsingHashListsListResource
+    , SafeBrowsingHashListsList (..)
+    , newSafeBrowsingHashListsList
+
     -- ** safebrowsing.hashes.search
-    SafeBrowsingHashesSearchResource,
-    SafeBrowsingHashesSearch (..),
-    newSafeBrowsingHashesSearch,
+    , SafeBrowsingHashesSearchResource
+    , SafeBrowsingHashesSearch (..)
+    , newSafeBrowsingHashesSearch
 
     -- * Types
 
     -- ** Xgafv
-    Xgafv (..),
+    , Xgafv (..)
+
+    -- ** GoogleSecuritySafebrowsingV5BatchGetHashListsResponse
+    , GoogleSecuritySafebrowsingV5BatchGetHashListsResponse (..)
+    , newGoogleSecuritySafebrowsingV5BatchGetHashListsResponse
 
     -- ** GoogleSecuritySafebrowsingV5FullHash
-    GoogleSecuritySafebrowsingV5FullHash (..),
-    newGoogleSecuritySafebrowsingV5FullHash,
+    , GoogleSecuritySafebrowsingV5FullHash (..)
+    , newGoogleSecuritySafebrowsingV5FullHash
 
     -- ** GoogleSecuritySafebrowsingV5FullHashFullHashDetail
-    GoogleSecuritySafebrowsingV5FullHashFullHashDetail (..),
-    newGoogleSecuritySafebrowsingV5FullHashFullHashDetail,
+    , GoogleSecuritySafebrowsingV5FullHashFullHashDetail (..)
+    , newGoogleSecuritySafebrowsingV5FullHashFullHashDetail
 
     -- ** GoogleSecuritySafebrowsingV5FullHashFullHashDetail_AttributesItem
-    GoogleSecuritySafebrowsingV5FullHashFullHashDetail_AttributesItem (..),
+    , GoogleSecuritySafebrowsingV5FullHashFullHashDetail_AttributesItem (..)
 
     -- ** GoogleSecuritySafebrowsingV5FullHashFullHashDetail_ThreatType
-    GoogleSecuritySafebrowsingV5FullHashFullHashDetail_ThreatType (..),
+    , GoogleSecuritySafebrowsingV5FullHashFullHashDetail_ThreatType (..)
+
+    -- ** GoogleSecuritySafebrowsingV5HashList
+    , GoogleSecuritySafebrowsingV5HashList (..)
+    , newGoogleSecuritySafebrowsingV5HashList
+
+    -- ** GoogleSecuritySafebrowsingV5HashListMetadata
+    , GoogleSecuritySafebrowsingV5HashListMetadata (..)
+    , newGoogleSecuritySafebrowsingV5HashListMetadata
+
+    -- ** GoogleSecuritySafebrowsingV5HashListMetadata_HashLength
+    , GoogleSecuritySafebrowsingV5HashListMetadata_HashLength (..)
+
+    -- ** GoogleSecuritySafebrowsingV5HashListMetadata_LikelySafeTypesItem
+    , GoogleSecuritySafebrowsingV5HashListMetadata_LikelySafeTypesItem (..)
+
+    -- ** GoogleSecuritySafebrowsingV5HashListMetadata_ThreatTypesItem
+    , GoogleSecuritySafebrowsingV5HashListMetadata_ThreatTypesItem (..)
+
+    -- ** GoogleSecuritySafebrowsingV5ListHashListsResponse
+    , GoogleSecuritySafebrowsingV5ListHashListsResponse (..)
+    , newGoogleSecuritySafebrowsingV5ListHashListsResponse
+
+    -- ** GoogleSecuritySafebrowsingV5RiceDeltaEncoded128Bit
+    , GoogleSecuritySafebrowsingV5RiceDeltaEncoded128Bit (..)
+    , newGoogleSecuritySafebrowsingV5RiceDeltaEncoded128Bit
+
+    -- ** GoogleSecuritySafebrowsingV5RiceDeltaEncoded256Bit
+    , GoogleSecuritySafebrowsingV5RiceDeltaEncoded256Bit (..)
+    , newGoogleSecuritySafebrowsingV5RiceDeltaEncoded256Bit
+
+    -- ** GoogleSecuritySafebrowsingV5RiceDeltaEncoded32Bit
+    , GoogleSecuritySafebrowsingV5RiceDeltaEncoded32Bit (..)
+    , newGoogleSecuritySafebrowsingV5RiceDeltaEncoded32Bit
+
+    -- ** GoogleSecuritySafebrowsingV5RiceDeltaEncoded64Bit
+    , GoogleSecuritySafebrowsingV5RiceDeltaEncoded64Bit (..)
+    , newGoogleSecuritySafebrowsingV5RiceDeltaEncoded64Bit
 
     -- ** GoogleSecuritySafebrowsingV5SearchHashesResponse
-    GoogleSecuritySafebrowsingV5SearchHashesResponse (..),
-    newGoogleSecuritySafebrowsingV5SearchHashesResponse,
-  )
-where
+    , GoogleSecuritySafebrowsingV5SearchHashesResponse (..)
+    , newGoogleSecuritySafebrowsingV5SearchHashesResponse
+    ) where
 
+import Gogol.SafeBrowsing.HashList.Get
+import Gogol.SafeBrowsing.HashLists.BatchGet
+import Gogol.SafeBrowsing.HashLists.List
 import Gogol.SafeBrowsing.Hashes.Search
 import Gogol.SafeBrowsing.Types

@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,100 +29,87 @@
 --
 -- /See:/ <https://cloud.google.com/compute/ Compute Engine API Reference> for @compute.regionOperations.delete@.
 module Gogol.Compute.RegionOperations.Delete
-  ( -- * Resource
-    ComputeRegionOperationsDeleteResource,
+    (
+    -- * Resource
+      ComputeRegionOperationsDeleteResource
 
     -- ** Constructing a Request
-    ComputeRegionOperationsDelete (..),
-    newComputeRegionOperationsDelete,
-  )
-where
+    , ComputeRegionOperationsDelete (..)
+    , newComputeRegionOperationsDelete
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.Compute.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @compute.regionOperations.delete@ method which the
 -- 'ComputeRegionOperationsDelete' request conforms to.
 type ComputeRegionOperationsDeleteResource =
-  "compute"
-    Core.:> "v1"
-    Core.:> "projects"
-    Core.:> Core.Capture "project" Core.Text
-    Core.:> "regions"
-    Core.:> Core.Capture "region" Core.Text
-    Core.:> "operations"
-    Core.:> Core.Capture "operation" Core.Text
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.Delete '[Core.JSON] ()
+     "compute" Core.:>
+       "v1" Core.:>
+         "projects" Core.:>
+           Core.Capture "project" Core.Text Core.:>
+             "regions" Core.:>
+               Core.Capture "region" Core.Text Core.:>
+                 "operations" Core.:>
+                   Core.Capture "operation" Core.Text Core.:>
+                     Core.QueryParam "$.xgafv" Xgafv Core.:>
+                       Core.QueryParam "access_token" Core.Text Core.:>
+                         Core.QueryParam "callback" Core.Text Core.:>
+                           Core.QueryParam "uploadType" Core.Text Core.:>
+                             Core.QueryParam "upload_protocol" Core.Text Core.:>
+                               Core.QueryParam "alt" Core.AltJSON Core.:>
+                                 Core.Delete '[Core.JSON] ()
 
 -- | Deletes the specified region-specific Operations resource.
 --
 -- /See:/ 'newComputeRegionOperationsDelete' smart constructor.
 data ComputeRegionOperationsDelete = ComputeRegionOperationsDelete
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Name of the Operations resource to delete, or its unique numeric identifier.
-    operation :: Core.Text,
-    -- | Project ID for this request.
-    project :: Core.Text,
-    -- | Name of the region for this request.
-    region :: Core.Text,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Name of the Operations resource to delete, or its unique numeric identifier.
+    , operation :: Core.Text
+      -- | Project ID for this request.
+    , project :: Core.Text
+      -- | Name of the region for this request.
+    , region :: Core.Text
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'ComputeRegionOperationsDelete' with the minimum fields required to make a request.
-newComputeRegionOperationsDelete ::
-  -- |  Name of the Operations resource to delete, or its unique numeric identifier. See 'operation'.
-  Core.Text ->
-  -- |  Project ID for this request. See 'project'.
-  Core.Text ->
-  -- |  Name of the region for this request. See 'region'.
-  Core.Text ->
-  ComputeRegionOperationsDelete
-newComputeRegionOperationsDelete operation project region =
-  ComputeRegionOperationsDelete
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      operation = operation,
-      project = project,
-      region = region,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
-
+newComputeRegionOperationsDelete 
+    :: 
+                                 Core.Text
+       -- ^  Name of the Operations resource to delete, or its unique numeric identifier. See 'operation'.
+    -> Core.Text
+       -- ^  Project ID for this request. See 'project'.
+    -> Core.Text
+       -- ^  Name of the region for this request. See 'region'.
+    -> ComputeRegionOperationsDelete
+newComputeRegionOperationsDelete operation project region
+  = ComputeRegionOperationsDelete{xgafv = Core.Nothing,
+                                  accessToken = Core.Nothing, callback = Core.Nothing,
+                                  operation = operation, project = project, region = region,
+                                  uploadType = Core.Nothing, uploadProtocol = Core.Nothing}
 instance Core.GoogleRequest ComputeRegionOperationsDelete where
-  type Rs ComputeRegionOperationsDelete = ()
-  type
-    Scopes ComputeRegionOperationsDelete =
-      '[CloudPlatform'FullControl, Compute'FullControl]
-  requestClient ComputeRegionOperationsDelete {..} =
-    go
-      project
-      region
-      operation
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      computeService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy ComputeRegionOperationsDeleteResource)
-          Core.mempty
+        type Rs ComputeRegionOperationsDelete = ()
+        type Scopes ComputeRegionOperationsDelete =
+             '[CloudPlatform'FullControl, Compute'FullControl]
+        requestClient ComputeRegionOperationsDelete{..}
+          = go project region operation xgafv accessToken callback uploadType
+              uploadProtocol
+              (Core.Just Core.AltJSON)
+              computeService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy ComputeRegionOperationsDeleteResource)
+                      Core.mempty
+

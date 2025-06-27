@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.TPU.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AcceleratorConfig_Type
     AcceleratorConfig_Type
-      ( AcceleratorConfig_Type_TYPEUNSPECIFIED,
+      (
+        AcceleratorConfig_Type_TYPEUNSPECIFIED,
         AcceleratorConfig_Type_V2,
         AcceleratorConfig_Type_V3,
         AcceleratorConfig_Type_V4,
@@ -45,7 +51,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * AttachedDisk_Mode
     AttachedDisk_Mode
-      ( AttachedDisk_Mode_DISKMODEUNSPECIFIED,
+      (
+        AttachedDisk_Mode_DISKMODEUNSPECIFIED,
         AttachedDisk_Mode_READWRITE,
         AttachedDisk_Mode_READONLY,
         ..
@@ -53,7 +60,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_ApiVersion
     Node_ApiVersion
-      ( Node_ApiVersion_APIVERSIONUNSPECIFIED,
+      (
+        Node_ApiVersion_APIVERSIONUNSPECIFIED,
         Node_ApiVersion_V1_ALPHA1,
         Node_ApiVersion_V1,
         Node_ApiVersion_V2_ALPHA1,
@@ -63,7 +71,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_Health
     Node_Health
-      ( Node_Health_HEALTHUNSPECIFIED,
+      (
+        Node_Health_HEALTHUNSPECIFIED,
         Node_Health_Healthy,
         Node_Health_Timeout,
         Node_Health_UNHEALTHYTENSORFLOW,
@@ -73,7 +82,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Node_State
     Node_State
-      ( Node_State_STATEUNSPECIFIED,
+      (
+        Node_State_STATEUNSPECIFIED,
         Node_State_Creating,
         Node_State_Ready,
         Node_State_Restarting,
@@ -94,7 +104,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * QueuedResourceState_State
     QueuedResourceState_State
-      ( QueuedResourceState_State_STATEUNSPECIFIED,
+      (
+        QueuedResourceState_State_STATEUNSPECIFIED,
         QueuedResourceState_State_Creating,
         QueuedResourceState_State_Accepted,
         QueuedResourceState_State_Provisioning,
@@ -109,7 +120,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * QueuedResourceState_StateInitiator
     QueuedResourceState_StateInitiator
-      ( QueuedResourceState_StateInitiator_STATEINITIATORUNSPECIFIED,
+      (
+        QueuedResourceState_StateInitiator_STATEINITIATORUNSPECIFIED,
         QueuedResourceState_StateInitiator_User,
         QueuedResourceState_StateInitiator_Service,
         ..
@@ -117,7 +129,8 @@ module Gogol.TPU.Internal.Sum
 
     -- * Symptom_SymptomType
     Symptom_SymptomType
-      ( Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED,
+      (
+        Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED,
         Symptom_SymptomType_LOWMEMORY,
         Symptom_SymptomType_OUTOFMEMORY,
         Symptom_SymptomType_EXECUTETIMEDOUT,
@@ -126,23 +139,40 @@ module Gogol.TPU.Internal.Sum
         Symptom_SymptomType_PROJECTABUSE,
         ..
       ),
-  )
-where
 
-import Gogol.Prelude qualified as Core
+    -- * UpcomingMaintenance_MaintenanceStatus
+    UpcomingMaintenance_MaintenanceStatus
+      (
+        UpcomingMaintenance_MaintenanceStatus_Unknown,
+        UpcomingMaintenance_MaintenanceStatus_Pending,
+        UpcomingMaintenance_MaintenanceStatus_Ongoing,
+        ..
+      ),
+
+    -- * UpcomingMaintenance_Type
+    UpcomingMaintenance_Type
+      (
+        UpcomingMaintenance_Type_UNKNOWNTYPE,
+        UpcomingMaintenance_Type_Scheduled,
+        UpcomingMaintenance_Type_Unscheduled,
+        ..
+      ),
+  ) where
+
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -155,21 +185,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Required. Type of TPU.
-newtype AcceleratorConfig_Type = AcceleratorConfig_Type {fromAcceleratorConfig_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AcceleratorConfig_Type = AcceleratorConfig_Type { fromAcceleratorConfig_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified version.
 pattern AcceleratorConfig_Type_TYPEUNSPECIFIED :: AcceleratorConfig_Type
@@ -207,21 +236,20 @@ pattern AcceleratorConfig_Type_V6E = AcceleratorConfig_Type "V6E"
   AcceleratorConfig_Type_V5LITEPOD,
   AcceleratorConfig_Type_V5P,
   AcceleratorConfig_Type_V6E,
-  AcceleratorConfig_Type
-  #-}
+  AcceleratorConfig_Type #-}
 
 -- | The mode in which to attach this disk. If not specified, the default is READ/WRITE mode. Only applicable to data/disks.
-newtype AttachedDisk_Mode = AttachedDisk_Mode {fromAttachedDisk_Mode :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AttachedDisk_Mode = AttachedDisk_Mode { fromAttachedDisk_Mode :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The disk mode is not known\/set.
 pattern AttachedDisk_Mode_DISKMODEUNSPECIFIED :: AttachedDisk_Mode
@@ -239,21 +267,20 @@ pattern AttachedDisk_Mode_READONLY = AttachedDisk_Mode "READ_ONLY"
   AttachedDisk_Mode_DISKMODEUNSPECIFIED,
   AttachedDisk_Mode_READWRITE,
   AttachedDisk_Mode_READONLY,
-  AttachedDisk_Mode
-  #-}
+  AttachedDisk_Mode #-}
 
 -- | Output only. The API version that created this Node.
-newtype Node_ApiVersion = Node_ApiVersion {fromNode_ApiVersion :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_ApiVersion = Node_ApiVersion { fromNode_ApiVersion :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | API version is unknown.
 pattern Node_ApiVersion_APIVERSIONUNSPECIFIED :: Node_ApiVersion
@@ -281,21 +308,20 @@ pattern Node_ApiVersion_V2 = Node_ApiVersion "V2"
   Node_ApiVersion_V1,
   Node_ApiVersion_V2_ALPHA1,
   Node_ApiVersion_V2,
-  Node_ApiVersion
-  #-}
+  Node_ApiVersion #-}
 
 -- | The health status of the TPU node.
-newtype Node_Health = Node_Health {fromNode_Health :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_Health = Node_Health { fromNode_Health :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Health status is unknown: not initialized or failed to retrieve.
 pattern Node_Health_HEALTHUNSPECIFIED :: Node_Health
@@ -323,21 +349,20 @@ pattern Node_Health_UNHEALTHYMAINTENANCE = Node_Health "UNHEALTHY_MAINTENANCE"
   Node_Health_Timeout,
   Node_Health_UNHEALTHYTENSORFLOW,
   Node_Health_UNHEALTHYMAINTENANCE,
-  Node_Health
-  #-}
+  Node_Health #-}
 
 -- | Output only. The current state for the TPU Node.
-newtype Node_State = Node_State {fromNode_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Node_State = Node_State { fromNode_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | TPU node state is not known\/set.
 pattern Node_State_STATEUNSPECIFIED :: Node_State
@@ -420,21 +445,20 @@ pattern Node_State_Unknown = Node_State "UNKNOWN"
   Node_State_Hidden,
   Node_State_Unhiding,
   Node_State_Unknown,
-  Node_State
-  #-}
+  Node_State #-}
 
 -- | Output only. State of the QueuedResource request.
-newtype QueuedResourceState_State = QueuedResourceState_State {fromQueuedResourceState_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype QueuedResourceState_State = QueuedResourceState_State { fromQueuedResourceState_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | State of the QueuedResource request is not known\/set.
 pattern QueuedResourceState_State_STATEUNSPECIFIED :: QueuedResourceState_State
@@ -487,21 +511,20 @@ pattern QueuedResourceState_State_WAITINGFORRESOURCES = QueuedResourceState_Stat
   QueuedResourceState_State_Suspending,
   QueuedResourceState_State_Suspended,
   QueuedResourceState_State_WAITINGFORRESOURCES,
-  QueuedResourceState_State
-  #-}
+  QueuedResourceState_State #-}
 
 -- | Output only. The initiator of the QueuedResources\'s current state. Used to indicate whether the SUSPENDING\/SUSPENDED state was initiated by the user or the service.
-newtype QueuedResourceState_StateInitiator = QueuedResourceState_StateInitiator {fromQueuedResourceState_StateInitiator :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype QueuedResourceState_StateInitiator = QueuedResourceState_StateInitiator { fromQueuedResourceState_StateInitiator :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The state initiator is unspecified.
 pattern QueuedResourceState_StateInitiator_STATEINITIATORUNSPECIFIED :: QueuedResourceState_StateInitiator
@@ -519,21 +542,20 @@ pattern QueuedResourceState_StateInitiator_Service = QueuedResourceState_StateIn
   QueuedResourceState_StateInitiator_STATEINITIATORUNSPECIFIED,
   QueuedResourceState_StateInitiator_User,
   QueuedResourceState_StateInitiator_Service,
-  QueuedResourceState_StateInitiator
-  #-}
+  QueuedResourceState_StateInitiator #-}
 
 -- | Type of the Symptom.
-newtype Symptom_SymptomType = Symptom_SymptomType {fromSymptom_SymptomType :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Symptom_SymptomType = Symptom_SymptomType { fromSymptom_SymptomType :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified symptom.
 pattern Symptom_SymptomType_SYMPTOMTYPEUNSPECIFIED :: Symptom_SymptomType
@@ -571,5 +593,66 @@ pattern Symptom_SymptomType_PROJECTABUSE = Symptom_SymptomType "PROJECT_ABUSE"
   Symptom_SymptomType_MESHBUILDFAIL,
   Symptom_SymptomType_HBMOUTOFMEMORY,
   Symptom_SymptomType_PROJECTABUSE,
-  Symptom_SymptomType
-  #-}
+  Symptom_SymptomType #-}
+
+-- | The status of the maintenance.
+newtype UpcomingMaintenance_MaintenanceStatus = UpcomingMaintenance_MaintenanceStatus { fromUpcomingMaintenance_MaintenanceStatus :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | Unknown maintenance status. Do not use this value.
+pattern UpcomingMaintenance_MaintenanceStatus_Unknown :: UpcomingMaintenance_MaintenanceStatus
+pattern UpcomingMaintenance_MaintenanceStatus_Unknown = UpcomingMaintenance_MaintenanceStatus "UNKNOWN"
+
+-- | There is pending maintenance.
+pattern UpcomingMaintenance_MaintenanceStatus_Pending :: UpcomingMaintenance_MaintenanceStatus
+pattern UpcomingMaintenance_MaintenanceStatus_Pending = UpcomingMaintenance_MaintenanceStatus "PENDING"
+
+-- | There is ongoing maintenance on this VM.
+pattern UpcomingMaintenance_MaintenanceStatus_Ongoing :: UpcomingMaintenance_MaintenanceStatus
+pattern UpcomingMaintenance_MaintenanceStatus_Ongoing = UpcomingMaintenance_MaintenanceStatus "ONGOING"
+
+{-# COMPLETE
+  UpcomingMaintenance_MaintenanceStatus_Unknown,
+  UpcomingMaintenance_MaintenanceStatus_Pending,
+  UpcomingMaintenance_MaintenanceStatus_Ongoing,
+  UpcomingMaintenance_MaintenanceStatus #-}
+
+-- | Defines the type of maintenance.
+newtype UpcomingMaintenance_Type = UpcomingMaintenance_Type { fromUpcomingMaintenance_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
+
+-- | No type specified. Do not use this value.
+pattern UpcomingMaintenance_Type_UNKNOWNTYPE :: UpcomingMaintenance_Type
+pattern UpcomingMaintenance_Type_UNKNOWNTYPE = UpcomingMaintenance_Type "UNKNOWN_TYPE"
+
+-- | Scheduled maintenance (e.g. maintenance after uptime guarantee is complete).
+pattern UpcomingMaintenance_Type_Scheduled :: UpcomingMaintenance_Type
+pattern UpcomingMaintenance_Type_Scheduled = UpcomingMaintenance_Type "SCHEDULED"
+
+-- | Unscheduled maintenance (e.g. emergency maintenance during uptime guarantee).
+pattern UpcomingMaintenance_Type_Unscheduled :: UpcomingMaintenance_Type
+pattern UpcomingMaintenance_Type_Unscheduled = UpcomingMaintenance_Type "UNSCHEDULED"
+
+{-# COMPLETE
+  UpcomingMaintenance_Type_UNKNOWNTYPE,
+  UpcomingMaintenance_Type_Scheduled,
+  UpcomingMaintenance_Type_Unscheduled,
+  UpcomingMaintenance_Type #-}

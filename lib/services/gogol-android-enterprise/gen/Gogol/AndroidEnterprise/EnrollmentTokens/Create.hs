@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,94 +29,85 @@
 --
 -- /See:/ <https://developers.google.com/android/work/play/emm-api Google Play EMM API Reference> for @androidenterprise.enrollmentTokens.create@.
 module Gogol.AndroidEnterprise.EnrollmentTokens.Create
-  ( -- * Resource
-    AndroidEnterpriseEnrollmentTokensCreateResource,
+    (
+    -- * Resource
+      AndroidEnterpriseEnrollmentTokensCreateResource
 
     -- ** Constructing a Request
-    AndroidEnterpriseEnrollmentTokensCreate (..),
-    newAndroidEnterpriseEnrollmentTokensCreate,
-  )
-where
+    , AndroidEnterpriseEnrollmentTokensCreate (..)
+    , newAndroidEnterpriseEnrollmentTokensCreate
+    ) where
 
+import qualified Gogol.Prelude as Core
 import Gogol.AndroidEnterprise.Types
-import Gogol.Prelude qualified as Core
 
 -- | A resource alias for @androidenterprise.enrollmentTokens.create@ method which the
 -- 'AndroidEnterpriseEnrollmentTokensCreate' request conforms to.
 type AndroidEnterpriseEnrollmentTokensCreateResource =
-  "androidenterprise"
-    Core.:> "v1"
-    Core.:> "enterprises"
-    Core.:> Core.Capture "enterpriseId" Core.Text
-    Core.:> "enrollmentTokens"
-    Core.:> Core.QueryParam "$.xgafv" Xgafv
-    Core.:> Core.QueryParam "access_token" Core.Text
-    Core.:> Core.QueryParam "callback" Core.Text
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "upload_protocol" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.ReqBody '[Core.JSON] EnrollmentToken
-    Core.:> Core.Post '[Core.JSON] EnrollmentToken
+     "androidenterprise" Core.:>
+       "v1" Core.:>
+         "enterprises" Core.:>
+           Core.Capture "enterpriseId" Core.Text Core.:>
+             "enrollmentTokens" Core.:>
+               Core.QueryParam "$.xgafv" Xgafv Core.:>
+                 Core.QueryParam "access_token" Core.Text Core.:>
+                   Core.QueryParam "callback" Core.Text Core.:>
+                     Core.QueryParam "uploadType" Core.Text Core.:>
+                       Core.QueryParam "upload_protocol" Core.Text Core.:>
+                         Core.QueryParam "alt" Core.AltJSON Core.:>
+                           Core.ReqBody '[Core.JSON] EnrollmentToken Core.:>
+                             Core.Post '[Core.JSON] EnrollmentToken
 
 -- | Returns a token for device enrollment. The DPC can encode this token within the QR\/NFC\/zero-touch enrollment payload or fetch it before calling the on-device API to authenticate the user. The token can be generated for each device or reused across multiple devices.
 --
 -- /See:/ 'newAndroidEnterpriseEnrollmentTokensCreate' smart constructor.
 data AndroidEnterpriseEnrollmentTokensCreate = AndroidEnterpriseEnrollmentTokensCreate
-  { -- | V1 error format.
-    xgafv :: (Core.Maybe Xgafv),
-    -- | OAuth access token.
-    accessToken :: (Core.Maybe Core.Text),
-    -- | JSONP
-    callback :: (Core.Maybe Core.Text),
-    -- | Required. The ID of the enterprise.
-    enterpriseId :: Core.Text,
-    -- | Multipart request metadata.
-    payload :: EnrollmentToken,
-    -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
-    uploadType :: (Core.Maybe Core.Text),
-    -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
-    uploadProtocol :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | V1 error format.
+      xgafv :: (Core.Maybe Xgafv)
+      -- | OAuth access token.
+    , accessToken :: (Core.Maybe Core.Text)
+      -- | JSONP
+    , callback :: (Core.Maybe Core.Text)
+      -- | Required. The ID of the enterprise.
+    , enterpriseId :: Core.Text
+      -- | Multipart request metadata.
+    , payload :: EnrollmentToken
+      -- | Legacy upload protocol for media (e.g. \"media\", \"multipart\").
+    , uploadType :: (Core.Maybe Core.Text)
+      -- | Upload protocol for media (e.g. \"raw\", \"multipart\").
+    , uploadProtocol :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'AndroidEnterpriseEnrollmentTokensCreate' with the minimum fields required to make a request.
-newAndroidEnterpriseEnrollmentTokensCreate ::
-  -- |  Required. The ID of the enterprise. See 'enterpriseId'.
-  Core.Text ->
-  -- |  Multipart request metadata. See 'payload'.
-  EnrollmentToken ->
-  AndroidEnterpriseEnrollmentTokensCreate
-newAndroidEnterpriseEnrollmentTokensCreate enterpriseId payload =
-  AndroidEnterpriseEnrollmentTokensCreate
-    { xgafv = Core.Nothing,
-      accessToken = Core.Nothing,
-      callback = Core.Nothing,
-      enterpriseId = enterpriseId,
-      payload = payload,
-      uploadType = Core.Nothing,
-      uploadProtocol = Core.Nothing
-    }
+newAndroidEnterpriseEnrollmentTokensCreate 
+    :: 
+                                           Core.Text
+       -- ^  Required. The ID of the enterprise. See 'enterpriseId'.
+    -> EnrollmentToken
+       -- ^  Multipart request metadata. See 'payload'.
+    -> AndroidEnterpriseEnrollmentTokensCreate
+newAndroidEnterpriseEnrollmentTokensCreate enterpriseId payload
+  = AndroidEnterpriseEnrollmentTokensCreate{xgafv = Core.Nothing,
+                                            accessToken = Core.Nothing, callback = Core.Nothing,
+                                            enterpriseId = enterpriseId, payload = payload,
+                                            uploadType = Core.Nothing,
+                                            uploadProtocol = Core.Nothing}
+instance Core.GoogleRequest AndroidEnterpriseEnrollmentTokensCreate
+         where
+        type Rs AndroidEnterpriseEnrollmentTokensCreate = EnrollmentToken
+        type Scopes AndroidEnterpriseEnrollmentTokensCreate =
+             '[Androidenterprise'FullControl]
+        requestClient AndroidEnterpriseEnrollmentTokensCreate{..}
+          = go enterpriseId xgafv accessToken callback uploadType
+              uploadProtocol
+              (Core.Just Core.AltJSON)
+              payload
+              androidEnterpriseService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy ::
+                         Core.Proxy AndroidEnterpriseEnrollmentTokensCreateResource)
+                      Core.mempty
 
-instance Core.GoogleRequest AndroidEnterpriseEnrollmentTokensCreate where
-  type Rs AndroidEnterpriseEnrollmentTokensCreate = EnrollmentToken
-  type
-    Scopes AndroidEnterpriseEnrollmentTokensCreate =
-      '[Androidenterprise'FullControl]
-  requestClient AndroidEnterpriseEnrollmentTokensCreate {..} =
-    go
-      enterpriseId
-      xgafv
-      accessToken
-      callback
-      uploadType
-      uploadProtocol
-      (Core.Just Core.AltJSON)
-      payload
-      androidEnterpriseService
-    where
-      go =
-        Core.buildClient
-          ( Core.Proxy ::
-              Core.Proxy AndroidEnterpriseEnrollmentTokensCreateResource
-          )
-          Core.mempty

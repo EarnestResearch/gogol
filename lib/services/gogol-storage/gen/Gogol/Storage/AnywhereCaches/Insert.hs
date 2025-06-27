@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -28,75 +29,66 @@
 --
 -- /See:/ <https://developers.google.com/storage/docs/json_api/ Cloud Storage JSON API Reference> for @storage.anywhereCaches.insert@.
 module Gogol.Storage.AnywhereCaches.Insert
-  ( -- * Resource
-    StorageAnywhereCachesInsertResource,
+    (
+    -- * Resource
+      StorageAnywhereCachesInsertResource
 
     -- ** Constructing a Request
-    StorageAnywhereCachesInsert (..),
-    newStorageAnywhereCachesInsert,
-  )
-where
+    , StorageAnywhereCachesInsert (..)
+    , newStorageAnywhereCachesInsert
+    ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 import Gogol.Storage.Types
 
 -- | A resource alias for @storage.anywhereCaches.insert@ method which the
 -- 'StorageAnywhereCachesInsert' request conforms to.
 type StorageAnywhereCachesInsertResource =
-  "storage"
-    Core.:> "v1"
-    Core.:> "b"
-    Core.:> Core.Capture "bucket" Core.Text
-    Core.:> "anywhereCaches"
-    Core.:> Core.QueryParam "uploadType" Core.Text
-    Core.:> Core.QueryParam "alt" Core.AltJSON
-    Core.:> Core.ReqBody '[Core.JSON] AnywhereCache
-    Core.:> Core.Post '[Core.JSON] GoogleLongrunningOperation
+     "storage" Core.:>
+       "v1" Core.:>
+         "b" Core.:>
+           Core.Capture "bucket" Core.Text Core.:>
+             "anywhereCaches" Core.:>
+               Core.QueryParam "uploadType" Core.Text Core.:>
+                 Core.QueryParam "alt" Core.AltJSON Core.:>
+                   Core.ReqBody '[Core.JSON] AnywhereCache Core.:>
+                     Core.Post '[Core.JSON] GoogleLongrunningOperation
 
 -- | Creates an Anywhere Cache instance.
 --
 -- /See:/ 'newStorageAnywhereCachesInsert' smart constructor.
 data StorageAnywhereCachesInsert = StorageAnywhereCachesInsert
-  { -- | Name of the parent bucket.
-    bucket :: Core.Text,
-    -- | Multipart request metadata.
-    payload :: AnywhereCache,
-    -- | Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\").
-    uploadType :: (Core.Maybe Core.Text)
-  }
-  deriving (Core.Eq, Core.Show, Core.Generic)
+    {
+      -- | Name of the parent bucket.
+      bucket :: Core.Text
+      -- | Multipart request metadata.
+    , payload :: AnywhereCache
+      -- | Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\").
+    , uploadType :: (Core.Maybe Core.Text)
+    }
+    deriving (Core.Eq, Core.Show, Core.Generic)
 
 -- | Creates a value of 'StorageAnywhereCachesInsert' with the minimum fields required to make a request.
-newStorageAnywhereCachesInsert ::
-  -- |  Name of the parent bucket. See 'bucket'.
-  Core.Text ->
-  -- |  Multipart request metadata. See 'payload'.
-  AnywhereCache ->
-  StorageAnywhereCachesInsert
-newStorageAnywhereCachesInsert bucket payload =
-  StorageAnywhereCachesInsert
-    { bucket = bucket,
-      payload = payload,
-      uploadType = Core.Nothing
-    }
-
+newStorageAnywhereCachesInsert 
+    :: 
+                               Core.Text
+       -- ^  Name of the parent bucket. See 'bucket'.
+    -> AnywhereCache
+       -- ^  Multipart request metadata. See 'payload'.
+    -> StorageAnywhereCachesInsert
+newStorageAnywhereCachesInsert bucket payload
+  = StorageAnywhereCachesInsert{bucket = bucket, payload = payload,
+                                uploadType = Core.Nothing}
 instance Core.GoogleRequest StorageAnywhereCachesInsert where
-  type Rs StorageAnywhereCachesInsert = GoogleLongrunningOperation
-  type
-    Scopes StorageAnywhereCachesInsert =
-      '[ CloudPlatform'FullControl,
-         Devstorage'FullControl,
-         Devstorage'ReadWrite
-       ]
-  requestClient StorageAnywhereCachesInsert {..} =
-    go
-      bucket
-      uploadType
-      (Core.Just Core.AltJSON)
-      payload
-      storageService
-    where
-      go =
-        Core.buildClient
-          (Core.Proxy :: Core.Proxy StorageAnywhereCachesInsertResource)
-          Core.mempty
+        type Rs StorageAnywhereCachesInsert = GoogleLongrunningOperation
+        type Scopes StorageAnywhereCachesInsert =
+             '[CloudPlatform'FullControl, Devstorage'FullControl,
+               Devstorage'ReadWrite]
+        requestClient StorageAnywhereCachesInsert{..}
+          = go bucket uploadType (Core.Just Core.AltJSON) payload
+              storageService
+          where go
+                  = Core.buildClient
+                      (Core.Proxy :: Core.Proxy StorageAnywhereCachesInsertResource)
+                      Core.mempty
+

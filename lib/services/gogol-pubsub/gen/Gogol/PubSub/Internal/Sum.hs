@@ -3,12 +3,13 @@
 {-# LANGUAGE DuplicateRecordFields #-}
 {-# LANGUAGE ImportQualifiedPost #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE PatternSynonyms #-}
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE StrictData #-}
 {-# LANGUAGE TypeFamilies #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+
 {-# OPTIONS_GHC -fno-warn-duplicate-exports #-}
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
@@ -23,17 +24,22 @@
 --               Toni Cebrián <toni@tonicebrian.com>
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
+--
 module Gogol.PubSub.Internal.Sum
-  ( -- * Xgafv
+  (
+
+    -- * Xgafv
     Xgafv
-      ( Xgafv_1,
+      (
+        Xgafv_1,
         Xgafv_2,
         ..
       ),
 
     -- * AwsKinesis_State
     AwsKinesis_State
-      ( AwsKinesis_State_STATEUNSPECIFIED,
+      (
+        AwsKinesis_State_STATEUNSPECIFIED,
         AwsKinesis_State_Active,
         AwsKinesis_State_KINESISPERMISSIONDENIED,
         AwsKinesis_State_PUBLISHPERMISSIONDENIED,
@@ -44,7 +50,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * AwsMsk_State
     AwsMsk_State
-      ( AwsMsk_State_STATEUNSPECIFIED,
+      (
+        AwsMsk_State_STATEUNSPECIFIED,
         AwsMsk_State_Active,
         AwsMsk_State_MSKPERMISSIONDENIED,
         AwsMsk_State_PUBLISHPERMISSIONDENIED,
@@ -55,7 +62,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * AzureEventHubs_State
     AzureEventHubs_State
-      ( AzureEventHubs_State_STATEUNSPECIFIED,
+      (
+        AzureEventHubs_State_STATEUNSPECIFIED,
         AzureEventHubs_State_Active,
         AzureEventHubs_State_EVENTHUBSPERMISSIONDENIED,
         AzureEventHubs_State_PUBLISHPERMISSIONDENIED,
@@ -68,7 +76,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * BigQueryConfig_State
     BigQueryConfig_State
-      ( BigQueryConfig_State_STATEUNSPECIFIED,
+      (
+        BigQueryConfig_State_STATEUNSPECIFIED,
         BigQueryConfig_State_Active,
         BigQueryConfig_State_PERMISSIONDENIED,
         BigQueryConfig_State_NOTFOUND,
@@ -79,7 +88,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * CloudStorage_State
     CloudStorage_State
-      ( CloudStorage_State_STATEUNSPECIFIED,
+      (
+        CloudStorage_State_STATEUNSPECIFIED,
         CloudStorage_State_Active,
         CloudStorage_State_CLOUDSTORAGEPERMISSIONDENIED,
         CloudStorage_State_PUBLISHPERMISSIONDENIED,
@@ -90,7 +100,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * CloudStorageConfig_State
     CloudStorageConfig_State
-      ( CloudStorageConfig_State_STATEUNSPECIFIED,
+      (
+        CloudStorageConfig_State_STATEUNSPECIFIED,
         CloudStorageConfig_State_Active,
         CloudStorageConfig_State_PERMISSIONDENIED,
         CloudStorageConfig_State_NOTFOUND,
@@ -101,7 +112,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * ConfluentCloud_State
     ConfluentCloud_State
-      ( ConfluentCloud_State_STATEUNSPECIFIED,
+      (
+        ConfluentCloud_State_STATEUNSPECIFIED,
         ConfluentCloud_State_Active,
         ConfluentCloud_State_CONFLUENTCLOUDPERMISSIONDENIED,
         ConfluentCloud_State_PUBLISHPERMISSIONDENIED,
@@ -113,7 +125,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * PlatformLogsSettings_Severity
     PlatformLogsSettings_Severity
-      ( PlatformLogsSettings_Severity_SEVERITYUNSPECIFIED,
+      (
+        PlatformLogsSettings_Severity_SEVERITYUNSPECIFIED,
         PlatformLogsSettings_Severity_Disabled,
         PlatformLogsSettings_Severity_Debug,
         PlatformLogsSettings_Severity_Info,
@@ -124,7 +137,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * Schema_Type
     Schema_Type
-      ( Schema_Type_TYPEUNSPECIFIED,
+      (
+        Schema_Type_TYPEUNSPECIFIED,
         Schema_Type_PROTOCOLBUFFER,
         Schema_Type_Avro,
         ..
@@ -132,7 +146,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * SchemaSettings_Encoding
     SchemaSettings_Encoding
-      ( SchemaSettings_Encoding_ENCODINGUNSPECIFIED,
+      (
+        SchemaSettings_Encoding_ENCODINGUNSPECIFIED,
         SchemaSettings_Encoding_Json,
         SchemaSettings_Encoding_Binary,
         ..
@@ -140,7 +155,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * Subscription_State
     Subscription_State
-      ( Subscription_State_STATEUNSPECIFIED,
+      (
+        Subscription_State_STATEUNSPECIFIED,
         Subscription_State_Active,
         Subscription_State_RESOURCEERROR,
         ..
@@ -148,7 +164,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * Topic_State
     Topic_State
-      ( Topic_State_STATEUNSPECIFIED,
+      (
+        Topic_State_STATEUNSPECIFIED,
         Topic_State_Active,
         Topic_State_INGESTIONRESOURCEERROR,
         ..
@@ -156,7 +173,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * ValidateMessageRequest_Encoding
     ValidateMessageRequest_Encoding
-      ( ValidateMessageRequest_Encoding_ENCODINGUNSPECIFIED,
+      (
+        ValidateMessageRequest_Encoding_ENCODINGUNSPECIFIED,
         ValidateMessageRequest_Encoding_Json,
         ValidateMessageRequest_Encoding_Binary,
         ..
@@ -164,7 +182,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * ProjectsSchemasGetView
     ProjectsSchemasGetView
-      ( ProjectsSchemasGetView_SCHEMAVIEWUNSPECIFIED,
+      (
+        ProjectsSchemasGetView_SCHEMAVIEWUNSPECIFIED,
         ProjectsSchemasGetView_Basic,
         ProjectsSchemasGetView_Full,
         ..
@@ -172,7 +191,8 @@ module Gogol.PubSub.Internal.Sum
 
     -- * ProjectsSchemasListView
     ProjectsSchemasListView
-      ( ProjectsSchemasListView_SCHEMAVIEWUNSPECIFIED,
+      (
+        ProjectsSchemasListView_SCHEMAVIEWUNSPECIFIED,
         ProjectsSchemasListView_Basic,
         ProjectsSchemasListView_Full,
         ..
@@ -180,28 +200,28 @@ module Gogol.PubSub.Internal.Sum
 
     -- * ProjectsSchemasListRevisionsView
     ProjectsSchemasListRevisionsView
-      ( ProjectsSchemasListRevisionsView_SCHEMAVIEWUNSPECIFIED,
+      (
+        ProjectsSchemasListRevisionsView_SCHEMAVIEWUNSPECIFIED,
         ProjectsSchemasListRevisionsView_Basic,
         ProjectsSchemasListRevisionsView_Full,
         ..
       ),
-  )
-where
+  ) where
 
-import Gogol.Prelude qualified as Core
+import qualified Gogol.Prelude as Core
 
 -- | V1 error format.
-newtype Xgafv = Xgafv {fromXgafv :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Xgafv = Xgafv { fromXgafv :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | v1 error format
 pattern Xgafv_1 :: Xgafv
@@ -214,21 +234,20 @@ pattern Xgafv_2 = Xgafv "2"
 {-# COMPLETE
   Xgafv_1,
   Xgafv_2,
-  Xgafv
-  #-}
+  Xgafv #-}
 
 -- | Output only. An output-only field that indicates the state of the Kinesis ingestion source.
-newtype AwsKinesis_State = AwsKinesis_State {fromAwsKinesis_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AwsKinesis_State = AwsKinesis_State { fromAwsKinesis_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern AwsKinesis_State_STATEUNSPECIFIED :: AwsKinesis_State
@@ -261,21 +280,20 @@ pattern AwsKinesis_State_CONSUMERNOTFOUND = AwsKinesis_State "CONSUMER_NOT_FOUND
   AwsKinesis_State_PUBLISHPERMISSIONDENIED,
   AwsKinesis_State_STREAMNOTFOUND,
   AwsKinesis_State_CONSUMERNOTFOUND,
-  AwsKinesis_State
-  #-}
+  AwsKinesis_State #-}
 
 -- | Output only. An output-only field that indicates the state of the Amazon MSK ingestion source.
-newtype AwsMsk_State = AwsMsk_State {fromAwsMsk_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AwsMsk_State = AwsMsk_State { fromAwsMsk_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern AwsMsk_State_STATEUNSPECIFIED :: AwsMsk_State
@@ -308,21 +326,20 @@ pattern AwsMsk_State_TOPICNOTFOUND = AwsMsk_State "TOPIC_NOT_FOUND"
   AwsMsk_State_PUBLISHPERMISSIONDENIED,
   AwsMsk_State_CLUSTERNOTFOUND,
   AwsMsk_State_TOPICNOTFOUND,
-  AwsMsk_State
-  #-}
+  AwsMsk_State #-}
 
 -- | Output only. An output-only field that indicates the state of the Event Hubs ingestion source.
-newtype AzureEventHubs_State = AzureEventHubs_State {fromAzureEventHubs_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype AzureEventHubs_State = AzureEventHubs_State { fromAzureEventHubs_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern AzureEventHubs_State_STATEUNSPECIFIED :: AzureEventHubs_State
@@ -365,21 +382,20 @@ pattern AzureEventHubs_State_RESOURCEGROUPNOTFOUND = AzureEventHubs_State "RESOU
   AzureEventHubs_State_EVENTHUBNOTFOUND,
   AzureEventHubs_State_SUBSCRIPTIONNOTFOUND,
   AzureEventHubs_State_RESOURCEGROUPNOTFOUND,
-  AzureEventHubs_State
-  #-}
+  AzureEventHubs_State #-}
 
 -- | Output only. An output-only field that indicates whether or not the subscription can receive messages.
-newtype BigQueryConfig_State = BigQueryConfig_State {fromBigQueryConfig_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype BigQueryConfig_State = BigQueryConfig_State { fromBigQueryConfig_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern BigQueryConfig_State_STATEUNSPECIFIED :: BigQueryConfig_State
@@ -412,21 +428,20 @@ pattern BigQueryConfig_State_INTRANSITLOCATIONRESTRICTION = BigQueryConfig_State
   BigQueryConfig_State_NOTFOUND,
   BigQueryConfig_State_SCHEMAMISMATCH,
   BigQueryConfig_State_INTRANSITLOCATIONRESTRICTION,
-  BigQueryConfig_State
-  #-}
+  BigQueryConfig_State #-}
 
 -- | Output only. An output-only field that indicates the state of the Cloud Storage ingestion source.
-newtype CloudStorage_State = CloudStorage_State {fromCloudStorage_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CloudStorage_State = CloudStorage_State { fromCloudStorage_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern CloudStorage_State_STATEUNSPECIFIED :: CloudStorage_State
@@ -459,21 +474,20 @@ pattern CloudStorage_State_TOOMANYOBJECTS = CloudStorage_State "TOO_MANY_OBJECTS
   CloudStorage_State_PUBLISHPERMISSIONDENIED,
   CloudStorage_State_BUCKETNOTFOUND,
   CloudStorage_State_TOOMANYOBJECTS,
-  CloudStorage_State
-  #-}
+  CloudStorage_State #-}
 
 -- | Output only. An output-only field that indicates whether or not the subscription can receive messages.
-newtype CloudStorageConfig_State = CloudStorageConfig_State {fromCloudStorageConfig_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype CloudStorageConfig_State = CloudStorageConfig_State { fromCloudStorageConfig_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern CloudStorageConfig_State_STATEUNSPECIFIED :: CloudStorageConfig_State
@@ -506,21 +520,20 @@ pattern CloudStorageConfig_State_SCHEMAMISMATCH = CloudStorageConfig_State "SCHE
   CloudStorageConfig_State_NOTFOUND,
   CloudStorageConfig_State_INTRANSITLOCATIONRESTRICTION,
   CloudStorageConfig_State_SCHEMAMISMATCH,
-  CloudStorageConfig_State
-  #-}
+  CloudStorageConfig_State #-}
 
 -- | Output only. An output-only field that indicates the state of the Confluent Cloud ingestion source.
-newtype ConfluentCloud_State = ConfluentCloud_State {fromConfluentCloud_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ConfluentCloud_State = ConfluentCloud_State { fromConfluentCloud_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern ConfluentCloud_State_STATEUNSPECIFIED :: ConfluentCloud_State
@@ -558,21 +571,20 @@ pattern ConfluentCloud_State_TOPICNOTFOUND = ConfluentCloud_State "TOPIC_NOT_FOU
   ConfluentCloud_State_UNREACHABLEBOOTSTRAPSERVER,
   ConfluentCloud_State_CLUSTERNOTFOUND,
   ConfluentCloud_State_TOPICNOTFOUND,
-  ConfluentCloud_State
-  #-}
+  ConfluentCloud_State #-}
 
 -- | Optional. The minimum severity level of Platform Logs that will be written.
-newtype PlatformLogsSettings_Severity = PlatformLogsSettings_Severity {fromPlatformLogsSettings_Severity :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype PlatformLogsSettings_Severity = PlatformLogsSettings_Severity { fromPlatformLogsSettings_Severity :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. Logs level is unspecified. Logs will be disabled.
 pattern PlatformLogsSettings_Severity_SEVERITYUNSPECIFIED :: PlatformLogsSettings_Severity
@@ -605,21 +617,20 @@ pattern PlatformLogsSettings_Severity_Error' = PlatformLogsSettings_Severity "ER
   PlatformLogsSettings_Severity_Info,
   PlatformLogsSettings_Severity_Warning,
   PlatformLogsSettings_Severity_Error',
-  PlatformLogsSettings_Severity
-  #-}
+  PlatformLogsSettings_Severity #-}
 
 -- | The type of the schema definition.
-newtype Schema_Type = Schema_Type {fromSchema_Type :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Schema_Type = Schema_Type { fromSchema_Type :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Schema_Type_TYPEUNSPECIFIED :: Schema_Type
@@ -637,21 +648,20 @@ pattern Schema_Type_Avro = Schema_Type "AVRO"
   Schema_Type_TYPEUNSPECIFIED,
   Schema_Type_PROTOCOLBUFFER,
   Schema_Type_Avro,
-  Schema_Type
-  #-}
+  Schema_Type #-}
 
 -- | Optional. The encoding of messages validated against @schema@.
-newtype SchemaSettings_Encoding = SchemaSettings_Encoding {fromSchemaSettings_Encoding :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype SchemaSettings_Encoding = SchemaSettings_Encoding { fromSchemaSettings_Encoding :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern SchemaSettings_Encoding_ENCODINGUNSPECIFIED :: SchemaSettings_Encoding
@@ -669,21 +679,20 @@ pattern SchemaSettings_Encoding_Binary = SchemaSettings_Encoding "BINARY"
   SchemaSettings_Encoding_ENCODINGUNSPECIFIED,
   SchemaSettings_Encoding_Json,
   SchemaSettings_Encoding_Binary,
-  SchemaSettings_Encoding
-  #-}
+  SchemaSettings_Encoding #-}
 
 -- | Output only. An output-only field indicating whether or not the subscription can receive messages.
-newtype Subscription_State = Subscription_State {fromSubscription_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Subscription_State = Subscription_State { fromSubscription_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Subscription_State_STATEUNSPECIFIED :: Subscription_State
@@ -701,21 +710,20 @@ pattern Subscription_State_RESOURCEERROR = Subscription_State "RESOURCE_ERROR"
   Subscription_State_STATEUNSPECIFIED,
   Subscription_State_Active,
   Subscription_State_RESOURCEERROR,
-  Subscription_State
-  #-}
+  Subscription_State #-}
 
 -- | Output only. An output-only field indicating the state of the topic.
-newtype Topic_State = Topic_State {fromTopic_State :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype Topic_State = Topic_State { fromTopic_State :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Default value. This value is unused.
 pattern Topic_State_STATEUNSPECIFIED :: Topic_State
@@ -733,21 +741,20 @@ pattern Topic_State_INGESTIONRESOURCEERROR = Topic_State "INGESTION_RESOURCE_ERR
   Topic_State_STATEUNSPECIFIED,
   Topic_State_Active,
   Topic_State_INGESTIONRESOURCEERROR,
-  Topic_State
-  #-}
+  Topic_State #-}
 
 -- | The encoding expected for messages
-newtype ValidateMessageRequest_Encoding = ValidateMessageRequest_Encoding {fromValidateMessageRequest_Encoding :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ValidateMessageRequest_Encoding = ValidateMessageRequest_Encoding { fromValidateMessageRequest_Encoding :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | Unspecified
 pattern ValidateMessageRequest_Encoding_ENCODINGUNSPECIFIED :: ValidateMessageRequest_Encoding
@@ -765,21 +772,20 @@ pattern ValidateMessageRequest_Encoding_Binary = ValidateMessageRequest_Encoding
   ValidateMessageRequest_Encoding_ENCODINGUNSPECIFIED,
   ValidateMessageRequest_Encoding_Json,
   ValidateMessageRequest_Encoding_Binary,
-  ValidateMessageRequest_Encoding
-  #-}
+  ValidateMessageRequest_Encoding #-}
 
 -- | The set of fields to return in the response. If not set, returns a Schema with all fields filled out. Set to @BASIC@ to omit the @definition@.
-newtype ProjectsSchemasGetView = ProjectsSchemasGetView {fromProjectsSchemasGetView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsSchemasGetView = ProjectsSchemasGetView { fromProjectsSchemasGetView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default \/ unset value. The API will default to the BASIC view.
 pattern ProjectsSchemasGetView_SCHEMAVIEWUNSPECIFIED :: ProjectsSchemasGetView
@@ -797,21 +803,20 @@ pattern ProjectsSchemasGetView_Full = ProjectsSchemasGetView "FULL"
   ProjectsSchemasGetView_SCHEMAVIEWUNSPECIFIED,
   ProjectsSchemasGetView_Basic,
   ProjectsSchemasGetView_Full,
-  ProjectsSchemasGetView
-  #-}
+  ProjectsSchemasGetView #-}
 
 -- | The set of Schema fields to return in the response. If not set, returns Schemas with @name@ and @type@, but not @definition@. Set to @FULL@ to retrieve all fields.
-newtype ProjectsSchemasListView = ProjectsSchemasListView {fromProjectsSchemasListView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsSchemasListView = ProjectsSchemasListView { fromProjectsSchemasListView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default \/ unset value. The API will default to the BASIC view.
 pattern ProjectsSchemasListView_SCHEMAVIEWUNSPECIFIED :: ProjectsSchemasListView
@@ -829,21 +834,20 @@ pattern ProjectsSchemasListView_Full = ProjectsSchemasListView "FULL"
   ProjectsSchemasListView_SCHEMAVIEWUNSPECIFIED,
   ProjectsSchemasListView_Basic,
   ProjectsSchemasListView_Full,
-  ProjectsSchemasListView
-  #-}
+  ProjectsSchemasListView #-}
 
 -- | The set of Schema fields to return in the response. If not set, returns Schemas with @name@ and @type@, but not @definition@. Set to @FULL@ to retrieve all fields.
-newtype ProjectsSchemasListRevisionsView = ProjectsSchemasListRevisionsView {fromProjectsSchemasListRevisionsView :: Core.Text}
-  deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
-  deriving newtype
-    ( Core.Hashable,
-      Core.ToHttpApiData,
-      Core.FromHttpApiData,
-      Core.ToJSON,
-      Core.ToJSONKey,
-      Core.FromJSON,
-      Core.FromJSONKey
-    )
+newtype ProjectsSchemasListRevisionsView = ProjectsSchemasListRevisionsView { fromProjectsSchemasListRevisionsView :: Core.Text }
+    deriving stock (Core.Show, Core.Read, Core.Eq, Core.Ord, Core.Generic)
+    deriving newtype
+      ( Core.Hashable
+      , Core.ToHttpApiData
+      , Core.FromHttpApiData
+      , Core.ToJSON
+      , Core.ToJSONKey
+      , Core.FromJSON
+      , Core.FromJSONKey
+      )
 
 -- | The default \/ unset value. The API will default to the BASIC view.
 pattern ProjectsSchemasListRevisionsView_SCHEMAVIEWUNSPECIFIED :: ProjectsSchemasListRevisionsView
@@ -861,5 +865,4 @@ pattern ProjectsSchemasListRevisionsView_Full = ProjectsSchemasListRevisionsView
   ProjectsSchemasListRevisionsView_SCHEMAVIEWUNSPECIFIED,
   ProjectsSchemasListRevisionsView_Basic,
   ProjectsSchemasListRevisionsView_Full,
-  ProjectsSchemasListRevisionsView
-  #-}
+  ProjectsSchemasListRevisionsView #-}
